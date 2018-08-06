@@ -1,0 +1,43 @@
+# [Construtor de bot do SDK para .NET](bot-builder-dotnet-overview.md)
+# [Principais conceitos](bot-builder-dotnet-concepts.md)
+# Mensagens e atividades
+## [Visão geral das atividades](bot-builder-dotnet-activities.md)
+## [Criar mensagens](bot-builder-dotnet-create-messages.md)
+## [Adicionar anexos de mídia a mensagens](bot-builder-dotnet-add-media-attachments.md)
+## [Adicionar cartões avançados a mensagens](bot-builder-dotnet-add-rich-card-attachments.md)
+<!-- ## [Send carousel of cards](bot-builder-dotnet-add-carousel-card.md) -->
+## [Adicionar fala a mensagens](bot-builder-dotnet-text-to-speech.md)
+## [Adicionar dicas de entrada a mensagens](bot-builder-dotnet-add-input-hints.md)
+## [Adicionar ações sugeridas a mensagens](bot-builder-dotnet-add-suggested-actions.md)
+## [Enviar e receber atividades](bot-builder-dotnet-connector.md)
+## [Implementar manipuladores de mensagens globais](bot-builder-dotnet-global-handlers.md)
+## [Interceptar mensagens](bot-builder-dotnet-middleware.md)
+## [Enviar mensagens proativas](bot-builder-dotnet-proactive-messages.md)
+# Diálogos
+## [Visão geral dos diálogos](bot-builder-dotnet-dialogs.md)
+## [Gerenciar o fluxo da conversa](bot-builder-dotnet-manage-conversation-flow.md)
+## [Diálogos pontuados](bot-builder-dotnet-scorable-dialogs.md)
+# FormFlow
+## [Recursos básicos do FormFlow](bot-builder-dotnet-formflow.md)
+## [Recursos avançados do FormFlow](bot-builder-dotnet-formflow-advanced.md)
+## [FormBuilder](bot-builder-dotnet-formflow-formbuilder.md)
+## [Idioma padrão](bot-builder-dotnet-formflow-pattern-language.md)
+## [Localização](bot-builder-dotnet-formflow-localize.md)
+## [Esquema JSON](bot-builder-dotnet-formflow-json-schema.md)
+# Canais
+## [Implementar a funcionalidade específica do canal](bot-builder-dotnet-channeldata.md)
+## [Criar uma habilidade da Cortana](bot-builder-dotnet-cortana-skill.md)
+## [Realizar chamadas de áudio com o Skype](bot-builder-dotnet-audio-calls.md)
+## Realizar chamadas de mídia em tempo real com o Skype
+### [Conceitos de chamada de mídia em tempo real](bot-builder-dotnet-real-time-media-concepts.md)
+### [Requisitos para bots de mídia em tempo real](bot-builder-dotnet-real-time-media-requirements.md)
+### [Criar um bot de mídia em tempo real](bot-builder-dotnet-real-time-audio-video-call-overview.md)
+### [Implantar um bot de mídia em tempo real](bot-builder-dotnet-real-time-deploy-visual-studio.md)
+# Dados de estado
+## [Gerenciar dados de estado](bot-builder-dotnet-state.md)
+## [Gerenciar dados de estado usando o Cosmos DB](bot-builder-dotnet-state-azure-cosmosdb.md)
+## [Gerenciar dados de estado usando o armazenamento de tabelas](bot-builder-dotnet-state-azure-table-storage.md)
+# [Reconhecer intenções com o LUIS](bot-builder-dotnet-luis-dialogs.md)
+# [Solicitar pagamento](bot-builder-dotnet-request-payment.md)
+# [Adicionar o Azure Search](bot-builder-dotnet-search-azure.md)
+# [Proteger seu bot](bot-builder-dotnet-security.md)
