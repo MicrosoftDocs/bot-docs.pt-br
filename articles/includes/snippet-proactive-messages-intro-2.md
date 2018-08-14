@@ -1,0 +1,7 @@
+Uma **mensagem proativa ad hoc** é o tipo mais simples de mensagem proativa. O bot apenas injeta a mensagem na conversa sempre que ele é disparado, sem considerar se o usuário está envolvido em um tópico separado de conversa com o bot e não tentará alterar a conversa de modo algum. 
+
+Uma **mensagem proativa baseada em diálogo** é mais complexa do que uma mensagem proativa ad hoc. Antes que ele possa injetar esse tipo de mensagem proativa na conversa, o bot precisa identificar o contexto da conversa existente e decidir como (ou se) ele retomará essa conversa após a interrupção da mensagem. 
+
+Por exemplo, considere um bot que precisa iniciar uma pesquisa em determinado momento. Quando esse momento chega, o bot interrompe a conversa existente com o usuário e redireciona o usuário para um `SurveyDialog`. O `SurveyDialog` é adicionado à parte superior da pilha de diálogos e assume o controle da conversa. Quando o usuário conclui todas as tarefas obrigatórias do `SurveyDialog`, o `SurveyDialog` é fechado, devolvendo o controle ao diálogo anterior, em que o usuário pode continuar com o tópico de conversa anterior.
+
+Uma mensagem proativa baseada em diálogo é mais do que uma simples notificação. No envio da notificação, o bot altera o tópico da conversa existente. Em seguida, ele precisa decidir se essa conversa será retomada mais tarde ou se ele a abandonará por completo redefinindo a pilha de diálogos. 

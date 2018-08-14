@@ -1,0 +1,1 @@
+Quando o bot recebe um retorno de chamada, ele deve verificar se as informações especificadas no retorno de chamada são válidas e reconhecer o retorno de chamada enviando uma resposta HTTP. 
