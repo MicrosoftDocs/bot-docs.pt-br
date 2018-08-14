@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
 ms.date: 04/13/2018
-ms.openlocfilehash: 86776853b7928bc12588a8211d21ace58d57838d
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: c0432bf7c1691422db71798daf3b1aab5bf5b5dd
+ms.sourcegitcommit: 97bb24f15041caccef4ca5736aa14f144881e0c6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296613"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39567515"
 ---
 ::: moniker range="azure-bot-service-3.0"
+
+[!INCLUDE [pre-release-label](includes/pre-release-label-v3.md)]
 
 # <a name="create-a-bot-with-bot-service"></a>Criar um bot com o Serviço de Bot
 O Serviço de Bot fornece os principais componentes para a criação de bots, incluindo o SDK do Construtor de Bot para o desenvolvimento de bots e o Bot Framework para conectar os bots aos canais. O Serviço de Bot oferece cinco opções de modelos para a criação dos bots com suporte para .NET e Node.js. Neste tópico, saiba como usar o Serviço de Bot para criar um bot que usa o SDK do Construtor de Bot.

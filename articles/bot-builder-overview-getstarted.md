@@ -8,14 +8,17 @@ ms.topic: get-started-article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 208bd5a49400f9e9ff230dafb6dd20c36d50dfad
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 21186c5d3b0769311e4703ca1dab2f48a0a0081a
+ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296623"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39574882"
 ---
 # <a name="develop-bots-with-bot-builder"></a>Desenvolver bots com o Construtor de Bot
+
+[!INCLUDE [pre-release-label](includes/pre-release-label-v3.md)]
+
 O Construtor de Bot fornece um SDK, bibliotecas, amostras e ferramentas para ajudá-lo a criar e depurar bots. Quando você cria um bot com o Serviço de Bot, o bot tem o suporte do SDK do Construtor de Bot. Use também o SDK do Construtor de Bot para criar um bot do zero usando o C# ou o Node.js. O Construtor de Bot inclui o Bot Framework Emulator para testar os bots e o Inspetor de Canal para visualizar a experiência do usuário do bot em canais diferentes.
 
 Caso deseje criar um bot usando uma linguagem de programação de sua preferência, use a API REST.

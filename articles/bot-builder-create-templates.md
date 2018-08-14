@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
 ms.date: 04/25/2018
-ms.openlocfilehash: 60cdc3de200336b00173749a553205a47a32457e
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 7cf05b3396099f1c65fce7abbceb143a3ad43e9a
+ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296551"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39574582"
 ---
 # <a name="create-bots-with-botbuilder-templates"></a>Criar bots com modelos do Construtor de Bot
 

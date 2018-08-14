@@ -8,14 +8,17 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 2483366c6d325e5c18a77c2a89b63cc0350aef85
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 049dffd2adc700323bec943e090d369a14ff696b
+ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296742"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39574842"
 ---
 # <a name="cortana-skills-bot-scenario"></a>Cenário de Bot de Habilidades da Cortana
+
+[!INCLUDE [pre-release-label](includes/pre-release-label-v3.md)]
+
 O Bot de Habilidades da Cortana estende a Cortana para facilitar o agendamento no dispositivo móvel de um compromisso de manutenção automotiva usando a voz com o contexto do calendário.
 
 A Cortana é sua assistente pessoal. Usando a interface natural de sua voz e um Bot de Habilidade da Cortana personalizado, você pode solicitar que a Cortana fale com uma organização, como uma oficina automotiva, para ajudá-lo a criar um compromisso. O serviço pode fornecer uma lista de serviços, as horas disponíveis e a duração. A Cortana pode observar o calendário para ver se você tem algo em um horário conflitante e, se não tiver, criará o compromisso e o adicionará ao calendário.

@@ -8,14 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 7fdcd6e0e56ef11cd887b9d5493fd0b25c23cf89
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 8ba63ad99c772c7cf5884180a62244e0dfe11db2
+ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296543"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39574902"
 ---
 # <a name="global-message-handlers-using-scorables"></a>Manipuladores de mensagens globais usando pontuáveis
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
 Os usuários tentam acessar algumas funcionalidades em um bot usando palavras como "ajuda", "cancelar" ou "começar novamente" no meio de uma conversa quando o bot está esperando uma resposta diferente. Você pode projetar seu bot para manipular normalmente essas solicitações usando diálogos pontuáveis.
 
