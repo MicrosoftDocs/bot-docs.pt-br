@@ -1,0 +1,1 @@
+Receber uma atividade e subsequentemente processá-la por meio do seu bot, é chamado de um **turno**; isto representa um ciclo completo do seu bot. Um turno termina quando toda a execução é feita, a atividade é totalmente processada e todas as camadas do bot foram concluídas.
