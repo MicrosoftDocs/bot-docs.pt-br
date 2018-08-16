@@ -8,14 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 90e53ed5001ce1c91646644bf815bb51b6a843c1
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: f7fe3181a4c361b47a7ef6fbdf815b4c495c6f76
+ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297328"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39574632"
 ---
 # <a name="activities-overview"></a>Visão geral das atividades
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
 [!INCLUDE [Activity concept overview](../includes/snippet-dotnet-concept-activity.md)]
 
@@ -55,11 +57,11 @@ Se os membros tiverem sido removidos da conversa, a propriedade `MembersRemoved`
 
 ## <a name="contactrelationupdate"></a>contactRelationUpdate
 
-Um bot recebe uma atividade **contactRelationUpdate** sempre que for adicionado ou removido da lista de contatos de um usuário. O valor da propriedade `Action` da atividade (adicionar | remover) indica se o bot foi adicionado ou removido da lista de contatos do usuário.
+Um bot receberá uma atividade de **contactRelationUpdate** sempre que for adicionado ou removido da lista de contatos de um usuário. O valor da propriedade `Action` da atividade (adicionar | remover) indica se o bot foi adicionado ou removido da lista de contatos do usuário.
 
-## <a name="typing"></a>typing
+## <a name="typing"></a>digitação
 
-Um bot recebe uma atividade **typing** para indicar que o usuário está digitando uma resposta. Um bot pode enviar uma atividade **typing** para indicar ao usuário que está trabalhando para atender a uma solicitação ou compilar uma resposta. 
+A bot recebe uma atividade **digitação** para indicar que o usuário está digitando uma resposta. Um bot pode enviar uma atividade **digitação** para indicar ao usuário que está trabalhando para atender uma solicitação ou compilar uma resposta. 
 
 ## <a name="ping"></a>ping
 
@@ -67,11 +69,11 @@ Um bot recebe uma atividade **ping** para determinar se o seu ponto de extremida
 
 ## <a name="deleteuserdata"></a>deleteUserData
 
-Um bot recebe uma atividade **deleteUserData** quando um usuário solicita a exclusão de todos os dados que o bot persistiu anteriormente para ele ou ela. Se o seu bot receber esse tipo de atividade, ele deverá excluir quaisquer informações de identificação pessoal (PII) que tenha armazenado anteriormente para o usuário que fez a solicitação.
+Um bot recebe uma atividade **deleteUserData** quando um usuário solicita a exclusão de quaisquer dados que o bot tenha persistido anteriormente para o usuário. Se o bot receber esse tipo de atividade, ele deverá excluir quaisquer PII (informações de identificação pessoal) que armazenou anteriormente para o usuário que fez a solicitação.
 
 ## <a name="endofconversation"></a>endOfConversation 
 
-Um bot recebe uma atividade **endOfConversation** para indicar que o usuário encerrou a conversa. Um bot pode enviar uma atividade **endOfConversation** para indicar ao usuário que a conversa está acabando. 
+Um bot recebe uma atividade **endOfConversation** para indicar que o usuário encerrou a conversa. Um bot pode enviar uma atividade **endOfConversation** para indicar ao usuário que a conversa está encerrando. 
 
 ## <a name="event"></a>evento
 

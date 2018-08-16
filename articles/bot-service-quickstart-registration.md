@@ -8,14 +8,17 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: ec16b89a6c25c4113048a40f6b9b3edb6ce2af5e
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 6a32bc5712937c615962e4f6edfc7ea691d3ec39
+ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296814"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39574972"
 ---
 # <a name="register-a-bot-with-bot-service"></a>Registrar um bot com o Serviço de Bot
+
+[!INCLUDE [pre-release-label](includes/pre-release-label-v3.md)]
+
 Se você já tiver um bot hospedado em outro lugar e quiser usar o Serviço de Bot para conectá-lo a outros canais, é preciso registrar o seu bot com o Serviço de Bot. Neste tópico, saiba como registrar o seu bot com o Serviço de Bot criando um serviço de bot do **Registro de Canais de Bot**.
 
 > [!IMPORTANT] 
@@ -42,19 +45,19 @@ Para criar um **Registro de Canais de Bot**, faça o seguinte:
 
    |                    Configuração                     |         Valor sugerido         |                                                                                                  DESCRIÇÃO                                                                                                  |
    |------------------------------------------------|---------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-   |           <strong>Nome do bot</strong>            |     O nome de exibição do seu bot     |                                                  O nome de exibição do bot que é exibido nos canais e diretórios. Esse nome pode ser alterado a qualquer momento.                                                  |
+   |           <strong>Nome do bot</strong>            |     O nome de exibição do bot     |                                                  O nome de exibição do bot exibido nos canais e nos diretórios. Esse nome pode ser alterado a qualquer momento.                                                  |
    |         <strong>Assinatura</strong>          |        Sua assinatura        |                                                                                Selecione a assinatura do Azure que deseja usar.                                                                                 |
-   |        <strong>Grupo de recursos</strong>         |         myResourceGroup         |                                 Você pode criar um novo [grupo de recursos](/azure/azure-resource-manager/resource-group-overview#resource-groups) ou escolher um existente.                                  |
-   |                    Localização                    |             Oeste dos EUA             |                                                        Escolha um local perto de onde o seu bot está implantado ou perto de outros serviços que o seu bot acessará.                                                         |
-   |         <strong>Tipo de preços</strong>          |               F0                |             Selecione um tipo de preço. Você pode atualizar a camada de preço a qualquer momento. Para saber mais, veja [Preços do Serviço de Bot](https://azure.microsoft.com/en-us/pricing/details/bot-service/).              |
+   |        <strong>Grupo de recursos</strong>         |         myResourceGroup         |                                 Crie um [grupo de recursos](/azure/azure-resource-manager/resource-group-overview#resource-groups) ou escolha um existente.                                  |
+   |                    Local padrão                    |             Oeste dos EUA             |                                                        Escolha um local perto de onde o seu bot está implantado ou perto de outros serviços que o seu bot acessará.                                                         |
+   |         <strong>Tipo de preços</strong>          |               F0                |             Selecione um tipo de preço. Você pode atualizar o tipo de preço a qualquer momento. Para saber mais, veja [Preços do Serviço de Bot](https://azure.microsoft.com/en-us/pricing/details/bot-service/).              |
    |      <strong>Ponto de extremidade de mensagens</strong>       |               URL               |                                                                               Insira a URL do ponto de extremidade de mensagens do seu bot.                                                                                |
-   |     <strong>Application Insights</strong>      |               Por                | Decida se você deseja <strong>Ativar</strong> ou <strong>Desativar</strong> o [Application Insights](bot-service-manage-analytics.md). Se você selecionar <strong>Ativar</strong>, será preciso especificar também um local regional. |
-   | <strong>ID e senha do Aplicativo da Microsoft</strong> | Criar automaticamente um ID e uma senha de Aplicativo |              Use esta opção se você precisar inserir manualmente um ID e uma senha de Aplicativo da Microsoft. Caso contrário, um novo ID e uma nova senha de Aplicativo da Microsoft serão criados para você no processo de criação do bot.               |
+   |     <strong>Application Insights</strong>      |               Por                | Decida se deseja deixar o [Application Insights](bot-service-manage-analytics.md) <strong>Ativado</strong> ou <strong>Desativado</strong>. Se você selecionar <strong>Ativar</strong>, será preciso especificar também um local regional. |
+   | <strong>ID e senha do Aplicativo da Microsoft</strong> | Criar ID do Aplicativo e senha automaticamente |              Use essa opção se precisar inserir manualmente uma ID do Aplicativo e uma senha da Microsoft. Caso contrário, um novo ID e uma nova senha de Aplicativo da Microsoft serão criados para você no processo de criação do bot.               |
 
 
 4. Clique em **Criar** para criar o serviço e registrar o ponto de extremidade de mensagens do seu bot.
 
-Confirme que o registro foi criado marcando **Notificações**. As notificações mudarão de **Implantação em andamento...** para **Implantação bem-sucedida**. Clique em **Ir para recurso** para abrir a folha de recursos do bot. 
+Confirme que o registro foi criado marcando **Notificações**. As notificações mudarão de **Implantação em andamento...** para **Implantação bem-sucedida**. Clique no botão **Ir para recurso** para abrir a folha de recursos do bot. 
 
 ## <a name="bot-channels-registration-password"></a>Senha do Registro de Canais de Bot
 
@@ -75,14 +78,14 @@ Se você estiver usando o SDK do Construtor de Bot para Node.js, defina as segui
 * MICROSOFT_APP_ID
 * MICROSOFT_APP_PASSWORD
 
-Se você estiver usando o SDK do Construtor de Bot para .NET, defina os seguintes valores de chave no arquivo web.config:
+Se estiver usando o SDK do Bot Builder para .NET, defina os seguintes valores de chave no arquivo web.config:
 
 * MicrosoftAppId
 * MicrosoftAppPassword
 
 ## <a name="test-the-bot"></a>Testar o bot
 
-Agora que o serviço de bot foi criado, [teste-o no Webchat](bot-service-manage-test-webchat.md). Digite uma mensagem e o bot deverá responder.
+Agora que o serviço de bot foi criado, [teste-o no Webchat](bot-service-manage-test-webchat.md). Insira uma mensagem e o bot deverá responder.
 
 ## <a name="next-steps"></a>Próximas etapas
 

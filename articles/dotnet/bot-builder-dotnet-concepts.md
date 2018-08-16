@@ -8,14 +8,17 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 0a8c64cced0cb6c10daeedee4edfd777ff6d8e78
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 34a4cb3623c4265b062eb66ebfb2180551ac1985
+ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296601"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39574562"
 ---
 # <a name="key-concepts-in-the-bot-builder-sdk-for-net"></a>Principais conceitos do SDK do Construtor de Bot para .NET
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
+
 > [!div class="op_single_selector"]
 > - [.NET](../dotnet/bot-builder-dotnet-concepts.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-concepts.md)

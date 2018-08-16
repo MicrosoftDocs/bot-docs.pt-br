@@ -1,6 +1,6 @@
 ---
-title: Adicionar dicas de entrada a mensagens | Microsoft Docs
-description: Saiba como adicionar dicas de entrada a mensagens usando o SDK do Construtor de Bot para .NET.
+title: Adicionar sugestões de entrada às mensagens | Microsoft Docs
+description: Aprenda como adicionar dicas de entrada para mensagens usando o Bot Builder SDK for .NET.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
@@ -8,42 +8,60 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 2f56a855990675ccae4845c13541150ab205379a
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 87fc068c831dba752fa52a6430327232719a74a9
+ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297338"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39574822"
 ---
-# <a name="add-input-hints-to-messages"></a>Adicionar dicas de entrada a mensagens
+# <a name="add-input-hints-to-messages"></a>Adicionar dicas de entrada às mensagens
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
+
 > [!div class="op_single_selector"]
 > - [.NET](../dotnet/bot-builder-dotnet-add-input-hints.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-send-input-hints.md)
 > - [REST](../rest-api/bot-framework-rest-connector-add-input-hints.md)
 
-Ao especificar uma dica de entrada para uma mensagem, você pode indicar se seu bot está aceitando, esperando ou ignorando a entrada do usuário depois que a mensagem é entregue ao cliente. Para vários canais, isso permite que os clientes definam o estado dos controles de entrada do usuário adequadamente. Por exemplo, se a dica de entrada da mensagem indicar que o bot está ignorando a entrada do usuário, o cliente poderá fechar o microfone e desabilitar a caixa de entrada para impedir que o usuário forneça uma entrada.
+Ao especificar uma dica de entrada para uma mensagem, você pode indicar se seu bot está aceitando, esperando ou ignorando a entrada do usuário após a entrega da mensagem ao cliente. Para muitos canais, isso permite que os clientes definam o estado dos controles de entrada do usuário de acordo. Por exemplo, se a dica de entrada de uma mensagem indicar que o bot está ignorando a entrada do usuário, o cliente poderá fechar o microfone e desabilitar a caixa de entrada para evitar que o usuário forneça entrada.
 
-## <a name="accepting-input"></a>Aceitação da entrada
+## <a name="accepting-input"></a>Aceitar a entrada
 
-Para indicar que seu bot está passivamente pronto para entrada mas não está aguardando uma resposta do usuário, defina a dica de entrada da mensagem como `InputHints.AcceptingInput`. Em vários canais, isso fará com que a caixa de entrada do cliente seja habilitada e o microfone seja fechado, mas ainda acessível ao usuário. Por exemplo, a Cortana abrirá o microfone para aceitar a entrada do usuário se o usuário mantiver pressionado o botão de microfone. O código a seguir cria um exemplo que indica que o bot está aceitando a entrada do usuário.
+Para indicar que seu bot está passivamente pronto para entrada, mas não está aguardando uma resposta do usuário, defina a dica de entrada da mensagem como `InputHints.AcceptingInput`. Em muitos canais, isso fará com que a caixa de entrada do cliente seja ativada e o microfone seja fechado, mas ainda assim acessível ao usuário. Por exemplo, a Cortana abrirá o microfone para aceitar a entrada do usuário se o usuário pressionar o botão do microfone. O exemplo de código a seguir cria uma mensagem que indica que o bot está aceitando a entrada do usuário.
 
-[!code-csharp[Accepting input](../includes/code/dotnet-input-hints.cs#InputHintAcceptingInput)]
+```cs
+Activity reply = activity.CreateReply("This is the text that will be displayed.");
+reply.Speak = "This is the text that will be spoken.";
+reply.InputHint = InputHints.AcceptingInput;
+await connector.Conversations.ReplyToActivityAsync(reply);
+```
 
-## <a name="expecting-input"></a>Espera por uma entrada
+## <a name="expecting-input"></a>Esperando uma entrada
 
 Para indicar que seu bot está aguardando uma resposta do usuário, defina a dica de entrada da mensagem como `InputHints.ExpectingInput`. Em vários canais, isso fará com que a caixa de entrada do cliente seja habilitada e o microfone seja aberto. O código a seguir cria um exemplo que indica que o bot está esperando a entrada do usuário.
 
-[!code-csharp[Expecting input](../includes/code/dotnet-input-hints.cs#InputHintExpectingInput)]
+```cs
+Activity reply = activity.CreateReply("This is the text that will be displayed.");
+reply.Speak = "This is the text that will be spoken.";
+reply.InputHint = InputHints.ExpectingInput;
+await connector.Conversations.ReplyToActivityAsync(reply);
+```
 
 ## <a name="ignoring-input"></a>Ignorar a entrada
- 
-Para indicar que seu bot não está pronto para receber a entrada do usuário, defina a dica de entrada da mensagem como `InputHints.IgnorningInput`. Em vários canais, isso fará com que a caixa de entrada do cliente seja desabilitada e o microfone seja fechado. O código a seguir cria um exemplo que indica que o bot está ignorando a entrada do usuário.
 
-[!code-csharp[Ignoring input](../includes/code/dotnet-input-hints.cs#InputHintIgnoringInput)]
+Para indicar que seu bot não está pronto para receber entrada do usuário, defina a dica de entrada da mensagem como `InputHints.IgnorningInput`. Em vários canais, isso fará com que a caixa de entrada do cliente seja desabilitada e o microfone seja fechado. O código a seguir cria um exemplo que indica que o bot está ignorando a entrada do usuário.
+
+```cs
+Activity reply = activity.CreateReply("This is the text that will be displayed.");
+reply.Speak = "This is the text that will be spoken.";
+reply.InputHint = InputHints.IgnoringInput;
+await connector.Conversations.ReplyToActivityAsync(reply);
+```
 
 ## <a name="default-values-for-input-hint"></a>Valores padrão para a dica de entrada
 
-Se você não definir a dica de entrada para uma mensagem, o SDK do Construtor de Bot definirá automaticamente para você usando essa lógica: 
+Se você não definir a dica de entrada para uma mensagem, o SDK do Construtor de Bot definirá automaticamente para você usando essa lógica:
 
 - Se seu bot enviar um prompt, a dica de entrada para a mensagem especificará que seu bot está **esperando entrada**.</li>
 - Se seu bot enviar uma única mensagem, a dica de entrada para a mensagem especificará que seu bot está **aceitando a entrada**.</li>

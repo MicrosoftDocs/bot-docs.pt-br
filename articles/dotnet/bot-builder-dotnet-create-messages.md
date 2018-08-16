@@ -8,14 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: a97d21e64ce12f6158f276889762a73ac2aff49b
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 00ea81558bf4b8206dc6142ab26e47e3652be563
+ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297470"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39574542"
 ---
 # <a name="create-messages"></a>Criar mensagens
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
 Seu bot enviará **atividades** de [mensagens](bot-builder-dotnet-activities.md) para comunicar informações aos usuários e, da mesma forma, também receberá atividades de **mensagens** dos usuários. Algumas mensagens podem simplesmente consistir em texto sem formatação, enquanto outras podem conter conteúdo mais elaborado, como [texto a ser falado](bot-builder-dotnet-text-to-speech.md), [ações sugeridas](bot-builder-dotnet-add-suggested-actions.md), [anexos de mídia](bot-builder-dotnet-add-media-attachments.md), [cartões avançados](bot-builder-dotnet-add-rich-card-attachments.md) e [dados específicos do canal](bot-builder-dotnet-channeldata.md). 
 

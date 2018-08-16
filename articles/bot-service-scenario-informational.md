@@ -8,14 +8,17 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 7c85227d062f32f9f1e8096f1dad83c09ed85a9f
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 43eb8e25e2a17e1d6b1d30e767dd15569fcad78b
+ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297238"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39574862"
 ---
 # <a name="information-bot-scenario"></a>Cenário de Bot de Informações
+
+[!INCLUDE [pre-release-label](includes/pre-release-label-v3.md)]
+
 Este Bot de Informações pode responder perguntas definidas em um conjunto de conhecimentos ou em perguntas frequentes usando o QnA Maker dos Serviços Cognitivos e responder perguntas mais abertas usando o Azure Search.
 
 É comum as informações ficarem soterradas em repositórios de dados estruturados, como o SQL Server, e serem facilmente exibidas por meio de pesquisas. Imagine pesquisar o status do pedido de um cliente por meio de comandos de conversa simples. Com o QnA Maker dos Serviços Cognitivos, o usuário recebe um conjunto de opções válidas de pesquisa, por exemplo, pesquisa de um cliente, analisar o pedido de mais recente do cliente etc. Com o formato do QnA definido, o usuário pode fazer perguntas respaldadas no Azure Search, o qual pode procurar dados armazenados em um Banco de Dados SQL.
@@ -45,7 +48,7 @@ O bot de Informações usa os seguintes componentes:
 -   Application Insights
 
 ### <a name="azure-active-directory-azure-ad"></a>Active Directory do Azure (Azure AD)
-O Active Directory do Azure (AD do Azure) é o serviço de gerenciamento de identidade e diretório multilocatário com base em nuvem da Microsoft. Como desenvolvedor de Bots, o Azure AD permite que você se concentre na criação de seu Bot, tornando-o rápido e simplificando a integração com uma solução de gerenciamento de identidade da mais alta qualidade usada por milhões de empresas em todo o mundo. Ao definir um aplicativo Azure AD, você pode controlar quem tem acesso ao seu Bot e aos dados que ele expõe, sem implementar seu próprio sistema complexo de autenticação e autorização.
+O Active Directory do Azure (AD do Azure) é o serviço de gerenciamento de identidade e diretório multilocatário com base em nuvem da Microsoft. Como um desenvolvedor de Bot, o Azure AD permite que você concentre-se na criação do Bot, tornando-o rápido e simplificando a integração com uma solução de gerenciamento de identidades da mais alta qualidade utilizada por milhões de organizações em todo o mundo. Ao definir um aplicativo Azure AD, você pode controlar quem tem acesso ao seu Bot e aos dados que ele expõe, sem implementar seu próprio sistema complexo de autenticação e autorização.
 
 ### <a name="cognitive-services-qna-maker"></a>Serviços Cognitivos: QnA Maker
 QnA Maker dos Serviços Cognitivos ajuda você a fornecer uma fonte de dados de perguntas frequentes, a qual seus usuários podem consultar de seu Bot. Ao abordar grandes quantidades de informações armazenadas em sistemas diferentes, pode ser útil ajudar os usuários a filtrar a fonte e o conjunto de informações. Um único Banco de Dados SQL pode ter quantidades enormes de informações e, ao receber uma pesquisa de formulário livre, responde com muitas informações. Começando com o QnA Maker, você pode definir um roteiro para os usuários do Bot, para que eles saibam como fazer perguntas inteligentes que possam ser recuperadas por meio do Azure Search.
@@ -54,7 +57,7 @@ QnA Maker dos Serviços Cognitivos ajuda você a fornecer uma fonte de dados de 
 O Azure Search é um serviço de pesquisa de nuvem para aplicativos que permite a execução rápida de índices de pesquisa. Como ele está em execução no Microsoft Azure, você pode ampliar e reduzir conforme suas demandas de uso. Você pode relacionar os resultados da pesquisa às metas do negócio com mais controle sobre a classificação da pesquisa e sobre a exibição de dados ocultos em seus bancos de dados.
 
 ### <a name="application-insights"></a>Application Insights
-O Application Insights ajuda você a obter insights práticos através do APM (gerenciamento de desempenho de aplicativo) e análises instantâneas. Você conta, imediatamente, com o monitoramento de desempenho, alertas avançados e painéis simples de usar para ajudar a garantir que seu Bot esteja disponível e com o desempenho esperado. Veja rapidamente se há algum problema e faça uma análise da causa raiz para encontrar e corrigi-lo.
+O Application Insights ajuda a obter insights práticos pelo APM (gerenciamento de desempenho de aplicativo) e por análises instantâneas. Pronto para uso, é possível obter monitoramento de desempenho avançado, alertas eficientes e painéis fáceis de usar para ajudar a garantir que o Bot esteja disponível e executando conforme o esperado. Veja rapidamente se há algum problema e faça uma análise da causa raiz para encontrar e corrigi-lo.
 
 ## <a name="next-steps"></a>Próximas etapas
 Em seguida, saiba mais sobre o cenário de bot de Internet das Coisas.
