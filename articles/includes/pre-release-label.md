@@ -1,1 +1,2 @@
-**[Este tópico é uma documentação de pré-lançamento para o conteúdo do SDK V4 e está sujeita a alterações. Você pode encontrar o conteúdo do SDK V3 [aqui](https://docs.microsoft.com/en-us/azure/bot-service/?view=azure-bot-service-3.0)]**
+> [!NOTE] 
+> Este tópico é uma documentação de pré-lançamento para o conteúdo do SDK V4 e está sujeita a alterações. Pode encontrar o conteúdo do SDK V3 (estável) [aqui.](https://docs.microsoft.com/en-us/azure/bot-service/?view=azure-bot-service-3.0)
