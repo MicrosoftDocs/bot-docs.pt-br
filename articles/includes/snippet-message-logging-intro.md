@@ -1,0 +1,4 @@
+A funcionalidade **middleware** no SDK do Bot Builder permite interceptar todas as mensagens trocadas entre o usuário e o bot. Para cada mensagem interceptada, você poderá salvar a mensagem em um armazenamento de dados especificado, o que cria um log de conversa, ou inspecionar a mensagem de alguma forma e executar qualquer ação especificada pelo código. 
+
+> [!NOTE]
+> O Bot Framework não salva automaticamente os detalhes da conversa, pois fazer isso possivelmente iria capturar informações particulares que usuários e bots não querem compartilhar com participantes externos. Se o bot salva os detalhes de conversa, ele deve informar isso ao usuário e descrever o que será feito com os dados.
