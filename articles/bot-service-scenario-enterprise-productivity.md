@@ -8,14 +8,17 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 0dc869aa1464c086b6596ee83d8e6e488d8a8a55
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 4e0bde9d05ed49f6674b2d721e07235b26c5cea4
+ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296983"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39574742"
 ---
 # <a name="enterprise-productivity-bot-scenario"></a>Cenário de bot de Produtividade Empresarial
+
+[!INCLUDE [pre-release-label](includes/pre-release-label-v3.md)]
+
 O Bot Empresarial mostra como é possível aumentar a produtividade, integrando um bot com o calendário do Office 365 e outros serviços.
 
 Acessar rapidamente as informações do cliente sem a necessidade de abrir muitas janelas é o objetivo do bot de Produtividade Empresarial. Usando comandos simples de chat, um representante de vendas pode pesquisar um cliente e verificar o próximo compromisso por meio da API do Graph e do Office 365. A partir disso, o representante poderá acessar informações específicas do cliente armazenadas no Dynamics CRM como obter um caso ou criar um novo.

@@ -9,14 +9,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 5/10/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 62ff445e4aabf2afd41cc4bf1f15badb3f47e945
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: a5c55d4437033968f9c08ed49c07b9586cb9b7d8
+ms.sourcegitcommit: 9a38d76afb0e82fdccc1f36f9b1a65042671e538
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297408"
+ms.lasthandoff: 08/04/2018
+ms.locfileid: "39514966"
 ---
 # <a name="ask-the-user-questions"></a>Fazer as perguntas do usuário
+
+[!INCLUDE [pre-release-label](~/includes/pre-release-label.md)]
 
 No núcleo, um bot é construído em torno da conversa com um usuário. A conversa pode ter [várias formas](bot-builder-conversations.md): podem ser curtas ou mais complexas, podem estar fazendo perguntas ou respondendo perguntas. A forma da conversa depende de vários fatores, mas todos envolvem uma conversa.
 
@@ -182,7 +184,7 @@ Quando o usuário responder à pergunta, a resposta poderá ser encontrada no pa
 
 Agora que você definiu `dialogs` para fazer uma pergunta, será necessário chamar o diálogo para iniciar o processo de solicitação.
 
-## <a name="start-the-dialog"></a>Iniciar o diálogo
+## <a name="start-the-dialog"></a>Iniciar a caixa de diálogo
 
 # <a name="ctabcstab"></a>[C#](#tab/cstab)
 
@@ -252,7 +254,7 @@ A lógica de bot é dentro do método `processActivity()`. Quando o usuário dis
 
 Agora que abordamos como funciona um diálogo em cascata e como construir um, experimentaremos um diálogo mais complexo com o objetivo de reservar uma mesa.
 
-Para gerenciar a solicitação de reserva de mesa, será necessário definir um diálogo em **cascata** com quatro etapas. Nesta conversa, você também usará `DatetimePrompt` e `NumberPrompt` adicional a `TextPrompt`.
+Para gerenciar a solicitação de reserva de mesa, será necessário definir um diálogo em **cascata** com quatro etapas. Nesta conversa, você também usará um `DatetimePrompt` e `NumberPrompt` adicional ao `TextPrompt`.
 
 
 
@@ -337,7 +339,7 @@ public CafeBot()
 
 # <a name="javascripttabjstab"></a>[JavaScript](#tab/jstab)
 
-O diálogo `reserveTable` será semelhante a:
+O `reserveTable` caixa de diálogo terá esta aparência:
 
 ```javascript
 // Reserve a table:
@@ -408,7 +410,7 @@ dialogs.add('partySizePrompt', new botbuilder_dialogs.NumberPrompt());
 
 Agora, você está pronto para conectar isso à lógica do bot.
 
-## <a name="start-the-dialog"></a>Iniciar o diálogo
+## <a name="start-the-dialog"></a>Iniciar a caixa de diálogo
 
 # <a name="ctabcstab"></a>[C#](#tab/cstab)
 Modifique `OnTurn` do bot para conter o código a seguir:
@@ -485,7 +487,7 @@ server.post('/api/messages', (req, res) => {
 });
 ```
 
-Em tempo de execução, sempre que o usuário enviar a mensagem contendo a cadeia de caracteres `reserve table`, o bot iniciará a conversa `reserveTable`.
+No momento da execução, sempre que o usuário enviar a mensagem que contém a string `reserve table`, o bot iniciará a conversa `reserveTable`.
 
 ---
 

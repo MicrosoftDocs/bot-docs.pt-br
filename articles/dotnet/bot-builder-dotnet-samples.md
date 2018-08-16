@@ -7,20 +7,22 @@ manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
 ms.date: 05/03/2018
-ms.openlocfilehash: 7e19ec2c3e523003c0831544e42eeb88765d8317
-ms.sourcegitcommit: dcbc8ad992a3e242a11ebcdf0ee99714d919a877
+ms.openlocfilehash: 129c3a2b92297980e6b5e209f6e7f400a854d3a1
+ms.sourcegitcommit: 9a38d76afb0e82fdccc1f36f9b1a65042671e538
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39352855"
+ms.lasthandoff: 08/04/2018
+ms.locfileid: "39515066"
 ---
 ::: moniker range="azure-bot-service-3.0"
 
 # <a name="bot-builder-sdk-for-net-samples"></a>Exemplos de SDK do Construtor de Bot para .NET
 
+[!INCLUDE [pre-release-label](~/includes/pre-release-label-v3.md)]
+
 Estes exemplos demonstram bots centrados na tarefa que mostram como aproveitar os recursos no SDK do Construtor de Bot para .NET. Você pode usar os exemplos para ajudá-lo a começar a construir rapidamente excelentes bots com recursos avançados.
 
-## <a name="get-the-samples"></a>Obter as amostras
+## <a name="get-the-samples"></a>Obtenha as amostras
 Para obter as amostras, clone o repositório GitHub [BotBuilder-Samples](https://github.com/Microsoft/BotBuilder-Samples) usando o Git.
 
 ```cmd
@@ -30,31 +32,31 @@ cd BotBuilder-Samples
 
 Os bots de exemplo criados com o SDK do Construtor de Bot para .NET são organizados no diretório **CSharp**.
 
-Você também pode exibir os exemplos no GitHub e implantá-los diretamente no Azure.
+Você também pode visualizar as amostras no GitHub e implantá-las diretamente no Azure.
 
 ## <a name="core"></a>Núcleo
-Estes exemplos mostram as técnicas básicas para criar bots sofisticados e capazes.
+Estas amostras mostram as técnicas básicas para construir bots ricos e capazes.
 
 Amostra | DESCRIÇÃO
 ------------ | ------------- 
-[Enviar anexo](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-SendAttachment) | Um bot de exemplo que envia os anexos de mídia simples (imagens) para o usuário. 
+[Enviar o anexo](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-SendAttachment) | Um robô de amostra que envia anexos de mídia simples (imagens) ao usuário. 
 [Receber anexo](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-ReceiveAttachment) | Um bot de exemplo que recebe os anexos enviados pelo usuário e faz os downloads. 
-[Criar uma nova conversa](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-CreateNewConversation)  | Um bot de exemplo que inicia uma nova conversa usando um endereço de usuário armazenado anteriormente.
-[Obter membros de uma conversa](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-GetConversationMembers) | Um bot de exemplo que recupera a lista de membros da conversa e detecta quando ela é alterada. 
-[Linha direta](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-DirectLine) | Um bot de exemplo e um cliente personalizado que se comunicam entre si usando a API de linha direta. 
-[Linha direta (WebSockets)](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-DirectLineWebSockets) | Um bot de exemplo e um cliente personalizado que se comunicam entre si usando a API de linha direta + WebSockets. 
-[Várias caixas de diálogo](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-MultiDialogs) | Um bot de exemplo que mostra os vários tipos de caixas de diálogo.
-[API de estado](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-State) | Um bot de exemplo sem monitoração de estado que controla o contexto de uma conversa.
-[API de estado personalizada](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-CustomState) | Um bot de exemplo sem monitoração de estado que controla o contexto de uma conversa usando um provedor de armazenamento personalizado.
-[ChannelData](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-ChannelData) | Um bot de exemplo que envia os metadados nativos ao Facebook usando ChannelData.
-[AppInsights](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-AppInsights) | Um bot de exemplo que registra a telemetria em uma instância do Application Insights.
+[Criar nova conversa](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-CreateNewConversation)  | Um robô de amostra que inicia uma nova conversa usando um endereço de usuário armazenado anteriormente.
+[Obter membros de uma conversa](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-GetConversationMembers) | Um robô de amostra que recupera a lista de membros da conversa e detecta quando ela é alterada. 
+[Linha direta](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-DirectLine) | Um robô de amostra e um cliente personalizado que se comunicam entre si usando a API de linha direta. 
+[Linha direta (WebSockets)](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-DirectLineWebSockets) | Um robô de amostra e um cliente personalizado que se comunicam entre si usando o Direct Line API + WebSockets. 
+[Várias caixas de diálogo](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-MultiDialogs) | Um exemplo de bot que mostra vários tipos de diálogos.
+[API de estado](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-State) | Um robô de amostra stateless que rastreia o contexto de uma conversa.
+[API de estado personalizadas](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-CustomState) | Um robô de amostra stateless que rastreia o contexto de uma conversa usando um provedor de armazenamento personalizado.
+[ChannelData](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-ChannelData) | Um exemplo de bot que envia metadados nativos para o Facebook usando ChannelData.
+[AppInsights](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-AppInsights) | Um robô de amostra que registra a telemetria em uma instância do Application Insights.
 
 ## <a name="search"></a>Search
-Este exemplo mostra como usar o Azure Search em bots controlados por dados.
+Este exemplo mostra como usar o Azure Search em bots controlada por dados.
 
 Amostra | DESCRIÇÃO
 ------------ | -------------
-[Azure Search](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/demo-Search) | Dois bots de amostra que ajudam o usuário a navegar grandes quantidades de conteúdo.
+[Azure Search](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/demo-Search) | Dois bots de amostra que ajudam o usuário navegue grandes quantidades de conteúdo.
 
 
 ## <a name="cards"></a>Cartões
@@ -63,26 +65,26 @@ Estes exemplos mostram como enviar cartões ricos no Bot Framework.
 Amostra | DESCRIÇÃO
 ------------ | -------------
 [Cartões ricos](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/cards-RichCards) | Um bot de exemplo que envia vários tipos diferentes de cartões ricos.
-[Carrossel de cartões](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/cards-CarouselCards) | Um bot de exemplo que envia vários cartões ricos dentro de uma única mensagem usando o layout de carrossel.
+[Carrossel de cartões](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/cards-CarouselCards) | Um robô de amostra que envia vários cartões ricos em uma única mensagem usando o layout Carrossel.
 
 ## <a name="intelligence"></a>Inteligência
-Estes exemplos mostram como adicionar recursos de inteligência artificial para um bot usando o Bing e APIs de Serviços Cognitivos da Microsoft.
+Esses exemplos mostram como adicionar recursos de inteligência artificial a um bot usando as APIs do Bing e Microsoft Cognitive Services.
 
 Amostra | DESCRIÇÃO
 ------------ | -------------
-[LUIS](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/intelligence-LUIS) | Um bot de exemplo que usa o diálogo LUIS para integrar um aplicativo LUIS.ai.
-[Legenda da imagem](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/intelligence-ImageCaption) | Um bot de exemplo que obtém uma legenda de imagem usando a API de Visão de Serviços Cognitivos da Microsoft.
-[Conversão de Fala em Texto](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/intelligence-SpeechToText)  | Um bot de exemplo que obtém o texto de áudio usando a API de Fala do Bing.
-[Produtos similares](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/intelligence-SimilarProducts) | Um bot de exemplo que localiza produtos visualmente similares usando a API de Pesquisa de Imagem do Bing. 
-[Zummer](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/intelligence-Zummer) | Um bot de exemplo que localiza artigos da Wikipédia usando a API de Pesquisa do Bing.
+[LUIS](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/intelligence-LUIS) | Um robô de amostra que usa o LuisDialog para integrar com um aplicativo LUIS.ai.
+[Legenda da imagem](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/intelligence-ImageCaption) | Um robô de amostra que obtém uma legenda de imagem usando a API do Microsoft Cognitive Services Vision.
+[Conversão de fala em texto](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/intelligence-SpeechToText)  | Um robô de amostra que obtém texto do áudio usando a Bing Speech API.
+[ Produtos semelhantes ](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/intelligence-SimilarProducts) | Um robô de amostra que encontra produtos visualmente semelhantes usando a API de pesquisa de imagens do Bing. 
+[Zummer](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/intelligence-Zummer) | Um robô de amostra que encontra artigos da Wikipédia usando a API de pesquisa do Bing.
 
 ## <a name="reference-implementation"></a>Implementação de referência
-Este exemplo é projetado para demonstrar um cenário de ponta a ponta. É uma ótima fonte de fragmentos de código se você estiver procurando implementar recursos mais complexos em seu bot.
+Este exemplo foi projetado para mostrar um cenário de ponta a ponta. É uma ótima fonte de fragmentos de código se você estiver procurando implementar recursos mais complexos em seu bot.
 
 
 Amostra | DESCRIÇÃO
 ------------ | -------------
-[Contoso Flowers](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/demo-ContosoFlowers) | Um bot de exemplo que usa muitos recursos do Bot Framework.
+[Flores Contoso](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/demo-ContosoFlowers) | Um bot de exemplo que usa muitos recursos do Bot Framework.
 
 ::: moniker-end
 

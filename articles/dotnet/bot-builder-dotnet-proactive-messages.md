@@ -8,14 +8,17 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: f338a405ccc74e66606c0eba5604776edb1fc1ff
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: f5cc520704c4bebef6250195fd3e6cbdc3b0be3f
+ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297163"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39574952"
 ---
 # <a name="send-proactive-messages"></a>Enviar mensagens proativas
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
+
 > [!div class="op_single_selector"]
 > - [.NET](../dotnet/bot-builder-dotnet-proactive-messages.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-proactive-messages.md)
@@ -177,7 +180,7 @@ Para obter um exemplo completo mostrando como enviar mensagens proativas usando 
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [Projetar e controlar fluxo de conversa](../bot-service-design-conversation-flow.md)
+- [Design e controle de fluxo da conversa](../bot-service-design-conversation-flow.md)
 - <a href="/dotnet/api/?view=botbuilder-3.11.0" target="_blank">Referência do SDK do Bot Builder para .NET</a>
 - <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-proactiveMessages" target="_blank">Exemplo de mensagens proativas (GitHub)</a>
 

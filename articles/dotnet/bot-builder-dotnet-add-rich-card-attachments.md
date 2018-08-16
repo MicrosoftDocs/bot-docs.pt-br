@@ -8,14 +8,17 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 4552fd8a38468b000837ef0f580d3a0e504a882b
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 9eb07a4ac63816b84830956bca0c3a3910669e0d
+ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296997"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39574524"
 ---
-# <a name="add-rich-card-attachments-to-messages"></a>Adicionar anexos de cartão avançado às mensagens
+# <a name="add-rich-card-attachments-to-messages"></a>Adicionar anexos de cartão avançados às mensagens
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
+
 > [!div class="op_single_selector"]
 > - [.NET](../dotnet/bot-builder-dotnet-add-rich-card-attachments.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-send-rich-cards.md)
@@ -32,14 +35,14 @@ Atualmente, o Bot Framework dá suporte a oito tipos de cartões avançados:
 
 | Tipo de cartão | DESCRIÇÃO |
 |----|----|
-| <a href="/adaptive-cards/get-started/bots">Cartão adaptável</a> | Um cartão personalizável que pode conter qualquer combinação de texto, fala, imagens, botões e campos de entrada. Consulte [suporte por canal](/adaptive-cards/get-started/bots#channel-status).  |
+| <a href="/adaptive-cards/get-started/bots">Cartão adaptável</a> | Um cartão personalizável que pode conter qualquer combinação de texto, fala, imagens, botões e campos de entrada. Confira [suporte por canal](/adaptive-cards/get-started/bots#channel-status).  |
 | [Cartão de animação][animationCard] | Um cartão que pode reproduzir GIFs animados ou vídeos curtos. |
-| [Placa de áudio][audioCard] | Um cartão que pode reproduzir um arquivo de áudio. |
-| [Cartão Hero][heroCard] | Um cartão que normalmente contém uma única imagem grande, um ou mais botões e texto. |
-| [Cartão de miniatura][thumbnailCard] | Um cartão que geralmente contém uma única imagem em miniatura, um ou mais botões e texto. |
-| [Cartão de recebimento][receiptCard] | Um cartão que permite que um bot forneça um recibo ao usuário. Normalmente, contém a lista de itens a serem incluídos no recebimento, em informações fiscais e totais e em outros textos. |
-| [Cartão de entrada][signinCard] | Um cartão que permite que um bot solicite a entrada do usuário. Normalmente contém texto e um ou mais botões que o usuário pode clicar para iniciar o processo de entrada. |
-| [Placa de vídeo][videoCard] | Uma placa que pode reproduzir vídeos. |
+| [Cartão de áudio][audioCard] | Um cartão que pode reproduzir um arquivo de áudio. |
+| [Cartão Hero][heroCard] | Um cartão que geralmente contém uma única imagem grande, um ou mais botões e um texto. |
+| [Cartão em miniatura][thumbnailCard] | Um cartão que geralmente contém uma única imagem em miniatura, um ou mais botões e um texto. |
+| [Cartão de recibo][receiptCard] | Um cartão que permite a um bot fornecer um recibo para o usuário. Normalmente, contém a lista de itens a serem incluídos no recebimento, em informações fiscais e totais e em outros textos. |
+| [Cartão de entrada][signinCard] | Um cartão que permite que um bot solicite a entrada do usuário. Normalmente, contém um texto e um ou mais botões nos quais o usuário pode clicar para iniciar o processo de entrada. |
+| [Cartão de vídeo][videoCard] | Uma placa que pode reproduzir vídeos. |
 
 > [!TIP]
 > Para exibir vários cartões avançados no formato de lista, defina a propriedade `AttachmentLayout` como "lista". Para exibir vários cartões avançados no formato de carrossel, defina a propriedade `AttachmentLayout` da atividade como "carrossel". Se o canal não der suporte para formato de carrossel, ele exibirá os cartões avançados no formato de lista, mesmo se a propriedade `AttachmentLayout` especificar "carrossel".
@@ -64,7 +67,7 @@ Essa tabela lista os valores válidos para `CardAction.Type` e descreve o conte�
 |----|----|
 | openUrl | URL a ser aberta no navegador interno |
 | imBack | Texto da mensagem para enviar ao bot (do usuário que clicou no botão ou tocou no cartão). Essa mensagem (do usuário ao bot) ficará visível a todos os participantes da conversa por meio do aplicativo cliente que hospeda a conversa. |
-| postBack | Texto da mensagem para enviar ao bot (do usuário que clicou no botão ou tocou no cartão). Alguns aplicativos cliente podem exibem esse texto no feed de mensagens, onde ficará visível a todos os participantes da conversa. |
+| postBack | Texto da mensagem para enviar ao bot (do usuário que clicou no botão ou tocou no cartão). Alguns aplicativos cliente podem exibir esse texto no feed de mensagem, onde ficará visível a todos os participantes da conversa. |
 | chamada | Destino de uma chamada telefônica neste formato: **tel:123123123123** |
 | playAudio | URL do áudio para reprodução |
 | playVideo | URL do vídeo para reprodução |

@@ -8,14 +8,17 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 06be4330d34068bf86466b04686d6636971d0a5e
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 8d1ae09585898ce8babde6c06e525a0ade46c761
+ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297511"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39574912"
 ---
 # <a name="bot-scenarios"></a>Cenário de bots
+
+[!INCLUDE [pre-release-label](includes/pre-release-label-v3.md)]
+
 Este tópico explora os principais cenários para bots poderosos e eficazes construídos usando o Serviço de Bot.
 
 É possível baixar ou clonar o código-fonte para todos os cenários de exemplos de bot em [Exemplos para cenários comuns do Framework Bot](https://aka.ms/bot/scenarios).

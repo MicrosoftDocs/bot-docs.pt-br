@@ -8,14 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 0eb14f4bf52a293d3405762c786259f771aecad6
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 43c178c4bbdf0bb04384bb8ada397066e6f7dd12
+ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297153"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39574612"
 ---
 # <a name="bot-builder-sdk-for-nodejs-samples"></a>SDK do construtor de bot para obter exemplos de Node. js
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
 Esses exemplos demonstram bots com foco em tarefas que mostram como aproveitar os recursos do SDK do Bot Builder para Node.js. Você pode usar as amostras para ajudá-lo a começar rapidamente a criar grandes bots com recursos avançados.
 
@@ -37,7 +39,7 @@ Estas amostras mostram as técnicas básicas para construir bots ricos e capazes
 Amostra | DESCRIÇÃO
 ------------ | ------------- 
 [Enviar o anexo](https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/core-SendAttachment) | Um robô de amostra que envia anexos de mídia simples (imagens) ao usuário. 
-[Receber anexo](https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/core-ReceiveAttachment) | Um robô de amostra que recebe anexos enviados pelo usuário e faz o download deles. 
+[Receber anexo](https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/core-ReceiveAttachment) | Um bot de exemplo que recebe os anexos enviados pelo usuário e faz os downloads. 
 [Criar nova conversa](https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/core-CreateNewConversation)  | Um robô de amostra que inicia uma nova conversa usando um endereço de usuário armazenado anteriormente.
 [Obter membros de uma conversa](https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/core-GetConversationMembers) | Um robô de amostra que recupera a lista de membros da conversa e detecta quando ela é alterada. 
 [Linha direta](https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/core-DirectLine) | Um robô de amostra e um cliente personalizado que se comunicam entre si usando a API de linha direta. 

@@ -9,14 +9,17 @@ ms.topic: get-started-article
 ms.prod: bot-framework
 ms.date: 04/27/2018
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: fcb21fa38750c09f110a3c71f763a941c4437979
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 16ca658dddbba987545b7aa18c1e8f63f13983f1
+ms.sourcegitcommit: 97bb24f15041caccef4ca5736aa14f144881e0c6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297392"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39567565"
 ---
 # <a name="create-a-bot-with-the-bot-builder-sdk-for-net"></a>Criar um bot com o SDK do construtor de Bot para .NET
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
+
 > [!div class="op_single_selector"]
 > - [.NET](../dotnet/bot-builder-dotnet-quickstart.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-quickstart.md)

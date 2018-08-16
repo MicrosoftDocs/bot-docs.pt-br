@@ -8,12 +8,12 @@ manager: rstand
 ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/17/2017
-ms.openlocfilehash: 2a558694cb96dd199894627146947ae1e7345183
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 168e538720423721a21b720b811d559d8c811adb
+ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297397"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39574572"
 ---
 # <a name="add-intelligence-to-bots-with-cognitive-services"></a>Adicionar inteligência aos bots com Serviços Cognitivos
 

@@ -8,14 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: c8919712331a5f78bdbc35f28adeab966435d737
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 2a5c9dcad0d9fd70caaf28ff7ac95830bd47e2d6
+ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296988"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39574592"
 ---
 # <a name="send-and-receive-activities"></a>Enviar e receber atividades
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
 O Bot Framework Connector oferece uma única API REST que permite a um bot se comunicar por diversos canais, como Skype, Email, Slack e mais. Ele facilita a comunicação entre o bot e o usuário por mensagens de retransmissão do bot ao canal e do canal ao bot. 
 
