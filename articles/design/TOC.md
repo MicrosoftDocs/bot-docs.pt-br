@@ -2,7 +2,7 @@
 # [Primeira interação](../bot-service-design-first-interaction.md)
 # [Design e controle de fluxo](../bot-service-design-conversation-flow.md)
 # [Navegação](../bot-service-design-navigation.md)
-# [Elementos da experiência do usuário](../bot-service-design-user-experience.md)
+# [Componentes de IU](../bot-service-design-user-experience.md)
 # Padrões
 ## [Automação de tarefas](../bot-service-design-pattern-task-automation.md)
 ## [Base de conhecimento](../bot-service-design-pattern-knowledge-base.md)
