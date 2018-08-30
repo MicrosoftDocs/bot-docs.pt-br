@@ -8,14 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: d24e43a3f48db024ab55c2089acbc42edebab929
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 3ad843530b70b75a6db728a399a315534d2234ac
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297347"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42904189"
 ---
 # <a name="customize-a-form-using-formbuilder"></a>Personalizar um formulário usando FormBuilder
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
 [Recursos básicos do FormFlow](bot-builder-dotnet-formflow.md) descrevem uma implementação básica do FormFlow que proporciona uma experiência de usuário bastante genérica, e [recursos avançados do FormFlow](bot-builder-dotnet-formflow-advanced.md) descrevem como você pode personalizar a experiência do usuário usando lógica e atributos de negócios. Este artigo descreve como você pode usar [FormBuilder][formBuilder] para personalizar ainda mais, a experiência do usuário, especificando a sequência na qual o formulário executa as etapas e definindo dinamicamente valores de campo as confirmações e mensagens. 
 
@@ -83,7 +85,7 @@ Neste exemplo, o formulário executa estas etapas:
 - [Localizar o conteúdo do formulário](bot-builder-dotnet-formflow-localize.md)
 - [Definir um formulário usando o esquema JSON](bot-builder-dotnet-formflow-json-schema.md)
 - [Personalizar a experiência do usuário com o idioma padrão](bot-builder-dotnet-formflow-pattern-language.md)
-- <a href="/dotnet/api/?view=botbuilder-3.11.0" target="_blank">Construtor de bot do SDK para referência do .NET</a>
+- <a href="/dotnet/api/?view=botbuilder-3.11.0" target="_blank">Referência do SDK do Construtor de Bot para .NET</a>
 
 [formBuilder]: /dotnet/api/microsoft.bot.builder.formflow.formbuilder-1
 
