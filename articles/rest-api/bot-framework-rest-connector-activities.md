@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
-ms.openlocfilehash: cf8da2240df7edbb6ea8c858829e71089b7e72cb
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 565f71dee4269ecd67dabe18af57e36defcfb3fc
+ms.sourcegitcommit: e8c513d3af5f0c514cadcbcd0a737a7393405afa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297412"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42756738"
 ---
 # <a name="activities-overview"></a>Visão geral das atividades
 
@@ -28,7 +28,6 @@ Há suporte para os seguintes tipos de atividade pelo Bot Connector.
 | conversationUpdate | Indica que o bot foi adicionado a uma conversa, outros membros foram adicionados ou removidos da conversa ou houve alteração de metadados da conversa. |
 | contactRelationUpdate | Indica que o bot foi adicionado ou removido da lista de contatos do usuário. |
 | digitação | Indica que o usuário ou o bot na outra extremidade da conversa está compilando uma resposta. | 
-| ping | Representa uma tentativa de determinar se o ponto de extremidade do bot está acessível. | 
 | deleteUserData | Indica para um bot que um usuário solicitou ao bot a exclusão de quaisquer dados de usuário que ele possa ter armazenado. |
 | endOfConversation | Indica o final de uma conversa. |
 
@@ -52,10 +51,6 @@ Um bot receberá uma atividade de **contactRelationUpdate** sempre que for adici
 ## <a name="typing"></a>digitação
 
 A bot recebe uma atividade **digitação** para indicar que o usuário está digitando uma resposta. Um bot pode enviar uma atividade **digitação** para indicar ao usuário que está trabalhando para atender uma solicitação ou compilar uma resposta. 
-
-## <a name="ping"></a>ping
-
-Um bot recebe uma atividade **ping** para determinar se o seu ponto de extremidade é acessível. O bot deve responder com o código de status HTTP 200 (OK), 403 (Proibido) ou 401 (Não autorizado).
 
 ## <a name="deleteuserdata"></a>deleteUserData
 
