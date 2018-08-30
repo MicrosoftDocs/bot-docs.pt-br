@@ -8,14 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 571851001e565dd54d4254b692c9209729bc5432
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: aa20dc396b68ede3271d12a8deab2e673a79d1d1
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297267"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42904478"
 ---
 # <a name="prompt-for-user-input"></a>Prompt de entrada do usuário
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
 O SDK do Bot Builder para Node.js fornece um conjunto de instruções internas para simplificar a coleta de entradas de um usuário. 
 
@@ -115,7 +117,7 @@ Use o método [Prompts.time()][PromptsTime] para pedir ao usuário uma **hora** 
 O campo [results.response](http://docs.botframework.com/en-us/node/builder/chat-reference/interfaces/_botbuilder_d_.iprompttimeresult.html#response), que representa a resposta do usuário, contém um objeto [entity](http://docs.botframework.com/en-us/node/builder/chat-reference/interfaces/_botbuilder_d_.ientity.html) que especifica a data e a hora. Para resolver a data e hora em um objeto `Date` do JavaScript, use o método [EntityRecognizer.resolveTime()](http://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.entityrecognizer.html#resolvetime).
 
 > [!TIP] 
-> A hora que o usuário insere é convertida em hora UTC com base no fuso horário do servidor que hospeda o bot. Uma vez que o servidor pode estar localizado em um fuso horário diferente do usuário, lembre-se de levar consideração os fusos horários. Para converter a data e a hora para a hora local do usuário, considere solicitar ao usuário o seu respectivo fuso horário.
+> A hora que o usuário insere é convertida em hora UTC com base no fuso horário do servidor que hospeda o bot. Como o servidor pode estar localizado em um fuso horário diferente do usuário, lembre-se de considerar os fusos horários. Para converter a data e a hora para a hora local do usuário, considere solicitar ao usuário o seu respectivo fuso horário.
 
 ```javascript
 bot.dialog('createAlarm', [

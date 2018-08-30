@@ -8,29 +8,33 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: b98eea6bdae097beec85e93301e5380a1de991c3
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: fc260f34f28e406dc88dd5b688d84cd79c7e9449
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297184"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42905948"
 ---
 # <a name="recognize-intents-and-entities-with-luis"></a>Reconhecer intenções e entidades com o LUIS 
 
-Este artigo usa o exemplo de um bot para fazer anotações, para demonstrar como Reconhecimento Vocal ([LUIS][LUIS]) ajuda seu bot a responder adequadamente à entrada de idioma natural. Um bot detecta o que um usuário deseja fazer, identificando suas **intenções**. A intenção é determinada por entradas faladas ou textuais, ou por **declarações**. A intenção mapeia declarações para ações executadas pelo bot. Por exemplo, um bot de anotações reconhece uma intenção `Notes.Create` de invocar a funcionalidade para a criação de uma anotação. Um bot também pode precisar extrair **entidades**, que são palavras importantes em declarações. No exemplo de um bot de anotações, a entidade `Notes.Title` identifica o título de cada nota.
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
+
+Este artigo usa o exemplo de um bot para fazer anotações, visando demonstrar como o Reconhecimento Vocal ([LUIS][LUIS]) ajuda o bot a responder adequadamente à entrada de idioma natural. Um bot detecta o que um usuário deseja fazer identificando a **intenção** desse usuário. A intenção é determinada por entradas faladas ou textuais, ou por **declarações**. A intenção mapeia declarações para ações executadas pelo bot. Por exemplo, um bot de anotações reconhece uma intenção `Notes.Create` de invocar a funcionalidade para a criação de uma anotação. Um bot também pode precisar extrair **entidades**, que são palavras importantes em declarações. No exemplo de um bot de anotações, a entidade `Notes.Title` identifica o título de cada nota.
 
 ## <a name="create-a-language-understanding-bot-with-bot-service"></a>Criar um bot de Reconhecimento vocal com o serviço de bot
 
-1. No [Portal do Azure](https://portal.azure.com), selecione **Criar novo recurso** na folha de menu e clique em **Ver tudo**.<!-- Start with the steps in [Create a bot with Bot Service](../bot-service-quickstart.md) to start creating a new bot service.  -->
+1. No [portal do Azure](https://portal.azure.com), selecione **Criar novo recurso** na folha de menu e clique em **Ver tudo**.
 
-    ![Criar novo recurso](../media/bot-builder-dotnet-use-luis/bot-service-creation.png)
+<!-- Start with the steps in [Create a bot with Bot Service](../bot-service-quickstart.md) to start creating a new bot service.  -->
 
-2. Na caixa de pesquisa, pesquise **Bot do aplicativo Web**. 
+    ![Create new resource](../media/bot-builder-dotnet-use-luis/bot-service-creation.png)
+
+2. Na caixa Pesquisar, procure **Bot do aplicativo Web**. 
 
     ![Criar novo recurso](../media/bot-builder-dotnet-use-luis/bot-service-selection.png)
 
 3. Na folha **Serviço de Bot**, forneça as informações necessárias e clique em **Criar**. Isso cria e implanta o serviço de bot e o aplicativo LUIS no Azure. 
-   * Defina **Nome do aplicativo** como o nome do bot. O nome é usado como o subdomínio quando o bot é implantado na nuvem (por exemplo, mynotesbot.azurewebsites.net). Esse nome também é usado como o nome do aplicativo LUIS associado ao seu bot. Copie-o para uso posterior, para localizar o aplicativo LUIS associado ao bot.
+   * Defina **Nome do aplicativo** como o nome do bot. O nome é usado como o subdomínio quando o bot é implantado na nuvem (por exemplo, mynotesbot.azurewebsites.net). Esse nome também é usado como o nome do aplicativo LUIS associado ao bot. Copie-o para uso posterior, de modo a localizar o aplicativo LUIS associado ao bot.
    * Selecione a assinatura, o [grupo de recursos](/azure/azure-resource-manager/resource-group-overview), o plano do serviço de aplicativo e o [local](https://azure.microsoft.com/en-us/regions/).
    * Selecione o modelo **Reconhecimento vocal (C#)** para o campo **Modelo de bot**.
 
@@ -54,15 +58,15 @@ O bot responde dizendo "Você atingiu a Saudação. Você disse: Olá". Isso con
 
 ## <a name="modify-the-luis-app"></a>Modificar o aplicativo LUIS
 
-Faça logon no [https://www.luis.ai](https://www.luis.ai) usando a mesma conta usada para fazer logon no Azure. Clique em **Meus aplicativos**. Na lista de aplicativos, encontre o aplicativo que começa com o nome especificado em **Nome do aplicativo** na folha **Serviço de Bot** quando você criou o Serviço de Bot. 
+Faça logon no [https://www.luis.ai](https://www.luis.ai) usando a mesma conta usada para fazer logon no Azure. Clique em **Meus aplicativos**. Na lista de aplicativos, localize o aplicativo que começa com o nome especificado em **Nome do aplicativo** na folha **Serviço de Bot** quando você criou o Serviço de Bot. 
 
-O aplicativo LUIS começa com 4 intenções: Cancelar: Saudação, Ajuda e Nenhuma. <!-- picture -->
+O aplicativo LUIS inicia com 4 intenções: Cancelar: Saudação, Ajuda e Nenhuma. <!-- picture -->
 
 As etapas a seguir adicionam as intenções Note.Create, Note.ReadAloud e Note.Delete: 
 
 1. Clique em **Domínios Pré-criados** no canto inferior esquerdo da página. Encontre o domínio **Note** e clique em **Adicionar domínio**.
 
-2. Este tutorial não usa todas as intenções incluídas no domínio pré-criado **Note**. Na página **Intenções**, clique em cada um dos nomes de intenção a seguir e, depois, clique no botão **Excluir Intenção**.
+2. Este tutorial não usa todas as intenções incluídas no domínio pré-criado **Note**. Na página **Intenções**, clique em cada um dos nomes de intenção a seguir e, em seguida, clique no botão **Excluir Intenção**.
    * Note.ShowNext
    * Note.DeleteNoteItem
    * Note.Confirm
@@ -81,8 +85,8 @@ As etapas a seguir adicionam as intenções Note.Create, Note.ReadAloud e Note.D
 
      ![intenções mostradas no aplicativo LUIS](../media/bot-builder-dotnet-use-luis/luis-intent-list.png)
 
-3. Clique no botão **Treinar** no canto superior direito para treinar seu aplicativo.
-4. Clique em **PUBLICAR** na barra de navegação superior para abrir a página **Publicar**. Clique no botão **Publicar no slot de produção**. Após a publicação bem-sucedida, copie a URL exibida na coluna **Ponto de extremidade**, na página **Publicar Aplicativo**, na linha que começa com o Nome de Recurso Starter_Key. Salve essa URL para usar posteriormente no código do seu bot. A URL tem um formato semelhante a este exemplo: `https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?subscription-key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&timezoneOffset=0&verbose=true&q=`
+3. Clique no botão **Treinar** no canto superior direito para treinar o aplicativo.
+4. Clique em **PUBLISH** na barra de navegação superior para abrir a página **Publicar**. Clique no botão **Publicar no slot de produção**. Após a publicação bem-sucedida, copie a URL exibida na coluna **Ponto de extremidade**, na página **Publicar Aplicativo**, na linha que começa com o Nome de Recurso Starter_Key. Salve essa URL para usar posteriormente no código do seu bot. A URL tem um formato semelhante a este exemplo: `https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx?subscription-key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&timezoneOffset=0&verbose=true&q=`
 
 ## <a name="modify-the-bot-code"></a>Modificar o código do bot
 
@@ -362,8 +366,8 @@ Clique duas vezes em **build.cmd** no editor de código e escolha **Executar no 
 
 ## <a name="test-the-bot"></a>Testar o bot
 
-No Portal do Azure, clique em **Testar no Chat na Web** para testar o bot. Tente digitar mensagens como "Criar uma nota", "ler minhas anotações" e "excluir anotações".
-   ![Testar o bot no Chat na Web](../media/bot-builder-dotnet-use-luis/bot-service-test-notebot.png)
+No portal do Azure, clique em **Testar no Webchat** para testar o bot. Tente digitar mensagens como "Criar uma nota", "ler minhas anotações" e "excluir anotações".
+   ![Testar o bot de anotações no Webchat](../media/bot-builder-dotnet-use-luis/bot-service-test-notebot.png)
 
 > [!TIP]
 > Se você achar que seu bot nem sempre reconhece a intenção ou entidades corretas, melhore o desempenho do seu aplicativo LUIS dando mais declarações de exemplo para treiná-lo. É possível treinar novamente seu aplicativo LUIS sem nenhuma modificação no código do seu bot. Confira [Add example utterances](/azure/cognitive-services/LUIS/add-example-utterances) (Adicionar declarações de exemplo) e [treinar e testar seu aplicativo LUIS](/azure/cognitive-services/LUIS/train-test).
@@ -383,9 +387,9 @@ A experimentar o bot, você pode ver como as tarefas são invocadas por uma inte
 ## <a name="additional-resources"></a>Recursos adicionais
 
 - [Diálogos](bot-builder-dotnet-dialogs.md)
-- [Gerenciar fluxo de conversas com diálogos](bot-builder-dotnet-manage-conversation-flow.md)
+- [Gerencie o fluxo de conversas com caixas de diálogo](bot-builder-dotnet-manage-conversation-flow.md)
 - <a href="https://www.luis.ai" target="_blank">LUIS</a>
-- <a href="/dotnet/api/?view=botbuilder-3.11.0" target="_blank">Referência do SDK do Construtor de Bot para .NET</a>
+- <a href="/dotnet/api/?view=botbuilder-3.11.0" target="_blank">SDK do Construtor de Bot para referência .NET</a>
 
 [LUIS]: https://www.luis.ai/
 [NotesSample]: https://github.com/Microsoft/BotFramework-Samples/tree/master/docs-samples/CSharp/Simple-LUIS-Notes-Sample

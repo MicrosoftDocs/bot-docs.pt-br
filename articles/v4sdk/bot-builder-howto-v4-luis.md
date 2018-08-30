@@ -9,14 +9,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 4/30/17
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 9a04a73e8ac8716ec528586e069aa2d16d90e28f
-ms.sourcegitcommit: f95702d27abbd242c902eeb218d55a72df56ce56
+ms.openlocfilehash: 88651a2c86698d55e3a429d7ea62662976d2115f
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39297538"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42906160"
 ---
 # <a name="using-luis-for-language-understanding"></a>Usando o LUIS para Compreensão de Linguagem
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
 A capacidade de entender o que seu usuário significa em conversação e contextualmente pode ser uma tarefa difícil, mas pode dar ao seu bot uma sensação de conversa mais natural. O Language Understanding, chamado LUIS, permite que você faça exatamente isso para que seu bot possa reconhecer a intenção das mensagens do usuário, permitir uma linguagem mais natural do seu usuário e direcionar melhor o fluxo de conversação. Se você precisar de mais informações sobre como o LUIS se integra com um bot, veja [entendimento de linguagem para bots](./bot-builder-concept-LUIS.md). 
 

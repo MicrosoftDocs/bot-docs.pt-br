@@ -9,16 +9,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 4/23/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 539e9e1cd772495d849ce106ee7d6a157fc1a9c0
-ms.sourcegitcommit: 9a38d76afb0e82fdccc1f36f9b1a65042671e538
+ms.openlocfilehash: 28377a1e611464012df28d3edf78d1cf01351345
+ms.sourcegitcommit: 44f100a588ffda19c275b118f4f97029f12d1449
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39515076"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42928364"
 ---
 # <a name="persist-user-data"></a>Manter os dados de usuário
 
-[!INCLUDE [pre-release-label](~/includes/pre-release-label.md)]
+[!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
 Quando o bot pede dados entrada aos usuários, é provável que você deseje manter algumas informações no armazenamento de algum formulário. O SDK do Construtor de Bot permite armazenar entradas do usuário usando *armazenamento na memória*, *armazenamento de arquivos* ou armazenamento de banco de dados, como *CosmosDB* ou *SQL*, nos quais os tipos de armazenamento local são usados principalmente para teste ou a criação de protótipos, sendo que os tipos de armazenamento posteriores são melhores para bots de produção.
 

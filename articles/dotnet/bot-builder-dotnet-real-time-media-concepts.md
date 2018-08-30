@@ -8,14 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 255248449ab7adb6512db93ece51389d65c01dee
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: eed4ac20664d15fbc40969551a1f23fc91b4f120
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296842"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42906220"
 ---
 # <a name="real-time-media-calling-with-skype"></a>Chamada de mídia em tempo real com o Skype
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
 A Plataforma de Mídia em Tempo Real para Bots adiciona uma nova dimensão para como os bots podem interagir com os usuários, permitindo as modalidades de voz, vídeo e compartilhamento de tela em tempo real. Isso fornece a capacidade de criar bots de entretenimento, educacionais e de assistência cativantes e interativos. Os usuários se comunicam com os bots de mídia em tempo real usando o Skype.
 

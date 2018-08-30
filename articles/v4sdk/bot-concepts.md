@@ -9,16 +9,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 03/28/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: abb2b18d45fb722d7de98c5cd02bd88350aad803
-ms.sourcegitcommit: 9a38d76afb0e82fdccc1f36f9b1a65042671e538
+ms.openlocfilehash: eaf1a8f714ea8711985b732f797951d241abbca2
+ms.sourcegitcommit: 44f100a588ffda19c275b118f4f97029f12d1449
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39515086"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42928294"
 ---
 # <a name="channels-and-the-bot-connector-service"></a>Canais e o Serviço do Bot Connector
 
-[!INCLUDE [pre-release-label](~/includes/pre-release-label.md)]
+[!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
 Canais são os pontos de extremidade que um usuário está conectando ao bot como Facebook, Skype, Email, Slack, etc. O Serviço do Bot Connector, configurado através do [portal do Azure](https://portal.azure.com), conecta o bot a esses canais e facilita a comunicação entre o bot e o usuário. 
 

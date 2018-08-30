@@ -8,14 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: d1a2eca2ebdfccf6dacdf773c48c8b41444559ca
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 4343e9742d6bfabeab1ccb6a96f0d379d824125e
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296784"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42905730"
 ---
 # <a name="replace-dialogs"></a>Substituir diálogos
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
 A capacidade de substituir um diálogo pode ser útil quando você precisa validar a entrada do usuário ou repetir uma ação no decorrer de uma conversa. Com o SDK do Construtor de Bot para Node.js, você pode substituir um diálogo usando o método [`session.replaceDialog`](http://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session#replacedialog). Esse método permite que você encerre o diálogo atual e substitua-o por um novo diálogo sem retornar ao chamador. 
 

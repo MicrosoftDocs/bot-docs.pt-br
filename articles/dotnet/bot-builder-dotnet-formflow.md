@@ -8,14 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: f38424c2fa86fd4456ab6f8dee81bde71bfd6753
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: cf3d69f7941d8c3177788bd00e4b58416a71cf5e
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296792"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42904620"
 ---
 # <a name="basic-features-of-formflow"></a>Recursos básicos do FormFlow
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
 Os [diálogos](bot-builder-dotnet-dialogs.md) são muito poderosos e flexíveis, mas administrar uma conversa interativa, como pedir um sanduíche, pode exigir muito esforço. Em cada ponto na conversa, há muitas possibilidades sobre o que acontecerá em seguida. Por exemplo, talvez você precise esclarecer alguma ambiguidade, fornecer ajuda, voltar ou mostrar o progresso. Usando o **FormFlow** dentro do SDK do construtor de bot para .NET, você poderá simplificar muito o processo de gerenciar uma conversa interativa como esta. 
 

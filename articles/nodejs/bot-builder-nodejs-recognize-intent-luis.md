@@ -8,14 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 03/28/2018
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 9c1a0944a24af3f2a51a90818890c50edfe139d4
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 82a4d0843a9aaab25779d833f2b1b1d2ab2516c2
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297125"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42905098"
 ---
 # <a name="recognize-intents-and-entities-with-luis"></a>Reconhecer intenções e entidades com o LUIS 
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
 Este artigo usa o exemplo de um bot para fazer anotações, visando demonstrar como o Reconhecimento Vocal ([LUIS][LUIS]) ajuda o bot a responder adequadamente à entrada de idioma natural. Um bot detecta o que um usuário deseja fazer identificando a **intenção** desse usuário. A intenção é determinada por entradas textuais ou faladas, ou por **enunciados**. A intenção mapeia enunciados para ações que o bot executa, como chamar um diálogo. Um bot também pode precisar extrair **entidades**, que são palavras importantes em enunciados. Às vezes, entidades são necessárias para cumprir uma intenção. No exemplo de um bot de anotações, a entidade `Notes.Title` identifica o título de cada nota.
 

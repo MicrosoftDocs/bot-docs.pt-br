@@ -8,14 +8,17 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/17
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: ce58c210123219c14f580d7164c759307ac2237b
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 29359a2a0489863679158d87cdc4af2f3b52e232
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297395"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42904240"
 ---
 # <a name="request-payment"></a>Solicitar pagamento
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
+
 > [!div class="op_single_selector"]
 > - [.NET](../dotnet/bot-builder-dotnet-request-payment.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-request-payment.md)
@@ -83,7 +86,7 @@ Chamadas de retorno HTTP serão enviadas ao seu bot para indicar que ele deve ex
 
 | Propriedade | Valor |
 |----|----|
-| `Activity.Type` | invocar | 
+| `Activity.Type` | invoke | 
 | `Activity.Name` | Indica o tipo de operação que o bot deve realizar (por exemplo, atualização de endereço de envio, atualização de opção de envio, pagamento concluído). | 
 | `Activity.Value` | A carga de solicitação em formato JSON. | 
 | `Activity.RelatesTo` |  Descreve o canal e o usuário associados à solicitação de pagamento. | 

@@ -8,14 +8,17 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: b5efb024c01437867b6ab1cf99b2f544077eee0c
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 2bbf75f166a90d2e0a905bd269f51cef4398a2ef
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297071"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42904488"
 ---
 # <a name="add-input-hints-to-messages"></a>Adicionar dicas de entrada às mensagens
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
+
 > [!div class="op_single_selector"]
 > - [.NET](../dotnet/bot-builder-dotnet-add-input-hints.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-send-input-hints.md)
@@ -43,11 +46,11 @@ Para indicar que seu bot não está pronto para receber entrada do usuário, def
 
 ## <a name="default-values-for-input-hint"></a>Valores padrão para a dica de entrada
 
-Se você não definir a dica de entrada para uma mensagem, o SDK do Bot Builder configurará automaticamente para você usando esta lógica: 
+Se você não definir a dica de entrada para uma mensagem, o SDK do Construtor de Bot definirá automaticamente para você usando essa lógica: 
 
-- Se seu bot envia um prompt, a dica de entrada para a mensagem será especificar que seu bot **Esperando entrada**.</li>
-- Se o seu bot enviar uma única mensagem, a dica de entrada da mensagem especificará que o seu bot está **aceitando a entrada**.</li>
-- Se o seu bot enviar uma série de mensagens consecutivas, a dica de entrada para todos, menos a mensagem final da série, especificará que seu bot é **ignorando a entrada** e a dica de entrada para a mensagem final da série especificará que seu bot está **aceitando a entrada**.
+- Se seu bot enviar um prompt, a dica de entrada para a mensagem especificará que seu bot está **esperando entrada**.</li>
+- Se seu bot enviar uma única mensagem, a dica de entrada para a mensagem especificará que seu bot está **aceitando a entrada**.</li>
+- Se seu bot enviar uma série de mensagens consecutivas, a dica de entrada para todas as mensagens, exceto a final na série, especificará que seu bot está **ignorando a entrada**, e a dica de entrada para a mensagem final na série especificará que seu bot está **aceitando a entrada**.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

@@ -9,14 +9,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 5/16/17
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 6a88b0a7f44f43d0676ba88314fbba7c486e6be4
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 07f4ad7d53c456de53be196977458a3d8b03c6f0
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296752"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42906190"
 ---
 # <a name="extract-intents-and-entities-using-luisgen"></a>Extrair intenções e entidades usando o LUISGen
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
 Além do reconhecimento de intenção, um aplicativo LUIS também pode extrair entidades, que são palavras importantes para atender à solicitação de um usuário. Por exemplo, no exemplo de uma reserva de restaurante, o aplicativo LUIS pode conseguir extrair o tamanho do grupo, a data de reserva ou o local do restaurante na mensagem do usuário. 
 
@@ -491,7 +493,7 @@ npm install
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-Para obter mais informações sobre o LUIS, confira [Reconhecimento vocal](./bot-builder-concept-luis.md).
+Para mais informações sobre o LUIS, veja [Language Understanding](./bot-builder-concept-luis.md).
 
 
 ## <a name="next-steps"></a>Próximas etapas

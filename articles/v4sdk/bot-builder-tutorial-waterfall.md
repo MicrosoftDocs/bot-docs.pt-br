@@ -9,16 +9,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 5/10/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a5c55d4437033968f9c08ed49c07b9586cb9b7d8
-ms.sourcegitcommit: 9a38d76afb0e82fdccc1f36f9b1a65042671e538
+ms.openlocfilehash: 7546b46a0bbca86665538b47e8f7b05d5812a920
+ms.sourcegitcommit: 44f100a588ffda19c275b118f4f97029f12d1449
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514966"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42928314"
 ---
 # <a name="ask-the-user-questions"></a>Fazer as perguntas do usuário
 
-[!INCLUDE [pre-release-label](~/includes/pre-release-label.md)]
+[!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
 No núcleo, um bot é construído em torno da conversa com um usuário. A conversa pode ter [várias formas](bot-builder-conversations.md): podem ser curtas ou mais complexas, podem estar fazendo perguntas ou respondendo perguntas. A forma da conversa depende de vários fatores, mas todos envolvem uma conversa.
 

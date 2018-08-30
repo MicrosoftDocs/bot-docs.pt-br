@@ -7,14 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
 ms.date: 2/13/2018
-ms.openlocfilehash: 1f14329958711cc7f9ef8832b267587e1232da2a
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 60a3796e255611ff09d5418cdeaa6f363ad8da15
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296683"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42904962"
 ---
 # <a name="create-task-automation-bots"></a>Criar bots de automação de tarefas
+
+[!INCLUDE [pre-release-label](./includes/pre-release-label-v3.md)]
 
 Um bot de automação de tarefas permite que o usuário conclua uma tarefa específica ou um conjunto de tarefas sem nenhuma assistência de um humano. Muitas vezes, esse tipo de bot se assemelha a um aplicativo ou um site típico, comunicando-se com o usuário principalmente por meio de texto e controles de usuário avançados. Ele pode ter funcionalidades de reconhecimento vocal em idioma natural para enriquecer as conversas com os usuários. 
 

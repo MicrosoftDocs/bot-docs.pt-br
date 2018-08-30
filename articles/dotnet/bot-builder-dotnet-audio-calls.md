@@ -8,14 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 9e555de909275a991294cf093c4a76b7035b4a13
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: dd40123ef641d3cef80525d466fd85ecab80654a
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297072"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42904934"
 ---
 # <a name="conduct-audio-calls-with-skype"></a>Realizar chamadas de áudio com o Skype
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
 [!INCLUDE [Introduction to conducting audio calls](../includes/snippet-audio-call-intro.md)]
 
@@ -170,5 +172,5 @@ Para obter um exemplo completo que mostra como dar suporte a chamadas de áudio 
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- <a href="/dotnet/api/?view=botbuilder-3.11.0" target="_blank">Referência do SDK do Bot Builder para .NET</a>
+- <a href="/dotnet/api/?view=botbuilder-3.11.0" target="_blank">SDK do Construtor de Bot para referência .NET</a>
 - <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/skype-CallingBot" target="_blank">Exemplo do Bot de Chamada do Skype (GitHub)</a>

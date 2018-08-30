@@ -8,14 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/17
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 3e990da2abcb63c695cc79d5d8d9af40d8966cfa
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 35aca6f5f50602d0a90c41997eff2e8b1d2cdb4e
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297004"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42905608"
 ---
 # <a name="build-a-real-time-media-bot-for-skype"></a>Crie um bot de mídia em tempo real para o Skype
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
 A Plataforma de Mídia em Tempo Real para Bots é um recurso avançado que permite ao bot enviar e receber conteúdo de voz e vídeo quadro a quadro. O bot tem acesso "bruto" às modalidades de voz, vídeo e compartilhamento de tela em tempo real. Este artigo fornece uma visão geral da criação de um bot de chamada de áudio / vídeo e do acesso às modalidades em tempo real.
 

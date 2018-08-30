@@ -8,14 +8,17 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 05/9/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 9e7507f7ece6f0e36e357a615ae6ca7d327c4fc6
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: be9047b27d7899ba398e5c737bed8ef03abf8dbc
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297279"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42905890"
 ---
 # <a name="bot-service-compliance"></a>Conformidade do Serviço de Bot
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
+
 O Serviço de Bot do Azure está em conformidade com ISO 27001:2013, ISO 27019:2014, SOC 1 e 2, PCI DSS (Payment Card Industry Data Security Standard) e com HIPAA BAA (Health Insurance Portability and Accountability Act Business Associate Agreement)
 
 ## <a name="azure-bot-service-is-compliant-with-iso-270012013-and-iso-270182014"></a>O Serviço de Bot do Azure está em conformidade com ISO 27001:2013 e ISO 27018:2014 

@@ -8,14 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 04/25/2018
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 20258949cd8ea403e5cc9bf774d6a3b7c1e86e7e
-ms.sourcegitcommit: dcbc8ad992a3e242a11ebcdf0ee99714d919a877
+ms.openlocfilehash: 1eb47e76ef1bd6765d5ba93c27b97a8d9e6143db
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39352895"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42905300"
 ---
 # <a name="create-bots-with-azure-cli"></a>Criar bots com a CLI do Azure
+
+[!INCLUDE [pre-release-label](./includes/pre-release-label-v3.md)]
 
 As [ferramentas do construtor de bot](https://github.com/microsoft/botbuilder-tools) são um novo conjunto de ferramentas que permite que você gerencie e interaja com os recursos de bot diretamente na linha de comando. 
 
@@ -37,7 +39,7 @@ Para habilitar essas ferramentas da linha de comando, você precisará do Node.j
 
 ## <a name="1-enable-azure-cli"></a>1. Habilitar a CLI do Azure
 
-Agora você pode gerenciar bots usando a [CLI do Azure](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest) como qualquer outro recurso do Azure. Para habilitar a CLI do Azure, conclua as seguintes etapas:
+Agora você pode gerenciar bots usando a [CLI do Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) como qualquer outro recurso do Azure. Para habilitar a CLI do Azure, conclua as seguintes etapas:
 
 1. [Baixe](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) a CLI do Azure se ainda não tiver. 
 
@@ -64,7 +66,7 @@ Após o logon bem-sucedido, você verá a tela de boas-vindas da CLI do Azure, j
 ![CLI de Bot do Azure](media/bot-builder-tools/az-cli-bot.png)
 
 
- Para obter uma lista completa dos comandos da CLI do Azure, [clique aqui](https://docs.microsoft.com/en-us/cli/azure/reference-index?view=azure-cli-latest).
+ Para obter uma lista completa dos comandos da CLI do Azure, [clique aqui](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest).
 
 
 ## <a name="2-create-a-new-bot-from-azure-cli"></a>2. Criar um novo bot na CLI do Azure
@@ -83,7 +85,7 @@ az bot [command]
 | mostrar |mostrar recursos de bot existente.|
 | atualizar| Atualizar um serviço de bot existente|
 
-Para criar um novo bot da CLI, você precisa selecionar um [grupo de recursos](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview) existente, ou criar um novo. 
+Para criar um novo bot da CLI, você precisa selecionar um [grupo de recursos](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) existente, ou criar um novo. 
 
 ```azurecli
 az bot create --resource-group "my-resource-group" --name "my-bot-name" --kind "my-resource-type" --description "description-of-my-bot"
@@ -183,7 +185,7 @@ As [ferramentas do construtor de bot](https://github.com/microsoft/botbuilder-to
 > Cada ferramenta do construtor de bot inclui um comando de ajuda global, acessível na linha de comando com a inserção de **-h** ou **--help**. Esse comando está disponível a qualquer momento em qualquer ação, que fornecerá uma exibição útil das opções disponíveis para você, juntamente com as descrições.
 
 ### <a name="ludown"></a>LUDown
-O [LUDown](https://github.com/Microsoft/botbuilder-tools/tree/master/Ludown) permite que você descreva e crie componentes de linguagem avançados para os bots usando arquivos **.lu**. O novo arquivo .lu é um tipo de formato markdown que a ferramenta LUDown consome e gera arquivos .json específicos do serviço de destino. No momento, você pode usar arquivos .lu para criar um aplicativo [LUIS](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-get-started-create-app) ou uma base de dados de conhecimento do [QnA](https://qnamaker.ai/Documentation/CreateKb), usando formatos diferentes para cada um. O LUDown está disponível como um módulo npm e pode ser usado com a instalação global no computador:
+O [LUDown](https://github.com/Microsoft/botbuilder-tools/tree/master/Ludown) permite que você descreva e crie componentes de linguagem avançados para os bots usando arquivos **.lu**. O novo arquivo .lu é um tipo de formato markdown que a ferramenta LUDown consome e gera arquivos .json específicos do serviço de destino. No momento, você pode usar arquivos .lu para criar um aplicativo [LUIS](https://docs.microsoft.com/azure/cognitive-services/luis/luis-get-started-create-app) ou uma base de dados de conhecimento do [QnA](https://qnamaker.ai/Documentation/CreateKb), usando formatos diferentes para cada um. O LUDown está disponível como um módulo npm e pode ser usado com a instalação global no computador:
 
 ```shell
 npm install -g ludown
@@ -193,9 +195,9 @@ A ferramenta LUDown pode ser usada para criar modelos .json para o LUIS e o QnA.
 
 ### <a name="creating-a-luis-application-with-ludown"></a>Criando um aplicativo LUIS com o LUDown
 
-Você pode definir [intenções](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/add-intents) e [entidades](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/add-entities) para um aplicativo LUIS exatamente como faria no portal do LUIS. 
+Você pode definir [intenções](https://docs.microsoft.com/azure/cognitive-services/luis/add-intents) e [entidades](https://docs.microsoft.com/azure/cognitive-services/luis/add-entities) para um aplicativo LUIS exatamente como faria no portal do LUIS. 
 
-`# \<intent-name\>` descreve uma nova seção de definição de intenção. As linhas subsequentes contêm [declarações](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/add-example-utterances) que descrevem essa intenção.
+`# \<intent-name\>` descreve uma nova seção de definição de intenção. As linhas subsequentes contêm [declarações](https://docs.microsoft.com/azure/cognitive-services/luis/add-example-utterances) que descrevem essa intenção.
 
 Por exemplo, você pode criar várias intenções do LUIS em um único arquivo .lu da seguinte maneira: 
 

@@ -8,23 +8,25 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: c77b07801b8eb0168ac3e09d7b271ddfb17a04ac
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 84fdbecfe59db49e2e88567a6c942c300ea226a2
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296921"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42904356"
 ---
 # <a name="manage-custom-state-data-with-azure-table-storage-for-nodejs"></a>Gerenciar dados de estado personalizado com o armazenamento de Tabela do Azure para Node.js
 
-Neste artigo, você implementará o armazenamento de Tabela do Azure para armazenar e gerenciar os dados de estado de seu bot. O Serviço de Estado do Conector padrão usado por bots não se destina ao ambiente de produção. Você deve usar as [Extensões do Azure](https://www.npmjs.com/package/botbuilder-azure) disponíveis no GitHub ou implementar um cliente de estado personalizado usando uma plataforma de armazenamento de dados de sua escolha. Estes são alguns dos motivos para usar o armazenamento de estado personalizado:
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
-- taxa de transferência de API com estado maior (mais controle sobre o desempenho)
-- latência menor para distribuição geográfica
-- controle sobre o local de armazenamento dos dados (por exemplo, Oeste dos EUA versus Leste dos EUA)
-- acesso aos dados de estado real
-- bd de dados de estado não compartilhado com outros bots
-- armazene mais de 32 kb
+Neste artigo, você implementará o armazenamento de Tabela do Azure para armazenar e gerenciar os dados de estado de seu bot. O Serviço de Estado do Conector padrão usado pelos bots não é destinado ao ambiente de produção. Você deve usar [Extensões do Azure](https://www.npmjs.com/package/botbuilder-azure) disponíveis no GitHub ou implementar um cliente de estado personalizado usando a plataforma de armazenamento de dados de sua escolha. Aqui estão alguns dos motivos para usar o armazenamento de estado personalizado:
+
+- taxa de transferência da API de estado mais alto (mais controle sobre o desempenho)
+- Latência inferior para a distribuição geográfica
+- controle sobre onde os dados são armazenados (por exemplo: Oeste dos EUA vs Leste dos EUA)
+- acesso aos dados do estado real
+- dados de estado db não compartilhados com outros bots
+- armazenar mais de 32kb
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -34,10 +36,10 @@ Neste artigo, você implementará o armazenamento de Tabela do Azure para armaze
 - [Gerenciador de Armazenamento](http://storageexplorer.com/).
 
 ## <a name="create-azure-account"></a>Criar conta do Azure
-Caso você não tenha uma conta do Azure, clique [aqui](https://azure.microsoft.com/en-us/free/) para se inscrever em uma conta de avaliação gratuita.
+Se você não tiver uma conta do Azure, clique em [aqui](https://azure.microsoft.com/en-us/free/) para se inscrever para uma conta gratuita.
 
-## <a name="set-up-the-azure-table-storage-service"></a>Configurar o serviço de armazenamento de Tabela do Azure
-1. Após se conectar ao Portal do Azure, crie um novo serviço de armazenamento de Tabela do Azure clicando em **Novo**. 
+## <a name="set-up-the-azure-table-storage-service"></a>Configurar o serviço de armazenamento de tabelas do Azure
+1. Depois de efetuar login no portal do Azure, crie um novo serviço de armazenamento do Azure Table clicando em **Novo**. 
 2. Pesquise a **conta de armazenamento** que implementa a Tabela do Azure. Clique em **Criar** para começar a criar a conta de armazenamento. 
 3. Preencha os campos, clique no botão **Criar** na parte inferior da tela para implantar o novo serviço de armazenamento. 
 4. Após a implantação do novo serviço de armazenamento, navegue até a conta de armazenamento que você acabou de criar. Encontre-a na folha **Contas de Armazenamento**.
@@ -45,7 +47,7 @@ Caso você não tenha uma conta do Azure, clique [aqui](https://azure.microsoft.
 
 ## <a name="install-botbuilder-azure-module"></a>Instalar o módulo botbuilder-azure
 
-Para instalar o módulo `botbuilder-azure` de um prompt de comando, navegue até o diretório do bot e execute o seguinte comando npm:
+Para instalar o módulo `botbuilder-azure` a partir de um prompt de comando, navegue até o diretório do bot e execute o seguinte comando npm:
 
 ```nodejs
 npm install --save botbuilder-azure
@@ -70,7 +72,7 @@ Para usar seu armazenamento de **Tabela do Azure**, adicione as seguintes linhas
    ```
    Os valores `storageName` e `storageKay` podem ser encontrados no menu **Chaves de acesso** de sua Tabela do Azure. Se `tableName` não existir na Tabela do Azure, ele será criado para você.
 
-3. Usando o módulo `botbuilder-azure`, crie dois objetos novos para se conectar à Tabela do Azure. Primeiro, crie uma instância de `AzureTableClient` passando as definições de configuração de conexão. Em seguida, crie uma instância de `AzureBotStorage` passando o objeto `AzureTableClient`. Por exemplo: 
+3. Usando o módulo `botbuilder-azure`, crie dois objetos novos para se conectar à Tabela do Azure. Primeiro, crie uma instância de `AzureTableClient` passando as definições de configuração de conexão. Em seguida, crie uma instância de `AzureBotStorage` passando o `AzureTableClient` objeto. Por exemplo: 
 
    ```javascript
    var azureTableClient = new azure.AzureTableClient(tableName, storageName, storageKey);
@@ -97,21 +99,21 @@ Para usar seu armazenamento de **Tabela do Azure**, adicione as seguintes linhas
    ```
 Agora você está pronto para testar o bot com o emulador.
 
-## <a name="run-your-bot-app"></a>Executar o bot do seu aplicativo
+## <a name="run-your-bot-app"></a>Execute seu bot de aplicativo
 
-Em um prompt de comando, navegue até o diretório do seu bot e execute seu bot com o comando a seguir:
+Em um prompt de comando, navegue até o diretório do seu bot e execute seu bot com o seguinte comando:
 
 ```nodejs
 node app.js
 ```
 
-## <a name="connect-your-bot-to-the-emulator"></a>Conectar seu bot ao emulador
+## <a name="connect-your-bot-to-the-emulator"></a>Conectar seu bot no emulador
 
-Neste ponto, seu bot está em execução localmente. Inicie o emulador e conecte-se ao seu bot no emulador:
+Neste ponto, seu bot está em execução localmente. Iniciar o emulador e, em seguida, conecte-se ao seu bot do emulador:
 
-1. Digite <strong>http://localhost:port-number/api/messages</strong> na barra de endereços do emulador, em que port-number corresponde ao número da porta no navegador onde seu aplicativo está sendo executado. Você pode deixar os campos <strong>ID de Aplicativo da Microsoft</strong> e <strong>Senha de Aplicativo da Microsoft</strong> em branco por enquanto. Você receberá essas informações posteriormente quando [registrar seu bot](~/bot-service-quickstart-registration.md).
+1. Tipo de <strong>http://localhost:port-number/api/messages</strong> na barra de endereços do emulador, em que o número da porta corresponde ao número da porta no navegador onde seu aplicativo está sendo executado. Você pode deixar os campos <strong>Microsoft App ID</strong> e <strong>Microsoft App Password</strong> em branco por enquanto. Você receberá essas informações posteriormente, quando você [registrar seu bot](~/bot-service-quickstart-registration.md).
 2. Clique em **Conectar**.
-3. Teste seu bot enviando uma mensagem a ele. Interaja normalmente com seu bot. Quando terminar, acesse o **Gerenciador de Armazenamento** e veja seus dados de estado salvos.
+3. Teste o seu bot enviando uma mensagem ao seu bot. Interaja com seu bot como faria normalmente. Quando terminar, acesse o **Gerenciador de Armazenamento** e veja seus dados de estado salvos.
 
 ## <a name="view-data-in-storage-explorer"></a>Ver dados no Gerenciador de Armazenamento
 
@@ -131,7 +133,7 @@ Um registro da conversa na coluna **dados** se parece com:
 
 ## <a name="next-step"></a>Próxima etapa
 
-Agora que você tem controle total sobre os dados de estado de seu bot, vamos dar uma olhada em como você pode usá-lo para gerenciar melhor o fluxo da conversa.
+Agora que você tem controle total sobre os dados de estado do seu bot, vamos dar uma olhada em como você pode usá-lo para gerenciar melhor o fluxo de conversas.
 
 > [!div class="nextstepaction"]
 > [Gerenciar o fluxo da conversa](bot-builder-nodejs-dialog-manage-conversation-flow.md)

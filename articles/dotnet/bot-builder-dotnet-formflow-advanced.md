@@ -8,14 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 8860c6b3fa0eaaf9f9bfc92984a501c066f2fe5c
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 6637876b016b8680fe722602f530a0c6b0ddfc5a
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296552"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42905400"
 ---
 # <a name="advanced-features-of-formflow"></a>Recursos avançados do FormFlow
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
 [Recursos básicos do FormFlow](bot-builder-dotnet-formflow.md) descreve uma implementação básica de FormFlow que proporciona uma experiência do usuário relativamente genérica. Para proporcionar uma experiência de usuário mais personalizada usando o FormFlow, especifique o estado inicial do formulário, adicione a lógica de negócios para gerenciar as interdependências entre os campos e processar a entrada do usuário, e use atributos para personalizar avisos, substituir modelos, indicar campos opcionais, corresponder e validar a entrada do usuário. 
 

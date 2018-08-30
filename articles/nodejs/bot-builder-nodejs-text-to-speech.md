@@ -8,20 +8,23 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 04d1f92687668267ca8226257ee83f993b5d09df
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 58086bfb29846e39a219beb2f7f0e8d977415559
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297070"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42904911"
 ---
 # <a name="add-speech-to-messages"></a>Adicionar fala a mensagens
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
+
 > [!div class="op_single_selector"]
 > - [.NET](../dotnet/bot-builder-dotnet-text-to-speech.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-text-to-speech.md)
 > - [REST](../rest-api/bot-framework-rest-connector-text-to-speech.md)
 
-Se você está construindo um bot para um canal habilitado para fala, como o Cortana, você pode construir mensagens que especificam o texto a ser falado pelo seu bot. Você também pode tentar influenciar o estado do microfone do cliente especificando uma [dica de entrada](bot-builder-nodejs-send-input-hints.md) para indicar se o seu bot está aceitando, esperando ou ignorando a entrada do usuário.
+Se você estiver criando um bot para um canal habilitado para fala, como o Cortana, será possível criar mensagens que especifiquem o texto a ser falado pelo seu bot. Você também pode tentar influenciar o estado do microfone do cliente especificando uma [dica de entrada](bot-builder-nodejs-send-input-hints.md) para indicar se o seu bot está aceitando, esperando ou ignorando a entrada do usuário.
 
 ## <a name="specify-text-to-be-spoken-by-your-bot"></a>Especifique o texto a ser falado pelo seu bot
 
@@ -64,7 +67,7 @@ Para especificar o texto a ser falado pelo seu bot, você pode usar uma string d
 
 ## <a name="input-hints"></a>Dicas de entrada
 
-Quando você envia uma mensagem em um canal habilitado para fala, pode tentar influenciar o estado do microfone do cliente, incluindo também uma dica de entrada para indicar se seu bot está aceitando, esperando ou ignorando a entrada do usuário. Para obter mais informações, consulte [adicionar dicas de entrada mensagens](bot-builder-nodejs-send-input-hints.md).
+Quando você envia uma mensagem em um canal habilitado para fala, é possível tentar influenciar o estado do microfone do cliente incluindo também uma dica de entrada para indicar se seu bot está aceitando, esperando ou ignorando a entrada do usuário. Para obter mais informações, consulte [adicionar dicas de entrada mensagens](bot-builder-nodejs-send-input-hints.md).
 
 ## <a name="sample-code"></a>Exemplo de código 
 

@@ -8,14 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: bb0ac4b8e3fa34ec8863bb323ae968db37972a6f
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 587e21049ed8c9c3259f04f929784153d06db40c
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296820"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42904220"
 ---
 # <a name="localize-form-content"></a>Localizar o conteúdo do formulário
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
 O idioma de localização de um formulário é determinado pelo [CurrentUICulture](https://msdn.microsoft.com/en-us/library/system.threading.thread.currentuiculture(v=vs.110).aspx) e pelo [CurrentCulture](https://msdn.microsoft.com/en-us/library/system.threading.thread.currentculture(v=vs.110).aspx) do thread atual. Por padrão, a cultura é derivada do campo **Locale** da mensagem atual, mas você pode substituir o comportamento padrão. Dependendo de como seu bot é construído, as informações localizadas podem vir de até três fontes diferentes:
 

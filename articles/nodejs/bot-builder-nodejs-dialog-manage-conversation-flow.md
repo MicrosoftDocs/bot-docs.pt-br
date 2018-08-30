@@ -8,21 +8,24 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: d6c8ad06b9fb198e684deae26e9cbad05a86a611
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 656b6304a576c553db948a348b1c6d8c3fc5ae71
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297381"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42905660"
 ---
-# <a name="manage-conversation-flow-with-dialogs"></a>Gerenciar o fluxo da conversa com caixas de diálogo
+# <a name="manage-conversation-flow-with-dialogs"></a>Gerenciar fluxo de conversa com diálogos
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
+
 > [!div class="op_single_selector"]
 > - [.NET](../dotnet/bot-builder-dotnet-manage-conversation-flow.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-dialog-manage-conversation-flow.md)
 
-Gerenciar o fluxo de conversas é uma tarefa essencial na criação de bots. Um bot precisa ser capaz de executar tarefas básicas de forma elegante e lidar com interrupções de forma elegante. Com o Bot Builder SDK for Node.js, você pode gerenciar o fluxo de conversas usando diálogos.
+Gerenciar um fluxo de conversa é uma tarefa essencial na criação de bots. Um bot precisa ser capaz de executar tarefas básicas de forma elegante e lidar com interrupções de forma elegante. Com o Bot Builder SDK for Node.js, você pode gerenciar o fluxo de conversas usando diálogos.
 
-Uma caixa de diálogo é como uma função em um programa. Geralmente é projetado para executar uma operação específica e pode ser chamado com a frequência necessária. Você pode encadear vários diálogos juntos para lidar com praticamente qualquer fluxo de conversação que você deseja que seu bot manipule. O Bot Builder SDK para Node.js inclui recursos integrados, como [prompts](bot-builder-nodejs-dialog-prompt.md) e [quedas d'água](bot-builder-nodejs-dialog-waterfall.md) para ajudá-lo a gerenciar o fluxo de conversas.
+Uma caixa de diálogo é como uma função em um programa. Geralmente, é projetado para executar uma operação específica e pode ser chamado com a frequência necessária. Você pode encadear vários diálogos juntos para lidar com praticamente qualquer fluxo de conversação que você deseja que seu bot manipule. O Bot Builder SDK para Node.js inclui recursos integrados, como [prompts](bot-builder-nodejs-dialog-prompt.md) e [quedas d'água](bot-builder-nodejs-dialog-waterfall.md) para ajudá-lo a gerenciar o fluxo de conversas.
 
 Este artigo fornece uma série de exemplos para explicar como gerenciar os fluxos de conversação simples e fluxos de conversa complexas em que seu bot pode lidar com interrupções e retomar o fluxo, normalmente usando as caixas de diálogo. Os exemplos são baseados nos seguintes cenários: 
 

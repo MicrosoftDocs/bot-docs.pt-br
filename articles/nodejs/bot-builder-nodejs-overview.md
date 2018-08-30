@@ -8,14 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 41c276186f08e9997497e5649a6566954f0c8079
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 24da2cc90908a1f22bee9d2cd007607b116ac2cc
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297516"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42904199"
 ---
 # <a name="bot-builder-sdk-for-nodejs"></a>SDK do Bot Builder para Node.js
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
 > [!div class="op_single_selector"]
 > - [.NET](../dotnet/bot-builder-dotnet-overview.md)
@@ -44,7 +46,7 @@ Para garantir que o bot atenda os principais cenários do usuário, revise os [p
 
 ## <a name="get-samples"></a>Obter exemplos
 
-Os [exemplos do SDK do Bot Builder SDK para Node.js](bot-builder-nodejs-samples.md) demonstram bots com tarefa focalizada que mostram como aproveitar os recursos do SDK do Bot Builder para Node.js. Você pode usar os exemplos para ajudá-lo a começar a construir rapidamente excelentes bots com recursos avançados.
+Os [exemplos do SDK do Bot Builder SDK para Node.js](bot-builder-nodejs-samples.md) demonstram bots com tarefa focalizada que mostram como aproveitar os recursos do SDK do Bot Builder para Node.js. Você pode usar as amostras para ajudá-lo a começar rapidamente a criar grandes bots com recursos avançados.
 
 ## <a name="next-steps"></a>Próximas etapas
 > [!div class="nextstepaction"]

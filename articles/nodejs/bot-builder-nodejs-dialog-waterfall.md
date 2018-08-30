@@ -8,14 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: ac8e01a81e3f8acca3aa6976eec47017876c3042
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: fcda5bb35712f3a1ec27fba64a492ced911c41db
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296918"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42905958"
 ---
 # <a name="define-conversation-steps-with-waterfalls"></a>Definir a conversa em cascata
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
 Uma conversa é uma série de mensagens trocadas entre o usuário e o bot. Quando o objetivo do bot é conduzir o usuário através de uma série de etapas, você pode usar o recurso de cascata para definir as etapas da conversa.
 

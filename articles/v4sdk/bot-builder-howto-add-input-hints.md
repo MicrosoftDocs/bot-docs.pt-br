@@ -7,20 +7,20 @@ ms.author: v-ivorb
 manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
-ms.date: 04/04/2018
+ms.date: 08/24/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: ac18b57b7c738e1f15776bfb87bfaf27c3b719d8
-ms.sourcegitcommit: b45e16cac2febb7034da4ccd3af3bd7e6f430c31
+ms.openlocfilehash: 02c6cf56a0c1161fa0393880810c1481c5eb2461
+ms.sourcegitcommit: f89ed979eb6321232fb21100ef376d9b0d5113c9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39469293"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42914626"
 ---
 # <a name="add-input-hints-to-messages"></a>Adicionar dicas de entrada a mensagens
 
 [!INCLUDE [pre-release-label](~/includes/pre-release-label.md)]
 
-Ao especificar uma dica de entrada para uma mensagem, você pode indicar se seu bot está aceitando, esperando ou ignorando a entrada do usuário depois que a mensagem é entregue ao cliente. Para vários canais, isso permite que os clientes definam o estado dos controles de entrada do usuário adequadamente. Por exemplo, se a dica de entrada da mensagem indicar que o bot está ignorando a entrada do usuário, o cliente poderá fechar o microfone e desabilitar a caixa de entrada para impedir que o usuário forneça uma entrada.
+Ao especificar uma dica de entrada para uma mensagem, você pode indicar se seu bot está aceitando, esperando ou ignorando a entrada do usuário após a entrega da mensagem ao cliente. Para muitos canais, isso permite que os clientes definam o estado dos controles de entrada do usuário de acordo. Por exemplo, se a dica de entrada da mensagem indicar que o bot está ignorando a entrada do usuário, o cliente poderá fechar o microfone e desabilitar a caixa de entrada para impedir que o usuário forneça uma entrada.
 
 Certifique-se de que as bibliotecas necessárias estão incluídas para dicas de entrada.
 
@@ -46,7 +46,7 @@ const {InputHints, MessageFactory} = require('botbuilder');
 
 ---
 
-## <a name="accepting-input"></a>Aceitação da entrada
+## <a name="accepting-input"></a>Aceitar a entrada
 
 Para indicar que seu bot está passivamente pronto para entrada mas não está aguardando uma resposta do usuário, defina a dica de entrada da mensagem como _accepting input_. Em vários canais, isso fará com que a caixa de entrada do cliente seja habilitada e o microfone seja fechado, mas ainda acessível ao usuário. Por exemplo, a Cortana abrirá o microfone para aceitar a entrada do usuário se o usuário mantiver pressionado o botão de microfone. O código a seguir cria uma mensagem que indica que o bot está aceitando entrada do usuário.
 
@@ -69,7 +69,7 @@ await context.sendActivity(basicMessage);
 
 ---
 
-## <a name="expecting-input"></a>Espera por uma entrada
+## <a name="expecting-input"></a>Esperando uma entrada
 
 Para indicar que seu bot está aguardando uma resposta do usuário, defina a dica de entrada da mensagem como _expecting input_. Em vários canais, isso fará com que a caixa de entrada do cliente seja habilitada e o microfone seja aberto. O código a seguir cria um exemplo que indica que o bot está esperando a entrada do usuário.
 
@@ -92,7 +92,7 @@ await context.sendActivity(basicMessage);
 
 ---
 
-## <a name="ignoring-input"></a>Ignorar a entrada
+## <a name="ignoring-input"></a>Ignorando a entrada
 
 Para indicar que seu bot não está pronto para receber a entrada do usuário, defina a dica de entrada da mensagem como _ignoring input_. Em vários canais, isso fará com que a caixa de entrada do cliente seja desabilitada e o microfone seja fechado. O código a seguir cria um exemplo que indica que o bot está ignorando a entrada do usuário.
 

@@ -7,14 +7,17 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: e2d8e6a5a390a27b61b11ad22f07ce0ab95f1686
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: e5ff23caa1bdb1158ab19fa7c66e1fe4f6899f49
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297353"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42905109"
 ---
 # <a name="manage-custom-state-data-with-azure-table-storage-for-net"></a>Gerenciar dados de estado personalizados com o Armazenamento de Tabela do Azure para .NET
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
+
 Neste artigo, você implementará o armazenamento do Azure Table para armazenar e gerenciar os dados de estado do seu bot. O Serviço de Estado do Conector padrão usado pelos bots não é destinado ao ambiente de produção. Você deve usar [Extensões do Azure](https://github.com/Microsoft/BotBuilder-Azure) disponíveis no GitHub ou implementar um cliente de estado personalizado usando a plataforma de armazenamento de dados de sua escolha. Aqui estão alguns dos motivos para usar o armazenamento de estado personalizado:
  - Maior rendimento da API de estado (mais controle sobre o desempenho)
  - Baixa latência para geo-distribuição

@@ -8,14 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 109353d6dc26b957d23ae29e77b1c36811d2c2a2
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: a192b69b2ffbac428d80b2fe7c3fd9180caacd4f
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297329"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42905578"
 ---
 # <a name="customize-user-experience-with-pattern-language"></a>Personalizar a experiência do usuário com linguagem padrão
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
 Quando você personaliza um prompt ou substituir um modelo padrão, você pode usar a linguagem padrão para especificar o conteúdo e/ou formato do prompt. 
 
@@ -138,7 +140,7 @@ What kind of sandwich would you like?
 
 - [Recursos básicos do FormFlow](bot-builder-dotnet-formflow.md)
 - [Recursos avançados do FormFlow](bot-builder-dotnet-formflow-advanced.md)
-- [Personalizar um formulário usando o FormBuilder](bot-builder-dotnet-formflow-formbuilder.md)
+- [Personalizar um formulário usando FormBuilder](bot-builder-dotnet-formflow-formbuilder.md)
 - [Localizar o conteúdo do formulário](bot-builder-dotnet-formflow-localize.md)
 - [Definir um formulário usando o esquema JSON](bot-builder-dotnet-formflow-json-schema.md)
 - <a href="/dotnet/api/?view=botbuilder-3.11.0" target="_blank">SDK do Construtor de Bot para referência .NET</a>

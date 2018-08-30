@@ -8,14 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: a7f6e3f186e0c4b9f6096cad72a91ef6f3fdffd4
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 03478431822c8be0e696577a18a2e693d441509b
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297341"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42904547"
 ---
 # <a name="define-a-form-using-json-schema"></a>Definir um formulário usando o esquema JSON
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
 Se você usar uma [classe C#](bot-builder-dotnet-formflow.md#create-class) para definir o formulário quando você cria um bot com FormFlow, o formulário deriva da definição estática do seu tipo em C#. Como alternativa, você pode definir o formulário usando o <a href="http://json-schema.org/documentation.html" target="_blank">esquema JSON</a>. Um formulário que é definido usando o esquema JSON é simplesmente controlado por dados. Para alterar o formulário (e portanto, o comportamento do bot), basta atualizar o esquema. 
 
@@ -311,10 +313,10 @@ Para implementar o FormFlow com um esquema JSON, use `FormBuilderJson`, que ofer
 
 - [Recursos básicos do FormFlow](bot-builder-dotnet-formflow.md)
 - [Recursos avançados do FormFlow](bot-builder-dotnet-formflow-advanced.md)
-- [Personalizar um formulário usando o FormBuilder](bot-builder-dotnet-formflow-formbuilder.md)
+- [Personalizar um formulário usando FormBuilder](bot-builder-dotnet-formflow-formbuilder.md)
 - [Localizar o conteúdo do formulário](bot-builder-dotnet-formflow-localize.md)
 - [Personalizar a experiência do usuário com o idioma padrão](bot-builder-dotnet-formflow-pattern-language.md)
-- <a href="/dotnet/api/?view=botbuilder-3.11.0" target="_blank">SDK do Construtor de Bot para referência .NET</a>
+- <a href="/dotnet/api/?view=botbuilder-3.11.0" target="_blank">Referência do SDK do Construtor de Bot para .NET</a>
 
 [numericAttribute]: /dotnet/api/microsoft.bot.builder.formflow.numericattribute
 

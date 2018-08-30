@@ -7,38 +7,41 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: b99dc4cd9011871d52479ade92968ebb29c8c73f
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: cb64d25582589b7bcbbe715cb4288cf56ac93e1c
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297282"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42906070"
 ---
 # <a name="manage-custom-state-data-with-azure-cosmos-db-for-net"></a>Gerenciar dados de estado personalizados com o Azure Cosmos DB para .NET
-Neste artigo, você implementará o Azure Cosmos DB para armazenar e gerenciar os dados de estado de seu bot. O Serviço de Estado do Conector padrão usado por bots não se destina ao ambiente de produção. Você deve usar as [Extensões do Azure](https://github.com/Microsoft/BotBuilder-Azure) disponíveis no GitHub ou implementar um cliente de estado personalizado usando uma plataforma de armazenamento de dados de sua escolha. Estes são alguns dos motivos para usar o armazenamento de estado personalizado:
- - Taxa de transferência de API com estado maior (mais controle sobre o desempenho)
- - Latência menor para distribuição geográfica
- - Controle sobre o local de armazenamento dos dados
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
+
+Neste artigo, você implementará o Azure Cosmos DB para armazenar e gerenciar os dados de estado de seu bot. O Serviço de Estado do Conector padrão usado por bots não se destina ao ambiente de produção. Você deve usar [Extensões do Azure](https://github.com/Microsoft/BotBuilder-Azure) disponíveis no GitHub ou implementar um cliente de estado personalizado usando a plataforma de armazenamento de dados de sua escolha. Aqui estão alguns dos motivos para usar o armazenamento de estado personalizado:
+ - Maior rendimento da API de estado (mais controle sobre o desempenho)
+ - Baixa latência para geo-distribuição
+ - Controle sobre onde os dados são armazenados
  - Acesso aos dados de estado real
- - Armazene mais de 32 kb de dados
+ - Store mais de 32kb de dados
  
 ## <a name="prerequisites"></a>Pré-requisitos
 Você precisará de:
  - [Conta do Microsoft Azure](https://azure.microsoft.com/en-us/free/)
  - [Visual Studio 2015 ou posterior](https://www.visualstudio.com/)
- - [Pacote NuGet do Construtor de Bot do Azure](https://www.nuget.org/packages/Microsoft.Bot.Builder.Azure/)
- - [Pacote NuGet do Autofac Web Api2](https://www.nuget.org/packages/Autofac.WebApi2/)
- - [Bot Framework Emulator](~/bot-service-debug-emulator.md)
+ - [Pacote do NuGet do Azure de construtor de bot](https://www.nuget.org/packages/Microsoft.Bot.Builder.Azure/)
+ - [Pacote do NuGet do Autofac Web Api2](https://www.nuget.org/packages/Autofac.WebApi2/)
+ - [Emulador do bot Framework](~/bot-service-debug-emulator.md)
  
 ## <a name="create-azure-account"></a>Criar conta do Azure
-Caso você não tenha uma conta do Azure, clique [aqui](https://azure.microsoft.com/en-us/free/) para se inscrever em uma conta de avaliação gratuita.
+Se você não tiver uma conta do Azure, clique em [aqui](https://azure.microsoft.com/en-us/free/) para se inscrever para uma conta gratuita.
 
 ## <a name="set-up-the-azure-cosmos-db-database"></a>Configurar o banco de dados do Azure Cosmos DB
-1. Após se conectar ao Portal do Azure, crie um novo banco de dados *Azure Cosmos DB* clicando em **Novo**. 
+1. Depois de efetuar login no portal do Azure, crie um novo banco de dados do *Azure Cosmos DB* clicando em **Novo**. 
 2. Clique em **Bancos de Dados**. 
-3. Encontre **Azure Cosmos DB** e clique em **Criar**.
-4. Preencha os campos. Para o campo **API**, selecione **SQL (DocumentDB)**. Após preencher todos os campos, clique no botão **Criar** na parte inferior da tela para implantar o novo banco de dados. 
-5. Após a implantação do novo banco de dados, navegue até seu novo banco de dados. Clique em **Chaves de Acesso** para encontrar chaves e cadeias de conexão. Seu bot usará essas informações para chamar o serviço de armazenamento para salvar os dados de estado.
+3. Encontre **do Azure Cosmos DB** e clique em **criar**.
+4. Preencha os campos. Para o **API** campo, selecione **SQL (DocumentDB)**. Quando terminar de preencher todos os campos, clique no botão **Criar** na parte inferior da tela para implantar o novo banco de dados. 
+5. Depois que o novo banco de dados é implantado, navegue até seu novo banco de dados. Clique em **chaves de acesso** para encontrar chaves e cadeias de caracteres de conexão. Seu bot usará essas informações para chamar o serviço de armazenamento para salvar os dados do estado.
 
 ## <a name="install-nuget-packages"></a>Instalar os pacotes NuGet
 1. Abra um projeto de bot em C# existente ou crie um novo usando o modelo de Bot no Visual Studio. 
@@ -100,11 +103,11 @@ namespace SampleApp
 Salve o arquivo global.asax.cs. Agora você está pronto para testar o bot com o emulador.
 
 ## <a name="run-your-bot-app"></a>Executar o bot do seu aplicativo
-Execute seu bot no Visual Studio, e o código que você adicionou criará a tabela **botdata** personalizada no Azure.
+Execute seu bot no Visual Studio, o código que você adicionou criará a tabela personalizada **botdata** no Azure.
 
-## <a name="connect-your-bot-to-the-emulator"></a>Conectar seu bot ao emulador
-Neste ponto, seu bot está em execução localmente. Em seguida, inicie o emulador e conecte-se ao seu bot no emulador:
-1. Digite http://localhost:port-number/api/messages na barra de endereços, em que port-number corresponde ao número da porta no navegador onde seu aplicativo está sendo executado. Você pode deixar os campos <strong>ID de Aplicativo da Microsoft</strong> e <strong>Senha de Aplicativo da Microsoft</strong> em branco por enquanto. Você receberá essas informações posteriormente quando [registrar seu bot](~/bot-service-quickstart-registration.md).
+## <a name="connect-your-bot-to-the-emulator"></a>Conectar seu bot no emulador
+Neste ponto, seu bot está em execução localmente. Em seguida, inicie o emulador e, em seguida, conecte-se ao seu bot no emulador:
+1. Tipo http://localhost:port-number/api/messages na barra de endereços, em que o número da porta corresponde ao número da porta no navegador onde seu aplicativo está sendo executado. Você pode deixar os campos <strong>Microsoft App ID</strong> e <strong>Microsoft App Password</strong> em branco por enquanto. Você receberá essas informações posteriormente, quando você [registrar seu bot](~/bot-service-quickstart-registration.md).
 2. Clique em **Conectar**. 
 3. Teste seu bot digitando algumas mensagens no emulador. 
 

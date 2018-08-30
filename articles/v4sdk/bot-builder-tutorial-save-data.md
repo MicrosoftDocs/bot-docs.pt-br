@@ -8,14 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 4/23/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 10c1cb240a22c1c16dd0d946ee55531d514f332e
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 86f70fd66f1bc2261339cbe0590061913b51ddbc
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297171"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42904434"
 ---
 # <a name="save-user-state-data"></a>Salvar dados de estado do usuário
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
 Quando o bot está pedindo aos usuários informações, é provável que você queira persistir algumas das informações no armazenamento de alguma forma. O Bot Builder SDK permite que você armazene entradas do usuário usando *armazenamento na memória*, *armazenamento de arquivos*, armazenamento do banco de dados como *CosmosDB* ou *SQL* . 
 

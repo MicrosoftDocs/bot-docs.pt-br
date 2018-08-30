@@ -8,14 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 9d3e1c315399ce3cadc6371ceb93055c836590a6
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: e326147f32161c2e99dacdfa24ff41080a9b33e9
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297401"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42906230"
 ---
 # <a name="manage-custom-state-data-with-azure-cosmos-db-for-nodejs"></a>Gerenciar dados de estado personalizados com o Azure Cosmos DB for Node.js
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
 Neste artigo, você implementará o armazenamento do Cosmos DB para armazenar e gerenciar os dados de estado do seu bot. O Serviço de Estado do Conector padrão usado pelos bots não é destinado ao ambiente de produção. Você deve usar [Extensões do Azure](https://www.npmjs.com/package/botbuilder-azure) disponíveis no GitHub ou implementar um cliente de estado personalizado usando a plataforma de armazenamento de dados de sua escolha. Aqui estão alguns dos motivos para usar o armazenamento de estado personalizado:
 
@@ -37,7 +39,7 @@ Se você não tiver uma conta do Azure, clique em [aqui](https://azure.microsoft
 
 ## <a name="set-up-the-azure-cosmos-db-database"></a>Configurar o banco de dados do Azure Cosmos DB
 1. Depois de efetuar login no portal do Azure, crie um novo banco de dados do *Azure Cosmos DB* clicando em **Novo**. 
-2. Clique em **bancos de dados**. 
+2. Clique em **Bancos de Dados**. 
 3. Encontre **do Azure Cosmos DB** e clique em **criar**.
 4. Preencha os campos. Para o **API** campo, selecione **SQL (DocumentDB)**. Quando terminar de preencher todos os campos, clique no botão **Criar** na parte inferior da tela para implantar o novo banco de dados. 
 5. Depois que o novo banco de dados é implantado, navegue até seu novo banco de dados. Clique em **chaves de acesso** para encontrar chaves e cadeias de caracteres de conexão. Seu bot usará essas informações para chamar o serviço de armazenamento para salvar os dados do estado.

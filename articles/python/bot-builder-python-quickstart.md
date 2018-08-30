@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 02/21/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 3df88215141fa513fb2b97b8f13d1cc358660d86
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: ba16adebe6bbb9b79949cd9842e975e35c3f2aa6
+ms.sourcegitcommit: d486dd088b87a44fc8142f7a08877ff993861a42
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296592"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42928405"
 ---
 # <a name="create-a-bot-with-the-bot-builder-sdk-for-python"></a>Criar um bot com o SDK do Bot Builder para Python
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
@@ -132,19 +132,17 @@ No seu terminal local, você verá a mensagem ‘Servidor http iniciado no local
 Em seguida, inicie o emulador e conecte-se ao seu bot no emulador:
 
 
-1. Clique no link **criar uma nova configuração de bot** na guia "Boas-vindas" do emulador. 
+1. Clique no link **criar uma nova configuração de bot** na guia de "Boas-Vindas" do emulador. 
 
-2. Insira um **Nome de bot** e digite o caminho do diretório para o seu código de bot. O arquivo de configuração de bot será salvo nesse caminho.
+2. Insira um **Nome do bot** e insira o caminho do diretório para o código de bot. O arquivo de configuração do bot será salvo neste caminho.
 
-3. Digite `http://localhost:port-number/api/messages` no campo **URL do Ponto de Extremidade**, onde *port-number* corresponde ao número da porta no navegador onde o seu aplicativo está sendo executado.
+3. Digite `http://localhost:port-number/api/messages` no campo **URL do Ponto de Extremidade**, em que *número da porta* corresponde ao número da porta mostrado no navegador onde o aplicativo está em execução.
 
-4. Clique em **Conectar** para se conectar ao seu bot. Você não precisará especificar a **ID do Aplicativo da Microsoft** nem a **Senha do Aplicativo da Microsoft**. Você pode deixar esses campos em branco por enquanto. Você receberá essas informações posteriormente quando registrar o seu bot.
+4. Clique em **Conectar** para conectar o bot. Não é necessário especificar **ID do Aplicativo da Microsoft** e **Senha do Aplicativo da Microsoft**. Por enquanto, é possível deixar esses campos em branco. Você receberá essas informações posteriormente quando registrar o seu bot.
 
 Digite **Olá** no emulador, e o bot responderá **Você disse "Olá"**.
 
 ## <a name="next-steps"></a>Próximas etapas
-
-Em seguida, vá diretamente para os conceitos que explicam um bot e como ele funciona.
 
 > [!div class="nextstepaction"]
 > [Conceitos básicos do Bot](../v4sdk/bot-builder-basics.md)

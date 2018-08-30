@@ -9,14 +9,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 03/13/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 802d245112baa6d5fb10f4e992d9f6722b70a224
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: b90b3c2635121f7a12f7766852990addb314542e
+ms.sourcegitcommit: f89ed979eb6321232fb21100ef376d9b0d5113c9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297332"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42914606"
 ---
 # <a name="add-suggested-actions-to-messages"></a>Adicionar ações sugeridas a mensagens
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
 [!include[Introduction to suggested actions](../includes/snippet-suggested-actions-intro.md)] 
 
@@ -61,3 +63,4 @@ await context.sendActivity(basicMessage);
 ## <a name="additional-resources"></a>Recursos adicionais
 
 Para visualizar os recursos, você pode usar o [Inspetor de Canal](../bot-service-channel-inspector.md)
+

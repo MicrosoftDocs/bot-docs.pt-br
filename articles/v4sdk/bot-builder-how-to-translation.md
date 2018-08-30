@@ -8,14 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 04/06/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 7241b67b582b3e31c1b3c15dc5474e750b7cc558
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: e316ff90b68f860274579f06e7196deec364e082
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297473"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42905629"
 ---
 # <a name="translate-from-the-users-language-to-make-your-bot-multilingual"></a>Traduzir do idioma do usuário para tornar seu bot multilíngue
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
 O bot pode usar o [Microsoft Translator](https://www.microsoft.com/en-us/translator/) para traduzir mensagens automaticamente para o idioma que o bot entende e, opcionalmente, traduzir as respostas do bot para o idioma do usuário.
 <!-- 
@@ -42,7 +44,7 @@ Verifique se você tem os pacotes necessários para adicionar a tradução ao bo
 
 Se você pretende combinar a tradução com o LUIS (Reconhecimento vocal), adicione também uma referência a:
 
-* `Microsoft.Bot.Builder.Luis` (necessário para o LUIS)
+* `Microsoft.Bot.Builder.Luis` (necessário para LUIS)
 
 # <a name="javascripttabjsrefs"></a>[JavaScript](#tab/jsrefs)
 

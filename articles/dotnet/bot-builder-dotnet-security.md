@@ -8,14 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/17
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 331effc0bf604388995288e5d7c3ca9d54537f94
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 376982396ac11cbcf54f26255235b3779e0e1c26
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296717"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42905708"
 ---
 # <a name="secure-your-bot"></a>Proteger o bot
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
 O bot pode ser conectado a muitos canais de comunicação diferentes (Skype, SMS, email e outros) por meio do serviço Bot Framework Connector. Este artigo descreve como proteger seu bot usando a autenticação HTTPS e do Bot Framework.
 
@@ -49,6 +51,6 @@ Para usar outros valores para as credenciais de autenticação, especifique o at
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [Construtor de bot do SDK para .NET](bot-builder-dotnet-overview.md)
+- [SDK do Bot Builder para .NET](bot-builder-dotnet-overview.md)
 - [Principais conceitos do SDK do Construtor de Bot para .NET](bot-builder-dotnet-concepts.md)
 - [Registrar um bot no Bot Framework](~/bot-service-quickstart-registration.md)

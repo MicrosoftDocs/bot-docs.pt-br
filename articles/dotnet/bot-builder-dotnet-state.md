@@ -8,14 +8,17 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/17
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: b218ae4ffd2ffbfe9144b4143f2600be15d688dd
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 3a924503ecadc9f56fa2543881c116f7fbbb4d9a
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296791"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42904324"
 ---
 # <a name="manage-state-data"></a>Gerenciar dados de estado
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
+
 > [!div class="op_single_selector"]
 > - [.NET](../dotnet/bot-builder-dotnet-state.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-state.md)
@@ -60,9 +63,9 @@ GlobalConfiguration.Configure(WebApiConfig.Register);
 
 Você pode usar esse método para definir seu próprio armazenamento de dados personalizado ou usar qualquer uma das *Extensões do Azure*.
 
-## <a name="manage-custom-data-storage"></a>Gerenciar o armazenamento de dados personalizado
+## <a name="manage-custom-data-storage"></a>Gerenciar o armazenamento de dados personalizados
 
-Por motivos de desempenho e segurança no ambiente de produção, você pode implementar seu próprio armazenamento de dados ou implemente uma das seguintes opções de armazenamento de dados:
+Para desempenho e razões de segurança no ambiente de produção, você pode implementar seu próprio armazenamento de dados ou considere a implementação de uma das seguintes opções de armazenamento de dados:
 
 1. [Gerenciar dados de estado com o Cosmos DB](bot-builder-dotnet-state-azure-cosmosdb.md)
 
@@ -74,7 +77,7 @@ Com uma dessas opções de [Extensões do Azure](https://www.nuget.org/packages/
 
 Esta tabela lista os métodos que você pode usar para gerenciar os dados de estado.
 
-| Método | No escopo para | Objetivo |                                                
+| Método | No escopo | Objetivo |                                                
 |----|----|----|
 | `GetUserData` | Usuário | Obter os dados de estado salvos anteriormente do usuário no canal especificado |
 | `GetConversationData` | Conversação | Obter os dados de estado salvos anteriormente da conversa no canal especificado |

@@ -8,15 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: aff2509a426fb42f136fb9d2b4a2df9ec1accda0
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 1c6b01b1cab9165b1513bfda5af182f27635290e
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297352"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42904378"
 ---
 # <a name="send-a-typing-indicator"></a>Enviar um indicador de digitação 
 
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
 Os usuários esperam uma resposta em tempo hábil às suas mensagens. Se o seu bot executar alguma tarefa de longa duração, como chamar um servidor ou executar uma consulta sem dar ao usuário alguma indicação de que o bot ouviu, o usuário pode ficar impaciente e enviar mensagens adicionais ou simplesmente assumir que o bot está quebrado.
 Muitos canais suportam o envio de uma indicação de digitação para mostrar ao usuário que a mensagem foi recebida e está sendo processada.
