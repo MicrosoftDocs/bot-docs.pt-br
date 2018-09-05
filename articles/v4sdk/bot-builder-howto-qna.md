@@ -1,5 +1,5 @@
 ---
-title: Usar o QnA Maker | Microsoft Docs
+title: Usar o QnA Maker para responder a perguntas | Microsoft Docs
 description: Aprenda a usar o QnA Maker no seu bot.
 keywords: perguntas e respostas, QnA, perguntas frequentes, middleware
 author: ivorb
@@ -9,16 +9,18 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 03/13/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 78bc2c849a2c1900da33c7419693a7ff84c43cb0
-ms.sourcegitcommit: dcbc8ad992a3e242a11ebcdf0ee99714d919a877
+ms.openlocfilehash: 7dd973e2b5a151e754925e6f19c6e4f82507f745
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39352945"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42906170"
 ---
-# <a name="how-to-use-qna-maker"></a>Como usar o QnA Maker
+# <a name="use-qna-maker-to-answer-questions"></a>Usar o QnA Maker para responder a perguntas
 
-Para adicionar suporte de perguntas e respostas simples ao seu bot, você pode usar o serviço [QnA Maker](https://qnamaker.ai/).
+
+Para adicionar suporte de perguntas e respostas simples ao seu bot, você pode usar o serviço [QnA Maker](https://docs.microsoft.com/en-us/azure/cognitive-services/qnamaker/home).
+
 
 Um dos requisitos básicos em escrever seu próprio serviço QnA Maker é propagá-lo com perguntas e respostas. Em muitos casos, as perguntas e respostas já existirem no conteúdo, como as perguntas frequentes ou outra documentação. Outras vezes você gostaria de personalizar as respostas para perguntas de forma mais natural e conversacional. 
 

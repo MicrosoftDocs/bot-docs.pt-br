@@ -1,5 +1,5 @@
 ---
-title: Como usar mensagens proativas | Microsoft Docs
+title: Enviar mensagens proativas | Microsoft Docs
 description: Saiba como enviar mensagens proativamente com o bot.
 keywords: mensagem proativa
 author: jonathanfingold
@@ -9,14 +9,17 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 05/01/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: fd53a897d9847432fd337402d40edfcd6f4ff061
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: c22ce6a35d4d49506360a78a439f15137c429d9d
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297156"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42905130"
 ---
-# <a name="how-to-use-proactive-messaging"></a>Como usar mensagens proativas
+# <a name="send-proactive-messages"></a>Enviar mensagens proativas 
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
+
 
 Geralmente, os bots enviam _mensagens reativas_, mas há ocasiões em que também é preciso ser capaz de enviar uma [mensagem proativa](bot-builder-proactive-messages.md). 
 
@@ -120,7 +123,7 @@ Como resposta, nosso bot executará as etapas a seguir nesse turno:
 
 O trabalho que estamos iniciando é um simples temporizador de 5 segundos que será concluído enviando a mensagem proativa.
 - A chamada para o método de continuar a conversa do adaptador cria um novo turno iniciado pelo bot.
-- Esse turno tem seu próprio contexto de turno do qual podemos recuperar as informações de estado.
+- Esse turno tem seu próprio [contexto de turno](bot-builder-concept-activity-processing.md#turn-context), do qual podemos recuperar as informações de estado.
 - Usamos esse contexto para enviar a mensagem proativa ao usuário.
 
 

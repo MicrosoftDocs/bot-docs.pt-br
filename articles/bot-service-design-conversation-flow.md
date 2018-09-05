@@ -8,34 +8,37 @@ manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
 ms.date: 4/8/2018
-ms.openlocfilehash: 09568fca31649880df0f5b4fbc47f50288e907cb
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 6e661d030f49cb8004f122de72de7514e804cb9c
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296664"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42905534"
 ---
 ::: moniker range="azure-bot-service-3.0"
 
 # <a name="design-and-control-conversation-flow"></a>Projetar e controlar o fluxo da conversa
 
+[!INCLUDE [pre-release-label](./includes/pre-release-label-v3.md)]
+
 Em um aplicativo tradicional, a interface do usuário é uma série de telas. 
 Um único aplicativo ou site pode usar uma ou mais telas, conforme necessário, para trocar informações com o usuário. 
 A maioria dos aplicativos começa com uma tela principal, à qual os usuários inicialmente chegam e fornece uma navegação que leva a outras telas para várias funções, como o início de um novo pedido, a navegação de produtos ou a busca por ajuda.
 
-Assim como aplicativos e sites, os bots têm uma interface do usuário, mas ela é composta por **diálogos**, em vez de telas. 
+Assim como aplicativos e sites, os bots têm uma interface do usuário, mas ela é composta por **diálogos**, em vez de telas. Os diálogos ajudam a preservar o local em uma conversa, avisam os usuários quando necessário e executam a validação de entrada. Eles são úteis para gerenciar conversas de vários turnos e coleções simples "baseada em formulários" de informações para realizar atividades como a reserva de um voo.
+
 Os diálogos permitem ao desenvolvedor do bot separar logicamente várias áreas da funcionalidade do bot e guiar o fluxo da conversa. Por exemplo, você pode criar um diálogo para conter a lógica que ajuda o usuário a navegar pelos produtos e um diálogo separado para conter a lógica que ajuda o usuário a criar um pedido. 
 
 Os diálogos podem ou não ter interfaces gráficas. Eles podem conter botões, texto e outros elementos, ou ser totalmente baseados na fala. Os diálogos também contêm ações para executar tarefas, como invocar outros diálogos ou processar a entrada do usuário.
 
 ## <a name="using-dialogs-to-manage-conversation-flow"></a>Usando diálogos para gerenciar o fluxo da conversa
 
-[!INCLUDE [Dialog flow example](~/includes/snippet-dotnet-manage-conversation-flow-intro.md)]
+[!INCLUDE [Dialog flow example](./includes/snippet-dotnet-manage-conversation-flow-intro.md)]
 
 Para obter um passo a passo detalhado de como gerenciar o fluxo da conversa usando diálogos e o SDK do Construtor de Bot, confira:
 
-- [Gerenciar o fluxo da conversa com diálogos (.NET)](~/dotnet/bot-builder-dotnet-manage-conversation-flow.md)
-- [Gerenciar o fluxo da conversa com diálogos (Node.js)](~/nodejs/bot-builder-nodejs-manage-conversation-flow.md)
+- [Gerenciar o fluxo da conversa com diálogos (.NET)](./dotnet/bot-builder-dotnet-manage-conversation-flow.md)
+- [Gerenciar o fluxo da conversa com diálogos (Node.js)](./nodejs/bot-builder-nodejs-manage-conversation-flow.md)
 
 ## <a name="dialog-stack"></a>Pilha de diálogos
 
@@ -57,7 +60,7 @@ Embora seja ótimo se os usuários sempre percorressem esse caminho lógico e li
 As pessoas não se comunicam em "pilhas". Eles tendem a mudar de ideia com frequência. 
 Considere o exemplo a seguir: 
 
-![bot](~/media/bot-service-design-conversation-flow/stack-issue.png)
+![bot](./media/bot-service-design-conversation-flow/stack-issue.png)
 
 Embora o bot possa ter construído logicamente uma pilha de diálogos, o usuário pode decidir fazer algo totalmente diferente ou fazer uma pergunta que pode não estar relacionada ao tópico atual. 
 No exemplo, o usuário faz uma pergunta em vez de fornecer a resposta sim/não que o diálogo espera. 
@@ -67,12 +70,12 @@ Como o diálogo deve responder?
 - Desconsiderar tudo o que o usuário fez anteriormente, redefinir toda a pilha de diálogos e começar do início, tentando responder à pergunta do usuário. 
 - Tentar responder a pergunta do usuário e, em seguida, retornar a essa pergunta sim/não e tentar retomar desse ponto. 
 
-Não há resposta *certa* para essa pergunta, pois a melhor solução dependerá das especificidades do cenário e de como o usuário esperaria que o bot respondesse. 
+Não há i,a resposta *certa* para essa pergunta, pois a melhor solução dependerá das especificidades do cenário e de como o usuário esperaria que o bot respondesse. No entanto, à medida que a complexidade da conversa aumenta, os **diálogos** tornam-se mais difíceis de gerenciar. Em situações complexas de branch, pode ser mais fácil criar seu próprio fluxo de lógica de controle para manter o controle de conversa do usuário.
 
 ## <a name="next-steps"></a>Próximas etapas
 
 O gerenciamento da navegação do usuário em diálogos e o projeto do fluxo de conversa de uma maneira que permita que os usuários atinjam suas metas (mesmo em uma forma não linear) são um desafio fundamental do design de bot. 
-O [próximo artigo](~/bot-service-design-navigation.md) examina algumas armadilhas comuns de navegação mal projetada e aborda estratégias para evitar essas armadilhas. 
+O [próximo artigo](./bot-service-design-navigation.md) examina algumas armadilhas comuns de navegação mal projetada e aborda estratégias para evitar essas armadilhas. 
 
 ::: moniker-end
 
@@ -96,7 +99,7 @@ Em um fluxo de conversa de procedimento, você define a ordem das perguntas e o 
 
 Você pode estruturar esses módulos para fluírem da maneira desejada, variando de forma livre para sequencial. O SDK do Construtor de Bot fornece várias bibliotecas que permite construir qualquer fluxo de conversa necessário para o bot. Por exemplo, a biblioteca `prompts` permite que você solicite aos usuários a entrada, a biblioteca `waterfall` permite que você defina uma sequência de pares de pergunta/resposta, a biblioteca `dialog control` permite que você modularize a lógica de fluxo de conversa, etc. Todas essas bibliotecas são vinculadas por meio de um objeto `dialogs`. Vamos examinar mais detalhadamente como os módulos são implementados como `dialogs` para projetar e gerenciar fluxos de conversa e ver como esse fluxo é semelhante ao fluxo de aplicativo tradicional.
 
-![bot](~/media/designing-bots/core/dialogs-screens.png)
+![bot](./media/designing-bots/core/dialogs-screens.png)
 
 Em um aplicativo tradicional, tudo começa com a **tela principal**.
 A **tela principal** invoca a **tela de novo pedido**.
@@ -119,7 +122,7 @@ Embora seja ótimo se os usuários sempre percorressem esse caminho lógico e li
 As pessoas não se comunicam em `dialogs` sequenciais. Eles tendem a mudar de ideia com frequência. 
 Considere o exemplo a seguir: 
 
-![bot](~/media/bot-service-design-conversation-flow/stack-issue.png)
+![bot](./media/bot-service-design-conversation-flow/stack-issue.png)
 
 Embora o bot possa ser voltado para procedimentos, o usuário pode decidir fazer algo totalmente diferente ou fazer uma pergunta que não esteja relacionada ao tópico atual. 
 No exemplo acima, o usuário faz uma pergunta em vez de fornecer a resposta sim/não que o bot espera. 

@@ -7,17 +7,17 @@ ms.author: mateusv
 manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
-ms.date: 12/13/2017
-ms.openlocfilehash: 21f5b35e992f792a5667ef05d2708b5a446f8023
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.date: 08/27/2018
+ms.openlocfilehash: 0bf58773cfbb6c58773cc5c63b735a0099ad569e
+ms.sourcegitcommit: 86ddf3ebe6cc3385d1c4d30b971ac9c3e1fc5a77
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296750"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43056010"
 ---
 # <a name="design-the-user-experience"></a>Projetar a experiência do usuário
 
-Normalmente, os bots usam uma combinação de **controles de usuário avançados**, **texto e idioma natural** e **fala** para trocar informações com usuários.
+Você pode criar bots com vários recursos, como texto, botões, imagens, cartões avançados exibidos em formato carrossel ou de lista e muito mais. No entanto, cada canal, como Facebook, Slack, Skype etc. por fim, controla como os seus clientes de mensagens renderizam recursos. Mesmo quando vários canais forem compatíveis com um recurso, cada canal poderá renderizar o recurso de um jeito ligeiramente diferente. Em casos nos quais uma mensagem contém um ou mais recursos sem suporte nativo de canal, o canal pode tentar simplificar a renderização do conteúdo da mensagem como texto ou imagem estática, o que pode afetar consideravelmente a aparência da mensagem no cliente. Em alguns casos, talvez um canal não dê suporte algum a um recurso específico. Por exemplo, clientes do GroupMe não podem exibir um indicador de digitação.
 
 ## <a name="rich-user-controls"></a>Controles de usuário avançados
 
@@ -44,39 +44,10 @@ Os cartões do Serviço de Bot da Microsoft são objetos programáveis que cont�
 | VideoCard | ![Imagem de Cartão de vídeo](~/media/video-card.png) | Um cartão que pode reproduzir vídeos. Normalmente usado para abrir uma URL e transmitir um vídeo disponível. |
 | CardCarousel | ![Imagem de Carrossel de cartões](~/media/card-carousel.png) | Uma coleção horizontalmente rolável de cartões que permite ao usuário exibir facilmente uma série de opções possíveis de escolhas do usuário.|
 
-Os cartões permitem que você projete o bot uma vez para que ele funcione em uma variedade de canais. No entanto, nem todos os tipos de cartão são totalmente compatíveis com todos os canais disponíveis. As tabelas a seguir apresentam uma amostragem do suporte atual para os tipos de cartão em uma seleção de canais. Para obter as últimas informações sobre o suporte de canal, não se esqueça de usar o [Inspetor de Canal](bot-service-channel-inspector.md) para ver a aparência e a função de cartões específicos em seu canal de interesse. Para obter informações detalhadas sobre os cartões adaptáveis, veja também o <a href="http://adaptivecards.io/visualizer/">Visualizador de Cartões Adaptáveis</a>.
-
-A tabela abaixo mostra o suporte de canal para os tipos de cartão geralmente usados em um carrossel de cartões.
-
-| Canal | Adaptável | Hero | Miniatura | Carrossel |
-| ---- | ---- | ---- | ---- | ---- |
-| Cortana | ✔ | ✔ | ✔ | ✔ |
-| Email do O365 | ✔ | ✔ | ✔ | ✔ |
-| Facebook | - | ✔ | ✔ | ✔ |
-| Kik | ✔ | ✔ | ✔ | ✔ |
-| Skype | ✔ | ✔ | ✔ | ✔ |
-| Margem de atraso | ✔ | ✔ | ✔ | ✔ |
-| sms | ✔ | ✔ | ✔ | ✔ |
-| Teams | ✔ | ✔ | ✔ | ✔ |
-| Webchat | ✔ | ✔ | ✔ | ✔ |
-
-A tabela a seguir mostra o suporte de canal para tipos adicionais de cartões do Serviço de Bot da Microsoft.
-
-| Canal | Vídeo | Receipt | SignIn | SuggestedAction |
-| ---- | ---- | ---- | ---- | ---- |
-| Cortana | ✔ | ✔ | ✔ | - |
-| Email do O365 | ✔ | ✔ | ✔ | ✔ |
-| Facebook | ✔ | ✔ | ✔ | ✔ |
-| Kik | ✔ | ✔ | ✔ | ✔ |
-| Skype | ✔ | ✔ | ✔ | ✔ |
-| Margem de atraso | ✔ | ✔ | ✔ | ✔ |
-| sms | ✔ | ✔ | - | ✔ |
-| Teams | - | ✔ | ✔ | - |
-| Webchat | ✔ | ✔ | ✔ | ✔ |
-
-✔ = compatível
+Os cartões permitem que você projete o bot uma vez para que ele funcione em uma variedade de canais. No entanto, nem todos os tipos de cartão são totalmente compatíveis com todos os canais disponíveis. 
 
 Encontre instruções detalhadas para a adição de cartões ao bot nestas seções [Adicionar anexos de mídia de cartão avançado](v4sdk/bot-builder-howto-add-media-attachments.md) e [Adicionar ações sugeridas às mensagens](v4sdk/bot-builder-howto-add-suggested-actions.md).
+
 
 Ao projetar o bot, não descarte automaticamente elementos comuns de interface do usuário como não sendo "inteligentes o suficiente". Conforme abordado [anteriormente](~/bot-service-design-principles.md#designing-a-bot), o bot deve ser projetado para resolver o problema do usuário da maneira mais eficaz, rápida e fácil possível. Evite a tentação de começar incorporando o reconhecimento vocal em idioma natural, pois ele costuma ser desnecessário e introduz uma complexidade não justificada.
 
@@ -129,5 +100,4 @@ Um bot pode usar a entrada e/ou a saída de **fala** para se comunicar com os us
 Assim como as pessoas se comunicam entre si usando uma combinação de gestos, vozes e símbolos, os bots podem se comunicar com os usuários usando uma combinação de controles de usuário avançados, texto (às vezes, incluindo o idioma natural) e fala. Esses métodos de comunicação podem ser usados em conjunto; você não precisa escolher um em detrimento do outro. 
 
 Por exemplo, imagine um "bot de culinária" que ajuda os usuários com receitas, em que o bot pode fornecer instruções reproduzindo um vídeo ou exibindo uma série de imagens para explicar o que precisa ser feito. Alguns usuários talvez prefiram virar páginas da receita ou fazer perguntas ao bot usando a fala enquanto preparam uma receita. Outros podem preferir tocar na tela de um dispositivo em vez de interagir com o bot por meio da fala. Ao projetar o bot, incorpore os elementos da experiência do usuário que dão suporte às maneiras que os usuários provavelmente vão preferir interagir com o bot, considerando os casos de uso específicos para os quais se destina o suporte. 
-
 

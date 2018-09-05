@@ -1,5 +1,5 @@
 ---
-title: Salvar estado e acessar dados | Microsoft Docs
+title: Estado e armazenamento | Microsoft Docs
 description: Descreve como o gerenciador de estado, estado de conversa e estado de usuário estão no SDK do Bot Builder.
 keywords: LUIS, estado de conversa, estado de usuário, armazenamento, gerenciar estado
 author: DeniseMak
@@ -9,21 +9,21 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 02/15/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 56814ab12a85d18e52b0d5ec83fd81682f3b9f60
-ms.sourcegitcommit: f95702d27abbd242c902eeb218d55a72df56ce56
+ms.openlocfilehash: e25ecec3aec1cdebe3b9eae4bff0d3c434cb610b
+ms.sourcegitcommit: 1abc32353c20acd103e0383121db21b705e5eec3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39297530"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42756633"
 ---
-# <a name="save-state-and-access-data"></a>Salvar estado e acessar dados
+# <a name="state-and-storage"></a>Estado e armazenamento
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
 Uma chave para obter bom design de bot é acompanhar o contexto de uma conversa para que o bot reconheça aspectos como as respostas às perguntas anteriores.
 Dependendo no que o bot for utilizado, talvez seja necessário até mesmo controlar as informações de estado ou repositório por mais tempo que o tempo de vida da conversa.
 Um *estado* do bot é uma informação que o bot reconhece para responder apropriadamente às mensagens recebidas. O SDK do Bot Builder fornece classes para armazenar e recuperar dados de estado como um objeto associado a um usuário ou a uma conversa.
 
-* As **propriedades de conversa** ajudam o bot a acompanhar a conversa atual que o bot está tendo com o usuário. Se o bot precisar concluir uma sequência de etapas ou alternar entre tópicos de conversa, será possível usar as propriedades de conversa para gerenciar etapas em uma sequência ou acompanhar o tópico atual. Como as propriedades de conversa refletem o estado da conversa atual, geralmente são apagadas no fim de uma sessão quando o bot recebe uma atividade _fim da conversa_.
+* As **propriedades de conversa** ajudam o bot a acompanhar a conversa atual que o bot está tendo com o usuário. Se o bot precisar concluir uma sequência de etapas ou alternar entre tópicos de conversa, será possível usar as propriedades de conversa para gerenciar etapas em uma sequência ou acompanhar o tópico atual. Como as propriedades de conversa refletem o estado da conversa atual, geralmente são apagadas no fim de uma conversa quando o bot recebe uma atividade _fim da conversa_.
 * As **propriedades do usuário** podem ser usadas para muitas finalidades como determinar onde a conversa anterior do usuário foi interrompida ou simplesmente cumprimentando um usuário habitual pelo nome. Se você armazenar as preferências de um usuário, poderá usar essas informações para personalizar a conversa no próximo chat. Por exemplo, é possível alertar o usuário sobre um artigo de notícias relacionado a um tópico de interesse ou alertar um usuário quando um compromisso estiver disponível. Será necessário apagá-las se o bot receber uma atividade _excluir dados de usuário_.
 
 É possível usar [Armazenamento](bot-builder-howto-v4-storage.md) para ler de e gravar para armazenamento persistente. Isso permite que o bot execute ações como atualizar recursos compartilhados, gravar RSVPs ou votos, ou ler dados meteorológicos históricos. Da mesma forma que um aplicativo usa armazenamento para atingir os objetivos, o bot pode fazer isso dentro da conversa com o usuário.

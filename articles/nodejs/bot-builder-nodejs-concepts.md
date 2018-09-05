@@ -8,14 +8,17 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: e276b7f3f4cc46e0978b3ee182b8251e39b86ead
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: fd81b9dfe5d3e16096ffd6ab25c1ee23ff77f79f
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296998"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42904924"
 ---
 # <a name="key-concepts-in-the-bot-builder-sdk-for-nodejs"></a>Principais conceitos no SDK do construtor de Bot para Node. js
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
+
 > [!div class="op_single_selector"]
 > - [.NET](../dotnet/bot-builder-dotnet-concepts.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-concepts.md)
@@ -43,7 +46,8 @@ Para obter um exemplo que demonstra como enviar uma placa gráfica avançada que
 Caixas de diálogo ajudam você a organizar a lógica de conversação no seu bot e é fundamentais para a [Projetando o fluxo da conversa](../bot-service-design-conversation-flow.md). Para obter uma introdução para as caixas de diálogo, consulte [gerenciar uma conversa com caixas de diálogo](bot-builder-nodejs-dialog-manage-conversation.md).
 
 ## <a name="actions"></a>Ações
-Você vai querer projetar seu bot para ser capaz de lidar com interrupções, como solicitações de cancelamento ou ajuda a qualquer momento durante o fluxo da conversa. O SDK do construtor de Bot para Node. js fornece manipuladores de mensagens globais que disparam ações, como o cancelamento ou invocando a outras caixas de diálogo. Ver <!--[Handling cancel](bot-builder-nodejs-manage-conversation-flow.md#handling-cancel), [Confirming interruptions](bot-builder-nodejs-manage-conversation-flow.md#confirming-interruptions) and-->[lidar com ações de usuário](bot-builder-nodejs-dialog-actions.md) para obter exemplos de como usar [triggerAction][triggerAction] manipuladores.
+Você vai querer projetar seu bot para ser capaz de lidar com interrupções, como solicitações de cancelamento ou ajuda a qualquer momento durante o fluxo da conversa. O SDK do construtor de Bot para Node. js fornece manipuladores de mensagens globais que disparam ações, como o cancelamento ou invocando a outras caixas de diálogo. Veja [Manipular ações de usuário](bot-builder-nodejs-dialog-actions.md) para obter exemplos de como usar [manipuladores triggerAction][triggerAction].
+<!--[Handling cancel](bot-builder-nodejs-manage-conversation-flow.md#handling-cancel), [Confirming interruptions](bot-builder-nodejs-manage-conversation-flow.md#confirming-interruptions) and-->
 
 
 ## <a name="recognizers"></a>Reconhecedores

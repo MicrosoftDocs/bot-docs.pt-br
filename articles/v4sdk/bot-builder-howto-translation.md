@@ -1,5 +1,5 @@
 ---
-title: Traduzir a entrada do usuário para tornar o bot multilíngue | Microsoft Docs
+title: Converter entrada do usuário | Microsoft Docs
 description: Como traduzir a entrada do usuário automaticamente para o idioma nativo do bot e traduzi-la de volta para o idioma do usuário.
 keywords: tradução, traduzir, multilíngue, Microsoft Translator
 author: DeniseMak
@@ -9,14 +9,14 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 04/06/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 13139755989afccd85b2e09267dc42619ec1f83c
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 6304e328e523e73894473620fc1fb7656a8776bf
+ms.sourcegitcommit: 1abc32353c20acd103e0383121db21b705e5eec3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296730"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42756492"
 ---
-# <a name="translate-user-input-to-make-your-bot-multilingual"></a>Traduzir a entrada do usuário para tornar o bot multilíngue
+# <a name="translate-user-input"></a>Converter entrada do usuário 
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
@@ -47,7 +47,7 @@ Verifique se você tem os pacotes necessários para adicionar a tradução ao bo
 
 Se você pretende combinar a tradução com o LUIS (Reconhecimento vocal), adicione também uma referência a:
 
-* `Microsoft.Bot.Builder.Ai.Luis` (necessário para o LUIS)
+* `Microsoft.Bot.Builder.Ai.Luis` (necessário para LUIS)
 
 # <a name="javascripttabjs"></a>[JavaScript](#tab/js)
 
@@ -210,7 +210,7 @@ Execute o bot e digite algumas mensagens em outros idiomas. Você verá que o bo
 
 ## <a name="invoke-logic-in-the-bots-native-language"></a>Invocar a lógica no idioma nativo do bot
 
-Agora, adicione uma lógica que verifica as palavras em inglês. Se o usuário disser "ajuda" ou "cancelar" em outro idioma, o bot traduz isso para o inglês e a lógica que verifica as palavras em inglês "help" ou "cancel" é invocada.
+Agora, adicione uma lógica que verifica as palavras em inglês. Se o usuário disser "ajuda" ou "cancelar" em outro idioma, o bot traduzirá isso para o inglês, e a lógica que verifica as palavras em inglês "help" ou "cancel" será invocada.
 
 # <a name="ctabcs"></a>[C#](#tab/cs)
 Em `EchoBot.cs`, atualize a instrução `case` para as atividades de mensagem no método `OnTurn` do bot.

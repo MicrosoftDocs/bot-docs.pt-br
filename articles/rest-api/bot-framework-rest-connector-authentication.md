@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
-ms.openlocfilehash: 53643f21e2cf1ebdfd84caed38f8f84c330ef71b
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 998586820a0489bc4cca1d25b53cb6ac8162c452
+ms.sourcegitcommit: 0b2be801e55f6baa048b49c7211944480e83ba95
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297079"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43115041"
 ---
 # <a name="authentication"></a>Autenticação
 
@@ -24,7 +24,7 @@ O bot comunica-se com o serviço do Bot Connector usando HTTP em um canal seguro
 Caso esteja usando o [SDK do Bot Builder para .NET](../dotnet/bot-builder-dotnet-overview.md) ou o [SDK do Bot Builder para Node.js](../nodejs/index.md), não é necessário implementar os procedimentos de segurança descritos neste artigo, porque o SDK faz isso automaticamente para você. Basta configurar o projeto com a ID do aplicativo e a senha que você obteve para o bot durante o [registro](../bot-service-quickstart-registration.md) e o SDK cuidará do restante.
 
 > [!WARNING]
-> Em dezembro de 2016, a v3.1 do protocolo de segurança do Bot Framework introduziu alterações em diversos valores que são usados durante a geração e validação de token. No fim de 2017, a v3.2 do protocolo de segurança do Bot Framework será apresentada e novamente incluirá alterações em valores que são usados durante a geração e validação de token.
+> Em dezembro de 2016, a v3.1 do protocolo de segurança do Bot Framework introduziu alterações em diversos valores que são usados durante a geração e validação de token. No fim de 2017, a v3.2 do protocolo de segurança do Bot Framework foi apresentada e incluiu alterações em valores usados durante a geração e validação de token.
 > Para obter mais informações, consulte [Alterações do protocolo de segurança](#security-protocol-changes).
 
 ## <a name="authentication-technologies"></a>Tecnologias de autenticação

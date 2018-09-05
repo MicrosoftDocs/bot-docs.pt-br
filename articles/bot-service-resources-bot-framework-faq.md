@@ -6,13 +6,13 @@ ms.author: v-demak
 manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
-ms.date: 05/03/2018
-ms.openlocfilehash: e59f9b10686b10ae821b8c4bf259a1fc301ac702
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.date: 08/28/2018
+ms.openlocfilehash: 63aa65e2591d9f98d763863d8d4d56cd0df185ea
+ms.sourcegitcommit: f667ce3f1635ebb2cb19827016210a88c8e45d58
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296672"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43142422"
 ---
 # <a name="bot-framework-frequently-asked-questions"></a>Perguntas frequentes sobre o Bot Framework
 
@@ -50,20 +50,34 @@ Cada bot é seu próprio serviço, e os desenvolvedores desses serviços são ob
 
 para fornecer o serviço de E/S, o Bot Framework transmite sua mensagem e o conteúdo da mensagem (incluindo sua ID) do serviço de chat usado para o bot.
 
+### <a name="can-i-host-my-bot-on-my-own-servers"></a>Pode hospedar meu bot em meus próprios servidores?
+Sim. Seu bot pode ser hospedado em qualquer lugar na Internet. Em seus próprios servidores, no Azure ou em qualquer outro datacenter. O único requisito é que o bot deve expor um ponto de extremidade HTTPS publicamente acessível.
+
 ### <a name="how-do-you-ban-or-remove-bots-from-the-service"></a>Como os bots são vetados ou removidos do serviço?
 
 Os usuários têm uma maneira de relatar o comportamento inadequado de um bot por meio do cartão de visita do bot no diretório. Os desenvolvedores precisam respeitar os termos de serviço da Microsoft para participar do serviço.
 
-### <a name="which-specific-urls-do-i-need-to-whitelist-in-my-corporate-firewall-to-access-bot-services"></a>Quais URLs específicas preciso incluir na lista de permissões de meu firewall corporativo para acessar os serviços de bot?
-
-Você precisará incluir as seguintes URLs na lista de permissões do firewall corporativo:
+### <a name="which-specific-urls-do-i-need-to-whitelist-in-my-corporate-firewall-to-access-bot-framework-services"></a>Quais URLs específicas preciso incluir na lista de permissões de meu firewall corporativo para acessar os serviços Bot Framework?
+Se tiver um firewall de saída bloqueando o tráfego do seu bot com a Internet, você precisará colocar as URLs a seguir no firewall:
 - login.botframework.com (autenticação do Bot)
 - login.microsoftonline.com (autenticação do Bot)
 - westus.api.cognitive.microsoft.com (para a integração NLP do Luis.ai)
 - state.botframework.com (armazenamento de estado do Bot para criação de protótipos)
 - cortanabfchanneleastus.azurewebsites.net (canal da Cortana)
 - cortanabfchannelwestus.azurewebsites.net (canal da Cortana)
-- *.botFramework.com (canais)
+- *.botframework.com (canais)
+
+### <a name="can-i-block-all-traffic-to-my-bot-except-traffic-from-the-bot-connector-service"></a>Posso bloquear todo o tráfego para o meu bot, exceto o tráfego do Serviço de Conector do Bot?
+Não. Esse tipo de lista de permissões de DNS ou de endereço IP é inviável. O serviço Bot Framework Connector é hospedado em datacenters do Azure em todo o mundo e a lista de IPs do Azure está em constante mudança. A lista de permissões de determinados endereços IP pode funcionar um dia e parar no próximo, à medida que os Endereços IP do Azure mudam.
+ 
+### <a name="what-keeps-my-bot-secure-from-clients-impersonating-the-bot-framework-connector-service"></a>O que mantém o meu bot protegido de clientes que representam o Serviço Bot Framework Connector ?
+1. O token de segurança que acompanha todas as solicitações feitas para seu bot tem a ServiceUrl codificada dentro dele, o que significa que, mesmo se um invasor obtiver acesso ao token, eles não conseguirá redirecionar a conversa para uma nova ServiceUrl. Isso é imposto por todas as implementações do SDK e documentado em nossos materiais de [referência](https://docs.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-connector-authentication?view=azure-bot-service-3.0#bot-to-connector) de autenticação.
+
+2. Se o token de entrada estiver ausente ou se for malformado, o SDK do Bot Framework não irá gerar um token na resposta. Isso limita o dano que poderá ocorrer se o bot for configurado incorretamente.
+3. Dentro do bot, você pode verificar manualmente a ServiceUrl fornecida no token. Isso torna o bot mais frágil em caso de alterações de topologia de serviço, por isso que é possível, mas não recomendado.
+
+
+Observe que essas são as conexões de saída do bot para a Internet. Não há uma lista de nomes DNS ou Endereços IP que o Serviço Bot Framework Connector usará para se comunicar com o bot. Não há suporte para a entrada na lista de permissões do Endereço IP.
 
 ## <a name="rate-limiting"></a>Limitação de taxa
 ### <a name="what-is-rate-limiting"></a>O que é a limitação de taxa?

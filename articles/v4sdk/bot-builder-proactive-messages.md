@@ -9,14 +9,14 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 03/21/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 47f3dd9405a36260a01b28bcc389355d6726ae11
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: f311f70e9bfb72db780546b5e289f09d803589dc
+ms.sourcegitcommit: 1abc32353c20acd103e0383121db21b705e5eec3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296830"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42756417"
 ---
-# <a name="proactive-messaging"></a>Mensagens proativas
+# <a name="proactive-messages"></a>Mensagens proativas
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 <!--
 When you think about the exchange of messages between your bot and the user, you're probably thinking about the scenario where the user sends a message to your bot and your bot then replies to the user with a message of its own. We call this _reactive messaging_ and it's by far the most common flow that you should optimize your bot's code for.

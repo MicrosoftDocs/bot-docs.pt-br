@@ -1,5 +1,5 @@
 ---
-title: Testando e depurando o bot | Microsoft Docs
+title: Como testar e depurar diretrizes | Microsoft Docs
 description: Entenda como testar e depurar o bot.
 keywords: princípios de teste, elementos fictícios, perguntas frequentes, níveis de teste
 author: ivorb
@@ -9,16 +9,18 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 04/09/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: ea1c458e98f67f76c56fdd70595307a0e0252c1d
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: caa424ed0ea0944805836739ed48a7a61f78d21c
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296607"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42905255"
 ---
-# <a name="testing-and-debugging-your-bot"></a>Testando e depurando o bot
+# <a name="testing-and-debugging-guidelines"></a>Como testar e depurar diretrizes
 
-Os bots são aplicativos complexos, com muitas partes diferentes que trabalham em conjunto. Como qualquer outro aplicativo complexo, isso pode resultar em alguns bugs interessantes ou fazer com que o bot se comporte de maneira diferente do esperado.
+[!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
+
+Os bots estão aplicativos complexos, com muitas partes diferentes, trabalhem em conjunto. Como qualquer outro aplicativo complexo, isso pode resultar em alguns bugs interessantes ou fazer com que o bot se comporte de maneira diferente do esperado.
 
 O teste e a depuração posterior do bot, às vezes, pode ser uma tarefa difícil. Cada desenvolvedor tem sua própria maneira preferencial para realizar essa tarefa; as diretrizes que apresentamos abaixo são sugestões de uso que se aplicam a uma grande maioria dos bots.
 

@@ -8,14 +8,18 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 45f138d53ebf12325e17659148f2a95ebabfe1dd
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 7f94ea05fcccfe7bdeb1dec187d735cef28b1d7c
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296726"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42905390"
 ---
 # <a name="add-rich-card-attachments-to-messages"></a>Adicionar anexos de cartão avançados às mensagens
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
+
+
 > [!div class="op_single_selector"]
 > - [.NET](../dotnet/bot-builder-dotnet-add-rich-card-attachments.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-send-rich-cards.md)

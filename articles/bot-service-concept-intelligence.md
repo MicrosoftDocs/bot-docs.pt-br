@@ -1,5 +1,5 @@
 ---
-title: Adicionar inteligência aos bots com Serviços Cognitivos | Microsoft Docs
+title: Serviços Cognitivos | Microsoft Docs
 description: Saiba como adicionar inteligência artificial aos bots com os Serviços Cognitivos da Microsoft para torná-los mais úteis e interativas.
 keywords: reconhecimento vocal, extração de conhecimento, reconhecimento de fala, pesquisa na Web
 author: RobStand
@@ -8,14 +8,14 @@ manager: rstand
 ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/17/2017
-ms.openlocfilehash: 168e538720423721a21b720b811d559d8c811adb
-ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
+ms.openlocfilehash: 85b3c86582ce1d653159e0d36516b4a90f5a3220
+ms.sourcegitcommit: 1abc32353c20acd103e0383121db21b705e5eec3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39574572"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42756398"
 ---
-# <a name="add-intelligence-to-bots-with-cognitive-services"></a>Adicionar inteligência aos bots com Serviços Cognitivos
+# <a name="cognitive-services"></a>Serviços Cognitivos
 
 Os Serviços Cognitivos da Microsoft permitem explorar uma coleção crescente de algoritmos de IA avançados desenvolvidos por especialistas nas áreas de Pesquisa Visual Computacional, fala, processamento de linguagem natural, extração de conhecimento e pesquisa na Web. Os serviços simplificam uma variedade de tarefas baseadas em AI, fornecendo uma maneira rápida de adicionar tecnologias de inteligência de última geração aos bots com apenas algumas linhas de código. As APIs integram-se nas linguagens e plataformas mais modernas. As APIs também estão constantemente melhorando, aprendendo e ficando mais inteligentes, por isso as experiências estão sempre atualizadas. 
 

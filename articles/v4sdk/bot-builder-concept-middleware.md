@@ -9,16 +9,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 05/24/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 9986ac7d46acfa94694456d653b91dd66c1f55f0
-ms.sourcegitcommit: f95702d27abbd242c902eeb218d55a72df56ce56
+ms.openlocfilehash: d8201da0fb406f30888dfaa4ff6017f125990104
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39297537"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42905370"
 ---
 # <a name="middleware"></a>Middleware
 
-[!INCLUDE [pre-release-label](~/includes/pre-release-label.md)]
+[!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
 O middleware é simplesmente uma classe que fica entre o adaptador e sua lógica de bot, adicionada à coleção de middlewares do seu adaptador durante a inicialização. O SDK permite que você escrever seu próprio middleware ou adicionar componentes reutilizáveis de middleware criados por outras pessoas. O que você pode fazer no middleware? Apenas sobre qualquer coisa ... Toda atividade que entra ou sai do seu bot flui pelo middleware.
 
@@ -36,7 +36,7 @@ Existem muitas situações que exigem que nosso bot faça algo em cada atividade
 
 ### <a name="modifying-or-enhancing-the-turn-context"></a>Modificando ou aprimorando o contexto de turno
 
-Certas conversas podem ser muito mais proveitosas se o bot tiver mais informações do que as fornecidas na atividade. O middleware neste caso poderia examinar as informações de estado da conversação até o momento, consultar uma fonte de dados externa e anexá-las ao objeto de contexto antes de passar a execução para a lógica do bot.
+Certas conversas podem ser muito mais proveitosas se o bot tiver mais informações do que as fornecidas na atividade. O middleware neste caso poderia examinar as informações de estado da conversa até o momento, consultar uma fonte de dados externa e anexá-las ao objeto de [contexto de turno](bot-builder-concept-activity-processing.md#turn-context) antes de passar a execução para a lógica do bot.
 Por exemplo, o middleware poderia identificar os detalhes da conversa, como o ID e o estado da conversa, e consultar um serviço de diretório para obter informações. O middleware poderia adicionar o objeto de usuário recebido dessa consulta externa ao objeto de contexto e transmiti-lo, fornecendo mais dados sobre o usuário e permitindo que o bot manipulasse melhor a solicitação.
 
 Middleware pode cair em ambos os usos acima, ou em outro uso completamente; tudo depende de como você deseja que seu bot seja estruturado e o que seu bot está tentando alcançar.

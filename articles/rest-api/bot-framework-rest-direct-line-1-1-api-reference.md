@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
-ms.openlocfilehash: 2f688b9c80e762b93c2eba8f4671ff1760f624f9
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 3569e3bfbb3be51cf9023b4686ed4693e90ed50c
+ms.sourcegitcommit: ee63d9dc1944a6843368bdabf5878950229f61d0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297272"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42795175"
 ---
 # <a name="api-reference---direct-line-api-11"></a>Referência de API – API de Linha Direta 1.1
 
@@ -41,21 +41,22 @@ Authorization: Bearer SECRET_OR_TOKEN
 Authorization: BotConnector SECRET_OR_TOKEN
 ```
 
-Para conferir mais detalhes sobre como obter um segredo ou token que pode ser usado por seu cliente para autenticar suas solicitações de API de Linha Direta, consulte [Autenticação](bot-framework-rest-direct-line-1-1-authentication.md).
+Saiba mais sobre como obter um segredo ou token que pode ser usado por seu cliente para autenticar suas solicitações de API de Linha Direta em [Autenticação](bot-framework-rest-direct-line-1-1-authentication.md).
 
 ## <a name="http-status-codes"></a>Códigos de status HTTP
 
-O <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" target="_blank">código de status HTTP</a> retornado com cada resposta indica o resultado da solicitação correspondente. 
+O <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" target="_blank">Código de status HTTP</a> retornado com cada resposta indica o resultado da solicitação correspondente. 
 
 | Código de status HTTP | Significado |
 |----|----|
-| 200 | Solicitação bem-sucedida. |
-| 204 | A solicitação foi bem-sucedida, mas não retornou conteúdo. |
+| 200 | Solicitação com êxito. |
+| 204 | A solicitação foi processada com êxito, mas nenhum conteúdo foi retornado. |
 | 400 | A solicitação foi malformada ou está incorreta. |
 | 401 | O cliente não tem autorização para fazer a solicitação. Geralmente, esse código de status ocorre porque o cabeçalho `Authorization` está ausente ou malformado. |
 | 403 | O cliente não tem autorização para executar a operação solicitada. Geralmente esse código de status ocorre porque o cabeçalho `Authorization` especifica um token inválido ou secreto. |
-| 404 | O recurso solicitado não foi encontrado. Normalmente, esse código de status indica um URI de solicitação inválido. |
-| 500 | Ocorreu um erro de servidor interno dentro do serviço de Linha Direta ou uma falha ocorreu dentro do bot. Se você receber um erro 500 ao postar uma mensagem para um bot, é possível que o erro tenha sido acionado por uma falha no bot. **Esse é um código de erro comum.** |
+| 404 | O recurso solicitado não foi localizado. Normalmente, esse código de status indica um URI de solicitação inválido. |
+| 500 | Ocorreu um erro interno de servidor no serviço Linha Direta |
+| 502 | Ocorreu uma falha no bot; o bot está indisponível ou retornou um erro.  **Esse é um código de erro comum.** |
 
 ## <a name="token-operations"></a>Operações de token 
 Use essas operações para criar ou atualizar um token que um cliente pode usar para acessar uma conversa individual.
@@ -139,7 +140,7 @@ POST /api/conversations/{conversationId}/upload?userId={userId}
 
 | | |
 |----|----|
-| **Corpo da solicitação** | Para um único anexo, preencha o corpo da solicitação com o conteúdo do arquivo. Para vários anexos, crie um corpo de solicitação com várias partes, com uma parte para cada anexo, e também (opcionalmente) uma parte para o objeto [Message](#message-object) que deve servir como contêiner para os anexos especificados. Confira mais informações em [Enviar uma mensagem para o bot](bot-framework-rest-direct-line-1-1-send-message.md). |
+| **Corpo da solicitação** | Para um único anexo, preencha o corpo da solicitação com o conteúdo do arquivo. Para vários anexos, crie um corpo de solicitação com várias partes, com uma parte para cada anexo, e também (opcionalmente) uma parte para o objeto [Message](#message-object) que deve servir como contêiner para os anexos especificados. Para saber mais, veja [Enviar uma mensagem para o bot](bot-framework-rest-direct-line-1-1-send-message.md). |
 | **Retorna** | Nenhum dado é retornado no corpo da resposta. O serviço responde com um código de status HTTP 204, se a mensagem foi enviada com êxito. O cliente pode obter sua mensagem enviada (juntamente com quaisquer mensagens que o bot enviou ao cliente) usando a operação [Obter mensagens](#get-messages). | 
 
 > [!NOTE]
@@ -159,8 +160,8 @@ Define uma mensagem que um cliente envia para um bot ou recebe de um bot.
 | **conversationId** | string | ID que identifica a conversa.  | 
 | **created** | string | Data e hora em que a mensagem foi criada, expressa no formato <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO-8601</a>. | 
 | **from** | string | ID que identifica o usuário que é o remetente da mensagem. Ao criar uma mensagem, os clientes devem definir essa propriedade como uma ID de usuário estável. Embora a Linha Direta atribua uma ID de usuário, se esta não for fornecida, isso normalmente resulta em um comportamento inesperado. | 
-| **text** | string | Texto da mensagem que é enviado do usuário para o bot ou do bot para o usuário. | 
-| **channelData** | objeto | Um objeto que contém o conteúdo específico do canal. Alguns canais fornecem recursos que exigem informações adicionais que não podem ser representadas usando o esquema de anexo. Para esses casos, defina essa propriedade para o conteúdo específico do canal, conforme definido na documentação do canal. Esses dados são enviados sem modificações entre o cliente e o bot. Esta propriedade deve ser definida como um objeto complexo ou deixada em branco. Não defina-a como uma cadeia de caracteres, número ou outro tipo simples. | 
+| **text** | string | Texto da mensagem que é enviada do usuário para o bot ou do bot para o usuário. | 
+| **channelData** | objeto | Um objeto que contém conteúdo específico do canal. Alguns canais fornecem recursos que exigem informações adicionais que não podem ser representadas usando o esquema de anexo. Para esses casos, defina essa propriedade para o conteúdo específico do canal, conforme definido na documentação do canal. Esses dados são enviados sem modificações entre o cliente e o bot. Esta propriedade deve ser definida como um objeto complexo ou deixada em branco. Não defina-a como uma cadeia de caracteres, número ou outro tipo simples. | 
 | **images** | string[] | Matriz de cadeias de caracteres que contém a(s) URL(s) da(s) imagen(s) contida(s) na mensagem. Em alguns casos, as cadeias de caracteres nesta matriz podem ser URLs relativas. Se qualquer cadeia de caracteres nesta matriz não começar com “http” ou “https”, acrescente `https://directline.botframework.com` no início da cadeia de caracteres para formar a URL completa. | 
 | **attachments** | [Attachment](#attachment-object)[] | Matriz de objetos **Attachment** que representam os anexos sem imagem contidos na mensagem. Cada objeto na matriz contém uma propriedade `url` e uma propriedade `contentType`. Nas mensagens que um cliente recebe de um bot, a propriedade `url`, às vezes, pode especificar uma URL relativa. Para qualquer valor de propriedade `https://directline.botframework.com` que não comece com “http” ou “https”, acrescente `url` no início da cadeia de caracteres para formar a URL completa. | 
 
@@ -206,7 +207,7 @@ Define um anexo sem imagem.<br/><br/>
 | Propriedade | Tipo | DESCRIÇÃO |
 |----|----|----|
 | **contentType** | string | O tipo de mídia do conteúdo no anexo. |
-| **url** | string | URL do conteúdo do anexo. |
+| **url** | string | URL para o conteúdo do anexo. |
 
 ### <a name="conversation-object"></a>Objeto Conversation
 Define uma conversa de Linha Direta.<br/><br/>
@@ -232,5 +233,5 @@ Um conteúdo de erro de mensagem padronizada.<br/><br/>
 
 |        Propriedade        |          Tipo          |                                 DESCRIÇÃO                                 |
 |------------------------|------------------------|-----------------------------------------------------------------------------|
-| <strong>error</strong> | [Erro](#error-object) | Um objeto <strong>Error</strong> que contém informações sobre o erro. |
+| <strong>error</strong> | [Erro](#error-object) | Um objeto <strong>Erro</strong> que contém informações sobre o erro. |
 

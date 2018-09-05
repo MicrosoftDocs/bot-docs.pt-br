@@ -1,5 +1,5 @@
 ---
-title: Fazer download e reimplantar o código-fonte para um Serviço de Bot | Microsoft Docs
+title: Baixar e reimplantar o código-fonte do bot | Microsoft Docs
 description: Saiba como baixar e publicar um Serviço de Bot.
 keywords: baixar código-fonte, reimplantar, implantar, arquivo zip, publicar
 author: v-ducvo
@@ -8,14 +8,14 @@ manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
 ms.date: 03/08/2018
-ms.openlocfilehash: 6d76388712ffeff94c56ba89b4bf4f4831caf45c
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: b77e096d28f51f605db9c49d36e796553f9293ef
+ms.sourcegitcommit: 1abc32353c20acd103e0383121db21b705e5eec3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297204"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42756546"
 ---
-# <a name="download-and-redeploy-bot-service-source-code"></a>Fazer download e reimplantar o código-fonte do Serviço de Bot
+# <a name="download-and-redeploy-bot-source-code"></a>Baixar e reimplantar o código-fonte do bot
 
 O Serviço de Bot permite que você baixe todo o projeto de código-fonte para o bot. Isso permite que você trabalhe em seu bot localmente usando um IDE de sua escolha. Após concluir as alterações, você pode publicar suas alterações de volta no Azure. 
 

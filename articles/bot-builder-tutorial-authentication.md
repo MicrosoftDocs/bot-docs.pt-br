@@ -8,17 +8,13 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 7/2/2018
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 6d2e22bdfaa9fc4e3ce55bc1dd969921e90c87cc
-ms.sourcegitcommit: 97bb24f15041caccef4ca5736aa14f144881e0c6
+ms.openlocfilehash: ca9ccb0f0425bd0cabf1ce7ef236acb7a008aefe
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39567505"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42905907"
 ---
-# <a name="add-authentication-to-your-bot-via-azure-bot-service"></a>Adicionar autenticação ao seu bot por meio do Serviço de Bot do Azure
-
-[!INCLUDE [pre-release-label](includes/pre-release-label-v3.md)]
-
 Este tutorial usa os novos recursos de autenticação do bot no Serviço de Bot do Azure, fornecendo recursos para facilitar o desenvolvimento de um bot que autentica usuários em vários provedores de identidade como o Azure AD (Azure Active Directory), GitHub, Uber e assim por diante. Essas atualizações também avançam em direção a uma experiência de usuário aprimorada, eliminando a _verificação de código mágico_ para alguns clientes.
 
 Antes disso, seu bot precisa incluir controladores de OAuth e links de logon, armazenar as IDs e segredos de cliente de destino e executar o gerenciamento de token de usuário.
@@ -48,7 +44,7 @@ Você pode extrapolar das etapas neste artigo para adicionar recursos a um bot e
 > [!NOTE]
 > Os recursos de autenticação também trabalham com Node. js com BotBuilder v3. No entanto, este artigo aborda apenas o código C# de exemplo.
 
-Para obter mais informações e suporte, consulte [Recursos adicionais do Bot Framework](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-resources-links-help).
+Para obter mais informações e suporte, consulte [Recursos adicionais do Bot Framework](https://docs.microsoft.com/azure/bot-service/bot-service-resources-links-help).
 
 ## <a name="overview"></a>Visão geral
 
@@ -90,7 +86,7 @@ Para obter informações sobre as diferenças entre os pontos de extremidade v1 
    1. Defina o **Tipo de aplicativo** como **Aplicativo Web / API**.
    1. Defina a **URL de logon** para `https://token.botframework.com/.auth/web/redirect`.
    1. Clique em **Criar**.
-      - Depois de criado, ele é exibido em uma folha **Aplicativo registrado**.
+      - Depois de criado, ele é exibido em um painel **Aplicativo registrado**.
       - Registre o valor **ID do Aplicativo**. Você irá fornecê-lo posteriormente como a _ID do cliente_.
 1. Clique em **Configurações** para configurar seu aplicativo.
 1. Clique em **Chaves** para abrir o painel **Chaves**.
@@ -178,7 +174,7 @@ Agora você pode usar esse nome de conexão no código do bot para recuperar tok
 
 #### <a name="to-register-an-azure-ad-v2-application"></a>Registrar um aplicativo Azure AD v2
 
-1. Navegue até a folha de registro de canais de Bot do seu bot no [Portal do Azure](http://portal.azure.com/).
+1. Navegue até a página Registro de Canais de Bot do seu bot no [Portal do Azure](http://portal.azure.com/).
 1. Clique em **Configurações**.
 1. Em **Configurações de Conexão do OAuth** na parte inferior da página, clique em **Adicionar configuração**.
 1. Preencha o formulário da seguinte maneira:
@@ -205,7 +201,7 @@ Agora você pode usar esse nome de conexão no código do bot para recuperar tok
 #### <a name="to-test-your-connection"></a>Para testar sua conexão
 
 1. Abra a conexão que você acabou de criar.
-1. Clique em **Testar conexão** na parte superior da folha **Configuração de Conexão do Provedor de Serviços**.
+1. Clique em **Testar Conexão** na parte superior do painel **Configuração de Conexão do Provedor de Serviços**.
 1. Na primeira vez, deve abrir uma nova guia do navegador listando as permissões que seu aplicativo está solicitando e solicitará que você aceite.
 1. Clique em **Aceitar**.
 1. Em seguida, deverá direcioná-lo para uma página **Testar conexão para '< your-connection-name >' bem sucedido**.

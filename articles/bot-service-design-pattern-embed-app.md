@@ -6,13 +6,13 @@ ms.author: mateusv
 manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
-ms.date: 12/13/2017
-ms.openlocfilehash: 3264388cf253bb949eabe3be04fdaebabdc36b99
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.date: 08/15/2018
+ms.openlocfilehash: 68d2d4f7a19aecfcb2c630e5e9e55ca5b8a21d89
+ms.sourcegitcommit: e8c513d3af5f0c514cadcbcd0a737a7393405afa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296812"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42756442"
 ---
 # <a name="embed-a-bot-in-an-app"></a>Inserir um bot em um aplicativo
 
@@ -42,9 +42,7 @@ Outros tipos de aplicativos e jogos podem se comunicar com o Bot Framework usand
 
 Este exemplo de criação de um aplicativo móvel que executa um bot usa <a href="https://www.xamarin.com/" target="_blank">Xamarin</a>, uma ferramenta popular para a criação de aplicativos móveis de plataforma cruzada. 
 
-Primeiro, crie um componente de exibição da Web simples e use-o para hospedar um <a href="https://github.com/Microsoft/BotFramework-WebChat" target="_blank">controle de chat na Web</a>. Depois, usando o Portal do Bot Framework, use [TODO](~/bot-service-manage-channels.md) no canal de Chat na Web. 
-
-![Definições de configuração do bot](~/media/bot-service-design-pattern-embed-app/webchat-channel.png)
+Primeiro, crie um componente de exibição da Web simples e use-o para hospedar um <a href="https://github.com/Microsoft/BotFramework-WebChat" target="_blank">controle de chat na Web</a>. Em seguida, usando o portal do Azure, adicione o canal de Webchat. 
 
 Em seguida, especifique a URL do chat na Web registrada como a origem para o controle de exibição da Web no aplicativo do Xamarin:
 

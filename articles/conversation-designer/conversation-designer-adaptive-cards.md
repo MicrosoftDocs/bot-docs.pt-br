@@ -7,12 +7,12 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 ROBOTS: NoIndex, NoFollow
-ms.openlocfilehash: 01f52a6aa6e2c9fc3d2613ff03386a7d87e64a3a
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 2dec87fbdce1cc556c15f7220200da98a4496513
+ms.sourcegitcommit: a2f3d87c0f252e876b3e63d75047ad1e7e110b47
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297327"
+ms.lasthandoff: 08/25/2018
+ms.locfileid: "42928211"
 ---
 # <a name="configure-adaptive-cards"></a>Configurar cartões adaptáveis
 > [!IMPORTANT]
@@ -24,18 +24,16 @@ O Designer de Conversa fornece um ambiente de criação amplamente integrado par
 
 Os cartões adaptáveis podem ser definidos em vários lugares importantes diferentes.
 
-- Uma resposta simples para executar uma [ação](conversation-designer-tasks.md) para uma tarefa.
+- Uma resposta simples para executar uma ação para uma tarefa.
 - Em estado de comentários em um diálogo.
 - Em estados de solicitação em um diálogo. Observe que os prompts podem ter cartões separados: um para a resposta e outro para nova solicitação.
 
 Para definir um cartão adaptável, navegue até o editor relevante. Procure e escolha um dos modelos de Cartão Adaptável existentes ou crie o seu próprio no editor de código JSON. 
 
-<!--TODO: Insert screenshot -->
-
 À medida que cria um cartão, uma prévia avançada do cartão é renderizada no portal de criação.
 
 > [!NOTE]
-> Os recursos dos cartões adaptáveis estão em desenvolvimento contínuo. Nem todos os canais dão suporte a todos os recursos de cartão adaptável no momento. Para ver os recursos com suporte em cada canal, confira a seção [Status do canal](/adaptive-cards/get-started/bots#channel-status).
+> Os recursos dos cartões adaptáveis estão em desenvolvimento contínuo. Nem todos os canais dão suporte a todos os recursos de cartão adaptável no momento. Para ver os recursos com suporte em cada canal, confira a seção Status do canal.
 
 ## <a name="input-form"></a>Formato de entrada
 
@@ -74,13 +72,7 @@ Os cartões adaptáveis oferecem suporte a resolução total de geração de lin
 * `entityName` usa entidades dentro do cartão.
 * `responseTemplateName` usa modelos de resposta simples ou condicional dentro do cartão.
 
-<!--
-# Binding form flow input fields to bot entities
-TODO: fill this out based on design/ implementation -->
-
-<!-- ## Adaptive Card schema
-
-You can learn more about adaptive cards here  TODO: Insert link to adaptive cards schema documentation -->
+Você pode aprender mais sobre os cartões adaptáveis aqui TODO: Inserir link para a documentação do esquema de cartões adaptáveis -->
 
 ## <a name="sample-adaptive-card-payload"></a>Exemplo de conteúdo do cartão adaptável
 
@@ -149,6 +141,3 @@ O JSON a seguir mostra o conteúdo de um cartão adaptável.
 }
 ```
 
-## <a name="next-step"></a>Próxima etapa
-> [!div class="nextstepaction"]
-> [Conectar-se aos canais](conversation-designer-deploy.md)

@@ -8,14 +8,14 @@ manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
 ms.date: 04/30/2018
-ms.openlocfilehash: bc1da99c7d0f7a6431ad0c2746b8583ef7bfbd5f
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 2a92281e9bbee09d8dfb00fbbc67fe6ac6b6c69b
+ms.sourcegitcommit: 1abc32353c20acd103e0383121db21b705e5eec3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296999"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42756515"
 ---
-# <a name="debug-bots-with-the-bot-framework-emulator"></a>Depurar bots com o Emulador Bot Framework
+# <a name="debug-with-the-bot-framework-emulator"></a>Depurar com o Bot Framework Emulator
 
 O Bot Framework Emulator é um aplicativo de desktop que permite que os desenvolvedores de bot testem e depurem seus bots, seja local ou remotamente. Usando o emulador, você pode conversar com seu bot e inspecionar as mensagens que seu bot envia e recebe. O emulador exibe mensagens como elas apareceriam em uma interface de usuário do bate-papo na Web e registra solicitações e respostas JSON à medida que você troca mensagens com seu bot. 
 

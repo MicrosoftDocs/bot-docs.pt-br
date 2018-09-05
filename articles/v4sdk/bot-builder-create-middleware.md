@@ -1,5 +1,5 @@
 ---
-title: Gravar seu próprio middleware | Microsoft Docs
+title: Criar seu próprio middleware | Microsoft Docs
 description: Saiba como gravar seu próprio middleware.
 keywords: middleware, middleware personalizado, curto-circuito, fallback, manipuladores de atividade
 author: ivorb
@@ -9,20 +9,22 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 03/21/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 6bc73b2886374fbb50d8257c387df54f21a12ed7
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: b774f2de5856e6001d1b75c47b92aff6399d8fe3
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297173"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42904346"
 ---
-# <a name="write-your-own-middleware"></a>Gravar seu próprio middleware
+# <a name="create-your-own-middleware"></a>Criar seu próprio middleware
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
 O middleware permite a você gravar plug-ins avançados para os bots, o que também pode ser usado por outras pessoas. Aqui, mostraremos como adicionar e implementar o middleware básico e mostrar como ele funciona. O SDK v4 fornece determinados middlewares a você, para fins como gerenciamento de estado, LUIS, QnAMaker e tradução. Confira o SDK do Bot Builder para [.NET](https://github.com/Microsoft/botbuilder-dotnet) ou [JavaScript](https://github.com/Microsoft/botbuilder-js) para obter mais informações.
 
 ## <a name="adding-middleware"></a>Adicionar middleware
 
-No exemplo a seguir, com base em nosso exemplo de HelloBot básico, duas peças diferentes de middleware são adicionadas aos nossos serviços com uma nova instância de cada uma dessas classes.
+No exemplo a seguir, com base em nosso exemplo básico de bot criado por meio da experiência [Introdução](~/bot-service-quickstart.md), duas peças diferentes de middleware são adicionadas aos nossos serviços com uma nova instância de cada uma dessas classes.
 
 > [!IMPORTANT]
 > Lembre-se de que a ordem na qual elas são adicionados às opções determina a ordem na qual elas são executadas. Certifique-se de considerar como isso funcionará se estiver usando mais do que uma peça de middleware.

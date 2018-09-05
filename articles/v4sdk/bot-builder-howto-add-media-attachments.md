@@ -7,14 +7,14 @@ ms.author: v-ivorb
 manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
-ms.date: 04/03/2018
+ms.date: 08/24/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 30a0c463698d9ab7e3b2b0f9ddb0e872f007d1d8
-ms.sourcegitcommit: 9a38d76afb0e82fdccc1f36f9b1a65042671e538
+ms.openlocfilehash: 5883b31df95da26fa0432f4cfe195f12fc3089ad
+ms.sourcegitcommit: 86ddf3ebe6cc3385d1c4d30b971ac9c3e1fc5a77
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39515036"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43055990"
 ---
 # <a name="add-media-to-messages"></a>Adicionar mídia às mensagens
 
@@ -233,8 +233,13 @@ await context.sendActivity(hero);
 ---
 
 ## <a name="send-an-adaptive-card"></a>Enviar um cartão adaptável
+O Cartão Adaptável e MessageFactory são usados para enviar mensagens avançadas incluindo textos, imagens, vídeo, áudio e arquivos para se comunicar com os usuários. No entanto, há algumas diferenças entre eles. 
 
-Também é possível enviar um cartão adaptável como um anexo. No momento, nem todos os canais dão suporte a cartões adaptáveis. Para localizar as informações mais recentes sobre o suporte de canal do cartão adaptável, consulte o <a href="http://adaptivecards.io/visualizer/">Visualizador de cartões adaptáveis</a>.
+Primeiro, somente alguns canais dão suporte aos Cartões Adaptáveis, e os canais que dão suporte podem dar suporte parcial aos Cartões Adaptáveis. Por exemplo, se você enviar um Cartão Adaptável no Facebook, os botões não funcionarão se textos e imagens funcionarem bem. MessageFactory é simplesmente uma classe auxiliar dentro do SDK do Construtor de Bot para automatizar as etapas de criação para você e com suporte da maioria dos canais. 
+
+Em segundo lugar, o Cartão Adaptável entrega as mensagens no formato de cartão e o canal determina o layout do cartão. O formato das mensagens que o MessageFactory entrega depende do canal e não é necessariamente no formato de cartão. a menos que o Cartão Adaptável faça parte do anexo. 
+
+Para localizar as informações mais recentes sobre o suporte de canal do cartão adaptável, consulte o <a href="http://adaptivecards.io/visualizer/">Visualizador de cartões adaptáveis</a>.
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 Para usar os cartões adaptáveis, certifique-se de adicionar o pacote NuGet `Microsoft.AdaptiveCards`.

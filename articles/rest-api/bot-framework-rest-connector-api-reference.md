@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
-ms.openlocfilehash: 1eb334f719279c987b30e604eacfb3878970ba02
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: d76daffcfc4661a87d1efaf85e6bb08e3e999988
+ms.sourcegitcommit: e8c513d3af5f0c514cadcbcd0a737a7393405afa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297405"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42756740"
 ---
 # <a name="api-reference"></a>Referência de API
 
@@ -420,7 +420,7 @@ Define uma mensagem trocada entre o bot e o usuário.<br/><br/>
 | **textFormat** | string | Formato do **texto** da mensagem. Um desses valores: **markdown**, **plain**, **xml**. Para detalhes sobre o formato de texto, consulte [Criar mensagens](bot-framework-rest-connector-create-messages.md). |
 | **timestamp** | string | Data e hora em que a mensagem foi enviada no fuso horário UTC, expressa no formato <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO-8601</a>. |
 | **topicName** | string | Tópico da conversa à qual a atividade pertence. |
-| **tipo** | string | Tipo de atividade. Um desses valores: **contactRelationUpdate**, **conversationUpdate**, **deleteUserData**, **message**, **ping**, **typing**, **endOfConversation**. Para detalhes sobre tipos de atividade, consulte [Visão geral das atividades](bot-framework-rest-connector-activities.md). |
+| **tipo** | string | Tipo de atividade. Um destes valores: **contactRelationUpdate**, **conversationUpdate**, **deleteUserData**, **message**, **typing**, **endOfConversation**. Para detalhes sobre tipos de atividade, consulte [Visão geral das atividades](bot-framework-rest-connector-activities.md). |
 | **valor** | objeto | Valor em aberto. |
 
 <a href="#objects">Retornar à tabela de esquemas</a>

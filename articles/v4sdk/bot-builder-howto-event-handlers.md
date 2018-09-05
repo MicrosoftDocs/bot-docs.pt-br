@@ -1,5 +1,5 @@
 ---
-title: Manipuladores de evento | Microsoft Docs
+title: Como usar manipuladores de evento | Microsoft Docs
 description: Entenda como usar manipuladores de eventos.
 author: ivorb
 ms.author: v-ivorb
@@ -8,14 +8,16 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 06/14/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 0c054b8f4209004806e4564be45e83bdf3a8ec25
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 36bd2638c599de1662a37dd85790b6126184d51b
+ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297284"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42905685"
 ---
-# <a name="event-handlers"></a>Manipuladores de eventos
+# <a name="using-event-handlers"></a>Utilização de manipuladores de eventos
+
+[!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
 Manipuladores de eventos são funções que podemos adicionar a eventos de atividades futuras dentro de um [turno](bot-builder-basics.md#defining-a-turn). Essas atividades são `SendActivity`, `UpdateActivity` e `DeleteActivity`, e cada uma tem seu próprio manipulador. Esses manipuladores são úteis quando você precisa fazer algo em todas as atividades futuras desse tipo para o objeto de contexto atual.
 

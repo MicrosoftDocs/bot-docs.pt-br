@@ -123,6 +123,123 @@ Este trecho mostra um exemplo da propriedade `channelData` na mensagem recebida 
 O bot pode responder a essa mensagem da [maneira normal](../dotnet/bot-builder-dotnet-connector.md#create-reply) ou postar sua resposta diretamente no ponto de extremidade especificado pela propriedade `payload` do objeto `response_url`.
 Para obter informações sobre quando e como publicar uma resposta para a `response_url`, confira <a href="https://api.slack.com/docs/message-buttons" target="_blank">Botões do Slack</a>. 
 
+Você pode criar botões dinâmicos usando o seguinte código:
+```cs
+private async Task DemoButtonsAsync(IDialogContext context)
+        {
+            var reply = context.MakeMessage();
+
+            string s = @"{
+                ""text"": ""Would you like to play a game ? "",
+                ""attachments"": [
+                    {
+                        ""text"": ""Choose a game to play!"",
+                        ""fallback"": ""You are unable to choose a game"",
+                        ""callback_id"": ""wopr_game"",
+                        ""color"": ""#3AA3E3"",
+                        ""attachment_type"": ""default"",
+                        ""actions"": [
+                            {
+                                ""name"": ""game"",
+                                ""text"": ""Chess"",
+                                ""type"": ""button"",
+                                ""value"": ""chess""
+                            },
+                            {
+                                ""name"": ""game"",
+                                ""text"": ""Falken's Maze"",
+                                ""type"": ""button"",
+                                ""value"": ""maze""
+                            },
+                            {
+                                ""name"": ""game"",
+                                ""text"": ""Thermonuclear War"",
+                                ""style"": ""danger"",
+                                ""type"": ""button"",
+                                ""value"": ""war"",
+                                ""confirm"": {
+                                    ""title"": ""Are you sure?"",
+                                    ""text"": ""Wouldn't you prefer a good game of chess?"",
+                                    ""ok_text"": ""Yes"",
+                                    ""dismiss_text"": ""No""
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }";
+
+            reply.Text = null;
+            reply.ChannelData = JObject.Parse(s);
+            await context.PostAsync(reply);
+            context.Wait(MessageReceivedAsync);
+        }
+```
+
+Para criar menus interativos, use o seguinte código:
+```cs
+private async Task DemoMenuAsync(IDialogContext context)
+        {
+            var reply = context.MakeMessage();
+
+            string s = @"{
+                ""text"": ""Would you like to play a game ? "",
+                ""response_type"": ""in_channel"",
+                ""attachments"": [
+                    {
+                        ""text"": ""Choose a game to play"",
+                        ""fallback"": ""If you could read this message, you'd be choosing something fun to do right now."",
+                        ""color"": ""#3AA3E3"",
+                        ""attachment_type"": ""default"",
+                        ""callback_id"": ""game_selection"",
+                        ""actions"": [
+                            {
+                                ""name"": ""games_list"",
+                                ""text"": ""Pick a game..."",
+                                ""type"": ""select"",
+                                ""options"": [
+                                    {
+                                        ""text"": ""Hearts"",
+                                        ""value"": ""menu_id_hearts""
+                                    },
+                                    {
+                                        ""text"": ""Bridge"",
+                                        ""value"": ""menu_id_bridge""
+                                    },
+                                    {
+                                        ""text"": ""Checkers"",
+                                        ""value"": ""menu_id_checkers""
+                                    },
+                                    {
+                                        ""text"": ""Chess"",
+                                        ""value"": ""menu_id_chess""
+                                    },
+                                    {
+                                        ""text"": ""Poker"",
+                                        ""value"": ""menu_id_poker""
+                                    },
+                                    {
+                                        ""text"": ""Falken's Maze"",
+                                        ""value"": ""menu_id_maze""
+                                    },
+                                    {
+                                        ""text"": ""Global Thermonuclear War"",
+                                        ""value"": ""menu_id_war""
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }";
+
+            reply.Text = null;
+            reply.ChannelData = JObject.Parse(s);
+            await context.PostAsync(reply);
+            context.Wait(MessageReceivedAsync);
+        }
+```
+
 ## <a name="create-a-facebook-notification"></a>Criar uma notificação do Facebook
 
 Para criar uma notificação do Facebook, defina a propriedade `Activity` do objeto `ChannelData` em um objeto JSON que especifique estas propriedades: 

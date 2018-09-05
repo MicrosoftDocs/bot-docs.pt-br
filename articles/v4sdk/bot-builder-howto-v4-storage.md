@@ -1,5 +1,5 @@
 ---
-title: Armazenar dados | Microsoft Docs
+title: Gravar diretamente no armazenamento | Microsoft Docs
 description: Saiba como gravar diretamente no armazenamento com V4 do SDK do Bot Builder para .NET.
 keywords: armazenamento, ler e gravar, armazenamento de memória, eTag
 author: DeniseMak
@@ -9,14 +9,14 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 05/2/18
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 653ec6a1983dd59c485a91b2c08ea07d9f2a34c8
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 76f8976aefe3d4fefcffc46e691dbd0b35e41ec7
+ms.sourcegitcommit: 1abc32353c20acd103e0383121db21b705e5eec3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297081"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42756511"
 ---
-# <a name="save-data-directly-to-storage"></a>Salvar dados diretamente no armazenamento
+# <a name="write-directly-to-storage"></a>Gravar diretamente no armazenamento
 
 <!--
  Note for V4: You can write directly to storage without using the state manager. Therefore, this topic isn't called "managing state". State is in a separate topic.
