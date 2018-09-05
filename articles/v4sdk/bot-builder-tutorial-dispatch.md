@@ -1,5 +1,5 @@
 ---
-title: Use a ferramenta de distribuição para o LUIS e o QnA Maker | Microsoft Docs
+title: Integrar vários LUIS e serviços do QnA com a ferramenta Expedição | Microsoft Docs
 description: Aprenda a usar o criador LUIS e QnA no seu bot.
 keywords: Ferramenta do Luis, QnA, expedição, vários serviços
 author: DeniseMak
@@ -7,18 +7,18 @@ ms.author: v-demak
 manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
-ms.date: 04/25/2018
+ms.date: 08/27/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: d3c9355a0e87d31029b92614dc182f3d7010c736
-ms.sourcegitcommit: 9a38d76afb0e82fdccc1f36f9b1a65042671e538
+ms.openlocfilehash: 02dffcdd8cb4fd27f59fa8a763d7f2027aa0bcf2
+ms.sourcegitcommit: 0b2be801e55f6baa048b49c7211944480e83ba95
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514936"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43115031"
 ---
-## <a name="integrate-multiple-luis-apps-and-qna-services-with-the-dispatch-tool"></a>Integrar vários aplicativos LUIS e serviços QnA com a ferramenta de distribuição
+# <a name="integrate-multiple-luis-and-qna-services-with-the-dispatch-tool"></a>Integrar vários serviços LUIS e QnA com a ferramenta de Expedição
 
-[!INCLUDE [pre-release-label](~/includes/pre-release-label.md)]
+[!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
 Este tutorial demonstra como usar um modelo LUIS gerado pela ferramenta Despachar, para integrar seu bot com vários aplicativos LUIS (Compreensão de Linguagem) e serviços QnAMaker. 
 
@@ -30,20 +30,22 @@ Imagine que você desenvolveu os seguintes serviços e deseja criar um bot que s
 | Aplicativo LUIS | Clima | Reconhece as intenções Weather.GetForecast e Weather.GetCondition.|
 | Serviço QnAMaker | Perguntas frequentes  | Fornece respostas a perguntas sobre um sistema de iluminação domótica |
 
-Vamos primeiro criar aplicativos e serviços e integrá-los juntos.
-
-> [!NOTE]
-> Todos os três aplicativos precisam ser criados dentro do mesmo local do Azure para que o Dispatch os acesse com êxito. Nosso exemplo de código de Despacho abaixo usa o local de exemplo West US.
+Vamos primeiro criar aplicativos e serviços e integrá-los usando a ferramenta Expedição.
 
 ## <a name="create-the-luis-apps"></a>Crie o LUIS aplicativos
 
-A maneira mais rápida de criar os aplicativos Home Automation e Weather LUIS é fazer o download dos arquivos [home automation.json][HomeAutomationJSON] e arquivos [ weather.json][WeatherJSON]. Em seguida, vá para o [site LUIS](https://www.luis.ai/home) e entre. Clique em **meus aplicativos** > **importação novo aplicativo** e escolha o arquivo homeautomation.json. Nomeie o novo aplicativo `homeautomation`. Clique em **Meus aplicativos** >  **Importe o novo aplicativo** e escolha o arquivo weather.json. Nomeie esse outro aplicativo novo `weather`.
+A maneira mais rápida de criar os aplicativos *Home Automation* e *Weather* LUIS é fazer o download dos arquivos [homeautomation.json][HomeAutomationJSON] e [weather.json][WeatherJSON]. Em seguida, siga estas etapas para importar estes dois aplicativos LUIS.
+
+1. Em seguida, vá para o [site LUIS](https://www.luis.ai/home) e entre. 
+2. Na página **Meus Aplicativos**, clique em **Importar novo aplicativo**.
+   1. Para o aplicativo *homeautomation*, escolha o arquivo **homeautomation.json** e nomeie-a como "homeautomation". Clique em **Concluído** para importar o aplicativo. Após a importação do aplicativo, clique em **Publicar** para publicar o aplicativo.
+   1. Para o aplicativo *weather*, escolha o arquivo **weather.json** e nomeie-o como "weather". Clique em **Concluído** para importar o aplicativo. Após a importação do aplicativo, clique em **Publicar** para publicar o aplicativo.
 
 ## <a name="create-the-qna-cognitive-service-in-azure"></a>Criar o serviço cognitivo QnA no Azure
 
-Serviço QnA Maker envolve duas partes, que são o serviço cognitivo no Azure e a base de Conhecimento de perguntas e respostas de pares que você publicar usando o serviço cognitivo.
+Serviço QnA Maker envolve duas partes, que são o serviço cognitivo no Azure e a base de Conhecimento de perguntas e respostas de pares que você publicar usando o serviço cognitivo. Quando cria sua base de conhecimento, você pode vinculá-la ao serviço do Azure, escolhendo o **nome do serviço do Azure** criado nesta etapa.
 
-Para criar o serviço cognitivo no Azure, faça logon no portal do Azure em https://portal.azure.com, e faça o seguinte:
+Para criar o Serviço Cognitivo no Azure, faça logon no [portal do Azure](https://portal.azure.com) e faça o seguinte:
 
 1. Clique em **Todos os serviços**.
 1. Pesquise `Cognitive` e selecione **os serviços Cognitivos**.
@@ -63,39 +65,54 @@ Para criar o serviço cognitivo no Azure, faça logon no portal do Azure em http
     * Digite um nome de aplicativo para usar; nós vamos manter o padrão `SmartLightQnA`.
     * Selecione o local do site; Vamos usar `West US`.
     * Mantenha o padrão de habilitar o Application insights.
-    * Selecione um local de insights do aplicativo. nós usaremos `West US 2`.
+    * Selecione um local de insights do aplicativo. nós usaremos `West US`.
     * Clique em **Criar** para criar seu serviço do Criador de QnA.
     * O Azure cria e começa a implantar seu serviço.
 
 1. Depois que o serviço for implementado, visualize a notificação e clique em **Ir para o recurso** para navegar até o blade do serviço.
 1. Clique em **chaves** capturar suas chaves.
 
-    * Copie o nome do serviço e sua primeira chave. Você precisará nas próximas etapas.
+    * Copie o nome do serviço e a primeira chave. Você precisará usar esse nome ao criar sua base de dados de conhecimento para que o serviço seja vinculado com o KB. Você também usará essa chave no lugar de YOUR-AZURE-QNA-SUBSCRIPTION-KEY nas etapas do dispatcher abaixo.
     * Você obtém duas chaves para poder regenerar uma delas de cada vez sem ter que interromper seu serviço.
 
 ## <a name="create-and-publish-the-qna-maker-knowledge-base"></a>Crie e publique a base de conhecimento do QnA Maker
 
-Vá para o [site do QnA Maker](https://qnamaker.ai) e entre. Selecione **Criar uma base de conhecimento** e crie uma nova base de conhecimento denominada "FAQ". Clique o **Selecionar arquivo** botão e carregar o [exemplo de arquivo TSV][FAQ_TSV]. Clique em **Criar** e, assim que o serviço for criado, clique em **Publicar**.
+Para criar o KB, faça o seguinte:
+
+1. Vá para o [site do QnA Maker](https://qnamaker.ai) e entre. 
+1. Clique em **Criar uma base de dados de conhecimento** para criar uma nova base de dados de conhecimento. Uma vez que já criou o Serviço Cognitivo no Azure, você poderá ignorar a **Etapa 1**.
+1. Na **Etapa 2**, para o campo **Serviço QnA do Azure**, escolha o nome do Serviço Cognitivo criado no Azure. Isso associará este KB ao serviço que você criou no Azure.
+1. Na **Etapa 3**, nomeie esse KB como "FAQ". 
+1. Na **Etapa 4**, preencha o KB com esse [arquivo TSV de exemplo][FAQ_TSV]. Ou então use o conteúdo de uma página da Web. Nesse caso, cole o link no campo **URL**.
+1. Na **Etapa 5**, clique em **Criar seu KB** para criar o KB.
+
+Depois que o KB for criado, você precisará **Publicar** o KB para obter a ID e o ponto de extremidade do KB. Você precisará deles mais adiante neste processo.
+
 
 ## <a name="use-the-dispatch-tool-to-create-the-dispatcher-luis-app"></a>Use a ferramenta de expedição para criar o dispatcher do aplicativo LUIS
+Agora você tem dois aplicativos LUIS e um KB criados; em seguida, vamos usar a ferramenta Expedição para gerar um aplicativo LUIS que combine-os como um aplicativo LUIS. 
 
-Em seguida, vamos criar um aplicativo LUIS para combinar cada um dos serviços que criamos.
+### <a name="step-1-install-the-dispatch-tool"></a>Etapa 1: Instalar a ferramenta Expedição
 
-Instale a [ferramenta de distribuição ][DispatchTool] executando este comando em um prompt de comandos Node.js.
+Abra uma janela do **prompt de comando** e navegue até seu projeto de dispatcher. Em seguida, execute o seguinte comando NPM para instalar a [ferramenta Expedição][DispatchTool].
 
-```
+```cmd
 npm install -g botdispatch
 ```
 
-Execute o seguinte comando para inicializar a ferramenta de expedição do nome `CombineWeatherAndLights`. Substitua sua [LUIS a criação de chave](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-concept-keys) para `"YOUR-LUIS-AUTHORING-KEY"`.
+### <a name="step-2-initialize-the-dispatch-tool"></a>Etapa 2: Inicializar a ferramenta Expedição
 
-```
+Execute o seguinte comando para inicializar a ferramenta Expedição com o nome `CombineWeatherAndLights`. Substitua sua [chave de criação LUIS](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-concept-keys) por `"YOUR-LUIS-AUTHORING-KEY"` na linha de comando abaixo.
+
+```cmd
 dispatch init -name CombineWeatherAndLights -luisAuthoringKey "YOUR-LUIS-AUTHORING-KEY" -luisAuthoringRegion westus
 ```
 
-Para cada um dos aplicativos LUIS que você criou, obtenha o ID do aplicativo LUIS. Aqueles podem ser encontrados para cada aplicativo em **meus aplicativos** sobre o [site LUIS](https://www.luis.ai/home); clique no nome do aplicativo e, em seguida, clique em **configurações** para ver a ID do aplicativo. 
+### <a name="step-3-add-apps-to-dispatcher"></a>Etapa 3: Adicionar aplicativos ao dispatcher
 
-Em seguida, execute o comando `dispatch add` para cada um dos aplicativos LUIS que você criou.
+Para cada um dos aplicativos LUIS que você criou, obtenha o ID do aplicativo LUIS. Aqueles podem ser encontrados para cada aplicativo em **Meus Aplicativos** sobre o [site LUIS](https://www.luis.ai/home); clique no nome do aplicativo e, em seguida, clique em **Configurações** para ver a **ID do Aplicativo**. Use a mesma *chave de criação LUIS* obtida na **Etapa 2**.
+
+Execute o seguinte comando para cada um dos aplicativos LUIS criados por você (por exemplo: **homeautomation** e **weather**). Substitua a ID apropriada para o comando apropriado a seguir.
 
 ```
 dispatch add -type luis -id "HOMEAUTOMATION-APP-ID" -name homeautomation -version 0.1 -key "YOUR-LUIS-AUTHORING-KEY"
@@ -103,19 +120,21 @@ dispatch add -type luis -id "WEATHER-APP-ID" -name weather -version 0.1 -key "YO
 
 ```
 
-Execute o `dispatch add` comando para o serviço QnA Maker que você criou. O parâmetro `-key` deve ser a chave do Portal do Azure, que você salvou quando concluiu as etapas para [Criar o Serviço Cognitivo QnA no Azure](./bot-builder-tutorial-dispatch.md#create-the-qna-cognitive-service-in-azure).
+Em seguida, adicione o QnAMaker KB executando o comando a seguir. Neste comando, o `QNA-KB-ID` refere-se à ID do KB dada a você depois de ter publicado o KB e o `YOUR-AZURE-QNA-SUBSCRIPTION-KEY` refere-se à chave obtida do Serviço Cognitivo criado no Azure.
 
 ```
-dispatch add -type qna -id "QNA-KB-ID" -name faq -key "YOUR-QNA-SUBSCRIPTION-KEY"
+dispatch add -type qna -id "QNA-KB-ID" -name faq -key "YOUR-AZURE-QNA-SUBSCRIPTION-KEY"
 ```
 
-Execute `dispatch create`:
+### <a name="step-4-create-the-dispatcher-luis-app"></a>Etapa 4: Criar o aplicativo LUIS dispatcher
+
+Depois que todos os aplicativos forem adicionados à ferramenta Expedição, execute o comando a seguir para criar o aplicativo de expedição. Se quiser inspecionar o arquivo de expedição, você poderá encontrar informações em um arquivo com a extensão **.dispatch**.
 
 ```
 dispatch create
 ```
 
-Isso cria o aplicativo LUIS do dispatcher chamado **CombineWeatherAndLights** . Você pode ver o novo aplicativo no [https://www.luis.ai/home](https://www.luis.ai/home). 
+Esse comando cria o aplicativo LUIS dispatcher chamado **CombineWeatherAndLights**. Você pode ver o novo aplicativo no [https://www.luis.ai/home](https://www.luis.ai/home). 
 
 ![O aplicativo de dispatcher em LUIS.ai](media/tutorial-dispatch/dispatch-app-in-luis.png)
 
@@ -123,7 +142,7 @@ Clique no novo aplicativo. Em **Intents**, você pode ver que tem as intenções
 
 ![As tentativas de dispatcher em LUIS.ai](media/tutorial-dispatch/dispatch-intents-in-luis.png)
 
-Clique no botão **Treinar** para treinar o aplicativo LUIS e use a guia **PUBLISH** para [publicá-lo](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/publishapp). Clique em **configurações** para copiar a ID do novo aplicativo para usar em seu bot.
+Clique no botão **Treinar** para treinar o aplicativo LUIS e use a guia **PUBLISH** para [publicá-lo](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/publishapp). Clique em **Configurações** para copiar a ID do novo aplicativo. Você precisará dessa ID para o bot que se conectará a esse aplicativo.
 
 ## <a name="create-the-bot"></a>Criar o bot
 
@@ -162,7 +181,7 @@ Na **appSettings. JSON** na [amostra de expedição de LUIS][DispatchBotCS], edi
 | `Luis-ModelId-HomeAutomation` | ID do aplicativo que você criou a partir de homeautomation.json  | 
 | `Luis-ModelId-Weather` | ID do aplicativo que você criou a partir do weather.json | 
 | `QnAMaker-Endpoint-Url` | Isso deve ser definido como https://westus.api.cognitive.microsoft.com/qnamaker/v2.0 para os serviços do Preview QnA Maker. <br/>Defina isso como https://YOUR-QNA-SERVICE-NAME.azurewebsites.net/qnamaker para novos serviços (GA) QnA Maker.|
-| `QnAMaker-SubscriptionKey` | Sua chave de assinatura do QnA Maker. | 
+| `QnAMaker-SubscriptionKey` | Sua chave de assinatura do QnA Maker do Azure. | 
 | `QnAMaker-KnowledgeBaseId` | A ID da base de conhecimento que você criar à [QnAMaker portal](https://qnamaker.ai).| 
 
 
@@ -316,9 +335,15 @@ private static async Task<(IEnumerable<string> intents, IEnumerable<string> enti
 
 # <a name="javascripttabjsbotconfig"></a>[JavaScript](#tab/jsbotconfig)
 
-Comece com o código no exemplo de [Dispatch bot][DispatchBotJs]. Abra **App. js** e, opcionalmente, substituir o `appId` campos com as IDs dos aplicativos LUIS criados por você. Se você deixar o `appId` campos conforme elas forem originalmente estiverem, você estará usando aplicativos de LUIS públicos criados para fins de demonstração.
+Comece com o código no exemplo de [Dispatch bot][DispatchBotJs]. Abra **App. js** e, opcionalmente, substituir o `appId` campos com as IDs dos aplicativos LUIS criados por você. Se você deixar o `appId` campos conforme elas forem originalmente estiverem, você estará usando aplicativos de LUIS públicos criados para fins de demonstração. Quanto ao `LUIS_SUBSCRIPTION_KEY`, você pode encontrá-lo na página de publicação de qualquer aplicativo LUIS. É inserido no link Ponto de Extremidade da página.
 
 ```javascript
+// Packages
+const { BotFrameworkAdapter, MemoryStorage, ConversationState } = require('botbuilder');
+const { restify } = require('restify');
+const { LuisRecognizer, QnAMaker } = require('botbuilder-ai');
+const { DialogSet } = require('botbuilder-dialogs');
+
 // Create LuisRecognizers and QnAMaker
 // The LUIS applications are public, meaning you can use your own subscription key to test the applications.
 // For QnAMaker, users are required to create their own knowledge base.
