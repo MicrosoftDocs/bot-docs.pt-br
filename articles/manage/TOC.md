@@ -1,9 +1,4 @@
 # [Gerenciar um bot](../bot-service-manage-overview.md)
-# Compilação
-## [Editar um bot com o Editor de Código Online](../bot-service-build-online-code-editor.md)
-## [Baixar e reimplantar o código-fonte do bot](../bot-service-build-download-source-code.md)
-## [Configurar a implantação contínua](../bot-service-build-continuous-deployment.md)
-# [Testar no Webchat](../bot-service-manage-test-webchat.md)
 # [Análise de bot](../bot-service-manage-analytics.md)
 # Canais
 ## [Conectar um bot aos canais](../bot-service-manage-channels.md)
@@ -12,9 +7,8 @@
 ## [Skype for Business](../bot-service-channel-connect-skypeforbusiness.md)
 ## [Linha direta](../bot-service-channel-connect-directline.md)
 ## [Equipes da Microsoft](https://msdn.microsoft.com/en-us/microsoft-teams/bots)
-## Chat na Web
-### [Conectar um bot ao Webchat](../bot-service-channel-connect-webchat.md)
-### [Habilitar o controle por voz no Webchat](../bot-service-channel-connect-webchat-speech.md)
+## [Conectar um bot ao Webchat](../bot-service-channel-connect-webchat.md)
+## [Habilitar o controle por voz no Webchat](../bot-service-channel-connect-webchat-speech.md)
 ## [Email](../bot-service-channel-connect-email.md)
 ## [GroupMe](../bot-service-channel-connect-groupme.md) 
 ## [Facebook](../bot-service-channel-connect-facebook.md) 
@@ -22,10 +16,7 @@
 ## [Margem de atraso](../bot-service-channel-connect-slack.md) 
 ## [Telegram](../bot-service-channel-connect-telegram.md) 
 ## [Twilio](../bot-service-channel-connect-twilio.md)
-## [Recursos de visualização do bot](../bot-service-channel-inspector.md)
 # [Configurar definições](../bot-service-manage-settings.md)
 # [Configurar a desobstrução de fala](../bot-service-manage-speech-priming.md)
 # [Registrar um bot com o Serviço de Bot do Azure](../bot-service-quickstart-registration.md)
 # [Migrar seu bot](../bot-service-migrate-bot.md)
-# [Implantar seu bot no Azure](../bot-builder-howto-deploy-azure.md)
-
