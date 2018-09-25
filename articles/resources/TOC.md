@@ -5,8 +5,8 @@
 ## [Personalizar o modelo](../v4sdk/bot-builder-enterprise-template-customize.md)
 ## [Implantar modelo](../v4sdk/bot-builder-enterprise-template-deployment.md)
 ## [Analytics](../v4sdk/bot-builder-enterprise-template-powerbi.md)
-# Assistente personalizado
-## [Visão geral](../v4sdk/bot-builder-custom-assistant-introduction.md)
+# Assistente Virtual 
+## [Visão geral](../v4sdk/bot-builder-virtual-assistant-introduction.md)
 # [Perguntas frequentes](../bot-service-resources-bot-framework-faq.md)
 # [Obtenha suporte](../bot-service-resources-links-help.md)
 # [Guia de identificadores](../bot-service-resources-identifiers-guide.md)
