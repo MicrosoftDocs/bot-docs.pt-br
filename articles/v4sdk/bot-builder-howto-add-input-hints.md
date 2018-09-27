@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 08/24/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 02c6cf56a0c1161fa0393880810c1481c5eb2461
-ms.sourcegitcommit: f89ed979eb6321232fb21100ef376d9b0d5113c9
+ms.openlocfilehash: acf119a05d4c9f37b74c4fcaf2ad944978504560
+ms.sourcegitcommit: 3bf3dbb1a440b3d83e58499c6a2ac116fe04b2f6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42914626"
+ms.lasthandoff: 09/23/2018
+ms.locfileid: "46707242"
 ---
 # <a name="add-input-hints-to-messages"></a>Adicionar dicas de entrada a mensagens
 
@@ -122,3 +122,4 @@ Se você não definir a dica de entrada para uma mensagem, o SDK do Construtor d
 - Se seu bot envia um prompt, a dica de entrada para a mensagem especificará que seu bot está **esperando entrada**.</li>
 - Se seu bot envia uma única mensagem, a dica de entrada para a mensagem especificará que seu bot está **aceitando a entrada**.</li>
 - Se seu bot envia uma série de mensagens consecutivas, a dica de entrada para todos, mas a mensagem final na série especificará que seu bot está **ignorando a entrada**, e a dica de entrada para a mensagem final na série especificará que seu bot está **aceitando a entrada**.
+

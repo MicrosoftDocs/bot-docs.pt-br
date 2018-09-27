@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 00ea81558bf4b8206dc6142ab26e47e3652be563
-ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
+ms.openlocfilehash: c35e651f674d65728ac93a815cc7116515790f53
+ms.sourcegitcommit: 3bf3dbb1a440b3d83e58499c6a2ac116fe04b2f6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39574542"
+ms.lasthandoff: 09/23/2018
+ms.locfileid: "46707872"
 ---
 # <a name="create-messages"></a>Criar mensagens
 
@@ -32,8 +32,6 @@ Este exemplo mostra como criar um objeto `message` personalizado e definir as pr
 [!code-csharp[Set message properties](../includes/code/dotnet-create-messages.cs#setBasicProperties)]
 
 A propriedade `TextFormat` de uma mensagem pode ser usada para especificar o formato do texto. A propriedade `TextFormat` pode ser definida como **plain**, **markdown** ou **xml**. O valor padrão para `TextFormat` é **markdown**. 
-
-Para obter uma lista de formatações de texto que geralmente têm suporte, confira [Formatação de texto](../bot-service-channel-inspector.md#text-formatting). Para garantir que os recursos que você deseja usar são compatíveis com o canal de destino, visualize o recurso usando o [Inspetor de Canal](../bot-service-channel-inspector.md).
 
 ## <a name="attachments"></a>Anexos
 

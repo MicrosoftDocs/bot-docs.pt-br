@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
-ms.openlocfilehash: 2fbff9c6d7fe1e06fa87e5b2695056dbc1414570
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 62088ecdf2f8402ec5456eea758f5db994de0cf9
+ms.sourcegitcommit: 3bf3dbb1a440b3d83e58499c6a2ac116fe04b2f6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297472"
+ms.lasthandoff: 09/23/2018
+ms.locfileid: "46707312"
 ---
 # <a name="create-messages"></a>Criar mensagens
 
@@ -23,8 +23,6 @@ Seu bot enviará objetos [Activity][Activity] do tipo **message** para comunicar
 O texto da mensagem pode ser formatado usando **texto sem formatação**, **markdown** ou **xml**. O formato padrão da propriedade `textFormat` é **markdown**, e interpreta o texto usando padrões de formatação Markdown. O nível de suporte ao formato de texto varia entre os canais. Para ver se um recurso que você quer usar tem suporte no canal direcionado, visualize-o usando o [Inspetor de Canal][ChannelInspector]. 
 
 A propriedade `textFormat` do objeto [Activity][Activity] pode ser usada para especificar o formato do texto. Por exemplo, para criar uma mensagem básica que contém apenas texto sem formatação, defina a propriedade `textFormat` do objeto [Activity][Activity] como **sem formatação**, defina a propriedade `text` do conteúdo da mensagem e defina a propriedade `locale` da localidade do remetente. 
-
-Para obter uma lista de formatações de texto que geralmente têm suporte, confira [Formatação de texto](../bot-service-channel-inspector.md#text-formatting).
 
 ## <a name="attachments"></a>Anexos
 
@@ -59,7 +57,7 @@ A propriedade `suggestedActions` de um objeto [Activity][Activity] pode ser usad
 - [Visualizar recursos com o Inspetor de Canal][ChannelInspector]
 - [Visão geral das atividades](bot-framework-rest-connector-activities.md)
 - [Enviar e receber mensagens](bot-framework-rest-connector-send-and-receive-messages.md)
-- [Adicionar anexos de mídia a mensagens](bot-framework-rest-connector-add-media-attachments.md)
+- [Adicionar anexos de mídia às mensagens](bot-framework-rest-connector-add-media-attachments.md)
 - [Adicionar cartões avançados a mensagens](bot-framework-rest-connector-add-rich-cards.md)
 - [Adicionar fala a mensagens](bot-framework-rest-connector-text-to-speech.md)
 - [Adicionar dicas de entrada a mensagens](bot-framework-rest-connector-add-input-hints.md)

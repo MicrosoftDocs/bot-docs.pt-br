@@ -8,12 +8,13 @@ manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
-ms.openlocfilehash: 2499197d82b618d7a535efca78f98ce260dd15a7
-ms.sourcegitcommit: 1abc32353c20acd103e0383121db21b705e5eec3
+monikerRange: azure-bot-service-3.0
+ms.openlocfilehash: 563fdd480ac5165d5301faa3ed43af3118d2f7d7
+ms.sourcegitcommit: 3bf3dbb1a440b3d83e58499c6a2ac116fe04b2f6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42756584"
+ms.lasthandoff: 09/23/2018
+ms.locfileid: "46707472"
 ---
 # <a name="enable-speech-in-web-chat"></a>Habilitar o controle por voz no Webchat
 Habilite uma interface de voz no controle de Webchat. Os usuários interagem com a interface de voz usando o microfone no controle de Webchat.
