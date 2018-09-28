@@ -4,16 +4,13 @@
 # Início rápido
 ## [Criar um bot com o Serviço de Bot do Azure](~/bot-service-quickstart.md)
 ## Criar um bot localmente
-### [.NET](dotnet/bot-builder-dotnet-quickstart.md)
 ### [.NET](dotnet/bot-builder-dotnet-sdk-quickstart.md)
-### [Node.js](nodejs/bot-builder-nodejs-quickstart.md)
 ### [JavaScript](javascript/bot-builder-javascript-quickstart.md)
 # Tutoriais
 ## [Usar os serviços LUIS e QnA com a ferramenta de Expedição](v4sdk/bot-builder-tutorial-dispatch.md)
-## [Criar bots com o CLI do Azure](bot-builder-tools-az-cli.md)
+## [Adicionar autenticação ao seu bot ](bot-builder-tutorial-authentication.md)
 # Exemplos
-## [Repositório de exemplos do GitHub](bot-builder-samples.md)
-## [Node.js](~/nodejs/bot-builder-nodejs-samples.md)
+## [Repositório de exemplos](https://github.com/Microsoft/BotBuilder-Samples/blob/master/readme.md)
 # Conceitos
 ## [Como funcionam os bots](v4sdk/bot-builder-basics.md)
 ## [Biblioteca de caixas de diálogo](v4sdk/bot-builder-concept-dialog.md)
@@ -50,7 +47,7 @@
 ### [Manter os dados nas caixas de diálogo](v4sdk/bot-builder-tutorial-persist-user-inputs.md)
 ### [Usar o LUIS para reconhecimento vocal](v4sdk/bot-builder-howto-v4-luis.md)
 ### [Use o QnA Maker para responder a perguntas](v4sdk/bot-builder-howto-qna.md)
-### [Adicionar autenticação ao seu bot ](bot-builder-tutorial-authentication.md)
+### [Adicionar autenticação ao seu bot ](v4sdk/bot-builder-authentication.md)
 ### [Baixar e reimplantar o código do bot](bot-service-build-download-source-code.md)
 ### [Configurar a implantação contínua](bot-service-build-continuous-deployment.md)
 ### [Implantar seu bot local no Azure](bot-builder-howto-deploy-azure.md)
