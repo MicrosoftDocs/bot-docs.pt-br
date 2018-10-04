@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
-ms.openlocfilehash: 6aae4e9f6cb6a4e892b8036eafb9489dfaedbb36
-ms.sourcegitcommit: ee63d9dc1944a6843368bdabf5878950229f61d0
+ms.openlocfilehash: a19145c446c74468cef3ae5d9abf6e90e91196ff
+ms.sourcegitcommit: f0b22c6286e44578c11c9f15d22b542c199f0024
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42795092"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47403973"
 ---
 # <a name="embed-a-bot-in-a-website"></a>Inserir um bot em um site
 
@@ -30,7 +30,7 @@ Como o controle da Web do Skype age simplesmente como um front-end para o Skype,
 
 ## <a name="open-source-web-control"></a>Controle da Web de software livre
 
-O <a href="https://github.com/Microsoft/BotFramework-WebChat" target="_blank">controle de chat na Web de software livre</a> tem base em ReactJS e usa a [API de Linha Direta][directLineAPI] para se comunicar com o Bot Framework. O controle de chat na Web fornece uma tela em branco para implementação do chat na Web, dando a você controle total sobre o comportamento dele e sobre a experiência de usuário que ele oferece. 
+O <a href="https://aka.ms/BotFramework-WebChat" target="_blank">controle de chat na Web de software livre</a> tem base em ReactJS e usa a [API de Linha Direta][directLineAPI] para se comunicar com o Bot Framework. O controle de chat na Web fornece uma tela em branco para implementação do chat na Web, dando a você controle total sobre o comportamento dele e sobre a experiência de usuário que ele oferece. 
 
 O mecanismo de *backchannel* permite que a página da Web que está hospedando o controle, se comunique diretamente com o bot de uma maneira completamente invisível ao usuário. Esse recurso possibilita diversos cenários úteis: 
 
@@ -46,7 +46,7 @@ O mecanismo de *backchannel* permite que a página da Web que está hospedando o
 
 ## <a name="sample-code"></a>Exemplo de código
 
-O <a href="https://github.com/Microsoft/BotFramework-WebChat" target="_blank">controle de chat na Web de software livre</a> está disponível por meio do GitHub. Para obter detalhes sobre como você pode implementar o mecanismo de backchannel usando o controle de chat na Web de software livre e o SDK do Construtor de Bot para Node.js, confira [Usar o mecanismo backchannel](~/nodejs/bot-builder-nodejs-backchannel.md).
+O <a href="https://aka.ms/BotFramework-WebChat" target="_blank">controle de chat na Web de software livre</a> está disponível por meio do GitHub. Para obter detalhes sobre como você pode implementar o mecanismo de backchannel usando o controle de chat na Web de software livre e o SDK do Construtor de Bot para Node.js, confira [Usar o mecanismo backchannel](~/nodejs/bot-builder-nodejs-backchannel.md).
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

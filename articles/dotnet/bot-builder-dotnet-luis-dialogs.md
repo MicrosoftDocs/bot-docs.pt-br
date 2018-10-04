@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: fc260f34f28e406dc88dd5b688d84cd79c7e9449
-ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
+ms.openlocfilehash: f95335149fa2c896d905834832089ffbfa960bf2
+ms.sourcegitcommit: d4afc924b0e1907c4d6f7a6fc5ac1fe521aeef7e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42905948"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47447382"
 ---
 # <a name="recognize-intents-and-entities-with-luis"></a>Reconhecer intenções e entidades com o LUIS 
 
@@ -25,11 +25,9 @@ Este artigo usa o exemplo de um bot para fazer anotações, visando demonstrar c
 
 1. No [portal do Azure](https://portal.azure.com), selecione **Criar novo recurso** na folha de menu e clique em **Ver tudo**.
 
-<!-- Start with the steps in [Create a bot with Bot Service](../bot-service-quickstart.md) to start creating a new bot service.  -->
+    ![Criar novo recurso](../media/bot-builder-dotnet-use-luis/bot-service-creation.png)
 
-    ![Create new resource](../media/bot-builder-dotnet-use-luis/bot-service-creation.png)
-
-2. Na caixa Pesquisar, procure **Bot do aplicativo Web**. 
+2. Na caixa de pesquisa, pesquise **Bot do aplicativo Web**. 
 
     ![Criar novo recurso](../media/bot-builder-dotnet-use-luis/bot-service-selection.png)
 

@@ -6,13 +6,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
-ms.date: 12/13/2017
-ms.openlocfilehash: ba5939faf95546b854703978bf7f512e7665eb3b
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.date: 09/28/2018
+ms.openlocfilehash: 3e9756f08690820950d0f6d0b8128521cb94f60b
+ms.sourcegitcommit: d4afc924b0e1907c4d6f7a6fc5ac1fe521aeef7e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297399"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47447371"
 ---
 # <a name="key-concepts-in-direct-line-api-30"></a>Principais conceitos em linha API 3.0 direto
 
@@ -28,7 +28,7 @@ As conversas de Linha Direta são explicitamente abertas por clientes e podem se
 
 ## <a name="sending-messages"></a>Enviar mensagens
 
-Usando o Direct Line API 3.0, um cliente pode enviar mensagens para o bot emitindo solicitações `HTTP POST`. Um cliente pode enviar uma mensagem única por solicitação. Para obter mais informações, consulte [enviar uma atividade para o bot](bot-framework-rest-direct-line-3-0-send-activity.md).
+Usando o Direct Line API 3.0, um cliente pode enviar mensagens para o bot emitindo solicitações `HTTP POST`. Um cliente pode enviar uma mensagem única por solicitação. Saiba mais em [Enviar uma atividade para o bot](bot-framework-rest-direct-line-3-0-send-activity.md).
 
 ## <a name="receiving-messages"></a>Recebendo mensagens
 
@@ -46,16 +46,20 @@ A estrutura de Bot fornece bibliotecas de cliente que facilitam o acesso à API 
 
 Como uma alternativa ao uso de bibliotecas de cliente C# ou Node. js, você pode gerar sua própria biblioteca de cliente na linguagem de sua escolha usando o <a href="https://docs.botframework.com/en-us/restapi/directline3/swagger.json" target="_blank">direto linha 3.0 arquivo Swagger da API</a>.
 
+::: moniker range="azure-bot-service-3.0"
+
 ### <a name="sample-code"></a>Exemplo de código
 
-O <a href="https://github.com/Microsoft/BotBuilder-Samples" target="_blank">BotBuilder-Samples</a> repositório do GitHub contém vários exemplos que mostram como usar a API de linha direta 3.0 com C# e Node. js.
+O <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/v3-sdk-samples" target="_blank">BotBuilder-Samples</a> repositório do GitHub contém vários exemplos que mostram como usar a API de linha direta 3.0 com C# e Node. js.
 
 | Amostra | Linguagem | DESCRIÇÃO |
 |----|----|----|
-| <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-DirectLine" target="_blank">Exemplo de Bot de linha direta</a> | C# | Um bot de exemplo e um se comunicar entre si usando a API de linha direta de cliente personalizado. |
-| <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-DirectLineWebSockets" target="_blank">Amostra de Bot de Linha Direta (usando WebSockets do cliente)</a> | C# | Um robô de amostra e um cliente personalizado se comunicando entre si usando a API de linha direta e WebSockets. |
-| <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/core-DirectLine" target="_blank">Exemplo de Bot de linha direta</a> | JavaScript | Um bot de exemplo e um se comunicar entre si usando a API de linha direta de cliente personalizado. |
-| <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/core-DirectLineWebSockets" target="_blank">Direcionar o exemplo de Bot de linha (usando o cliente WebSocket)</a> | JavaScript | Um robô de amostra e um cliente personalizado se comunicando entre si usando a API de linha direta e WebSockets. |
+| <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/v3-sdk-samples/CSharp/core-DirectLine" target="_blank">Exemplo de Bot de linha direta</a> | C# | Um bot de exemplo e um se comunicar entre si usando a API de linha direta de cliente personalizado. |
+| <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/v3-sdk-samples/CSharp/core-DirectLineWebSockets" target="_blank">Direcionar o exemplo de Bot de linha (usando o cliente WebSocket)</a> | C# | Um robô de amostra e um cliente personalizado se comunicando entre si usando a API de linha direta e WebSockets. |
+| <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/v3-sdk-samples/Node/core-DirectLine" target="_blank">Exemplo de Bot de linha direta</a> | JavaScript | Um bot de exemplo e um se comunicar entre si usando a API de linha direta de cliente personalizado. |
+| <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/v3-sdk-samples/Node/core-DirectLineWebSockets" target="_blank">Direcionar o exemplo de Bot de linha (usando o cliente WebSocket)</a> | JavaScript | Um robô de amostra e um cliente personalizado se comunicando entre si usando a API de linha direta e WebSockets. |
+
+::: moniker-end
 
 ### <a name="web-chat-control"></a>Controle de webchat 
 
