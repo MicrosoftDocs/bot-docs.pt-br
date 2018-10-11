@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
-ms.openlocfilehash: b560f9f43fc596bc8062676136819922d227d37b
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: b5a9d20c058fe425d727bf2e39597e7dd29ec077
+ms.sourcegitcommit: 3cb288cf2f09eaede317e1bc8d6255becf1aec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296680"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47389625"
 ---
 # <a name="connect-a-bot-to-web-chat"></a>Conectar um bot ao Webchat
 Quando você [cria um bot](bot-service-quickstart.md) com o Serviço de Bot, o canal de Webchat é configurado automaticamente para você. O canal de Webchat inclui o controle de Webchat, que fornece a capacidade de os usuários interagirem com o bot diretamente em uma página da Web.
@@ -52,7 +52,7 @@ Para trocar o segredo por um token e gerar a inserção:
 
 2. A resposta à solicitação **GET** conterá o token (entre aspas) que pode ser usado para iniciar uma conversa pela renderização do controle de Webchat dentro de um **iframe**. Um token é válido apenas para uma conversa; para iniciar outra conversa, você precisa gerar um novo token.
 
-3. Dentro do **Código de inserção** do `iframe` copiado do canal de Webchat no Portal do Bot Framework (conforme descrito na [Etapa 1](#step-1) acima), altere o parâmetro `s=` para `t=` e substitua "YOUR_SECRET_HERE" pelo token. 
+3. Dentro do **Código de inserção** do `iframe` copiado do canal de Webchat no Portal do Bot Framework (conforme descrito em [Obter a chave secreta do seu bot](#step-1) acima), altere o parâmetro `s=` para `t=` e substitua "YOUR_SECRET_HERE" pelo token.
 
 > [!NOTE]
 > Os tokens serão renovados automaticamente antes de expirarem. 
@@ -109,7 +109,7 @@ Use essa opção se desejar permitir que outros desenvolvedores insiram o bot em
 
 Para inserir o bot no site especificando o segredo na marcação `iframe`:
 
-1. Copie o **Código de inserção** do `iframe` do canal de Webchat no Portal do Bot Framework (conforme descrito na [Etapa 1](#step-1) acima).
+1. Copie o **Código de inserção** do `iframe` do canal de Webchat no Portal do Bot Framework (conforme descrito em [Obter a chave secreta do seu bot](#step-1) acima).
 
 2. Dentro desse **Código de inserção**, substitua "YOUR_SECRET_HERE" pelo valor de **Chave secreta** copiado da mesma página.
 

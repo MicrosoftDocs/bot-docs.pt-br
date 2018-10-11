@@ -7,13 +7,13 @@ ms.author: RobStand
 manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
-ms.date: 08/16/2018
-ms.openlocfilehash: 7fbff06966ac64260244e8af375aaa6f8f945fcd
-ms.sourcegitcommit: e8c513d3af5f0c514cadcbcd0a737a7393405afa
+ms.date: 09/16/2018
+ms.openlocfilehash: 60e39bb652ab5b7ffeeb5ba53bdf4c82f936553e
+ms.sourcegitcommit: 3bf3dbb1a440b3d83e58499c6a2ac116fe04b2f6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42756443"
+ms.lasthandoff: 09/23/2018
+ms.locfileid: "46707862"
 ---
 # <a name="connect-a-bot-to-facebook-messenger"></a>Conectar um bot ao Facebook Messenger
 

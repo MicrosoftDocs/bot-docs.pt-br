@@ -7,30 +7,26 @@ ms.author: jonathanfingold
 manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
-ms.date: 05/02/2018
+ms.date: 08/30/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 3b618bfb7cd1a462390aee4d564778c8ec0a7247
-ms.sourcegitcommit: d486dd088b87a44fc8142f7a08877ff993861a42
+ms.openlocfilehash: bcfc1c76199d8bc729376bbbfe229b0781eb82ab
+ms.sourcegitcommit: 3bf3dbb1a440b3d83e58499c6a2ac116fe04b2f6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42928425"
+ms.lasthandoff: 09/23/2018
+ms.locfileid: "46707232"
 ---
-# <a name="create-a-bot-with-the-bot-builder-sdk-for-java"></a>Criar um bot com o SDK do Bot Builder para Java
-[!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
-
-O SDK do Bot Builder para Java fornece uma maneira familiar para desenvolvedores de Java escreverem os bots. O SDK v4 está em versão prévia, para obter mais informações, visite o [repositório GitHub](https://github.com/Microsoft/botbuilder-java) do Java.
-
-> [!NOTE]
-> No momento, nossos exemplos de código e documentos se destinam ao Java versão 1.8.
+# <a name="create-a-bot-with-the-bot-builder-sdk-for-java"></a>Criar um bot com o SDK do Bot Builder para Java 
+> [!NOTE] 
+> O SDK v4 do Java está em **versão prévia**. Para obter mais informações, visite o [repositório GitHub](https://github.com/Microsoft/botbuilder-java) do Java. No momento, nossos exemplos de código e documentos se destinam ao Java versão 1.8.
 
 ## <a name="getting-started"></a>Introdução
 
-O SDK v4 consiste em uma série de [bibliotecas](https://github.com/Microsoft/botbuilder-java/tree/master/libraries). Para criá-los localmente, veja [Como criar o SDK](https://github.com/Microsoft/botbuilder-java/wiki/building-the-sdk).
+O SDK v4 do Java consiste em uma série de [bibliotecas](https://github.com/Microsoft/botbuilder-java/tree/master/libraries). Para criá-los localmente, veja [Como criar o SDK](https://github.com/Microsoft/botbuilder-java/wiki/building-the-sdk).
 
 - Instalar o [Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator/releases)
 
-### <a name="create-echobot"></a>Criar EchoBot
+## <a name="create-echobot"></a>Criar EchoBot
 
 No arquivo App.java, adicione o seguinte:
 
@@ -146,25 +142,21 @@ public class App {
 }
 ```
 
-Se estiver usando o Maven, você poderá copiar o arquivo pom.xml da pasta samples nesse repositório. Depois de iniciar a execução de seu executável, inicie o Emulador do Bot Framework.
+Se estiver usando o Maven, você poderá copiar o arquivo pom.xml da pasta samples nesse repositório. Execute o executável. Neste ponto, seu bot está em execução localmente.
 
-### <a name="start-the-emulator-and-connect-your-bot"></a>Iniciar o emulador e conectar seu bot
+## <a name="start-the-emulator-and-connect-your-bot"></a>Iniciar o emulador e conectar seu bot
 
-Neste ponto, seu bot está em execução localmente.
-Em seguida, inicie o emulador e, em seguida, conecte o bot no emulador:
+Em seguida, inicie o emulador e, em seguida, conecte-se ao seu bot no emulador:
 
-1. Clique no link **criar uma nova configuração de bot** na guia de "Boas-Vindas" do emulador. 
+1. Clique no link **Abrir Bot** na guia "Boas-vindas" do emulador. 
+2. Selecione o arquivo .bot localizado no diretório em que você criou o projeto.
 
-2. Insira um **Nome do bot** e insira o caminho do diretório para o código de bot. O arquivo de configuração do bot será salvo neste caminho.
+## <a name="interact-with-your-bot"></a>Interagir com o bot
 
-3. Digite `http://localhost:port-number/api/messages` no campo **URL do Ponto de Extremidade**, em que *número da porta* corresponde ao número da porta mostrado no navegador onde o aplicativo está em execução.
-
-4. Clique em **Conectar** para conectar o bot. Não é necessário especificar **ID do Aplicativo da Microsoft** e **Senha do Aplicativo da Microsoft**. Por enquanto, é possível deixar esses campos em branco. Você receberá essas informações posteriormente, quando registrar o bot.
-
-### <a name="interact-with-your-bot"></a>Interagir com seu bot
-Envie "Olá" para seu bot e o bot ecoará a mensagem de volta.
+Envie uma mensagem para seu bot e o bot responderá com uma mensagem.
+![Emulador em execução](../media/emulator-v4/emulator-running.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
-> [Conceitos básicos do Bot](../v4sdk/bot-builder-basics.md)
+> [Conceitos de bot](../v4sdk/bot-builder-basics.md)

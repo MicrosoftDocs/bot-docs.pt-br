@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
-ms.openlocfilehash: 2e0b85af834bc92a9da8c9f9be2794da88c2b3bc
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: ba2aec255cf160a72c11c3ddfda021baae304568
+ms.sourcegitcommit: 3cb288cf2f09eaede317e1bc8d6255becf1aec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296665"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47389635"
 ---
 # <a name="configure-speech-priming"></a>Configurar a desobstrução de fala
 
@@ -26,6 +26,9 @@ O bot já pode estar integrado a um aplicativo LUIS, ou você pode optar por cri
 
 > [!IMPORTANT]
 > A desobstrução de fala só se aplica aos bots configurados para o canal da Cortana ou de Webchat.
+
+> [!IMPORTANT]
+> Não há suporte para a desobstrução de aplicativos LUIS que não sejam das regiões dos EUA incluindo: eu.luis.ai e au.luis.ai
 
 ## <a name="change-the-list-of-luis-apps-your-bot-uses"></a>Alterar a lista de aplicativos LUIS usados pelo bot
 

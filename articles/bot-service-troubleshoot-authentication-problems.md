@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/17
-ms.openlocfilehash: a64edda73832f4d3fff49b08b5eaf6792c021ece
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 5373b18ce5c11dae4e971cb1a70307ae2901ad36
+ms.sourcegitcommit: 3cb288cf2f09eaede317e1bc8d6255becf1aec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297208"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47389655"
 ---
 # <a name="troubleshooting-bot-framework-authentication"></a>Solucionar problemas de autenticação do Bot Framework
 
@@ -25,10 +25,10 @@ Este guia pode ajudar você a solucionar problemas de autenticação com seu bot
 
 A segurança do bot é configurada pela **ID do aplicativo Microsoft** e pela **Senha do aplicativo Microsoft** que você obtém quando registra seu bot com o Bot Framework. Normalmente, esses valores são especificados no arquivo de configuração do bot e usados para recuperar tokens de acesso do serviço Microsoft Account. 
 
-Se isso ainda não tiver sido feito, [registre seu bot](~/bot-service-quickstart-registration.md) para obter uma **ID do aplicativo Microsoft** e **Senha do aplicativo Microsoft** que podem ser usados para autenticação. 
+Se isso ainda não tiver sido feito, [implante seu bot no Azure](~/bot-builder-howto-deploy-azure.md) para obter uma **ID do aplicativo Microsoft** e **Senha do aplicativo Microsoft** que podem ser usados para autenticação. 
 
 > [!NOTE]
-> Para encontrar a **AppID** e a **AppPassword** do bot, consulte [MicrosoftAppID e MicrosoftAppPassword](bot-service-manage-overview.md#microsoftappid-and-microsoftapppassword).
+> Para localizar o **AppID** e **AppPassword** de um bot já implantado, consulte [MicrosoftAppID e MicrosoftAppPassword](bot-service-manage-overview.md#microsoftappid-and-microsoftapppassword).
 
 ## <a name="step-1-disable-security-and-test-on-localhost"></a>Etapa 1: desabilitar a segurança e testar no localhost
 

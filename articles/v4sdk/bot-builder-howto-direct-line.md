@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 4/16/18
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 23380231c15c40875f78921f72bcf9d57effb3bf
-ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
+ms.openlocfilehash: dee0f9700fefede2a231ff2395e50ff17522806e
+ms.sourcegitcommit: 3bf3dbb1a440b3d83e58499c6a2ac116fe04b2f6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42905226"
+ms.lasthandoff: 09/23/2018
+ms.locfileid: "46707392"
 ---
 # <a name="create-a-direct-line-bot-and-client"></a>Criar um bot e um cliente de Linha Direta
 
@@ -492,7 +492,7 @@ server.post('/api/messages', (req, res) => {
 
 ```
 
-Quando estiver pronto, publique o código-fonte de volta no Azure. [Execute essas etapas para saber como publicar seu bot de volta no Azure](../bot-service-build-download-source-code.md#publish-node-bot-source-code-to-azure)
+Quando estiver pronto, publique o código-fonte de volta no Azure. Execute essas etapas para saber como publicar seu bot de volta no [Azure](../bot-service-build-download-source-code.md)
 
 ---
 

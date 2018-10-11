@@ -7,598 +7,436 @@ ms.author: v-ducvo
 manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
-ms.date: 8/2/2018
+ms.date: 9/25/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 77162601f542e6faa8908bc71abc971eb99fcc93
-ms.sourcegitcommit: 1abc32353c20acd103e0383121db21b705e5eec3
+ms.openlocfilehash: c70711d747e9646acf63b6ee206d0b8db25ef202
+ms.sourcegitcommit: 3cb288cf2f09eaede317e1bc8d6255becf1aec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42756419"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47389677"
 ---
 # <a name="manage-simple-conversation-flow-with-dialogs"></a>Gerenciar fluxo de conversa simples com diálogos
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
-Você pode gerenciar fluxos de conversa simples e complexos usando a biblioteca de diálogos. Em um fluxo de conversa simples, o usuário começa na primeira etapa de uma *cascata*, percorre até a última etapa, e a conversa termina. Os diálogos também podem manipular [fluxos de conversa complexos](~/v4sdk/bot-builder-dialog-manage-complex-conversation-flow.md), em que as partes do diálogo podem se ramificar e executar um loop.
+Você pode gerenciar fluxos de conversa simples e complexos usando a biblioteca de caixas de diálogo. Em um fluxo de conversa simples, o usuário começa na primeira etapa de uma *cascata*, percorre até a última etapa e a conversa termina. Os [fluxos de conversas complexos](~/v4sdk/bot-builder-dialog-manage-complex-conversation-flow.md) incluem branches e loop.
 
-<!-- TODO: We need a dialogs conceptual topic to link to, so we can reference that here, in place of describing what they are and what their features are in a how-to topic. -->
+<!-- TODO: This paragraph belongs in a conceptual topic. -->
 
-<!-- TODO: This paragraph belongs in a conceptual topic. --> Um diálogo é como uma função em um programa. Geralmente, é projetado para executar uma operação específica, em uma ordem específica, e pode ser chamado com a frequência necessária. Usar os diálogos permite que o desenvolvedor do bot oriente o fluxo de conversa. É possível encadear vários diálogos juntos para lidar com praticamente qualquer fluxo de conversação com o qual você deseja que seu bot trabalhe. A biblioteca **Diálogos** no SDK do Construtor de Bot inclui recursos integrados, como _prompts_ e _diálogos em cascata_ para ajudar a gerenciar o fluxo de conversas. Você pode usar os prompts para solicitar aos usuários diferentes tipos de informações. Você pode usar uma cascata para combinar várias etapas em uma sequência.
+As caixas de diálogo são estruturas em seu bot que atuam como funções no programa do bot. Essas caixas criam as mensagens que o bot envia e realizam as tarefas computacionais necessárias. São projetadas para executar operações específicas em determinada ordem. Elas podem ser chamadas de maneiras diferentes, às vezes em resposta a um usuário, outras em resposta a alguns estímulos externos ou por outras caixas de diálogo.
 
-Neste artigo, usamos _conjuntos de diálogos_ para criar um fluxo de conversa que contém os prompts e as etapas em cascata. Temos dois diálogos de exemplo. A primeira é um diálogo de uma etapa que executa uma operação que não requer nenhuma entrada do usuário. A segunda é um diálogo de várias etapas que solicita ao usuário algumas informações.
+O uso de caixas de diálogo permite que o desenvolvedor do bot oriente o fluxo da conversa. É possível criar várias caixas de diálogo e vinculá-las para criar um fluxo de conversa com o qual você deseja que seu bot lide. A biblioteca **Caixas de Diálogo** no SDK do Bot Builder inclui recursos integrados, como _prompts_, _caixas de diálogo em cascata_ e _caixas de diálogo de componentes_ para ajudar a gerenciar o fluxo de conversas. Você pode usar os prompts para solicitar aos usuários diferentes tipos de informações. Você pode usar uma cascata para combinar várias etapas em uma sequência. É possível usar caixas de diálogo de componentes para criar sistemas modulares de caixas que contêm várias subcaixas de diálogo.
 
-## <a name="install-the-dialogs-library"></a>Instalar a biblioteca de diálogos
+Neste artigo, usamos _conjuntos de caixas de diálogo_ para criar um fluxo de conversa que contém prompts e cascatas. Usaremos o código do exemplo de **prompt de vários turnos** [[C#](https://aka.ms/cs-multi-prompts-sample)|[JS](https://aka.ms/js-multi-prompts-sample)].
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
-
-Começaremos de um modelo básico de EchoBot. Para obter instruções, consulte o [início rápido para .NET](~/dotnet/bot-builder-dotnet-quickstart.md).
-
-Para usar diálogos, instale o pacote do NuGet `Microsoft.Bot.Builder.Dialogs` do projeto ou solução.
-Depois, consulte a biblioteca de diálogos usando as instruções em seus arquivos de código, conforme o necessário.
-
-```csharp
-using Microsoft.Bot.Builder.Dialogs;
-```
-
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
-
-A biblioteca `botbuilder-dialogs` pode ser baixada no NPM. Para instalar a biblioteca `botbuilder-dialogs`, execute o seguinte comando NPM:
-
-```cmd
-npm install --save botbuilder-dialogs@preview
-```
-
-Para usar **diálogos** em seu bot, inclua isso no seu arquivo **app.js**.
-
-```javascript
-const botbuilder_dialogs = require('botbuilder-dialogs');
-```
-
----
-
-## <a name="create-a-dialog-stack"></a>Criar uma pilha de diálogos
-
-Neste primeiro exemplo, vamos criar um diálogo de uma etapa que pode somar dois números e exibir o resultado.
-
-Para usar diálogos, primeiro é preciso criar um *conjunto de diálogos*.
+Para ter uma visão geral das caixas de diálogo, consulte a [biblioteca de caixas de diálogo](bot-builder-concept-dialog.md) e o [estado das caixas de diálogo](bot-builder-dialog-state.md).
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-A biblioteca `Microsoft.Bot.Builder.Dialogs` fornece uma classe `DialogSet`.
-Crie uma classe **AdditionDialog** e adicione as instruções using das quais vamos precisar.
-Você pode adicionar diálogos nomeados e conjuntos de diálogos a um conjunto de diálogos e acessá-los por nome mais tarde.
-
-```csharp
-using Microsoft.Bot.Builder.Dialogs;
-```
-
-Derive a classe de **DialogSet** e defina as IDs e chaves que usaremos para identificar os diálogos e as informações de entrada para esse conjunto de diálogos.
-
-```csharp
-/// <summary>Defines a simple dialog for adding two numbers together.</summary>
-public class AdditionDialog : DialogSet
-{
-    /// <summary>The ID of the main dialog in the set.</summary>
-    public const string Main = "additionDialog";
-
-    /// <summary>Defines the IDs of the input arguments.</summary>
-    public struct Inputs
-    {
-        public const string First = "first";
-        public const string Second = "second";
-    }
-}
-```
+Para usar as caixas de diálogo em geral, é necessário o pacote do NuGet `Microsoft.Bot.Builder.Dialogs` de seu projeto ou solução.
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-A biblioteca `botbuilder-dialogs` fornece uma classe `DialogSet`.
-A classe **DialogSet** define uma **pilha de diálogos** e oferece uma interface simples para gerenciar a pilha.
-O SDK do Construtor de Bot implementa a pilha como uma matriz.
-
-Para criar um **DialogSet**, faça o seguinte:
-
-```javascript
-const dialogs = new botbuilder_dialogs.DialogSet();
-```
-
-A chamada acima criará um **DialogSet** com um padrão de **pilha de diálogo** nomeado como `dialogStack`.
-Caso deseje nomear sua pilha, é possível passá-la no como um parâmetro para **DialogSet()**. Por exemplo: 
-
-```javascript
-const dialogs = new botbuilder_dialogs.DialogSet("myStack");
-```
+Para usar as caixas de diálogo em geral, você precisa da biblioteca `botbuilder-dialogs` que pode ser baixada do NPM.
 
 ---
-
-A criação de um diálogo apenas adiciona a definição de diálogo ao conjunto. O diálogo não é executado até que seja efetuado seu push para a pilha de diálogos por meio da chamada de um método _começar_ ou _substituir_.
-
-O nome do diálogo (por exemplo, `addTwoNumbers`) deve ser exclusivo em cada conjunto de diálogo. É possível definir quantos diálogos forem necessárias em cada conjunto. Se você quiser criar vários conjuntos de diálogos e fazer com que eles funcionem juntos, veja [Criar lógica de bot modular](bot-builder-compositcontrol.md).
-
-A biblioteca de diálogo define os seguintes diálogos:
-
-* Um diálogo **prompt** no qual o diálogo usa pelo menos duas funções: uma para solicitar entradas do usuário e outra para processar a entrada. É possível uni-las em uma cadeia de caracteres usando o modelo **cascata**.
-* Um diálogo em **cascata** define uma sequência de _etapas cascata_ que são executados na ordem. Um diálogo em cascata pode ter uma única etapa, na qual ele pode ser pensado como um diálogo simples de uma etapa.
-
-## <a name="create-a-single-step-dialog"></a>Criar um diálogo de uma etapa
-
-Diálogo de uma etapa podem ser úteis para capturar fluxos conversacionais de turno único. Este exemplo cria um bot que pode detectar se o usuário diz algo como "1 + 2" e inicia um diálogo `addTwoNumbers` para responder "1 + 2 = 3".
-
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
-
-Os valores são passados e retornados de diálogos como recipientes de propriedades `IDictionary<string,object>`.
-
-Para criar um diálogo simples dentro de um conjunto de diálogos, use o método `Add`. A etapa a seguir adiciona uma cascata de uma etapa chamada `addTwoNumbers`.
-
-Essa etapa pressupõe que os argumentos de diálogo sendo passados contêm propriedades `first` e `second` que representam os números a serem adicionados.
-
-Adicione o construtor a seguir à classe **AdditionDialog**.
-
-```csharp
-/// <summary>Defines the steps of the dialog.</summary>
-public AdditionDialog()
-{
-    Add(Main, new WaterfallStep[]
-    {
-        async (dc, args, next) =>
-        {
-            // Get the input from the arguments to the dialog and add them.
-            var x =(double)args[Inputs.First];
-            var y =(double)args[Inputs.Second];
-            var sum = x + y;
-
-            // Display the result to the user.
-            await dc.Context.SendActivity($"{x} + {y} = {sum}");
-
-            // End the dialog.
-            await dc.End();
-        }
-    });
-}
-```
-
-### <a name="pass-arguments-to-the-dialog"></a>Passar argumentos para o diálogo
-
-No código do bot, atualize suas instruções using.
-
-```cs
-using Microsoft.Bot;
-using Microsoft.Bot.Builder;
-using Microsoft.Bot.Builder.Core.Extensions;
-using Microsoft.Bot.Schema;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-```
-
-Adicione uma propriedade estática à classe para o diálogo de adição.
-
-```cs
-private static AdditionDialog AddTwoNumbers { get; } = new AdditionDialog();
-```
-
-Para chamar o diálogo de dentro do método`OnTurn` do seu bot, modifique `OnTurn` para conter o seguinte:
-
-```cs
-public async Task OnTurn(ITurnContext context)
-{
-    // Handle any message activity from the user.
-    if (context.Activity.Type is ActivityTypes.Message)
-    {
-        // Get the conversation state from the turn context.
-        var conversationState = context.GetConversationState<ConversationData>();
-
-        // Generate a dialog context for the addition dialog.
-        var dc = AddTwoNumbers.CreateContext(context, conversationState.DialogState);
-
-        // Call a helper function that identifies if the user says something
-        // like "2 + 3" or "1.25 + 3.28" and extract the numbers to add.
-        if (TryParseAddingTwoNumbers(context.Activity.Text, out double first, out double second))
-        {
-            // Start the dialog, passing in the numbers to add.
-            var args = new Dictionary<string, object>
-            {
-                [AdditionDialog.Inputs.First] = first,
-                [AdditionDialog.Inputs.Second] = second
-            };
-            await dc.Begin(AdditionDialog.Main, args);
-        }
-        else
-        {
-            // Echo back to the user whatever they typed.
-            await context.SendActivity($"You said '{context.Activity.Text}'");
-        }
-    }
-}
-```
-
-Adicione uma função auxiliar **TryParseAddingTwoNumbers** à classe de bot. A função auxiliar usa apenas um regex simples para detectar se a mensagem do usuário é uma solicitação para adicionar dois números.
-
-```cs
-// Recognizes if the message is a request to add 2 numbers, in the form: number + number,
-// where number may have optionally have a decimal point.: 1 + 1, 123.99 + 45, 0.4+7.
-// For the sake of simplicity it doesn't handle negative numbers or numbers like 1,000 that contain a comma.
-// If you need more robust number recognition, try System.Recognizers.Text
-public static bool TryParseAddingTwoNumbers(string message, out double first, out double second)
-{
-    // captures a number with optional -/+ and optional decimal portion
-    const string NUMBER_REGEXP = "([-+]?(?:[0-9]+(?:\\.[0-9]+)?|\\.[0-9]+))";
-
-    // matches the plus sign with optional spaces before and after it
-    const string PLUSSIGN_REGEXP = "(?:\\s*)\\+(?:\\s*)";
-
-    const string ADD_TWO_NUMBERS_REGEXP = NUMBER_REGEXP + PLUSSIGN_REGEXP + NUMBER_REGEXP;
-
-    var regex = new Regex(ADD_TWO_NUMBERS_REGEXP);
-    var matches = regex.Matches(message);
-
-    first = 0;
-    second = 0;
-    if (matches.Count > 0)
-    {
-        var matched = matches[0];
-        if (double.TryParse(matched.Groups[1].Value, out first)
-            && double.TryParse(matched.Groups[2].Value, out second))
-        {
-            return true;
-        }
-    }
-    return false;
-}
-```
-
-Se você estiver usando o modelo EchoBot, altere o nome da classe **EchoState** para **ConversationData** e modifique-a para conter o seguinte.
-
-```cs
-using System.Collections.Generic;
-
-/// <summary>
-/// Class for storing conversation state.
-/// </summary>
-public class ConversationData
-{
-    /// <summary>Property for storing dialog state.</summary>
-    public Dictionary<string, object> DialogState { get; set; } = new Dictionary<string, object>();
-}
-```
-
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
-
-Comece com o modelo JS descrito em [Criar um bot com o SDK do Construtor de Bot v4](../javascript/bot-builder-javascript-quickstart.md). Em **app.js**, adicione uma instrução para exigir `botbuilder-dialogs`.
-
-```js
-const {DialogSet} = require('botbuilder-dialogs');
-```
-
-Em **app.js**, adicione o código a seguir, que define um diálogo simples nomeado como `addTwoNumbers` que pertence ao conjunto `dialogs`:
-
-```javascript
-const dialogs = new DialogSet("myDialogStack");
-
-// Show the sum of two numbers.
-dialogs.add('addTwoNumbers', [async function (dc, numbers){
-        var sum = Number.parseFloat(numbers[0]) + Number.parseFloat(numbers[1]);
-        await dc.context.sendActivity(`${numbers[0]} + ${numbers[1]} = ${sum}`);
-        await dc.end();
-    }]
-);
-```
-
-Substitua o código em **app.js** para processar a atividade de entrada com o seguinte. O bot chama uma função auxiliar para verificar se a mensagem de entrada se parece com uma solicitação para adicionar dois números. Em caso afirmativo, ele passa os números no argumento para `DialogContext.begin`.
-
-```js
-// Listen for incoming activity 
-server.post('/api/messages', (req, res) => {
-    // Route received activity to adapter for processing
-    adapter.processActivity(req, res, async (context) => {
-        const isMessage = context.activity.type === 'message';
-        // State will store all of your information
-        const convoState = conversationState.get(context);
-        const dc = dialogs.createContext(context, convoState);
-
-        if (isMessage) {
-            // TryParseAddingTwoNumbers checks if the message matches a regular expression
-            // and if it does, returns an array of the numbers to add
-            var numbers = await TryParseAddingTwoNumbers(context.activity.text); 
-            if (numbers != null && numbers.length >=2 )
-            {
-                await dc.begin('addTwoNumbers', numbers);
-            }
-            else {
-                // Just echo back the user's message if they're not adding numbers
-                const count = (convoState.count === undefined ? convoState.count = 0 : ++convoState.count);
-                return context.sendActivity(`Turn ${count}: You said "${context.activity.text}"`);
-            }
-        }
-        else {
-            return context.sendActivity(`[${context.activity.type} event detected]`);
-        }
-
-        if (!context.responded) {
-            await dc.continue();
-            // if the dialog didn't send a response
-            if (!context.responded && isMessage) {
-                await dc.context.sendActivity(`Hi! I'm the add 2 numbers bot. Say something like "What's 2+3?"`);
-            }
-        }
-    });
-});
-
-```
-
-Adicione a função auxiliar para **app.js**. A função auxiliar usa apenas uma expressão regular simples para detectar se a mensagem do usuário é uma solicitação para adicionar dois números. Se a expressão regular corresponder, é retornada uma matriz que contém os números a serem adicionados.
-
-```javascript
-async function TryParseAddingTwoNumbers(message) {
-    const ADD_NUMBERS_REGEXP = /([-+]?(?:[0-9]+(?:\.[0-9]+)?|\.[0-9]+))(?:\s*)\+(?:\s*)([-+]?(?:[0-9]+(?:\.[0-9]+)?|\.[0-9]+))/i;
-    let matched = ADD_NUMBERS_REGEXP.exec(message);
-    if (!matched) {
-        // message wasn't a request to add 2 numbers
-        return null;
-    }
-    else {
-        var numbers = [matched[1], matched[2]];
-        return numbers;
-    }
-}
-```
-
----
-
-### <a name="run-the-bot"></a>Executar o bot
-
-Tente executar o bot no Emulador do Bot Framework e diga coisas como “quanto é 1+1?” a ele.
-
-![executar o bot](./media/how-to-dialogs/bot-output-add-numbers.png)
 
 ## <a name="using-dialogs-to-guide-the-user-through-steps"></a>Usando diálogos para orientar o usuário por etapas
 
-Neste exemplo, podemos criar um diálogo com várias etapas para solicitar informações ao usuário.
+Neste exemplo, criamos uma caixa de diálogo com várias etapas para solicitar informações ao usuário usando um conjunto de caixas de diálogo.
 
 ### <a name="create-a-dialog-with-waterfall-steps"></a>Criar um diálogo com etapas de cascata
 
-Uma **cascata** é uma implementação específica de um diálogo que é geralmente usada para coletar informações do usuário ou orientá-lo por uma série de tarefas. As tarefas são implementadas como uma matriz de funções, em que os resultados da primeira função são passados como argumentos para a função seguinte, e assim por diante. Cada função normalmente representa uma etapa no processo geral. Em cada etapa, um bot [solicita que o usuário insira uma entrada](bot-builder-prompts.md), aguarda uma resposta e depois passa o resultado para a próxima etapa.
+Um **WaterfallDialog** é uma implementação específica de uma caixa de diálogo geralmente usada para coletar informações do usuário ou orientá-lo em uma série de tarefas. Cada etapa da conversa é implementada como uma função. Em cada etapa, um bot [solicita que o usuário insira uma entrada](bot-builder-prompts.md), aguarda uma resposta e depois passa o resultado para a próxima etapa. O resultado da primeira função é passado como um argumento para a função seguinte, e assim por diante.
 
-Por exemplo, o exemplo de código a seguir define três funções em uma matriz que representa as três etapas de uma **cascata**. Após cada prompt, o bot reconhece a entrada do usuário, mas não salva a entrada. Se você quiser manter as entradas do usuário, consulte [Persistir dados de usuário](bot-builder-tutorial-persist-user-inputs.md) para obter mais detalhes.
+Por exemplo, o exemplo de código a seguir define uma matriz de representantes que retrata as etapas de uma **cascata**. Após cada prompt, o bot reconhece a entrada do usuário. Há várias maneiras de manter a entrada coletada em uma caixa de diálogo. Consulte [Manter dados do usuário](bot-builder-tutorial-persist-user-inputs.md) para algumas das opções.
+
+Este exemplo grava informações diretamente no perfil do usuário conforme elas são coletadas na caixa de diálogo.
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-Isso mostra um construtor para um diálogo de saudação, onde **GreetingDialog** deriva de **DialogSet**, **Inputs.Text** contém a ID que estamos usando para o objeto  **TextPrompt** e **Main** contém a ID para o diálogo de mensagem em si.
+Neste exemplo, a caixa de diálogo de cascata é definida no arquivo do bot.
+
+Consulte os namespaces usados nesse arquivo.
 
 ```csharp
-public GreetingDialog()
+using System;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Bot.Builder;
+using Microsoft.Bot.Builder.Dialogs;
+using Microsoft.Bot.Schema;
+```
+
+Defina uma propriedade de instância para o conjunto de caixas de diálogo.
+
+```csharp
+/// <summary>
+/// The <see cref="DialogSet"/> that contains all the Dialogs that can be used at runtime.
+/// </summary>
+private DialogSet _dialogs;
+```
+
+Crie o conjunto de caixas de diálogo no construtor do bot, adicionando prompts e a caixa de diálogo de cascata ao conjunto.
+
+```csharp
+/// <summary>
+/// Initializes a new instance of the <see cref="MultiTurnPromptsBot"/> class.
+/// </summary>
+/// <param name="accessors">A class containing <see cref="IStatePropertyAccessor{T}"/> used to manage state.</param>
+public MultiTurnPromptsBot(MultiTurnPromptsBotAccessors accessors)
 {
-    // Include a text prompt.
-    Add(Inputs.Text, new TextPrompt());
+    _accessors = accessors ?? throw new ArgumentNullException(nameof(accessors));
 
-    // Define the dialog logic for greeting the user.
-    Add(Main, new WaterfallStep[]
+    // The DialogSet needs a DialogState accessor, it will call it when it has a turn context.
+    _dialogs = new DialogSet(accessors.ConversationDialogState);
+
+    // This array defines how the Waterfall will execute.
+    var waterfallSteps = new WaterfallStep[]
     {
-        async (dc, args, next) =>
-        {
-            // Ask for their name.
-            await dc.Prompt(Inputs.Text, "What is your name?");
-        },
-        async (dc, args, next) =>
-        {
-            // Get the prompt result.
-            var name = args["Text"] as string;
+        NameStepAsync,
+        NameConfirmStepAsync,
+        AgeStepAsync,
+        ConfirmStepAsync,
+        SummaryStepAsync,
+    };
 
-            // Acknowledge their input.
-            await dc.Context.SendActivity($"Hi, {name}!");
-
-            // Ask where they work.
-            await dc.Prompt(Inputs.Text, "Where do you work?");
-        },
-        async (dc, args, next) =>
-        {
-            // Get the prompt result.
-            var work = args["Text"] as string;
-
-            // Acknowledge their input.
-            await dc.Context.SendActivity($"{work} is a fun place.");
-
-            // End the dialog.
-            await dc.End();
-        }
-    });
+    // Add named dialogs to the DialogSet. These names are saved in the dialog state.
+    _dialogs.Add(new WaterfallDialog("details", waterfallSteps));
+    _dialogs.Add(new TextPrompt("name"));
+    _dialogs.Add(new NumberPrompt<int>("age"));
+    _dialogs.Add(new ConfirmPrompt("confirm"));
 }
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
-
-```javascript
-// Greet user:
-// Ask for the user name and then greet them by name.
-// Ask them where they work.
-dialogs.add('greetings',[
-    async function (dc){
-        await dc.prompt('textPrompt', 'What is your name?');
-    },
-    async function(dc, results){
-        var userName = results;
-        await dc.context.sendActivity(`Hi ${userName}!`);
-        await dc.prompt('textPrompt', 'Where do you work?');
-    },
-    async function(dc, results){
-        var workPlace = results;
-        await dc.context.sendActivity(`${workPlace} is a fun place.`);
-        await dc.end(); // Ends the dialog
-    }
-]);
-
-dialogs.add('textPrompt', new botbuilder_dialogs.TextPrompt());
-```
-
----
-
-A assinatura para um etapa de **cascata** é assim:
-
-| Parâmetro | DESCRIÇÃO |
-| :---- | :----- |
-| `dc` | O contexto do diálogo. |
-| `args` | Opcional, contém os argumentos passados para a etapa. |
-| `next` | Opcional, um método que permite que você prossiga para a próxima etapa de cascata sem ser avisado. É possível fornecer um argumento *args* ao chamar esse método, permitindo que você passe os argumentos para a próxima etapa da cascata. |
-
-Cada etapa deve chamar um dos métodos a seguir antes de retornar: o delegado *next()* ou um dos métodos de contexto de diálogo *begin*, *end*, *prompt*  ou *replace*; caso contrário, o bot ficará preso nesta etapa. Ou seja, se uma função não terminar com um desses métodos, qualquer entrada inserida pelo usuário fará com que essa etapa seja executada novamente sempre que o usuário enviar uma mensagem ao bot.
-
-Ao atingir o fim de cascata, uma prática recomendada é retornar com o método _end_ para que o diálogo possa ser removido da pilha. Veja a seção [Encerrar um diálogo](#end-a-dialog) abaixo para obter mais informações. Da mesma forma, para passar para a próxima etapa, a etapa de cascata deve ser encerrada com um prompt ou chamar explicitamente o delegado _next_ para avançar na cascata.
-
-## <a name="start-a-dialog"></a>Iniciar um diálogo
-
-Para iniciar um diálogo, passe a *dialogId* que você deseja iniciar para o método _begin_, _prompt_ ou _replace_ do contexto do diálogo. O método _begin_ efetuará push do diálogo para o topo da pilha e o método _replace_ exibirá o diálogo atual da pilha e efetuará push do diálogo de substituição na pilha.
-
-Para iniciar um diálogo sem argumentos:
-
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+Em seguida, defina cada etapa como um método separado. Você também pode definir as etapas em linha usando expressões lambda.
 
 ```csharp
-// Start the greetings dialog.
-await dc.Begin("greetings");
-```
+/// <summary>
+/// One of the functions that make up the <see cref="WaterfallDialog"/>.
+/// </summary>
+/// <param name="stepContext">The <see cref="WaterfallStepContext"/> gives access to the executing dialog runtime.</param>
+/// <param name="cancellationToken">A <see cref="CancellationToken"/>.</param>
+/// <returns>A <see cref="DialogTurnResult"/> to communicate some flow control back to the containing WaterfallDialog.</returns>
+private static async Task<DialogTurnResult> NameStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+{
+    // WaterfallStep always finishes with the end of the Waterfall or with another dialog; here it is a Prompt Dialog.
+    // Running a prompt here means the next WaterfallStep will be run when the users response is received.
+    return await stepContext.PromptAsync("name", new PromptOptions { Prompt = MessageFactory.Text("Please enter your name.") }, cancellationToken);
+}
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+/// <summary>
+/// One of the functions that make up the <see cref="WaterfallDialog"/>.
+/// </summary>
+/// <param name="stepContext">The <see cref="WaterfallStepContext"/> gives access to the executing dialog runtime.</param>
+/// <param name="cancellationToken">A <see cref="CancellationToken"/>.</param>
+/// <returns>A <see cref="DialogTurnResult"/> to communicate some flow control back to the containing WaterfallDialog.</returns>
+private async Task<DialogTurnResult> NameConfirmStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+{
+    // Get the current profile object from user state.
+    var userProfile = await _accessors.UserProfile.GetAsync(stepContext.Context, () => new UserProfile(), cancellationToken);
 
-```javascript
-// Start the 'greetings' dialog.
-await dc.begin('greetings');
-```
+    // Update the profile.
+    userProfile.Name = (string)stepContext.Result;
 
----
+    // We can send messages to the user at any point in the WaterfallStep.
+    await stepContext.Context.SendActivityAsync(MessageFactory.Text($"Thanks {stepContext.Result}."), cancellationToken);
 
-Para iniciar um diálogo com argumentos:
+    // WaterfallStep always finishes with the end of the Waterfall or with another dialog; here it is a Prompt Dialog.
+    return await stepContext.PromptAsync("confirm", new PromptOptions { Prompt = MessageFactory.Text("Would you like to give your age?") }, cancellationToken);
+}
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
-
-```csharp
-// Start the greetings dialog, passing in a property bag.
-await dc.Begin("greetings", args);
-```
-
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
-
-```javascript
-// Start the 'greetings' dialog with the 'userName' passed in.
-await dc.begin('greetings', userName);
-```
-
----
-
-Para iniciar um diálogo **prompt**:
-
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
-
-Aqui, **Inputs.Text** contém a ID de um **TextPrompt** que está no mesmo conjunto de diálogos.
-
-```csharp
-// Ask a user for their name.
-await dc.Prompt(Inputs.Text, "What is your name?");
-```
-
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
-
-```javascript
-// Ask a user for their name.
-await dc.prompt('textPrompt', "What is your name?");
-```
-
----
-
-Dependendo do tipo de prompt que você estiver iniciando, a assinatura de argumento do prompt pode ser diferente. O método **DialogSet.prompt** é um método auxiliar. Esse método usa argumentos de entrada e constrói as opções apropriadas do prompt; em seguida, ele chama o método **começar** para iniciar o diálogo de prompt. Para saber mais sobre avisos, veja [Solicitar informações ao usuário](bot-builder-prompts.md).
-
-## <a name="end-a-dialog"></a>Encerrar um diálogo
-
-O método _end_ encerra um diálogo removendo-o da pilha e retorna um resultado opcional no diálogo pai.
-
-É uma prática recomendada chamar explicitamente o método _end_ no final do diálogo; no entanto, ele não é necessário porque o diálogo será automaticamente removido da pilha quando você atingir o fim de cascata.
-
-Para encerrar um diálogo:
-
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
-
-```csharp
-// End the current dialog by popping it off the stack.
-await dc.End();
-```
-
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
-
-```javascript
-// End the current dialog by popping it off the stack
-await dc.end();
-```
-
----
-
-Para encerrar um diálogo e retornar informações para o diálogo pai, inclua um argumento de recipiente de propriedade.
-
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
-
-```csharp
-// End the current dialog and return information to the parent dialog.
-await dc.end(new Dictionary<string, object>
+/// <summary>
+/// One of the functions that make up the <see cref="WaterfallDialog"/>.
+/// </summary>
+/// <param name="stepContext">The <see cref="WaterfallStepContext"/> gives access to the executing dialog runtime.</param>
+/// <param name="cancellationToken">A <see cref="CancellationToken"/>.</param>
+/// <returns>A <see cref="DialogTurnResult"/> to communicate some flow control back to the containing WaterfallDialog.</returns>
+private async Task<DialogTurnResult> AgeStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+{
+    if ((bool)stepContext.Result)
     {
-        ["property1"] = value1,
-        ["property2"] = value2
-    });
+        // User said "yes" so we will be prompting for the age.
+
+        // Get the current profile object from user state.
+        var userProfile = await _accessors.UserProfile.GetAsync(stepContext.Context, () => new UserProfile(), cancellationToken);
+
+        // WaterfallStep always finishes with the end of the Waterfall or with another dialog, here it is a Prompt Dialog.
+        return await stepContext.PromptAsync("age", new PromptOptions { Prompt = MessageFactory.Text("Please enter your age.") }, cancellationToken);
+    }
+    else
+    {
+        // User said "no" so we will skip the next step. Give -1 as the age.
+        return await stepContext.NextAsync(-1, cancellationToken);
+    }
+}
+
+/// <summary>
+/// One of the functions that make up the <see cref="WaterfallDialog"/>.
+/// </summary>
+/// <param name="stepContext">The <see cref="WaterfallStepContext"/> gives access to the executing dialog runtime.</param>
+/// <param name="cancellationToken">A <see cref="CancellationToken"/>.</param>
+/// <returns>A <see cref="DialogTurnResult"/> to communicate some flow control back to the containing WaterfallDialog.</returns>
+private async Task<DialogTurnResult> ConfirmStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+{
+    // Get the current profile object from user state.
+    var userProfile = await _accessors.UserProfile.GetAsync(stepContext.Context, () => new UserProfile(), cancellationToken);
+
+    // Update the profile.
+    userProfile.Age = (int)stepContext.Result;
+
+    // We can send messages to the user at any point in the WaterfallStep.
+    if (userProfile.Age == -1)
+    {
+        await stepContext.Context.SendActivityAsync(MessageFactory.Text($"No age given."), cancellationToken);
+    }
+    else
+    {
+        // We can send messages to the user at any point in the WaterfallStep.
+        await stepContext.Context.SendActivityAsync(MessageFactory.Text($"I have your age as {userProfile.Age}."), cancellationToken);
+    }
+
+    // WaterfallStep always finishes with the end of the Waterfall or with another dialog, here it is a Prompt Dialog.
+    return await stepContext.PromptAsync("confirm", new PromptOptions { Prompt = MessageFactory.Text("Is this ok?") }, cancellationToken);
+}
+
+/// <summary>
+/// One of the functions that make up the <see cref="WaterfallDialog"/>.
+/// </summary>
+/// <param name="stepContext">The <see cref="WaterfallStepContext"/> gives access to the executing dialog runtime.</param>
+/// <param name="cancellationToken">A <see cref="CancellationToken"/>.</param>
+/// <returns>A <see cref="DialogTurnResult"/> to communicate some flow control back to the containing WaterfallDialog.</returns>
+private async Task<DialogTurnResult> SummaryStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+{
+    if ((bool)stepContext.Result)
+    {
+        // Get the current profile object from user state.
+        var userProfile = await _accessors.UserProfile.GetAsync(stepContext.Context, () => new UserProfile(), cancellationToken);
+
+        // We can send messages to the user at any point in the WaterfallStep.
+        if (userProfile.Age == -1)
+        {
+            await stepContext.Context.SendActivityAsync(MessageFactory.Text($"I have your name as {userProfile.Name}."), cancellationToken);
+        }
+        else
+        {
+            await stepContext.Context.SendActivityAsync(MessageFactory.Text($"I have your name as {userProfile.Name} and age as {userProfile.Age}."), cancellationToken);
+        }
+    }
+    else
+    {
+        // We can send messages to the user at any point in the WaterfallStep.
+        await stepContext.Context.SendActivityAsync(MessageFactory.Text("Thanks. Your profile will not be kept."), cancellationToken);
+    }
+
+    // WaterfallStep always finishes with the end of the Waterfall or with another dialog, here it is the end.
+    return await stepContext.EndDialogAsync(cancellationToken: cancellationToken);
+}
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
-
-```javascript
-// End the current dialog and pass a result to the parent dialog
-await dc.end({
-    "property1": value1,
-    "property2": value2
-});
-```
-
----
-
-## <a name="clear-the-dialog-stack"></a>Limpar a pilha de diálogo
-
-Caso queira remover todos os diálogos da pilha, é possível limpar a pilha de diálogos chamando o método _end all_.
-
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+A caixa de diálogo é executada no manipulador de turnos do bot que, primeiro, cria um contexto da caixa de diálogo e continua ou inicia a caixa conforme apropriado, em seguida, salva a conversa e o estado do usuário no final do turno.
 
 ```csharp
-// Pop all dialogs from the current stack.
-await dc.EndAll();
+// Run the DialogSet - let the framework identify the current state of the dialog from
+// the dialog stack and figure out what (if any) is the active dialog.
+var dialogContext = await _dialogs.CreateContextAsync(turnContext, cancellationToken);
+var results = await dialogContext.ContinueDialogAsync(cancellationToken);
+
+// If the DialogTurnStatus is Empty we should start a new dialog.
+if (results.Status == DialogTurnStatus.Empty)
+{
+    await dialogContext.BeginDialogAsync("details", null, cancellationToken);
+}
 ```
-
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
-
-```javascript
-// Pop all dialogs from the current stack.
-await dc.endAll();
-```
-
----
-
-## <a name="repeat-a-dialog"></a>Repetir um diálogo
-
-Para repetir um diálogo, utilize o método _replace_. O método *replace* do contexto do diálogo destacará o diálogo atual na fila e enviará por push o diálogo de substituição para o topo da fila e o iniciará. Essa é uma ótima maneira de tratar [fluxos de conversa complexos](~/v4sdk/bot-builder-dialog-manage-complex-conversation-flow.md) e uma boa técnica para gerenciar os menus.
-
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
-// End the current dialog and start the main menu dialog.
-await dc.Replace("mainMenu");
+// Save the dialog state into the conversation state.
+await _accessors.ConversationState.SaveChangesAsync(turnContext, false, cancellationToken);
+
+// Save the user profile updates into the user state.
+await _accessors.UserState.SaveChangesAsync(turnContext, false, cancellationToken);
 ```
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
+Neste exemplo, a caixa de diálogo de cascata é definida no arquivo **bot.js**.
+
+Importe os objetos necessários para o código.
+
 ```javascript
-// End the current dialog and start the 'mainMenu' dialog.
-await dc.replace('mainMenu');
+const { ActivityTypes } = require('botbuilder');
+const { ChoicePrompt, DialogSet, NumberPrompt, TextPrompt, WaterfallDialog } = require('botbuilder-dialogs');
+```
+
+Defina e crie o conjunto de caixas de diálogo no construtor do bot adicionando prompts e a caixa de diálogo de cascata ao conjunto.
+
+```javascript
+/**
+*
+* @param {ConversationState} conversationState A ConversationState object used to store the dialog state.
+* @param {UserState} userState A UserState object used to store values specific to the user.
+*/
+constructor(conversationState, userState) {
+    // Create a new state accessor property. See https://aka.ms/about-bot-state-accessors to learn more about bot state and state accessors.
+    this.conversationState = conversationState;
+    this.userState = userState;
+
+    this.dialogState = this.conversationState.createProperty(DIALOG_STATE_PROPERTY);
+
+    this.userProfile = this.userState.createProperty(USER_PROFILE_PROPERTY);
+
+    this.dialogs = new DialogSet(this.dialogState);
+
+    // Add prompts that will be used by the main dialogs.
+    this.dialogs.add(new TextPrompt(NAME_PROMPT));
+    this.dialogs.add(new ChoicePrompt(CONFIRM_PROMPT));
+    this.dialogs.add(new NumberPrompt(AGE_PROMPT, async (prompt) => {
+        if (prompt.recognized.succeeded) {
+            if (prompt.recognized.value <= 0) {
+                await prompt.context.sendActivity(`Your age can't be less than zero.`);
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        return false;
+    }));
+
+    // Create a dialog that asks the user for their name.
+    this.dialogs.add(new WaterfallDialog(WHO_ARE_YOU, [
+        this.promptForName.bind(this),
+        this.confirmAgePrompt.bind(this),
+        this.promptForAge.bind(this),
+        this.captureAge.bind(this)
+    ]));
+
+    // Create a dialog that displays a user name after it has been collected.
+    this.dialogs.add(new WaterfallDialog(HELLO_USER, [
+        this.displayProfile.bind(this)
+    ]));
+}
+```
+
+Em seguida, defina cada etapa como um método separado. Você também pode definir as etapas em linha usando expressões lambda.
+
+```javascript
+// This step in the dialog prompts the user for their name.
+async promptForName(step) {
+    return await step.prompt(NAME_PROMPT, `What is your name, human?`);
+}
+
+// This step captures the user's name, then prompts whether or not to collect an age.
+async confirmAgePrompt(step) {
+    const user = await this.userProfile.get(step.context, {});
+    user.name = step.result;
+    await this.userProfile.set(step.context, user);
+    await step.prompt(CONFIRM_PROMPT, 'Do you want to give your age?', ['yes', 'no']);
+}
+
+// This step checks the user's response - if yes, the bot will proceed to prompt for age.
+// Otherwise, the bot will skip the age step.
+async promptForAge(step) {
+    if (step.result && step.result.value === 'yes') {
+        return await step.prompt(AGE_PROMPT, `What is your age?`,
+            {
+                retryPrompt: 'Sorry, please specify your age as a positive number or say cancel.'
+            }
+        );
+    } else {
+        return await step.next(-1);
+    }
+}
+
+// This step captures the user's age.
+async captureAge(step) {
+    const user = await this.userProfile.get(step.context, {});
+    if (step.result !== -1) {
+        user.age = step.result;
+        await this.userProfile.set(step.context, user);
+        await step.context.sendActivity(`I will remember that you are ${ step.result } years old.`);
+    } else {
+        await step.context.sendActivity(`No age given.`);
+    }
+    return await step.endDialog();
+}
+
+// This step displays the captured information back to the user.
+async displayProfile(step) {
+    const user = await this.userProfile.get(step.context, {});
+    if (user.age) {
+        await step.context.sendActivity(`Your name is ${ user.name } and you are ${ user.age } years old.`);
+    } else {
+        await step.context.sendActivity(`Your name is ${ user.name } and you did not share your age.`);
+    }
+    return await step.endDialog();
+}
+```
+
+A caixa de diálogo é executada no manipulador de turnos do bot que, primeiro, cria um contexto da caixa de diálogo e continua ou inicia a caixa conforme apropriado, em seguida, salva a conversa e o estado do usuário no final do turno.
+
+```javascript
+// Create a dialog context object.
+const dc = await this.dialogs.createContext(turnContext);
+```
+
+```javascript
+// If the bot has not yet responded, continue processing the current dialog.
+await dc.continueDialog();
+```
+
+```javascript
+// Start the sample dialog in response to any other input.
+if (!turnContext.responded) {
+    const user = await this.userProfile.get(dc.context, {});
+    if (user.name) {
+        await dc.beginDialog(HELLO_USER);
+    } else {
+        await dc.beginDialog(WHO_ARE_YOU);
+    }
+}
+```
+
+```javascript
+// Save changes to the user state.
+await this.userState.saveChanges(turnContext);
+
+// End this turn by saving changes to the conversation state.
+await this.conversationState.saveChanges(turnContext);
 ```
 
 ---
+
+## <a name="dialog-context-and-waterfall-step-context-objects"></a>Contexto da caixa de diálogo e objetos de contexto da etapa de cascata
+
+Use o objeto de contexto da caixa de diálogo para interagir com um conjunto de caixas de diálogo de dentro do manipulador de turnos do bot.
+Use o objeto de contexto da etapa de cascata para interagir com um conjunto de caixas de diálogo de dentro da etapa de cascata.
+
+## <a name="to-start-a-dialog"></a>Para iniciar uma caixa de diálogo
+
+Para iniciar uma caixa de diálogo, passe a *dialogId* que você deseja iniciar para o método _beginDialog_, _prompt_ ou _replaceDialog_ do contexto da caixa. O método _beginDialog_ efetua o push da caixa de diálogo para o topo da pilha e o método _replaceDialog_ remove a caixa de diálogo atual da pilha e efetua o push da caixa substituta na pilha.
+
+O método _prompt_ do contexto da caixa de diálogo é um método auxiliar que recebe argumentos e desenvolve as opções apropriadas para o prompt, em seguida, inicia a caixa de diálogo do prompt. Para saber mais sobre avisos, veja [Solicitar informações ao usuário](bot-builder-prompts.md).
+
+## <a name="to-end-a-dialog"></a>Para encerrar uma caixa de diálogo
+
+O método _end dialog_ encerra uma caixa de diálogo removendo-a da pilha e retorna um resultado opcional para a caixa de diálogo mãe.
+
+É uma prática recomendada chamar explicitamente o método _endDialog_ no final da caixa de diálogo.
+
+## <a name="to-clear-the-dialog-stack"></a>Para limpar a pilha de caixas de diálogo
+
+Caso você queira remover todas as caixas de diálogo da pilha, é possível limpar a pilha de caixas chamando o método _cancel all dialogs_ do contexto da caixa de diálogo.
+
+## <a name="to-repeat-a-dialog"></a>Para repetir uma caixa de diálogo
+
+Para repetir uma caixa de diálogo, use o método _replace dialog_ que remove a caixa atual da pilha, efetua o push da caixa de diálogo substituta para o topo da fila e a inicia. Essa é uma ótima maneira de tratar [fluxos de conversa complexos](~/v4sdk/bot-builder-dialog-manage-complex-conversation-flow.md) e uma boa técnica para gerenciar os menus.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Agora que você aprendeu como gerenciar os fluxos de conversa simples, vamos dar uma olhada e como você pode aproveitar o método _replace_ para lidar com fluxos de conversa complexas.
+Agora que você aprendeu como gerenciar os fluxos de conversa simples, veremos como pode aproveitar o método _replace dialog_ para lidar com os fluxos de conversa complexos.
 
 > [!div class="nextstepaction"]
 > [Gerenciar o fluxo de conversas complexo](bot-builder-dialog-manage-complex-conversation-flow.md)

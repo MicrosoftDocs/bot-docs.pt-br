@@ -6,29 +6,29 @@ ms.author: v-demak
 manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
-ms.date: 12/13/2017
-ms.openlocfilehash: 648a2e3be901bfa82d84423358fa7df32d403391
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.date: 09/26/2018
+ms.openlocfilehash: 410f50f02dcea2bb64ccf0389e20f5cb76e2fd6b
+ms.sourcegitcommit: 3cb288cf2f09eaede317e1bc8d6255becf1aec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297077"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47389835"
 ---
 # <a name="troubleshooting-general-problems"></a>Solução de problemas gerais
 Essas perguntas frequentes podem ajudá-lo a solucionar problemas comuns de desenvolvimento de bot ou operacionais.
 
 ## <a name="how-can-i-troubleshoot-issues-with-my-bot"></a>Como é possível solucionar problemas com o bot?
 
-1. Depure o código-fonte do bot com [Visual Studio Code](debug-bots-locally-vscode.md) ou Visual Studio.
+1. Depure o código-fonte do bot com [Visual Studio Code](debug-bots-locally-vscode.md) ou [Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/navigating-through-code-with-the-debugger?view=vs-2017).
 2. Teste o bot usando o [emulador](bot-service-debug-emulator.md) antes de implantá-lo na nuvem.
-3. Implante o bot em uma plataforma de hospedagem na nuvem, como o Azure e, em seguida, teste a conectividade com o bot usando o controle de webchat interno no painel do bot no <a href="https://dev.botframework.com" target="_blank">portal do Bot Framework</a>. Se você encontrar problemas com o bot depois de implantá-lo no Azure, considere usar este guia: [Solucionar problemas de um aplicativo Web no Serviço de Aplicativo do Azure usando o Visual Studio](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-bot-service-troubleshoot-visual-studio/).
+3. Implante o bot em uma plataforma de hospedagem na nuvem, como o Azure e, em seguida, teste a conectividade com o bot usando o controle de webchat interno no painel do bot no <a href="https://dev.botframework.com" target="_blank">portal do Bot Framework</a>. Se você encontrar problemas com o bot depois de implantá-lo no Azure, considere usar este artigo de blog: [Entendendo a solução de problemas e suporte do Azure](https://azure.microsoft.com/en-us/blog/understanding-azure-troubleshooting-and-support/).
 4. Exclua a [autenticação][TroubleshootingAuth] como um possível problema.
 5. Teste o bot no Skype. Isso irá ajudá-lo a validar a experiência do usuário de ponta a ponta.
 6. Considere testar o bot em canais que tenham requisitos de autenticação adicionais como Direct Line ou Webchat.
 
 ## <a name="how-can-i-troubleshoot-authentication-issues"></a>Como é possível solucionar problemas de autenticação?
 
-Para obter detalhes sobre como solucionar problemas de autenticação com o bot, consulte [Solucionar problemas de autenticação do Bot Framework][TroubleshootingAuth].
+Para obter detalhes sobre como solucionar problemas de autenticação com o bot, consulte [solucionar problemas][TroubleshootingAuth] de autenticação do Bot Framework.
 
 ## <a name="im-using-the-bot-builder-sdk-for-net-how-can-i-troubleshoot-issues-with-my-bot"></a>Estou usando o SDK do Bot Builder para .NET. Como é possível solucionar problemas com o bot?
 
@@ -91,7 +91,7 @@ Esse [exemplo](https://github.com/Microsoft/BotBuilder/issues/2258#issuecomment-
 
 ## <a name="how-do-identifiers-work-in-the-bot-framework"></a>Como os identificadores funcionam no Bot Framework?
 
-Para mais detalhes sobre os identificadores no Bot Framework, consulte o [Guia do Bot Framework para identificadores][BotFrameworkIDGuide].
+Para mais detalhes sobre os identificadores no Bot Framework, consulte o [guia para identificadores][BotFrameworkIDGuide] do Bot Framework.
 
 ## <a name="how-can-i-get-access-to-the-user-id"></a>Como é possível obter acesso à ID de usuário?
 
@@ -107,7 +107,7 @@ São permitidos 50 assinantes para bots em desenvolvimento no Kik. Após 50 usu�
 
 ## <a name="how-can-i-use-authenticated-services-from-my-bot"></a>Como é possível usar serviços autenticados do meu bot?
 
-Para a autenticação do Azure Active Directory, experimente usar a biblioteca [BotAuth NuGet](https://www.nuget.org/packages/BotAuth). Para exemplos de autenticação do Facebook, consulte os [Exemplos do SDK do Bot Builder para .NET](https://github.com/Microsoft/BotBuilder/tree/master/CSharp/Samples) no GitHub. 
+Para a autenticação do Azure Active Directory, consulte Adicionar autenticação [V3](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-tutorial-authentication?view=azure-bot-service-3.0&tabs=csharp) | [V4](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-tutorial-authentication?view=azure-bot-service-4.0&tabs=csharp). 
 
 > [!NOTE] 
 > Se você adicionar a funcionalidade de autenticação e segurança ao bot, certifique-se de que os padrões implementados no código estejam em conformidade com os padrões de segurança apropriados ao aplicativo.
@@ -141,7 +141,7 @@ Do ponto de vista do bot, "reativo" significa que o usuário inicia a conversa e
 
 ## <a name="how-can-i-send-proactive-messages-to-the-user"></a>Como enviar mensagens proativas ao usuário?
 
-Para obter exemplos que mostram como enviar mensagens proativas, consulte [Exemplos em C#](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-proactiveMessages) e [Exemplos em Node.js](https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/core-proactiveMessages) no repositório BotBuilder-Samples no GitHub.
+Para obter exemplos que mostram como enviar mensagens proativas, consulte [Exemplos em C# V4](https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/16.proactive-messages) e [Exemplos em Node.js V4](https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/javascript_nodejs/16.proactive-messages) no repositório BotBuilder-Samples no GitHub.
 
 ## <a name="how-can-i-reference-non-serializable-services-from-my-c-dialogs"></a>Como é possível referenciar serviços não serializáveis dos meus diálogos em C#?
 
@@ -151,6 +151,8 @@ Há várias opções:
 * Use atributos [NonSerialized](https://msdn.microsoft.com/en-us/library/system.nonserializedattribute(v=vs.110).aspx) e [OnDeserialized](https://msdn.microsoft.com/en-us/library/system.runtime.serialization.ondeserializedattribute(v=vs.110).aspx) para restaurar a dependência da desserialização. Essa é a solução mais simples.
 * Não armazene essa dependência, para que não seja serializada. Essa solução, embora tecnicamente viável, não é recomendável.
 * Use o substituto de serialização de reflexão. Essa solução pode não ser viável em alguns casos e corre o risco de serializar demasiadamente.
+
+::: moniker range="azure-bot-service-3.0"
 
 ## <a name="where-is-conversation-state-stored"></a>Onde o estado de conversa é armazenado?
 
@@ -169,7 +171,9 @@ Se quiser armazenar esses dados nos datacenters, forneça uma implementação pe
 * Use as interfaces do Builder na camada de linguagem (Node.js ou C#).
 
 > [!IMPORTANT]
-> A API do Serviço do Estado do Bot Framework não é recomendável para ambientes de produção e poderá ser preterida em uma versão futura. É recomendável atualizar o código de bot para usar o armazenamento na memória para finalidade de teste ou usar uma das **Extensões do Azure** para bots de produção. Para saber mais, consulte o tópico **Gerenciar dados de estado** para implementação de [.NET](~/dotnet/bot-builder-dotnet-state.md) ou [Node](~/nodejs/bot-builder-nodejs-state.md).
+> A API do Serviço do Estado do Bot Framework não é recomendável para ambientes de produção e poderá ser preterida em uma versão futura. É recomendável que você atualize o código do bot para que ele use o armazenamento em memória para fins de teste ou use uma das **Extensões do Azure** para bots de produção. Para saber mais, consulte o tópico **Gerenciar dados de estado** para implementação de [.NET](~/dotnet/bot-builder-dotnet-state.md) ou [Node](~/nodejs/bot-builder-nodejs-state.md).
+
+::: moniker-end
 
 ## <a name="what-is-an-etag--how-does-it-relate-to-bot-data-bag-storage"></a>O que é um ETag?  Qual a relação disso com o armazenamento de recipiente de dados de bot?
 
@@ -186,7 +190,11 @@ O serviço `IBotState` do Connector é usado para armazenar os recipientes de da
 
 ## <a name="how-can-i-fix-precondition-failed-412-or-conflict-409-errors"></a>Como corrigir erros de "Falha na Pré-Condição" (412) ou "Conflito" (409)?
 
-Esses erros indicam que o bot processou várias mensagens para a mesma conversa de uma só vez. Se o bot estiver conectado a serviços que exigem mensagens ordenadas com precisão, considere bloquear o estado de conversa para garantir que as mensagens não sejam processadas em paralelo. O SDK do Bot Builder para .NET fornece um mecanismo (classe `LocalMutualExclusion` que implementa `IScope`) para serializar pessimisticamente a manipulação de uma conversa única com um sinal na memória. É possível estender essa implementação para usar uma concessão do Redis, com escopo definido pelo endereço da conversa.
+Esses erros indicam que o bot processou várias mensagens para a mesma conversa de uma só vez. Se o bot estiver conectado a serviços que exigem mensagens ordenadas com precisão, considere bloquear o estado de conversa para garantir que as mensagens não sejam processadas em paralelo. 
+
+::: moniker range="azure-bot-service-3.0"
+
+O SDK do Bot Builder para .NET fornece um mecanismo (classe `LocalMutualExclusion` que implementa `IScope`) para serializar pessimisticamente a manipulação de uma conversa única com um sinal na memória. É possível estender essa implementação para usar uma concessão do Redis, com escopo definido pelo endereço da conversa.
 
 Se o bot não estiver conectado a serviços externos ou se o processamento de mensagens em paralelo a partir da mesma conversa for aceitável, você poderá adicionar esse código para ignorar quaisquer colisões que ocorram na API de Estado do Bot. Isso permitirá que a última resposta defina o estado de conversa.
 
@@ -199,15 +207,18 @@ builder
     .InstancePerLifetimeScope();
 builder.Update(Conversation.Container);
 ```
+::: moniker-end
 
 ## <a name="is-there-a-limit-on-the-amount-of-data-i-can-store-using-the-state-api"></a>Há um limite na quantidade de dados que posso armazenar usando a API de Estado?
 
 Sim, cada armazenamento de estado (ou seja, usuário, conversa e recipientes de dados de bot privados) pode conter até 64 KB de dados. Para obter mais informações, consulte [Gerenciar dados de estado][StateAPI].
 
+::: moniker range="azure-bot-service-3.0"
+
 ## <a name="how-do-i-version-the-bot-data-stored-through-the-state-api"></a>Como fazer a versão dos dados de bot armazenados através da API de Estado?
 
 > [!IMPORTANT]
-> A API do Serviço do Estado do Bot Framework não é recomendável para ambientes de produção e poderá ser preterida em uma versão futura. É recomendável atualizar o código de bot para usar o armazenamento na memória para finalidade de teste ou usar uma das **Extensões do Azure** para bots de produção. Para saber mais, consulte o tópico **Gerenciar dados de estado** para implementação de [.NET](~/dotnet/bot-builder-dotnet-state.md) ou [Node](~/nodejs/bot-builder-nodejs-state.md).
+> A API de Serviço de Estado do Bot Framework não é recomendada para ambientes de produção ou bots v4, e poderá ser totalmente preterida em uma versão futura. É recomendável que você atualize o código do bot para que ele use o armazenamento em memória para fins de teste ou use uma das **Extensões do Azure** para bots de produção. Para obter mais informações, consulte o tópico [Gerenciar dados de estado](v4sdk/bot-builder-howto-v4-state.md).
 
 O serviço de Estado permite que você persista o progresso através dos diálogos em uma conversa para que um usuário possa retornar a uma conversa com um bot posteriormente sem perder a posição. Para preservar isso, os recipientes de propriedades de dados de bot armazenados por meio da API de Estado não são automaticamente excluídos quando você modifica o código do bot. É necessário decidir se os dados do bot devem ou não ser limpos, dependendo se o código modificado é compatível com as versões mais antigas dos dados. 
 
@@ -216,6 +227,8 @@ O serviço de Estado permite que você persista o progresso através dos diálog
 
 > [!NOTE]
 > Se a pilha de diálogo não puder ser desserializada corretamente, devido a alterações no formato de serialização ou porque o código foi alterado demasiadamente, o estado de conversa será redefinido.
+
+::: moniker-end
 
 ## <a name="what-are-the-possible-machine-readable-resolutions-of-the-luis-built-in-date-time-duration-and-set-entities"></a>Quais são as possíveis resoluções legíveis por computador da data, hora, duração interna do LUIS e conjunto de entidades?
 

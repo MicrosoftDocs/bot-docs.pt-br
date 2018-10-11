@@ -7,13 +7,13 @@ ms.author: mateusv
 manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
-ms.date: 08/27/2018
-ms.openlocfilehash: 0bf58773cfbb6c58773cc5c63b735a0099ad569e
-ms.sourcegitcommit: 86ddf3ebe6cc3385d1c4d30b971ac9c3e1fc5a77
+ms.date: 09/20/2018
+ms.openlocfilehash: 94882202eca48a4c662f0ffa32a80065953f13fa
+ms.sourcegitcommit: 3cb288cf2f09eaede317e1bc8d6255becf1aec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43056010"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47389785"
 ---
 # <a name="design-the-user-experience"></a>Projetar a experiência do usuário
 
@@ -33,20 +33,21 @@ Os cartões do Serviço de Bot da Microsoft são objetos programáveis que cont�
 
 | Tipo de cartão | Exemplo | DESCRIÇÃO |
 | ---- | ---- | ---- |
-| AdaptiveCard | ![Imagem do Cartão adaptável](~/media/adaptive-card.png) | Um formato de troca de cartão aberto renderizado como um objeto JSON. Normalmente usado para implantação entre canais de cartões. Os cartões se adaptam à aparência de cada canal de host. |
-| AnimationCard | ![Imagem de Cartão de animação](~/media/animation-card1.png) | Um cartão que pode reproduzir GIFs animados ou vídeos curtos. |
-| AudioCard | ![Imagem de Cartão de áudio](~/media/audio-card.png) | Um cartão que pode reproduzir um arquivo de áudio. |
-| HeroCard | ![Imagem de Cartão Hero](~/media/hero-card1.png) | Um cartão que contém uma única imagem grande, um ou mais botões e um texto. Normalmente usado para realçar visualmente uma seleção potencial do usuário. |
-| ThumbnailCard | ![Imagem do Cartão em miniatura](~/media/thumbnail-card.png) | Um cartão que contém uma única imagem em miniatura, um ou mais botões e um texto. Normalmente usado para realçar visualmente os botões de uma seleção potencial do usuário. |
-| ReceiptCard | ![Imagem de Cartão de recibo](~/media/receipt-card1.png) | Um cartão que permite a um bot fornecer um recibo para o usuário. Normalmente, contém a lista de itens a serem incluídos no recibo, informações fiscais e de totais e outros textos. |
-| SignInCard | ![Imagem de Cartão de entrada](~/media/sign-in-card.png) | Um cartão que permite a um bot solicitar a entrada do usuário. Normalmente, contém um texto e um ou mais botões nos quais o usuário pode clicar para iniciar o processo de entrada. |
-| SuggestedAction | ![Imagem de Cartão de ações sugeridas](~/media/suggested-actions.png) | Apresenta ao usuário um conjunto de CardActions que representa uma escolha do usuário. Esse cartão desaparecerá após a seleção de uma das ações sugeridas. |
-| VideoCard | ![Imagem de Cartão de vídeo](~/media/video-card.png) | Um cartão que pode reproduzir vídeos. Normalmente usado para abrir uma URL e transmitir um vídeo disponível. |
-| CardCarousel | ![Imagem de Carrossel de cartões](~/media/card-carousel.png) | Uma coleção horizontalmente rolável de cartões que permite ao usuário exibir facilmente uma série de opções possíveis de escolhas do usuário.|
+| AdaptiveCard | ![Imagem do Cartão adaptável](./media/adaptive-card.png) | Um formato de troca de cartão aberto renderizado como um objeto JSON. Normalmente usado para implantação entre canais de cartões. Os cartões se adaptam à aparência de cada canal de host. |
+| AnimationCard | ![Imagem de Cartão de animação](./media/animation-card1.png) | Um cartão que pode reproduzir GIFs animados ou vídeos curtos. |
+| AudioCard | ![Imagem de Cartão de áudio](./media/audio-card.png) | Um cartão que pode reproduzir um arquivo de áudio. |
+| HeroCard | ![Imagem de Cartão Hero](./media/hero-card1.png) | Um cartão que contém uma única imagem grande, um ou mais botões e um texto. Normalmente usado para realçar visualmente uma seleção potencial do usuário. |
+| ThumbnailCard | ![Imagem do Cartão em miniatura](./media/thumbnail-card.png) | Um cartão que contém uma única imagem em miniatura, um ou mais botões e um texto. Normalmente usado para realçar visualmente os botões de uma seleção potencial do usuário. |
+| ReceiptCard | ![Imagem de Cartão de recibo](./media/receipt-card1.png) | Um cartão que permite a um bot fornecer um recibo para o usuário. Normalmente, contém a lista de itens a serem incluídos no recibo, informações fiscais e de totais e outros textos. |
+| SignInCard | ![Imagem de Cartão de entrada](./media/sign-in-card.png) | Um cartão que permite a um bot solicitar a entrada do usuário. Normalmente, contém um texto e um ou mais botões nos quais o usuário pode clicar para iniciar o processo de entrada. |
+| SuggestedAction | ![Imagem de Cartão de ações sugeridas](./media/suggested-actions.png) | Apresenta ao usuário um conjunto de CardActions que representa uma escolha do usuário. Esse cartão desaparecerá após a seleção de uma das ações sugeridas. |
+| VideoCard | ![Imagem de Cartão de vídeo](./media/video-card.png) | Um cartão que pode reproduzir vídeos. Normalmente usado para abrir uma URL e transmitir um vídeo disponível. |
+| CardCarousel | ![Imagem de Carrossel de cartões](./media/card-carousel.png) | Uma coleção horizontalmente rolável de cartões que permite ao usuário exibir facilmente uma série de opções possíveis de escolhas do usuário.|
 
 Os cartões permitem que você projete o bot uma vez para que ele funcione em uma variedade de canais. No entanto, nem todos os tipos de cartão são totalmente compatíveis com todos os canais disponíveis. 
 
-Encontre instruções detalhadas para a adição de cartões ao bot nestas seções [Adicionar anexos de mídia de cartão avançado](v4sdk/bot-builder-howto-add-media-attachments.md) e [Adicionar ações sugeridas às mensagens](v4sdk/bot-builder-howto-add-suggested-actions.md).
+Encontre instruções detalhadas para a adição de cartões ao bot nestas seções [Adicionar anexos de mídia de cartão avançado](v4sdk/bot-builder-howto-add-media-attachments.md) e [Adicionar ações sugeridas às mensagens](v4sdk/bot-builder-howto-add-suggested-actions.md). Um exemplo de código também pode ser encontrado aqui para cartões: [C#](https://aka.ms/bot-cards-sample-code-cs)/[JS](https://aka.ms/bot-cards-sample-code-js) cartões adaptáveis: [C#](https://aka.ms/bot-adaptive-cards-sample-code)/[JS](https://aka.ms/bot-adaptive-cards-js-sample-code), anexos: [C#](https://aka.ms/bot-attachments-sample-code)/[JS](https://aka.ms/bot-attachments-js-sample-code) e ações sugeridas: [C#](https://aka.ms/bot-suggested-actions-code)/[JS](https://aka.ms/bot-suggested-actions-js-code).
+
 
 
 Ao projetar o bot, não descarte automaticamente elementos comuns de interface do usuário como não sendo "inteligentes o suficiente". Conforme abordado [anteriormente](~/bot-service-design-principles.md#designing-a-bot), o bot deve ser projetado para resolver o problema do usuário da maneira mais eficaz, rápida e fácil possível. Evite a tentação de começar incorporando o reconhecimento vocal em idioma natural, pois ele costuma ser desnecessário e introduz uma complexidade não justificada.
@@ -85,7 +86,7 @@ Em outros cenários, um usuário pode estar **digitando solicitações simples c
 
 Usando as APIs, o bot pode extrair os principais componentes do texto do usuário para identificar a intenção do usuário. Ao implementar funcionalidades de reconhecimento vocal em idioma natural no bot, defina expectativas realistas para o nível de detalhes que os usuários provavelmente fornecerão na entrada. 
 
-![como os usuários se comunicam](~/media/bot-service-design-user-experience/buy-house.png)
+![como os usuários se comunicam](./media/bot-service-design-user-experience/buy-house.png)
 
 > [!TIP]
 > Ao criar modelos de idioma natural, não presuma que os usuários fornecerão todas as informações necessárias na consulta inicial. Projete o bot para solicitar especificamente as informações necessárias, guiando o usuário para fornecer essas informações fazendo uma série de perguntas, se necessário. 

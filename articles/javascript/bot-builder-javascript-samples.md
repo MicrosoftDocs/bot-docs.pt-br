@@ -6,26 +6,21 @@ ms.author: jonathanfingold
 manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
-ms.date: 05/04/2018
+ms.date: 09/13/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 8dc8ed9c57bf09b9f8f0809102d12de888917305
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: da8a38e3959359ad683544f0fe605c8300cdffb2
+ms.sourcegitcommit: 3bf3dbb1a440b3d83e58499c6a2ac116fe04b2f6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297174"
+ms.lasthandoff: 09/23/2018
+ms.locfileid: "46707692"
 ---
 # <a name="javascript-samples-for-bot-builder-sdk"></a>Exemplos de JavaScript para o SDK do construtor de Bot
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
-Esses exemplos demonstram bots com foco em tarefas que mostram como aproveitar os recursos do SDK do Bot Builder para JavaScript. Você pode usar os exemplos para ajudá-lo a se familiarizar rapidamente com criar bots excelentes com recursos sofisticados. 
+Os exemplos no repositório de exemplos do Bot Builder mostram bots com foco em tarefas que mostram como aproveitar os recursos do SDK do Bot Builder para JavaScript. Você pode usar as amostras para ajudá-lo a começar rapidamente a criar grandes bots com recursos avançados. Consulte o arquivo [leiame](https://github.com/Microsoft/BotBuilder-Samples/blob/master/README.md) para ver uma lista de exemplos e informações adicionais.
 
-Observação: O v4 SDK está sendo desenvolvido ativamente e, portanto, deve ser usado apenas para experimentação.
-
-Para obter exemplos, clonar as [botbuilder-js](https://github.com/Microsoft/botbuilder-js) repositório do GitHub usando o Git.
-
+Para obter os exemplos, clone o repositório GitHub do [botbuilder-samples](https://github.com/Microsoft/botbuilder-samples) usando o Git.
 ```cmd
-git clone https://github.com/Microsoft/botbuilder-js.git
-cd samples
+git clone https://github.com/Microsoft/botbuilder-dotnet.git
 ```
-Os bots de exemplo criados com o SDK do construtor de Bot para JavaScript são organizados na **exemplos** directory.

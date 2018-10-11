@@ -6,13 +6,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
-ms.date: 05/03/2018
-ms.openlocfilehash: 7aff56dfc60d9d5cce42a5b6a2624c1364ff1b72
-ms.sourcegitcommit: 44f100a588ffda19c275b118f4f97029f12d1449
+ms.date: 09/13/2018
+ms.openlocfilehash: 9f80fc551cac2f1994b0d398cd640d2ad3d78e61
+ms.sourcegitcommit: 3bf3dbb1a440b3d83e58499c6a2ac116fe04b2f6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42928374"
+ms.lasthandoff: 09/23/2018
+ms.locfileid: "46707372"
 ---
 # <a name="bot-builder-sdk-for-net-samples"></a>Exemplos de SDK do Construtor de Bot para .NET
 
@@ -92,17 +92,12 @@ Amostra | DESCRIÇÃO
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
-Estes exemplos demonstram bots centrados na tarefa que mostram como aproveitar os recursos no SDK do Construtor de Bot v4 para .NET. Você pode usar as amostras para ajudá-lo a começar rapidamente a criar grandes bots com recursos avançados. 
+Os exemplos no repositório de exemplos do Bot Builder demonstram bots orientados a tarefas que mostram como aproveitar os recursos fornecidos no SDK para .NET. Você pode usar as amostras para ajudá-lo a começar rapidamente a criar grandes bots com recursos avançados. Consulte o arquivo [leiame](https://github.com/Microsoft/BotBuilder-Samples/blob/master/README.md) para ver uma lista de exemplos e informações adicionais.
 
-Observação: O SDK v4 está sendo desenvolvido ativamente e, portanto, deve ser usado apenas para experimento. 
-
-Para obter as amostras, clone o repositório GitHub [botbuilder-dotnet](https://github.com/Microsoft/botbuilder-dotnet) usando o Git.
+Para obter os exemplos, clone o repositório GitHub do [BotBuilder-Samples](https://github.com/Microsoft/botbuilder-samples) usando o Git.
 ```cmd
 git clone https://github.com/Microsoft/botbuilder-dotnet.git
-cd botbuilder-dotnet\samples-final
 ```
-Os bots de exemplo criados com o SDK do Construtor de Bot para .NET são organizados no diretório **samples-final**.
-
 
 ::: moniker-end
 

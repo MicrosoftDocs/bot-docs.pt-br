@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 04/09/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: caa424ed0ea0944805836739ed48a7a61f78d21c
-ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
+ms.openlocfilehash: 4195ae016513c809e4677879e0abe1b2bf8d799e
+ms.sourcegitcommit: 3cb288cf2f09eaede317e1bc8d6255becf1aec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42905255"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47389775"
 ---
 # <a name="testing-and-debugging-guidelines"></a>Como testar e depurar diretrizes
 
@@ -50,7 +50,7 @@ Algumas ferramentas são fornecidas para ajudar com isso. Por exemplo, o [Azure 
 
 ### <a name="level-2-use-a-direct-line-client"></a>Nível 2: usar um cliente da Linha Direta
 
-Depois de verificar se o bot parece funcionar como desejado, a próxima etapa é conectá-lo a um canal. Para fazer isso, você pode implantar o bot em um servidor de preparo e criar seu próprio [cliente de Linha Direta](bot-builder-howto-direct-line.md) ao qual o bot se conectará.
+Depois de verificar se o bot parece funcionar como desejado, a próxima etapa é conectá-lo a um canal. Para fazer isso, você pode implantar o bot em um servidor de preparo e criar seu próprio cliente de linha direta <!--IBTODO [Direct Line client](bot-builder-howto-direct-line.md)--> ao qual o bot se conectará.
 
 A criação de seu próprio cliente permite que você defina o funcionamento interno do canal, além de testar especificamente como o bot responde a determinadas trocas de atividade. Depois de conectado ao cliente, execute os testes para definir o estado do bot e verificar os recursos. Se o bot utiliza um recurso, como a fala, o uso desses canais pode oferecer uma maneira de verificar essa funcionalidade.
 
@@ -64,7 +64,7 @@ A maneira de fazer isso pode variar bastante, do uso individual de diferentes ca
 
 ### <a name="other-testing"></a>Outros testes
 
-Diferentes tipos de teste podem ser feitos em conjunto com os níveis acima ou em ângulos diferentes, como o teste de estresse, o teste de desempenho ou a criação de perfil da atividade do bot. O Visual Studio fornece métodos para fazer isso localmente, bem como um [pacote de ferramentas](https://www.visualstudio.com/team-services/testing-tools/) para testar o aplicativo, e o [portal do Azure](https://portal.azure.com) fornece insights sobre o desempenho do bot.
+Diferentes tipos de teste podem ser feitos em conjunto com os níveis acima ou em ângulos diferentes, como o teste de estresse, o teste de desempenho ou a criação de perfil da atividade do bot. O Visual Studio fornece métodos para fazer isso localmente, bem como um [pacote de ferramentas](https://azure.microsoft.com/en-us/solutions/dev-test/) para testar o aplicativo, e o [portal do Azure](https://portal.azure.com) fornece insights sobre o desempenho do bot.
 
 ## <a name="debugging"></a>Depurando
 
@@ -74,7 +74,17 @@ Os bots seguem um paradigma de programação controlada por evento, que poderá 
 
 **Noções básicas sobre as atividades do bot com o emulador**
 
-O bot lida com diferentes tipos de [atividades](bot-builder-concept-activity-processing.md), além da atividade normal de _mensagem_. O uso do [emulador](../bot-service-debug-emulator.md) mostrará a você quais são essas atividades, quando elas ocorrem e as informações que elas contêm. A compreensão dessas atividades ajudará você a codificar o bot com eficiência e permite que você verifique se as atividades que o bot está enviando e recebendo são as esperadas.
+O bot lida com diferentes tipos de [atividades](bot-builder-basics.md#the-activity-processing-stack), além da atividade normal de _mensagem_. O uso do [emulador](../bot-service-debug-emulator.md) mostrará a você quais são essas atividades, quando elas ocorrem e as informações que elas contêm. A compreensão dessas atividades ajudará você a codificar o bot com eficiência e permite que você verifique se as atividades que o bot está enviando e recebendo são as esperadas.
+
+**Salvar e recuperar as interações do usuário com transcrições**
+
+O armazenamento de transcrição de Blobs do Azure fornece um recurso especializado em que você pode [armazenar e recuperar transcrições](bot-builder-howto-v4-storage.md) contendo as interações entre os usuários e seu bot.  
+
+Além disso, depois que as interações de entrada do usuário foram armazenadas, você pode usar o “_gerenciador de armazenamento_” do Azure para exibir manualmente os dados contidos em transcrições armazenadas em seu repositório de transcrição de blob. O exemplo a seguir abre o “_gerenciador de armazenamento_” a partir das configurações para “_mynewtestblobstorage_”. Para abrir uma entrada de usuário salva selcione: Contêiner de Blob > ChannelId > TranscriptId > ConversationId
+
+![Examine_stored_transcript_text](./media/examine_transcript_text_in_azure.png)
+
+Isso abre a entrada de conversação do usuário armazenada no formato JSON. A entrada do usuário é preservada junto com a chave “_texto:_”.
 
 **Como funciona o middleware**
 
@@ -84,7 +94,7 @@ Se você estiver usando várias partes do middleware, o delegado poderá passar 
 
 Se o delegado `next()` não for chamado, isso será conhecido como [roteamento de curto-circuito](bot-builder-concept-middleware.md#short-circuiting). Isso acontece quando o middleware atende à atividade atual e determina que não é necessário passar a execução. 
 
-Compreender quando e por quê o middleware causa curto-circuito ajuda a indicar qual parte do middleware deve vir primeiro no pipeline. Além disso, é particularmente importante compreender o que esperar para o middleware interno fornecido pelo SDK ou por outros desenvolvedores. Algumas pessoas acreditam ser útil tentar [criar seu próprio middleware](bot-builder-create-middleware.md) primeiro para experimentar um pouco antes de se aprofundarem no middleware interno.
+Compreender quando e por quê o middleware causa curto-circuito ajuda a indicar qual parte do middleware deve vir primeiro no pipeline. Além disso, é particularmente importante compreender o que esperar para o middleware interno fornecido pelo SDK ou por outros desenvolvedores. Algumas pessoas acreditam ser útil tentar criar seu próprio middleware primeiro para experimentar um pouco antes de se aprofundarem no middleware interno.
 
 Por exemplo, o [QnA Maker](bot-builder-howto-qna.md) foi projetado para manipular certas interações e causar curto-circuito do pipeline quando isso ocorre, o que pode ser confuso quando se está aprendendo a usá-lo pela primeira vez.
 

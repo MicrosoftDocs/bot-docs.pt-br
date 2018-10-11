@@ -2,74 +2,76 @@
 title: Configurar a implantação contínua para o Serviço de Bot | Microsoft Docs
 description: Saiba como configurar a implantação contínua do controle do código-fonte para um Serviço de Bot.
 keywords: implantação contínua, publicar, implantar, portal do Azure
-author: v-ducvo
-ms.author: v-ducvo
+author: ivorb
+ms.author: v-ivorb
 manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
-ms.date: 03/08/2018
-ms.openlocfilehash: 596d264c4df72959c71ab353e5038175fc2bed31
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.date: 09/18/2018
+ms.openlocfilehash: 45c89c911106d5b6a1e250f6e6ab3d472c90ab92
+ms.sourcegitcommit: 3bf3dbb1a440b3d83e58499c6a2ac116fe04b2f6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296818"
+ms.lasthandoff: 09/23/2018
+ms.locfileid: "46707982"
 ---
 # <a name="set-up-continuous-deployment"></a>Configurar a implantação contínua
-
-A implantação contínua permite que você desenvolva seu bot localmente. A implantação contínua é útil se o bot faz check-in em um controle do código-fonte como o **GitHub** ou o **Visual Studio Team Services**. Enquanto você fizer check-in das alterações novamente no repositório de origem, as alterações serão implantadas automaticamente no Azure.
+Se seu código for verificado no **GitHub** ou no **Azure DevOps (anteriormente conhecido como Visual Studio Team Services)**, use a implantação contínua para implantar automaticamente as alterações de código do seu repositório de origem para o Azure. Neste tópico, abordaremos como configurar a implantação contínua para **GitHub** e **Azure DevOps**.
 
 > [!NOTE]
-> Depois que a implantação contínua é configurada, o [editor de códigos online](bot-service-build-online-code-editor.md) se torna *READ ONLY*.
-
-Este tópico mostrará como configurar a implantação contínua para o **GitHub** e o **Visual Studio Team Services**.
+> Depois que a implantação contínua é configurada, o editor de códigos online no portal do Azure se torna *READ ONLY*.
 
 ## <a name="continuous-deployment-using-github"></a>Implantação contínua usando o GitHub
 
 Para configurar a implantação contínua usando o GitHub, faça o seguinte:
 
-1. [Crie um fork](https://help.github.com/articles/fork-a-repo/) do repositório GitHub que contenha o código que você deseja implantar no Azure.
-2. No portal do Azure, acesse a folha **Criar** do bot e clique em **Configurar implantação contínua**. 
+1. Use o repositório GitHub que contenha o código-fonte que você deseja implantar no Azure. Você pode [bifurcar](https://help.github.com/articles/fork-a-repo/) um repositório existente ou criar seu próprio repositório e carregar o código-fonte relacionado em seu repositório GitHub.
+2. No [portal do Azure](https://portal.azure.com), acesse a folha **Criar** do bot e clique em **Configurar implantação contínua**. 
 3. Clique em **Instalação**.
    
    ![Configurar a implantação contínua](~/media/azure-bot-build/continuous-deployment-setup.png)
 
-4. Clique em **Escolher fonte** e escolha **GitHub**.
+4. Clique em **Escolher fonte** e selecione **GitHub**.
 
    ![Escolher o GitHub](~/media/azure-bot-build/continuous-deployment-setup-github.png)
 
 5. Clique em **Autorização** e, em seguida, clique no botão **Autorizar** e siga os prompts para fornecer autorização ao Azure para acessar sua conta do GitHub.
 
-A implantação contínua com a instalação do GitHub foi concluída. Sempre que você fizer uma confirmação, as alterações serão implantadas automaticamente no Azure.
+6. Clique em **Escolher projeto** e selecione um projeto.
 
-## <a name="continuous-deployment-using-visual-studio"></a>Implantação contínua usando o Visual Studio
+7. Clique em **Escolher ramificação** e selecione uma ramificação.
 
-1. Na folha **Criar** do bot, clique em **Configurar implantação contínua**. 
+8. Clique em **OK** para concluir o processo de instalação.
+
+Agora a sua implantação contínua com a instalação do GitHub foi concluída. Sempre que você confirmar no repositório do código-fonte, suas alterações serão automaticamente implantadas no Serviço de Bot do Azure.
+
+## <a name="continuous-deployment-using-azure-devops"></a>Implantação contínua usando o Azure DevOps
+
+1. No [portal do Azure](https://portal.azure.com), na folha **Criar** do bot, clique em **Configurar implantação contínua**. 
 2. Clique em **Instalação**.
    
    ![Configurar a implantação contínua](~/media/azure-bot-build/continuous-deployment-setup.png)
 
-3. Clique em **Escolher fonte** e escolha **Visual Studio Team Services**.
+3. Clique em **Escolher fonte** e selecione **Visual Studio Team Services**. Lembre-se que o Visual Studio Team Services agora se chama Azure DevOps Services.
 
    ![Escolher o Visual Studio Team Services](~/media/azure-bot-build/continuous-deployment-setup-vs.png)
 
-4. Clique em **Escolha sua conta** e escolha uma conta.
+4. Clique em **Escolha sua conta** e selecione uma conta.
 
 > [!NOTE]
-> Caso não veja sua conta, verifique se ela está vinculada à sua assinatura do Azure.
-> Para obter mais informações, confira [Vinculando sua conta do VSTS à sua assinatura do Azure](https://github.com/projectkudu/kudu/wiki/Setting-up-a-VSTS-account-so-it-can-deploy-to-a-Web-App#linking-your-vsts-account-to-your-azure-subscription).
+> Caso não veja sua conta, verifique se ela está vinculada à sua assinatura do Azure. Para vincular sua conta à sua assinatura do Azure, acesse o Portal do Azure, abra **Organizações do Azure DevOps Services (anteriormente conhecido como Team Services)**. Será exibida uma lista de organizações que você possui no seu Azure DevOps. Clique naquela com o código-fonte do bot que você deseja implantar, você encontrará um botão **Conectar AAD** botão. Se a organização que você escolher não estiver vinculada à sua assinatura do Azure, esse botão estará habilitado. Então, clique neste botão para configurar a conexão. Talvez você precise aguardar algum tempo antes que ela entra em vigor.
 
-5. Clique em **Escolher um projeto** e escolha um projeto.
+5. Clique em **Escolher projeto** e selecione um projeto.
 
 > [!NOTE]
 > Há suporte apenas para projetos GIT do VSTS.
 
-6. Clique em **Escolher Branch** e escolha um branch para branch.
+6. Clique em **Escolher ramificação** e selecione uma ramificação.
 7. Clique em **OK** para concluir o processo de instalação.
 
    ![Configuração do Visual Studio](~/media/azure-bot-build/continuous-deployment-setup-vs-configuration.png)
 
-A implantação contínua com a instalação do Visual Studio Team Services foi concluída. Sempre que você fizer uma confirmação, as alterações serão implantadas automaticamente no Azure.
+Agora a sua implantação contínua com a instalação do Azure DevOps foi concluída. Sempre que você fizer uma confirmação, as alterações serão implantadas automaticamente no Azure.
 
 ## <a name="disable-continuous-deployment"></a>Desabilitar a implantação contínua
 
@@ -80,8 +82,5 @@ Para desabilitar a implantação contínua, faça o seguinte:
 1. Na folha **Criar** do bot, clique em **Configurar implantação contínua**. 
 2. Clique em **Desconectar** para desabilitar a implantação contínua. Para habilitar novamente a implantação contínua, repita as etapas das seções apropriadas acima.
 
-## <a name="next-steps"></a>Próximas etapas
-Agora que o bot foi configurado para a implantação contínua, teste o código usando o Webchat online.
-
-> [!div class="nextstepaction"]
-> [Testar no Webchat](bot-service-manage-test-webchat.md)
+## <a name="additional-information"></a>Informações adicionais
+- [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/?view=vsts)

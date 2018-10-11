@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
 ms.date: 07/13/2018
-ms.openlocfilehash: 5e7fc6fa4fbce9b13d74d5dc7877de44840c51e6
-ms.sourcegitcommit: dcbc8ad992a3e242a11ebcdf0ee99714d919a877
+ms.openlocfilehash: 73cf6cedecd9acaef828bd41f4fccdaad2ae5731
+ms.sourcegitcommit: 3bf3dbb1a440b3d83e58499c6a2ac116fe04b2f6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39352875"
+ms.lasthandoff: 09/23/2018
+ms.locfileid: "46707162"
 ---
 # <a name="debug-a-bot-service-bot"></a>Depurar um bot de Serviço de Bot
 
@@ -27,7 +27,7 @@ Siga as etapas nesta seção para depurar um bot escrito em JavaScript.
 
 Antes de você pode depurar seu bot de JavaScript, você deve concluir essas tarefas.
 
-- Baixe o código-fonte para o bot (do Azure), conforme descrito em [Download de código-fonte para o bot](bot-service-build-download-source-code.md?#download-bot-source-code).
+- Baixe o código-fonte para o bot (do Azure), conforme descrito em [download de código-fonte para o bot](bot-service-build-download-source-code.md).
 - Baixe e instale o [emulador do Bot Framework](https://github.com/Microsoft/BotFramework-Emulator/releases).
 - Baixe e instale um editor de código, como <a href="https://code.visualstudio.com" target="_blank">Visual Studio Code</a>.
 
@@ -72,7 +72,7 @@ Siga as etapas nesta seção para depurar um bot escrito em C#.
 
 Antes que você possa depurar seu bot C# de aplicativo web, você deve concluir essas tarefas.
 
-- Baixe o código-fonte para o bot (do Azure), conforme descrito em [Download de código-fonte para o bot](bot-service-build-download-source-code.md?#download-bot-source-code).
+- Baixe o código-fonte para o bot (do Azure), conforme descrito em [download de código-fonte para o bot](bot-service-build-download-source-code.md).
 - Baixe e instale o [emulador do Bot Framework](https://github.com/Microsoft/BotFramework-Emulator/releases).
 - Baixe e instale <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2017</a> (Community Edition ou superior).
 
@@ -146,13 +146,6 @@ Depois de conectar o emulador ao seu bot, envie uma mensagem ao seu bot digitand
 Além disso, você pode exibir os detalhes do log na janela do console.
 
 ![Janela do console](~/media/bot-service-debug-bot/csharp-azureservice-debug-debughostlogging.png)
-
-::: moniker-end
-::: moniker range="azure-bot-service-4.0" 
-
-## <a id="debug-csharp-serverless"></a> Depurar um plano de consumo C\# bot de funções
-
-Bot de funções para SDK V4 do Construtor de Bot em breve.
 
 ::: moniker-end
 
