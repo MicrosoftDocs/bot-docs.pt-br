@@ -6,15 +6,17 @@ ms.author: JonathanFingold
 manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
-ms.date: 7/2/2018
+ms.date: 10/04/2018
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 37189bb9efbee5a2ad5f40f58106d4d85eda4473
-ms.sourcegitcommit: bff936a6a3dd5b1bd3ddfeed8bd1023e52929f08
+ms.openlocfilehash: be53d50ebfa7738b37fe9a25941fe29764f18c26
+ms.sourcegitcommit: 6c2426c43cd2212bdea1ecbbf8ed245145b3c30d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43312470"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48852191"
 ---
+[!INCLUDE [pre-release-label](includes/pre-release-label-v3.md)]
+
 # <a name="add-authentication-to-your-bot-via-azure-bot-service"></a>Adicionar autenticação ao seu bot por meio do Serviço de Bot do Azure
 Este tutorial usa os novos recursos de autenticação do bot no Serviço de Bot do Azure, fornecendo recursos para facilitar o desenvolvimento de um bot que autentica usuários em vários provedores de identidade como o Azure AD (Azure Active Directory), GitHub, Uber e assim por diante. Essas atualizações também avançam em direção a uma experiência de usuário aprimorada, eliminando a _verificação de código mágico_ para alguns clientes.
 
@@ -37,10 +39,10 @@ Você pode extrapolar das etapas neste artigo para adicionar recursos a um bot e
 
 | Amostra | Versão do BotBuilder | DESCRIÇÃO |
 |:---|:---:|:---|
-| [AadV1Bot](https://github.com/Microsoft/BotBuilder/tree/master/CSharp/Samples/AadV1Bot) | v3 | Demonstra o suporte de OAuthCard no SDK do C# v3, usando o ponto de extremidade do Azure AD v1 |
-| [AadV2Bot](https://github.com/Microsoft/BotBuilder/tree/master/CSharp/Samples/AadV2Bot) | v3 |  Demonstra o suporte de OAuthCard no SDK do C# v3, usando o ponto de extremidade do Azure AD v2 |
-| [GitHubBot](https://github.com/Microsoft/BotBuilder/tree/master/CSharp/Samples/GitHubBot) | v3 |  Demonstra o suporte de OAuthCard no SDK do C# v3, usando o GitHub |
-| [BasicOAuth](https://github.com/Microsoft/BotBuilder/tree/master/CSharp/Samples/Microsoft.Bot.Sample.BasicOAuth) | v3 |  Demonstra o suporte de OAuth 2.0 no SDK do C# v3 |
+| [AadV1Bot](https://aka.ms/AadV1Bot) | v3 | Demonstra o suporte de OAuthCard no SDK do C# v3, usando o ponto de extremidade do Azure AD v1 |
+| [AadV2Bot](https://aka.ms/AadV2Bot) | v3 |  Demonstra o suporte de OAuthCard no SDK do C# v3, usando o ponto de extremidade do Azure AD v2 |
+| [GitHubBot](https://aka.ms/GitHubBot) | v3 |  Demonstra o suporte de OAuthCard no SDK do C# v3, usando o GitHub |
+| [BasicOAuth](https://aka.ms/BasicOAuth) | v3 |  Demonstra o suporte de OAuth 2.0 no SDK do C# v3 |
 
 > [!NOTE]
 > Os recursos de autenticação também trabalham com Node. js com BotBuilder v3. No entanto, este artigo aborda apenas o código C# de exemplo.
@@ -271,7 +273,7 @@ Você precisará instalar o [Emulador de Bot](https://github.com/Microsoft/BotFr
 
 ## <a name="notes-on-the-token-retrieval-flow"></a>Observações sobre o fluxo de recuperação de token
 
-Quando um usuário pede ao bot para fazer algo que requer que o bot tenha o usuário conectado, o bot pode usar o `Microsoft.Bot.Builder.Dialogs.GetTokenDialog` para iniciar a recuperação de um token para uma determinada conexão. Os próximos dois trechos de código são obtidos da classe `GetTokenDialog`.
+Quando um usuário pede ao bot para fazer algo que requer que o bot tenha o usuário conectado, o bot pode usar o `Microsoft.Bot.Builder.Dialogs.GetTokenDialog` para iniciar a recuperação de um token para uma determinada conexão. Os próximos dois snippets de código são obtidos da classe `GetTokenDialog`.
 
 ### <a name="check-for-a-cached-token"></a>Verificação de um token em cache
 
@@ -360,3 +362,5 @@ else if(message.Type == ActivityTypes.Event)
     }
 }
 ```
+## <a name="additional-resources"></a>Recursos adicionais
+[SDK do Bot Builder](https://github.com/microsoft/botbuilder)
