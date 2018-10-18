@@ -9,18 +9,18 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 08/23/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 075e9b3a41462bfbb1398bd72840cc7e50d3cfca
-ms.sourcegitcommit: 3bf3dbb1a440b3d83e58499c6a2ac116fe04b2f6
+ms.openlocfilehash: 5b7faaae63bdc084dac570cb33ebbc755ccbcc19
+ms.sourcegitcommit: aef7d80ceb9c3ec1cfb40131709a714c42960965
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/23/2018
-ms.locfileid: "46707512"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49383111"
 ---
 # <a name="send-text-and-spoken-messages"></a>Enviar mensagens de texto e faladas
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
-A principal maneira que o bot se comunicará com usuários e, da mesma forma, receberá comunicação, é por meio de atividades de **mensagem**. Algumas mensagens simplesmente podem conter texto sem formatação, enquanto outras podem ter conteúdo mais elaborado, como cartões ou anexos. O manipulador do turno do bot recebe mensagens do usuário e, a partir daí, é possível enviar respostas ao usuário. O objeto de [contexto do turno](bot-builder-concept-activity-processing.md#turn-context) fornece métodos para enviar mensagens de volta ao usuário. Para obter mais informações sobre o processamento de atividade, consulte [Processamento de atividade](bot-builder-concept-activity-processing.md).
+A principal maneira que o bot se comunicará com usuários e, da mesma forma, receberá comunicação, é por meio de atividades de **mensagem**. Algumas mensagens simplesmente podem conter texto sem formatação, enquanto outras podem ter conteúdo mais elaborado, como cartões ou anexos. O manipulador do turno do bot recebe mensagens do usuário e, a partir daí, é possível enviar respostas ao usuário. O objeto de contexto do turno fornece métodos para enviar mensagens de volta ao usuário. Para obter mais informações sobre o processamento de atividade, consulte [Processamento de atividade](~/v4sdk/bot-builder-basics.md#the-activity-processing-stack).
 
 Este artigo descreve como enviar mensagens de texto simples e de fala. Para enviar o conteúdo mais avançado, saiba como [adicionar anexos de mídia avançada](bot-builder-howto-add-media-attachments.md). Para obter informações sobre como usar objetos de solicitação, saiba como [solicitar entrada dos usuários](bot-builder-prompts.md).
 
