@@ -5,20 +5,21 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 3baf5bde772e67084a6046a8d2a8e7d631b245f6
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 57babac9594118c12805ff9023cf7086e526a273
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296786"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49997921"
 ---
 # <a name="create-a-bot-with-the-bot-connector-service"></a>Crie um bot com o serviço Bot Connector
 > [!div class="op_single_selector"]
 > - [.NET](../dotnet/bot-builder-dotnet-quickstart.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-quickstart.md)
-> - [Serviço de Bot](../bot-service-quickstart.md)
+> - [Serviço de bot](../bot-service-quickstart.md)
 > - [REST](../rest-api/bot-framework-rest-connector-quickstart.md)
 
 O serviço Bot Connector permite que seu bot troque mensagens com canais que são configurados no <a href="https://dev.botframework.com/" target="_blank">Portal do Bot Framework</a> usando REST padrão de indústria e JSON sobre HTTPS. Este tutorial orienta você pelo processo de obter um token de acesso do Bot Framework e usar o serviço Bot Connector para trocar mensagens com o usuário.

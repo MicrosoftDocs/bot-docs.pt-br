@@ -6,14 +6,15 @@ author: matvelloso
 ms.author: mateusv
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: d36f043ec3e268b7c56abef7253ddf6274a71a7e
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: f59a7acbdb7d580aebeef6ffe81d8b15505aed90
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296981"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49999803"
 ---
 # <a name="design-a-bots-first-user-interaction"></a>Projetar a primeira interação do usuário de um bot
 

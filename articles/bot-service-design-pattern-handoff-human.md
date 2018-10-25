@@ -5,14 +5,14 @@ author: matvelloso
 ms.author: mateusv
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: f786f79011da5e50b37f9797dca694f0e132296c
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 6b50df60c3a8165198e8f9a55964f2f596d62406
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296942"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49998723"
 ---
 # <a name="transition-conversations-from-bot-to-human"></a>Fazer a transição de conversas do bot para humanos
 
@@ -80,15 +80,15 @@ Para obter um exemplo completo que mostra como entregar as conversas do bot para
 
 ::: moniker range="azure-bot-service-4.0"
 
-- [Caixas de diálogo](v4sdk/bot-builder-dialog-manage-conversation-flow.md)
+- [Diálogos](v4sdk/bot-builder-dialog-manage-conversation-flow.md)
 - <a href="https://www.microsoft.com/cognitive-services/en-us/text-analytics-api" target="blank">API de Análise de Texto do Azure Machine Learning</a>
 
 ::: moniker-end
 
 ::: moniker range="azure-bot-service-3.0"
 
-- [Gerenciar o fluxo da conversa com caixas de diálogo (.NET)](~/dotnet/bot-builder-dotnet-manage-conversation-flow.md)
-- [Gerenciar o fluxo da conversa com caixas de diálogo (Node.js)](~/nodejs/bot-builder-nodejs-manage-conversation-flow.md)
+- [Gerenciar o fluxo da conversa com diálogos (.NET)](~/dotnet/bot-builder-dotnet-manage-conversation-flow.md)
+- [Gerenciar o fluxo da conversa com diálogos (Node.js)](~/nodejs/bot-builder-nodejs-manage-conversation-flow.md)
 - <a href="https://www.microsoft.com/cognitive-services/en-us/text-analytics-api" target="blank">API de Análise de Texto do Azure Machine Learning</a>
 
 

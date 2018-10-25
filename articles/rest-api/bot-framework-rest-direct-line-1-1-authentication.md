@@ -5,14 +5,15 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 6e83cc45e925f5d94b70260de6ac54e6f4052ca4
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 4f607050fd891eefe2129973a46d830aa0bab6c7
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296827"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49997613"
 ---
 # <a name="authentication"></a>Autenticação
 
@@ -59,9 +60,9 @@ POST https://directline.botframework.com/api/tokens/conversation
 Authorization: Bearer SECRET
 ```
 
-No cabeçalho `Authorization` dessa solicitação, substitua **SEGREDO** pelo valor do seu segredo da Linha Direta.
+No cabeçalho `Authorization` dessa solicitação, substitua **SECRET** pelo valor do seu segredo de Linha Direta.
 
-Os trechos a seguir fornecem um exemplo da solicitação e da resposta de Gerar Token.
+Os snippets a seguir fornecem um exemplo da solicitação e da resposta de Gerar Token.
 
 ### <a name="request"></a>Solicitação
 
@@ -98,7 +99,7 @@ Authorization: Bearer TOKEN_TO_BE_REFRESHED
 
 No URI dessa solicitação, substitua **{conversationId}** pela ID da conversa para a qual o token é válido e, no cabeçalho `Authorization` dessa solicitação, substitua **TOKEN_TO_BE_REFRESHED** pelo token da Linha Direta que você deseja atualizar.
 
-Os trechos a seguir fornecem um exemplo da solicitação e da resposta de Atualizar Token.
+Os snippets a seguir fornecem um exemplo da solicitação e da resposta de Atualizar Token.
 
 ### <a name="request"></a>Solicitação
 

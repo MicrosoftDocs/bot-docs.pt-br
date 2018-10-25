@@ -5,14 +5,15 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 3bc56d08f45ffd1e389a2dca1868a788d65e087e
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 360ec3a6a6c9a3be16370aaf445f24a237a702e3
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297348"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49998007"
 ---
 # <a name="send-a-message-to-the-bot"></a>Enviar uma mensagem para o bot
 
@@ -25,7 +26,7 @@ Usando o protocolo 1.1 de linha direta, os clientes podem trocar mensagens com b
 
 Para enviar uma mensagem ao bot, o cliente deve criar um objeto [Message](bot-framework-rest-direct-line-1-1-api-reference.md#message-object) para definir a mensagem e, em seguida, emitir uma solicitação `POST` para `https://directline.botframework.com/api/conversations/{conversationId}/messages`, especificando o objeto Message no corpo da solicitação.
 
-Os trechos de código a seguir fornecem um exemplo de enviar mensagem solicitação e resposta.
+Os snippets de código a seguir fornecem um exemplo de enviar mensagem solicitação e resposta.
 
 ### <a name="request"></a>Solicitação
 
@@ -55,9 +56,9 @@ HTTP/1.1 204 No Content
 
 O tempo total para postar uma mensagem a uma conversa de linha direta é a soma das seguintes opções:
 
-- Tempo de trânsito para a solicitação HTTP para viajar do cliente para o serviço Direct Line
-- Tempo de processamento interno dentro da linha direta (geralmente menor que 120 ms)
-- Tempo de trânsito do serviço de linha direta para o bot
+- Tempo em trânsito para a solicitação HTTP para viajar do cliente para o serviço de linha direta
+- Tempo de processamento interno no linha direta (normalmente menos de 120 ms)
+- Tempo em trânsito do serviço de linha direta para o bot
 - Tempo de processamento no bot
 - Tempo em trânsito para a resposta HTTP para a viagem de volta ao cliente
 
@@ -71,11 +72,11 @@ Para enviar um ou mais anexos como parte do objeto [Message](bot-framework-rest-
 
 ## <a id="upload-attachments"></a> Enviar anexos por upload
 
-Geralmente, um cliente pode ter imagens ou documento (s) em um dispositivo que deseja enviar para o bot, mas não há URLs correspondem a esses arquivos. Nessa situação, um cliente pode emitir uma solicitação `POST /api/conversations/{conversationId}/upload` para enviar anexos ao bot por upload. O formato e o conteúdo da solicitação dependerão se o cliente estiver [enviando um único anexo](#upload-one-attachment) ou [enviando vários anexos ](#upload-multiple-attachments).
+Geralmente, um cliente pode ter imagens ou documento (s) em um dispositivo que deseja enviar para o bot, mas não há URLs correspondem a esses arquivos. Nessa situação, um cliente pode emitir um `POST /api/conversations/{conversationId}/upload` solicitação para enviar anexos para o bot pelo carregamento. O formato e conteúdo da solicitação dependerão se o cliente é [enviar um único anexo](#upload-one-attachment) ou [enviando vários anexos](#upload-multiple-attachments).
 
 ### <a id="upload-one-attachment"></a> Enviar um anexo por upload
 
-Para enviar um anexo por upload, execute esta solicitação: 
+Para enviar um único anexo por upload, envie esta solicitação: 
 
 ```http
 POST https://directline.botframework.com/api/conversations/{conversationId}/upload?userId={userId}
@@ -89,7 +90,7 @@ Content-Disposition: ATTACHMENT_INFO
 
 Nesse URI de solicitação, substitua **{conversationId}** pelo ID da conversa e **{userId}** pelo ID do usuário que está enviando a mensagem. Nos cabeçalhos de solicitação, defina `Content-Type` para especificar o tipo do anexo e definir `Content-Disposition` para especificar o nome do arquivo do anexo.
 
-Os snippets a seguir fornecem um exemplo da solicitação e resposta Enviar (único) de anexo.
+Os snippets de código a seguir fornecem um exemplo da solicitação de envio (única) de anexo e a resposta.
 
 #### <a name="request"></a>Solicitação
 
@@ -114,11 +115,11 @@ HTTP/1.1 204 No Content
 
 ### <a id="upload-multiple-attachments"></a> Enviar vários anexos por upload
 
-Para enviar vários anexos por upload, `POST` uma solicitação de várias partes para o `/api/conversations/{conversationId}/upload` ponto de extremidade. Defina o cabeçalho `Content-Type` da solicitação como `multipart/form-data` e inclua o cabeçalho `Content-Type` e o cabeçalho `Content-Disposition` de cada parte para especificar o tipo e o nome de arquivo de cada anexo. Na solicitação URI, defina o parâmetro `userId` como o ID do usuário que está enviando a mensagem. 
+Para enviar vários anexos por upload, `POST`uma solicitação multipartes para o endpoint`/api/conversations/{conversationId}/upload`. Defina as `Content-Type` cabeçalho da solicitação para `multipart/form-data` e incluem o `Content-Type` cabeçalho e `Content-Disposition` cabeçalho para cada parte especificar o tipo e nome do arquivo de cada anexo. Na solicitação URI, defina o parâmetro `userId` como o ID do usuário que está enviando a mensagem. 
 
 Você pode incluir um [mensagem](bot-framework-rest-direct-line-1-1-api-reference.md#message-object) objeto dentro da solicitação com a adição de uma parte que especifica se o `Content-Type` valor de cabeçalho `application/vnd.microsoft.bot.message`. Isso permite que o cliente personalizar a mensagem que contém o anexo (s). Se a solicitação incluir uma mensagem, os anexos especificados por outras partes da carga útil serão adicionados como anexos a essa mensagem antes de serem enviados. 
 
-Os trechos a seguir fornecem um exemplo da solicitação e resposta Enviar (vários) Anexos. Neste exemplo, a solicitação envia uma mensagem que contém algum texto e um único anexo de imagem. Peças adicionais podem ser adicionadas à solicitação para incluir vários anexos nesta mensagem.
+Os snippets a seguir fornecem um exemplo da solicitação e resposta Enviar (vários) Anexos. Neste exemplo, a solicitação envia uma mensagem que contém algum texto e um único anexo de imagem. Partes adicionais pôde ser adicionados à solicitação para incluir vários anexos nesta mensagem.
 
 #### <a name="request"></a>Solicitação
 

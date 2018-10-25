@@ -5,14 +5,15 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 3569e3bfbb3be51cf9023b4686ed4693e90ed50c
-ms.sourcegitcommit: ee63d9dc1944a6843368bdabf5878950229f61d0
+ms.openlocfilehash: 3607957cd5cb8738e8268ece6eba4417250bc596
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42795175"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49997953"
 ---
 # <a name="api-reference---direct-line-api-11"></a>Referência de API – API de Linha Direta 1.1
 

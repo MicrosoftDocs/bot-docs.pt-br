@@ -5,14 +5,15 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: d9f1821767e5bd26c9a8bfdf3927f257077f0e79
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 6679afa688917bdf3d558d5ed47717ee30d0e52e
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297207"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49999353"
 ---
 # <a name="receive-messages-from-the-bot"></a>Receber mensagens do bot
 
@@ -25,7 +26,7 @@ Usando o protocolo de Linha Direta 1.1, os clientes devem sondar uma interface d
 
 Para recuperar mensagens de uma conversa específica, emita uma solicitação `GET` para o ponto de extremidade `api/conversations/{conversationId}/messages`, especificando opcionalmente o parâmetro `watermark` para indicar a mensagem mais recente vista pelo cliente. Um valor `watermark` atualizado será retornado na resposta JSON, mesmo se nenhuma mensagem estiver incluída.
 
-Os trechos a seguir fornecem um exemplo da solicitação e da resposta de Obter Mensagens. A resposta de Obter Mensagens contém `watermark` como uma propriedade de [MessageSet](bot-framework-rest-direct-line-1-1-api-reference.md#messageset-object). Os clientes devem percorrer as mensagens disponíveis aprimorando o valor `watermark`, até que nenhuma mensagem retorne. 
+Os snippets a seguir fornecem um exemplo da solicitação e da resposta de Obter Mensagens. A resposta de Obter Mensagens contém `watermark` como uma propriedade de [MessageSet](bot-framework-rest-direct-line-1-1-api-reference.md#messageset-object). Os clientes devem percorrer as mensagens disponíveis aprimorando o valor `watermark`, até que nenhuma mensagem retorne. 
 
 ### <a name="request"></a>Solicitação
 

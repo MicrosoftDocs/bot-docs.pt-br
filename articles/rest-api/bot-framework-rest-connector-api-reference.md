@@ -5,14 +5,15 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: d76daffcfc4661a87d1efaf85e6bb08e3e999988
-ms.sourcegitcommit: e8c513d3af5f0c514cadcbcd0a737a7393405afa
+ms.openlocfilehash: cd4a0dd73feb18aa6f82699a51ab086c55c5d2cf
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42756740"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49998293"
 ---
 # <a name="api-reference"></a>Referência de API
 

@@ -5,14 +5,15 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 03/07/2018
-ms.openlocfilehash: 0406d489f7d1e27131b4b01411e86850ca4a17b8
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 06e2289dd0176364467d34846ffa7716483f6578
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296553"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "50000403"
 ---
 # <a name="bot-framework----activity"></a>Bot Framework -- Atividade
 

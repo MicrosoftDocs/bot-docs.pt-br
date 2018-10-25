@@ -5,15 +5,16 @@ author: DucVo
 ms.author: v-ducvo
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 365513c6370025fda807bfc8266ba68f329ceb88
-ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
+ms.openlocfilehash: 26f6e9520fe5d2ebb83ceb4e6a497a35e9d2611f
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42905697"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49999253"
 ---
 # <a name="handle-user-actions"></a>Tratar ações do usuário
 
@@ -72,7 +73,7 @@ bot.dialog('orderDinner', [
 
 Associar `triggerAction` a um diálogo registra-o no bot. Quando disparado, `triggerAction` limpará a pilha de diálogo e efetuará push do diálogo disparado para a pilha. Essa ação é melhor usada para alternar entre o [tópico da conversa](bot-builder-nodejs-dialog-manage-conversation-flow.md#change-the-topic-of-conversation) ou para permitir que os usuários solicitem tarefas autônomas arbitrárias. Se quiser substituir o comportamento onde essa ação limpa a pilha de diálogo, adicione uma opção `onSelectAction` ao `triggerAction`.
 
-O trecho de código abaixo mostra como fornecer ajuda geral de um contexto global sem limpar a pilha de diálogo.
+O snippet de código abaixo mostra como fornecer ajuda geral de um contexto global sem limpar a pilha de diálogo.
 
 ```javascript
 bot.dialog('help', function (session, args, next) {
@@ -117,7 +118,7 @@ bot.customAction({
 
 Associar um `beginDialogAction` a um diálogo registrará a ação no diálogo. Esse método iniciará outro diálogo quando for disparado. O comportamento dessa ação é semelhante a chamar o método [beginDialog](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session.html#begindialog). É efetuado push do novo diálogo na parte superior da pilha de diálogo para que não finalize automaticamente a tarefa atual. A tarefa atual será continuada quando o novo diálogo encerrar. 
 
-O trecho de código a seguir mostra como associar um [beginDialogAction][beginDialogAction] a um diálogo.
+O snippet de código a seguir mostra como associar um [beginDialogAction][beginDialogAction] a um diálogo.
 
 ```javascript
 // Order dinner.
@@ -179,7 +180,7 @@ bot.dialog('showDinnerCart', function(session, args){
 
 Associar um `reloadAction` a um diálogo irá registrá-lo no diálogo. Associar essa ação a um diálogo faz com que o diálogo seja reiniciado quando a ação for disparada. Disparar essa ação é semelhante a chamar o método [replaceDialog](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session.html#replacedialog). Isso é útil para implementar a lógica para lidar com enunciados de usuário como "começar novamente" ou criar [loops](bot-builder-nodejs-dialog-replace.md#repeat-an-action).
 
-O trecho de código a seguir mostra como associar um [reloadAction][reloadAction] a um diálogo.
+O snippet de código a seguir mostra como associar um [reloadAction][reloadAction] a um diálogo.
 
 ```javascript
 // Order dinner.
@@ -220,7 +221,7 @@ bot.dialog('orderDinner', [
 
 Associar um `cancelAction` irá registrá-lo na caixa de diálogo. Uma vez disparada, essa ação encerrará abruptamente o diálogo. Quando o diálogo encerrar, o diálogo pai será retomado com um código retomado indicando que estava `canceled`. Essa ação permite manipular enunciados como "esquecer" ou "cancelar." Se for necessário cancelar programaticamente um diálogo, consulte [Cancelar um diálogo](bot-builder-nodejs-dialog-replace.md#cancel-a-dialog). Para obter mais informações sobre *código retomado*, consulte [Solicitar resultados](bot-builder-nodejs-dialog-prompt.md#prompt-results). 
 
-O trecho de código a seguir mostra como associar um [cancelAction][cancelAction] a um diálogo.
+O snippet de código a seguir mostra como associar um [cancelAction][cancelAction] a um diálogo.
 
 ```javascript
 // Order dinner.
@@ -237,7 +238,7 @@ bot.dialog('orderDinner', [
 
 Associar um `endConversationAction` irá registrá-lo no diálogo. Quando disparada, essa ação encerrará a conversa com o usuário. Disparar essa ação é semelhante a chamar o método [endConversation](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session.html#endconversation). Quando uma conversa encerrar, o SDK do Bot Builder para Node.js limpará a pilha de diálogo e os dados de estado persistentes. Para obter mais informações sobre dados de estado persistentes, consulte [Gerenciar dados de estado](bot-builder-nodejs-state.md).
 
-O trecho de código a seguir mostra como associar um [endConversationAction][endConversationAction] a um diálogo.
+O snippet de código a seguir mostra como associar um [endConversationAction][endConversationAction] a um diálogo.
 
 ```javascript
 // Order dinner.
@@ -254,7 +255,7 @@ bot.dialog('orderDinner', [
 
 A maioria dessas ações, se não todas, interrompe o fluxo normal de uma conversa. Muitos são interrompidas e devem ser manipuladas com cuidado. Por exemplo, `triggerAction`, `cancelAction` ou `endConversationAction` limpará a pilha de diálogo. Se o usuário disparou uma dessas ações acidentalmente, deverá iniciar a tarefa novamente. Para garantir que o usuário realmente quer disparar essas ações, é possível adicionar uma opção `confirmPrompt` a essas ações. O `confirmPrompt` perguntará se o usuário tem certeza sobre o cancelamento ou encerramento da tarefa atual. Isso permite que o usuário mude de ideia e continue o processo.
 
-O trecho de código abaixo mostra [cancelAction][cancelAction] com um [confirmPrompt](http://docs.botframework.com/en-us/node/builder/chat-reference/interfaces/_botbuilder_d_.itriggeractionoptions#confirmprompt) para certificar-se de que o usuário realmente quer cancelar o processo do pedido.
+O snippet de código abaixo mostra [cancelAction][cancelAction] com um [confirmPrompt](http://docs.botframework.com/en-us/node/builder/chat-reference/interfaces/_botbuilder_d_.itriggeractionoptions#confirmprompt) para certificar-se de que o usuário realmente quer cancelar o processo do pedido.
 
 ```javascript
 // Order dinner.

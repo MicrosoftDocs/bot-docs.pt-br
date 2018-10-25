@@ -5,14 +5,15 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 60d96297ea4bdc6ba920b4f8f990fabb0af8b8d9
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: d0b7b3250a62a995113bc9c7e087e2e62af0f413
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296548"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49997055"
 ---
 # <a name="send-and-receive-messages"></a>Enviar e receber mensagens
 
@@ -90,7 +91,7 @@ Nesse URI de solicitação, substitua **{conversationId}** pela ID da conversa.
 Defina o corpo da solicitação como um objeto [Activity][Activity] que você criou para representar sua resposta.
 
 > [!NOTE]
-> O Bot Framework não impõe nenhuma restrição quanto ao número de mensagens que podem ser enviadas por um bot. No entanto, a maioria dos canais impõe uma limitação para restringir os bots de enviar um grande número de mensagens em um período curto. Além disso, se o bot envia várias mensagens em sucessão rápida, o canal nem sempre pode renderizar as mensagens na sequência correta.
+> O Bot Framework não impõe nenhuma restrição quanto ao número de mensagens que podem ser enviadas por um bot. No entanto, a maioria dos canais impõe uma limitação para impedir que os bots enviem um grande número de mensagens em um período curto. Além disso, se o bot enviar rapidamente várias mensagens sucessivas, o canal nem sempre pode renderizar as mensagens na sequência correta.
 
 ## <a name="start-a-conversation"></a>Iniciar uma conversa
 

@@ -5,15 +5,15 @@ author: BrianRandell
 ms.author: v-brra
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 15745bc25013df2fd18b0a2045ae2314d6c361e2
-ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
+ms.openlocfilehash: f880bc9a424fd9905f7e4ced25e97e2c37155072
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39574852"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49996823"
 ---
 # <a name="commerce-bot-scenario"></a>Cenário de bot Comercial
 

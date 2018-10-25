@@ -5,15 +5,16 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 03478431822c8be0e696577a18a2e693d441509b
-ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
+ms.openlocfilehash: 8bcc957dbe2d69790cdfa7c2d7c377ed28b5fa12
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42904547"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "50000323"
 ---
 # <a name="define-a-form-using-json-schema"></a>Definir um formulário usando o esquema JSON
 
@@ -55,7 +56,7 @@ O FormFlow estende o <a href="http://json-schema.org/documentation.html" target=
 | Modelos | `{ TemplateUsage: { Patterns: [string, ...], <args> }, ...}` |
 | Prompt | `{ Patterns:[string, ...] <args>}` |
 
-Para especificar modelos e solicitações no esquema JSON, use o mesmo vocabulário conforme definido pela [TemplateAttribute] [ templateAttribute] e [PromptAttribute] [ promptAttribute]. Nomes de propriedade e valores no esquema devem corresponder a nomes de propriedade e valores na enumeração C# subjacente. Por exemplo, este trecho de código de esquema define um modelo que substitui o `TemplateUsage.NotUnderstood` modelo e especifica um `TemplateBaseAttribute.ChoiceStyle`: 
+Para especificar modelos e solicitações no esquema JSON, use o mesmo vocabulário conforme definido pela [TemplateAttribute] [ templateAttribute] e [PromptAttribute] [ promptAttribute]. Nomes de propriedade e valores no esquema devem corresponder a nomes de propriedade e valores na enumeração C# subjacente. Por exemplo, este snippet de código de esquema define um modelo que substitui o `TemplateUsage.NotUnderstood` modelo e especifica um `TemplateBaseAttribute.ChoiceStyle`: 
 
 ```json
 "Templates":{ "NotUnderstood": { "Patterns": ["I don't get it"], "ChoiceStyle":"Auto"}}
@@ -84,7 +85,7 @@ Use `{Message:script|[string, ...] ...templateArgs}` dentro do valor da propried
 
 ## <a name="scripts"></a>Scripts
 
-Diversas propriedades que são descritas acima podem conter um script como o valor da propriedade. Um script pode ser qualquer trecho de código C# que você normalmente encontra no corpo de um método. Você pode adicionar referências usando a propriedade **Referências** e/ou a propriedade **Importações**. As variáveis globais especiais incluem:
+Diversas propriedades que são descritas acima podem conter um script como o valor da propriedade. Um script pode ser qualquer snippet de código C# que você normalmente encontra no corpo de um método. Você pode adicionar referências usando a propriedade **Referências** e/ou a propriedade **Importações**. As variáveis globais especiais incluem:
 
 | Variável | DESCRIÇÃO |
 |----|----|

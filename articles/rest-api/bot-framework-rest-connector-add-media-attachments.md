@@ -5,16 +5,17 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 39247ec3be4da7129989041269e930de8fa766ae
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 2a2cc13020c87616799ee768fbab6e72ab81cc8b
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296923"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49997633"
 ---
-# <a name="add-media-attachments-to-messages"></a>Adicionar anexos de mídia a mensagens
+# <a name="add-media-attachments-to-messages"></a>Adicionar anexos de mídia às mensagens
 > [!div class="op_single_selector"]
 > - [.NET](../dotnet/bot-builder-dotnet-add-media-attachments.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-send-receive-attachments.md)
@@ -173,7 +174,7 @@ O nome do evento de mídia **media/pause** aparecerá no campo `activity.name`. 
 
 - [Criar mensagens](bot-framework-rest-connector-create-messages.md)
 - [Enviar e receber mensagens](bot-framework-rest-connector-send-and-receive-messages.md)
-- [Adicionar cartões avançados a mensagens](bot-framework-rest-connector-add-rich-cards.md)
+- [Adicionar cartões ricos mensagens](bot-framework-rest-connector-add-rich-cards.md)
 - [Inspetor de Canal][ChannelInspector]
 
 [ChannelInspector]: ../bot-service-channel-inspector.md

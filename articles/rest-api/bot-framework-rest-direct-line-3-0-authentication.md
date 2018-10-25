@@ -5,14 +5,15 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 18a5815a96e2052a54c48f6af211d8b28e20d983
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 96f2963604d12c9c9e235288ad4df25924f45af4
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296901"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49998003"
 ---
 # <a name="authentication"></a>Autenticação
 
@@ -28,7 +29,7 @@ Um **segredo** de Linha Direta é uma chave mestra que pode ser usada para acess
 
 Um **token** de Linha Direta é uma chave que pode ser usada para acessar uma única conversa. Um token expira, mas pode ser atualizado. 
 
-Se você estiver criando um aplicativo de serviço a serviço, a abordagem mais simples poderá ser especificar o **segredo** no cabeçalho `Authorization` de solicitações da API de Linha Direta. Se estiver escrevendo um aplicativo em que o cliente é executado em um navegador da Web ou em um aplicativo móvel, talvez você queira trocar seu segredo por um token (que funciona somente para uma única conversa e irá expirar se não for atualizado) e especificar o **token** no cabeçalho `Authorization` de solicitações de API de Linha Direta. Escolha o modelo de segurança que funcione melhor para você.
+Se você estiver criando um aplicativo de serviço a serviço, a abordagem mais simples poderá ser especificar o **segredo** no cabeçalho `Authorization` de solicitações da API da Linha Direta. Se estiver gravando um aplicativo em que o cliente é executado em um navegador da Web ou em um aplicativo móvel, talvez convenha trocar seu segredo por um token (que funciona somente para uma única conversa e irá expirar se não for atualizado) e especificar o **token** no cabeçalho `Authorization` de solicitações de API da Linha Direta. Escolha o modelo de segurança que funcione melhor para você.
 
 > [!NOTE]
 > Suas credenciais de cliente de Linha Direta são diferentes das credenciais do seu bot. Isso permite revisar as chaves de forma independente e compartilhar os tokens de cliente sem revelar a senha do seu bot. 
@@ -41,7 +42,7 @@ Você pode [obter um segredo de Linha Direta](../bot-service-channel-connect-dir
 
 ## <a id="generate-token"></a> Gerar um token de Linha Direta
 
-Para gerar um token de Linha Direta que possa ser usado para acessar uma única conversa, primeiro obtenha o segredo de Linha Direta da página de configuração do canal de Linha Direta no <a href="https://dev.botframework.com/" target="_blank">Portal do Bot Framework</a>. Em seguida, envie essa solicitação para trocar seu segredo de Linha Direta para um token de Linha Direta:
+Para gerar um token da Linha Direta que possa ser usado para acessar uma única conversa, primeiro obtenha o segredo da Linha Direta na página de configuração do canal da Linha Direta no <a href="https://dev.botframework.com/" target="_blank">Portal do Bot Framework</a>. Em seguida, envie essa solicitação para trocar seu segredo da Linha Direta para um token da Linha Direta:
 
 ```http
 POST https://directline.botframework.com/v3/directline/tokens/generate
@@ -50,7 +51,7 @@ Authorization: Bearer SECRET
 
 No cabeçalho `Authorization` dessa solicitação, substitua **SECRET** pelo valor do seu segredo de Linha Direta.
 
-Os trechos a seguir fornecem um exemplo da solicitação de e da resposta de Gerar Token.
+Os snippets a seguir fornecem um exemplo da solicitação e da resposta de Gerar Token.
 
 ### <a name="request"></a>Solicitação
 
@@ -93,7 +94,7 @@ Authorization: Bearer TOKEN_TO_BE_REFRESHED
 
 No cabeçalho `Authorization` dessa solicitação, substitua **TOKEN_TO_BE_REFRESHED** pelo token de Linha Direta que você deseja atualizar.
 
-Os trechos a seguir fornecem um exemplo da solicitação e da resposta de Atualizar Token.
+Os snippets a seguir fornecem um exemplo da solicitação e da resposta de Atualizar Token.
 
 ### <a name="request"></a>Solicitação
 

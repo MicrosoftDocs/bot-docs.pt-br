@@ -5,14 +5,15 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 2c6b3a7e9f0fdc7d5227fc8112cb6f3e330a2bcc
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 812ad04232629e889b0ab5472af07ff986ca787b
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296783"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "50000303"
 ---
 # <a name="reconnect-to-a-conversation"></a>Reconectar-se a uma conversa
 
@@ -29,7 +30,7 @@ Authorization: Bearer SECRET_OR_TOKEN
 
 Nesse URI de solicitação, substitua **{conversationId}** pela ID de conversa e **{watermark_value}** pelo valor de marca-d'água (caso o parâmetro `watermark` seja fornecido). O `watermark` é opcional. Se o parâmetro `watermark` for especificado no URI de solicitação, a conversa será reproduzida com base na marca-d'água, garantindo que nenhuma mensagem seja perdida. Se o parâmetro `watermark` for omitido do URI de solicitação, apenas as mensagens recebidas após a solicitação de reconexão serão reproduzidas.
 
-Os trechos a seguir fornecem um exemplo da solicitação de Reconexão e da resposta.
+Os snippets a seguir fornecem um exemplo da solicitação de Reconexão e da resposta.
 
 ### <a name="request"></a>Solicitação
 

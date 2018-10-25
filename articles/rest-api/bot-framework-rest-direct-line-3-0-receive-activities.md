@@ -5,14 +5,15 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 2993b75a26ed987a472c241133a62727e3b285d2
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: c2d4b9a8e2b8ffc1656df44e04ee1bde912e36ea
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297248"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49998153"
 ---
 # <a name="receive-activities-from-the-bot"></a>Receber atividades do bot
 
@@ -102,7 +103,7 @@ Os clientes que não conseguem usar WebSockets ou os clientes que desejam obter 
 
 Para recuperar mensagens de uma conversa específica, emita uma solicitação `GET` para o ponto de extremidade `/v3/directline/conversations/{conversationId}/activities`, especificando opcionalmente o parâmetro `watermark` para indicar a mensagem mais recente vista pelo cliente. 
 
-Os trechos a seguir fornecem um exemplo da solicitação e da resposta de Obter Atividades de Conversa. A resposta de Obter Atividades de Conversa contém `watermark` como uma propriedade de [ActivitySet](bot-framework-rest-direct-line-3-0-api-reference.md#activityset-object). Os clientes devem percorrer as atividades disponíveis aprimorando o valor `watermark` até que nenhuma atividade retorne.
+Os snippets a seguir fornecem um exemplo da solicitação e da resposta de Obter Atividades de Conversa. A resposta de Obter Atividades de Conversa contém `watermark` como uma propriedade de [ActivitySet](bot-framework-rest-direct-line-3-0-api-reference.md#activityset-object). Os clientes devem percorrer as atividades disponíveis aprimorando o valor `watermark` até que nenhuma atividade retorne.
 
 ### <a name="request"></a>Solicitação
 
@@ -150,7 +151,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-## <a name="timing-considerations"></a>Considerações de timing
+## <a name="timing-considerations"></a>Considerações sobre timing
 
 A maioria dos clientes deseja manter um histórico de mensagens completo. Mesmo que a Linha Direta seja um protocolo de várias partes com potenciais intervalos de medição de tempo, o protocolo e o serviço foram projetados para facilitar a criação de um cliente confiável.
 

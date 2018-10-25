@@ -5,17 +5,18 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 81f403e9affa38f61ccb42c4c32a47683bbcbf33
-ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
+ms.openlocfilehash: 94690f58526e8ee322a73c68136d2b52667e1c89
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39574802"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49999943"
 ---
-# <a name="manage-conversation-flow-with-dialogs"></a>Gerenciar o fluxo da conversa com caixas de diálogo
+# <a name="manage-conversation-flow-with-dialogs"></a>Gerenciar fluxo de conversa com diálogos
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

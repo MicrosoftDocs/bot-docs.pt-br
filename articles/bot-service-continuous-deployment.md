@@ -5,14 +5,15 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: abs
 ms.date: 12/13/2017
-ms.openlocfilehash: 980ee1c6e4e54ff3f74ccfa618b0aeff7b507815
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 38b26ed5a50409de64518562faabf532f45c857e
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297136"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49999143"
 ---
 # <a name="publish-a-bot-to-bot-service"></a>Publicar um bot no Serviço de Bot
 

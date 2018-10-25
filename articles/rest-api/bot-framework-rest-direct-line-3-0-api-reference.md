@@ -5,14 +5,15 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 2e47591b04a91ce02cfeb6bd6485080426d201b5
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: d69f1f658520790ff429ecd25a190319e321164d
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296817"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49998095"
 ---
 # <a name="api-reference---direct-line-api-30"></a>Referência de API – API de Linha Direta 3.0
 
@@ -36,18 +37,18 @@ Saiba mais sobre como obter um segredo ou token que pode ser usado por seu clien
 
 ## <a name="http-status-codes"></a>Códigos de status HTTP
 
-O <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" target="_blank">código de status HTTP</a> retornado com cada resposta indica o resultado da solicitação correspondente. 
+O <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" target="_blank">Código de status HTTP</a> retornado com cada resposta indica o resultado da solicitação correspondente. 
 
 | Código de status HTTP | Significado |
 |----|----|
-| 200 | Solicitação bem-sucedida. |
-| 201 | Solicitação bem-sucedida. |
+| 200 | Solicitação com êxito. |
+| 201 | Solicitação com êxito. |
 | 202 | A solicitação foi aceita para processamento. |
-| 204 | A solicitação foi bem-sucedida, mas não retornou conteúdo. |
+| 204 | A solicitação foi processada com êxito, mas nenhum conteúdo foi retornado. |
 | 400 | A solicitação foi malformada ou está incorreta. |
 | 401 | O cliente não tem autorização para fazer a solicitação. Geralmente, esse código de status ocorre porque o cabeçalho `Authorization` está ausente ou malformado. |
 | 403 | O cliente não tem autorização para executar a operação solicitada. Se a solicitação especificou um token anteriormente válido, mas já expirado, a propriedade `code` do [Erro](bot-framework-rest-connector-api-reference.md#error-object) retornado dentro do objeto [ErrorResponse](bot-framework-rest-connector-api-reference.md#errorresponse-object) será definida como `TokenExpired`. |
-| 404 | O recurso solicitado não foi encontrado. Normalmente, esse código de status indica um URI de solicitação inválido. |
+| 404 | O recurso solicitado não foi localizado. Normalmente, esse código de status indica um URI de solicitação inválido. |
 | 500 | Ocorreu um erro de servidor interno no serviço de Linha Direta. |
 | 502 | O bot está indisponível ou retornou um erro. **Esse é um código de erro comum.** |
 
@@ -61,7 +62,7 @@ Qualquer resposta que especifique um código de status HTTP no intervalo 4xx ou 
 > [!NOTE]
 > Códigos de status HTTP e os valores especificados na propriedade `code` dentro do objeto **ErrorResponse** estão estáveis. Os valores especificados na propriedade `message` dentro do objeto **ErrorResponse** podem mudar ao longo do tempo.
 
-Os trechos de código a seguir mostram um exemplo de solicitação e a resposta de erro resultante.
+Os snippets de código a seguir mostram um exemplo de solicitação e a resposta de erro resultante.
 
 #### <a name="request"></a>Solicitação
 
@@ -101,7 +102,7 @@ POST /v3/directline/tokens/generate
 | | |
 |----|----|
 | **Corpo da solicitação** | n/d |
-| **Retorna** | Um objeto [Conversa](#conversation-object) | 
+| **Retorna** | Um objeto [Conversation](#conversation-object) | 
 
 ### <a name="refresh-token"></a>Atualizar Token
 Atualiza o token. 
@@ -112,7 +113,7 @@ POST /v3/directline/tokens/refresh
 | | |
 |----|----|
 | **Corpo da solicitação** | n/d |
-| **Retorna** | Um objeto [Conversa](#conversation-object) | 
+| **Retorna** | Um objeto [Conversation](#conversation-object) | 
 
 ## <a name="conversation-operations"></a>Operações de conversa 
 Use essas operações para abrir uma conversa com seu bot e trocar atividades entre o cliente e o bot.
@@ -134,7 +135,7 @@ POST /v3/directline/conversations
 | | |
 |----|----|
 | **Corpo da solicitação** | n/d |
-| **Retorna** | Um objeto [Conversa](#conversation-object) | 
+| **Retorna** | Um objeto [Conversation](#conversation-object) | 
 
 ### <a name="get-conversation-information"></a>Obter Informações da Conversa
 Obtém informações sobre uma conversa existente e também gera uma nova URL de fluxo de WebSocket que um cliente pode usar para se [reconectar](bot-framework-rest-direct-line-3-0-reconnect-to-conversation.md) a uma conversa. Como opção, você pode fornecer o parâmetro `watermark` no URI da solicitação para indicar a mensagem mais recente vista pelo cliente.
@@ -145,7 +146,7 @@ GET /v3/directline/conversations/{conversationId}?watermark={watermark_value}
 | | |
 |----|----|
 | **Corpo da solicitação** | n/d |
-| **Retorna** | Um objeto [Conversa](#conversation-object) | 
+| **Retorna** | Um objeto [Conversation](#conversation-object) | 
 
 ### <a name="get-activities"></a>Obter Atividades
 Recupera atividades do bot da conversa especificada. Como opção, você pode fornecer o parâmetro `watermark` no URI da solicitação para indicar a mensagem mais recente vista pelo cliente. 

@@ -5,14 +5,15 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: f37d8e9215b0a2cd640431f237d1b8c53fad576b
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: a049d77d506fa3fa678a079de52aa424264847c9
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296598"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49997043"
 ---
 # <a name="key-concepts-in-direct-line-api-11"></a>Principais conceitos da API de Linha Direta 1.1
 
@@ -23,9 +24,9 @@ Você pode habilitar a comunicação entre o seu bot e o seu próprio aplicativo
 
 ## <a name="authentication"></a>Autenticação
 
-As solicitações de API de Linha Direta 1.1 podem ser autenticadas usando um **segredo** que você <a href="https://dev.botframework.com/" target="_blank">obtém da página de configuração de canal da Linha Direta</a> no Portal do Bot Framework ou usando um **token** obtido em tempo de execução.  Saiba mais em [Autenticação](bot-framework-rest-direct-line-1-1-authentication.md).
+As solicitações de API de Linha Direta 1.1 podem ser autenticadas usando um **segredo** que você <a href="https://dev.botframework.com/" target="_blank">obtém da página de configuração de canal da Linha Direta</a> no Portal do Bot Framework ou usando um **token** obtido em tempo de execução.  Para obter mais informações, consulte [Autenticação](bot-framework-rest-direct-line-1-1-authentication.md).
 
-## <a name="starting-a-conversation"></a>Iniciar uma conversa
+## <a name="starting-a-conversation"></a>Iniciando uma conversa
 
 As conversas de Linha Direta são explicitamente abertas por clientes e podem ser executadas desde que o bot e o cliente participem e tenham credenciais válidas. Para saber mais, veja [Iniciar uma conversa](bot-framework-rest-direct-line-1-1-start-conversation.md).
 
@@ -47,4 +48,4 @@ Como alternativa ao uso da biblioteca de clientes do C#, você pode gerar sua pr
 
 ### <a name="web-chat-control"></a>Controle do Webchat 
 
-O Bot Framework fornece um controle que permite incorporar um bot com base em Linha Direta no seu aplicativo cliente. Para saber mais, veja <a href="https://github.com/Microsoft/BotFramework-WebChat" target="_blank">Controle do Webchat do Microsoft Bot Framework</a>.
+O Bot Framework fornece um controle que permite incorporar um bot de linha direta em seu aplicativo cliente. Para obter mais informações, consulte o <a href="https://github.com/Microsoft/BotFramework-WebChat" target="_blank">controle WebChat do Microsoft Bot Framework</a>.

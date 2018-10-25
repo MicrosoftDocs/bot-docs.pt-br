@@ -5,15 +5,16 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/17
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 29359a2a0489863679158d87cdc4af2f3b52e232
-ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
+ms.openlocfilehash: b3d1a1cea450d1fe821a90951a7a319ca863dfed
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42904240"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49997683"
 ---
 # <a name="request-payment"></a>Solicitar pagamento
 
@@ -67,7 +68,7 @@ Seu bot pode solicitar o pagamento de um usuário enviando uma mensagem que cont
 
 Neste exemplo, o tipo do botão é especificado como `PaymentRequest.PaymentActionType`, que a biblioteca do Bot Builder define como "pagamento". Valor do botão é preenchida pelo `BuildPaymentRequest` método, que retorna um `PaymentRequest` objeto que contém informações sobre métodos de pagamento com suporte, os detalhes e opções. Para obter mais informações sobre detalhes de implementação, consulte **Dialogs/RootDialog.cs** dentro de <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/sample-payments" target="_blank">pagamento Bot</a> exemplo.
 
-Esta captura de tela mostra o cartão de Hero (com **comprar** botão) que é gerado pelo trecho de código acima. 
+Esta captura de tela mostra o cartão de Hero (com **comprar** botão) que é gerado pelo snippet de código acima. 
  
 ![Bot de exemplo de pagamentos](../media/payments-bot-buy.png) 
 

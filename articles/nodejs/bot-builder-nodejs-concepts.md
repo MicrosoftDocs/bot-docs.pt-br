@@ -5,15 +5,16 @@ author: DeniseMak
 ms.author: v-demak
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: fd81b9dfe5d3e16096ffd6ab25c1ee23ff77f79f
-ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
+ms.openlocfilehash: 43b6f669cdbc91b78094d3d0d9e7a54f97f9884f
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42904924"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49998023"
 ---
 # <a name="key-concepts-in-the-bot-builder-sdk-for-nodejs"></a>Principais conceitos no SDK do construtor de Bot para Node. js
 

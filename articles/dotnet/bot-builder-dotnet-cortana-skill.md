@@ -5,15 +5,16 @@ keywords: Bot Framework, habilidade da Cortana, fala, .NET, Construtor de Bot, S
 author: DeniseMak
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: a3d049e349a86437f8c342df1702281600aeddd4
-ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
+ms.openlocfilehash: 030d17fa25a436ee8e8a1d093924e61f12e14e18
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42904388"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49998295"
 ---
 # <a name="build-a-speech-enabled-bot-with-cortana-skills"></a>Criar um bot habilitado para fala com habilidades da Cortana
 

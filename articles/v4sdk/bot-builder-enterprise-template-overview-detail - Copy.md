@@ -5,15 +5,15 @@ author: darrenj
 ms.author: darrenj
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
 ms.date: 09/18/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 6f295794ca7d3cc17688337e70df2a52cdb665ed
-ms.sourcegitcommit: 87b5b0ca9b0d5e028ece9f7cc4948c5507062c2b
+ms.openlocfilehash: 5f5559ae16bc346d34e5cddfa741853044ec685f
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47029835"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49997339"
 ---
 # <a name="enterprise-template---detailed-overview"></a>Modelo do Enterprise: visão geral detalhada
 

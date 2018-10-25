@@ -5,16 +5,17 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 04f70777003ef5298de264f5ee8685b3a5005395
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: e38bb7ca93c5fc4174d67d1c5ebb0655eef68653
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297206"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49997903"
 ---
-# <a name="add-rich-card-attachments-to-messages"></a>Adicionar anexos de cartão avançado às mensagens
+# <a name="add-rich-card-attachments-to-messages"></a>Adicionar anexos de cartão avançados às mensagens
 > [!div class="op_single_selector"]
 > - [.NET](../dotnet/bot-builder-dotnet-add-rich-card-attachments.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-send-rich-cards.md)
@@ -35,10 +36,10 @@ Atualmente, o Bot Framework dá suporte a oito tipos de cartões avançados:
 | <a href="/adaptive-cards/get-started/bots">AdaptiveCard</a> | Um cartão personalizável que pode conter qualquer combinação de texto, fala, imagens, botões e campos de entrada. Confira [suporte por canal](/adaptive-cards/get-started/bots#channel-status).  |
 | [AnimationCard][animationCard] | Um cartão que pode reproduzir GIFs animados ou vídeos curtos. |
 | [AudioCard][audioCard] | Um cartão que pode reproduzir um arquivo de áudio. |
-| [HeroCard][heroCard] | Um cartão que geralmente contém uma única imagem grande, um ou mais botões e texto. |
-| [ThumbnailCard][thumbnailCard] | Um cartão que geralmente contém uma única imagem em miniatura, um ou mais botões e texto. |
-| [ReceiptCard][receiptCard] | Um cartão que permite que um bot forneça uma confirmação para o usuário. Normalmente, contém a lista de itens a serem incluídos no recebimento, em informações fiscais e totais e em outros textos. |
-| [SignInCard][signinCard] | Um cartão que permite que um bot solicite a entrada do usuário. Normalmente contém texto e um ou mais botões que o usuário pode clicar para iniciar o processo de entrada. |
+| [HeroCard][heroCard] | Um cartão que geralmente contém uma única imagem grande, um ou mais botões e um texto. |
+| [ThumbnailCard][thumbnailCard] | Um cartão que geralmente contém uma única imagem em miniatura, um ou mais botões e um texto. |
+| [ReceiptCard][receiptCard] | Um cartão que permite a um bot fornecer um recibo para o usuário. Normalmente, contém a lista de itens a serem incluídos no recibo, informações fiscais e de totais e outros textos. |
+| [SignInCard][signinCard] | Um cartão que permite a um bot solicitar a entrada do usuário. Normalmente contém texto e um ou mais botões que o usuário pode clicar para iniciar o processo de entrada. |
 | [VideoCard][videoCard] | Um cartão que pode reproduzir vídeos. |
 
 > [!TIP]
@@ -56,21 +57,21 @@ Para processar eventos em cartões avançados, use objetos [CardAction][CardActi
 | value | string | valor necessário para executar o tipo de ação especificado |
 
 > [!NOTE]
-> Botões dentro de Cartões Adaptáveis não são criados usando objetos `CardAction`, mas em vez de usar o esquema definido pelos <a href="http://adaptivecards.io" target="_blank">Cartões Adaptáveis</a>. Confira [Adicionar um Cartão Adaptável a uma mensagem](#adaptive-card) para obter um exemplo que mostra como adicionar botões a um Cartão Adaptável.
+> Botões dentro de Cartões Adaptáveis não são criados usando objetos `CardAction`, mas usando o esquema definido pelos <a href="http://adaptivecards.io" target="_blank">Cartões Adaptáveis</a>. Confira [Adicionar um Cartão Adaptável a uma mensagem](#adaptive-card) para obter um exemplo que mostra como adicionar botões a um Cartão Adaptável.
 
 Esta tabela lista os valores válidos para a propriedade `type` de um objeto [CardAction][CardAction] e descreve o conteúdo esperado da propriedade `value` para cada tipo:
 
 | Tipo | value | 
 |----|----|
 | openUrl | URL a ser aberta no navegador interno |
-| imBack | Texto da mensagem para enviar ao bot (do usuário que clicou no botão ou tocou no cartão). Essa mensagem (do usuário para o bot) ficará visível para todos os participantes da conversa por meio do aplicativo cliente no qual a conversa está ocorrendo. |
-| postBack | Texto da mensagem para enviar ao bot (do usuário que clicou no botão ou tocou no cartão). Alguns aplicativos cliente podem exibem esse texto no feed de mensagens, onde ficará visível para todos os participantes da conversa. |
+| imBack | Texto da mensagem para enviar ao bot (do usuário que clicou no botão ou tocou no cartão). Essa mensagem (do usuário ao bot) ficará visível a todos os participantes da conversa por meio do aplicativo cliente que hospeda a conversa. |
+| postBack | Texto da mensagem para enviar ao bot (do usuário que clicou no botão ou tocou no cartão). Alguns aplicativos cliente podem exibir esse texto no feed de mensagem, onde ficará visível a todos os participantes da conversa. |
 | chamada | Destino de uma chamada telefônica neste formato: **tel:123123123123** |
 | playAudio | URL do áudio para reprodução |
 | playVideo | URL do vídeo para reprodução |
 | showImage | URL da imagem a ser exibida |
 | downloadFile | URL do arquivo para download |
-| signin | URL do fluxo OAuth a ser iniciado |
+| signin | URL do fluxo do OAuth a ser iniciado |
 
 ## <a name="add-a-hero-card-to-a-message"></a>Adicionar um cartão de destaque a uma mensagem
 
@@ -254,7 +255,7 @@ O cartão resultante contém três blocos de texto, um campo de entrada (lista d
 
 - [Criar mensagens](bot-framework-rest-connector-create-messages.md)
 - [Enviar e receber mensagens](bot-framework-rest-connector-send-and-receive-messages.md)
-- [Adicionar anexos de mídia a mensagens](bot-framework-rest-connector-add-media-attachments.md)
+- [Adicionar anexos de mídia às mensagens](bot-framework-rest-connector-add-media-attachments.md)
 - [Inspetor de Canal][ChannelInspector]
 - <a href="http://adaptivecards.io" target="_blank">Cartões Adaptáveis</a>
 

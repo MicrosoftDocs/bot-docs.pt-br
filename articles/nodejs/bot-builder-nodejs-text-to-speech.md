@@ -5,15 +5,16 @@ author: v-ducvo
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 58086bfb29846e39a219beb2f7f0e8d977415559
-ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
+ms.openlocfilehash: 3c17097197ba4b6ed0523d84a81974d9cc9fe3b5
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42904911"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49999124"
 ---
 # <a name="add-speech-to-messages"></a>Adicionar fala a mensagens
 

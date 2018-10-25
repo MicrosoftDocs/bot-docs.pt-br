@@ -5,15 +5,16 @@ author: v-ducvo
 ms.author: v-ducvo
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: aa20dc396b68ede3271d12a8deab2e673a79d1d1
-ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
+ms.openlocfilehash: d448862720d159ee58883edfb42aab211d72e81a
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42904478"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "50000343"
 ---
 # <a name="prompt-for-user-input"></a>Prompt de entrada do usuário
 
@@ -169,7 +170,7 @@ Normalmente, os valores de enumeração de `ListStyle` são os seguintes:
 | 3 | botão | As opções são renderizadas como botões para os canais que dão suporte a botões. Para outros canais, eles serão renderizados como texto. |
 | 4 | auto | O estilo é selecionado automaticamente com base no canal e no número de opções. | 
 
-Você pode acessar essa enumeração a partir do objeto `builder` ou você pode fornecer um índice para escolher um `ListStyle`. Por exemplo, ambas as instruções no trecho de código a seguir realizam a mesma coisa.
+Você pode acessar essa enumeração a partir do objeto `builder` ou você pode fornecer um índice para escolher um `ListStyle`. Por exemplo, ambas as instruções no snippet de código a seguir realizam a mesma coisa.
 
 ```javascript
 // ListStyle passed in as Enum

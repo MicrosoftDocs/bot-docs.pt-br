@@ -5,15 +5,16 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 587e21049ed8c9c3259f04f929784153d06db40c
-ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
+ms.openlocfilehash: dbf2fd06d76b3e79fbcdd30891807ea71329bffd
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42904220"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49999053"
 ---
 # <a name="localize-form-content"></a>Localizar o conteúdo do formulário
 
@@ -35,7 +36,7 @@ Você pode gerar um arquivo de recurso chamando [IFormBuilder.SaveResources][sav
 
 ### <a name="use-rview"></a>Usar RView
 
-Como alternativa, você pode gerar um arquivo de recurso baseado em seu arquivo .dll ou .exe usando a ferramenta <a href="https://github.com/Microsoft/BotBuilder/tree/master/CSharp/Tools/RView" target="_blank">RView</a> incluída no SDK do BotBuilder para .NET. Para gerar o arquivo .resx, execute **rview** e especifique o assembly que contém seu método de criação de formulário estático e o caminho para esse método. Este trecho de código mostra como gerar o arquivo de recurso `Microsoft.Bot.Sample.AnnotatedSandwichBot.SandwichOrder.resx` usando **RView**. 
+Como alternativa, você pode gerar um arquivo de recurso baseado em seu arquivo .dll ou .exe usando a ferramenta <a href="https://github.com/Microsoft/BotBuilder/tree/master/CSharp/Tools/RView" target="_blank">RView</a> incluída no SDK do BotBuilder para .NET. Para gerar o arquivo .resx, execute **rview** e especifique o assembly que contém seu método de criação de formulário estático e o caminho para esse método. Este snippet de código mostra como gerar o arquivo de recurso `Microsoft.Bot.Sample.AnnotatedSandwichBot.SandwichOrder.resx` usando **RView**. 
 
 ```csharp
 rview -g Microsoft.Bot.Sample.AnnotatedSandwichBot.dll Microsoft.Bot.Sample.AnnotatedSandwichBot.SandwichOrder.BuildForm
@@ -97,7 +98,7 @@ Este exemplo de código tem como base o mostrado em [Personalizar um formulário
 
 [!code-csharp[Build localized form](../includes/code/dotnet-formflow-localize.cs#buildLocalizedForm)]
 
-Este trecho de código mostra a interação resultante entre usuário e bot quando `CurrentUICulture` for **francês**.
+Este snippet de código mostra a interação resultante entre usuário e bot quando `CurrentUICulture` for **francês**.
 
 ```console
 Bienvenue sur le bot d'ordre "sandwich" !

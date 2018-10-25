@@ -5,15 +5,15 @@ author: darrenj
 ms.author: darrenj
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
 ms.date: 13/12/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: ddb1a7f8f189705de6b40bf2802a7bc2d1b49135
-ms.sourcegitcommit: 3bf3dbb1a440b3d83e58499c6a2ac116fe04b2f6
+ms.openlocfilehash: dcef01d8ba07d44aebaeeeecb5637af691caccb9
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/23/2018
-ms.locfileid: "46708470"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49997073"
 ---
 ## <a name="custom-assistant-overview"></a>Visão geral do Assistente Personalizado
 

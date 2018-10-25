@@ -5,14 +5,15 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 1557941d4e5413108ea3ce788f7d5d684252b657
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: b0d5ca6893d70a73bc005a949ef6cc2518d3862f
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296605"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "50000019"
 ---
 # <a name="manage-state-data"></a>Gerenciar os dados de estado
 

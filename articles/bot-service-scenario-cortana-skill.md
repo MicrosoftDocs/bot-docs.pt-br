@@ -5,15 +5,16 @@ author: BrianRandell
 ms.author: v-brra
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: cognitive-services
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 049dffd2adc700323bec943e090d369a14ff696b
-ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
+ms.openlocfilehash: 7676b7bd75a45130b62c1a691499095d6ba07291
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39574842"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "50000223"
 ---
 # <a name="cortana-skills-bot-scenario"></a>Cenário de Bot de Habilidades da Cortana
 
@@ -48,7 +49,7 @@ O Bot da Cortana usa os seguintes componentes:
 Agora você pode adicionar suporte ao Bot criando uma Habilidade da Cortana. Use o kit de Habilidades da Cortana para criar recursos (chamados de habilidades) para a Cortana. Uma habilidade é um constructo que permite à Cortana fazer mais. Crie habilidades para integrá-las aos Bots, permitindo que a Cortana realize tarefas e faça coisas. Como parte do processo de invocação, a Cortana pode (com o consentimento do usuário) passar informações sobre o usuário para uma habilidade em tempo de execução, de modo que a habilidade possa personalizar sua experiência de acordo. O conhecimento contextual da Cortana possibilita que o Bot seja útil e, possivelmente, até mesmo mais inteligente para o usuário. Quando invocados, alguns tipos de habilidades podem manipular a interface da Cortana para ter uma conversa entre a habilidade e o usuário final. Depois que a habilidade é publicada, os usuários podem ver e usar a habilidade na Cortana para a Atualização de Aniversário do Windows 10+ (Desktop e Mobile), no iOS e no Android.
 
 ### <a name="application-insights"></a>Application Insights
-O Application Insights ajuda você a obter insights práticos por meio do APM (gerenciamento de desempenho de aplicativos) e de análises instantâneas. Você conta, imediatamente, com o monitoramento de desempenho avançado, alertas eficientes e painéis fáceis de usar para ajudar a garantir que seu Bot esteja disponível e com o desempenho esperado. Veja rapidamente se há algum problema e, em seguida, faça uma análise de causa raiz para encontrar o problema e corrigi-lo.
+O Application Insights ajuda a obter insights práticos pelo APM (gerenciamento de desempenho de aplicativo) e por análises instantâneas. Pronto para uso, é possível obter monitoramento de desempenho avançado, alertas eficientes e painéis fáceis de usar para ajudar a garantir que o Bot esteja disponível e executando conforme o esperado. Veja rapidamente se há algum problema e faça uma análise da causa raiz para encontrar e corrigi-lo.
 
 ## <a name="next-steps"></a>Próximas etapas
 A seguir, saiba mais sobre o cenário de bot de Produtividade Empresarial.

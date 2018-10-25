@@ -5,15 +5,15 @@ author: darrenj
 ms.author: darrenj
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
 ms.date: 09/18/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 6fc7f73d406c1bbbc2b2671c9336df6bda10ade6
-ms.sourcegitcommit: 87b5b0ca9b0d5e028ece9f7cc4948c5507062c2b
+ms.openlocfilehash: b9c8a0bc04cfcf96f6c81b624464e9698eab1699
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47029754"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49998944"
 ---
 # <a name="enterprise-bot-template---customize-your-bot"></a>Modelo de Bot do Enterprise: personalizar seu Bot
 
@@ -80,7 +80,7 @@ Para atualizar um modelo do LUIS existente para o Modelo do Enterprise, execute 
 ```
 3. Execute o seguinte comando a partir da raiz do projeto de cada modelo atualizado para atualizar as classes LuisGen associadas: 
 ```shell
-    luis export version --appId [LUIS_APP_ID] --versionId [LUIS_APP_VERSION] --authoringKey [YOUR_LUIS_AUTHORING_KEY] | luisgen - -cs [CS_FILE_NAME] -o "\Dialogs\Shared\Resources"
+    luis export version --appId [LUIS_APP_ID] --versionId [LUIS_APP_VERSION] --authoringKey [YOUR_LUIS_AUTHORING_KEY] | luisgen --cs [CS_FILE_NAME] -o "\Dialogs\Shared\Resources"
 ```
 
 ### <a name="updating-an-existing-qnamaker-knowledge-base"></a>Atualizando uma Base Conhecimento existente do QnAMaker

@@ -5,14 +5,15 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 3f881f353f04be95ce3785c2fd82b724dd58cb88
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 290a2733b96a458eb3529b0b0854703631e05f22
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297074"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "50000033"
 ---
 # <a name="send-an-activity-to-the-bot"></a>Enviar uma atividade para o bot
 
@@ -22,7 +23,7 @@ Usando o protocolo 3.0 de linha direta, bots e os clientes podem trocar vários 
 
 Para enviar uma atividade para o bot, o cliente deve criar uma [atividade](bot-framework-rest-connector-api-reference.md#activity-object) objeto para definir a atividade e, em seguida, emitir um `POST` solicitar `https://directline.botframework.com/v3/directline/conversations/{conversationId}/activities`, especificando o objeto de atividade no corpo da solicitação.
 
-Os trechos de código a seguir fornecem um exemplo de como a atividade enviar solicitação e resposta.
+Os snippets de código a seguir fornecem um exemplo de como a atividade enviar solicitação e resposta.
 
 ### <a name="request"></a>Solicitação
 
@@ -96,7 +97,7 @@ Content-Disposition: ATTACHMENT_INFO
 
 Nesse URI de solicitação, substitua **{conversationId}** pelo ID da conversa e **{userId}** pelo ID do usuário que está enviando a mensagem. O `userId` parâmetro é obrigatório. Nos cabeçalhos de solicitação, defina `Content-Type` para especificar o tipo do anexo e defina `Content-Disposition` para especificar o nome do arquivo do anexo.
 
-Os trechos de código a seguir fornecem um exemplo da solicitação de envio (única) de anexo e a resposta.
+Os snippets de código a seguir fornecem um exemplo da solicitação de envio (única) de anexo e a resposta.
 
 #### <a name="request"></a>Solicitação
 
@@ -131,7 +132,7 @@ Para enviar vários anexos por upload, `POST`uma solicitação multipartes para 
 
 Você pode incluir um [atividade](bot-framework-rest-connector-api-reference.md#activity-object) objeto dentro da solicitação com a adição de uma parte que especifica se o `Content-Type` valor de cabeçalho `application/vnd.microsoft.activity`. Se a solicitação inclui uma atividade, os anexos que são especificados por outras partes da carga são adicionados como anexos de atividade antes de serem enviado. Se a solicitação não incluir uma Atividade, uma Atividade vazia será criada para servir como o contêiner no qual os anexos especificados são enviados.
 
-Os trechos a seguir fornecem um exemplo da solicitação e resposta Enviar (vários) Anexos. Neste exemplo, a solicitação envia uma mensagem que contém algum texto e um único anexo de imagem. Partes adicionais pôde ser adicionados à solicitação para incluir vários anexos nesta mensagem.
+Os snippets a seguir fornecem um exemplo da solicitação e resposta Enviar (vários) Anexos. Neste exemplo, a solicitação envia uma mensagem que contém algum texto e um único anexo de imagem. Partes adicionais pôde ser adicionados à solicitação para incluir vários anexos nesta mensagem.
 
 #### <a name="request"></a>Solicitação
 

@@ -5,15 +5,16 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 6637876b016b8680fe722602f530a0c6b0ddfc5a
-ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
+ms.openlocfilehash: fbdaa845c86150a572772c4aae8239880f42dd9e
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42905400"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49997773"
 ---
 # <a name="advanced-features-of-formflow"></a>Recursos avançados do FormFlow
 
@@ -43,7 +44,7 @@ Além da função de validação, você pode adicionar o atributo [Term](#match-
 
 [!code-csharp[Terms for Toppings](../includes/code/dotnet-formflow-advanced.cs#toppingsTerms)]
 
-Com a função de validação mostrada acima, este trecho mostra a interação entre o bot e o usuário quando o usuário solicita "tudo, exceto pimentões". 
+Com a função de validação mostrada acima, este snippet mostra a interação entre o bot e o usuário quando o usuário solicita "tudo, exceto pimentões". 
 
 ```console
 Please select one or more toppings (current choice: No Preference)
@@ -88,7 +89,7 @@ Este exemplo usa [padrão de linguagem](bot-builder-dotnet-formflow-pattern-lang
 > [!NOTE]
 > Por padrão, a descrição de um campo é gerada desde o nome do campo. Para especificar uma descrição personalizada para um campo, adicione o atributo `Describe`.
 
-Este trecho mostra o aviso personalizado especificado pelo exemplo anterior.
+Este snippet mostra o aviso personalizado especificado pelo exemplo anterior.
 
 ```console
 What kind of sandwich would you like?
@@ -142,7 +143,7 @@ Enquanto o atributo `Prompt` permite que você personalize o aviso de um único 
 
 [!code-csharp[Template attribute](../includes/code/dotnet-formflow-advanced.cs#templateAttribute)]
 
-Este trecho mostra os avisos resultantes para o campo `Bread` e o campo `Cheese`.
+Este snippet mostra os avisos resultantes para o campo `Bread` e o campo `Cheese`.
 
 ```console
 What kind of bread would you like on your sandwich?
@@ -166,7 +167,7 @@ Este exemplo de código redefine o modelo [TemplateUsage.NotUnderstood][notUnder
 
 [!code-csharp[Template variations of message](../includes/code/dotnet-formflow-advanced.cs#templateMessages)]
 
-Este trecho de código mostra um exemplo da interação resultante entre usuário e bot. 
+Este snippet de código mostra um exemplo da interação resultante entre usuário e bot. 
 
 ```console
 What size of sandwich do you want? (1. Six Inch, 2. Foot Long)
@@ -228,7 +229,7 @@ Para substituir esse comportamento padrão e definir a lista de termos usados pa
 
 O atributo `Terms` aumenta a probabilidade de correspondência da entrada do usuário com uma das opções válidas. O parâmetro `Terms.MaxPhrase` neste exemplo faz com que o `Language.GenerateTerms` gere mais variações dos termos. 
 
-Este trecho de código mostra a interação resultante entre usuário e bot quando o usuário erra a palavra "Rotisserie".
+Este snippet de código mostra a interação resultante entre usuário e bot quando o usuário erra a palavra "Rotisserie".
 
 ```console
 What kind of sandwich would you like?

@@ -5,17 +5,18 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 03/13/2018
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 96f21f02e74c8f7d78a699c37eb8324b4d36139e
-ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
+ms.openlocfilehash: b03003d4822c657f9b606de36087ddf4d5cbee7a
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39574672"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49997644"
 ---
-# <a name="add-suggested-actions-to-messages"></a>Adicionar ações sugeridas às mensagens
+# <a name="add-suggested-actions-to-messages"></a>Adicionar ações sugeridas a mensagens
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

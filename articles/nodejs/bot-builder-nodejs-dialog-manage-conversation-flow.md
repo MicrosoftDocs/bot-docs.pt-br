@@ -5,15 +5,16 @@ author: v-ducvo
 ms.author: v-ducvo
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 656b6304a576c553db948a348b1c6d8c3fc5ae71
-ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
+ms.openlocfilehash: 133f085a857d1bb8bf7622e7adab19374902327d
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42905660"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49997763"
 ---
 # <a name="manage-conversation-flow-with-dialogs"></a>Gerenciar fluxo de conversa com diálogos
 
@@ -25,7 +26,7 @@ ms.locfileid: "42905660"
 
 Gerenciar um fluxo de conversa é uma tarefa essencial na criação de bots. Um bot precisa ser capaz de executar tarefas básicas de forma elegante e lidar com interrupções de forma elegante. Com o Bot Builder SDK for Node.js, você pode gerenciar o fluxo de conversas usando diálogos.
 
-Uma caixa de diálogo é como uma função em um programa. Geralmente, é projetado para executar uma operação específica e pode ser chamado com a frequência necessária. Você pode encadear vários diálogos juntos para lidar com praticamente qualquer fluxo de conversação que você deseja que seu bot manipule. O Bot Builder SDK para Node.js inclui recursos integrados, como [prompts](bot-builder-nodejs-dialog-prompt.md) e [quedas d'água](bot-builder-nodejs-dialog-waterfall.md) para ajudá-lo a gerenciar o fluxo de conversas.
+Uma caixa de diálogo é como uma função em um programa. Ele é normalmente criado para executar uma operação específica e pode ser ativado sempre que for necessário. Você pode encadear vários diálogos juntos para lidar com praticamente qualquer fluxo de conversação que você deseja que seu bot manipule. O Bot Builder SDK para Node.js inclui recursos integrados, como [prompts](bot-builder-nodejs-dialog-prompt.md) e [quedas d'água](bot-builder-nodejs-dialog-waterfall.md) para ajudá-lo a gerenciar o fluxo de conversas.
 
 Este artigo fornece uma série de exemplos para explicar como gerenciar os fluxos de conversação simples e fluxos de conversa complexas em que seu bot pode lidar com interrupções e retomar o fluxo, normalmente usando as caixas de diálogo. Os exemplos são baseados nos seguintes cenários: 
 

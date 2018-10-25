@@ -5,14 +5,15 @@ author: v-ducvo
 ms.author: v-ducvo
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: abs
 ms.date: 12/13/2017
-ms.openlocfilehash: 1ba574de619e482b6248d33bcb805080c0ea72d0
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: aafbfb2a38e2d5370cb2db5721dd7bc130497d74
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296822"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49999213"
 ---
 # <a name="change-the-hosting-plan-for-your-bot-service"></a>Alterar o plano de hospedagem para seu serviço de bot
 

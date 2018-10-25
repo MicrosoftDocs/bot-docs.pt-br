@@ -6,14 +6,15 @@ author: v-royhar
 ms.author: v-royhar
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: abs
 ms.date: 12/13/2017
-ms.openlocfilehash: 531e37f2186de2e315f11362dcefcc30a2ab6879
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 640e5675adce627ed14d732e529e9a86ec8b195f
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296816"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49996683"
 ---
 # <a name="configure-bot-settings"></a>Definir as configurações do bot
 

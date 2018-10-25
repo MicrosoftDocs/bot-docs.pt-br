@@ -5,15 +5,16 @@ author: DeniseMak
 ms.author: v-demak
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 04/06/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: e316ff90b68f860274579f06e7196deec364e082
-ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
+ms.openlocfilehash: a6bec55010124892376904070cc9ed88c659efbd
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42905629"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49999853"
 ---
 # <a name="translate-from-the-users-language-to-make-your-bot-multilingual"></a>Traduzir do idioma do usuário para tornar seu bot multilíngue
 

@@ -5,15 +5,16 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 5286f0cc6a6a5d7558de997fc776671219c70aa5
-ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
+ms.openlocfilehash: dc77a09f1eb7d6ccbdf98d1bee22000c56fe8e6b
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42904865"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49999683"
 ---
 # <a name="use-the-backchannel-mechanism"></a>Usar mecanismo de backchannel
 
@@ -32,7 +33,7 @@ O controle de Webchat de software livre acessa a API de Linha Direta usando uma 
 Neste exemplo, o bot e a página da Web usarão o mecanismo de backchannel para trocar informações que estão invisíveis para o usuário. O bot solicitará que a página da Web altere a cor da tela de fundo e a página da Web notificará o bot quando o usuário clicar em um botão na página. 
 
 > [!NOTE]
-> Os trechos de código deste artigo têm sua origem na <a href="https://github.com/Microsoft/BotFramework-WebChat/blob/master/samples/backchannel/index.html" target="_blank">amostra de backchannel</a> e no <a href="https://github.com/ryanvolum/backChannelBot" target="_blank">bot de backchannel</a>. 
+> Os snippets de código deste artigo têm sua origem na <a href="https://github.com/Microsoft/BotFramework-WebChat/blob/master/samples/backchannel/index.html" target="_blank">amostra de backchannel</a> e no <a href="https://github.com/ryanvolum/backChannelBot" target="_blank">bot de backchannel</a>. 
 
 #### <a name="client-side-code"></a>Código do lado do cliente
 

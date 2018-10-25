@@ -5,15 +5,16 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: eb99be4699bba71a1fdc55bab19d035e4e31f536
-ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
+ms.openlocfilehash: 943b206e4991c52f22928d2113977249ff9d9e04
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39574552"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49997573"
 ---
 # <a name="dialogs-in-the-bot-builder-sdk-for-net"></a>Diálogos no SDK do Construtor de Bot para .NET
 

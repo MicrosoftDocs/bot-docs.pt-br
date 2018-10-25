@@ -6,14 +6,15 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: landing-page
 layout: LandingPage
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 09/27/2018
-ms.openlocfilehash: 061354d57fed8863f12a01e976ef0b11faf699c0
-ms.sourcegitcommit: 1ef8f4fd2cb8955270a1bc317c9039e5b8f6bbc4
+ms.openlocfilehash: ec7a21e790c945b261e7381ec76298460fa079ee
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47418828"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "50000253"
 ---
 ::: moniker range="azure-bot-service-3.0"
 

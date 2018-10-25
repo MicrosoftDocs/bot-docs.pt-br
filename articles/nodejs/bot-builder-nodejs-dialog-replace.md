@@ -5,15 +5,16 @@ author: v-ducvo
 ms.author: v-ducvo
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 4343e9742d6bfabeab1ccb6a96f0d379d824125e
-ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
+ms.openlocfilehash: 30ac28f5ce700829b8c382c49905883ffa45da29
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42905730"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "50000053"
 ---
 # <a name="replace-dialogs"></a>Substituir diálogos
 
@@ -270,7 +271,7 @@ bot.dialog('orderDinner', [
 
 Embora o método `session.replaceDialog` possa ser usado para substituir o diálogo *atual* por um novo, ele não pode ser usado para substituir um diálogo que está localizado mais abaixo da pilha de diálogos. Para substituir um diálogo na pilha de diálogos que não seja o diálogo *atual*, use o método [`session.cancelDialog`](http://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session#canceldialog). 
 
-O método `session.cancelDialog` pode ser usado para encerrar um diálogo, independentemente de sua localização na pilha de diálogos e, opcionalmente, para invocar um novo diálogo em seu lugar. Para chamar o método `session.cancelDialog`, especifique a ID do diálogo a ser cancelada e, opcionalmente, especifique a ID do diálogo a ser invocada em seu lugar. Por exemplo, este trecho de código cancela o diálogo `orderDinner` e o substitui pelo diálogo `mainMenu`:
+O método `session.cancelDialog` pode ser usado para encerrar um diálogo, independentemente de sua localização na pilha de diálogos e, opcionalmente, para invocar um novo diálogo em seu lugar. Para chamar o método `session.cancelDialog`, especifique a ID do diálogo a ser cancelada e, opcionalmente, especifique a ID do diálogo a ser invocada em seu lugar. Por exemplo, este snippet de código cancela o diálogo `orderDinner` e o substitui pelo diálogo `mainMenu`:
 
 ```javascript
 session.cancelDialog('orderDinner', 'mainMenu'); 
@@ -278,7 +279,7 @@ session.cancelDialog('orderDinner', 'mainMenu');
 
 Quando o método `session.cancelDialog` for chamado, a pilha de diálogos será pesquisada de forma retroativa e a primeira ocorrência desse diálogo será cancelada, fazendo com que esse diálogo e seus diálogos filho (se houver) sejam removidos da pilha de diálogos. Em seguida, o controle será retornado para o diálogo de chamada, que pode verificar se há um código [`results.resumed`](http://docs.botframework.com/en-us/node/builder/chat-reference/interfaces/_botbuilder_d_.ipromptresult.html#resumed) igual a [`ResumeReason.notCompleted`](http://docs.botframework.com/en-us/node/builder/chat-reference/enums/_botbuilder_d_.resumereason.html#notcompleted) para detectar o cancelamento.
 
-Como uma alternativa para especificar a ID do diálogo a ser cancelada quando você chama o método `session.cancelDialog`, você pode especificar o índice baseado em zero do diálogo a ser cancelado, em que o índice representa a posição do diálogo na pilha de diálogos. Por exemplo, o trecho de código a seguir encerra o diálogo ativo no momento (índice = 0) e inicia o diálogo `mainMenu` em seu lugar. O diálogo `mainMenu` é invocado na posição 0 da pilha de diálogos, tornando-se o novo diálogo padrão.
+Como uma alternativa para especificar a ID do diálogo a ser cancelada quando você chama o método `session.cancelDialog`, você pode especificar o índice baseado em zero do diálogo a ser cancelado, em que o índice representa a posição do diálogo na pilha de diálogos. Por exemplo, o snippet de código a seguir encerra o diálogo ativo no momento (índice = 0) e inicia o diálogo `mainMenu` em seu lugar. O diálogo `mainMenu` é invocado na posição 0 da pilha de diálogos, tornando-se o novo diálogo padrão.
 
 ```javascript
 session.cancelDialog(0, 'mainMenu');

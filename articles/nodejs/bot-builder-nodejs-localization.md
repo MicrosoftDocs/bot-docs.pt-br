@@ -5,15 +5,16 @@ author: DeniseMak
 ms.author: v-demak
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: f9af8cbbc5f457d5e8684ad57bb147f9d42a62c7
-ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
+ms.openlocfilehash: 5ac9fabcb0c6626e1b0133b7718b135a88d4c846
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42905140"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49998054"
 ---
 # <a name="support-localization"></a>Suporte à localização
 
@@ -60,7 +61,7 @@ bot.dialog('/localePicker', [
 ## <a name="determine-the-locale-by-using-analytics"></a>Determinar o local usando análise
 Uma outra forma de determinar o local do usuário é usando um serviço como a [API de Análise de Texto](/azure/cognitive-services/cognitive-services-text-analytics-quick-start) para detectar automaticamente o idioma do usuário com base no texto da mensagem que ele enviou.
 
-O trecho de código a seguir ilustra como você pode incorporar esse serviço ao seu próprio bot.
+O snippet de código a seguir ilustra como você pode incorporar esse serviço ao seu próprio bot.
 ``` javascript
 var request = require('request');
 
@@ -94,7 +95,7 @@ bot.use({
 });
 ```
 
-Depois de adicionar o trecho de código acima ao seu bot, chamar [session.preferredLocale()][preferredLocal] retornará automaticamente o idioma detectado. A ordem da pesquisa para `preferredLocale()` é a seguinte:
+Depois de adicionar o snippet de código acima ao seu bot, chamar [session.preferredLocale()][preferredLocal] retornará automaticamente o idioma detectado. A ordem da pesquisa para `preferredLocale()` é a seguinte:
 1. Local salvo chamando `session.preferredLocale()`. Esse valor é armazenado em `session.userData['BotBuilder.Data.PreferredLocale']`.
 2. Local detectado atribuído a `session.message.textLocale`.
 3. O local padrão configurado para o bot (por exemplo: inglês ('en')).
@@ -161,8 +162,8 @@ Para saber mais sobre como localizar um reconhecedor, confira [Reconhecimento da
 [IMessage]: http://docs.botframework.com/en-us/node/builder/chat-reference/interfaces/_botbuilder_d_.imessage
 [IntentRecognizerSetOptions]: https://docs.botframework.com/en-us/node/builder/chat-reference/interfaces/_botbuilder_d_.iintentrecognizersetoptions.html
 [LUISRecognizer]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.luisrecognizer
-[LUISSample]: https://github.com/Microsoft/BotBuilder/blob/master/Node/examples/basics-naturalLanguage/app.js
-[DisambiguationSample]: https://github.com/Microsoft/BotBuilder/tree/master/Node/examples/feature-onDisambiguateRoute
+[LUISSample]: https://aka.ms/v3-js-luisSample
+[DisambiguationSample]: https://aka.ms/v3-js-onDisambiguateRoute
 [preferredLocal]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session#preferredlocale
 [preferredLocale]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session#preferredlocale
 [promptsChoice]: https://docs.botframework.com/en-us/node/builder/chat-reference/interfaces/_botbuilder_d_.__global.iprompts.html#choice

@@ -5,14 +5,15 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: ca54abf89f8967b2b109895326d13a601030fdec
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: 6ee7120536d42257dde2ed1411df32d807268e33
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296919"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "50000009"
 ---
 # <a name="upgrade-your-bot-to-bot-framework-api-v3"></a>Fazer upgrade do bot para a API v3 do Bot Framework
 
@@ -128,7 +129,7 @@ A API v3 do Bot Framework apresenta uma implementação mais robusta de anexos e
 Na API v1 do Bot Framework, a API para gerenciar os dados de estado do bot foi integrada à API de mensagens. Na API v3 do Bot Framework, essas APIs são separadas. Agora, você deve usar o serviço de Estado do Bot para obter dados de estado (em vez de assumir que serão incluídos dentro do objeto `Message`) e para armazenar dados de estado (em vez de passá-los como parte do objeto `Message`). Para obter informações sobre como gerenciar dados de estado do bot usando o serviço de Estado do Bot, consulte [Gerenciar dados de estado](~/dotnet/bot-builder-dotnet-state.md).
 
 > [!IMPORTANT]
-> A API de Serviço de Estado do Bot Framework não é recomendada para ambientes de produção e pode ser preterida em uma versão futura. Recomendamos que você atualize o código do bot para usar o armazenamento em memória para fins de teste ou use uma das **Extensões do Azure** para bots de produção. Para saber mais, consulte o tópico **Gerenciar dados de estado** para implementação de [.NET](~/dotnet/bot-builder-dotnet-state.md) ou [Node](~/nodejs/bot-builder-nodejs-state.md).
+> A API de Serviço de Estado do Bot Framework não é recomendada para ambientes de produção e pode ser preterida em uma versão futura. É recomendável que você atualize o código do bot para que ele use o armazenamento em memória para fins de teste ou use uma das **Extensões do Azure** para bots de produção. Para saber mais, consulte o tópico **Gerenciar dados de estado** para implementação de [.NET](~/dotnet/bot-builder-dotnet-state.md) ou [Node](~/nodejs/bot-builder-nodejs-state.md).
 
 ### <a name="webconfig-changes"></a>Alterações do Web.config
 

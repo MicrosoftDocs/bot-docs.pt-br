@@ -5,15 +5,16 @@ author: DucVo
 ms.author: v-ducvo
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: c37823b94a5cc4715dd1278bba196335de3e3bdb
-ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
+ms.openlocfilehash: 2e8cb9661079eafa988af4a7639e3e7dc1580bfa
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42906019"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49998133"
 ---
 # <a name="handle-user-and-conversation-events"></a>Manipular eventos de usuário e de conversa
 
@@ -25,7 +26,7 @@ Este artigo demonstra como seu bot pode lidar com eventos como um usuário ingre
 ## <a name="greet-a-user-on-conversation-join"></a>Saudar a um usuário ao ingressar em conversa
 O Bot Framework fornece o evento [conversationUpdate][conversationUpdate] para notificar seu bot sempre que um membro entra ou sai de uma conversa. Um membro da conversa pode ser um usuário ou um bot.
 
-O trecho de código a seguir permite que o bot dê as boas-vindas aos novos membros de uma conversa ou diga **Adeus** se eles estiverem sendo removidos da conversa.
+O snippet de código a seguir permite que o bot dê as boas-vindas aos novos membros de uma conversa ou diga **Adeus** se eles estiverem sendo removidos da conversa.
 
 [!INCLUDE [conversationUpdate sample Node.js](../includes/snippet-code-node-conversationupdate-1.md)]
 
