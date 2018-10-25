@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
-ms.openlocfilehash: dd8869c26a87718177462db2508e41aa82810e21
-ms.sourcegitcommit: f0b22c6286e44578c11c9f15d22b542c199f0024
+ms.openlocfilehash: ab7e6a8e6bbb2cf12fca0371f2de561f4fb47fd8
+ms.sourcegitcommit: b8bd66fa955217cc00b6650f5d591b2b73c3254b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47404072"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49326523"
 ---
 # <a name="design-knowledge-bots"></a>Criar bots de dados de Conhecimento
 
@@ -129,7 +129,7 @@ Alguns bots de dados de conhecimento podem usar o QnA Maker para responder pergu
 2. Chamar LUIS primeiro e, se nenhuma intenção atender uma pontuação de limite específico, ou seja, a intenção "None" for disparada, chamar o QnA Maker. Como alternativa, criar uma intenção LUIS para QnA Maker, alimentando o modelo LUIS com perguntas de QnA de exemplo que são mapeadas para "QnAIntent". 
 3. Chamar o QnA Maker primeiro e, se nenhuma resposta atender uma pontuação de limite específico, chamar o LUIS. 
 
-O SDK do Construtor de Bot fornece suporte interno para LUIS e QnA Maker. Isso permite que você dispare caixas de diálogo ou responda automaticamente perguntas usando o LUIS e/ou o QnA Maker sem a necessidade de implementar chamadas personalizadas para qualquer uma das ferramentas. Consulte os [modelos de serviço de bot](bot-service-concept-templates.md) para obter mais informações.
+O SDK do Construtor de Bot fornece suporte interno para LUIS e QnA Maker. Isso permite que você dispare caixas de diálogo ou responda automaticamente perguntas usando o LUIS e/ou o QnA Maker sem a necessidade de implementar chamadas personalizadas para qualquer uma das ferramentas. Confira o [Tutorial da ferramenta Dispatch do Bot Builder](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-tutorial-dispatch?view=azure-bot-service-4.0) para saber mais.
 
 > [!TIP]
 > Ao implementar uma combinação de LUIS, QnA Maker e/ou Azure Search, teste as entradas com cada uma das ferramentas para determinar a pontuação de limite para cada um dos seus modelos. O LUIS, o QnA Maker e o Azure Search geram pontuações usando um critério de pontuação diferente, portanto, as pontuações geradas entre essas ferramentas não são comparáveis diretamente. Além disso, o LUIS e QnA Maker normalizam as pontuações. Uma pontuação de determinado pode ser considerada 'boa' em um modelo de LUIS, mas não em outro modelo. 

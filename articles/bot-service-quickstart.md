@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
 ms.date: 09/18/2018
-ms.openlocfilehash: e676a9bf2c9dac46d728f8a37d87eae6e56df341
-ms.sourcegitcommit: 3bf3dbb1a440b3d83e58499c6a2ac116fe04b2f6
+ms.openlocfilehash: b07a5f13d189a252e9357ebe37c485c544f6b068
+ms.sourcegitcommit: b8bd66fa955217cc00b6650f5d591b2b73c3254b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/23/2018
-ms.locfileid: "46707682"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49326573"
 ---
 ::: moniker range="azure-bot-service-3.0"
 
@@ -37,7 +37,7 @@ Faça logon no [Portal do Azure](http://portal.azure.com).
 2. Uma nova folha será aberta com informações sobre o **Bot de Aplicativo Web**.  
 
 3. Na folha **Serviço de Bot**, forneça as informações solicitadas sobre o bot, conforme especificado na tabela abaixo da imagem.  <br/>
-   ![Folha Criar Bot de Aplicativo Web](~/media/azure-bot-quickstarts/sdk-create-bot-service-blade.png)
+   ![Folha Criar Bot de Aplicativo Web](./media/azure-bot-quickstarts/sdk-create-bot-service-blade.png)
 
    | Configuração | Valor sugerido | DESCRIÇÃO |
    | ---- | ---- | ---- |
@@ -50,7 +50,7 @@ Faça logon no [Portal do Azure](http://portal.azure.com).
    | **Modelo de bot** | Basic | Escolha **C#** ou **Node.js** e selecione o modelo **Básico** para este início rápido. Em seguida, clique em **Selecionar**. O modelo Básico cria um bot de eco. [Saiba mais](bot-service-concept-templates.md) sobre os modelos. |
    | **Localização/plano de serviço de aplicativo** | O Plano do Serviço de Aplicativo  | Selecione um local para o [Plano do Serviço de Aplicativo](https://azure.microsoft.com/en-us/pricing/details/app-service/plans/). Sua escolha de localização pode ser qualquer local listado, embora geralmente seja melhor escolher um local mais próximo ao cliente. (Não disponível para o Bot do Functions.) |
    | **Armazenamento do Azure** | Sua conta de armazenamento do Azure | Você pode criar uma conta de armazenamento de dados ou usar uma existente. Por padrão, o bot usará o [Armazenamento de Tabelas](/azure/storage/common/storage-introduction#table-storage). |
-   | **Application Insights** | Por | Decida se deseja deixar o [Application Insights](/bot-framework/bot-service-manage-analytics) **Ativado** ou **Desativado**. Se você selecionar **Ativado**, precisará também especificar um local regional. Sua escolha de localização pode ser qualquer local listado, embora geralmente seja melhor escolher um local mais próximo ao cliente. |
+   | **Application Insights** | Por | Decida se deseja deixar o [Application Insights](/bot-framework/bot-service-manage-analytics) **Ativado** ou **Desativado**. Se você selecionar **Ativar**, será preciso especificar também um local regional. Sua escolha de localização pode ser qualquer local listado, embora geralmente seja melhor escolher o mesmo do local do serviço de bot. |
    | **ID do Aplicativo e senha da Microsoft** | Criar ID do Aplicativo e senha automaticamente | Use essa opção se precisar inserir manualmente uma ID do Aplicativo e uma senha da Microsoft. Caso contrário, uma nova ID do Aplicativo e uma nova senha da Microsoft serão criados para você no processo de criação de bot. |
 
    > [!NOTE]
@@ -108,9 +108,9 @@ Faça logon no [Portal do Azure](http://portal.azure.com).
  | **Tipo de preços** | F0 | Selecione um tipo de preço. Você pode atualizar o tipo de preço a qualquer momento. Para obter mais informações, confira [Preços do Serviço de Bot](https://azure.microsoft.com/en-us/pricing/details/bot-service/). |
  | **Nome do aplicativo** | Um nome exclusivo | O nome exclusivo de URL do bot. Por exemplo, se você nomear o bot *myawesomebot*, a URL do bot será `http://myawesomebot.azurewebsites.net`. O nome precisa usar somente caracteres alfanuméricos e de sublinhado. Há um limite de 35 caracteres para esse campo. O nome do Aplicativo não pode ser alterado após a criação do bot. |
  | **Modelo de bot** | Bot de Eco | Escolha **SDK v4**. Escolha C# ou Node.js para este início rápido e, em seguida, clique em **Selecionar**.  
- | **Localização/plano de serviço de aplicativo** | O Plano do Serviço de Aplicativo  | Selecione um local para o [Plano do Serviço de Aplicativo](https://azure.microsoft.com/en-us/pricing/details/app-service/plans/). Sua escolha de localização pode ser qualquer local listado, embora geralmente seja melhor escolher um local mais próximo ao cliente. |
+ | **Localização/plano de serviço de aplicativo** | O Plano do Serviço de Aplicativo  | Selecione um local para o [Plano do Serviço de Aplicativo](https://azure.microsoft.com/en-us/pricing/details/app-service/plans/). Sua escolha de localização pode ser qualquer local listado, embora geralmente seja melhor escolher o mesmo do serviço de bot. |
  | **Armazenamento do Azure** | Sua conta de armazenamento do Azure | Você pode criar uma conta de armazenamento de dados ou usar uma existente. Por padrão, o bot usará o [Armazenamento de Tabelas](/azure/storage/common/storage-introduction#table-storage). |
- | **Application Insights** | Por | Decida se deseja deixar o [Application Insights](/bot-framework/bot-service-manage-analytics) **Ativado** ou **Desativado**. Se você selecionar **Ativado**, precisará também especificar um local regional. Sua escolha de localização pode ser qualquer local listado, embora geralmente seja melhor escolher um local mais próximo ao cliente. |
+ | **Application Insights** | Por | Decida se deseja deixar o [Application Insights](/bot-framework/bot-service-manage-analytics) **Ativado** ou **Desativado**. Se você selecionar **Ativar**, será preciso especificar também um local regional. Sua escolha de localização pode ser qualquer local listado, embora geralmente seja melhor escolher o mesmo do serviço de bot. |
  | **ID do Aplicativo e senha da Microsoft** | Criar ID do Aplicativo e senha automaticamente | Use essa opção se precisar inserir manualmente uma ID do Aplicativo e uma senha da Microsoft. Caso contrário, uma nova ID do Aplicativo e uma nova senha da Microsoft serão criados para você no processo de criação de bot. |
 
 4. Clique em **Criar** para criar o serviço e implantar o bot na nuvem. Esse processo pode levar vários minutos.
@@ -122,7 +122,7 @@ Agora que o bot foi criado, teste-o no Webchat.
 ## <a name="test-the-bot"></a>Testar o bot
 Na seção **Gerenciamento de Bot**, clique em **Testar no Webchat**. O Serviço de Bot do Azure carregará o controle de Webchat e se conectará ao bot. 
 
-![Teste do Webchat do Azure](~/media/azure-bot-quickstarts/azure-webchat-test.png)
+![Teste do Webchat do Azure](./media/azure-bot-quickstarts/azure-webchat-test.png)
 
 Insira uma mensagem e o bot deverá responder.
 

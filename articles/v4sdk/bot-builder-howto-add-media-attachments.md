@@ -1,26 +1,26 @@
 ---
 title: Adicionar mídia às mensagens | Microsoft Docs
 description: Saiba como adicionar mídia às mensagens usando o SDK do Bot Builder.
-keywords: mídia, mensagens, imagens, áudio, vídeo, arquivos, MessageFactory, mensagens avançadas
+keywords: mídia, mensagens, imagens, áudio, vídeo, arquivos, MessageFactory, rich cards, mensagens, cartões adaptáveis, cartão hero e ações sugeridas
 author: ivorb
 ms.author: v-ivorb
 manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
-ms.date: 08/24/2018
+ms.date: 09/10/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 5883b31df95da26fa0432f4cfe195f12fc3089ad
-ms.sourcegitcommit: 86ddf3ebe6cc3385d1c4d30b971ac9c3e1fc5a77
+ms.openlocfilehash: 87862e8fcbfa357c27a1c8fac0e8dd71d9bc2998
+ms.sourcegitcommit: bd4f9669c0d26ac2a4be1ab8e508f163a1f465f3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43055990"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47430325"
 ---
 # <a name="add-media-to-messages"></a>Adicionar mídia às mensagens
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
-Uma troca de mensagens entre o usuário e o bot pode conter anexos de mídia, tais como imagens, vídeos, áudios e arquivos. O SDK do Bot Builder inclui uma nova classe `Microsoft.Bot.Builder.MessageFactory`, projetada para facilitar a tarefa de enviar mensagens avançadas ao usuário.
+A troca de mensagens entre usuário e bot pode conter anexos de mídia como imagens, vídeo, áudio e arquivos. O SDK do Bot Builder dá suporte à tarefa de envio de mensagens avançadas para o usuário. Para determinar o tipo de mensagens avançadas com suporte de um canal (Facebook, Skype, Slack etc), consulte a documentação do canal para obter informações sobre as limitações. Consulte a [experiência de usuário de design](../bot-service-design-user-experience.md) para obter uma lista de cartões disponíveis. 
 
 ## <a name="send-attachments"></a>Enviar anexos
 
@@ -28,71 +28,55 @@ Para enviar o conteúdo do usuário, como uma imagem ou um vídeo, é possível 
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-A propriedade `Attachments` do objeto `Activity` contém uma matriz de objetos `Attachment` que representam os anexos de mídia e os cartões avançados na mensagem. Para adicionar um anexo de mídia a uma mensagem, crie um objeto `Attachment` para a atividade `message` e defina as propriedades `ContentType`, `ContentUrl` e `Name`. 
+A propriedade `Attachments` do objeto `Activity` contém uma matriz de objetos `Attachment` que representam os anexos de mídia e os cartões avançados na mensagem. Para adicionar um anexo de mídia a uma mensagem, crie um objeto `Attachment` para a atividade `message` e defina as propriedades `ContentType`, `ContentUrl` e `Name`. A propriedade `Attachments` do objeto `Activity` contém uma matriz de objetos `Attachment` que representam os anexos de mídia e os cartões avançados na mensagem. Para adicionar um anexo de mídia a uma mensagem, use o método `Attachment` para criar um objeto `Attachment` para a atividade `message` e defina as propriedades `ContentType`, `ContentUrl` e `Name`. O código-fonte mostrado aqui se baseia no exemplo [Tratamento de Anexos](https://aka.ms/bot-attachments-sample-code). 
 
 ```csharp
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Core.Extensions;
 using Microsoft.Bot.Schema;
 
-// Create the activity and add an attachment.
-var activity = MessageFactory.Attachment(
-    new Attachment { ContentUrl = "imageUrl.png", ContentType = "image/png" }
-);
+var reply = turnContext.Activity.CreateReply();
+
+// Create an attachment.
+var attachment = new Attachment
+    {
+        ContentUrl = "imageUrl.png",
+        ContentType = "image/png",
+        Name = "imageName",
+    };
+    
+// Add the attachment to our reply.
+reply.Attachments = new List<Attachment>() { attachment };
 
 // Send the activity to the user.
-await context.SendActivity(activity);
-```
-
-O método `Attachment` da fábrica de mensagens também pode enviar uma lista de anexos, empilhadas um sobre o outro.
-
-```csharp
-using Microsoft.Bot.Builder;
-using Microsoft.Bot.Builder.Core.Extensions;
-using Microsoft.Bot.Schema;
-
-// Create the activity and add an attachment.
-var activity = MessageFactory.Attachment(new Attachment[]
-{
-    new Attachment { ContentUrl = "imageUrl1.png", ContentType = "image/png" },
-    new Attachment { ContentUrl = "imageUrl2.png", ContentType = "image/png" },
-    new Attachment { ContentUrl = "imageUrl3.png", ContentType = "image/png" }
-});
-
-// Send the activity to the user.
-await context.SendActivity(activity);
+await turnContext.SendActivityAsync(reply, cancellationToken);
 ```
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
+O código-fonte mostrado aqui se baseia no exemplo [Tratamento de Anexos JS](https://aka.ms/bot-attachments-sample-code-js).
 Para enviar ao usuário uma única parte do conteúdo, como uma imagem ou um vídeo, é possível enviar mídia contida em uma URL:
 
 ```javascript
-const {MessageFactory} = require('botbuilder');
-let imageOrVideoMessage = MessageFactory.contentUrl('imageUrl.png', 'image/jpeg')
-
+const { ActionTypes, ActivityTypes, CardFactory } = require('botbuilder');
+// Call function to get an attachment.
+reply.attachments = [this.getInternetAttachment()];
+reply.text = 'This is an internet attachment.';
 // Send the activity to the user.
-await context.sendActivity(imageOrVideoMessage);
-```
+await turnContext.sendActivity(reply);
 
-Para enviar uma lista de anexos empilhados um sobre o outro: <!-- TODO: Convert the hero cards to image attachments in this example. -->
-
-```javascript
-// require MessageFactory and CardFactory from botbuilder.
-const {MessageFactory, CardFactory} = require('botbuilder');
-
-let messageWithCarouselOfCards = MessageFactory.list([
-    CardFactory.heroCard('title1', ['imageUrl1'], ['button1']),
-    CardFactory.heroCard('title2', ['imageUrl2'], ['button2']),
-    CardFactory.heroCard('title3', ['imageUrl3'], ['button3'])
-]);
-
-await context.sendActivity(messageWithCarouselOfCards);
+/* function getInternetAttachment - Returns an attachment to be sent to the user from a HTTPS URL */
+getInternetAttachment() {
+        return {
+            name: 'imageName.png',
+            contentType: 'image/png',
+            contentUrl: 'imageUrl.png'}
+}
 ```
 
 ---
 
-Se um anexo for uma imagem, áudio ou vídeo, o serviço do Connector comunicará os dados do anexo ao canal de modo a permitir que o [canal](~/v4sdk/bot-builder-channeldata.md) renderize esse anexo na conversa. Se o anexo for um arquivo, a URL do arquivo será renderizada como um hiperlink na conversa.
+Se um anexo for uma imagem, áudio ou vídeo, o serviço do Connector comunicará os dados do anexo ao canal de modo a permitir que o [canal](bot-builder-channeldata.md) renderize esse anexo na conversa. Se o anexo for um arquivo, a URL do arquivo será renderizada como um hiperlink na conversa.
 
 ## <a name="send-a-hero-card"></a>Enviar um cartão hero
 
@@ -100,56 +84,57 @@ Além de anexos de vídeo ou imagem simples, é possível anexar um **cartão he
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-Para redigir uma mensagem com um cartão hero e um botão, você pode anexar um `HeroCard` a uma mensagem:
+Para redigir uma mensagem com um cartão hero e um botão, anexe um `HeroCard` a uma mensagem. O código-fonte mostrado aqui se baseia no exemplo [Tratamento de Anexos](https://aka.ms/bot-attachments-sample-code). 
 
 ```csharp
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Core.Extensions;
 using Microsoft.Bot.Schema;
 
-// Create the activity and attach a Hero card.
-var activity = MessageFactory.Attachment(
-    new HeroCard(
-        title: "White T-Shirt",
-        images: new CardImage[] { new CardImage(url: "imageUrl.png") },
-        buttons: new CardAction[]
-        {
-            new CardAction(title: "buy", type: ActionTypes.ImBack, value: "buy")
-        })
-    .ToAttachment());
+var reply = turnContext.Activity.CreateReply();
 
-// Send the activity as a reply to the user.
-await context.SendActivity(activity);
+// Create a HeroCard with options for the user to choose to interact with the bot.
+var card = new HeroCard
+{
+    Text = "You can upload an image or select one of the following choices",
+    Buttons = new List<CardAction>()
+    {
+        new CardAction(ActionTypes.ImBack, title: "1. Inline Attachment", value: "1"),
+        new CardAction(ActionTypes.ImBack, title: "2. Internet Attachment", value: "2"),
+        new CardAction(ActionTypes.ImBack, title: "3. Uploaded Attachment", value: "3"),
+    },
+};
+
+// Add the card to our reply.
+reply.Attachments = new List<Attachment>() { card.ToAttachment() };
+
+await turnContext.SendActivityAsync(reply, cancellationToken);
 ```
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-Para enviar ao usuário um cartão e um botão, você pode anexar um `heroCard` à mensagem:
+Para redigir uma mensagem com um cartão hero e um botão, anexe um `HeroCard` a uma mensagem. O código-fonte mostrado aqui se baseia no exemplo [Tratamento de Anexos JS](https://aka.ms/bot-attachments-sample-code-js):
 
 ```javascript
-// require MessageFactory and CardFactory from botbuilder.
-const {MessageFactory} = require('botbuilder');
-const {CardFactory} = require('botbuilder');
+const { ActionTypes, ActivityTypes, CardFactory } = require('botbuilder');
+// build buttons to display.
+const buttons = [
+            { type: ActionTypes.ImBack, title: '1. Inline Attachment', value: '1' },
+            { type: ActionTypes.ImBack, title: '2. Internet Attachment', value: '2' },
+            { type: ActionTypes.ImBack, title: '3. Uploaded Attachment', value: '3' }
+];
 
-const message = MessageFactory.attachment(
-     CardFactory.heroCard(
-        'White T-Shirt',
-        ['https://example.com/whiteShirt.jpg'],
-        ['buy']
-    )
- );
+// construct hero card.
+const card = CardFactory.heroCard('', undefined,
+buttons, { text: 'You can upload an image or select one of the following choices.' });
 
-await context.sendActivity(message);
+// add card to Activity.
+reply.attachments = [card];
+
+// Send hero card to the user.
+await turnContext.sendActivity(reply);
 ```
-
 ---
-
-<!--Lifted from the RESP API documentation-->
-
-Um cartão avançado é formado por um título, descrição, link e imagens. Uma mensagem pode conter vários cartões avançados, exibidos em formato de carrossel ou de lista. O SDK do Bot Builder atualmente dá suporte a uma ampla gama de cartões avançados. Para ver uma listagem dos cartões avançados e canais em que eles têm suporte, consulte [Elementos UX de Design](../bot-service-design-user-experience.md).
-
-> [!TIP]
-> Para determinar o tipo dos cartões avançados que um canal dá suporte e ver como o canal renderiza cartões avançados, consulte o [Inspetor de Canal](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-channel-inspector?view=azure-bot-service-4.0). Consulte a documentação do canal para obter informações sobre limitações do conteúdo dos cartões (por exemplo, o número máximo de botões ou o comprimento máximo do título).
 
 ## <a name="process-events-within-rich-cards"></a>Processar eventos em cartões avançados
 
@@ -180,30 +165,24 @@ using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Core.Extensions;
 using Microsoft.Bot.Schema;
 
-// Create the activity and attach a Hero card.
-var activity = MessageFactory.Attachment(
-    new HeroCard(
-        title: "Holler Back Buttons",
-        images: new CardImage[] { new CardImage(url: "imageUrl.png") },
-        buttons: new CardAction[]
-        {
-            new CardAction(title: "Shout Out Loud", type: ActionTypes.imBack, value: "You can ALL hear me!"),
-            new CardAction(title: "Much Quieter", type: ActionTypes.postBack, value: "Shh! My Bot friend hears me."),
-            new CardAction(title: "Show me how to Holler", type: ActionTypes.openURL, value: $"https://en.wikipedia.org/wiki/{cardContent.Key}")
-        })
-    .ToAttachment());
+var reply = turnContext.Activity.CreateReply();
 
-// Send the activity as a reply to the user.
-await context.SendActivity(activity);
+var card = new HeroCard
+{
+    Buttons = new List<CardAction>()
+    {
+        new CardAction(title: "Much Quieter", type: ActionTypes.PostBack, value: "Shh! My Bot friend hears me."),
+        new CardAction(ActionTypes.OpenUrl, title: "Azure Bot Service", value: "https://azure.microsoft.com/en-us/services/bot-service/"),
+    },
+};
+
 ```
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const {ActionTypes} = require("botbuilder");
-```
 
-```javascript
 const hero = MessageFactory.attachment(
     CardFactory.heroCard(
         'Holler Back Buttons',
@@ -241,12 +220,15 @@ Em segundo lugar, o Cartão Adaptável entrega as mensagens no formato de cartã
 
 Para localizar as informações mais recentes sobre o suporte de canal do cartão adaptável, consulte o <a href="http://adaptivecards.io/visualizer/">Visualizador de cartões adaptáveis</a>.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
-Para usar os cartões adaptáveis, certifique-se de adicionar o pacote NuGet `Microsoft.AdaptiveCards`.
+Para usar os cartões adaptáveis, certifique-se de adicionar o pacote NuGet `Microsoft.AdaptiveCards`. 
 
 
 > [!NOTE]
 > Você deve testar esse recurso com os canais de que bot será usado para determinar se esses canais dão suporte a cartões adaptáveis.
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
+O código-fonte mostrado aqui se baseia no exemplo [Usar Cartões Adaptáveis](https://aka.ms/bot-adaptive-cards-sample-code):
 
 ```csharp
 using AdaptiveCards;
@@ -254,164 +236,56 @@ using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Core.Extensions;
 using Microsoft.Bot.Schema;
 
-// Create the activity and attach an Adaptive Card.
-var card = new AdaptiveCard();
-card.Body.Add(new TextBlock()
+// Creates an attachment that contains an adaptive card
+// filePath is the path to JSON file
+private static Attachment CreateAdaptiveCardAttachment(string filePath)
 {
-    Text = "<title>",
-    Size = TextSize.Large,
-    Wrap = true,
-    Weight = TextWeight.Bolder
-});
-card.Body.Add(new TextBlock() { Text = "<message text>", Wrap = true });
-card.Body.Add(new TextInput()
-{
-    Id = "Title",
-    Value = string.Empty,
-    Style = TextInputStyle.Text,
-    Placeholder = "Title",
-    IsRequired = true,
-    MaxLength = 50
-});
-card.Actions.Add(new SubmitAction() { Title = "Submit", DataJson = "{ Action:'Submit' }" });
-card.Actions.Add(new SubmitAction() { Title = "Cancel", DataJson = "{ Action:'Cancel'}" });
+    var adaptiveCardJson = File.ReadAllText(filePath);
+    var adaptiveCardAttachment = new Attachment()
+    {
+        ContentType = "application/vnd.microsoft.card.adaptive",
+        Content = JsonConvert.DeserializeObject(adaptiveCardJson),
+    };
+    return adaptiveCardAttachment;
+}
 
-var activity = MessageFactory.Attachment(new Attachment(AdaptiveCard.ContentType, content: card));
+// Create adaptive card and attach it to the message 
+var cardAttachment = CreateAdaptiveCardAttachment(adaptiveCardJsonFilePath);
+var reply = turnContext.Activity.CreateReply();
+reply.Attachments = new List<Attachment>() { cardAttachment };
 
-// Send the activity as a reply to the user.
-await context.SendActivity(activity);
+await turnContext.SendActivityAsync(reply, cancellationToken);
 ```
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
+O código-fonte mostrado aqui se baseia no exemplo [Usar Cartões Adaptáveis JS](https://aka.ms/bot-adaptive-cards-js-sample-code):
+
 ```javascript
-const {CardFactory} = require("botbuilder");
+const { BotFrameworkAdapter } = require('botbuilder');
 
-const message = CardFactory.adaptiveCard({
-    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-    "version": "1.0",
-    "type": "AdaptiveCard",
-    "speak": "Your flight is confirmed for you from San Francisco to Amsterdam on Friday, October 10 8:30 AM",
-    "body": [
-        {
-            "type": "TextBlock",
-            "text": "Passenger",
-            "weight": "bolder",
-            "isSubtle": false
-        },
-        {
-            "type": "TextBlock",
-            "text": "Sarah Hum",
-            "separator": true
-        },
-        {
-            "type": "TextBlock",
-            "text": "1 Stop",
-            "weight": "bolder",
-            "spacing": "medium"
-        },
-        {
-            "type": "TextBlock",
-            "text": "Fri, October 10 8:30 AM",
-            "weight": "bolder",
-            "spacing": "none"
-        },
-        {
-            "type": "ColumnSet",
-            "separator": true,
-            "columns": [
-                {
-                    "type": "Column",
-                    "width": 1,
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": "San Francisco",
-                            "isSubtle": true
-                        },
-                        {
-                            "type": "TextBlock",
-                            "size": "extraLarge",
-                            "color": "accent",
-                            "text": "SFO",
-                            "spacing": "none"
-                        }
-                    ]
-                },
-                {
-                    "type": "Column",
-                    "width": "auto",
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": " "
-                        },
-                        {
-                            "type": "Image",
-                            "url": "http://messagecardplayground.azurewebsites.net/assets/airplane.png",
-                            "size": "small",
-                            "spacing": "none"
-                        }
-                    ]
-                },
-                {
-                    "type": "Column",
-                    "width": 1,
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "horizontalAlignment": "right",
-                            "text": "Amsterdam",
-                            "isSubtle": true
-                        },
-                        {
-                            "type": "TextBlock",
-                            "horizontalAlignment": "right",
-                            "size": "extraLarge",
-                            "color": "accent",
-                            "text": "AMS",
-                            "spacing": "none"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "ColumnSet",
-            "spacing": "medium",
-            "columns": [
-                {
-                    "type": "Column",
-                    "width": "1",
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": "Total",
-                            "size": "medium",
-                            "isSubtle": true
-                        }
-                    ]
-                },
-                {
-                    "type": "Column",
-                    "width": 1,
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "horizontalAlignment": "right",
-                            "text": "$1,032.54",
-                            "size": "medium",
-                            "weight": "bolder"
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
+// Import AdaptiveCard content.
+const FlightItineraryCard = require('./resources/FlightItineraryCard.json');
+const ImageGalleryCard = require('./resources/ImageGalleryCard.json');
+const LargeWeatherCard = require('./resources/LargeWeatherCard.json');
+const RestaurantCard = require('./resources/RestaurantCard.json');
+const SolitaireCard = require('./resources/SolitaireCard.json');
+
+// Create array of AdaptiveCard content, this will be used to send a random card to the user.
+const CARDS = [
+    FlightItineraryCard,
+    ImageGalleryCard,
+    LargeWeatherCard,
+    RestaurantCard,
+    SolitaireCard
+];
+// Select a random card to send.
+const randomlySelectedCard = CARDS[Math.floor((Math.random() * CARDS.length - 1) + 1)];
+// Send adaptive card.
+await context.sendActivity({
+      text: 'Here is an Adaptive Card:',
+       attachments: [CardFactory.adaptiveCard(randomlySelectedCard)]
 });
-
-// send adaptive card as attachment 
-await context.sendActivity({ attachments: [message] })
 ```
 
 ---
@@ -480,7 +354,4 @@ await context.sendActivity(messageWithCarouselOfCards);
 ---
 
 ## <a name="additional-resources"></a>Recursos adicionais
-
-[Visualizar recursos com o Inspetor de Canal](../bot-service-channel-inspector.md)
-
----
+Um exemplo de código pode ser encontrado aqui para cartões: [C#](https://aka.ms/bot-cards-sample-code)/[JS](https://aka.ms/bot-cards-js-sample-code) cartões adaptáveis: [C#](https://aka.ms/bot-adaptive-cards-sample-code)/[JS](https://aka.ms/bot-adaptive-cards-js-sample-code), anexos: [C#](https://aka.ms/bot-attachments-sample-code)/[JS](https://aka.ms/bot-attachments-sample-code-js) e ações sugeridas: [C#](https://aka.ms/SuggestedActionsCSharp)/[JS](https://aka.ms/SuggestedActionsJS). Consulte o repositório Exemplos do Bot Builder no [GitHub](https://github.com/Microsoft/BotBuilder-Samples) para obter exemplos adicionais.

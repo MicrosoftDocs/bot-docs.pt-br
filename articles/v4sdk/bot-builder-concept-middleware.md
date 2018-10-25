@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 05/24/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 38f1bced73251eea11be86a76963aeaf1ec0f718
-ms.sourcegitcommit: 3cb288cf2f09eaede317e1bc8d6255becf1aec61
+ms.openlocfilehash: 20f5387e7c1ea40e6b9848a1071e542dcd1cacaa
+ms.sourcegitcommit: aef7d80ceb9c3ec1cfb40131709a714c42960965
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47389695"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49383161"
 ---
 # <a name="middleware"></a>Middleware
 
@@ -24,7 +24,7 @@ O middleware é simplesmente uma classe que fica entre o adaptador e sua lógica
 
 O adaptador processa e direciona atividades de entrada através do pipeline de middleware de bot para a lógica do seu bot e, em seguida, recua novamente. O adaptador processa e direciona atividades de entrada através do pipeline de middleware de bot para a lógica do seu bot e, em seguida, recua novamente.
 
-Antes de entrar no middleware, é importante entender [os bots em geral](~/v4sdk/bot-builder-basics.md) e [como eles processam as atividades](~/v4sdk/bot-builder-concept-activity-processing.md).
+Antes de entrar no middleware, é importante entender [os bots em geral](~/v4sdk/bot-builder-basics.md) e [como eles processam as atividades](~/v4sdk/bot-builder-basics.md#the-activity-processing-stack).
 
 ## <a name="uses-for-middleware"></a>Usos para middleware
 A pergunta geralmente surge: "Quando devo implementar ações como middleware em vez de usar minha lógica normal de bot?" O middleware oferece outras oportunidades para interagir com o fluxo da conversa dos seus usuários antes e depois que cada _tuno_ da conversa é processado. O middleware também permite armazenar e recuperar as informações relacionadas à lógica de processamento adicional de conversas e chamadas quando necessário. Abaixo estão alguns cenários comuns que mostram onde o middleware pode ser útil.
@@ -33,9 +33,9 @@ A pergunta geralmente surge: "Quando devo implementar ações como middleware em
 Existem muitas situações que exigem que seu bot faça algo em cada atividade, ou para cada atividade de um certo tipo. Por exemplo, você pode querer registrar cada atividade de mensagem que nosso bot recebe, ou fornecer uma resposta de fallback se o bot não gerou uma resposta neste turno. O middleware é um ótimo lugar para isso, com sua capacidade de agir antes e depois do resto da lógica do bot ser executada.
 
 ### <a name="modifying-or-enhancing-the-turn-context"></a>Modificando ou aprimorando o contexto de turno
-Certas conversas podem ser muito mais proveitosas se o bot tiver mais informações do que as fornecidas na atividade. O middleware neste caso poderia examinar as informações de estado da conversa até o momento, consultar uma fonte de dados externa e anexá-las ao objeto de [contexto de turno](bot-builder-concept-activity-processing.md#turn-context) antes de passar a execução para a lógica do bot. 
+Certas conversas podem ser muito mais proveitosas se o bot tiver mais informações do que as fornecidas na atividade. O middleware neste caso poderia examinar as informações de estado da conversa até o momento, consultar uma fonte de dados externa e anexá-las ao objeto de [contexto de turno](~/v4sdk/bot-builder-basics.md#defining-a-turn) antes de passar a execução para a lógica do bot. 
 
-O SDK define o middleware de registros de log que pode registrar as atividades de entrada e saída, mas você pode definir seu próprio middleware.
+O SDK define o middleware de registros de log que pode registrar as atividades de entrada e saída, mas você também pode definir seu próprio middleware.
 
 ## <a name="the-bot-middleware-pipeline"></a>O pipeline de middleware de bot
 Para cada atividade, o adaptador chama o middleware na ordem na qual você o adicionou. O adaptador passa o objeto de contexto para o turno e uma _próxima_ delegado e o middleware chama o delegado para transmitir o controle para o próximo middleware no pipeline. Middleware também tem a oportunidade de fazer coisas após o _próxima_ delegado retorna antes de concluir o método. Você pode pensar nisso como cada objeto de middleware tem a primeira e última chance de agir em relação aos objetos de middleware que o seguem no pipeline.
@@ -65,7 +65,7 @@ As primeiras coisas em seu pipeline de middleware devem ser aquelas que cuidam d
 As últimas coisas em seu pipeline de middleware devem ser middleware específico de bot, que é o middleware que você implementa para fazer algum processamento em cada mensagem enviada ao seu bot. Se seu middleware usa informações de estado ou outras informações definidas no contexto do bot, inclua-as no pipeline do middleware após o middleware que modifica o estado ou o contexto.
 
 ## <a name="short-circuiting"></a>Curto-circuito
-Uma ideia importante em torno de middleware (e [manipuladores de respostas](./bot-builder-concept-activity-processing.md#response-event-handlers)) é _curto-circuito_. Se a execução deve continuar através das camadas que o seguem, o middleware (ou um manipulador de resposta) é necessário para passar a execução chamando o _próximo_ delegado.  Se o próximo delegado não é chamado dentro desse middleware (ou manipulador de resposta), o pipeline associado entra em curto-circuito e as camadas subsequentes não serão executadas. Isso significa que toda lógica de bot e qualquer middleware mais tarde no pipeline são ignorados. Há uma diferença sutil entre seu middleware e seu manipulador de resposta fazendo com que um turno entre em curto-circuito.
+Uma ideia importante em torno de middleware (e [manipuladores de respostas](bot-builder-basics.md#response-event-handlers)) é _curto-circuito_. Se a execução deve continuar através das camadas que o seguem, o middleware (ou um manipulador de resposta) é necessário para passar a execução chamando o _próximo_ delegado.  Se o próximo delegado não é chamado dentro desse middleware (ou manipulador de resposta), o pipeline associado entra em curto-circuito e as camadas subsequentes não serão executadas. Isso significa que toda lógica de bot e qualquer middleware mais tarde no pipeline são ignorados. Há uma diferença sutil entre seu middleware e seu manipulador de resposta fazendo com que um turno entre em curto-circuito.
 
 Quando um middleware fizer com que um turno entre em curto-circuito, o manipulador de turno do bot não será chamado, mas todo o código de middleware executado antes desse ponto no pipeline ainda será executado até a conclusão. 
 

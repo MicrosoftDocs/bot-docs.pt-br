@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 09/18/18
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 44ec9274e2edcb05a069d353ee5caffec66bb3ca
-ms.sourcegitcommit: 3cb288cf2f09eaede317e1bc8d6255becf1aec61
+ms.openlocfilehash: 21f864ba6f5beba5205e860f4a56697997048dfb
+ms.sourcegitcommit: 6c2426c43cd2212bdea1ecbbf8ed245145b3c30d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47389745"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48852291"
 ---
 # <a name="manage-conversation-and-user-state"></a>Gerenciar conversa e estado do usuário
 
@@ -62,6 +62,8 @@ A classe `EchoBotAccessors` do exemplo é criada como um singleton e passada par
 
 Atualizamos o construtor para incluir `UserState` conforme mostrado abaixo:
 ```csharp
+using EchoBotWithCounter;
+
 public EchoBotAccessors(ConversationState conversationState, UserState userState)
 {
     ConversationState = conversationState ?? throw new ArgumentNullException(nameof(conversationState));
@@ -84,7 +86,7 @@ As propriedades para obter o ConversationState já estão definidas. Porém, ser
 public ConversationState ConversationState { get; }
 public UserState UserState { get; }
 ```
-Depois de fazer as alterações, salve o arquivo. Em seguida, atualizaremos a classe Startup para criar o objeto `UserState` para manter tudo no escopo do usuário. O `ConversationState` já existe. 
+Depois de fazer as alterações, salve o arquivo. Em seguida, atualizaremos a classe Startup para criar o objeto `UserState` para manter tudo no escopo do usuário. O arquivo `ConversationState` já existe. 
 ```csharp
 
 services.AddBot<EchoWithCounterBot>(options =>
@@ -135,6 +137,8 @@ A conversa e o estado do usuário são vinculados a um singleton pelo bloco de c
 No manipulador `OnTurnAsync` da classe `EchoWithCounterBot : IBot`, modifique o código para solicitar o nome do usuário e, em seguida, o número de telefone. Para controlar o ponto onde estamos na conversa, usamos a propriedade Prompt definida no TopicState. Essa propriedade é inicializada para "askName". Após obtermos o nome de usuário, podemos defini-lo como "askNumber" e definir o nome de usuário como o nome de usuário digitado. Após receber o número de telefone, envie uma mensagem de confirmação e defina o prompt como 'confirmation' já que você está no fim da conversa.
 
 ```csharp
+using EchoBotWithCounter;
+
 if (turnContext.Activity.Type == ActivityTypes.Message)
 {
     // Get the conversation state from the turn context.
@@ -181,8 +185,9 @@ if (turnContext.Activity.Type == ActivityTypes.Message)
 
         await turnContext.SendActivityAsync($"Got it, {user.UserName}. I'll call you later.");
 
-        // initialize prompt
-        convo.Prompt = ""; // End of conversation
+        // reset initial prompt state
+        convo.Prompt = "askName"; // Reset for a new conversation.
+        
         await _accessors.TopicState.SetAsync(turnContext, convo);
         await _accessors.ConversationState.SaveChangesAsync(turnContext);
     }
@@ -212,15 +217,18 @@ Em seguida, crie o `UserState` usando `MemoryStorage` como o provedor de armazen
 // Create conversation state with in-memory storage provider. 
 const conversationState = new ConversationState(memoryStorage);
 const userState = new UserState(memoryStorage);
-// Create the main dialog.
-const mainDlg = new MainDialog(conversationState, userState);
+// Create the main bot.
+const bot = new EchBot(conversationState, userState);
 ```
 
-No arquivo `dialogs/mainDialog/index.js`, atualize o construtor para aceitar o `userState` como o segundo argumento. Em seguida, crie uma propriedade `topicStates` no `conversationState` e crie uma propriedade `userProfile` no `userState`.
+No arquivo `bot.js`, atualize o construtor para aceitar o `userState` como o segundo argumento. Em seguida, crie uma propriedade `topicState` no `conversationState` e crie uma propriedade `userProfile` no `userState`.
 
-**dialogs/mainDialog/index.js**
+**bot.js**
 
 ```javascript
+const TOPIC_STATE = 'topic';
+const USER_PROFILE = 'user';
+
 constructor (conversationState, userState) {
     // creates a new state accessor property.see https://aka.ms/about-bot-state-accessors to learn more about the bot state and state accessors 
     this.conversationState = conversationState;
@@ -240,63 +248,63 @@ No manipulador `onTurn` da classe `MainDialog`, modifique o código para solicit
 
 ```javascript
 // see https://aka.ms/about-bot-activity-message to learn more about the message and other activity types
-if (context.activity.type === 'message') {
+if (turnContext.activity.type === 'message') {
     // read from state and set default object if object does not exist in storage.
-    let topicState = await this.topicState.get(context, {
+    let topicState = await this.topicState.get(turnContext, {
         //Define the topic state object
         prompt: "askName"
     });
-    let userProfile = await this.userProfile.get(context, {  
+    let userProfile = await this.userProfile.get(turnContext, {  
         // Define the user's profile object
-        "userName": undefined,
-        "telephoneNumber": undefined
+        "userName": "",
+        "telephoneNumber": ""
     });
 
     if(topicState.prompt == "askName"){
-        await context.sendActivity("What is your name?");
+        await turnContext.sendActivity("What is your name?");
 
         // Set next prompt state
         topicState.prompt = "askNumber";
 
         // Update state
-        await this.topicState.set(context, topicState);
+        await this.topicState.set(turnContext, topicState);
     }
     else if(topicState.prompt == "askNumber"){
         // Set the UserName that is defined in the UserProfile class
-        userProfile.userName = context.activity.text;
+        userProfile.userName = turnContext.activity.text;
 
         // Use the user name to prompt the user for phone number
-        await context.sendActivity(`Hello, ${userProfile.userName}. What's your telephone number?`);
+        await turnContext.sendActivity(`Hello, ${userProfile.userName}. What's your telephone number?`);
 
         // Set next prompt state
         topicState.prompt = "confirmation";
 
         // Update states
-        await this.topicState.set(context, topicState);
-        await this.userProfile.set(context, userProfile);
+        await this.topicState.set(turnContext, topicState);
+        await this.userProfile.set(turnContext, userProfile);
     }
     else if(topicState.prompt == "confirmation"){
         // Set the phone number
-        userProfile.telephoneNumber = context.activity.text;
+        userProfile.telephoneNumber = turnContext.activity.text;
 
         // Sent confirmation
-        await context.sendActivity(`Got it, ${userProfile.userName}. I'll call you later.`)
+        await turnContext.sendActivity(`Got it, ${userProfile.userName}. I'll call you later.`)
 
-        // Set next prompt state
-        topicState.prompt = undefined; // End of conversation
+        // reset initial prompt state
+        topicState.prompt = "askName"; // Reset for a new conversation
 
         // Update states
-        await this.topicState.set(context, topicState);
-        await this.userProfile.set(context, userProfile);
+        await this.topicState.set(turnContext, topicState);
+        await this.userProfile.set(turnContext, userProfile);
     }
     
     // Save state changes to storage
-    await this.conversationState.saveChanges(context);
-    await this.userState.saveChanges(context);
+    await this.conversationState.saveChanges(turnContext);
+    await this.userState.saveChanges(turnContext);
     
 }
 else {
-    await context.sendActivity(`[${context.activity.type} event detected]`);
+    await turnContext.sendActivity(`[${context.activity.type} event detected]`);
 }
 ```
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 4e0bde9d05ed49f6674b2d721e07235b26c5cea4
-ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
+ms.openlocfilehash: feefa25d0c85c3aa62705b075253372f12e9146e
+ms.sourcegitcommit: b8bd66fa955217cc00b6650f5d591b2b73c3254b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39574742"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49326373"
 ---
 # <a name="enterprise-productivity-bot-scenario"></a>Cenário de bot de Produtividade Empresarial
 
@@ -50,13 +50,13 @@ O bot de Produtividade Empresarial usa os componentes a seguir:
 O Active Directory do Azure (AD do Azure) é o serviço de gerenciamento de identidade e diretório multilocatário com base em nuvem da Microsoft. Como um desenvolvedor de Bot, o Azure AD permite que você concentre-se na criação do Bot, tornando-o rápido e simplificando a integração com uma solução de gerenciamento de identidades da mais alta qualidade utilizada por milhões de organizações em todo o mundo. Ao definir um aplicativo do Azure AD, será possível controlar quem terá acesso ao Bot e aos dados expostos, sem implementar seu próprio sistema complexo de autenticação e autorização.
 
 ### <a name="graph-api-to-office-365"></a>API do Graph para Office 365
-O Microsoft Graph expõe várias APIs do Office 365 e de outros serviços em nuvem da Microsoft por meio de um ponto de extremidade único https://graph.microsoft.com. O Microsoft Graph torna a execução de consultas mais fácil a você e ao bot. A API expõe dados de vários serviços em nuvem da Microsoft, incluindo Exchange Online como parte do Office 365, Azure Active Directory, SharePoint, e muito mais. É possível usar a API para navegar entre entidades e relacionamentos. É possível usar a API dos Bots utilizando os pontos de extremidade de REST ou SDK, bem como de outros aplicativos com suporte nativo Android, iOS, Ruby, UWP, Xamarin e mais.
+O Microsoft Graph expõe várias APIs do Office 365 e de outros serviços em nuvem da Microsoft por meio de um ponto de extremidade único https://graph.microsoft.com. O Microsoft Graph facilita a execução de consultas para você e seu bot. A API expõe dados de vários serviços em nuvem da Microsoft, incluindo Exchange Online como parte do Office 365, Azure Active Directory, SharePoint, e muito mais. É possível usar a API para navegar entre entidades e relacionamentos. É possível usar a API dos Bots utilizando os pontos de extremidade de REST ou SDK, bem como de outros aplicativos com suporte nativo Android, iOS, Ruby, UWP, Xamarin e mais.
 
 ### <a name="dynamics-crm"></a>Dynamics CRM
 O Dynamics CRM é uma plataforma de participação do cliente. Usando APIs do CRM e Bots, é possível compilar Bots interativos avançados que podem acessar os dados avançados armazenados no CRM. A potência do Dynamics CRM está disponível para o Bot criar casos, verificar o status, executar pesquisas de gerenciamento do conhecimento, e muito mais.
 
 ### <a name="application-insights"></a>Application Insights
-O Application Insights ajuda a obter insights acionáveis por meio de APM (Gerenciamento de Desempenho de Aplicativos) e análise instantânea. Pronto para uso, é possível obter monitoramento de desempenho avançado, alertas eficientes e painéis fáceis de usar para ajudar a garantir que o Bot esteja disponível e executando conforme o esperado. É possível verificar rapidamente se há um problema e, em seguida, realizar uma análise de causa raiz para localizar e corrigir o problema.
+O Application Insights ajuda a obter insights práticos pelo APM (gerenciamento de desempenho de aplicativo) e por análises instantâneas. Pronto para uso, é possível obter monitoramento de desempenho avançado, alertas eficientes e painéis fáceis de usar para ajudar a garantir que o Bot esteja disponível e executando conforme o esperado. Veja rapidamente se há algum problema e faça uma análise da causa raiz para encontrar e corrigi-lo.
 
 ## <a name="next-steps"></a>Próximas etapas
 Em seguida, saiba mais sobre o cenário de bot de informações.

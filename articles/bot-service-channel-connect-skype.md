@@ -7,25 +7,31 @@ ms.author: RobStand
 manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
-ms.date: 2/1/2018
-ms.openlocfilehash: 5dc4063125855113f813b8873b01df84c90e197e
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.date: 10/11/2018
+ms.openlocfilehash: 6fec83e7e37ba4759e8e305be8c98382f0bedeff
+ms.sourcegitcommit: 54ed5000c67a5b59e23b667547565dd96c7302f9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296815"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49315072"
 ---
 # <a name="connect-a-bot-to-skype"></a>Conectar um bot ao Skype
 
 O Skype mantém você conectado com os usuários por meio de mensagens instantâneas, telefone e videochamadas. Amplie essa funcionalidade criando bots que os usuários podem descobrir e interagir por meio da interface do Skype.
 
-Para adicionar o canal do Skype, abra o bot no [Portal do Azure](https://portal.azure.com/), clique na folha **Canais** e clique em **Skype**. Isso levará você para até a página de configurações **Configurar o Skype**. Preencha todas as informações necessárias sobre seu bot e clique em **Salvar** para conectar-se ao canal do Skype. Aceite os **Termos de Serviço**, e o canal do Skype será adicionado ao seu bot.
+Para adicionar o canal do Skype, abra o bot no [Portal do Azure](https://portal.azure.com/), clique na folha **Canais** e clique em **Skype**.
 
 ![Adicionar o canal do Skype](~/media/channels/skype-addchannel.png)
 
+Isso levará você para até a página de configurações **Configurar o Skype**.
+
+![Configurar o canal do Skype](~/media/channels/skype_configure.png)
+
+Você precisa definir as configurações no **Controle da Web**, **Mensagem**, **Chamando**, **Grupos** e **Publicar**. Vamos falar sobre cada um, individualmente.
+
 ## <a name="web-control"></a>Controle da Web
 
-Para inserir o bot em seu site, obtenha o código clicando no botão **Obter código de inserção** na seção **Controle da Web**.
+Para inserir o bot em seu site, clique no botão **Obter código de inserção** na seção **Controle da Web**. Isso direcionará você para a página do Skype para Desenvolvedores. Siga as instruções para obter o código de inserção.
 
 ## <a name="messaging"></a>Mensagens
 
@@ -44,6 +50,8 @@ Esta seção configura se o seu bot pode ser adicionado a um grupo, e como ele s
 Esta seção define as configurações de publicação do seu bot. Todos os campos com um * são campos obrigatórios.
 
 Os Bots na **Versão prévia** estão limitados a 100 contatos. Se você precisar de mais de 100 contatos, envie seu bot para revisão. **Enviar para Revisão** torna seu bot automaticamente pesquisável no Skype, se for aceito. Se a sua solicitação não puder ser aprovada, você receberá uma notificação sobre o que você precisa alterar para que ela seja aprovada.
+
+Após terminar a configuração, clique em **Salvar** e aceite os **Termos de serviço**. O canal do Skype foi adicionado ao seu bot.
 
 ## <a name="next-steps"></a>Próximas etapas
 

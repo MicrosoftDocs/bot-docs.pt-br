@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
-ms.openlocfilehash: 56fe0af4d34e6e0aa4bc420112c541a410aa1301
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: e2176d3eb5584a1d9a234d4ab94c69451f0db6ef
+ms.sourcegitcommit: 54ed5000c67a5b59e23b667547565dd96c7302f9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39296824"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49315222"
 ---
 # <a name="connect-a-bot-to-slack"></a>Conectar um bot ao Slack
 
@@ -21,7 +21,7 @@ Configure seu bot para se comunicar com as pessoas que usam o aplicativo de mens
 
 ## <a name="create-a-slack-application-for-your-bot"></a>Criar um aplicativo Slack para o seu bot
 
-Faça logon no Slack e [crie um aplicativo Slack](https://api.slack.com/applications/new).
+Faça logon no [Slack](https://slack.com/signin) e [crie um canal do aplicativo Slack](https://api.slack.com/apps).
 
 ![Configurar o bot](~/media/channels/slack-NewApp.png)
 
@@ -63,23 +63,23 @@ Clique em **Adicionar Usuário de Bot** para validar suas configurações, defin
 Execute estas etapas para assinar seis eventos de bot específicos. Ao assinar eventos de bot, seu aplicativo receberá uma notificação das atividades do usuário na URL que você especificar.
 
 > [!TIP]
-> Seu identificador de bot é uma propriedade do seu bot. Para localizar o identificador de um bot, visite [https://dev.botframework.com/bots](https://dev.botframework.com/bots), escolha um bot e clique em **CONFIGURAÇÕES**.
+> Seu identificador de bot é o nome do seu bot. Para localizar o identificador de um bot, visite [https://dev.botframework.com/bots](https://dev.botframework.com/bots), escolha um bot e registre o nome do bot.
 
 1. Selecione a guia **Assinaturas de Evento**.
 2. Defina **Habilitar Eventos** como **Ligado**.
-3. Na **URL da Solicitação**, insira esta URL, mas substitua `{YourBotHandle}` por seu identificador de bot.
+3. Na **URL da Solicitação**, insira esta URL, mas substitua `{YourBotHandle}` por seu identificador de bot. O identificador de bot usado neste tutorial é testChannels.
         `https://slack.botframework.com/api/Events/{YourBotHandle}`
-4. Em **Assinar Eventos de Bot**, clique em **Adicionar Evento de Usuário do Bot**.
-5. Na lista de eventos, clique em Adicionar **Evento de Usuário do Bot** e selecione os seis tipos de evento a seguir:
+4. Em **Assinar Eventos do Workplace**, clique em **Adicionar Evento do Workplace**.
+5. Na lista de eventos, selecione esses seis tipos de evento:
     * `member_joined_channel`
     * `member_left_channel`
     * `message.channels`
     * `message.groups`
     * `message.im`
     * `message.mpim`
-6. Clique em **Salvar Alterações**.
 
-![Assinar eventos](~/media/channels/slack-EnableEvents.png)
+![Assinar eventos](~/media/channels/slack-SubscribeEvents.png)
+6. Clique em **Salvar Alterações**.
 
 ## <a name="add-and-configure-interactive-messages-optional"></a>Adicionar e configurar mensagens interativas (opcional)
 
@@ -87,7 +87,7 @@ Se o seu bot usar funcionalidades específicas do Slack, como botões, execute e
 
 1. Selecione a guia **Componentes Interativos** e clique em **Habilitar Componentes Interativos**.
 2. Insira `https://slack.botframework.com/api/Actions` como a **URL da Solicitação**.
-3. Clique no botão **Habilitar Mensagens Interativas** e, em seguida, clique no botão **Salvar alterações**.
+3. Clique no botão **Salvar alterações**.
 
 ![Habilitar mensagens](~/media/channels/slack-MessageURL.png)
 
@@ -103,7 +103,7 @@ A ID do Cliente, o Segredo do Cliente e o Token de Verificação, necessários p
 Em uma janela separada do navegador, volte para o site do Bot Framework em `https://dev.botframework.com/`.
 
 1. Selecione **Meus bots** e escolha o Bot que você deseja conectar ao Slack.
-2. Na seção **Adicionar um canal**, clique no ícone do Slack.
+2. Na seção **Canais**, clique no ícone do Slack.
 3. Na seção **Inserir suas credenciais do Slack**, cole as Credenciais de Aplicativo do site do Slack nos campos apropriados.
 4. A **URL da Página de Aterrissagem** é opcional. Você pode omitir ou alterá-la.
 5. Clique em **Salvar**.
@@ -124,7 +124,7 @@ Para usar este HTML com o bot, substitua o valor de href (começa com `https://`
 Execute estas etapas para obter a URL de substituição.
 
 1. Em [https://dev.botframework.com/bots](https://dev.botframework.com/bots), clique em seu bot.
-2. Clique em **CANAIS**, clique com o botão direito do mouse na entrada **Slack** e clique em **Copiar link**. Agora, essa URL está em sua área de transferência.
+2. Clique em **Canais**, clique com o botão direito na entrada **Slack** e clique em **Copiar link**. Agora, essa URL está em sua área de transferência.
 3. Copie essa URL da área de transferência e cole-a no HTML fornecido para o botão do Slack. Essa URL substitui o valor de href fornecido pelo Slack para este bot.
 
 Os usuários autorizados podem clicar no botão **Adicionar ao Slack** fornecido por esse HTML modificado para acessar seu bot no Slack.

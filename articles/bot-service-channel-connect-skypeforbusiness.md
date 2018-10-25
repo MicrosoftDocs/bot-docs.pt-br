@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/2017
-ms.openlocfilehash: 8210f08ce3a14b9abb2638ef8be4b8b418dd69f7
-ms.sourcegitcommit: f576981342fb3361216675815714e24281e20ddf
+ms.openlocfilehash: f67c7ba658923873470e9653b38cd63fd1068491
+ms.sourcegitcommit: 54ed5000c67a5b59e23b667547565dd96c7302f9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39297331"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49315112"
 ---
 # <a name="connect-a-bot-to-skype-for-business"></a>Conectar um bot ao Skype for Business
 
@@ -29,7 +29,7 @@ Abra o bot no [Portal do Azure](https://portal.azure.com/), clique na folha **Ca
 A conexão do bot com o Skype for Business Online é executada por um **Administrador de Locatários** do locatário do Skype for Business.
 
 ## <a name="next-steps"></a>Próximas etapas
-* [Conectar um bot com o Skype for Business](https://msdn.microsoft.com/en-us/skype/Skype-For-Business-Bot-Framework/docs/overview)
+* [Framework do Bot do Skype for Business](https://msdn.microsoft.com/en-us/skype/Skype-For-Business-Bot-Framework/docs/overview)
 
 
 

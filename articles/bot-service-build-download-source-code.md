@@ -2,84 +2,118 @@
 title: Baixar e reimplantar o código-fonte do bot | Microsoft Docs
 description: Saiba como baixar e publicar um Serviço de Bot.
 keywords: baixar código-fonte, reimplantar, implantar, arquivo zip, publicar
-author: v-ducvo
-ms.author: v-ducvo
+author: ivorb
+ms.author: v-ivorb
 manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
-ms.date: 03/08/2018
-ms.openlocfilehash: b77e096d28f51f605db9c49d36e796553f9293ef
-ms.sourcegitcommit: 1abc32353c20acd103e0383121db21b705e5eec3
+ms.date: 09/26/2018
+ms.openlocfilehash: ee7a7a9f1b4c06f8ad762f750099383e218d98f2
+ms.sourcegitcommit: b8bd66fa955217cc00b6650f5d591b2b73c3254b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42756546"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49326423"
 ---
-# <a name="download-and-redeploy-bot-source-code"></a>Baixar e reimplantar o código-fonte do bot
+# <a name="download-and-redeploy-bot-code"></a>Baixar e reimplantar o código do bot
+O Serviço de Bot do Azure permite que você baixe todo o projeto de origem para o seu bot, assim você pode trabalhar localmente usando seu IDE preferido. Após a atualização do código, publique suas alterações no portal do Azure. Mostraremos como fazer o download do código usando o portal do Azure e a cli `az`. Também falaremos sobre a reimplantação do código do bot atualizado usando o Visual Studio e a ferramenta de cli `az`. Escolha o modelo que funcione melhor para você.
 
-O Serviço de Bot permite que você baixe todo o projeto de código-fonte para o bot. Isso permite que você trabalhe em seu bot localmente usando um IDE de sua escolha. Após concluir as alterações, você pode publicar suas alterações de volta no Azure. 
+## <a name="prerequisites"></a>Pré-requisitos
+- Instalar a [CLI do Azure](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest)
+- Instalar a extensão az botservice usando o comando `az extension add -n botservice`
 
-Este tópico mostrará como baixar o código-fonte do seu bot e publicar as alterações de volta no Azure. 
+### <a name="download-code-using-the-azure-portal"></a>Baixar o código usando o portal do Azure
+Para baixar o código do [portal do Azure](https://portal.azure.com), faça o seguinte:
+1. Abra a folha do bot.
+1. Na seção **Gerenciamento do bot**, clique em **Compilar**.
+1. Em **Baixar o código-fonte**, clique em **Baixar arquivo zip**.
+1. Aguarde até que o Azure prepare seu URI de download e, em seguida, clique em **Baixar arquivo zip** na notificação.
+1. Salve e extraia o arquivo .zip em um diretório local.
 
-## <a name="download-bot-source-code"></a>Fazer download do código-fonte do bot
+Se você tiver um bot C#, atualize o arquivo `appsettings.json` para incluir informações sobre o arquivo .bot, conforme mostrado abaixo:
 
-Para desenvolver seu bot localmente, faça o seguinte:
+```
+{
+  "botFilePath": "yourbasicBot.bot",
+  "botFileSecret": "ukxxxxxxxxxxxs="
+}
+```
+O `botFilePath` faz referência ao nome de seu bot, basta substituir "yourbasicBot.bot" pelo nome do seu bot. Para obter a chave `botFileSecret`, consulte o artigo [Criptografia do arquivo do bot](https://aka.ms/bot-file-encryption) sobre como gerar uma chave para o seu bot.
 
-1. No Portal do Azure e abra a folha do bot.
-2. Na seção **GERENCIAMENTO DE BOT**, clique em **Compilar**.
-3. Clique em **Baixar arquivo zip**. 
 
-   ![Fazer download do código-fonte](~/media/azure-bot-build/download-zip-file.png)
-
-4. Extraia o arquivo .zip para um diretório local.
-5. Navegue até a pasta extraída e abra os arquivos de código-fonte em seu IDE favorito.
-6. Faça alterações em seus arquivos de código-fonte. Edite os arquivos de código-fonte existentes ou adicione novos arquivos ao seu projeto.
-
-Quando estiver pronto, publique o código-fonte de volta no Azure.
-
-## <a name="publish-node-bot-source-code-to-azure"></a>Publicar o código-fonte de bot em Node no Azure
-
-Para instalar esses pacotes, navegue até o diretório do seu projeto em um prompt de comando e execute os seguintes comandos do NPM.
-
-**Observação:** esses pacotes só precisam ser adicionados uma vez.
-
-```console
-npm install --save fs
-npm install --save path
-npm install --save request
-npm install --save zip-folder
+Se você tiver um bot de node.js, adicione um arquivo `.env` com as seguintes entradas:
+```
+botFilePath=yourbasicBot.bot
+botFileSecret=ukxxxxxxxxxxxxs=
 ```
 
-Agora você está pronto para publicar seu projeto no Microsoft Azure. Para publicar seu projeto no Microsoft Azure, execute o seguinte comando NPM no prompt de comando:
+Em seguida, faça alterações às suas fontes editando arquivos de origem existentes ou adicionando novos ao seu projeto. Teste seu código usando o Emulador. Quando você estiver pronto para reimplantar o código modificado no portal do Azure, siga as instruções abaixo.
 
-```console
-npm run azure-publish
+### <a name="publish-code-using-visual-studio"></a>Publicar seu código usando o Visual Studio
+1. No Visual Studio, clique com o botão direito no nome do seu projeto e clique em **Publicar...**. A janela **Publicar** será aberta.
+
+![Publicação no Azure](~/media/azure-bot-build/azure-csharp-publish.png)
+
+2. Selecione o perfil do seu projeto.
+3. Copie a senha listada no arquivo _publish.cmd_ em seu projeto.
+4. Clique em **Publicar**.
+5. Após solicitação, insira a senha que você copiou na etapa 3.   
+
+Após a configuração do seu projeto, as alterações do projeto serão publicadas no Azure. 
+
+Em seguida, vamos ver como fazer download e reimplantar o código usando a cli `az`.
+
+### <a name="download-code-using-azure-cli"></a>Baixar o código usando a CLI do Azure
+
+Primeiro, faça logon portal do Azure usando a ferramenta az cli.
+
+```azcli
+az login
 ```
 
-> [!NOTE]
-> Se você encontrar um erro após esse comando NPM, talvez seja necessário adicionar `"scripts": {"azure-publish": "node publish.js"}` ao seu arquivo `package.json` e executá-lo novamente.
+Você será solicitado com um código de autenticação temporário exclusivo. Para entrar, use um navegador da web e visite o [logon do dispositivo](https://microsoft.com/devicelogin) da Microsoft, e cole o código fornecido pela CLI para continuar.
 
-## <a name="publish-c-bot-source-code-to-azure"></a>Publicar o código-fonte de bot em C# no Azure
+Para baixar o código usando a cli `az`, use o seguinte comando:
+```azcli
+az bot download --name "my-bot-name" --resource-group "my-resource-group"`
+```
+Após o download do código, faça o seguinte:
+- Para o bot em C#, atualize o arquivo appsettings.json para incluir informações sobre o arquivo .bot, conforme mostrado abaixo:
 
-A publicação de um código em C# no Azure usando o Visual Studio é um processo de duas etapas: primeiro, você precisará definir as configurações de publicação. Depois, publique suas alterações.
+```
+{
+  "botFilePath": "yourbasicBot.bot",
+  "botFileSecret": "ukxxxxxxxxxxxs="
+}
+```
 
-Para configurar a publicação no Visual Studio, faça o seguinte:
+- Para o bot node.js, adicione um arquivo .env com as seguintes entradas:
 
-1. No Visual Studio, clique em **Gerenciador de Soluções**.
-2. Clique com o botão direito do mouse no nome do seu projeto e clique em **Publicar...**. A janela **Publicar** será aberta.
-3. Clique em **Criar novo perfil**, clique em **Importar perfil** e clique em **OK**.
-4. Navegue até a pasta do seu projeto, depois até a pasta **PostDeployScripts** e selecione o arquivo que termina com **.PublishSettings**. Clique em **Abrir**.
+```
+botFilePath=yourbasicBot.bot
+botFileSecret=ukxxxxxxxxxxxxs=
+```
 
-Seu projeto está configurado para publicar as alterações no Azure.
+Em seguida, faça alterações às suas fontes editando arquivos de origem existentes ou adicionando novos ao seu projeto. Teste seu código usando o Emulador. Quando você estiver pronto para reimplantar o código modificado no portal do Azure, siga as instruções abaixo.
 
-Após a configuração do seu projeto, você poderá publicar o código-fonte do seu bot novamente no Azure fazendo o seguinte:
+### <a name="login-to-azure-cli-by-running-the-following-command"></a>Faça logon na CLI do Azure executando os seguintes comandos.
+Você pode ignorar esta etapa se já estiver conectado.
 
-1. No Visual Studio, clique em **Gerenciador de Soluções**.
-2. Clique com o botão direito do mouse no nome do seu projeto e clique em **Publicar...**.
-3. Clique no botão **Publicar** para publicar suas alterações no Azure.
+```azcli
+az login
+```
+Você será solicitado com um código de autenticação temporário exclusivo. Para entrar, use um navegador da web e visite o [logon do dispositivo](https://microsoft.com/devicelogin) da Microsoft, e cole o código fornecido pela CLI para continuar.
+
+### <a name="publish-code-using-azure-cli"></a>Publicar o código usando a CLI do Azure
+Para publicar o código de volta no Azure usando a cli `az`, use o seguinte comando:
+```azcli
+az bot publish --name "my-bot-name" --resource-group "my-resource-group" --code-dir <path to directory> 
+```
+
+Você pode usar a opção `code-dir` para indicar qual diretório usar. Se isso não for fornecido, o comando `az bot publish` usará o diretório local para publicar.
 
 ## <a name="next-steps"></a>Próximas etapas
-Agora que você sabe como compilar seu bot localmente, configure a implantação contínua para o bot.
+Agora que você sabe como fazer upload das alterações de volta no Azure, configure a implantação contínua para o bot.
 
 > [!div class="nextstepaction"]
 > [Configurar a implantação contínua](bot-service-build-continuous-deployment.md)

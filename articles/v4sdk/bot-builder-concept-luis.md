@@ -10,12 +10,12 @@ ms.prod: bot-framework
 ms.date: 09/19/2018
 ms.reviewer: ''
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: af79bb40e3d24557fd898fa0a0ca2ef7b0286af4
-ms.sourcegitcommit: 3bf3dbb1a440b3d83e58499c6a2ac116fe04b2f6
+ms.openlocfilehash: bef0d5f3220cd818767f4eead5c5f4a09d047c26
+ms.sourcegitcommit: aef7d80ceb9c3ec1cfb40131709a714c42960965
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/23/2018
-ms.locfileid: "46707542"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49383151"
 ---
 # <a name="language-understanding"></a>Reconhecimento Vocal
 
@@ -56,11 +56,11 @@ Os **domínios predefinidos** são coleções de intenções e entidades pré-tr
 
 ## <a name="how-your-bot-gets-messages-from-luis"></a>Como seu bot obtém as mensagens do LUIS
 
-Depois de ter configurado e conectado o LUIS, seu bot pode enviar a mensagem para o seu aplicativo LUIS, que retorna uma resposta JSON que contém as intenções e entidades. Em seguida, você pode usar o [contexto de turno](bot-builder-concept-activity-processing.md#turn-context) no _manipulador de turno_ do seu bot para rotear o fluxo da conversa com base na intenção na resposta de LUIS. 
+Depois de ter configurado e conectado o LUIS, seu bot pode enviar a mensagem para o seu aplicativo LUIS, que retorna uma resposta JSON que contém as intenções e entidades. Em seguida, você pode usar o [contexto de turno](~/v4sdk/bot-builder-basics.md#defining-a-turn) no _manipulador de turno_ do seu bot para rotear o fluxo da conversa com base na intenção na resposta de LUIS. 
 
 ![Como as intenções e entidades são passadas ao seu bot](./media/cognitive-services-add-bot-language/cognitive-services-luis-message-flow-bot-code.png)
 
-Para começar a usar um aplicativo LUIS com o seu bot, confira [usar LUIS para reconhecimento vocal][luis-v4-how-to].
+Para começar a usar um aplicativo LUIS com o seu bot, confira [Usar LUIS para reconhecimento vocal](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-howto-v4-luis?view=azure-bot-service-4.0).
 
 ## <a name="best-practices-for-language-understanding"></a>Práticas recomendadas para Reconhecimento Vocal
 
@@ -99,7 +99,7 @@ A ferramenta de expedição ajuda você a integrar vários aplicativos LUIS e se
 
 ## <a name="use-luis-to-improve-speech-recognition"></a>Use LUIS para melhorar o reconhecimento de fala
 
-Para um bot que irá se dirigir para os usuários, integrá-lo com o LUIS pode ajudar seu bot a identificar palavras que podem ser interpretados incorretamente durante a conversão de fala em texto.  Por exemplo, em um cenário de xadrez, um usuário pode dizer: "Move knight to A 7". Sem contexto para a intenção do usuário, a declaração poderia ser reconhecida como: "Move night 287". Ao criar entidades que representam as coordenadas e peças de xadrez e rotulá-las em declarações, você fornece contexto para o reconhecimento de fala identificá-las. Você pode [habilitar a desobstrução de reconhecimento de fala][speechrecognitionpriming] com canais de Bot Framework que são integrados com a Fala do Bing, como Web Chat, o emulador do Bot Framework e Cortana.  
+Para um bot que irá se dirigir para os usuários, integrá-lo com o LUIS pode ajudar seu bot a identificar palavras que podem ser interpretados incorretamente durante a conversão de fala em texto.  Por exemplo, em um cenário de xadrez, um usuário pode dizer: "Move knight to A 7". Sem contexto para a intenção do usuário, a declaração poderia ser reconhecida como: "Move night 287". Ao criar entidades que representam as coordenadas e peças de xadrez e rotulá-las em declarações, você fornece contexto para o reconhecimento de fala identificá-las. Você pode [habilitar a desobstrução de reconhecimento de fala](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-manage-speech-priming?view=azure-bot-service-4.0) com canais de Bot Framework que são integrados com a Fala do Bing, como Web Chat, o emulador do Bot Framework e Cortana.  
 
 ## <a name="additional-resources"></a>Recursos adicionais
 Consulte a documentação dos [Serviços Cognitivos](https://docs.microsoft.com/en-us/azure/cognitive-services/) para obter mais informações.

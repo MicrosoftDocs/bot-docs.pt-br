@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
 ms.date: 12/13/17
-ms.openlocfilehash: 5373b18ce5c11dae4e971cb1a70307ae2901ad36
-ms.sourcegitcommit: 3cb288cf2f09eaede317e1bc8d6255becf1aec61
+ms.openlocfilehash: 9e86ea0fb677105be920e031979980baf479e42f
+ms.sourcegitcommit: abde9e0468b722892f94caf2029fae165f96092f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47389655"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48875723"
 ---
 # <a name="troubleshooting-bot-framework-authentication"></a>Solucionar problemas de autenticação do Bot Framework
 
@@ -41,7 +41,9 @@ Nesta etapa, você verificará se seu bot fica acessível e funcional no localho
 
 Para desabilitar a segurança do bot, edite suas definições de configuração para remover os valores da ID e da senha do aplicativo. 
 
-Se você estiver usando o SDK do Construtor de Bot para .NET, defina estas configurações no arquivo Web.config:
+::: moniker range="azure-bot-service-3.0"
+
+Se você estiver usando o SDK do Bot Builder para .NET, edite estas configurações no arquivo Web.config: 
 
 ```xml
 <appSettings>
@@ -58,6 +60,32 @@ var connector = new builder.ChatConnector({
   appPassword: null
 });
 ```
+
+::: moniker-end
+
+::: moniker range="azure-bot-service-4.0"
+
+Se você estiver usando o SDK do Bot Builder para .NET, edite estas configurações no arquivo `appsettings.config`:
+
+```xml
+<appSettings>
+  <add key="MicrosoftAppId" value="" />
+  <add key="MicrosoftAppPassword" value="" />
+</appSettings>
+```
+
+Se você estiver usando o SDK do Construtor de Bot para Node.js, edite esses valores (ou atualize as variáveis de ambiente correspondentes):
+
+```javascript
+const adapter = new BotFrameworkAdapter({
+    appId: null,
+    appPassword: null
+});
+```
+
+Se estiver usando o arquivo `.bot` para configuração, atualize o `appId` e `appPassword` para `""`.
+
+::: moniker-end
 
 ### <a name="test-your-bot-on-localhost"></a>Testar o bot no localhost 
 
@@ -115,7 +143,7 @@ Neste ponto, você verificou que seu bot fica acessível e funcional no localhos
 
 A segurança do seu bot se baseia em serviços da Microsoft, mesmo quando seu bot é executado somente no localhost. Para habilitar a segurança do bot, edite as definições de configuração para preencher a ID e senha do aplicativo com os valores que você verificou na [Etapa 2](#step-2).
 
-Se estiver usando o SDK do Construtor de Bot para .NET, preencha essas configurações no arquivo Web.config:
+Se estiver usando o SDK do Bot Builder para .NET, preencha essas configurações em seu `.bot` no arquivo `appsettings.config`:
 
 ```xml
 <appSettings>

@@ -9,12 +9,12 @@ ms.topic: get-started-article
 ms.prod: bot-framework
 ms.date: 09/23/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 5f3a02783242697fccf267bef2d56ed453880c67
-ms.sourcegitcommit: 3bf3dbb1a440b3d83e58499c6a2ac116fe04b2f6
+ms.openlocfilehash: d299e4bdfd503475bf1ec560da2aff1d3a199e47
+ms.sourcegitcommit: b8bd66fa955217cc00b6650f5d591b2b73c3254b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/23/2018
-ms.locfileid: "46707972"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49326383"
 ---
 # <a name="create-a-bot-with-the-bot-builder-sdk-for-net"></a>Criar um bot com o SDK do construtor de Bot para .NET
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
@@ -35,7 +35,7 @@ No Visual Studio, crie um novo projeto de bot.
 ![Projeto do Visual Studio](../media/azure-bot-quickstarts/bot-builder-dotnet-project.png)
 
 > [!TIP] 
-> Se necessário, atualize os [pacotes do NuGet](https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio).
+> Se for necessário, altere o tipo de build do projeto para ``.Net Core 2.1`` e atualize [Pacotes do NuGet](https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio).
 
 Graças ao modelo, seu projeto contém todo o código necessário para criar o bot neste início rápido. Na verdade, você não precisa escrever nenhum código adicional.
 
@@ -53,7 +53,11 @@ Em seguida, inicie o emulador e, em seguida, conecte-se ao seu bot no emulador:
 ## <a name="interact-with-your-bot"></a>Interagir com o bot
 
 Envie uma mensagem para seu bot e o bot responderá com uma mensagem.
+
 ![Emulador em execução](../media/emulator-v4/emulator-running.png)
+
+> [!NOTE]
+> Se você perceber que a mensagem não pode ser enviada, talvez seja necessário reiniciar seu computador, pois o ngrok ainda não recebeu os privilégios necessários em seu sistema (só precisa ser feito uma vez).
 
 ## <a name="next-steps"></a>Próximas etapas
 

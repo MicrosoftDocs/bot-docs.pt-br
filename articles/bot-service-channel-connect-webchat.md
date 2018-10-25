@@ -7,32 +7,33 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.prod: bot-framework
-ms.date: 12/13/2017
-ms.openlocfilehash: b5a9d20c058fe425d727bf2e39597e7dd29ec077
-ms.sourcegitcommit: 3cb288cf2f09eaede317e1bc8d6255becf1aec61
+ms.date: 10/10/2018
+ms.openlocfilehash: 6e81b51243afc15714653aed7b9ca6513314071c
+ms.sourcegitcommit: 54ed5000c67a5b59e23b667547565dd96c7302f9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47389625"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49315152"
 ---
 # <a name="connect-a-bot-to-web-chat"></a>Conectar um bot ao Webchat
+
+[!INCLUDE rótulo de pré-lançamento]
+
 Quando você [cria um bot](bot-service-quickstart.md) com o Serviço de Bot, o canal de Webchat é configurado automaticamente para você. O canal de Webchat inclui o controle de Webchat, que fornece a capacidade de os usuários interagirem com o bot diretamente em uma página da Web.
 
-![Amostra de Webchat](~/media/bot-service-channel-webchat/webchat-sample.png)
+![Amostra de Webchat](./media/bot-service-channel-webchat/create-a-bot.png)
 
 O canal de Webchat no Portal do Bot Framework contém tudo o que você precisa para inserir o controle de Webchat em uma página da Web. Basta usar o controle de Webchat para inserir a chave secreta do bot e o controle em uma página da Web.
-
-[!INCLUDE [Channel Inspector intro](~/includes/snippet-channel-inspector.md)]
 
 ## <a id="step-1"></a> Obter a chave secreta do bot
 
 1. Abra o bot no [portal do Azure](http://portal.azure.com) e clique na folha **Canais**.
 
 2. Clique em **Editar** no canal de **Webchat**.  
-![Canal de Webchat](~/media/bot-service-channel-webchat/bot-service-channel-list.png)
+![Canal de Webchat](./media/bot-service-channel-webchat/bot-service-channel-list.png)
 
 3. Em **Chaves secretas**, clique em **Mostrar** para a primeira chave.  
-![chave secreta](~/media/bot-service-channel-webchat/secret-key.png)
+![chave secreta](./media/bot-service-channel-webchat/secret-key.png)
 
 4. Copie a **Chave secreta** e o **Código de inserção**.
 
@@ -127,8 +128,8 @@ Altere o tamanho do controle de Webchat usando o atributo `style` do `iframe` pa
 <iframe style="height:480px; width:402px" src="... SEE ABOVE ..."></iframe>
 ```
 
-![Cliente de controle de chat](~/media/chatwidget-client.png)
+![Cliente de controle de chat](./media/chatwidget-client.png)
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-[Baixe o código-fonte](https://github.com/Microsoft/BotFramework-WebChat) do controle de Webchat no GitHub.
+[Baixe o código-fonte](https://aka.ms/BotFramework-WebChat-V4) do controle de Webchat no GitHub.
