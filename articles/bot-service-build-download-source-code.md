@@ -6,14 +6,15 @@ author: ivorb
 ms.author: v-ivorb
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 09/26/2018
-ms.openlocfilehash: ee7a7a9f1b4c06f8ad762f750099383e218d98f2
-ms.sourcegitcommit: b8bd66fa955217cc00b6650f5d591b2b73c3254b
+ms.openlocfilehash: afb1c4a0e766df7ac2d122b3c7ca4e7959871dbb
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49326423"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49997273"
 ---
 # <a name="download-and-redeploy-bot-code"></a>Baixar e reimplantar o código do bot
 O Serviço de Bot do Azure permite que você baixe todo o projeto de origem para o seu bot, assim você pode trabalhar localmente usando seu IDE preferido. Após a atualização do código, publique suas alterações no portal do Azure. Mostraremos como fazer o download do código usando o portal do Azure e a cli `az`. Também falaremos sobre a reimplantação do código do bot atualizado usando o Visual Studio e a ferramenta de cli `az`. Escolha o modelo que funcione melhor para você.

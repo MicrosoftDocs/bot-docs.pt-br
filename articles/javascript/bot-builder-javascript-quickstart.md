@@ -6,15 +6,16 @@ author: jonathanfingold
 ms.author: jonathanfingold
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
-ms.date: 09/23/2018
+ms.service: bot-service
+ms.subservice: sdk
+ms.date: 10/15/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 3e721c9142ffb1511ef926f5b1caca782e0919ed
-ms.sourcegitcommit: 54ed5000c67a5b59e23b667547565dd96c7302f9
+ms.openlocfilehash: aa13889cea2a26bf094a919f5d05905d65f7661f
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49315082"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49998845"
 ---
 # <a name="create-a-bot-with-the-bot-builder-sdk-for-javascript"></a>Criar um bot com o SDK do Bot Builder para JavaScript
 
@@ -27,6 +28,7 @@ Este início rápido orienta você na criação de um bot usando o gerador Yeoma
 - [Visual Studio Code](https://www.visualstudio.com/downloads)
 - [Node.js](https://nodejs.org/)
 - [ Yeoman](http://yeoman.io/), que pode usar um gerador para criar um bot para você
+- [git](https://git-scm.com/)
 - [Emulador do bot Framework](https://github.com/Microsoft/BotFramework-Emulator)
 - Conhecimento de [restify](http://restify.com/) e programação assíncrona em JavaScript
 

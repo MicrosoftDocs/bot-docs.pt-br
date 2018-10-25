@@ -6,15 +6,16 @@ author: v-ducvo
 ms.author: v-ducvo
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 9/25/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 16ef274bc7e8301825e574c566a49d53f01115c1
-ms.sourcegitcommit: aef7d80ceb9c3ec1cfb40131709a714c42960965
+ms.openlocfilehash: bd1fe8516cddaf2b75d3c11b469e372265b59be3
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49383121"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49997623"
 ---
 # <a name="prompt-users-for-input-using-the-dialogs-library"></a>Solicitar informações dos usuários usando a biblioteca Diálogos
 

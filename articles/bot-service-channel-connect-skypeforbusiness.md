@@ -6,21 +6,22 @@ author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: f67c7ba658923873470e9653b38cd63fd1068491
-ms.sourcegitcommit: 54ed5000c67a5b59e23b667547565dd96c7302f9
+ms.openlocfilehash: 7af27340f92e3768bc00125205d5040fe3ea4d32
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49315112"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49998223"
 ---
 # <a name="connect-a-bot-to-skype-for-business"></a>Conectar um bot ao Skype for Business
 
 O Skype for Business Online mantém você conectado com colegas e parceiros de negócios por meio de mensagens instantâneas, telefone e videochamadas. Amplie essa funcionalidade criando bots que os usuários podem descobrir e interagir por meio da interface do Skype for Business.
 
 > [!NOTE]
-> No momento, o canal do Bot Framework do Skype for Business tem suporte para o Skype for Business Online. Não há suporte para o Skype for Business Server 2015. 
+> No momento, o canal do Bot Framework do Skype for Business tem suporte para o Skype for Business Online. Não há suporte para o Skype for Business Server 2015. 
 
 ## <a name="enable-the-channel"></a>Habilitar o canal
 

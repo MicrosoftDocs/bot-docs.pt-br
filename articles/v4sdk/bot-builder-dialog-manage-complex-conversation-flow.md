@@ -6,15 +6,16 @@ author: v-ducvo
 ms.author: v-ducvo
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 10/03/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 871bfd9f8d693c5082fe1ccf38349f4d3d46ece2
-ms.sourcegitcommit: b8bd66fa955217cc00b6650f5d591b2b73c3254b
+ms.openlocfilehash: bbb038554801f4585cbc1e3186d139232405b47d
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49326563"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49999823"
 ---
 # <a name="manage-complex-conversation-flows-with-dialogs"></a>Gerenciar fluxos de conversas complexos com diálogos
 
