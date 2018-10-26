@@ -5,15 +5,15 @@ author: BrianRandell
 ms.author: v-brra
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 8d1ae09585898ce8babde6c06e525a0ade46c761
-ms.sourcegitcommit: 67445b42796d90661afc643c6bb6533e9a662cbc
+ms.openlocfilehash: e195f83eefd5f162b74f8891f3b174efc8934700
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39574912"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49997955"
 ---
 # <a name="bot-scenarios"></a>Cenário de bots
 
@@ -44,7 +44,7 @@ Frequentemente, as informações são arquivadas em armazenamentos de dados estr
 ## <a name="iot-bot-scenario"></a>Cenário de bot de IoT
 Esse bot de [IoT (Internet das Coisas)](bot-service-scenario-internet-things.md) facilita o controle dos dispositivos de sua residência, como uma lâmpada Philips Hue, usando comandos de chat interativos.
 
-Usando esse bot simples, é possível controlar as lâmpadas Philips Hue em conjunto com o serviço gratuito IFTTT (If This Then That). Como um dispositivo IoT, a Philips Hue pode ser controlada localmente por meio da API exposta. Contudo, essa API não é exposta para acesso geral externo à rede local. No entanto, IFTTT é um "[Friend of Hue](http://www2.meethue.com/en-us/friends-of-hue/ifttt/)" e, portanto, tem exposto uma série de comandos de controle que podem ser emitidos como ligar e desligar as lâmpadas, alterar a cor da luz ou a intensidade da luz.
+Usando esse bot simples, é possível controlar as lâmpadas Philips Hue em conjunto com o serviço gratuito IFTTT (If This Then That). Como um dispositivo IoT, a Philips Hue pode ser controlada localmente por meio da API exposta. Contudo, essa API não é exposta para acesso geral externo à rede local. No entanto, o IFTTT é um “[Friend of Hue](http://www2.meethue.com/en-us/friends-of-hue/ifttt/)” e, portanto, tem exposto uma série de comandos de controle que podem ser emitidos como ligar e desligar as lâmpadas, alterar a cor da luz ou a intensidade da luz.
 
 ## <a name="next-steps"></a>Próximas etapas
 Agora que você tem uma visão geral dos cenários, aprofunde-se em cada um deles.

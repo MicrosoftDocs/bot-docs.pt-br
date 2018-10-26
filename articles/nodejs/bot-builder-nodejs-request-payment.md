@@ -5,15 +5,16 @@ author: v-ducvo
 ms.author: v-ducvo
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 783d9e1fb3b90f6ba977440b3eefae5c16a1b8ca
-ms.sourcegitcommit: 2dc75701b169d822c9499e393439161bc87639d2
+ms.openlocfilehash: 5bdb699e242784883f7c1a5dda895a31ff80efb1
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42905831"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49999153"
 ---
 # <a name="request-payment"></a>Solicitar pagamento
 
@@ -61,13 +62,13 @@ As próximas seções deste artigo descrevem as três partes do processo de paga
 
 ## <a id="request-payment"></a> Solicitar pagamento
 
-O bot pode solicitar o pagamento de um usuário, enviando uma mensagem que contém um [cartão avançado](bot-builder-nodejs-send-rich-cards.md) com um botão que especifica `type` de "pagamento". Esse trecho de código do exemplo de **Bot de Pagamento** cria uma mensagem que contém um cartão Hero com um botão **Comprar**, no qual o usuário pode clicar (ou tocar) para iniciar o processo de pagamento. 
+O bot pode solicitar o pagamento de um usuário, enviando uma mensagem que contém um [cartão avançado](bot-builder-nodejs-send-rich-cards.md) com um botão que especifica `type` de "pagamento". Esse snippet de código do exemplo de **Bot de Pagamento** cria uma mensagem que contém um cartão Hero com um botão **Comprar**, no qual o usuário pode clicar (ou tocar) para iniciar o processo de pagamento. 
 
 [!code-javascript[Request payment](../includes/code/node-request-payment.js#requestPayment)]
 
 Neste exemplo, o tipo do botão é especificado como `payments.PaymentActionType`, que o aplicativo define como "pagamento". O valor do botão é preenchido pela função `createPaymentRequest`, que retorna um objeto `PaymentRequest` contendo informações sobre detalhes, opções e formas de pagamento com suporte. Para obter mais informações sobre os detalhes de implementação, consulte **app.js** no exemplo <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/sample-payments" target="_blank">Bot de Pagamento</a>.
 
-Essa captura de tela mostra o cartão Hero (com o botão **Comprar**) gerado pelo trecho de código acima. 
+Esta captura de tela mostra o cartão de Hero (com **comprar** botão) que é gerado pelo snippet de código acima. 
  
 ![Bot de exemplo de pagamentos](../media/payments-bot-buy.png) 
 
@@ -101,7 +102,8 @@ Retornos de chamada HTTP serão enviadas ao bot para indicar que será necessár
 ### <a name="shipping-address-update-and-shipping-option-update-callbacks"></a>Retornos de chamada de Atualização de Opção de Envio e Atualização de Endereço de Envio
 
 Ao receber um retorno de chamada de Atualização de Opção de Envio ou Atualização de Endereço de Envio, o bot receberá o estado atual dos detalhes de pagamento do cliente na propriedade `value`.
-Como um comerciante, você deve tratar esses retornos de chamada como estáticos, considerando os detalhes de pagamento de entrada, você irá calcular alguns detalhes de pagamento de saída e falhará se o estado fornecido pelo cliente de entrada for inválido por algum motivo. Se o bot determinar que certas informações são válidas como estão, bastará enviar o código de status HTTP `200 OK` junto com os detalhes de pagamento não modificados. Como alternativa, o bot pode enviar o código de status HTTP `200 OK` juntamente com detalhes de pagamento atualizados que devem ser aplicados antes que o pedido possa ser processado. Em alguns casos, seu bot pode determinar que as informações atualizadas são inválidas e que o pedido não pode ser processado como está. Por exemplo, o endereço de envio do usuário pode especificar um país para o qual o fornecedor do produto não envia. Nesse caso, o bot pode enviar o código de status HTTP `200 OK` e uma mensagem ao preencher a propriedade de erro do objeto de detalhes de pagamento. O envio de qualquer código de status HTTP no intervalo `400` ou `500` resultará em um erro genérico para o cliente.
+Como um comerciante, você deve tratar esses retornos de chamada como estáticos, considerando os detalhes de pagamento de entrada, você irá calcular alguns detalhes de pagamento de saída e falhará se o estado fornecido pelo cliente de entrada for inválido por algum motivo. 
+Se o bot determinar que certas informações são válidas como estão, bastará enviar o código de status HTTP `200 OK` junto com os detalhes de pagamento não modificados. Como alternativa, o bot pode enviar o código de status HTTP `200 OK` juntamente com detalhes de pagamento atualizados que devem ser aplicados antes que o pedido possa ser processado. Em alguns casos, seu bot pode determinar que as informações atualizadas são inválidas e que o pedido não pode ser processado como está. Por exemplo, o endereço de envio do usuário pode especificar um país para o qual o fornecedor do produto não envia. Nesse caso, o bot pode enviar o código de status HTTP `200 OK` e uma mensagem ao preencher a propriedade de erro do objeto de detalhes de pagamento. O envio de qualquer código de status HTTP no intervalo `400` ou `500` resultará em um erro genérico para o cliente.
 
 ### <a name="payment-complete-callbacks"></a>Retornos de chamada de Pagamento Concluído
 
@@ -109,7 +111,7 @@ Ao receber um retorno de chamada de Pagamento Concluído, o bot receberá uma c�
 
 Além de verificar os detalhes do pagamento, o bot também deve verificar se o pedido pode ser atendido antes de iniciar o processamento do pagamento. Por exemplo, ela talvez queira verificar se os itens que está sendo comprados ainda estão disponíveis em estoque. Se os valores estão corretos e o processador de pagamento com êxito foi cobrado o token de pagamento, o bot deve responder com o código de status HTTP `200 OK` junto com a configuração do campo de resultado `success` para que a experiência da web de pagamento exibir a confirmação de pagamento. O token de pagamento que o bot recebe só pode ser usado uma vez, pelo comerciante que o solicitou, e deve ser submetido ao Stripe (o único processador de pagamento que o Bot Framework suporta atualmente). O envio de qualquer código de status HTTP no intervalo `400` ou `500` resultará em um erro genérico para o cliente.
 
-Esse trecho de código do exemplo de **Bot de Pagamento** processa os retornos de chamada que o bot recebe. 
+Esse snippet de código do exemplo de **Bot de Pagamento** processa os retornos de chamada que o bot recebe. 
 
 [!code-javascript[Request payment](../includes/code/node-request-payment.js#processCallback)]
 

@@ -6,15 +6,16 @@ author: johnataylor
 ms.author: johtaylo
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
+ms.subservice: sdk
 ms.date: 9/22/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2cf5da32b563c310ee201090c938da9ff410a70c
-ms.sourcegitcommit: 3bf3dbb1a440b3d83e58499c6a2ac116fe04b2f6
+ms.openlocfilehash: 45bca42ddce527826d2723bc9a20a3c3e6c5aebe
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/23/2018
-ms.locfileid: "46708518"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49998603"
 ---
 # <a name="dialogs-library"></a>Biblioteca de diálogos
 
@@ -22,14 +23,14 @@ ms.locfileid: "46708518"
 
 O conceito central no SDK para gerenciar conversas é a ideia de um Diálogo. Os objetos de diálogo processam atividades de entrada e geram respostas de saída. A lógica de negócios do bot é executada direta ou indiretamente dentro de classes Dialog.
 
-Em tempo de execução, as instâncias de diálogo são organizadas em uma pilha. O diálogo no topo da pilha é conhecido como ActiveDialog. O diálogo atual processa a atividade de entrada. Entre cada turno da conversa (que não tem relação com o tempo e pode durar vários dias), a pilha é persistida. 
+Em tempo de execução, as instâncias de diálogo são organizadas em uma pilha. O diálogo no topo da pilha é conhecido como ActiveDialog. O diálogo atual processa a atividade de entrada. A pilha persiste entre cada turno da conversa (que não tem relação com o tempo e pode durar vários dias). 
 
 Um diálogo implementa três funções principais:
 - BeginDialog
 - ContinueDialog
 - ResumeDialog
 
-No tempo de execução, os diálogos e a classe DialogContext trabalham juntos para escolher o diálogo adequado para lidar com a atividade. A classe DialogContext vincula a pilha Dialog persistida, a atividade de entrada e a classe DialogSet. Um DialogSet contém diálogos que o bot pode chamar.
+No tempo de execução, as classes Dialogs e DialogContext trabalham juntos para escolher o diálogo adequado para lidar com a atividade. A classe DialogContext vincula a pilha Dialog persistida, a atividade de entrada e a classe DialogSet. Um DialogSet contém diálogos que o bot pode chamar.
 
 A interface do DialogContext reflete a noção subjacente do início e da continuidade do diálogo. O padrão geral para o aplicativo é sempre chamar ContinueDialog primeiramente. Se não houver nenhuma pilha e, portanto, nenhum ActiveDialog, o aplicativo deverá começar o diálogo escolhido chamando BeginDialog em DialogContext. Isso fará com que a entrada de diálogo correspondente a DialogSet seja enviada por push à pilha (tecnicamente, o ID do diálogo é que é adicionado à pilha) e delegue uma chamada a BeginDialog no objeto de diálogo específico. Se fosse um ActiveDialog, ele simplesmente teria delegado a chamada ao ContinueDialog do diálogo, dando a esse diálogo todas as propriedades persistidas no processamento.
 

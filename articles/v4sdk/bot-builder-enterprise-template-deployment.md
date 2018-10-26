@@ -5,15 +5,15 @@ author: darrenj
 ms.author: darrenj
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
 ms.date: 09/18/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 0f4c5e0db9dae86f81414ccd9bbb1e5de4dce624
-ms.sourcegitcommit: b8bd66fa955217cc00b6650f5d591b2b73c3254b
+ms.openlocfilehash: 32be8e2a4047c3c25dcdf2598eea3a7bbd12fbcc
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49326393"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49999023"
 ---
 # <a name="enterprise-bot-template---deploying-your-bot"></a>Modelo de Bot do Enterprise - Implantação do Bot
 
@@ -30,7 +30,7 @@ ms.locfileid: "49326393"
 npm install -g ludown luis-apis qnamaker botdispatch msbot luisgen chatdown
 ```
 
-- Instalar as Ferramentas da CLI (interface da linha de comando) do Azure [aqui](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows?view=azure-cli-latest)
+- Instale as Ferramentas de Linha de Comando (CLI) do Azure [aqui](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows?view=azure-cli-latest). Se você já tiver a ferramenta CLI (Linha de Comando) do Serviço de Bot do Azure instalada, atualize-a para a versão mais recente desinstalando sua versão atual e instalando a nova.
 
 - Instalar a Extensão do AZ para o Serviço de Bot
 ```shell
@@ -101,6 +101,8 @@ Quando concluído, execute seu projeto do bot no ambiente de desenvolvimento e a
 
 Em seguida, digite ```hi``` para verificar se tudo está funcionando.
 
+Se houver problemas com o Bot Framework Emulator, primeiro verifique se você tem o Bot Framework Emulator mais recente. Se a sua versão mais antiga do emulador não estiver atualizando corretamente, desinstale e reinstale o emulador.
+
 ## <a name="deploy-to-azure"></a>Implantar no Azure
 
 Os testes podem ser realizados localmente de ponta a ponta. Quando você estiver pronto para implantar seu Bot no Azure e realizar mais testes, use o comando a seguir para publicar o código-fonte. Isso pode ser executado sempre que você quiser efetuar o push nas atualizações do código-fonte.
@@ -123,7 +125,7 @@ Registre `SignInDialog` no construtor MainDialog:
 
 Adicione o seguinte ao código no local desejado para testar um fluxo de logon simples:
     
-`var signInResult = await dc.BeginAsync(SignInDialog.Name);`
+`var signInResult = await dc.BeginDialogAsync(nameof(SignInDialog));`
 
 ### <a name="content-moderation"></a>Moderação de conteúdo
 

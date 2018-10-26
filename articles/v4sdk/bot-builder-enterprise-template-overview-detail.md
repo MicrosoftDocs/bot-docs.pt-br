@@ -1,19 +1,19 @@
 ---
 title: Visão geral detalhada do Modelo de Bot do Enterprise | Microsoft Docs
-description: Saiba mais sobre como ocorrem as decisões de design por trás do Modelo de Bot do Enterprise
+description: Saiba mais sobre as decisões de design por trás do Modelo de Bot do Enterprise
 author: darrenj
 ms.author: darrenj
 manager: kamrani
 ms.topic: article
-ms.prod: bot-framework
+ms.service: bot-service
 ms.date: 09/18/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 6f295794ca7d3cc17688337e70df2a52cdb665ed
-ms.sourcegitcommit: 3bf3dbb1a440b3d83e58499c6a2ac116fe04b2f6
+ms.openlocfilehash: 2ee47d472518e54cf07b86648e270e40f8f015c0
+ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/23/2018
-ms.locfileid: "46708491"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49997223"
 ---
 # <a name="enterprise-template---detailed-overview"></a>Modelo do Enterprise: visão geral detalhada
 
@@ -52,7 +52,7 @@ A integração do Application Insights fornece insights técnicos/operacionais r
 
 A telemetria no nível do Bot está intrinsecamente vinculada à telemetria técnica e operacional, permitindo que você verifique como uma pergunta de um usuário foi respondida e vice-versa.
 
-Um componente de middleware combinado com uma classe wrapper em torno das classes de SDK QnAMaker e LuisRecognizer fornecem uma maneira elegante de coletar um conjunto consistente de eventos. Esses eventos consistentes podem ser usados por ferramentas do Application Insights juntamente com ferramentas como o Power BI.
+Um componente de middleware, combinado com uma classe wrapper em torno das classes de SDK QnAMaker e LuisRecognizer, fornece uma maneira elegante de coletar um conjunto consistente de eventos. Esses eventos consistentes podem ser usados por ferramentas do Application Insights juntamente com ferramentas como o Power BI.
 
 Um painel do Power BI de exemplo é fornecido com cada projeto criado usando o Modelo de Bot do Enterprise. Consulte a seção [PowerBI](bot-builder-enterprise-template-powerbi.md) para obter mais informações.
 
@@ -77,6 +77,6 @@ O Dispatcher é usado no cerne de cada projeto criado usando o Modelo de Bot do 
 
 ## <a name="qnamaker"></a>QnAMaker
 
-O [QnAMaker](https://www.qnamaker.ai/) permite que não desenvolvedores coletem dados de conhecimento gerais no formato de pares de pergunta e resposta. Esse conhecimento pode ser importado de fontes de dados de perguntas frequentes, de manuais de produto e interativamente no portal do QnaMaker.
+O [QnAMaker](https://www.qnamaker.ai/) permite que não desenvolvedores coletem dados de conhecimento gerais no formato de pares de pergunta e resposta. Esse conhecimento pode ser importado de fontes de dados de Perguntas frequentes, de manuais de produto e interativamente no portal do QnaMaker.
 
 Um exemplo de conjunto de entradas do QnA é fornecido no formato de arquivo [LU](https://github.com/Microsoft/botbuilder-tools/blob/master/packages/Ludown/docs/lu-file-format.md) dentro da pasta QnA de CogSvcModels. [LuDown](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Ludown) é usado como parte do script de implantação para criar um arquivo JSON do QnAMaker que a ferramenta CLI (interface de linha de comando) do [QnAMaker](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/QnAMaker) usa para publicar itens na base de conhecimento do QnAMaker.
