@@ -1,4 +1,5 @@
 # [Depurar um Serviço de Bot](../bot-service-debug-bot.md)
 # [Diretrizes de teste e depuração](../v4sdk/bot-builder-testing-debugging.md)
 # [Depurar com o Emulador Bot Framework](../bot-service-debug-emulator.md)
+# [Testar e depurar com arquivo de transcrição](../v4sdk/bot-builder-debug-transcript.md)
 # [Testar uma habilidade da Cortana](../bot-service-debug-cortana-skill.md)
