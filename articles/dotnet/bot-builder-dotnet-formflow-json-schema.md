@@ -56,7 +56,7 @@ O FormFlow estende o <a href="http://json-schema.org/documentation.html" target=
 | Modelos | `{ TemplateUsage: { Patterns: [string, ...], <args> }, ...}` |
 | Prompt | `{ Patterns:[string, ...] <args>}` |
 
-Para especificar modelos e solicitações no esquema JSON, use o mesmo vocabulário conforme definido pela [TemplateAttribute] [ templateAttribute] e [PromptAttribute] [ promptAttribute]. Nomes de propriedade e valores no esquema devem corresponder a nomes de propriedade e valores na enumeração C# subjacente. Por exemplo, este snippet de código de esquema define um modelo que substitui o `TemplateUsage.NotUnderstood` modelo e especifica um `TemplateBaseAttribute.ChoiceStyle`: 
+Para especificar modelos e solicitações no esquema JSON, use o mesmo vocabulário conforme definido pela [TemplateAttribute][templateAttribute] e [PromptAttribute][promptAttribute]. Nomes de propriedade e valores no esquema devem corresponder a nomes de propriedade e valores na enumeração C# subjacente. Por exemplo, este snippet de código de esquema define um modelo que substitui o `TemplateUsage.NotUnderstood` modelo e especifica um `TemplateBaseAttribute.ChoiceStyle`: 
 
 ```json
 "Templates":{ "NotUnderstood": { "Patterns": ["I don't get it"], "ChoiceStyle":"Auto"}}
