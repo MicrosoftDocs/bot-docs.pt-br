@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 09/18/18
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 972df2a12ffa7901ed4e4ecf14ce99233293c5a2
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 2a3709111b048730805b5578306c669591122dda
+ms.sourcegitcommit: 633008f8db06f1bb5be7bacdb7dd8de6f8165328
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997703"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50753604"
 ---
 # <a name="manage-conversation-and-user-state"></a>Gerenciar conversa e estado do usuário
 
@@ -63,8 +63,6 @@ A classe `EchoBotAccessors` do exemplo é criada como um singleton e passada par
 
 Atualizamos o construtor para incluir `UserState` conforme mostrado abaixo:
 ```csharp
-using EchoBotWithCounter;
-
 public EchoBotAccessors(ConversationState conversationState, UserState userState)
 {
     ConversationState = conversationState ?? throw new ArgumentNullException(nameof(conversationState));
@@ -138,8 +136,6 @@ A conversa e o estado do usuário são vinculados a um singleton pelo bloco de c
 No manipulador `OnTurnAsync` da classe `EchoWithCounterBot : IBot`, modifique o código para solicitar o nome do usuário e, em seguida, o número de telefone. Para controlar o ponto onde estamos na conversa, usamos a propriedade Prompt definida no TopicState. Essa propriedade é inicializada para "askName". Após obtermos o nome de usuário, podemos defini-lo como "askNumber" e definir o nome de usuário como o nome de usuário digitado. Após receber o número de telefone, envie uma mensagem de confirmação e defina o prompt como 'confirmation' já que você está no fim da conversa.
 
 ```csharp
-using EchoBotWithCounter;
-
 if (turnContext.Activity.Type == ActivityTypes.Message)
 {
     // Get the conversation state from the turn context.
@@ -305,7 +301,7 @@ if (turnContext.activity.type === 'message') {
     
 }
 else {
-    await turnContext.sendActivity(`[${context.activity.type} event detected]`);
+    await turnContext.sendActivity(`[${turnContext.activity.type} event detected]`);
 }
 ```
 
@@ -322,8 +318,9 @@ Em seguida, inicie o emulador e, em seguida, conecte-se ao seu bot no emulador:
 
 ### <a name="interact-with-your-bot"></a>Interagir com o bot
 
-Envie uma mensagem para seu bot e o bot responderá com uma mensagem.
-![Emulador em execução](../media/emulator-v4/emulator-running.png)
+Envie uma mensagem de “Olá” ao seu bot e o bot solicitará seu nome e número de telefone. Depois de fornecer essas informações, o bot enviará uma mensagem de confirmação. Se você continuar depois disso, o bot percorrerá novamente o mesmo ciclo.
+
+![Emulador em execução](../media/emulator-v4/emulator-running-manage-state.png)
 
 Se você decidir gerenciar o estado por conta própria, confira [gerenciar o fluxo da conversa com seus próprios prompts](bot-builder-primitive-prompts.md). Uma alternativa é usar o diálogo de cascata. A caixa de diálogo controla o estado da conversa para você, você não precisa criar sinalizadores para controlar seu estado. Para saber mais, confira [gerenciar uma conversa simples com diálogos](bot-builder-dialog-manage-conversation-flow.md).
 

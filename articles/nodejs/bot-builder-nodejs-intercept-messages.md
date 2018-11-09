@@ -7,14 +7,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 12/13/2017
+ms.date: 11/02/2018
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: c6f59e72eab4c3a442ba1e024b8fd3441cac6750
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 31380961f117a2b4a3ffaae3c82d682a63001c0c
+ms.sourcegitcommit: 984705927561cc8d6a84f811ff24c8c71b71c76b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49996714"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50965674"
 ---
 # <a name="intercept-messages"></a>Interceptar mensagens
 
@@ -65,4 +65,4 @@ Neste exemplo, o bot simplesmente imprime algumas informações sobre cada mensa
 
 ## <a name="sample-code"></a>Exemplo de código
 
-Para obter um exemplo completo que mostre como interceptar e registrar em log mensagens usando o SDK do Bot Builder para Node.js, veja o <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/capability-middlewareLogging" target="_blank">exemplo de registro em log e middleware</a> no GitHub.
+Para obter um exemplo completo que mostre como interceptar e registrar em log mensagens usando o SDK do Bot Builder para Node.js, veja o <a href="https://aka.ms/v3-js-capability-middlewareLogging" target="_blank">exemplo de registro em log e middleware</a> no GitHub.

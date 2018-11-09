@@ -7,20 +7,22 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 12/13/2017
+ms.date: 11/02/2018
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: dbf2fd06d76b3e79fbcdd30891807ea71329bffd
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 914c33033be3fe35db7cae6d54b5835cb032a5fd
+ms.sourcegitcommit: 984705927561cc8d6a84f811ff24c8c71b71c76b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49999053"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50965684"
 ---
 # <a name="localize-form-content"></a>Localizar o conteúdo do formulário
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
-O idioma de localização de um formulário é determinado pelo [CurrentUICulture](https://msdn.microsoft.com/en-us/library/system.threading.thread.currentuiculture(v=vs.110).aspx) e pelo [CurrentCulture](https://msdn.microsoft.com/en-us/library/system.threading.thread.currentculture(v=vs.110).aspx) do thread atual. Por padrão, a cultura é derivada do campo **Locale** da mensagem atual, mas você pode substituir o comportamento padrão. Dependendo de como seu bot é construído, as informações localizadas podem vir de até três fontes diferentes:
+O idioma de localização de um formulário é determinado pelo [CurrentUICulture](https://msdn.microsoft.com/library/system.threading.thread.currentuiculture(v=vs.110).aspx) e pelo [CurrentCulture](https://msdn.microsoft.com/library/system.threading.thread.currentculture(v=vs.110).aspx) do thread atual.
+Por padrão, a cultura é derivada do campo **Locale** da mensagem atual, mas você pode substituir o comportamento padrão.
+Dependendo de como seu bot é construído, as informações localizadas podem vir de até três fontes diferentes:
 
 - a localização interna de **PromptDialog** e **FormFlow**
 - um arquivo de recurso que você gera para as cadeias de caracteres estáticas em seu formulário
@@ -28,7 +30,10 @@ O idioma de localização de um formulário é determinado pelo [CurrentUICultur
 
 ## <a name="generate-a-resource-file-for-the-static-strings-in-your-form"></a>Gerar um arquivo de recurso para as cadeias de caracteres estáticas em seu formulário
 
-As cadeias de caracteres estáticas em um formulário incluem as cadeias de caracteres que o formulário gera a partir das informações em sua classe de C# e das cadeias de caracteres que você especificar como os prompts, modelos, mensagens ou confirmações. Cadeias de caracteres geradas a partir de modelos internos não são consideradas cadeias de caracteres estáticas, já que essas cadeias de caracteres já estão localizadas. Como muitas cadeias de caracteres em um formulário são geradas automaticamente, não é viável usar recursos normais de C# diretamente. Em vez disso, você pode gerar um arquivo de recurso para as cadeias de caracteres estáticas em seu formulário ou chamando `IFormBuilder.SaveResources` ou usando a ferramenta **RView** incluída com o SDK do BotBuilder para .NET.
+As cadeias de caracteres estáticas em um formulário incluem as cadeias de caracteres que o formulário gera a partir das informações em sua classe de C# e das cadeias de caracteres que você especificar como os prompts, modelos, mensagens ou confirmações.
+Cadeias de caracteres geradas a partir de modelos internos não são consideradas cadeias de caracteres estáticas, já que essas cadeias de caracteres já estão localizadas.
+Como muitas cadeias de caracteres em um formulário são geradas automaticamente, não é viável usar recursos normais de C# diretamente.
+Em vez disso, você pode gerar um arquivo de recurso para as cadeias de caracteres estáticas em seu formulário ou chamando `IFormBuilder.SaveResources` ou usando a ferramenta **RView** incluída com o SDK do BotBuilder para .NET.
 
 ### <a name="use-iformbuildersaveresources"></a>Usar IFormBuilder.SaveResources
 
@@ -36,7 +41,9 @@ Você pode gerar um arquivo de recurso chamando [IFormBuilder.SaveResources][sav
 
 ### <a name="use-rview"></a>Usar RView
 
-Como alternativa, você pode gerar um arquivo de recurso baseado em seu arquivo .dll ou .exe usando a ferramenta <a href="https://github.com/Microsoft/BotBuilder/tree/master/CSharp/Tools/RView" target="_blank">RView</a> incluída no SDK do BotBuilder para .NET. Para gerar o arquivo .resx, execute **rview** e especifique o assembly que contém seu método de criação de formulário estático e o caminho para esse método. Este snippet de código mostra como gerar o arquivo de recurso `Microsoft.Bot.Sample.AnnotatedSandwichBot.SandwichOrder.resx` usando **RView**. 
+Como alternativa, você pode gerar um arquivo de recurso baseado em seu arquivo .dll ou .exe usando a ferramenta <a href="https://aka.ms/v3-cs-RView-library" target="_blank">RView</a> incluída no SDK do BotBuilder para .NET.
+Para gerar o arquivo .resx, execute **rview** e especifique o assembly que contém seu método de criação de formulário estático e o caminho para esse método.
+Este snippet de código mostra como gerar o arquivo de recurso `Microsoft.Bot.Sample.AnnotatedSandwichBot.SandwichOrder.resx` usando **RView**.
 
 ```csharp
 rview -g Microsoft.Bot.Sample.AnnotatedSandwichBot.dll Microsoft.Bot.Sample.AnnotatedSandwichBot.SandwichOrder.BuildForm
@@ -83,7 +90,7 @@ Após a criação do formulário, o método [IFormBuilder.Build][build] procurar
 
 ### <a name="localize-resource-files"></a>Localizar arquivos de recurso 
 
-Depois de adicionar arquivos de recurso ao seu projeto, você pode localizá-los usando o <a href="https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit" target="_blank">MAT (Kit de Ferramentas de Aplicativo Multilíngue)</a>. Instale o **MAT** e habilite-o para seu projeto executando estas etapas:
+Depois de adicionar arquivos de recurso ao seu projeto, você pode localizá-los usando o <a href="https://developer.microsoft.com/windows/develop/multilingual-app-toolkit" target="_blank">MAT (Kit de Ferramentas de Aplicativo Multilíngue)</a>. Instale o **MAT** e habilite-o para seu projeto executando estas etapas:
 
 1. Selecione o projeto no Gerenciador de Soluções do Visual Studio.
 2. Clique em **Ferramentas**, **Kit de Ferramentas de Aplicativo Multilíngue**  e em **Habilitar**.
