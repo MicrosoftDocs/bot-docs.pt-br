@@ -1,0 +1,2 @@
+> [!IMPORTANT]
+> O encadeamento que manipula o giro do bot primário lida com a disposição do objeto de contexto quando isso é feito. **Certifique-se que `await` todas as chamadas de atividade** para que o segmento principal espere na atividade gerada antes de terminar o processamento e a eliminação do contexto de turno. Caso contrário, se uma resposta (incluindo seus manipuladores) demora um tempo significativo e tenta agir no objeto de contexto, ela pode receber um erro de _contexto descartado_.

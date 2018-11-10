@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 09/18/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 32be8e2a4047c3c25dcdf2598eea3a7bbd12fbcc
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 06e91d4b7d320078e83c3523e1326b82ee3fe759
+ms.sourcegitcommit: 49a76dd34d4c93c683cce6c2b8b156ce3f53280e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49999023"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50134696"
 ---
 # <a name="enterprise-bot-template---deploying-your-bot"></a>Modelo de Bot do Enterprise - Implantação do Bot
 
@@ -21,6 +21,8 @@ ms.locfileid: "49999023"
 > Este tópico aplica-se à versão v4 do SDK. 
 
 ## <a name="prerequisites"></a>Pré-requisitos
+
+- Verifique se você atualizou o [.NET Core](https://www.microsoft.com/net/download) para a versão mais recente.
 
 - Verifique se o [Gerenciador de pacotes do nó](https://nodejs.org/en/) está instalado.
 
@@ -40,7 +42,7 @@ az extension add -n botservice
 ## <a name="configuration"></a>Configuração
 
 - Recuperar sua Chave de Criação LUIS
-   - Analise [esta](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-reference-regions) página de documentação do portal correto do LUIS para região que você planeja implantar. 
+   - Analise [esta](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-reference-regions) página de documentação do portal correto do LUIS para região que você planeja implantar. Observe que www.luis.ai refere-se à região dos EUA e uma chave de criação recuperada desse portal não funcionará com uma implantação na Europa.
    - Depois de conectado, clique em seu nome no canto superior direito.
    - Escolha Configurações e anote a Chave de Criação para a próxima etapa.
 
@@ -68,13 +70,13 @@ O novo projeto do Bot conta com uma receita de implantação que permite ao coma
 
 > Depois de implantado, analise os Tipos de Preço dos serviços criados e ajuste-os ao seu cenário.
 
-O README.md no projeto criado contém um exemplo de linha de comando dos serviços de clone msbot atualizado com o nome do Bot criado e uma versão genérica é mostrada abaixo. Atualize a chave de criação da etapa anterior e escolha o local do datacenter do Azure que você deseja usar (por exemplo, westus ou westeurope).
-
-> Verifique se a chave de criação do LUIS, recuperada na etapa anterior, é a indicada para a região especificada abaixo.
+O README.md no projeto criado contém um exemplo de linha de comando dos serviços de clone msbot atualizado com o nome do Bot criado e uma versão genérica é mostrada abaixo. Atualize a chave de criação da etapa anterior e escolha o local do datacenter do Azure que você deseja usar (por exemplo, westus ou westeurope). Verifique se a chave de criação do LUIS, recuperada na etapa anterior, é a indicada para a região especificada abaixo (por exemplo, westus para luis.ai ou westeurope para eu.luis.ai)
 
 ```shell
-msbot clone services --name "YOUR_BOT_NAME" --luisAuthoringKey "YOUR_AUTHORING_KEY" --folder "DeploymentScripts\msbotClone" --location "westus"
+msbot clone services --name "YOUR_BOT_NAME" --luisAuthoringKey "YOUR_AUTHORING_KEY" --folder "DeploymentScripts\msbotClone" --location "YOUR_REGION"
 ```
+
+> Há um problema conhecido com alguns usuários no qual você pode enfrentar o seguinte erro ao executar a implantação `ERROR: Unable to provision MSA id automatically. Please pass them in as parameters and try again`. Nessa situação, navegue até https://apps.dev.microsoft.com e crie manualmente um novo aplicativo ao recuperar o ApplicationID e a Senha/Segredo. Execute o comando de serviços de clone msbot acima, mas forneça dois novos argumentos `appId` e `appSecret` passando os valores que você acabou de recuperar.
 
 A ferramenta msbot descreverá o plano de implantação, incluindo o local e o SKU. Analise antes de prosseguir.
 

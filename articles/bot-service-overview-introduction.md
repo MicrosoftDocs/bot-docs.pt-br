@@ -7,13 +7,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 10/08/2018
-ms.openlocfilehash: 3ca80439a44ac7e715d19f8e47683ac9b5a5721a
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.date: 10/31/2018
+ms.openlocfilehash: 616c3bfd5fcb36c06f4e2acf032ba3cf5fc125d3
+ms.sourcegitcommit: a496714fb72550a743d738702f4f79e254c69d06
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998873"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50736694"
 ---
 ::: moniker range="azure-bot-service-3.0"
 
@@ -89,14 +89,15 @@ Os bots são muito semelhantes aos aplicativos Web modernos, residindo na Intern
 Os bots podem fazer as mesmas coisas que outros tipos de software podem fazer: ler e gravar arquivos, usar bancos de dados e APIs e realizar tarefas computacionais normais. O que torna os bots únicos é o uso de mecanismos geralmente reservados à comunicação entre seres humanos. 
 
 Geralmente, um bot é formado pelos seguintes componentes:
-* Um servidor Web, na maioria dos casos um que esteja disponível na Internet pública
-* O SDK e as ferramentas do Bot Builder que fornecem uma interface para o desenvolvimento de bots
-* Serviços Cognitivos do Azure 
-* Armazenamento do Azure
+
+- Um servidor Web, na maioria dos casos um que esteja disponível na Internet pública
+- O SDK e as ferramentas do Bot Builder que fornecem uma interface para o desenvolvimento de bots
+- Serviços Cognitivos do Azure
+- Armazenamento do Azure
 
 ## <a name="building-a-bot"></a>Criação de um bot 
 
-O Serviço de Bot do Azure oferece um conjunto integrado de ferramentas e serviços para facilitar esse processo. Escolha seu ambiente de desenvolvimento favorito ou ferramentas de linha de comando para criar seu bot em C#, JavaScript ou Typescript. (Java e Python também estarão disponíveis em breve!) Nós fornecemos ferramentas para vários estágios de desenvolvimento de bots que você pode usar para construir seu bot para você começar.
+O Serviço de Bot do Azure oferece um conjunto integrado de ferramentas e serviços para facilitar esse processo. Escolha seu ambiente de desenvolvimento favorito ou ferramentas de linha de comando para criar seu bot. Existem SDKs para C#, JavaScript e Typescript. (Os SDKs para Java e Python estão em desenvolvimento.) Nós fornecemos ferramentas para vários estágios de desenvolvimento de bot para ajudá-lo a projetar e criar bots.
 
 ![Visão geral do bot](media/bot-service-overview.png) 
 

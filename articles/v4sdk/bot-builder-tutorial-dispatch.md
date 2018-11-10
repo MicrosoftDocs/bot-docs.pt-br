@@ -1,5 +1,5 @@
 ---
-title: Integrar vários LUIS e serviços do QnA com a ferramenta Expedição | Microsoft Docs
+title: Usar LUIS e serviços do QnA com a ferramenta de Expedição | Microsoft Docs
 description: Aprenda a usar o criador LUIS e QnA no seu bot.
 keywords: Ferramenta do Luis, QnA, expedição, vários serviços
 author: DeniseMak
@@ -8,16 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 10/09/2018
+ms.date: 10/31/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: e59a7fd86e3802ea23d59a439165a194314639f8
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 4d029dc7361ac8a7fadb61141faf60d8a62eab3c
+ms.sourcegitcommit: a496714fb72550a743d738702f4f79e254c69d06
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997393"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50736674"
 ---
-# <a name="integrate-multiple-luis-and-qna-services-with-the-dispatch-tool"></a>Integrar vários serviços LUIS e QnA com a ferramenta de Expedição
+# <a name="use-luis-and-qna-services-with-the-dispatch-tool"></a>Usar os serviços LUIS e QnA com a ferramenta de Expedição
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
@@ -31,7 +31,9 @@ Este tutorial demonstra como usar um modelo LUIS gerado pela ferramenta Despacha
 | Aplicativo LUIS | Clima | Reconhece as intenções Weather.GetForecast e Weather.GetCondition com dados de localização.|
 | Serviço QnAMaker | Perguntas frequentes  | Fornece respostas a algumas perguntas simples sobre o bot. |
 
-O código deste artigo é obtido no exemplo **NLP com Dispatch** [[C#](https://aka.ms/dispatch-sample-cs)<!-- | [JS](https://aka.ms/dispatch-sample-js)-->].
+O código deste artigo é obtido no exemplo **NLP com Dispatch** [[C#](https://aka.ms/dispatch-sample-cs)].
+
+<!-- | [JS](https://aka.ms/dispatch-sample-js)-->
 
 Confira [reconhecimento de linguagem](bot-builder-concept-luis.md), para ter uma visão geral dos serviços de linguagem. Confira os artigos de instrução para [LUIS](bot-builder-howto-v4-luis.md) e [QnA Maker](bot-builder-howto-qna.md) e obtenha instruções sobre a implementação deles em um bot.
 
