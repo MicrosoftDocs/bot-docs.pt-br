@@ -13,6 +13,7 @@
 ## [Repositório de exemplos no GitHub](https://github.com/Microsoft/BotBuilder-Samples/blob/master/readme.md)
 # Conceitos
 ## [Como funcionam os bots](v4sdk/bot-builder-basics.md)
+## [Gerenciar recursos de bot com um arquivo bot](v4sdk/bot-file-basics.md)
 ## [Middleware](v4sdk/bot-builder-concept-middleware.md)
 ## [Sobre a biblioteca de Caixas de Diálogo](v4sdk/bot-builder-concept-dialog.md)
 ## [Noções básicas sobre o estado das Caixas de Diálogo](v4sdk/bot-builder-dialog-state.md)
