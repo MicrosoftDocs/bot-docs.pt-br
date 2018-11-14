@@ -7,13 +7,13 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 12/13/2017
-ms.openlocfilehash: 2a2cc13020c87616799ee768fbab6e72ab81cc8b
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.date: 10/25/2018
+ms.openlocfilehash: eb08ca3b560f5058526387c71eca4b790d033a1e
+ms.sourcegitcommit: 15f7fa40b7e0a05507cdc66adf75bcfc9533e781
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997633"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50916803"
 ---
 # <a name="add-media-attachments-to-messages"></a>Adicionar anexos de mídia às mensagens
 > [!div class="op_single_selector"]
@@ -24,7 +24,7 @@ ms.locfileid: "49997633"
 Bots e canais normalmente trocam cadeias de caracteres de texto, mas alguns canais também oferecem suporte a troca de anexos, o que permite que seu bot envie mensagens mais ricas para os usuários. Por exemplo, seu bot pode enviar anexos de mídia (por exemplo, imagens, vídeos, áudio, arquivos) e [cartões avançados](bot-framework-rest-connector-add-rich-cards.md). Este artigo descreve como adicionar anexos de mídia às mensagens usando o serviço Conector de Bot.
 
 > [!TIP]
-> Para determinar o tipo e o número de anexos com suporte de um canal, e como o canal renderiza anexos, consulte o [Inspetor de Canal][ChannelInspector].
+> Para determinar o tipo e o número de anexos com suporte de um canal, e como o canal renderiza anexos, consulte o [Channel Inspector][ChannelInspector].
 
 ## <a name="add-a-media-attachment"></a>Adicionar um anexo de mídia  
 
@@ -126,6 +126,7 @@ A adição de um anexo de [AudioCard](bot-framework-rest-connector-api-reference
         "title": "Allegro in C Major",
         "subtitle": "Allegro Duet",
         "text": "No Image, No Buttons, Autoloop, Autostart, Sharable",
+        "duration": "PT2M55S",
         "media": [
           {
             "url": "https://contoso.com/media/AllegrofromDuetinCMajor.mp3"
@@ -175,9 +176,7 @@ O nome do evento de mídia **media/pause** aparecerá no campo `activity.name`. 
 - [Criar mensagens](bot-framework-rest-connector-create-messages.md)
 - [Enviar e receber mensagens](bot-framework-rest-connector-send-and-receive-messages.md)
 - [Adicionar cartões ricos mensagens](bot-framework-rest-connector-add-rich-cards.md)
-- [Inspetor de Canal][ChannelInspector]
-
-[ChannelInspector]: ../bot-service-channel-inspector.md
+- [Esquema de cartão do bot Framework](https://aka.ms/botSpecs-cardSchema)
 
 [Activity]: bot-framework-rest-connector-api-reference.md#activity-object
 [Attachment]: bot-framework-rest-connector-api-reference.md#attachment-object

@@ -1,19 +1,19 @@
 ---
 title: Referência de API | Microsoft Docs
 description: Saiba mais sobre cabeçalhos, operações, objetos e erros no serviço do Bot Connector e serviço de Estado do Bot.
-author: RobStand
-ms.author: kamrani
+author: ivorb
+ms.author: v-ivorb
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 12/13/2017
-ms.openlocfilehash: cd4a0dd73feb18aa6f82699a51ab086c55c5d2cf
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.date: 10/25/2018
+ms.openlocfilehash: 81192c9b5806d467c2a1fd292ee3d5db539e9ead
+ms.sourcegitcommit: 15f7fa40b7e0a05507cdc66adf75bcfc9533e781
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998293"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50916863"
 ---
 # <a name="api-reference"></a>Referência de API
 
@@ -130,6 +130,7 @@ Use essas operações para criar conversas, enviar mensagens (atividades) e gere
 | [Enviar para conversa](#send-to-conversation) | Envia uma atividade (mensagem) para o final da conversa especificada. | 
 | [Responder a atividade](#reply-to-activity) | Envia uma atividade (mensagem) para a conversa especificada, como uma resposta à atividade especificada. | 
 | [Obter membros da conversa](#get-conversation-members) | Obtém os membros da conversa especificada. |
+| [Obter membros paginados da conversa](#get-conversation-paged-members) | Obtém os membros da conversa especificada, uma página de cada vez. |
 | [Obter membros da atividade](#get-activity-members) | Obtém os membros da atividade especificada na conversa especificada. | 
 | [Atualizar atividade](#update-activity) | Atualiza uma atividade existente. | 
 | [Excluir atividade](#delete-activity) | Exclui uma atividade existente. | 
@@ -178,6 +179,17 @@ GET /v3/conversations/{conversationId}/members
 |----|----|
 | **Corpo da solicitação** | n/d |
 | **Retorna** | Uma matriz de objetos [ChannelAccount](#channelaccount-object) | 
+
+### <a name="get-conversation-paged-members"></a>Obter membros paginados da conversa
+Obtém os membros da conversa especificada, uma página de cada vez.
+```http
+GET /v3/conversations/{conversationId}/pagedmembers
+```
+
+| | |
+|----|----|
+| **Corpo da solicitação** | n/d |
+| **Retorna** | Uma matriz de objetos [ChannelAccount](#channelaccount-object) e um token de continuação que pode ser usado para obter mais valores|
 
 ### <a name="get-activity-members"></a>Obter membros da atividade
 Obtém os membros da atividade especificada na conversa especificada.
@@ -386,7 +398,7 @@ O esquema define o objeto e a propriedades que o bot pode usar para comunicar-se
 | [Objeto ThumbnailCard](#thumbnailcard-object) | Define um cartão com uma imagem em miniatura, título, texto e botões de ação. |
 | [Objeto ThumbnailUrl](#thumbnailurl-object) | Define a URL para a fonte de uma imagem. |
 | [Objeto VideoCard](#videocard-object) | Define um cartão que pode reproduzir vídeos. |
-
+| [Objeto SemanticAction](#semanticaction-object) | Define uma referência a uma ação através programática. |
 
 ### <a name="activity-object"></a>Objeto de Atividade
 Define uma mensagem trocada entre o bot e o usuário.<br/><br/> 
@@ -423,6 +435,7 @@ Define uma mensagem trocada entre o bot e o usuário.<br/><br/>
 | **topicName** | string | Tópico da conversa à qual a atividade pertence. |
 | **tipo** | string | Tipo de atividade. Um destes valores: **contactRelationUpdate**, **conversationUpdate**, **deleteUserData**, **message**, **typing**, **endOfConversation**. Para detalhes sobre tipos de atividade, consulte [Visão geral das atividades](bot-framework-rest-connector-activities.md). |
 | **valor** | objeto | Valor em aberto. |
+| **semanticAction** |[SemanticAction](#semanticaction-object) | Um objeto **SemanticAction** que representa uma referência a uma ação programática. |
 
 <a href="#objects">Retornar à tabela de esquemas</a>
 
@@ -434,6 +447,7 @@ Define um cartão que pode reproduzir GIFs animados ou vídeos curtos.<br/><br/>
 | **autoloop** | booleano | Sinalizador que indica se deve repetir a lista de GIFs animados quando o último encerrar. Configure essa propriedade como **true** para reproduzir automaticamente a animação, caso contrário, como **false**. O valor padrão é **true**. |
 | **autostart** | booleano | Sinalizador que indica se deverá reproduzir automaticamente a animação quando o cartão for exibido. Defina essa propriedade como **true** para reproduzir automaticamente a animação, caso contrário, como **false**. O valor padrão é **true**. |
 | **buttons** | [CardAction](#cardaction-object)[] | Matriz de objetos **CardAction** que permitem ao usuário executar uma ou mais ações. O canal determina o número de botões que você pode especificar. |
+| **duration** | string | O comprimento do conteúdo de mídia, no [formato de duração ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html). |
 | **image** | [ThumbnailUrl](#thumbnailurl-object) | Um objeto **ThumbnailUrl** que especifica a imagem a ser exibida no cartão. |
 | **media** | [MediaUrl](#mediaurl-object)[] | Matriz de objetos **MediaUrl** que especifica a lista de GIFs animados a serem reproduzidos. |
 | **shareable** | booleano | Sinalizador que indica se a animação pode ser compartilhada com outras pessoas. Configure esta propriedade para **true** se a animação puder ser compartilhada, caso contrário, para **false**. O valor padrão é **true**. |
@@ -510,6 +524,7 @@ Define um cartão que pode reproduzir um arquivo de áudio.<br/><br/>
 | **autoloop** | booleano | Sinalizador que indica se deverá reproduzir a lista de arquivos de áudio quando o último encerrar. Defina essa propriedade como **true** para reproduzir automaticamente os arquivos de áudio, caso contrário, como **false**. O valor padrão é **true**. |
 | **autostart** | booleano | Sinalizador que indica se deverá reproduzir automaticamente o áudio quando o cartão for exibido. Defina essa propriedade como **true** para reproduzir automaticamente o áudio, caso contrário, como **false**. O valor padrão é **true**. |
 | **buttons** | [CardAction](#cardaction-object)[] | Matriz de objetos **CardAction** que permitem ao usuário executar uma ou mais ações. O canal determina o número de botões que você pode especificar. |
+| **duration** | string | O comprimento do conteúdo de mídia, no [formato de duração ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html). |
 | **image** | [ThumbnailUrl](#thumbnailurl-object) | Um objeto **ThumbnailUrl** que especifica a imagem a ser exibida no cartão. |
 | **media** | [MediaUrl](#mediaurl-object)[] | Matriz de objetos **MediaUrl** que especifica a lista de arquivos de áudio a serem reproduzidos. |
 | **shareable** | booleano | Sinalizador que indica se os arquivos de áudio podem ser compartilhados com outras pessoas. Defina essa propriedade como **true** se o áudio puder ser compartilhado, caso contrário, **false**. O valor padrão é **true**. |
@@ -845,6 +860,7 @@ Define um cartão que pode reproduzir vídeos.<br/><br/>
 | **autoloop** | booleano | Sinalizador que indica se deverá reproduzir a lista de vídeos quando o último encerrar. Defina esta propriedade como **true** para reproduzir automaticamente os vídeos, caso contrário, como **false**. O valor padrão é **true**. |
 | **autostart** | booleano | Sinalizador que indica se deverá reproduzir automaticamente os vídeos quando o cartão for exibido. Defina essa propriedade para **true** para reproduzir automaticamente os vídeos, caso contrário, como **false**. O valor padrão é **true**. |
 | **buttons** | [CardAction](#cardaction-object)[] | Matriz de objetos **CardAction** que permitem ao usuário executar uma ou mais ações. O canal determina o número de botões que você pode especificar. |
+| **duration** | string | O comprimento do conteúdo de mídia, no [formato de duração ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html). |
 | **image** | [ThumbnailUrl](#thumbnailurl-object) | Um objeto **ThumbnailUrl** que especifica a imagem a ser exibida no cartão. |
 | **media** | [MediaUrl](#mediaurl-object)[] | Matriz de objetos **MediaUrl** que especifica a lista de vídeos a serem reproduzidos. |
 | **shareable** | booleano | Sinalizador que indica se os vídeos podem ser compartilhados com outras pessoas. Defina esta propriedade para **true** se os vídeos puderem ser compartilhados, caso contrário, como **false**. O valor padrão é **true**. |
@@ -852,5 +868,15 @@ Define um cartão que pode reproduzir vídeos.<br/><br/>
 | **text** | string | Descrição ou solicitação para exibir sob o título ou subtítulo do cartão. |
 | **title** | string | Título do cartão. |
 | **valor** | objeto | Parâmetro suplementar para esse cartão|
+
+<a href="#objects">Retornar à tabela de esquemas</a>
+
+### <a name="semanticaction-object"></a>Objeto SemanticAction
+Define uma referência a uma ação através programática.<br/><br/>
+
+| Propriedade | Tipo | DESCRIÇÃO |
+|----|----|----|
+| **ID** | string | ID desta ação |
+| **entidades** | [Entidade](#entity-object) | Entidades associadas a esta ação |
 
 <a href="#objects">Retornar à tabela de esquemas</a>

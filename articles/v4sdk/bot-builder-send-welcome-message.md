@@ -1,7 +1,7 @@
 ---
-title: Desenvolver a mensagem de boas-vindas ao usuário | Microsoft Docs
+title: Enviar mensagem de boas-vinda aos usuários | Microsoft Docs
 description: Saiba como desenvolver seu bot para fornecer uma experiência do usuário calorosa.
-keywords: visão geral, desenvolver, experiência do usuário, Boas-vindas, experiência personalizada, C#, JS
+keywords: visão geral, desenvolver, experiência do usuário, boas-vindas, experiência personalizada, C#, JS, mensagem de boas-vindas, bot, saudar, saudação
 author: dashel
 ms.author: dashel
 manager: kamrani
@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 10/31/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f5549385106cab890269e9a5fafacc00dc331520
-ms.sourcegitcommit: a496714fb72550a743d738702f4f79e254c69d06
+ms.openlocfilehash: b3582d962911b6024062942a6d9f6ff1efab4022
+ms.sourcegitcommit: a54a70106b9fdf278fd7270b25dd51c9bd454ab1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50736604"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51273083"
 ---
 # <a name="send-welcome-message-to-users"></a>Enviar mensagem de boas-vinda aos usuários
 
@@ -418,4 +418,4 @@ switch (text)
 
 ## <a name="next-steps"></a>Próximas etapas
 > [!div class="nextstepaction"]
-> [Solicitar informações dos usuários usando a biblioteca de diálogos](bot-builder-prompts.md)
+> [Coletar a entrada do usuário](bot-builder-prompts.md)
