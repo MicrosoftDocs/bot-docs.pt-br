@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 09/26/2018
-ms.openlocfilehash: afb1c4a0e766df7ac2d122b3c7ca4e7959871dbb
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 19dd474c16224cc811a214acea6e9cb51da95b3f
+ms.sourcegitcommit: cb0b70d7cf1081b08eaf1fddb69f7db3b95b1b09
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997273"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51332760"
 ---
 # <a name="download-and-redeploy-bot-code"></a>Baixar e reimplantar o código do bot
 O Serviço de Bot do Azure permite que você baixe todo o projeto de origem para o seu bot, assim você pode trabalhar localmente usando seu IDE preferido. Após a atualização do código, publique suas alterações no portal do Azure. Mostraremos como fazer o download do código usando o portal do Azure e a cli `az`. Também falaremos sobre a reimplantação do código do bot atualizado usando o Visual Studio e a ferramenta de cli `az`. Escolha o modelo que funcione melhor para você.
@@ -39,14 +39,14 @@ Se você tiver um bot C#, atualize o arquivo `appsettings.json` para incluir inf
   "botFileSecret": "ukxxxxxxxxxxxs="
 }
 ```
-O `botFilePath` faz referência ao nome de seu bot, basta substituir "yourbasicBot.bot" pelo nome do seu bot. Para obter a chave `botFileSecret`, consulte o artigo [Criptografia do arquivo do bot](https://aka.ms/bot-file-encryption) sobre como gerar uma chave para o seu bot.
-
 
 Se você tiver um bot de node.js, adicione um arquivo `.env` com as seguintes entradas:
 ```
 botFilePath=yourbasicBot.bot
 botFileSecret=ukxxxxxxxxxxxxs=
 ```
+
+O `botFilePath` faz referência ao nome de seu bot, basta substituir "yourbasicBot.bot" pelo nome do seu bot. Para obter a chave `botFileSecret`, consulte o artigo [Criptografia do arquivo do bot](https://aka.ms/bot-file-encryption) sobre como gerar uma chave para o seu bot.
 
 Em seguida, faça alterações às suas fontes editando arquivos de origem existentes ou adicionando novos ao seu projeto. Teste seu código usando o Emulador. Quando você estiver pronto para reimplantar o código modificado no portal do Azure, siga as instruções abaixo.
 

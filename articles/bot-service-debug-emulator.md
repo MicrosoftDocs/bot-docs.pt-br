@@ -7,20 +7,20 @@ ms.author: v-demak
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 09/20/2018
-ms.openlocfilehash: b1a20875eb25cbf4a07d8a96d79eed665b26157b
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.date: 11/13/2018
+ms.openlocfilehash: f3a6a57a5fd01061493e5c216875f0c4210483f6
+ms.sourcegitcommit: 8b7bdbcbb01054f6aeb80d4a65b29177b30e1c20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49996793"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51645606"
 ---
 # <a name="debug-with-the-emulator"></a>Depurar com o emulador
 
 O Bot Framework Emulator é um aplicativo de desktop que permite que os desenvolvedores de bot testem e depurem seus bots, seja local ou remotamente. Usando o emulador, você pode conversar com seu bot e inspecionar as mensagens que seu bot envia e recebe. O emulador exibe mensagens como elas apareceriam em uma interface de usuário do bate-papo na Web e registra solicitações e respostas JSON à medida que você troca mensagens com seu bot. Antes de implantar seu bot na nuvem, execute-o localmente e teste-o usando o emulador. Você pode testar seu bot usando o emulador mesmo se você ainda não o [criou](./bot-service-quickstart.md) com o Serviço de Bot do Azure ou o configurou para rodar em qualquer canal.
 
 ## <a name="prerequisites"></a>Pré-requisitos
-- Instalar [Emulador](https://github.com/Microsoft/BotFramework-Emulator/releases)
+- Instalar [Emulador](https://aka.ms/Emulator-wiki-getting-started)
 - Instalar software de tunelamento [ngrok][ngrokDownload]
 
 ## <a name="connect-to-a-bot-running-on-localhost"></a>Conectar-se a um bot em execução no localhost

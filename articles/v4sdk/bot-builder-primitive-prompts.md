@@ -1,18 +1,22 @@
 ---
-redirect_url: /bot-framework/bot-builder-howto-v4-state
-ms.openlocfilehash: 081c7c1f3e354d4352baea029840c8175152116e
-ms.sourcegitcommit: a54a70106b9fdf278fd7270b25dd51c9bd454ab1
+title: Crie seus próprio prompts para coletar entradas do usuário | Microsoft Docs
+description: Saiba como gerenciar um fluxo de conversa com solicitações primitivas no SDK do Construtor de Bot.
+keywords: fluxo de conversa, solicitações
+author: v-ducvo
+ms.author: v-ducvo
+manager: kamrani
+ms.topic: article
+ms.service: bot-service
+ms.subservice: sdk
+ms.date: 11/12/2018
+monikerRange: azure-bot-service-4.0
+ms.openlocfilehash: bc223008778f0396b9bc7ff0c2ef48eb3773a105
+ms.sourcegitcommit: 0702305523f8c816b2eb95dce2ea9effb9e5ee5a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51273113"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51562089"
 ---
-<a name="--"></a><!--
----
-title: Crie seus próprios prompts para coletar entradas do usuário | Microsoft Docs description: Saiba como gerenciar um fluxo de conversa com prompts primitivos no SDK do Bot Builder.
-keywords: conversation flow, prompts author: v-ducvo ms.author: v-ducvo manager: kamrani ms.topic: article ms.service: bot-service ms.subservice: sdk ms.date: 10/31/2018 monikerRange: 'azure-bot-service-4.0'
----
-
 # <a name="create-your-own-prompts-to-gather-user-input"></a>Crie seus próprio prompts para coletar entradas do usuário
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
@@ -694,4 +698,3 @@ Agora que você sabe como gerenciar os estados de solicitação, vamos ver como 
 > [!div class="nextstepaction"]
 > [Solicitar informações aos usuários usando Diálogos](bot-builder-prompts.md)
 
--->
