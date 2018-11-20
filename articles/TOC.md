@@ -34,10 +34,10 @@
 ### [Adicionar mídia às mensagens](v4sdk/bot-builder-howto-add-media-attachments.md)
 ### [Adicionar botões para orientar a ação do usuário](v4sdk/bot-builder-howto-add-suggested-actions.md)
 ### [Salvar dados de usuário e de conversa](v4sdk/bot-builder-howto-v4-state.md) 
-### [Solicitar entrada do usuário](v4sdk/bot-builder-primitive-prompts.md) 
+### [Solicitar aos usuários por entrada](v4sdk/bot-builder-primitive-prompts.md) 
 ### [Enviar mensagem de boas-vinda aos usuários](v4sdk/bot-builder-send-welcome-message.md)
 <!-- ## [Add input hints to messages](v4sdk/bot-builder-howto-add-input-hints.md) -->
-### [Obter notificação do bot](v4sdk/bot-builder-howto-proactive-message.md)
+### [Obter notificação de bots](v4sdk/bot-builder-howto-proactive-message.md)
 ### [Adicionar o reconhecimento de idioma natural ao seu bot](v4sdk/bot-builder-howto-v4-luis.md)
 ### [Responder às perguntas do usuário usando o QnA Maker](v4sdk/bot-builder-howto-qna.md)
 ### Gerenciar as conversas usando a biblioteca de Caixas de Diálogo 
