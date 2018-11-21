@@ -1,5 +1,5 @@
 ---
-title: Gerenciar a conversa e o estado do usuário | Microsoft Docs
+title: Salvar dados do usuário e da conversa | Microsoft Docs
 description: Saiba como salvar e recuperar dados do estado com o SDK do Construtor de Bot para .NET.
 keywords: estado da conversa, estado do usuário, fluxo da conversa
 author: ivorb
@@ -8,16 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 09/18/18
+ms.date: 11/14/18
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2a3709111b048730805b5578306c669591122dda
-ms.sourcegitcommit: 633008f8db06f1bb5be7bacdb7dd8de6f8165328
+ms.openlocfilehash: 5698c50b167e7162ef6910b7c428dab5ceb51d0e
+ms.sourcegitcommit: 8b7bdbcbb01054f6aeb80d4a65b29177b30e1c20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50753604"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51645636"
 ---
-# <a name="manage-conversation-and-user-state"></a>Gerenciar conversa e estado do usuário
+# <a name="save-user-and-conversation-data"></a>Salvar dados do usuário e da conversa
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
@@ -308,7 +308,9 @@ else {
 ---
 
 ## <a name="start-your-bot"></a>Inicie seu bot
-Execute o bot localmente.
+- Para o bot JavaScript: em um terminal ou prompt de comando, mude os diretórios para aquele criado para seu bot e inicie-o com `npm start`. Neste ponto, seu bot está em execução localmente.
+
+- Para o bot C#: execute seu bot localmente com o Visual Studio. Clique no botão de execução e o Visual Studio compilará o aplicativo, irá implantá-lo no host local e iniciará o navegador da Web para exibir a página ``default.htm`` de aplicativos. Neste ponto, seu bot está em execução localmente.
 
 ### <a name="start-the-emulator-and-connect-your-bot"></a>Iniciar o emulador e conectar seu bot
 Em seguida, inicie o emulador e, em seguida, conecte-se ao seu bot no emulador:

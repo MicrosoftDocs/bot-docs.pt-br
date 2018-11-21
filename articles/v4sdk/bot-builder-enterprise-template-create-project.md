@@ -8,17 +8,17 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 09/18/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: fc7b168cc8c509b81539682a3717b54ed5c2109c
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 4b85b0e2d3c1ae8c30ea9d5d9fa62783c2968744
+ms.sourcegitcommit: 8b7bdbcbb01054f6aeb80d4a65b29177b30e1c20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997113"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51645476"
 ---
 # <a name="enterprise-bot-template---creating-a-new-project"></a>Modelo do Bot do Enterprise - Criar um novo projeto
 
 > [!NOTE]
-> Este tópico aplica-se à versão v4 do SDK. 
+> Este tópico se aplica à versão 4 do SDK. 
 
 O modelo do Bot do Enterprise reúne todas as práticas recomendadas e componentes de suporte que identificamos através da criação de experiências de conversação. O modelo está disponível nas seguintes plataformas de SDK do Botbuilder:
 

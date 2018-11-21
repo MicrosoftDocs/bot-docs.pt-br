@@ -10,20 +10,22 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 9/22/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 45bca42ddce527826d2723bc9a20a3c3e6c5aebe
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 88022c387d5f9ef7f645be74010aba3c676efadc
+ms.sourcegitcommit: cb0b70d7cf1081b08eaf1fddb69f7db3b95b1b09
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998603"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51332930"
 ---
 # <a name="dialogs-library"></a>Biblioteca de diálogos
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
-O conceito central no SDK para gerenciar conversas é a ideia de um Diálogo. Os objetos de diálogo processam atividades de entrada e geram respostas de saída. A lógica de negócios do bot é executada direta ou indiretamente dentro de classes Dialog.
+Gerenciar as conversas por meio do conceito de uma caixa de diálogo é fundamental para o SDK. Os objetos de diálogo processam atividades de entrada e geram respostas de saída. A lógica de negócios do bot é executada direta ou indiretamente dentro de classes Dialog.
 
 Em tempo de execução, as instâncias de diálogo são organizadas em uma pilha. O diálogo no topo da pilha é conhecido como ActiveDialog. O diálogo atual processa a atividade de entrada. A pilha persiste entre cada turno da conversa (que não tem relação com o tempo e pode durar vários dias). 
+
+## <a name="dialog-lifecycle"></a>Ciclo de Vida do Diálogo
 
 Um diálogo implementa três funções principais:
 - BeginDialog

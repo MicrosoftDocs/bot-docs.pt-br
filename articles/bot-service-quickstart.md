@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: abs
 ms.date: 09/18/2018
-ms.openlocfilehash: 43dacff8f3ce1e4c1fbae663ee607a1965c7f782
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: b5b02773ab71801132f2a73f81123588e7ddfcdb
+ms.sourcegitcommit: 8b7bdbcbb01054f6aeb80d4a65b29177b30e1c20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "50000178"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51645686"
 ---
 ::: moniker range="azure-bot-service-3.0"
 
@@ -83,7 +83,7 @@ Neste tópico, você aprendeu a criar um Bot de Aplicativo Web/Bot do Functions 
 # <a name="create-a-bot-with-azure-bot-service"></a>Criar um bot com o Serviço de Bot do Azure
 [!INCLUDE [pre-release-label](includes/pre-release-label.md)]
 
-O Serviço de Bot do Azure fornece os principais componentes para a criação de bots, incluindo o SDK do Construtor de Bot para o desenvolvimento de bots e o serviço de bot para conectar os bots aos canais. No tópico, você poderá escolher o modelo .NET ou Node.js para criar um bot usando a versão prévia do SDK v4 do Construtor de Bot.
+O Serviço de Bot do Azure fornece os principais componentes para a criação de bots, incluindo o SDK do Construtor de Bot para o desenvolvimento de bots e o serviço de bot para conectar os bots aos canais. No tópico, você pode escolher o modelo .NET ou Node.js para criar um bot usando o SDK v4 do Bot Builder.
 
 ## <a name="log-in-to-azure"></a>Fazer logon no Azure
 Faça logon no [Portal do Azure](http://portal.azure.com).

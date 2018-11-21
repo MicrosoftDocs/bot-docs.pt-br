@@ -8,14 +8,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 09/14/18
+ms.date: 11/13/18
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 9e63390d157c75e1079654549831cf4936c62710
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 803574e5d224b0556162fd677145d29cafa2cab1
+ms.sourcegitcommit: 8b7bdbcbb01054f6aeb80d4a65b29177b30e1c20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997983"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51645676"
 ---
 # <a name="write-directly-to-storage"></a>Gravar diretamente no armazenamento
 
@@ -25,7 +25,7 @@ Você pode ler e gravar diretamente em seu objeto de armazenamento sem usar midd
 
 ## <a name="prerequisites"></a>Pré-requisitos
 - Se você não tiver uma assinatura do Azure, crie uma conta [gratuita](https://azure.microsoft.com/en-us/free/) antes de começar.
-- Instalar o Bot Framework [Emulator](https://github.com/Microsoft/BotFramework-Emulator/releases)
+- Instalar [Emulator](https://aka.ms/Emulator-wiki-getting-started) da Estrutura do Bot
 
 ## <a name="memory-storage"></a>Armazenamento de memória
 

@@ -8,17 +8,17 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 09/18/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f81bba9077f4935a29f47eddf078932731cdec20
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: f5aacc693fb2e8987d6b59db67d0272423a4cf44
+ms.sourcegitcommit: 8b7bdbcbb01054f6aeb80d4a65b29177b30e1c20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997283"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51645549"
 ---
 # <a name="enterprise-bot-template"></a>Modelo de Bot do Enterprise 
 
 > [!NOTE]
-> Este tópico aplica-se à versão v4 do SDK. 
+> Este tópico se aplica à versão 4 do SDK. 
 
 A criação de uma experiência de conversação de alta qualidade exige um conjunto básico de recursos. Para ajudá-lo a ter sucesso na criação de ótimas experiências de conversação, criamos um Modelo de Bot do Enterprise. Este modelo reúne todas as práticas recomendadas e componentes de suporte que identificamos através da criação de experiências de conversação. 
 

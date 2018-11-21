@@ -1,22 +1,18 @@
 ---
-title: Dar as boas-vindas ao usuário | Microsoft Docs
-description: Saiba como projetar seu bot para fornecer uma ótima experiência do usuário.
-keywords: visão geral, design, experiência do usuário, Boas-vindas, experiência personalizada
-author: dashel
-ms.author: dashel
-manager: kamrani
-ms.topic: article
-ms.service: bot-service
-ms.subservice: sdk
-ms.date: 8/30/2018
-monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f9c58762e0733fbb379b43375710e651424095fc
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+redirect_url: /bot-framework/bot-builder-send-welcome-message
+ms.openlocfilehash: ef281fd1b6539484c06f68caffbd4e87ec8acc2b
+ms.sourcegitcommit: cb0b70d7cf1081b08eaf1fddb69f7db3b95b1b09
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998743"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51332900"
 ---
+<a name="--"></a><!--
+---
+título: Dar as boas-vindas ao usuário | Descrição do Microsoft Docs: Aprenda a projetar seu bot para fornecer uma experiência de boas-vindas do usuário.
+palavras-chave: visão geral, projetar, experiência do usuário, Boas-vindas, autor da experiência personalizada: dashel ms.author: dashel manager: kamrani ms.topic: article ms.service: bot-service ms.subservice: sdk ms.date: 8/30/2018 monikerRange: 'azure-bot-service-4.0'
+---
+
 # <a name="welcoming-the-user"></a>Como dar as boas-vindas ao usuário
 
 Ao criar um bot, o principal objetivo é envolver seu usuário em uma conversa produtiva. Uma das melhores maneiras de fazer isso é garantir que, a partir do momento em que o usuário se conecta pela primeira vez, ele entenda o objetivo e os recursos principais do bot, a razão pela qual seu bot foi criado.
@@ -74,3 +70,5 @@ Manter interações oportunas e conversacionais ajuda os usuários a experimenta
 ## <a name="next-steps"></a>Próximas etapas
 > [!div class="nextstepaction"]
 > [Enviar mensagem de boas-vinda aos usuários](bot-builder-send-welcome-message.md)
+
+-->

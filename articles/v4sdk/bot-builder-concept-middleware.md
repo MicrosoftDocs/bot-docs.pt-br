@@ -8,20 +8,20 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 05/24/2018
+ms.date: 11/8/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 38d876e11d00a5471f2dcbfca44eb23290b7476c
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 713a53947a8ea6681f1793f9796a86c6d8014e29
+ms.sourcegitcommit: cb0b70d7cf1081b08eaf1fddb69f7db3b95b1b09
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997973"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51332920"
 ---
 # <a name="middleware"></a>Middleware
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
-O middleware é simplesmente uma classe que fica entre o adaptador e sua lógica de bot, adicionada à coleção de middlewares do seu adaptador durante a inicialização. O SDK permite que você escrever seu próprio middleware ou adicionar componentes reutilizáveis de middleware criados por outras pessoas. Toda atividade que entra ou sai do seu bot flui pelo middleware.
+O middleware é simplesmente uma classe que fica entre o adaptador e sua lógica de bot, adicionada à coleção de middlewares do seu adaptador durante a inicialização. O SDK permite escrever seu próprio middleware ou adicionar o middleware criado por outras pessoas. Toda atividade que entra ou sai do seu bot flui pelo middleware.
 
 O adaptador processa e direciona atividades de entrada através do pipeline de middleware de bot para a lógica do seu bot e, em seguida, recua novamente. O adaptador processa e direciona atividades de entrada através do pipeline de middleware de bot para a lógica do seu bot e, em seguida, recua novamente.
 
@@ -66,7 +66,7 @@ As primeiras coisas em seu pipeline de middleware devem ser aquelas que cuidam d
 As últimas coisas em seu pipeline de middleware devem ser middleware específico de bot, que é o middleware que você implementa para fazer algum processamento em cada mensagem enviada ao seu bot. Se seu middleware usa informações de estado ou outras informações definidas no contexto do bot, inclua-as no pipeline do middleware após o middleware que modifica o estado ou o contexto.
 
 ## <a name="short-circuiting"></a>Curto-circuito
-Uma ideia importante em torno de middleware (e [manipuladores de respostas](bot-builder-basics.md#response-event-handlers)) é _curto-circuito_. Se a execução deve continuar através das camadas que o seguem, o middleware (ou um manipulador de resposta) é necessário para passar a execução chamando o _próximo_ delegado.  Se o próximo delegado não é chamado dentro desse middleware (ou manipulador de resposta), o pipeline associado entra em curto-circuito e as camadas subsequentes não serão executadas. Isso significa que toda lógica de bot e qualquer middleware mais tarde no pipeline são ignorados. Há uma diferença sutil entre seu middleware e seu manipulador de resposta fazendo com que um turno entre em curto-circuito.
+Uma ideia importante em torno do middleware e dos manipuladores de respostas é o _curto-circuito_. Se a execução deve continuar através das camadas que o seguem, o middleware (ou um manipulador de resposta) é necessário para passar a execução chamando o _próximo_ delegado.  Se o próximo delegado não é chamado dentro desse middleware (ou manipulador de resposta), o pipeline associado entra em curto-circuito e as camadas subsequentes não serão executadas. Isso significa que toda lógica de bot e qualquer middleware mais tarde no pipeline são ignorados. Há uma diferença sutil entre seu middleware e seu manipulador de resposta fazendo com que um turno entre em curto-circuito.
 
 Quando um middleware fizer com que um turno entre em curto-circuito, o manipulador de turno do bot não será chamado, mas todo o código de middleware executado antes desse ponto no pipeline ainda será executado até a conclusão. 
 
@@ -75,5 +75,14 @@ Para manipuladores de eventos não chamando _próxima_ significa que o evento fo
 > [!TIP]
 > Se você fizer com que um evento de resposta entre em curto-circuito, como `SendActivities`, tenha certeza de esse seja o comportamento pretendido. Caso contrário, ele pode resultar em bugs difíceis de corrigir.
 
+## <a name="response-event-handlers"></a>Manipuladores de eventos de resposta
+Além da lógica de middleware aplicativo, os manipuladores de resposta (às vezes também chamados de manipuladores de eventos ou manipuladores de eventos de atividade) podem ser adicionados ao objeto de contexto. Esses manipuladores são chamados quando a resposta associada acontece no objeto de contexto atual, antes de executar a resposta real. Esses manipuladores são úteis quando você sabe que deseja fazer algo, antes ou depois do evento real, para cada atividade desse tipo para o restante da resposta atual.
+
+> [!WARNING] 
+> Tenha o cuidado para não chamar um método de resposta de atividade de dentro de seu respectivo manipulador de eventos de resposta, por exemplo, chamando o método de atividade de envio de dentro de um manipulador de atividades de envio. Isso pode gerar um loop infinito.
+
+Lembre-se: cada nova atividade obtém um novo thread para executar. Quando o encadeamento para processar a atividade é criado, a lista de manipuladores dessa atividade é copiada para esse novo encadeamento. Nenhum manipulador adicionado após esse ponto será executado para esse evento de atividade específico.
+Os manipuladores registrados em um objeto de contexto são tratados como o adaptador gerencia o pipeline do middleware. Ou seja, os manipuladores são chamados na ordem em que são adicionados e chamar o próximo representante passa o controle para o próximo manipulador de eventos registrado. Se um manipulador não chamar o próximo representante, nenhum manipulador de eventos subsequente será chamado, o evento entrará em curto-circuito e o adaptador não enviará a resposta para o canal.
+
 ## <a name="additional-resources"></a>Recursos adicionais
-Você pode dar uma olhada no middleware do agente de transcrição, conforme implementado no SDK do Bot Builder [[C#](https://github.com/Microsoft/botbuilder-dotnet/blob/master/libraries/Microsoft.Bot.Builder/TranscriptLoggerMiddleware.cs)|[JS](https://github.com/Microsoft/botbuilder-js/blob/master/libraries/botbuilder-core/src/transcriptLogger.ts)].
+Você pode dar uma olhada no middleware do agente de transcrição, conforme implementado no SDK do Bot Builder [[C#](https://github.com/Microsoft/botbuilder-dotnet/blob/master/libraries/Microsoft.Bot.Builder/TranscriptLoggerMiddleware.cs) | [JS](https://github.com/Microsoft/botbuilder-js/blob/master/libraries/botbuilder-core/src/transcriptLogger.ts)].

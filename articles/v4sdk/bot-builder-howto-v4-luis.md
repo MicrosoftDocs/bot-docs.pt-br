@@ -1,5 +1,5 @@
 ---
-title: Usando LUIS para Compreensão de Linguagem | Microsoft Docs
+title: Adicionar reconhecimento de idioma natural ao seu bot | Microsoft Docs
 description: Aprenda a usar o LUIS para entender a linguagem natural com o SDK do Bot Builder.
 keywords: Entendimento de Linguagem, LUIS, intenção, reconhecedor, entidades, middleware
 author: ivorb
@@ -8,20 +8,20 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: cognitive-services
-ms.date: 10/12/18
+ms.date: 11/08/18
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 395db5e1913b840340e5887cf09e6c59f90742a4
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: eab8e2f9d437748d0bb0fefd31c03c8fb350c6b1
+ms.sourcegitcommit: 8b7bdbcbb01054f6aeb80d4a65b29177b30e1c20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997663"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51645696"
 ---
-# <a name="using-luis-for-language-understanding"></a>Usando o LUIS para Compreensão de Linguagem
+# <a name="add-natural-language-understanding-to-your-bot"></a>Adicionar reconhecimento de idioma natural ao seu bot
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
-A capacidade de entender o que seu usuário quer dizer contextualmente e em conversas pode ser uma tarefa difícil, mas pode dar ao seu bot uma sensação de conversa mais natural. O Language Understanding, chamado LUIS, permite que você faça exatamente isso para que seu bot possa reconhecer a intenção das mensagens do usuário, permitir uma linguagem mais natural do seu usuário e direcionar melhor o fluxo de conversação. Se você precisar de mais informações sobre como o LUIS se integra com um bot, veja [entendimento de linguagem para bots](./bot-builder-concept-LUIS.md).
+A capacidade de entender o que seu usuário quer dizer contextualmente e em conversas pode ser uma tarefa difícil, mas pode dar ao seu bot uma sensação de conversa mais natural. O Language Understanding, chamado LUIS, permite que você faça exatamente isso para que seu bot possa reconhecer a intenção das mensagens do usuário, permitir uma linguagem mais natural do seu usuário e direcionar melhor o fluxo de conversação. Se você precisar de mais informações sobre o LUIS, veja o [reconhecimento de idioma](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/what-is-luis) para bots.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 Este tópico fornece orientação pela configuração de um bot simples que usa o LUIS para reconhecer algumas intenções diferentes. O código neste artigo se baseia no exemplo de NLP com LUIS em [C#](https://aka.ms/cs-luis-sample) e [JavaScript](https://aka.ms/js-luis-sample).
@@ -253,7 +253,7 @@ Depois de seguir as instruções para a criação de seu aplicativo LUIS e para 
 }
 ```
 
-No arquivo **index.js**, lemos as informações de configuração para gerar o serviço LUIS e inicializar o bot.
+No arquivo **bot.js**, lemos as informações de configuração para gerar o serviço LUIS e inicializar o bot.
 Atualize o valor de `LUIS_CONFIGURATION` com o nome de seu aplicativo LUIS, como ele aparece no arquivo de configuração.
 
 ```javascript

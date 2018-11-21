@@ -1,5 +1,5 @@
 ---
-title: Gerenciar um fluxo de conversa complexo com diálogos | Microsoft Docs
+title: Criar fluxo de conversa avançado usando branches e loops | Microsoft Docs
 description: Saiba como gerenciar um fluxo de conversa complexo com diálogos no SDK do Construtor de Bot para Node.js.
 keywords: fluxo de conversa complexo, repetição, loop, menu, diálogos, prompts, cascatas, conjunto de diálogos
 author: v-ducvo
@@ -8,24 +8,24 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 10/03/2018
+ms.date: 11/03/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: bbb038554801f4585cbc1e3186d139232405b47d
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 9605a2f078be753023e6d178247a211ace107873
+ms.sourcegitcommit: cb0b70d7cf1081b08eaf1fddb69f7db3b95b1b09
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49999823"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51333020"
 ---
-# <a name="manage-complex-conversation-flows-with-dialogs"></a>Gerenciar fluxos de conversas complexos com diálogos
+# <a name="create-advance-conversation-flow-using-branches-and-loops"></a>Criar fluxo de conversa avançado usando branches e loops
 
 [!INCLUDE [pre-release-label](~/includes/pre-release-label.md)]
 
-No último artigo, demonstramos como usar a biblioteca de diálogos para gerenciar conversas simples. Em [fluxos de conversa simples](bot-builder-dialog-manage-conversation-flow.md), o usuário começa a primeira etapa de uma *cascata*, percorre até a última etapa, e a conversa termina. Neste artigo, usaremos os diálogos para gerenciar conversas mais complexas, com partes que podem se ramificar e entrar em loop. Para fazer isso, vamos usar vários métodos definidos no contexto de diálogo e no contexto da etapa de cascata, além de passar argumentos entre diferentes partes do diálogo.
+No último artigo, demonstramos como usar a biblioteca de diálogos para gerenciar conversas simples. Nos [fluxos de conversa sequenciais](bot-builder-dialog-manage-conversation-flow.md), o usuário começa na primeira etapa de uma *cascata*, percorre até a última etapa e a conversa termina. Neste artigo, usaremos os diálogos para gerenciar conversas mais complexas, com partes que podem se ramificar e entrar em loop. Para fazer isso, vamos usar vários métodos definidos no contexto de diálogo e no contexto da etapa de cascata, além de passar argumentos entre diferentes partes do diálogo.
 
 Confira [Biblioteca de diálogos](bot-builder-concept-dialog.md) para obter mais informações básicas sobre diálogos.
 
-Para lhe dar mais controle sobre a *pilha de diálogos*, a biblioteca de **Diálogos** fornece um método _replace dialog_. Esse método permite que você troque o diálogo ativo no momento por outro, mantendo o estado e o fluxo da conversa. Os métodos _begin dialog_ e _replace dialog_ permitem que você execute a ramificação ou o loop, conforme necessário, para criar interações mais complexas. Caso a complexidade da conversa aumente de modo que seus diálogos de cascata fiquem difíceis de gerenciar, investigue usando [diálogos do componente](bot-builder-compositcontrol.md) ou criando uma classe de gerenciamento de diálogo personalizada com base na classe `Dialog`.
+Para lhe dar mais controle sobre a *pilha de diálogos*, a biblioteca de **Diálogos** fornece um método _replace dialog_. Esse método permite que você troque o diálogo ativo no momento por outro, mantendo o estado e o fluxo da conversa. Os métodos _begin dialog_ e _replace dialog_ permitem que você execute a ramificação ou o loop, conforme necessário, para criar interações mais complexas. Caso a complexidade da conversa aumente de modo que seus diálogos de cascata fiquem difíceis de gerenciar, investigue a [reutilização do diálogo](bot-builder-compositcontrol.md) ou crie uma classe de gerenciamento de diálogo personalizada com base na classe-raiz `Dialog`.
 
 Neste artigo, vamos criar diálogos de exemplo para um bot de concierge de hotel que um hóspede poderia usar para acessar serviços comuns, como reservar uma mesa no restaurante do hotel e solicitar uma refeição do serviço de quarto.  Cada um desses recursos, juntamente com um menu que os conecta, será criado como diálogos em um conjunto de diálogos.
 

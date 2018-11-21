@@ -8,17 +8,17 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 09/18/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 9c5a156ff949c4014b69638e9cd5abb4b0ede149
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 73e19047ea64839f52bb20ea1eceee93803210bc
+ms.sourcegitcommit: 8b7bdbcbb01054f6aeb80d4a65b29177b30e1c20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49999383"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51645477"
 ---
 # <a name="enterprise-bot-template---conversational-analytics-using-powerbi-dashboard-and-application-insights"></a>Modelo de Bot do Enterprise — análise de conversa usando o painel do PowerBI e o Application Insights
 
 > [!NOTE]
-> Este tópico aplica-se à versão v4 do SDK. 
+> Este tópico se aplica à versão 4 do SDK. 
 
 Depois que seu Bot for implantado e começar a processar mensagens, você verá dados telemétricos fluindo para a instância do Application Insights em seu grupo de recursos de dados telemétricos. 
 

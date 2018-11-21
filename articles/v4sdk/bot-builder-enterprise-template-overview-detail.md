@@ -8,17 +8,17 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 09/18/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2ee47d472518e54cf07b86648e270e40f8f015c0
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 3b4c16478e9d6f4f1c1a33315fb8c6c772c37b71
+ms.sourcegitcommit: 8b7bdbcbb01054f6aeb80d4a65b29177b30e1c20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997223"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51645616"
 ---
 # <a name="enterprise-template---detailed-overview"></a>Modelo do Enterprise: visão geral detalhada
 
 > [!NOTE]
-> Este tópico aplica-se à versão v4 do SDK. 
+> Este tópico se aplica à versão 4 do SDK. 
 
 O Modelo de Bot do Enterprise reúne várias melhores práticas que identificamos durante a criação de experiências de conversação e automatiza a integração de componentes que consideramos altamente benéficos para os desenvolvedores do Serviço de Bot do Azure. Esta seção cobre algumas informações básicas em relação a decisões importantes para ajudar a explicar por que o modelo funciona dessa forma.
 

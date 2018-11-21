@@ -8,24 +8,38 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 10/31/2018
+ms.date: 11/08/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b3582d962911b6024062942a6d9f6ff1efab4022
-ms.sourcegitcommit: a54a70106b9fdf278fd7270b25dd51c9bd454ab1
+ms.openlocfilehash: 25745d380e53173c4dc67d280c120ced5845078b
+ms.sourcegitcommit: cb0b70d7cf1081b08eaf1fddb69f7db3b95b1b09
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51273083"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51332910"
 ---
 # <a name="send-welcome-message-to-users"></a>Enviar mensagem de boas-vinda aos usuários
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
-Nosso artigo anterior de design de [mensagem de boas-vindas ao usuário](./bot-builder-welcome-user.md) discutiu várias práticas recomendadas que você pode implementar para garantir que os usuários tenham uma boa interação inicial com seu bot. Este artigo estende esse tópico fornecendo exemplos de código curtos para ajudá-lo a dar as boas-vindas aos usuários em seu bot.
+Ao criar um bot, o principal objetivo é envolver seu usuário em uma conversa produtiva. Uma das melhores maneiras de fazer isso é garantir que, a partir do momento em que o usuário se conecta pela primeira vez, ele entenda o objetivo e os recursos principais do bot, a razão pela qual seu bot foi criado. Este artigo fornece exemplos de código para ajudá-lo a dar boas-vindas aos usuários em seu bot.
 
 ## <a name="same-welcome-for-different-channels"></a>A mesma mensagem de boas-vindas para diferentes canais
+Uma mensagem de boas-vinda deve ser gerada sempre que os usuários interagir pela primeira vez com seu bot. Para tanto, monitore os tipos de Atividade do bot e observe as novas conexões. Cada nova conexão pode gerar até duas atividades de atualização da conversa, dependendo do canal.
 
-O exemplo a seguir observa a nova atividade de _atualização da conversa_, envia apenas uma mensagem de boas-vindas baseada na participação do usuário na conversa e define um sinalizador de status Prompt para ignorar a entrada de conversa inicial do usuário. O exemplo de código a seguir usa os exemplos de boas-vindas do usuário no repositório GitHub para código [C#](https://aka.ms/bot-welcome-sample-cs) e [JS](https://aka.ms/bot-welcome-sample-js).
+- Uma quando o bot do usuário estiver conectado à conversa.
+- Uma quando o usuário se juntar à conversa.
+
+Gerar uma mensagem de boas-vindas sempre que uma nova atualização da conversa for detectada soa tentador, mas isso pode trazer resultados inesperados quando seu bot for acessado em vários canais.
+
+Alguns canais criam uma atualização da conversa quando um usuário se conecta inicialmente ao canal e uma atualização da conversa separada apenas depois que uma mensagem de entrada inicial é recebida do usuário. Outros canais geram essas duas atividades quando o usuário se conecta inicialmente ao canal. Se você só monitorar eventos de atualização da conversa e exibir uma mensagem de boas-vindas em um canal com duas atividades de atualização da conversa, seu usuário poderá receber o seguinte:
+
+![Mensagem dupla de boas-vindas](./media/double_welcome_message.png)
+
+Para evitar essa mensagem duplicada, gere uma mensagem de boas-vindas inicial somente para o segundo evento de atualização da conversa. O segundo evento pode ser detectado quando:
+- Um evento de atualização da conversa tiver ocorrido.
+- Um novo membro (usuário) tiver sido adicionado à conversa.
+
+O exemplo a seguir observa a nova *atividade de atualização da conversa*, envia apenas uma mensagem de boas-vindas baseada na participação do usuário na conversa e define um sinalizador de status do Prompt para ignorar a entrada da conversa inicial do usuário. Você pode baixar o código-fonte completo em [[C#](https://aka.ms/bot-welcome-sample-cs) ou [JS](https://aka.ms/bot-welcome-sample-js)] do GitHub.
 
 [!INCLUDE [alert-await-send-activity](../includes/alert-await-send-activity.md)]
 
@@ -231,8 +245,7 @@ module.exports = MainDialog;
 ---
 
 ## <a name="discard-initial-user-input"></a>Descartar a entrada inicial do usuário
-
-Para garantir que seu usuário tenha uma boa experiência em todos os canais disponíveis, evitamos o processamento de dados de resposta inválidos, fornecendo o prompt inicial e configurando palavras-chave que serão procuradas nas respostas do usuário.
+Também é importante considerar quando a entrada do usuário pode realmente conter informações úteis. Isso também pode variar por canal. Para garantir que seu usuário tenha uma boa experiência em todos os canais disponíveis, evitamos o processamento de dados de resposta inválidos, fornecendo o prompt inicial e configurando palavras-chave que serão procuradas nas respostas do usuário.
 
 ## <a name="ctabcsharpmulti"></a>[C#](#tab/csharpmulti)
 
@@ -363,12 +376,12 @@ private static async Task SendIntroCardAsync(ITurnContext turnContext, Cancellat
 }
 ```
 
-Em seguida, podemos enviar o cartão usando o seguinte comando await. Vamos colocar isso nos bots _switch (text)_ _case "hel
+Em seguida, podemos enviar o cartão usando o seguinte comando await. Vamos colocar isso nos bots para _alternar maiúsculas e minúsculas (texto) em "help"_.
 
 ```csharp
 switch (text)
 {
-    case "hello":
+    case "hello":"
     case "hi":
         await turnContext.SendActivityAsync($"You said {text}.", cancellationToken: cancellationToken);
         break;
