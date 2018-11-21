@@ -1,5 +1,5 @@
 ---
-title: Atividade do bot no SDK do Bot Builder | Microsoft Docs
+title: Como funcionam os bots | Microsoft Docs
 description: Descreve como a atividade e o HTTP funcionam no SDK do Bot Builder.
 keywords: fluxo da conversa, turno, conversa de bot, diálogos, prompts, cascatas, conjunto de diálogos
 author: johnataylor
@@ -8,16 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 9/26/2018
+ms.date: 11/08/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: fde88929c688c25d473ce8242ebfd5d44dc3a22f
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 852740695f4d5719ba4dc4cc3d49c6820d95b3ef
+ms.sourcegitcommit: cb0b70d7cf1081b08eaf1fddb69f7db3b95b1b09
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998123"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51333000"
 ---
-# <a name="understanding-how-bots-work"></a>Noções básicas de como funcionam os bots
+# <a name="how-bots-work"></a>Como funcionam os bots
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
@@ -41,7 +41,7 @@ O protocolo não especifica a ordem em que as solicitações POST e suas confirm
 
 ### <a name="defining-a-turn"></a>Definir um turno
 
-Um turno, em relação aos nossos bots, é usado para descrever todo o processamento associado à chegada de uma atividade. 
+Em uma conversa, as pessoas geralmente falam uma de cada vez, alternando a vez de falar. Com um bot, geralmente ele reage à entrada do usuário. Dentro do SDK do Bot Builder, um _turno_ é a atividade de entrada do usuário para o bot e qualquer atividade que o bot envia de volta para o usuário como uma resposta imediata. Você pode considerar um turno como o processamento associado à chegada de uma determinada atividade.
 
 O objeto *contexto de turno* fornece informações sobre a atividade, como o remetente e o receptor, o canal e outros dados necessários para processar a atividade. Ele também permite a adição de informações durante o turno em várias camadas do bot.
 
@@ -55,47 +55,23 @@ Vamos analisar o diagrama anterior, com foco na chegada de uma atividade de mens
 
 No exemplo acima, o bot respondeu à atividade de mensagem com outra atividade de mensagem contendo a mesma mensagem de texto. O processamento começa com a solicitação HTTP POST, com as informações de atividade transmitidas como uma carga JSON, chegando ao servidor Web. Em C#, isso geralmente será um projeto do ASP.NET e, em um projeto Node.js do JavaScript, isso costuma ser uma das estruturas populares, como Express ou Restify.
 
-O *adaptador*, um componente integrado do SDK, serve como o condutor da estrutura. O serviço usa as informações de atividade para criar um objeto de atividade e chama o método *process activity* do adaptador ao passar as informações de autenticação e o objeto de atividade (essa chamada é encapsulada dentro das bibliotecas de C#, mas você a verá em JavaScript). Ao receber a atividade, o adaptador criará um objeto de contexto de turno e chamará o [middleware](#middleware). O processamento continuará para a lógica do bot após o middleware, o pipeline ser concluído e o adaptador descartar o objeto de contexto do turno.
+O *adaptador*, um componente integrado do SDK, é o núcleo do tempo de execução do SDK. A atividade é executada como JSON no corpo HTTP POST. Este JSON é desserializado para criar o objeto Atividade, que é entregue ao adaptador com uma chamada para o método *processar atividade*. Ao receber a atividade, o adaptador cria um *contexto de turno* e chama o middleware. O nome *contexto de turno* segue o uso da palavra "turno" para descrever todo o processamento associado à chegada de uma atividade. O contexto de turno é uma das abstrações mais importantes no SDK, pois não apenas transmite a atividade de entrada para todos os componentes de middleware e para a lógica do aplicativo, mas também fornece o mecanismo pelo qual os componentes de middleware e a lógica do aplicativo podem enviar as atividades de saída. O contexto de turno fornece métodos de resposta _enviar, atualizar e excluir atividade_ para responder a uma atividade. Cada método de resposta é executado em um processo assíncrono. 
 
-O *manipulador de turnos*, que compõe a maior parte da lógica do aplicativo, usa um contexto de turno como seu argumento. O manipulador de turnos normalmente processará o conteúdo da atividade de entrada e gerará uma ou mais atividades em resposta, enviando-as usando o método *send activity* do contexto. A chamada do método de atividade de envio enviará uma atividade para o canal do usuário, a menos que o processamento seja de alguma forma interrompido. A atividade passará pelos eventuais [manipuladores de eventos](#response-event-handlers) registrados antes de serem enviados para o canal.
+[!INCLUDE [alert-await-send-activity](../includes/alert-await-send-activity.md)]
+
 
 ## <a name="middleware"></a>Middleware
-
-O middleware é um conjunto linear de componentes que são adicionados e executados em ordem, dando a cada um a chance de funcionar na atividade antes e depois do manipulador de turnos do bot e de ter acesso ao contexto de turno para tal atividade. A menos que o middleware [entre em curto circuito](~/v4sdk/bot-builder-concept-middleware.md#short-circuiting), o estágio final do pipeline de middleware é um retorno de chamada para invocar o manipulador de turnos do bot antes de retornar para a pilha. Para obter mais informações detalhadas sobre o middleware, consulte o [tópico sobre middleware](~/v4sdk/bot-builder-concept-middleware.md).
-
-## <a name="generating-responses"></a>Geração de respostas
-
-O contexto de turnos fornece métodos de resposta de atividade para permitir que o código responda a uma atividade:
-
-* Os métodos _send activity_ e _send activities_ enviam uma ou mais atividades para a conversa.
-* Se compatível com o canal, o _atividade de atualização_ método atualiza uma atividade em uma conversa.
-* Se compatível com o canal, o método _excluir atividade_ remove uma atividade da conversa.
-
-Cada método de resposta é executado em um processo assíncrono. Quando é chamado, o método de resposta da atividade clona a lista de [manipuladores de eventos](#response-event-handlers) associada antes de começar a chamar os manipuladores, o que significa que conterá todos os manipuladores adicionados até este ponto, mas não conterá nada adicionado após o início do processo.
-
-Isso também significa que a ordem de suas respostas em chamadas de atividade independentes não é garantida, especialmente quando uma tarefa é mais complexa que outra. Se seu bot puder gerar várias respostas para uma atividade de entrada, certifique-se de que elas façam sentido na ordem em que forem recebidas pelo usuário. A única exceção a isso é o método *send activities*, que permite que você envie um conjunto ordenado de atividades.
-
-> [!IMPORTANT]
-> O encadeamento que manipula o giro do bot primário lida com a disposição do objeto de contexto quando isso é feito. **Certifique-se que `await` todas as chamadas de atividade** para que o segmento principal espere na atividade gerada antes de terminar o processamento e a eliminação do contexto de turno. Do contrário, uma resposta (incluindo seus manipuladores) demora um tempo significativo e tenta agir no objeto de contexto, podendo vir a receber um erro `Context was disposed`. 
-
-## <a name="response-event-handlers"></a>Manipuladores de eventos de resposta
-
-Além da lógica de middleware aplicativo, os manipuladores de resposta (às vezes também chamados de manipuladores de eventos ou manipuladores de eventos de atividade) podem ser adicionados ao objeto de contexto. Esses manipuladores são chamados quando a [resposta](#generating-responses) associada acontece no objeto de contexto atual, antes de executar a resposta real. Esses manipuladores são úteis quando você sabe que deseja fazer algo, antes ou depois do evento real, para cada atividade desse tipo para o restante da resposta atual.
-
-> [!WARNING]
-> Tenha o cuidado de não chamar um método de resposta de atividade a partir de seu respectivo manipulador de eventos de resposta, por exemplo, chamando o método de atividade de envio de dentro de um manipulador _na atividade de envio_. Isso pode gerar um loop infinito.
-
-Lembre-se: cada nova atividade obtém um novo thread para executar. Quando o encadeamento para processar a atividade é criado, a lista de manipuladores dessa atividade é copiada para esse novo encadeamento. Nenhum manipulador adicionado após esse ponto será executado para esse evento de atividade específico.
-
-Os manipuladores registrados em um objeto de contexto são tratados de maneira muito semelhante a como o adaptador gerencia o [pipeline de middleware](~/v4sdk/bot-builder-concept-middleware.md#the-bot-middleware-pipeline). Ou seja, os manipuladores são chamados na ordem em que são adicionados e chamar o _próximo_ delegado passa o controle para o próximo manipulador de eventos registrado. Se um manipulador não chamar o próximo delegado, nenhum dos manipuladores de eventos subsequentes serão chamados, o evento [entra em curto](~/v4sdk/bot-builder-concept-middleware.md#short-circuiting) e o adaptador não envia a resposta para o canal.
+O Middleware é muito parecido com qualquer outro middleware de mensagens, compreendendo um conjunto linear de componentes que são executados em ordem, dando a cada um a chance de operar na atividade. O estágio final do pipeline de middleware é um retorno de chamada para invocar a função do manipulador de turnos (`OnTurnAsync` em C# e `onTurn` em JS) na classe de bot que o aplicativo registrou com o adaptador. O manipulador de turnos recebe um contexto de turno como seu argumento, normalmente a lógica do aplicativo em execução na função do manipulador de turnos processará o conteúdo da atividade de entrada e gerará uma ou mais atividades em resposta, enviando-as usando a função *enviar atividade* no contexto do turno. Chamar *enviar atividade* no contexto de turno faz com que os componentes de middleware sejam invocados nas atividades de saída. Os componentes de middleware são executados antes e depois da função do manipulador de turno do bot. A execução é aninhada de forma inerente e, por isso, às vezes é chamada de Boneca Russa. Para obter mais informações detalhadas sobre o middleware, consulte o [tópico sobre middleware](~/v4sdk/bot-builder-concept-middleware.md).
 
 ## <a name="bot-structure"></a>Estrutura do bot
 
 Vamos examinar o bot de eco com o contador [[C#](https://aka.ms/EchoBotWithStateCSharp) | [JS](https://aka.ms/EchoBotWithStateJS)] de exemplo e examinar as principais partes do bot.
 
+[!INCLUDE [alert-await-send-activity](../includes/alert-await-send-activity.md)]
+
 # <a name="ctabcs"></a>[C#](#tab/cs)
 
-Um bot é um tipo de aplicativo Web do [ASP.NET Core](https://docs.microsoft.com/aspnet/core/?view=aspnetcore-2.1). Se examinar os conceitos básicos do [ASP.NET](https://docs.microsoft.com/aspnet/core/fundamentals/index?view=aspnetcore-2.1&tabs=aspnetcore2x), você verá código semelhante em arquivos como Program.cs e Startup.cs. Esses arquivos são necessários para todos os aplicativos Web e não são específicos do bot. O código em alguns desses arquivos não será copiado aqui, mas você pode consultar a amostra do bot de eco com contador.
+Um bot é um tipo de aplicativo Web do [ASP.NET Core](https://docs.microsoft.com/aspnet/core/?view=aspnetcore-2.1). Se você examinar os conceitos básicos do [ASP.NET](https://docs.microsoft.com/aspnet/core/fundamentals/index?view=aspnetcore-2.1&tabs=aspnetcore2x), verá um código semelhante em arquivos como **Program.cs** e **Startup.cs**. Esses arquivos são necessários para todos os aplicativos Web e não são específicos do bot. O código em alguns desses arquivos não será copiado aqui, mas você pode consultar o exemplo [echobot com contador em C#](https://aka.ms/EchoBot-With-Counter).
 
 ### <a name="echowithcounterbotcs"></a>EchoWithCounterBot.cs
 
@@ -244,7 +220,7 @@ public class EchoBotAccessors
 
 # <a name="javascripttabjs"></a>[JavaScript](#tab/js)
 
-A seção do sistema contém basicamente os arquivos **package.json**, **env**, **index. js** e **README.md**. O código em alguns arquivos não será copiado aqui, mas você o verá ao executar o bot.
+O gerador Yeoman cria um tipo de aplicativo Web [restify](http://restify.com/). Se você examinar o início rápido do restify nos documentos, verá um aplicativo semelhante ao arquivo gerado **index.js**. Esta seção descreve principalmente os arquivos **package.json**, **.env**, **index.js**, **bot.js** e **echobot-with-counter.bot**. Em alguns arquivos, o código não será copiado aqui, mas você o verá quando executar o bot, e pode conferir o exemplo [echobot com contador em Node.js](https://aka.ms/js-echobot-with-counter).
 
 ### <a name="packagejson"></a>package.json
 
