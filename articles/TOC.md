@@ -14,9 +14,9 @@
 # Conceitos
 ## [Como funcionam os bots](v4sdk/bot-builder-basics.md)
 ## [Gerenciar recursos de bot com um arquivo bot](v4sdk/bot-file-basics.md)
+## [Gerenciar estado](v4sdk/bot-builder-concept-state.md)
 ## [Middleware](v4sdk/bot-builder-concept-middleware.md)
-## [Sobre a biblioteca de Caixas de Diálogo](v4sdk/bot-builder-concept-dialog.md)
-## [Noções básicas sobre o estado das Caixas de Diálogo](v4sdk/bot-builder-dialog-state.md)
+## [Biblioteca de caixas de diálogo](v4sdk/bot-builder-concept-dialog.md)
 <!-- [Language understanding](v4sdk/bot-builder-concept-luis.md) -->
 ## [Modelos de Serviço de Bot](bot-service-concept-templates.md)
 ## [Serviços Cognitivos](bot-service-concept-intelligence.md)
