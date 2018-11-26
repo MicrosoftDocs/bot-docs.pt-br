@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 11/8/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 713a53947a8ea6681f1793f9796a86c6d8014e29
-ms.sourcegitcommit: cb0b70d7cf1081b08eaf1fddb69f7db3b95b1b09
+ms.openlocfilehash: bd431da58d13f3024617900bbeabd8007a2e3bb8
+ms.sourcegitcommit: 6cb37f43947273a58b2b7624579852b72b0e13ea
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51332920"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "52288796"
 ---
 # <a name="middleware"></a>Middleware
 
@@ -83,6 +83,16 @@ Além da lógica de middleware aplicativo, os manipuladores de resposta (às vez
 
 Lembre-se: cada nova atividade obtém um novo thread para executar. Quando o encadeamento para processar a atividade é criado, a lista de manipuladores dessa atividade é copiada para esse novo encadeamento. Nenhum manipulador adicionado após esse ponto será executado para esse evento de atividade específico.
 Os manipuladores registrados em um objeto de contexto são tratados como o adaptador gerencia o pipeline do middleware. Ou seja, os manipuladores são chamados na ordem em que são adicionados e chamar o próximo representante passa o controle para o próximo manipulador de eventos registrado. Se um manipulador não chamar o próximo representante, nenhum manipulador de eventos subsequente será chamado, o evento entrará em curto-circuito e o adaptador não enviará a resposta para o canal.
+
+## <a name="handling-state-in-middleware"></a>Tratando do estado em middleware
+
+Um método comum para salvar o estado é chamar o método salvar alterações no final do manipulador de turno. Aqui está um diagrama com foco na chamada.
+
+![problemas de middleware de estado](media/bot-builder-dialog-state-problem.png)
+
+O problema com essa abordagem é que as atualizações de estado feitas de um middleware personalizado que ocorrem depois que o manipulador de turnos do bot retornou não serão salvas no armazenamento durável. A solução é mover a chamada para o método salvar alterações após o middleware personalizado ser concluído, adicionando AutoSaveChangesMiddleware no início da pilha de middleware ou pelo menos antes de qualquer middleware que possa atualizar o estado. A execução é mostrada abaixo.
+
+![solução de middleware de estado](media/bot-builder-dialog-state-solution.png)
 
 ## <a name="additional-resources"></a>Recursos adicionais
 Você pode dar uma olhada no middleware do agente de transcrição, conforme implementado no SDK do Bot Builder [[C#](https://github.com/Microsoft/botbuilder-dotnet/blob/master/libraries/Microsoft.Bot.Builder/TranscriptLoggerMiddleware.cs) | [JS](https://github.com/Microsoft/botbuilder-js/blob/master/libraries/botbuilder-core/src/transcriptLogger.ts)].

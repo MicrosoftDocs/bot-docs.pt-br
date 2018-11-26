@@ -1,22 +1,18 @@
 ---
-title: Fazer as perguntas do usuário | Microsoft Docs
-description: Saiba como usar o modelo em cascata para solicitar ao usuário várias entradas no SDK do Bot Builder.
-keywords: cascatas, diálogos, fazer uma pergunta, solicitações
-author: v-ducvo
-ms.author: v-ducvo
-manager: kamrani
-ms.topic: article
-ms.service: bot-service
-ms.subservice: sdk
-ms.date: 5/10/2018
-monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 84c86e9cc295cd2a1dce0857fa7ab629c219dab1
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+redirect_url: /bot-framework/bot-builder-prompts
+ms.openlocfilehash: e7cfbad19290b3ef61d40dc90493db8f530a9a4e
+ms.sourcegitcommit: 4661b9bb31d74731dbbb16e625be088b44ba5899
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997465"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51826933"
 ---
+<a name="--"></a><!--
+---
+título: faça as perguntas do usuário | Descrição do Microsoft Docs: Saiba como usar o modelo em cascata para solicitar ao usuário várias entradas no SDK do Bot Builder.
+keywords: waterfalls, dialogs, asking a question, prompts author: v-ducvo ms.author: v-ducvo manager: kamrani ms.topic: article ms.service: bot-service ms.subservice: sdk ms.date: 5/10/2018 monikerRange: 'azure-bot-service-4.0'
+---
+
 # <a name="ask-the-user-questions"></a>Fazer as perguntas do usuário
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
@@ -500,3 +496,5 @@ Neste tutorial, o bot está salvando a entrada do usuário para variáveis dentr
 
 > [!div class="nextstepaction"]
 > [Persistir dados de usuário](bot-builder-tutorial-persist-user-inputs.md)
+
+-->

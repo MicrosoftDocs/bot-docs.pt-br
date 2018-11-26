@@ -1,21 +1,21 @@
 ---
 title: Diálogos no SDK do Bot Builder | Microsoft Docs
 description: Descreve o que é um diálogo e como ele funciona no SDK do Bot Builder.
-keywords: fluxo de conversa, reconhecer intenção, turno único, multiturno, conversa de bot, diálogos, solicitações, cascatas, conjunto de diálogo
+keywords: fluxo de conversa, prompt, estado de diálogo, reconhecer intenção, turno único, multiturno, conversa de bot, diálogos, solicitações, cascatas, conjunto de caixas de diálogo
 author: johnataylor
 ms.author: johtaylo
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 9/22/2018
+ms.date: 11/22/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 88022c387d5f9ef7f645be74010aba3c676efadc
-ms.sourcegitcommit: cb0b70d7cf1081b08eaf1fddb69f7db3b95b1b09
+ms.openlocfilehash: 52a2867f4d62be4969ed77d8d83e1e752edd7f92
+ms.sourcegitcommit: 6cb37f43947273a58b2b7624579852b72b0e13ea
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51332930"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "52288835"
 ---
 # <a name="dialogs-library"></a>Biblioteca de diálogos
 
@@ -40,7 +40,7 @@ Observe que um **BeginDialog de um diálogo** é o código de inicialização e 
 
 Para dar suporte ao aninhamento de diálogos (em que um diálogo tem um diálogo filho), há outro tipo de continuação; ela é chamada de continuidade. O DialogContext chamará o método ResumeDialog em um diálogo pai quando um diálogo filho for concluído.
 
-As solicitações e as cascatas são ambos exemplos concretos de diálogos fornecidos pelo SDK. Muitos cenários são criados pela composição essas abstrações, mas, nos bastidores, a lógica executada é sempre com o mesmo início, ou seja, o padrão de continuar e retomar descrito aqui. A implementação de uma classe Dialog do zero é um tópico relativamente avançado, mas um exemplo está incluído nas [amostras](https://github.com/Microsoft/BotBuilder-samples).
+As solicitações e as cascatas são ambos exemplos concretos de diálogos fornecidos pelo SDK. Muitos cenários são criados pela composição essas abstrações, mas, nos bastidores, a lógica executada é sempre com o mesmo início, ou seja, o padrão de continuar e retomar descrito aqui. 
 
 A biblioteca **Diálogos** no SDK do Bot Builder inclui recursos integrados, como _solicitações_, _diálogos de cascata_ e _diálogos de componente_, para ajudar a gerenciar a conversa do bot. Você pode usar solicitações para perguntar aos usuários diferentes tipos de informações, cascatas para combinar várias etapas em uma sequência e diálogos de componente para empacotar sua lógica de diálogo em classes separadas que podem ser integradas a outros bots.
 ## <a name="waterfall-dialogs-and-prompts"></a>Solicitações e diálogos de cascata
@@ -63,6 +63,18 @@ Você pode manipular um valor retornado de um diálogo dentro de uma etapa de ca
 Dentro de uma etapa de cascata, o diálogo fornece o valor retornado na propriedade _result_ do contexto da etapa de cascata.
 Normalmente, você só precisa verificar o status do resultado do turno do diálogo na lógica de turno de seu bot.
 
+## <a name="dialog-state"></a>Estado do diálogo
+
+As caixas de diálogo são uma abordagem usada para implementar uma conversa com vários turnos e, por isso, são um exemplo de um recurso do SDK que se baseia em um estado persistente em vários turnos. Sem o estado nas caixas de diálogo, seu bot não saberia onde está no conjunto de caixas de diálogo ou as informações já coletadas.
+
+Um bot baseado em caixas de diálogo normalmente contém uma coleção de conjunto de diálogos como variável de membro em sua implementação de bot. Esse conjunto de caixas de diálogo é criado com um identificador para um objeto chamado acessador que fornece acesso ao estado persistente. Para obter informações sobre o estado dentro dos bots, confira [Gerenciando o estado](bot-builder-concept-state.md). 
+
+![estado do diálogo](media/bot-builder-dialog-state.png)
+
+Quando o manipulador no acionamento do bot é chamado, o bot inicializa o subsistema do diálogo chamando *criar contexto* no conjunto de caixas de diálogo, que retorna o *contexto de caixa de diálogo*. A criação de um contexto de caixa de diálogo requer o estado, que é acessado com o acessador fornecido ao criar o conjunto de caixas de diálogo. Com esse acessador, o conjunto de caixas de diálogo pode obter o estado apropriado da caixa de diálogo JSON. Esse contexto de caixa de diálogo contém as informações necessárias para a caixa de diálogo.
+
+Mais detalhes sobre os acessadores de estado podem ser encontrados em [Salvar os dados de usuário e a conversa](bot-builder-howto-v4-state.md).
+
 ## <a name="repeating-a-dialog"></a>Repetindo um diálogo
 
 Para repetir um diálogo, utilize o método *replace dialog*. O método *replace dialog* do contexto do diálogo destacará o diálogo atual na fila, enviará o diálogo de substituição por push para o topo da fila e o iniciará. Você pode usar esse método para criar um loop substituindo um diálogo por ele próprio. Observe que, se você precisar persistir o estado interno do diálogo atual, precisará passar informações para a nova instância do diálogo na chamada para o método _replace dialog_ e inicializar o diálogo adequadamente. As opções passadas para o novo diálogo podem ser acessadas por meio da propriedade _options_ do contexto da etapa em qualquer etapa do diálogo. Isso é uma ótima maneira de lidar com um fluxo de conversa complexo ou gerenciar menus.
@@ -78,7 +90,7 @@ Assim, você pode criar uma ramificação dentro do fluxo da sua conversa inclui
 ## <a name="component-dialog"></a>Diálogo de componente
 Às vezes você deseja codificar um diálogo reutilizável para usar em cenários diferentes. Um exemplo pode ser um diálogo de endereço que pede ao usuário para fornecer valores de rua, cidade e CEP. 
 
-O ComponentDialog fornece um nível de isolamento porque tem um DialogSet separado. Por ter um DialogSet separado, ele evita conflitos de nome com o pai que contém o diálogo, cria seu próprio tempo de execução interno do diálogo independente (criando seu próprio DialogContext) e expede a atividade para ele. Essa expedição secundária significa que ele teve a oportunidade de interceptar a atividade. Isso poderá ser muito útil se você quiser implementar recursos como "help" e "cancel".  Confira o exemplo de Modelo de Bot do Enterprise. 
+O ComponentDialog fornece um nível de isolamento porque tem um DialogSet separado. Por ter um DialogSet separado, ele evita conflitos de nome com o pai que contém o diálogo, cria seu próprio tempo de execução interno do diálogo independente (criando seu próprio DialogContext) e expede a atividade para ele. Essa expedição secundária significa que ele teve a oportunidade de interceptar a atividade. Isso poderá ser muito útil se você quiser implementar recursos como "help" e "cancel".  Confira o exemplo de [Modelo de Bot do Enterprise](https://aka.ms/abs/templates/cabot). 
 
 ## <a name="next-steps"></a>Próximas etapas
 

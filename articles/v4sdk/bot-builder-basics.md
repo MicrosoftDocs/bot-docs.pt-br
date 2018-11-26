@@ -8,14 +8,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 11/08/2018
+ms.date: 11/15/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 852740695f4d5719ba4dc4cc3d49c6820d95b3ef
-ms.sourcegitcommit: cb0b70d7cf1081b08eaf1fddb69f7db3b95b1b09
+ms.openlocfilehash: 15cd6c998abf37b1c7b9a9e2659b7390370f7f10
+ms.sourcegitcommit: d92fd6233295856052305e0d9e3cba29c9ef496e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51333000"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51715120"
 ---
 # <a name="how-bots-work"></a>Como funcionam os bots
 
@@ -64,16 +64,16 @@ O *adaptador*, um componente integrado do SDK, é o núcleo do tempo de execuç�
 O Middleware é muito parecido com qualquer outro middleware de mensagens, compreendendo um conjunto linear de componentes que são executados em ordem, dando a cada um a chance de operar na atividade. O estágio final do pipeline de middleware é um retorno de chamada para invocar a função do manipulador de turnos (`OnTurnAsync` em C# e `onTurn` em JS) na classe de bot que o aplicativo registrou com o adaptador. O manipulador de turnos recebe um contexto de turno como seu argumento, normalmente a lógica do aplicativo em execução na função do manipulador de turnos processará o conteúdo da atividade de entrada e gerará uma ou mais atividades em resposta, enviando-as usando a função *enviar atividade* no contexto do turno. Chamar *enviar atividade* no contexto de turno faz com que os componentes de middleware sejam invocados nas atividades de saída. Os componentes de middleware são executados antes e depois da função do manipulador de turno do bot. A execução é aninhada de forma inerente e, por isso, às vezes é chamada de Boneca Russa. Para obter mais informações detalhadas sobre o middleware, consulte o [tópico sobre middleware](~/v4sdk/bot-builder-concept-middleware.md).
 
 ## <a name="bot-structure"></a>Estrutura do bot
+Nas seções a seguir, examinamos os principais componentes de um bot.
 
-Vamos examinar o bot de eco com o contador [[C#](https://aka.ms/EchoBotWithStateCSharp) | [JS](https://aka.ms/EchoBotWithStateJS)] de exemplo e examinar as principais partes do bot.
-
-[!INCLUDE [alert-await-send-activity](../includes/alert-await-send-activity.md)]
+### <a name="prerequisites"></a>Pré-requisitos
+- Uma cópia do exemplo **EchoBotWithCounter** em [C#](https://aka.ms/EchoBotWithStateCSharp) ou [JS](https://aka.ms/EchoBotWithStateJS). Somente o código relevante é mostrado aqui, mas você pode consultar o exemplo para código-fonte completo.
 
 # <a name="ctabcs"></a>[C#](#tab/cs)
 
-Um bot é um tipo de aplicativo Web do [ASP.NET Core](https://docs.microsoft.com/aspnet/core/?view=aspnetcore-2.1). Se você examinar os conceitos básicos do [ASP.NET](https://docs.microsoft.com/aspnet/core/fundamentals/index?view=aspnetcore-2.1&tabs=aspnetcore2x), verá um código semelhante em arquivos como **Program.cs** e **Startup.cs**. Esses arquivos são necessários para todos os aplicativos Web e não são específicos do bot. O código em alguns desses arquivos não será copiado aqui, mas você pode consultar o exemplo [echobot com contador em C#](https://aka.ms/EchoBot-With-Counter).
+Um bot é um tipo de aplicativo Web do [ASP.NET Core](https://docs.microsoft.com/aspnet/core/?view=aspnetcore-2.1). Se você examinar os conceitos básicos do [ASP.NET](https://docs.microsoft.com/aspnet/core/fundamentals/index?view=aspnetcore-2.1&tabs=aspnetcore2x), verá um código semelhante em arquivos como **Program.cs** e **Startup.cs**. Esses arquivos são necessários para todos os aplicativos Web e não são específicos do bot. 
 
-### <a name="echowithcounterbotcs"></a>EchoWithCounterBot.cs
+### <a name="bot-logic"></a>Lógica do bot
 
 A lógica principal do bot é definida na classe `EchoWithCounterBot` que deriva da interface `IBot`. `IBot` define um único método `OnTurnAsync`. Seu aplicativo precisa implementar esse método. `OnTurnAsync` tem turnContext, que fornece informações sobre a atividade de entrada. A atividade de entrada corresponde à solicitação HTTP de entrada. As atividades de entrada podem ser de vários tipos e, portanto, primeiro verificamos se seu bot recebeu uma mensagem. Se for uma mensagem, obteremos o estado de conversa do contexto de turno, incrementaremos o contador de turnos e persistiremos o valor do contador de novo turno para o estado da conversa. Em seguida, enviaremos uma mensagem de volta para o usuário usando a chamada SendActivityAsync. A atividade de saída corresponde à solicitação HTTP de saída.
 
@@ -105,9 +105,9 @@ public async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancel
 }
 ```
 
-### <a name="startupcs"></a>Startup.cs
+### <a name="set-up-services"></a>Configurar serviços
 
-O método `ConfigureServices` carrega os serviços conectados do arquivo [.bot](bot-builder-basics.md#the-bot-file), captura todos os erros que ocorrem durante o turno de uma conversa e os registra em log, configura seu provedor de credenciais e cria um objeto de estado da conversa para armazenar dados de conversa na memória.
+O método `ConfigureServices` no arquivo startup.cs carrega os serviços conectados do arquivo [.bot](bot-builder-basics.md#the-bot-file), captura todos os erros que ocorrem durante o turno de uma conversa e os registra em log, configura seu provedor de credenciais e cria um objeto de estado da conversa para armazenar os dados de conversa na memória.
 
 ```csharp
 services.AddBot<EchoWithCounterBot>(options =>
@@ -162,10 +162,9 @@ services.AddBot<EchoWithCounterBot>(options =>
 });
 ```
 
-Ele também cria e registra `EchoBotAccessors` que são definidos no arquivo **EchoBotStateAccessors.cs** e são transmitidos para o construtor `EchoWithCounterBot` público usando a estrutura de injeção de dependência no ASP.NET Core.
+O método `ConfigureServices` também cria e registra `EchoBotAccessors` que são definidos no arquivo **EchoBotStateAccessors.cs** e são transmitidos para o construtor público `EchoWithCounterBot` usando a estrutura de injeção de dependência no ASP.NET Core.
 
 ```csharp
-// Create and register state accessors.
 // Accessors created here are passed into the IBot-derived class on every turn.
 services.AddSingleton<EchoBotAccessors>(sp =>
 {
@@ -187,7 +186,7 @@ services.AddSingleton<EchoBotAccessors>(sp =>
 
 O método `Configure` termina a configuração do seu aplicativo, especificando que o aplicativo use o Bot Framework e alguns outros arquivos. Todos os bots que usam o Bot Framework precisarão dessa chamada de configuração. `ConfigureServices` e `Configure` são chamados pelo tempo de execução quando o aplicativo é iniciado.
 
-### <a name="counterstatecs"></a>CounterState.cs
+### <a name="manage-state"></a>Gerenciar o estado
 
 Esse arquivo contém uma classe simples que nosso bot usa para manter o estado atual. Ele contém apenas um `int` que usamos para incrementar o contador.
 
@@ -198,7 +197,7 @@ public class CounterState
 }
 ```
 
-### <a name="echobotaccessorscs"></a>EchoBotAccessors.cs
+### <a name="accessor-class"></a>Classe de acessador
 
 A classe `EchoBotAccessors` é criada como um singleton na classe `Startup` e transmitida para a classe derivada do IBot. Nesse caso, `public class EchoWithCounterBot : IBot`. O bot usa o acessador para persistir dados da conversa. O construtor de `EchoBotAccessors` é transmitido em um objeto de conversa que é criado no arquivo Startup.cs.
 
@@ -401,7 +400,7 @@ exports.EchoBot = EchoBot;
 
 ---
 
-### <a name="the-bot-file"></a>O arquivo de bot
+## <a name="the-bot-file"></a>O arquivo de bot
 
 O arquivo **.bot** contém informações, incluindo o ponto de extremidade, a ID do aplicativo e a senha e as referências aos serviços que são usados pelo bot. Esse arquivo é criado quando você começa a criar um bot a partir de um modelo, mas é possível criar um personalizado por meio do emulador ou de outras ferramentas. Você pode especificar o arquivo .bot a ser usado ao testar o bot com o [emulador](../bot-service-debug-emulator.md).
 
@@ -425,7 +424,7 @@ O arquivo **.bot** contém informações, incluindo o ponto de extremidade, a ID
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-Para obter mais informações sobre o gerenciamento de estado, consulte [Como gerenciar os estados de usuário e conversa](bot-builder-howto-v4-state.md)
+Para entender o papel de um arquivo de bot no gerenciamento de recursos, confira [arquivo de bot](bot-file-basics.md).
 
 ## <a name="next-steps"></a>Próximas etapas
 

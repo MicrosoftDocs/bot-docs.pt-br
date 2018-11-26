@@ -1,0 +1,106 @@
+---
+title: Gerenciar Estado | Microsoft Docs
+description: Descreve como o estado funciona dentro do SDK do Bot Builder.
+keywords: estado, estado do bot, estado da conversa, estado do usuário
+author: ivorb
+ms.author: v-ivorb
+manager: kamrani
+ms.topic: article
+ms.service: bot-service
+ms.subservice: sdk
+ms.date: 11/15/2018
+monikerRange: azure-bot-service-4.0
+ms.openlocfilehash: 366a985e839c8a79fcd8794c139e2e8130a05335
+ms.sourcegitcommit: 6cb37f43947273a58b2b7624579852b72b0e13ea
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "52288865"
+---
+# <a name="managing-state"></a>Gerenciar estado
+
+O estado dentro de um bot segue os mesmos paradigmas dos aplicativos Web modernos e o SDK do Bot Framework oferece algumas abstrações para facilitar o gerenciamento do estado.
+
+Assim como acontece com os aplicativos Web, um bot é inerentemente sem estado; uma instância diferente do seu bot pode lidar com qualquer turno da conversa. Para alguns bots, essa simplicidade é preferível; o bot também pode operar sem informações adicionais ou as informações necessárias são garantidas dentro da mensagem de entrada. Para outros, o estado (por exemplo, onde estamos na conversa ou os dados sobre o usuário recebidos anteriormente) é necessário para o bot ter uma conversa útil.
+
+**Por que eu preciso de um estado?**
+
+Manter o estado permite que seu bot tenha conversas mais significativas, lembrando-se de algumas coisas sobre o usuário ou a conversa. Por exemplo, se você já falou antes com um usuário, pode salvar as informações anteriores sobre ele para não precisar pedi-las novamente. O estado também mantém os dados por mais tempo que o turno atual, assim seu bot mantém as informações ao longo de uma conversa com vários turnos.
+
+Sobre os bots, há algumas camadas que usam o estado, que abordaremos aqui: camada de armazenamento, gerenciamento do estado e acessadores de propriedades do estado.
+
+## <a name="storage-layer"></a>Camada de armazenamento
+
+Começando no back-end, onde as informações do estado são, de fato, armazenadas, está a nossa *camada de armazenamento*. Ela pode ser considerada nosso armazenamento físico, como na memória, o Azure ou um servidor de terceiros.
+
+O SDK do Bot Framework fornece implementações da camada de armazenamento, como o armazenamento na memória para testar localmente e o armazenamento do Azure ou CosmosDB para testar e implantar na nuvem.
+
+## <a name="state-management"></a>Gerenciamento de estado
+
+O *Gerenciamento do estado* automatiza a leitura e a gravação do estado do bot na camada de armazenamento subjacente. O estado é armazenado como as *propriedades do estado*, que são pares de chave-valor que seu bot pode ler e gravar por meio do objeto de gerenciamento de estados, sem se preocupar com a implementação subjacente específica. Essas propriedades do estado definem como essas informações são armazenadas. Por exemplo, ao recuperar uma propriedade definida como uma classe ou objeto específico, você sabe como os dados serão estruturados.
+
+Essas propriedades do estado são agrupadas em "buckets" com escopo, que são apenas coleções para ajudar a organizá-las. O SDK inclui três "buckets":
+
+- Estado do usuário
+- Estado da conversa
+- Estado da conversa privada
+
+Todos esses buckets são subclasses da classe do *estado do bot*, que podem ser derivadas para definir outros tipos de buckets.
+
+Esses buckets predefinidos têm escopo para uma determinada visibilidade, dependendo do bucket:
+
+- O estado do usuário está disponível em qualquer turno no qual o bot esteja conversando com tal usuário naquele canal, independentemente da conversa
+- O estado da conversa está disponível em qualquer turno em uma conversa específica, independentemente do usuário (ou seja, conversas em grupo)
+- O estado da conversa privada tem escopo na conversa específica e naquele usuário específico
+
+As chaves usadas para cada um desses buckets predefinidos são específicas para o usuário e a conversa, ou ambos. Ao definir o valor da propriedade do estado, a chave é definida para você internamente com informações contidas no contexto do turno para garantir que cada usuário ou conversa seja colocado no bucket e na propriedade corretos. Especificamente, as chaves são definidas da seguinte maneira:
+
+- O estado do usuário cria uma chave usando a *ID do canal* e a *ID de*. Por exemplo, _{Activity.ChannelId}/users/{Activity.From.Id}#SeuNomePropriedade_
+- O estado da conversa cria uma chave usando a *ID do canal* e a *ID da conversa*. Por exemplo, _{Activity.ChannelId}/conversations/{Activity.Conversation.Id}#SeuNomePropriedade_
+- O estado da conversa privada cria uma chave usando a *ID do canal*, a *ID de* e a *ID da conversa*. Por exemplo, _{Activity.ChannelId}/conversations/{Activity.Conversation.Id}/users/{Activity.From.Id}#SeuNomePropriedade_
+
+Para obter detalhes sobre como usar esses buckets predefinidos, confira o [artigo de instruções do estado](bot-builder-howto-v4-state.md).
+
+## <a name="state-property-accessors"></a>Acessadores de propriedades do estado
+
+Os *acessadores de propriedades do estado* são usados para realmente ler ou gravar uma de suas propriedades do estado e fornecer os métodos *get*, *set* e *delete* para acessar as propriedades do estado de dentro de um turno. Para criar um acessador, você deve fornecer o nome da propriedade, que geralmente acontece quando está inicializando seu bot. Em seguida, é possível usar esse acessador para obter e manipular essa propriedade do estado do bot.
+
+Os acessadores permitem que o SDK obtenha o estado no armazenamento subjacente e atualizam o *cache do estado* do bot para você. O cache do estado é um cache local mantido pelo bot que armazena o objeto de estado para você, permitindo operações leitura e gravação sem acessar o armazenamento subjacente. Se ainda não estiver no cache, chamar o método *get* do acessador irá recuperar o estado e também colocá-lo no cache. Depois de recuperada, a propriedade do estado pode ser manipulada como uma variável local.
+
+O método *delete* do acessador remove a propriedade do cache e também a exclui do armazenamento subjacente.
+
+> [!IMPORTANT]
+> Para a primeira chamada do método *get* do acessador, você deve fornecer um método de fábrica para criar o objeto, caso ele ainda não exista em seu estado. Se não for fornecido nenhum método de fábrica, você receberá uma exceção. Detalhes sobre como usar um método de fábrica podem ser encontrados no [artigo de instruções do estado](bot-builder-howto-v4-state.md).
+
+Para persistir as alterações feitas na propriedade do estado que você obtém do acessador, a propriedade no cache de estado deve ser atualizada. Você pode fazer isso chamando o método *set* do acessador, que define o valor da propriedade no cache e estará disponível se precisar ser lido ou atualizado posteriormente nesse turno. Para realmente persistir esses dados no armazenamento subjacente (e, portanto, disponibilizá-los após o turno atual), você deve [salvar seu estado](#saving-state).
+
+### <a name="how-the-state-property-accessor-methods-work"></a>Como funcionam os métodos do acessador de propriedades do estado
+
+Os métodos do acessador são a principal maneira do bot interagir com o estado. Como cada um funciona e como as camadas subjacentes interagem:
+
+- Método *get* do acessador
+    - O acessador solicita a propriedade no cache do estado
+    - Se a propriedade estiver no cache, retorne-a. Caso contrário, obtenha-a no objeto de gerenciamento do estado.
+        - Se ainda não estiver no estado, use o método de fábrica fornecido na chamada *get* dos acessadores.
+- Método *set* do acessador
+    - Atualize o cache do estado com o novo valor da propriedade.
+- Método *save changes* do objeto de gerenciamento do estado
+    - Verifique as alterações da propriedade no cache de estado.
+    - Grave essa propriedade no armazenamento.
+
+## <a name="saving-state"></a>Salvando o estado
+
+Quando você chama o método set do acessador para registrar o estado atualizado, a propriedade do estado ainda não foi salva em seu armazenamento persistente e somente está salva no cache do estado do bot. Para salvar as alterações no cache de estado para o estado persistente, você deve chamar o método *save changes* do objeto de gerenciamento do estado, que está disponível na implementação da classe de estado do bot mencionada acima (como os estados do usuário ou da conversa).
+
+Chamar o método save changes de um objeto de gerenciamento do estado (ou seja, os buckets mencionados acima) salva todas as propriedades no cache de estado que você configurou naquele ponto do bucket, mas não qualquer bucket que possa haver no estado do bot.
+
+> [!TIP]
+> O estado do bot implementa um comportamento de "última gravação prevalece", no qual a última gravação será marcada acima do estado gravado anteriormente. Isso pode funcionar para muitos aplicativos, mas tem implicações, especialmente nos cenários de expansão em que pode haver algum nível de simultaneidade ou latência.
+
+Se você tiver um middleware personalizado que possa atualizar o estado após a conclusão do manipulador de turnos, considere [manipular o estado no middleware](bot-builder-concept-middleware.md#handling-state-in-middleware).
+
+## <a name="additional-resources"></a>Recursos adicionais
+
+- [Estado do diálogo](bot-builder-concept-dialog.md#dialog-state)
+- [Gravar diretamente no armazenamento](bot-builder-howto-v4-storage.md)
+- [Salvar dados da conversa e do usuário](bot-builder-howto-v4-state.md)
