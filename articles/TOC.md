@@ -7,7 +7,7 @@
 ### [.NET](dotnet/bot-builder-dotnet-sdk-quickstart.md)
 ### [JavaScript](javascript/bot-builder-javascript-quickstart.md)
 # Tutoriais
-## [Usar os serviços LUIS e QnA com a ferramenta de Expedição](v4sdk/bot-builder-tutorial-dispatch.md)
+## [Usar vários modelos de LUIS e QnA](v4sdk/bot-builder-tutorial-dispatch.md)
 ## [Adicionar autenticação ao seu bot ](bot-builder-tutorial-authentication.md)
 # Exemplos
 ## [Repositório de exemplos no GitHub](https://github.com/Microsoft/BotBuilder-Samples/blob/master/readme.md)
