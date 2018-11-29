@@ -43,7 +43,7 @@
 ### Gerenciar as conversas usando a biblioteca de Caixas de Diálogo 
 #### [Implementar o fluxo de conversa sequencial](v4sdk/bot-builder-dialog-manage-conversation-flow.md)
 #### [Coletar entradas do usuário usando um prompt de caixa de diálogo](v4sdk/bot-builder-prompts.md)
-#### [Criar o fluxo de conversa de avanço usando ramificações e loops](v4sdk/bot-builder-dialog-manage-complex-conversation-flow.md)
+#### [Criar fluxo de conversa avançado usando branches e loops](v4sdk/bot-builder-dialog-manage-complex-conversation-flow.md)
 #### [Manipular interrupções do usuário](v4sdk/bot-builder-howto-handle-user-interrupt.md)
 #### [Persistir dados de usuário](v4sdk/bot-builder-tutorial-persist-user-inputs.md)
 #### [Reutilizar as caixas de diálogo](v4sdk/bot-builder-compositcontrol.md)
