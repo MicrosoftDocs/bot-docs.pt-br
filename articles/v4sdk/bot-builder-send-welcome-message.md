@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 11/15/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: eb62df9bd1f74ab6de9b67fe352b1af4620a6bc6
-ms.sourcegitcommit: d92fd6233295856052305e0d9e3cba29c9ef496e
+ms.openlocfilehash: 02fb57d5d766ddd72c2dcface673c5c6355cf184
+ms.sourcegitcommit: 6c719b51c9e4e84f5642100a33fe346b21360e8a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51715100"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52452028"
 ---
 # <a name="send-welcome-message-to-users"></a>Enviar mensagem de boas-vinda aos usuários
 
@@ -134,7 +134,7 @@ public async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancel
                 if (member.Id != turnContext.Activity.Recipient.Id)
                 {
                     await turnContext.SendActivityAsync($"Hi there - {member.Name}. Welcome to the 'Welcome User' Bot. This bot will introduce you to welcoming and greeting users.", cancellationToken: cancellationToken);
-                    await turnContext.SendActivityAsync($"You are seeing this message because the bot recieved atleast one 'ConversationUpdate' event,indicating you (and possibly others) joined the conversation. If you are using the emulator, pressing the 'Start Over' button to trigger this event again. The specifics of the 'ConversationUpdate' event depends on the channel. You can read more information at https://aka.ms/about-botframewor-welcome-user", cancellationToken: cancellationToken);
+                    await turnContext.SendActivityAsync($"You are seeing this message because the bot recieved at least one 'ConversationUpdate' event,indicating you (and possibly others) joined the conversation. If you are using the emulator, pressing the 'Start Over' button to trigger this event again. The specifics of the 'ConversationUpdate' event depends on the channel. You can read more information at https://aka.ms/about-botframewor-welcome-user", cancellationToken: cancellationToken);
                     await turnContext.SendActivityAsync($"It is a good pattern to use this event to send general greeting to user, explaning what your bot can do. In this example, the bot handles 'hello', 'hi', 'help' and 'intro. Try it now, type 'hi'", cancellationToken: cancellationToken);
                 }
             }
@@ -149,7 +149,7 @@ public async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancel
 
 Esse código do JavaScript envia uma mensagem de boas-vindas quando um usuário é adicionado. Isso é feito analisando a atividade da conversa e verificando se um novo membro foi adicionado à conversa.
 
-``` javascript
+```javascript
 // Import required Bot Framework classes.
 const { ActivityTypes } = require('botbuilder');
 const { CardFactory } = require('botbuilder');
@@ -213,7 +213,7 @@ class MainDialog {
                     // Because the TurnContext was bound to this function, the bot can call
                     // `TurnContext.sendActivity` via `this.sendActivity`;
                     await this.sendActivity(`Welcome to the 'Welcome User' Bot. This bot will introduce you to welcoming and greeting users.`);
-                    await this.sendActivity("You are seeing this message because the bot recieved atleast one 'ConversationUpdate'" + 
+                    await this.sendActivity("You are seeing this message because the bot recieved at least one 'ConversationUpdate'" + 
                                             "event,indicating you (and possibly others) joined the conversation. If you are using the emulator, "+ 
                                             "pressing the 'Start Over' button to trigger this event again. The specifics of the 'ConversationUpdate' "+
                                             "event depends on the channel. You can read more information at https://aka.ms/about-botframewor-welcome-user");
@@ -298,7 +298,7 @@ public async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancel
 
 ## <a name="javascripttabjsmulti"></a>[JavaScript](#tab/jsmulti)
 
-``` javascript
+```javascript
 class MainDialog 
 { 
     // Previous Code Sample
@@ -373,7 +373,7 @@ Em seguida, podemos enviar o cartão usando o seguinte comando await. Vamos colo
 ```csharp
 switch (text)
 {
-    case "hello":"
+    case "hello":
     case "hi":
         await turnContext.SendActivityAsync($"You said {text}.", cancellationToken: cancellationToken);
         break;
@@ -392,14 +392,14 @@ switch (text)
 
 Primeiro, vamos adicionar nosso Cartão Adaptável ao bot na parte superior de _index. js_ logo abaixo de Importações.
 
-``` javascript
+```javascript
 // Adaptive Card content
 const IntroCard = require('./Resources/IntroCard.json');
 ```
 
 Em seguida, basta usarmos o código abaixo na seção _switch (text)_ _case "help"_ do bot para responder ao prompt dos usuários com o cartão adaptável.
 
-``` javascript
+```javascript
 switch (text) 
 {
     case "hello":
