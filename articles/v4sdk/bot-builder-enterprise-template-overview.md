@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 09/18/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f5aacc693fb2e8987d6b59db67d0272423a4cf44
-ms.sourcegitcommit: 8b7bdbcbb01054f6aeb80d4a65b29177b30e1c20
+ms.openlocfilehash: 43bc3c7606a12084690d71f8b6ea2dc3b2e5984d
+ms.sourcegitcommit: 6c719b51c9e4e84f5642100a33fe346b21360e8a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51645549"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52451988"
 ---
 # <a name="enterprise-bot-template"></a>Modelo de Bot do Enterprise 
 
@@ -29,15 +29,15 @@ Recurso | DESCRIÇÃO |
 Mensagem de introdução | Mensagem de introdução com um Cartão Adaptável no início da conversa. Ele explica os recursos dos bots e fornece botões para orientar perguntas iniciais. Os desenvolvedores podem personalizá-los conforme apropriado.
 Indicadores automatizados de digitação  | Envie indicadores visuais de digitação durante as conversas e repita isso em operações de longa execução.
 Configuração controlada pelo arquivo .bot | Todas as informações sobre a configuração do Bot, por exemplo, LUIS, Dispatcher Endpoints, Application Insights, são incorporadas ao arquivo .bot e usadas para impulsionar a Inicialização do Bot.
-Intenções básicas de conversação  | Intenções básicas (Saudação, Adeus, Ajuda, Cancelar, etc.) em inglês, francês, italiano, alemão e espanhol. Elas são disponibilizadas nos arquivos .LU (reconhecimento vocal) e é muito simples modificá-las.
+Intenções básicas de conversação  | Intenções básicas (Saudação, Adeus, Ajuda, Cancelar, etc.) em inglês, francês, italiano, alemão, espanhol e chinês. Elas são disponibilizadas nos arquivos .LU (reconhecimento vocal) e é muito simples modificá-las.
 Respostas básicas de conversação  | Respostas para intenções básicas de conversação abstraídas em classes View separadas. No futuro, elas serão transferidas para os novos arquivos de geração de linguagem (LG).
 Conteúdo inadequado ou PII (informação de identificação do usuário)  |Detecte dados inadequados ou de PII em conversas recebidas utilizando o [Content Moderator](https://azure.microsoft.com/en-us/services/cognitive-services/content-moderator/) em um componente de middleware.
 Transcrições  | Transcrições de todas as conversas guardadas no Armazenamento do Azure
-Dispatcher | Um modelo [Dispatch](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-tutorial-dispatch?view=azure-bot-service-4.0&tabs=csaddref%2Ccsbotconfig) integrado para identificar se uma determinada expressão deveria ser processada pelo LUIS + Code ou passada para o QnAMaker.
-Integração do QnAMaker  | Integração com o [QnAMaker](https://www.qnamaker.ai) para responder a perguntas gerais a partir de uma Base de Conhecimento que pode aproveitar fontes de dados existentes (por exemplo, manuais em PDF).
+Dispatcher | Um modelo [Dispatch](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-tutorial-dispatch?view=azure-bot-service-4.0&tabs=csaddref%2Ccsbotconfig) integrado para identificar se uma determinada expressão deveria ser processada pelo LUIS + Code ou passada para o QnA Maker.
+Integração com o QnA Maker  | Integração com o [QnAMaker](https://www.qnamaker.ai) para responder a perguntas gerais a partir de uma Base de Conhecimento que pode aproveitar fontes de dados existentes (por exemplo, manuais em PDF).
 Insights de conversas  | Integração com o [Application Insights](https://azure.microsoft.com/en-gb/services/application-insights/) para coletar telemetria para todas as conversas e um painel de exemplo do Power BI para começar com insights sobre suas experiências de conversação.
 
-Além disso, todos os recursos do Azure de que o Bot precisa são implantados automaticamente: registro do Bot, Serviço de Aplicativo do Azure, LUIS, QnAMaker, Content Moderator, CosmosDB, Armazenamento do Azure e Application Insights. Além disso, os modelos básicos do LUIS, QnAMaker e Dispatch são criados, treinados e publicados para permitir testes imediatos de intenções e roteamento básicos.
+Além disso, todos os recursos do Azure de que o Bot precisa são implantados automaticamente: registro do Bot, Serviço de Aplicativo do Azure, LUIS, QnA Maker, Content Moderator, CosmosDB, Armazenamento do Azure e Application Insights. Além disso, os modelos básicos do LUIS, QnA Maker e Dispatch são criados, treinados e publicados para permitir testes imediatos de intenções e roteamento básicos.
 
 Após a criação do modelo e da execução das etapas de implantação, pressione F5 para testar de ponta a ponta. Isso fornecerá uma base sólida sobre a qual a experiência de conversação será inciada, reduzindo a carga de vários dias de trabalho que cada projeto teve que realizar, e eleva o nível de qualidade da conversa.
 

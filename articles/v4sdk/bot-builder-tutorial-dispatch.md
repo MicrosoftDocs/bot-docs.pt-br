@@ -1,67 +1,45 @@
 ---
-title: Usar LUIS e serviços do QnA com a ferramenta de Expedição | Microsoft Docs
+title: Usar vários modelos de LUIS e QnA | Microsoft Docs
 description: Aprenda a usar o criador LUIS e QnA no seu bot.
-keywords: Ferramenta do Luis, QnA, expedição, vários serviços
+keywords: Luis, QnA, ferramenta Dispatch, vários serviços, rotear intenções
 author: DeniseMak
 ms.author: v-demak
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 10/31/2018
+ms.date: 11/26/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4d029dc7361ac8a7fadb61141faf60d8a62eab3c
-ms.sourcegitcommit: a496714fb72550a743d738702f4f79e254c69d06
+ms.openlocfilehash: 9b0ddf5cf8af61048ba78f10824c9573da82fc08
+ms.sourcegitcommit: a722f960cd0a8513d46062439eb04de3a0275346
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50736674"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52336266"
 ---
-# <a name="use-luis-and-qna-services-with-the-dispatch-tool"></a>Usar os serviços LUIS e QnA com a ferramenta de Expedição
+# <a name="use-multiple-luis-and-qna-models"></a>Usar vários modelos de LUIS e QnA
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
-<!--TODO: Add the JS sections back in and update them once the JS sample is working.-->
+Neste tutorial, demonstraremos como usar o serviço Dispatch para rotear declarações quando houver vários modelos de LUIS e serviços do QnA Maker para cenários diferentes compatíveis com um bot. Nesse caso, configuramos a expedição com vários modelos de LUIS para conversas sobre automação residencial e informações sobre o clima, além do serviço QnA Maker para responder a perguntas com base em um arquivo de texto de perguntas frequentes como entrada. Este exemplo combina os serviços a seguir.
 
-Este tutorial demonstra como usar um modelo LUIS gerado pela ferramenta Despachar, para integrar seu bot com vários aplicativos LUIS (Compreensão de Linguagem) e serviços QnAMaker. Este exemplo combina os serviços a seguir.
+| NOME | DESCRIÇÃO |
+|------|------|
+| HomeAutomation | Um aplicativo LUIS que reconhece uma intenção de automação residencial com dados de entidade associados.|
+| Clima | Um aplicativo LUIS que reconhece as intenções `Weather.GetForecast` e `Weather.GetCondition` com dados de localização.|
+| Perguntas frequentes  | Uma base de dados de conhecimento do QnA Maker que fornece respostas a perguntas simples sobre o bot. |
 
-| Tipo de serviço | NOME | DESCRIÇÃO |
-|------|------|------|
-| Aplicativo LUIS | HomeAutomation | Reconhece uma intenção de automação residencial com dados de entidade associados.|
-| Aplicativo LUIS | Clima | Reconhece as intenções Weather.GetForecast e Weather.GetCondition com dados de localização.|
-| Serviço QnAMaker | Perguntas frequentes  | Fornece respostas a algumas perguntas simples sobre o bot. |
+## <a name="prerequisites"></a>Pré-requisitos
 
-O código deste artigo é obtido no exemplo **NLP com Dispatch** [[C#](https://aka.ms/dispatch-sample-cs)].
-
-<!-- | [JS](https://aka.ms/dispatch-sample-js)-->
-
-Confira [reconhecimento de linguagem](bot-builder-concept-luis.md), para ter uma visão geral dos serviços de linguagem. Confira os artigos de instrução para [LUIS](bot-builder-howto-v4-luis.md) e [QnA Maker](bot-builder-howto-qna.md) e obtenha instruções sobre a implementação deles em um bot.
-
-Siga as instruções no LEIAME do exemplo para configurar e testar o bot, ou você pode prosseguir para [Observações sobre o código](#notes-about-the-code).
+- O código neste artigo se baseia no exemplo de **NLP com Dispatch**. Você precisará de uma cópia do exemplo em [C#](https://aka.ms/dispatch-sample-cs) ou [JS](https://aka.ms/dispatch-sample-js).
+- É necessário ter conhecimento dos [conceitos básicos do bot](bot-builder-basics.md), [processamento de linguagem natural](bot-builder-howto-v4-luis.md), [QnA Maker](bot-builder-howto-qna.md) e do arquivo [.bot](bot-file-basics.md).
+- O [Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator/blob/master/README.md#download) para teste.
 
 ## <a name="create-the-services-and-test-the-bot"></a>Criar os serviços e testar o bot
 
-Siga as instruções do LEIAME para o exemplo. Você usará as ferramentas da CLI para criar e publicar esses serviços e atualizar informações sobre eles em seu arquivo de configuração (**.bot**).
+Siga as instruções em **LEIAME** para [C#](https://github.com/Microsoft/BotBuilder-Samples/blob/master/samples/csharp_dotnetcore/14.nlp-with-dispatch/README.md) ou [JS](https://github.com/Microsoft/BotBuilder-Samples/blob/master/samples/javascript_nodejs/14.nlp-with-dispatch/README.md) para compilar e executar o exemplo usando o emulador. 
 
-1. Clonar ou efetuar pull do repositório de exemplos.
-1. Instale as ferramentas de CLI do BotBuilder.
-1. Configure manualmente os serviços necessários.
-
-### <a name="test-your-bot"></a>Testar seu bot
-
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
-
-Inicie seu bot usando o Visual Studio ou o Visual Studio Code.
-
-<!--
-# [JavaScript](#tab/javascript)
--->
-
----
-
-Conecte-se ao seu bot com o Bot Framework Emulator.
-
-Estas são algumas entradas cobertas pelos serviços que incluímos:
+Para sua referência, estas são algumas das perguntas e comandos cobertos pelos serviços incluídos:
 
 * QnA Maker
   * `hi`, `good morning`
@@ -71,118 +49,9 @@ Estas são algumas entradas cobertas pelos serviços que incluímos:
   * `turn off bedroom light`
   * `make some coffee`
 * LUIS (clima)
-  * `whats the weather in chennai india`
-  * `what's the forecast for bangalore`
+  * `whats the weather in redmond washington`
+  * `what's the forecast for london`
   * `show me the forecast for nebraska`
-
-## <a name="notes-about-the-code"></a>Observações sobre o código
-
-### <a name="packages"></a>Pacotes
-
-Este exemplo usa os seguintes pacotes.
-
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
-
-As versões v4 mais recentes desses [pacotes do NuGet](https://docs.microsoft.com/en-us/nuget/tools/package-manager-ui#updating-a-package).
-
-* `Microsoft.Bot.Builder`
-* `Microsoft.Bot.Builder.AI.Luis`
-* `Microsoft.Bot.Builder.AI.QnA`
-* `Microsoft.Bot.Builder.Integration.AspNet.Core`
-* `Microsoft.Bot.Configuration`
-
-<!--
-# [JavaScript](#tab/javascript)
-
-Download the [LUIS Dispatch sample][DispatchBotJs].  Install the required packages, including the `botbuilder-ai` package for LUIS and QnA Maker, using npm:
-
-* `npm install --save botbuilder`
-* `npm install --save botbuilder-ai`
--->
-
----
-
-### <a name="botbuilder-cli-tools"></a>Ferramentas de CLI do BotBuilder
-
-O exemplo usa estas [ferramentas de CLI do BotBuilder](https://aka.ms/botbuilder-tools-readme) (disponíveis via npm) para criar, treinar e publicar os serviços LUIS, QnA Maker e Dispatch; e para registrar informações sobre esses serviços no arquivo de configuração do seu bot (**. bot**).
-
-* [Dispatch](https://aka.ms/botbuilder-tools-dispatch)
-* [LUDown](https://aka.ms/botbuilder-tools-ludown-readme)
-* [LUIS](https://aka.ms/botbuilder-tools-luis)
-* [MSBot](https://aka.ms/botbuilder-tools-msbot-readme)
-* [QnAMaker](https://aka.ms/botbuilder-tools-qnaMaker)
-
-> [!TIP]
-> Para verificar se você tem a versão mais recente do npm e dessas ferramentas de CLI, execute o comando a seguir.
->
-> ```shell
-> npm i -g npm dispatch ludown luis-apis msbot qnamaker
-> ```
-
-Após usar as ferramentas para configurar os serviços, seu arquivo **.bot** para este exemplo deverá se parecer com o seguinte. (Executar `msbot secret -n` para criptografar os valores confidenciais nesse arquivo.)
-
-```json
-{
-    "name": "NLP-With-Dispatch-Bot",
-    "description": "",
-    "services": [
-        {
-            "type": "endpoint",
-            "name": "development",
-            "id": "http://localhost:3978/api/messages",
-            "appId": "",
-            "appPassword": "",
-            "endpoint": "http://localhost:3978/api/messages"
-        },
-        {
-            "type": "luis",
-            "name": "Home Automation",
-            "appId": "<your-home-automation-luis-app-id>",
-            "version": "0.1",
-            "authoringKey": "<your-luis-authoring-key>",
-            "subscriptionKey": "<your-cognitive-services-subscription-key>",
-            "region": "westus",
-            "id": "110"
-        },
-        {
-            "type": "luis",
-            "name": "Weather",
-            "appId": "<your-weather-luis-app-id>",
-            "version": "0.1",
-            "authoringKey": "<your-luis-authoring-key>",
-            "subscriptionKey": "<your-cognitive-services-subscription-key>",
-            "region": "westus",
-            "id": "92"
-        },
-        {
-            "type": "qna",
-            "name": "Sample QnA",
-            "kbId": "<your-qna-knowledge-base-id>",
-            "subscriptionKey": "<your-cognitive-services-subscription-key>",
-            "endpointKey": "<your-qna-endpoint-key>",
-            "hostname": "<your-qna-host-name>",
-            "id": "184"
-        },
-        {
-            "type": "dispatch",
-            "name": "NLP-With-Dispatch-BotDispatch",
-            "appId": "<your-dispatch-app-id>",
-            "authoringKey": "<your-luis-authoring-key>",
-            "subscriptionKey": "<your-cognitive-services-subscription-key>",
-            "version": "Dispatch",
-            "region": "westus",
-            "serviceIds": [
-                "110",
-                "92",
-                "184"
-            ],
-            "id": "27"
-        }
-    ],
-    "padlock": "",
-    "version": "2.0"
-}
-```
 
 ### <a name="connecting-to-the-services-from-your-bot"></a>Conectar-se aos serviços de seu bot
 
@@ -196,24 +65,35 @@ Em **Startup.cs**, `ConfigureServices` lê o arquivo de configuração, e `InitB
 public void ConfigureServices(IServiceCollection services)
 {
     //...
-    var botConfig = BotConfiguration.Load(botFilePath ?? @".\BotConfiguration.bot", secretKey);
+    var botConfig = BotConfiguration.Load(botFilePath ?? @".\nlp-with-dispatch.bot", secretKey);
     services.AddSingleton(sp => botConfig
         ?? throw new InvalidOperationException($"The .bot config file could not be loaded. ({botConfig})"));
 
-    // Retrieve current endpoint.
-    var environment = _isProduction ? "production" : "development";
-    var service = botConfig.Services.Where(s => s.Type == "endpoint" && s.Name == environment).FirstOrDefault();
-    if (!(service is EndpointService endpointService))
-    {
-        throw new InvalidOperationException($"The .bot file does not contain an endpoint with name '{environment}'.");
-    }
-
+    // ...
+    
     var connectedServices = InitBotServices(botConfig);
-
     services.AddSingleton(sp => connectedServices);
-    //...
+    
+    services.AddBot<NlpDispatchBot>(options =>
+    {
+          
+          // The Memory Storage used here is for local bot debugging only. 
+          // When the bot is restarted, everything stored in memory will be gone.
+
+          Storage dataStore = new MemoryStorage();
+
+          // ...
+
+          // Create Conversation State object.
+          // The Conversation State object is where we persist anything at the conversation-scope.
+
+          var conversationState = new ConversationState(dataStore);
+          options.State.Add(conversationState);
+     });
 }
+
 ```
+O código a seguir inicializa as referências do bot para serviços externos. Por exemplo, os serviços LUIS e QnaMaker são criados aqui. Esses serviços externos são configurados usando a classe `BotConfiguration` (com base no conteúdo do arquivo ".bot".
 
 ```csharp
 private static BotServices InitBotServices(BotConfiguration config)
@@ -326,9 +206,7 @@ else
 Quando o modelo produz um resultado, ele indica qual serviço pode processar mais adequadamente a declaração. O código neste bot encaminha a solicitação para o serviço correspondente e, então, resume a resposta do serviço chamado.
 
 ```csharp
-/// <summary>
-/// Depending on the intent from Dispatch, routes to the right LUIS model or QnA service.
-/// </summary>
+// Depending on the intent from Dispatch, routes to the right LUIS model or QnA service.
 private async Task DispatchToTopIntentAsync(
     ITurnContext context,
     (string intent, double score)? topIntent,
@@ -367,9 +245,7 @@ private async Task DispatchToTopIntentAsync(
     }
 }
 
-/// <summary>
-/// Dispatches the turn to the request QnAMaker app.
-/// </summary>
+// Dispatches the turn to the request QnAMaker app.
 private async Task DispatchToQnAMakerAsync(
     ITurnContext context,
     string appName,
@@ -389,9 +265,8 @@ private async Task DispatchToQnAMakerAsync(
     }
 }
 
-/// <summary>
-/// Dispatches the turn to the requested LUIS model.
-/// </summary>
+
+// Dispatches the turn to the requested LUIS model.
 private async Task DispatchToLuisModelAsync(
     ITurnContext context,
     string appName,
@@ -426,10 +301,7 @@ private async Task DispatchToLuisModelAsync(
 dispatch eval
 ```
 
-A execução de `dispatch eval` gera um arquivo **Summary.html** que fornece estatísticas sobre o desempenho previsto do modelo de linguagem.
-
-> [!TIP]
-> Você pode executar o `dispatch eval` em qualquer aplicativo LUIS, não apenas em aplicativos LUIS criados pela ferramenta de expedição.
+A execução de `dispatch eval` gera um arquivo **Summary.html** que fornece estatísticas sobre o desempenho previsto do modelo de linguagem. Você pode executar o `dispatch eval` em qualquer aplicativo LUIS, não apenas em aplicativos LUIS criados pela ferramenta de expedição.
 
 ### <a name="edit-intents-for-duplicates-and-overlaps"></a>Editar as intenções de duplicatas e sobreposições
 
@@ -438,42 +310,23 @@ Examine as declarações de exemplo são sinalizadas como duplicatas na **Summar
 * Remova o "None" intenção original `Home Automation` aplicativo LUIS e adicione as declarações nessa intenção de "None" intencional no aplicativo do dispatcher.
 * Se você não remover a intenção "Nenhum" do aplicativo LUIS original, será necessário adicionar lógica em seu bot para passar as mensagens que correspondem a essa intenção para o serviço do criador QnA.
 
-> [!TIP]
-> Analise [Práticas recomendadas para o entendimento de idiomas](./bot-builder-concept-luis.md#best-practices-for-language-understanding) para obter dicas sobre como melhorar o desempenho do seu modelo de idioma.
 
-## <a name="to-clean-up-resources-from-this-sample"></a>Para limpar os recursos deste exemplo
+## <a name="additional-resources"></a>Recursos adicionais 
 
-Este exemplo cria vários aplicativos e recursos. Siga estas instruções para exclui-los.
+**Excluir recursos:** este exemplo cria vários aplicativos e recursos que você pode excluir usando as etapas listadas abaixo, mas você não deve excluir os recursos dos quais *outros aplicativos ou serviços* dependam. 
 
-### <a name="luis-resources"></a>Recursos do LUIS
-
+_Recursos do LUIS_
 1. Entre no portal [luis.ai](https://www.luis.ai).
-1. Acesse a página **Meus Aplicativos**.
+1. Acesse a página _Meus Aplicativos_.
 1. Selecione os aplicativos criados por este exemplo.
    * `Home Automation`
    * `Weather`
    * `NLP-With-Dispatch-BotDispatch`
-1. Clique em **Excluir** e clique em **OK** para confirmar.
+1. Clique em _Excluir_ e clique em _OK_ para confirmar.
 
-### <a name="qna-maker-resources"></a>Recursos do QnA Maker
-
+_Recursos do QnA Maker_
 1. Entre no portal [qnamaker.ai](https://www.qnamaker.ai/).
-1. Acesse a página **My knowledge bases** (Minhas bases de conhecimento).
-1. Clique no botão de exclusão da base de conhecimento `Sample QnA` e clique em **Delete** (Excluir) para confirmar.
+1. Acesse a página _My knowledge bases_ (Minhas bases de conhecimento).
+1. Clique no botão de exclusão da base de conhecimento `Sample QnA` e clique em _Delete_ (Excluir) para confirmar.
 
-### <a name="azure-resources"></a>Recursos do Azure
-
-> [!WARNING]
-> Não exclua qualquer recurso do qual qualquer outro aplicativo ou serviço dependa.
-
-1. Entre no [Portal do Azure](https://portal.azure.com/).
-1. Acesse a página **Visão geral** do recurso dos Serviços Cognitivos que você criou para o exemplo.
-1. Clique em **Excluir** e clique em **Sim** para confirmar.
-
-## <a name="additional-resources"></a>Recursos adicionais
-
-* [Reconhecimento vocal](bot-builder-concept-luis.md)
-* [Projetar bots de conhecimento](../bot-service-design-pattern-knowledge-base.md)
-* [Configurar a desobstrução de fala](../bot-service-manage-speech-priming.md)
-* [Usar o LUIS para Reconhecimento vocal](bot-builder-howto-v4-luis.md)
-* [Use o QnA Maker para responder a perguntas](bot-builder-howto-qna.md)
+**Melhor prática:** para melhorar os serviços usados neste exemplo, confira a melhor prática para [LUIS](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-concept-best-practices) e [QnA Maker](https://docs.microsoft.com/en-us/azure/cognitive-services/qnamaker/concepts/best-practices).

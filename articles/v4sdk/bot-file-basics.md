@@ -1,5 +1,5 @@
 ---
-title: Gerenciar recursos de bot com um arquivo de bot | Microsoft Docs
+title: Gerenciar recursos com um arquivo .bot | Microsoft Docs
 description: Descreve a finalidade e uso do arquivo de bot.
 keywords: arquivo de bot, .bot, arquivo .bot, msbot, recursos do bot, gerenciar recursos do bot
 author: ivorb
@@ -8,16 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 11/13/2018
+ms.date: 11/23/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 0ff3f0e68d58a8768bb785a88ee7664ab430e453
-ms.sourcegitcommit: 8b7bdbcbb01054f6aeb80d4a65b29177b30e1c20
+ms.openlocfilehash: 276b553a6990ed286acbf073825afa7c4656de32
+ms.sourcegitcommit: 6c719b51c9e4e84f5642100a33fe346b21360e8a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51645626"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52452018"
 ---
-# <a name="manage-bot-resources-with-a-bot-file"></a>Gerenciar recursos do bot com um arquivo de bot
+# <a name="manage-resources-with-a-bot-file"></a>Gerenciar recursos com um arquivo .bot
 
 Em geral, os bots consomem vários serviços diferentes, como [LUIS.ai](https://luis.ai) ou [QnaMaker.ai](https://qnamaker.ai). Durante o desenvolvimento de um bot, não há um local uniforme para armazenar os metadados sobre os serviços que estão em uso.  Isso nos impede de criar ferramentas que olhem para um bot como um todo.
 
@@ -45,15 +45,14 @@ Além desses, seu bot pode contar com outros serviços personalizados. Você pod
 ## <a name="what-does-a-bot-file-look-like"></a>Qual é a aparência de um arquivo de bot? 
 Veja um exemplo de arquivo [.bot](https://github.com/Microsoft/botbuilder-tools/blob/master/packages/MSBot/docs/sample-bot-file.json).
 Para saber mais sobre como criptografar e descriptografar o arquivo .bot, confira [Segredos de Bot](https://github.com/Microsoft/botbuilder-tools/blob/master/packages/MSBot/docs/bot-file-encryption.md).
-## <a name="why-do-i-need-a-bot-file"></a>Por que eu preciso de um arquivo .bot?
 
+## <a name="why-do-i-need-a-bot-file"></a>Por que eu preciso de um arquivo .bot?
 Um arquivo .bot **não** é um requisito para criar bots com o SDK do Bot Builder. Você pode continuar usando o appsettings.json, web.config, env, keyvault ou qualquer mecanismo que achar adequado para controlar as referências de serviço e as chaves das quais seu bot depende. No entanto, para testar o bot usando o Emulador, será necessário um arquivo .bot. A boa notícia é que o Emulador pode criar um arquivo .bot para teste. Para fazer isso, inicie o Emulador, clique no link **criar uma nova configuração de bot** na página de Boas-vindas. Na caixa de diálogo que aparece, digite um **Nome de Bot** e uma **URL de Ponto de Extremidade**. Em seguida, conecte-se.
 
 As vantagens de usar o arquivo .bot são:
 - Ele fornece um padrão de armazenamento de recursos, independentemente da linguagem/plataforma usada.   
 - O Emulador do Bot Framework e as ferramentas da CLI dependem e funcionam bem com os serviços de controle conectados em um formato consistente (em um arquivo .bot) 
 - Fica mais difícil criar soluções de ferramentas elegantes para gerenciamento e criação de serviços sem um esquema bem definido (arquivo .bot).  
-
 
 ## <a name="using-bot-file-in-your-bot-builder-sdk-bot"></a>Usar o arquivo .bot em seu bot do SDK do Bot Builder
 Você pode usar o arquivo .bot para obter informações de configuração de serviço no código do seu bot. A biblioteca de Configuração do BotFramework disponível para [C#](https://www.nuget.org/packages/Microsoft.Bot.Configuration) e [JS](https://www.npmjs.com/package/botframework-config) ajuda você a carregar um arquivo de bot e dá suporte a vários métodos para consultar e obter as informações de configuração de serviço apropriadas.

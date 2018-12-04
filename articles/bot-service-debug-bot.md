@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 11/13/2018
-ms.openlocfilehash: 997d907bfabb284e079f21437418645a7dac061e
-ms.sourcegitcommit: 8b7bdbcbb01054f6aeb80d4a65b29177b30e1c20
+ms.openlocfilehash: fcda5c57a96b6f93aad965e868c824577616f630
+ms.sourcegitcommit: 6c719b51c9e4e84f5642100a33fe346b21360e8a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51645646"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52452038"
 ---
 # <a name="debug-a-bot"></a>Depurar um bot
 
@@ -29,10 +29,9 @@ Este artigo descreve como depurar seu bot usando um ambiente de desenvolvimento 
 Para executar um bot de JavaScript usando a linha de comando e testar o bot com o emulador, faça o seguinte:
 1. Na linha de comando, altere os diretórios para o diretório de projeto do seu bot.
 1. Inicie o bot, executando o comando **node app.js**.
-1. Clique no link **Abrir Bot** na guia "Bem-vindo" do emulador.
-1. Selecione o arquivo .bot localizado no diretório em que você criou o projeto.
+1. Inicie o emulador e conecte-se ao ponto de extremidade do bot (por exemplo: **http://localhost:3978/api/messages**). Se esta for a primeira vez que você estiver executando o bot, clique em **Arquivo > Novo Bot** e siga as instruções na tela. Caso contrário, clique em **Arquivo > Abrir Bot** para abrir um bot existente. Uma vez que este bot estiver em execução localmente no seu computador, você pode deixar os campos **ID do aplicativo MSA** e **senha de aplicativo do MSA** em branco. Para obter mais informações, consulte [Depurar com o emulador](bot-service-debug-emulator.md).
 1. No emulador, envie uma mensagem a seu bot (por exemplo: enviar a mensagem "Olá"). 
-1. Use os painéis **Inspector** e **Log** no lado direito da janela do emulador para depurar seu bot. Por exemplo, clicar em qualquer uma das bolhas de mensagens (por exemplo: a bolha de mensagem "Olá" na captura de tela abaixo) mostrará os detalhes dessa mensagem no painel **Inspetor**. Você pode usá-lo para exibir as solicitações e respostas, já que as mensagens são trocadas entre o emulador e o bot. Como alternativa, você pode clicar em qualquer texto vinculado no painel **Log** para exibir os detalhes no painel **Inspetor**.
+1. Use os painéis **Inspector** e **Log** no lado direito da janela do emulador para depurar seu bot. Por exemplo, clicar em qualquer uma das bolhas de mensagens (por exemplo: a bolha de mensagem "Olá" na captura de tela abaixo) mostra os detalhes dessa mensagem no painel **Inspetor**. Você pode usá-lo para exibir as solicitações e respostas, já que as mensagens são trocadas entre o emulador e o bot. Como alternativa, você pode clicar em qualquer texto vinculado no painel **Log** para exibir os detalhes no painel **Inspetor**.
 
    ![Painel Inspetor no emulador](~/media/bot-service-debug-bot/emulator_inspector.png)
 

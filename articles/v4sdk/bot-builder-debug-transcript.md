@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservices: sdk
 ms.date: 10/18/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a7a8b7088e65d015f22438ee2050f97823b72e49
-ms.sourcegitcommit: 49a76dd34d4c93c683cce6c2b8b156ce3f53280e
+ms.openlocfilehash: 2c493a27d7829e7c7be21b6ce70cb6f046dad616
+ms.sourcegitcommit: 6c719b51c9e4e84f5642100a33fe346b21360e8a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50134766"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52452088"
 ---
 # <a name="debug-your-bot-using-transcript-files"></a>Depurar seu bot usando arquivos de transcrição
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
@@ -50,8 +50,8 @@ Para recuperar um arquivo de transcrição de bot usando o Bot Framework Emulato
 ![recuperar transcrição salva](./media/emulator_transcript_retrieve.png)
 
 ## <a name="debug-using-transcript-file"></a>Depurar usando o arquivo de transcrição
-Com seu arquivo de transcrição carregado, você agora está pronto para depurar as interações que capturadas entre um usuário e seu bot. Para fazer isso, basta clicar em qualquer evento ou atividade registrada na seção _LOG_ exibida na parte inferior direita do emulador. No exemplo mostrado abaixo, escolhemos a primeira interação do usuário quando ele enviou a mensagem “Olá”. Quando fazemos isso, todas as informações no arquivo de transcrição relacionadas a essa interação específica são exibidas na janela _INSPETOR_ do emulador no formato JSON. Ao observar alguns desses valores de baixo para cima, podemos ver:
-* Que o tipo de interação era _mensagem_.
+Com seu arquivo de transcrição carregado, você agora está pronto para depurar as interações que capturadas entre um usuário e seu bot. Para fazer isso, basta clicar em qualquer evento ou atividade registrada na seção _LOG_ exibida na parte inferior direita do emulador. No exemplo mostrado abaixo, escolhemos a primeira interação do usuário quando ele enviou a mensagem "Olá". Quando fazemos isso, todas as informações no arquivo de transcrição relacionadas a essa interação específica são exibidas na janela _INSPETOR_ do emulador no formato JSON. Ao observar alguns desses valores de baixo para cima, podemos ver:
+* O tipo de interação era _mensagem_.
 * A hora em que a mensagem foi enviada.
 * Que o texto sem formatação enviado continha “Olá”.
 * Que a mensagem foi enviada ao nosso bot.

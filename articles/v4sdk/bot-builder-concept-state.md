@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 11/15/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 366a985e839c8a79fcd8794c139e2e8130a05335
-ms.sourcegitcommit: 6cb37f43947273a58b2b7624579852b72b0e13ea
+ms.openlocfilehash: 940dba389205ff339b80f741b8a8aec87ff54f1d
+ms.sourcegitcommit: bcde20bd4ab830d749cb835c2edb35659324d926
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52288865"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52338559"
 ---
 # <a name="managing-state"></a>Gerenciar estado
 
@@ -33,7 +33,13 @@ Sobre os bots, há algumas camadas que usam o estado, que abordaremos aqui: cama
 
 Começando no back-end, onde as informações do estado são, de fato, armazenadas, está a nossa *camada de armazenamento*. Ela pode ser considerada nosso armazenamento físico, como na memória, o Azure ou um servidor de terceiros.
 
-O SDK do Bot Framework fornece implementações da camada de armazenamento, como o armazenamento na memória para testar localmente e o armazenamento do Azure ou CosmosDB para testar e implantar na nuvem.
+O SDK do Bot Framework inclui algumas implementações para a camada de armazenamento:
+
+- **Armazenamento da memória** implementa o armazenamento na memória para fins de teste. O armazenamento de dados na memória serve apenas para teste local, pois esse armazenamento é volátil e temporário. Os dados serão limpos sempre que o bot for reiniciado.
+- O **Armazenamento de Blobs do Azure** se conecta a um banco de dados de objeto do Armazenamento de Blobs do Azure.
+- O **Armazenamento do Azure Cosmos DB** se conecta a um banco de dados NoSQL do Cosmos DB.
+
+Para obter instruções sobre como se conectar a outras opções de armazenamento, confira [Gravar diretamente no armazenamento](bot-builder-howto-v4-storage.md).
 
 ## <a name="state-management"></a>Gerenciamento de estado
 
@@ -45,7 +51,7 @@ Essas propriedades do estado são agrupadas em "buckets" com escopo, que são ap
 - Estado da conversa
 - Estado da conversa privada
 
-Todos esses buckets são subclasses da classe do *estado do bot*, que podem ser derivadas para definir outros tipos de buckets.
+Todos esses buckets são subclasses da classe do *estado do bot*, que podem ser derivadas para definir outros tipos de buckets com escopos diferentes.
 
 Esses buckets predefinidos têm escopo para uma determinada visibilidade, dependendo do bucket:
 
@@ -53,13 +59,40 @@ Esses buckets predefinidos têm escopo para uma determinada visibilidade, depend
 - O estado da conversa está disponível em qualquer turno em uma conversa específica, independentemente do usuário (ou seja, conversas em grupo)
 - O estado da conversa privada tem escopo na conversa específica e naquele usuário específico
 
+> [!TIP]
+> O escopo do estado de usuário e da conversa é definido pelo canal.
+> A mesma pessoa que usa canais diferentes para acessar seu bot aparece como usuários diferentes, um para cada canal, e cada um com um estado de usuário distinto.
+
 As chaves usadas para cada um desses buckets predefinidos são específicas para o usuário e a conversa, ou ambos. Ao definir o valor da propriedade do estado, a chave é definida para você internamente com informações contidas no contexto do turno para garantir que cada usuário ou conversa seja colocado no bucket e na propriedade corretos. Especificamente, as chaves são definidas da seguinte maneira:
 
 - O estado do usuário cria uma chave usando a *ID do canal* e a *ID de*. Por exemplo, _{Activity.ChannelId}/users/{Activity.From.Id}#SeuNomePropriedade_
 - O estado da conversa cria uma chave usando a *ID do canal* e a *ID da conversa*. Por exemplo, _{Activity.ChannelId}/conversations/{Activity.Conversation.Id}#SeuNomePropriedade_
 - O estado da conversa privada cria uma chave usando a *ID do canal*, a *ID de* e a *ID da conversa*. Por exemplo, _{Activity.ChannelId}/conversations/{Activity.Conversation.Id}/users/{Activity.From.Id}#SeuNomePropriedade_
 
+### <a name="when-to-use-each-type-of-state"></a>Quando usar cada tipo de estado
+
+O estado da conversa é bom para acompanhar o contexto da conversa, por exemplo:
+
+- Se o bot perguntou algo ao usuário, e qual foi a pergunta
+- Qual é o tópico atual da conversa, ou qual foi o último
+
+O estado do usuário é bom para acompanhar informações sobre o usuário, por exemplo:
+
+- Informações não críticas sobre o usuário, como o nome e as preferências, uma configuração de alarme ou uma preferência de alerta
+- Informações sobre a última conversa que ele teve com o bot
+  - Por exemplo, um bot de suporte ao produto pode controlar sobre quais produtos o usuário perguntou.
+
+O estado da conversa privada é bom para os canais que dão suporte a conversas em grupo, mas nos quais você deseja acompanhar informações específicas sobre o usuário e a conversa. Por exemplo, se você tivesse um bot para clique em sala de aula:
+
+- O bot poderia agregar e exibir as respostas dos alunos para uma determinada pergunta.
+- O bot poderia agregar o desempenho de cada aluno e retransmitir isso para eles ao final da sessão.
+
 Para obter detalhes sobre como usar esses buckets predefinidos, confira o [artigo de instruções do estado](bot-builder-howto-v4-state.md).
+
+### <a name="connecting-to-multiple-databases"></a>Conectar-se a vários bancos de dados
+
+Se o seu bot precisar se conectar a vários bancos de dados, crie uma camada de armazenamento para cada banco de dados.
+Para cada camada de armazenamento, crie os objetos de gerenciamento de estado que você precisa para dar suporte a suas propriedades de estado.
 
 ## <a name="state-property-accessors"></a>Acessadores de propriedades do estado
 
@@ -78,15 +111,14 @@ Para persistir as alterações feitas na propriedade do estado que você obtém 
 
 Os métodos do acessador são a principal maneira do bot interagir com o estado. Como cada um funciona e como as camadas subjacentes interagem:
 
-- Método *get* do acessador
-    - O acessador solicita a propriedade no cache do estado
-    - Se a propriedade estiver no cache, retorne-a. Caso contrário, obtenha-a no objeto de gerenciamento do estado.
-        - Se ainda não estiver no estado, use o método de fábrica fornecido na chamada *get* dos acessadores.
-- Método *set* do acessador
-    - Atualize o cache do estado com o novo valor da propriedade.
-- Método *save changes* do objeto de gerenciamento do estado
-    - Verifique as alterações da propriedade no cache de estado.
-    - Grave essa propriedade no armazenamento.
+- O método *get* do acessador:
+  - O acessador solicita a propriedade do cache do estado.
+  - Se a propriedade estiver no cache, retorne-a. Caso contrário, obtenha-a no objeto de gerenciamento do estado.
+    (Se ainda não estiver no estado, use o método de fábrica fornecido na chamada *get*) - o método *set* dos acessadores:
+  - Atualize o cache do estado com o novo valor da propriedade.
+- O método *save changes* do objeto de gerenciamento do estado:
+  - Verifique as alterações da propriedade no cache de estado.
+  - Grave essa propriedade no armazenamento.
 
 ## <a name="saving-state"></a>Salvando o estado
 

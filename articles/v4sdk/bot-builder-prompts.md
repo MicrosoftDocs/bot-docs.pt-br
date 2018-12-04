@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 11/21/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 1c69b438c739ac9c47d40e53f1300a4773fc1a1d
-ms.sourcegitcommit: 6cb37f43947273a58b2b7624579852b72b0e13ea
+ms.openlocfilehash: 9d8caf19a98fb595e4b1e27b0635d2a752b88390
+ms.sourcegitcommit: bbfb171f515c50a3c8bba5ca898daf25cf764378
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52288785"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "52293598"
 ---
 # <a name="gather-user-input-using-a-dialog-prompt"></a>Coletar entrada do usuário usando um prompt de diálogo
 
@@ -24,28 +24,10 @@ ms.locfileid: "52288785"
 A coleta de informações por meio da apresentação de perguntas é uma das principais formas de um bot interagir com os usuários. A biblioteca de *caixas de diálogo* torna mais fácil fazer as perguntas, bem como validar a resposta para garantir que ela corresponde a um tipo de dados específico ou atenda às regras de validação personalizada. Este tópico fornece detalhes sobre como criar e chamar prompts de uma caixa de diálogo em cascata.
 
 ## <a name="prerequisites"></a>Pré-requisitos
-- O código neste artigo se baseia no exemplo de diálogo-prompt. Você precisará de uma cópia do exemplo em [C#](https://aka.ms/dialog-prompt-cs) ou [JS](https://aka.ms/dialog-prompt-js).
+
+- O código neste artigo se baseia no exemplo **DialogPromptBot**. Você precisará de uma cópia do exemplo em [C#](https://aka.ms/dialog-prompt-cs) ou [JS](https://aka.ms/dialog-prompt-js).
 - É necessário um entendimento básico sobre a [biblioteca de caixas de diálogo](bot-builder-concept-dialog.md) e como [gerenciar conversas](bot-builder-dialog-manage-conversation-flow.md). 
 - [Emulador do Bot Framework](https://github.com/Microsoft/BotFramework-Emulator) para teste.
-
-## <a name="about-prompt-types"></a>Sobre os tipos de prompt
-
-Nos bastidores, os prompts são uma caixa de diálogo em duas etapas. Primeiro, o prompt solicitará a entrada, em seguida, ele retornará o valor válido ou reiniciará na parte superior com um novo prompt. A biblioteca de diálogos oferece uma série de prompts básicos, cada um deles usado para coletar um tipo de resposta. Os prompts básicos podem interpretar a entrada de linguagem natural, como "dez" ou "uma dúzia" para um número, ou "amanhã" ou "sextas-feira às 10h" para uma data e hora.
-
-| Prompt | DESCRIÇÃO | Retornos |
-|:----|:----|:----|
-| _Prompt de anexo_ | Solicita um ou mais anexos, como um documento ou uma imagem. | Uma coleção de objetos _attachment_. |
-| _Prompt de escolha_ | Solicita a escolha dentre um conjunto de opções. | Um objeto _found choice_. |
-| _Prompt de confirmação_ | Solicita uma confirmação. | Um valor booliano. |
-| _Prompt de data e hora_ | Solicita uma data e hora. | Uma coleção de objetos _date-time resolution_. |
-| _Prompt de número_ | Solicita um número. | Um valor numérico. |
-| _Texto do prompt_ | Solicita a entrada de texto geral. | Uma cadeia de caracteres. |
-
-Para solicitar uma entrada ao usuário, defina um prompt usando uma das classes internas, como _text prompt_, e adicione-o ao seu conjunto de diálogos. Os prompts têm IDs fixas que devem ser exclusivas dentro de um conjunto de caixas de diálogo. Você pode ter um validador personalizado para cada prompt, e para alguns prompts, você pode especificar uma _localidade padrão_. 
-
-### <a name="prompt-locale"></a>Localidade do prompt
-
-A localidade é usada para determinar o comportamento específico do idioma dos prompts **choice**, **confirm**, **date-time** e **number**. Para qualquer entrada fornecida pelo usuário, se o canal forneceu uma propriedade de _localidade_ na mensagem do usuário, então essa é a usada. Caso contrário, se a _localidade padrão_ do prompt for definida, fornecendo-a ao chamar o construtor do prompt ou configurando-a mais tarde, então essa é a usada. Se nenhuma dessas são fornecidas, o inglês ("en-us") é usado como a localidade. Observação: a localidade é um código ISO 639 de 2, 3 ou 4 caracteres que representa um idioma ou uma família de idiomas.
 
 ## <a name="using-prompts"></a>Usando prompts
 

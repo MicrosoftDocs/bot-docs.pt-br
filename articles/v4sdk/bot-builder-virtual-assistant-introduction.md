@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 13/12/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: e93f7d24396b4e35fc81960d42148dd8942362d7
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 3a3074ff9e8de36d7a7cf7b86fef62979bc53fa8
+ms.sourcegitcommit: 958a28bbab7dd29b384bb2e2d58d866e88f53316
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998947"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52500656"
 ---
 # <a name="virtual-assistant-solution-overview"></a>Visão geral da solução Assistente Virtual
 
@@ -24,7 +24,7 @@ Acreditamos plenamente que nossos clientes devem poder fortalecer seus relaciona
 
 O escopo da funcionalidade do Assistente Virtual é amplo, normalmente oferecendo aos usuários finais vários recursos. Para aumentar a produtividade do desenvolvedor e permitir um ecossistema vibrante de experiências de conversação reutilizáveis, estamos oferecendo aos desenvolvedores exemplos inicias de habilidades de conversação reutilizáveis. Essas habilidades podem ser adicionadas a um aplicativo de conversação para dar vida a uma experiência de conversa específica, por exemplo, para localizar um ponto de interesse, interagir com o calendário, tarefas, emails e muitos outros cenários. As habilidades são totalmente personalizáveis e consistem em modelos de linguagem para várias linguagens, diálogos e códigos.
 
-No momento estamos executando uma versão prévia e trabalhando com clientes e parceiros inicias em um repositório de software livre para dar vida às primeiras experiências e disponibilizá-las mais amplamente nos próximos meses.
+No momento, estamos trabalhando junto com clientes e parceiros inicias em um repositório de código-fonte aberto para dar vida às primeiras experiências.
 
 ![Diagrama do Assistente Virtual](./media/enterprise-template/customassistantdiagram.jpg)
 
@@ -97,5 +97,5 @@ Todos os aspectos de cada habilidade (modelo de linguagem, diálogos, código de
 
 ## <a name="getting-started"></a>Introdução
 
-No momento estamos executando uma versão prévia e trabalhando com clientes e parceiros inicias em um repositório de software livre para dar vida às primeiras experiências e disponibilizá-las mais amplamente nos próximos meses. Para registrar seu interesse e começar a usar, preencha [este formulário](https://aka.ms/customassistantpreviewform) e entraremos em contato com você.
+A solução Virtual Assistant está disponível neste [repositório do GitHub](https://github.com/Microsoft/AI/tree/master/solutions/Virtual-Assistant), que é atualizado regularmente pela equipe do Virtual Assistant. Encontre uma documentação mais detalhada no mesmo repositório. Problemas/comentários podem ser enviados diretamente por meio de mecanismos de comentários do GitHub. Se você quiser conversar sobre um cenário específico, preencha [este formulário](https://aka.ms/customassistantpreviewform) e entraremos em contato.
 
