@@ -2,7 +2,7 @@ Este diagrama mostra o fluxo de tela de um aplicativo tradicional em comparaçã
 
 ![bot](~/media/designing-bots/core/dialogs-screens.png)
 
-Em um aplicativo tradicional, tudo começa pela **tela principal**.
+Em um aplicativo tradicional, tudo começa com a **tela principal**.
 A **tela principal** invoca a **tela de novo pedido**.
 A **tela de novo pedido** permanece no controle até fechar ou invocar outras telas. Se a **tela de novo pedido** fechar, o usuário retornará à **tela principal**.
 
