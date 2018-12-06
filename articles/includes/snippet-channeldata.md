@@ -345,7 +345,7 @@ Para criar uma mensagem nativa do Kik, defina a propriedade dados do canal do ob
 
 | Propriedade | DESCRIÇÃO |
 |----|----|
-| da nuvem para o dispositivo | Uma matriz de mensagens do Kik. Para obter detalhes sobre o formato de mensagem do Kik, confira <a href="https://dev.kik.com/#/docs/messaging#message-formats" target="_blank">Formatos de mensagem do Kik</a>. |
+|  da nuvem para o dispositivo | Uma matriz de mensagens do Kik. Para obter detalhes sobre o formato de mensagem do Kik, confira <a href="https://dev.kik.com/#/docs/messaging#message-formats" target="_blank">Formatos de mensagem do Kik</a>. |
 
 Este snippet mostra um exemplo da propriedade `channelData` para uma mensagem nativa do Kik.
 
