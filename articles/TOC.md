@@ -55,9 +55,9 @@
 ### [Node.js](nodejs/TOC.md)
 ## [Depurar](debug/TOC.md)
 ## Implantar
-### [Baixar e reimplantar o código do bot](bot-service-build-download-source-code.md)
+### [Implantar seu bot no Azure](bot-builder-howto-deploy-azure.md)
+<!-- ### [Download and redeploy bot code](bot-service-build-download-source-code.md) -->
 ### [Configurar a implantação contínua](bot-service-build-continuous-deployment.md)
-### [Implante seu bot C# no Azure](bot-builder-howto-deploy-azure.md)
 ## [Gerenciar](manage/TOC.md)
 # Referência
 ## [SDK v4 do .NET](https://aka.ms/dotnetsdk4)
