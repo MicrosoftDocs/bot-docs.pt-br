@@ -55,7 +55,8 @@
 ### [Node.js](nodejs/TOC.md)
 ## [Depurar](debug/TOC.md)
 ## Implantar
-### [Implantar seu bot no Azure](bot-builder-howto-deploy-azure.md)
+### [Implantar seu bot usando a CLI do Azure](bot-builder-deploy-az-cli.md)
+### [Implantar seu bot em C# usando o Visual Studio](bot-builder-howto-deploy-azure.md)
 <!-- ### [Download and redeploy bot code](bot-service-build-download-source-code.md) -->
 ### [Configurar a implantação contínua](bot-service-build-continuous-deployment.md)
 ## [Gerenciar](manage/TOC.md)
