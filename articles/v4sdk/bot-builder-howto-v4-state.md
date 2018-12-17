@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 11/26/18
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 8f979aed3bc1c4bb4c74629bcffb258e139ce77d
-ms.sourcegitcommit: bcde20bd4ab830d749cb835c2edb35659324d926
+ms.openlocfilehash: 8c3aad54a9e80e8a046a6e31a5109a1de8c61a8b
+ms.sourcegitcommit: 91156d0866316eda8d68454a0c4cd74be5060144
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52338549"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53010501"
 ---
 # <a name="save-user-and-conversation-data"></a>Salvar dados do usuário e da conversa
 
@@ -386,7 +386,7 @@ async onTurn(turnContext) {
 
 **Gerenciamento de estado:** todas as chamadas de gerenciamento de estado são assíncronas e last-writer-wins por padrão. Na prática, você deve obter, definir e salvar o estado o mais próximo possível em seu bot.
 
-**Dados corporativos críticos:** use o estado do bot para armazenar preferências, nome do usuário ou o último pedido feito, mas não o use para armazenar dados corporativos críticos. Para dados críticos, [crie seus próprios componentes de armazenamento](bot-builder-custom-storage.md) ou grave diretamente no [armazenamento](bot-builder-howto-v4-storage.md).
+**Dados comerciais críticos:** use o estado do bot para armazenar preferências, nome de usuário ou o último pedido feito, mas não o use para armazenar dados corporativos críticos. Para dados críticos, [crie seus próprios componentes de armazenamento](bot-builder-custom-storage.md) ou grave diretamente no [armazenamento](bot-builder-howto-v4-storage.md).
 
 **Recognizer-Text:** o exemplo usa as bibliotecas Microsoft/Recognizer-Text para analisar e validar a entrada do usuário. Para saber mais, confira a página [visão geral](https://github.com/Microsoft/Recognizers-Text#microsoft-recognizers-text-overview).
 

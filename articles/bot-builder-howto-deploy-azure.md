@@ -1,28 +1,35 @@
 ---
-title: Implantar seu bot C# no Azure | Microsoft Docs
+title: Implantar seu bot em C# usando o Visual Studio | Microsoft Docs
 description: Implante seu bot na nuvem do Azure.
-keywords: implantar bot, implantar o azure, registro do canal do bot, publicar o visual studio
+keywords: deploy bot, azure deploy, publish bot, az deploy bot, visual studio deploy bot, msbot publish, msbot clone
 author: ivorb
 ms.author: v-ivorb
 manager: kamrani
 ms.topic: get-started-article
 ms.service: bot-service
 ms.subservice: abs
-ms.date: 11/05/2018
-ms.openlocfilehash: f30a038c6bc5e435ade421e24b05d0b31a143538
-ms.sourcegitcommit: 9acac75f85d36c81b8bf4edec916dd0b52a4a5c7
+ms.date: 12/08/2018
+ms.openlocfilehash: ac4e5f2ea385cb8318ad59e04c8ca8787480f5c8
+ms.sourcegitcommit: 77664484e1b0780a15f686ef08bd23716b049b4a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51028733"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121782"
 ---
-# <a name="deploy-your-c-bot-to-azure"></a>Implantar seu bot C# no Azure
+# <a name="deploy-your-c-bot-using-visual-studio"></a>Implantar seu bot em C# usando o Visual Studio
 
 [!INCLUDE [pre-release-label](./includes/pre-release-label.md)]
 
-Depois de ter criado e testado seu bot localmente, é possível publicá-lo no Azure para torná-lo acessível em qualquer lugar.
+Depois de ter criado e testado seu bot localmente, é possível implantá-lo no Azure para torná-lo acessível em qualquer lugar. Implantar seu bot no Azure envolve pagar pelos serviços que você usa. O artigo [gerenciamento de cobrança e custos](https://docs.microsoft.com/en-us/azure/billing/) ajuda você a entender sua cobrança do Azure, monitorar o uso e os custos, e gerenciar sua conta e assinaturas.
 
-## <a name="publish-from-visual-studio"></a>Publicar a partir do Visual Studio
+Neste artigo, mostraremos como implantar um bot em C# usando o Visual Studio e o portal do Azure. Seria útil ler este artigo antes de seguir as etapas, para que você entenda tudo que está relacionado à implantação de um bot.
+
+## <a name="prerequisites"></a>Pré-requisitos
+- Instale o [Bot Framework Emulator](https://aka.ms/Emulator-wiki-getting-started).
+- Instale e configure o [ngrok](https://github.com/Microsoft/BotFramework-Emulator/wiki/Tunneling-%28ngrok%29).
+- Conhecimento do arquivo [.bot](v4sdk/bot-file-basics.md).
+
+## <a name="deploy-your-bot-in-app-service"></a>Implantar seu bot no Serviço de Aplicativo
 Você primeiro implantará o bot no Azure a partir do Visual Studio em um Serviço de Aplicativo. Em seguida, você configurará seu bot com o Serviço de Bot do Azure usando o registro de canais de Bot.
 
 **Observação: se o nome do projeto do Visual Studio tiver espaços, as etapas de implantação descritas a seguir não funcionarão.**
@@ -138,6 +145,22 @@ Neste ponto, é possível testar seu bot no Azure usando o cliente de Webchat in
 ![teste no webchat](media/azure-bot-quickstarts/getting-started-test-webchat.png)
 
 4. Digite uma mensagem como `Hi` e pressione Enter. O bot retornará `Turn 1: You sent Hi`.
+
+---
+
+## <a name="additional-resources"></a>Recursos adicionais
+
+Quando você implanta um bot, normalmente esses recursos são criados no portal do Azure:
+
+| Recursos      | DESCRIÇÃO |
+|----------------|-------------|
+| Bot do aplicativo Web | Um Serviço de Bot do Azure que é implantado em um Serviço de Aplicativo do Azure.|
+| [Serviço de Aplicativo](https://docs.microsoft.com/en-us/azure/app-service/)| Permite criar e hospedar aplicativos Web.|
+| [Plano do Serviço de Aplicativo](https://docs.microsoft.com/en-us/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview)| Define um conjunto de recursos de computação para um aplicativo Web ser executado.|
+| [Application Insights](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-overview)| Fornece ferramentas para coletar e analisar a telemetria.|
+| [Conta de armazenamento](https://docs.microsoft.com/en-us/azure/storage/common/storage-introduction)| Fornece armazenamento na nuvem altamente disponível, seguro, durável, escalonável e redundante.|
+
+Se você não estiver familiarizado com o grupo de recursos do Azure, consulte este tópico sobre [terminologia](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#terminology).
 
 ## <a name="next-steps"></a>Próximas etapas
 > [!div class="nextstepaction"]

@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 11/15/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 940dba389205ff339b80f741b8a8aec87ff54f1d
-ms.sourcegitcommit: bcde20bd4ab830d749cb835c2edb35659324d926
+ms.openlocfilehash: bf7d6a574cc4e63d22e3f34462a1ec00dbdac75e
+ms.sourcegitcommit: 91156d0866316eda8d68454a0c4cd74be5060144
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52338559"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53010531"
 ---
 # <a name="managing-state"></a>Gerenciar estado
 
@@ -27,7 +27,11 @@ Assim como acontece com os aplicativos Web, um bot é inerentemente sem estado; 
 
 Manter o estado permite que seu bot tenha conversas mais significativas, lembrando-se de algumas coisas sobre o usuário ou a conversa. Por exemplo, se você já falou antes com um usuário, pode salvar as informações anteriores sobre ele para não precisar pedi-las novamente. O estado também mantém os dados por mais tempo que o turno atual, assim seu bot mantém as informações ao longo de uma conversa com vários turnos.
 
-Sobre os bots, há algumas camadas que usam o estado, que abordaremos aqui: camada de armazenamento, gerenciamento do estado e acessadores de propriedades do estado.
+Em relação aos bots, há algumas camadas que usam o estado, que abordaremos aqui: camada de armazenamento, gerenciamento do estado (contida no estado do bot no diagrama abaixo) e acessadores de propriedades do estado. Este diagrama ilustra as partes da sequência de interação entre essas camadas, com as setas sólidas representando uma chamada de método e as setas tracejadas representando a resposta (com ou sem um valor retornado).
+
+![estado do bot](media/bot-builder-state.png)
+
+O fluxo desse diagrama é explicado nas seções a seguir com os detalhes dessas camadas.
 
 ## <a name="storage-layer"></a>Camada de armazenamento
 

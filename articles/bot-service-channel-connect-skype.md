@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 10/11/2018
-ms.openlocfilehash: 58c8145d359d292dd33972a3dd59af997e7b8393
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: f52c8fd668299486eccda3920181df971f475a90
+ms.sourcegitcommit: 75f32b3325dd0fc4d8128dee6c22ebf91e5785b3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49999496"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53120653"
 ---
 # <a name="connect-a-bot-to-skype"></a>Conectar um bot ao Skype
 
@@ -51,6 +51,9 @@ Esta seção configura se o seu bot pode ser adicionado a um grupo, e como ele s
 Esta seção define as configurações de publicação do seu bot. Todos os campos com um * são campos obrigatórios.
 
 Os Bots na **Versão prévia** estão limitados a 100 contatos. Se você precisar de mais de 100 contatos, envie seu bot para revisão. **Enviar para Revisão** torna seu bot automaticamente pesquisável no Skype, se for aceito. Se a sua solicitação não puder ser aprovada, você receberá uma notificação sobre o que você precisa alterar para que ela seja aprovada.
+
+> [!TIP]
+> Se você deseja enviar seu bot para revisão, tenha em mente que ele deve atender à [lista de verificação de certificação Skype](https://github.com/Microsoft/skype-dev-bots/blob/master/certification/CHECKLIST.md) antes de ser aceito.
 
 Após terminar a configuração, clique em **Salvar** e aceite os **Termos de serviço**. O canal do Skype foi adicionado ao seu bot.
 

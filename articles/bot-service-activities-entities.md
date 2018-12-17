@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 03/01/2018
-ms.openlocfilehash: d329fcbe5b4a34cb3e9c1fbf0160c5248020a508
-ms.sourcegitcommit: cb0b70d7cf1081b08eaf1fddb69f7db3b95b1b09
+ms.openlocfilehash: 818017a81b497b13ee181dbb6b87c03a0182736d
+ms.sourcegitcommit: 75f32b3325dd0fc4d8128dee6c22ebf91e5785b3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51332960"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53120673"
 ---
 # <a name="entities-and-activity-types"></a>Entidades e tipos de atividades
 
@@ -173,6 +173,11 @@ As atividades podem ser de vários tipos diferentes após a **mensagem** mais co
 | [invoke](#invoke) | IInvokeActivity (C#) <br> Atividade (JS) | Representa uma comunicação enviada a um bot para solicitar a execução de uma operação específica. Esse tipo de atividade é reservado para uso interno do Microsoft Bot Framework. |
 | [messageReaction](#messagereaction) | IMessageReactionActivity (C#) <br> Atividade (JS) | Indica que um usuário reagiu a uma atividade existente. Por exemplo, um usuário clica no botão "Curtir" em uma mensagem. |
 | [typing](#typing) | ITypingActivity (C#) <br> Atividade (JS) | Indica que o usuário ou o bot na outra extremidade da conversa está compilando uma resposta. |
+| messageUpdate | IMessageUpdateActivity (C#) <br> Atividade (JS) | Indica uma solicitação para atualizar uma atividade de mensagem anterior em uma conversa. |
+| messageDelete | IMessageDeleteActivity (C#) <br> Atividade (JS) | Indica uma solicitação para excluir uma atividade de mensagem anterior em uma conversa. |
+| suggestion | ISuggestionActivity (C#) <br> Atividade (JS) | Indica uma sugestão privada para o destinatário sobre outra atividade específica. |
+| trace | ITraceActivity (C#) <br> Atividade (JS) | Uma atividade pela qual um bot pode registrar informações internas em uma transcrição de conversa registrada. |
+| handoff | IHandoffActivity (C#) <br> Atividade (JS) | Controla se a conversa foi transferida, ou se foi feita uma solicitação para transferir o controle da conversa. |
 
 ## <a name="message"></a>Message
 

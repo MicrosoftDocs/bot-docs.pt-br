@@ -8,17 +8,17 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 10/10/2018
-ms.openlocfilehash: 1658a5cd8ba3fc4e9c34849e1550f64461ced292
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.date: 12/04/2018
+ms.openlocfilehash: 6c3cc52514988172e5c2cc85168aef401fbc1f22
+ms.sourcegitcommit: 91156d0866316eda8d68454a0c4cd74be5060144
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "50000143"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53010491"
 ---
 # <a name="connect-a-bot-to-web-chat"></a>Conectar um bot ao Webchat
 
-[!INCLUDE rótulo de pré-lançamento]
+[!INCLUDE [pre-release-label](./includes/pre-release-label.md)]
 
 Quando você [cria um bot](bot-service-quickstart.md) com o Serviço de Bot, o canal de Webchat é configurado automaticamente para você. O canal de Webchat inclui o controle de Webchat, que fornece a capacidade de os usuários interagirem com o bot diretamente em uma página da Web.
 
@@ -61,7 +61,7 @@ Para trocar o segredo por um token e gerar a inserção:
 
 ##### <a name="example-request"></a>Solicitação de exemplo
 
-```requestGET https://webchat.botframework.com/api/tokens Authorization: BotConnector YOUR_SECRET_HERE
+Autorização ```requestGET https://webchat.botframework.com/api/tokens: BotConnector SEU_SEGREDO_AQUI
 ```
 
 ##### Example response 

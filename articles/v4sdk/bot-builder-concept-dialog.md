@@ -8,62 +8,66 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 11/22/2018
+ms.date: 11/28/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 964d4a0344df595630f5b38fa32b3cc3a526ed5c
-ms.sourcegitcommit: bbfb171f515c50a3c8bba5ca898daf25cf764378
+ms.openlocfilehash: a1187efd3280d9ec2d74af29d1c013e916b79e5b
+ms.sourcegitcommit: 91156d0866316eda8d68454a0c4cd74be5060144
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "52293588"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53010601"
 ---
 # <a name="dialogs-library"></a>Biblioteca de diálogos
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
-Gerenciar as conversas por meio do conceito de uma caixa de diálogo é fundamental para o SDK. Os objetos de diálogo processam atividades de entrada e geram respostas de saída. A lógica de negócios do bot é executada direta ou indiretamente dentro de classes Dialog.
+Os *diálogos* são um conceito central no SDK e fornecem uma maneira útil para gerenciar uma conversa com o usuário. Os diálogos são estruturas em seu bot que atuam como funções no programa do seu bot. Cada diálogo foi projetado para executar uma tarefa específica, em uma ordem específica. Você pode especificar a ordem dos diálogos individuais para orientar a conversa e invocá-los de maneiras diferentes – às vezes, em resposta a um usuário, às vezes, em resposta a algum estímulo externo, ou de outros diálogos.
 
-Em tempo de execução, as instâncias de diálogo são organizadas em uma pilha. O diálogo no topo da pilha é conhecido como ActiveDialog. O diálogo atual processa a atividade de entrada. A pilha persiste entre cada turno da conversa (que não tem relação com o tempo e pode durar vários dias). 
+A biblioteca de diálogos fornece alguns recursos internos, tais como *prompts* e *diálogos em cascata* para facilitar a conversa do seu bot. Os [prompts](#prompts) são usados para solicitar diferentes tipos de informações, como texto, um número ou uma data. Os [diálogos em cascata](#waterfall-dialogs) podem combinar várias etapas em uma única sequência, permitindo que seu bot facilmente siga essa sequência predefinida e passe as informações para a etapa seguinte.
 
-## <a name="dialog-lifecycle"></a>Ciclo de Vida do Diálogo
+<!-- When we have samples for building your own, add links and one liner about them -->
 
-Um diálogo implementa três funções principais:
-- BeginDialog
-- ContinueDialog
-- ResumeDialog
+## <a name="dialogs-and-their-pieces"></a>Diálogos e suas partes
 
-No tempo de execução, as classes Dialogs e DialogContext trabalham juntos para escolher o diálogo adequado para lidar com a atividade. A classe DialogContext vincula a pilha Dialog persistida, a atividade de entrada e a classe DialogSet. Um DialogSet contém diálogos que o bot pode chamar.
+A biblioteca de diálogos tem algumas informações adicionais incluídas para tornar os diálogos mais úteis. Além dos diferentes [tipos de diálogos](#dialog-types) discutidos abaixo, a biblioteca contém a ideia de um *conjunto de diálogos*, o *contexto do diálogo* e o *resultado do diálogo*.
 
-A interface do DialogContext reflete a noção subjacente do início e da continuidade do diálogo. O padrão geral para o aplicativo é sempre chamar ContinueDialog primeiramente. Se não houver nenhuma pilha e, portanto, nenhum ActiveDialog, o aplicativo deverá começar o diálogo escolhido chamando BeginDialog em DialogContext. Isso fará com que a entrada de diálogo correspondente a DialogSet seja enviada por push à pilha (tecnicamente, o ID do diálogo é que é adicionado à pilha) e delegue uma chamada a BeginDialog no objeto de diálogo específico. Se fosse um ActiveDialog, ele simplesmente teria delegado a chamada ao ContinueDialog do diálogo, dando a esse diálogo todas as propriedades persistidas no processamento.
+Os *conjuntos de diálogos* são, em termos mais simples, uma coleção de diálogos. Eles podem ser elementos como prompts, diálogos em cascata, ou [componentes de diálogos](#component-dialog). Todos eles são implementações de um diálogo, que são adicionados ao conjunto de diálogos com uma ID de cadeia de caracteres específica. Quando seu bot deseja iniciar um determinado diálogo ou prompt dentro do conjunto de diálogos, ele usa essa ID de cadeia de caracteres para especificar qual diálogo será usado.
 
-Observe que um **BeginDialog de um diálogo** é o código de inicialização e usa propriedades de inicialização (chamadas de "options" no código), e um **ContinueDialog do diálogo** é o código executado para continuar a execução na chegada de uma atividade após a persistência. Por exemplo, imagine um diálogo que faz uma pergunta ao usuário: a pergunta seria feita em BeginDialog e a resposta, esperada em ContinueDialog.
+O *contexto do diálogo* contém informações referentes ao diálogo e é usado para interagir com um conjunto de diálogos de dentro do manipulador de turnos do seu bot. O contexto do diálogo inclui o contexto do turno atual, o diálogo pai e o [estado do diálogo](#dialog-state), que fornece um método para preservar informações no diálogo. O contexto do diálogo permite iniciar um diálogo com a ID da cadeia de caracteres ou continuar o diálogo atual (por exemplo, um diálogo em cascata que tem várias etapas).
 
-Para dar suporte ao aninhamento de diálogos (em que um diálogo tem um diálogo filho), há outro tipo de continuação; ela é chamada de continuidade. O DialogContext chamará o método ResumeDialog em um diálogo pai quando um diálogo filho for concluído.
+Quando um diálogo termina, ele pode retornar um *resultado de diálogo* com algumas informações resultantes sobre o diálogo. Esse resultado é retornado para permitir que o método de chamada veja o que aconteceu no diálogo e salve as informações em algum local persistente, se desejado.
 
-As solicitações e as cascatas são ambos exemplos concretos de diálogos fornecidos pelo SDK. Muitos cenários são criados pela composição essas abstrações, mas, nos bastidores, a lógica executada é sempre com o mesmo início, ou seja, o padrão de continuar e retomar descrito aqui. 
+## <a name="dialog-state"></a>Estado do diálogo
 
-A biblioteca **Diálogos** no SDK do Bot Builder inclui recursos integrados, como _solicitações_, _diálogos de cascata_ e _diálogos de componente_, para ajudar a gerenciar a conversa do bot. Você pode usar solicitações para perguntar aos usuários diferentes tipos de informações, cascatas para combinar várias etapas em uma sequência e diálogos de componente para empacotar sua lógica de diálogo em classes separadas que podem ser integradas a outros bots.
-## <a name="waterfall-dialogs-and-prompts"></a>Solicitações e diálogos de cascata
+As caixas de diálogo são uma abordagem usada para implementar uma conversa com vários turnos e, por isso, são um exemplo de um recurso do SDK que se baseia em um estado persistente em vários turnos. Sem o estado nos diálogos, seu bot não saberia onde está no conjunto de diálogos ou quais informações foram coletadas.
 
-A biblioteca **Diálogo** vem com um conjunto de tipos de solicitação que você pode usar para coletar vários tipos de informações do usuário. Por exemplo, para solicitar informações a um usuário, você pode usar o **TextPrompt**; para pedir um número a um usuário, você pode usar o **NumberPrompt**; para pedir data e hora, você pode usar o **DateTimePrompt**. As solicitações são um tipo específico de diálogo. Para usar uma solicitação em um diálogo de cascata, adicione a cascata e a solicitação ao mesmo conjunto de diálogo. 
+Um bot baseado em caixas de diálogo normalmente contém uma coleção de conjunto de diálogos como variável de membro em sua implementação de bot. Esse conjunto de caixas de diálogo é criado com um identificador para um objeto chamado acessador que fornece acesso ao estado persistente. Para obter informações sobre o estado dentro dos bots, confira [Gerenciando o estado](bot-builder-concept-state.md).
 
-Devido à natureza da resposta da interação solicitação-resposta, a implementação de uma solicitação exige pelo menos duas etapas em um diálogo de cascata: uma para enviar a solicitação e outra para capturar e processar a resposta.  Se você tiver uma solicitação adicional, poderá combiná-las usando uma única função para processar primeiro a resposta do usuário e, em seguida, iniciar a solicitação seguinte.
+No manipulador de turnos do bot, o bot inicializa o subsistema do diálogo chamando *create context* no conjunto de diálogos, que retorna o *contexto do diálogo*. Esse contexto de caixa de diálogo contém as informações necessárias para a caixa de diálogo.
 
-Uma `WaterfallDialog` é uma implementação específica de um diálogo usada para coletar informações do usuário ou orientá-lo por uma série de tarefas. As tarefas são implementadas como uma matriz de funções, em que os resultados da primeira função são passados como um argumento para a função seguinte e assim por diante. Cada função normalmente representa uma etapa no processo geral. Em cada etapa, um bot solicita que o usuário insira uma entrada, aguarda uma resposta e depois passa o resultado para a próxima etapa. 
+A criação de um contexto de caixa de diálogo requer o estado, que é acessado com o acessador fornecido ao criar o conjunto de caixas de diálogo. Com esse acessador, o conjunto de diálogos pode obter o estado apropriado da caixa do diálogo. Mais detalhes sobre os acessadores de estado podem ser encontrados em [Salvar os dados de usuário e a conversa](bot-builder-howto-v4-state.md).
 
-Solicitações e Cascata são ambas diálogos, conforme mostrado na hierarquia de classe a seguir. 
+## <a name="dialog-types"></a>Tipos de diálogo
+
+Os diálogos possuem alguns tipos diferentes: prompts, caixas de diálogos em cascata e componentes de diálogo, conforme mostrado nesta hierarquia de classe.
 
 ![classes de diálogo](media/bot-builder-dialog-classes.png)
 
-Um diálogo de cascata é composto de uma sequência de etapas de cascata. Cada etapa é um delegado assíncrono que usa um parâmetro de _contexto da etapa de cascata_ (`step`). O padrão é que a última coisa feita em uma etapa de cascata seja iniciar um diálogo filho (normalmente uma solicitação) ou terminar a cascata em si. O diagrama a seguir mostra uma sequência de etapas de cascata e as operações de pilha que ocorrem.
+### <a name="prompts"></a>Solicitações
 
-![Conceito de diálogo](media/bot-builder-dialog-concept.png)
+Prompts, na biblioteca de diálogos, fornecem uma maneira fácil de pedir ao usuário informações e avaliar sua resposta. Por exemplo, para um *prompt de número*, especifique a pergunta ou as informações que você está solicitando e o prompt verifica automaticamente se ele recebeu uma resposta com um número válido. Se tiver recebido, a conversa pode continuar; caso contrário, ele solicitará novamente ao usuário uma resposta válida.
 
-Você pode manipular um valor retornado de um diálogo dentro de uma etapa de cascata em um diálogo ou no manipulador do turno de seu bot.
-Dentro de uma etapa de cascata, o diálogo fornece o valor retornado na propriedade _result_ do contexto da etapa de cascata.
-Normalmente, você só precisa verificar o status do resultado do turno do diálogo na lógica de turno de seu bot.
+Nos bastidores, os prompts são uma caixa de diálogo em duas etapas. Primeiro, o prompt solicitará a entrada, em seguida, ele retornará o valor válido ou iniciará tudo novamente com um novo prompt.
 
-## <a name="about-prompt-types"></a>Sobre os tipos de prompt
+Os prompts têm *opções de prompt* fornecidas quando são chamados, nas quais você pode especificar o texto do prompt, o prompt de repetição se a validação falhar e as opções para responder o prompt.
+
+Além disso, você pode optar por adicionar alguma validação personalizada ao seu prompt quando ele é criado. Por exemplo, digamos que quiséssemos obter o tamanho de um grupo usando o prompt de número, mas o tamanho desse grupo deve ser maior do que 2 e menor que 12. O prompt primeiro verifica se recebeu um número válido, em seguida, executa a validação personalizada se esta tiver sido fornecida. Se a validação personalizada falhar, ele solicitará novamente ao usuário a informação, conforme descrito acima.
+
+Quando um prompt for concluído, ele retorna explicitamente o valor resultante que foi solicitado. Quando esse valor é retornado, podemos ter certeza de que ele passou a validação interna do prompt e qualquer validação personalizada adicional que possa ter sido fornecida.
+
+Para obter exemplos sobre como usar vários prompts, dê uma olhada em como usar a [biblioteca de diálogos para coletar a entrada do usuário](bot-builder-prompts.md).
+
+#### <a name="prompt-types"></a>Tipos de prompt
 
 Nos bastidores, os prompts são uma caixa de diálogo em duas etapas. Primeiro, o prompt solicitará a entrada, em seguida, ele retornará o valor válido ou reiniciará na parte superior com um novo prompt. A biblioteca de diálogos oferece uma série de prompts básicos, cada um deles usado para coletar um tipo de resposta. Os prompts básicos podem interpretar a entrada de linguagem natural, como "dez" ou "uma dúzia" para um número, ou "amanhã" ou "sextas-feira às 10h" para uma data e hora.
 
@@ -78,38 +82,88 @@ Nos bastidores, os prompts são uma caixa de diálogo em duas etapas. Primeiro, 
 
 Para solicitar uma entrada ao usuário, defina um prompt usando uma das classes internas, como _text prompt_, e adicione-o ao seu conjunto de diálogos. Os prompts têm IDs fixas que devem ser exclusivas dentro de um conjunto de caixas de diálogo. Você pode ter um validador personalizado para cada prompt, e para alguns prompts, você pode especificar uma _localidade padrão_. 
 
-### <a name="prompt-locale"></a>Localidade do prompt
+#### <a name="prompt-locale"></a>Localidade do prompt
 
-A localidade é usada para determinar o comportamento específico do idioma dos prompts **choice**, **confirm**, **date-time** e **number**. Para qualquer entrada fornecida pelo usuário, se o canal forneceu uma propriedade de _localidade_ na mensagem do usuário, então essa é a usada. Caso contrário, se a _localidade padrão_ do prompt for definida, fornecendo-a ao chamar o construtor do prompt ou configurando-a mais tarde, então essa é a usada. Se nenhuma dessas são fornecidas, o inglês ("en-us") é usado como a localidade. Observação: a localidade é um código ISO 639 de 2, 3 ou 4 caracteres que representa um idioma ou uma família de idiomas.
+A localidade é usada para determinar o comportamento específico do idioma dos prompts **choice**, **confirm**, **date-time** e **number**. Para qualquer entrada fornecida pelo usuário, se o canal forneceu uma propriedade de _localidade_ na mensagem do usuário, então essa é a usada. Caso contrário, se a _localidade padrão_ do prompt for definida, fornecendo-a ao chamar o construtor do prompt ou configurando-a mais tarde, então essa é a usada. Se nenhuma dessas são fornecidas, o inglês ("en-us") é usado como a localidade. Observação: A localidade é um código ISO 639 de 2, 3 ou 4 caracteres que representa um idioma ou uma família de idiomas.
 
-## <a name="dialog-state"></a>Estado do diálogo
+### <a name="waterfall-dialogs"></a>Diálogos em cascata
 
-As caixas de diálogo são uma abordagem usada para implementar uma conversa com vários turnos e, por isso, são um exemplo de um recurso do SDK que se baseia em um estado persistente em vários turnos. Sem o estado nas caixas de diálogo, seu bot não saberia onde está no conjunto de caixas de diálogo ou as informações já coletadas.
+Um diálogo em cascata é uma implementação específica de um diálogo, geralmente usado para coletar informações do usuário ou orientá-lo em uma série de tarefas. Cada etapa da conversa é implementada como uma função assíncrona que usa um parâmetro de *contexto da etapa de cascata* (`step`). Em cada etapa, um bot [solicita que o usuário insira uma entrada](bot-builder-prompts.md) (ou pode iniciar um diálogo filho, mas isso geralmente é um prompt), aguarde uma resposta e depois passe o resultado para a próxima etapa. O resultado da primeira função é passado como um argumento para a função seguinte, e assim por diante.
 
-Um bot baseado em caixas de diálogo normalmente contém uma coleção de conjunto de diálogos como variável de membro em sua implementação de bot. Esse conjunto de caixas de diálogo é criado com um identificador para um objeto chamado acessador que fornece acesso ao estado persistente. Para obter informações sobre o estado dentro dos bots, confira [Gerenciando o estado](bot-builder-concept-state.md). 
+O diagrama a seguir mostra uma sequência de etapas de cascata e as operações de pilha que ocorrem. Os detalhes sobre o uso da pilha de diálogos estão abaixo na seção [usando diálogos](#using-dialogs).
 
-![estado do diálogo](media/bot-builder-dialog-state.png)
+![Conceito de diálogo](media/bot-builder-dialog-concept.png)
 
-Quando o manipulador no acionamento do bot é chamado, o bot inicializa o subsistema do diálogo chamando *criar contexto* no conjunto de caixas de diálogo, que retorna o *contexto de caixa de diálogo*. A criação de um contexto de caixa de diálogo requer o estado, que é acessado com o acessador fornecido ao criar o conjunto de caixas de diálogo. Com esse acessador, o conjunto de caixas de diálogo pode obter o estado apropriado da caixa de diálogo JSON. Esse contexto de caixa de diálogo contém as informações necessárias para a caixa de diálogo.
+Nas etapas em cascata, o contexto do diálogo em cascata é armazenado no *contexto da etapa em cascata*. Isso é semelhante ao contexto do diálogo, pois ele fornece acesso ao contexto e estado do turno atual. Use o objeto de contexto da etapa de cascata para interagir com um conjunto de caixas de diálogo de dentro da etapa de cascata.
 
-Mais detalhes sobre os acessadores de estado podem ser encontrados em [Salvar os dados de usuário e a conversa](bot-builder-howto-v4-state.md).
+Você pode manipular um valor retornado de um diálogo a partir de uma etapa em cascata em um diálogo ou a partir do manipulador de turnos do bot, embora você normalmente só precise verificar o status do resultado do turno do diálogo com a lógica de turnos do bot.
+Dentro de uma etapa de cascata, o diálogo fornece o valor retornado na propriedade _result_ do contexto da etapa de cascata.
 
-## <a name="repeating-a-dialog"></a>Repetindo um diálogo
+#### <a name="waterfall-step-context-properties"></a>Propriedades de contexto da etapa em cascata
 
-Para repetir um diálogo, utilize o método *replace dialog*. O método *replace dialog* do contexto do diálogo destacará o diálogo atual na fila, enviará o diálogo de substituição por push para o topo da fila e o iniciará. Você pode usar esse método para criar um loop substituindo um diálogo por ele próprio. Observe que, se você precisar persistir o estado interno do diálogo atual, precisará passar informações para a nova instância do diálogo na chamada para o método _replace dialog_ e inicializar o diálogo adequadamente. As opções passadas para o novo diálogo podem ser acessadas por meio da propriedade _options_ do contexto da etapa em qualquer etapa do diálogo. Isso é uma ótima maneira de lidar com um fluxo de conversa complexo ou gerenciar menus.
+O contexto da etapa em cascata contém o seguinte:
 
-## <a name="branch-a-conversation"></a>Ramificar uma conversa
+* *Opções*: contém informações de entrada para o diálogo.
+* *Valores*: contém informações que você pode adicionar ao contexto e são repassados para as etapas seguintes.
+* *Resultado*: contém o resultado da etapa anterior.
 
-O contexto do diálogo mantém uma _pilha de diálogos_ e, para cada diálogo na pilha, controla a etapa a seguir. O método _begin dialog_ envia um diálogo para o topo da pilha e o método _end dialog_ retira o primeiro diálogo da pilha.
+Além disso, o método *next* continua para a próxima etapa do diálogo em cascata dentro do mesmo turno, permitindo que seu bot ignore uma etapa específica, se necessário.
 
-Um diálogo pode iniciar um novo diálogo no mesmo conjunto de diálogo chamando o método _begin dialog_ do contexto do diálogo e fornecendo o ID do novo diálogo, o que transformará o novo diálogo em diálogo ativo. O diálogo original ainda está na pilha, mas as chamadas para o método _continue dialog_ do contexto do diálogo só são enviadas para o diálogo que está no topo da pilha, o _diálogo ativo_. Quando um diálogo é retirado da pilha, o contexto do diálogo é retomado com a próxima etapa da cascata na pilha em que ele parou em relação ao diálogo original.
+### <a name="component-dialog"></a>Diálogo de componente
+
+Às vezes, você deseja gravar um diálogo reutilizável para usar em diferentes cenários, como um diálogo de endereço que pede ao usuário para fornecer valores para rua, cidade e CEP.
+
+O *diálogo de componente* oferece uma estratégia para a criação de diálogos independentes para lidar com cenários específicos, como dividir um conjunto de diálogos grandes em partes mais gerenciáveis. Cada uma dessas partes tem seu próprio conjunto de diálogos e evita qualquer conflito de nome com o conjunto de diálogos que as contém. Consulte as [instruções sobre componentes de diálogo](bot-builder-compositcontrol.md) para obter mais informações.
+
+## <a name="using-dialogs"></a>Usar os diálogos
+
+Você pode usar o contexto de diálogo para começar, continuar, substituir ou encerrar um diálogo. Você também pode cancelar todos os diálogos na pilha de diálogos.
+
+Diálogos podem ser considerados como uma pilha programática, que chamamos de *pilha de diálogos*, com o manipulador de turnos sendo o responsável pelo direcionamento e servindo como o fallback se a pilha estiver vazia. O item superior da pilha é considerado o *diálogo ativo*, e o contexto de diálogo direciona todas as entradas para o diálogo ativo.
+
+Quando um diálogo é iniciado, ele é enviado para a pilha e será o diálogo ativo. Ele permanece como o diálogo ativo até que seja concluído, removido pelo método [replace dialog](#repeating-a-dialog) ou quando outro diálogo é enviado para a pilha (pelo manipulador de turnos ou pelo próprio diálogo ativo) e torna-se o diálogo ativo. Quando esse novo diálogo termina, ele é retirado da pilha e o diálogo seguinte abaixo torna-se o diálogo ativo. Isso permite [ramificação e loop](#looping-and-branching), conforme discutido abaixo.
+
+### <a name="create-the-dialog-context"></a>Criar o contexto do diálogo
+
+Para criar o contexto do diálogo, chame o método *create context* no seu conjunto de diálogos. Criar o contexto obtém a propriedade de *estado do diálogo* do conjunto de diálogos e usa isso para criar o contexto do diálogo. O contexto do diálogo, em seguida, é usado para iniciar, continuar ou controlar de alguma forma os diálogos no conjunto.
+
+O conjunto de diálogos requer o uso de um *acessador de propriedade de estado* para acessar o estado do diálogo. O acessador é criado e usado da mesma maneira que outros acessadores de estado, mas é criado como sua própria propriedade baseada no estado da conversa. Detalhes sobre como gerenciar o estado podem ser encontrados no [tópico de gerenciamento de estado](bot-builder-concept-state.md), e o uso do estado do diálogo é mostrado nas instruções sobre o [fluxo sequencial da conversa](bot-builder-dialog-manage-conversation-flow.md).
+
+### <a name="to-start-a-dialog"></a>Para iniciar uma caixa de diálogo
+
+Para iniciar um diálogo, passe a *ID do diálogo* que você deseja iniciar no método *begin dialog*, *prompt* ou *replace dialog* do contexto do diálogo. O método begin dialog envia o diálogo para o topo da pilha e o método replace dialog remove o diálogo atual da pilha e envia o novo diálogo para a pilha.
+
+### <a name="to-continue-a-dialog"></a>Para continuar um diálogo
+
+Para continuar um diálogo, chame o método *continue dialog*. O método continue sempre continuará o diálogo no topo da pilha (o diálogo ativo), se houver um. Se o diálogo for encerrado, o controle é passado para o contexto pai que continuará no mesmo turno.
+
+### <a name="to-end-a-dialog"></a>Para encerrar uma caixa de diálogo
+
+O método *end dialog* encerra uma caixa de diálogo removendo-a da pilha e retorna um resultado opcional para o contexto pai (por exemplo, um diálogo que o chamou ou o manipulador de turnos do bot). Isso geralmente é chamado de dentro do diálogo para encerrar a instância atual de si mesmo.
+
+Você pode chamar o método end dialog de qualquer lugar onde se tenha um contexto de diálogo, mas ele será exibido ao bot que foi chamado no diálogo ativo atual.
+
+> [!TIP]
+> É uma prática recomendada chamar explicitamente o método *end dialog* no final do diálogo.
+
+### <a name="to-clear-all-dialogs"></a>Para limpar todos os diálogos
+
+Caso você queira remover todas as caixas de diálogo da pilha, é possível limpar a pilha de caixas chamando o método *cancel all dialogs* do contexto da caixa de diálogo.
+
+### <a name="repeating-a-dialog"></a>Repetindo um diálogo
+
+Para repetir um diálogo, utilize o método *replace dialog*. O método *replace dialog* do contexto do diálogo removerá o diálogo atual da fila (sem encerrá-lo da maneira convencional), enviará o diálogo substituto para o topo da pilha e o iniciará. Essa é uma ótima maneira de tratar [interações complexas](~/v4sdk/bot-builder-dialog-manage-complex-conversation-flow.md) e uma boa técnica para gerenciar os menus. Você pode usar esse método para criar um loop substituindo um diálogo por ele próprio.
+
+> [!NOTE]
+> Se você precisar persistir o estado interno do diálogo atual, precisará passar informações para a nova instância do diálogo na chamada para o método *replace dialog* e inicializar o diálogo adequadamente. As opções passadas para o novo diálogo podem ser acessadas por meio da propriedade *options* do contexto da etapa em qualquer etapa do diálogo.
+
+### <a name="branch-a-conversation"></a>Ramificar uma conversa
+
+O contexto do diálogo mantém uma pilha de diálogos e, para cada diálogo na pilha, controla qual é a etapa a seguir. O método *begin dialog* cria um diálogo filho e o envia para o topo da pilha e o método *end dialog* retira o primeiro diálogo da pilha. *End dialog* geralmente é chamado de dentro do diálogo que está terminando.
+
+Um diálogo pode iniciar um novo diálogo no mesmo conjunto de diálogo chamando o método *begin dialog* do contexto do diálogo e fornecendo o ID do novo diálogo, o que transformará o novo diálogo em diálogo ativo. O diálogo original ainda está na pilha, mas as chamadas para o método *continue dialog* do contexto do diálogo só são enviadas para o diálogo que está no topo da pilha, o *diálogo ativo*. Quando um diálogo é retirado da pilha, o contexto do diálogo é retomado com a próxima etapa da cascata na pilha em que ele parou em relação ao diálogo original.
 
 Assim, você pode criar uma ramificação dentro do fluxo da sua conversa incluindo uma etapa em um diálogo que possa escolher condicionalmente um diálogo para iniciar a partir de um conjunto de diálogos disponíveis.
-
-## <a name="component-dialog"></a>Diálogo de componente
-Às vezes você deseja codificar um diálogo reutilizável para usar em cenários diferentes. Um exemplo pode ser um diálogo de endereço que pede ao usuário para fornecer valores de rua, cidade e CEP. 
-
-O ComponentDialog fornece um nível de isolamento porque tem um DialogSet separado. Por ter um DialogSet separado, ele evita conflitos de nome com o pai que contém o diálogo, cria seu próprio tempo de execução interno do diálogo independente (criando seu próprio DialogContext) e expede a atividade para ele. Essa expedição secundária significa que ele teve a oportunidade de interceptar a atividade. Isso poderá ser muito útil se você quiser implementar recursos como "help" e "cancel".  Confira o exemplo de [Modelo de Bot do Enterprise](https://aka.ms/abs/templates/cabot). 
 
 ## <a name="next-steps"></a>Próximas etapas
 

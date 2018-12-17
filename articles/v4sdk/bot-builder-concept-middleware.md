@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 11/8/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: dacf952e6554eb76e0a41418791fb954e82d4f38
-ms.sourcegitcommit: 6c719b51c9e4e84f5642100a33fe346b21360e8a
+ms.openlocfilehash: 1bfa180967c55aac6012e02887ac2893947263f9
+ms.sourcegitcommit: 91156d0866316eda8d68454a0c4cd74be5060144
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52452058"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53010581"
 ---
 # <a name="middleware"></a>Middleware
 
@@ -28,7 +28,7 @@ O adaptador processa e direciona atividades de entrada através do pipeline de m
 Antes de entrar no middleware, é importante entender [os bots em geral](~/v4sdk/bot-builder-basics.md) e [como eles processam as atividades](~/v4sdk/bot-builder-basics.md#the-activity-processing-stack).
 
 ## <a name="uses-for-middleware"></a>Usos para middleware
-A pergunta geralmente surge: "Quando devo implementar ações como middleware em vez de usar minha lógica normal de bot?" O middleware oferece outras oportunidades para interagir com o fluxo da conversa dos seus usuários antes e depois que cada _tuno_ da conversa é processado. O middleware também permite armazenar e recuperar as informações relacionadas à lógica de processamento adicional de conversas e chamadas quando necessário. Abaixo estão alguns cenários comuns que mostram onde o middleware pode ser útil.
+A pergunta que geralmente surge é: “Quando devo implementar ações como middleware em vez de usar minha lógica normal de bot?” O middleware oferece outras oportunidades para interagir com o fluxo da conversa dos seus usuários antes e depois que cada _tuno_ da conversa é processado. O middleware também permite armazenar e recuperar as informações relacionadas à lógica de processamento adicional de conversas e chamadas quando necessário. Abaixo estão alguns cenários comuns que mostram onde o middleware pode ser útil.
 
 ### <a name="looking-at-or-acting-on-every-activity"></a>Olhando ou agindo em todas as atividades
 Existem muitas situações que exigem que seu bot faça algo em cada atividade, ou para cada atividade de um certo tipo. Por exemplo, você pode querer registrar cada atividade de mensagem que nosso bot recebe, ou fornecer uma resposta de fallback se o bot não gerou uma resposta neste turno. O middleware é um ótimo lugar para isso, com sua capacidade de agir antes e depois do resto da lógica do bot ser executada.
@@ -78,7 +78,7 @@ Para manipuladores de eventos não chamando _próxima_ significa que o evento fo
 ## <a name="response-event-handlers"></a>Manipuladores de eventos de resposta
 Além da lógica de middleware aplicativo, os manipuladores de resposta (às vezes também chamados de manipuladores de eventos ou manipuladores de eventos de atividade) podem ser adicionados ao objeto de contexto. Esses manipuladores são chamados quando a resposta associada acontece no objeto de contexto atual, antes de executar a resposta real. Esses manipuladores são úteis quando você sabe que deseja fazer algo, antes ou depois do evento real, para cada atividade desse tipo para o restante da resposta atual.
 
-> [!WARNING] 
+> [!WARNING]
 > Tenha o cuidado para não chamar um método de resposta de atividade de dentro de seu respectivo manipulador de eventos de resposta, por exemplo, chamando o método de atividade de envio de dentro de um manipulador de atividades de envio. Isso pode gerar um loop infinito.
 
 Lembre-se: cada nova atividade obtém um novo thread para executar. Quando o encadeamento para processar a atividade é criado, a lista de manipuladores dessa atividade é copiada para esse novo encadeamento. Nenhum manipulador adicionado após esse ponto será executado para esse evento de atividade específico.
@@ -90,9 +90,11 @@ Um método comum para salvar o estado é chamar o método salvar alterações no
 
 ![problemas de middleware de estado](media/bot-builder-dialog-state-problem.png)
 
-O problema com essa abordagem é que as atualizações de estado feitas de um middleware personalizado que ocorrem depois que o manipulador de turnos do bot retornou não serão salvas no armazenamento durável. A solução é mover a chamada para o método salvar alterações após o middleware personalizado ser concluído, adicionando AutoSaveChangesMiddleware no início da pilha de middleware ou pelo menos antes de qualquer middleware que possa atualizar o estado. A execução é mostrada abaixo.
+O problema com essa abordagem é que as atualizações de estado feitas de um middleware personalizado que ocorrem depois que o manipulador de turnos do bot retornou não serão salvas no armazenamento durável. A solução é mover a chamada para o método salvar alterações após o middleware personalizado ser concluído, adicionando uma instância do middleware _salvar alterações automaticamente_ no início da pilha de middleware ou pelo menos antes de qualquer middleware que possa atualizar o estado. A execução é mostrada abaixo.
 
 ![solução de middleware de estado](media/bot-builder-dialog-state-solution.png)
+
+Adicione os objetos de gerenciamento de estado que devem ser atualizados para um objeto de _conjunto de estado do bot_ e, em seguida, use-os ao criar seu middleware de salvamento automático de alterações.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 Você pode dar uma olhada no middleware do agente de transcrição, conforme implementado no SDK do Bot Builder [[C#](https://github.com/Microsoft/botbuilder-dotnet/blob/master/libraries/Microsoft.Bot.Builder/TranscriptLoggerMiddleware.cs) | [JS](https://github.com/Microsoft/botbuilder-js/blob/master/libraries/botbuilder-core/src/transcriptLogger.ts)].

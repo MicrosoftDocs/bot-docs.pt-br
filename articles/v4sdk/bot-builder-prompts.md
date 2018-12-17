@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 11/21/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 9d8caf19a98fb595e4b1e27b0635d2a752b88390
-ms.sourcegitcommit: bbfb171f515c50a3c8bba5ca898daf25cf764378
+ms.openlocfilehash: a8a0976e6f553e52e13ae13bbb719dd7bdead8f6
+ms.sourcegitcommit: 91156d0866316eda8d68454a0c4cd74be5060144
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "52293598"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53010532"
 ---
 # <a name="gather-user-input-using-a-dialog-prompt"></a>Coletar entrada do usuário usando um prompt de diálogo
 
@@ -168,7 +168,7 @@ public DialogPromptBot(DialogPromptBotAccessors accessors, ILoggerFactory logger
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-No construtor, crie as propriedades de acessador de estado. 
+No construtor, crie as propriedades de acessador de estado.
 
 ```javascript
 constructor(conversationState) {
@@ -192,6 +192,7 @@ Em seguida, crie o conjunto de caixas de diálogo e adicione os prompts, incluin
 ```
 
 Em seguida, defina as etapas da caixa de diálogo em cascata e a adicione ao conjunto.
+
 ```javascript
     // ...
     this.dialogSet.add(new WaterfallDialog(RESERVATION_DIALOG, [
@@ -207,11 +208,11 @@ Em seguida, defina as etapas da caixa de diálogo em cascata e a adicione ao con
 
 ### <a name="implement-dialog-steps"></a>Implemente as etapas de diálogo
 
-No arquivo principal do bot, podemos implementar cada uma de nossas etapas da caixa de diálogo em cascata. Depois que um prompt é adicionado, chame-o em uma etapa de um diálogo em cascata e obtenha o resultado do prompt na etapa do diálogo a seguir. Para chamar um prompt de dentro de uma etapa de cascata, chame o método do _prompt_ do objeto do _contexto da etapa de cascata_. O primeiro parâmetro é a ID do prompt a ser usado e o segundo parâmetro contém as opções do prompt, como o texto usado para pedir entradas ao usuário.     
+No arquivo principal do bot, podemos implementar cada uma de nossas etapas da caixa de diálogo em cascata. Depois que um prompt é adicionado, chame-o em uma etapa de um diálogo em cascata e obtenha o resultado do prompt na etapa do diálogo a seguir. Para chamar um prompt de dentro de uma etapa de cascata, chame o método do _prompt_ do objeto do _contexto da etapa de cascata_. O primeiro parâmetro é a ID do prompt a ser usado e o segundo parâmetro contém as opções do prompt, como o texto usado para pedir entradas ao usuário.
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-No arquivo DialogPromptBot.cs, podemos implementar as etapas `PromptForPartySizeAsync`, `PromptForLocationAsync`, `PromptForReservationDateAsync` e `AcknowledgeReservationAsync` da caixa de diálogo em cascata.
+No arquivo DialogPromptBot.cs, podemos implementar as etapas `PromptForPartySizeAsync`, `PromptForLocationAsync`, `PromptForReservationDateAsync` e `AcknowledgeReservationAsync` do diálogo em cascata.
 
 Aqui estamos mostrando apenas `PromptForPartySizeAsync` e `PromptForLocationAsync` que são dois delegados de etapas consecutivas de uma caixa de diálogo em cascata.
 
@@ -250,6 +251,7 @@ private async Task<DialogTurnResult> PromptForLocationAsync(WaterfallStepContext
         cancellationToken);
 }
 ```
+
 O exemplo acima mostra como usar um prompt de escolha, fornecendo todas as três propriedades. O método `PromptForLocationAsync` é usado como uma etapa em uma caixa de diálogo em cascata e nosso conjunto de caixas de diálogo contém a caixa de diálogo em cascata e um prompt de escolha com uma ID de `locationPrompt`.
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
@@ -291,8 +293,6 @@ Você sempre deve especificar a atividade de prompt inicial para enviar ao usuá
 Especificar um prompt de nova tentativa é útil para quando a entrada do usuário falha na validação, seja porque está em um formato que o prompt não pode analisar, como "amanhã" para um prompt numérico, ou a entrada falha em um critério de validação. Nesse caso, se nenhum prompt de nova tentativa foi fornecido, o prompt usará a atividade de prompt inicial para voltar a solicitar a entrada ao usuário.
 
 Para um prompt de escolha, você sempre deve fornecer a lista de escolhas disponíveis.
-
-
 
 ## <a name="custom-validation"></a>Validação personalizada
 
@@ -470,14 +470,13 @@ Atualize o manipulador de turnos do bot para iniciar o diálogo e aceitar um val
    1. O controle passa para a próxima etapa no diálogo ativo, que é o segundo turno do prompt.
    1. O prompt valida a entrada do usuário.
 
-      
 **Manipulando os resultados do prompt**
 
 O que você faz com o resultado do prompt depende da razão pela qual você solicitou a informação ao usuário. As opções incluem:
 
-* Use as informações para controlar o fluxo do seu diálogo, como quando o usuário responde a um prompt de confirmação ou escolha.
-* Armazene em cache as informações no estado do diálogo, como a configuração de um valor na propriedade de _valores_ do contexto da etapa em cascata e, em seguida, retorne às informações coletadas quando o diálogo terminar.
-* Salve as informações de estado do bot. Isso exigiria a criação de um diálogo para ter acesso aos acessadores de propriedade de estado do bot. 
+- Use as informações para controlar o fluxo do seu diálogo, como quando o usuário responde a um prompt de confirmação ou escolha.
+- Armazene em cache as informações no estado do diálogo, como a configuração de um valor na propriedade de _valores_ do contexto da etapa em cascata e, em seguida, retorne às informações coletadas quando o diálogo terminar.
+- Salve as informações de estado do bot. Isso exigiria a criação de um diálogo para ter acesso aos acessadores de propriedade de estado do bot.
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
@@ -600,17 +599,17 @@ async onTurn(turnContext) {
 
 ---
 
-
-
 You can use the similar techniques to validate prompt responses for any of the prompt types.
 
 ## <a name="test-your-bot"></a>Testar seu bot
+
 1. Execute o exemplo localmente em seu computador. Se você precisar de instruções, consulte o arquivo LEIAME para o exemplo em [C#](https://aka.ms/dialog-prompt-cs) ou em [JS](https://aka.ms/dialog-prompt-js).
 2. Inicie o emulador e envie as mensagens conforme mostrado a seguir para testar o bot.
 
 ![exemplo de prompt de caixa de diálogo de teste](~/media/emulator-v4/test-dialog-prompt.png)
 
 ## <a name="additional-resources"></a>Recursos adicionais
+
 Para chamar um prompt diretamente do seu manipulador de turnos, confira o exemplo de _validações de prompt_ em [C#](https://aka.ms/cs-prompt-validation-sample) ou [JS](https://aka.ms/js-prompt-validation-sample).
 
 A biblioteca de caixas de diálogo também inclui um _prompt OAuth_ para obter um _token OAuth_ que acessa outro aplicativo em nome do usuário. Para obter mais informações sobre autenticação, confira como [adicionar autenticação](bot-builder-authentication.md) ao seu bot.
