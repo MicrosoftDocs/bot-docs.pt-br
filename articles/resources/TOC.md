@@ -19,4 +19,6 @@
 # [Conformidade do Serviço de Bot](../v4sdk/bot-service-compliance.md)
 # Solucionar problemas
 ## [Solucionar problemas gerais](../bot-service-troubleshoot-general-problems.md)
+## [Solucionar problemas da configuração de bot](../bot-service-troubleshoot-bot-configuration.md)
+## [Solucionar erros de HTTP 500](../bot-service-troubleshoot-500-errors.md)
 ## [Solucionar problemas de autenticação](../bot-service-troubleshoot-authentication-problems.md)
