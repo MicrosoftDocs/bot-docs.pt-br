@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 10/30/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 1b111125ea240bf89f506106c948c6b5d3be7649
-ms.sourcegitcommit: 15f7fa40b7e0a05507cdc66adf75bcfc9533e781
+ms.openlocfilehash: 1804f7bb6a19fbe0cfced49cffa4e9d6d77005eb
+ms.sourcegitcommit: f7a8f05fc05ff4a7212a437d540485bf68831604
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50916813"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53735926"
 ---
 # <a name="create-a-bot-with-the-bot-builder-sdk-for-javascript"></a>Criar um bot com o SDK do Bot Builder para JavaScript
 
@@ -93,6 +93,10 @@ Em um terminal ou prompt de comando, altere os diretórios para aquele criado pa
 
 Envie uma mensagem para seu bot e o bot responderá com uma mensagem.
 ![Emulador em execução](../media/emulator-v4/js-quickstart.png)
+
+## <a name="additional-resources"></a>Recursos adicionais
+
+Confira [túnel (ngrok)](https://github.com/Microsoft/BotFramework-Emulator/wiki/Tunneling-(ngrok)) para saber como se conectar a um bot hospedado remotamente.
 
 ## <a name="next-steps"></a>Próximas etapas
 

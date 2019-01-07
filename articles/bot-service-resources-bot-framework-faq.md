@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/28/2018
-ms.openlocfilehash: 2a78ec6f8c453bfcfa3b6aba0d73257f35db76b8
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 660c10c400bb68e807f39eb1b7ccc38f500991e6
+ms.sourcegitcommit: 0f65857943d318da48df0a8654cde53e9a699116
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997213"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53389309"
 ---
 # <a name="bot-framework-frequently-asked-questions"></a>Perguntas frequentes sobre o Bot Framework
 
@@ -26,6 +26,38 @@ Embora a CUI (Interface do Usuário de Conversa) já esteja entre nós, no momen
 ### <a name="what-is-the-v4-sdk"></a>O que é o SDK v4?
 O SDK v4 do Construtor de Bot baseia-se nos comentários e nas lições aprendidas dos SDKs anteriores do Construtor de Bot. Ele apresenta os níveis certos de abstração, ao mesmo tempo que permite a "componentização" avançada dos blocos de construção de bot. Comece com um bot simples e aumente a sofisticação dele usando uma estrutura modular e extensível. Encontre as [perguntas frequentes](https://github.com/Microsoft/botbuilder-dotnet/wiki/FAQ) sobre o SDK no GitHub.
 
+## <a name="bot-framework-sdk-version-3-lifetime-support"></a>Suporte de tempo de vida do SDK Versão 3 do Bot Framework 
+Os bots do SDK V3 continuam sendo executados e tendo suporte do Serviço de Bot do Azure.  Desde o lançamento do SDK V4 do Bot Framework, assim como acontece com outras estruturas, continuamos com o suporte para o SDK V3 com correções de segurança e de bugs de alta prioridade e atualizações na camada de conector/protocolo.  Os clientes podem contar com o suporte para a v3 ao longo do ano de 2019.
+
+### <a name="what-is-microsoft-plan-for-supporting-existing-v3-bots-what-happens-to-my-v3-bots-will-my-v3-bots-stop-working"></a>Qual é o plano da Microsoft para dar suporte aos bots V3 existentes? O que acontece com meus bots V3? Os meus bots V3 deixarão de funcionar?
+Os bots do SDK V3 continuam sendo executados e tendo suporte do Serviço de Bot do Azure.  Desde o lançamento do SDK V4 do Bot Framework, assim como acontece com outras estruturas, continuamos com o suporte para o SDK V3 com correções de segurança e de bugs de alta prioridade e atualizações na camada de conector/protocolo.  Os clientes podem contar com o suporte para a v3 ao longo do ano de 2019.
+- O Serviço de Bot do Azure e o Bot Framework V3 são ambos produtos de GA e possuem suporte total. As bibliotecas de protocolo e de conector do Bot Framework não foram alteradas e são compartilhadas entre os SDKs V3 e V4.  
+- Os bots criados com o SDK V3 do Bot Framework (BotBuilder) continuarão a ter suporte ao longo do ano de 2019. 
+- Os clientes podem continuar criando bots V3 usando o portal do Azure ou as ferramentas de CLI do Azure.
+
+### <a name="what-happens-to-my-bot-written-to-rest--bot-framework-protocol-31"></a>O que acontece com meu bot gravado no REST & Bot Framework Protocol 3.1?
+- O Serviço de Bot do Azure e o Bot Framework V3 são ambos produtos de GA e possuem suporte total.
+- O protocolo do Bot Framework não foi alterado e é compartilhado entre os SDKs V3 e V4.  
+
+### <a name="will-there-be-more-updates-additional-development-for-the-v3-sdk-or-just-bugfixes"></a>Haverá mais atualizações ou desenvolvimento adicional para o SDK V3 ou simplesmente correções de bugs?  
+- Atualizaremos a V3 com pequenas melhorias, principalmente na camada do conector e com correções de segurança e de bugs de prioridade alta.  
+- As atualizações para a V3 serão lançadas duas vezes por ano e conforme necessário, com base nas correções de bugs e/ou nas alterações de protocolo necessárias. 
+- O plano atual é publicar versões secundárias e de patch do V3 NuGet e NPM para nossos SDKs de C# e JavaScript.
+
+### <a name="why-v4-is-not-backwards-compatible-with-v3"></a>Por que a V4 não é retrocompatível com a V3?
+- No nível do protocolo, a comunicação entre seu aplicativo de conversação (também conhecido como seu bot) e diferentes canais usa o protocolo de Atividade do Bot Framework, que é idêntico entre a V3 e a V4. A mesma infraestrutura subjacente do Serviço de Bot do Azure (SERVIÇO DE BOT DO AZURE) é compatível com os bots da V3 e da V4.
+- O SDK V4 do Bot Framework oferece uma experiência de desenvolvimento voltado para conversação com uma arquitetura SDK que é modular e extensível, capacitando aos desenvolvedores a criar aplicativos de bate-papo robustos e sofisticados. O design extensível da V4 foi baseado nos comentários dos clientes, que sugeriram que os modelos de caixa de diálogo e os primitivos do SDK V3 eram muito rígidos e restringiam a extensibilidade.  
+
+### <a name="what-is-the-general-migration-strategy-i-have-a-v3-bot-how-can-i-migrate-it-to-v4-can-i-migrate-my-v3-bot-to-v4"></a>O que é a estratégia de migração geral? Eu tenho um bot V3, como posso migrá-lo para V4 / Posso migrar meu bot V3 para V4?
+- Neste momento, a ajuda para a migração de bots criados com o SDK V3 para o SDK V4 virá na forma de documentações e exemplos. Atualmente, não temos planos para fornecer nenhuma camada de compatibilidade do SDK V3 no SDK V4 que permitiria que a V3 criasse bots para funcionar dentro de um bot V4. 
+- Se você já tiver bots do SDK V3 do Bot Framework em produção, não se preocupe, eles continuarão a funcionar normalmente até segunda ordem. 
+- O SDK V4 do Bot Framework é uma evolução do muito bem-sucedido SDK V3. O V4 representa o lançamento de uma versão principal, que inclui alterações da falha que impedem a execução de bots V3 no mais recente SDK V4. 
+
+### <a name="should-i-build-new-a-bot-using-v3-or-v4"></a>Devo criar um novo bot usando V3 ou V4?
+- Para novas experiências de conversação, é recomendável que você inicie um novo bot usando o SDK V4 do Bot Framework.
+- Se você já estiver familiarizado com o SDK V3 do Bot Framework, dedique algum tempo para aprender sobre a nova versão e os recursos oferecidos com o novo [SDK V4 do Bot Framework](http://aka.ms/botframeowrkoverview).
+- Se você já tiver bots do SDK V3 do Bot Framework em produção, não se preocupe, eles continuarão a funcionar normalmente até segunda ordem.
+- Você pode criar bots do SDK V4 do Bot Framework e da V3 mais antiga por meio do portal do Azure e da linha de comando do Azure. 
 
 ## <a name="channels"></a>Canais
 ### <a name="when-will-you-add-more-conversation-experiences-to-the-bot-framework"></a>Quando vocês adicionarão mais experiências de conversa ao Bot Framework?
@@ -68,7 +100,7 @@ Se tiver um firewall de saída bloqueando o tráfego do seu bot com a Internet, 
 - *.botframework.com (canais)
 
 ### <a name="can-i-block-all-traffic-to-my-bot-except-traffic-from-the-bot-connector-service"></a>Posso bloquear todo o tráfego para o meu bot, exceto o tráfego do Serviço de Conector do Bot?
-Não. Esse tipo de lista de permissões de DNS ou de endereço IP é inviável. O serviço Bot Framework Connector é hospedado em datacenters do Azure em todo o mundo e a lista de IPs do Azure está em constante mudança. A lista de permissões de determinados endereços IP pode funcionar um dia e parar no próximo, à medida que os Endereços IP do Azure mudam.
+ Não. Esse tipo de lista de permissões de DNS ou de endereço IP é inviável. O serviço Bot Framework Connector é hospedado em datacenters do Azure em todo o mundo e a lista de IPs do Azure está em constante mudança. A lista de permissões de determinados endereços IP pode funcionar um dia e parar no próximo, à medida que os Endereços IP do Azure mudam.
  
 ### <a name="what-keeps-my-bot-secure-from-clients-impersonating-the-bot-framework-connector-service"></a>O que mantém o meu bot protegido de clientes que representam o Serviço Bot Framework Connector ?
 1. O token de segurança que acompanha todas as solicitações feitas para seu bot tem a ServiceUrl codificada dentro dele, o que significa que, mesmo se um invasor obtiver acesso ao token, eles não conseguirá redirecionar a conversa para uma nova ServiceUrl. Isso é imposto por todas as implementações do SDK e documentado em nossos materiais de [referência](https://docs.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-connector-authentication?view=azure-bot-service-3.0#bot-to-connector) de autenticação.
