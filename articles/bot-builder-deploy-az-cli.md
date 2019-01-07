@@ -8,13 +8,13 @@ manager: kamrani
 ms.topic: get-started-article
 ms.service: bot-service
 ms.subservice: abs
-ms.date: 12/11/2018
-ms.openlocfilehash: a7cb9cb1e3df14f2f46bc5a4c3a633f5212b5dfd
-ms.sourcegitcommit: 0b421ff71617f03faf55ea175fb91d1f9e348523
+ms.date: 12/14/2018
+ms.openlocfilehash: 19960940a40fa291534bc1f88290bc6a7da109e0
+ms.sourcegitcommit: 8c10aa7372754596a3aa7303a3a893dd4939f7e9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53286612"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53654331"
 ---
 # <a name="deploy-your-bot-using-azure-cli"></a>Implantar seu bot usando a CLI do Azure
 
@@ -22,120 +22,193 @@ ms.locfileid: "53286612"
 
 Depois de ter criado e testado seu bot localmente, é possível implantá-lo no Azure para torná-lo acessível em qualquer lugar. Implantar seu bot no Azure envolve pagar pelos serviços que você usa. O artigo [gerenciamento de cobrança e custos](https://docs.microsoft.com/en-us/azure/billing/) ajuda você a entender sua cobrança do Azure, monitorar o uso e os custos, e gerenciar sua conta e assinaturas.
 
-Neste artigo, mostraremos como implantar os bots de C# e de JavaScript para o Azure usando a ferramenta `msbot`. Seria útil ler este artigo antes de seguir as etapas, para que você entenda tudo que está relacionado à implantação de um bot.
+Neste artigo, mostraremos como implantar os bots de C# e de JavaScript para o Azure usando a CLI do `az` e do `msbot`. Seria útil ler este artigo antes de seguir as etapas, para que você entenda tudo que está relacionado à implantação de um bot.
 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 - Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/) antes de começar.
-- Instalar o [SDK do .Net Core](https://dotnet.microsoft.com/download) >=v2.2. 
 - Instalar a versão mais recente da [ferramenta de CLI do Azure](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest).
-- Instale a versão mais recente da extensão `botservice` para a ferramenta `az`. 
+- Instale a versão mais recente da extensão `botservice` para a ferramenta `az`.
   - Primeiro, remova a versão antiga usando o comando `az extension remove -n botservice`. Em seguida, use o comando `az extension add -n botservice` para instalar a versão mais recente.
 - Instale a versão mais recente da ferramenta [MSBot](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/MSBot).
-  - Você precisará da [CLI de LUIS](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/LUIS#installation) se a operação de clonagem inclui recursos de LUIS ou de expedição.
-  - Você precisará da [CLI do QnA Maker](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/QnAMaker#as-a-cli) se a operação de clonagem inclui recursos do QnA Maker.
-- Instale o [Bot Framework Emulator](https://aka.ms/Emulator-wiki-getting-started).
+- Instale a versão mais recente do [Bot Framework Emulator](https://aka.ms/Emulator-wiki-getting-started).
 - Instale e configure o [ngrok](https://github.com/Microsoft/BotFramework-Emulator/wiki/Tunneling-%28ngrok%29).
 - Conhecimento do arquivo [.bot](v4sdk/bot-file-basics.md).
 
 ## <a name="deploy-javascript-and-c-bots-using-az-cli"></a>Implantar os bots de JavaScript e C# usando a CLI do Azure
-Você já criou um bot, e agora deseja implantá-lo no Azure. Essas etapas pressupõem que você criou os recursos do Azure necessários e atualizou as referências de serviço no arquivo .bot por meio do comando `msbot connect` ou do Bot Framework Emulator. Se o arquivo .bot não for atualizado, o processo de implantação pode ser concluído sem erros ou avisos, mas o bot implantado não funcionará.
+
+Você já criou e testou um bot localmente, e agora deseja implantá-lo no Azure. Essas etapas pressupõem que você tenha criado os recursos do Azure necessários.
 
 Abra um prompt de comando para fazer logon no portal do Azure.
 
 ```cmd
 az login
 ```
-Uma janela do navegador será aberta, permitindo que você entre. 
 
-### <a name="set-the-subscription"></a>Definir a assinatura 
-Defina a assinatura usando o seguinte comando:
+Uma janela do navegador será aberta, permitindo que você entre.
+
+### <a name="set-the-subscription"></a>Definir a assinatura
+
+Defina a assinatura padrão que será usada.
 
 ```cmd
 az account set --subscription "<azure-subscription>"
-``` 
+```
 
 Se você não tiver certeza de qual assinatura usar para implantar o bot, você pode exibir a lista de `subscriptions` para sua conta usando o comando `az account list`.
 
-Navegue até a pasta do bot. 
-```cmd 
+Navegue até a pasta do bot.
+
+```cmd
 cd <local-bot-folder>
 ```
 
-### <a name="azure-subscription-account"></a>Conta de assinatura do Azure
+### <a name="create-a-web-app-bot"></a>Criar um bot de aplicativo Web
+
+Crie o recurso de bot no qual você publicará seu bot.
+
 Antes de continuar, leia as instruções que se aplicam a você com base no tipo de conta de email usada para fazer logon no Azure.
 
-**Conta de email MSA**
+#### <a name="msa-email-account"></a>Conta de email MSA
 
-Se você estiver usando uma conta de email [MSA](https://en.wikipedia.org/wiki/Microsoft_account), você precisará criar a appId e appSecret para usar com o comando `msbot clone services`. 
+Se você estiver usando uma conta de email [MSA](https://en.wikipedia.org/wiki/Microsoft_account), será preciso criar a ID do aplicativo e a senha de aplicativo no Portal de Registro de Aplicativos para usar com o comando `az bot create`.
 
-- Acesse o [Portal de Registro de Aplicativos](https://apps.dev.microsoft.com/). Clique em **Adicionar um aplicativo** para registrar seu aplicativo, crie a **ID do aplicativo** e utilize a opção **Gerar nova senha**. 
-- Salve a ID do aplicativo e a nova senha que você acabou de gerar, para que você que possa usá-las com o comando `msbot clone services`. 
-- Para implantar, use o comando que se aplica ao seu bot.
-
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
-
-`msbot clone services --folder deploymentScripts/msbotClone --location "<geographic-location>" --proj-file "<your.csproj>" --name "<bot-name>" --appid "xxxxxxxx" --password "xxxxxxx" --verbose`
-
-[!INCLUDE [deployment note](./includes/deployment-note-cli.md)]
-
-# <a name="javascripttabjs"></a>[JavaScript](#tab/js)
-
-`msbot clone services --folder deploymentScripts/msbotClone --location "<geographic-location>"   --code-dir . --name "<bot-name>" --appid "xxxxxxxx" --password "xxxxxxx" --verbose`
-
-
-[!INCLUDE [deployment note](./includes/deployment-note-cli.md)]
-
----
-
-**Conta comercial ou de estudante**
-
-Se você estiver usando uma conta de email fornecida por sua empresa ou escola para fazer logon no Azure, você não precisa criar a ID do aplicativo e a senha. Para implantar, use o comando que se aplica ao seu bot.
-
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
-
-`msbot clone services --folder deploymentScripts/msbotClone --location "<geographic-location>" --verbose --proj-file "<your-project-file>" --name "<bot-name>"`
-
-[!INCLUDE [deployment note](./includes/deployment-note-cli.md)]
-
-# <a name="javascripttabjs"></a>[JavaScript](#tab/js)
-
-`msbot clone services --folder deploymentScripts/msbotClone --location "<geographic-location>" --verbose --code-dir . --name "<bot-name>"`
-
-
-[!INCLUDE [deployment note](./includes/deployment-note-cli.md)]
-
----
-
-#### <a name="save-the-secret-used-to-decrypt-bot-file"></a>Salvar o segredo usado para descriptografar o arquivo .bot
-É importante observar que o processo de implantação cria uma _novo arquivo .bot e criptografa-o usando um segredo_. Enquanto o bot está sendo implantado, você verá a seguinte mensagem na linha de comando solicitando que você salve o segredo do arquivo .bot. 
-
-`The secret used to decrypt myAzBot.bot is:`
-`hT6U1SIPQeXlebNgmhHYxcdseXWBZlmIc815PpK0WWA=`
-
-`NOTE: This secret is not recoverable and you should save it in a safe place according to best security practices.
-      Copy this secret and use it to open the <file.bot> the first time.`
-      
-Salve o segredo do arquivo .bot para uso posterior. O novo arquivo .bot criptografado é usado no portal do Azure com o botFileSecret. Se você precisar alterar o nome ou o segredo do arquivo do bot mais tarde, vá até a seção **Configurações do Serviço de Aplicativo -> Configurações do Aplicativo** no portal. Observe que, no arquivo appsettings.json ou .env, o nome do arquivo do bot é atualizado com o arquivo de bot mais recente que foi criado.  
-
-### <a name="test-your-bot"></a>Testar seu bot
-No emulador, use o ponto de extremidade de produção para testar seu aplicativo. Se você deseja testá-lo localmente, verifique se o seu bot está em execução no computador local. 
-
-### <a name="to-update-your-bot-code-in-azure"></a>Para atualizar seu código de bot no Azure
-NÃO USE o comando `msbot clone services` para atualizar seu código de bot no Azure. Você deve usar o comando `az bot publish` conforme mostrado abaixo:
+1. Acesse o [**Portal de Registro de Aplicativos**](https://apps.dev.microsoft.com/).
+1. Clique em **Adicionar um aplicativo** para registrar seu aplicativo, crie a **ID do aplicativo** e utilize a opção **Gerar nova senha**. Se você já tiver um aplicativo e uma senha, mas não se lembra da senha, você precisará gerar uma nova senha na seção Segredos do aplicativo.
+1. Salve a ID do aplicativo e a nova senha que você acabou de gerar, para que você possa usá-las com o comando `az bot create`.  
 
 ```cmd
-az bot publish --name "<your-azure-bot-name>" --proj-file "<your-proj-file>" --resource-group "<azure-resource-group>" --code-dir "<folder>" --verbose --version v4
+az bot create --kind webapp --name <bot-resource-name> --location <geographic-location> --version v4 --lang <language> --verbose --resource-group <resource-group-name> --appid "<application-id>" --password "<application-password>" --verbose
 ```
 
-| Argumentos        | DESCRIÇÃO |
-|----------------  |-------------|
-| `name`      | O nome usado quando o bot foi implantado pela primeira vez no Azure.|
-| `proj-file` | Para o bot C#, é o arquivo .csproj. Para o bot JS/TS, é o nome do arquivo de projeto de inicialização (por exemplo, index.js ou index.ts) do seu bot local.|
-| `resource-group` | O grupo de recursos do Azure usado pelo comando `msbot clone services`.|
-| `code-dir`  | Aponta para a pasta do bot local.|
+| Opção | DESCRIÇÃO |
+|:---|:---|
+| --nome | Um nome exclusivo que é usado para implantar o bot no Azure. Ele pode ser o mesmo nome do seu bot local. NÃO inclua espaços ou sublinhados no nome. |
+| --location | Localização geográfica usada para criar recursos do serviço do bot. Por exemplo, `eastus`, `westus`, `westus2`, e assim por diante. |
+| --lang | O idioma a ser usado para criar o bot: `Csharp` ou `Node`; o padrão é `Csharp`. |
+| --resource-group | Nome do grupo de recursos no qual o bot será criado. Você pode configurar o grupo padrão usando `az configure --defaults group=<name>`. |
+| --appid | A ID da conta Microsoft (ID da MSA) a ser usada com o bot. |
+| --password | A senha da conta Microsoft (MSA) para o bot. |
 
+#### <a name="business-or-school-account"></a>Conta comercial ou de estudante
 
+```cmd
+az bot create --kind webapp --name <bot-resource-name> --location <geographic-location> --version v4 --lang <language> --verbose --resource-group <resource-group-name>
+```
+
+| Opção | DESCRIÇÃO |
+|:---|:---|
+| --nome | Um nome exclusivo que é usado para implantar o bot no Azure. Ele pode ser o mesmo nome do seu bot local. NÃO inclua espaços ou sublinhados no nome. |
+| --location | Localização geográfica usada para criar recursos do serviço do bot. Por exemplo, `eastus`, `westus`, `westus2`, e assim por diante. |
+| --lang | O idioma a ser usado para criar o bot: `Csharp` ou `Node`; o padrão é `Csharp`. |
+| --resource-group | Nome do grupo de recursos no qual o bot será criado. Você pode configurar o grupo padrão usando `az configure --defaults group=<name>`. |
+
+### <a name="download-the-bot-from-azure"></a>Baixar o bot a partir do Azure
+
+Em seguida, baixe o bot que você acabou de criar. Esse comando criará um subdiretório no save-path; no entanto, o caminho especificado já deve existir.
+
+```cmd
+az bot download --name <bot-resource-name> --resource-group <resource-group-name> --save-path "<path>"
+```
+
+| Opção | DESCRIÇÃO |
+|:---|:---|
+| --nome | O nome do bot no Azure. |
+| --resource-group | Nome do grupo de recursos no qual o bot está localizado. |
+| --save-path | Um diretório existente para onde o código do bot será baixado. |
+
+### <a name="decrypt-the-downloaded-bot-file"></a>Descriptografar o arquivo .bot baixado
+
+As informações confidenciais no arquivo .bot são criptografadas.
+
+Obtenha a chave de criptografia.
+
+1. Faça logon no [Portal do Azure](http://portal.azure.com/).
+1. Abra o recurso de Bot do aplicativo Web para o seu bot.
+1. Abra as **Configurações de Aplicativo** do seu bot.
+1. Na janela **Configurações do Aplicativo**, role para baixo até **Configurações do aplicativo**.
+1. Localize o **botFileSecret** e copie seu valor.
+
+Descriptografe o arquivo .bot.
+
+```cmd
+msbot secret --bot <name-of-bot-file> --secret "<bot-file-secret>" --clear
+```
+
+| Opção | DESCRIÇÃO |
+|:---|:---|
+| --bot | O caminho relativo para o arquivo .bot baixado. |
+| --secret | A chave de criptografia. |
+
+### <a name="use-the-downloaded-bot-file-in-your-project"></a>Usar o arquivo .bot baixado no seu projeto
+
+Copie o arquivo .bot descriptografado para o diretório que contém seu projeto de bot local.
+
+Atualize seu bot para usar esse novo arquivo .bot.
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
+Em **appsettings.json**, atualize a propriedade **botFilePath** para apontar para o novo arquivo .bot.
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+Em **.env**, atualize a propriedade **botFilePath** para apontar para o novo arquivo .bot.
+
+---
+
+### <a name="update-the-bot-file"></a>Atualize o arquivo .bot
+
+Se o seu bot usar os serviços Expedição, QnA Maker ou LUIS, você precisará adicionar referências a eles no seu arquivo .bot. Caso contrário, ignore essa etapa.
+
+1. Abra o seu bot no Bot Framework Emulator, usando o novo arquivo .bot. O bot não precisa estar em execução localmente.
+1. No painel **GERENCIADOR DO BOT**, expanda a seção **SERVIÇOS**.
+1. Para adicionar referências aos aplicativos LUIS, clique no sinal de adição (+) à direita de **SERVIÇOS**.
+   1. Selecione **Adicionar Reconhecimento Vocal (LUIS)**.
+   1. Caso você seja solicitado a fazer logon na sua conta do Azure, faça-o.
+   1. Ela apresenta uma lista de aplicativos LUIS aos quais você tem acesso. Selecione aqueles para o seu bot.
+1. Para adicionar referências a uma base de dados de conhecimento do QnA Maker, clique no sinal de adição (+) à direita de **SERVIÇOS**.
+   1. Selecione **Adicionar QnA Maker**.
+   1. Caso você seja solicitado a fazer logon na sua conta do Azure, faça-o.
+   1. Ela apresenta uma lista de bases de conhecimento às quais você tem acesso. Selecione aquelas para o seu bot.
+1. Para adicionar referências aos modelos de Expedição, clique no sinal de adição (+) à direita de **SERVIÇOS**.
+   1. Selecione **Adicionar Expedição**.
+   1. Caso você seja solicitado a fazer logon na sua conta do Azure, faça-o.
+   1. Ela apresenta uma lista de modelos de Expedição aos quais você tem acesso. Selecione aqueles para o seu bot.
+
+### <a name="test-your-bot-locally"></a>Testar o bot localmente
+
+Neste ponto, seu bot deve funcionar da mesma forma que funcionou com o arquivo .bot antigo. Certifique-se de que ele funcione conforme o esperado com o novo arquivo .bot.
+
+### <a name="publish-your-bot-to-azure"></a>Publicar seu bot no Azure
+
+<!-- TODO: re-encrypt your .bot file? -->
+
+Publique seu bot local no Azure. Esta etapa pode demorar um pouco.
+
+```cmd
+az bot publish --name <bot-resource-name> --proj-file "<project-file-name>" --resource-group <resource-group-name> --code-dir <directory-path> --verbose --version v4
+```
+
+<!-- Question: What should --proj-file be for a Node project? -->
+
+| Opção | DESCRIÇÃO |
+|:---|:---|
+| --nome | O nome do recurso do bot no Azure. |
+| --proj-file | O nome do arquivo de projeto de inicialização (sem o .csproj) que precisa ser publicado. Por exemplo:  EnterpriseBot. |
+| --resource-group | Nome do grupo de recursos. |
+| --code-dir | O diretório de onde será carregado o código do bot. |
+
+Ao concluir com uma mensagem de “Implantação bem-sucedida!”, seu bot está implantado no Azure.
+
+<!-- TODO: If we tell them to re-encrypt, this step is not necessary. -->
+
+Apague a configuração da chave de criptografia.
+
+1. Faça logon no [Portal do Azure](http://portal.azure.com/).
+1. Abra o recurso de Bot do aplicativo Web para o seu bot.
+1. Abra as **Configurações do Aplicativo** do seu bot.
+1. Na janela **Configurações do Aplicativo**, role para baixo até **Configurações do aplicativo**.
+1. Localize o **botFileSecret** e o exclua.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
