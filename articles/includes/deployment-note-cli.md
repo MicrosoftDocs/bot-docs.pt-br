@@ -4,10 +4,11 @@ Se você estiver usando serviços como o LUIS, você também precisará passar `
 
 | Argumentos    | DESCRIÇÃO |
 |--------------|-------------|
-| `folder`     | Localização do arquivo `bot.receipe`. Por padrão, o arquivo de recebimento é criado no `DeploymentsScript/MSBotClone`. NÃO MODIFIQUE esse arquivo.|
+| `folder`     | Localização do arquivo `bot.recipe`. Por padrão, o arquivo de recebimento é criado no `DeploymentsScript/MSBotClone`. NÃO MODIFIQUE esse arquivo.|
 | `location`   | Localização geográfica usada para criar recursos do serviço do bot. Por exemplo, eastus, westus, westus2, etc.|
 | `proj-file`  | Para o bot em C#, é o arquivo .csproj. Para o bot JS, é o nome do arquivo de projeto de inicialização (por exemplo, index.js) do seu bot local.|
-| `name`       | Um nome exclusivo que é usado para implantar o bot no Azure. Ele pode ser o mesmo nome do seu bot local. NÃO inclua espaços no nome.|
+| `name`       | Um nome exclusivo que é usado para implantar o bot no Azure. Ele pode ser o mesmo nome do seu bot local. NÃO inclua espaços ou sublinhados no nome.|
+| `luisAuthoringKey` | Sua chave de criação para a região de criação de LUIS apropriada para os recursos do LUIS. |
 
 Antes de poder criar recursos do Azure, você será solicitado a concluir a autenticação. Siga as instruções na tela para concluir essa etapa.
 

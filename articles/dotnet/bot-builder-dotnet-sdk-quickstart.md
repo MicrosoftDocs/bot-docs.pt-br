@@ -8,14 +8,14 @@ manager: kamrani
 ms.topic: get-started-article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 11/13/2018
+ms.date: 11/19/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 20a7dad4398874febfbd71024cd68763107f7bd8
-ms.sourcegitcommit: 0b421ff71617f03faf55ea175fb91d1f9e348523
+ms.openlocfilehash: d40b203ccd044992c026a592d5f86b0881754a41
+ms.sourcegitcommit: f7a8f05fc05ff4a7212a437d540485bf68831604
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53286622"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53735916"
 ---
 # <a name="create-a-bot-with-the-bot-builder-sdk-for-net"></a>Criar um bot com o SDK do construtor de Bot para .NET
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
@@ -59,6 +59,10 @@ Envie uma mensagem para seu bot e o bot responderá com uma mensagem.
 
 > [!NOTE]
 > Se você perceber que a mensagem não pode ser enviada, talvez seja necessário reiniciar seu computador, pois o ngrok ainda não recebeu os privilégios necessários em seu sistema (só precisa ser feito uma vez).
+
+## <a name="additional-resources"></a>Recursos adicionais
+
+Confira [túnel (ngrok)](https://github.com/Microsoft/BotFramework-Emulator/wiki/Tunneling-(ngrok)) para saber como se conectar a um bot hospedado remotamente.
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -8,14 +8,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 10/25/2018
+ms.date: 12/17/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: fcbe28110ec71da7263d125e79ca59d15efa9d5f
-ms.sourcegitcommit: 15f7fa40b7e0a05507cdc66adf75bcfc9533e781
+ms.openlocfilehash: fd908335c69aab7c8b68925b8ecdece79e89ab4b
+ms.sourcegitcommit: f7a8f05fc05ff4a7212a437d540485bf68831604
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50916773"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53735956"
 ---
 # <a name="add-media-to-messages"></a>Adicionar mídia às mensagens
 
@@ -60,7 +60,9 @@ Para enviar ao usuário uma única parte do conteúdo, como uma imagem ou um ví
 
 ```javascript
 const { ActionTypes, ActivityTypes, CardFactory } = require('botbuilder');
+
 // Call function to get an attachment.
+const reply = { type: ActivityTypes.Message };
 reply.attachments = [this.getInternetAttachment()];
 reply.text = 'This is an internet attachment.';
 // Send the activity to the user.
@@ -130,30 +132,32 @@ const card = CardFactory.heroCard('', undefined,
 buttons, { text: 'You can upload an image or select one of the following choices.' });
 
 // add card to Activity.
+const reply = { type: ActivityTypes.Message };
 reply.attachments = [card];
 
 // Send hero card to the user.
 await turnContext.sendActivity(reply);
 ```
+
 ---
 
 ## <a name="process-events-within-rich-cards"></a>Processar eventos em cartões avançados
 
-Para processar eventos em cartões avançados, use objetos  _ação do cartão_ para especificar o que deve acontecer quando o usuário clica em um botão ou toca em uma seção do cartão.
+Para processar eventos em cartões avançados, use objetos  _ação do cartão_ para especificar o que deve acontecer quando o usuário clica em um botão ou toca em uma seção do cartão. Cada ação de cartão tem um _tipo_ e _valor_.
 
-Para funcionar corretamente, atribua um tipo de ação para cada item clicável no cartão. Esta tabela lista os valores válidos para a propriedade de um objeto de ação do cartão e descreve o conteúdo esperado da propriedade do valor para cada tipo.
+Para funcionar corretamente, atribua um tipo de ação para cada item clicável no cartão. Esta tabela lista e descreve os tipos de ação disponíveis e quais devem estar na propriedade de valor associada.
 
-| Tipo | Valor |
-| :---- | :---- |
-| openUrl | URL a ser aberta no navegador interno. Responde ao toque ou clique abrindo a URL. |
-| imBack | Texto da mensagem para enviar ao bot (do usuário que clicou no botão ou tocou no cartão). Essa mensagem (do usuário ao bot) ficará visível a todos os participantes da conversa por meio do aplicativo cliente que hospeda a conversa. |
-| postBack | Texto da mensagem para enviar ao bot (do usuário que clicou no botão ou tocou no cartão). Alguns aplicativos cliente podem exibir esse texto no feed de mensagem, onde ficará visível a todos os participantes da conversa. |
-| chamada | Destino de uma chamada telefônica neste formato: `tel:123123123123` responde ao toque ou clique iniciando uma chamada.|
-| playAudio | URL do áudio a ser reproduzido. Responde ao toque ou clique reproduzindo o áudio. |
-| playVideo | URL do vídeo a ser reproduzido. Responde ao toque ou clique reproduzindo o vídeo. |
-| showImage | URL da imagem a ser exibida. Responde ao toque ou clique exibindo a imagem. |
-| downloadFile | URL do arquivo a ser baixado.  Responde ao toque ou clique baixando o arquivo. |
-| signin | URL do fluxo do OAuth a ser iniciado. Responde ao toque ou clique em iniciando a entrada. |
+| Tipo | DESCRIÇÃO | Valor |
+| :---- | :---- | :---- |
+| openUrl | Abre uma URL no navegador interno. | A URL para abrir. |
+| imBack | Envia uma mensagem para o bot e posta uma resposta visível no bate-papo. | Texto da mensagem a ser enviada. |
+| postBack | Envia uma mensagem para o bot e não pode postar uma resposta visível no bate-papo. | Texto da mensagem a ser enviada. |
+| chamada | Inicia uma chamada telefônica. | Destino de uma chamada telefônica nesse formato: `tel:123123123123`. |
+| playAudio | Reproduz áudio. | A URL do áudio para reproduzir. |
+| playVideo | Reproduz um vídeo. | A URL do vídeo para reproduzir. |
+| showImage | Exibe uma imagem. | A URL da imagem para exibir. |
+| downloadFile | Baixa um arquivo. | A URL do arquivo para download. |
+| signin | Inicia um processo de entrada do OAuth. | A URL do fluxo de OAuth para iniciar. |
 
 ## <a name="hero-card-using-various-event-types"></a>Cartão hero usando vários tipos de evento
 
@@ -360,5 +364,5 @@ await context.sendActivity(messageWithCarouselOfCards);
 
 Para obter informações detalhadas sobre o esquema do cartão, confira o [Esquema de cartão do Bot Framework](https://aka.ms/botSpecs-cardSchema).
 
-Um exemplo de código pode ser encontrado aqui para cartões: [ C#](https://aka.ms/bot-cards-sample-code)/[JS](https://aka.ms/bot-cards-js-sample-code), os cartões adaptáveis: [C#](https://aka.ms/bot-adaptive-cards-sample-code)/[JS](https://aka.ms/bot-adaptive-cards-js-sample-code), anexos: [C#](https://aka.ms/bot-attachments-sample-code)/[JS](https://aka.ms/bot-attachments-sample-code-js)e ações sugeridas: [C#](https://aka.ms/SuggestedActionsCSharp)/[JS](https://aka.ms/SuggestedActionsJS).
+O código de exemplo pode ser encontrado aqui para cartões: [C#](https://aka.ms/bot-cards-sample-code)/[JS](https://aka.ms/bot-cards-js-sample-code), cartões adaptáveis: [C#](https://aka.ms/bot-adaptive-cards-sample-code)/[JS](https://aka.ms/bot-adaptive-cards-js-sample-code), anexos: [C#](https://aka.ms/bot-attachments-sample-code)/[JS](https://aka.ms/bot-attachments-sample-code-js) e ações sugeridas: [C#](https://aka.ms/SuggestedActionsCSharp)/[JS](https://aka.ms/SuggestedActionsJS).
 Consulte o repositório Exemplos do Bot Builder no [GitHub](https://aka.ms/bot-samples-readme) para obter exemplos adicionais.

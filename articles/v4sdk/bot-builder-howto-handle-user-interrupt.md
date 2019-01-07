@@ -11,12 +11,12 @@ ms.subservice: sdk
 ms.date: 09/20/2018
 ms.reviewer: ''
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 74d4bb07274643d61da332d6ee1cdfb1a14372dc
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: af659dd1c2a75af03cfa45df54a815d2dd2306fc
+ms.sourcegitcommit: 561185b9c83f3e082e8b7aba1122b1706e431540
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998423"
+ms.lasthandoff: 12/26/2018
+ms.locfileid: "53785419"
 ---
 # <a name="handle-user-interruptions"></a>Manipular interrupções do usuário
 
@@ -37,7 +37,7 @@ Um fluxo da conversa de procedimento tem um conjunto principal de etapas pelo qu
 * `cancel`: para sair do processo.
 * `help`: para fornecer diretrizes adicionais sobre esse processo.
 * `more info`: para dar dicas e sugestões ou fornecer maneiras alternativas de reservar uma mesa (por exemplo: um endereço de email ou um número de telefone para contato).
-* `show list of available tables`: se essa é uma opção, mostra uma lista de mesas disponíveis para a data e a hora solicitadas pelo usuário.
+* `show list of available tables`: se essa é uma opção, mostra uma lista de tabelas disponíveis para a data e a hora solicitadas pelo usuário.
 
 **Pedido de jantar** Em um bot de pedido de jantar, as principais etapas são o fornecimento de uma lista de itens de menu e a permissão para que o usuário adicione itens ao carrinho. Nesse processo, algumas interrupções esperadas que você pode prever podem incluir:
 
@@ -471,7 +471,7 @@ Se tudo o mais falhar, você deverá enviar uma resposta padrão em vez de não 
 
 Verifique o sinalizador **respondido** no contexto ao final da lógica do bot para ver se o bot enviou algo para o usuário durante seu turno. Se o bot processar a entrada do usuário, mas não respondê-la, é provável que o bot não saiba o que fazer com a entrada. Nesse caso, você pode capturá-la e enviar ao usuário uma mensagem padrão.
 
-Se o padrão de seu bot é fornecer ao usuário um diálogo `mainMenu`. Cabe a você decidir qual experiência o usuário terá nessa situação para o bot.
+Se o padrão para o bot é dar ao usuário uma caixa de diálogo `mainMenu`, você deve decidir qual experiência de bot seu usuário terá nessa situação.
 
 # <a name="ctabcsharptab"></a>[C#](#tab/csharptab)
 
