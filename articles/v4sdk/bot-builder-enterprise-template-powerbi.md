@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 09/18/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 73e19047ea64839f52bb20ea1eceee93803210bc
-ms.sourcegitcommit: 8b7bdbcbb01054f6aeb80d4a65b29177b30e1c20
+ms.openlocfilehash: 88208a2f5b0eb88d3b2964e63a21585484166d73
+ms.sourcegitcommit: 2d84d5d290359ac3cfb8c8f977164f799666f1ab
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51645477"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54152169"
 ---
 # <a name="enterprise-bot-template---conversational-analytics-using-powerbi-dashboard-and-application-insights"></a>Modelo de Bot do Enterprise — análise de conversa usando o painel do PowerBI e o Application Insights
 
@@ -24,19 +24,10 @@ Depois que seu Bot for implantado e começar a processar mensagens, você verá 
 
 Esses dados telemétricos podem ser exibidos dentro do Application Insights Blade, no portal do Microsoft Azure e usando o Log Analytics. Além disso, os mesmos dados telemétricos podem ser usados pelo Power BI para fornecer insights de negócios mais gerais sobre o uso do seu Bot.
 
-Um painel de exemplo do Power BI é fornecido dentro da pasta do Power BI de seu projeto criado. Ele é fornecido para fins de exemplo e demonstra como você pode começar a criar seus próprios insights. Ao longo do tempo, aprimoraremos essas visualizações. 
+Um painel do Power BI de exemplo é fornecido em [Telemetria de inteligência artificial de conversação](https://aka.ms/botPowerBiTemplate). 
 
-## <a name="getting-started"></a>Introdução
+Ele é fornecido para fins de exemplo e demonstra como você pode começar a criar seus próprios insights. Ao longo do tempo, aprimoraremos essas visualizações. 
 
-- Faça o download do PowerBI Desktop [aqui](https://powerbi.microsoft.com/en-us/desktop/)
- 
-- Recuperar um ```Application Id``` para o recurso do Application Insights usado pelo seu bot. Você pode obtê-lo navegando até a página de acesso à API na seção Configurar do Application Insights Azure Blade.
-
-Clique duas vezes no arquivo de modelo do Power BI fornecido, localizado dentro da pasta do Power BI de sua solução. Você será solicitado a fornecer o ```Application Id``` recuperado na etapa anterior. Se solicitado, conclua a autenticação usando as credenciais de assinatura do Azure. Talvez seja necessário clicar na configuração Conta organizacional para entrar.
-
-O painel resultante agora está vinculado à sua instância do Application Insights, e você deverá ver insights inicias dentro do painel se as mensagens tiverem sido enviadas e recebidas.
-
->Observe que a visualização de Sentimento não mostrará dados, uma vez que o script de implantação atual não habilita Sentimento ao publicar o modelo LUIS. Se você [republicar](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-how-to-publish-app) o modelo LUIS e habilitar o Sentimento, isso funcionará.
 
 ## <a name="middleware-processing"></a>Processamento de middleware
 
@@ -55,11 +46,13 @@ Cada Intenção do LUIS usada pelo seu projeto terá LuisIntent como prefixo. pa
     - ActivityId
     - Channel
     - FromId
-    - Conversationid
+    - FromName
+    - ConversationId
     - ConversationName
     - Locale
-    - UserName
     - Text
+    - RecipientId
+    - RecipientName
 ```
   
 ```
@@ -67,10 +60,12 @@ Cada Intenção do LUIS usada pelo seu projeto terá LuisIntent como prefixo. pa
     - ActivityId,
     - Channel
     - RecipientId
-    - Conversationid
+    - ConversationId
     - ConversationName
     - Locale
-    - ReceipientName
+    - RecipientId
+    - RecipientName
+    - ReplyToId
     - Text
 ```
 
@@ -83,6 +78,7 @@ Cada Intenção do LUIS usada pelo seu projeto terá LuisIntent como prefixo. pa
     - SentimentScore
     - ConversationId
     - Question
+    - DialogId
 ```
 
 ```
@@ -90,8 +86,8 @@ Cada Intenção do LUIS usada pelo seu projeto terá LuisIntent como prefixo. pa
     - ActivityId
     - ConversationId
     - OriginalQuestion
-    - UserName
-    - QnAItemFound
+    - FromName
+    - ArticleFound
     - Question
     - Answer
     - Score

@@ -8,13 +8,13 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: abs
-ms.date: 11/15/2018
-ms.openlocfilehash: 3c5b12bb804477ae41cf70d2ce955066801f5916
-ms.sourcegitcommit: d92fd6233295856052305e0d9e3cba29c9ef496e
+ms.date: 01/08/2019
+ms.openlocfilehash: fd852a75b911f57743b40d252b24c6ef33b0420d
+ms.sourcegitcommit: ddc8c116887ada67642d49ee5166e7f1ae287263
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51715130"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54114890"
 ---
 ::: moniker range="azure-bot-service-3.0"
 
@@ -81,6 +81,7 @@ Neste tópico, você aprendeu a criar um Bot de Aplicativo Web/Bot do Functions 
 ::: moniker range="azure-bot-service-4.0"
 
 # <a name="create-a-bot-with-azure-bot-service"></a>Criar um bot com o Serviço de Bot do Azure
+
 [!INCLUDE [pre-release-label](includes/pre-release-label.md)]
 
 O Serviço de Bot do Azure fornece os principais componentes para a criação de bots, incluindo o SDK do Construtor de Bot para o desenvolvimento de bots e o serviço de bot para conectar os bots aos canais. No tópico, você pode escolher o modelo .NET ou Node.js para criar um bot usando o SDK v4 do Bot Builder.
@@ -126,6 +127,15 @@ Na seção **Gerenciamento de Bot**, clique em **Testar no Webchat**. O Serviço
 ![Teste do Webchat do Azure](./media/azure-bot-quickstarts/azure-webchat-test.png)
 
 Insira uma mensagem e o bot deverá responder.
+
+## <a name="download-code"></a>Código de download
+Você pode baixar o código para trabalhar nele localmente. 
+1. Na seção **Gerenciamento do Bot**, clique em **Compilar**. 
+1. Clique no link **Baixar o código-fonte do Bot** no painel à direita. 
+1. Siga os prompts para baixar o código e, em seguida, descompacte a pasta.
+
+O código que você baixou usa um [arquivo .bot](./v4sdk/bot-file-basics.md) criptografado. Você precisará atualizar totalmente `botFilePath` e `botFileSecret` no arquivo appsettings.json ou .env. 
+Para fazer isso, acesse o portal do Azure. Selecione seu bot no portal, em seguida, na seção **Configurações do Serviço de Aplicativo**, clique em **Configurações do aplicativo**. No painel **Configurações do aplicativo**, você verá os valores `botFilePath` e `botFileSecret`. Copie esses valores e atualize o arquivo .env ou appsettings.json. 
 
 ## <a name="next-steps"></a>Próximas etapas
 
