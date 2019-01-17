@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: f98391f05e962bfc8846818d8a236d16846c8c5c
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: cdb512b0efe111870b34c440f978105786b6f36a
+ms.sourcegitcommit: 8161753641368567f239e24a35ad61768acccd8e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997053"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54202572"
 ---
 # <a name="enable-speech-in-web-chat"></a>Habilitar o controle por voz no Webchat
 Habilite uma interface de voz no controle de Webchat. Os usuários interagem com a interface de voz usando o microfone no controle de Webchat.
@@ -66,7 +66,7 @@ Para habilitar a funcionalidade de fala no Webchat, você precisa personalizar o
 A personalização permite que você adicione a funcionalidade de fala de uma das seguintes maneiras:
 
 * **Fala fornecida pelo navegador** – use a funcionalidade de fala interna do navegador da Web. No momento, essa funcionalidade só está disponível no navegador Chrome.
-* **Usar o serviço de Fala do Bing** – use o serviço de Fala do Bing para fornecer reconhecimento de fala e sintetização de voz. Essa forma de acessar a funcionalidade de fala é compatível com uma variedade de navegadores. Nesse caso, o processamento é concluído em um servidor em vez de no navegador.
+<!--* **Use Bing Speech service** - You can use the Bing Speech service to provide speech recognition and synthesis. This way of access speech functionality is supported by a variety of browsers. In this case, the processing is done on a server instead of on the browser.-->
 * **Criar um serviço de fala personalizado** – você pode criar seus próprios componentes personalizados de reconhecimento de fala e sintetização de voz.
 
 ### <a name="browser-provided-speech"></a>Fala fornecida pelo navegador
@@ -80,23 +80,23 @@ O código a seguir cria uma instância dos componentes de reconhecedor de fala e
 
 [!code-js[Specify speech options to use in-browser speech (JavaScript)](./includes/code/bot-service-channel-connect-webchat-speech.js#BrowserSpeech)]
 
-### <a name="bing-speech-service"></a>Serviço de Fala do Bing
+<!--### Bing Speech service
 
-O código a seguir cria uma instância dos componentes de reconhecedor de fala e sintetização de voz que usam o serviço de Fala do Bing. O reconhecimento e a geração de fala são executados no servidor. Esse mecanismo é compatível com vários navegadores. 
+The following code instantiates speech recognizer and speech synthesis components that use the Bing Speech service. The recognition and generation of speech is performed on the server. This mechanism is supported in multiple browsers. 
 
 > [!TIP]
-> Use a desobstrução de reconhecimento de fala para melhorar a precisão do reconhecimento de fala do bot se você usar o serviço de Fala do Bing. Para obter mais informações, confira a postagem no blog [Suporte de fala no Bot Framework](https://blog.botframework.com/2017/06/26/Speech-To-Text).
+> You can use speech recognition priming to improve your bot's speech recognition accuracy if you use the Bing Speech service. For more information, check out the [Speech Support in Bot Framework](https://blog.botframework.com/2017/06/26/Speech-To-Text) blog post.
 
 [!code-js[Specify speech options to use the Bing Speech API (JavaScript)](./includes/code/bot-service-channel-connect-webchat-speech.js#BingSpeech)]
 
-#### <a name="use-the-bing-speech-service-with-a-token"></a>Usar o serviço de Fala do Bing com um token
+#### Use the Bing Speech service with a token
 
-Você também tem a opção de habilitar o reconhecimento de fala dos Serviços Cognitivos usando um token. O token é gerado em um back-end seguro usando sua chave de API.
+You also have the option to enable Cognitive Services speech recognition using a token. The token is generated in a secure back end using your API key.
 
-O código de exemplo a seguir mostra como o fetch do token é feito de um back-end seguro para evitar a exposição da chave de API.
+The following example code shows how the token fetch is done from a secure back end to avoid exposing the API key.
 
 [!code-js[Fetch a token to use with the Bing Speech API (JavaScript)](./includes/code/bot-service-channel-connect-webchat-speech.js#FetchToken)]
-
+-->
 ### <a name="custom-speech-service"></a>Serviço de Fala Personalizado
 
 Você também pode fornecer seu próprio reconhecimento de fala personalizado que implementa ISpeechRecognizer ou sua própria sintetização de voz que implementa ISpeechSynthesis. 
