@@ -1,6 +1,6 @@
 ---
 title: Definir etapas de conversa com cascatas | Microsoft Docs
-description: Saiba como usar as cascatas para definir as etapas de uma conversa com o SDK do Bot Builder para Node.js.
+description: Saiba como usar os diálogos em cascata para definir as etapas de uma conversa com o SDK do Bot Framework para Node.js.
 author: v-ducvo
 ms.author: v-ducvo
 manager: kamrani
@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 2fa857e57d5be4751476874b8c193c7053a1bf39
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 526091d61f10ac0c241b994aa3ea99c1d2a70074
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "50000273"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54225321"
 ---
 # <a name="define-conversation-steps-with-waterfalls"></a>Definir a conversa em cascata
 
@@ -45,7 +45,7 @@ bot.dialog('greetings', [
 ]);
 ```
 
-O que torna isso possível é o uso de prompts. O SDK do Bot Builder para Node.js fornece vários tipos diferentes de [prompts](bot-builder-nodejs-dialog-prompt.md) internos que você pode usar para solicitar ao usuário vários tipos de informações.
+O que torna isso possível é o uso de prompts. O SDK do Bot Framework para Node.js fornece vários tipos diferentes de [prompts](bot-builder-nodejs-dialog-prompt.md) internos que você pode usar para solicitar ao usuário vários tipos de informações.
 
 O exemplo de código a seguir mostra uma caixa de diálogo que usa prompts para coletar várias partes das informações do usuário das 4 etapas da cascata.
 
@@ -164,16 +164,16 @@ bot.dialog('ensureProfile', [
 
 Uma caixa de diálogo que é criada usando uma cascata deverá ser encerrada explicitamente, caso contrário, o bot repetirá a cascata indefinidamente. Você pode encerrar uma cascata usando um dos seguintes métodos:
 
-* `session.endDialog`: Use esse método para encerrar a cascata se não houver nenhum dado para retornar à caixa de diálogo de chamada.
+* `session.endDialog`: use esse método para encerrar a cascata se não houver dados para retornar à caixa de diálogo de chamada.
 
-* `session.endDialogWithResult`: Use esse método para encerrar a cascata se houver dados para retornar à caixa de diálogo de chamada. O argumento `response` que é retornado pode ser um objeto JSON ou qualquer tipo de dado primitivo JavaScript. Por exemplo: 
+* `session.endDialogWithResult`: use esse método para encerrar a cascata se houver dados para retornar à caixa de diálogo de chamada. O argumento `response` que é retornado pode ser um objeto JSON ou qualquer tipo de dado primitivo JavaScript. Por exemplo: 
   ```javascript
   session.endDialogWithResult({
     response: { name: session.dialogData.name, company: session.dialogData.company }
   });
   ```
 
-* `session.endConversation`: Use esse método para encerrar a cascata se o final da cascata representa o fim da conversa.
+* `session.endConversation`: use esse método para encerrar a cascata se o final da cascata representa o fim da conversa.
 
 Como alternativa ao uso de um desses três métodos para encerrar uma cascata, você pode anexar o gatilho `endConversationAction` à caixa de diálogo. Por exemplo: 
 

@@ -1,6 +1,6 @@
 ---
 title: Implementar um armazenamento personalizado para seu bot | Microsoft Docs
-description: Como criar um armazenamento personalizado no SDK do Bot Builder v4.0
+description: Como criar um armazenamento personalizado no SDK do Bot Framework v4.0
 keywords: personalizado, armazenamento, estado, diálogo
 author: johnataylor
 ms.author: johtaylo
@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 10/31/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b005b9f024c5813ba22cd8663c196a8c3a5bb716
-ms.sourcegitcommit: 15f7fa40b7e0a05507cdc66adf75bcfc9533e781
+ms.openlocfilehash: 4503e2953543d2ec9c06e8cd60484a5c87d95987
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50918958"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54224001"
 ---
 # <a name="implement-custom-storage-for-your-bot"></a>Implementar um armazenamento personalizado para seu bot
 
@@ -25,7 +25,7 @@ Interações do bot se enquadram em três áreas: primeiro, o intercâmbio de at
 
 Neste artigo, exploraremos a semântica em torno das interações do bot com o Serviço de Bot do Azure e o Store.
 
-A estrutura do Bot Builder inclui uma implementação padrão. Essa implementação provavelmente atenderá às necessidades de muitos aplicativos e, para fazer uso dela, basta juntar as peças com algumas linhas de código de inicialização. Muitos dos exemplos ilustram exatamente isso.
+O Bot Framework inclui uma implementação padrão. Essa implementação provavelmente atenderá às necessidades de muitos aplicativos e, para fazer uso dela, basta juntar as peças com algumas linhas de código de inicialização. Muitos dos exemplos ilustram exatamente isso.
 
 No entanto, o objetivo aqui é descrever o que você pode fazer quando a semântica da implementação padrão não funciona tão bem quanto o desejado em seu aplicativo. O ponto básico é que essa é uma estrutura e não é um aplicativo pronto com um comportamento fixo, ou seja, a implementação de muitos dos mecanismos na estrutura é apenas a implementação padrão e não somente a implementação.
 

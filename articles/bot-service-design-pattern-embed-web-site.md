@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: e11b99aeb8475ff27304c57c515e02a5c031e4ea
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 03c7e1316e463caf84b8dfd503e1502bb66469e6
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998373"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54224841"
 ---
 # <a name="embed-a-bot-in-a-website"></a>Inserir um bot em um site
 
@@ -47,7 +47,7 @@ O mecanismo de *backchannel* permite que a página da Web que está hospedando o
 
 ## <a name="sample-code"></a>Exemplo de código
 
-O <a href="https://aka.ms/BotFramework-WebChat" target="_blank">controle de chat na Web de software livre</a> está disponível por meio do GitHub. Para obter detalhes sobre como você pode implementar o mecanismo de backchannel usando o controle de chat na Web de software livre e o SDK do Construtor de Bot para Node.js, confira [Usar o mecanismo backchannel](~/nodejs/bot-builder-nodejs-backchannel.md).
+O <a href="https://aka.ms/BotFramework-WebChat" target="_blank">controle de chat na Web de software livre</a> está disponível por meio do GitHub. Para obter detalhes sobre como você pode implementar o mecanismo de backchannel usando o controle de chat na Web de software livre e o SDK do Bot Framework para Node.js, consulte [Usar o mecanismo backchannel](~/nodejs/bot-builder-nodejs-backchannel.md).
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

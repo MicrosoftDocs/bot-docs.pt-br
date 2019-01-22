@@ -1,6 +1,6 @@
 ---
 title: Substituir diálogos | Microsoft Docs
-description: Saiba como substituir diálogos para solicitar novamente a entrada e gerenciar o fluxo da conversa usando o SDK do Construtor de Bot para Node.js.
+description: Saiba como substituir diálogos para solicitar novamente a entrada e gerenciar o fluxo da conversa usando o SDK do Bot Framework para Node.js.
 author: v-ducvo
 ms.author: v-ducvo
 manager: kamrani
@@ -9,22 +9,22 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 30ac28f5ce700829b8c382c49905883ffa45da29
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 58d2c3fc4a1fb266b74402541fc937f0b52fa189
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "50000053"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54224981"
 ---
 # <a name="replace-dialogs"></a>Substituir diálogos
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
-A capacidade de substituir um diálogo pode ser útil quando você precisa validar a entrada do usuário ou repetir uma ação no decorrer de uma conversa. Com o SDK do Construtor de Bot para Node.js, você pode substituir um diálogo usando o método [`session.replaceDialog`](http://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session#replacedialog). Esse método permite que você encerre o diálogo atual e substitua-o por um novo diálogo sem retornar ao chamador. 
+A capacidade de substituir um diálogo pode ser útil quando você precisa validar a entrada do usuário ou repetir uma ação no decorrer de uma conversa. Com o SDK do Bot Framework para Node.js, você pode substituir um diálogo usando o método [`session.replaceDialog`](http://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session#replacedialog). Esse método permite que você encerre o diálogo atual e substitua-o por um novo diálogo sem retornar ao chamador. 
 
 ## <a name="create-custom-prompts-to-validate-input"></a>Criar prompts personalizados para validar a entrada
 
-O SDK do Construtor de Bot para Node.js inclui a validação da entrada para alguns tipos de [prompts](bot-builder-nodejs-dialog-prompt.md), como `Prompts.time` e `Prompts.choice`. Para validar a entrada de texto recebida em resposta a `Prompts.text`, você precisa criar sua própria lógica de validação e prompts personalizados. 
+O SDK do Bot Framework para Node.js inclui a validação da entrada para alguns tipos de [prompts](bot-builder-nodejs-dialog-prompt.md), como `Prompts.time` e `Prompts.choice`. Para validar a entrada de texto recebida em resposta a `Prompts.text`, você precisa criar sua própria lógica de validação e prompts personalizados. 
 
 Talvez você deseje validar uma entrada se a entrada precisar estar em conformidade com determinado valor, padrão, intervalo ou critérios que você definir. Se uma entrada falhar na validação, o bot poderá solicitar o usuário a fornecer essas informações novamente usando o método `session.replaceDialog`.
 

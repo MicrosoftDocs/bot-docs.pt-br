@@ -1,6 +1,6 @@
 ---
 title: Adicionar anexos de cartão avançado às mensagens | Microsoft Docs
-description: Saiba como enviar cartões avançados interativos e envolventes usando o SDK do Construtor de Bot para Node.js.
+description: Saiba como enviar cartões avançados interativos e envolventes usando o SDK do Bot Framework para Node.js.
 author: v-ducvo
 ms.author: v-ducvo
 manager: kamrani
@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 12d18e83064cdf8ce43a662198a2fa94eb995b3b
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: e3bf4a6868702f24af08e69d5f07c036082ec3b6
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "50000083"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54225231"
 ---
 # <a name="add-rich-card-attachments-to-messages"></a>Adicionar anexos de cartão avançados às mensagens
 

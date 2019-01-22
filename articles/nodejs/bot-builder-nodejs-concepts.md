@@ -1,6 +1,6 @@
 ---
-title: Conceitos chave no SDK do Bot Builder para Node.js | Microsoft Docs
-description: Entenda os principais conceitos e ferramentas para criar e implementar bots de conversação disponíveis no Bot Builder SDK for Node.js.
+title: Principais conceitos no SDK do Bot Framework para Node.js | Microsoft Docs
+description: Entenda os principais conceitos e ferramentas para criar e implementar bots de conversação disponíveis no SDK do Bot Framework para Node.js.
 author: DeniseMak
 ms.author: v-demak
 manager: kamrani
@@ -9,14 +9,14 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 43b6f669cdbc91b78094d3d0d9e7a54f97f9884f
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: efd47cb1ae48c34d58d673eaea04feeb1869b640
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998023"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54225441"
 ---
-# <a name="key-concepts-in-the-bot-builder-sdk-for-nodejs"></a>Principais conceitos no SDK do construtor de Bot para Node. js
+# <a name="key-concepts-in-the-bot-framework-sdk-for-nodejs"></a>Principais conceitos no SDK do Bot Framework para Node.js
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
@@ -24,14 +24,14 @@ ms.locfileid: "49998023"
 > - [.NET](../dotnet/bot-builder-dotnet-concepts.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-concepts.md)
 
-Este artigo apresenta os principais conceitos no SDK do construtor de Bot para Node. js. Para obter uma introdução ao Bot Framework, consulte [visão geral do Bot Framework](../overview-introduction-bot-framework.md).
+Este artigo apresenta os principais conceitos no SDK do Bot Framework para Node.js. Para obter uma introdução ao Bot Framework, consulte [visão geral do Bot Framework](../overview-introduction-bot-framework.md).
 
 ## <a name="connector"></a>Conector
 
 O Bot Framework Connector é um serviço que conecta seu bot a vários *canais*, que são clientes como Skype, Facebook, Slack e SMS. O Conector facilita a comunicação entre o bot e o usuário, transmitindo mensagens do bot para o canal e do canal para o bot. A lógica do seu bot é hospedada como um serviço web que recebe mensagens dos usuários através do serviço Connector, e as respostas do seu bot são enviadas para o Connector usando HTTPS POST. 
 
-O Bot Builder SDK para Node.js fornece as classes [ UniversalBot][UniversalBot] e [ChatConnector][ChatConnector] para configurar o bot para enviar e receber mensagens através do Bot Conector de Estrutura. O `UniversalBot` classe formulários o cérebro do seu bot. É responsável por gerenciar todas as conversas que seu bot tem com um usuário. A classe `ChatConnector` conecta seu bot ao Serviço de Conector Bot Framework.
-Para um exemplo que demonstre o uso dessas classes, consulte [Criar um bot com o SDK do Bot Builder para o Node.js](bot-builder-nodejs-quickstart.md).
+O SDK do Bot Framework para Node.js fornece as classes [UniversalBot][UniversalBot] e [ChatConnector][ChatConnector] para configurar o bot para enviar e receber mensagens através do Conector do Bot Framework. O `UniversalBot` classe formulários o cérebro do seu bot. É responsável por gerenciar todas as conversas que seu bot tem com um usuário. A classe `ChatConnector` conecta seu bot ao Serviço de Conector Bot Framework.
+Veja um exemplo que demonstra o uso dessas classes em [Criar um bot com o SDK do Bot Framework para o Node.js](bot-builder-nodejs-quickstart.md).
 
 O Connector também normaliza as mensagens que o bot envia aos canais para que você possa desenvolver seu bot de maneira independente de plataforma. Normalizar uma mensagem envolve convertê-la do esquema do Bot Framework no esquema do canal. Nos casos em que o canal não suporta todos os aspectos do esquema da estrutura, o Conector tentará converter a mensagem em um formato suportado pelo canal. Por exemplo, se o bot enviar uma mensagem que contenha um cartão com botões de ação para o canal SMS, o Conector poderá renderizar o cartão como uma imagem e incluir as ações como links no texto da mensagem. O [Inspetor de Canais][ChannelInspector] é uma ferramenta da Web que mostra como o Conector processa mensagens em vários canais.
 
@@ -47,19 +47,19 @@ Para obter um exemplo que demonstra como enviar uma placa gráfica avançada que
 Caixas de diálogo ajudam você a organizar a lógica de conversação no seu bot e é fundamentais para a [Projetando o fluxo da conversa](../bot-service-design-conversation-flow.md). Para obter uma introdução para as caixas de diálogo, consulte [gerenciar uma conversa com caixas de diálogo](bot-builder-nodejs-dialog-manage-conversation.md).
 
 ## <a name="actions"></a>Ações
-Você vai querer projetar seu bot para ser capaz de lidar com interrupções, como solicitações de cancelamento ou ajuda a qualquer momento durante o fluxo da conversa. O SDK do construtor de Bot para Node. js fornece manipuladores de mensagens globais que disparam ações, como o cancelamento ou invocando a outras caixas de diálogo. Veja [Manipular ações de usuário](bot-builder-nodejs-dialog-actions.md) para obter exemplos de como usar [manipuladores triggerAction][triggerAction].
+Você vai querer projetar seu bot para ser capaz de lidar com interrupções, como solicitações de cancelamento ou ajuda a qualquer momento durante o fluxo da conversa. O SDK do Bot Framework para Node.js fornece manipuladores de mensagens globais que disparam ações, como o cancelamento ou a invocação de outras caixas de diálogo. Veja [Manipular ações de usuário](bot-builder-nodejs-dialog-actions.md) para obter exemplos de como usar [manipuladores triggerAction][triggerAction].
 <!--[Handling cancel](bot-builder-nodejs-manage-conversation-flow.md#handling-cancel), [Confirming interruptions](bot-builder-nodejs-manage-conversation-flow.md#confirming-interruptions) and-->
 
 
 ## <a name="recognizers"></a>Reconhecedores
 Quando os usuários solicitam seu bot algo, como "help" ou "encontrar notícias", seu bot precisa entender o que está solicitando o usuário e, em seguida, execute a ação apropriada. Você pode criar seu bot para reconhecer intenções com base na entrada do usuário e associá-lo a ações. 
 
-Você pode usar o reconhecedor de expressões regulares interno que o Bot Builder SDK fornece, chamar um serviço externo, como a API do LUIS, ou implementar um reconhecedor personalizado para determinar a intenção do usuário. Veja [Reconhecer a intenção do usuário](bot-builder-nodejs-recognize-intent-messages.md) para exemplos que demonstram como adicionar reconhecedores ao seu bot e usá-los para acionar ações.
+Você pode usar o reconhecedor de expressões regulares interno que o SDK do Bot Framework fornece, chamar um serviço externo, como a API do LUIS, ou implementar um reconhecedor personalizado para determinar a intenção do usuário. Veja [Reconhecer a intenção do usuário](bot-builder-nodejs-recognize-intent-messages.md) para exemplos que demonstram como adicionar reconhecedores ao seu bot e usá-los para acionar ações.
 
 
 ## <a name="saving-state"></a>Salvar estado
 
-Uma chave para um bom projeto de bot é rastrear o contexto de uma conversa, para que seu bot se lembre de coisas como a última pergunta que o usuário fez. Bots construídos usando o Bot Builder SDK são projetados para serem stateless, para que possam ser escalonados facilmente para serem executados em vários nós de computação. O Bot Framework fornece um sistema de armazenamento que armazena os dados do bot, para que o serviço da web do bot possa ser dimensionado. Por causa disso, você geralmente deve evitar salvar o estado usando uma variável global ou fechamento de função. Isso criará problemas quando você quiser expandir seu bot. Em vez disso, use as seguintes propriedades do [objeto][Session] do seu bot para salvar dados relativos a um usuário ou conversa:
+Uma chave para um bom projeto de bot é rastrear o contexto de uma conversa, para que seu bot se lembre de coisas como a última pergunta que o usuário fez. Bots construídos usando o SDK do Bot Framework são projetados para serem sem estado para que possam ser escalonados facilmente a fim de serem executados em vários nós de computação. O Bot Framework fornece um sistema de armazenamento que armazena os dados do bot, para que o serviço da web do bot possa ser dimensionado. Por causa disso, você geralmente deve evitar salvar o estado usando uma variável global ou fechamento de função. Isso criará problemas quando você quiser expandir seu bot. Em vez disso, use as seguintes propriedades do [objeto][Session] do seu bot para salvar dados relativos a um usuário ou conversa:
 
 * **userData** armazena informações globalmente para o usuário em todas as conversas.
 * **conversationData** armazena informações globalmente para uma única conversa. Esses dados são visíveis para todos dentro da conversa, portanto, tenha cuidado ao armazenar dados nessa propriedade. Ele é ativado por padrão e você pode desativá-lo usando a configuração [persistConversationData][PersistConversationData] do bot.

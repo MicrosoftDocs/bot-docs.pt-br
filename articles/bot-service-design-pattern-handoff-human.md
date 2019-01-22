@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 6b50df60c3a8165198e8f9a55964f2f596d62406
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: f18b375a1e4ebcf06d00d045e383db8b05fb5111
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998723"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54225731"
 ---
 # <a name="transition-conversations-from-bot-to-human"></a>Fazer a transição de conversas do bot para humanos
 
@@ -74,7 +74,7 @@ Depois que o agente se conecta ao bot, o bot começa a encaminhar mensagens entr
 
 ## <a name="sample-code"></a>Exemplo de código
 
-Para obter um exemplo completo que mostra como entregar as conversas do bot para humanos usando o SDK do Bot Builder para o Node.js, consulte o <a href="https://github.com/palindromed/Bot-HandOff" target="_blank">exemplo de entrega de Bot</a> no GitHub.
+Veja um exemplo completo que mostra como disponibilizar as conversas do bot para humanos usando o SDK do Bot Framework para Node.js em <a href="https://github.com/palindromed/Bot-HandOff" target="_blank">Exemplo de entrega de Bot</a> no GitHub.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

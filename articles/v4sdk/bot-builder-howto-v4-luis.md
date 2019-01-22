@@ -1,6 +1,6 @@
 ---
 title: Adicionar reconhecimento de idioma natural ao seu bot | Microsoft Docs
-description: Aprenda a usar o LUIS para entender a linguagem natural com o SDK do Bot Builder.
+description: Aprenda a usar o LUIS para reconhecimento de linguagem natural com o SDK do Bot Framework.
 keywords: Entendimento de Linguagem, LUIS, intenção, reconhecedor, entidades, middleware
 author: ivorb
 ms.author: v-ivorb
@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: cognitive-services
 ms.date: 11/28/18
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a512cb92f35374b457c4d4cef05667edbd8d2f1f
-ms.sourcegitcommit: 892bf81d306ba607c293ee8639d5c6b66ab3710a
+ms.openlocfilehash: 77dbf8658030a18596507129c88156601d4272e5
+ms.sourcegitcommit: d385ec5fe61c469ab17e6f21b4a0d50e5110d0fd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52460005"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54298303"
 ---
 # <a name="add-natural-language-understanding-to-your-bot"></a>Adicionar reconhecimento de idioma natural ao seu bot
 
@@ -185,7 +185,7 @@ No arquivo **bot.js**, lemos as informações de configuração para gerar o ser
 Atualize o valor de `LUIS_CONFIGURATION` com o nome de seu aplicativo LUIS, como ele aparece no arquivo de configuração.
 
 ```javascript
-// Language Understanding (LUIS) service name as defined in the .bot file.YOUR_LUIS_APP_NAME is "LuisBot" in the C# code.
+// Language Understanding (LUIS) service name as defined in the .bot file.YOUR_LUIS_APP_NAME is "LuisBot" in the JavaScript code.
 const LUIS_CONFIGURATION = '<YOUR_LUIS_APP_NAME>';
 
 // Get endpoint and LUIS configurations by service name.

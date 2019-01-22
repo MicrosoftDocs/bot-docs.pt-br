@@ -6,14 +6,15 @@ ms.author: JonathanFingold
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
+ROBOTS: NOINDEX
 ms.date: 10/04/2018
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 9b9a3594e3a1f6a93ce3d9b3314880c78b88a9c5
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 33c6f22696038ed5e9d2ae09ad2ec99d401f6a60
+ms.sourcegitcommit: b94361234816e6b95459f142add936732fc40344
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998903"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54317706"
 ---
 [!INCLUDE [pre-release-label](includes/pre-release-label-v3.md)]
 
@@ -32,7 +33,7 @@ Os recursos incluem:
 - Melhorias para os canais para dar suporte a novos recursos de autenticação, como novas bibliotecas de WebChat e DirectLineJS para eliminar a necessidade da verificação de código mágico de 6 dígitos.
 - Melhorias para o Portal do Azure para adicionar, excluir e definir as configurações de conexão para vários provedores de identidade OAuth.
 - Suporte para uma variedade de provedores de identidade de out-of-the-box, incluindo o Azure AD (pontos de extremidade v1 e v2), GitHub e outros.
-- Atualizações para os SDKs de Construtor de Bot do C# e Node.js para ser capaz de recuperar tokens, criar OAuthCards e manipular eventos de TokenResponse.
+- Atualizações dos SDKs do Bot Framework para Node.js e C# para recuperar tokens, criar OAuthCards e manipular eventos de TokenResponse.
 - Exemplos de como criar um bot que autentica para o Azure AD (pontos de extremidade v1 e v2) e para o GitHub.
 
 Você pode extrapolar das etapas neste artigo para adicionar recursos a um bot existente. A seguir estão os bots de exemplo que demonstram os novos recursos de autenticação
@@ -317,7 +318,7 @@ private async Task SendOAuthCardAsync(IDialogContext context, Activity activity)
 
 ### <a name="wait-for-a-tokenresponseevent"></a>Aguardar um TokenResponseEvent
 
-Neste código, a classe de caixa de diálogo do Bot está aguardando um `TokenResponseEvent` (mais sobre como isso é roteado para a pilha da caixa de diálogo está abaixo). O método `WaitForToken` primeiro determina se esse evento foi enviado. Se foi enviado, ele pode ser usado pelo bot. Se não, o método `WaitForToken` usa qualquer texto que foi enviado para o bot e passa-o para `GetUserTokenAsync`. O motivo disso é que alguns clientes (como WebChat) não precisam do código de verificação Magic Code e podem enviar diretamente o Token no `TokenResponseEvent`. Outros clientes ainda exigem que o magic code (como Facebook ou Slack). O Serviço de Bot do Azure apresentará esses clientes com um magic code de seis dígitos e pedir ao usuário digitar isso na janela de bate-papo. Embora não seja ideal, esse é o comportamento de fallback e se `WaitForToke` recebe um código, o bot pode enviar esse código para o Serviço de Bot do Azure e obter um token de volta. Se essa chamada também falhar, você pode decidir relatar um erro ou fazer algo diferente. Na maioria dos casos, o bot agora terá um token de usuário.
+Neste código, a classe de caixa de diálogo do Bot está aguardando um `TokenResponseEvent` (mais sobre como isso é roteado para a pilha da caixa de diálogo está abaixo). O método `WaitForToken` primeiro determina se esse evento foi enviado. Se foi enviado, ele pode ser usado pelo bot. Se não, o método `WaitForToken` usa qualquer texto que foi enviado para o bot e passa-o para `GetUserTokenAsync`. O motivo disso é que alguns clientes (como WebChat) não precisam do código de verificação Magic Code e podem enviar diretamente o Token no `TokenResponseEvent`. Outros clientes ainda exigem que o magic code (como Facebook ou Slack). O Serviço de Bot do Azure apresentará esses clientes com um magic code de seis dígitos e pedir ao usuário digitar isso na janela de bate-papo. Embora não seja ideal, esse é o comportamento de fallback, e se `WaitForToken` recebe um código, o bot pode enviar esse código para o Serviço de Bot do Azure e obter um token de volta. Se essa chamada também falhar, você pode decidir relatar um erro ou fazer algo diferente. Na maioria dos casos, o bot agora terá um token de usuário.
 
 Se você procurar no arquivo **MessageController.cs**, você verá que as atividades `Event` desse tipo também são roteadas para a pilha de caixa de diálogo.
 
@@ -363,4 +364,4 @@ else if(message.Type == ActivityTypes.Event)
 }
 ```
 ## <a name="additional-resources"></a>Recursos adicionais
-[SDK do Bot Builder](https://github.com/microsoft/botbuilder)
+[SDK do Bot Framework](https://github.com/microsoft/botbuilder)

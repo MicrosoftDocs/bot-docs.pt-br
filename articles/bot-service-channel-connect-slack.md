@@ -2,19 +2,19 @@
 title: Conectar um bot ao Slack | Microsoft Docs
 description: Saiba como configurar a conexão do bot com o Slack.
 keywords: conectar um bot, canal de bot, bot do Slack, aplicativo de mensagens do Slack
-author: RobStand
-ms.author: kamrani
+author: JonathanFingold
+ms.author: v-jofing
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 12/13/2017
-ms.openlocfilehash: f69cfa4c67a1f628d835f0d96903065b8b033d32
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.date: 01/09/2019
+ms.openlocfilehash: 3573103e1d1c55e3ad648ad68d84674a98b397f7
+ms.sourcegitcommit: 8161753641368567f239e24a35ad61768acccd8e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "50000123"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54202552"
 ---
 # <a name="connect-a-bot-to-slack"></a>Conectar um bot ao Slack
 
@@ -68,9 +68,11 @@ Execute estas etapas para assinar seis eventos de bot específicos. Ao assinar e
 
 1. Selecione a guia **Assinaturas de Evento**.
 2. Defina **Habilitar Eventos** como **Ligado**.
-3. Na **URL da Solicitação**, insira esta URL, mas substitua `{YourBotHandle}` por seu identificador de bot. O identificador de bot usado neste tutorial é testChannels.
-        `https://slack.botframework.com/api/Events/{YourBotHandle}`
-4. Em **Assinar Eventos do Workplace**, clique em **Adicionar Evento do Workplace**.
+3. Na **URL de solicitação**, insira `https://slack.botframework.com/api/Events/{YourBotHandle}`, no qual `{YourBotHandle}` é seu identificador de bot, sem os colchetes. O identificador de bot usado neste exemplo é **ContosoBot**.
+
+   ![Assinar eventos: superior](~/media/channels/slack-SubscribeEvents-a.png)
+
+4. Em **Assinar Eventos de Bot**, clique em **Adicionar Evento de Usuário do Bot**.
 5. Na lista de eventos, selecione esses seis tipos de evento:
     * `member_joined_channel`
     * `member_left_channel`
@@ -79,8 +81,11 @@ Execute estas etapas para assinar seis eventos de bot específicos. Ao assinar e
     * `message.im`
     * `message.mpim`
 
-![Assinar eventos](~/media/channels/slack-SubscribeEvents.png)
+   ![Assinar eventos: meio](~/media/channels/slack-SubscribeEvents-b.png)
+
 6. Clique em **Salvar Alterações**.
+
+   ![Assinar eventos: inferior](~/media/channels/slack-SubscribeEvents-c.png)
 
 ## <a name="add-and-configure-interactive-messages-optional"></a>Adicionar e configurar mensagens interativas (opcional)
 

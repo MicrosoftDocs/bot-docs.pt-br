@@ -8,14 +8,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 11/26/2018
+ms.date: 01/15/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 62cf3663a6e1c9b9321d7b74393b95e4a2ed3a69
-ms.sourcegitcommit: fd7781a06303fee5f39a253da5b3a3818d54b2ba
+ms.openlocfilehash: c798c26f108458e1caeb16aa22c02c6e7c70fb61
+ms.sourcegitcommit: 3cc768a8e676246d774a2b62fb9c688bbd677700
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "53806767"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54323652"
 ---
 # <a name="use-multiple-luis-and-qna-models"></a>Usar vários modelos de LUIS e QnA
 
@@ -41,7 +41,7 @@ Você pode seguir as instruções em **LEIAME** para [C#](https://aka.ms/dispatc
 
  ### <a name="create-your-bot-using-service-ui"></a>Criar seu bot usando a interface do usuário de serviço
  
-Para começar a criação de um bot manualmente, baixe os 4 arquivos a seguir, localizados no repositório [BotFramework-Samples](https://github.com/Microsoft/BotFramework-Samples) do GitHub em uma pasta local: [home-automation.json](https://aka.ms/dispatch-home-automation-json), [weather.json ](https://aka.ms/dispatch-weather-json), [nlp-with-dispatchDispatch.json](https://aka.ms/dispatch-dispatch-json), [QnAMaker.tsv](https://aka.ms/dispatch-qnamaker-tsv)
+Para começar a criação de um bot manualmente, baixe os 4 arquivos a seguir, localizados no repositório [BotFramework-Samples](https://aka.ms/botdispatchgitsamples) do GitHub em uma pasta local: [home-automation.json](https://aka.ms/dispatch-home-automation-json), [weather.json ](https://aka.ms/dispatch-weather-json), [nlp-with-dispatchDispatch.json](https://aka.ms/dispatch-dispatch-json), [QnAMaker.tsv](https://aka.ms/dispatch-qnamaker-tsv) Para fazer isso, você pode usar o método que consiste em abrir o link do repositório do GitHub acima, clicar em **BotFramework-Samples** e, em seguida, "clonar ou fazer o download" do repositório para seu computador local. Observe que esses arquivos estão em um repositório diferente do exemplo mencionado nos pré-requisitos.
 
 ### <a name="manually-create-luis-apps"></a>Criar manualmente aplicativos LUIS
 
@@ -494,7 +494,10 @@ Depois que seu bot estiver em execução, é possível melhorar o desempenho do 
 
 Qualquer uma dessas duas ações acima reduzirá o número de vezes que o seu bot responde aos usuários com a mensagem “Não foi possível encontrar uma resposta”. 
 
-## <a name="additional-resources"></a>Recursos adicionais 
+## <a name="additional-resources"></a>Recursos adicionais
+
+**Atualizar ou criar um novo modelo do LUIS:** Este exemplo é baseado em um modelo predefinido do LUIS. Confira [aqui](https://aka.ms/create-luis-model#updating-your-cognitive-models
+) mais informações para ajudá-lo a atualizar esse modelo ou criar um novo modelo do LUIS.
 
 **Excluir recursos:** Este exemplo cria vários aplicativos e recursos que você pode excluir usando as etapas listadas abaixo, mas você não deve excluir os recursos dos quais *outros aplicativos ou serviços* dependam. 
 

@@ -1,6 +1,6 @@
 ---
 title: Criar um bot habilitado para fala com habilidades da Cortana | Microsoft Docs
-description: Saiba como criar um bot habilitado para fala com habilidades da Cortana e o SDK do Bot Builder para o Node.js.
+description: Saiba como criar um bot habilitado para fala com habilidades da Cortana e o SDK do Bot Framework para o Node.js.
 author: DeniseMak
 manager: kamrani
 ms.topic: article
@@ -8,12 +8,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: e728a3999c484d19a78f03bd8eb7b8bd8833c39f
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: e00128ca82ec8b97502d8f2fbf42be10cc91ade6
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998033"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54225292"
 ---
 # <a name="build-a-speech-enabled-bot-with-cortana-skills"></a>Criar um bot habilitado para fala com habilidades da Cortana
 
@@ -23,7 +23,7 @@ ms.locfileid: "49998033"
 > - [.NET](../dotnet/bot-builder-dotnet-cortana-skill.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-cortana-skill.md)
 
-O SDK do Bot Builder para Node.js permite que você crie um bot habilitado para fala conectando-o ao canal da Cortana como uma habilidade da Cortana. Habilidades da Cortana permitem que você forneça funcionalidades por meio da Cortana em resposta à entrada falada de um usuário.
+O SDK do Bot Framework para Node.js permite que você crie um bot habilitado para fala conectando-o ao canal da Cortana como uma habilidade da Cortana. Habilidades da Cortana permitem que você forneça funcionalidades por meio da Cortana em resposta à entrada falada de um usuário.
 
 > [!TIP]
 > Para obter mais informações sobre o que é uma habilidade e o que ela pode fazer, consulte o [Kit de Habilidades da Cortana][CortanaGetStarted].
@@ -35,7 +35,7 @@ Criar uma habilidade da Cortana usando o Bot Framework requer muito pouco conhec
 
 ## <a name="adding-speech-to-your-bot"></a>Adicionando fala ao bot
 
-As mensagens faladas do bot são representadas como SSML (Linguagem de Marcação de Sintetização de Voz). O SDK do Bot Builder permite incluir SSML nas respostas do seu bot para controlar o que o bot diz, além do que ele mostra.
+As mensagens faladas do bot são representadas como SSML (Linguagem de Marcação de Sintetização de Voz). O SDK do Bot Framework permite incluir SSML nas respostas do bot para controlar o que o bot diz, além do que ele mostra.
 
 ### <a name="sessionsay"></a>session.say
 

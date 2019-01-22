@@ -1,6 +1,6 @@
 ---
 title: Interceptar mensagens | Microsoft Docs
-description: Saiba como criar logs ou outros registros interceptando e processando as trocas de informações usando o SDK do Bot Builder para Node.js.
+description: Saiba como criar logs ou outros registros interceptando e processando as trocas de informações usando o SDK do Bot Framework para Node.js.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 11/02/2018
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 31380961f117a2b4a3ffaae3c82d682a63001c0c
-ms.sourcegitcommit: 984705927561cc8d6a84f811ff24c8c71b71c76b
+ms.openlocfilehash: b262e936cd48bb73d7b5aa3fa4f7b6318ea7c2a0
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50965674"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54225621"
 ---
 # <a name="intercept-messages"></a>Interceptar mensagens
 
@@ -28,7 +28,7 @@ ms.locfileid: "50965674"
 
 ## <a name="example"></a>Exemplo
 
-O exemplo de código a seguir mostra como interceptar mensagens trocadas entre o usuário e o bot usando o conceito de **middleware** no SDK do Bot Builder para Node.js. 
+O exemplo de código a seguir mostra como interceptar mensagens trocadas entre o usuário e o bot usando o conceito de **middleware** no SDK do Bot Framework para Node.js. 
 
 Primeiro, configure o manipulador de mensagens de entrada (`botbuilder`) e de mensagens de saída (`send`).
 
@@ -65,4 +65,4 @@ Neste exemplo, o bot simplesmente imprime algumas informações sobre cada mensa
 
 ## <a name="sample-code"></a>Exemplo de código
 
-Para obter um exemplo completo que mostre como interceptar e registrar em log mensagens usando o SDK do Bot Builder para Node.js, veja o <a href="https://aka.ms/v3-js-capability-middlewareLogging" target="_blank">exemplo de registro em log e middleware</a> no GitHub.
+Veja um exemplo completo que mostra como interceptar e registrar em log mensagens usando o SDK do Bot Framework para Node.js no <a href="https://aka.ms/v3-js-capability-middlewareLogging" target="_blank">exemplo de registro em log e middleware</a> no GitHub.

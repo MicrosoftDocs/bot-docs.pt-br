@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/17
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: deb184483bf7e0963f827b20377291ab971c1516
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 455ee87f31e70470d8d118f010c77327347c032d
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997333"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54224881"
 ---
 # <a name="secure-your-bot"></a>Proteger o bot
 
@@ -31,7 +31,7 @@ Para garantir que o ponto de extremidade do bot só possa ser acessado pelo Bot 
 Especifique a appID e a senha do bot no arquivo web.config do bot. 
 
 > [!NOTE]
-> Para encontrar a **AppID** e a **AppPassword** do bot, confira [MicrosoftAppID e MicrosoftAppPassword](~/bot-service-manage-overview.md#microsoftappid-and-microsoftapppassword).
+> Para localizar o **AppID** e **AppPassword** do seu bot, consulte [MicrosoftAppID e MicrosoftAppPassword](~/bot-service-manage-overview.md#microsoftappid-and-microsoftapppassword).
 
 ```xml
 <appSettings>
@@ -40,7 +40,7 @@ Especifique a appID e a senha do bot no arquivo web.config do bot.
 </appSettings>
 ```
 
-Em seguida, use o atributo `[BotAuthentication]` para especificar as credenciais de autenticação ao usar o SDK do Construtor de Bot para .NET para criar o bot. 
+Em seguida, use o atributo `[BotAuthentication]` para especificar as credenciais de autenticação ao usar o SDK do Bot Framework para .NET para criar o bot. 
 
 Para usar as credenciais de autenticação armazenadas no arquivo web.config, especifique a `[BotAuthentication]` sem parâmetros.
 
@@ -52,6 +52,6 @@ Para usar outros valores para as credenciais de autenticação, especifique o at
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [SDK do Bot Builder para .NET](bot-builder-dotnet-overview.md)
+- [SDK do Bot Framework para .NET](bot-builder-dotnet-overview.md)
 - [Principais conceitos do SDK do Construtor de Bot para .NET](bot-builder-dotnet-concepts.md)
 - [Registrar um bot no Bot Framework](~/bot-service-quickstart-registration.md)

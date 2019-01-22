@@ -1,6 +1,6 @@
 ---
 title: Enviar e receber mensagens de texto | Microsoft Docs
-description: Saiba mais sobre como enviar e receber mensagens de texto dentro do SDK do Bot Builder.
+description: Saiba mais sobre como enviar e receber mensagens de texto dentro do SDK do Bot Framework.
 keywords: enviar mensagens, atividades de mensagem, mensagem de texto simples, mensagem, mensagem de texto, receber mensagens
 author: ivorb
 ms.author: v-ivorb
@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 11/08/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a01a64e032acfde2b3711e3efbb3886439888c42
-ms.sourcegitcommit: 5c40e2e21adb3a779022d45704c29cf11ed7f4a6
+ms.openlocfilehash: 9cfe077c8d8573145625b211c3c1ca05a6a21e19
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "51506191"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54224811"
 ---
 # <a name="send-and-receive-text-message"></a>Enviar e receber mensagens de texto 
 

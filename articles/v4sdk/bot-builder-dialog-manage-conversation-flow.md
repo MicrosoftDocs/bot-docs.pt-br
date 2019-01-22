@@ -1,6 +1,6 @@
 ---
 title: Implementar fluxo de conversa sequencial | Microsoft Docs
-description: Saiba como gerenciar um fluxo de conversa simples com diálogos no SDK do Construtor de Bot para Node.js.
+description: Saiba como gerenciar um fluxo de conversa simples com diálogos no SDK do Bot Framework para Node.js.
 keywords: fluxo de conversa simples, fluxo de conversa sequencial, diálogos, prompts, cascatas, conjunto de diálogos
 author: JonathanFingold
 ms.author: v-jofing
@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 11/18/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2264b6927ccb863f153f2feb829cc0fb99c711f7
-ms.sourcegitcommit: 6c719b51c9e4e84f5642100a33fe346b21360e8a
+ms.openlocfilehash: 554d040dd4c9d126fa70c24f1af5a1ac97a39204
+ms.sourcegitcommit: b94361234816e6b95459f142add936732fc40344
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52452078"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54317607"
 ---
 # <a name="implement-sequential-conversation-flow"></a>Implementar fluxo de conversa sequencial
 
@@ -58,7 +58,7 @@ public class MultiTurnPromptsBotAccessors
 }
 ```
 
-Registramos a classe de acessadores no método `ConfigureServices` da classe `Statup`.
+Registramos a classe de acessadores no método `ConfigureServices` da classe `Startup`.
 Novamente, chamamos apenas partes do código.
 
 ```csharp

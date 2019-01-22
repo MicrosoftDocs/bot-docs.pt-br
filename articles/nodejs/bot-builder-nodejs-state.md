@@ -1,6 +1,6 @@
 ---
 title: Gerenciar dados de estado | Microsoft Docs
-description: Saiba como salvar e recuperar dados de estado com o SDK do construtor de Bot para Node. js.
+description: Saiba como salvar e recuperar dados de estado com o SDK do Bot Framework para Node.js.
 author: DucVo
 ms.author: v-ducvo
 manager: kamrani
@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 519f188a29db2b9b37061ee0eff5361a63d2acac
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 6d653e47d2e906c6306134804c7731b374d830ba
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49999983"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54225001"
 ---
 # <a name="manage-state-data"></a>Gerenciar dados de estado
 
@@ -56,7 +56,7 @@ Com uma dessas opções [ do Azure Extensions ](https://www.npmjs.com/package/bo
 
 ## <a name="storage-containers"></a>Contêineres de armazenamento
 
-No construtor de Bot SDK para Node. js, o `session` objeto expõe as propriedades a seguir para armazenar dados de estado.
+No SDK do Bot Framework para Node.js, o objeto `session` expõe as propriedades a seguir para armazenar dados de estado.
 
 | Propriedade | No escopo | DESCRIÇÃO |
 | ---- | ---- | ---- |
@@ -129,7 +129,7 @@ session.userdata.start = startDate.toISOString();
 
 ### <a name="saving-data"></a>Salvando dados
 
-Os dados criados em cada contêiner de armazenamento permanecerão na memória até que o contêiner seja salvo. O Bot Builder SDK para Node.js envia dados para o serviço `ChatConnector` em lotes para serem salvos quando houver mensagens a serem enviadas. Para salvar os dados que existem nos contêineres de armazenamento sem enviar qualquer mensagem, você pode chamar manualmente os [`save`](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session.html#save) método. Se você não chamar o método `save`, os dados existentes nos contêineres de armazenamento serão mantidos como parte do processamento em lote.
+Os dados criados em cada contêiner de armazenamento permanecerão na memória até que o contêiner seja salvo. O SDK do Bot Framework para Node.js envia dados para o serviço `ChatConnector` em lotes para serem salvos quando houver mensagens a serem enviadas. Para salvar os dados que existem nos contêineres de armazenamento sem enviar qualquer mensagem, você pode chamar manualmente os [`save`](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session.html#save) método. Se você não chamar o método `save`, os dados existentes nos contêineres de armazenamento serão mantidos como parte do processamento em lote.
 
 ```javascript
 session.userData.favoriteColor = "Red";

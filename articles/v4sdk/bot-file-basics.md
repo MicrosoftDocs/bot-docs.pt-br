@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 11/23/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 276b553a6990ed286acbf073825afa7c4656de32
-ms.sourcegitcommit: 6c719b51c9e4e84f5642100a33fe346b21360e8a
+ms.openlocfilehash: fdf0b16cc89b322ffa9d36b5516b09b0338ce9dc
+ms.sourcegitcommit: b94361234816e6b95459f142add936732fc40344
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52452018"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54317566"
 ---
 # <a name="manage-resources-with-a-bot-file"></a>Gerenciar recursos com um arquivo .bot
 
@@ -38,8 +38,8 @@ Além desses, seu bot pode contar com outros serviços personalizados. Você pod
 
 ## <a name="when-is-a-bot-file-created"></a>Quando um arquivo .bot é criado? 
 - Se você criar um bot usando o [Serviço de Bot do Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Marketplace/GalleryResultsListBlade/selectedSubMenuItemId/%7B%22menuItemId%22%3A%22gallery%2FCognitiveServices_MP%2FBotService%22%2C%22resourceGroupId%22%3A%22%22%2C%22resourceGroupLocation%22%3A%22%22%2C%22dontDiscardJourney%22%3Afalse%2C%22launchingContext%22%3A%7B%22source%22%3A%5B%22GalleryFeaturedMenuItemPart%22%5D%2C%22menuItemId%22%3A%22CognitiveServices_MP%22%2C%22subMenuItemId%22%3A%22BotService%22%7D%7D), um arquivo .bot será criado automaticamente com a lista de serviços conectados provisionada. O .bot é criptografado por padrão.
-- Se você criar um bot usando o [Modelo](https://marketplace.visualstudio.com/items?itemName=BotBuilder.botbuilderv4) do SDK do Bot Builder V4 para Visual Studio, ou o [Yeoman Generator](https://www.npmjs.com/package/generator-botbuilder) do Bot Builder, um arquivo .bot será criado automaticamente. Nenhum serviço conectado é provisionado nesse fluxo e o arquivo do bot não é criptografado.
-- Se você estiver começando com os [exemplos do BotBuilder](https://github.com/Microsoft/botbuilder-samples), cada exemplo para o SDK do Bot Builder V4 inclui um arquivo .bot que não é criptografado. 
+- Se você criar um bot usando o [Modelo](https://marketplace.visualstudio.com/items?itemName=BotBuilder.botbuilderv4) do SDK do Bot Framework V4 para Visual Studio, ou o [Gerador do Yeoman](https://www.npmjs.com/package/generator-botbuilder) do Bot Builder, um arquivo .bot será criado automaticamente. Nenhum serviço conectado é provisionado nesse fluxo e o arquivo do bot não é criptografado.
+- Se você estiver começando com os [exemplos do BotBuilder](https://github.com/Microsoft/botbuilder-samples), cada exemplo para o SDK do Bot Framework V4 incluirá um arquivo .bot não criptografado. 
 - Você também pode criar um arquivo de bot usando a ferramenta [MSBot](https://github.com/Microsoft/botbuilder-tools/blob/master/packages/MSBot/README.md).
 
 ## <a name="what-does-a-bot-file-look-like"></a>Qual é a aparência de um arquivo de bot? 
@@ -47,14 +47,17 @@ Veja um exemplo de arquivo [.bot](https://github.com/Microsoft/botbuilder-tools/
 Para saber mais sobre como criptografar e descriptografar o arquivo .bot, confira [Segredos de Bot](https://github.com/Microsoft/botbuilder-tools/blob/master/packages/MSBot/docs/bot-file-encryption.md).
 
 ## <a name="why-do-i-need-a-bot-file"></a>Por que eu preciso de um arquivo .bot?
-Um arquivo .bot **não** é um requisito para criar bots com o SDK do Bot Builder. Você pode continuar usando o appsettings.json, web.config, env, keyvault ou qualquer mecanismo que achar adequado para controlar as referências de serviço e as chaves das quais seu bot depende. No entanto, para testar o bot usando o Emulador, será necessário um arquivo .bot. A boa notícia é que o Emulador pode criar um arquivo .bot para teste. Para fazer isso, inicie o Emulador, clique no link **criar uma nova configuração de bot** na página de Boas-vindas. Na caixa de diálogo que aparece, digite um **Nome de Bot** e uma **URL de Ponto de Extremidade**. Em seguida, conecte-se.
+
+Um arquivo .bot **não** é um requisito para criar bots com o SDK do Bot Framework. Você pode continuar usando o appsettings.json, web.config, env, keyvault ou qualquer mecanismo que achar adequado para controlar as referências de serviço e as chaves das quais seu bot depende. No entanto, para testar o bot usando o Emulador, será necessário um arquivo .bot. A boa notícia é que o Emulador pode criar um arquivo .bot para teste. Para fazer isso, inicie o Emulador, clique no link **criar uma nova configuração de bot** na página de Boas-vindas. Na caixa de diálogo que aparece, digite um **Nome de Bot** e uma **URL de Ponto de Extremidade**. Em seguida, conecte-se.
 
 As vantagens de usar o arquivo .bot são:
 - Ele fornece um padrão de armazenamento de recursos, independentemente da linguagem/plataforma usada.   
 - O Emulador do Bot Framework e as ferramentas da CLI dependem e funcionam bem com os serviços de controle conectados em um formato consistente (em um arquivo .bot) 
 - Fica mais difícil criar soluções de ferramentas elegantes para gerenciamento e criação de serviços sem um esquema bem definido (arquivo .bot).  
 
-## <a name="using-bot-file-in-your-bot-builder-sdk-bot"></a>Usar o arquivo .bot em seu bot do SDK do Bot Builder
+
+## <a name="using-bot-file-in-your-bot-framework-sdk-bot"></a>Usar o arquivo .bot em seu bot do SDK do Bot Framework
+
 Você pode usar o arquivo .bot para obter informações de configuração de serviço no código do seu bot. A biblioteca de Configuração do BotFramework disponível para [C#](https://www.nuget.org/packages/Microsoft.Bot.Configuration) e [JS](https://www.npmjs.com/package/botframework-config) ajuda você a carregar um arquivo de bot e dá suporte a vários métodos para consultar e obter as informações de configuração de serviço apropriadas.
 
 ## <a name="additional-resources"></a>Recursos adicionais

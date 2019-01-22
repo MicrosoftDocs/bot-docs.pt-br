@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 3e99828e7c26b10c39bef4c8db79f92ff5f2b30c
-ms.sourcegitcommit: 49a76dd34d4c93c683cce6c2b8b156ce3f53280e
+ms.openlocfilehash: 8d9b2ea2e2133c86428b537427433f9dd15216ee
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50134706"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54225941"
 ---
 # <a name="upgrade-your-bot-to-bot-framework-api-v3"></a>Fazer upgrade do bot para a API v3 do Bot Framework
 
@@ -21,7 +21,7 @@ Na Build 2016 a Microsoft anunciou o Microsoft Bot Framework e a iteração inic
 
 Em julho de 2016, a API v3 do Bot Framework foi lançada e a API v1 do Bot Framework foi preterida. Os bots que usam a API v1 pararam de funcionar no Skype em dezembro de 2016 e em todos os canais restantes no dia 23 de fevereiro de 2017. Se você criou um bot usando a API v1 e quer torná-lo funcional novamente, é necessário fazer o upgrade dele para a API v3, seguindo as instruções neste artigo. Para certificar-se de entender o processo de atualização de ponta a ponta, leia este artigo por completo antes de começar. 
 
-## <a name="step-1-get-your-app-id-and-password-from-the-bot-framework-portal"></a>Etapa 1: Obter sua ID de aplicativo e a senha no portal do Bot Framework
+## <a name="step-1-get-your-app-id-and-password-from-the-bot-framework-portal"></a>Etapa 1: obter sua ID de aplicativo e a senha no portal do Bot Framework
 
 Entre no [Portal do Bot Framework](https://dev.botframework.com/), clique em **Meus bots** e, em seguida, selecione o bot para abrir o painel. Em seguida, clique no link **CONFIGURAÇÕES**, localizado na lateral esquerda da página em **Gerenciamento de Bot**. 
 
@@ -67,7 +67,7 @@ If the **App ID** field is empty, complete these steps:
    ![Save changes](~/media/upgrade/save-changes.png)
 -->
 
-## <a id="update-code"></a> Etapa 2: Atualizar o código do bot para a versão 4.0
+## <a id="update-code"></a> Etapa 2: atualizar o código do bot para a versão 4.0
 
 Os bots V1 já não são compatíveis. Para atualizar seu bot, você precisará criar um novo bot em V3. Se quiser preservar códigos antigos, você terá que migrar seu código manualmente.
 
@@ -84,7 +84,7 @@ Se você quiser preservar seu código antigo, siga as etapas abaixo:
 <!-- TODO: Remove outdated code 
 To update your bot code to version 3.0, complete these steps:
 
-1. Update to the latest version of the [Bot Builder SDK](https://github.com/Microsoft/BotBuilder) for your bot's language.
+1. Update to the latest version of the [Bot Framework SDK](https://github.com/Microsoft/BotBuilder) for your bot's language.
 2. Update your code to apply the necessary changes, according the guidance below.
 3. Use the [Bot Framework Emulator](~/bot-service-debug-emulator.md) to test your bot locally and then in the cloud.
 
@@ -93,10 +93,10 @@ The following sections describe the key differences between API v1 and API v3. A
 
 ### <a name="botbuilder-and-connector-are-now-one-sdk"></a>BotBuilder e Connector agora são um SDK
 
-Em vez de precisar instalar SDKs separados para o Builder e o Connector usando vários pacotes NuGet (ou módulos NPM), agora é possível obter ambas as bibliotecas em um único SDK do Bot Builder:
+Em vez de precisar instalar SDKs separados para o Builder e o Connector usando vários pacotes NuGet (ou módulos NPM), agora é possível obter ambas as bibliotecas em um único SDK do Bot Framework:
 
-- SDK do Bot Builder SDK para .NET: `Microsoft.Bot.Builder` pacote NuGet
-- SDK do Bot Builder SDK para Node.js: `botbuilder` módulo NPM
+- SDK do Bot Framework para .NET: Pacote NuGet `Microsoft.Bot.Builder`
+- SDK do Bot Framework para Node.js: Módulo NPM `botbuilder`
 
 O SDK `Microsoft.Bot.Connector` autônomo agora é obsoleto e não está mais sendo mantido.
 
@@ -163,7 +163,7 @@ A API v3 do Bot Framework armazena as propriedades de autenticação com estas c
 - `MicrosoftAppID`
 - `MicrosoftAppPassword`
 
-## <a id="step-3"></a> Etapa 3: Implantar seu Bot de atualização no Azure.
+## <a id="step-3"></a> Etapa 3: implantar seu Bot de Atualização no Azure.
 
 Depois de atualizar seu código do bot na API v3, basta implantar o bot no Azure seguindo estas [instruções](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-howto-deploy-azure?view=azure-bot-service-4.0). Como já não há suporte para V1, todos os bots automaticamente usarão a API V3 quando forem implantados nos serviços do Azure.
 

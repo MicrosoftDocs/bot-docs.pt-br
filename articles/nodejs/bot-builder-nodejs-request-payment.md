@@ -1,6 +1,6 @@
 ---
 title: Solicitar pagamento | Microsoft Docs
-description: Saiba como enviar uma solicitação de pagamento usando o SDK do Bot Builder para Node.js.
+description: Saiba como enviar uma solicitação de pagamento usando o SDK do Bot Framework para Node.js.
 author: v-ducvo
 ms.author: v-ducvo
 manager: kamrani
@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 5bdb699e242784883f7c1a5dda895a31ff80efb1
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 296004c654cfd59de6c245bf9702a80024526140
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49999153"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54225741"
 ---
 # <a name="request-payment"></a>Solicitar pagamento
 
@@ -24,11 +24,11 @@ ms.locfileid: "49999153"
 > - [.NET](../dotnet/bot-builder-dotnet-request-payment.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-request-payment.md)
 
-Se o bot permitir que os usuários comprem itens, ele poderá solicitar o pagamento incluindo um tipo especial de botão em [rich card](bot-builder-nodejs-send-rich-cards.md). Este artigo descreve como enviar uma solicitação de pagamento usando o SDK do Bot Builder para Node.js.
+Se o bot permitir que os usuários comprem itens, ele poderá solicitar o pagamento incluindo um tipo especial de botão em [rich card](bot-builder-nodejs-send-rich-cards.md). Este artigo descreve como enviar uma solicitação de pagamento usando o SDK do Bot Framework para Node.js.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Antes de poder enviar uma solicitação de pagamento usando o SDK do Bot Builder para Node.js, será necessário concluir estas tarefas de pré-requisito.
+Antes de enviar uma solicitação de pagamento usando o SDK do Bot Framework para Node.js, você deve concluir essas tarefas de pré-requisito.
 
 ### <a name="register-and-configure-your-bot"></a>Registrar e configurar o bot
 

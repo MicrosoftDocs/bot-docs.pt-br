@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 41cc36b7e4abc12bf57df7bf4272dd35031cf251
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 1cb9143e5ab2d5eb7e92e263b838cdd9217492ef
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997993"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54225351"
 ---
 # <a name="authentication"></a>Autenticação
 
@@ -22,7 +22,7 @@ O bot comunica-se com o serviço do Bot Connector usando HTTP em um canal seguro
 > [!IMPORTANT]
 > Se você estiver escrevendo seu próprio código de autenticação, é crítico implementar corretamente todos os procedimentos de segurança. Ao implementar todas as etapas neste artigo, é possível reduzir o risco de um invasor conseguir ler as mensagens enviadas ao bot, enviar mensagens que representem o bot e roubar chaves secretas. 
 
-Caso esteja usando o [SDK do Bot Builder para .NET](../dotnet/bot-builder-dotnet-overview.md) ou o [SDK do Bot Builder para Node.js](../nodejs/index.md), não é necessário implementar os procedimentos de segurança descritos neste artigo, porque o SDK faz isso automaticamente para você. Basta configurar o projeto com a ID do aplicativo e a senha que você obteve para o bot durante o [registro](../bot-service-quickstart-registration.md) e o SDK cuidará do restante.
+Caso esteja usando o [SDK do Bot Framework para .NET](../dotnet/bot-builder-dotnet-overview.md) ou o [SDK do Bot Framework para Node.js](../nodejs/index.md), não é necessário implementar os procedimentos de segurança descritos neste artigo porque o SDK faz isso automaticamente para você. Basta configurar o projeto com a ID do aplicativo e a senha que você obteve para o bot durante o [registro](../bot-service-quickstart-registration.md) e o SDK cuidará do restante.
 
 > [!WARNING]
 > Em dezembro de 2016, a v3.1 do protocolo de segurança do Bot Framework introduziu alterações em diversos valores que são usados durante a geração e validação de token. No fim de 2017, a v3.2 do protocolo de segurança do Bot Framework foi apresentada e incluiu alterações em valores usados durante a geração e validação de token.
@@ -56,7 +56,7 @@ Este diagrama mostra as etapas para a autenticação de bot ao conector:
 > [!IMPORTANT]
 > Se você ainda não fez isso, é necessário [registrar seu bot](../bot-service-quickstart-registration.md) com o Bot Framework para obter sua AppID e a senha. Será necessário a ID do aplicativo do bot e a senha para solicitar um token de acesso.
 
-### <a name="step-1-request-an-access-token-from-the-msaaad-v2-login-service"></a>Etapa 1: Solicitar um token de acesso do serviço de logon da MSA/ADD v2
+### <a name="step-1-request-an-access-token-from-the-msaaad-v2-login-service"></a>Etapa 1: solicitar um token de acesso do serviço de logon da MSA/ADD v2
 
 Para solicitar um token de acesso do serviço de logon da MSA/AAD v2, emita a seguinte solicitação, substituindo **MICROSOFT-APP-ID** e **MICROSOFT-APP-PASSWORD** pela AppID e a senha que você obteve ao [registar](../bot-service-quickstart-registration.md) o bot com o Bot Framework.
 
@@ -68,7 +68,7 @@ Content-Type: application/x-www-form-urlencoded
 grant_type=client_credentials&client_id=MICROSOFT-APP-ID&client_secret=MICROSOFT-APP-PASSWORD&scope=https%3A%2F%2Fapi.botframework.com%2F.default
 ```
 
-### <a name="step-2-obtain-the-jwt-token-from-the-msaaad-v2-login-service-response"></a>Etapa 2: Obter o token JWT da resposta do serviço de logon da MSA/AAD/ v2
+### <a name="step-2-obtain-the-jwt-token-from-the-msaaad-v2-login-service-response"></a>Etapa 2: obter o token JWT da resposta do serviço de logon da MSA/AAD/ v2
 
 Se o aplicativo está autorizado pelo serviço de logon da MSA/AAD v2, o corpo da resposta JSON especificará o token de acesso, seu tipo e a validade (em segundos). 
 
@@ -90,7 +90,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-### <a name="step-3-specify-the-jwt-token-in-the-authorization-header-of-requests"></a>Etapa 3: Especificar o token JWT no cabeçalho de autorização das solicitações
+### <a name="step-3-specify-the-jwt-token-in-the-authorization-header-of-requests"></a>Etapa 3: especificar o token JWT no cabeçalho de autorização das solicitações
 
 Ao enviar uma solicitação de API ao serviço do Bot Connector, especifique o token de acesso no cabeçalho `Authorization` da solicitação usando este formato:
 
@@ -144,7 +144,7 @@ Este diagrama mostra as etapas para a autenticação de bot ao conector:
 
 ![Autenticar chamadas do Bot Connector ao bot](../media/connector/auth_bot_connector_to_bot.png)
 
-### <a id="openid-metadata-document"></a> Etapa 2: Obter o documento de metadados do OpenID
+### <a id="openid-metadata-document"></a> Etapa 2: obter o documento de metadados do OpenID
 
 O documento de metadados do OpenID especifica o local de um segundo documento que lista as chaves de assinatura válidas do serviço do Bot Connector. Para obter o documento de metadados do OpenID, emita esta solicitação por meio de HTTPS:
 
@@ -171,7 +171,7 @@ O exemplo a seguir mostra um documento de metadados do OpenID que é retornado n
 }
 ```
 
-### <a id="connector-to-bot-step-3"></a> Etapa 3: Obter a lista de chaves de assinatura válidas
+### <a id="connector-to-bot-step-3"></a> Etapa 3: obter a lista de chaves de assinatura válidas
 
 Para obter uma lista das chaves de assinatura válidas, emita uma solicitação `GET` por meio de HTTPS para a URL especificada pela propriedade `jwks_uri` no documento de metadados do OpenID. Por exemplo: 
 
@@ -179,14 +179,14 @@ Para obter uma lista das chaves de assinatura válidas, emita uma solicitação 
 GET https://login.botframework.com/v1/.well-known/keys
 ```
 
-O corpo da resposta especifica o documento no [formato JWK](https://tools.ietf.org/html/rfc7517), mas também inclui uma propriedade adicional para cada chave: `endorsements`. A lista das chaves é relativamente estável e pode ser armazenada em cache durante longos períodos (por padrão, 5 dias dentro do SDK do Bot Builder).
+O corpo da resposta especifica o documento no [formato JWK](https://tools.ietf.org/html/rfc7517), mas também inclui uma propriedade adicional para cada chave: `endorsements`. A lista das chaves é relativamente estável e pode ser armazenada em cache durante longos períodos (por padrão, 5 dias dentro do SDK do Bot Framework).
 
 A propriedade `endorsements` dentro de cada chave contém uma ou mais cadeias de caracteres de endosso que você pode usar para verificar se a ID de canal especificada na propriedade `channelId` dentro do objeto de [Atividade][Activity] da solicitação de entrada é autêntico. A lista de IDs de canal que exigem endossos é configurável em cada bot. Por padrão, essa será a lista de todas as IDs de canal publicadas, embora os desenvolvedores de bots possam substituir os valores da ID de canal selecionados de qualquer forma. Se o endosso para uma ID de canal for necessário:
 
 - É necessário exigir que qualquer objeto de [Atividade][Activity] enviado ao bot com essa ID de canal seja acompanhado por um token JWT assinado com um endosso para esse canal. 
 - Se o endosso não estiver presente, o bot deve rejeitar a solicitação retornando um código de status **HTTP 403 (proibido)**.
 
-### <a name="step-4-verify-the-jwt-token"></a>Etapa 4: Verificar o token JWT
+### <a name="step-4-verify-the-jwt-token"></a>Etapa 4: verificar o token JWT
 
 Para verificar a autenticidade do token que foi enviado pelo serviço do Bot Connector, você deve extrair o token do cabeçalho `Authorization` da solicitação, analisar o token, verificar seu conteúdo e verificar a assinatura. 
 
@@ -244,7 +244,7 @@ Este diagrama mostra as etapas para a autenticação de emulador ao bot:
 ![Autenticar chamadas do Bot Framework Emulator para o bot](../media/connector/auth_bot_framework_emulator_to_bot.png)
 
 ---
-### <a name="step-2-get-the-msa-openid-metadata-document"></a>Etapa 2: Obter o documento de metadados do OpenID da MSA
+### <a name="step-2-get-the-msa-openid-metadata-document"></a>Etapa 2: obter o documento de metadados do OpenID da MSA
 
 O documento de metadados do OpenID especifica o local de um segundo documento que lista as chaves de assinatura válidas. Para obter o documento de metadados do OpenID da MSA, emita esta solicitação por meio de HTTPS:
 
@@ -264,7 +264,7 @@ O exemplo a seguir mostra um documento de metadados do OpenID que é retornado n
 }
 ```
 
-### <a id="emulator-to-bot-step-3"></a> Etapa 3: Obter a lista de chaves de assinatura válidas
+### <a id="emulator-to-bot-step-3"></a> Etapa 3: obter a lista de chaves de assinatura válidas
 
 Para obter uma lista das chaves de assinatura válidas, emita uma solicitação `GET` por meio de HTTPS para a URL especificada pela propriedade `jwks_uri` no documento de metadados do OpenID. Por exemplo: 
 
@@ -275,7 +275,7 @@ Host: login.microsoftonline.com
 
 O corpo da resposta especifica o documento no [formato JWK](https://tools.ietf.org/html/rfc7517). 
 
-### <a name="step-4-verify-the-jwt-token"></a>Etapa 4: Verificar o token JWT
+### <a name="step-4-verify-the-jwt-token"></a>Etapa 4: verificar o token JWT
 
 Para verificar a autenticidade do token que foi enviado pelo emulador, você deve extrair o token do cabeçalho `Authorization` da solicitação, analisar o token, verificar seu conteúdo e verificar a assinatura. 
 
@@ -323,7 +323,7 @@ payload:
 ## <a name="security-protocol-changes"></a>Alterações do protocolo de segurança
 
 > [!WARNING]
-> O suporte para v3.0 do protocolo de segurança foi descontinuado em **31 de julho de 2017**. Se você tiver gravado seu próprio código de autenticação (ou seja, não tenha usado o SDK do Bot Builder para criar o bot), é necessário fazer upgrade para a v3.1 do protocolo de segurança, atualizando o aplicativo para usar os valores da v3.1 que estão listadas abaixo. 
+> O suporte para v3.0 do protocolo de segurança foi descontinuado em **31 de julho de 2017**. Se você tiver gravado seu próprio código de autenticação (ou seja, não tenha usado o SDK do Bot Framework para criar o bot), é necessário atualizar para a v3.1 do protocolo de segurança, atualizando o aplicativo para usar os valores da v3.1 que estão listados abaixo. 
 
 ### <a name="bot-to-connector-authenticationbot-to-connector"></a>[Autenticação de Bot ao Conector](#bot-to-connector)
 

@@ -1,6 +1,6 @@
 ---
 title: Enviar e receber anexos | Microsoft Docs
-description: Saiba como enviar e receber mensagens contendo anexos usando o SDK do Bot Builder para Node.js.
+description: Saiba como enviar e receber mensagens contendo anexos usando o SDK do Bot Framework para Node.js.
 author: DeniseMak
 ms.author: v-demak
 manager: kamrani
@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 41e1e9e6fe59f00b8b8c873c2dd5fd2d698dabcb
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 1911a5b0f8e8f8b53de6f661c0a939767df1efbb
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998183"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54224691"
 ---
 # <a name="send-and-receive-attachments"></a>Enviar e receber anexos
 
@@ -28,7 +28,7 @@ ms.locfileid: "49998183"
 Uma troca de mensagens entre usuário e bot pode conter anexos de mídia como imagens, vídeo, áudio e arquivos. Os tipos de anexos que podem ser enviados variam por canal, mas esses são os tipos básicos:
 
 * **Mídia e arquivos**: é possível enviar arquivos como imagens, áudio e vídeo configurando **contentType** para o tipo MIME do [objeto IAttachment][IAttachment] e, em seguida, passando um link para o arquivo em **contentUrl**.
-* **Cartões**: é possível enviar um conjunto de cartões visuais avançados, <!-- and custom keyboards --> configurando o **contentType** para o tipo de cartão desejado e, em seguida, passar o JSON para o cartão. Se você utilizar uma das classes do construtor de cartão avançado como **HeroCard**, o anexo será preenchido automaticamente. Consulte [enviar um cartão avançado](bot-builder-nodejs-send-rich-cards.md) para obter um exemplo.
+* **Cartões**: é possível enviar um conjunto avançado de cartões visuais <!-- and custom keyboards --> configurando o **contentType** para o tipo de cartão desejado e, em seguida, passar o JSON para o cartão. Se você utilizar uma das classes do construtor de cartão avançado como **HeroCard**, o anexo será preenchido automaticamente. Consulte [enviar um cartão avançado](bot-builder-nodejs-send-rich-cards.md) para obter um exemplo.
 
 ## <a name="add-a-media-attachment"></a>Adicionar um anexo de mídia
 O objeto de mensagem deve ser uma instância de [IMessage][IMessage] e será mais útil enviar ao usuário uma mensagem como um objeto quando você quiser incluir um anexo como uma imagem. Use o método [session.send()][SessionSend] para enviar mensagens na forma de um objeto JSON. 

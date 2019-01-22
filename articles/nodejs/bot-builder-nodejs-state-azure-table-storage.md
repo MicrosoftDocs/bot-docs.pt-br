@@ -1,6 +1,6 @@
 ---
-title: Gerenciar dados de estado personalizados com o armazenamento de Tabela do Azure | Microsoft Docs
-description: Saiba como salvar e recuperar dados de estado usando o armazenamento de Tabela do Azure com o SDK do Construtor de Bot para Node.js.
+title: Gerenciar dados de estado personalizados com o armazenamento do Azure Table | Microsoft Docs
+description: Saiba como salvar e recuperar dados de estado usando o armazenamento de Tabela do Azure com o SDK do Bot Framework para Node.js.
 author: DucVo
 ms.author: v-ducvo
 manager: kamrani
@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 5bf308c440e08cb3c9d4730212fbba3053de459d
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 5c2b8832401ccc9260c9aa872c0848b3a3e8445b
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998323"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54225711"
 ---
 # <a name="manage-custom-state-data-with-azure-table-storage-for-nodejs"></a>Gerenciar dados de estado personalizado com o armazenamento de Tabela do Azure para Node.js
 
@@ -24,7 +24,7 @@ Neste artigo, você implementará o armazenamento de Tabela do Azure para armaze
 
 - taxa de transferência da API de estado mais alto (mais controle sobre o desempenho)
 - Latência inferior para a distribuição geográfica
-- controle sobre onde os dados são armazenados (por exemplo: Oeste dos EUA vs Leste dos EUA)
+- controle sobre onde os dados são armazenados (por exemplo: leste dos EUA, oeste dos EUA)
 - acesso aos dados do estado real
 - dados de estado db não compartilhados com outros bots
 - armazenar mais de 32kb

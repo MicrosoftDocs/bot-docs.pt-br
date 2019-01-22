@@ -1,6 +1,6 @@
 ---
 title: Localizar o conteúdo do formulário | Microsoft Docs
-description: Saiba como localizar o conteúdo de formulário com o FormFlow e o SDK do Construtor de Bot para .NET.
+description: Saiba como localizar o conteúdo de formulários com o FormFlow e o SDK do Bot Framework para .NET.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 11/02/2018
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 914c33033be3fe35db7cae6d54b5835cb032a5fd
-ms.sourcegitcommit: 984705927561cc8d6a84f811ff24c8c71b71c76b
+ms.openlocfilehash: 3ec3d12a7d35f65adca901395edff2db3ab71c66
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50965684"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54225581"
 ---
 # <a name="localize-form-content"></a>Localizar o conteúdo do formulário
 
@@ -165,7 +165,7 @@ Par pain "neuf" vouliez-vous dire (1. Neuf grains miel avoine, ou 2. Neuf grains
 - [Personalizar um formulário usando FormBuilder](bot-builder-dotnet-formflow-formbuilder.md)
 - [Definir um formulário usando o esquema JSON](bot-builder-dotnet-formflow-json-schema.md)
 - [Personalizar a experiência do usuário com o idioma padrão](bot-builder-dotnet-formflow-pattern-language.md)
-- <a href="/dotnet/api/?view=botbuilder-3.11.0" target="_blank">Referência do SDK do Construtor de Bot para .NET</a>
+- <a href="/dotnet/api/?view=botbuilder-3.11.0" target="_blank">Referência do SDK do Bot Framework para .NET</a>
 
 [build]: /dotnet/api/microsoft.bot.builder.formflow.formbuilder-1.build 
 

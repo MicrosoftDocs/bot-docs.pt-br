@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/19/2018
-ms.openlocfilehash: 79c37a48f9312d60b61124e15780fe46236aa0c7
-ms.sourcegitcommit: f7a8f05fc05ff4a7212a437d540485bf68831604
+ms.openlocfilehash: ae019f7da32969821db0c59a4710e32b57623b14
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53735976"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54224481"
 ---
 ::: moniker range="azure-bot-service-3.0"
 
@@ -36,7 +36,7 @@ Os diálogos podem ou não ter interfaces gráficas. Eles podem conter botões, 
 
 [!INCLUDE [Dialog flow example](./includes/snippet-dotnet-manage-conversation-flow-intro.md)]
 
-Para obter um passo a passo detalhado de como gerenciar o fluxo da conversa usando diálogos e o SDK do Construtor de Bot, confira:
+Para obter um passo a passo detalhado de como gerenciar o fluxo da conversa usando diálogos e o SDK do Bot Framework, consulte:
 
 - [Gerenciar o fluxo da conversa com diálogos (.NET)](./dotnet/bot-builder-dotnet-manage-conversation-flow.md)
 - [Gerenciar o fluxo da conversa com diálogos (Node.js)](./nodejs/bot-builder-nodejs-manage-conversation-flow.md)
@@ -99,7 +99,7 @@ Geralmente, a conversa com um bot se concentra na tarefa que um bot está tentan
 
 Em um fluxo de conversa de procedimento, você define a ordem das perguntas e o bot fará as perguntas na ordem definida. Você pode organizar as perguntas em *módulos* lógicos para manter o código centralizado e permanecer concentrado guiando a conversa. Por exemplo, você pode criar um módulo para conter a lógica que ajuda o usuário a navegar pelos produtos e um módulo separado para conter a lógica que ajuda o usuário a criar um pedido.
 
-Você pode estruturar esses módulos para fluírem da maneira desejada, variando de forma livre para sequencial. O SDK do Construtor de Bot fornece várias bibliotecas que permite construir qualquer fluxo de conversa necessário para o bot. Por exemplo, a biblioteca `prompts` permite que você solicite aos usuários a entrada, a biblioteca `waterfall` permite que você defina uma sequência de pares de pergunta/resposta, a biblioteca `dialog control` permite que você modularize a lógica de fluxo de conversa, etc. Todas essas bibliotecas são vinculadas por meio de um objeto `dialogs`. Vamos examinar mais detalhadamente como os módulos são implementados como `dialogs` para projetar e gerenciar fluxos de conversa e ver como esse fluxo é semelhante ao fluxo de aplicativo tradicional.
+Você pode estruturar esses módulos para fluírem da maneira desejada, variando de forma livre para sequencial. O SDK do Bot Framework fornece várias bibliotecas que permitem construir qualquer fluxo de conversa necessário para o bot. Por exemplo, a biblioteca `prompts` permite que você solicite aos usuários a entrada, a biblioteca `waterfall` permite que você defina uma sequência de pares de pergunta/resposta, a biblioteca `dialog control` permite que você modularize a lógica de fluxo de conversa, etc. Todas essas bibliotecas são vinculadas por meio de um objeto `dialogs`. Vamos examinar mais detalhadamente como os módulos são implementados como `dialogs` para projetar e gerenciar fluxos de conversa e ver como esse fluxo é semelhante ao fluxo de aplicativo tradicional.
 
 ![bot](./media/designing-bots/core/dialogs-screens.png)
 

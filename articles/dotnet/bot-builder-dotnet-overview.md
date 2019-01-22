@@ -1,6 +1,6 @@
 ---
-title: SDK do Construtor de bot para .NET | Microsoft Docs
-description: Introdução ao SDK do Construtor de Bot para .NET, uma estrutura poderosa e fácil de usar para criar bots.
+title: SDK do Bot Framework para .NET | Microsoft Docs
+description: Introdução ao SDK do Bot Framework para .NET, um framework poderoso e simples para criar bots.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
@@ -9,14 +9,14 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 801925e2c179392804d9707e62bfaef082c8e81b
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: f54ea91bbe04f5b9b8a0701a3473ef7e76cacaeb
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49996694"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54224721"
 ---
-# <a name="bot-builder-sdk-for-net"></a>SDK do Construtor de Bot para .NET
+# <a name="bot-framework-sdk-for-net"></a>SDK do Bot Framework para .NET
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
@@ -25,7 +25,7 @@ ms.locfileid: "49996694"
 > - [Node.js](../nodejs/bot-builder-nodejs-overview.md)
 > - [REST](../rest-api/bot-framework-rest-overview.md)
 
-O SDK do Construtor de Bot para .NET é uma estrutura avançada para a criação de bots que podem manipular interações livres e conversas mais guiadas, nas quais o usuário seleciona entre valores possíveis. Ele é fácil de usar e aproveita a linguagem C# para fornecer um jeito conhecido para os desenvolvedores em .NET escreverem bots.
+O SDK do Bot Framework para .NET é um framework avançado para a criação de bots que podem manipular interações livres e conversas mais guiadas, nas quais o usuário seleciona a partir de valores possíveis. Ele é fácil de usar e aproveita a linguagem C# para fornecer um jeito conhecido para os desenvolvedores em .NET escreverem bots.
 
 Com o SDK, você pode criar bots que aproveitam os recursos do SDK a seguir: 
 
@@ -35,14 +35,14 @@ Com o SDK, você pode criar bots que aproveitam os recursos do SDK a seguir:
 - FormFlow para gerar automaticamente um bot (de uma classe de C#) que orienta o usuário pela conversa, fornecendo ajuda, navegação, esclarecimento e confirmação conforme o necessário
 
 > [!IMPORTANT]
-> Em 31 de julho de 2017, foram implementadas alterações consideráveis no protocolo de segurança do Bot Framework. Para evitar que essas alterações afetem negativamente seu bot, verifique se o seu aplicativo está usando o SDK do Construtor de Bot v3.5 ou superior. Se você criou um bot usando um SDK que você obteve antes de 5 de janeiro de 2017 (a data de lançamento do SDK do Construtor de Bot v3.5), atualize para o SDK do Construtor de Bot v3.5 ou posterior.
+> Em 31 de julho de 2017, foram implementadas alterações consideráveis no protocolo de segurança do Bot Framework. Para evitar que essas alterações afetem negativamente seu bot, verifique se seu aplicativo está usando o SDK do Bot Framework v3.5 ou superior. Se você criou um bot usando um SDK obtido antes de 5 de janeiro de 2017 (a data de lançamento do SDK do Bot Framework v3.5), atualize para o SDK do Bot Framework v3.5 ou posterior.
 
 ## <a name="get-the-sdk"></a>Obter o SDK
 
 O SDK está disponível como um pacote do NuGet e como software livre no <a href="https://github.com/Microsoft/BotBuilder" target="_blank">GitHub</a>.
 
 > [!IMPORTANT]
-> O SDK do Construtor de Bot para .NET exige o .NET Framework 4.6 ou mais recente. Se você estiver adicionando o SDK a um projeto existente direcionado para uma versão inferior do .NET Framework, será necessário atualizar seu projeto para direcioná-lo ao .NET Framework 4.6 primeiro.
+> O SDK do Bot Framework para .NET exige o .NET Framework 4.6 ou mais recente. Caso esteja adicionando o SDK a um projeto existente direcionado a uma versão inferior do .NET Framework, você precisará atualizar o projeto para direcioná-lo ao .NET Framework 4.6 primeiro.
 
 Para instalar o SDK dentro de um projeto do Visual Studio, conclua estas etapas:
 
@@ -52,13 +52,13 @@ Para instalar o SDK dentro de um projeto do Visual Studio, conclua estas etapas:
 
 ## <a name="get-code-samples"></a>Obter exemplos de código
 
-Esse SDK inclui um [exemplo de código-fonte](bot-builder-dotnet-samples.md) que usa os recursos do SDK do Construtor de Bot para .NET.
+Esse SDK inclui um [exemplo de código-fonte](bot-builder-dotnet-samples.md) que usa os recursos do SDK do Bot Framework para .NET.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Saiba mais sobre como criar bots usando o SDK do Construtor de Bot para .NET conferindo os artigos desta seção, começando com:
+Saiba mais sobre como criar bots usando o SDK do Bot Framework para .NET conferindo os artigos desta seção, começando pelo:
 
 - [Início Rápido](bot-builder-dotnet-quickstart.md): crie e teste rapidamente um bot simples seguindo as instruções neste tutorial passo a passo.
-- [Principais conceitos](bot-builder-dotnet-concepts.md): saiba mais sobre os principais conceitos do SDK do Construtor de Bot para .NET.
+- [Principais conceitos](bot-builder-dotnet-concepts.md): saiba mais sobre os principais conceitos do SDK do Bot Framework para .NET.
 
-Se você encontrar problemas ou tiver sugestões sobre o SDK do Construtor de Bot para .NET, confira uma lista dos recursos disponíveis em [Suporte](../bot-service-resources-links-help.md). 
+Se você encontrar problemas ou tiver sugestões sobre o SDK do Bot Framework para .NET, consulte a lista de recursos disponíveis em [Suporte](../bot-service-resources-links-help.md). 

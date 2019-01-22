@@ -1,6 +1,6 @@
 ---
 title: Manipuladores de mensagens globais usando pontuáveis
-description: Crie diálogos mais flexíveis usando pontuáveis no SDK do Construtor de Bot para .NET.
+description: Crie diálogos mais flexíveis usando pontuáveis no SDK do Bot Framework para .NET.
 author: matthewshim-ms
 ms.author: v-shimma
 manager: kamrani
@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: a6a69bd1001c51b44ad42824a0da6a079c5ac5a0
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: b01c5ad1506850a1567d471c85cc3dcd080ab3d7
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49999513"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54225561"
 ---
 # <a name="global-message-handlers-using-scorables"></a>Manipuladores de mensagens globais usando pontuáveis
 

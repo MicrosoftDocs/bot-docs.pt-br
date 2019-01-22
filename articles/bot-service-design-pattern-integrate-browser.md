@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: e3833595003edda46a6ffd1d508237262aad94e1
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 20ca2864b6498b0d80bea13ce97ffffc4cf1f22d
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49999223"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54225921"
 ---
 # <a name="integrate-your-bot-with-a-web-browser"></a>Integrar seu bot a um navegador da Web
 
@@ -73,7 +73,7 @@ O número mágico deve ser um número aleatório gerado usando uma biblioteca de
 
 ### <a id="website-signal-to-bot"></a> Como o site 'sinaliza' o bot?
 
-Quando o bot [gera o hiperlink](#generate-hyperlink) em que o usuário clicará para iniciar o fluxo do site, isso inclui informações por meio de parâmetros de querystring na URL de destino sobre o contexto da conversa atual, como ID da conversa, a ID do canal e a ID do usuário no canal. O site, posteriormente, pode usar essas informações para ler e gravar as variáveis de estado para esse usuário ou conversa com o SDK do Construtor de Bot ou APIs REST. Veja a [etapa 6](#signal-to-bot) acima para obter um exemplo de como o site 'sinaliza' para o bot que o fluxo do site foi concluído.
+Quando o bot [gera o hiperlink](#generate-hyperlink) em que o usuário clicará para iniciar o fluxo do site, isso inclui informações por meio de parâmetros de querystring na URL de destino sobre o contexto da conversa atual, como ID da conversa, a ID do canal e a ID do usuário no canal. Posteriormente, o site pode usar essas informações para ler e gravar as variáveis de estado para esse usuário ou conversa com o SDK do Bot Framework ou APIs REST. Veja a [etapa 6](#signal-to-bot) acima para obter um exemplo de como o site 'sinaliza' para o bot que o fluxo do site foi concluído.
 
 ## <a name="sample-code"></a>Exemplo de código
 

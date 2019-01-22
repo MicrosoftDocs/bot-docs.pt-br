@@ -8,16 +8,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: bdc86e5e64971e503157fe69a8b962e1d9b88542
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 85ef0fde39980bab1b891518e338fddbd56b275a
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998853"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54224451"
 ---
 # <a name="how-bot-service-works"></a>Como funciona o Serviço de Bot
 
-O Serviço de Bot fornece os principais componentes para a criação de bots, incluindo o SDK do Construtor de Bot para desenvolver bots e o Bot Framework para conectar bots a canais. O Serviço de Bot oferece cinco opções de modelos para a criação dos seus bots com suporte para .NET e Node.js.
+O Serviço de Bot fornece os principais componentes para a criação de bots, incluindo o SDK do Bot Framework para o desenvolvimento de bots e o Bot Framework para conectar os bots aos canais. O Serviço de Bot oferece cinco opções de modelos para a criação dos bots com suporte para .NET e Node.js.
 
 > [!IMPORTANT]
 > É preciso ter uma assinatura do Microsoft Azure para poder usar o Serviço de Bot. Se você ainda não tiver uma assinatura, poderá se inscrever para uma <a href="https://azure.microsoft.com/en-us/free/" target="_blank">conta gratuita</a>.
@@ -32,7 +32,7 @@ Um bot que usa um plano do Serviço de Aplicativo é um aplicativo Web do Azure 
 * Editar o código-fonte do bot online usando um editor de código avançado no navegador.
 * Baixar, depurar e publicar novamente seu bot em C# usando o Visual Studio.
 * Configurar uma implantação contínua com facilidade para o Visual Studio Online e Github.
-* Usar o código de exemplo preparado para o SDK do Construtor de Bot.
+* Usar o código de exemplo preparado para o SDK do Bot Framework.
 
 ### <a name="consumption-plan"></a>Plano de consumo
 Um bot que usa um plano de Consumo é um bot sem servidor que é executado no <a href="http://go.microsoft.com/fwlink/?linkID=747839" target="_blank">Azure Functions</a> e usa os preços do Azure Functions de pagar por execução. Um bot que usa este plano de hospedagem pode ser dimensionado para lidar com grandes picos de tráfego. Você pode editar o código-fonte do bot online usando um editor de código básico no navegador. Para saber mais sobre o ambiente de tempo de execução de um bot de plano de Consumo em <a target='_blank' href='/azure/azure-functions/functions-scale'>Planos de Serviço de Aplicativo e Consumo do Azure Functions</a>.
@@ -49,7 +49,7 @@ O Serviço de Bot permite criar de forma rápida e fácil um bot em C# ou em Nod
 
 Por padrão, o Serviço de Bot permite desenvolver seu bot diretamente no navegador usando o Editor de Códigos Online, sem a necessidade de uma cadeia de ferramentas. 
 
-Você pode desenvolver e depurar o seu bot localmente com o SDK de Construtor do Bot e um IDE, como o Visual Studio 2017. Você também pode publicar o seu bot diretamente no Azure usando o Visual Studio 2017 ou a CLI do Azure. Também é possível [configurar a implantação contínua](bot-service-continuous-deployment.md) com o sistema de controle do código-fonte da sua preferência, como o VSTS ou o GitHub. Com a implantação contínua configurada, é possível desenvolver e depurar em um IDE no seu computador local, e qualquer alteração do código que você confirmar para o controle do código-fonte será implantada automaticamente no Azure.  
+Você pode desenvolver e depurar seu bot localmente com o SDK do Bot Framework e um IDE, como o Visual Studio 2017. Você também pode publicar o seu bot diretamente no Azure usando o Visual Studio 2017 ou a CLI do Azure. Também é possível [configurar a implantação contínua](bot-service-continuous-deployment.md) com o sistema de controle do código-fonte da sua preferência, como o VSTS ou o GitHub. Com a implantação contínua configurada, é possível desenvolver e depurar em um IDE no seu computador local, e qualquer alteração do código que você confirmar para o controle do código-fonte será implantada automaticamente no Azure.  
 
 > [!TIP]
 > Depois de habilitar a implantação contínua, modifique o seu código apenas pela implantação contínua e não por outros mecanismos para evitar conflitos.

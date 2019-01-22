@@ -8,14 +8,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: cognitive-services
-ms.date: 11/19/2018
+ms.date: 01/15/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 0708244b9f9e4859ba069ed463cef83a0ecdf20d
-ms.sourcegitcommit: b9482670285295a2af0dfbb8f4b7e543c1c10542
+ms.openlocfilehash: 4a221f6e94324c56f88dd1d4d6851d5cc4d38e6c
+ms.sourcegitcommit: 3cc768a8e676246d774a2b62fb9c688bbd677700
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53327152"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54323672"
 ---
 # <a name="use-qna-maker-to-answer-questions"></a>Usar o QnA Maker para responder a perguntas
 
@@ -40,7 +40,7 @@ Neste tópico, criaremos uma base de conhecimento e usaremos em um bot.
 1. Com sua base de conhecimento aberta, selecione **Settings** (Configurações). Registre o valor mostrado para _service name_ (nome do serviço) como <nome_da_sua_bd>
 1. Role a tela para baixo até encontrar **Deployment details** (Detalhes da implantação) e registre estes valores:
    - POST /knowledgebases/<id_da_sua_base_de_conhecimento>/generateAnswer
-   - Host: https://<nome_de_seu_host>.azurewebsites.net/qnamaker
+   - Host: <your_hostname>/qnamaker
    - Autorização: EndpointKey <sua_chave_de_ponto_de_extremidade>
 
 ## <a name="update-the-bot-file"></a>Atualize o arquivo .bot

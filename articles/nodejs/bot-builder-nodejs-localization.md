@@ -1,6 +1,6 @@
 ---
 title: Suporte à localização | Microsoft Docs
-description: Saiba como determinar onde o usuário está e habilitar a funcionalidade de localização usando o Construtor de bot do SDK para Node.js.
+description: Saiba como determinar onde o usuário está e habilitar a funcionalidade de localização usando o SDK do Bot Framework para Node.js.
 author: DeniseMak
 ms.author: v-demak
 manager: kamrani
@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 5ac9fabcb0c6626e1b0133b7718b135a88d4c846
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: d592aa8b37e1d73e3cf9003209b985b8ca0f03f8
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998054"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54224391"
 ---
 # <a name="support-localization"></a>Suporte à localização
 
@@ -111,7 +111,7 @@ var bot = new builder.UniversalBot(connector, {
 ```
 
 ## <a name="localize-prompts"></a>Localizar prompts
-O sistema de localização padrão do Construtor de bot do SDK é baseado em arquivos e permite que um bot ofereça suporte a vários idiomas usando os arquivos JSON armazenados em disco. Por padrão, o sistema de localização pesquisará os prompts do bot no arquivo **./locale/<IETF TAG>/index.json** em que <IETF TAG> é uma [marca de idioma da IETF][IEFT] válida que representa o local preferencial para encontrar prompts. 
+O sistema de localização padrão do SDK do Bot Framework é baseado em arquivos e permite que um bot ofereça suporte a vários idiomas usando os arquivos JSON armazenados em disco. Por padrão, o sistema de localização pesquisará os prompts do bot no arquivo **./locale/<IETF TAG>/index.json** em que <IETF TAG> é uma [marca de idioma da IETF][IEFT] válida que representa o local preferencial para encontrar prompts. 
 
 A captura de tela a seguir mostra a estrutura de diretório de um bot compatível com três idiomas: inglês, italiano e espanhol.
 

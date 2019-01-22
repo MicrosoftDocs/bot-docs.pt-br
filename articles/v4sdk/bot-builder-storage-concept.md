@@ -1,16 +1,16 @@
 ---
 redirect_url: /bot-framework/bot-builder-howto-v4-state
-ms.openlocfilehash: cdbe139f6b901cf812356358deecc61394eae2a5
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: a0d2b1295be1271e827d617ad09878ee8cfcd356
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998893"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54223911"
 ---
 <a name="--"></a><!--
 ---
-título: Estado e armazenamento | Microsoft Docs descrição: Descreve como o gerenciador de estado, estado de conversa e estado de usuário estão no SDK do Bot Builder.
-palavras-chave: LUIS, estado da conversa, estado do usuário, armazenamento, gerenciar estado autor: DeniseMak ms.author: v-demak manager: kamrani ms.topic: article ms.service: bot-service ms.subservice: sdk ms.date: 15/02/2018 monikerRange: 'azure-bot-service-4.0'
+Título: Estado e armazenamento | Microsoft Docs - descrição: Descreve como o gerenciador de estado, estado de conversa e estado de usuário estão no SDK do Bot Framework.
+palavras-chave: LUIS, estado de conversa, estado de usuário, armazenamento, gerenciar autor do estado: DeniseMak ms.author: v-demak manager: kamrani ms.topic: article ms.service: bot-service ms.subservice: sdk ms.date: 02/15/2018 monikerRange: 'azure-bot-service-4.0'
 ---
 
 # <a name="state-and-storage"></a>Estado e armazenamento
@@ -18,7 +18,7 @@ palavras-chave: LUIS, estado da conversa, estado do usuário, armazenamento, ger
 
 Uma chave para obter bom design de bot é acompanhar o contexto de uma conversa para que o bot reconheça aspectos como as respostas às perguntas anteriores.
 Dependendo no que o bot for utilizado, talvez seja necessário até mesmo controlar as informações de estado ou repositório por mais tempo que o tempo de vida da conversa.
-Um *estado* do bot é uma informação que o bot reconhece para responder apropriadamente às mensagens recebidas. O SDK do Bot Builder fornece classes para armazenar e recuperar dados de estado como um objeto associado a um usuário ou a uma conversa.
+Um *estado* do bot é uma informação que o bot reconhece para responder apropriadamente às mensagens recebidas. O SDK do Bot Framework fornece classes para armazenar e recuperar dados de estado como um objeto associado a um usuário ou a uma conversa.
 
 * As **propriedades de conversa** ajudam o bot a acompanhar a conversa atual que o bot está tendo com o usuário. Se o bot precisar concluir uma sequência de etapas ou alternar entre tópicos de conversa, será possível usar as propriedades de conversa para gerenciar etapas em uma sequência ou acompanhar o tópico atual. Como as propriedades de conversa refletem o estado da conversa atual, geralmente são apagadas no fim de uma conversa quando o bot recebe uma atividade _fim da conversa_.
 * As **propriedades do usuário** podem ser usadas para muitas finalidades como determinar onde a conversa anterior do usuário foi interrompida ou simplesmente cumprimentando um usuário habitual pelo nome. Se você armazenar as preferências de um usuário, poderá usar essas informações para personalizar a conversa no próximo chat. Por exemplo, é possível alertar o usuário sobre um artigo de notícias relacionado a um tópico de interesse ou alertar um usuário quando um compromisso estiver disponível. Será necessário apagá-las se o bot receber uma atividade _excluir dados de usuário_.
@@ -46,7 +46,7 @@ Bots built using Azure Table Storage can be designed to be stateless and scalabl
 
 ## Writing directly to storage
 
-You can also use the Bot Builder SDK to read and write data directly to storage, without using middleware or without using the bot context. This can be appropriate to data that your bot uses, that comes from a source outside your bot's conversation flow.
+You can also use the Bot Framework SDK to read and write data directly to storage, without using middleware or without using the bot context. This can be appropriate to data that your bot uses, that comes from a source outside your bot's conversation flow.
 
 For example, let's say your bot allows the user to ask for the weather report, and your bot retrieves the weather report for a specified date, by reading it from an external database. The content of the weather database isn't dependent on user information or the conversation context, so you could just read it directly from storage instead of using the state manager.  See [How to write directly to storage](bot-builder-howto-v4-storage.md) for an example.
 

@@ -1,6 +1,6 @@
 ---
 title: Reconhecer intenções e entidades com o LUIS | Microsoft Docs
-description: Saiba como habilitar seu bot para entender o idioma natural usando diálogos do LUIS no SDK do Construtor de Bot do .NET.
+description: Saiba como habilitar seu bot para entender o idioma natural usando diálogos do LUIS no SDK do Bot Framework para .NET.
 author: DeniseMak
 ms.author: v-demak
 manager: kamrani
@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: cognitive-services
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: ec3c93bfca1ec8554655934d9165e436d88b9466
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 26b23c9beda872b71defd779563531328b63a0c8
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997723"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54225371"
 ---
 # <a name="recognize-intents-and-entities-with-luis"></a>Reconhecer intenções e entidades com o LUIS 
 
@@ -388,7 +388,7 @@ A experimentar o bot, você pode ver como as tarefas são invocadas por uma inte
 - [Diálogos](bot-builder-dotnet-dialogs.md)
 - [Gerencie o fluxo de conversas com caixas de diálogo](bot-builder-dotnet-manage-conversation-flow.md)
 - <a href="https://www.luis.ai" target="_blank">LUIS</a>
-- <a href="/dotnet/api/?view=botbuilder-3.11.0" target="_blank">SDK do Construtor de Bot para referência .NET</a>
+- <a href="/dotnet/api/?view=botbuilder-3.11.0" target="_blank">Referência do SDK do Bot Framework para .NET</a>
 
 [LUIS]: https://www.luis.ai/
 [NotesSample]: https://github.com/Microsoft/BotFramework-Samples/tree/master/docs-samples/CSharp/Simple-LUIS-Notes-Sample

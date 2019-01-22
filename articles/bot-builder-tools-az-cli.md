@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: tools
 ms.date: 10/31/2018
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 8a59c0a8b7ee664cdb38ab9d0cb186114938d73f
-ms.sourcegitcommit: 782b3a2e788c25effd7d150a070bd2819ea92dad
+ms.openlocfilehash: 4b09ca152f99faa66d2da55ebeb93fb9cce090db
+ms.sourcegitcommit: b94361234816e6b95459f142add936732fc40344
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50743660"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54317686"
 ---
 # <a name="create-bots-with-azure-cli"></a>Criar bots com a CLI do Azure
 
@@ -35,7 +35,7 @@ Para usar essas ferramentas da linha de comando, você precisará do Node.js ins
 
 ## <a name="1-install-tools"></a>1. Instalar ferramentas
 1. [Instale](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) a versão mais recente da CLI do Azure.
-2. [Instale](https://aka.ms/botbuilder-tools-readme) as Ferramentas do Bot Builder.
+2. [Instale](https://aka.ms/botbuilder-tools-readme) as Ferramentas do Bot Framework.
 
 Agora você pode gerenciar bots usando a CLI do Azure como qualquer outro recurso do Azure.
 
@@ -64,12 +64,12 @@ az bot [command]
 ```
 |Comandos|  |
 |----|----|
-| create      |adicionar um recurso|
-| excluir     |clonar um recurso|
-| baixar   | baixar o código-fonte do bot|
-| Publicar   |publicar em um serviço de bot existente|
-| mostrar |mostrar recursos de bot existente.|
-| atualizar| Atualizar um serviço de bot existente|
+| create      |Criar um novo bot|
+| excluir     |Excluir um bot existente|
+| baixar   |Fazer o download de um bot existente|
+| Publicar   |Publicar no serviço de aplicativo associado do bot|
+| mostrar |Obter um bot existente|
+| atualizar|Atualizar um bot existente|
 
 Para criar um novo bot da CLI, você precisa selecionar um [grupo de recursos](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) existente, ou criar um novo. 
 
@@ -160,10 +160,10 @@ Isso usará o ponto de extremidade atual, a appID da MSA e a senha do grupo de r
 
 ## <a name="5-manage-update-or-create-luis-and-qna-services-with--new-botbuilder-tools"></a>5. Gerenciar, atualizar ou criar serviços do LUIS e do QnA com novas ferramentas do construtor de bot
 
-As [ferramentas do construtor de bot](https://aka.ms/botbuilder-tools) são um novo conjunto de ferramentas que permite que você gerencie e interaja com os recursos de bot diretamente na linha de comando.
+As [Ferramentas do Bot Framework](https://aka.ms/botbuilder-tools) são um novo conjunto de ferramentas que permite que você gerencie e interaja com os recursos de bot diretamente na linha de comando.
 
 >[!TIP]
-> Cada ferramenta do construtor de bot inclui um comando de ajuda global, acessível na linha de comando com a inserção de **-h** ou **--help**. Esse comando está disponível a qualquer momento em qualquer ação, que fornecerá uma exibição útil das opções disponíveis para você, juntamente com as descrições.
+> Cada Ferramenta do Bot Framework inclui um comando de ajuda global, acessível na linha de comando com a inserção de **-h** ou **--help**. Esse comando está disponível a qualquer momento em qualquer ação, que fornecerá uma exibição útil das opções disponíveis para você, juntamente com as descrições.
 
 ### <a name="ludown"></a>LUDown
 
@@ -333,5 +333,5 @@ az bot publish --name "my-bot-name" --resource-group "my-resource-group"
 ```
 
 ## <a name="references"></a>Referências
-- [Ferramentas do Bot Builder](https://aka.ms/botbuilder-tools-readme)
+- [Ferramentas do Bot Framework](https://aka.ms/botbuilder-tools-readme)
 - [CLI do Azure](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)

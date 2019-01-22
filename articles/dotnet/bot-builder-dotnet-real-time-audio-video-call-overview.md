@@ -1,6 +1,6 @@
 ---
 title: Construa um bot de mídia em tempo real para o Skype | Microsoft Docs
-description: Aprenda a criar um bot que realize chamadas de áudio / vídeo em tempo real com o Skype, usando o SDK do Bot Builder para .NET e o SDK do Bot Builder-RealTimeMediaCalling para .NET.
+description: Aprenda a criar um bot que realize chamadas de áudio/vídeo em tempo real com o Skype, usando o SDK do Bot Framework para .NET e o SDK do Bot Builder-RealTimeMediaCalling para .NET.
 author: MalarGit
 ms.author: malarch
 manager: kamrani
@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/17
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 6ceeca9adc9cad9e60a73c1c7c91bea43b97fdd9
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: a539ca3258e8c9a8020bfa7c939f6eddbdd30feb
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997905"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54225651"
 ---
 # <a name="build-a-real-time-media-bot-for-skype"></a>Crie um bot de mídia em tempo real para o Skype
 

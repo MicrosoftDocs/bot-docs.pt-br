@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 82541c4ac0848c3e995ab3ad1ed874436072fe63
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 211800211b422bb9c90c00705585be89737c77a9
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998073"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54225551"
 ---
 # <a name="recognize-user-intent-from-message-content"></a>Reconhecer a intenção do usuário do conteúdo da mensagem
 
@@ -57,11 +57,11 @@ Após registrar um reconhecedor, você poderá associar o reconhecedor a uma aç
 
 ## <a name="disambiguate-between-multiple-intents"></a>Remover ambiguidade entre várias intenções
 
-O bot pode registrar mais de um reconhecedor. Observe que o exemplo do reconhecedor personalizado envolve a atribuição de uma pontuação numérica para cada intenção. Isso é feito já que o bot pode ter mais de um reconhecedor e o SDK do Bot Builder fornece lógica interna para remover ambiguidade entre intenções retornadas por vários reconhecedores. A pontuação atribuída a uma intenção normalmente é entre 0,0 e 1,0, mas um reconhecedor personalizado pode definir uma intenção maior que 1,1 para garantir que essa intenção sempre seja escolhida pela lógica de desambiguidade do SDK do Bot Builder. 
+O bot pode registrar mais de um reconhecedor. Observe que o exemplo do reconhecedor personalizado envolve a atribuição de uma pontuação numérica para cada intenção. Isso é feito já que o bot pode ter mais de um reconhecedor e o SDK do Bot Framework fornece lógica interna para remover ambiguidades entre intenções retornadas por vários reconhecedores. A pontuação atribuída a uma intenção normalmente é entre 0,0 e 1,0, mas um reconhecedor personalizado pode definir uma intenção maior que 1,1 para garantir que essa intenção sempre seja escolhida pela lógica de desambiguação do SDK do Bot Framework. 
 
 Por padrão, os reconhecedores são executados em paralelo, mas é possível definir recognizeOrder em [IIntentRecognizerSetOptions][IntentRecognizerSetOptions], de modo que o processo encerre assim que o bot encontrar um que dê uma pontuação de 1,0.
 
-O SDK do Bot Builder inclui um [exemplo][DisambiguationSample] que demonstra como fornecer lógica de desambiguidade personalizada no bot, implementando [IDisambiguateRouteHandler][IDisambiguateRouteHandler].
+O SDK do Bot Framework inclui um [exemplo][DisambiguationSample] que demonstra como fornecer lógica de desambiguação personalizada no bot, implementando [IDisambiguateRouteHandler][IDisambiguateRouteHandler].
 
 ## <a name="next-steps"></a>Próximas etapas
 A lógica para usar expressões regulares e inspecionar o conteúdo das mensagens pode tornar-se complexa, especialmente se o fluxo de conversação do bot for em aberto. Para ajudar o bot a tratar uma ampla variedade de entradas de fala e textuais dos usuários, é possível usar um serviço de reconhecimento de intenção como [LUIS][LUIS] para adicionar reconhecimento vocal natural ao bot.

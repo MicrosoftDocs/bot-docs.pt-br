@@ -1,6 +1,6 @@
 ---
-title: Adicionar dicas de entrada a mensagens | Microsoft Docs
-description: Saiba como adicionar dicas de entrada a mensagens usando o SDK do Construtor de Bot.
+title: Adicionar sugestões de entrada às mensagens | Microsoft Docs
+description: Aprenda como adicionar dicas de entrada para mensagens usando o SDK do Bot Framework.
 keywords: Dicas de entrada, aceitação da entrada, espera por uma entrada, ignorar entrada, fala
 author: ivorb
 ms.author: v-ivorb
@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 08/24/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: d55accd5ad9ad7db12d0b0e6865e04dcf7718110
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 751d5067d2e4b6b6ad21e1a4fd0ccb3818385d06
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49996734"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54224871"
 ---
 # <a name="add-input-hints-to-messages"></a>Adicionar dicas de entrada a mensagens
 
@@ -118,9 +118,9 @@ await context.sendActivity(basicMessage);
 
 ## <a name="default-values-for-input-hint"></a>Valores padrão para a dica de entrada
 
-Se você não definir a dica de entrada para uma mensagem, o SDK do Construtor de Bot definirá automaticamente para você usando essa lógica:
+Se você não definir a dica de entrada para uma mensagem, o SDK do Bot Framework a definirá automaticamente para você usando esta lógica:
 
-- Se seu bot envia um prompt, a dica de entrada para a mensagem especificará que seu bot está **esperando entrada**.</li>
+- Se seu bot enviar um prompt, a dica de entrada para a mensagem especificará que seu bot está **esperando entrada**.</li>
 - Se seu bot envia uma única mensagem, a dica de entrada para a mensagem especificará que seu bot está **aceitando a entrada**.</li>
 - Se seu bot envia uma série de mensagens consecutivas, a dica de entrada para todos, mas a mensagem final na série especificará que seu bot está **ignorando a entrada**, e a dica de entrada para a mensagem final na série especificará que seu bot está **aceitando a entrada**.
 

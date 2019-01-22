@@ -1,7 +1,7 @@
 ---
 title: Criar uma habilidade da Cortana usando o .NET | Microsoft Docs
-description: Aprenda os conceitos básicos da criação de uma habilidade da Cortana no SDK do Construtor de Bot para .NET.
-keywords: Bot Framework, habilidade da Cortana, fala, .NET, Construtor de Bot, SDK, principais conceitos, conceitos básicos
+description: Aprenda os conceitos básicos da criação de uma habilidade da Cortana no SDK do Bot Framework para .NET.
+keywords: Bot Framework, habilidade da Cortana, fala, .NET, SDK, principais conceitos, conceitos básicos
 author: DeniseMak
 manager: kamrani
 ms.topic: article
@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 030d17fa25a436ee8e8a1d093924e61f12e14e18
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 98fc10a806a4c8d1a4d6563934d92b0e0cdbb771
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998295"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54224771"
 ---
 # <a name="build-a-speech-enabled-bot-with-cortana-skills"></a>Criar um bot habilitado para fala com habilidades da Cortana
 
@@ -25,7 +25,7 @@ ms.locfileid: "49998295"
 > - [Node.js](../nodejs/bot-builder-nodejs-cortana-skill.md)
 
 
-O SDK do Construtor de Bot para Node.js permite que você crie um bot habilitado para fala conectando-o ao canal da Cortana como uma habilidade da Cortana. 
+O SDK do Bot Framework para .NET permite que você crie um bot habilitado para fala conectando-o ao canal da Cortana como uma habilidade da Cortana. 
 
 
 > [!TIP]
@@ -38,7 +38,7 @@ A criação de uma habilidade da Cortana usando o Bot Framework exige muito pouc
 
 ## <a name="adding-speech-to-your-bot"></a>Adicionando fala ao bot
 
-As mensagens faladas do bot são representadas como SSML (Linguagem de Marcação de Sintetização de Voz). O SDK do Construtor de Bot permite incluir SSML nas respostas do bot para controlar o que o bot diz, além do que ele mostra.  Você também pode controlar o estado do microfone da Cortana, especificando se o bot está aceitando, esperando ou ignorando a entrada do usuário.
+As mensagens faladas do bot são representadas como SSML (Linguagem de Marcação de Sintetização de Voz). O SDK do Bot Framework permite incluir SSML nas respostas do bot para controlar o que o bot diz, além do que ele mostra.  Você também pode controlar o estado do microfone da Cortana, especificando se o bot está aceitando, esperando ou ignorando a entrada do usuário.
 
 Defina a propriedade `Speak` do objeto `IMessageActivity` para especificar uma mensagem a ser dita pela Cortana. Se você especificar um texto sem formatação, a Cortana determinará como as palavras serão pronunciadas. 
 
@@ -96,7 +96,7 @@ The following code demonstrates how to add the `Speak` and `InputHint` propertie
 -->
 
 
-## <a name="sample-rollerskill"></a>Amostra: RollerSkill
+## <a name="sample-rollerskill"></a>Exemplo: RollerSkill
 O código das seções a seguir foi obtido de uma habilidade da Cortana de exemplo para lançamento de um dado. Baixe o código completo do bot no [repositório BotBuilder-Samples](https://github.com/Microsoft/BotBuilder-Samples/).
 
 Invoque a habilidade dizendo seu [nome de invocação][InvocationNameGuidelines] para a Cortana. Para a habilidade do lançador, depois que você [adicionar o bot ao canal da Cortana][CortanaChannel] e registrá-lo como uma habilidade da Cortana, invoque-o solicitando à Cortana para "Solicitar o Lançador" ou "Solicitar que o Lançador lance o dado".
@@ -335,7 +335,7 @@ Se o bot está em execução localmente ou foi implantado na nuvem, você pode i
 * [Melhores práticas de design de cartão para a Cortana][CardDesign]
 * [Centro de Desenvolvimento da Cortana][CortanaDevCenter]
 * [Testando e depurando as melhores práticas para a Cortana][Cortana-TestBestPractice]
-* <a href="/dotnet/api/?view=botbuilder-3.11.0" target="_blank">Referência do SDK do Construtor de Bot para .NET</a>
+* <a href="/dotnet/api/?view=botbuilder-3.11.0" target="_blank">Referência do SDK do Bot Framework para .NET</a>
 
 [CortanaGetStarted]: /cortana/getstarted
 [BFPortal]: https://dev.botframework.com/

@@ -1,6 +1,6 @@
 ---
 title: Tratar ações do usuário | Microsoft Docs
-description: Saiba como tratar ações do usuário, permitindo ao bot escutar e tratar a entrada do usuário contendo determinadas palavras-chave usando o SDK do Bot Builder para Node.js.
+description: Saiba como tratar ações do usuário, permitindo ao bot escutar e tratar a entrada do usuário contendo determinadas palavras-chave usando o SDK do Bot Framework para Node.js.
 author: DucVo
 ms.author: v-ducvo
 manager: kamrani
@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 26f6e9520fe5d2ebb83ceb4e6a497a35e9d2611f
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 7ca595b1c24769addfbdf7975c48d3a052c4a2de
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49999253"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54226001"
 ---
 # <a name="handle-user-actions"></a>Tratar ações do usuário
 
@@ -236,7 +236,7 @@ bot.dialog('orderDinner', [
 
 ### <a name="bind-an-endconversationaction"></a>Associar um endConversationAction
 
-Associar um `endConversationAction` irá registrá-lo no diálogo. Quando disparada, essa ação encerrará a conversa com o usuário. Disparar essa ação é semelhante a chamar o método [endConversation](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session.html#endconversation). Quando uma conversa encerrar, o SDK do Bot Builder para Node.js limpará a pilha de diálogo e os dados de estado persistentes. Para obter mais informações sobre dados de estado persistentes, consulte [Gerenciar dados de estado](bot-builder-nodejs-state.md).
+Associar um `endConversationAction` irá registrá-lo no diálogo. Quando disparada, essa ação encerrará a conversa com o usuário. Disparar essa ação é semelhante a chamar o método [endConversation](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session.html#endconversation). Quando uma conversa encerrar, o SDK do Bot Framework para Node.js limpará a pilha de diálogo e os dados de estado persistentes. Para obter mais informações sobre dados de estado persistentes, consulte [Gerenciar dados de estado](bot-builder-nodejs-state.md).
 
 O snippet de código a seguir mostra como associar um [endConversationAction][endConversationAction] a um diálogo.
 

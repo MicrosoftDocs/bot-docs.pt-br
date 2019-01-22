@@ -1,6 +1,6 @@
 ---
 title: Solicitar entrada do usuário | Microsoft Docs
-description: Saiba como usar prompts para coletar a entrada do usuário com o SDK do Bot Builder para Node.js.
+description: Saiba como usar prompts para coletar a entrada do usuário com o SDK do Bot Framework para Node.js.
 author: v-ducvo
 ms.author: v-ducvo
 manager: kamrani
@@ -9,18 +9,18 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 0926c15d2c62bfa74ddb465d8c816dee7c8fb576
-ms.sourcegitcommit: 6c719b51c9e4e84f5642100a33fe346b21360e8a
+ms.openlocfilehash: 0ee70c1e775780bf884c4237e47cff4edb8934a9
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52451968"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54224781"
 ---
 # <a name="prompt-for-user-input"></a>Prompt de entrada do usuário
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
-O SDK do Bot Builder para Node.js fornece um conjunto de instruções internas para simplificar a coleta de entradas de um usuário. 
+O SDK do Bot Framework para Node.js fornece um conjunto de instruções internas para simplificar a coleta de entradas de um usuário. 
 
 Um *prompt* é usado sempre que um bot precisa de uma entrada do usuário. Você pode usar os prompts para pedir ao usuário uma série de entradas por meio do encadeamento dos prompts em cascata. Você pode usar prompts em [cascata](bot-builder-nodejs-dialog-waterfall.md) para ajudá-lo a [gerenciar o fluxo da conversa](bot-builder-nodejs-manage-conversation-flow.md) no seu bot. 
 
@@ -74,7 +74,7 @@ bot.dialog('askName', [
 ```
 
 ## <a name="prompt-types"></a>Tipos de prompt
-O SDK do Bot Builder para Node.js inclui vários tipos diferentes de avisos internos. 
+O SDK do Bot Framework para Node.js inclui vários tipos diferentes de avisos internos. 
 
 |**Tipo de prompt**     | **Descrição** |     
 | ------------------ | --------------- |

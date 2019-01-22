@@ -1,6 +1,6 @@
 ---
 title: Solicitar pagamento | Microsoft Docs
-description: Saiba como enviar uma solicitação de pagamento usando o Bot Builder SDK for .NET.
+description: Saiba como enviar uma solicitação de pagamento usando o SDK do Bot Framework para .NET.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/17
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: b3d1a1cea450d1fe821a90951a7a319ca863dfed
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: f9e693d8bd5aad03930259422939f5572a22ff0a
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997683"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54225451"
 ---
 # <a name="request-payment"></a>Solicitar pagamento
 
@@ -24,11 +24,11 @@ ms.locfileid: "49997683"
 > - [.NET](../dotnet/bot-builder-dotnet-request-payment.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-request-payment.md)
 
-Se o bot permitir que os usuários comprem itens, ele poderá solicitar o pagamento incluindo um tipo especial de botão em [rich card](bot-builder-dotnet-add-rich-card-attachments.md). Este artigo descreve como enviar uma solicitação de pagamento usando o SDK do construtor de Bot para .NET.
+Se o bot permitir que os usuários comprem itens, ele poderá solicitar o pagamento incluindo um tipo especial de botão em [rich card](bot-builder-dotnet-add-rich-card-attachments.md). Este artigo descreve como enviar uma solicitação de pagamento usando o SDK do Bot Framework para .NET.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Antes de enviar uma solicitação de pagamento usando o Bot Builder SDK para .NET, você deve concluir essas tarefas de pré-requisito.
+Antes de enviar uma solicitação de pagamento usando o SDK do Bot Framework para .NET, você deve concluir estas tarefas de pré-requisito.
 
 ### <a name="update-webconfig"></a>Atualizar Web. config
 
@@ -127,4 +127,4 @@ Na amostra <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/
 - [Visão geral das atividades](bot-builder-dotnet-activities.md)
 - [Adicionar cartões ricos mensagens](bot-builder-dotnet-add-rich-card-attachments.md)
 - <a href="http://www.w3.org/Payments/" target="_blank">Pagamentos da Web no W3C</a> 
-- <a href="/dotnet/api/?view=botbuilder-3.11.0" target="_blank">Construtor de bot do SDK para referência do .NET</a>
+- <a href="/dotnet/api/?view=botbuilder-3.11.0" target="_blank">Referência do SDK do Bot Framework para .NET</a>

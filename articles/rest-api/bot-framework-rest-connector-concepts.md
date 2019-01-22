@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 20ae641a23399f5ee10aed9b31c4521f355903cf
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: a3d6bd957b835a0b8d86e47595ce28506c32d636
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998943"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54224551"
 ---
 # <a name="key-concepts"></a>Principais conceitos
 
@@ -44,10 +44,10 @@ O serviço Conector do Bot e o serviço Estado do Bot permitem a autenticação 
 
 O Bot Framework fornece bibliotecas de cliente que podem ser usadas para criar bots em C# ou Node.js. 
 
-- Para criar um bot usando C#, use o [SDK do Bot Builder para C#](../dotnet/bot-builder-dotnet-overview.md). 
-- Para criar um bot usando Node.js, use o [SDK do Construtor de Bot para Node.js](../nodejs/index.md). 
+- Para criar um bot usando C#, use o [SDK do Bot Framework para C#](../dotnet/bot-builder-dotnet-overview.md). 
+- Para criar um bot usando Node.js, use o [SDK do Bot Framework para Node.js](../nodejs/index.md). 
 
-Além da modelagem do serviço Conector do Bot e do serviço Estado do Bot, cada SDK do Construtor do Bot também fornece um sistema avançado para a criação de diálogos que envolvam a lógica de conversação, solicitações internas de coisas simples como Sim/Não, cadeias de caracteres, números e enumerações, suporte interno para estruturas de IA avançadas como <a href="https://www.luis.ai/" target="_blank">LUIS</a> e muito mais. 
+Além da modelagem do serviço Conector do Bot e do serviço Estado do Bot, cada SDK do Bot Framework também fornece um sistema avançado para a criação de diálogos que encapsulam a lógica de conversação, solicitações internas de coisas simples como Sim/Não, cadeias de caracteres, números e enumerações, suporte interno para estruturas de IA avançadas como <a href="https://www.luis.ai/" target="_blank">LUIS</a> e muito mais. 
 
 > [!NOTE]
 > Como alternativa ao uso do SDK do C# ou do SDK do Node.js, você pode gerar sua própria biblioteca de cliente na linguagem de sua escolha usando o <a href="https://raw.githubusercontent.com/Microsoft/BotBuilder/master/CSharp/Library/Microsoft.Bot.Connector.Shared/Swagger/ConnectorAPI.json" target="_blank">arquivo Swagger do Conector do Bot</a> e o <a href="https://raw.githubusercontent.com/Microsoft/BotBuilder/master/CSharp/Library/Microsoft.Bot.Connector.Shared/Swagger/StateAPI.json" target="_blank">arquivo Swagger do Estado do Bot</a>.

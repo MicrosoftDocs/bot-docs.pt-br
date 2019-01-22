@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 09/18/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 3abfb82f555f458bc9cdd5125fafa1cfa70921cb
-ms.sourcegitcommit: 66769e697d94f7bf5e0441dfacf2c0e3768845ea
+ms.openlocfilehash: a0b56b77990c095d1cf8bb28235d06444837d164
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53654957"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54224592"
 ---
 # <a name="enterprise-bot-template"></a>Modelo de Bot do Enterprise 
 
@@ -22,7 +22,7 @@ ms.locfileid: "53654957"
 
 A criação de uma experiência de conversação de alta qualidade exige um conjunto básico de recursos. Para ajudá-lo a ter sucesso na criação de ótimas experiências de conversação, criamos um Modelo de Bot do Enterprise. Este modelo reúne todas as práticas recomendadas e componentes de suporte que identificamos através da criação de experiências de conversação. 
 
-Este modelo simplifica muito a criação de um novo projeto de bot. O modelo fornecerá os seguintes recursos prontos para uso, aproveitando o [SDK v4 do Bot Builder](https://github.com/Microsoft/botbuilder) e as [Ferramentas do Bot Builder](https://github.com/Microsoft/botbuilder-tools).
+Este modelo simplifica muito a criação de um novo projeto de bot. O modelo fornecerá os seguintes recursos prontos para uso, aproveitando o [SDK v4 do Bot Framework](https://github.com/Microsoft/botbuilder) e as [Ferramentas do Bot Framework](https://github.com/Microsoft/botbuilder-tools).
 
 Recurso | DESCRIÇÃO |
 ------------ | -------------

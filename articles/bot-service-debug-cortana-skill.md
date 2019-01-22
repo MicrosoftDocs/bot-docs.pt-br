@@ -1,25 +1,25 @@
 ---
 title: Testar uma habilidade da Cortana | Microsoft Docs
 description: Saiba como testar um bot da Cortana invocando uma habilidade da Cortana.
-keywords: SDK do Construtor de Bot, registrar o bot, Cortana
+keywords: SDK do Bot Framework, registrar o bot, Cortana
 author: v-ducvo
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 05/01/18
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 15711999271d1bb8e93c1ad72eb0bc4b6acb484a
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: acf4f73ea83646878e08d14e036d0d2d66686756
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49999963"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54224951"
 ---
 # <a name="test-a-cortana-skill"></a>Testar uma habilidade da Cortana
 
 [!INCLUDE [pre-release-label](includes/pre-release-label-v3.md)]
  
-Se você criou uma habilidade da Cortana usando o SDK do Construtor de Bot, teste-a por meio de sua invocação na Cortana. As instruções a seguir orientam você pelas etapas necessárias para testar a habilidade da Cortana.
+Se você criou uma habilidade da Cortana usando o SDK do Bot Framework, invoque-a na Cortana para testá-la. As instruções a seguir orientam você pelas etapas necessárias para testar a habilidade da Cortana.
 
 ## <a name="register-your-bot"></a>Registrar o bot
 Se você [criou o bot](~/bot-service-quickstart.md) usando o Serviço de Bot no Azure, isso significa que o bot já está registrado e você pode ignorar esta etapa.

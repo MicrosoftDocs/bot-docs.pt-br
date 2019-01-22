@@ -1,6 +1,6 @@
 ---
 title: Adicionar anexos de cartão avançado às mensagens | Microsoft Docs
-description: Saiba como adicionar cartões avançados às mensagens usando o SDK do Bot Builder para .NET.
+description: Saiba como adicionar cartões avançados às mensagens usando o SDK do Bot Framework para .NET.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: f5687cc7faf4201485ced9535f2e98b0b4c2225a
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 5a6fc63005797a1c645de7506a8f15df2dcd0557
+ms.sourcegitcommit: b94361234816e6b95459f142add936732fc40344
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998173"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54317669"
 ---
 # <a name="add-rich-card-attachments-to-messages"></a>Adicionar anexos de cartão avançados às mensagens
 
@@ -112,7 +112,7 @@ Este exemplo de código mostra como criar uma mensagem de resposta que contém u
 
 O Cartão Adaptável que pode conter qualquer combinação de texto, fala, imagens, botões e campos de entrada. Os Cartões Adaptáveis são criados usando o formato JSON especificado em <a href="http://adaptivecards.io" target="_blank">Cartões Adaptáveis</a>, o que lhe dá controle total sobre o conteúdo e o formato do cartão. 
 
-Para criar um Cartão Adaptável usando o .NET, instale o pacote NuGet `Microsoft.AdaptiveCards`. Em seguida, aproveite as informações dentro do site <a href="http://adaptivecards.io" target="_blank">Cartões Adaptáveis</a> para compreender o esquema de Cartão Adaptável, explore os elementos do Cartão Adaptável e veja exemplos de JSON que podem ser usados para criar cartões de composição e complexidade variadas. Além disso, você pode usar o Visualizador Interativo para criar o conteúdo de Cartão Adaptável e visualizar a saída do cartão.
+Para criar um Cartão Adaptável usando o .NET, instale o pacote NuGet `AdaptiveCards`. Em seguida, aproveite as informações dentro do site <a href="http://adaptivecards.io" target="_blank">Cartões Adaptáveis</a> para compreender o esquema de Cartão Adaptável, explore os elementos do Cartão Adaptável e veja exemplos de JSON que podem ser usados para criar cartões de composição e complexidade variadas. Além disso, você pode usar o Visualizador Interativo para criar o conteúdo de Cartão Adaptável e visualizar a saída do cartão.
 
 Este exemplo de código mostra como criar uma mensagem que contém um Cartão Adaptável para um lembrete de calendário: 
 

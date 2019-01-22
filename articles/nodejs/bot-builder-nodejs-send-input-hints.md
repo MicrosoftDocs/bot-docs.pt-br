@@ -1,6 +1,6 @@
 ---
 title: Adicionar sugestões de entrada às mensagens | Microsoft Docs
-description: Aprenda como adicionar dicas de entrada para mensagens usando o Bot Builder SDK for .NET.
+description: Aprenda como adicionar dicas de entrada às mensagens usando o SDK do Bot Framework para .NET.
 author: v-ducvo
 ms.author: kamrani
 manager: kamrani
@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 8c09ab3c0f863171697bc8026155003274bfc382
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: fa5e2a151bc0b41f160d0b71cb97e24fe1efacaa
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49999081"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54225791"
 ---
 # <a name="add-input-hints-to-messages"></a>Adicionar dicas de entrada às mensagens
 
@@ -47,7 +47,7 @@ Para indicar que seu bot não está pronto para receber entrada do usuário, def
 
 ## <a name="default-values-for-input-hint"></a>Valores padrão para a dica de entrada
 
-Se você não definir a dica de entrada para uma mensagem, o SDK do Construtor de Bot definirá automaticamente para você usando essa lógica: 
+Se você não definir a dica de entrada para uma mensagem, o SDK do Bot Framework a definirá automaticamente para você usando esta lógica: 
 
 - Se seu bot enviar um prompt, a dica de entrada para a mensagem especificará que seu bot está **esperando entrada**.</li>
 - Se seu bot enviar uma única mensagem, a dica de entrada para a mensagem especificará que seu bot está **aceitando a entrada**.</li>
@@ -56,7 +56,7 @@ Se você não definir a dica de entrada para uma mensagem, o SDK do Construtor d
 ## <a name="additional-resources"></a>Recursos adicionais
 
 - [Adicionar fala a mensagens](bot-builder-nodejs-text-to-speech.md)
-- [Construtor de bot do SDK para referência do Node. js][SDKReference]
+- [Referência do SDK do Bot Framework para Node.js][SDKReference]
 
 [SDKReference]: https://docs.botframework.com/en-us/node/builder/chat-reference/modules/_botbuilder_d_.html
 

@@ -1,6 +1,6 @@
 ---
 title: Implementar manipuladores de mensagens globais | Microsoft Docs
-description: Saiba como habilitar seu bot ouvir e manipular a entrada do usuário que contém determinadas palavras-chave usando o SDK do construtor de Bot para .NET.
+description: Saiba como habilitar seu bot para ouvir e manipular a entrada do usuário contendo determinadas palavras-chave usando o SDK do Bot Framework para .NET.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 3f180e721dc6ca2cf1ca85f5ff54137f16b36be5
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 86964bc39a95a23f397af649cfac6e2784dd588a
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998355"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54224361"
 ---
 # <a name="implement-global-message-handlers"></a>Implementar manipuladores de mensagens globais
 
@@ -24,7 +24,7 @@ ms.locfileid: "49998355"
 
 ## <a name="listen-for-keywords-in-user-input"></a>Ouvir as palavras-chave na entrada do usuário
 
-O seguinte passo mostra como implementar manipuladores de mensagem global usando o Bot Builder SDK for .NET.
+O passo a seguir mostra como implementar manipuladores de mensagens globais usando o SDK do Bot Framework for .NET.
 
 Primeiro, `Global.asax.cs`registra`GlobalMessageHandlersBotModule`, que é implementado como mostrado aqui. Neste exemplo, o módulo registra dois scorables: um para gerenciar uma solicitação para alterar configurações (`SettingsScorable`) e outro para gerenciar uma solicitação para cancelar (`CancelScoreable`).
 
@@ -92,10 +92,10 @@ protected override async Task PostAsync(IActivity item, string state, Cancellati
 
 ## <a name="sample-code"></a>Exemplo de código
 
-Para um exemplo completo que mostra como implementar manipuladores de mensagens globais usando o SDK do Bot Builder para .NET, consulte o <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-GlobalMessageHandlers" target="_blank">exemplo de manipuladores de mensagens globais</a> no GitHub.
+Veja um exemplo completo que mostra como implementar manipuladores de mensagens globais usando o SDK do Bot Framework para .NET em <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-GlobalMessageHandlers" target="_blank">exemplo de Manipuladores de mensagens globais</a> no GitHub.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
 - [Design e controle de fluxo da conversa](../bot-service-design-conversation-flow.md)
-- <a href="/dotnet/api/?view=botbuilder-3.12.2.4" target="_blank">Referência do SDK do Construtor de Bot para .NET</a>
+- <a href="/dotnet/api/?view=botbuilder-3.12.2.4" target="_blank">Referência do SDK do Bot Framework para .NET</a>
 - <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-GlobalMessageHandlers" target="_blank">Exemplo de manipuladores de mensagens global (GitHub)</a>

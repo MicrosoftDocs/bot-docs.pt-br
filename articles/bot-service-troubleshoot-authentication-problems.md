@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/17
-ms.openlocfilehash: 0fdd196716c0fffb36583c0df894481b032dd83e
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 2335ac34292e224f44a09820574f3bd9de00eda4
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49999403"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54224651"
 ---
 # <a name="troubleshooting-bot-framework-authentication"></a>Solucionar problemas de autenticação do Bot Framework
 
@@ -43,7 +43,7 @@ Para desabilitar a segurança do bot, edite suas definições de configuração 
 
 ::: moniker range="azure-bot-service-3.0"
 
-Se você estiver usando o SDK do Bot Builder para .NET, edite estas configurações no arquivo Web.config: 
+Se você estiver usando o SDK do Bot Framework para .NET, edite estas configurações no arquivo Web.config: 
 
 ```xml
 <appSettings>
@@ -52,7 +52,7 @@ Se você estiver usando o SDK do Bot Builder para .NET, edite estas configuraç�
 </appSettings>
 ```
 
-Se você estiver usando o SDK do Construtor de Bot para Node.js, edite esses valores (ou atualize as variáveis de ambiente correspondentes):
+Se você estiver usando o SDK do Bot Framework para Node.js, edite estes valores (ou atualize as variáveis de ambiente correspondentes):
 
 ```javascript
 var connector = new builder.ChatConnector({
@@ -65,16 +65,18 @@ var connector = new builder.ChatConnector({
 
 ::: moniker range="azure-bot-service-4.0"
 
-Se você estiver usando o SDK do Bot Builder para .NET, edite estas configurações no arquivo `appsettings.config`:
+Se você estiver usando o SDK do Bot Framework para .NET, edite estas configurações no arquivo `.bot`:
 
-```xml
-<appSettings>
-  <add key="MicrosoftAppId" value="" />
-  <add key="MicrosoftAppPassword" value="" />
-</appSettings>
+```json
+"services": [
+  {
+    "appId": "<your app ID>",
+    "appPassword": "<your app password>",
+  }
+]
 ```
 
-Se você estiver usando o SDK do Construtor de Bot para Node.js, edite esses valores (ou atualize as variáveis de ambiente correspondentes):
+Se você estiver usando o SDK do Bot Framework para Node.js, edite estes valores (ou atualize as variáveis de ambiente correspondentes):
 
 ```javascript
 const adapter = new BotFrameworkAdapter({
@@ -108,7 +110,7 @@ Se um ou mais erros forem indicados na janela de chat, clique nos erros para obt
 * As configurações do emulador especificam um valor para o campo **ID do aplicativo Microsoft** e/ou o campo **Senha do aplicativo Microsoft**. Ambos os campos devem ficar vazios.
 * A segurança não foi desabilitada para o bot. [Verifique](#disable-security-localhost) se o bot não especifica um valor para a ID ou a senha do aplicativo.
 
-## <a id="step-2"></a> Etapa 2: verificar se a ID e a senha do aplicativo do seu bot
+## <a id="step-2"></a> Etapa 2: verificar a ID e a senha do aplicativo do bot
 
 Nesta etapa, você verificará se a ID e a senha do aplicativo e que seu bot usará para autenticação são válidas. (Caso não saiba quais são esses valores, [obtenha-os](#PW) agora.) 
 
@@ -120,6 +122,9 @@ Nesta etapa, você verificará se a ID e a senha do aplicativo e que seu bot usa
 Essas instruções descrevem como usar a [cURL](https://curl.haxx.se/download.html) para emitir uma solicitação HTTP ao serviço de logon da Microsoft. É possível usar uma ferramenta alternativa, como o Postman; apenas verifique se a solicitação está em conformidade com o [protocolo de autenticação](~/rest-api/bot-framework-rest-connector-authentication.md) do Bot Framework.
 
 Para verificar se a ID e senha do aplicativo do seu bot são válidas, emita a solicitação a seguir usando **cURL** e substituindo `APP_ID` e `APP_PASSWORD` pela ID e senha do aplicativo do seu bot.
+
+> [!TIP]
+> Sua senha pode conter caracteres especiais que tornam inválida a chamada a seguir. Nesse caso, tente converter sua senha para a codificação de URL.
 
 ```cmd
 curl -k -X POST https://login.microsoftonline.com/botframework.com/oauth2/v2.0/token -d "grant_type=client_credentials&client_id=APP_ID&client_secret=APP_PASSWORD&scope=https%3A%2F%2Fapi.botframework.com%2F.default"
@@ -135,15 +140,15 @@ Se a solicitação for bem-sucedida, você verificou que a ID e a senha do aplic
 
 Se você receber um erro em resposta à solicitação, examine a resposta para identificar a causa do erro. Se a resposta indicar que a ID ou a senha do aplicativo é inválida, [obtenha os valores corretos](#PW) no Portal do Bot Framework e emita novamente a solicitação com os novos valores para confirmar se eles são válidos. 
 
-## Etapa 3: habilitar a segurança e testar no localhost <a id="step-3"></a>
+## Etapa 3: habilitar a segurança e testar em localhost <a id="step-3"></a>
 
 Neste ponto, você verificou que seu bot fica acessível e funcional no localhost quando a segurança é desabilitada e confirmou que a ID e a senha do aplicativo que o bot usará para autenticação são válidas. Nesta etapa, você verificará se seu bot fica acessível e funcional no localhost quando a segurança estiver habilitada.
 
 ### <a id="enable-security-localhost"></a> Habilitar segurança
 
-A segurança do seu bot se baseia em serviços da Microsoft, mesmo quando seu bot é executado somente no localhost. Para habilitar a segurança do bot, edite as definições de configuração para preencher a ID e senha do aplicativo com os valores que você verificou na [Etapa 2](#step-2).
+A segurança do seu bot se baseia em serviços da Microsoft, mesmo quando seu bot é executado somente no localhost. Para habilitar a segurança do bot, edite as definições de configuração para preencher a ID e senha do aplicativo com os valores que você verificou na [Etapa 2](#step-2).  Além disso, verifique se os pacotes estão atualizados, especificamente `System.IdentityModel.Tokens.Jwt` e `Microsoft.IdentityModel.Tokens`.
 
-Se estiver usando o SDK do Bot Builder para .NET, preencha essas configurações em seu `.bot` no arquivo `appsettings.config`:
+Se estiver usando o SDK do Bot Framework para .NET, preencha essas configurações em seu `appsettings.config` ou os valores correspondentes no arquivo `.bot`:
 
 ```xml
 <appSettings>
@@ -152,7 +157,7 @@ Se estiver usando o SDK do Bot Builder para .NET, preencha essas configurações
 </appSettings>
 ```
 
-Se você estiver usando o SDK do Construtor de Bot para Node.js, preencha esses valores (ou atualize as variáveis de ambiente correspondentes):
+Se você estiver usando o SDK do Bot Framework para Node.js, preencha estas configurações (ou atualize as variáveis de ambiente correspondentes):
 
 ```javascript
 var connector = new builder.ChatConnector({
@@ -162,7 +167,7 @@ var connector = new builder.ChatConnector({
 ```
 
 > [!NOTE]
-> Para encontrar a **AppID** e a **AppPassword** do bot, consulte [MicrosoftAppID e MicrosoftAppPassword](bot-service-manage-overview.md#microsoftappid-and-microsoftapppassword).
+> Para localizar o **AppID** e **AppPassword** do seu bot, consulte [MicrosoftAppID e MicrosoftAppPassword](bot-service-manage-overview.md#microsoftappid-and-microsoftapppassword).
 
 ### <a name="test-your-bot-on-localhost"></a>Testar o bot no localhost 
 

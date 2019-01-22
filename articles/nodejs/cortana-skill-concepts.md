@@ -1,6 +1,6 @@
 ---
 title: Criar uma habilidade da Cortana usando Node.js | Microsoft Docs
-description: Aprenda os conceitos básicos para criar uma habilidade da Cortana no SDK do Bot Builder para Node.js.
+description: Aprenda os conceitos básicos da criação de uma habilidade da Cortana no SDK do Bot Framework para Node.js.
 keywords: Bot Framework, habilidade da Cortana, fala, Node.js, Bot Builder, SDK, conceitos fundamentais, conceitos básicos
 author: DeniseMak
 manager: kamrani
@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 99254c5f2de8b524212d8f6a268dbc37c128ab5e
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 909294243abe00ac95e8f5d89d6babc2edc4f994
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49996461"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54225676"
 ---
 # <a name="key-concepts-for-building-a-bot-for-cortana-skills-using-nodejs"></a>Os conceitos fundamentais para criar um bot de habilidades da Cortana usando Node.js
  
@@ -23,7 +23,7 @@ ms.locfileid: "49996461"
 > [!NOTE]
 > Este artigo é de conteúdo preliminar e será atualizado.
 
-Este artigo apresenta os conceitos fundamentais para criar uma habilidade da Cortana no SDK do Bot Builder para Node.js. 
+Este artigo apresenta os conceitos fundamentais para criar uma habilidade da Cortana no SDK do Bot Framework para Node.js. 
 
 ## <a name="what-is-a-cortana-skill"></a>O que é uma habilidade da Cortana?
 Uma habilidade da Cortana é um bot que você pode chamar usando um cliente da Cortana, como aquele que está integrado ao Windows 10. O usuário inicia o bot dizendo algumas palavras-chave ou frases associadas ao bot. É possível usar o Portal do Bot Framework para configurar quais palavras-chave são usadas para iniciar o bot. 
@@ -62,21 +62,21 @@ Agent: **Okay**, what's next?
 Graus de fundamentação, do mais fraco ao mais forte:
 1. Atenção contínua
 2. Próxima contribuição relevante
-3. Confirmação: Resposta mínima ou continuador discursivo: "sim", "uh-hum", "ok", "beleza"
-4. Demonstrar: indicar compreensão por reformulação, conclusão.
+3. Confirmação: resposta mínima ou continuador discursivo: "sim", "uh-hum", "ok", "beleza"
+4. Demonstre: indicar compreensão por reformulação, conclusão.
 5. Exibir: repetir tudo ou parte.
 
 #### <a name="acknowledgement-and-next-relevant-contribution"></a>Confirmação e próxima contribuição relevante
 Usuário: ... Eu preciso viajar em maio.
-Agente: **E**, qual dia em maio você queria viajar?
+Agente: **e**, em qual dia de maio você queria viajar?
 Usuário: OK, eu preciso estar lá do dia 12 ao dia 15?
-Agente: **E**, você está voando para qual cidade?
+Agente: **e**, você está voando para qual cidade?
 
 #### <a name="grounding-by-demonstration"></a>Fundamentação por demonstração
 Usuário: ... Eu preciso viajar em maio.
-Agente: E, em **qual dia** de maio você queria viajar?
+Agente: e, em **qual dia** de maio você queria viajar?
 Usuário: OK, eu preciso estar lá do dia 12 ao dia 15?
-Agente: **E**, você está voando para qual cidade?
+Agente: **e**, você está voando para qual cidade?
 
 
 ### <a name="closure"></a>Fechamento

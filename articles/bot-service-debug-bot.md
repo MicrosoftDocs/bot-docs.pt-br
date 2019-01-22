@@ -3,18 +3,18 @@ title: Depurar um bot | Microsoft Docs
 description: Saiba como depurar um bot criado usando o Serviço de Bot.
 author: v-ducvo
 ms.author: v-ducvo
-keywords: SDK do Bot Builder, depurar o bot, testar o bot, emulador do bot, emulador
+keywords: SDK do Bot Framework, depurar o bot, testar o bot, emulador do bot, emulador
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 11/13/2018
-ms.openlocfilehash: fcda5c57a96b6f93aad965e868c824577616f630
-ms.sourcegitcommit: 6c719b51c9e4e84f5642100a33fe346b21360e8a
+ms.openlocfilehash: b445ce7796c3f7f3180b15fd6dfac1ef82b808ae
+ms.sourcegitcommit: d385ec5fe61c469ab17e6f21b4a0d50e5110d0fd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52452038"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54298293"
 ---
 # <a name="debug-a-bot"></a>Depurar um bot
 
@@ -32,6 +32,7 @@ Para executar um bot de JavaScript usando a linha de comando e testar o bot com 
 1. Inicie o emulador e conecte-se ao ponto de extremidade do bot (por exemplo: **http://localhost:3978/api/messages**). Se esta for a primeira vez que você estiver executando o bot, clique em **Arquivo > Novo Bot** e siga as instruções na tela. Caso contrário, clique em **Arquivo > Abrir Bot** para abrir um bot existente. Uma vez que este bot estiver em execução localmente no seu computador, você pode deixar os campos **ID do aplicativo MSA** e **senha de aplicativo do MSA** em branco. Para obter mais informações, consulte [Depurar com o emulador](bot-service-debug-emulator.md).
 1. No emulador, envie uma mensagem a seu bot (por exemplo: enviar a mensagem "Olá"). 
 1. Use os painéis **Inspector** e **Log** no lado direito da janela do emulador para depurar seu bot. Por exemplo, clicar em qualquer uma das bolhas de mensagens (por exemplo: a bolha de mensagem "Olá" na captura de tela abaixo) mostra os detalhes dessa mensagem no painel **Inspetor**. Você pode usá-lo para exibir as solicitações e respostas, já que as mensagens são trocadas entre o emulador e o bot. Como alternativa, você pode clicar em qualquer texto vinculado no painel **Log** para exibir os detalhes no painel **Inspetor**.
+
 
    ![Painel Inspetor no emulador](~/media/bot-service-debug-bot/emulator_inspector.png)
 

@@ -1,6 +1,6 @@
 ---
 title: Gravar diretamente no armazenamento | Microsoft Docs
-description: Saiba como gravar diretamente no armazenamento com o SDK do Bot Builder para .NET.
+description: Saiba como gravar diretamente no armazenamento com o SDK do Bot Framework para .NET.
 keywords: armazenamento, ler e gravar, armazenamento de memória, eTag
 author: DeniseMak
 ms.author: v-demak
@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 11/13/18
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 803574e5d224b0556162fd677145d29cafa2cab1
-ms.sourcegitcommit: 8b7bdbcbb01054f6aeb80d4a65b29177b30e1c20
+ms.openlocfilehash: cd1f8270acf426c84d64efef796b7a007c49c2c1
+ms.sourcegitcommit: bdb981c0b11ee99d128e30ae0462705b2dae8572
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51645676"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54360786"
 ---
 # <a name="write-directly-to-storage"></a>Gravar diretamente no armazenamento
 
@@ -217,12 +217,12 @@ Para usar o Cosmos DB em seu bot, você precisará configurar algumas coisas ant
 A criação da conta leva alguns minutos. Aguarde até que o portal exiba a página de parabéns! Página Sua conta do Azure Cosmos DB foi criada.
 
 ##### <a name="add-a-collection"></a>Adicionar uma coleção
-1. Clique em **Configurações > Nova Coleção**. A área **Adicionar Coleção** é exibida à direita, talvez seja necessário rolar para a direita para vê-la.
+1. Clique em **Configurações > Nova Coleção**. A área **Adicionar Coleção** é exibida à direita, talvez seja necessário rolar para a direita para vê-la. Devido a atualizações recentes para o Cosmos DB, certifique-se de adicionar uma única chave de partição: _/id_. Essa chave evitará erros de consulta entre partições.
 
 ![Adicionar coleção do Azure Cosmos DB](./media/add_database_collection.png)
 
 2. Sua nova coleção de banco de dados, "bot-cosmos-sql-db", com uma ID de coleção "bot-storage." Usaremos esses valores em nosso exemplo de codificação abaixo.
-
+ -
 ![Cosmos DB](./media/cosmos-db-sql-database.png)
 
 3. O URI e a chave do ponto de extremidade estão disponíveis na guia **Chaves** das configurações de seu banco de dados. Esses valores serão necessários para configurar o código mais adiante neste artigo. 
@@ -597,7 +597,7 @@ public async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancel
            var count = 0;
            do
            {
-               var pagedTranscript = await _transcriptStore.GetTranscriptActivitiesAsync(activity.ChannelId, activity.Conversation.Id);
+               var pagedTranscript = await _transcriptStore.GetTranscriptActivitiesAsync(activity.ChannelId, activity.Conversation.Id, continuationToken);
                var activities = pagedTranscript.Items
                   .Where(a => a.Type == ActivityTypes.Message)
                   .Select(ia => (Activity)ia)

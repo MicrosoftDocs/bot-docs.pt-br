@@ -1,6 +1,6 @@
 ---
 title: Requisitos e considerações para bots de mídia em tempo real | Microsoft Docs
-description: Entenda os requisitos e considerações importantes relacionados à criação de bots de mídia em tempo real para o Skype, usando o Construtor de bot do SDK para .NET.
+description: Entenda os requisitos e considerações importantes relacionados à criação de bots de mídia em tempo real para o Skype, usando o SDK do Bot Framework para .NET.
 author: ssulzer
 ms.author: ssulzer
 manager: kamrani
@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/17
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 209fb3d16310754d192d66c8f757b354b99b643b
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: d8cd326a3027fe5fcb440d9b205ba7d32a8b1640
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997323"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54224931"
 ---
 # <a name="requirements-and-considerations-for-real-time-media-bots"></a>Requisitos e considerações para bots de mídia em tempo real
 

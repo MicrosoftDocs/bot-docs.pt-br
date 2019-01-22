@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: abs
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: dfc90f4c4c6e3ad00899569f667b5d3d88dcf042
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: a5cb6431988e65a4fa4a889f3095404622d51626
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49999953"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54224441"
 ---
 # <a name="register-a-bot-with-bot-service"></a>Registrar um bot com o Serviço de Bot
 
@@ -74,12 +74,12 @@ Para gerar uma MicrosoftAppPassword, faça o seguinte:
 
 ## <a name="update-the-bot"></a>Atualizar o bot
 
-Se você estiver usando o SDK do Construtor de Bot para Node.js, defina as seguintes variáveis de ambiente:
+Se estiver usado o SDK do Bot Framework para Node.js, ajuste as seguintes variáveis de ambiente:
 
 * MICROSOFT_APP_ID
 * MICROSOFT_APP_PASSWORD
 
-Se estiver usando o SDK do Bot Builder para .NET, defina os seguintes valores de chave no arquivo web.config:
+Se estiver usando o SDK do Bot Framework para .NET, defina os seguintes valores de chave no arquivo web.config:
 
 * MicrosoftAppId
 * MicrosoftAppPassword

@@ -1,16 +1,16 @@
 ---
 redirect_url: /bot-framework/bot-builder-prompts
-ms.openlocfilehash: e7cfbad19290b3ef61d40dc90493db8f530a9a4e
-ms.sourcegitcommit: 4661b9bb31d74731dbbb16e625be088b44ba5899
+ms.openlocfilehash: d45ec888a0082ee17718c93fc34a3df99431a254
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51826933"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54225411"
 ---
 <a name="--"></a><!--
 ---
-título: faça as perguntas do usuário | Descrição do Microsoft Docs: Saiba como usar o modelo em cascata para solicitar ao usuário várias entradas no SDK do Bot Builder.
-keywords: waterfalls, dialogs, asking a question, prompts author: v-ducvo ms.author: v-ducvo manager: kamrani ms.topic: article ms.service: bot-service ms.subservice: sdk ms.date: 5/10/2018 monikerRange: 'azure-bot-service-4.0'
+Título: Fazer as perguntas do usuário | Microsoft Docs - descrição: Saiba como usar o modelo em cascata para solicitar ao usuário várias entradas no SDK do Bot Framework.
+palavras-chave: waterfalls, dialogs, asking a question, prompts author: v-ducvo ms.author: v-ducvo manager: kamrani ms.topic: article ms.service: bot-service ms.subservice: sdk ms.date: 5/10/2018 monikerRange: 'azure-bot-service-4.0'
 ---
 
 # <a name="ask-the-user-questions"></a>Fazer as perguntas do usuário

@@ -1,6 +1,6 @@
 ---
 title: Adicionar anexos de mídia às mensagens | Microsoft Docs
-description: Saiba como adicionar anexos de mídia às mensagens usando o SDK do Bot Builder para .NET.
+description: Saiba como adicionar anexos de mídia às mensagens usando o SDK do Bot Framework para .NET.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 8fd9b181676eee24b1e9c64c79663d0d0ac8abfa
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 6dcfe6595f1c5961151a90783dd8ceee9c7684dd
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997313"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54224331"
 ---
 # <a name="add-media-attachments-to-messages"></a>Adicionar anexos de mídia às mensagens
 

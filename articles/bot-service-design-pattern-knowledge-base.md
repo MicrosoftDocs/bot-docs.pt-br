@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: cognitive-services
 ms.date: 12/13/2017
-ms.openlocfilehash: e228209b4d239a05f9c76203e9fd2fb342c14d36
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 6820815f251c38c59391f1e0e7719e52a375ed48
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49999283"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54224901"
 ---
 # <a name="design-knowledge-bots"></a>Criar bots de dados de Conhecimento
 
@@ -130,16 +130,16 @@ Alguns bots de dados de conhecimento podem usar o QnA Maker para responder pergu
 2. Chamar LUIS primeiro e, se nenhuma intenção atender uma pontuação de limite específico, ou seja, a intenção "None" for disparada, chamar o QnA Maker. Como alternativa, criar uma intenção LUIS para QnA Maker, alimentando o modelo LUIS com perguntas de QnA de exemplo que são mapeadas para "QnAIntent". 
 3. Chamar o QnA Maker primeiro e, se nenhuma resposta atender uma pontuação de limite específico, chamar o LUIS. 
 
-O SDK do Construtor de Bot fornece suporte interno para LUIS e QnA Maker. Isso permite que você dispare caixas de diálogo ou responda automaticamente perguntas usando o LUIS e/ou o QnA Maker sem a necessidade de implementar chamadas personalizadas para qualquer uma das ferramentas. Confira o [Tutorial da ferramenta Dispatch do Bot Builder](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-tutorial-dispatch?view=azure-bot-service-4.0) para saber mais.
+O SDK do Bot Framework fornece suporte interno para LUIS e QnA Maker. Isso permite que você dispare caixas de diálogo ou responda automaticamente perguntas usando o LUIS e/ou o QnA Maker sem a necessidade de implementar chamadas personalizadas para qualquer uma das ferramentas. Consulte o [Tutorial da ferramenta Dispatch](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-tutorial-dispatch?view=azure-bot-service-4.0) para obter mais informações.
 
 > [!TIP]
 > Ao implementar uma combinação de LUIS, QnA Maker e/ou Azure Search, teste as entradas com cada uma das ferramentas para determinar a pontuação de limite para cada um dos seus modelos. O LUIS, o QnA Maker e o Azure Search geram pontuações usando um critério de pontuação diferente, portanto, as pontuações geradas entre essas ferramentas não são comparáveis diretamente. Além disso, o LUIS e QnA Maker normalizam as pontuações. Uma pontuação de determinado pode ser considerada 'boa' em um modelo de LUIS, mas não em outro modelo. 
 
 ## <a name="sample-code"></a>Exemplo de código
 
-- Para obter um exemplo que mostra como criar um bot de dados de conhecimento usando o SDK do Construtor de Bot para .NET, consulte o <a href="https://aka.ms/qna-with-appinsights" target="_blank">exemplo de bot de dados de conhecimento</a> no GitHub. 
+- Veja um exemplo que mostra como criar um bot de dados de conhecimento usando o SDK do Bot Framework para .NET em <a href="https://aka.ms/qna-with-appinsights" target="_blank">Exemplo de bot de dados de conhecimento</a> no GitHub. 
 <!-- TODO: Do not have a current bot sample to work with this
-- For a sample that shows how to create more complex knowledge bots using the Bot Builder SDK for .NET, see the <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/demo-Search" target="_blank">Search-powered Bots sample</a> in GitHub.
+- For a sample that shows how to create more complex knowledge bots using the Bot Framework SDK for .NET, see the <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/demo-Search" target="_blank">Search-powered Bots sample</a> in GitHub.
 -->
 
 [qnamakerTemplate]: https://docs.botframework.com/en-us/azure-bot-service/templates/qnamaker/#navtitle

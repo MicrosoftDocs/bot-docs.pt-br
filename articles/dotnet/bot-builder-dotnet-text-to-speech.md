@@ -1,6 +1,6 @@
 ---
-title: Adicionar uma fala a mensagens | Microsoft Docs
-description: Saiba como adicionar fala a mensagens usando o SDK do Construtor de Bot para .NET.
+title: Adicionar fala a mensagens | Microsoft Docs
+description: Saiba como adicionar fala a mensagens usando o SDK do Bot Framework para .NET.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: dc542c7e85b3a79e1071edebea65d93c99742beb
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 3eef1ec583764449554a223ec9dc339ff505ace6
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "50000353"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54225591"
 ---
 # <a name="add-speech-to-messages"></a>Adicionar fala a mensagens
 
@@ -27,9 +27,9 @@ ms.locfileid: "50000353"
 
 Se você estiver criando um bot para um canal habilitado para fala, como o Cortana, será possível criar mensagens que especifiquem o texto a ser falado pelo seu bot. Você também pode tentar influenciar o estado do microfone do cliente especificando uma [dica de entrada](bot-builder-dotnet-add-input-hints.md) para indicar se o seu bot está aceitando, esperando ou ignorando a entrada do usuário.
 
-## <a name="specify-text-to-be-spoken-by-your-bot"></a>Especificar o texto a ser falado pelo seu bot
+## <a name="specify-text-to-be-spoken-by-your-bot"></a>Especifique o texto a ser falado pelo seu bot
 
-Usando o SDK do Construtor de Bot para .NET, há várias maneiras de especificar o texto a ser falado pelo seu bot em um canal habilitado para fala. É possível definir a propriedade `Speak` da [mensagem][IMessageActivity], chamar o método `IDialogContext.SayAsync()` ou especificar as opções de prompt `speak` e `retrySpeak` ao enviar uma mensagem usando um prompt interno.
+Usando o SDK do Bot Framework para .NET, há várias maneiras de especificar o texto a ser falado pelo seu bot em um canal habilitado para fala. É possível definir a propriedade `Speak` da [mensagem][IMessageActivity], chamar o método `IDialogContext.SayAsync()` ou especificar as opções de prompt `speak` e `retrySpeak` ao enviar uma mensagem usando um prompt interno.
 
 ### <a id="message-speak"></a> IMessageActivity.Speak
 
@@ -59,7 +59,7 @@ Quando você envia uma mensagem em um canal habilitado para fala, é possível t
 
 ## <a name="sample-code"></a>Exemplo de código 
 
-Confira um exemplo completo que mostra como criar um bot habilitado para fala usando o SDK do Construtor de Bot para .NET em <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/v3-sdk-samples/CSharp" target="_blank">Exemplo de Habilidade de Rolagem</a> no GitHub.
+Veja um exemplo completo que mostra como criar um bot habilitado para fala usando o SDK do Bot Framework para .NET em <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/v3-sdk-samples/CSharp" target="_blank">Exemplo de Habilidade de Rolagem</a> no GitHub.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

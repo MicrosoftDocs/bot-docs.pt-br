@@ -1,6 +1,6 @@
 ---
 title: Visão geral dos diálogos | Microsoft Docs
-description: Saiba como usar os diálogos no SDK do Construtor de Bot para Node.js para modelar conversas e gerenciar o fluxo da conversa.
+description: Saiba como usar os diálogos no SDK do Bot Framework para Node.js para modelar conversas e gerenciar o fluxo da conversa.
 author: DucVo
 ms.author: v-ducvo
 manager: kamrani
@@ -9,14 +9,14 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 78f1660aaa91888655515d3402c8ad7702a5b6f6
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: dfa52914b3f0a2e81f4ff3a2f90c7404bfe53d4a
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997123"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54225991"
 ---
-# <a name="dialogs-in-the-bot-builder-sdk-for-nodejs"></a>Diálogos no SDK do Construtor de Bot para Node.js
+# <a name="dialogs-in-the-bot-framework-sdk-for-nodejs"></a>Diálogos no SDK do Bot Framework para Node.js
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
@@ -24,13 +24,13 @@ ms.locfileid: "49997123"
 > - [.NET](../dotnet/bot-builder-dotnet-dialogs.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-dialog-overview.md)
 
-Os Diálogos no SDK do Construtor de Bot para Node.js permite modelar conversas e gerenciar um fluxo de conversa. Um bot se comunica com um usuário por meio de uma conversa. As conversas são organizadas em diálogos. Os diálogos podem conter etapas em cascata e solicitações. À medida que o usuário interagir com o bot, o bot irá iniciar, parar e alternar entre vários diálogos em resposta às mensagens do usuário. Entender como funcionam os diálogos é fundamental para o desenvolver e criar com sucesso grandes bots. 
+Os diálogos no SDK do Bot Framework para Node.js permitem modelar conversas e gerenciar um fluxo de conversa. Um bot se comunica com um usuário por meio de uma conversa. As conversas são organizadas em diálogos. Os diálogos podem conter etapas em cascata e solicitações. À medida que o usuário interagir com o bot, o bot irá iniciar, parar e alternar entre vários diálogos em resposta às mensagens do usuário. Entender como funcionam os diálogos é fundamental para o desenvolver e criar com sucesso grandes bots. 
 
 Este artigo apresenta os conceitos de diálogo. Depois de ler este artigo, siga os links na seção [Próximas etapas](#next-steps) para se aprofundar nesses conceitos.
 
 ## <a name="conversations-through-dialogs"></a>Conversas por diálogos
 
-O SDK do Construtor de Bot para Node.js define uma conversa como a comunicação entre um bot e um usuário por meio de um ou mais diálogos. Um diálogo, no seu nível mais básico, é um módulo reutilizável que realiza uma operação ou coleta informações de um usuário. Você pode encapsular a lógica complexa do seu bot no código de diálogo reutilizável.
+O SDK do Bot Framework para Node.js define uma conversa como a comunicação entre um bot e um usuário por meio de um ou mais diálogos. Um diálogo, no seu nível mais básico, é um módulo reutilizável que realiza uma operação ou coleta informações de um usuário. Você pode encapsular a lógica complexa do seu bot no código de diálogo reutilizável.
 
 Uma conversa pode ser estruturada e alterada de muitas formas:
 
