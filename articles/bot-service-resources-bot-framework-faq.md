@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/28/2018
-ms.openlocfilehash: 660c10c400bb68e807f39eb1b7ccc38f500991e6
-ms.sourcegitcommit: 0f65857943d318da48df0a8654cde53e9a699116
+ms.openlocfilehash: 9b77f05b77017b17ba63e83fa2a8b58e483f9bf8
+ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53389309"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54225801"
 ---
 # <a name="bot-framework-frequently-asked-questions"></a>Perguntas frequentes sobre o Bot Framework
 
@@ -24,7 +24,7 @@ Este artigo contém respostas a algumas perguntas frequentes sobre o Bot Framewo
 Embora a CUI (Interface do Usuário de Conversa) já esteja entre nós, no momento, poucos desenvolvedores têm o conhecimento e as ferramentas necessárias para criar experiências de conversa ou habilitar aplicativos e serviços existentes com uma interface de conversa que os usuários possam aproveitar. Criamos o Bot Framework para facilitar para os desenvolvedores criar e conectar bots excelentes aos usuários, independentemente de onde eles conversarem, incluindo os canais premier da Microsoft.
 
 ### <a name="what-is-the-v4-sdk"></a>O que é o SDK v4?
-O SDK v4 do Construtor de Bot baseia-se nos comentários e nas lições aprendidas dos SDKs anteriores do Construtor de Bot. Ele apresenta os níveis certos de abstração, ao mesmo tempo que permite a "componentização" avançada dos blocos de construção de bot. Comece com um bot simples e aumente a sofisticação dele usando uma estrutura modular e extensível. Encontre as [perguntas frequentes](https://github.com/Microsoft/botbuilder-dotnet/wiki/FAQ) sobre o SDK no GitHub.
+O SDK do Bot Framework v4 baseia-se nos comentários e nas lições aprendidas dos SDKs anteriores do Bot Framework. Ele apresenta os níveis certos de abstração, ao mesmo tempo que permite a "componentização" avançada dos blocos de construção de bot. Comece com um bot simples e aumente a sofisticação dele usando uma estrutura modular e extensível. Encontre as [perguntas frequentes](https://github.com/Microsoft/botbuilder-dotnet/wiki/FAQ) sobre o SDK no GitHub.
 
 ## <a name="bot-framework-sdk-version-3-lifetime-support"></a>Suporte de tempo de vida do SDK Versão 3 do Bot Framework 
 Os bots do SDK V3 continuam sendo executados e tendo suporte do Serviço de Bot do Azure.  Desde o lançamento do SDK V4 do Bot Framework, assim como acontece com outras estruturas, continuamos com o suporte para o SDK V3 com correções de segurança e de bugs de alta prioridade e atualizações na camada de conector/protocolo.  Os clientes podem contar com o suporte para a v3 ao longo do ano de 2019.
@@ -73,7 +73,7 @@ Não fornecemos um mecanismo geral para os desenvolvedores adicionarem novos can
 
 O Bot Framework foi projetado para criar, conectar e implantar bots escalonáveis, dinâmicos e de alto desempenho e alta qualidade no Skype e em muitos outros canais. O SDK pode ser usado para criar bots compatíveis com texto/SMS, imagem, botão e cartão (que constituem a maior parte das interações de bot hoje nas experiências de conversa), bem como interações de bot específicas do Skype, como experiências avançadas de áudio e vídeo.
 
-Caso você já tenha um bot excelente e deseje alcançar o público-alvo do Skype, o bot poderá ser conectado com facilidade ao Skype (ou a qualquer canal compatível) por meio do Construtor de Bot para API REST (desde que ele tenha um ponto de extremidade REST acessível pela Internet).
+Caso você já tenha um bot excelente, mas queira alcançar o público-alvo do Skype, o bot poderá ser conectado com facilidade ao Skype (ou a qualquer canal compatível) por meio do Bot Framework para a API REST (desde que ele tenha um ponto de extremidade REST acessível pela Internet).
 
 ## <a name="security-and-privacy"></a>Segurança e privacidade
 ### <a name="do-the-bots-registered-with-the-bot-framework-collect-personal-information-if-yes-how-can-i-be-sure-the-data-is-safe-and-secure-what-about-privacy"></a>Os bots registrados no Bot Framework coletam informações pessoais? Em caso afirmativo, como posso ter certeza de que os dados estão seguros e protegidos? E quanto à privacidade?
@@ -100,7 +100,7 @@ Se tiver um firewall de saída bloqueando o tráfego do seu bot com a Internet, 
 - *.botframework.com (canais)
 
 ### <a name="can-i-block-all-traffic-to-my-bot-except-traffic-from-the-bot-connector-service"></a>Posso bloquear todo o tráfego para o meu bot, exceto o tráfego do Serviço de Conector do Bot?
- Não. Esse tipo de lista de permissões de DNS ou de endereço IP é inviável. O serviço Bot Framework Connector é hospedado em datacenters do Azure em todo o mundo e a lista de IPs do Azure está em constante mudança. A lista de permissões de determinados endereços IP pode funcionar um dia e parar no próximo, à medida que os Endereços IP do Azure mudam.
+Não. Esse tipo de lista de permissões de DNS ou de endereço IP é inviável. O serviço Bot Framework Connector é hospedado em datacenters do Azure em todo o mundo e a lista de IPs do Azure está em constante mudança. A lista de permissões de determinados endereços IP pode funcionar um dia e parar no próximo, à medida que os Endereços IP do Azure mudam.
  
 ### <a name="what-keeps-my-bot-secure-from-clients-impersonating-the-bot-framework-connector-service"></a>O que mantém o meu bot protegido de clientes que representam o Serviço Bot Framework Connector ?
 1. O token de segurança que acompanha todas as solicitações feitas para seu bot tem a ServiceUrl codificada dentro dele, o que significa que, mesmo se um invasor obtiver acesso ao token, eles não conseguirá redirecionar a conversa para uma nova ServiceUrl. Isso é imposto por todas as implementações do SDK e documentado em nossos materiais de [referência](https://docs.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-connector-authentication?view=azure-bot-service-3.0#bot-to-connector) de autenticação.
