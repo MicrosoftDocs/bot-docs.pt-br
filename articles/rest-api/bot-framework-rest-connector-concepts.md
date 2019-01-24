@@ -7,13 +7,13 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 12/13/2017
-ms.openlocfilehash: a3d6bd957b835a0b8d86e47595ce28506c32d636
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.date: 01/16/2019
+ms.openlocfilehash: 7464e6f19ac1cd1a5744af845bd62c3a48cd2eb8
+ms.sourcegitcommit: c6ce4c42fc56ce1e12b45358d2c747fb77eb74e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54224551"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54453820"
 ---
 # <a name="key-concepts"></a>Principais conceitos
 
@@ -50,7 +50,7 @@ O Bot Framework fornece bibliotecas de cliente que podem ser usadas para criar b
 Além da modelagem do serviço Conector do Bot e do serviço Estado do Bot, cada SDK do Bot Framework também fornece um sistema avançado para a criação de diálogos que encapsulam a lógica de conversação, solicitações internas de coisas simples como Sim/Não, cadeias de caracteres, números e enumerações, suporte interno para estruturas de IA avançadas como <a href="https://www.luis.ai/" target="_blank">LUIS</a> e muito mais. 
 
 > [!NOTE]
-> Como alternativa ao uso do SDK do C# ou do SDK do Node.js, você pode gerar sua própria biblioteca de cliente na linguagem de sua escolha usando o <a href="https://raw.githubusercontent.com/Microsoft/BotBuilder/master/CSharp/Library/Microsoft.Bot.Connector.Shared/Swagger/ConnectorAPI.json" target="_blank">arquivo Swagger do Conector do Bot</a> e o <a href="https://raw.githubusercontent.com/Microsoft/BotBuilder/master/CSharp/Library/Microsoft.Bot.Connector.Shared/Swagger/StateAPI.json" target="_blank">arquivo Swagger do Estado do Bot</a>.
+> Como alternativa ao uso do SDK do C# ou do SDK do Node.js, você pode gerar sua própria biblioteca de cliente na linguagem de sua escolha usando o <a href="https://aka.ms/connector-swagger-file" target="_blank">arquivo Swagger do Conector do Bot</a> e o <a href="https://aka.ms/state-swagger-file" target="_blank">arquivo Swagger do Estado do Bot</a>.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

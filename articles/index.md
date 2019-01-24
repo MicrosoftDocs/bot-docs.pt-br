@@ -25,8 +25,8 @@ ms.date: 01/16/2019
 <div class="ico48Case">
     <div class="ico48Link">
         <a href="/bot-framework/bot-service-quickstart">
-            <img src="media/index/logo_bot.svg" alt="">
-            <span>Serviço de Bot</span>
+            <img src="media/index/azure_portal.png" alt="">
+            <span>Portal do Azure</span>
         </a>
     </div>
 </div>
@@ -78,8 +78,8 @@ ms.date: 01/16/2019
 <div class="ico48Case">
     <div class="ico48Link">
         <a href="/bot-framework/bot-service-quickstart">
-            <img src="v4sdk/media/logo_bot.svg" alt="">
-            <span>Azure</span>
+            <img src="media/index/azure_portal.png" alt="">
+            <span>Portal do Azure</span>
         </a>
     </div>
     <div class="ico48Link">

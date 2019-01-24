@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: d8e482d8f4003ad7bcd807e8fd12e3c68c4ce8c8
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: cfb849474c23c62a666e013c700b755519c1868a
+ms.sourcegitcommit: c6ce4c42fc56ce1e12b45358d2c747fb77eb74e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225891"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54453801"
 ---
 # <a name="manage-conversation-flow-with-dialogs"></a>Gerenciar fluxo de conversa com diálogos
 
@@ -129,11 +129,11 @@ private async Task NameDialogResumeAfter(IDialogContext context, IAwaitable<stri
 
 ## <a name="sample-code"></a>Exemplo de código 
 
-Veja um exemplo completo que mostra como gerenciar uma conversa usando diálogos no SDK do Bot Framework para .NET em <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-BasicMultiDialog" target="_blank">Exemplo de Diálogo Múltiplo Básico</a> no GitHub.
+Veja um exemplo completo que mostra como gerenciar uma conversa usando diálogos no SDK do Bot Framework para .NET em [Exemplo de Diálogo Múltiplo Básico](https://aka.ms/v3cs-MultiDialog-Sample) no GitHub.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
 - [Diálogos](bot-builder-dotnet-dialogs.md)
 - [Projetar e controlar o fluxo da conversa](../bot-service-design-conversation-flow.md)
-- <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-BasicMultiDialog" target="_blank">Exemplo de Diálogo Múltiplo Básico (GitHub)</a>
+- [Exemplo de Diálogo Múltiplo Básico (GitHub)](https://aka.ms/v3cs-MultiDialog-Sample)
 - <a href="/dotnet/api/?view=botbuilder-3.11.0" target="_blank">Referência do SDK do Bot Framework para .NET</a>
