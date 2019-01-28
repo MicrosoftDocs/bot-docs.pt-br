@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 11/28/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: fc44701d7739ecfca662d27cad4f521caa7f4d6d
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: 31a0497f1422cee8c4966e59d94a89ae359a5cb7
+ms.sourcegitcommit: c6ce4c42fc56ce1e12b45358d2c747fb77eb74e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225481"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54453930"
 ---
 # <a name="dialogs-library"></a>Biblioteca de diálogos
 
@@ -121,7 +121,7 @@ Você pode usar o contexto de diálogo para começar, continuar, substituir ou e
 
 Diálogos podem ser considerados como uma pilha programática, que chamamos de *pilha de diálogos*, com o manipulador de turnos sendo o responsável pelo direcionamento e servindo como o fallback se a pilha estiver vazia. O item superior da pilha é considerado o *diálogo ativo*, e o contexto de diálogo direciona todas as entradas para o diálogo ativo.
 
-Quando um diálogo é iniciado, ele é enviado para a pilha e será o diálogo ativo. Ele permanece como o diálogo ativo até que seja concluído, removido pelo método [replace dialog](#repeating-a-dialog) ou quando outro diálogo é enviado para a pilha (pelo manipulador de turnos ou pelo próprio diálogo ativo) e torna-se o diálogo ativo. Quando esse novo diálogo termina, ele é retirado da pilha e o diálogo seguinte abaixo torna-se o diálogo ativo. Isso permite [ramificação e loop](#looping-and-branching), conforme discutido abaixo.
+Quando um diálogo é iniciado, ele é enviado para a pilha e será o diálogo ativo. Ele permanece como o diálogo ativo até que seja concluído, removido pelo método [replace dialog](#repeating-a-dialog) ou quando outro diálogo é enviado para a pilha (pelo manipulador de turnos ou pelo próprio diálogo ativo) e torna-se o diálogo ativo. Quando esse novo diálogo termina, ele é retirado da pilha e o diálogo seguinte abaixo se torna o diálogo ativo. Isso permite [ramificação e loop](#looping-and-branching), conforme discutido abaixo.
 
 ### <a name="create-the-dialog-context"></a>Criar o contexto do diálogo
 
@@ -131,11 +131,22 @@ O conjunto de diálogos requer o uso de um *acessador de propriedade de estado* 
 
 ### <a name="to-start-a-dialog"></a>Para iniciar uma caixa de diálogo
 
-Para iniciar um diálogo, passe a *ID do diálogo* que você deseja iniciar no método *begin dialog*, *prompt* ou *replace dialog* do contexto do diálogo. O método begin dialog envia o diálogo para o topo da pilha e o método replace dialog remove o diálogo atual da pilha e envia o novo diálogo para a pilha.
+Para iniciar um diálogo, passe a *ID do diálogo* que você deseja iniciar no método *begin dialog*, *prompt* ou *replace dialog* do contexto do diálogo.
+
+* O método begin dialog enviará o diálogo por push para o topo da pilha.
+* O método replace dialog destacará o diálogo atual na fila e enviará o diálogo de substituição por push para a fila. O diálogo de substituição é cancelado, e todas as informações contidas nessa instância são descartadas.
+
+Use o parâmetro _options_ para passar informações para a nova instância do diálogo.
+As opções passadas para o novo diálogo podem ser acessadas por meio da propriedade *options* do contexto da etapa em qualquer etapa do diálogo.
+Confira as instruções em [Criar fluxo de conversa avançado usando branches e loops](bot-builder-dialog-manage-complex-conversation-flow.md) para obter o código de exemplo.
 
 ### <a name="to-continue-a-dialog"></a>Para continuar um diálogo
 
 Para continuar um diálogo, chame o método *continue dialog*. O método continue sempre continuará o diálogo no topo da pilha (o diálogo ativo), se houver um. Se o diálogo for encerrado, o controle é passado para o contexto pai que continuará no mesmo turno.
+
+Use a propriedade *values* do contexto de etapa para persistir o estado entre turnos.
+Qualquer valor adicionado a essa coleção em um turno anterior estará disponível nos turnos seguintes.
+Confira as instruções em [Criar fluxo de conversa avançado usando branches e loops](bot-builder-dialog-manage-complex-conversation-flow.md) para obter o código de exemplo.
 
 ### <a name="to-end-a-dialog"></a>Para encerrar uma caixa de diálogo
 
@@ -152,10 +163,11 @@ Caso você queira remover todas as caixas de diálogo da pilha, é possível lim
 
 ### <a name="repeating-a-dialog"></a>Repetindo um diálogo
 
-Para repetir um diálogo, utilize o método *replace dialog*. O método *replace dialog* do contexto do diálogo removerá o diálogo atual da fila (sem encerrá-lo da maneira convencional), enviará o diálogo substituto para o topo da pilha e o iniciará. Essa é uma ótima maneira de tratar [interações complexas](~/v4sdk/bot-builder-dialog-manage-complex-conversation-flow.md) e uma boa técnica para gerenciar os menus. Você pode usar esse método para criar um loop substituindo um diálogo por ele próprio.
+Você pode substituir um diálogo por ele mesmo, criando um loop.
+Essa é uma ótima maneira de tratar [interações complexas](~/v4sdk/bot-builder-dialog-manage-complex-conversation-flow.md) e uma boa técnica para gerenciar os menus.
 
 > [!NOTE]
-> Se você precisar persistir o estado interno do diálogo atual, precisará passar informações para a nova instância do diálogo na chamada para o método *replace dialog* e inicializar o diálogo adequadamente. As opções passadas para o novo diálogo podem ser acessadas por meio da propriedade *options* do contexto da etapa em qualquer etapa do diálogo.
+> Se você precisar persistir o estado interno do diálogo atual, precisará passar informações para a nova instância do diálogo na chamada para o método *replace dialog* e inicializar o diálogo adequadamente.
 
 ### <a name="branch-a-conversation"></a>Ramificar uma conversa
 

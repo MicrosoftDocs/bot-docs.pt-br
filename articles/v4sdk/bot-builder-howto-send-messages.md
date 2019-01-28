@@ -8,20 +8,22 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 11/08/2018
+ms.date: 01/16/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 9cfe077c8d8573145625b211c3c1ca05a6a21e19
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: ff52a62353df8983d94bbd09276de4ae94e6535e
+ms.sourcegitcommit: c6ce4c42fc56ce1e12b45358d2c747fb77eb74e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54224811"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54453870"
 ---
-# <a name="send-and-receive-text-message"></a>Enviar e receber mensagens de texto 
+# <a name="send-and-receive-text-message"></a>Enviar e receber mensagens de texto
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
 A principal maneira que o bot se comunicará com usuários e, da mesma forma, receberá comunicação, é por meio de atividades de **mensagem**. Algumas mensagens simplesmente podem conter texto sem formatação, enquanto outras podem ter conteúdo mais elaborado, como cartões ou anexos. O manipulador do turno do bot recebe mensagens do usuário e, a partir daí, é possível enviar respostas ao usuário. O objeto de contexto do turno fornece métodos para enviar mensagens de volta ao usuário. Este artigo descreve como enviar mensagens de texto simples.
+
+O markdown tem suporte na maioria dos campos de texto, mas o suporte pode variar por canal.
 
 ## <a name="send-a-text-message"></a>Enviar uma mensagem de texto
 
@@ -57,12 +59,16 @@ var responseMessage = turnContext.Activity.Text;
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-No método `OnTurnAsync` do bot, use o código a seguir para receber uma mensagem. 
+No método `OnTurnAsync` do bot, use o código a seguir para receber uma mensagem.
+
 ```javascript
 let text = turnContext.activity.text;
 ```
+
 ---
 
-
 ## <a name="additional-resources"></a>Recursos adicionais
-Para obter mais informações sobre o processamento de atividade, confira [processamento de atividade](~/v4sdk/bot-builder-basics.md#the-activity-processing-stack). Para enviar o conteúdo mais avançado, saiba como adicionar anexos de [mídia avançada](bot-builder-howto-add-media-attachments.md).
+
+- Para obter mais informações sobre o processamento de atividade, confira [processamento de atividade](~/v4sdk/bot-builder-basics.md#the-activity-processing-stack).
+- Para enviar o conteúdo mais avançado, saiba como adicionar anexos de [mídia avançada](bot-builder-howto-add-media-attachments.md).
+- Para obter mais informações sobre a formatação, confira a [seção de atividades de mensagem](https://aka.ms/botSpecs-activitySchema#message-activity) do esquema de Atividade do Bot Framework.
