@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 09/18/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: dd52376e049f1f0e09216e0065ced7443b6eb02a
-ms.sourcegitcommit: c6ce4c42fc56ce1e12b45358d2c747fb77eb74e2
+ms.openlocfilehash: c9a462c1ff9a1de8bc7929cb11368191aafd031a
+ms.sourcegitcommit: 1ed179ae48bd2e28920a3f1e270e59d15d86fbf7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54453880"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54892979"
 ---
 # <a name="enterprise-bot-template---deploying-your-bot"></a>Modelo de Bot do Enterprise - Implantação do Bot
 
@@ -87,7 +87,10 @@ O README.md no projeto criado contém um exemplo de linha de comando `msbot clon
 msbot clone services --name "YOUR-BOT-NAME" --luisAuthoringKey "YOUR_AUTHORING_KEY" --folder "DeploymentScripts\LOCALE_FOLDER" --location "REGION"
 ```
 
-> Há um problema conhecido com alguns usuários no qual você pode enfrentar o seguinte erro ao executar a implantação `ERROR: Unable to provision MSA id automatically. Please pass them in as parameters and try again`. Nessa situação, navegue até https://apps.dev.microsoft.com e crie manualmente um novo aplicativo ao recuperar o ApplicationID e a Senha/Segredo. Execute o comando de serviços de clone msbot acima, mas forneça dois novos argumentos `appId` e `appSecret` passando os valores que você acabou de recuperar. Verifique se você coloca o segredo entre aspas para evitar problemas de análise, por exemplo: `-appSecret "YOUR_SECRET"`
+> Há um problema conhecido com alguns usuários no qual você pode enfrentar o seguinte erro ao executar a implantação `ERROR: Unable to provision MSA id automatically. Please pass them in as parameters and try again`. Nessa situação, navegue até https://apps.dev.microsoft.com e crie manualmente um novo aplicativo ao recuperar o ApplicationID e a Senha/Segredo. Execute o comando de serviços de clone msbot acima, mas forneça dois novos argumentos `appId` e `appSecret` passando os valores que você acabou de recuperar. É necessário escapar caracteres especiais na senha que podem ser interpretados pelo shell como um comando:
+>   - Para *prompt de comando do Windows*, coloque o appSecret entre aspas duplas. Por exemplo, os serviços de clone msbt --name xxxx --luisAuthoringKey xxxx --location xxxx --folder bot.recipt ***--appSecret "!|%gr%"***
+>   - Para *Windows PowerShell, tente passar no appSecret após o argumento --%. Por exemplo, os serviços de clone msbot --name xxxx --luisAuthoringKey xxxx --location xxxx --folder bot.recipt ***--% --appSecret "!|%gr%"***
+>   - Para *MacOS ou Linux*, coloque o appSecret entre aspas simples. Por exemplo, os serviços de clone msbot --name xxxx --luisAuthoringKey xxxx --location xxxx --folder bot.recipt ***--appSecret '!|%gr%'***
 
 A ferramenta msbot descreverá o plano de implantação, incluindo o local e o SKU. Analise antes de prosseguir.
 
