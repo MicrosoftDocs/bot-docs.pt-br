@@ -7,14 +7,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 12/13/2017
+ms.date: 1/28/2019
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: ef2cb33e8d2ab7d8db291e3c6e051630d6af0394
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: 6169ed28fb765e84aaf31cf9e7d2ca404294bcad
+ms.sourcegitcommit: c7d2e939ec71f46f48383c750fddaf6627b6489d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54224541"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55783355"
 ---
 # <a name="create-data-driven-experiences-with-azure-search"></a>Criar experiências controladas por dados com o Azure Search 
 
@@ -173,11 +173,10 @@ Os resultados da pesquisa são exibidos ao usuário, e você adicionou com êxit
 
 ## <a name="samples"></a>Exemplos
 
-Veja dois exemplos completos que mostram como dar suporte ao Azure Search com bots usando o SDK do Bot Framework para .NET, em [Exemplo de bot Imobiliário](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/demo-Search/RealEstateBot) ou [Exemplo de bot de Listagem de Trabalhos](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/demo-Search/JobListingBot) no GitHub. 
+Veja dois exemplos completos que mostram como dar suporte ao Azure Search com bots usando o SDK do Bot Framework para .NET, em [Exemplo de bot Imobiliário](https://github.com/Microsoft/BotBuilder-Samples/tree/v3-sdk-samples/CSharp/demo-Search/RealEstateBot) ou [Exemplo de bot de Listagem de Trabalhos](https://github.com/Microsoft/BotBuilder-Samples/tree/v3-sdk-samples/CSharp/demo-Search/JobListingBot) no GitHub. 
 
 ## <a name="additional-resources"></a>Recursos adicionais
 * [Azure Search][search]
-* [Visão geral dos diálogos](bot-builder-dotnet-dialogs.md)
-* [Exemplos de bot do Azure Search](https://github.com/Microsoft/botBuilder-Samples/tree/master/CSharp/demo-Search)
+* [Visão geral de caixas de diálogo](bot-builder-dotnet-dialogs.md)
 
 [search]: /azure/search/search-what-is-azure-search

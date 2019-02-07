@@ -9,12 +9,12 @@ ms.topic: get-started-article
 ms.service: bot-service
 ms.subservice: abs
 ms.date: 12/08/2018
-ms.openlocfilehash: ac4e5f2ea385cb8318ad59e04c8ca8787480f5c8
-ms.sourcegitcommit: 77664484e1b0780a15f686ef08bd23716b049b4a
+ms.openlocfilehash: eb559418bc2925ec6fb64902086dede50e485414
+ms.sourcegitcommit: 32615b88e4758004c8c99e9d564658a700c7d61f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "53121782"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55712010"
 ---
 # <a name="deploy-your-c-bot-using-visual-studio"></a>Implantar seu bot em C# usando o Visual Studio
 
@@ -26,7 +26,6 @@ Neste artigo, mostraremos como implantar um bot em C# usando o Visual Studio e o
 
 ## <a name="prerequisites"></a>Pré-requisitos
 - Instale o [Bot Framework Emulator](https://aka.ms/Emulator-wiki-getting-started).
-- Instale e configure o [ngrok](https://github.com/Microsoft/BotFramework-Emulator/wiki/Tunneling-%28ngrok%29).
 - Conhecimento do arquivo [.bot](v4sdk/bot-file-basics.md).
 
 ## <a name="deploy-your-bot-in-app-service"></a>Implantar seu bot no Serviço de Aplicativo

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/20/2018
-ms.openlocfilehash: 8ab1cd34f2cc239602db423bccd131d9df39222a
-ms.sourcegitcommit: f7a8f05fc05ff4a7212a437d540485bf68831604
+ms.openlocfilehash: f86cacce5b25f60010f646cf5989123e3abf3bf2
+ms.sourcegitcommit: 32615b88e4758004c8c99e9d564658a700c7d61f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53735989"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55711970"
 ---
 # <a name="troubleshoot-http-500-errors"></a>Solucionar erros de HTTP 500
 
@@ -28,7 +28,7 @@ Para o suporte básico do Application Insights, confira como [configurar o Appli
 
 ## <a name="enable-application-insights-on-nodejs"></a>Habilitar o Application Insights no Node.js
 
-Para o suporte básico do Application Insights, confira como [monitorar serviços e aplicativos do Node.js com o Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-nodejs). O Bot Framework (começando com a v4.2) fornece um nível adicional de telemetria do Application Insights, mas ele não é necessário para diagnosticar erros HTTP 500.
+Para o suporte básico do Application Insights, confira como [monitorar serviços e aplicativos do Node.js com o Application Insights](https://docs.microsoft.com/azure/azure-monitor/learn/nodejs-quick-start). O Bot Framework (começando com a v4.2) fornece um nível adicional de telemetria do Application Insights, mas ele não é necessário para diagnosticar erros HTTP 500.
 
 ## <a name="query-for-exceptions"></a>Consultar exceções
 
