@@ -53,6 +53,7 @@
 ### [Gravar diretamente no armazenamento](v4sdk/bot-builder-howto-v4-storage.md)
 ### [Adicionar autenticação ao seu bot ](v4sdk/bot-builder-authentication.md)
 ### [Implementar um armazenamento personalizado para seu bot](v4sdk/bot-builder-custom-storage.md)
+### [Adicionar telemetria ao seu bot](v4sdk/bot-builder-telemetry.md)
 ### [Gerenciar os bots usando as ferramentas de CLI](bot-builder-tools.md)
 ### [.NET](dotnet/TOC.md)
 ### [Node.js](nodejs/TOC.md)
@@ -63,6 +64,7 @@
 <!-- ### [Download and redeploy bot code](bot-service-build-download-source-code.md) -->
 ### [Configurar a implantação contínua](bot-service-build-continuous-deployment.md)
 ## [Gerenciar](manage/TOC.md)
+## [Migrar](v4sdk/migration/TOC.md)
 # Referência
 ## [SDK v4 do .NET](https://aka.ms/dotnetsdk4)
 ## [SDK v4 do JavaScript](https://aka.ms/jssdk4)

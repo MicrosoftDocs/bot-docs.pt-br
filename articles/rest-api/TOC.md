@@ -24,6 +24,7 @@
 ## [Receber atividades do bot](bot-framework-rest-direct-line-3-0-receive-activities.md)
 ## [Terminar uma conversa](bot-framework-rest-direct-line-3-0-end-conversation.md)
 ## [Referência de API](bot-framework-rest-direct-line-3-0-api-reference.md)
+## [Arquivo do Swagger](https://github.com/Microsoft/BotBuilder/blob/master/specs/botframework-protocol/directline-3.0.json)
 # API de Linha Direta 1.1
 ## [Principais conceitos](bot-framework-rest-direct-line-1-1-concepts.md)
 ## [Autenticação](bot-framework-rest-direct-line-1-1-authentication.md)
@@ -31,3 +32,4 @@
 ## [Enviar uma mensagem para o bot](bot-framework-rest-direct-line-1-1-send-message.md)
 ## [Receber mensagens do bot](bot-framework-rest-direct-line-1-1-receive-messages.md)
 ## [Referência de API](bot-framework-rest-direct-line-1-1-api-reference.md)
+## [Arquivo do Swagger](https://github.com/Microsoft/BotBuilder/blob/master/specs/botframework-protocol/directline-1.1.json)
