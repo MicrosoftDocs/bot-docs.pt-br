@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 1/10/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a1b155db3ec717a1084ae0e098e8f22997a80b0e
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: 70f333cdce15f1d1e908b73d21e706f1af33454b
+ms.sourcegitcommit: c7d2e939ec71f46f48383c750fddaf6627b6489d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225931"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55783375"
 ---
 # <a name="how-bots-work"></a>Como funcionam os bots
 
@@ -67,7 +67,7 @@ O Middleware é muito parecido com qualquer outro middleware de mensagens, compr
 Nas seções a seguir, examinamos os principais componentes de um bot.
 
 ### <a name="prerequisites"></a>Pré-requisitos
-- Uma cópia do exemplo **EchoBotWithCounter** em [C#](https://aka.ms/EchoBotWithStateCSharp) ou [JS](https://aka.ms/EchoBotWithStateJS). Somente o código relevante é mostrado aqui, mas você pode consultar o exemplo para código-fonte completo.
+- Uma cópia do exemplo **EchoBotWithCounter** em **[C#](https://aka.ms/EchoBotWithStateCSharp) ou [JS](https://aka.ms/EchoBotWithStateJS)**. Somente o código relevante é mostrado aqui, mas você pode consultar o exemplo para código-fonte completo.
 
 # <a name="ctabcs"></a>[C#](#tab/cs)
 

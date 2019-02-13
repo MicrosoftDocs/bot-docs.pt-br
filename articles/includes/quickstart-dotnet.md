@@ -1,11 +1,3 @@
----
-ms.openlocfilehash: 2096aa342fe954b9f9f1d128bc080c0e0e6efdce
-ms.sourcegitcommit: bdb981c0b11ee99d128e30ae0462705b2dae8572
-ms.translationtype: HT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54360796"
----
 ## <a name="prerequisites"></a>Pré-requisitos
 - Visual Studio [2017](https://www.visualstudio.com/downloads)
 - Modelo de SDK do Bot Framework v4 para [C#](https://aka.ms/bot-vsix)
@@ -15,7 +7,7 @@ ms.locfileid: "54360796"
 ## <a name="create-a-bot"></a>Criar um bot
 Instale o modelo BotBuilderVSIX.vsix que você baixou na seção de pré-requisitos.
 
-No Visual Studio, crie um novo projeto de bot usando o modelo do Bot Framework Echo Bot V4.
+No Visual Studio, crie um novo projeto de bot usando o modelo do **Bot Framework Echo Bot** V4.
 
 ![Projeto do Visual Studio](~/media/azure-bot-quickstarts/bot-builder-dotnet-project.png)
 

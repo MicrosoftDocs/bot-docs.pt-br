@@ -8,19 +8,19 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: f0985f28fd1744bcfb6bf5cea1c2230254670e01
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 438558995f83ade38404856d61ba66ee77480a27
+ms.sourcegitcommit: 32615b88e4758004c8c99e9d564658a700c7d61f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "50000203"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55711930"
 ---
 # <a name="end-a-conversation"></a>Terminar uma conversa
 
-Um cliente ou um bot pode sinalizar o final de uma conversa de linha direta, enviando uma **endOfConversation** [atividade](bot-framework-rest-connector-activities.md). 
+A [atividade](bot-framework-rest-connector-activities.md) **endOfConversation** significa que o canal ou o bot encerrou a conversa. 
 
 > [!NOTE] 
-> O evento endOfConversation tem suporte apenas no canal da Cortana, outros canais não implementam essa funcionalidade. Cada canal determina como reagir a uma atividade endOfConversation. Se você estiver criando um cliente DirectLine, atualize o cliente para ele se comportar adequadamente, por exemplo, gerar um erro se o bot enviar uma atividade para uma conversa que já terminou.
+> Embora o evento **endOfConversation** só seja enviado por pouquíssimos canais, o canal da Cortana é o único que o aceita. Outros canais, incluindo o Direct Line, não implementam essa funcionalidade e, em vez disso, descartam ou encaminham a atividade; cada canal determina como reagir a uma atividade endOfConversation. Se você estiver criando um cliente DirectLine, atualize o cliente para ele se comportar adequadamente, por exemplo, gerar um erro se o bot enviar uma atividade para uma conversa que já terminou.
 
 ## <a name="send-an-endofconversation-activity"></a>Enviar uma atividade endOfConversation
 
