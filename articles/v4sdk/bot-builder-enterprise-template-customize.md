@@ -6,14 +6,14 @@ ms.author: darrenj
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 09/18/2018
+ms.date: 02/7/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 319700f8b7b236ce74058bac5fabb84f21e04d69
-ms.sourcegitcommit: 6c719b51c9e4e84f5642100a33fe346b21360e8a
+ms.openlocfilehash: d472cbe7c0235862f8dcff1bcc2d53d977bb7657
+ms.sourcegitcommit: 8183bcb34cecbc17b356eadc425e9d3212547e27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52452008"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55971486"
 ---
 # <a name="enterprise-bot-template---customize-your-bot"></a>Modelo de Bot do Enterprise: personalizar seu Bot
 
@@ -107,11 +107,11 @@ Em cenários em que você deseja adicionar um novo modelo do LUIS ao projeto, é
 ```
 3. Adicione esse novo modelo do LUIS ao Dispatcher com o comando a seguir.
 ```shell
-    dispatch add -t luis -id LUIS_APP_ID -bot "YOUR_BOT.bot" -secret YOURSECRET
+    dispatch add -t luis -id LUIS_APP_ID -bot "YOUR_BOT.bot" --secret YOURSECRET
 ```
 4. Atualize o modelo de expedição para refletir as alterações do modelo do LUIS com o comando a seguir.
 ```shell
-    dispatch refresh -bot "YOUR_BOT.bot" -secret YOUR_SECRET
+    dispatch refresh -bot "YOUR_BOT.bot" --secret YOUR_SECRET
 ```
 
 ### <a name="adding-an-additional-qna-maker-knowledge-base"></a>Adicionar outra base de dados de conhecimento do QnA Maker

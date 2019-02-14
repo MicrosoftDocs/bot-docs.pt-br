@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 11/15/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 7a9a2e4f30d1e9b293e51a921afce57d243376d7
-ms.sourcegitcommit: c6ce4c42fc56ce1e12b45358d2c747fb77eb74e2
+ms.openlocfilehash: 780fdb05acf2c81d72aaa6c415bdd9a6b0229082
+ms.sourcegitcommit: 8183bcb34cecbc17b356eadc425e9d3212547e27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54453960"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55971496"
 ---
 # <a name="get-notification-from-bots"></a>Obter notificação de bots
 
@@ -601,4 +601,4 @@ E ter essa aparência da perspectiva do sistema do trabalho simulado:
 ![Sessão de emulador do sistema do trabalho](~/v4sdk/media/how-to-proactive/job-system.png)
 
 ## <a name="additional-resources"></a>Recursos adicionais
-Confira os exemplos adicionais em C# e JS na [GitHub](https://github.com/Microsoft/BotBuilder-Samples/blob/master/readme.md).
+Confira os exemplos adicionais em C# e JS na [GitHub](https://github.com/Microsoft/BotBuilder-Samples/blob/master/README.md).
