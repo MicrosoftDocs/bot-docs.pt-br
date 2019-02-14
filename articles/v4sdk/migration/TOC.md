@@ -1,1 +1,2 @@
-# [Migrar um bot dentro do mesmo projeto do .NET Framework](conversion-framework.md)
+# [Diferenças entre o SDK do .NET v3 e v4](migration-about.md)
+# [Migrar um bot do SDK do .NET v3 para v4](conversion-framework.md)
