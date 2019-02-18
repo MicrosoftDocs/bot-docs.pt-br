@@ -7,14 +7,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: abs
-ms.date: 10/30/2018
+ms.date: 02/05/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 3bfbcb27aa6e38792f96e0d3fe042f02f6e11083
-ms.sourcegitcommit: d385ec5fe61c469ab17e6f21b4a0d50e5110d0fd
+ms.openlocfilehash: c55909afa0a8942a01d3fca0f8a64331bbcdf963
+ms.sourcegitcommit: 8183bcb34cecbc17b356eadc425e9d3212547e27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54298313"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55971516"
 ---
 # <a name="add-authentication-to-your-bot-via-azure-bot-service"></a>Adicionar autenticação ao seu bot por meio do Serviço de Bot do Azure
 
@@ -51,7 +51,7 @@ Para obter mais informações e suporte, consulte [Recursos adicionais do Bot Fr
 
 ## <a name="overview"></a>Visão geral
 
-Este tutorial cria um bot de exemplo que se conecta ao Microsoft Graph usando um token do Azure AD v1 ou v2. Como parte desse processo, você usará o código de um repositório GitHub [Microsoft/BotBuilder-Samples](https://github.com/Microsoft/BotBuilder-Samples), e este tutorial descreve como configurar tudo, incluindo o aplicativo bot.
+Este tutorial cria um bot de exemplo que se conecta ao Microsoft Graph usando um token do Azure AD v1 ou v2 e o aplicativo do Azure AD associado. Como parte desse processo, você usará o código de um repositório GitHub [Microsoft/BotBuilder-Samples](https://github.com/Microsoft/BotBuilder-Samples), e este tutorial descreve como configurar tudo, incluindo o aplicativo bot.
 
 - **Crie seu bot e um aplicativo de autenticação**
 - **Prepare os códigos de exemplo de bot.**

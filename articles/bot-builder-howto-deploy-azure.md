@@ -1,21 +1,18 @@
 ---
-title: Implantar seu bot em C# usando o Visual Studio | Microsoft Docs
-description: Implante seu bot na nuvem do Azure.
-keywords: deploy bot, azure deploy, publish bot, az deploy bot, visual studio deploy bot, msbot publish, msbot clone
-author: ivorb
-ms.author: v-ivorb
-manager: kamrani
-ms.topic: get-started-article
-ms.service: bot-service
-ms.subservice: abs
-ms.date: 12/08/2018
-ms.openlocfilehash: eb559418bc2925ec6fb64902086dede50e485414
-ms.sourcegitcommit: 32615b88e4758004c8c99e9d564658a700c7d61f
+redirect_url: /bot-framework/bot-builder-deploy-az-cli
+ms.openlocfilehash: a300d6602a59c5e7d7cebdf14bb4f720a30ecbf8
+ms.sourcegitcommit: 8183bcb34cecbc17b356eadc425e9d3212547e27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55712010"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55971466"
 ---
+<a name="--"></a><!--
+---
+Título: Implantar seu bot em C# usando o Visual Studio | descrição do Microsoft Docs: Implante seu bot na nuvem do Azure.
+palavras-chave: bot de implantação, implantação no azure, publicar bot, bot de implantação do azure, bot de implantação do visual studio, publicar msbot, clonar msbot autor: ivorb ms.author: v-ivorb manager: kamrani ms.topic: get-started-article ms.service: bot-service ms.subservice: abs ms.date: 07/02/2019
+---
+
 # <a name="deploy-your-c-bot-using-visual-studio"></a>Implantar seu bot em C# usando o Visual Studio
 
 [!INCLUDE [pre-release-label](./includes/pre-release-label.md)]
@@ -28,7 +25,16 @@ Neste artigo, mostraremos como implantar um bot em C# usando o Visual Studio e o
 - Instale o [Bot Framework Emulator](https://aka.ms/Emulator-wiki-getting-started).
 - Conhecimento do arquivo [.bot](v4sdk/bot-file-basics.md).
 
+
+## <a name="update-bot-file-properties"></a>Atualizar propriedades do arquivo .bot
+
+Antes de iniciar o processo de implantação, atualize as seguintes propriedades do arquivo .bot no Visual Studio:
+- **Ação de compilação: Conteúdo**
+- **Copiar para Diretório de Saída: Copiar sempre**
+
+
 ## <a name="deploy-your-bot-in-app-service"></a>Implantar seu bot no Serviço de Aplicativo
+
 Você primeiro implantará o bot no Azure a partir do Visual Studio em um Serviço de Aplicativo. Em seguida, você configurará seu bot com o Serviço de Bot do Azure usando o registro de canais de Bot.
 
 **Observação: se o nome do projeto do Visual Studio tiver espaços, as etapas de implantação descritas a seguir não funcionarão.**
@@ -164,3 +170,4 @@ Se você não estiver familiarizado com o grupo de recursos do Azure, consulte e
 ## <a name="next-steps"></a>Próximas etapas
 > [!div class="nextstepaction"]
 > [Configurar implantação contínua](bot-service-build-continuous-deployment.md)
+-->

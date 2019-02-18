@@ -1,20 +1,17 @@
 ---
-title: Configurar a implantação contínua para o Serviço de Bot | Microsoft Docs
-description: Saiba como configurar a implantação contínua do controle do código-fonte para um Serviço de Bot.
-keywords: implantação contínua, publicar, implantar, portal do Azure
-author: ivorb
-ms.author: v-ivorb
-manager: kamrani
-ms.topic: article
-ms.service: bot-service
-ms.date: 12/06/2018
-ms.openlocfilehash: ffbc3ef83c8fe1cd6f04697a3fff9e229df9956f
-ms.sourcegitcommit: 080b9633925ffe381f2c3cf11c8f8ca4b37e2046
+redirect_url: /bot-framework/bot-builder-deploy-az-cli
+ms.openlocfilehash: 8149471553658df6778e2983bae114e80c846c9b
+ms.sourcegitcommit: 8183bcb34cecbc17b356eadc425e9d3212547e27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53068709"
+ms.lasthandoff: 02/09/2019
+ms.locfileid: "55971417"
 ---
+<a name="--"></a><!--
+---
+Título: Configurar a implantação contínua para o Serviço de Bot | descrição do Microsoft Docs: Saiba como configurar a implantação contínua do controle do código-fonte para um Serviço de Bot. palavras-chave: implantação contínua, publicar, implantar, portal do azure autor: ivorb ms.author: v-ivorb manager: kamrani ms.topic: article ms.service: bot-service ms.date: 06/12/2018
+---
+
 # <a name="set-up-continuous-deployment"></a>Configurar a implantação contínua
 Se seu código for verificado no **GitHub** ou no **Azure DevOps (anteriormente conhecido como Visual Studio Team Services)**, use a implantação contínua para implantar automaticamente as alterações de código do seu repositório de origem para o Azure. Neste tópico, abordaremos como configurar a implantação contínua para **GitHub** e **Azure DevOps**.
 
@@ -71,3 +68,6 @@ Para desabilitar a implantação contínua, faça o seguinte:
 
 ## <a name="additional-information"></a>Informações adicionais
 - O Visual Studio Team Services agora se chama [Azure DevOps Services](https://docs.microsoft.com/en-us/azure/devops/?view=vsts)
+
+
+-->
