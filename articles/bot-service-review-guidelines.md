@@ -25,8 +25,6 @@ A integração de aplicativo e os metadados associados devem:
 
 - Se a integração do aplicativo gerenciar informações pessoais dos usuários (informações pessoais incluem todas as informações ou dados que identificam ou podem ser utilizados para identificar uma pessoa ou que estejam associados a essas informações ou dados. Exemplos de informações pessoais incluem: nome e endereço, número de telefone, identificadores biométricos, localização, contatos, fotos, gravações de áudio e vídeo, documentos, SMS, email ou outras comunicações por texto, capturas de tela e, em alguns casos, histórico de navegação combinado), você deverá fornecer um link proeminente da integração do aplicativo a uma política de privacidade aplicável e essa política de privacidade deverá estar em conformidade com todas as leis, regulamentos e requisitos de políticas aplicáveis. Essa política deverá abranger todos os dados que você estiver coletando ou transmitindo, o que você fará com esses dados e (se aplicável) com quem estará compartilhando. Se você não tiver uma política de privacidade, aqui estão alguns recursos de terceiros* que poderão ajudar:
 
-OECD - [Gerador de Política de Privacidade](http://www.oecd.org/internet/ieconomy/oecdprivacystatementgenerator.htm)
-
 Futuro do Fórum de Privacidade – [Gerador de Política de Privacidade de Aplicativo](http://www.applicationprivacy.org/do-tools/privacy-policy-generator/)
 
 Iubenda – [Gerador de Política de Privacidade](http://www.iubenda.com/en)
