@@ -39,7 +39,7 @@
 ### [Solicitar aos usuários por entrada](v4sdk/bot-builder-primitive-prompts.md) 
 ### [Enviar mensagem de boas-vinda aos usuários](v4sdk/bot-builder-send-welcome-message.md)
 <!-- ## [Add input hints to messages](v4sdk/bot-builder-howto-add-input-hints.md) -->
-### [Obter notificação de bots](v4sdk/bot-builder-howto-proactive-message.md)
+### [Enviar notificações proativas para os usuários](v4sdk/bot-builder-howto-proactive-message.md)
 ### [Adicionar o reconhecimento de idioma natural ao seu bot](v4sdk/bot-builder-howto-v4-luis.md)
 ### [Responder às perguntas do usuário usando o QnA Maker](v4sdk/bot-builder-howto-qna.md)
 ### [Usar vários modelos de LUIS e QnA](v4sdk/bot-builder-tutorial-dispatch.md)
