@@ -1,5 +1,3 @@
-# <a name="implement-channel-specific-functionality"></a>Implementar a funcionalidade específica do canal
-
 Alguns canais fornecem recursos que não podem ser implementados apenas com o uso de texto e anexos da mensagem. Para implementar funcionalidades específicas do canal, passe metadados nativos para um canal na propriedade _dados do canal_ do objeto da atividade. Por exemplo, o bot pode usar a propriedade dados do canal para instruir o Telegram a enviar um adesivo ou para instruir o Office 365 a enviar um email.
 
 Este artigo descreve como usar a propriedade dados do canal de uma atividade de mensagem para implementar esta funcionalidade específica do canal:
@@ -370,6 +368,72 @@ Este snippet mostra um exemplo da propriedade `channelData` para uma mensagem na
                 }
         }
     ]
+}
+```
+
+## <a name="create-a-line-message"></a>Criar uma mensagem do LINE
+
+Para criar uma mensagem que implementa os tipos de mensagem específicos para LINE (por exemplo, adesivos, modelos ou tipos de ação específica para LINE como abrir a câmera do telefone), defina a propriedade de dados de canal do objeto de atividade como um objeto JSON que especifica os tipos de ação e de mensagem do LINE. 
+
+| Propriedade | DESCRIÇÃO |
+|----|----|
+| Tipo | O nome do tipo de ação ou mensagem do LINE |
+
+Há suporte para esses tipos de mensagem do LINE:
+* Adesivo
+* Imagemap 
+* Modelo (botão, confirmar, carrossel) 
+* Flex 
+
+Essas ações do LINE podem ser especificadas no campo de ação do objeto de tipo de mensagem JSON: 
+* Postback 
+* Mensagem 
+* URI 
+* Datetimerpicker 
+* Câmera 
+* Rolo da câmera 
+* Local padrão 
+
+Para obter detalhes sobre esses métodos do LINE e seus parâmetros, confira a [documentação da API do Bot do LINE](https://developers.line.biz/en/docs/messaging-api/). 
+
+Este trecho mostra um exemplo de uma propriedade `channelData` que especifica um tipo de mensagem de canal `ButtonTemplate` e 3 tipos de ação: câmera, rolo da câmera, Datetimepicker. 
+
+```json
+"channelData": { 
+    "type": "ButtonsTemplate", 
+    "altText": "This is a buttons template", 
+    "template": { 
+        "type": "buttons", 
+        "thumbnailImageUrl": "https://example.com/bot/images/image.jpg", 
+        "imageAspectRatio": "rectangle", 
+        "imageSize": "cover", 
+        "imageBackgroundColor": "#FFFFFF", 
+        "title": "Menu", 
+        "text": "Please select", 
+        "defaultAction": { 
+            "type": "uri", 
+            "label": "View detail", 
+            "uri": "http://example.com/page/123" 
+        }, 
+        "actions": [{ 
+                "type": "cameraRoll", 
+                "label": "Camera roll" 
+            }, 
+            { 
+                "type": "camera", 
+                "label": "Camera" 
+            }, 
+            { 
+                "type": "datetimepicker", 
+                "label": "Select date", 
+                "data": "storeId=12345", 
+                "mode": "datetime", 
+                "initial": "2017-12-25t00:00", 
+                "max": "2018-01-24t23:59", 
+                "min": "2017-12-25t00:00" 
+            } 
+        ] 
+    } 
 }
 ```
 
