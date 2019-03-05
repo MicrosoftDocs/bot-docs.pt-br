@@ -8,14 +8,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 11/21/2018
+ms.date: 02/19/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 57e43e6f0ad8673634bd8faafac79636a672eefd
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: 68c01b0f12790393fe0ee7ae0bd28addf2d26ae7
+ms.sourcegitcommit: 05ddade244874b7d6e2fc91745131b99cc58b0d6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225841"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56591117"
 ---
 # <a name="gather-user-input-using-a-dialog-prompt"></a>Coletar entrada do usuário usando um prompt de diálogo
 
@@ -25,9 +25,9 @@ A coleta de informações por meio da apresentação de perguntas é uma das pri
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- O código neste artigo se baseia no exemplo **DialogPromptBot**. Você precisará de uma cópia do exemplo em [C#](https://aka.ms/dialog-prompt-cs) ou [JS](https://aka.ms/dialog-prompt-js).
-- É necessário um entendimento básico sobre a [biblioteca de caixas de diálogo](bot-builder-concept-dialog.md) e como [gerenciar conversas](bot-builder-dialog-manage-conversation-flow.md). 
-- [Emulador do Bot Framework](https://github.com/Microsoft/BotFramework-Emulator) para teste.
+- O código neste artigo se baseia no exemplo **DialogPromptBot**. Você precisará de uma cópia do [exemplo de C#](https://aka.ms/dialog-prompt-cs) ou do [exemplo de JS](https://aka.ms/dialog-prompt-js).
+- É necessário um entendimento básico sobre a [biblioteca de caixas de diálogo](bot-builder-concept-dialog.md) e como [gerenciar conversas](bot-builder-dialog-manage-conversation-flow.md).
+- O [Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator) para teste.
 
 ## <a name="using-prompts"></a>Usando prompts
 
@@ -44,6 +44,8 @@ public class Reservation
 {
     public int Size { get; set; }
 
+    public string Location { get; set; }
+
     public string Date { get; set; }
 }
 ```
@@ -55,11 +57,14 @@ public class DialogPromptBotAccessors
 {
     public DialogPromptBotAccessors(ConversationState conversationState)
     {
-        ConversationState = conversationState ?? throw new ArgumentNullException(nameof(conversationState));
+        ConversationState = conversationState
+            ?? throw new ArgumentNullException(nameof(conversationState));
     }
 
-    public static string DialogStateAccessorKey { get; } = "DialogPromptBotAccessors.DialogState";
-    public static string ReservationAccessorKey { get; } = "DialogPromptBotAccessors.Reservation";
+    public static string DialogStateAccessorKey { get; }
+        = "DialogPromptBotAccessors.DialogState";
+    public static string ReservationAccessorKey { get; }
+        = "DialogPromptBotAccessors.Reservation";
 
     public IStatePropertyAccessor<DialogState> DialogStateAccessor { get; set; }
     public IStatePropertyAccessor<DialogPromptBot.Reservation> ReservationAccessor { get; set; }
@@ -75,22 +80,27 @@ public void ConfigureServices(IServiceCollection services)
 {
     // ...
 
-    // Create and register state accesssors.
-    // Acessors created here are passed into the IBot-derived class on every turn.
-    services.AddSingleton<BotAccessors>(sp =>
-    {
-        // ...
+    IStorage dataStore = new MemoryStorage();
+    var conversationState = new ConversationState(dataStore);
 
-        // Create the custom state accessor.
+    // Create and register state accesssors.
+    services.AddSingleton<DialogPromptBotAccessors>(sp =>
+    {
         // State accessors enable other components to read and write individual properties of state.
-        var accessors = new BotAccessors(conversationState)
+        var accessors = new DialogPromptBotAccessors(conversationState)
         {
-            DialogStateAccessor = conversationState.CreateProperty<DialogState>(DialogPromptBotAccessors.DialogStateAccessorKey),
-            ReservationAccessor = conversationState.CreateProperty<DialogPromptBot.Reservation>(DialogPromptBotAccessors.ReservationAccessorKey),
+            DialogStateAccessor =
+                conversationState.CreateProperty<DialogState>(
+                    DialogPromptBotAccessors.DialogStateAccessorKey),
+            ReservationAccessor =
+                conversationState.CreateProperty<DialogPromptBot.Reservation>(
+                    DialogPromptBotAccessors.ReservationAccessorKey),
         };
 
         return accessors;
     });
+
+    // ...
 }
 ```
 
@@ -98,22 +108,24 @@ public void ConfigureServices(IServiceCollection services)
 
 Se não for necessária nenhuma alteração no código de serviço HTTP para JavaScript, podemos deixar nosso arquivo index.js como está.
 
-Em bot.js, incluímos as `require` instruções necessárias para o bot de prompt da caixa de diálogo. 
+Em bot.js, incluímos as `require` instruções necessárias para o bot de prompt da caixa de diálogo.
+
 ```javascript
 const { ActivityTypes } = require('botbuilder');
-const { DialogSet, WaterfallDialog, NumberPrompt, DateTimePrompt, ChoicePrompt, DialogTurnStatus } = require('botbuilder-dialogs');
+const { DialogSet, WaterfallDialog, NumberPrompt, DateTimePrompt, ChoicePrompt, DialogTurnStatus }
+    = require('botbuilder-dialogs');
 ```
 
 Adicione os identificadores para os acessadores de propriedade de estado, as caixas de diálogo e os prompts.
 
 ```javascript
-// Define identifiers for state property accessors.
+// Define identifiers for our state property accessors.
 const DIALOG_STATE_ACCESSOR = 'dialogStateAccessor';
 const RESERVATION_ACCESSOR = 'reservationAccessor';
 
-// Define identifiers for dialogs and prompts.
+// Define identifiers for our dialogs and prompts.
 const RESERVATION_DIALOG = 'reservationDialog';
-const PARTY_SIZE_PROMPT = 'partySizePrompt';
+const SIZE_RANGE_PROMPT = 'rangePrompt';
 const LOCATION_PROMPT = 'locationPrompt';
 const RESERVATION_DATE_PROMPT = 'reservationDatePrompt';
 ```
@@ -126,29 +138,41 @@ Em geral, crie e adicione os prompts e os diálogos ao conjunto de caixas de di�
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-Na classe `DialogPromptBot`, defina os identificadores para as caixas de diálogo, os prompts e o conjunto de caixas de diálogo.
+Na classe `DialogPromptBot`, defina os identificadores das caixas de diálogo, os prompts e os valores a serem controlados nas caixas de diálogo.
+
 ```csharp
+// Define identifiers for our dialogs and prompts.
 private const string ReservationDialog = "reservationDialog";
-private const string PartySizePrompt = "partyPrompt";
+private const string PartySizePrompt = "partySizePrompt";
+private const string SizeRangePrompt = "sizeRangePrompt";
 private const string LocationPrompt = "locationPrompt";
 private const string ReservationDatePrompt = "reservationDatePrompt";
 
-private readonly DialogSet _dialogSet;
+// Define keys for tracked values within the dialog.
+private const string LocationKey = "location";
+private const string PartySizeKey = "partySize";
 ```
 
 No construtor do bot, crie o conjunto de caixas de diálogo, adicione os prompts e adicione a caixa de diálogo de reserva. Incluímos a validação personalizada quando criamos os prompts e vamos implementar as funções de validação posteriormente.
 
 ```csharp
-// The following code creates prompts and adds them to an existing dialog set. The DialogSet contains all the dialogs that can 
-// be used at runtime. The prompts also references a validation method is not shown here.
+private readonly DialogSet _dialogSet;
+private readonly DialogPromptBotAccessors _accessors;
 
+// ...
+
+// Initializes a new instance of the <see cref="DialogPromptBot"/> class.
 public DialogPromptBot(DialogPromptBotAccessors accessors, ILoggerFactory loggerFactory)
 {
-   // ...
+    // ...
+
+    _accessors = accessors ?? throw new System.ArgumentNullException(nameof(accessors));
 
     // Create the dialog set and add the prompts, including custom validation.
     _dialogSet = new DialogSet(_accessors.DialogStateAccessor);
+
     _dialogSet.Add(new NumberPrompt<int>(PartySizePrompt, PartySizeValidatorAsync));
+    _dialogSet.Add(new NumberPrompt<int>(SizeRangePrompt, RangeValidatorAsync));
     _dialogSet.Add(new ChoicePrompt(LocationPrompt));
     _dialogSet.Add(new DateTimePrompt(ReservationDatePrompt, DateValidatorAsync));
 
@@ -160,47 +184,38 @@ public DialogPromptBot(DialogPromptBotAccessors accessors, ILoggerFactory logger
         PromptForReservationDateAsync,
         AcknowledgeReservationAsync,
     };
+
     _dialogSet.Add(new WaterfallDialog(ReservationDialog, steps));
-
-
 }
 ```
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 No construtor, crie as propriedades de acessador de estado.
+Em seguida, crie o conjunto de caixas de diálogo e adicione os prompts, incluindo a validação personalizada.
+Em seguida, defina as etapas da caixa de diálogo em cascata e a adicione ao conjunto.
 
 ```javascript
 constructor(conversationState) {
     // Creates our state accessor properties.
+    // See https://aka.ms/about-bot-state-accessors to learn more about the bot state and state accessors.
     this.dialogStateAccessor = conversationState.createProperty(DIALOG_STATE_ACCESSOR);
     this.reservationAccessor = conversationState.createProperty(RESERVATION_ACCESSOR);
     this.conversationState = conversationState;
-    // ...
-    }
-```
 
-Em seguida, crie o conjunto de caixas de diálogo e adicione os prompts, incluindo a validação personalizada.
-
-```javascript
-    // ...
+    // Create the dialog set and add the prompts, including custom validation.
     this.dialogSet = new DialogSet(this.dialogStateAccessor);
-    this.dialogSet.add(new NumberPrompt(PARTY_SIZE_PROMPT, this.partySizeValidator));
-    this.dialogSet.add(new ChoicePrompt (LOCATION_PROMPT));
+    this.dialogSet.add(new NumberPrompt(SIZE_RANGE_PROMPT, this.rangeValidator));
+    this.dialogSet.add(new ChoicePrompt(LOCATION_PROMPT));
     this.dialogSet.add(new DateTimePrompt(RESERVATION_DATE_PROMPT, this.dateValidator));
-    // ...
-```
 
-Em seguida, defina as etapas da caixa de diálogo em cascata e a adicione ao conjunto.
-
-```javascript
-    // ...
+    // Define the steps of the waterfall dialog and add it to the set.
     this.dialogSet.add(new WaterfallDialog(RESERVATION_DIALOG, [
-    this.promptForPartySize.bind(this),
-    this.promptForLocation.bind(this),
-    this.promptForReservationDate.bind(this),
-    this.acknowledgeReservation.bind(this),
- ]));
+        this.promptForPartySize.bind(this),
+        this.promptForLocation.bind(this),
+        this.promptForReservationDate.bind(this),
+        this.acknowledgeReservation.bind(this),
+    ]));
 }
 ```
 
@@ -210,38 +225,48 @@ Em seguida, defina as etapas da caixa de diálogo em cascata e a adicione ao con
 
 No arquivo principal do bot, podemos implementar cada uma de nossas etapas da caixa de diálogo em cascata. Depois que um prompt é adicionado, chame-o em uma etapa de um diálogo em cascata e obtenha o resultado do prompt na etapa do diálogo a seguir. Para chamar um prompt de dentro de uma etapa de cascata, chame o método do _prompt_ do objeto do _contexto da etapa de cascata_. O primeiro parâmetro é a ID do prompt a ser usado e o segundo parâmetro contém as opções do prompt, como o texto usado para pedir entradas ao usuário.
 
+Esses métodos mostram:
+
+- Como chamar um prompt de uma etapa de cascata, incluindo como transmitir _opções de prompt_.
+- Como fornecer parâmetros adicionais a um validador personalizado usando a propriedade _validations_.
+- Como fornecer as escolhas a um prompt de escolha usando a propriedade _choices_.
+
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-No arquivo DialogPromptBot.cs, podemos implementar as etapas `PromptForPartySizeAsync`, `PromptForLocationAsync`, `PromptForReservationDateAsync` e `AcknowledgeReservationAsync` do diálogo em cascata.
+No arquivo **DialogPromptBot.cs**, podemos implementar as etapas da caixa de diálogo em cascata.
 
-Aqui estamos mostrando apenas `PromptForPartySizeAsync` e `PromptForLocationAsync` que são dois delegados de etapas consecutivas de uma caixa de diálogo em cascata.
+Aqui, mostramos as duas primeiras etapas da cascata, `PromptForPartySizeAsync` e `PromptForLocationAsync`.
 
 ```csharp
-private async Task<DialogTurnResult> PromptForPartySizeAsync(WaterfallStepContext stepContext)
+// First step of the main dialog: prompt for party size.
+private async Task<DialogTurnResult> PromptForPartySizeAsync(
+    WaterfallStepContext stepContext,
+    CancellationToken cancellationToken = default(CancellationToken))
 {
     // Prompt for the party size. The result of the prompt is returned to the next step of the waterfall.
-    // If the input is not valid, the prompt is restarted, causing it to reprompt for input
-    // and this set of steps is repeated next turn. Otherwise, the prompt ends and returns a _dialog turn result_ object 
-    // to the parent dialog. Control passes to the next step of your waterfall dialog, with the result of the prompt 
-    // available in the waterfall step context's _result_ property.
     return await stepContext.PromptAsync(
-        PartySizePrompt,
+        SizeRangePrompt,
         new PromptOptions
         {
             Prompt = MessageFactory.Text("How many people is the reservation for?"),
             RetryPrompt = MessageFactory.Text("How large is your party?"),
+            Validations = new Range { Min = 3, Max = 8 },
         },
         cancellationToken);
 }
 
-private async Task<DialogTurnResult> PromptForLocationAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+// Second step of the main dialog: prompt for location.
+private async Task<DialogTurnResult> PromptForLocationAsync(
+    WaterfallStepContext stepContext,
+    CancellationToken cancellationToken)
 {
     // Record the party size information in the current dialog state.
-    int size = (int)stepContext.Result;
-    stepContext.Values["size"] = size;
+    var size = (int)stepContext.Result;
+    stepContext.Values[PartySizeKey] = size;
 
+    // Prompt for the location.
     return await stepContext.PromptAsync(
-        "locationPrompt",
+        LocationPrompt,
         new PromptOptions
         {
             Prompt = MessageFactory.Text("Please choose a location."),
@@ -252,27 +277,33 @@ private async Task<DialogTurnResult> PromptForLocationAsync(WaterfallStepContext
 }
 ```
 
-O exemplo acima mostra como usar um prompt de escolha, fornecendo todas as três propriedades. O método `PromptForLocationAsync` é usado como uma etapa em uma caixa de diálogo em cascata e nosso conjunto de caixas de diálogo contém a caixa de diálogo em cascata e um prompt de escolha com uma ID de `locationPrompt`.
-
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-Aqui, `PARTY_SIZE_PROMPT` e `LOCATION_PROMPT` são as IDs dos prompts e `promptForPartySize` e `promptForLocation` e são funções de duas etapas consecutivas de uma caixa de diálogo em cascata.
+No arquivo **bot.js**, podemos implementar as etapas da caixa de diálogo em cascata.
+
+Aqui, mostramos as duas primeiras etapas da cascata, `promptForPartySize` e `promptForLocation`.
 
 ```javascript
 async promptForPartySize(stepContext) {
     // Prompt for the party size. The result of the prompt is returned to the next step of the waterfall.
     return await stepContext.prompt(
-        PARTY_SIZE_PROMPT, {
+        SIZE_RANGE_PROMPT, {
             prompt: 'How many people is the reservation for?',
-            retryPrompt: 'How large is your party?'
+            retryPrompt: 'How large is your party?',
+            validations: { min: 3, max: 8 },
         });
 }
 
 async promptForLocation(stepContext) {
-    // Prompt for location
-    return await stepContext.prompt(
-        LOCATION_PROMPT, 'Select a location.', ['Redmond', 'Bellevue', 'Seattle']
-    );
+    // Record the party size information in the current dialog state.
+    stepContext.values.size = stepContext.result;
+
+    // Prompt for location.
+    return await stepContext.prompt(LOCATION_PROMPT, {
+        prompt: 'Please choose a location.',
+        retryPrompt: 'Sorry, please choose a location from the list.',
+        choices: ['Redmond', 'Bellevue', 'Seattle'],
+    });
 }
 ```
 
@@ -285,6 +316,7 @@ O segundo parâmetro do método de _prompt_ leva um objeto _prompt options_, que
 | _prompt_ | A atividade inicial para enviar o usuário, para solicitar sua entrada. |
 | _prompt de nova tentativa_ | A atividade de enviar o usuário se a sua primeira entrada não tiver sido validada. |
 | _opções_ | Uma lista de opções para o usuário escolher, para ser usado com um prompt de escolha. |
+| _validações_ | Parâmetros adicionais a serem usados com um validador personalizado. |
 
 Em geral, as propriedades de prompt e de nova tentativa de prompt são atividads, embora exista alguma variação sobre como isso é manipulado em linguagens de programação diferentes.
 
@@ -304,6 +336,7 @@ O contexto do validador de prompt inclui as seguintes propriedades:
 | :--- | :--- |
 | _Contexto_ | O contexto de turnos atual para o bot. |
 | _Reconhecido_ | Um _resultado do reconhecedor de prompts_ que contém informações sobre a entrada do usuário, conforme processado pelo reconhecedor. |
+| _Opções_ | Contém as _opções de prompt_ que foram fornecidas na chamada para iniciar o prompt. |
 
 O resultado do reconhecedor de prompts tem as seguintes propriedades:
 
@@ -320,9 +353,8 @@ Você associa a validação personalizada com um prompt no momento da inicializa
 
 ```csharp
 // ...
-_dialogSet = new DialogSet(_accessors.DialogStateAccessor);
-_dialogSet.Add(new NumberPrompt<int>(PartySizePrompt, PartySizeValidatorAsync));
-_dialogSet.Add(new ChoicePrompt(LocationPrompt));
+_dialogSet.Add(new NumberPrompt<int>(SizeRangePrompt, RangeValidatorAsync));
+// ...
 _dialogSet.Add(new DateTimePrompt(ReservationDatePrompt, DateValidatorAsync));
 // ...
 ```
@@ -331,9 +363,8 @@ _dialogSet.Add(new DateTimePrompt(ReservationDatePrompt, DateValidatorAsync));
 
 ```javascript
 // ...
-this.dialogSet = new DialogSet(this.dialogStateAccessor);
-this.dialogSet.add(new NumberPrompt(PARTY_SIZE_PROMPT, this.partySizeValidator));
-this.dialogSet.add(new ChoicePrompt (LOCATION_PROMPT));
+this.dialogSet.add(new NumberPrompt(SIZE_RANGE_PROMPT, this.rangeValidator));
+// ...
 this.dialogSet.add(new DateTimePrompt(RESERVATION_DATE_PROMPT, this.dateValidator));
 // ...
 ```
@@ -342,12 +373,13 @@ this.dialogSet.add(new DateTimePrompt(RESERVATION_DATE_PROMPT, this.dateValidato
 
 **Validador de tamanho do grupo**
 
-Limitaremos as reservas a grupos de 6 a 20 pessoas.
+Podemos limitar o tamanho das partes que podem fazer uma reserva. O intervalo válido é definido pela propriedade _validations_ que usamos para chamar o prompt de tamanho das partes.
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
-private async Task<bool> PartySizeValidatorAsync(
+// Validates whether the party size is appropriate to make a reservation.
+private async Task<bool> RangeValidatorAsync(
     PromptValidatorContext<int> promptContext,
     CancellationToken cancellationToken)
 {
@@ -361,11 +393,17 @@ private async Task<bool> PartySizeValidatorAsync(
     }
 
     // Check whether the party size is appropriate.
-    int size = promptContext.Recognized.Value;
-    if (size < 6 || size > 20)
+    var size = promptContext.Recognized.Value;
+    var validRange = promptContext.Options.Validations as Range;
+    if (size < validRange.Min || size > validRange.Max)
     {
-        await promptContext.Context.SendActivityAsync(
-            "Sorry, we can only take reservations for parties of 6 to 20.",
+        await promptContext.Context.SendActivitiesAsync(
+            new Activity[]
+            {
+                MessageFactory.Text($"Sorry, we can only take reservations for parties " +
+                    $"of {validRange.Min} to {validRange.Max}."),
+                promptContext.Options.RetryPrompt,
+            },
             cancellationToken: cancellationToken);
         return false;
     }
@@ -377,23 +415,28 @@ private async Task<bool> PartySizeValidatorAsync(
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
-async partySizeValidator(promptContext) {
+async rangeValidator(promptContext) {
     // Check whether the input could be recognized as an integer.
     if (!promptContext.recognized.succeeded) {
         await promptContext.context.sendActivity(
             "I'm sorry, I do not understand. Please enter the number of people in your party.");
         return false;
     }
-    if (promptContext.recognized.value % 1 != 0) {
+    else if (promptContext.recognized.value % 1 != 0) {
         await promptContext.context.sendActivity(
             "I'm sorry, I don't understand fractional people.");
         return false;
     }
+
     // Check whether the party size is appropriate.
     var size = promptContext.recognized.value;
-    if (size < 6 || size > 20) {
+    if (size < promptContext.options.validations.min
+        || size > promptContext.options.validations.max) {
         await promptContext.context.sendActivity(
-            'Sorry, we can only take reservations for parties of 6 to 20.');
+            'Sorry, we can only take reservations for parties of '
+            + `${promptContext.options.validations.min} to `
+            + `${promptContext.options.validations.max}.`);
+        await promptContext.context.sendActivity(promptContext.options.retryPrompt);
         return false;
     }
 
@@ -405,13 +448,14 @@ async partySizeValidator(promptContext) {
 
 **Validação de data e hora**
 
-No validador de data de reserva, limitaremos as reservas a uma hora ou mais a partir da hora atual. Estamos mantendo a primeira resolução que corresponde aos nossos critérios e limpando o restante. O código de validação a seguir não é exaustivo e funciona melhor para a entrada que analisa uma data e hora. Ele demonstra algumas das opções de validação de um prompt de data e hora e sua implementação dependerá de quais informações você está tentando coletar do usuário.
+No validador de data de reserva, limitaremos as reservas a uma hora ou mais a partir da hora atual. Estamos mantendo a primeira resolução que corresponde aos nossos critérios e limpando o restante.
+
+Esse código de validação não é exaustivo e funciona melhor para a entrada que analisa uma data e hora. Ele demonstra algumas das opções de validação de um prompt de data e hora e sua implementação dependerá de quais informações você está tentando coletar do usuário.
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 // Validates whether the reservation date is appropriate.
-// Reservations must be made at least an hour in advance.
 private async Task<bool> DateValidatorAsync(
     PromptValidatorContext<IList<DateTimeResolution>> promptContext,
     CancellationToken cancellationToken = default(CancellationToken))
@@ -422,14 +466,16 @@ private async Task<bool> DateValidatorAsync(
         await promptContext.Context.SendActivityAsync(
             "I'm sorry, I do not understand. Please enter the date or time for your reservation.",
             cancellationToken: cancellationToken);
+
         return false;
     }
 
     // Check whether any of the recognized date-times are appropriate,
     // and if so, return the first appropriate date-time.
-    DateTime earliest = DateTime.Now.AddHours(1.0);
-    DateTimeResolution value = promptContext.Recognized.Value.FirstOrDefault(v =>
-        DateTime.TryParse(v.Value ?? v.Start, out DateTime time) && DateTime.Compare(earliest,time) <= 0);
+    var earliest = DateTime.Now.AddHours(1.0);
+    var value = promptContext.Recognized.Value.FirstOrDefault(v =>
+        DateTime.TryParse(v.Value ?? v.Start, out var time) && DateTime.Compare(earliest, time) <= 0);
+
     if (value != null)
     {
         promptContext.Recognized.Value.Clear();
@@ -440,6 +486,7 @@ private async Task<bool> DateValidatorAsync(
     await promptContext.Context.SendActivityAsync(
             "I'm sorry, we can't take reservations earlier than an hour from now.",
             cancellationToken: cancellationToken);
+
     return false;
 }
 ```
@@ -481,20 +528,28 @@ async dateValidator(promptContext) {
 
 O prompt de data e hora retorna uma lista ou uma matriz das possíveis _resoluções de data e hora_ que correspondem à entrada do usuário. Por exemplo, 9:00 pode significar 9 AM ou 9 PM e domingo também é ambíguo. Além disso, uma resolução de data e hora pode representar uma data, uma hora, uma data e hora ou um intervalo. O prompt de data e hora usa [Microsoft/Recognizers-Text](https://github.com/Microsoft/Recognizers-Text) para analisar a entrada do usuário.
 
-### <a name="update-the-turn-handler"></a>Atualizar o manipulador de turnos
+## <a name="update-the-turn-handler"></a>Atualizar o manipulador de turnos
 
 Atualize o manipulador de turnos do bot para iniciar o diálogo e aceitar um valor de retorno no diálogo quando ele for concluído. Suponha que o usuário esteja interagindo com um bot, o bot tem uma caixa de diálogo em cascata ativa e, na próxima etapa, o diálogo usa um prompt.
 
-1. Quando o usuário envia uma mensagem para o bot, este faz o seguinte:
-   1. O manipulador de turnos do bot cria um contexto diálogo e chamar seu método _continuar_.
-   1. O controle passa para a próxima etapa no diálogo ativo, que neste caso é o diálogo em cascata.
-   1. A etapa chama seu método de _prompt_ da etapa em cascata para solicitar entradas ao usuário.
-   1. O contexto da etapa em cascata envia por push o prompt para a pilha e o inicia-o.
-   1. O prompt envia uma atividade para o usuário para solicitar sua entrada.
-1. Quando o usuário envia uma mensagem para o bot, ele faz o seguinte:
-   1. O manipulador de turnos do bot cria um contexto diálogo e chamar seu método _continuar_.
-   1. O controle passa para a próxima etapa no diálogo ativo, que é o segundo turno do prompt.
-   1. O prompt valida a entrada do usuário.
+Quando o usuário envia uma mensagem para o bot, este faz o seguinte:
+
+1. O bot recupera informações de estado.
+1. O bot cria um contexto de caixa de diálogo
+    - Se não houver caixas de diálogo ativas, ele iniciará a caixa de diálogo, a menos que o usuário já tenha feito uma reserva.
+    - Se houver uma caixa de diálogo ativa, o bot a continuará. Se a caixa de diálogo terminar, os detalhes de reserva serão registrados no cache de estado.
+1. O bot salva todas as alterações no estado.
+
+Quando uma etapa na caixa de diálogo chama o método _prompt_ do contexto de etapa:
+
+1. Uma nova instância do prompt é criada, colocada na pilha da caixa de diálogo e iniciada. (A caixa de diálogo principal aguarda o prompt para terminar antes de continuar.)
+1. O prompt envia uma atividade para o usuário, que pede para solicitar sua entrada.
+
+Quando a entrada for enviada para o prompt:
+
+1. o prompt tentará processar a entrada, de acordo com o tipo de prompt, como um prompt numérico ou um prompt de opção, e assim por diante.
+1. Se o prompt incluir a validação personalizada, o código de validação personalizada será executado.
+1. Se a entrada transmitir todas as validações, o prompt terminará, retornando a entrada processada. Caso contrário, o prompt será iniciado novamente.
 
 **Manipulando os resultados do prompt**
 
@@ -507,7 +562,9 @@ O que você faz com o resultado do prompt depende da razão pela qual você soli
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
-public async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancellationToken = default(CancellationToken))
+public async Task OnTurnAsync(
+    ITurnContext turnContext,
+    CancellationToken cancellationToken = default(CancellationToken))
 {
     switch (turnContext.Activity.Type)
     {
@@ -515,11 +572,13 @@ public async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancel
         case ActivityTypes.Message:
 
             // Get the current reservation info from state.
-            Reservation reservation = await _accessors.ReservationAccessor.GetAsync(
-                turnContext, () => null, cancellationToken);
+            var reservation = await _accessors.ReservationAccessor.GetAsync(
+                turnContext,
+                () => null,
+                cancellationToken);
 
             // Generate a dialog context for our dialog set.
-            DialogContext dc = await _dialogSet.CreateContextAsync(turnContext, cancellationToken);
+            var dc = await _dialogSet.CreateContextAsync(turnContext, cancellationToken);
 
             if (dc.ActiveDialog is null)
             {
@@ -533,14 +592,14 @@ public async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancel
                 {
                     // Otherwise, send a status message.
                     await turnContext.SendActivityAsync(
-                        $"We'll see you {reservation.Date}.",
+                        $"We'll see you on {reservation.Date}.",
                         cancellationToken: cancellationToken);
                 }
             }
             else
             {
                 // Continue the dialog.
-                DialogTurnResult dialogTurnResult = await dc.ContinueDialogAsync(cancellationToken);
+                var dialogTurnResult = await dc.ContinueDialogAsync(cancellationToken);
 
                 // If the dialog completed this turn, record the reservation info.
                 if (dialogTurnResult.Status is DialogTurnStatus.Complete)
@@ -553,18 +612,15 @@ public async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancel
 
                     // Send a confirmation message to the user.
                     await turnContext.SendActivityAsync(
-                        $"Your party of {reservation.Size} is confirmed for {reservation.Date}.",
+                        $"Your party of {reservation.Size} is confirmed for " +
+                        $"{reservation.Date} in {reservation.Location}.",
                         cancellationToken: cancellationToken);
                 }
             }
 
             // Save the updated dialog state into the conversation state.
-            await _accessors.ConversationState.SaveChangesAsync(turnContext, false, cancellationToken);
-            break;
-
-        // Handle other incoming activity types as appropriate to your bot.
-        default:
-            await turnContext.SendActivityAsync($"{turnContext.Activity.Type} event detected");
+            await _accessors.ConversationState.SaveChangesAsync(
+                turnContext, false, cancellationToken);
             break;
     }
 }
@@ -591,7 +647,7 @@ async onTurn(turnContext) {
                 else {
                     // Otherwise, send a status message.
                     await turnContext.sendActivity(
-                        `We'll see you ${reservation.date}.`);
+                        `We'll see you on ${reservation.date}.`);
                 }
             }
             else {
@@ -607,7 +663,8 @@ async onTurn(turnContext) {
                     // Send a confirmation message to the user.
                     await turnContext.sendActivity(
                         `Your party of ${dialogTurnResult.result.size} is ` +
-                        `confirmed for ${dialogTurnResult.result.date}.`);
+                        `confirmed for ${dialogTurnResult.result.date} in ` +
+                        `${dialogTurnResult.result.location}.`);
                 }
             }
 

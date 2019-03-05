@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: cognitive-services
 ms.date: 11/28/18
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4c43426f508d629c325889da6a9f7b06cac7e846
-ms.sourcegitcommit: c6ce4c42fc56ce1e12b45358d2c747fb77eb74e2
+ms.openlocfilehash: a30a3f5dfe4693d67a4cd42a50d35893f8888e07
+ms.sourcegitcommit: 05ddade244874b7d6e2fc91745131b99cc58b0d6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54453890"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56591034"
 ---
 # <a name="add-natural-language-understanding-to-your-bot"></a>Adicionar reconhecimento de idioma natural ao seu bot
 
@@ -84,10 +84,14 @@ Adicione as informações necessárias para acessar seu aplicativo LUIS incluind
 # <a name="ctabcs"></a>[C#](#tab/cs)
 
 ### <a name="configure-your-bot-to-use-your-luis-app"></a>Configure seu bot para usar seu aplicativo LUIS
+Certifique-se de que o pacote do nuget **Microsoft.Bot.Builder.AI.Luis** está instalado para seu projeto.
 
 Em seguida, inicializamos uma nova instância da classe BotService em `BotServices.cs`, que captura as informações acima de seu arquivo `.bot`. O serviço externo é configurado usando a classe `BotConfiguration`.
 
 ```csharp
+using Microsoft.Bot.Builder.AI.Luis;
+using Microsoft.Bot.Configuration;
+
 public class BotServices
 {
     // Initializes a new instance of the BotServices class
@@ -131,10 +135,9 @@ public void ConfigureServices(IServiceCollection services)
     var botConfig = BotConfiguration.Load(botFilePath ?? @".\nlp-with-luis.bot", secretKey);
     services.AddSingleton(sp => botConfig ?? throw new InvalidOperationException($"The .bot config file could not be loaded. ({botConfig})"));
 
-    // Initialize Bot Connected Services clients.
+    // Initialize Bot Connected Services client.
     var connectedServices = new BotServices(botConfig);
     services.AddSingleton(sp => connectedServices);
-    services.AddSingleton(sp => botConfig);
 
     services.AddBot<LuisBot>(options =>
     {

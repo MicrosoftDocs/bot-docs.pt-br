@@ -8,14 +8,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 11/20/2018
+ms.date: 02/19/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2e591f19f7df8fa6281573c0ac7f1330d95f4c53
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: 4b18cc5d32d04b69fa349d22058b51fcec0e12d7
+ms.sourcegitcommit: 05ddade244874b7d6e2fc91745131b99cc58b0d6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225431"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56591067"
 ---
 # <a name="create-your-own-prompts-to-gather-user-input"></a>Crie seus próprio prompts para coletar entradas do usuário
 
@@ -84,6 +84,8 @@ Se precisarmos preencher o perfil do usuário, poderemos chamar o método auxili
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
+No **CustomPromptBot.cs**, obtenha a propriedade de estado e chame o método auxiliar. (Observe que a propriedade de instância `_accessors` é definida no construtor do bot.)
+
 ```csharp
 public async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancellationToken = default(CancellationToken))
 {
@@ -106,6 +108,8 @@ public async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancel
 ```
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+No **bot.js**, obtenha a propriedade de estado e chame o método auxiliar. (Observe que a propriedade de instância `conversationFlow` é definida no construtor do bot.)
 
 ```javascript
 // The bot's turn handler.

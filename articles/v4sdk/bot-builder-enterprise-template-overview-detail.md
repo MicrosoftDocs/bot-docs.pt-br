@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 09/18/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b337614b37142dc15f6cf085388dace9f4b7cafe
-ms.sourcegitcommit: 66769e697d94f7bf5e0441dfacf2c0e3768845ea
+ms.openlocfilehash: 0fb59e63dc8786e204085eaa8570ec4b751492ff
+ms.sourcegitcommit: 05ddade244874b7d6e2fc91745131b99cc58b0d6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53654967"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56591077"
 ---
 # <a name="enterprise-template---detailed-overview"></a>Modelo do Enterprise: visão geral detalhada
 
@@ -52,7 +52,7 @@ A integração do Application Insights fornece insights técnicos/operacionais r
 
 A telemetria no nível do Bot está intrinsecamente vinculada à telemetria técnica e operacional, permitindo que você verifique como uma pergunta de um usuário foi respondida e vice-versa.
 
-Um componente de middleware, combinado com uma classe wrapper em torno das classes de SDK QnA Maker e LuisRecognizer, fornece uma maneira elegante de coletar um conjunto consistente de eventos. Esses eventos consistentes podem ser usados por ferramentas do Application Insights juntamente com ferramentas como o Power BI.
+Um componente de middleware, combinado com uma classe wrapper em torno das classes de SDK QnA Maker e LuisRecognizer, fornece uma maneira elegante de coletar um conjunto consistente de eventos. Esses eventos consistentes podem ser usados pelas ferramentas do Application Insights juntamente com ferramentas como o Power BI.
 
 Um painel do Power BI de exemplo é fornecido com cada projeto criado usando o Modelo de Bot do Enterprise. Consulte a seção [PowerBI](bot-builder-enterprise-template-powerbi.md) para obter mais informações.
 

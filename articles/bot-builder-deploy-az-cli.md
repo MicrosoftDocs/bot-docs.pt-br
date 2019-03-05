@@ -8,15 +8,15 @@ manager: kamrani
 ms.topic: get-started-article
 ms.service: bot-service
 ms.subservice: abs
-ms.date: 02/07/2019
-ms.openlocfilehash: b4c3b982bf061b3a24c6d240b05dc40b0cf07816
-ms.sourcegitcommit: 8183bcb34cecbc17b356eadc425e9d3212547e27
+ms.date: 02/13/2019
+ms.openlocfilehash: 53889703d58983a87a7a2d16622f1298d56c87db
+ms.sourcegitcommit: 05ddade244874b7d6e2fc91745131b99cc58b0d6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55971416"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56591024"
 ---
-# <a name="deploy-your-bot"></a>Implantar seu bot 
+# <a name="deploy-your-bot"></a>Implantar seu bot
 
 [!INCLUDE [pre-release-label](./includes/pre-release-label.md)]
 
@@ -25,11 +25,23 @@ Depois de ter criado e testado seu bot localmente, é possível implantá-lo no 
 Neste artigo, mostraremos como implantar os bots de C# e de JavaScript no Azure. Seria útil ler este artigo antes de seguir as etapas, para que você entenda tudo que está relacionado à implantação de um bot.
 
 ## <a name="prerequisites"></a>Pré-requisitos
-- Instale a versão mais recente da ferramenta [MSBot](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/MSBot).
-- Um bot [CSharp](./dotnet/bot-builder-dotnet-sdk-quickstart.md) ou [JavaScript](./javascript/bot-builder-javascript-quickstart.md) que você tenha desenvolvido em seu computador local. 
 
-## <a name="create-a-web-app-bot-in-azure"></a>Criar um Bot de Aplicativo Web no Azure
-Esta seção é opcional se você já tiver criado um bot no Azure o qual você deseja usar.
+- Instale a versão mais recente da ferramenta [msbot](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/MSBot).
+- Um bot [CSharp](./dotnet/bot-builder-dotnet-sdk-quickstart.md) ou [JavaScript](./javascript/bot-builder-javascript-quickstart.md) que você tenha desenvolvido em seu computador local.
+
+## <a name="1-prepare-for-deployment"></a>1. Preparar para a implantação
+O processo de implantação requer um Bot de aplicativo Web de destino no Azure para que seu bot local possa ser implantado nele. O Bot de aplicativo Web de destino e os recursos que são provisionados com ele no Azure são usados pelo seu bot local na implantação. Isso é necessário porque seu bot local não tem todos os recursos do Azure exigidos provisionados. Quando você cria um bot de aplicativo Web de destino, os seguintes recursos são provisionados para você:
+-   Bot de aplicativo Web - você usará este bot para implantar seu bot local.
+-   Plano do Serviço de Aplicativo - fornece os recursos que um aplicativo do Serviço de Aplicativo precisa para ser executado.
+-   Serviço de Aplicativo - serviço para hospedar aplicativos Web
+-   Conta de Armazenamento - contém todos os objetos de dados do Armazenamento do Azure: blobs, arquivos, filas, tabelas e discos.
+
+Durante a criação do Bot de aplicativo Web de destino, a ID do aplicativo e a senha também são geradas para seu bot. No Azure, a ID do aplicativo e a senha oferecem suporte para a [autenticação e autorização do serviço](https://docs.microsoft.com/azure/app-service/overview-authentication-authorization). Você recuperará algumas dessas informações para usar em seu código de bot local. 
+
+> [!IMPORTANT]
+> A linguagem do modelo de bot para o serviço deve corresponder à linguagem na qual seu bot foi gravado.
+
+Se você já tiver criado um bot no Azure que gostaria de usar, a criação de um novo bot de aplicativo Web será opcional.
 
 1. Faça logon no [Portal do Azure](https://portal.azure.com).
 1. Clique no link **Criar recurso** localizado no canto superior esquerdo do portal do Azure e, em seguida, selecione **IA + Machine Learning > bot de Aplicativo Web**.
@@ -37,13 +49,16 @@ Esta seção é opcional se você já tiver criado um bot no Azure o qual você 
 1. Na folha **Serviço de Bot**, forneça as informações necessárias sobre seu bot.
 1. Clique em **Criar** para criar o serviço e implantar o bot na nuvem. Esse processo pode levar vários minutos.
 
-## <a name="download-the-source-code"></a>Fazer o download do código-fonte
+### <a name="download-the-source-code"></a>Fazer o download do código-fonte
+Depois de criar o Bot de aplicativo Web de destino, será preciso baixar do código do bot no portal do Azure em seu computador local. O download do código deve ser feito para obter as referências de serviço que estão no [arquivo .bot](./v4sdk/bot-file-basics.md). Essas referências de serviço servem para o bot de aplicativo Web, Plano do Serviço de Aplicativo, Serviço de Aplicativo e a Conta de Armazenamento. 
+
 1. Na seção **Gerenciamento do Bot**, clique em **Compilar**.
 1. Clique no link **Baixar o código-fonte do Bot** no painel à direita.
 1. Siga os prompts para baixar o código e, em seguida, descompacte a pasta.
 
-## <a name="decrypt-the-bot-file"></a>Descriptografe o arquivo .bot
-O código-fonte que você baixou do portal do Azure inclui um arquivo .bot criptografado. Você precisa descriptografá-lo para copiar os valores para o seu arquivo .bot local.  
+### <a name="decrypt-the-bot-file"></a>Descriptografe o arquivo .bot
+
+O código-fonte que você baixou do portal do Azure inclui um arquivo .bot criptografado. Você precisa descriptografá-lo para copiar os valores para o seu arquivo .bot local. Essa etapa é necessária para que você possa copiar referências de serviço reais e não os arquivos criptografados.  
 
 1. Abra o recurso de Bot do aplicativo Web para o seu bot no portal do Azure.
 1. Abra as **Configurações do Aplicativo** do seu bot.
@@ -51,30 +66,76 @@ O código-fonte que você baixou do portal do Azure inclui um arquivo .bot cript
 1. Localize o **botFileSecret** e copie seu valor.
 
 Use `msbot cli` para descriptografar o arquivo.
-```
+
+```cmd
 msbot secret --bot <name-of-bot-file> --secret "<bot-file-secret>" --clear
 ```
 
-## <a name="update-the-bot-file"></a>Atualize o arquivo .bot
-Abra o arquivo .bot que você descriptografou. Copie as entradas listadas na seção `services` e adicione-as ao seu arquivo .bot local. Por exemplo: 
+### <a name="update-your-local-bot-file"></a>Atualizar seu arquivo .bot local
 
-```
-{
-   "type": "endpoint",
-   "name": "production",
-   "endpoint": "https://<something>.azurewebsites.net/api/messages",
-   "appId": "<App Id>",
-   "appPassword": "<App Password>",
-   "id": "2
-}
+Abra o arquivo .bot que você descriptografou. Copie **todas** as entradas listadas na seção `services` e adicione-as ao arquivo .bot local. Resolva quaisquer entradas de serviço duplicadas ou IDs de serviço duplicadas. Mantenha todas as referências de serviço adicionais das quais seu bot depende. Por exemplo: 
+
+```json
+"services": [
+    {
+        "type": "abs",
+        "tenantId": "<tenant-id>",
+        "subscriptionId": "<subscription-id>",
+        "resourceGroup": "<resource-group-name>",
+        "serviceName": "<bot-service-name>",
+        "name": "<friendly-service-name>",
+        "id": "1",
+        "appId": "<app-id>"
+    },
+    {
+        "type": "blob",
+        "connectionString": "<connection-string>",
+        "tenantId": "<tenant-id>",
+        "subscriptionId": "<subscription-id>",
+        "resourceGroup": "<resource-group-name>",
+        "serviceName": "<blob-service-name>",
+        "id": "2"
+    },
+    {
+        "type": "endpoint",
+        "appId": "",
+        "appPassword": "",
+        "endpoint": "<local-endpoint-url>",
+        "name": "development",
+        "id": "3"
+    },
+    {
+        "type": "endpoint",
+        "appId": "<app-id>",
+        "appPassword": "<app-password>",
+        "endpoint": "<hosted-endpoint-url>",
+        "name": "production",
+        "id": "4"
+    },
+    {
+        "type": "appInsights",
+        "instrumentationKey": "<instrumentation-key>",
+        "applicationId": "<appinsights-app-id>",
+        "apiKeys": {},
+        "tenantId": "<tenant-id>",
+        "subscriptionId": "<subscription-id>",
+        "resourceGroup": "<resource-group>",
+        "serviceName": "<appinsights-service-name>",
+        "id": "5"
+    }
+],
 ```
 
 Salve o arquivo.
- 
-## <a name="setup-a-repository"></a>Configurar um repositório
-Crie um repositório git usando o seu provedor de controle do código-fonte git preferido. Confirme o código no repositório.
- 
-## <a name="update-app-settings-in-azure"></a>Atualizar configurações do aplicativo no Azure
+
+### <a name="setup-a-repository"></a>Configurar um repositório
+
+Para oferecer suporte para a implantação contínua, crie um repositório git usando seu provedor de controle de origem git preferido. Confirme o código no repositório. 
+
+Verifique se a raiz do repositório tem os arquivos corretos, conforme descrito na seção [preparar seu repositório](https://docs.microsoft.com/azure/app-service/deploy-continuous-deployment#prepare-your-repository).
+
+### <a name="update-app-settings-in-azure"></a>Atualizar configurações do aplicativo no Azure
+O bot local não usa um arquivo .bot criptografado, mas o portal do Azure usa-o e esse que você está implantando não 
 1. Abra o recurso de **Bot do aplicativo Web** para o seu bot no portal do Azure.
 1. Abra as **Configurações do Aplicativo** do seu bot.
 1. Na janela **Configurações do Aplicativo**, role para baixo até **Configurações do aplicativo**.
@@ -82,14 +143,20 @@ Crie um repositório git usando o seu provedor de controle do código-fonte git 
 1. Atualize o nome do arquivo bot para corresponder ao arquivo inserido no repositório.
 1. Salve as alterações.
 
+## <a name="2-deploy-using-azure-deployment-center"></a>2. Implantar usando a Central de Implantação do Azure
 
-## <a name="deploy-using-azure-deployment-center"></a>Implantar usando a Central de Implantação do Azure
-Agora, você precisa conectar seu repositório git aos Serviços de Aplicativo do Azure. Siga as instruções no tópico [configurar a implantação contínua](https://docs.microsoft.com/en-us/azure/app-service/deploy-continuous-deployment). Observe que é recomendável compilar usando `App Service Kudu build server`.
+Agora é preciso carregar seu código de bot no Azure. Siga as instruções no tópico [Implantação contínua do Serviço de Aplicativo do Azure](https://docs.microsoft.com/azure/app-service/deploy-continuous-deployment).
 
-## <a name="test-your-deployment"></a>Testar a implantação
-Aguarde alguns segundos após uma implantação bem-sucedida e, opcionalmente, reinicie o aplicativo Web para limpar qualquer cache. Volte para a folha de Bot do Aplicativo Web e teste usando o Webchat fornecido no portal do Azure.
+Observe que é recomendável compilar usando `App Service Kudu build server`.
+
+Depois de configurar a implantação contínua, as alterações que você confirmar em seu repositório serão publicadas. No entanto, se adicionar serviços ao bot, você precisará adicionar entradas ao arquivo .bot para esses.
+
+## <a name="3-test-your-deployment"></a>3. Testar a implantação
+
+Aguarde alguns segundos após uma implantação bem-sucedida e, opcionalmente, reinicie o aplicativo Web para limpar entradas no cache. Volte para a folha de Bot do Aplicativo Web e teste usando o Webchat fornecido no portal do Azure.
 
 ## <a name="additional-resources"></a>Recursos adicionais
+
 - [Como investigar problemas comuns com implantação contínua](https://github.com/projectkudu/kudu/wiki/Investigating-continuous-deployment)
 
 <!--

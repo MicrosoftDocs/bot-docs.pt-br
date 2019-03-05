@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: abs
 ms.date: 12/13/2017
-ms.openlocfilehash: e68db6c1fe9d3d136a8643652df034fb6df2858f
-ms.sourcegitcommit: 8b7bdbcbb01054f6aeb80d4a65b29177b30e1c20
+ms.openlocfilehash: fef82d27c6dd4fb61c9a0cf864e76a88128847d7
+ms.sourcegitcommit: 05ddade244874b7d6e2fc91745131b99cc58b0d6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51645596"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56591157"
 ---
 # <a name="manage-a-bot"></a>Gerenciar um bot
 
@@ -46,13 +46,17 @@ Na folha **Visão geral**, você pode encontrar informações de alto nível sob
 
 ![Configurações do Serviço de Aplicativo](~/media/azure-manage-a-bot/app-service-settings.png)
 
-A folha **Configurações de Aplicativo** contém informações detalhadas sobre o bot, tais como o ambiente do bot, ID, chave do Application Insights, a ID do Aplicativo da Microsoft e a senha do Aplicativo da Microsoft.
+A folha **Configurações de Aplicativo** contém informações detalhadas sobre o bot, como o ambiente do bot, configurações de depuração e as chaves de configuração do aplicativo, como botFilePath e botFileSecret.
 
 ### <a name="microsoftappid-and-microsoftapppassword"></a>MicrosoftAppID e MicrosoftAppPassword
 
-Você pode encontrar o **MicrosoftAppID** do bot na folha **Configurações**. A **MicrosoftAppPassword** do bot é mostrada apenas quando você cria seu bot pela primeira vez.
+O **MicrosoftAppID** e **MicrosoftAppPassword** são mantidos dentro do arquivo `.bot` do bot. Para recuperá-los, baixe o arquivo de bot e descriptografe-o, que pode ser necessário para que você possa testar localmente com a ID e senha.
 
-![Microsoft AppID e Senha](~/media/azure-manage-a-bot/app-settings.png)
+### <a name="bot-file-path-and-secret"></a>Segredo e caminho do arquivo de bot
+
+Você pode encontrar o **botFilePath** e o **botFileSecret** do bot na folha **Configurações do aplicativo**.
+
+![Segredo e caminho do arquivo de bot da Microsoft](~/media/azure-manage-a-bot/app-settings.png)
 
 > [!NOTE]
 > O serviço de bot **Registro de Canais de Bot** vem com uma *MicrosoftAppID*, mas por não existir nenhum serviço de aplicativo associado a esse tipo de serviço, não há nenhuma folha **Configurações do Aplicativo** para pesquisar a *MicrosoftAppPassword*. Para obter a senha, é necessário gerar uma. Para gerar a senha para um **Registro de Canais de Bot**, consulte [Senha do Registro de Canais de Bot](bot-service-quickstart-registration.md#bot-channels-registration-password)

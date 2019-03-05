@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 8ca8043c5680a993fa27e2febb9740206691884c
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: e5f8ec76e5711371653e75e11ac6fcc447b4f2e1
+ms.sourcegitcommit: 05ddade244874b7d6e2fc91745131b99cc58b0d6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225571"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56590932"
 ---
 # <a name="send-proactive-messages"></a>Enviar mensagens proativas
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
@@ -71,7 +71,7 @@ function sendProactiveMessage(address) {
 
 ## <a name="send-a-dialog-based-proactive-message"></a>Enviar uma mensagem proativa baseada em diálogo
 
-Os exemplos de código a seguir mostram como enviar uma mensagem proativa baseada em diálogo usando o SDK do Bot Framework para Node.js. Encontre o exemplo de trabalho completo na pasta [Microsoft/BotBuilder-Samples/Node/core-proactiveMessages/startNewDialog](https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/core-proactiveMessages/startNewDialog).
+Os exemplos de código a seguir mostram como enviar uma mensagem proativa baseada em diálogo usando o SDK do Bot Framework para Node.js. Você pode encontrar o exemplo de trabalho completo na pasta [startNewDialog](https://aka.ms/js-startnewdialog-sample-v3).
 
 Para poder enviar uma mensagem baseada em diálogo para um usuário, primeiro o bot deve coletar (e salvar) as informações da conversa atual. O objeto `session.message.address` inclui todas as informações que o bot precisará para enviar uma mensagem proativa baseada em diálogo para o usuário. 
 
@@ -103,7 +103,7 @@ function startProactiveDialog(address) {
 ```
 
 > [!NOTE]
-> O exemplo de código acima exige um arquivo personalizado, **botadapter.js**, que você pode [baixar do GitHub](https://github.com/Microsoft/BotBuilder-Samples/blob/master/Node/core-proactiveMessages/startNewDialog/botadapter.js).
+> O exemplo de código acima exige um arquivo personalizado, **botadapter.js**, que você pode [baixar do GitHub](https://aka.ms/js-botadaptor-file-v3).
 
 O diálogo de pesquisa controla a conversa até que ela termine. Em seguida, ele fecha (chamando `session.endDialog()`) e devolve o controle para o diálogo anterior. 
 
@@ -122,7 +122,7 @@ bot.dialog('survey', function (session, args, next) {
 
 ## <a name="sample-code"></a>Exemplo de código
 
-Veja um exemplo completo mostrando como enviar mensagens proativas usando o SDK do Bot Framework para Node.js em <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/core-proactiveMessages" target="_blank">Exemplo de mensagens proativas</a> no GitHub. No exemplo de Mensagens Proativas, <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/core-proactiveMessages/simpleSendMessage" target="_blank">simpleSendMessage</a> mostra como enviar uma mensagem proativa ad-hoc e <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/core-proactiveMessages/startNewDialog" target="_blank">startNewDialog</a> mostra como enviar uma mensagem proativa baseada em diálogo.
+Veja um exemplo completo mostrando como enviar mensagens proativas usando o SDK do Bot Framework para Node.js em <a href="https://aka.ms/js-proactivemessages-sample-v3" target="_blank">Exemplo de mensagens proativas</a> no GitHub. No exemplo de Mensagens Proativas, <a href="https://aka.ms/js-simplesendmessage-sample-v3" target="_blank">simpleSendMessage</a> mostra como enviar uma mensagem proativa ad-hoc e <a href="https://aka.ms/js-startnewdialog-sample-v3" target="_blank">startNewDialog</a> mostra como enviar uma mensagem proativa baseada em diálogo.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
