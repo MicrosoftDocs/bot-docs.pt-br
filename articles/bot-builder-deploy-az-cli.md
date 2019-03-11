@@ -9,12 +9,12 @@ ms.topic: get-started-article
 ms.service: bot-service
 ms.subservice: abs
 ms.date: 02/13/2019
-ms.openlocfilehash: 53889703d58983a87a7a2d16622f1298d56c87db
-ms.sourcegitcommit: 05ddade244874b7d6e2fc91745131b99cc58b0d6
+ms.openlocfilehash: 2ee66ac335ab9e34d7a73996d44da939e74d5b87
+ms.sourcegitcommit: cf3786c6e092adec5409d852849927dc1428e8a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56591024"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57224914"
 ---
 # <a name="deploy-your-bot"></a>Implantar seu bot
 
@@ -64,12 +64,11 @@ O código-fonte que você baixou do portal do Azure inclui um arquivo .bot cript
 1. Abra as **Configurações do Aplicativo** do seu bot.
 1. Na janela **Configurações do Aplicativo**, role para baixo até **Configurações do aplicativo**.
 1. Localize o **botFileSecret** e copie seu valor.
+1. Use `msbot cli` para descriptografar o arquivo.
 
-Use `msbot cli` para descriptografar o arquivo.
-
-```cmd
-msbot secret --bot <name-of-bot-file> --secret "<bot-file-secret>" --clear
-```
+    ```cmd
+    msbot secret --bot <name-of-bot-file> --secret "<bot-file-secret>" --clear
+    ```
 
 ### <a name="update-your-local-bot-file"></a>Atualizar seu arquivo .bot local
 
@@ -128,18 +127,24 @@ Abra o arquivo .bot que você descriptografou. Copie **todas** as entradas lista
 
 Salve o arquivo.
 
+Você pode usar a ferramenta msbot para gerar um novo segredo e criptografar o arquivo .bot antes de publicar. Se você criptografar o arquivo .bot novamente, atualize o **botFileSecret** do bot no portal do Azure para que contenha o novo segredo.
+
+```cmd
+msbot secret --bot <name-of-bot-file> --new
+```
+
 ### <a name="setup-a-repository"></a>Configurar um repositório
 
-Para oferecer suporte para a implantação contínua, crie um repositório git usando seu provedor de controle de origem git preferido. Confirme o código no repositório. 
+Para oferecer suporte para a implantação contínua, crie um repositório git usando seu provedor de controle de origem git preferido. Confirme o código no repositório.
 
 Verifique se a raiz do repositório tem os arquivos corretos, conforme descrito na seção [preparar seu repositório](https://docs.microsoft.com/azure/app-service/deploy-continuous-deployment#prepare-your-repository).
 
 ### <a name="update-app-settings-in-azure"></a>Atualizar configurações do aplicativo no Azure
-O bot local não usa um arquivo .bot criptografado, mas o portal do Azure usa-o e esse que você está implantando não 
+O bot local não usa um arquivo .bot criptografado, mas o portal do Azure é configurado para usar um arquivo .bot criptografado. Você pode resolver isso removendo o **botFileSecret** armazenado nas configurações de bot do Azure.
 1. Abra o recurso de **Bot do aplicativo Web** para o seu bot no portal do Azure.
 1. Abra as **Configurações do Aplicativo** do seu bot.
 1. Na janela **Configurações do Aplicativo**, role para baixo até **Configurações do aplicativo**.
-1. Localize o **botFileSecret** e o exclua.
+1. Localize o **botFileSecret** e o exclua. (Se você criptografar o arquivo .bot novamente, verifique se o **botFileSecret** contém o novo segredo e **não exclua** a definição.)
 1. Atualize o nome do arquivo bot para corresponder ao arquivo inserido no repositório.
 1. Salve as alterações.
 

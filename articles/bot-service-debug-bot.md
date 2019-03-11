@@ -8,13 +8,13 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 2/09/2019
-ms.openlocfilehash: 3aae1e212759dd70226fab3b0567ba5b4e345a30
-ms.sourcegitcommit: 8183bcb34cecbc17b356eadc425e9d3212547e27
+ms.date: 2/26/2019
+ms.openlocfilehash: 1e806358ffdba90848f0c8124c8315fd4e2dec76
+ms.sourcegitcommit: cf3786c6e092adec5409d852849927dc1428e8a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55971446"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57224834"
 ---
 # <a name="debug-a-bot"></a>Depurar um bot
 
@@ -131,8 +131,10 @@ Além disso, você pode exibir os detalhes do log na janela do console.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-Para saber mais sobre a depuração de bots em produção, consulte a postagem no blog [Depurar qualquer canal localmente usando ngrok](https://blog.botframework.com/2017/10/19/debug-channel-locally-using-ngrok/).
+- Confira [solucionar problemas gerais](bot-service-troubleshoot-bot-configuration.md) e outros artigos de solução de problemas nesta seção.
+- Leia a postagem no blog sobre como [depurar qualquer canal localmente usando ngrok](https://blog.botframework.com/2017/10/19/debug-channel-locally-using-ngrok/).
 
 ## <a name="next-steps"></a>Próximas etapas
+
 > [!div class="nextstepaction"]
-> [Depure seu bot usando arquivos de transcrição](~/v4sdk/bot-builder-debug-transcript.md).
+> [Depure seu bot usando arquivos de transcrição](v4sdk/bot-builder-debug-transcript.md).

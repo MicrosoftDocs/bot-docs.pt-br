@@ -6,13 +6,13 @@ ms.author: v-demak
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 12/13/17
-ms.openlocfilehash: 2335ac34292e224f44a09820574f3bd9de00eda4
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.date: 02/26/2019
+ms.openlocfilehash: 780dcf4d9db48f9ef7f5a92180dc13c41cc63305
+ms.sourcegitcommit: cf3786c6e092adec5409d852849927dc1428e8a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54224651"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57224934"
 ---
 # <a name="troubleshooting-bot-framework-authentication"></a>Solucionar problemas de autenticação do Bot Framework
 
@@ -227,6 +227,7 @@ Se o bot responder apropriadamente à entrada, você verificou que ele fica aces
 
 Caso ainda esteja enfrentando problemas depois de concluir as etapas acima, você pode:
 
+* Examine as instruções sobre como [depurar um bot](bot-service-debug-bot.md) e outros artigos sobre depuração nesta seção.
 * [Depurar seu bot na nuvem](~/bot-service-debug-emulator.md) usando o Emulador do Bot Framework e <a href="https://ngrok.com/" target="_blank">ngrok</a>.
 * Usar uma ferramenta de criação de proxies como o [Fiddler](https://www.telerik.com/fiddler) para inspecionar o tráfego HTTPS de entrada e saída do seu bot. *O Fiddler não é um produto da Microsoft.*
 * Examine o [Guia de autenticação do conector de Bot][BotConnectorAuthGuide] para saber mais sobre as tecnologias de autenticação que o Bot Framework usa.

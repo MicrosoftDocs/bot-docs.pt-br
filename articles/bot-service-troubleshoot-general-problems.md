@@ -6,13 +6,13 @@ ms.author: v-demak
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 09/26/2018
-ms.openlocfilehash: 34a23910c76a22fe39d1ce5457bb74dd285ca939
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.date: 02/26/2019
+ms.openlocfilehash: 48a0a42d193b0e561a484330222217c18a611e8d
+ms.sourcegitcommit: cf3786c6e092adec5409d852849927dc1428e8a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225513"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57224944"
 ---
 # <a name="troubleshooting-general-problems"></a>Solução de problemas gerais
 Essas perguntas frequentes podem ajudá-lo a solucionar problemas comuns de desenvolvimento de bot ou operacionais.
@@ -20,11 +20,12 @@ Essas perguntas frequentes podem ajudá-lo a solucionar problemas comuns de dese
 ## <a name="how-can-i-troubleshoot-issues-with-my-bot"></a>Como é possível solucionar problemas com o bot?
 
 1. Depure o código-fonte do bot com [Visual Studio Code](debug-bots-locally-vscode.md) ou [Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/navigating-through-code-with-the-debugger?view=vs-2017).
-2. Teste o bot usando o [emulador](bot-service-debug-emulator.md) antes de implantá-lo na nuvem.
-3. Implante o bot em uma plataforma de hospedagem na nuvem, como o Azure e, em seguida, teste a conectividade com o bot usando o controle de webchat interno no painel do bot no <a href="https://dev.botframework.com" target="_blank">portal do Bot Framework</a>. Se você encontrar problemas com o bot depois de implantá-lo no Azure, considere usar este artigo de blog: [Entendendo a solução de problemas e suporte do Azure](https://azure.microsoft.com/en-us/blog/understanding-azure-troubleshooting-and-support/).
-4. Exclua a [autenticação][TroubleshootingAuth] como um possível problema.
-5. Teste o bot no Skype. Isso irá ajudá-lo a validar a experiência do usuário de ponta a ponta.
-6. Considere testar o bot em canais que tenham requisitos de autenticação adicionais como Direct Line ou Webchat.
+1. Teste o bot usando o [emulador](bot-service-debug-emulator.md) antes de implantá-lo na nuvem.
+1. Implante o bot em uma plataforma de hospedagem na nuvem, como o Azure e, em seguida, teste a conectividade com o bot usando o controle de webchat interno no painel do bot no <a href="https://dev.botframework.com" target="_blank">portal do Bot Framework</a>. Se você encontrar problemas com o bot depois de implantá-lo no Azure, considere usar este artigo de blog: [Entendendo a solução de problemas e suporte do Azure](https://azure.microsoft.com/en-us/blog/understanding-azure-troubleshooting-and-support/).
+1. Exclua a [autenticação][TroubleshootingAuth] como um possível problema.
+1. Teste o bot no Skype. Isso irá ajudá-lo a validar a experiência do usuário de ponta a ponta.
+1. Considere testar o bot em canais que tenham requisitos de autenticação adicionais como Direct Line ou Webchat.
+1. Leia as instruções sobre como [depurar um bot](bot-service-debug-bot.md) e outros artigos sobre depuração nesta seção.
 
 ## <a name="how-can-i-troubleshoot-authentication-issues"></a>Como é possível solucionar problemas de autenticação?
 

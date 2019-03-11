@@ -8,13 +8,13 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 12/20/2018
-ms.openlocfilehash: 8a3ff4a30e3041937ba831efc237343c9aa27e62
-ms.sourcegitcommit: 8161753641368567f239e24a35ad61768acccd8e
+ms.date: 2/26/2019
+ms.openlocfilehash: 53cb392dea5ee0e355451e7455a16512f22ebbaa
+ms.sourcegitcommit: cf3786c6e092adec5409d852849927dc1428e8a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54202542"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57224844"
 ---
 # <a name="troubleshoot-bot-configuration-issues"></a>Solucionar problemas de configuração de bot
 
@@ -87,3 +87,7 @@ Abaixo estão alguns links adicionais que podem ajudar com os canais individuais
 Ocasionalmente, alguns canais podem ter uma interrupção de serviço. Geralmente, essas interrupções não duram muito. No entanto, se você suspeitar de uma interrupção, consulte um site da web ou mídia social do canal.
 
 Outra maneira de determinar se um canal tem uma interrupção é criar um bot de teste (por exemplo, um Bot de Eco simples) e adicionar um canal. Se o bot de teste funciona com alguns canais, mas não com outros, indicaria que o problema não está em seu bot de produção.
+
+## <a name="additional-resources"></a>Recursos adicionais
+
+Configura as instruções sobre como [depurar um bot](bot-service-debug-bot.md) e outros artigos sobre depuração nesta seção.

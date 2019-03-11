@@ -1,5 +1,5 @@
 ---
-title: Obter notificação de bots | Microsoft Docs
+title: Enviar notificações proativas para os usuários | Microsoft Docs
 description: Entenda como enviar mensagens de notificação
 keywords: mensagem proativa, mensagem de notificação, notificação de bot,
 author: jonathanfingold
@@ -10,14 +10,14 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 11/15/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 780fdb05acf2c81d72aaa6c415bdd9a6b0229082
-ms.sourcegitcommit: 8183bcb34cecbc17b356eadc425e9d3212547e27
+ms.openlocfilehash: 207dfaf71e8af7af3a36e496deb506ff9d0c13c8
+ms.sourcegitcommit: cf3786c6e092adec5409d852849927dc1428e8a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55971496"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57224884"
 ---
-# <a name="get-notification-from-bots"></a>Obter notificação de bots
+# <a name="send-proactive-notifications-to-users"></a>Enviar notificações proativas para os usuários
 
 [!INCLUDE [pre-release-label](~/includes/pre-release-label.md)]
 
@@ -64,6 +64,7 @@ Estenderemos o _estado de bot_ para definir nosso próprio objeto de gerenciamen
 
 A classe `JobLog` controla os dados de trabalho, indexados pelo número do trabalho (o carimbo de data/hora). A classe `JobLog` controla todos os trabalhos pendentes.  Cada trabalho é identificado por uma chave exclusiva. `JobData` descreve o estado de um trabalho e é definido como uma classe interna de um dicionário.
 
+**JobLog.cs**
 ```csharp
 public class JobLog : Dictionary<long, JobLog.JobData>
 {
@@ -85,6 +86,7 @@ public class JobLog : Dictionary<long, JobLog.JobData>
 
 A classe `JobState` gerencia o estado do trabalho, independente do estado do usuário ou da conversa.
 
+**JobState.cs**
 ```csharp
 using Microsoft.Bot.Builder;
 
@@ -111,6 +113,7 @@ O arquivo **Startup.cs** registra o bot e os serviços associados.
 
 O método `ConfigureServices` registra o bot e o serviço de ponto de extremidade, incluindo o tratamento de erros e o gerenciamento de estado. Ele também registra o acessador de estado do trabalho.
 
+**Startup.cs**
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
@@ -135,9 +138,8 @@ public void ConfigureServices(IServiceCollection services)
 
 Um bot requer um sistema de armazenamento de estado para manter a caixa de diálogo e o estado do usuário entre as mensagens que, nesse caso, é definido usando o provedor de armazenamento na memória.
 
+**index.js**
 ```javascript
-// index.js
-
 const memoryStorage = new MemoryStorage();
 const botState = new BotState(memoryStorage, () => 'proactiveBot.botState');
 
@@ -179,6 +181,7 @@ O bot possui alguns aspectos:
 
 Cada interação do usuário cria uma instância da classe `ProactiveBot`. O processo de criação de um serviço, cada vez que for necessário, é chamado de serviço de tempo de vida transitório. Objetos que são caros de construir ou têm um tempo de vida além de um único turno, devem ser gerenciados com cuidado.
 
+**ProactiveBot.cs**
 ```csharp
 namespace Microsoft.BotBuilderSamples
 {
@@ -196,6 +199,7 @@ namespace Microsoft.BotBuilderSamples
 
 ### <a name="add-initialization-code"></a>Adicionar código de inicialização
 
+**ProactiveBot.cs**
 ```csharp
 private readonly JobState _jobState;
 private readonly IStatePropertyAccessor<JobLog> _jobLogPropertyAccessor;
@@ -214,6 +218,7 @@ public ProactiveBot(JobState jobState, EndpointService endpointService)
 
 O adaptador encaminha as atividades para o manipulador de turnos, que inspeciona o tipo `Activity` e chama o método apropriado. Cada bot deve implementar um manipulador de turnos.
 
+**ProactiveBot.cs**
 ```csharp
 public async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancellationToken = default(CancellationToken))
 {
@@ -305,6 +310,7 @@ private static async Task SendWelcomeMessageAsync(ITurnContext turnContext)
 
 Em um evento de trabalho concluído, marque o trabalho como concluído e notifique o usuário.
 
+**ProactiveBot.cs**
 ```csharp
 private async Task OnSystemActivityAsync(ITurnContext turnContext)
 {
@@ -339,6 +345,7 @@ O código para concluir o trabalho obtém o log de trabalho do estado e, em segu
 - A chamada desse método solicita que o canal inicie um turno independente do usuário.
 - O adaptador executa o retorno de chamada associado no lugar do manipulador de turnos normal do bot. Esse turno tem seu próprio contexto de turno, do qual podemos recuperar as informações de estado e enviar a mensagem proativa ao usuário.
 
+**ProactiveBot.cs**
 ```csharp
 // Creates and "starts" a new job.
 private JobLog.JobData CreateJob(ITurnContext turnContext, JobLog jobLog)
@@ -357,6 +364,7 @@ private JobLog.JobData CreateJob(ITurnContext turnContext, JobLog jobLog)
 
 ### <a name="sends-a-proactive-message-to-the-user"></a>Envia uma mensagem proativa para o usuário
 
+**ProactiveBot.cs**
 ```csharp
 private async Task CompleteJobAsync(
     BotAdapter adapter,
@@ -370,6 +378,7 @@ private async Task CompleteJobAsync(
 
 ### <a name="creates-the-turn-logic-to-use-for-the-proactive-message"></a>Cria a lógica de turno a ser usada para a mensagem proativa
 
+**ProactiveBot.cs**
 ```csharp
 private BotCallbackHandler CreateCallback(JobLog.JobData jobInfo)
 {
@@ -436,6 +445,7 @@ module.exports.ProactiveBot = ProactiveBot;
 
 Os métodos `onTurn` e `showJobs` são definidos dentro da classe `ProactiveBot`. O `onTurn` manipula a entrada de usuários. Ele também recebe atividades de eventos do sistema hipotético de realização do trabalho. O `showJobs` formata e envia o log do trabalho.
 
+**bot.js**
 ```javascript
 /**
     *
@@ -498,6 +508,7 @@ async showJobs(turnContext) {
 
 O método `createJob` é definido dentro da classe `ProactiveBot`. Ele cria e registra novos trabalhos para o usuário. Em teoria, ele também encaminharia essas informações para o sistema de realização do trabalho.
 
+**bot.js**
 ```javascript
 // Save job ID and conversation reference.
 async createJob(turnContext) {
@@ -541,6 +552,7 @@ async createJob(turnContext) {
 
 O método `completeJob` é definido dentro da classe `ProactiveBot`. Ele executa algumas atividades contábeis e envia a mensagem proativa para o usuário (na conversa original do usuário) que seu trabalho concluiu.
 
+**bot.js**
 ```javascript
 async completeJob(turnContext, jobIdNumber) {
     // Get the list of jobs from the bot's state property accessor.

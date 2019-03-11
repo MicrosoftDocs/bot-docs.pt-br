@@ -8,14 +8,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservices: sdk
-ms.date: 10/18/2018
+ms.date: 2/26/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2c493a27d7829e7c7be21b6ce70cb6f046dad616
-ms.sourcegitcommit: 6c719b51c9e4e84f5642100a33fe346b21360e8a
+ms.openlocfilehash: 997ad82e15a0fcd67d47b2fd6495c8e88a5ea127
+ms.sourcegitcommit: cf3786c6e092adec5409d852849927dc1428e8a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52452088"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57224814"
 ---
 # <a name="debug-your-bot-using-transcript-files"></a>Depurar seu bot usando arquivos de transcrição
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
@@ -65,9 +65,10 @@ Esse nível detalhado de informações permite que você siga as interações pa
 Usar arquivos de transcrição juntamente com o Bot Framework Emulator é apenas uma das muitas ferramentas que você pode usar para ajudá-lo a testar e depurar o código do bot e as interações do usuário. Para ver mais maneiras de testar e depurar seu bot, confira os recursos adicionais listados abaixo.
 
 ## <a name="additional-resources"></a>Recursos adicionais
+
 Para outras informações sobre teste e depuração confira:
+
 * [Diretrizes para teste e depuração de bot](./bot-builder-testing-debugging.md)
 * [Depurar com o Bot Framework Emulator](../bot-service-debug-emulator.md)
+* [Solucionar problemas gerais](../bot-service-troubleshoot-bot-configuration.md) e outros artigos de solução de problemas nesta seção.
 * [Depurando no Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/index)
-
-

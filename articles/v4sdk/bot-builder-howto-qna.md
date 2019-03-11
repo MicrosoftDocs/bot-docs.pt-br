@@ -8,14 +8,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: cognitive-services
-ms.date: 01/15/2019
+ms.date: 02/27/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 5a5aec71092503dad83827225f7c0adaf22c4d17
-ms.sourcegitcommit: 05ddade244874b7d6e2fc91745131b99cc58b0d6
+ms.openlocfilehash: 494af4cc7936c8b191280d3f3f6cd73e7bc7d364
+ms.sourcegitcommit: cf3786c6e092adec5409d852849927dc1428e8a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56590971"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57224894"
 ---
 # <a name="use-qna-maker-to-answer-questions"></a>Usar o QnA Maker para responder a perguntas
 
@@ -78,75 +78,65 @@ Primeiro, adicione ao `qnamaker.bot` as informações necessárias para acessar 
 ```
 
 # <a name="ctabcs"></a>[C#](#tab/cs)
-Em seguida, inicializamos uma nova instância da classe **BotService em BotServices.cs**, que captura as informações do arquivo .bot. O serviço externo é configurado usando a classe BotConfiguration.
+
+Verifique se o pacote do NuGet **Microsoft.Bot.Builder.AI.QnA** está instalado para o seu projeto.
+
+Em seguida, inicializamos uma nova instância da classe `BotServices` em **BotServices.cs**, a qual extrai as informações acima do seu arquivo .bot. O serviço externo é configurado usando a classe BotConfiguration.
 
 ```csharp
-private static BotServices InitBotServices(BotConfiguration config)
+using Microsoft.Bot.Builder.AI.QnA;
+using Microsoft.Bot.Configuration;
+```
+
+```csharp
+public BotServices(BotConfiguration botConfiguration)
 {
-    var qnaServices = new Dictionary<string, QnAMaker>();
-    foreach (var service in config.Services)
+    foreach (var service in botConfiguration.Services)
     {
         switch (service.Type)
         {
             case ServiceTypes.QnA:
-            {
-                // Create a QnA Maker that is initialized and suitable for passing
-                // into the IBot-derived class (QnABot).
-                var qna = (QnAMakerService)service;
-                if (qna == null)
                 {
-                    throw new InvalidOperationException("The QnA service is not configured correctly in your '.bot' file.");
+                    // Create a QnA Maker that is initialized and suitable for passing
+                    // into the IBot-derived class (QnABot).
+                    var qna = service as QnAMakerService;
+
+                    // ...
+
+                    var qnaEndpoint = new QnAMakerEndpoint()
+                    {
+                        KnowledgeBaseId = qna.KbId,
+                        EndpointKey = qna.EndpointKey,
+                        Host = qna.Hostname,
+                    };
+
+                    var qnaMaker = new QnAMaker(qnaEndpoint);
+                    QnAServices.Add(qna.Name, qnaMaker);
+                    break;
                 }
-
-                if (string.IsNullOrWhiteSpace(qna.kbId))
-                {
-                    throw new InvalidOperationException("The QnA KnowledgeBaseId ('kbId') is required to run this sample. Please update your '.bot' file.");
-                }
-
-                if (string.IsNullOrWhiteSpace(qna.EndpointKey))
-                {
-                    throw new InvalidOperationException("The QnA EndpointKey ('endpointKey') is required to run this sample. Please update your '.bot' file.");
-                }
-
-                if (string.IsNullOrWhiteSpace(qna.Hostname))
-                {
-                    throw new InvalidOperationException("The QnA Host ('hostname') is required to run this sample. Please update your '.bot' file.");
-                }
-
-                var qnaEndpoint = new QnAMakerEndpoint()
-                {
-                    KnowledgeBaseId = qna.kbId,
-                    EndpointKey = qna.EndpointKey,
-                    Host = qna.Hostname,
-                };
-
-                var qnaMaker = new QnAMaker(qnaEndpoint);
-                qnaServices.Add(qna.Name, qnaMaker);
-                break;
-            }
         }
     }
-    var connectedServices = new BotServices(qnaServices);
-    return connectedServices;
 }
 ```
 
-Em seguida, em **QnABot.cs**, fornecemos essa instância do QnAMaker ao bot. Se você estiver acessando sua própria base de conhecimento, altere a mensagem de _boas-vindas_ abaixo para fornecer instruções inicias úteis aos seus usuários. Essa classe também é onde a variável estática _QnAMakerKey_ está definida. Isso aponta para a seção dentro de seu arquivo .bot que contém as informações de conexão para acessar sua base de conhecimento do QnA Maker.
+Em seguida, em **QnABot.cs**, fornecemos essa instância do QnAMaker ao bot. Se você estiver acessando sua própria base de conhecimento, altere a mensagem de _boas-vindas_ abaixo para fornecer instruções inicias úteis aos seus usuários. Essa classe também é onde a variável estática `QnAMakerKey` está definida. Isso aponta para a seção em seu arquivo .bot que contém as informações de conexão para acessar sua base de conhecimento do QnA Maker.
 
 ```csharp
 public class QnABot : IBot
 {
     public static readonly string QnAMakerKey = "QnABot";
+
     private const string WelcomeText = @"This bot will introduce you to QnA Maker.
                                          Ask a question to get started.";
     private readonly BotServices _services;
+
     public QnABot(BotServices services)
     {
         _services = services ?? throw new System.ArgumentNullException(nameof(services));
-        Console.WriteLine($"{_services}");
         if (!_services.QnAServices.ContainsKey(QnAMakerKey))
         {
-            throw new System.ArgumentException($"Invalid configuration. Please check your '.bot' file for a QnA service named '{QnAMakerKey}'.");
+            throw new System.ArgumentException(
+                $"Invalid configuration. Please check your '.bot' file for a QnA service named '{QnAMakerKey}'.");
         }
     }
 }
@@ -161,8 +151,8 @@ No arquivo **index.js**, lemos as informações de configuração para gerar o s
 Atualize o valor de `QNA_CONFIGURATION` para o valor "name": em seu arquivo .bot. Essa é a chave para a seção "type": "qna" do seu arquivo .bot contendo parâmetros de conexão para acessar sua base de conhecimento do QnA Maker.
 
 ```js
-// Name of the QnA Maker service in the .bot file. 
-const QNA_CONFIGURATION = '<BOT_FILE_NAME>';
+// Name of the QnA Maker service stored in "name" field of .bot file. 
+const QNA_CONFIGURATION = '<SERVICE_NAME_FROM_.BOT_FILE>';
 
 // Get endpoint and QnA Maker configurations by service name.
 const endpointConfig = botConfig.findServiceByNameOrId(BOT_CONFIGURATION);
@@ -233,7 +223,10 @@ else
 
 # <a name="javascripttabjs"></a>[JavaScript](#tab/js)
 
-No arquivo **bot.js**, passamos a entrada do usuário para o método `getAnswers` do serviço do QnA Maker a fim de obter respostas da base de conhecimento. Se você estiver acessando sua própria base de conhecimento, altere a mensagem de _sem respostas_ e _boas-vindas_ abaixo para fornecer instruções úteis aos seus usuários.
+<!-- 4.2 uses `generateAnswer`, whereas 4.3 will use `getAnswers`. Change here and in the code when 4.3 goes live.
+In the **bot.js** file, we pass the user's input to the QnA Maker service's `getAnswers` method to get answers from the knowledge base. If you are accessing your own knowledge base, change the _no answers_ and _welcome_ messages below to provide useful instructions for your users.
+ -->
+No arquivo **bot.js**, passamos a entrada do usuário para o método `generateAnswer` do serviço do QnA Maker a fim de obter respostas da base de conhecimento. Se você estiver acessando sua própria base de conhecimento, altere a mensagem de _sem respostas_ e _boas-vindas_ abaixo para fornecer instruções úteis aos seus usuários.
 
 ```javascript
 const { ActivityTypes, TurnContext } = require('botbuilder');
@@ -261,7 +254,7 @@ class QnAMakerBot {
         // By checking the incoming Activity type, the bot only calls QnA Maker in appropriate cases.
         if (turnContext.activity.type === ActivityTypes.Message) {
             // Perform a call to the QnA Maker service to retrieve matching Question and Answer pairs.
-            const qnaResults = await this.qnaMaker.getAnswers(turnContext);
+            const qnaResults = await this.qnaMaker.generateAnswer(turnContext);
 
             // If an answer was received from QnA Maker, send the answer back to the user.
             if (qnaResults[0]) {

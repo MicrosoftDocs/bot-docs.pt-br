@@ -7,14 +7,14 @@ ms.author: v-ivorb
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 04/09/2018
+ms.date: 2/26/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 27516a73f625eea9c6d2cf8a09234f4068d380e3
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: e0fbf2fe505866ec28385b2be3b9fcd7988be890
+ms.sourcegitcommit: cf3786c6e092adec5409d852849927dc1428e8a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997453"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57224924"
 ---
 # <a name="testing-and-debugging-guidelines"></a>Como testar e depurar diretrizes
 
@@ -34,7 +34,7 @@ A melhor prática para testes abordará ângulos diferentes sempre que aplicáve
 
 A garantia de que cada parte pequena do aplicativo ou, neste caso, nosso bot, funcione exatamente como deveria, é o primeiro nível de teste. Para fazer isso, você pode usar elementos fictícios para as coisas que você não está testando no momento. Para referência, esse nível pode geralmente ser considerado como testes de unidade e de integração.
 
-**Usar elementos fictícios para testar seções individuais**
+#### <a name="use-mock-elements-to-test-individual-sections"></a>Usar elementos fictícios para testar seções individuais
 
 A simulação do máximo de elementos possível permite um melhor isolamento da parte que você está testando. Os candidatos a elementos fictícios incluem armazenamento, adaptador, middleware, pipeline de atividade, canais e qualquer outra coisa que não faça parte diretamente do bot. Isso pode também remover alguns aspectos temporariamente, como o middleware não envolvido na parte do bot que está sendo testada, a fim de isolar cada parte. No entanto, se estiver testando o middleware, talvez você deseje simular o bot.
 
@@ -42,13 +42,13 @@ Os elementos fictícios podem assumir várias formas, da substituição de um el
 
 Esse nível deve exercer funções e métodos individuais dentro do bot. O teste de métodos individuais pode ser feito por meio de testes de unidade internos, que são recomendados, com seu próprio conjunto de testes ou aplicativo de teste, ou fazendo isso manualmente no IDE. 
 
-**Usar elementos fictícios para testar recursos maiores**
+#### <a name="use-mock-elements-to-test-larger-features"></a>Usar elementos fictícios para testar recursos maiores
 
 Quando estiver satisfeito com o comportamento de cada método, use esses elementos fictícios para testar recursos mais completos no bot. Isso demonstra como algumas camadas trabalham juntas para conversar com o usuário. 
 
 Algumas ferramentas são fornecidas para ajudar com isso. Por exemplo, o [Azure Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator) fornece um canal emulado para se comunicar com o bot. O uso do emulador se torna uma situação mais complexa do que apenas testes de unidade e de integração e, portanto, também passa para o próximo nível de teste.
 
-### <a name="level-2-use-a-direct-line-client"></a>Nível 2: usar um cliente da Linha Direta
+### <a name="level-2-use-a-direct-line-client"></a>Nível 2: Usar um cliente Direct Line
 
 Depois de verificar se o bot parece funcionar como desejado, a próxima etapa é conectá-lo a um canal. Para fazer isso, você pode implantar o bot em um servidor de preparo e criar seu próprio cliente de linha direta ao qual o bot se conectará.
 <!--IBTODO [Direct Line client](bot-builder-howto-direct-line.md)-->
@@ -73,21 +73,21 @@ A depuração do bot funciona da mesma forma que outros aplicativos multi-thread
 
 Os bots seguem um paradigma de programação controlada por evento, que poderá ser difícil de ser racionalizado se você não estiver familiarizado com ele. A ideia de o bot ser sem estado, multi-thread e lidar com chamadas assíncronas/await pode resultar em bugs inesperados. Embora a depuração do bot funcione de forma semelhante a outros aplicativos multi-thread, abordaremos algumas sugestões, ferramentas e recursos para ajudar.
 
-**Noções básicas sobre as atividades do bot com o emulador**
+### <a name="understanding-bot-activities-with-the-emulator"></a>Noções básicas de atividades do bot com o emulador
 
 O bot lida com diferentes tipos de [atividades](bot-builder-basics.md#the-activity-processing-stack), além da atividade normal de _mensagem_. O uso do [emulador](../bot-service-debug-emulator.md) mostrará a você quais são essas atividades, quando elas ocorrem e as informações que elas contêm. A compreensão dessas atividades ajudará você a codificar o bot com eficiência e permite que você verifique se as atividades que o bot está enviando e recebendo são as esperadas.
 
-**Salvar e recuperar as interações do usuário com transcrições**
+### <a name="saving-and-retrieving-user-interactions-with-transcripts"></a>Salvar e recuperar as interações do usuário com transcrições
 
 O armazenamento de transcrição de Blobs do Azure fornece um recurso especializado em que você pode [armazenar e recuperar transcrições](bot-builder-howto-v4-storage.md) contendo as interações entre os usuários e seu bot.  
 
-Além disso, depois que as interações de entrada do usuário foram armazenadas, você pode usar o “_gerenciador de armazenamento_” do Azure para exibir manualmente os dados contidos em transcrições armazenadas em seu repositório de transcrição de blob. O exemplo a seguir abre o “_gerenciador de armazenamento_” a partir das configurações para “_mynewtestblobstorage_”. Para abrir uma entrada de usuário salva selcione: Contêiner de Blob > ChannelId > TranscriptId > ConversationId
+Além disso, depois que as interações de entrada do usuário foram armazenadas, você pode usar o “_gerenciador de armazenamento_” do Azure para exibir manualmente os dados contidos em transcrições armazenadas em seu repositório de transcrição de blob. O exemplo a seguir abre o “_gerenciador de armazenamento_” a partir das configurações para “_mynewtestblobstorage_”. Para abrir uma entrada de usuário salva selecione:    Contêiner de Blob > ChannelId > TranscriptId > ConversationId
 
 ![Examine_stored_transcript_text](./media/examine_transcript_text_in_azure.png)
 
 Isso abre a entrada de conversação do usuário armazenada no formato JSON. A entrada do usuário é preservada junto com a chave “_texto:_”.
 
-**Como funciona o middleware**
+### <a name="how-middleware-works"></a>Como funciona o middleware
 
 O [middleware](bot-builder-concept-middleware.md) pode não ser intuitivo na primeira tentativa de usá-lo, particularmente, com relação à continuação, ou curto-circuito, de execução. O middleware pode ser executado na borda à esquerda ou à direita de um turno, com uma chamada ao delegado `next()` que instrui quando a execução é passada para a lógica do bot. 
 
@@ -97,27 +97,30 @@ Se o delegado `next()` não for chamado, isso será conhecido como [roteamento d
 
 Compreender quando e por quê o middleware causa curto-circuito ajuda a indicar qual parte do middleware deve vir primeiro no pipeline. Além disso, é particularmente importante compreender o que esperar para o middleware interno fornecido pelo SDK ou por outros desenvolvedores. Algumas pessoas acreditam ser útil tentar criar seu próprio middleware primeiro para experimentar um pouco antes de se aprofundarem no middleware interno.
 
-Por exemplo, o [QnA Maker](bot-builder-howto-qna.md) foi projetado para manipular certas interações e causar curto-circuito do pipeline quando isso ocorre, o que pode ser confuso quando se está aprendendo a usá-lo pela primeira vez.
+<!-- Snip: QnA was once implemented as middleware.
+For example [QnA maker](bot-builder-howto-qna.md) is designed to handle certain interactions and short-circuit the pipeline when it does, which can be confusing when first learning how to use it.
+-->
 
-**Reconhecendo o estado**
+### <a name="understanding-state"></a>Reconhecendo o estado
 
 O acompanhamento do estado é uma parte importante do bot, particularmente, para tarefas complexas. Em geral, a melhor prática é processar as atividades o mais rapidamente possível e permitir a conclusão do processamento para que o estado seja persistido. As atividades podem ser enviadas ao bot praticamente ao mesmo tempo, e isso pode introduzir bugs muito confusos devido à arquitetura assíncrona.
 
 O mais importante é garantir a persistência do estado de uma maneira que corresponda às suas expectativas. Dependendo do local em que reside o estado persistente, os emuladores de armazenamento do [Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator) e do [Armazenamento de Tabelas do Azure](https://docs.microsoft.com/en-us/azure/storage/common/storage-use-emulator) podem ajudá-lo a verificar o estado antes de usar o armazenamento de produção.
 
-**Como usar manipuladores de atividades**
+### <a name="how-to-use-activity-handlers"></a>Como usar manipuladores de atividades
 
-Os manipuladores de atividade podem introduzir outra camada de complexidade, especialmente, pois cada atividade é executada em um thread independente (ou em web workers, dependendo da linguagem). Dependendo do que os manipuladores estão fazendo, isso pode causar problemas em que o estado atual não é o esperado.
+Os manipuladores de atividade podem introduzir outra camada de complexidade, principalmente porque cada atividade é executada em um thread independente (ou em web workers, dependendo da linguagem). Dependendo do que os manipuladores estão fazendo, isso pode causar problemas em que o estado atual não é o esperado.
 
-O estado interno é gravado no final de um turno; no entanto, todas as atividades geradas por esse turno são executadas de maneira independente do pipeline de turno. Geralmente, isso não nos afeta, mas se um manipulador de atividade muda de estado, precisamos gravar o estado para que ele contenha essa alteração. Nesse caso, o pipeline de turno pode aguardar a conclusão do processamento da atividade antes de ser concluído, para garantir que ele registre o estado correto desse turno.
+O estado interno é gravado no final de um turno; no entanto, todas as atividades geradas por esse turno são executadas independentemente do pipeline de turno. Geralmente, isso não nos afeta, mas se um manipulador de atividade muda de estado, precisamos gravar o estado para que ele contenha essa alteração. Nesse caso, o pipeline de turno pode aguardar a conclusão do processamento da atividade antes de ser concluído, para garantir que ele registre o estado correto desse turno.
 
-O método _send activity_ e seus manipuladores representarão um problema único se você desejar produzir algo para o usuário, pois a simples chamada a _send activity_ nesse método causa uma bifurcação infinita de threads. Há várias maneiras pelas quais você pode resolver esse problema, como pelo acréscimo da mensagem de depuração às informações de saída ou pela gravação em outro local, como o console ou um arquivo, para evitar o pane do bot.
-
+O método _enviar atividade_ e seus manipuladores apresentam um único problema. Simplesmente chamar _enviar atividade_ de dentro do manipulador _ao enviar atividades_ causa uma bifurcação infinita de threads. Há várias maneiras de resolver esse problema; por exemplo, acrescentando mensagens adicionais às informações de saída ou gravando em outro local, como o console ou um arquivo, para evitar a falha do bot.
 
 ## <a name="additional-resources"></a>Recursos adicionais
+
 * [Depurando no Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/index)
 * [Depurando, rastreando e criando um perfil](https://docs.microsoft.com/en-us/dotnet/framework/debug-trace-profile/) para o Bot Framework
-* Usar o [ConditionalAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.conditionalattribute?view=netcore-2.0) para métodos que você não deseja incluir no código de produção 
-* Usar ferramentas como o [Fiddler](https://www.telerik.com/fiddler) para ver o tráfego de rede 
+* Usar o [ConditionalAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.conditionalattribute?view=netcore-2.0) para métodos que você não deseja incluir no código de produção
+* Usar ferramentas como o [Fiddler](https://www.telerik.com/fiddler) para ver o tráfego de rede
 * [Repositório de ferramentas de bot](https://github.com/Microsoft/botbuilder-tools)
 * Estruturas podem ajudá-lo com o teste, como o [Moq](https://github.com/moq/moq4)
+* [Solucionar problemas gerais](../bot-service-troubleshoot-bot-configuration.md) e outros artigos de solução de problemas nesta seção
