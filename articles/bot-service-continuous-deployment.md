@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: abs
 ms.date: 12/13/2017
-ms.openlocfilehash: 38b26ed5a50409de64518562faabf532f45c857e
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 65de0e4e4be129c9fa467cd8610cf0f0b13e5965
+ms.sourcegitcommit: b2245df2f0a18c5a66a836ab24a573fd70c7d272
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49999143"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57568173"
 ---
 # <a name="publish-a-bot-to-bot-service"></a>Publicar um bot no Serviço de Bot
 
@@ -34,6 +34,7 @@ Caso você não tenha configurado a implantação contínua, é possível modifi
 Para configurar a publicação do Visual Studio usando o arquivo `.PublishSettings`, execute as seguintes etapas:
 
 1. No portal do Azure, clique no Serviço de Bot, clique na guia **BUILD** e, em seguida, clique em **Baixar arquivo zip**.
+    1. [!INCLUDE [download keys snippet](~/includes/snippet-abs-key-download.md)]
 3. Extraia o conteúdo do arquivo zip baixado para uma pasta local.
 4. No Explorer, localize o arquivo de Solução do Visual Studio (.sln) para o bot e clique duas vezes nele.
 4. No Visual Studio, clique em **Exibir** e, em seguida, clique em **Gerenciador de Soluções**.
@@ -66,6 +67,7 @@ Esta seção descreve como habilitar a implantação contínua para um bot que v
 Siga estas etapas se você quiser usar um serviço de controle do código-fonte *que não seja* o Visual Studio Online ou o Github. Visual Studio Online e Github efetuarão o pull do código-fonte para o bot a partir do Azure, de modo que os usuários desses dois serviços possem ignorar estas etapas.
 
 3. Para um bot em um plano do Serviço de Aplicativo, localize a página do bot no Azure, clique na guia **BUILD**, depois localize a seção **Baixar código-fonte** e, em seguida, clique em **Baixar arquivo zip**.
+    1. [!INCLUDE [download keys snippet](~/includes/snippet-abs-key-download.md)]
 1. Criar um repositório vazio dentro de um dos sistemas de controle do código-fonte com suporte do Azure.
 
     ![Sistema de controle do código-fonte](~/media/continuous-integration-sourcecontrolsystem.png)
