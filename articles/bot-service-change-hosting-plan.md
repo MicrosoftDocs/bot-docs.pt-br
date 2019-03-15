@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: abs
 ms.date: 12/13/2017
-ms.openlocfilehash: aafbfb2a38e2d5370cb2db5721dd7bc130497d74
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: e463b272385b97e630d4087908aa82e23a70fea9
+ms.sourcegitcommit: b2245df2f0a18c5a66a836ab24a573fd70c7d272
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49999213"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57568183"
 ---
 # <a name="change-the-hosting-plan-for-your-bot-service"></a>Alterar o plano de hospedagem para seu serviço de bot
 
@@ -33,6 +33,7 @@ Siga estas etapas para baixar o código-fonte do seu bot existente:
 
 1. Dentro de seu bot do Azure, clique na guia **Configurações** e expanda a seção **Implantação contínua**.  
 2. Clique no botão azul para baixar o arquivo zip que contém o código-fonte para o bot.  
+    1. [!INCLUDE [download keys snippet](~/includes/snippet-abs-key-download.md)]
     ![Baixar o arquivo zip do bot](~/media/continuous-deployment-consumption-download.png)
 3. Extraia o conteúdo do arquivo zip baixado para uma pasta local. 
 
