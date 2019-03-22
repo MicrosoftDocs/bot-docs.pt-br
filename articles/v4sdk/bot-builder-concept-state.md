@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 02/25/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 06982f1790bd573e7300cee249042e6e3d60e912
-ms.sourcegitcommit: cf3786c6e092adec5409d852849927dc1428e8a2
+ms.openlocfilehash: 7aaf9aedf26682a04fa288ec336afc934a1657aa
+ms.sourcegitcommit: 4139ef7ebd8bb0648b8af2406f348b147817d4c7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57224904"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58073812"
 ---
 # <a name="managing-state"></a>Gerenciar estado
 
@@ -57,7 +57,7 @@ Essas propriedades do estado são agrupadas em "buckets" com escopo, que são ap
 
 Todos esses buckets são subclasses da classe do *estado do bot*, que podem ser derivadas para definir outros tipos de buckets com escopos diferentes.
 
-Esses buckets predefinidos têm escopo para uma determinada visibilidade, dependendo do bucket:
+Esses buckets predefinidos estão no escopo para determinada visibilidade, dependendo do bucket:
 
 - O estado do usuário está disponível em qualquer turno no qual o bot esteja conversando com tal usuário naquele canal, independentemente da conversa
 - O estado da conversa está disponível em qualquer turno em uma conversa específica, independentemente do usuário (ou seja, conversas em grupo)

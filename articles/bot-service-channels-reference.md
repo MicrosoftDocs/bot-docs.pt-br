@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: tools
 ms.date: 03/01/2019
-ms.openlocfilehash: 0fb0f650b44d320d78a0ada5d46105048019964c
-ms.sourcegitcommit: cf3786c6e092adec5409d852849927dc1428e8a2
+ms.openlocfilehash: 28c4ece705c001d5f80fdc877773c03ac400204c
+ms.sourcegitcommit: 4139ef7ebd8bb0648b8af2406f348b147817d4c7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57224954"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58073842"
 ---
 # <a name="categorized-activities-by-channel"></a>Atividades categorizadas por canal
 
@@ -71,7 +71,7 @@ Event.*                    | :white_large_square: | :white_check_mark: | :white_
 Event.CreateConversation   | :white_large_square: | :white_large_square: | :white_large_square:   | :white_large_square: | :white_large_square:  | :white_large_square: | :white_large_square: | :white_large_square:  | :white_large_square:  | :white_large_square:  | :white_large_square:           | :white_large_square:     | :white_large_square:  
 Event.ContinueConversation | :white_large_square: | :white_large_square: | :white_large_square:   | :white_large_square: | :white_large_square:  | :white_large_square: | :white_large_square: | :white_large_square:  | :white_large_square:  | :white_large_square:  | :white_large_square:           | :white_large_square:     | :white_large_square:  
 
-- As Atividades de Evento são um mecanismo de extensibilidade no Direct Line (_vulgo Direct Line_).
+- As Atividades de Evento são um mecanismo de extensibilidade no Direct Line (_também conhecido como Chat na Web_).
 - Um aplicativo que possua cliente e servidor pode optar por encapsular os próprios eventos através do serviço usando a Atividade de Evento.
 
 
@@ -85,7 +85,7 @@ Invoke.ComposeResponse     | :x:      | :x:          | :x: | :x:   | :x:       |
 
 - Além de outras atividades do tipo, o Microsoft Teams define algumas Atividades de Invocação específicas do Teams.
 - As Atividades de Invocação são específicas de um aplicativo e não algo que um cliente define.
-- Não há noção geral da invocação, apenas subtipos específicos da Atividade.
+- Não há nenhuma noção geral dos subtipos específicos de Invocação da atividade.
 - Atualmente, a invocação é a única Atividade que aciona um comportamento de solicitação-resposta no bot.
 
 Isto é muito importante: ao usar Diálogos, para o OAuth Prompt funcionar a Atividade Invoke.TeamsVerification deve ser encaminhada para o Diálogo.
