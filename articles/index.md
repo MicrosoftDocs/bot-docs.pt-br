@@ -8,7 +8,7 @@ ms.topic: landing-page
 layout: LandingPage
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 01/16/2019
+ms.date: 03/28/2019
 ---
 ::: moniker range="azure-bot-service-3.0"
 
@@ -46,7 +46,7 @@ ms.date: 01/16/2019
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>Linguagens</h3>
+                        <h3>Languages</h3>
                         <p><a href="/dotnet/api/?view=botbuilder-3.12.2.4">.NET</a></p>
                         <p><a href="https://docs.botframework.com/en-us/node/builder/chat-reference/modules/_botbuilder_d_.html">Node.js</a></p>
                     </div>
@@ -97,8 +97,8 @@ ms.date: 01/16/2019
 </div>
 
 <h2 style="margin-top: 36px">Tutoriais Passo a Passo</h2>
-<p><a href="/bot-framework/bot-builder-tutorial-basic-deploy">Criar e implantar um bot básico</a></p>
-<p><a href="/bot-framework/bot-builder-tutorial-add-qna">Adicionar o QnA Maker e reimplantar um bot</a></p>
+<p><a href="/bot-framework/bot-builder-tutorial-basic-deploy">1. Criar e implantar um bot básico</a></p>
+<p><a href="/bot-framework/bot-builder-tutorial-add-qna">2. Adicionar o QnA Maker e reimplantar um bot</a></p>
 <h2 style="margin-top: 36px">Referência</h2>
 <ul class="panelContent cardsD">
     <li>
