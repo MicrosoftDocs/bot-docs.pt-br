@@ -18,7 +18,7 @@
 ## [Gerenciar estado](v4sdk/bot-builder-concept-state.md)
 ## [Biblioteca de caixas de diálogo](v4sdk/bot-builder-concept-dialog.md)
 ## [Middleware](v4sdk/bot-builder-concept-middleware.md)
-## [Gerenciar recursos com um arquivo .bot](v4sdk/bot-file-basics.md)
+## [Gerenciar recursos do bot](v4sdk/bot-file-basics.md)
 <!-- [Language understanding](v4sdk/bot-builder-concept-luis.md) -->
 ## [Modelos de Serviço de Bot](bot-service-concept-templates.md)
 ## [Serviços Cognitivos](bot-service-concept-intelligence.md)
