@@ -9,14 +9,14 @@ ms.service: bot-service
 ROBOTS: NOINDEX
 ms.date: 10/04/2018
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 33c6f22696038ed5e9d2ae09ad2ec99d401f6a60
-ms.sourcegitcommit: b94361234816e6b95459f142add936732fc40344
+ms.openlocfilehash: 62b5608de20bb89a31106c7e652b20f32b099d15
+ms.sourcegitcommit: 152760771214865b9c7d0ed481acfba05bdc44dc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54317706"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58655496"
 ---
-[!INCLUDE [pre-release-label](includes/pre-release-label-v3.md)]
+[!INCLUDE [pre-release-label](includes/pre-release-label-v3.md)]  
 
 # <a name="add-authentication-to-your-bot-via-azure-bot-service"></a>Adicionar autenticação ao seu bot por meio do Serviço de Bot do Azure
 Este tutorial usa os novos recursos de autenticação do bot no Serviço de Bot do Azure, fornecendo recursos para facilitar o desenvolvimento de um bot que autentica usuários em vários provedores de identidade como o Azure AD (Azure Active Directory), GitHub, Uber e assim por diante. Essas atualizações também avançam em direção a uma experiência de usuário aprimorada, eliminando a _verificação de código mágico_ para alguns clientes.
@@ -169,7 +169,7 @@ A próxima etapa é registrar com seu bot o aplicativo do Azure AD que você aca
 
     1. Para a **URL do Recurso**, insira `https://graph.microsoft.com/`.
     1. Deixe **Escopos** em branco.
-1. Clique em **Salvar**.
+1. Clique em **Save** (Salvar).
 
 > [!NOTE]
 > Esses valores permitem que seu aplicativo acesse os dados do Office 365 por meio da API do Microsoft Graph.
@@ -195,7 +195,7 @@ Agora você pode usar esse nome de conexão no código do bot para recuperar tok
         > [!NOTE]
         > Para o Azure AD v2, **Escopos** usa uma lista de valores que diferencia maiúsculas de minúsculas separadas por espaços.
 
-1. Clique em **Salvar**.
+1. Clique em **Save** (Salvar).
 
 > [!NOTE]
 > Esses valores permitem que seu aplicativo acesse os dados do Office 365 por meio da API do Microsoft Graph.

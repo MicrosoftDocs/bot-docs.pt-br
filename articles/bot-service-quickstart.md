@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: abs
 ms.date: 02/07/2019
-ms.openlocfilehash: 8df68ccc78e7a0aa064cbfa83967d930f6b44878
-ms.sourcegitcommit: b2245df2f0a18c5a66a836ab24a573fd70c7d272
+ms.openlocfilehash: e0d62d4effaf02d52714153f51736e06949a2263
+ms.sourcegitcommit: 53a36af930b3ab754a3e7bc896e3f0a9a734c3e4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57568253"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58809014"
 ---
 # <a name="create-a-bot-with-azure-bot-service"></a>Criar um bot com o Serviço de Bot do Azure
 
@@ -134,9 +134,6 @@ Você pode baixar o código para trabalhar nele localmente.
 1. Clique no link **Baixar o código-fonte do Bot** no painel à direita. 
 1. Siga os prompts para baixar o código e, em seguida, descompacte a pasta.
     1. [!INCLUDE [download keys snippet](~/includes/snippet-abs-key-download.md)]
-
-O código que você baixou usa um [arquivo .bot](./v4sdk/bot-file-basics.md) criptografado. Você precisará atualizar totalmente `botFilePath` e `botFileSecret` no arquivo appsettings.json ou .env. 
-Para fazer isso, acesse o portal do Azure. Selecione seu bot no portal, em seguida, na seção **Configurações do Serviço de Aplicativo**, clique em **Configurações do aplicativo**. No painel **Configurações do aplicativo**, você verá os valores `botFilePath` e `botFileSecret`. Copie esses valores e atualize o arquivo .env ou appsettings.json. 
 
 ## <a name="next-steps"></a>Próximas etapas
 Depois de baixar o código, você pode continuar a desenvolver o bot localmente em seu computador. Depois de testar seu bot e estiver pronto para carregar o código do bot para o portal do Azure, siga as instruções listadas na seção [Configurar um repositório](./bot-builder-deploy-az-cli.md#setup-a-repository) do tópico de implantação.
