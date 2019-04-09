@@ -9,20 +9,21 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: a8619a8de7b3b73d67c297a8abb4234d520fa425
-ms.sourcegitcommit: d385ec5fe61c469ab17e6f21b4a0d50e5110d0fd
+ms.openlocfilehash: 6bd918416c4eee9fc74809b0d5837012021556e0
+ms.sourcegitcommit: 152760771214865b9c7d0ed481acfba05bdc44dc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54298233"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58655476"
 ---
 # <a name="connect-a-bot-to-skype-for-business"></a>Conectar um bot ao Skype for Business
 
 O Skype for Business Online mantém você conectado com colegas e parceiros de negócios por meio de mensagens instantâneas, telefone e videochamadas. Amplie essa funcionalidade criando bots que os usuários podem descobrir e interagir por meio da interface do Skype for Business.
 
-> [!NOTE]
-> O canal do Bot Framework do Skype for Business está atualmente em visualização de desenvolvedor.
-> Ele está disponível para o Skype for Business Online e configurações híbridas. Não há suporte para o Skype for Business Server 2015. 
+> [!IMPORTANT]
+> **O canal Skype for Business no Bot Framework será preterido em 30 de junho de 2019.**
+> 
+> Nenhum novo bot conseguirá adicionar o canal Skype for Business após essa data.  Os bots existentes continuarão a funcionar até 31 de outubro de 2019. O Microsoft Teams é a ferramenta de comunicação preferencial da Microsoft.  Saiba como [conectar seu bot ao Microsoft Teams](https://msdn.microsoft.com/en-us/microsoft-teams/bots).
 
 ## <a name="enable-the-channel"></a>Habilitar o canal
 

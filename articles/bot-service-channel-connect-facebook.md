@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 10/12/2018
-ms.openlocfilehash: 0932372c5b2bcf574d244cd60d46ef579acbd106
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 57a3efd36ddae5c52a2d791b87ed4fa6a96d5e8a
+ms.sourcegitcommit: 152760771214865b9c7d0ed481acfba05bdc44dc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "50000153"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58655516"
 ---
 # <a name="connect-a-bot-to-facebook"></a>Conectar um bot ao Facebook
 
@@ -150,6 +150,12 @@ Consulte a seção **Conectar um bot ao Facebook Messenger** e [Documentação d
 
 ### <a name="make-the-app-public-and-publish-the-page"></a>Tornar o Aplicativo público e publicar a Página
 Consulte a seção **Conectar um bot ao Facebook Messenger** para obter detalhes.
+
+## <a name="setting-the-api-version"></a>Definir a versão da API
+
+Se você receber uma notificação sobre a substituição de uma determinada versão da API do Graph do Facebook, vá para [página de desenvolvedores do Facebook](https://developers.facebook.com). Navegue até as **Configurações do aplicativo** do seu bot e vá para **Configurações > Avançadas > Atualizar versão de API**, depois troque para **Atualizar todas as chamadas** 3.0.
+
+![Atualização de versão da API](~/media/channels/facebook-version-upgrade.png)
 
 ## <a name="sample-code"></a>Exemplo de código
 

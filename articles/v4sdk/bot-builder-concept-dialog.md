@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 11/28/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 31a0497f1422cee8c4966e59d94a89ae359a5cb7
-ms.sourcegitcommit: c6ce4c42fc56ce1e12b45358d2c747fb77eb74e2
+ms.openlocfilehash: 997399997770db9a810db54c6dcb0cb943a99da9
+ms.sourcegitcommit: 54a4382add4756346098b286695a9b4791db7139
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54453930"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58616942"
 ---
 # <a name="dialogs-library"></a>Biblioteca de diálogos
 
@@ -121,7 +121,7 @@ Você pode usar o contexto de diálogo para começar, continuar, substituir ou e
 
 Diálogos podem ser considerados como uma pilha programática, que chamamos de *pilha de diálogos*, com o manipulador de turnos sendo o responsável pelo direcionamento e servindo como o fallback se a pilha estiver vazia. O item superior da pilha é considerado o *diálogo ativo*, e o contexto de diálogo direciona todas as entradas para o diálogo ativo.
 
-Quando um diálogo é iniciado, ele é enviado para a pilha e será o diálogo ativo. Ele permanece como o diálogo ativo até que seja concluído, removido pelo método [replace dialog](#repeating-a-dialog) ou quando outro diálogo é enviado para a pilha (pelo manipulador de turnos ou pelo próprio diálogo ativo) e torna-se o diálogo ativo. Quando esse novo diálogo termina, ele é retirado da pilha e o diálogo seguinte abaixo se torna o diálogo ativo. Isso permite [ramificação e loop](#looping-and-branching), conforme discutido abaixo.
+Quando um diálogo é iniciado, ele é enviado para a pilha e será o diálogo ativo. Ele permanece como o diálogo ativo até que seja concluído, removido pelo método [replace dialog](#repeating-a-dialog) ou quando outro diálogo é enviado para a pilha (pelo manipulador de turnos ou pelo próprio diálogo ativo) e torna-se o diálogo ativo. Quando esse novo diálogo termina, ele é retirado da pilha e o diálogo seguinte abaixo se torna o diálogo ativo. Isso permite a ramificação e o looping, conforme discutido abaixo.
 
 ### <a name="create-the-dialog-context"></a>Criar o contexto do diálogo
 

@@ -8,13 +8,13 @@ manager: kamrani
 ms.topic: get-started-article
 ms.service: bot-service
 ms.subservice: abs
-ms.date: 02/13/2019
-ms.openlocfilehash: 8db2f0629b0d95dda0cb5d10dea5c9225e5d8d83
-ms.sourcegitcommit: 4139ef7ebd8bb0648b8af2406f348b147817d4c7
+ms.date: 04/02/2019
+ms.openlocfilehash: 556c444086fedf6c5be052726d934d9226b4eebb
+ms.sourcegitcommit: f1412178e4766fb6b29f0f33f7eff7cc9d0885cc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58073782"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58868026"
 ---
 # <a name="deploy-your-bot"></a>Implantar seu bot
 
@@ -25,9 +25,8 @@ Depois de ter criado e testado seu bot localmente, é possível implantá-lo no 
 Neste artigo, mostraremos como implantar os bots de C# e de JavaScript no Azure. Seria útil ler este artigo antes de seguir as etapas, para que você entenda tudo que está relacionado à implantação de um bot.
 
 ## <a name="prerequisites"></a>Pré-requisitos
-
-- Instale a versão mais recente da ferramenta [msbot](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/MSBot).
-- Um bot [CSharp](./dotnet/bot-builder-dotnet-sdk-quickstart.md) ou [JavaScript](./javascript/bot-builder-javascript-quickstart.md) que você tenha desenvolvido em seu computador local.
+- Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](http://portal.azure.com) antes de começar.
+- Um bot [**CSharp**](./dotnet/bot-builder-dotnet-sdk-quickstart.md) ou [**JavaScript**](./javascript/bot-builder-javascript-quickstart.md) que você tenha desenvolvido em seu computador local.
 
 ## <a name="1-prepare-for-deployment"></a>1. Preparar para a implantação
 O processo de implantação requer um Bot de aplicativo Web de destino no Azure para que seu bot local possa ser implantado nele. O Bot de aplicativo Web de destino e os recursos que são provisionados com ele no Azure são usados pelo seu bot local na implantação. Isso é necessário porque seu bot local não tem todos os recursos do Azure exigidos provisionados. Quando você cria um bot de aplicativo Web de destino, os seguintes recursos são provisionados para você:
@@ -39,7 +38,7 @@ O processo de implantação requer um Bot de aplicativo Web de destino no Azure 
 Durante a criação do Bot de aplicativo Web de destino, a ID do aplicativo e a senha também são geradas para seu bot. No Azure, a ID do aplicativo e a senha oferecem suporte para a [autenticação e autorização do serviço](https://docs.microsoft.com/azure/app-service/overview-authentication-authorization). Você recuperará algumas dessas informações para usar em seu código de bot local. 
 
 > [!IMPORTANT]
-> A linguagem do modelo de bot para o serviço deve corresponder à linguagem na qual seu bot foi gravado.
+> A linguagem de programação do modelo de bot usado no portal do Azure deve corresponder à linguagem de programação na qual seu bot está gravado.
 
 Se você já tiver criado um bot no Azure que gostaria de usar, a criação de um novo bot de aplicativo Web será opcional.
 
@@ -50,92 +49,49 @@ Se você já tiver criado um bot no Azure que gostaria de usar, a criação de u
 1. Clique em **Criar** para criar o serviço e implantar o bot na nuvem. Esse processo pode levar vários minutos.
 
 ### <a name="download-the-source-code"></a>Fazer o download do código-fonte
-Depois de criar o Bot de aplicativo Web de destino, será preciso baixar do código do bot no portal do Azure em seu computador local. O download do código deve ser feito para obter as referências de serviço que estão no [arquivo .bot](./v4sdk/bot-file-basics.md). Essas referências de serviço servem para o bot de aplicativo Web, Plano do Serviço de Aplicativo, Serviço de Aplicativo e a Conta de Armazenamento. 
+Depois de criar o Bot de aplicativo Web de destino, será preciso baixar do código do bot no portal do Azure em seu computador local. O motivo para baixar o código é obter as referências de serviço (por exemplo, MicrosoftAppID, MicrosoftAppPassword, LUIS ou QnA) que estão no arquivo appsettings.json ou .env. 
 
 1. Na seção **Gerenciamento do Bot**, clique em **Compilar**.
 1. Clique no link **Baixar o código-fonte do Bot** no painel à direita.
 1. Siga os prompts para baixar o código e, em seguida, descompacte a pasta.
     1. [!INCLUDE [download keys snippet](~/includes/snippet-abs-key-download.md)]
 
-### <a name="decrypt-the-bot-file"></a>Descriptografe o arquivo .bot
+### <a name="update-your-local-appsettingsjson-or-env-file"></a>Atualizar seu arquivo appsettings.json ou .env local
 
-O código-fonte que você baixou do portal do Azure inclui um arquivo .bot criptografado. Você precisa descriptografá-lo para copiar os valores para o seu arquivo .bot local. Essa etapa é necessária para que você possa copiar referências de serviço reais e não os arquivos criptografados.  
-
-1. Abra o recurso de Bot do aplicativo Web para o seu bot no portal do Azure.
-1. Abra as **Configurações do Aplicativo** do seu bot.
-1. Na janela **Configurações do Aplicativo**, role para baixo até **Configurações do aplicativo**.
-1. Localize o **botFileSecret** e copie seu valor.
-1. Use `msbot cli` para descriptografar o arquivo.
-
-    ```cmd
-    msbot secret --bot <name-of-bot-file> --secret "<bot-file-secret>" --clear
-    ```
-
-### <a name="update-your-local-bot-file"></a>Atualizar seu arquivo .bot local
-
-Abra o arquivo .bot que você descriptografou. Copie **todas** as entradas listadas na seção `services` e adicione-as ao arquivo .bot local. Resolva quaisquer entradas de serviço duplicadas ou IDs de serviço duplicadas. Mantenha todas as referências de serviço adicionais das quais seu bot depende. Por exemplo: 
-
-```json
-"services": [
-    {
-        "type": "abs",
-        "tenantId": "<tenant-id>",
-        "subscriptionId": "<subscription-id>",
-        "resourceGroup": "<resource-group-name>",
-        "serviceName": "<bot-service-name>",
-        "name": "<friendly-service-name>",
-        "id": "1",
-        "appId": "<app-id>"
-    },
-    {
-        "type": "blob",
-        "connectionString": "<connection-string>",
-        "tenantId": "<tenant-id>",
-        "subscriptionId": "<subscription-id>",
-        "resourceGroup": "<resource-group-name>",
-        "serviceName": "<blob-service-name>",
-        "id": "2"
-    },
-    {
-        "type": "endpoint",
-        "appId": "",
-        "appPassword": "",
-        "endpoint": "<local-endpoint-url>",
-        "name": "development",
-        "id": "3"
-    },
-    {
-        "type": "endpoint",
-        "appId": "<app-id>",
-        "appPassword": "<app-password>",
-        "endpoint": "<hosted-endpoint-url>",
-        "name": "production",
-        "id": "4"
-    },
-    {
-        "type": "appInsights",
-        "instrumentationKey": "<instrumentation-key>",
-        "applicationId": "<appinsights-app-id>",
-        "apiKeys": {},
-        "tenantId": "<tenant-id>",
-        "subscriptionId": "<subscription-id>",
-        "resourceGroup": "<resource-group>",
-        "serviceName": "<appinsights-service-name>",
-        "id": "5"
-    }
-],
-```
+Abra o arquivo appsettings.json ou .env que você baixou. Copie **todas** as entradas listadas nele e adicione-as ao seu arquivo appsettings.json ou .env _local_. Resolva quaisquer entradas de serviço duplicadas ou IDs de serviço duplicadas. Mantenha todas as referências de serviço adicionais das quais seu bot depende.
 
 Salve o arquivo.
 
-Você pode usar a ferramenta msbot para gerar um novo segredo e criptografar o arquivo .bot antes de publicar. Se você criptografar o arquivo .bot novamente, atualize o **botFileSecret** do bot no portal do Azure para que contenha o novo segredo.
+### <a name="update-local-bot-code"></a>Atualizar o código do bot local
+Atualize o arquivo local Startup.cs ou index.js para usar o arquivo appsettings.json ou .env em vez de o arquivo .bot. O arquivo .bot foi preterido e estamos trabalhando para atualizar os modelos VSIX, geradores do Yeoman, amostras e documentos restantes para que todos usem o arquivo appsettings.json ou .env em vez de o arquivo .bot. Enquanto isso, você precisará fazer alterações no código do bot. 
 
-```cmd
-msbot secret --bot <name-of-bot-file> --new
+Atualize o código para que ele leia as configurações do arquivo appsettings.json ou .env. 
+
+# [<a name="c"></a>C#](#tab/csharp)
+No método `ConfigureServices`, use o objeto de configuração fornecido pelo ASP.NET Core, por exemplo: 
+
+**Startup.cs**
+```csharp
+var appId = Configuration.GetSection("MicrosoftAppId").Value;
+var appPassword = Configuration.GetSection("MicrosoftAppPassword").Value;
+options.CredentialProvider = new SimpleCredentialProvider(appId, appPassword);
 ```
 
-> [!TIP]
-> Nas propriedades do arquivo .bot, dentro do Visual Studio, verifique se a opção **Copiar para Diretório de Saída** está definida como *Copiar sempre*.
+# [<a name="js"></a>JS](#tab/js)
+
+No JavaScript, referencie às variáveis .env fora do objeto `process.env`, por exemplo:
+   
+**index.js**
+
+```js
+const adapter = new BotFrameworkAdapter({
+    appId: process.env.MicrosoftAppId,
+    appPassword: process.env.MicrosoftAppPassword
+});
+```
+---
+
+- Salve o arquivo e teste seu bot.
 
 ### <a name="setup-a-repository"></a>Configurar um repositório
 
@@ -144,12 +100,11 @@ Para oferecer suporte para a implantação contínua, crie um repositório git u
 Verifique se a raiz do repositório tem os arquivos corretos, conforme descrito na seção [preparar seu repositório](https://docs.microsoft.com/azure/app-service/deploy-continuous-deployment#prepare-your-repository).
 
 ### <a name="update-app-settings-in-azure"></a>Atualizar configurações do aplicativo no Azure
-O bot local não usa um arquivo .bot criptografado, mas o portal do Azure é configurado para usar um arquivo .bot criptografado. Você pode resolver isso removendo o **botFileSecret** armazenado nas configurações de bot do Azure.
+O bot local não usa um arquivo .bot criptografado, a não ser que o portal do Azure _esteja_ configurado para usar um arquivo .bot criptografado. Você pode resolver isso removendo o **botFileSecret** armazenado nas configurações de bot do Azure.
 1. Abra o recurso de **Bot do aplicativo Web** para o seu bot no portal do Azure.
 1. Abra as **Configurações do Aplicativo** do seu bot.
 1. Na janela **Configurações do Aplicativo**, role para baixo até **Configurações do aplicativo**.
-1. Localize o **botFileSecret** e o exclua. (Se você criptografar o arquivo .bot novamente, verifique se o **botFileSecret** contém o novo segredo e **não exclua** a definição.)
-1. Atualize o nome do arquivo bot para corresponder ao arquivo inserido no repositório.
+1. Verifique se seu bot tem as entradas **botFileSecret** e **botFilePath**. Em caso positivo, exclua-as.
 1. Salve as alterações.
 
 ## <a name="2-deploy-using-azure-deployment-center"></a>2. Implantar usando a Central de Implantação do Azure
