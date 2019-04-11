@@ -1,6 +1,6 @@
 ---
 title: Criar middleware usando o Cosmos DB | Microsoft Docs
-description: Saiba como criar um middleware que efetua login no Cosmos DB.
+description: Saiba como criar um middleware que efetua logon no Cosmos DB.
 keywords: middleware, cosmos db, database, azure, onTurn
 author: ivorb
 ms.author: v-ivorb
@@ -16,7 +16,7 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 08/24/2018
 ms.locfileid: "42906097"
 ---
-# <a name="create-middleware-that-logs-in-cosmos-db"></a>Criar um middleware que efetua login no Cosmos DB
+# <a name="create-middleware-that-logs-in-cosmos-db"></a>Criar um middleware que efetua logon no Cosmos DB
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
