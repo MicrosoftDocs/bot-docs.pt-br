@@ -7,25 +7,22 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: abs
-ms.date: 02/05/2019
+ms.date: 04/09/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: c55909afa0a8942a01d3fca0f8a64331bbcdf963
-ms.sourcegitcommit: 8183bcb34cecbc17b356eadc425e9d3212547e27
+ms.openlocfilehash: 27c97d257261a6f3b9d867503aee40382b685e20
+ms.sourcegitcommit: 562dd44e38abacaa31427da5675da556a970cf11
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55971516"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59477099"
 ---
 # <a name="add-authentication-to-your-bot-via-azure-bot-service"></a>Adicionar autenticação ao seu bot por meio do Serviço de Bot do Azure
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
 
-Este tutorial usa os novos recursos de autenticação do bot no Serviço de Bot do Azure, fornecendo recursos para facilitar o desenvolvimento de um bot que autentica usuários em vários provedores de identidade como o Azure AD (Azure Active Directory), GitHub, Uber e assim por diante. Essas atualizações também avançam em direção a uma experiência de usuário aprimorada, eliminando a _verificação de código mágico_ para alguns clientes.
+O Serviço de Bot do Azure e o SDK v4 incluem novos recursos de autenticação do bot, fornecendo funcionalidades para facilitar o desenvolvimento de um bot que autentica usuários em vários provedores de identidade como o Azure AD (Azure Active Directory), GitHub, Uber e assim por diante. Essas funcionalidades podem aprimorar a experiência do usuário, eliminando a _verificação de código mágico_ para alguns clientes.
 
-Antes disso, seu bot precisa incluir controladores de OAuth e links de logon, armazenar as IDs e segredos de cliente de destino e executar o gerenciamento de token de usuário.
-<!--
-These capabilities were bundled in the BotAuth and AuthBot samples that are on GitHub.
--->
+Antes disso, seu bot precisa incluir controladores de OAuth e links de logon, armazenar as IDs e segredos de cliente de destino e executar o gerenciamento de token de usuário. O bot solicitava que o usuário entrasse em um site, o qual gerava um _código mágico_ que poderia ser usado para o usuário verificar sua identidade.
 
 Agora, os desenvolvedores de bots não precisam mais hospedar controladores OAuth ou gerenciar o ciclo de vida do token, já que tudo isso agora pode ser feito pelo Serviço de Bot do Azure.
 
@@ -37,70 +34,119 @@ Os recursos incluem:
 - Atualizações dos SDKs do Bot Framework para Node.js e C# para recuperar tokens, criar OAuthCards e manipular eventos de TokenResponse.
 - Exemplos de como criar um bot que autentica para o Azure AD.
 
-Você pode extrapolar das etapas neste artigo para adicionar recursos a um bot existente. A seguir estão os bots de exemplo que demonstram os novos recursos de autenticação
-
-| Amostra | Versão do BotBuilder | DESCRIÇÃO |
-|:---|:---:|:---|
-| **Autenticação de bot** ([C#](https://aka.ms/v4cs-bot-auth-sample) / [JS](https://aka.ms/v4js-bot-auth-sample)) | v4 | Demonstra o suporte a OAuthCard. |
-| **MSGraph de autenticação de bot** ([C#](https://aka.ms/v4cs-auth-msgraph-sample) / [JS](https://aka.ms/v4js-auth-msgraph-sample)) | v4 |  Demonstra o suporte da API do Microsoft Graph com o OAuth 2. |
+Você pode extrapolar das etapas neste artigo para adicionar recursos a um bot existente. Estes bots de exemplo demonstram os novos recursos de autenticação.
 
 > [!NOTE]
 > Os recursos de autenticação também trabalham com o BotBuilder v3. No entanto, este artigo aborda apenas o código de exemplo v4.
 
-Para obter mais informações e suporte, consulte [Recursos adicionais do Bot Framework](https://docs.microsoft.com/azure/bot-service/bot-service-resources-links-help).
+### <a name="about-this-sample"></a>Sobre este exemplo
 
-## <a name="overview"></a>Visão geral
+Você precisa criar um recurso de bot do Azure e precisa criar um novo aplicativo do Azure Active Directory (v1 ou v2) para permitir que seu bot acesse o Office 365. O recurso de bot registra as credenciais do seu bot, as quais são necessárias para testar os recursos de autenticação, até mesmo ao executar o código de seu bot localmente.
 
-Este tutorial cria um bot de exemplo que se conecta ao Microsoft Graph usando um token do Azure AD v1 ou v2 e o aplicativo do Azure AD associado. Como parte desse processo, você usará o código de um repositório GitHub [Microsoft/BotBuilder-Samples](https://github.com/Microsoft/BotBuilder-Samples), e este tutorial descreve como configurar tudo, incluindo o aplicativo bot.
+> [!IMPORTANT]
+> Sempre que você registra um bot no Azure, um aplicativo do Azure Active Directory é atribuído a ele. No entanto, esse aplicativo protege o acesso do canal ao bot.
+Você precisa de um aplicativo AAD adicional para cada aplicativo que você deseja que possa ser autenticado pelo bot em nome do usuário.
 
-- **Crie seu bot e um aplicativo de autenticação**
-- **Prepare os códigos de exemplo de bot.**
-- **Use o Emulador para testar seu bot**
+Este artigo cria um bot de exemplo que se conecta ao Microsoft Graph usando um token do Azure AD v1 ou v2. Ele também aborda como criar e registrar o aplicativo associado do Azure Active Directory. Como parte desse processo, você usará o código do repositório do GitHub [Microsoft/BotBuilder-Samples](https://github.com/Microsoft/BotBuilder-Samples). Este artigo aborda esses processos.
 
-Para concluir essas etapas, você precisará do Visual Studio 2017, o npm, o node e o git instalados. Você também deve ter alguma familiaridade com o Azure, OAuth 2.0 e o desenvolvimento de bot.
+- **Criar seu recurso de bot**
+- **Criar um aplicativo Azure AD**
+- **Registrar seu aplicativo do Azure AD com seu bot**
+- **Preparar os códigos de exemplo de bot**
 
-Depois de concluir, você terá um bot que pode responder a algumas tarefas simples em relação a um aplicativo do Azure AD, como verificar e enviar um email ou exibir quem você é e quem seu gerente é. Para fazer isso, seu bot usará um token de um aplicativo do Azure AD com a biblioteca Microsoft.Graph.
+Depois de concluir, você terá um bot sendo executado localmente e que pode responder a algumas tarefas simples em relação a um aplicativo do Azure Active Directory, como verificar e enviar um email ou exibir quem é você e quem é o seu gerente. Para fazer isso, seu bot usará um token de um aplicativo do Azure AD com a biblioteca Microsoft.Graph. Você não precisa publicar seu bot para testar os recursos de entrada do OAuth. No entanto, seu bot precisará de uma ID válida de aplicativo do Azure e senha.
 
-A seção final divide uma parte do código do bot
+Esses recursos de autenticação também funcionam com outros tipos de bots. No entanto, este artigo usa um bot de somente registro.
 
-- **Observações sobre o fluxo de recuperação de token**
+### <a name="web-chat-and-direct-line-considerations"></a>Considerações de Webchat e Direct Line
 
-## <a name="create-your-bot-and-an-authentication-application"></a>Criar seu bot e um aplicativo de autenticação
+<!-- Summarized from: https://blog.botframework.com/2018/09/25/enhanced-direct-line-authentication-features/ -->
 
-Você precisa criar um bot de registro ao qual você irá publicar o seu código de bot e você precisa criar um aplicativo do Azure AD (v1 ou v2) para permitir que seu bot acesse o Office 365.
+Há alguns problemas de segurança importantes a considerar ao usar a autenticação do Serviço de Bot do Azure com o Webchat.
 
-> [!NOTE]
-> Esses recursos de autenticação funcionam com outros tipos de bots. No entanto, este tutorial usa um bot somente do registro.
+1. Evite a representação, que é quando um invasor faz o bot pensar que ele é outra pessoa. No Webchat, um invasor pode representar outra pessoa, alterando a ID de usuário da sua instância de Webchat.
 
-### <a name="register-an-application-in-azure-ad"></a>Registrar um aplicativo no Azure AD
+    Para evitar isso, crie uma ID de usuário que não possa ser adivinhada. Quando você habilita as opções de autenticação aprimoradas no canal do Direct Line, o Serviço de Bot do Azure pode detectar e rejeitar qualquer alteração na ID de usuário. A ID de usuário em mensagens do Direct Line para seu bot será sempre a mesma usada para inicializar o Webchat. Observe que esse recurso requer que a ID de usuário comece com `dl_`.
 
-Você precisa de um aplicativo do Azure AD que seu bot possa usar para se conectar à API do Microsoft Graph, seus próprios recursos protegidos pelo Azure AD e assim por diante.
+1. Verifique se o usuário correto está conectado. O usuário tem duas identidades: sua identidade em um canal e sua identidade com o provedor de identidade. No Webchat, o Serviço de Bot do Azure pode garantir que o processo de entrada seja concluído na própria sessão do navegador do Webchat.
+
+    Para habilitar essa proteção, inicie o Webchat com um token do Direct Line que contém uma lista de domínios confiáveis que podem hospedar o cliente do Webchat do bot. Depois, especifique estaticamente a lista de domínios confiáveis (origem) na página de configuração do Direct Line.
+
+Use o ponto de extremidade REST `/v3/directline/tokens/generate` do Direct Line para gerar um token para a conversa e especifique a ID de usuário no conteúdo da solicitação. Para obter um exemplo de código, confira a postagem no blog [Recursos de autenticação aprimorados do Direct Line](https://blog.botframework.com/2018/09/25/enhanced-direct-line-authentication-features/).
+
+<!-- The eventual article about this should talk about the tokens/generate endpoint and its parameters: user, trustedOrigins, and [maybe] eTag.
+Sample payload
+{
+  "user": {
+    "id": "string",
+    "name": "string",
+    "aadObjectId": "string",
+    "role": "string"
+  },
+  "trustedOrigins": [
+    "string"
+  ],
+  "eTag": "string"
+}
+ -->
+
+## <a name="prerequisites"></a>Pré-requisitos
+
+- Conhecimento das [noções básicas do bot][concept-basics] e do [estado de gerenciamento][concept-state].
+- Conhecimento do desenvolvimento do Azure e do OAuth 2.0.
+- Visual Studio 2017 ou posterior, Node.js, npm e git.
+- Um desses exemplos.
+
+| Amostra | Versão do BotBuilder | Demonstra |
+|:---|:---:|:---|
+| **Autenticação de bot** em [**CSharp**][cs-auth-sample] ou [**JavaScript**][js-auth-sample] | v4 | Suporte de OAuthCard |
+| **Autenticação de bot MSGraph** em [**CSharp**][cs-msgraph-sample] ou [**JavaScript**][js-msgraph-sample] | v4 |  Suporte da API do Microsoft Graph com o OAuth 2 |
+
+## <a name="create-your-bot-resource-on-azure"></a>Criar seu recurso de bot no Azure
+
+Crie um **Registro de Canais de Bot** usando o [Portal do Azure](https://portal.azure.com/).
+
+## <a name="create-and-register-an-azure-ad-application"></a>Criar e registrar um aplicativo Azure Active Directory
+
+Você precisa de um aplicativo do Azure AD que seu bot possa usar para se conectar à API do Microsoft Graph.
 
 Para este bot, você pode usar pontos de extremidade do Azure AD v1 ou v2.
 Para obter informações sobre as diferenças entre os pontos de extremidade v1 e v2, consulte a [comparação v1-v2](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-compare) e a [visão geral de ponto de extremidade do Azure AD v 2.0](https://docs.microsoft.com/azure/active-directory/develop/active-directory-appmodel-v2-overview).
 
-#### <a name="to-create-an-azure-ad-v1-application"></a>Criar um aplicativo Azure AD v1
+### <a name="create-your-azure-ad-application"></a>Criar seu aplicativo do Azure Active Directory
 
-1. Vá para o [AD do Azure no portal do Azure](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview).
-1. Clique em **Registros do aplicativo**.
+Use essas etapas para criar um novo aplicativo do Azure Active Directory. Você pode usar os pontos de extremidade v1 ou v2 com o aplicativo criado.
+
+> [!TIP]
+> Você precisará criar e registrar o aplicativo do Azure Active Directory em um locatário no qual você tem direitos de administrador.
+
+1. Abra o painel do [Azure Active Directory][azure-aad-blade] no portal do Azure.
+    Se você não estiver no locatário correto, clique em **Trocar de diretório** para trocar para o locatário correto. (Para obter instruções sobre como criar um locatário, confira [Acessar o portal e criar um locatário](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-access-create-new-tenant).)
+1. Abra o painel **Registros de aplicativo**.
 1. No painel **Registros de aplicativo**, clique em **Novo registro de aplicativo**.
 1. Preencha os campos obrigatórios e crie o registro do aplicativo.
+
    1. Nome do seu aplicativo.
    1. Defina o **Tipo de aplicativo** como **Aplicativo Web / API**.
    1. Defina a **URL de logon** para `https://token.botframework.com/.auth/web/redirect`.
    1. Clique em **Criar**.
+
       - Depois de criado, ele é exibido em um painel **Aplicativo registrado**.
-      - Registre o valor **ID do Aplicativo**. Você irá fornecê-lo posteriormente como a _ID do cliente_.
+      - Registre o valor **ID do Aplicativo**. Você usará esse valor posteriormente como a _ID do cliente_ ao registrar seu aplicativo do Azure AD com seu bot.
+
 1. Clique em **Configurações** para configurar seu aplicativo.
 1. Clique em **Chaves** para abrir o painel **Chaves**.
+
    1. Em **Senhas**, crie uma chave `BotLogin`.
    1. Defina sua **duração** para **Nunca expira**.
-   1. Clique em **Salvar** e registre o valor da chave. Você irá fornecê-la mais tarde para o _segredo do aplicativo_.
+   1. Clique em **Salvar** e registre o valor da chave. Você usará esse valor posteriormente como o _Segredo do cliente_ ao registrar seu aplicativo do Azure AD com seu bot.
    1. Feche o painel **Chaves**.
+
 1. Clique em **Permissões necessárias** para abrir o painel **Permissões necessárias**.
+
    1. Clique em **Adicionar**.
    1. Clique em **Selecionar uma API**, em seguida, selecione **Microsoft Graph** e clique em **Selecionar**.
-   1. Clique em **Selecionar permissões**. Escolha as permissões de aplicativo, que o aplicativo usará.
+   1. Clique em **Selecionar permissões**. Escolha as permissões delegadas que o aplicativo usará.
 
       > [!NOTE]
       > Nenhuma permissão marcada como **Requer administração** exigirá um usuário e um administrador de locatários para fazer logon, portanto para seu bot evite-as.
@@ -108,8 +154,8 @@ Para obter informações sobre as diferenças entre os pontos de extremidade v1 
       Selecione as seguintes permissões delegadas do Microsoft Graph:
       - Ler os perfis básicos de todos os usuários
       - Ler email de usuário
-      - Entrar e ler o perfil do usuário
       - Enviar email como um usuário
+      - Entrar e ler o perfil do usuário
       - Exibir o perfil básico dos usuários
       - Exibir o endereço de email dos usuários
 
@@ -118,45 +164,18 @@ Para obter informações sobre as diferenças entre os pontos de extremidade v1 
 
 Agora você tem um aplicativo do Azure AD v1 configurado.
 
-#### <a name="to-create-an-azure-ad-v2-application"></a>Criar um aplicativo do Azure AD v2
-
-1. Vá até o [Portal de Registro de Aplicativos da Microsoft](https://apps.dev.microsoft.com).
-1. Clique em **Adicionar um aplicativo**
-1. Dê um nome para seu aplicativo do Azure AD e, em seguida, clique em **Criar**.
-
-    Registre o GUID **ID do Aplicativo**. Você irá fornecê-lo posteriormente como sua ID do cliente para a sua configuração de conexão.
-
-1. Em **Segredos do Aplicativo**, clique em **Gerar nova senha**.
-
-    Registre a senha do pop-up. Você irá fornecê-la posteriormente como seu Segredo do cliente para a sua configuração de conexão.
-
-1. Em **Plataformas**, clique em **Adicionar plataforma**.
-1. No pop-up **Adicionar plataforma**, clique em **Web**.
-    1. Deixe a opção **Permitir fluxo implícito** marcada.
-    1. Para a **URL de redirecionamento**, insira `https://token.botframework.com/.auth/web/redirect`.
-    1. Deixe a opção **URL de logoff** em branco.
-1. Em **Permissões do Microsoft Graph**, você pode adicionar permissões delegadas adicionais.
-    - Para este tutorial, adicione as permissões **Mail.Read**, **Mail.Send**, **openid**, **profile**, **User.Read** e **Readbasic**.
-      O escopo da configuração de conexão deve ter ambos **openid** e um recurso no graph do Azure AD, tais como **Mail.Read**.
-    - Registre as permissões que você escolher. Você irá fornecê-las posteriormente como os escopos para a sua configuração de conexão.
-
-1. Na parte inferior da página, clique em **Salvar** .
-
-### <a name="create-your-bot-on-azure"></a>Criar seu bot no Azure
-
-Crie um **Registro de Canais de Bot** usando o [Portal do Azure](https://portal.azure.com/).
-
 ### <a name="register-your-azure-ad-application-with-your-bot"></a>Registrar seu aplicativo do Azure AD com seu bot
 
-A próxima etapa é registrar com seu bot o aplicativo do Azure AD que você acabou de criar.
+A próxima etapa é usar seu bot para registrar o aplicativo do Azure Active Directory que você criou.
 
-#### <a name="to-register-an-azure-ad-v1-application"></a>Registrar um aplicativo Azure AD v1
+# [<a name="azure-ad-v1"></a>Azure AD v1](#tab/aadv1)
 
 1. Navegue até a página de recurso do seu bot no [Portal do Azure](http://portal.azure.com/).
 1. Clique em **Configurações**.
 1. Em **Configurações de Conexão do OAuth** na parte inferior da página, clique em **Adicionar configuração**.
 1. Preencha o formulário da seguinte maneira:
-    1. Para **Nome**, insira um nome para sua conexão. Você usará em seu código de bot.
+
+    1. Para **Nome**, insira um nome para sua conexão. Você usará esse nome em seu código de bot.
     1. Para **Provedor de serviços**, selecione **Azure Active Directory**. Depois que você selecionar esta opção, os campos específicos do Azure AD serão exibidos.
     1. Para **ID do cliente**, insira a ID do aplicativo que você registrou para o aplicativo do Azure AD v1.
     1. Para **Segredo do cliente**, insira a chave que você registrou para a chave `BotLogin` do seu aplicativo.
@@ -168,19 +187,19 @@ A próxima etapa é registrar com seu bot o aplicativo do Azure AD que você aca
 
     1. Para a **URL do Recurso**, insira `https://graph.microsoft.com/`.
     1. Deixe **Escopos** em branco.
-1. Clique em **Salvar**.
+
+1. Clique em **Save** (Salvar).
 
 > [!NOTE]
 > Esses valores permitem que seu aplicativo acesse os dados do Office 365 por meio da API do Microsoft Graph.
 
-Agora você pode usar esse nome de conexão no código do bot para recuperar tokens de usuário.
-
-#### <a name="to-register-an-azure-ad-v2-application"></a>Registrar um aplicativo Azure AD v2
+# [<a name="azure-ad-v2"></a>Azure AD v2](#tab/aadv2)
 
 1. Navegue até a página Registro de Canais de Bot do seu bot no [Portal do Azure](http://portal.azure.com/).
 1. Clique em **Configurações**.
 1. Em **Configurações de Conexão do OAuth** na parte inferior da página, clique em **Adicionar configuração**.
 1. Preencha o formulário da seguinte maneira:
+
     1. Para **Nome**, insira um nome para sua conexão. Você o usará em seu código de bot.
     1. Para **Provedor de serviços**, selecione **Azure Active Directory v2**. Depois que você selecionar esta opção, os campos específicos do Azure AD serão exibidos.
     1. Para **ID do cliente**, insira sua ID de aplicativo do Azure AD v2 do registro do aplicativo.
@@ -194,32 +213,42 @@ Agora você pode usar esse nome de conexão no código do bot para recuperar tok
         > [!NOTE]
         > Para o Azure AD v2, **Escopos** usa uma lista de valores que diferencia maiúsculas de minúsculas separadas por espaços.
 
-1. Clique em **Salvar**.
+1. Clique em **Save** (Salvar).
 
 > [!NOTE]
 > Esses valores permitem que seu aplicativo acesse os dados do Office 365 por meio da API do Microsoft Graph.
 
-Agora você pode usar esse nome de conexão no código do bot para recuperar tokens de usuário.
+---
 
-#### <a name="to-test-your-connection"></a>Para testar sua conexão
+### <a name="test-your-connection"></a>Testar sua conexão
 
-1. Abra a conexão que você acabou de criar.
+1. Clique na entrada de conexão para abrir a conexão que você acabou de criar.
 1. Clique em **Testar Conexão** na parte superior do painel **Configuração de Conexão do Provedor de Serviços**.
 1. Na primeira vez, deve abrir uma nova guia do navegador listando as permissões que seu aplicativo está solicitando e solicitará que você aceite.
 1. Clique em **Aceitar**.
-1. Isso deverá direcioná-lo para uma página **Testar conexão para <nome-da-sua-conexão> bem sucedido**.
+1. Isso deverá direcionar você para uma página **Testar conexão para \<nome-da-sua-conexão> bem-sucedida**.
+
+Agora você pode usar esse nome de conexão no código do bot para recuperar tokens de usuário.
 
 ## <a name="prepare-the-bot-sample-code"></a>Preparar os códigos de exemplo de bot
 
 Dependendo do exemplo escolhido, você trabalhará com C# ou Node.
 
+| Amostra | Versão do BotBuilder | Demonstra |
+|:---|:---:|:---|
+| **Autenticação de bot** em [**CSharp**][cs-auth-sample] ou [**JavaScript**][js-auth-sample] | v4 | Suporte de OAuthCard |
+| **Autenticação de bot MSGraph** em [**CSharp**][cs-msgraph-sample] ou [**JavaScript**][js-msgraph-sample] | v4 |  Suporte da API do Microsoft Graph com o OAuth 2 |
+
 1. Clique em um dos links de exemplo acima e clone o repositório do github.
 1. Siga as instruções na página do leiame do GitHub para saber como executar esse bot específico (C# ou Node).
 1. Se você estiver usando o exemplo de Autenticação de Bot em C#:
+
     1. Defina a variável `ConnectionName` no arquivo `AuthenticationBot.cs` com o valor usado ao definir a configuração de conexão OAuth 2.0 do seu bot.
     1. Defina o valor `appId` no arquivo `BotConfiguration.bot` como a ID do aplicativo do seu bot.
     1. Defina o valor `appPassword` no arquivo `BotConfiguration.bot` como o segredo do seu bot.
+
 1. Se você estiver usando o exemplo de Autenticação de Bot em Node/JS:
+
     1. Defina a variável `CONNECTION_NAME` no arquivo `bot.js` com o valor usado ao definir a configuração de conexão OAuth 2.0 do seu bot.
     1. Defina o valor `appId` no arquivo `bot-authentication.bot` como a ID do aplicativo do seu bot.
     1. Defina o valor `appPassword` no arquivo `bot-authentication.bot` como o segredo do seu bot.
@@ -298,7 +327,7 @@ Os dois próximos snippets de código são obtidos do `OAuthPrompt`, mostrando c
 
 Nesse código, primeiro o bot faz uma verificação rápida para determinar se o Serviço de Bot do Azure já tem um token para o usuário (que é identificado pelo remetente da atividade atual) e o ConnectionName determinado (que é o nome de conexão usada na configuração). O Serviço de Bot do Azure ou já terá um token armazenado em cache ou não terá. A chamada para GetUserTokenAsync executa essa verificação rápida. Se o Serviço de Bot do Azure tem um token e retorna-o, o token pode ser usado imediatamente. Se o Serviço de Bot do Azure não tem um token, esse método retornará null. Nesse caso, o bot pode enviar um OAuthCard personalizado para o usuário entrar.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# [<a name="c"></a>C#](#tab/csharp)
 
 ```csharp
 // First ask Bot Service if it already has a token for this user
@@ -313,7 +342,7 @@ else
 }
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# [<a name="javascript"></a>JavaScript](#tab/javascript)
 
 ```javascript
 public async getUserToken(context: TurnContext, code?: string): Promise<TokenResponse|undefined> {
@@ -335,7 +364,7 @@ Você pode personalizar o OAuthCard com qualquer texto e texto de botão desejad
 
 No final dessa chamada, o bot precisa "aguardar o token" antes de voltar. Essa espera ocorre no fluxo de atividade principal porque pode haver muitos que o usuário precisa fazer para entrar.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# [<a name="c"></a>C#](#tab/csharp)
 
 ```csharp
 private async Task SendOAuthCardAsync(ITurnContext turnContext, IMessageActivity message, CancellationToken cancellationToken = default(CancellationToken))
@@ -368,7 +397,7 @@ private async Task SendOAuthCardAsync(ITurnContext turnContext, IMessageActivity
 }
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# [<a name="javascript"></a>JavaScript](#tab/javascript)
 
 ```javascript
 private async sendOAuthCardAsync(context: TurnContext, prompt?: string|Partial<Activity>): Promise<void> {
@@ -400,7 +429,7 @@ No código, o Bot está aguardando um `TokenResponseEvent` (veja abaixo mais inf
 
 Se você examinar o código do bot de cada exemplo, verá que as atividades `Event` e `Invoke` também são roteadas para a pilha de diálogos.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# [<a name="c"></a>C#](#tab/csharp)
 
 ```csharp
 // This can be called when the bot receives an Activity after sending an OAuthCard
@@ -448,7 +477,7 @@ private bool IsTeamsVerificationInvoke(ITurnContext turnContext)
 }
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# [<a name="javascript"></a>JavaScript](#tab/javascript)
 
 ```javascript
 private async recognizeToken(context: TurnContext): Promise<PromptRecognizerResult<TokenResponse>> {
@@ -486,5 +515,26 @@ private isTeamsVerificationInvoke(context: TurnContext): boolean {
 
 Em chamadas subsequentes para o bot, observe que o token nunca é armazenado em cache por este bot de exemplo. Isso ocorre porque o bot sempre pode pedir o token para o Serviço de Bot do Azure. Isso evita o necessidade de gerenciar o ciclo de vida de token, atualizar o token, etc., já que o Serviço de Bot do Azure faz tudo isso para você.
 
-## <a name="additional-resources"></a>Recursos adicionais
-[SDK do Bot Framework](https://github.com/microsoft/botbuilder)
+### <a name="further-reading"></a>Leitura adicional
+
+- Os [Recursos adicionais do Bot Framework](https://docs.microsoft.com/azure/bot-service/bot-service-resources-links-help) incluem links para obter suporte adicional.
+- O repositório [SDK do Bot Framework](https://github.com/microsoft/botbuilder) tem mais informações sobre repositórios, amostras, ferramentas e especificações associadas ao SDK do Bot Builder.
+
+<!-- Footnote-style links -->
+
+[Azure portal]: https://ms.portal.azure.com
+[azure-aad-blade]: https://ms.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview
+[aad-registration-blade]: https://ms.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps
+
+[concept-basics]: bot-builder-basics.md
+[concept-state]: bot-builder-concept-state.md
+[concept-dialogs]: bot-builder-concept-dialog.md
+
+[simple-dialog]: bot-builder-dialog-manage-conversation-flow.md
+[dialog-prompts]: bot-builder-prompts.md
+[component-dialogs]: bot-builder-compositcontrol.md
+
+[cs-auth-sample]: https://aka.ms/v4cs-bot-auth-sample
+[js-auth-sample]: https://aka.ms/v4js-bot-auth-sample
+[cs-msgraph-sample]: https://aka.ms/v4cs-auth-msgraph-sample
+[js-msgraph-sample]: https://aka.ms/v4js-auth-msgraph-sample
