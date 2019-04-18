@@ -10,10 +10,10 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 03/28/2019
 ms.openlocfilehash: 5c6a194c18fff144090c095f9cf01f964a1ad4ce
-ms.sourcegitcommit: 562dd44e38abacaa31427da5675da556a970cf11
+ms.sourcegitcommit: 721bb09f10524b0cb3961d7131966f57501734b8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/10/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59477119"
 ---
 ::: moniker range="azure-bot-service-3.0"
