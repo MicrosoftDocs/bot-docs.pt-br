@@ -9,12 +9,12 @@ ms.service: bot-service
 ROBOTS: NOINDEX
 ms.date: 10/04/2018
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 62b5608de20bb89a31106c7e652b20f32b099d15
-ms.sourcegitcommit: 152760771214865b9c7d0ed481acfba05bdc44dc
+ms.openlocfilehash: 54742bdeddee410ec9307157d0dbd34cc4fbe3c8
+ms.sourcegitcommit: 721bb09f10524b0cb3961d7131966f57501734b8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58655496"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59541072"
 ---
 [!INCLUDE [pre-release-label](includes/pre-release-label-v3.md)]  
 
@@ -68,7 +68,7 @@ A seção final divide uma parte do código do bot
 
 ## <a name="create-your-bot-and-an-authentication-application"></a>Criar seu bot e um aplicativo de autenticação
 
-Você precisa criar um bot de registro ao qual você irá publicar o seu código de bot e você precisa criar um aplicativo do Azure AD (v1 ou v2) para permitir que seu bot acesse o Office 365.
+Você precisa criar um bot de registro em que você definirá o ponto de extremidade de mensagens para o seu código de bot implantado, e precisa criar um aplicativo do Azure AD (v1 ou v2) para permitir que seu bot acesse o Office 365.
 
 > [!NOTE]
 > Esses recursos de autenticação funcionam com outros tipos de bots. No entanto, este tutorial usa um bot somente do registro.
@@ -234,10 +234,10 @@ Agora você pode usar esse nome de conexão no código do bot para recuperar tok
     </appSettings>
     ```
 
-    Se você não souber como obter seus valores de **ID do aplicativo Microsoft** e **senha de aplicativo do Microsoft**, procure no **ApplicationSettings** do serviço de aplicativo do Azure que foi provisionado para seu bot no Portal do Azure.
+    Se você não souber como obter seus valores de **ID do aplicativo Microsoft** e **senha de aplicativo do Microsoft**, você pode criar uma nova senha conforme descrito aqui: [bot-channels-registration-password](bot-service-quickstart-registration.md#bot-channels-registration-password); ou recuperar a **ID do aplicativo Microsoft** e a **senha de aplicativo do Microsoft** provisionadas com o **registro de canais do Bot** com a seguinte implantação:  [find-your-azure-bots-appid-and-appsecret](https://blog.botframework.com/2018/07/03/find-your-azure-bots-appid-and-appsecret)
 
     > [!NOTE]
-    > Agora você pode publicar esse código de bot para sua assinatura do Azure (clique com o botão direito no projeto e escolha **Publicar**), mas não é necessário para este tutorial. Você precisará definir uma configuração de publicação que usa o aplicativo e o plano de hospedagem que você usou ao configurar o bot no Portal do Azure.
+    > Agora você pode publicar esse código de bot em sua assinatura do Azure (clique com o botão direito no projeto e escolha **Publicar**), mas não é necessário para este tutorial. Você precisará definir uma configuração de publicação que usa o aplicativo e o plano de hospedagem que você usou ao configurar o bot no Portal do Azure.
 
 ## <a name="use-the-emulator-to-test-your-bot"></a>Usar o Emulador para testar seu bot
 

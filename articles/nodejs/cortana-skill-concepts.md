@@ -7,14 +7,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 12/13/2017
+ms.date: 02/10/2019
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 909294243abe00ac95e8f5d89d6babc2edc4f994
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: 5de773f6f8f4d46c0c1fe880588f2530c3c68f56
+ms.sourcegitcommit: cacd381d185b2b8b7fb99082baf83d9f65dde341
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225676"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59508203"
 ---
 # <a name="key-concepts-for-building-a-bot-for-cortana-skills-using-nodejs"></a>Os conceitos fundamentais para criar um bot de habilidades da Cortana usando Node.js
  
@@ -40,57 +40,49 @@ Ao criar um bot habilitado para fala, você deve tentar estabelecer o consenso e
 
 Usuários ficam confusos se um sistema não fundamentar os enunciados do usuário. Por exemplo, a conversa a seguir pode ser um pouco confusa quando o bot pergunta: "o que vem depois?":
 
-```
-Agent: Did you want to review some more of your profile?
-
-User: No.
-
-Agent: What's next?
-```
+> **Cortana**: Você deseja examinar um pouco mais do seu perfil?  
+> **Usuário**:  Não.  
+> **Cortana**: O que vem a seguir?
 
 Se o bot adiciona um "Ok" como confirmação, é mais amigável para o usuário:
 
-```
-Agent: Did you want to review some more of your profile?
-
-User: No.
-
-Agent: **Okay**, what's next?
-```
-
+> **Cortana**: Você deseja examinar um pouco mais do seu perfil?  
+> **Usuário**:  Não.  
+> **Cortana**: **OK**, o que vem a seguir?
 
 Graus de fundamentação, do mais fraco ao mais forte:
+
 1. Atenção contínua
 2. Próxima contribuição relevante
 3. Confirmação: resposta mínima ou continuador discursivo: "sim", "uh-hum", "ok", "beleza"
 4. Demonstre: indicar compreensão por reformulação, conclusão.
 5. Exibir: repetir tudo ou parte.
 
-#### <a name="acknowledgement-and-next-relevant-contribution"></a>Confirmação e próxima contribuição relevante
-Usuário: ... Eu preciso viajar em maio.
-Agente: **e**, em qual dia de maio você queria viajar?
-Usuário: OK, eu preciso estar lá do dia 12 ao dia 15?
-Agente: **e**, você está voando para qual cidade?
+### <a name="acknowledgement-and-next-relevant-contribution"></a>Confirmação e próxima contribuição relevante
 
-#### <a name="grounding-by-demonstration"></a>Fundamentação por demonstração
-Usuário: ... Eu preciso viajar em maio.
-Agente: e, em **qual dia** de maio você queria viajar?
-Usuário: OK, eu preciso estar lá do dia 12 ao dia 15?
-Agente: **e**, você está voando para qual cidade?
+> **Usuário**: Eu preciso viajar em maio.  
+> **Cortana**: **OK**. Em qual dia de maio você queria viajar?  
+> **Usuário**: Bem, eu preciso estar lá do dia 12 ao dia 15?  
+> **Cortana**: **OK**. Para qual cidade você vai viajar?  
 
+### <a name="grounding-by-demonstration"></a>Fundamentação por demonstração
 
+> **Usuário**: Eu preciso viajar em maio.  
+> **Cortana**: e, em **qual dia** de maio você queria viajar?  
+> **Usuário**: OK, eu preciso estar lá do dia 12 ao dia 15?  
+> **Cortana**: **E** você vai viajar para qual cidade?  
+    
 ### <a name="closure"></a>Fechamento
 
-O bot que está executando uma ação deve apresentar evidência do desempenho bem-sucedido.
-Também é importante indicar falha ou compreensão. 
-* Fechamento sem fala: se você apertar um botão de elevador, a luz do botão acende.
-Processo de duas etapas:
-* Apresentação 
-* Aceitação
+O bot que está executando uma ação deve apresentar evidência do desempenho bem-sucedido. Também é importante indicar falha ou compreensão. 
 
+* Fechamento sem fala: se você apertar um botão de elevador, a luz do botão acende.  
+Esse é um processo de duas etapas:
+    * Apresentação (quando você pressiona o botão)
+    * Aceitação (quando o botão acende)
 
-### <a name="differences-in-content-presentation"></a>Diferenças na apresentação do conteúdo
-Ao projetar o bot habilitado para fala, tenha em mente que a que o diálogo falado geralmente não é idêntico às mensagens textuais que o bot envia.
+## <a name="differences-in-content-presentation"></a>Diferenças na apresentação do conteúdo
+Tenha em mente que a Cortana é compatível com vários dispositivos e apenas alguns deles têm telas. Uma das coisas que você precisa considerar ao projetar seu bot habilitado para fala é que a caixa de diálogo falada geralmente não será a mesma que as mensagens de texto exibidas pelo seu bot.
 <!-- If there are differences in what the bot will say, in the text vs the speak fields of a prompt or in a waterfall, for example, discuss them here.
 
 ## Speech
@@ -119,7 +111,7 @@ The **inputHint** property can take the following values:
 * **acceptingInput**: Indicates that the bot is passively ready for input but is not waiting on a response. Cortana accepts input from the user if the user holds down the microphone button.
 * **ignoringInput**: Cortana is ignoring input. Your bot may send this hint if it is actively processing a request and will ignore input from users until the request is complete.
 
-Prompts can take a `speak:` or `retrySpeak` option.
+Prompts must use the `speak:` option.
 
 ```javascript
         builder.Prompts.choice(session, "Decision Options", choices, {
@@ -130,12 +122,9 @@ Prompts can take a `speak:` or `retrySpeak` option.
 
 Prompts.number has *ordinal support*, meaning that you can say "the last", "the first", "the next-to-last" to choose an item in a list.
 
-
-
-
 ## Using synonyms
 
-<!-- Axl Rose example -->     
+<!-- Axl Rose example -->
 ```javascript   
          var choices = [
             { 
@@ -165,13 +154,12 @@ Prompts.number has *ordinal support*, meaning that you can say "the last", "the 
         });
 ```
 
-
 ## <a name="configuring-your-bot"></a>Configurar o bot
 
 ## <a name="prompts"></a>Solicitações
 
-
 ## <a name="additional-resources"></a>Recursos adicionais
 
-[CortanaGetstarted]: /cortana/getstarted
-[SSMLRef]: https://msdn.microsoft.com/en-us/library/hh378377(v=office.14).aspx
+Documentação da Cortana: [Documentação das Habilidades da Cortana](/cortana/skills/)
+
+Referência de SSML da Cortana: [Referência de Linguagem de Marcação de Sintetização de Fala (SSML)](/cortana/skills/speech-synthesis-markup-language)

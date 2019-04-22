@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 11/13/18
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a7d881e5e7748da11ea46721c23c5489597cdc94
-ms.sourcegitcommit: 4139ef7ebd8bb0648b8af2406f348b147817d4c7
+ms.openlocfilehash: 314a8a55906ec150d001b56c67ffbfe0ae2049f8
+ms.sourcegitcommit: 721bb09f10524b0cb3961d7131966f57501734b8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58073822"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59541122"
 ---
 # <a name="write-directly-to-storage"></a>Gravar diretamente no armazenamento
 
@@ -587,7 +587,7 @@ Envie uma mensagem ao bot e o bot listará as mensagens recebidas por ele.
 Depois de executar o bot e salvar suas informações, poderemos exibi-lo na guia **Gerenciador de Armazenamento** no portal do Azure.
 
 ## <a name="blob-transcript-storage"></a>Armazenamento de transcrição de blobs
-O armazenamento de transcrições do Blob do Azure fornece uma opção de armazenamento especializado que permite salvar e recuperar facilmente conversas do usuário como transcrições gravadas. O armazenamento de transcrições do Blob do Azure é particularmente útil para capturar respostas do usuário automaticamente e examiná-las durante a depuração de desempenho do bot.
+O armazenamento de transcrições do Blob do Azure fornece uma opção de armazenamento especializado que permite salvar e recuperar facilmente conversas do usuário como transcrições gravadas. O armazenamento de transcrições do Blob do Azure é particularmente útil para capturar respostas do usuário automaticamente e examiná-las durante a depuração de desempenho do seu bot.
 
 ### <a name="set-up"></a>Configurar
 O armazenamento de transcrições do Blob do Azure pode usar a mesma conta de Armazenamento de Blobs criada seguindo as etapas detalhadas nas seções "_Criar sua conta de Armazenamento de Blobs_" e "_Adicionar informações de configuração_" acima. Para esta discussão, adicionamos um novo contêiner de blob, "_mybottranscripts_." 
@@ -621,7 +621,7 @@ public ConversationHistoryBot(AzureBlobTranscriptStore transcriptStore)
 ```
 
 ### <a name="store-user-conversations-in-azure-blob-transcripts"></a>Armazenar conversas do usuário em transcrições do Blob do Azure
-Quando um contêiner de blob fica disponível para armazenar transcrições, você pode começar a armazenar as conversas dos usuários com seu bot. Essas conversas poderão ser usadas como uma ferramenta de depuração para ver como os usuários estão interagindo com o bot. O código a seguir preserva a entradas de conversa do usuário quando activity.text recebe a mensagem de entrada _!history_.
+Depois que o TranscriptLoggerMiddleware for adicionado, o Repositório de Transcrição começará a preservar automaticamente as conversas de seus usuários com seu bot. Essas conversas poderão ser usadas como uma ferramenta de depuração para ver como os usuários estão interagindo com o bot. O código a seguir recupera a transcrição e, em seguida, a envia para a conversa atual quando o activity.text recebe a mensagem de entrada _!history_. Observação: o método SendConversationHistoryAsync tem suporte nos canais Direct Line, Web Chat e Emulator.
 
 
 ```csharp

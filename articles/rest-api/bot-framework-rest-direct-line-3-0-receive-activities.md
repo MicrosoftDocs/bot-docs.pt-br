@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: c2d4b9a8e2b8ffc1656df44e04ee1bde912e36ea
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: dd5e81ba3feaba09e60011c138dcbe1537144b5a
+ms.sourcegitcommit: 721bb09f10524b0cb3961d7131966f57501734b8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998153"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59541002"
 ---
 # <a name="receive-activities-from-the-bot"></a>Receber atividades do bot
 
@@ -21,7 +21,7 @@ Usando o protocolo da Linha Direta 3.0, os clientes podem receber atividades pel
 
 ## <a name="websocket-vs-http-get"></a>WebSocket vs HTTP GET
 
-Um WebSocket de streaming envia mensagens aos clientes com eficiência enquanto a interface GET permite que os clientes solicitem mensagens explicitamente. Embora o mecanismo do WebSocket seja geralmente preferido devido à sua eficiência, o mecanismo do GET pode ser útil para clientes que não podem usar WebSockets ou para clientes que desejam recuperar o histórico de conversas. 
+Um WebSocket de streaming envia mensagens aos clientes com eficiência enquanto a interface GET permite que os clientes solicitem mensagens explicitamente. Embora o mecanismo do WebSocket seja geralmente preferido devido à sua eficiência, o mecanismo de GET pode ser útil para clientes que não podem usar WebSockets. 
 
 Nem todos os [tipos de atividade](bot-framework-rest-connector-activities.md) estão disponíveis através do WebSocket e HTTP GET. A tabela a seguir descreve a disponibilidade de vários tipos de atividades para clientes que usam o protocolo da Linha Direta.
 
@@ -99,7 +99,7 @@ O fluxo do WebSocket contém atualizações dinâmicas e mensagens muito recente
 
 ## <a id="http-get"></a> Recuperar atividades com o HTTP GET
 
-Os clientes que não conseguem usar WebSockets ou os clientes que desejam obter o histórico da conversa podem recuperar as atividades usando `HTTP GET`.
+Os clientes que não podem usar WebSockets podem recuperar as atividades usando `HTTP GET`.
 
 Para recuperar mensagens de uma conversa específica, emita uma solicitação `GET` para o ponto de extremidade `/v3/directline/conversations/{conversationId}/activities`, especificando opcionalmente o parâmetro `watermark` para indicar a mensagem mais recente vista pelo cliente. 
 
@@ -165,7 +165,7 @@ Os clientes que votam usando `HTTP GET` devem escolher um intervalo de sondagem 
 
 - Geralmente, os aplicativos de serviço a serviço usam um intervalo de sondagem de 5 ou 10 segundos.
 
-- Os aplicativos voltados para o cliente geralmente usam um intervalo de sondagem de 1s e emitem uma solicitação adicional de cerca de 300 ms após cada mensagem que o cliente envia (para recuperar rapidamente a resposta de um bot). Esse atraso de 300 ms deve ser ajustado com base na velocidade e no tempo de trânsito do bot.
+- Os aplicativos voltados para o cliente geralmente usam um intervalo de sondagem de 1 s e emitem uma única solicitação adicional logo após cada mensagem que o cliente envia (para recuperar rapidamente a resposta de um bot). Esse atraso pode ser de até 300 ms, mas deve ser ajustado com base na velocidade e tempo de trânsito do bot. A sondagem não deve ter uma frequência maior do que uma vez por segundo para qualquer período de tempo prolongado.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 02/25/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 7aaf9aedf26682a04fa288ec336afc934a1657aa
-ms.sourcegitcommit: 4139ef7ebd8bb0648b8af2406f348b147817d4c7
+ms.openlocfilehash: 024791aaf6aea0b09b097b275d4ca954fcd27ddf
+ms.sourcegitcommit: cacd381d185b2b8b7fb99082baf83d9f65dde341
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58073812"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59508233"
 ---
 # <a name="managing-state"></a>Gerenciar estado
 

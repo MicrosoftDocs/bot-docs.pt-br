@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: abs
 ms.date: 04/09/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 27c97d257261a6f3b9d867503aee40382b685e20
-ms.sourcegitcommit: 562dd44e38abacaa31427da5675da556a970cf11
+ms.openlocfilehash: 1a295f68be626c2d2ef17dcb49b7c7d31ae2cefa
+ms.sourcegitcommit: 721bb09f10524b0cb3961d7131966f57501734b8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/10/2019
-ms.locfileid: "59477099"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59541042"
 ---
 # <a name="add-authentication-to-your-bot-via-azure-bot-service"></a>Adicionar autenticação ao seu bot por meio do Serviço de Bot do Azure
 
@@ -50,9 +50,9 @@ Você precisa de um aplicativo AAD adicional para cada aplicativo que você dese
 Este artigo cria um bot de exemplo que se conecta ao Microsoft Graph usando um token do Azure AD v1 ou v2. Ele também aborda como criar e registrar o aplicativo associado do Azure Active Directory. Como parte desse processo, você usará o código do repositório do GitHub [Microsoft/BotBuilder-Samples](https://github.com/Microsoft/BotBuilder-Samples). Este artigo aborda esses processos.
 
 - **Criar seu recurso de bot**
-- **Criar um aplicativo Azure AD**
+- **Criar um aplicativo do Azure AD**
 - **Registrar seu aplicativo do Azure AD com seu bot**
-- **Preparar os códigos de exemplo de bot**
+- **Prepare os códigos de exemplo de bot.**
 
 Depois de concluir, você terá um bot sendo executado localmente e que pode responder a algumas tarefas simples em relação a um aplicativo do Azure Active Directory, como verificar e enviar um email ou exibir quem é você e quem é o seu gerente. Para fazer isso, seu bot usará um token de um aplicativo do Azure AD com a biblioteca Microsoft.Graph. Você não precisa publicar seu bot para testar os recursos de entrada do OAuth. No entanto, seu bot precisará de uma ID válida de aplicativo do Azure e senha.
 
@@ -168,7 +168,7 @@ Agora você tem um aplicativo do Azure AD v1 configurado.
 
 A próxima etapa é usar seu bot para registrar o aplicativo do Azure Active Directory que você criou.
 
-# [<a name="azure-ad-v1"></a>Azure AD v1](#tab/aadv1)
+# <a name="azure-ad-v1tabaadv1"></a>[Azure AD v1](#tab/aadv1)
 
 1. Navegue até a página de recurso do seu bot no [Portal do Azure](http://portal.azure.com/).
 1. Clique em **Configurações**.
@@ -193,7 +193,7 @@ A próxima etapa é usar seu bot para registrar o aplicativo do Azure Active Dir
 > [!NOTE]
 > Esses valores permitem que seu aplicativo acesse os dados do Office 365 por meio da API do Microsoft Graph.
 
-# [<a name="azure-ad-v2"></a>Azure AD v2](#tab/aadv2)
+# <a name="azure-ad-v2tabaadv2"></a>[Azure AD v2](#tab/aadv2)
 
 1. Navegue até a página Registro de Canais de Bot do seu bot no [Portal do Azure](http://portal.azure.com/).
 1. Clique em **Configurações**.
@@ -273,10 +273,14 @@ Dependendo do exemplo escolhido, você trabalhará com C# ou Node.
     }
     ```
 
-    Se você não souber como obter seus valores de **ID do aplicativo Microsoft** e **senha de aplicativo do Microsoft**, procure no **ApplicationSettings** do serviço de aplicativo do Azure que foi provisionado para seu bot no Portal do Azure.
+    Se você não souber como obter seus valores de **ID do aplicativo Microsoft** e **senha de aplicativo do Microsoft**, você pode criar uma nova senha conforme descrito abaixo:
+
+    [bot-channels-registration-password](../bot-service-quickstart-registration.md#bot-channels-registration-password)
+
+    Ou recuperar a **ID do aplicativo Microsoft** e a **senha de aplicativo do Microsoft** provisionadas com o **registro de canais do Bot** com a seguinte implantação: [ find-your-azure-bots-appid-and-appsecret](https://blog.botframework.com/2018/07/03/find-your-azure-bots-appid-and-appsecret)
 
     > [!NOTE]
-    > Agora você pode publicar esse código de bot para sua assinatura do Azure (clique com o botão direito no projeto e escolha **Publicar**), mas não é necessário para este tutorial. Você precisará definir uma configuração de publicação que usa o aplicativo e o plano de hospedagem que você usou ao configurar o bot no Portal do Azure.
+    > Agora você pode publicar esse código de bot em sua assinatura do Azure (clique com o botão direito no projeto e escolha **Publicar**), mas não é necessário para este tutorial. Você precisará definir uma configuração de publicação que usa o aplicativo e o plano de hospedagem que você usou ao configurar o bot no Portal do Azure.
 
 ## <a name="use-the-emulator-to-test-your-bot"></a>Usar o Emulador para testar seu bot
 
@@ -327,7 +331,7 @@ Os dois próximos snippets de código são obtidos do `OAuthPrompt`, mostrando c
 
 Nesse código, primeiro o bot faz uma verificação rápida para determinar se o Serviço de Bot do Azure já tem um token para o usuário (que é identificado pelo remetente da atividade atual) e o ConnectionName determinado (que é o nome de conexão usada na configuração). O Serviço de Bot do Azure ou já terá um token armazenado em cache ou não terá. A chamada para GetUserTokenAsync executa essa verificação rápida. Se o Serviço de Bot do Azure tem um token e retorna-o, o token pode ser usado imediatamente. Se o Serviço de Bot do Azure não tem um token, esse método retornará null. Nesse caso, o bot pode enviar um OAuthCard personalizado para o usuário entrar.
 
-# [<a name="c"></a>C#](#tab/csharp)
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 // First ask Bot Service if it already has a token for this user
@@ -342,7 +346,7 @@ else
 }
 ```
 
-# [<a name="javascript"></a>JavaScript](#tab/javascript)
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 public async getUserToken(context: TurnContext, code?: string): Promise<TokenResponse|undefined> {
@@ -364,7 +368,7 @@ Você pode personalizar o OAuthCard com qualquer texto e texto de botão desejad
 
 No final dessa chamada, o bot precisa "aguardar o token" antes de voltar. Essa espera ocorre no fluxo de atividade principal porque pode haver muitos que o usuário precisa fazer para entrar.
 
-# [<a name="c"></a>C#](#tab/csharp)
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 private async Task SendOAuthCardAsync(ITurnContext turnContext, IMessageActivity message, CancellationToken cancellationToken = default(CancellationToken))
@@ -397,7 +401,7 @@ private async Task SendOAuthCardAsync(ITurnContext turnContext, IMessageActivity
 }
 ```
 
-# [<a name="javascript"></a>JavaScript](#tab/javascript)
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 private async sendOAuthCardAsync(context: TurnContext, prompt?: string|Partial<Activity>): Promise<void> {
@@ -429,7 +433,7 @@ No código, o Bot está aguardando um `TokenResponseEvent` (veja abaixo mais inf
 
 Se você examinar o código do bot de cada exemplo, verá que as atividades `Event` e `Invoke` também são roteadas para a pilha de diálogos.
 
-# [<a name="c"></a>C#](#tab/csharp)
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 // This can be called when the bot receives an Activity after sending an OAuthCard
@@ -477,7 +481,7 @@ private bool IsTeamsVerificationInvoke(ITurnContext turnContext)
 }
 ```
 
-# [<a name="javascript"></a>JavaScript](#tab/javascript)
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 private async recognizeToken(context: TurnContext): Promise<PromptRecognizerResult<TokenResponse>> {

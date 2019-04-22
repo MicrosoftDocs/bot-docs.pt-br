@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 02/27/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: ed723e2caebd7fc085c6f9f2887e277195ee3516
-ms.sourcegitcommit: cf3786c6e092adec5409d852849927dc1428e8a2
+ms.openlocfilehash: aea34c068afa6fef3a701bc1179341ff4861e32a
+ms.sourcegitcommit: 721bb09f10524b0cb3961d7131966f57501734b8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57224874"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59541092"
 ---
 # <a name="add-media-to-messages"></a>Adicionar mídia às mensagens
 
@@ -225,9 +225,9 @@ Primeiro, somente alguns canais dão suporte aos Cartões Adaptáveis, e os cana
 
 Em segundo lugar, o Cartão Adaptável entrega as mensagens no formato de cartão e o canal determina o layout do cartão. O formato das mensagens que o MessageFactory entrega depende do canal e não é necessariamente no formato de cartão. a menos que o Cartão Adaptável faça parte do anexo. 
 
-Para localizar as informações mais recentes sobre o suporte de canal do cartão adaptável, consulte o <a href="http://adaptivecards.io/visualizer/">Visualizador de cartões adaptáveis</a>.
+Para localizar as informações mais recentes sobre o suporte de canal do Cartão Adaptável, confira o <a href="http://adaptivecards.io/designer/">Designer de Cartões Adaptáveis</a>.
 
-Para usar os cartões adaptáveis, certifique-se de adicionar o pacote NuGet `Microsoft.AdaptiveCards`. 
+Para usar os cartões adaptáveis, certifique-se de adicionar o pacote NuGet `AdaptiveCards`. 
 
 
 > [!NOTE]

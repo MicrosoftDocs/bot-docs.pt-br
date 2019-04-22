@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 09/13/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 6ba140324fb6b50c2d6696aae6e4bd3e8824fd96
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: fa243d8cc00fd6fadf7c51668c9e7ba74d0c06e2
+ms.sourcegitcommit: cacd381d185b2b8b7fb99082baf83d9f65dde341
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997563"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59508223"
 ---
 # <a name="activity-processing"></a>Processamento de atividade
 
@@ -29,7 +29,7 @@ Atividades, particularmente aquelas que [são enviadas de um bot](#generating-re
 
 O adaptador de bot encapsula processos de autenticação e envia atividades para e recebe atividades do Serviço de Conector de Bot. Quando seu bot recebe uma atividade, o adaptador encerra tudo sobre essa atividade, cria um [objeto de contexto](#turn-context) para o turn, passa para a lógica do aplicativo do bot e envia respostas geradas pelo seu bot de volta ao canal do usuário.
 
-## <a name="authentication"></a>Autenticação
+## <a name="authentication"></a>Authentication
 
 O adaptador autentica cada atividade recebida que o aplicativo recebe, usando informações da atividade e o cabeçalho `Authentication` da solicitação REST. O adaptador usa um objeto conector e as credenciais do aplicativo para autenticar as atividades de saída para o usuário.
 
@@ -79,7 +79,7 @@ Além da lógica de bot e middleware, os manipuladores de resposta (às vezes ta
 
 Cada nova atividade obtém um novo thread para executar em. Quando o encadeamento para processar a atividade é criado, a lista de manipuladores dessa atividade é copiada para esse novo encadeamento. Nenhum manipulador adicionado após esse ponto será executado para esse evento de atividade específico.
 
-Os manipuladores registrados em um objeto de contexto são tratados de maneira muito semelhante a como o adaptador gerencia o [pipeline de middleware](~/v4sdk/bot-builder-concept-middleware.md#the-bot-middleware-pipeline). Ou seja, os manipuladores são chamados na ordem em que são adicionados e chamar o _próximo_ delegado passa o controle para o próximo manipulador de eventos registrado. Se um manipulador não chamar o próximo delegado, nenhum dos manipuladores de eventos subsequentes serão chamados, o evento [entra em curto](~/v4sdk/bot-builder-concept-middleware.md#short-circuiting) e o adaptador não envia a resposta para o canal.
+Os manipuladores registrados em um objeto de contexto são tratados de maneira muito semelhante à forma que o adaptador gerencia o [pipeline do middleware](~/v4sdk/bot-builder-concept-middleware.md#the-bot-middleware-pipeline). Ou seja, os manipuladores são chamados na ordem em que são adicionados e chamar o _próximo_ delegado passa o controle para o próximo manipulador de eventos registrado. Se um manipulador não chamar o próximo delegado, nenhum dos manipuladores de eventos subsequentes serão chamados, o evento [entra em curto](~/v4sdk/bot-builder-concept-middleware.md#short-circuiting) e o adaptador não envia a resposta para o canal.
 
 ## <a name="next-steps"></a>Próximas etapas
 

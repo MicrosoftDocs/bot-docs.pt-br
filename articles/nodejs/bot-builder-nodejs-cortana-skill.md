@@ -6,14 +6,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 12/13/2017
+ms.date: 02/10/2019
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: e00128ca82ec8b97502d8f2fbf42be10cc91ade6
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: 690c456a1baa94eab1f0efbed6ce2c2e1f5cb280
+ms.sourcegitcommit: cacd381d185b2b8b7fb99082baf83d9f65dde341
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225292"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59508153"
 ---
 # <a name="build-a-speech-enabled-bot-with-cortana-skills"></a>Criar um bot habilitado para fala com habilidades da Cortana
 
@@ -56,44 +56,48 @@ A propriedade **inputHint** ajuda a indicar à Cortana se o seu bot está espera
 
 | Valor | DESCRIÇÃO |
 |------|------|
-| **acceptingInput** | O bot está passivamente pronto para a entrada, mas não está aguardando uma resposta. Cortana aceita a entrada do usuário, se o usuário mantém pressionado o botão de microfone.|
-| **expectingInput** | Indica se o bot está ativamente aguardando uma resposta do usuário. Cortana ouve o usuário falar no microfone.  |
-| **ignoringInput** | Cortana está ignorando a entrada. Seu bot pode enviar essa dica se ele estiver processando ativamente uma solicitação e ignorará a entrada de usuários até que a solicitação seja concluída.  |
-
+| **acceptingInput** | O bot está passivamente pronto para a entrada, mas não está aguardando uma resposta. A Cortana aceita a entrada do usuário se o usuário mantém pressionado o botão de microfone.|
+| **expectingInput** | Indica se o bot está ativamente esperando uma resposta do usuário. A Cortana ouve o usuário falar no microfone.  |
+||OBSERVAÇÃO:  _Não_ usar **expectingInput** em dispositivos sem periféricos (dispositivos sem vídeo). Confira as [Perguntas frequentes sobre o Kit de Habilidades da Cortana](https://review.docs.microsoft.com/en-us/cortana/skills/faq).|
+| **ignoringInput** | A Cortana está ignorando a entrada. O bot poderá enviar essa dica se estiver processando ativamente uma solicitação e ignorará a entrada dos usuários até que a solicitação seja concluída.  |
 
 O exemplo a seguir mostra como a Cortana lê o texto sem formatação ou SSML:
 
 ```javascript
+
 // Have Cortana read plain text
 session.say('This is the text that Cortana displays', 'This is the text that is spoken by Cortana.');
 
 // Have Cortana read SSML
 session.say('This is the text that Cortana displays', '<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">This is the text that is spoken by Cortana.</speak>');
+
 ```
 
 Este exemplo mostra como permitir que a Cortana saiba que a entrada do usuário é esperada. O microfone será deixado aberto.
+
 ```javascript
+
 // Add an InputHint to let Cortana know to expect user input
 session.say('Hi there', 'Hi, what’s your name?', {
     inputHint: builder.InputHint.expectingInput
 });
+
 ```
 <!-- TODO: tip about time limit and batching -->
-
 
 ### <a name="prompts"></a>Prompts
 
 Além de usar o método **session.say()** você também pode passar texto ou SSML para prompts internos usando as opções **speak** e **retrySpeak**.  
 
 ```javascript
+
 builder.Prompts.text(session, 'text based prompt', {                                    
     speak: 'Cortana reads this out initially',                                               
     retrySpeak: 'This message is repeated by Cortana after waiting a while for user input',  
     inputHint: builder.InputHint.expectingInput                                              
 });
+
 ```
-
-
 
 <!-- TODO: Link to SSML library -->
 
@@ -102,6 +106,7 @@ Para apresentar ao usuário uma lista de opções, use **Prompts.choice**. A op�
 **Prompts.Choice** dá suporte a opções de número ordinal. Isso significa que o usuário pode dizer “primeiro”, “segundo” ou “terceiro” para escolher um item em uma lista. Por exemplo, considerando o seguinte prompt, se o usuário solicitar à Cortana a “segunda opção”, o prompt retornará o valor 8.
 
 ```javascript
+
         var choices = [
             { value: '4', action: { title: '4 Sides' }, synonyms: 'four|for|4 sided|4 sides' },
             { value: '8', action: { title: '8 Sides' }, synonyms: 'eight|ate|8 sided|8 sides' },
@@ -111,11 +116,13 @@ Para apresentar ao usuário uma lista de opções, use **Prompts.choice**. A op�
         builder.Prompts.choice(session, 'choose_sides', choices, { 
             speak: speak(session, 'choose_sides_ssml') // use helper function to format SSML
         });
+
 ```
 
 No exemplo anterior, o SSML para a propriedade **speak** do prompt é formatada usando cadeias de caracteres armazenadas em um arquivo de prompts localizado com o seguinte formato. 
 
 ```json
+
 {
     "choose_sides": "__Number of Sides__",
     "choose_sides_ssml": [
@@ -124,8 +131,8 @@ No exemplo anterior, o SSML para a propriedade **speak** do prompt é formatada 
         "All the standard sizes are supported."
     ]
 }
-```
 
+```
 
 Uma função auxiliar, em seguida, cria o elemento raiz necessário de um documento de linguagem SSML. 
 
@@ -148,16 +155,16 @@ module.exports.speak = function (template, params, options) {
 
 ## <a name="display-cards-in-cortana"></a>Exibir cartões na Cortana
 
-Além das respostas faladas, a Cortana também pode exibir anexos de cartão. Cortana suporta os seguintes cartões com formatação:
+Além das respostas faladas, a Cortana também pode exibir anexos de cartão. A Cortana dá suporte aos seguintes cartões avançados:
 * [HeroCard](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.herocard.html)
 * [ReceiptCard](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.receiptcard.html)
 * [ThumbnailCard](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.thumbnailcard.html)
 
-Consulte [Práticas recomendadas de design de cartão][CardDesign] para ver como é a aparência desses cartões dentro da Cortana. Para obter um exemplo de como adicionar um cartão com formatação para um bot, consulte [Enviar cartões com formatação](bot-builder-nodejs-send-rich-cards.md). 
+Confira [Melhores práticas de design de cartão][CardDesign] para ver a aparência desses cartões na Cortana. Para obter um exemplo de como adicionar um cartão com formatação para um bot, consulte [Enviar cartões com formatação](bot-builder-nodejs-send-rich-cards.md). 
 
 O código a seguir demonstra como adicionar as propriedades **speak** e **inputHint** a uma mensagem que contém um cartão Hero.
 
-```javascript 
+```javascript
 
 bot.dialog('HelpDialog', function (session) {
     var card = new builder.HeroCard(session)
@@ -172,7 +179,6 @@ bot.dialog('HelpDialog', function (session) {
         .inputHint(builder.InputHint.acceptingInput); // Tell Cortana to accept input
     session.send(msg).endDialog();
 }).triggerAction({ matches: /help/i });
-
 
 /** This helper function builds the required root element of a Speech Synthesis Markup Language (SSML) document. */
 module.exports.speak = function (template, params, options) {
@@ -196,6 +202,7 @@ Invoque a habilidade dizendo seu [nome de invocação][InvocationNameGuidelines]
 O exemplo de RollerSkill começa abrindo um cartão com alguns botões para informar ao usuário quais opções estão disponíveis para eles.
 
 ```javascript
+
 /**
  *   Create your bot with a default message handler that receive messages from the user.
  * - This function is be called anytime the user's utterance isn't
@@ -231,8 +238,6 @@ Para iniciar a caixa de diálogo, o manipulador **triggerAction()** nessa caixa 
 
 
 ```javascript
-
-
 bot.dialog('CreateGameDialog', [
     function (session) {
         // Initialize game structure.
@@ -293,6 +298,7 @@ bot.dialog('CreateGameDialog', [
     /(roll|role|throw|shoot).*(dice|die|dye|bones)/i,
     /new game/i
  ]});
+
 ```
 
 ### <a name="render-results"></a>Renderizar resultados
@@ -402,6 +408,7 @@ bot.dialog('PlayGameDialog', function (session, args) {
         session.replaceDialog('CreateGameDialog');
     }
 }).triggerAction({ matches: /(roll|role|throw|shoot) again/i });
+
 ```
 
 ## <a name="next-steps"></a>Próximas etapas

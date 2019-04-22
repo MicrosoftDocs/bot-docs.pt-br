@@ -9,26 +9,25 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 09/22/2018
-ms.openlocfilehash: 0430562fd615aef67b4ba95538d390cf2223fb45
-ms.sourcegitcommit: c6ce4c42fc56ce1e12b45358d2c747fb77eb74e2
+ms.openlocfilehash: 448bd1acd39445c39e49f27c3b9446523124bf87
+ms.sourcegitcommit: 721bb09f10524b0cb3961d7131966f57501734b8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54453899"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59540992"
 ---
 # <a name="connect-a-bot-to-channels"></a>Conectar um bot aos canais
 
-Um canal é uma conexão entre o bot e os aplicativos de comunicação. Você configura um bot para se conectar aos canais nos quais você deseja ele fique disponível. O Serviço Bot Framework, configurado no portal do Azure, conecta o bot a esses canais e facilita a comunicação entre o bot e o usuário. Você pode se conectar a muitos serviços populares, como [Cortana](bot-service-channel-connect-cortana.md), [Facebook Messenger](bot-service-channel-connect-facebook.md), [Kik](bot-service-channel-connect-kik.md) e [Slack](bot-service-channel-connect-slack.md), assim como vários outros. O [Skype](https://dev.skype.com/bots) e Web Chat são pré-configurados para você. Além dos canais padrão fornecidos com o Serviço do Bot Connector, também é possível conectar seu bot ao seu próprio aplicativo cliente usando Direct Line como o canal.
+Um canal é uma conexão entre o bot e os aplicativos de comunicação. Você configura um bot para se conectar aos canais nos quais você deseja ele fique disponível. O Serviço Bot Framework, configurado no portal do Azure, conecta o bot a esses canais e facilita a comunicação entre o bot e o usuário. Você pode se conectar a muitos serviços populares, como [Cortana](bot-service-channel-connect-cortana.md), [Facebook Messenger](bot-service-channel-connect-facebook.md), [Kik](bot-service-channel-connect-kik.md) e [Slack](bot-service-channel-connect-slack.md), assim como vários outros. O canal do [Web Chat](bot-service-channel-connect-webchat.md) é pré-configurado para você. Além dos canais padrão fornecidos com o Serviço do Bot Connector, também é possível conectar o bot ao seu próprio aplicativo cliente usando [Direct Line](bot-service-channel-connect-directline.md) como o canal.
 
 O Serviço Bot Framework permite que você desenvolva o bot de maneira independente de canal, normalizando as mensagens que o bot envia a um canal. Isso envolve convertê-lo do esquema do Bot Framework no esquema do canal. No entanto, se o canal não der suporte a todos os aspectos do esquema do Bot Framework, o serviço tentará converter a mensagem em um formato com suporte pelo canal. Por exemplo, se o bot enviar uma mensagem contendo um cartão com botões de ação ao canal email, o conector poderá enviar o cartão como uma imagem e incluir as ações como links no texto da mensagem.
-
 
 Para a maioria dos canais, você deve fornecer informações de configuração de canal para executar seu bot no canal. A maioria dos canais requerem que seu bot tenha uma conta no canal, e outros, como o Facebook Messenger, exigem que seu bot tenha um aplicativo registrado no canal também.
 
 Para configurar seu bot para se conectar a um canal, conclua as seguintes etapas:
 
 1. Entre no <a href="https://portal.azure.com" target="_blank">Portal do Azure</a>.
-1. Selecione o bot que você deseja configurar.
+2. Selecione o bot que você deseja configurar.
 3. Na folha do serviço de Bot, clique em **Canais** em **Gerenciamento de Bot**.
 4. Clique no ícone do canal que você deseja adicionar ao seu bot.
 
@@ -43,4 +42,5 @@ O processo de publicação é diferente para cada canal.
 [!INCLUDE [publishing](./includes/snippet-publish-to-channel.md)]
 
 ## <a name="additional-resources"></a>Recursos adicionais
-O SDK inclui exemplos que podem ser usados para criar bots. Visite o repositório [GitHub](https://github.com/Microsoft/BotBuilder-samples) para ver a lista de exemplos.
+
+O SDK inclui exemplos que podem ser usados para criar bots. Visite o [repositório de exemplos no GitHub](https://github.com/Microsoft/BotBuilder-samples) para ver uma lista de exemplos.
