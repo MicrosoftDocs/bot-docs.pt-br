@@ -9,10 +9,10 @@ ms.subservice: sdk
 ms.date: 02/10/2019
 monikerRange: azure-bot-service-3.0
 ms.openlocfilehash: 690c456a1baa94eab1f0efbed6ce2c2e1f5cb280
-ms.sourcegitcommit: cacd381d185b2b8b7fb99082baf83d9f65dde341
+ms.sourcegitcommit: 721bb09f10524b0cb3961d7131966f57501734b8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59508153"
 ---
 # <a name="build-a-speech-enabled-bot-with-cortana-skills"></a>Criar um bot habilitado para fala com habilidades da Cortana
@@ -56,8 +56,8 @@ A propriedade **inputHint** ajuda a indicar à Cortana se o seu bot está espera
 
 | Valor | DESCRIÇÃO |
 |------|------|
-| **acceptingInput** | O bot está passivamente pronto para a entrada, mas não está aguardando uma resposta. A Cortana aceita a entrada do usuário se o usuário mantém pressionado o botão de microfone.|
-| **expectingInput** | Indica se o bot está ativamente esperando uma resposta do usuário. A Cortana ouve o usuário falar no microfone.  |
+| **acceptingInput** | O bot está passivamente pronto para a entrada, mas não está aguardando uma resposta. Cortana aceita a entrada do usuário, se o usuário mantém pressionado o botão de microfone.|
+| **expectingInput** | Indica se o bot está ativamente aguardando uma resposta do usuário. A Cortana ouve o usuário falar no microfone.  |
 ||OBSERVAÇÃO:  _Não_ usar **expectingInput** em dispositivos sem periféricos (dispositivos sem vídeo). Confira as [Perguntas frequentes sobre o Kit de Habilidades da Cortana](https://review.docs.microsoft.com/en-us/cortana/skills/faq).|
 | **ignoringInput** | A Cortana está ignorando a entrada. O bot poderá enviar essa dica se estiver processando ativamente uma solicitação e ignorará a entrada dos usuários até que a solicitação seja concluída.  |
 
@@ -155,12 +155,12 @@ module.exports.speak = function (template, params, options) {
 
 ## <a name="display-cards-in-cortana"></a>Exibir cartões na Cortana
 
-Além das respostas faladas, a Cortana também pode exibir anexos de cartão. A Cortana dá suporte aos seguintes cartões avançados:
+Além das respostas faladas, a Cortana também pode exibir anexos de cartão. Cortana suporta os seguintes cartões com formatação:
 * [HeroCard](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.herocard.html)
 * [ReceiptCard](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.receiptcard.html)
 * [ThumbnailCard](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.thumbnailcard.html)
 
-Confira [Melhores práticas de design de cartão][CardDesign] para ver a aparência desses cartões na Cortana. Para obter um exemplo de como adicionar um cartão com formatação para um bot, consulte [Enviar cartões com formatação](bot-builder-nodejs-send-rich-cards.md). 
+Consulte [Práticas recomendadas de design de cartão][CardDesign] para ver como é a aparência desses cartões dentro da Cortana. Para obter um exemplo de como adicionar um cartão com formatação para um bot, consulte [Enviar cartões com formatação](bot-builder-nodejs-send-rich-cards.md). 
 
 O código a seguir demonstra como adicionar as propriedades **speak** e **inputHint** a uma mensagem que contém um cartão Hero.
 
