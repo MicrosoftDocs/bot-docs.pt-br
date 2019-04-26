@@ -8,19 +8,19 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 09/20/2018
+ms.date: 04/18/2019
 ms.reviewer: ''
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: af659dd1c2a75af03cfa45df54a815d2dd2306fc
-ms.sourcegitcommit: 561185b9c83f3e082e8b7aba1122b1706e431540
+ms.openlocfilehash: 9089334823c1c57c8ace48531c767c3f966b3355
+ms.sourcegitcommit: aea57820b8a137047d59491b45320cf268043861
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/26/2018
-ms.locfileid: "53785419"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59905009"
 ---
 # <a name="handle-user-interruptions"></a>Manipular interrupções do usuário
 
-[!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
+[!INCLUDE[applies-to](../includes/applies-to.md)]
 
 O tratamento de interrupções é um aspecto importante de um bot robusto.
 

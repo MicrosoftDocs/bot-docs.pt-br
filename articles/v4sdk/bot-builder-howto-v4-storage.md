@@ -8,18 +8,18 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 11/13/18
+ms.date: 4/13/19
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 314a8a55906ec150d001b56c67ffbfe0ae2049f8
-ms.sourcegitcommit: 721bb09f10524b0cb3961d7131966f57501734b8
+ms.openlocfilehash: 1f74e34c0eaf303e612f94605104482cd5f1f080
+ms.sourcegitcommit: aea57820b8a137047d59491b45320cf268043861
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59541122"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59904489"
 ---
 # <a name="write-directly-to-storage"></a>Gravar diretamente no armazenamento
 
-[!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
+[!INCLUDE[applies-to](../includes/applies-to.md)]
 
 Você pode ler e gravar diretamente em seu objeto de armazenamento sem usar middleware ou objeto de contexto. Isso pode ser apropriado para dados que o bot usa, originados de uma fonte fora do fluxo de conversa do bot. Por exemplo, digamos que o bot permite que o usuário solicite o boletim meteorológico e o bot recupera o boletim meteorológico para uma data específica, lendo-o a partir de um banco de dados externo. O conteúdo do banco de dados de clima não depende das informações do usuário ou do contexto da conversa, portanto, é possível lê-lo diretamente do armazenamento em vez de usar o gerenciador de estado. Os exemplos de código neste artigo mostram como ler e gravar dados no armazenamento usando o **Armazenamento de Memória**, o **Cosmos DB**, o **Armazenamento de Blobs** e o **Armazenamento de Transcrições do Blob do Azure**. 
 

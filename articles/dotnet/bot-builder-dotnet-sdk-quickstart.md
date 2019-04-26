@@ -8,19 +8,18 @@ manager: kamrani
 ms.topic: get-started-article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 02/07/2019
+ms.date: 04/17/2019
 monikerRange: azure-bot-service-4.0
-templateName: Echo Bot
-ms.openlocfilehash: d6987cbfc5a0cd7f885b511a883b45afc3deb49d
-ms.sourcegitcommit: 8183bcb34cecbc17b356eadc425e9d3212547e27
+ms.openlocfilehash: 11b2e301bace5a88269428951fa5468561a84d77
+ms.sourcegitcommit: aea57820b8a137047d59491b45320cf268043861
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55971376"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59904599"
 ---
 # <a name="create-a-bot-with-the-bot-framework-sdk-for-net"></a>Criar um bot com o SDK do Bot Framework para .NET
 
-[!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
 
 Este guia de início rápido oferece orientações sobre como criar um bot usando o modelo de C# e testá-lo com o Bot Framework Emulator.
 
