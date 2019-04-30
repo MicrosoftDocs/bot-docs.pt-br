@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 36a95ec60af117a9a13843dc078bd9bd5cfde635
-ms.sourcegitcommit: 6ed90a4c90add925a0a865be1127041b7775fd3d
+ms.openlocfilehash: 28074e7ad59249cabbd38436bd02dc48bcab5b88
+ms.sourcegitcommit: aea57820b8a137047d59491b45320cf268043861
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50234469"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59904879"
 ---
 # <a name="api-reference---direct-line-api-30"></a>Referência de API – API de Linha Direta 3.0
 
@@ -192,7 +192,7 @@ O esquema da Linha Direta 3.0 inclui todos os objetos definidos pelo [esquema do
 ### <a name="activityset-object"></a>Objeto ActivitySet 
 Define um conjunto de atividades.<br/><br/>
 
-| Propriedade | Tipo | DESCRIÇÃO |
+| Propriedade | Type | DESCRIÇÃO |
 |----|----|----|
 | **activities** | [Activity](bot-framework-rest-connector-api-reference.md#activity-object)[] | Matriz de objetos **Atividade**. |
 | **watermark** | string | Marca-d'água máxima das atividades dentro do conjunto. Um cliente pode usar o valor `watermark` para indicar a mensagem mais recente vista, ao [recuperar as atividades do bot](bot-framework-rest-direct-line-3-0-receive-activities.md#http-get) ou ao [gerar uma nova URL de fluxo de WebSocket](bot-framework-rest-direct-line-3-0-reconnect-to-conversation.md). |
@@ -200,7 +200,7 @@ Define um conjunto de atividades.<br/><br/>
 ### <a name="conversation-object"></a>Objeto Conversa
 Define uma conversa de Linha Direta.<br/><br/>
 
-| Propriedade | Tipo | DESCRIÇÃO |
+| Propriedade | Type | DESCRIÇÃO |
 |----|----|----|
 | **conversationId** | string | ID que identifica exclusivamente a conversa para o qual o token especificado é válido. |
 | **expires_in** | número | Número de segundos até a expiração do token. |
@@ -223,6 +223,6 @@ Quando um cliente envia uma [Atividade](bot-framework-rest-connector-api-referen
 - A propriedade `from` deve ser preenchida com uma ID de usuário escolhida pelo cliente.
 - Os anexos podem conter URLs para recursos existentes ou URLs carregado por meio do ponto de extremidade de anexo da Linha Direta.
 - A propriedade `channelData` será preservada sem modificações.
-- O tamanho total da atividade, quando serializada para JSON, não deve exceder 300 mil caracteres.
+- O tamanho total da atividade, quando serializada para o JSON e criptografada, não deve exceder 256 mil caracteres. Portanto, é recomendável que as atividades sejam mantidas abaixo de 150 mil. Se mais dados forem necessários, divida a atividade em várias e/ou considere o uso de anexos.
 
 Os clientes podem [enviar](bot-framework-rest-direct-line-3-0-send-activity.md) uma única atividade por solicitação. 
