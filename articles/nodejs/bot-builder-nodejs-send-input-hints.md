@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: fa5e2a151bc0b41f160d0b71cb97e24fe1efacaa
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: 513a5aa5b71bf8ec051a26027a56e67c01b1784a
+ms.sourcegitcommit: 4c5c08e7c7eaa5f74c6ac35d8478954b998625f9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225791"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64906289"
 ---
 # <a name="add-input-hints-to-messages"></a>Adicionar dicas de entrada às mensagens
 
@@ -56,7 +56,3 @@ Se você não definir a dica de entrada para uma mensagem, o SDK do Bot Framewor
 ## <a name="additional-resources"></a>Recursos adicionais
 
 - [Adicionar fala a mensagens](bot-builder-nodejs-text-to-speech.md)
-- [Referência do SDK do Bot Framework para Node.js][SDKReference]
-
-[SDKReference]: https://docs.botframework.com/en-us/node/builder/chat-reference/modules/_botbuilder_d_.html
-

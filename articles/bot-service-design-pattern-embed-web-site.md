@@ -9,11 +9,11 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 ms.openlocfilehash: f9fa2bee156752f1545d201768040b6106558e01
-ms.sourcegitcommit: 32615b88e4758004c8c99e9d564658a700c7d61f
+ms.sourcegitcommit: 980612a922b8290b2faadaca193496c4117e415a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55711830"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "64563751"
 ---
 # <a name="embed-a-bot-in-a-website"></a>Inserir um bot em um site
 

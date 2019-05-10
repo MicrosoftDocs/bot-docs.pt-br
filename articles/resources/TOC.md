@@ -1,9 +1,8 @@
-# Modelo Enterprise
-## [Visão geral](../v4sdk/bot-builder-enterprise-template-overview.md)
-## [Introdução](../v4sdk/bot-builder-enterprise-template-getting-started.md)
-## [Personalizar o modelo](../v4sdk/bot-builder-enterprise-template-customize.md)
-# Assistente Virtual 
+# Assistente Virtual
 ## [Visão geral](../v4sdk/bot-builder-virtual-assistant-introduction.md)
+## [Introdução ao modelo](../v4sdk/bot-builder-virtual-assistant-template.md)
+# Habilidades 
+## [Visão geral](../v4sdk/bot-builder-skills-overview.md)
 # [Perguntas frequentes](../bot-service-resources-bot-framework-faq.md)
 # [Obtenha suporte](../bot-service-resources-links-help.md)
 # [Referência do canal](../bot-service-channels-reference.md)

@@ -9,11 +9,11 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 ms.openlocfilehash: d69013c721552483cfd38b204936cb1c7f508f82
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.sourcegitcommit: 980612a922b8290b2faadaca193496c4117e415a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49996893"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "64564013"
 ---
 # <a name="implement-channel-specific-functionality"></a>Implementar a funcionalidade específica do canal
 
@@ -167,7 +167,7 @@ Para criar uma mensagem que implementa ações específicas do Telegram, como co
 
 | Propriedade | DESCRIÇÃO |
 |----|----|
-| estático | O método de API do Bot do Telegram a ser chamado. |
+| method | O método de API do Bot do Telegram a ser chamado. |
 | parâmetros | Os parâmetros do método especificado. |
 
 Há suporte para estes métodos do Telegram: 
@@ -241,7 +241,7 @@ Para criar uma mensagem nativa do Kik, defina a propriedade `channelData` do obj
 
 | Propriedade | DESCRIÇÃO |
 |----|----|
-| da nuvem para o dispositivo | Uma matriz de mensagens do Kik. Para obter detalhes sobre o formato de mensagem do Kik, confira <a href="https://dev.kik.com/#/docs/messaging#message-formats" target="_blank">Formatos de mensagem do Kik</a>. |
+|  da nuvem para o dispositivo | Uma matriz de mensagens do Kik. Para obter detalhes sobre o formato de mensagem do Kik, confira <a href="https://dev.kik.com/#/docs/messaging#message-formats" target="_blank">Formatos de mensagem do Kik</a>. |
 
 Este snippet mostra um exemplo da propriedade `channelData` para uma mensagem nativa do Kik.
 

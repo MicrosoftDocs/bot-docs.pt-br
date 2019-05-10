@@ -10,11 +10,11 @@ ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
 ms.openlocfilehash: 72b2c42acb4743c67c63f158fa37c2bdd0e09ab9
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.sourcegitcommit: 980612a922b8290b2faadaca193496c4117e415a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54224411"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "64563932"
 ---
 # <a name="conduct-audio-calls-with-skype"></a>Realizar chamadas de áudio com o Skype
 

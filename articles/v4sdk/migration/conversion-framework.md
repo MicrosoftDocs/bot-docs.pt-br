@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 02/11/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 1904bb09d8bd387cc5cec0d85f82df24d1f6ec9d
-ms.sourcegitcommit: 7f418bed4d0d8d398f824e951ac464c7c82b8c3e
+ms.openlocfilehash: ea6b859761a3bc8c1424d50d8bad0b7f1f50e86d
+ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56240172"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65033457"
 ---
 # <a name="migrate-a-net-sdk-v3-bot-to-v4"></a>Migrar um bot do SDK do .NET v3 para v4
 
@@ -111,7 +111,7 @@ namespace ContosoHelpdeskChatBot
 
 ## <a name="update-your-globalasaxcs-file"></a>Atualizar o arquivo Global.asax.cs
 
-Parte do scaffolding foi alterada, e temos de configurar as partes da infraestrutura do [gerenciamento de estado](/articles/v4sdk/bot-builder-concept-state.md) por conta própria na v4. Por exemplo, a v4 usa um adaptador de bot para manipular a autenticação e as atividades de encaminhamento ao seu código de bot, e declaramos nossas propriedades de estado com antecedência.
+Parte do scaffolding foi alterada, e temos de configurar as partes da infraestrutura do [gerenciamento de estado](../bot-builder-concept-state.md) por conta própria na v4. Por exemplo, a v4 usa um adaptador de bot para manipular a autenticação e as atividades de encaminhamento ao seu código de bot, e declaramos nossas propriedades de estado com antecedência.
 
 Vamos criar uma propriedade de estado para `DialogState`, que agora é necessária para oferecer suporte ao diálogo na v4. Vamos usar injeção de dependência para obter as informações necessárias para o controlador e o código do bot.
 
@@ -246,7 +246,7 @@ Aqui é onde o manipulador de turnos é executado na v4, assim, ele precisa muda
         }
     }
     ```
-1. Adicione um método **OnTurnAsync** que contém o código do [manipulador de turnos](/articles/v4sdk/bot-builder-basics.md#the-activity-processing-stack) do bot.
+1. Adicione um método **OnTurnAsync** que contém o código do [manipulador de turnos](../bot-builder-basics.md#the-activity-processing-stack) do bot.
     > [!NOTE]
     > Os pontuáveis não existem assim na v4. Procuramos uma mensagem `cancel` do usuário no manipulador de turnos do bot, antes de dar continuidade a qualquer diálogo ativo.
     ```csharp
@@ -353,8 +353,8 @@ Observações sobre o código da v4:
 
 Nesse bot, o diálogo raiz solicita que o usuário escolha uma das opções de um conjunto e depois inicie um diálogo filho com base nessa escolha. Em seguida, um loop é executado durante todo o tempo de vida da conversa.
 
-- É possível configurar o fluxo principal como um diálogo em cascata, que é um novo conceito no SDK da v4. Ele será executado por meio de um conjunto fixo de etapas em ordem. Para obter mais informações, confira [Implementar fluxo de conversa sequencial](/articles/v4sdk/bot-builder-dialog-manage-conversation-flow).
-- O processo de prompt agora é manipulado por meio de classes de prompt, que são diálogos filho curtos que solicitam entradas, fazem certo processamento e validação mínimos e retornam um valor. Para obter mais informações, confira [coletar entrada do usuário usando um prompt de diálogo](/articles/v4sdk/bot-builder-prompts.md).
+- É possível configurar o fluxo principal como um diálogo em cascata, que é um novo conceito no SDK da v4. Ele será executado por meio de um conjunto fixo de etapas em ordem. Para obter mais informações, confira [Implementar fluxo de conversa sequencial](~/v4sdk/bot-builder-dialog-manage-conversation-flow.md).
+- O processo de prompt agora é manipulado por meio de classes de prompt, que são diálogos filho curtos que solicitam entradas, fazem certo processamento e validação mínimos e retornam um valor. Para obter mais informações, confira [coletar entrada do usuário usando um prompt de diálogo](~/v4sdk/bot-builder-prompts.md).
 
 No arquivo **Dialogs/RootDialog.cs**:
 
@@ -425,7 +425,7 @@ No arquivo **Dialogs/RootDialog.cs**:
     }
     ```
 1. É possível substituir **OnOptionSelected** pela segunda etapa da nossa cascata. Ainda iniciaremos um diálogo filho com base na entrada do usuário.
-   - O prompt de escolha retorna um valor `FoundChoice`. Isso é mostrado na propriedade de contexto `Result` da etapa. A pilha de diálogo trata todos os valores retornados como objetos. Se o valor retornado for um dos seus diálogos, você saberá qual é o tipo de valor do objeto. Para obter uma lista com o que cada tipo de prompt retorna, confira [tipos de prompt](/articles/v4sdk/bot-builder-concept-dialog.md#prompt-types).
+   - O prompt de escolha retorna um valor `FoundChoice`. Isso é mostrado na propriedade de contexto `Result` da etapa. A pilha de diálogo trata todos os valores retornados como objetos. Se o valor retornado for um dos seus diálogos, você saberá qual é o tipo de valor do objeto. Para obter uma lista com o que cada tipo de prompt retorna, confira [tipos de prompt](../bot-builder-concept-dialog.md#prompt-types).
    - Como o prompt de escolha não lançará uma exceção, é possível remover o bloco try-catch.
    - Precisamos adicionar uma passagem para que esse método sempre retorne um valor apropriado. Esse código nunca deve ser atingido, mas se o for, ele permitirá que o diálogo “falhe graciosamente”.
     ```csharp

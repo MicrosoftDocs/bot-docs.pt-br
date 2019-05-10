@@ -10,11 +10,11 @@ ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
 ms.openlocfilehash: 06fcdd26980b719e7f7db76bc585650176c1d84f
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.sourcegitcommit: 980612a922b8290b2faadaca193496c4117e415a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225671"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "64564023"
 ---
 # <a name="use-the-backchannel-mechanism"></a>Usar mecanismo de backchannel
 

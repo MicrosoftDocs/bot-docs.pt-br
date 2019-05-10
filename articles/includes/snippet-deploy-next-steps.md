@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 8e5677fe59dd9edad6ac1da9d029e5f7c08bf179
+ms.sourcegitcommit: 980612a922b8290b2faadaca193496c4117e415a
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "64563964"
+---
 ## <a name="next-steps"></a>Próximas etapas
 Depois que você tiver implantado seu bot na nuvem e verificado que a implantação foi bem-sucedida testando o bot usando o emulador do Bot Framework, a próxima etapa no processo de publicação de bot dependerá de você já ter registrado seu bot no Bot Framework.
 

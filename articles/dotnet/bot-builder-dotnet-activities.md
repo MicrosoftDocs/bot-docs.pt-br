@@ -10,11 +10,11 @@ ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
 ms.openlocfilehash: 076e460f393c5db524cfade81e5c007484fe2cca
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.sourcegitcommit: 980612a922b8290b2faadaca193496c4117e415a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225661"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "64564069"
 ---
 # <a name="activities-overview"></a>Visão geral das atividades
 
@@ -38,7 +38,7 @@ Os tipos de atividade a seguir têm suporte do SDK do Bot Framework para .NET.
 | [invoke](#invoke) | IInvokeActivity | Representa uma comunicação enviada a um bot para solicitar a execução de uma operação específica. Esse tipo de atividade é reservado para uso interno do Microsoft Bot Framework. |
 | [messageReaction](#messagereaction) | IMessageReactionActivity | Indica que um usuário reagiu a uma atividade existente. Por exemplo, um usuário clica no botão "Curtir" em uma mensagem. |
 
-## <a name="message"></a>Message
+## <a name="message"></a>message
 
 Seu bot enviará atividades de **mensagem** para comunicar informações aos usuários e receber atividades de **mensagem** dos usuários. Algumas mensagens podem simplesmente consistir em texto sem formatação, enquanto outras podem conter conteúdo mais elaborado, como [texto a ser falado](bot-builder-dotnet-text-to-speech.md), [ações sugeridas](bot-builder-dotnet-add-suggested-actions.md), [anexos de mídia](bot-builder-dotnet-add-media-attachments.md), [cartões avançados](bot-builder-dotnet-add-rich-card-attachments.md) e [dados específicos do canal](bot-builder-dotnet-channeldata.md). Para saber mais sobre as propriedades de mensagem mais usadas, consulte [Criar mensagens](bot-builder-dotnet-create-messages.md).
 

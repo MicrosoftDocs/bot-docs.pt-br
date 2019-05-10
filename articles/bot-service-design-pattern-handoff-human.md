@@ -6,13 +6,13 @@ ms.author: mateusv
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 12/13/2017
-ms.openlocfilehash: f18b375a1e4ebcf06d00d045e383db8b05fb5111
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.date: 5/2/2019
+ms.openlocfilehash: a5bb8d8dce1fdb45ab9ab42b247e2697713e51ac
+ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225731"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65033047"
 ---
 # <a name="transition-conversations-from-bot-to-human"></a>Fazer a transição de conversas do bot para humanos
 
@@ -71,10 +71,6 @@ Depois que o agente se conecta ao bot, o bot começa a encaminhar mensagens entr
 
 > [!NOTE]
 > Em cenários mais avançados, o bot pode assumir a responsabilidade além de simplesmente encaminhar mensagens entre o usuário e o agente. Por exemplo, o bot pode decidir qual resposta é apropriada e simplesmente solicitar ao agente uma confirmação para continuar.
-
-## <a name="sample-code"></a>Exemplo de código
-
-Veja um exemplo completo que mostra como disponibilizar as conversas do bot para humanos usando o SDK do Bot Framework para Node.js em <a href="https://github.com/palindromed/Bot-HandOff" target="_blank">Exemplo de entrega de Bot</a> no GitHub.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

@@ -9,11 +9,11 @@ ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
 ms.openlocfilehash: 85ef0fde39980bab1b891518e338fddbd56b275a
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.sourcegitcommit: 980612a922b8290b2faadaca193496c4117e415a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54224451"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "64563878"
 ---
 # <a name="how-bot-service-works"></a>Como funciona o Serviço de Bot
 

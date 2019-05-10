@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: eac6abae509d92ea4714bc01221f180ea575950f
-ms.sourcegitcommit: bdb981c0b11ee99d128e30ae0462705b2dae8572
+ms.sourcegitcommit: 4ff7a8772124a567f43e2c3e13aded368c4002e3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54360819"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65035741"
 ---
 Obtenha a chave de criptografia.
 

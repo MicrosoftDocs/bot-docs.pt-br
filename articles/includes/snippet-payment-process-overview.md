@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 86faca976bc95a5e91e17749096cd148483edc61
+ms.sourcegitcommit: 980612a922b8290b2faadaca193496c4117e415a
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "64563644"
+---
 ## <a name="payment-process-overview"></a>Visão geral do processo de pagamento
 
 O processo de pagamento é composto por três partes distintas:

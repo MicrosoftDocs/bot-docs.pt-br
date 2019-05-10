@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: fed6222fb9cf2d7793776c5575dfbcda49b54224
-ms.sourcegitcommit: bdb981c0b11ee99d128e30ae0462705b2dae8572
+ms.openlocfilehash: 14d9632ad578014a36b5f13e6dee883e2a6e1722
+ms.sourcegitcommit: 4ff7a8772124a567f43e2c3e13aded368c4002e3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54360829"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65035690"
 ---
-1. Acesse o [**Portal de Registro de Aplicativos**](https://apps.dev.microsoft.com/).
+1. Acesse o [**Portal de Registro de Aplicativos**](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade).
 1. Clique em **Adicionar um aplicativo** para registrar seu aplicativo, crie a **ID do aplicativo** e utilize a opção **Gerar nova senha**. Se você já tiver um aplicativo e uma senha, mas não se lembra da senha, você precisará gerar uma nova senha na seção Segredos do aplicativo.
 1. Salve a ID do aplicativo e a nova senha que você acabou de gerar, para que você possa usá-las com o comando `az bot create`.  
 

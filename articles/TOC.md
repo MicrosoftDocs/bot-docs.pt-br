@@ -1,6 +1,7 @@
 # [Documentação do Serviço de Bot do Azure](index.md)
 # Visão geral
 ## [Sobre o Serviço de Bot do Azure](bot-service-overview-introduction.md)
+## [Novidades](what-is-new.md)
 # Início rápido
 ## [Criar um bot com o Serviço de Bot do Azure](~/bot-service-quickstart.md)
 ## Criar um bot localmente
@@ -11,8 +12,7 @@
 ## [2. Adicionar o QnA Maker e reimplantar um bot](v4sdk/bot-builder-tutorial-add-qna.md)
 ## [Adicionar autenticação ao seu bot ](bot-builder-tutorial-authentication.md)
 # Exemplos
-## [Repositório botbuilder-samples no GitHub](https://github.com/Microsoft/BotBuilder-Samples/blob/master/README.md)
-## [Implantar bots a partir do repositório botbuilder-samples](bot-builder-deploy-samples.md)
+## [Repositório de exemplos do Bot Framework no GitHub](https://github.com/Microsoft/BotBuilder-Samples/blob/master/README.md)
 # Conceitos
 ## [Como funcionam os bots](v4sdk/bot-builder-basics.md)
 ## [Gerenciar estado](v4sdk/bot-builder-concept-state.md)
@@ -40,36 +40,33 @@
 ### [Enviar mensagem de boas-vinda aos usuários](v4sdk/bot-builder-send-welcome-message.md)
 <!-- ## [Add input hints to messages](v4sdk/bot-builder-howto-add-input-hints.md) -->
 ### [Enviar notificações proativas para os usuários](v4sdk/bot-builder-howto-proactive-message.md)
+### [Implementar o fluxo de conversa sequencial](v4sdk/bot-builder-dialog-manage-conversation-flow.md)
 ### [Adicionar o reconhecimento de idioma natural ao seu bot](v4sdk/bot-builder-howto-v4-luis.md)
 ### [Responder às perguntas do usuário usando o QnA Maker](v4sdk/bot-builder-howto-qna.md)
 ### [Usar vários modelos de LUIS e QnA](v4sdk/bot-builder-tutorial-dispatch.md)
-### Gerenciar as conversas usando a biblioteca de Caixas de Diálogo 
-#### [Implementar o fluxo de conversa sequencial](v4sdk/bot-builder-dialog-manage-conversation-flow.md)
-#### [Coletar entradas do usuário usando um prompt de caixa de diálogo](v4sdk/bot-builder-prompts.md)
-#### [Criar fluxo de conversa avançado usando branches e loops](v4sdk/bot-builder-dialog-manage-complex-conversation-flow.md)
-#### [Manipular interrupções do usuário](v4sdk/bot-builder-howto-handle-user-interrupt.md)
-#### [Persistir dados de usuário](v4sdk/bot-builder-tutorial-persist-user-inputs.md)
-#### [Reutilizar as caixas de diálogo](v4sdk/bot-builder-compositcontrol.md)
+### [Criar fluxo de conversa avançado usando branches e loops](v4sdk/bot-builder-dialog-manage-complex-conversation-flow.md)
+### [Reutilizar as caixas de diálogo](v4sdk/bot-builder-compositcontrol.md)
+<!--#### [Implement a greeting dialog](v4sdk/bot-builder-dialogs-greeting.md)--TODO: Add once there's a sample.-->
+### [Manipular interrupções do usuário](v4sdk/bot-builder-howto-handle-user-interrupt.md)
+<!--#### [Persist user data](v4sdk/bot-builder-tutorial-persist-user-inputs.md)--TODO: redirect to write directly to storage.-->
 ### [Gravar diretamente no armazenamento](v4sdk/bot-builder-howto-v4-storage.md)
 ### [Adicionar autenticação ao seu bot ](v4sdk/bot-builder-authentication.md)
 ### [Implementar um armazenamento personalizado para seu bot](v4sdk/bot-builder-custom-storage.md)
 ### [Adicionar telemetria ao seu bot](v4sdk/bot-builder-telemetry.md)
-### [Gerenciar os bots usando as ferramentas de CLI](bot-builder-tools.md)
+### [Use o Direct Line por Fala no seu bot](directline-speech-bot.md)
 ### [.NET](dotnet/TOC.md)
 ### [Node.js](nodejs/TOC.md)
 ## [Depurar](debug/TOC.md)
 ## Implantar
 ### [Implantar seu bot no Azure](bot-builder-deploy-az-cli.md)
-<!-- ### [Deploy your C# bot using Visual Studio](bot-builder-howto-deploy-azure.md)
-### [Download and redeploy bot code](bot-service-build-download-source-code.md) 
-### [Set up continuous deployment](bot-service-build-continuous-deployment.md) -->
+### [Configurar a implantação contínua](bot-service-build-continuous-deployment.md)
 ## [Gerenciar](manage/TOC.md)
 ## [Migrar](v4sdk/migration/TOC.md)
 # Referência
 ## [SDK v4 do .NET](https://aka.ms/botframework-v4-cs-sdk)
-## [SDK v4 do JavaScript](https://aka.ms/jssdk4)
+## [SDK v4 do JavaScript](https://aka.ms/bot-jssdk-v4)
 ## [REST](rest-api/TOC.md)
 ## [SDK v3 do .NET](https://aka.ms/botframework-v3-cs-sdk)
-## [SDK v3 do Node.js](https://docs.botframework.com/en-us/node/builder/chat-reference/modules/_botbuilder_d_.html)
+## [SDK v3 do Node.js](https://aka.ms/bot-jssdk-v3)
 ## [Entidades e tipos de atividades](bot-service-activities-entities.md)
 # [Recursos](resources/TOC.md)
