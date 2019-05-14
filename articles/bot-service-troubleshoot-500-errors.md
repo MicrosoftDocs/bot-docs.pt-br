@@ -8,19 +8,22 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 12/20/2018
-ms.openlocfilehash: f86cacce5b25f60010f646cf5989123e3abf3bf2
-ms.sourcegitcommit: 32615b88e4758004c8c99e9d564658a700c7d61f
+ms.date: 4/30/2019
+ms.openlocfilehash: 93689b7cee1c89bd9a7079c15ddf6aa16fcacc26
+ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55711970"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65033076"
 ---
 # <a name="troubleshoot-http-500-errors"></a>Solucionar erros de HTTP 500
 
 A primeira etapa na solução de erros 500 é habilitar o Application Insights.
 
-Os exemplos luis-with-appinsights ([C#](https://aka.ms/cs-luis-with-appinsights-sample) / [JS](https://aka.ms/js-luis-with-appinsights-sample)) e qna-with-appinsights ([C#](https://aka.ms/qna-with-appinsights) / [JS](https://aka.ms/js-qna-with-appinsights-sample)) demonstram bots com suporte para o Azure Application Insights. Confira [telemetria de análise de conversa](https://aka.ms/botPowerBiTemplate) para obter informações sobre como adicionar o Application Insights a um bot existente.
+<!-- TODO: Add links back in once there's a fresh AppInsights sample.
+The luis-with-appinsights ([C# sample](https://aka.ms/cs-luis-with-appinsights-sample) / [JS sample](https://aka.ms/js-luis-with-appinsights-sample)) and qna-with-appinsights ([C# sample](https://aka.ms/qna-with-appinsights) / [JS sample](https://aka.ms/js-qna-with-appinsights-sample)) samples demonstrate bots that support Azure Application Insights.
+-->
+Confira [telemetria de análise de conversa](https://aka.ms/botframeworkanalytics) para obter informações sobre como adicionar o Application Insights a um bot existente.
 
 ## <a name="enable-application-insights-on-aspnet"></a>Habilitar o Application Insights no ASP.Net
 
@@ -71,7 +74,7 @@ Verifique se o seu bot é executado localmente primeiro com o emulador.
 
 ### <a name="ensure-configuration-files-are-being-copied-net-only"></a>Certificar-se de que os arquivos de configuração estão sendo copiados (.NET)
 
-Certifique-se de que seu arquivo de configuração `.bot` e o seu arquivo `appsettings.json` estão sendo empacotados corretamente durante o processo de implantação.
+Certifique-se de que seu arquivo `appsettings.json` e qualquer outro arquivo de configuração sejam empacotados corretamente durante o processo de implantação.
 
 #### <a name="application-assemblies"></a>Assemblies do aplicativo
 
@@ -86,7 +89,7 @@ Certifique-se de que os assemblies do Application Insights estão sendo empacota
 - Microsoft.AI.DependencyCollector
 - Microsoft.AI.Agent.Intercept
 
-Certifique-se de que seu arquivo de configuração `.bot` e o seu arquivo `appsettings.json` estão sendo empacotados corretamente durante o processo de implantação.
+Certifique-se de que seu arquivo `appsettings.json` e qualquer outro arquivo de configuração sejam empacotados corretamente durante o processo de implantação.
 
 #### <a name="appsettingsjson"></a>appsettings.json
 
@@ -114,8 +117,6 @@ Verifique se a chave de instrumentação está definida no seu arquivo `appsetti
 
 ```json
 {
-    "botFilePath": "mybot.bot",
-    "botFileSecret": "<my secret>",
     "ApplicationInsights": {
         "InstrumentationKey": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
     }
@@ -124,12 +125,13 @@ Verifique se a chave de instrumentação está definida no seu arquivo `appsetti
 
 ---
 
-### <a name="verify-bot-config-file"></a>Verificar o arquivo de configuração .bot
+### <a name="verify-config-file"></a>Verifique o arquivo de configuração
 
-Verifique se há uma chave do Application Insights incluída no arquivo .bot.
+Verifique se há uma chave do Application Insights incluída em seu arquivo de configuração.
 
 ```json
-    {
+{
+    "ApplicationInsights": {
         "type": "appInsights",
         "tenantId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
         "subscriptionId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
@@ -140,7 +142,8 @@ Verifique se há uma chave do Application Insights incluída no arquivo .bot.
         "applicationId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
         "apiKeys": {},
         "id": ""
-    },
+    }
+},
 ```
 
 ### <a name="check-logs"></a>Verificar os logs

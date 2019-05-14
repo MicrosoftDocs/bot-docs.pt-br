@@ -1,21 +1,18 @@
 ---
-title: Construa um bot de mídia em tempo real para o Skype | Microsoft Docs
-description: Aprenda a criar um bot que realize chamadas de áudio/vídeo em tempo real com o Skype, usando o SDK do Bot Framework para .NET e o SDK do Bot Builder-RealTimeMediaCalling para .NET.
-author: MalarGit
-ms.author: malarch
-manager: kamrani
-ms.topic: article
-ms.service: bot-service
-ms.subservice: sdk
-ms.date: 12/13/17
-monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: a539ca3258e8c9a8020bfa7c939f6eddbdd30feb
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+redirect_url: https://aka.ms/realTimeMediaCalling-repo
+ms.openlocfilehash: 9251c3a8ea75376b0891fc173975470a66ccaec8
+ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225651"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65032956"
 ---
+<a name="--"></a><!--
+---
+Título: Construa um bot de mídia em tempo real para o Skype | descrição do Microsoft Docs: Aprenda a criar um bot que realize chamadas de áudio/vídeo em tempo real com o Skype, usando o SDK do Bot Framework para .NET e o SDK do Bot Builder-RealTimeMediaCalling para .NET.
+author: MalarGit ms.author: malarch manager: kamrani ms.topic: article ms.service: bot-service ms.subservice: sdk ms.date: 12/13/17 monikerRange: 'azure-bot-service-3.0'
+---
+
 # <a name="build-a-real-time-media-bot-for-skype"></a>Crie um bot de mídia em tempo real para o Skype
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
@@ -375,3 +372,4 @@ O bot pode optar por encerrar a chamada chamando `EndCall` em `IRealTimeMediaCal
 ### <a name="handle-call-clean-up-by-the-bot-framework"></a>Manipular a chamada de limpeza pela estrutura do Bot
 Em condições de erro (por exemplo, se `AnswerAppHostedMediaOutcomeEvent` não for recebido dentro de um tempo razoável), o Bot Framework poderá encerrar a chamada. O bot deve registrar-se para o evento `OnCallCleanup` e descartar os soquetes de mídia.
 
+-->

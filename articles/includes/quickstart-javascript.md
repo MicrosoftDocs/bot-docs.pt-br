@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b3f9a0d2c24809c0814baa9bfb8f993a4ba55ef7
-ms.sourcegitcommit: 721bb09f10524b0cb3961d7131966f57501734b8
+ms.openlocfilehash: ee2c261f6b028542b20771801b114d0b23ab21ca
+ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59551658"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65033210"
 ---
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -12,7 +12,7 @@ ms.locfileid: "59551658"
 - [Node.js](https://nodejs.org/)
 - [Yeoman](http://yeoman.io/), que usa um gerador para criar um bot para você
 - [git](https://git-scm.com/)
-- [Emulador do bot Framework](https://github.com/Microsoft/BotFramework-Emulator)
+- [Emulador do bot Framework](https://aka.ms/bot-framework-emulator-readme)
 - Conhecimento de [restify](http://restify.com/) e programação assíncrona em JavaScript
 
 > [!NOTE]
@@ -64,7 +64,7 @@ Yeoman pede-lhe alguma informação para criar o seu bot. Neste tutorial, use os
 Graças ao modelo, seu projeto contém todo o código necessário para criar o bot neste início rápido. Na verdade, você não precisa escrever nenhum código adicional.
 
 > [!NOTE]
-> Se você optar por criar um bot `Basic`, será necessário um modelo de linguagem do LUIS. É possível criar um em [luis.ai](https://www.luis.ai). Após a criação do modelo, atualize o arquivo .bot. O arquivo do bot deverá ser semelhante a [este](../v4sdk/bot-builder-service-file.md).
+> Se você optar por criar um bot `Basic`, será necessário um modelo de linguagem do LUIS. É possível criar um em [luis.ai](https://www.luis.ai). Após a criação do modelo, atualize o arquivo de configuração.
 
 ## <a name="start-your-bot"></a>Inicie seu bot
 
@@ -73,8 +73,8 @@ Em um terminal ou prompt de comando, altere os diretórios para aquele criado pa
 ## <a name="start-the-emulator-and-connect-your-bot"></a>Iniciar o emulador e conectar seu bot
 
 1. Instale o Emulador do Bot Framework.
-2. Clique no link **Abrir Bot** na guia "Boas-vindas" do emulador.
-3. Selecione o arquivo .bot localizado no diretório em que você criou o projeto.
+2. Clique no link **Criar uma nova configuração de bot** na guia de “Boas-vindas” do emulador. 
+3. Preencha os campos de seu bot e clique em **Salvar e conectar**.
 
 Envie uma mensagem para seu bot e o bot responderá com uma mensagem.
 ![Emulador em execução](../media/emulator-v4/js-quickstart.png)

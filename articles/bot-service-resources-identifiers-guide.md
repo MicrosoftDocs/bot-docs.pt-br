@@ -8,13 +8,13 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 12/13/2017
-ms.openlocfilehash: 3c4f8549f40740961feea24f73aa2e4b9b7bc82f
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.date: 04/30/2019
+ms.openlocfilehash: 28932ca45c6faaad2f17ecc03f026ba04352a5a1
+ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998883"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65033074"
 ---
 # <a name="id-fields-in-the-bot-framework"></a>Campos de ID no Bot Framework
 
@@ -36,13 +36,13 @@ Por convenção, todas as IDs de canal são em minúsculas. Os canais garantem q
 
 ## <a name="bot-handle"></a>Identificador de Bot
 
-Cada bot que foi registrado com o Bot Framework tem um identificador de bot.
+Cada bot que foi registrado com o Serviço de Bot do Azure tem um identificador de bot.
 
 Exemplo: `FooBot`
 
-Um identificador de bot representa o registro de um bot com o Bot Framework on-line. Esse registro é associado a um ponto de extremidade de webhook HTTP e aos registros com canais.
+O identificador representa o registro de um bot com o serviço online de bot do Azure. Esse registro é associado a um ponto de extremidade de webhook HTTP e aos registros com canais.
 
-O portal do desenvolvedor do Bot Framework garante a exclusividade dos identificadores de bot. O portal executa uma verificação de exclusividade que não diferencia maiúsculas de minúsculas (o que significa que as variações de maiúsculas e minúsculas do identificador de bot são tratadas como um identificador único) embora essa seja uma característica do portal do desenvolvedor, e não necessariamente do próprio identificador de bot.
+O serviço de Bot do Azure garante a exclusividade dos identificadores de bot. O portal do Azure executa uma verificação de exclusividade que não diferencia maiúsculas de minúsculas (o que significa que as variações de maiúsculas e minúsculas do identificador de bot são tratadas como um único identificador) embora essa seja uma característica do portal do Azure e não necessariamente do próprio identificador de bot.
 
 ### <a name="rules-for-bot-handles"></a>Regras para identificadores de bot
 
@@ -50,7 +50,7 @@ O portal do desenvolvedor do Bot Framework garante a exclusividade dos identific
 
 ## <a name="app-id"></a>ID do Aplicativo
 
-Cada bot que foi registrado com o Bot Framework tem uma ID do Aplicativo.
+Cada bot que foi registrado com o Serviço de Bot do Azure tem uma ID de Aplicativo.
 
 > [!NOTE]
 > Anteriormente, aplicativos eram normalmente conhecidos como "Aplicativos MSA" ou "Aplicativos MSA/AAD". Agora, os aplicativos são mais conhecidos simplesmente como "apps", mas alguns elementos de protocolo podem se referir aos aplicativos como "Aplicativos MSA" perpetuamente.

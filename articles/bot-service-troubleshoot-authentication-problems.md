@@ -6,20 +6,20 @@ ms.author: v-demak
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 02/26/2019
-ms.openlocfilehash: 780dcf4d9db48f9ef7f5a92180dc13c41cc63305
-ms.sourcegitcommit: cf3786c6e092adec5409d852849927dc1428e8a2
+ms.date: 04/30/2019
+ms.openlocfilehash: 756e24409532de1473e546e3f771be416cb44c78
+ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57224934"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65033648"
 ---
 # <a name="troubleshooting-bot-framework-authentication"></a>Solucionar problemas de autenticação do Bot Framework
 
 Este guia pode ajudar você a solucionar problemas de autenticação com seu bot por meio da avaliação uma série de cenários para determinar onde há o problema. 
 
 > [!NOTE]
-> Para concluir todas as etapas neste guia, é preciso baixar e usar o [Emulador do Bot Framework][Emulator] e deve ter acesso às configurações de registro do bot no <a href="https://dev.botframework.com" target="_blank">Portal do Bot Framework</a>.
+> Para concluir todas as etapas deste guia, é preciso baixar e usar o [Bot Framework Emulator][Emulator] e ter acesso às configurações de registro do bot no <a href="https://portal.azure.com" target="_blank">Portal do Azure</a>.
 
 ## <a id="PW"></a> ID de aplicativo e senha
 
@@ -65,15 +65,11 @@ var connector = new builder.ChatConnector({
 
 ::: moniker range="azure-bot-service-4.0"
 
-Se você estiver usando o SDK do Bot Framework para .NET, edite estas configurações no arquivo `.bot`:
+Se você estiver usando o SDK do Bot Framework para .NET, edite estas configurações no arquivo `appsettings.json`:
 
 ```json
-"services": [
-  {
-    "appId": "<your app ID>",
-    "appPassword": "<your app password>",
-  }
-]
+  "MicrosoftAppId": "<your app ID>",
+  "MicrosoftAppPassword": "<your app password>"
 ```
 
 Se você estiver usando o SDK do Bot Framework para Node.js, edite estes valores (ou atualize as variáveis de ambiente correspondentes):
@@ -84,8 +80,6 @@ const adapter = new BotFrameworkAdapter({
     appPassword: null
 });
 ```
-
-Se estiver usando o arquivo `.bot` para configuração, atualize o `appId` e `appPassword` para `""`.
 
 ::: moniker-end
 
@@ -148,7 +142,7 @@ Neste ponto, você verificou que seu bot fica acessível e funcional no localhos
 
 A segurança do seu bot se baseia em serviços da Microsoft, mesmo quando seu bot é executado somente no localhost. Para habilitar a segurança do bot, edite as definições de configuração para preencher a ID e senha do aplicativo com os valores que você verificou na [Etapa 2](#step-2).  Além disso, verifique se os pacotes estão atualizados, especificamente `System.IdentityModel.Tokens.Jwt` e `Microsoft.IdentityModel.Tokens`.
 
-Se estiver usando o SDK do Bot Framework para .NET, preencha essas configurações em seu `appsettings.config` ou os valores correspondentes no arquivo `.bot`:
+Se estiver usando o SDK do Bot Framework para .NET, preencha essas configurações em seu `appsettings.config` ou os valores correspondentes no arquivo `appsettings.json`:
 
 ```xml
 <appSettings>
@@ -200,7 +194,7 @@ Neste ponto, você verificou que seu bot fica acessível e funcional no localhos
 O Bot Framework exige que bots sejam acessíveis pela Internet, portanto, você deve implantar seu bot em uma plataforma de hospedagem de nuvem, como o Azure. Não se esqueça de habilitar a segurança do bot antes da implantação, conforme descrito em [Etapa 3](#step-3).
 
 > [!NOTE]
-> Caso ainda não tenha um provedor de hospedagem de nuvem, é possível se inscrever para uma <a href="https://azure.microsoft.com/en-us/free/" target="_blank">conta gratuita</a>. 
+> Caso ainda não tenha um provedor de hospedagem de nuvem, é possível se inscrever para uma <a href="https://azure.microsoft.com/free/" target="_blank">conta gratuita</a>. 
 
 Caso implante o bot no Azure, o SSL será configurado automaticamente para o aplicativo, habilitando o ponto de extremidade **HTTPS** que o Bot Framework exige. Se você implantar em outro provedor de hospedagem de nuvem, verifique se o aplicativo está configurado para SSL para que o bot tenha um ponto de extremidade **HTTPS**.
 
@@ -209,7 +203,7 @@ Caso implante o bot no Azure, o SSL será configurado automaticamente para o apl
 Para testar seu bot na nuvem com a segurança habilitada, conclua as etapas a seguir.
 
 1. Verifique se seu bot foi implantado com êxito e está em execução. 
-2. Entre no <a href="https://dev.botframework.com" target="_blank">Portal do Bot Framework</a>.
+2. Entre no <a href="https://portal.azure.com" target="_blank">Portal do Azure</a>.
 3. Clique em **Meus Bots**.
 4. Selecione o bot que você deseja testar.
 5. Clique em **Testar** para abrir o bot em um controle de chat da Web incorporado.
@@ -228,7 +222,7 @@ Se o bot responder apropriadamente à entrada, você verificou que ele fica aces
 Caso ainda esteja enfrentando problemas depois de concluir as etapas acima, você pode:
 
 * Examine as instruções sobre como [depurar um bot](bot-service-debug-bot.md) e outros artigos sobre depuração nesta seção.
-* [Depurar seu bot na nuvem](~/bot-service-debug-emulator.md) usando o Emulador do Bot Framework e <a href="https://ngrok.com/" target="_blank">ngrok</a>.
+* [Depurar seu bot na nuvem](~/bot-service-debug-emulator.md) usando o Bot Framework Emulator e o software de encapsulamento <a href="https://ngrok.com/" target="_blank">ngrok</a>. *O ngrok não é um produto da Microsoft.*
 * Usar uma ferramenta de criação de proxies como o [Fiddler](https://www.telerik.com/fiddler) para inspecionar o tráfego HTTPS de entrada e saída do seu bot. *O Fiddler não é um produto da Microsoft.*
 * Examine o [Guia de autenticação do conector de Bot][BotConnectorAuthGuide] para saber mais sobre as tecnologias de autenticação que o Bot Framework usa.
 * Solicitar ajuda de outras pessoas usando os recursos de [suporte][Support] do Bot Framework. 

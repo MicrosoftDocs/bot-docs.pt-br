@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: f7e68b9ab6ef1fca189108ed4117c0ab17f4d9f2
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: 5ae3acded991411156d3e69f4ed9360df9bdccb1
+ms.sourcegitcommit: 4c5c08e7c7eaa5f74c6ac35d8478954b998625f9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54224291"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64906303"
 ---
 # <a name="add-speech-to-messages"></a>Adicionar fala a mensagens
 
@@ -31,7 +31,7 @@ Se você estiver criando um bot para um canal habilitado para fala, como o Corta
 
 Usando o SDK do Bot Framework para Node.js, há várias maneiras de especificar o texto a ser falado pelo seu bot em um canal habilitado para fala. Você pode definir a propriedade `IMessage.speak` e enviar a mensagem usando o método `session.send()`, enviar a mensagem usando o método `session.say()` (passando parâmetros que especificam texto de exibição, texto da fala e opções), ou enviar a mensagem usando um -in prompt (especificando as opções `speak` e `retrySpeak`).
 
-### <a id="message-speak"></a> IMessage.speak 
+### <a id="message-speak"></a> IMessage.speak
 
 Se você estiver criando uma mensagem que será enviada usando o método `session.send()`, defina a propriedade `speak` para especificar o texto a ser falado pelo seu bot. O exemplo de código a seguir cria uma mensagem que especifica o texto a ser falado e indica que o bot está [aceitando a entrada do usuário](bot-builder-nodejs-send-input-hints.md).
 
@@ -47,7 +47,7 @@ Como alternativa ao uso de `session.send()`, você pode chamar o método `sessio
 |----|----|
 | `displayText` | O texto a ser exibido. |
 | `speechText` | O texto (em texto simples ou no formato <a href="https://msdn.microsoft.com/en-us/library/hh378377(v=office.14).aspx" target="_blank">SSML</a>) deve ser falado. |
-| `options` | Um objeto [IMessage][IMessage] que pode conter um anexo ou [dica de entrada](bot-builder-nodejs-send-input-hints.md). |
+| `options` | Um objeto `IMessage` que pode conter um anexo ou [dica de entrada](bot-builder-nodejs-send-input-hints.md). |
 
 O exemplo de código a seguir cria uma mensagem que especifica o texto a ser exibido e o texto a ser falado e indica que o bot está [aceitando a entrada do usuário](bot-builder-nodejs-send-input-hints.md).
 
@@ -78,10 +78,3 @@ Veja um exemplo completo que mostra como criar um bot habilitado para fala usand
 
 - <a href="https://msdn.microsoft.com/en-us/library/hh378377(v=office.14).aspx" target="_blank">Linguagem de marcação de síntese de fala (SSML)</a>
 - <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/demo-RollerSkill" target="_blank">Exemplo de rolo de pintura (GitHub)</a>
-- [Referência do SDK do Bot Framework para Node.js][SDKReference]
-
-[SDKReference]: https://docs.botframework.com/en-us/node/builder/chat-reference/modules/_botbuilder_d_.html
-
-[Message]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.message
-
-[IMessage]: http://docs.botframework.com/en-us/node/builder/chat-reference/interfaces/_botbuilder_d_.imessage

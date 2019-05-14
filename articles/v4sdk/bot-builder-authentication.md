@@ -7,15 +7,35 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: abs
-ms.date: 04/09/2019
+ms.date: 04/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2f15817abe087650bc3f2bb998a32f177848cf50
-ms.sourcegitcommit: aea57820b8a137047d59491b45320cf268043861
+ms.openlocfilehash: 4fd61d5d68b5b7b3a535afdd47d635eef3820622
+ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59904529"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65033625"
 ---
+<!-- Related TODO:
+- Check code in [Web Chat channel](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-channel-connect-webchat?view=azure-bot-service-4.0)
+- Check guidance in [DirectLine authentication](https://docs.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-direct-line-3-0-authentication?view=azure-bot-service-4.0)
+-->
+
+<!-- General TODO: (Feedback from CSE (Nafis))
+- Add note that: token management is based on user ID
+- Explain why/how to share existing website authentication with a bot.
+- Risk: Even people who use a DirectLine token can be vulnerable to user ID impersonation.
+    Docs/samples that show exchange of secret for token don't specify a user ID, so an attacker can impersonate a different user by modifying the ID client side. There's a [blog post](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fblog.botframework.com%2F2018%2F09%2F01%2Fusing-webchat-with-azure-bot-services-authentication%2F&data=02%7C01%7Cv-jofing%40microsoft.com%7Cee005e1c9d2c4f4e7ea508d6b231b422%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636892323874079713&sdata=b0DWMxHzmwQvg5EJtlqKFDzR7fYKmg10fXma%2B8zGqEI%3D&reserved=0) that shows how to do this properly.
+"Major issues":
+- This doc is a sample walkthrough, but there's no deeper documentation explaining how the Azure Bot Service is handling tokens. How does the OAuth flow work? Where is it storing my users' access tokens? What's the security and best practices around using it?
+
+"Minor issues":
+- AAD v2 steps tell you to add delegated permission scopes during registration, but this shouldn't be necessary in AAD v2 due to dynamic scopes. (Ming, "This is currently necessary because scopes are not exposed through our runtime API. We don’t currently have a way for the developer to specify which scope he wants at runtime.")
+
+- "The scope of the connection setting needs to have both openid and a resource in the Azure AD graph, such as Mail.Read." Unclear if I need to take some action at this point to make happen. Kind of out of context. I'm registering an AAD application in the portal, there's no connection setting
+- Does the bot need all of these scopes for the samples? (e.g. "Read all users' basic profiles")
+-->
+
 # <a name="add-authentication-to-your-bot-via-azure-bot-service"></a>Adicionar autenticação ao seu bot por meio do Serviço de Bot do Azure
 
 [!INCLUDE [applies-to-v4](../includes/applies-to.md)]
@@ -72,27 +92,9 @@ Há alguns problemas de segurança importantes a considerar ao usar a autentica�
 
     Para habilitar essa proteção, inicie o Webchat com um token do Direct Line que contém uma lista de domínios confiáveis que podem hospedar o cliente do Webchat do bot. Depois, especifique estaticamente a lista de domínios confiáveis (origem) na página de configuração do Direct Line.
 
-Use o ponto de extremidade REST `/v3/directline/tokens/generate` do Direct Line para gerar um token para a conversa e especifique a ID de usuário no conteúdo da solicitação. Para obter um exemplo de código, confira a postagem no blog [Recursos de autenticação aprimorados do Direct Line](https://blog.botframework.com/2018/09/25/enhanced-direct-line-authentication-features/).
-
-<!-- The eventual article about this should talk about the tokens/generate endpoint and its parameters: user, trustedOrigins, and [maybe] eTag.
-Sample payload
-{
-  "user": {
-    "id": "string",
-    "name": "string",
-    "aadObjectId": "string",
-    "role": "string"
-  },
-  "trustedOrigins": [
-    "string"
-  ],
-  "eTag": "string"
-}
- -->
-
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- Conhecimento das [noções básicas do bot][concept-basics] e do [estado de gerenciamento][concept-state].
+- Conhecimento sobre [noções básicas de bots][concept-basics], [gerenciamento de estado][concept-state], a [biblioteca de diálogos][concept-dialogs], como [implementar um fluxo de conversa sequencial][simple-dialog], como [obter entradas do usuário usando um prompt de diálogo][dialog-prompts] e como [reutilizar diálogos][component-dialogs].
 - Conhecimento do desenvolvimento do Azure e do OAuth 2.0.
 - Visual Studio 2017 ou posterior, Node.js, npm e git.
 - Um desses exemplos.
@@ -119,6 +121,8 @@ Use essas etapas para criar um novo aplicativo do Azure Active Directory. Você 
 
 > [!TIP]
 > Você precisará criar e registrar o aplicativo do Azure Active Directory em um locatário no qual você tem direitos de administrador.
+
+# <a name="azure-ad-v1tabaadv1"></a>[Azure AD v1](#tab/aadv1)
 
 1. Abra o painel do [Azure Active Directory][azure-aad-blade] no portal do Azure.
     Se você não estiver no locatário correto, clique em **Trocar de diretório** para trocar para o locatário correto. (Para obter instruções sobre como criar um locatário, confira [Acessar o portal e criar um locatário](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-access-create-new-tenant).)
@@ -163,6 +167,37 @@ Use essas etapas para criar um novo aplicativo do Azure Active Directory. Você 
    1. Feche o painel **Permissões necessárias**.
 
 Agora você tem um aplicativo do Azure AD v1 configurado.
+
+# <a name="azure-ad-v2tabaadv2"></a>[Azure AD v2](#tab/aadv2)
+
+1. Vá até o [Portal de Registro de Aplicativos da Microsoft](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade).
+1. Clique em **Adicionar um aplicativo**
+1. Dê um nome para seu aplicativo do Azure AD e, em seguida, clique em **Criar**.
+
+    Registre o GUID **ID do Aplicativo**. Você irá fornecê-lo posteriormente como sua ID do cliente para a sua configuração de conexão.
+
+1. Em **Segredos do Aplicativo**, clique em **Gerar nova senha**.
+
+    Registre a senha do pop-up. Você irá fornecê-la posteriormente como seu Segredo do cliente para a sua configuração de conexão.
+
+1. Em **Plataformas**, clique em **Adicionar plataforma**.
+1. No pop-up **Adicionar plataforma**, clique em **Web**.
+
+    1. Deixe a opção **Permitir fluxo implícito** marcada.
+    1. Para a **URL de redirecionamento**, insira `https://token.botframework.com/.auth/web/redirect`.
+    1. Deixe a opção **URL de logoff** em branco.
+
+1. Em **Permissões do Microsoft Graph**, você pode adicionar permissões delegadas adicionais.
+
+    - Para este artigo, adicione as permissões **Mail.Read**, **Mail.Send**, **openid**, **profile**, **User.Read** e **User.ReadBasic.All**.
+      O escopo da configuração de conexão deve ter ambos **openid** e um recurso no graph do Azure AD, tais como **Mail.Read**.
+    - Registre as permissões que você escolher. Você irá fornecê-las posteriormente como os escopos para a sua configuração de conexão.
+
+1. Na parte inferior da página, clique em **Salvar** .
+
+Agora você tem um aplicativo do Azure AD v2 configurado.
+
+---
 
 ### <a name="register-your-azure-ad-application-with-your-bot"></a>Registrar seu aplicativo do Azure AD com seu bot
 
@@ -230,93 +265,81 @@ A próxima etapa é usar seu bot para registrar o aplicativo do Azure Active Dir
 
 Agora você pode usar esse nome de conexão no código do bot para recuperar tokens de usuário.
 
-## <a name="prepare-the-bot-sample-code"></a>Preparar os códigos de exemplo de bot
+## <a name="prepare-the-bot-code"></a>Como preparar o código do bot
 
-Dependendo do exemplo escolhido, você trabalhará com C# ou Node.
+Você precisará da ID de aplicativo e da senha do seu bot para concluir este processo. Como recuperar a ID de aplicativo e a senha do seu bot:
 
-| Amostra | Versão do BotBuilder | Demonstra |
-|:---|:---:|:---|
-| **Autenticação de bot** em [**CSharp**][cs-auth-sample] ou [**JavaScript**][js-auth-sample] | v4 | Suporte de OAuthCard |
-| **Autenticação de bot MSGraph** em [**CSharp**][cs-msgraph-sample] ou [**JavaScript**][js-msgraph-sample] | v4 |  Suporte da API do Microsoft Graph com o OAuth 2 |
+1. No [portal do Azure][], navegue até o grupo de recursos em que criou seu bot de registro de canais.
+1. Abra o painel **Implantações** e abra a implantação do bot.
+1. Abra o painel **Entradas** e copie os valores da **appId** e do **appSecret** do seu bot.
 
-1. Clique em um dos links de exemplo acima e clone o repositório do github.
-1. Siga as instruções na página do leiame do GitHub para saber como executar esse bot específico (C# ou Node).
-1. Se você estiver usando o exemplo de Autenticação de Bot em C#:
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-    1. Defina a variável `ConnectionName` no arquivo `AuthenticationBot.cs` com o valor usado ao definir a configuração de conexão OAuth 2.0 do seu bot.
-    1. Defina o valor `appId` no arquivo `BotConfiguration.bot` como a ID do aplicativo do seu bot.
-    1. Defina o valor `appPassword` no arquivo `BotConfiguration.bot` como o segredo do seu bot.
+<!-- TODO: Add guidance (once we have it) on how not to hard-code IDs and ABS auth. -->
 
-1. Se você estiver usando o exemplo de Autenticação de Bot em Node/JS:
+1. Crie um clone a partir do repositório do github contendo aquilo com o que você deseja trabalhar: [**Autenticação de bot**][cs-auth-sample] ou [**Autenticação de bot MSGraph**][cs-msgraph-sample].
+1. Siga as instruções da página readme do GitHub para saber como executar esse bot específico. <!--TODO: Can we remove this step and still have the instructions make sense? What is the minimum we need to say in its place? -->
+1. Atualize **appsettings.json**:
 
-    1. Defina a variável `CONNECTION_NAME` no arquivo `bot.js` com o valor usado ao definir a configuração de conexão OAuth 2.0 do seu bot.
-    1. Defina o valor `appId` no arquivo `bot-authentication.bot` como a ID do aplicativo do seu bot.
-    1. Defina o valor `appPassword` no arquivo `bot-authentication.bot` como o segredo do seu bot.
+    - Defina `ConnectionName` como o nome da configuração de conexão do OAuth que você adicionou ao seu bot.
+    - Defina `MicrosoftAppId` e `MicrosoftAppPassword` como a ID e o segredo de aplicativo do seu bot.
 
-    > [!IMPORTANT]
-    > Dependendo dos caracteres no seu segredo, você pode precisar que XML ignore a senha. Por exemplo, qualquer "e" comercial (&) será necessário a ser codificado como `&amp;`.
+      Dependendo dos caracteres do segredo do bot, você pode precisar ignorar a senha com XML. Por exemplo, qualquer "e" comercial (&) será necessário a ser codificado como `&amp;`.
 
-    ```json
-    {
-        "name": "BotAuthentication",
-        "secretKey": "",
-        "services": [
-            {
-            "appId": "",
-            "id": "http://localhost:3978/api/messages",
-            "type": "endpoint",
-            "appPassword": "",
-            "endpoint": "http://localhost:3978/api/messages",
-            "name": "BotAuthentication"
-            }
-        ]
-    }
-    ```
+[!code-json[appsettings](~/../botbuilder-samples/samples/csharp_dotnetcore/18.bot-authentication/appsettings.json)]
 
-Se você não souber como obter seus valores de **ID do aplicativo Microsoft** e **senha de aplicativo do Microsoft**, você pode criar uma nova senha conforme descrito abaixo:
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-[bot-channels-registration-password](../bot-service-quickstart-registration.md#bot-channels-registration-password)
-  
-Ou recuperar a **ID do aplicativo da Microsoft** e a **senha de aplicativo da Microsoft** provisionadas com o **Registro de Canais do Bot** com a seguinte implantação: [find-your-azure-bots-appid-and-appsecret](https://blog.botframework.com/2018/07/03/find-your-azure-bots-appid-and-appsecret)
+1. Crie um clone a partir do repositório do github contendo aquilo com o que você deseja trabalhar: [**Autenticação de bot**][js-auth-sample] ou [**Autenticação de bot MSGraph**][js-msgraph-sample].
+1. Siga as instruções da página readme do GitHub para saber como executar esse bot específico. <!--TODO: Can we remove this step and still have the instructions make sense? What is the minimum we need to say in its place? -->
+1. Atualize **.env**:
 
-    > [!NOTE]
-    > You could now publish this bot code to your Azure subscription (right-click on the project and choose **Publish**), but it is not necessary for this tutorial. You would need to set up a publishing configuration that uses the application and hosting plan that you used when configuration the bot in the Azure Portal.
+    - Defina `connectionName` como o nome da configuração de conexão do OAuth que você adicionou ao seu bot.
+    - Defina os valores `MicrosoftAppId` e `MicrosoftAppPassword` como a ID e o segredo de aplicativo de seu bot.
 
-## <a name="use-the-emulator-to-test-your-bot"></a>Usar o Emulador para testar seu bot
+      Dependendo dos caracteres do segredo do bot, você pode precisar ignorar a senha com XML. Por exemplo, qualquer "e" comercial (&) será necessário a ser codificado como `&amp;`.
 
-Você precisará instalar o [Emulador de Bot](https://github.com/Microsoft/BotFramework-Emulator) para testar seu bot localmente. Você pode usar o Emulador v3 ou v4.
+    [!code-txt[.env](~/../botbuilder-samples/samples/javascript_nodejs/18.bot-authentication/.env)]
 
-1. Inicie seu bot (com ou sem depuração).
-1. Anote o número da porta do localhost da página. Essa informação será necessária para interagir com o bot.
-1. Inicie o Emulador.
-1. Conecte-se ao seu bot. Verifique se a configuração do bot usa a **ID do aplicativo da Microsoft** e a **senha do aplicativo do Microsoft** ao usar a autenticação
-1. Certifique-se de que nas configurações do Emulador, **Usar um código de verificação de entrada para OAuthCards** esteja marcado e **ngrok** esteja habilitado para que o Serviço de Bot do Azure possa retornar o token ao emulador quando ele estiver disponível.
+---
 
-   Se você ainda não tiver configurado a conexão, forneça o endereço e a ID e senha de aplicativo Microsoft do seu bot. Adicione `/api/messages` à URL do bot. Sua URL será semelhante a `http://localhost:portNumber/api/messages`.
+Se não souber como obter os valores de **ID de aplicativo Microsoft** e **senha de aplicativo Microsoft**, você pode:
 
-1. Digite `help` para ver uma lista dos comandos disponíveis para o bot e testar os recursos de autenticação.
-1. Quando você tiver entrado, você não precisa fornecer suas credenciais novamente até sair.
-1. Para sair e cancelar a sua autenticação, digite `signout`.
-
-<!--To restart completely from scratch you also need to:
-1. Navigate to the **AppData** folder for your account.
-1. Go to the **Roaming/botframework-emulator** subfolder.
-1. Delete the **Cookies** and **Coolies-journal** files.
--->
+- Criar uma nova senha [conforme descrito aqui](../bot-service-quickstart-registration.md#bot-channels-registration-password)
+- Recuperar a **ID de aplicativo Microsoft** e a **senha de aplicativo Microsoft** provisionadas com o **Registro de Canais do Bot** a partir da implantação [conforme descrito aqui](https://blog.botframework.com/2018/07/03/find-your-azure-bots-appid-and-appsecret)
 
 > [!NOTE]
-> A autenticação do bot requer o uso do Serviço de Conector de Bot. O serviço acessa as informações de registro de canais de bot para seu bot, por isso, você precisará definir o ponto de extremidade de mensagens do seu bot no portal. A autenticação também exige o uso de HTTPS, por isso, você precisará criar um endereço de encaminhamento HTTPS para seu bot executar localmente.
+> Agora você poderia publicar esse código de bot em sua assinatura do Azure (clique com o botão direito no projeto e escolha **Publicar**), mas isso não é necessário para este artigo. Você precisará definir uma configuração de publicação que usa o aplicativo e o plano de hospedagem que você usou ao configurar o bot no Portal do Azure.
 
-<!--The following is necessary for WebChat:
-1. Use the **ngrok** command-line tool to get a forwarding HTTPS address for your bot.
-   - For information on how to do this, see [Debug any Channel locally using ngrok](https://blog.botframework.com/2017/10/19/debug-channel-locally-using-ngrok/).
-   - Any time you exit **ngrok**, you will need to redo this and the following step before starting the Emulator.
-1. On the Azure Portal, go to the **Settings** blade for your bot.
-   1. In the **Configuration** section, change the **Messaging endpoint** to the HTTPS forwarding address generated by **ngrok**.
-   1. Click **Save** to save your change.
--->
+## <a name="test-the-bot"></a>Testar o bot
 
-## <a name="notes-on-the-token-retrieval-flow"></a>Observações sobre o fluxo de recuperação de token
+1. Se ainda não tiver feito isso, instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator-readme).
+1. Execute o exemplo localmente em seu computador.
+1. Inicie o emulador, conecte-se ao seu bot e envie as mensagens.
+
+    - Você terá que fornecer a ID e a senha de aplicativo do seu bot quando se conectar com ele.
+    - Digite `help` para ver uma lista dos comandos disponíveis para o bot e testar os recursos de autenticação.
+    - Quando você tiver entrado, você não precisa fornecer suas credenciais novamente até sair.
+    - Para sair e cancelar a sua autenticação, digite `logout`.
+
+> [!NOTE]
+> A autenticação do bot requer o uso do Serviço de Conector de Bot. O serviço acessa as informações de registro de canais do seu bot.
+
+# <a name="bot-authenticationtabbot-oauth"></a>[Autenticação de bot](#tab/bot-oauth)
+
+No exemplo **Autenticação de Bot**, o diálogo foi projetado para recuperar o token de usuário após este se conectar.
+
+![Saída de exemplo](media/how-to-auth/auth-bot-test.png)
+
+# <a name="bot-authentication-msgraphtabbot-msgraph-auth"></a>[Autenticação de bot MSGraph](#tab/bot-msgraph-auth)
+
+No exemplo **Autenticação de Bot MSGraph**, o diálogo é projetado para aceitar um conjunto limitado de comandos depois que o usuário faz logon.
+
+![Saída de exemplo](media/how-to-auth/msgraph-bot-test.png)
+
+---
+
+## <a name="additional-information"></a>Informações adicionais
 
 Quando um usuário pede ao bot para fazer algo que requer que o bot tenha o usuário conectado, o bot pode usar um `OAuthPrompt` para iniciar a recuperação de um token para uma determinada conexão. O `OAuthPrompt` cria um fluxo de recuperação de token composto por:
 
@@ -325,199 +348,95 @@ Quando um usuário pede ao bot para fazer algo que requer que o bot tenha o usu�
 1. Após o usuário clicar no botão `OAuthCard`, o Serviço de Bot do Azure enviará diretamente ao bot o token do usuário ou apresentará ao usuário um código de autenticação de 6 dígitos para inserir na janela de chat.
 1. Se o usuário receber um código de autenticação, o bot trocará esse código de autenticação pelo token do usuário.
 
-Os dois próximos snippets de código são obtidos do `OAuthPrompt`, mostrando como estas etapas funcionam no prompt.
+As seções a seguir descrevem como o exemplo implementa algumas tarefas de autenticação comuns.
 
-### <a name="check-for-a-cached-token"></a>Verificação de um token em cache
-
-Nesse código, primeiro o bot faz uma verificação rápida para determinar se o Serviço de Bot do Azure já tem um token para o usuário (que é identificado pelo remetente da atividade atual) e o ConnectionName determinado (que é o nome de conexão usada na configuração). O Serviço de Bot do Azure ou já terá um token armazenado em cache ou não terá. A chamada para GetUserTokenAsync executa essa verificação rápida. Se o Serviço de Bot do Azure tem um token e retorna-o, o token pode ser usado imediatamente. Se o Serviço de Bot do Azure não tem um token, esse método retornará null. Nesse caso, o bot pode enviar um OAuthCard personalizado para o usuário entrar.
+### <a name="use-an-oauth-prompt-to-sign-the-user-in-and-get-a-token"></a>Use um prompt do OAuth para conectar o usuário e obter um token
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-```csharp
-// First ask Bot Service if it already has a token for this user
-var token = await adapter.GetUserTokenAsync(turnContext, connectionName, null, cancellationToken).ConfigureAwait(false);
-if (token != null)
-{
-    // use the token to do exciting things!
-}
-else
-{
-    // If Bot Service does not have a token, send an OAuth card to sign in
-}
-```
+![Arquitetura de bot](media/how-to-auth/architecture.png)
+
+<!-- The two authentication samples have nearly identical architecture. Using 18.bot-authentication for the sample code. -->
+
+**Dialogs\MainDialog.cs**
+
+Adicione um prompt do OAuth a **MainDialog** em seu construtor. Aqui, o valor para o nome da conexão foi recuperado do arquivo **appsettings.JSON**.
+
+[!code-csharp[Add OAuthPrompt](~/../botbuilder-samples/samples/csharp_dotnetcore/18.bot-authentication/Dialogs/MainDialog.cs?range=23-31)]
+
+Dentro de uma etapa de diálogo, use `BeginDialogAsync` para iniciar o prompt do OAuth, que pede ao usuário para entrar.
+
+- Se o usuário já estiver conectado, isso irá gerar um evento de resposta de token, sem avisar o usuário.
+- Caso contrário, será solicitado que o usuário entre. O Serviço de Bot do Azure envia o evento de resposta do token depois que o usuário tenta entrar.
+
+[!code-csharp[Use the OAuthPrompt](~/../botbuilder-samples/samples/csharp_dotnetcore/18.bot-authentication/Dialogs/MainDialog.cs?range=49)]
+
+Dentro da etapa de diálogo a seguir, procure a presença de um token no resultado da etapa anterior. Se não for nulo, o usuário foi conectado com êxito.
+
+[!code-csharp[Get the OAuthPrompt result](~/../botbuilder-samples/samples/csharp_dotnetcore/18.bot-authentication/Dialogs/MainDialog.cs?range=54-58)]
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-```javascript
-public async getUserToken(context: TurnContext, code?: string): Promise<TokenResponse|undefined> {
-    // Get the token and call validator
-    const adapter: any = context.adapter as any; // cast to BotFrameworkAdapter
-    return await adapter.getUserToken(context, this.settings.connectionName, code);
-}
-```
+![Arquitetura de bot](media/how-to-auth/architecture-js.png)
 
----
+**dialogs/mainDialog.js**
 
-### <a name="send-an-oauthcard-to-the-user"></a>Enviar um OAuthCard ao usuário
+Adicione um prompt do OAuth a **MainDialog** em seu construtor. Aqui, o valor para o nome da conexão foi recuperado do arquivo **.env**.
 
-Você pode personalizar o OAuthCard com qualquer texto e texto de botão desejado. As partes importantes são:
+[!code-javascript[Add OAuthPrompt](~/../botbuilder-samples/samples/javascript_nodejs/18.bot-authentication/dialogs/mainDialog.js?range=23-28)]
 
-- Defina o `ContentType` para `OAuthCard.ContentType`.
-- Defina a propriedade `ConnectionName` para o nome da conexão que você deseja usar.
-- Inclua um botão com um `CardAction` dos `Type` `ActionTypes.Signin`. Observe que você não precisa especificar nenhum valor para o sinal no link.
+Dentro de uma etapa de diálogo, use `beginDialog` para iniciar o prompt do OAuth, que pede ao usuário para entrar.
 
-No final dessa chamada, o bot precisa "aguardar o token" antes de voltar. Essa espera ocorre no fluxo de atividade principal porque pode haver muitos que o usuário precisa fazer para entrar.
+- Se o usuário já estiver conectado, isso irá gerar um evento de resposta de token, sem avisar o usuário.
+- Caso contrário, será solicitado que o usuário entre. O Serviço de Bot do Azure envia o evento de resposta do token depois que o usuário tenta entrar.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+[!code-javascript[Use OAuthPrompt](~/../botbuilder-samples/samples/javascript_nodejs/18.bot-authentication/dialogs/mainDialog.js?range=57)]
 
-```csharp
-private async Task SendOAuthCardAsync(ITurnContext turnContext, IMessageActivity message, CancellationToken cancellationToken = default(CancellationToken))
-{
-    if (message.Attachments == null)
-    {
-        message.Attachments = new List<Attachment>();
-    }
+Dentro da etapa de diálogo a seguir, procure a presença de um token no resultado da etapa anterior. Se não for nulo, o usuário foi conectado com êxito.
 
-    message.Attachments.Add(new Attachment
-    {
-        ContentType = OAuthCard.ContentType,
-        Content = new OAuthCard
-        {
-            Text = "Please sign in",
-            ConnectionName = connectionName,
-            Buttons = new[]
-            {
-                new CardAction
-                {
-                    Title = "Sign In",
-                    Text = "Sign In",
-                    Type = ActionTypes.Signin,
-                },
-            },
-        },
-    });
-
-    await turnContext.SendActivityAsync(message, cancellationToken).ConfigureAwait(false);
-}
-```
-
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
-
-```javascript
-private async sendOAuthCardAsync(context: TurnContext, prompt?: string|Partial<Activity>): Promise<void> {
-    // Initialize outgoing message
-    const msg: Partial<Activity> =
-        typeof prompt === 'object' ? {...prompt} : MessageFactory.text(prompt, undefined, InputHints.ExpectingInput);
-    if (!Array.isArray(msg.attachments)) { msg.attachments = []; }
-
-    const cards: Attachment[] = msg.attachments.filter((a: Attachment) => a.contentType === CardFactory.contentTypes.oauthCard);
-    if (cards.length === 0) {
-        // Append oauth card
-        msg.attachments.push(CardFactory.oauthCard(
-            this.settings.connectionName,
-            this.settings.title,
-            this.settings.text
-        ));
-    }
-
-    // Send prompt
-    await context.sendActivity(msg);
-}
-```
+[!code-javascript[Get OAuthPrompt result](~/../botbuilder-samples/samples/javascript_nodejs/18.bot-authentication/dialogs/mainDialog.js?range=61-64)]
 
 ---
 
 ### <a name="wait-for-a-tokenresponseevent"></a>Aguardar um TokenResponseEvent
 
-No código, o Bot está aguardando um `TokenResponseEvent` (veja abaixo mais informações sobre como isso é roteado para a pilha de diálogos). O método `WaitForToken` primeiro determina se esse evento foi enviado. Se foi enviado, ele pode ser usado pelo bot. Se não, o método `RecognizeTokenAsync` usa qualquer texto que foi enviado para o bot e passa-o para `GetUserTokenAsync`. O motivo disso é que alguns clientes (como WebChat) não precisam do código de verificação Magic Code e podem enviar diretamente o Token no `TokenResponseEvent`. Outros clientes ainda exigem que o magic code (como Facebook ou Slack). O Serviço de Bot do Azure apresentará esses clientes com um magic code de seis dígitos e pedir ao usuário digitar isso na janela de bate-papo. Embora não seja ideal, esse é o comportamento de fallback, e se `RecognizeTokenAsync` recebe um código, o bot pode enviar esse código para o Serviço de Bot do Azure e obter um token de volta. Se essa chamada também falhar, você pode decidir relatar um erro ou fazer algo diferente. Na maioria dos casos, o bot agora terá um token de usuário.
-
-Se você examinar o código do bot de cada exemplo, verá que as atividades `Event` e `Invoke` também são roteadas para a pilha de diálogos.
+Quando iniciamos um prompt do OAuth, ele aguarda um evento de resposta de token, a partir do qual ele recupera o token do usuário.
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-```csharp
-// This can be called when the bot receives an Activity after sending an OAuthCard
-private async Task<TokenResponse> RecognizeTokenAsync(ITurnContext turnContext, CancellationToken cancellationToken = default(CancellationToken))
-{
-    if (IsTokenResponseEvent(turnContext))
-    {
-        // The bot received the token directly
-        var tokenResponseObject = turnContext.Activity.Value as JObject;
-        var token = tokenResponseObject?.ToObject<TokenResponse>();
-        return token;
-    }
-    else if (IsTeamsVerificationInvoke(turnContext))
-    {
-        var magicCodeObject = turnContext.Activity.Value as JObject;
-        var magicCode = magicCodeObject.GetValue("state")?.ToString();
+**Bots\AuthBot.cs**
 
-        var token = await adapter.GetUserTokenAsync(turnContext, _settings.ConnectionName, magicCode, cancellationToken).ConfigureAwait(false);
-        return token;
-    }
-    else if (turnContext.Activity.Type == ActivityTypes.Message)
-    {
-        // make sure it's a 6-digit code
-        var matched = _magicCodeRegex.Match(turnContext.Activity.Text);
-        if (matched.Success)
-        {
-            var token = await adapter.GetUserTokenAsync(turnContext, _settings.ConnectionName, matched.Value, cancellationToken).ConfigureAwait(false);
-            return token;
-        }
-    }
+**AuthBot** deriva de `ActivityHandler` e lida explicitamente com atividades de evento de resposta de token. Aqui, damos sequência ao diálogo ativo, que permite que o prompt do OAuth processe o evento e recupere o token.
 
-    return null;
-}
-
-private bool IsTokenResponseEvent(ITurnContext turnContext)
-{
-    var activity = turnContext.Activity;
-    return activity.Type == ActivityTypes.Event && activity.Name == "tokens/response";
-}
-
-private bool IsTeamsVerificationInvoke(ITurnContext turnContext)
-{
-    var activity = turnContext.Activity;
-    return activity.Type == ActivityTypes.Invoke && activity.Name == "signin/verifyState";
-}
-```
+[!code-csharp[OnTokenResponseEventAsync](~/../botbuilder-samples/samples/csharp_dotnetcore/18.bot-authentication/Bots/AuthBot.cs?range=32-38)]
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-```javascript
-private async recognizeToken(context: TurnContext): Promise<PromptRecognizerResult<TokenResponse>> {
-    let token: TokenResponse|undefined;
-    if (this.isTokenResponseEvent(context)) {
-        token = context.activity.value as TokenResponse;
-    } else if (this.isTeamsVerificationInvoke(context)) {
-        const code: any = context.activity.value.state;
-        await context.sendActivity({ type: 'invokeResponse', value: { status: 200 }});
-        token = await this.getUserToken(context, code);
-    } else if (context.activity.type === ActivityTypes.Message) {
-        const matched: RegExpExecArray = /(\d{6})/.exec(context.activity.text);
-        if (matched && matched.length > 1) {
-            token = await this.getUserToken(context, matched[1]);
-        }
-    }
+**bots/authBot.js**
 
-    return token !== undefined ? { succeeded: true, value: token } : { succeeded: false };
-}
+**AuthBot** deriva de `ActivityHandler` e lida explicitamente com atividades de evento de resposta de token. Aqui, damos sequência ao diálogo ativo, que permite que o prompt do OAuth processe o evento e recupere o token.
 
-private isTokenResponseEvent(context: TurnContext): boolean {
-    const activity: Activity = context.activity;
-    return activity.type === ActivityTypes.Event && activity.name === 'tokens/response';
-}
-
-private isTeamsVerificationInvoke(context: TurnContext): boolean {
-    const activity: Activity = context.activity;
-    return activity.type === ActivityTypes.Invoke && activity.name === 'signin/verifyState';
-}
-```
+[!code-javascript[onTokenResponseEvent](~/../botbuilder-samples/samples/javascript_nodejs/18.bot-authentication/bots/authBot.js?range=28-33)]
 
 ---
 
-### <a name="message-controller"></a>Controlador de mensagem
+### <a name="log-the-user-out"></a>Desconecte o usuário
 
-Em chamadas subsequentes para o bot, observe que o token nunca é armazenado em cache por este bot de exemplo. Isso ocorre porque o bot sempre pode pedir o token para o Serviço de Bot do Azure. Isso evita o necessidade de gerenciar o ciclo de vida de token, atualizar o token, etc., já que o Serviço de Bot do Azure faz tudo isso para você.
+Considera-se prática recomendada permitir que os usuários saiam ou se desconectem explicitamente, em vez de esperar que a conexão expire.
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
+**Dialogs\LogoutDialog.cs**
+
+[!code-csharp[Allow logout](~/../botbuilder-samples/samples/csharp_dotnetcore/18.bot-authentication/Dialogs/LogoutDialog.cs?range=20-61&highlight=35)]
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+**dialogs/logoutDialog.js**
+
+[!code-javascript[Allow logout](~/../botbuilder-samples/samples/javascript_nodejs/18.bot-authentication/dialogs/logoutDialog.js?range=13-42&highlight=25)]
+
+---
 
 ### <a name="further-reading"></a>Leitura adicional
 
@@ -526,7 +445,7 @@ Em chamadas subsequentes para o bot, observe que o token nunca é armazenado em 
 
 <!-- Footnote-style links -->
 
-[Azure portal]: https://ms.portal.azure.com
+[Portal do Azure]: https://ms.portal.azure.com
 [azure-aad-blade]: https://ms.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview
 [aad-registration-blade]: https://ms.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps
 

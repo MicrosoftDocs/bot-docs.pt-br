@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 1/28/2019
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 6169ed28fb765e84aaf31cf9e7d2ca404294bcad
-ms.sourcegitcommit: c7d2e939ec71f46f48383c750fddaf6627b6489d
+ms.openlocfilehash: e0ffb9c24b5e85b0eb1afdd885654e4864e65939
+ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55783355"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65032929"
 ---
 # <a name="create-data-driven-experiences-with-azure-search"></a>Criar experiências controladas por dados com o Azure Search 
 
@@ -28,18 +28,17 @@ ms.locfileid: "55783355"
 
 O Azure Search é um serviço do Azure que oferece pesquisa de palavras-chave, linguística interna, pontuação personalizada, faceted navigation, e muito mais. O Azure Search também pode indexar conteúdo de várias fontes, incluindo o Azure SQL DB, DocumentDB, Armazenamento de Blobs e Armazenamento de Tabelas. Ele dá suporte à indexação "push" para outras fontes de dados e pode abrir PDFs, documentos do Office e outros formatos que contém dados não estruturados. Depois de coletado, o conteúdo entra em um índice do Azure Search, que o bot pode então consultar.
 
-
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Instale o [pacote Nuget Microsoft.Azure.Search](https://www.nuget.org/packages/Microsoft.Azure.Search/4.0.0-preview) no projeto de bot. 
+Instale o [pacote Nuget Microsoft.Azure.Search](https://www.nuget.org/packages/Microsoft.Azure.Search/4.0.0-preview) no projeto de bot.
 
-Os três projetos C# a seguir são necessários na solução do bot. Esses projetos fornecem funcionalidade adicional para bots e Azure Search. Bifurque os projetos do [GitHub](https://github.com/Microsoft/botBuilder-Samples/tree/master/CSharp/demo-Search) ou baixe o código-fonte diretamente.
+Os três projetos C# a seguir são necessários na solução do bot. Esses projetos fornecem funcionalidade adicional para bots e Azure Search. Bifurque os projetos do [GitHub](https://aka.ms/v3-cs-search-demo) ou baixe o código-fonte diretamente.
 
-* [Search.Azure](https://github.com/Microsoft/botBuilder-Samples/tree/master/CSharp/demo-Search/Search.Azure) define a chamada do Azure Service. 
-* [Search.Contracts](https://github.com/Microsoft/botBuilder-Samples/tree/master/CSharp/demo-Search/Search.Contracts) define interfaces genéricas e modelos de dados para tratar dados.
-* [Search.Dialogs](https://github.com/Microsoft/botBuilder-Samples/tree/master/CSharp/demo-Search/Search.Dialogs) inclui vários diálogos genéricos do Bot Builder usados para consultar o Azure Search.
+- O projeto **Search.Azure** define a chamada do Azure Service.
+- O projeto **Search.Contracts** define interfaces genéricas e modelos de dados para tratar dados.
+- O projeto **Search.Dialogs** inclui várias caixas de diálogo genéricas do Bot Builder usadas para consultar o Azure Search.
 
-## <a name="configure-azure-search-settings"></a>Definir configurações do Azure Search 
+## <a name="configure-azure-search-settings"></a>Definir configurações do Azure Search
 
 Defina as configurações do Azure Search no arquivo **Web.config** do projeto usando suas próprias credenciais do Azure Search nos campos de valor. O construtor na classe `AzureSearchClient` usará essas configurações para registrar e associar o bot ao Azure Service.
 
@@ -176,7 +175,8 @@ Os resultados da pesquisa são exibidos ao usuário, e você adicionou com êxit
 Veja dois exemplos completos que mostram como dar suporte ao Azure Search com bots usando o SDK do Bot Framework para .NET, em [Exemplo de bot Imobiliário](https://github.com/Microsoft/BotBuilder-Samples/tree/v3-sdk-samples/CSharp/demo-Search/RealEstateBot) ou [Exemplo de bot de Listagem de Trabalhos](https://github.com/Microsoft/BotBuilder-Samples/tree/v3-sdk-samples/CSharp/demo-Search/JobListingBot) no GitHub. 
 
 ## <a name="additional-resources"></a>Recursos adicionais
-* [Azure Search][search]
-* [Visão geral de caixas de diálogo](bot-builder-dotnet-dialogs.md)
+
+- [Azure Search][search]
+- [Visão geral de caixas de diálogo](bot-builder-dotnet-dialogs.md)
 
 [search]: /azure/search/search-what-is-azure-search

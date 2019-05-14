@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 11/8/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: fddaced5693242e1debed6135122ace5a3cd316b
-ms.sourcegitcommit: aea57820b8a137047d59491b45320cf268043861
+ms.openlocfilehash: 65e53be38e42d3117bebcc157f7ab23e6990b209
+ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59904989"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65033409"
 ---
 # <a name="middleware"></a>Middleware
 
@@ -66,7 +66,7 @@ As primeiras coisas em seu pipeline de middleware devem ser aquelas que cuidam d
 As últimas coisas em seu pipeline de middleware devem ser middleware específico de bot, que é o middleware que você implementa para fazer algum processamento em cada mensagem enviada ao seu bot. Se seu middleware usa informações de estado ou outras informações definidas no contexto do bot, inclua-as no pipeline do middleware após o middleware que modifica o estado ou o contexto.
 
 ## <a name="short-circuiting"></a>Curto-circuito
-Uma ideia importante em torno do middleware e dos manipuladores de respostas é o _curto-circuito_. Se a execução deve continuar através das camadas que o seguem, o middleware (ou um manipulador de resposta) é necessário para passar a execução chamando o _próximo_ delegado.  Se o próximo delegado não é chamado dentro desse middleware (ou manipulador de resposta), o pipeline associado entra em curto-circuito e as camadas subsequentes não serão executadas. Isso significa que toda lógica de bot e qualquer middleware mais tarde no pipeline são ignorados. Há uma diferença sutil entre seu middleware e seu manipulador de resposta fazendo com que um turno entre em curto-circuito.
+Uma ideia importante em torno do middleware e dos manipuladores de respostas é o _curto-circuito_. Se a execução deve continuar através das camadas que a seguem, o middleware (ou um manipulador de resposta) é necessário para passar a execução chamando seu _próximo_ delegado.  Se o próximo delegado não é chamado dentro desse middleware (ou manipulador de resposta), o pipeline associado entra em curto-circuito e as camadas subsequentes não serão executadas. Isso significa que toda lógica de bot e qualquer middleware mais tarde no pipeline são ignorados. Há uma diferença sutil entre seu middleware e seu manipulador de resposta fazendo com que um turno entre em curto-circuito.
 
 Quando um middleware fizer com que um turno entre em curto-circuito, o manipulador de turno do bot não será chamado, mas todo o código de middleware executado antes desse ponto no pipeline ainda será executado até a conclusão. 
 

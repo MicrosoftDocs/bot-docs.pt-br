@@ -7,15 +7,15 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 12/13/2017
-ms.openlocfilehash: 96f2963604d12c9c9e235288ad4df25924f45af4
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.date: 04/10/2019
+ms.openlocfilehash: 717a95d580bad218ade9a884522724f1c6b96ad7
+ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998003"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65032643"
 ---
-# <a name="authentication"></a>Autenticação
+# <a name="authentication"></a>Authentication
 
 Um cliente pode autenticar solicitações para a API de Linha Direta 3.0 usando um **segredo** que você [obtém da página de configuração de canal de Linha Direta](../bot-service-channel-connect-directline.md) no Portal Bot Framework ou usando um  **token** obtido em tempo de execução. O segredo ou o token deve ser especificado no cabeçalho `Authorization` de cada solicitação, usando este formato: 
 
@@ -59,6 +59,26 @@ Os snippets a seguir fornecem um exemplo da solicitação e da resposta de Gerar
 POST https://directline.botframework.com/v3/directline/tokens/generate
 Authorization: Bearer RCurR_XV9ZA.cwA.BKA.iaJrC8xpy8qbOF5xnR2vtCX7CZj0LdjAPGfiCpg4Fv0
 ```
+
+O conteúdo da solicitação, que inclui os parâmetros de token, é opcional mas recomendado. Ao gerar um token que possa ser retornado para o serviço Direct Line, forneça o conteúdo a seguir para tornar a conexão mais segura. Com a inclusão desses valores, o Direct Line poderá executar a validação de segurança adicional de ID e nome de usuário, inibindo sua violação por clientes mal-intencionados. Sua inclusão também melhorará a habilidade do Direct Line enviar a atividade de _atualização da conversa_, permitindo que a atualização seja gerada imediatamente quando o usuário ingressar. Se essas informações não forem fornecidas, o usuário terá que enviar o conteúdo antes do Direct Line poder enviar a atualização da conversa.
+
+```json
+{
+  "user": {
+    "id": "string",
+    "name": "string"
+  },
+  "trustedOrigins": [
+    "string"
+  ]
+}
+```
+
+| Parâmetro | Type | DESCRIÇÃO |
+| :--- | :--- | :--- |
+| `user.id` | string | Opcional. ID de usuário específica do canal para codificação dentro do token. Para um usuário do Direct Line, isso deve começar com `dl_`. Você pode criar uma ID de usuário exclusiva para cada conversa, e para uma melhor segurança, deve tornar essa ID indecifrável. |
+| `user.name` | string | Opcional. O nome de exibição amigável do usuário a ser codificado dentro do token. |
+| `trustedOrigins` | Matriz de cadeia de caracteres | Opcional. Uma lista de domínios confiáveis para inserir no token. Esses são os domínios que podem hospedar o cliente de bate-papo Web do bot. Eles devem estar na lista da página de configuração do Direct Line de seu bot. |
 
 ### <a name="response"></a>Response
 

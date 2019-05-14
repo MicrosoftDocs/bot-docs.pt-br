@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 04/16/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 0c6d1e779215b54f635adc019d93af39735e16e0
-ms.sourcegitcommit: aea57820b8a137047d59491b45320cf268043861
+ms.openlocfilehash: 0d4279df31aba6cecb12b7d8d7262069aed8836b
+ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59904869"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65033391"
 ---
 # <a name="send-and-receive-text-message"></a>Enviar e receber mensagens de texto
 
@@ -31,7 +31,7 @@ Para enviar uma mensagem de texto simples, especifique a cadeia de caracteres qu
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-No método `OnTurnAsync` do bot, use o método `SendActivityAsync` do objeto de contexto de turno para enviar uma única resposta de mensagem. Também é possível usar o método `SendActivitiesAsync` do objeto para enviar várias respostas ao mesmo tempo.
+Nos manipuladores de atividade do bot, use o método `SendActivityAsync` de mudança de contexto do objeto para enviar uma resposta de mensagem individual. Também é possível usar o método `SendActivitiesAsync` do objeto para enviar várias respostas ao mesmo tempo.
 
 ```cs
 await turnContext.SendActivityAsync($"Welcome!");
@@ -39,7 +39,7 @@ await turnContext.SendActivityAsync($"Welcome!");
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-No manipulador `onTurn` do bot, use o método `sendActivity` do objeto de contexto de turno para enviar uma única resposta de mensagem. Também é possível usar o método `sendActivities` do objeto para enviar várias respostas ao mesmo tempo.
+Nos manipuladores de atividade do bot, use o método `sendActivity` de mudança de contexto do objeto para enviar uma resposta de mensagem individual. Também é possível usar o método `sendActivities` do objeto para enviar várias respostas ao mesmo tempo.
 
 ```javascript
 await context.sendActivity("Welcome!");
@@ -51,7 +51,7 @@ Para receber uma mensagem de texto simples, use a propriedade de *texto* do obje
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-No método `OnTurnAsync` do bot, use o código a seguir para receber uma mensagem. 
+Nos manipulares de atividade do bot, use o código a seguir para receber uma mensagem. 
 
 ```cs
 var responseMessage = turnContext.Activity.Text;
@@ -59,7 +59,7 @@ var responseMessage = turnContext.Activity.Text;
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-No método `OnTurnAsync` do bot, use o código a seguir para receber uma mensagem.
+Nos manipulares de atividade do bot, use o código a seguir para receber uma mensagem.
 
 ```javascript
 let text = turnContext.activity.text;
@@ -70,5 +70,9 @@ let text = turnContext.activity.text;
 ## <a name="additional-resources"></a>Recursos adicionais
 
 - Para obter mais informações sobre o processamento de atividade, confira [processamento de atividade](~/v4sdk/bot-builder-basics.md#the-activity-processing-stack).
-- Para enviar o conteúdo mais avançado, saiba como adicionar anexos de [mídia avançada](bot-builder-howto-add-media-attachments.md).
 - Para obter mais informações sobre a formatação, confira a [seção de atividades de mensagem](https://aka.ms/botSpecs-activitySchema#message-activity) do esquema de Atividade do Bot Framework.
+
+## <a name="next-steps"></a>Próximas etapas
+
+> [!div class="nextstepaction"]
+> [Adicionar mídia às mensagens](./bot-builder-howto-add-media-attachments.md)

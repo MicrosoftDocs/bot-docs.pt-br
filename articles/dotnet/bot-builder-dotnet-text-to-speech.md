@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 3eef1ec583764449554a223ec9dc339ff505ace6
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: f93ab91281cf0f19be10898436dc41a6a1583c9a
+ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225591"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65032980"
 ---
 # <a name="add-speech-to-messages"></a>Adicionar fala a mensagens
 
@@ -49,9 +49,11 @@ Usando qualquer um dos prompts internos, você pode definir as opções `speak` 
 
 [!code-csharp[Set Prompt options](../includes/code/dotnet-text-to-speech.cs#Speak3)]
 
-## <a id="ssml"></a> Linguagem de Marcação de Sintetização de Fala (SSML)
+## <a id="ssml"></a> Linguagem de marcação de síntese de fala (SSML)
 
-Para especificar o texto a ser falado pelo seu bot, você pode usar uma string de texto simples ou uma string formatada como SSML (linguagem de marcação de síntese de fala), uma linguagem de marcação baseada em XML que permite controlar várias características do discurso do bot. como voz, taxa, volume, pronúncia, tom e muito mais. Confira mais detalhes sobre o SSML em <a href="https://msdn.microsoft.com/en-us/library/hh378377(v=office.14).aspx" target="_blank">Referência de Linguagem de Marcação de Sintetização de Fala</a>.
+Para especificar o texto a ser falado pelo seu bot, você pode dar a ele uma cadeia de caracteres formatada como Speech Synthesis Markup Language (SSML). SSML é uma linguagem de marcação baseada em XML (e portanto, deve ser um XML válido) que permite controlar várias características de fala do bot como voz, velocidade, volume, pronúncia, tom e muito mais. Para obter detalhes sobre SSML, consulte <a href="https://msdn.microsoft.com/en-us/library/hh378377(v=office.14).aspx" target="_blank">Referência da Linguagem de Marcação de Síntese de Fala</a>.
+
+No fornecimento da cadeia de caracteres formatada com SSML, o elemento wrapper de SSML externo pode ser omitido.
 
 ## <a name="input-hints"></a>Dicas de entrada
 
@@ -66,7 +68,7 @@ Veja um exemplo completo que mostra como criar um bot habilitado para fala usand
 - [Criar mensagens](bot-builder-dotnet-create-messages.md)
 - [Adicionar dicas de entrada às mensagens](bot-builder-dotnet-add-input-hints.md)
 - <a href="https://msdn.microsoft.com/en-us/library/hh378377(v=office.14).aspx" target="_blank">Linguagem de Marcação de Sintetização de Fala (SSML)</a>
-- <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/demo-RollerSkill" target="_blank">Exemplo de Habilidade de Rolagem (GitHub)</a>
+- <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/v3-sdk-samples/CSharp/demo-RollerSkill" target="_blank">Exemplo de Habilidade de Rolagem (GitHub)</a>
 - <a href="https://docs.botframework.com/en-us/csharp/builder/sdkreference/dc/d2f/class_microsoft_1_1_bot_1_1_connector_1_1_activity.html" target="_blank">Classe Activity</a>
 - <a href="/dotnet/api/microsoft.bot.connector.imessageactivity" target="_blank">Interface IMessageActivity</a>
 - <a href="/dotnet/api/microsoft.bot.builder.dialogs.internals.dialogcontext" target="_blank">Classe DialogContext</a>

@@ -6,13 +6,13 @@ ms.author: v-demak
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 02/26/2019
-ms.openlocfilehash: 48a0a42d193b0e561a484330222217c18a611e8d
-ms.sourcegitcommit: cf3786c6e092adec5409d852849927dc1428e8a2
+ms.date: 04/30/2019
+ms.openlocfilehash: 1e0678d869b02d536eb5c3ce39461da94dbd9a57
+ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57224944"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65033093"
 ---
 # <a name="troubleshooting-general-problems"></a>Solução de problemas gerais
 Essas perguntas frequentes podem ajudá-lo a solucionar problemas comuns de desenvolvimento de bot ou operacionais.
@@ -21,7 +21,7 @@ Essas perguntas frequentes podem ajudá-lo a solucionar problemas comuns de dese
 
 1. Depure o código-fonte do bot com [Visual Studio Code](debug-bots-locally-vscode.md) ou [Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/navigating-through-code-with-the-debugger?view=vs-2017).
 1. Teste o bot usando o [emulador](bot-service-debug-emulator.md) antes de implantá-lo na nuvem.
-1. Implante o bot em uma plataforma de hospedagem na nuvem, como o Azure e, em seguida, teste a conectividade com o bot usando o controle de webchat interno no painel do bot no <a href="https://dev.botframework.com" target="_blank">portal do Bot Framework</a>. Se você encontrar problemas com o bot depois de implantá-lo no Azure, considere usar este artigo de blog: [Entendendo a solução de problemas e suporte do Azure](https://azure.microsoft.com/en-us/blog/understanding-azure-troubleshooting-and-support/).
+1. Implante seu bot em uma plataforma de hospedagem na nuvem, como o Azure e, em seguida, teste a conectividade com o bot usando o controle de webchat interno do painel do bot no <a href="https://portal.azure.com" target="_blank">Portal do Azure</a>. Se você encontrar problemas com o bot depois de implantá-lo no Azure, considere usar este artigo de blog: [Entendendo a solução de problemas e suporte do Azure](https://azure.microsoft.com/en-us/blog/understanding-azure-troubleshooting-and-support/).
 1. Exclua a [autenticação][TroubleshootingAuth] como um possível problema.
 1. Teste o bot no Skype. Isso irá ajudá-lo a validar a experiência do usuário de ponta a ponta.
 1. Considere testar o bot em canais que tenham requisitos de autenticação adicionais como Direct Line ou Webchat.
@@ -104,7 +104,7 @@ SMS e mensagens de email fornecerão a ID de usuário bruta na propriedade `from
 
 ## <a name="why-are-my-facebook-user-names-not-showing-anymore"></a>Por que meus nomes de usuário do Facebook não estão mais sendo exibidos?
 
-Você alterou a senha do Facebook? Ao fazer isso, invalidará o token de acesso e será necessário atualizar as configurações do bot para o canal do Facebook Messenger no <a href="https://dev.botframework.com" target="_blank">portal do Bot Framework</a>.
+Você alterou a senha do Facebook? Isso invalidará o token de acesso e será necessário atualizar as configurações do bot para o canal do Facebook Messenger no <a href="https://portal.azure.com" target="_blank">Portal do Azure</a>.
 
 ## <a name="why-is-my-kik-bot-replying-im-sorry-i-cant-talk-right-now"></a>Por que meu bot no Kik está respondendo "Desculpe, não posso falar agora"?
 
@@ -130,7 +130,7 @@ Se a conversa com Direct Line parece iniciar novamente após cada mensagem, a pr
 Para corrigir isso, defina a propriedade `from` em cada mensagem que o cliente Direct Line envia para um valor estável que represente exclusivamente o usuário que está enviando a mensagem. Por exemplo, se um usuário já estiver conectado a um aplicativo ou página da Web, será possível usar essa ID de usuário existente como o valor da propriedade `from` nas mensagens que o usuário enviar. Como alternativa, é possível optar por gerar uma ID de usuário aleatória no carregamento da página ou carregamento do aplicativo, armazenar a ID em um estado do dispositivo ou cookie e usar essa ID como o valor da propriedade `from` nas mensagens que o usuário enviar.
 
 ## <a name="what-causes-the-direct-line-30-service-to-respond-with-http-status-code-502-bad-gateway"></a>O que faz com que o serviço Direct Line 3.0 responda com o código de status HTTP 502 "Gateway Incorreto"?
-O Direct Line 3.0 retorna o código de status HTTP 502 quando tenta contatar o bot mas a solicitação não é concluída com êxito. Esse erro indica que o bot retornou um erro ou a solicitação atingiu o tempo limite. Para obter mais informações sobre erros que o bot gera, acesse o painel do bot no <a href="https://dev.botframework.com" target="_blank">portal do Bot Framework</a> e clique no link "Problemas" do canal afetado. Se você tiver o Application Insights configurado para o bot, também poderá localizar informações detalhadas sobre erros. 
+O Direct Line 3.0 retorna o código de status HTTP 502 quando tenta contatar o bot mas a solicitação não é concluída com êxito. Esse erro indica que o bot retornou um erro ou a solicitação atingiu o tempo limite. Para obter mais informações sobre erros que o bot gera, acesse o painel do bot no <a href="https://portal.azure.com" target="_blank">Portal do Azure</a> e clique no link "Problemas" do canal afetado. Se você tiver o Application Insights configurado para o bot, também poderá localizar informações detalhadas sobre erros. 
 
 ::: moniker range="azure-bot-service-3.0"
 
@@ -216,13 +216,6 @@ builder
     .InstancePerLifetimeScope();
 builder.Update(Conversation.Container);
 ```
-::: moniker-end
-
-## <a name="is-there-a-limit-on-the-amount-of-data-i-can-store-using-the-state-api"></a>Há um limite na quantidade de dados que posso armazenar usando a API de Estado?
-
-Sim, cada armazenamento de estado (ou seja, usuário, conversa e recipientes de dados de bot privados) pode conter até 64 KB de dados. Para obter mais informações, consulte [Gerenciar dados de estado][StateAPI].
-
-::: moniker range="azure-bot-service-3.0"
 
 ## <a name="how-do-i-version-the-bot-data-stored-through-the-state-api"></a>Como fazer a versão dos dados de bot armazenados através da API de Estado?
 

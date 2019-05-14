@@ -1,21 +1,18 @@
 ---
-title: Chamada de mídia em tempo real com o Skype | Microsoft Docs
-description: Entenda os principais conceitos na criação de um bot capaz de conduzir chamadas de áudio e vídeo em tempo real com o Skype, usando o SDK do Bot Framework para .NET.
-author: ssulzer
-ms.author: ssulzer
-manager: kamrani
-ms.topic: article
-ms.service: bot-service
-ms.subservice: sdk
-ms.date: 12/13/2017
-monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 893458a484c0e26545c23016ccbf3049adc61960
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+redirect_url: https://aka.ms/realTimeMediaCalling-repo
+ms.openlocfilehash: f6568ed5d4f98addb19f452142a0a5d6d37e00c8
+ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225251"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65032970"
 ---
+<a name="--"></a><!--
+---
+Título: Chamada de mídia em tempo real com o Skype | descrição do Microsoft Docs: Entenda os principais conceitos na criação de um bot capaz de conduzir chamadas de áudio e vídeo em tempo real com o Skype, usando o SDK do Bot Framework para .NET.
+author: ssulzer ms.author: ssulzer manager: kamrani ms.topic: article ms.service: bot-service ms.subservice: sdk ms.date: 12/13/2017 monikerRange: 'azure-bot-service-3.0'
+---
+
 # <a name="real-time-media-calling-with-skype"></a>Chamada de mídia em tempo real com o Skype
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
@@ -65,3 +62,4 @@ Para desenvolver um bot de mídia em tempo real, você deve instalar esses pacot
 ### <a name="code-samples"></a>Exemplos de código
 
 O repositório [BotBuilder RealTimeMediaCalling](https://github.com/Microsoft/BotBuilder-RealTimeMediaCalling) do GitHub contém exemplos que mostram como criar bots de mídia em tempo real para o Skype.
+-->

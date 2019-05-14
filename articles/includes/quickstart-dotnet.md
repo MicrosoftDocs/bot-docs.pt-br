@@ -1,13 +1,21 @@
+---
+ms.openlocfilehash: 04f9101d0cf29618fb7d50e126c008190064a831
+ms.sourcegitcommit: 3e3c9986b95532197e187b9cc562e6a1452cbd95
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65198756"
+---
 ## <a name="prerequisites"></a>Pré-requisitos
-- Visual Studio [2017](https://www.visualstudio.com/downloads)
-- Modelo de SDK do Bot Framework v4 para [C#](https://aka.ms/bot-vsix)
-- Bot Framework [Emulator](https://aka.ms/Emulator-wiki-getting-started)
-- Conhecimento de [ASP.Net Core](https://docs.microsoft.com/aspnet/core/) e programação assíncrona em [C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/index)
+- Visual Studio [2017 ou posterior](https://www.visualstudio.com/downloads)
+- [Modelo de SDK do Bot Framework v4 para C#](https://aka.ms/bot-vsix)
+- [Emulador do bot Framework](https://aka.ms/bot-framework-emulator-readme)
+- Conhecimento de [ASP.Net Core](https://docs.microsoft.com/aspnet/core/) e [programação assíncrona em C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/index)
 
 ## <a name="create-a-bot"></a>Criar um bot
 Instale o modelo BotBuilderVSIX.vsix que você baixou na seção de pré-requisitos.
 
-No Visual Studio, crie um novo projeto de bot usando o modelo do **Bot Framework Echo Bot** V4.
+No Visual Studio, crie um novo projeto de bot usando o modelo do **Echo Bot (Bot Framework v4)**.
 
 ![Projeto do Visual Studio](~/media/azure-bot-quickstarts/bot-builder-dotnet-project.png)
 
@@ -24,8 +32,8 @@ Quando você clica no botão de execução, o Visual Studio cria o aplicativo, i
 
 Em seguida, inicie o emulador e, em seguida, conecte-se ao seu bot no emulador:
 
-1. Clique no link **Abrir Bot** na guia "Boas-vindas" do emulador. 
-2. Escolha o arquivo .bot localizado no diretório em que você criou a solução do Visual Studio.
+1. Clique no link **Criar uma nova configuração de bot** na guia de “Boas-vindas” do emulador. 
+2. Preencha os campos de seu bot e clique em **Salvar e conectar**.
 
 ## <a name="interact-with-your-bot"></a>Interagir com o bot
 

@@ -1,21 +1,18 @@
 ---
-title: Implantar um bot de mídia em tempo real do Skype no Azure | Microsoft Docs
-description: Saiba como implantar um bot de áudio e vídeo em tempo real do Skype no Azure usando o recurso de publicação interno do Visual Studio.
-author: MalarGit
-ms.author: malarch
-manager: ssulzer
-ms.topic: article
-ms.service: bot-service
-ms.subservice: sdk
-ms.date: 12/13/17
-monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 22cce8ad5bef3c1c6f08a8efc28118e0209dd3af
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+redirect_url: https://aka.ms/realTimeMediaCalling-repo
+ms.openlocfilehash: 1df0192632cdb9b35259b8ce1ec5c8b3be46c750
+ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49999433"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65032937"
 ---
+<a name="--"></a><!--
+---
+Título: Implantar um bot de mídia em tempo real do Skype no Azure | descrição do Microsoft Docs: Saiba como implantar um bot de áudio e vídeo em tempo real do Skype no Azure usando o recurso de publicação interno do Visual Studio.
+author: MalarGit ms.author: malarch manager: ssulzer ms.topic: article ms.service: bot-service ms.subservice: sdk ms.date: 12/13/17 monikerRange: 'azure-bot-service-3.0'
+---
+
 # <a name="deploy-a-real-time-media-bot-from-visual-studio-to-azure"></a>Implantar um bot de mídia em tempo real do Visual Studio no Azure
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
@@ -67,7 +64,7 @@ O nome de domínio totalmente qualificado (FQDN) do bot não está disponível p
 >   ```
 
 ## <a name="publish-the-bot-from-visual-studio"></a>Publicar o bot do Visual Studio
-### <a name="step-1-launch-the-microsoft-azure-publishing-wizard-in-visual-studio"></a>Etapa 1: Iniciar o Assistente de publicação do Microsoft Azure no Visual Studio
+### <a name="step-1-launch-the-microsoft-azure-publishing-wizard-in-visual-studio"></a>Etapa 1: Iniciar o Assistente de Publicação do Microsoft Azure no Visual Studio
 
 Abra o projeto no Visual Studio. No Gerenciador de Soluções, clique com o botão direito do mouse no nome do projeto do serviço de nuvem e selecione **Publicar**. Isso inicia o assistente de publicação do Microsoft Azure. Use suas credenciais para entrar na assinatura apropriada.
 
@@ -84,3 +81,4 @@ Clique em **Próximo**. Isso abrirá a guia **Configurações**. Especifique o s
 ![Clique na guia Configurações Avançadas](../media/real-time-media-bot-publish-advanced-settings.png)
 
 Verifique se a configuração na guia **Resumo** e clique em **Publicar** para implantar o bot no Microsoft Azure.
+-->

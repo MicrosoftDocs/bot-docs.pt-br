@@ -10,34 +10,38 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 4/13/19
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 1f74e34c0eaf303e612f94605104482cd5f1f080
-ms.sourcegitcommit: aea57820b8a137047d59491b45320cf268043861
+ms.openlocfilehash: 417833b380e80788e26682ce3abd9cc98199eee5
+ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59904489"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65032855"
 ---
 # <a name="write-directly-to-storage"></a>Gravar diretamente no armazenamento
 
 [!INCLUDE[applies-to](../includes/applies-to.md)]
 
-Você pode ler e gravar diretamente em seu objeto de armazenamento sem usar middleware ou objeto de contexto. Isso pode ser apropriado para dados que o bot usa, originados de uma fonte fora do fluxo de conversa do bot. Por exemplo, digamos que o bot permite que o usuário solicite o boletim meteorológico e o bot recupera o boletim meteorológico para uma data específica, lendo-o a partir de um banco de dados externo. O conteúdo do banco de dados de clima não depende das informações do usuário ou do contexto da conversa, portanto, é possível lê-lo diretamente do armazenamento em vez de usar o gerenciador de estado. Os exemplos de código neste artigo mostram como ler e gravar dados no armazenamento usando o **Armazenamento de Memória**, o **Cosmos DB**, o **Armazenamento de Blobs** e o **Armazenamento de Transcrições do Blob do Azure**. 
+Você pode ler e gravar diretamente em seu objeto de armazenamento sem usar middleware ou objeto de contexto. Isso pode ser apropriado para dados que seu bot usa para preservar a conversa ou dados originados de uma fonte fora do fluxo de conversa do bot. Nesse modelo de armazenamento de dados, os dados são lidos diretamente do armazenamento em vez de usar um gerenciador de estado. Os exemplos de código neste artigo mostram como ler e gravar dados no armazenamento usando o **Armazenamento de Memória**, o **Cosmos DB**, o **Armazenamento de Blobs** e o **Armazenamento de Transcrições do Blob do Azure**. 
 
 ## <a name="prerequisites"></a>Pré-requisitos
-- Se você não tiver uma assinatura do Azure, crie uma conta [gratuita](https://azure.microsoft.com/en-us/free/) antes de começar.
-- Instalar [Emulator](https://aka.ms/Emulator-wiki-getting-started) da Estrutura do Bot
+- Se você não tiver uma assinatura do Azure, crie uma conta [gratuita](https://azure.microsoft.com/free/) antes de começar.
+- Familiaridade com o artigo: Crie um bot localmente para [dotnet](https://aka.ms/bot-framework-www-c-sharp-quickstart) ou [nodeJS](https://aka.ms/bot-framework-www-node-js-quickstart).
+- Modelo SDK do Bot Framework v4 para o [Modelo C#](https://aka.ms/bot-vsix) ou [nodeJS](https://nodejs.org) e [yeoman](http://yeoman.io).
+
+## <a name="about-this-sample"></a>Sobre este exemplo
+O código de exemplo neste artigo começa com a estrutura de um bot de eco básico e estende a funcionalidade dele, adicionando códigos (fornecidos abaixo). Esse código estendido cria uma lista para preservar as entradas do usuário conforme elas são recebidas. A cada turno, a lista completa de entradas do usuário é ecoada de volta para o usuário. A estrutura de dados que contém essa lista de entradas é então salva no armazenamento ao final desse turno. Vários tipos de armazenamento são explorados à medida que outras funcionalidades são adicionadas a este código de exemplo.
 
 ## <a name="memory-storage"></a>Armazenamento de memória
 
-Primeiro, criaremos um bot que vai ler e gravar dados no Armazenamento de Memória. O armazenamento de memória é usado somente para testes e não deve ser usado na produção. Defina o armazenamento como Cosmos DB ou Armazenamento de Blobs antes de publicar seu bot.
+O SDK do Bot Framework permite que você armazene entradas do usuário usando o armazenamento na memória. O armazenamento de memória é usado somente para testes e não deve ser usado na produção. Os tipos de armazenamento persistentes, como o armazenamento de banco de dados, são melhores para bots de produção. Defina o armazenamento como Cosmos DB ou Armazenamento de Blobs antes de publicar seu bot.
 
 #### <a name="build-a-basic-bot"></a>Crie um bot básico
 
-O restante deste tópico se baseia em um bot de Eco. O código de exemplo do bot de Eco para criar esse projeto pode ser encontrado aqui, [exemplo C#](https://aka.ms/cs-echobot-sample) ou aqui [exemplo JS](https://aka.ms/js-echobot-sample). Use o Bot Framework Emulator para se conectar ao bot, conversar com ele e testá-lo. O exemplo a seguir adiciona todas as mensagens do usuário a uma lista. A estrutura de dados que contém a lista é salva em seu armazenamento.
+O restante deste tópico se baseia em um bot de Eco. O código de exemplo do bot Echo pode ser criado localmente, seguindo as instruções do Guia de Início Rápido para a criação de um [EchoBot C#](https://aka.ms/bot-framework-www-c-sharp-quickstart) ou um [EchoBot JS](https://aka.ms/bot-framework-www-node-js-quickstart).
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+### <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-**MyBot.cs**
+**EchoBot.cs**
 ```csharp
 using System;
 using System.Threading.Tasks;
@@ -47,32 +51,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 
-// Create local Memory Storage.
-private static readonly MemoryStorage _myStorage = new MemoryStorage();
-
-// Create cancellation token (used by Async Write operation).
-public CancellationToken cancellationToken { get; private set; }
-
-// Class for storing a log of utterances (text of messages) as a list.
-public class UtteranceLog : IStoreItem
+// Represents a bot saves and echoes back user input.
+public class EchoBot : ActivityHandler
 {
-     // A list of things that users have said to the bot
-     public List<string> UtteranceList { get; } = new List<string>();
+   // Create local Memory Storage.
+   private static readonly MemoryStorage _myStorage = new MemoryStorage();
 
-     // The number of conversational turns that have occurred        
-     public int TurnNumber { get; set; } = 0;
+   // Create cancellation token (used by Async Write operation).
+   public CancellationToken cancellationToken { get; private set; }
 
-     // Create concurrency control where this is used.
-     public string ETag { get; set; } = "*";
-}
-
-// Every Conversation turn for our Bot calls this method.
-public async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancellationToken = default(CancellationToken))
-{     
-   if (turnContext.Activity.Type == ActivityTypes.Message)
+   // Class for storing a log of utterances (text of messages) as a list.
+   public class UtteranceLog : IStoreItem
    {
-      // Replace the two lines of code from original MyBot code with the following:
-      
+      // A list of things that users have said to the bot
+      public List<string> UtteranceList { get; } = new List<string>();
+
+      // The number of conversational turns that have occurred        
+      public int TurnNumber { get; set; } = 0;
+
+      // Create concurrency control where this is used.
+      public string ETag { get; set; } = "*";
+   }
+     
+   // Echo back user input.
+   protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
+   {
       // preserve user input.
       var utterance = turnContext.Activity.Text;  
       // make empty local logitems list.
@@ -93,20 +96,20 @@ public async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancel
       // If no stored messages were found, create and store a new entry.
       if (logItems is null)
       {
-            // add the current utterance to a new object.
-            logItems = new UtteranceLog();
-            logItems.UtteranceList.Add(utterance);
-            // set initial turn counter to 1.
-            logItems.TurnNumber++;
+         // add the current utterance to a new object.
+         logItems = new UtteranceLog();
+         logItems.UtteranceList.Add(utterance);
+         // set initial turn counter to 1.
+         logItems.TurnNumber++;
 
-            // Show user new user message.
-            await turnContext.SendActivityAsync($"{logItems.TurnNumber}: The list is now: {string.Join(", ", logItems.UtteranceList)}");
+         // Show user new user message.
+         await turnContext.SendActivityAsync($"{logItems.TurnNumber}: The list is now: {string.Join(", ", logItems.UtteranceList)}");
 
-            // Create Dictionary object to hold received user messages.
-            var changes = new Dictionary<string, object>();
-            {
-               changes.Add("UtteranceLog", logItems);
-            }
+         // Create Dictionary object to hold received user messages.
+         var changes = new Dictionary<string, object>();
+         {
+            changes.Add("UtteranceLog", logItems);
+         }
          try
          {
             // Save the user message to your Storage.
@@ -146,50 +149,52 @@ public async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancel
             await turnContext.SendActivityAsync("Sorry, something went wrong storing your message!");
          }
       }
+      ...  // OnMessageActivityAsync( )
    }
 }
 
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-**index.js**
+Para usar o arquivo de configuração .env, o bot precisará da inclusão de mais um pacote. Caso ainda não o tenha instalado, obtenha o pacote dotnet do npm:
+
+```powershell
+npm install --save dotenv
+```
+
+**bot.js**
 ```javascript
-const { BotFrameworkAdapter, ConversationState, MemoryStorage } = require('botbuilder');
+const { ActivityHandler, MemoryStorage } = require('botbuilder');
 const restify = require('restify');
 
 // Add memory storage.
 var storage = new MemoryStorage();
 
-// const conversationState = new ConversationState(storage);
-// adapter.use(conversationState);
-
-// Listen for incoming requests - adds storage for messages.
-server.post('/api/messages', (req, res) => {
-    adapter.processActivity(req, res, async (context) => {
-
-        if (context.activity.type === 'message') {
-            // Route to main dialog.
-            await myBot.onTurn(context);
-            // Save updated utterance inputs.
-            await logMessageText(storage, context);
-        }
-        else {
-            // Just route to main dialog.
-            await myBot.onTurn(context);
-        } 
+// Process incoming requests - adds storage for messages.
+class MyBot extends ActivityHandler {
+    constructor() {
+        super();
+        // See https://aka.ms/about-bot-activity-message to learn more about the message and other activity types.
+        this.onMessage(async turnContext => { console.log('this gets called (message)'); 
+        await turnContext.sendActivity(`You said '${ turnContext.activity.text }'`); 
+        // Save updated utterance inputs.
+        await logMessageText(storage, turnContext);
     });
-});
+        this.onConversationUpdate(async turnContext => { console.log('this gets called (conversation update)'); 
+        await turnContext.sendActivity('[conversationUpdate event detected]'); });
+    }
+}
 
 // This function stores new user messages. Creates new utterance log if none exists.
-async function logMessageText(storage, context) {
-    let utterance = context.activity.text;
+async function logMessageText(storage, turnContext) {
+    let utterance = turnContext.activity.text;
+    // debugger;
     try {
         // Read from the storage.
         let storeItems = await storage.read(["UtteranceLogJS"])
         // Check the result.
         var UtteranceLogJS = storeItems["UtteranceLogJS"];
-
         if (typeof (UtteranceLogJS) != 'undefined') {
             // The log exists so we can write to it.
             storeItems["UtteranceLogJS"].turnNumber++;
@@ -200,13 +205,13 @@ async function logMessageText(storage, context) {
 
             try {
                 await storage.write(storeItems)
-                context.sendActivity(`${numStored}: You stored: ${storedString}`);
+                turnContext.sendActivity(`${numStored}: The list is now: ${storedString}`);
             } catch (err) {
-                context.sendActivity(`Write failed of UtteranceLogJS: ${err}`);
+                turnContext.sendActivity(`Write failed of UtteranceLogJS: ${err}`);
             }
-
-         } else {
-            context.sendActivity(`Creating and saving new utterance log`);
+        }
+        else{
+            turnContext.sendActivity(`Creating and saving new utterance log`);
             var turnNumber = 1;
             storeItems["UtteranceLogJS"] = { UtteranceList: [`${utterance}`], "eTag": "*", turnNumber }
             // Gather info for user message.
@@ -215,167 +220,325 @@ async function logMessageText(storage, context) {
 
             try {
                 await storage.write(storeItems)
-                context.sendActivity(`${numStored}: You stored: ${storedString}`);
+                turnContext.sendActivity(`${numStored}: The list is now: ${storedString}`);
             } catch (err) {
-                context.sendActivity(`Write failed: ${err}`);
+                turnContext.sendActivity(`Write failed: ${err}`);
             }
         }
-    } catch (err) {
-        context.sendActivity(`Read rejected. ${err}`);
-    };
+    }
+    catch (err){
+        turnContext.sendActivity(`Read rejected. ${err}`);
+    }
 }
 
-```
+module.exports.MyBot = MyBot;
 
+```
 ---
 
 ### <a name="start-your-bot"></a>Inicie seu bot
 Execute o bot localmente.
 
 ### <a name="start-the-emulator-and-connect-your-bot"></a>Iniciar o emulador e conectar seu bot
-Em seguida, inicie o emulador e, em seguida, conecte-se ao seu bot no emulador:
+- Instale o Bot Framework [Emulator](https://aka.ms/bot-framework-emulator-readme), depois inicie o emulador e conecte-se ao bot no emulador:
 
-1. Clique no link **Abrir Bot** na guia "Boas-vindas" do emulador. 
-2. Selecione o arquivo .bot localizado no diretório em que você criou o projeto.
+1. Clique no link **Criar nova configuração de bot** na guia “Boas-vindas” do emulador. 
+2. Preencha os campos para se conectar ao seu bot considerando as informações na página da Web exibida ao iniciar o bot.
 
 ### <a name="interact-with-your-bot"></a>Interagir com o bot
-Envie uma mensagem ao bot e o bot listará as mensagens recebidas por ele.
-![Emulador em execução](../media/emulator-v4/emulator-running.png)
+Envie uma mensagem ao bot. Ele listará as mensagens recebidas.
 
- 
+![Bot de armazenamento de teste do emulador](./media/emulator-direct-storage-test.png)
+
 ## <a name="using-cosmos-db"></a>Usar o Cosmos DB
 Agora que você usou o armazenamento de memória, vamos atualizar o código para usar o Azure Cosmos DB. O Cosmos DB é o banco de dados multimodelo globalmente distribuído da Microsoft. O Azure Cosmos DB permite que você dimensione a taxa de transferência e o armazenamento de maneira elástica e independente em qualquer número de regiões geográficas do Azure. Ele oferece garantias de taxa de transferência, disponibilidade, latência e consistência com contratos de nível de serviço (SLAs) abrangentes. 
 
 ### <a name="set-up"></a>Configurar
-Para usar o Cosmos DB em seu bot, você precisará configurar algumas coisas antes de mexer no código.
+Para usar o Cosmos DB em seu bot, você precisará configurar algumas coisas antes de mexer no código. Para obter uma descrição detalhada da criação do banco de dados Cosmos DB e do aplicativo, acesse a documentação para [dotnet do Cosmos DB](https://aka.ms/Bot-framework-create-dotnet-cosmosdb) ou [nodejs do Cosmos DB](https://aka.ms/Bot-framework-create-nodejs-cosmosdb).
 
-#### <a name="create-your-database-account"></a>Criar sua conta de banco de dados
+### <a name="create-your-database-account"></a>Criar sua conta de banco de dados
+
 1. Em uma nova janela do navegador, entre no [Portal do Azure](http://portal.azure.com).
+
+![Criar banco de dados do Cosmos DB](./media/create-cosmosdb-database.png)
+
 2. Clique em **Criar um recurso > Bancos de Dados > Azure Cosmos DB**
-3. Na página **Nova conta**, forneça um nome exclusivo no campo **ID**. No caso da **API**, escolha **SQL** e forneça as informações de **Assinatura**, **Local** e **Grupo de recursos**.
-4. Em seguida, clique em **Criar**.
+
+![Página da nova conta do Cosmos DB](./media/cosmosdb-new-account-page.png)
+
+3. Na **Página da nova conta**, forneça as informações de **Assinatura**, **Grupo de recursos**. Crie um nome exclusivo para o campo **Nome da conta** — isso acabará se tornando parte do seu nome de URL de acesso de dados. Para **API**, selecione **Core(SQL)** e forneça um **Local** próximo para melhorar os tempos de acesso de dados.
+4. Depois clique em **Revisar + Criar**.
+5. Depois que a validação tiver sido bem-sucedida, clique em **Criar**.
 
 A criação da conta leva alguns minutos. Aguarde até que o portal exiba a página de parabéns! Página Sua conta do Azure Cosmos DB foi criada.
 
-##### <a name="add-a-collection"></a>Adicionar uma coleção
-1. Clique em **Configurações > Nova Coleção**. A área **Adicionar Coleção** é exibida à direita, talvez seja necessário rolar para a direita para vê-la. Devido a atualizações recentes para o Cosmos DB, certifique-se de adicionar uma única chave de partição: _/id_. Essa chave evitará erros de consulta entre partições.
+### <a name="add-a-collection"></a>Adicionar uma coleção
 
 ![Adicionar coleção do Azure Cosmos DB](./media/add_database_collection.png)
 
-2. Sua nova coleção de banco de dados, "bot-cosmos-sql-db", com uma ID de coleção "bot-storage." Usaremos esses valores em nosso exemplo de codificação abaixo.
- -
+1. Clique em **Configurações > Nova Coleção**. A área **Adicionar Coleção** é exibida à direita, talvez seja necessário rolar para a direita para vê-la. Devido a atualizações recentes para o Cosmos DB, certifique-se de adicionar uma única chave de partição: _/id_. Essa chave evitará erros de consulta entre partições.
+
 ![Cosmos DB](./media/cosmos-db-sql-database.png)
 
-3. O URI e a chave do ponto de extremidade estão disponíveis na guia **Chaves** das configurações de seu banco de dados. Esses valores serão necessários para configurar o código mais adiante neste artigo. 
+2. Sua nova coleção de banco de dados, "bot-cosmos-sql-db", com uma ID de coleção "bot-storage." Usaremos esses valores em nosso exemplo de codificação abaixo.
 
 ![Chaves do Cosmos DB](./media/comos-db-keys.png)
 
-#### <a name="add-configuration-information"></a>Adicionar informações de configuração
+3. O URI e a chave do ponto de extremidade estão disponíveis na guia **Chaves** das configurações de seu banco de dados. Esses valores serão necessários para configurar o código mais adiante neste artigo. 
+
+### <a name="add-configuration-information"></a>Adicionar informações de configuração
 Nossos dados de configuração para adição do armazenamento do Cosmos DB são curtos e simples; você poderá adicionar outros parâmetros de configuração usando esses mesmos métodos à medida que seu bot for ficando mais complexo. Este exemplo usa os nomes de banco de dados e coleção do Cosmos DB do exemplo acima.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+### <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-**MyBot.cs**
+**EchoBot.cs**
 ```csharp
-private const string CosmosServiceEndpoint = "<your-cosmos-db-URI>";
-private const string CosmosDBKey = "<your-cosmos-db-account-key>";
-private const string CosmosDBDatabaseName = "bot-cosmos-sql-db";
-private const string CosmosDBCollectionName = "bot-storage";
+public class EchoBot : ActivityHandler
+{
+   private const string CosmosServiceEndpoint = "<your-cosmos-db-URI>";
+   private const string CosmosDBKey = "<your-cosmos-db-account-key>";
+   private const string CosmosDBDatabaseName = "bot-cosmos-sql-db";
+   private const string CosmosDBCollectionName = "bot-storage";
+   ...
+   
+}
 ```
 
-
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 Adicione as informações a seguir ao arquivo `.env`.
 
 **.env**
 ```javascript
-ACTUAL_SERVICE_ENDPOINT=<your database URI>
-ACTUAL_AUTH_KEY=<your database key>
-DATABASE=bot-cosmos-sql-db
-COLLECTION=bot-storage
+DB_SERVICE_ENDPOINT="<your-Cosmos-db-URI>"
+AUTH_KEY="<your-cosmos-db-account-key>"
+DATABASE="<bot-cosmos-sql-db>"
+COLLECTION="<bot-storage>"
 ```
 ---
 
 #### <a name="installing-packages"></a>Instalar pacotes
 Verifique se você possui os pacotes necessários para o Cosmos DB
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+### <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```powershell
 Install-Package Microsoft.Bot.Builder.Azure
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-Adicione referências a botbuilder-azure em seu projeto por meio do npm: -->
-
+Você pode adicionar referências ao botbuilder-azure em seu projeto por meio do npm.
+>**Observação**: esse pacote npm se baseia em uma instalação do Python existente no seu computador de desenvolvimento. Caso não tenha o Python instalado, você pode encontrar os recursos de instalação no seu computador aqui: [Python.org](https://www.python.org/downloads/)
 
 ```powershell
 npm install --save botbuilder-azure 
 ```
 
-Para usar o arquivo de configuração .env, o bot precisará da inclusão de mais um pacote. Primeiro, obtenha o pacote de .NET do npm:
+Caso ainda não o tenha instalado, obtenha o pacote do dotnet do npm para acessar as configurações de arquivo do `.env`.
 
 ```powershell
 npm install --save dotenv
 ```
-
 ---
 
 ### <a name="implementation"></a>Implementação 
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+### <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 O código de exemplo a seguir é executado usando o mesmo código de bot do exemplo de [armazenamento de memória](#memory-storage) fornecido acima.
-O trecho de código a seguir mostra uma implementação de armazenamento do Cosmos DB para '_myStorage_' que substitui o armazenamento de memória local.
+O trecho de código a seguir mostra uma implementação de armazenamento do Cosmos DB para '_myStorage_' que substitui o armazenamento de memória local. O Armazenamento de memória é comentado e substituído por uma referência ao Cosmos DB.
 
-**MyBot.cs**
+**EchoBot.cs**
 ```csharp
+
+using System;
+...
 using Microsoft.Bot.Builder.Azure;
-
-// Create local Memory Storage - commented out.
-// private static readonly MemoryStorage _myStorage = new MemoryStorage();
-
-// Replaces Memory Storage with reference to Cosmos DB.
-private static readonly CosmosDbStorage _myStorage = new CosmosDbStorage(new CosmosDbStorageOptions
+...
+public class EchoBot : ActivityHandler
 {
-   AuthKey = CosmosDBKey,
-   CollectionId = CosmosDBCollectionName,
-   CosmosDBEndpoint = new Uri(CosmosServiceEndpoint),
-   DatabaseId = CosmosDBDatabaseName,
-});
+   // Create local Memory Storage - commented out.
+   // private static readonly MemoryStorage _myStorage = new MemoryStorage();
+
+   // Replaces Memory Storage with reference to Cosmos DB.
+   private static readonly CosmosDbStorage _myStorage = new CosmosDbStorage(new CosmosDbStorageOptions
+   {
+      AuthKey = CosmosDBKey,
+      CollectionId = CosmosDBCollectionName,
+      CosmosDBEndpoint = new Uri(CosmosServiceEndpoint),
+      DatabaseId = CosmosDBDatabaseName,
+   });
+   
+   ...
+}
+
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 O código de exemplo a seguir é semelhante ao [armazenamento de memória](#memory-storage), mas com pequenas alterações.
 
-Exija `CosmosDbStorage` do botbuilder-azure e configure dotenv para ler o arquivo `.env`.
+Requer o `CosmosDbStorage` do `botbuilder-azure` e a configuração do dotenv para ler o arquivo `.env`.
 
-**index.js**
+**bot.js**
+
 ```javascript
 const { CosmosDbStorage } = require("botbuilder-azure");
 ```
 Comentário sobre o Armazenamento de Memória, substitua-o com referência ao Cosmos DB.
 
-**index.js**
+**bot.js**
 ```javascript
+// initialized to access values in .env file.
+var dotenv = require('dotenv');
+dotenv.load();
+
 // Create local Memory Storage - commented out.
 // var storage = new MemoryStorage();
 
-// Create access to Cosmos DB storage.
-//Add CosmosDB 
-const storage = new CosmosDbStorage({
-    serviceEndpoint: process.env.ACTUAL_SERVICE_ENDPOINT, 
-    authKey: process.env.ACTUAL_AUTH_KEY, 
+// Create access to CosmosDb Storage - this replaces local Memory Storage.
+var storage = new CosmosDbStorage({
+    serviceEndpoint: process.env.DB_SERVICE_ENDPOINT, 
+    authKey: process.env.AUTH_KEY, 
     databaseId: process.env.DATABASE,
-     collectionId: process.env.COLLECTION
+    collectionId: process.env.COLLECTION
 })
 
 ```
-
 ---
+
+## <a name="start-your-bot"></a>Inicie seu bot
+Execute o bot localmente.
+
+## <a name="test-your-bot-with-bot-framework-emulator"></a>Testar o bot usando o Bot Framework Emulator
+Agora inicie o Bot Framework Emulator e conecte-se ao seu bot:
+
+1. Clique no link **Criar nova configuração de bot** na guia “Boas-vindas” do emulador. 
+2. Preencha os campos para se conectar ao seu bot considerando as informações na página da Web exibida ao iniciar o bot.
+
+## <a name="interact-with-your-bot"></a>Interagir com o bot
+Envie uma mensagem ao bot e o bot listará as mensagens recebidas por ele.
+![Emulador em execução](./media/emulator-direct-storage-test.png)
+
+
+### <a name="view-your-data"></a>Ver seus dados
+Depois de executar o bot e salvar suas informações, poderemos exibir os dados armazenados no portal do Azure na guia **Data Explorer**. 
+
+![Exemplo do Data Explorer](./media/data_explorer.PNG)
+
+
+## <a name="using-blob-storage"></a>Usar o armazenamento de blobs 
+O Armazenamento de Blobs do Azure é uma solução de armazenamento de objetos da Microsoft para a nuvem. O armazenamento de Blobs é otimizado para armazenar grandes quantidades de dados não estruturados, como texto ou dados binários.
+
+### <a name="create-your-blob-storage-account"></a>Criar sua conta de Armazenamento de Blobs
+Para usar o Armazenamento de Blobs em seu bot, você precisará configurar algumas coisas antes de mexer no código.
+1. Em uma nova janela do navegador, entre no [Portal do Azure](http://portal.azure.com).
+
+![Criar o Armazenamento de Blobs](./media/create-blob-storage.png)
+
+2. Clique em **Criar um recurso > Armazenamento > Conta de armazenamento - blob, arquivo, tabela, fila**
+
+![Página da nova conta de Armazenamento de Blobs](./media/blob-storage-new-account.png)
+
+3. Na página **Nova conta**, insira o **Nome** da conta de armazenamento, selecione **Armazenamento de Blobs** como o **Tipo de conta** e forneça as informações de **Local**, **Grupo de recursos** e **Assinatura**.  
+4. Depois clique em **Revisar + Criar**.
+5. Depois que a validação tiver sido bem-sucedida, clique em **Criar**.
+
+### <a name="create-blob-storage-container"></a>Criar contêiner de Armazenamento de Blobs
+Depois de criar sua conta de Armazenamento de Blobs, abra esta conta 
+1. selecionando o recurso.
+2. Agora abra usando o Gerenciador de Armazenamento (versão prévia).
+
+![Criar contêiner de Armazenamento de Blobs](./media/create-blob-container.png)
+
+3. Clique com botão direito do mouse em CONTÊINERES DE BLOBS e selecione _Criar contêiner de blobs_.
+4. Adicione um nome. Você usará esse nome para o valor "your-blob-storage-container-name" para fornecer acesso à sua conta de Armazenamento de Blobs.
+
+#### <a name="add-configuration-information"></a>Adicionar informações de configuração
+Localize as chaves do Armazenamento de Blobs necessárias para configurá-lo para o bot, conforme mostrado acima:
+1. No portal do Azure, abra sua conta do Armazenamento de Blobs e selecione **Configurações > Chaves de acesso**.
+
+![Localizar chaves do Armazenamento de Blobs](./media/find-blob-storage-keys.png)
+
+Você usará a chave1 _Cadeia de conexão_ como o valor "your-blob-storage-account-string" para fornecer acesso à sua conta de Armazenamento de Blobs.
+
+#### <a name="installing-packages"></a>Instalar pacotes
+Caso ainda não os tenha instalado para usar o Cosmos DB, instale os pacotes a seguir.
+
+### <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
+```powershell
+Install-Package Microsoft.Bot.Builder.Azure
+```
+
+### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+Adicione referências ao botbuilder-azure no seu projeto por meio do npm.
+>**Observação**: esse pacote npm se baseia em uma instalação do Python existente no seu computador de desenvolvimento. Caso não tenha o Python instalado, você pode encontrar os recursos de instalação no seu computador aqui: [Python.org](https://www.python.org/downloads/)
+
+```powershell
+npm install --save botbuilder-azure 
+```
+
+Caso ainda não o tenha instalado, obtenha o pacote do dotnet do npm para acessar as configurações de arquivo do `.env`.
+
+```powershell
+npm install --save dotenv
+```
+---
+
+### <a name="implementation"></a>Implementação 
+
+### <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
+**EchoBot.cs**
+```csharp
+using Microsoft.Bot.Builder.Azure;
+```
+Atualize a linha de código que aponta "_myStorage_" para a conta do Armazenamento de Blobs existente.
+
+**EchoBot.cs**
+```csharp
+private static readonly AzureBlobStorage _myStorage = new AzureBlobStorage("<your-blob-storage-account-string>", "<your-blob-storage-container-name>");
+```
+
+### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+Adicione as informações a seguir ao arquivo `.env`.
+
+**.env**
+```javascript
+BLOB_NAME="<your-blob-storage-container-name>"
+BLOB_STRING="<your-blob-storage-account-string>"
+```
+
+Atualize o arquivo `bot.js` conforme descrito a seguir. Requer o `BlobStorage` do `botbuilder-azure`.
+
+**bot.js**
+```javascript
+const { BlobStorage } = require("botbuilder-azure");
+```
+
+Caso não tenha adicionado o código para carregar o arquivo `.env` para implementar o armazenamento do Cosmos DB, adicione-o aqui.
+
+```javascript
+// initialized to access values in .env file.
+var dotenv = require('dotenv');
+dotenv.load();
+```
+Agora, atualize seu código para apontar o "_armazenamento_" para sua conta de Armazenamento de Blobs existente, comentando definições anteriores de armazenamento e adicionando o seguinte.
+
+**bot.js**
+```javascript
+var storage = new BlobStorage({
+    containerName: process.env.BLOB_NAME,
+    storageAccountOrConnectionString: process.env.BLOB_STRING
+});
+```
+---
+
+Quando o armazenamento estiver definido para apontar para a conta do Armazenamento de Blobs, o código do bot armazenará e recuperará dados do Armazenamento de Blobs.
 
 ## <a name="start-your-bot"></a>Inicie seu bot
 Execute o bot localmente.
@@ -383,18 +546,134 @@ Execute o bot localmente.
 ## <a name="start-the-emulator-and-connect-your-bot"></a>Iniciar o emulador e conectar seu bot
 Em seguida, inicie o emulador e, em seguida, conecte-se ao seu bot no emulador:
 
-1. Clique no link **Abrir Bot** na guia "Boas-vindas" do emulador. 
-2. Selecione o arquivo .bot localizado no diretório em que você criou o projeto.
+1. Clique no link **Criar nova configuração de bot** na guia “Boas-vindas” do emulador. 
+2. Preencha os campos para se conectar ao seu bot considerando as informações na página da Web exibida ao iniciar o bot.
 
 ## <a name="interact-with-your-bot"></a>Interagir com o bot
-Envie uma mensagem ao bot e o bot listará as mensagens recebidas por ele.
-![Emulador em execução](../media/emulator-v4/emulator-running.png)
+Envie uma mensagem ao bot, e ele listará as mensagens recebidas.
 
+![Bot de armazenamento de teste do emulador](./media/emulator-direct-storage-test.png)
 
 ### <a name="view-your-data"></a>Ver seus dados
-Depois de executar o bot e salvar suas informações, poderemos exibir os dados armazenados no portal do Azure na guia **Data Explorer**. 
+Depois de executar o bot e salvar suas informações, poderemos exibi-lo na guia **Gerenciador de Armazenamento** no portal do Azure.
 
-![Exemplo do Data Explorer](./media/data_explorer.PNG)
+## <a name="blob-transcript-storage"></a>Armazenamento de transcrição de blobs
+O armazenamento de transcrições do Blob do Azure fornece uma opção de armazenamento especializado que permite salvar e recuperar facilmente conversas do usuário como transcrições gravadas. O armazenamento de transcrições de blob do Azure é bastante útil para capturar respostas do usuário automaticamente e examiná-las durante a depuração de desempenho do seu bot.
+
+### <a name="set-up"></a>Configurar
+O armazenamento de transcrições do Blob do Azure pode usar a mesma conta de Armazenamento de Blobs criada seguindo as etapas detalhadas nas seções "_Criar sua conta de Armazenamento de Blobs_" e "_Adicionar informações de configuração_" acima. Agora, adicionamos um contêiner para manter nossas transcrições.
+
+![Criar contêiner de transcrição](./media/create-blob-transcript-container.png)
+
+1. Abra uma conta de Armazenamento de Blobs do Azure.
+1. Clique em _Gerenciador de Armazenamento_.
+1. Clique com botão direito do mouse em _CONTÊINERES DE BLOBS_ e selecione _Criar contêiner de blobs_.
+1. Insira um nome para o contêiner de transcrição e selecione _OK_. (Nomeamos como mybottranscripts)
+
+### <a name="implementation"></a>Implementação 
+O código a seguir conecta o ponteiro de armazenamento de transcrição `_myTranscripts` à sua nova conta de armazenamento de transcrições do Blob do Azure. Para criar esse link com um novo nome de contêiner, <your-blob-transcript-container-name>, crie um novo contêiner no Armazenamento de Blobs para manter os arquivos de transcrição.
+
+**echoBot.cs**
+```csharp
+using Microsoft.Bot.Builder.Azure;
+
+public class EchoBot : ActivityHandler
+{
+   ...
+   
+   private readonly AzureBlobTranscriptStore _myTranscripts = new AzureBlobTranscriptStore("<your-blob-transcript-storage-account-string>", "<your-blob-transcript-container-name>");
+   
+   ...
+}
+
+```
+
+### <a name="store-user-conversations-in-azure-blob-transcripts"></a>Armazenar conversas do usuário em transcrições do Blob do Azure
+Quando um contêiner de blob fica disponível para armazenar transcrições, você pode começar a armazenar as conversas dos usuários com seu bot. Essas conversas poderão ser usadas posteriormente como uma ferramenta de depuração para ver como os usuários interagem com o bot. Cada _Reiniciar conversa_ do emulador inicia a criação de uma nova lista de conversa de transcrição. O código a seguir preserva as entradas de conversas do usuário em um arquivo de transcrição armazenado.
+- A transcrição atual é salva usando `LogActivityAsync`.
+- Transcrições salvas são recuperadas usando `ListTranscriptsAsync`.
+Nesse código de exemplo, a ID de cada transcrição de código armazenada é salva em uma lista chamada "storedTranscripts". Posteriormente, essa lista é usada para gerenciar a quantidade de transcrições armazenadas de blobs que podemos manter.
+
+**echoBot.cs**
+```csharp
+
+protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
+{
+    await _myTranscripts.LogActivityAsync(turnContext.Activity);
+
+    List<string> storedTranscripts = new List<string>();
+    PagedResult<Microsoft.Bot.Builder.TranscriptInfo> pagedResult = null;
+    var pageSize = 0;
+    do
+    {
+       pagedResult = await _myTranscripts.ListTranscriptsAsync("emulator", pagedResult?.ContinuationToken);
+       pageSize = pagedResult.Items.Count();
+
+       // transcript item contains ChannelId, Created, Id.
+       // save the channelIds found by "ListTranscriptsAsync" to a local list.
+       foreach (var item in pagedResult.Items)
+       {
+          storedTranscripts.Add(item.Id);
+       }
+    } while (pagedResult.ContinuationToken != null);
+    
+    ...
+}
+
+```
+
+### <a name="manage-stored-blob-transcripts"></a>Gerenciar transcrições armazenadas de blobs
+Embora as transcrições armazenadas possam ser usadas como uma ferramenta de depuração, ao longo do tempo, a quantidade de transcrições armazenadas poderá ficar maior do que você consegue preservar. O código adicional incluído abaixo usa `DeleteTranscriptAsync` para remover tudo, exceto os três últimos itens de transcrição recuperados do seu armazenamento de transcrições de blobs.
+
+**echoBot.cs**
+```csharp
+
+protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
+{
+    await _myTranscripts.LogActivityAsync(turnContext.Activity);
+
+    List<string> storedTranscripts = new List<string>();
+    PagedResult<Microsoft.Bot.Builder.TranscriptInfo> pagedResult = null;
+    var pageSize = 0;
+    do
+    {
+       pagedResult = await _myTranscripts.ListTranscriptsAsync("emulator", pagedResult?.ContinuationToken);
+       pageSize = pagedResult.Items.Count();
+
+       // transcript item contains ChannelId, Created, Id.
+       // save the channelIds found by "ListTranscriptsAsync" to a local list.
+       foreach (var item in pagedResult.Items)
+       {
+          storedTranscripts.Add(item.Id);
+       }
+    } while (pagedResult.ContinuationToken != null);
+    
+    // Manage the size of your transcript storage.
+    for (int i = 0; i < pageSize; i++)
+    {
+       // Remove older stored transcripts, save just the last three.
+       if (i < pageSize - 3)
+       {
+          string thisTranscriptId = storedTranscripts[i];
+          try
+          {
+             await _myTranscripts.DeleteTranscriptAsync("emulator", thisTranscriptId);
+           }
+           catch (System.Exception ex)
+           {
+              await turnContext.SendActivityAsync("Debug Out: DeleteTranscriptAsync had a problem!");
+              await turnContext.SendActivityAsync("exception: " + ex.Message);
+           }
+       }
+    }
+    ...
+}
+
+```
+
+O link a seguir fornece mais informações referentes ao [Armazenamento de transcrições de blobs do Azure](https://docs.microsoft.com/en-us/dotnet/api/microsoft.bot.builder.azure.azureblobtranscriptstore) 
+
+## <a name="additional-information"></a>Informações adicionais
 
 ### <a name="manage-concurrency-using-etags"></a>Gerenciar simultaneidade usando eTags
 Em nosso exemplo de código do bot, definimos a propriedade `eTag` de cada `IStoreItem` como `*`. O membro (marca da entidade) `eTag` do objeto de repositório é usado no Cosmos DB para gerenciar a simultaneidade. `eTag` indica ao banco dados o que fazer caso outra instância do bot altere o objeto no mesmo armazenamento onde o bot está gravando. 
@@ -411,10 +690,11 @@ Por padrão, o armazenamento do Cosmos DB verificará a propriedade `eTag` de um
 
 Por exemplo, digamos que você queira que o bot edite uma nota salva, mas não quer que o bot substitua as alterações feitas por outra instância do bot. Se outra instância do bot tiver feito edições, você quer que o usuário edite a versão com as atualizações mais recentes.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+### <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 Primeiro, crie uma classe que implemente `IStoreItem`.
 
+**EchoBot.cs**
 ```csharp
 public class Note : IStoreItem
 {
@@ -426,6 +706,7 @@ public class Note : IStoreItem
 
 Em seguida, crie uma nota inicial criando um objeto de armazenamento e adicione o objeto ao armazenamento.
 
+**EchoBot.cs**
 ```csharp
 // create a note for the first time, with a non-null, non-* ETag.
 var note = new Note { Name = "Shopping List", Contents = "eggs", ETag = "x" };
@@ -439,6 +720,7 @@ await NoteStore.WriteAsync(changes, cancellationToken);
 
 Então, acesse e atualize a nota mais tarde, mantendo `eTag` que foi lido no armazenamento.
 
+**EchoBot.cs**
 ```csharp
 var note = NoteStore.ReadAsync<Note>("Note").Result?.FirstOrDefault().Value;
 
@@ -456,11 +738,12 @@ if (note != null)
 Se a nota foi atualizada no armazenamento antes de gravar as alterações, a chamada para `Write` lançará uma exceção.
 
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 Adicione uma função auxiliar ao final do seu bot para gravar uma nota de exemplo em um armazenamento de dados.
 Primeiro, crie o objeto `myNoteData`.
 
+**bot.js**
 ```javascript
 // Helper function for writing a sample note to a data store
 async function createSampleNote(storage, context) {
@@ -477,6 +760,7 @@ async function createSampleNote(storage, context) {
 
 Na função auxiliar `createSampleNote`, inicie um objeto `changes`, adicione suas *notas* a ele e grave-o no armazenamento.
 
+**bot.js**
 ```javascript
 // Write the note data to the "Note" key
 var changes = {};
@@ -487,15 +771,25 @@ changes["Note"] = myNoteData;
 // The first time you write to Note, the eTag is changed from *, and file contents will become:
 //    {"name":"Shopping List","contents":"eggs","eTag":"1"}
 try {
-    await storage.write(changes);
-    await context.sendActivity('Successful created a note.');
+     await storage.write(changes);
+     var list = changes["Note"].contents;
+     await context.sendActivity(`Successful created a note: ${list}`);
 } catch (err) {
-    await context.sendActivity(`Could not create note: ${err}`);
+     await context.sendActivity(`Could not create note: ${err}`);
 }
 ```
 
-Em seguida, para acessar e atualizar a nota mais tarde, criaremos outra função auxiliar que pode ser acessada quando o usuário digita "atualizar nota".
+A função auxiliar é acessada de dentro da lógica do bot ao adicionar a seguinte chamada:
 
+**bot.js**
+```javascript
+// Save a note with etag.
+await createSampleNote(storage, turnContext);
+```
+
+Depois de criada, para recuperar e atualizar a observação mais tarde, criamos outra função auxiliar que pode ser acessada quando o usuário digita "atualizar observação".
+
+**bot.js**
 ```javascript
 async function updateSampleNote(storage, context) {
     try {
@@ -507,9 +801,11 @@ async function updateSampleNote(storage, context) {
         console.log(`Updated note=${JSON.stringify(note)}`);
 
         try {
-            await storage.write(note); // Write the changes back to storage
-            await context.sendActivity('Successfully updated to note.');
-        } catch (err) {            console.log(`Write failed: ${err}`);
+             await storage.write(note); // Write the changes back to storage
+             var list = note["Note"].contents;
+             await context.sendActivity(`Successfully updated note: ${list}`);
+        } catch (err) {            
+             console.log(`Write failed: ${err}`);
         }
     }
     catch (err) {
@@ -518,213 +814,19 @@ async function updateSampleNote(storage, context) {
 }
 ```
 
-Se a nota foi atualizada no armazenamento antes de gravar as alterações, a chamada para `write` lançará uma exceção.
+Essa função auxiliar é acessada de dentro da lógica do bot ao adicionar a seguinte chamada:
+
+**bot.js**
+```javascript
+// Update a note with etag.
+await updateSampleNote(storage, turnContext);
+```
+
+Se a observação foi atualizada no armazenamento por outro usuário antes da tentativa de fazer write-back das alterações, o valor `eTag` não corresponderá mais e a chamada para `write` gerará uma exceção.
 
 ---
 
 Para manter a simultaneidade, sempre leia uma propriedade do armazenamento e modifique a propriedade lida para que `eTag` seja mantido. Ao ler os dados de usuário do armazenamento, a resposta conterá a propriedade eTag. Se você alterar os dados e gravar dados atualizados no armazenamento, a solicitação deverá incluir a propriedade eTag que especifica o mesmo valor lido anteriormente. No entanto, gravar um objeto com `eTag` definido para `*` permitirá que a gravação substitua quaisquer outras alterações.
-
-## <a name="using-blob-storage"></a>Usar o armazenamento de blobs 
-O Armazenamento de Blobs do Azure é uma solução de armazenamento de objetos da Microsoft para a nuvem. O armazenamento de Blobs é otimizado para armazenar grandes quantidades de dados não estruturados, como texto ou dados binários.
-
-### <a name="create-your-blob-storage-account"></a>Criar sua conta de Armazenamento de Blobs
-Para usar o Armazenamento de Blobs em seu bot, você precisará configurar algumas coisas antes de mexer no código.
-1. Em uma nova janela do navegador, entre no [Portal do Azure](http://portal.azure.com).
-2. Clique em **Criar um recurso > Armazenamento > Conta de armazenamento - blob, arquivo, tabela, fila**
-3. Na página **Nova conta**, insira o **Nome** da conta de armazenamento, selecione **Armazenamento de Blobs** como o **Tipo de conta** e forneça as informações de **Local**, **Grupo de recursos** e **Assinatura**.  
-4. Em seguida, clique em **Criar**.
-
-![Criar o Armazenamento de Blobs](./media/create-blob-storage.png)
-
-#### <a name="add-configuration-information"></a>Adicionar informações de configuração
-
-Localize as chaves do Armazenamento de Blobs necessárias para configurá-lo para o bot, conforme mostrado acima:
-1. No portal do Azure, abra sua conta do Armazenamento de Blobs e selecione **Configurações > Chaves de acesso**.
-
-![Localizar chaves do Armazenamento de Blobs](./media/find-blob-storage-keys.png)
-
-Agora, usaremos duas dessas chaves para dar ao código acesso à nossa conta do Armazenamento de Blobs.
-
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
-
-```csharp
-using Microsoft.Bot.Builder.Azure;
-```
-Atualize a linha de código que aponta "_myStorage_" para a conta do Armazenamento de Blobs existente.
-
-```csharp
-
-
-private static readonly AzureBlobStorage _myStorage = new AzureBlobStorage("<your-blob-storage-account-string>", "<your-blob-storage-container-name>");
-```
-
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
-```javascript
-const mystorage = new BlobStorage({
-   <youy_containerName>,
-   <your_storageAccountOrConnectionString>,
-   <your_storageAccessKey>
-})
-```
----
-
-Quando "_myStorage_" estiver definido para apontar para a conta do Armazenamento de Blobs, o código de seu bot armazenará e recuperará dados do Armazenamento de Blobs.
-
-## <a name="start-your-bot"></a>Inicie seu bot
-Execute o bot localmente.
-
-## <a name="start-the-emulator-and-connect-your-bot"></a>Iniciar o emulador e conectar seu bot
-Em seguida, inicie o emulador e, em seguida, conecte-se ao seu bot no emulador:
-
-1. Clique no link **Abrir Bot** na guia "Boas-vindas" do emulador. 
-2. Selecione o arquivo .bot localizado no diretório em que você criou o projeto.
-
-## <a name="interact-with-your-bot"></a>Interagir com o bot
-Envie uma mensagem ao bot e o bot listará as mensagens recebidas por ele.
-![Emulador em execução](../media/emulator-v4/emulator-running.png)
-
-### <a name="view-your-data"></a>Ver seus dados
-Depois de executar o bot e salvar suas informações, poderemos exibi-lo na guia **Gerenciador de Armazenamento** no portal do Azure.
-
-## <a name="blob-transcript-storage"></a>Armazenamento de transcrição de blobs
-O armazenamento de transcrições do Blob do Azure fornece uma opção de armazenamento especializado que permite salvar e recuperar facilmente conversas do usuário como transcrições gravadas. O armazenamento de transcrições do Blob do Azure é particularmente útil para capturar respostas do usuário automaticamente e examiná-las durante a depuração de desempenho do seu bot.
-
-### <a name="set-up"></a>Configurar
-O armazenamento de transcrições do Blob do Azure pode usar a mesma conta de Armazenamento de Blobs criada seguindo as etapas detalhadas nas seções "_Criar sua conta de Armazenamento de Blobs_" e "_Adicionar informações de configuração_" acima. Para esta discussão, adicionamos um novo contêiner de blob, "_mybottranscripts_." 
-
-### <a name="implementation"></a>Implementação 
-O código a seguir conecta o ponteiro de armazenamento de transcrição "_transcriptStore_" à sua nova conta de armazenamento de transcrições do Blob do Azure. O código-fonte para armazenar as conversas do usuário mostrado aqui tem base no exemplo [Histórico de Conversas](https://aka.ms/bot-history-sample-code). 
-
-```csharp
-// In Startup.cs
-using Microsoft.Bot.Builder.Azure;
-
-// Enable the conversation transcript middleware.
-blobStore = new AzureBlobTranscriptStore(blobStorageConfig.ConnectionString, storageContainer);
-var transcriptMiddleware = new TranscriptLoggerMiddleware(blobStore);
-options.Middleware.Add(transcriptMiddleware);
-
-// In ConversationHistoryBot.cs
-using Microsoft.Bot.Builder;
-using Microsoft.Bot.Builder.Azure;
-using Microsoft.Bot.Connector;
-using Microsoft.Bot.Schema;
-
-private readonly AzureBlobTranscriptStore _transcriptStore;
-
-/// <param name="transcriptStore">Injected via ASP.NET dependency injection.</param>
-public ConversationHistoryBot(AzureBlobTranscriptStore transcriptStore)
-{
-    _transcriptStore = transcriptStore ?? throw new ArgumentNullException(nameof(transcriptStore));
-}
-
-```
-
-### <a name="store-user-conversations-in-azure-blob-transcripts"></a>Armazenar conversas do usuário em transcrições do Blob do Azure
-Depois que o TranscriptLoggerMiddleware for adicionado, o Repositório de Transcrição começará a preservar automaticamente as conversas de seus usuários com seu bot. Essas conversas poderão ser usadas como uma ferramenta de depuração para ver como os usuários estão interagindo com o bot. O código a seguir recupera a transcrição e, em seguida, a envia para a conversa atual quando o activity.text recebe a mensagem de entrada _!history_. Observação: o método SendConversationHistoryAsync tem suporte nos canais Direct Line, Web Chat e Emulator.
-
-
-```csharp
-/// <summary>
-/// Every Conversation turn for our EchoBot will call this method. 
-/// </summary>
-/// <param name="turnContext">A <see cref="ITurnContext"/> containing all the data needed
-/// for processing this conversation turn. </param>        
-public async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancellationToken = default(CancellationToken))
-{
-    var activity = turnContext.Activity;
-    if (activity.Type == ActivityTypes.Message)
-    {
-        if (activity.Text == "!history")
-        {
-           // Download the activities from the Transcript (blob store) when a request to upload history arrives.
-           var connectorClient = turnContext.TurnState.Get<ConnectorClient>(typeof(IConnectorClient).FullName);
-           // Get all the message type activities from the Transcript.
-           string continuationToken = null;
-           var count = 0;
-           do
-           {
-               var pagedTranscript = await _transcriptStore.GetTranscriptActivitiesAsync(activity.ChannelId, activity.Conversation.Id, continuationToken);
-               var activities = pagedTranscript.Items
-                  .Where(a => a.Type == ActivityTypes.Message)
-                  .Select(ia => (Activity)ia)
-                  .ToList();
-               
-               var transcript = new Transcript(activities);
-
-               await connectorClient.Conversations.SendConversationHistoryAsync(activity.Conversation.Id, transcript, cancellationToken: cancellationToken);
-
-               continuationToken = pagedTranscript.ContinuationToken;
-           }
-           while (continuationToken != null);
-```
-
-### <a name="find-all-stored-transcripts-for-your-channel"></a>Encontre todas as transcrições armazenadas de seu canal
-Para ver quais dados estão armazenados, você pode usar o código a seguir para localizar programaticamente as "_ConversationIDs_" de todas as transcrições armazenadas. Ao usar o emulador de bot para testar seu código, a seleção de "_Reiniciar_"começa uma nova transcrição com uma nova "_ConversationID_."
-
-```csharp
-List<string> storedTranscripts = new List<string>();
-PagedResult<Transcript> pagedResult = null;
-var pageSize = 0;
-do
-{
-    pagedResult = await _transcriptStore.ListTranscriptsAsync("emulator", pagedResult?.ContinuationToken);
-    
-    // transcript item contains ChannelId, Created, Id.
-    // save the converasationIds (Id) found by "ListTranscriptsAsync" to a local list.
-    foreach (var item in pagedResult.Items)
-    {
-         // Make sure we store an unescaped conversationId string.
-         var strConversationId = item.Id;
-         storedTranscripts.Add(Uri.UnescapeDataString(strConversationId));
-    }
-} while (pagedResult.ContinuationToken != null);
-```
-
-### <a name="retrieve-user-conversations-from-azure-blob-transcript-storage"></a>Recuperar conversas do usuário do armazenamento de transcrições do Blob do Azure
-Após o armazenamento das transcrições das interações do bot no armazenamento de transcrições do Blob do Azure, você poderá recuperá-las programaticamente para teste ou depuração usando o método AzureBlobTranscriptStorage, "_GetTranscriptActivities_". O trecho de código a seguir recupera todas as transcrições de respostas de usuário que foram recebidas e armazenadas nas últimas 24 horas de cada transcrição armazenada.
-
-
-```csharp
-var numTranscripts = storedTranscripts.Count();
-for (int i = 0; i < numTranscripts; i++)
-{
-    PagedResult<IActivity> pagedActivities = null;
-    do
-    {
-        string thisConversationId = storedTranscripts[i];
-        // Find all inputs in the last 24 hours.
-        DateTime yesterday = DateTime.Now.AddDays(-1);
-        // Retrieve iActivities for this transcript.
-        pagedActivities = await _myTranscripts.GetTranscriptActivitiesAsync("emulator", thisConversationId, pagedActivities?.ContinuationToken, yesterday);
-        foreach (var item in pagedActivities.Items)
-        {
-            // View as message and find value for key "text" :
-            var thisMessage = item.AsMessageActivity();
-            var userInput = thisMessage.Text;
-         }
-    } while (pagedActivities.ContinuationToken != null);
-}
-```
-
-### <a name="remove-stored-transcripts-from-azure-blob-transcript-storage"></a>Remover transcrições armazenadas do armazenamento de transcrições do Blob do Azure
-Depois que você terminar de usar dados de entrada do usuário para testar ou depurar o bot, as transcrições armazenadas poderão ser removidas de seu armazenamento de transcrição de blobs do Azure por programação. O trecho de código a seguir remove todas as transcrições armazenadas de seu armazenamento de transcrição do bot.
-
-
-```csharp
-for (int i = 0; i < numTranscripts; i++)
-{
-   // Remove all stored transcripts except the last one found.
-   if (i > 0)
-   {
-       string thisConversationId = storedTranscripts[i];    
-       await _transcriptStore.DeleteTranscriptAsync("emulator", thisConversationId);
-    }
-}
-```
-
-
-O link a seguir fornece mais informações referentes ao [Armazenamento de transcrições do Blob do Azure](https://docs.microsoft.com/en-us/dotnet/api/microsoft.bot.builder.azure.azureblobtranscriptstore)  
 
 ## <a name="next-steps"></a>Próximas etapas
 Agora que você sabe como ler e gravar diretamente do armazenamento, veremos como é possível utilizar o gerenciador de estado para fazer isso.

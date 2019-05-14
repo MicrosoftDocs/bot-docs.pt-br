@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 04/18/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 36ccbb796c2cd014118d4ae1f426acd44aabed76
-ms.sourcegitcommit: aea57820b8a137047d59491b45320cf268043861
+ms.openlocfilehash: d896584b2048c8d2b330a1e6e63bc47122102532
+ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59904889"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65033398"
 ---
 # <a name="dialogs-library"></a>Biblioteca de diálogos
 
@@ -33,7 +33,7 @@ A biblioteca de diálogos tem algumas informações adicionais incluídas para t
 
 Os *conjuntos de diálogos* são, em termos mais simples, uma coleção de diálogos. Eles podem ser elementos como prompts, diálogos em cascata, ou [componentes de diálogos](#component-dialog). Todos eles são implementações de um diálogo, que são adicionados ao conjunto de diálogos com uma ID de cadeia de caracteres específica. Quando seu bot deseja iniciar um determinado diálogo ou prompt dentro do conjunto de diálogos, ele usa essa ID de cadeia de caracteres para especificar qual diálogo será usado.
 
-O *contexto do diálogo* contém informações referentes ao diálogo e é usado para interagir com um conjunto de diálogos de dentro do manipulador de turnos do seu bot. O contexto do diálogo inclui o contexto do turno atual, o diálogo pai e o [estado do diálogo](#dialog-state), que fornece um método para preservar informações no diálogo. O contexto do diálogo permite iniciar um diálogo com a ID da cadeia de caracteres ou continuar o diálogo atual (por exemplo, um diálogo em cascata que tem várias etapas).
+O *contexto do diálogo* contém informações referentes ao diálogo e é usado para interagir com um conjunto de diálogos de dentro do manipulador de turnos do seu bot. O contexto do diálogo inclui o contexto do turno atual, o diálogo pai e o [estado do diálogo](#dialog-state), que fornece um método para preservar informações no diálogo. O contexto do diálogo permite iniciá-lo com a ID da cadeia de caracteres ou continuar o diálogo atual (por exemplo, um diálogo em cascata que tenha várias etapas).
 
 Quando um diálogo termina, ele pode retornar um *resultado de diálogo* com algumas informações resultantes sobre o diálogo. Esse resultado é retornado para permitir que o método de chamada veja o que aconteceu no diálogo e salve as informações em algum local persistente, se desejado.
 
@@ -94,7 +94,7 @@ O diagrama a seguir mostra uma sequência de etapas de cascata e as operações 
 
 ![Conceito de diálogo](media/bot-builder-dialog-concept.png)
 
-Nas etapas em cascata, o contexto do diálogo em cascata é armazenado no *contexto da etapa em cascata*. Isso é semelhante ao contexto do diálogo, pois ele fornece acesso ao contexto e estado do turno atual. Use o objeto de contexto da etapa de cascata para interagir com um conjunto de caixas de diálogo de dentro da etapa de cascata.
+Nas etapas em cascata, o contexto do diálogo em cascata é armazenado em seu *contexto de etapas em cascata*. Isso é semelhante ao contexto do diálogo, pois ele fornece acesso ao contexto e estado do turno atual. Use o objeto de contexto da etapa de cascata para interagir com um conjunto de caixas de diálogo de dentro da etapa de cascata.
 
 Você pode manipular um valor retornado de um diálogo a partir de uma etapa em cascata em um diálogo ou a partir do manipulador de turnos do bot, embora você normalmente só precise verificar o status do resultado do turno do diálogo com a lógica de turnos do bot.
 Dentro de uma etapa de cascata, o diálogo fornece o valor retornado na propriedade _result_ do contexto da etapa de cascata.
@@ -121,7 +121,8 @@ Você pode usar o contexto de diálogo para começar, continuar, substituir ou e
 
 Diálogos podem ser considerados como uma pilha programática, que chamamos de *pilha de diálogos*, com o manipulador de turnos sendo o responsável pelo direcionamento e servindo como o fallback se a pilha estiver vazia. O item superior da pilha é considerado o *diálogo ativo*, e o contexto de diálogo direciona todas as entradas para o diálogo ativo.
 
-Quando um diálogo é iniciado, ele é enviado para a pilha e será o diálogo ativo. Ele permanece como o diálogo ativo até que seja concluído, removido pelo método [replace dialog](#repeating-a-dialog) ou quando outro diálogo é enviado para a pilha (pelo manipulador de turnos ou pelo próprio diálogo ativo) e torna-se o diálogo ativo. Quando esse novo diálogo termina, ele é retirado da pilha e o diálogo seguinte abaixo se torna o diálogo ativo. Isso permite a ramificação e o looping, conforme discutido abaixo.
+Quando um diálogo é iniciado, ele é enviado para a pilha e será o diálogo ativo. Ele permanece como o diálogo ativo até que seja concluído, removido pelo método [replace dialog](#repeating-a-dialog) ou quando outro diálogo é enviado para a pilha (pelo manipulador de turnos ou pelo próprio diálogo ativo) e torna-se o diálogo ativo. Quando esse novo diálogo termina, ele é retirado da pilha e o diálogo seguinte abaixo se torna o diálogo ativo. Isso permite [repetir um diálogo](#repeating-a-dialog) ou [ramificar uma conversa](#branch-a-conversation), o que será discutido abaixo.
+
 
 ### <a name="create-the-dialog-context"></a>Criar o contexto do diálogo
 

@@ -8,29 +8,34 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 13/12/2018
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 1d231672284e20e3f215cbba16d881ae0ecab7ec
-ms.sourcegitcommit: 721bb09f10524b0cb3961d7131966f57501734b8
+ms.openlocfilehash: 99c37812a5c13fe2409a68cbb8614cf8144d0711
+ms.sourcegitcommit: b94c4286f6f64955fd51ccf4a68109c43db0e47d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59540982"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65083701"
 ---
-# <a name="virtual-assistant-solution-overview"></a>Visão geral da solução Assistente Virtual
+# <a name="virtual-assistant-overview"></a>Visão geral do Assistente Virtual
 
 ## <a name="overview"></a>Visão geral
-Temos presenciado uma necessidade significativa de clientes e parceiros em fornecer um assistente de conversação adaptado à marca, personalizado para os clientes e disponibilizado em uma ampla variedade de dispositivos e telas de conversação. Dando continuidade à abordagem de software livre da Microsoft em relação ao SDK do Bot Framework, o Assistente Pessoal Personalizado de software livre oferece controle total sobre a experiência do usuário final desenvolvida com base em um conjunto de recursos básicos. Além disso, a experiência pode incorporar informações sobre o usuário e sobre todos os dispositivos e ecossistemas, a fim de oferecer uma experiência totalmente integrada e inteligente.
+
+Clientes e parceiros têm uma necessidade significativa de fornecer um assistente de conversação adaptado à sua marca, personalizado para seus usuários e disponibilizado em uma ampla variedade de telas e dispositivos. <br/><br/> Dando continuidade à abordagem de software livre da Microsoft em relação ao SDK do Bot Framework, a solução de Assistente Virtual de código aberto oferece um conjunto de recursos básicos e controle total sobre a experiência do usuário final. <br/><br/> Este modelo incorpora o Enterprise Template anterior, reúne todos os componentes de suporte e práticas recomendadas identificados por meio da construção de experiências de conversação e simplifica bastante a criação de um projeto novo do bot que inclui: tentativas de conversação básicas, integração de expedição, QnA Maker, Application Insights e uma implantação automatizada.
 
 Acreditamos plenamente que nossos clientes devem conduzir e fortalecer os insights de seus clientes e seu relacionamento com eles. Assim, um Assistente Virtual fornece controle total sobre a experiência do usuário para nossos clientes e parceiros com a disponibilização do código de software livre no GitHub. O nome, a voz e a personalidade podem ser alterados para atender às necessidades da organização. Nossa solução de Assistente Virtual simplifica a criação de seu próprio assistente, permitindo que você comece a usá-lo em minutos e evolua usando nossas ferramentas de desenvolvimento de ponta a ponta.
 
 O escopo da funcionalidade do Assistente Virtual é amplo, normalmente oferecendo aos usuários finais vários recursos. Para aumentar a produtividade do desenvolvedor e permitir um ecossistema vibrante de experiências de conversação reutilizáveis, estamos oferecendo aos desenvolvedores exemplos inicias de habilidades de conversação reutilizáveis. Essas habilidades podem ser adicionadas a um aplicativo de conversação para dar vida a uma experiência de conversa específica, por exemplo, para localizar um ponto de interesse, interagir com o calendário, tarefas, emails e muitos outros cenários. As habilidades são totalmente personalizáveis e consistem em modelos de linguagem para várias linguagens, diálogos e códigos.
 
-No momento, estamos trabalhando junto com clientes e parceiros inicias em um repositório de código-fonte aberto para dar vida às primeiras experiências.
-
 ![Diagrama do Assistente Virtual](./media/enterprise-template/customassistantdiagram.jpg)
+
+## <a name="get-started"></a>Introdução
+
+Examine a documentação [Assistente Virtual e Habilidades](https://github.com/Microsoft/AI) para ver informações mais detalhadas.
 
 ## <a name="whats-in-the-box"></a>Conteúdo 
 
-O Assistente Virtual baseia-se em recursos do [Modelo do Enterprise](./bot-builder-enterprise-template-overview.md) que fornecem recursos fundamentais para experiências de conversação, incluindo intenções de conversação básicas em vários idiomas, Expedição, P e R e insights de conversação. Os recursos a seguir, relacionados ao assistente, estão atualmente disponíveis. Outros recursos estão sendo planejados e trabalharemos junto aos nossos clientes e parceiros para a criação de um roteiro.
+O Modelo de Assistente Virtual reúne várias da melhores práticas que identificamos durante a construção de experiências de conversação e automatiza a integração de componentes que consideramos altamente benéficos para desenvolvedores do Bot Framework. Esta seção cobre algumas informações básicas em relação a decisões importantes para ajudar a explicar por que o modelo funciona dessa forma.
+
+Agora o modelo de Assistente Virtual incorpora os recursos do Enterprise Template anterior incluindo intenções de conversação básicas em vários idiomas, Expedição, QnA e insights de conversa. Os recursos a seguir, relacionados ao assistente, estão atualmente disponíveis. Outros recursos estão sendo planejados e trabalharemos junto aos nossos clientes e parceiros para a criação de um roteiro.
 
 Recurso | DESCRIÇÃO |
 ------------ | -------------
@@ -97,5 +102,4 @@ Todos os aspectos de cada habilidade (modelo de linguagem, diálogos, código de
 
 ## <a name="getting-started"></a>Introdução
 
-A solução Virtual Assistant está disponível neste [repositório do GitHub](https://github.com/Microsoft/AI/tree/master/solutions/Virtual-Assistant), que é atualizado regularmente pela equipe do Virtual Assistant. Encontre uma documentação mais detalhada no mesmo repositório. Problemas/comentários podem ser enviados diretamente por meio de mecanismos de comentários do GitHub. Se você quiser conversar sobre um cenário específico, preencha [este formulário](https://aka.ms/customassistantpreviewform) e entraremos em contato.
-
+A solução Virtual Assistant está disponível neste [repositório do GitHub](https://github.com/Microsoft/AI/), que é atualizado regularmente pela equipe do Virtual Assistant. Encontre uma documentação mais detalhada no mesmo repositório. Problemas/comentários podem ser enviados diretamente por meio de mecanismos de comentários do GitHub.

@@ -8,232 +8,114 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 4/18/2019
+ms.date: 04/18/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a5f3fe4fbec5a44a68bd6dcb7a2d6e2770052923
-ms.sourcegitcommit: aea57820b8a137047d59491b45320cf268043861
+ms.openlocfilehash: ad374ea8c404693836d7e90bb899669726366fcc
+ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905019"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65033489"
 ---
 # <a name="create-advanced-conversation-flow-using-branches-and-loops"></a>Criar fluxo de conversa avançado usando ramificações e loops
 
 [!INCLUDE[applies-to](../includes/applies-to.md)]
 
-Neste artigo, mostraremos como gerenciar conversas complexas que geram ramificações e loops. Também mostraremos como passar argumentos entre partes diferentes do diálogo.
+Você pode gerenciar fluxos de conversa simples e complexos usando a biblioteca de caixas de diálogo.
+Neste artigo, mostraremos como gerenciar conversas complexas que geram ramificações e loops.
+Também mostraremos como passar argumentos entre partes diferentes do diálogo.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- [Emulador do bot Framework](https://github.com/Microsoft/BotFramework-Emulator/blob/master/README.md#download)
-- O código neste artigo se baseia no exemplo de **diálogo complexo**. Você precisará de uma cópia do exemplo em [C#](https://aka.ms/cs-complex-dialog-sample) ou [JS](https://aka.ms/js-complex-dialog-sample).
-- Conhecimento dos [conceitos básicos sobre bot](bot-builder-basics.md), [biblioteca de diálogo](bot-builder-concept-dialog.md), [estado de diálogo](bot-builder-dialog-state.md) e arquivos [.bot](bot-file-basics.md).
+- Conhecimento sobre [noções básicas de bots][concept-basics], [gerenciamento de estado][concept-state], a [biblioteca de caixas de diálogo][concept-dialogs], e como [implementar um fluxo de conversa sequencial][simple-dialog].
+- Uma cópia da amostra de diálogo complexo seja em [**CSharp**][cs-sample] ou [**JavaScript**][js-sample].
 
-## <a name="about-the-sample"></a>Sobre o exemplo
+## <a name="about-this-sample"></a>Sobre este exemplo
 
 Este exemplo representa um bot que pode inscrever usuários para avaliação de até duas empresas de uma lista.
 
-- Ele pede o nome e a idade do usuário e depois cria _ramificações_ com base na idade do usuário.
-  - Se o usuário for muito jovem, ele não pedirá que o usuário avalie nenhuma empresa.
-  - Se o usuário tiver idade suficiente, ele começará a coletar as preferências de avaliação do usuário.
-    - Ele permite que o usuário selecione uma empresa para avaliação.
-    - Se o usuário escolher uma empresa, ele usa um _loop_ para permitir que ele escolha uma segunda empresa.
-- Por fim, ele agradece a participação do usuário.
+`DialogAndWelcomeBot` estende `DialogBot`, que define os manipuladores para diferentes atividades e o manipulador de turnos do bot. `DialogBot` executa as caixas de diálogo:
 
-Ele usa dois diálogos em cascata e alguns prompts para gerenciar uma conversa complexa.
+- O método de _execução_ é usado por `DialogBot` para iniciar a caixa de diálogo.
+- `MainDialog` é o pai das outras duas caixas de diálogo, que são chamadas em determinados momentos nas caixas de diálogo. Detalhes sobre essas caixas de diálogo são fornecidos no decorrer deste artigo.
 
-## <a name="configure-state-for-your-bot"></a>Configurar o estado do seu bot
+As caixas de diálogo são divididas em `MainDialog`, `TopLevelDialog`, e `ReviewSelectionDialog` caixas de diálogo de componente, que juntas têm a seguinte função:
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+- Pedir o nome e a idade do usuário e depois criar _ramificações_ com base na idade do usuário.
+  - Se o usuário for muito novo, elas não pedem que o usuário avalie as empresas.
+  - Se o usuário tiver idade suficiente, elas começam a coletar as preferências de avaliação do usuário.
+    - Elas permitem que o usuário selecione uma empresa para avaliação.
+    - Se o usuário escolhe uma empresa, elas executam um _loop_ para permitir que outra empresa seja selecionada.
+- Por fim, elas agradecem a participação do usuário.
 
-Defina informações do usuário que coletaremos.
-
-```csharp
-public class UserProfile
-{
-    public string Name { get; set; }
-    public int Age { get; set; }
-
-    //The list of companies the user wants to review.
-    public List<string> CompaniesToReview { get; set; } = new List<string>();
-}
-```
-
-Defina a classe para conter os objetos de gerenciamento de estado e os acessadores de propriedades de estado do bot.
-
-```csharp
-public class ComplexDialogBotAccessors
-{
-    public ComplexDialogBotAccessors(ConversationState conversationState, UserState userState)
-    {
-        ConversationState = conversationState ?? throw new ArgumentNullException(nameof(conversationState));
-        UserState = userState ?? throw new ArgumentNullException(nameof(userState));
-    }
-
-    public IStatePropertyAccessor<DialogState> DialogStateAccessor { get; set; }
-    public IStatePropertyAccessor<UserProfile> UserProfileAccessor { get; set; }
-
-    public ConversationState ConversationState { get; }
-    public UserState UserState { get; }
-}
-```
-
-Crie o objeto de gerenciamento de estado e registre a classe de acessadores no método `ConfigureServices` da classe `Statup`.
-
-```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    // Register the bot.
-
-    // Create conversation and user state management objects, using memory storage.
-    IStorage dataStore = new MemoryStorage();
-    var conversationState = new ConversationState(dataStore);
-    var userState = new UserState(dataStore);
-
-    // Create and register state accessors.
-    // Accessors created here are passed into the IBot-derived class on every turn.
-    services.AddSingleton<ComplexDialogBotAccessors>(sp =>
-    {
-        // Create the custom state accessor.
-        // State accessors enable other components to read and write individual properties of state.
-        var accessors = new ComplexDialogBotAccessors(conversationState, userState)
-        {
-            DialogStateAccessor = conversationState.CreateProperty<DialogState>("DialogState"),
-            UserProfileAccessor = userState.CreateProperty<UserProfile>("UserProfile"),
-        };
-
-        return accessors;
-    });
-}
-```
-
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
-
-No arquivo **index.js**, definimos os objetos de gerenciamento de estado.
-
-```javascript
-const { BotFrameworkAdapter, MemoryStorage, UserState, ConversationState } = require('botbuilder');
-
-// ...
-
-// Define state store for your bot.
-const memoryStorage = new MemoryStorage();
-
-// Create user and conversation state with in-memory storage provider.
-const userState = new UserState(memoryStorage);
-const conversationState = new ConversationState(memoryStorage);
-
-// Create the bot.
-const myBot = new MyBot(conversationState, userState);
-```
-
-O construtor do bot criará os acessadores de propriedade de estado para o bot.
-
----
-
-## <a name="initialize-your-bot"></a>Inicializar o bot
-
-Crie um _conjunto de diálogos_ para o bot, ao qual adicionaremos todos os diálogos para este exemplo.
+Elas usam caixas de diálogo em cascata e alguns prompts para gerenciar conversas complexas.
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-Crie o conjunto de diálogos no construtor do bot adicionando os prompts e os dois diálogos em cascata ao conjunto.
+![Fluxo de bot complexo](./media/complex-conversation-flow.png)
 
-Em seguida, definiremos cada etapa como um método separado. Nós os implementaremos na próxima seção.
+Para usar as caixas de diálogo, seu projeto precisa instalar o pacote do NuGet, **Microsoft.Bot.Builder.Dialogs**.
 
-```csharp
-public class ComplexDialogBot : IBot
-{
-    // Define constants for the bot...
+**Startup.cs**
 
-    // Define properties for the bot's accessors and dialog set.
-    private readonly ComplexDialogBotAccessors _accessors;
-    private readonly DialogSet _dialogs;
+Nós registramos serviços para o bot em `Startup`. Esses serviços estão disponíveis para outros blocos do código por meio da injeção de dependência.
 
-    // Initialize the bot and add dialogs and prompts to the dialog set.
-    public ComplexDialogBot(ComplexDialogBotAccessors accessors)
-    {
-        _accessors = accessors ?? throw new ArgumentNullException(nameof(accessors));
+- Serviços básicos para bot: um provedor de credenciais, um adaptador e a implantação do bot.
+- Serviços para gerenciamento de estado: armazenamento, estado do usuário e estado da conversa.
+- A caixa de diálogo que o bot usará.
 
-        // Create a dialog set for the bot. It requires a DialogState accessor, with which
-        // to retrieve the dialog state from the turn context.
-        _dialogs = new DialogSet(accessors.DialogStateAccessor);
-
-        // Add the prompts we need to the dialog set.
-        _dialogs
-            .Add(new TextPrompt(NamePrompt))
-            .Add(new NumberPrompt<int>(AgePrompt))
-            .Add(new ChoicePrompt(SelectionPrompt));
-
-        // Add the dialogs we need to the dialog set.
-        _dialogs.Add(new WaterfallDialog(TopLevelDialog)
-            .AddStep(NameStepAsync)
-            .AddStep(AgeStepAsync)
-            .AddStep(StartSelectionStepAsync)
-            .AddStep(AcknowledgementStepAsync));
-
-        _dialogs.Add(new WaterfallDialog(ReviewSelectionDialog)
-            .AddStep(SelectionStepAsync)
-            .AddStep(LoopStepAsync));
-    }
-
-    // Turn handler and other supporting methods...
-}
-```
+[!code-csharp[ConfigureServices](~/../botbuilder-samples/samples/csharp_dotnetcore/43.complex-dialog/Startup.cs?range=22-39)]
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-No arquivo **bot.js**, defina e crie o conjunto de diálogos no construtor do bot adicionando prompts e diálogos em cascata ao conjunto.
+![Fluxo de bot complexo](./media/complex-conversation-flow-js.png)
 
-Em seguida, definiremos cada etapa como um método separado. Nós os implementaremos na próxima seção.
+Para usar as caixas de diálogo, seu projeto precisa instalar o pacote do npm, **botbuilder-dialogs**.
 
-```javascript
-const { ActivityTypes } = require('botbuilder');
-const { DialogSet, WaterfallDialog, TextPrompt, NumberPrompt, ChoicePrompt, DialogTurnStatus } = require('botbuilder-dialogs');
+**index.js**
 
-// Define constants for the bot...
+Nós criamos serviços para bot, que os outros blocos do código precisam.
 
-class MyBot {
-    constructor(conversationState, userState) {
-        // Create the state property accessors and save the state management objects.
-        this.dialogStateAccessor = conversationState.createProperty(DIALOG_STATE_PROPERTY);
-        this.userProfileAccessor = userState.createProperty(USER_PROFILE_PROPERTY);
-        this.conversationState = conversationState;
-        this.userState = userState;
+- Serviços básicos para bot: um adaptador e a implantação do bot.
+- Serviços para gerenciamento de estado: armazenamento, estado do usuário e estado da conversa.
+- A caixa de diálogo que o bot usará.
 
-        // Create a dialog set for the bot. It requires a DialogState accessor, with which
-        // to retrieve the dialog state from the turn context.
-        this.dialogs = new DialogSet(this.dialogStateAccessor);
-
-        // Add the prompts we need to the dialog set.
-        this.dialogs
-            .add(new TextPrompt(NAME_PROMPT))
-            .add(new NumberPrompt(AGE_PROMPT))
-            .add(new ChoicePrompt(SELECTION_PROMPT));
-
-        // Add the dialogs we need to the dialog set.
-        this.dialogs.add(new WaterfallDialog(TOP_LEVEL_DIALOG)
-            .addStep(this.nameStep.bind(this))
-            .addStep(this.ageStep.bind(this))
-            .addStep(this.startSelectionStep.bind(this))
-            .addStep(this.acknowledgementStep.bind(this)));
-
-        this.dialogs.add(new WaterfallDialog(REVIEW_SELECTION_DIALOG)
-            .addStep(this.selectionStep.bind(this))
-            .addStep(this.loopStep.bind(this)));
-    }
-
-    // Turn handler and other supporting methods...
-}
-```
+[!code-javascript[ConfigureServices](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/index.js?range=25-38)]
+[!code-javascript[ConfigureServices](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/index.js?range=43-45)]
 
 ---
 
-## <a name="implement-the-steps-for-the-waterfall-dialogs"></a>Implemente as etapas para os diálogos em cascata
+> [!NOTE]
+> O armazenamento de memória é usado somente para testes e não deve ser usado na produção.
+> Certifique-se de usar um tipo persistente de armazenamento para um bot de produção.
 
-Agora, vamos implementar as etapas para nossos dois diálogos.
+## <a name="define-a-class-in-which-to-store-the-collected-information"></a>Defina uma classe para armazenar as informações coletadas
 
-### <a name="the-top-level-dialog"></a>O diálogo de nível superior
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
+**UserProfile.cs**
+
+[!code-csharp[UserProfile class](~/../botbuilder-samples/samples/csharp_dotnetcore/43.complex-dialog/UserProfile.cs?range=8-16)]
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+**userProfile.js**
+
+[!code-javascript[UserProfile class](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/userProfile.js?range=4-12)]
+
+---
+
+## <a name="create-the-dialogs-to-use"></a>Crie caixas de diálogo para usar
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
+**Dialogs\MainDialog.cs**
+
+Definimos uma caixa de diálogo de componente, `MainDialog`, que contém algumas etapas importantes e direciona as caixas de diálogo, além de gerar avisos. A etapa inicial chama `TopLevelDialog` que é explicado abaixo.
+
+[!code-csharp[step implementations](~/../botbuilder-samples/samples/csharp_dotnetcore/43.complex-dialog/Dialogs/MainDialog.cs?range=31-50&highlight=3)]
+
+**Dialogs\TopLevelDialog.cs**
 
 O diálogo inicial principal tem quatro etapas:
 
@@ -242,261 +124,56 @@ O diálogo inicial principal tem quatro etapas:
 1. Ramificação com base na idade do usuário.
 1. Por fim, agradecer a participação do usuário e retornar as informações coletadas.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+Na primeira etapa, estamos limpando o perfil do usuário para que a caixa de diálogo comece com um perfil em branco a cada vez. Uma vez que a última etapa traz informações ao final, a `AcknowledgementStepAsync` conclui com o salvamento no estado do usuário, e depois retorna essas informações para a caixa de diálogo principal, para que sejam usadas na etapa final.
 
-```csharp
-// The first step of the top-level dialog.
-private static async Task<DialogTurnResult> NameStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
-{
-    // Create an object in which to collect the user's information within the dialog.
-    stepContext.Values[UserInfo] = new UserProfile();
+[!code-csharp[step implementations](~/../botbuilder-samples/samples/csharp_dotnetcore/43.complex-dialog/Dialogs/TopLevelDialog.cs?range=39-96&highlight=3-4,47-49,56-57)]
 
-    // Ask the user to enter their name.
-    return await stepContext.PromptAsync(
-        NamePrompt,
-        new PromptOptions { Prompt = MessageFactory.Text("Please enter your name.") },
-        cancellationToken);
-}
+**Dialogs\ReviewSelectionDialog.cs**
 
-// The second step of the top-level dialog.
-private async Task<DialogTurnResult> AgeStepAsync(
-    WaterfallStepContext stepContext,
-    CancellationToken cancellationToken)
-{
-    // Set the user's name to what they entered in response to the name prompt.
-    ((UserProfile)stepContext.Values[UserInfo]).Name = (string)stepContext.Result;
-
-    // Ask the user to enter their age.
-    return await stepContext.PromptAsync(
-        AgePrompt,
-        new PromptOptions { Prompt = MessageFactory.Text("Please enter your age.") },
-        cancellationToken);
-}
-
-// The third step of the top-level dialog.
-private async Task<DialogTurnResult> StartSelectionStepAsync(
-    WaterfallStepContext stepContext,
-    CancellationToken cancellationToken)
-{
-    // Set the user's age to what they entered in response to the age prompt.
-    int age = (int)stepContext.Result;
-    ((UserProfile)stepContext.Values[UserInfo]).Age = age;
-
-    if (age < 25)
-    {
-        // If they are too young, skip the review-selection dialog, and pass an empty list to the next step.
-        await stepContext.Context.SendActivityAsync(
-            MessageFactory.Text("You must be 25 or older to participate."),
-            cancellationToken);
-        return await stepContext.NextAsync(new List<string>(), cancellationToken);
-    }
-    else
-    {
-        // Otherwise, start the review-selection dialog.
-        return await stepContext.BeginDialogAsync(ReviewSelectionDialog, null, cancellationToken);
-    }
-}
-
-// The final step of the top-level dialog.
-private async Task<DialogTurnResult> AcknowledgementStepAsync(
-    WaterfallStepContext stepContext,
-    CancellationToken cancellationToken)
-{
-    // Set the user's company selection to what they entered in the review-selection dialog.
-    List<string> list = stepContext.Result as List<string>;
-    ((UserProfile)stepContext.Values[UserInfo]).CompaniesToReview = list ?? new List<string>();
-
-    // Thank them for participating.
-    await stepContext.Context.SendActivityAsync(
-        MessageFactory.Text($"Thanks for participating, {((UserProfile)stepContext.Values[UserInfo]).Name}."),
-        cancellationToken);
-
-    // Exit the dialog, returning the collected user information.
-    return await stepContext.EndDialogAsync(stepContext.Values[UserInfo], cancellationToken);
-}
-```
-
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
-
-```javascript
-async nameStep(stepContext) {
-    // Create an object in which to collect the user's information within the dialog.
-    stepContext.values[USER_INFO] = {};
-
-    // Ask the user to enter their name.
-    return await stepContext.prompt(NAME_PROMPT, 'Please enter your name.');
-}
-
-async ageStep(stepContext) {
-    // Set the user's name to what they entered in response to the name prompt.
-    stepContext.values[USER_INFO].name = stepContext.result;
-
-    // Ask the user to enter their age.
-    return await stepContext.prompt(AGE_PROMPT, 'Please enter your age.');
-}
-
-async startSelectionStep(stepContext) {
-    // Set the user's age to what they entered in response to the age prompt.
-    stepContext.values[USER_INFO].age = stepContext.result;
-
-    if (stepContext.result < 25) {
-        // If they are too young, skip the review-selection dialog, and pass an empty list to the next step.
-        await stepContext.context.sendActivity('You must be 25 or older to participate.');
-        return await stepContext.next([]);
-    } else {
-        // Otherwise, start the review-selection dialog.
-        return await stepContext.beginDialog(REVIEW_SELECTION_DIALOG);
-    }
-}
-
-async acknowledgementStep(stepContext) {
-    // Set the user's company selection to what they entered in the review-selection dialog.
-    const list = stepContext.result || [];
-    stepContext.values[USER_INFO].companiesToReview = list;
-
-    // Thank them for participating.
-    await stepContext.context.sendActivity(`Thanks for participating, ${stepContext.values[USER_INFO].name}.`);
-
-    // Exit the dialog, returning the collected user information.
-    return await stepContext.endDialog(stepContext.values[USER_INFO]);
-}
-```
-
----
-
-### <a name="the-review-selection-dialog"></a>O diálogo de seleção da avaliação
-
-O diálogo de seleção da avaliação tem duas etapas:
+A caixa de diálogo de seleção de revisão é iniciada a partir da caixa de diálogo principal `StartSelectionStepAsync`, e tem duas etapas:
 
 1. Pedir que o usuário escolha uma empresa para avaliação, ou escolha `done` para concluir.
 1. Repetir esse diálogo ou sair, conforme apropriado.
 
-Nesse design, o diálogo principal sempre precederá o diálogo de seleção da avaliação na pilha, e o diálogo de seleção da avaliação pode ser considerado um filho do diálogo principal.
+Nesse design, a caixa de diálogo principal sempre precederá a caixa de diálogo de seleção da avaliação na pilha, e a caixa de diálogo de seleção da avaliação pode ser considerada filha da caixa de diálogo principal.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
-
-```csharp
-// The first step of the review-selection dialog.
-private async Task<DialogTurnResult> SelectionStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
-{
-    // Continue using the same selection list, if any, from the previous iteration of this dialog.
-    List<string> list = stepContext.Options as List<string> ?? new List<string>();
-    stepContext.Values[CompaniesSelected] = list;
-
-    // Create a prompt message.
-    string message;
-    if (list.Count is 0)
-    {
-        message = $"Please choose a company to review, or `{DoneOption}` to finish.";
-    }
-    else
-    {
-        message = $"You have selected **{list[0]}**. You can review an additional company, " +
-            $"or choose `{DoneOption}` to finish.";
-    }
-
-    // Create the list of options to choose from.
-    List<string> options = _companyOptions.ToList();
-    options.Add(DoneOption);
-    if (list.Count > 0)
-    {
-        options.Remove(list[0]);
-    }
-
-    // Prompt the user for a choice.
-    return await stepContext.PromptAsync(
-        SelectionPrompt,
-        new PromptOptions
-        {
-            Prompt = MessageFactory.Text(message),
-            RetryPrompt = MessageFactory.Text("Please choose an option from the list."),
-            Choices = ChoiceFactory.ToChoices(options),
-        },
-        cancellationToken);
-}
-
-// The final step of the review-selection dialog.
-private async Task<DialogTurnResult> LoopStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
-{
-    // Retrieve their selection list, the choice they made, and whether they chose to finish.
-    List<string> list = stepContext.Values[CompaniesSelected] as List<string>;
-    FoundChoice choice = (FoundChoice)stepContext.Result;
-    bool done = choice.Value == DoneOption;
-
-    if (!done)
-    {
-        // If they chose a company, add it to the list.
-        list.Add(choice.Value);
-    }
-
-    if (done || list.Count is 2)
-    {
-        // If they're done, exit and return their list.
-        return await stepContext.EndDialogAsync(list, cancellationToken);
-    }
-    else
-    {
-        // Otherwise, repeat this dialog, passing in the list from this iteration.
-        return await stepContext.ReplaceDialogAsync(ReviewSelectionDialog, list, cancellationToken);
-    }
-}
-```
+[!code-csharp[step implementations](~/../botbuilder-samples/samples/csharp_dotnetcore/43.complex-dialog/Dialogs/ReviewSelectionDialog.cs?range=42-106)]
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-```javascript
-async selectionStep(stepContext) {
-    // Continue using the same selection list, if any, from the previous iteration of this dialog.
-    const list = Array.isArray(stepContext.options) ? stepContext.options : [];
-    stepContext.values[COMPANIES_SELECTED] = list;
+**dialogs/mainDialog.js**
 
-    // Create a prompt message.
-    let message;
-    if (list.length === 0) {
-        message = 'Please choose a company to review, or `' + DONE_OPTION + '` to finish.';
-    } else {
-        message = `You have selected **${list[0]}**. You can review an addition company, ` +
-            'or choose `' + DONE_OPTION + '` to finish.';
-    }
+Definimos uma caixa de diálogo de componente, `MainDialog`, que contém algumas etapas importantes e direciona as caixas de diálogo, além de gerar avisos. A etapa inicial chama `TopLevelDialog` que é explicado abaixo.
 
-    // Create the list of options to choose from.
-    const options = list.length > 0
-        ? COMPANY_OPTIONS.filter(function (item) { return item !== list[0] })
-        : COMPANY_OPTIONS.slice();
-    options.push(DONE_OPTION);
+[!code-javascript[step implementations](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/dialogs/mainDialog.js?range=43-55&highlight=2)]
 
-    // Prompt the user for a choice.
-    return await stepContext.prompt(SELECTION_PROMPT, {
-        prompt: message,
-        retryPrompt: 'Please choose an option from the list.',
-        choices: options
-    });
-}
+**dialogs/topLevelDialog.js**
 
-async loopStep(stepContext) {
-    // Retrieve their selection list, the choice they made, and whether they chose to finish.
-    const list = stepContext.values[COMPANIES_SELECTED];
-    const choice = stepContext.result;
-    const done = choice.value === DONE_OPTION;
+O diálogo inicial principal tem quatro etapas:
 
-    if (!done) {
-        // If they chose a company, add it to the list.
-        list.push(choice.value);
-    }
+1. Perguntar o nome do usuário.
+1. Perguntar a idade do usuário.
+1. Ramificação com base na idade do usuário.
+1. Por fim, agradecer a participação do usuário e retornar as informações coletadas.
 
-    if (done || list.length > 1) {
-        // If they're done, exit and return their list.
-        return await stepContext.endDialog(list);
-    } else {
-        // Otherwise, repeat this dialog, passing in the list from this iteration.
-        return await stepContext.replaceDialog(REVIEW_SELECTION_DIALOG, list);
-    }
-}
-```
+Na primeira etapa, estamos limpando o perfil do usuário para que a caixa de diálogo comece com um perfil em branco a cada vez. Uma vez que a última etapa traz informações ao final, a `acknowledgementStep` conclui com o salvamento no estado do usuário, e depois retorna essas informações para a caixa de diálogo principal, para que sejam usadas na etapa final.
+
+[!code-javascript[step implementations](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/dialogs/topLevelDialog.js?range=32-76&highlight=2-3,37-39,43-44)]
+
+**dialogs/reviewSelectionDialog.js**
+
+A caixa de diálogo de seleção de revisão é iniciada a partir da caixa de diálogo principal `startSelectionStep`, e tem duas etapas:
+
+1. Pedir que o usuário escolha uma empresa para avaliação, ou escolha `done` para concluir.
+1. Repetir esse diálogo ou sair, conforme apropriado.
+
+Nesse design, a caixa de diálogo principal sempre precederá a caixa de diálogo de seleção da avaliação na pilha, e a caixa de diálogo de seleção da avaliação pode ser considerada filha da caixa de diálogo principal.
+
+[!code-javascript[step implementations](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/dialogs/reviewSelectionDialog.js?range=33-78)]
 
 ---
 
-## <a name="update-the-bots-turn-handler"></a>Atualizar o manipulador de turnos do bot
+## <a name="implement-the-code-to-manage-the-dialog"></a>Implante o código para gerenciar a caixa de diálogo
 
 O manipulador de turnos do bot repete o fluxo de conversa definido por esses diálogos.
 Quando recebemos uma mensagem do usuário:
@@ -509,124 +186,117 @@ Quando recebemos uma mensagem do usuário:
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-```csharp
-public async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancellationToken = default(CancellationToken))
-{
-    if (turnContext == null)
-    {
-        throw new ArgumentNullException(nameof(turnContext));
-    }
+**DialogExtensions.cs**
 
-    if (turnContext.Activity.Type == ActivityTypes.Message)
-    {
-        // Run the DialogSet - let the framework identify the current state of the dialog from
-        // the dialog stack and figure out what (if any) is the active dialog.
-        DialogContext dialogContext = await _dialogs.CreateContextAsync(turnContext, cancellationToken);
-        DialogTurnResult results = await dialogContext.ContinueDialogAsync(cancellationToken);
-        switch (results.Status)
-        {
-            case DialogTurnStatus.Cancelled:
-            case DialogTurnStatus.Empty:
-                // If there is no active dialog, we should clear the user info and start a new dialog.
-                await _accessors.UserProfileAccessor.SetAsync(turnContext, new UserProfile(), cancellationToken);
-                await _accessors.UserState.SaveChangesAsync(turnContext, false, cancellationToken);
-                await dialogContext.BeginDialogAsync(TopLevelDialog, null, cancellationToken);
-                break;
+Neste exemplo, definimos um método auxiliar `Run` que usaremos para criar e acessar o contexto de caixa de diálogo.
+Uma vez que a caixa de diálogo de componente define um conjunto interno de caixa de diálogo, precisamos criar um conjunto externo de caixa de diálogo que seja visível para o código do manipulador de mensagem, podendo usá-lo para criar um contexto de caixa de diálogo.
 
-            case DialogTurnStatus.Complete:
-                // If we just finished the dialog, capture and display the results.
-                UserProfile userInfo = results.Result as UserProfile;
-                string status = "You are signed up to review "
-                    + (userInfo.CompaniesToReview.Count is 0
-                        ? "no companies"
-                        : string.Join(" and ", userInfo.CompaniesToReview))
-                    + ".";
-                await turnContext.SendActivityAsync(status);
-                await _accessors.UserProfileAccessor.SetAsync(turnContext, userInfo, cancellationToken);
-                await _accessors.UserState.SaveChangesAsync(turnContext, false, cancellationToken);
-                break;
+- `dialog` é a caixa de diálogo de componente principal para o bot.
+- `turnContext` é o contexto de turno atual para o bot.
 
-            case DialogTurnStatus.Waiting:
-                // If there is an active dialog, we don't need to do anything here.
-                break;
-        }
+[!code-csharp[Run method](~/../botbuilder-samples/samples/csharp_dotnetcore/43.complex-dialog/DialogExtensions.cs?range=13-24)]
 
-        await _accessors.ConversationState.SaveChangesAsync(turnContext, false, cancellationToken);
-    }
+**Bots\DialogBot.cs**
 
-    // Processes ConversationUpdate Activities to welcome the user.
-    else if (turnContext.Activity.Type == ActivityTypes.ConversationUpdate)
-    {
-        // Welcome new users...
-    }
-    else
-    {
-        // Give a default reply for all other activity types...
-    }
-}
-```
+O manipulador de mensagens chama o método auxiliar `Run` para gerenciar a caixa de diálogo, e nós sobrescrevemos o manipulador de turnos para salvar quaisquer alterações na conversa e no estado do usuário que possam ter ocorrido durante o turno. A base `OnTurnAsync` chamará o método `OnMessageActivityAsync`, garantindo que as chamadas de salvamento aconteçam no final do turno.
+
+[!code-csharp[Overrides](~/../botbuilder-samples/samples/csharp_dotnetcore/43.complex-dialog/Bots/DialogBot.cs?range=33-48&highlight=5-7)]
+
+**Bots\DialogAndWelcome.cs**
+
+`DialogAndWelcomeBot` estende `DialogBot` para fornecer uma mensagem de boas-vindas quando o usuário ingressa na conversa, sendo chamado por `Startup.cs`.
+
+[!code-csharp[On members added](~/../botbuilder-samples/samples/csharp_dotnetcore/43.complex-dialog/Bots/DialogAndWelcome.cs?range=21-38)]
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-```javascript
-async onTurn(turnContext) {
-    if (turnContext.activity.type === ActivityTypes.Message) {
-        // Run the DialogSet - let the framework identify the current state of the dialog from
-        // the dialog stack and figure out what (if any) is the active dialog.
-        const dialogContext = await this.dialogs.createContext(turnContext);
-        const results = await dialogContext.continueDialog();
-        switch (results.status) {
-            case DialogTurnStatus.cancelled:
-            case DialogTurnStatus.empty:
-                // If there is no active dialog, we should clear the user info and start a new dialog.
-                await this.userProfileAccessor.set(turnContext, {});
-                await this.userState.saveChanges(turnContext);
-                await dialogContext.beginDialog(TOP_LEVEL_DIALOG);
-                break;
-            case DialogTurnStatus.complete:
-                // If we just finished the dialog, capture and display the results.
-                const userInfo = results.result;
-                const status = 'You are signed up to review '
-                    + (userInfo.companiesToReview.length === 0 ? 'no companies' : userInfo.companiesToReview.join(' and '))
-                    + '.';
-                await turnContext.sendActivity(status);
-                await this.userProfileAccessor.set(turnContext, userInfo);
-                await this.userState.saveChanges(turnContext);
-                break;
-            case DialogTurnStatus.waiting:
-                // If there is an active dialog, we don't need to do anything here.
-                break;
-        }
-        await this.conversationState.saveChanges(turnContext);
-    } else if (turnContext.activity.type === ActivityTypes.ConversationUpdate) {
-        // Welcome new users...
-    } else {
-        // Give a default reply for all other activity types...
-    }
-}
-```
+**dialogs/mainDialog.js**
+
+Neste exemplo, definimos um método `run` que usaremos para criar e acessar o contexto de caixa de diálogo.
+Uma vez que a caixa de diálogo de componente define um conjunto interno de caixa de diálogo, precisamos criar um conjunto externo de caixa de diálogo que seja visível para o código do manipulador de mensagem, podendo usá-lo para criar um contexto de caixa de diálogo.
+
+- `turnContext` é o contexto de turno atual para o bot.
+- `accessor` é um acessador que criamos para gerenciar o estado da caixa de diálogo.
+
+[!code-javascript[run method](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/dialogs/mainDialog.js?range=32-41)]
+
+**bots/dialogBot.js**
+
+O manipulador de mensagens chama o método auxiliar `run` para gerenciar a caixa de diálogo, e nós implantamos o manipulador de turnos para salvar quaisquer alterações na conversa e no estado do usuário que possam ter ocorrido durante o turno. A chamada para `next` permitirá que a implantação da base chame o método`onDialog`, garantindo que as chamadas de salvamento aconteçam no final do turno.
+
+[!code-javascript[Overrides](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/bots/dialogBot.js?range=30-47)]
+
+**bots/dialogWandWelcomeBot.js**
+
+`DialogAndWelcomeBot` estende `DialogBot` para fornecer uma mensagem de boas-vindas quando o usuário ingressa na conversa, sendo chamado por `Startup.cs`.
+
+[!code-javascript[On members added](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/bots/dialogAndWelcomeBot.js?range=10-21)]
 
 ---
 
-## <a name="test-your-dialog"></a>Testar seu diálogo
+## <a name="branch-and-loop"></a>Branch e loop
 
-1. Execute o exemplo localmente em seu computador. Se você precisar de instruções, consulte o arquivo LEIAME para o exemplo em [C#](https://aka.ms/cs-complex-dialog-sample) ou em [JS](https://aka.ms/js-complex-dialog-sample).
-1. Use o emulador para testar o bot, conforme mostrado abaixo.
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
+**Dialogs\TopLevelDialog.cs**
+
+Aqui está uma amostra de lógica de branch tirada de uma etapa da caixa de diálogo _principal_:
+
+[!code-csharp[branching logic](~/../botbuilder-samples/samples/csharp_dotnetcore/43.complex-dialog/Dialogs/TopLevelDialog.cs?range=68-80)]
+
+**Dialogs\ReviewSelectionDialog.cs**
+
+Aqui está uma amostra de lógica de looping tirada de uma etapa da caixa de diálogo _seleção de revisão_:
+
+[!code-csharp[looping logic](~/../botbuilder-samples/samples/csharp_dotnetcore/43.complex-dialog/Dialogs/ReviewSelectionDialog.cs?range=96-105)]
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+**dialogs/topLevelDialog.js**
+
+Aqui está uma amostra de lógica de branch tirada de uma etapa da caixa de diálogo _principal_:
+
+[!code-javascript[branching logic](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/dialogs/topLevelDialog.js?range=56-64)]
+
+**dialogs/reviewSelectionDialog.js**
+
+Aqui está uma amostra de lógica de looping tirada de uma etapa da caixa de diálogo _seleção de revisão_:
+
+[!code-javascript[looping logic](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/dialogs/reviewSelectionDialog.js?range=71-77)]
+
+---
+
+## <a name="to-test-the-bot"></a>Para testar o bot
+
+1. Se ainda não tiver feito isso, instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator-readme).
+1. Execute o exemplo localmente em seu computador.
+1. Inicie o emulador, conecte ao seu bot e envie mensagens conforme mostrado a seguir.
 
 ![teste de exemplo de diálogo complexo](~/media/emulator-v4/test-complex-dialog.png)
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-Para obter uma introdução sobre como implementar um diálogo, confira [implementar fluxo da conversa sequencial](bot-builder-dialog-manage-conversation-flow.md), que usa um único diálogo em cascata e alguns prompts para criar uma interação simples que faz ao usuário uma série de perguntas.
+Para obter uma introdução sobre como implantar uma caixa de diálogo, confira [implantar fluxo da conversa sequencial][simple-dialog], que usa um único diálogo em cascata e alguns prompts para criar uma interação simples que faz ao usuário uma série de perguntas.
 
-A biblioteca Diálogos inclui uma validação básica de prompts. Você também pode adicionar uma validação personalizada. Para obter mais informações, confira [coletar entrada do usuário usando um prompt de diálogo](bot-builder-prompts.md).
+A biblioteca Diálogos inclui uma validação básica de prompts. Você também pode adicionar uma validação personalizada. Para obter mais informações, confira [coletar entrada do usuário usando um prompt de caixa de diálogo][dialog-prompts].
 
 Para simplificar o código do seu diálogo e reutilizá-lo em vários bots, defina as partes de um conjunto de diálogos como uma classe separada.
-Para saber mais, confira [reutilizar diálogos](bot-builder-compositcontrol.md).
+Para saber mais, confira [reutilizar caixas de diálogos][component-dialogs].
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Você pode aprimorar os bots para que reajam a uma entrada adicional, como "ajuda" ou "cancelar", que pode interromper o fluxo normal da conversa.
-
 > [!div class="nextstepaction"]
-> [Manipular interrupções do usuário](bot-builder-howto-handle-user-interrupt.md)
+> [Reutilizar as caixas de diálogo](bot-builder-compositcontrol.md)
+
+<!-- Footnote-style links -->
+
+[concept-basics]: bot-builder-basics.md
+[concept-state]: bot-builder-concept-state.md
+[concept-dialogs]: bot-builder-concept-dialog.md
+
+[simple-dialog]: bot-builder-dialog-manage-conversation-flow.md
+[dialog-prompts]: bot-builder-prompts.md
+[component-dialogs]: bot-builder-compositcontrol.md
+
+[cs-sample]: https://aka.ms/cs-complex-dialog-sample
+[js-sample]: https://aka.ms/js-complex-dialog-sample

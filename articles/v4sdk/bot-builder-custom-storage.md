@@ -8,14 +8,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 4/31/2019
+ms.date: 04/30/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 41a33c20148e128efa1d10b72410eb06a6a94982
-ms.sourcegitcommit: aea57820b8a137047d59491b45320cf268043861
+ms.openlocfilehash: f6aaa824b978be28c050333c67d501a8cbbad005
+ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59904999"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65033664"
 ---
 # <a name="implement-custom-storage-for-your-bot"></a>Implementar um armazenamento personalizado para seu bot
 
@@ -24,6 +24,10 @@ ms.locfileid: "59904999"
 Interações do bot se enquadram em três áreas: primeiro, o intercâmbio de atividades com o Serviço de Bot do Azure. Segundo, o carregamento e salvamento do diálogo de estado com um Store e, por fim, qualquer outro serviço de back-end que o bot precise para trabalhar e concluir seu trabalho.
 
 ![diagrama de expansão](../media/scale-out/scale-out-interaction.png)
+
+
+## <a name="prerequisites"></a>Pré-requisitos
+- O código de exemplo completo usado neste artigo pode ser encontrado aqui: [Exemplo de C#](http://aka.ms/scale-out).
 
 Neste artigo, exploraremos a semântica em torno das interações do bot com o Serviço de Bot do Azure e o Store.
 
@@ -89,74 +93,11 @@ Como gostaríamos que essa parte do armazenamento de nível mais baixo fosse con
 
 Essa é a saída resultante:
 
-```csharp
-public interface IStore
-{
-  Task<(JObject content, string eTag)> LoadAsync(string key);
-  Task<bool> SaveAsync(string key, JObject content, string eTag);
-}
-```
+**IStore.cs** [!code-csharp[IStore](~/../botbuilder-samples/samples/csharp_dotnetcore/42.scaleout/IStore.cs?range=14-19)]
+
 Implementar isso no Armazenamento de Blobs do Azure é muito simples.
-```csharp
-public class BlobStore : IStore
-{
-  private CloudBlobContainer _container;
 
-  public BlobStore(string myAccountName, string myAccountKey, string containerName)
-  {
-    var storageCredentials = new StorageCredentials(myAccountName, myAccountKey);
-    var cloudStorageAccount = new CloudStorageAccount(storageCredentials, useHttps: true);
-    var client = cloudStorageAccount.CreateCloudBlobClient();
-    _container = client.GetContainerReference(containerName);
-  }
-
-  public async Task<(JObject content, string eTag)> LoadAsync(string key)
-  {
-    var blob = _container.GetBlockBlobReference(key);
-    try
-    {
-      var content = await blob.DownloadTextAsync();
-      var obj = JObject.Parse(content);
-      var eTag = blob.Properties.ETag;
-      return (obj, eTag);
-    }
-    catch (StorageException e)
-      when (e.RequestInformation.HttpStatusCode ==
-        (int)HttpStatusCode.NotFound)
-    {
-      return (new JObject(), null);
-    }
-  }
-
-  public async Task<bool> SaveAsync(string key, JObject obj, string eTag)
-  {
-    var blob = _container.GetBlockBlobReference(key);
-    blob.Properties.ContentType = "application/json";
-    var content = obj.ToString();
-    if (eTag != null)
-    {
-      try
-      {
-        await blob.UploadTextAsync(content,
-          new AccessCondition { IfMatchETag = eTag },
-          new BlobRequestOptions(),
-          new OperationContext());
-      }
-      catch (StorageException e)
-        when (e.RequestInformation.HttpStatusCode ==
-          (int)HttpStatusCode.PreconditionFailed)
-      {
-        return false;
-      }
-    }
-    else
-    {
-      await blob.UploadTextAsync(content);
-    }
-    return true;
-  }
-}
-```
+**BlobStore.cs** [!code-csharp[BlobStore](~/../botbuilder-samples/samples/csharp_dotnetcore/42.scaleout/BlobStore.cs?range=18-101)]
 
 Como você pode ver, o Armazenamento de Blobs do Azure está fazendo o trabalho real aqui. Observe a captura de exceções específicas e como isso é convertido para atender às expectativas do código de chamada. Ou seja, na carga queremos que uma exceção “Não Encontrado” retorne nula e a exceção “Falha na Precondição” em Save queremos que retorne bool.
 
@@ -170,39 +111,9 @@ Ao receber uma atividade, podemos criar uma chave para o estado correspondente d
 Depois de termos criado a chave apropriada, vamos tentar carregar o estado correspondente. Em seguida, execute os diálogos do bot e tente salvar. Se esse salvamento for bem-sucedido, enviaremos as atividades de saída que resultaram da execução do diálogo e nada mais. Caso contrário, voltaremos e repetiremos todo o processo anterior ao carregamento. Carregar novamente criará uma ETag e, assim, esperamos que o salvamento seja realizado com êxito da próxima vez.
 
 A implementação OnTurn resultante tem esta aparência:
-```csharp
-public async Task OnTurnAsync(ITurnContext turnContext,
-  CancellationToken cancellationToken = default(CancellationToken))
-{
-  // Create the storage key for this conversation.
-  string key = $"{turnContext.Activity.ChannelId}/conversations/{turnContext.Activity.Conversation?.Id}";
 
-  // The execution sits in a loop because there might be a retry if the save operation fails.
-  while (true)
-  {
-    // Load any existing state associated with this key
-    var (oldState, etag) = await _store.LoadAsync(key);
+**ScaleoutBot.cs** [!code-csharp[OnMessageActivity](~/../botbuilder-samples/samples/csharp_dotnetcore/42.scaleout/Bots/ScaleOutBot.cs?range=43-72)]
 
-    // Run the dialog system with the old state and inbound activity,
-    // resulting in a new state and outbound activities.
-    var (activities, newState) = await DialogHost.RunAsync(_rootDialog, turnContext.Activity, oldState);
-
-    // Save the updated state associated with this key.
-    bool success = await _store.SaveAsync(key, newState, etag);
-
-    // Following a successful save, send any outbound Activities, otherwise retry everything.
-    if (success)
-    {
-      if (activities.Any())
-      {
-        // This is an actual send on the TurnContext we were given and so will actual do a send this time.
-        await turnContext.SendActivitiesAsync(activities);
-      }
-      break;
-    }
-  }
-}
-```
 Observe que modelamos a execução do diálogo como uma chamada de função. Talvez uma implementação mais sofisticada seria ter definido uma interface e tornado essa dependência injetável, mas para os nossos fins, ter o diálogo todo por trás de uma função estática enfatiza a natureza funcional da nossa abordagem. Como uma instrução geral, organizar nossa implementação, de modo que as partes essenciais se tornem funcionais, nos coloca em um lugar confortável quando se trata de fazê-la funcionar com êxito em redes.
 
 
@@ -211,141 +122,24 @@ Observe que modelamos a execução do diálogo como uma chamada de função. Tal
 O próximo requisito é armazenarmos em buffer as atividades de saída até a realização de um salvamento bem-sucedido. Isso exigirá uma implementação personalizada do BotAdapter. Neste código, implementaremos a função SendActivity abstrata para adicionar a atividade a uma lista em vez de enviá-la. O diálogo que estamos hospedando não será conhecido.
 Nesse cenário específico, as operações UpdateActivity e DeleteActivity não têm suporte e, por isso, apenas lançarão “Não Implementado” desses métodos. Também não nos importamos com o valor retornado do SendActivity. Isso é usado por alguns canais em cenários em que é necessário enviar atualizações para as atividades, por exemplo, para desabilitar botões em cartões exibidos no canal. Essas trocas de mensagens podem ficar complicadas, especialmente quando o estado é obrigatório, o que está fora do escopo deste artigo. A implementação completa do BotAdapter personalizado tem esta aparência:
 
-```csharp
-public class DialogHostAdapter : BotAdapter
-{
-  private List<Activity> _response = new List<Activity>();
+**DialogHostAdapter.cs** [!code-csharp[DialogHostAdapter](~/../botbuilder-samples/samples/csharp_dotnetcore/42.scaleout/DialogHostAdapter.cs?range=19-46)]
 
-  public IEnumerable<Activity> Activities => _response;
+## <a name="integration"></a>Integração
 
-  public override Task<ResourceResponse[]> SendActivitiesAsync(ITurnContext turnContext,
-    Activity[] activities, CancellationToken cancellationToken)
-  {
-    foreach (var activity in activities)
-    {
-      _response.Add(activity);
-    }
-    return Task.FromResult(new ResourceResponse[0]);
-  }
-
-  public override Task DeleteActivityAsync(ITurnContext turnContext,
-    ConversationReference reference, CancellationToken cancellationToken)
-  {
-    throw new NotImplementedException();
-  }
-
-  public override Task<ResourceResponse> UpdateActivityAsync(ITurnContext turnContext,
-    Activity activity, CancellationToken cancellationToken)
-  {
-    throw new NotImplementedException();
-  }
-}
-```
-Para integrar tudo o que ainda precisa ser feito, junte essas novas partes diferentes e insira-as nas partes da estrutura existente. O loop de repetição principal apenas fica na função IBot OnTurn. Ele contém nossa implementação IStore personalizada na qual, para fins de teste, deixamos a dependência injetável. Colocamos todo o código de hospedagem do diálogo em uma classe chamada DialogHost, que expõe uma única função estática pública. Essa função é definida para usar a atividade de entrada e o antigo estado e, em seguida, retornar as atividades resultantes e o novo estado.
+Só falta integrar essas novas partes e conectá-las às partes existentes do framework. O loop de repetição principal apenas fica na função IBot OnTurn. Ele contém nossa implementação IStore personalizada na qual, para fins de teste, deixamos a dependência injetável. Colocamos todo o código de hospedagem do diálogo em uma classe chamada DialogHost, que expõe uma única função estática pública. Essa função é definida para usar a atividade de entrada e o antigo estado e, em seguida, retornar as atividades resultantes e o novo estado.
 
 A primeira coisa a fazer nessa função é criar o BotAdapter personalizado que apresentamos anteriormente. Em seguida, vamos executar apenas o diálogo exatamente como fazemos normalmente, criando um DialogSet e DialogContext e fazendo o habitual fluxo Continuar ou Iniciar. A única informação que não abordamos é a necessidade de um acessador personalizado. Isso acaba sendo uma correção muito simples, que facilita a passagem do estado do diálogo para o sistema do diálogo. O acessador usa semântica de referência ao trabalhar com o sistema de diálogo e, portanto, só é necessário passar o identificador por ele. Para tornar as coisas ainda mais claras, restringimos o modelo de classe que estamos usando para a semântica de referência.
 
 Estamos sendo muito cuidadosos com a disposição em camadas, estamos colocando o JsonSerialization embutido em nosso código de hospedagem porque não o queríamos dentro da camada de armazenamento conectável quando diferentes implementações podem serializar de forma diferente.
 
 Aqui está o código do driver:
-```csharp
-public class DialogHost
-{
-  private static readonly JsonSerializer StateJsonSerializer = new JsonSerializer()
-    { TypeNameHandling = TypeNameHandling.All };
 
-  public static async Task<Tuple<Activity[], JObject>> RunAsync(Dialog rootDialog,
-    Activity activity, JObject oldState)
-  {
-    // A custom adapter and corresponding TurnContext that buffers any messages sent.
-    var adapter = new DialogHostAdapter();
-    var turnContext = new TurnContext(adapter, activity);
+**DialogHost.cs** [!code-csharp[DialogHost](~/../botbuilder-samples/samples/csharp_dotnetcore/42.scaleout/DialogHost.cs?range=22-72)]
 
-    // Run the dialog using this TurnContext with the existing state.
-    JObject newState = await RunTurnAsync(rootDialog, turnContext, oldState);
+E, por fim, no acessador personalizado, só precisamos implementar Get porque o estado é por referência:
 
-    // The result is a set of activities to send and a replacement state.
-    return Tuple.Create(adapter.Activities.ToArray(), newState);
-  }
+**RefAccessor.cs** [!code-csharp[RefAccessor](~/../botbuilder-samples/samples/csharp_dotnetcore/42.scaleout/RefAccessor.cs?range=22-60)]
 
-  private static async Task<JObject> RunTurnAsync(Dialog rootDialog,
-    TurnContext turnContext, JObject state)
-  {
-    if (turnContext.Activity.Type == ActivityTypes.Message)
-    {
-      // If we have some state, deserialize it. (This mimics the shape produced by BotState.cs.)
-      var dialogState = state?[nameof(DialogState)]?.ToObject<DialogState>(StateJsonSerializer);
-
-      // A custom accessor is used to pass a handle on the state to the dialog system.
-      var accessor = new RefAccessor<DialogState>(dialogState);
-
-      // The following is regular dialog driver code.
-      var dialogs = new DialogSet(accessor);
-      dialogs.Add(rootDialog);
-
-      var dialogContext = await dialogs.CreateContextAsync(turnContext);
-      var results = await dialogContext.ContinueDialogAsync();
-
-      if (results.Status == DialogTurnStatus.Empty)
-      {
-        await dialogContext.BeginDialogAsync("root");
-      }
-
-      // Serialize the result, and put its value back into a new JObject.
-      return new JObject
-      {
-        { nameof(DialogState), JObject.FromObject(accessor.Value, StateJsonSerializer) }
-      };
-    }
-
-    return state;
-  }
-}
-```
-E, por fim, no acessador personalizado, só precisamos implementar o conjunto porque o estado é por referência:
-```csharp
-public class RefAccessor<T> : IStatePropertyAccessor<T> where T : class
-{
-  public RefAccessor(T value)
-  {
-    Value = value;
-  }
-
-  public T Value { get; private set; }
-
-  public string Name => nameof(T);
-
-  public Task<T> GetAsync(ITurnContext turnContext, Func<T> defaultValueFactory = null,
-    CancellationToken cancellationToken = default(CancellationToken))
-  {
-    if (Value == null)
-    {
-      if (defaultValueFactory == null)
-      {
-        throw new KeyNotFoundException();
-      }
-      else
-      {
-        Value = defaultValueFactory();
-      }
-    }
-    return Task.FromResult(Value);
-  }
-
-  public Task DeleteAsync(ITurnContext turnContext,
-    CancellationToken cancellationToken = default(CancellationToken))
-  {
-    throw new NotImplementedException();
-  }
-
-  public Task SetAsync(ITurnContext turnContext, T value,
-    CancellationToken cancellationToken = default(CancellationToken))
-  {
-    throw new NotImplementedException();
-  }
-}
-```
-
-## <a name="additional-resources"></a>Recursos adicionais
-O código de exemplo [C#](http://aka.ms/scale-out) usado neste artigo está disponível no GitHub.
+## <a name="additional-information"></a>Informações adicionais
+O código de [exemplo C#](http://aka.ms/scale-out) usado neste artigo está disponível no GitHub.
 
