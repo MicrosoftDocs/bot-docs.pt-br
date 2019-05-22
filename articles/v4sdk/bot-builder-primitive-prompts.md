@@ -8,14 +8,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 03/25/2019
+ms.date: 05/08/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 74c3af688a8f35b4583aa7b195348a6b205292a2
-ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
+ms.openlocfilehash: 3470b1c8f3fbcfb7fecbb060a54b1a356ad41b61
+ms.sourcegitcommit: 4086189a9c856fbdc832eb1a1d205e5f1b4e3acd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65033169"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65733316"
 ---
 # <a name="create-your-own-prompts-to-gather-user-input"></a>Crie seus próprio prompts para coletar entradas do usuário
 
@@ -70,9 +70,9 @@ Os objetos de estado da conversa e do usuário são criados na inicialização e
 
 No **index. js**, crie as propriedades de estado e o bot e, em seguida, chame o método do bot `run` em `processActivity`.
 
-[!code-javascript[custom prompt bot](~/../botbuilder-samples/samples//javascript_nodejs/44.prompt-for-user-input/index.js?range=32-35)]
+[!code-javascript[custom prompt bot](~/../botbuilder-samples/samples/javascript_nodejs/44.prompt-for-user-input/index.js?range=32-35)]
 
-[!code-javascript[custom prompt bot](~/../botbuilder-samples/samples//javascript_nodejs/44.prompt-for-user-input/index.js?range=55-58)]
+[!code-javascript[custom prompt bot](~/../botbuilder-samples/samples/javascript_nodejs/44.prompt-for-user-input/index.js?range=55-58)]
 
 ---
 
@@ -92,11 +92,11 @@ Finalmente, salvamos os dados usando o método `SaveChangesAsync`.
 
 No construtor, criamos os acessadores de propriedade de estado e configuramos os objetos de gerenciamento de estado (criados acima) para nossa conversa.
 
-**bots/customPromptBot.js** [!code-javascript[custom prompt bot](~/../botbuilder-samples/samples//javascript_nodejs/44.prompt-for-user-input/bots/customPromptBot.js?range=23-29)]
+**bots/customPromptBot.js** [!code-javascript[custom prompt bot](~/../botbuilder-samples/samples/javascript_nodejs/44.prompt-for-user-input/bots/customPromptBot.js?range=23-29)]
 
 Em seguida, definimos um segundo manipulador, `onDialog`, para executar após o manipulador de mensagens principal (explicado na próxima seção). Esse segundo manipulador garante que o nosso estado seja salvo em cada turno.
 
-[!code-javascript[custom prompt bot](~/../botbuilder-samples/samples//javascript_nodejs/44.prompt-for-user-input/bots/customPromptBot.js?range=41-48)]
+[!code-javascript[custom prompt bot](~/../botbuilder-samples/samples/javascript_nodejs/44.prompt-for-user-input/bots/customPromptBot.js?range=41-48)]
 
 ---
 
@@ -112,7 +112,7 @@ Para lidar com atividades de mensagem, usamos o método auxiliar _FillOutUserPro
 
 Para lidar com atividades de mensagem, configuramos os dados da conversa e do usuário e, em seguida, usamos o método auxiliar `fillOutUserProfile()`. Veja aqui o código completo da manipulador de turno.
 
-**bots/customPromptBot.js** [!code-javascript[custom prompt bot](~/../botbuilder-samples/samples//javascript_nodejs/44.prompt-for-user-input/bots/customPromptBot.js?range=31-39)]
+**bots/customPromptBot.js** [!code-javascript[custom prompt bot](~/../botbuilder-samples/samples/javascript_nodejs/44.prompt-for-user-input/bots/customPromptBot.js?range=31-39)]
 ---
 
 ## <a name="filling-out-the-user-profile"></a>Preenchendo o perfil do usuário
@@ -131,7 +131,7 @@ Começaremos com a coleta de informações. Cada uma fornecerá uma interface se
 
 ## <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-**bots/customPromptBot.js** [!code-javascript[custom prompt bot](~/../botbuilder-samples/samples//javascript_nodejs/44.prompt-for-user-input/bots/customPromptBot.js?range=52-116)]
+**bots/customPromptBot.js** [!code-javascript[custom prompt bot](~/../botbuilder-samples/samples/javascript_nodejs/44.prompt-for-user-input/bots/customPromptBot.js?range=52-116)]
 
 ---
 
@@ -157,7 +157,7 @@ Adicione os seguintes métodos de validação ao bot.
 
 ## <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-**bots/customPromptBot.cs** [!code-javascript[custom prompt bot](~/../botbuilder-samples/samples//javascript_nodejs/44.prompt-for-user-input/bots/customPromptBot.js?range=118-189)]
+**bots/customPromptBot.cs** [!code-javascript[custom prompt bot](~/../botbuilder-samples/samples/javascript_nodejs/44.prompt-for-user-input/bots/customPromptBot.js?range=118-189)]
 
 ---
 

@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: abs
 ms.date: 05/01/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a44e45cd5e9b83b2e4512c5a1fd882593024e1b3
-ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
+ms.openlocfilehash: 6e7bd108bc67595c1d523c3c038e8b403ce387b1
+ms.sourcegitcommit: 4086189a9c856fbdc832eb1a1d205e5f1b4e3acd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65032893"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65733304"
 ---
 # <a name="deploy-your-bot"></a>Implantar seu bot
 
@@ -53,7 +53,7 @@ az account set --subscription "<azure-subscription>"
 Se você não tiver certeza de qual assinatura usar para implantar o bot, poderá exibir a lista de assinaturas de sua conta usando o comando `az account list`. Navegue até a pasta do bot.
 
 ### <a name="create-an-app-registration"></a>Crie um registro de aplicativo
-Registrar o aplicativo significa que você poderá usar o Azure AD para autenticar usuários e solicitar acesso a recursos de usuários. Seu bot precisará de um aplicativo registrado no Azure que o permita acessar o Bot Framework Service para enviar e receber mensagens autenticadas. Para criar o registro de um aplicativo por meio da CLI do Azure, execute o seguinte comando:
+Registrar o aplicativo significa que você poderá usar o Microsoft Azure AD para autenticar usuários e solicitar acesso a recursos de usuários. Seu bot precisará de um aplicativo registrado no Azure que o permita acessar o Bot Framework Service para enviar e receber mensagens autenticadas. Para criar o registro de um aplicativo por meio da CLI do Azure, execute o seguinte comando:
 
 ```cmd
 az ad app create --display-name "displayName" --password "AtLeastSixteenCharacters_0" --available-to-other-tenants
@@ -96,10 +96,10 @@ Ao usar um grupo de recursos existente, você pode empregar um Plano do Serviço
 
 Nesse caso, estamos usando o Plano do Serviço de Aplicativo existente, mas criando um Aplicativo Web e um Registro de Canais de Bot novos. 
 
-_Observação: O parâmetro botId deve ser globalmente exclusivo e será usado como a ID imutável do bot. Ele também será usado para configurar o nome de exibição do bot, que é mutável._
+_Observação: o parâmetro botId deve ser globalmente exclusivo e será usado como a ID imutável do bot. Ele também será usado para configurar o nome de exibição do bot, que é mutável._
 
 ```cmd
-az group deployment create --name "<name-of-deployment>" --resource-group "<name-of-resource-group>" --template-file "template-with-preexisting-rg.json" --parameters appId="<msa-app-guid>" appSecret="<msa-app-password>" botId="<id-or-name-of-bot>" newWebAppName="<name-of-web-app>" existingAppServicePlan="<name-of-app-service-plan>" appServicePlanLocation=<location>"
+az group deployment create --name "<name-of-deployment>" --resource-group "<name-of-resource-group>" --template-file "template-with-preexisting-rg.json" --parameters appId="<msa-app-guid>" appSecret="<msa-app-password>" botId="<id-or-name-of-bot>" newWebAppName="<name-of-web-app>" existingAppServicePlan="<name-of-app-service-plan>" appServicePlanLocation="<location>"
 ```
 
 **Opção 2: Plano do Serviço de Aplicativo novo** 
@@ -136,7 +136,7 @@ Você deve fornecer o caminho do arquivo .csproj relativo a --code-dir. Isso pod
 az bot prepare-deploy --code-dir "." --lang Javascript
 ```
 
-Esse comando buscará um arquivo web.config que é necessário para aplicativos Node.js trabalharem com o IIS nos Serviços de Aplicativo do Azure. Certifique-se de que web.config seja salvo na raiz de seu bot.
+Esse comando buscará um arquivo web.config que é necessário para aplicativos Node.js trabalharem com o IIS nos Serviços de Aplicativos do Azure. Certifique-se de que web.config seja salvo na raiz de seu bot.
 
 **Para bots TypeScript**
 
@@ -150,19 +150,19 @@ Esse comando funciona da mesma forma que o JavaScript acima, mas para um bot Typ
 
 Com o uso da [API de implantação de zip](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file-or-url) não configurada para implantar o código de seu bot, o comportamento do Aplicativo Web/Kudu será o seguinte:
 
-_O Kudu assume por padrão que as implantações a partir de arquivos zip estão prontas para ser executadas e não exigem etapas de compilação adicionais durante a implantação, como npm install ou dotnet restore/dotnet publish._
+_O Kudu assume por padrão que as implantações a partir de arquivos zip estão prontas para serem executadas e não exigem etapas de compilação adicionais durante a implantação, como npm install ou dotnet restore/dotnet publish._
 
 Logo, é importante incluir seu código compilado e todas as dependências necessárias no arquivo zip a ser implantado no Aplicativo Web, caso contrário, seu bot não funcionará como esperado.
 
 > [!IMPORTANT]
-> Antes de compactar os arquivos de seu projeto, verifique se você está _na_ pasta correta. 
+> Antes de compactar os arquivos do seu projeto, verifique se você está _na_ pasta correta. 
 > - Para bots C#, será a pasta que tiver o arquivo .csproj. 
 > - Para bots JS, será a pasta que tiver o arquivo app.js ou index.js. 
 >
 > Se o local da pasta raiz estiver incorreto, o **bot não será executado no portal do Azure**.
 
 ## <a name="2-deploy-code-to-azure"></a>2. Implantar código no Azure
-Agora estamos prontos para implantar o código no Aplicativo Web do Azure. Execute o seguinte comando na linha de comando para executar a implantação usando o serviço de implantação de zip por push do kudu para um aplicativo web.
+Neste ponto, estamos prontos para implantar o código no aplicativo Web do Azure. Execute o seguinte comando na linha de comando para executar a implantação usando o serviço de implantação de zip por push do kudu para um aplicativo web.
 
 ```cmd
 az webapp deployment source config-zip --resource-group "<new-group-name>" --name "<name-of-web-app>" --src "code.zip" 
@@ -175,7 +175,7 @@ az webapp deployment source config-zip --resource-group "<new-group-name>" --nam
 | src  | O caminho para o arquivo compactado que você criou. |
 
 ## <a name="3-test-in-web-chat"></a>3. Testar no Webchat
-- No portal do Azure, vá para a folha do bot de seu Aplicativo Web.
+- No portal do Azure, vá para a folha do bot do seu Aplicativo Web.
 - Na seção **Gerenciamento de Bot**, clique em **Testar no Webchat**. O Serviço de Bot do Azure carregará o controle de Webchat e se conectará ao bot.
 - Aguarde alguns segundos após uma implantação bem-sucedida e, opcionalmente, reinicie o aplicativo Web para limpar entradas no cache. Volte para a folha de Bot do Aplicativo Web e teste usando o Webchat fornecido no portal do Azure.
 
