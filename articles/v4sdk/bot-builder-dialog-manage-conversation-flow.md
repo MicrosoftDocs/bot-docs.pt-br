@@ -28,7 +28,7 @@ Você pode gerenciar fluxos de conversa simples e complexos usando a biblioteca 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento de [noções básicas de bot][concept-basics], [gerenciamento de estado][concept-state]e [biblioteca de diálogos][concept-dialogs].
-- Uma cópia do exemplo de **prompt de vários turnos** em [**CSharp**] ou em [cs-sample][**JavaScript**][js-sample].
+- Uma cópia do exemplo de **prompt de vários turnos** em [**CSharp**][cs-sample] ou em [**JavaScript**][js-sample].
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
