@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 04/18/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: d896584b2048c8d2b330a1e6e63bc47122102532
-ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
+ms.openlocfilehash: caa1938abd6ca2b79f9b42f28f3965413d24d81b
+ms.sourcegitcommit: 4086189a9c856fbdc832eb1a1d205e5f1b4e3acd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65033398"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65733378"
 ---
 # <a name="dialogs-library"></a>Biblioteca de diálogos
 
@@ -164,7 +164,7 @@ Caso você queira remover todas as caixas de diálogo da pilha, é possível lim
 
 ### <a name="repeating-a-dialog"></a>Repetindo um diálogo
 
-Você pode substituir um diálogo por ele mesmo, criando um loop.
+Você pode substituir um diálogo por ele mesmo, criando um loop, usando o método *replace dialog*.
 Essa é uma ótima maneira de tratar [interações complexas](~/v4sdk/bot-builder-dialog-manage-complex-conversation-flow.md) e uma boa técnica para gerenciar os menus.
 
 > [!NOTE]

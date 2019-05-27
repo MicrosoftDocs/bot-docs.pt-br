@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 04/30/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 7f2c31ab0a7f97917be83334c39bdc4750547614
-ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
+ms.openlocfilehash: bb6346d8364e0323c1e5f12329e8cdea97bad0ac
+ms.sourcegitcommit: 4086189a9c856fbdc832eb1a1d205e5f1b4e3acd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65033199"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65733359"
 ---
 # <a name="tutorial-create-and-deploy-a-basic-bot"></a>Tutorial: Criar e implantar um bot básico
 
@@ -83,7 +83,7 @@ az ad app create --display-name "displayName" --password "AtLeastSixteenCharacte
 | Senha | Senha do aplicativo, também conhecida como 'segredo do cliente'. A senha deve ter pelo menos 16 caracteres, sendo pelo menos um caractere alfabético maiúsculo ou minúsculo e pelo menos um caractere especial. |
 | disponível para outros locatários| O aplicativo pode ser usado a partir de qualquer locatário do Microsoft Azure AD.  Valores permitidos: false, true. True por padrão. Isso habilitará seu bot para trabalhar com os canais do Serviço de Bot do Azure|
 
-O comando acima gera JSON com a chave `appId`, salva o valor dessa chave para a implantação do ARM, onde ela será usada para o parâmetro `appId`. A senha fornecida será usada para o parâmetro `appSecret`.
+O comando acima gera JSON com a chave `appId`, salva o valor dessa chave para a implantação do ARM, onde ela será usada para o parâmetro `appId`. A senha fornecida será usada ao parâmetro `appSecret`.
 
 Você pode implantar seu bot em um novo grupo de recursos ou em um grupo de recursos existente. Escolha a opção que funcione melhor para você.
 
@@ -117,7 +117,7 @@ Nesse caso, estamos usando o Plano do Serviço de Aplicativo existente, mas cria
 _Observação: o parâmetro botId deve ser globalmente exclusivo e será usado como a ID imutável do bot. Ele também será usado para configurar o nome de exibição do bot, que é mutável._
 
 ```cmd
-az group deployment create --name "<name-of-deployment>" --resource-group "<name-of-resource-group>" --template-file "template-with-preexisting-rg.json" --parameters appId="<msa-app-guid>" appSecret="<msa-app-password>" botId="<id-or-name-of-bot>" newWebAppName="<name-of-web-app>" existingAppServicePlan="<name-of-app-service-plan>" appServicePlanLocation=<location>"
+az group deployment create --name "<name-of-deployment>" --resource-group "<name-of-resource-group>" --template-file "template-with-preexisting-rg.json" --parameters appId="<msa-app-guid>" appSecret="<msa-app-password>" botId="<id-or-name-of-bot>" newWebAppName="<name-of-web-app>" existingAppServicePlan="<name-of-app-service-plan>" appServicePlanLocation="<location>"
 ```
 
 **Opção 2: Plano do Serviço de Aplicativo novo** 
@@ -158,7 +158,7 @@ Esse comando buscará um arquivo web.config que é necessário para aplicativos 
 
 #### <a name="zip-up-the-code-directory-manually"></a>Compacte o diretório de código manualmente
 
-Com o uso da [API de implantação de zip](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file-or-url) não configurada para implantar o código do seu bot, o comportamento do Aplicativo Web/Kudu será o seguinte:
+Com o uso da [API de implantação de zip](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file-or-url) não configurada para implantar o código de seu bot, o comportamento do Aplicativo Web/Kudu será o seguinte:
 
 _O Kudu assume por padrão que as implantações a partir de arquivos zip estão prontas para serem executadas e não exigem etapas de compilação adicionais durante a implantação, como npm install ou dotnet restore/dotnet publish._
 
@@ -168,6 +168,8 @@ Logo, é importante incluir seu código compilado e todas as dependências neces
 > Antes de compactar os arquivos do seu projeto, verifique se você está _na_ pasta correta. 
 > - Para bots C#, será a pasta que tiver o arquivo .csproj. 
 > - Para bots JS, será a pasta que tiver o arquivo app.js ou index.js. 
+>
+> Selecione todos os arquivos e compacte-os nessa pasta; em seguida, execute o comando ainda nessa pasta.
 >
 > Se o local da pasta raiz estiver incorreto, o **bot não será executado no portal do Azure**.
 
