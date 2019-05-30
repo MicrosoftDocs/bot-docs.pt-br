@@ -8,14 +8,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 04/17/2019
+ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: bbdfa6df47e41325551faaa4ef05f2b7bafb7891
-ms.sourcegitcommit: aea57820b8a137047d59491b45320cf268043861
+ms.openlocfilehash: da73a941da464b194f4da043b58bb3c8f1e505eb
+ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59904689"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66214326"
 ---
 # <a name="create-a-bot-with-the-bot-framework-sdk-for-javascript"></a>Criar um bot com o SDK do Bot Framework para JavaScript
 

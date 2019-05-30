@@ -7,14 +7,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 05/03/2018
+ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 0f6db4fe60a19060ffefcf6e5509b3abb95c14b4
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: 452a1f0dd53b0ea786138678e19731ec448a680a
+ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54224461"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66214352"
 ---
 # <a name="bot-framework-sdk-v4-java-samples"></a>Exemplos do SDK do Bot Framework v4 do Java
 [!INCLUDE [pre-release-label](../includes/pre-release-label.md)]

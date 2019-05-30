@@ -8,14 +8,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 05/08/2019
+ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 3470b1c8f3fbcfb7fecbb060a54b1a356ad41b61
-ms.sourcegitcommit: 4086189a9c856fbdc832eb1a1d205e5f1b4e3acd
+ms.openlocfilehash: bfd37b703a43e056142ad161eb3308fd2b754e25
+ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65733316"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215322"
 ---
 # <a name="create-your-own-prompts-to-gather-user-input"></a>Crie seus próprio prompts para coletar entradas do usuário
 
@@ -28,7 +28,7 @@ Uma conversa entre um bot e um usuário muitas vezes envolve solicitar ao usuár
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- O código neste artigo baseia-se no exemplo de Solicitar Entrada aos Usuários. Você precisará de uma cópia do **[Exemplo de C#](https://aka.ms/cs-primitive-prompt-sample) ou do [Exemplo de JavaScript](https://aka.ms/js-primitive-prompt-sample)**.
+- O código neste artigo baseia-se no exemplo de Solicitar Entrada aos Usuários. Você precisará de uma cópia do **[Exemplo de C#](https://aka.ms/cs-primitive-prompt-sample) ou do [Exemplo de JavaScript](https://aka.ms/js-primitive-prompt-sample)** .
 - Conhecimento sobre [gerenciar estado](bot-builder-concept-state.md) e como [salvar dados do usuário e da conversa](bot-builder-howto-v4-state.md).
 
 ## <a name="about-the-sample-code"></a>Sobre o código de exemplo
@@ -104,7 +104,7 @@ Em seguida, definimos um segundo manipulador, `onDialog`, para executar após o 
 
 ## <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-Para lidar com atividades de mensagem, usamos o método auxiliar _FillOutUserProfileAsync()_, antes de salvar o estado usando _SaveChangesAsync()_. Veja a seguir o código completo.
+Para lidar com atividades de mensagem, usamos o método auxiliar _FillOutUserProfileAsync()_ , antes de salvar o estado usando _SaveChangesAsync()_ . Veja a seguir o código completo.
 
 **Bots/CustomPromptBot.cs** [!code-csharp[custom prompt bot](~/../botbuilder-samples/samples/csharp_dotnetcore/44.prompt-users-for-input/Bots/CustomPromptBot.cs?range=30-44)]
 

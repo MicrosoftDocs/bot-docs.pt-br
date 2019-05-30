@@ -6,14 +6,14 @@ ms.author: darrenj
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 05/06/2019
+ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: dc6e7177ff06f868e96618f1edb6c31d98884e3e
-ms.sourcegitcommit: 178140eb060d71803f1c6357dd5afebd7f44fe1d
+ms.openlocfilehash: f07e1b20b49a5af24d0c895ae1973ad7d3978287
+ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65856645"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66214223"
 ---
 # <a name="virtual-assistant---getting-started"></a>Assistente Virtual - Introdução
 

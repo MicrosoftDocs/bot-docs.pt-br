@@ -8,14 +8,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: cognitive-services
-ms.date: 05/20/2019
+ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 10ae35f51a072a1af6cf7d4bdf2fd2f4cb3d66ee
-ms.sourcegitcommit: 72cc9134bf50f335cbb33265b048bf6b76252ce4
+ms.openlocfilehash: 09b8261ea69e04345cb9fb2d80542ae754efdc25
+ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65973851"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215373"
 ---
 # <a name="use-qna-maker-to-answer-questions"></a>Usar o QnA Maker para responder a perguntas
 
@@ -27,7 +27,7 @@ Um dos requisitos básicos para a criação de seu próprio serviço QnA Maker �
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- O código neste artigo baseia-se no exemplo do QnA Maker. Você precisará de uma cópia dele contida em **[CSharp](https://aka.ms/cs-qna) ou [JavaScript](https://aka.ms/js-qna-sample)**.
+- O código neste artigo baseia-se no exemplo do QnA Maker. Você precisará de uma cópia dele contida em **[CSharp](https://aka.ms/cs-qna) ou [JavaScript](https://aka.ms/js-qna-sample)** .
 - Conta do [QnA Maker](https://www.qnamaker.ai/)
 - Conhecimento das [Noções básicas do bot](bot-builder-basics.md), do [QnA Maker](https://docs.microsoft.com/en-us/azure/cognitive-services/qnamaker/overview/overview) e do [gerenciamento de recursos do bot](bot-file-basics.md).
 

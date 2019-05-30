@@ -8,14 +8,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 04/16/2019
+ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 6840305684eff7dc325a541a0b545396e6c30fa8
-ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
+ms.openlocfilehash: 1f9070b0fd3b4e88eb7d752f5a73c4374bfe8415
+ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65033474"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215519"
 ---
 # <a name="reuse-dialogs"></a>Reutilizar diálogos
 
@@ -38,7 +38,7 @@ No exemplo de prompt de vários turnos, usamos um diálogo em cascata, alguns pr
 | Perguntar o nome do usuário | Prompt de texto |
 | Perguntar se o usuário deseja fornecer a idade | Prompt de confirmação |
 | Se a resposta for Sim, perguntar a idade dele  | Prompt de número com validação para aceitar somente idades entre 0 e 150. |
-| Perguntar se as informações coletadas estão “ok” | Reutilizar prompt de confirmação |
+| Perguntar se as informações coletadas estão “OK” | Reutilizar prompt de confirmação |
 
 Finalmente, se ele responder sim, exibir as informações coletadas; caso contrário, dizer ao usuário que as informações dele não serão mantidas.
 

@@ -6,14 +6,14 @@ ms.author: darrenj
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 05/06/2019
+ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 7ce7556b58c047e20f1b32597c896baa802968aa
-ms.sourcegitcommit: b94c4286f6f64955fd51ccf4a68109c43db0e47d
+ms.openlocfilehash: 8ed5841f9bfe874de26f1aecbb0e4460e541668b
+ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65083763"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215295"
 ---
 # <a name="virtual-assistant---skills-overview"></a>Assistente Virtual - Visão Geral das Habilidades
 
