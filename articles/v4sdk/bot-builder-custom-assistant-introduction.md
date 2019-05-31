@@ -6,14 +6,14 @@ ms.author: darrenj
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 13/12/2018
+ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: dcef01d8ba07d44aebaeeeecb5637af691caccb9
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: f4b8243580ee678390177881b136a9016be4a786
+ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997073"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215461"
 ---
 ## <a name="custom-assistant-overview"></a>Visão geral do Assistente Personalizado
 
@@ -78,11 +78,11 @@ Todos os aspectos de cada habilidade (Modelo de linguagem, Diálogos, Código de
 
 O Assistente Personalizado abrange vários cenários do setor. Cenários de exemplo são mostrados abaixo para fins de referência:
 
-- Indústria automotiva: Assistente Pessoal habilitado por voz integrado ao carro, oferecendo aos usuários finais a capacidade de executar funções tradicionais do carro (por exemplo, navegação, rádio) além dos cenários de foco na produtividade, como remarcar reuniões quando você está atrasado ou adicionar itens à sua lista de tarefas e proativas, e experiências em que o carro pode sugerir tarefas com base em eventos, como dar partida no motor, ir para casa ou habilitar o modo de controle de cruzeiro (piloto automático). Os Cartões Adaptáveis são renderizados na integração da Unidade Principal e Fala, executados por meio de interações Apertar para Falar e Wake Word (palavra de início do Assistente).
+- Indústria automotiva: Assistente Pessoal habilitado por voz integrado ao carro que oferece aos usuários finais a capacidade de executar funções tradicionais do carro (por exemplo, navegação, rádio) além dos cenários com foco na produtividade, como remarcar reuniões quando você estiver atrasado ou adicionar itens à sua lista de tarefas, além de experiências proativas em que o carro pode sugerir tarefas com base em eventos, como dar partida no motor, ir para casa ou habilitar o modo de piloto automático. Os Cartões Adaptáveis são renderizados na integração da Unidade Principal e Fala, executados por meio de interações Apertar para Falar e Wake Word (palavra de início do Assistente).
 
-- Hospitalidade: Assistente Pessoal habilitado por voz integrado a um dispositivo em um quarto de hotel que oferece vários cenários voltados para a hospitalidade (por exemplo, ampliar sua permanência, solicitar check-out tardio, serviço de quarto), incluindo concierge e a habilidade de encontrar restaurantes e atrações locais. A opção de vinculação com suas contas de produtividade permitem experiências mais personalizadas, como alarmes sugeridos, avisos meteorológicos e aprendizado de padrões entre estadias. Uma evolução da personalização da TV existente nas salas atualmente.
+- Hospitalidade: Assistente Pessoal habilitado para voz integrado a um dispositivo de quarto de hotel que fornece uma ampla variedade de cenários voltados para hospitalidade (por exemplo, estender sua estadia, solicitação de check-out tardio, serviço de quarto), incluindo concierge e a possibilidade de encontrar restaurantes e atrações locais. A opção de vinculação com suas contas de produtividade permitem experiências mais personalizadas, como alarmes sugeridos, avisos meteorológicos e aprendizado de padrões entre estadias. Uma evolução da personalização da TV existente nas salas atualmente.
 
-- Enterprise: experiências de Assistente Funcionário da marca habilitado para voz e texto integradas a dispositivos da empresa e a telas de conversa existentes (por exemplo, Teams, WebChat, Slack), permitindo que os funcionários administrem seus calendários, encontrem salas de reunião disponíveis, localizem pessoas com habilidades específicas ou realizem operações de RH. 
+- Empresas: experiências personalizadas de Assistente do Funcionário habilitado por voz e texto e integradas a dispositivos da empresa e a telas de conversa existentes (por exemplo, Teams, WebChat, Slack), permitindo que os funcionários administrem seus calendários, encontrem salas de reunião disponíveis, localizem pessoas com habilidades específicas ou realizem operações de RH. 
 
 ## <a name="getting-started"></a>Introdução
 
