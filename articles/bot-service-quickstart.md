@@ -8,27 +8,25 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: abs
-ms.date: 02/07/2019
-ms.openlocfilehash: 882dc15bd900667d76eac41049ee88b51ec5c120
-ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
+ms.date: 05/31/2019
+ms.openlocfilehash: 721a64fab578f6c49b1dbebe5fee28045a198153
+ms.sourcegitcommit: 0eb7ac64c4eb28944a9957a0cd2f65b046232244
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65033145"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66455448"
 ---
 # <a name="create-a-bot-with-azure-bot-service"></a>Criar um bot com o Serviço de Bot do Azure
 
 ::: moniker range="azure-bot-service-3.0"
 
-[!INCLUDE [pre-release-label](includes/pre-release-label-v3.md)]
+> [!NOTE]
+> **A partir de 10 de junho de 2019, você não poderá criar bots do SDK v3 no portal do Azure. Incentivamos os clientes a criarem bots do [SDK v4](https://docs.microsoft.com/azure/bot-service/bot-service-quickstart?view=azure-bot-service-4.0) de agora em diante. Você encontra mais informações sobre o suporte de longo prazo do SDK v3 [aqui](https://docs.microsoft.com/azure/bot-service/bot-service-resources-bot-framework-faq?view=azure-bot-service-3.0#bot-framework-sdk-version-3-lifetime-support)** . 
 
 O Serviço de Bot fornece os principais componentes para a criação de bots, incluindo o SDK do Bot Framework para o desenvolvimento de bots e o Bot Framework para conectar os bots aos canais. O Serviço de Bot oferece cinco opções de modelos para a criação dos bots com suporte para .NET e Node.js. Neste tópico, saiba como usar o Serviço de Bot para criar um novo bot que usa o SDK do Bot Framework.
 
 ## <a name="log-in-to-azure"></a>Fazer logon no Azure
 Faça logon no [Portal do Azure](http://portal.azure.com).
-
-> [!TIP]
-> Se você ainda não tiver uma assinatura, poderá se inscrever para uma <a href="https://azure.microsoft.com/en-us/free/" target="_blank">conta gratuita</a>.
 
 ## <a name="create-a-new-bot-service"></a>Criar um serviço de bot
 
