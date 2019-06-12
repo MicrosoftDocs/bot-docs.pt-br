@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f72bc15d4c239946afcf6790193cffa5c6d0f0bc
-ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
+ms.openlocfilehash: 5c8b164aa97ff4ea74acbd6765c72ea0c3f1ad3b
+ms.sourcegitcommit: e276008fb5dd7a37554e202ba5c37948954301f1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66214242"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66693654"
 ---
 # <a name="tutorial-use-qna-maker-in-your-bot-to-answer-questions"></a>Tutorial: usar o QnA Maker em seu bot para responder a perguntas
 
@@ -255,7 +255,7 @@ Atualize seu código de inicialização para carregar as informações de servi�
    } 
    else { 
       // If no answers were returned from QnA Maker, reply with help.
-      wait turnContext.sendActivity('No QnA Maker response was returned.'
+      await turnContext.sendActivity('No QnA Maker response was returned.'
            + 'This example uses a QnA Maker Knowledge Base that focuses on smart light bulbs. '
            + `Ask the bot questions like "Why won't it turn on?" or "I need help."`);
    }
