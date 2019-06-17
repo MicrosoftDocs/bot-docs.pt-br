@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: abs
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: c17e830c61036a6551fa7f3dbab79f83bda38123
-ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
+ms.openlocfilehash: afb27ad20ec8585c2ca30810a9be6858adc17187
+ms.sourcegitcommit: e276008fb5dd7a37554e202ba5c37948954301f1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66214313"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66693523"
 ---
 # <a name="deploy-your-bot"></a>Implantar seu bot
 
@@ -158,6 +158,8 @@ Logo, é importante incluir seu código compilado e todas as dependências neces
 > Antes de compactar os arquivos do seu projeto, verifique se você está _na_ pasta correta. 
 > - Para bots C#, será a pasta que tiver o arquivo .csproj. 
 > - Para bots JS, será a pasta que tiver o arquivo app.js ou index.js. 
+>
+> Selecione todos os arquivos e compacte-os **nessa pasta**, em seguida, execute o comando ainda nessa pasta.
 >
 > Se o local da pasta raiz estiver incorreto, o **bot não será executado no portal do Azure**.
 

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 01/09/2019
-ms.openlocfilehash: 3573103e1d1c55e3ad648ad68d84674a98b397f7
-ms.sourcegitcommit: 8161753641368567f239e24a35ad61768acccd8e
+ms.openlocfilehash: 58416147a057bce8947943521a1226e1d9acbdf1
+ms.sourcegitcommit: e276008fb5dd7a37554e202ba5c37948954301f1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54202552"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66693603"
 ---
 # <a name="connect-a-bot-to-slack"></a>Conectar um bot ao Slack
 
@@ -112,7 +112,7 @@ Em uma janela separada do navegador, volte para o site do Bot Framework em `http
 2. Na seção **Canais**, clique no ícone do Slack.
 3. Na seção **Inserir suas credenciais do Slack**, cole as Credenciais de Aplicativo do site do Slack nos campos apropriados.
 4. A **URL da Página de Aterrissagem** é opcional. Você pode omitir ou alterá-la.
-5. Clique em **Salvar**.
+5. Clique em **Save** (Salvar).
 
 ![Enviar credenciais](~/media/channels/slack-SubmitCredentials.png)
 
@@ -134,3 +134,7 @@ Execute estas etapas para obter a URL de substituição.
 3. Copie essa URL da área de transferência e cole-a no HTML fornecido para o botão do Slack. Essa URL substitui o valor de href fornecido pelo Slack para este bot.
 
 Os usuários autorizados podem clicar no botão **Adicionar ao Slack** fornecido por esse HTML modificado para acessar seu bot no Slack.
+
+## <a name="also-available-as-an-adapter"></a>Também disponível como um adaptador
+
+Esse canal também [está disponível como um adaptador](https://botkit.ai/docs/v4/platforms/slack.html). Para ajudá-lo a escolher entre um adaptador e um canal, confira [Adaptadores disponíveis no momento](bot-service-channel-additional-channels.md#currently-available-adapters).
