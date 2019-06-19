@@ -21,6 +21,7 @@
 ## [Telegram](../bot-service-channel-connect-telegram.md) 
 ## [Twilio](../bot-service-channel-connect-twilio.md)
 ## [Web Chat](../bot-service-channel-connect-webchat.md)
+## [Canais adicionais](../bot-service-channel-additional-channels.md)
 # [Definir as configurações do bot](../bot-service-manage-settings.md)
 # [Configurar a desobstrução de fala](../bot-service-manage-speech-priming.md)
 # [Registrar um bot com o Serviço de Bot do Azure](../bot-service-quickstart-registration.md)
