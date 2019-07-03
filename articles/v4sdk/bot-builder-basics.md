@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 94a3459760c8f0f14886a068d082dafeb9530b19
-ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
+ms.openlocfilehash: 187a8427fd8627b0ce6b812ce8ee857e62b0394d
+ms.sourcegitcommit: a47183f5d1c2b2454c4a06c0f292d7c075612cdd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215538"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67252684"
 ---
 # <a name="how-bots-work"></a>Como funcionam os bots
 
@@ -135,7 +135,7 @@ A lógica do bot processa as atividades de entrada de um ou mais canais e gera a
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-A lógica principal do bot é definida no código do bot; aqui, ele se chama `Bots/EchoBot.cs`. `EchoBot` deriva de `AcitivityHandler`, que por sua vez deriva da interface `IBot`. `ActivityHandler` define vários manipuladores para diferentes tipos de atividades, como os dois definidos aqui: `OnMessageActivityAsync` e `OnMembersAddedAsync`. Esses métodos são protegidos, mas podem ser substituídos, já que estamos derivando de `ActivityHandler`.
+A lógica principal do bot é definida no código do bot; aqui, ele se chama `Bots/EchoBot.cs`. `EchoBot` deriva de `ActivityHandler`, que por sua vez deriva da interface `IBot`. `ActivityHandler` define vários manipuladores para diferentes tipos de atividades, como os dois definidos aqui: `OnMessageActivityAsync` e `OnMembersAddedAsync`. Esses métodos são protegidos, mas podem ser substituídos, já que estamos derivando de `ActivityHandler`.
 
 Os manipuladores definidos em `ActivityHandler` são:
 
@@ -180,7 +180,7 @@ public class MyBot : ActivityHandler
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-A lógica principal do bot é definida no código do bot; aqui, ele se chama `bots\echoBot.js`. `EchoBot` deriva de `AcitivityHandler`. `ActivityHandler` define vários manipuladores para diferentes tipos de atividades, e você pode modificar o comportamento do bot fornecendo uma lógica adicional, como ocorre com `onMessage` e `onConversationUpdate` aqui.
+A lógica principal do bot é definida no código do bot; aqui, ele se chama `bots\echoBot.js`. `EchoBot` deriva de `ActivityHandler`. `ActivityHandler` define vários manipuladores para diferentes tipos de atividades, e você pode modificar o comportamento do bot fornecendo uma lógica adicional, como ocorre com `onMessage` e `onConversationUpdate` aqui.
 
 Os manipuladores definidos em `ActivityHandler` são:
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 9bab3e3df6bb32607773da261698d785b1f261f7
-ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
+ms.openlocfilehash: b2cc303cdedbc3a9d44ce725bfc78dd308974763
+ms.sourcegitcommit: dbbfcf45a8d0ba66bd4fb5620d093abfa3b2f725
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66214226"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67464669"
 ---
 # <a name="virtual-assistant-overview"></a>Visão geral do Assistente Virtual
 
@@ -67,17 +67,17 @@ O Assistente Virtual pode ser usado em diversos cenários de diferentes setores.
 ### <a name="your-data-your-brand-and-your-experience"></a>Seus dados, sua marca e sua experiência
 Todos os aspectos da experiência do usuário final são seus e é você que os controla. Isso inclui a identidade visual, nome, voz, personalidade, respostas e avatar. Os códigos-fonte do Assistente Virtual e das habilidades de suporte são fornecidos integralmente, permitindo que você os ajuste conforme necessário.
 
-O Assistente Virtual será implantado em sua assinatura do Azure. Portanto, todos os dados gerados pelo seu assistente (perguntas feitas, comportamento do usuário e outros) ficam inteiramente restritos à sua assinatura do Azure. Confira mais especificamente a [Nuvem Confiável do Azure para os Serviços Cognitivos](https://www.microsoft.com/en-us/trustcenter/cloudservices/cognitiveservices) e a [seção do Azure na Central de Confiabilidade](https://www.microsoft.com/en-us/TrustCenter/CloudServices/Azure) para obter mais informações.
+O Assistente Virtual será implantado em sua assinatura do Azure. Portanto, todos os dados gerados pelo seu assistente (perguntas feitas, comportamento do usuário e outros) ficam inteiramente restritos à sua assinatura do Azure. Confira mais especificamente a [Nuvem Confiável do Azure para os Serviços Cognitivos](https://www.microsoft.com/trustcenter/cloudservices/cognitiveservices) e a [seção do Azure na Central de Confiabilidade](https://www.microsoft.com/TrustCenter/CloudServices/Azure) para obter mais informações.
 
 ### <a name="write-it-once-embed-it-anywhere"></a>Gravar uma vez, inserir em qualquer lugar
-O Assistente Virtual utiliza a plataforma de inteligência artificial de conversação da Microsoft e, portanto, pode aparecer em qualquer [canal](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-manage-channels?view=azure-bot-service-4.0) do Bot Framework, por exemplo, WebChat, FaceBook Messenger, Skype, etc. 
+O Assistente Virtual utiliza a plataforma de inteligência artificial de conversação da Microsoft e, portanto, pode aparecer em qualquer [canal](https://docs.microsoft.com/azure/bot-service/bot-service-manage-channels?view=azure-bot-service-4.0) do Bot Framework, por exemplo, WebChat, FaceBook Messenger, Skype, etc. 
 
-Além disso, por meio do canal [Linha Direta](https://docs.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-direct-line-3-0-concepts?view=azure-bot-service-4.0), podemos inserir experiências na área de trabalho e nos aplicativos móveis, incluindo dispositivos como carros, alto-falantes, despertadores, etc.
+Além disso, por meio do canal [Linha Direta](https://docs.microsoft.com/azure/bot-service/rest-api/bot-framework-rest-direct-line-3-0-concepts?view=azure-bot-service-4.0), podemos inserir experiências na área de trabalho e nos aplicativos móveis, incluindo dispositivos como carros, alto-falantes, despertadores, etc.
 
 ### <a name="enterprise-grade-solutions"></a>Soluções com a mesma tecnologia do Enterprise
-A solução Assistente Virtual é criada com base no Serviço de Bot do Azure, no Serviço Cognitivo de Reconhecimento Vocal, na Fala Unificada e em um amplo conjunto de componentes de suporte do Azure, o que significa que você se beneficia do suporte à [infraestrutura global do Azure](https://azure.microsoft.com/en-gb/global-infrastructure/), incluindo as certificações ISO 27018, HIPPA, PCI DSS e SOC 1, 2 e 3.
+A solução Assistente Virtual é criada com base no Serviço de Bot do Azure, no Serviço Cognitivo de Reconhecimento Vocal, na Fala Unificada e em um amplo conjunto de componentes de suporte do Azure, o que significa que você se beneficia do suporte à [infraestrutura global do Azure](https://azure.microsoft.com/global-infrastructure/), incluindo as certificações ISO 27018, HIPPA, PCI DSS e SOC 1, 2 e 3.
 
-Além disso, o suporte ao Reconhecimento Vocal é fornecido pelo Serviço Cognitivo LUIS, que dá suporte a um amplo conjunto de idiomas [listados aqui](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-supported-languages). O [Serviço Cognitivo de Tradução](https://azure.microsoft.com/en-us/services/cognitive-services/translator-text-api/) fornece recursos adicionais de Tradução Automática para ampliar ainda mais o alcance de seu Assistente Virtual.
+Além disso, o suporte ao Reconhecimento Vocal é fornecido pelo Serviço Cognitivo LUIS, que dá suporte a um amplo conjunto de idiomas [listados aqui](https://docs.microsoft.com/azure/cognitive-services/luis/luis-supported-languages). O [Serviço Cognitivo de Tradução](https://azure.microsoft.com/services/cognitive-services/translator-text-api/) fornece recursos adicionais de Tradução Automática para ampliar ainda mais o alcance de seu Assistente Virtual.
 
 ### <a name="integrated-and-context-aware"></a>Integrado e contextual
 O Assistente Virtual pode ser integrado a seu dispositivo e ao ecossistema, permitindo uma experiência totalmente integrada e inteligente. Com esse reconhecimento contextual, experiências mais inteligentes podem ser desenvolvidas para oferecer ainda mais personalização.
@@ -89,7 +89,7 @@ O Assistente Virtual permite que você crie sua própria experiência exclusiva,
 A arquitetura de nosso Assistente Virtual é flexível e pode ser integrada a outros investimentos que você possa ter feito em recursos de processamento de Fala ou de Linguagem Natural e, claro, a seus sistemas de back-end e APIs existentes.
 
 ### <a name="adaptive-cards"></a>Cartões Adaptáveis
-Os [Cartões Adaptáveis](https://adaptivecards.io/) permitem que o Assistente Virtual retorne elementos da experiência do usuário (por exemplo, cartões, imagens, botões) junto com respostas de texto. Se a tela do dispositivo ou da conversa tiver uma tela, esses Cartões Adaptáveis podem ser renderizados entre vários dispositivos e plataformas, oferecendo suporte à Experiência do usuário quando for o caso. Exemplos de Cartões Adaptáveis podem ser encontrados [aqui](https://adaptivecards.io/samples/), com informações sobre as opções de renderização [nesta](https://docs.microsoft.com/en-us/adaptive-cards/rendering-cards/getting-started) documentação.
+Os [Cartões Adaptáveis](https://adaptivecards.io/) permitem que o Assistente Virtual retorne elementos da experiência do usuário (por exemplo, cartões, imagens, botões) junto com respostas de texto. Se a tela do dispositivo ou da conversa tiver uma tela, esses Cartões Adaptáveis podem ser renderizados entre vários dispositivos e plataformas, oferecendo suporte à Experiência do usuário quando for o caso. Exemplos de Cartões Adaptáveis podem ser encontrados [aqui](https://adaptivecards.io/samples/), com informações sobre as opções de renderização [nesta](https://docs.microsoft.com/adaptive-cards/rendering-cards/getting-started) documentação.
 
 ### <a name="skills"></a>Habilidades
 Além do assistente de base, existe um amplo conjunto de recursos comuns que devem ser criados pelos próprios desenvolvedores. A produtividade é um ótimo exemplo de como cada organização precisa criar modelos de linguagem (LUIS), diálogos (código), integração (código) e geração de linguagem (respostas) para habilitar experiências comuns de calendário, tarefa ou email.

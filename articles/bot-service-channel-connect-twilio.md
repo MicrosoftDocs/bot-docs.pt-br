@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 10/9/2018
-ms.openlocfilehash: 817623dd04612cd07d8877c8e9a199c05a2fd9e8
-ms.sourcegitcommit: e276008fb5dd7a37554e202ba5c37948954301f1
+ms.openlocfilehash: 4de93d821c6b652021a9f695536350610776f5b4
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66693625"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67405898"
 ---
 # <a name="connect-a-bot-to-twilio"></a>Conectar um bot ao Twilio
 
@@ -26,7 +26,7 @@ Caso não tenha uma conta do Twilio, <a href="https://www.twilio.com/try-twilio"
 
 ## <a name="create-a-twiml-application"></a>Criar um aplicativo TwiML
 
-<a href="https://support.twilio.com/hc/en-us/articles/223180928-How-Do-I-Create-a-TwiML-App-" target="_blank">Crie um aplicativo TwiML</a> seguindo as instruções.
+<a href="https://support.twilio.com/hc/articles/223180928-How-Do-I-Create-a-TwiML-App-" target="_blank">Crie um aplicativo TwiML</a> seguindo as instruções.
 
 ![Criar aplicativo](~/media/channels/twi-StepTwiml.png)
 
@@ -34,7 +34,7 @@ Em **Propriedades**, insira um **NOME AMIGÁVEL**. Neste tutorial, usamos "Meu a
 
 ## <a name="select-or-add-a-phone-number"></a>Selecionar ou adicionar um número de telefone
 
-Siga <a href = "https://support.twilio.com/hc/en-us/articles/223180048-Adding-a-Verified-Phone-Number-or-Caller-ID-with-Twilio" target="_blank">estas</a> instruções para adicionar uma ID de chamador verificada por meio do site do console. Depois de terminar, você verá seu número verificado em **Números Ativos** sob **Gerenciar Números**.
+Siga <a href = "https://support.twilio.com/hc/articles/223180048-Adding-a-Verified-Phone-Number-or-Caller-ID-with-Twilio" target="_blank">estas</a> instruções para adicionar uma ID de chamador verificada por meio do site do console. Depois de terminar, você verá seu número verificado em **Números Ativos** sob **Gerenciar Números**.
 
 ![Definir número de telefone](~/media/channels/twi-StepPhone.png)
 

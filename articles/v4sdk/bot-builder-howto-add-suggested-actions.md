@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: c756de5c1c7371ce418160561d53bfe2e5c7d0c0
-ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
+ms.openlocfilehash: 43c9b0f062f4db909612f3fb9dc048be65c64c57
+ms.sourcegitcommit: d29d3d7ccef401aa1e84e19e623db33b5ff13e63
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215390"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67160633"
 ---
 # <a name="use-button-for-input"></a>Usar o botão para a entrada
 
@@ -31,7 +31,7 @@ As *ações sugeridas* permitem que seu bot apresente botões. Você pode criar 
 
 O código-fonte mostrado aqui se baseia no [exemplo de ações sugeridas](https://aka.ms/SuggestedActionsCSharp).
 
-[!code-csharp[suggested actions](~/../botbuilder-samples/samples/csharp_dotnetcore/08.suggested-actions/Bots/SuggestedActionsBot.cs?range=87-100)]
+[!code-csharp[suggested actions](~/../botbuilder-samples/samples/csharp_dotnetcore/08.suggested-actions/Bots/SuggestedActionsBot.cs?range=87-101)]
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 

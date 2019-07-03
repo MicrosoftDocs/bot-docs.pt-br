@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: a049d77d506fa3fa678a079de52aa424264847c9
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 288fde1d8c4333256b956b270fe37a56217632ca
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997043"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67404651"
 ---
 # <a name="key-concepts-in-direct-line-api-11"></a>Principais conceitos da API de Linha Direta 1.1
 
@@ -22,7 +22,7 @@ Você pode habilitar a comunicação entre o seu bot e o seu próprio aplicativo
 > [!IMPORTANT]
 > Este artigo apresenta os principais conceitos da API de Linha Direta 1.1 e fornece informações sobre recursos relevantes para desenvolvedores. Se você estiver criando uma nova conexão entre seu aplicativo cliente e o bot, use a [API de Linha Direta 3.0](bot-framework-rest-direct-line-3-0-concepts.md).
 
-## <a name="authentication"></a>Autenticação
+## <a name="authentication"></a>Authentication
 
 As solicitações de API de Linha Direta 1.1 podem ser autenticadas usando um **segredo** que você <a href="https://dev.botframework.com/" target="_blank">obtém da página de configuração de canal da Linha Direta</a> no Portal do Bot Framework ou usando um **token** obtido em tempo de execução.  Para obter mais informações, consulte [Autenticação](bot-framework-rest-direct-line-1-1-authentication.md).
 
@@ -44,7 +44,7 @@ Usando a API de Linha Direta 1.1, um cliente pode receber mensagens por meio da 
 
 A Estrutura de Bot fornece uma biblioteca de clientes que facilita o acesso à API de Linha Direta 1.1 por meio do C#. Para usar a biblioteca de clientes em um projeto do Visual Studio, instale o <a href="https://www.nuget.org/packages/Microsoft.Bot.Connector.DirectLine/1.1.1" target="_blank">pacote do v1.x NuGet</a> do `Microsoft.Bot.Connector.DirectLine`. 
 
-Como alternativa ao uso da biblioteca de clientes do C#, você pode gerar sua própria biblioteca de clientes na linguagem da sua preferência usando o <a href="https://docs.botframework.com/en-us/restapi/directline/swagger.json" target="_blank">arquivo Swagger da API de Linha Direta 1.1</a>.
+Como alternativa ao uso da biblioteca de clientes do C#, você pode gerar sua própria biblioteca de clientes na linguagem da sua preferência usando o <a href="https://docs.botframework.com/restapi/directline/swagger.json" target="_blank">arquivo Swagger da API de Linha Direta 1.1</a>.
 
 ### <a name="web-chat-control"></a>Controle do Webchat 
 

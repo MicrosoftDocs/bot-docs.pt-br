@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: cognitive-services
 ms.date: 12/13/2017
-ms.openlocfilehash: 6820815f251c38c59391f1e0e7719e52a375ed48
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: 4e73a56eb94207de49d8684c4db26155554820f3
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54224901"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67405849"
 ---
 # <a name="design-knowledge-bots"></a>Criar bots de dados de Conhecimento
 
@@ -57,7 +57,7 @@ Ao processar a entrada do usuário em cada etapa e apresentar as opções releva
 
 ### <a name="azure-search"></a>Azure Search
 
-Ao usar o <a href="https://azure.microsoft.com/en-us/services/search/" target="_blank">Azure Search</a>, você pode criar um índice de pesquisa eficiente que um bot pode facilmente pesquisar, facetar e filtrar. Considere um índice de pesquisa que é criado usando o portal do Azure.
+Ao usar o <a href="https://azure.microsoft.com/services/search/" target="_blank">Azure Search</a>, você pode criar um índice de pesquisa eficiente que um bot pode facilmente pesquisar, facetar e filtrar. Considere um índice de pesquisa que é criado usando o portal do Azure.
 
 ![Estrutura de diálogos](~/media/bot-service-design-pattern-knowledge-base/search3.PNG)
 
@@ -78,7 +78,7 @@ Por sua vez, a filtragem seleciona apenas as instâncias especificadas de uma de
 ## <a name="qna-maker"></a>QnA Maker
 
 Alguns bots de dados de conhecimento podem simplesmente pretender responder perguntas frequentes (FAQs). 
-O <a href="https://www.microsoft.com/cognitive-services/en-us/qnamaker" target="_blank">QnA Maker</a> é uma ferramenta poderosa que foi desenvolvida especificamente para esse caso de uso. QnA Maker tem a capacidade interna de extrair perguntas e respostas de um site de perguntas frequentes existente, além de permitir que você configure manualmente sua própria lista personalizada de perguntas e respostas. O QnA Maker tem capacidades de processamento de linguagem natural, permitindo que ele forneça até mesmo respostas para perguntas que são um pouco diferente do que as esperadas. No entanto, ele não tem capacidades de reconhecimento de linguagem semântica. Ele não pode determinar que um filhote de cão é um tipo de cão, por exemplo. 
+O <a href="https://www.microsoft.com/cognitive-services/qnamaker" target="_blank">QnA Maker</a> é uma ferramenta poderosa que foi desenvolvida especificamente para esse caso de uso. QnA Maker tem a capacidade interna de extrair perguntas e respostas de um site de perguntas frequentes existente, além de permitir que você configure manualmente sua própria lista personalizada de perguntas e respostas. O QnA Maker tem capacidades de processamento de linguagem natural, permitindo que ele forneça até mesmo respostas para perguntas que são um pouco diferente do que as esperadas. No entanto, ele não tem capacidades de reconhecimento de linguagem semântica. Ele não pode determinar que um filhote de cão é um tipo de cão, por exemplo. 
 
 Usando a interface web do QnA Maker, você pode configurar uma base de conhecimento com três pares de perguntas e respostas: 
 
@@ -130,7 +130,7 @@ Alguns bots de dados de conhecimento podem usar o QnA Maker para responder pergu
 2. Chamar LUIS primeiro e, se nenhuma intenção atender uma pontuação de limite específico, ou seja, a intenção "None" for disparada, chamar o QnA Maker. Como alternativa, criar uma intenção LUIS para QnA Maker, alimentando o modelo LUIS com perguntas de QnA de exemplo que são mapeadas para "QnAIntent". 
 3. Chamar o QnA Maker primeiro e, se nenhuma resposta atender uma pontuação de limite específico, chamar o LUIS. 
 
-O SDK do Bot Framework fornece suporte interno para LUIS e QnA Maker. Isso permite que você dispare caixas de diálogo ou responda automaticamente perguntas usando o LUIS e/ou o QnA Maker sem a necessidade de implementar chamadas personalizadas para qualquer uma das ferramentas. Consulte o [Tutorial da ferramenta Dispatch](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-tutorial-dispatch?view=azure-bot-service-4.0) para obter mais informações.
+O SDK do Bot Framework fornece suporte interno para LUIS e QnA Maker. Isso permite que você dispare caixas de diálogo ou responda automaticamente perguntas usando o LUIS e/ou o QnA Maker sem a necessidade de implementar chamadas personalizadas para qualquer uma das ferramentas. Consulte o [Tutorial da ferramenta Dispatch](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-dispatch?view=azure-bot-service-4.0) para obter mais informações.
 
 > [!TIP]
 > Ao implementar uma combinação de LUIS, QnA Maker e/ou Azure Search, teste as entradas com cada uma das ferramentas para determinar a pontuação de limite para cada um dos seus modelos. O LUIS, o QnA Maker e o Azure Search geram pontuações usando um critério de pontuação diferente, portanto, as pontuações geradas entre essas ferramentas não são comparáveis diretamente. Além disso, o LUIS e QnA Maker normalizam as pontuações. Uma pontuação de determinado pode ser considerada 'boa' em um modelo de LUIS, mas não em outro modelo. 
@@ -142,4 +142,4 @@ O SDK do Bot Framework fornece suporte interno para LUIS e QnA Maker. Isso permi
 - For a sample that shows how to create more complex knowledge bots using the Bot Framework SDK for .NET, see the <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/demo-Search" target="_blank">Search-powered Bots sample</a> in GitHub.
 -->
 
-[qnamakerTemplate]: https://docs.botframework.com/en-us/azure-bot-service/templates/qnamaker/#navtitle
+[qnamakerTemplate]: https://docs.botframework.com/azure-bot-service/templates/qnamaker/#navtitle

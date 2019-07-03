@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 6d653e47d2e906c6306134804c7731b374d830ba
-ms.sourcegitcommit: 980612a922b8290b2faadaca193496c4117e415a
+ms.openlocfilehash: 779411235bfef24719044b0fbad26574a373a34f
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "64563974"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67404293"
 ---
 # <a name="manage-state-data"></a>Gerenciar dados de estado
 
@@ -129,7 +129,7 @@ session.userdata.start = startDate.toISOString();
 
 ### <a name="saving-data"></a>Salvando dados
 
-Os dados criados em cada contêiner de armazenamento permanecerão na memória até que o contêiner seja salvo. O SDK do Bot Framework para Node.js envia dados para o serviço `ChatConnector` em lotes para serem salvos quando houver mensagens a serem enviadas. Para salvar os dados que existem nos contêineres de armazenamento sem enviar qualquer mensagem, você pode chamar manualmente os [`save`](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session.html#save) método. Se você não chamar o método `save`, os dados existentes nos contêineres de armazenamento serão mantidos como parte do processamento em lote.
+Os dados criados em cada contêiner de armazenamento permanecerão na memória até que o contêiner seja salvo. O SDK do Bot Framework para Node.js envia dados para o serviço `ChatConnector` em lotes para serem salvos quando houver mensagens a serem enviadas. Para salvar os dados que existem nos contêineres de armazenamento sem enviar qualquer mensagem, você pode chamar manualmente os [`save`](https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.session.html#save) método. Se você não chamar o método `save`, os dados existentes nos contêineres de armazenamento serão mantidos como parte do processamento em lote.
 
 ```javascript
 session.userData.favoriteColor = "Red";
@@ -203,9 +203,9 @@ Agora que você entende como gerenciar dados de estado do usuário, vamos dar um
 ## <a name="additional-resources"></a>Recursos adicionais
 - [Solicitar entrada do usuário](bot-builder-nodejs-dialog-prompt.md)
 
-[userDataURL]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session.html#userdata
-[conversationDataURL]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session.html#conversationdata
-[privateConversationDataURL]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session.html#privateconversationdata
-[dialogDataURL]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session.html#dialogdata
+[userDataURL]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.session.html#userdata
+[conversationDataURL]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.session.html#conversationdata
+[privateConversationDataURL]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.session.html#privateconversationdata
+[dialogDataURL]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.session.html#dialogdata
 
-[ChatConnector]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.chatconnector.html
+[ChatConnector]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.chatconnector.html

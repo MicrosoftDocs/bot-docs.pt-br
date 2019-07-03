@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservices: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: c10e6cda084f22cd4d97fd4ddce942941015733b
-ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
+ms.openlocfilehash: 8aff8c550541304d63db951e8ab6b4c014fc72ac
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215439"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67404591"
 ---
 # <a name="debug-your-bot-using-transcript-files"></a>Depurar seu bot usando arquivos de transcrição
 
@@ -74,4 +74,4 @@ Para outras informações sobre teste e depuração confira:
 * [Diretrizes para teste e depuração de bot](./bot-builder-testing-debugging.md)
 * [Depurar com o Bot Framework Emulator](../bot-service-debug-emulator.md)
 * [Solucionar problemas gerais](../bot-service-troubleshoot-bot-configuration.md) e outros artigos de solução de problemas nesta seção.
-* [Depurando no Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/index)
+* [Depurando no Visual Studio](https://docs.microsoft.com/visualstudio/debugger/index)

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: dc4b524659df3fb0b91b54fca65b4b7dd36378cd
-ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
+ms.openlocfilehash: 8d324138db60c2b34f9bebd3ff53c30a12c3cefa
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66214260"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67405953"
 ---
 # <a name="set-up-continuous-deployment"></a>Configurar a implantação contínua
 
@@ -69,6 +69,6 @@ Para desabilitar a implantação contínua, faça o seguinte:
 1. Clique em **Desconectar** para desabilitar a implantação contínua. Para habilitar novamente a implantação contínua, repita as etapas das seções apropriadas acima.
 
 ## <a name="additional-resources"></a>Recursos adicionais
-- Para habilitar a implantação contínua a partir do BitBucket e do Azure DevOps Services, consulte [implantação contínua usando o Serviço de Aplicativo do Azure](https://docs.microsoft.com/en-us/azure/app-service/deploy-continuous-deployment).
+- Para habilitar a implantação contínua a partir do BitBucket e do Azure DevOps Services, consulte [implantação contínua usando o Serviço de Aplicativo do Azure](https://docs.microsoft.com/azure/app-service/deploy-continuous-deployment).
 
 

@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: cognitive-services
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4fc8ebd1eff03c2b6ac994ff80cb85b341bb7231
-ms.sourcegitcommit: e276008fb5dd7a37554e202ba5c37948954301f1
+ms.openlocfilehash: e019d2d04d843cc0efd5a39135d65fe4cfc022f3
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66693675"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67404499"
 ---
 # <a name="add-natural-language-understanding-to-your-bot"></a>Adicionar reconhecimento de idioma natural ao seu bot
 
@@ -26,7 +26,7 @@ A capacidade de entender o que seu usuário quer dizer contextualmente e em conv
 ## <a name="prerequisites"></a>Pré-requisitos
 - Conta [LUIS](https://www.luis.ai)
 - O código neste artigo baseia-se no exemplo de **Core Bot**. Você precisará de uma cópia do exemplo contida em **[CSharp](https://aka.ms/cs-core-sample) ou em [JavaScript](https://aka.ms/js-core-sample)** . 
-- Conhecimento das [Noções básicas do bot](bot-builder-basics.md), do [processamento de idioma natural](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/what-is-luis) e do [gerenciamento de recursos do bot](bot-file-basics.md).
+- Conhecimento das [Noções básicas do bot](bot-builder-basics.md), do [processamento de idioma natural](https://docs.microsoft.com/azure/cognitive-services/luis/what-is-luis) e do [gerenciamento de recursos do bot](bot-file-basics.md).
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
@@ -70,8 +70,8 @@ Entrar no portal do LUIS para criar sua própria versão do exemplo de aplicativ
 1. Selecione **Importar novos aplicativos**. 
 1. Clique em **Escolher arquivo do aplicativo (formato JSON)...** 
 1. Selecione o arquivo `FlightBooking.json` localizado na parta `CognitiveModels` do exemplo. No **Nome opcional**, insira **FlightBooking**. Esse arquivo contém três intenções: “Reservar voo”, “Cancelar” e “Nenhum”. Vamos usar essas intenções para entender o que o usuário pretende ao enviar uma mensagem ao bot.
-1. [Treine](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-how-to-train) o aplicativo.
-1. [Publique](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/publishapp) o aplicativo no ambiente de *produção*.
+1. [Treine](https://docs.microsoft.com/azure/cognitive-services/LUIS/luis-how-to-train) o aplicativo.
+1. [Publique](https://docs.microsoft.com/azure/cognitive-services/LUIS/publishapp) o aplicativo no ambiente de *produção*.
 
 ### <a name="why-use-entities"></a>Por que usar entidades?
 As entidades LUIS permitem que seu bot entenda determinadas coisas ou eventos diferentes das intenções padrão. Assim, você pode coletar mais informações do usuário, o que permite que seu bot responda de forma mais inteligente ou ignore algumas perguntas nas quais ele pede essas informações ao usuário. Além das definições das três intenções do LUIS (“Reservar voo, “Cancelar” e “Nenhum”), o arquivo FlightBooking.json também contém um conjunto de entidades, como “From.Airport” e “To.Airport”. Essas entidades permitem que o LUIS detecte e retorne informações adicionais contidas na entrada original do usuário, quando ele solicitar uma nova reserva de viagem.
@@ -102,7 +102,7 @@ Adicione as informações necessárias para acessar o aplicativo LUIS, incluindo
 
 Adicione as informações necessárias para acessar o aplicativo LUIS, incluindo ID do aplicativo, chave de criação e região, ao arquivo `.env`. Estes são os valores que você salvou anteriormente de seu aplicativo LUIS publicado. Lembre-se de que o nome do host da API deve estar no formato `<your region>.api.cognitive.microsoft.com`.
 
-**.env**
+**.env**  
 [!code[env](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/.env?range=1-5)]
 
 ---

@@ -8,19 +8,19 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 85ef0fde39980bab1b891518e338fddbd56b275a
-ms.sourcegitcommit: 980612a922b8290b2faadaca193496c4117e415a
+ms.openlocfilehash: 74c48c779a41a6a2cbdf4f1c559c7136e7a94ca1
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "64563878"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67405816"
 ---
 # <a name="how-bot-service-works"></a>Como funciona o Serviço de Bot
 
 O Serviço de Bot fornece os principais componentes para a criação de bots, incluindo o SDK do Bot Framework para o desenvolvimento de bots e o Bot Framework para conectar os bots aos canais. O Serviço de Bot oferece cinco opções de modelos para a criação dos bots com suporte para .NET e Node.js.
 
 > [!IMPORTANT]
-> É preciso ter uma assinatura do Microsoft Azure para poder usar o Serviço de Bot. Se você ainda não tiver uma assinatura, poderá se inscrever para uma <a href="https://azure.microsoft.com/en-us/free/" target="_blank">conta gratuita</a>.
+> É preciso ter uma assinatura do Microsoft Azure para poder usar o Serviço de Bot. Se você ainda não tiver uma assinatura, poderá se inscrever para uma <a href="https://azure.microsoft.com/free/" target="_blank">conta gratuita</a>.
 
 ## <a name="hosting-plans"></a>Planos de hospedagem
 O Serviço de Bot oferece dois planos de hospedagem para os seus bots. Escolha um plano de hospedagem que atenda às suas necessidades.

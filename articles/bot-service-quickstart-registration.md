@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: abs
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: a5cb6431988e65a4fa4a889f3095404622d51626
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: 0d13a27ef81660c6702f5a09487b731bc891c750
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54224441"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67405799"
 ---
 # <a name="register-a-bot-with-bot-service"></a>Registrar um bot com o Serviço de Bot
 
@@ -29,7 +29,7 @@ Se você já tiver um bot hospedado em outro lugar e quiser usar o Serviço de B
 Faça logon no [Portal do Azure](http://portal.azure.com).
 
 > [!TIP]
-> Se você ainda não tiver uma assinatura, poderá se inscrever para uma <a href="https://azure.microsoft.com/en-us/free/" target="_blank">conta gratuita</a>.
+> Se você ainda não tiver uma assinatura, poderá se inscrever para uma <a href="https://azure.microsoft.com/free/" target="_blank">conta gratuita</a>.
 
 ## <a name="create-a-bot-channels-registration"></a>Criar um Registro de Canais de Bot
 Você precisa de um serviço de bot de **Registro de Canais de Bot** para poder usar a funcionalidade do Serviço de Bot. Um bot de registro permite conectar o seu bot aos canais.
@@ -50,7 +50,7 @@ Para criar um **Registro de Canais de Bot**, faça o seguinte:
    |         <strong>Assinatura</strong>          |        Sua assinatura        |                                                                                Selecione a assinatura do Azure que deseja usar.                                                                                 |
    |        <strong>Grupo de recursos</strong>         |         myResourceGroup         |                                 Crie um [grupo de recursos](/azure/azure-resource-manager/resource-group-overview#resource-groups) ou escolha um existente.                                  |
    |                    Local padrão                    |             Oeste dos EUA             |                                                        Escolha um local perto de onde o seu bot está implantado ou perto de outros serviços que o seu bot acessará.                                                         |
-   |         <strong>Tipo de preços</strong>          |               F0                |             Selecione um tipo de preço. Você pode atualizar o tipo de preço a qualquer momento. Para saber mais, veja [Preços do Serviço de Bot](https://azure.microsoft.com/en-us/pricing/details/bot-service/).              |
+   |         <strong>Tipo de preços</strong>          |               F0                |             Selecione um tipo de preço. Você pode atualizar o tipo de preço a qualquer momento. Para saber mais, veja [Preços do Serviço de Bot](https://azure.microsoft.com/pricing/details/bot-service/).              |
    |      <strong>Ponto de extremidade de mensagens</strong>       |               URL               |                                                                               Insira a URL do ponto de extremidade de mensagens do seu bot.                                                                                |
    |     <strong>Application Insights</strong>      |               Por                | Decida se deseja deixar o [Application Insights](bot-service-manage-analytics.md) <strong>Ativado</strong> ou <strong>Desativado</strong>. Se você selecionar <strong>Ativar</strong>, será preciso especificar também um local regional. |
    | <strong>ID e senha do Aplicativo da Microsoft</strong> | Criar ID do Aplicativo e senha automaticamente |              Use essa opção se precisar inserir manualmente uma ID do Aplicativo e uma senha da Microsoft. Caso contrário, um novo ID e uma nova senha de Aplicativo da Microsoft serão criados para você no processo de criação do bot.               |

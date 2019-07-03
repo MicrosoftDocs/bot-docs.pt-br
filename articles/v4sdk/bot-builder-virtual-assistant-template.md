@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: ce3ab86d5716250e24a44268f5e5fc39fbdd3398
-ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
+ms.openlocfilehash: 503ec19444c51120bf46838e14edb891ec5c3bb5
+ms.sourcegitcommit: dbbfcf45a8d0ba66bd4fb5620d093abfa3b2f725
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66214169"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67464659"
 ---
 # <a name="virtual-assistant---template-outline"></a>Assistente Virtual - Descrição do Modelo
 
@@ -30,11 +30,11 @@ Modelo LUIS básico  | Oferece suporte a intenções comuns, como **Cancelar**, 
 Diálogos básicos | Fluxos de diálogo para captura de informações básicas do usuário, bem como lógica de interrupção das intenções de cancelar e de ajuda
 Respostas de base  | Respostas de texto e fala para intenções de base e diálogos
 Perguntas frequentes | Integração com [QnA Maker](https://www.qnamaker.ai) para responder a perguntas gerais de uma base de conhecimento 
-Bate-papo | Um modelo de bate-papo profissional para fornecer respostas padrão às consultas comuns ([saiba mais](https://docs.microsoft.com/en-us/azure/cognitive-services/qnamaker/how-to/chit-chat-knowledge-base))
-Dispatcher | Um modelo [Dispatch](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-tutorial-dispatch?view=azure-bot-service-4.0&tabs=csaddref%2Ccsbotconfig) integrado para identificar se um determinado enunciado deve ser processado por LUIS ou QnA Maker.
+Bate-papo | Um modelo de bate-papo profissional para fornecer respostas padrão às consultas comuns ([saiba mais](https://docs.microsoft.com/azure/cognitive-services/qnamaker/how-to/chit-chat-knowledge-base))
+Dispatcher | Um modelo [Dispatch](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-dispatch?view=azure-bot-service-4.0&tabs=csaddref%2Ccsbotconfig) integrado para identificar se um determinado enunciado deve ser processado por LUIS ou QnA Maker.
 Suporte ao idioma | Disponível em inglês, francês, italiano, alemão, espanhol e chinês
 Transcrições | Transcrições de todas as conversas guardadas no Armazenamento do Azure
-Telemetria  | Integração do [Application Insights](https://azure.microsoft.com/en-gb/services/application-insights/) para coletar telemetria de todas as conversas
+Telemetria  | Integração do [Application Insights](https://azure.microsoft.com/services/application-insights/) para coletar telemetria de todas as conversas
 Análise | Um exemplo de painel do Power BI para ajudar você a começar a usar insights em suas experiências de conversação.
 Implantação automatizada | Implantação fácil de todos os serviços já mencionados utilizando modelos do Azure ARM.
 
@@ -95,7 +95,7 @@ Embora esse padrão tenha funcionado bem, havia dois cenários principais que po
 - Se as declarações no modelo do LUIS e no QnA Maker se sobrepunham ligeiramente, isso podia resultar em comportamento estranho, em que o LUIS tentava processar uma pergunta quando ela deveria ser direcionada ao QnA Maker.
 - Quando havia dois ou mais modelos de LUIS, um Bot tinha que invocar cada um deles e executar algum tipo de comparação de avaliação de intenção para identificar o destino de determinada declaração. Como não há nenhuma pontuação de linha de base comum, a comparação entre os modelos não funcionava com eficiência, resultando em uma experiência de usuário insatisfatória.
 
-O [Dispatcher](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-tutorial-dispatch?view=azure-bot-service-4.0&tabs=csaddref%2Ccsbotconfig) oferece uma solução elegante para isso extraindo declarações de cada modelo do LUIS configurado e perguntas do QnA Maker e criando um modelo do LUIS como expedição central.
+O [Dispatcher](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-dispatch?view=azure-bot-service-4.0&tabs=csaddref%2Ccsbotconfig) oferece uma solução elegante para isso extraindo declarações de cada modelo do LUIS configurado e perguntas do QnA Maker e criando um modelo do LUIS como expedição central.
 
 Isso permite que um Bot identifique rapidamente qual componente ou modelo do LUIS deve lidar com determinada expressão e faz com que os dados do QnA Maker sejam considerados no nível superior do processamento de intenções, não só na intenção None, como antes.
 

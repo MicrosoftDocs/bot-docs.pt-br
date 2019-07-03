@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 5c2b8832401ccc9260c9aa872c0848b3a3e8445b
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: 34f2cb79d4dcef9ddb68c6de0333a94b4128b301
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225711"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67404699"
 ---
 # <a name="manage-custom-state-data-with-azure-table-storage-for-nodejs"></a>Gerenciar dados de estado personalizado com o armazenamento de Tabela do Azure para Node.js
 
@@ -37,7 +37,7 @@ Neste artigo, você implementará o armazenamento de Tabela do Azure para armaze
 - [Gerenciador de Armazenamento](http://storageexplorer.com/).
 
 ## <a name="create-azure-account"></a>Criar conta do Azure
-Se você não tiver uma conta do Azure, clique em [aqui](https://azure.microsoft.com/en-us/free/) para se inscrever para uma conta gratuita.
+Se você não tiver uma conta do Azure, clique em [aqui](https://azure.microsoft.com/free/) para se inscrever para uma conta gratuita.
 
 ## <a name="set-up-the-azure-table-storage-service"></a>Configurar o serviço de armazenamento de tabelas do Azure
 1. Depois de efetuar login no portal do Azure, crie um novo serviço de armazenamento do Azure Table clicando em **Novo**. 
@@ -73,7 +73,7 @@ Para usar seu armazenamento de **Tabela do Azure**, adicione as seguintes linhas
    ```
    Os valores `storageName` e `storageKay` podem ser encontrados no menu **Chaves de acesso** de sua Tabela do Azure. Se `tableName` não existir na Tabela do Azure, ele será criado para você.
 
-3. Usando o módulo `botbuilder-azure`, crie dois objetos novos para se conectar à Tabela do Azure. Primeiro, crie uma instância de `AzureTableClient` passando as definições de configuração de conexão. Em seguida, crie uma instância de `AzureBotStorage` passando o `AzureTableClient` objeto. Por exemplo: 
+3. Usando o módulo `botbuilder-azure`, crie dois objetos novos para se conectar à Tabela do Azure. Primeiro, crie uma instância de `AzureTableClient` passando as definições de configuração de conexão. Em seguida, crie uma instância de `AzureBotStorage` passando o `AzureTableClient` objeto. Por exemplo:
 
    ```javascript
    var azureTableClient = new azure.AzureTableClient(tableName, storageName, storageKey);
@@ -81,7 +81,7 @@ Para usar seu armazenamento de **Tabela do Azure**, adicione as seguintes linhas
    var tableStorage = new azure.AzureBotStorage({gzipData: false}, azureTableClient);
    ```
 
-4. Especifique que você deseja usar seu banco de dados personalizado em vez do armazenamento na memória, e adicione informações de sessão ao banco de dados. Por exemplo: 
+4. Especifique que você deseja usar seu banco de dados personalizado em vez do armazenamento na memória, e adicione informações de sessão ao banco de dados. Por exemplo:
 
    ```javascript
    var bot = new builder.UniversalBot(connector, function (session) {

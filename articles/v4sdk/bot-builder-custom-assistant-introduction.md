@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f4b8243580ee678390177881b136a9016be4a786
-ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
+ms.openlocfilehash: eba4ad9ba2fae85fbc2488e5fef8d5a7dac593ee
+ms.sourcegitcommit: dbbfcf45a8d0ba66bd4fb5620d093abfa3b2f725
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215461"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67464757"
 ---
 ## <a name="custom-assistant-overview"></a>Visão geral do Assistente Personalizado
 
@@ -35,17 +35,17 @@ Todos os aspectos da experiência do usuário final são seus e é você que os 
 
 ## <a name="complete-ownership-and-control-of-data"></a>Total controle de dados e propriedade
 
-O Assistente Personalizado que será implantado na assinatura do Azure. Portanto, todos os dados gerados pelo seu assistente (perguntas feitas, comportamento do usuário e outros) ficam inteiramente restritos à sua assinatura do Azure. Confira mais especificamente a [Nuvem Confiável do Azure para os Serviços Cognitivos](https://www.microsoft.com/en-us/trustcenter/cloudservices/cognitiveservices) e a [seção do Azure na Central de Confiabilidade](https://www.microsoft.com/en-us/TrustCenter/CloudServices/Azure) para obter mais informações.
+O Assistente Personalizado que será implantado na assinatura do Azure. Portanto, todos os dados gerados pelo seu assistente (perguntas feitas, comportamento do usuário e outros) ficam inteiramente restritos à sua assinatura do Azure. Confira mais especificamente a [Nuvem Confiável do Azure para os Serviços Cognitivos](https://www.microsoft.com/trustcenter/cloudservices/cognitiveservices) e a [seção do Azure na Central de Confiabilidade](https://www.microsoft.com/TrustCenter/CloudServices/Azure) para obter mais informações.
 
 ## <a name="your-assistant-anywhere"></a>Seu assistente em qualquer lugar...
 
-O Assistente Personalizado utiliza a plataforma de inteligência artificial de conversação da Microsoft e, portanto, pode aparecer em qualquer [canal](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-manage-channels?view=azure-bot-service-4.0) do Bot Framework, por exemplo, WebChat, FaceBook Messenger, Skype, etc. Além disso, pelo canal [Linha Direta](https://docs.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-direct-line-3-0-concepts?view=azure-bot-service-4.0), podemos inserir experiências na área de trabalho e nos aplicativos móveis, incluindo dispositivos como Carros, Alto-falantes, Despertadores, etc.
+O Assistente Personalizado utiliza a plataforma de inteligência artificial de conversação da Microsoft e, portanto, pode aparecer em qualquer [canal](https://docs.microsoft.com/azure/bot-service/bot-service-manage-channels?view=azure-bot-service-4.0) do Bot Framework, por exemplo, WebChat, FaceBook Messenger, Skype, etc. Além disso, pelo canal [Linha Direta](https://docs.microsoft.com/azure/bot-service/rest-api/bot-framework-rest-direct-line-3-0-concepts?view=azure-bot-service-4.0), podemos inserir experiências na área de trabalho e nos aplicativos móveis, incluindo dispositivos como Carros, Alto-falantes, Despertadores, etc.
 
 ## <a name="built-on-enterprise-grade-technology"></a>Baseado na mesma tecnologia do Enterprise
 
-A solução Assistente Personalizado é criada com base no Serviço de Bot do Azure, no Serviço Cognitivo de Reconhecimento Vocal, na Fala Unificada e em um amplo conjunto de componentes de suporte do Azure, o que significa que você se beneficia da [infraestrutura global do Azure](https://azure.microsoft.com/en-gb/global-infrastructure/).
+A solução Assistente Personalizado é criada com base no Serviço de Bot do Azure, no Serviço Cognitivo de Reconhecimento Vocal, na Fala Unificada e em um amplo conjunto de componentes de suporte do Azure, o que significa que você se beneficia da [infraestrutura global do Azure](https://azure.microsoft.com/global-infrastructure/).
 
-Além disso, o suporte ao Reconhecimento Vocal é fornecido pelo Serviço Cognitivo LUIS, que dá suporte a um amplo conjunto de idiomas [listados aqui](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-supported-languages). O [Serviço Cognitivo de Tradução](https://azure.microsoft.com/en-us/services/cognitive-services/translator-text-api/) fornece recursos adicionais de Tradução Automática para ampliar ainda mais o alcance de seu Assistente Personalizado.
+Além disso, o suporte ao Reconhecimento Vocal é fornecido pelo Serviço Cognitivo LUIS, que dá suporte a um amplo conjunto de idiomas [listados aqui](https://docs.microsoft.com/azure/cognitive-services/luis/luis-supported-languages). O [Serviço Cognitivo de Tradução](https://azure.microsoft.com/services/cognitive-services/translator-text-api/) fornece recursos adicionais de Tradução Automática para ampliar ainda mais o alcance de seu Assistente Personalizado.
 
 ## <a name="integrated-and-context-aware"></a>Integrado e contextual
 
@@ -61,7 +61,7 @@ A arquitetura do Assistente Personalizado é flexível e pode ser integrada a ou
 
 ## <a name="adaptive-cards"></a>Cartões Adaptáveis
 
-Os [Cartões Adaptáveis](https://adaptivecards.io/) permitem que o Assistente Personalizado retorne elementos da Experiência do usuário (por exemplo, Cartões, Imagens, Botões) juntamente com respostas de texto. Se a tela do dispositivo ou da conversa tiver uma tela, esses Cartões Adaptáveis podem ser renderizados entre vários dispositivos e plataformas, oferecendo suporte à Experiência do usuário quando for o caso. Exemplos de Cartões Adaptáveis podem ser encontrados [aqui](https://adaptivecards.io/samples/), com informações sobre as opções de renderização [nesta](https://docs.microsoft.com/en-us/adaptive-cards/rendering-cards/getting-started) documentação.
+Os [Cartões Adaptáveis](https://adaptivecards.io/) permitem que o Assistente Personalizado retorne elementos da Experiência do usuário (por exemplo, Cartões, Imagens, Botões) juntamente com respostas de texto. Se a tela do dispositivo ou da conversa tiver uma tela, esses Cartões Adaptáveis podem ser renderizados entre vários dispositivos e plataformas, oferecendo suporte à Experiência do usuário quando for o caso. Exemplos de Cartões Adaptáveis podem ser encontrados [aqui](https://adaptivecards.io/samples/), com informações sobre as opções de renderização [nesta](https://docs.microsoft.com/adaptive-cards/rendering-cards/getting-started) documentação.
 
 
 ## <a name="skills"></a>Habilidades

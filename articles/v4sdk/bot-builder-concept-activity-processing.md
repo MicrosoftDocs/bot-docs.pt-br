@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 69ce362f35054c5ee42035d8bffefb17c6fa7f71
-ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
+ms.openlocfilehash: 0e0fe51e33e99bbb35ef1d731b611ff9ca12a138
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215501"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67404313"
 ---
 # <a name="activity-processing"></a>Processamento de atividade
 
@@ -23,7 +23,7 @@ ms.locfileid: "66215501"
 
 O bot e o usuário interagem e trocam informações por meio de atividades. Cada atividade recebida pelo seu aplicativo bot é passada para um adaptador de bot, que transmite informações de atividade para sua lógica de bot e, finalmente, envia qualquer resposta para o usuário. Receber uma atividade e subsequentemente processá-la por meio do seu bot, é chamado de um turno; isto representa um ciclo completo do seu bot. Um turno termina quando toda a execução é feita, a atividade é totalmente processada e todas as camadas do bot foram concluídas.
 
-Atividades, particularmente aquelas que [são enviadas de um bot](#generating-responses) durante um turno de bot, são tratadas de forma assíncrona. É uma parte necessária da construção de um bot; Se você precisar revisar como tudo isso funciona, confira [async for .NET](https://docs.microsoft.com/en-us/dotnet/csharp/async) ou [async para JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function), dependendo da sua opção de idioma.
+Atividades, particularmente aquelas que [são enviadas de um bot](#generating-responses) durante um turno de bot, são tratadas de forma assíncrona. É uma parte necessária da construção de um bot; Se você precisar revisar como tudo isso funciona, confira [async for .NET](https://docs.microsoft.com/dotnet/csharp/async) ou [async para JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function), dependendo da sua opção de idioma.
 
 ## <a name="the-bot-adapter"></a>O adaptador de bot
 

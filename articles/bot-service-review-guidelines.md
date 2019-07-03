@@ -1,9 +1,17 @@
+---
+ms.openlocfilehash: bbdad5f0cb51d99cf886070dd8400acae0ed24bb
+ms.sourcegitcommit: dbbfcf45a8d0ba66bd4fb5620d093abfa3b2f725
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67464570"
+---
 # <a name="bot-review-guidelines"></a>Diretrizes de revisão de bot
 
 Agradecemos por investir seu tempo e talento na criação de bot, botlets, aplicativos Web, suplementos ou habilidades ("integrações de aplicativo") para canais da Microsoft. Esses são os requisitos mínimos que a integração de aplicativo deve atender antes de ser publicada em um canal da Microsoft, como Skype ou Microsoft Teams. Cada canal pode ter requisitos específicos, além dos requisitos detalhados abaixo. Se aplicável, você encontrará termos específicos do canal na página de configuração de cada canal e talvez seja necessário inscrever-se no serviço de um canal antes de publicar um bot nesse canal.
 
 ## <a name="app-integration-policies"></a>Políticas de integração de aplicativo
-###  <a name="1-value-representation-security-and-usability"></a>1. Valor, Representação, Segurança e Usabilidade.
+### <a name="1-value-representation-security-and-usability"></a>1. Valor, Representação, Segurança e Usabilidade.
 
 A integração de aplicativo e os metadados associados devem:
 

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 3e1ebc07c73dcd7033a6b9a22c94379593c5890e
-ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
+ms.openlocfilehash: 7b3380a409641bd7d406c877ebcbf83ddf15431c
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215260"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67404443"
 ---
 # <a name="testing-and-debugging-guidelines"></a>Como testar e depurar diretrizes
 
@@ -65,7 +65,7 @@ A maneira de fazer isso pode variar bastante, do uso individual de diferentes ca
 
 ### <a name="other-testing"></a>Outros testes
 
-Diferentes tipos de teste podem ser feitos em conjunto com os níveis acima ou em ângulos diferentes, como o teste de estresse, o teste de desempenho ou a criação de perfil da atividade do bot. O Visual Studio fornece métodos para fazer isso localmente, bem como um [pacote de ferramentas](https://azure.microsoft.com/en-us/solutions/dev-test/) para testar o aplicativo, e o [portal do Azure](https://portal.azure.com) fornece insights sobre o desempenho do bot.
+Diferentes tipos de teste podem ser feitos em conjunto com os níveis acima ou em ângulos diferentes, como o teste de estresse, o teste de desempenho ou a criação de perfil da atividade do bot. O Visual Studio fornece métodos para fazer isso localmente, bem como um [pacote de ferramentas](https://azure.microsoft.com/solutions/dev-test/) para testar o aplicativo, e o [portal do Azure](https://portal.azure.com) fornece insights sobre o desempenho do bot.
 
 ## <a name="debugging"></a>Depurando
 
@@ -105,7 +105,7 @@ For example [QnA maker](bot-builder-howto-qna.md) is designed to handle certain 
 
 O acompanhamento do estado é uma parte importante do bot, particularmente, para tarefas complexas. Em geral, a melhor prática é processar as atividades o mais rapidamente possível e permitir a conclusão do processamento para que o estado seja persistido. As atividades podem ser enviadas ao bot praticamente ao mesmo tempo, e isso pode introduzir bugs muito confusos devido à arquitetura assíncrona.
 
-O mais importante é garantir a persistência do estado de uma maneira que corresponda às suas expectativas. Dependendo do local em que reside o estado persistente, os emuladores de armazenamento do [Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator) e do [Armazenamento de Tabelas do Azure](https://docs.microsoft.com/en-us/azure/storage/common/storage-use-emulator) podem ajudá-lo a verificar o estado antes de usar o armazenamento de produção.
+O mais importante é garantir a persistência do estado de uma maneira que corresponda às suas expectativas. Dependendo do local em que reside o estado persistente, os emuladores de armazenamento do [Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/local-emulator) e do [Armazenamento de Tabelas do Azure](https://docs.microsoft.com/azure/storage/common/storage-use-emulator) podem ajudá-lo a verificar o estado antes de usar o armazenamento de produção.
 
 ### <a name="how-to-use-activity-handlers"></a>Como usar manipuladores de atividades
 
@@ -117,9 +117,9 @@ O método _enviar atividade_ e seus manipuladores apresentam um único problema.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Depurando no Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/index)
-* [Depurando, rastreando e criando um perfil](https://docs.microsoft.com/en-us/dotnet/framework/debug-trace-profile/) para o Bot Framework
-* Usar o [ConditionalAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.conditionalattribute?view=netcore-2.0) para métodos que você não deseja incluir no código de produção
+* [Depurando no Visual Studio](https://docs.microsoft.com/visualstudio/debugger/index)
+* [Depurando, rastreando e criando um perfil](https://docs.microsoft.com/dotnet/framework/debug-trace-profile/) para o Bot Framework
+* Usar o [ConditionalAttribute](https://docs.microsoft.com/dotnet/api/system.diagnostics.conditionalattribute?view=netcore-2.0) para métodos que você não deseja incluir no código de produção
 * Usar ferramentas como o [Fiddler](https://www.telerik.com/fiddler) para ver o tráfego de rede
 * [Repositório de ferramentas de bot](https://github.com/Microsoft/botbuilder-tools)
 * Estruturas podem ajudá-lo com o teste, como o [Moq](https://github.com/moq/moq4)

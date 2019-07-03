@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: b9b210ad215e091801456750237978babd029696
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: aa8a97bce9f14c8383db4e4ff1e66f4039d88129
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54224641"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67405729"
 ---
 # <a name="add-input-hints-to-messages"></a>Adicionar dicas de entrada às mensagens
 
@@ -72,5 +72,5 @@ Se você não definir a dica de entrada para uma mensagem, o SDK do Bot Framewor
 
 - [Criar mensagens](bot-builder-dotnet-create-messages.md)
 - [Adicionar fala a mensagens](bot-builder-dotnet-text-to-speech.md)
-- <a href="https://docs.botframework.com/en-us/csharp/builder/sdkreference/dc/d2f/class_microsoft_1_1_bot_1_1_connector_1_1_activity.html" target="_blank">Classe Activity</a>
+- <a href="https://docs.botframework.com/csharp/builder/sdkreference/dc/d2f/class_microsoft_1_1_bot_1_1_connector_1_1_activity.html" target="_blank">Classe Activity</a>
 - <a href="/dotnet/api/microsoft.bot.connector.inputhints" target="_blank">Classe InputHints</a>

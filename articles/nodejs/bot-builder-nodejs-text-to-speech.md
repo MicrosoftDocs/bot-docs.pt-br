@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 5ae3acded991411156d3e69f4ed9360df9bdccb1
-ms.sourcegitcommit: 4c5c08e7c7eaa5f74c6ac35d8478954b998625f9
+ms.openlocfilehash: 14b8bf7aa4e99e3ca97442c2ba57dc8c57138d99
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64906303"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67404692"
 ---
 # <a name="add-speech-to-messages"></a>Adicionar fala a mensagens
 
@@ -46,7 +46,7 @@ Como alternativa ao uso de `session.send()`, você pode chamar o método `sessio
 | Parâmetro | DESCRIÇÃO |
 |----|----|
 | `displayText` | O texto a ser exibido. |
-| `speechText` | O texto (em texto simples ou no formato <a href="https://msdn.microsoft.com/en-us/library/hh378377(v=office.14).aspx" target="_blank">SSML</a>) deve ser falado. |
+| `speechText` | O texto (em texto simples ou no formato <a href="https://msdn.microsoft.com/library/hh378377(v=office.14).aspx" target="_blank">SSML</a>) deve ser falado. |
 | `options` | Um objeto `IMessage` que pode conter um anexo ou [dica de entrada](bot-builder-nodejs-send-input-hints.md). |
 
 O exemplo de código a seguir cria uma mensagem que especifica o texto a ser exibido e o texto a ser falado e indica que o bot está [aceitando a entrada do usuário](bot-builder-nodejs-send-input-hints.md).
@@ -61,7 +61,7 @@ Usando qualquer um dos prompts internos, você pode definir as opções `speak` 
 
 ## <a id="ssml"></a> Linguagem de marcação de síntese de fala (SSML)
 
-Para especificar o texto a ser falado pelo seu bot, você pode usar uma string de texto simples ou uma string formatada como SSML (linguagem de marcação de síntese de fala), uma linguagem de marcação baseada em XML que permite controlar várias características do discurso do bot. como voz, taxa, volume, pronúncia, tom e muito mais. Para obter detalhes sobre SSML, consulte <a href="https://msdn.microsoft.com/en-us/library/hh378377(v=office.14).aspx" target="_blank">Referência da Linguagem de Marcação de Síntese de Fala</a>.
+Para especificar o texto a ser falado pelo seu bot, você pode usar uma string de texto simples ou uma string formatada como SSML (linguagem de marcação de síntese de fala), uma linguagem de marcação baseada em XML que permite controlar várias características do discurso do bot. como voz, taxa, volume, pronúncia, tom e muito mais. Para obter detalhes sobre SSML, consulte <a href="https://msdn.microsoft.com/library/hh378377(v=office.14).aspx" target="_blank">Referência da Linguagem de Marcação de Síntese de Fala</a>.
 
 > [!TIP]
 > Use uma <a href="https://www.npmjs.com/search?q=ssml" target="_blank">biblioteca SSML</a> para criar um SSML bem formatado.
@@ -76,5 +76,5 @@ Veja um exemplo completo que mostra como criar um bot habilitado para fala usand
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- <a href="https://msdn.microsoft.com/en-us/library/hh378377(v=office.14).aspx" target="_blank">Linguagem de marcação de síntese de fala (SSML)</a>
+- <a href="https://msdn.microsoft.com/library/hh378377(v=office.14).aspx" target="_blank">Linguagem de marcação de síntese de fala (SSML)</a>
 - <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/demo-RollerSkill" target="_blank">Exemplo de rolo de pintura (GitHub)</a>

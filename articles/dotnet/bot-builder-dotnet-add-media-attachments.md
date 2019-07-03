@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 6dcfe6595f1c5961151a90783dd8ceee9c7684dd
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: a719ae4b3aa3fbf61503b4a6f055ec5cc3f5104a
+ms.sourcegitcommit: dbbfcf45a8d0ba66bd4fb5620d093abfa3b2f725
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54224331"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67464591"
 ---
 # <a name="add-media-attachments-to-messages"></a>Adicionar anexos de mídia às mensagens
 
@@ -25,7 +25,9 @@ ms.locfileid: "54224331"
 > - [Node.js](../nodejs/bot-builder-nodejs-send-receive-attachments.md)
 > - [REST](../rest-api/bot-framework-rest-connector-add-media-attachments.md)
 
-Uma troca de mensagens entre o usuário e o bot pode conter anexos de mídia (por exemplo, imagem, vídeo, áudio e arquivo). A propriedade `Attachments` do objeto <a href="https://docs.botframework.com/en-us/csharp/builder/sdkreference/dc/d2f/class_microsoft_1_1_bot_1_1_connector_1_1_activity.html" target="_blank">Atividade</a> contém uma matriz de objetos <a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.bot.connector.attachments?view=botconnector-3.12.2.4" target="_blank">Anexo</a> que representam os anexos de mídia e os cartões avançados na mensagem. 
+Uma troca de mensagens entre o usuário e o bot pode conter anexos de mídia (por exemplo, imagem, vídeo, áudio e arquivo). 
+
+A propriedade `Attachments` do objeto <a href="https://docs.botframework.com/csharp/builder/sdkreference/dc/d2f/class_microsoft_1_1_bot_1_1_connector_1_1_activity.html" target="_blank">Atividade</a> contém uma matriz de objetos <a href="https://docs.microsoft.com/dotnet/api/microsoft.bot.connector.attachments?view=botconnector-3.12.2.4" target="_blank">Anexo</a> que representam os anexos de mídia e os cartões avançados na mensagem. 
 
 > [!NOTE]
 > [Adicionar cartões avançados às mensagens](bot-builder-dotnet-add-rich-card-attachments.md).
@@ -44,8 +46,8 @@ Se um anexo for uma imagem, áudio ou vídeo, o serviço Connector comunicará o
 - [Visão geral das atividades](bot-builder-dotnet-activities.md)
 - [Criar mensagens](bot-builder-dotnet-create-messages.md)
 - [Adicionar cartões avançados às mensagens](bot-builder-dotnet-add-rich-card-attachments.md)
-- <a href="https://docs.botframework.com/en-us/csharp/builder/sdkreference/dc/d2f/class_microsoft_1_1_bot_1_1_connector_1_1_activity.html" target="_blank">Classe da atividade</a>
-- <a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.bot.connector.attachments?view=botconnector-3.12.2.4" target="_blank">Classe do anexo</a>
+- <a href="https://docs.botframework.com/csharp/builder/sdkreference/dc/d2f/class_microsoft_1_1_bot_1_1_connector_1_1_activity.html" target="_blank">Classe da atividade</a>
+- <a href="https://docs.microsoft.com/dotnet/api/microsoft.bot.connector.attachments?view=botconnector-3.12.2.4" target="_blank">Classe do anexo</a>
 
 [inspector]: ../bot-service-channel-inspector.md
 

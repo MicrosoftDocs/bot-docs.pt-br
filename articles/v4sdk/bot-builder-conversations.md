@@ -10,17 +10,17 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 167e496fa510cdf755be13f71cf3a596b0183ec1
-ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
+ms.openlocfilehash: 3138b591519ff76865f007ae091c6c33cd0da79c
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215472"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67404142"
 ---
 # <a name="conversation-flow"></a>Fluxo de conversa
 [!INCLUDE[applies-to](../includes/applies-to.md)]
 
-Projetar o fluxo de conversa de um bot envolve decidir como um bot responderá quando o usuário disser alguma coisa ao bot. Um bot primeiro reconhece a tarefa ou o tópico de conversa com base em uma mensagem do usuário. Para determinar a tarefa ou o tópico (conhecido como a *intenção*) associado à mensagem de um usuário, o bot pode procurar palavras ou padrões no texto da mensagem do usuário ou aproveitar serviços como [Serviço Inteligente de Reconhecimento Vocal](bot-builder-concept-luis.md) e [QnA Maker](https://docs.microsoft.com/en-us/azure/cognitive-services/qnamaker/overview/overview).
+Projetar o fluxo de conversa de um bot envolve decidir como um bot responderá quando o usuário disser alguma coisa ao bot. Um bot primeiro reconhece a tarefa ou o tópico de conversa com base em uma mensagem do usuário. Para determinar a tarefa ou o tópico (conhecido como a *intenção*) associado à mensagem de um usuário, o bot pode procurar palavras ou padrões no texto da mensagem do usuário ou aproveitar serviços como [Serviço Inteligente de Reconhecimento Vocal](bot-builder-concept-luis.md) e [QnA Maker](https://docs.microsoft.com/azure/cognitive-services/qnamaker/overview/overview).
 
 Quando o bot reconhecer a intenção do usuário, dependendo do cenário, o bot poderá atender à solicitação do usuário com uma resposta única, completando a conversa em um turno ou poderá exigir uma série de turnos. Para fluxos de conversa multiturno, o SDK do Bot Framework fornece [gerenciamento de estado](./bot-builder-howto-v4-state.md) para controlar uma conversa, [solicitações](bot-builder-prompts.md) de informações e [diálogos](bot-builder-dialog-manage-conversation-flow.md) para encapsular os fluxos de conversa.
 

@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: dfa52914b3f0a2e81f4ff3a2f90c7404bfe53d4a
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: f0b933a5bdcea5090ede1b2f589cd69f9e681757
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225991"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67405017"
 ---
 # <a name="dialogs-in-the-bot-framework-sdk-for-nodejs"></a>Diálogos no SDK do Bot Framework para Node.js
 
@@ -53,7 +53,7 @@ Quando uma conversa de bot for iniciada pela primeira vez ou quando ela for ence
 Antes da versão 3.5 do Bot Framework, um diálogo *raiz* era definido adicionando um diálogo chamado `/`, que levava a convenções de nomenclatura similares às de URLs. Essas conversões de nomenclatura não eram apropriadas para diálogos de nomenclatura. 
 
 > [!NOTE]
-> A partir da versão 3.5 do Bot Framework, o *diálogo padrão* passou a ser registrado como o segundo parâmetro no construtor de [`UniversalBot`](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.universalbot.html#constructor).  
+> A partir da versão 3.5 do Bot Framework, o *diálogo padrão* passou a ser registrado como o segundo parâmetro no construtor de [`UniversalBot`](https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.universalbot.html#constructor).  
 
 O snippet de código a seguir mostra como definir o diálogo padrão ao criar o objeto `UniversalBot`.
 
@@ -71,7 +71,7 @@ O manipulador de diálogo gerencia o fluxo de uma conversa. Para percorrer uma c
 
 ## <a name="starting-and-ending-dialogs"></a>Iniciar e encerrar diálogos
 
-Para iniciar um novo diálogo (e enviá-lo para a pilha), use [`session.beginDialog()`](http://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session#begindialog). Para encerrar um diálogo (e removê-lo da pilha, retornando o controle para o diálogo de chamada), use [`session.endDialog()`](http://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session#enddialog) ou [`session.endDialogWithResult()`](http://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session#enddialogwithresult). 
+Para iniciar um novo diálogo (e enviá-lo para a pilha), use [`session.beginDialog()`](http://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.session#begindialog). Para encerrar um diálogo (e removê-lo da pilha, retornando o controle para o diálogo de chamada), use [`session.endDialog()`](http://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.session#enddialog) ou [`session.endDialogWithResult()`](http://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.session#enddialogwithresult). 
 
 ## <a name="using-waterfalls-and-prompts"></a>Usando cascatas e prompts
 

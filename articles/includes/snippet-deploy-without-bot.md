@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: 4b5181babf728861107a0c7bc28f844491761a7a
-ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
+ms.openlocfilehash: 117f95799df0abbe957000d4979b10f05baf262c
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65033880"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67405530"
 ---
-Antes de iniciar a implantação, verifique se você tem a versão mais recente da [CLI do Azure](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) e da [CLI do dotnet](https://dotnet.microsoft.com/download). Se você não tiver a CLI do dotnet, instale-a usando a opção Tempo de Execução do .Net Core no link fornecido acima. 
+Antes de iniciar a implantação, verifique se você tem a versão mais recente da [CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) e da [CLI do dotnet](https://dotnet.microsoft.com/download). Se você não tiver a CLI do dotnet, instale-a usando a opção Tempo de Execução do .Net Core no link fornecido acima. 
 
 ### <a name="login-to-azure-cli-and-set-your-subscription"></a>Faça logon na CLI do Azure e configure sua assinatura
 Você já criou e testou um bot localmente, e agora deseja implantá-lo no Azure. Abra um prompt de comando para fazer logon no portal do Azure.
@@ -92,7 +92,7 @@ Depois que o bot é criado, você deve ver as seguintes informações exibidas n
 }
 ```
 
-Você precisará copiar os valores `appId` e `appPassword` e colá-los no arquivo appsettings.json ou .env. Por exemplo: 
+Você precisará copiar os valores `appId` e `appPassword` e colá-los no arquivo appsettings.json ou .env. Por exemplo:
 
 ```JSON
 {

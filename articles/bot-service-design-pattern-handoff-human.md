@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 5/2/2019
-ms.openlocfilehash: a5bb8d8dce1fdb45ab9ab42b247e2697713e51ac
-ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
+ms.openlocfilehash: d1fed33682349948d1b33d9b4fecdf718a20a248
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65033047"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67405840"
 ---
 # <a name="transition-conversations-from-bot-to-human"></a>Fazer a transição de conversas do bot para humanos
 
@@ -42,7 +42,7 @@ O bot pode decidir se deseja ou não transferir o controle baseado na sua capaci
 
 Compreensão de linguagem natural e análise de sentimento ajudam o bot decidir quando transferir o controle da conversa a um agente humano. Isso é particularmente importante ao tentar determinar quando o usuário está frustrado ou quer falar com um agente humano. 
  
-O bot analisa o conteúdo das mensagens do usuário usando a <a href="https://www.microsoft.com/cognitive-services/en-us/text-analytics-api" target="blank">API de Análise de Texto</a> para inferir sentimento ou usando a <a href="https://www.luis.ai" target="_blank">API LUIS</a>. 
+O bot analisa o conteúdo das mensagens do usuário usando a <a href="https://www.microsoft.com/cognitive-services/text-analytics-api" target="blank">API de Análise de Texto</a> para inferir sentimento ou usando a <a href="https://www.luis.ai" target="_blank">API LUIS</a>. 
 
 
 > [!TIP]
@@ -77,7 +77,7 @@ Depois que o agente se conecta ao bot, o bot começa a encaminhar mensagens entr
 ::: moniker range="azure-bot-service-4.0"
 
 - [Diálogos](v4sdk/bot-builder-dialog-manage-conversation-flow.md)
-- <a href="https://www.microsoft.com/cognitive-services/en-us/text-analytics-api" target="blank">API de Análise de Texto do Azure Machine Learning</a>
+- <a href="https://www.microsoft.com/cognitive-services/text-analytics-api" target="blank">API de Análise de Texto do Azure Machine Learning</a>
 
 ::: moniker-end
 
@@ -85,7 +85,7 @@ Depois que o agente se conecta ao bot, o bot começa a encaminhar mensagens entr
 
 - [Gerenciar o fluxo da conversa com diálogos (.NET)](~/dotnet/bot-builder-dotnet-manage-conversation-flow.md)
 - [Gerenciar o fluxo da conversa com diálogos (Node.js)](~/nodejs/bot-builder-nodejs-manage-conversation-flow.md)
-- <a href="https://www.microsoft.com/cognitive-services/en-us/text-analytics-api" target="blank">API de Análise de Texto do Azure Machine Learning</a>
+- <a href="https://www.microsoft.com/cognitive-services/text-analytics-api" target="blank">API de Análise de Texto do Azure Machine Learning</a>
 
 
 ::: moniker-end
