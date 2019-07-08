@@ -9,21 +9,21 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 6bd918416c4eee9fc74809b0d5837012021556e0
-ms.sourcegitcommit: 152760771214865b9c7d0ed481acfba05bdc44dc
+ms.openlocfilehash: 25837bd9f462a2729a36fbd9decdc3e2bb6be0e3
+ms.sourcegitcommit: 697a577d72aaf91a0834d4b4c2ef5aa11291f28f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58655476"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67496659"
 ---
-# <a name="connect-a-bot-to-skype-for-business"></a>Conectar um bot ao Skype for Business
+# <a name="connect-a-bot-to-skype-for-business-preview"></a>Conectar um bot ao Skype for Business (versão prévia)
 
 O Skype for Business Online mantém você conectado com colegas e parceiros de negócios por meio de mensagens instantâneas, telefone e videochamadas. Amplie essa funcionalidade criando bots que os usuários podem descobrir e interagir por meio da interface do Skype for Business.
 
 > [!IMPORTANT]
 > **O canal Skype for Business no Bot Framework será preterido em 30 de junho de 2019.**
 > 
-> Nenhum novo bot conseguirá adicionar o canal Skype for Business após essa data.  Os bots existentes continuarão a funcionar até 31 de outubro de 2019. O Microsoft Teams é a ferramenta de comunicação preferencial da Microsoft.  Saiba como [conectar seu bot ao Microsoft Teams](https://msdn.microsoft.com/en-us/microsoft-teams/bots).
+> Nenhum novo bot conseguirá adicionar o canal Skype for Business após essa data.  Os bots existentes continuarão a funcionar até 31 de outubro de 2019. O Microsoft Teams é a ferramenta de comunicação preferencial da Microsoft.  Saiba como [conectar seu bot ao Microsoft Teams](https://msdn.microsoft.com/microsoft-teams/bots).
 
 ## <a name="enable-the-channel"></a>Habilitar o canal
 
@@ -32,7 +32,7 @@ Abra o bot no [Portal do Azure](https://portal.azure.com/), clique na folha **Ca
 A conexão do bot com o Skype for Business Online é executada por um **Administrador de Locatários** do locatário do Skype for Business.
 
 ## <a name="next-steps"></a>Próximas etapas
-* [Framework do Bot do Skype for Business](https://msdn.microsoft.com/en-us/skype/Skype-For-Business-Bot-Framework/docs/overview)
+* [Framework do Bot do Skype for Business](https://msdn.microsoft.com/skype/Skype-For-Business-Bot-Framework/docs/overview)
 
 
 

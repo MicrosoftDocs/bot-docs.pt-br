@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: efd47cb1ae48c34d58d673eaea04feeb1869b640
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: a3cff9a77de098ee524334183ba891068f176b6e
+ms.sourcegitcommit: dbbfcf45a8d0ba66bd4fb5620d093abfa3b2f725
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225441"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67464782"
 ---
 # <a name="key-concepts-in-the-bot-framework-sdk-for-nodejs"></a>Principais conceitos no SDK do Bot Framework para Node.js
 
@@ -27,15 +27,16 @@ ms.locfileid: "54225441"
 Este artigo apresenta os principais conceitos no SDK do Bot Framework para Node.js. Para obter uma introdução ao Bot Framework, consulte [visão geral do Bot Framework](../overview-introduction-bot-framework.md).
 
 ## <a name="connector"></a>Conector
+O Bot Framework Connector é um serviço que conecta seu bot a vários *canais*, que são clientes como [Teams](https://docs.microsoft.com/microsoftteams/platform/concepts/bots/bots-create), Skype, Facebook, Slack e SMS. 
 
-O Bot Framework Connector é um serviço que conecta seu bot a vários *canais*, que são clientes como Skype, Facebook, Slack e SMS. O Conector facilita a comunicação entre o bot e o usuário, transmitindo mensagens do bot para o canal e do canal para o bot. A lógica do seu bot é hospedada como um serviço web que recebe mensagens dos usuários através do serviço Connector, e as respostas do seu bot são enviadas para o Connector usando HTTPS POST. 
+O Conector facilita a comunicação entre o bot e o usuário, transmitindo mensagens do bot para o canal e do canal para o bot. A lógica do seu bot é hospedada como um serviço web que recebe mensagens dos usuários através do serviço Connector, e as respostas do seu bot são enviadas para o Connector usando HTTPS POST. 
 
-O SDK do Bot Framework para Node.js fornece as classes [UniversalBot][UniversalBot] e [ChatConnector][ChatConnector] para configurar o bot para enviar e receber mensagens através do Conector do Bot Framework. O `UniversalBot` classe formulários o cérebro do seu bot. É responsável por gerenciar todas as conversas que seu bot tem com um usuário. A classe `ChatConnector` conecta seu bot ao Serviço de Conector Bot Framework.
+O SDK do Bot Framework para Node.js fornece as classes [UniversalBot][UniversalBot] and [ChatConnector][ChatConnector] para configurar o bot para enviar e receber mensagens através do Conector do Bot Framework. O `UniversalBot` classe formulários o cérebro do seu bot. É responsável por gerenciar todas as conversas que seu bot tem com um usuário. A classe `ChatConnector` conecta seu bot ao Serviço de Conector Bot Framework.
 Veja um exemplo que demonstra o uso dessas classes em [Criar um bot com o SDK do Bot Framework para o Node.js](bot-builder-nodejs-quickstart.md).
 
-O Connector também normaliza as mensagens que o bot envia aos canais para que você possa desenvolver seu bot de maneira independente de plataforma. Normalizar uma mensagem envolve convertê-la do esquema do Bot Framework no esquema do canal. Nos casos em que o canal não suporta todos os aspectos do esquema da estrutura, o Conector tentará converter a mensagem em um formato suportado pelo canal. Por exemplo, se o bot enviar uma mensagem que contenha um cartão com botões de ação para o canal SMS, o Conector poderá renderizar o cartão como uma imagem e incluir as ações como links no texto da mensagem. O [Inspetor de Canais][ChannelInspector] é uma ferramenta da Web que mostra como o Conector processa mensagens em vários canais.
+O Connector também normaliza as mensagens que o bot envia aos canais para que você possa desenvolver seu bot de maneira independente de plataforma. Normalizar uma mensagem envolve convertê-la do esquema do Bot Framework no esquema do canal. Nos casos em que o canal não suporta todos os aspectos do esquema da estrutura, o Conector tentará converter a mensagem em um formato suportado pelo canal. Por exemplo, se o bot enviar uma mensagem que contenha um cartão com botões de ação para o canal SMS, o Conector poderá renderizar o cartão como uma imagem e incluir as ações como links no texto da mensagem. O [Channel Inspector][ChannelInspector] é uma ferramenta da Web que mostra como o Conector renderiza mensagens em vários canais.
 
-O `ChatConnector` requer que um endpoint da API seja configurado em seu bot. Com o SDK do Node.js, isso geralmente é feito instalando o módulo `restify` Node.js. Bots também podem ser criados para o console usando o [ConsoleConnector][ConsoleConnector], que não requer um terminal da API.
+O `ChatConnector` requer que um endpoint da API seja configurado em seu bot. Com o SDK do Node.js, isso geralmente é feito instalando o módulo `restify` Node.js. Bots também podem ser criados para o console usando o [ConsoleConnector][ConsoleConnector], que não requer um ponto de extremidade de API.
 
 ## <a name="messages"></a>Mensagens
 
@@ -62,7 +63,7 @@ Você pode usar o reconhecedor de expressões regulares interno que o SDK do Bot
 Uma chave para um bom projeto de bot é rastrear o contexto de uma conversa, para que seu bot se lembre de coisas como a última pergunta que o usuário fez. Bots construídos usando o SDK do Bot Framework são projetados para serem sem estado para que possam ser escalonados facilmente a fim de serem executados em vários nós de computação. O Bot Framework fornece um sistema de armazenamento que armazena os dados do bot, para que o serviço da web do bot possa ser dimensionado. Por causa disso, você geralmente deve evitar salvar o estado usando uma variável global ou fechamento de função. Isso criará problemas quando você quiser expandir seu bot. Em vez disso, use as seguintes propriedades do [objeto][Session] do seu bot para salvar dados relativos a um usuário ou conversa:
 
 * **userData** armazena informações globalmente para o usuário em todas as conversas.
-* **conversationData** armazena informações globalmente para uma única conversa. Esses dados são visíveis para todos dentro da conversa, portanto, tenha cuidado ao armazenar dados nessa propriedade. Ele é ativado por padrão e você pode desativá-lo usando a configuração [persistConversationData][PersistConversationData] do bot.
+* **conversationData** armazena informações globalmente para uma única conversa. Esses dados são visíveis para todos dentro da conversa, portanto, tenha cuidado ao armazenar dados nessa propriedade. Ele é habilitado por padrão e você pode desabilitá-lo usando a configuração [persistConversationData][PersistConversationData] do bot.
 * **privateConversationData** armazena informações globalmente para uma única conversa, mas ele são privados dados específicos do usuário atual. Esses dados abrangem todos os diálogos, por isso é útil para armazenar o estado temporário que você deseja limpar quando a conversa termina.
 * **dialogData** persiste informações para uma única instância de diálogo. Isso é essencial para armazenar informações temporárias entre as etapas de uma [cascata](bot-builder-nodejs-dialog-waterfall.md) em um diálogo.
 
@@ -70,7 +71,7 @@ Para exemplos que demonstram como usar essas propriedades para armazenar e recup
 
 ## <a name="natural-language-understanding"></a>Compreensão de idioma natural
 
-O Bot Builder permite que você use o LUIS para adicionar entendimento de linguagem natural ao seu bot usando a classe [LuisRecognizer][LuisRecognizer]. Você pode adicionar uma instância de um **LuisRecognizer** que faz referência a seu modelo de linguagem de programação publicada e, em seguida, adicione manipuladores para realizar ações em resposta às declarações do usuário. Para ver o LUIS em ação Assista o tutorial de 10 minutos a seguir:
+O Bot Builder permite que você use o LUIS para adicionar entendimento de idioma natural ao seu bot usando a classe [LuisRecognizer][LuisRecognizer]. Você pode adicionar uma instância de um **LuisRecognizer** que faz referência a seu modelo de linguagem de programação publicada e, em seguida, adicione manipuladores para realizar ações em resposta às declarações do usuário. Para ver o LUIS em ação Assista o tutorial de 10 minutos a seguir:
 
 * [Tutorial do Microsoft LUIS][LUISVideo] (vídeo)
 
@@ -80,20 +81,20 @@ O Bot Builder permite que você use o LUIS para adicionar entendimento de lingua
 
 
 
-[PersistConversationData]: https://docs.botframework.com/en-us/node/builder/chat-reference/interfaces/_botbuilder_d_.iuniversalbotsettings.html#persistconversationdata
-[UniversalBot]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.universalbot.html
-[ChatConnector]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.chatconnector.html
-[ConsoleConnector]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.consoleconnector.html
+[PersistConversationData]: https://docs.botframework.com/node/builder/chat-reference/interfaces/_botbuilder_d_.iuniversalbotsettings.html#persistconversationdata
+[UniversalBot]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.universalbot.html
+[ChatConnector]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.chatconnector.html
+[ConsoleConnector]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.consoleconnector.html
 
 [ChannelInspector]: ../bot-service-channel-inspector.md
 
-[Session]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session.html
-[SessionSend]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session#send
+[Session]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.session.html
+[SessionSend]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.session#send
 
-[triggerAction]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.dialog.html#triggeraction
+[triggerAction]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.dialog.html#triggeraction
 [waterfall]: bot-builder-nodejs-prompts.md
 
 [RespondMessages]:bot-builder-nodejs-use-default-message-handler.md
 
-[LUISRecognizer]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.luisrecognizer
+[LUISRecognizer]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.luisrecognizer
 [LUISVideo]: https://vimeo.com/145499419

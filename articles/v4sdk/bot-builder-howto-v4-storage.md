@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 07a66eb468bc456fb463c9c215a2c941e4fafe0a
-ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
+ms.openlocfilehash: 56a95023810bd7d66687c892f449fa31c9394dc8
+ms.sourcegitcommit: 697a577d72aaf91a0834d4b4c2ef5aa11291f28f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215329"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67496677"
 ---
 # <a name="write-directly-to-storage"></a>Gravar diretamente no armazenamento
 
@@ -671,7 +671,7 @@ protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivi
 
 ```
 
-O link a seguir fornece mais informações referentes ao [Armazenamento de transcrições de blobs do Azure](https://docs.microsoft.com/en-us/dotnet/api/microsoft.bot.builder.azure.azureblobtranscriptstore) 
+O link a seguir fornece mais informações referentes ao [Armazenamento de transcrições de blobs do Azure](https://docs.microsoft.com/dotnet/api/microsoft.bot.builder.azure.azureblobtranscriptstore) 
 
 ## <a name="additional-information"></a>Informações adicionais
 

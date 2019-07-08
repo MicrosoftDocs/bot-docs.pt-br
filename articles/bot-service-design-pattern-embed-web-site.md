@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: f9fa2bee156752f1545d201768040b6106558e01
-ms.sourcegitcommit: 980612a922b8290b2faadaca193496c4117e415a
+ms.openlocfilehash: 97bdb1cb8b2181904b6c6992b6e0c3bd3b9f20cd
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "64563751"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67405862"
 ---
 # <a name="embed-a-bot-in-a-website"></a>Inserir um bot em um site
 
@@ -31,7 +31,7 @@ Como o controle da Web do Skype age simplesmente como um front-end para o Skype,
 
 ## <a name="open-source-web-control"></a>Controle da Web de software livre
 
-O <a href="https://aka.ms/BotFramework-WebChat" target="_blank">controle de chat na Web de software livre</a> tem base em ReactJS e usa a [API de Linha Direta][directLineAPI] para se comunicar com o Bot Framework. O controle de chat na Web fornece uma tela em branco para implementação do chat na Web, dando a você controle total sobre o comportamento dele e sobre a experiência de usuário que ele oferece. 
+O <a href="https://aka.ms/BotFramework-WebChat" target="_blank">controle de Webchat de software livre</a> tem base em ReactJS e usa a [Direct Line API][directLineAPI] para se comunicar com o Bot Framework. O controle de chat na Web fornece uma tela em branco para implementação do chat na Web, dando a você controle total sobre o comportamento dele e sobre a experiência de usuário que ele oferece. 
 
 O mecanismo de *backchannel* permite que a página da Web que está hospedando o controle, se comunique diretamente com o bot de uma maneira completamente invisível ao usuário. Esse recurso possibilita diversos cenários úteis: 
 
@@ -51,8 +51,8 @@ O <a href="https://aka.ms/BotFramework-WebChat" target="_blank">controle de chat
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [API de Linha Direta][directLineAPI]
+- [Direct Line API][directLineAPI]
 - [Controle de chat da Web de software livre](https://github.com/Microsoft/BotFramework-WebChat)
 - [Usar mecanismo de backchannel](~/nodejs/bot-builder-nodejs-backchannel.md)
 
-[directLineAPI]: https://docs.botframework.com/en-us/restapi/directline3/#navtitle
+[directLineAPI]: https://docs.botframework.com/restapi/directline3/#navtitle

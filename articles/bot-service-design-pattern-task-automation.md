@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 2/13/2018
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 21324f68332be6a60f55e6ab55545fc6102bedb9
-ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
+ms.openlocfilehash: d81a7e55ab7ac5e3b430ae051d1abbb4ca94b44d
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65033019"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67405829"
 ---
 # <a name="create-task-automation-bots"></a>Criar bots de automação de tarefas
 
@@ -85,7 +85,7 @@ Por fim, a especificação fornece um exemplo de um usuário que está se comuni
 
 ## <a name="bot-app-or-website"></a>Bot, aplicativo ou site?
 
-Você pode estar se perguntando: se um bot de automação de tarefas se parece muito com um aplicativo ou um site, por que não apenas criar um aplicativo ou um site? Dependendo do cenário específico, a criação de um aplicativo ou um site em vez de um bot pode ser uma opção inteiramente razoável. Você pode até mesmo optar por inserir o bot em um aplicativo, usando a [API de Linha Direta do Bot Framework][directLineAPI] ou o <a href="https://aka.ms/BotFramework-WebChat" target="_blank">controle de Webchat</a>. A implementação do bot no contexto de um aplicativo fornece o melhor dos dois mundos: uma experiência do aplicativo e uma experiência de conversa sofisticadas, tudo isso em um só lugar. 
+Você pode estar se perguntando: se um bot de automação de tarefas se parece muito com um aplicativo ou um site, por que não apenas criar um aplicativo ou um site? Dependendo do cenário específico, a criação de um aplicativo ou um site em vez de um bot pode ser uma opção inteiramente razoável. Você pode até mesmo optar por inserir o bot em um aplicativo, usando a [Direct Line API do Bot Framework][directLineAPI] ou o <a href="https://aka.ms/BotFramework-WebChat" target="_blank">controle de Webchat</a>. A implementação do bot no contexto de um aplicativo fornece o melhor dos dois mundos: uma experiência do aplicativo e uma experiência de conversa sofisticadas, tudo isso em um só lugar. 
 
 Em muitos casos, no entanto, a criação de um aplicativo ou um site pode ser significativamente mais complexa e mais cara do que a criação de um bot. Com frequência, um aplicativo ou um site precisa dar suporte a vários clientes e plataformas, o empacotamento e a implantação podem ser processos cansativos e demorados e a experiência do usuário de precisar baixar e instalar um aplicativo não é necessariamente ideal. Por esses motivos, um bot pode, muitas vezes, fornecer uma maneira muito mais simples de resolver o problema em questão. 
 
@@ -106,4 +106,4 @@ For a complete sample that shows how to implement simple task automation using t
 - [Gerenciar o fluxo da conversa com diálogos (Node.js)](~/nodejs/bot-builder-nodejs-manage-conversation-flow.md)
 
 
-[directLineAPI]: https://docs.botframework.com/en-us/restapi/directline3/#navtitle
+[directLineAPI]: https://docs.botframework.com/restapi/directline3/#navtitle

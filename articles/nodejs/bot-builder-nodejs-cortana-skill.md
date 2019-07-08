@@ -8,12 +8,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 02/10/2019
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: ff2d55ccdd6312e95bdb1acb223d8e1d5f60b0b3
-ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
+ms.openlocfilehash: 1b62ca7e98313fb0247d45cb66fcae8be32e6492
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65032628"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67405049"
 ---
 # <a name="build-a-speech-enabled-bot-with-cortana-skills"></a>Criar um bot habilitado para fala com habilidades da Cortana
 
@@ -26,9 +26,9 @@ ms.locfileid: "65032628"
 O SDK do Bot Framework para Node.js permite que você crie um bot habilitado para fala conectando-o ao canal da Cortana como uma habilidade da Cortana. Habilidades da Cortana permitem que você forneça funcionalidades por meio da Cortana em resposta à entrada falada de um usuário.
 
 > [!TIP]
-> Para obter mais informações sobre o que é uma habilidade e o que ela pode fazer, consulte o [Kit de Habilidades da Cortana][CortanaGetStarted].
+> Para obter mais informações sobre o que é uma habilidade e o que ela pode fazer, confira [O Kit de Habilidades da Cortana][CortanaGetStarted].
 
-Criar uma habilidade da Cortana usando o Bot Framework requer muito pouco conhecimento específico sobre Cortana e consiste principalmente na criação de um bot. Uma das principais diferenças de outros bots que você talvez tenha criado é que a Cortana tem componentes visuais e de áudio. Para o componente visual, a Cortana fornece uma área da tela para renderizar o conteúdo, como cartões, por exemplo. Para o componente de áudio, você fornece texto ou SSML nas mensagens do bot, que são lidas pela Cortana para o usuário, dando uma voz para o bot. 
+A criação de uma habilidade da Cortana usando o Bot Framework exige muito pouco conhecimento específico sobre a Cortana e consiste principalmente na criação de um bot. Uma das principais diferenças de outros bots que você talvez tenha criado é que a Cortana tem componentes visuais e de áudio. Para o componente visual, a Cortana fornece uma área da tela para renderizar o conteúdo, como cartões, por exemplo. Para o componente de áudio, você fornece texto ou SSML nas mensagens do bot, que são lidas pela Cortana para o usuário, dando uma voz para o bot. 
 
 > [!NOTE]
 > A Cortana está disponível em vários dispositivos diferentes. Alguns têm uma tela, enquanto outros, como um alto-falante autônomo, talvez não. Garanta que o bot consiga lidar com ambos os cenários. Confira [Entidades específicas da Cortana][CortanaSpecificEntities] para saber como verificar as informações do dispositivo.
@@ -58,7 +58,7 @@ A propriedade **inputHint** ajuda a indicar à Cortana se o seu bot está espera
 |------|------|
 | **acceptingInput** | O bot está passivamente pronto para a entrada, mas não está aguardando uma resposta. Cortana aceita a entrada do usuário, se o usuário mantém pressionado o botão de microfone.|
 | **expectingInput** | Indica se o bot está ativamente aguardando uma resposta do usuário. A Cortana ouve o usuário falar no microfone.  |
-||OBSERVAÇÃO:  _Não_ usar **expectingInput** em dispositivos sem periféricos (dispositivos sem vídeo). Confira as [Perguntas frequentes sobre o Kit de Habilidades da Cortana](https://review.docs.microsoft.com/en-us/cortana/skills/faq).|
+||OBSERVAÇÃO:  _Não_ usar **expectingInput** em dispositivos sem periféricos (dispositivos sem vídeo). Confira as [Perguntas frequentes sobre o Kit de Habilidades da Cortana](https://review.docs.microsoft.com/cortana/skills/faq).|
 | **ignoringInput** | A Cortana está ignorando a entrada. O bot poderá enviar essa dica se estiver processando ativamente uma solicitação e ignorará a entrada dos usuários até que a solicitação seja concluída.  |
 
 O exemplo a seguir mostra como a Cortana lê o texto sem formatação ou SSML:
@@ -156,11 +156,11 @@ module.exports.speak = function (template, params, options) {
 ## <a name="display-cards-in-cortana"></a>Exibir cartões na Cortana
 
 Além das respostas faladas, a Cortana também pode exibir anexos de cartão. Cortana suporta os seguintes cartões com formatação:
-* [HeroCard](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.herocard.html)
-* [ReceiptCard](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.receiptcard.html)
-* [ThumbnailCard](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.thumbnailcard.html)
+* [HeroCard](https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.herocard.html)
+* [ReceiptCard](https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.receiptcard.html)
+* [ThumbnailCard](https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.thumbnailcard.html)
 
-Consulte [Práticas recomendadas de design de cartão][CardDesign] para ver como é a aparência desses cartões dentro da Cortana. Para obter um exemplo de como adicionar um cartão com formatação para um bot, consulte [Enviar cartões com formatação](bot-builder-nodejs-send-rich-cards.md). 
+Confira [Melhores práticas de design de cartão][CardDesign] para ver a aparência desses cartões na Cortana. Para obter um exemplo de como adicionar um cartão com formatação para um bot, consulte [Enviar cartões com formatação](bot-builder-nodejs-send-rich-cards.md). 
 
 O código a seguir demonstra como adicionar as propriedades **speak** e **inputHint** a uma mensagem que contém um cartão Hero.
 
@@ -195,7 +195,7 @@ module.exports.speak = function (template, params, options) {
 ## <a name="sample-rollerskill"></a>Exemplo: RollerSkill
 O código das seções a seguir foi obtido de uma habilidade da Cortana de exemplo para lançamento de um dado. Baixe o código completo do bot no [repositório BotBuilder-Samples](https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/demo-RollerSkill).
 
-Invoque a habilidade dizendo seu [nome de invocação][InvocationNameGuidelines] para a Cortana. Para a habilidade do lançador, depois que você [adicionar o bot ao canal da Cortana][CortanaChannel] e registrá-lo como uma habilidade da Cortana, invoque-o solicitando à Cortana para "Solicitar o Lançador" ou "Solicitar que o Lançador lance o dado".
+Você invoca a habilidade mencionando seu [nome de invocação][InvocationNameGuidelines] to Cortana. For the roller skill, after you [add the bot to the Cortana channel][CortanaChannel] e registra-o como uma habilidade da Cortana. Você pode invocá-lo solicitando à Cortana para "Solicitar o Lançador" ou "Solicitar que o Lançador lance o dado".
 
 ### <a name="explore-the-code"></a>Explore o código
 
@@ -422,7 +422,7 @@ Se você tiver um bot em execução localmente ou implantado na nuvem, você pod
 * [Melhores práticas de design de voz para a Cortana][VoiceDesign]
 * [Melhores práticas de design de cartão para a Cortana][CardDesign]
 * [Centro de Desenvolvimento da Cortana][CortanaDevCenter]
-* [Testar e depurar as melhores práticas para a Cortana][Cortana-TestBestPractice]
+* [Como testar e depurar as melhores práticas para a Cortana][Cortana-TestBestPractice]
 
 
 [CortanaGetStarted]: /cortana/getstarted
@@ -430,9 +430,9 @@ Se você tiver um bot em execução localmente ou implantado na nuvem, você pod
 
 
 [SSMLRef]: https://aka.ms/cortana-ssml
-[IMessage]: https://docs.botframework.com/en-us/node/builder/chat-reference/interfaces/_botbuilder_d_.imessage.html
-[Send]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session#send
-[CortanaDevCenter]: https://developer.microsoft.com/en-us/cortana
+[IMessage]: https://docs.botframework.com/node/builder/chat-reference/interfaces/_botbuilder_d_.imessage.html
+[Send]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.session#send
+[CortanaDevCenter]: https://developer.microsoft.com/cortana
 
 [CortanaSpecificEntities]: https://aka.ms/lgvcto
 [CortanaAuth]: https://aka.ms/vsdqcj

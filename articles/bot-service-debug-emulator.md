@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 2/26/2019
-ms.openlocfilehash: 307a6bf697e274391336a0d216c64da85232616d
-ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
+ms.openlocfilehash: 0e548700e81fff5029031fd1e349cc75d9d0bc7a
+ms.sourcegitcommit: dbbfcf45a8d0ba66bd4fb5620d093abfa3b2f725
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65033306"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67464638"
 ---
 # <a name="debug-with-the-emulator"></a>Depurar com o emulador
 
@@ -26,9 +26,13 @@ O Bot Framework Emulator é um aplicativo de desktop que permite que os desenvol
 
 ![Interface do usuário do emulador](media/emulator-v4/emulator-welcome.png)
 
-Para conectar a um bot em execução localmente, clique em **Abrir bot** ou selecione o arquivo de configuração pré-configurado (um arquivo .bot). Você não precisa de um arquivo de configuração para se conectar ao bot, mas o emulador ainda funciona com um, se o seu bot tiver. Se o bot é executado com credenciais da Conta Microsoft (MSA), insira essas credenciais também.
+Para conectar a um bot em execução localmente, clique em **Abrir bot** ou selecione o arquivo de configuração pré-configurado (um arquivo .bot). Você não precisa de um arquivo de configuração para se conectar ao bot, mas o emulador ainda funciona com um, se o seu bot tiver. Se o bot é executado com [credenciais da MSA (Conta Microsoft)](#use-bot-credentials), insira-as também.
 
 ![Interface do usuário do emulador](media/emulator-v4/emulator-open-bot.png)
+
+### <a name="use-bot-credentials"></a>Usar credenciais do bot
+
+Quando você abre o bot, defina a **ID do aplicativo Microsoft** e a **senha do aplicativo Microsoft** se seu bot está em execução com as credenciais. Se você criou seu bot com o Serviço de Bot do Azure, as credenciais estão disponíveis no Serviço de Aplicativo do bot, na seção **Configurações -> Configuração**. Se não souber os valores, você poderá remover aqueles do arquivo de configuração do bot sendo executado localmente e depois executar o bot no emulador. Se o bot não estiver em execução com essas configurações, você também não precisará executar o emulador com as configurações. 
 
 ## <a name="view-detailed-message-activity-with-the-inspector"></a>Exibir a atividade de mensagem detalhada com o Inspetor de
 
@@ -118,7 +122,7 @@ Se você mudar de ideias, poderá habilitá-lo novamente marcando a caixa de sel
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-O Bot Framework Emulator é open source. Você pode [contribuir com][EmulatorGithubContribute] para o desenvolvimento e [enviar bugs e sugestões][EmulatorGithubBugs].
+O Bot Framework Emulator é open source. Você pode [contribuir][EmulatorGithubContribute] to the development and [submit bugs and suggestions][EmulatorGithubBugs].
 
 Para solucionar problemas, confira [solucionar problemas gerais](bot-service-troubleshoot-bot-configuration.md) e outros artigos de solução de problemas nesta seção.
 

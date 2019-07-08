@@ -7,12 +7,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 ROBOTS: NoIndex, NoFollow
-ms.openlocfilehash: d41c2c24ed38fffe76cd73a6bb8a685d3861ac55
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: fee70da7288b3214ff7f384998a69b40f91b3226
+ms.sourcegitcommit: dbbfcf45a8d0ba66bd4fb5620d093abfa3b2f725
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "50000423"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67464524"
 ---
 # <a name="configure-adaptive-cards"></a>Configurar cartões adaptáveis
 > [!IMPORTANT]
@@ -41,19 +41,19 @@ Os cartões adaptáveis podem conter formulários de entrada. No Designer de Con
 
 O snippet de código abaixo mostra como a entidade **myName** é definida no código:
 
-``javascript
+```javascript
 {
    "type": "Input.Text",
    "id": "myName",
    "placeholder": "Last, First"
 }
-``
+```
 
 Além disso, se um campo tiver uma ID de `@task`, o valor do campo será usado como um nome de tarefa. Quando esse campo for disparado (por exemplo, com um clique de botão), a tarefa nomeada será executada. 
 
 Veja este snippet de código, por exemplo:
 
-``javascript
+```javascript
 {
   'type': 'Action.Submit',
   'title': 'Search',
@@ -62,7 +62,7 @@ Veja este snippet de código, por exemplo:
     '@task': 'Hotel Search'
   }
 }
-``
+```
 
 Ao clicarem nesse botão, uma ação de envio é disparada, e `context.sticky` é definido como `Hotel Search`. Isso resultará na execução da tarefa **Pesquisa de Hotel**. Para usar esse recurso, verifique se `@task` corresponde a um nome de tarefa que você definiu no Designer de Conversa.
 
@@ -72,7 +72,7 @@ Os cartões adaptáveis oferecem suporte a resolução total de geração de lin
 * `entityName` usa entidades dentro do cartão.
 * `responseTemplateName` usa modelos de resposta simples ou condicional dentro do cartão.
 
-Você pode aprender mais sobre os cartões adaptáveis aqui TODO: Inserir link para a documentação do esquema de cartões adaptáveis -->
+Você pode aprender mais sobre os cartões adaptáveis aqui  TODO: Inserir link para a documentação do esquema de cartões adaptáveis -->
 
 ## <a name="sample-adaptive-card-payload"></a>Exemplo de conteúdo do cartão adaptável
 

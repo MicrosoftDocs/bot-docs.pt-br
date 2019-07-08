@@ -10,18 +10,18 @@ ms.service: bot-service
 ms.subservice: abs
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2c8284bf1a78c4f8dd9fb5cc3dcb346ac99ad936
-ms.sourcegitcommit: 710d279898db587abb1e81d13628177a4e182293
+ms.openlocfilehash: 2894ed29aa6d17089b9287ba4c4819571d18befd
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66751296"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67405982"
 ---
 # <a name="whats-new-in-bot-framework"></a>Novidades do Bot Framework
 
 [!INCLUDE[applies-to](includes/applies-to.md)]
 
-O SDK do Bot Framework v4 é um [SDK de software livre][1a] que permite aos desenvolvedores modelar e compilar conversas sofisticadas usando sua linguagem de programação favorita.
+O SDK do Bot Framework v4 é um [SDK open-source][1a] que permite aos desenvolvedores modelar e criar conversas sofisticadas usando sua linguagem de programação favorita.
 
 Este artigo resume os principais novos recursos e aprimoramentos no Bot Framework e no Serviço de Bot do Azure.
 
@@ -37,7 +37,7 @@ Este artigo resume os principais novos recursos e aprimoramentos no Bot Framewor
 [3]:https://github.com/Microsoft/botbuilder-python#packages
 [3a]:https://github.com/Microsoft/botbuilder-java#packages
 [4]:https://github.com/Microsoft/botbuilder-java#packages
-[5]:https://docs.microsoft.com/en-us/azure/bot-service/?view=azure-bot-service-4.0
+[5]:https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0
 [6]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore
 [7]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/javascript_nodejs
 [8]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/javascript_typescript
@@ -48,11 +48,11 @@ Este artigo resume os principais novos recursos e aprimoramentos no Bot Framewor
 <a name="V4-whats-new"></a>
 ## <a name="bot-framework-sdk-new-in-preview"></a>SDK do Bot Framework (Novo! Em versão prévia)
 
-- [Diálogo Adaptável][47] | [docs][48] | [exemplos em C#][49]: Os Diálogos Adaptáveis permitem aos desenvolvedores criar conversas que podem ser alteradas dinamicamente conforme o andamento da conversa.  Tradicionalmente, os desenvolvedores mapeiam o fluxo inteiro de uma conversa com antecedência, o que limita sua flexibilidade.  Os Diálogos Adaptáveis permitem que elas sejam mais flexíveis, para responder a alterações no contexto e inserir novas etapas ou subdiálogos inteiros na conversa durante sua evolução. 
+- [Caixa de diálogo adaptável][47] | [docs][48] | [Exemplos de C#][49]: Os Diálogos Adaptáveis permitem aos desenvolvedores criar conversas que podem ser alteradas dinamicamente conforme o andamento da conversa.  Tradicionalmente, os desenvolvedores mapeiam o fluxo inteiro de uma conversa com antecedência, o que limita sua flexibilidade.  Os Diálogos Adaptáveis permitem que elas sejam mais flexíveis, para responder a alterações no contexto e inserir novas etapas ou subdiálogos inteiros na conversa durante sua evolução. 
 
-- [Geração de linguagem][43] | [docs] [ 44]  |  [exemplos em C#] [45]: geração de linguagem, que permite ao desenvolvedor extrair as cadeias de caracteres inseridas dos seus arquivos de código e de recursos e gerenciá-las por meio de um formato arquivo e do tempo de execução de Geração de Linguagem.  A Geração de Linguagem permite que os clientes definam diversas variações de uma frase, executem expressões simples com base no contexto e consultem a memória de conversação; ao longo do tempo, isso nos permitirá criar outras funcionalidades que levarão a uma experiência de conversa mais natural.
+- [Geração de linguagem][43] | [docs][44] | [Exemplos de C#][45]: geração de linguagem, que permite ao desenvolvedor extrair as cadeias de caracteres inseridas dos seus arquivos de código e de recursos e gerenciá-las por meio de um formato arquivo e do tempo de execução de Geração de Linguagem.  A Geração de Linguagem permite que os clientes definam diversas variações de uma frase, executem expressões simples com base no contexto e consultem a memória de conversação; ao longo do tempo, isso nos permitirá criar outras funcionalidades que levarão a uma experiência de conversa mais natural.
 
-- [Linguagem de Expressão Comum][40] | [API][41]: tanto os Diálogos Adaptáveis quanto a Geração de Linguagem usam e dependem de uma linguagem de expressão comum para alimentar conversas de bot.
+- [Linguagem de Expressão Comum][40] | [api][41]: tanto os Diálogos Adaptáveis quanto a Geração de Linguagem usam e dependem de uma linguagem de expressão comum para alimentar conversas de bot.
 
 [40]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/experimental/common-expression-language#readme
 [41]:https://github.com/Microsoft/BotBuilder-Samples/blob/master/experimental/common-expression-language/api-reference.md
@@ -66,9 +66,9 @@ Este artigo resume os principais novos recursos e aprimoramentos no Bot Framewor
 [50]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/experimental/adaptive-dialog/declarative
 
 ## <a name="botkit"></a>Botkit
-[Botkit][100] é uma ferramenta de desenvolvedor e um SDK de criação de chatbots, aplicativos e integrações personalizadas para as principais plataformas de mensagens. Bots do Botkit: gatilhos `hear()`, perguntas `ask()` e respostas `say()`. Os desenvolvedores podem usar essa sintaxe para criar diálogos; agora compatíveis com a versão mais recente do SDK do Bot Framework. 
+O [Botkit][100] é uma ferramenta de desenvolvedor e um SDK de criação de chatbots, aplicativos e integrações personalizadas para as principais plataformas de mensagens. Bots do Botkit: gatilhos `hear()`, perguntas `ask()` e respostas `say()`. Os desenvolvedores podem usar essa sintaxe para criar diálogos; agora compatíveis com a versão mais recente do SDK do Bot Framework. 
 
-Além disso, o Botkit traz seis adaptadores de plataforma, permitindo que os aplicativos de bot JavaScript se comuniquem diretamente com as plataformas de mensagens: [Slack][102], [Webex Teams][103], [Google Hangouts][104], [ Facebook Messenger][105], [Twilio][106] e [Web chat][107].
+Além disso, o Botkit traz seis adaptadores de plataforma, permitindo que os aplicativos de bot JavaScript se comuniquem diretamente com as plataformas de mensagens: [Slack][102], [Webex Teams][103], [Google Hangouts][104], [Facebook Messenger][105], [Twilio][106] e [Webchat][107].
 
 O Botkit faz parte do Microsoft Bot Framework e foi lançado com a [licença de software livre do MIT][101]
 
@@ -92,22 +92,22 @@ O [repositório de Soluções do Bot Framework](https://github.com/Microsoft/AI#
 |[**Analytics**](https://github.com/Microsoft/AI/blob/master/docs/readme.md#analytics)| Obtenha insights essenciais sobre a integridade e o comportamento do seu bot com as soluções de análise de inteligência Artificial de Conversação. Examine os dados telemétricos disponíveis, os exemplos de consultas do Application Insights e os painéis do Power BI para compreender a amplitude das conversas do seu bot com os usuários. |
 
 ## <a name="azure-bot-service"></a>Serviço de Bot do Azure
-O Serviço de Bot do Azure permite que você hospede bots inteligentes e de nível empresarial com total controle e propriedade sobre seus dados. Os desenvolvedores podem registrar e conectar seus bots a usuários no Skype, no Microsoft Teams, na Cortana, no Web Chat e muito mais. [Azure][27]  |  [docs][28] | [Conectar-se a canais][29] 
+O Serviço de Bot do Azure permite que você hospede bots inteligentes e de nível empresarial com total controle e propriedade sobre seus dados. Os desenvolvedores podem registrar e conectar seus bots a usuários no Skype, no Microsoft Teams, na Cortana, no Web Chat e muito mais. [Azure][27]  |  [docs][28] | [conectar-se aos canais][29] 
 
 * **Cliente JS Direct Line**: se você quiser usar o canal Direct Line no Serviço de Bot do Azure e não estiver usando o cliente WebChat, o cliente JS Direct Line poderá ser usado no seu aplicativo personalizado. Vá para o [GitHub][30] para obter mais informações.
 
 <a name="ABS-whats-new"></a>
 
-* **Novo! Canal de Fala do Direct Line**: estamos reunindo o Bot Framework e os Serviços de Fala da Microsoft para oferecer um canal que permita fluxo de fala e texto bidirecional entre o cliente e o aplicativo bot.  Para obter mais informações, confira como adicionar [canal de fala ao bot](https://docs.microsoft.com/en-us/azure/bot-service/directline-speech-bot?view=azure-bot-service-4.0).
+* **Novo! Canal de Fala do Direct Line**: estamos reunindo o Bot Framework e os Serviços de Fala da Microsoft para oferecer um canal que permita fluxo de fala e texto bidirecional entre o cliente e o aplicativo bot.  Para obter mais informações, confira como adicionar [canal de fala ao bot](https://docs.microsoft.com/azure/bot-service/directline-speech-bot?view=azure-bot-service-4.0).
 
-[27]:https://azure.microsoft.com/en-us/services/bot-service/
-[28]:https://docs.microsoft.com/en-us/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0
-[29]:https://docs.microsoft.com/en-us/azure/bot-service/bot-service-manage-channels?view=azure-bot-service-4.0
+[27]:https://azure.microsoft.com/services/bot-service/
+[28]:https://docs.microsoft.com/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0
+[29]:https://docs.microsoft.com/azure/bot-service/bot-service-manage-channels?view=azure-bot-service-4.0
 [30]:https://github.com/Microsoft/BotFramework-DirectLineJS/blob/master/README.md
 
 
 ## <a name="bot-framework-emulator"></a>Bot Framework Emulator
-O [Bot Framework Emulator][60] é um aplicativo de área de trabalho de plataforma cruzada que permite aos desenvolvedores testar e depurar bots criados usando o SDK do Bot Framework. Você pode usar o Bot Framework Emulator para testar bots em execução localmente no computador ou para se conectar a bots em execução remotamente.
+O [Bot Framework Emulator][60] é um aplicativo de área de trabalho multiplataforma que permite aos desenvolvedores testar e depurar bots criados usando o SDK do Bot Framework. Você pode usar o Bot Framework Emulator para testar bots em execução localmente no computador ou para se conectar a bots em execução remotamente.
 
 - [Baixar a versão mais recente][61] | [Docs][62]
 
@@ -118,7 +118,7 @@ O Bot Framework Emulator lançou uma versão beta do novo recurso Inspetor de Bo
 
 [60]:https://github.com/Microsoft/BotFramework-Emulator#readme
 [61]:https://github.com/Microsoft/BotFramework-Emulator/releases/latest
-[62]:https://docs.microsoft.com/en-us/azure/bot-service/bot-service-debug-emulator?view=azure-bot-service-4.0
+[62]:https://docs.microsoft.com/azure/bot-service/bot-service-debug-emulator?view=azure-bot-service-4.0
 
 
 ## <a name="related-services"></a>Serviços Relacionados
@@ -132,13 +132,13 @@ Um serviço baseado em aprendizado de máquina para criar experiências de lingu
 
 - **Novo! Painel de Análise**: o LUIS está lançando um painel de análise abrangente mais detalhado e visualmente sofisticado. Seu design amigável realça os problemas comuns que a maioria dos usuários enfrenta ao criar aplicativos, fornecendo explicações simples sobre como resolvê-los para que os usuários obtenham mais insights sobre a qualidade dos seus modelos, possíveis problemas de dados e diretrizes para a adoção das melhores práticas.
 
-[Docs][31] | [Adicionar reconhecimento vocal ao bot][32] 
+[Docs][31] | [Add language understanding to your bot][32] 
 
 [18]:https://github.com/Microsoft/botbuilder-tools/tree/master/packages/LUIS#readme
 [19]:https://github.com/Microsoft/botbuilder-tools/tree/master/packages/QnAMaker#readme
 [30]:https://www.luis.ai
-[31]:https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/Home
-[32]:https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-howto-v4-luis?view=azure-bot-service-4.0&branch=pr-en-us-1325&tabs=csharp
+[31]:https://docs.microsoft.com/azure/cognitive-services/LUIS/Home
+[32]:https://docs.microsoft.com/azure/bot-service/bot-builder-howto-v4-luis?view=azure-bot-service-4.0&branch=pr-en-us-1325&tabs=csharp
 
 ### <a name="qna-maker"></a>QnA Maker
 O [QnA Maker][33] é um serviço de API baseado em nuvem que cria uma camada de perguntas e respostas em formato de conversação sobre seus dados. Com o QnA Maker, você pode compilar, treinar e publicar em minutos um bot simples de perguntas e respostas com base em URLs de perguntas frequentes, documentos estruturados, manuais de produto ou conteúdo editorial.
@@ -149,14 +149,14 @@ O [QnA Maker][33] é um serviço de API baseado em nuvem que cria uma camada de 
 - **Novo! Inteligência**: modelos de classificação contextuais, sugestões de aprendizado ativo
 - **Novo! Conversa**: conversas em vários turnos no QnA Maker.
 
-[Docs][34]  | [Adicionar o QnA Maker ao bot][35] 
+[Docs][34]  | [add qnamaker to your bot][35] 
 
 [33]:https://www.qnamaker.ai/
 [34]:https://aka.ms/qnamaker-docs-home
-[35]:https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-howto-qna?view=azure-bot-service-4.0&branch=pr-en-us-1325&tabs=cs
+[35]:https://docs.microsoft.com/azure/bot-service/bot-builder-howto-qna?view=azure-bot-service-4.0&branch=pr-en-us-1325&tabs=cs
 
 ### <a name="speech-services"></a>Serviços de Fala
-Os [Serviços de Fala](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/) convertem áudio em texto, realizam tradução de fala e conversão de texto em fala com os serviços de Fala unificados. Com os serviços de fala, você pode integrar fala ao seu bot, criar palavras de ativação personalizadas e criar em vários idiomas.
+Os [Serviços de Fala](https://docs.microsoft.com/azure/cognitive-services/speech-service/) convertem áudio em texto, realizam tradução de fala e conversão de texto em fala com os serviços de Fala unificados. Com os serviços de fala, você pode integrar fala ao seu bot, criar palavras de ativação personalizadas e criar em vários idiomas.
 
 ### <a name="adaptive-cards"></a>Cartões Adaptáveis
 Os [Cartões Adaptáveis](https://adaptivecards.io) são um padrão aberto para desenvolvedores poderem trocar conteúdo de cartão de maneira comum e consistente, e são usados por desenvolvedores do Bot Framework para criar ótimas experiências de conversa entre canais.

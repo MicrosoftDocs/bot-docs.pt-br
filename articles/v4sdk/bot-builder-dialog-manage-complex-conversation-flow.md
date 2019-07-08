@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f08fa3295ff7fdd08039b2c57f4deec6819324c0
-ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
+ms.openlocfilehash: bc11e5a4a5dec1a9588254b3a9d28d56ad163fb4
+ms.sourcegitcommit: 409e8f89a1e9bcd0e69a29a313add424f66a81e1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215429"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67153060"
 ---
 # <a name="create-advanced-conversation-flow-using-branches-and-loops"></a>Criar fluxo de conversa avançado usando ramificações e loops
 
@@ -226,7 +226,7 @@ O manipulador de mensagens chama o método auxiliar `run` para gerenciar a caixa
 
 [!code-javascript[Overrides](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/bots/dialogBot.js?range=30-47)]
 
-**bots/dialogWandWelcomeBot.js**
+**bots/dialogAndWelcomeBot.js**
 
 `DialogAndWelcomeBot` estende `DialogBot` para fornecer uma mensagem de boas-vindas quando o usuário ingressa na conversa, sendo chamado por `Startup.cs`.
 

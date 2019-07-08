@@ -6,14 +6,14 @@ author: v-ducvo
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 05/01/18
+ms.date: 05/01/2018
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: acf4f73ea83646878e08d14e036d0d2d66686756
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: 7d07317afb6d89c2d22d6f4983f7b21c3a1a053c
+ms.sourcegitcommit: 697a577d72aaf91a0834d4b4c2ef5aa11291f28f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54224951"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67496671"
 ---
 # <a name="test-a-cortana-skill"></a>Testar uma habilidade da Cortana
 
@@ -62,7 +62,7 @@ Invoque a habilidade da Cortana falando uma frase de invocação para a Cortana.
 1. Abra a Cortana.
 2. Abra o Caderno na Cortana e clique em **Sobre mim** para ver qual conta você está usando para a Cortana. Verifique se você está conectado com a mesma conta Microsoft usada para registrar o bot. 
    ![Entrar no Caderno da Cortana](~/media/cortana/cortana-notebook.png)
-2. Clique no botão de microfone no aplicativo da Cortana, ou na caixa de pesquisa "Pergunte-me alguma coisa" do Windows, e diga a [frase de invocação][InvocationNameGuidelines] do bot. A frase de invocação inclui um *nome de invocação*, que identifica exclusivamente a habilidade a ser invocada. Por exemplo, se o nome de invocação de uma habilidade for "Northwind Photo", uma frase de invocação adequada poderá incluir "Solicite à Northwind Photo para..." ou "Diga à Northwind Photo que...".
+2. Clique no botão de microfone no aplicativo da Cortana ou na caixa de pesquisa "Pergunte-me alguma coisa" do Windows e diga a [frase de invocação][InvocationNameGuidelines] do bot. A frase de invocação inclui um *nome de invocação*, que identifica exclusivamente a habilidade a ser invocada. Por exemplo, se o nome de invocação de uma habilidade for "Northwind Photo", uma frase de invocação adequada poderá incluir "Solicite à Northwind Photo para..." ou "Diga à Northwind Photo que...".
 
    Você especifica o *nome de invocação* do bot quando o configura para a Cortana.
    ![Inserir o nome de invocação ao configurar o canal da Cortana](~/media/cortana/cortana-invocation-name-callout.png)
@@ -90,7 +90,7 @@ Depois de testar a habilidade da Cortana e verificar que ela funciona conforme e
 [CortanaGetStarted]: /cortana/getstarted
 
 [BFPortal]: https://dev.botframework.com/
-[CortanaDevCenter]: https://developer.microsoft.com/en-us/cortana
+[CortanaDevCenter]: https://developer.microsoft.com/cortana
 
 [CortanaSpecificEntities]: https://aka.ms/lgvcto
 [CortanaAuth]: https://aka.ms/vsdqcj

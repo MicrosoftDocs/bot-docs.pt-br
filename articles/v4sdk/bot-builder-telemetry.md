@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b6b4d30aea493180fddaee4a7f74bef72c1992ae
-ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
+ms.openlocfilehash: 7225387933630eb7343a57aa849581ff1cbfbb0c
+ms.sourcegitcommit: dbbfcf45a8d0ba66bd4fb5620d093abfa3b2f725
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215271"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67464698"
 ---
 # <a name="add-telemetry-to-your-bot"></a>Adicionar telemetria ao seu bot
 
@@ -88,7 +88,7 @@ A estrutura encontrará a chave para você, se estiver formatada corretamente. A
     }
 ```
 
-Para obter mais informações sobre como adicionar o Application Insights a um aplicativo do ASP.NET Core, confira [este artigo](https://docs.microsoft.com/en-us/azure/azure-monitor/app/asp-net-core-no-visualstudio). 
+Para obter mais informações sobre como adicionar o Application Insights a um aplicativo do ASP.NET Core, confira [este artigo](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core-no-visualstudio). 
 
 ### <a name="customize-your-telemetry-client"></a>Personalizar o cliente de telemetria
 
@@ -140,7 +140,7 @@ Propriedade |Type | Detalhes
 `session_id`| `string`|  [ConversationID](https://github.com/Microsoft/BotBuilder/blob/master/specs/botframework-activity/botframework-activity.md#conversation)
 `customDimensions.activityId`| `string` | [A ID de atividade do bot](https://github.com/Microsoft/BotBuilder/blob/master/specs/botframework-activity/botframework-activity.md#id)
 `customDimensions.activityType` | `string` | [O tipo de atividade do bot](https://github.com/Microsoft/BotBuilder/blob/master/specs/botframework-activity/botframework-activity.md#channel-id)
-`customDimensions.channelId` | `string` |  [A ID do canal de atividade do bot ](https://github.com/Microsoft/BotBuilder/blob/master/specs/botframework-activity/botframework-activity.md#channel-id)
+`customDimensions.channelId` | `string` |  [A ID do canal de atividade do bot](https://github.com/Microsoft/BotBuilder/blob/master/specs/botframework-activity/botframework-activity.md#channel-id)
 
 ## <a name="in-depth-telemetry"></a>Telemetria detalhada
 

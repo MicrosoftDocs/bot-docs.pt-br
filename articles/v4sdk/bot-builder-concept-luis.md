@@ -11,12 +11,12 @@ ms.subservice: cognitive-services
 ms.date: 09/19/2018
 ms.reviewer: ''
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: bb280f3c43348a1293345bc698e83608694946b1
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 0c0918b0ac0a10927bd8d7c52283e74b4fd480bf
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "50000313"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67404638"
 ---
 # <a name="language-understanding"></a>Reconhecimento Vocal
 
@@ -33,7 +33,7 @@ A interação entre usuários e bots geralmente é de forma livre e os bots prec
 
 ## <a name="recognize-intent"></a>Reconhecer intenção
 
-[LUIS](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/home) ajuda você com a determinação da **intenção** do usuário, que é o que eles desejam fazer, a partir do que eles dizem, portanto, seu bot pode responder adequadamente. LUIS é especialmente útil quando o que eles dizem ao seu bot não segue uma estrutura previsível ou um padrão específico. Se um bot tem uma interface de usuário convencional, na qual o usuário fala ou digita uma resposta, pode haver variações intermináveis em *declarações*, que são a entrada falada ou textual do usuário.
+[LUIS](https://docs.microsoft.com/azure/cognitive-services/luis/home) ajuda você com a determinação da **intenção** do usuário, que é o que eles desejam fazer, a partir do que eles dizem, portanto, seu bot pode responder adequadamente. LUIS é especialmente útil quando o que eles dizem ao seu bot não segue uma estrutura previsível ou um padrão específico. Se um bot tem uma interface de usuário convencional, na qual o usuário fala ou digita uma resposta, pode haver variações intermináveis em *declarações*, que são a entrada falada ou textual do usuário.
 
 Por exemplo, considere as várias maneiras de um usuário de um bot de viagem pode pedir para reservar um voo.
 
@@ -51,9 +51,9 @@ Seu bot usa a intenção reconhecida por LUIS para determinar o tópico de conve
 
 Para economizar tempo de desenvolvimento, o LUIS fornece modelos de linguagem previamente treinados que reconhecem declarações comuns para as categorias comuns de bots. 
 
-Os **domínios predefinidos** são coleções de intenções e entidades pré-treinadas, prontos para uso, que funcionam bem em conjunto para cenários comuns, como compromissos, lembretes, gerenciamento, saúde, entretenimento, comunicação, reservas e muito mais. O domínio predefinido **Utilitários** ajuda seu bot a lidar com tarefas comuns, como Cancelar, Confirmar, Ajudar, Repetir e Parar. Dê uma olhada nos [domínios predefinidos](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-how-to-use-prebuilt-domains) que o LUIS oferece.
+Os **domínios predefinidos** são coleções de intenções e entidades pré-treinadas, prontos para uso, que funcionam bem em conjunto para cenários comuns, como compromissos, lembretes, gerenciamento, saúde, entretenimento, comunicação, reservas e muito mais. O domínio predefinido **Utilitários** ajuda seu bot a lidar com tarefas comuns, como Cancelar, Confirmar, Ajudar, Repetir e Parar. Dê uma olhada nos [domínios predefinidos](https://docs.microsoft.com/azure/cognitive-services/LUIS/luis-how-to-use-prebuilt-domains) que o LUIS oferece.
 
-**As entidades predefinidas** ajudam seu bot a reconhecer os tipos comuns de informações como datas, horas, números, temperatura, moeda, região e idade. Consulte [usar as entidades predefinidas](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/pre-builtentities) para obter informações sobre os tipos que LUIS pode reconhecer.
+**As entidades predefinidas** ajudam seu bot a reconhecer os tipos comuns de informações como datas, horas, números, temperatura, moeda, região e idade. Consulte [usar as entidades predefinidas](https://docs.microsoft.com/azure/cognitive-services/LUIS/pre-builtentities) para obter informações sobre os tipos que LUIS pode reconhecer.
 
 ## <a name="how-your-bot-gets-messages-from-luis"></a>Como seu bot obtém as mensagens do LUIS
 
@@ -61,7 +61,7 @@ Depois de ter configurado e conectado o LUIS, seu bot pode enviar a mensagem par
 
 ![Como as intenções e entidades são passadas ao seu bot](./media/cognitive-services-add-bot-language/cognitive-services-luis-message-flow-bot-code.png)
 
-Para começar a usar um aplicativo LUIS com o seu bot, confira [Usar LUIS para reconhecimento vocal](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-howto-v4-luis?view=azure-bot-service-4.0).
+Para começar a usar um aplicativo LUIS com o seu bot, confira [Usar LUIS para reconhecimento vocal](https://docs.microsoft.com/azure/bot-service/bot-builder-howto-v4-luis?view=azure-bot-service-4.0).
 
 ## <a name="best-practices-for-language-understanding"></a>Práticas recomendadas para Reconhecimento Vocal
 
@@ -100,7 +100,7 @@ A ferramenta de expedição ajuda você a integrar vários aplicativos LUIS e se
 
 ## <a name="use-luis-to-improve-speech-recognition"></a>Use LUIS para melhorar o reconhecimento de fala
 
-Para um bot que irá se dirigir para os usuários, integrá-lo com o LUIS pode ajudar seu bot a identificar palavras que podem ser interpretados incorretamente durante a conversão de fala em texto.  Por exemplo, em um cenário de xadrez, um usuário pode dizer: "Move knight to A 7". Sem contexto para a intenção do usuário, a declaração poderia ser reconhecida como: "Move night 287". Ao criar entidades que representam as coordenadas e peças de xadrez e rotulá-las em declarações, você fornece contexto para o reconhecimento de fala identificá-las. Você pode [habilitar a desobstrução de reconhecimento de fala](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-manage-speech-priming?view=azure-bot-service-4.0) com canais de Bot Framework que são integrados com a Fala do Bing, como Web Chat, o emulador do Bot Framework e Cortana.  
+Para um bot que irá se dirigir para os usuários, integrá-lo com o LUIS pode ajudar seu bot a identificar palavras que podem ser interpretados incorretamente durante a conversão de fala em texto.  Por exemplo, em um cenário de xadrez, um usuário pode dizer: "Mover o peão para A7". Sem contexto para a intenção do usuário, o enunciado poderia ser reconhecido como: "Mover o pião para 7". Ao criar entidades que representam as coordenadas e peças de xadrez e rotulá-las em declarações, você fornece contexto para o reconhecimento de fala identificá-las. Você pode [habilitar a desobstrução de reconhecimento de fala](https://docs.microsoft.com/azure/bot-service/bot-service-manage-speech-priming?view=azure-bot-service-4.0) com canais de Bot Framework que são integrados com a Fala do Bing, como Web Chat, o emulador do Bot Framework e Cortana.  
 
 ## <a name="additional-resources"></a>Recursos adicionais
-Consulte a documentação dos [Serviços Cognitivos](https://docs.microsoft.com/en-us/azure/cognitive-services/) para obter mais informações.
+Consulte a documentação dos [Serviços Cognitivos](https://docs.microsoft.com/azure/cognitive-services/) para obter mais informações.

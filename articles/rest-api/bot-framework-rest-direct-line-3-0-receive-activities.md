@@ -7,27 +7,29 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 12/13/2017
-ms.openlocfilehash: dd5e81ba3feaba09e60011c138dcbe1537144b5a
-ms.sourcegitcommit: 721bb09f10524b0cb3961d7131966f57501734b8
+ms.date: 06/13/2019
+ms.openlocfilehash: c99e7ce86415ee1291a92e2684b975fd03c822f7
+ms.sourcegitcommit: a47183f5d1c2b2454c4a06c0f292d7c075612cdd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59541002"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67252699"
 ---
 # <a name="receive-activities-from-the-bot"></a>Receber atividades do bot
 
-Usando o protocolo da Linha Direta 3.0, os clientes podem receber atividades pelo stream `WebSocket` ou recuperar as atividades emitindo solicitações `HTTP GET`. 
+Usando o protocolo da Linha Direta 3.0, os clientes podem receber atividades pelo stream `WebSocket` ou recuperar as atividades emitindo solicitações `HTTP GET`.
 
 ## <a name="websocket-vs-http-get"></a>WebSocket vs HTTP GET
 
-Um WebSocket de streaming envia mensagens aos clientes com eficiência enquanto a interface GET permite que os clientes solicitem mensagens explicitamente. Embora o mecanismo do WebSocket seja geralmente preferido devido à sua eficiência, o mecanismo de GET pode ser útil para clientes que não podem usar WebSockets. 
+Um WebSocket de streaming envia mensagens aos clientes com eficiência enquanto a interface GET permite que os clientes solicitem mensagens explicitamente. Embora o mecanismo do WebSocket seja geralmente preferido devido à sua eficiência, o mecanismo de GET pode ser útil para clientes que não podem usar WebSockets.
+
+O serviço permite apenas uma conexão WebSocket por conversa. A Direct Line pode fechar conexões WebSocket adicionais com um valor de motivo de `collision`.
 
 Nem todos os [tipos de atividade](bot-framework-rest-connector-activities.md) estão disponíveis através do WebSocket e HTTP GET. A tabela a seguir descreve a disponibilidade de vários tipos de atividades para clientes que usam o protocolo da Linha Direta.
 
 | Tipo de atividade | Disponibilidade | 
 |----|----|
-| Message | HTTP GET e WebSocket |
+| message | HTTP GET e WebSocket |
 | digitação | Apenas WebSocket |
 | conversationUpdate | Não enviado/recebido pelo cliente |
 | contactRelationUpdate | Sem suporte na Linha Direta |

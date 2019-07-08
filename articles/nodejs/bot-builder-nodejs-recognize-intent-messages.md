@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 211800211b422bb9c90c00705585be89737c77a9
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: e308445a43507db94fe54735432790dabdb88731
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225551"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67404850"
 ---
 # <a name="recognize-user-intent-from-message-content"></a>Reconhecer a intenção do usuário do conteúdo da mensagem
 
@@ -36,7 +36,7 @@ O código a seguir cria um reconhecedor de expressão regular nomeado `CancelInt
 
 [!code-js[Add a regular expression recognizer (JavaScript)](../includes/code/node-regex-recognizer.js#addRegexRecognizer)]
 
-Depois que o reconhecedor for adicionado ao bot, anexe um [triggerAction][triggerAction] ao diálogo que você quer que o bot invoque quando o reconhecedor detectar a intenção. Use a opção [correspondências][matches] para especificar o nome da intenção, conforme mostrado no código a seguir:
+Depois que o reconhecedor é adicionado ao seu bot, anexe uma opção [triggerAction][triggerAction] to the dialog that you want the bot to invoke when the recognizer detects the intent. Use the [matches][matches] para especificar o nome da intenção, conforme mostrado no código a seguir:
 
 [!code-js[Map the CancelIntent recognizer to a cancel dialog (JavaScript)](../includes/code/node-regex-recognizer.js#bindCancelDialogToRegexRecognizer)]
 
@@ -59,9 +59,9 @@ Após registrar um reconhecedor, você poderá associar o reconhecedor a uma aç
 
 O bot pode registrar mais de um reconhecedor. Observe que o exemplo do reconhecedor personalizado envolve a atribuição de uma pontuação numérica para cada intenção. Isso é feito já que o bot pode ter mais de um reconhecedor e o SDK do Bot Framework fornece lógica interna para remover ambiguidades entre intenções retornadas por vários reconhecedores. A pontuação atribuída a uma intenção normalmente é entre 0,0 e 1,0, mas um reconhecedor personalizado pode definir uma intenção maior que 1,1 para garantir que essa intenção sempre seja escolhida pela lógica de desambiguação do SDK do Bot Framework. 
 
-Por padrão, os reconhecedores são executados em paralelo, mas é possível definir recognizeOrder em [IIntentRecognizerSetOptions][IntentRecognizerSetOptions], de modo que o processo encerre assim que o bot encontrar um que dê uma pontuação de 1,0.
+Por padrão, os reconhecedores são executados em paralelo, mas é possível definir recognizeOrder em [IIntentRecognizerSetOptions][IntentRecognizerSetOptions], de modo que o processo encerre assim que o bot encontrar um que dê uma pontuação de 1.0.
 
-O SDK do Bot Framework inclui um [exemplo][DisambiguationSample] que demonstra como fornecer lógica de desambiguação personalizada no bot, implementando [IDisambiguateRouteHandler][IDisambiguateRouteHandler].
+O SDK do Bot Framework inclui um [exemplo][DisambiguationSample] that demonstrates how to provide custom disambiguation logic in your bot by implementing [IDisambiguateRouteHandler][IDisambiguateRouteHandler].
 
 ## <a name="next-steps"></a>Próximas etapas
 A lógica para usar expressões regulares e inspecionar o conteúdo das mensagens pode tornar-se complexa, especialmente se o fluxo de conversação do bot for em aberto. Para ajudar o bot a tratar uma ampla variedade de entradas de fala e textuais dos usuários, é possível usar um serviço de reconhecimento de intenção como [LUIS][LUIS] para adicionar reconhecimento vocal natural ao bot.
@@ -72,28 +72,28 @@ A lógica para usar expressões regulares e inspecionar o conteúdo das mensagen
 
 [LUIS]: https://www.luis.ai/
 
-[triggerAction]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.dialog.html#triggeraction
+[triggerAction]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.dialog.html#triggeraction
 
-[matches]: https://docs.botframework.com/en-us/node/builder/chat-reference/interfaces/_botbuilder_d_.itriggeractionoptions.html#matches
+[matches]: https://docs.botframework.com/node/builder/chat-reference/interfaces/_botbuilder_d_.itriggeractionoptions.html#matches
 
 [node-js-bot-how-to]: bot-builder-nodejs-recognize-intent-luis.md
 
 [LUISAzureDocs]: /azure/cognitive-services/LUIS/Home
 
-[IMessage]: http://docs.botframework.com/en-us/node/builder/chat-reference/interfaces/_botbuilder_d_.imessage
+[IMessage]: http://docs.botframework.com/node/builder/chat-reference/interfaces/_botbuilder_d_.imessage
 
-[IntentRecognizerSetOptions]: https://docs.botframework.com/en-us/node/builder/chat-reference/interfaces/_botbuilder_d_.iintentrecognizersetoptions.html
+[IntentRecognizerSetOptions]: https://docs.botframework.com/node/builder/chat-reference/interfaces/_botbuilder_d_.iintentrecognizersetoptions.html
 
-[LuisRecognizer]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.luisrecognizer
+[LuisRecognizer]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.luisrecognizer
 
 [LUISSample]: https://aka.ms/v3-js-luisSample
 
-[LUISConcepts]: https://docs.botframework.com/en-us/node/builder/guides/understanding-natural-language/
+[LUISConcepts]: https://docs.botframework.com/node/builder/guides/understanding-natural-language/
 
 [DisambiguationSample]: https://aka.ms/v3-js-onDisambiguateRoute
 
-[IDisambiguateRouteHandler]: https://docs.botframework.com/en-us/node/builder/chat-reference/interfaces/_botbuilder_d_.idisambiguateroutehandler.html
+[IDisambiguateRouteHandler]: https://docs.botframework.com/node/builder/chat-reference/interfaces/_botbuilder_d_.idisambiguateroutehandler.html
 
-[RegExpRecognizer]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.regexprecognizer.html
+[RegExpRecognizer]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.regexprecognizer.html
 
 [AlarmBot]: https://aka.ms/v3-js-luisSample

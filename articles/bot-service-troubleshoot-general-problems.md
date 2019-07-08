@@ -7,21 +7,21 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 04/30/2019
-ms.openlocfilehash: 1e0678d869b02d536eb5c3ce39461da94dbd9a57
-ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
+ms.openlocfilehash: 7a018855b11aa638cbad1b70b53505395ae7f5f9
+ms.sourcegitcommit: dbbfcf45a8d0ba66bd4fb5620d093abfa3b2f725
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65033093"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67464579"
 ---
 # <a name="troubleshooting-general-problems"></a>Solução de problemas gerais
 Essas perguntas frequentes podem ajudá-lo a solucionar problemas comuns de desenvolvimento de bot ou operacionais.
 
 ## <a name="how-can-i-troubleshoot-issues-with-my-bot"></a>Como é possível solucionar problemas com o bot?
 
-1. Depure o código-fonte do bot com [Visual Studio Code](debug-bots-locally-vscode.md) ou [Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/navigating-through-code-with-the-debugger?view=vs-2017).
+1. Depure o código-fonte do bot com [Visual Studio Code](debug-bots-locally-vscode.md) ou [Visual Studio](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger?view=vs-2017).
 1. Teste o bot usando o [emulador](bot-service-debug-emulator.md) antes de implantá-lo na nuvem.
-1. Implante seu bot em uma plataforma de hospedagem na nuvem, como o Azure e, em seguida, teste a conectividade com o bot usando o controle de webchat interno do painel do bot no <a href="https://portal.azure.com" target="_blank">Portal do Azure</a>. Se você encontrar problemas com o bot depois de implantá-lo no Azure, considere usar este artigo de blog: [Entendendo a solução de problemas e suporte do Azure](https://azure.microsoft.com/en-us/blog/understanding-azure-troubleshooting-and-support/).
+1. Implante seu bot em uma plataforma de hospedagem na nuvem, como o Azure e, em seguida, teste a conectividade com o bot usando o controle de webchat interno do painel do bot no <a href="https://portal.azure.com" target="_blank">Portal do Azure</a>. Se você encontrar problemas com o bot depois de implantá-lo no Azure, considere usar este artigo de blog: [Entendendo a solução de problemas e suporte do Azure](https://azure.microsoft.com/blog/understanding-azure-troubleshooting-and-support/).
 1. Exclua a [autenticação][TroubleshootingAuth] como um possível problema.
 1. Teste o bot no Skype. Isso irá ajudá-lo a validar a experiência do usuário de ponta a ponta.
 1. Considere testar o bot em canais que tenham requisitos de autenticação adicionais como Direct Line ou Webchat.
@@ -37,7 +37,7 @@ Para obter detalhes sobre como solucionar problemas de autenticação com o bot,
 No Visual Studio 2017, acesse **Depurara** > **Windows** > **Configurações de Exceção**. Na janela **Configurações de Exceção**, marque a caixa de seleção **Interromper Quando Lançado** próximo a **Exceções do Common Language Runtime**. Também é possível ver a saída de diagnóstico na janela Saída quando houver exceções lançadas ou não tratadas.
 
 **Verifique a pilha de chamadas.**  
-No Visual Studio, é possível escolher se está depurando [Apenas Meu Código](https://msdn.microsoft.com/en-us/library/dn457346.aspx) ou não. Examinar a pilha de chamadas completa pode fornecer informações adicionais sobre quaisquer problemas.
+No Visual Studio, é possível escolher se está depurando [Apenas Meu Código](https://msdn.microsoft.com/library/dn457346.aspx) ou não. Examinar a pilha de chamadas completa pode fornecer informações adicionais sobre quaisquer problemas.
 
 **Assegure-se de que todos os métodos de diálogo terminem com um plano para manipular a próxima mensagem.**  
 Todas as etapas do diálogo precisam alimentar a próxima etapa da cascata, ou encerrar o diálogo atual para retirá-lo na pilha. Se uma etapa não for tratada corretamente, a conversa não continuará como você espera. Dê uma olhada no artigo de conceito sobre [diálogos](v4sdk/bot-builder-concept-dialog.md) para saber mais sobre diálogos.
@@ -63,7 +63,7 @@ Se você examinar os rastreamentos ou logs de auditoria, poderá verificar se as
 
 ## <a name="how-can-i-run-background-tasks-in-aspnet"></a>Como é possível executar tarefas em segundo plano no ASP.NET? 
 
-Em alguns casos, convém iniciar uma tarefa assíncrona que aguarda alguns segundos e, em seguida, executa algum código para limpar o perfil do usuário ou redefinir o estado de diálogo/conversa. Para obter detalhes sobre como realizar isso, consulte [Como executar tarefas em segundo plano no ASP.NET](https://www.hanselman.com/blog/HowToRunBackgroundTasksInASPNET.aspx). Em particular, considere o uso de [HostingEnvironment.QueueBackgroundWorkItem](https://msdn.microsoft.com/en-us/library/dn636893(v=vs.110).aspx). 
+Em alguns casos, convém iniciar uma tarefa assíncrona que aguarda alguns segundos e, em seguida, executa algum código para limpar o perfil do usuário ou redefinir o estado de diálogo/conversa. Para obter detalhes sobre como realizar isso, consulte [Como executar tarefas em segundo plano no ASP.NET](https://www.hanselman.com/blog/HowToRunBackgroundTasksInASPNET.aspx). Em particular, considere o uso de [HostingEnvironment.QueueBackgroundWorkItem](https://msdn.microsoft.com/library/dn636893(v=vs.110).aspx). 
 
 
 ## <a name="how-do-user-messages-relate-to-https-method-calls"></a>Como as mensagens do usuário estão relacionadas às chamadas de método HTTPS?
@@ -108,11 +108,11 @@ Você alterou a senha do Facebook? Isso invalidará o token de acesso e será ne
 
 ## <a name="why-is-my-kik-bot-replying-im-sorry-i-cant-talk-right-now"></a>Por que meu bot no Kik está respondendo "Desculpe, não posso falar agora"?
 
-São permitidos 50 assinantes para bots em desenvolvimento no Kik. Após 50 usuários exclusivos terem interagido com o bot, qualquer novo usuário que tentar conversar com o bot receberá a mensagem "Desculpe, não posso falar agora." Para obter mais informações, consulte [Documentação do Kik](https://botsupport.kik.com/hc/en-us/articles/225764648-How-can-I-share-my-bot-with-Kik-users-while-in-development-).
+São permitidos 50 assinantes para bots em desenvolvimento no Kik. Após 50 usuários exclusivos terem interagido com o bot, qualquer novo usuário que tentar conversar com o bot receberá a mensagem "Desculpe, não posso falar agora." Para obter mais informações, consulte [Documentação do Kik](https://botsupport.kik.com/hc/articles/225764648-How-can-I-share-my-bot-with-Kik-users-while-in-development-).
 
 ## <a name="how-can-i-use-authenticated-services-from-my-bot"></a>Como é possível usar serviços autenticados do meu bot?
 
-Para a autenticação do Azure Active Directory, consulte Adicionar autenticação [V3](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-tutorial-authentication?view=azure-bot-service-3.0&tabs=csharp) | [V4](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-tutorial-authentication?view=azure-bot-service-4.0&tabs=csharp). 
+Para a autenticação do Azure Active Directory, consulte Adicionar autenticação [V3](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-authentication?view=azure-bot-service-3.0&tabs=csharp) | [V4](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-authentication?view=azure-bot-service-4.0&tabs=csharp). 
 
 > [!NOTE] 
 > Se você adicionar a funcionalidade de autenticação e segurança ao bot, certifique-se de que os padrões implementados no código estejam em conformidade com os padrões de segurança apropriados ao aplicativo.
@@ -157,7 +157,7 @@ Para obter exemplos que mostram como enviar mensagens proativas, consulte [Exemp
 Há várias opções:
 
 * Resolva a dependência através de `Autofac` e `FiberModule.Key_DoNotSerialize`. Essa é a solução mais limpa.
-* Use atributos [NonSerialized](https://msdn.microsoft.com/en-us/library/system.nonserializedattribute(v=vs.110).aspx) e [OnDeserialized](https://msdn.microsoft.com/en-us/library/system.runtime.serialization.ondeserializedattribute(v=vs.110).aspx) para restaurar a dependência da desserialização. Essa é a solução mais simples.
+* Use atributos [NonSerialized](https://msdn.microsoft.com/library/system.nonserializedattribute(v=vs.110).aspx) e [OnDeserialized](https://msdn.microsoft.com/library/system.runtime.serialization.ondeserializedattribute(v=vs.110).aspx) para restaurar a dependência da desserialização. Essa é a solução mais simples.
 * Não armazene essa dependência, para que não seja serializada. Essa solução, embora tecnicamente viável, não é recomendável.
 * Use o substituto de serialização de reflexão. Essa solução pode não ser viável em alguns casos e corre o risco de serializar demasiadamente.
 
@@ -224,7 +224,7 @@ builder.Update(Conversation.Container);
 
 O serviço de Estado permite que você persista o progresso através dos diálogos em uma conversa para que um usuário possa retornar a uma conversa com um bot posteriormente sem perder a posição. Para preservar isso, os recipientes de propriedades de dados de bot armazenados por meio da API de Estado não são automaticamente excluídos quando você modifica o código do bot. É necessário decidir se os dados do bot devem ou não ser limpos, dependendo se o código modificado é compatível com as versões mais antigas dos dados. 
 
-* Se você quiser redefinir manualmente a pilha de diálogo e o estado de conversa durante o desenvolvimento do bot, poderá usar o comando ` /deleteprofile` para excluir os dados de estado. Certifique-se de incluir o espaço inicial neste comando para evitar que o canal o interprete.
+* Se você quiser redefinir manualmente a pilha de diálogo e o estado de conversa durante o desenvolvimento do bot, poderá usar o comando `/deleteprofile` para excluir os dados de estado. Certifique-se de incluir o espaço inicial neste comando para evitar que o canal o interprete.
 * Depois que o bot for implantado na produção, você poderá criar uma versão dos dados de bot para que, se você aumentar a versão, os dados de estado associados sejam limpos. Com o SDK do Bot Framework para Node.js, isso pode ser realizado usando middleware e com o SDK do Bot Framework para .NET, isso pode ser feito usando uma implementação `IPostToBot`.
 
 > [!NOTE]
@@ -234,7 +234,7 @@ O serviço de Estado permite que você persista o progresso através dos diálog
 
 ## <a name="what-are-the-possible-machine-readable-resolutions-of-the-luis-built-in-date-time-duration-and-set-entities"></a>Quais são as possíveis resoluções legíveis por computador da data, hora, duração interna do LUIS e conjunto de entidades?
 
-Para obter uma lista de exemplos, consulte a seção [Entidades criadas previamente ][LUISPreBuiltEntities] da documentação do LUIS.
+Para obter uma lista de exemplos, consulte a seção [Entidades criadas previamente][LUISPreBuiltEntities] da documentação do LUIS.
 
 ## <a name="how-can-i-use-more-than-the-maximum-number-of-luis-intents"></a>Como posso usar mais que o número máximo de intenções de LUIS?
 
@@ -251,9 +251,9 @@ Tanto o SDK do Bot Framework para Node.js quanto o SDK do Bot Framework para .NE
 ## <a name="where-can-i-get-more-help-on-luis"></a>Onde é possível obter mais ajuda sobre o LUIS?
 
 * [Introdução ao LUIS (Serviço Inteligente de Reconhecimento Vocal) - Serviços Cognitivos da Microsoft](https://www.youtube.com/watch?v=jWeLajon9M8) (vídeo)
-* [Sessão de Aprendizado Avançado para LUIS (Serviço Inteligente de Reconhecimento Vocal) ](https://www.youtube.com/watch?v=39L0Gv2EcSk) (vídeo)
+* [Sessão de Aprendizado Avançado para LUIS (Serviço Inteligente de Reconhecimento Vocal)](https://www.youtube.com/watch?v=39L0Gv2EcSk) (vídeo)
 * [Documentação do LUIS](/azure/cognitive-services/LUIS/Home)
-* [Fórum do Serviço Inteligente de Reconhecimento Vocal](https://social.msdn.microsoft.com/forums/azure/en-US/home?forum=LUIS) 
+* [Fórum do Serviço Inteligente de Reconhecimento Vocal](https://social.msdn.microsoft.com/forums/azure/home?forum=LUIS) 
 
 
 ## <a name="what-are-some-community-authored-dialogs"></a>Quais são alguns diálogos criados pela comunidade?

@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 3f726587c02315a1d2c0d7910fafabbd4577c73d
-ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
+ms.openlocfilehash: 049d0d39d6e1d64e44f743ea7558bbc23ad0f2f5
+ms.sourcegitcommit: dbbfcf45a8d0ba66bd4fb5620d093abfa3b2f725
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215514"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67464767"
 ---
 # <a name="dialogs-library"></a>Biblioteca de diálogos
 
@@ -59,7 +59,7 @@ Prompts, na biblioteca de diálogos, fornecem uma maneira fácil de pedir ao usu
 
 Nos bastidores, os prompts são uma caixa de diálogo em duas etapas. Primeiro, o prompt solicitará a entrada, em seguida, ele retornará o valor válido ou iniciará tudo novamente com um novo prompt.
 
-Os prompts têm *opções de prompt* fornecidas quando são chamados, nas quais você pode especificar o texto do prompt, o prompt de repetição se a validação falhar e as opções para responder o prompt.
+Os prompts têm *opções de prompt* fornecidas quando são chamados, nas quais você pode especificar o texto do prompt, o prompt de repetição se a validação falhar e as opções para responder o prompt. Em geral, as propriedades de prompt e de nova tentativa de prompt são atividads, embora exista alguma variação sobre como isso é manipulado em linguagens de programação diferentes.
 
 Além disso, você pode optar por adicionar alguma validação personalizada ao seu prompt quando ele é criado. Por exemplo, digamos que quiséssemos obter o tamanho de um grupo usando o prompt de número, mas o tamanho desse grupo deve ser maior do que 2 e menor que 12. O prompt primeiro verifica se recebeu um número válido, em seguida, executa a validação personalizada se esta tiver sido fornecida. Se a validação personalizada falhar, ele solicitará novamente ao usuário a informação, conforme descrito acima.
 
@@ -108,6 +108,40 @@ O contexto da etapa em cascata contém o seguinte:
 * *Resultado*: contém o resultado da etapa anterior.
 
 Além disso, o método *next* continua para a próxima etapa do diálogo em cascata dentro do mesmo turno, permitindo que seu bot ignore uma etapa específica, se necessário.
+
+#### <a name="prompt-options"></a>Opções de prompt
+
+O segundo parâmetro do método de _prompt_ do contexto da etapa usa um objeto _opções de prompt_, que tem as propriedades a seguir.
+
+| Propriedade | DESCRIÇÃO |
+| :--- | :--- |
+| _Prompt_ | A atividade inicial para enviar o usuário, para solicitar sua entrada. |
+| _Prompt de nova tentativa_ | A atividade de enviar o usuário se a sua primeira entrada não tiver sido validada. |
+| _Opções_ | Uma lista de opções para o usuário escolher, para ser usado com um prompt de escolha. |
+| _Validações_ | Parâmetros adicionais a serem usados com um validador personalizado. |
+| _Estilo_ | Define como as opções de um prompt de escolha ou prompt de confirmação serão apresentadas a um usuário. | 
+
+Você sempre deve especificar a atividade do prompt inicial a ser enviado ao usuário, bem como um prompt de nova tentativa para instâncias em que a entrada do usuário não é validada. 
+
+Se a entrada do usuário não for válida, o prompt de nova tentativa será enviado ao usuário. Se não houver uma nova tentativa especificada, o prompt inicial será enviado novamente. No entanto, se uma atividade for enviada de volta ao usuário de dentro do validador, nenhum aviso de nova tentativa será enviado. 
+
+##### <a name="prompt-validation"></a>Validação da prompt 
+
+Você pode validar uma resposta do prompt antes de retornar o valor para a próxima etapa da cascata. Uma função de validador tem um parâmetro de _contexto do validador de prompt_ e retorna um valor booleano que indica se a entrada passa na validação.
+O contexto do validador de prompt inclui as seguintes propriedades:
+
+| Propriedade | DESCRIÇÃO |
+| :--- | :--- |
+| _Contexto_ | O contexto de turnos atual para o bot. |
+| _Reconhecido_ | Um _resultado do reconhecedor de prompts_ que contém informações sobre a entrada do usuário, conforme processado pelo reconhecedor. |
+| _Opções_ | Contém as _opções de prompt_ que foram fornecidas na chamada para iniciar o prompt. |
+
+O resultado do reconhecedor de prompts tem as seguintes propriedades:
+
+| Propriedade | DESCRIÇÃO |
+| :--- | :--- |
+| _Êxito_ | Indica se o reconhecedor foi capaz de analisar a entrada. |
+| _Valor_ | O valor retornado do reconhecedor. Se necessário, o código de validação pode modificar esse valor. |
 
 ### <a name="component-dialog"></a>Diálogo de componente
 

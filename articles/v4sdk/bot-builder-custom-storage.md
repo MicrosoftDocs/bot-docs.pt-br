@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2b77b19a3b2d0fbd8e545e563f154124af894ffa
-ms.sourcegitcommit: e276008fb5dd7a37554e202ba5c37948954301f1
+ms.openlocfilehash: 138f3c943fc6c4a7882e808c3f280d4ebe04f62f
+ms.sourcegitcommit: 409e8f89a1e9bcd0e69a29a313add424f66a81e1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66693732"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67153082"
 ---
 # <a name="implement-custom-storage-for-your-bot"></a>Implementar um armazenamento personalizado para seu bot
 
@@ -114,7 +114,8 @@ Depois de termos criado a chave apropriada, vamos tentar carregar o estado corre
 
 A implementação OnTurn resultante tem esta aparência:
 
-**ScaleoutBot.cs** [!code-csharp[OnMessageActivity](~/../botbuilder-samples/samples/csharp_dotnetcore/42.scaleout/Bots/ScaleOutBot.cs?range=43-72)]
+**ScaleoutBot.cs**  
+[!code-csharp[OnMessageActivity](~/../botbuilder-samples/samples/csharp_dotnetcore/42.scaleout/Bots/ScaleOutBot.cs?range=43-72)]
 
 Observe que modelamos a execução do diálogo como uma chamada de função. Talvez uma implementação mais sofisticada seria ter definido uma interface e tornado essa dependência injetável, mas para os nossos fins, ter o diálogo todo por trás de uma função estática enfatiza a natureza funcional da nossa abordagem. Como uma instrução geral, organizar nossa implementação, de modo que as partes essenciais se tornem funcionais, nos coloca em um lugar confortável quando se trata de fazê-la funcionar com êxito em redes.
 
@@ -124,7 +125,8 @@ Observe que modelamos a execução do diálogo como uma chamada de função. Tal
 O próximo requisito é armazenarmos em buffer as atividades de saída até a realização de um salvamento bem-sucedido. Isso exigirá uma implementação personalizada do BotAdapter. Neste código, implementaremos a função SendActivity abstrata para adicionar a atividade a uma lista em vez de enviá-la. O diálogo que estamos hospedando não será conhecido.
 Nesse cenário específico, as operações UpdateActivity e DeleteActivity não têm suporte e, por isso, apenas lançarão “Não Implementado” desses métodos. Também não nos importamos com o valor retornado do SendActivity. Isso é usado por alguns canais em cenários em que é necessário enviar atualizações para as atividades, por exemplo, para desabilitar botões em cartões exibidos no canal. Essas trocas de mensagens podem ficar complicadas, especialmente quando o estado é obrigatório, o que está fora do escopo deste artigo. A implementação completa do BotAdapter personalizado tem esta aparência:
 
-**DialogHostAdapter.cs** [!code-csharp[DialogHostAdapter](~/../botbuilder-samples/samples/csharp_dotnetcore/42.scaleout/DialogHostAdapter.cs?range=19-46)]
+**DialogHostAdapter.cs**  
+[!code-csharp[DialogHostAdapter](~/../botbuilder-samples/samples/csharp_dotnetcore/42.scaleout/DialogHostAdapter.cs?range=19-46)]
 
 ## <a name="integration"></a>Integração
 
@@ -136,11 +138,13 @@ Estamos sendo muito cuidadosos com a disposição em camadas, estamos colocando 
 
 Aqui está o código do driver:
 
-**DialogHost.cs** [!code-csharp[DialogHost](~/../botbuilder-samples/samples/csharp_dotnetcore/42.scaleout/DialogHost.cs?range=22-72)]
+**DialogHost.cs**  
+[!code-csharp[DialogHost](~/../botbuilder-samples/samples/csharp_dotnetcore/42.scaleout/DialogHost.cs?range=22-72)]
 
 E, por fim, no acessador personalizado, só precisamos implementar Get porque o estado é por referência:
 
-**RefAccessor.cs** [!code-csharp[RefAccessor](~/../botbuilder-samples/samples/csharp_dotnetcore/42.scaleout/RefAccessor.cs?range=22-60)]
+**RefAccessor.cs**  
+[!code-csharp[RefAccessor](~/../botbuilder-samples/samples/csharp_dotnetcore/42.scaleout/RefAccessor.cs?range=22-60)]
 
 ## <a name="additional-information"></a>Informações adicionais
 O código de [exemplo C#](http://aka.ms/scale-out) usado neste artigo está disponível no GitHub.

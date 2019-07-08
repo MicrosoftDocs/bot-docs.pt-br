@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 7ca595b1c24769addfbdf7975c48d3a052c4a2de
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: 5a0756be0a29660ef63f50a67ce4fa0f27ccc50f
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54226001"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67405041"
 ---
 # <a name="handle-user-actions"></a>Tratar ações do usuário
 
@@ -49,7 +49,7 @@ A precedência de ação é importante nos casos em que usar o mesmo comando em 
 
 ## <a name="bind-actions-to-dialog"></a>Associar ações ao diálogo
 
-Os enunciados de usuário ou cliques no botão podem *disparar* uma ação, que é associada a um [diálogo](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.dialog.html).
+Os enunciados de usuário ou cliques no botão podem *disparar* uma ação, que é associada a um [diálogo](https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.dialog.html).
 Se as *correspondências* forem especificadas, a ação escutará o usuário dizer uma palavra ou frase que disparará a ação.  A opção `matches` pode ter uma expressão regular ou o nome de um [reconhecedor][RecognizeIntent].
 Para associar a ação a um clique no botão, use [CardAction.dialogAction()][CardAction] para disparar a ação.
 
@@ -116,7 +116,7 @@ bot.customAction({
 
 ### <a name="bind-a-begindialogaction"></a>Associar um beginDialogAction
 
-Associar um `beginDialogAction` a um diálogo registrará a ação no diálogo. Esse método iniciará outro diálogo quando for disparado. O comportamento dessa ação é semelhante a chamar o método [beginDialog](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session.html#begindialog). É efetuado push do novo diálogo na parte superior da pilha de diálogo para que não finalize automaticamente a tarefa atual. A tarefa atual será continuada quando o novo diálogo encerrar. 
+Associar um `beginDialogAction` a um diálogo registrará a ação no diálogo. Esse método iniciará outro diálogo quando for disparado. O comportamento dessa ação é semelhante a chamar o método [beginDialog](https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.session.html#begindialog). É efetuado push do novo diálogo na parte superior da pilha de diálogo para que não finalize automaticamente a tarefa atual. A tarefa atual será continuada quando o novo diálogo encerrar. 
 
 O snippet de código a seguir mostra como associar um [beginDialogAction][beginDialogAction] a um diálogo.
 
@@ -142,7 +142,7 @@ bot.dialog('showDinnerCart', function(session){
 });
 ```
 
-Nos casos em que for necessário passar argumentos adicionais para o novo diálogo, será possível adicionar uma opção [`dialogArgs`](https://docs.botframework.com/en-us/node/builder/chat-reference/interfaces/_botbuilder_d_.idialogactionoptions#dialogargs) à ação.
+Nos casos em que for necessário passar argumentos adicionais para o novo diálogo, será possível adicionar uma opção [`dialogArgs`](https://docs.botframework.com/node/builder/chat-reference/interfaces/_botbuilder_d_.idialogactionoptions#dialogargs) à ação.
 
 Usando o exemplo acima, você poderá modificá-lo para aceitar argumentos transmitidos através de `dialogArgs`.
 
@@ -178,7 +178,7 @@ bot.dialog('showDinnerCart', function(session, args){
 
 ### <a name="bind-a-reloadaction"></a>Associar um reloadAction
 
-Associar um `reloadAction` a um diálogo irá registrá-lo no diálogo. Associar essa ação a um diálogo faz com que o diálogo seja reiniciado quando a ação for disparada. Disparar essa ação é semelhante a chamar o método [replaceDialog](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session.html#replacedialog). Isso é útil para implementar a lógica para lidar com enunciados de usuário como "começar novamente" ou criar [loops](bot-builder-nodejs-dialog-replace.md#repeat-an-action).
+Associar um `reloadAction` a um diálogo irá registrá-lo no diálogo. Associar essa ação a um diálogo faz com que o diálogo seja reiniciado quando a ação for disparada. Disparar essa ação é semelhante a chamar o método [replaceDialog](https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.session.html#replacedialog). Isso é útil para implementar a lógica para lidar com enunciados de usuário como "começar novamente" ou criar [loops](bot-builder-nodejs-dialog-replace.md#repeat-an-action).
 
 O snippet de código a seguir mostra como associar um [reloadAction][reloadAction] a um diálogo.
 
@@ -193,7 +193,7 @@ bot.dialog('orderDinner', [
 });
 ```
 
-Nos casos em que for necessário passar argumentos adicionais para o diálogo recarregado, será possível adicionar uma opção [`dialogArgs`](https://docs.botframework.com/en-us/node/builder/chat-reference/interfaces/_botbuilder_d_.idialogactionoptions#dialogargs) à ação. Essa opção é passada para o parâmetro `args`. Regravar o código de exemplo acima para receber um argumento em uma ação de recarga será algo parecido com isto:
+Nos casos em que for necessário passar argumentos adicionais para o diálogo recarregado, será possível adicionar uma opção [`dialogArgs`](https://docs.botframework.com/node/builder/chat-reference/interfaces/_botbuilder_d_.idialogactionoptions#dialogargs) à ação. Essa opção é passada para o parâmetro `args`. Regravar o código de exemplo acima para receber um argumento em uma ação de recarga será algo parecido com isto:
 
 ```javascript
 // Order dinner.
@@ -236,7 +236,7 @@ bot.dialog('orderDinner', [
 
 ### <a name="bind-an-endconversationaction"></a>Associar um endConversationAction
 
-Associar um `endConversationAction` irá registrá-lo no diálogo. Quando disparada, essa ação encerrará a conversa com o usuário. Disparar essa ação é semelhante a chamar o método [endConversation](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.session.html#endconversation). Quando uma conversa encerrar, o SDK do Bot Framework para Node.js limpará a pilha de diálogo e os dados de estado persistentes. Para obter mais informações sobre dados de estado persistentes, consulte [Gerenciar dados de estado](bot-builder-nodejs-state.md).
+Associar um `endConversationAction` irá registrá-lo no diálogo. Quando disparada, essa ação encerrará a conversa com o usuário. Disparar essa ação é semelhante a chamar o método [endConversation](https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.session.html#endconversation). Quando uma conversa encerrar, o SDK do Bot Framework para Node.js limpará a pilha de diálogo e os dados de estado persistentes. Para obter mais informações sobre dados de estado persistentes, consulte [Gerenciar dados de estado](bot-builder-nodejs-state.md).
 
 O snippet de código a seguir mostra como associar um [endConversationAction][endConversationAction] a um diálogo.
 
@@ -255,7 +255,7 @@ bot.dialog('orderDinner', [
 
 A maioria dessas ações, se não todas, interrompe o fluxo normal de uma conversa. Muitos são interrompidas e devem ser manipuladas com cuidado. Por exemplo, `triggerAction`, `cancelAction` ou `endConversationAction` limpará a pilha de diálogo. Se o usuário disparou uma dessas ações acidentalmente, deverá iniciar a tarefa novamente. Para garantir que o usuário realmente quer disparar essas ações, é possível adicionar uma opção `confirmPrompt` a essas ações. O `confirmPrompt` perguntará se o usuário tem certeza sobre o cancelamento ou encerramento da tarefa atual. Isso permite que o usuário mude de ideia e continue o processo.
 
-O snippet de código abaixo mostra [cancelAction][cancelAction] com um [confirmPrompt](http://docs.botframework.com/en-us/node/builder/chat-reference/interfaces/_botbuilder_d_.itriggeractionoptions#confirmprompt) para certificar-se de que o usuário realmente quer cancelar o processo do pedido.
+O snippet de código abaixo mostra [cancelAction][cancelAction] com um [confirmPrompt](http://docs.botframework.com/node/builder/chat-reference/interfaces/_botbuilder_d_.itriggeractionoptions#confirmprompt) para certificar-se de que o usuário realmente quer cancelar o processo do pedido.
 
 ```javascript
 // Order dinner.
@@ -280,16 +280,16 @@ As **ações** permitem que você antecipe as solicitações dos usuários e que
 > [Gerenciar dados de estado](bot-builder-nodejs-state.md)
 
 
-[triggerAction]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.dialog.html#triggeraction
+[triggerAction]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.dialog.html#triggeraction
 
-[cancelAction]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.dialog.html#cancelaction
+[cancelAction]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.dialog.html#cancelaction
 
-[reloadAction]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.dialog.html#reloadaction
+[reloadAction]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.dialog.html#reloadaction
 
-[beginDialogAction]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.dialog.html#begindialogaction
+[beginDialogAction]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.dialog.html#begindialogaction
 
-[endConversationAction]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.dialog.html#endconversationaction
+[endConversationAction]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.dialog.html#endconversationaction
 
 [RecognizeIntent]: bot-builder-nodejs-recognize-intent-messages.md
 
-[CardAction]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.cardaction#dialogaction
+[CardAction]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.cardaction#dialogaction

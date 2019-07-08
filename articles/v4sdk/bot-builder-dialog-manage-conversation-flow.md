@@ -10,25 +10,29 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 680d9148b463bbb5d10f4a6a06cc7b32b824b66e
-ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
+ms.openlocfilehash: 0f29520b993d12ce01c65cd29517b3a4b2aada84
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215426"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67404550"
 ---
 # <a name="implement-sequential-conversation-flow"></a>Implementar fluxo de conversa sequencial
 
 [!INCLUDE[applies-to](../includes/applies-to.md)]
 
-A coleta de informações por meio da apresentação de perguntas é uma das principais formas de um bot interagir com os usuários. A biblioteca de diálogos torna mais fácil fazer perguntas e validar as respostas para que elas correspondam a um tipo de dados específico ou atendam às regras de validação personalizadas.
+A coleta de informações por meio da apresentação de perguntas é uma das principais formas de um bot interagir com os usuários. A biblioteca de diálogos fornece recursos internos úteis como classes *prompt* que tornam fácil fazer perguntas e validar as respostas para que elas correspondam a um tipo de dados específico ou atendam às regras de validação personalizadas. 
 
 Você pode gerenciar fluxos de conversa simples e complexos usando a biblioteca de caixas de diálogo. Em uma interação simples, o bot percorre uma sequência fixa de etapas e a conversa termina. Em geral, um diálogo é útil quando o bot precisa coletar informações do usuário. Este tópico fornece detalhes sobre como implementar um fluxo de conversa simples criando prompts e chamando-os de um diálogo de cascata. 
 
+> [!TIP]
+> Para obter exemplos de como escrever seus próprios prompts sem usar a biblioteca de caixas de diálogo, veja o artigo [Criar seus próprios prompts para coletar entrada do usuário](bot-builder-primitive-prompts.md). 
+
+
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- Conhecimento de [noções básicas de bot][concept-basics], [gerenciamento de estado][concept-state]e [biblioteca de diálogos][concept-dialogs].
-- Uma cópia do exemplo de **prompt de vários turnos** em [**CSharp**][cs-sample] ou em [**JavaScript**][js-sample].
+- Conhecimento de [conceitos básicos de bot][concept-basics], [managing state][concept-state] e a [biblioteca de caixas de diálogo][concept-dialogs].
+- Uma cópia do exemplo de **prompt de vários turnos** em [**CSharp**][cs-sample] ou em or [**JavaScript**][js-sample].
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
@@ -63,6 +67,8 @@ No construtor `UserProfileDialog`, crie as etapas de cascata, os prompts e o di�
 [!code-csharp[Constructor snippet](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=22-41)]
 
 Em seguida, implementamos as etapas usadas pelo diálogo. Para usar um prompt, chame-o de uma etapa no seu diálogo e recupere o resultado do prompt na etapa seguinte usando `stepContext.Result`. Nos bastidores, os prompts são uma caixa de diálogo em duas etapas. Primeiro, o prompt solicita a entrada; em seguida, ele retorna o valor válido ou recomeça do princípio com um novo prompt até receber uma entrada válida.
+
+
 
 Você sempre deve ter um retorno de `DialogTurnResult` não nulo em uma etapa de cascata. Se isso não acontecer, o diálogo poderá não funcionar como planejado. Aqui, mostramos a implementação para o `NameStepAsync` no diálogo de cascata.
 

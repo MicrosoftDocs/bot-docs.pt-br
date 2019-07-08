@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: fd74dedcb048a7872a518618f8a9382e0585dbb5
-ms.sourcegitcommit: e276008fb5dd7a37554e202ba5c37948954301f1
+ms.openlocfilehash: 9478a3861b24746b4081ab2176486e59ccc7d4bc
+ms.sourcegitcommit: dbbfcf45a8d0ba66bd4fb5620d093abfa3b2f725
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66693681"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67464707"
 ---
 # <a name="add-media-to-messages"></a>Adicionar mídia às mensagens
 
@@ -31,7 +31,7 @@ Para enviar o conteúdo do usuário, como uma imagem ou um vídeo, é possível 
 
 Confira a [experiência de usuário de design](../bot-service-design-user-experience.md) para obter exemplos dos cartões disponíveis.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+### <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 A propriedade `Attachments` do objeto `Activity` contém uma matriz de objetos `Attachment` que representam os anexos de mídia e os cartões avançados na mensagem. Para adicionar um anexo de mídia a uma mensagem, crie um objeto `Attachment` para a atividade `reply` (que é criado fora dela com `CreateReply()`) e defina as propriedades `ContentType`, `ContentUrl` e `Name`.
 
@@ -40,25 +40,24 @@ O código-fonte mostrado aqui se baseia no exemplo [Tratamento de Anexos](https:
 Para criar a mensagem de resposta, defina o texto e, em seguida, configure os anexos. A atribuição dos anexos à resposta é a mesma para cada tipo de anexo, no entanto vários anexos são configurados e definidos de forma diferente, como visto nos trechos de código a seguir. O código a seguir é a configuração da resposta para um anexo embutido:
 
 **Bots/AttachmentsBot.cs**  
-[!code-csharp[inline attachment](~/../botbuilder-samples/samples/csharp_dotnetcore/15.handling-attachments/Bots/AttachmentsBot.cs?range=108-109)]
+[!code-csharp[inline attachment](~/../botbuilder-samples/samples/csharp_dotnetcore/15.handling-attachments/Bots/AttachmentsBot.cs?range=105-106)]
 
 Em seguida, vamos examinar os tipos de anexos. O primeiro é um anexo embutido:
 
 **Bots/AttachmentsBot.cs**  
-[!code-csharp[inline attachment](~/../botbuilder-samples/samples/csharp_dotnetcore/15.handling-attachments/Bots/AttachmentsBot.cs?range=165-176)]
+[!code-csharp[inline attachment](~/../botbuilder-samples/samples/csharp_dotnetcore/15.handling-attachments/Bots/AttachmentsBot.cs?range=167-178)]
 
 Em seguida, um anexo carregado:
 
 **Bots/AttachmentsBot.cs**  
-[!code-csharp[uploaded attachment](~/../botbuilder-samples/samples/csharp_dotnetcore/15.handling-attachments/Bots/AttachmentsBot.cs?range=179-215)]
+[!code-csharp[uploaded attachment](~/../botbuilder-samples/samples/csharp_dotnetcore/15.handling-attachments/Bots/AttachmentsBot.cs?range=181-214)]
 
 Por fim, um anexo de internet:
 
 **Bots/AttachmentsBot.cs**  
-[!code-csharp[online attachment](~/../botbuilder-samples/samples/csharp_dotnetcore/15.handling-attachments/Bots/AttachmentsBot.cs?range=218-227)]
+[!code-csharp[online attachment](~/../botbuilder-samples/samples/csharp_dotnetcore/15.handling-attachments/Bots/AttachmentsBot.cs?range=217-226)]
 
-
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 O código-fonte mostrado aqui se baseia no exemplo [Tratamento de Anexos JS](https://aka.ms/bot-attachments-sample-code-js).
 
@@ -95,16 +94,16 @@ Se um anexo for uma imagem, áudio ou vídeo, o serviço do Connector comunicar�
 
 Além de anexos de vídeo ou imagem simples, é possível anexar um **cartão hero**, o que permite a você combinar imagens e botões em um objeto e depois enviá-los ao usuário. O markdown tem suporte na maioria dos campos de texto, mas o suporte pode variar por canal.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+### <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 Para redigir uma mensagem com um cartão hero e um botão, anexe um `HeroCard` a uma mensagem. 
 
 O código-fonte mostrado aqui se baseia no exemplo [Tratamento de Anexos](https://aka.ms/bot-attachments-sample-code).
 
 **Bots/AttachmentsBot.cs**  
-[!code-csharp[Hero card](~/../botbuilder-samples/samples/csharp_dotnetcore/15.handling-attachments/Bots/AttachmentsBot.cs?range=39-62)]
+[!code-csharp[Hero card](~/../botbuilder-samples/samples/csharp_dotnetcore/15.handling-attachments/Bots/AttachmentsBot.cs?range=39-58)]
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 Para redigir uma mensagem com um cartão hero e um botão, anexe um `HeroCard` a uma mensagem. 
 
@@ -137,7 +136,7 @@ Para funcionar corretamente, atribua um tipo de ação para cada item clicável 
 
 O código a seguir mostra exemplos que usam diversos eventos de cartão avançados.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+### <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 Para obter exemplos de todos os cartões disponíveis, confira o [exemplo de cartões C#](https://aka.ms/bot-cards-sample-code).
 
@@ -147,7 +146,7 @@ Para obter exemplos de todos os cartões disponíveis, confira o [exemplo de car
 **Cards.cs**  
 [!code-csharp[cards](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Cards.cs?range=91-100)]
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 Para obter exemplos de todos os cartões disponíveis, confira o [exemplo de cartões JS](https://aka.ms/bot-cards-js-sample-code).
 
@@ -168,10 +167,13 @@ Em segundo lugar, o Cartão Adaptável entrega as mensagens no formato de cartã
 
 Para localizar as informações mais recentes sobre o suporte de canal do Cartão Adaptável, confira o <a href="http://adaptivecards.io/designer/">Designer de Cartões Adaptáveis</a>.
 
+Para usar os cartões adaptáveis, certifique-se de adicionar o pacote NuGet `AdaptiveCards`. 
+
+
 > [!NOTE]
 > Você deve testar esse recurso com os canais de que bot será usado para determinar se esses canais dão suporte a cartões adaptáveis.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+### <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 Para usar Cartões Adaptáveis, certifique-se de adicionar o pacote NuGet `AdaptiveCards`.
 
@@ -180,7 +182,7 @@ O código-fonte mostrado aqui se baseia no exemplo [Usando Cartões](https://aka
 **Cards.cs**  
 [!code-csharp[adaptive cards](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Cards.cs?range=13-25)]
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 Para usar Cartões Adaptáveis, certifique-se de adicionar o pacote npm `adaptivecards`.
 
@@ -202,7 +204,7 @@ Em seguida, ele é criado com o CardFactory:
 
 As mensagens também podem incluir vários anexos em um layout de carrossel, que coloca os anexos lado a lado e permite ao usuário rolar para deslocar.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+### <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 O código-fonte mostrado aqui se baseia no [exemplo Cartões](https://aka.ms/bot-cards-sample-code).
 
@@ -214,14 +216,14 @@ Primeiro, crie a resposta e defina os anexos como uma lista.
 Em seguida, adicione os anexos. Aqui estamos adicionando-os um de cada vez, mas sinta-se à vontade para manipular a lista e adicionar os cartões como preferir.
 
 **Dialogs/MainDialog.cs**  
-[!code-csharp[carousel of cards](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Dialogs/MainDialog.cs?range=105-113)]
+[!code-csharp[carousel of cards](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Dialogs/MainDialog.cs?range=104-113)]
 
 Depois que os anexos forem adicionados, você poderá enviar a resposta como faria com qualquer outra.
 
 **Dialogs/MainDialog.cs**  
 [!code-csharp[carousel of cards](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Dialogs/MainDialog.cs?range=117-118)]
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 O código-fonte mostrado aqui se baseia no [exemplo de cartões JS](https://aka.ms/bot-cards-js-sample-code).
 
@@ -247,6 +249,120 @@ Para obter informações detalhadas sobre o esquema, confira o [esquema de cart�
 | Ações sugeridas | [Exemplo de C#](https://aka.ms/SuggestedActionsCSharp) | [Exemplo de JS](https://aka.ms/SuggestedActionsJS) |
 
 Consulte o repositório Exemplos do Bot Builder no [GitHub](https://aka.ms/bot-samples-readme) para obter exemplos adicionais.
+
+### <a name="code-sample-for-processing-adaptive-card-input"></a>Exemplo de código para processar entrada do Cartão Adaptável
+
+Este exemplo de código mostra uma maneira de usar entradas de Cartão Adaptável dentro de uma classe de caixa de diálogo de bot.
+Ele estende o atual exemplo 06.using-cards validando a entrada recebida no campo de texto do cliente está respondendo.
+Primeiro, adicionamos funcionalidades de botão e de entrada de texto ao cartão adaptável existente adicionando o seguinte código antes do colchete final de adaptiveCard.json, encontrado na pasta de recursos:
+
+```json
+  ,
+  "actions": [
+    {
+      "type": "Action.ShowCard",
+      "title": "Text",
+      "card": {
+      "type": "AdaptiveCard",
+      "body": [
+        {
+          "type": "Input.Text",
+          "id": "text",
+          "isMultiline": true,
+          "placeholder": "Enter your comment"
+        }
+      ],
+      "actions": [
+        {
+          "type": "Action.Submit",
+          "title": "OK"
+        }
+      ]
+    }
+  }
+]
+
+```
+
+Observe que o campo de entrada é rotulado "text", de modo que nosso cartão adaptável anexará os dados de texto do comentário como Valor.[texto].
+
+### <a name="ctabcsharp"></a>[C#](#tab/csharp)
+nosso validador usa Newtonsoft.json para, primeiro, converter isso em um JObject e, em seguida, criar uma cadeia de caracteres de texto aparada para comparação. Portanto, adicione:
+  ```csharp
+  using Newtonsoft.Json.Linq;
+  ```
+a MainDialog.cs e instale o pacote NuGet estável mais recente de Newtonsoft.Json.
+No código do validador, adicionamos o fluxo de lógica aos comentários do código. Esse código ChoiceValidator() é colocado no exemplo 06.using-cards logo após o colchete fechado de forma pública para a declaração de MainDialog:
+
+```csharp
+private async Task ChoiceValidator(
+  PromptValidatorContext promptContext,
+  CancellationToken cancellationToken)
+  {
+    // Retrieves Adaptive Card comment text as JObject.
+    // looks for JObject field "text" and converts that input into a trimmed text string.
+    var jobject = promptContext.Context.Activity.Value as JObject;
+    var jtoken = jobject?["text"];
+    var text = jtoken?.Value().Trim();
+    // Logic: 1. if succeeded = true, just return promptContext
+    //        2. if false, see if JObject contained Adaptive Card input.
+    //               No = (bad input) return promptContext
+    //               Yes = update Value field with JObject text string, return "true".
+    if (!promptContext.Recognized.Succeeded && text != null)
+    {
+       var choice = promptContext.Options.Choices.FirstOrDefault(
+       c => c.Value.Equals(text, StringComparison.InvariantCultureIgnoreCase));
+       if (choice != null)
+       {
+           promptContext.Recognized.Value = new FoundChoice
+            {
+               Value = choice.Value,
+             };
+            return true;
+       }
+    }
+    return promptContext.Recognized.Succeeded;
+  }
+```
+
+Agora, na declaração MainDialog, altere:
+  ```csharp
+  // Define the main dialog and its related components.
+  AddDialog(new ChoicePrompt(nameof(ChoicePrompt)));
+  ```
+para:
+  ```csharp
+  // Define the main dialog and its related components.
+  AddDialog(new ChoicePrompt(nameof(ChoicePrompt), ChoiceValidator));
+  ```
+Isso invocará seu validador para procurar pela entrada do Cartão Adaptável sempre que um novo ChoicePrompt for criado.
+
+### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+Abra mainDialog.js e localize o método de execução _async run(turnContext, accessor)_ . Esse método manipula a atividade de entrada.
+Logo após a chamada _dialogSet.add(this);_ , adicione o seguinte:
+```JavaScript
+  // The following check looks for a non-existant text input
+  // plus Adaptive Card input in _activity.value.text
+  // If both conditions exist, the Activity Card text 
+  // is copied into the text input field.
+  if(turnContext._activity.text == null
+      && turnContext._activity.value.text != null)
+   {
+      this.logger.log('replacing null text with Activity Card text input');
+      turnContext._activity.text = turnContext._activity.value.text;
+   }
+```
+Se essa verificação encontrar uma entrada de texto inexistente do cliente, ela verificará se há entrada de um Cartão Adaptável.
+Se houver uma entrada de Cartão Adaptável em \_activity.value.text, ela a copiará para o campo de entrada de texto normal.
+
+---
+
+Para testar seu código, depois que um Cartão Adaptável for exibido, clique no botão "Texto", insira uma seleção válida, como "Cartão Hero", e clique no botão "OK".
+
+![Testar Cartão Adaptável](media/adaptive-card-input.png)
+
+1. A primeira entrada será ser usada para iniciar uma nova caixa de diálogo.
+2. Clique no botão "OK" novamente e essa entrada será usada para selecionar um novo cartão.
 
 ## <a name="next-steps"></a>Próximas etapas
 

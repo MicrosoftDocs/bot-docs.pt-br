@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 09/20/2018
-ms.openlocfilehash: 0b5bc1e82b6ef2dc5550fcaa5db176d06a7d2ea7
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: ecccbcadab93417dd52f72512a0046e70a83e85e
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49999693"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67405821"
 ---
 # <a name="design-the-user-experience"></a>Projetar a experiência do usuário
 
@@ -47,7 +47,7 @@ Os cartões do Serviço de Bot da Microsoft são objetos programáveis que cont�
 
 Os cartões permitem que você projete o bot uma vez para que ele funcione em uma variedade de canais. No entanto, nem todos os tipos de cartão são totalmente compatíveis com todos os canais disponíveis. 
 
-Encontre instruções detalhadas para a adição de cartões ao bot nestas seções [Adicionar anexos de mídia de cartão avançado](v4sdk/bot-builder-howto-add-media-attachments.md) e [Adicionar ações sugeridas às mensagens](v4sdk/bot-builder-howto-add-suggested-actions.md). Um exemplo de código também pode ser encontrado aqui para cartões: [C#](https://aka.ms/bot-cards-sample-code-cs)/[JS](https://aka.ms/bot-cards-sample-code-js) cartões adaptáveis: [C#](https://aka.ms/bot-adaptive-cards-sample-code)/[JS](https://aka.ms/bot-adaptive-cards-js-sample-code), anexos: [C#](https://aka.ms/bot-attachments-sample-code)/[JS](https://aka.ms/bot-attachments-js-sample-code) e ações sugeridas: [C#](https://aka.ms/bot-suggested-actions-code)/[JS](https://aka.ms/bot-suggested-actions-js-code).
+Encontre instruções detalhadas para a adição de cartões ao bot nestas seções [Adicionar anexos de mídia de cartão avançado](v4sdk/bot-builder-howto-add-media-attachments.md) e [Adicionar ações sugeridas às mensagens](v4sdk/bot-builder-howto-add-suggested-actions.md). O código de exemplo também pode ser encontrado aqui para os cartões: [C#](https://aka.ms/bot-cards-sample-code-cs)/[JS](https://aka.ms/bot-cards-sample-code-js), cartões adaptáveis: [C#](https://aka.ms/bot-adaptive-cards-sample-code)/[JS](https://aka.ms/bot-adaptive-cards-js-sample-code), anexos: [C#](https://aka.ms/bot-attachments-sample-code)/[JS](https://aka.ms/bot-attachments-js-sample-code) e ações sugeridas: [C#](https://aka.ms/bot-suggested-actions-code)/[JS](https://aka.ms/bot-suggested-actions-js-code).
 
 
 
@@ -77,7 +77,7 @@ Em outros casos, um usuário pode estar **digitando um comando específico**. Po
 > Projetar um bot para exigir comandos específicos do usuário geralmente oferece uma boa experiência do usuário, ao mesmo tempo que elimina a necessidade da funcionalidade de reconhecimento vocal em idioma natural.
 
   
-No caso de um bot *de base de dados de conhecimento* ou de um bot de *perguntas e respostas*, um usuário pode estar fazendo **perguntas gerais**. Por exemplo, imagine um bot que possa responder a perguntas com base no conteúdo de milhares de documentos. O <a href="https://qnamaker.ai" target="_blank">QnA Maker</a> e o <a href="https://azure.microsoft.com/en-us/services/search/" target="_blank">Azure Search</a> são tecnologias que foram criadas especificamente para esse tipo de cenário. Para obter mais informações, confira [Projetar bots de conhecimento](bot-service-design-pattern-knowledge-base.md).
+No caso de um bot *de base de dados de conhecimento* ou de um bot de *perguntas e respostas*, um usuário pode estar fazendo **perguntas gerais**. Por exemplo, imagine um bot que possa responder a perguntas com base no conteúdo de milhares de documentos. O <a href="https://qnamaker.ai" target="_blank">QnA Maker</a> e o <a href="https://azure.microsoft.com/services/search/" target="_blank">Azure Search</a> são tecnologias que foram criadas especificamente para esse tipo de cenário. Para obter mais informações, confira [Projetar bots de conhecimento](bot-service-design-pattern-knowledge-base.md).
 
 > [!TIP]
 > Se estiver criando um bot que responderá perguntas com base em dados estruturados ou não estruturados de bancos de dados, páginas da Web ou documentos, considere o uso de tecnologias que foram projetadas especificamente para abordar esse cenário, em vez de tentar resolver o problema com o reconhecimento vocal em idioma natural.

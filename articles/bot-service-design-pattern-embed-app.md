@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 08/15/2018
-ms.openlocfilehash: e68358ed65b9300ed8595496b88c5d0736819671
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 5a0ded9af5f624398df764f16e6dd2db0105255c
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998213"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67405869"
 ---
 # <a name="embed-a-bot-in-an-app"></a>Inserir um bot em um aplicativo
 
@@ -25,7 +25,7 @@ A maneira de integrar a um aplicativo a um bot varia dependendo do tipo de aplic
 
 ### <a name="native-mobile-app"></a>Aplicativo móvel nativo
 
-Um aplicativo criado em código nativo pode se comunicar com o Bot Framework usando a [API de Linha Direta][directLineAPI], por meio de REST ou websockets.
+Um aplicativo criado em código nativo pode se comunicar com o Bot Framework usando a [Direct Line API][directLineAPI], por meio de REST ou websockets.
 
 ### <a name="web-based-mobile-app"></a>Aplicativo móvel baseado na Web
 
@@ -33,11 +33,11 @@ Um aplicativo móvel criado usando a linguagem da Web e estruturas como <a href=
 
 ### <a name="iot-app"></a>Aplicativo IoT
 
-Um aplicativo IoT pode se comunicar com o Bot Framework usando a [API de Linha Direta][directLineAPI]. Em alguns cenários, também pode usar os <a href="https://www.microsoft.com/cognitive-services/" target="_blank">Serviços Cognitivos da Microsoft</a> para habilitar recursos como fala e reconhecimento de imagem.
+Um aplicativo IoT pode se comunicar com o Bot Framework usando a [Direct Line API][directLineAPI]. Em alguns cenários, também pode usar os <a href="https://www.microsoft.com/cognitive-services/" target="_blank">Serviços Cognitivos da Microsoft</a> para habilitar recursos como fala e reconhecimento de imagem.
 
 ### <a name="other-types-of-apps-and-games"></a>Outros tipos de aplicativos e jogos
 
-Outros tipos de aplicativos e jogos podem se comunicar com o Bot Framework usando a [API de Linha Direta][directLineAPI]. 
+Outros tipos de aplicativos e jogos podem se comunicar com o Bot Framework usando a [Direct Line API][directLineAPI]. 
 
 ## <a name="creating-a-cross-platform-mobile-app-that-runs-a-bot"></a>Criar um aplicativo móvel de plataforma cruzada que executa um bot
 
@@ -71,7 +71,7 @@ For a complete sample that shows how to create a cross-platform mobile app that 
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [API de Linha Direta][directLineAPI]
+- [Direct Line API][directLineAPI]
 - <a href="https://www.microsoft.com/cognitive-services/" target="_blank">Serviços Cognitivos da Microsoft</a>
 
-[directLineAPI]: https://docs.botframework.com/en-us/restapi/directline3/#navtitle
+[directLineAPI]: https://docs.botframework.com/restapi/directline3/#navtitle

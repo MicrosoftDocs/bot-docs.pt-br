@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 5a6fc63005797a1c645de7506a8f15df2dcd0557
-ms.sourcegitcommit: b94361234816e6b95459f142add936732fc40344
+ms.openlocfilehash: 51bdc5e52bd147747e9d068fc4721ca4b782ef27
+ms.sourcegitcommit: dbbfcf45a8d0ba66bd4fb5620d093abfa3b2f725
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54317669"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67464515"
 ---
 # <a name="add-rich-card-attachments-to-messages"></a>Adicionar anexos de cartão avançados às mensagens
 
@@ -25,7 +25,9 @@ ms.locfileid: "54317669"
 > - [Node.js](../nodejs/bot-builder-nodejs-send-rich-cards.md)
 > - [REST](../rest-api/bot-framework-rest-connector-add-rich-cards.md)
 
-Uma troca de mensagens entre o usuário e o bot pode conter um ou mais cartões avançados renderizados como uma lista ou carrossel. A propriedade `Attachments` do objeto <a href="https://docs.botframework.com/en-us/csharp/builder/sdkreference/dc/d2f/class_microsoft_1_1_bot_1_1_connector_1_1_activity.html" target="_blank">Atividade</a> contém uma matriz de objetos <a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.bot.connector.attachments?view=botconnector-3.12.2.4" target="_blank">Anexo</a> que representam os cartões avançados e os anexos de mídia da mensagem. 
+Uma troca de mensagens entre o usuário e o bot pode conter um ou mais cartões avançados renderizados como uma lista ou carrossel. 
+
+A propriedade `Attachments` do objeto <a href="https://docs.botframework.com/csharp/builder/sdkreference/dc/d2f/class_microsoft_1_1_bot_1_1_connector_1_1_activity.html" target="_blank">Atividade</a> contém uma matriz de objetos <a href="https://docs.microsoft.com/dotnet/api/microsoft.bot.connector.attachments?view=botconnector-3.12.2.4" target="_blank">Anexo</a> que representam os cartões avançados e os anexos de mídia da mensagem. 
 
 > [!NOTE]
 > Para obter informações sobre como adicionar anexos de mídia às mensagens, consulte [Adicionar anexos de mídia às mensagens](bot-builder-dotnet-add-media-attachments.md).
@@ -41,9 +43,9 @@ Atualmente, o Bot Framework dá suporte a oito tipos de cartões avançados:
 | [Cartão de áudio][audioCard] | Um cartão que pode reproduzir um arquivo de áudio. |
 | [Cartão Hero][heroCard] | Um cartão que geralmente contém uma única imagem grande, um ou mais botões e um texto. |
 | [Cartão em miniatura][thumbnailCard] | Um cartão que geralmente contém uma única imagem em miniatura, um ou mais botões e um texto. |
-| [Cartão de recibo][receiptCard] | Um cartão que permite a um bot fornecer um recibo para o usuário. Normalmente, contém a lista de itens a serem incluídos no recebimento, em informações fiscais e totais e em outros textos. |
-| [Cartão de entrada][signinCard] | Um cartão que permite que um bot solicite a entrada do usuário. Normalmente, contém um texto e um ou mais botões nos quais o usuário pode clicar para iniciar o processo de entrada. |
-| [Cartão de vídeo][videoCard] | Uma placa que pode reproduzir vídeos. |
+| [Cartão de recibo][receiptCard] | Um cartão que permite a um bot fornecer um recibo para o usuário. Normalmente, contém a lista de itens a serem incluídos no recibo, informações fiscais e de totais e outros textos. |
+| [Cartão de entrada][signinCard] | Um cartão que permite a um bot solicitar a entrada do usuário. Normalmente, contém um texto e um ou mais botões nos quais o usuário pode clicar para iniciar o processo de entrada. |
+| [Cartão de vídeo][videoCard] | Um cartão que pode reproduzir vídeos. |
 
 > [!TIP]
 > Para exibir vários cartões avançados no formato de lista, defina a propriedade `AttachmentLayout` como "lista". Para exibir vários cartões avançados no formato de carrossel, defina a propriedade `AttachmentLayout` da atividade como "carrossel". Se o canal não der suporte para formato de carrossel, ele exibirá os cartões avançados no formato de lista, mesmo se a propriedade `AttachmentLayout` especificar "carrossel".
@@ -52,9 +54,9 @@ Atualmente, o Bot Framework dá suporte a oito tipos de cartões avançados:
 
 Para processar eventos em cartões avançados, defina objetos `CardAction` para especificar o que deverá acontecer quando o usuário clicar em um botão ou tocar em uma seção do cartão. Cada objeto `CardAction` contém estas propriedades:
 
-| Propriedade | Tipo | DESCRIÇÃO | 
+| Propriedade | Type | DESCRIÇÃO | 
 |----|----|----|
-| Tipo | string | tipo de ação (um dos valores especificados na tabela a seguir) |
+| Type | string | tipo de ação (um dos valores especificados na tabela a seguir) |
 | Title | string | título do botão |
 | Imagem | string | URL da imagem do botão |
 | Valor | string | valor necessário para executar o tipo de ação especificado |
@@ -125,12 +127,12 @@ O cartão resultante contém três blocos de texto, um campo de entrada (lista d
 ## <a name="additional-resources"></a>Recursos adicionais
 
 - [Visualizar recursos com o Inspetor de Canal][inspector]
-- <a href="http://adaptivecards.io" target="_blank">Cartões adaptáveis</a>
+- <a href="http://adaptivecards.io" target="_blank">Cartões Adaptáveis</a>
 - [Visão geral das atividades](bot-builder-dotnet-activities.md)
 - [Criar mensagens](bot-builder-dotnet-create-messages.md)
 - [Adicionar anexos de mídia às mensagens](bot-builder-dotnet-add-media-attachments.md)
-- <a href="https://docs.botframework.com/en-us/csharp/builder/sdkreference/dc/d2f/class_microsoft_1_1_bot_1_1_connector_1_1_activity.html" target="_blank">Classe da atividade</a>
-- <a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.bot.connector.attachments?view=botconnector-3.12.2.4" target="_blank">Classe do anexo</a>
+- <a href="https://docs.botframework.com/csharp/builder/sdkreference/dc/d2f/class_microsoft_1_1_bot_1_1_connector_1_1_activity.html" target="_blank">Classe da atividade</a>
+- <a href="https://docs.microsoft.com/dotnet/api/microsoft.bot.connector.attachments?view=botconnector-3.12.2.4" target="_blank">Classe do anexo</a>
 
 [animationCard]: /dotnet/api/microsoft.bot.connector.animationcard
 

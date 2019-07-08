@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: e3bf4a6868702f24af08e69d5f07c036082ec3b6
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: cba67dc4da5a0b505b4f91f9cbf7fbc0a47b8974
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225231"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67404798"
 ---
 # <a name="add-rich-card-attachments-to-messages"></a>Adicionar anexos de cartão avançados às mensagens
 
@@ -149,7 +149,7 @@ Alguns canais tendem a baixar imagens antes de exibirem uma mensagem para o usu�
 To learn more about sending a typing indicator, see [How to send a typing indicator](bot-builder-nodejs-send-typing-indicator.md).
 -->
 
-O Bot Framework implementa um envio em lote para tentar impedir que várias mensagens do bot sejam exibidas fora de ordem. <!-- Unfortunately, not all channels can guarantee this. --> Quando o bot enviar várias respostas para o usuário, as mensagens individuais serão automaticamente agrupadas em um lote e entregues ao usuário como um conjunto em um esforço para preservar a ordem original das mensagens. Esse envio em lote automático aguarda um padrão de 250ms após cada chamada a **session.send()** antes de iniciar a próxima chamada a **send()**.
+O Bot Framework implementa um envio em lote para tentar impedir que várias mensagens do bot sejam exibidas fora de ordem. <!-- Unfortunately, not all channels can guarantee this. --> Quando o bot enviar várias respostas para o usuário, as mensagens individuais serão automaticamente agrupadas em um lote e entregues ao usuário como um conjunto em um esforço para preservar a ordem original das mensagens. Esse envio em lote automático aguarda um padrão de 250ms após cada chamada a **session.send()** antes de iniciar a próxima chamada a **send()** .
 
 O atraso do envio em lote da mensagem é configurável. Para desabilitar a lógica de envio em lote automático do SDK, defina o atraso padrão com um número grande e, em seguida, chame **sendBatch()** manualmente com um retorno de chamada a ser invocado após a entrega do lote.
 
@@ -178,25 +178,25 @@ O cartão resultante contém três blocos de texto, um campo de entrada (lista d
 * [ReceiptCard][receiptCard]
 * [SigninCard][signinCard]
 * [VideoCard][videoCard]
-* [Message][Message]
+* [Mensagem][Message]
 * [Como enviar anexos](bot-builder-nodejs-send-receive-attachments.md)
 
 [MessageOrder]: bot-builder-nodejs-manage-conversation-flow.md#message-ordering
-[Message]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.message
-[IMessage]: http://docs.botframework.com/en-us/node/builder/chat-reference/interfaces/_botbuilder_d_.imessage
+[Message]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.message
+[IMessage]: http://docs.botframework.com/node/builder/chat-reference/interfaces/_botbuilder_d_.imessage
 
-[animationCard]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.animationcard.html 
+[animationCard]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.animationcard.html 
 
-[audioCard]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.audiocard.html 
+[audioCard]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.audiocard.html 
 
-[heroCard]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.herocard.html
+[heroCard]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.herocard.html
 
-[thumbnailCard]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.thumbnailcard.html 
+[thumbnailCard]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.thumbnailcard.html 
 
-[receiptCard]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.receiptcard.html 
+[receiptCard]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.receiptcard.html 
 
-[signinCard]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.signincard.html 
+[signinCard]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.signincard.html 
 
-[videoCard]: https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.videocard.html
+[videoCard]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.videocard.html
 
 [inspector]: ../bot-service-channel-inspector.md

@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: abs
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: afb27ad20ec8585c2ca30810a9be6858adc17187
-ms.sourcegitcommit: e276008fb5dd7a37554e202ba5c37948954301f1
+ms.openlocfilehash: cc49cab1a3c82b3f0af2a4d8ebf261415c137e36
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66693523"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67405970"
 ---
 # <a name="deploy-your-bot"></a>Implantar seu bot
 
@@ -26,7 +26,8 @@ Neste artigo, mostraremos como implantar seu bot no Azure. Seria útil ler este 
 ## <a name="prerequisites"></a>Pré-requisitos
 - Caso não tenha uma assinatura do Azure, crie uma [conta](https://azure.microsoft.com/free/) antes de começar.
 - Um bot CSharp, JavaScript ou TypeScript que você tenha desenvolvido em seu computador local.
-- A versão mais recente da [CLI do Azure](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest).
+- A versão mais recente da [CLI do Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
+- Familiaridade com [modelos ARM e a CLI do Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview).
 
 ## <a name="1-prepare-for-deployment"></a>1. Preparar para a implantação
 Quando você criar um bot usando modelos do Visual Studio ou do Yeoman, o código-fonte gerado conterá uma pasta `deploymentTemplates` com modelos ARM. O processo de implantação documentado aqui usa o modelo ARM para provisionar os recursos necessários para o bot no Azure usando a CLI do Azure. 
@@ -182,7 +183,7 @@ az webapp deployment source config-zip --resource-group "<new-group-name>" --nam
 - Aguarde alguns segundos após uma implantação bem-sucedida e, opcionalmente, reinicie o aplicativo Web para limpar entradas no cache. Volte para a folha de Bot do Aplicativo Web e teste usando o Webchat fornecido no portal do Azure.
 
 ## <a name="additional-information"></a>Informações adicionais
-Implantar seu bot no Azure envolve pagar pelos serviços que você usa. O artigo [gerenciamento de cobrança e custos](https://docs.microsoft.com/en-us/azure/billing/) ajuda você a entender sua cobrança do Azure, monitorar o uso e os custos, e gerenciar sua conta e assinaturas.
+Implantar seu bot no Azure envolve pagar pelos serviços que você usa. O artigo [gerenciamento de cobrança e custos](https://docs.microsoft.com/azure/billing/) ajuda você a entender sua cobrança do Azure, monitorar o uso e os custos, e gerenciar sua conta e assinaturas.
 
 ## <a name="next-steps"></a>Próximas etapas
 > [!div class="nextstepaction"]

@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: cognitive-services
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 09b8261ea69e04345cb9fb2d80542ae754efdc25
-ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
+ms.openlocfilehash: 15581daa570b9e51ff8f7bec93d16deebcd71d45
+ms.sourcegitcommit: 93508adfb79523f610a919b361fc34f5c8dd3eff
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215373"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67533385"
 ---
 # <a name="use-qna-maker-to-answer-questions"></a>Usar o QnA Maker para responder a perguntas
 
@@ -29,7 +29,7 @@ Um dos requisitos básicos para a criação de seu próprio serviço QnA Maker �
 
 - O código neste artigo baseia-se no exemplo do QnA Maker. Você precisará de uma cópia dele contida em **[CSharp](https://aka.ms/cs-qna) ou [JavaScript](https://aka.ms/js-qna-sample)** .
 - Conta do [QnA Maker](https://www.qnamaker.ai/)
-- Conhecimento das [Noções básicas do bot](bot-builder-basics.md), do [QnA Maker](https://docs.microsoft.com/en-us/azure/cognitive-services/qnamaker/overview/overview) e do [gerenciamento de recursos do bot](bot-file-basics.md).
+- Conhecimento das [Noções básicas do bot](bot-builder-basics.md), do [QnA Maker](https://docs.microsoft.com/azure/cognitive-services/qnamaker/overview/overview) e do [gerenciamento de recursos do bot](bot-file-basics.md).
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
@@ -49,9 +49,9 @@ Para o bot utilizar o QnA Maker, você precisará primeiro criar uma base de con
 A entrada do usuário é enviada à sua base de conhecimento e a melhor resposta retornada é exibida para o usuário.
 
 ## <a name="create-a-qna-maker-service-and-publish-a-knowledge-base"></a>Criar um serviço do QnA Maker e publicar uma base de Conhecimento
-A primeira etapa é criar um serviço do QnA Maker. Siga as etapas listadas na [documentação](https://docs.microsoft.com/en-us/azure/cognitive-services/qnamaker/how-to/set-up-qnamaker-service-azure) do QnA Maker para criar o serviço no Azure.
+A primeira etapa é criar um serviço do QnA Maker. Siga as etapas listadas na [documentação](https://docs.microsoft.com/azure/cognitive-services/qnamaker/how-to/set-up-qnamaker-service-azure) do QnA Maker para criar o serviço no Azure.
 
-Em seguida, você criará uma base de conhecimento usando o arquivo `smartLightFAQ.tsv` localizado na pasta CognitiveModels do projeto de exemplo. As etapas para criar, treinar e publicar sua [base de dados de conhecimento](https://docs.microsoft.com/en-us/azure/cognitive-services/qnamaker/quickstarts/create-publish-knowledge-base) do QnA Maker são listadas na documentação do QnA Maker. Ao seguir essas etapas, nomeie a KB `qna`e use o arquivo `smartLightFAQ.tsv` para preencher sua KB.
+Em seguida, você criará uma base de conhecimento usando o arquivo `smartLightFAQ.tsv` localizado na pasta CognitiveModels do projeto de exemplo. As etapas para criar, treinar e publicar sua [base de dados de conhecimento](https://docs.microsoft.com/azure/cognitive-services/qnamaker/quickstarts/create-publish-knowledge-base) do QnA Maker são listadas na documentação do QnA Maker. Ao seguir essas etapas, nomeie a KB `qna`e use o arquivo `smartLightFAQ.tsv` para preencher sua KB.
 
 > Observação. Este artigo também pode ser usado para acessar sua própria base de conhecimento do QnA Maker desenvolvido pelo usuário.
 
@@ -83,9 +83,9 @@ Se essa implantação não for para produção, os campos ID do aplicativo e sen
   "MicrosoftAppId": "",
   "MicrosoftAppPassword": "",
   
-  "QnA-sample-qna-kbId": "<knowledge-base-id>",
-  "QnA-sample-qna-endpointKey": "<your-endpoint-key>",
-  "QnA-sample-qna-hostname": "<your-hostname>"
+  "QnAKnowledgebaseId": "<knowledge-base-id>",
+  "QnAAuthKey": "<your-endpoint-key>",
+  "QnAEndpointHostName": "<your-hostname>"
 }
 ```
 
@@ -114,7 +114,8 @@ Verifique se o pacote do NuGet **Microsoft.Bot.Builder.AI.QnA** está instalado 
 
 No **QnABot.cs**, no método `OnMessageActivityAsync`, criamos uma instância do QnAMaker. A classe `QnABot` também é de onde os nomes das informações de conexão, salvos em `appsettings.json` acima, são extraídos. Se você tiver escolhido nomes diferentes para as informações de conexão da base de conhecimento no seu arquivo de configurações, procure atualizar os nomes aqui para refletir o nome escolhido.
 
-**Bots/QnABot.cs** [!code-csharp[qna connection](~/../botbuilder-samples/samples/csharp_dotnetcore/11.qnamaker/Bots/QnABot.cs?range=32-37)]
+**Bots/QnABot.cs**  
+[!code-csharp[qna connection](~/../botbuilder-samples/samples/csharp_dotnetcore/11.qnamaker/Bots/QnABot.cs?range=32-37)]
 
 ## <a name="javascripttabjs"></a>[JavaScript](#tab/js)
 
@@ -135,7 +136,8 @@ No arquivo **QnABot.js**, usamos as informações de conexão fornecidas pelo ar
 
 Quando seu bot precisar de uma resposta do QnAMaker, chame `GetAnswersAsync()` do código do seu bot para obter a resposta apropriada com base no contexto atual. Se você estiver acessando sua própria base de conhecimento, altere a mensagem de _nenhuma resposta localizada_ abaixo para fornecer instruções úteis aos seus usuários.
 
-**QnABot.cs** [!code-csharp[qna connection](~/../botbuilder-samples/samples/csharp_dotnetcore/11.qnamaker/Bots/QnABot.cs?range=43-52)]
+**QnABot.cs**  
+[!code-csharp[qna connection](~/../botbuilder-samples/samples/csharp_dotnetcore/11.qnamaker/Bots/QnABot.cs?range=43-52)]
 
 ## <a name="javascripttabjs"></a>[JavaScript](#tab/js)
 

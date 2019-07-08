@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.subservice: cognitive-services
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 26b23c9beda872b71defd779563531328b63a0c8
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: ebbaa7473ec44ef9369df25a41873583abc28034
+ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225371"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67405659"
 ---
 # <a name="recognize-intents-and-entities-with-luis"></a>Reconhecer intenções e entidades com o LUIS 
 
@@ -34,7 +34,7 @@ Este artigo usa o exemplo de um bot para fazer anotações, visando demonstrar c
 
 3. Na folha **Serviço de Bot**, forneça as informações necessárias e clique em **Criar**. Isso cria e implanta o serviço de bot e o aplicativo LUIS no Azure. 
    * Defina **Nome do aplicativo** como o nome do bot. O nome é usado como o subdomínio quando o bot é implantado na nuvem (por exemplo, mynotesbot.azurewebsites.net). Esse nome também é usado como o nome do aplicativo LUIS associado ao bot. Copie-o para uso posterior, de modo a localizar o aplicativo LUIS associado ao bot.
-   * Selecione a assinatura, o [grupo de recursos](/azure/azure-resource-manager/resource-group-overview), o plano do serviço de aplicativo e o [local](https://azure.microsoft.com/en-us/regions/).
+   * Selecione a assinatura, o [grupo de recursos](/azure/azure-resource-manager/resource-group-overview), o plano do serviço de aplicativo e o [local](https://azure.microsoft.com/regions/).
    * Selecione o modelo **Reconhecimento vocal (C#)** para o campo **Modelo de bot**.
 
      ![Folha Serviço de bot](../media/bot-builder-dotnet-use-luis/bot-service-setting-callout-template.png)
