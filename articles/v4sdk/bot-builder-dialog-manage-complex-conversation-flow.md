@@ -8,14 +8,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
-ms.date: 05/23/2019
+ms.date: 07/05/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: bc11e5a4a5dec1a9588254b3a9d28d56ad163fb4
-ms.sourcegitcommit: 409e8f89a1e9bcd0e69a29a313add424f66a81e1
+ms.openlocfilehash: b7ffa16c2f0a00043b12faec1d31bbfe5bfa250f
+ms.sourcegitcommit: b498649da0b44f073dc5b23c9011ea2831edb31e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67153060"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67587470"
 ---
 # <a name="create-advanced-conversation-flow-using-branches-and-loops"></a>Criar fluxo de conversa avançado usando ramificações e loops
 
@@ -27,8 +27,8 @@ Também mostraremos como passar argumentos entre partes diferentes do diálogo.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- Conhecimento sobre [noções básicas de bots][concept-basics], [gerenciamento de estado][concept-state], a [biblioteca de caixas de diálogo][concept-dialogs], e como [implementar um fluxo de conversa sequencial][simple-dialog].
-- Uma cópia da amostra de diálogo complexo seja em [**CSharp**][cs-sample] ou [**JavaScript**][js-sample].
+- Conhecimento sobre [noções básicas de bots][concept-basics], [managing state][concept-state], a [biblioteca de caixas de diálogo][concept-dialogs] e como [implementar um fluxo de conversa sequencial][simple-dialog].
+- Uma cópia do exemplo de caixa de diálogo complexo em [**CSharp**][cs-sample] ou em or [**JavaScript**][js-sample].
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
@@ -186,19 +186,21 @@ Quando recebemos uma mensagem do usuário:
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-**DialogExtensions.cs**
+<!-- **DialogExtensions.cs**
 
-Neste exemplo, definimos um método auxiliar `Run` que usaremos para criar e acessar o contexto de caixa de diálogo.
-Uma vez que a caixa de diálogo de componente define um conjunto interno de caixa de diálogo, precisamos criar um conjunto externo de caixa de diálogo que seja visível para o código do manipulador de mensagem, podendo usá-lo para criar um contexto de caixa de diálogo.
+In this sample, we've defined a `Run` helper method that we will use to create and access the dialog context.
+Since component dialog defines an inner dialog set, we have to create an outer dialog set that's visible to the message handler code, and use that to create a dialog context.
 
-- `dialog` é a caixa de diálogo de componente principal para o bot.
-- `turnContext` é o contexto de turno atual para o bot.
+- `dialog` is the main component dialog for the bot.
+- `turnContext` is the current turn context for the bot.
 
 [!code-csharp[Run method](~/../botbuilder-samples/samples/csharp_dotnetcore/43.complex-dialog/DialogExtensions.cs?range=13-24)]
 
+-->
+
 **Bots\DialogBot.cs**
 
-O manipulador de mensagens chama o método auxiliar `Run` para gerenciar a caixa de diálogo, e nós sobrescrevemos o manipulador de turnos para salvar quaisquer alterações na conversa e no estado do usuário que possam ter ocorrido durante o turno. A base `OnTurnAsync` chamará o método `OnMessageActivityAsync`, garantindo que as chamadas de salvamento aconteçam no final do turno.
+O manipulador de mensagens chama o método `RunAsync` para gerenciar a caixa de diálogo e nós substituímos o manipulador de turnos para salvar alterações na conversa e no estado do usuário que possam ter ocorrido durante o turno. A base `OnTurnAsync` chamará o método `OnMessageActivityAsync`, garantindo que as chamadas de salvamento aconteçam no final do turno.
 
 [!code-csharp[Overrides](~/../botbuilder-samples/samples/csharp_dotnetcore/43.complex-dialog/Bots/DialogBot.cs?range=33-48&highlight=5-7)]
 
@@ -276,12 +278,12 @@ Aqui está uma amostra de lógica de looping tirada de uma etapa da caixa de di�
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-Para obter uma introdução sobre como implantar uma caixa de diálogo, confira [implantar fluxo da conversa sequencial][simple-dialog], que usa um único diálogo em cascata e alguns prompts para criar uma interação simples que faz ao usuário uma série de perguntas.
+Para obter uma introdução sobre como implementar um diálogo, confira [implementar fluxo da conversa sequencial][simple-dialog], que usa um único diálogo em cascata e alguns prompts para criar uma interação simples que faz ao usuário uma série de perguntas.
 
-A biblioteca Diálogos inclui uma validação básica de prompts. Você também pode adicionar uma validação personalizada. Para obter mais informações, confira [coletar entrada do usuário usando um prompt de caixa de diálogo][dialog-prompts].
+A biblioteca Diálogos inclui uma validação básica de prompts. Você também pode adicionar uma validação personalizada. Para obter mais informações, confira [coletar entrada do usuário usando um prompt de diálogo][dialog-prompts].
 
 Para simplificar o código do seu diálogo e reutilizá-lo em vários bots, defina as partes de um conjunto de diálogos como uma classe separada.
-Para saber mais, confira [reutilizar caixas de diálogos][component-dialogs].
+Para saber mais, confira [reutilizar diálogos][component-dialogs].
 
 ## <a name="next-steps"></a>Próximas etapas
 
