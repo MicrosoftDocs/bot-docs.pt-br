@@ -1,5 +1,6 @@
-<!--# [Migration overview](migratration-overview.md)-->
+# [Visão geral da migração](migration-overview.md)
 # [Diferenças entre o SDK do .NET v3 e v4](migration-about.md)
+# [Diferenças entre o SDK do JavaScript v3 e v4](migration-about-javascript.md)
 # [Referência rápida de migração do .NET](net-migration-quickreference.md)
 # [Referência rápida de migração do JavaScript](javascript-migration-quickreference.md)
 # [Migrar um bot v3 do .NET para um bot v4 do .NET Framework](conversion-framework.md)
