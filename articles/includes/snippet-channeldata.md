@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: c19287b38a2c807e6675af2c3f7e1824eb7eab8e
+ms.sourcegitcommit: fa6e775dcf95a4253ad854796f5906f33af05a42
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68230775"
+---
 Alguns canais fornecem recursos que não podem ser implementados apenas com o uso de texto e anexos da mensagem. Para implementar funcionalidades específicas do canal, passe metadados nativos para um canal na propriedade _dados do canal_ do objeto da atividade. Por exemplo, o bot pode usar a propriedade dados do canal para instruir o Telegram a enviar um adesivo ou para instruir o Office 365 a enviar um email.
 
 Este artigo descreve como usar a propriedade dados do canal de uma atividade de mensagem para implementar esta funcionalidade específica do canal:
@@ -269,7 +277,7 @@ Para criar uma mensagem que implementa ações específicas do Telegram, como co
 
 | Propriedade | DESCRIÇÃO |
 |----|----|
-| estático | O método de API do Bot do Telegram a ser chamado. |
+| method | O método de API do Bot do Telegram a ser chamado. |
 | parâmetros | Os parâmetros do método especificado. |
 
 Há suporte para estes métodos do Telegram: 
@@ -343,7 +351,7 @@ Para criar uma mensagem nativa do Kik, defina a propriedade dados do canal do ob
 
 | Propriedade | DESCRIÇÃO |
 |----|----|
-|  da nuvem para o dispositivo | Uma matriz de mensagens do Kik. Para obter detalhes sobre o formato de mensagem do Kik, confira <a href="https://dev.kik.com/#/docs/messaging#message-formats" target="_blank">Formatos de mensagem do Kik</a>. |
+| da nuvem para o dispositivo | Uma matriz de mensagens do Kik. Para obter detalhes sobre o formato de mensagem do Kik, confira <a href="https://dev.kik.com/#/docs/messaging#message-formats" target="_blank">Formatos de mensagem do Kik</a>. |
 
 Este snippet mostra um exemplo da propriedade `channelData` para uma mensagem nativa do Kik.
 
@@ -392,7 +400,7 @@ Essas ações do LINE podem ser especificadas no campo de ação do objeto de ti
 * Datetimerpicker 
 * Câmera 
 * Rolo da câmera 
-* Local padrão 
+* Location 
 
 Para obter detalhes sobre esses métodos do LINE e seus parâmetros, confira a [documentação da API do Bot do LINE](https://developers.line.biz/en/docs/messaging-api/). 
 
