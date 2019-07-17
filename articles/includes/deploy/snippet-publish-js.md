@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 0891b9652154f8ed086cc45ce6018aa0be1a67b8
-ms.sourcegitcommit: aea57820b8a137047d59491b45320cf268043861
+ms.sourcegitcommit: fa6e775dcf95a4253ad854796f5906f33af05a42
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905154"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68230569"
 ---
 Para publicar seu bot JavaScript local no Azure, você primeiro deve criar manualmente um único arquivo compactado que contém todos os arquivos usados para compilar e executar seu bot localmente. Isso inclui todas as bibliotecas npm baixadas na pasta `node_modules`. Ao criar o arquivo zip _verifique se o diretório-raiz usado é o mesmo diretório em que reside o arquivo index.js_.
 

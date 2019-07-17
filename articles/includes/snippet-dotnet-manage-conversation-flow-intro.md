@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 7eed8c8328456bad43f3bdfe0029df09efa062d6
-ms.sourcegitcommit: 980612a922b8290b2faadaca193496c4117e415a
+ms.sourcegitcommit: fa6e775dcf95a4253ad854796f5906f33af05a42
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "64563504"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68230539"
 ---
 Este diagrama mostra o fluxo de tela de um aplicativo tradicional em comparação com o fluxo de diálogo de um bot. 
 

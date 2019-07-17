@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: f09d0a7b81e3cfa69fd42356faf27f79e3bc038c
-ms.sourcegitcommit: 980612a922b8290b2faadaca193496c4117e415a
+ms.sourcegitcommit: fa6e775dcf95a4253ad854796f5906f33af05a42
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "64563698"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68230697"
 ---
 Ao receber uma Atualização de Endereço de Envio ou um retorno de chamada de Atualização de Opção de Envio, seu bot receberá o estado atual dos detalhes de pagamento do cliente na propriedade `Activity.Value`.
 Como um comerciante, você deve tratar esses retornos de chamada como estáticos, considerando os detalhes de pagamento de entrada, você irá calcular alguns detalhes de pagamento de saída e falhará se o estado fornecido pelo cliente de entrada for inválido por algum motivo. 
