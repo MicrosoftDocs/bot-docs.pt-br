@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 45830f099833c41c308b0f5a5e7b104986604e03
-ms.sourcegitcommit: 93508adfb79523f610a919b361fc34f5c8dd3eff
+ms.openlocfilehash: 519515a2174a7028af7bc170ca8a7c40f7d48c52
+ms.sourcegitcommit: b053c0ca7f2e9e60679f7e82e583c57ae83fcb50
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67533399"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68336730"
 ---
 # <a name="migrate-a-net-v3-bot-to-a-net-framework-v4-bot"></a>Migrar um bot v3 do .NET para um bot v4 do .NET Framework
 
@@ -53,6 +53,10 @@ Para obter mais informações sobre alterações específicas, confira [as difer
 1. Adicione **Bot.Builder.Community.Dialogs.Formflow**.
 
     Trata-se de uma biblioteca de comunidade para a criação de diálogos v4 de arquivos de definição do Formflow v3. Ela conta com **Microsoft.Bot.Builder.Dialogs** como uma de suas dependências, assim, isso também é instalado para nós.
+
+> [!TIP]
+> Se o projeto for destinado ao .NET Framework 4.6, você precisará atualizá-lo para 4.6.1 ou posterior, pois o **Bot.Builder.Community.Dialogs.Formflow** é uma biblioteca .NET Standard 2.0.
+> Para obter mais informações, confira [Suporte à implementação do .NET](https://docs.microsoft.com/en-us/dotnet/standard/net-standard#net-implementation-support).
 
 Se você compilar neste momento, receberá erros do compilador. Você pode ignorá-los. Quando terminarmos nossa conversão, teremos um código funcional.
 
