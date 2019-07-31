@@ -5,17 +5,17 @@ keywords: SDK do Bot Framework, criar um bot, início rápido, .NET, introduçã
 author: kamrani
 ms.author: kamrani
 manager: kamrani
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 100e5075799a074759005999b0ded6546316d209
-ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
+ms.openlocfilehash: f43d37cdf3ed25d163b7bcd88dcdb6071ad89400
+ms.sourcegitcommit: f3fda6791f48ab178721b72d4f4a77c373573e38
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215241"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671465"
 ---
 # <a name="create-a-bot-with-the-bot-framework-sdk-for-net"></a>Criar um bot com o SDK do Bot Framework para .NET
 

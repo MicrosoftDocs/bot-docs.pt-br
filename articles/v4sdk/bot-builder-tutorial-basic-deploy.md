@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: fd6b1b7ed38b57e8245098679d7753bd5cbb9387
-ms.sourcegitcommit: dbbfcf45a8d0ba66bd4fb5620d093abfa3b2f725
+ms.openlocfilehash: 9f8b4ec1442d7647a69bd691ddca98f02e086850
+ms.sourcegitcommit: f3fda6791f48ab178721b72d4f4a77c373573e38
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67464678"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671531"
 ---
 # <a name="tutorial-create-and-deploy-a-basic-bot"></a>Tutorial: Criar e implantar um bot básico
 
@@ -117,7 +117,7 @@ Nesse caso, estamos usando o Plano do Serviço de Aplicativo existente, mas cria
 _Observação: o parâmetro botId deve ser globalmente exclusivo e será usado como a ID imutável do bot. Ele também será usado para configurar o nome de exibição do bot, que é mutável._
 
 ```cmd
-az group deployment create --name "name-of-deployment" --resource-group "name-of-resource-group" --template-file "template-with-preexisting-rg.json" --parameters appId="msa-app-guid" appSecret="msa-app-password" botId="id-or-name-of-bot" newWebAppName="name-of-web-app" existingAppServicePlan="name-of-app-service-plan" appServicePlanLocation="location"
+az group deployment create --name "name-of-deployment" --resource-group "name-of-resource-group" --template-file "template-with-preexisting-rg.json" --parameters appId="msa-app-guid" appSecret="msa-app-password" botId="id-or-name-of-bot" newWebAppName="name-of-web-app" existingAppServicePlan="name-of-app-service-plan" newappServicePlanLocation="location"
 ```
 
 **Opção 2: Plano do Serviço de Aplicativo novo** 
@@ -125,7 +125,7 @@ az group deployment create --name "name-of-deployment" --resource-group "name-of
 Nesse caso, estamos criando o Plano do Serviço de Aplicativo, o Aplicativo Web e o Registro de Canais de Bot. 
 
 ```cmd
-az group deployment create --name "name-of-deployment" --resource-group "name-of-resource-group" --template-file "template-with-preexisting-rg.json" --parameters appId="msa-app-guid" appSecret="msa-app-password" botId="id-or-name-of-bot" newWebAppName="name-of-web-app" newAppServicePlanName="name-of-app-service-plan" appServicePlanLocation="location"
+az group deployment create --name "name-of-deployment" --resource-group "name-of-resource-group" --template-file "template-with-preexisting-rg.json" --parameters appId="msa-app-guid" appSecret="msa-app-password" botId="id-or-name-of-bot" newWebAppName="name-of-web-app" newAppServicePlanName="name-of-app-service-plan" newappServicePlanLocation="location"
 ```
 
 | Opção   | DESCRIÇÃO |
