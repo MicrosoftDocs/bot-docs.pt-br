@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 1cb9143e5ab2d5eb7e92e263b838cdd9217492ef
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: cbe2a6e449ecc2920e3a2d1ecb04a63dcb489b66
+ms.sourcegitcommit: 8336a06941d09e1107b38f494d048dd785a13069
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225351"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68631567"
 ---
-# <a name="authentication"></a>Autenticação
+# <a name="authentication"></a>Authentication
 
 O bot comunica-se com o serviço do Bot Connector usando HTTP em um canal seguro (SSL/TLS). Quando o bot envia uma solicitação ao serviço do Connector, ele deve incluir informações que o serviço do Connector pode usar para verificar a identidade do bot. Da mesma forma, quando o serviço do Connector envia uma solicitação ao bot, ele deve incluir informações que o bot pode usar para verificar a identidade do serviço. Este artigo descreve as tecnologias de autenticação e os requisitos para a autenticação de nível de serviço que ocorre entre um bot e o serviço do Bot Connector. Se você estiver escrevendo seu próprio código de autenticação, é necessário implementar os procedimentos de segurança descritos neste artigo para permitir ao bot trocar mensagens com o serviço do Bot Connector.
 
@@ -173,7 +173,7 @@ O exemplo a seguir mostra um documento de metadados do OpenID que é retornado n
 
 ### <a id="connector-to-bot-step-3"></a> Etapa 3: obter a lista de chaves de assinatura válidas
 
-Para obter uma lista das chaves de assinatura válidas, emita uma solicitação `GET` por meio de HTTPS para a URL especificada pela propriedade `jwks_uri` no documento de metadados do OpenID. Por exemplo: 
+Para obter uma lista das chaves de assinatura válidas, emita uma solicitação `GET` por meio de HTTPS para a URL especificada pela propriedade `jwks_uri` no documento de metadados do OpenID. Por exemplo:
 
 ```http
 GET https://login.botframework.com/v1/.well-known/keys
@@ -181,10 +181,7 @@ GET https://login.botframework.com/v1/.well-known/keys
 
 O corpo da resposta especifica o documento no [formato JWK](https://tools.ietf.org/html/rfc7517), mas também inclui uma propriedade adicional para cada chave: `endorsements`. A lista das chaves é relativamente estável e pode ser armazenada em cache durante longos períodos (por padrão, 5 dias dentro do SDK do Bot Framework).
 
-A propriedade `endorsements` dentro de cada chave contém uma ou mais cadeias de caracteres de endosso que você pode usar para verificar se a ID de canal especificada na propriedade `channelId` dentro do objeto de [Atividade][Activity] da solicitação de entrada é autêntico. A lista de IDs de canal que exigem endossos é configurável em cada bot. Por padrão, essa será a lista de todas as IDs de canal publicadas, embora os desenvolvedores de bots possam substituir os valores da ID de canal selecionados de qualquer forma. Se o endosso para uma ID de canal for necessário:
-
-- É necessário exigir que qualquer objeto de [Atividade][Activity] enviado ao bot com essa ID de canal seja acompanhado por um token JWT assinado com um endosso para esse canal. 
-- Se o endosso não estiver presente, o bot deve rejeitar a solicitação retornando um código de status **HTTP 403 (proibido)**.
+A propriedade `endorsements` dentro de cada chave contém uma ou mais cadeias de caracteres de endosso que você pode usar para verificar se a ID de canal especificada na propriedade `channelId` dentro do objeto de [Atividade][Activity] da solicitação de entrada é autêntica. A lista de IDs de canal que exigem endossos é configurável em cada bot. Por padrão, essa será a lista de todas as IDs de canal publicadas, embora os desenvolvedores de bots possam substituir os valores da ID de canal selecionados de qualquer forma. 
 
 ### <a name="step-4-verify-the-jwt-token"></a>Etapa 4: verificar o token JWT
 
@@ -200,7 +197,10 @@ Bibliotecas de análise de JWT estão disponíveis para várias plataformas e a 
 6. O token tem uma assinatura de criptografia válida, com uma chave listada no documento de chaves do OpenID que foi recuperado na [Etapa 3](#connector-to-bot-step-3), usando o algoritmo de assinatura especificado na propriedade `id_token_signing_alg_values_supported` do documento de metadados do Open ID que foi recuperado [Etapa 2](#openid-metadata-document).
 7. O token contém uma declaração "serviceUrl" com um valor que corresponde à propriedade `servieUrl` na raiz do objeto de [Atividade][Activity] da solicitação de entrada. 
 
-Se o token não atender a todos esses requisitos, o bot deve rejeitar a solicitação retornando um código de status **HTTP 403 (proibido)**.
+Se o endosso para uma ID de canal for necessário:
+
+- É necessário exigir que qualquer objeto de [Atividade][Activity] enviado ao bot com essa ID de canal seja acompanhado por um token JWT assinado com um endosso para esse canal. 
+- Se o endosso não estiver presente, o bot deve rejeitar a solicitação retornando um código de status **HTTP 403 (proibido)** .
 
 > [!IMPORTANT]
 > Todos esses requisitos são importantes, especialmente os requisitos 4 e 6. A não implementação desses requisitos de verificação deixará o bot aberto a ataques que podem fazer o bot divulgar seu token JWT.
@@ -266,7 +266,7 @@ O exemplo a seguir mostra um documento de metadados do OpenID que é retornado n
 
 ### <a id="emulator-to-bot-step-3"></a> Etapa 3: obter a lista de chaves de assinatura válidas
 
-Para obter uma lista das chaves de assinatura válidas, emita uma solicitação `GET` por meio de HTTPS para a URL especificada pela propriedade `jwks_uri` no documento de metadados do OpenID. Por exemplo: 
+Para obter uma lista das chaves de assinatura válidas, emita uma solicitação `GET` por meio de HTTPS para a URL especificada pela propriedade `jwks_uri` no documento de metadados do OpenID. Por exemplo:
 
 ```http
 GET https://login.microsoftonline.com/common/discovery/v2.0/keys 
@@ -292,7 +292,7 @@ Bibliotecas de análise de JWT estão disponíveis para várias plataformas e a 
 > [!NOTE]
 > O requisito 5 é específico para o caminho de verificação do emulador. 
 
-Se o token não atender a todos esses requisitos, o bot deve encerrar a solicitação retornando um código de status **HTTP 403 (proibido)**.
+Se o token não atender a todos esses requisitos, o bot deve encerrar a solicitação retornando um código de status **HTTP 403 (proibido)** .
 
 > [!IMPORTANT]
 > Todos esses requisitos são importantes, especialmente os requisitos 4 e 7. A não implementação desses requisitos de verificação deixará o bot aberto a ataques que podem fazer o bot divulgar seu token JWT.

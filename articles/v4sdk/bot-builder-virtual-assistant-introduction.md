@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b2cc303cdedbc3a9d44ce725bfc78dd308974763
-ms.sourcegitcommit: dbbfcf45a8d0ba66bd4fb5620d093abfa3b2f725
+ms.openlocfilehash: 51ab0fa6844bd0c72212e496b3bc096dc3fa11b2
+ms.sourcegitcommit: f3fda6791f48ab178721b72d4f4a77c373573e38
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67464669"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671455"
 ---
 # <a name="virtual-assistant-overview"></a>Visão geral do Assistente Virtual
 
@@ -56,7 +56,7 @@ Modelo de linguagem automotiva | Um modelo de linguagem automotiva que abrange d
 
 O Assistente Virtual pode ser usado em diversos cenários de diferentes setores. Alguns cenários de exemplo são mostrados abaixo para fins de referência.
 
-- Indústria automotiva: Assistente Pessoal habilitado por voz integrado ao carro que oferece aos usuários finais a capacidade de executar funções tradicionais do carro (por exemplo, navegação, rádio) além dos cenários com foco na produtividade, como remarcar reuniões quando você estiver atrasado ou adicionar itens à sua lista de tarefas, além de experiências proativas em que o carro pode sugerir tarefas com base em eventos, como dar partida no motor, ir para casa ou habilitar o modo de piloto automático. Os Cartões Adaptáveis são renderizados na integração da Unidade Principal e Fala, executados por meio de interações Apertar para Falar e Wake Word (palavra de início do Assistente).
+- Indústria automotiva: Assistente Pessoal habilitado por voz integrado ao carro que oferece aos usuários finais a capacidade de executar funções tradicionais do carro (por exemplo, navegação, rádio) além dos cenários com foco na produtividade, como remarcar reuniões quando você estiver atrasado ou adicionar itens à sua lista de tarefas, além de experiências proativas em que o carro pode sugerir tarefas com base em eventos, tais como dar partida no motor, ir para casa ou habilitar o modo de piloto automático. Os Cartões Adaptáveis são renderizados na integração da Unidade Principal e Fala, executados por meio de interações Apertar para Falar e Wake Word (palavra de início do Assistente).
 
 - Hospitalidade: Assistente Pessoal habilitado por voz integrado a um dispositivo em um quarto de hotel que oferece vários cenários voltados para hospitalidade (por exemplo, estender sua estadia, solicitar check-out tardio, serviço de quarto), incluindo concierge e a capacidade de encontrar restaurantes e atrações locais. A opção de vinculação às suas contas de produtividade permite experiências mais personalizadas, como alarmes sugeridos, avisos meteorológicos e aprendizado de padrões entre estadias. Uma evolução da personalização da TV existente nas salas atualmente.
 

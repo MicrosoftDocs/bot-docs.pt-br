@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 06/07/2019
-ms.openlocfilehash: 4dab0a8f3dab2a87184a03fe25b2a9abeaff67a2
-ms.sourcegitcommit: dbbfcf45a8d0ba66bd4fb5620d093abfa3b2f725
+ms.openlocfilehash: 1d787d375fcd1ddade544724bb28dea9aaeb1dd6
+ms.sourcegitcommit: f3fda6791f48ab178721b72d4f4a77c373573e38
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67464649"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671415"
 ---
 # <a name="web-chat-overview"></a>Visão geral de Webchat
 

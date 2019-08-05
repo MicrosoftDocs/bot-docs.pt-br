@@ -5,17 +5,17 @@ keywords: bot framework, serviço de bot do azure
 author: ivorb
 ms.author: v-ivorb
 manager: kamrani
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.service: bot-service
 ms.subservice: abs
 ms.date: 07/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 1bbea2f12af976a9d967e7c62baf416b8938f8aa
-ms.sourcegitcommit: b053c0ca7f2e9e60679f7e82e583c57ae83fcb50
+ms.openlocfilehash: f7083c45e67d8731e25e14577f6b061732ffefd5
+ms.sourcegitcommit: f3fda6791f48ab178721b72d4f4a77c373573e38
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68336743"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671394"
 ---
 # <a name="whats-new-in-bot-framework-july-2019"></a>Novidades no Bot Framework (julho de 2019)
 
@@ -29,7 +29,7 @@ Este artigo resume os principais novos recursos e aprimoramentos no Bot Framewor
 |---|:---:|:---:|:------:|
 |. |[4.5][1] | [4.5][2] | [4.4.0b2 (versão prévia)][3] | 
 |Docs | [docs][5] |[docs][5] |  | |
-|Exemplos |[.NET Core][6], [WebAPI][10] |[Node.js][7] , [TypeScript][8], [es6][9]  | [Python][111] | | 
+|Exemplos |[.NET Core][6], [WebAPI][10] |[Node.js][7], [TypeScript][8], [es6][9]  | [Python][111] | | 
 
 [1a]:https://github.com/microsoft/botframework-sdk/#readme
 [1]:https://github.com/Microsoft/botbuilder-dotnet/#packages
@@ -57,7 +57,9 @@ Este artigo resume os principais novos recursos e aprimoramentos no Bot Framewor
 ## <a name="bot-framework-testing"></a>Testes do Bot Framework
 - [Teste de unidade](http://aka.ms/bot-test-package) | [documentos](https://aka.ms/testing-framework) | [exemplo de C#](https://aka.ms/corebot-test) | [exemplo de JS](https://aka.ms/js-core-test-sample): Respondendo à solicitação dos clientes e desenvolvedores por melhores ferramentas de teste, a versão de julho do SDK apresenta uma nova funcionalidade de teste de unidade. O pacote Microsoft.Bot.Builder.testing simplifica o processo de caixas de diálogo de teste de unidade em seu bot. 
 
-- [Teste de canal](https://github.com/Microsoft/BotFramework-Emulator/releases): Introduzido no Microsoft Build 2019, o Inspetor de Bot é um novo recurso no Bot Framework Emulator que permite depurar e testar bots em canais como Microsoft Teams, Slack, Cortana e muito mais. Conforme você usa o bot em canais específicos, as mensagens serão espelhadas para o Bot Framework Emulator, no qual você poderá inspecionar os dados da mensagem que o bot tiver recebido. Além disso, é renderizado um instantâneo do estado da memória do bot em todos os turnos entre o canal e o bot.
+- [Testes de canal](https://github.com/Microsoft/BotFramework-Emulator/releases) | [docs](https://aka.ms/channel-testing): 
+
+Introduzido no Microsoft Build 2019, o Inspetor de Bot é um novo recurso no Bot Framework Emulator que permite depurar e testar bots em canais como Microsoft Teams, Slack, Cortana e muito mais. Conforme você usa o bot em canais específicos, as mensagens serão espelhadas para o Bot Framework Emulator, no qual você poderá inspecionar os dados da mensagem que o bot tiver recebido. Além disso, é renderizado um instantâneo do estado da memória do bot em todos os turnos entre o canal e o bot.
 
 ## <a name="web-chat"></a>Chat na Web
 - Com base em solicitações de clientes corporativos, adicionamos um [exemplo de Webchat](https://github.com/microsoft/BotFramework-WebChat/tree/master/samples/19.a.single-sign-on-for-enterprise-apps#single-sign-on-demo-for-enterprise-apps-using-oauth) que mostra como autorizar um usuário a acessar recursos em um aplicativo empresarial com um bot. Dois tipos de recursos são usados para demonstrar a interoperabilidade do OAuth com o Microsoft Graph e a API do GitHub.

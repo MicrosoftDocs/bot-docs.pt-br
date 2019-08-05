@@ -10,12 +10,12 @@ ms.subservice: bot-service
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: v-ivorb
-ms.openlocfilehash: 0b108d90d18261cd22214db9a7926bdac1bfee40
-ms.sourcegitcommit: a4181f35dbe6a8b107eea28122372f524e19880a
+ms.openlocfilehash: 08765793611a0c2543fea481479ea4cfa2c8b74c
+ms.sourcegitcommit: f3fda6791f48ab178721b72d4f4a77c373573e38
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65030189"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671428"
 ---
 ## <a name="about-direct-line"></a>Sobre o Direct Line
 
@@ -29,16 +29,16 @@ Você pode escolher qual oferta do Direct Line é melhor avaliando que recursos 
 
 |                            | Linha Direta | Direct Line App Service Extension | Direct Line Speech |
 |----------------------------|-------------|-----------------------------------|--------------------|
-| Disponibilidade geral e SLA    | Disponibilidade Geral | Versão prévia privada, sem SLA  | Versão prévia privada, sem SLA |
+| Disponibilidade e licenciamento    | Disponibilidade Geral | Versão prévia privada, sem SLA  | Versão prévia privada, sem SLA |
 | Desempenho de texto-fala e reconhecimento de fala | Standard | Standard | Alto desempenho |
-| OAuth integrado           | Sim | sim | Não  |
-| Telemetria integrada       | Sim | sim | Não  |
-| Dá suporte a navegadores da web herdados | Sim | Não | Não  |
+| OAuth integrado           | Sim | sim | Não |
+| Telemetria integrada       | Sim | sim | Não |
+| Dá suporte a navegadores da web herdados | Sim | Não | Não |
 | Suporte ao SDK do Bot Framework | Todos os v3, v4 | v4.5+ necessário | v4.5+ necessário |
 | Suporte de SDK de cliente    | JS, C# | JS, C# | C++, C#, Unity |
-| Funciona com o Bate-Papo da Web  | Sim | sim | Não |
-| API de histórico de conversas | Sim | sim| Não |
-| VNET | Não  | Versão prévia* | Não  |
+| Funciona com o Bate-Papo da Web  | Sim | sim | Não|
+| API de histórico de conversas | Sim | sim| Não|
+| VNET | Não | Versão prévia* | Não |
 
 _* O Direct Line App Service Extensions pode ser usado em VNETs mas ainda não permite a restrição de chamadas de saída._
 

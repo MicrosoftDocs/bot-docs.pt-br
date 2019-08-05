@@ -5,17 +5,17 @@ keywords: bot framework, serviço de bot do azure
 author: ivorb
 ms.author: v-ivorb
 manager: kamrani
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.service: bot-service
 ms.subservice: abs
 ms.date: 07/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 0b7342274e37ff33afb8695e8f25fbf0fa707178
-ms.sourcegitcommit: b053c0ca7f2e9e60679f7e82e583c57ae83fcb50
+ms.openlocfilehash: 4553335cbca5b5eb720c7cffd11c8e14c8aa19c1
+ms.sourcegitcommit: f3fda6791f48ab178721b72d4f4a77c373573e38
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68336747"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671526"
 ---
 # <a name="whats-new-in-bot-framework-may-2019"></a>Novidades no Bot Framework (maio de 2019)
 
@@ -23,7 +23,7 @@ ms.locfileid: "68336747"
 |---|:---:|:---:|:------:|:-----:|
 |. |[4.4.3][1] | [4.4.0][2] | [4.4.0b1 (versão prévia)][3] | [4.0.0a6 (versão prévia)][3a]|
 |Docs | [docs][5] |[docs][5] |  | |
-|Exemplos |[.NET Core][6], [WebAPI][10] |[Node.js][7] , [TypeScript][8], [es6][9]  | [Python][111] | | 
+|Exemplos |[.NET Core][6], [WebAPI][10] |[Node.js][7], [TypeScript][8], [es6][9]  | [Python][111] | | 
 
 [1a]:https://github.com/microsoft/botframework-sdk/#readme
 [1]:https://github.com/Microsoft/botbuilder-dotnet/#packages
@@ -42,11 +42,11 @@ ms.locfileid: "68336747"
 <a name="V4-whats-new"></a>
 ## <a name="bot-framework-sdk-new-in-preview"></a>SDK do Bot Framework (Novo! Em versão prévia)
 
-- [Caixa de diálogo adaptável][47] | [docs][48] | [Exemplos de C#][49]: Os Diálogos Adaptáveis permitem aos desenvolvedores criar conversas que podem ser alteradas dinamicamente conforme o andamento da conversa.  Tradicionalmente, os desenvolvedores mapeiam o fluxo inteiro de uma conversa com antecedência, o que limita sua flexibilidade.  Os Diálogos Adaptáveis permitem que elas sejam mais flexíveis, para responder a alterações no contexto e inserir novas etapas ou subdiálogos inteiros na conversa durante sua evolução. 
+- [Diálogo Adaptável][47] | [docs][48] | [exemplos em C#][49]: Os Diálogos Adaptáveis permitem aos desenvolvedores criar conversas que podem ser alteradas dinamicamente conforme o andamento da conversa.  Tradicionalmente, os desenvolvedores mapeiam o fluxo inteiro de uma conversa com antecedência, o que limita sua flexibilidade.  Os Diálogos Adaptáveis permitem que elas sejam mais flexíveis, para responder a alterações no contexto e inserir novas etapas ou subdiálogos inteiros na conversa durante sua evolução. 
 
-- [Geração de linguagem][43] | [docs][44] | [Exemplos de C#][45]: geração de linguagem, que permite ao desenvolvedor extrair as cadeias de caracteres inseridas dos seus arquivos de código e de recursos e gerenciá-las por meio de um formato arquivo e do tempo de execução de Geração de Linguagem.  A Geração de Linguagem permite que os clientes definam diversas variações de uma frase, executem expressões simples com base no contexto e consultem a memória de conversação; ao longo do tempo, isso nos permitirá criar outras funcionalidades que levarão a uma experiência de conversa mais natural.
+- [Geração de linguagem][43] | [docs][44] | [exemplos em C#][45]: geração de linguagem, que permite ao desenvolvedor extrair as cadeias de caracteres inseridas dos seus arquivos de código e de recursos e gerenciá-las por meio de um formato arquivo e do tempo de execução de Geração de Linguagem.  A Geração de Linguagem permite que os clientes definam diversas variações de uma frase, executem expressões simples com base no contexto e consultem a memória de conversação; ao longo do tempo, isso nos permitirá criar outras funcionalidades que levarão a uma experiência de conversa mais natural.
 
-- [Linguagem de Expressão Comum][40] | [api][41]: tanto os Diálogos Adaptáveis quanto a Geração de Linguagem usam e dependem de uma linguagem de expressão comum para alimentar conversas de bot.
+- [Linguagem de Expressão Comum][40] | [API][41]: tanto os Diálogos Adaptáveis quanto a Geração de Linguagem usam e dependem de uma linguagem de expressão comum para alimentar conversas de bot.
 
 [40]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/experimental/common-expression-language#readme
 [41]:https://github.com/Microsoft/BotBuilder-Samples/blob/master/experimental/common-expression-language/api-reference.md
@@ -86,7 +86,7 @@ O [repositório de Soluções do Bot Framework](https://github.com/Microsoft/AI#
 |[**Analytics**](https://github.com/Microsoft/AI/blob/master/docs/readme.md#analytics)| Obtenha insights essenciais sobre a integridade e o comportamento do seu bot com as soluções de análise de inteligência Artificial de Conversação. Examine os dados telemétricos disponíveis, os exemplos de consultas do Application Insights e os painéis do Power BI para compreender a amplitude das conversas do seu bot com os usuários. |
 
 ## <a name="azure-bot-service"></a>Serviço de Bot do Azure
-O Serviço de Bot do Azure permite que você hospede bots inteligentes e de nível empresarial com total controle e propriedade sobre seus dados. Os desenvolvedores podem registrar e conectar seus bots a usuários no Skype, no Microsoft Teams, na Cortana, no Web Chat e muito mais. [Azure][27]  |  [docs][28] | [conectar-se aos canais][29] 
+O Serviço de Bot do Azure permite que você hospede bots inteligentes e de nível empresarial com total controle e propriedade sobre seus dados. Os desenvolvedores podem registrar e conectar seus bots a usuários no Skype, no Microsoft Teams, na Cortana, no Web Chat e muito mais. [Azure][27]  |  [docs][28] | [conectar-se a canais][29] 
 
 * **Cliente JS Direct Line**: se você quiser usar o canal Direct Line no Serviço de Bot do Azure e não estiver usando o cliente WebChat, o cliente JS Direct Line poderá ser usado no seu aplicativo personalizado. Vá para o [GitHub][30] para obter mais informações.
 
@@ -126,7 +126,7 @@ Um serviço baseado em aprendizado de máquina para criar experiências de lingu
 
 - **Novo! Painel de Análise**: o LUIS está lançando um painel de análise abrangente mais detalhado e visualmente sofisticado. Seu design amigável realça os problemas comuns que a maioria dos usuários enfrenta ao criar aplicativos, fornecendo explicações simples sobre como resolvê-los para que os usuários obtenham mais insights sobre a qualidade dos seus modelos, possíveis problemas de dados e diretrizes para a adoção das melhores práticas.
 
-[Docs][31] | [Add language understanding to your bot][32] 
+[Docs][31] | [Adicionar reconhecimento vocal ao bot][32] 
 
 [18]:https://github.com/Microsoft/botbuilder-tools/tree/master/packages/LUIS#readme
 [19]:https://github.com/Microsoft/botbuilder-tools/tree/master/packages/QnAMaker#readme
@@ -143,7 +143,7 @@ O [QnA Maker][33] é um serviço de API baseado em nuvem que cria uma camada de 
 - **Novo! Inteligência**: modelos de classificação contextuais, sugestões de aprendizado ativo
 - **Novo! Conversa**: conversas em vários turnos no QnA Maker.
 
-[Docs][34]  | [add qnamaker to your bot][35] 
+[Docs][34]  | [Adicionar o QnA Maker ao bot][35] 
 
 [33]:https://www.qnamaker.ai/
 [34]:https://aka.ms/qnamaker-docs-home

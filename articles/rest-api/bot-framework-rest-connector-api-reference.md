@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 10/25/2018
-ms.openlocfilehash: 41aceaa20613d9b6b7ac95a7837b4ae197d1dd4a
-ms.sourcegitcommit: dbbfcf45a8d0ba66bd4fb5620d093abfa3b2f725
+ms.openlocfilehash: 2600b69fff24f6d952853c7b1ed764577b4cb270
+ms.sourcegitcommit: f3fda6791f48ab178721b72d4f4a77c373573e38
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67464790"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671498"
 ---
 # <a name="api-reference"></a>Referência de API
 
@@ -140,15 +140,15 @@ Use essas operações para criar conversas, enviar mensagens (atividades) e gere
 | [Carregar anexo ao canal](#upload-attachment-to-channel) | Carrega um anexo diretamente no armazenamento de blobs de um canal. |
 
 ### <a name="create-conversation"></a>Criar conversa
-Cria uma nova conversa. 
+Cria uma nova conversa.
 ```http 
 POST /v3/conversations
 ```
 
 | | |
 |----|----|
-| **Corpo da solicitação** | Um objeto [Conversation](#conversation-object) |
-| **Retorna** | Um objeto [ConversationResourceResponse](#conversationresourceresponse-object) | 
+| **Corpo da solicitação** | Um objeto [ConversationParameters](#conversationparameters-object) |
+| **Retorna** | Um objeto [ConversationResourceResponse](#conversationresourceresponse-object) |
 
 ### <a name="send-to-conversation"></a>Enviar para conversa
 Envia uma atividade (mensagem) para a conversa especificada. A atividade será anexada ao final da conversa, de acordo com o carimbo de data/hora ou semântica do canal. Para responder a uma mensagem específica na conversa, use [Responder a atividade](#reply-to-activity).
@@ -409,7 +409,6 @@ O esquema define o objeto e a propriedades que o bot pode usar para comunicar-se
 | [Objeto CardAction](#cardaction-object) | Define uma ação para executar. |
 | [Objeto CardImage](#cardimage-object) | Define uma imagem para exibir em um cartão. |
 | [Objeto ChannelAccount](#channelaccount-object) | Define um bot ou uma conta de usuário no canal. |
-| [Objeto Conversation](#conversation-object) | Define uma conversa, incluindo o bot e os usuários incluídos na conversa. |
 | [Objeto ConversationAccount](#conversationaccount-object) | Define uma conversa em um canal. |
 | [Objeto ConversationMembers](#conversationmembers-object) | Define os membros de uma conversa. |
 | [Objeto ConversationParameters](#conversationparameters-object) | Definir parâmetros para criar uma nova conversa |
@@ -617,22 +616,10 @@ Define um bot ou uma conta de usuário no canal.<br/><br/>
 
 | Propriedade | Type | DESCRIÇÃO |
 |----|----|----|
-| **ID** | string | ID que identifica exclusivamente o bot ou usuário no canal. |
-| **name** | string | Nome do bot ou usuário. |
-
-<a href="#objects">Retornar à tabela de esquemas</a>
-
-<!--TODO can't find-->
-### <a name="conversation-object"></a>Objeto Conversa
-Define uma conversa, incluindo o bot e os usuários incluídos na conversa.<br/><br/> 
-
-| Propriedade | Type | DESCRIÇÃO |
-|----|----|----|
-| **bot** | [ChannelAccount](#channelaccount-object) | Um objeto **ChannelAccount** que identifica o bot. |
-| **isGroup** | booleano | Sinalizar para indicar se esta é ou não uma conversa em grupo. Defina como **true** se esta for uma conversa em grupo, caso contrário, como **false**. O padrão é **false**. Para iniciar uma conversa em grupo, o canal deve dar suporte para conversas em grupo. |
-| **members** | [ChannelAccount](#channelaccount-object)[] | Matriz de objetos **ChannelAccount** que identificam os membros da conversa. Essa lista deve conter um único usuário, a menos que **isGroup** esteja definido como **true**. Essa lista pode incluir outros bots. |
-| **topicName** | string | Título da conversa. |
-| **activity** | [Atividade](#activity-object) | Em uma solicitação [Criar Conversa](#create-conversation), um objeto **Atividade** que define a primeira mensagem a ser postada na nova conversa. |
+| **ID** | string | ID exclusiva para o usuário ou bot neste canal. |
+| **name** | string | Exibir nome amigável do bot ou do usuário. |
+| **aadObjectId** | string | A ID de objeto desta conta no Azure Active Directory. |
+| **role** | string enum | Função da entidade por trás da conta. `user` ou `bot`. |
 
 <a href="#objects">Retornar à tabela de esquemas</a>
 
@@ -659,16 +646,17 @@ Define os membros de uma conversa.<br/><br/>
 <a href="#objects">Retornar à tabela de esquemas</a>
 
 ### <a name="conversationparameters-object"></a>Objeto ConversationParameters
-Definir parâmetros para criar uma nova conversa.<br/><br/> 
+Define parâmetros para criar uma conversa.<br/><br/>
 
 | Propriedade | Type | DESCRIÇÃO |
 |----|----|----|
 | **isGroup** | booleano | Indica se essa é uma conversa em grupo. |
-| **bot** | [ChannelAccount](#channelaccount-object) | Endereço do bot na conversa. |
-| **members** | matriz | Lista de membros para adicionar à conversa. |
-| **topicName** | string | Título do tópico de uma conversa. Essa propriedade será usada apenas se um canal der suporte. |
-| **activity** | [Atividade](#activity-object) | (opcional) Use essa atividade como a mensagem inicial para a conversa ao criar uma nova conversa. |
-| **channelData** | objeto | Carga específica do canal para criar a conversa. |
+| **bot** | [ChannelAccount](#channelaccount-object) | Informações de conta do canal necessárias para rotear uma mensagem para o bot. |
+| **members** | Matriz [ChannelAccount](#channelaccount-object) | Informações de conta do canal necessárias para rotear uma mensagem para cada usuário. |
+| **topicName** | string | Opcional, tópico da conversa. Essa propriedade será usada apenas se um canal der suporte. |
+| **tennantId** | string | Opcional, a ID de locatário na qual a conversa deve ser criada. |
+| **activity** | [Atividade](#activity-object) | Opcional, a mensagem inicial a ser enviada para a conversa quando ela é criada. |
+| **channelData** | objeto | Conteúdo específico do canal para criar a conversa. |
 
 <a href="#objects">Retornar à tabela de esquemas</a>
 
@@ -691,9 +679,9 @@ Define uma resposta a [Criar conversa](#create-conversation).<br/><br/>
 
 | Propriedade | Type | DESCRIÇÃO |
 |----|----|----|
-| **activityId** | string | ID da atividade. |
+| **activityId** | string | ID da atividade, se enviada. |
 | **ID** | string | ID do recurso. |
-| **serviceUrl** | string | Ponto de extremidade de serviço. |
+| **serviceUrl** | string | Ponto de extremidade de serviço em que as operações relacionadas à conversa podem ser executadas. |
 
 <a href="#objects">Retornar à tabela de esquemas</a>
 

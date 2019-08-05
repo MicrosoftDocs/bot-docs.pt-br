@@ -5,17 +5,17 @@ keywords: implantar bot, implantar bot no azure, publicar bot
 author: ivorb
 ms.author: v-ivorb
 manager: kamrani
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.service: bot-service
 ms.subservice: abs
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: cc49cab1a3c82b3f0af2a4d8ebf261415c137e36
-ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
+ms.openlocfilehash: ed7c9d7a883a1d1807237b636bbb59d25df60e08
+ms.sourcegitcommit: f3fda6791f48ab178721b72d4f4a77c373573e38
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67405970"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671382"
 ---
 # <a name="deploy-your-bot"></a>Implantar seu bot
 
@@ -178,9 +178,19 @@ az webapp deployment source config-zip --resource-group "<new-group-name>" --nam
 | src  | O caminho para o arquivo compactado que você criou. |
 
 ## <a name="3-test-in-web-chat"></a>3. Testar no Webchat
-- No portal do Azure, vá para a folha do bot do seu Aplicativo Web.
-- Na seção **Gerenciamento de Bot**, clique em **Testar no Webchat**. O Serviço de Bot do Azure carregará o controle de Webchat e se conectará ao bot.
-- Aguarde alguns segundos após uma implantação bem-sucedida e, opcionalmente, reinicie o aplicativo Web para limpar entradas no cache. Volte para a folha de Bot do Aplicativo Web e teste usando o Webchat fornecido no portal do Azure.
+
+1. Em seu navegador, navegue até o [portal do Azure](https://ms.portal.azure.com).
+2. No painel esquerdo, clique em **Grupos de recursos**.
+3. No painel direito, pesquise por seu grupo.
+4. Clique no nome do grupo.
+5. Clique no link do registro de canal de bot.
+6. Na folha *Registro de Canal de Bot*, clique em **Testar em Webchat**.
+Como alternativa, no painel direito, clique na caixa Teste.
+
+Para obter mais informações sobre o registro de canal, confira [registrar um bot com o Serviço de Bot](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-quickstart-registration?view=azure-bot-service-3.0).
+
+> [!NOTE]
+> Uma folha é a superfície na qual as funções de serviço ou os elementos de navegação aparecem quando selecionados.
 
 ## <a name="additional-information"></a>Informações adicionais
 Implantar seu bot no Azure envolve pagar pelos serviços que você usa. O artigo [gerenciamento de cobrança e custos](https://docs.microsoft.com/azure/billing/) ajuda você a entender sua cobrança do Azure, monitorar o uso e os custos, e gerenciar sua conta e assinaturas.

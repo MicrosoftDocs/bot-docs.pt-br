@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 290a2733b96a458eb3529b0b0854703631e05f22
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: a9a98419a8ac65c7e1093e1281e03917fa4eca11
+ms.sourcegitcommit: f3fda6791f48ab178721b72d4f4a77c373573e38
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "50000033"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671510"
 ---
 # <a name="send-an-activity-to-the-bot"></a>Enviar uma atividade para o bot
 
@@ -46,7 +46,12 @@ Content-Type: application/json
 
 ### <a name="response"></a>Response
 
-Quando a atividade é entregue para o bot, o serviço responde com um código de status HTTP que reflete o código de status do bot. Se o bot gera um erro, uma resposta de HTTP 502 ("Gateway incorreto") é retornada ao cliente em resposta à sua solicitação de atividade de enviar. Se o POST for bem-sucedido, a resposta contém uma carga JSON que especifica a ID da atividade que foi enviada para o bot.
+Quando a atividade é entregue para o bot, o serviço responde com um código de status HTTP que reflete o código de status do bot. Se o bot gera um erro, uma resposta de HTTP 502 ("Gateway incorreto") é retornada ao cliente em resposta à sua solicitação de atividade de enviar.
+
+> [!NOTE]
+> Isso pode ser causado pelo fato de que um token correto não foi usado. Somente o token recebido em *iniciar conversa* pode ser usado para enviar uma atividade.
+
+Se o POST for bem-sucedido, a resposta contém uma carga JSON que especifica a ID da atividade que foi enviada para o bot.
 
 ```http
 HTTP/1.1 200 OK

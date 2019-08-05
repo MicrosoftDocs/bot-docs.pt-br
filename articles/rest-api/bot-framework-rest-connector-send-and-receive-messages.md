@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: d0b7b3250a62a995113bc9c7e087e2e62af0f413
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 15ad5855fef9bc20f351e196941fe81822db5451
+ms.sourcegitcommit: f3fda6791f48ab178721b72d4f4a77c373573e38
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997055"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671512"
 ---
 # <a name="send-and-receive-messages"></a>Enviar e receber mensagens
 
@@ -106,7 +106,7 @@ Para iniciar uma conversa, emita esta solicitação:
 POST /v3/conversations
 ```
 
-Defina o corpo da solicitação como um objeto [Conversation][Conversation] que especifica os dados da conta do bot e os dados da conta dos usuários que você deseja incluir na conversa.
+Defina o corpo da solicitação como um objeto [ConversationParameters][] que especifica os dados da conta do bot e os dados da conta dos usuários que você deseja incluir na conversa.
 
 > [!NOTE]
 > Nem todos os canais dão suporte a conversas em grupo. Consulte a documentação do canal para determinar se um canal dá suporte a conversas em grupo e identificar o número máximo de participantes permitidos em uma conversa por um canal.
@@ -153,5 +153,5 @@ O bot pode então usar essa ID da conversa para [enviar uma mensagem](#send-mess
 
 [Activity]: bot-framework-rest-connector-api-reference.md#activity-object
 [ConversationAccount]: bot-framework-rest-connector-api-reference.md#conversationaccount-object
-[Conversation]: bot-framework-rest-connector-api-reference.md#conversation-object
+[ConversationParameters]: bot-framework-rest-connector-api-reference.md#conversationparameters-object
 

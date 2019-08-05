@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 05/05/2019
-ms.openlocfilehash: b3c0efb243cc5b039034f908a46557e960adb7b0
-ms.sourcegitcommit: dbbfcf45a8d0ba66bd4fb5620d093abfa3b2f725
+ms.openlocfilehash: 5ca0e9d036d5d3628fff9ae8b0bf5d9f4aa9d8b4
+ms.sourcegitcommit: f3fda6791f48ab178721b72d4f4a77c373573e38
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67464562"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671442"
 ---
 # <a name="about-azure-bot-service"></a>Sobre o Serviço de Bot do Azure
 

@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservice: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 82bc8ae5ca0e6787a4c730edebdb7ca193aa663d
-ms.sourcegitcommit: e276008fb5dd7a37554e202ba5c37948954301f1
+ms.openlocfilehash: c259e24e8aaebff3902bdaff9a03306ab544f36e
+ms.sourcegitcommit: 565a5df8b34a6d73ddf452ca7808eb83bb5be503
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66693630"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68508066"
 ---
 # <a name="javascript-migration-quick-reference"></a>Referência rápida de migração do JavaScript
 
@@ -407,4 +407,29 @@ await context.sendActivity({
     attachments: hotelHeroCards,
     attachmentLayout: AttachmentLayoutTypes.Carousel
 });
+```
+
+## <a name="to-use-natural-language-recognition-luis"></a>Para usar o reconhecimento de idioma natural (LUIS)
+
+### <a name="v3"></a>v3
+
+```javascript
+// The LUIS recognizer was part of the 'botbuilder' library
+var builder = require('botbuilder');
+
+var recognizer = new builder.LuisRecognizer(LUIS_MODEL_URL);
+bot.recognizer(recognizer);
+```
+
+### <a name="v4"></a>v4
+
+```javascript
+// The LUIS recognizer is now part of the 'botbuilder-ai' library
+const { LuisRecognizer } = require('botbuilder-ai');
+
+const luisApp = { applicationId: LuisAppId, endpointKey: LuisAPIKey, endpoint: `https://${ LuisAPIHostName }` };
+const recognizer = new LuisRecognizer(luisApp);
+
+const recognizerResult = await recognizer.recognize(context);
+const intent = LuisRecognizer.topIntent(recognizerResult);
 ```

@@ -10,10 +10,10 @@ ms.subservice: sdk
 ms.date: 03/28/2018
 monikerRange: azure-bot-service-3.0
 ms.openlocfilehash: 1a3b8a4bfdd73674b972f43fe58afec49c63d8cc
-ms.sourcegitcommit: dbbfcf45a8d0ba66bd4fb5620d093abfa3b2f725
+ms.sourcegitcommit: 23a1808e18176f1704f2f6f2763ace872b1388ae
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
+ms.lasthandoff: 07/25/2019
 ms.locfileid: "67464802"
 ---
 # <a name="recognize-intents-and-entities-with-luis"></a>Reconhecer intenções e entidades com o LUIS 
@@ -265,7 +265,7 @@ bot.dialog('CreateNote', [
 });
 ```
 
-Quaisquer entidades no enunciado serão passadas para a caixa de diálogo usando o parâmetro `args`. A primeira etapa da [cascata][waterfall] calls [EntityRecognizer.findEntity][EntityRecognizer_findEntity] to get the title of the note from any `Note.Title` entities in the LUIS response. If the LUIS app didn't detect a `Note.Title` entity, the bot prompts the user for the name of the note. The second step of the waterfall prompts for the text to include in the note. Once the bot has the text of the note, the third step uses [session.userData][session_userData] para salvar a anotação em um objeto `notes`, usando o título como chave. Para obter mais informações sobre `session.UserData`, consulte [Gerenciar dados de estado](./bot-builder-nodejs-state.md). 
+Quaisquer entidades no enunciado serão passadas para a caixa de diálogo usando o parâmetro `args`. A primeira etapa da [cascata][waterfall] chama [EntityRecognizer.findEntity][EntityRecognizer_findEntity] para obter o título da anotação de quaisquer entidades `Note.Title` na resposta do LUIS. Se o aplicativo LUIS não detectar uma entidade `Note.Title`, o bot solicita ao usuário o nome da anotação. A segunda etapa da cascata de solicita o texto a ser incluído na anotação. Assim que o bot obtém o texto da anotação, a terceira etapa usa [session.userData][session_userData] para salvar a anotação em um objeto `notes`, usando o título como a chave. Para obter mais informações sobre `session.UserData`, consulte [Gerenciar dados de estado](./bot-builder-nodejs-state.md). 
 
 
 
