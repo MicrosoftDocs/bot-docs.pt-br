@@ -9,75 +9,70 @@ ms.topic: article
 ms.service: bot-service
 ms.subservice: sdk
 ms.date: 2/26/2019
-ms.openlocfilehash: aa16bc839a96a49615ed127aaf56f686f50a5397
-ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
+ms.openlocfilehash: 18b5caf4c5bb4277704d6f01f86b299fc78d725b
+ms.sourcegitcommit: 565a5df8b34a6d73ddf452ca7808eb83bb5be503
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65033001"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68508124"
 ---
 # <a name="debug-a-bot"></a>Depurar um bot
 
 Este artigo descreve como depurar seu bot usando um ambiente de desenvolvimento integrado (IDE), como o Visual Studio ou Visual Studio Code e o emulador de Bot Framework. Embora você possa usar esses métodos para depurar qualquer bot localmente, este artigo usa um [bot C#](~/dotnet/bot-builder-dotnet-sdk-quickstart.md) ou um [bot JavaScript](~/javascript/bot-builder-javascript-quickstart.md) criado no início rápido.
 
+> [!NOTE]
+> Neste artigo, usamos o Bot Framework Emulator para enviar e receber mensagens do bot durante a depuração. Se você estiver procurando outras maneiras de depurar o bot usando o Bot Framework Emulator, leia o artigo [Depurar com o Bot Framework Emulator](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-debug-emulator?view=azure-bot-service-4.0). 
+
 ## <a name="prerequisites"></a>Pré-requisitos 
 - Baixe e instale o [emulador do Bot Framework](https://aka.ms/Emulator-wiki-getting-started).
 - Baixe e instale o [Visual Studio Code](https://code.visualstudio.com) ou o [Visual Studio](https://www.visualstudio.com/downloads) (Community Edition ou superior).
 
-### <a name="debug-a-javascript-bot-using-command-line-and-emulator"></a>Depure um bot de JavaScript usando a linha de comando e o emulador
+<!-- ### Debug a JavaScript bot using command-line and emulator
 
-Para executar um bot de JavaScript usando a linha de comando e testar o bot com o emulador, faça o seguinte:
-1. Na linha de comando, altere os diretórios para o diretório de projeto do seu bot.
-1. Inicie o bot, executando o comando **node app.js**.
-1. Inicie o emulador e conecte-se ao ponto de extremidade do bot (por exemplo: **http://localhost:3978/api/messages**). Se esta for a primeira vez que você estiver executando o bot, clique em **Arquivo > Novo Bot** e siga as instruções na tela. Caso contrário, clique em **Arquivo > Abrir Bot** para abrir um bot existente. Uma vez que este bot estiver em execução localmente no seu computador, você pode deixar os campos **MicrosoftAppId** e **MicrosoftAppPassword** em branco. Para obter mais informações, consulte [Depurar com o emulador](bot-service-debug-emulator.md).
-1. No emulador, envie uma mensagem a seu bot (por exemplo: enviar a mensagem "Olá"). 
-1. Use os painéis **Inspector** e **Log** no lado direito da janela do emulador para depurar seu bot. Por exemplo, clicar em qualquer uma das bolhas de mensagens (por exemplo: a bolha de mensagem "Olá" na captura de tela abaixo) mostra os detalhes dessa mensagem no painel **Inspetor**. Você pode usá-lo para exibir as solicitações e respostas, já que as mensagens são trocadas entre o emulador e o bot. Como alternativa, você pode clicar em qualquer texto vinculado no painel **Log** para exibir os detalhes no painel **Inspetor**.
+To run a JavaScript bot using the command line and testing the bot with the emulator, do the following:
+1. From the command line, change directory to your bot project directory.
+1. Start the bot by running the command **node app.js**.
+1. Start the emulator and connect to the bot's endpoint (e.g.: **http://localhost:3978/api/messages**). If this is the first time you are running 
+the bot then click **File > New Bot** and follow the instructions on screen. Otherwise, click **File > Open Bot** to open an existing bot. 
+Since this bot is running locally on your computer, you can leave the **MicrosoftAppId** and **MicrosoftAppPassword** fields blank. 
+For more information, see [Debug with the Emulator](bot-service-debug-emulator.md).
+1. From the emulator, send your bot a message (e.g.: send the message "Hi"). 
+1. Use the **Inspector** and **Log** panels on the right side of the emulator window to debug your bot. For example, clicking on any of the messages bubble (e.g.: the "Hi" message bubble in the screenshot below) will show you the detail of that message in the **Inspector** panel. You can use it to view requests and responses as messages are exchanged between the emulator and the bot. Alternatively, you can click on any of the linked text in the **Log** panel to view the details in the **Inspector** panel.
 
 
-   ![Painel Inspetor no emulador](~/media/bot-service-debug-bot/emulator_inspector.png)
+   ![Inspector panel on the Emulator](~/media/bot-service-debug-bot/emulator_inspector.png) -->
 
-### <a name="debug-a-javascript-bot-using-breakpoints-in-visual-studio-code"></a>Depurar um bot de JavaScript usando os pontos de interrupção no Visual Studio Code
+## <a name="debug-a-javascript-bot-using-breakpoints-in-visual-studio-code"></a>Depurar um bot de JavaScript usando os pontos de interrupção no Visual Studio Code
 
 No Visual Studio Code, você pode definir pontos de interrupção e executar o bot no modo de depuração para percorrer seu código. Para definir pontos de interrupção no VS Code, faça o seguinte:
 
 1. Inicie o VS Code e abra a pasta de projeto do bot.
 2. Na barra de menus, clique em **Debug** e clique em **Iniciar depuração**. Se você for solicitado a selecionar um mecanismo de tempo de execução para executar seu código, selecione **Node. js**. Neste ponto, o bot está em execução localmente. 
-<!--
-   > [!NOTE]
-   > If you get the "Value cannot be null" error, check to make sure your **Table Storage** setting is valid.
-   > The **EchoBot** is default to using **Table Storage**. To use Table Storage in your bot, you need the table *name* and *key*. If you do not have a Table Storage instance ready, you can create one or for testing purposes, you can comment out the code that uses **TableBotDataStore** and uncomment the line of code that uses **InMemoryDataStore**. The **InMemoryDataStore** is intended for testing and prototyping only.
--->
-3. Defina o ponto de interrupção conforme necessário. No VS Code, você pode definir pontos de interrupção ao passar o mouse sobre a coluna à esquerda dos números de linha. Um pequeno ponto vermelho será exibido. Se você clicar no ponto, o ponto de interrupção é definido. Se você clicar no ponto novamente, o ponto de interrupção é removido.
-
+3. Clique no arquivo **.js** e defina os pontos de interrupção conforme necessário. No VS Code, você pode definir pontos de interrupção ao passar o mouse sobre a coluna à esquerda dos números de linha. Um pequeno ponto vermelho será exibido. Se você clicar no ponto, o ponto de interrupção é definido. Se você clicar no ponto novamente, o ponto de interrupção é removido.
    ![Definir ponto de interrupção no VS Code](~/media/bot-service-debug-bot/breakpoint-set.png)
-
-4. Inicie o emulador de Bot Framework e conecte-se ao seu bot, conforme descrito na seção acima. 
-5. No emulador, envie uma mensagem a seu bot (por exemplo: enviar a mensagem "Olá"). A execução será interrompida na linha onde você colocar o ponto de interrupção.
-
+4. Inicie o Bot Framework Emulator e conecte-se ao bot, conforme descrito no artigo [Depurar com o Bot Framework Emulator](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-debug-emulator?view=azure-bot-service-4.0). 
+5. Do emulador, envie uma mensagem ao bot (por exemplo: envie a mensagem "Olá"). A execução será interrompida na linha onde você colocar o ponto de interrupção.
    ![Depurar no VS Code](~/media/bot-service-debug-bot/breakpoint-caught.png)
 
-### <a name="debug-a-c-bot-using-breakpoints-in-visual-studio"></a>Depurar um bot de C# usando os pontos de interrupção no Visual Studio
+## <a name="debug-a-c-bot-using-breakpoints-in-visual-studio"></a>Depurar um bot de C# usando os pontos de interrupção no Visual Studio
 
 No Visual Studio (VS), você pode definir pontos de interrupção e executar o bot no modo de depuração para percorrer seu código. Para definir pontos de interrupção no VS, faça o seguinte:
 
 1. Navegue até a pasta de bot e abra o arquivo **.sln**. Isso abrirá a solução no VS.
 2. Na barra de menus, clique em **Compilar** e clique em **Compilar Solução**.
-3. No **Gerenciador de Soluções**, clique em **EchoWithCounterBot.cs**. Esse arquivo define sua lógica principal do bot. Defina o ponto de interrupção conforme necessário. No VS, você pode definir pontos de interrupção ao passar o mouse sobre a coluna à esquerda dos números de linha. Um pequeno ponto vermelho será exibido. Se você clicar no ponto, o ponto de interrupção é definido. Se você clicar no ponto novamente, o ponto de interrupção é removido.
-5. Na barra de menus, clique em **Debug** e clique em **Iniciar depuração**. Neste ponto, o bot está em execução localmente. 
+3. No **Gerenciador de Soluções**, clique no arquivo **.cs** e defina os pontos de interrupção conforme necessário. Esse arquivo define sua lógica principal do bot. No VS, você pode definir pontos de interrupção ao passar o mouse sobre a coluna à esquerda dos números de linha. Um pequeno ponto vermelho será exibido. Se você clicar no ponto, o ponto de interrupção será definido. Se você clicar no ponto novamente, o ponto de interrupção será removido.
+4. No menu, clique em **Depurar** e clique em **Iniciar Depuração**. Neste ponto, o bot está em execução localmente. 
 
 <!--
    > [!NOTE]
    > If you get the "Value cannot be null" error, check to make sure your **Table Storage** setting is valid.
    > The **EchoBot** is default to using **Table Storage**. To use Table Storage in your bot, you need the table *name* and *key*. If you do not have a Table Storage instance ready, you can create one or for testing purposes, you can comment out the code that uses **TableBotDataStore** and uncomment the line of code that uses **InMemoryDataStore**. The **InMemoryDataStore** is intended for testing and prototyping only.
 -->
-
    ![Definir ponto de interrupção no VS](~/media/bot-service-debug-bot/breakpoint-set-vs.png)
 
-7. Inicie o emulador de Bot Framework e conecte-se ao seu bot, conforme descrito na seção acima. 
-8. No emulador, envie uma mensagem a seu bot (por exemplo: enviar a mensagem "Olá"). A execução será interrompida na linha onde você colocar o ponto de interrupção.
-
+5. Inicie o emulador de Bot Framework e conecte-se ao seu bot, conforme descrito na seção acima. 
+6. No emulador, envie uma mensagem a seu bot (por exemplo: enviar a mensagem "Olá"). A execução será interrompida na linha onde você colocar o ponto de interrupção.
    ![Depurar no VS](~/media/bot-service-debug-bot/breakpoint-caught-vs.png)
-
 ::: moniker range="azure-bot-service-3.0" 
 
 ## <a id="debug-csharp-serverless"></a> Depurar um plano de consumo C\# bot de funções
