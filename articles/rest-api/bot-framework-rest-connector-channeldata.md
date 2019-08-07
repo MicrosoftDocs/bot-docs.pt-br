@@ -6,18 +6,17 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: d69013c721552483cfd38b204936cb1c7f508f82
-ms.sourcegitcommit: 980612a922b8290b2faadaca193496c4117e415a
+ms.openlocfilehash: 95ec59da7b2b64391a599fa690bf3e8410c3cd53
+ms.sourcegitcommit: a1eaa44f182a7210197bd793250907df00e9edab
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "64564013"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68757192"
 ---
 # <a name="implement-channel-specific-functionality"></a>Implementar a funcionalidade específica do canal
 
-Alguns canais fornecem recursos que não podem ser implementados apenas com o uso de [texto e anexos da mensagem](bot-framework-rest-connector-create-messages.md). Para implementar funcionalidades específicas do canal, passe metadados nativos para um canal na propriedade `channelData` do objeto [Activity][Activity]. Por exemplo, o bot pode usar a propriedade `channelData` para instruir o Telegram a enviar um adesivo ou para instruir o Office365 a enviar um email.
+Alguns canais fornecem recursos que não podem ser implementados apenas com o uso de [texto e anexos da mensagem](bot-framework-rest-connector-create-messages.md). Para implementar funcionalidades específicas do canal, passe metadados nativos para um canal na propriedade `Activity` do objeto `channelData`. Por exemplo, o bot pode usar a propriedade `channelData` para instruir o Telegram a enviar um adesivo ou para instruir o Office 365 a enviar um email.
 
 Este artigo descreve como usar a propriedade `channelData` de uma atividade de mensagem para implementar esta funcionalidade específica do canal:
 
@@ -30,11 +29,11 @@ Este artigo descreve como usar a propriedade `channelData` de uma atividade de m
 | Kik | Enviar e receber mensagens nativas do Kik | 
 
 > [!NOTE]
-> O valor da propriedade `channelData` de um objeto [Activity][Activity] é um objeto JSON. A estrutura do objeto JSON varia de acordo com o canal e a funcionalidade que está sendo implementada, conforme descrito abaixo. 
+> O valor da propriedade de um `Activity` objeto `channelData` é um objeto JSON. A estrutura do objeto JSON varia de acordo com o canal e a funcionalidade que está sendo implementada, conforme descrito abaixo. 
 
 ## <a name="create-a-custom-email-message"></a>Criar uma mensagem de Email personalizada
 
-Para criar uma mensagem de email, defina a propriedade `channelData` do objeto [Activity][Activity] como um objeto JSON que contém essas propriedades:
+Para criar uma mensagem de email, defina a propriedade do `Activity` objeto `channelData` como um objeto JSON que contém essas propriedades:
 
 [!INCLUDE [Email channelData table](~/includes/snippet-channelData-email.md)]
 
@@ -52,7 +51,7 @@ Este snippet mostra um exemplo da propriedade `channelData` para uma mensagem de
 
 ## <a name="create-a-full-fidelity-slack-message"></a>Criar uma mensagem do Slack com fidelidade total
 
-Para criar uma mensagem do Slack com fidelidade total, defina a propriedade `channelData` do objeto [Activity][Activity] como um objeto JSON que especifica <a href="https://api.slack.com/docs/messages" target="_blank">mensagens do Slack</a>, <a href="https://api.slack.com/docs/message-attachments" target="_blank">anexos do Slack</a> e/ou <a href="https://api.slack.com/docs/message-buttons" target="_blank">botões do Slack</a>. 
+Para criar uma mensagem do Slack com fidelidade total, defina a propriedade `Activity` do objeto `channelData` como um objeto JSON que especifica <a href="https://api.slack.com/docs/messages" target="_blank">mensagens do Slack</a>, <a href="https://api.slack.com/docs/message-attachments" target="_blank">anexos do Slack</a> e/ou <a href="https://api.slack.com/docs/message-buttons" target="_blank">botões do Slack</a>. 
 
 > [!NOTE]
 > Para dar suporte a botões em mensagens do Slack, habilite a opção **Mensagens Interativas** ao [conectar o bot](../bot-service-manage-channels.md) ao canal do Slack.
@@ -136,7 +135,7 @@ O bot pode responder a essa mensagem da [maneira normal](bot-framework-rest-conn
 
 ## <a name="create-a-facebook-notification"></a>Criar uma notificação do Facebook
 
-Para criar uma notificação do Facebook, defina a propriedade `channelData` do objeto [Activity][Activity] em um objeto JSON que especifique estas propriedades: 
+Para criar uma notificação do Facebook, defina a propriedade `Activity` do objeto `channelData` em um objeto JSON que especifique estas propriedades: 
 
 | Propriedade | DESCRIÇÃO |
 |----|----|
@@ -163,7 +162,7 @@ Este snippet mostra um exemplo da propriedade `channelData` para um anexo de rec
 
 ## <a name="create-a-telegram-message"></a>Criar uma mensagem do Telegram
 
-Para criar uma mensagem que implementa ações específicas do Telegram, como compartilhar um memorando de voz ou um adesivo, defina a propriedade `channelData` do objeto [Activity][Activity] em um objeto JSON que especifique estas propriedades: 
+Para criar uma mensagem que implementa ações específicas do Telegram, como compartilhar um memorando de voz ou um adesivo, defina a propriedade `Activity` do objeto `channelData` em um objeto JSON que especifique estas propriedades: 
 
 | Propriedade | DESCRIÇÃO |
 |----|----|
@@ -237,11 +236,11 @@ Este snippet mostra um exemplo de uma propriedade `channelData` que especifica u
 
 ## <a name="create-a-native-kik-message"></a>Criar uma mensagem nativa do Kik
 
-Para criar uma mensagem nativa do Kik, defina a propriedade `channelData` do objeto [Activity][Activity] como um objeto JSON que especifique esta propriedade: 
+Para criar uma mensagem nativa do Kik, defina a propriedade `Activity` do objeto `channelData` como um objeto JSON que especifique esta propriedade: 
 
 | Propriedade | DESCRIÇÃO |
 |----|----|
-|  da nuvem para o dispositivo | Uma matriz de mensagens do Kik. Para obter detalhes sobre o formato de mensagem do Kik, confira <a href="https://dev.kik.com/#/docs/messaging#message-formats" target="_blank">Formatos de mensagem do Kik</a>. |
+| da nuvem para o dispositivo | Uma matriz de mensagens do Kik. Para obter detalhes sobre o formato de mensagem do Kik, confira <a href="https://dev.kik.com/#/docs/messaging#message-formats" target="_blank">Formatos de mensagem do Kik</a>. |
 
 Este snippet mostra um exemplo da propriedade `channelData` para uma mensagem nativa do Kik.
 
@@ -274,6 +273,5 @@ Este snippet mostra um exemplo da propriedade `channelData` para uma mensagem na
 - [Visão geral das atividades](bot-framework-rest-connector-activities.md)
 - [Criar mensagens](bot-framework-rest-connector-create-messages.md)
 - [Enviar e receber mensagens](bot-framework-rest-connector-send-and-receive-messages.md)
+- [Esquema de atividade Bot Framework](https://aka.ms/botSpecs-activitySchema)
 - [Visualizar recursos com o Inspetor de Canal](../bot-service-channel-inspector.md)
-
-[Activity]: bot-framework-rest-connector-api-reference.md#activity-object
