@@ -6,14 +6,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 28074e7ad59249cabbd38436bd02dc48bcab5b88
-ms.sourcegitcommit: aea57820b8a137047d59491b45320cf268043861
+ms.openlocfilehash: 522f4f133e6a7b4e5379a27c1ce1a02138402559
+ms.sourcegitcommit: a1eaa44f182a7210197bd793250907df00e9edab
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59904879"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68756929"
 ---
 # <a name="api-reference---direct-line-api-30"></a>Referência de API – API de Linha Direta 3.0
 
@@ -47,7 +46,7 @@ O <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" target="_blan
 | 204 | A solicitação foi processada com êxito, mas nenhum conteúdo foi retornado. |
 | 400 | A solicitação foi malformada ou está incorreta. |
 | 401 | O cliente não tem autorização para fazer a solicitação. Geralmente, esse código de status ocorre porque o cabeçalho `Authorization` está ausente ou malformado. |
-| 403 | O cliente não tem autorização para executar a operação solicitada. Se a solicitação especificou um token anteriormente válido, mas já expirado, a propriedade `code` do [Erro](bot-framework-rest-connector-api-reference.md#error-object) retornado dentro do objeto [ErrorResponse](bot-framework-rest-connector-api-reference.md#errorresponse-object) será definida como `TokenExpired`. |
+| 403 | O cliente não tem autorização para executar a operação solicitada. Se a solicitação especificou um token anteriormente válido, mas já expirado, a propriedade `code` do `Error` retornado dentro do objeto `ErrorResponse` será definida como `TokenExpired`. |
 | 404 | O recurso solicitado não foi localizado. Normalmente, esse código de status indica um URI de solicitação inválido. |
 | 500 | Ocorreu um erro de servidor interno no serviço de Linha Direta. |
 | 502 | O bot está indisponível ou retornou um erro. **Esse é um código de erro comum.** |
@@ -57,7 +56,7 @@ O <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" target="_blan
 
 ### <a name="errors"></a>Errors
 
-Qualquer resposta que especifique um código de status HTTP no intervalo 4xx ou 5xx incluirá um objeto [ErrorResponse](bot-framework-rest-connector-api-reference.md#errorresponse-object) no corpo da resposta que fornece informações sobre o erro. Se você receber uma resposta de erro no intervalo 4xx, inspecione o objeto **ErrorResponse** para identificar a causa do erro e resolver o problema antes de reenviar a solicitação.
+Qualquer resposta que especifique um código de status HTTP no intervalo 4xx ou 5xx incluirá um objeto `ErrorResponse` no corpo da resposta que fornece informações sobre o erro. Se você receber uma resposta de erro no intervalo 4xx, inspecione o objeto **ErrorResponse** para identificar a causa do erro e resolver o problema antes de reenviar a solicitação.
 
 > [!NOTE]
 > Códigos de status HTTP e os valores especificados na propriedade `code` dentro do objeto **ErrorResponse** estão estáveis. Os valores especificados na propriedade `message` dentro do objeto **ErrorResponse** podem mudar ao longo do tempo.
@@ -168,8 +167,8 @@ POST /v3/directline/conversations/{conversationId}/activities
 
 | | |
 |----|----|
-| **Corpo da solicitação** | Um objeto [Atividade](bot-framework-rest-connector-api-reference.md#activity-object) |
-| **Retorna** | Um [ResourceResponse](bot-framework-rest-connector-api-reference.md#resourceresponse-object) que contém uma propriedade `id` que especifica a ID da Atividade que foi enviada ao bot. | 
+| **Corpo da solicitação** | Um objeto `Activity` |
+| **Retorna** | Um `ResourceResponse` que contém uma propriedade `id` que especifica a ID da Atividade que foi enviada ao bot. | 
 
 ### <a id="upload-send-files"></a>Carregar e Enviar Arquivo(s)
 Carrega e envia arquivo(s) como anexo(s). Defina o parâmetro `userId` no URI da solicitação para especificar a ID do usuário que está enviando os anexos.
@@ -179,22 +178,22 @@ POST /v3/directline/conversations/{conversationId}/upload?userId={userId}
 
 | | |
 |----|----|
-| **Corpo da solicitação** | Para um único anexo, preencha o corpo da solicitação com o conteúdo do arquivo. Para vários anexos, crie um corpo de solicitação com várias partes, com uma parte para cada anexo, e também (opcionalmente) uma parte para o objeto [Atividade](bot-framework-rest-connector-api-reference.md#activity-object) que deve servir como contêiner para os anexos especificados. Saiba mais em [Enviar uma atividade para o bot](bot-framework-rest-direct-line-3-0-send-activity.md). |
-| **Retorna** | Um [ResourceResponse](bot-framework-rest-connector-api-reference.md#resourceresponse-object) que contém uma propriedade `id` que especifica a ID da Atividade que foi enviada ao bot. | 
+| **Corpo da solicitação** | Para um único anexo, preencha o corpo da solicitação com o conteúdo do arquivo. Para vários anexos, crie um corpo da solicitação com várias partes, com uma parte para cada anexo, e também (opcionalmente) uma parte para o objeto `Activity` que deve servir como contêiner para os anexos especificados. Saiba mais em [Enviar uma atividade para o bot](bot-framework-rest-direct-line-3-0-send-activity.md). |
+| **Retorna** | Um `ResourceResponse` que contém uma propriedade `id` que especifica a ID da Atividade que foi enviada ao bot. | 
 
 > [!NOTE]
 > Os arquivos carregados são excluídos após 24 horas.
 
 ## <a name="schema"></a>Esquema
 
-O esquema da Linha Direta 3.0 inclui todos os objetos definidos pelo [esquema do Bot Framework v3](bot-framework-rest-connector-api-reference.md#objects), bem como o objeto `ActivitySet` e o objeto `Conversation`.
+O esquema do Direct Line 3.0 inclui todos os objetos definidos pelo [Esquema de Atividade do Bot Framework](https://aka.ms/botSpecs-activitySchema), bem como o objeto `ActivitySet` e o objeto `Conversation`.
 
 ### <a name="activityset-object"></a>Objeto ActivitySet 
 Define um conjunto de atividades.<br/><br/>
 
 | Propriedade | Type | DESCRIÇÃO |
 |----|----|----|
-| **activities** | [Activity](bot-framework-rest-connector-api-reference.md#activity-object)[] | Matriz de objetos **Atividade**. |
+| **activities** | `Activity`[] | Matriz de objetos **Atividade**. |
 | **watermark** | string | Marca-d'água máxima das atividades dentro do conjunto. Um cliente pode usar o valor `watermark` para indicar a mensagem mais recente vista, ao [recuperar as atividades do bot](bot-framework-rest-direct-line-3-0-receive-activities.md#http-get) ou ao [gerar uma nova URL de fluxo de WebSocket](bot-framework-rest-direct-line-3-0-reconnect-to-conversation.md). |
 
 ### <a name="conversation-object"></a>Objeto Conversa
@@ -209,7 +208,7 @@ Define uma conversa de Linha Direta.<br/><br/>
 
 ### <a name="activities"></a>Atividades
 
-Para cada [Atividade](bot-framework-rest-connector-api-reference.md#activity-object) que um cliente recebe de um bot via Linha Direta:
+Para cada `Activity` que um cliente recebe de um bot via Direct Line:
 
 - Cartões de anexo são preservados.
 - URLs para anexos carregados ficam ocultos com um link privado.
@@ -217,7 +216,7 @@ Para cada [Atividade](bot-framework-rest-connector-api-reference.md#activity-obj
 
 Os clientes podem [receber](bot-framework-rest-direct-line-3-0-receive-activities.md) várias atividades do bot como parte de um [ActivitySet](#activityset-object). 
 
-Quando um cliente envia uma [Atividade](bot-framework-rest-connector-api-reference.md#activity-object) para um bot via Linha Direta:
+Quando um cliente envia uma `Activity` para um bot via Direct Line:
 
 - A propriedade `type` especifica o tipo de atividade que está enviando (normalmente **mensagem**).
 - A propriedade `from` deve ser preenchida com uma ID de usuário escolhida pelo cliente.
@@ -226,3 +225,7 @@ Quando um cliente envia uma [Atividade](bot-framework-rest-connector-api-referen
 - O tamanho total da atividade, quando serializada para o JSON e criptografada, não deve exceder 256 mil caracteres. Portanto, é recomendável que as atividades sejam mantidas abaixo de 150 mil. Se mais dados forem necessários, divida a atividade em várias e/ou considere o uso de anexos.
 
 Os clientes podem [enviar](bot-framework-rest-direct-line-3-0-send-activity.md) uma única atividade por solicitação. 
+
+## <a name="additional-resources"></a>Recursos adicionais
+
+- [Esquema de atividade Bot Framework](https://aka.ms/botSpecs-activitySchema)

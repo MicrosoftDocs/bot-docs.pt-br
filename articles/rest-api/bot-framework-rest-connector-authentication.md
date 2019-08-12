@@ -6,14 +6,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: cbe2a6e449ecc2920e3a2d1ecb04a63dcb489b66
-ms.sourcegitcommit: 8336a06941d09e1107b38f494d048dd785a13069
+ms.openlocfilehash: 645ab3c8bcf2bc253128219b5aa1332d8ae23dc1
+ms.sourcegitcommit: a1eaa44f182a7210197bd793250907df00e9edab
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68631567"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68757045"
 ---
 # <a name="authentication"></a>Authentication
 
@@ -181,7 +180,7 @@ GET https://login.botframework.com/v1/.well-known/keys
 
 O corpo da resposta especifica o documento no [formato JWK](https://tools.ietf.org/html/rfc7517), mas também inclui uma propriedade adicional para cada chave: `endorsements`. A lista das chaves é relativamente estável e pode ser armazenada em cache durante longos períodos (por padrão, 5 dias dentro do SDK do Bot Framework).
 
-A propriedade `endorsements` dentro de cada chave contém uma ou mais cadeias de caracteres de endosso que você pode usar para verificar se a ID de canal especificada na propriedade `channelId` dentro do objeto de [Atividade][Activity] da solicitação de entrada é autêntica. A lista de IDs de canal que exigem endossos é configurável em cada bot. Por padrão, essa será a lista de todas as IDs de canal publicadas, embora os desenvolvedores de bots possam substituir os valores da ID de canal selecionados de qualquer forma. 
+A propriedade `endorsements` dentro de cada chave contém uma ou mais cadeias de caracteres de endosso que você pode usar para verificar se a ID de canal especificada na propriedade `channelId` dentro do objeto `Activity` da solicitação de entrada é autêntica. A lista de IDs de canal que exigem endossos é configurável em cada bot. Por padrão, essa será a lista de todas as IDs de canal publicadas, embora os desenvolvedores de bots possam substituir os valores da ID de canal selecionados de qualquer forma. 
 
 ### <a name="step-4-verify-the-jwt-token"></a>Etapa 4: verificar o token JWT
 
@@ -195,11 +194,11 @@ Bibliotecas de análise de JWT estão disponíveis para várias plataformas e a 
 4. O token contém uma declaração "audiência" com um valor igual à ID de Aplicativo da Microsoft do bot.
 5. O token está dentro do período de validade. A defasagem horária padrão do setor é de 5 minutos.
 6. O token tem uma assinatura de criptografia válida, com uma chave listada no documento de chaves do OpenID que foi recuperado na [Etapa 3](#connector-to-bot-step-3), usando o algoritmo de assinatura especificado na propriedade `id_token_signing_alg_values_supported` do documento de metadados do Open ID que foi recuperado [Etapa 2](#openid-metadata-document).
-7. O token contém uma declaração "serviceUrl" com um valor que corresponde à propriedade `servieUrl` na raiz do objeto de [Atividade][Activity] da solicitação de entrada. 
+7. O token contém uma declaração "serviceUrl" com um valor que corresponde à propriedade `servieUrl` na raiz do objeto `Activity` da solicitação de entrada. 
 
 Se o endosso para uma ID de canal for necessário:
 
-- É necessário exigir que qualquer objeto de [Atividade][Activity] enviado ao bot com essa ID de canal seja acompanhado por um token JWT assinado com um endosso para esse canal. 
+- É necessário exigir que qualquer objeto `Activity` enviado ao bot com essa ID de canal seja acompanhado por um token JWT assinado com um endosso para esse canal. 
 - Se o endosso não estiver presente, o bot deve rejeitar a solicitação retornando um código de status **HTTP 403 (proibido)** .
 
 > [!IMPORTANT]
@@ -389,8 +388,7 @@ payload:
 ## <a name="additional-resources"></a>Recursos adicionais
 
 - [Solucionar problemas de autenticação do Bot Framework](../bot-service-troubleshoot-authentication-problems.md)
+- [Esquema de atividade Bot Framework](https://aka.ms/botSpecs-activitySchema)
 - [Token Web JSON (JWT) draft-jones-json-web-token-07](http://openid.net/specs/draft-jones-json-web-token-07.html)
 - [Assinatura Web JSON (JWS) draft-jones-json-web-signature-04](https://tools.ietf.org/html/draft-jones-json-web-signature-04)
 - [Chave Web JSON (JWK) RFC 7517](https://tools.ietf.org/html/rfc7517)
-
-[Activity]: bot-framework-rest-connector-api-reference.md#activity-object

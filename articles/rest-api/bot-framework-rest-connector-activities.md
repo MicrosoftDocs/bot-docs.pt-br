@@ -6,18 +6,17 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: db09888c5f782b065ff6bd108ce93379cd42527a
-ms.sourcegitcommit: b94361234816e6b95459f142add936732fc40344
+ms.openlocfilehash: 69c58e1e6bd9da4b07e21f8ca3eb029d2dec9e75
+ms.sourcegitcommit: a1eaa44f182a7210197bd793250907df00e9edab
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54317666"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68757183"
 ---
 # <a name="activities-overview"></a>Visão geral das atividades
 
-O serviço Bot Connector troca informações entre o bot e o canal (usuário) passando um objeto [Atividade][Activity]. O tipo de atividade mais comum é **mensagem**, mas há outros tipos de atividade que podem ser usados para comunicar diversos tipos de informações a um bot ou canal. 
+O serviço Bot Connector troca informações entre o bot e o canal (usuário) passando um objeto `Activity`. O tipo de atividade mais comum é **mensagem**, mas há outros tipos de atividade que podem ser usados para comunicar diversos tipos de informações a um bot ou canal. 
 
 ## <a name="activity-types-in-the-bot-connector-service"></a>Tipos de atividade no serviço do Bot Connector
 
@@ -25,14 +24,14 @@ Há suporte para os seguintes tipos de atividade pelo Bot Connector.
 
 | Tipo de atividade | DESCRIÇÃO |
 |------|------|------|
-| Message | Representa uma comunicação entre o bot e o usuário. |
+| message | Representa uma comunicação entre o bot e o usuário. |
 | conversationUpdate | Indica que o bot foi adicionado a uma conversa, outros membros foram adicionados ou removidos da conversa ou houve alteração de metadados da conversa. |
 | contactRelationUpdate | Indica que o bot foi adicionado ou removido da lista de contatos do usuário. |
 | digitação | Indica que o usuário ou o bot na outra extremidade da conversa está compilando uma resposta. | 
 | deleteUserData | Indica para um bot que um usuário solicitou ao bot a exclusão de quaisquer dados de usuário que ele possa ter armazenado. |
 | endOfConversation | Indica o final de uma conversa. |
 
-## <a name="message"></a>Message
+## <a name="message"></a>message
 
 Seu bot enviará atividades de **mensagem** para comunicar informações aos usuários e receber atividades de **mensagem** dos usuários. Algumas mensagens podem ser texto sem formatação, enquanto outras podem conter conteúdo mais avançado, como [anexos de mídia](bot-framework-rest-connector-add-media-attachments.md), [botões e cartões](bot-framework-rest-connector-add-rich-cards.md) ou [dados específicos do canal](bot-framework-rest-connector-channeldata.md). Para obter informações sobre propriedades de mensagens comumente usadas, consulte [Criar mensagens](bot-framework-rest-connector-create-messages.md). Para obter informações sobre como enviar e receber mensagens, consulte [Enviar e receber mensagens](bot-framework-rest-connector-send-and-receive-messages.md). 
 
@@ -65,5 +64,4 @@ Um bot recebe uma atividade **endOfConversation** para indicar que o usuário en
 
 - [Criar mensagens](bot-framework-rest-connector-create-messages.md)
 - [Enviar e receber mensagens](bot-framework-rest-connector-send-and-receive-messages.md)
-
-[Activity]: bot-framework-rest-connector-api-reference.md#activity-object
+- [Esquema de atividade Bot Framework](https://aka.ms/botSpecs-activitySchema)

@@ -3,18 +3,17 @@ title: Visão geral de Webchat | Microsoft Docs
 description: Saiba como configurar o Webchat do Bot Framework.
 keywords: bot framework, webchat, chat, exemplos, react, referência
 author: ivorb
-ms.author: v-ivorb
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 06/07/2019
-ms.openlocfilehash: 1d787d375fcd1ddade544724bb28dea9aaeb1dd6
-ms.sourcegitcommit: f3fda6791f48ab178721b72d4f4a77c373573e38
+ms.openlocfilehash: 2575ac196bd3e875d8523da99d7114b789e70558
+ms.sourcegitcommit: a1eaa44f182a7210197bd793250907df00e9edab
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68671415"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68757098"
 ---
 # <a name="web-chat-overview"></a>Visão geral de Webchat
 
@@ -30,7 +29,7 @@ Se você estiver buscando migrar do Webchat v3 para v4, vá diretamente para [a 
 Primeiro, crie um Bot usando o [Serviço de Bot do Azure](https://azure.microsoft.com/services/bot-service/).
 Depois que o bot for criado, você precisará [obter o segredo do Webchat do bot](../bot-service-channel-connect-webchat.md#step-1) no portal do Azure. Em seguida, use o segredo para [gerar um token](../rest-api/bot-framework-rest-direct-line-3-0-authentication.md) e passá-lo para seu Webchat.
 
-Aqui está como você pode adicionar o controle de Webchat ao seu site:
+Aqui está como você pode adicionar um controle de Webchat ao seu site:
 
 ```html
 <!DOCTYPE html>
@@ -57,12 +56,12 @@ Aqui está como você pode adicionar o controle de Webchat ao seu site:
 </html>
 ```
 
-> `userID`, `username`, `locale`, `botAvatarInitials` e `userAvatarInitials` são todos parâmetros opcionais para passar ao método `renderWebChat`. Para saber mais sobre objetos de webchat, examine a seção [Referência da API de Webchat](#web-chat-api-reference) deste `README`.
+> `userID`, `username`, `locale`, `botAvatarInitials` e `userAvatarInitials` são todos parâmetros opcionais para passar ao método `renderWebChat`. Para saber mais sobre as propriedades de Webchat, examine a seção [Referência da API de Webchat](#web-chat-api-reference) deste artigo.
 > ![Captura de tela do Webchat](https://raw.githubusercontent.com/Microsoft/BotFramework-WebChat/master/media/weatherquery.png.jpg)
 
 ### <a name="integrate-with-javascript"></a>Integrar com o JavaScript
 
-O Webchat é projetado para integrar-se ao seu site existente usando JavaScript ou React. A integração com o JavaScript lhe dará capacidade moderada de personalização e uso de estilos.
+O Webchat é projetado para integrar-se ao seu site existente usando JavaScript ou React. A integração com o JavaScript permitirá fazer alterações de estilo e personalizações. Para obter mais informações, consulte o artigo [Integrar o Webchat ao site](https://aka.ms/integrate-webchat-into-site).
 
 Você pode usar o pacote completo e típico do Webchat, que contém a maioria dos recursos normalmente usados.
 
@@ -91,9 +90,9 @@ Consulte o exemplo de funcionamento do [pacote completo do Webchat](https://gith
 
 ### <a name="integrate-with-react"></a>Integrar ao React
 
-Para personalização completa, você pode usar o React para recompor componentes do Webchat.
+Para personalização completa, você pode usar o [React](https://reactjs.org/) para recompor componentes do Webchat.
 
-Para instalar o build de produção do NPM, execute `npm install botframework-webchat`.
+Para instalar o build de produção do npm, execute `npm install botframework-webchat`.
 
 ```jsx
 import { DirectLine } from 'botframework-directlinejs';
@@ -120,6 +119,10 @@ export default class extends React.Component {
 
 Veja um exemplo funcional do [Webchat renderizado por meio do React](https://github.com/Microsoft/BotFramework-WebChat/tree/master/samples/03.a.host-with-react/).
 
+> [!TIP]
+> Se ainda não tiver usado o React e o JSX, você poderá encontrar treinamento na página de [Introdução](https://reactjs.org/docs/getting-started.html) do React.
+
+
 ## <a name="customize-web-chat-ui"></a>Personalizar a interface do usuário do Webchat
 
 O Webchat é projetado para ser personalizável sem criação de fork do código-fonte. A tabela a seguir descreve quais tipos de personalizações você pode obter quando está importando o Webchat de maneiras diferentes. Esta lista não é exaustiva.
@@ -137,6 +140,9 @@ O Webchat é projetado para ser personalizável sem criação de fork do código
 | Recompor toda a interface do usuário        |                    | :heavy_check_mark: |
 
 Veja mais sobre [personalização de Webchat](https://github.com/Microsoft/BotFramework-WebChat/blob/master/SAMPLES.md) para saber mais a esse respeito.
+
+> [!NOTE] 
+> Para obter informações sobre CDNs (Redes de Distribuição de Conteúdo), consulte [CDNs (Redes de Distribuição de Conteúdo)](https://aka.ms/CDN-best-practices)
 
 ## <a name="migrating-from-web-chat-v3-to-v4"></a>Migração de Webchat v3 para v4
 

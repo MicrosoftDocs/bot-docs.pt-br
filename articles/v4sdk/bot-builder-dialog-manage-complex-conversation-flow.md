@@ -11,10 +11,10 @@ ms.subservice: sdk
 ms.date: 07/05/2019
 monikerRange: azure-bot-service-4.0
 ms.openlocfilehash: b7ffa16c2f0a00043b12faec1d31bbfe5bfa250f
-ms.sourcegitcommit: b498649da0b44f073dc5b23c9011ea2831edb31e
+ms.sourcegitcommit: a1eaa44f182a7210197bd793250907df00e9edab
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
+ms.lasthandoff: 08/05/2019
 ms.locfileid: "67587470"
 ---
 # <a name="create-advanced-conversation-flow-using-branches-and-loops"></a>Criar fluxo de conversa avançado usando ramificações e loops
@@ -27,8 +27,8 @@ Também mostraremos como passar argumentos entre partes diferentes do diálogo.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- Conhecimento sobre [noções básicas de bots][concept-basics], [managing state][concept-state], a [biblioteca de caixas de diálogo][concept-dialogs] e como [implementar um fluxo de conversa sequencial][simple-dialog].
-- Uma cópia do exemplo de caixa de diálogo complexo em [**CSharp**][cs-sample] ou em or [**JavaScript**][js-sample].
+- Conhecimento sobre [noções básicas de bots][concept-basics], [gerenciamento de estado][concept-state], a [biblioteca de diálogos][concept-dialogs] e como [implementar um fluxo de conversa sequencial][simple-dialog].
+- Uma cópia da amostra de diálogo complexo seja em [**CSharp**][cs-sample] ou [**JavaScript**][js-sample].
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
@@ -242,13 +242,13 @@ O manipulador de mensagens chama o método auxiliar `run` para gerenciar a caixa
 
 **Dialogs\TopLevelDialog.cs**
 
-Aqui está uma amostra de lógica de branch tirada de uma etapa da caixa de diálogo _principal_:
+Aqui está uma amostra de lógica de branch tirada de uma etapa da caixa de diálogo _principal_ :
 
 [!code-csharp[branching logic](~/../botbuilder-samples/samples/csharp_dotnetcore/43.complex-dialog/Dialogs/TopLevelDialog.cs?range=68-80)]
 
 **Dialogs\ReviewSelectionDialog.cs**
 
-Aqui está uma amostra de lógica de looping tirada de uma etapa da caixa de diálogo _seleção de revisão_:
+Aqui está uma amostra de lógica de looping tirada de uma etapa da caixa de diálogo _seleção de revisão_ :
 
 [!code-csharp[looping logic](~/../botbuilder-samples/samples/csharp_dotnetcore/43.complex-dialog/Dialogs/ReviewSelectionDialog.cs?range=96-105)]
 
@@ -256,13 +256,13 @@ Aqui está uma amostra de lógica de looping tirada de uma etapa da caixa de di�
 
 **dialogs/topLevelDialog.js**
 
-Aqui está uma amostra de lógica de branch tirada de uma etapa da caixa de diálogo _principal_:
+Aqui está uma amostra de lógica de branch tirada de uma etapa da caixa de diálogo _principal_ :
 
 [!code-javascript[branching logic](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/dialogs/topLevelDialog.js?range=56-64)]
 
 **dialogs/reviewSelectionDialog.js**
 
-Aqui está uma amostra de lógica de looping tirada de uma etapa da caixa de diálogo _seleção de revisão_:
+Aqui está uma amostra de lógica de looping tirada de uma etapa da caixa de diálogo _seleção de revisão_ :
 
 [!code-javascript[looping logic](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/dialogs/reviewSelectionDialog.js?range=71-77)]
 

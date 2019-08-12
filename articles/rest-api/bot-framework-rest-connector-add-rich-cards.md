@@ -6,14 +6,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: a662bb24f384d072a162242a4634fe4fe3a4b395
-ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
+ms.openlocfilehash: 739af17f39a8537833aafcc8d03fb63ea2c8c914
+ms.sourcegitcommit: a1eaa44f182a7210197bd793250907df00e9edab
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65033455"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68757058"
 ---
 # <a name="add-rich-card-attachments-to-messages"></a>Adicionar anexos de cartão avançados às mensagens
 > [!div class="op_single_selector"]
@@ -34,20 +33,20 @@ Atualmente, o Bot Framework dá suporte a oito tipos de cartões avançados:
 | Tipo de cartão | DESCRIÇÃO |
 |----|----|
 | <a href="/adaptive-cards/get-started/bots">AdaptiveCard</a> | Um cartão personalizável que pode conter qualquer combinação de texto, fala, imagens, botões e campos de entrada. Confira [suporte por canal](/adaptive-cards/get-started/bots#channel-status).  |
-| [AnimationCard][animationCard] | Um cartão que pode reproduzir GIFs animados ou vídeos curtos. |
-| [AudioCard][audioCard] | Um cartão que pode reproduzir um arquivo de áudio. |
-| [HeroCard][heroCard] | Um cartão que geralmente contém uma única imagem grande, um ou mais botões e um texto. |
-| [ThumbnailCard][thumbnailCard] | Um cartão que geralmente contém uma única imagem em miniatura, um ou mais botões e um texto. |
-| [ReceiptCard][receiptCard] | Um cartão que permite a um bot fornecer um recibo para o usuário. Normalmente, contém a lista de itens a serem incluídos no recibo, informações fiscais e de totais e outros textos. |
-| [SignInCard][signinCard] | Um cartão que permite a um bot solicitar a entrada do usuário. Normalmente contém texto e um ou mais botões que o usuário pode clicar para iniciar o processo de entrada. |
-| [VideoCard][videoCard] | Um cartão que pode reproduzir vídeos. |
+| `AnimationCard` | Um cartão que pode reproduzir GIFs animados ou vídeos curtos. |
+| `AudioCard` | Um cartão que pode reproduzir um arquivo de áudio. |
+| `HeroCard` | Um cartão que geralmente contém uma única imagem grande, um ou mais botões e um texto. |
+| `ThumbnailCard` | Um cartão que geralmente contém uma única imagem em miniatura, um ou mais botões e um texto. |
+| `ReceiptCard` | Um cartão que permite a um bot fornecer um recibo para o usuário. Normalmente, contém a lista de itens a serem incluídos no recibo, informações fiscais e de totais e outros textos. |
+| `SignInCard` | Um cartão que permite a um bot solicitar a entrada do usuário. Normalmente, contém um texto e um ou mais botões nos quais o usuário pode clicar para iniciar o processo de entrada. |
+| `VideoCard` | Um cartão que pode reproduzir vídeos. |
 
 > [!TIP]
-> Para determinar o tipo dos cartões avançados com suporte de um canal, e como o canal renderiza cartões avançados, consulte o [Inspetor de Canal][ChannelInspector]. Consulte a documentação do canal para obter informações sobre limitações do conteúdo dos cartões (por exemplo, o número máximo de botões) ou o comprimento máximo do título.
+> Para determinar o tipo dos cartões avançados que um canal dá suporte e ver como o canal renderiza cartões avançados, consulte o [Inspetor de Canal][ChannelInspector]. Consulte a documentação do canal para obter informações sobre limitações do conteúdo dos cartões (por exemplo, o número máximo de botões) ou o comprimento máximo do título.
 
 ## <a name="process-events-within-rich-cards"></a>Processar eventos em cartões avançados
 
-Para processar eventos em cartões avançados, use objetos [CardAction][CardAction] para especificar o que deve acontecer quando o usuário clica em um botão ou toca em uma seção do cartão. O objeto [CardAction][CardAction] contém essas propriedades:
+Para processar eventos em cartões avançados, use objetos `CardAction` para especificar o que deverá acontecer quando o usuário clicar em um botão ou tocar em uma seção do cartão. Cada objeto `CardAction` contém estas propriedades:
 
 | Propriedade | Type | DESCRIÇÃO | 
 |----|----|----|
@@ -57,9 +56,9 @@ Para processar eventos em cartões avançados, use objetos [CardAction][CardActi
 | value | string | valor necessário para executar o tipo de ação especificado |
 
 > [!NOTE]
-> Botões dentro de Cartões Adaptáveis não são criados usando objetos `CardAction`, mas usando o esquema definido pelos <a href="http://adaptivecards.io" target="_blank">Cartões Adaptáveis</a>. Confira [Adicionar um Cartão Adaptável a uma mensagem](#adaptive-card) para obter um exemplo que mostra como adicionar botões a um Cartão Adaptável.
+> Botões dentro de Cartões Adaptáveis não são criados usando objetos `CardAction`, mas usando o esquema definido pelos <a href="http://adaptivecards.io" target="_blank">Cartões Adaptáveis</a>. Consulte [Adicionar um Cartão Adaptável a uma mensagem](#adaptive-card) para obter um exemplo que mostra como adicionar botões a um Cartão Adaptável.
 
-Esta tabela lista os valores válidos para a propriedade `type` de um objeto [CardAction][CardAction] e descreve o conteúdo esperado da propriedade `value` para cada tipo:
+Esta tabela lista os valores válidos para a propriedade `type` de um objeto `CardAction` e descreve o conteúdo esperado da propriedade `value` para cada tipo:
 
 | Tipo | value | 
 |----|----|
@@ -75,7 +74,7 @@ Esta tabela lista os valores válidos para a propriedade `type` de um objeto [Ca
 
 ## <a name="add-a-hero-card-to-a-message"></a>Adicionar um cartão de destaque a uma mensagem
 
-Para adicionar um anexo de cartão avançado a uma mensagem, primeiro crie um objeto que corresponda ao [tipo do cartão](#types-of-cards) que você deseja adicionar à mensagem. Em seguida, crie um objeto [Attachement][Attachment], defina sua propriedade `contentType` como o tipo de mídia do cartão e sua propriedade `content` ao objeto que você criou para representar o cartão. Especifique seu objeto [Attachment][Attachment] dentro da matriz `attachments` da mensagem.
+Para adicionar um anexo de cartão avançado a uma mensagem, primeiro crie um objeto que corresponda ao [tipo do cartão](#types-of-cards) que você deseja adicionar à mensagem. Em seguida, crie um objeto `Attachment`, defina sua propriedade `contentType` como o tipo de mídia do cartão e sua propriedade `content` ao objeto que você criou para representar o cartão. Especifique seu objeto `Attachment` dentro da matriz `attachments` da mensagem.
 
 > [!TIP]
 > As mensagens que contêm de cartão avançado normalmente não especificam `text`.
@@ -83,7 +82,7 @@ Para adicionar um anexo de cartão avançado a uma mensagem, primeiro crie um ob
 Alguns canais permitem que você adicione vários cartões avançados à matriz `attachments` dentro de uma mensagem. Esse recurso pode ser útil em situações nas quais você deseja apresentar várias opções ao usuário. Por exemplo, se o seu bot permitir que os usuários reservem quartos de hotel, ele poderia apresentar uma lista de cartões avançados com os tipos de quartos disponíveis. Cada cartão pode conter uma imagem e uma lista de comodidades correspondentes ao tipo de quarto, e o usuário pode selecionar um tipo de quarto tocando um cartão ou clicando em um botão.
 
 > [!TIP]
-> Para exibir vários cartões avançados em formato de lista, defina a propriedade `attachmentLayout` do objeto [Activity][Activity] como "lista". Para exibir vários cartões avançados em formato de carrossel, defina a propriedade `attachmentLayout` do objeto [Activity][Activity] como "carrossel". Se o canal não oferecer suporte ao formato de carrossel, ele exibirá os cartões avançados em formato de lista, mesmo se a propriedade `attachmentLayout` especificar "carrossel".
+> Para exibir vários cartões avançados em formato de lista, defina a propriedade `Activity` do objeto `attachmentLayout` como "lista". Para exibir vários cartões avançados em formato de carrossel, defina a propriedade `Activity` do objeto `attachmentLayout` como "carrossel". Se o canal não der suporte para formato de carrossel, ele exibirá os cartões avançados no formato de lista, mesmo se a propriedade `attachmentLayout` especificar "carrossel".
 
 O exemplo a seguir mostra uma solicitação que envia uma mensagem contendo um único anexo de cartão de destaque. Nessa solicitação de exemplo, `https://smba.trafficmanager.net/apis` representa o URI de base; o URI de base para solicitações em que os seus problemas de bot podem ser diferentes. Para obter detalhes sobre como definir o URI de base, veja [Referência da API](bot-framework-rest-connector-api-reference.md#base-uri).
 
@@ -256,19 +255,8 @@ O cartão resultante contém três blocos de texto, um campo de entrada (lista d
 - [Criar mensagens](bot-framework-rest-connector-create-messages.md)
 - [Enviar e receber mensagens](bot-framework-rest-connector-send-and-receive-messages.md)
 - [Adicionar anexos de mídia às mensagens](bot-framework-rest-connector-add-media-attachments.md)
-- [Inspetor de Canal][ChannelInspector]
+- [Esquema de atividade Bot Framework](https://aka.ms/botSpecs-activitySchema)
+- [Channel Inspector][ChannelInspector]
 - <a href="http://adaptivecards.io" target="_blank">Cartões Adaptáveis</a>
 
 [ChannelInspector]: ../bot-service-channel-inspector.md
-
-[animationCard]: bot-framework-rest-connector-api-reference.md#animationcard-object
-[audioCard]: bot-framework-rest-connector-api-reference.md#audiocard-object
-[heroCard]: bot-framework-rest-connector-api-reference.md#herocard-object
-[thumbnailCard]: bot-framework-rest-connector-api-reference.md#thumbnailcard-object
-[receiptCard]: bot-framework-rest-connector-api-reference.md#receiptcard-object
-[signinCard]: bot-framework-rest-connector-api-reference.md#signincard-object
-[videoCard]: bot-framework-rest-connector-api-reference.md#videocard-object
-
-[CardAction]: bot-framework-rest-connector-api-reference.md#cardaction-object
-[Activity]: bot-framework-rest-connector-api-reference.md#activity-object
-[Attachment]: bot-framework-rest-connector-api-reference.md#attachment-object

@@ -6,14 +6,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 346c522a1e1cd3d5904b74ad6e6092a1457a001c
-ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
+ms.openlocfilehash: e616c3e3b8d7ee82f5685fe1edc69059acffb1b1
+ms.sourcegitcommit: a1eaa44f182a7210197bd793250907df00e9edab
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65032595"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68757074"
 ---
 # <a name="add-suggested-actions-to-messages"></a>Adicionar ações sugeridas a mensagens
 > [!div class="op_single_selector"]
@@ -25,7 +24,7 @@ ms.locfileid: "65032595"
 
 ## <a name="send-suggested-actions"></a>Enviar ações sugeridas
 
-Para adicionar ações sugeridas a uma mensagem, defina a propriedade `suggestedActions` da [Atividade][Activity] para especificar a lista de objetos [CardAction][CardAction] que representam os botões a serem apresentados ao usuário. 
+Para adicionar ações sugeridas a uma mensagem, defina a propriedade `suggestedActions` da `Activity` para especificar a lista de objetos `CardAction` que representam os botões a serem apresentados ao usuário. 
 
 A solicitação a seguir envia uma mensagem que apresenta três ações sugeridas para o usuário. Nessa solicitação de exemplo, `https://smba.trafficmanager.net/apis` representa o URI de base; o URI de base para solicitações em que os seus problemas de bot podem ser diferentes. Para obter detalhes sobre como definir o URI de base, veja [Referência da API](bot-framework-rest-connector-api-reference.md#base-uri).
 
@@ -83,9 +82,3 @@ Quando o usuário tocar em uma das ações sugeridas, o bot receberá uma mensag
 - [Enviar e receber mensagens](bot-framework-rest-connector-send-and-receive-messages.md)
 
 [channelInspector]: ../bot-service-channel-inspector.md
-
-[Activity]: bot-framework-rest-connector-api-reference.md#activity-object
-
-[CardAction]: bot-framework-rest-connector-api-reference.md#cardaction-object
-
-[SuggestedAction]: bot-framework-rest-connector-api-reference.md#suggestedactions-object

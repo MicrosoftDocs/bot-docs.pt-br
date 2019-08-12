@@ -6,14 +6,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 10/25/2018
-ms.openlocfilehash: 3fad5b66f5137cd4098087e1b01d1f2493800994
-ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
+ms.openlocfilehash: 03facdff733787e95ca3bc68dfee15d747340453
+ms.sourcegitcommit: a1eaa44f182a7210197bd793250907df00e9edab
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65032604"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68757089"
 ---
 # <a name="add-media-attachments-to-messages"></a>Adicionar anexos de mídia às mensagens
 > [!div class="op_single_selector"]
@@ -28,7 +27,7 @@ Bots e canais normalmente trocam cadeias de caracteres de texto, mas alguns cana
 
 ## <a name="add-a-media-attachment"></a>Adicionar um anexo de mídia  
 
-Para adicionar um anexo de mídia a uma mensagem, crie um objeto [Attachment][Attachment], defina a propriedade `name`, defina a propriedade `contentUrl` como a URL do arquivo de mídia e defina a propriedade `contentType` como o tipo de mídia apropriado (por exemplo, **imagem/png**, **áudio/wav**, **vídeo/mp4**). Em seguida, dentro do objeto [Activity][Activity] que representa sua mensagem, especifique seu objeto [Attachment][Attachment] dentro da matriz `attachments`. 
+Para adicionar um anexo de mídia a uma mensagem, crie um objeto `Attachment`, defina a propriedade `name`, defina a propriedade `contentUrl` como a URL do arquivo de mídia e defina a propriedade `contentType` como o tipo de mídia apropriado (por exemplo, **image/png**, **audio/wav**, **video/mp4**). Em seguida, dentro do objeto `Activity` que representa sua mensagem, especifique seu objeto `Attachment` dentro da matriz `attachments`. 
 
 O exemplo a seguir mostra uma solicitação que envia uma mensagem contendo o texto e um anexo de imagem única. Nessa solicitação de exemplo, `https://smba.trafficmanager.net/apis` representa o URI de base; o URI de base para solicitações em que os seus problemas de bot podem ser diferentes. Para obter detalhes sobre como definir o URI de base, veja [Referência da API](bot-framework-rest-connector-api-reference.md#base-uri).
 
@@ -65,7 +64,7 @@ Content-Type: application/json
 }
 ```
 
-Para os canais que dão suporte a binários embutidos de uma imagem, você pode definir a propriedade `contentUrl` do `Attachment` como um binário de base64 da imagem (por exemplo, **data:image/png;base64,iVBORw0KGgo…**). O canal exibirá a imagem ou a URL da imagem ao lado de cadeia de caracteres de texto da mensagem.
+Para os canais que dão suporte a binários embutidos de uma imagem, você pode definir a propriedade `contentUrl` do `Attachment` como um binário de base64 da imagem (por exemplo, **data:image/png;base64,iVBORw0KGgo…** ). O canal exibirá a imagem ou a URL da imagem ao lado de cadeia de caracteres de texto da mensagem.
 
 ```json
 {
@@ -102,7 +101,7 @@ Você pode anexar um arquivo de vídeo ou áudio a uma mensagem usando o mesmo p
 
 ## <a name="add-an-audiocard-attachment"></a>Adicionar um anexo de AudioCard
 
-A adição de um anexo de [AudioCard](bot-framework-rest-connector-api-reference.md#audiocard-object) ou [VideoCard](bot-framework-rest-connector-api-reference.md#videocard-object) é o mesmo que adicionar um anexo de mídia. Por exemplo, o JSON a seguir mostra como adicionar uma cartão de áudio ao anexo de mídia.
+Adicionar um anexo de `AudioCard` ou `VideoCard` é o mesmo que adicionar um anexo de mídia. Por exemplo, o JSON a seguir mostra como adicionar uma cartão de áudio ao anexo de mídia.
 
 ```json
 {
@@ -176,7 +175,5 @@ O nome do evento de mídia **media/pause** aparecerá no campo `activity.name`. 
 - [Criar mensagens](bot-framework-rest-connector-create-messages.md)
 - [Enviar e receber mensagens](bot-framework-rest-connector-send-and-receive-messages.md)
 - [Adicionar cartões ricos mensagens](bot-framework-rest-connector-add-rich-cards.md)
+- [Esquema de atividade Bot Framework](https://aka.ms/botSpecs-activitySchema)
 - [Esquema de cartão do bot Framework](https://aka.ms/botSpecs-cardSchema)
-
-[Activity]: bot-framework-rest-connector-api-reference.md#activity-object
-[Attachment]: bot-framework-rest-connector-api-reference.md#attachment-object

@@ -6,14 +6,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: a9a98419a8ac65c7e1093e1281e03917fa4eca11
-ms.sourcegitcommit: f3fda6791f48ab178721b72d4f4a77c373573e38
+ms.openlocfilehash: 8dfa76d02b2338916011040771a1c1b7e7cb7d76
+ms.sourcegitcommit: a1eaa44f182a7210197bd793250907df00e9edab
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68671510"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68756912"
 ---
 # <a name="send-an-activity-to-the-bot"></a>Enviar uma atividade para o bot
 
@@ -21,7 +20,7 @@ Usando o protocolo 3.0 de linha direta, bots e os clientes podem trocar vários 
 
 ## <a name="send-an-activity"></a>Enviar uma atividade
 
-Para enviar uma atividade para o bot, o cliente deve criar uma [atividade](bot-framework-rest-connector-api-reference.md#activity-object) objeto para definir a atividade e, em seguida, emitir um `POST` solicitar `https://directline.botframework.com/v3/directline/conversations/{conversationId}/activities`, especificando o objeto de atividade no corpo da solicitação.
+Para enviar uma atividade para o bot, o cliente deve criar um objeto `Activity` para definir a atividade e, em seguida, emitir uma solicitação `POST` para `https://directline.botframework.com/v3/directline/conversations/{conversationId}/activities`, especificando o objeto de atividade no corpo da solicitação.
 
 Os snippets de código a seguir fornecem um exemplo de como a atividade enviar solicitação e resposta.
 
@@ -76,11 +75,11 @@ O tempo total para postar uma mensagem a uma conversa de linha direta é a soma 
 
 ## <a name="send-attachments-to-the-bot"></a>Enviar o anexo (s) para o bot
 
-Em algumas situações, um cliente talvez precise enviar anexos para o bot, como imagens ou documentos. Um cliente pode enviar anexos para o bot ou pelo [especificando as URLs](#send-by-url) dos anexos dentro a [atividade](bot-framework-rest-connector-api-reference.md#activity-object) do objeto que ele envia usando `POST /v3/directline/conversations/{conversationId}/activities` ou pelo [carregando anexos](#upload-attachments) usando `POST /v3/directline/conversations/{conversationId}/upload`.
+Em algumas situações, um cliente talvez precise enviar anexos para o bot, como imagens ou documentos. Um cliente pode enviar anexos para o bot [especificando as URLs](#send-by-url) dos anexos dentro do objeto `Activity` que ele envia usando `POST /v3/directline/conversations/{conversationId}/activities` ou [carregando anexos](#upload-attachments) usando `POST /v3/directline/conversations/{conversationId}/upload`.
 
 ## <a id="send-by-url"></a> Enviar anexos por URL
 
-Para enviar um ou mais anexos como parte do [atividade](bot-framework-rest-connector-api-reference.md#activity-object) objeto usando `POST /v3/directline/conversations/{conversationId}/activities`, basta incluir uma ou mais [anexo](bot-framework-rest-connector-api-reference.md#attachment-object) objetos dentro do objeto de atividade e conjunto o `contentUrl` propriedade de cada objeto de anexo para especificar HTTP, HTTPS, ou `data` URI do anexo.
+Para enviar um ou mais anexos como parte do objeto `Activity` usando `POST /v3/directline/conversations/{conversationId}/activities`, basta incluir um ou mais objetos `Attachment` dentro do objeto de Atividade e definir a propriedade `contentUrl` de cada objeto de Anexo para especificar o URI `data`, HTTP ou HTTPS do anexo.
 
 ## <a id="upload-attachments"></a> Enviar anexos por upload
 
@@ -135,7 +134,7 @@ HTTP/1.1 200 OK
 
 Para enviar vários anexos por upload, `POST`uma solicitação multipartes para o endpoint`/v3/directline/conversations/{conversationId}/upload`. Defina as `Content-Type` cabeçalho da solicitação para `multipart/form-data` e incluem o `Content-Type` cabeçalho e `Content-Disposition` cabeçalho para cada parte especificar o tipo e nome do arquivo de cada anexo. No URI de solicitação, defina o `userId` parâmetro para a ID do usuário que está enviando a mensagem. 
 
-Você pode incluir um [atividade](bot-framework-rest-connector-api-reference.md#activity-object) objeto dentro da solicitação com a adição de uma parte que especifica se o `Content-Type` valor de cabeçalho `application/vnd.microsoft.activity`. Se a solicitação inclui uma atividade, os anexos que são especificados por outras partes da carga são adicionados como anexos de atividade antes de serem enviado. Se a solicitação não incluir uma Atividade, uma Atividade vazia será criada para servir como o contêiner no qual os anexos especificados são enviados.
+Você pode incluir um objeto `Activity` dentro da solicitação adicionando um bloco que especifica o valor `application/vnd.microsoft.activity` do cabeçalho `Content-Type`. Se a solicitação inclui uma atividade, os anexos que são especificados por outras partes da carga são adicionados como anexos de atividade antes de serem enviado. Se a solicitação não incluir uma Atividade, uma Atividade vazia será criada para servir como o contêiner no qual os anexos especificados são enviados.
 
 Os snippets a seguir fornecem um exemplo da solicitação e resposta Enviar (vários) Anexos. Neste exemplo, a solicitação envia uma mensagem que contém algum texto e um único anexo de imagem. Partes adicionais pôde ser adicionados à solicitação para incluir vários anexos nesta mensagem.
 
@@ -192,3 +191,4 @@ HTTP/1.1 200 OK
 - [Reconectar-se a uma conversa](bot-framework-rest-direct-line-3-0-reconnect-to-conversation.md)
 - [Atividades de recebimento do bot](bot-framework-rest-direct-line-3-0-receive-activities.md)
 - [Terminar uma conversa](bot-framework-rest-direct-line-3-0-end-conversation.md)
+- [Esquema de atividade Bot Framework](https://aka.ms/botSpecs-activitySchema)

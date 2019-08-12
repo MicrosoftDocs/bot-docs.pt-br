@@ -3,20 +3,19 @@ title: Manipular interrupções do usuário | Microsoft Docs
 description: Saiba como manipular as interrupções do usuário e orientar o fluxo da conversa.
 keywords: interromper, interrupções, mudando o tópico, interrupção
 author: ivorb
-ms.author: v-ivorb
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 04/18/2019
 ms.reviewer: ''
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: ba1bc99608558966f4cf45894b2e04b8f17c9a69
-ms.sourcegitcommit: 23a1808e18176f1704f2f6f2763ace872b1388ae
+ms.openlocfilehash: 75f6cc720042ad7f10c0b016dedba7af5fd84435
+ms.sourcegitcommit: a1eaa44f182a7210197bd793250907df00e9edab
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68483971"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68756998"
 ---
 # <a name="handle-user-interruptions"></a>Manipular interrupções do usuário
 
@@ -28,8 +27,8 @@ O tratamento de interrupções é um aspecto importante de um bot robusto. Os us
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- Conhecimento sobre [noções básicas de bots][concept-basics], [managing state][concept-state], a [biblioteca de caixas de diálogo][concept-dialogs] e como [reutilizar caixas de diálogo][component-dialogs].
-- Uma cópia do exemplo principal de bot em [**CSharp**][cs-sample] or [**JavaScript**][js-sample].
+- Conhecimento sobre [noções básicas de bots][concept-basics], [gerenciamento de estado][concept-state], a [biblioteca de diálogos][concept-dialogs] e como [reutilizar diálogos][component-dialogs].
+- Uma cópia do exemplo principal de bot em [**CSharp**][cs-sample] ou [**JavaScript**][js-sample].
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
@@ -40,7 +39,7 @@ O exemplo usado neste artigo traz um bot de reserva de voo que utiliza caixas de
 
 ## <a name="define-and-implement-the-interruption-logic"></a>Como definir e implementar a lógica de interrupção
 
-Primeiramente, definimos e implementamos as interrupções de _ajuda_ e _cancelamento_.
+Primeiramente, definimos e implementamos as interrupções de _ajuda_ e _cancelamento_ .
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
@@ -52,7 +51,7 @@ Começamos com a implementação da classe `CancelAndHelpDialog` para lidar com 
 
 [!code-csharp[Class signature](~/../botbuilder-samples/samples/csharp_dotnetcore/13.core-bot/Dialogs/CancelAndHelpDialog.cs?range=10)]
 
-Na classe `CancelAndHelpDialog`, os métodos `OnBeginDialogAsync` e `OnContinueDialogAsync` chamam o método `InerruptAsync` para verificar se o usuário interrompeu o fluxo normal ou não. Se o fluxo for interrompido, os métodos da classe base são chamados; caso contrário, o valor retornado de `InterruptAsync` será retornado.
+Na classe `CancelAndHelpDialog`, o método `OnContinueDialogAsync` chama o método `InerruptAsync` para verificar se o usuário interrompeu o fluxo normal ou não. Se o fluxo for interrompido, os métodos da classe base são chamados; caso contrário, o valor retornado de `InterruptAsync` será retornado.
 
 [!code-csharp[Overrides](~/../botbuilder-samples/samples/csharp_dotnetcore/13.core-bot/Dialogs/CancelAndHelpDialog.cs?range=22-31)]
 
@@ -72,7 +71,7 @@ Começamos com a implementação da classe `CancelAndHelpDialog` para lidar com 
 
 [!code-javascript[Class signature](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/dialogs/cancelAndHelpDialog.js?range=11)]
 
-Na classe `CancelAndHelpDialog`, os métodos `onBeginDialog` e `onContinueDialog` chamam o método `interrupt` para verificar se o usuário interrompeu o fluxo normal ou não. Se o fluxo for interrompido, os métodos da classe base são chamados; caso contrário, o valor retornado de `interrupt` será retornado.
+Na classe `CancelAndHelpDialog`, o método `onContinueDialog` chama o método `interrupt` para verificar se o usuário interrompeu o fluxo normal ou não. Se o fluxo for interrompido, os métodos da classe base são chamados; caso contrário, o valor retornado de `interrupt` será retornado.
 
 [!code-javascript[Overrides](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/dialogs/cancelAndHelpDialog.js?range=12-18)]
 

@@ -11,10 +11,10 @@ ms.subservice: sdk
 ms.date: 07/05/2019
 monikerRange: azure-bot-service-4.0
 ms.openlocfilehash: 77f1c154af5821b1e476546f307a01be27f568c0
-ms.sourcegitcommit: b498649da0b44f073dc5b23c9011ea2831edb31e
+ms.sourcegitcommit: a1eaa44f182a7210197bd793250907df00e9edab
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
+ms.lasthandoff: 08/06/2019
 ms.locfileid: "67587498"
 ---
 # <a name="reuse-dialogs"></a>Reutilizar diálogos
@@ -25,8 +25,8 @@ Com os diálogos de componente, é possível criar diálogos independentes para 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- Conhecimento de [noções básicas de bot][concept-basics], the [dialogs library][concept-dialogs] e de como [gerenciar conversas][simple-flow].
-- Uma cópia do exemplo de prompt de vários turnos em [**CSharp**][cs-sample] ou em or [**JavaScript**][js-sample].
+- Conhecimento de [noções básicas de bot][concept-basics], [biblioteca de diálogos][concept-dialogs] e como [gerenciar conversas][simple-flow].
+- Uma cópia do exemplo de prompt de vários turnos em [**CSharp**][cs-sample] ou em [**JavaScript**][js-sample].
 
 ## <a name="about-the-sample"></a>Sobre o exemplo
 
@@ -44,7 +44,7 @@ Finalmente, se ele responder sim, exibir as informações coletadas; caso contr�
 
 ## <a name="implement-the-component-dialog"></a>Implementar o diálogo de componente
 
-No exemplo de prompt de vários turnos, usamos um _diálogo em cascata_, alguns _prompts_ e um _diálogo de componente_ para criar uma interação simples que faz uma série de perguntas ao usuário.
+No exemplo de prompt de vários turnos, usamos um _diálogo em cascata_ , alguns _prompts_ e um _diálogo de componente_ para criar uma interação simples que faz uma série de perguntas ao usuário.
 
 Um diálogo de componente encapsula um ou mais diálogos. O diálogo de componente tem um conjunto de diálogos interno e os diálogos e prompts que você adiciona a esse conjunto têm IDs próprias, visíveis somente no diálogo de componente.
 
@@ -58,7 +58,7 @@ Aqui, a classe `UserProfileDialog` é derivada da classe `ComponentDialog`.
 
 [!code-csharp[Class](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=13)]
 
-No construtor, o método `AddDialog` adiciona diálogos e prompts ao diálogo de componente. O primeiro item que você adicionar com esse método será definido como o diálogo inicial, mas é possível alterar isso definindo explicitamente a propriedade `InitialDialogId`. Ao iniciar um diálogo de componente, ele iniciará seu _diálogo inicial_.
+No construtor, o método `AddDialog` adiciona diálogos e prompts ao diálogo de componente. O primeiro item que você adicionar com esse método será definido como o diálogo inicial, mas é possível alterar isso definindo explicitamente a propriedade `InitialDialogId`. Ao iniciar um diálogo de componente, ele iniciará seu _diálogo inicial_ .
 
 [!code-csharp[Constructor](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=17-42)]
 
@@ -78,7 +78,7 @@ Aqui, a classe `UserProfileDialog` estende `ComponentDialog`.
 
 [!code-javascript[Class](~/../botbuilder-samples/samples/javascript_nodejs/05.multi-turn-prompt/dialogs/userProfileDialog.js?range=24)]
 
-No construtor, o método `AddDialog` adiciona diálogos e prompts ao diálogo de componente. O primeiro item que você adicionar com esse método será definido como o diálogo inicial, mas é possível alterar isso definindo explicitamente a propriedade `InitialDialogId`. Ao iniciar um diálogo de componente, ele iniciará seu _diálogo inicial_.
+No construtor, o método `AddDialog` adiciona diálogos e prompts ao diálogo de componente. O primeiro item que você adicionar com esse método será definido como o diálogo inicial, mas é possível alterar isso definindo explicitamente a propriedade `InitialDialogId`. Ao iniciar um diálogo de componente, ele iniciará seu _diálogo inicial_ .
 
 [!code-javascript[Constructor](~/../botbuilder-samples/samples/javascript_nodejs/05.multi-turn-prompt/dialogs/userProfileDialog.js?range=25-47)]
 

@@ -6,14 +6,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 57babac9594118c12805ff9023cf7086e526a273
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 4c4bfacaeb0be0c3f6dd71f0dd2a195aa2261541
+ms.sourcegitcommit: a1eaa44f182a7210197bd793250907df00e9edab
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997921"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68757146"
 ---
 # <a name="create-a-bot-with-the-bot-connector-service"></a>Crie um bot com o serviço Bot Connector
 > [!div class="op_single_selector"]
@@ -71,7 +70,7 @@ Uma conversa é uma série de mensagens trocadas entre o usuário e o seu bot.
 
 ### <a name="receive-a-message-from-the-user"></a>Receber uma mensagem do usuário
 
-Quando o usuário envia uma mensagem, o Bot Framework Connector posta uma solicitação para o ponto de extremidade que foi especificado quando você [registrou](../bot-service-quickstart-registration.md) seu bot. O corpo da solicitação é um objeto [Activity][Activity]. O exemplo a seguir mostra o corpo da solicitação que um bot recebe quando o usuário envia uma mensagem simples para o bot. 
+Quando o usuário envia uma mensagem, o Bot Framework Connector posta uma solicitação para o ponto de extremidade que foi especificado quando você [registrou](../bot-service-quickstart-registration.md) seu bot. O corpo da solicitação é um objeto `Activity`. O exemplo a seguir mostra o corpo da solicitação que um bot recebe quando o usuário envia uma mensagem simples para o bot. 
 
 ```json
 {
@@ -98,7 +97,7 @@ Quando o usuário envia uma mensagem, o Bot Framework Connector posta uma solici
 
 ### <a name="reply-to-the-users-message"></a>Responder à mensagem do usuário
 
-Quando o ponto de extremidade do seu bot recebe uma solicitação `POST` que representa uma mensagem do usuário (ou seja, `type` = **mensagem**), use as informações na solicitação para criar o objeto [Activity][Activity] para a resposta.
+Quando o ponto de extremidade do seu bot recebe uma solicitação `POST` que representa uma mensagem do usuário (ou seja, `type` = **mensagem**), use as informações na solicitação para criar o objeto `Activity` para a resposta.
 
 1. Defina a propriedade **conversation** para o conteúdo da propriedade **conversation** na mensagem do usuário.
 2. Defina a propriedade **from** para o conteúdo da propriedade **recipient** na mensagem do usuário.
@@ -107,7 +106,7 @@ Quando o ponto de extremidade do seu bot recebe uma solicitação `POST` que rep
 
 Use a propriedade `serviceUrl` na solicitação de entrada para [identificar o URI base](bot-framework-rest-connector-api-reference.md#base-uri) que o bot deve usar para emitir sua resposta. 
 
-Para enviar a resposta, `POST` seu objeto [Activity][Activity] para `/v3/conversations/{conversationId}/activities/{activityId}`, conforme mostrado no exemplo a seguir. O corpo dessa solicitação é um objeto [Activity][Activity] objeto que solicita que o usuário selecione uma hora de compromisso disponível.
+Para enviar a resposta, `POST` seu objeto `Activity` para `/v3/conversations/{conversationId}/activities/{activityId}`, conforme mostrado no exemplo a seguir. O corpo dessa solicitação é um objeto `Activity` que solicita que o usuário selecione uma hora de compromisso disponível.
 
 ```http
 POST https://smba.trafficmanager.net/apis/v3/conversations/abcd1234/activities/bf3cc9a2f5de... 
@@ -195,6 +194,3 @@ Content-Type: application/json
 ## <a name="next-steps"></a>Próximas etapas
 
 Neste tutorial, você obteve um token de acesso do Bot Framework e usou o serviço Bot Connector para trocar mensagens com o usuário. Você pode usar o [Bot Framework Emulator](../bot-service-debug-emulator.md) para testar e depurar seu bot. Se desejar compartilhar seu bot com outras pessoas, você precisará [configurá-lo](../bot-service-manage-channels.md) para que ele seja executado em um ou mais canais.
-
-
-[Activity]: bot-framework-rest-connector-api-reference.md#activity-object
