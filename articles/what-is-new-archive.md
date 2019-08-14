@@ -11,10 +11,10 @@ ms.subservice: abs
 ms.date: 07/17/2019
 monikerRange: azure-bot-service-4.0
 ms.openlocfilehash: 4553335cbca5b5eb720c7cffd11c8e14c8aa19c1
-ms.sourcegitcommit: f3fda6791f48ab178721b72d4f4a77c373573e38
+ms.sourcegitcommit: 6a83b2c8ab2902121e8ee9531a7aa2d85b827396
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "68671526"
 ---
 # <a name="whats-new-in-bot-framework-may-2019"></a>Novidades no Bot Framework (maio de 2019)
