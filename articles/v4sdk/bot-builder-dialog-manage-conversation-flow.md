@@ -11,10 +11,10 @@ ms.subservice: sdk
 ms.date: 07/05/2019
 monikerRange: azure-bot-service-4.0
 ms.openlocfilehash: c3c116eec8222ce50cd7dde672cc86f9765a3f97
-ms.sourcegitcommit: b498649da0b44f073dc5b23c9011ea2831edb31e
+ms.sourcegitcommit: 6a83b2c8ab2902121e8ee9531a7aa2d85b827396
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "67587481"
 ---
 # <a name="implement-sequential-conversation-flow"></a>Implementar fluxo de conversa sequencial
@@ -31,8 +31,8 @@ Você pode gerenciar fluxos de conversa simples e complexos usando a biblioteca 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- Conhecimento de [conceitos básicos de bot][concept-basics], [managing state][concept-state] e a [biblioteca de caixas de diálogo][concept-dialogs].
-- Uma cópia do exemplo de **prompt de vários turnos** em [**CSharp**][cs-sample] ou em or [**JavaScript**][js-sample].
+- Conhecimento de [noções básicas de bot][concept-basics], [gerenciamento de estado][concept-state] e [biblioteca de diálogos][concept-dialogs].
+- Uma cópia do exemplo de **prompt de vários turnos** em [**CSharp**][cs-sample] ou em [**JavaScript**][js-sample].
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 

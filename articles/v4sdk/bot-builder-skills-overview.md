@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 8ed5841f9bfe874de26f1aecbb0e4460e541668b
-ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
+ms.openlocfilehash: 59b5e340ee9f2eeb89eaf420a0cca031fcc7f2b1
+ms.sourcegitcommit: 7b3d2b5b9b8ce77887a9e6124a347ad798a139ca
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215295"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68991938"
 ---
 # <a name="virtual-assistant---skills-overview"></a>Assistente Virtual - Visão Geral das Habilidades
 
@@ -40,13 +40,13 @@ Atualmente fornecemos as seguintes Habilidades do Bot Framework, suportadas pelo
 
 | NOME | DESCRIÇÃO |
 | ---- | ----------- |
-|[Habilidade de Calendário](https://github.com/Microsoft/AI/blob/master/docs/reference/skills/productivity-calendar.md)|Adicione recursos de calendário ao seu assistente. Da plataforma Microsoft Graph e Google.|
-|[Habilidade de Email](https://github.com/Microsoft/AI/blob/master/docs/reference/skills/productivity-email.md)|Adicione recursos de email ao seu assistente. Da plataforma Microsoft Graph e Google.|
-|[Habilidade de tarefas](https://github.com/Microsoft/AI/blob/master/docs/reference/skills/productivity-todo.md)|Adicione recursos de gerenciamento de tarefas ao seu assistente. Da plataforma Microsoft Graph.|
-|[Habilidade de Ponto de Interesse](https://github.com/Microsoft/AI/blob/master/docs/reference/skills/productivity-pointofinterest.md)|Localize pontos de interesse e direções. Da plataforma Azure Mapas e FourSquare.|
-|[Habilidade Automotiva](https://github.com/Microsoft/AI/blob/master/docs/reference/skills/automotive.md)|Habilidade de demonstração para segmento vertical da indústria que permite o controle de recursos do carro.|
-|[Habilidades Experimentais](https://github.com/Microsoft/AI/blob/master/docs/reference/skills/experimental.md)|Notícias, Reservas em Restaurantes e Previsão do Tempo.|
+|[Habilidade de Calendário](https://aka.ms/bfcalendarskill)|Adicione recursos de calendário ao seu assistente. Da plataforma Microsoft Graph e Google.|
+|[Habilidade de Email](https://aka.ms/bfemailskill)|Adicione recursos de email ao seu assistente. Da plataforma Microsoft Graph e Google.|
+|[Habilidade de tarefas](https://aka.ms/bftodoskill)|Adicione recursos de gerenciamento de tarefas ao seu assistente. Da plataforma Microsoft Graph.|
+|[Habilidade de Ponto de Interesse](https://aka.ms/bfpoiskill)|Localize pontos de interesse e direções. Da plataforma Azure Mapas e FourSquare.|
+|[Habilidade Automotiva](https://aka.ms/bfautoskill)|Habilidade de demonstração para segmento vertical da indústria que permite o controle de recursos do carro.|
+|[Habilidades Experimentais](https://aka.ms/bfexperimentalskills)|Notícias, Reservas em Restaurantes e Previsão do Tempo.|
 
 ## <a name="getting-started"></a>Introdução
 
-Consulte a [Introdução](https://github.com/Microsoft/AI/tree/master/docs#tutorials) para aprender como se beneficiar das Habilidades existentes e você mesmo construir as suas.
+Consulte os [tutoriais](https://aka.ms/bfstutorials) para aprender como se beneficiar das habilidades existentes e você mesmo construir as suas.

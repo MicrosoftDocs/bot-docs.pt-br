@@ -10,10 +10,10 @@ ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
 ms.openlocfilehash: ce1b3f073c932cd4042b91ae9afc1e332a7443f2
-ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
+ms.sourcegitcommit: 6a83b2c8ab2902121e8ee9531a7aa2d85b827396
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/26/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "67404899"
 ---
 # <a name="support-localization"></a>Suporte à localização
@@ -134,7 +134,7 @@ var bot = new builder.UniversalBot(connector, [
 ]);
 ```
 
-Internamente, o SDK chama [`session.preferredLocale()`][preferredLocale] to get the user's preferred locale and then uses that in a call to [`session.localizer.gettext()`][GetText] para mapear a ID da mensagem para sua cadeia de caracteres de texto localizada.  Há momentos em que você pode precisa chamar manualmente o localizador. Por exemplo, os valores de enumeração passados para [`Prompts.choice()`][promptsChoice] nunca são traduzidos automaticamente, portanto, é provável que seja preciso recuperar manualmente uma lista traduzida antes de chamar o prompt:
+Internamente, o SDK chama [`session.preferredLocale()`][preferredLocale] para obter o local preferencial do usuário e, em seguida, usa isso em uma chamada para [`session.localizer.gettext()`][GetText] para mapear a ID da mensagem para a cadeia de caracteres de texto traduzido.  Há momentos em que você pode precisa chamar manualmente o localizador. Por exemplo, os valores de enumeração passados para [`Prompts.choice()`][promptsChoice] nunca são traduzidos automaticamente, portanto, é provável que seja preciso recuperar manualmente uma lista traduzida antes de chamar o prompt:
 
 ```javascript
 var options = session.localizer.gettext(session.preferredLocale(), "choice_options");

@@ -6,15 +6,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 14b8bf7aa4e99e3ca97442c2ba57dc8c57138d99
-ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
+ms.openlocfilehash: 14bda9e14f0f812cf528a6b9fdf01175e7eb21ae
+ms.sourcegitcommit: 6a83b2c8ab2902121e8ee9531a7aa2d85b827396
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67404692"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68866645"
 ---
 # <a name="add-speech-to-messages"></a>Adicionar fala a mensagens
 
@@ -72,9 +71,9 @@ Quando você envia uma mensagem em um canal habilitado para fala, é possível t
 
 ## <a name="sample-code"></a>Exemplo de código 
 
-Veja um exemplo completo que mostra como criar um bot habilitado para fala usando o SDK do Bot Framework para .NET em <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/demo-RollerSkill" target="_blank">Exemplo de Rolagem</a> no GitHub.
+Veja um exemplo completo que mostra como criar um bot habilitado para fala usando o SDK do Bot Framework para Node.js em <a href="https://github.com/microsoft/BotBuilder-Samples/tree/v3-sdk-samples/Node/demo-RollerSkill" target="_blank">Exemplo de rolagem</a> no GitHub.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
 - <a href="https://msdn.microsoft.com/library/hh378377(v=office.14).aspx" target="_blank">Linguagem de marcação de síntese de fala (SSML)</a>
-- <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/demo-RollerSkill" target="_blank">Exemplo de rolo de pintura (GitHub)</a>
+- <a href="https://github.com/microsoft/BotBuilder-Samples/tree/v3-sdk-samples/Node/demo-RollerSkill" target="_blank">Exemplo de rolo de pintura (GitHub)</a>

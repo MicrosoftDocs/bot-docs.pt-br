@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 503ec19444c51120bf46838e14edb891ec5c3bb5
-ms.sourcegitcommit: dbbfcf45a8d0ba66bd4fb5620d093abfa3b2f725
+ms.openlocfilehash: 6bf567729e0c4799672f773ddcfadb4fabfa36fc
+ms.sourcegitcommit: 7b3d2b5b9b8ce77887a9e6124a347ad798a139ca
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67464659"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68991943"
 ---
 # <a name="virtual-assistant---template-outline"></a>Assistente Virtual - Descrição do Modelo
 
@@ -48,9 +48,9 @@ Um cartão de apresentação simples é fornecido como padrão e você pode adap
 
 ## <a name="basic-language-understanding-luis-intents"></a>Intenções básicas do LUIS (Reconhecimento vocal)
 
-Cada Bot deve lidar com um nível básico de reconhecimento vocal conversacional. Por exemplo, saudações são um item básico que todo Bot deve saber lidar com facilidade. Normalmente, os desenvolvedores precisam criar essas intenções de base e fornecer dados de treinamento iniciais. O modelo de Assistente Virtual fornece exemplos de arquivos de LU para você começar e evita a necessidade da criação desses arquivos a cada projeto novo, além de garantir logo de início um nível básico de capacidade.
+Cada Bot deve lidar com um nível básico de reconhecimento vocal conversacional. Por exemplo, saudações são um item básico que todo Bot deve saber lidar com facilidade. Normalmente, os desenvolvedores precisam criar essas intenções de base e fornecer dados de treinamento iniciais. O modelo de Assistente Virtual fornece exemplos de arquivos .lu para você começar e evita a necessidade da criação desses arquivos a cada projeto novo, além de garantir logo de início um nível básico de capacidade.
 
-Os arquivos de LU fornecem as intenções a seguir em inglês, chinês, francês, italiano, alemão, espanhol.
+Os arquivos .lu fornecem as intenções a seguir em inglês, chinês, francês, italiano, alemão e espanhol.
 
 Intenção       | Exemplo de enunciados |
 -------------|-------------|
@@ -68,7 +68,7 @@ ShowPrevious |*show previous*|
 StartOver    |*restart*|
 Stop         |*stop*|
 
-O formato [LU](https://github.com/Microsoft/botbuilder-tools/blob/master/packages/Ludown/docs/lu-file-format.md) é semelhante ao Markdown, facilitando a modificação e o controle do código-fonte. A ferramenta [LuDown](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Ludown) é usada para converter arquivos .LU em modelos de LUIS que podem ser publicados em sua assinatura do LUIS por meio do portal ou da ferramenta de CLI (interface de linha de comando) do [LUIS](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/LUIS) associada.
+O formato [.lu](https://github.com/Microsoft/botbuilder-tools/blob/master/packages/Ludown/docs/lu-file-format.md) é semelhante ao Markdown, facilitando a modificação e o controle do código-fonte. A ferramenta [LuDown](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Ludown) é usada para converter arquivos .lu em modelos de LUIS que podem ser publicados em sua assinatura do LUIS por meio do portal ou da ferramenta de CLI (interface de linha de comando) do [LUIS](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/LUIS) associada.
 
 ## <a name="telemetry"></a>Telemetria
 
@@ -80,7 +80,7 @@ A telemetria no nível do Bot está intrinsecamente vinculada à telemetria téc
 
 Um componente de middleware, combinado com uma classe wrapper em torno das classes de SDK QnA Maker e LuisRecognizer, fornece uma maneira elegante de coletar um conjunto consistente de eventos. Esses eventos consistentes podem ser usados pelas ferramentas do Application Insights juntamente com ferramentas como o Power BI.
 
-Um exemplo de painel do PowerBI faz parte do repositório do github para Soluções do Bot Framework e funciona instantaneamente com todos os modelos de Assistente Virtual. Confira a seção [Análise](https://github.com/Microsoft/AI/blob/master/docs/readme.md#analytics) para obter mais informações.
+Um exemplo de dashboard do Power BI faz parte do repositório do GitHub para Soluções do Bot Framework e funciona instantaneamente com todos os modelos de Assistente Virtual. Confira a seção [Análise](https://aka.ms/bfsanalytics) para obter mais informações.
 
 ![Exemplo de análise](./media/enterprise-template/powerbi-conversationanalytics-luisintents.png)
 
@@ -88,40 +88,40 @@ Um exemplo de painel do PowerBI faz parte do repositório do github para Soluç�
 
 Um padrão de design essencial usado com sucesso na primeira leva de experiências de conversação foi o aproveitamento do Reconhecimento vocal (LUIS) e do QnA Maker. O LUIS era treinado com tarefas que seu Bot poderia executar para um usuário final, e o QnA Maker era treinado com dados de conhecimento mais gerais.
 
-Todas as declarações de entrada (perguntas) eram encaminhadas para o LUIS para análise. Se a intenção de determinada declaração não fosse identificada, era marcada como uma intenção None. Em seguida, o QnA Maker era usado para tentar encontrar uma resposta para o usuário final.
+Todas as declarações de entrada (perguntas) eram encaminhadas para o LUIS para análise. Se a intenção de um determinado enunciado não era identificado, ele era marcado como uma intenção *None*. Em seguida, o QnA Maker era usado para tentar encontrar uma resposta para o usuário final.
 
-Embora esse padrão tenha funcionado bem, havia dois cenários principais que poderiam dar problemas.
+Embora esse padrão tenha funcionado bem, havia dois cenários principais que poderiam gerar problemas.
 
-- Se as declarações no modelo do LUIS e no QnA Maker se sobrepunham ligeiramente, isso podia resultar em comportamento estranho, em que o LUIS tentava processar uma pergunta quando ela deveria ser direcionada ao QnA Maker.
-- Quando havia dois ou mais modelos de LUIS, um Bot tinha que invocar cada um deles e executar algum tipo de comparação de avaliação de intenção para identificar o destino de determinada declaração. Como não há nenhuma pontuação de linha de base comum, a comparação entre os modelos não funcionava com eficiência, resultando em uma experiência de usuário insatisfatória.
+- Se os enunciados no modelo do LUIS e no QnA Maker se sobrepusessem ligeiramente, isso poderia resultar em um comportamento estranho, em que o LUIS tentava processar uma pergunta quando ela deveria ser direcionada ao QnA Maker.
+- Quando havia dois ou mais modelos de LUIS, um Bot tinha que invocar cada um deles e executar algum tipo de comparação de avaliação de intenção para identificar o destino de determinado enunciado. Como não há nenhuma pontuação de linha de base comum, a comparação entre os modelos não funcionava com eficiência, resultando em uma experiência de usuário insatisfatória.
 
-O [Dispatcher](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-dispatch?view=azure-bot-service-4.0&tabs=csaddref%2Ccsbotconfig) oferece uma solução elegante para isso extraindo declarações de cada modelo do LUIS configurado e perguntas do QnA Maker e criando um modelo do LUIS como expedição central.
+O [Dispatch](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-dispatch?view=azure-bot-service-4.0&tabs=csaddref%2Ccsbotconfig) oferece uma solução elegante para isso extraindo enunciados de cada modelo do LUIS configurado e perguntas do QnA Maker e criando um modelo do LUIS como expedição central.
 
-Isso permite que um Bot identifique rapidamente qual componente ou modelo do LUIS deve lidar com determinada expressão e faz com que os dados do QnA Maker sejam considerados no nível superior do processamento de intenções, não só na intenção None, como antes.
+Isso permite que um Bot identifique rapidamente qual componente ou modelo do LUIS deve lidar com determinado enunciado e faz com que os dados do QnA Maker sejam considerados no nível superior do processamento de intenções, não só na intenção *None*, como antes.
 
-Esta ferramenta Dispatch também permite avaliações, o que destaca confusões e sobreposições entre modelos de LUIS e bases de conhecimento do QnA Maker antes da implantação.
+Esta ferramenta Dispatch também permite avaliações, que destacarão confusões, problemas e sobreposições entre modelos de LUIS e bases de conhecimento do QnA Maker antes da implantação.
 
-O Dispatcher é usado no cerne de cada projeto criado usando o modelo. O modelo de expedição é usado na classe `MainDialog` para identificar se o destino é um modelo do LUIS ou QnA. No caso do LUIS, o modelo do LUIS secundário é invocado retornando a intenção e as entidades como de costume. O Dispatcher também é usado para detecção de interrupção.
+O Dispatcher é usado no cerne de cada projeto criado usando o modelo. O modelo de expedição é usado na classe `MainDialog` para identificar se o destino é um modelo do LUIS ou QnA. No caso do LUIS, o modelo do LUIS secundário é invocado retornando a intenção e as entidades. O Dispatcher também é usado para detecção de interrupção.
 
 ![Exemplo de expedição](./media/enterprise-template/dispatchexample.png)
 
 ## <a name="qna-maker"></a>QnA Maker
 
-O [QnA Maker](https://www.qnamaker.ai/) permite que não desenvolvedores coletem dados de conhecimento geral no formato de pares de pergunta e resposta. Esse conhecimento pode ser importado de fontes de dados de Perguntas frequentes, de manuais de produto e interativamente no portal do QnaMaker.
+O [QnA Maker](https://www.qnamaker.ai/) permite que não desenvolvedores coletem dados de conhecimento geral no formato de pares de pergunta e resposta. Esse conhecimento pode ser importado de fontes de dados de Perguntas frequentes, de manuais de produto e interativamente no portal do QnA Maker.
 
-Exemplo de dois modelos do QnA Maker são fornecidos no formato de arquivo [LU](https://github.com/Microsoft/botbuilder-tools/blob/master/packages/Ludown/docs/lu-file-format.md) dentro da pasta QnA de CognitiveModels, um para Perguntas Frequentes e outro para bate-papo. O [LuDown](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Ludown) é usado como parte do script de implantação para criar um arquivo JSON do QnA Maker que a ferramenta CLI (interface de linha de comando) do [QnA Maker](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/QnAMaker) usa para publicar itens na base de conhecimento do QnA Maker.
+Exemplo de dois modelos do QnA Maker são fornecidos no formato de arquivo [.lu](https://github.com/Microsoft/botbuilder-tools/blob/master/packages/Ludown/docs/lu-file-format.md) dentro da pasta QnA de CognitiveModels, um para Perguntas Frequentes e outro para bate-papo. O [LUDown](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Ludown) é usado como parte do script de implantação para criar um arquivo JSON do QnA Maker que a ferramenta CLI (interface de linha de comando) do [QnA Maker](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/QnAMaker) usa para publicar itens na base de conhecimento do QnA Maker.
 
 ![Exemplo do QnA ChitChat](./media/enterprise-template/qnachitchatexample.png)
 
 ## <a name="content-moderator"></a>Content Moderator
 
-O Content Moderator é um componente opcional que permite a detecção de possíveis palavrões e ajuda a verificar se há informações de identificação pessoal (PII). Pode ser útil integrá-lo aos Bots, permitindo que um Bot reaja a palavrões ou ao compartilhamento de PII pelo usuário. Por exemplo, um Bot pode pedir desculpas e fazer a transição para um ser humano, ou não armazenar registros de telemetria se detectar PII.
+O Content Moderator é um componente opcional que permite a detecção de possíveis palavrões e ajuda a verificar se há informações de identificação pessoal (PII). Por exemplo, um Bot pode pedir desculpas e fazer a transição para um ser humano em caso de profanação ou não armazenar registros de telemetria se detectar PII.
 
 Um componente de middleware é fornecido para fazer a triagem de texto e aparece por meio de um ```TextModeratorResult``` no objeto TurnState.
 
-# <a name="next-steps"></a>Próximas etapas
-Consulte [Introdução](https://github.com/Microsoft/AI/tree/master/docs#tutorials) para saber como criar e implantar seu Assistente Virtual. 
+## <a name="next-steps"></a>Próximas etapas
+Consulte os [tutoriais](https://aka.ms/bfstutorials) para saber como criar e implantar seu Assistente Virtual. 
 
-# <a name="additional-resources"></a>Recursos adicionais
-O código-fonte completo do Modelo de Assistente Virtual pode ser encontrado no [GitHub](https://github.com/Microsoft/AI/).
+## <a name="additional-resources"></a>Recursos adicionais
+O código-fonte completo do Modelo de Assistente Virtual pode ser encontrado no [GitHub](https://aka.ms/bfsolutions).
 

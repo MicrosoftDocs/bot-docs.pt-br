@@ -3,19 +3,18 @@ title: Enviar notificações proativas para os usuários | Microsoft Docs
 description: Entenda como enviar mensagens de notificação
 keywords: mensagem proativa, mensagem de notificação, notificação de bot,
 author: jonathanfingold
-ms.author: jonathanfingold
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 9389f97cbba2e8766bf29b2502d36e9ec03077cf
-ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
+ms.openlocfilehash: 0c5268a16f7dcff8e46d3a14f32409517eb98489
+ms.sourcegitcommit: 6a83b2c8ab2902121e8ee9531a7aa2d85b827396
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215378"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68970707"
 ---
 # <a name="send-proactive-notifications-to-users"></a>Enviar notificações proativas para os usuários
 
@@ -123,7 +122,7 @@ MicrosoftAppCredentials.TrustServiceUrl(serviceUrl);
 
 Para enviar mensagens proativas, `serviceUrl` é a URL do canal, que o destinatário da mensagem proativa estará usando, e pode ser encontrado no `Activity.ServiceUrl`. 
 
-Você deve adicionar o código acima antes do código que envia a mensagem proativa. Esta amostra tem o código perto do fim do `CreateCallback()` no `ProactiveBot.cs`, mas ele está comentado porque não funcionará no Emulador sem `appId` e `appPassword`.
+Você deve adicionar o código acima antes do código que envia a mensagem proativa. No [Exemplo de Mensagens Proativas](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/16.proactive-messages), você deve colocá-lo em `NotifyController.cs` logo antes de `await turnContext.SendActivityAsync("proactive hello");`.
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
@@ -133,7 +132,7 @@ MicrosoftAppCredentials.trustServiceUrl(serviceUrl);
 
 Para enviar mensagens proativas, `serviceUrl` é a URL do canal, que o destinatário da mensagem proativa estará usando, e pode ser encontrado no `activity.serviceUrl`.
 
-Você deve adicionar o código acima antes do código que envia a mensagem proativa. Esta amostra tem o código perto do fim do `completeJob()` no `bot.js`, mas ele está comentado porque não funcionará no Emulador sem `appId` e `appPassword`.
+Você deve adicionar o código acima antes do código que envia a mensagem proativa. No [Exemplo de Mensagens Proativas](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/javascript_nodejs/16.proactive-messages), você deve colocá-lo em `index.js` logo antes de `await turnContext.sendActivity('proactive hello');`.
 
 ---
 

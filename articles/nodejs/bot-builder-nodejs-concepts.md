@@ -10,10 +10,10 @@ ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
 ms.openlocfilehash: a3cff9a77de098ee524334183ba891068f176b6e
-ms.sourcegitcommit: dbbfcf45a8d0ba66bd4fb5620d093abfa3b2f725
+ms.sourcegitcommit: 6a83b2c8ab2902121e8ee9531a7aa2d85b827396
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "67464782"
 ---
 # <a name="key-concepts-in-the-bot-framework-sdk-for-nodejs"></a>Principais conceitos no SDK do Bot Framework para Node.js
@@ -31,7 +31,7 @@ O Bot Framework Connector é um serviço que conecta seu bot a vários *canais*,
 
 O Conector facilita a comunicação entre o bot e o usuário, transmitindo mensagens do bot para o canal e do canal para o bot. A lógica do seu bot é hospedada como um serviço web que recebe mensagens dos usuários através do serviço Connector, e as respostas do seu bot são enviadas para o Connector usando HTTPS POST. 
 
-O SDK do Bot Framework para Node.js fornece as classes [UniversalBot][UniversalBot] and [ChatConnector][ChatConnector] para configurar o bot para enviar e receber mensagens através do Conector do Bot Framework. O `UniversalBot` classe formulários o cérebro do seu bot. É responsável por gerenciar todas as conversas que seu bot tem com um usuário. A classe `ChatConnector` conecta seu bot ao Serviço de Conector Bot Framework.
+O SDK do Bot Framework para Node.js fornece as classes [UniversalBot][UniversalBot] e [ChatConnector][ChatConnector] para configurar o bot para enviar e receber mensagens por meio do Conector do Bot Framework. O `UniversalBot` classe formulários o cérebro do seu bot. É responsável por gerenciar todas as conversas que seu bot tem com um usuário. A classe `ChatConnector` conecta seu bot ao Serviço de Conector Bot Framework.
 Veja um exemplo que demonstra o uso dessas classes em [Criar um bot com o SDK do Bot Framework para o Node.js](bot-builder-nodejs-quickstart.md).
 
 O Connector também normaliza as mensagens que o bot envia aos canais para que você possa desenvolver seu bot de maneira independente de plataforma. Normalizar uma mensagem envolve convertê-la do esquema do Bot Framework no esquema do canal. Nos casos em que o canal não suporta todos os aspectos do esquema da estrutura, o Conector tentará converter a mensagem em um formato suportado pelo canal. Por exemplo, se o bot enviar uma mensagem que contenha um cartão com botões de ação para o canal SMS, o Conector poderá renderizar o cartão como uma imagem e incluir as ações como links no texto da mensagem. O [Channel Inspector][ChannelInspector] é uma ferramenta da Web que mostra como o Conector renderiza mensagens em vários canais.

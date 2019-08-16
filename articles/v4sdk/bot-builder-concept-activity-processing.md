@@ -3,19 +3,18 @@ title: Processamento de atividade | Microsoft Docs
 description: Entenda o processamento de atividades no bot SDK.
 keywords: adaptador de bot, middleware personalizado, curto-circuito, fallback, manipuladores de eventos
 author: jonathanfingold
-ms.author: jonathanfingold
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 0e0fe51e33e99bbb35ef1d731b611ff9ca12a138
-ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
+ms.openlocfilehash: 315bebddeda21301d29fa003ce9c8f43e1677000
+ms.sourcegitcommit: 6a83b2c8ab2902121e8ee9531a7aa2d85b827396
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67404313"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68970719"
 ---
 # <a name="activity-processing"></a>Processamento de atividade
 
@@ -23,7 +22,7 @@ ms.locfileid: "67404313"
 
 O bot e o usuário interagem e trocam informações por meio de atividades. Cada atividade recebida pelo seu aplicativo bot é passada para um adaptador de bot, que transmite informações de atividade para sua lógica de bot e, finalmente, envia qualquer resposta para o usuário. Receber uma atividade e subsequentemente processá-la por meio do seu bot, é chamado de um turno; isto representa um ciclo completo do seu bot. Um turno termina quando toda a execução é feita, a atividade é totalmente processada e todas as camadas do bot foram concluídas.
 
-Atividades, particularmente aquelas que [são enviadas de um bot](#generating-responses) durante um turno de bot, são tratadas de forma assíncrona. É uma parte necessária da construção de um bot; Se você precisar revisar como tudo isso funciona, confira [async for .NET](https://docs.microsoft.com/dotnet/csharp/async) ou [async para JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function), dependendo da sua opção de idioma.
+As atividades, particularmente aquelas que são [enviadas de um bot](#generating-responses) durante um turno de bot, são tratadas de forma assíncrona. É uma parte necessária da construção de um bot; Se você precisar revisar como tudo isso funciona, confira [async for .NET](https://docs.microsoft.com/dotnet/csharp/async) ou [async para JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function), dependendo da sua opção de idioma.
 
 ## <a name="the-bot-adapter"></a>O adaptador de bot
 

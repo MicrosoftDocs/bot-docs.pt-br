@@ -4,17 +4,17 @@ description: Aprenda os conceitos básicos da criação de uma habilidade da Cor
 keywords: Bot Framework, habilidade da Cortana, fala, Node.js, Bot Builder, SDK, conceitos fundamentais, conceitos básicos
 author: DeniseMak
 manager: kamrani
+ms.author: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 02/10/2019
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 5de773f6f8f4d46c0c1fe880588f2530c3c68f56
-ms.sourcegitcommit: 721bb09f10524b0cb3961d7131966f57501734b8
+ms.openlocfilehash: 6aca29556fe877866d4beee8487ce0f1537334e6
+ms.sourcegitcommit: 6a83b2c8ab2902121e8ee9531a7aa2d85b827396
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59746060"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68866740"
 ---
 # <a name="key-concepts-for-building-a-bot-for-cortana-skills-using-nodejs"></a>Os conceitos fundamentais para criar um bot de habilidades da Cortana usando Node.js
  

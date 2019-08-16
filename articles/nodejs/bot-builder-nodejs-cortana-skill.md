@@ -3,17 +3,17 @@ title: Criar um bot habilitado para fala com habilidades da Cortana | Microsoft 
 description: Saiba como criar um bot habilitado para fala com habilidades da Cortana e o SDK do Bot Framework para o Node.js.
 author: DeniseMak
 manager: kamrani
+ms.author: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 02/10/2019
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 1b62ca7e98313fb0247d45cb66fcae8be32e6492
-ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
+ms.openlocfilehash: c37cf7e68a73c58331cefcc1326879ae09235b68
+ms.sourcegitcommit: 6a83b2c8ab2902121e8ee9531a7aa2d85b827396
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67405049"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68866669"
 ---
 # <a name="build-a-speech-enabled-bot-with-cortana-skills"></a>Criar um bot habilitado para fala com habilidades da Cortana
 
@@ -195,7 +195,7 @@ module.exports.speak = function (template, params, options) {
 ## <a name="sample-rollerskill"></a>Exemplo: RollerSkill
 O código das seções a seguir foi obtido de uma habilidade da Cortana de exemplo para lançamento de um dado. Baixe o código completo do bot no [repositório BotBuilder-Samples](https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/demo-RollerSkill).
 
-Você invoca a habilidade mencionando seu [nome de invocação][InvocationNameGuidelines] to Cortana. For the roller skill, after you [add the bot to the Cortana channel][CortanaChannel] e registra-o como uma habilidade da Cortana. Você pode invocá-lo solicitando à Cortana para "Solicitar o Lançador" ou "Solicitar que o Lançador lance o dado".
+Invoque a habilidade dizendo seu [nome de invocação][InvocationNameGuidelines] para a Cortana. Para a habilidade do lançador, depois que você [adicionar o bot ao canal da Cortana][CortanaChannel] e registrá-lo como uma habilidade da Cortana, invoque-o solicitando à Cortana para "Solicitar o Lançador" ou "Solicitar que o Lançador lance o dado".
 
 ### <a name="explore-the-code"></a>Explore o código
 
