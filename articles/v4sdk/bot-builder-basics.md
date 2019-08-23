@@ -7,15 +7,14 @@ ms.author: johtaylo
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 187a8427fd8627b0ce6b812ce8ee857e62b0394d
-ms.sourcegitcommit: a47183f5d1c2b2454c4a06c0f292d7c075612cdd
+ms.openlocfilehash: c728962141c1beec89f2830fa15d5985922ddfa5
+ms.sourcegitcommit: 3eaf06dd9691a27a1cd4a7f6434e922cd530795a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67252684"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69565399"
 ---
 # <a name="how-bots-work"></a>Como funcionam os bots
 
@@ -142,13 +141,16 @@ Os manipuladores definidos em `ActivityHandler` são:
 | Evento | Manipulador | DESCRIÇÃO |
 | :-- | :-- | :-- |
 | Qualquer tipo de atividade recebido | `OnTurnAsync` | Chama um dos outros manipuladores com base no tipo de atividade recebido. |
-| Atividade de mensagem recebida | `OnMessageActivityAsync` | Substitua-o para lidar com uma atividade `Message`. |
-| Atividade de atualização de conversa recebida | `OnConversationUpdateActivityAsync` | Em uma atividade `ConversationUpdate`, chama um manipulador se algum membro que não seja o bot ingressa na conversa ou sai dela. |
+| Atividade de mensagem recebida | `OnMessageActivityAsync` | Substitua-o para lidar com uma atividade `message`. |
+| Atividade de atualização de conversa recebida | `OnConversationUpdateActivityAsync` | Em uma atividade `conversationUpdate`, chama um manipulador se algum membro que não seja o bot ingressa na conversa ou sai dela. |
 | Membros que não são bot ingressaram na conversa | `OnMembersAddedAsync` | Substitua-o para lidar com membros que ingressam em uma conversa. |
 | Membros que não são bot saíram da conversa | `OnMembersRemovedAsync` | Substitua-o para lidar com membros que saem de uma conversa. |
-| Atividade de evento recebida | `OnEventActivityAsync` | Em uma atividade `Event`, chama um manipulador específico ao tipo de evento. |
+| Atividade de evento recebida | `OnEventActivityAsync` | Em uma atividade `event`, chama um manipulador específico ao tipo de evento. |
 | Atividade de evento de resposta de token recebida | `OnTokenResponseEventAsync` | Substitua-o para manipular eventos de resposta de token. |
 | Atividade de evento de resposta não token recebida | `OnEventAsync` | Substitua-o para lidar com outros tipos de eventos. |
+| Atividade de reação de mensagem recebida | `OnMessageReactionActivityAsync` | Em uma atividade `messageReaction`, chamará um manipulador se uma ou mais reações forem adicionadas ou removidas de uma mensagem. |
+| Reações de mensagem adicionadas a uma mensagem | `OnReactionsAddedAsync` | Substitua isso para manipular reações adicionadas a uma mensagem. |
+| Reações de mensagem removidas de uma mensagem | `OnReactionsRemovedAsync` | Substitua isso para manipular reações removidas de uma mensagem. |
 | Outro tipo de atividade recebido | `OnUnrecognizedActivityTypeAsync` | Substitua-o para lidar com qualquer tipo de atividade sem tratamento. |
 
 Esses manipuladores diferentes têm um `turnContext` que fornece informações sobre a atividade de entrada, que corresponde à solicitação HTTP de entrada. As atividades podem ser de vários tipos e, portanto, cada manipulador fornece uma atividade fortemente tipada em seu parâmetro de contexto de turno; na maioria dos casos, `OnMessageActivityAsync` sempre será manipulado e é geralmente o mais comum.
@@ -186,15 +188,20 @@ Os manipuladores definidos em `ActivityHandler` são:
 
 | Evento | Manipulador | DESCRIÇÃO |
 | :-- | :-- | :-- |
-| Qualquer tipo de atividade recebido | `onTurn` | Chama um dos outros manipuladores com base no tipo de atividade recebido. |
-| Atividade de mensagem recebida | `onMessage` | Forneça uma função para poder lidar com uma atividade `Message`. |
-| Atividade de atualização de conversa recebida | `onConversationUpdate` | Em uma atividade `ConversationUpdate`, chama um manipulador se algum membro que não seja o bot ingressa na conversa ou sai dela. |
-| Membros que não são bot ingressaram na conversa | `onMembersAdded` | Forneça uma função para lidar com membros que ingressam em uma conversa. |
-| Membros que não são bot saíram da conversa | `onMembersRemoved` | Forneça uma função para lidar com membros que saem de uma conversa. |
-| Atividade de evento recebida | `onEvent` | Em uma atividade `Event`, chama um manipulador específico ao tipo de evento. |
-| Atividade de evento de resposta de token recebida | `onTokenResponseEvent` | Forneça uma função para manipular eventos de resposta de token. |
-| Outro tipo de atividade recebido | `onUnrecognizedActivityType` | Forneça uma função para lidar com qualquer tipo de atividade sem tratamento. |
-| Manipuladores de atividade concluídos | `onDialog` | Forneça uma função para lidar com qualquer processamento que deve ser feito no final de um turno, depois que o restante dos manipuladores de atividade foi concluído. |
+| Qualquer tipo de atividade recebido | `onTurn` | Chamado quando qualquer atividade é recebida. |
+| Atividade de mensagem recebida | `onMessage` | Chamado quando uma atividade `message` é recebida. |
+| Atividade de atualização de conversa recebida | `onConversationUpdate` | Chamado quando qualquer atividade `conversationUpdate` é recebida. |
+| Membros ingressaram na conversa | `onMembersAdded` | Chamado quando quaisquer membros ingressaram na conversa, incluindo o bot. |
+| Membros saíram da conversa | `onMembersRemoved` | Chamado quando algum membro saiu da conversa, incluindo o bot. |
+| Atividade de reação de mensagem recebida | `onMessageReaction` | Chamado quando qualquer atividade `messageReaction` é recebida. |
+| Reações de mensagem adicionadas a uma mensagem | `onReactionsAdded` | Chamado quando reações são adicionadas a uma mensagem. |
+| Reações de mensagem removidas de uma mensagem | `onReactionsRemoved` | Chamado quando reações são removidas de uma mensagem. |
+| Atividade de evento recebida | `onEvent` | Chamado quando qualquer atividade `event` é recebida. |
+| Atividade de evento de resposta de token recebida | `onTokenResponseEvent` | Chamado quando um evento `tokens/response` é recebido. |
+| Outro tipo de atividade recebido | `onUnrecognizedActivityType` | Chamado quando um manipulador para o tipo específico de atividade não está definido. |
+| Manipuladores de atividade concluídos | `onDialog` | Chamado após a conclusão de qualquer manipulador aplicável. |
+
+Chame o parâmetro de função `next` de cada manipulador para permitir que o processamento continue. Se `next` não for chamado, o processamento da atividade terminará.
 
 Em cada turno, verificamos primeiro se o bot recebeu uma mensagem. Quando nós recebermos uma mensagem do usuário, ecoaremos a mensagem enviada por ele.
 
