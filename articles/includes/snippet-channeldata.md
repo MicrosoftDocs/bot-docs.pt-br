@@ -404,7 +404,7 @@ Essas ações do LINE podem ser especificadas no campo de ação do objeto de ti
 
 Para obter detalhes sobre esses métodos do LINE e seus parâmetros, confira a [documentação da API do Bot do LINE](https://developers.line.biz/en/docs/messaging-api/). 
 
-Este trecho mostra um exemplo de uma propriedade `channelData` que especifica um tipo de mensagem de canal `ButtonTemplate` e 3 tipos de ação: câmera, rolo da câmera, Datetimepicker. 
+Este snippet mostra um exemplo de uma propriedade `channelData` que especifica um tipo de mensagem de canal `ButtonTemplate` e 3 tipos de ação: câmera, rolo da câmera, Datetimepicker. 
 
 ```json
 "channelData": { 
