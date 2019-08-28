@@ -7,14 +7,13 @@ ms.author: rstand
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: abs
-ms.date: 4/13/2019
-ms.openlocfilehash: f3e0ac52a3bfe5759202af6c704626acafef617b
-ms.sourcegitcommit: 4086189a9c856fbdc832eb1a1d205e5f1b4e3acd
+ms.date: 8/13/2019
+ms.openlocfilehash: 2aea5c5feb144f5e9b1cb7f2947f409f827fb009
+ms.sourcegitcommit: 9e1034a86ffdf2289b0d13cba2bd9bdf1958e7bc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65733308"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69890501"
 ---
 # <a name="manage-a-bot"></a>Gerenciar um bot
 
@@ -55,7 +54,7 @@ A folha **Configurações de Aplicativo** contém informações detalhadas sobre
 A **MicrosoftAppID** e a **MicrosoftAppPassword** são mantidas no arquivo de configurações do bot (`appsettings.json` ou `.env`) ou no Azure Key Vault. Para recuperá-las, baixe a configuração ou o arquivo de configuração do bot (para bots antigos, se houver) ou acesse o Azure Key Vault. Pode ser necessário fazer um teste local com a ID e a senha.
 
 > [!NOTE]
-> O serviço de bot **Registro de Canais de Bot** vem com uma *MicrosoftAppID*, mas por não existir nenhum serviço de aplicativo associado a esse tipo de serviço, não há nenhuma folha **Configurações do Aplicativo** para pesquisar a *MicrosoftAppPassword*. Para obter a senha, é necessário gerar uma. Para gerar a senha para um **Registro de Canais de Bot**, consulte [Senha do Registro de Canais de Bot](bot-service-quickstart-registration.md#bot-channels-registration-password)
+> O serviço de bot **Registro de Canais de Bot** vem com uma *MicrosoftAppID*, mas por não existir nenhum serviço de aplicativo associado a esse tipo de serviço, não há nenhuma folha **Configurações do Aplicativo** para pesquisar a *MicrosoftAppPassword*. Para obter a senha, é necessário gerar uma. Para gerar a senha para um **Registro de Canais de Bot**, consulte [Senha do Registro de Canais de Bot](bot-service-quickstart-registration.md#get-registration-password)
 
 ## <a name="next-steps"></a>Próximas etapas
 Agora que você já explorou a folha do Serviço de Bot no portal do Azure, saiba como usar o Editor de Código Online para personalizar o bot.

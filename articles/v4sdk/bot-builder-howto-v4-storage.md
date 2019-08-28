@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b3743f798377de5bb1279e2af1b0124682a5575f
-ms.sourcegitcommit: 6a83b2c8ab2902121e8ee9531a7aa2d85b827396
+ms.openlocfilehash: 9a5a8f8eac9f0b20278b2506063c6e14e4d9fd5b
+ms.sourcegitcommit: 514a3c1ffe0ebe69e07565446ddde0370b35aeaa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68970704"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69903666"
 ---
 # <a name="write-directly-to-storage"></a>Gravar diretamente no armazenamento
 
@@ -204,13 +204,13 @@ async function logMessageText(storage, turnContext) {
 
             try {
                 await storage.write(storeItems)
-                turnContext.sendActivity(`${numStored}: The list is now: ${storedString}`);
+                await turnContext.sendActivity(`${numStored}: The list is now: ${storedString}`);
             } catch (err) {
-                turnContext.sendActivity(`Write failed of UtteranceLogJS: ${err}`);
+                await turnContext.sendActivity(`Write failed of UtteranceLogJS: ${err}`);
             }
         }
         else{
-            turnContext.sendActivity(`Creating and saving new utterance log`);
+            await turnContext.sendActivity(`Creating and saving new utterance log`);
             var turnNumber = 1;
             storeItems["UtteranceLogJS"] = { UtteranceList: [`${utterance}`], "eTag": "*", turnNumber }
             // Gather info for user message.
@@ -219,14 +219,14 @@ async function logMessageText(storage, turnContext) {
 
             try {
                 await storage.write(storeItems)
-                turnContext.sendActivity(`${numStored}: The list is now: ${storedString}`);
+                await turnContext.sendActivity(`${numStored}: The list is now: ${storedString}`);
             } catch (err) {
-                turnContext.sendActivity(`Write failed: ${err}`);
+                await turnContext.sendActivity(`Write failed: ${err}`);
             }
         }
     }
     catch (err){
-        turnContext.sendActivity(`Read rejected. ${err}`);
+        await turnContext.sendActivity(`Read rejected. ${err}`);
     }
 }
 

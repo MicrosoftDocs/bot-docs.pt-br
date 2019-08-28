@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/07/2019
-ms.openlocfilehash: 2575ac196bd3e875d8523da99d7114b789e70558
-ms.sourcegitcommit: a1eaa44f182a7210197bd793250907df00e9edab
+ms.openlocfilehash: e5a6320a645f55fe9e023688af23ec8fe62e3006
+ms.sourcegitcommit: c200cc2db62dbb46c2a089fb76017cc55bdf26b0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68757098"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70037381"
 ---
 # <a name="web-chat-overview"></a>Visão geral de Webchat
 
@@ -27,7 +27,7 @@ Se você estiver buscando migrar do Webchat v3 para v4, vá diretamente para [a 
 > Para versões anteriores do Webchat (v3), visite o [branch do Webchat v3](https://github.com/Microsoft/BotFramework-WebChat/tree/v3).
 
 Primeiro, crie um Bot usando o [Serviço de Bot do Azure](https://azure.microsoft.com/services/bot-service/).
-Depois que o bot for criado, você precisará [obter o segredo do Webchat do bot](../bot-service-channel-connect-webchat.md#step-1) no portal do Azure. Em seguida, use o segredo para [gerar um token](../rest-api/bot-framework-rest-direct-line-3-0-authentication.md) e passá-lo para seu Webchat.
+Depois que o bot for criado, você precisará [obter o segredo do Webchat do bot](../bot-service-channel-connect-webchat.md#get-your-bot-secret-key) no portal do Azure. Em seguida, use o segredo para [gerar um token](../rest-api/bot-framework-rest-direct-line-3-0-authentication.md) e passá-lo para seu Webchat.
 
 Aqui está como você pode adicionar um controle de Webchat ao seu site:
 
