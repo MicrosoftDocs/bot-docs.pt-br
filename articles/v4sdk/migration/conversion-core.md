@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: c5735b7ad47204dab42abc7b1dd7a15a407b0115
-ms.sourcegitcommit: a1eaa44f182a7210197bd793250907df00e9edab
+ms.openlocfilehash: 23646cf47b49e73eec9c3ce9a4deb1e053892fa1
+ms.sourcegitcommit: c200cc2db62dbb46c2a089fb76017cc55bdf26b0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68757209"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70037263"
 ---
 # <a name="migrate-a-net-v3-bot-to-a-net-core-v4-bot"></a>Migrar um bot v3 do .NET para um bot v4 do .NET Core
 
-Neste artigo, converteremos o [v3 ContosoHelpdeskChatBot](https://github.com/microsoft/BotBuilder-Samples/tree/master/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V3) em um bot v4 _em um novo projeto do .NET Core_ .
+Neste artigo, converteremos o [v3 ContosoHelpdeskChatBot](https://github.com/microsoft/BotBuilder-Samples/tree/master/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V3) em um bot v4 _em um novo projeto do .NET Core_.
 Essa conversão é dividida entre estas etapas:
 
 1. Crie o projeto usando um modelo.
@@ -29,7 +29,7 @@ Essa conversão é dividida entre estas etapas:
 1. Etapa final de portabilidade.
 
 O resultado dessa conversão é o [ContosoHelpdeskChatBot v4 do .NET Core](https://github.com/microsoft/BotBuilder-Samples/tree/master/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore).
-Para migrar para um bot do .NET Framework v4 _sem converter o tipo de projeto_ , veja [Migrar um bot v3 do .NET para um bot v4 do .NET Framework](conversion-framework.md).
+Para migrar para um bot do .NET Framework v4 _sem converter o tipo de projeto_, veja [Migrar um bot v3 do .NET para um bot v4 do .NET Framework](conversion-framework.md).
 
 O SDK da v4 do Bot Framework é baseado na mesma API REST subjacente que o SDK da v3. No entanto, a v4 do SDK é uma refatoração da versão anterior do SDK para dar mais flexibilidade e controle aos desenvolvedores sobre seus bots. Alterações importantes no SDK incluem:
 
@@ -114,7 +114,9 @@ No v4, a lógica de loop de mensagem ou do manipulador de turno está, fundament
 1. Adicione esses campos e um construtor para inicializá-los. Novamente, o ASP.NET usa a injeção de dependência para obter os valores de parâmetros.
     [!code-csharp[Fields and constructor](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Bots/DialogBot.cs?range=21-28)]
 
-1. Atualize a implementação `OnMessageActivityAsync` para invocar nossa caixa de diálogo principal. (Vamos definir o método de extensão `Run` em breve.) [!code-csharp[OnMessageActivityAsync](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Bots/DialogBot.cs?range=38-47)]
+1. Atualize a implementação `OnMessageActivityAsync` para invocar nossa caixa de diálogo principal. (Vamos definir o método de extensão `Run` em breve.)
+
+[!code-csharp[OnMessageActivityAsync](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Bots/DialogBot.cs?range=38-47)]
 
 1. Atualize `OnTurnAsync` para salvar o estado de conversa no final do turno. No V4, precisamos fazer isso explicitamente para gravar o estado na camada de persistência. O método `ActivityHandler.OnTurnAsync` chama métodos específicos do manipulador de atividades com base no tipo de atividade recebida, portanto, salvamos o estado após a chamada do método base.
     [!code-csharp[OnTurnAsync](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Bots/DialogBot.cs?range=30-36)]
@@ -200,7 +202,7 @@ No arquivo **Dialogs/RootDialog.cs**:
      - Em seguida, iniciará o diálogo filho associado a essa escolha.
      - Por fim, se reiniciará.
    - Cada etapa da cascata é um delegado, e as implementaremos a seguir, obtendo o código existente do diálogo original sempre que possível.
-   - Ao iniciar um diálogo de componente, ele iniciará seu _diálogo inicial_ . Por padrão, esse é o primeiro diálogo filho adicionado a um diálogo de componente. Estamos explicitamente definindo a propriedade `InitialDialogId`, o que significa que o principal diálogo em cascata não precisa ser o primeiro adicionado ao conjunto. Por exemplo, caso prefira, você poderia adicionar prompts primeiro sem causar um problema de tempo de execução.
+   - Ao iniciar um diálogo de componente, ele iniciará seu _diálogo inicial_. Por padrão, esse é o primeiro diálogo filho adicionado a um diálogo de componente. Estamos explicitamente definindo a propriedade `InitialDialogId`, o que significa que o principal diálogo em cascata não precisa ser o primeiro adicionado ao conjunto. Por exemplo, caso prefira, você poderia adicionar prompts primeiro sem causar um problema de tempo de execução.
     [!code-csharp[Constructor](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Dialogs/RootDialog.cs?range=35-49)]
 
 1. Podemos excluir o método `StartAsync`. Quando um diálogo de componente for iniciado, ele iniciará seu diálogo _inicial_ automaticamente. Nesse caso, é o diálogo em cascata que definimos no construtor. Ele também inicia automaticamente em sua primeira etapa.
@@ -337,7 +339,9 @@ Precisamos atualizar instruções `using` nas classes de modelo, conforme mostra
 1. Em **LocalAdminPrompt.cs**, altere-os para isto:  
     [!code-csharp[Using statements](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Models/LocalAdminPrompt.cs?range=4)]
 
-1. Em **ResetPassword.cs**, altere-os para isto: [!code-csharp[Using statements](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Models/ResetPassword.cs?range=4-5)]
+1. Em **ResetPassword.cs**, altere-os para isto:
+
+[!code-csharp[Using statements](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Models/ResetPassword.cs?range=4-5)]
     Além disso, exclua as instruções `using` dentro do namespace.
 
 1. Em **ResetPasswordPrompt.cs**, altere-os para isto:  
@@ -345,12 +349,16 @@ Precisamos atualizar instruções `using` nas classes de modelo, conforme mostra
 
 ### <a name="additional-changes"></a>Alterações adicionais
 
-Em **ResetPassword.cs**, altere o tipo de retorno do `MobileNumber` da seguinte maneira: [!code-csharp[MobileNumber](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Models/ResetPassword.cs?range=17)]
+Em **ResetPassword.cs**, altere o tipo de retorno do `MobileNumber` da seguinte maneira:
+
+[!code-csharp[MobileNumber](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Models/ResetPassword.cs?range=17)]
 
 ## <a name="final-porting-steps"></a>Etapas finais de portabilidade 
 Para concluir o processo de portabilidade, execute estas etapas:
 
-1. Crie uma classe `AdapterWithErrorHandler` para definir um adaptador que inclui um manipulador de erro que pode capturar exceções no aplicativo ou middleware. O adaptador processa e direciona atividades de entrada através do pipeline de middleware de bot para a lógica do seu bot e, em seguida, recua novamente. Use o código a seguir para criar a classe: [!code-csharp[MobileNumber](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/AdapterWithErrorHandler.cs?range=4-46)]
+1. Crie uma classe `AdapterWithErrorHandler` para definir um adaptador que inclui um manipulador de erro que pode capturar exceções no aplicativo ou middleware. O adaptador processa e direciona atividades de entrada através do pipeline de middleware de bot para a lógica do seu bot e, em seguida, recua novamente. Use o código a seguir para criar a classe:
+
+ [!code-csharp[MobileNumber](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/AdapterWithErrorHandler.cs?range=4-46)]
 1. Modifique a página **wwwroot\default.htm** conforme considerar adequado.
 
 ## <a name="run-and-test-your-bot-in-the-emulator"></a>Executar e testar seu bot no emulador

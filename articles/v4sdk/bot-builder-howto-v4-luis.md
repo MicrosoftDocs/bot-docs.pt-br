@@ -3,19 +3,18 @@ title: Adicionar reconhecimento de idioma natural ao seu bot | Microsoft Docs
 description: Aprenda a usar o LUIS para reconhecimento de linguagem natural com o SDK do Bot Framework.
 keywords: Entendimento de Linguagem, LUIS, intenção, reconhecedor, entidades, middleware
 author: ivorb
-ms.author: v-ivorb
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: cognitive-services
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 02e0f810293566b783dda563b377f1a96f4ed58f
-ms.sourcegitcommit: 23a1808e18176f1704f2f6f2763ace872b1388ae
+ms.openlocfilehash: 1641260f6673a810e7bc71ecaca1ada234286e42
+ms.sourcegitcommit: 008aa6223aef800c3abccda9a7f72684959ce5e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68484027"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70026325"
 ---
 # <a name="add-natural-language-understanding-to-your-bot"></a>Adicionar reconhecimento de idioma natural ao seu bot
 
@@ -119,99 +118,13 @@ Para se conectar ao serviço do LUIS, o bot extrai as informações adicionadas 
 
 **FlightBookingRecognizer.cs**  
 
-```csharp
-public class FlightBookingRecognizer : IRecognizer
-{
-    private readonly LuisRecognizer _recognizer;
-
-    public FlightBookingRecognizer(IConfiguration configuration)
-
-    {
-        var luisIsConfigured = !string.IsNullOrEmpty(configuration["LuisAppId"]) && !string.IsNullOrEmpty(configuration["LuisAPIKey"]) && !string.IsNullOrEmpty(configuration["LuisAPIHostName"]);
-
-        if (luisIsConfigured)
-        {
-            var luisApplication = new LuisApplication(
-
-                configuration["LuisAppId"],
-
-                configuration["LuisAPIKey"],
-
-                "https://" + configuration["LuisAPIHostName"]);
-
-            _recognizer = new LuisRecognizer(luisApplication);
-
-        }
-    }
-
-    // Returns true if luis is configured in the appsettings.json and initialized.
-
-    public virtual bool IsConfigured => _recognizer != null;
-
-    public virtual async Task<RecognizerResult> RecognizeAsync(ITurnContext turnContext, CancellationToken cancellationToken)
-
-        => await _recognizer.RecognizeAsync(turnContext, cancellationToken);
-
-
-    public virtual async Task<T> RecognizeAsync<T>(ITurnContext turnContext, CancellationToken cancellationToken)
-
-        where T : IRecognizerConvert, new()
-
-        => await _recognizer.RecognizeAsync<T>(turnContext, cancellationToken);
-}
-
-```
-
-<!-- Direct reference
-[!code-csharp[luisHelper](~/../botbuilder-samples/samples/csharp_dotnetcore/13.core-bot/FlightBookingRecognizer.cs?range=12-39)]
--->
+[!code-csharp[luisHelper](~/../BotBuilder-Samples/samples/csharp_dotnetcore/13.core-bot/FlightBookingRecognizer.cs?range=12-39)]
 
 O `FlightBookingEx.cs` contém a lógica para extrair *From*, *To* e *TravelDate*; ela estende a classe parcial `FlightBooking.cs` usada para armazenar os resultados do LUIS ao chamar `FlightBookingRecognizer.RecognizeAsync<FlightBooking>` do `MainDialog.cs`.
 
-**FlightBookingEx.cs**  
+**CognitiveModels\FlightBookingEx.cs**  
 
-```csharp
-public partial class FlightBooking
-{
-    public (string From, string Airport) FromEntities
-
-    {
-        get
-
-        {
-            var fromValue = Entities?._instance?.From?.FirstOrDefault()?.Text;
-
-            var fromAirportValue = Entities?.From?.FirstOrDefault()?.Airport?.FirstOrDefault()?.FirstOrDefault();
-
-            return (fromValue, fromAirportValue);
-        }
-    }
-
-    public (string To, string Airport) ToEntities
-
-    {
-        get
-
-        {
-            var toValue = Entities?._instance?.To?.FirstOrDefault()?.Text;
-
-            var toAirportValue = Entities?.To?.FirstOrDefault()?.Airport?.FirstOrDefault()?.FirstOrDefault();
-
-            return (toValue, toAirportValue);
-        }
-    }
-
-    // This value will be a TIMEX. And we are only interested in a Date so grab the first result and drop the Time part.
-    // TIMEX is a format that represents DateTime expressions that include some ambiguity. e.g. missing a Year.
-    public string TravelDate
-        => Entities.datetime?.FirstOrDefault()?.Expressions.FirstOrDefault()?.Split('T')[0];
-}
-
-```
-
-<!-- Direct reference
 [!code-csharp[luis helper](~/../BotBuilder-Samples/samples/csharp_dotnetcore/13.core-bot/CognitiveModels/FlightBookingEx.cs?range=8-35)]
--->
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
@@ -219,89 +132,9 @@ Para usar o LUIS, seu projeto precisa instalar o pacote do npm **botbuilder-ai**
 
 Para se conectar ao serviço do LUIS, o bot usa as informações adicionadas acima do arquivo `.env`. A classe `flightBookingRecognizer.js` contém o código que importa as configurações do arquivo `.env` e consulta o serviço do LUIS chamando o método `recognize()`.
 
-```javascript
-class FlightBookingRecognizer {
+**dialogs/flightBookingRecognizer.js**
 
-    constructor(config) {
-
-        const luisIsConfigured = config && config.applicationId && config.endpointKey && config.endpoint;
-
-        if (luisIsConfigured) {
-
-            this.recognizer = new LuisRecognizer(config, {}, true);
-        }
-
-    }
-
-    get isConfigured() {
-        return (this.recognizer !== undefined);
-    }
-
-    /**
-     * Returns an object with preformatted LUIS results for the bot's dialogs to consume.
-     * @param {TurnContext} context
-     */
-    async executeLuisQuery(context) {
-        return await this.recognizer.recognize(context);
-    }
-
-    getFromEntities(result) {
-
-        let fromValue, fromAirportValue;
-
-        if (result.entities.$instance.From) {
-
-            fromValue = result.entities.$instance.From[0].text;
-        }
-
-        if (fromValue && result.entities.From[0].Airport) {
-
-            fromAirportValue = result.entities.From[0].Airport[0][0];
-        }
-
-        return { from: fromValue, airport: fromAirportValue };
-    }
-
-    getToEntities(result) {
-
-        let toValue, toAirportValue;
-
-        if (result.entities.$instance.To) {
-            toValue = result.entities.$instance.To[0].text;
-        }
-
-        if (toValue && result.entities.To[0].Airport) {
-            toAirportValue = result.entities.To[0].Airport[0][0];
-        }
-        return { to: toValue, airport: toAirportValue };
-    }
-
-    /**
-     * This value will be a TIMEX. And we are only interested in a Date so grab the first result and drop the Time part.
-     * TIMEX is a format that represents DateTime expressions that include some ambiguity. e.g. missing a Year.
-     */
-
-    getTravelDate(result) {
-
-        const datetimeEntity = result.entities['datetime'];
-
-        if (!datetimeEntity || !datetimeEntity[0]) return undefined;
-
-        const timex = datetimeEntity[0]['timex'];
-
-        if (!timex || !timex[0]) return undefined;
-
-        const datetime = timex[0].split('T')[0];
-
-        return datetime;
-    }
-}
-
-```
-
-<!-- Direct reference
 [!code-javascript[luis helper](~/../BotBuilder-Samples/samples/javascript_nodejs/13.core-bot/dialogs/flightBookingRecognizer.js?range=6-64)]
--->
 
 A lógica para extrair From, To e TravelDate é implementada como métodos auxiliares dentro de `flightBookingRecognizer.js`. Esses métodos são usados após chamar `flightBookingRecognizer.executeLuisQuery()` de `mainDialog.js`
 

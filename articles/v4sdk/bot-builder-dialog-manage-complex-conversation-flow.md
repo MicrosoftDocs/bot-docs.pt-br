@@ -3,19 +3,18 @@ title: Criar fluxo de conversa avançado usando branches e loops | Microsoft Doc
 description: Saiba como gerenciar um fluxo de conversa complexo com diálogos no SDK do Bot Framework.
 keywords: fluxo de conversa complexo, repetição, loop, menu, diálogos, prompts, cascatas, conjunto de diálogos
 author: JonathanFingold
-ms.author: v-jofing
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 07/05/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b7ffa16c2f0a00043b12faec1d31bbfe5bfa250f
-ms.sourcegitcommit: a1eaa44f182a7210197bd793250907df00e9edab
+ms.openlocfilehash: 9f88c854f2af18ae0c9fb724f8c3a3c99b6141ba
+ms.sourcegitcommit: 9e1034a86ffdf2289b0d13cba2bd9bdf1958e7bc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "67587470"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69890641"
 ---
 # <a name="create-advanced-conversation-flow-using-branches-and-loops"></a>Criar fluxo de conversa avançado usando ramificações e loops
 
@@ -64,7 +63,7 @@ Nós registramos serviços para o bot em `Startup`. Esses serviços estão dispo
 - Serviços para gerenciamento de estado: armazenamento, estado do usuário e estado da conversa.
 - A caixa de diálogo que o bot usará.
 
-[!code-csharp[ConfigureServices](~/../botbuilder-samples/samples/csharp_dotnetcore/43.complex-dialog/Startup.cs?range=22-39)]
+[!code-csharp[ConfigureServices](~/../botbuilder-samples/samples/csharp_dotnetcore/43.complex-dialog/Startup.cs?range=22-36)]
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
@@ -80,8 +79,7 @@ Nós criamos serviços para bot, que os outros blocos do código precisam.
 - Serviços para gerenciamento de estado: armazenamento, estado do usuário e estado da conversa.
 - A caixa de diálogo que o bot usará.
 
-[!code-javascript[ConfigureServices](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/index.js?range=25-38)]
-[!code-javascript[ConfigureServices](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/index.js?range=43-45)]
+[!code-javascript[ConfigureServices](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/index.js?range=25-55)]
 
 ---
 
@@ -206,7 +204,7 @@ O manipulador de mensagens chama o método `RunAsync` para gerenciar a caixa de 
 
 **Bots\DialogAndWelcome.cs**
 
-`DialogAndWelcomeBot` estende `DialogBot` para fornecer uma mensagem de boas-vindas quando o usuário ingressa na conversa, sendo chamado por `Startup.cs`.
+`DialogAndWelcomeBot` estende `DialogBot` acima para fornecer uma mensagem de boas-vindas quando o usuário ingressa na conversa e é o que é criado no `Startup.cs`.
 
 [!code-csharp[On members added](~/../botbuilder-samples/samples/csharp_dotnetcore/43.complex-dialog/Bots/DialogAndWelcome.cs?range=21-38)]
 
@@ -226,11 +224,11 @@ Uma vez que a caixa de diálogo de componente define um conjunto interno de caix
 
 O manipulador de mensagens chama o método auxiliar `run` para gerenciar a caixa de diálogo, e nós implantamos o manipulador de turnos para salvar quaisquer alterações na conversa e no estado do usuário que possam ter ocorrido durante o turno. A chamada para `next` permitirá que a implantação da base chame o método`onDialog`, garantindo que as chamadas de salvamento aconteçam no final do turno.
 
-[!code-javascript[Overrides](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/bots/dialogBot.js?range=30-47)]
+[!code-javascript[Overrides](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/bots/dialogBot.js?range=24-41)]
 
 **bots/dialogAndWelcomeBot.js**
 
-`DialogAndWelcomeBot` estende `DialogBot` para fornecer uma mensagem de boas-vindas quando o usuário ingressa na conversa, sendo chamado por `Startup.cs`.
+`DialogAndWelcomeBot` estende `DialogBot` acima para fornecer uma mensagem de boas-vindas quando o usuário ingressa na conversa e é o que é criado no `index.js`.
 
 [!code-javascript[On members added](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/bots/dialogAndWelcomeBot.js?range=10-21)]
 
@@ -242,13 +240,13 @@ O manipulador de mensagens chama o método auxiliar `run` para gerenciar a caixa
 
 **Dialogs\TopLevelDialog.cs**
 
-Aqui está uma amostra de lógica de branch tirada de uma etapa da caixa de diálogo _principal_ :
+Aqui está uma amostra de lógica de branch tirada de uma etapa da caixa de diálogo _principal_:
 
 [!code-csharp[branching logic](~/../botbuilder-samples/samples/csharp_dotnetcore/43.complex-dialog/Dialogs/TopLevelDialog.cs?range=68-80)]
 
 **Dialogs\ReviewSelectionDialog.cs**
 
-Aqui está uma amostra de lógica de looping tirada de uma etapa da caixa de diálogo _seleção de revisão_ :
+Aqui está uma amostra de lógica de looping tirada de uma etapa da caixa de diálogo _seleção de revisão_:
 
 [!code-csharp[looping logic](~/../botbuilder-samples/samples/csharp_dotnetcore/43.complex-dialog/Dialogs/ReviewSelectionDialog.cs?range=96-105)]
 
@@ -256,13 +254,13 @@ Aqui está uma amostra de lógica de looping tirada de uma etapa da caixa de di�
 
 **dialogs/topLevelDialog.js**
 
-Aqui está uma amostra de lógica de branch tirada de uma etapa da caixa de diálogo _principal_ :
+Aqui está uma amostra de lógica de branch tirada de uma etapa da caixa de diálogo _principal_:
 
 [!code-javascript[branching logic](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/dialogs/topLevelDialog.js?range=56-64)]
 
 **dialogs/reviewSelectionDialog.js**
 
-Aqui está uma amostra de lógica de looping tirada de uma etapa da caixa de diálogo _seleção de revisão_ :
+Aqui está uma amostra de lógica de looping tirada de uma etapa da caixa de diálogo _seleção de revisão_:
 
 [!code-javascript[looping logic](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/dialogs/reviewSelectionDialog.js?range=71-77)]
 

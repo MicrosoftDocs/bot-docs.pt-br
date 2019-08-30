@@ -2,25 +2,26 @@
 title: Criar um bot com o Serviço de Bot | Microsoft Docs
 description: Saiba como criar um bot com o Serviço de Bot, um ambiente de desenvolvimento de bot integrado e dedicado.
 keywords: Início Rápido, criar um bot, serviço de bot, bot de aplicativo Web
-author: v-ducvo
-ms.author: v-ducvo
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: abs
-ms.date: 07/19/2019
-ms.openlocfilehash: c4274df084fb0f25535aacb0173e19bc93f20ba1
-ms.sourcegitcommit: 23a1808e18176f1704f2f6f2763ace872b1388ae
+ms.date: 08/15/2019
+ms.openlocfilehash: b8307877bf08db170173486ec9df88fae4d27c29
+ms.sourcegitcommit: 9e1034a86ffdf2289b0d13cba2bd9bdf1958e7bc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68484413"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69890614"
 ---
 # <a name="create-a-bot-with-azure-bot-service"></a>Criar um bot com o Serviço de Bot do Azure
 
 [!INCLUDE [applies-to-v4](../includes/applies-to.md)]
 
 O Serviço de Bot do Azure fornece os principais componentes para a criação de bots, incluindo o SDK do Bot Framework para o desenvolvimento de bots e o serviço de bot para conectar os bots aos canais. No tópico, você pode escolher o modelo .NET ou Node.js para criar um bot usando o SDK do Bot Framework v4.
+
+>[!NOTE] 
+> O bot criado é registrado automaticamente no Serviço de Bot do Azure. Se você já tiver um bot hospedado em outro lugar e desejar registrá-lo, confira o artigo: [Registrar um bot no Serviço de Bot do Azure](../bot-service-quickstart-registration.md).
 
 [!INCLUDE [Azure vs local development](~/includes/snippet-quickstart-paths.md)]
 
@@ -57,7 +58,7 @@ O Serviço de Bot do Azure fornece os principais componentes para a criação de
 
 Confirme que o bot foi implantado marcando **Notificações**. As notificações mudarão de **Implantação em andamento...** para **Implantação bem-sucedida**. Clique no botão **Ir para recurso** para abrir a folha de recursos do bot.
 
-Agora que o bot foi criado, teste-o no Webchat. 
+Agora que o bot foi criado, teste-o no Webchat.
 
 ## <a name="test-the-bot"></a>Testar o bot
 Na seção **Gerenciamento de Bot**, clique em **Testar no Webchat**. O Serviço de Bot do Azure carregará o controle de Webchat e se conectará ao bot. 
@@ -65,6 +66,16 @@ Na seção **Gerenciamento de Bot**, clique em **Testar no Webchat**. O Serviço
 ![Teste do Webchat do Azure](../media/azure-bot-quickstarts/azure-webchat-test.png)
 
 Insira uma mensagem e o bot deverá responder.
+
+## <a name="manual-app-registration"></a>Registro manual do aplicativo
+
+Um registro manual é necessário para situações como:
+
+- Você não consegue fazer os registros em sua organização e precisa de terceiros para criar a ID do aplicativo para o bot que você está criando.
+- É necessário criar sua própria ID do aplicativo (e senha).
+
+Confira [Perguntas frequentes – Registro do Aplicativo](../bot-service-resources-bot-framework-faq.md#app-registration).
+
 
 ## <a name="download-code"></a>Código de download
 Você pode baixar o código para trabalhar nele localmente. 

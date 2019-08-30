@@ -7,16 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 69c58e1e6bd9da4b07e21f8ca3eb029d2dec9e75
-ms.sourcegitcommit: a1eaa44f182a7210197bd793250907df00e9edab
+ms.openlocfilehash: 706568a5d2fa7ef815d7d169c74a2fa5061b3ab1
+ms.sourcegitcommit: c200cc2db62dbb46c2a089fb76017cc55bdf26b0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68757183"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70037550"
 ---
 # <a name="activities-overview"></a>Visão geral das atividades
 
-O serviço Bot Connector troca informações entre o bot e o canal (usuário) passando um objeto `Activity`. O tipo de atividade mais comum é **mensagem**, mas há outros tipos de atividade que podem ser usados para comunicar diversos tipos de informações a um bot ou canal. 
+O serviço Bot Connector troca informações entre o bot e o canal (usuário) passando um objeto [Atividade][]. O tipo de atividade mais comum é **mensagem**, mas há outros tipos de atividade que podem ser usados para comunicar diversos tipos de informações a um bot ou canal. 
 
 ## <a name="activity-types-in-the-bot-connector-service"></a>Tipos de atividade no serviço do Bot Connector
 
@@ -64,4 +64,5 @@ Um bot recebe uma atividade **endOfConversation** para indicar que o usuário en
 
 - [Criar mensagens](bot-framework-rest-connector-create-messages.md)
 - [Enviar e receber mensagens](bot-framework-rest-connector-send-and-receive-messages.md)
-- [Esquema de atividade Bot Framework](https://aka.ms/botSpecs-activitySchema)
+
+[Atividade]: bot-framework-rest-connector-api-reference.md#activity-object

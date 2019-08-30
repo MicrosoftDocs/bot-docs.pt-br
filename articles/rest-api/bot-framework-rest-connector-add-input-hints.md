@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 4eec5b84c05e170a9ed69d22dcabec7c1df055f9
-ms.sourcegitcommit: a1eaa44f182a7210197bd793250907df00e9edab
+ms.openlocfilehash: ef031d250708d6613a64f5d0cb301cf83b6a26ff
+ms.sourcegitcommit: c200cc2db62dbb46c2a089fb76017cc55bdf26b0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68757081"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70037200"
 ---
 # <a name="add-input-hints-to-messages"></a>Adicionar dicas de entrada às mensagens
 > [!div class="op_single_selector"]
@@ -24,7 +24,7 @@ Ao especificar uma dica de entrada para uma mensagem, você pode indicar se seu 
 
 ## <a name="accepting-input"></a>Aceitar a entrada
 
-Para indicar que seu bot está passivamente pronto para entrada mas não está aguardando uma resposta do usuário, defina a propriedade `inputHint` como **acceptingInput** no objeto `Activity` que representa sua mensagem. Em muitos canais, isso fará com que a caixa de entrada do cliente seja ativada e o microfone seja fechado, mas ainda assim acessível ao usuário. Por exemplo, a Cortana abrirá o microfone para aceitar a entrada do usuário se o usuário mantiver pressionado o botão de microfone. 
+Para indicar que seu bot está passivamente pronto para entrada mas não está aguardando uma resposta do usuário, defina a propriedade `inputHint` como **acceptingInput** no objeto [Atividade][] que representa sua mensagem. Em muitos canais, isso fará com que a caixa de entrada do cliente seja ativada e o microfone seja fechado, mas ainda assim acessível ao usuário. Por exemplo, a Cortana abrirá o microfone para aceitar a entrada do usuário se o usuário mantiver pressionado o botão de microfone. 
 
 O exemplo a seguir mostra uma solicitação que envia uma mensagem e especifica que o bot está aceitando entrada. Nessa solicitação de exemplo, `https://smba.trafficmanager.net/apis` representa o URI de base; o URI de base para solicitações em que os seus problemas de bot podem ser diferentes. Para obter detalhes sobre como definir o URI de base, veja [Referência da API](bot-framework-rest-connector-api-reference.md#base-uri).
 
@@ -57,7 +57,7 @@ Content-Type: application/json
 
 ## <a name="expecting-input"></a>Esperando uma entrada
 
-Para indicar que seu bot está aguardando uma resposta do usuário, defina a propriedade `inputHint` como **expectingInput** no objeto `Activity` que representa sua mensagem. Em muitos canais, isso fará com que a caixa de entrada do cliente seja ativada e o microfone esteja aberto. 
+Para indicar que seu bot está aguardando uma resposta do usuário, defina a propriedade `inputHint` como **expectingInput** no objeto [Atividade][] que representa sua mensagem. Em muitos canais, isso fará com que a caixa de entrada do cliente seja ativada e o microfone esteja aberto. 
 
 O exemplo a seguir mostra uma solicitação que envia uma mensagem e especifica que o bot está esperando uma entrada. Nessa solicitação de exemplo, `https://smba.trafficmanager.net/apis` representa o URI de base; o URI de base para solicitações em que os seus problemas de bot podem ser diferentes. Para obter detalhes sobre como definir o URI de base, veja [Referência da API](bot-framework-rest-connector-api-reference.md#base-uri).
 
@@ -90,7 +90,7 @@ Content-Type: application/json
 
 ## <a name="ignoring-input"></a>Ignorando a entrada
  
-Para indicar que seu bot não está pronto para receber a entrada do usuário, defina a propriedade `inputHint` como **ignoringInput** no objeto `Activity` representa a mensagem. Em muitos canais, isso fará com que a caixa de entrada do cliente seja desativada e o microfone seja fechado. 
+Para indicar que seu bot não está pronto para receber a entrada do usuário, defina a propriedade `inputHint` como **ignoringInput** no objeto [Atividade][] que representa a mensagem. Em muitos canais, isso fará com que a caixa de entrada do cliente seja desativada e o microfone seja fechado. 
 
 O exemplo a seguir mostra uma solicitação que envia uma mensagem e especifica que o bot está ignorando a entrada. Nessa solicitação de exemplo, `https://smba.trafficmanager.net/apis` representa o URI de base; o URI de base para solicitações em que os seus problemas de bot podem ser diferentes. Para obter detalhes sobre como definir o URI base, confira [Referência de API](bot-framework-rest-connector-api-reference.md#base-uri).
 
@@ -126,3 +126,4 @@ Content-Type: application/json
 - [Criar mensagens](bot-framework-rest-connector-create-messages.md)
 - [Enviar e receber mensagens](bot-framework-rest-connector-send-and-receive-messages.md)
 
+[Atividade]: bot-framework-rest-connector-api-reference.md#activity-object

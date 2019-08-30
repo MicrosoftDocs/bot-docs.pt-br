@@ -7,16 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 95ec59da7b2b64391a599fa690bf3e8410c3cd53
-ms.sourcegitcommit: a1eaa44f182a7210197bd793250907df00e9edab
+ms.openlocfilehash: 242774949243802c267a9db3b8461113b161c13a
+ms.sourcegitcommit: c200cc2db62dbb46c2a089fb76017cc55bdf26b0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68757192"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70037332"
 ---
 # <a name="implement-channel-specific-functionality"></a>Implementar a funcionalidade específica do canal
 
-Alguns canais fornecem recursos que não podem ser implementados apenas com o uso de [texto e anexos da mensagem](bot-framework-rest-connector-create-messages.md). Para implementar funcionalidades específicas do canal, passe metadados nativos para um canal na propriedade `Activity` do objeto `channelData`. Por exemplo, o bot pode usar a propriedade `channelData` para instruir o Telegram a enviar um adesivo ou para instruir o Office 365 a enviar um email.
+Alguns canais fornecem recursos que não podem ser implementados apenas com o uso de [texto e anexos da mensagem](bot-framework-rest-connector-create-messages.md). Para implementar funcionalidades específicas do canal, passe metadados nativos para um canal na propriedade `channelData` do objeto [Activity[]]. Por exemplo, o bot pode usar a propriedade `channelData` para instruir o Telegram a enviar um adesivo ou para instruir o Office 365 a enviar um email.
 
 Este artigo descreve como usar a propriedade `channelData` de uma atividade de mensagem para implementar esta funcionalidade específica do canal:
 
@@ -275,3 +275,5 @@ Este snippet mostra um exemplo da propriedade `channelData` para uma mensagem na
 - [Enviar e receber mensagens](bot-framework-rest-connector-send-and-receive-messages.md)
 - [Esquema de atividade Bot Framework](https://aka.ms/botSpecs-activitySchema)
 - [Visualizar recursos com o Inspetor de Canal](../bot-service-channel-inspector.md)
+
+[Activity]: bot-framework-rest-connector-api-reference.md#activity-object

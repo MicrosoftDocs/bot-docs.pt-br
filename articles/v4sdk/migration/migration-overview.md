@@ -7,15 +7,14 @@ ms.author: v-mimiel
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 06/11/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b1082e16933da1fb4c20f51d4764ec1774aabdb6
-ms.sourcegitcommit: 4f78e68507fa3594971bfcbb13231c5bfd2ba555
+ms.openlocfilehash: 576947edf99705e5d0d8850837b3469f13381d06
+ms.sourcegitcommit: 008aa6223aef800c3abccda9a7f72684959ce5e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68292186"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70026413"
 ---
 # <a name="migration-overview"></a>Visão geral da migração
 
@@ -94,10 +93,12 @@ O SDK v4 do Bot Framework é compatível com o mesmo Bot Framework Service subja
 
 ### <a name="migration-estimation-worksheet"></a>Planilha de estimativa de migração
 
-A planilha a seguir pode orientá-lo na estimativa de sua carga de trabalho de migração. Na coluna **Ocorrências**, substitua *contagem* pelo seu valor numérico real. Na coluna **Camiseta**, insira valores como: *Pequeno*, *Médio*, *Grande* com base em sua estimativa.
+As planilhas a seguir podem orientá-lo na estimativa de sua carga de trabalho de migração. Na coluna **Ocorrências**, substitua *contagem* pelo seu valor numérico real. Na coluna **Camiseta**, insira valores como: *Pequeno*, *Médio*, *Grande* com base em sua estimativa.
 
-Etapa | V3 | V4 | Ocorrências | Complexidade | Camiseta
--- | -- | -- | -- | -- | --
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
+| Etapa | V3 | V4 | Ocorrências | Complexidade | Camiseta |
+| -- | -- | -- | -- | -- | -- |
 Para obter a atividade de entrada | IDialogContext.Activity | ITurnContext.Activity | count | Pequena  
 Para criar e enviar uma atividade para o usuário | activity.CreateReply(“text”) IDialogContext.PostAsync | MessageFactory.Text(“text”) ITurnContext.SendActivityAsync | count | Pequena |
 Gerenciamento de estado | UserData, ConversationData, and PrivateConversationData context.UserData.SetValue context.UserData.TryGetValue botDataStore.LoadAsyn | UserState, ConversationState e PrivateConversationState  Com acessadores de propriedade | context.UserData.SetValue – count context.UserData.TryGetValue – count botDataStore.LoadAsyn – count | Médio a Grande (confira [gerenciamento de estado do usuário](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-state?view=azure-bot-service-4.0#state-management) disponível) |
@@ -111,7 +112,26 @@ Substituir o diálogo atual por um novo diálogo | IDialogContext.Forward | Reto
 Sinaliza que o diálogo atual foi concluído | IDialogContext.Done | Retorne esperar o método EndDialogAsync do contexto da etapa. | count | Média |  
 Falha de um diálogo. | IDialogContext.Fail | Gere uma exceção a ser capturada em outro nível do bot, encerre a etapa com um status de Cancelado ou chame a etapa ou CancelAllDialogsAsync do contexto do diálogo. | count | Pequena |  
 
-### <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+| Etapa | V3 | V4 | Ocorrências | Complexidade | Camiseta |
+| -- | -- | -- | -- | -- | -- |
+Para obter a atividade de entrada | IMessage | TurnContext.activity | count | Pequena  
+Para criar e enviar uma atividade para o usuário | Chamar Session.send('message') | Chamar TurnContext.sendActivity | count | Pequena |
+Gerenciamento de estado | UserState & ConversationState UserState.get(), UserState.saveChanges(), ConversationState.get(), ConversationState.saveChanges() | UserState e ConversationState com acessadores de propriedade | count | Médio a Grande (confira [gerenciamento de estado do usuário](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-state?view=azure-bot-service-4.0#state-management) disponível) |
+Manipula o início do diálogo | chamar session.beginDialog, passando a ID da caixa de diálogo | chamar DialogContext.beginDialog | count | Pequena |  
+Enviar uma atividade | Chamar Session.send | Chamar TurnContext.sendActivity | count | Pequena |  
+Aguarde a resposta do usuário | chame um prompt de dentro da etapa de cascata, ex: builder.Prompts.text(session, 'Insira seu destino'). Recupere a resposta na próxima etapa. | Retorne aguardar TurnContext.prompt para iniciar uma caixa de diálogo de prompt. Em seguida, recupere o resultado na etapa seguinte da cascata. | count | Médio (depende do fluxo) |  
+Manipula a continuação do diálogo | Automático | Adicione mais etapas a uma caixa de diálogo em cascata ou implemente Dialog.continueDialog | count | grande |  
+Sinalize o final do processamento até a mensagem seguinte do usuário | Session.endDialog | Retorne Dialog.EndOfTurn | count | Média |  
+Iniciar um diálogo filho | Session.beginDialog | Retorne aguardar o método beginDialog do contexto da etapa. Se a caixa de diálogo filho retornar um valor, esse valor estará disponível na próxima etapa da cascata por meio da propriedade Result do contexto da etapa. | count | Média |  
+Substituir o diálogo atual por um novo diálogo | Session.replaceDialog | ITurnContext.replaceDialog | count | grande |  
+Sinaliza que o diálogo atual foi concluído | Session.endDialog | Retorne aguardar o método endDialog do contexto da etapa. | count | Média |  
+Falha de um diálogo. | Session.pruneDialogStack | Gere uma exceção a ser capturada em outro nível do bot, encerre a etapa com um status de Cancelado ou chame a etapa ou cancelAllDialogs do contexto da caixa de diálogo. | count | Pequena |  
+
+---
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 O SDK v4 do Bot Framework baseia-se a mesma API REST subjacente que a v3. No entanto, a v4 é uma refatoração da versão anterior do SDK para permitir mais flexibilidade e controle sobre os bots.
 
@@ -138,7 +158,7 @@ Para obter mais informações, confira [Migrar um bot .NET v3 para um bot .NET F
 
 Para obter mais informações, confira [Migrar um bot .NET v3 para um bot .NET Core v4](conversion-core.md).
 
-### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 O **Bot Framework JavaScript SDK v4** introduz várias mudanças fundamentais a como os bots são criados. Essas mudanças afetam a sintaxe para o desenvolvimento de bots em JavaScript, especialmente com relação à criação de objetos de bot, à definição de caixas de diálogo e à lógica de manuseio de evento de codificação. O SDK v4 do Bot Framework baseia-se a mesma API REST subjacente que a v3. No entanto, a v4 é uma refatoração da versão anterior do SDK para dar mais flexibilidade e controle sobre os bots, em particular:
 

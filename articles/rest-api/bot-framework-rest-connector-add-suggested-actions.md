@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: e616c3e3b8d7ee82f5685fe1edc69059acffb1b1
-ms.sourcegitcommit: a1eaa44f182a7210197bd793250907df00e9edab
+ms.openlocfilehash: b8b0eb454b77332a8b19104af78d9553582ab854
+ms.sourcegitcommit: c200cc2db62dbb46c2a089fb76017cc55bdf26b0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68757074"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70037142"
 ---
 # <a name="add-suggested-actions-to-messages"></a>Adicionar ações sugeridas a mensagens
 > [!div class="op_single_selector"]
@@ -24,7 +24,7 @@ ms.locfileid: "68757074"
 
 ## <a name="send-suggested-actions"></a>Enviar ações sugeridas
 
-Para adicionar ações sugeridas a uma mensagem, defina a propriedade `suggestedActions` da `Activity` para especificar a lista de objetos `CardAction` que representam os botões a serem apresentados ao usuário. 
+Para adicionar ações sugeridas a uma mensagem, defina a propriedade `suggestedActions` do objeto [Atividade][] para especificar a lista de objetos [CardAction][] que representam os botões a serem apresentados ao usuário. 
 
 A solicitação a seguir envia uma mensagem que apresenta três ações sugeridas para o usuário. Nessa solicitação de exemplo, `https://smba.trafficmanager.net/apis` representa o URI de base; o URI de base para solicitações em que os seus problemas de bot podem ser diferentes. Para obter detalhes sobre como definir o URI de base, veja [Referência da API](bot-framework-rest-connector-api-reference.md#base-uri).
 
@@ -82,3 +82,6 @@ Quando o usuário tocar em uma das ações sugeridas, o bot receberá uma mensag
 - [Enviar e receber mensagens](bot-framework-rest-connector-send-and-receive-messages.md)
 
 [channelInspector]: ../bot-service-channel-inspector.md
+
+[Atividade]: bot-framework-rest-connector-api-reference.md#activity-object
+[CardAction]: bot-framework-rest-connector-api-reference.md#cardaction-object

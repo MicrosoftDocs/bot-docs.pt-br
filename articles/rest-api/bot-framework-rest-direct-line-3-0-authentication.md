@@ -6,14 +6,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
-ms.date: 04/10/2019
-ms.openlocfilehash: 717a95d580bad218ade9a884522724f1c6b96ad7
-ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
+ms.date: 08/22/2019
+ms.openlocfilehash: d79cea421e6743c504e3fa68056de71974194923
+ms.sourcegitcommit: c200cc2db62dbb46c2a089fb76017cc55bdf26b0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65032643"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70037440"
 ---
 # <a name="authentication"></a>Authentication
 
@@ -140,7 +139,132 @@ HTTP/1.1 200 OK
 }
 ```
 
+## <a name="azure-bot-service-authentication"></a>Autenticação do Serviço de Bot do Azure
+
+As informações apresentadas nesta seção se baseiam no artigo [Adicionar autenticação ao bot por meio do Serviço de Bot do Azure](../v4sdk/bot-builder-authentication.md).
+
+A **autenticação do Serviço de Bot do Azure** permite que você autentique usuários e obtenha **tokens de acesso** de uma variedade de provedores de identidade, como o *Azure Active Directory*, *GitHub*, *Uber* e assim por diante. Você também pode configurar a autenticação de um provedor de identidade **OAuth2** personalizado. Tudo isso permite que você escreva **uma parte do código de autenticação** que funciona em todos os provedores de identidade e canais com suporte. Para utilizar essas funcionalidades, é necessário seguir estas etapas:
+
+1. Configure estatisticamente o `settings` em seu bot que contém os detalhes do seu registro de aplicativo com um provedor de identidade.
+2. Use um `OAuthCard`, respaldado pelas informações do aplicativo fornecidas na etapa anterior, para conectar um usuário.
+3. Recupere tokens de acesso por meio da **API do Serviço de Bot do Azure**.
+
+### <a name="security-considerations"></a>Considerações de segurança
+
+<!-- Summarized from: https://blog.botframework.com/2018/09/25/enhanced-direct-line-authentication-features/ -->
+
+Quando você usa a *autenticação do Serviço de Bot do Azure* com o [Webchat](../bot-service-channel-connect-webchat.md), há algumas considerações importantes sobre segurança que você precisa ter em mente.
+
+1. **Representação**. Representação aqui significa um invasor que faz o bot achar que ele é outra pessoa. No Webchat, um invasor pode representar outra pessoa, **alterando a ID de usuário** da sua instância de Webchat. Para evitar isso, é recomendável que os desenvolvedores de bot tornem a **ID de usuário indecifrável**. Se você habilitar as opções de **autenticação aprimorada**, o Serviço de Bot do Azure poderá detectar e rejeitar ainda mais qualquer alteração da ID de usuário. Isso significa que a ID de usuário (`Activity.From.Id`) em mensagens do Direct Line para seu bot sempre será a mesma com a qual você inicializou o Webchat. Observe que esse recurso requer que a ID de usuário comece com `dl_`
+1. **Identidades do usuário**. Você deve saber que está lidando com duas identidades de usuário:
+
+    1. A identidade do usuário em um canal.
+    1. A identidade do usuário em um provedor de identidade no qual o bot está interessado.
+  
+    Quando um bot solicita que o usuário A em um canal conecte-se a um provedor de identidade P, o processo de conexão deve garantir que o usuário A seja aquele que se conecta em P. Se outro usuário B tiver permissão para se conectar, então o usuário A terá acesso ao recurso do usuário B por meio do bot. No Webchat, temos dois mecanismos para verificar se o usuário correto entrou conforme descrito a seguir.
+
+    1. No final da credencial, no passado, o usuário recebia um código de seis dígitos gerado aleatoriamente (também conhecido como código mágico). O usuário deveria digitar esse código na conversa que iniciava a conexão para concluir o processo de entrada. Esse mecanismo tende a resultar em uma experiência de usuário inadequada. Além disso, ele ainda está suscetível a ataques de phishing. Um usuário mal-intencionado pode induzir outro usuário a se conectar e a obter o código mágico por meio de phishing.
+
+    2. Devido aos problemas com a abordagem anterior, o Serviço de Bot do Azure acabou com a necessidade do código mágico. O Serviço de Bot do Azure garante que o processo de conexão só possa ser concluído na **mesma sessão do navegador** que a do próprio Webchat. 
+    Para habilitar essa proteção, como desenvolvedor de bot, você deve iniciar o Webchat com um **token do Direct Line** que contenha uma **lista de domínios confiáveis que possam hospedar o cliente do Webchat do bot**. Antes, você só poderia obter esse token passando um parâmetro opcional não documentado para a API de token do Direct Line. Agora, com as opções de autenticação avançada, você pode especificar estaticamente a lista de domínios confiáveis (origem) na página de configuração do Direct Line.
+
+### <a name="code-examples"></a>Exemplos de código
+
+O seguinte controlador do .NET trabalha com opções de autenticação avançadas habilitadas e retorna um Token do Direct Line e uma ID de usuário.
+
+```csharp
+public class HomeController : Controller
+{
+    public async Task<ActionResult> Index()
+    {
+        var secret = GetSecret();
+
+        HttpClient client = new HttpClient();
+
+        HttpRequestMessage request = new HttpRequestMessage(
+            HttpMethod.Post,
+            $"https://directline.botframework.com/v3/directline/tokens/generate");
+
+        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", secret);
+
+        var userId = $"dl_{Guid.NewGuid()}";
+
+        request.Content = new StringContent(
+            JsonConvert.SerializeObject(
+                new { User = new { Id = userId } }),
+                Encoding.UTF8,
+                "application/json");
+
+        var response = await client.SendAsync(request);
+        string token = String.Empty;
+
+        if (response.IsSuccessStatusCode)
+        {
+            var body = await response.Content.ReadAsStringAsync();
+            token = JsonConvert.DeserializeObject<DirectLineToken>(body).token;
+        }
+
+        var config = new ChatConfig()
+        {
+            Token = token,
+            UserId = userId  
+        };
+
+        return View(config);
+    }
+}
+
+public class DirectLineToken
+{
+    public string conversationId { get; set; }
+    public string token { get; set; }
+    public int expires_in { get; set; }
+}
+public class ChatConfig
+{
+    public string Token { get; set; }
+    public string UserId { get; set; }
+}
+
+```
+
+O seguinte controlador do JavaScript trabalha com opções de autenticação avançadas habilitadas e retorna um Token do Direct Line e uma ID de usuário.
+
+```javascript
+var router = express.Router(); // get an instance of the express Router
+
+// Get a directline configuration (accessed at GET /api/config)
+const userId = "dl_" + createUniqueId();
+
+router.get('/config', function(req, res) {
+    const options = {
+        method: 'POST',
+        uri: 'https://directline.botframework.com/v3/directline/tokens/generate',
+        headers: {
+            'Authorization': 'Bearer ' + secret
+        },
+        json: {
+            User: { Id: userId }
+        }
+    };
+
+    request.post(options, (error, response, body) => {
+        if (!error && response.statusCode < 300) {
+            res.json({ 
+                    token: body.token,
+                    userId: userId
+                });
+        }
+        else {
+            res.status(500).send('Call to retrieve token from Direct Line failed');
+        } 
+    });
+});
+
+```
+
 ## <a name="additional-resources"></a>Recursos adicionais
 
 - [Principais conceitos](bot-framework-rest-direct-line-3-0-concepts.md)
 - [Conectar um bot à Linha Direta](../bot-service-channel-connect-directline.md)
+- [Adicionar autenticação ao seu bot por meio do Serviço de Bot do Azure](../bot-builder-tutorial-authentication.md)

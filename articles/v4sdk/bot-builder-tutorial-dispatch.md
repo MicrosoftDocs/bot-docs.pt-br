@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 26622b5757a2fb8e7297484c02d1d8ba1a2c1b04
-ms.sourcegitcommit: a1eaa44f182a7210197bd793250907df00e9edab
+ms.openlocfilehash: 4d95eafeb5b1b5923f38c40e884b5e3cee8b16eb
+ms.sourcegitcommit: 008aa6223aef800c3abccda9a7f72684959ce5e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68757196"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70026340"
 ---
 # <a name="use-multiple-luis-and-qna-models"></a>Usar vários modelos de LUIS e QnA
 
@@ -67,23 +67,23 @@ Antes de criar o modelo do Dispatch, você precisará ter seus aplicativos LUIS 
 | QnAMaker  | Uma base de dados de conhecimento do QnA Maker que fornece respostas a perguntas simples sobre o bot. |
 
 ### <a name="create-luis-apps"></a>Criar aplicativos LUIS
-1. Faça logon no [portal da Web do LUIS](https://www.luis.ai/). Na seção _Meus aplicativos_ , selecione a guia _Importar novo aplicativo_ . A caixa de diálogo a seguir será exibida:
+1. Faça logon no [portal da Web do LUIS](https://www.luis.ai/). Na seção _Meus aplicativos_, selecione a guia _Importar novo aplicativo_. A caixa de diálogo a seguir será exibida:
 
     ![Importar arquivo json do LUIS](./media/tutorial-dispatch/import-new-luis-app.png)
 
-2. Selecione o botão _Escolher arquivo de aplicativo_ , navegue até a pasta CognitiveModel do código de exemplo e selecione o arquivo 'HomeAutomation.json'. Deixe o campo de nome opcional em branco. 
+2. Selecione o botão _Escolher arquivo de aplicativo_, navegue até a pasta CognitiveModel do código de exemplo e selecione o arquivo 'HomeAutomation.json'. Deixe o campo de nome opcional em branco. 
 
-3. Selecione _Concluído_ .
+3. Selecione _Concluído_.
 
-4. Depois que o LUIS abrir seu aplicativo de automação residencial, selecione o botão _Treinar_ . Isso treinará seu aplicativo usando o conjunto de declarações que você acabou de importar usando o arquivo “home-automation.json”.
+4. Depois que o LUIS abrir seu aplicativo de automação residencial, selecione o botão _Treinar_. Isso treinará seu aplicativo usando o conjunto de declarações que você acabou de importar usando o arquivo “home-automation.json”.
 
-5. Quando o treinamento estiver concluído, selecione o botão _Publicar_ . A caixa de diálogo a seguir será exibida:
+5. Quando o treinamento estiver concluído, selecione o botão _Publicar_. A caixa de diálogo a seguir será exibida:
 
     ![Publicar aplicativo LUIS](./media/tutorial-dispatch/publish-luis-app.png)
 
-6. Escolha o ambiente de “produção” e, em seguida, selecione o botão _Publicar_ .
+6. Escolha o ambiente de “produção” e, em seguida, selecione o botão _Publicar_.
 
-7. Depois que seu novo aplicativo LUIS tiver sido publicado, selecione a guia _GERENCIAR_ . Na página de informações do aplicativo, registre os valores `Application ID` como " _" e `Display name` como " _". Na página 'Chave e Pontos de Extremidade', registre os valores `Authoring Key` como " _" e `Region` como " _". Esses valores serão usados posteriormente no seu arquivo “appsetting.json”.
+7. Depois que seu novo aplicativo LUIS tiver sido publicado, selecione a guia _GERENCIAR_. Na página de informações do aplicativo, registre os valores `Application ID` como "_app-id-for-app_" e `Display name` como "_name-of-app_". Na página 'Chave e Pontos de Extremidade', registre os valores `Authoring Key` como "_your-luis-authoring-key_" e `Region` como "_your-region_". Esses valores serão usados posteriormente no seu arquivo “appsetting.json”.
 
 8. Uma vez concluído, _Treine_ e _Publique_ o aplicativo de **previsão do tempo** do LUIS e o aplicativo de **expedição** do LUIS repetindo as etapas acima para o arquivo 'Weather.json'.
 
@@ -99,7 +99,7 @@ Depois que o serviço QnA Maker é criado no Azure, você precisa registrar a _C
 
     ![Selecionar chaves do Serviço Cognitivo](./media/tutorial-dispatch/select-cognitive-service-keys.png)
 
-1. Selecione o ícone Chaves encontrado sob a seção _Gerenciamento de Recursos_ , no menu à esquerda.
+1. Selecione o ícone Chaves encontrado sob a seção _Gerenciamento de Recursos_, no menu à esquerda.
 
     ![Selecionar chave 1 do Serviço Cognitivo](./media/tutorial-dispatch/select-cognitive-service-key1.png)
 
@@ -120,15 +120,15 @@ Depois que o serviço QnA Maker é criado no Azure, você precisa registrar a _C
 
     ![Crie QnA Etapa 3](./media/tutorial-dispatch/create-qna-step-3.png)
 
-1. Na etapa 4, selecione a opção _+ Adicionar Arquivo_ , navegue até a pasta CognitiveModel do código de exemplo e selecione o arquivo 'QnAMaker.tsv'. Há uma seleção adicional para adicionar uma personalidade de _Bate-papo_ à sua base de dados de conhecimento, mas nosso exemplo não inclui essa opção.
+1. Na etapa 4, selecione a opção _+ Adicionar Arquivo_, navegue até a pasta CognitiveModel do código de exemplo e selecione o arquivo 'QnAMaker.tsv'. Há uma seleção adicional para adicionar uma personalidade de _Bate-papo_ à sua base de dados de conhecimento, mas nosso exemplo não inclui essa opção.
 
     ![Criar QnA Etapa 4](./media/tutorial-dispatch/create-qna-step-4.png)
 
-1. Na etapa 5, selecione _Criar sua base de dados de conhecimento_ .
+1. Na etapa 5, selecione _Criar sua base de dados de conhecimento_.
 
 1. Depois que a base de dados de conhecimento for criada com base no arquivo carregado, selecione _Salvar e treinar_ e, quando terminar, selecione a guia _PUBLICAR_ e publique o aplicativo.
 
-1. Depois que seu aplicativo do QnA Maker for publicado, selecione a guia _CONFIGURAÇÕES_ e role para baixo até os “Detalhes da implantação”. Registre os seguintes valores da solicitação HTTP de exemplo, _Carteiro_ .
+1. Depois que seu aplicativo do QnA Maker for publicado, selecione a guia _CONFIGURAÇÕES_ e role para baixo até os “Detalhes da implantação”. Registre os seguintes valores da solicitação HTTP de exemplo, _Carteiro_.
 
     ```text
     POST /knowledge bases/<knowledge-base-id>/generateAnswer
@@ -271,6 +271,7 @@ Depois que todos os aplicativos de serviço forem criados, as informações para
 Adicione os valores de conexão de serviço conforme mostrado abaixo:
 
 **.env**
+
 ```file
 MicrosoftAppId=""
 MicrosoftAppPassword=""
@@ -282,8 +283,8 @@ QnAEndpointHostName="<your-hostname>"
 LuisAppId=<app-id-for-dispatch-app>
 LuisAPIKey=<your-luis-endpoint-key>
 LuisAPIHostName=<your-dispatch-app-region>
-
 ```
+
 Quando todas as alterações tiverem sido realizadas, salve esse arquivo.
 
 ---
@@ -301,10 +302,10 @@ Em **BotServices.cs**, as informações contidas no arquivo de configuração _a
 
 ## <a name="javascripttabjs"></a>[JavaScript](#tab/js)
 
-Em **dispatchBot.js**, as informações contidas no arquivo de configuração _.env_ são usadas para conectar o bot de expedição aos serviços _LuisRecognizer(Dispatch)_ e  _QnA Maker_ . Os construtores usam os valores fornecidos para se conectarem a esses serviços.
+Em **dispatchBot.js**, as informações contidas no arquivo de configuração _.env_ são usadas para conectar o bot de expedição aos serviços _LuisRecognizer(Dispatch)_ e  _QnA Maker_. Os construtores usam os valores fornecidos para se conectarem a esses serviços.
 
-**dispatchBot.js**  
-[!code-javascript[ReadConfigurationInfo](~/../botbuilder-samples/samples/javascript_nodejs/14.nlp-with-dispatch/bots/dispatchBot.js?range=18-31)]
+**bots/dispatchBot.js**  
+[!code-javascript[ReadConfigurationInfo](~/../botbuilder-samples/samples/javascript_nodejs/14.nlp-with-dispatch/bots/dispatchBot.js?range=11-24)]
 
 ---
 
@@ -316,16 +317,16 @@ Para cada entrada do usuário, a lógica do bot verifica a entrada com base no m
 
 No arquivo **DispatchBot.cs**, sempre que o método `OnMessageActivityAsync` é chamado, verificamos a mensagem da entrada do usuário com base no modelo do Dispatch. Em seguida, transmitimos `topIntent` e `recognizerResult` do modelo do Dispatch para o método correto para chamar o serviço e retornar o resultado.
 
-**DispatchBot.cs**  
+**bots\DispatchBot.cs**  
 [!code-csharp[OnMessageActivity](~/../botbuilder-samples/samples/csharp_dotnetcore/14.nlp-with-dispatch/bots/DispatchBot.cs?range=26-36)]
 
 ## <a name="javascripttabjs"></a>[JavaScript](#tab/js)
 
-No método **dispatchBot.js** `onMessage`, verificamos a mensagem de entrada do usuário com base no modelo do Dispatch, encontramos a _topIntent_ e a transmitimos chamando  _dispatchToTopIntentAsync_ .
+No método **dispatchBot.js** `onMessage`, verificamos a mensagem de entrada do usuário com base no modelo do Dispatch, encontramos a _topIntent_ e a transmitimos chamando  _dispatchToTopIntentAsync_.
 
-**dispatchBot.js**  
+**bots/dispatchBot.js**  
 
-[!code-javascript[OnMessageActivity](~/../botbuilder-samples/samples/javascript_nodejs/14.nlp-with-dispatch/bots/dispatchBot.js?range=37-50)]
+[!code-javascript[OnMessageActivity](~/../botbuilder-samples/samples/javascript_nodejs/14.nlp-with-dispatch/bots/dispatchBot.js?range=29-42)]
 
 ---
 
@@ -335,10 +336,10 @@ No método **dispatchBot.js** `onMessage`, verificamos a mensagem de entrada do 
 
 Quando o modelo produz um resultado, ele indica qual serviço pode processar mais adequadamente a declaração. O código neste bot encaminha a solicitação para o serviço correspondente e, então, resume a resposta do serviço chamado. Dependendo da _intenção_ retornada pelo Dispatch, esse código usa a intenção retornada para encaminhar para o modelo LUIS ou serviço QnA correto.
 
-**DispatchBot.cs**  
+**bots\DispatchBot.cs**  
 [!code-csharp[DispatchToTop](~/../botbuilder-samples/samples/csharp_dotnetcore/14.nlp-with-dispatch/bots/DispatchBot.cs?range=51-69)]
 
-Se o método `ProcessHomeAutomationAsync` ou `ProcessWeatherAsync` for invocado, ele transmite os resultados do modelo de expedição em _luisResult.ConnectedServiceResult_ . O método especificado fornece comentários do usuário mostrando a principal intenção do modelo de expedição, além de uma lista classificada de todas as intenções e entidades que foram detectadas.
+Se o método `ProcessHomeAutomationAsync` ou `ProcessWeatherAsync` for invocado, ele transmite os resultados do modelo de expedição em _luisResult.ConnectedServiceResult_. O método especificado fornece comentários do usuário mostrando a principal intenção do modelo de expedição, além de uma lista classificada de todas as intenções e entidades que foram detectadas.
 
 Se o método `q_sample-qna` for invocado, ele usará a entrada do usuário contida em turnContext para gerar uma resposta da base de dados de conhecimento e exibirá o resultado ao usuário.
 
@@ -346,10 +347,10 @@ Se o método `q_sample-qna` for invocado, ele usará a entrada do usuário conti
 
 Quando o modelo produz um resultado, ele indica qual serviço pode processar mais adequadamente a declaração. O código neste exemplo usa a _topIntent_ reconhecida para mostrar como encaminhar a solicitação para o serviço correspondente.
 
-**DispatchBot.cs**  
-[!code-javascript[DispatchToTop](~/../botbuilder-samples/samples/javascript_nodejs/14.nlp-with-dispatch/bots/dispatchBot.js?range=67-83)]
+**bots/dispatchBot.js**  
+[!code-javascript[dispatchToTopIntentAsync](~/../botbuilder-samples/samples/javascript_nodejs/14.nlp-with-dispatch/bots/dispatchBot.js?range=59-75)]
 
-Se o método `processHomeAutomation` ou `processWeather` for invocado, ele transmitirá os resultados do modelo de expedição em _recognizerResult.luisResult_ . O método especificado fornece comentários do usuário mostrando a principal intenção do modelo de expedição, além de uma lista classificada de todas as intenções e entidades que foram detectadas.
+Se o método `processHomeAutomation` ou `processWeather` for invocado, ele transmitirá os resultados do modelo de expedição em _recognizerResult.luisResult_. O método especificado fornece comentários do usuário mostrando a principal intenção do modelo de expedição, além de uma lista classificada de todas as intenções e entidades que foram detectadas.
 
 Se o método `q_sample-qna` for invocado, ele usará a entrada do usuário contida em turnContext para gerar uma resposta da base de dados de conhecimento e exibirá o resultado ao usuário.
 
@@ -461,7 +462,7 @@ Este exemplo cria vários aplicativos e recursos que você pode excluir usando a
 Para excluir recursos do LUIS:
 
 1. Entre no portal [luis.ai](https://www.luis.ai).
-1. Acesse a página _Meus Aplicativos_ .
+1. Acesse a página _Meus Aplicativos_.
 1. Selecione os aplicativos criados por este exemplo.
    - `Home Automation`
    - `Weather`

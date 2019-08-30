@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 10/25/2018
-ms.openlocfilehash: 03facdff733787e95ca3bc68dfee15d747340453
-ms.sourcegitcommit: a1eaa44f182a7210197bd793250907df00e9edab
+ms.openlocfilehash: be56700664e7626c247bb77899dc89f3cac32469
+ms.sourcegitcommit: c200cc2db62dbb46c2a089fb76017cc55bdf26b0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68757089"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70037212"
 ---
 # <a name="add-media-attachments-to-messages"></a>Adicionar anexos de mídia às mensagens
 > [!div class="op_single_selector"]
@@ -27,7 +27,7 @@ Bots e canais normalmente trocam cadeias de caracteres de texto, mas alguns cana
 
 ## <a name="add-a-media-attachment"></a>Adicionar um anexo de mídia  
 
-Para adicionar um anexo de mídia a uma mensagem, crie um objeto `Attachment`, defina a propriedade `name`, defina a propriedade `contentUrl` como a URL do arquivo de mídia e defina a propriedade `contentType` como o tipo de mídia apropriado (por exemplo, **image/png**, **audio/wav**, **video/mp4**). Em seguida, dentro do objeto `Activity` que representa sua mensagem, especifique seu objeto `Attachment` dentro da matriz `attachments`. 
+Para adicionar um anexo de mídia a uma mensagem, crie um objeto [Anexo][], defina a propriedade `name`, defina a propriedade `contentUrl` como a URL do arquivo de mídia e defina a propriedade `contentType` como o tipo de mídia apropriado (por exemplo, **image/png**, **audio/wav**, **video/mp4**). Em seguida, dentro do objeto [Atividade][] que representa sua mensagem, especifique seu objeto `Attachment` dentro da matriz `attachments`.
 
 O exemplo a seguir mostra uma solicitação que envia uma mensagem contendo o texto e um anexo de imagem única. Nessa solicitação de exemplo, `https://smba.trafficmanager.net/apis` representa o URI de base; o URI de base para solicitações em que os seus problemas de bot podem ser diferentes. Para obter detalhes sobre como definir o URI de base, veja [Referência da API](bot-framework-rest-connector-api-reference.md#base-uri).
 
@@ -101,7 +101,7 @@ Você pode anexar um arquivo de vídeo ou áudio a uma mensagem usando o mesmo p
 
 ## <a name="add-an-audiocard-attachment"></a>Adicionar um anexo de AudioCard
 
-Adicionar um anexo de `AudioCard` ou `VideoCard` é o mesmo que adicionar um anexo de mídia. Por exemplo, o JSON a seguir mostra como adicionar uma cartão de áudio ao anexo de mídia.
+A adição de um anexo de [AudioCard][] ou [VideoCard][] é o mesmo que adicionar um anexo de mídia. Por exemplo, o JSON a seguir mostra como adicionar uma cartão de áudio ao anexo de mídia.
 
 ```json
 {
@@ -177,3 +177,8 @@ O nome do evento de mídia **media/pause** aparecerá no campo `activity.name`. 
 - [Adicionar cartões ricos mensagens](bot-framework-rest-connector-add-rich-cards.md)
 - [Esquema de atividade Bot Framework](https://aka.ms/botSpecs-activitySchema)
 - [Esquema de cartão do bot Framework](https://aka.ms/botSpecs-cardSchema)
+
+[Atividade]: bot-framework-rest-connector-api-reference.md#activity-object
+[Anexo]: bot-framework-rest-connector-api-reference.md#attachment-object
+[AudioCard]: bot-framework-rest-connector-api-reference.md#audiocard-object
+[VideoCard]: bot-framework-rest-connector-api-reference.md#videocard-object
