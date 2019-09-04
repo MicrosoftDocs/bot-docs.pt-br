@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2b238f4455fc031e1d8ac66f9b408e6d5d936ec9
-ms.sourcegitcommit: 7b3d2b5b9b8ce77887a9e6124a347ad798a139ca
+ms.openlocfilehash: dedd9c7eb8d562acd30e137cb1a99f618f79ff7e
+ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68991925"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70167328"
 ---
 # <a name="virtual-assistant-overview"></a>Visão geral do Assistente Virtual
 
@@ -33,7 +33,7 @@ O escopo da funcionalidade do Assistente Virtual é amplo, normalmente oferecend
 
 ## <a name="getting-started"></a>Introdução
 
-Examine a documentação [Assistente Virtual e Habilidades](https://aka.ms/bfsolutionsdocs) para ver informações mais detalhadas.
+Examine a documentação [Assistente Virtual e Habilidades](https://aka.ms/bf-solutions-docs) para ver informações mais detalhadas.
 
 ## <a name="whats-in-the-box"></a>Conteúdo 
 
@@ -106,4 +106,4 @@ Todos os aspectos de cada habilidade (modelo de linguagem, diálogos, código de
 
 ## <a name="getting-started"></a>Introdução
 
-Consulte os [tutoriais](https://aka.ms/bfstutorials) para saber como criar e implantar seu Assistente Virtual.
+Consulte os [tutoriais](https://aka.ms/bfs-tutorials) para saber como criar e implantar seu Assistente Virtual.

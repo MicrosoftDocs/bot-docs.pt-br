@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 72c4d972b3f403beadad6d098a3c639cbbc1694d
-ms.sourcegitcommit: 9e1034a86ffdf2289b0d13cba2bd9bdf1958e7bc
+ms.openlocfilehash: 014f5c998fcb9d322439ca8b0e0bf2ba5f9f0679
+ms.sourcegitcommit: 0b647dc6716b0c06f04ee22ebdd7b53039c2784a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69890548"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70076511"
 ---
 # <a name="register-a-bot-with-azure-bot-service"></a>Registrar um bot com o Serviço de Bot do Azure
 
@@ -32,6 +32,7 @@ Isso permite que você crie, conecte e gerencie seu bot para interagir com os us
 
 1. No painel esquerdo, clique em **Criar um recurso**.
 1. Na caixa de seleção do painel direito, insira *bot*. E, na lista suspensa, selecione o **Registro de Canais de Bot** ou o **Bot do Aplicativo Web**, dependendo do seu aplicativo.
+No **Aplicativo Web do bot**, siga as etapas descritas no artigo: [Criar um bot com o Serviço de Bot do Azure](v4sdk/abs-quickstart.md). Você criará um bot no Azure que é registrado automaticamente no Serviço de Bot do Azure.
 1. Clique no botão **Criar** para iniciar o processo.
 1. Na folha **Serviço de Bot**, forneça as informações solicitadas sobre o bot, conforme especificado na tabela abaixo da imagem.  
 
@@ -75,8 +76,6 @@ Para obter a senha, siga as etapas descritas a seguir.
     ![Criar uma folha de bot de registro](media/azure-bot-quickstarts/bot-channels-registration-app-secrets-create.png)
 
     Isso irá gerar uma nova senha para o seu bot. Copie esta senha e salve-a em um arquivo. Esta é a única vez que você verá a senha. Se você não tiver a senha completa salva, será preciso repetir o processo para criar uma nova senha caso precise dela posteriormente.
-
-No **Aplicativo Web do bot**, siga as etapas descritas no artigo: [Criar um bot com o Serviço de Bot do Azure](v4sdk/abs-quickstart.md). Você criará um bot no Azure que é registrado automaticamente no Serviço de Bot do Azure.
 
 ## <a name="manual-app-registration"></a>Registro manual do aplicativo
 

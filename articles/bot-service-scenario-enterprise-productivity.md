@@ -2,18 +2,18 @@
 title: Cenário de bot de Produtividade Empresarial| Microsoft Docs
 description: Explore o cenário de bot de Produtividade Empresarial com o Bot Framework.
 author: BrianRandell
-ms.author: v-brra
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 1fe68144662be3de349d05ea861a230641ae1efb
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 3ae87b52864ae1a9a4b7b439529e5093d6d3be8e
+ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49996704"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70167075"
 ---
 # <a name="enterprise-productivity-bot-scenario"></a>Cenário de bot de Produtividade Empresarial
 
@@ -34,7 +34,7 @@ Aqui é apresentado o fluxo lógico de um bot de Produtividade Empresarial:
 5. As informações são retornadas ao funcionário que pode filtrar os dados sem sair do bot.
 6. O Application Insights coleta a telemetria do tempo de execução para ajudar no desenvolvimento e uso do bot.
 
-Baixe ou clone o código-fonte desse bot de exemplo em [Exemplos para cenários comuns do Bot Framework](https://aka.ms/bot/scenarios).
+Baixe ou clone o código-fonte desse bot de exemplo em [Exemplos para cenários comuns do Bot Framework](https://aka.ms/abs-scenarios).
 
 ## <a name="sample-bot"></a>Bot de exemplo
 Como os bots são acessíveis através de uma variedade de canais, é possível utilizá-los na área de trabalho a partir de um portal corporativo ou pelo Skype, onde quer que você esteja - basta autenticar-se. Com a integração do Azure AD, o bot de Produtividade Empresarial reconhece que se é possível acessá-lo, significa que você foi autenticado pelo Azure AD. A partir disso, será possível pedir ao bot para verificar o próximo compromisso com um cliente específico. O bot obtém essas informações, consultando o Office 365 por meio da API do Graph. Portanto, se houver um compromisso nos próximos sete dias, o bot consultará o CRM procurando por casos recentes para o cliente. O bot responderá o número de casos em aberto ou fechados ou se nenhum caso foi encontrado. Em seguida, será possível pedir ao Bot para listar os casos por tipo e detalhar casos individuais.

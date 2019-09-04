@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 02/10/2019
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: c37cf7e68a73c58331cefcc1326879ae09235b68
-ms.sourcegitcommit: 6a83b2c8ab2902121e8ee9531a7aa2d85b827396
+ms.openlocfilehash: cd37f973bb5b8ca9528c83e30d83f97145786508
+ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68866669"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70167227"
 ---
 # <a name="build-a-speech-enabled-bot-with-cortana-skills"></a>Criar um bot habilitado para fala com habilidades da Cortana
 
@@ -434,8 +434,8 @@ Se você tiver um bot em execução localmente ou implantado na nuvem, você pod
 [Send]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.session#send
 [CortanaDevCenter]: https://developer.microsoft.com/cortana
 
-[CortanaSpecificEntities]: https://aka.ms/lgvcto
-[CortanaAuth]: https://aka.ms/vsdqcj
+[CortanaSpecificEntities]: https://aka.ms/cortana-channel-data
+[CortanaAuth]: https://aka.ms/add-auth-cortana-skill
 
 [InvocationNameGuidelines]: https://aka.ms/cortana-invocation-guidelines
 [VoiceDesign]: https://aka.ms/cortana-design-voice

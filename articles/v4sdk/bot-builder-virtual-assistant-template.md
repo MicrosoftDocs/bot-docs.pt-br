@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 6bf567729e0c4799672f773ddcfadb4fabfa36fc
-ms.sourcegitcommit: 7b3d2b5b9b8ce77887a9e6124a347ad798a139ca
+ms.openlocfilehash: 82385510894213a386c3f38836c85aad44306a23
+ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68991943"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70167062"
 ---
 # <a name="virtual-assistant---template-outline"></a>Assistente Virtual - Descrição do Modelo
 
@@ -80,7 +80,7 @@ A telemetria no nível do Bot está intrinsecamente vinculada à telemetria téc
 
 Um componente de middleware, combinado com uma classe wrapper em torno das classes de SDK QnA Maker e LuisRecognizer, fornece uma maneira elegante de coletar um conjunto consistente de eventos. Esses eventos consistentes podem ser usados pelas ferramentas do Application Insights juntamente com ferramentas como o Power BI.
 
-Um exemplo de dashboard do Power BI faz parte do repositório do GitHub para Soluções do Bot Framework e funciona instantaneamente com todos os modelos de Assistente Virtual. Confira a seção [Análise](https://aka.ms/bfsanalytics) para obter mais informações.
+Um exemplo de dashboard do Power BI faz parte do repositório do GitHub para Soluções do Bot Framework e funciona instantaneamente com todos os modelos de Assistente Virtual. Confira a seção [Análise](https://aka.ms/bfs-analytics) para obter mais informações.
 
 ![Exemplo de análise](./media/enterprise-template/powerbi-conversationanalytics-luisintents.png)
 
@@ -120,8 +120,8 @@ O Content Moderator é um componente opcional que permite a detecção de possí
 Um componente de middleware é fornecido para fazer a triagem de texto e aparece por meio de um ```TextModeratorResult``` no objeto TurnState.
 
 ## <a name="next-steps"></a>Próximas etapas
-Consulte os [tutoriais](https://aka.ms/bfstutorials) para saber como criar e implantar seu Assistente Virtual. 
+Consulte os [tutoriais](https://aka.ms/bfs-tutorials) para saber como criar e implantar seu Assistente Virtual. 
 
 ## <a name="additional-resources"></a>Recursos adicionais
-O código-fonte completo do Modelo de Assistente Virtual pode ser encontrado no [GitHub](https://aka.ms/bfsolutions).
+O código-fonte completo do Modelo de Assistente Virtual pode ser encontrado no [GitHub](https://aka.ms/bf-solutions).
 

@@ -2,18 +2,18 @@
 title: Cenário de bot de Internet das Coisas | Microsoft Docs
 description: Explore o cenário de bot de Internet das Coisas com o Bot Framework.
 author: BrianRandell
-ms.author: v-brra
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 0cdade289bc7474a3d2597ae54fd2c355a7969f9
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 53a99c4313604d55da6554e927109f0f2f74104c
+ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49996993"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70167362"
 ---
 # <a name="internet-of-things-iot-bot-scenario"></a>Cenário de Bot de IoT (Internet das Coisas)
 
@@ -36,7 +36,7 @@ Este é o fluxo lógico de um bot de IoT:
 ## <a name="sample-bot"></a>Exemplo de bot
 O bot de IoT permitirá que você use rapidamente comandos de chat de canais como Skype ou Slack para controlar sua Hue. Para facilitar o acesso remoto, você chamará miniaplicativos IFTTT predefinidos para trabalhar com a Hue.
 
-Você pode baixar ou clonar o código-fonte deste exemplo de bot em [Exemplos de cenários comuns do Bot Framework](https://aka.ms/bot/scenarios).
+Você pode baixar ou clonar o código-fonte deste exemplo de bot em [Exemplos de cenários comuns do Bot Framework](https://aka.ms/abs-scenarios).
 
 ## <a name="components-youll-use"></a>Componentes que você usará
 O Bot de IoT (Internet das Coisas) usa os seguintes componentes:

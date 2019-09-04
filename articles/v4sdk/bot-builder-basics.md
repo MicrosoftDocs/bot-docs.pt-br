@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: c728962141c1beec89f2830fa15d5985922ddfa5
-ms.sourcegitcommit: 3eaf06dd9691a27a1cd4a7f6434e922cd530795a
+ms.openlocfilehash: 0e8a8275a7ede599b3d25576abcd3c1160873db7
+ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69565399"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70167206"
 ---
 # <a name="how-bots-work"></a>Como funcionam os bots
 
@@ -330,7 +330,7 @@ As próximas partes configuram o servidor e o adaptador que permitem que seu bot
 const server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, () => {
     console.log(`\n${ server.name } listening to ${ server.url }`);
-    console.log(`\nGet Bot Framework Emulator: https://aka.ms/botframework-emulator`);
+    console.log(`\nGet Bot Framework Emulator: https://aka.ms/bot-framework-www-portal-emulator`);
     console.log(`\nTo talk to your bot, open the emulator select "Open Bot"`);
 });
 

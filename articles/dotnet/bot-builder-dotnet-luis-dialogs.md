@@ -2,19 +2,18 @@
 title: Reconhecer intenções e entidades com o LUIS | Microsoft Docs
 description: Saiba como habilitar seu bot para entender o idioma natural usando diálogos do LUIS no SDK do Bot Framework para .NET.
 author: DeniseMak
-ms.author: v-demak
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: cognitive-services
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: ebbaa7473ec44ef9369df25a41873583abc28034
-ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
+ms.openlocfilehash: 7e7eb36d0cb3cdbf18037f05b4960b240cb70d8d
+ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67405659"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70167398"
 ---
 # <a name="recognize-intents-and-entities-with-luis"></a>Reconhecer intenções e entidades com o LUIS 
 
@@ -104,7 +103,7 @@ using Microsoft.Bot.Builder.Luis.Models;
 
 namespace Microsoft.Bot.Sample.LuisBot
 {
-    // For more information about this template visit http://aka.ms/azurebots-csharp-luis
+    // For more information about this template visit http://aka.ms/basic-luis-dialog
     [Serializable]
     public class BasicLuisDialog : LuisDialog<object>
     {

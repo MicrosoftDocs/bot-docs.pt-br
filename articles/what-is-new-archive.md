@@ -2,20 +2,19 @@
 title: Novidades | Microsoft Docs
 description: Conheça as novidades do Bot Framework.
 keywords: bot framework, serviço de bot do azure
-author: ivorb
-ms.author: v-ivorb
+author: kamrani
+ms.author: kamrani
 manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
-ms.subservice: abs
 ms.date: 07/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4553335cbca5b5eb720c7cffd11c8e14c8aa19c1
-ms.sourcegitcommit: 6a83b2c8ab2902121e8ee9531a7aa2d85b827396
+ms.openlocfilehash: 6b0b85abe825e0a4298ceb9985cca1f31e35ddbb
+ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68671526"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70167327"
 ---
 # <a name="whats-new-in-bot-framework-may-2019"></a>Novidades no Bot Framework (maio de 2019)
 
@@ -146,7 +145,7 @@ O [QnA Maker][33] é um serviço de API baseado em nuvem que cria uma camada de 
 [Docs][34]  | [Adicionar o QnA Maker ao bot][35] 
 
 [33]:https://www.qnamaker.ai/
-[34]:https://aka.ms/qnamaker-docs-home
+[34]:https://aka.ms/what-is-qnamaker
 [35]:https://docs.microsoft.com/azure/bot-service/bot-builder-howto-qna?view=azure-bot-service-4.0&branch=pr-en-us-1325&tabs=cs
 
 ### <a name="speech-services"></a>Serviços de Fala

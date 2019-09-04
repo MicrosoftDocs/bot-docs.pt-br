@@ -7,15 +7,14 @@ ms.author: rstand
 manager: rstand
 ms.topic: article
 ms.service: bot-service
-ms.subservice: cognitive-services
 ms.date: 12/17/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 3f9cd112397a66bffb8efd41cbeab6feca8c7d7f
-ms.sourcegitcommit: dbbfcf45a8d0ba66bd4fb5620d093abfa3b2f725
+ms.openlocfilehash: 7dbbe8492761360941eca5e724a7339e28968769
+ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67464615"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70167016"
 ---
 # <a name="cognitive-services"></a>Serviços Cognitivos
 
@@ -68,9 +67,9 @@ Há três APIs de Fala disponíveis nos Serviços Cognitivos para processamento 
 Os seguintes recursos fornecem informações adicionais sobre como adicionar reconhecimento de fala ao bot.
 
 * [Conversas de bot para visão geral de vídeo de Aplicativos](https://channel9.msdn.com/events/Build/2017/P4114)
-* [Biblioteca Microsoft.Bot.Client para aplicativos Xamarin ou UWP](https://aka.ms/BotClient)
-* [Exemplo de biblioteca de clientes de bot](https://aka.ms/BotClientSample)
-* [Cliente de WebChat habilitado para fala](https://aka.ms/BFWebChat)
+* [Biblioteca Microsoft.Bot.Client para aplicativos Xamarin ou UWP](https://aka.ms/bot-client)
+* [Exemplo de biblioteca de clientes de bot](https://aka.ms/trivia-bot-speech-sample)
+* [Cliente de WebChat habilitado para fala](https://aka.ms/BotFramework-WebChat)
 
 Saiba mais sobre [reconhecimento de fala e conversão][speech] com os Serviços Cognitivos da Microsoft.
 

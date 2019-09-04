@@ -2,18 +2,18 @@
 title: Visão geral dos cenários de Serviço de Bot | Microsoft Docs
 description: Explore os principais cenários para bots avançados e eficazes construídos com Serviço de Bot.
 author: BrianRandell
-ms.author: v-brra
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: f8b64e5705085af5b00de6a3c00059dbdea24cb9
-ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
+ms.openlocfilehash: c4a0af8bfd6496b82ddcc9219e948395d87e4ff3
+ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67405765"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70167350"
 ---
 # <a name="bot-scenarios"></a>Cenário de bots
 
@@ -21,7 +21,7 @@ ms.locfileid: "67405765"
 
 Este tópico explora os principais cenários para bots poderosos e eficazes construídos usando o Serviço de Bot.
 
-É possível baixar ou clonar o código-fonte para todos os cenários de exemplos de bot em [Exemplos para cenários comuns do Framework Bot](https://aka.ms/bot/scenarios).
+É possível baixar ou clonar o código-fonte para todos os cenários de exemplos de bot em [Exemplos para cenários comuns do Framework Bot](https://aka.ms/abs-scenarios).
 
 ## <a name="commerce-bot-scenario"></a>Cenário de bot comercial
 O cenário de [bot Comercial](bot-service-scenario-commerce.md) descreve um bot que substitui as interações tradicionais de email e telefone normalmente usadas por serviços de recepção de um hotel. O bot aproveita os Serviços Cognitivos para processar melhor as solicitações do cliente por meio de voz e texto com contexto obtido pela integração com serviços de back-end.
