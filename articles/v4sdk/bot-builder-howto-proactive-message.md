@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: bb243e1530155819afb4ab4061da1e29908f58e4
-ms.sourcegitcommit: 008aa6223aef800c3abccda9a7f72684959ce5e7
+ms.openlocfilehash: 2a1f36e548f92e9c057947f0c5a82e426a8d0d23
+ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70026347"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70167383"
 ---
 # <a name="send-proactive-notifications-to-users"></a>Enviar notificações proativas para os usuários
 
@@ -34,7 +34,7 @@ Para lidar com notificações de forma mais suave, considere outras maneiras de 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - Entenda sobre as [Noções básicas do bot](bot-builder-basics.md).
-- Uma cópia das mensagens proativas em **[CSharp](https://aka.ms/proactive-sample-cs) ou [JavaScript](https://aka.ms/proactive-sample-js)** . Este exemplo é usado para explicar sobre mensagens proativas neste artigo.
+- Uma cópia do exemplo de mensagens proativas em **[C#](https://aka.ms/proactive-sample-cs) ou [JavaScript](https://aka.ms/proactive-sample-js)** . Este exemplo é usado para explicar sobre mensagens proativas neste artigo.
 
 ## <a name="about-the-proactive-sample"></a>Sobre a amostra proativa
 

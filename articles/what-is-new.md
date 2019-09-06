@@ -2,20 +2,19 @@
 title: Novidades | Microsoft Docs
 description: Conheça as novidades do Bot Framework.
 keywords: bot framework, serviço de bot do azure
-author: ivorb
-ms.author: v-ivorb
+author: kamrani
+ms.author: kamrani
 manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
-ms.subservice: abs
 ms.date: 07/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f7083c45e67d8731e25e14577f6b061732ffefd5
-ms.sourcegitcommit: f3fda6791f48ab178721b72d4f4a77c373573e38
+ms.openlocfilehash: 708ad1fac166f312ad6ccf14a024f821f19eaaf2
+ms.sourcegitcommit: e573c586472c5328ce875114308d9d1b73651e62
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68671394"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70224397"
 ---
 # <a name="whats-new-in-bot-framework-july-2019"></a>Novidades no Bot Framework (julho de 2019)
 
@@ -55,7 +54,7 @@ Este artigo resume os principais novos recursos e aprimoramentos no Bot Framewor
 - [SDK do Python do Bot Framework (versão prévia 2)](https://github.com/microsoft/botbuilder-python) | [exemplos](https://github.com/Microsoft/botbuilder-python/tree/master/samples): O SDK do Python agora dá suporte a OAuth, Prompts, CosmosDB e inclui todas as principais funcionalidades no SDK 4.5. Além disso, há exemplos para ajudá-lo a saber mais sobre os novos recursos do SDK.
 
 ## <a name="bot-framework-testing"></a>Testes do Bot Framework
-- [Teste de unidade](http://aka.ms/bot-test-package) | [documentos](https://aka.ms/testing-framework) | [exemplo de C#](https://aka.ms/corebot-test) | [exemplo de JS](https://aka.ms/js-core-test-sample): Respondendo à solicitação dos clientes e desenvolvedores por melhores ferramentas de teste, a versão de julho do SDK apresenta uma nova funcionalidade de teste de unidade. O pacote Microsoft.Bot.Builder.testing simplifica o processo de caixas de diálogo de teste de unidade em seu bot. 
+- [Docs](https://aka.ms/testing-framework) | Pacotes de teste de unidade ([C#](https://aka.ms/nuget-botbuilder-testing)/ [JavaScript](https://aka.ms/npm-botbuilder-testing)) | [Exemplo de C#](https://aka.ms/cs-core-test-sample) | [Exemplo de JS](https://aka.ms/js-core-test-sample): Respondendo à solicitação dos clientes e desenvolvedores por melhores ferramentas de teste, a versão de julho do SDK apresenta uma nova funcionalidade de teste de unidade. O pacote Microsoft.Bot.Builder.testing simplifica o processo de caixas de diálogo de teste de unidade em seu bot.  
 
 - [Testes de canal](https://github.com/Microsoft/BotFramework-Emulator/releases) | [docs](https://aka.ms/channel-testing): 
 

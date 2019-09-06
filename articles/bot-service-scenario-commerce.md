@@ -2,18 +2,18 @@
 title: Cenário de bot comercial| Microsoft Docs
 description: Explore o cenário de bot Comercial com o Bot Framework.
 author: BrianRandell
-ms.author: v-brra
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: f880bc9a424fd9905f7e4ced25e97e2c37155072
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 9e2eac132922ad90437c88404cbfb97f6f495945
+ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49996823"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70167085"
 ---
 # <a name="commerce-bot-scenario"></a>Cenário de bot Comercial
 
@@ -36,7 +36,7 @@ Este é o fluxo lógico de um bot Comercial que funciona como recepcionista de u
 ## <a name="sample-bot"></a>Exemplo de bot
 O exemplo de bot Comercial foi desenvolvido com base no serviço de recepcionista de um hotel fictício. Os clientes acessam o Bot, escrito em C#, após a autenticação do Azure AD B2C em um hotel por meio do aplicativo móvel de serviços para membros da rede. A cadeia armazena as reservas em um Banco de Dados SQL. Um cliente pode usar perguntas com frases naturais como "Quanto custa para alugar um guarda-sol para a minha estadia". O Bot, por sua vez, tem contexto sobre o hotel e a duração da estadia do hóspede. Além disso, o serviço LUIS (Serviço Inteligente de Reconhecimento Vocal) facilita para o bot a obtenção de contexto, mesmo de uma frase simples como "guarda-sol". O Bot fornece a resposta e, em seguida, pode se oferecer para reservar um guarda-sol para o hóspede, fornecendo opções sobre o número de dias e tipo de guarda-sol. Assim que o Bot tiver todos os dados necessários, ele fará a reserva. O hóspede também pode usar a própria voz para fazer a mesma solicitação.
 
-Você pode baixar ou clonar o código-fonte deste exemplo de bot em [Exemplos de cenários comuns do Bot Framework](https://aka.ms/bot/scenarios).
+Você pode baixar ou clonar o código-fonte deste exemplo de bot em [Exemplos de cenários comuns do Bot Framework](https://aka.ms/abs-scenarios).
 
 ## <a name="components-youll-use"></a>Componentes que você usará
 O bot Comercial usa os seguintes componentes:

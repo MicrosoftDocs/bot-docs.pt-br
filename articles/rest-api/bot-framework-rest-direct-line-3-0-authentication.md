@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/22/2019
-ms.openlocfilehash: d79cea421e6743c504e3fa68056de71974194923
-ms.sourcegitcommit: c200cc2db62dbb46c2a089fb76017cc55bdf26b0
+ms.openlocfilehash: 37e02a34e7b8ecc4d501ed7330b6f374548fd5a0
+ms.sourcegitcommit: 0b647dc6716b0c06f04ee22ebdd7b53039c2784a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70037440"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70076564"
 ---
 # <a name="authentication"></a>Authentication
 
@@ -26,7 +26,12 @@ Authorization: Bearer SECRET_OR_TOKEN
 
 Um **segredo** de Linha Direta é uma chave mestra que pode ser usada para acessar qualquer conversa que pertença ao bot associado. Um **segredo** também pode ser usado para obter um **token**. Os segredos não expiram. 
 
-Um **token** de Linha Direta é uma chave que pode ser usada para acessar uma única conversa. Um token expira, mas pode ser atualizado. 
+Um **token** de Linha Direta é uma chave que pode ser usada para acessar uma única conversa. Um token expira, mas pode ser atualizado.
+
+Decidir quando ou se usar a chave **secreta** ou um **token** deve ser baseado em considerações de segurança.
+Expor a chave secreta poderia ser aceitável se fosse feito intencionalmente e com cuidado. Na verdade, esse é o comportamento padrão porque permite que o Direct Line descubra se o cliente é legítimo.
+No entanto, em geral, a segurança será uma preocupação se você estiver tentando manter os dados do usuário.
+Para saber mais, confira a seção [Considerações de segurança](#security-considerations).
 
 Se você estiver criando um aplicativo de serviço a serviço, a abordagem mais simples poderá ser especificar o **segredo** no cabeçalho `Authorization` de solicitações da API da Linha Direta. Se estiver gravando um aplicativo em que o cliente é executado em um navegador da Web ou em um aplicativo móvel, talvez convenha trocar seu segredo por um token (que funciona somente para uma única conversa e irá expirar se não for atualizado) e especificar o **token** no cabeçalho `Authorization` de solicitações de API da Linha Direta. Escolha o modelo de segurança que funcione melhor para você.
 
@@ -167,6 +172,8 @@ Quando você usa a *autenticação do Serviço de Bot do Azure* com o [Webchat](
 
     2. Devido aos problemas com a abordagem anterior, o Serviço de Bot do Azure acabou com a necessidade do código mágico. O Serviço de Bot do Azure garante que o processo de conexão só possa ser concluído na **mesma sessão do navegador** que a do próprio Webchat. 
     Para habilitar essa proteção, como desenvolvedor de bot, você deve iniciar o Webchat com um **token do Direct Line** que contenha uma **lista de domínios confiáveis que possam hospedar o cliente do Webchat do bot**. Antes, você só poderia obter esse token passando um parâmetro opcional não documentado para a API de token do Direct Line. Agora, com as opções de autenticação avançada, você pode especificar estaticamente a lista de domínios confiáveis (origem) na página de configuração do Direct Line.
+
+    Confira também [Adicionar autenticação ao bot por meio do Serviço de Bot do Azure](../v4sdk/bot-builder-authentication.md).
 
 ### <a name="code-examples"></a>Exemplos de código
 

@@ -9,22 +9,21 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 1641260f6673a810e7bc71ecaca1ada234286e42
-ms.sourcegitcommit: 008aa6223aef800c3abccda9a7f72684959ce5e7
+ms.openlocfilehash: b20670b85b876d7cf10dea7f031e4d24221071a8
+ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70026325"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70167149"
 ---
 # <a name="add-natural-language-understanding-to-your-bot"></a>Adicionar reconhecimento de idioma natural ao seu bot
 
 [!INCLUDE[applies-to](../includes/applies-to.md)]
-
 A capacidade de entender o que seu usuário quer dizer contextualmente e em conversas pode ser uma tarefa difícil, mas pode dar ao seu bot uma sensação de conversa mais natural. O Language Understanding, chamado LUIS, permite que você faça exatamente isso para que seu bot possa reconhecer a intenção das mensagens do usuário, permitir uma linguagem mais natural do seu usuário e direcionar melhor o fluxo de conversação. Este tópico explica como adicionar LUIS a um aplicativo de reservas de voo para reconhecer intenções e entidades diferentes contidas na entrada do usuário. 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 - Conta [LUIS](https://www.luis.ai)
-- O código neste artigo baseia-se no exemplo de **Core Bot**. Você precisará de uma cópia do exemplo contida em **[CSharp](https://aka.ms/cs-core-sample) ou em [JavaScript](https://aka.ms/js-core-sample)** . 
+- O código neste artigo baseia-se no exemplo de **Core Bot**. Você precisará de uma cópia do exemplo em **[C#](https://aka.ms/cs-core-sample) ou [JavaScript](https://aka.ms/js-core-sample)** . 
 - Conhecimento das [Noções básicas do bot](bot-builder-basics.md), do [processamento de idioma natural](https://docs.microsoft.com/azure/cognitive-services/luis/what-is-luis) e do [gerenciamento de recursos do bot](bot-file-basics.md).
 
 ## <a name="about-this-sample"></a>Sobre este exemplo

@@ -7,12 +7,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 08/22/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 8eea0bfd49bfd142c648d8ce842e1c24aa8ab45a
-ms.sourcegitcommit: c200cc2db62dbb46c2a089fb76017cc55bdf26b0
+ms.openlocfilehash: 8b12068984396a015bfbb441f9b1e506acbb9154
+ms.sourcegitcommit: 0b647dc6716b0c06f04ee22ebdd7b53039c2784a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70037526"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70076573"
 ---
 <!-- 
 
@@ -431,6 +431,9 @@ Se você usar um *prompt OAuth*, essa atividade de invocação deverá ser encam
 Por fim, não deixe de adicionar um arquivo `TeamsActivityHandler` apropriado (`TeamsActivityHandler.cs` para bots C# e `teamsActivityHandler.js` para bots do JavaScript) no nível mais alto na pasta do bot.
 
 O `TeamsActivityHandler` também envia atividades de *reação de mensagem*. Uma atividade de reação de mensagem faz referência à atividade original usando o campo *responder à ID*. Essa atividade também deve ser visível por meio do [Feed de Atividades][teams-activity-feed] no Microsoft Teams.
+
+> [!NOTE]
+> Você precisa criar um manifesto e incluir `token.botframework.com` na seção `validDomains`; caso contrário, o botão **Entrar** do OAuthCard não abrirá a janela de autenticação. Use o [App Studio](https://docs.microsoft.com/en-us/microsoftteams/platform/get-started/get-started-app-studio) para gerar seu manifesto.
 
 ### <a name="further-reading"></a>Leitura adicional
 

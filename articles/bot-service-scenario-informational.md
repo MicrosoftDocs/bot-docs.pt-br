@@ -2,18 +2,18 @@
 title: Cenário de bot de Informações | Microsoft Docs
 description: Explore o cenário de bot de Informações com o Bot Framework.
 author: BrianRandell
-ms.author: v-brra
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 22902f1f590661c0973d7f0427b13ee45f0d7227
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: f62f58de5e15092e34c1e612ef0b54bc2e4b5886
+ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998983"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70167372"
 ---
 # <a name="information-bot-scenario"></a>Cenário de Bot de Informações
 
@@ -38,7 +38,7 @@ Este é o fluxo lógico de um bot de Informações:
 ## <a name="sample-bot"></a>Exemplo de bot
 O exemplo de Bot, escrito em C#, é executado no Microsoft Azure e trabalha com dados indexados pelo Azure Search a partir de uma instância de Banco de Dados SQL. O Bot expõe uma lista de perguntas que podem ser feitas, com informações sobre como formular a pergunta (a resposta) usando os Serviços Cognitivos: QnA Maker. Em seguida, o usuário do Bot pode digitar uma consulta que procura os dados por meio do Azure Search em uma área ampla ou específica do banco de dados indexado. O exemplo fornece um banco de dados simples com informações sobre clientes e pedidos. O Application Insights controla o uso do Bot e ajuda você a monitorar o Bot em caso de exceções. O Bot é publicado como um aplicativo do Azure AD, assim você pode restringir quem tem acesso às informações.
 
-Você pode baixar ou clonar o código-fonte deste exemplo de bot em [Exemplos de cenários comuns do Bot Framework](https://aka.ms/bot/scenarios).
+Você pode baixar ou clonar o código-fonte deste exemplo de bot em [Exemplos de cenários comuns do Bot Framework](https://aka.ms/abs-scenarios).
 
 ## <a name="components-youll-use"></a>Componentes que você usará
 O bot de Informações usa os seguintes componentes:
@@ -48,7 +48,7 @@ O bot de Informações usa os seguintes componentes:
 -   Application Insights
 
 ### <a name="azure-active-directory-azure-ad"></a>Active Directory do Azure (Azure AD)
-O Active Directory do Azure (AD do Azure) é o serviço de gerenciamento de identidade e diretório multilocatário com base em nuvem da Microsoft. Como um desenvolvedor de Bot, o Azure AD permite que você concentre-se na criação do Bot, tornando-o rápido e simplificando a integração com uma solução de gerenciamento de identidades da mais alta qualidade utilizada por milhões de organizações em todo o mundo. Ao definir um aplicativo Azure AD, você pode controlar quem tem acesso ao seu Bot e aos dados que ele expõe, sem implementar seu próprio sistema complexo de autenticação e autorização.
+O Active Directory do Azure (AD do Azure) é o serviço de gerenciamento de identidade e diretório multilocatário com base em nuvem da Microsoft. Como um desenvolvedor de Bot, o Azure AD permite que você concentre-se na criação do Bot, tornando-o rápido e simplificando a integração com uma solução de gerenciamento de identidades da mais alta qualidade utilizada por milhões de organizações em todo o mundo. Ao definir um aplicativo do Azure AD, será possível controlar quem terá acesso ao Bot e aos dados expostos, sem implementar seu próprio sistema complexo de autenticação e autorização.
 
 ### <a name="cognitive-services-qna-maker"></a>Serviços Cognitivos: QnA Maker
 QnA Maker dos Serviços Cognitivos ajuda você a fornecer uma fonte de dados de perguntas frequentes, a qual seus usuários podem consultar de seu Bot. Ao abordar grandes quantidades de informações armazenadas em sistemas diferentes, pode ser útil ajudar os usuários a filtrar a fonte e o conjunto de informações. Um único Banco de Dados SQL pode ter quantidades enormes de informações e, ao receber uma pesquisa de formulário livre, responde com muitas informações. Começando com o QnA Maker, você pode definir um roteiro para os usuários do Bot, para que eles saibam como fazer perguntas inteligentes que possam ser recuperadas por meio do Azure Search.
