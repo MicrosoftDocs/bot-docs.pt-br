@@ -6,14 +6,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 360ec3a6a6c9a3be16370aaf445f24a237a702e3
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 461ea04e0865991c3a6d643db7511e58d516ec41
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998007"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70299614"
 ---
 # <a name="send-a-message-to-the-bot"></a>Enviar uma mensagem para o bot
 

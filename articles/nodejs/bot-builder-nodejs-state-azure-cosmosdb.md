@@ -2,19 +2,18 @@
 title: Gerenciar dados de estado personalizados com o Azure Cosmos DB | Microsoft Docs
 description: Saiba como salvar e recuperar dados de estado usando o Azure Cosmos DB com o SDK do Bot Framework para Node.js.
 author: DucVo
-ms.author: v-ducvo
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 67e86455aefd000c8a6956a71adcfdb821266196
-ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
+ms.openlocfilehash: dcf4b4cbeb9e0827f0baa4d1a799355bd422a9de
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67404330"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70299688"
 ---
 # <a name="manage-custom-state-data-with-azure-cosmos-db-for-nodejs"></a>Gerenciar dados de estado personalizados com o Azure Cosmos DB for Node.js
 

@@ -3,18 +3,17 @@ title: Definir as configurações do bot | Microsoft Docs
 description: Saiba como configurar as várias opções para seu bot usando o Portal do Azure.
 keywords: definir configurações do bot, nome de exibição, ícone, Application Insights, folha de configurações
 author: v-royhar
-ms.author: v-royhar
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: abs
 ms.date: 12/13/2017
-ms.openlocfilehash: 640e5675adce627ed14d732e529e9a86ec8b195f
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 7497726039823777afeb8a7d317212d859d66a36
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49996683"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70297548"
 ---
 # <a name="configure-bot-settings"></a>Definir as configurações do bot
 

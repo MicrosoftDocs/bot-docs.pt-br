@@ -6,15 +6,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 8741dee2724d5e3c1e650b86957aabec5716da59
-ms.sourcegitcommit: 697a577d72aaf91a0834d4b4c2ef5aa11291f28f
+ms.openlocfilehash: 0465a10082d164e2090a33c9ba20bde2abfaf874
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67496638"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70297219"
 ---
 # <a name="secure-your-bot"></a>Proteger o bot
 

@@ -2,17 +2,18 @@
 title: Configurar cartões adaptáveis | Microsoft Docs
 description: Saiba como configurar cartões adaptáveis.
 author: vkannan
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 ROBOTS: NoIndex, NoFollow
-ms.openlocfilehash: fee70da7288b3214ff7f384998a69b40f91b3226
-ms.sourcegitcommit: dbbfcf45a8d0ba66bd4fb5620d093abfa3b2f725
+ms.openlocfilehash: cb03703b7d301a77d64577ef8e56da3dc7a4e0af
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67464524"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70298552"
 ---
 # <a name="configure-adaptive-cards"></a>Configurar cartões adaptáveis
 > [!IMPORTANT]

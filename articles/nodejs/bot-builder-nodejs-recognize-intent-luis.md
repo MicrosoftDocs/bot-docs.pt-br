@@ -2,19 +2,18 @@
 title: Reconhecer intenções e entidades com o LUIS | Microsoft Docs
 description: Integre um bot ao LUIS para detectar a intenção do usuário e responder adequadamente disparando diálogos usando o SDK do Bot Framework para Node.js.
 author: DeniseMak
-ms.author: v-demak
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 03/28/2018
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 1a3b8a4bfdd73674b972f43fe58afec49c63d8cc
-ms.sourcegitcommit: 23a1808e18176f1704f2f6f2763ace872b1388ae
+ms.openlocfilehash: d3cdbc2c9a2c620860f55cc2c31f3ce3ba5695e1
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "67464802"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70299768"
 ---
 # <a name="recognize-intents-and-entities-with-luis"></a>Reconhecer intenções e entidades com o LUIS 
 

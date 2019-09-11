@@ -2,19 +2,18 @@
 title: Definir etapas de conversa com cascatas | Microsoft Docs
 description: Saiba como usar os diálogos em cascata para definir as etapas de uma conversa com o SDK do Bot Framework para Node.js.
 author: v-ducvo
-ms.author: v-ducvo
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 526091d61f10ac0c241b994aa3ea99c1d2a70074
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: 2a5ade5e6407537e72b520a22d74bc2c3943fce4
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225321"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70299841"
 ---
 # <a name="define-conversation-steps-with-waterfalls"></a>Definir a conversa em cascata
 
@@ -166,7 +165,7 @@ Uma caixa de diálogo que é criada usando uma cascata deverá ser encerrada exp
 
 * `session.endDialog`: use esse método para encerrar a cascata se não houver dados para retornar à caixa de diálogo de chamada.
 
-* `session.endDialogWithResult`: use esse método para encerrar a cascata se houver dados para retornar à caixa de diálogo de chamada. O argumento `response` que é retornado pode ser um objeto JSON ou qualquer tipo de dado primitivo JavaScript. Por exemplo: 
+* `session.endDialogWithResult`: use esse método para encerrar a cascata se houver dados para retornar à caixa de diálogo de chamada. O argumento `response` que é retornado pode ser um objeto JSON ou qualquer tipo de dado primitivo JavaScript. Por exemplo:
   ```javascript
   session.endDialogWithResult({
     response: { name: session.dialogData.name, company: session.dialogData.company }
@@ -175,7 +174,7 @@ Uma caixa de diálogo que é criada usando uma cascata deverá ser encerrada exp
 
 * `session.endConversation`: use esse método para encerrar a cascata se o final da cascata representa o fim da conversa.
 
-Como alternativa ao uso de um desses três métodos para encerrar uma cascata, você pode anexar o gatilho `endConversationAction` à caixa de diálogo. Por exemplo: 
+Como alternativa ao uso de um desses três métodos para encerrar uma cascata, você pode anexar o gatilho `endConversationAction` à caixa de diálogo. Por exemplo:
 
 ```javascript
 bot.dialog('dinnerOrder', [

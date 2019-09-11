@@ -6,15 +6,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: d86ee290ebf33dbfd13017c3fe882ecfdd9102e4
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: c601db171f253b83bfa2d354f79018f03287bcf6
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225721"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70297367"
 ---
 # <a name="send-proactive-messages"></a>Enviar mensagens proativas
 

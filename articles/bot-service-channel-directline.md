@@ -6,16 +6,15 @@ services: bot-service
 author: ivorb
 manager: kamrani
 ms.service: bot-service
-ms.subservice: bot-service
 ms.topic: conceptual
 ms.date: 05/02/2019
-ms.author: v-ivorb
-ms.openlocfilehash: 08765793611a0c2543fea481479ea4cfa2c8b74c
-ms.sourcegitcommit: f3fda6791f48ab178721b72d4f4a77c373573e38
+ms.author: kamrani
+ms.openlocfilehash: 3a1bf9ef71ec3121cc845a2a93fd191eacc28f8f
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68671428"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70298190"
 ---
 ## <a name="about-direct-line"></a>Sobre o Direct Line
 

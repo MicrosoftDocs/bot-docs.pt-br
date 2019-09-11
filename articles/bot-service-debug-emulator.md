@@ -3,17 +3,17 @@ title: Teste e depure bots usando o Bot Framework Emulator | Microsoft Docs
 description: Aprenda como inspecionar, testar e depurar bots usando o aplicativo de desktop do Bot Framework Emulator.
 keywords: transcrição, ferramenta msbot, serviços de linguagem, reconhecimento de fala
 author: DeniseMak
-ms.author: v-demak
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 2/26/2019
-ms.openlocfilehash: 847ae51791ae66ef190ebefee765f2806ec91c5e
-ms.sourcegitcommit: 6a83b2c8ab2902121e8ee9531a7aa2d85b827396
+ms.openlocfilehash: b6db4fd406b115ca88298d0727ff118821dad0d5
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68484033"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70298266"
 ---
 # <a name="debug-with-the-emulator"></a>Depurar com o emulador
 

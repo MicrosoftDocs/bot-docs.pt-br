@@ -6,16 +6,15 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 4f607050fd891eefe2129973a46d830aa0bab6c7
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 555cb3298114c3eb8ba8a4e1c41b5515e929fd91
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997613"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70299640"
 ---
-# <a name="authentication"></a>Autenticação
+# <a name="authentication"></a>Authentication
 
 > [!IMPORTANT]
 > Este artigo descreve a autenticação na API da Linha Direta v1.1. Se você estiver criando uma nova conexão entre seu aplicativo cliente e o bot, use [API da Linha Direta 3.0](bot-framework-rest-direct-line-3-0-authentication.md) em vez disso.

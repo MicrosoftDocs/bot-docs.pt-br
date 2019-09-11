@@ -3,20 +3,19 @@ title: Reconhecimento Vocal | Microsoft Docs
 description: Saiba como adicionar inteligência artificial aos bots com os Serviços Cognitivos da Microsoft para torná-los mais úteis e interativas.
 keywords: LUIS, intenção, reconhecedor, ferramenta de expedição, qna, qna maker
 author: ivorb
-ms.author: v-ivorb
+ms.author: kamrani
 manager: rstand
 ms.topic: article
 ms.service: bot-service
-ms.subservice: cognitive-services
 ms.date: 09/19/2018
 ms.reviewer: ''
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 0c0918b0ac0a10927bd8d7c52283e74b4fd480bf
-ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
+ms.openlocfilehash: 83d6a4b43cdd3132730ee78079260d2a2d79b228
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67404638"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70299483"
 ---
 # <a name="language-understanding"></a>Reconhecimento Vocal
 

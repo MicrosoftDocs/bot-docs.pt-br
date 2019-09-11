@@ -6,15 +6,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: ce7b82d6d3bffe57d758370525cdd7dcc6cddea6
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: f1cfa6de6dbc0b1dc6ed0408f405a91493741a93
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49999785"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70297631"
 ---
 # <a name="bot-service-templates"></a>Modelos de serviço de bot
 

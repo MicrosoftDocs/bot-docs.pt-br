@@ -3,18 +3,17 @@ title: Configurar a desobstrução de fala | Microsoft Docs
 description: Saiba como configurar a desobstrução de fala para o serviço de bot usando o portal do Azure.
 keywords: desobstrução de fala, reconhecimento de fala, LUIS
 author: v-royhar
-ms.author: v-royhar
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: cognitive-services
 ms.date: 12/13/2017
-ms.openlocfilehash: 5cb47be530f9f82d83272684e6405730c72f3cb7
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 5cb993392c57db63074fd5354ff85616d5004133
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997143"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70298029"
 ---
 # <a name="configure-speech-priming"></a>Configurar a desobstrução de fala
 

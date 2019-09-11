@@ -6,15 +6,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 86964bc39a95a23f397af649cfac6e2784dd588a
-ms.sourcegitcommit: 980612a922b8290b2faadaca193496c4117e415a
+ms.openlocfilehash: 8e997b33e48964b5723d6cd1fef0b1e6542b4ba3
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "64563629"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70297230"
 ---
 # <a name="implement-global-message-handlers"></a>Implementar manipuladores de mensagens globais
 

@@ -3,19 +3,18 @@ title: Middleware | Microsoft Docs
 description: Entenda a middleware e de seus usos dentro de bot do SDK.
 keywords: middleware, pipeline de middleware, curto-circuito, usos de middleware
 author: ivorb
-ms.author: v-ivorb
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: c70470d66d1402fc3d4c29d8772193f8e0576913
-ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
+ms.openlocfilehash: 42082f90db8079e7bc0152b2947705a9c1f15115
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215488"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70299466"
 ---
 # <a name="middleware"></a>Middleware
 
@@ -41,7 +40,7 @@ O SDK define o middleware de registros de log que pode registrar as atividades d
 ## <a name="the-bot-middleware-pipeline"></a>O pipeline de middleware de bot
 Para cada atividade, o adaptador chama o middleware na ordem na qual você o adicionou. O adaptador passa o objeto de contexto para o turno e uma _próxima_ delegado e o middleware chama o delegado para transmitir o controle para o próximo middleware no pipeline. Middleware também tem a oportunidade de fazer coisas após o _próxima_ delegado retorna antes de concluir o método. Você pode pensar nisso como cada objeto de middleware tem a primeira e última chance de agir em relação aos objetos de middleware que o seguem no pipeline.
 
-Por exemplo: 
+Por exemplo:
 
 - manipulador de turno do objeto do 1º middleware executa o código antes de chamar _próxima_.
   - O manipulador de turnos do segundo objeto de middleware executa o código antes de chamar no _próximo_.

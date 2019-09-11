@@ -2,19 +2,18 @@
 title: Enviar um indicador de digitação | Microsoft Docs
 description: Saiba como adicionar um indicador "aguarde" para informar a um usuário que um bot está processando uma solicitação usando o SDK do Bot Framework para Node.js
 author: DeniseMak
-ms.author: v-demak
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 1b2d3f9f04601bd4e01dddd08f09f7191b59204e
-ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
+ms.openlocfilehash: b7bef8e17584d94d6821e8b936abae9ef20088e2
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67404715"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70299701"
 ---
 # <a name="send-a-typing-indicator"></a>Enviar um indicador de digitação 
 

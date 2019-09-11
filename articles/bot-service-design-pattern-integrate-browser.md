@@ -6,14 +6,13 @@ ms.author: mateusv
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 20ca2864b6498b0d80bea13ce97ffffc4cf1f22d
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: 4b510647e56f259474f17f2e7927342cee87d821
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225921"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70298159"
 ---
 # <a name="integrate-your-bot-with-a-web-browser"></a>Integrar seu bot a um navegador da Web
 

@@ -6,14 +6,13 @@ ms.author: mateusv
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 08/15/2018
-ms.openlocfilehash: 5a0ded9af5f624398df764f16e6dd2db0105255c
-ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
+ms.openlocfilehash: 3e6a659667dca6089cb094a6b4eccda338219996
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67405869"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70298679"
 ---
 # <a name="embed-a-bot-in-an-app"></a>Inserir um bot em um aplicativo
 

@@ -7,14 +7,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 04/30/2019
-ms.openlocfilehash: 28932ca45c6faaad2f17ecc03f026ba04352a5a1
-ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
+ms.openlocfilehash: 8a9fa38a579bbe083f960caf5f600a1c5842045e
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65033074"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70298632"
 ---
 # <a name="id-fields-in-the-bot-framework"></a>Campos de ID no Bot Framework
 

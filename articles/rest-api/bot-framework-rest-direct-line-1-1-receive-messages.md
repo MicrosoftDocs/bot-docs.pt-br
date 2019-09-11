@@ -6,14 +6,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 6679afa688917bdf3d558d5ed47717ee30d0e52e
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 6f9a132b538a278b0990271864a70e77ea7dc56c
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49999353"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70299621"
 ---
 # <a name="receive-messages-from-the-bot"></a>Receber mensagens do bot
 

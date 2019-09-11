@@ -3,19 +3,18 @@ title: Autenticação de usuário no Serviço de Bot do Azure | Microsoft Docs
 description: Saiba mais sobre os recursos de autenticação de usuário no Serviço de Bot do Azure.
 keywords: serviço de bot do azure, autenticação, serviço de token do bot framework
 author: JonathanFingold
-ms.author: v-jofing
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: abs
 ms.date: 05/31/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 6eea954f58096d89cd3278058146b93fa04f435f
-ms.sourcegitcommit: e276008fb5dd7a37554e202ba5c37948954301f1
+ms.openlocfilehash: b4b71f7679ad6eea283437acb5a8293855219cf2
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66693756"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70299495"
 ---
 # <a name="user-authentication-within-a-conversation"></a>Autenticação de usuário dentro de uma conversa
 

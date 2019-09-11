@@ -2,19 +2,18 @@
 title: Depurar um bot | Microsoft Docs
 description: Saiba como depurar um bot criado usando o Serviço de Bot.
 author: v-ducvo
-ms.author: v-ducvo
+ms.author: kamrani
 keywords: SDK do Bot Framework, depurar o bot, testar o bot, emulador do bot, emulador
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 2/26/2019
-ms.openlocfilehash: 18b5caf4c5bb4277704d6f01f86b299fc78d725b
-ms.sourcegitcommit: 565a5df8b34a6d73ddf452ca7808eb83bb5be503
+ms.openlocfilehash: 27af606506eb19b98a327e276a00201ac417c7e4
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508124"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70298178"
 ---
 # <a name="debug-a-bot"></a>Depurar um bot
 

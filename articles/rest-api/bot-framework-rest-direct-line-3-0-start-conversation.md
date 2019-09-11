@@ -6,14 +6,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 6754935070fefb890c3d5b7bd90f1c1a4c5d401d
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 7cc77133b6b2a212b7fde2e0b9d8c854e2bbab9c
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "50000293"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70299541"
 ---
 # <a name="start-a-conversation"></a>Iniciar uma conversa
 

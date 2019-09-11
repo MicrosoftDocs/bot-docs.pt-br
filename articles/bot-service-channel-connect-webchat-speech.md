@@ -3,19 +3,18 @@ title: Habilitar a conversão de fala em Webchat | Microsoft Docs
 description: Saiba como habilitar a fala no controle de Webchat para um bot conectado ao canal de Webchat.
 keywords: fala, Webchat, voz, microfone, áudio
 author: DeniseMak
-ms.author: v-demak
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: cdb512b0efe111870b34c440f978105786b6f36a
-ms.sourcegitcommit: 8161753641368567f239e24a35ad61768acccd8e
+ms.openlocfilehash: b83dff7969c58451e5752938f74b682b2163c49d
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54202572"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70298200"
 ---
 # <a name="enable-speech-in-web-chat"></a>Habilitar o controle por voz no Webchat
 Habilite uma interface de voz no controle de Webchat. Os usuários interagem com a interface de voz usando o microfone no controle de Webchat.

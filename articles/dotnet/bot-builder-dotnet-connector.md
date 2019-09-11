@@ -6,15 +6,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 4df2dcc8857c2af9a69c18e6acf8c8d064e1e043
-ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
+ms.openlocfilehash: f5a869196e99d4e5f8709c6d54ced94abea2f883
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67405696"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70297241"
 ---
 # <a name="send-and-receive-activities"></a>Enviar e receber atividades
 
