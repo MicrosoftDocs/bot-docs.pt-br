@@ -7,15 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 43c9b0f062f4db909612f3fb9dc048be65c64c57
-ms.sourcegitcommit: d29d3d7ccef401aa1e84e19e623db33b5ff13e63
+ms.openlocfilehash: 603b6d6fe9fed99cb31649539e518651c135241a
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67160633"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70299299"
 ---
 # <a name="use-button-for-input"></a>Usar o botão para a entrada
 

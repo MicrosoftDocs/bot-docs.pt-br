@@ -7,15 +7,14 @@ ms.author: ggilaber
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 07/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 7e85f7ebe5a39145314f10b3b0378c2c66dc361d
-ms.sourcegitcommit: 23a1808e18176f1704f2f6f2763ace872b1388ae
+ms.openlocfilehash: 1e9d079b46c1cc4cc8c49e234b58540aeb4b2e7c
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68484393"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70298980"
 ---
 # <a name="how-to-unit-test-bots"></a>Como realizar testes de unidade em bots
 

@@ -7,16 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 0b9e2c406ee20535dfb065639beda8b66d0a2996
-ms.sourcegitcommit: c200cc2db62dbb46c2a089fb76017cc55bdf26b0
+ms.openlocfilehash: 5c7ac61da6c2e0d09fb2f8dc4cd0bf3961bcfc4f
+ms.sourcegitcommit: e815e786413296deea0bd78e5a495df329a9a7cb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70037352"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70875999"
 ---
 # <a name="send-an-activity-to-the-bot"></a>Enviar uma atividade para o bot
 
-Usando o protocolo 3.0 de linha direta, bots e os clientes podem trocar vários tipos diferentes de [atividades](bot-framework-rest-connector-activities.md), incluindo **mensagem** atividades, **digitando** atividades, e atividades personalizados que dá suporte ao bot. Um cliente pode enviar uma única atividade por solicitação. 
+Usando o protocolo 3.0 de linha direta, bots e os clientes podem trocar vários tipos diferentes de [atividades](https://aka.ms/botSpecs-activitySchema), incluindo **mensagem** atividades, **digitando** atividades, e atividades personalizados que dá suporte ao bot. Um cliente pode enviar uma única atividade por solicitação. 
 
 ## <a name="send-an-activity"></a>Enviar uma atividade
 

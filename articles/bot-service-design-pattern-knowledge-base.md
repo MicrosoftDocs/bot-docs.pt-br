@@ -6,14 +6,13 @@ ms.author: mateusv
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: cognitive-services
 ms.date: 12/13/2017
-ms.openlocfilehash: 4e73a56eb94207de49d8684c4db26155554820f3
-ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
+ms.openlocfilehash: c263876dc06229c4716cc1ddc3d83d0d0c6b11a4
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67405849"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70298670"
 ---
 # <a name="design-knowledge-bots"></a>Criar bots de dados de Conhecimento
 

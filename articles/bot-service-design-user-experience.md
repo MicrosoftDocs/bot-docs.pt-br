@@ -7,14 +7,13 @@ ms.author: mateusv
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 09/20/2018
-ms.openlocfilehash: ecccbcadab93417dd52f72512a0046e70a83e85e
-ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
+ms.openlocfilehash: 75907c07887fdf7ba21e4bb5d25bca488a70697d
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67405821"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70298575"
 ---
 # <a name="design-the-user-experience"></a>Projetar a experiência do usuário
 

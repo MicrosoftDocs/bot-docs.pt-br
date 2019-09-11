@@ -2,18 +2,18 @@
 title: Conformidade do Serviço de Bot | Microsoft Docs
 description: Conformidade do Serviço de Bot
 author: v-ducvo
-ms.author: v-ducvo
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 83c9efe2ef2384d57f33ceb1abbb453380795891
-ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
+ms.openlocfilehash: c70045b4a0d6f3c61be37ec78d1bb89541d8f33a
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67404377"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70299098"
 ---
 # <a name="bot-service-compliance"></a>Conformidade do Serviço de Bot
 

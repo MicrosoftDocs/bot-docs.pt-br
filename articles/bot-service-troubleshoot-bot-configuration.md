@@ -3,18 +3,17 @@ title: Solucionar problemas de configuração de bot | Microsoft Docs
 description: Como solucionar problemas de configuração em um bot implantado.
 keywords: solucionar problemas, configuração, bate-papo, problemas.
 author: jonathanFingold
-ms.author: v-jofing
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 4/30/2019
-ms.openlocfilehash: c208cef52d1850a00b62828ae0ea622a2606ec5b
-ms.sourcegitcommit: f84b56beecd41debe6baf056e98332f20b646bda
+ms.openlocfilehash: d71cfc604484b521450465c483201952d4672fcd
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65033408"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70298610"
 ---
 # <a name="troubleshoot-bot-configuration-issues"></a>Solucionar problemas de configuração de bot
 

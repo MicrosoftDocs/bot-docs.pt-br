@@ -7,16 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: d694f20985b6bf2875fe28f599ff603512b87757
-ms.sourcegitcommit: c200cc2db62dbb46c2a089fb76017cc55bdf26b0
+ms.openlocfilehash: 5e0f35b7fe62c93f4f4e17b5343960fa2b617ef9
+ms.sourcegitcommit: e815e786413296deea0bd78e5a495df329a9a7cb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70037342"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70876095"
 ---
 # <a name="send-and-receive-messages"></a>Enviar e receber mensagens
 
-O serviço Bot Connector permite que um bot se comunique em vários canais como Skype, Email, Slack e muito mais. Ele facilita a comunicação entre o bot e o usuário por [atividades](bot-framework-rest-connector-activities.md) de retransmissão do bot para o canal e do canal para o bot. Cada atividade contém as informações usadas para encaminhar a mensagem para o destino apropriado, juntamente com informações sobre quem criou a mensagem, o contexto e o destinatário da mensagem. Este artigo descreve como usar o serviço Bot Connector para trocar atividades de **mensagem** entre o bot e o usuário em um canal. 
+O serviço Bot Connector permite que um bot se comunique em vários canais como Skype, Email, Slack e muito mais. Ele facilita a comunicação entre o bot e o usuário por [atividades](https://aka.ms/botSpecs-activitySchema) de retransmissão do bot para o canal e do canal para o bot. Cada atividade contém as informações usadas para encaminhar a mensagem para o destino apropriado, juntamente com informações sobre quem criou a mensagem, o contexto e o destinatário da mensagem. Este artigo descreve como usar o serviço Bot Connector para trocar atividades de **mensagem** entre o bot e o usuário em um canal. 
 
 ## <a id="create-reply"></a> Responder a uma mensagem
 
@@ -147,7 +147,6 @@ O bot pode então usar essa ID da conversa para [enviar uma mensagem](#send-mess
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [Visão geral das atividades](bot-framework-rest-connector-activities.md)
 - [Criar mensagens](bot-framework-rest-connector-create-messages.md)
 - [Esquema de atividade Bot Framework](https://aka.ms/botSpecs-activitySchema)
 

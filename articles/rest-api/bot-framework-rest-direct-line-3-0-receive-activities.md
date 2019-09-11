@@ -6,14 +6,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 06/13/2019
-ms.openlocfilehash: c99e7ce86415ee1291a92e2684b975fd03c822f7
-ms.sourcegitcommit: a47183f5d1c2b2454c4a06c0f292d7c075612cdd
+ms.openlocfilehash: 1e5c48dd3782100f9393c3498baa2b0a7c728cb3
+ms.sourcegitcommit: e815e786413296deea0bd78e5a495df329a9a7cb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67252699"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70876148"
 ---
 # <a name="receive-activities-from-the-bot"></a>Receber atividades do bot
 
@@ -25,7 +24,7 @@ Um WebSocket de streaming envia mensagens aos clientes com eficiência enquanto 
 
 O serviço permite apenas uma conexão WebSocket por conversa. A Direct Line pode fechar conexões WebSocket adicionais com um valor de motivo de `collision`.
 
-Nem todos os [tipos de atividade](bot-framework-rest-connector-activities.md) estão disponíveis através do WebSocket e HTTP GET. A tabela a seguir descreve a disponibilidade de vários tipos de atividades para clientes que usam o protocolo da Linha Direta.
+Nem todos os [tipos de atividade](https://aka.ms/botSpecs-activitySchema) estão disponíveis através do WebSocket e HTTP GET. A tabela a seguir descreve a disponibilidade de vários tipos de atividades para clientes que usam o protocolo da Linha Direta.
 
 | Tipo de atividade | Disponibilidade | 
 |----|----|

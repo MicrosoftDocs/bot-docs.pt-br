@@ -7,15 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f43d37cdf3ed25d163b7bcd88dcdb6071ad89400
-ms.sourcegitcommit: f3fda6791f48ab178721b72d4f4a77c373573e38
+ms.openlocfilehash: efc4293ff5de5982a425557a0d7e70296ca6c5e5
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68671465"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70298866"
 ---
 # <a name="create-a-bot-with-the-bot-framework-sdk-for-net"></a>Criar um bot com o SDK do Bot Framework para .NET
 

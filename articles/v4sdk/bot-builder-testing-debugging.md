@@ -3,18 +3,18 @@ title: Diretrizes de depuração| Microsoft Docs
 description: Entenda como depurar o bot.
 keywords: depuração de bots, depuração de botframework
 author: ivorb
-ms.author: v-ivorb
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 07/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: e33d7c0d4ec16b8905392a9fda7804914e47d69d
-ms.sourcegitcommit: 23a1808e18176f1704f2f6f2763ace872b1388ae
+ms.openlocfilehash: a04e1acc37c488fcd7530b7df2dd8668d4cfdcc2
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68483962"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70299191"
 ---
 # <a name="debugging-guidelines"></a>Diretrizes de depuração
 
