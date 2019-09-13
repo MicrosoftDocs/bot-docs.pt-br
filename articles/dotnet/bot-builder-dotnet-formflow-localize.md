@@ -6,15 +6,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 11/02/2018
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 3ec3d12a7d35f65adca901395edff2db3ab71c66
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: 795232b401284becd940daed6bf7da8642c12efd
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225581"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70297948"
 ---
 # <a name="localize-form-content"></a>Localizar o conteúdo do formulário
 
@@ -37,7 +36,7 @@ Em vez disso, você pode gerar um arquivo de recurso para as cadeias de caracter
 
 ### <a name="use-iformbuildersaveresources"></a>Usar IFormBuilder.SaveResources
 
-Você pode gerar um arquivo de recurso chamando [IFormBuilder.SaveResources][saveResources] em seu formulário para salvar as cadeias de caracteres em um arquivo .resx.
+Você pode gerar um arquivo de recurso chamando [IFormBuilder.SaveResources][saveResources] no formulário para salvar as cadeias de caracteres em um arquivo .resx.
 
 ### <a name="use-rview"></a>Usar RView
 
@@ -83,10 +82,10 @@ Após gerar um arquivo de recurso, adicione-o ao seu projeto e, em seguida, defi
 2. Clique em **Informações de Assembly**.
 3. Selecione o valor de **idioma neutro** que corresponde ao idioma com o qual você desenvolveu seu bot.
 
-Após a criação do formulário, o método [IFormBuilder.Build][build] procurará automaticamente os recursos que contêm o nome do tipo de formulário e os usará para localizar as cadeias de caracteres estáticas em seu formulário. 
+Após a criação do formulário, o método [IFormBuilder.Build][build] procurará automaticamente os recursos que contêm o nome do tipo de formulário e os usará para localizar as cadeias de caracteres estáticas no formulário. 
 
 > [!NOTE]
-> Campos calculados dinamicamente definidos com [Advanced.Field.SetDefine][setDefine] (conforme descrito em [Usar campos dinâmicos](bot-builder-dotnet-formflow-formbuilder.md#dynamically-define-field-values-confirmations-and-messages)) não podem ser localizados da mesma maneira que campos estáticos, já que as cadeias de caracteres para campos calculados dinamicamente são construídas no momento do preenchimento do formulário. No entanto, você pode localizar campos calculados dinamicamente por meio de mecanismos de localização normais em C#.
+> Os campos computados dinamicamente definidos com [Advanced.Field.SetDefine][setDefine] (conforme descrito em [Usar campos dinâmicos](bot-builder-dotnet-formflow-formbuilder.md#dynamically-define-field-values-confirmations-and-messages)) não podem ser localizados da mesma maneira que campos estáticos, pois as cadeias de caracteres para campos computados dinamicamente são construídas no momento em que o formulário é populado. No entanto, você pode localizar campos calculados dinamicamente por meio de mecanismos de localização normais em C#.
 
 ### <a name="localize-resource-files"></a>Localizar arquivos de recurso 
 

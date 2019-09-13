@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: kamrani
 ms.service: bot-service
 ms.date: 08/03/2019
-ms.openlocfilehash: 4e5dc332b463e9490c7aa265a08e8f126d59d3f9
-ms.sourcegitcommit: 6a83b2c8ab2902121e8ee9531a7aa2d85b827396
+ms.openlocfilehash: a856e3cc578b8c73583126df9f670bfde68ec9dc
+ms.sourcegitcommit: dd12ddf408c010182b09da88e2aac0de124cef22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68866602"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386112"
 ---
 # <a name="connect-a-bot-to-facebook"></a>Conectar um bot ao Facebook
 
@@ -131,14 +131,31 @@ Garanta que a Página do Facebook associada a esse bot seja publicada. O status 
 
 ## <a name="connect-a-bot-to-facebook-workplace"></a>Conectar um bot ao Workplace do Facebook
 
+O Workplace do Facebook é uma versão do Facebook voltada para os negócios, que permite aos funcionários se conectar e colaborar com facilidade. Ele contém vídeos ao vivo, feeds de notícias, grupos, mensageiro, reações, pesquisa e postagens de tendências. Também dá suporte a:
+
+- Análise e integrações. Um painel com análise, integração, logon único e provedores de identidade que as empresas usam para integrar o Workplace aos seus sistemas de TI existentes.
+- Grupos de várias empresas. Espaços compartilhados nos quais funcionários de diferentes organizações podem trabalhar juntos e colaborar.
+
 Consulte a [Central de Ajuda do Workplace](https://workplace.facebook.com/help/work/) para saber mais sobre o Workplace do Facebook e a [Documentação para desenvolvedor do Workplace](https://developers.facebook.com/docs/workplace) para obter diretrizes sobre como desenvolver para Workplace do Facebook.
 
-Para configurar um bot a fim de se comunicar usando o Workplace do Facebook, crie uma integração personalizada e conecte o bot a ela.
+Para usar o Workplace do Facebook com o bot, é necessário criar uma conta do Workplace e uma integração personalizada para conectar o bot.
 
+### <a name="create-a-workplace-premium-account"></a>Criar uma conta Premium do Workplace
 
-1. Criar uma conta Premium do Workplace do Facebook. Siga [estas](https://www.facebook.com/workplace) instruções para criar uma conta Premium do Workplace do Facebook e definir você mesmo como administrador do sistema. Saiba que apenas o administrador do sistema de um Workplace pode criar integrações personalizadas.
+1. Envie um aplicativo ao [Workplace](https://www.facebook.com/workplace) em nome de sua empresa.
+1. Depois que o aplicativo for aprovado, você receberá um email com um convite de participação. A resposta pode demorar um pouco.
+1. No convite por email, clique em **Começar**.
+1. Insira as informações de seu perfil.
+    > [!TIP]
+    > Defina-se como administrador do sistema. Lembre-se de que somente os administradores do sistema podem criar integrações personalizadas.
+1. Clique em **Prévia do perfil** e verifique se as informações estão corretas.
+1. Acesse *Teste gratuito*.
+1. Crie uma **senha**.
+1. Clique em **Convidar colegas de trabalho** para convidar os funcionários a entrar. Os funcionários que você convidou se tornarão membros assim que entrarem. Eles passarão por um processo de entrada semelhante, conforme descrito nestas etapas.
 
-1. Crie uma [integração personalizada](https://developers.facebook.com/docs/workplace/custom-integrations-new) para seu Workplace executando as etapas descritas a seguir. Quando você cria uma integração personalizada, ocorre a criação de um aplicativo com permissões definidas e uma página do tipo 'Bot' visível apenas dentro de sua comunidade de Workplace.
+### <a name="create-a-custom-integration"></a>Criar uma integração personalizada
+
+Crie uma [integração personalizada](https://developers.facebook.com/docs/workplace/custom-integrations-new) para o Workplace executando as etapas descritas abaixo. Quando você cria uma integração personalizada, ocorre a criação de um aplicativo com permissões definidas e uma página do tipo 'Bot' visível apenas dentro de sua comunidade de Workplace.
 
 1. No **Painel de Administração**, abra a guia **Integrações**.
 1. Clique no botão **Criar seu próprio aplicativo personalizado**.

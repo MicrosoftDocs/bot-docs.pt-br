@@ -6,14 +6,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: 3607957cd5cb8738e8268ece6eba4417250bc596
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 7db0ccb84b2c5172348eeac667f78f3abaf95f94
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49997953"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70299650"
 ---
 # <a name="api-reference---direct-line-api-11"></a>Referência de API – API de Linha Direta 1.1
 
@@ -155,7 +154,7 @@ O esquema de Linha Direta 1.1 é uma cópia simplificada do esquema do Bot Frame
 
 Define uma mensagem que um cliente envia para um bot ou recebe de um bot.
 
-| Propriedade | Tipo | DESCRIÇÃO |
+| Propriedade | Type | DESCRIÇÃO |
 |----|----|----|
 | **ID** | string | ID que identifica exclusivamente a mensagem (atribuída por Linha Direta). | 
 | **conversationId** | string | ID que identifica a conversa.  | 
@@ -197,7 +196,7 @@ O exemplo a seguir mostra um objeto Message que contém todas as propriedades po
 ### <a name="messageset-object"></a>Um objeto MessageSet 
 Define um conjunto de mensagens.<br/><br/>
 
-| Propriedade | Tipo | DESCRIÇÃO |
+| Propriedade | Type | DESCRIÇÃO |
 |----|----|----|
 | **messages** | [Message](#message-object)[] | Matriz de objetos **Message**. |
 | **watermark** | string | Marca d'água máxima das mensagens dentro do conjunto. Um cliente pode usar o valor `watermark` para indicar a mensagem mais recente visualizada ao [recuperar mensagens do bot](bot-framework-rest-direct-line-1-1-receive-messages.md). |
@@ -205,7 +204,7 @@ Define um conjunto de mensagens.<br/><br/>
 ### <a name="attachment-object"></a>Objeto Attachment
 Define um anexo sem imagem.<br/><br/> 
 
-| Propriedade | Tipo | DESCRIÇÃO |
+| Propriedade | Type | DESCRIÇÃO |
 |----|----|----|
 | **contentType** | string | O tipo de mídia do conteúdo no anexo. |
 | **url** | string | URL para o conteúdo do anexo. |
@@ -213,7 +212,7 @@ Define um anexo sem imagem.<br/><br/>
 ### <a name="conversation-object"></a>Objeto Conversation
 Define uma conversa de Linha Direta.<br/><br/>
 
-| Propriedade | Tipo | DESCRIÇÃO |
+| Propriedade | Type | DESCRIÇÃO |
 |----|----|----|
 | **conversationId** | string | ID que identifica exclusivamente a conversa para o qual o token especificado é válido. |
 | **token** | string | Token válido para a conversa especificada. |
@@ -222,9 +221,9 @@ Define uma conversa de Linha Direta.<br/><br/>
 ### <a name="error-object"></a>Objeto Error
 Define um erro.<br/><br/> 
 
-| Propriedade | Tipo | DESCRIÇÃO |
+| Propriedade | Type | DESCRIÇÃO |
 |----|----|----|
-| **code** | string | Código do erro. Um destes valores: **MissingProperty**, **MalformedData**, **NotFound**, **ServiceError**, **interno**, **InvalidRange**, **NotSupported**, **NotAllowed**, **BadCertificate**. |
+| **code** | string | Código do erro. Um destes valores: **MissingProperty**, **MalformedData**, **NotFound**, **ServiceError**, **Internal**, **InvalidRange**, **NotSupported**, **NotAllowed** ou **BadCertificate**. |
 | **message** | string | Uma descrição do erro. |
 | **statusCode** | número | Código de status. |
 
@@ -232,7 +231,7 @@ Define um erro.<br/><br/>
 Um conteúdo de erro de mensagem padronizada.<br/><br/> 
 
 
-|        Propriedade        |          Tipo          |                                 DESCRIÇÃO                                 |
+|        Propriedade        |          Type          |                                 DESCRIÇÃO                                 |
 |------------------------|------------------------|-----------------------------------------------------------------------------|
 | <strong>error</strong> | [Erro](#error-object) | Um objeto <strong>Erro</strong> que contém informações sobre o erro. |
 

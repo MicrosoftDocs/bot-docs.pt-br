@@ -6,15 +6,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 3089e7a073f6a6d9af3a3720954af3a915106888
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: fe45d873369b28a0081df28d2d3971e5b77ca4f9
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54224991"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70298369"
 ---
 # <a name="dialogs-in-the-bot-framework-sdk-for-net"></a>Diálogos no SDK do Bot Framework para .NET
 
@@ -37,7 +36,7 @@ Considere este exemplo de echo bot que descreve como alterar o bot criado no tut
 
 ### <a name="messagescontrollercs"></a>MessagesController.cs 
 
-No SDK do Bot Framework para .NET, a biblioteca do [Construtor][builderLibrary] permite implementar diálogos. Para acessar as classes relevantes, importe o namespace `Dialogs`.
+No SDK do Bot Framework para .NET, a biblioteca do [Builder][builderLibrary] permite implementar diálogos. Para acessar as classes relevantes, importe o namespace `Dialogs`.
 
 [!code-csharp[Using statement](../includes/code/dotnet-dialogs.cs#usingStatement)]
 
@@ -97,20 +96,20 @@ A interface `Internals.IBotData` fornece acesso aos dados de estado por usuário
 
 ## <a name="serialization"></a>Serialização
 
-A pilha de diálogos e o estado de todos os diálogos ativos são serializados para [IBotDataBag][iBotDataBag] por usuário, por conversa. O blob serializado é mantido nas mensagens que o bot envia e recebe do [Connector](bot-builder-dotnet-concepts.md#connector). Para ser serializada, uma classe `Dialog` deverá incluir o atributo `[Serializable]`. Todas as implementações `IDialog` na biblioteca do [Construtor][builderLibrary] estão marcadas como serializáveis. 
+A pilha de diálogos e o estado de todos os diálogos ativos são serializados para [IBotDataBag][iBotDataBag] por usuário e por conversa. O blob serializado é mantido nas mensagens que o bot envia e recebe do [Connector](bot-builder-dotnet-concepts.md#connector). Para ser serializada, uma classe `Dialog` deverá incluir o atributo `[Serializable]`. Todas as implementações de `IDialog` na biblioteca do [Builder][builderLibrary] estão marcadas como serializáveis. 
 
 Os [métodos de Cadeia](#dialog-chains) oferecem uma interface fluente para diálogos que podem ser usados na sintaxe da consulta LINQ. O formulário compilado da sintaxe da consulta LINQ geralmente usa métodos anônimos. Se esses métodos anônimos não referenciarem o ambiente de variáveis locais, eles não terão estado e serão serializáveis trivialmente. No entanto, se o método anônimo capturar qualquer variável local no ambiente, o objeto de fechamento resultante (gerado pelo compilador) não será marcado como serializável. Nessa situação, o Construtor de Bot lançará um `ClosureCaptureException` para identificar o problema.
 
-Para usar a reflexão para serializar classes que não estão marcadas como serializáveis, a biblioteca do Construtor inclui um substituto de serialização baseado em reflexão que você pode usar para registrar-se com [Autofac][autofac].
+Para usar a reflexão com o objetivo de serializar classes que não estão marcadas como serializáveis, a biblioteca do Builder inclui um substituto de serialização baseado em reflexão que você pode usar para se registrar no [Autofac][autofac].
 
 [!code-csharp[Serialization](../includes/code/dotnet-dialogs.cs#serialization)]
 
 ## <a id="dialog-chains"></a> Cadeias de diálogos
 
-Embora você possa gerenciar explicitamente a pilha de diálogos ativos usando `IDialogStack.Call<R>` e `IDialogStack.Done<R>`, também é possível gerenciar implicitamente a pilha de diálogos ativos usando esses métodos de [Cadeia][chain].
+Embora você possa gerenciar explicitamente a pilha de diálogos ativos usando `IDialogStack.Call<R>` e `IDialogStack.Done<R>`, você também pode gerenciar implicitamente a pilha de diálogos ativos usando estes métodos [Chain][chain] fluentes.
 
 
-|           Método            |  Tipo   |                                 Observações                                  |
+|           Método            |  Type   |                                 Observações                                  |
 |-----------------------------|---------|------------------------------------------------------------------------|
 |     Chain.Select<T, R>      |  LINQ   |           Dá suporte a "select" e "let" na sintaxe da consulta LINQ.            |
 |  Chain.SelectMany<T, C, R>  |  LINQ   |            Dá suporte sucessivo a "from" na sintaxe da consulta LINQ.            |

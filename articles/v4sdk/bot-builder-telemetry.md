@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 5ca631c1e2d334eef82c2a0f5c0b08ef242d06b1
-ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
+ms.openlocfilehash: 4db21ee1515b1c43dcbb20b532dcd195e20c3357
+ms.sourcegitcommit: e815e786413296deea0bd78e5a495df329a9a7cb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167142"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70876195"
 ---
 # <a name="add-telemetry-to-your-bot"></a>Adicionar telemetria ao seu bot
 
@@ -55,10 +55,8 @@ Começaremos com o [aplicativo de exemplo CoreBot](https://aka.ms/cs-core-sample
 
 1. Abrir o [aplicativo de exemplo do CoreBot](https://aka.ms/cs-core-sample) no Visual Studio
 
-2. Adicione os pacotes NuGet a seguir. Para obter mais informações sobre como usar o NuGet, confira [Instalar e gerenciar pacotes no Visual Studio](https://aka.ms/install-manage-packages-vs):
-    * `Microsoft.ApplicationInsights`
-    * `Microsoft.Bot.Builder.ApplicationInsights`
-    * `Microsoft.Bot.Builder.Integration.ApplicationInsights.Core`
+2. Adicione o pacote NuGet `Microsoft.Bot.Builder.Integration.ApplicationInsights.Core `. Para obter mais informações sobre como usar o NuGet, confira [Instalar e gerenciar pacotes no Visual Studio](https://aka.ms/install-manage-packages-vs):
+
 
 3. Inclua as instruções a seguir em `Startup.cs`:
     ```csharp

@@ -7,14 +7,13 @@ ms.author: mateusv
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
-ms.openlocfilehash: f2a97b35f7e83a825e533be528951e8c04c521a1
-ms.sourcegitcommit: b78fe3d8dd604c4f7233740658a229e85b8535dd
+ms.openlocfilehash: 7d1bfe669ebafa7e4a2104f384265760720d663c
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49998074"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70298118"
 ---
 # <a name="design-bot-navigation"></a>Design da navegação do bot
 
@@ -43,9 +42,9 @@ Considere este cenário:
 Os usuários geralmente mudam de ideia, decidem cancelar ou, às vezes, querem começar tudo de novo. 
 
 > [!TIP]
-> <b>Faça</b>: projete seu bot para considerar que um usuário pode tentar alterar o curso da conversa a qualquer momento. 
+> <b>Certo</b>: Projete seu bot para considerar que um usuário pode tentar alterar o curso da conversa a qualquer momento. 
 >
-> <b>Não faça</b>: não projete seu bot para ignorar a entrada do usuário e continuar repetindo a mesma pergunta indefinidamente. 
+> <b>Errado</b>: Projete seu bot para ignorar a entrada do usuário e continuar repetindo a mesma pergunta em um loop indefinido. 
 
 Há vários métodos de evitar esta armadilha, mas talvez a maneira mais fácil de impedir que um bot faça a mesma pergunta indefinidamente é especificar um número máximo de tentativas de repetição para cada pergunta. Se ele for criado dessa maneira, o bot não estará fazendo nada "inteligente" para entender a entrada do usuário e responder adequadamente, mas pelo menos evitará a mesma pergunta em um loop infinito. 
 
@@ -60,9 +59,9 @@ Considere este cenário:
 Embora você possa ficar tentado a projetar cada diálogo dentro do seu bot para ouvir e responder adequadamente a determinadas palavras-chave, essa abordagem não é recomendável. 
 
 > [!TIP]
-> <b>Faça</b>: implemente [middleware](v4sdk/bot-builder-create-middleware.md) que examinarão na entrada do usuário as palavras-chave especificadas (como "ajuda", "cancelar" ou "começar novamente" etc.), e responderão de maneira adequada. 
+> <b>Certo</b>: Implemente um [middleware](v4sdk/bot-builder-create-middleware.md) que examinará a entrada do usuário em busca das palavras-chave especificadas (por exemplo, "ajuda", "cancelar" ou "começar novamente" etc.) e responderá de acordo. 
 > 
-> <b>Não fala</b>: não projete cada diálogo para examinar na entrada do usuário uma lista de palavras-chave. 
+> <b>Errado</b>: Projete cada diálogo para examinar a entrada do usuário em busca de uma lista de palavras-chave. 
 
 Ao definir a lógica em seu **middleware**, você estará tornando-o acessível para cada interação com o usuário. Usando essa abordagem, crie caixas de diálogo individuais e avisos para ignorar com segurança as palavras-chave, se isso for necessário.
 
@@ -77,9 +76,9 @@ Considere este cenário:
 Em alguns casos, essa situação pode ser uma indicação de que o bot está tendo uma interrupção. No entanto, pode ser que o bot esteja apenas ocupado processando a entrada do usuário e ainda não tenha terminado a compilação de sua resposta. 
 
 > [!TIP]
-> <b>Faça</b>: projete seu bot para reconhecer imediatamente a entrada do usuário, mesmo nos casos em que o bot pode levar algum tempo para compilar sua resposta. 
+> <b>Certo</b>: Projete seu bot para reconhecer imediatamente a entrada do usuário, mesmo nos casos em que o bot pode levar algum tempo para compilar a resposta. 
 > 
-> <b>Não faça</b>: não projete seu bot para adiar a confirmação do usuário de entrada até que o bot termine de compilar sua resposta.
+> <b>Errado</b>: Projete seu bot para adiar a confirmação da entrada do usuário até que o bot termine de compilar a resposta.
 
 Ao confirmar imediatamente a entrada do usuário, você elimina qualquer possibilidade de confusão sobre o estado do bot. Se sua resposta levar muito tempo para compilar, envie uma mensagem de "digitando" para indicar que seu bot está funcionando e, em seguida, acompanhe com uma [mensagem proativa](v4sdk/bot-builder-howto-proactive-message.md)
 
@@ -92,9 +91,9 @@ Considere este cenário:
 ![bot](~/media/bot-service-design-navigation/captainobvious-bot.png)
 
 > [!TIP]
-> <b>Faça</b>: projete seu bot para fornecer informações que sejam úteis para o usuário. 
+> <b>Certo</b>: Projete seu bot para fornecer informações que serão úteis para o usuário. 
 > 
-> <b>Não faça</b>: não projete seu bot para fornecer informações não solicitadas que provavelmente não serão úteis para o usuário.
+> <b>Errado</b>: Projete seu bot para fornecer informações não solicitadas que provavelmente não serão úteis para o usuário.
 
 Ao projetar seu bot para fornecer informações úteis, você estará aumentando as chances de o usuário interagir com ele.
 
@@ -107,9 +106,9 @@ Considere este cenário:
 ![bot](~/media/bot-service-design-navigation/rememberall-bot.png)
 
 > [!TIP]
-> <b>Faça</b>: projete seu bot para manter o tópico atual da conversa, a menos que ou até que o usuário expresse um desejo de rever um tópico anterior. 
+> <b>Certo</b>: Projete seu bot para manter o tópico atual da conversa, a menos ou até que o usuário expresse um desejo de rever um tópico anterior. 
 > 
-> <b>Não faça</b>: não projete seu bot para levantar informações de conversas últimos quando isso não for relevante para a conversa atual.
+> <b>Errado</b>: Projete seu bot para intercalar informações de conversas passadas quando isso não for relevante para a conversa atual.
 
 Quando você mantém o tópico atual da conversa, consegue reduzir o potencial de confusão e frustrações, além de aumentar as chances de o usuário continuar a se envolver com seu bot.
 

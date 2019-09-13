@@ -6,21 +6,20 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 8a13358afca190606e235475a58f6aedd146fee5
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: b738296d3d796cdccd40e0d3bda503b9d6349bff
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225401"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70297990"
 ---
 # <a name="customize-a-form-using-formbuilder"></a>Personalizar um formulário usando FormBuilder
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
-[Recursos básicos do FormFlow](bot-builder-dotnet-formflow.md) descrevem uma implementação básica do FormFlow que proporciona uma experiência de usuário bastante genérica, e [recursos avançados do FormFlow](bot-builder-dotnet-formflow-advanced.md) descrevem como você pode personalizar a experiência do usuário usando lógica e atributos de negócios. Este artigo descreve como você pode usar [FormBuilder][formBuilder] para personalizar ainda mais, a experiência do usuário, especificando a sequência na qual o formulário executa as etapas e definindo dinamicamente valores de campo as confirmações e mensagens. 
+[Recursos básicos do FormFlow](bot-builder-dotnet-formflow.md) descrevem uma implementação básica do FormFlow que proporciona uma experiência de usuário bastante genérica, e [recursos avançados do FormFlow](bot-builder-dotnet-formflow-advanced.md) descrevem como você pode personalizar a experiência do usuário usando lógica e atributos de negócios. Este artigo descreve como você pode usar o [FormBuilder][formBuilder] para personalizar ainda mais a experiência do usuário, especificando a sequência na qual o formulário executa as etapas e definindo dinamicamente os valores de campo, as confirmações e as mensagens. 
 
 ## <a name="dynamically-define-field-values-confirmations-and-messages"></a>Definir dinamicamente valores de campo, confirmações e mensagens
 
@@ -38,10 +37,10 @@ Este exemplo de código mostra como definir dinamicamente o valor da `Specials` 
 
 [!code-csharp[Define value](../includes/code/dotnet-formflow-formbuilder.cs#defineValue)]
 
-Neste exemplo, o [Advanced.Field.SetType] [ setType] método Especifica o tipo de campo (`null` representa um campo de enumeração). O método [Advanced.Field.SetActive][setActive] especifica que o campo só deve ser ativado se o comprimento do sandwich for `Length.FootLong`. Finalmente, o método [Advanced.Field.SetDefine][setDefine] especifica um delegado assíncrono que define o campo. O delegado recebe o objeto de estado atual e o [Advanced.Field][field] que está sendo definido dinamicamente. O representante usa métodos de fluente do campo para definir dinamicamente os valores. Neste exemplo, os valores são strings e os métodos `AddDescription` e `AddTerms` especificam as descrições e os termos de cada valor.
+Neste exemplo, o método [Advanced.Field.SetType][setType] especifica o tipo de campo (`null` representa um campo de enumeração). O método [Advanced.Field.SetActive][setActive] especifica que o campo só deverá ser habilitado se o tamanho do sanduíche for `Length.FootLong`. Por fim, o método [Advanced.Field.SetDefine][setDefine] especifica um representante assíncrono que define o campo. O representante recebe o objeto de estado atual e o [Advanced.Field][field] que está sendo definido dinamicamente. O representante usa métodos de fluente do campo para definir dinamicamente os valores. Neste exemplo, os valores são strings e os métodos `AddDescription` e `AddTerms` especificam as descrições e os termos de cada valor.
 
 > [!NOTE]
-> Para definir dinamicamente um valor de campo, você pode implementar [Advanced.IField][iField] ou agilizar o processo usando a classe [Advanced.FieldReflector][FieldReflector] como mostrado no exemplo acima. 
+> Para definir um valor de campo dinamicamente, implemente [Advanced.IField][iField] ou simplifique o processo usando a classe [Advanced.FieldReflector][FieldReflector], como mostrado no exemplo acima. 
 
 ### <a name="dynamically-define-messages-and-confirmations"></a>Definir dinamicamente a mensagens e confirmações
 

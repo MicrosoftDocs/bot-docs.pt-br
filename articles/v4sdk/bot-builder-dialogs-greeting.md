@@ -3,19 +3,18 @@ title: Implementar um diálogo de saudação | Microsoft Docs
 description: Use um diálogo para saudar um usuário quando ele entrar em uma conversa.
 keywords: saudação, diálogos, fluxo da conversa, conjunto de diálogos
 author: JonathanFingold
-ms.author: v-jofing
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 82e6273b8d6dc984e29bef891f3e8f67b1c53eed
-ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
+ms.openlocfilehash: 5ea41c8ea879d20ba9d031bf3345b0862171458d
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215410"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70299296"
 ---
 # <a name="implement-a-greeting-dialog"></a>Implementar um diálogo de saudação
 
@@ -23,12 +22,12 @@ ms.locfileid: "66215410"
 
 Você pode usar um diálogo para dar boas-vindas a um usuário em uma conversa.
 
-Para obter mais informações sobre boas-vindas aos usuários, consulte como [enviar mensagens de boas-vindas aos usuários][send-welcome].
+Para obter mais informações sobre como dar boas-vindas aos usuários, confira como [Enviar mensagens de boas-vindas aos usuários][send-welcome].
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- Conhecimento do [gerenciamento de estado][concept-state], da [biblioteca de diálogos][concept-dialogs], de como [gerenciar conversas][simple-flow] e de como [coletar a entrada do usuário usando um prompt de diálogo][prompting].
-- Uma cópia do ??? exemplo em [**CSharp**][cs-sample] ou [**JavaScript**][js-sample].
+- Conhecimento sobre o [gerenciamento de estado][concept-state], a [biblioteca de diálogos][concept-dialogs], como [gerenciar conversas][simple-flow] e como [coletar a entrada do usuário usando um prompt de diálogo][prompting].
+- Uma cópia do ??? amostra em [**CSharp**][cs-sample] ou [**JavaScript**][js-sample].
 
 ## <a name="task-as-in-to-do-x-do-these-things"></a>\<task> [como em para fazer X, fazer essas coisas]
 

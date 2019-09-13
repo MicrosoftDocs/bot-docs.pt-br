@@ -3,19 +3,18 @@ title: Diferenças entre o SDK v3 e v4 | Microsoft Docs
 description: Descreve as diferenças entre o SDK da v3 e v4.
 keywords: migração de bot, formflow, diálogos, estado
 author: JonathanFingold
-ms.author: v-jofing
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 862fbf59cf33406e35e9051c0814489fdfdaa8f3
-ms.sourcegitcommit: ea64a56acfabc6a9c1576ebf9f17ac81e7e2a6b7
+ms.openlocfilehash: 6444c1e3ef1948b3e407df50255aaa7c5350bf34
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215585"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70298991"
 ---
 # <a name="differences-between-the-v3-and-v4-net-sdk"></a>Diferenças entre o SDK do .NET v3 e v4
 
@@ -33,7 +32,7 @@ A versão 4 do SDK do Bot Framework suporta o mesmo Bot Framework Service que a 
 - Uma nova biblioteca de Diálogos.
   - Os diálogos da v3 precisarão ser reescritos para a nova biblioteca de diálogos.
   - Não há mais pontuáveis. Você pode buscar comandos “globais”, antes de passar o controle para seus diálogos. Dependendo de como o seu bot v4 foi criado, pode estar no manipulador de mensagens ou em um diálogo pai. Por exemplo, consulte como [manipular interrupções do usuário][interruptions].
-  - Para obter mais detalhes, confira a [biblioteca de diálogos][about-dialogs].
+  - Para obter mais detalhes, confira [biblioteca de diálogos][about-dialogs].
 - Suporte para ASP.NET Core.
   - Os modelos para criar novos bots C# são direcionados à estrutura do ASP.NET Core.
   - Você ainda pode usar o ASP.NET para seus bots, mas nosso foco para v4 é oferecer suporte à estrutura do ASP.NET Core.
@@ -58,7 +57,7 @@ A classe `MessageFactory` fornece alguns métodos auxiliares para atividades de 
 
 ### <a name="scorables-is-gone"></a>Não existem mais classificações
 
-Trate-as no loop de mensagem do bot. Para obter uma descrição de como fazer isso com os diálogos da v4, confira como [manipular interrupções do usuário][interruptions].
+Trate-as no loop de mensagem do bot. Para obter uma descrição de como fazer isso com os diálogos da v4, confira como [tratar interrupções do usuário][interruptions].
 
 Árvores de expedição classificáveis combináveis e diálogos de cadeia combináveis, como _exceção padrão_, também não existem mais. Uma maneira de reproduzir essa funcionalidade é implementá-la dentro do manipulador de turno do seu bot.
 
@@ -67,7 +66,7 @@ Trate-as no loop de mensagem do bot. Para obter uma descrição de como fazer is
 Na v3, você pode armazenar dados de conversa no Serviço de Estado do Bot, parte do conjunto maior de serviços fornecidos pelo Bot Framework. Porém, o serviço foi desativado em 31 de março de 2018. A partir da v4, as considerações de design sobre gerenciamento do estado é igual às de qualquer aplicativo Web e há várias opções disponíveis. O armazenamento do estado na memória e no mesmo processo normalmente é a maneira mais fácil; entretanto, nos aplicativos de produção é preciso armazená-lo mais permanentemente; por exemplo, em um banco de dados SQL ou NoSQL ou como blobs.
 
 A v4 não usa as propriedades `UserData`, `ConversationData` e `PrivateConversationData` e o recipiente de dados para gerenciar o estado.
-O estado agora é gerenciado por meio de objetos de gerenciamento de estado e acessadores de propriedade, conforme descrito em [gerenciar o estado][about-state].
+O estado agora é gerenciado por meio de objetos de gerenciamento de estado e acessadores de propriedade conforme descrito em [gerenciar o estado][about-state].
 
 A v4 define as classes `UserState`, `ConversationState` e `PrivateConversationState` que gerenciam dados de estado para o bot. Você precisa criar um acessador de propriedade de estado para cada propriedade que você deseja manter, em vez de apenas ler e gravar em um recipiente de dados predefinido.
 
@@ -126,7 +125,7 @@ Na v3, você utilizava `FormFlow` para executar um determinado número de etapas
 
 Você também pode criar fluxos de controle complexos usando vários diálogos; confira [fluxo avançado de conversa][complex-flow].
 
-Para acessar um diálogo, você precisa colocar uma instância em um _conjunto de diálogos_ e, em seguida, gerar um _contexto de diálogo_ para esse conjunto. Você precisa fornecer um acessador de propriedade de estado de diálogo ao criar um conjunto de diálogos. Isso permite que a estrutura persista o estado do diálogo entre um turno e outro. [Gerenciar estado][about-state] descreve como o estado é gerenciado na v4.
+Para acessar um diálogo, você precisa colocar uma instância em um _conjunto de diálogos_ e, em seguida, gerar um _contexto de diálogo_ para esse conjunto. Você precisa fornecer um acessador de propriedade de estado de diálogo ao criar um conjunto de diálogos. Isso permite que a estrutura persista o estado do diálogo entre um turno e outro. [Gerenciando o estado][about-state] descreve como o estado é gerenciado na v4.
 
 ### <a name="using-dialogs"></a>Usar os diálogos
 
@@ -146,7 +145,7 @@ Aqui está uma lista de operações comuns na v3 e como realizá-las dentro de u
 
 Outras observações sobre o código da v4:
 
-- As várias classes derivadas de `Prompt` na v4 implementam prompts de usuário como caixas de diálogos separados, em duas etapas. Confira como [implementar o fluxo de conversa sequencial][sequential-flow].
+- As várias classes derivadas de `Prompt` na v4 implementam prompts de usuário como caixas de diálogos separados, em duas etapas. Confira como [implementar um fluxo de conversa sequencial][sequential-flow].
 - Use `DialogSet.CreateContextAsync` para criar um contexto de diálogo para o turno atual.
 - Use a propriedade `DialogContext.Context` para obter o contexto de turno atual de dentro de um diálogo.
 - As etapas de cascata têm um parâmetro `WaterfallStepContext`, que deriva de `DialogContext`.

@@ -3,19 +3,18 @@ title: Adicionar mídia às mensagens | Microsoft Docs
 description: Saiba como adicionar mídia às mensagens usando o SDK do Bot Framework.
 keywords: mídia, mensagens, imagens, áudio, vídeo, arquivos, MessageFactory, rich cards, mensagens, cartões adaptáveis, cartão hero e ações sugeridas
 author: ivorb
-ms.author: v-ivorb
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 9478a3861b24746b4081ab2176486e59ccc7d4bc
-ms.sourcegitcommit: dbbfcf45a8d0ba66bd4fb5620d093abfa3b2f725
+ms.openlocfilehash: 4caa11221ed930a627b53d7f46107adb226a816d
+ms.sourcegitcommit: e815e786413296deea0bd78e5a495df329a9a7cb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67464707"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70876171"
 ---
 # <a name="add-media-to-messages"></a>Adicionar mídia às mensagens
 
@@ -23,7 +22,15 @@ ms.locfileid: "67464707"
 
 A troca de mensagens entre usuário e bot pode conter anexos de mídia como imagens, vídeo, áudio e arquivos. O SDK do Bot Framework oferece suporte à tarefa de envio de mensagens avançadas para o usuário. Para determinar o tipo de mensagens avançadas com suporte de um canal (Facebook, Skype, Slack etc), consulte a documentação do canal para obter informações sobre as limitações.
 
-Confira a [experiência de usuário de design](../bot-service-design-user-experience.md) para obter exemplos dos cartões disponíveis.
+## <a name="prerequisites"></a>Pré-requisitos
+- Conhecimento sobre os [conceitos básicos do bot](bot-builder-basics.md).
+- O código deste artigo baseia-se nas seguintes amostras:
+
+  | Exemplo de código | C# | JS |
+  | :------ | :----- | :---|
+  | Cartões | [Exemplo de C#](https://aka.ms/bot-cards-sample-code) | [Exemplo de JS](https://aka.ms/bot-cards-js-sample-code) |
+  | Anexos | [Exemplo de C#](https://aka.ms/bot-attachments-sample-code) | [Exemplo de JS](https://aka.ms/bot-attachments-sample-code-js) |
+  | Ações sugeridas | [Exemplo de C#](https://aka.ms/SuggestedActionsCSharp) | [Exemplo de JS](https://aka.ms/SuggestedActionsJS) |
 
 ## <a name="send-attachments"></a>Enviar anexos
 
@@ -241,14 +248,6 @@ Para enviar um carrossel de cartões, envie uma resposta com os anexos como uma 
 Confira a [experiência de usuário de design](../bot-service-design-user-experience.md) para obter exemplos dos cartões disponíveis.
 
 Para obter informações detalhadas sobre o esquema, confira o [esquema de cartão do Bot Framework](https://aka.ms/botSpecs-cardSchema) e a [seção de atividades de mensagem](https://aka.ms/botSpecs-activitySchema#message-activity) do esquema de Atividade do Bot Framework.
-
-| Exemplo de código | C# | JS |
-| :------ | :----- | :---|
-| Cartões | [Exemplo de C#](https://aka.ms/bot-cards-sample-code) | [Exemplo de JS](https://aka.ms/bot-cards-js-sample-code) |
-| Anexos | [Exemplo de C#](https://aka.ms/bot-attachments-sample-code) | [Exemplo de JS](https://aka.ms/bot-attachments-sample-code-js) |
-| Ações sugeridas | [Exemplo de C#](https://aka.ms/SuggestedActionsCSharp) | [Exemplo de JS](https://aka.ms/SuggestedActionsJS) |
-
-Consulte o repositório Exemplos do Bot Builder no [GitHub](https://aka.ms/bot-samples-readme) para obter exemplos adicionais.
 
 ### <a name="code-sample-for-processing-adaptive-card-input"></a>Exemplo de código para processar entrada do Cartão Adaptável
 

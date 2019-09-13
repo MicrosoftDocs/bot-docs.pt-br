@@ -6,15 +6,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: f3d46431191638cc41026f6c020a5f04de21ff0d
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: 032d3c9553c5be774bf5d71fb2477d5a5689ca40
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225631"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70297910"
 ---
 # <a name="customize-user-experience-with-pattern-language"></a>Personalizar a experiência do usuário com linguagem padrão
 
@@ -24,7 +23,7 @@ Quando você personaliza um prompt ou substituir um modelo padrão, você pode u
 
 ## <a name="prompts-and-templates"></a>Prompts e modelos
 
-Um [prompt][promptAttribute] define a mensagem que é enviada ao usuário para solicitar uma parte das informações ou pedir confirmação. Você pode personalizar um prompt, usando o [atributo Prompt](bot-builder-dotnet-formflow-advanced.md#customize-prompts-using-the-prompt-attribute) ou implicitamente por meio de [IFormBuilder<T>.Field][field]. 
+Um [aviso][promptAttribute] define a mensagem que é enviada ao usuário para solicitar uma informação ou pedir uma confirmação. Personalize um aviso usando o [atributo Prompt](bot-builder-dotnet-formflow-advanced.md#customize-prompts-using-the-prompt-attribute) ou implicitamente por meio de [IFormBuilder<T>.Field][field]. 
 
 Formulários usam modelos para construir automaticamente os prompts e outras coisas como obter ajuda. Você pode substituir o modelo padrão de uma classe ou um campo usando o [atributo Template](bot-builder-dotnet-formflow-advanced.md#customize-prompts-using-the-template-attribute). 
 
@@ -42,10 +41,10 @@ A linguagem padrão usa chaves (`{}`) para identificar elementos que serão subs
 | `{<field><format>}` | Mostra o valor do campo nomeado. | 
 | `{&<field>}` | Mostra a descrição do campo nomeado. |
 | <code>{&#124;&#124;}</code> | Mostra a escolha ou escolhas atuais, que poderia ser o valor atual de um campo, “Nenhuma preferência” ou os valores de uma enumeração. |
-| `{[{<field><format>} ...]}` | Mostra uma lista de valores dos campos nomeados usando [Separator][separator] e [LastSeparator][lastSeparator] para separar os valores individuais na lista . |
+| `{[{<field><format>} ...]}` | Mostra uma lista de valores dos campos nomeados usando [Separator][separator] e [LastSeparator][lastSeparator] para separar os valores individuais na lista. |
 | `{*}` | Mostra uma linha para cada campo ativo; cada linha contém a descrição do campo e o valor atual. | 
 | `{*filled}` | Mostra uma linha para cada campo ativo que contém um valor real; cada linha contém a descrição do campo e o valor atual. |
-| `{<nth><format>}` | Um especificador de formato C# normal que se aplica ao enésimo argumento de um modelo. Para obter a lista de argumentos disponíveis, consulte [TemplateUsage][templateUsage]. |
+| `{<nth><format>}` | Um especificador de formato C# normal que se aplica ao enésimo argumento de um modelo. Para obter a lista de argumentos disponíveis, confira [TemplateUsage][templateUsage]. |
 | `{?<textOrPatternElement>...}` | Substituição condicional. Se todos os elementos padrão chamados tiverem valores, os valores são substituídos e toda a expressão é usada. |
 
 Para os elementos listados acima:
@@ -93,17 +92,17 @@ Os prompts e modelos oferecem suporte a esses parâmetros de formatação.
 | Uso | DESCRIÇÃO |
 |----|----|
 | `AllowDefault` | Aplica-se aos elementos padrão <code>{&#124;&#124;}</code>. Determina se o formulário deve mostrar o valor atual do campo como uma opção possível. Se `true`, o valor atual é mostrado como um valor possível. O padrão é `true`. |
-| `ChoiceCase` | Aplica-se aos elementos padrão <code>{&#124;&#124;}</code>. Determina se o texto de cada opção é normalizado (por exemplo, se a primeira letra de cada palavra é escrita com letra maiúscula). O padrão é `CaseNormalization.None`. Para possíveis valores, consulte [CaseNormalization][caseNormalization]. |
+| `ChoiceCase` | Aplica-se aos elementos padrão <code>{&#124;&#124;}</code>. Determina se o texto de cada opção é normalizado (por exemplo, se a primeira letra de cada palavra é escrita com letra maiúscula). O padrão é `CaseNormalization.None`. Para obter os valores possíveis, confira [CaseNormalization][caseNormalization]. |
 | `ChoiceFormat` | Aplica-se aos elementos padrão <code>{&#124;&#124;}</code>. Determina se deve mostrar uma lista de opções como uma lista numerada ou como uma lista com marcadores. Para obter uma lista numerada, defina `ChoiceFormat` para `{0}` (padrão). Para obter uma lista com marcadores, defina `ChoiceFormat` para `{1}`. |
 | `ChoiceLastSeparator` | Aplica-se aos elementos padrão <code>{&#124;&#124;}</code>. Determina se uma lista embutida de opções inclui um separador antes da última opção. |
 | `ChoiceParens` | Aplica-se aos elementos padrão <code>{&#124;&#124;}</code>. Determina se uma lista embutida de opções é mostrada entre parênteses. Se `true`, a lista de opções é mostrada entre parênteses. O padrão é `true`. |
 | `ChoiceSeparator` | Aplica-se aos elementos padrão <code>{&#124;&#124;}</code>. Determina se uma lista embutida de opções inclui um separador antes de cada opção, exceto a última. | 
-| `ChoiceStyle` | Aplica-se aos elementos padrão <code>{&#124;&#124;}</code>. Determina se a lista de opções é mostrada embutida ou por linha. O padrão é `ChoiceStyleOptions.Auto` que determina em tempo de execução se a opção é mostrada de forma embutida ou em uma lista. Para os valores possíveis, consulte [ChoiceStyleOptions][choiceStyleOptions]. |
-| `Feedback` | Aplica-se a somente os prompts. Determina se o formulário reflete a escolha do usuário para indicar que o formulário entendeu a seleção. O padrão é `FeedbackOptions.Auto` que reflete a entrada do usuário somente se parte dela não for compreendida. Para os valores possíveis, consulte [FeedbackOptions][feedbackOptions]. |
-| `FieldCase` | Determina se o texto da descrição do campo é normalizado (por exemplo, se a primeira letra de cada palavra é escrita com letra maiúscula). O padrão é `CaseNormalization.Lower` que converte a descrição em minúsculas. Para possíveis valores, consulte [CaseNormalization][caseNormalization]. |
+| `ChoiceStyle` | Aplica-se aos elementos padrão <code>{&#124;&#124;}</code>. Determina se a lista de opções é mostrada embutida ou por linha. O padrão é `ChoiceStyleOptions.Auto` que determina em tempo de execução se a opção é mostrada de forma embutida ou em uma lista. Para obter os valores possíveis, confira [ChoiceStyleOptions][choiceStyleOptions]. |
+| `Feedback` | Aplica-se a somente os prompts. Determina se o formulário reflete a escolha do usuário para indicar que o formulário entendeu a seleção. O padrão é `FeedbackOptions.Auto` que reflete a entrada do usuário somente se parte dela não for compreendida. Para obter os valores possíveis, confira [FeedbackOptions][feedbackOptions]. |
+| `FieldCase` | Determina se o texto da descrição do campo é normalizado (por exemplo, se a primeira letra de cada palavra é escrita com letra maiúscula). O padrão é `CaseNormalization.Lower` que converte a descrição em minúsculas. Para obter os valores possíveis, confira [CaseNormalization][caseNormalization]. |
 | `LastSeparator` | Aplica-se aos elementos padrão `{[]}`. Determina se uma lista matriz de itens inclui um separador antes do último item. |
 | `Separator` | Aplica-se aos elementos padrão `{[]}`. Determina se uma lista matriz de itens inclui um separador antes de cada item na matriz, exceto o último item. |
-| `ValueCase` | Determina se o texto do valor do campo é normalizado (por exemplo, se a primeira letra de cada palavra é escrita com letra maiúscula). O padrão é `CaseNormalization.InitialUpper` que converte a primeira letra de cada palavra em maiúscula. Para possíveis valores, consulte [CaseNormalization][caseNormalization]. |
+| `ValueCase` | Determina se o texto do valor do campo é normalizado (por exemplo, se a primeira letra de cada palavra é escrita com letra maiúscula). O padrão é `CaseNormalization.InitialUpper` que converte a primeira letra de cada palavra em maiúscula. Para obter os valores possíveis, confira [CaseNormalization][caseNormalization]. |
 
 ### <a name="prompt-attribute-with-formatting-parameter"></a>Atributo prompt com parâmetro de formatação 
 

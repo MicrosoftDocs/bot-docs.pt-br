@@ -6,15 +6,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: d04e13babef847a44438e1a748990d7405478fa2
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: 4dc065905c71aef0b3f0108032ca79a2a15f8af0
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54225951"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70298025"
 ---
 # <a name="advanced-features-of-formflow"></a>Recursos avançados do FormFlow
 
@@ -24,13 +23,13 @@ ms.locfileid: "54225951"
 
 ## <a name="specify-initial-form-state-and-entities"></a>Especificar entidades e o estado inicial do formulário
 
-Quando você inicia um [FormDialog][formDialog], pode passar, opcionalmente, uma instância do seu estado. Se você passar uma instância do seu estado, por padrão, o FormFlow ignorará as etapas para todos os campos que já contêm valores; o usuário não receberá uma solicitação para esses campos. Para forçar o formulário a solicitar ao usuário o preenchimento de todos os campos (incluindo os campos que já contêm valores no estado inicial), passe [FormOptions.PromptFieldsWithValues][promptFieldsWithValues] ao iniciar o `FormDialog`. Se um campo contiver um valor inicial, o aviso usará esse valor como o valor padrão.
+Quando você inicia um [FormDialog][formDialog], pode passar, opcionalmente, uma instância do estado. Se você passar uma instância do seu estado, por padrão, o FormFlow ignorará as etapas para todos os campos que já contêm valores; o usuário não receberá uma solicitação para esses campos. Para forçar o formulário a solicitar ao usuário o preenchimento de todos os campos (incluindo os campos que já contêm valores no estado inicial), passe [FormOptions.PromptFieldsWithValues][promptFieldsWithValues] ao iniciar o `FormDialog`. Se um campo contiver um valor inicial, o aviso usará esse valor como o valor padrão.
 
 Você também pode passar entidades de [LUIS](https://luis.ai/) para associar ao estado. Se `EntityRecommendation.Type` for um caminho até um campo em sua classe C#, o `EntityRecommendation.Entity` passará pelo reconhecedor para associar ao seu campo. O FormFlow ignorará as etapas para todos os campos associados a uma entidade; o usuário não receberá uma solicitação para esses campos. 
 
 ## <a name="add-business-logic"></a>Adicionar lógica de negócios 
 
-Para lidar com as interdependências entre campos de formulário ou aplicar uma lógica específica durante o processo de obtenção ou definição de um valor de campo, especifique a lógica de negócios dentro de uma função de validação. Uma função de validação permite que você manipule o estado e retorne um objeto [ValidateResult][validateResult], o qual pode conter: 
+Para lidar com as interdependências entre campos de formulário ou aplicar uma lógica específica durante o processo de obtenção ou definição de um valor de campo, especifique a lógica de negócios dentro de uma função de validação. Uma função de validação permite que você manipule o estado e retorne um objeto [ValidateResult][validateResult] que pode conter: 
 
 - uma cadeia de caracteres de comentários que descreve o motivo pelo qual um valor é inválido
 - um valor transformado
@@ -72,10 +71,10 @@ Adicione esses atributos de C# à sua classe para personalizar o comportamento d
 |----|----| 
 | [Describe][describeAttribute] | Alterar como um campo ou valor é mostrado em um modelo ou um cartão |
 | [Numeric][numericAttribute] | Restringe os valores aceitos de um campo numérico |
-| [Optional][optionalAttribute] | Marca um campo como opcional |
-| [Pattern][patternAttribute] | Define uma expressão regular para validar um campo de cadeia de caracteres |
+| [Opcional][optionalAttribute] | Marca um campo como opcional |
+| [Padrão][patternAttribute] | Define uma expressão regular para validar um campo de cadeia de caracteres |
 | [Prompt][promptAttribute] | Define o aviso para um campo |
-| [Template][templateAttribute] | Define o modelo a ser usado para gerar avisos ou valores nos avisos |
+| [Modelo][templateAttribute] | Define o modelo a ser usado para gerar avisos ou valores nos avisos |
 | [Terms][termsAttribute] | Define os termos de entrada que correspondem a um campo ou valor |
 
 ## <a name="customize-prompts-using-the-prompt-attribute"></a>Personalizar avisos usando o atributo Prompt

@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 10246fda94932feb96e5faa0cdd8ca489c98c855
-ms.sourcegitcommit: c200cc2db62dbb46c2a089fb76017cc55bdf26b0
+ms.openlocfilehash: 3a4bf05a6c9b9eeca4a3cccef7aaf77c2f304048
+ms.sourcegitcommit: e815e786413296deea0bd78e5a495df329a9a7cb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70037468"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70876189"
 ---
 # <a name="add-rich-card-attachments-to-messages"></a>Adicionar anexos de cartão avançados às mensagens
 > [!div class="op_single_selector"]
@@ -32,7 +32,7 @@ Atualmente, o Bot Framework dá suporte a oito tipos de cartões avançados:
 
 | Tipo de cartão | DESCRIÇÃO |
 |----|----|
-| <a href="/adaptive-cards/get-started/bots">AdaptiveCard</a> | Um cartão personalizável que pode conter qualquer combinação de texto, fala, imagens, botões e campos de entrada. Confira [suporte por canal](/adaptive-cards/get-started/bots#channel-status).  |
+| <a href="/adaptive-cards/get-started/bots">AdaptiveCard</a> | Um cartão personalizável que pode conter qualquer combinação de texto, fala, imagens, botões e campos de entrada. Confira [suporte por canal](/adaptive-cards/get-started/bots#channel-status). |
 | [AnimationCard][] | Um cartão que pode reproduzir GIFs animados ou vídeos curtos. |
 | [AudioCard][] | Um cartão que pode reproduzir um arquivo de áudio. |
 | [HeroCard][] | Um cartão que geralmente contém uma única imagem grande, um ou mais botões e um texto. |
@@ -50,6 +50,9 @@ Para processar eventos em cartões avançados, use objetos [CardAction][] para e
 
 | Propriedade | Type | DESCRIÇÃO | 
 |----|----|----|
+| channelData | string | dados específicos do canal associados a esta ação |
+| displayText | string | texto a ser exibido no feed do chat se o botão receber um clique | 
+| text | string | texto da ação | 
 | Tipo | string | tipo de ação (um dos valores especificados na tabela a seguir) |
 | título | string | título do botão |
 | image | string | URL da imagem do botão |
@@ -260,12 +263,10 @@ O cartão resultante contém três blocos de texto, um campo de entrada (lista d
 - <a href="http://adaptivecards.io" target="_blank">Cartões Adaptáveis</a>
 
 [ChannelInspector]: ../bot-service-channel-inspector.md
-
 [Atividade]: bot-framework-rest-connector-api-reference.md#activity-object
 [Anexo]: bot-framework-rest-connector-api-reference.md#attachment-object
 [CardAction]: bot-framework-rest-connector-api-reference.md#cardaction-object
-
-[AnnimationCard]: bot-framework-rest-connector-api-reference.md#annimationcard-object
+[AnimationCard]: bot-framework-rest-connector-api-reference.md#animationcard-object
 [AudioCard]: bot-framework-rest-connector-api-reference.md#audiocard-object
 [HeroCard]: bot-framework-rest-connector-api-reference.md#herocard-object
 [ThumbnailCard]: bot-framework-rest-connector-api-reference.md#thumbnailcard-object

@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/02/2019
-ms.openlocfilehash: 68ba9f8b2b47d501ebf629e8a804e6a1479e1839
-ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
+ms.openlocfilehash: 52902456903fb8c5c9fd2037150a55a05f66f31c
+ms.sourcegitcommit: e815e786413296deea0bd78e5a495df329a9a7cb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167214"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70876128"
 ---
 # <a name="api-reference"></a>Referência de API
 
@@ -433,7 +433,7 @@ Define uma mensagem trocada entre o bot e o usuário.
 | **textHighlights** | [TextHighlight](#texthighlight-object)[] | A coleção de fragmentos de texto a serem realçados quando a atividade contém um valor **replyToId**. |
 | **timestamp** | string | Data e hora em que a mensagem foi enviada no fuso horário UTC, expressa no formato [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601). |
 | **topicName** | string | Tópico da conversa à qual a atividade pertence. |
-| **tipo** | string | Tipo de atividade. Um destes valores: **message**, **contactRelationUpdate**, **conversationUpdate**, **typing**, **endOfConversation**, **event**, **invoke**, **deleteUserData**, **messageUpdate**, **messageDelete**, **installationUpdate**, **messageReaction**, **suggestion**, **trace**, **handoff**. Para detalhes sobre tipos de atividade, consulte [Visão geral das atividades](bot-framework-rest-connector-activities.md). |
+| **tipo** | string | Tipo de atividade. Um destes valores: **message**, **contactRelationUpdate**, **conversationUpdate**, **typing**, **endOfConversation**, **event**, **invoke**, **deleteUserData**, **messageUpdate**, **messageDelete**, **installationUpdate**, **messageReaction**, **suggestion**, **trace**, **handoff**. Para detalhes sobre tipos de atividade, consulte [Visão geral das atividades](https://aka.ms/botSpecs-activitySchema). |
 | **valor** | objeto | Valor em aberto. |
 | **valueType** | string | O tipo do objeto de valor da atividade. |
 
@@ -451,7 +451,7 @@ Define um cartão que pode reproduzir GIFs animados ou vídeos curtos.
 | **buttons** | [CardAction](#cardaction-object)[] | Matriz de objetos **CardAction** que permitem ao usuário executar uma ou mais ações. O canal determina o número de botões que você pode especificar. |
 | **duration** | string | O comprimento do conteúdo de mídia, no [formato de duração ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html). |
 | **image** | [ThumbnailUrl](#thumbnailurl-object) | Um objeto **ThumbnailUrl** que especifica a imagem a ser exibida no cartão. |
-| **media** | [MediaUrl](#mediaurl-object)[] | Matriz de objetos **MediaUrl** que especifica a lista de GIFs animados a serem reproduzidos. |
+| **media** | [MediaUrl](#mediaurl-object)[] | Matriz de objetos **MediaUrl**. Quando esse campo contém mais de uma URL, cada URL é um formato alternativo do mesmo conteúdo.|
 | **shareable** | booleano | Sinalizador que indica se a animação pode ser compartilhada com outras pessoas. Configure esta propriedade para **true** se a animação puder ser compartilhada, caso contrário, para **false**. O valor padrão é **true**. |
 | **subtitle** | string | Subtítulo a ser exibido sob o título do cartão. |
 | **text** | string | Descrição ou solicitação para exibir sob o título ou subtítulo do cartão. |
@@ -522,7 +522,7 @@ Define um cartão que pode reproduzir um arquivo de áudio.
 | **buttons** | [CardAction](#cardaction-object)[] | Matriz de objetos **CardAction** que permitem ao usuário executar uma ou mais ações. O canal determina o número de botões que você pode especificar. |
 | **duration** | string | O comprimento do conteúdo de mídia, no [formato de duração ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html). |
 | **image** | [ThumbnailUrl](#thumbnailurl-object) | Um objeto **ThumbnailUrl** que especifica a imagem a ser exibida no cartão. |
-| **media** | [MediaUrl](#mediaurl-object)[] | Matriz de objetos **MediaUrl** que especifica a lista de arquivos de áudio a serem reproduzidos. |
+| **media** | [MediaUrl](#mediaurl-object)[] | Matriz de objetos **MediaUrl**.  Quando esse campo contém mais de uma URL, cada URL é um formato alternativo do mesmo conteúdo. |
 | **shareable** | booleano | Sinalizador que indica se os arquivos de áudio podem ser compartilhados com outras pessoas. Defina essa propriedade como **true** se o áudio puder ser compartilhado, caso contrário, **false**. O valor padrão é **true**. |
 | **subtitle** | string | Subtítulo a ser exibido sob o título do cartão. |
 | **text** | string | Descrição ou solicitação para exibir sob o título ou subtítulo do cartão. |
@@ -940,7 +940,7 @@ Define um cartão que pode reproduzir vídeos.
 | **buttons** | [CardAction](#cardaction-object)[] | Matriz de objetos **CardAction** que permitem ao usuário executar uma ou mais ações. O canal determina o número de botões que você pode especificar. |
 | **duration** | string | O comprimento do conteúdo de mídia, no [formato de duração ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html). |
 | **image** | [ThumbnailUrl](#thumbnailurl-object) | Um objeto **ThumbnailUrl** que especifica a imagem a ser exibida no cartão. |
-| **media** | [MediaUrl](#mediaurl-object)[] | Matriz de objetos **MediaUrl** que especifica a lista de vídeos a serem reproduzidos. |
+| **media** | [MediaUrl](#mediaurl-object)[] | Matriz de **MediaUrl**.  Quando esse campo contém mais de uma URL, cada URL é um formato alternativo do mesmo conteúdo. |
 | **shareable** | booleano | Sinalizador que indica se os vídeos podem ser compartilhados com outras pessoas. Defina esta propriedade para **true** se os vídeos puderem ser compartilhados, caso contrário, como **false**. O valor padrão é **true**. |
 | **subtitle** | string | Subtítulo a ser exibido sob o título do cartão. |
 | **text** | string | Descrição ou solicitação para exibir sob o título ou subtítulo do cartão. |

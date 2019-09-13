@@ -6,15 +6,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 710a8ce315faa02a72eaeb753c44b9b212524ec3
-ms.sourcegitcommit: b15cf37afc4f57d13ca6636d4227433809562f8b
+ms.openlocfilehash: 4e9aa1b7bffd55518bd4ef03512d873ac48b49a7
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54224671"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70297877"
 ---
 # <a name="basic-features-of-formflow"></a>Recursos básicos do FormFlow
 
@@ -39,7 +38,7 @@ Para criar um bot usando FormFlow, você deverá especificar as informações qu
 
 Qualquer um dos tipos de dados pode ser nulo, que você pode usar para modelar que o campo não tem um valor. Se um campo de formulário for baseado em uma propriedade de enumeração que não permite valor nulo, o valor **0** na enumeração representará **nulo** (ou seja, indica que o campo não tem um valor) e você deverá começar seus valores de enumeração no **1**. O FormFlow ignora todos os outros tipos de propriedades e métodos.
 
-Para objetos complexos, você deverá criar um formulário para a classe C# de nível superior e outro formulário para o objeto complexo. Você pode compor os formulários em conjunto usando semântica típica de [diálogo](bot-builder-dotnet-dialogs.md). Também é possível definir um formulário diretamente, ao implementar [Advanced.IField][iField], ou usando [Advanced.Field][field] e preenchendo os dicionários dentro dele. 
+Para objetos complexos, você deverá criar um formulário para a classe C# de nível superior e outro formulário para o objeto complexo. Você pode compor os formulários em conjunto usando semântica típica de [diálogo](bot-builder-dotnet-dialogs.md). Também é possível definir um formulário diretamente implementando [Advanced.IField][iField] ou usando [Advanced.Field][field] e populando os dicionários dentro dele. 
 
 > [!NOTE]
 > Você pode definir um formulário usando uma classe C# ou o esquema JSON. Este artigo descreve como definir um formulário usando uma classe C#. Para saber mais sobre como usar o esquema JSON, veja [Definir um formulário usando o esquema JSON](bot-builder-dotnet-formflow-json-schema.md).

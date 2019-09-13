@@ -2,19 +2,18 @@
 title: Criar experiências controladas por dados com o Azure Search | Microsoft Docs
 description: Saiba como criar experiências controladas por dados com o Azure Search e ajudar os usuários a navegar em grandes quantidades de conteúdo em um bot com o SDK do Bot Framework para Node.js e Azure Search.
 author: matthewshim-ms
-ms.author: v-shimma
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.subservice: sdk
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 259f709ae460fde13cdf25ce6d7cbf5dd44a333d
-ms.sourcegitcommit: cf3786c6e092adec5409d852849927dc1428e8a2
+ms.openlocfilehash: 0a5ebd10e076b44708f13de0b8485bffff3419af
+ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57224854"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70299748"
 ---
 # <a name="create-data-driven-experiences-with-azure-search"></a>Criar experiências controladas por dados com o Azure Search 
 
@@ -24,7 +23,7 @@ ms.locfileid: "57224854"
 > - [.NET](../dotnet/bot-builder-dotnet-search-azure.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-search-azure.md)
 
-Você pode adicionar o [ Azure Search][search] ao bot para ajudar o usuário a navegar em grandes quantidades de conteúdo e criar uma experiência de exploração controlada por dados para os usuários do bot.
+Adicione o [Azure Search][search] ao bot para ajudar o usuário a navegar em grandes quantidades de conteúdo e criar uma experiência de exploração controlada por dados para os usuários do bot.
 
 Azure Search é um serviço do Azure que oferece pesquisa por palavra-chave, linguística interna, a pontuação personalizada, faceted navigation e mais. O Azure Search também pode indexar o conteúdo de várias fontes, incluindo o BD SQL do Azure, DocumentDB, Armazenamento de Blobs e Armazenamento de Tabelas. Ele dá suporte à indexação "push" para outras fontes de dados e pode abrir PDFs, documentos do Office e outros formatos que contém dados não estruturados. Depois de coletado, o conteúdo entra em um índice do Azure Search, que o bot pode então consultar.
 
@@ -106,7 +105,7 @@ Para obter mais informações sobre diálogos, consulte [Gerenciar uma conversa 
 Após o Azure Search resolver com êxito, será necessário armazenar os dados selecionados do objeto de resposta e exibi-los de forma significativa para o usuário.
 
 > [!TIP]
-> Considere a inclusão do [módulo util][NodeUtil]. Ele ajudará a formatar e mapear a resposta do Azure Search.
+> Considere a possibilidade de incluir o [módulo util][NodeUtil]. Ele ajudará a formatar e mapear a resposta do Azure Search.
 
 No arquivo de programa principal do bot, crie um método `ToSearchHit`. Esse método retorna um objeto que formata os dados relevantes que você precisa da resposta do Azure. O código a seguir mostra como é possível definir seus próprios parâmetros no método `ToSearchHit`. 
  
@@ -156,7 +155,7 @@ Veja dois exemplos completos que mostram como dar suporte ao Azure Search com os
 ## <a name="additional-resources"></a>Recursos adicionais
 
 * [Azure Search][search]
-* [Nó Util][NodeUtil]
+* [Node Util][NodeUtil]
 * [Diálogos](bot-builder-nodejs-dialog-manage-conversation.md)
 
 [NodeUtil]: https://nodejs.org/api/util.html

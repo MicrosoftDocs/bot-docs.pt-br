@@ -1,20 +1,25 @@
 ---
-ms.openlocfilehash: 2f970239f7df015bf38d163dd6442a9920b21115
-ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
+ms.openlocfilehash: 967e0811cda9e77135b4575560d36f12ffdfafcf
+ms.sourcegitcommit: dd12ddf408c010182b09da88e2aac0de124cef22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67405581"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386007"
 ---
-- Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/) antes de começar.
-- Instalar a versão mais recente da [ferramenta de CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
-- Instale a versão mais recente da ferramenta [MSBot](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/MSBot).
-- Instale a versão mais recente do [Bot Framework Emulator](https://aka.ms/Emulator-wiki-getting-started).
-- Instale e configure o [ngrok](https://github.com/Microsoft/BotFramework-Emulator/wiki/Tunneling-%28ngrok%29). 
-- Conhecimento do [Gerenciamento de recursos do bot](~/v4sdk/bot-file-basics.md).
+- Uma assinatura do [Microsoft Azure](https://azure.microsoft.com/free/)
+- Um bot C#, JavaScript ou TypeScript que você desenvolveu no computador local
+- Última versão da [CLI do Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)
+- Familiaridade com [a CLI do Azure e os modelos ARM](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview)
 
-O msbot 4.3.2 e posterior exige a CLI do Azure versão 2.0.54 ou posterior. Se você tiver instalado a extensão botservice, remova-a com este comando.
+<!-- - If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
+- Install the latest version of the [Azure cli tool](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+- Install latest version of the [MSBot](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/MSBot) tool.
+- Install latest released version of the [Bot Framework Emulator](https://aka.ms/Emulator-wiki-getting-started).
+- Install and configure [ngrok](https://github.com/Microsoft/BotFramework-Emulator/wiki/Tunneling-%28ngrok%29). 
+- Knowledge of [Managing bot resources](~/v4sdk/bot-file-basics.md).
+
+With msbot 4.3.2 and later, you need Azure CLI version 2.0.54 or later. If you installed the botservice extension, remove it with this command.
 
 ```cmd
 az extension remove --name botservice
-```
+``` -->
