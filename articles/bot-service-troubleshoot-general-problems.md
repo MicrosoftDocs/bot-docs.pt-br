@@ -6,13 +6,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 04/30/2019
-ms.openlocfilehash: c9c8ff04e7093cd0375e52c4ecd90b44af4f4798
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.date: 09/17/2019
+ms.openlocfilehash: 47f87555b48edcfdca6d07ab2bdaa52ef915a8da
+ms.sourcegitcommit: 61a2297fabf35c59693309f2a605e893634585b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298559"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061073"
 ---
 # <a name="troubleshooting-general-problems"></a>Solução de problemas gerais
 Essas perguntas frequentes podem ajudá-lo a solucionar problemas comuns de desenvolvimento de bot ou operacionais.
@@ -78,7 +78,7 @@ Algumas plataformas de hospedagem permitem que você configure o serviço para q
 
 ## <a name="how-can-i-guarantee-message-delivery-order"></a>Como é possível garantir a ordem de entrega da mensagem?
 
-O Bot Framework irá preservar a ordem das mensagens, tanto quanto possível. Por exemplo, se você enviar a mensagem A e aguardar a conclusão dessa operação HTTP antes de iniciar outra operação HTTP para enviar a mensagem B, o Bot Framework reconhecerá automaticamente que a mensagem A deve preceder a mensagem B. No entanto, em geral, a ordem de entrega da mensagem não pode ser garantida, pois o canal é o responsável, em última instância, pela entrega da mensagem e pode reordenar as mensagens. Para reduzir o risco das mensagens serem entregues na ordem errada, é possível implementar um intervalo de tempo entre as mensagens.
+O Bot Framework irá preservar a ordem das mensagens, tanto quanto possível. Por exemplo, se você enviar a mensagem A e aguardar a conclusão dessa operação HTTP antes de iniciar outra operação HTTP para enviar a mensagem B, o Bot Framework reconhecerá automaticamente que a mensagem A deve preceder a mensagem B. No entanto, em geral, a ordem de entrega da mensagem não pode ser garantida, pois o canal é o responsável, em última instância, pela entrega da mensagem e pode reordenar as mensagens.
 
 ## <a name="how-can-i-intercept-all-messages-between-the-user-and-my-bot"></a>Como é possível interceptar todas as mensagens entre o usuário e o bot?
 
