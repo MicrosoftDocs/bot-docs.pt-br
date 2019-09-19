@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/07/2019
-ms.openlocfilehash: 9e61e7e9d7bc6ba06d4c239cbf8b0dc0c4e7e16e
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 9310bdf8cab253cd379b7b49daa18deed79f27ae
+ms.sourcegitcommit: 96d26f6b0576747fa62767710af922ace0ff0e3b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299092"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71060349"
 ---
 # <a name="web-chat-customization"></a>Personalização de Webchat
 
@@ -155,7 +155,7 @@ Para aplicação de estilo mais aprofundada, você também pode modificar o conj
 
 ## <a name="change-the-avatar-of-the-bot-within-the-dialog-box"></a>Alterar o avatar do bot dentro da caixa de diálogo
 
-O Webchat mais recente dá suporte ao uso de avatares, e você pode personalizá-los usando as propriedades `botAvatarInitials` e `userAvatarInitials`.
+A versão mais recente do Webchat dá suporte a avatares, os quais você pode personalizar configurando `botAvatarInitials` e `userAvatarInitials` na propriedade `styleOptions`.
 
 <img alt="Screenshot with avatar initials" src="https://raw.githubusercontent.com/Microsoft/BotFramework-WebChat/master/media/sample-avatar-initials.png" width="396" />
 
@@ -166,15 +166,17 @@ O Webchat mais recente dá suporte ao uso de avatares, e você pode personalizá
       <div id="webchat" role="main"></div>
       <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
       <script>
+         const styleOptions = {
+            botAvatarInitials: 'BF',
+            userAvatarInitials: 'WC'
+         };
+
          window.WebChat.renderWebChat(
             {
                directLine: window.WebChat.createDirectLine({
                   secret: 'YOUR_BOT_SECRET'
                }),
-
-               // Passing avatar initials when rendering Web Chat
-               botAvatarInitials: 'BF',
-               userAvatarInitials: 'WC'
+               styleOptions
             },
             document.getElementById('webchat')
          );
@@ -183,7 +185,7 @@ O Webchat mais recente dá suporte ao uso de avatares, e você pode personalizá
 </html>
 ```
 
-Dentro do código `renderWebChat`, adicionamos `botAvatarInitials` e `userAvatarInitials`:
+Na propriedade `styleOptions` do Webchat, adicionamos `botAvatarInitials` e `userAvatarInitials`:
 
 ```js
 botAvatarInitials: 'BF',
