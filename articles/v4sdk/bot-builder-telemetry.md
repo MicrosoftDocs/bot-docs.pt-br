@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4db21ee1515b1c43dcbb20b532dcd195e20c3357
-ms.sourcegitcommit: e815e786413296deea0bd78e5a495df329a9a7cb
+ms.openlocfilehash: 17e9925cf8e34eb4d31964b9cebac367abaec58c
+ms.sourcegitcommit: 378dbffd3960a1fa063ffb314878ccd64fb8fb49
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70876195"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71094439"
 ---
 # <a name="add-telemetry-to-your-bot"></a>Adicionar telemetria ao seu bot
 
