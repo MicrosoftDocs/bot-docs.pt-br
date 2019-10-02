@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 03/01/2018
-ms.openlocfilehash: 4a37824ffc6eeeda69330a659d3d026bde5f0069
-ms.sourcegitcommit: 99fa595b81e6fabb1f4a93e0694e88bfbfab2dd4
+ms.openlocfilehash: e1eae45702a1eee94714f96425050948310c7520
+ms.sourcegitcommit: e9cd857ee11945ef0b98a1ffb4792494dfaeb126
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70808438"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71693123"
 ---
 # <a name="entities-and-activity-types"></a>Entidades e tipos de atividades
 
@@ -84,7 +84,7 @@ O objeto GeoCoordinates contém essas propriedades:
 | Type | tipo da entidade ("GeoCoordinates") |
 | NOME | nome do local |
 | Longitude | longitude da localização (<a href="https://en.wikipedia.org/wiki/World_Geodetic_System" target="_blank">WGS 84</a>) |
-| Longitude | latitude da localização (<a href="https://en.wikipedia.org/wiki/World_Geodetic_System" target="_blank">WGS 84</a>) |
+| Latitude | latitude da localização (<a href="https://en.wikipedia.org/wiki/World_Geodetic_System" target="_blank">WGS 84</a>) |
 | Elevação | elevação da localização (<a href="https://en.wikipedia.org/wiki/World_Geodetic_System" target="_blank">WGS 84</a>) |
 
 Este exemplo de código mostra como adicionar uma entidade place à coleção de entidades:
