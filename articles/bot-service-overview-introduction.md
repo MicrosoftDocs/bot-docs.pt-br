@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 05/05/2019
-ms.openlocfilehash: 5ca0e9d036d5d3628fff9ae8b0bf5d9f4aa9d8b4
-ms.sourcegitcommit: f3fda6791f48ab178721b72d4f4a77c373573e38
+ms.openlocfilehash: 3ef81582c500a403080908e0d2c63de2ead5b9ab
+ms.sourcegitcommit: e9cd857ee11945ef0b98a1ffb4792494dfaeb126
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68671442"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71693153"
 ---
 # <a name="about-azure-bot-service"></a>Sobre o Serviço de Bot do Azure
 
@@ -72,6 +72,8 @@ Os bots estão aplicativos complexos, com muitas partes diferentes, trabalhem em
 - Teste seu bot localmente com o [emulador](bot-service-debug-emulator.md). O emulador do Bot Framework é um aplicativo autônomo que não só fornece uma interface de chat, mas também ferramentas de depuração e para fazer perguntas para ajudar a entender como e porque seu bot faz o que ele faz.  O emulador pode ser executado localmente juntamente com seu aplicativo de bot em desenvolvimento. 
  
 - Teste o bot na [Web](bot-service-manage-test-webchat.md). Uma vez configurado no portal do Azure, seu bot também pode ser acessado através de uma interface de chat da Web. A interface de chat da Web é uma ótima maneira de conceder acesso ao bot para testadores e outras pessoas que não têm acesso direto ao código de execução do bot.
+
+- [Teste de unidade](https://docs.microsoft.com/en-us/azure/bot-service/unit-test-bots?view=azure-bot-service-4.0) seu bot com a atualização de julho do SDK do Bot Framework.
 
 ### <a name="publish"></a>Publicar 
 Quando estiver pronto para disponibilizar seu bot na Web, publique seu bot no [Azure](bot-builder-howto-deploy-azure.md) ou em seu próprio serviço Web ou data center. A primeira etapa para o bot ganhar vida em seu site, ou dentro de canais de chat, é ter um endereço na Internet pública.

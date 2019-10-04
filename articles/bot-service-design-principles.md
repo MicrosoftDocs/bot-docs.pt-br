@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 27553a88ee4373eacb089eb6358520820509e195
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: ca343ccb400a652a382ae1a8c279010ff7456bf1
+ms.sourcegitcommit: d493caf74b87b790c99bcdaddb30682251e3fdd4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70297592"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71278945"
 ---
 # <a name="principles-of-bot-design"></a>Princípios de design de bot
 
@@ -56,4 +56,4 @@ Sempre que não tiver certeza sobre a abordagem de design ideal para o bot, pare
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Agora que você está familiarizado com alguns princípios básicos de design de bot, saiba mais sobre como criar a experiência do usuário e os padrões comuns no restante desta seção.
+Agora que você está familiarizado com alguns princípios básicos do design de bots, saiba mais sobre os princípios fundamentais para [projetar a primeira interação](~/bot-service-design-first-interaction.md) entre o usuário e o bot.

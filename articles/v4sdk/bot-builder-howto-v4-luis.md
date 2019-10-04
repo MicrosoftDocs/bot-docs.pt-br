@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b20670b85b876d7cf10dea7f031e4d24221071a8
-ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
+ms.openlocfilehash: cedd6e57ec0490a18b23f22c7895e4ee52dc8509
+ms.sourcegitcommit: e9cd857ee11945ef0b98a1ffb4792494dfaeb126
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167149"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71694531"
 ---
 # <a name="add-natural-language-understanding-to-your-bot"></a>Adicionar reconhecimento de idioma natural ao seu bot
 

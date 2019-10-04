@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 03/01/2019
-ms.openlocfilehash: ec160690fd76bfa921a3dea25eef598215787531
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: ffb7864eabecd6aa509e2b347f3df48985d00584
+ms.sourcegitcommit: e9cd857ee11945ef0b98a1ffb4792494dfaeb126
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70297199"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71693137"
 ---
 # <a name="categorized-activities-by-channel"></a>Atividades categorizadas por canal
 
@@ -248,3 +248,12 @@ Por padrão, o Webchat renderiza:
 - Outros: mostra uma caixa de aviso (nunca vimos na produção). Você pode modificar esse pipeline de renderização para adicionar, remover ou substituir qualquer renderização personalizada.
 
 Você pode usar o Webchat para enviar qualquer tipo de atividade e conteúdo. Nós não documentamos nem recomendamos este recurso. Você deve usar a atividade “event” no lugar.
+
+## <a name="action-support-by-channel"></a>Suporte a ações por canal
+
+A tabela a seguir mostra o suporte à ação de cartão e à ação sugerida por canal.
+
+ \                      | Cortana  | Linha Direta | Direct Line (Webchat) | Email | Facebook | GroupMe |   Kik   | Linha  | Teams | Margem de atraso | Skype | Skype Business | Telegram | Twilio  
+:---------------------- | :-----:  | :---------: | :--------------------: |:----: | :------: | :-----: | :-----: | :---: | :---: | :---: | :---: | :------------: | :------: | :----:  
+Ações Sugeridas       |    0     |     100     |          100           |   0   |    10    |    0    |   20    |  13   |   0   |  100  |  10   |       0        |    100   |   0     
+Ações de cartão            |   100    |     100     |          100           |   0   |     3    |    0    |   20    |  99   |   3   |  100  |   3   |       0        |     0    |   0     

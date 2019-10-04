@@ -10,16 +10,19 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: travisw
 ms.custom: ''
-ms.openlocfilehash: f7f70804ce67adec386d1a6722ba7e87b6cb2a93
-ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
+ms.openlocfilehash: ec0a4afb33c560a6b53ff6a02da9b1cfed07f16b
+ms.sourcegitcommit: d493caf74b87b790c99bcdaddb30682251e3fdd4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167019"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71278996"
 ---
-# <a name="connect-a-bot-to-direct-line-speech-preview"></a>Conectar um bot ao Direct Line Speech (versão prévia)
+# <a name="connect-a-bot-to-direct-line-speech-channel"></a>Conectar um bot ao canal do Direct Line Speech
 
 [!INCLUDE[applies-to-v4](includes/applies-to.md)]
+
+> [!WARNING]
+> O **canal do Direct Line Speech** está em **versão prévia** pública.  
 
 Você pode configurar seu bot para permitir que aplicativos cliente se comuniquem com ele por meio do canal do Direct Line Speech.
 
@@ -96,3 +99,8 @@ Lembre-se de que o serviço está na versão prévia e sujeito a alterações, o
 1. As atividades [conversationUpdate](https://github.com/Microsoft/BotBuilder/blob/master/specs/botframework-activity/botframework-activity.md#conversation-update-activity) e [endOfCoversation](https://github.com/Microsoft/BotBuilder/blob/master/specs/botframework-activity/botframework-activity.md#end-of-conversation-activity), utilizadas para sinalizar o início e o fim das conversas, geralmente usadas para gerar mensagens de boas-vindas, serão atualizadas para que haja consistência com outros canais
 
 1. O canal ainda não dá suporte para [SigninCard](https://docs.microsoft.com/azure/bot-service/rest-api/bot-framework-rest-connector-add-rich-cards?view=azure-bot-service-4.0) 
+
+## <a name="next-steps"></a>Próximas etapas
+
+> [!div class="nextstepaction"]
+> [Use o Direct Line por Fala no seu bot](./directline-speech-bot.md)
