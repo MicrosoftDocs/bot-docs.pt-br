@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 01/16/2019
-ms.openlocfilehash: 0e97ad58fc81b52086eb691950845eec1665b064
-ms.sourcegitcommit: e815e786413296deea0bd78e5a495df329a9a7cb
+ms.openlocfilehash: 25adbcda6b1f33f5379f9231291c5a511e9c1d04
+ms.sourcegitcommit: 7e901f5f39a0cfb0d37e532321b90a1dcf4baadd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70876088"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72039747"
 ---
 # <a name="key-concepts"></a>Principais conceitos
 
@@ -24,7 +24,7 @@ O serviço do Conector do Bot permite que seu bot troque mensagens com canais co
 
 ### <a name="activity"></a>Atividade
 
-O serviço Bot Connector troca informações entre o bot e o canal (usuário) passando um objeto [Atividade][]. O tipo de atividade mais comum é **mensagem**, mas há outros tipos de atividade que podem ser usados para comunicar diversos tipos de informações a um bot ou canal. Para obter detalhes sobre as Atividades no serviço do Bot Connector, confira [Visão geral das atividades]https://aka.ms/botSpecs-activitySchema.
+O serviço Bot Connector troca informações entre o bot e o canal (usuário) passando um objeto [Activity][Activity]. O tipo de atividade mais comum é **mensagem**, mas há outros tipos de atividade que podem ser usados para comunicar diversos tipos de informações a um bot ou canal. Para obter detalhes sobre as Atividades no serviço do Conector do Bot, consulte [Visão geral das atividades](https://aka.ms/botSpecs-activitySchema).
 
 ## <a name="bot-state-service"></a>Serviço de Estado do Bot
 
@@ -50,4 +50,4 @@ Além da modelagem do serviço de Conector do Bot, cada SDK do Bot Framework tam
 
 Saiba mais sobre como criar bots usando o serviço de Conector do Bot conferindo os artigos apresentados nesta seção, começando com [Autenticação](bot-framework-rest-connector-authentication.md). Se você encontrar problemas ou sugestões sobre o serviço de Conector do Bot, consulte [Suporte](../bot-service-resources-links-help.md) para obter uma lista de recursos disponíveis. 
 
-[Atividade]: bot-framework-rest-connector-api-reference.md#activity-object
+[Activity]: bot-framework-rest-connector-api-reference.md#activity-object

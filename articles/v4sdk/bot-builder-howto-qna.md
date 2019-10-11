@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: dc11191e65d58f4fa038878da71cc0354cad4c64
-ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
+ms.openlocfilehash: 81e5b029453223b89bed97f54891f6ccb2d15ac1
+ms.sourcegitcommit: 5d81c5b25ea56e04f09d05916ee947d631009172
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167160"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72236439"
 ---
 # <a name="use-qna-maker-to-answer-questions"></a>Usar o QnA Maker para responder a perguntas
 
@@ -124,7 +124,9 @@ Em nosso exemplo, o código para a lógica do bot está em um arquivo **QnABot.j
 
 No arquivo **QnABot.js**, usamos as informações de conexão fornecidas pelo arquivo. env para estabelecer uma conexão para o serviço do QnA Maker: _this.qnaMaker_.
 
-**QnAMaker.js** [!code-javascript[QnAMaker](~/../botbuilder-samples/samples/javascript_nodejs/11.qnamaker/bots/QnABot.js?range=19-23)]
+**QnAMaker.js**
+
+[!code-javascript[QnAMaker](~/../botbuilder-samples/samples/javascript_nodejs/11.qnamaker/bots/QnABot.js?range=19-23)]
 
 
 ---
@@ -142,7 +144,9 @@ Quando seu bot precisar de uma resposta do QnAMaker, chame `GetAnswersAsync()` d
 
 No arquivo **QnABot.js**, passamos a entrada do usuário para o método `getAnswers` do serviço do QnA Maker a fim de obter respostas da base de conhecimento. Se o QnA Maker retornar uma resposta, ela será mostrada ao usuário. Caso contrário, o usuário receberá a mensagem “Nenhuma resposta do QnA Maker foi localizada”. 
 
-**QnABot.js** [!code-javascript[OnMessage](~/../botbuilder-samples/samples/javascript_nodejs/11.qnamaker/bots/QnABot.js?range=43-59)]
+**QnABot.js**
+
+[!code-javascript[OnMessage](~/../botbuilder-samples/samples/javascript_nodejs/11.qnamaker/bots/QnABot.js?range=43-59)]
 
 ---
 
