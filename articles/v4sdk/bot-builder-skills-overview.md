@@ -6,14 +6,14 @@ ms.author: darrenj
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 05/23/2019
+ms.date: 10/09/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 566eb58f98335b9c55499051c6a23a6e0e0b6bc5
-ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
+ms.openlocfilehash: 9bb149773fe1b2cdd09da0165a4fff4e647f419d
+ms.sourcegitcommit: 5d81c5b25ea56e04f09d05916ee947d631009172
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167127"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72236430"
 ---
 # <a name="virtual-assistant---skills-overview"></a>Assistente Virtual - Visão Geral das Habilidades
 
@@ -44,7 +44,7 @@ Atualmente fornecemos as seguintes Habilidades do Bot Framework, suportadas pelo
 |[Habilidade de Email](https://aka.ms/bf-email-skill)|Adicione recursos de email ao seu assistente. Da plataforma Microsoft Graph e Google.|
 |[Habilidade de tarefas](https://aka.ms/bf-todo-skill)|Adicione recursos de gerenciamento de tarefas ao seu assistente. Da plataforma Microsoft Graph.|
 |[Habilidade de Ponto de Interesse](https://aka.ms/bf-poi-skill)|Localize pontos de interesse e direções. Da plataforma Azure Mapas e FourSquare.|
-|[Habilidade Automotiva](https://aka.ms/bf-autos-kill)|Habilidade de demonstração para segmento vertical da indústria que permite o controle de recursos do carro.|
+|[Habilidade Automotiva](https://aka.ms/bf-auto-skill)|Habilidade de demonstração para segmento vertical da indústria que permite o controle de recursos do carro.|
 |[Habilidades Experimentais](https://aka.ms/bf-experimental-skills)|Notícias, Reservas em Restaurantes e Previsão do Tempo.|
 
 ## <a name="getting-started"></a>Introdução
