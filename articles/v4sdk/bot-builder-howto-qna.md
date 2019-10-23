@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 81e5b029453223b89bed97f54891f6ccb2d15ac1
-ms.sourcegitcommit: 5d81c5b25ea56e04f09d05916ee947d631009172
+ms.openlocfilehash: a0dac2fb38f065c0dab6044b5421918e73a0c563
+ms.sourcegitcommit: b8b2776552b15590a453267dd0141a25418fbc0c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72236439"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72556460"
 ---
 # <a name="use-qna-maker-to-answer-questions"></a>Usar o QnA Maker para responder a perguntas
 
@@ -124,11 +124,7 @@ Em nosso exemplo, o código para a lógica do bot está em um arquivo **QnABot.j
 
 No arquivo **QnABot.js**, usamos as informações de conexão fornecidas pelo arquivo. env para estabelecer uma conexão para o serviço do QnA Maker: _this.qnaMaker_.
 
-**QnAMaker.js**
-
-[!code-javascript[QnAMaker](~/../botbuilder-samples/samples/javascript_nodejs/11.qnamaker/bots/QnABot.js?range=19-23)]
-
-
+**QnAMaker.js** [!code-javascript[QnAMaker](~/../botbuilder-samples/samples/javascript_nodejs/11.qnamaker/bots/QnABot.js?range=12-16)]
 ---
 
 ## <a name="calling-qna-maker-from-your-bot"></a>Chamar o QnA Maker de seu bot
