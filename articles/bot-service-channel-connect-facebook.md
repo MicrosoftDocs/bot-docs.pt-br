@@ -6,13 +6,13 @@ manager: kamrani
 ms.topic: article
 ms.author: kamrani
 ms.service: bot-service
-ms.date: 08/03/2019
-ms.openlocfilehash: a856e3cc578b8c73583126df9f670bfde68ec9dc
-ms.sourcegitcommit: dd12ddf408c010182b09da88e2aac0de124cef22
+ms.date: 10/28/2019
+ms.openlocfilehash: 0821d9cac50828cc7802c4be8221538d4e1e620d
+ms.sourcegitcommit: b2819741e2bcace92510e7b250cd5c1ab667d774
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70386112"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031227"
 ---
 # <a name="connect-a-bot-to-facebook"></a>Conectar um bot ao Facebook
 
@@ -22,6 +22,9 @@ Seu bot pode ser conectado ao Facebook Messenger e ao Workplace do Facebook, par
 > A interface do usuário do Facebook pode parecer ligeiramente diferente de acordo com a versão que está sendo usada.
 
 ## <a name="connect-a-bot-to-facebook-messenger"></a>Conectar um bot ao Facebook Messenger
+
+> [!NOTE]
+> A partir de 16 de dezembro de 2019, o Workplace do Facebook alterará o modelo de segurança para integrações personalizadas.  As integrações atuais criadas com o Microsoft Bot Framework precisam ser atualizadas para usar o Bot Framework Adapter (disponível em JavaScript/Node.js) e implantadas usando um Aplicativo Web no Azure.  Novos bots do Workplace desenvolvidos usando o Microsoft Bot Framework também devem usar o adaptador do Facebook do JavaScript. Saiba mais sobre como [usar o adaptador do Facebook](https://aka.ms/botframework-workplace-adapter). As instruções abaixo funcionarão apenas até 16 de dezembro de 2019.
 
 Para saber mais sobre o desenvolvimento para o Facebook Messenger, confira a [documentação da plataforma Messenger](https://developers.facebook.com/docs/messenger-platform). Talvez você deseje examinar as [diretrizes de pré-lançamento](https://developers.facebook.com/docs/messenger-platform/product-overview/launch#app_public), o [início rápido](https://developers.facebook.com/docs/messenger-platform/guides/quick-start) e o [guia de instalação](https://developers.facebook.com/docs/messenger-platform/guides/setup) do Facebook.
 
