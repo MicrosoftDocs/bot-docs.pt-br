@@ -5,18 +5,16 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 08/22/2019
+ms.date: 11/04/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 953f52a7bc95c0b87435be70bb4052cf939b0a63
-ms.sourcegitcommit: 7e901f5f39a0cfb0d37e532321b90a1dcf4baadd
+ms.openlocfilehash: c55e14f10bf6a5f4032033472c07401bde82a334
+ms.sourcegitcommit: 490810d278d1c8207330b132f28a5eaf2b37bd07
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72039760"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73592271"
 ---
 <!-- 
-
-ms.author: kamrani
 
 Related TODO:
 - Check code in [Web Chat channel](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-webchat?view=azure-bot-service-4.0)
@@ -172,7 +170,7 @@ A próxima etapa é registrar com seu bot o aplicativo do Azure AD que você aca
 
 #### <a name="azure-ad-v1"></a>Azure AD v1
 
-1. Navegue até a página de recurso do seu bot no [Portal do Azure](http://portal.azure.com/).
+1. Navegue até a página de recurso do seu bot no [Portal do Azure](https://portal.azure.com/).
 1. Clique em **Configurações**.
 1. Em **Configurações de Conexão do OAuth** na parte inferior da página, clique em **Adicionar configuração**.
 1. Preencha o formulário da seguinte maneira:
@@ -201,7 +199,7 @@ A próxima etapa é registrar com seu bot o aplicativo do Azure AD que você aca
 
 #### <a name="azure-ad-v2"></a>Azure AD v2
 
-1. Navegue até a página Registro de Canais de Bot do seu bot no [Portal do Azure](http://portal.azure.com/).
+1. Navegue até a página Registro de Canais de Bot do seu bot no [Portal do Azure](https://portal.azure.com/).
 1. Clique em **Configurações**.
 1. Em **Configurações de Conexão do OAuth** na parte inferior da página, clique em **Adicionar configuração**.
 1. Preencha o formulário da seguinte maneira:
@@ -437,7 +435,7 @@ Por fim, não deixe de adicionar um arquivo `TeamsActivityHandler` apropriado (`
 O `TeamsActivityHandler` também envia atividades de *reação de mensagem*. Uma atividade de reação de mensagem faz referência à atividade original usando o campo *responder à ID*. Essa atividade também deve ser visível por meio do [Feed de Atividades][teams-activity-feed] no Microsoft Teams.
 
 > [!NOTE]
-> Você precisa criar um manifesto e incluir `token.botframework.com` na seção `validDomains`; caso contrário, o botão **Entrar** do OAuthCard não abrirá a janela de autenticação. Use o [App Studio](https://docs.microsoft.com/en-us/microsoftteams/platform/get-started/get-started-app-studio) para gerar seu manifesto.
+> Você precisa criar um manifesto e incluir `token.botframework.com` na seção `validDomains`; caso contrário, o botão **Entrar** do OAuthCard não abrirá a janela de autenticação. Use o [App Studio](https://docs.microsoft.com/microsoftteams/platform/get-started/get-started-app-studio) para gerar seu manifesto.
 
 ### <a name="further-reading"></a>Leitura adicional
 

@@ -7,13 +7,13 @@ keywords: SDK do Bot Framework, depurar bot, middleware de inspeção, bot emula
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 7/9/2019
-ms.openlocfilehash: 4a3ff1ef255b914a30c10f6ebd070b7ca98d2f86
-ms.sourcegitcommit: e9cd857ee11945ef0b98a1ffb4792494dfaeb126
+ms.date: 11/01/2019
+ms.openlocfilehash: 86521259b284694fcc35f27899953c9eea1b57d0
+ms.sourcegitcommit: 490810d278d1c8207330b132f28a5eaf2b37bd07
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71693126"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73592265"
 ---
 # <a name="debug-a-bot-with-inspection-middleware"></a>Depurar um bot com middleware de inspeção
 Este artigo descreve como depurar o bot usando o middleware de inspeção. Esse recurso permite que o Bot Framework Emulator depure o tráfego dentro e fora do bot, além de examinar o estado atual dele. Você pode usar uma mensagem de rastreamento para enviar dados para o emulador e, em seguida, inspecionar o estado do bot em qualquer determinada rodada da conversa. 
@@ -22,8 +22,8 @@ Usamos um EchoBot criado localmente usando o Bot Framework v4 ([C#](https://docs
 
 ## <a name="prerequisites"></a>Pré-requisitos
 - Baixar e instalar o [Bot Framework Emulator](https://aka.ms/Emulator-wiki-getting-started)
-- Conhecimento do [middleware](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-middleware?view=azure-bot-service-4.0) de bot
-- Conhecimento do [estado de gerenciamento](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-state?view=azure-bot-service-4.0) de bot
+- Conhecimento do [middleware](https://docs.microsoft.com/azure/bot-service/bot-builder-concept-middleware?view=azure-bot-service-4.0) de bot
+- Conhecimento do [estado de gerenciamento](https://docs.microsoft.com/azure/bot-service/bot-builder-concept-state?view=azure-bot-service-4.0) de bot
 - Baixar e instalar o [ngrok](https://ngrok.com/) (se você quiser depurar um bot configurado no Azure para usar canais adicionais)
 
 ## <a name="update-your-emulator-to-the-latest-version"></a>Atualizar o emulador para a versão mais recente 
