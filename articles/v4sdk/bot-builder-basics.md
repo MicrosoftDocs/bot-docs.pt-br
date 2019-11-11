@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 0e8a8275a7ede599b3d25576abcd3c1160873db7
-ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
+ms.openlocfilehash: dc2c222866796f584bcad950a6e0afc40ab43a90
+ms.sourcegitcommit: 4751c7b8ff1d3603d4596e4fa99e0071036c207c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167206"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73441624"
 ---
 # <a name="how-bots-work"></a>Como funcionam os bots
 
@@ -54,7 +54,7 @@ Vamos analisar o diagrama anterior, com foco na chegada de uma atividade de mens
 
 No exemplo acima, o bot respondeu à atividade de mensagem com outra atividade de mensagem contendo a mesma mensagem de texto. O processamento começa com a solicitação HTTP POST, com as informações de atividade transmitidas como uma carga JSON, chegando ao servidor Web. Em C#, isso geralmente será um projeto do ASP.NET e, em um projeto Node.js do JavaScript, isso costuma ser uma das estruturas populares, como Express ou Restify.
 
-O *adaptador*, um componente integrado do SDK, é o núcleo do tempo de execução do SDK. A atividade é executada como JSON no corpo HTTP POST. Este JSON é desserializado para criar o objeto Atividade, que é entregue ao adaptador com uma chamada para o método *processar atividade*. Ao receber a atividade, o adaptador cria um *contexto de turno* e chama o middleware. 
+O *adaptador*, um componente integrado do SDK, é o núcleo do runtime do SDK. A atividade é executada como JSON no corpo HTTP POST. Este JSON é desserializado para criar o objeto Atividade, que é entregue ao adaptador com uma chamada para o método *processar atividade*. Ao receber a atividade, o adaptador cria um *contexto de turno* e chama o middleware. 
 
 Conforme mencionado acima, o contexto de turno fornece o mecanismo para que o bot envie atividades de saída, geralmente em resposta a uma atividade de entrada. Para isso, o contexto de turno fornece métodos de resposta _enviar, atualizar e excluir atividade_. Cada método de resposta é executado em um processo assíncrono. 
 
@@ -257,7 +257,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-O método `Configure` termina a configuração do aplicativo especificando que ele deve usar MVC e alguns outros arquivos. Todos os bots usando o Bot Framework precisarão dessa chamada de configuração; no entanto, ela já estará definida em exemplos ou no modelo VSIX quando você compilar seu bot. `ConfigureServices` e `Configure` são chamados pelo tempo de execução quando o aplicativo é iniciado.
+O método `Configure` termina a configuração do aplicativo especificando que ele deve usar MVC e alguns outros arquivos. Todos os bots usando o Bot Framework precisarão dessa chamada de configuração; no entanto, ela já estará definida em exemplos ou no modelo VSIX quando você compilar seu bot. `ConfigureServices` e `Configure` são chamados pelo runtime quando o aplicativo é iniciado.
 
 #### <a name="bot-controller"></a>Controlador de Bot
 
@@ -377,3 +377,5 @@ Os recursos de bot, como ID do aplicativo, senhas, chaves ou segredos para servi
 ## <a name="additional-resources"></a>Recursos adicionais
 
 - Para entender a função do estado dos bots, consulte [gerenciar o estado](bot-builder-concept-state.md).
+
+- Para entender os principais conceitos de desenvolvimento de bots para o Microsoft Teams, confira [Como os bots do Microsoft Teams funcionam](bot-builder-basics-teams.md)

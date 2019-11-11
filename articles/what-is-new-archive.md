@@ -7,16 +7,70 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
-ms.date: 07/17/2019
+ms.date: 11/01/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 6b0b85abe825e0a4298ceb9985cca1f31e35ddbb
-ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
+ms.openlocfilehash: 6d73ad7bc0226874253dfe37a00b09ab22677b92
+ms.sourcegitcommit: 4751c7b8ff1d3603d4596e4fa99e0071036c207c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167327"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73441643"
 ---
-# <a name="whats-new-in-bot-framework-may-2019"></a>Novidades no Bot Framework (maio de 2019)
+# <a name="whats-new-july-2019"></a>Quais são as novidades? (julho de 2019)
+
+[!INCLUDE[applies-to](includes/applies-to.md)]
+
+O SDK do Bot Framework v4 é um [SDK open-source][1a] que permite aos desenvolvedores modelar e criar conversas sofisticadas usando sua linguagem de programação favorita.
+
+Este artigo resume os principais novos recursos e aprimoramentos no Bot Framework e no Serviço de Bot do Azure.
+
+|   | C#  | JS  | Python |   
+|---|:---:|:---:|:------:|
+|. |[4.5][1] | [4.5][2] | [4.4.0b2 (versão prévia)][3] | 
+|Docs | [docs][5] |[docs][5] |  | |
+|Exemplos |[.NET Core][6], [WebAPI][10] |[Node.js][7], [TypeScript][8], [es6][9]  | [Python][111] | | 
+
+[1a]:https://github.com/microsoft/botframework-sdk/#readme
+[1]:https://github.com/Microsoft/botbuilder-dotnet/#packages
+[2]:https://github.com/Microsoft/botbuilder-js#packages
+[3]:https://github.com/Microsoft/botbuilder-python#packages
+[5]:https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0
+[6]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore
+[7]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/javascript_nodejs
+[8]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/javascript_typescript
+[9]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/javascript_es6
+[10]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/csharp_webapi
+[111]:https://github.com/Microsoft/botbuilder-python/tree/master/samples
+
+
+## <a name="bot-framework-channels"></a>Canais do Bot Framework
+- [Direct Line Speech (versão prévia pública)](https://aka.ms/streaming-extensions) | [documentos:](https://docs.microsoft.com/azure/bot-service/directline-speech-bot?view=azure-bot-service-4.0) O Bot Framework e os Serviços de Fala da Microsoft fornecem um canal que permite fluxo de fala e texto bidirecional entre o cliente e o aplicativo bot, usando WebSockets.  
+
+- [Extensão do Serviço de Aplicativo Direct Line (versão prévia pública)](https://portal.azure.com) | [documentos](https://aka.ms/directline-ase): Uma versão da Direct Line que permite que os clientes se conectem diretamente a bots usando a Direct Line API. Isso oferece muitos benefícios, incluindo melhor desempenho e mais isolamento. A extensão do Serviço de Aplicativo Direct Line está disponível em todos os Serviços de Aplicativo do Azure, incluindo aqueles hospedados em um Ambiente do Serviço de Aplicativo do Azure. Um Ambiente do Serviço de Aplicativo do Azure oferece isolamento e é ideal para trabalhar em uma VNet. Uma VNet permite que você crie seu próprio espaço privado no Azure e é crucial para sua rede de nuvem, pois oferece isolamento, segmentação e outros benefícios importantes. 
+
+## <a name="bot-framework-sdk"></a>SDK do Bot Framework
+- [Caixa de Diálogo Adaptável (SDK v4.6 versão prévia)](https://github.com/Microsoft/BotBuilder-Samples/tree/master/experimental/adaptive-dialog#readme) | [documentos](https://github.com/Microsoft/BotBuilder-Samples/tree/master/experimental/adaptive-dialog/docs) | [exemplos de C#](https://github.com/Microsoft/BotBuilder-Samples/tree/master/experimental/adaptive-dialog/csharp_dotnetcore): A Caixa de Diálogo Adaptável agora permite que os desenvolvedores atualizem dinamicamente o fluxo de conversa com base em contexto e eventos. Isso é especialmente útil ao lidar com alternâncias de contexto de conversa e interrupções no meio de uma conversa. 
+  
+- [SDK do Python do Bot Framework (versão prévia 2)](https://github.com/microsoft/botbuilder-python) | [exemplos](https://github.com/Microsoft/botbuilder-python/tree/master/samples): O SDK do Python agora dá suporte a OAuth, Prompts, CosmosDB e inclui todas as principais funcionalidades no SDK 4.5. Além disso, há exemplos para ajudá-lo a saber mais sobre os novos recursos do SDK.
+
+## <a name="bot-framework-testing"></a>Testes do Bot Framework
+- [Docs](https://aka.ms/testing-framework) | Pacotes de teste de unidade ([C#](https://aka.ms/nuget-botbuilder-testing)/ [JavaScript](https://aka.ms/npm-botbuilder-testing)) | [Exemplo de C#](https://aka.ms/cs-core-test-sample) | [Exemplo de JS](https://aka.ms/js-core-test-sample): Respondendo à solicitação dos clientes e desenvolvedores por melhores ferramentas de teste, a versão de julho do SDK apresenta uma nova funcionalidade de teste de unidade. O pacote Microsoft.Bot.Builder.testing simplifica o processo de caixas de diálogo de teste de unidade em seu bot.  
+
+- [Testes de canal](https://github.com/Microsoft/BotFramework-Emulator/releases) | [docs](https://aka.ms/channel-testing): 
+
+Introduzido no Microsoft Build 2019, o Inspetor de Bot é um novo recurso no Bot Framework Emulator que permite depurar e testar bots em canais como Microsoft Teams, Slack, Cortana e muito mais. Conforme você usa o bot em canais específicos, as mensagens serão espelhadas para o Bot Framework Emulator, no qual você poderá inspecionar os dados da mensagem que o bot tiver recebido. Além disso, é renderizado um instantâneo do estado da memória do bot em todos os turnos entre o canal e o bot.
+
+## <a name="web-chat"></a>Chat na Web
+- Com base em solicitações de clientes corporativos, adicionamos um [exemplo de Webchat](https://github.com/microsoft/BotFramework-WebChat/tree/master/samples/19.a.single-sign-on-for-enterprise-apps#single-sign-on-demo-for-enterprise-apps-using-oauth) que mostra como autorizar um usuário a acessar recursos em um aplicativo empresarial com um bot. Dois tipos de recursos são usados para demonstrar a interoperabilidade do OAuth com o Microsoft Graph e a API do GitHub.
+
+## <a name="solutions"></a>Soluções
+- [Acelerador da solução Assistente Virtual](https://github.com/Microsoft/botframework-solutions#readme): Fornece um conjunto de modelos, aceleradores de solução e habilidades para ajudar a criar experiências de conversa sofisticadas. Novo cliente de aplicativo Android para o assistente virtual que se integra com o Direct-Line Speech e o Assistente Virtual, demonstrando como um cliente de dispositivo pode interagir com seu assistente virtual e renderizar Cartões Adaptáveis. As atualizações também incluem suporte para o Direct-Line Speech e o Microsoft Teams.
+  
+- [Dynamics 365 Virtual Agent for Customer Service (versão prévia pública)](https://dynamics.microsoft.com/en-us/ai/virtual-agent-for-customer-service/): Com a versão prévia pública, você pode fornecer um atendimento ao cliente excepcional com agentes virtuais inteligentes e adaptáveis. Os especialistas em atendimento ao cliente podem criar e aprimorar bots facilmente com informações baseadas em IA.
+  
+- [Chat para Dynamics 365](https://www.powerobjects.com/powerpacks/powerchat/): O Chat para Dynamics 365 oferece vários recursos para garantir que os agentes de suporte e os usuários finais possam interagir com eficiência e permaneçam altamente produtivos. Converse ao vivo e acompanhe conversas de visitantes em seu site no Microsoft Dynamics 365.
+
+# <a name="whats-new-may-2019"></a>Quais são as novidades? (maio de 2019)
 
 |   | C#  | JS  | Python |  Java | 
 |---|:---:|:---:|:------:|:-----:|
@@ -43,7 +97,7 @@ ms.locfileid: "70167327"
 
 - [Diálogo Adaptável][47] | [docs][48] | [exemplos em C#][49]: Os Diálogos Adaptáveis permitem aos desenvolvedores criar conversas que podem ser alteradas dinamicamente conforme o andamento da conversa.  Tradicionalmente, os desenvolvedores mapeiam o fluxo inteiro de uma conversa com antecedência, o que limita sua flexibilidade.  Os Diálogos Adaptáveis permitem que elas sejam mais flexíveis, para responder a alterações no contexto e inserir novas etapas ou subdiálogos inteiros na conversa durante sua evolução. 
 
-- [Geração de linguagem][43] | [docs][44] | [exemplos em C#][45]: geração de linguagem, que permite ao desenvolvedor extrair as cadeias de caracteres inseridas dos seus arquivos de código e de recursos e gerenciá-las por meio de um formato arquivo e do tempo de execução de Geração de Linguagem.  A Geração de Linguagem permite que os clientes definam diversas variações de uma frase, executem expressões simples com base no contexto e consultem a memória de conversação; ao longo do tempo, isso nos permitirá criar outras funcionalidades que levarão a uma experiência de conversa mais natural.
+- [Geração de linguagem][43] | [docs][44] | [exemplos em C#][45]: geração de linguagem, que permite ao desenvolvedor extrair as cadeias de caracteres inseridas dos seus arquivos de código e de recursos e gerenciá-las por meio de um formato arquivo e do runtime de Geração de Linguagem.  A Geração de Linguagem permite que os clientes definam diversas variações de uma frase, executem expressões simples com base no contexto e consultem a memória de conversação; ao longo do tempo, isso nos permitirá criar outras funcionalidades que levarão a uma experiência de conversa mais natural.
 
 - [Linguagem de Expressão Comum][40] | [API][41]: tanto os Diálogos Adaptáveis quanto a Geração de Linguagem usam e dependem de uma linguagem de expressão comum para alimentar conversas de bot.
 
@@ -121,7 +175,7 @@ Um serviço baseado em aprendizado de máquina para criar experiências de lingu
 
 <a name="LUIS-whats-new"></a>
 
-- **Novo! Funções, entidades externas e entidades dinâmicas**: o LUIS adicionou vários recursos que permitem aos desenvolvedores extrair informações mais detalhadas do texto, para que os usuários agora possam criar soluções mais inteligentes com menos esforço. O LUIS também estendeu funções a todos os tipos de entidade, o que permite que essas entidades sejam classificadas com subtipos diferentes com base no contexto. Os desenvolvedores agora têm um controle mais granular sobre o que eles podem fazer com o LUIS, incluindo a capacidade de identificar e atualizar modelos no tempo de execução por meio de listas dinâmicas e entidades externas. As listas dinâmicas são usadas para acrescentar às entidades de lista no tempo de previsão, permitindo que informações específicas do usuário tenham correspondência exata. Extratores de entidade suplementares separados são executados com entidades externas, e essas informações podem ser acrescentadas ao LUIS como sinais fortes para outros modelos.
+- **Novo! Funções, entidades externas e entidades dinâmicas**: o LUIS adicionou vários recursos que permitem aos desenvolvedores extrair informações mais detalhadas do texto, para que os usuários agora possam criar soluções mais inteligentes com menos esforço. O LUIS também estendeu funções a todos os tipos de entidade, o que permite que essas entidades sejam classificadas com subtipos diferentes com base no contexto. Os desenvolvedores agora têm um controle mais granular sobre o que eles podem fazer com o LUIS, incluindo a capacidade de identificar e atualizar modelos no runtime por meio de listas dinâmicas e entidades externas. As listas dinâmicas são usadas para acrescentar às entidades de lista no tempo de previsão, permitindo que informações específicas do usuário tenham correspondência exata. Extratores de entidade suplementares separados são executados com entidades externas, e essas informações podem ser acrescentadas ao LUIS como sinais fortes para outros modelos.
 
 - **Novo! Painel de Análise**: o LUIS está lançando um painel de análise abrangente mais detalhado e visualmente sofisticado. Seu design amigável realça os problemas comuns que a maioria dos usuários enfrenta ao criar aplicativos, fornecendo explicações simples sobre como resolvê-los para que os usuários obtenham mais insights sobre a qualidade dos seus modelos, possíveis problemas de dados e diretrizes para a adoção das melhores práticas.
 

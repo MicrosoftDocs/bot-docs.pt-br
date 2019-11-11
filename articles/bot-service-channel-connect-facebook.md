@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: kamrani
 ms.service: bot-service
 ms.date: 10/28/2019
-ms.openlocfilehash: 0821d9cac50828cc7802c4be8221538d4e1e620d
-ms.sourcegitcommit: b2819741e2bcace92510e7b250cd5c1ab667d774
+ms.openlocfilehash: ba9f0ec8f4b6f0e2f5a7069ab456f96b303a4c92
+ms.sourcegitcommit: 4751c7b8ff1d3603d4596e4fa99e0071036c207c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031227"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73441632"
 ---
 # <a name="connect-a-bot-to-facebook"></a>Conectar um bot ao Facebook
 
@@ -133,6 +133,9 @@ Depois que a análise for bem-sucedida, no Painel de Aplicativos em Revisão do 
 Garanta que a Página do Facebook associada a esse bot seja publicada. O status é exibido nas configurações de Páginas.
 
 ## <a name="connect-a-bot-to-facebook-workplace"></a>Conectar um bot ao Workplace do Facebook
+
+> [!NOTE]
+> A partir de 16 de dezembro de 2019, o Workplace do Facebook alterará o modelo de segurança para integrações personalizadas.  As integrações atuais criadas usando o Microsoft Bot Framework v4 em JavaScript/Node.js precisam ser atualizadas para usar o [adaptador de Workplace do Facebook](https://aka.ms/botframework-workplace-adapter) do Bot Framework e implantadas usando o aplicativo Web do Azure para continuar trabalhando após essa data. Os novos bots do Microsoft Bot Framework direcionados ao Workplace também devem ser desenvolvidos usando esse adaptador.
 
 O Workplace do Facebook é uma versão do Facebook voltada para os negócios, que permite aos funcionários se conectar e colaborar com facilidade. Ele contém vídeos ao vivo, feeds de notícias, grupos, mensageiro, reações, pesquisa e postagens de tendências. Também dá suporte a:
 
