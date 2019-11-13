@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 11/01/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 6d73ad7bc0226874253dfe37a00b09ab22677b92
-ms.sourcegitcommit: 4751c7b8ff1d3603d4596e4fa99e0071036c207c
+ms.openlocfilehash: a57e5bd2b17cb2ac7553e71ac66f2bdfe97f3b35
+ms.sourcegitcommit: 312a4593177840433dfee405335100ce59aac347
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73441643"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73933753"
 ---
 # <a name="whats-new-july-2019"></a>Quais são as novidades? (julho de 2019)
 
@@ -70,7 +70,7 @@ Introduzido no Microsoft Build 2019, o Inspetor de Bot é um novo recurso no Bot
   
 - [Chat para Dynamics 365](https://www.powerobjects.com/powerpacks/powerchat/): O Chat para Dynamics 365 oferece vários recursos para garantir que os agentes de suporte e os usuários finais possam interagir com eficiência e permaneçam altamente produtivos. Converse ao vivo e acompanhe conversas de visitantes em seu site no Microsoft Dynamics 365.
 
-# <a name="whats-new-may-2019"></a>Quais são as novidades? (maio de 2019)
+## <a name="whats-new-may-2019"></a>Quais são as novidades? (maio de 2019)
 
 |   | C#  | JS  | Python |  Java | 
 |---|:---:|:---:|:------:|:-----:|

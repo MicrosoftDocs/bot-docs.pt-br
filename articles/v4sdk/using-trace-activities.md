@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 10/18/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 46264241b077b1ace50b68745c9ae61a98e4d2f9
-ms.sourcegitcommit: 4751c7b8ff1d3603d4596e4fa99e0071036c207c
+ms.openlocfilehash: 54c663a370cc4f613e0f38bb8057b10e49bf8c69
+ms.sourcegitcommit: 312a4593177840433dfee405335100ce59aac347
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73443054"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73933775"
 ---
 # <a name="add-trace-activities-to-your-bot"></a>Adicionar atividades de rastreamento ao bot
 
@@ -72,7 +72,7 @@ O método auxiliar **SendTraceActivityAsync** definido neste exemplo envia infor
 
 **AdapterWithErrorHandler.cs**
 
-[!code-csharp[SendTraceActivityAsync](~/../BotBuilder-Samples/samples/csharp_dotnetcore/13.core-bot/AdapterWithErrorHandler.cs?range=17-55)]
+[!code-csharp[SendTraceActivityAsync](~/../BotBuilder-Samples/samples/csharp_dotnetcore/13.core-bot/AdapterWithErrorHandler.cs?range=16-51&highlight=33-34)]
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
@@ -80,7 +80,7 @@ O manipulador **onTurnError** do adaptador cria a atividade de rastreamento para
 
 **index.js**
 
-[!code-javascript[onTurnError ](~/../BotBuilder-Samples/samples/javascript_nodejs/13.core-bot/index.js?range=35-59)]
+[!code-javascript[onTurnError ](~/../BotBuilder-Samples/samples/javascript_nodejs/13.core-bot/index.js?range=35-57&highlight=8-14)]
 
 ---
 
