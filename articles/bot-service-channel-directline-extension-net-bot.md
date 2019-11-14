@@ -8,12 +8,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 07/25/2019
-ms.openlocfilehash: 68ef5f1d24c464489ff500fe290de2a151f87f5a
-ms.sourcegitcommit: 6a83b2c8ab2902121e8ee9531a7aa2d85b827396
+ms.openlocfilehash: 3ed589bff5c3740dddcfb62226714006313ae330
+ms.sourcegitcommit: 312a4593177840433dfee405335100ce59aac347
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68970601"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73933685"
 ---
 # <a name="configure-net-bot-for-extension"></a>Configurar o bot do .NET para a extensão
 
@@ -74,7 +74,13 @@ Esta seção descreve como habilitar a extensão de serviço de aplicativo do Di
     Os valores são a **appID** e o **appSecret** associados ao grupo de registro do serviço.
 
 1. **Publique** o bot em seu Serviço de Aplicativo do Azure.
-1. No navegador, navegue até https://<your_app_service>.azurewebsites.net/.bot. Se tudo estiver correto, a página retornará este conteúdo JSON: `{"k":true,"ib":true,"ob":true,"initialized":true}`.
+1. No navegador, navegue até https://<your_app_service>.azurewebsites.net/.bot. Se tudo estiver correto, a página retornará este conteúdo JSON: `{"k":true,"ib":true,"ob":true,"initialized":true}`. Essas são as informações que você obtém quando **tudo funciona corretamente**, onde
+
+    - **k** determina se a ASE (Extensão de Serviço de Aplicativo do Direct Line) pode ler uma chave de extensão com base na configuração. 
+    - **inicializado** determina se a ASE do Direct Line pode usar a chave de extensão para baixar os metadados do bot do Serviço de Bot do Azure
+    - **ib** determina se a ASE do Direct Line pode estabelecer uma conexão de entrada com o bot.
+    - **ob** determina se a ASE do Direct Line pode estabelecer uma conexão de saída com o bot. 
+
 
 ### <a name="gather-your-direct-line-extension-keys"></a>Reunir suas chaves de Extensão do Direct Line
 

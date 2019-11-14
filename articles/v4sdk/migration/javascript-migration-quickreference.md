@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: e0ad87c9b2896767d7053322b510da182a44ec69
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 2935c187b9c9687d4fbf207c2d78a135d3c8959f
+ms.sourcegitcommit: 312a4593177840433dfee405335100ce59aac347
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299027"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73933777"
 ---
 # <a name="javascript-migration-quick-reference"></a>Referência rápida de migração do JavaScript
 
@@ -431,4 +431,65 @@ const recognizer = new LuisRecognizer(luisApp);
 
 const recognizerResult = await recognizer.recognize(context);
 const intent = LuisRecognizer.topIntent(recognizerResult);
+```
+
+## <a name="v3-intent-dialog-and-v4-equivalent"></a>Caixa de diálogo de Intenção v3 e Equivalente v4
+
+### <a name="v3"></a>v3
+
+```javascript
+// Create a 'greetings' RegExpRecognizer that can be turned off
+var greetings = new builder.RegExpRecognizer('Greetings', /hello|hi|hey|greetings/i)
+    .onEnabled(function (session, callback) {
+        // Check to see if this recognizer should be enabled
+        if (session.conversationData.useGreetings) {
+            callback(null, true);
+        } else {
+            callback(null, false);
+        }
+    });
+
+// Create our IntentDialog and add recognizers
+var intents = new builder.IntentDialog({ recognizers: [greetings] });
+
+bot.dialog('/', intents);
+
+// If no intent is recognized, direct user to Recognizer Menu
+intents.onDefault('RecognizerMenu');
+
+// Match our "Greetings" and "Farewell" intents with their dialogs
+intents.matches('Greetings', 'Greetings');
+
+// Add a greetings dialog
+bot.dialog('Greetings', [
+    function (session) {
+        session.endDialog('Greetings!');
+    }
+]);
+```
+
+### <a name="v4"></a>v4
+
+```javascript
+this.onMessage(async (context, next) => {
+
+    const recognizerResult = {
+        text: context.activity.text,
+        intents: []
+    };
+
+    const greetingRegex = RegExp(/hello|hi|hey|greetings/i);
+
+    if (greetingRegex.test(context.activity.text)) {
+      // greeting intent identified
+      recognizerResult.intents.push('Greeting');
+    }
+
+    if (recognizerResult.intents.includes('Greeting')) {
+        // Run the 'Greeting' dialog
+        await context.beginDialog(GREETING_DIALOG_ID);
+    }
+
+    await next();
+});
 ```

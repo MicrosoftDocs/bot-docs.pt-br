@@ -11,7 +11,7 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 05/31/2019
+  ms.date: 11/11/2019
   ms.author: ivorb
 abstract:
   description: 'O Serviço de Bot do Azure fornece um ambiente integrado criado especificamente para desenvolver bots, permitindo criar, conectar, testar, implantar e gerenciar bots inteligentes em um único lugar. O Serviço de Bot do Azure aproveita o SDK do Bot Framework com suporte para C# e JavaScript. Saiba como usar o Serviço de Bot com nossos guias de início rápido, tutoriais e exemplos.'
@@ -21,8 +21,8 @@ abstract:
       height: 110
       src: media/video/satya-video.png
       width: 250
-    title: 'Palestra da Build 2019 de Satya Nadella. (1:25:09)'
-    href: 'https://mybuild.techcommunity.microsoft.com/sessions/77571?source=%7B%7B%20ctrl.source#top-anchor'
+    title: 'Apresentação do Ignite 2019 feita por Satya Nadella. (1:52)'
+    href: 'https://myignite.techcommunity.microsoft.com/sessions/77831?source=sessions'
     width: 250
 sections:
   - items:

@@ -7,12 +7,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/04/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: c55e14f10bf6a5f4032033472c07401bde82a334
-ms.sourcegitcommit: 490810d278d1c8207330b132f28a5eaf2b37bd07
+ms.openlocfilehash: 165eac6ac134a5807119c7a067b77fb7bc6e3282
+ms.sourcegitcommit: 312a4593177840433dfee405335100ce59aac347
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73592271"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73933700"
 ---
 <!-- 
 
@@ -273,30 +273,36 @@ Se você não souber como obter os valores da **ID do aplicativo Microsoft** e d
 > [!NOTE]
 > Agora você poderia publicar esse código de bot em sua assinatura do Azure (clique com o botão direito no projeto e escolha **Publicar**), mas isso não é necessário para este artigo. Você precisará definir uma configuração de publicação que usa o aplicativo e o plano de hospedagem que você usou ao configurar o bot no Portal do Azure.
 
-## <a name="test-the-bot"></a>Testar o bot
+## <a name="test-the-bot-using-the-emulator"></a>Testar o bot usando o emulador
 
-1. Se ainda não tiver feito isso, instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator-readme).
-1. Execute o exemplo localmente em seu computador.
-1. Inicie o emulador, conecte-se ao seu bot e envie as mensagens.
+Se ainda não tiver feito isso, instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator-readme). Consulte também como [Depurar com o emulador](../bot-service-debug-emulator.md).
 
-    - Você terá que fornecer a ID e a senha de aplicativo do seu bot quando se conectar com ele.
+<!-- auth config steps -->
+Para que o logon de exemplo do bot funcione é necessário configurar o emulador, conforme mostrado em [Configurar o emulador para autenticação](../bot-service-debug-emulator.md#configure-the-emulator-for-authentication).
 
-        - Se você precisar usar um escape XML na senha no código do bot, isso também precisará ser feito aqui.
+### <a name="testing"></a>Testando
 
-    - Digite `help` para ver uma lista dos comandos disponíveis para o bot e testar os recursos de autenticação.
-    - Quando você tiver entrado, você não precisa fornecer suas credenciais novamente até sair.
-    - Para sair e cancelar a sua autenticação, digite `logout`.
+Após configurar o mecanismo de autenticação é possível executar o teste de exemplo do bot real.  
+
+1. Execute o exemplo do bot localmente em seu computador.
+1. Inicie o emulador.
+1. Será necessário fornecer a ID e a senha de aplicativo do seu bot ao se conectar com ele.
+    - Obtenha a ID do aplicativo e a senha do registro de aplicativo do Azure. Esses são os mesmos valores atribuídos ao aplicativo bot no arquivo `appsettings.json` ou `.env`. No emulador, atribua esses valores no arquivo de configuração ou na primeira vez que se conectar ao bot.
+    - Se você precisar usar um escape XML na senha no código do bot, isso também precisará ser feito aqui.
+1. Digite `help` para ver uma lista dos comandos disponíveis para o bot e testar os recursos de autenticação.
+1. Quando você tiver entrado, você não precisa fornecer suas credenciais novamente até sair.
+1. Para sair e cancelar a sua autenticação, digite `logout`.
 
 > [!NOTE]
 > A autenticação do bot requer o uso do Serviço de Conector de Bot. O serviço acessa as informações de registro de canais do seu bot.
 
-# <a name="bot-authenticationtabbot-oauth"></a>[Autenticação de bot](#tab/bot-oauth)
+## <a name="bot-authentication-example"></a>Exemplo de autenticação de bot
 
 No exemplo **Autenticação de Bot**, o diálogo foi projetado para recuperar o token de usuário após este se conectar.
 
 ![Saída de exemplo](media/how-to-auth/auth-bot-test.png)
 
-# <a name="bot-authentication-msgraphtabbot-msgraph-auth"></a>[Autenticação de bot MSGraph](#tab/bot-msgraph-auth)
+## <a name="bot-authentication-msgraph-example"></a>Exemplo do MSGraph de autenticação de bot
 
 No exemplo **Autenticação de Bot MSGraph**, o diálogo é projetado para aceitar um conjunto limitado de comandos depois que o usuário faz logon.
 
@@ -423,7 +429,7 @@ Se você usar um *prompt OAuth*, essa atividade de invocação deverá ser encam
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)  
 **Bots/DialogBot.cs**  
-[!code-csharp[Dialogs Handler](~/../botbuilder-samples/samples/csharp_dotnetcore/46.teams-auth/Bots/DialogBot.cs?range=18)]
+[!code-csharp[Dialogs Handler](~/../botbuilder-samples/samples/csharp_dotnetcore/46.teams-auth/Bots/DialogBot.cs?range=19)]
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)  
 **Bots/dialogBot.js**  

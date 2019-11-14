@@ -7,24 +7,49 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/21/2019
-ms.openlocfilehash: d8e5151e7b5432b8ec90087647380757e101c447
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 8804ee573f3bf16a831e58221e27d2c8557bd20f
+ms.sourcegitcommit: 312a4593177840433dfee405335100ce59aac347
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298091"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73933541"
 ---
 # <a name="bot-framework-frequently-asked-questions"></a>Perguntas frequentes sobre o Bot Framework
 
 Este artigo contém respostas a algumas perguntas frequentes sobre o Bot Framework.
 
 ## <a name="background-and-availability"></a>Informações e disponibilidade
+
 ### <a name="why-did-microsoft-develop-the-bot-framework"></a>Por que a Microsoft desenvolveu o Bot Framework?
 
 Embora a CUI (Interface do Usuário de Conversa) já esteja entre nós, no momento, poucos desenvolvedores têm o conhecimento e as ferramentas necessárias para criar experiências de conversa ou habilitar aplicativos e serviços existentes com uma interface de conversa que os usuários possam aproveitar. Criamos o Bot Framework para facilitar para os desenvolvedores criar e conectar bots excelentes aos usuários, independentemente de onde eles conversarem, incluindo os canais premier da Microsoft.
 
 ### <a name="what-is-the-v4-sdk"></a>O que é o SDK v4?
 O SDK do Bot Framework v4 baseia-se nos comentários e nas lições aprendidas dos SDKs anteriores do Bot Framework. Ele apresenta os níveis certos de abstração, ao mesmo tempo que permite a "componentização" avançada dos blocos de construção de bot. Comece com um bot simples e aumente a sofisticação dele usando uma estrutura modular e extensível. Encontre as [perguntas frequentes](https://github.com/Microsoft/botbuilder-dotnet/wiki/FAQ) sobre o SDK no GitHub.
+
+### <a name="running-a-bot-offline"></a>Como executar um bot offline
+
+<!-- WIP -->
+Antes de falar sobre o uso de um bot offline, o que significa que um bot não foi implantado no Azure ou em outros serviços de host, mas no local, vamos esclarecer alguns pontos.
+
+- Um bot é um serviço Web que não tem uma interface do usuário, portanto, ele deve interagir com o bot por outros meios, na forma de canais, que usam o [Serviço Conector do Azure](rest-api/bot-framework-rest-connector-concepts.md#bot-connector-service). O conector funciona como um *proxy* para retransmitir mensagens entre um cliente e o bot.
+- O **conector** é um aplicativo global hospedado em nós do Azure e distribuído geograficamente para obter disponibilidade e escalabilidade. 
+- Use o [Registro do Canal de Bot](bot-service-quickstart-registration.md) para registrar o bot com o conector.
+    >[!NOTE]
+    > O bot deve ter o ponto de extremidade acessível publicamente pelo conector.
+
+É possível executar um bot offline com funcionalidades limitadas. Por exemplo, caso queira usar um bot offline que tenha a funcionalidade LUIS, você deverá criar um contêiner para o bot, as ferramentas necessárias e um contêiner para LUIS. Ambos conectados por meio da rede de transição Docker Compose.
+
+Esta é uma solução offline "parcial" porque um contêiner de Serviços Cognitivos precisa de uma conexão online periódica.
+
+> [!NOTE]
+> O serviço QnA não tem suporte em um bot de execução offline.
+
+Para obter mais informações, consulte:
+
+- [Como implantar o contêiner do LUIS (Reconhecimento Vocal) nas Instâncias de Contêiner do Azure](https://docs.microsoft.com/azure/cognitive-services/luis/deploy-luis-on-container-instances)
+- [Suporte de contêiner nos Serviços Cognitivos do Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-container-support)
+
 
 ## <a name="bot-framework-sdk-version-3-lifetime-support"></a>Suporte de tempo de vida do SDK Versão 3 do Bot Framework 
 Os bots do SDK V3 continuam sendo executados e tendo suporte do Serviço de Bot do Azure.  Desde o lançamento do SDK V4 do Bot Framework, assim como acontece com outras estruturas, continuamos com o suporte para o SDK V3 com correções de segurança e de bugs de alta prioridade e atualizações na camada de conector/protocolo.  Os clientes podem contar com o suporte para a v3 ao longo do ano de 2019.
@@ -57,7 +82,7 @@ Os bots do SDK V3 continuam sendo executados e tendo suporte do Serviço de Bot 
 
 ### <a name="should-i-build-new-a-bot-using-v3-or-v4"></a>Devo criar um novo bot usando V3 ou V4?
 - Para novas experiências de conversação, é recomendável que você inicie um novo bot usando o SDK V4 do Bot Framework.
-- Se você já estiver familiarizado com o SDK V3 do Bot Framework, dedique algum tempo para aprender sobre a nova versão e os recursos oferecidos com o novo [SDK V4 do Bot Framework](http://aka.ms/botframeowrkoverview).
+- Se você já estiver familiarizado com o SDK V3 do Bot Framework, dedique algum tempo para aprender sobre a nova versão e os recursos oferecidos com o novo [SDK V4 do Bot Framework](https://aka.ms/botframeowrkoverview).
 - Se você já tiver bots do SDK V3 do Bot Framework em produção, não se preocupe, eles continuarão a funcionar normalmente até segunda ordem.
 - Você pode criar bots do SDK V4 do Bot Framework e da V3 mais antiga por meio do portal do Azure e da linha de comando do Azure. 
 
@@ -105,7 +130,7 @@ services.AddSingleton<IChannelProvider, ConfigurationChannelProvider>();
 ```csharp
 options.ChannelProvider = new ConfigurationChannelProvider();
 ```
-Você pode encontrar mais informações sobre serviços Governamentais [aqui](https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-services-aiandcognitiveservices#azure-bot-service)
+Você pode encontrar mais informações sobre serviços Governamentais [aqui](https://docs.microsoft.com/azure/azure-government/documentation-government-services-aiandcognitiveservices#azure-bot-service)
 
 ## <a name="security-and-privacy"></a>Segurança e privacidade
 ### <a name="do-the-bots-registered-with-the-bot-framework-collect-personal-information-if-yes-how-can-i-be-sure-the-data-is-safe-and-secure-what-about-privacy"></a>Os bots registrados no Bot Framework coletam informações pessoais? Em caso afirmativo, como posso ter certeza de que os dados estão seguros e protegidos? E quanto à privacidade?
@@ -162,7 +187,7 @@ Estamos continuamente ajustando os limites de taxa para torná-los os mais brand
 ## <a name="related-services"></a>Serviços Relacionados
 ### <a name="how-does-the-bot-framework-relate-to-cognitive-services"></a>Como o Bot Framework está relacionado aos Serviços Cognitivos?
 
-O Bot Framework e os [Serviços Cognitivos](http://www.microsoft.com/cognitive) são novas funcionalidades introduzidas no [Microsoft Build 2016](http://build.microsoft.com) que também serão integradas ao Cortana Intelligence Suite em GA. Ambos os serviços foram criados após muitos anos de pesquisa e uso em produtos populares da Microsoft. Essas funcionalidades combinadas com o ‘Cortana Intelligence’ permitem a todas as organizações aproveitar o poder dos dados, da nuvem e da inteligência a fim de criar seus próprios sistemas inteligentes que revelam novas oportunidades, aumentar a velocidade dos negócios e liderar os setores nos quais elas atendem a seus clientes.
+O Bot Framework e os [Serviços Cognitivos](https://www.microsoft.com/cognitive) são novas funcionalidades introduzidas no [Microsoft Build 2016](https://build.microsoft.com) que também serão integradas ao Cortana Intelligence Suite em GA. Ambos os serviços foram criados após muitos anos de pesquisa e uso em produtos populares da Microsoft. Essas funcionalidades combinadas com o ‘Cortana Intelligence’ permitem a todas as organizações aproveitar o poder dos dados, da nuvem e da inteligência a fim de criar seus próprios sistemas inteligentes que revelam novas oportunidades, aumentar a velocidade dos negócios e liderar os setores nos quais elas atendem a seus clientes.
 
 ### <a name="what-is-cortana-intelligence"></a>O que é o Cortana Intelligence?
 
