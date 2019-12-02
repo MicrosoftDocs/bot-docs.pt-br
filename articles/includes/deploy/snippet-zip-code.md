@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b3fcdea923daa96a93b7b9d223354a16878b0ac2
-ms.sourcegitcommit: 7e901f5f39a0cfb0d37e532321b90a1dcf4baadd
+ms.openlocfilehash: fdbafb6ca852a3b06b791d6580c72b90e02d4218
+ms.sourcegitcommit: dcacda776c927bcc7c76d00ff3cc6b00b062bd6b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72039779"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74410476"
 ---
 Com o uso da [API de implantação de zip](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file-or-url) não configurada para implantar o código de seu bot, o comportamento do Aplicativo Web/Kudu será o seguinte:
 
@@ -18,6 +18,6 @@ Logo, é importante incluir seu código compilado e todas as dependências neces
 > - Para bots JavaScript, será a pasta que tiver o arquivo app.js ou index.js. 
 > - Para bots TypeScript, será a pasta que inclui a pasta _src_ (em que os arquivos bot.ts e index.ts estão). 
 >
->**Dentro** da pasta do projeto, selecione todos os arquivos e compacte-os. Em seguida, execute o comando ainda na pasta. 
+>**Dentro** da pasta do projeto, selecione todos os arquivos e pastas que você deseja incluir no arquivo zip antes de executar o comando para criar esse arquivo. Isso criará um único arquivo zip contendo todos os arquivos e pastas selecionados.
 >
 > Se o local da pasta raiz estiver incorreto, o **bot não será executado no portal do Azure**.

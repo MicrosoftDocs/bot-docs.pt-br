@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 0570ec6a44c9fe1b007c1fd1b8c335288baa63cb
-ms.sourcegitcommit: fa6e775dcf95a4253ad854796f5906f33af05a42
+ms.openlocfilehash: 9c86001a51914f359163e7d755aa57e1c54127f8
+ms.sourcegitcommit: dcacda776c927bcc7c76d00ff3cc6b00b062bd6b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68230669"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74414604"
 ---
 ## <a name="prerequisites"></a>Pré-requisitos
 - [Visual Studio 2017 ou posterior](https://www.visualstudio.com/downloads)
@@ -13,14 +13,14 @@ ms.locfileid: "68230669"
 - Conhecimento de [ASP.Net Core](https://docs.microsoft.com/aspnet/core/) e [programação assíncrona em C#](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/index)
 
 ## <a name="create-a-bot"></a>Criar um bot
-Instale o modelo BotBuilderVSIX.vsix que você baixou na seção de pré-requisitos.
+Instale o [modelo BotBuilderVSIX.vsix](https://aka.ms/bot-vsix) que você baixou na seção de pré-requisitos.
 
-No Visual Studio, crie um novo projeto de bot usando o modelo do **Echo Bot (Bot Framework v4)** .
+No Visual Studio, crie um novo projeto de bot usando o modelo do **Echo Bot (Bot Framework v4)** . Insira _Bot Framework v4_ na caixa de pesquisa para mostrar apenas modelos de bot.
 
-![Projeto do Visual Studio](~/media/azure-bot-quickstarts/bot-builder-dotnet-project.png)
+![Caixa de diálogo Criar um projeto do Visual Studio](../media/azure-bot-quickstarts/bot-builder-dotnet-project-vs2019.png)
 
 > [!TIP] 
-> Se for necessário, altere o tipo de build do projeto para ``.Net Core 2.1``. Se também for necessário, atualize os [pacotes NuGet](https://docs.microsoft.com/nuget/quickstart/install-and-use-a-package-in-visual-studio) do `Microsoft.Bot.Builder`.
+> Se estiver usando o Visual Studio 2017, verifique se o tipo de build do projeto é ``.Net Core 2.1`` ou posterior. Se também for necessário, atualize os [pacotes NuGet](https://docs.microsoft.com/nuget/quickstart/install-and-use-a-package-in-visual-studio) do `Microsoft.Bot.Builder`.
 
 Graças ao modelo, seu projeto contém todo o código necessário para criar o bot neste início rápido. Na verdade, você não precisa escrever nenhum código adicional.
 

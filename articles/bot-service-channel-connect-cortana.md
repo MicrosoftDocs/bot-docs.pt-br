@@ -7,13 +7,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 04/30/2018
-ms.openlocfilehash: caa7c71bc0b12ff6defb72f75dcb6d12ce512806
-ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
+ms.date: 11/22/2019
+ms.openlocfilehash: 912f913f5fa09d971ba1e87e31736292f707adc2
+ms.sourcegitcommit: 78da125eafe93b3c6d254708b82bdd01de7c3afb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167000"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74464276"
 ---
 # <a name="connect-a-bot-to-cortana"></a>Conectar um bot à Cortana
 
@@ -103,6 +103,8 @@ Clique em **Adicionar uma solicitação de perfil do usuário** e selecione as i
 Quando você terminar de preencher o formulário de registro da sua habilidade da Cortana, clique em **Implantar na Cortana** para concluir a conexão. Isso levará você de volta à folha Canais do seu bot, e você verá que ele está conectado à Cortana.
 
 Neste ponto, seu bot já foi implantado como uma habilidade da Cortana à sua conta.
+
+Em seguida, você precisa habilitar e autorizar a habilidade do bot para se conectar à sua conta. No aplicativo da Cortana, diga ou digite "solicitar *nome da chamada*", em que o "nome da chamada" é o que você configurou no canal da Cortana no portal do Azure. A Cortana solicitará que você permita que sua habilidade de bot se conecte. Se você escolher "Sim" para permitir isso, a habilidade agora funcionará e será exibida na lista de habilidades da Cortana.
 
 ## <a name="next-steps"></a>Próximas etapas
 

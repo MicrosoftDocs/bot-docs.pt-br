@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 10/25/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b516f20e74ac364a1ec0e953983701d1ab4b1e33
-ms.sourcegitcommit: 4751c7b8ff1d3603d4596e4fa99e0071036c207c
+ms.openlocfilehash: 5123b61859c2fb00886458e462941cb5e6e1f896
+ms.sourcegitcommit: dcacda776c927bcc7c76d00ff3cc6b00b062bd6b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73443144"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74410467"
 ---
 # <a name="bot-framework-cli-reference"></a>Referência da CLI do Bot Framework
 

@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 05/05/2019
-ms.openlocfilehash: 3ef81582c500a403080908e0d2c63de2ead5b9ab
-ms.sourcegitcommit: e9cd857ee11945ef0b98a1ffb4792494dfaeb126
+ms.openlocfilehash: 0206cf3381d95fbc58d49924aa19dadea5f226dc
+ms.sourcegitcommit: dbc7eaee5c1f300b23c55abe6b60cd01c7408915
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71693153"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74415161"
 ---
 # <a name="about-azure-bot-service"></a>Sobre o Serviço de Bot do Azure
 
@@ -50,7 +50,7 @@ Assim como acontece com qualquer tipo de software, é importante que o processo 
 ### <a name="build"></a>Compilação
 Seu bot é um serviço Web que implementa uma interface de conversação e se comunica com o Serviço do Bot Framework para enviar e receber mensagens e eventos. O Bot Framework Service é um dos componentes do Serviço de Bot do Azure e do Bot Framework. Você pode criar bots em quantos ambientes e idiomas desejar. Você pode iniciar o desenvolvimento de bot no [portal do Azure](bot-service-quickstart.md) ou usar modelos de [[C#](dotnet/bot-builder-dotnet-sdk-quickstart.md) | [JavaScript](javascript/bot-builder-javascript-quickstart.md)] para o desenvolvimento local.
 
-Como parte do Serviço de Bot do Azure e do Bot Framework, oferecemos componentes adicionais que você pode usar para estender a funcionalidade do seu bot
+Como parte do Serviço de Bot do Azure e do Bot Framework, oferecemos componentes adicionais que você pode usar para estender a funcionalidade do seu bot:
 
 | Recurso | DESCRIÇÃO | Link |
 | --- | --- | --- |
@@ -69,11 +69,11 @@ Você também tem acesso a vários [exemplos](https://github.com/microsoft/botbu
 ### <a name="test"></a>Teste 
 Os bots estão aplicativos complexos, com muitas partes diferentes, trabalhem em conjunto. Como qualquer outro aplicativo complexo, isso pode levar a alguns erros interessantes ou fazer com que seu bot se comporte de maneira diferente do esperado. Antes de publicar, teste seu bot. Fornecemos várias maneiras de testar bots antes que eles sejam liberados para uso:
 
-- Teste seu bot localmente com o [emulador](bot-service-debug-emulator.md). O emulador do Bot Framework é um aplicativo autônomo que não só fornece uma interface de chat, mas também ferramentas de depuração e para fazer perguntas para ajudar a entender como e porque seu bot faz o que ele faz.  O emulador pode ser executado localmente juntamente com seu aplicativo de bot em desenvolvimento. 
+- Teste seu bot localmente com o [emulador](bot-service-debug-emulator.md). O Bot Framework Emulator é um aplicativo autônomo que não só fornece uma interface de chat, mas também ferramentas de depuração e de interrogação para ajudar a entender como e por que seu bot faz o que ele faz.  O emulador pode ser executado localmente juntamente com seu aplicativo de bot em desenvolvimento. 
  
 - Teste o bot na [Web](bot-service-manage-test-webchat.md). Uma vez configurado no portal do Azure, seu bot também pode ser acessado através de uma interface de chat da Web. A interface de chat da Web é uma ótima maneira de conceder acesso ao bot para testadores e outras pessoas que não têm acesso direto ao código de execução do bot.
 
-- [Teste de unidade](https://docs.microsoft.com/en-us/azure/bot-service/unit-test-bots?view=azure-bot-service-4.0) seu bot com a atualização de julho do SDK do Bot Framework.
+- [Teste de unidade](https://docs.microsoft.com/azure/bot-service/unit-test-bots?view=azure-bot-service-4.0) seu bot com a atualização de julho do SDK do Bot Framework.
 
 ### <a name="publish"></a>Publicar 
 Quando estiver pronto para disponibilizar seu bot na Web, publique seu bot no [Azure](bot-builder-howto-deploy-azure.md) ou em seu próprio serviço Web ou data center. A primeira etapa para o bot ganhar vida em seu site, ou dentro de canais de chat, é ter um endereço na Internet pública.

@@ -3,12 +3,12 @@ ms.topic: conceptual
 ms.author: kamrani
 ms.service: bot-service
 title: Diretrizes de revisão de bot
-ms.openlocfilehash: 14441847125cb0e79d10740c4267193655d83978
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 1493c1bbc37f336a5c816618d32293f4bb97582c
+ms.sourcegitcommit: dcacda776c927bcc7c76d00ff3cc6b00b062bd6b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298006"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74410452"
 ---
 # <a name="bot-review-guidelines"></a>Diretrizes de revisão de bot
 

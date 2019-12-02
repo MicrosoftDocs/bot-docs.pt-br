@@ -2,18 +2,18 @@
 title: Conectar um bot ao email do Office 365 | Microsoft Docs
 description: Saiba como configurar um bot para enviar e receber email com o Office 365.
 keywords: O Office 365, canais de bot, email, credenciais de email, portal do azure, email personalizado
-author: RobStand
+author: kamrani
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 02/08/2019
-ms.openlocfilehash: ca88c2d023505401d9e31a58bfe7313565a2350c
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.date: 11/15/2019
+ms.openlocfilehash: 3ad7829af9dc24ca9e10ebab352b4513b3bcad28
+ms.sourcegitcommit: 78da125eafe93b3c6d254708b82bdd01de7c3afb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298580"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74464291"
 ---
 # <a name="connect-a-bot-to-office-365-email"></a>Conectar um bot ao email do Office 365
 
@@ -21,6 +21,9 @@ Os bots podem se comunicar com usuários por meio de email do Office 365 além d
 
 > [!WARNING]
 > É uma violação do [Código de Conduta](https://www.botframework.com/Content/Microsoft-Bot-Framework-Preview-Online-Services-Agreement.htm) do Bot Framework criar "spambots", incluindo bots que enviam email em massa não solicitados ou indesejados.
+
+> [!NOTE]
+> Se você está usando o Microsoft Exchange Server, verifique se você habilitou [Descoberta automática](https://docs.microsoft.com/exchange/client-developer/exchange-web-services/autodiscover-for-exchange) antes de configurar o canal de email. 
 
 ## <a name="configure-email-credentials"></a>Configurar credenciais de email
 

@@ -6,13 +6,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 08/15/2019
-ms.openlocfilehash: b8307877bf08db170173486ec9df88fae4d27c29
-ms.sourcegitcommit: 9e1034a86ffdf2289b0d13cba2bd9bdf1958e7bc
+ms.date: 11/22/2019
+ms.openlocfilehash: fd3a20822827a8d4500a1e91bbb9e998b05475dd
+ms.sourcegitcommit: a4a437a1d44137375ea044dcc11bccc8d004e3db
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69890614"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74479510"
 ---
 # <a name="create-a-bot-with-azure-bot-service"></a>Criar um bot com o Serviço de Bot do Azure
 
@@ -27,11 +27,11 @@ O Serviço de Bot do Azure fornece os principais componentes para a criação de
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- Conta do [Azure](http://portal.azure.com)
+- Conta do [Azure](https://portal.azure.com)
 
 ### <a name="create-a-new-bot-service"></a>Criar um serviço de bot
 
-1. Faça logon no [Portal do Azure](http://portal.azure.com/).
+1. Faça logon no [Portal do Azure](https://portal.azure.com/).
 1. Clique no link **Criar recurso** localizado no canto superior esquerdo do portal do Azure e, em seguida, selecione **IA + Machine Learning** > **Bot de Aplicativo Web**. 
 
 ![Crie o bot](../media/azure-bot-quickstarts/abs-create-blade.png)
@@ -51,6 +51,7 @@ O Serviço de Bot do Azure fornece os principais componentes para a criação de
  | **Nome do aplicativo** | Um nome exclusivo | O nome exclusivo de URL do bot. Por exemplo, se você nomear o bot *myawesomebot*, a URL do bot será `http://myawesomebot.azurewebsites.net`. O nome precisa usar somente caracteres alfanuméricos e de sublinhado. Há um limite de 35 caracteres para esse campo. O nome do Aplicativo não pode ser alterado após a criação do bot. |
  | **Modelo de bot** | Bot de Eco | Escolha **SDK v4**. Escolha C# ou Node.js para este início rápido e, em seguida, clique em **Selecionar**.  
  | **Localização/plano de serviço de aplicativo** | O Plano do Serviço de Aplicativo  | Selecione um local para o [Plano do Serviço de Aplicativo](https://azure.microsoft.com/pricing/details/app-service/plans/). Sua escolha de localização pode ser qualquer local listado, embora geralmente seja melhor escolher o mesmo do serviço de bot. |
+ | **Contas do LUIS** _Disponível somente para o modelo de Bot Básico_ | Nome do Recurso do Azure do LUIS | Depois de [migrar recursos do LUIS para um recurso do Azure](https://docs.microsoft.com/azure/cognitive-services/luis/luis-migration-authoring), insira o nome do recurso do Azure para associar esse aplicativo do LUIS a esse recurso do Azure. 
  | **Application Insights** | Por | Decida se deseja deixar o [Application Insights](/bot-framework/bot-service-manage-analytics) **Ativado** ou **Desativado**. Se você selecionar **Ativar**, será preciso especificar também um local regional. Sua escolha de localização pode ser qualquer local listado, embora geralmente seja melhor escolher o mesmo do serviço de bot. |
  | **ID do Aplicativo e senha da Microsoft** | Criar ID do Aplicativo e senha automaticamente | Use essa opção se precisar inserir manualmente uma ID do Aplicativo e uma senha da Microsoft. Caso contrário, uma nova ID do Aplicativo e uma nova senha da Microsoft serão criados para você no processo de criação de bot. Ao criar um registro de aplicativo manualmente para o Serviço de Bot, verifique se os tipos de conta compatíveis estão definidos como 'Contas em qualquer diretório organizacional' ou 'Contas em qualquer diretório organizacional e contas Microsoft pessoais (por exemplo, Skype, Outlook.com, Xbox etc.)' |
 

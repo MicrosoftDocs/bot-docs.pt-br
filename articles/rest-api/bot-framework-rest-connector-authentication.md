@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: ed02e02e73f8cf326963da0002477df3441719a2
-ms.sourcegitcommit: d493caf74b87b790c99bcdaddb30682251e3fdd4
+ms.openlocfilehash: cc2421c5693d123f8dd76b238c37d6e4198b5dd8
+ms.sourcegitcommit: dcacda776c927bcc7c76d00ff3cc6b00b062bd6b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71279874"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74410440"
 ---
 # <a name="authentication"></a>Authentication
 
@@ -52,12 +52,12 @@ Este diagrama mostra as etapas para a autenticação de bot ao conector:
 
 ![Autenticar para o serviço de logon da MSA e depois para o bot](../media/connector/auth_bot_to_bot_connector.png)
 
-> [!IMPORTANT]
-> Se você ainda não fez isso, é necessário [registrar seu bot](../bot-service-quickstart-registration.md) com o Bot Framework para obter sua AppID e a senha. Será necessário a ID do aplicativo do bot e a senha para solicitar um token de acesso.
-
 ### <a name="step-1-request-an-access-token-from-the-azure-ad-v2-account-login-service"></a>Etapa 1: Solicitar um token de acesso do serviço de logon da conta do Azure AD v2
 
-Para solicitar um token de acesso do serviço de logon, emita a seguinte solicitação, substituindo **MICROSOFT-APP-ID** e **MICROSOFT-APP-PASSWORD** pela AppID e a senha que você obteve ao [registrar](../bot-service-quickstart-registration.md) o bot com o Bot Framework.
+> [!IMPORTANT]
+> Se você ainda não fez isso, é necessário [registrar seu bot](../bot-service-quickstart-registration.md) com o Bot Framework para obter sua AppID e a senha. Para solicitar um token de acesso, são necessárias a ID do aplicativo e a senha do bot.
+
+Para solicitar um token de acesso do serviço de logon, emita a seguinte solicitação, substituindo **MICROSOFT-APP-ID** e **MICROSOFT-APP-PASSWORD** pela AppID e a senha do bot, as quais você obteve ao [registrar](../bot-service-quickstart-registration.md) o bot com o Bot Framework.
 
 ```http
 POST https://login.microsoftonline.com/botframework.com/oauth2/v2.0/token

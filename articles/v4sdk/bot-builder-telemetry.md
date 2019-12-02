@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 524ffa37d1d089bfec01fa7b89a456ecdda719f9
-ms.sourcegitcommit: 312a4593177840433dfee405335100ce59aac347
+ms.openlocfilehash: a023fd97bfb7b8d55ad01d118075a6441e426575
+ms.sourcegitcommit: 08f9dc91152e0d4565368f72f547cdea1885af89
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73933706"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74510759"
 ---
 # <a name="add-telemetry-to-your-bot"></a>Adicionar telemetria ao seu bot
 
@@ -113,7 +113,7 @@ Começaremos com o [aplicativo de exemplo CoreBot](https://aka.ms/cs-core-sample
     }
     ```
 
-7. Adicione a chave de instrumentação do Application Insights ao arquivo `appsettings.json`. O arquivo `appsettings.json` contém metadados sobre serviços externos que o bot usa durante a execução. Por exemplo, as conexões de serviço e os metadados do CosmosDB, Application Insights e LUIS (Reconhecimento Vocal) são armazenados nele. A adição ao arquivo `appsettings.json` deve estar neste formato:
+6. Adicione a chave de instrumentação do Application Insights ao arquivo `appsettings.json`. O arquivo `appsettings.json` contém metadados sobre serviços externos que o bot usa durante a execução. Por exemplo, as conexões de serviço e os metadados do CosmosDB, Application Insights e LUIS (Reconhecimento Vocal) são armazenados nele. A adição ao arquivo `appsettings.json` deve estar neste formato:
 
     ```json
     {
@@ -251,7 +251,7 @@ Isso é tudo o que é necessário para adicionar telemetria às caixas de diálo
 
 ## <a name="enabling-telemetry-to-capture-usage-data-from-other-services-like-luis-and-qna-maker"></a>Habilitar a telemetria para capturar dados de uso de outros serviços, tais como o LUIS e o QnA Maker
 
-Em seguida, implementaremos a funcionalidade de telemetria em seu serviço LUIS. O serviço LUIS tem o registro em log de telemetria interno disponível para que o esforço necessário para começar a obter dados de telemetria do LUIS seja mínimo.  
+Em seguida, implementaremos a funcionalidade de telemetria em seu serviço LUIS. O serviço LUIS tem o registro em log de telemetria interno disponível para que o esforço necessário para começar a obter dados de telemetria do LUIS seja mínimo.  Se você estiver interessado em habilitar a telemetria em um bot habilitado para o QnA Maker, confira [Adicionar telemetria ao seu bot do QnAMaker](bot-builder-telemetry-QnAMaker.md)
 
 Para este exemplo, precisamos apenas fornecer o cliente de telemetria de modo semelhante ao modo como fizemos para as caixas de diálogo. 
 
@@ -337,6 +337,8 @@ Lá, você verá algumas informações padrão sobre o desempenho do bot e quais
 
 ## <a name="additional-information"></a>Informações adicionais
 
+* [Adicionar telemetria ao seu bot do QnA Maker](bot-builder-telemetry-qnamaker.md)
+
 * [O que é o Application Insights?](https://aka.ms/appinsights-overview)
 
 * [Usar a Pesquisa no Application Insights](https://aka.ms/search-in-application-insights)
@@ -372,14 +374,6 @@ The easiest way to test is by creating a dashboard using [Azure portal's templat
 ```
 -->
 
-
-
-
-
-
-
-
-
 <!--
 ## Additional information
 
@@ -414,9 +408,7 @@ There are three main components available for your bot to log telemetry, and eac
 - [*LuisRecognizer* class.](#telemetry-support-luis)  You can override for custom logging in two ways - per invocation (add/replace properties) or derived classes.
 - [*QnAMaker*  class.](#telemetry-qnamaker)  You can override for custom logging in two ways - per invocation (add/replace properties) or derived classes.
 
-
 All components log using the `IBotTelemetryClient`  (or `BotTelemetryClient` in node.js) interface which can be overridden with a custom implementation.
-
 
 #### Telemetry Middleware
 
@@ -735,6 +727,7 @@ When logging events into Application Insights, the events generated contain defa
 
 > [!NOTE]
 > Custom telemetry clients will not be provided these values.
+
 
 Property |Type | Details
 --- | --- | ---
