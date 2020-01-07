@@ -35,7 +35,7 @@ sections:
             html: <p>Novidades no Serviço de Bot do Azure.</p>
             image:
               src: media/index/i_guidelines.png
-            title: O que há de novo?
+            title: Novidades
           - href: 'https://docs.microsoft.com/azure/bot-service/bot-service-overview-introduction'
             html: <p>Saiba mais sobre o Serviço de Bot do Azure.</p>
             image:
@@ -46,7 +46,7 @@ sections:
             image:
               src: media/index/i_guidelines.png
             title: Como funcionam os bots
-  - title: Guia de início rápido de 5 minutos
+  - title: Guias de início rápido de 5 minutos
     items:
       - type: paragraph
         text: 'Saiba como criar seu primeiro bot:'
@@ -62,10 +62,14 @@ sections:
             text: JavaScript
             href: 'https://docs.microsoft.com/azure/bot-service/javascript/bot-builder-javascript-quickstart'
           - image:
+              src: v4sdk/media/logo_python.svg
+            text: Python
+            href: 'https://docs.microsoft.com/azure/bot-service/javascript/bot-builder-python-quickstart'
+          - image:
               src: media/index/azure_portal.png
             text: Portal do Azure
             href: 'https://docs.microsoft.com/azure/bot-service/bot-service-quickstart'
-  - title: Tutoriais Passo a Passo
+  - title: Tutoriais passo a passo
     items:
       - type: paragraph
         text: Saiba como criar e implantar bots no Azure.
