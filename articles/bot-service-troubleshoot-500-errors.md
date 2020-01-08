@@ -7,13 +7,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 4/30/2019
-ms.openlocfilehash: 3dcb22c2310f8c686f02fae27617061681910d01
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.date: 11/19/2019
+ms.openlocfilehash: bed93200a7ea79f5d5fd8c4e698445b3f431e56e
+ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298605"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75491573"
 ---
 # <a name="troubleshoot-http-500-errors"></a>Solucionar erros de HTTP 500
 
@@ -151,7 +151,7 @@ O ASP.Net e o Nó do bot emitirão os logs no nível do servidor que pode ser in
 
 #### <a name="set-up-a-browser-to-watch-your-logs"></a>Configurar um navegador para observar os logs
 
-1. Abra o bot no [Portal do Azure](http://portal.azure.com/).
+1. Abra o bot no [Portal do Azure](https://portal.azure.com/).
 1. Abra a página **Configurações do Serviço de Aplicativo / Todas as configurações do Serviço de Aplicativo** para ver todas as configurações de serviço.
 1. Abra a página **Monitoramento / Logs de diagnóstico** para o serviço de aplicativo.
    - Verifique se o **Registro em log de aplicativo (sistema de arquivos)** está habilitado. Certifique-se de clicar em **Salvar** se você alterar essa configuração.

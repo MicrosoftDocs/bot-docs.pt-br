@@ -8,18 +8,18 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 2/26/2019
-ms.openlocfilehash: de15fbc7fb000bde3b62883405149d22f3ac23a0
-ms.sourcegitcommit: 312a4593177840433dfee405335100ce59aac347
+ms.openlocfilehash: 7fd53098eecce95f3c6314806de6117802ef42e6
+ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73933642"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75491381"
 ---
 # <a name="debug-with-the-emulator"></a>Depurar com o emulador
 
 O Bot Framework Emulator é um aplicativo de desktop que permite que os desenvolvedores de bot testem e depurem seus bots, seja local ou remotamente. Usando o emulador, você pode conversar com seu bot e inspecionar as mensagens que seu bot envia e recebe. O emulador exibe mensagens como elas apareceriam em uma interface de usuário do bate-papo na Web e registra solicitações e respostas JSON à medida que você troca mensagens com seu bot. Antes de implantar seu bot na nuvem, execute-o localmente e teste-o usando o emulador. Você pode testar seu bot usando o emulador mesmo se você ainda não o [criou](./bot-service-quickstart.md) com o Serviço de Bot do Azure ou o configurou para rodar em qualquer canal.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 - Instalar o [Bot Framework Emulator](https://aka.ms/Emulator-wiki-getting-started)
 
 ## <a name="run-a-bot-locally"></a>Executar um bot localmente
@@ -48,6 +48,17 @@ Antes de conectar o bot ao Bot Framework Emulator, você precisa executar o bot 
 * Copie o número da porta em que o restify está escutando.
 
     ![Número da porta do JS](media/bot-service-debug-emulator/js_port_number.png)
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+* Vá para o prompt de comando e altere o diretório para o diretório de projeto do bot.
+* Inicie o bot executando o seguinte comando:
+    ```
+   python app.py
+    ```
+* Copie o número da porta em que o restify está escutando.
+
+    ![Número da porta do JS](media/bot-service-debug-emulator/js_port_number.png)
+
 ---
 
 Neste ponto, seu bot está em execução localmente. 

@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/21/2019
-ms.openlocfilehash: 4c8a70e4b82e2bc4a5c10d4cf73abf51f5f904ea
-ms.sourcegitcommit: 91a393e885b9ef7e08ceb978ce2f567ea38e7f48
+ms.openlocfilehash: 9d23c1497fa5ab58ef6eba4725035c4c0929586f
+ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74564411"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75491370"
 ---
 # <a name="bot-framework-frequently-asked-questions"></a>Perguntas frequentes sobre o Bot Framework
 
@@ -79,10 +79,10 @@ Para obter mais informações, confira as referências a seguir:
 3.  A criação de novos bots V3 está desabilitada no portal. No entanto, os usuários especialistas que desejarem implantar seus bots V3 de modo independente e sem o ABS (por exemplo, como serviço de aplicativo Web) poderão fazê-lo.
 
 #### <a name="sdk-and-tools"></a>SDK e Ferramentas
-
 1.  Não estamos investindo na V3 do lado do SDK e aplicaremos apenas correções de segurança críticas às ramificações do SDK no futuro próximo (exceção: planejamos adicionar um conector de habilidades para permitir que os bots V4 chamem bots V3 herdados).
 2.  O desenvolvimento de SDKs e ferramentas é exclusivamente no V4, sem nenhum trabalho V3 feito ou planejado (portanto, já é o cenário em que estamos).
 3.  Não impedimos que ninguém execute ferramentas antigas para gerenciar seus próprios bots V3. 
+
 
 ## <a name="how-can-i-migrate-azure-bot-service-from-one-region-to-another"></a>Como migrar o Serviço de Bot do Azure de uma região para outra?
 

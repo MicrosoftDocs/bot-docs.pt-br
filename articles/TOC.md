@@ -2,9 +2,10 @@
 # Visão geral
 ## [Sobre o Serviço de Bot do Azure](bot-service-overview-introduction.md)
 ## [Novidades](what-is-new.md)
-# Início rápido
+# Guia de Início Rápido
 ## [Criar um bot usando o .NET](dotnet/bot-builder-dotnet-sdk-quickstart.md)
 ## [Criar um bot usando JavaScript](javascript/bot-builder-javascript-quickstart.md)
+## [Criar um bot usando Python](python/bot-builder-python-quickstart.md)
 ## [Criar um bot usando o Serviço de Bot do Azure](v4sdk/abs-quickstart.md)
 # Tutoriais
 ## [1. Criar e implantar um bot básico](v4sdk/bot-builder-tutorial-basic-deploy.md)

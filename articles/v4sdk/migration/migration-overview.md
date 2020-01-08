@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/11/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 576947edf99705e5d0d8850837b3469f13381d06
-ms.sourcegitcommit: 008aa6223aef800c3abccda9a7f72684959ce5e7
+ms.openlocfilehash: 25c7fcb994e0fae348014c1eba393451dc0d9e15
+ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70026413"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75491400"
 ---
 # <a name="migration-overview"></a>Visão geral da migração
 
@@ -27,7 +27,7 @@ Uma abordagem aberta foi adotada, de modo que o SDK v4 do Bot Framework foi cria
 
 ## <a name="what-happens-to-bots-built-using-sdk-v3"></a>O que acontece a bots criados usando o SDK v3
 
-O SDK v3 do Bot Framework será desativado, mas as cargas de trabalho de bot V3 existentes continuarão sendo executadas sem interrupção. Para obter mais informações, consulte: [Suporte de tempo de vida do SDK Versão 3 do Bot Framework.](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-resources-bot-framework-faq?view=azure-bot-service-4.0#bot-framework-sdk-version-3-lifetime-support)
+O SDK v3 do Bot Framework será desativado, mas as cargas de trabalho de bot V3 existentes continuarão sendo executadas sem interrupção. Para obter mais informações, consulte: [Suporte de tempo de vida do SDK Versão 3 do Bot Framework.](https://docs.microsoft.com/azure/bot-service/bot-service-resources-bot-framework-faq?view=azure-bot-service-4.0#bot-framework-sdk-version-3-lifetime-support)
 
 É altamente recomendável começar a migrar seus bots da V3 para a V4. Para dar suporte a essa migração, criamos a documentação relacionada e vamos oferecer suporte estendido para iniciativas de migração por meio dos canais padrão.
 
@@ -69,7 +69,7 @@ O SDK v3 do Bot Framework será desativado, mas as cargas de trabalho de bot V3 
 
 ## <a name="whats-changed"></a>O que mudou
 
-O SDK v4 do Bot Framework é compatível com o mesmo Bot Framework Service subjacente que a v3. No entanto, a v4 é uma refatoração dos SDKs anteriores para permitir mais flexibilidade e controle sobre a criação do bot. Incluem os itens a seguir:
+O SDK v4 do Bot Framework é compatível com o mesmo Bot Framework Service subjacente que a v3. No entanto, a v4 é uma refatoração dos SDKs anteriores para permitir mais flexibilidade e controle sobre a criação do bot. Isso inclui o seguinte:
 
 - Introduziu um adaptador de bot
   - O adaptador faz parte da pilha de processamento de atividade
@@ -101,15 +101,15 @@ As planilhas a seguir podem orientá-lo na estimativa de sua carga de trabalho d
 | -- | -- | -- | -- | -- | -- |
 Para obter a atividade de entrada | IDialogContext.Activity | ITurnContext.Activity | count | Pequena  
 Para criar e enviar uma atividade para o usuário | activity.CreateReply(“text”) IDialogContext.PostAsync | MessageFactory.Text(“text”) ITurnContext.SendActivityAsync | count | Pequena |
-Gerenciamento de estado | UserData, ConversationData, and PrivateConversationData context.UserData.SetValue context.UserData.TryGetValue botDataStore.LoadAsyn | UserState, ConversationState e PrivateConversationState  Com acessadores de propriedade | context.UserData.SetValue – count context.UserData.TryGetValue – count botDataStore.LoadAsyn – count | Médio a Grande (confira [gerenciamento de estado do usuário](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-state?view=azure-bot-service-4.0#state-management) disponível) |
+Gerenciamento de estado | UserData, ConversationData, and PrivateConversationData context.UserData.SetValue context.UserData.TryGetValue botDataStore.LoadAsyn | UserState, ConversationState e PrivateConversationState  Com acessadores de propriedade | context.UserData.SetValue – count context.UserData.TryGetValue – count botDataStore.LoadAsyn – count | Médio a Grande (confira [gerenciamento de estado do usuário](https://docs.microsoft.com/azure/bot-service/bot-builder-concept-state?view=azure-bot-service-4.0#state-management) disponível) |
 Manipula o início do diálogo | Implemente IDialog.StartAsync | Torne essa a primeira etapa de um diálogo em cascata. | count | Pequena |  
 Enviar uma atividade | IDialogContext.PostAsync. | Chame ITurnContext.SendActivityAsync. | count | Pequena |  
 Aguarde a resposta do usuário | Use um parâmetro IAwaitable<IMessageActivity>e chame IDialogContext.Wait | Retorne esperar ITurnContext.PromptAsync para iniciar um diálogo de aviso. Em seguida, recupere o resultado na etapa seguinte da cascata. | count | Médio (depende do fluxo) |  
 Manipula a continuação do diálogo | IDialogContext.Wait | Adicione mais etapas a um diálogo em cascata ou implemente Dialog.ContinueDialogAsync | count | grande |  
-Sinalize o final do processamento até a mensagem seguinte do usuário | IDialogContext.Wait | Retorne Dialog.EndOfTurn. | count | Média |  
-Iniciar um diálogo filho | IDialogContext.Call | Retorne esperar o BeginDialogAsyncmethod do contexto da etapa. Se o diálogo filho retornar um valor, esse valor estará disponível na etapa seguinte da cascata por meio da propriedade Result do contexto da etapa. | count | Média |  
+Sinalize o final do processamento até a mensagem seguinte do usuário | IDialogContext.Wait | Retorne Dialog.EndOfTurn. | count | Médio |  
+Iniciar um diálogo filho | IDialogContext.Call | Retorne esperar o BeginDialogAsyncmethod do contexto da etapa. Se o diálogo filho retornar um valor, esse valor estará disponível na etapa seguinte da cascata por meio da propriedade Result do contexto da etapa. | count | Médio |  
 Substituir o diálogo atual por um novo diálogo | IDialogContext.Forward | Retorne esperar ITurnContext.ReplaceDialogAsync. | count | grande |  
-Sinaliza que o diálogo atual foi concluído | IDialogContext.Done | Retorne esperar o método EndDialogAsync do contexto da etapa. | count | Média |  
+Sinaliza que o diálogo atual foi concluído | IDialogContext.Done | Retorne esperar o método EndDialogAsync do contexto da etapa. | count | Médio |  
 Falha de um diálogo. | IDialogContext.Fail | Gere uma exceção a ser capturada em outro nível do bot, encerre a etapa com um status de Cancelado ou chame a etapa ou CancelAllDialogsAsync do contexto do diálogo. | count | Pequena |  
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
@@ -118,15 +118,15 @@ Falha de um diálogo. | IDialogContext.Fail | Gere uma exceção a ser capturada
 | -- | -- | -- | -- | -- | -- |
 Para obter a atividade de entrada | IMessage | TurnContext.activity | count | Pequena  
 Para criar e enviar uma atividade para o usuário | Chamar Session.send('message') | Chamar TurnContext.sendActivity | count | Pequena |
-Gerenciamento de estado | UserState & ConversationState UserState.get(), UserState.saveChanges(), ConversationState.get(), ConversationState.saveChanges() | UserState e ConversationState com acessadores de propriedade | count | Médio a Grande (confira [gerenciamento de estado do usuário](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-state?view=azure-bot-service-4.0#state-management) disponível) |
+Gerenciamento de estado | UserState & ConversationState UserState.get(), UserState.saveChanges(), ConversationState.get(), ConversationState.saveChanges() | UserState e ConversationState com acessadores de propriedade | count | Médio a Grande (confira [gerenciamento de estado do usuário](https://docs.microsoft.com/azure/bot-service/bot-builder-concept-state?view=azure-bot-service-4.0#state-management) disponível) |
 Manipula o início do diálogo | chamar session.beginDialog, passando a ID da caixa de diálogo | chamar DialogContext.beginDialog | count | Pequena |  
 Enviar uma atividade | Chamar Session.send | Chamar TurnContext.sendActivity | count | Pequena |  
 Aguarde a resposta do usuário | chame um prompt de dentro da etapa de cascata, ex: builder.Prompts.text(session, 'Insira seu destino'). Recupere a resposta na próxima etapa. | Retorne aguardar TurnContext.prompt para iniciar uma caixa de diálogo de prompt. Em seguida, recupere o resultado na etapa seguinte da cascata. | count | Médio (depende do fluxo) |  
 Manipula a continuação do diálogo | Automático | Adicione mais etapas a uma caixa de diálogo em cascata ou implemente Dialog.continueDialog | count | grande |  
-Sinalize o final do processamento até a mensagem seguinte do usuário | Session.endDialog | Retorne Dialog.EndOfTurn | count | Média |  
-Iniciar um diálogo filho | Session.beginDialog | Retorne aguardar o método beginDialog do contexto da etapa. Se a caixa de diálogo filho retornar um valor, esse valor estará disponível na próxima etapa da cascata por meio da propriedade Result do contexto da etapa. | count | Média |  
+Sinalize o final do processamento até a mensagem seguinte do usuário | Session.endDialog | Retorne Dialog.EndOfTurn | count | Médio |  
+Iniciar um diálogo filho | Session.beginDialog | Retorne aguardar o método beginDialog do contexto da etapa. Se a caixa de diálogo filho retornar um valor, esse valor estará disponível na próxima etapa da cascata por meio da propriedade Result do contexto da etapa. | count | Médio |  
 Substituir o diálogo atual por um novo diálogo | Session.replaceDialog | ITurnContext.replaceDialog | count | grande |  
-Sinaliza que o diálogo atual foi concluído | Session.endDialog | Retorne aguardar o método endDialog do contexto da etapa. | count | Média |  
+Sinaliza que o diálogo atual foi concluído | Session.endDialog | Retorne aguardar o método endDialog do contexto da etapa. | count | Médio |  
 Falha de um diálogo. | Session.pruneDialogStack | Gere uma exceção a ser capturada em outro nível do bot, encerre a etapa com um status de Cancelado ou chame a etapa ou cancelAllDialogs do contexto da caixa de diálogo. | count | Pequena |  
 
 ---
@@ -222,7 +222,7 @@ A seguir estão exemplos de código que você pode usar para aprender o SDK V4 d
 
 Os seguintes recursos fornecem mais informações e suporte para desenvolver bots.
 
-[Recursos adicionais do Bot Framework](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-resources-links-help?view=azure-bot-service-4.0)
+[Recursos adicionais do Bot Framework](https://docs.microsoft.com/azure/bot-service/bot-service-resources-links-help?view=azure-bot-service-4.0)
 
 ### <a name="references"></a>Referências
 
@@ -230,7 +230,7 @@ Confira os seguintes recursos para obter mais detalhes e informações de contex
 
 | Tópico | DESCRIÇÃO |
 | :--- | :--- |
-| [Novidades no Bot Framework](https://docs.microsoft.com/en-us/azure/bot-service/what-is-new?view=azure-bot-service-4.0) | Aprimoramentos e recursos principais do Bot Framework e do Serviço de Bot do Azure|
+| [Novidades no Bot Framework](https://docs.microsoft.com/azure/bot-service/what-is-new?view=azure-bot-service-4.0) | Aprimoramentos e recursos principais do Bot Framework e do Serviço de Bot do Azure|
 |[Como funcionam os bots](../bot-builder-basics.md)|O mecanismo interno de um bot|
 |[Gerenciar estado](../bot-builder-concept-state.md)|Abstrações para facilitar o gerenciamento de estado|
 |[Biblioteca de caixas de diálogo](../bot-builder-concept-dialog.md)| Conceitos centrais para gerenciar uma conversa|

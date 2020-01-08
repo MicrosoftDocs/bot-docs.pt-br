@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 002f2de104e61be3b0f7e543408c0c0d78018f9b
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: d8aa120e37d13cc5710915d2362fdeed5b9d10bf
+ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299250"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75491489"
 ---
 # <a name="send-and-receive-text-message"></a>Enviar e receber mensagens de texto
 
@@ -45,6 +45,15 @@ Nos manipuladores de atividade do bot, use o método `sendActivity` de mudança 
 ```javascript
 await context.sendActivity("Welcome!");
 ```
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Nos manipuladores de atividade do bot, use o método `send_activity` de mudança de contexto do objeto para enviar uma resposta de mensagem individual.
+
+```python
+await turn_context.send_activity("Welcome!")
+```
+
 ---
 ## <a name="receive-a-text-message"></a>Receber uma mensagem de texto
 
@@ -64,6 +73,14 @@ Nos manipulares de atividade do bot, use o código a seguir para receber uma men
 
 ```javascript
 let text = turnContext.activity.text;
+```
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Nos manipulares de atividade do bot, use o código a seguir para receber uma mensagem.
+
+```python
+response = context.activity.text
 ```
 
 ---

@@ -7,17 +7,17 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 12/19/2018
-ms.openlocfilehash: 7b261ab363c91209a4030bed31fa8bfc23f3ff6c
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.date: 11/19/2019
+ms.openlocfilehash: 7c46a89daf3e80d8579ffe0c475cce6b10fde9b5
+ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70297642"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75491334"
 ---
-::: moniker range="azure-bot-service-3.0"
-
 # <a name="design-and-control-conversation-flow"></a>Projetar e controlar o fluxo da conversa
+
+::: moniker range="azure-bot-service-3.0"
 
 [!INCLUDE [pre-release-label](./includes/pre-release-label-v3.md)]
 
@@ -81,8 +81,6 @@ O [próximo artigo](./bot-service-design-navigation.md) examina algumas armadilh
 
 ::: moniker range="azure-bot-service-4.0"
 
-# <a name="design-and-control-conversation-flow"></a>Projetar e controlar o fluxo da conversa
-
 Em um aplicativo tradicional, a interface do usuário consiste em uma série de telas e um único aplicativo ou site pode usar uma ou mais telas, conforme necessário, para trocar informações com o usuário.
 A maioria dos aplicativos começa com uma tela principal em que os usuários acessam primeiro e essa tela fornece uma navegação que leva a outras telas para várias funções, como o início de um novo pedido, a navegação de produtos ou a busca por ajuda.
 
@@ -105,7 +103,7 @@ Você pode estruturar esses módulos para fluírem da maneira desejada, variando
 Em um aplicativo tradicional, tudo começa com a **tela principal**.
 A **tela principal** invoca a **tela de novo pedido**.
 A **tela de novo pedido** permanece no controle até que seja fechada ou invoque outras telas, como a **tela de pesquisa de produtos**.
-Se a **tela de novo pedido** for fechada, o usuário retornará à **tela principal**.
+Se a **tela de novo pedido** fechar, o usuário retornará à **tela principal**.
 
 Em um bot, tudo começa com o **diálogo raiz**.
 O **diálogo raiz** invoca o **diálogo de novo pedido**.

@@ -7,14 +7,14 @@ ms.author: v-mimiel
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 07/08/2019
+ms.date: 11/28/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: d1fce8dfc6a8097ac14f72a9fe596560ddaac1a2
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 77f97d8a2467572ed596cc5033ad0f76435200e4
+ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299008"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75491411"
 ---
 # <a name="differences-between-the-v3-and-v4-javascript-sdk"></a>Diferenças entre o SDK do JavaScript v3 e v4
 
@@ -165,8 +165,8 @@ Confira os seguintes recursos para obter mais detalhes e informações de contex
 
 | Tópico | DESCRIÇÃO |
 | :--- | :--- |
-|[Migre um bot do SDK do JavaScript v3 para v4](https://docs.microsoft.com/en-us/azure/bot-service/migration/conversion-javascript?view=azure-bot-service-4.0)| Como realizar a portabilidade de um bot JavaScript v3 para v4|
-| [Novidades no Bot Framework](https://docs.microsoft.com/en-us/azure/bot-service/what-is-new?view=azure-bot-service-4.0) | Aprimoramentos e recursos principais do Bot Framework e do Serviço de Bot do Azure|
+|[Migre um bot do SDK do JavaScript v3 para v4](https://docs.microsoft.com/azure/bot-service/migration/conversion-javascript?view=azure-bot-service-4.0)| Como realizar a portabilidade de um bot JavaScript v3 para v4|
+| [Novidades no Bot Framework](https://docs.microsoft.com/azure/bot-service/what-is-new?view=azure-bot-service-4.0) | Aprimoramentos e recursos principais do Bot Framework e do Serviço de Bot do Azure|
 |[Como funcionam os bots](../bot-builder-basics.md)|O mecanismo interno de um bot|
 |[Gerenciar estado](../bot-builder-concept-state.md)|Abstrações para facilitar o gerenciamento de estado|
 |[Biblioteca de caixas de diálogo](../bot-builder-concept-dialog.md)| Conceitos centrais para gerenciar uma conversa|

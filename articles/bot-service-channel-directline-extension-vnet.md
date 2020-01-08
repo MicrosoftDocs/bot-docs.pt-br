@@ -8,12 +8,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 07/25/2019
-ms.openlocfilehash: 7c565d77879641d92a3e331852ff38ea21fdaf9e
-ms.sourcegitcommit: 6a83b2c8ab2902121e8ee9531a7aa2d85b827396
+ms.openlocfilehash: 839fd125976fd70cb78817078ff7cf4709974a8a
+ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68866444"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75491267"
 ---
 # <a name="use-direct-line-app-service-extension-within-a-vnet"></a>Usar a extensão de serviço de aplicativo do Direct Line com uma VNET
 
@@ -22,8 +22,8 @@ Este artigo descreve como usar a Extensão de Serviço de Aplicativo do Direct L
 ## <a name="create-an-app-service-environment-and-other-azure-resources"></a>Criar um Ambiente do Serviço de Aplicativo e outros recursos do Azure
 
 1. A extensão do Serviço de Aplicativo do Direct Line está disponível em todos os **Serviços de Aplicativos do Azure**, incluindo aqueles hospedados em um **Ambiente do Serviço de Aplicativo do Azure**. Um Ambiente do Serviço de Aplicativo do Azure oferece isolamento e é ideal para trabalhar em uma VNET.
-    - As instruções para criar um Ambiente do Serviço de Aplicativo externo podem ser encontradas no artigo [Criar um Ambiente do Serviço de Aplicativo externo](https://docs.microsoft.com/en-us/azure/app-service/environment/create-external-ase).
-    - As instruções para criar um Ambiente do Serviço de Aplicativo interno podem ser encontradas no artigo [Criar e usar um Ambiente do Serviço de Aplicativo de Balanceador de Carga Interno](https://docs.microsoft.com/en-us/azure/app-service/environment/create-ilb-ase).
+    - As instruções para criar um Ambiente do Serviço de Aplicativo externo podem ser encontradas no artigo [Criar um Ambiente do Serviço de Aplicativo externo](https://docs.microsoft.com/azure/app-service/environment/create-external-ase).
+    - As instruções para criar um Ambiente do Serviço de Aplicativo interno podem ser encontradas no artigo [Criar e usar um Ambiente do Serviço de Aplicativo de Balanceador de Carga Interno](https://docs.microsoft.com/azure/app-service/environment/create-ilb-ase).
 1. Depois de criar seu Ambiente do Serviço de Aplicativo, você precisará adicionar um Plano do Serviço de Aplicativo a ele, em que você possa implantar seus bots (e, assim, executar a Extensão do Serviço de Aplicativo do Direct Line). Para fazer isso:
     - Acesse https://portal.azure.com/
     - Crie um novo recurso “Plano do Serviço de Aplicativo”.
@@ -41,7 +41,7 @@ Este artigo descreve como usar a Extensão de Serviço de Aplicativo do Direct L
 |Endereços IP de destino|20.38.80.64, 40.82.248.64|
 |Intervalos de portas de destino|443|
 |Protocolo|Qualquer|
-|Ação|PERMITIR|
+|Ação|Allow|
 
 
 ![Arquitetura da extensão do Direct Line](./media/channels/direct-line-extension-vnet.png)
