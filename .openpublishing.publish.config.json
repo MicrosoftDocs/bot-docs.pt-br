@@ -103,6 +103,12 @@
          "branch_mapping":{}
       },
       {
+         "path_to_root":"botbuilder-python",
+         "url":"https://github.com/microsoft/BotBuilder-Samples",
+         "branch":"master",
+         "branch_mapping":{}
+      },
+      {
 	"path_to_root": "_repo.pt-br",
 	"url": "https://github.com/MicrosoftDocs/bot-docs-pr",
 	"branch": "live",
