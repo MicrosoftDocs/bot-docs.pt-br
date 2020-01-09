@@ -27,6 +27,7 @@
 ## [Twilio](../bot-service-channel-connect-twilio.md)
 ## [WeChat](../bot-service-channel-connect-wechat.md)
 ## [Web Chat](../bot-service-channel-connect-webchat.md)
+## [Webex](../bot-service-adapter-connect-webex.md)
 ## [Canais adicionais](../bot-service-channel-additional-channels.md)
 # [Definir as configurações do bot](../bot-service-manage-settings.md)
 # [Configurar a desobstrução de fala](../bot-service-manage-speech-priming.md)
