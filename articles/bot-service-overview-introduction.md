@@ -7,13 +7,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 05/05/2019
-ms.openlocfilehash: 0206cf3381d95fbc58d49924aa19dadea5f226dc
-ms.sourcegitcommit: dbc7eaee5c1f300b23c55abe6b60cd01c7408915
+ms.date: 11/15/2019
+ms.openlocfilehash: 6bdb6381c31045563963b4640faa31708be47ba4
+ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74415161"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75490771"
 ---
 # <a name="about-azure-bot-service"></a>Sobre o Serviço de Bot do Azure
 
@@ -47,8 +47,8 @@ O Serviço de Bot do Azure e o Bot Framework oferecem um conjunto integrado de f
 ### <a name="plan"></a>Plano
 Assim como acontece com qualquer tipo de software, é importante que o processo de criação de um bot bem-sucedido tenha uma compreensão detalhada dos objetivos, processos e necessidades dos usuários. Antes de escrever código, revise as diretrizes de [design do](bot-service-design-principles.md)  para obter práticas recomendadas e identifique as necessidades do seu bot. Você pode criar um bot simples ou incluir recursos mais sofisticados, como fala, compreensão de linguagem natural ou respostas a perguntas.
 
-### <a name="build"></a>Compilação
-Seu bot é um serviço Web que implementa uma interface de conversação e se comunica com o Serviço do Bot Framework para enviar e receber mensagens e eventos. O Bot Framework Service é um dos componentes do Serviço de Bot do Azure e do Bot Framework. Você pode criar bots em quantos ambientes e idiomas desejar. Você pode iniciar o desenvolvimento de bot no [portal do Azure](bot-service-quickstart.md) ou usar modelos de [[C#](dotnet/bot-builder-dotnet-sdk-quickstart.md) | [JavaScript](javascript/bot-builder-javascript-quickstart.md)] para o desenvolvimento local.
+### <a name="build"></a>Build
+Seu bot é um serviço Web que implementa uma interface de conversação e se comunica com o Serviço do Bot Framework para enviar e receber mensagens e eventos. O Bot Framework Service é um dos componentes do Serviço de Bot do Azure e do Bot Framework. Você pode criar bots em quantos ambientes e idiomas desejar. Você pode iniciar o desenvolvimento de bot no [portal do Azure](bot-service-quickstart.md) ou usar modelos de [[C#](dotnet/bot-builder-dotnet-sdk-quickstart.md) | [JavaScript](javascript/bot-builder-javascript-quickstart.md) | [Python](python/bot-builder-python-quickstart.md)] para o desenvolvimento local.
 
 Como parte do Serviço de Bot do Azure e do Bot Framework, oferecemos componentes adicionais que você pode usar para estender a funcionalidade do seu bot:
 
@@ -73,12 +73,14 @@ Os bots estão aplicativos complexos, com muitas partes diferentes, trabalhem em
  
 - Teste o bot na [Web](bot-service-manage-test-webchat.md). Uma vez configurado no portal do Azure, seu bot também pode ser acessado através de uma interface de chat da Web. A interface de chat da Web é uma ótima maneira de conceder acesso ao bot para testadores e outras pessoas que não têm acesso direto ao código de execução do bot.
 
-- [Teste de unidade](https://docs.microsoft.com/azure/bot-service/unit-test-bots?view=azure-bot-service-4.0) seu bot com a atualização de julho do SDK do Bot Framework.
+- [Teste de unidade](https://docs.microsoft.com/azure/bot-service/unit-test-bots) seu bot com a atualização de julho do SDK do Bot Framework.
+
+
 
 ### <a name="publish"></a>Publicar 
 Quando estiver pronto para disponibilizar seu bot na Web, publique seu bot no [Azure](bot-builder-howto-deploy-azure.md) ou em seu próprio serviço Web ou data center. A primeira etapa para o bot ganhar vida em seu site, ou dentro de canais de chat, é ter um endereço na Internet pública.
 
-### <a name="connect"></a>Connect          
+### <a name="connect"></a>Conectar          
 Conecte seu bot a canais como Facebook, Messenger, Kik, Skype, Slack, Microsoft Teams, Telegram, texto/SMS, Twilio, Cortana e Skype. O Bot Framework faz a maior parte do trabalho necessário para enviar e receber mensagens de todas essas diferentes plataformas. Seu aplicativo bot recebe um fluxo de mensagens unificado e normalizado, independentemente do número e tipo de canais aos quais ele está conectado. Para obter informações sobre como adicionar canais, confira o tópico [canais](bot-service-manage-channels.md).
 
 ### <a name="evaluate"></a>Avaliar 

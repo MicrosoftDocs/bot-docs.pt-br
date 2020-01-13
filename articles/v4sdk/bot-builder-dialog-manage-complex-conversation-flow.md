@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/06/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: ec56a36feb747160e1a82f9831aa323074d46801
-ms.sourcegitcommit: 312a4593177840433dfee405335100ce59aac347
+ms.openlocfilehash: 51a77c9f95bdf8d77f87d081704284c5f7584df3
+ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73933620"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75491510"
 ---
 # <a name="create-advanced-conversation-flow-using-branches-and-loops"></a>Criar fluxo de conversa avançado usando ramificações e loops
 
@@ -24,10 +24,10 @@ Você pode gerenciar fluxos de conversa simples e complexos usando a biblioteca 
 Neste artigo, mostraremos como gerenciar conversas complexas que geram ramificações e loops.
 Também mostraremos como passar argumentos entre partes diferentes do diálogo.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 
 - Conhecimento sobre [noções básicas de bots][concept-basics], [gerenciamento de estado][concept-state], a [biblioteca de diálogos][concept-dialogs] e como [implementar um fluxo de conversa sequencial][simple-dialog].
-- Uma cópia da caixa de diálogo de exemplo em [**C#** ][cs-sample] ou [**JavaScript**][js-sample].
+- Uma cópia de exemplo da caixa de diálogo complexa em [**C#** ][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
@@ -73,13 +73,29 @@ Para usar as caixas de diálogo, seu projeto precisa instalar o pacote do npm, *
 
 **index.js**
 
+Criamos os seguintes serviços para o bot que são necessários:
+
+- serviços básicos: um adaptador e a implantação do bot
+- gerenciamento de estado: armazenamento, estado do usuário e estado da conversa
+- caixas de diálogo: o bot as usa para gerenciar conversas
+
+[!code-javascript[ConfigureServices](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/index.js?range=26-65)]
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+![Fluxo de bot complexo](./media/complex-conversation-flow-python.png)
+
+Para usar caixas de diálogo, seu projeto precisa instalar o pacote do pypi **botbuilder-dialogs** executando `pip install botbuilder-dialogs`.
+
+**app.py**
+
 Nós criamos serviços para bot, que os outros blocos do código precisam.
 
 - Serviços básicos para bot: um adaptador e a implantação do bot.
 - Serviços para gerenciamento de estado: armazenamento, estado do usuário e estado da conversa.
 - A caixa de diálogo que o bot usará.
 
-[!code-javascript[ConfigureServices](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/index.js?range=26-65)]
+[!code-python[ConfigureServices](~/../botbuilder-python/samples/python/43.complex-dialog/app.py?range=28-75)]
 
 ---
 
@@ -100,6 +116,13 @@ Nós criamos serviços para bot, que os outros blocos do código precisam.
 **userProfile.js**
 
 [!code-javascript[UserProfile class](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/userProfile.js?range=4-12)]
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+**data_models/user_profile.py**
+
+[!code-python[UserProfile class](~/../botbuilder-python/samples/python/43.complex-dialog/data_models/user_profile.py?range=7-13)]
+
 
 ---
 
@@ -169,6 +192,38 @@ Nesse design, a caixa de diálogo principal sempre precederá a caixa de diálog
 
 [!code-javascript[step implementations](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/dialogs/reviewSelectionDialog.js?range=33-78)]
 
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+**dialogs\main_dialog.py**
+
+Definimos uma caixa de diálogo de componente, `MainDialog`, que contém algumas etapas importantes e direciona as caixas de diálogo, além de gerar avisos. A etapa inicial chama `TopLevelDialog` que é explicado abaixo.
+
+[!code-python[step implementations](~/../botbuilder-python/samples/python/43.complex-dialog/dialogs/main_dialog.py?range=29-50&highlight=4)]
+
+**dialogs\top_level_dialog.py**
+
+O diálogo inicial principal tem quatro etapas:
+
+1. Perguntar o nome do usuário.
+1. Perguntar a idade do usuário.
+1. Ramificação com base na idade do usuário.
+1. Por fim, agradecer a participação do usuário e retornar as informações coletadas.
+
+Na primeira etapa, estamos limpando o perfil do usuário para que a caixa de diálogo comece com um perfil em branco a cada vez. Uma vez que a última etapa traz informações ao final, a `acknowledgementStep` conclui com o salvamento no estado do usuário e depois retorna essas informações para a caixa de diálogo principal para que sejam usadas na etapa final.
+
+[!code-python[step implementations](~/../botbuilder-python/samples/python/43.complex-dialog/dialogs/top_level_dialog.py?range=43-95&highlight=2-3,43-44,52)]
+
+**dialogs/review_selection_dialog.py**
+
+A caixa de diálogo de seleção de revisão é iniciada a partir da caixa de diálogo principal `startSelectionStep`, e tem duas etapas:
+
+1. Pedir que o usuário escolha uma empresa para avaliação, ou escolha `done` para concluir.
+1. Repetir esse diálogo ou sair, conforme apropriado.
+
+Nesse design, a caixa de diálogo principal sempre precederá a caixa de diálogo de seleção da avaliação na pilha, e a caixa de diálogo de seleção da avaliação pode ser considerada filha da caixa de diálogo principal.
+
+[!code-python[step implementations](~/../botbuilder-python/samples/python/43.complex-dialog/dialogs/review_selection_dialog.py?range=42-99)]
+
 ---
 
 ## <a name="implement-the-code-to-manage-the-dialog"></a>Implante o código para gerenciar a caixa de diálogo
@@ -232,6 +287,20 @@ O manipulador de mensagens chama o método auxiliar `run` para gerenciar a caixa
 
 [!code-javascript[On members added](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/bots/dialogAndWelcomeBot.js?range=10-21)]
 
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+**bots/dialog_bot.py**
+
+O manipulador de mensagens chama o método `run_dialog` para gerenciar a caixa de diálogo e nós substituímos o manipulador de turnos para salvar alterações na conversa e no estado do usuário que possam ter ocorrido durante o turno. A base `on_turn` chamará o método `on_message_activity`, garantindo que as chamadas de salvamento aconteçam no final do turno.
+
+[!code-python[Overrides](~/../botbuilder-python/samples/python/43.complex-dialog/bots/dialog_bot.py?range=29-41&highlight=32-34)]
+
+**bots/dialog_and_welcome_bot.py**
+
+`DialogAndWelcomeBot` estende `DialogBot` acima para fornecer uma mensagem de boas-vindas quando o usuário ingressa na conversa e é o que é criado no `config.py`.
+
+[!code-python[on_members_added](~/../botbuilder-python/samples/python/43.complex-dialog/bots/dialog_and_welcome_bot.py?range=28-39)]
+
 ---
 
 ## <a name="branch-and-loop"></a>Branch e loop
@@ -263,6 +332,20 @@ Aqui está uma amostra de lógica de branch tirada de uma etapa da caixa de diá
 Aqui está uma amostra de lógica de looping tirada de uma etapa da caixa de diálogo _seleção de revisão_:
 
 [!code-javascript[looping logic](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/dialogs/reviewSelectionDialog.js?range=71-77)]
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+**dialogs/top_level_dialog.py**
+
+Aqui está uma amostra de lógica de branch tirada de uma etapa da caixa de diálogo _principal_:
+
+[!code-python[branching logic](~/../botbuilder-python/samples/python/43.complex-dialog/dialogs/top_level_dialog.py?range=71-80)]
+
+**dialogs/review_selection_dialog.py**
+
+Aqui está uma amostra de lógica de looping tirada de uma etapa da caixa de diálogo _seleção de revisão_:
+
+[!code-python[looping logic](~/../botbuilder-python/samples/python/43.complex-dialog/dialogs/review_selection_dialog.py?range=93-98)]
 
 ---
 
@@ -300,3 +383,4 @@ Para saber mais, confira [reutilizar diálogos][component-dialogs].
 
 [cs-sample]: https://aka.ms/cs-complex-dialog-sample
 [js-sample]: https://aka.ms/js-complex-dialog-sample
+[python-sample]: https://aka.ms/python-complex-dialog-sample

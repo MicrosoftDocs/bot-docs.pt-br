@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 774738186127bff1e680d905d208b69097402d8e
-ms.sourcegitcommit: 312a4593177840433dfee405335100ce59aac347
+ms.openlocfilehash: 24435d186569d29165760cf1d7d41ee50e665d06
+ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73933577"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75491482"
 ---
 # <a name="send-proactive-notifications-to-users"></a>Enviar notificações proativas para os usuários
 
@@ -31,10 +31,10 @@ Uma mensagem proativa ad hoc é o tipo mais simples de mensagem proativa. O bot 
 
 Para lidar com notificações de forma mais suave, considere outras maneiras de integrar a notificação no fluxo de conversa, como definir um sinalizador no estado da conversa ou adicionar a notificação a uma fila.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 
 - Entenda sobre as [Noções básicas do bot](bot-builder-basics.md).
-- Uma cópia do exemplo de mensagens proativas em **[C#](https://aka.ms/proactive-sample-cs) ou [JavaScript](https://aka.ms/proactive-sample-js)** . Este exemplo é usado para explicar sobre mensagens proativas neste artigo.
+- Uma cópia do exemplo de mensagens proativas em [**C#** ](https://aka.ms/proactive-sample-cs), [**JavaScript**](https://aka.ms/proactive-sample-js) ou [**Python**](https://aka.ms/bot-proactive-python-sample-code). O exemplo é usado para explicar sobre mensagens proativas neste artigo.
 
 ## <a name="about-the-proactive-sample"></a>Sobre a amostra proativa
 
@@ -59,6 +59,12 @@ Quando o emulador se conecta ao bot, o bot recebe duas atividades de atualizaç�
 [!code-javascript[onConversationUpdateActivity](~/../botbuilder-samples/samples/javascript_nodejs/16.proactive-messages/bots/proactiveBot.js?range=13-17&highlight=2)]
 
 [!code-javascript[onConversationUpdateActivity](~/../botbuilder-samples/samples/javascript_nodejs/16.proactive-messages/bots/proactiveBot.js?range=41-44&highlight=2-3)]
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+**bots/proactive_bot.py** [!code-python[on_conversation_update_activity](~/../botbuilder-python/samples/python/16.proactive-messages/bots/proactive_bot.py?range=14-16&highlight=2)]
+
+[!code-python[on_conversation_update_activity](~/../botbuilder-python/samples/python/16.proactive-messages/bots/proactive_bot.py?range=35-45)]
 
 ---
 
@@ -95,6 +101,14 @@ O parâmetro para `continueConversation` é uma função que serve como manipula
 
 [!code-javascript[Notify logic](~/../botbuilder-samples/samples/javascript_nodejs/16.proactive-messages/index.js?range=68-80&highlight=4-6)]
 
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Sempre que a página de notificação do bot for solicitada, o servidor vai recuperar as referências da conversa do dicionário.
+Em seguira, o servidor usará o `_send_proactive_message` para enviar a mensagem proativa.
+
+**app.py** [!code-python[Notify logic](~/../botbuilder-python/samples/python/16.proactive-messages/app.py?range=104-110&highlight=3-7)]
+
 ---
 
 ## <a name="test-your-bot"></a>Testar seu bot
@@ -110,7 +124,7 @@ Além do exemplo usado neste artigo, amostrar adicionais estão disponíveis em 
 
 ### <a name="avoiding-401-unauthorized-errors"></a>Como evitar erros 401 "Não Autorizados" 
 
-Por padrão, o SDK BotBuilder adiciona um `serviceUrl` à lista de nomes de hosts confiáveis se a solicitação de entrada for autenticada por BotAuthentication. Eles são mantidos em um cache na memória. Se o bot for reiniciado, um usuário que estiver aguardando por uma mensagem proativa não vai recebê-la, a menos que tenha enviado uma mensagem ao bot novamente depois da reinicialização. 
+Por padrão, o SDK BotBuilder adiciona um `serviceUrl` à lista de nomes de hosts confiáveis se a solicitação de entrada for autenticada por BotAuthentication. Eles são mantidos em um cache na memória. Se o bot for reiniciado, um usuário que estiver aguardando por uma mensagem proativa não vai recebê-la, a menos que tenha enviado uma mensagem ao bot novamente depois da reinicialização.
 
 Para evitar isso, você deve adicionar manualmente o `serviceUrl` à lista de nomes de host confiáveis, usando: 
 
@@ -133,6 +147,16 @@ MicrosoftAppCredentials.trustServiceUrl(serviceUrl);
 Para enviar mensagens proativas, `serviceUrl` é a URL do canal, que o destinatário da mensagem proativa estará usando, e pode ser encontrado no `activity.serviceUrl`.
 
 Você deve adicionar o código acima antes do código que envia a mensagem proativa. No [Exemplo de Mensagens Proativas](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/javascript_nodejs/16.proactive-messages), você deve colocá-lo em `index.js` logo antes de `await turnContext.sendActivity('proactive hello');`.
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+```python
+MicrosoftAppCredentials.trustServiceUrl(serviceUrl)
+```
+
+Para enviar mensagens proativas, `serviceUrl` é a URL do canal, que o destinatário da mensagem proativa estará usando, e pode ser encontrado no `activity.serviceUrl`.
+
+Você deve adicionar o código acima antes do código que envia a mensagem proativa. No [Exemplo de Mensagens Proativas](https://aka.ms/bot-proactive-python-sample-code), adicione-o ao `app.py` antes de enviar a mensagem *proactive hello*.
 
 ---
 

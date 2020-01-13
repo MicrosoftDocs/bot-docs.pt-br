@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/22/2019
-ms.openlocfilehash: b6174f20be47d40287cedd2a94b2d4e87c29bc2f
-ms.sourcegitcommit: c200cc2db62dbb46c2a089fb76017cc55bdf26b0
+ms.openlocfilehash: 55bf98c3665558d55c92585f4d9915ac91554a79
+ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70037491"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75491274"
 ---
 # <a name="connect-a-bot-to-web-chat"></a>Conectar um bot ao Webchat
 
@@ -32,7 +32,7 @@ O canal de Webchat no Portal do Bot Framework contém tudo o que você precisa p
 
 ## <a name="get-your-bot-secret-key"></a>Obtenha sua chave secreta do bot
 
-1. Abra o bot no [portal do Azure](http://portal.azure.com) e clique na folha **Canais**.
+1. Abra o bot no [portal do Azure](https://portal.azure.com) e clique na folha **Canais**.
 
 2. Clique em **Editar** no canal de **Webchat**.  
 ![Canal de Webchat](./media/bot-service-channel-webchat/bot-service-channel-list.png)
@@ -58,7 +58,7 @@ Para trocar o segredo por um token e gerar a inserção:
 
 2. A resposta à solicitação **GET** conterá o token (entre aspas) que pode ser usado para iniciar uma conversa pela renderização do controle de Webchat dentro de um **iframe**. Um token é válido apenas para uma conversa; para iniciar outra conversa, você precisa gerar um novo token.
 
-3. Dentro do **Código de inserção** do `iframe` copiado do canal de Webchat no Portal do Bot Framework (conforme descrito em [Obter a chave secreta do seu bot](#get-your-bot-secret-key) acima), altere o parâmetro `s=` para `t=` e substitua "YOUR_SECRET_HERE" pelo token.
+3. Dentro do **Código de inserção** do `iframe` copiado do canal de Webchat no Portal do Bot Framework (conforme descrito em [Obtenha sua chave secreta do bot](#get-your-bot-secret-key) acima), altere o parâmetro `s=` para `t=` e substitua "YOUR_SECRET_HERE" pelo token.
 
 > [!NOTE]
 > Os tokens serão renovados automaticamente antes de expirarem. 
@@ -117,7 +117,7 @@ Use essa opção se desejar permitir que outros desenvolvedores insiram o bot em
 
 Para inserir o bot no site especificando o segredo na marcação `iframe`:
 
-1. Copie o **Código de inserção** do `iframe` do canal de Webchat no Portal do Bot Framework (conforme descrito em [Obter a chave secreta do seu bot](#get-your-bot-secret-key) acima).
+1. Copie o **Código de inserção** `iframe` do canal de Webchat no Portal do Bot Framework (conforme descrito em [Obtenha sua chave secreta do bot](#get-your-bot-secret-key) acima).
 
 2. Dentro desse **Código de inserção**, substitua "YOUR_SECRET_HERE" pelo valor de **Chave secreta** copiado da mesma página.
 

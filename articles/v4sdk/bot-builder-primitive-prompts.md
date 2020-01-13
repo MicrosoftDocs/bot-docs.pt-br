@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 444aa96366fbacac30ff135b43947847fab5dac1
-ms.sourcegitcommit: 312a4593177840433dfee405335100ce59aac347
+ms.openlocfilehash: 4ae38a7b4f6a7769f8839fb44a82b3600abc6318
+ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73933727"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75491419"
 ---
 # <a name="create-your-own-prompts-to-gather-user-input"></a>Crie seus próprio prompts para coletar entradas do usuário
 
@@ -25,9 +25,9 @@ Uma conversa entre um bot e um usuário muitas vezes envolve solicitar ao usuár
 > [!TIP]
 > A biblioteca de diálogos fornece prompts internos que oferecem mais funcionalidade do que os usuários podem usar. Exemplos desses prompts podem ser encontrados no artigo [Implementar fluxo de conversa sequencial](bot-builder-dialog-manage-conversation-flow.md).
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 
-- O código neste artigo baseia-se no exemplo de Solicitar Entrada aos Usuários. Você precisará de uma cópia do **[Exemplo de C#](https://aka.ms/cs-primitive-prompt-sample) ou do [Exemplo de JavaScript](https://aka.ms/js-primitive-prompt-sample)** .
+- O código neste artigo baseia-se no exemplo de Solicitar Entrada aos Usuários. Você precisará de uma cópia do **[exemplo de C#](https://aka.ms/cs-primitive-prompt-sample), do [exemplo de JavaScript](https://aka.ms/js-primitive-prompt-sample) ou do [exemplo de Python](https://aka.ms/python-primitive-prompt-sample)** .
 - Conhecimento sobre [gerenciar estado](bot-builder-concept-state.md) e como [salvar dados do usuário e da conversa](bot-builder-howto-v4-state.md).
 
 ## <a name="about-the-sample-code"></a>Sobre o código de exemplo
@@ -47,6 +47,13 @@ O exemplo de bot faz uma série de perguntas ao usuário, valida algumas das res
 - Uma classe `userProfile` para as informações do usuário que o bot coletará.
 - Uma classe `conversationFlow` para controlar o estado da nossa conversa durante a coleta de informações do usuário.
 - Uma enumeração `conversationFlow.question` interna para controlar onde estamos na conversa.
+
+## <a name="pythontabpython"></a>[Python](#tab/python)
+![custom-prompts](media/CustomPromptBotSample-Python-Overview.png)
+
+- Uma classe `UserProfile` para as informações do usuário que o bot coletará.
+- Uma classe `ConversationFlow` para controlar o estado da nossa conversa durante a coleta de informações do usuário.
+- Uma enumeração `ConversationFlow.Question` interna para controlar onde estamos na conversa.
 
 ---
 
@@ -75,6 +82,14 @@ No **index. js**, crie as propriedades de estado e o bot e, em seguida, chame o 
 
 [!code-javascript[custom prompt bot](~/../botbuilder-samples/samples/javascript_nodejs/44.prompt-for-user-input/index.js?range=63-69)]
 
+## <a name="pythontabpython"></a>[Python](#tab/python)
+
+Em **app.py**, crie as propriedades de estado e o bot.
+
+[!code-python[custom prompt bot](~/../botbuilder-python/samples/python/44.prompt-for-user-input/app.py?range=66-72)]
+
+[!code-python[custom prompt bot](~/../botbuilder-python/samples/python/44.prompt-for-user-input/app.py?range=75-76)]
+
 ---
 
 ## <a name="create-property-accessors"></a>Criar acessadores de propriedade
@@ -101,6 +116,15 @@ Em seguida, definimos um segundo manipulador, `onDialog`, para executar após o 
 
 [!code-javascript[custom prompt bot](~/../botbuilder-samples/samples/javascript_nodejs/44.prompt-for-user-input/bots/customPromptBot.js?range=41-48)]
 
+## <a name="pythontabpython"></a>[Python](#tab/python)
+
+No construtor, criamos os acessadores de propriedade de estado e configuramos os objetos de gerenciamento de estado (criados acima) para nossa conversa.
+
+**bots/custom_prompt_bot.py** [!code-python[custom prompt bot](~/../botbuilder-python/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=40-44)]
+
+Em seguida, salve os dados usando o método `save_changes()`.
+[!code-python[custom prompt bot](~/../botbuilder-python/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=53-55)]
+
 ---
 
 ## <a name="the-bots-message-turn-handler"></a>O manipulador de turno de mensagens do bot
@@ -118,6 +142,12 @@ Para lidar com atividades de mensagem, configuramos os dados da conversa e do us
 
 **bots/customPromptBot.js**  
 [!code-javascript[custom prompt bot](~/../botbuilder-samples/samples/javascript_nodejs/44.prompt-for-user-input/bots/customPromptBot.js?range=31-39)]
+
+## <a name="pythontabpython"></a>[Python](#tab/python)
+Para lidar com atividades de mensagem, configuramos os dados da conversa e do usuário e, em seguida, usamos o método auxiliar `_fill_out_user_profile`. Veja aqui o código completo da manipulador de turno.
+
+**bots/custom_prompt_bot.py** [!code-python[custom prompt bot](~/../botbuilder-python/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=46-55)]
+
 ---
 
 ## <a name="filling-out-the-user-profile"></a>Preenchendo o perfil do usuário
@@ -139,6 +169,10 @@ Começaremos com a coleta de informações. Cada uma fornecerá uma interface se
 
 **bots/customPromptBot.js**  
 [!code-javascript[custom prompt bot](~/../botbuilder-samples/samples/javascript_nodejs/44.prompt-for-user-input/bots/customPromptBot.js?range=52-116)]
+
+## <a name="pythontabpython"></a>[Python](#tab/python)
+
+**bots/custom_prompt_bot.py** [!code-python[custom prompt bot](~/../botbuilder-python/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=57-126)]
 
 ---
 
@@ -168,12 +202,15 @@ Adicione os seguintes métodos de validação ao bot.
 **bots/customPromptBot.cs**  
 [!code-javascript[custom prompt bot](~/../botbuilder-samples/samples/javascript_nodejs/44.prompt-for-user-input/bots/customPromptBot.js?range=118-189)]
 
+## <a name="pythontabpython"></a>[Python](#tab/python)
+
+**bots/custom_prompt_bot.py** [!code-python[custom prompt bot](~/../botbuilder-python/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=127-189)]
 ---
 
 ## <a name="test-the-bot-locally"></a>Testar o bot localmente
 Baixe e instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator-readme) para testar o bot localmente.
 
-1. Execute o exemplo localmente em seu computador. Se você precisar de instruções, veja [Exemplo de C#](https://aka.ms/cs-primitive-prompt-sample) ou [Exemplo de JS](https://aka.ms/js-primitive-prompt-sample) no arquivo LEIAME.
+1. Execute o exemplo localmente em seu computador. Se precisar de instruções, consulte o arquivo LEIAME do [exemplo de C#](https://aka.ms/cs-primitive-prompt-sample), do [exemplo de JS](https://aka.ms/js-primitive-prompt-sample) ou do [exemplo de Python](https://aka.ms/python-primitive-prompt-sample).
 1. Para testá-lo, use o emulador, conforme mostrado abaixo.
 
 ![primitive-prompts](media/primitive-prompts.png)

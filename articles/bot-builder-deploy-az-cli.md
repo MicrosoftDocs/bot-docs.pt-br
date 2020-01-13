@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 08/06/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 1e5c2068fe9b4fdc13641d098eb1579c01dd24c2
-ms.sourcegitcommit: dd12ddf408c010182b09da88e2aac0de124cef22
+ms.openlocfilehash: 7faa7091198202058c00ddca4aee79fe87d700e9
+ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70386001"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75491177"
 ---
 # <a name="deploy-your-bot"></a>Implantar seu bot
 
@@ -22,7 +22,7 @@ ms.locfileid: "70386001"
 
 Neste artigo, mostraremos como implantar um bot básico no Azure. Explicaremos como preparar seu bot para implantação, implantá-lo no Azure e testá-lo no Webchat. Seria útil ler este artigo antes de seguir as etapas, para que você entenda tudo que está relacionado à implantação de um bot.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 [!INCLUDE [deploy prerequisite](~/includes/deploy/snippet-prerequisite.md)]
 <!-- - A subscription to [Microsoft Azure](https://azure.microsoft.com/free/)
 - A C#, JavaScript, or TypeScript bot that you have developed on your local machine
@@ -82,7 +82,11 @@ The above command outputs JSON with the key `appId`, save the value of this key 
 > ``` -->
 
 ### <a name="4-deploy-via-arm-template"></a>4. Implantar por meio do modelo do Resource Manager
-Você pode implantar seu bot em um novo grupo de recursos ou em um grupo de recursos existente. Escolha a opção que funcione melhor para você. 
+Você pode implantar seu bot em um novo grupo de recursos ou em um grupo de recursos existente. Escolha a opção que funcione melhor para você.
+
+> [!NOTE]
+> Os bots do Python não podem ser implantados em um grupo de recursos que contém serviços/bots do Windows.  Vários bots do Python podem ser implantados no mesmo grupo de recursos, mas criam outros serviços (LUIS, P e R etc.) em outro grupo de recursos.
+>
 
 #### <a name="deploy-via-arm-template-with-new-resource-group"></a>**Implantar por meio do modelo ARM (com **novo** Grupo de Recursos)**
 <!-- ##### Create Azure resources -->

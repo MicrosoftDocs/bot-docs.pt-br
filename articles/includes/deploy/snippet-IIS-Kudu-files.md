@@ -1,12 +1,14 @@
 ---
-ms.openlocfilehash: bbe74a9a82d3bd04593384d825d373bfab35e3db
-ms.sourcegitcommit: 7e901f5f39a0cfb0d37e532321b90a1dcf4baadd
+ms.openlocfilehash: 71b47097da95e2da9d9916557e86061c5a10248e
+ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72039788"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75491169"
 ---
-É necessário preparar os arquivos de projeto para implantar o bot. 
+
+É necessário preparar os arquivos do projeto para implantar o bot de C#, Javascript ou Typescript. Se estiver implantando um bot de Python, ignore esta etapa.
+
 <!-- **C# bots** -->
 ##### <a name="ctabcsharp"></a>[C#](#tab/csharp)
 

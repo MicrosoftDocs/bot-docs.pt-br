@@ -8,21 +8,21 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 2/26/2019
-ms.openlocfilehash: 27af606506eb19b98a327e276a00201ac417c7e4
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: dcc8ae71be76d2629681a058ea43e280aebad795
+ms.sourcegitcommit: 46fbb8982144c66864b83889b6457187e890badd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298178"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736749"
 ---
 # <a name="debug-a-bot"></a>Depurar um bot
 
 Este artigo descreve como depurar seu bot usando um ambiente de desenvolvimento integrado (IDE), como o Visual Studio ou Visual Studio Code e o emulador de Bot Framework. Embora você possa usar esses métodos para depurar qualquer bot localmente, este artigo usa um [bot C#](~/dotnet/bot-builder-dotnet-sdk-quickstart.md) ou um [bot JavaScript](~/javascript/bot-builder-javascript-quickstart.md) criado no início rápido.
 
 > [!NOTE]
-> Neste artigo, usamos o Bot Framework Emulator para enviar e receber mensagens do bot durante a depuração. Se você estiver procurando outras maneiras de depurar o bot usando o Bot Framework Emulator, leia o artigo [Depurar com o Bot Framework Emulator](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-debug-emulator?view=azure-bot-service-4.0). 
+> Neste artigo, usamos o Bot Framework Emulator para enviar e receber mensagens do bot durante a depuração. Se você estiver procurando outras maneiras de depurar o bot usando o Bot Framework Emulator, leia o artigo [Depurar com o Bot Framework Emulator](https://docs.microsoft.com/azure/bot-service/bot-service-debug-emulator). 
 
-## <a name="prerequisites"></a>Pré-requisitos 
+## <a name="prerequisites"></a>Prerequisites 
 - Baixe e instale o [emulador do Bot Framework](https://aka.ms/Emulator-wiki-getting-started).
 - Baixe e instale o [Visual Studio Code](https://code.visualstudio.com) ou o [Visual Studio](https://www.visualstudio.com/downloads) (Community Edition ou superior).
 
@@ -46,11 +46,14 @@ For more information, see [Debug with the Emulator](bot-service-debug-emulator.m
 No Visual Studio Code, você pode definir pontos de interrupção e executar o bot no modo de depuração para percorrer seu código. Para definir pontos de interrupção no VS Code, faça o seguinte:
 
 1. Inicie o VS Code e abra a pasta de projeto do bot.
-2. Na barra de menus, clique em **Debug** e clique em **Iniciar depuração**. Se você for solicitado a selecionar um mecanismo de tempo de execução para executar seu código, selecione **Node. js**. Neste ponto, o bot está em execução localmente. 
+2. Na barra de menus, clique em **Debug** e clique em **Iniciar depuração**. Se você for solicitado a selecionar um mecanismo de runtime para executar seu código, selecione **Node. js**. Neste ponto, o bot está em execução localmente. 
 3. Clique no arquivo **.js** e defina os pontos de interrupção conforme necessário. No VS Code, você pode definir pontos de interrupção ao passar o mouse sobre a coluna à esquerda dos números de linha. Um pequeno ponto vermelho será exibido. Se você clicar no ponto, o ponto de interrupção é definido. Se você clicar no ponto novamente, o ponto de interrupção é removido.
+
    ![Definir ponto de interrupção no VS Code](~/media/bot-service-debug-bot/breakpoint-set.png)
-4. Inicie o Bot Framework Emulator e conecte-se ao bot, conforme descrito no artigo [Depurar com o Bot Framework Emulator](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-debug-emulator?view=azure-bot-service-4.0). 
+
+4. Inicie o Bot Framework Emulator e conecte-se ao bot, conforme descrito no artigo [Depurar com o Bot Framework Emulator](https://docs.microsoft.com/azure/bot-service/bot-service-debug-emulator). 
 5. Do emulador, envie uma mensagem ao bot (por exemplo: envie a mensagem "Olá"). A execução será interrompida na linha onde você colocar o ponto de interrupção.
+
    ![Depurar no VS Code](~/media/bot-service-debug-bot/breakpoint-caught.png)
 
 ## <a name="debug-a-c-bot-using-breakpoints-in-visual-studio"></a>Depurar um bot de C# usando os pontos de interrupção no Visual Studio
@@ -62,23 +65,26 @@ No Visual Studio (VS), você pode definir pontos de interrupção e executar o b
 3. No **Gerenciador de Soluções**, clique no arquivo **.cs** e defina os pontos de interrupção conforme necessário. Esse arquivo define sua lógica principal do bot. No VS, você pode definir pontos de interrupção ao passar o mouse sobre a coluna à esquerda dos números de linha. Um pequeno ponto vermelho será exibido. Se você clicar no ponto, o ponto de interrupção será definido. Se você clicar no ponto novamente, o ponto de interrupção será removido.
 4. No menu, clique em **Depurar** e clique em **Iniciar Depuração**. Neste ponto, o bot está em execução localmente. 
 
+   ![Definir ponto de interrupção no VS](~/media/bot-service-debug-bot/breakpoint-set-vs.png)
+
 <!--
    > [!NOTE]
    > If you get the "Value cannot be null" error, check to make sure your **Table Storage** setting is valid.
    > The **EchoBot** is default to using **Table Storage**. To use Table Storage in your bot, you need the table *name* and *key*. If you do not have a Table Storage instance ready, you can create one or for testing purposes, you can comment out the code that uses **TableBotDataStore** and uncomment the line of code that uses **InMemoryDataStore**. The **InMemoryDataStore** is intended for testing and prototyping only.
 -->
-   ![Definir ponto de interrupção no VS](~/media/bot-service-debug-bot/breakpoint-set-vs.png)
 
 5. Inicie o emulador de Bot Framework e conecte-se ao seu bot, conforme descrito na seção acima. 
 6. No emulador, envie uma mensagem a seu bot (por exemplo: enviar a mensagem "Olá"). A execução será interrompida na linha onde você colocar o ponto de interrupção.
+
    ![Depurar no VS](~/media/bot-service-debug-bot/breakpoint-caught-vs.png)
-::: moniker range="azure-bot-service-3.0" 
+
+::: moniker range="azure-bot-service-3.0"
 
 ## <a id="debug-csharp-serverless"></a> Depurar um plano de consumo C\# bot de funções
 
-O ambiente sem servidor C\# do plano de consumo no serviço de Bot tem muito mais em comum com o Node.js do que um típico aplicativo C\# porque ele requer um host de tempo de execução, bem como o mecanismo de Node. No Azure, o tempo de execução faz parte do ambiente de hospedagem na nuvem, mas você deve replicar esse ambiente localmente em sua área de trabalho. 
+O ambiente sem servidor C\# do plano de consumo no serviço de Bot tem muito mais em comum com o Node.js do que um típico aplicativo C\# porque ele requer um host de runtime, bem como o mecanismo de Node. No Azure, o runtime faz parte do ambiente de hospedagem na nuvem, mas você deve replicar esse ambiente localmente em sua área de trabalho. 
 
-### <a name="prerequisites"></a>Pré-requisitos
+### <a name="prerequisites"></a>Prerequisites
 
 Antes que você possa depurar seu bot C# de plano de consumo, você deve concluir essas tarefas.
 
@@ -101,7 +107,7 @@ A maneira mais simples para depurar seu bot localmente é iniciar o bot e, em se
 Primeiro, abra um prompt de comando e navegue até a pasta onde o arquivo **project.json** está localizado no repositório. Em seguida, execute o comando `dotnet restore` para restaurar os vários pacotes que são referenciados no seu bot.
 
 > [!NOTE]
-> O Visual Studio 2017 altera como o Visual Studio trata as dependências. Enquanto o Visual Studio 2015 usa **project.json** para tratar as dependências, o Visual Studio 2017 usa um modelo **csproj** durante o carregamento no Visual Studio. Se você estiver usando o Visual Studio 2017, <a href="https://aka.ms/bf-debug-project">baixe este arquivo **.csproj** </a> para a pasta **/mensagens** em seu repositório antes de executar o comando `dotnet restore`.
+> O Visual Studio 2017 altera como o Visual Studio trata as dependências. Enquanto o Visual Studio 2015 usa **project.json** para tratar as dependências, o Visual Studio 2017 usa um modelo **csproj** durante o carregamento no Visual Studio. Se você estiver usando o Visual Studio 2017, <a href="https://aka.ms/bf-debug-project">baixe este arquivo **.csproj**</a> para a pasta **/mensagens** em seu repositório antes de executar o comando `dotnet restore`.
 
 ![Prompt de comando](~/media/bot-service-debug-bot/csharp-azureservice-debug-envconfig.png)
 
@@ -122,6 +128,25 @@ Além disso, você pode exibir os detalhes do log na janela do console.
 ![Janela do console](~/media/bot-service-debug-bot/csharp-azureservice-debug-debughostlogging.png)
 
 ::: moniker-end
+
+## <a name="debug-a-python--bot-using-breakpoints-in-visual-studio-code"></a>Depurar um bot de Python usando os pontos de interrupção no Visual Studio Code
+
+No Visual Studio Code, você pode definir pontos de interrupção e executar o bot no modo de depuração para percorrer seu código. Confira também [Criar um bot com o SDK do Bot Framework para Python](~/python/bot-builder-python-quickstart.md).
+
+1. Inicie o VS Code e abra a pasta de projeto do bot.
+1. Defina os pontos de interrupção conforme necessário. Você pode definir pontos de interrupção passando o mouse sobre a coluna à esquerda dos números de linha. Um pequeno ponto vermelho será exibido. Se você clicar no ponto, o ponto de interrupção é definido. Se você clicar no ponto novamente, o ponto de interrupção é removido.
+1. Selecione o `app.py`.
+1. Na barra de menus, clique em **Debug** e clique em **Iniciar depuração**.
+1. Selecione **Arquivo do Python** para depurar o arquivo selecionado.
+
+   ![Definir pontos de interrupção](~/media/bot-service-debug-bot/bot-debug-python-breakpoints.png)
+
+1. Inicie o Bot Framework Emulator e conecte-se ao bot, conforme descrito no artigo [Depurar com o Bot Framework Emulator](https://docs.microsoft.com/azure/bot-service/bot-service-debug-emulator). 
+1. Do emulador, envie uma mensagem ao bot (por exemplo: envie a mensagem "Olá"). A execução será interrompida na linha onde você colocar o ponto de interrupção.
+
+   ![Depurar no VS Code](~/media/bot-service-debug-bot/bot-debug-python-breakpoint-caught.png)
+
+Para obter mais informações, confira [Depurar código em Python](https://aka.ms/bot-debug-python).
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

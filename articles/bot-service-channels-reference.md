@@ -7,13 +7,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 03/01/2019
-ms.openlocfilehash: ffb7864eabecd6aa509e2b347f3df48985d00584
-ms.sourcegitcommit: e9cd857ee11945ef0b98a1ffb4792494dfaeb126
+ms.date: 12/03/2019
+ms.openlocfilehash: 8cc058b32e6cdb64d25f2177ef809a5763902379
+ms.sourcegitcommit: a5935cfa353071cee069632c83a34c20d1ff6cf3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71693137"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75201779"
 ---
 # <a name="categorized-activities-by-channel"></a>Atividades categorizadas por canal
 
@@ -251,9 +251,36 @@ Você pode usar o Webchat para enviar qualquer tipo de atividade e conteúdo. N�
 
 ## <a name="action-support-by-channel"></a>Suporte a ações por canal
 
-A tabela a seguir mostra o suporte à ação de cartão e à ação sugerida por canal.
+A tabela a seguir mostra as ações totais do cartão e as ações sugeridas com suporte por canal.
 
  \                      | Cortana  | Linha Direta | Direct Line (Webchat) | Email | Facebook | GroupMe |   Kik   | Linha  | Teams | Margem de atraso | Skype | Skype Business | Telegram | Twilio  
 :---------------------- | :-----:  | :---------: | :--------------------: |:----: | :------: | :-----: | :-----: | :---: | :---: | :---: | :---: | :------------: | :------: | :----:  
-Ações Sugeridas       |    0     |     100     |          100           |   0   |    10    |    0    |   20    |  13   |   0   |  100  |  10   |       0        |    100   |   0     
-Ações de cartão            |   100    |     100     |          100           |   0   |     3    |    0    |   20    |  99   |   3   |  100  |   3   |       0        |     0    |   0     
+Ações Sugeridas       |    :x:     |     100     |          100           |   :x:   |    10    |    :x:    |   20    |  13   |   :x:   |  100  |  10   |       :x:        |    100   |   :x:     
+Ações de cartão            |   100    |     100     |          100           |   :x:   |     3    |    :x:    |   20    |  99   |   3   |  100  |   3   |       :x:        |     :x:    |   :x:     
+
+Para obter mais informações sobre os números mostrados na tabela acima, confira o código de suporte ao canal listado [aqui](https://aka.ms/channelactions). 
+
+## <a name="card-support-by-channel"></a>Suporte a cartão por canal
+
+| Canal | Cartão adaptável | Cartão de animação | Placa de áudio | Cartão Hero | Cartão de Recebimento | Cartão de Entrada | Cartão de Miniatura | Placa de vídeo |
+|:-------:|:-------------:|:--------------:|:----------:|:---------:|:------------:|:-----------:|:--------------:|:----------:|
+|Cortana|✔|❌|❌|❌|✔|✔|✔|❌|
+|Email|🔶|🌐|🌐|✔|✔|✔|✔|🌐|
+|Facebook|⚠🔶|✔|❌|✔|✔|✔|✔|❌|
+|GroupMe|🔶|🌐|🌐|🌐|🌐|🌐|🌐|🌐|
+|Kik|🔶|✔|✔|❌|🌐|❌|✔|🌐|
+|Linha|⚠🔶|✔|🌐|✔|✔|✔|✔|🌐|
+|Equipes da Microsoft|✔|❌|❌|✔|✔|✔|✔|❌|
+|Skype|❌|✔|✔|✔|✔|✔|✔|✔|
+|Margem de atraso|🔶|✔|🌐|🌐|✔|✔|🌐|🌐|
+|Telegram|⚠🔶|✔|🌐|✔|✔|✔|✔|✔|
+|Twilio|🔶|✔|❌|✔|✔|🌐|✔|❌|
+|Chat na Web|✔|✔|✔|✔|✔|✔|✔|✔|
+
+*Observação: tecnicamente, o canal de Direct Line dá suporte a todos os cartões, mas cabe ao cliente implementá-los*
+
+* ✔: suporte completo
+* ⚠: suporte parcial – o cartão não poderá enviar se contiver entradas/botões. Varia de acordo com o canal.
+* ❌: sem suporte
+* 🔶: o cartão é convertido em imagem
+* 🌐: o cartão é convertido em texto não formatado com links e/ou imagens e/ou a mídia não é reproduzida no cliente

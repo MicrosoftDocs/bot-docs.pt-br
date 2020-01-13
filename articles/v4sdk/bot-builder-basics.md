@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: dc2c222866796f584bcad950a6e0afc40ab43a90
-ms.sourcegitcommit: 4751c7b8ff1d3603d4596e4fa99e0071036c207c
+ms.openlocfilehash: 97f8318b6f9035e3ac3be1983b0691f627240242
+ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73441624"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75491537"
 ---
 # <a name="how-bots-work"></a>Como funcionam os bots
 
@@ -84,6 +84,16 @@ Para implementar a lógica desses manipuladores, você substituirá esses métod
 
 Não existem situações comuns de substituição do manipulador de turno base, ou seja, tenha cuidado ao tentar fazer isso. Para situações do tipo [salvar o estado](bot-builder-concept-state.md), que você deseja fazer no final de um turno, existe um manipulador especial chamado `onDialog`. O manipulador `onDialog` é executado no final, depois que o restante dos manipuladores foi executado, e não está vinculado a nenhum tipo de atividade. Assim como com todos os manipuladores acima, não deixe de chamar `next()` para garantir a conclusão do processo.
 
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Por exemplo, se o bot recebe uma atividade de mensagem, o manipulador de turno vê a atividade de entrada a envia para o manipulador de atividade `on_message_activity`. 
+
+Ao criar seu bot, sua lógica do bot para tratar das mensagens e respondê-las entrará nesse manipulador `on_message_activity`. Da mesma forma, sua lógica de tratamento de membros que estão sendo adicionados à conversa vai entrar no manipulador `on_members_added`, que é chamado sempre que um membro é adicionado à conversa.
+
+Para implementar a lógica desses manipuladores, você substituirá esses métodos no seu bot como visto na seção [Lógica do bot](#bot-logic) abaixo. Para cada um desses manipuladores, não há nenhuma implementação base e, portanto, basta adicionar a lógica desejada na substituição.
+
+Há algumas situações em que é melhor substituir o manipulador de turno base, por exemplo, ao [salvar o estado](bot-builder-concept-state.md) no final de um turno. Ao fazer isso, chame primeiro `await super().on_turn(turnContext);` para fazer com que a implementação base de `on_turn` seja executada antes do código adicional. A implementação base é, entre outras coisas, responsável por chamar o resto dos manipuladores de atividade, como `on_message_activity`.
+
 ---
 
 ## <a name="middleware"></a>Middleware
@@ -94,7 +104,7 @@ O manipulador de turnos recebe um contexto de turno como seu argumento, normalme
 
 ## <a name="bot-structure"></a>Estrutura do bot
 
-Nas seções a seguir, examinaremos _partes essenciais_ de um EchoBot que você pode criar facilmente usando os modelos fornecidos para [ **CSharp**](../dotnet/bot-builder-dotnet-sdk-quickstart.md) ou [**JavaScript**](../javascript/bot-builder-javascript-quickstart.md).
+Nas seções a seguir, examinaremos _partes essenciais_ de um EchoBot que você pode criar facilmente usando os modelos fornecidos para [**CSharp**](../dotnet/bot-builder-dotnet-sdk-quickstart.md) ou [**JavaScript**](../javascript/bot-builder-javascript-quickstart.md).
 
 <!--Need to add section calling out the controller in code, and explaining it further-->
 
@@ -125,6 +135,18 @@ O arquivo **.env** especifica as informações de configuração para o bot, com
 Para usar o arquivo de configuração **.env**, o modelo precisará de um pacote adicional incluído.  Primeiro, obtenha o pacote `dotenv` do npm:
 
 `npm install dotenv`
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+### <a name="requirementstxt"></a>requirements.txt
+
+**requirements.txt** especifica as dependências e suas versões associadas para o bot.  Tudo isso é configurado pelo modelo e seu sistema.
+
+As dependências devem ser instaladas usando `pip install -r requirements.txt`
+
+### <a name="configpy"></a>config.py
+
+O arquivo **config.py** especifica as informações de configuração do bot, como o número da porta, a ID do aplicativo e a senha, entre outras coisas. Se estiver usando algumas tecnologias ou este bot em produção, você precisará adicionar suas chaves específicas ou a URL a essa configuração. No entanto, para este bot Eco, você não precisa fazer nada aqui no momento; a ID do aplicativo e a senha podem ser deixadas indefinidas por enquanto.
 
 ---
 
@@ -226,6 +248,51 @@ class MyBot extends ActivityHandler {
 }
 
 module.exports.MyBot = MyBot;
+```
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+A lógica principal do bot é definida no código do bot; aqui, ele se chama `bots/echo_bot.py`. `EchoBot` deriva de `ActivityHandler`, que por sua vez deriva da interface `Bot`. `ActivityHandler` define vários manipuladores para diferentes tipos de atividades, como os dois definidos aqui: `on_message_activity` e `on_members_added`. Esses métodos são protegidos, mas podem ser substituídos, já que estamos derivando de `ActivityHandler`.
+
+Os manipuladores definidos em `ActivityHandler` são:
+
+| Evento | Manipulador | DESCRIÇÃO |
+| :-- | :-- | :-- |
+| Qualquer tipo de atividade recebido | `on_turn` | Chama um dos outros manipuladores com base no tipo de atividade recebido. |
+| Atividade de mensagem recebida | `on_message_activity` | Substitua-o para lidar com uma atividade `message`. |
+| Atividade de atualização de conversa recebida | `on_conversation_update_activity` | Em uma atividade `conversationUpdate`, chama um manipulador se algum membro que não seja o bot ingressa na conversa ou sai dela. |
+| Membros que não são bot ingressaram na conversa | `on_members_added_activity` | Substitua-o para lidar com membros que ingressam em uma conversa. |
+| Membros que não são bot saíram da conversa | `on_members_removed_activity` | Substitua-o para lidar com membros que saem de uma conversa. |
+| Atividade de evento recebida | `on_event_activity` | Em uma atividade `event`, chama um manipulador específico ao tipo de evento. |
+| Atividade de evento de resposta de token recebida | `on_token_response_event` | Substitua-o para manipular eventos de resposta de token. |
+| Atividade de evento de resposta não token recebida | `on_event_activity` | Substitua-o para lidar com outros tipos de eventos. |
+| Atividade de reação de mensagem recebida | `on_message_reaction_activity` | Em uma atividade `messageReaction`, chamará um manipulador se uma ou mais reações forem adicionadas ou removidas de uma mensagem. |
+| Reações de mensagem adicionadas a uma mensagem | `on_reactions_added` | Substitua isso para manipular reações adicionadas a uma mensagem. |
+| Reações de mensagem removidas de uma mensagem | `on_reactions_removed` | Substitua isso para manipular reações removidas de uma mensagem. |
+| Outro tipo de atividade recebido | `on_unrecognized_activity_type` | Substitua-o para lidar com qualquer tipo de atividade sem tratamento. |
+
+Esses manipuladores diferentes têm um `turn_context` que fornece informações sobre a atividade de entrada, que corresponde à solicitação HTTP de entrada. As atividades podem ser de vários tipos e, portanto, cada manipulador fornece uma atividade fortemente tipada em seu parâmetro de contexto de turno; na maioria dos casos, `on_message_activity` sempre será manipulado e é geralmente o mais comum.
+
+Como nas versões anteriores de 4.x dessa estrutura, também há a opção de implementar o método público `on_turn`. Atualmente, a implementação base desse método lida com a verificação de erros e, em seguida, chama cada um dos manipuladores específicos (como os dois que definimos neste exemplo) dependendo do tipo de atividade de entrada. Na maioria dos casos, você pode deixar esse método de lado e usar manipuladores individuais, mas se a situação exige uma implementação personalizada de `on_turn`, ele ainda é uma opção.
+
+> [!IMPORTANT]
+> Se você substituir o método `on_turn`, precisará chamar `super().on_turn` para obter a implementação base e chamar todos os outros manipuladores `on_<activity>`, ou chamar esses manipuladores por conta própria. Caso contrário, esses manipuladores não serão chamados e o código não será executado.
+
+No exemplo, estamos recebendo um novo usuário ou ecoando a mensagem que o usuário enviou usando a chamada `send_activity`. A atividade de saída corresponde à solicitação HTTP POST de saída.
+
+```py
+class MyBot(ActivityHandler):
+    async def on_members_added_activity(
+        self, members_added: [ChannelAccount], turn_context: TurnContext
+    ):
+        for member in members_added:
+            if member.id != turn_context.activity.recipient.id:
+                await turn_context.send_activity("Hello and welcome!")
+
+    async def on_message_activity(self, turn_context: TurnContext):
+        return await turn_context.send_activity(
+            f"Echo: {turn_context.activity.text}"
+        )
 ```
 
 ---
@@ -366,6 +433,98 @@ server.post('/api/messages', (req, res) => {
         await myBot.run(context);
     });
 });
+```
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+#### <a name="apppy"></a>app.py
+
+O `app.py` configura o bot e o serviço de hospedagem que encaminhará as atividades para a lógica do bot.
+
+#### <a name="required-libraries"></a>Bibliotecas necessárias
+
+Na parte superior do seu arquivo `app.py`, você encontrará uma série de módulos ou bibliotecas que estão sendo solicitados. Esses módulos oferecerão a você acesso a um conjunto de funções que talvez você queira incluir em seu aplicativo.
+
+```py
+from botbuilder.core import BotFrameworkAdapterSettings, TurnContext, BotFrameworkAdapter
+from botbuilder.schema import Activity, ActivityTypes
+
+from bots import MyBot
+
+# Create the loop and Flask app
+LOOP = asyncio.get_event_loop()
+app = Flask(__name__, instance_relative_config=True)
+app.config.from_object("config.DefaultConfig")
+```
+
+#### <a name="set-up-services"></a>Configurar serviços
+
+As próximas partes configuram o servidor e o adaptador que permitem que seu bot se comunique com o usuário e envie respostas. O servidor escutará na porta especificada do arquivo de configuração ou fará fall-back para _3978_ para estabelecer conexão com o emulador. O adaptador atuará como o condutor para o bot, direcionando a comunicação de entrada e saída, autenticação e assim por diante.
+
+```py
+# Create adapter.
+# See https://aka.ms/about-bot-adapter to learn more about how bots work.
+SETTINGS = BotFrameworkAdapterSettings(app.config["APP_ID"], app.config["APP_PASSWORD"])
+ADAPTER = BotFrameworkAdapter(SETTINGS)
+
+# Catch-all for errors.
+async def on_error(context: TurnContext, error: Exception):
+    # This check writes out errors to console log .vs. app insights.
+    # NOTE: In production environment, you should consider logging this to Azure
+    #       application insights.
+    print(f"\n [on_turn_error] unhandled error: {error}", file=sys.stderr)
+
+    # Send a message to the user
+    await context.send_activity("The bot encountered an error or bug.")
+    await context.send_activity("To continue to run this bot, please fix the bot source code.")
+    # Send a trace activity if we're talking to the Bot Framework Emulator
+    if context.activity.channel_id == 'emulator':
+        # Create a trace activity that contains the error object
+        trace_activity = Activity(
+            label="TurnError",
+            name="on_turn_error Trace",
+            timestamp=datetime.utcnow(),
+            type=ActivityTypes.trace,
+            value=f"{error}",
+            value_type="https://www.botframework.com/schemas/error"
+        )
+        # Send a trace activity, which will be displayed in Bot Framework Emulator
+        await context.send_activity(trace_activity)
+
+ADAPTER.on_turn_error = on_error
+
+# Create the Bot
+BOT = MyBot()
+```
+
+#### <a name="forwarding-requests-to-the-bot-logic"></a>Encaminhando solicitações para a lógica do bot
+
+O adaptador `process_activity` envia as atividades de entrada para a lógica do bot.
+O terceiro parâmetro em `process_activity` é um manipulador de funções que é chamado para executar a lógica do bot depois que a [atividade](#the-activity-processing-stack) recebida foi pré-processada pelo adaptador e roteada por meio de algum middleware. A variável context do turno, passada como um argumento para o manipulador de funções, pode ser usada para fornecer informações sobre a atividade de entrada, o remetente e o destinatário, o canal, a conversa, etc. O processamento de atividade é roteado para o método `on_turn` do bot. `on_turn` é definido em `ActivityHandler`; ele executa verificação de erros e, em seguida, chama os manipuladores de eventos do bot com base no tipo de atividade recebida.
+
+```py
+# Listen for incoming requests on /api/messages
+@app.route("/api/messages", methods=["POST"])
+def messages():
+    # Main bot message handler.
+    if "application/json" in request.headers["Content-Type"]:
+        body = request.json
+    else:
+        return Response(status=415)
+
+    activity = Activity().deserialize(body)
+    auth_header = (
+        request.headers["Authorization"] if "Authorization" in request.headers else ""
+    )
+
+    try:
+        task = LOOP.create_task(
+            ADAPTER.process_activity(activity, auth_header, BOT.on_turn)
+        )
+        LOOP.run_until_complete(task)
+        return Response(status=201)
+    except Exception as exception:
+        raise exception
 ```
 
 ---

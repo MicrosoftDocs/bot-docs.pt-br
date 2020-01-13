@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 09/17/2019
-ms.openlocfilehash: 47f87555b48edcfdca6d07ab2bdaa52ef915a8da
-ms.sourcegitcommit: 61a2297fabf35c59693309f2a605e893634585b7
+ms.openlocfilehash: d958f2a9f85af4a42dab241264115050f1972d4d
+ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71061073"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75490847"
 ---
 # <a name="troubleshooting-general-problems"></a>Solução de problemas gerais
 Essas perguntas frequentes podem ajudá-lo a solucionar problemas comuns de desenvolvimento de bot ou operacionais.
@@ -136,7 +136,7 @@ O Direct Line 3.0 retorna o código de status HTTP 502 quando tenta contatar o b
 
 ## <a name="what-is-the-idialogstackforward-method-in-the-bot-framework-sdk-for-net"></a>O que é o método IDialogStack.Forward no SDK do Bot Framework para .NET?
 
-A finalidade principal de `IDialogStack.Forward` é reutilizar um diálogo filho existente que seja frequentemente "reativo", em que o diálogo filho (em `IDialog.StartAsync`) aguarda um objeto `T` com algum manipulador `ResumeAfter`. Em particular, se você tiver um diálogo filho que aguarda um `IMessageActivity` `T`, poderá encaminhar `IMessageActivity` de entrada (já recebido por algum diálogo pai) usando o método `IDialogStack.Forward`. Por exemplo, para encaminhar um `IMessageActivity` de entrada para um `LuisDialog`, chame `IDialogStack.Forward` para efetuar push de `LuisDialog` para a pilha de diálogo, execute o código em `LuisDialog.StartAsync` até agendar uma espera pela próxima mensagem e, em seguida, imediatamente satisfazer essa espera com o `IMessageActivity` encaminhado.
+A finalidade principal de `IDialogStack.Forward` é reutilizar um diálogo filho existente que seja frequentemente "reativo", em que o diálogo filho (em `IDialog.StartAsync`) aguarda um objeto `T` com algum manipulador `ResumeAfter`. Em particular, se tiver um diálogo filho que aguarda um `IMessageActivity``T`, você poderá encaminhar o `IMessageActivity` de entrada (já recebido por algum diálogo pai) usando o método `IDialogStack.Forward`. Por exemplo, para encaminhar um `IMessageActivity` de entrada para um `LuisDialog`, chame `IDialogStack.Forward` para efetuar push de `LuisDialog` para a pilha de diálogo, execute o código em `LuisDialog.StartAsync` até agendar uma espera pela próxima mensagem e, em seguida, imediatamente satisfazer essa espera com o `IMessageActivity` encaminhado.
 
 `T` é geralmente um `IMessageActivity`, uma vez que `IDialog.StartAsync` é normalmente construído para aguardar esse tipo de atividade. É possível usar `IDialogStack.Forward` como `LuisDialog` como um mecanismo para interceptar mensagens do usuário para algum processamento antes de encaminhar a mensagem para um `LuisDialog` existente. Alternativamente, também é possível usar `DispatchDialog` com `ContinueToNextGroup` para essa finalidade.
 
@@ -180,7 +180,7 @@ Se quiser armazenar esses dados nos datacenters, forneça uma implementação pe
 * Use as interfaces do Builder na camada de linguagem (Node.js ou C#).
 
 > [!IMPORTANT]
-> A API do Serviço do Estado do Bot Framework não é recomendável para ambientes de produção e poderá ser preterida em uma versão futura. É recomendável que você atualize o código do bot para que ele use o armazenamento em memória para fins de teste ou use uma das **Extensões do Azure** para bots de produção. Para saber mais, consulte o tópico **Gerenciar dados de estado** para implementação de [.NET](~/dotnet/bot-builder-dotnet-state.md) ou [Node](~/nodejs/bot-builder-nodejs-state.md).
+> A API de Serviço de Estado do Bot Framework não é recomendada para ambientes de produção e poderá ser preterida em uma versão futura. É recomendável que você atualize o código do bot para que ele use o armazenamento em memória para fins de teste ou use uma das **Extensões do Azure** para bots de produção. Para obter mais informações, confira o tópico **Gerenciar dados de estado** para implementação do [.NET](~/dotnet/bot-builder-dotnet-state.md) ou do [Node](~/nodejs/bot-builder-nodejs-state.md).
 
 ::: moniker-end
 
@@ -267,11 +267,11 @@ Tanto o SDK do Bot Framework para Node.js quanto o SDK do Bot Framework para .NE
 
 ## <a name="why-do-i-get-an-authorization_requestdenied-exception-when-creating-a-bot"></a>Por que recebo uma exceção Authorization_RequestDenied ao criar um bot?
 
-A permissão para criar bots do Serviço de Bot do Azure é gerenciada por meio do portal do AAD (Azure Active Directory). Se as permissões não estiverem configuradas corretamente no [portal do AAD](http://aad.portal.azure.com), os usuários receberão a exceção **Authorization_RequestDenied** ao tentarem criar um serviço de bot.
+A permissão para criar bots do Serviço de Bot do Azure é gerenciada por meio do portal do AAD (Azure Active Directory). Se as permissões não estiverem configuradas corretamente no [portal do AAD](https://aad.portal.azure.com), os usuários receberão a exceção **Authorization_RequestDenied** ao tentarem criar um serviço de bot.
 
 Primeiro, verifique se você é um "Convidado" do diretório:
 
-1. Entre no [portal do Azure](http://portal.azure.com).
+1. Entre no [portal do Azure](https://portal.azure.com).
 2. Clique em **Todos os serviços** e pesquise *ativo*.
 3. Selecione **Azure Active Directory**.
 4. Clique em **Usuários**.
@@ -281,7 +281,7 @@ Primeiro, verifique se você é um "Convidado" do diretório:
 
 Após verificar que você não é um **Convidado**, em seguida, para garantir que os usuários em um diretório ativo possam criar um serviço de bot, o administrador do diretório precisará definir as configurações a seguir:
 
-1. Entre no [portal do AAD](http://aad.portal.azure.com). Acesse **Usuários e grupos** e selecione **Configurações de usuário**.
+1. Entre no [portal do AAD](https://aad.portal.azure.com). Acesse **Usuários e grupos** e selecione **Configurações de usuário**.
 2. Na seção **Registro do aplicativo**, defina **Os usuários podem registrar aplicativos**  para **Sim**. Isso permite que os usuários no diretório criem o serviço de bot.
 3. Na seção **Usuários externos**, defina **Permissões de usuários convidados são limitadas** para **Não**. Isso permite que os usuários convidados no diretório criem o serviço de bot.
 

@@ -6,13 +6,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 12/13/2017
-ms.openlocfilehash: d4fe7ae7f14349303f4445b321e55195483d210f
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.date: 11/19/2019
+ms.openlocfilehash: db295251284fb93ebd730572d2ced1e431460c90
+ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70297481"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75491590"
 ---
 # <a name="application-insights-keys"></a>Chaves do Application Insights
 
@@ -30,7 +30,7 @@ Este tópico mostrará como criar essas chaves do Application Insights.
 ## <a name="instrumentation-key"></a>Chave de instrumentação
 
 Para obter a chave de instrumentação, faça o seguinte:
-1. No [portal do Azure](http://portal.azure.com), na seção Monitor, crie um novo recurso do **Application Insights** (ou use um já existente).
+1. No [portal do Azure](https://portal.azure.com), na seção Monitor, crie um novo recurso do **Application Insights** (ou use um já existente).
 ![Captura de tela do portal de listagem do Application Insights](~/media/portal-app-insights-add-new.png)
 
 2. Na lista de recursos do Application Insights, clique no recurso do Application Insight que você acabou de criar.

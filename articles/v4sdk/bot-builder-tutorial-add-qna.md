@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 422c1285d6f668b6f5c39617f5d25419b2874eea
-ms.sourcegitcommit: dcacda776c927bcc7c76d00ff3cc6b00b062bd6b
+ms.openlocfilehash: c22e0b8413fc0bcfb4ced330470d88a8a4fbea81
+ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74410474"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75491435"
 ---
 # <a name="tutorial-use-qna-maker-in-your-bot-to-answer-questions"></a>Tutorial: usar o QnA Maker em seu bot para responder a perguntas
 
@@ -32,7 +32,7 @@ Neste tutorial, você aprenderá como:
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 
 * O bot criado no [tutorial anterior](bot-builder-tutorial-basic-deploy.md). Vamos adicionar um recurso de pergunta e resposta ao bot.
 * É útil ter alguma familiaridade com o [QnA Maker](https://qnamaker.ai/). Usaremos o portal QnA Maker para criar, treinar e publicar a base de dados de conhecimento que será usada com o bot.
@@ -75,7 +75,7 @@ Esses valores serão usados no seu arquivo `appsettings.json` ou `.env`, na pró
 A base de dados de conhecimento já está pronta para usar seu bot.
 
 ## <a name="add-knowledge-base-information-to-your-bot"></a>Adicionar informações da base de dados de conhecimento ao seu bot
-A partir do bot framework v4.3, o Azure não fornece mais um arquivo .bot como parte do código-fonte de bot baixado. Use as seguintes instruções para conectar seu bot CSharp ou JavaScript à base de dados de conhecimento.
+A partir do bot framework v4.3, o Azure não fornece mais um arquivo .bot como parte do código-fonte de bot baixado. Use as seguintes instruções para conectar seu bot CSharp, JavaScript ou Python à base de dados de conhecimento.
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
@@ -107,13 +107,29 @@ QnAAuthKey="qna-maker-resource-key"
 QnAEndpointHostName="your-hostname" // This is a URL ending in /qnamaker
 ```
 
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Adicione os seguintes valores ao arquivo `config.py`:
+
+```python
+class DefaultConfig:
+    """ Bot Configuration """
+    PORT = 3978
+    APP_ID = os.environ.get("MicrosoftAppId", "")
+    APP_PASSWORD = os.environ.get("MicrosoftAppPassword", "")
+
+    QNA_KNOWLEDGEBASE_ID = os.environ.get("QnAKnowledgebaseId", "")
+    QNA_ENDPOINT_KEY = os.environ.get("QnAEndpointKey", "")
+    QNA_ENDPOINT_HOST = os.environ.get("QnAEndpointHostName", "")
+
+```
+
 ---
 
 | Campo | Valor |
 |:----|:----|
-| QnAKnowledgebaseId | `knowledge-base-id` da solicitação HTTP de exemplo, *Postman*.|
-| QnAAuthKey | `qna-maker-resource-key` da solicitação HTTP de exemplo, *Postman*. |
-| QnAEndpointHostName | `your-hostname` da solicitação HTTP de exemplo, *Postman*. Use a URL completa, começando com `https://` e terminando com `/qnamaker`. A cadeia de caracteres de URL completa se parecerá com `https://<your knowledge base name>.azurewebsites.net/qnamaker`. |
+
+| QnAKnowledgebaseId | A ID da base de dados de conhecimento que o portal QnA Maker gerou para você. | | QnAAuthKey (QnAEndpointKey in Python)  | A chave de ponto de extremidade que o portal de QnA Maker gerou para você. | | QnAEndpointHostName | A URL do host que o portal QnA Maker gerou. Use a URL completa, começando com `https://` e terminando com `/qnamaker`. A cadeia de caracteres de URL completa será semelhante a "https://< >.azure.net/qnamaker". |
 
 Agora salve suas edições.
 
@@ -284,6 +300,81 @@ Atualize seu código de inicialização para carregar as informações de servi�
     });
     ```
 
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+1. Certifique-se de que você instalou os pacotes conforme descrito no arquivo LEIAME do repositório de exemplos.
+1. Adicione a referência `botbuilder-ai` ao arquivo `requirements.txt`, conforme mostrado abaixo.
+
+   **requirements.txt**
+   <!-- Removed version numbers -->
+   ```text
+      botbuilder-core
+      botbuilder-ai
+      flask
+   ```
+
+   Observe que as versões podem variar.
+
+1. No arquivo `app.py`, modifique a criação da instância de bot, conforme mostrado abaixo.
+
+   **app.py**
+
+   ```python
+   # Create the main dialog
+   BOT = MyBot(APP.config)
+   ```
+
+1. No arquivo `bot.py`, importe `QnAMaker` e `QnAMakerEndpoint`; importe também `Config`, conforme mostrado abaixo.
+
+   **bot.py**
+
+   ```python
+   from flask import Config
+
+   from botbuilder.ai.qna import QnAMaker, QnAMakerEndpoint
+   from botbuilder.core import ActivityHandler, MessageFactory, TurnContext
+   from botbuilder.schema import ChannelAccount
+   ```
+
+1. Adicione uma função __init__ para instanciar um objeto `qna-maker`. usando os parâmetros de configuração fornecidos no arquivo `config.py`.  
+
+   **bot.py**
+
+   ```python
+   def __init__(self, config: Config):
+      self.qna_maker = QnAMaker(
+         QnAMakerEndpoint(
+            knowledge_base_id=config["QNA_KNOWLEDGEBASE_ID"],
+            endpoint_key=config["QNA_ENDPOINT_KEY"],
+            host=config["QNA_ENDPOINT_HOST"],
+      )
+   )
+
+   ```
+
+1. Atualize `on_message_activity` para consultar sua base de dados de conhecimento e obter uma resposta. Passe cada entrada do usuário para sua base de dados de conhecimento do QnA Maker e retorne a primeira resposta do QnA Maker ao usuário.
+
+   **bot.py**
+
+   ```python
+   async def on_message_activity(self, turn_context: TurnContext):
+      # The actual call to the QnA Maker service.
+      response = await self.qna_maker.get_answers(turn_context)
+      if response and len(response) > 0:
+         await turn_context.send_activity(MessageFactory.text(response[0].answer))
+      else:
+         await turn_context.send_activity("No QnA Maker answers were found.")
+
+   ```
+
+1. Opcionalmente, atualize a mensagem de boas-vindas em `on_members_added_activity`, por exemplo:
+
+   **bot.py**
+
+   ```python
+   await turn_context.send_activity("Hello and welcome to QnA!")
+   ```
+
 ---
 
 ### <a name="test-the-bot-locally"></a>Testar o bot localmente
@@ -302,6 +393,7 @@ Agora você pode republicar seu bot de volta no Azure. Você precisa compactar a
 > Before creating a zip of your project files, make sure that you are _in_ the correct folder. 
 > - For C# bots, it is the folder that has the .csproj file. 
 > - For JS bots, it is the folder that has the app.js or index.js file. 
+> - For Python bots, it is the folder that has the app.py file. 
 >
 > Select all the files and zip them up while in that folder, then run the command while still in that folder.
 >
@@ -319,16 +411,18 @@ az webapp deployment source config-zip --resource-group "resource-group-name" --
 
 [!INCLUDE [publish snippet](~/includes/deploy/snippet-publish-js.md)]
 
---- -->
+# [Python](#tab/python)
 
-### <a name="test-the-published-bot"></a>Testar o bot publicado
+az webapp deployment source config-zip --resource-group "resource_group_name" --name "unique_bot_name" --src "zi
 
-Depois de publicar o bot, dê ao Azure, um ou dois minutos para atualizar e iniciar o bot.
+### Test the published bot
 
-Usar o Emulador para testar o ponto de extremidade de produção do bot ou usar o portal do Azure para testar o bot no WebChat.
-Em ambos os casos, você deve ver o mesmo comportamento de quando o ponto de extremidade foi testado localmente.
+After you publish the bot, give Azure a minute or two to update and start the bot.
 
-## <a name="clean-up-resources"></a>Limpar recursos
+Use the Emulator to test the production endpoint for your bot, or use the Azure portal to test the bot in Web Chat.
+In either case, you should see the same behavior as you did when you tested it locally.
+
+## Clean up resources
 
 <!-- In the first tutorial, we should tell them to use a new resource group, so that it is easy to clean up resources. We should also mention in this step in the first tutorial not to clean up resources if they are continuing with the sequence. -->
 

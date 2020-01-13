@@ -6,14 +6,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ROBOTS: NOINDEX
-ms.date: 10/04/2018
+ms.date: 11/14/2019
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 3bd411da4edd30b6045654884aeae5ae1cc4239f
-ms.sourcegitcommit: 9e1034a86ffdf2289b0d13cba2bd9bdf1958e7bc
+ms.openlocfilehash: 2d36a1465fd1a81b0c5f30bab52824a6130c215e
+ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69890525"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75491209"
 ---
 # <a name="add-authentication-to-your-bot-via-azure-bot-service"></a>Adicionar autenticação ao seu bot por meio do Serviço de Bot do Azure
 
@@ -142,7 +142,7 @@ A próxima etapa é registrar com seu bot o aplicativo do Azure AD que você aca
 
 # <a name="azure-ad-v1tabaadv1"></a>[Azure AD v1](#tab/aadv1)
 
-1. Navegue até a página de recurso do seu bot no [Portal do Azure](http://portal.azure.com/).
+1. Navegue até a página de recurso do seu bot no [Portal do Azure](https://portal.azure.com/).
 1. Clique em **Configurações**.
 1. Em **Configurações de Conexão do OAuth** na parte inferior da página, clique em **Adicionar configuração**.
 1. Preencha o formulário da seguinte maneira:
@@ -167,7 +167,7 @@ A próxima etapa é registrar com seu bot o aplicativo do Azure AD que você aca
 
 # <a name="azure-ad-v2tabaadv2"></a>[Azure AD v2](#tab/aadv2)
 
-1. Navegue até a página Registro de Canais de Bot do seu bot no [Portal do Azure](http://portal.azure.com/).
+1. Navegue até a página Registro de Canais de Bot do seu bot no [Portal do Azure](https://portal.azure.com/).
 1. Clique em **Configurações**.
 1. Em **Configurações de Conexão do OAuth** na parte inferior da página, clique em **Adicionar configuração**.
 1. Preencha o formulário da seguinte maneira:
@@ -290,7 +290,7 @@ Você pode personalizar o OAuthCard com qualquer texto e texto de botão desejad
 
 - Defina o `ContentType` para `OAuthCard.ContentType`.
 - Defina a propriedade `ConnectionName` para o nome da conexão que você deseja usar.
-- Inclua um botão com um `CardAction` dos `Type` `ActionTypes.Signin`. Observe que você não precisa especificar nenhum valor para o sinal no link.
+- Inclua um botão com um `CardAction` dos `Type` `ActionTypes.Signin`. Observe que você não precisa especificar nenhum valor para o link de entrada.
 
 No final dessa chamada, o bot precisa "aguardar o token" antes de voltar. Essa espera ocorre no fluxo de atividade principal porque pode haver muitos que o usuário precisa fazer para entrar.
 

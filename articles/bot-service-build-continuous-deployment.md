@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 05/23/2019
+ms.date: 12/10/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: daf5624f3ab327602ae75bcbbd00d4b527661ff4
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 5ef5901f778d34983e5725e983d39f14b6fa0014
+ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70297733"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75491295"
 ---
 # <a name="set-up-continuous-deployment"></a>Configurar a implantação contínua
 
@@ -22,17 +22,18 @@ ms.locfileid: "70297733"
 
 Este artigo mostra como configurar a implantação contínua para seu bot. Você pode habilitar a implantação contínua para implantar automaticamente as alterações no código do seu repositório de código-fonte para o Azure. Neste tópico, abordaremos como configurar a implantação contínua para o GitHub. Para obter informações sobre como configurar a implantação contínua com outros sistemas de controle de código-fonte, consulte a seção de recursos adicionais na parte inferior desta página.
 
-## <a name="prerequisites"></a>Pré-requisitos
-- Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](http://portal.azure.com) antes de começar.
-- Você **deve** [implantar seu bot no Azure](bot-builder-deploy-az-cli.md) antes de habilitar a implantação contínua.
+## <a name="prerequisites"></a>Prerequisites
+- Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://portal.azure.com) antes de começar.
+- Você **precisa** [implantar o bot no Azure](bot-builder-deploy-az-cli.md) antes de habilitar a implantação contínua.
 
 ## <a name="prepare-your-repository"></a>Preparar o repositório
 Certifique-se de que a raiz do repositório tenha os arquivos corretos em seu projeto. Isso permitirá que você possa obter builds automáticos a partir do servidor de builds Kudu do Serviço de Aplicativo do Azure. 
 
-|Tempo de execução | Arquivos do diretório raiz |
+|Runtime | Arquivos do diretório raiz |
 |:-------|:---------------------|
 | ASP.NET Core | .sln ou .csproj |
 | Node.js | server.js, app.js ou package.json com um script de início |
+| Python | app.py |
 
 
 ## <a name="continuous-deployment-using-github"></a>Implantação contínua usando o GitHub

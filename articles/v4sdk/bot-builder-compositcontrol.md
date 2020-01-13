@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/05/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 6ef79b62aecbc79ed277f3962606d5ed5d9ceeb3
-ms.sourcegitcommit: 312a4593177840433dfee405335100ce59aac347
+ms.openlocfilehash: c273b0c157abd40dd139739411b19656565fa7c7
+ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73933570"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75491532"
 ---
 # <a name="reuse-dialogs"></a>Reutilizar diálogos
 
@@ -22,10 +22,10 @@ ms.locfileid: "73933570"
 
 Com os diálogos de componente, é possível criar diálogos independentes para lidar com cenários específicos, como dividir um conjunto de diálogos grande em partes mais gerenciáveis. Cada uma dessas partes tem seu próprio conjunto de diálogos e evita qualquer conflito de nome com o conjunto de diálogos que as contém.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 
 - Conhecimento de [noções básicas de bot][concept-basics], [biblioteca de diálogos][concept-dialogs] e como [gerenciar conversas][simple-flow].
-- Uma cópia do exemplo de prompt de vários turnos em [**C#** ][cs-sample] ou [**JavaScript**][js-sample].
+- Uma cópia do exemplo de prompt de vários turnos em [**C#** ][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
 
 ## <a name="about-the-sample"></a>Sobre o exemplo
 
@@ -55,15 +55,15 @@ Para usar as caixas de diálogo, instale o pacote do NuGet, **Microsoft.Bot.Buil
 
 Aqui, a classe `UserProfileDialog` é derivada da classe `ComponentDialog`.
 
-[!code-csharp[Class](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=13)]
+[!code-csharp[Class](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=17)]
 
 No construtor, o método `AddDialog` adiciona diálogos e prompts ao diálogo de componente. O primeiro item que você adicionar com esse método será definido como o diálogo inicial, mas é possível alterar isso definindo explicitamente a propriedade `InitialDialogId`. Ao iniciar um diálogo de componente, ele iniciará seu _diálogo inicial_.
 
-[!code-csharp[Constructor](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=17-42)]
+[!code-csharp[Constructor](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=21-48)]
 
 Esta é a implementação da primeira etapa do diálogo em cascata.
 
-[!code-csharp[First step](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=44-54)]
+[!code-csharp[First step](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=50-60)]
 
 Para obter mais informações sobre como implementar diálogos em cascata, confira como [implementar fluxo da conversa sequencial](bot-builder-dialog-manage-complex-conversation-flow.md).
 
@@ -87,6 +87,26 @@ Esta é a implementação da primeira etapa do diálogo em cascata.
 
 Para obter mais informações sobre como implementar diálogos em cascata, confira como [implementar fluxo da conversa sequencial](bot-builder-dialog-manage-complex-conversation-flow.md).
 
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Para usar caixas de diálogo, instale os pacotes do pypi **botbuilder-dialogs** e **botbuilder-ai** executando `pip install botbuilder-dialogs` e `pip install botbuilder-ai` em um terminal.
+
+**dialogs/user_profile_dialog.py**
+
+Aqui, a classe `UserProfileDialog` estende `ComponentDialog`.
+
+[!code-python[Class](~/../botbuilder-python/samples/python/05.multi-turn-prompt/dialogs/user_profile_dialog.py?range=25)]
+
+No construtor, o método `add_dialog` adiciona diálogos e prompts ao diálogo de componente. O primeiro item que você adicionar com esse método será definido como o diálogo inicial, mas é possível alterar isso definindo explicitamente a propriedade `initial_dialog_id`. Ao iniciar um diálogo de componente, ele iniciará seu _diálogo inicial_.
+
+[!code-python[Constructor](~/../botbuilder-python/samples/python/05.multi-turn-prompt/dialogs/user_profile_dialog.py?range=25-57)]
+
+Esta é a implementação da primeira etapa do diálogo em cascata.
+
+[!code-python[First step](~/../botbuilder-python/samples/python/05.multi-turn-prompt/dialogs/user_profile_dialog.py?range=59-71)]
+
+Para obter mais informações sobre como implementar diálogos em cascata, confira como [implementar fluxo da conversa sequencial](bot-builder-dialog-manage-complex-conversation-flow.md).
+
 ---
 
 Em tempo de execução, o diálogo de componente mantém sua própria pilha de diálogo. Quando o diálogo de componente é iniciado:
@@ -105,7 +125,7 @@ Para usar um diálogo de componente, adicione uma instância dele ao conjunto de
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-**Bots\DialoBot.cs**
+**Bots\DialogBot.cs**
 
 No exemplo, isso é feito usando o método `RunAsync` chamado do método `OnMessageActivityAsync` do bot.
 
@@ -124,6 +144,18 @@ No exemplo, adicionamos um método `run` ao diálogo de perfil do usuário.
 O método `run` é chamado pelo método `onMessage` do bot.
 
 [!code-javascript[onMessage](~/../botbuilder-samples/samples/javascript_nodejs/05.multi-turn-prompt/bots/dialogBot.js?range=24-31&highlight=5)]
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+**helpers/dialog_helper.py**
+
+No exemplo, adicionamos um método `run_dialog` ao diálogo de perfil do usuário.
+
+[!code-python[First step](~/../botbuilder-python/samples/python/05.multi-turn-prompt/helpers/dialog_helper.py?range=8-19)]
+
+O método `run_dialog` é chamado pelo método `on_message_activity` do bot.
+
+**bots/dialog_bot.py** [!code-python[First step](~/../botbuilder-python/samples/python/05.multi-turn-prompt/bots/dialog_bot.py?range=46-51)]
 
 ---
 
@@ -164,3 +196,4 @@ Você pode aprimorar os bots para que reajam a uma entrada adicional, como "ajud
 
 [cs-sample]: https://aka.ms/cs-multi-prompts-sample
 [js-sample]: https://aka.ms/js-multi-prompts-sample
+[python-sample]: https://aka.ms/python-multi-prompts-sample

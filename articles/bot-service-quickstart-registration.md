@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 014f5c998fcb9d322439ca8b0e0bf2ba5f9f0679
-ms.sourcegitcommit: 0b647dc6716b0c06f04ee22ebdd7b53039c2784a
+ms.openlocfilehash: 78de3676332561aafd4b24f755962b614cb9a27d
+ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70076511"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75491567"
 ---
 # <a name="register-a-bot-with-azure-bot-service"></a>Registrar um bot com o Serviço de Bot do Azure
 
@@ -44,10 +44,10 @@ No **Aplicativo Web do bot**, siga as etapas descritas no artigo: [Criar um bot 
    |**Assinatura**|Sua assinatura|Selecione a assinatura do Azure que deseja usar.|
    |**Grupo de recursos**|myResourceGroup|Crie um [grupo de recursos](/azure/azure-resource-manager/resource-group-overview#resource-groups) ou escolha um existente.|
    |**Localidade**|Oeste dos EUA|Escolha um local perto de onde o seu bot está implantado ou perto de outros serviços que o seu bot acessará.|
-   |**Tipo de preços**|F0|Selecione um tipo de preço. Você pode atualizar o tipo de preço a qualquer momento. Para saber mais, veja [Preços do Serviço de Bot](https://azure.microsoft.com/pricing/details/bot-service/).|
+   |**Tipo de preços**|F0|Selecione um tipo de preço. Você pode atualizar o tipo de preço a qualquer momento. Para obter mais informações, confira [Preços do Serviço de Bot](https://azure.microsoft.com/pricing/details/bot-service/).|
    |**Ponto de extremidade de mensagens**|URL|Insira a URL do ponto de extremidade de mensagens do seu bot.|
    |**Application Insights**|Por| Decida se deseja deixar o [Application Insights](bot-service-manage-analytics.md) **Ativado** ou **Desativado**. Se você selecionar **Ativar**, será preciso especificar também um local regional. |
-   |**ID e senha do Aplicativo da Microsoft**| Criar ID do Aplicativo e senha automaticamente |Use essa opção se precisar inserir manualmente uma ID do Aplicativo e uma senha da Microsoft. Confira a próxima seção [Registro manual do aplicativo](#manual-app-registration). Caso contrário, uma nova ID do Aplicativo da Microsoft e uma nova senha da Microsoft serão criadas no processo de criação de registro. |
+   |**ID do Aplicativo e senha da Microsoft**| Criar ID do Aplicativo e senha automaticamente |Use essa opção se precisar inserir manualmente uma ID do Aplicativo e uma senha da Microsoft. Confira a próxima seção [Registro manual do aplicativo](#manual-app-registration). Caso contrário, uma nova ID do Aplicativo da Microsoft e uma nova senha da Microsoft serão criadas no processo de criação de registro. |
 
     > [!IMPORTANT]
     > Não se esqueça de inserir a URL do ponto de extremidade de mensagens do seu bot.
@@ -87,7 +87,7 @@ Um registro manual é necessário para situações como:
 Confira [Perguntas frequentes – Registro do Aplicativo](bot-service-resources-bot-framework-faq.md#app-registration).
 
 > [!IMPORTANT]
-> Na seção *Dá suporte aos tipos de conta*, você deve escolher um dos dois tipos de multilocatário que seja: *Contas em qualquer diretório organizacional (Qualquer Azure AD – Multilocatário)* ou *Contas em qualquer diretório organizacional (Qualquer Azure AD – Multilocatário) e contas Microsoft pessoais (por ex., Skype, Xbox, Outlook.com)* , ao criar o aplicativo; caso contrário, o bot não funcionará. Para saber mais, confira [Registrar um novo aplicativo usando o portal do Azure](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#register-a-new-application-using-the-azure-portal).
+> Na seção *Dá suporte aos tipos de conta*, você deve escolher um dos dois tipos de multilocatário que seja: *Contas em qualquer diretório organizacional (Qualquer Azure AD – Multilocatário)* ou *Contas em qualquer diretório organizacional (Qualquer Azure AD – Multilocatário) e contas Microsoft pessoais (por ex., Skype, Xbox, Outlook.com)* , ao criar o aplicativo; caso contrário, o bot não funcionará. Para saber mais, confira [Registrar um novo aplicativo usando o portal do Azure](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app#register-a-new-application-using-the-azure-portal).
 
 ## <a name="update-the-bot"></a>Atualizar o bot
 
