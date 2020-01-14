@@ -54,6 +54,7 @@
 ### [Implementar um armazenamento personalizado para seu bot](v4sdk/bot-builder-custom-storage.md)
 ### [Adicionar telemetria ao seu bot](v4sdk/bot-builder-telemetry.md)
 ### [Adicionar telemetria ao seu bot do QnA](v4sdk/bot-builder-telemetry-QnAMaker.md)
+### [Analisar os dados telemétricos do seu bot](v4sdk/bot-builder-telemetry-analytics-queries.md)
 ### [Use o Direct Line por Fala no seu bot](directline-speech-bot.md)
 ### [.NET](dotnet/TOC.md)
 ### [Node.js](nodejs/TOC.md)
