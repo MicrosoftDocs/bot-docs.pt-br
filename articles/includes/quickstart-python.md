@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e2a43cf5880da0036415d80d19e59db4c84d2f73
-ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
+ms.openlocfilehash: 9a2618533dfefe86be1a15fb5d88740182e04b6d
+ms.sourcegitcommit: 46fbb8982144c66864b83889b6457187e890badd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75491766"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75752397"
 ---
 ## <a name="prerequisites"></a>Prerequisites
 - Python [3.6](https://www.python.org/downloads/release/python-369/) ou [3.7](https://www.python.org/downloads/release/python-375/)
@@ -27,7 +27,7 @@ O último pacote, cookiecutter, será usado para gerar o bot. Verifique se o coo
 cookiecutter https://github.com/microsoft/botbuilder-python/releases/download/Templates/echo.zip
 ```
 
-Este comando cria um Bot de Eco com base no [modelo de eco](https://github.com/microsoft/BotBuilder-Samples/tree/master/generators/python/app/templates/echo/%7B%7Bcookiecutter.bot_name%7D%7D) do Python.
+Este comando cria um Bot de Eco com base no [modelo de eco](https://github.com/microsoft/botbuilder-python/tree/master/generators/app/templates/echo) do Python.
 
 3. Em seguida, você deverá fornecer o *nome* do bot e uma *descrição*. Nomeie o bot como `echo-bot` e defina a descrição como `A bot that echoes back user response.`, conforme mostrado abaixo:
 
@@ -41,8 +41,6 @@ Copie os últimos quatro dígitos no endereço na última linha (geralmente 3978
 2. Depois que os pacotes forem instalados, execute `python app.py` para iniciar o bot. Você saberá que o bot está pronto para teste quando você vir a última linha mostrada na captura de tela abaixo:
 
 ![bot em execução localmente](~/media/python/quickstart/bot-running-locally.png)
-<!---
-Alternatively, you can set the file in an environment variable with set `FLASK_APP=app.py` in Windows and `export FLASK_APP=app.py` in Mac OS/Linux and then run `flask run --host=127.0.0.1 --port=3978`.-->
 
 ## <a name="start-the-emulator-and-connect-your-bot"></a>Iniciar o emulador e conectar seu bot
 1. Inicie o Emulador e clique no botão **Abrir Bot**.
