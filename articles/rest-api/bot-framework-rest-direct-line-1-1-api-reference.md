@@ -1,5 +1,5 @@
 ---
-title: Referência de API - API de Linha Direta 1.1 | Microsoft Docs
+title: Referência de API – Direct Line API 1.1 – Serviço de Bot
 description: Saiba mais sobre cabeçalhos, códigos de status HTTP, esquema, operações e objetos na API de Linha Direta 1.1.
 author: RobStand
 ms.author: kamrani
@@ -7,17 +7,17 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 7db0ccb84b2c5172348eeac667f78f3abaf95f94
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 6cb2d9cd933952e363631d64f527b4c12d5f3b40
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299650"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791386"
 ---
 # <a name="api-reference---direct-line-api-11"></a>Referência de API – API de Linha Direta 1.1
 
 > [!IMPORTANT]
-> Este artigo contém informações de referência para a API de Linha Direta 1.1. Se você estiver criando uma nova conexão entre seu aplicativo cliente e o bot, use a [API de Linha Direta 3.0](bot-framework-rest-direct-line-3-0-api-reference.md) em vez disso.
+> Este artigo contém informações de referência para a API de Linha Direta 1.1. Se você estiver criando uma nova conexão entre seu aplicativo cliente e o bot, use a [API de Linha Direta 3.0](bot-framework-rest-direct-line-3-0-api-reference.md).
 
 Você pode habilitar seu aplicativo cliente para se comunicar com seu bot usando a API de Linha Direta 1.1. A API de Linha Direta 1.1 usa o padrão do setor REST e JSON sobre HTTPS.
 
@@ -27,7 +27,7 @@ Para acessar a API de Linha Direta 1.1, use esta URI de base para todas as solic
 
 `https://directline.botframework.com`
 
-## <a name="headers"></a>Cabeçalhos
+## <a name="headers"></a>headers
 
 Além dos cabeçalhos de solicitação HTTP padrão, uma solicitação de API de Linha Direta deve incluir um cabeçalho `Authorization`, que especifica um segredo ou token para autenticação do cliente que está emitindo a solicitação. Você pode especificar o cabeçalho `Authorization` usando o esquema de “Bearer” ou o esquema “BotConnector”. 
 
@@ -61,7 +61,7 @@ O <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" target="_blan
 ## <a name="token-operations"></a>Operações de token 
 Use essas operações para criar ou atualizar um token que um cliente pode usar para acessar uma conversa individual.
 
-| Operação | DESCRIÇÃO |
+| Operação | Descrição |
 |----|----|
 | [Gerar Token](#generate-token) | Gere um token para uma nova conversa. | 
 | [Atualizar Token](#refresh-token) | Atualize um token. | 
@@ -91,7 +91,7 @@ GET /api/tokens/{conversationId}/renew
 ## <a name="conversation-operations"></a>Operações de conversa 
 Use essas operações para abrir uma conversa com seu bot e trocar mensagens entre o cliente e o bot.
 
-| Operação | DESCRIÇÃO |
+| Operação | Descrição |
 |----|----|
 | [Iniciar Conversa](#start-conversation) | Abre uma nova conversa com o bot. | 
 | [Receber mensagens](#get-messages) | Recuperar mensagens do bot. |
@@ -154,9 +154,9 @@ O esquema de Linha Direta 1.1 é uma cópia simplificada do esquema do Bot Frame
 
 Define uma mensagem que um cliente envia para um bot ou recebe de um bot.
 
-| Propriedade | Type | DESCRIÇÃO |
+| Propriedade | Type | Descrição |
 |----|----|----|
-| **ID** | string | ID que identifica exclusivamente a mensagem (atribuída por Linha Direta). | 
+| **id** | string | ID que identifica exclusivamente a mensagem (atribuída por Linha Direta). | 
 | **conversationId** | string | ID que identifica a conversa.  | 
 | **created** | string | Data e hora em que a mensagem foi criada, expressa no formato <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO-8601</a>. | 
 | **from** | string | ID que identifica o usuário que é o remetente da mensagem. Ao criar uma mensagem, os clientes devem definir essa propriedade como uma ID de usuário estável. Embora a Linha Direta atribua uma ID de usuário, se esta não for fornecida, isso normalmente resulta em um comportamento inesperado. | 
@@ -196,32 +196,32 @@ O exemplo a seguir mostra um objeto Message que contém todas as propriedades po
 ### <a name="messageset-object"></a>Um objeto MessageSet 
 Define um conjunto de mensagens.<br/><br/>
 
-| Propriedade | Type | DESCRIÇÃO |
+| Propriedade | Type | Descrição |
 |----|----|----|
 | **messages** | [Message](#message-object)[] | Matriz de objetos **Message**. |
 | **watermark** | string | Marca d'água máxima das mensagens dentro do conjunto. Um cliente pode usar o valor `watermark` para indicar a mensagem mais recente visualizada ao [recuperar mensagens do bot](bot-framework-rest-direct-line-1-1-receive-messages.md). |
 
-### <a name="attachment-object"></a>Objeto Attachment
+### <a name="attachment-object"></a>Objeto Anexo
 Define um anexo sem imagem.<br/><br/> 
 
-| Propriedade | Type | DESCRIÇÃO |
+| Propriedade | Type | Descrição |
 |----|----|----|
 | **contentType** | string | O tipo de mídia do conteúdo no anexo. |
 | **url** | string | URL para o conteúdo do anexo. |
 
-### <a name="conversation-object"></a>Objeto Conversation
+### <a name="conversation-object"></a>Objeto Conversa
 Define uma conversa de Linha Direta.<br/><br/>
 
-| Propriedade | Type | DESCRIÇÃO |
+| Propriedade | Type | Descrição |
 |----|----|----|
 | **conversationId** | string | ID que identifica exclusivamente a conversa para o qual o token especificado é válido. |
 | **token** | string | Token válido para a conversa especificada. |
 | **expires_in** | número | Número de segundos até a expiração do token. |
 
-### <a name="error-object"></a>Objeto Error
+### <a name="error-object"></a>Objeto de erro
 Define um erro.<br/><br/> 
 
-| Propriedade | Type | DESCRIÇÃO |
+| Propriedade | Type | Descrição |
 |----|----|----|
 | **code** | string | Código do erro. Um destes valores: **MissingProperty**, **MalformedData**, **NotFound**, **ServiceError**, **Internal**, **InvalidRange**, **NotSupported**, **NotAllowed** ou **BadCertificate**. |
 | **message** | string | Uma descrição do erro. |
@@ -231,7 +231,7 @@ Define um erro.<br/><br/>
 Um conteúdo de erro de mensagem padronizada.<br/><br/> 
 
 
-|        Propriedade        |          Type          |                                 DESCRIÇÃO                                 |
+|        Propriedade        |          Type          |                                 Descrição                                 |
 |------------------------|------------------------|-----------------------------------------------------------------------------|
 | <strong>error</strong> | [Erro](#error-object) | Um objeto <strong>Erro</strong> que contém informações sobre o erro. |
 

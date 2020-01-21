@@ -1,5 +1,5 @@
 ---
-title: Implementar a funcionalidade específica do canal | Microsoft Docs
+title: Implemente a funcionalidade específica do canal usando a API REST – Serviço de Bot
 description: Saiba como implementar a funcionalidade específica do canal usando a API do Bot Connector.
 author: RobStand
 ms.author: kamrani
@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 8f437b2e807035a6ae0d6ec655c1edf17aacf12e
-ms.sourcegitcommit: e815e786413296deea0bd78e5a495df329a9a7cb
+ms.openlocfilehash: 4716ff913940b09fa24f199492de9e19cf009b71
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70876140"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790006"
 ---
 # <a name="implement-channel-specific-functionality"></a>Implementar a funcionalidade específica do canal
 
@@ -137,7 +137,7 @@ O bot pode responder a essa mensagem da [maneira normal](bot-framework-rest-conn
 
 Para criar uma notificação do Facebook, defina a propriedade `Activity` do objeto `channelData` em um objeto JSON que especifique estas propriedades: 
 
-| Propriedade | DESCRIÇÃO |
+| Propriedade | Descrição |
 |----|----|
 | notification_type | O tipo de notificação (por exemplo, **REGULAR**, **SILENT_PUSH**, **NO_PUSH**).
 | attachment | Um anexo que especifica uma imagem, um vídeo ou outro tipo de multimídia ou um anexo modelo como um recibo. |
@@ -164,7 +164,7 @@ Este snippet mostra um exemplo da propriedade `channelData` para um anexo de rec
 
 Para criar uma mensagem que implementa ações específicas do Telegram, como compartilhar um memorando de voz ou um adesivo, defina a propriedade `Activity` do objeto `channelData` em um objeto JSON que especifique estas propriedades: 
 
-| Propriedade | DESCRIÇÃO |
+| Propriedade | Descrição |
 |----|----|
 | method | O método de API do Bot do Telegram a ser chamado. |
 | parâmetros | Os parâmetros do método especificado. |
@@ -238,9 +238,9 @@ Este snippet mostra um exemplo de uma propriedade `channelData` que especifica u
 
 Para criar uma mensagem nativa do Kik, defina a propriedade `Activity` do objeto `channelData` como um objeto JSON que especifique esta propriedade: 
 
-| Propriedade | DESCRIÇÃO |
+| Propriedade | Descrição |
 |----|----|
-| da nuvem para o dispositivo | Uma matriz de mensagens do Kik. Para obter detalhes sobre o formato de mensagem do Kik, confira <a href="https://dev.kik.com/#/docs/messaging#message-formats" target="_blank">Formatos de mensagem do Kik</a>. |
+|  da nuvem para o dispositivo | Uma matriz de mensagens do Kik. Para obter detalhes sobre o formato de mensagem do Kik, confira <a href="https://dev.kik.com/#/docs/messaging#message-formats" target="_blank">Formatos de mensagem do Kik</a>. |
 
 Este snippet mostra um exemplo da propriedade `channelData` para uma mensagem nativa do Kik.
 
@@ -273,6 +273,6 @@ Este snippet mostra um exemplo da propriedade `channelData` para uma mensagem na
 - [Criar mensagens](bot-framework-rest-connector-create-messages.md)
 - [Enviar e receber mensagens](bot-framework-rest-connector-send-and-receive-messages.md)
 - [Esquema de atividade Bot Framework](https://aka.ms/botSpecs-activitySchema)
-- [Visualizar recursos com o Inspetor de Canal](../bot-service-channel-inspector.md)
+- [Referência de canais](../bot-service-channels-reference.md)
 
 [Activity]: bot-framework-rest-connector-api-reference.md#activity-object

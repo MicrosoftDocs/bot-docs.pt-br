@@ -1,5 +1,5 @@
 ---
-title: Gerenciar dados de estado | Microsoft Docs
+title: Gerenciar dados de estado (C# v3) – Serviço de Bot
 description: Saiba como salvar e recuperar dados de estado com o SDK do Bot Framework para .NET.
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 9dc2519e74147d1147e2d5f2cb7fba883bd1269c
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 0856805c285f47f1f219e49d36daf4892af2dcc7
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298797"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75797856"
 ---
 # <a name="manage-state-data"></a>Gerenciar dados de estado
 
@@ -69,7 +69,7 @@ Para desempenho e razões de segurança no ambiente de produção, você pode im
 
 1. [Gerenciar dados de estado com o Cosmos DB](bot-builder-dotnet-state-azure-cosmosdb.md)
 
-2. [Gerenciar dados de estado com o armazenamento de tabelas](bot-builder-dotnet-state-azure-table-storage.md)
+2. [Gerenciar dados de estado com o armazenamento de tabela](bot-builder-dotnet-state-azure-table-storage.md)
 
 Com uma dessas opções de [Extensões do Azure](https://www.nuget.org/packages/Microsoft.Bot.Builder.Azure/), o mecanismo para definir e manter dados por meio do SDK do Bot Framework para .NET permanece o mesmo que o armazenamento de dados na memória.
 

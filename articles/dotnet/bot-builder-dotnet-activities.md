@@ -1,5 +1,5 @@
 ---
-title: Visão geral das atividades | Microsoft Docs
+title: Visão geral das atividades – Serviço de Bot
 description: Saiba mais sobre os diferentes tipos de atividade disponíveis no SDK do Bot Framework para .NET.
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: cce7537124810504c9b92d86ad0ef7bd3b3ac5e9
-ms.sourcegitcommit: d493caf74b87b790c99bcdaddb30682251e3fdd4
+ms.openlocfilehash: 9aa9edf7d0bd20d1fa615ccbba5fc655a8dc40f1
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71278986"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75797262"
 ---
 # <a name="activities-overview"></a>Visão geral das atividades
 
@@ -27,7 +27,7 @@ Os tipos de atividade a seguir têm suporte do SDK do Bot Framework para .NET.
 
 | Activity.Type | Interface | DESCRIÇÃO |
 |------|------|------|
-| [message](#message) | IMessageActivity | Representa uma comunicação entre o usuário e o bot. |
+| [message](#message) | IMessageActivity | Representa uma comunicação entre o bot e o usuário. |
 | [conversationUpdate](#conversationupdate) | IConversationUpdateActivity | Indica que o bot foi adicionado a uma conversa, outros membros foram adicionados ou removidos da conversa ou houve alteração de metadados da conversa. |
 | [contactRelationUpdate](#contactrelationupdate) | IContactRelationUpdateActivity | Indica que o bot foi adicionado ou removido da lista de contatos do usuário. |
 | [typing](#typing) | ITypingActivity | Indica que o usuário ou o bot na outra extremidade da conversa está compilando uma resposta. | 
@@ -39,11 +39,11 @@ Os tipos de atividade a seguir têm suporte do SDK do Bot Framework para .NET.
 
 ## <a name="message"></a>message
 
-Seu bot enviará atividades de **mensagem** para comunicar informações aos usuários e receber atividades de **mensagem** dos usuários. Algumas mensagens podem simplesmente consistir em texto sem formatação, enquanto outras podem conter conteúdo mais elaborado, como [texto a ser falado](bot-builder-dotnet-text-to-speech.md), [ações sugeridas](bot-builder-dotnet-add-suggested-actions.md), [anexos de mídia](bot-builder-dotnet-add-media-attachments.md), [cartões avançados](bot-builder-dotnet-add-rich-card-attachments.md) e [dados específicos do canal](bot-builder-dotnet-channeldata.md). Para saber mais sobre as propriedades de mensagem mais usadas, consulte [Criar mensagens](bot-builder-dotnet-create-messages.md).
+Seu bot enviará atividades de **mensagem** para comunicar informações aos usuários e receber atividades de **mensagem** dos usuários. Algumas mensagens podem simplesmente consistir em texto sem formatação, enquanto outras podem conter conteúdo mais elaborado, como [texto a ser falado](bot-builder-dotnet-text-to-speech.md), [ações sugeridas](bot-builder-dotnet-add-suggested-actions.md), [anexos de mídia](bot-builder-dotnet-add-media-attachments.md), [cartões avançados](bot-builder-dotnet-add-rich-card-attachments.md) e [dados específicos do canal](bot-builder-dotnet-channeldata.md). Para obter informações sobre propriedades de mensagens comumente usadas, consulte [Criar mensagens](bot-builder-dotnet-create-messages.md).
 
 ## <a name="conversationupdate"></a>conversationUpdate
 
-Um bot receberá uma atividade **conversationUpdate** sempre que tiver sido adicionado a uma conversa, outros membros tiverem sido adicionados ou removidos de uma conversa ou se houver alteração nos metadados da conversa. 
+Um bot receberá uma atividade **conversationUpdate** sempre que for adicionado a uma conversa, outros membros forem adicionados ou removidos de uma conversa ou os metadados da conversa forem alterados. 
 
 Se os membros foram adicionados à conversa, a propriedade `MembersAdded` da atividade conterá uma matriz de objetos `ChannelAccount` para identificar os novos membros. 
 
@@ -70,7 +70,7 @@ Um bot recebe uma atividade **deleteUserData** quando um usuário solicita a exc
 
 Um bot recebe uma atividade **endOfConversation** para indicar que o usuário encerrou a conversa. Um bot pode enviar uma atividade **endOfConversation** para indicar ao usuário que a conversa está encerrando. 
 
-## <a name="event"></a>evento
+## <a name="event"></a>event
 
 Seu bot pode receber uma atividade **event** de um processo ou serviço externo que deseja comunicar informações ao seu bot, sem que essas informações fiquem visíveis aos usuários. O remetente de uma atividade **event** normalmente não espera que o bot confirme o recebimento de qualquer forma.
 
@@ -88,4 +88,4 @@ A atividade **messageReaction** pode corresponder a qualquer quantidade de **mes
 
 - [Enviar e receber atividades](bot-builder-dotnet-connector.md)
 - [Criar mensagens](bot-builder-dotnet-create-messages.md)
-- [Classe Activity](https://aka.ms/ActivityClass-dotnet-API)
+- [Classe de atividade](https://aka.ms/ActivityClass-dotnet-API)

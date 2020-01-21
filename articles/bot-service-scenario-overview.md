@@ -1,5 +1,5 @@
 ---
-title: Visão geral dos cenários de Serviço de Bot | Microsoft Docs
+title: Visão geral dos cenários do Serviço de Bot – Serviço de Bot
 description: Explore os principais cenários para bots avançados e eficazes construídos com Serviço de Bot.
 author: BrianRandell
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: c4a0af8bfd6496b82ddcc9219e948395d87e4ff3
-ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
+ms.openlocfilehash: 6786a25d56bbf37262760ca5285e32aa860c5959
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167350"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75793443"
 ---
 # <a name="bot-scenarios"></a>Cenário de bots
 
@@ -50,4 +50,4 @@ Usando esse bot simples, é possível controlar as lâmpadas Philips Hue em conj
 Agora que você tem uma visão geral dos cenários, aprofunde-se em cada um deles.
 
 > [!div class="nextstepaction"]
-> [Bot Comercial](bot-service-scenario-commerce.md)
+> [Comércio de bots](bot-service-scenario-commerce.md)

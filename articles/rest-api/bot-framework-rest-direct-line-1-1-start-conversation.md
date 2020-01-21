@@ -1,5 +1,5 @@
 ---
-title: Iniciar uma conversa | Microsoft Docs
+title: Iniciar uma conversa usando a Direct Line API 1.1 – Serviço de Bot
 description: Saiba como iniciar uma conversa usando a API de linha direta v1.1.
 author: RobStand
 ms.author: kamrani
@@ -7,17 +7,17 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 16ad7b817ccde2139b703e858e57bee2abf36fb8
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 6aa107dc54f6a960aabc4f03b5e9acb49a9c6cb0
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299598"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75789587"
 ---
 # <a name="start-a-conversation"></a>Iniciar uma conversa
 
 > [!IMPORTANT]
-> Este artigo descreve como iniciar uma conversa usando a API de linha direta 1.1. Se você estiver criando uma nova conexão entre seu aplicativo cliente e o bot, use [Direct Line API 3.0](bot-framework-rest-direct-line-3-0-start-conversation.md).
+> Este artigo descreve como iniciar uma conversa usando a API de linha direta 1.1. Se você estiver criando uma nova conexão entre seu aplicativo cliente e o bot, use a [API de Linha Direta 3.0](bot-framework-rest-direct-line-3-0-start-conversation.md).
 
 As conversas de linha diretas explicitamente são abertas pelos clientes e podem ser executadas desde que o cliente e o bot participarem e tem credenciais válidas. Enquanto a conversa está aberta, o bot e o cliente podem enviar mensagens. Mais de um cliente pode se conectar a uma determinada conversa e cada cliente pode participar em nome de vários usuários.
 
@@ -39,7 +39,7 @@ POST https://directline.botframework.com/api/conversations
 Authorization: Bearer RCurR_XV9ZA.cwA.BKA.iaJrC8xpy8qbOF5xnR2vtCX7CZj0LdjAPGfiCpg4Fv0y8qbOF5xPGfiCpg4Fv0y8qqbOF5x8qbOF5xn
 ```
 
-### <a name="response"></a>Response
+### <a name="response"></a>Resposta
 
 Se a solicitação for bem-sucedida, a resposta conterá um ID para a conversa, um token e um valor que indica o número de segundos até que o token expire.
 

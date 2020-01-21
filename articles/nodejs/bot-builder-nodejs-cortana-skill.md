@@ -1,5 +1,5 @@
 ---
-title: Criar um bot habilitado para fala com habilidades da Cortana | Microsoft Docs
+title: Criar um bot habilitado para fala com habilidades da Cortana – Serviço de Bot
 description: Saiba como criar um bot habilitado para fala com habilidades da Cortana e o SDK do Bot Framework para o Node.js.
 author: DeniseMak
 manager: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 02/10/2019
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: cd37f973bb5b8ca9528c83e30d83f97145786508
-ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
+ms.openlocfilehash: f3a10198fc43b696017446116e5a1e8aa64fc058
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167227"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790938"
 ---
 # <a name="build-a-speech-enabled-bot-with-cortana-skills"></a>Criar um bot habilitado para fala com habilidades da Cortana
 
@@ -28,7 +28,7 @@ O SDK do Bot Framework para Node.js permite que você crie um bot habilitado par
 > [!TIP]
 > Para obter mais informações sobre o que é uma habilidade e o que ela pode fazer, confira [O Kit de Habilidades da Cortana][CortanaGetStarted].
 
-A criação de uma habilidade da Cortana usando o Bot Framework exige muito pouco conhecimento específico sobre a Cortana e consiste principalmente na criação de um bot. Uma das principais diferenças de outros bots que você talvez tenha criado é que a Cortana tem componentes visuais e de áudio. Para o componente visual, a Cortana fornece uma área da tela para renderizar o conteúdo, como cartões, por exemplo. Para o componente de áudio, você fornece texto ou SSML nas mensagens do bot, que são lidas pela Cortana para o usuário, dando uma voz para o bot. 
+A criação de uma habilidade da Cortana usando o Bot Framework exige muito pouco conhecimento específico sobre a Cortana e consiste principalmente na criação de um bot. Uma das principais diferenças de outros bots que você talvez tenha criado é que a Cortana tem componentes visuais e de áudio. Para o componente visual, a Cortana fornece uma área da tela para renderizar o conteúdo, como cartões. Para o componente de áudio, você fornece texto ou SSML nas mensagens do bot, que são lidas pela Cortana para o usuário, dando uma voz para o bot. 
 
 > [!NOTE]
 > A Cortana está disponível em vários dispositivos diferentes. Alguns têm uma tela, enquanto outros, como um alto-falante autônomo, talvez não. Garanta que o bot consiga lidar com ambos os cenários. Confira [Entidades específicas da Cortana][CortanaSpecificEntities] para saber como verificar as informações do dispositivo.
@@ -45,7 +45,7 @@ O método tem este formato:
 
 ```session.say(displayText: string, speechText: string, options?: object)```
 
-| Parâmetro | DESCRIÇÃO |
+| Parâmetro | Descrição |
 |------|------|
 | **displayText** | Uma mensagem de texto para exibir na interface do usuário da Cortana.|
 | **speechText** | O texto ou SSML que a Cortana lê para o usuário. |
@@ -54,10 +54,10 @@ O método tem este formato:
 A propriedade **inputHint** ajuda a indicar à Cortana se o seu bot está esperando uma entrada. Se você estiver usando um prompt interno, esse valor é automaticamente definido como **expectingInput** por padrão.
 
 
-| Valor | DESCRIÇÃO |
+| Valor | Descrição |
 |------|------|
-| **acceptingInput** | O bot está passivamente pronto para a entrada, mas não está aguardando uma resposta. Cortana aceita a entrada do usuário, se o usuário mantém pressionado o botão de microfone.|
-| **expectingInput** | Indica se o bot está ativamente aguardando uma resposta do usuário. A Cortana ouve o usuário falar no microfone.  |
+| **acceptingInput** | O bot está passivamente pronto para a entrada, mas não está aguardando uma resposta. A Cortana aceita a entrada do usuário se o usuário mantém pressionado o botão de microfone.|
+| **expectingInput** | Indica se o bot está ativamente esperando uma resposta do usuário. A Cortana ouve o usuário falar no microfone.  |
 ||OBSERVAÇÃO:  _Não_ usar **expectingInput** em dispositivos sem periféricos (dispositivos sem vídeo). Confira as [Perguntas frequentes sobre o Kit de Habilidades da Cortana](https://review.docs.microsoft.com/cortana/skills/faq).|
 | **ignoringInput** | A Cortana está ignorando a entrada. O bot poderá enviar essa dica se estiver processando ativamente uma solicitação e ignorará a entrada dos usuários até que a solicitação seja concluída.  |
 
@@ -73,7 +73,7 @@ session.say('This is the text that Cortana displays', '<speak version="1.0" xmln
 
 ```
 
-Este exemplo mostra como permitir que a Cortana saiba que a entrada do usuário é esperada. O microfone será deixado aberto.
+Este exemplo mostra como informar a Cortana de que a entrada do usuário é esperada. O microfone será deixado aberto.
 
 ```javascript
 
@@ -85,7 +85,7 @@ session.say('Hi there', 'Hi, what’s your name?', {
 ```
 <!-- TODO: tip about time limit and batching -->
 
-### <a name="prompts"></a>Prompts
+### <a name="prompts"></a>Solicitações
 
 Além de usar o método **session.say()** você também pode passar texto ou SSML para prompts internos usando as opções **speak** e **retrySpeak**.  
 
@@ -155,7 +155,7 @@ module.exports.speak = function (template, params, options) {
 
 ## <a name="display-cards-in-cortana"></a>Exibir cartões na Cortana
 
-Além das respostas faladas, a Cortana também pode exibir anexos de cartão. Cortana suporta os seguintes cartões com formatação:
+Além das respostas faladas, a Cortana também pode exibir anexos de cartão. A Cortana dá suporte aos seguintes cartões avançados:
 * [HeroCard](https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.herocard.html)
 * [ReceiptCard](https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.receiptcard.html)
 * [ThumbnailCard](https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.thumbnailcard.html)

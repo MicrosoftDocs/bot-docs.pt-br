@@ -1,5 +1,5 @@
 ---
-title: Definir um formulário usando o esquema JSON e o FormFlow | Microsoft Docs
+title: Definir um formulário usando o esquema JSON e o FormFlow – Serviço de Bot
 description: Saiba como definir um formulário usando o esquema JSON e o FormFlow com o SDK do Bot Framework para .NET.
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: a29f376afa4a9d3027960407f688cbef76b35473
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: cd884c49507b4d7edc84f4bbd79396fe36073a82
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298800"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75796483"
 ---
 # <a name="define-a-form-using-json-schema"></a>Definir um formulário usando o esquema JSON
 
@@ -29,7 +29,7 @@ O FormFlow dá suporte a estas palavras-chave do <a href="http://json-schema.org
 
 | Palavra-chave | DESCRIÇÃO | 
 |----|----|
-| Tipo | Define o tipo de dados que o campo contém. |
+| type | Define o tipo de dados que o campo contém. |
 | enum | Define os valores válidos para o campo. |
 | mínimo | Define o valor numérico mínimo permitido para o campo (conforme descrito em [NumericAttribute][numericAttribute]). |
 | máximo | Define o valor numérico máximo permitido para o campo (conforme descrito em [NumericAttribute][numericAttribute]). |
@@ -68,14 +68,14 @@ Para especificar modelos e avisos no esquema JSON, use o mesmo vocabulário, con
 |   Datetime   |            bool             |                                  Indica se o campo é um campo `DateTime`.                                  |
 |   Descrever   |      cadeia de caracteres ou objeto       |                  Descrição de um campo, conforme descrito em [DescribeAttribute][describeAttribute].                  |
 |    Termos     |       `[string,...]`        |                  Expressões regulares para correspondência de um valor de campo conforme descrito em TermsAttribute.                  |
-|  MaxPhrase   |             int             |                  Executa os termos da `Language.GenerateTerms(string, int)` para expandi-las.                   |
+|  MaxPhrase   |             INT             |                  Executa os termos da `Language.GenerateTerms(string, int)` para expandi-las.                   |
 |    Valores    | `{ string: {Describe:string |                                  object, Terms:[string, ...], MaxPhrase}, ...}`                                  |
 |    Ativo    |           script            | Script do C# com argumentos `(JObject state)->bool` para testar se o campo, mensagem ou confirmação estão ativos.  |
 |   Validar   |           script            |      Script do C# com argumentos `(JObject state, object value)->ValidateResult` para validar um valor de campo.      |
 |    Definir    |           script            |        Script do C# com argumentos `(JObject state, Field<JObject> field)` para definir dinamicamente um campo.        |
-|     Avançar     |           script            | Script do C# com argumentos `(object value, JObject state)` para determinar a próxima etapa depois de preencher um campo. |
-|    Antes    |          `[confirm          |                                                  message, ...]`                                                  |
-|    após     |          `[confirm          |                                                  message, ...]`                                                  |
+|     Próximo     |           script            | Script do C# com argumentos `(object value, JObject state)` para determinar a próxima etapa depois de preencher um campo. |
+|    Antes de    |          `[confirm          |                                                  message, ...]`                                                  |
+|    After (após)     |          `[confirm          |                                                  message, ...]`                                                  |
 | Dependências |        [cadeia de caracteres, ...]        |                           Campos em que este campo, mensagem ou confirmação depende.                           |
 
 Use `{Confirm:script|[string, ...], ...templateArgs}` dentro do valor da propriedade **Anterior** ou da propriedade **Posterior** para definir uma confirmação usando qualquer um script do C# com o argumento `(JObject state)` ou um conjunto de padrões que serão selecionados aleatoriamente com argumentos de modelo opcionais.
@@ -93,7 +93,7 @@ Diversas propriedades que são descritas acima podem conter um script como o val
 | ifield | `IField<JObject>` para permitir o raciocínio sobre o campo atual para todos os scripts, exceto construtores de prompt de confirmação/mensagem. |
 | value | Valor de objeto a ser validado para **Validar**. |
 | field | `Field<JObject>` para permitir a atualização dinâmica de um campo em **Definir**. |
-| context | Contexto `IDialogContext` que permite postar os resultados em **OnCompletion**. |
+| contexto | Contexto `IDialogContext` que permite postar os resultados em **OnCompletion**. |
 
 Os campos que são definidos por meio do esquema JSON têm a mesma capacidade de estender ou substituir as definições de forma programática como qualquer outro campo. Eles também podem ser localizados da mesma maneira.
 
@@ -305,7 +305,7 @@ Para implementar o FormFlow com um esquema JSON, use `FormBuilderJson`, que ofer
 
 [!code-csharp[Use JSON schema](../includes/code/dotnet-formflow-json-schema.cs#useSchema)]
 
-## <a name="sample-code"></a>Exemplo de código
+## <a name="sample-code"></a>Código de exemplo
 
 [!INCLUDE [Sample code](../includes/snippet-dotnet-formflow-samples.md)]
 

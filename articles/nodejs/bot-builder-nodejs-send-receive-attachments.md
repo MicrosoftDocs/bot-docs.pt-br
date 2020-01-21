@@ -1,5 +1,5 @@
 ---
-title: Enviar e receber anexos | Microsoft Docs
+title: Enviar e receber anexos – Serviço de Bot
 description: Saiba como enviar e receber mensagens contendo anexos usando o SDK do Bot Framework para Node.js.
 author: DeniseMak
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: c830ed61a70b3b92451988ea73f223da3e55bbc7
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 182fb3ab327b55d8976a607871bb2380a88f8b30
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299727"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790554"
 ---
 # <a name="send-and-receive-attachments"></a>Enviar e receber anexos
 
@@ -61,7 +61,7 @@ var bot = new builder.UniversalBot(connector, function (session) {
 ```
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Visualizar recursos com o Inspetor de Canal][inspector]
+* [Referência de canais][inspector]
 * [IMessage][IMessage]
 * [Enviar um cartão avançado][SendRichCard]
 * [session.send][SessionSend]
@@ -70,4 +70,4 @@ var bot = new builder.UniversalBot(connector, function (session) {
 [SendRichCard]: bot-builder-nodejs-send-rich-cards.md
 [SessionSend]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.session.html#send
 [IAttachment]: https://docs.botframework.com/node/builder/chat-reference/interfaces/_botbuilder_d_.iattachment.html
-[inspector]: ../bot-service-channel-inspector.md
+[inspector]: ../bot-service-channels-reference.md

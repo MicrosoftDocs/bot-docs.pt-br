@@ -1,5 +1,5 @@
 ---
-title: Autenticação | Microsoft Docs
+title: Autenticação da Direct Line API 1.1 – Serviço de Bot
 description: Saiba como autenticar solicitações de API na API da Linha Direta v1.1.
 author: RobStand
 ms.author: kamrani
@@ -7,19 +7,19 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 555cb3298114c3eb8ba8a4e1c41b5515e929fd91
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 27da3fbe5b122e23e0284c8396f75a5ac73da13b
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299640"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75789756"
 ---
-# <a name="authentication"></a>Authentication
+# <a name="authentication"></a>Autenticação
 
 > [!IMPORTANT]
-> Este artigo descreve a autenticação na API da Linha Direta v1.1. Se você estiver criando uma nova conexão entre seu aplicativo cliente e o bot, use [API da Linha Direta 3.0](bot-framework-rest-direct-line-3-0-authentication.md) em vez disso.
+> Este artigo descreve a autenticação na API da Linha Direta v1.1. Se você estiver criando uma nova conexão entre seu aplicativo cliente e o bot, use a [API de Linha Direta 3.0](bot-framework-rest-direct-line-3-0-authentication.md).
 
-Um cliente pode autenticar solicitações para a API da Linha Direta 1.1 usando um **segredo** que você [obtém da página de configuração de canal da Linha Direta](../bot-service-channel-connect-directline.md) no Portal do Bot Framework ou usando um **token** obtido em tempo de execução.
+Um cliente pode autenticar solicitações para a API da Linha Direta 1.1 usando um **segredo** que você [obtém da página de configuração de canal da Linha Direta](../bot-service-channel-connect-directline.md) no Portal do Bot Framework ou usando um **token** obtido em runtime.
 
 O segredo ou o token deve ser especificado no cabeçalho `Authorization` de cada solicitação, usando o esquema "Bearer" ou "BotConnector". 
 
@@ -70,7 +70,7 @@ POST https://directline.botframework.com/api/tokens/conversation
 Authorization: Bearer RCurR_XV9ZA.cwA.BKA.iaJrC8xpy8qbOF5xnR2vtCX7CZj0LdjAPGfiCpg4Fv0
 ```
 
-### <a name="response"></a>Response
+### <a name="response"></a>Resposta
 
 Se a solicitação for bem-sucedida, a resposta conterá um token válido para uma conversa. Esse token expirará em 30 minutos. Para continuar a usar o token, você deve [atualizar o token](#refresh-token) antes que ele expire.
 
@@ -89,7 +89,7 @@ Se você planeja distribuir o token para clientes e deseja que eles iniciem a co
 
 ## <a id="refresh-token"></a> Atualizar um token de Linha Direta
 
-Um token de Linha Direta é válido por 30 minutos a partir do momento em que é gerado e pode ser atualizado uma quantidade ilimitada de vezes, desde que não tenha expirado. Um token expirado não poderá ser atualizado. Para atualizar um token de Linha Direta, emita esta solicitação:
+Um token de Linha Direta é válido por 30 minutos a partir do momento em que é gerado e pode ser atualizado uma quantidade ilimitada de vezes, desde que não tenha expirado. Um token expirado não pode ser atualizado. Para atualizar um token de Linha Direta, emita esta solicitação:
 
 ```http
 POST https://directline.botframework.com/api/tokens/{conversationId}/renew
@@ -107,7 +107,7 @@ POST https://directline.botframework.com/api/tokens/abc123/renew
 Authorization: Bearer CurR_XV9ZA.cwA.BKA.iaJrC8xpy8qbOF5xnR2vtCX7CZj0LdjAPGfiCpg4Fv0y8qbOF5xPGfiCpg4Fv0y8qqbOF5x8qbOF5xn
 ```
 
-### <a name="response"></a>Response
+### <a name="response"></a>Resposta
 
 Se a solicitação for bem-sucedida, a resposta conterá um novo token válido para a mesma conversa como o token anterior. O novo token expirará em 30 minutos. Para continuar a usar o novo token, você deve [atualizar o token](#refresh-token) antes que ele expire.
 

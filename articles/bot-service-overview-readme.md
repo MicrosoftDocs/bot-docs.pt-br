@@ -1,5 +1,5 @@
 ---
-title: Como funciona o Serviço de Bot | Microsoft Docs
+title: Como funciona o Serviço de Bot – Serviço de Bot
 description: Saiba mais sobre os recursos e funcionalidades do Serviço de Bot.
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 74c48c779a41a6a2cbdf4f1c559c7136e7a94ca1
-ms.sourcegitcommit: a295a90eac461f8b96770dd902ba44919acf33fc
+ms.openlocfilehash: 1a49b9c3653af1a9fa56724a1562d34eb1834f43
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67405816"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75794623"
 ---
 # <a name="how-bot-service-works"></a>Como funciona o Serviço de Bot
 
@@ -35,7 +35,7 @@ Um bot que usa um plano do Serviço de Aplicativo é um aplicativo Web do Azure 
 * Usar o código de exemplo preparado para o SDK do Bot Framework.
 
 ### <a name="consumption-plan"></a>Plano de consumo
-Um bot que usa um plano de Consumo é um bot sem servidor que é executado no <a href="http://go.microsoft.com/fwlink/?linkID=747839" target="_blank">Azure Functions</a> e usa os preços do Azure Functions de pagar por execução. Um bot que usa este plano de hospedagem pode ser dimensionado para lidar com grandes picos de tráfego. Você pode editar o código-fonte do bot online usando um editor de código básico no navegador. Para saber mais sobre o ambiente de tempo de execução de um bot de plano de Consumo em <a target='_blank' href='/azure/azure-functions/functions-scale'>Planos de Serviço de Aplicativo e Consumo do Azure Functions</a>.
+Um bot que usa um plano de Consumo é um bot sem servidor que é executado no <a href="http://go.microsoft.com/fwlink/?linkID=747839" target="_blank">Azure Functions</a> e usa os preços do Azure Functions de pagar por execução. Um bot que usa este plano de hospedagem pode ser dimensionado para lidar com grandes picos de tráfego. Você pode editar o código-fonte do bot online usando um editor de código básico no navegador. Para saber mais sobre o ambiente de runtime de um bot de plano de Consumo em <a target='_blank' href='/azure/azure-functions/functions-scale'>Planos de Serviço de Aplicativo e Consumo do Azure Functions</a>.
 
 ## <a name="templates"></a>Modelos
 

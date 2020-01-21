@@ -1,5 +1,5 @@
 ---
-title: Realizar chamadas de voz | Microsoft Docs
+title: Realizar chamadas de áudio – Serviço de Bot
 description: Saiba como realizar chamadas de voz com o Skype em um bot usando o Node.js
 author: v-ducvo
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 3934450f8fe2f971dc18d5a62cbcc74a97bd5869
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 25f1941c732363f849f1d82c149d80094c16860f
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299901"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790948"
 ---
 # <a name="support-audio-calls-with-skype"></a>Dar suporte a chamadas de voz com o Skype
 
@@ -52,7 +52,7 @@ bot.dialog('/', function (session) {
 ```
 
 > [!NOTE]
-> Para encontrar a **AppID** e a **AppPassword** do bot, confira [MicrosoftAppID e MicrosoftAppPassword](~/bot-service-manage-overview.md#microsoftappid-and-microsoftapppassword).
+> Para localizar o **AppID** e **AppPassword** do seu bot, consulte [MicrosoftAppID e MicrosoftAppPassword](~/bot-service-manage-overview.md#microsoftappid-and-microsoftapppassword).
 
 Atualmente, o emulador não dá suporte a testes de bots de chamada. Para testar o bot, você precisará percorrer a maioria das etapas necessárias para publicar o bot.  Também precisará usar um cliente do Skype para interagir com o bot. 
 
@@ -66,7 +66,7 @@ Durante o registro do bot, você receberá uma ID do aplicativo e uma senha que 
 ### <a name="add-bot-to-contacts"></a>Adicionar o bot aos contatos
 Na página de registro do bot no portal do desenvolvedor, você verá um botão **Adicionar ao Skype** ao lado do canal do Skype para o bot. Clique no botão para adicionar o bot à sua lista de contatos do Skype.  Depois de fazer isso, você (e qualquer pessoa para quem você fornecer o link de ingresso) poderá se comunicar com o bot.
 
-### <a name="test-your-bot"></a>Testar o bot
+### <a name="test-your-bot"></a>Testar seu bot
 Teste o bot usando um cliente do Skype. Você deverá observar o ícone de chamada acender quando clicar na entrada de contato do bot (talvez você precise pesquisar o bot para vê-lo).  Podem ser necessários alguns minutos até que o ícone de chamada seja aceso, caso você tenha adicionado uma chamada a um bot existente.  
 
 Se você pressionar o botão de chamada, ele deverá discar para o bot e você deverá ouvi-lo falar “Watson… venha aqui!” e, em seguida, desligar.

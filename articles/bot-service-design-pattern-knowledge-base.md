@@ -1,5 +1,5 @@
 ---
-title: Criar bots de dados de conhecimento | Microsoft Docs
+title: Criar bots de dados de Conhecimento – Serviço de Bot
 description: Saiba mais sobre as diferentes maneiras de criar um bot de dados de conhecimento que localiza e retorna as informações em resposta à consulta ou de entrada do usuário.
 author: matvelloso
 ms.author: mateusv
@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: c263876dc06229c4716cc1ddc3d83d0d0c6b11a4
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 988bf816d66bfb6d4140b6be4a708ae6082e1077
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298670"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75792097"
 ---
 # <a name="design-knowledge-bots"></a>Criar bots de dados de Conhecimento
 
@@ -134,7 +134,7 @@ O SDK do Bot Framework fornece suporte interno para LUIS e QnA Maker. Isso permi
 > [!TIP]
 > Ao implementar uma combinação de LUIS, QnA Maker e/ou Azure Search, teste as entradas com cada uma das ferramentas para determinar a pontuação de limite para cada um dos seus modelos. O LUIS, o QnA Maker e o Azure Search geram pontuações usando um critério de pontuação diferente, portanto, as pontuações geradas entre essas ferramentas não são comparáveis diretamente. Além disso, o LUIS e QnA Maker normalizam as pontuações. Uma pontuação de determinado pode ser considerada 'boa' em um modelo de LUIS, mas não em outro modelo. 
 
-## <a name="sample-code"></a>Exemplo de código
+## <a name="sample-code"></a>Código de exemplo
 
 - Veja um exemplo que mostra como criar um bot de dados de conhecimento usando o SDK do Bot Framework para .NET em <a href="https://aka.ms/qna-with-appinsights" target="_blank">Exemplo de bot de dados de conhecimento</a> no GitHub. 
 <!-- TODO: Do not have a current bot sample to work with this

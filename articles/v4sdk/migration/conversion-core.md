@@ -1,5 +1,5 @@
 ---
-title: Migrar um bot existente em um novo projeto .NET Core | Microsoft Docs
+title: Migrar um bot existente em um novo projeto .NET Core – Serviço de Bot
 description: Pegamos um bot .NET v3 existente e o migramos para o SDK do .NET v4 usando um novo projeto do .NET Core.
 keywords: migração de bot, formflow, diálogos, bot v3
 author: JonathanFingold
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 23646cf47b49e73eec9c3ce9a4deb1e053892fa1
-ms.sourcegitcommit: c200cc2db62dbb46c2a089fb76017cc55bdf26b0
+ms.openlocfilehash: 776ba2013e7f66abc36cbf4810a7520a8da8e496
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70037263"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791098"
 ---
 # <a name="migrate-a-net-v3-bot-to-a-net-core-v4-bot"></a>Migrar um bot v3 do .NET para um bot v4 do .NET Core
 
@@ -89,7 +89,7 @@ Em **Startup.cs**:
 Você encontrará erros de tempo de compilação neste momento. Nós os corrigiremos nas próximas etapas. 
 
 ## <a name="messagescontroller-class"></a>Classe MessagesController
-Esta classe manipula uma solicitação. A injeção de dependência fornecerá a implementação do adaptador e do IBot em tempo de execução. Essa classe de modelo permanece inalterada. 
+Esta classe manipula uma solicitação. A injeção de dependência fornecerá a implementação do adaptador e do IBot em runtime. Essa classe de modelo permanece inalterada. 
 
 É nesse ponto que o bot inicia um turno em v4, que é bastante diferente do controlador de mensagens v3. Exceto para o manipulador de turnos do bot em si, grande parte disso pode ser pensada como texto clichê.
 

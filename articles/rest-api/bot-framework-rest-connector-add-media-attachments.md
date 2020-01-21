@@ -1,5 +1,5 @@
 ---
-title: Adicionar anexos de mídia às mensagens | Microsoft Docs
+title: Adicionar anexos de mídia a mensagens – Serviço de Bot
 description: Saiba como adicionar anexos de mídia às mensagens usando o serviço Conector de Bot.
 author: RobStand
 ms.author: kamrani
@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 10/25/2018
-ms.openlocfilehash: be56700664e7626c247bb77899dc89f3cac32469
-ms.sourcegitcommit: c200cc2db62dbb46c2a089fb76017cc55bdf26b0
+ms.openlocfilehash: 35a4a1846aadddb7505015872f830132cf625841
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70037212"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790165"
 ---
 # <a name="add-media-attachments-to-messages"></a>Adicionar anexos de mídia às mensagens
 > [!div class="op_single_selector"]
@@ -22,14 +22,13 @@ ms.locfileid: "70037212"
 
 Bots e canais normalmente trocam cadeias de caracteres de texto, mas alguns canais também oferecem suporte a troca de anexos, o que permite que seu bot envie mensagens mais ricas para os usuários. Por exemplo, seu bot pode enviar anexos de mídia (por exemplo, imagens, vídeos, áudio, arquivos) e [cartões avançados](bot-framework-rest-connector-add-rich-cards.md). Este artigo descreve como adicionar anexos de mídia às mensagens usando o serviço Conector de Bot.
 
-> [!TIP]
-> Para determinar o tipo e o número de anexos com suporte de um canal, e como o canal renderiza anexos, consulte o [Channel Inspector][ChannelInspector].
+[!INCLUDE [Channel Inspector intro](~/includes/snippet-channel-inspector.md)]
 
 ## <a name="add-a-media-attachment"></a>Adicionar um anexo de mídia  
 
 Para adicionar um anexo de mídia a uma mensagem, crie um objeto [Anexo][], defina a propriedade `name`, defina a propriedade `contentUrl` como a URL do arquivo de mídia e defina a propriedade `contentType` como o tipo de mídia apropriado (por exemplo, **image/png**, **audio/wav**, **video/mp4**). Em seguida, dentro do objeto [Atividade][] que representa sua mensagem, especifique seu objeto `Attachment` dentro da matriz `attachments`.
 
-O exemplo a seguir mostra uma solicitação que envia uma mensagem contendo o texto e um anexo de imagem única. Nessa solicitação de exemplo, `https://smba.trafficmanager.net/apis` representa o URI de base; o URI de base para solicitações em que os seus problemas de bot podem ser diferentes. Para obter detalhes sobre como definir o URI de base, veja [Referência da API](bot-framework-rest-connector-api-reference.md#base-uri).
+O exemplo a seguir mostra uma solicitação que envia uma mensagem contendo o texto e um anexo de imagem única. Nessa solicitação de exemplo, `https://smba.trafficmanager.net/apis` representa o URI base; o URI base das solicitações emitidas pelo bot pode ser diferente. Para obter detalhes sobre como definir o URI base, confira [Referência de API](bot-framework-rest-connector-api-reference.md#base-uri).
 
 ```http
 POST https://smba.trafficmanager.net/apis/v3/conversations/abcd1234/activities/5d5cdc723
@@ -161,7 +160,7 @@ Assim que o canal receber esse anexo, ele iniciará a execução do arquivo de �
 
 O nome do evento de mídia **media/pause** aparecerá no campo `activity.name`. Consulte a tabela abaixo para obter uma lista com todos os nomes de evento de mídia.
 
-| Evento | DESCRIÇÃO |
+| Evento | Descrição |
 | ---- | ---- |
 | **media/next** | O cliente pulou para a próxima mídia |
 | **media/pause** | O cliente pausou a reprodução da mídia |

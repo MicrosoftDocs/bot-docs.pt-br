@@ -1,5 +1,5 @@
 ---
-title: Enviar uma mensagem o bot | Microsoft Docs
+title: Enviar uma mensagem o bot – Serviço de Bot
 description: Saiba como enviar uma mensagem para o bot usando a API de linha direta v1.1.
 author: RobStand
 ms.author: kamrani
@@ -7,17 +7,17 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 461ea04e0865991c3a6d643db7511e58d516ec41
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: e6504c1d6cd8cbcf3eab4fadaa62485deba14efa
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299614"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75789712"
 ---
 # <a name="send-a-message-to-the-bot"></a>Enviar uma mensagem para o bot
 
 > [!IMPORTANT]
-> Este artigo descreve como enviar uma mensagem ao bot usando a API de linha direta 1.1. Se você estiver criando uma nova conexão entre seu aplicativo cliente e o bot, use [Direct Line API 3.0](bot-framework-rest-direct-line-3-0-send-activity.md).
+> Este artigo descreve como enviar uma mensagem ao bot usando a API de linha direta 1.1. Se você estiver criando uma nova conexão entre seu aplicativo cliente e o bot, use a [API de Linha Direta 3.0](bot-framework-rest-direct-line-3-0-send-activity.md).
 
 Usando o protocolo 1.1 de linha direta, os clientes podem trocar mensagens com bots. Essas mensagens são convertidas no esquema que o bot suporta (Bot Framework v1 ou Bot Framework v3). Um cliente pode enviar uma mensagem única por solicitação. 
 
@@ -42,7 +42,7 @@ Authorization: Bearer RCurR_XV9ZA.cwA.BKA.iaJrC8xpy8qbOF5xnR2vtCX7CZj0LdjAPGfiCp
 }
 ```
 
-### <a name="response"></a>Response
+### <a name="response"></a>Resposta
 
 Quando a mensagem é entregue ao bot, o serviço responde com um código de status HTTP que reflete o código de status do bot. Se o bot gerar um erro, uma resposta HTTP 500 ("Internal Server Error") é retornada ao cliente em resposta à solicitação Send Message. Se o POST for bem-sucedido, o serviço retornará um código de status HTTP 204. Nenhum dado é retornado no corpo da resposta. A mensagem do cliente e quaisquer mensagens do bot podem ser obtidas via [polling](bot-framework-rest-direct-line-1-1-receive-messages.md). 
 
@@ -63,7 +63,7 @@ O tempo total para postar uma mensagem a uma conversa de linha direta é a soma 
 
 ## <a name="send-attachments-to-the-bot"></a>Enviar o anexo (s) para o bot
 
-Em algumas situações, um cliente pode precisar enviar anexos para o bot, como imagens ou documentos. Um cliente pode enviar anexos para o bot ou pelo [especificando as URLs](#send-by-url) dos anexos dentro a [mensagem](bot-framework-rest-direct-line-1-1-api-reference.md#message-object) do objeto que ele envia usando `POST /api/conversations/{conversationId}/messages` ou pelo [carregando anexos](#upload-attachments) usando `POST /api/conversations/{conversationId}/upload`.
+Em algumas situações, um cliente talvez precise enviar anexos para o bot, como imagens ou documentos. Um cliente pode enviar anexos para o bot ou pelo [especificando as URLs](#send-by-url) dos anexos dentro a [mensagem](bot-framework-rest-direct-line-1-1-api-reference.md#message-object) do objeto que ele envia usando `POST /api/conversations/{conversationId}/messages` ou pelo [carregando anexos](#upload-attachments) usando `POST /api/conversations/{conversationId}/upload`.
 
 ## <a id="send-by-url"></a> Enviar anexos por URL
 
@@ -87,7 +87,7 @@ Content-Disposition: ATTACHMENT_INFO
 [file content]
 ```
 
-Nesse URI de solicitação, substitua **{conversationId}** pelo ID da conversa e **{userId}** pelo ID do usuário que está enviando a mensagem. Nos cabeçalhos de solicitação, defina `Content-Type` para especificar o tipo do anexo e definir `Content-Disposition` para especificar o nome do arquivo do anexo.
+Nesse URI de solicitação, substitua **{conversationId}** pelo ID da conversa e **{userId}** pelo ID do usuário que está enviando a mensagem. Nos cabeçalhos de solicitação, defina `Content-Type` para especificar o tipo do anexo e defina `Content-Disposition` para especificar o nome do arquivo do anexo.
 
 Os snippets de código a seguir fornecem um exemplo da solicitação de envio (única) de anexo e a resposta.
 
@@ -103,7 +103,7 @@ Content-Disposition: name="file"; filename="badjokeeel.jpg"
 [JPEG content]
 ```
 
-#### <a name="response"></a>Response
+#### <a name="response"></a>Resposta
 
 Se a solicitação for bem-sucedida, uma mensagem é enviada para o bot quando o carregamento for concluído e o serviço retorna um código de status HTTP 204.
 
@@ -114,7 +114,7 @@ HTTP/1.1 204 No Content
 
 ### <a id="upload-multiple-attachments"></a> Enviar vários anexos por upload
 
-Para enviar vários anexos por upload, `POST`uma solicitação multipartes para o endpoint`/api/conversations/{conversationId}/upload`. Defina as `Content-Type` cabeçalho da solicitação para `multipart/form-data` e incluem o `Content-Type` cabeçalho e `Content-Disposition` cabeçalho para cada parte especificar o tipo e nome do arquivo de cada anexo. Na solicitação URI, defina o parâmetro `userId` como o ID do usuário que está enviando a mensagem. 
+Para enviar vários anexos por upload, `POST`uma solicitação multipartes para o endpoint`/api/conversations/{conversationId}/upload`. Defina as `Content-Type` cabeçalho da solicitação para `multipart/form-data` e incluem o `Content-Type` cabeçalho e `Content-Disposition` cabeçalho para cada parte especificar o tipo e nome do arquivo de cada anexo. No URI de solicitação, defina o `userId` parâmetro para a ID do usuário que está enviando a mensagem. 
 
 Você pode incluir um [mensagem](bot-framework-rest-direct-line-1-1-api-reference.md#message-object) objeto dentro da solicitação com a adição de uma parte que especifica se o `Content-Type` valor de cabeçalho `application/vnd.microsoft.bot.message`. Isso permite que o cliente personalizar a mensagem que contém o anexo (s). Se a solicitação incluir uma mensagem, os anexos especificados por outras partes da carga útil serão adicionados como anexos a essa mensagem antes de serem enviados. 
 
@@ -147,7 +147,7 @@ Content-Type: application/vnd.microsoft.bot.message
 ----DD4E5147-E865-4652-B662-F223701A8A89
 ```
 
-#### <a name="response"></a>Response
+#### <a name="response"></a>Resposta
 
 Se a solicitação for bem-sucedida, uma mensagem é enviada para o bot quando o carregamento for concluído e o serviço retorna um código de status HTTP 204.
 

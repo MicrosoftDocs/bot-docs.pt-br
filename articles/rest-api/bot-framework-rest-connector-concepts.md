@@ -1,5 +1,5 @@
 ---
-title: Principais conceitos no serviço Conector do Bot e no serviço Estado do Bot | Microsoft Docs
+title: Principais conceitos no Conector de Bot e nos Serviços de Estado do Bot – Serviço de Bot
 description: Entenda os principais conceitos do serviço Conector do Bot e do serviço Estado do Bot do Bot Framework.
 author: RobStand
 ms.author: kamrani
@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 01/16/2019
-ms.openlocfilehash: 25adbcda6b1f33f5379f9231291c5a511e9c1d04
-ms.sourcegitcommit: 7e901f5f39a0cfb0d37e532321b90a1dcf4baadd
+ms.openlocfilehash: 3290c12c35cd2095c6436b6a6239d9a7e3f5628b
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72039747"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75789942"
 ---
 # <a name="key-concepts"></a>Principais conceitos
 
@@ -30,7 +30,7 @@ O serviço Bot Connector troca informações entre o bot e o canal (usuário) pa
 
 O serviço de Estado do Microsoft Bot Framework foi desativado em 30 de março de 2018. Anteriormente, bots criados no Serviço de Bot do Azure ou no SDK do Bot Builder tinham uma conexão padrão com esse serviço hospedado pela Microsoft para armazenar dados de estado do bot. Os bots deverão ser atualizados para usar seu próprio armazenamento de estado.
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Autenticação
 
 O serviço de Conector do Bot permite a autenticação com Tokens de portador JWT. Para obter informações detalhadas sobre como autenticar solicitações de saída enviadas por seu bot para o Bot Framework, como autenticar solicitações de entrada que seu bot recebe do Bot Framework e muito mais, consulte [Autenticação](bot-framework-rest-connector-authentication.md). 
 

@@ -1,5 +1,5 @@
 ---
-title: Adicionar atividades de rastreamento ao bot | Microsoft Docs
+title: Adicionar atividades de rastreamento ao bot – Serviço de Bot
 description: Descreve qual é a atividade de rastreamento no SDK do Bot Framework e como usá-la.
 keywords: rastreamento, atividade, bot, SDK do Bot Framework
 author: JonathanFingold
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/18/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 5728bac81e13548ca4de54c6e9fa525c659b6f81
-ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
+ms.openlocfilehash: 0a34e0d3afacaec0fcfd7b12aaa9b1b3a78f31c0
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75491643"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791008"
 ---
 # <a name="add-trace-activities-to-your-bot"></a>Adicionar atividades de rastreamento ao bot
 

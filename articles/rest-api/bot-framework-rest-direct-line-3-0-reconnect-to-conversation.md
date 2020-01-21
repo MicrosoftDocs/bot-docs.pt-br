@@ -1,5 +1,5 @@
 ---
-title: Reconectar-se a uma conversa | Microsoft Docs
+title: Reconectar-se a uma conversa – Serviço de Bot
 description: Saiba como se reconectar a uma conversa usando a API de Linha Direta v3.0.
 author: RobStand
 ms.author: kamrani
@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 2/09/2019
-ms.openlocfilehash: 3197b4f0e3d8d2cc07cea967f4ddf0738e3e27e9
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: c3bca14fe3c909417d016c01a9c48f9ec41c8ba4
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299548"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75789323"
 ---
 # <a name="reconnect-to-a-conversation"></a>Reconectar-se a uma conversa
 
@@ -38,7 +38,7 @@ GET https://directline.botframework.com/v3/directline/conversations/abc123?water
 Authorization: Bearer RCurR_XV9ZA.cwA.BKA.iaJrC8xpy8qbOF5xnR2vtCX7CZj0LdjAPGfiCpg4Fv0y8qbOF5xPGfiCpg4Fv0y8qqbOF5x8qbOF5xn
 ```
 
-### <a name="response"></a>Response
+### <a name="response"></a>Resposta
 
 Se a solicitação for bem-sucedida, a resposta conterá uma ID da conversa, um token e uma nova URL de fluxo do WebSocket.
 

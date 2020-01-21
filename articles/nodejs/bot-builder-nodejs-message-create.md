@@ -1,5 +1,5 @@
 ---
-title: Criar mensagens | Microsoft Docs
+title: Criar mensagens – Serviço de Bot
 description: Saiba como criar mensagens com o SDK do Bot Framework para Node.js.
 author: v-ducvo
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 09/7/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 7e2f48a3450154de9e2465f9d0d992ace4f3996f
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 1837b302b8d0b1d05e16d4d979b5807fa3e2d268
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299802"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790841"
 ---
 # <a name="create-messages"></a>Criar mensagens
 
@@ -77,7 +77,7 @@ O objeto [`Message`](https://docs.botframework.com/node/builder/chat-reference/c
 
 Propriedades de mensagem são definidas e recuperadas por meio de métodos do objeto. A tabela a seguir fornece uma lista dos métodos que você pode chamar para definir/obter diferentes propriedades de **mensagem**.
 
-| Método | DESCRIÇÃO |
+| Método | Descrição |
 | ---- | ---- | 
 | [`addAttachment(attachment:AttachmentType)`](https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.message.html#addattachment) | Adicionar um anexo a uma mensagem|
 | [`addEntity(obj:Object)`](https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.message.html#addentity) | Adiciona uma entidade para a mensagem. |

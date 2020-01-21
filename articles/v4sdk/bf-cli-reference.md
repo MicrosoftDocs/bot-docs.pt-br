@@ -1,6 +1,6 @@
 ---
-title: Referência da CLI (interface de linha de comando) do Azure bot Framework | Microsoft Docs
-description: Saiba mais sobre a CLI (interface de linha de comando) do Bot Framework.
+title: Referência da CLI (interface de linha de comando) do Azure Bot Framework – Serviço de Bot
+description: Saiba mais sobre a CLI (Interface de Linha de Comando) do Bot Framework.
 keywords: Interface de linha de comando do Bot Framework, CLI do Bot Framework
 author: JonathanFingold
 ms.author: kamrani
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 10/25/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 5123b61859c2fb00886458e462941cb5e6e1f896
-ms.sourcegitcommit: dcacda776c927bcc7c76d00ff3cc6b00b062bd6b
+ms.openlocfilehash: 6ae0edc8e2717d7e96ae8681cd832f7cb6cde66c
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74410467"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791342"
 ---
 # <a name="bot-framework-cli-reference"></a>Referência da CLI do Bot Framework
 

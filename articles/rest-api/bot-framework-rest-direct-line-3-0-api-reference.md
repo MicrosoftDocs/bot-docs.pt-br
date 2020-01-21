@@ -1,5 +1,5 @@
 ---
-title: Referência de API – API de Linha Direta 3.0 | Microsoft Docs
+title: Referência de API – Direct Line API 3.0 – Serviço de Bot
 description: Saiba mais sobre cabeçalhos, códigos de status HTTP, esquema, operações e objetos na API de Linha Direta 3.0.
 author: RobStand
 ms.author: kamrani
@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 618b2ffe99114679aa5592b816adf6e1b82be83e
-ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
+ms.openlocfilehash: 24dfb2e1ef95dcc53e037fc3c30c4a7c74b114ad
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167180"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75789577"
 ---
 # <a name="api-reference---direct-line-api-30"></a>Referência de API – API de Linha Direta 3.0
 
@@ -24,7 +24,7 @@ Para acessar a API de Linha Direta 3.0, use esta URI de base para todas as solic
 
 `https://directline.botframework.com`
 
-## <a name="headers"></a>Cabeçalhos
+## <a name="headers"></a>headers
 
 Além dos cabeçalhos de solicitação HTTP padrão, uma solicitação de API de Linha Direta deve incluir um cabeçalho `Authorization`, que especifica um segredo ou token para autenticação do cliente que está emitindo a solicitação. Especifique o cabeçalho `Authorization` usando este formato:
 
@@ -70,7 +70,7 @@ POST https://directline.botframework.com/v3/directline/conversations/abc123/acti
 [detail omitted]
 ```
 
-#### <a name="response"></a>Response
+#### <a name="response"></a>Resposta
 
 ```http
 HTTP/1.1 502 Bad Gateway
@@ -90,7 +90,7 @@ HTTP/1.1 502 Bad Gateway
 
 Use essas operações para criar ou atualizar um token que um cliente pode usar para acessar uma conversa individual.
 
-| Operação | DESCRIÇÃO |
+| Operação | Descrição |
 |----|----|
 | [Gerar Token](#generate-token) | Gere um token para uma nova conversa. |
 | [Atualizar Token](#refresh-token) | Atualize um token. |
@@ -125,13 +125,13 @@ POST /v3/directline/tokens/refresh
 
 Use essas operações para abrir uma conversa com seu bot e trocar atividades entre o cliente e o bot.
 
-| Operação | DESCRIÇÃO |
+| Operação | Descrição |
 |----|----|
 | [Iniciar Conversa](#start-conversation) | Abre uma nova conversa com o bot. |
 | [Obter Informações da Conversa](#get-conversation-information) | Obtém informações sobre uma conversa existente. Essa operação gera uma nova URL de fluxo de WebSocket que um cliente pode usar para se [reconectar](bot-framework-rest-direct-line-3-0-reconnect-to-conversation.md) a uma conversa. |
 | [Obter Atividades](#get-activities) | Recupera atividades do bot. |
 | [Enviar uma Atividade](#send-an-activity) | Envia uma atividade para o bot. |
-| [Carregar e Enviar Arquivo(s)](#upload-and-send-files) | Carrega e envia arquivo(s) como anexo(s). |
+| [Carregar e enviar arquivo(s)](#upload-and-send-files) | Carrega e envia arquivo(s) como anexo(s). |
 
 ### <a name="start-conversation"></a>Iniciar Conversa
 
@@ -170,7 +170,7 @@ GET /v3/directline/conversations/{conversationId}/activities?watermark={watermar
 | | |
 |----|----|
 | **Corpo da solicitação** | n/d |
-| **Retorna** | Um objeto [ActivitySet](#activityset-object). A resposta contém `watermark` como uma propriedade do objeto `ActivitySet`. Os clientes devem percorrer as atividades disponíveis aprimorando o valor `watermark`, até que nenhuma atividade retorne. |
+| **Retorna** | Um objeto [ActivitySet](#activityset-object). A resposta contém `watermark` como uma propriedade do objeto `ActivitySet`. Os clientes devem percorrer as atividades disponíveis aprimorando o valor `watermark` até que nenhuma atividade retorne. |
 
 ### <a name="send-an-activity"></a>Enviar uma Atividade
 
@@ -209,7 +209,7 @@ O esquema do Direct Line 3.0 inclui todos os objetos definidos pelo [esquema do 
 
 Define um conjunto de atividades.
 
-| Propriedade | Type | DESCRIÇÃO |
+| Propriedade | Type | Descrição |
 |----|----|----|
 | **activities** | [Atividade][][] | Matriz de objetos **Atividade**. |
 | **watermark** | string | Marca-d'água máxima das atividades dentro do conjunto. Um cliente pode usar o valor `watermark` para indicar a mensagem mais recente vista, ao [recuperar as atividades do bot](bot-framework-rest-direct-line-3-0-receive-activities.md#http-get) ou ao [gerar uma nova URL de fluxo de WebSocket](bot-framework-rest-direct-line-3-0-reconnect-to-conversation.md). |
@@ -218,7 +218,7 @@ Define um conjunto de atividades.
 
 Define uma conversa de Linha Direta.
 
-| Propriedade | Type | DESCRIÇÃO |
+| Propriedade | Type | Descrição |
 |----|----|----|
 | **conversationId** | string | ID que identifica exclusivamente a conversa para o qual o token especificado é válido. |
 | **eTag** | string | Um ETag HTTP (marca de entidade). |
@@ -231,7 +231,7 @@ Define uma conversa de Linha Direta.
 
 Parâmetros para criar um token.
 
-| Propriedade | Type | DESCRIÇÃO |
+| Propriedade | Type | Descrição |
 |----|----|----|
 | **eTag** | string | Um ETag HTTP (marca de entidade). |
 | **trustedOrigins** | string[] | Origens confiáveis a serem inseridas no token. |

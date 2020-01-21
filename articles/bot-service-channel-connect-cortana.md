@@ -1,5 +1,5 @@
 ---
-title: Conectar um bot à Cortana | Microsoft Docs
+title: Conectar um bot à Cortana – Serviço de Bot
 description: Saiba como configurar um bot para acesso por meio da interface da Cortana.
 keywords: cortana, canal de bot, configurar cortana
 author: RobStand
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/22/2019
-ms.openlocfilehash: 912f913f5fa09d971ba1e87e31736292f707adc2
-ms.sourcegitcommit: 78da125eafe93b3c6d254708b82bdd01de7c3afb
+ms.openlocfilehash: 5d7823697262e37619ca6c82bf9582449ea4bdde
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74464276"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75789665"
 ---
 # <a name="connect-a-bot-to-cortana"></a>Conectar um bot à Cortana
 
@@ -27,7 +27,7 @@ Para adicionar o canal da Cortana, abra o bot no [Portal do Azure](https://porta
 
 Ao conectar seu bot ao canal da Cortana, algumas informações básicas sobre seu bot serão preenchidas previamente no formulário de registro. Examine essas informações com atenção. Esse formulário contém os campos a seguir.
 
-| Campo | DESCRIÇÃO |
+| Campo | Descrição |
 |------|------|
 | **Ícone de Habilidade** | Um ícone exibido na tela da Cortana quando sua habilidade for invocada. Isso também será usado quando as habilidades forem detectáveis (como a Microsoft Store). (Apenas PNG com no máximo 32KB).|
 | **Nome de exibição** | O nome da sua habilidade da Cortana é exibido ao usuário na parte superior da interface do usuário visual. (Limite de 30 caracteres) |

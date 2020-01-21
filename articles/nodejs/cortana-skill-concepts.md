@@ -1,5 +1,5 @@
 ---
-title: Criar uma habilidade da Cortana usando Node.js | Microsoft Docs
+title: Criar uma habilidade da Cortana usando Node.js – Serviço de Bot
 description: Aprenda os conceitos básicos da criação de uma habilidade da Cortana no SDK do Bot Framework para Node.js.
 keywords: Bot Framework, habilidade da Cortana, fala, Node.js, Bot Builder, SDK, conceitos fundamentais, conceitos básicos
 author: DeniseMak
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 02/10/2019
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 6aca29556fe877866d4beee8487ce0f1537334e6
-ms.sourcegitcommit: 6a83b2c8ab2902121e8ee9531a7aa2d85b827396
+ms.openlocfilehash: 477b20b090ae20ee9c4d723710a9fa11fff356fd
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68866740"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790331"
 ---
 # <a name="key-concepts-for-building-a-bot-for-cortana-skills-using-nodejs"></a>Os conceitos fundamentais para criar um bot de habilidades da Cortana usando Node.js
  
@@ -41,13 +41,13 @@ Ao criar um bot habilitado para fala, você deve tentar estabelecer o consenso e
 Usuários ficam confusos se um sistema não fundamentar os enunciados do usuário. Por exemplo, a conversa a seguir pode ser um pouco confusa quando o bot pergunta: "o que vem depois?":
 
 > **Cortana**: Você deseja examinar um pouco mais do seu perfil?  
-> **Usuário**:  Não.  
+> **Usuário**: Não.  
 > **Cortana**: O que vem a seguir?
 
 Se o bot adiciona um "Ok" como confirmação, é mais amigável para o usuário:
 
 > **Cortana**: Você deseja examinar um pouco mais do seu perfil?  
-> **Usuário**:  Não.  
+> **Usuário**: Não.  
 > **Cortana**: **OK**, o que vem a seguir?
 
 Graus de fundamentação, do mais fraco ao mais forte:

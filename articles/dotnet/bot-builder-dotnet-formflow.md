@@ -1,5 +1,5 @@
 ---
-title: Recursos básicos do FormFlow | Microsoft Docs
+title: Recursos básicos do FormFlow – Serviço de Bot
 description: Saiba como orientar o fluxo de conversa usando FormFlow dentro do SDK do Bot Framework para .NET.
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 4e9aa1b7bffd55518bd4ef03512d873ac48b49a7
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: bf22566229d9a502b42a8b516138a1427b5d6845
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70297877"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75797195"
 ---
 # <a name="basic-features-of-formflow"></a>Recursos básicos do FormFlow
 
@@ -31,7 +31,7 @@ Para criar um bot usando FormFlow, você deverá especificar as informações qu
 
 - Integral (sbyte, byte, short, ushort, int, uint, long, ulong)
 - Ponto flutuante (float, double)
-- Cadeia de caracteres
+- String
 - Datetime
 - Enumeração
 - Lista de enumerações
@@ -305,7 +305,7 @@ Este artigo descreveu como usar os recursos básicos do FormFlow para criar um b
 
 Embora a funcionalidade básica do FormFlow seja suficiente em alguns casos, você deverá considerar os possíveis benefícios de incorporar alguns dos recursos mais avançados do FormFlow ao seu bot. Para saber mais, veja [Recursos avançados do FormFlow](bot-builder-dotnet-formflow-advanced.md) e [Personalizar um formulário usando o FormBuilder](bot-builder-dotnet-formflow-formbuilder.md).
 
-## <a name="sample-code"></a>Exemplo de código
+## <a name="sample-code"></a>Código de exemplo
 
 [!INCLUDE [Sample code](../includes/snippet-dotnet-formflow-samples.md)]
 

@@ -1,5 +1,5 @@
 ---
-title: Adicionar anexos de cartão avançado às mensagens | Microsoft Docs
+title: Adicionar anexos de cartão avançado a mensagens (C# v3) – Serviço de Bot
 description: Saiba como adicionar cartões avançados às mensagens usando o SDK do Bot Framework para .NET.
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 37c652e101f5501295b243386ba9b675c578624f
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: e30ac144d4e960672f3d129935a657c42ed1aa6d
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298407"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75796509"
 ---
 # <a name="add-rich-card-attachments-to-messages"></a>Adicionar anexos de cartão avançados às mensagens
 
@@ -95,7 +95,7 @@ Este exemplo de código mostra como criar uma mensagem de resposta que contém d
 
 ## <a name="add-a-receipt-card-to-a-message"></a>Adicionar um cartão de recebimento a uma mensagem
 
-O cartão de recebimento permite que um bot forneça um recibo ao usuário. Normalmente, contém a lista de itens a serem incluídos no recebimento, em informações fiscais e totais e em outros textos. 
+O cartão de recebimento permite que um bot forneça um recibo ao usuário. Normalmente, contém a lista de itens a serem incluídos no recibo, informações fiscais e de totais e outros textos. 
 
 Este exemplo de código mostra como criar uma mensagem de resposta que contém um cartão de recebimento: 
 
@@ -103,7 +103,7 @@ Este exemplo de código mostra como criar uma mensagem de resposta que contém u
 
 ## <a name="add-a-sign-in-card-to-a-message"></a>Adicionar um cartão de entrada a uma mensagem
 
-O cartão de entrada permite que um bot solicite a entrada de um usuário. Normalmente contém texto e um ou mais botões que o usuário pode clicar para iniciar o processo de entrada. 
+O cartão de entrada permite que um bot solicite a entrada de um usuário. Normalmente, contém um texto e um ou mais botões nos quais o usuário pode clicar para iniciar o processo de entrada. 
 
 Este exemplo de código mostra como criar uma mensagem de resposta que contém um cartão de entrada:
 
@@ -111,7 +111,7 @@ Este exemplo de código mostra como criar uma mensagem de resposta que contém u
 
 ## <a id="adaptive-card"></a> Adicionar um cartão adaptável a uma mensagem
 
-O Cartão Adaptável que pode conter qualquer combinação de texto, fala, imagens, botões e campos de entrada. Os Cartões Adaptáveis são criados usando o formato JSON especificado em <a href="http://adaptivecards.io" target="_blank">Cartões Adaptáveis</a>, o que lhe dá controle total sobre o conteúdo e o formato do cartão. 
+O Cartão Adaptável pode conter qualquer combinação de texto, fala, imagens, botões e campos de entrada. Os Cartões Adaptáveis são criados usando o formato JSON especificado em <a href="http://adaptivecards.io" target="_blank">Cartões Adaptáveis</a>, o que fornece a você controle total sobre o conteúdo e o formato do cartão. 
 
 Para criar um Cartão Adaptável usando o .NET, instale o pacote NuGet `AdaptiveCards`. Em seguida, aproveite as informações dentro do site <a href="http://adaptivecards.io" target="_blank">Cartões Adaptáveis</a> para compreender o esquema de Cartão Adaptável, explore os elementos do Cartão Adaptável e veja exemplos de JSON que podem ser usados para criar cartões de composição e complexidade variadas. Além disso, você pode usar o Visualizador Interativo para criar o conteúdo de Cartão Adaptável e visualizar a saída do cartão.
 
@@ -125,12 +125,12 @@ O cartão resultante contém três blocos de texto, um campo de entrada (lista d
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [Visualizar recursos com o Inspetor de Canal][inspector]
+- [Referência de canais](../bot-service-channels-reference.md)
 - <a href="http://adaptivecards.io" target="_blank">Cartões Adaptáveis</a>
 - [Visão geral das atividades](bot-builder-dotnet-activities.md)
 - [Criar mensagens](bot-builder-dotnet-create-messages.md)
 - [Adicionar anexos de mídia às mensagens](bot-builder-dotnet-add-media-attachments.md)
-- <a href="https://docs.botframework.com/csharp/builder/sdkreference/dc/d2f/class_microsoft_1_1_bot_1_1_connector_1_1_activity.html" target="_blank">Classe da atividade</a>
+- <a href="https://docs.botframework.com/csharp/builder/sdkreference/dc/d2f/class_microsoft_1_1_bot_1_1_connector_1_1_activity.html" target="_blank">Classe de atividade</a>
 - <a href="https://docs.microsoft.com/dotnet/api/microsoft.bot.connector.attachments?view=botconnector-3.12.2.4" target="_blank">Classe do anexo</a>
 
 [animationCard]: /dotnet/api/microsoft.bot.connector.animationcard
@@ -147,4 +147,4 @@ O cartão resultante contém três blocos de texto, um campo de entrada (lista d
 
 [videoCard]: /dotnet/api/microsoft.bot.connector.videocard
 
-[inspector]: ../bot-service-channel-inspector.md
+[inspector]: ../bot-service-channels-reference.md

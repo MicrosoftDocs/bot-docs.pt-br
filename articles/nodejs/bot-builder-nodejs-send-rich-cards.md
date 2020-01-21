@@ -1,5 +1,5 @@
 ---
-title: Adicionar anexos de cartão avançado às mensagens | Microsoft Docs
+title: Adicionar anexos de cartão avançado a mensagens (JS v3) – Serviço de Bot
 description: Saiba como enviar cartões avançados interativos e envolventes usando o SDK do Bot Framework para Node.js.
 author: v-ducvo
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 9b56539146909be1231611319703c3e9cf2ef5c2
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 246052bc971be3198fb5f3cd04f7d94e39c6b5d1
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299711"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790459"
 ---
 # <a name="add-rich-card-attachments-to-messages"></a>Adicionar anexos de cartão avançados às mensagens
 
@@ -30,7 +30,7 @@ Vários canais, como o Skype e o Facebook, dão suporte ao envio de cartões gr�
 ## <a name="types-of-rich-cards"></a>Tipos de cartões avançados 
 Atualmente, o Bot Framework dá suporte a oito tipos de cartões avançados: 
 
-| Tipo de cartão | DESCRIÇÃO |
+| Tipo de cartão | Descrição |
 |------|------|
 | <a href="/adaptive-cards/get-started/bots">Cartão adaptável</a> | Um cartão personalizável que pode conter qualquer combinação de texto, fala, imagens, botões e campos de entrada.  Confira [suporte por canal](/adaptive-cards/get-started/bots#channel-status). |
 | [Cartão de animação][animationCard] | Um cartão que pode reproduzir GIFs animados ou vídeos curtos. |
@@ -148,7 +148,7 @@ Alguns canais tendem a baixar imagens antes de exibirem uma mensagem para o usu�
 To learn more about sending a typing indicator, see [How to send a typing indicator](bot-builder-nodejs-send-typing-indicator.md).
 -->
 
-O Bot Framework implementa um envio em lote para tentar impedir que várias mensagens do bot sejam exibidas fora de ordem. <!-- Unfortunately, not all channels can guarantee this. --> Quando o bot enviar várias respostas para o usuário, as mensagens individuais serão automaticamente agrupadas em um lote e entregues ao usuário como um conjunto em um esforço para preservar a ordem original das mensagens. Esse envio em lote automático aguarda um padrão de 250ms após cada chamada a **session.send()** antes de iniciar a próxima chamada a **send()** .
+O Bot Framework implementa um envio em lote para tentar impedir que várias mensagens do bot sejam exibidas fora de ordem. <!-- Unfortunately, not all channels can guarantee this. --> Quando o bot enviar várias respostas para o usuário, as mensagens individuais serão automaticamente agrupadas em um lote e entregues ao usuário como um conjunto em um esforço para preservar a ordem original das mensagens. Esse envio em lote automático aguarda um padrão de 250ms após cada chamada a **session.send()** antes de iniciar a próxima chamada a **send()**.
 
 O atraso do envio em lote da mensagem é configurável. Para desabilitar a lógica de envio em lote automático do SDK, defina o atraso padrão com um número grande e, em seguida, chame **sendBatch()** manualmente com um retorno de chamada a ser invocado após a entrega do lote.
 
@@ -168,7 +168,7 @@ O cartão resultante contém três blocos de texto, um campo de entrada (lista d
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Visualizar recursos com o Inspetor de Canal][inspector]
+* [Referência de canais][inspector]
 * <a href="http://adaptivecards.io" target="_blank">Cartões Adaptáveis</a>
 * [AnimationCard][animationCard]
 * [AudioCard][audioCard]
@@ -198,4 +198,4 @@ O cartão resultante contém três blocos de texto, um campo de entrada (lista d
 
 [videoCard]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.videocard.html
 
-[inspector]: ../bot-service-channel-inspector.md
+[inspector]: ../bot-service-channels-reference.md

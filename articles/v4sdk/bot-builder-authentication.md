@@ -1,5 +1,5 @@
 ---
-title: Adicionar autenticação ao seu bot por meio do Serviço de Bot do Azure | Microsoft Docs
+title: Adicionar autenticação ao bot por meio do Serviço de Bot do Azure – Serviço de Bot
 description: Saiba como usar os recursos de autenticação do Serviço de Bot do Azure para adicionar o SSO ao seu bot.
 ms.author: kamrani
 manager: kamrani
@@ -7,12 +7,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/04/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4881de8f18cebb7a760061586296b948cf621929
-ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
+ms.openlocfilehash: 75dc417f5ac3738b2b96a026860d8377f8ff9c25
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75491553"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791315"
 ---
 <!-- 
 
@@ -133,8 +133,8 @@ Use essas etapas para criar um novo aplicativo do Azure Active Directory. Você 
    1. Clique em **Registrar**.
 
       - Depois de criado, o Azure exibe a página **Visão geral** do aplicativo.
-      - Registre o valor da **ID do aplicativo (cliente)** . Você usará esse valor posteriormente como a _ID do cliente_ ao registrar seu aplicativo do Azure AD com seu bot.
-      - Registre também o valor da **ID do diretório (locatário)** . Você também usará essas informações para registrar esse aplicativo no bot.
+      - Registre o valor da **ID do aplicativo (cliente)**. Você usará esse valor posteriormente como a _ID do cliente_ ao registrar seu aplicativo do Azure AD com seu bot.
+      - Registre também o valor da **ID do diretório (locatário)**. Você também usará essas informações para registrar esse aplicativo no bot.
 
 1. No painel de navegação, clique em **Certificados e segredos** para criar um segredo para o aplicativo.
 
@@ -183,9 +183,9 @@ A próxima etapa é registrar com seu bot o aplicativo do Azure AD que você aca
     1. Para **URL de logon**, insira `https://login.microsoftonline.com`.
     1.Para **ID do Locatário**, insira a **ID do diretório (locatário)** que você registrou anteriormente para seu aplicativo AAD ou **comum** dependendo dos tipos de conta com suporte selecionados quando você criou o aplicativo AAD. Para decidir qual valor atribuir, siga estes critérios:
 
-        - Ao criar o aplicativo AAD, se você tiver selecionado *Contas neste diretório organizacional apenas (somente Microsoft – Locatário único)* ou *Contas em qualquer diretório organizacional (diretório do Microsoft AAD – multilocatário)* , insira a **ID do locatário** que você registrou anteriormente para o aplicativo do AAD.
+        - Ao criar o aplicativo AAD, se você tiver selecionado *Contas neste diretório organizacional apenas (somente Microsoft – Locatário único)* ou *Contas em qualquer diretório organizacional (diretório do Microsoft AAD – multilocatário)*, insira a **ID do locatário** que você registrou anteriormente para o aplicativo do AAD.
 
-        - Contudo, se você tiver selecionado *Contas em qualquer diretório organizacional (Qualquer diretório do AAD – contas Microsoft multilocatário e pessoais, por ex. Skype, Xbox, Outlook.com)* , insira a palavra **comum** em vez de uma ID de locatário. Caso contrário, o aplicativo AAD verificará o locatário cuja ID foi selecionada e excluirá as contas MS pessoais.
+        - Contudo, se você tiver selecionado *Contas em qualquer diretório organizacional (Qualquer diretório do AAD – contas Microsoft multilocatário e pessoais, por ex. Skype, Xbox, Outlook.com)*, insira a palavra **comum** em vez de uma ID de locatário. Caso contrário, o aplicativo AAD verificará o locatário cuja ID foi selecionada e excluirá as contas MS pessoais.
 
        Esse será o locatário associado aos usuários que podem ser autenticados.
 
@@ -210,9 +210,9 @@ A próxima etapa é registrar com seu bot o aplicativo do Azure AD que você aca
     1. Para **Segredo do cliente**, insira o segredo que você criou para permitir que o bot acesse o aplicativo do Azure AD.
     1. Para **ID do Locatário**, insira a **ID do diretório (locatário)** que você registrou anteriormente para seu aplicativo AAD ou **comum** dependendo dos tipos de conta com suporte selecionados quando você criou o aplicativo AAD. Para decidir qual valor atribuir, siga estes critérios:
 
-        - Ao criar o aplicativo AAD, se você tiver selecionado *Contas neste diretório organizacional apenas (somente Microsoft – Locatário único)* ou *Contas em qualquer diretório organizacional (diretório do Microsoft AAD – multilocatário)* , insira a **ID do locatário** que você registrou anteriormente para o aplicativo do AAD.
+        - Ao criar o aplicativo AAD, se você tiver selecionado *Contas neste diretório organizacional apenas (somente Microsoft – Locatário único)* ou *Contas em qualquer diretório organizacional (diretório do Microsoft AAD – multilocatário)*, insira a **ID do locatário** que você registrou anteriormente para o aplicativo do AAD.
 
-        - Contudo, se você tiver selecionado *Contas em qualquer diretório organizacional (Qualquer diretório do AAD – contas Microsoft multilocatário e pessoais, por ex. Skype, Xbox, Outlook.com)* , insira a palavra **comum** em vez de uma ID de locatário. Caso contrário, o aplicativo AAD verificará o locatário cuja ID foi selecionada e excluirá as contas MS pessoais.
+        - Contudo, se você tiver selecionado *Contas em qualquer diretório organizacional (Qualquer diretório do AAD – contas Microsoft multilocatário e pessoais, por ex. Skype, Xbox, Outlook.com)*, insira a palavra **comum** em vez de uma ID de locatário. Caso contrário, o aplicativo AAD verificará o locatário cuja ID foi selecionada e excluirá as contas MS pessoais.
 
        Esse será o locatário associado aos usuários que podem ser autenticados.
 

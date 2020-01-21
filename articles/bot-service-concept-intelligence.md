@@ -1,5 +1,5 @@
 ---
-title: Serviços Cognitivos | Microsoft Docs
+title: Serviços Cognitivos – Serviço de Bot
 description: Saiba como adicionar inteligência artificial aos bots com os Serviços Cognitivos da Microsoft para torná-los mais úteis e interativas.
 keywords: reconhecimento vocal, extração de conhecimento, reconhecimento de fala, pesquisa na Web
 author: RobStand
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/17/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 7dbbe8492761360941eca5e724a7339e28968769
-ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
+ms.openlocfilehash: 6243d74aabd7fe67b1c7b8bfcebc8bd04511d8b5
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167016"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75792948"
 ---
 # <a name="cognitive-services"></a>Serviços Cognitivos
 

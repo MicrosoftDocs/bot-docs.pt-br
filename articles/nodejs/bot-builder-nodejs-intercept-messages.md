@@ -1,5 +1,5 @@
 ---
-title: Interceptar mensagens | Microsoft Docs
+title: Interceptar mensagens (JS v3) – Serviço de Bot
 description: Saiba como criar logs ou outros registros interceptando e processando as trocas de informações usando o SDK do Bot Framework para Node.js.
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/02/2018
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 2ca85c598d5515e8a785326ba12fd872ffce741f
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 32934a8cb857b9ff3f2b4f2058a58fcce12cfc3d
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299819"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790878"
 ---
 # <a name="intercept-messages"></a>Interceptar mensagens
 
@@ -62,6 +62,6 @@ module.exports = {
 Agora, cada mensagem de entrada (do usuário para o bot) vai disparar `logIncomingMessage`, e cada mensagem de saída (do bot para o usuário) vai disparar `logOutgoingMessage`.
 Neste exemplo, o bot simplesmente imprime algumas informações sobre cada mensagem, mas você pode atualizar `logIncomingMessage` e `logOutgoingMessage` conforme necessário para definir as ações que deseja executar para cada mensagem. 
 
-## <a name="sample-code"></a>Exemplo de código
+## <a name="sample-code"></a>Código de exemplo
 
 Veja um exemplo completo que mostra como interceptar e registrar em log mensagens usando o SDK do Bot Framework para Node.js no <a href="https://aka.ms/v3-js-capability-middlewareLogging" target="_blank">exemplo de registro em log e middleware</a> no GitHub.

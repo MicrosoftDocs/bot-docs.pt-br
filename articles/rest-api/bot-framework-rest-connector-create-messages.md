@@ -1,5 +1,5 @@
 ---
-title: Criar mensagens com a API do Conector de Bot | Microsoft Docs
+title: Criar mensagens com a API do Conector de Bot – Serviço de Bot
 description: Saiba mais sobre as propriedades de mensagens comumente usadas na API do Conector de Bot.
 author: RobStand
 ms.author: kamrani
@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 727a319ef479a1f8954151d0e7dcaefaf3d249a1
-ms.sourcegitcommit: e815e786413296deea0bd78e5a495df329a9a7cb
+ms.openlocfilehash: f3f084f65c1fb4fc84a6c8c75ce36b56487ebd0d
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70876153"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75789953"
 ---
 # <a name="create-messages"></a>Criar mensagens
 
@@ -20,7 +20,9 @@ Seu bot enviará objetos [Atividade][] do tipo **message** para comunicar inform
 
 ## <a name="message-text-and-formatting"></a>Texto e formatação da mensagem
 
-O texto da mensagem pode ser formatado usando **texto sem formatação**, **markdown** ou **xml**. O formato padrão da propriedade `textFormat` é **markdown**, e interpreta o texto usando padrões de formatação Markdown. O nível de suporte ao formato de texto varia entre os canais. Para ver se um recurso que você quer usar tem suporte no canal direcionado, visualize-o usando o [Channel Inspector][ChannelInspector]. 
+O texto da mensagem pode ser formatado usando **texto sem formatação**, **markdown** ou **xml**. O formato padrão da propriedade `textFormat` é **markdown**, e interpreta o texto usando padrões de formatação Markdown. O nível de suporte ao formato de texto varia entre os canais. 
+
+[!INCLUDE [Channel Inspector intro](~/includes/snippet-channel-inspector.md)]
 
 A propriedade `textFormat` do objeto [Atividade][] pode ser usada para especificar o formato do texto. Por exemplo, para criar uma mensagem básica que contém apenas texto sem formatação, defina a propriedade `textFormat` do objeto `Activity` como **sem formatação**, defina a propriedade `text` do conteúdo da mensagem e defina a propriedade `locale` da localidade do remetente. 
 
@@ -54,17 +56,17 @@ A propriedade `suggestedActions` de um objeto [Atividade][] pode ser usada para 
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [Visualizar recursos com o Inspetor de Canal][ChannelInspector]
+- [Referência de canais][ChannelInspector]
 - [Visão geral das atividades](https://aka.ms/botSpecs-activitySchema)
 - [Enviar e receber mensagens](bot-framework-rest-connector-send-and-receive-messages.md)
 - [Adicionar anexos de mídia às mensagens](bot-framework-rest-connector-add-media-attachments.md)
-- [Adicionar cartões avançados a mensagens](bot-framework-rest-connector-add-rich-cards.md)
+- [Adicionar cartões ricos mensagens](bot-framework-rest-connector-add-rich-cards.md)
 - [Adicionar fala a mensagens](bot-framework-rest-connector-text-to-speech.md)
-- [Adicionar dicas de entrada a mensagens](bot-framework-rest-connector-add-input-hints.md)
+- [Adicionar dicas de entrada às mensagens](bot-framework-rest-connector-add-input-hints.md)
 - [Adicionar ações sugeridas a mensagens](bot-framework-rest-connector-add-suggested-actions.md)
 - [Implementar a funcionalidade específica do canal](bot-framework-rest-connector-channeldata.md)
 
-[ChannelInspector]: ../bot-service-channel-inspector.md
+[ChannelInspector]: ../bot-service-channels-reference.md
 [textFormating]: ../bot-service-channel-inspector.md#text-formatting
 
 [Atividade]: bot-framework-rest-connector-api-reference.md#activity-object

@@ -1,5 +1,5 @@
 ---
-title: Visão geral do Assistente Virtual | Microsoft Docs
+title: Visão geral do Assistente Virtual – Serviço de Bot
 description: Saiba mais sobre como criar seu próprio Assistente Virtual
 author: darrenj
 ms.author: darrenj
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 65a55550dff284ad44fd85cfe9223107cb8f4baf
-ms.sourcegitcommit: dbc7eaee5c1f300b23c55abe6b60cd01c7408915
+ms.openlocfilehash: 4f817ff4911229d8bc36d2c50348bf0320d09e47
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74415137"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791854"
 ---
 # <a name="virtual-assistant-overview"></a>Visão geral do Assistente Virtual
 
@@ -41,7 +41,7 @@ O Modelo de Assistente Virtual reúne várias da melhores práticas que identifi
 
 Agora o modelo de Assistente Virtual incorpora as funcionalidades do Enterprise Template anterior, incluindo intenções de conversação básicas em vários idiomas, Expedição, QnA e insights de conversa. As funcionalidades a seguir, relacionadas ao assistente, estão atualmente disponíveis. Outras funcionalidades estão sendo planejadas e trabalharemos junto aos nossos clientes e parceiros para a criação de um roteiro.
 
-Recurso | DESCRIÇÃO |
+Recurso | Descrição |
 ------------ | -------------
 Integração | Um exemplo de fluxo de integração que permite ao assistente cumprimentar o usuário e coletar informações iniciais.
 Arquitetura de eventos | Eventos no contexto do Assistente Virtual permitem que o aplicativo cliente que está hospedando o Assistente (em um navegador da Web ou em um dispositivo como um carro ou alto-falante) obtenha informações sobre os eventos de usuário ou dispositivo enquanto recebe eventos para executar operações do dispositivo.

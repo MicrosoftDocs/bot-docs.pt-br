@@ -1,5 +1,5 @@
 ---
-title: Gerenciar fluxo da conversa com diálogos | Microsoft Docs
+title: Gerenciar fluxo de conversa com diálogos – Serviço de Bot
 description: Saiba como modelar conversas e gerenciar um fluxo da conversa usando diálogos e o SDK do Bot Framework para .NET.
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 9e183c375e16a951ed77819ab982790944ac0c13
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 16c0835216fc32e3a62241ebc19ffb616227ce43
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298820"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75788853"
 ---
 # <a name="manage-conversation-flow-with-dialogs"></a>Gerenciar fluxo de conversa com diálogos
 
@@ -126,13 +126,13 @@ private async Task NameDialogResumeAfter(IDialogContext context, IAwaitable<stri
 }
 ```
 
-## <a name="sample-code"></a>Exemplo de código 
+## <a name="sample-code"></a>Código de exemplo 
 
 Veja um exemplo completo que mostra como gerenciar uma conversa usando diálogos no SDK do Bot Framework para .NET em [Exemplo de Diálogo Múltiplo Básico](https://aka.ms/v3cs-MultiDialog-Sample) no GitHub.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
 - [Diálogos](bot-builder-dotnet-dialogs.md)
-- [Projetar e controlar o fluxo da conversa](../bot-service-design-conversation-flow.md)
+- [Design e controle de fluxo da conversa](../bot-service-design-conversation-flow.md)
 - [Exemplo de Diálogo Múltiplo Básico (GitHub)](https://aka.ms/v3cs-MultiDialog-Sample)
 - <a href="/dotnet/api/?view=botbuilder-3.11.0" target="_blank">Referência do SDK do Bot Framework para .NET</a>

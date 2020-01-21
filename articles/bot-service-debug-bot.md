@@ -1,5 +1,5 @@
 ---
-title: Depurar um bot | Microsoft Docs
+title: Depurar um bot – Serviço de Bot
 description: Saiba como depurar um bot criado usando o Serviço de Bot.
 author: v-ducvo
 ms.author: kamrani
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 2/26/2019
-ms.openlocfilehash: dcc8ae71be76d2629681a058ea43e280aebad795
-ms.sourcegitcommit: 46fbb8982144c66864b83889b6457187e890badd
+ms.openlocfilehash: 835ff68dced16ccba2535e378b0b02e0de21e1fb
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75736749"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75792904"
 ---
 # <a name="debug-a-bot"></a>Depurar um bot
 

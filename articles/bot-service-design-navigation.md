@@ -1,5 +1,5 @@
 ---
-title: Design da navegação do bot | Microsoft Docs
+title: Criar navegação de bot – Serviço de Bot
 description: Saiba como criar uma boa estrutura de navegação para o bot e como evitar os erros mais comuns de design de navegação.
 keywords: navegação, visão geral, bot teimoso, bot sem noção, bot misterioso, bot óbvio, bot que não esquece
 author: matvelloso
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 7d1bfe669ebafa7e4a2104f384265760720d663c
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 596d11bacd55c73011176abf76e07e9b05ecc229
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298118"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75792334"
 ---
 # <a name="design-bot-navigation"></a>Design da navegação do bot
 
@@ -35,7 +35,7 @@ As especificações de design da navegação do seu bot dependerão principalmen
 
 O bot teimoso insiste na manutenção do curso atual da conversa, mesmo quando o usuário tentar conduzir as coisas em outra direção. 
 
-Considere este cenário: 
+Considere o cenário a seguir. 
 
 ![bot](~/media/bot-service-design-navigation/stubborn-bot-new.png)
 
@@ -52,7 +52,7 @@ Há vários métodos de evitar esta armadilha, mas talvez a maneira mais fácil 
 
 O bot sem noção responde coisas sem sentido quando não entende uma tentativa do usuário de acessar determinadas funcionalidades. Um usuário pode tentar comandos de palavra-chave comuns, como "ajuda" ou "cancelar" com expectativas razoáveis de que o bot responda adequadamente.
 
-Considere este cenário: 
+Considere o cenário a seguir. 
 
 ![bot](~/media/bot-service-design-navigation/clueless-bot.png)
 
@@ -69,7 +69,7 @@ Ao definir a lógica em seu **middleware**, você estará tornando-o acessível 
 
 O bot misterioso não reconhece imediatamente a entrada do usuário de nenhuma maneira. 
 
-Considere este cenário: 
+Considere o cenário a seguir. 
 
 ![bot](~/media/bot-service-design-navigation/mysterious-bot.png)
 
@@ -86,7 +86,7 @@ Ao confirmar imediatamente a entrada do usuário, você elimina qualquer possibi
 
 O bot óbvio fornece informações não solicitadas que são completamente óbvias e, portanto, inúteis para o usuário. 
 
-Considere este cenário:
+Considere o cenário a seguir.
 
 ![bot](~/media/bot-service-design-navigation/captainobvious-bot.png)
 
@@ -101,7 +101,7 @@ Ao projetar seu bot para fornecer informações úteis, você estará aumentando
 
 O bot que não esquece integra de maneira inadequada informações de conversas anteriores na atual. 
 
-Considere este cenário:
+Considere o cenário a seguir.
 
 ![bot](~/media/bot-service-design-navigation/rememberall-bot.png)
 

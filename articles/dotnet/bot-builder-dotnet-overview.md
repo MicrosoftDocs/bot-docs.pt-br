@@ -1,5 +1,5 @@
 ---
-title: SDK do Bot Framework para .NET | Microsoft Docs
+title: SDK do Bot Framework para .NET – Serviço de Bot
 description: Introdução ao SDK do Bot Framework para .NET, um framework poderoso e simples para criar bots.
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: f9f15903bf3b004e64fbe737f25d6cb34cdfe7fe
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: ffd8b9381ba0e7624706a020f654ac6cc9d5b6eb
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70297842"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75797289"
 ---
 # <a name="bot-framework-sdk-for-net"></a>SDK do Bot Framework para .NET
 

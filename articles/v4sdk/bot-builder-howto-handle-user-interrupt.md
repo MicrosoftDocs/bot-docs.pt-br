@@ -1,5 +1,5 @@
 ---
-title: Manipular interrupções do usuário | Microsoft Docs
+title: Manipular interrupções do usuário – Serviço de Bot
 description: Saiba como manipular as interrupções do usuário e orientar o fluxo da conversa.
 keywords: interromper, interrupções, mudando o tópico, interrupção
 author: ivorb
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/05/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 63ecbd2aaef40d5d25c49ef93aa665853ff0054c
-ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
+ms.openlocfilehash: fca68b09632c89cd027d012a92fe99e186324f70
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75491739"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798370"
 ---
 # <a name="handle-user-interruptions"></a>Manipular interrupções do usuário
 

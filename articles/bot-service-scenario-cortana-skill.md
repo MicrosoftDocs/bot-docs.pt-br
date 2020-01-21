@@ -1,5 +1,5 @@
 ---
-title: Cenário de bot de Habilidades da Cortana | Microsoft Docs
+title: Cenário de bot de habilidades da Cortana – Serviço de Bot
 description: Explore o cenário de bot de Habilidades da Cortana com o Bot Framework.
 author: BrianRandell
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: d6ba5b414ff7e600fac1e5d4ebce27363340f42f
-ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
+ms.openlocfilehash: ebf63a7bfceb6f70084a7897508c328a017aa5f0
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167050"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75794786"
 ---
 # <a name="cortana-skills-bot-scenario"></a>Cenário de Bot de Habilidades da Cortana
 
@@ -32,20 +32,20 @@ Este é o fluxo de lógica de um bot de Habilidades da Cortana para uma oficina 
 3. Como o bot é integrado à Cortana, ela tem acesso ao calendário do usuário e aplica a lógica à solicitação.
 4. Com essas informações, o bot pode consultar o serviço automotivo para obter compromissos válidos.
 5. Recebendo as opções contextuais, o usuário pode reservar o compromisso.
-6. O Application Insights coleta a telemetria do tempo de execução para ajudar o desenvolvimento com o desempenho e o uso do bot.
+6. O Application Insights coleta a telemetria do runtime para ajudar o desenvolvimento com o desempenho e uso do bot.
 
 ## <a name="sample-bot"></a>Bot de exemplo
 Com um Bot de Habilidades da Cortana, tudo se resume ao contexto pessoal. Usando a Cortana, você pode usar a voz para solicitar que a "Manutenção Móvel do Fábio" venha consertar seu carro com base em sua localização. Usando as informações pessoais expostas por meio da Cortana, o bot pode confirmar a localização de acordo com o local em que o usuário está no momento da conversa com o bot.
 
-Baixe ou clone o código-fonte desse bot de exemplo em [Amostras de cenários comuns do Bot Framework](https://aka.ms/abs-scenarios).
+Baixe ou clone o código-fonte desse bot de exemplo em [Exemplos para cenários comuns do Bot Framework](https://aka.ms/abs-scenarios).
 
-## <a name="components-youll-use"></a>Componentes que você usará
+## <a name="components-youll-use"></a>Componentes que serão utilizados
 O Bot da Cortana usa os seguintes componentes:
 -   Cortana
 -   Application Insights
 
 ### <a name="cortana"></a>Cortana
-Agora você pode adicionar suporte ao Bot criando uma Habilidade da Cortana. Use o kit de Habilidades da Cortana para criar recursos (chamados de habilidades) para a Cortana. Uma habilidade é um constructo que permite à Cortana fazer mais. Crie habilidades para integrá-las aos Bots, permitindo que a Cortana realize tarefas e faça coisas. Como parte do processo de invocação, a Cortana pode (com o consentimento do usuário) passar informações sobre o usuário para uma habilidade em tempo de execução, de modo que a habilidade possa personalizar sua experiência de acordo. O conhecimento contextual da Cortana possibilita que o Bot seja útil e, possivelmente, até mesmo mais inteligente para o usuário. Quando invocados, alguns tipos de habilidades podem manipular a interface da Cortana para ter uma conversa entre a habilidade e o usuário final. Depois que a habilidade é publicada, os usuários podem ver e usar a habilidade na Cortana para a Atualização de Aniversário do Windows 10+ (Desktop e Mobile), no iOS e no Android.
+Agora você pode adicionar suporte ao Bot criando uma Habilidade da Cortana. Use o kit de Habilidades da Cortana para criar recursos (chamados de habilidades) para a Cortana. Uma habilidade é um constructo que permite à Cortana fazer mais. Crie habilidades para integrá-las aos Bots, permitindo que a Cortana realize tarefas e faça coisas. Como parte do processo de invocação, a Cortana pode (com o consentimento do usuário) passar informações sobre o usuário para uma habilidade em runtime, de modo que a habilidade possa personalizar sua experiência de acordo. O conhecimento contextual da Cortana possibilita que o Bot seja útil e, possivelmente, até mesmo mais inteligente para o usuário. Quando invocados, alguns tipos de habilidades podem manipular a interface da Cortana para ter uma conversa entre a habilidade e o usuário final. Depois que a habilidade é publicada, os usuários podem ver e usar a habilidade na Cortana para a Atualização de Aniversário do Windows 10+ (Desktop e Mobile), no iOS e no Android.
 
 ### <a name="application-insights"></a>Application Insights
 O Application Insights ajuda a obter insights práticos pelo APM (gerenciamento de desempenho de aplicativo) e por análises instantâneas. Pronto para uso, é possível obter monitoramento de desempenho avançado, alertas eficientes e painéis fáceis de usar para ajudar a garantir que o Bot esteja disponível e executando conforme o esperado. Veja rapidamente se há algum problema e faça uma análise da causa raiz para encontrar e corrigi-lo.

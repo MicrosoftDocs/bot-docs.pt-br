@@ -1,5 +1,5 @@
 ---
-title: Criar mensagens com o SDK do Bot Framework para .NET | Microsoft Docs
+title: Criar mensagens com o SDK do Bot Framework para .NET – Serviço de Bot
 description: Saiba mais sobre as propriedades de mensagens comumente usadas no SDK do Bot Framework para .NET.
 author: RobStand
 ms.author: kamrani
@@ -8,18 +8,18 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: bb75e49e50a479e0141000ef49d75559148fe43a
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 8f043afc1b4faad3f7edc66c7ef1d788c42d8403
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70297299"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75794667"
 ---
 # <a name="create-messages"></a>Criar mensagens
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
-Seu bot enviará **atividades** de [mensagens](bot-builder-dotnet-activities.md) para comunicar informações aos usuários e, da mesma forma, também receberá atividades de **mensagens** dos usuários. Algumas mensagens podem simplesmente consistir em texto sem formatação, enquanto outras podem conter conteúdo mais elaborado, como [texto a ser falado](bot-builder-dotnet-text-to-speech.md), [ações sugeridas](bot-builder-dotnet-add-suggested-actions.md), [anexos de mídia](bot-builder-dotnet-add-media-attachments.md), [cartões avançados](bot-builder-dotnet-add-rich-card-attachments.md) e [dados específicos do canal](bot-builder-dotnet-channeldata.md). 
+Seu bot enviará **atividades de** [mensagens](bot-builder-dotnet-activities.md) para comunicar informações aos usuários e, da mesma forma, também receberá atividades de **mensagens** dos usuários. Algumas mensagens podem simplesmente consistir em texto sem formatação, enquanto outras podem conter conteúdo mais elaborado, como [texto a ser falado](bot-builder-dotnet-text-to-speech.md), [ações sugeridas](bot-builder-dotnet-add-suggested-actions.md), [anexos de mídia](bot-builder-dotnet-add-media-attachments.md), [cartões avançados](bot-builder-dotnet-add-rich-card-attachments.md) e [dados específicos do canal](bot-builder-dotnet-channeldata.md). 
 
 Este artigo descreve algumas das propriedades de mensagem comumente usadas.
 
@@ -41,7 +41,7 @@ A propriedade `Attachments` de uma atividade de mensagens pode ser usada para en
 
 A propriedade `Entities` de uma mensagem é uma matriz de objetos <a href="http://schema.org/" target="_blank">schema.org</a> abertos que permite a troca de metadados contextuais comuns entre o canal e o bot.
 
-### <a name="mention-entities"></a>Entidades de Menção
+### <a name="mention-entities"></a>Entidades de menção
 
 Vários canais dão suporte à capacidade de um usuário ou bot "mencionar" alguém dentro do contexto de uma conversa. Para mencionar um usuário em uma mensagem, preencha a propriedade `Entities` da mensagem com um objeto `Mention`. O objeto `Mention` contém essas propriedades: 
 
@@ -70,14 +70,14 @@ O objeto `Place` contém essas propriedades:
 | Endereço | descrição ou objeto `PostalAddress` (futuro) | 
 | Localização geográfica | GeoCoordinates | 
 | HasMap | URL para um mapa ou objeto `Map` (futuro) |
-| NOME | nome do local |
+| Nome | nome do local |
 
 O objeto `GeoCoordinates` contém essas propriedades:
 
 | Propriedade | DESCRIÇÃO | 
 |----|----|
 | Type | tipo da entidade ("GeoCoordinates") |
-| NOME | nome do local |
+| Nome | nome do local |
 | Longitude | longitude da localização (<a href="https://en.wikipedia.org/wiki/World_Geodetic_System" target="_blank">WGS 84</a>) | 
 | Latitude | latitude da localização (<a href="https://en.wikipedia.org/wiki/World_Geodetic_System" target="_blank">WGS 84</a>) | 
 | Elevação | elevação da localização (<a href="https://en.wikipedia.org/wiki/World_Geodetic_System" target="_blank">WGS 84</a>) | 
@@ -98,7 +98,7 @@ Este exemplo de código mostra como usar uma classe fortemente tipada para proce
 
 [!code-csharp[examine entity using typed class](../includes/code/dotnet-create-messages.cs#examineEntity2)]
 
-## <a name="channel-data"></a>Dados de canal
+## <a name="channel-data"></a>Dados do canal
 
 A propriedade `ChannelData` de uma atividade de mensagem pode ser usada para implementar a funcionalidade específica do canal. Para ver detalhes, confira [Implementar a funcionalidade específica do canal](bot-builder-dotnet-channeldata.md).
 
@@ -121,11 +121,11 @@ Um bot e um usuário podem enviar mensagens uns aos outros. Quando a mensagem fo
 
 - [Visão geral das atividades](bot-builder-dotnet-activities.md)
 - [Enviar e receber atividades](bot-builder-dotnet-connector.md)
-- [Adicionar anexos de mídia a mensagens](bot-builder-dotnet-add-media-attachments.md)
-- [Adicionar cartões avançados a mensagens](bot-builder-dotnet-add-rich-card-attachments.md)
+- [Adicionar anexos de mídia às mensagens](bot-builder-dotnet-add-media-attachments.md)
+- [Adicionar cartões ricos mensagens](bot-builder-dotnet-add-rich-card-attachments.md)
 - [Adicionar fala a mensagens](bot-builder-dotnet-text-to-speech.md)
 - [Adicionar ações sugeridas a mensagens](bot-builder-dotnet-add-suggested-actions.md)
 - [Implementar a funcionalidade específica do canal](bot-builder-dotnet-channeldata.md)
-- <a href="https://docs.botframework.com/csharp/builder/sdkreference/dc/d2f/class_microsoft_1_1_bot_1_1_connector_1_1_activity.html" target="_blank">Classe Activity</a>
+- <a href="https://docs.botframework.com/csharp/builder/sdkreference/dc/d2f/class_microsoft_1_1_bot_1_1_connector_1_1_activity.html" target="_blank">Classe de atividade</a>
 - <a href="/dotnet/api/microsoft.bot.connector.imessageactivity" target="_blank">Interface IMessageActivity</a>
 

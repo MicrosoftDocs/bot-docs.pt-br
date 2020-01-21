@@ -1,5 +1,5 @@
 ---
-title: Implementar fluxo de conversa sequencial | Microsoft Docs
+title: Implementar o fluxo de conversa sequencial – Serviço de Bot
 description: Saiba como gerenciar um fluxo de conversa simples com diálogos no SDK do Bot Framework.
 keywords: fluxo de conversa simples, fluxo de conversa sequencial, diálogos, prompts, cascatas, conjunto de diálogos
 author: JonathanFingold
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/05/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f1e186140c146a87c1186bccb3329604b615468c
-ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
+ms.openlocfilehash: 9ee6e9445871445008f6ab406f3250af0226c0dd
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75491868"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798505"
 ---
 # <a name="implement-sequential-conversation-flow"></a>Implementar fluxo de conversa sequencial
 
@@ -30,7 +30,7 @@ Você pode gerenciar fluxos de conversa simples e complexos usando a biblioteca 
 ## <a name="prerequisites"></a>Prerequisites
 
 - Conhecimento de [noções básicas de bot][concept-basics], [gerenciamento de estado][concept-state] e [biblioteca de diálogos][concept-dialogs].
-- Uma cópia do **exemplo de prompt de vários turnos** em [**C#** ][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
+- Uma cópia do **exemplo de prompt de vários turnos** em [**C#**][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
@@ -83,7 +83,7 @@ O modo de transporte, o nome e a idade do usuário são salvos em uma instância
 
 **Dialogs\UserProfileDialog.cs**
 
-Na última etapa, verificamos o `stepContext.Result` retornado pelo diálogo chamado na etapa anterior da cascata. Se o valor retornado for true, usaremos o acessador de perfil do usuário para obter e atualizar o perfil do usuário. Para obter o perfil do usuário, chamamos o método `GetAsync` e definimos os valores das propriedades `userProfile.Transport`, `userProfile.Name` e `userProfile.Age`. Por fim, resumimos as informações para o usuário antes de chamar `EndDialogAsync`, que termina o diálogo. O fim do diálogo o remove da pilha de diálogo e retorna um resultado opcional ao pai dele. O pai é o método ou diálogo que iniciou o diálogo recém-terminado.
+Na última etapa, verificamos o `stepContext.Result` retornado pelo diálogo chamado na etapa anterior da cascata. Se o valor retornado for true, usaremos o acessador de perfil do usuário para obter e atualizar o perfil do usuário. Para obter o perfil do usuário, chamamos o método `GetAsync` e definimos os valores das propriedades `userProfile.Transport`, `userProfile.Name`, `userProfile.Age` e `userProfile.Picture`. Por fim, resumimos as informações para o usuário antes de chamar `EndDialogAsync`, que termina o diálogo. O fim do diálogo o remove da pilha de diálogo e retorna um resultado opcional ao pai dele. O pai é o método ou diálogo que iniciou o diálogo recém-terminado.
 
 [!code-csharp[SummaryStepAsync](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=137-179&highlight=5-11,41-42)]
 
@@ -121,7 +121,7 @@ O modo de transporte, o nome e a idade do usuário são salvos em uma instância
 
 **dialogs/userProfileDialog.js**
 
-Na última etapa, verificamos o `step.result` retornado pelo diálogo chamado na etapa anterior da cascata. Se o valor retornado for true, usaremos o acessador de perfil do usuário para obter e atualizar o perfil do usuário. Para obter o perfil do usuário, chamamos o método `get` e definimos os valores das propriedades `userProfile.transport`, `userProfile.name` e `userProfile.age`. Por fim, resumimos as informações para o usuário antes de chamar `endDialog`, que termina o diálogo. O fim do diálogo o remove da pilha de diálogo e retorna um resultado opcional ao pai dele. O pai é o método ou diálogo que iniciou o diálogo recém-terminado.
+Na última etapa, verificamos o `step.result` retornado pelo diálogo chamado na etapa anterior da cascata. Se o valor retornado for true, usaremos o acessador de perfil do usuário para obter e atualizar o perfil do usuário. Para obter o perfil do usuário, chamamos o método `get` e definimos os valores das propriedades `userProfile.transport`, `userProfile.name`, `userProfile.age` e `userProfile.picture`. Por fim, resumimos as informações para o usuário antes de chamar `endDialog`, que termina o diálogo. O fim do diálogo o remove da pilha de diálogo e retorna um resultado opcional ao pai dele. O pai é o método ou diálogo que iniciou o diálogo recém-terminado.
 
 [!code-javascript[summary step](~/../botbuilder-samples/samples/javascript_nodejs/05.multi-turn-prompt/dialogs/userProfileDialog.js?range=137-167&highlight=3-9,29-30)]
 
@@ -274,6 +274,34 @@ Há várias opções para manter as etapas de diálogo e o estado de bot separad
 - Usar o método terminar diálogo para fornecer os dados coletados como valor retornado ao contexto-pai. Pode ser o manipulador de turnos do bot ou um diálogo ativo anterior na pilha de diálogos. É assim que as classes de prompt são criadas.
 - Gere uma solicitação para um serviço apropriado. Isso pode funcionar bem se seu bot atuar como um front-end para um serviço maior.
 
+### <a name="definition-of-a-prompt-validator-method"></a>Definição de um método validador de prompt
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp) 
+
+**UserProfileDialog.cs**
+
+Veja abaixo um exemplo de código validador para a definição do método `AgePromptValidatorAsync`. `promptContext.Recognized.Value` contém o valor analisado, que é um inteiro aqui para o prompt do número. `promptContext.Recognized.Succeeded` indica se o prompt foi capaz de analisar a entrada do usuário ou não. O validador deve retornar false para indicar que o valor não foi aceito e a caixa de diálogo de prompt deve perguntar novamente ao usuário; caso contrário, retorna true para aceitar a entrada e retornar da caixa de diálogo de prompt. Observe que você pode alterar o valor no validador de acordo com seu cenário. 
+
+[!code-csharp[prompt validator method](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=181-185)]
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+**dialogs\userProfileDialog.js**
+
+Veja abaixo um exemplo de código validador para a definição do método `agePromptValidator`. `promptContext.recognized.value` contém o valor analisado, que é um inteiro aqui para o prompt do número. `promptContext.recognized.succeeded` indica se o prompt foi capaz de analisar a entrada do usuário ou não. O validador deve retornar false para indicar que o valor não foi aceito e a caixa de diálogo de prompt deve perguntar novamente ao usuário; caso contrário, retorna true para aceitar a entrada e retornar da caixa de diálogo de prompt. Observe que você pode alterar o valor no validador de acordo com seu cenário. 
+
+[!code-javascript[prompt validator method](~/../botbuilder-samples/samples/javascript_nodejs/05.multi-turn-prompt/dialogs/userProfileDialog.js?range=169-172)]
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+**dialogs/user_profile_dialog.py**
+
+Veja abaixo um exemplo de código validador para a definição do método `age_prompt_validator`. `prompt_context.recognized.value` contém o valor analisado, que é um inteiro aqui para o prompt do número. `prompt_context.recognized.succeeded` indica se o prompt foi capaz de analisar a entrada do usuário ou não. O validador deve retornar false para indicar que o valor não foi aceito e a caixa de diálogo de prompt deve perguntar novamente ao usuário; caso contrário, retorna true para aceitar a entrada e retornar da caixa de diálogo de prompt. Observe que você pode alterar o valor no validador de acordo com seu cenário. 
+
+[!code-python[prompt validator method](~/../botbuilder-samples/samples/python/05.multi-turn-prompt/dialogs/user_profile_dialog.py?range=207-212)]
+
+---
+
 ## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
@@ -291,3 +319,4 @@ Há várias opções para manter as etapas de diálogo e o estado de bot separad
 [cs-sample]: https://aka.ms/cs-multi-prompts-sample
 [js-sample]: https://aka.ms/js-multi-prompts-sample
 [python-sample]: https://aka.ms/python-multi-prompts-sample
+

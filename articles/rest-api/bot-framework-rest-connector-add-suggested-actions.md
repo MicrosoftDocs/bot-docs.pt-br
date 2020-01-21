@@ -1,5 +1,5 @@
 ---
-title: Adicionar ações sugeridas a mensagens | Microsoft Docs
+title: Adicionar ações sugeridas a mensagens – Serviço de Bot
 description: Saiba como adicionar ações sugeridas a mensagens usando o serviço Bot Connector.
 author: RobStand
 ms.author: kamrani
@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: b8b0eb454b77332a8b19104af78d9553582ab854
-ms.sourcegitcommit: c200cc2db62dbb46c2a089fb76017cc55bdf26b0
+ms.openlocfilehash: ea8c76df736678754db95d7306605f5ef10b6a11
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70037142"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790077"
 ---
 # <a name="add-suggested-actions-to-messages"></a>Adicionar ações sugeridas a mensagens
 > [!div class="op_single_selector"]
@@ -26,7 +26,7 @@ ms.locfileid: "70037142"
 
 Para adicionar ações sugeridas a uma mensagem, defina a propriedade `suggestedActions` do objeto [Atividade][] para especificar a lista de objetos [CardAction][] que representam os botões a serem apresentados ao usuário. 
 
-A solicitação a seguir envia uma mensagem que apresenta três ações sugeridas para o usuário. Nessa solicitação de exemplo, `https://smba.trafficmanager.net/apis` representa o URI de base; o URI de base para solicitações em que os seus problemas de bot podem ser diferentes. Para obter detalhes sobre como definir o URI de base, veja [Referência da API](bot-framework-rest-connector-api-reference.md#base-uri).
+A solicitação a seguir envia uma mensagem que apresenta três ações sugeridas para o usuário. Nessa solicitação de exemplo, `https://smba.trafficmanager.net/apis` representa o URI base; o URI base das solicitações emitidas pelo bot pode ser diferente. Para obter detalhes sobre como definir o URI base, confira [Referência de API](bot-framework-rest-connector-api-reference.md#base-uri).
 
 ```http
 POST https://smba.trafficmanager.net/apis/v3/conversations/abcd1234/activities/5d5cdc723

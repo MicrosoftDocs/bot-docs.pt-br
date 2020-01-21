@@ -1,5 +1,5 @@
 ---
-title: Referência rápida da migração do .NET v3 para v4 | Microsoft Docs
+title: Referência rápida da migração do .NET v3 para v4 – Serviço de Bot
 description: Uma descrição das principais diferenças no SDK v3 e v4 do Bot Framework para .NET.
 keywords: .net, migração de bot, caixas de diálogo, bot v3
 author: JonathanFingold
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/31/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: ff072cd3a16c3a58099cf91c1de962837994075b
-ms.sourcegitcommit: 4751c7b8ff1d3603d4596e4fa99e0071036c207c
+ms.openlocfilehash: f8569aa3d4e2e227e7b348675429e5f347b13329
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73441500"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791018"
 ---
 # <a name="net-migration-quick-reference"></a>Referência rápida da migração do .NET
 
@@ -142,7 +142,7 @@ protected override async Task OnMessageActivityAsync(
 context.Call(new NextDialog(), this.ResumeAfterNextDialog);
 ```
 
-ou o
+ou
 
 ```cs
 await context.Forward(new NextDialog(), this.ResumeAfterNextDialog, message);
@@ -154,7 +154,7 @@ await context.Forward(new NextDialog(), this.ResumeAfterNextDialog, message);
 dialogContext.BeginDialogAsync("<child-dialog-id>", options);
 ```
 
-ou o
+ou
 
 ```cs
 dialogContext.ReplaceDialogAsync("<child-dialog-id>", options);

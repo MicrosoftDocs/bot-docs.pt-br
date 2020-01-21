@@ -1,5 +1,5 @@
 ---
-title: Enviar mensagens proativas | Microsoft Docs
+title: Enviar mensagens proativas (JS v3) – Serviço de Bot
 description: Saiba como interromper o fluxo da conversa atual com uma mensagem proativa usando o SDK do Bot Framework para Node.js
 author: v-ducvo
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 58a6678561d048d0257dc81d37d4db4cbca9b382
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: e23d74c5f1dfb36625db99fc906185159d3362a9
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299796"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790831"
 ---
 # <a name="send-proactive-messages"></a>Enviar mensagens proativas
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
@@ -92,7 +92,7 @@ bot.dialog('proactiveDialog', function (session, args) {
 });
 ```
 
-Quando for a hora de enviar a mensagem, o bot criará um novo diálogo e o adicionará ao início da pilha de diálogos. O novo diálogo assume o controle da conversa, entrega a mensagem proativa, fecha e, em seguida, retorna o controle ao diálogo anterior na pilha. 
+Quando for a hora de enviar a mensagem, o bot criará um novo diálogo e o adicionará ao topo da pilha de diálogos. O novo diálogo assume o controle da conversa, entrega a mensagem proativa, fecha e, em seguida, retorna o controle para o diálogo anterior na pilha. 
 
 ```javascript
 // initiate a dialog proactively 
@@ -119,7 +119,7 @@ bot.dialog('survey', function (session, args, next) {
 });
 ```
 
-## <a name="sample-code"></a>Exemplo de código
+## <a name="sample-code"></a>Código de exemplo
 
 Veja um exemplo completo mostrando como enviar mensagens proativas usando o SDK do Bot Framework para Node.js em <a href="https://aka.ms/js-proactivemessages-sample-v3" target="_blank">Exemplo de mensagens proativas</a> no GitHub. No exemplo de Mensagens Proativas, <a href="https://aka.ms/js-simplesendmessage-sample-v3" target="_blank">simpleSendMessage</a> mostra como enviar uma mensagem proativa ad-hoc e <a href="https://aka.ms/js-startnewdialog-sample-v3" target="_blank">startNewDialog</a> mostra como enviar uma mensagem proativa baseada em diálogo.
 

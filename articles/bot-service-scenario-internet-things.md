@@ -1,5 +1,5 @@
 ---
-title: Cenário de bot de Internet das Coisas | Microsoft Docs
+title: Cenários de bot da Internet das Coisas – Serviço de Bot
 description: Explore o cenário de bot de Internet das Coisas com o Bot Framework.
 author: BrianRandell
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 53a99c4313604d55da6554e927109f0f2f74104c
-ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
+ms.openlocfilehash: 1089296005b060185617e4bf0280cb81198b32a2
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167362"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75795046"
 ---
 # <a name="internet-of-things-iot-bot-scenario"></a>Cenário de Bot de IoT (Internet das Coisas)
 
@@ -31,14 +31,14 @@ Este é o fluxo lógico de um bot de IoT:
 2. Com o uso da voz, o usuário pede ao bot que ligue as luzes por meio do dispositivo IoT.
 3. A solicitação é retransmitida para um serviço de terceiros que tenha acesso à rede de dispositivos IoT.
 4. Os resultados do comando são fornecidos ao usuário.
-5. O Application Insights coleta a telemetria do tempo de execução para ajudar o desenvolvimento com o desempenho e uso do bot.
+5. O Application Insights coleta a telemetria do runtime para ajudar o desenvolvimento com o desempenho e uso do bot.
 
-## <a name="sample-bot"></a>Exemplo de bot
+## <a name="sample-bot"></a>Bot de exemplo
 O bot de IoT permitirá que você use rapidamente comandos de chat de canais como Skype ou Slack para controlar sua Hue. Para facilitar o acesso remoto, você chamará miniaplicativos IFTTT predefinidos para trabalhar com a Hue.
 
-Você pode baixar ou clonar o código-fonte deste exemplo de bot em [Exemplos de cenários comuns do Bot Framework](https://aka.ms/abs-scenarios).
+Baixe ou clone o código-fonte desse bot de exemplo em [Exemplos para cenários comuns do Bot Framework](https://aka.ms/abs-scenarios).
 
-## <a name="components-youll-use"></a>Componentes que você usará
+## <a name="components-youll-use"></a>Componentes que serão utilizados
 O Bot de IoT (Internet das Coisas) usa os seguintes componentes:
 -   Philips Hue
 -   IFTTT (If This Then That)
@@ -51,4 +51,4 @@ As lâmpadas e ponte conectadas da Philips Hue permitem que você assuma control
 IFTTT é um serviço gratuito baseado na Web usado pelas pessoas para criar cadeias de instruções condicionais simples, chamadas de miniaplicativos. Você pode disparar um miniaplicativo de seu Bot para que ele faça algo em seu nome. Há diversos miniaplicativos predefinidos da Hue disponíveis para acender e apagar luzes, alterar o ambiente e muito mais.
 
 ### <a name="application-insights"></a>Application Insights
-O Application Insights ajuda a obter insights práticos pelo APM (gerenciamento de desempenho de aplicativo) e por análises instantâneas. Pronto para uso, é possível obter monitoramento de desempenho avançado, alertas eficientes e painéis fáceis de usar para ajudar a garantir que o Bot esteja disponível e executando conforme o esperado. Veja rapidamente se há algum problema e faça uma análise da causa raiz para encontrar e corrigir o problema.
+O Application Insights ajuda a obter insights práticos pelo APM (gerenciamento de desempenho de aplicativo) e por análises instantâneas. Pronto para uso, é possível obter monitoramento de desempenho avançado, alertas eficientes e painéis fáceis de usar para ajudar a garantir que o Bot esteja disponível e executando conforme o esperado. Veja rapidamente se há algum problema e faça uma análise da causa raiz para encontrar e corrigi-lo.

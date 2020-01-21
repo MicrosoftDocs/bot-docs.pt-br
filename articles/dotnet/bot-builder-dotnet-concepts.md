@@ -1,5 +1,5 @@
 ---
-title: Principais conceitos no SDK do Bot Framework para .NET | Microsoft Docs
+title: Principais conceitos no SDK do Bot Framework para .NET – Serviço de Bot
 description: Entenda os principais conceitos e ferramentas para criar e implementar bots de conversação disponíveis no SDK do Bot Framework para .NET.
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 0b0493d9975e58dda0f2195c03d887e4681ca0bf
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 027006f2ad3d6aff1094142a41d791ba0e5d8922
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298382"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75789817"
 ---
 # <a name="key-concepts-in-the-bot-framework-sdk-for-net"></a>Principais conceitos no SDK do Bot Framework para .NET
 

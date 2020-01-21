@@ -1,5 +1,5 @@
 ---
-title: Como funcionam os bots | Microsoft Docs
+title: Como funcionam os bots – Serviço de Bot
 description: Descreve como a atividade e o HTTP funcionam no SDK do Bot Framework.
 keywords: fluxo da conversa, turno, conversa de bot, diálogos, prompts, cascatas, conjunto de diálogos
 author: johnataylor
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 97f8318b6f9035e3ac3be1983b0691f627240242
-ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
+ms.openlocfilehash: f34d59c801708b62f1429b9edb17fccc05a3b983
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75491537"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791305"
 ---
 # <a name="how-bots-work"></a>Como funcionam os bots
 
@@ -160,7 +160,7 @@ A lógica principal do bot é definida no código do bot; aqui, ele se chama `Bo
 
 Os manipuladores definidos em `ActivityHandler` são:
 
-| Evento | Manipulador | DESCRIÇÃO |
+| Evento | Manipulador | Descrição |
 | :-- | :-- | :-- |
 | Qualquer tipo de atividade recebido | `OnTurnAsync` | Chama um dos outros manipuladores com base no tipo de atividade recebido. |
 | Atividade de mensagem recebida | `OnMessageActivityAsync` | Substitua-o para lidar com uma atividade `message`. |
@@ -208,7 +208,7 @@ A lógica principal do bot é definida no código do bot; aqui, ele se chama `bo
 
 Os manipuladores definidos em `ActivityHandler` são:
 
-| Evento | Manipulador | DESCRIÇÃO |
+| Evento | Manipulador | Descrição |
 | :-- | :-- | :-- |
 | Qualquer tipo de atividade recebido | `onTurn` | Chamado quando qualquer atividade é recebida. |
 | Atividade de mensagem recebida | `onMessage` | Chamado quando uma atividade `message` é recebida. |
@@ -256,7 +256,7 @@ A lógica principal do bot é definida no código do bot; aqui, ele se chama `bo
 
 Os manipuladores definidos em `ActivityHandler` são:
 
-| Evento | Manipulador | DESCRIÇÃO |
+| Evento | Manipulador | Descrição |
 | :-- | :-- | :-- |
 | Qualquer tipo de atividade recebido | `on_turn` | Chama um dos outros manipuladores com base no tipo de atividade recebido. |
 | Atividade de mensagem recebida | `on_message_activity` | Substitua-o para lidar com uma atividade `message`. |

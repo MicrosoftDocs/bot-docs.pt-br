@@ -1,5 +1,5 @@
 ---
-title: Trocar informações usando o controle da Web | Microsoft Docs
+title: Trocar informações usando o controle da Web – Serviço de Bot
 description: Saiba como trocar informações entre o bot e uma página da Web usando o SDK do Bot Framework para Node.js.
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 52f57cba5824deb01b176363880084760a95a41b
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 1b4548b02f714ce3948acb3eaed25fcf916a2d9f
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299920"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790968"
 ---
 # <a name="use-the-backchannel-mechanism"></a>Usar mecanismo de backchannel
 
@@ -27,7 +27,7 @@ O controle de Webchat de software livre acessa a API de Linha Direta usando uma 
 
 ![Backchannel](../media/designing-bots/patterns/back-channel.png)
 
-### <a name="sample-code"></a>Exemplo de código 
+### <a name="sample-code"></a>Código de exemplo 
 
 Neste exemplo, o bot e a página da Web usarão o mecanismo de backchannel para trocar informações que estão invisíveis para o usuário. O bot solicitará que a página da Web altere a cor da tela de fundo e a página da Web notificará o bot quando o usuário clicar em um botão na página. 
 

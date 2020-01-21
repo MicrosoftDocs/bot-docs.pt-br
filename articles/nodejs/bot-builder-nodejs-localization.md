@@ -1,5 +1,5 @@
 ---
-title: Suporte à localização | Microsoft Docs
+title: Suporte à localização – Serviço de Bot
 description: Saiba como determinar onde o usuário está e habilitar a funcionalidade de localização usando o SDK do Bot Framework para Node.js.
 author: DeniseMak
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 68cc1134e8a26c8cbc49b0527cc598c5b409d5db
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: eb9d2c484a76c0db5720f274b3c592d2d648a75b
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299817"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790868"
 ---
 # <a name="support-localization"></a>Suporte à localização
 

@@ -1,5 +1,5 @@
 ---
-title: Gerenciar um bot | Microsoft Docs
+title: Gerenciar um bot – Serviço de Bot
 description: Saiba como gerenciar um bot por meio do portal de serviço de bot.
 keywords: portal do Azure, gerenciamento de bot, teste em webchat, MicrosoftAppID, MicrosoftAppPassword, configurações de aplicativo
 author: v-ducvo
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 8/13/2019
-ms.openlocfilehash: 2aea5c5feb144f5e9b1cb7f2947f409f827fb009
-ms.sourcegitcommit: 9e1034a86ffdf2289b0d13cba2bd9bdf1958e7bc
+ms.openlocfilehash: 9a62a6d2bc1d47862d8ab25250dd3839d3e21d56
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69890501"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75794151"
 ---
 # <a name="manage-a-bot"></a>Gerenciar um bot
 

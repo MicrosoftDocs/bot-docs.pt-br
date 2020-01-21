@@ -1,5 +1,5 @@
 ---
-title: Criar experiências controladas por dados com o Azure Search | Microsoft Docs
+title: Criar experiências controladas por dados com o Azure Search (JS v3) – Serviço de Bot
 description: Saiba como criar experiências controladas por dados com o Azure Search e ajudar os usuários a navegar em grandes quantidades de conteúdo em um bot com o SDK do Bot Framework para Node.js e Azure Search.
 author: matthewshim-ms
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 0a5ebd10e076b44708f13de0b8485bffff3419af
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 44d84cf84362105bfd1f97a7993d4b18d73d7eae
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299748"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790624"
 ---
 # <a name="create-data-driven-experiences-with-azure-search"></a>Criar experiências controladas por dados com o Azure Search 
 
@@ -25,7 +25,7 @@ ms.locfileid: "70299748"
 
 Adicione o [Azure Search][search] ao bot para ajudar o usuário a navegar em grandes quantidades de conteúdo e criar uma experiência de exploração controlada por dados para os usuários do bot.
 
-Azure Search é um serviço do Azure que oferece pesquisa por palavra-chave, linguística interna, a pontuação personalizada, faceted navigation e mais. O Azure Search também pode indexar o conteúdo de várias fontes, incluindo o BD SQL do Azure, DocumentDB, Armazenamento de Blobs e Armazenamento de Tabelas. Ele dá suporte à indexação "push" para outras fontes de dados e pode abrir PDFs, documentos do Office e outros formatos que contém dados não estruturados. Depois de coletado, o conteúdo entra em um índice do Azure Search, que o bot pode então consultar.
+Azure Search é um serviço do Azure que oferece pesquisa por palavra-chave, linguística interna, a pontuação personalizada, faceted navigation e mais. O Azure Search também pode indexar conteúdo de várias fontes, incluindo o Azure SQL DB, DocumentDB, Armazenamento de Blobs e Armazenamento de Tabelas. Ele dá suporte à indexação "push" para outras fontes de dados e pode abrir PDFs, documentos do Office e outros formatos que contém dados não estruturados. Depois de coletado, o conteúdo entra em um índice do Azure Search, que o bot pode então consultar.
 
 ## <a name="install-dependencies"></a>Instalar dependências
 
@@ -35,7 +35,7 @@ Em um prompt de comando, navegue até o diretório do projeto do bot e instale o
 * [lodash](https://www.npmjs.com/package/lodash)
 * [solicitação](https://www.npmjs.com/package/request)
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 
 Os argumentos a seguir são **exigidos**: 
 - Ter uma assinatura do Azure e uma chave primária do Azure Search. Você pode encontrar isso no Portal do Azure.
@@ -148,7 +148,7 @@ function searchHitAsCard(showSave, searchHit) {
 }
 ```
 
-## <a name="sample-code"></a>Exemplo de código
+## <a name="sample-code"></a>Código de exemplo
 
 Veja dois exemplos completos que mostram como dar suporte ao Azure Search com os bots usando o SDK do Bot Framework para Node.js em [Exemplo de Bot de Imóveis](https://github.com/Microsoft/BotBuilder-Samples/tree/v3-sdk-samples/Node/demo-Search/RealEstateBot) ou [Exemplo de Bot de Listagem de Trabalhos](https://github.com/Microsoft/BotBuilder-Samples/tree/v3-sdk-samples/Node/demo-Search/JobListingBot) no GitHub. 
 

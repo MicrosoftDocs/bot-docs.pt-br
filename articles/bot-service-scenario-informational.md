@@ -1,5 +1,5 @@
 ---
-title: Cenário de bot de Informações | Microsoft Docs
+title: Cenário de bot de informações – Serviço de Bot
 description: Explore o cenário de bot de Informações com o Bot Framework.
 author: BrianRandell
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: f62f58de5e15092e34c1e612ef0b54bc2e4b5886
-ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
+ms.openlocfilehash: 4cb1865eae0f87efb6a1ecaa1a7a05e730e9e65c
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167372"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75794229"
 ---
 # <a name="information-bot-scenario"></a>Cenário de Bot de Informações
 
@@ -21,7 +21,7 @@ ms.locfileid: "70167372"
 
 Este Bot de Informações pode responder perguntas definidas em um conjunto de conhecimentos ou em perguntas frequentes usando o QnA Maker dos Serviços Cognitivos e responder perguntas mais abertas usando o Azure Search.
 
-É comum as informações ficarem soterradas em repositórios de dados estruturados, como o SQL Server, e serem facilmente exibidas por meio de pesquisas. Imagine pesquisar o status do pedido de um cliente por meio de comandos de conversa simples. Com o QnA Maker dos Serviços Cognitivos, o usuário recebe um conjunto de opções válidas de pesquisa, por exemplo, pesquisa de um cliente, analisar o pedido de mais recente do cliente etc. Com o formato do QnA definido, o usuário pode fazer perguntas respaldadas no Azure Search, o qual pode procurar dados armazenados em um Banco de Dados SQL.
+Frequentemente, as informações são arquivadas em armazenamentos de dados estruturados, como SQL Server, que podem facilmente ser exibidas por meio de pesquisa. Imagine pesquisar o status do pedido de um cliente por meio de comandos de conversa simples. Com o QnA Maker dos Serviços Cognitivos, o usuário recebe um conjunto de opções válidas de pesquisa, por exemplo, pesquisa de um cliente, analisar o pedido de mais recente do cliente etc. Com o formato do QnA definido, o usuário pode fazer perguntas respaldadas no Azure Search, o qual pode procurar dados armazenados em um Banco de Dados SQL.
 
 ![O diagrama de bot de Informações](~/media/scenarios/bot-service-scenario-informational-bot.png)
 
@@ -33,14 +33,14 @@ Este é o fluxo lógico de um bot de Informações:
 4. Os Serviços Cognitivos retornam um bot de perguntas frequentes criado com o QnA Maker.
 5. O funcionário define uma consulta válida.
 6. O bot envia a consulta ao Azure Search, que retorna as informações sobre os dados do aplicativo.
-7. O Application Insights coleta a telemetria do tempo de execução para ajudar o desenvolvimento com o desempenho e uso do bot.
+7. O Application Insights coleta a telemetria do runtime para ajudar o desenvolvimento com o desempenho e uso do bot.
 
-## <a name="sample-bot"></a>Exemplo de bot
+## <a name="sample-bot"></a>Bot de exemplo
 O exemplo de Bot, escrito em C#, é executado no Microsoft Azure e trabalha com dados indexados pelo Azure Search a partir de uma instância de Banco de Dados SQL. O Bot expõe uma lista de perguntas que podem ser feitas, com informações sobre como formular a pergunta (a resposta) usando os Serviços Cognitivos: QnA Maker. Em seguida, o usuário do Bot pode digitar uma consulta que procura os dados por meio do Azure Search em uma área ampla ou específica do banco de dados indexado. O exemplo fornece um banco de dados simples com informações sobre clientes e pedidos. O Application Insights controla o uso do Bot e ajuda você a monitorar o Bot em caso de exceções. O Bot é publicado como um aplicativo do Azure AD, assim você pode restringir quem tem acesso às informações.
 
-Você pode baixar ou clonar o código-fonte deste exemplo de bot em [Exemplos de cenários comuns do Bot Framework](https://aka.ms/abs-scenarios).
+Baixe ou clone o código-fonte desse bot de exemplo em [Exemplos para cenários comuns do Bot Framework](https://aka.ms/abs-scenarios).
 
-## <a name="components-youll-use"></a>Componentes que você usará
+## <a name="components-youll-use"></a>Componentes que serão utilizados
 O bot de Informações usa os seguintes componentes:
 -   Azure AD para autenticação
 -   Serviços Cognitivos: QnA Maker

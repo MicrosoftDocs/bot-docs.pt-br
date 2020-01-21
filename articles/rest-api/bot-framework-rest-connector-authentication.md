@@ -1,5 +1,5 @@
 ---
-title: Autenticar solicitações | Microsoft Docs
+title: Autenticar solicitações – Serviço de Bot
 description: Saiba como autenticar solicitações de API na API Bot Connector e API Bot State.
 author: RobStand
 ms.author: kamrani
@@ -7,14 +7,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: cc2421c5693d123f8dd76b238c37d6e4198b5dd8
-ms.sourcegitcommit: dcacda776c927bcc7c76d00ff3cc6b00b062bd6b
+ms.openlocfilehash: 60a246d60f3b74b037f793a306d58df1a5398141
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74410440"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790784"
 ---
-# <a name="authentication"></a>Authentication
+# <a name="authentication"></a>Autenticação
 
 O bot comunica-se com o serviço do Bot Connector usando HTTP em um canal seguro (SSL/TLS). Quando o bot envia uma solicitação ao serviço do Connector, ele deve incluir informações que o serviço do Connector pode usar para verificar a identidade do bot. Da mesma forma, quando o serviço do Connector envia uma solicitação ao bot, ele deve incluir informações que o bot pode usar para verificar a identidade do serviço. Este artigo descreve as tecnologias de autenticação e os requisitos para a autenticação de nível de serviço que ocorre entre um bot e o serviço do Bot Connector. Se você estiver escrevendo seu próprio código de autenticação, é necessário implementar os procedimentos de segurança descritos neste artigo para permitir ao bot trocar mensagens com o serviço do Bot Connector.
 
@@ -31,7 +31,7 @@ Caso esteja usando o [SDK do Bot Framework para .NET](../dotnet/bot-builder-dotn
 
 Quatro tecnologias de autenticação são usadas para estabelecer a relação de confiança entre um bot e o Bot Connector:
 
-| Tecnologia | DESCRIÇÃO |
+| Tecnologia | Descrição |
 |----|----|
 | **SSL/TLS** | SSL/TLS é usada para todas as conexões de serviço a serviço. Certificados `X.509v3` são usados para estabelecer a identidade de todos os serviços HTTPS. **Os clientes sempre devem inspecionar certificados de serviço para garantir que eles sejam confiáveis e válidos.** (Certificados de cliente NÃO são usados como parte desse esquema.) |
 | **OAuth 2.0** | O OAuth 2.0 usa o serviço de logon da conta do Azure AD (Azure Active Directory) v2 para gerar um token seguro que um bot pode usar para enviar mensagens. Esse token é um token de serviço a serviço; nenhum logon de usuário é exigido. |

@@ -1,5 +1,5 @@
 ---
-title: Adicionar sugestões de entrada às mensagens | Microsoft Docs
+title: Adicionar dicas de entrada a mensagens (JS v3) – Serviço de Bot
 description: Aprenda como adicionar dicas de entrada às mensagens usando o SDK do Bot Framework para .NET.
 author: v-ducvo
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 5e4d246942ef667bf233d5292ca2472cb470c7ce
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 354adb42b4442fdc443192cd6b058a9f56d45eed
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299740"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790564"
 ---
 # <a name="add-input-hints-to-messages"></a>Adicionar dicas de entrada às mensagens
 

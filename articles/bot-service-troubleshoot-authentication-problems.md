@@ -1,5 +1,5 @@
 ---
-title: Solucionar problemas de autenticação do Bot Framework | Microsoft Docs
+title: Solucionar problemas de autenticação do Bot Framework – Serviço de Bot
 description: Saiba como solucionar erros de autenticação com seu bot.
 author: DeniseMak
 ms.author: kamrani
@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 04/30/2019
-ms.openlocfilehash: c929a97175858f8e159b660346cb897183bbcf73
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: eda2e2887eddce7c113ff69871162a6b67cc398e
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70297450"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75796919"
 ---
 # <a name="troubleshooting-bot-framework-authentication"></a>Solucionar problemas de autenticação do Bot Framework
 

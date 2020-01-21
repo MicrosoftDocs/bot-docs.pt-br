@@ -1,5 +1,5 @@
 ---
-title: Entidades e tipos de atividades | Microsoft Docs
+title: Entidades e tipos de atividades – Serviço de Bot
 description: Entidades e tipos de atividades.
 keywords: mencionar entidades, tipos de atividades, consumir entidades
 author: ivorb
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 03/01/2018
-ms.openlocfilehash: e1eae45702a1eee94714f96425050948310c7520
-ms.sourcegitcommit: e9cd857ee11945ef0b98a1ffb4792494dfaeb126
+ms.openlocfilehash: cd11cc1fbbacb7e555da4e00337d6fd4b79a4df6
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71693123"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75789073"
 ---
 # <a name="entities-and-activity-types"></a>Entidades e tipos de atividades
 
@@ -31,7 +31,7 @@ Vários canais dão suporte à capacidade de um usuário ou bot "mencionar" algu
 Para mencionar um usuário em uma mensagem, preencha a propriedade entidades da mensagem com um objeto *mention*.
 O objeto mention contém essas propriedades:
 
-| Propriedade | DESCRIÇÃO |
+| Propriedade | Descrição |
 |----|----|
 | Type | tipo da entidade ("mention") |
 | Mencionado | objeto de conta de canal que indica que o usuário foi mencionado | 
@@ -69,20 +69,20 @@ As <a href="https://schema.org/Place" target="_blank">informações relacionadas
 
 O objeto Place contém essas propriedades:
 
-| Propriedade | DESCRIÇÃO |
+| Propriedade | Descrição |
 |----|----|
 | Type | tipo da entidade ("Place") |
 | Endereço | Descrição ou objeto de endereço postal (futuro) |
 | Localização geográfica | GeoCoordinates |
 | HasMap | URL para um mapa ou objeto de mapa (futuro) |
-| NOME | nome do local |
+| Nome | nome do local |
 
 O objeto GeoCoordinates contém essas propriedades:
 
-| Propriedade | DESCRIÇÃO |
+| Propriedade | Descrição |
 |----|----|
 | Type | tipo da entidade ("GeoCoordinates") |
-| NOME | nome do local |
+| Nome | nome do local |
 | Longitude | longitude da localização (<a href="https://en.wikipedia.org/wiki/World_Geodetic_System" target="_blank">WGS 84</a>) |
 | Latitude | latitude da localização (<a href="https://en.wikipedia.org/wiki/World_Geodetic_System" target="_blank">WGS 84</a>) |
 | Elevação | elevação da localização (<a href="https://en.wikipedia.org/wiki/World_Geodetic_System" target="_blank">WGS 84</a>) |

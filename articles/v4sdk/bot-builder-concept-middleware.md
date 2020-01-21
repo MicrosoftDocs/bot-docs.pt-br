@@ -1,5 +1,5 @@
 ---
-title: Middleware | Microsoft Docs
+title: Middleware – Serviço de Bot
 description: Entenda a middleware e de seus usos dentro de bot do SDK.
 keywords: middleware, pipeline de middleware, curto-circuito, usos de middleware
 author: ivorb
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 42082f90db8079e7bc0152b2947705a9c1f15115
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: ff735f3a382369da2e4d96d8128cd21f6abd0c15
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299466"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798731"
 ---
 # <a name="middleware"></a>Middleware
 

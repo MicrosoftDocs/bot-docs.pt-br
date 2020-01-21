@@ -1,5 +1,5 @@
 ---
-title: Realizar teste de unidade em bots | Microsoft Docs
+title: Bots de teste de unidade – Serviço de Bot
 description: Descreve como realizar teste de unidade em bots usando estruturas de teste.
 keywords: bot, testar bots, estrutura de teste de bot
 author: gabog
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 1e9d079b46c1cc4cc8c49e234b58540aeb4b2e7c
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: da99aa82c235bc8f530c9c2ad8d3ea1fa592b001
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298980"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798123"
 ---
 # <a name="how-to-unit-test-bots"></a>Como realizar testes de unidade em bots
 
@@ -28,7 +28,7 @@ Neste tópico, mostraremos como:
 - Criar diferentes tipos de testes controlados por dados
 - Criar objetos fictícios para as diversas dependências de uma caixa de diálogo (ou seja, reconhecedores do LUIS, etc.)
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 
 ## <a name="ctabcsharp"></a>[C#](#tab/csharp)
 

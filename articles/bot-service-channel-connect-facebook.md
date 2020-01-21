@@ -1,5 +1,5 @@
 ---
-title: Conectar um bot ao Facebook Messenger | Microsoft Docs
+title: Conectar um bot ao Facebook Messenger – Serviço de Bot
 description: Saiba como configurar a conexão de um bot com o Facebook Messenger.
 keywords: Facebook Messenger, canal de bot, Aplicativo Facebook, ID do Aplicativo, Segredo do Aplicativo, bot do Facebook, credenciais
 manager: kamrani
@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: kamrani
 ms.service: bot-service
 ms.date: 10/28/2019
-ms.openlocfilehash: ba9f0ec8f4b6f0e2f5a7069ab456f96b303a4c92
-ms.sourcegitcommit: 4751c7b8ff1d3603d4596e4fa99e0071036c207c
+ms.openlocfilehash: c4c2d9fbc048524f7301aabb79e6524a6cd19021
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73441632"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75792134"
 ---
 # <a name="connect-a-bot-to-facebook"></a>Conectar um bot ao Facebook
 
@@ -22,9 +22,6 @@ Seu bot pode ser conectado ao Facebook Messenger e ao Workplace do Facebook, par
 > A interface do usuário do Facebook pode parecer ligeiramente diferente de acordo com a versão que está sendo usada.
 
 ## <a name="connect-a-bot-to-facebook-messenger"></a>Conectar um bot ao Facebook Messenger
-
-> [!NOTE]
-> A partir de 16 de dezembro de 2019, o Workplace do Facebook alterará o modelo de segurança para integrações personalizadas.  As integrações atuais criadas com o Microsoft Bot Framework precisam ser atualizadas para usar o Bot Framework Adapter (disponível em JavaScript/Node.js) e implantadas usando um Aplicativo Web no Azure.  Novos bots do Workplace desenvolvidos usando o Microsoft Bot Framework também devem usar o adaptador do Facebook do JavaScript. Saiba mais sobre como [usar o adaptador do Facebook](https://aka.ms/botframework-workplace-adapter). As instruções abaixo funcionarão apenas até 16 de dezembro de 2019.
 
 Para saber mais sobre o desenvolvimento para o Facebook Messenger, confira a [documentação da plataforma Messenger](https://developers.facebook.com/docs/messenger-platform). Talvez você deseje examinar as [diretrizes de pré-lançamento](https://developers.facebook.com/docs/messenger-platform/product-overview/launch#app_public), o [início rápido](https://developers.facebook.com/docs/messenger-platform/guides/quick-start) e o [guia de instalação](https://developers.facebook.com/docs/messenger-platform/guides/setup) do Facebook.
 
@@ -135,8 +132,12 @@ Garanta que a Página do Facebook associada a esse bot seja publicada. O status 
 ## <a name="connect-a-bot-to-facebook-workplace"></a>Conectar um bot ao Workplace do Facebook
 
 > [!NOTE]
-> A partir de 16 de dezembro de 2019, o Workplace do Facebook alterará o modelo de segurança para integrações personalizadas.  As integrações atuais criadas usando o Microsoft Bot Framework v4 em JavaScript/Node.js precisam ser atualizadas para usar o [adaptador de Workplace do Facebook](https://aka.ms/botframework-workplace-adapter) do Bot Framework e implantadas usando o aplicativo Web do Azure para continuar trabalhando após essa data. Os novos bots do Microsoft Bot Framework direcionados ao Workplace também devem ser desenvolvidos usando esse adaptador.
-
+> Em 16 de dezembro de 2019, o Workplace by Facebook mudou o modelo de segurança para integrações personalizadas.  As integrações anteriores criadas usando o Microsoft Bot Framework v4 precisam ser atualizadas para usar os adaptadores de Facebook do Bot Framework de acordo com as instruções acima antes de 28 de fevereiro de 2020.  
+>
+> O Facebook vai considerar apenas integrações com acesso limitado a dados do Workplace (permissões de baixa sensibilidade) elegíveis para uso contínuo até 31 de dezembro de 2020 se tais integrações tiverem sido concluídas e aprovadas na RFI de Segurança e se o desenvolvedor entrar em contato antes de 15 de janeiro de 2020 pelo [Suporte Direto](https://my.workplace.com/work/admin/direct_support) para solicitar o uso contínuo do aplicativo.
+> 
+> Os adaptadores do Bot Framework estão disponíveis para bots do [JavaScript/Node.js](https://aka.ms/botframework-workplace-adapter) e [C#/.NET](https://aka.ms/bf-workplace-csharp).
+ 
 O Workplace do Facebook é uma versão do Facebook voltada para os negócios, que permite aos funcionários se conectar e colaborar com facilidade. Ele contém vídeos ao vivo, feeds de notícias, grupos, mensageiro, reações, pesquisa e postagens de tendências. Também dá suporte a:
 
 - Análise e integrações. Um painel com análise, integração, logon único e provedores de identidade que as empresas usam para integrar o Workplace aos seus sistemas de TI existentes.
@@ -178,9 +179,13 @@ Crie uma [integração personalizada](https://developers.facebook.com/docs/workp
 
     ![Página do Workplace](media/channels/fb-page.png)
 
+### <a name="update-your-bot-code-with-facebook-adapter"></a>Atualizar seu código de bot com o adaptador do Facebook
+
+O código-fonte do seu bot precisa ser atualizado para incluir um adaptador para comunicar com o Workplace by Facebook. Os adaptadores estão disponíveis para bots do [JavaScript/Node.js](https://aka.ms/botframework-workplace-adapter) e [C#/.NET](https://aka.ms/bf-workplace-csharp).
+
 ### <a name="provide-facebook-credentials"></a>Fornecer as credenciais do Facebook
 
-No portal do Azure, cole os valores de **ID do Aplicativo do Facebook**, **Segredo do Aplicativo do Facebook**, **Token de Acesso da Página** copiados anteriormente do Workplace do Facebook. Em vez de uma pageID tradicional, use os números que seguem o nome de integrações em sua página **Sobre**. Semelhante a conexão a um bot para Facebook Messenger, os webhooks podem ser conectados com as credenciais mostradas no Azure.
+Você precisará atualizar appsettings.json do seu bot com os valores de **ID do Aplicativo do Facebook**, **Segredo do Aplicativo do Facebook**, **Token de Acesso da Página** copiados anteriormente do Workplace do Facebook. Em vez de uma pageID tradicional, use os números que seguem o nome de integrações em sua página **Sobre**. Siga estas instruções para atualizar o código-fonte do bot no [JavaScript/Node.js](https://aka.ms/botframework-workplace-adapter) ou [C#/.NET](https://aka.ms/bf-workplace-csharp).
 
 ### <a name="submit-for-review"></a>Enviar para revisão
 Consulte a seção **Conectar um bot ao Facebook Messenger** e [Documentação de desenvolvedor do Workplace](https://developers.facebook.com/docs/workplace) para obter detalhes.
@@ -188,14 +193,213 @@ Consulte a seção **Conectar um bot ao Facebook Messenger** e [Documentação d
 ### <a name="make-the-app-public-and-publish-the-page"></a>Tornar o Aplicativo público e publicar a Página
 Consulte a seção **Conectar um bot ao Facebook Messenger** para obter detalhes.
 
-## <a name="setting-the-api-version"></a>Definir a versão da API
+### <a name="setting-the-api-version"></a>Definir a versão da API
 
 Se você receber uma notificação sobre a substituição de uma determinada versão da API do Graph do Facebook, vá para [página de desenvolvedores do Facebook](https://developers.facebook.com). Navegue até as **Configurações do aplicativo** do seu bot e vá para **Configurações > Avançadas > Atualizar versão de API**, depois troque para **Atualizar todas as chamadas** 3.0.
 
 ![Atualização de versão da API](media/channels/fb-version-upgrade.png)
 
-## <a name="see-also"></a>Consulte também
+## <a name="connect-a-bot-to-facebook-using-the-facebook-adapter"></a>Conectar um bot ao Facebook usando o adaptador do Facebook
+
+Assim como o canal disponível no Serviço de Bot do Azure para conectar o bot com o Facebook, você também pode usar o adaptador do Facebook. Neste artigo, você aprenderá a conectar um bot ao Facebook usando o adaptador.  Este artigo explicará como modificar o exemplo EchoBot para conectá-lo a um aplicativo do Facebook.
+
+> [!NOTE]
+> As instruções a seguir abordam a implementação em C# do adaptador do Facebook. Para obter instruções sobre como usar o adaptador JS, parte das bibliotecas BotKit, [consulte a documentação do Facebook sobre BotKit](https://botkit.ai/docs/v4/platforms/facebook.html).
+
+### <a name="prerequisites"></a>Prerequisites
+
+* O [código de exemplo do EchoBot](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/02.echo-bot)
+
+* Uma conta do Facebook para Desenvolvedores. Se você não tiver uma conta, poderá [criar uma aqui](https://developers.facebook.com).
+
+### <a name="create-a-facebook-app-page-and-gather-credentials"></a>Criar um aplicativo e uma página do Facebook e coletar credenciais
+
+1. Faça logon em [https://developers.facebook.com](https://developers.facebook.com). Clique em **Meus Aplicativos** no menu principal e clique em **Criar Aplicativo** no menu suspenso. 
+
+![Criar aplicativo](media/bot-service-channel-connect-facebook/create-app-button.png)
+
+2. Na janela pop-up exibida, insira um nome para seu novo aplicativo e clique em **Criar ID do Aplicativo**. 
+
+![Definir nome do aplicativo](media/bot-service-channel-connect-facebook/app-name.png)
+
+#### <a name="set-up-messenger-and-associate-a-facebook-page"></a>Configurar o Messenger e associar uma página do Facebook
+
+1. Depois que seu aplicativo tiver sido criado, você verá uma lista de produtos disponíveis para configuração. Clique no botão **Configurar** ao lado do produto **Messenger**.
+
+2. Agora você precisa associar seu novo aplicativo a uma página do Facebook (se você não tiver uma página existente que desejar usar, poderá criar uma clicando em **Criar Página** na seção **Tokens de Acesso**). Clique em **Adicionar ou Remover Páginas**, selecione a página que deseja associar ao seu aplicativo e clique em **Avançar**. Deixe a configuração **Gerenciar e acessar conversas de Página no Messenger** habilitada e clique em **Concluído**.
+
+![Configurar o messenger](media/bot-service-channel-connect-facebook/app-page-permissions.png)
+
+3. Depois de associar sua página, clique no botão **Gerar Token** para gerar um token de acesso de página.  Anote este token pois você precisará dele em uma etapa posterior ao configurar seu aplicativo de bot.
+
+#### <a name="obtain-your-app-secret"></a>Obter seu segredo de aplicativo
+
+1. No menu esquerdo, clique em **Configurações** e clique em **Básicas** para navegar até a página de configuração básica do seu aplicativo.
+
+2. Na página de configurações básicas, clique no botão **Mostrar** ao lado do **Segredo do Aplicativo**.  Anote este segredo pois você precisará dele em uma etapa posterior ao configurar seu aplicativo de bot. 
+
+### <a name="wiring-up-the-facebook-adapter-in-your-bot"></a>Conectar o adaptador do Facebook em seu bot
+
+Agora que você tem seu aplicativo, sua página e suas credenciais do Facebook, você precisa configurar seu aplicativo de bot.
+
+#### <a name="install-the-facebook-adapter-nuget-package"></a>Instalar o pacote NuGet do adaptador do Facebook
+
+Adicione o pacote NuGet [Microsoft.Bot.Builder.Adapters.Facebook](https://www.nuget.org/packages/Microsoft.Bot.Builder.Adapters.Facebook/). Para obter mais informações sobre como usar o NuGet, confira [Instalar e gerenciar pacotes no Visual Studio](https://aka.ms/install-manage-packages-vs).
+
+#### <a name="create-a-facebook-adapter-class"></a>Criar uma classe de adaptador do Facebook
+
+Crie uma classe herdada da classe ***FacebookAdapter***. Essa classe atuará como nosso adaptador para o canal do Facebook e incluirá recursos de tratamento de erro (semelhante à classe ***BotFrameworkAdapterWithErrorHandler*** que já está no exemplo, usada para manipular outras solicitações do Serviço de Bot do Azure).
+
+```csharp
+public class FacebookAdapterWithErrorHandler : FacebookAdapter
+{
+    public FacebookAdapterWithErrorHandler(IConfiguration configuration, ILogger<BotFrameworkHttpAdapter> logger)
+            : base(configuration, logger)
+        {
+            OnTurnError = async (turnContext, exception) =>
+            {
+                // Log any leaked exception from the application.
+                logger.LogError(exception, $"[OnTurnError] unhandled error : {exception.Message}");
+
+                // Send a message to the user
+                await turnContext.SendActivityAsync("The bot encountered an error or bug.");
+                await turnContext.SendActivityAsync("To continue to run this bot, please fix the bot source code.");
+
+                // Send a trace activity, which will be displayed in the Bot Framework Emulator
+                await turnContext.TraceActivityAsync("OnTurnError Trace", exception.Message, "https://www.botframework.com/schemas/error", "TurnError");
+            };
+        }
+}
+```
+
+#### <a name="create-a-new-controller-for-handling-facebook-requests"></a>Criar um controlador para manipular as solicitações do Facebook
+
+Criaremos um controlador que lidará com as solicitações do Facebook em um novo ponto de extremidade 'api/facebook', em vez do 'api/messages' padrão usado para solicitações de canais do Serviço de Bot do Azure.  Ao adicionar outro ponto de extremidade ao bot, você poderá aceitar solicitações de canais do Serviço de Bot, assim como do Facebook, usando o mesmo bot.
+
+```csharp
+[Route("api/facebook")]
+[ApiController]
+public class FacebookController : ControllerBase
+{
+    private readonly FacebookAdapter _adapter;
+    private readonly IBot _bot;
+
+    public FacebookController(FacebookAdapter adapter, IBot bot)
+    {
+        _adapter = adapter;
+        _bot = bot;
+    }
+
+    [HttpPost]
+    [HttpGet]
+    public async Task PostAsync()
+    {
+        // Delegate the processing of the HTTP POST to the adapter.
+        // The adapter will invoke the bot.
+        await _adapter.ProcessAsync(Request, Response, _bot);
+    }
+}
+```
+
+#### <a name="inject-the-facebook-adapter-in-your-bot-startupcs"></a>Injetar o adaptador do Facebook no startup.cs do bot
+
+Adicione a seguinte linha ao método ***ConfigureServices*** no arquivo startup.cs. Isso registrará o adaptador do Facebook e o disponibilizará para a nova classe de controlador.  As definições de configuração que você adicionou na etapa anterior serão usadas automaticamente pelo adaptador.
+
+```csharp
+services.AddSingleton<FacebookAdapter, FacebookAdapterWithErrorHandler>();
+```
+
+Depois de ser adicionado, o método ***ConfigureServices*** ficará assim.
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+    // Create the default Bot Framework Adapter (used for Azure Bot Service channels and emulator).
+    services.AddSingleton<IBotFrameworkHttpAdapter, BotFrameworkAdapterWithErrorHandler>();
+
+    // Create the Facebook Adapter
+    services.AddSingleton<FacebookAdapter, FacebookAdapterWithErrorHandler>();
+
+    // Create the bot as a transient. In this case the ASP Controller is expecting an IBot.
+    services.AddTransient<IBot, EchoBot>();
+}
+```
+
+#### <a name="obtain-a-url-for-your-bot"></a>Obter uma URL para o bot
+
+Agora que você conectou o adaptador em seu projeto de bot, é necessário fornecer ao Facebook o ponto de extremidade correto para seu aplicativo para que seu bot receba mensagens. Você também precisa dessa URL para concluir a configuração do seu aplicativo de bot.
+
+Para concluir esta etapa, [implante o bot no Azure](https://aka.ms/bot-builder-deploy-az-cli) e anote a URL do bot implantado.
+
+> [!NOTE]
+> Se você não estiver pronto para implantar o bot no Azure ou desejar depurar o bot ao usar o adaptador do Facebook, poderá usar uma ferramenta como a [ngrok](https://www.ngrok.com) (que você provavelmente já terá instalada se tiver usado o emulador do Bot Framework anteriormente) para fazer um túnel para o bot em execução local e fornecer uma URL acessível publicamente para isso. 
+> 
+> Se desejar criar um túnel ngrok e obter uma URL para o bot, use o comando a seguir em uma janela do terminal (isso pressupõe que o bot local esteja em execução na porta 3978; altere os números de porta no comando se o bot não estiver).
+> 
+> ```
+> ngrok.exe http 3978 -host-header="localhost:3978"
+> ```
+
+#### <a name="add-facebook-app-settings-to-your-bots-configuration-file"></a>Adicionar configurações do aplicativo do Facebook ao arquivo de configuração do bot
+
+Adicione as configurações mostradas abaixo ao seu arquivo appSettings.json em seu projeto de bot. Você popula **FacebookAppSecret** e **FacebookAccessToken** usando os valores coletados ao criar e configurar seu aplicativo do Facebook. **FacebookVerifyToken** deve ser uma cadeia de caracteres aleatória que você cria e será usada para verificar se o ponto de extremidade do bot é autêntico quando chamado pelo Facebook.
+
+
+```json
+  "FacebookVerifyToken": "",
+  "FacebookAppSecret": "",
+  "FacebookAccessToken": ""
+```
+
+Depois de popular as configurações acima, você deverá reimplantar (ou reiniciar, se estiver em execução localmente com o ngrok) seu bot.
+
+### <a name="complete-configuration-of-your-facebook-app"></a>Concluir a configuração do aplicativo do Facebook
+
+A etapa final é configurar o ponto de extremidade do Messenger do seu novo aplicativo do Facebook para verificar se o bot recebe mensagens.
+
+1. No painel do seu aplicativo, clique em **Messenger** no menu esquerdo e, em seguida, em **Configurações**.
+
+2. Na seção **Webhooks**, clique **Adicionar URL de Retorno de Chamada**.
+
+3. Na caixa de texto **URL de Retorno de Chamada**, insira a URL do seu bot, além do ponto de extremidade `api/facebook` especificado em seu controlador recém-criado. Por exemplo, `https://yourboturl.com/api/facebook`. Na caixa de texto **Token de Verificação**, insira o token de verificação criado anteriormente e usado no arquivo appSettings.json do aplicativo de bot.
+
+![Editar a url de retorno de chamada](media/bot-service-channel-connect-facebook/edit-callback-url.png)
+
+4. Clique em **Verificar e Salvar**. Verifique se o bot está em execução, uma vez que o Facebook fará uma solicitação para o ponto de extremidade do seu aplicativo e verifique-o usando seu **Token de Verificação**.
+
+5. Depois que a URL de retorno de chamada tiver sido verificada, clique no botão **Adicionar Assinaturas** que é mostrado agora.  Na janela pop-up, selecione as assinaturas a seguir e clique em **Salvar**.
+
+* **messages**
+* **messaging_postbacks**
+* **messaging_optins**
+* **messaging_deliveries**
+
+![Assinaturas de Webhook](media/bot-service-channel-connect-facebook/webhook-subscriptions.png)
+
+### <a name="test-your-bot-with-adapter-in-facebook"></a>Testar o bot com o adaptador no Facebook
+
+Agora você pode testar se seu bot está conectado ao Facebook corretamente enviando uma mensagem pela Página do Facebook que você associou ao seu novo aplicativo do Facebook.  
+
+1. Navegue até a Página do Facebook.
+
+2. Clique no botão **Adicionar um Botão**.
+
+![Adicionar um botão](media/bot-service-channel-connect-facebook/add-button.png)
+
+3. Selecione **Entrar em contato com você** e **Enviar Mensagem** e clique em **Avançar**.
+
+![Adicionar um botão](media/bot-service-channel-connect-facebook/button-settings.png)
+
+4. Quando perguntado **Para onde você gostaria que este botão enviasse as pessoas?** , selecione **Messenger** e clique em **Concluir**.
+
+![Adicionar um botão](media/bot-service-channel-connect-facebook/button-settings-2.png)
+
+5. Passe o mouse sobre o novo botão **Enviar Mensagem** mostrado agora em sua Página do Facebook e clique em **Botão de Teste** no menu pop-up.  Isso iniciará uma nova conversa com seu aplicativo por Facebook Messenger, que você pode usar para testar o envio de mensagens para o bot. Depois que a mensagem for recebida pelo bot, ele enviará uma mensagem de volta para você, ecoando o texto da sua mensagem.
+
+Você também pode testar esse recurso usando o [exemplo de bot para o adaptador do Facebook](https://aka.ms/csharp-61-facebook-adapter-sample) populando o arquivo appSettings.json com os mesmos valores descritos nas etapas acima.
+
+## <a name="see-also"></a>Confira também
 
 - **Código de exemplo**. Use o bot de exemplo <a href="https://aka.ms/facebook-events" target="_blank">Facebook-events</a> para explorar a comunicação do bot com o Facebook Messenger.
-
-- **Disponível como um adaptador**. Esse canal também [está disponível como um adaptador](https://botkit.ai/docs/v4/platforms/facebook.html). Para ajudá-lo a escolher entre um adaptador e um canal, confira [Adaptadores disponíveis no momento](bot-service-channel-additional-channels.md#currently-available-adapters).

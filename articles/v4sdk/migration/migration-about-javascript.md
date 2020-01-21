@@ -1,5 +1,5 @@
 ---
-title: Diferenças entre o SDK do NodeJS v3 e v4 | Microsoft Docs
+title: Diferenças entre o SDK do NodeJS v3 e v4 – Serviço de Bot
 description: Descreve as diferenças entre o SDK do NodeJS v3 e v4.
 keywords: migração de bot, caixas de diálogo, estado
 author: mmiele
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/28/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 77f97d8a2467572ed596cc5033ad0f76435200e4
-ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
+ms.openlocfilehash: 5d614fc34f3daa9deddb2ccedbe58bdef2ba067a
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75491411"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791038"
 ---
 # <a name="differences-between-the-v3-and-v4-javascript-sdk"></a>Diferenças entre o SDK do JavaScript v3 e v4
 
@@ -45,7 +45,7 @@ O manipulador de turnos pode receber vários tipos de atividades. Em geral, voc�
 
 Ao manipular uma mensagem, use o contexto do turno para obter informações sobre a atividade de entrada e enviar as atividades para o usuário:
 
-|Atividade |DESCRIÇÃO |
+|Atividade |Descrição |
 |:---|:---|
 | Para obter a atividade de entrada | Obtenha a propriedade `Activity` do contexto do turno. |
 | Para criar e enviar uma atividade para o usuário | Chame o método `SendActivity` do contexto do turno.<br/> Para obter mais informações, confira [enviar e receber uma mensagem de texto](../../rest-api/bot-framework-rest-direct-line-1-1-receive-messages.md) e [adicionar mídia às mensagens](../bot-builder-howto-add-media-attachments.md). |
@@ -81,7 +81,7 @@ O estado deve ser configurado no arquivo de ponto de entrada do aplicativo, comu
 
 Use os acessadores de propriedade de estado para obter e atualizar suas propriedades e use os objetos de gerenciamento de estado para gravar todas as alterações no armazenamento. Com o entendimento de que você deve levar em conta problemas de simultaneidade, aqui está como realizar algumas tarefas comuns.
 
-| Tarefa|DESCRIÇÃO |
+| Tarefa|Descrição |
 |:---|:---|
 | Para criar um acessador de propriedade de estado | Chame o método `createProperty` de seu objeto `BotState`. <br/>`BotState` é a classe base abstrata para a conversa, conversa privada e estado do usuário. |
 | Para obter o valor atual de uma propriedade | Chame `StatePropertyAccessor.get(TurnContext)`.<br/>Se nenhum valor tiver sido definido, o parâmetro de fábrica padrão será usado para gerar um valor. |
@@ -108,7 +108,7 @@ A v3 fornecia uma maneira flexível de implementar diálogos usando a classe `Di
 
 Agora você tem algumas opções de como definir os diálogos:
 
-|Tipo de Caixa de Diálogo| DESCRIÇÃO |
+|Tipo de Caixa de Diálogo| Descrição |
 |:---|:---|
 | Um componente de diálogo, derivado da classe `ComponentDialog` | Permite que você encapsule o código do diálogo sem conflitos de nomenclatura com os contextos externos. Confira [reutilizar os diálogos](../bot-builder-concept-dialog.md).|
 | Um diálogo em cascata, uma instância da classe `WaterfallDialog` | Projetado para funcionar bem com os diálogos de prompt, que solicitam e validam os vários tipos de entrada do usuário. A cascata automatiza a maior parte do processo para você, mas impõe uma determinada forma ao código do diálogo; confira [fluxo de conversa sequencial](../bot-builder-dialog-manage-conversation-flow.md). |
@@ -163,7 +163,7 @@ Para fazer uma solicitação ao usuário e receber o seu respectivo resultado:
 
 Confira os seguintes recursos para obter mais detalhes e informações de contexto.
 
-| Tópico | DESCRIÇÃO |
+| Tópico | Descrição |
 | :--- | :--- |
 |[Migre um bot do SDK do JavaScript v3 para v4](https://docs.microsoft.com/azure/bot-service/migration/conversion-javascript?view=azure-bot-service-4.0)| Como realizar a portabilidade de um bot JavaScript v3 para v4|
 | [Novidades no Bot Framework](https://docs.microsoft.com/azure/bot-service/what-is-new?view=azure-bot-service-4.0) | Aprimoramentos e recursos principais do Bot Framework e do Serviço de Bot do Azure|

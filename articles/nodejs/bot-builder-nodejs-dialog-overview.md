@@ -1,5 +1,5 @@
 ---
-title: Visão geral dos diálogos | Microsoft Docs
+title: Visão geral das caixas de diálogo (JS v3) – Serviço de Bot
 description: Saiba como usar os diálogos no SDK do Bot Framework para Node.js para modelar conversas e gerenciar o fluxo da conversa.
 author: DucVo
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 9ec846c5d464821538902dd726e8b9ee68d4bae1
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: be983482273eaaa5be79f7c4100dcd4741f62469
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299876"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790918"
 ---
 # <a name="dialogs-in-the-bot-framework-sdk-for-nodejs"></a>Diálogos no SDK do Bot Framework para Node.js
 

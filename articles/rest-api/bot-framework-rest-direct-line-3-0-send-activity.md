@@ -1,5 +1,5 @@
 ---
-title: Enviar uma atividade o bot | Microsoft Docs
+title: Enviar uma atividade ao bot – Serviço de Bot
 description: Saiba como enviar uma atividade para o bot usando a API de linha direta v3.0.
 author: RobStand
 ms.author: kamrani
@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 5c7ac61da6c2e0d09fb2f8dc4cd0bf3961bcfc4f
-ms.sourcegitcommit: e815e786413296deea0bd78e5a495df329a9a7cb
+ms.openlocfilehash: 90eeb3157cf53f1ee87d1ac08313c6d659e6c1d9
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70875999"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75789313"
 ---
 # <a name="send-an-activity-to-the-bot"></a>Enviar uma atividade para o bot
 
@@ -43,7 +43,7 @@ Content-Type: application/json
 }
 ```
 
-### <a name="response"></a>Response
+### <a name="response"></a>Resposta
 
 Quando a atividade é entregue para o bot, o serviço responde com um código de status HTTP que reflete o código de status do bot. Se o bot gera um erro, uma resposta de HTTP 502 ("Gateway incorreto") é retornada ao cliente em resposta à sua solicitação de atividade de enviar.
 
@@ -115,7 +115,7 @@ Content-Disposition: name="file"; filename="badjokeeel.jpg"
 [JPEG content]
 ```
 
-#### <a name="response"></a>Response
+#### <a name="response"></a>Resposta
 
 Se a solicitação for bem-sucedida, uma **mensagem** Activity será enviada ao bot quando o upload for concluído e a resposta recebida pelo cliente conterá o ID da Activity que foi enviada.
 
@@ -168,7 +168,7 @@ Content-Type: application/vnd.microsoft.activity
 ----DD4E5147-E865-4652-B662-F223701A8A89
 ```
 
-#### <a name="response"></a>Response
+#### <a name="response"></a>Resposta
 
 Se a solicitação for bem-sucedida, uma mensagem Activity será enviada ao bot quando o upload for concluído e a resposta recebida pelo cliente conterá o ID da Activity que foi enviada.
 

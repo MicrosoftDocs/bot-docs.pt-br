@@ -1,5 +1,5 @@
 ---
-title: Solicitar pagamento | Microsoft Docs
+title: Solicitar pagamento (JS v3) – Serviço de Bot
 description: Saiba como enviar uma solicitação de pagamento usando o SDK do Bot Framework para Node.js.
 author: v-ducvo
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 3f9ed2cd7c82752d62d8ccfb8ae677ba5d8b9891
-ms.sourcegitcommit: 378dbffd3960a1fa063ffb314878ccd64fb8fb49
+ms.openlocfilehash: b4b8d6763c79cea6fc06666145dc851283bd8a63
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71094453"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790627"
 ---
 # <a name="request-payment"></a>Solicitar pagamento
 
@@ -27,7 +27,7 @@ ms.locfileid: "71094453"
 
 Se o bot permitir que os usuários comprem itens, ele poderá solicitar o pagamento incluindo um tipo especial de botão em [rich card](bot-builder-nodejs-send-rich-cards.md). Este artigo descreve como enviar uma solicitação de pagamento usando o SDK do Bot Framework para Node.js.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 
 Antes de enviar uma solicitação de pagamento usando o SDK do Bot Framework para Node.js, você deve concluir essas tarefas de pré-requisito.
 
@@ -36,7 +36,7 @@ Antes de enviar uma solicitação de pagamento usando o SDK do Bot Framework par
 Atualize as variáveis de ambiente do bot para `MicrosoftAppId` e `MicrosoftAppPassword` para os valores de ID e senha do aplicativo que foram gerados para o bot durante o processo de [registro](~/bot-service-quickstart-registration.md). 
 
 > [!NOTE]
-> Para localizar o **AppID** e **AppPassword**, consulte [MicrosoftAppID e MicrosoftAppPassword](~/bot-service-manage-overview.md#microsoftappid-and-microsoftapppassword).
+> Para localizar o **AppID** e **AppPassword** do seu bot, consulte [MicrosoftAppID e MicrosoftAppPassword](~/bot-service-manage-overview.md#microsoftappid-and-microsoftapppassword).
 
 ### <a name="create-and-configure-merchant-account"></a>Crie e configure uma conta de comerciante
 
@@ -46,20 +46,20 @@ Atualize as variáveis de ambiente do bot para `MicrosoftAppId` e `MicrosoftAppP
 
 3. No Centro do vendedor, conecte sua conta ao Stripe.
 
-4. No Centro de Vendas, navegue até o Painel e copie o valor de **MerchantID**.
+4. No Centro do vendedor, navegue até o Painel e copie o valor de **MerchantID**.
 
 5. Atualize a variável de ambiente `PAYMENTS_MERCHANT_ID` para o valor que você copiou do Painel do Centro de Vendas. 
 
 [!INCLUDE [Payment process overview](../includes/snippet-payment-process-overview.md)]
 
-## <a name="payment-bot-sample"></a>Exemplo de bot de pagamento
+## <a name="payment-bot-sample"></a>Exemplo de Bot de pagamento
 
 O exemplo de <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/sample-payments" target="_blank">Bot de Pagamento</a> fornece um exemplo de um bot que envia uma solicitação de pagamento usando Node.js. Para ver esse exemplo de bot em ação, é possível <a href="https://webchat.botframework.com/embed/paymentsample?s=d39Bk7JOMzQ.cwA.Rig.dumLki9bs3uqfWFMjXPn5PFnQVmT2VAVR1Zl1iPi07k" target="_blank">experimentá-lo no Webchat </a>, <a href="https://join.skype.com/bot/9fbc0f17-43eb-40fe-bf3b-af151e6ce45e" target="_blank">adicioná-lo como um contato do Skype</a>, ou baixar o exemplo de bot de pagamento e executá-lo localmente usando o Bot Framework Emulador. 
 
 > [!NOTE]
-> Para concluir o processo de pagamento de ponta a ponta usando o exemplo de **Bot de Pagamento** no Webchat ou no Skype, será necessário especificar um cartão de crédito ou cartão de débito válido na conta Microsoft (por exemplo, um cartão válido de um emissor de cartão dos EUA). O cartão não será cobrado e o CVV do cartão não será verificado porque o exemplo de **Bot de Pagamento** executa em modo de teste (ou seja `PAYMENTS_LIVEMODE` é definido como `false` em **.env**).
+> Para concluir o processo de pagamento de ponta a ponta usando a amostra **Payment Bot** no bate-papo da web ou no Skype, você deve especificar um cartão de crédito ou cartão de débito válido em sua conta da Microsoft (por exemplo, um cartão válido dos EUA). emissor do cartão). O cartão não será cobrado e o CVV do cartão não será verificado porque o exemplo de **Bot de Pagamento** executa em modo de teste (ou seja `PAYMENTS_LIVEMODE` é definido como `false` em **.env**).
 
-As próximas seções deste artigo descrevem as três partes do processo de pagamento, no contexto do exemplo de **Bot de Pagamento**.
+As próximas seções deste artigo descrevem as três partes do processo de pagamento, no contexto do **Payment Bot** exemplo.
 
 ## <a id="request-payment"></a> Solicitar pagamento
 
@@ -84,7 +84,7 @@ Quando um usuário clicar no botão **Comprar**, o usuário será direcionado à
 
 ### <a name="http-callbacks"></a>Retornos de chamada HTTP
 
-Retornos de chamada HTTP serão enviadas ao bot para indicar que será necessário executar determinadas operações. Cada retorno de chamada será um evento contendo esses valores de propriedade: 
+Chamadas de retorno HTTP serão enviadas ao seu bot para indicar que ele deve executar determinadas operações. Cada retorno de chamada será um evento contendo esses valores de propriedade: 
 
 | Propriedade | Valor |
 |----|----|
@@ -96,17 +96,17 @@ Retornos de chamada HTTP serão enviadas ao bot para indicar que será necessár
 > [!NOTE]
 > `invoke` é um tipo de evento especial que é reservado para uso pelo Microsoft Bot Framework. O remetente de um evento `invoke` espera que o bot reconheça o retorno de chamada enviando uma resposta HTTP.
 
-## <a id="process-callbacks"></a> Processar retornos de chamada
+## <a id="process-callbacks"></a> Retornos de chamada de processamento
 
 [!INCLUDE [Process callbacks overview](../includes/snippet-payment-process-callbacks-overview.md)]
 
-### <a name="shipping-address-update-and-shipping-option-update-callbacks"></a>Retornos de chamada de Atualização de Opção de Envio e Atualização de Endereço de Envio
+### <a name="shipping-address-update-and-shipping-option-update-callbacks"></a>Atualização de endereço de entrega e retorno de opção de atualização
 
 Ao receber um retorno de chamada de Atualização de Opção de Envio ou Atualização de Endereço de Envio, o bot receberá o estado atual dos detalhes de pagamento do cliente na propriedade `value`.
 Como um comerciante, você deve tratar esses retornos de chamada como estáticos, considerando os detalhes de pagamento de entrada, você irá calcular alguns detalhes de pagamento de saída e falhará se o estado fornecido pelo cliente de entrada for inválido por algum motivo. 
 Se o bot determinar que certas informações são válidas como estão, bastará enviar o código de status HTTP `200 OK` junto com os detalhes de pagamento não modificados. Como alternativa, o bot pode enviar o código de status HTTP `200 OK` juntamente com detalhes de pagamento atualizados que devem ser aplicados antes que o pedido possa ser processado. Em alguns casos, seu bot pode determinar que as informações atualizadas são inválidas e que o pedido não pode ser processado como está. Por exemplo, o endereço de envio do usuário pode especificar um país para o qual o fornecedor do produto não envia. Nesse caso, o bot pode enviar o código de status HTTP `200 OK` e uma mensagem ao preencher a propriedade de erro do objeto de detalhes de pagamento. O envio de qualquer código de status HTTP no intervalo `400` ou `500` resultará em um erro genérico para o cliente.
 
-### <a name="payment-complete-callbacks"></a>Retornos de chamada de Pagamento Concluído
+### <a name="payment-complete-callbacks"></a>Retornos de chamada completa de pagamento
 
 Ao receber um retorno de chamada de Pagamento Concluído, o bot receberá uma cópia da solicitação de pagamento inicial não modificado, bem como os objetos de resposta de pagamento na propriedade `value`. O objeto de resposta de pagamento conterá as seleções finais feitas pelo cliente junto com um token de pagamento. Seu bot deve aproveitar a oportunidade para recalcular a solicitação de pagamento final com base na solicitação de pagamento inicial e nas seleções finais do cliente. Supondo que as seleções do cliente sejam determinadas como válidas, o bot deve verificar o valor e a moeda no cabeçalho do token de pagamento para garantir que eles correspondam à solicitação de pagamento final.  Se o bot decidir cobrar o cliente, ele só deve cobrar o valor no cabeçalho do token de pagamento, pois esse é o preço que o cliente confirmou. Se houver uma incompatibilidade entre os valores esperados pelo bot e os valores recebidos no retorno de chamada do Payment Complete, ele poderá falhar na solicitação de pagamento enviando o código de status HTTP `200 OK` juntamente com a configuração do campo de resultado para `failure`.   
 
@@ -118,14 +118,14 @@ Esse snippet de código do exemplo de **Bot de Pagamento** processa os retornos 
 
 Neste exemplo, o bot examina a propriedade `name` do evento de entrada para identificar o tipo de operação que precisa executar e, em seguida, chama o(s) método(s) apropriado(s) para processar(em) o retorno de chamada. Para obter mais informações sobre os detalhes de implementação, consulte **app.js** no exemplo <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/sample-payments" target="_blank">Bot de Pagamento</a>.
 
-## <a name="testing-a-payment-bot"></a>Testar um bot de pagamento
+## <a name="testing-a-payment-bot"></a>Testando um bot de pagamento
 
 [!INCLUDE [Test a payment bot](../includes/snippet-payment-test-bot.md)]
 
-No exemplo de <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/sample-payments" target="_blank">Bot de Pagamento</a>, a `PAYMENTS_LIVEMODE` variável de ambiente em **.env** determina se os retornos de chamada do Pagamento Concluído conterão tokens de pagamento emulados ou tokens de pagamento reais. Se `PAYMENTS_LIVEMODE` for definido para `false`, um cabeçalho será adicionado à solicitação de pagamento de saída do bot para indicar que o bot está em modo de teste e o retorno de chamada de Pagamento Concluído conterá um token de pagamento emulado que não poderá ser cobrado. Se `PAYMENTS_LIVEMODE` é definido como `true`, o cabeçalho que indica que o bot está no modo de teste é omitido da solicitação de pagamento de saída do bot e o retorno de chamada completa de pagamento conterá um token de pagamento real que o bot enviará ao Stripe para pagamento processamento. Essa será uma transação real que resulta em encargos para o instrumento de pagamento. 
+No exemplo de <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/sample-payments" target="_blank">Bot de Pagamento</a>, a `PAYMENTS_LIVEMODE` variável de ambiente em **.env** determina se os retornos de chamada do Pagamento Concluído conterão tokens de pagamento emulados ou tokens de pagamento reais. Se `PAYMENTS_LIVEMODE`for definido como`false`, um cabeçalho será adicionado à solicitação de pagamento de saída do bot para indicar que o bot está no modo de teste e o retorno de chamada de Pagamento concluído conterá um símbolo de pagamento emulado que não pode ser cobrado. Se `PAYMENTS_LIVEMODE` é definido como `true`, o cabeçalho que indica que o bot está no modo de teste é omitido da solicitação de pagamento de saída do bot e o retorno de chamada completa de pagamento conterá um token de pagamento real que o bot enviará ao Stripe para pagamento processamento. Essa será uma transação real que resulta em encargos para o instrumento de pagamento. 
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
 - <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/sample-payments" target="_blank">Exemplo de Bot de pagamento</a>
 - [Adicionar anexos de cartão avançado às mensagens](bot-builder-nodejs-send-rich-cards.md)
-- <a href="http://www.w3.org/Payments/" target="_blank">Web Payments no W3C</a> 
+- <a href="http://www.w3.org/Payments/" target="_blank">Pagamentos da Web no W3C</a> 

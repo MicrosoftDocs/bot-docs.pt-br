@@ -1,5 +1,5 @@
 ---
-title: Migrar um bot JavaScript v3 existente para um novo projeto v4 | Microsoft Docs
+title: Migrar um bot JavaScript v3 existente para um novo projeto v4 – Serviço de Bot
 description: Pegamos um bot JavaScript v3 existente e o migramos para o SDK V4 usando um novo projeto.
 keywords: JavaScript, migração de bot, diálogos, bot v3
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2dac81ea653729043294ed3ebe6037b6cd8b67eb
-ms.sourcegitcommit: 008aa6223aef800c3abccda9a7f72684959ce5e7
+ms.openlocfilehash: f377aacbd809b79ecb0d558384a10da8eca5a772
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70026388"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791078"
 ---
 # <a name="migrate-a-javascript-v3-bot-to-a-v4-bot"></a>Migrar um bot v3 do Javascript para um bot v4
 
@@ -42,7 +42,7 @@ For more information about specific changes, see [differences between the v3 and
 > [!NOTE]
 > Como parte da migração, também limpamos alguns dos códigos, mas apenas destacaremos as alterações feitas na lógica da v3 como parte do processo de migração.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 
 - Node.js
 - Visual Studio Code
@@ -161,7 +161,7 @@ Na v4, são atribuídas IDs ao diálogo e aos objetos de prompt e os diálogos e
 
 Crie estes arquivos:
 
-| Nome do arquivo | DESCRIÇÃO |
+| Nome do arquivo | Descrição |
 |:---|:---|
 | **./dialogs/flights.js** | Ele conterá a lógica migrada do diálogo `hotels`. |
 | **./dialogs/hotels.js** | Ele conterá a lógica migrada do diálogo `flights`. |

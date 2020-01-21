@@ -8,12 +8,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 07/25/2019
-ms.openlocfilehash: 3ed589bff5c3740dddcfb62226714006313ae330
-ms.sourcegitcommit: 312a4593177840433dfee405335100ce59aac347
+ms.openlocfilehash: d49ec4b742d644371458cc732fe60c605878ff27
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73933685"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791713"
 ---
 # <a name="configure-net-bot-for-extension"></a>Configurar o bot do .NET para a extensão
 
@@ -21,7 +21,7 @@ ms.locfileid: "73933685"
 
 Este artigo descreve como atualizar um bot para trabalhar com **pipes nomeados** e como habilitar a extensão de serviço de aplicativo do Direct Line no recurso de **Serviço de Aplicativo do Azure** em que o bot está hospedado.  
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 
 Para executar as etapas descritas a seguir, você precisa ter o recurso do **Serviço de Aplicativo do Azure** e o **Serviço de Aplicativo** relacionado no Azure.
 
@@ -31,13 +31,15 @@ Esta seção descreve como habilitar a extensão de serviço de aplicativo do Di
 
 ## <a name="update-net-bot-to-use-direct-line-app-service-extension"></a>Atualize o bot do .NET para usar a extensão do Serviço de Aplicativo do Direct Line
 
+>!OBSERVE que `Microsoft.Bot.Builder.StreamingExtensions` são pacotes em versão prévia e não serão atualizados. O SDK v4.7 contém o [código de streaming](https://github.com/microsoft/botbuilder-dotnet/tree/master/libraries/Microsoft.Bot.Builder/Streaming) e você não precisa instalar os Pacotes de Streaming separadamente. Se você atualizou para o SDK v4.7, consulte as [informações adicionais](bot-service-channel-directline-extension-net-bot.md#additional-information) para saber quais são as etapas a serem modificadas nesta seção para habilitar o recurso. 
+
 1. No Visual Studio, abra o projeto do bot.
-1. Adicione o pacote **NuGet da Extensão de Streaming** ao seu projeto:
+2. Adicione o pacote **NuGet da Extensão de Streaming** ao seu projeto:
     1. Em seu projeto, clique o botão direito do mouse em **Dependências** e selecione **Gerenciar Pacotes NuGet**.
-    1. Na guia *Procurar*, clique em **Incluir pré-lançamento** para mostrar os pacotes em versão prévia.
-    1. Selecione o pacote **Microsoft.Bot.Builder.StreamingExtensions**.
-    1. Clique no botão **Instalar** para instalar o pacote; leia e concorde com o contrato de licença.
-1. Permite que o aplicativo use o **Bot Framework NamedPipe**:
+    2. Na guia *Procurar*, clique em **Incluir pré-lançamento** para mostrar os pacotes em versão prévia.
+    3. Selecione o pacote **Microsoft.Bot.Builder.StreamingExtensions**.
+    4. Clique no botão **Instalar** para instalar o pacote; leia e concorde com o contrato de licença. 
+3. Permite que o aplicativo use o **Bot Framework NamedPipe**:
     - Abra o arquivo `Startup.cs` .
     - No método ``Configure``, adicione código a ``UseBotFrameworkNamedPipe``
 
@@ -66,15 +68,15 @@ Esta seção descreve como habilitar a extensão de serviço de aplicativo do Di
     }
     ```
 
-1. Salve o arquivo `Startup.cs`.
-1. Abra o arquivo `appsettings.json` e insira os seguintes valores:
+4. Salve o arquivo `Startup.cs`.
+5. Abra o arquivo `appsettings.json` e insira os seguintes valores:
     1. `"MicrosoftAppId": "<secret Id>"`
-    1. `"MicrosoftAppPassword": "<secret password>"`
+    2. `"MicrosoftAppPassword": "<secret password>"`
 
     Os valores são a **appID** e o **appSecret** associados ao grupo de registro do serviço.
 
-1. **Publique** o bot em seu Serviço de Aplicativo do Azure.
-1. No navegador, navegue até https://<your_app_service>.azurewebsites.net/.bot. Se tudo estiver correto, a página retornará este conteúdo JSON: `{"k":true,"ib":true,"ob":true,"initialized":true}`. Essas são as informações que você obtém quando **tudo funciona corretamente**, onde
+6. **Publique** o bot em seu Serviço de Aplicativo do Azure.
+7. No navegador, navegue até https://<your_app_service>.azurewebsites.net/.bot. Se tudo estiver correto, a página retornará este conteúdo JSON: `{"k":true,"ib":true,"ob":true,"initialized":true}`. Essas são as informações que você obtém quando **tudo funciona corretamente**, onde
 
     - **k** determina se a ASE (Extensão de Serviço de Aplicativo do Direct Line) pode ler uma chave de extensão com base na configuração. 
     - **inicializado** determina se a ASE do Direct Line pode usar a chave de extensão para baixar os metadados do bot do Serviço de Bot do Azure
@@ -100,10 +102,47 @@ Esta seção descreve como habilitar a extensão de serviço de aplicativo do Di
 1. Na portal do Azure, localize a página do recursos **Serviço de Aplicativo do Azure** para o aplicativo Web em que o bot está ou será hospedado
 1. Clique em **Configuração**. Na seção *Configurações do aplicativo*, adicione as seguintes novas configurações:
 
-    |NOME|Valor|
+    |Nome|Valor|
     |---|---|
     |DirectLineExtensionKey|<App_Service_Extension_Key_From_Section_1>|
     |DIRECTLINE_EXTENSION_VERSION|mais recente|
 
 1. Na seção *Configuração*, clique na seção de configurações **Geral** e ative os **Web Sockets**
 1. Clique em **Salvar** para salvar as configurações. Isso reinicia o Serviço de Aplicativo do Azure.
+
+## <a name="additional-information"></a>Informações adicionais 
+
+Se você atualizou para o SDK v4.7, faça algumas pequenas alterações nas instruções da seção "Atualizar bot do .NET para usar a extensão Direct Line do Serviço de Aplicativo" da seguinte maneira: 
+- Pule a **etapa 2** porque você não precisa instalar os pacotes de versão prévia. 
+- Na **etapa 3** faça o seguinte:  
+
+Permita que seu aplicativo use o **UseNamedPipes**:
+- Abra o arquivo `Startup.cs` .
+- No método ``Configure``, adicione código a ``UseNamedPipes``
+
+    ```csharp
+
+    using Microsoft.Bot.Builder.StreamingExtensions;
+
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+        if (env.IsDevelopment())
+        {
+            app.UseDeveloperExceptionPage();
+        }
+        else
+        {
+            app.UseHsts();
+        }
+
+        app.UseDefaultFiles();
+        app.UseStaticFiles();
+
+        // Allow bot to use named pipes.
+        app.UseNamedPiped();
+
+        app.UseMvc();
+    }
+
+    ```
+

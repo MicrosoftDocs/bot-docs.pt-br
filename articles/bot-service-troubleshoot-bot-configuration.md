@@ -1,5 +1,5 @@
 ---
-title: Solucionar problemas de configuração de bot | Microsoft Docs
+title: Solucionar problemas de configuração de bot – Serviço de Bot
 description: Como solucionar problemas de configuração em um bot implantado.
 keywords: solucionar problemas, configuração, bate-papo, problemas.
 author: jonathanFingold
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 4/30/2019
-ms.openlocfilehash: 6f24a2e5c4fbc2bf88d99ba4225506e25c4262a8
-ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
+ms.openlocfilehash: 6d5cb95c529a9a49f07681678f11a54c8f9e55b3
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75491597"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75795715"
 ---
 # <a name="troubleshoot-bot-configuration-issues"></a>Solucionar problemas de configuração de bot
 
@@ -46,9 +46,14 @@ Se o ponto de extremidade retornar um erro "Este site não pode ser acessado" ou
 
 Se o bot funciona conforme o esperado no Webchat mas falha em algum outro canal, os possíveis motivos são:
 
-- [Problemas de configuração de canal](#channel-configuration-issues)
-- [Comportamento específico de canal](#channel-specific-behavior)
-- [Interrupção de canal](#channel-outage)
+- [Solucionar problemas da configuração de bot](#troubleshoot-bot-configuration-issues)
+  - [Testar no Webchat](#test-in-web-chat)
+  - [O bot não funciona no Webchat](#bot-does-not-work-in-web-chat)
+  - [O Bot funciona no Webchat, mas não em outros canais](#bot-works-in-web-chat-but-not-in-other-channels)
+    - [Problemas de configuração de canal](#channel-configuration-issues)
+    - [Comportamento específico de canal](#channel-specific-behavior)
+    - [Interrupção de canal](#channel-outage)
+  - [Recursos adicionais](#additional-resources)
 
 ### <a name="channel-configuration-issues"></a>Problemas de configuração de canal
 
@@ -71,7 +76,7 @@ Os links a seguir fornecem instruções sobre como configurar canais com suporte
 
 ### <a name="channel-specific-behavior"></a>Comportamento específico de canal
 
-A implementação de alguns recursos pode ser diferente por canal. Por exemplo, nem todos os canais dão suporte a cartões adaptáveis. A maioria dos canais oferecem suporte a Botões, mas eles são renderizados em um modo específico de canal. Se detectar diferenças em como alguns tipos de mensagem funcionam em canais distintos, consulte a [referência de canal](bot-service-channels-reference.md).
+A implementação de alguns recursos pode ser diferente por canal. Por exemplo, nem todos os canais dão suporte a cartões adaptáveis. A maioria dos canais oferecem suporte a Botões, mas eles são renderizados em um modo específico de canal. Se detectar diferenças em como alguns tipos de mensagem funcionam em canais distintos, consulte o artigo de [referência de canais](bot-service-channels-reference.md).
 
 Abaixo estão alguns links adicionais que podem ajudar com os canais individuais:
 

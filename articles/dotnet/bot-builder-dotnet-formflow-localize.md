@@ -1,5 +1,5 @@
 ---
-title: Localizar o conteúdo do formulário | Microsoft Docs
+title: Localizar o conteúdo do formulário – Serviço de Bot
 description: Saiba como localizar o conteúdo de formulários com o FormFlow e o SDK do Bot Framework para .NET.
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/02/2018
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 795232b401284becd940daed6bf7da8642c12efd
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: accffd89fa6bba8e8bb43aad573cf8df4b3723b0
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70297948"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75796841"
 ---
 # <a name="localize-form-content"></a>Localizar o conteúdo do formulário
 
@@ -153,7 +153,7 @@ Quel genre de pain vous souhaitez sur votre "sandwich"?
 Par pain "neuf" vouliez-vous dire (1. Neuf grains miel avoine, ou 2. Neuf grains de blé)
 ```
 
-## <a name="sample-code"></a>Exemplo de código
+## <a name="sample-code"></a>Código de exemplo
 
 [!INCLUDE [Sample code](../includes/snippet-dotnet-formflow-samples.md)]
 

@@ -1,5 +1,5 @@
 ---
-title: Projetar a primeira interação do usuário de um bot | Microsoft Docs
+title: Criar a primeira interação do usuário de um bot – Serviço de Bot
 description: Saiba o que engrandece uma primeira experiência do usuário e como projetar os bots para obter êxito.
 keywords: primeira impressão, início, linguagem vs menu
 author: matvelloso
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: d0ef3b7cbac1ea2d8486c2f38d1ab762471878c6
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 46b3cbfc84379a695e1ac3066bddd90a50947956
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70297081"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75792361"
 ---
 # <a name="design-a-bots-first-user-interaction"></a>Projetar a primeira interação do usuário de um bot
 

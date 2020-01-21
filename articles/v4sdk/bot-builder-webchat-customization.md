@@ -1,5 +1,5 @@
 ---
-title: Personalização do Webchat | Microsoft Docs
+title: Personalização do Webchat – Serviço de Bot
 description: Saiba como personalizar o Webchat do Bot Framework.
 keywords: bot framework, webchat, chat, exemplos, react, referência
 author: ivorb
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/07/2019
-ms.openlocfilehash: 9310bdf8cab253cd379b7b49daa18deed79f27ae
-ms.sourcegitcommit: 96d26f6b0576747fa62767710af922ace0ff0e3b
+ms.openlocfilehash: 5016c5810d2c3623d8e8556b0a96d717ee83000d
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71060349"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791158"
 ---
 # <a name="web-chat-customization"></a>Personalização de Webchat
 
@@ -33,7 +33,7 @@ Essas configurações gerarão um _conjunto de estilos_, que é um conjunto de r
 
 ## <a name="set-the-size-of-the-web-chat-container"></a>Definir o tamanho do contêiner de Webchat
 
-Agora é possível ajustar o tamanho do contêiner de Webchat usando `styleSetOptions`. O exemplo a seguir tem uma cor da tela de fundo de `body` `paleturquoise` para mostrar o contêiner de Webchat (seção com a tela de fundo branca).
+Agora é possível ajustar o tamanho do contêiner de Webchat usando `styleSetOptions`. O exemplo a seguir tem uma cor da tela de fundo de `body``paleturquoise` para mostrar o contêiner de Webchat (seção com a tela de fundo branca).
 
 ```js
 …
@@ -67,7 +67,7 @@ Agora é possível ajustar o tamanho do contêiner de Webchat usando `styleSetOp
 …
 ```
 
-Aqui está o resultado:
+Este é o resultado:
 
 <img alt="Web Chat with root height and root width set" src="https://raw.githubusercontent.com/Microsoft/BotFramework-WebChat/master/media/rootHeightWidth.png" width="600"/>
 

@@ -1,5 +1,5 @@
 ---
-title: Visão geral das Habilidades do Bot Framework | Microsoft Docs
+title: Visão geral das Habilidades do Bot Framework – Serviço de Bot
 description: Saiba mais sobre as Habilidades do Bot Framework
 author: darrenj
 ms.author: darrenj
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 10/09/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 9bb149773fe1b2cdd09da0165a4fff4e647f419d
-ms.sourcegitcommit: 5d81c5b25ea56e04f09d05916ee947d631009172
+ms.openlocfilehash: 7d7c4271fd03100c24ba7dd774dea93909bdd8a0
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72236430"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791228"
 ---
 # <a name="virtual-assistant---skills-overview"></a>Assistente Virtual - Visão Geral das Habilidades
 
@@ -38,7 +38,7 @@ Atualmente fornecemos as seguintes Habilidades do Bot Framework, suportadas pelo
 
 ![Cenários de Habilidades](./media/enterprise-template/skills-at-build.png)
 
-| NOME | DESCRIÇÃO |
+| Nome | Descrição |
 | ---- | ----------- |
 |[Habilidade de Calendário](https://aka.ms/bf-calendar-skill)|Adicione recursos de calendário ao seu assistente. Da plataforma Microsoft Graph e Google.|
 |[Habilidade de Email](https://aka.ms/bf-email-skill)|Adicione recursos de email ao seu assistente. Da plataforma Microsoft Graph e Google.|

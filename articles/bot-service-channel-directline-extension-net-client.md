@@ -1,5 +1,5 @@
 ---
-title: Criar um cliente .NET para se conectar à extensão do serviço de aplicativo do Direct Line
+title: Criar cliente .NET para a extensão de serviço de aplicativo do Direct Line
 titleSuffix: Bot Service
 description: Cliente .NET em C# para se conectar à extensão do serviço de aplicativo do Direct Line
 services: bot-service
@@ -8,12 +8,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 07/25/2019
-ms.openlocfilehash: 62fda46569c6134f798b4d253a0676a037fdfa0f
-ms.sourcegitcommit: 6a83b2c8ab2902121e8ee9531a7aa2d85b827396
+ms.openlocfilehash: 0ed4bbeb9a882bcf8e4dd75364211f1a3538479b
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68866452"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75793216"
 ---
 # <a name="create-net-client-to-connect-to-direct-line-app-service-extension"></a>Criar um cliente .NET para se conectar à extensão do Serviço de Aplicativo do Direct Line
 
@@ -57,7 +57,7 @@ As interações com a extensão do serviço de aplicativo do Direct Line acontec
     - Altere a origem do Pacote para aquela que você definiu acima (DL ASE Preview)
     - Localize o pacote *Microsoft.Bot.Connector.Directline* versão v3.0.3-Preview1 ou posterior.
     - Clique em **Instalar Pacote**.
-1. Crie um cliente e gere um token usando um segredo. Esta etapa é o mesmo que criar qualquer outro cliente do Direct Line em C#, exceto pelo ponto de extremidade que você precisa usar em seu bot, ao qual é acrescentado o caminho **.bot/** , conforme mostrado a seguir. Não se esqueça do **/** no final.
+1. Crie um cliente e gere um token usando um segredo. Esta etapa é o mesmo que criar qualquer outro cliente do Direct Line em C#, exceto pelo ponto de extremidade que você precisa usar em seu bot, ao qual é acrescentado o caminho **.bot/**, conforme mostrado a seguir. Não se esqueça do **/** no final.
 
     ```csharp
     string endpoint = "https://<YOUR_BOT_HOST>.azurewebsites.net/.bot/";

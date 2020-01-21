@@ -1,5 +1,5 @@
 ---
-title: Novidades | Microsoft Docs
+title: Novidades (arquivo) – Serviço de Bot
 description: Conheça as novidades do Bot Framework.
 keywords: bot framework, serviço de bot do azure
 author: kamrani
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 11/28/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a6a957a636d82e0e4f0bf755d4215893d99bb07d
-ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
+ms.openlocfilehash: 91a0ba8d2e13d8f17213ac9669eca374e27e3863
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75491391"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791048"
 ---
 # <a name="whats-new-november-2019"></a>Novidades em novembro de 2019
 
@@ -124,7 +124,7 @@ O Botkit faz parte do Microsoft Bot Framework e foi lançado com a [licença de 
 
 O [repositório de Soluções do Bot Framework](https://github.com/Microsoft/AI#readme) é a base para um conjunto de modelos, aceleradores de soluções e habilidades para ajudar a criar experiências de conversação avançadas que soam como um assistente.
 
-| Nome | DESCRIÇÃO |  
+| Nome | Descrição |  
 |:------------|:------------| 
 |[**Assistente Virtual**](https://github.com/Microsoft/AI/tree/master/docs#virtual-assistant) | Os clientes precisam realmente fornecer um assistente de conversação adaptado à sua marca, personalizado para seus usuários e disponibilizado em uma ampla variedade de telas e dispositivos. <br/><br/> O modelo empresarial simplifica bastante a criação de um projeto novo do bot, que inclui: intenções de conversação básicas, integração com o Dispatch, QnA Maker, Application Insights e uma implantação automatizada.|
 |[**Habilidades**](https://github.com/Microsoft/AI/blob/master/docs/overview/skills.md)| Os desenvolvedores podem compor experiências de conversação combinando recursos de conversa reutilizáveis, conhecidos como Habilidades. As próprias Habilidades são Bots, chamados remotamente, e um modelo de desenvolvedor (.NET, TS) está disponível para facilitar a criação de novas Habilidades. 

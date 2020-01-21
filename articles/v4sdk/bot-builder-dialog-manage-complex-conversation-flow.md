@@ -1,5 +1,5 @@
 ---
-title: Criar fluxo de conversa avançado usando branches e loops | Microsoft Docs
+title: Criar fluxo de conversa avançado usando branches e loops – Serviço de Bot
 description: Saiba como gerenciar um fluxo de conversa complexo com diálogos no SDK do Bot Framework.
 keywords: fluxo de conversa complexo, repetição, loop, menu, diálogos, prompts, cascatas, conjunto de diálogos
 author: JonathanFingold
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/06/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 51a77c9f95bdf8d77f87d081704284c5f7584df3
-ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
+ms.openlocfilehash: 701eea560d46acc9d3917716366c509e1032e30f
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75491510"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798552"
 ---
 # <a name="create-advanced-conversation-flow-using-branches-and-loops"></a>Criar fluxo de conversa avançado usando ramificações e loops
 
@@ -27,7 +27,7 @@ Também mostraremos como passar argumentos entre partes diferentes do diálogo.
 ## <a name="prerequisites"></a>Prerequisites
 
 - Conhecimento sobre [noções básicas de bots][concept-basics], [gerenciamento de estado][concept-state], a [biblioteca de diálogos][concept-dialogs] e como [implementar um fluxo de conversa sequencial][simple-dialog].
-- Uma cópia de exemplo da caixa de diálogo complexa em [**C#** ][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
+- Uma cópia de exemplo da caixa de diálogo complexa em [**C#**][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 

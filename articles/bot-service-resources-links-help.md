@@ -1,5 +1,5 @@
 ---
-title: Recursos adicionais de suporte para o Bot Framework | Microsoft Docs
+title: Recursos adicionais de suporte para o Bot Framework – Serviço de Bot
 description: Saiba mais sobre recursos adicionais de suporte para o Bot Framework.
 author: RobStand
 ms.author: kamrani
@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: cb31a457acb3616c7d50dab12424b7addd39debe
-ms.sourcegitcommit: 4086189a9c856fbdc832eb1a1d205e5f1b4e3acd
+ms.openlocfilehash: 06670c7a8099167f1f9963bffdcc6d3cd56f8370
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65733295"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75789134"
 ---
 # <a name="bot-framework-additional-resources"></a>Recursos adicionais do Bot Framework
 

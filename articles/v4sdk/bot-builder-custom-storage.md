@@ -1,5 +1,5 @@
 ---
-title: Implementar um armazenamento personalizado para seu bot | Microsoft Docs
+title: Implementar um armazenamento personalizado para seu bot – Serviço de Bot
 description: Como criar um armazenamento personalizado no SDK do Bot Framework v4.0
 keywords: personalizado, armazenamento, estado, diálogo
 author: johnataylor
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 699b4cfc1acc47757b7adc06dfeae577b09fba2e
-ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
+ms.openlocfilehash: 3ab03b552afa780845c8be84df62d97c1f0decd1
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75491879"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798606"
 ---
 # <a name="implement-custom-storage-for-your-bot"></a>Implementar um armazenamento personalizado para seu bot
 

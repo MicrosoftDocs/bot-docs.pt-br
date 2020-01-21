@@ -1,5 +1,5 @@
 ---
-title: Visão geral da CLI (Interface de Linha de Comando) do Azure Bot Framework | Microsoft Docs
+title: Visão geral da CLI (Interface de Linha de Comando) do Azure Bot Framework – Serviço de Bot
 description: Saiba mais sobre a CLI (Interface de Linha de Comando) do Bot Framework.
 keywords: Interface de linha de comando do Bot Framework, CLI do Bot Framework
 author: JonathanFingold
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/01/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4780d5258af7d2c93fafece361326fd2b0f8df77
-ms.sourcegitcommit: 4751c7b8ff1d3603d4596e4fa99e0071036c207c
+ms.openlocfilehash: 8b885b19ed22c4d91163b59abe4e253018531b59
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73443184"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791423"
 ---
 <!--TODO:
 - [?] Add to TOC: Reference/Bot Framework CLI/Reference
@@ -26,7 +26,7 @@ ms.locfileid: "73443184"
 
 A CLI (Interface de Linha de Comando) do Bot Framework é uma ferramenta multiplataforma que permite gerenciar bots e serviços relacionados. Ela substitui uma coleção de ferramentas de CLI autônomas mais antigas, agregando-as em uma única ferramenta. 
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 
 * [Node.js](https://nodejs.org/), versão 10.14.1 ou posterior.
 
@@ -42,9 +42,9 @@ npm i -g @microsoft/botframework-cli
 
 Os seguintes comandos estão disponíveis no momento.
 
-| Ferramenta antiga | Conjunto de comandos do BF | DESCRIÇÃO |
+| Ferramenta antiga | Conjunto de comandos do BF | Descrição |
 | :--- | :--- | :--- |
-| ChatDown | [`bf chatdown`](bf-cli-reference.md#bf-chatdown) | Comandos para trabalhar com arquivos de diálogo de chat ( **.chat**). |
+| ChatDown | [`bf chatdown`](bf-cli-reference.md#bf-chatdown) | Comandos para trabalhar com arquivos de diálogo de chat (**.chat**). |
 | na | [`bf config`](bf-cli-reference.md#bf-config) | Define várias configurações na CLI. |
 | LuDown, LuisGen | [`bf luis`](bf-cli-reference.md#bf-luis) | Comandos para trabalhar com arquivos de recursos do LUIS e gerenciar modelos do LUIS. |
 | QnAMaker | [`bf qnamaker`](bf-cli-reference.md#bf-qnamaker) | Comandos para trabalhar com os arquivos de recurso do QnA Maker e gerenciar bases de dados de conhecimento. |

@@ -1,5 +1,5 @@
 ---
-title: Adicionar fala a mensagens | Microsoft Docs
+title: Adicionar fala a mensagens (C# v3) – Serviço de Bot
 description: Saiba como adicionar fala a mensagens usando o SDK do Bot Framework para .NET.
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 6d47fe41821b0ea8a61555b8139f2969f204d8dd
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: a03d1c58bc91cd7966b59e2b62eb1c6ac46c094f
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70297312"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75797883"
 ---
 # <a name="add-speech-to-messages"></a>Adicionar fala a mensagens
 
@@ -42,9 +42,9 @@ Se você estiver usando [diálogos](bot-builder-dotnet-dialogs.md), será possí
 
 [!code-csharp[Call SayAsync()](../includes/code/dotnet-text-to-speech.cs#Speak2)]
 
-### <a id="prompt-options"></a> Opções de prompt
+### <a id="prompt-options"></a> Opções de prompts
 
-Usando qualquer um dos prompts internos, você pode definir as opções `speak` e `retrySpeak` para especificar o texto a ser falado pelo seu bot. O exemplo de código a seguir cria um prompt que especifica o texto a ser exibido, o texto a ser falado inicialmente e o texto a ser falado após aguardar algum tempo pela entrada usuário. Ele usa a formatação [SSML](#ssml) para indicar que "com certeza" deve ser falado com uma quantidade moderada de ênfase.
+Usando qualquer um dos prompts internos, você pode definir as opções `speak` e `retrySpeak` para especificar o texto a ser falado pelo seu bot. O exemplo de código a seguir cria um prompt que especifica o texto a ser exibido, o texto a ser falado inicialmente e o texto a ser falado após aguardar algum tempo pela entrada do usuário. Ele usa a formatação [SSML](#ssml) para indicar que "com certeza" deve ser falado com uma quantidade moderada de ênfase.
 
 [!code-csharp[Set Prompt options](../includes/code/dotnet-text-to-speech.cs#Speak3)]
 
@@ -58,7 +58,7 @@ No fornecimento da cadeia de caracteres formatada com SSML, o elemento wrapper d
 
 Quando você envia uma mensagem em um canal habilitado para fala, é possível tentar influenciar o estado do microfone do cliente incluindo também uma dica de entrada para indicar se seu bot está aceitando, esperando ou ignorando a entrada do usuário. Para obter mais informações, consulte [adicionar dicas de entrada mensagens](bot-builder-dotnet-add-input-hints.md).
 
-## <a name="sample-code"></a>Exemplo de código 
+## <a name="sample-code"></a>Código de exemplo 
 
 Veja um exemplo completo que mostra como criar um bot habilitado para fala usando o SDK do Bot Framework para .NET em <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/v3-sdk-samples/CSharp" target="_blank">Exemplo de Habilidade de Rolagem</a> no GitHub.
 
@@ -66,9 +66,9 @@ Veja um exemplo completo que mostra como criar um bot habilitado para fala usand
 
 - [Criar mensagens](bot-builder-dotnet-create-messages.md)
 - [Adicionar dicas de entrada às mensagens](bot-builder-dotnet-add-input-hints.md)
-- <a href="https://msdn.microsoft.com/library/hh378377(v=office.14).aspx" target="_blank">Linguagem de Marcação de Sintetização de Fala (SSML)</a>
+- <a href="https://msdn.microsoft.com/library/hh378377(v=office.14).aspx" target="_blank">Linguagem de marcação de síntese de fala (SSML)</a>
 - <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/v3-sdk-samples/CSharp/demo-RollerSkill" target="_blank">Exemplo de Habilidade de Rolagem (GitHub)</a>
-- <a href="https://docs.botframework.com/csharp/builder/sdkreference/dc/d2f/class_microsoft_1_1_bot_1_1_connector_1_1_activity.html" target="_blank">Classe Activity</a>
+- <a href="https://docs.botframework.com/csharp/builder/sdkreference/dc/d2f/class_microsoft_1_1_bot_1_1_connector_1_1_activity.html" target="_blank">Classe de atividade</a>
 - <a href="/dotnet/api/microsoft.bot.connector.imessageactivity" target="_blank">Interface IMessageActivity</a>
 - <a href="/dotnet/api/microsoft.bot.builder.dialogs.internals.dialogcontext" target="_blank">Classe DialogContext</a>
 - <a href="/dotnet/api/microsoft.bot.builder.dialogs.internals.prompt-2" target="_blank">Classe Prompt</a>

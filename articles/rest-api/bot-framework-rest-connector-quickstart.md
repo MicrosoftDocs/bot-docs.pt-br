@@ -1,5 +1,5 @@
 ---
-title: Crie um bot com o serviço Bot Connector | Microsoft Docs
+title: Crie um bot com o serviço Bot Connector – Serviço de Bot
 description: Crie um bot com o serviço Bot Connector.
 author: RobStand
 ms.author: kamrani
@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 751a5d8430bb675e8ad5e10d02f94ee5642672cb
-ms.sourcegitcommit: c200cc2db62dbb46c2a089fb76017cc55bdf26b0
+ms.openlocfilehash: f517385fd6d194772004b44b2d8407f2515dc17d
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70037465"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75789898"
 ---
 # <a name="create-a-bot-with-the-bot-connector-service"></a>Crie um bot com o serviço Bot Connector
 > [!div class="op_single_selector"]
@@ -48,7 +48,7 @@ Content-Type: application/x-www-form-urlencoded
 grant_type=client_credentials&client_id=MICROSOFT-APP-ID&client_secret=MICROSOFT-APP-PASSWORD&scope=https%3A%2F%2Fapi.botframework.com%2F.default
 ```
 
-### <a name="response"></a>Response
+### <a name="response"></a>Resposta
 
 Se a solicitação for bem-sucedida, você receberá uma resposta HTTP 200 que especifica o token de acesso e informações sobre sua expiração. 
 

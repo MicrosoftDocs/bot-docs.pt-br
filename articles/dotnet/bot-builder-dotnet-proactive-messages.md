@@ -1,5 +1,5 @@
 ---
-title: Enviar mensagens proativas | Microsoft Docs
+title: Enviar mensagens proativas (C# v3) – Serviço de Bot
 description: Saiba como enviar mensagens proativas usando o SDK do Bot Framework para .NET.
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: c601db171f253b83bfa2d354f79018f03287bcf6
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: a6dd39b76d12262097013095be67b8e401846cbc
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70297367"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75795467"
 ---
 # <a name="send-proactive-messages"></a>Enviar mensagens proativas
 
@@ -174,7 +174,7 @@ public class SurveyDialog : IDialog<object>
 }
 ```
 
-## <a name="sample-code"></a>Exemplo de código
+## <a name="sample-code"></a>Código de exemplo
 
 Veja um exemplo completo mostrando como enviar mensagens proativas usando o SDK do Bot Framework para .NET em <a href="https://aka.ms/proactive-messaging-cs-v3 " target="_blank">Exemplo de mensagens proativas</a> no GitHub. No exemplo de Mensagens Proativas, <a href="https://aka.ms/proactive-sendmessage-cs-v3 " target="_blank">simpleSendMessage</a> mostra como enviar uma mensagem proativa ad-hoc e <a href="https://aka.ms/proactive-newdialog-cs-v3 " target="_blank">startNewDialog</a> mostra como enviar uma mensagem proativa baseada em diálogo. 
 

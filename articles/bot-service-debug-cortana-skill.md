@@ -1,5 +1,5 @@
 ---
-title: Testar uma habilidade da Cortana | Microsoft Docs
+title: Testar uma habilidade da Cortana – Serviço de Bot
 description: Saiba como testar um bot da Cortana invocando uma habilidade da Cortana.
 keywords: SDK do Bot Framework, registrar o bot, Cortana
 author: v-ducvo
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/01/2018
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 996063bef2e139292187f125318f63745373e7bb
-ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
+ms.openlocfilehash: 62ed0fb7cb05072024617d65266cf457c554d4c7
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70166942"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75792765"
 ---
 # <a name="test-a-cortana-skill"></a>Testar uma habilidade da Cortana
 
@@ -54,7 +54,7 @@ Para testar o bot usando o controle de Webchat integrado no Serviço de Bot, cli
 Para testar o bot usando o [emulador](~/bot-service-debug-emulator.md), faça o seguinte:
 
 1. Execute o bot.
-2. Abra o emulador e preencha as informações necessárias. Para encontrar a **AppID** e a **AppPassword** do bot, confira [MicrosoftAppID e MicrosoftAppPassword](bot-service-manage-overview.md#microsoftappid-and-microsoftapppassword). 
+2. Abra o emulador e preencha as informações necessárias. Para localizar o **AppID** e **AppPassword** do seu bot, consulte [MicrosoftAppID e MicrosoftAppPassword](bot-service-manage-overview.md#microsoftappid-and-microsoftapppassword). 
 3. Clique em **Conectar** para conectar o emulador ao bot.
 4. Digite uma mensagem para verificar se o bot está funcionando.
 

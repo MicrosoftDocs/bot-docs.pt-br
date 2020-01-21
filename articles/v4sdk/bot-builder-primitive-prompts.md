@@ -1,5 +1,5 @@
 ---
-title: Crie seus próprio prompts para coletar entradas do usuário | Microsoft Docs
+title: Crie seus próprios prompts para coletar entradas do usuário – Serviço de Bot
 description: Saiba como gerenciar um fluxo de conversa com solicitações primitivas no SDK do Bot Framework.
 keywords: fluxo da conversa, prompts, estado da conversa, estado do usuário, prompts personalizados
 author: JonathanFingold
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4ae38a7b4f6a7769f8839fb44a82b3600abc6318
-ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
+ms.openlocfilehash: 8c0572c7c92abfc99ab01c1d734d5ed0dcc463bb
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75491419"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791295"
 ---
 # <a name="create-your-own-prompts-to-gather-user-input"></a>Crie seus próprio prompts para coletar entradas do usuário
 

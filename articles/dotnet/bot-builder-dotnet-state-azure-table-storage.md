@@ -1,5 +1,5 @@
 ---
-title: Gerenciar dados de estado personalizados com o armazenamento do Azure Table | Microsoft Docs
+title: Gerenciar dados de estado personalizados com o Armazenamento de Tabela do Azure (C# v3) – Serviço de Bot
 description: Saiba como salvar e recuperar dados de estado usando o Armazenamento de Tabelas do Azure com o SDK do Bot Framework para .NET
 author: kamrani
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 31679c478684366c106fc01a8e8804966f55e32e
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 5fcce457e5365cd54be77812f0b9fd70382a813b
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298766"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75797927"
 ---
 # <a name="manage-custom-state-data-with-azure-table-storage-for-net"></a>Gerenciar dados de estado personalizados com o Armazenamento de Tabela do Azure para .NET
 
@@ -26,7 +26,7 @@ Neste artigo, você implementará o armazenamento do Azure Table para armazenar 
  - Acesso aos dados de estado real
  - Store mais de 32kb de dados
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 Você precisará de:
  - [Conta do Microsoft Azure](https://azure.microsoft.com/free/)
  - [Visual Studio 2015 ou posterior](https://www.visualstudio.com/)

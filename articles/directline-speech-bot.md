@@ -1,5 +1,5 @@
 ---
-title: Desenvolver bot do DirectLine Speech | Microsoft Docs
+title: Desenvolver bot do DirectLine Speech – Serviço de Bot
 description: Desenvolver bot do DirectLine Speech
 keywords: desenvolver bot do Direct Line Speech, bot de fala
 author: ivorb
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/01/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4fc2eb84751f64a1ca1493515ccb231a0a78bbd4
-ms.sourcegitcommit: 490810d278d1c8207330b132f28a5eaf2b37bd07
+ms.openlocfilehash: 2aaafb7c46097a178761b356299612d874b1a823
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73592257"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75795959"
 ---
 # <a name="use-direct-line-speech-in-your-bot"></a>Usar o Direct Line Speech no seu bot
 

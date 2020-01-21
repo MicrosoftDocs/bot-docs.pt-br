@@ -1,5 +1,5 @@
 ---
-title: Receber atividades do bot | Microsoft Docs
+title: Receber atividades do bot – Serviço de Bot
 description: Saiba como receber atividades do bot usando a API da Linha Direta v3.0.
 author: RobStand
 ms.author: kamrani
@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/13/2019
-ms.openlocfilehash: 1e5c48dd3782100f9393c3498baa2b0a7c728cb3
-ms.sourcegitcommit: e815e786413296deea0bd78e5a495df329a9a7cb
+ms.openlocfilehash: bfe40a33747dfd6724f6a5efe2104ffde01781bc
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70876148"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75789367"
 ---
 # <a name="receive-activities-from-the-bot"></a>Receber atividades do bot
 
@@ -113,7 +113,7 @@ GET https://directline.botframework.com/v3/directline/conversations/abc123/activ
 Authorization: Bearer RCurR_XV9ZA.cwA.BKA.iaJrC8xpy8qbOF5xnR2vtCX7CZj0LdjAPGfiCpg4Fv0
 ```
 
-### <a name="response"></a>Response
+### <a name="response"></a>Resposta
 
 ```http
 HTTP/1.1 200 OK

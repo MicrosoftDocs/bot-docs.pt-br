@@ -1,5 +1,5 @@
 ---
-title: Reconhecer intenção do conteúdo da mensagem | Microsoft Docs
+title: Reconhecer a intenção do conteúdo da mensagem – Serviço de Bot
 description: Saiba como reconhecer a intenção do usuário usando expressões regulares ou verificando o conteúdo da mensagem.
 author: DeniseMak
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 370ba1fc756ecea8fd745067109fdb13b6e825a9
-ms.sourcegitcommit: 008aa6223aef800c3abccda9a7f72684959ce5e7
+ms.openlocfilehash: cab45fa2eca7fad94ce8a66e2a17495a529935c3
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70026308"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790679"
 ---
 # <a name="recognize-user-intent-from-message-content"></a>Reconhecer a intenção do usuário do conteúdo da mensagem
 

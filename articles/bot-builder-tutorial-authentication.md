@@ -1,5 +1,5 @@
 ---
-title: Adicionar autenticação ao seu bot por meio do Serviço de Bot do Azure | Microsoft Docs
+title: Adicionar autenticação ao bot por meio do Serviço de Bot do Azure – Serviço de Bot
 description: Saiba como usar os recursos de autenticação do Serviço de Bot do Azure para adicionar o SSO ao seu bot.
 ms.author: kamrani
 manager: kamrani
@@ -8,12 +8,12 @@ ms.service: bot-service
 ROBOTS: NOINDEX
 ms.date: 11/14/2019
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 2d36a1465fd1a81b0c5f30bab52824a6130c215e
-ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
+ms.openlocfilehash: e5b04a9b0d5d4c4974b5aaf051d7a01bdb9302f6
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75491209"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75788873"
 ---
 # <a name="add-authentication-to-your-bot-via-azure-bot-service"></a>Adicionar autenticação ao seu bot por meio do Serviço de Bot do Azure
 
@@ -38,7 +38,7 @@ Os recursos incluem:
 
 Você pode extrapolar das etapas neste artigo para adicionar recursos a um bot existente. A seguir estão os bots de exemplo que demonstram os novos recursos de autenticação
 
-| Amostra | Versão do BotBuilder | DESCRIÇÃO |
+| Amostra | Versão do BotBuilder | Descrição |
 |:---|:---:|:---|
 | [AadV1Bot](https://aka.ms/AadV1Bot) | v3 | Demonstra o suporte de OAuthCard no SDK do C# v3, usando o ponto de extremidade do Azure AD v1 |
 | [AadV2Bot](https://aka.ms/AadV2Bot) | v3 |  Demonstra o suporte de OAuthCard no SDK do C# v3, usando o ponto de extremidade do Azure AD v2 |

@@ -1,5 +1,5 @@
 ---
-title: Cenário de bot de Produtividade Empresarial| Microsoft Docs
+title: Cenário de bot de Produtividade Empresarial – Serviço de Bot
 description: Explore o cenário de bot de Produtividade Empresarial com o Bot Framework.
 author: BrianRandell
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 3ae87b52864ae1a9a4b7b439529e5093d6d3be8e
-ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
+ms.openlocfilehash: 3d3f40e5a24b349aff64791d35929017c5c0adfb
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167075"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75794846"
 ---
 # <a name="enterprise-productivity-bot-scenario"></a>Cenário de bot de Produtividade Empresarial
 
@@ -32,7 +32,7 @@ Aqui é apresentado o fluxo lógico de um bot de Produtividade Empresarial:
 3. O bot de Produtividade Empresarial é capaz de consultar o calendário do Office 365 do funcionário através do Graph.
 4. Usando dados coletados do calendário, o bot acessa informações sobre o caso no Dynamics CRM.
 5. As informações são retornadas ao funcionário que pode filtrar os dados sem sair do bot.
-6. O Application Insights coleta a telemetria do tempo de execução para ajudar no desenvolvimento e uso do bot.
+6. O Application Insights coleta a telemetria do runtime para ajudar o desenvolvimento com o desempenho e uso do bot.
 
 Baixe ou clone o código-fonte desse bot de exemplo em [Exemplos para cenários comuns do Bot Framework](https://aka.ms/abs-scenarios).
 

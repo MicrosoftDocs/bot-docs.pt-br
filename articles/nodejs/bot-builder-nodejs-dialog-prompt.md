@@ -1,5 +1,5 @@
 ---
-title: Solicitar entrada do usuário | Microsoft Docs
+title: Prompt de entrada do usuário – Serviço de Bot
 description: Saiba como usar prompts para coletar a entrada do usuário com o SDK do Bot Framework para Node.js.
 author: v-ducvo
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: f0b9e7457c63ee1be8b2d3063d098e4186b1db3a
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 723f81d5ef76eb92df74d1946532fe475c617c59
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299862"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791088"
 ---
 # <a name="prompt-for-user-input"></a>Prompt de entrada do usuário
 
@@ -117,7 +117,7 @@ Use o método [Prompts.time()][PromptsTime] para pedir ao usuário uma **hora** 
 O campo [results.response](http://docs.botframework.com/node/builder/chat-reference/interfaces/_botbuilder_d_.iprompttimeresult.html#response), que representa a resposta do usuário, contém um objeto [entity](http://docs.botframework.com/node/builder/chat-reference/interfaces/_botbuilder_d_.ientity.html) que especifica a data e a hora. Para resolver a data e hora em um objeto `Date` do JavaScript, use o método [EntityRecognizer.resolveTime()](http://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.entityrecognizer.html#resolvetime).
 
 > [!TIP] 
-> A hora que o usuário insere é convertida em hora UTC com base no fuso horário do servidor que hospeda o bot. Como o servidor pode estar localizado em um fuso horário diferente do usuário, lembre-se de considerar os fusos horários. Para converter a data e a hora para a hora local do usuário, considere solicitar ao usuário o seu respectivo fuso horário.
+> O horário em que o usuário entra é convertido em hora UTC com base no fuso horário do servidor que hospeda o bot. Como o servidor pode estar localizado em um fuso horário diferente do usuário, lembre-se de considerar os fusos horários. Para converter data e hora para a hora local do usuário, considere perguntar ao usuário em que fuso horário está.
 
 ```javascript
 bot.dialog('createAlarm', [
@@ -161,9 +161,9 @@ Para especificar o estilo da lista que é apresentada ao usuário, defina a prop
 
 Normalmente, os valores de enumeração de `ListStyle` são os seguintes:
 
-| Índice | NOME | DESCRIÇÃO |
+| Índice | Nome | Descrição |
 | ---- | ---- | ---- |
-| 0 | Nenhum | Nenhuma lista é renderizada. Isso é usado quando a lista está incluída como parte do prompt. |
+| 0 | none | Nenhuma lista é renderizada. Isso é usado quando a lista está incluída como parte do prompt. |
 | 1 | embutido | As opções são renderizadas como uma lista embutida do formulário “1. vermelho, 2. verde ou 3. azul”. |
 | 2 | list | As opções são renderizadas como uma lista numerada. |
 | 3 | botão | As opções são renderizadas como botões para os canais que dão suporte a botões. Para outros canais, eles serão renderizados como texto. |

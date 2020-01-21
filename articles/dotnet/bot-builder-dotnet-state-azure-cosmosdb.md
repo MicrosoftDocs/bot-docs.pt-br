@@ -1,5 +1,5 @@
 ---
-title: Gerenciar dados de estado personalizados com o Azure Cosmos DB | Microsoft Docs
+title: Gerenciar dados de estado personalizados com o Azure Cosmos DB (C# v3) – Serviço de Bot
 description: Saiba como salvar e recuperar dados de estado usando o Azure Cosmos DB com o SDK do Bot Framework para .NET
 author: kamrani
 ms.author: kamrani
@@ -8,25 +8,25 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 2495e0506072609e47f4014f1027ed5033fb4bf7
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 5057b05d598e8ff985a1d0daf5d18fef6c0ffc95
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70297769"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75797937"
 ---
 # <a name="manage-custom-state-data-with-azure-cosmos-db-for-net"></a>Gerenciar dados de estado personalizados com o Azure Cosmos DB para .NET
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
-Neste artigo, você implementará o Azure Cosmos DB para armazenar e gerenciar os dados de estado de seu bot. O Serviço de Estado do Conector padrão usado por bots não se destina ao ambiente de produção. Você deve usar [Extensões do Azure](https://github.com/Microsoft/BotBuilder-Azure) disponíveis no GitHub ou implementar um cliente de estado personalizado usando a plataforma de armazenamento de dados de sua escolha. Aqui estão alguns dos motivos para usar o armazenamento de estado personalizado:
+Neste artigo, você implementará o Azure Cosmos DB para armazenar e gerenciar os dados de estado de seu bot. O Serviço de Estado do Conector padrão usado pelos bots não é destinado ao ambiente de produção. Você deve usar [Extensões do Azure](https://github.com/Microsoft/BotBuilder-Azure) disponíveis no GitHub ou implementar um cliente de estado personalizado usando a plataforma de armazenamento de dados de sua escolha. Aqui estão alguns dos motivos para usar o armazenamento de estado personalizado:
  - Maior rendimento da API de estado (mais controle sobre o desempenho)
  - Baixa latência para geo-distribuição
  - Controle sobre onde os dados são armazenados
  - Acesso aos dados de estado real
  - Store mais de 32kb de dados
  
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 Você precisará de:
  - [Conta do Microsoft Azure](https://azure.microsoft.com/free/)
  - [Visual Studio 2015 ou posterior](https://www.visualstudio.com/)
@@ -56,9 +56,9 @@ Adicione as seguintes entradas ao arquivo Web.config:
 <add key="DocumentDbUrl" value="Your DocumentDB URI"/>
 <add key="DocumentDbKey" value="Your DocumentDB Key"/>
 ```
-Você substituirá o valor por seu URI e Chave Primária encontrada no Azure Cosmos DB. Salve o arquivo Web.config.
+Você substituirá o valor por seu URI e Chave Primária encontrada no Azure Cosmos DB. Salve o arquivo Web. config.
 
-## <a name="modify-your-bot-code"></a>Modifique o código do seu bot
+## <a name="modify-your-bot-code"></a>Modifique o código do bot
 Para usar o armazenamento do **Azure Cosmos DB**, adicione as seguintes linhas de código ao arquivo **Global.asax.cs** de seu bot dentro do método **Application_Start()** .
 
 ```cs
@@ -104,7 +104,7 @@ namespace SampleApp
 
 Salve o arquivo global.asax.cs. Agora você está pronto para testar o bot com o emulador.
 
-## <a name="run-your-bot-app"></a>Executar o bot do seu aplicativo
+## <a name="run-your-bot-app"></a>Execute seu bot de aplicativo
 Execute seu bot no Visual Studio, o código que você adicionou criará a tabela personalizada **botdata** no Azure.
 
 ## <a name="connect-your-bot-to-the-emulator"></a>Conectar seu bot no emulador
@@ -113,11 +113,11 @@ Neste ponto, seu bot está em execução localmente. Em seguida, inicie o emulad
 2. Clique em **Conectar**. 
 3. Teste seu bot digitando algumas mensagens no emulador. 
 
-## <a name="view-state-data-on-azure-portal"></a>Ver dados de estado no Portal do Azure
-Para exibir os dados de estado, entre em seu Portal do Azure e navegue até seu banco de dados. Clique em **Data Explorer (versão prévia)** para verificar se as informações de estado de seu bot estão sendo salvas. 
+## <a name="view-state-data-on-azure-portal"></a>Dados de estado de exibição no Portal do Azure
+Para exibir os dados de estado, entre no seu portal do Azure e navegue até seu banco de dados. Clique em **Data Explorer (versão prévia)** para verificar se as informações de estado de seu bot estão sendo salvas. 
 
 ## <a name="next-steps"></a>Próximas etapas
-Neste artigo, você usou o Cosmos DB para salvar e gerenciar dados do seu bot. Em seguida, saiba como modelar o fluxo da conversa usando diálogos.
+Neste artigo, você usou o Cosmos DB para salvar e gerenciar dados do seu bot. Em seguida, aprenda como modelar o fluxo de conversação usando diálogos.
 
 > [!div class="nextstepaction"]
 > [Gerenciar o fluxo da conversa](bot-builder-dotnet-manage-conversation-flow.md)

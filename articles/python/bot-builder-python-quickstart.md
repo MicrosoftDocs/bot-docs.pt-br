@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/10/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4305a38a917c7e2bb1b7cd92f3bd007c1ed77d49
-ms.sourcegitcommit: 46fbb8982144c66864b83889b6457187e890badd
+ms.openlocfilehash: 3df1e44b5643f0dae98e659d76b8e30224081782
+ms.sourcegitcommit: 86495b597e55c94309a0c73fc1945a3393ddcbbf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/08/2020
-ms.locfileid: "75736828"
+ms.locfileid: "75756369"
 ---
 # <a name="create-a-bot-with-the-bot-framework-sdk-for-python"></a>Criar um bot com o SDK do Bot Framework para Python
 

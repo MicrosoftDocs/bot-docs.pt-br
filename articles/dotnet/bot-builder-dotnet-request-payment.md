@@ -1,5 +1,5 @@
 ---
-title: Solicitar pagamento | Microsoft Docs
+title: Solicitar pagamento (C# v3) – Serviço de Bot
 description: Saiba como enviar uma solicitação de pagamento usando o SDK do Bot Framework para .NET.
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: ee7711ab15da9fbbb42d857b216a6099e44880e4
-ms.sourcegitcommit: 378dbffd3960a1fa063ffb314878ccd64fb8fb49
+ms.openlocfilehash: 026b6ad3b6b9037a09b2727838e7499562b83fba
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71094430"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75797991"
 ---
 # <a name="request-payment"></a>Solicitar pagamento
 
@@ -26,7 +26,7 @@ ms.locfileid: "71094430"
 
 Se o bot permitir que os usuários comprem itens, ele poderá solicitar o pagamento incluindo um tipo especial de botão em [rich card](bot-builder-dotnet-add-rich-card-attachments.md). Este artigo descreve como enviar uma solicitação de pagamento usando o SDK do Bot Framework para .NET.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 
 Antes de enviar uma solicitação de pagamento usando o SDK do Bot Framework para .NET, você deve concluir estas tarefas de pré-requisito.
 
@@ -62,7 +62,7 @@ As próximas seções deste artigo descrevem as três partes do processo de paga
 
 ## <a id="request-payment"></a> Solicitar pagamento
 
-Seu bot pode solicitar o pagamento de um usuário enviando uma mensagem que contém um [anexo de cartão rico](bot-builder-dotnet-add-rich-card-attachments.md) com um botão que especifica `CardAction.Type` de "pagamento". Este snippet de código do **Payment Bot** exemplo cria uma mensagem que contém um cartão Hero com um botão **Buy** no qual o usuário pode clicar (ou tocar) para iniciar o processo de pagamento. 
+Seu bot pode solicitar o pagamento de um usuário enviando uma mensagem que contém um [anexo de cartão rico](bot-builder-dotnet-add-rich-card-attachments.md) com um botão que especifica `CardAction.Type` de "pagamento". Esse snippet de código do exemplo de **Bot de Pagamento** cria uma mensagem que contém um cartão Hero com um botão **Comprar**, no qual o usuário pode clicar (ou tocar) para iniciar o processo de pagamento. 
 
 [!code-csharp[Request payment](../includes/code/dotnet-request-payment.cs#requestPayment)]
 

@@ -1,5 +1,5 @@
 ---
-title: Criar uma habilidade da Cortana usando o .NET | Microsoft Docs
+title: Criar uma habilidade da Cortana usando o .NET – Serviço de Bot
 description: Aprenda os conceitos básicos da criação de uma habilidade da Cortana no SDK do Bot Framework para .NET.
 keywords: Bot Framework, habilidade da Cortana, fala, .NET, SDK, principais conceitos, conceitos básicos
 author: DeniseMak
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: c0dd854cf2f8eb1f4cbe13c8d562425616e8cf40
-ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
+ms.openlocfilehash: ecdbf3e573c091893d0f2da8d2c7acb0c6348810
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167340"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75796680"
 ---
 # <a name="build-a-speech-enabled-bot-with-cortana-skills"></a>Criar um bot habilitado para fala com habilidades da Cortana
 

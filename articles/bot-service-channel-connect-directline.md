@@ -1,5 +1,5 @@
 ---
-title: Conecte um bot à linha direta | Microsoft Docs
+title: Conectar um bot à Direct Line – Serviço de Bot
 description: Aprenda como configurar a conexão de um bot para a linha direta.
 keywords: linha direta, canais bot, cliente customizado, conectar aos canais, configurar
 author: RobStand
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/7/2019
-ms.openlocfilehash: edfb61a4f4ca33089bce7d4b44ed242f83cbcc0d
-ms.sourcegitcommit: 6a83b2c8ab2902121e8ee9531a7aa2d85b827396
+ms.openlocfilehash: c65957a6bb86e4bbfb7cc41cd740d35b2effe695
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68866631"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790978"
 ---
 # <a name="connect-a-bot-to-direct-line"></a>Conecte um bot à linha direta
 
@@ -42,7 +42,7 @@ Como alternativa, use a API de linha direta para [trocar a chave para um token](
 
 ![Copie a chave de linha direta](media/bot-service-channel-connect-directline/directline-copykey.png)
 
-## <a name="configure-settings"></a>Configurar definições
+## <a name="configure-settings"></a>Definir configurações
 
 Por fim, defina as configurações do site.
 

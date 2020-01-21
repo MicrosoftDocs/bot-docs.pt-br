@@ -1,5 +1,5 @@
 ---
-title: Adicionar ações sugeridas às mensagens | Microsoft Docs
+title: Adicionar ações sugeridas a mensagens (C# v3) – Serviço de Bot
 description: Saiba como adicionar ações sugeridas às mensagens usando o SDK do Bot Framework para .NET.
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 03/13/2018
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 26a253ed46f8ed0d23f2bd046de132f44cd19019
-ms.sourcegitcommit: d493caf74b87b790c99bcdaddb30682251e3fdd4
+ms.openlocfilehash: 61aaff340a235f7b9b552d79205fab8e772216f9
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71278957"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75796675"
 ---
 # <a name="add-suggested-actions-to-messages"></a>Adicionar ações sugeridas a mensagens
 
@@ -40,7 +40,7 @@ Quando o usuário tocar em uma das ações sugeridas, o bot receberá uma mensag
 
 - [Visão geral das atividades](bot-builder-dotnet-activities.md)
 - [Criar mensagens](bot-builder-dotnet-create-messages.md)
-- [Classe Activity](https://aka.ms/ActivityClass-dotnet-API)
+- [Classe de atividade](https://aka.ms/ActivityClass-dotnet-API)
 - <a href="/dotnet/api/microsoft.bot.connector.imessageactivity" target="_blank">Interface IMessageActivity</a>
 - <a href="/dotnet/api/microsoft.bot.connector.cardaction" target="_blank">Classe CardAction</a>
 - <a href="/dotnet/api/microsoft.bot.connector.suggestedactions" target="_blank">Classe SuggestedActions</a>

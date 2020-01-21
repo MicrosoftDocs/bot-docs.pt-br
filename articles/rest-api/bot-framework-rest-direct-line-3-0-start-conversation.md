@@ -1,5 +1,5 @@
 ---
-title: Iniciar uma conversa | Microsoft Docs
+title: Iniciar uma conversa – Serviço de Bot
 description: Saiba como iniciar uma conversa usando a API Direct Line v3.0.
 author: RobStand
 ms.author: kamrani
@@ -7,16 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 7cc77133b6b2a212b7fde2e0b9d8c854e2bbab9c
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: bc3679c48f67ffc5fadfbc387ee41c69ad96884f
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299541"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75789286"
 ---
 # <a name="start-a-conversation"></a>Iniciar uma conversa
 
-As conversas de Linha Direta são explicitamente abertas por clientes e podem ser executadas contanto que o bot e o cliente participem e tenham credenciais válidas. Enquanto a conversa está aberta, o bot e o cliente podem enviar mensagens. Mais de um cliente pode se conectar a uma determinada conversa e cada cliente pode participar em nome de vários usuários.
+As conversas de linha diretas explicitamente são abertas pelos clientes e podem ser executadas desde que o cliente e o bot participarem e tem credenciais válidas. Enquanto a conversa está aberta, o bot e o cliente podem enviar mensagens. Mais de um cliente pode se conectar a uma determinada conversa e cada cliente pode participar em nome de vários usuários.
 
 ## <a name="open-a-new-conversation"></a>Abra uma nova conversa
 
@@ -36,7 +36,7 @@ POST https://directline.botframework.com/v3/directline/conversations
 Authorization: Bearer RCurR_XV9ZA.cwA.BKA.iaJrC8xpy8qbOF5xnR2vtCX7CZj0LdjAPGfiCpg4Fv0y8qbOF5xPGfiCpg4Fv0y8qqbOF5x8qbOF5xn
 ```
 
-### <a name="response"></a>Response
+### <a name="response"></a>Resposta
 
 Se a solicitação for bem-sucedida, a resposta conterá uma ID para a conversa, um token, um valor que indica o número de segundos até o token expirar e uma URL de fluxo que o cliente pode usar para [receber atividades por meio do fluxo de WebSocket](bot-framework-rest-direct-line-3-0-receive-activities.md#connect-via-websocket).
 
@@ -59,9 +59,9 @@ Normalmente, uma solicitação Iniciar Conversa é usada para abrir uma nova con
 > [!TIP]
 > Você tem 60 segundos para conectar-se à URL de fluxo do WebSocket. Se a conexão não puder ser estabelecida durante esse tempo, o cliente pode [reconectar-se à conversa](bot-framework-rest-direct-line-3-0-reconnect-to-conversation.md) para gerar uma nova URL de fluxo.
 
-## <a name="start-conversation-versus-generate-token"></a>Iniciar Conversa em comparação com Gerar Token
+## <a name="start-conversation-versus-generate-token"></a>Iniciar conversa em vez de gerar o Token
 
-A operação Iniciar Conversa (`POST /v3/directline/conversations`) é semelhante à operação [Gerar Token](bot-framework-rest-direct-line-3-0-authentication.md#generate-token) (`POST /v3/directline/tokens/generate`), já que ambas retornam um `token` que pode ser usado para acessar uma única conversa. No entanto, a operação Iniciar Conversa também inicia a conversa, entra em contato com o bot e cria uma URL de fluxo do WebSocket, enquanto que a operação Gerar Token não faz nenhuma dessas coisas. 
+A operação Iniciar Conversa (`POST /v3/directline/conversations`) é semelhante à operação [Gerar Token](bot-framework-rest-direct-line-3-0-authentication.md#generate-token) (`POST /v3/directline/tokens/generate`) em que ambas as operações retornam um `token` que pode ser usado para acessar uma única conversa. No entanto, a operação Iniciar Conversa também inicia a conversa, entra em contato com o bot e cria uma URL de fluxo do WebSocket, enquanto que a operação Gerar Token não faz nenhuma dessas coisas. 
 
 Se você pretende iniciar a conversa imediatamente, use a operação Iniciar Conversa. Se você planeja distribuir o token para clientes e deseja que eles iniciem a conversa, use a operação [Gerar Token](bot-framework-rest-direct-line-3-0-authentication.md#generate-token). 
 

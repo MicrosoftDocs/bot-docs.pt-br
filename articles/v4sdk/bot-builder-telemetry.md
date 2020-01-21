@@ -1,5 +1,5 @@
 ---
-title: Adicionar telemetria ao seu bot | Microsoft Docs
+title: Adicionar telemetria ao seu bot – Serviço de Bot
 description: Saiba como integrar seu bot aos novos recursos de telemetria.
 keywords: telemetria, appinsights, bot de monitor
 author: WashingtonKayaker
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a023fd97bfb7b8d55ad01d118075a6441e426575
-ms.sourcegitcommit: 08f9dc91152e0d4565368f72f547cdea1885af89
+ms.openlocfilehash: f8835ba339edf233f41ee64a68d523065aab5bd5
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74510759"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791218"
 ---
 # <a name="add-telemetry-to-your-bot"></a>Adicionar telemetria ao seu bot
 
@@ -36,7 +36,7 @@ Neste artigo, você aprenderá a implementar a telemetria em seu bot usando o Ap
 
 * Visualizar os dados telemétricos no Application Insights
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 
 * O [código de exemplo do CoreBot](https://aka.ms/cs-core-sample)
 
@@ -76,44 +76,45 @@ Começaremos com o [aplicativo de exemplo CoreBot](https://aka.ms/cs-core-sample
     public void ConfigureServices(IServiceCollection services)
     {
         ...
-        // Create the Bot Framework Adapter with error handling enabled.
-        services.AddSingleton<IBotFrameworkHttpAdapter, AdapterWithErrorHandler>();
+            // Create the Bot Framework Adapter with error handling enabled.
+            services.AddSingleton<IBotFrameworkHttpAdapter, AdapterWithErrorHandler>();
 
-        // Add Application Insights services into service collection
-        services.AddApplicationInsightsTelemetry();
+            // Add Application Insights services into service collection
+            services.AddApplicationInsightsTelemetry();
 
-        // Add the standard telemetry client
-        services.AddSingleton<IBotTelemetryClient, BotTelemetryClient>();
+            // Create the telemetry client.
+            services.AddSingleton<IBotTelemetryClient, BotTelemetryClient>();
 
-        // Create the telemetry middleware to track conversation events
-        services.AddSingleton<TelemetryLoggerMiddleware>();
+            // Add telemetry initializer that will set the correlation context for all telemetry items.
+            services.AddSingleton<ITelemetryInitializer, OperationCorrelationTelemetryInitializer>();
 
-        // Add the telemetry initializer middleware
-        services.AddSingleton<IMiddleware, TelemetryInitializerMiddleware>();
+            // Add telemetry initializer that sets the user ID and session ID (in addition to other bot-specific properties such as activity ID)
+            services.AddSingleton<ITelemetryInitializer, TelemetryBotIdInitializer>();
 
-        // Add telemetry initializer that will set the correlation context for all telemetry items
-        services.AddSingleton<ITelemetryInitializer, OperationCorrelationTelemetryInitializer>();
+            // Create the telemetry middleware to initialize telemetry gathering
+            services.AddSingleton<TelemetryInitializerMiddleware>();
 
-        // Add telemetry initializer that sets the user ID and session ID (in addition to other bot-specific properties, such as activity ID)
-        services.AddSingleton<ITelemetryInitializer, TelemetryBotIdInitializer>();
+            // Create the telemetry middleware (used by the telemetry initializer) to track conversation events
+            services.AddSingleton<TelemetryLoggerMiddleware>();
         ...
     }
     ```
-    
+
     Observação: Se estiver acompanhando atualizando o código de exemplo do CoreBot, você notará que `services.AddSingleton<IBotFrameworkHttpAdapter, AdapterWithErrorHandler>();` já existe 
 
-5. Instrua o adaptador a usar o código de middleware que foi adicionado ao método `ConfigureServices()`. Você faz isso em `AdapterWithErrorHandler.cs` com o parâmetro middleware IMiddleware na lista de parâmetros construtores e a instrução `Use(middleware);` no construtor, conforme mostrado aqui:
+5. Instrua o adaptador a usar o código de middleware que foi adicionado ao método `ConfigureServices()`. Você faz isso em `AdapterWithErrorHandler.cs` com o parâmetro TelemetryInitializerMiddleware telemetryInitializerMiddleware na lista de parâmetros construtores e a instrução `Use(telemetryInitializerMiddleware);` no construtor, conforme mostrado aqui:
     ```csharp
-    public AdapterWithErrorHandler(ICredentialProvider credentialProvider, ILogger<BotFrameworkHttpAdapter> logger, IMiddleware middleware, ConversationState conversationState = null)
-            : base(credentialProvider)
+        public AdapterWithErrorHandler(IConfiguration configuration, ILogger<BotFrameworkHttpAdapter> logger, TelemetryInitializerMiddleware telemetryInitializerMiddleware, ConversationState conversationState = null)
+            : base(configuration, logger)
     {
         ...
-
-        Use(middleware);
+        Use(telemetryInitializerMiddleware);
     }
     ```
 
-6. Adicione a chave de instrumentação do Application Insights ao arquivo `appsettings.json`. O arquivo `appsettings.json` contém metadados sobre serviços externos que o bot usa durante a execução. Por exemplo, as conexões de serviço e os metadados do CosmosDB, Application Insights e LUIS (Reconhecimento Vocal) são armazenados nele. A adição ao arquivo `appsettings.json` deve estar neste formato:
+6. Você também precisará adicionar `Microsoft.Bot.Builder.Integration.ApplicationInsights.Core` à lista de instruções Using no `AdapterWithErrorHandler.cs`.
+
+7. Adicione a chave de instrumentação do Application Insights ao arquivo `appsettings.json`. O arquivo `appsettings.json` contém metadados sobre serviços externos que o bot usa durante a execução. Por exemplo, as conexões de serviço e os metadados do CosmosDB, Application Insights e LUIS (Reconhecimento Vocal) são armazenados nele. A adição ao arquivo `appsettings.json` deve estar neste formato:
 
     ```json
     {
@@ -132,14 +133,14 @@ Neste ponto, o trabalho preliminar para habilitar a telemetria usando o Applicat
 
 ### <a name="enabling-or-disabling-activity-logging"></a>Habilitar ou desabilitar o log de atividades
 
-Por padrão, o `TelemetryInitializerMiddleware` usará o `TelemetryLoggerMiddleware` para registrar a telemetria em log quando o bot enviar/receber atividades. O log de atividades cria logs de eventos personalizados em seu recurso do Application Insights.  Se desejar, você poderá desabilitar o log de eventos de atividade definindo `logActivityTelemetry` como false no `TelemetryInitializerMiddleware` antes de registrá-lo em **Startup.cs**.
+Por padrão, o `TelemetryInitializerMiddleware` usará o `TelemetryLoggerMiddleware` para registrar a telemetria em log quando o bot enviar/receber atividades. O log de atividades cria logs de eventos personalizados em seu recurso do Application Insights.  Se desejar, você poderá desabilitar o log de eventos de atividade definindo `logActivityTelemetry` como false no `TelemetryInitializerMiddleware` ao registrá-lo em **Startup.cs**.
 
 ```cs
 public void ConfigureServices(IServiceCollection services)
 {
     ...
     // Add the telemetry initializer middleware
-    services.AddSingleton<IMiddleware, TelemetryInitializerMiddleware>(sp =>
+    services.AddSingleton<TelemetryInitializerMiddleware>(sp =>
             {
                 var httpContextAccessor = sp.GetService<IHttpContextAccessor>();
                 var loggerMiddleware = sp.GetService<TelemetryLoggerMiddleware>();
@@ -147,6 +148,12 @@ public void ConfigureServices(IServiceCollection services)
             });
     ...
 }
+```
+
+A adição de `IHttpContextAccessor` também exigirá que você referencie a biblioteca HTTP Microsoft ASPNetCore, por meio da adição desta instrução Using:
+
+```cs
+using Microsoft.AspNetCore.Http; 
 ```
 
 ### <a name="enable-or-disable-logging-personal-information"></a>Habilitar ou desabilitar o registro em log de informações pessoais
@@ -171,112 +178,59 @@ Em seguida, veremos o que precisa ser incluído para adicionar a funcionalidade 
 
 ## <a name="enabling-telemetry-in-your-bots-dialogs"></a>Habilitar a telemetria nas caixas de diálogo de bots
 
+Ao adicionar uma nova caixa de diálogo a qualquer ComponentDialog, ela herdará o Microsoft.Bot.Builder.IBotTelemetryClient da caixa de diálogo pai.  Por exemplo, no aplicativo de exemplo CoreBot, todas as caixas de diálogo são adicionadas à MainDialog, que é uma ComponentDialog.  Depois de definir a propriedade TelemetryClient para a MainDialog, todas as caixas de diálogo adicionadas a ela herdarão automaticamente a telemetryClient dela, portanto, não precisará ser definida explicitamente ao adicionar caixas de diálogo.
+ 
  Siga as etapas abaixo para atualizar o exemplo de CoreBot:
 
-1.  Em `MainDialog.cs`, adicione um novo campo TelemetryClient à classe `MainDialog`, em seguida, atualize a lista de parâmetros do construtor para incluir um parâmetro `IBotTelemetryClient` e depois passe-o para cada chamada para o método `AddDialog()`.
-
-
-    * Adicione o parâmetro `IBotTelemetryClient telemetryClient` ao construtor da classe MainDialog e, em seguida, atribua-o ao campo `TelemetryClient`:
-
-        ```csharp
-        public MainDialog(IConfiguration configuration, ILogger<MainDialog> logger, IBotTelemetryClient telemetryClient)
-            : base(nameof(MainDialog))
-        {
-            TelemetryClient = telemetryClient;
-
-            ...
-
-        }
-        ```
-
-    * Ao adicionar cada caixa de diálogo usando o método `AddDialog`, defina o valor `TelemetryClient`:
-
-        ```cs
-        public MainDialog(IConfiguration configuration, ILogger<MainDialog> logger, IBotTelemetryClient telemetryClient)
-            : base(nameof(MainDialog))
-        {
-            ...
-
-            AddDialog(new TextPrompt(nameof(TextPrompt))
-            {
-                TelemetryClient = telemetryClient,
-            });
-
-            ...
-        }
-        ```
-
-    * Caixas de diálogo em cascata geram eventos independentemente de outras caixas de diálogo. Defina a propriedade `TelemetryClient` após a lista de etapas em cascata:
-
-        ```csharp
-        // The IBotTelemetryClient to the WaterfallDialog
-        AddDialog(new WaterfallDialog(
-            nameof(WaterfallDialog),
-            new WaterfallStep[]
-        {
-            IntroStepAsync,
-            ActStepAsync,
-            FinalStepAsync,
-        })
-        {
-            TelemetryClient = telemetryClient,
-        });
-
-        ```
-
-2. Em `DialogExtensions.cs`, defina a propriedade `TelemetryClient` do objeto `dialogSet` no método `Run()`:
-
+1.  Em `MainDialog.cs`, atualize a lista de parâmetros do construtor para incluir o parâmetro `IBotTelemetryClient` e, em seguida, defina a propriedade TelemetryClient da MainDialog para esse valor, conforme mostrado no seguinte snippet de código:
 
     ```csharp
-    public static async Task Run(this Dialog dialog, ITurnContext turnContext, IStatePropertyAccessor<DialogState> accessor, CancellationToken cancellationToken = default(CancellationToken))
+    public MainDialog(IConfiguration configuration, ILogger<MainDialog> logger, IBotTelemetryClient telemetryClient)
+        : base(nameof(MainDialog))
     {
+        // Set the telemetry client for this and all child dialogs.
+        this.TelemetryClient = telemetryClient;
         ...
-
-        dialogSet.TelemetryClient = dialog.TelemetryClient;
-
-        ...
-        
     }
-
-    ```
-
-3. Em `BookingDialog.cs`, use o mesmo processo usado ao atualizar `MainDialog.cs` para habilitar a telemetria nas quatro caixas de diálogo adicionadas neste arquivo. Não se esqueça de adicionar o campo `TelemetryClient` à classe BookingDialog e o parâmetro `IBotTelemetryClient telemetryClient` ao construtor BookingDialog.
-
+        ```
 
 > [!TIP] 
-> Se você estiver acompanhando e atualizando o código de exemplo do CoreBot, poderá consultar o [código de exemplo do Application Insights](https://aka.ms/csharp-corebot-app-insights-sample) se tiver algum problema.
+> If you are following along and updating the CoreBot sample code, you can refer to the [Application Insights sample code](https://aka.ms/csharp-corebot-app-insights-sample) if you run into any problems.
 
-Isso é tudo o que é necessário para adicionar telemetria às caixas de diálogo de bots, neste ponto, se você tiver executado o bot, verá que as coisas estão sendo registradas no Application Insights. No entanto, se você tiver uma tecnologia integrada, tal como o LUIS e o QnA Maker, será necessário adicionar o `TelemetryClient` a esse código também.
+That's all there is to adding telemetry to your bots dialogs, at this point if you ran your bot you should see things being logged in Application Insights, however if you have any integrated technology such as LUIS and QnA Maker you will need to add the `TelemetryClient` to that code as well.
 
 
-## <a name="enabling-telemetry-to-capture-usage-data-from-other-services-like-luis-and-qna-maker"></a>Habilitar a telemetria para capturar dados de uso de outros serviços, tais como o LUIS e o QnA Maker
+## Enabling telemetry to capture usage data from other services like LUIS and QnA Maker
 
-Em seguida, implementaremos a funcionalidade de telemetria em seu serviço LUIS. O serviço LUIS tem o registro em log de telemetria interno disponível para que o esforço necessário para começar a obter dados de telemetria do LUIS seja mínimo.  Se você estiver interessado em habilitar a telemetria em um bot habilitado para o QnA Maker, confira [Adicionar telemetria ao seu bot do QnAMaker](bot-builder-telemetry-QnAMaker.md)
+We will next implement telemetry functionality in your LUIS service. The LUIS service has built-in telemetry logging available so there is very little you need to do to start getting telemetry data from LUIS.  If you are interested in enabling telemetry in a QnA Maker enabled bot, see [Add telemetry to your QnAMaker bot](bot-builder-telemetry-QnAMaker.md)
 
-Para este exemplo, precisamos apenas fornecer o cliente de telemetria de modo semelhante ao modo como fizemos para as caixas de diálogo. 
-
-1. O parâmetro _`IBotTelemetryClient telemetryClient`_ é necessário no método `ExecuteLuisQuery()` em `LuisHelper.cs`:
+1. The _`IBotTelemetryClient telemetryClient`_ parameter is required in the `FlightBookingRecognizer` constructor in `FlightBookingRecognizer.cs`:
 
     ```cs
-    public static async Task<BookingDetails> ExecuteLuisQuery(IBotTelemetryClient telemetryClient, IConfiguration configuration, ILogger logger, ITurnContext turnContext, CancellationToken cancellationToken)
+    public FlightBookingRecognizer(IConfiguration configuration, IBotTelemetryClient telemetryClient)
     ```
 
-2. A classe `LuisPredictionOptions` permite que você forneça parâmetros opcionais para uma solicitação de previsão do LUIS.  Para habilitar a telemetria, você precisará definir o parâmetro `TelemetryClient` ao criar o objeto `luisPredictionOptions` em `LuisHelper.cs`:
+2. Em seguida, você precisará habilitar o `telemetryClient` ao criar seu `LuisRecognizer` no construtor `FlightBookingRecognizer`. Para fazer isso, adicione o `telemetryClient` como um novo _LuisPredictionOption_:
 
     ```cs
-    var luisPredictionOptions = new LuisPredictionOptions()
+    if (luisIsConfigured)
     {
-        TelemetryClient = telemetryClient,
-    };
+        var luisApplication = new LuisApplication(
+            configuration["LuisAppId"],
+            configuration["LuisAPIKey"],
+            "https://" + configuration["LuisAPIHostName"]);
 
-    var recognizer = new LuisRecognizer(luisApplication, luisPredictionOptions);
+        // Set the recognizer options depending on which endpoint version you want to use.
+        // More details can be found in https://docs.microsoft.com/en-gb/azure/cognitive-services/luis/luis-migration-api-v3
+        var recognizerOptions = new LuisRecognizerOptionsV3(luisApplication)
+        {
+            TelemetryClient = telemetryClient,
+        };
+        _recognizer = new LuisRecognizer(recognizerOptions);
+    }
     ```
 
-3. A última etapa é passar o cliente de telemetria para a chamada para `ExecuteLuisQuery` no método `ActStepAsync()` de `MainDialog.cs`:
-
-    ```cs
-    await LuisHelper.ExecuteLuisQuery(TelemetryClient, Configuration, Logger, stepContext.Context, cancellationToken)
-    ```
+3. Você precisará ter o LUIS 
 
 Isso é tudo, agora você deve ter um bot funcional que registra dados de telemetria no Application Insights. Você pode usar o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator-readme) para executar o bot localmente. Você não deve experienciar nenhuma alteração no comportamento do bot, mas ele estará registrando informações no Application Insights. Interaja com o bot enviando várias mensagens e, na próxima seção, examinaremos os resultados da telemetria no Application Insights.
 
@@ -288,7 +242,7 @@ Para obter informações sobre como testar e depurar o bot, consulte os seguinte
 
 
 ## <a name="visualizing-your-telemetry-data-in-application-insights"></a>Visualizar os dados telemétricos no Application Insights
-O Application Insights monitora a disponibilidade, o desempenho e o uso do aplicativo de bot, esteja ele hospedado na nuvem ou localmente. Ele aproveita a plataforma de análise de dados avançada no Azure Monitor para fornecer informações detalhadas sobre as operações do aplicativo e diagnosticar erros sem esperar que um usuário relate-os. Há algumas maneiras de ver os dados de telemetria coletados pelo Application Insights, duas das principais maneiras são por meio de consultas e do painel. 
+O Application Insights monitora a disponibilidade, o desempenho e o uso do aplicativo de bot, esteja ele hospedado na nuvem ou localmente. Ele aproveita a plataforma avançada de análise de dados no Azure Monitor para fornecer informações detalhadas sobre as operações do aplicativo e diagnosticar erros sem esperar que um usuário relate-os. Há algumas maneiras de ver os dados de telemetria coletados pelo Application Insights, duas das principais maneiras são por meio de consultas e do painel. 
 
 ### <a name="querying-your-telemetry-data-in-application-insights-using-kusto-queries"></a>Consultar os dados telemétricos no Application Insights usando o Kusto Queries
 Use esta seção como um ponto de partida para aprender a usar consultas de log no Application Insights. Ela demonstra duas consultas úteis e fornece links para outras documentações com informações adicionais.

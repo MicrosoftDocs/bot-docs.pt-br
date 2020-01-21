@@ -1,5 +1,5 @@
 ---
-title: Inserir um bot em um site | Microsoft Docs
+title: Inserir um bot em um site – Serviço de Bot
 description: Saiba como criar um bot que será inserido em um site.
 author: matvelloso
 ms.author: mateusv
@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 96ccbe453574f15ceda8ae8b4ec1eb44492de738
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 48b483ad16a5af837869879c5f87d0e249f0788d
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298177"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75792188"
 ---
 # <a name="embed-a-bot-in-a-website"></a>Inserir um bot em um site
 
@@ -44,7 +44,7 @@ O mecanismo de *backchannel* permite que a página da Web que está hospedando o
 
 [!INCLUDE [Introduction to backchannel mechanism](~/includes/snippet-backchannel.md)]
 
-## <a name="sample-code"></a>Exemplo de código
+## <a name="sample-code"></a>Código de exemplo
 
 O <a href="https://aka.ms/BotFramework-WebChat" target="_blank">controle de chat na Web de software livre</a> está disponível por meio do GitHub. Para obter detalhes sobre como você pode implementar o mecanismo de backchannel usando o controle de chat na Web de software livre e o SDK do Bot Framework para Node.js, consulte [Usar o mecanismo backchannel](~/nodejs/bot-builder-nodejs-backchannel.md).
 

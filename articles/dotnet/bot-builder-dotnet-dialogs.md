@@ -1,5 +1,5 @@
 ---
-title: Visão geral dos diálogos | Microsoft Docs
+title: Visão geral das caixas de diálogo (C# v3) – Serviço de Bot
 description: Saiba como usar os diálogos no SDK do Bot Framework para .NET para modelar conversas e gerenciar o fluxo da conversa.
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: fe45d873369b28a0081df28d2d3971e5b77ca4f9
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: e7c852245bdf09ada446a873bd1c974b85417672
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298369"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75793349"
 ---
 # <a name="dialogs-in-the-bot-framework-sdk-for-net"></a>Diálogos no SDK do Bot Framework para .NET
 
@@ -154,7 +154,7 @@ Se `Chain.Switch<T, R>` retornar um `IDialog<IDialog<T>>` aninhado, então, o `I
 Os diálogos gerenciam o fluxo de conversas entre um bot e um usuário. Um diálogo define como interagir com um usuário. Um bot pode usar muitos diálogos organizados em pilhas para orientar a conversa com o usuário. Na próxima seção, veja como a pilha de diálogos aumenta e diminui à medida que você cria e descarta diálogos na pilha.
 
 > [!div class="nextstepaction"]
-> [Gerenciar o fluxo de conversas com diálogos](bot-builder-dotnet-manage-conversation-flow.md)
+> [Gerencie o fluxo de conversas com caixas de diálogo](bot-builder-dotnet-manage-conversation-flow.md)
 
 
 [builderLibrary]: /dotnet/api/microsoft.bot.builder.dialogs

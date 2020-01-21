@@ -1,5 +1,5 @@
 ---
-title: Processamento de atividade | Microsoft Docs
+title: Processamento de atividade – Serviço de Bot
 description: Entenda o processamento de atividades no bot SDK.
 keywords: adaptador de bot, middleware personalizado, curto-circuito, fallback, manipuladores de eventos
 author: jonathanfingold
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 315bebddeda21301d29fa003ce9c8f43e1677000
-ms.sourcegitcommit: 6a83b2c8ab2902121e8ee9531a7aa2d85b827396
+ms.openlocfilehash: 2896dcf1d99ace250ec73f5ecfc2b3857afb0c83
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68970719"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798819"
 ---
 # <a name="activity-processing"></a>Processamento de atividade
 
@@ -28,7 +28,7 @@ As atividades, particularmente aquelas que são [enviadas de um bot](#generating
 
 O adaptador de bot encapsula processos de autenticação e envia atividades para e recebe atividades do Serviço de Conector de Bot. Quando seu bot recebe uma atividade, o adaptador encerra tudo sobre essa atividade, cria um [objeto de contexto](#turn-context) para o turn, passa para a lógica do aplicativo do bot e envia respostas geradas pelo seu bot de volta ao canal do usuário.
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Autenticação
 
 O adaptador autentica cada atividade recebida que o aplicativo recebe, usando informações da atividade e o cabeçalho `Authentication` da solicitação REST. O adaptador usa um objeto conector e as credenciais do aplicativo para autenticar as atividades de saída para o usuário.
 

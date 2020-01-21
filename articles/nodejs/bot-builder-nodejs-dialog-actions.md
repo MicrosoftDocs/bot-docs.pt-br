@@ -1,5 +1,5 @@
 ---
-title: Tratar ações do usuário | Microsoft Docs
+title: Tratar ações do usuário – Serviço de Bot
 description: Saiba como tratar ações do usuário, permitindo ao bot escutar e tratar a entrada do usuário contendo determinadas palavras-chave usando o SDK do Bot Framework para Node.js.
 author: DucVo
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 56f5c66b03fe5ae8f0abeb66470a7c31997829ba
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 43a0737a11942cb3e8c032b98eda37154a47d340
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299896"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790928"
 ---
 # <a name="handle-user-actions"></a>Tratar ações do usuário
 
@@ -31,7 +31,7 @@ Normalmente, os usuários tentam acessar algumas funcionalidades em um bot, usan
 
 Os tipos de ação que você pode anexar a um diálogo são listados na tabela abaixo. O link para cada nome de ação irá direcioná-lo para uma seção que fornece mais detalhes sobre essa ação.
 
-| Ação | Escopo | DESCRIÇÃO |
+| Ação | Escopo | Descrição |
 |------|------| ---- |
 | [triggerAction](#bind-a-triggeraction) | Global | Associa uma ação ao diálogo que limpará a pilha de diálogo e efetuará push para a parte inferior da pilha. Use a opção `onSelectAction` para substituir esse comportamento padrão. |
 | [customAction](#bind-a-customaction) | Global | Associa uma ação personalizada ao bot que pode processar informações ou executar ações sem afetar a pilha de diálogo. Use a opção `onSelectAction` para personalizar a funcionalidade dessa ação. |
@@ -91,7 +91,7 @@ bot.dialog('help', function (session, args, next) {
 });
 ```
 
-Nesse caso, o `triggerAction` está anexado ao próprio diálogo `help` (em oposição ao diálogo `orderDinner`). A opção `onSelectAction` permite iniciar esse diálogo sem limpar a pilha de diálogo. Isso permite manipular solicitações globais como "ajuda", "sobre", "suporte" etc. Observe que a opção `onSelectAction` chama explicitamente o método `session.beginDialog` para iniciar o diálogo disparado. A ID do diálogo disparado é fornecida por meio de `args.action`. Não digite manualmente a ID de diálogo (por exemplo, 'ajuda') nesse método, caso contrário, você poderá receber erros de tempo de execução. Se você quiser disparar uma mensagem de ajuda contextual para a tarefa `orderDinner` propriamente dita, considere anexar um `beginDialogAction` ao diálogo `orderDinner`.
+Nesse caso, o `triggerAction` está anexado ao próprio diálogo `help` (em oposição ao diálogo `orderDinner`). A opção `onSelectAction` permite iniciar esse diálogo sem limpar a pilha de diálogo. Isso permite manipular solicitações globais como "ajuda", "sobre", "suporte" etc. Observe que a opção `onSelectAction` chama explicitamente o método `session.beginDialog` para iniciar o diálogo disparado. A ID do diálogo disparado é fornecida por meio de `args.action`. Não digite manualmente a ID de diálogo (por exemplo, 'ajuda') nesse método, caso contrário, você poderá receber erros de runtime. Se você quiser disparar uma mensagem de ajuda contextual para a tarefa `orderDinner` propriamente dita, considere anexar um `beginDialogAction` ao diálogo `orderDinner`.
 
 ### <a name="bind-a-customaction"></a>Associar um customAction
 

@@ -1,5 +1,5 @@
 ---
-title: Adicionar ações sugeridas às mensagens | Microsoft Docs
+title: Adicionar ações sugeridas a mensagens (JS v3) – Serviço de Bot
 description: Saiba como enviar ações sugeridas em mensagens usando o SDK do Bot Framework para Node.js.
 author: v-ducvo
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 02/19/2019
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 384256e23500911b807658b56cb3225bf4cee65f
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: ebad14abfdef2e274562b17ca1945d709a2c8d54
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299730"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790381"
 ---
 # <a name="add-suggested-actions-to-messages"></a>Adicionar ações sugeridas a mensagens
 
@@ -40,7 +40,7 @@ Lembre-se de que o método `imBack` postará o `value` para a janela de chat do 
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [Exemplos][samples]
+- [Amostras][samples]
 - [IMessage][IMessage]
 - [ICardAction][ICardAction]
 - [session.send][SessionSend]

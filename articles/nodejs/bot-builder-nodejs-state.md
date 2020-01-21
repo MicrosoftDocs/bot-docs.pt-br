@@ -1,5 +1,5 @@
 ---
-title: Gerenciar dados de estado | Microsoft Docs
+title: Gerenciar dados de estado (JS v3) – Serviço de Bot
 description: Saiba como salvar e recuperar dados de estado com o SDK do Bot Framework para Node.js.
 author: DucVo
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 4c93ba1b37166c784d6cdf687e926026f474de85
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 40293ff3756687f270847dd9045a04a19363ad1b
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299681"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790321"
 ---
 # <a name="manage-state-data"></a>Gerenciar dados de estado
 
@@ -27,7 +27,7 @@ ms.locfileid: "70299681"
 
 ## <a name="in-memory-data-storage"></a>Armazenamento de dados na memória
 
-Armazenamento de dados na memória destina-se somente para teste. Esse armazenamento é volátil e temporário. Os dados serão limpos sempre que o bot é reiniciado. Para usar o armazenamento na memória para fins de teste, você precisará fazer duas coisas. Primeiro crie uma nova instância do armazenamento na memória:
+Armazenamento de dados na memória destina-se somente para teste. Esse armazenamento é volátil e temporário. Os dados serão limpos sempre que o bot for reiniciado. Para usar o armazenamento na memória para fins de teste, você precisará fazer duas coisas. Primeiro crie uma nova instância do armazenamento na memória:
 
 ```javascript
 var inMemoryStorage = new builder.MemoryBotStorage();
@@ -41,7 +41,7 @@ var bot = new builder.UniversalBot(connector, [..waterfall steps..])
                     .set('storage', inMemoryStorage); // Register in-memory storage 
 ```
 
-Você pode usar esse método para definir seu próprio armazenamento de dados personalizado ou usar qualquer um dos *extensões do Azure*.
+Você pode usar esse método para definir seu próprio armazenamento de dados personalizado ou usar qualquer uma das *Extensões do Azure*.
 
 ## <a name="manage-custom-data-storage"></a>Gerenciar o armazenamento de dados personalizados
 
@@ -57,7 +57,7 @@ Com uma dessas opções [ do Azure Extensions ](https://www.npmjs.com/package/bo
 
 No SDK do Bot Framework para Node.js, o objeto `session` expõe as propriedades a seguir para armazenar dados de estado.
 
-| Propriedade | No escopo | DESCRIÇÃO |
+| Propriedade | No escopo | Descrição |
 | ---- | ---- | ---- |
 | [`userData`][userDataURL] | Usuário | Contém dados que são salvos para o usuário no canal especificado. Esses dados persistirão em várias conversas. |
 | [`privateConversationData`][privateConversationDataURL] | Conversação | Contém dados que são salvos para o usuário no contexto de uma conversa específica no canal especificado. Esses dados são privados para o usuário atual e persistirão apenas para a conversa atual. A propriedade é limpa quando a conversa termina ou quando `endConversation` é chamado explicitamente. |

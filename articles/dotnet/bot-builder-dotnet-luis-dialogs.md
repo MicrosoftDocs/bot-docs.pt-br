@@ -1,5 +1,5 @@
 ---
-title: Reconhecer intenções e entidades com o LUIS | Microsoft Docs
+title: Reconhecer intenções e entidades com o LUIS (C# v3) – Serviço de Bot
 description: Saiba como habilitar seu bot para entender o idioma natural usando diálogos do LUIS no SDK do Bot Framework para .NET.
 author: DeniseMak
 ms.author: kamrani
@@ -8,18 +8,18 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 7e7eb36d0cb3cdbf18037f05b4960b240cb70d8d
-ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
+ms.openlocfilehash: f34fd8a868f8de68b016b5f12c6cc1569a46d951
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167398"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75788883"
 ---
 # <a name="recognize-intents-and-entities-with-luis"></a>Reconhecer intenções e entidades com o LUIS 
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
-Este artigo usa o exemplo de um bot para fazer anotações, visando demonstrar como o Reconhecimento Vocal ([LUIS][LUIS]) ajuda o bot a responder adequadamente à entrada de idioma natural. Um bot detecta o que um usuário deseja fazer identificando a **intenção** desse usuário. A intenção é determinada por entradas faladas ou textuais, ou por **declarações**. A intenção mapeia declarações para ações executadas pelo bot. Por exemplo, um bot de anotações reconhece uma intenção `Notes.Create` de invocar a funcionalidade para a criação de uma anotação. Um bot também pode precisar extrair **entidades**, que são palavras importantes em declarações. No exemplo de um bot de anotações, a entidade `Notes.Title` identifica o título de cada nota.
+Este artigo usa o exemplo de um bot para fazer anotações, visando demonstrar como o Reconhecimento Vocal ([LUIS][LUIS]) ajuda o bot a responder adequadamente à entrada de idioma natural. Um bot detecta o que um usuário deseja fazer identificando a **intenção** desse usuário. A intenção é determinada por entradas textuais ou faladas, ou por **enunciados**. A intenção mapeia declarações para ações executadas pelo bot. Por exemplo, um bot de anotações reconhece uma intenção `Notes.Create` de invocar a funcionalidade para a criação de uma anotação. Um bot também pode precisar extrair **entidades**, que são palavras importantes em enunciados. No exemplo de um bot de anotações, a entidade `Notes.Title` identifica o título de cada nota.
 
 ## <a name="create-a-language-understanding-bot-with-bot-service"></a>Criar um bot de Reconhecimento vocal com o serviço de bot
 
@@ -27,7 +27,7 @@ Este artigo usa o exemplo de um bot para fazer anotações, visando demonstrar c
 
     ![Criar novo recurso](../media/bot-builder-dotnet-use-luis/bot-service-creation.png)
 
-2. Na caixa de pesquisa, pesquise **Bot do aplicativo Web**. 
+2. Na caixa Pesquisar, procure **Bot do aplicativo Web**. 
 
     ![Criar novo recurso](../media/bot-builder-dotnet-use-luis/bot-service-selection.png)
 
@@ -199,7 +199,7 @@ Adicione o seguinte código na classe `BasicLuisDialog`, após a definição do 
         public const string DefaultNoteTitle = "default";
 ```
 
-### <a name="handle-the-notecreate-intent"></a>Lidar com a intenção Note.Create
+### <a name="handle-the-notecreate-intent"></a>Manipular a intenção Note.Create
 Para lidar com a intenção Note.Create, adicione o seguinte código à classe `BasicLuisDialog`.
 
 ```cs
@@ -317,7 +317,7 @@ Cole o código a seguir na classe `BasicLuisDialog`.
         }
 ```
 
-### <a name="handle-the-notedelete-intent"></a>Lidar com a intenção Note.Delete
+### <a name="handle-the-notedelete-intent"></a>Manipular a intenção Note.Delete
 Cole o código a seguir na classe `BasicLuisDialog`.
 
 ```cs

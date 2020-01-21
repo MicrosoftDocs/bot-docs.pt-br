@@ -1,5 +1,5 @@
 ---
-title: Criar um Registro de Canais de Bot com o Serviço de Bot | Microsoft Docs
+title: Criar um Registro de Canais de Bot com o Serviço de Bot – Serviço de Bot
 description: Saiba como registrar um bot existente com o Serviço de Bot.
 ms.author: kamrani
 manager: kamrani
@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 78de3676332561aafd4b24f755962b614cb9a27d
-ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
+ms.openlocfilehash: 4471507ff64e69ca2d438d55ccf8ba7e08fbcdfd
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75491567"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75794721"
 ---
 # <a name="register-a-bot-with-azure-bot-service"></a>Registrar um bot com o Serviço de Bot do Azure
 

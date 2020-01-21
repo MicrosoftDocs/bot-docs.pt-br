@@ -1,5 +1,5 @@
 ---
-title: Conectar um bot ao email do Office 365 | Microsoft Docs
+title: Conectar um bot ao email do Office 365 – Serviço de Bot
 description: Saiba como configurar um bot para enviar e receber email com o Office 365.
 keywords: O Office 365, canais de bot, email, credenciais de email, portal do azure, email personalizado
 author: kamrani
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/15/2019
-ms.openlocfilehash: 3ad7829af9dc24ca9e10ebab352b4513b3bcad28
-ms.sourcegitcommit: 78da125eafe93b3c6d254708b82bdd01de7c3afb
+ms.openlocfilehash: 8ca2735dac838982af3ba97221e07d80155153b7
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74464291"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75792087"
 ---
 # <a name="connect-a-bot-to-office-365-email"></a>Conectar um bot ao email do Office 365
 
@@ -77,16 +77,20 @@ Para obter mais informações sobre o uso de `channelData`, consulte [como imple
 
 Se seu bot não retornar um código de status de HTTP 200 OK dentro de 15 segundos em resposta a uma mensagem de email de entrada, o canal de email tentará reenviar a mensagem e seu bot pode receber a mesma atividade de mensagem de email algumas vezes. Para obter mais informações, confira a seção de [Detalhes de HTTP](v4sdk/bot-builder-basics.md#http-details) em **Como funcionam os bots** e o artigo sobre como [Solucionar problemas de erros de tempo limite](https://github.com/daveta/analytics/blob/master/troubleshooting_timeout.md).
 
+> [!NOTE]
+> Se você estiver usando uma conta do Office 365 com a MFA habilitada, primeiro desabilite a MFA para a conta especificada e, em seguida, você poderá configurar a conta para o canal de email. Caso contrário, a conexão falhará. 
+
 ## <a name="additional-resources"></a>Recursos adicionais
 
 <!-- Put whole list in monikers, even though it's just the second item that needs to be different. -->
 ::: moniker range="azure-bot-service-3.0"
 * Conectar um bot aos [canais](~/bot-service-manage-channels.md)
 * [Implemente a funcionalidade específica do canal](dotnet/bot-builder-dotnet-channeldata.md) com o SDK do Bot Framework para .NET
-* Use o [Inspetor de Canal](bot-service-channel-inspector.md) para ver como um canal é renderizado em um recurso específico do seu aplicativo bot
+* Leia o artigo [referência de canais](bot-service-channels-reference.md) para obter mais informações sobre quais recursos são compatíveis com cada canal
 ::: moniker-end
 ::: moniker range="azure-bot-service-4.0"
 * Conectar um bot aos [canais](~/bot-service-manage-channels.md)
 * [Implemente a funcionalidade específica do canal](~/v4sdk/bot-builder-channeldata.md) com o SDK do Bot Framework para .NET
-* Use o [Inspetor de Canal](bot-service-channel-inspector.md) para ver como um canal é renderizado em um recurso específico do seu aplicativo bot
+* Leia o artigo [referência de canais](bot-service-channels-reference.md) para obter mais informações sobre quais recursos são compatíveis com cada canal
 ::: moniker-end
+

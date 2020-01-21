@@ -1,5 +1,5 @@
 ---
-title: Personalizar um formulário usando FormBuilder | Microsoft Docs
+title: Personalizar um formulário usando o FormBuilder – Serviço de Bot
 description: Aprenda como alterar dinamicamente e personalizar o fluxo de conversação e o conteúdo usando o FormBuilder para o SDK do Bot Framework para .NET.
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: b738296d3d796cdccd40e0d3bda503b9d6349bff
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 1f3af516aa119ef8fcb56075ef0f024ecba0cc52
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70297990"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75795969"
 ---
 # <a name="customize-a-form-using-formbuilder"></a>Personalizar um formulário usando FormBuilder
 
@@ -74,7 +74,7 @@ Neste exemplo, o formulário executa estas etapas:
 - Mostra uma mensagem de agradecimento. 
 - Define um `OnCompletionAsync` manipulador para processar o pedido. 
 
-## <a name="sample-code"></a>Exemplo de código
+## <a name="sample-code"></a>Código de exemplo
 
 [!INCLUDE [Sample code](../includes/snippet-dotnet-formflow-samples.md)]
 

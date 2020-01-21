@@ -1,5 +1,5 @@
 ---
-title: Perguntas frequentes sobre o Serviço de Bot | Microsoft Docs
+title: Perguntas Frequentes sobre o Serviço de Bot – Serviço de Bot
 description: Uma lista de perguntas frequentes sobre os elementos do Bot Framework e uma previsão de quando novos recursos serão disponibilizados.
 author: scheyal
 ms.author: kamrani
@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/21/2019
-ms.openlocfilehash: 9d23c1497fa5ab58ef6eba4725035c4c0929586f
-ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
+ms.openlocfilehash: 96dfd465c34580dfd41f50c6a9be4d91be9e7b77
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75491370"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75794775"
 ---
 # <a name="bot-framework-frequently-asked-questions"></a>Perguntas frequentes sobre o Bot Framework
 
@@ -154,6 +154,9 @@ Se tiver um firewall de saída bloqueando o tráfego do seu bot com a Internet, 
 - cortanabfchannelwestus.azurewebsites.net (canal da Cortana)
 - *.botframework.com (canais)
 
+> [!NOTE] 
+> Você poderá usar `<channel>.botframework.com` se preferir não adicionar uma URL com um asterisco à lista de permissões. `<channel>` é igual a cada canal que seu bot usa, como `directline.botframework.com`, `webchat.botframework.com` e `slack.botframework.com`. Também vale a pena observar o tráfego em seu firewall enquanto testa o bot para verificar se nada mais está sendo bloqueado.
+
 ### <a name="can-i-block-all-traffic-to-my-bot-except-traffic-from-the-bot-connector-service"></a>Posso bloquear todo o tráfego para o meu bot, exceto o tráfego do Serviço de Conector do Bot?
 Não. Esse tipo de lista de permissões de DNS ou de endereço IP é inviável. O serviço Bot Framework Connector é hospedado em datacenters do Azure em todo o mundo e a lista de IPs do Azure está em constante mudança. A lista de permissões de determinados endereços IP pode funcionar um dia e parar no próximo, à medida que os Endereços IP do Azure mudam.
  
@@ -232,7 +235,7 @@ Para criar sua própria ID do aplicativo, siga as etapas abaixo.
 3. Insira um nome de exibição para o registro de aplicativo no campo *Nome* e selecione os tipos de conta compatíveis. O nome não precisa corresponder à ID do bot.
 
     > [!IMPORTANT]
-    > Nos *Tipos de conta compatíveis*, selecione o botão de opção *Contas em qualquer diretório organizacional e contas pessoais da Microsoft (por exemplo, Skype, Xbox, Outlook.com)* . Se alguma das outras opções for selecionada, **haverá falha na criação de bot**.
+    > Nos *Tipos de conta compatíveis*, selecione o botão de opção *Contas em qualquer diretório organizacional e contas pessoais da Microsoft (por exemplo, Skype, Xbox, Outlook.com)* . Se qualquer uma das outras opções estiver selecionada, **o bot ficará inutilizável**.
 
     ![detalhes do registro](media/app-registration/registration-details.png)
 

@@ -1,5 +1,5 @@
 ---
-title: Reconhecer intenções e entidades com o LUIS | Microsoft Docs
+title: Reconhecer intenções e entidades com o LUIS (JS v3) – Serviço de Bot
 description: Integre um bot ao LUIS para detectar a intenção do usuário e responder adequadamente disparando diálogos usando o SDK do Bot Framework para Node.js.
 author: DeniseMak
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 03/28/2018
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: d3cdbc2c9a2c620860f55cc2c31f3ce3ba5695e1
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 49f76f4615184a38e381fdf3e2084057ee5338c9
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299768"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790740"
 ---
 # <a name="recognize-intents-and-entities-with-luis"></a>Reconhecer intenções e entidades com o LUIS 
 
@@ -27,7 +27,7 @@ Este artigo usa o exemplo de um bot para fazer anotações, visando demonstrar c
 
     ![Criar novo recurso](../media/bot-builder-nodejs-use-luis/bot-service-creation.png)
 
-2. Na caixa de pesquisa, pesquise **Bot do aplicativo Web**. 
+2. Na caixa Pesquisar, procure **Bot do aplicativo Web**. 
 
     ![Criar novo recurso](../media/bot-builder-nodejs-use-luis/bot-service-selection.png)
 
@@ -563,10 +563,10 @@ No portal do Azure, clique em **Testar no Webchat** para testar o bot. Tente dig
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Ao tentar o bot, é possível ver que o reconhecedor pode disparar a interrupção do diálogo atualmente ativo. Permitir e manipular as interrupções é um design flexível que leva em conta o que os usuários realmente fazem. Saiba mais sobre as diversas ações que você pode associar a uma intenção reconhecida.
+Ao tentar o bot, é possível ver que o reconhecedor pode disparar a interrupção do diálogo atualmente ativo. Permitir e tratar interrupções é um design flexível que explica o que os usuários realmente fazem. Saiba mais sobre as diversas ações que você pode associar a uma intenção reconhecida.
 
 > [!div class="nextstepaction"]
-> [Manipular ações do usuário](bot-builder-nodejs-dialog-actions.md)
+> [Manipular ações de usuário](bot-builder-nodejs-dialog-actions.md)
 
 
 [LUIS]: https://www.luis.ai/

@@ -1,5 +1,5 @@
 ---
-title: Adicionar fala a mensagens | Microsoft Docs
+title: Adicionar fala a mensagens (JS v3) – Serviço de Bot
 description: Saiba como adicionar fala a mensagens usando o SDK do Bot Framework para Node.js.
 author: v-ducvo
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 14bda9e14f0f812cf528a6b9fdf01175e7eb21ae
-ms.sourcegitcommit: 6a83b2c8ab2902121e8ee9531a7aa2d85b827396
+ms.openlocfilehash: a5e97aa859f8b200fecb6df213bce1f9d9c1f912
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68866645"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790351"
 ---
 # <a name="add-speech-to-messages"></a>Adicionar fala a mensagens
 
@@ -42,7 +42,7 @@ Como alternativa ao uso de `session.send()`, você pode chamar o método `sessio
 
 `session.say(displayText: string, speechText: string, options?: object)`
 
-| Parâmetro | DESCRIÇÃO |
+| Parâmetro | Descrição |
 |----|----|
 | `displayText` | O texto a ser exibido. |
 | `speechText` | O texto (em texto simples ou no formato <a href="https://msdn.microsoft.com/library/hh378377(v=office.14).aspx" target="_blank">SSML</a>) deve ser falado. |
@@ -69,7 +69,7 @@ Para especificar o texto a ser falado pelo seu bot, você pode usar uma string d
 
 Quando você envia uma mensagem em um canal habilitado para fala, é possível tentar influenciar o estado do microfone do cliente incluindo também uma dica de entrada para indicar se seu bot está aceitando, esperando ou ignorando a entrada do usuário. Para obter mais informações, consulte [adicionar dicas de entrada mensagens](bot-builder-nodejs-send-input-hints.md).
 
-## <a name="sample-code"></a>Exemplo de código 
+## <a name="sample-code"></a>Código de exemplo 
 
 Veja um exemplo completo que mostra como criar um bot habilitado para fala usando o SDK do Bot Framework para Node.js em <a href="https://github.com/microsoft/BotBuilder-Samples/tree/v3-sdk-samples/Node/demo-RollerSkill" target="_blank">Exemplo de rolagem</a> no GitHub.
 

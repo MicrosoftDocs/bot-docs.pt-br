@@ -1,5 +1,5 @@
 ---
-title: Visão geral do Assistente Personalizado | Microsoft Docs
+title: Visão geral do Assistente Personalizado – Serviço de Bot
 description: Saiba mais sobre como criar seu próprio Assistente Personalizado
 author: darrenj
 ms.author: darrenj
@@ -8,20 +8,20 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/01/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 276ee900a30e9f164cdf697d8f429acd59b2d286
-ms.sourcegitcommit: 4751c7b8ff1d3603d4596e4fa99e0071036c207c
+ms.openlocfilehash: 1b3cb313a06f8f834aa7d212db43eafb2a621af5
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73441522"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798616"
 ---
 # <a name="custom-assistant-overview"></a>Visão geral do Assistente Personalizado
 
 ## <a name="overview"></a>Visão geral
 
-Temos presenciado uma necessidade significativa de clientes e parceiros em fornecer um assistente de conversação adaptado à marca, personalizado para os clientes e disponibilizado em uma ampla variedade de dispositivos e telas de conversação. Dando continuidade à abordagem de software livre da Microsoft em relação ao SDK do Bot Framework, o Assistente Pessoal Personalizado de código aberto oferece controle total sobre a experiência do usuário final desenvolvida com base em um conjunto de recursos básicos. Além disso, a experiência pode incorporar inteligência sobre o usuário final e informações de qualquer dispositivo/ecossistema para oferecer uma experiência realmente integrada e inteligente.
+Temos presenciado uma necessidade significativa de clientes e parceiros em fornecer um assistente de conversação adaptado à marca, personalizado para os clientes e disponibilizado em uma ampla variedade de dispositivos e telas de conversação. Dando continuidade à abordagem de software livre da Microsoft em relação ao SDK do Bot Framework, o Assistente Pessoal Personalizado de código aberto oferece controle total sobre a experiência do usuário final desenvolvida com base em um conjunto de recursos básicos. Além disso, a experiência pode incorporar informações sobre o usuário e sobre todos os dispositivos e ecossistemas, a fim de oferecer uma experiência totalmente integrada e inteligente.
 
-Acreditamos plenamente que nossos clientes devem poder fortalecer seus relacionamentos com os clientes e obter seus insights. Assim, qualquer assistente personalizado oferecerá controle total da experiência do usuário para nossos clientes e parceiros. O nome, a voz e a personalidade podem ser alterados para atender às necessidades da organização. A solução de Assistente Personalizado simplifica a criação de seu próprio assistente, permitindo que você comece a usá-lo em minutos. 
+Acreditamos plenamente que nossos clientes devem conduzir e fortalecer os insights de seus clientes e seu relacionamento com eles. Assim, qualquer assistente personalizado oferecerá controle total da experiência do usuário para nossos clientes e parceiros. O nome, a voz e a personalidade podem ser alterados para atender às necessidades da organização. A solução de Assistente Personalizado simplifica a criação de seu próprio assistente, permitindo que você comece a usá-lo em minutos. 
 
 O escopo da funcionalidade do Assistente Pessoal Personalizado é amplo e geralmente oferece aos usuários finais vários recursos. Para aumentar a produtividade do desenvolvedor e permitir um ecossistema vibrante de experiências de conversação reutilizáveis, estamos oferecendo aos desenvolvedores exemplos inicias de habilidades de conversação reutilizáveis. Essas habilidades podem ser adicionadas a um aplicativo de conversação para dar vida a uma experiência de conversa específica, por exemplo, para localizar um ponto de interesse, interagir com o calendário, tarefas, emails e muitos outros cenários. As habilidades são totalmente personalizáveis e consistem em modelos de linguagem para várias linguagens, diálogos e códigos.
 

@@ -1,5 +1,5 @@
 ---
-title: Fazer upgrade do bot para a API v3 do Bot Framework | Microsoft Docs
+title: Fazer upgrade do bot para a API v3 do Bot Framework – Serviço de Bot
 description: Saiba como fazer upgrade do bot para a API v3 do Bot Framework.
 author: RobStand
 ms.author: kamrani
@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: a9fa1fe134f8ac7716796f4e9090acb60915afe8
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 6f08da5acbf8ac050d5dbf6a1a0290c3e6288013
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298591"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790988"
 ---
 # <a name="upgrade-your-bot-to-bot-framework-api-v3"></a>Fazer upgrade do bot para a API v3 do Bot Framework
 
@@ -33,7 +33,7 @@ If the **App ID** field is already populated, complete these steps:
 -->
 
 1. Clique em **Gerenciar ID de Aplicativo da Microsoft e senha**.  
-![Configuração](./media/upgrade/manage-app-id.png)
+![Configuration](./media/upgrade/manage-app-id.png)
 
 2. Clique em **Gerar Nova Senha**.  
 ![Gerar nova senha](./media/upgrade/generate-new-password.png)
@@ -119,9 +119,9 @@ Onde as informações de remetente, destinatário e canal que são especificadas
 
 |Campo da API v1 | Campo da API v3|
 |--------|--------|
-| objeto `From` | objeto `From` |
-| objeto `To` | objeto `Recipient` |
-| Propriedade `ChannelConversationID` | objeto `Conversation`|
+| Objeto `From` | Objeto `From` |
+| Objeto `To` | Objeto `Recipient` |
+| Propriedade `ChannelConversationID` | Objeto `Conversation`|
 | Propriedade `ChannelId` | Propriedade `ChannelId` |
 
 Para obter mais informações sobre o endereçamento de mensagens, consulte [Enviar e receber atividades](~/dotnet/bot-builder-dotnet-connector.md).
@@ -148,7 +148,7 @@ A API v3 do Bot Framework apresenta uma implementação mais robusta de anexos e
 Na API v1 do Bot Framework, a API para gerenciar os dados de estado do bot foi integrada à API de mensagens. Na API v3 do Bot Framework, essas APIs são separadas. Agora, você deve usar o serviço de Estado do Bot para obter dados de estado (em vez de assumir que serão incluídos dentro do objeto `Message`) e para armazenar dados de estado (em vez de passá-los como parte do objeto `Message`). Para obter informações sobre como gerenciar dados de estado do bot usando o serviço de Estado do Bot, consulte [Gerenciar dados de estado](~/dotnet/bot-builder-dotnet-state.md).
 
 > [!IMPORTANT]
-> A API de Serviço de Estado do Bot Framework não é recomendada para ambientes de produção e pode ser preterida em uma versão futura. É recomendável que você atualize o código do bot para que ele use o armazenamento em memória para fins de teste ou use uma das **Extensões do Azure** para bots de produção. Para saber mais, consulte o tópico **Gerenciar dados de estado** para implementação de [.NET](~/dotnet/bot-builder-dotnet-state.md) ou [Node](~/nodejs/bot-builder-nodejs-state.md).
+> A API de Serviço de Estado do Bot Framework não é recomendada para ambientes de produção e poderá ser preterida em uma versão futura. É recomendável que você atualize o código do bot para que ele use o armazenamento em memória para fins de teste ou use uma das **Extensões do Azure** para bots de produção. Para obter mais informações, confira o tópico **Gerenciar dados de estado** para implementação do [.NET](~/dotnet/bot-builder-dotnet-state.md) ou do [Node](~/nodejs/bot-builder-nodejs-state.md).
 
 ### <a name="webconfig-changes"></a>Alterações do Web.config
 

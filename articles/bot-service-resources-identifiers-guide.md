@@ -1,5 +1,5 @@
 ---
-title: Guia para as IDs no Bot Framework | Microsoft Docs
+title: Guia para as IDs no Bot Framework – Serviço de Bot
 description: Este guia descreve as características dos campos de ID presentes no protocolo v3 do Bot Framework.
 keywords: id, bots, protocolo
 author: RobStand
@@ -8,24 +8,24 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 04/30/2019
-ms.openlocfilehash: 8a9fa38a579bbe083f960caf5f600a1c5842045e
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 1e32c47c394a3dafe4d49d2b23107a46610df14f
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298632"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75788738"
 ---
 # <a name="id-fields-in-the-bot-framework"></a>Campos de ID no Bot Framework
 
 Este guia descreve as características dos campos de ID presentes no protocolo v3 do Bot Framework.
 
-## <a name="channel-id"></a>ID de canal
+## <a name="channel-id"></a>ID do Canal
 
 Cada canal do Bot Framework é identificado por uma ID exclusiva.
 
 Exemplo: `"channelId": "skype"`
 
-IDs de canal servem como namespaces para outras IDs. Chamadas de tempo de execução no protocolo do Bot Framework devem ocorrer dentro do contexto de um cana; o canal fornece um significado para a conversa e as IDs da conta usada na comunicação.
+IDs de canal servem como namespaces para outras IDs. Chamadas de runtime no protocolo do Bot Framework devem ocorrer dentro do contexto de um cana; o canal fornece um significado para a conversa e as IDs da conta usada na comunicação.
 
 Por convenção, todas as IDs de canal são em minúsculas. Os canais garantem que as IDs de canal que eles emitem tenham uso consistente de maiúsculas e minúsculas e, portanto, os bots pode usar comparações ordinais para estabelecer a equivalência.
 
@@ -56,7 +56,7 @@ Cada bot que foi registrado com o Serviço de Bot do Azure tem uma ID de Aplicat
 
 Exemplo: `"msaAppId": "353826a6-4557-45f8-8d88-6aa0526b8f77"`
 
-Um aplicativo representa um registro no portal de Aplicativos da equipe de Identidade e serve como o mecanismo de identidade de serviço a serviço dentro do protocolo de tempo de execução do Bot Framework. Os aplicativos podem ter outras associações que não sejam de bot, como sites e aplicativos móveis/área de trabalho.
+Um aplicativo representa um registro no portal de Aplicativos da equipe de Identidade e serve como o mecanismo de identidade de serviço a serviço dentro do protocolo de runtime do Bot Framework. Os aplicativos podem ter outras associações que não sejam de bot, como sites e aplicativos móveis/área de trabalho.
 
 Cada bot registrado tem exatamente um aplicativo. Embora não seja possível que um proprietário de bot, independentemente, altere qual aplicativo está associado ao bot, a equipe do Bot Framework pode fazer isso em um pequeno número de casos excepcionais.
 

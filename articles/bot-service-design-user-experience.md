@@ -1,5 +1,5 @@
 ---
-title: Projetar a experiência do usuário | Microsoft Docs
+title: Criar a experiência do usuário – Serviço de Bot
 description: Saiba como projetar seu bot para oferecer uma experiência de usuário envolvente, usando controles de usuário avançados, reconhecimento vocal em idioma natural e fala.
 keywords: visão geral, design, experiência do usuário, controle de usuário avançado
 author: matvelloso
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 09/20/2018
-ms.openlocfilehash: 75907c07887fdf7ba21e4bb5d25bca488a70697d
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 54b797c10ba69684c64c7d9f6c7e144d603084ca
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298575"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75793514"
 ---
 # <a name="design-the-user-experience"></a>Projetar a experiência do usuário
 
@@ -86,7 +86,7 @@ Em outros cenários, um usuário pode estar **digitando solicitações simples c
 
 Usando as APIs, o bot pode extrair os principais componentes do texto do usuário para identificar a intenção do usuário. Ao implementar funcionalidades de reconhecimento vocal em idioma natural no bot, defina expectativas realistas para o nível de detalhes que os usuários provavelmente fornecerão na entrada. 
 
-![como os usuários se comunicam](./media/bot-service-design-user-experience/buy-house.png)
+![como os usuários falam](./media/bot-service-design-user-experience/buy-house.png)
 
 > [!TIP]
 > Ao criar modelos de idioma natural, não presuma que os usuários fornecerão todas as informações necessárias na consulta inicial. Projete o bot para solicitar especificamente as informações necessárias, guiando o usuário para fornecer essas informações fazendo uma série de perguntas, se necessário. 

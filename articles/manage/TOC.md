@@ -10,6 +10,7 @@
 ### [Ligar ao Direct Line por Fala](../bot-service-channel-connect-directlinespeech.md)
 ### [Extensão do Serviço de Aplicativo do Direct Line](../bot-service-channel-directline-extension.md)
 #### [Configurar o bot do .NET para a extensão](../bot-service-channel-directline-extension-net-bot.md)
+#### [Configurar o bot do Node.js para a extensão](../bot-service-channel-directline-extension-node-bot.md)
 #### [Criar Cliente .NET com a extensão](../bot-service-channel-directline-extension-net-client.md)
 #### [Usar a extensão com Webchat](../bot-service-channel-directline-extension-webchat-client.md)
 #### [Usar a extensão dentro do VNET](../bot-service-channel-directline-extension-vnet.md)

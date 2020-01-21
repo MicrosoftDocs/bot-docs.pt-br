@@ -1,5 +1,5 @@
 ---
-title: Solicitações de agente do usuário do Bot Framework | Microsoft Docs
+title: Solicitações de agente do usuário do Bot Framework – Serviço de Bot
 description: Noções básicas sobre solicitações do Bot Framework para o servidor Web.
 author: JohnD-ms
 ms.author: kamrani
@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: f86e130fff83e8ad1604ec4ea531d58793fb8409
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: e6b0df6384b6ecc1ffa8922e574c6b161db8369e
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70297474"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75794124"
 ---
 # <a name="bot-framework-user-agent-requests"></a>Solicitações de agente do usuário do Bot Framework
 

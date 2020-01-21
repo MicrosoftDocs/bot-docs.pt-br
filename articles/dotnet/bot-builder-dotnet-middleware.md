@@ -1,5 +1,5 @@
 ---
-title: Interceptar mensagens | Microsoft Docs
+title: Interceptar mensagens (C# v3) – Serviço de Bot
 description: Saiba como interceptar mensagens entre o usuário e o bot usando o SDK do Bot Framework para .NET.
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 03/01/2019
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: dc2dd7b26f4c13b28d58a10c4dde103ce3f1c558
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: bf7794a4f79a623b51d089334f259af4e994beb6
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70297376"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75788863"
 ---
 # <a name="intercept-messages"></a>Interceptar mensagens
 
@@ -59,7 +59,7 @@ Em seguida, adicione o seguinte código ao `Global.asax.cs`.  Cada mensagem que 
 
 Embora este exemplo simplesmente imprime algumas informações sobre cada mensagem, você pode atualizar o `LogAsync` método para especificar as ações que você deseja executar para cada mensagem. 
 
-## <a name="sample-code"></a>Exemplo de código 
+## <a name="sample-code"></a>Código de exemplo 
 
 Veja um exemplo completo que mostra como interceptar e registrar mensagens usando o SDK do Bot Framework para .NET em <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/v3-sdk-samples/CSharp/core-Middleware" target="_blank">Exemplo de Middleware</a> no GitHub. 
 

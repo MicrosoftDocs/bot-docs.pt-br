@@ -1,5 +1,5 @@
 ---
-title: Conectar um bot ao GroupMe | Microsoft Docs
+title: Conectar um bot ao GroupMe – Serviço de Bot
 description: Saiba como configurar a conexão de um bot com o GroupMe.
 keywords: canal de bot, GroupMe, criar GroupMe, credenciais
 author: RobStand
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 67bcd518f8c6ae7a1e383c611108c15b51bd0292
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: ae2f2e289d6c0b4e90041fc2ad60452b1996d53d
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298731"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791972"
 ---
 # <a name="connect-a-bot-to-groupme"></a>Conectar um bot ao GroupMe
 

@@ -1,5 +1,5 @@
 ---
-title: Principais conceitos no SDK do Bot Framework para Node.js | Microsoft Docs
+title: Principais conceitos no SDK do Bot Framework para Node.js – Serviço de Bot
 description: Entenda os principais conceitos e ferramentas para criar e implementar bots de conversação disponíveis no SDK do Bot Framework para Node.js.
 author: DeniseMak
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 81a4f184f2011e6a09c645e61e1d8c3dfabdebaa
-ms.sourcegitcommit: dbc7eaee5c1f300b23c55abe6b60cd01c7408915
+ms.openlocfilehash: d88fa567d25358dba33b776082da69b675f93892
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74415143"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790958"
 ---
 # <a name="key-concepts-in-the-bot-framework-sdk-for-nodejs"></a>Principais conceitos no SDK do Bot Framework para Node.js
 
@@ -33,7 +33,9 @@ O Conector facilita a comunicação entre o bot e o usuário, transmitindo mensa
 O SDK do Bot Framework para Node.js fornece as classes [UniversalBot][UniversalBot] e [ChatConnector][ChatConnector] para configurar o bot para enviar e receber mensagens por meio do Conector do Bot Framework. O `UniversalBot` classe formulários o cérebro do seu bot. É responsável por gerenciar todas as conversas que seu bot tem com um usuário. A classe `ChatConnector` conecta seu bot ao Serviço de Conector Bot Framework.
 Veja um exemplo que demonstra o uso dessas classes em [Criar um bot com o SDK do Bot Framework para o Node.js](bot-builder-nodejs-quickstart.md).
 
-O Connector também normaliza as mensagens que o bot envia aos canais para que você possa desenvolver seu bot de maneira independente de plataforma. Normalizar uma mensagem envolve convertê-la do esquema do Bot Framework no esquema do canal. Nos casos em que o canal não suporta todos os aspectos do esquema da estrutura, o Conector tentará converter a mensagem em um formato suportado pelo canal. Por exemplo, se o bot enviar uma mensagem que contenha um cartão com botões de ação para o canal SMS, o Conector poderá renderizar o cartão como uma imagem e incluir as ações como links no texto da mensagem. O [Channel Inspector][ChannelInspector] é uma ferramenta da Web que mostra como o Conector renderiza mensagens em vários canais.
+O Connector também normaliza as mensagens que o bot envia aos canais para que você possa desenvolver seu bot de maneira independente de plataforma. Normalizar uma mensagem envolve convertê-la do esquema do Bot Framework no esquema do canal. Nos casos em que o canal não suporta todos os aspectos do esquema da estrutura, o Conector tentará converter a mensagem em um formato suportado pelo canal. Por exemplo, se o bot enviar uma mensagem que contenha um cartão com botões de ação para o canal SMS, o Conector poderá renderizar o cartão como uma imagem e incluir as ações como links no texto da mensagem. 
+
+[!INCLUDE [Channel Inspector intro](~/includes/snippet-channel-inspector.md)]
 
 O `ChatConnector` requer que um endpoint da API seja configurado em seu bot. Com o SDK do Node.js, isso geralmente é feito instalando o módulo `restify` Node.js. Bots também podem ser criados para o console usando o [ConsoleConnector][ConsoleConnector], que não requer um ponto de extremidade de API.
 
@@ -85,7 +87,7 @@ O Bot Builder permite que você use o LUIS para adicionar entendimento de idioma
 [ChatConnector]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.chatconnector.html
 [ConsoleConnector]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.consoleconnector.html
 
-[ChannelInspector]: ../bot-service-channel-inspector.md
+[ChannelInspector]: ../bot-service-channels-reference.md
 
 [Session]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.session.html
 [SessionSend]: https://docs.botframework.com/node/builder/chat-reference/classes/_botbuilder_d_.session#send

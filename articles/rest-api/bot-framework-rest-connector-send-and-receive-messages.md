@@ -1,5 +1,5 @@
 ---
-title: Enviar e receber mensagens | Microsoft Docs
+title: Enviar e receber mensagens – Serviço de Bot
 description: Saiba como enviar e receber mensagens usando o serviço Bot Connector.
 author: RobStand
 ms.author: kamrani
@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 5e0f35b7fe62c93f4f4e17b5343960fa2b617ef9
-ms.sourcegitcommit: e815e786413296deea0bd78e5a495df329a9a7cb
+ms.openlocfilehash: dc86478de7d73b15bd0d816c5da4e140b3e4de40
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70876095"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75789888"
 ---
 # <a name="send-and-receive-messages"></a>Enviar e receber mensagens
 
@@ -26,12 +26,12 @@ Quando o usuário enviar uma mensagem ao bot, o bot receberá a mensagem como um
 
 | Propriedade | Valor |
 |----|----|
-| conversation | Defina essa propriedade como o conteúdo da propriedade `conversation` na mensagem do usuário. |
+| conversa | Defina essa propriedade como o conteúdo da propriedade `conversation` na mensagem do usuário. |
 | de | Defina essa propriedade como o conteúdo da propriedade `recipient` na mensagem do usuário. |
 | localidade | Defina essa propriedade como o conteúdo da propriedade `locale` na mensagem do usuário, se for especificada. |
 | recipient | Defina essa propriedade como o conteúdo da propriedade `from` na mensagem do usuário. |
 | replyToId | Defina essa propriedade como o conteúdo da propriedade `id` na mensagem do usuário. |
-| Tipo | Defina essa propriedade como **message**. |
+| type | Defina essa propriedade como **message**. |
 
 Em seguida, defina as propriedades que especificam as informações que você deseja comunicar ao usuário. Por exemplo, defina a propriedade `text` para especificar o texto a ser exibido na mensagem, defina a propriedade `speak` para especificar o texto a ser falado pelo bot e defina a propriedade `attachments` para especificar os cartões avançados ou os anexos de mídia a serem incluídos na mensagem. Para obter informações detalhadas sobre as propriedades de mensagem geralmente usadas, confira [Criar mensagens](bot-framework-rest-connector-create-messages.md).
 

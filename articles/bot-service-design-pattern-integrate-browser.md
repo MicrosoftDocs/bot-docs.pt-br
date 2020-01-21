@@ -1,5 +1,5 @@
 ---
-title: Integrar seu bot a um navegador da Web | Microsoft Docs
+title: Integrar seu bot a um navegador da Web – Serviço de Bot
 description: Saiba como projetar uma transição suave de usuário do bot para o navegador da Web e vice-versa.
 author: matvelloso
 ms.author: mateusv
@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 4b510647e56f259474f17f2e7927342cee87d821
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 8570873a63a539b4f7c96053aec2ab1a1f615eb9
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298159"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75792124"
 ---
 # <a name="integrate-your-bot-with-a-web-browser"></a>Integrar seu bot a um navegador da Web
 
@@ -74,7 +74,7 @@ O número mágico deve ser um número aleatório gerado usando uma biblioteca de
 
 Quando o bot [gera o hiperlink](#generate-hyperlink) em que o usuário clicará para iniciar o fluxo do site, isso inclui informações por meio de parâmetros de querystring na URL de destino sobre o contexto da conversa atual, como ID da conversa, a ID do canal e a ID do usuário no canal. Posteriormente, o site pode usar essas informações para ler e gravar as variáveis de estado para esse usuário ou conversa com o SDK do Bot Framework ou APIs REST. Veja a [etapa 6](#signal-to-bot) acima para obter um exemplo de como o site 'sinaliza' para o bot que o fluxo do site foi concluído.
 
-## <a name="sample-code"></a>Exemplo de código
+## <a name="sample-code"></a>Código de exemplo
 
 Conforme descrito neste artigo, a biblioteca <a href="https://github.com/MicrosoftDX/botauth" target="_blank">BotAuth</a> permite que os fluxos de OAuth sejam associados aos bots que são criados usando o .NET e o Node no Microsoft Bot Framework.
 

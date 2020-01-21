@@ -1,5 +1,5 @@
 ---
-title: Adicionar telemetria ao seu bot QnA | Microsoft Docs
+title: Adicionar telemetria ao seu bot do QnA – Serviço de Bot
 description: Saiba como integrar os novos recursos de telemetria em seu bot habilitado para o QnA Maker.
 keywords: telemetria, appinsights, Application Insights, bot de monitoramento, QnA Maker
 author: WashingtonKayaker
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/31/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 27ce4315af7703e23b9a63308abb47300d9a29bd
-ms.sourcegitcommit: 08f9dc91152e0d4565368f72f547cdea1885af89
+ms.openlocfilehash: d73bd8c26dde8826b145108268417a24840ed83e
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74528556"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791238"
 ---
 # <a name="add-telemetry-to-your-qnamaker-bot"></a>Adicionar telemetria ao seu bot do QnA Maker
 
@@ -34,7 +34,7 @@ Neste artigo, você aprenderá sobre:
 * Como modificar ou estender as propriedades de evento padrão do SDK para habilitar uma ampla gama de necessidades de relatório.
 
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 
 * O [código de exemplo do QnA Maker](https://aka.ms/cs-qna)
 

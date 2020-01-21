@@ -1,5 +1,5 @@
 ---
-title: Gravar diretamente no armazenamento | Microsoft Docs
+title: Gravar diretamente no armazenamento – Serviço de Bot
 description: Saiba como gravar diretamente no armazenamento com o SDK do Bot Framework para .NET.
 keywords: armazenamento, ler e gravar, armazenamento de memória, eTag
 author: DeniseMak
@@ -9,18 +9,18 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/01/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 3de06fb5aa3ae09f4730cf7b0d4e0a587d568b8c
-ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
+ms.openlocfilehash: 2f16b34715b78635b1dd5028f4955bad0269973b
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75491711"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798228"
 ---
 # <a name="write-directly-to-storage"></a>Gravar diretamente no armazenamento
 
 [!INCLUDE[applies-to](../includes/applies-to.md)]
 
-Você pode ler e gravar diretamente em seu objeto de armazenamento sem usar middleware ou objeto de contexto. Isso pode ser apropriado para dados que seu bot usa para preservar a conversa ou dados originados de uma fonte fora do fluxo de conversa do bot. Nesse modelo de armazenamento de dados, os dados são lidos diretamente do armazenamento em vez de usar um gerenciador de estado. Os exemplos de código neste artigo mostram como ler e gravar dados no armazenamento usando o **Armazenamento de Memória**, o **Cosmos DB**, o **Armazenamento de Blobs** e o **Armazenamento de Transcrições do Blob do Azure**. 
+Você pode ler e gravar diretamente em seu objeto de armazenamento sem usar middleware ou objeto de contexto. Isso pode ser apropriado para dados que seu bot usa para preservar a conversa ou dados originados de uma fonte fora do fluxo de conversa do bot. Nesse modelo de armazenamento de dados, os dados são lidos diretamente do armazenamento em vez de usar um gerenciador de estado. Os exemplos de código neste artigo mostram como você lê e grava dados no armazenamento usando o **Armazenamento de Memória**, o **Cosmos DB**, o **Armazenamento de Blobs**, o **Armazenamento de Tabela do Azure** e o **Armazenamento de Transcrições do Blob do Azure**. 
 
 ## <a name="prerequisites"></a>Prerequisites
 - Se você não tiver uma assinatura do Azure, crie uma conta [gratuita](https://azure.microsoft.com/free/) antes de começar.
@@ -32,7 +32,7 @@ O código de exemplo neste artigo começa com a estrutura de um bot de eco bási
 
 ## <a name="memory-storage"></a>Armazenamento de memória
 
-O SDK do Bot Framework permite que você armazene entradas do usuário usando o armazenamento na memória. O armazenamento de memória é usado somente para testes e não deve ser usado na produção. Os tipos de armazenamento persistentes, como o armazenamento de banco de dados, são melhores para bots de produção. Defina o armazenamento como Cosmos DB ou Armazenamento de Blobs antes de publicar seu bot.
+O SDK do Bot Framework permite que você armazene entradas do usuário usando o armazenamento na memória. O armazenamento de memória é usado somente para testes e não deve ser usado na produção. O armazenamento na memória é volátil e temporário pois os dados são apagados cada vez que o bot é reiniciado. Os tipos de armazenamento persistentes, como o armazenamento de banco de dados, são melhores para bots de produção. Defina o armazenamento como **Cosmos DB**, **Armazenamento de Blobs** ou [**Armazenamento de Tabela do Azure**](~/nodejs/bot-builder-nodejs-state-azure-table-storage.md) antes de publicar seu bot.
 
 #### <a name="build-a-basic-bot"></a>Crie um bot básico
 
@@ -1027,4 +1027,3 @@ Agora que você sabe como ler e gravar diretamente do armazenamento, veremos com
 
 > [!div class="nextstepaction"]
 > [Salvar estado usando conversa e propriedades do usuário](bot-builder-howto-v4-state.md)
-

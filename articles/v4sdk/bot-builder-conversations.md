@@ -1,5 +1,5 @@
 ---
-title: Conversas no SDK do Bot Framework | Microsoft Docs
+title: Conversas no SDK do Bot Framework – Serviço de Bot
 description: Descreve o que é uma conversa no SDK do Bot Framework.
 keywords: fluxo de conversa, reconhecer intenção, turno único, multiturno, conversa de bot
 author: jonathanfingold
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: ea5cf37ec788f68e8eea32ee6610f59ec286193c
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: e4c4f11999b9ab4b932e373db7eb27c6547cb537
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299390"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798664"
 ---
 # <a name="conversation-flow"></a>Fluxo de conversa
 [!INCLUDE[applies-to](../includes/applies-to.md)]
@@ -93,9 +93,9 @@ No entanto, conversas raramente seguem esse caminho lógico e linear. Os usuári
 
 Embora o bot possa ter construído logicamente uma pilha de fluxos, o usuário pode decidir fazer algo totalmente diferente ou fazer uma pergunta que não esteja relacionada ao tópico atual. No exemplo, o usuário faz uma pergunta em vez de fornecer a resposta sim/não que o fluxo espera. Como o fluxo deve responder?
 
-* Insista em que o usuário responda a pergunta primeiro.
+* Insistir que o usuário responda à pergunta primeiro.
 * Desconsidere tudo o que o usuário fez anteriormente, redefina toda a pilha de fluxo e comece do início, tentando responder à pergunta do usuário.
-* Tente responder a pergunta do usuário e, em seguida, retorne a essa pergunta sim/não e tente retomar a partir desse ponto.
+* Tentar responder a pergunta do usuário e, em seguida, retornar a essa pergunta sim/não e tentar retomar desse ponto.
 
 Não há resposta certa para essa pergunta, pois a melhor solução dependerá das especificidades do cenário e de como o usuário esperaria que o bot respondesse. Consulte como [usar as caixas de diálogo](bot-builder-dialog-manage-conversation-flow.md) e [tratar interrupções](bot-builder-howto-handle-user-interrupt.md) para gerenciar o fluxo da conversa.
 

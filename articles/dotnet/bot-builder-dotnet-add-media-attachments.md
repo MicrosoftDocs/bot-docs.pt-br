@@ -1,5 +1,5 @@
 ---
-title: Adicionar anexos de mídia às mensagens | Microsoft Docs
+title: Adicionar anexos de mídia a mensagens (C# v3) – Serviço de Bot
 description: Saiba como adicionar anexos de mídia às mensagens usando o SDK do Bot Framework para .NET.
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 19f3db74aef7aeffcd754e0bea753fa73b7ea285
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: ad6a1228b8fc54f8f626c07c7ed43375c249c456
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298441"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75796014"
 ---
 # <a name="add-media-attachments-to-messages"></a>Adicionar anexos de mídia às mensagens
 
@@ -37,17 +37,16 @@ Para adicionar um anexo de mídia a uma mensagem, crie um objeto `Attachment` pa
 
 [!code-csharp[Add media attachment](../includes/code/dotnet-add-attachments.cs#addMediaAttachment)]
 
-Se um anexo for uma imagem, áudio ou vídeo, o serviço Connector comunicará os dados do anexo ao canal de forma a permitir que o [canal](bot-builder-dotnet-channeldata.md) renderize esse anexo na conversa. Se o anexo for um arquivo, a URL do arquivo será renderizada como um hiperlink na conversa.
+Se um anexo for uma imagem, áudio ou vídeo, o serviço do Connector comunicará os dados do anexo ao canal de modo a permitir que o [canal](bot-builder-dotnet-channeldata.md) renderize esse anexo na conversa. Se o anexo for um arquivo, a URL do arquivo será renderizada como um hiperlink na conversa.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [Visualizar recursos com o Inspetor de Canal][inspector]
+- [Referência de canais][inspector]
 - [Visão geral das atividades](bot-builder-dotnet-activities.md)
 - [Criar mensagens](bot-builder-dotnet-create-messages.md)
-- [Adicionar cartões avançados às mensagens](bot-builder-dotnet-add-rich-card-attachments.md)
-- <a href="https://docs.botframework.com/csharp/builder/sdkreference/dc/d2f/class_microsoft_1_1_bot_1_1_connector_1_1_activity.html" target="_blank">Classe da atividade</a>
+- [Adicionar cartões ricos mensagens](bot-builder-dotnet-add-rich-card-attachments.md)
+- <a href="https://docs.botframework.com/csharp/builder/sdkreference/dc/d2f/class_microsoft_1_1_bot_1_1_connector_1_1_activity.html" target="_blank">Classe de atividade</a>
 - <a href="https://docs.microsoft.com/dotnet/api/microsoft.bot.connector.attachments?view=botconnector-3.12.2.4" target="_blank">Classe do anexo</a>
 
-[inspector]: ../bot-service-channel-inspector.md
-
+[inspector]: ../bot-service-channels-reference.md
 

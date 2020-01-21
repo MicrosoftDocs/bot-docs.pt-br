@@ -1,5 +1,5 @@
 ---
-title: Usando o estado de usuário v3 do JavaScript em um bot v4 | Microsoft Docs
+title: Usar o estado de usuário v3 do JavaScript em um bot v4– Serviço de Bot
 description: Como usar o estado de usuário v3 em um exemplo de bot v4
 keywords: JavaScript, migração de bot, bot v3
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 08/14/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4697ecf47464114de68ec6c0d872b45ff1ee5e54
-ms.sourcegitcommit: d493caf74b87b790c99bcdaddb30682251e3fdd4
+ms.openlocfilehash: ad3f9a1cc9ce3f06bad71615e244a791025904d9
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71278979"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791058"
 ---
 <!-- This article is on hold -->
 
@@ -26,7 +26,7 @@ O exemplo de código pode ser encontrado [aqui](https://github.com/microsoft/Bot
 > [!NOTE]
 > Um bot mantém o **estado da conversa** para acompanhar e direcionar a conversa e fazer perguntas ao usuário. Ele mantém o **estado do usuário** para acompanhar as respostas dele.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 
 - npm versão 6.9.0 ou superior (necessário para dar suporte a alias de pacote).
 
@@ -39,7 +39,7 @@ O exemplo de código pode ser encontrado [aqui](https://github.com/microsoft/Bot
     node --version
     ```
 
-## <a name="setup"></a>Configuração
+## <a name="setup"></a>Instalação
 
 1. Clonar o repositório
 

@@ -1,5 +1,5 @@
 ---
-title: Usar vários modelos de LUIS e QnA | Microsoft Docs
+title: Usar vários modelos de LUIS e QnA – Serviço de Bot
 description: Aprenda a usar o criador LUIS e QnA no seu bot.
 keywords: Luis, QnA, ferramenta Dispatch, vários serviços, rotear intenções
 author: diberry
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/22/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: c0e07dfa828854e44b2236aff2e1e17e60d69bfa
-ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
+ms.openlocfilehash: 0d57ff8bf62625ceef6fc2c0f75c492b32dd2014
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75491655"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791188"
 ---
 # <a name="use-multiple-luis-and-qna-models"></a>Usar vários modelos de LUIS e QnA
 
@@ -72,7 +72,7 @@ O manipulador chama o serviço LUIS ou QnA Maker e retorna o resultado gerado pa
 
 Antes de criar o modelo do Dispatch, você precisará ter seus aplicativos LUIS e bases de dados de conhecimento do QnA criados e publicados. Neste artigo, publicaremos os seguintes modelos que foram incluídos no exemplo _NLP com Dispatch_ na pasta `\CognitiveModels`:
 
-| Nome | DESCRIÇÃO |
+| Nome | Descrição |
 |------|------|
 | HomeAutomation | Um aplicativo LUIS que reconhece uma intenção de automação residencial com dados de entidade associados.|
 | Clima | Um aplicativo LUIS que reconhece intenções relacionadas ao clima com os dados de localização.|

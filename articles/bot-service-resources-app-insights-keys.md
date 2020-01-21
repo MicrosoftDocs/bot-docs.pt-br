@@ -1,5 +1,5 @@
 ---
-title: Chaves do Application Insights | Microsoft Docs
+title: Chaves do Application Insights – Serviço de Bot
 description: Saiba como obter as chaves do Application Insights para adicionar telemetria a um bot.
 author: v-ducvo
 ms.author: kamrani
@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/19/2019
-ms.openlocfilehash: db295251284fb93ebd730572d2ced1e431460c90
-ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
+ms.openlocfilehash: bec8ff08f7aa591af8379018ebbbb5e6f1d48a29
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75491590"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75788748"
 ---
 # <a name="application-insights-keys"></a>Chaves do Application Insights
 

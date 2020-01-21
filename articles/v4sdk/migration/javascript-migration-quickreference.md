@@ -1,5 +1,5 @@
 ---
-title: Referência rápida da migração do JavaScript v3 para v4 | Microsoft Docs
+title: Referência rápida da migração do JavaScript v3 para v4 – Serviço de Bot
 description: Uma descrição das principais diferenças no SDK v3 e v4 do Bot Framework para JavaScript.
 keywords: JavaScript, migração de bot, diálogos, bot v3
 author: JonathanFingold
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2935c187b9c9687d4fbf207c2d78a135d3c8959f
-ms.sourcegitcommit: 312a4593177840433dfee405335100ce59aac347
+ms.openlocfilehash: ea71cfa7adb9ba4f38b3f0ec79641cf28b0f64f3
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73933777"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791068"
 ---
 # <a name="javascript-migration-quick-reference"></a>Referência rápida de migração do JavaScript
 

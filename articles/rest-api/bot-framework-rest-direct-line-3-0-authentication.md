@@ -1,5 +1,5 @@
 ---
-title: Autenticação | Microsoft Docs
+title: Autenticação – Serviço de Bot
 description: Saiba como autenticar solicitações de API na API de Linha Direta versão 3.0.
 author: RobStand
 ms.author: kamrani
@@ -7,16 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/22/2019
-ms.openlocfilehash: 37e02a34e7b8ecc4d501ed7330b6f374548fd5a0
-ms.sourcegitcommit: 0b647dc6716b0c06f04ee22ebdd7b53039c2784a
+ms.openlocfilehash: 59a97acffe26b0bb896ec75dd5ca03fa43eafd67
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70076564"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75789516"
 ---
-# <a name="authentication"></a>Authentication
+# <a name="authentication"></a>Autenticação
 
-Um cliente pode autenticar solicitações para a API de Linha Direta 3.0 usando um **segredo** que você [obtém da página de configuração de canal de Linha Direta](../bot-service-channel-connect-directline.md) no Portal Bot Framework ou usando um  **token** obtido em tempo de execução. O segredo ou o token deve ser especificado no cabeçalho `Authorization` de cada solicitação, usando este formato: 
+Um cliente pode autenticar solicitações para a API de Linha Direta 3.0 usando um **segredo** que você [obtém da página de configuração de canal de Linha Direta](../bot-service-channel-connect-directline.md) no Portal Bot Framework ou usando um  **token** obtido em runtime. O segredo ou o token deve ser especificado no cabeçalho `Authorization` de cada solicitação, usando este formato: 
 
 ```http
 Authorization: Bearer SECRET_OR_TOKEN
@@ -78,13 +78,13 @@ O conteúdo da solicitação, que inclui os parâmetros de token, é opcional ma
 }
 ```
 
-| Parâmetro | Type | DESCRIÇÃO |
+| Parâmetro | Type | Descrição |
 | :--- | :--- | :--- |
 | `user.id` | string | Opcional. ID de usuário específica do canal para codificação dentro do token. Para um usuário do Direct Line, isso deve começar com `dl_`. Você pode criar uma ID de usuário exclusiva para cada conversa, e para uma melhor segurança, deve tornar essa ID indecifrável. |
 | `user.name` | string | Opcional. O nome de exibição amigável do usuário a ser codificado dentro do token. |
 | `trustedOrigins` | Matriz de cadeia de caracteres | Opcional. Uma lista de domínios confiáveis para inserir no token. Esses são os domínios que podem hospedar o cliente de bate-papo Web do bot. Eles devem estar na lista da página de configuração do Direct Line de seu bot. |
 
-### <a name="response"></a>Response
+### <a name="response"></a>Resposta
 
 Se a solicitação for bem-sucedida, a resposta conterá um `token`, válido para uma conversa, e um valor `expires_in`, que indica o número de segundos até o token expirar. Para continuar a usar o token, você deve [atualizar o token](#refresh-token) antes que ele expire.
 
@@ -105,7 +105,7 @@ HTTP/1.1 200 OK
 
 A operação Gerar Token (`POST /v3/directline/tokens/generate`) é semelhante à operação [Iniciar Conversa](bot-framework-rest-direct-line-3-0-start-conversation.md) (`POST /v3/directline/conversations`), já que ambas retornam um `token`, que pode ser usado para acessar uma única conversa. No entanto, ao contrário da operação Iniciar Conversa, a operação Gerar Token não inicia a conversa, não entra em contato com o bot e não cria uma URL WebSocket de streaming. 
 
-Se você planeja distribuir o token para os clientes e deseja que eles iniciem a conversa, use a operação Gerar Token. Se você pretende iniciar a conversa imediatamente, use a operação [Iniciar Conversa](bot-framework-rest-direct-line-3-0-start-conversation.md).
+Se você planeja distribuir o token para clientes e deseja que eles iniciem a conversa, use a operação Gerar Token. Se você pretende iniciar a conversa imediatamente, use a operação [Iniciar Conversa](bot-framework-rest-direct-line-3-0-start-conversation.md).
 
 ## <a id="refresh-token"></a> Atualizar um token de Linha Direta
 
@@ -127,7 +127,7 @@ POST https://directline.botframework.com/v3/directline/tokens/refresh
 Authorization: Bearer CurR_XV9ZA.cwA.BKA.iaJrC8xpy8qbOF5xnR2vtCX7CZj0LdjAPGfiCpg4Fv0y8qbOF5xPGfiCpg4Fv0y8qqbOF5x8qbOF5xn
 ```
 
-### <a name="response"></a>Response
+### <a name="response"></a>Resposta
 
 Se a solicitação for bem-sucedida, a resposta conterá um novo `token`, válido para a mesma conversa como o token anterior, e um valor `expires_in` que indica o número de segundos até que o novo token expire. Para continuar a usar o novo token, você deve [atualizar o token](#refresh-token) antes que ele expire.
 

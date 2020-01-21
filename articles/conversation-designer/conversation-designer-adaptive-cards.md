@@ -1,5 +1,5 @@
 ---
-title: Configurar cartões adaptáveis | Microsoft Docs
+title: Configurar cartões adaptáveis – Serviço de Bot
 description: Saiba como configurar cartões adaptáveis.
 author: vkannan
 ms.author: kamrani
@@ -8,16 +8,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 ROBOTS: NoIndex, NoFollow
-ms.openlocfilehash: cb03703b7d301a77d64577ef8e56da3dc7a4e0af
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 2d7c898a555dde53f01cf09b6ab54abf2c91960d
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298552"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75795915"
 ---
 # <a name="configure-adaptive-cards"></a>Configurar cartões adaptáveis
 > [!IMPORTANT]
-> O Designer de Conversa ainda não está disponível para todos os clientes. Surgirão mais detalhes sobre a disponibilidade do Designer de Conversa posteriormente este ano.
+> O Designer de Conversa ainda não está disponível para todos os clientes. Mais detalhes sobre a disponibilidade do Designer de Conversa serão lançados ainda este ano.
 
 <a href="http://adaptivecards.io" target="_blank">Cartões Adaptáveis</a> é um novo esquema que define cartões de interface do usuário avançados para uso em vários pontos de extremidade diferentes, incluindo canais do Microsoft Bot Framework. 
 

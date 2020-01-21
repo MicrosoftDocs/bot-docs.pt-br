@@ -1,5 +1,5 @@
 ---
-title: Visão geral do Modelo de Assistente Virtual | Microsoft Docs
+title: Visão geral do Modelo de Assistente Virtual – Serviço de Bot
 description: Saiba mais sobre o Modelo de Assistente Virtual
 author: darrenj
 ms.author: darrenj
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 82385510894213a386c3f38836c85aad44306a23
-ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
+ms.openlocfilehash: fdbed58a4093f70b57d65e8f89ee76b305777a1a
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167062"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791168"
 ---
 # <a name="virtual-assistant---template-outline"></a>Assistente Virtual - Descrição do Modelo
 
@@ -22,7 +22,7 @@ ms.locfileid: "70167062"
 
 O Modelo de Assistente Virtual reúne várias da melhores práticas que identificamos durante a construção de experiências de conversação e automatiza a integração de componentes que consideramos altamente benéficos para desenvolvedores do Bot Framework. Esta seção cobre algumas informações básicas em relação a decisões importantes para ajudar a explicar por que o modelo funciona dessa forma.
 
-Recurso      | DESCRIÇÃO |
+Recurso      | Descrição |
 ------------ | -------------
 Introdução | Mensagem de introdução com um [Cartão Adaptável]() no início da conversa
 Indicadores de digitação  | Indicadores visuais de digitação automatizados durante as conversas e repetição em operações de execução prolongada
@@ -52,7 +52,7 @@ Cada Bot deve lidar com um nível básico de reconhecimento vocal conversacional
 
 Os arquivos .lu fornecem as intenções a seguir em inglês, chinês, francês, italiano, alemão e espanhol.
 
-Intenção       | Exemplo de enunciados |
+Intencional       | Exemplo de enunciados |
 -------------|-------------|
 Cancelar       |*cancel*, *nevermind*|
 Escalonar     |*can I talk to a person?*|

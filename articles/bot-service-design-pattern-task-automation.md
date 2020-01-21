@@ -1,5 +1,5 @@
 ---
-title: Criar bots de automação de tarefas | Microsoft Docs
+title: Criar bots de automação de tarefas – Serviço de Bot
 description: Saiba como criar bots que executam tarefas sem nenhuma intervenção humana.
 author: matvelloso
 ms.author: mateusv
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 2/13/2018
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 8bad1459dfce89f79906dec0f4c03cb50a242449
-ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
+ms.openlocfilehash: 0a6643ab0445e569d26a2f3c6b49532e7746a3c2
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70166950"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75793338"
 ---
 # <a name="create-task-automation-bots"></a>Criar bots de automação de tarefas
 

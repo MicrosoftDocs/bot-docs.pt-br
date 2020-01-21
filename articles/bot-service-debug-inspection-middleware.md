@@ -1,5 +1,5 @@
 ---
-title: Depurar um bot com middleware de inspeção | Microsoft Docs
+title: Depurar um bot com middleware de inspeção – Serviço de Bot
 description: Aprenda a depurar um bot com middleware de inspeção
 author: zxyanliu
 ms.author: v-liyan
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/01/2019
-ms.openlocfilehash: 3bb0dea0b66acfdffd75904770cc88572e377258
-ms.sourcegitcommit: 46fbb8982144c66864b83889b6457187e890badd
+ms.openlocfilehash: 9218ed5019294d2fc18d63b0fe4abe853af83e2b
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75736818"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75792598"
 ---
 # <a name="debug-a-bot-with-inspection-middleware"></a>Depurar um bot com middleware de inspeção
 Este artigo descreve como depurar o bot usando o middleware de inspeção. Esse recurso permite que o Bot Framework Emulator depure o tráfego dentro e fora do bot, além de examinar o estado atual dele. Você pode usar uma mensagem de rastreamento para enviar dados para o emulador e, em seguida, inspecionar o estado do bot em qualquer determinada rodada da conversa. 

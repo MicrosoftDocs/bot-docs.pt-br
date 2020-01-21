@@ -1,5 +1,5 @@
 ---
-title: Habilitar a conversão de fala em Webchat | Microsoft Docs
+title: Habilitar o controle por voz no Webchat – Serviço de Bot
 description: Saiba como habilitar a fala no controle de Webchat para um bot conectado ao canal de Webchat.
 keywords: fala, Webchat, voz, microfone, áudio
 author: DeniseMak
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: b83dff7969c58451e5752938f74b682b2163c49d
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 72a247fe0e8373323626a5d01360d2a923b09b09
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298200"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75793243"
 ---
 # <a name="enable-speech-in-web-chat"></a>Habilitar o controle por voz no Webchat
 Habilite uma interface de voz no controle de Webchat. Os usuários interagem com a interface de voz usando o microfone no controle de Webchat.
@@ -23,7 +23,7 @@ Habilite uma interface de voz no controle de Webchat. Os usuários interagem com
 
 Se o usuário digita em vez de falar uma resposta, o Webchat desativa a funcionalidade de fala e o bot fornece apenas uma resposta textual em vez da fala em voz alta. Para habilitar novamente a resposta falada, o usuário pode usar o microfone para responder ao bot na próxima vez. Se o microfone aceitar a entrada, ele será exibido como escuro ou preenchido. Se ele estiver esmaecido, o usuário clicará nele para habilitá-lo.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 
   Antes de executar a amostra, você precisa ter um segredo da Linha Direta ou um token para o bot que deseja executar usando o controle de Webchat. 
   * Confira [Conectar um bot à Linha Direta](bot-service-channel-connect-directline.md) para obter informações sobre como obter um segredo da Linha Direta associado ao bot.

@@ -1,5 +1,5 @@
 ---
-title: Implantar seu bot | Microsoft Docs
+title: Implantar o bot – Serviço de Bot
 description: Implantar seu bot na nuvem do Azure
 keywords: implantar bot, implantar bot no azure, publicar bot
 author: ivorb
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 08/06/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 7faa7091198202058c00ddca4aee79fe87d700e9
-ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
+ms.openlocfilehash: 1c5c4a1d09b1108d5ccbfbb8736efa4304688613
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75491177"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75788944"
 ---
 # <a name="deploy-your-bot"></a>Implantar seu bot
 

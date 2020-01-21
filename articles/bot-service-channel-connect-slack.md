@@ -1,25 +1,28 @@
 ---
-title: Conectar um bot ao Slack | Microsoft Docs
+title: Conectar um bot ao Slack – Serviço de Bot
 description: Saiba como configurar a conexão do bot com o Slack.
-keywords: conectar um bot, canal de bot, bot do Slack, aplicativo de mensagens do Slack
+keywords: conectar um bot, canal de bot, bot do Slack, aplicativo de mensagens do Slack, adaptador do Slack
 author: JonathanFingold
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 01/09/2019
-ms.openlocfilehash: 9648d1aa9e2da6243f42a5e044451ae4d8fb9d71
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: d4e29d1349d441d8208800cb534e02320f326bb1
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70298298"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791901"
 ---
 # <a name="connect-a-bot-to-slack"></a>Conectar um bot ao Slack
 
-Configure seu bot para se comunicar com as pessoas que usam o aplicativo de mensagens Slack.
+Há duas maneiras de configurar o aplicativo de mensagens Slack:
+- Usar o portal do Serviço de Bot do Azure para conectar seu bot
+- Usar o adaptador do Slack
 
-## <a name="create-a-slack-application-for-your-bot"></a>Criar um aplicativo Slack para o seu bot
+## <a name="azure-bot-service-portaltababs"></a>[Portal do Serviço de Bot do Azure](#tab/abs)
+## <a name="create-a-slack-application-for-your-bot"></a>Criar um aplicativo do Slack para o seu bot
 
 Faça logon no [Slack](https://slack.com/signin) e [crie um canal do aplicativo Slack](https://api.slack.com/apps).
 
@@ -124,7 +127,7 @@ Seu bot está configurado para se comunicar com os usuários no Slack.
 
 ## <a name="create-an-add-to-slack-button"></a>Criar um botão Adicionar ao Slack
 
-O Slack fornece HTML que pode ser usado para ajudar os usuários do Slack a localizar seu bot na seção *Adicionar o botão Slack* [desta página](https://api.slack.com/docs/slack-button).
+O Slack fornece HTML que pode ser usado para ajudar os usuários do Slack a localizar seu bot na seção *Adicionar o botão Slack*[desta página](https://api.slack.com/docs/slack-button).
 Para usar este HTML com o bot, substitua o valor de href (começa com `https://`) pela URL encontrada nas configurações do canal do Slack do seu bot.
 Execute estas etapas para obter a URL de substituição.
 
@@ -134,6 +137,180 @@ Execute estas etapas para obter a URL de substituição.
 
 Os usuários autorizados podem clicar no botão **Adicionar ao Slack** fornecido por esse HTML modificado para acessar seu bot no Slack.
 
-## <a name="also-available-as-an-adapter"></a>Também disponível como um adaptador
+## <a name="slack-adaptertabadapter"></a>[Adaptador do Slack](#tab/adapter)
+## <a name="connect-a-bot-to-slack-using-the-slack-adapter"></a>Conectar um bot ao Slack usando o adaptador do Slack
 
-Esse canal também [está disponível como um adaptador](https://botkit.ai/docs/v4/platforms/slack.html). Para ajudá-lo a escolher entre um adaptador e um canal, confira [Adaptadores disponíveis no momento](bot-service-channel-additional-channels.md#currently-available-adapters).
+Assim como o canal disponível no Serviço de Bot do Azure para conectar o bot com o Slack, você também pode usar o adaptador do Slack. Neste artigo, você aprenderá a conectar um bot ao Slack usando o adaptador.  Este artigo explicará como modificar o exemplo EchoBot para conectá-lo a um aplicativo do Slack.
+
+> [!NOTE]
+> As instruções a seguir abordam a implementação em C# do adaptador do Slack. Para obter instruções sobre como usar o adaptador JS, parte das bibliotecas BotKit, [consulte a documentação do Slack sobre BotKit](https://botkit.ai/docs/v4/platforms/slack.html).
+
+## <a name="prerequisites"></a>Prerequisites
+
+* O [código de exemplo do EchoBot](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/02.echo-bot)
+
+* Acesso a um workspace do Slack com permissões suficientes para criar e gerenciar aplicativos em [https://api.slack.com/apps](https://api.slack.com/apps). Se você não tiver acesso a um ambiente do Slack, poderá criar um workspace [gratuitamente](https://www.slack.com).
+
+## <a name="create-a-slack-application-for-your-bot"></a>Criar um aplicativo do Slack para o seu bot
+
+Faça logon no [Slack](https://slack.com/signin) e [crie um canal do aplicativo Slack](https://api.slack.com/apps).
+
+![Configurar o bot](~/media/channels/slack-NewApp.png)
+
+Clique no botão "criar novo aplicativo".
+
+### <a name="create-an-app-and-assign-a-development-slack-team"></a>Criar um aplicativo e atribuir uma equipe de desenvolvimento do Slack
+
+Insira um **Nome de Aplicativo** e selecione um **Workspace de Desenvolvimento do Slack**. Se você ainda não for membro de uma equipe de desenvolvimento do Slack, [crie ou ingresse em uma](https://slack.com/).
+
+![Criar aplicativo](~/media/channels/slack-CreateApp.png)
+
+Clique em **Criar Aplicativo**. O Slack criará seu aplicativo e vai gerar uma ID do cliente e um segredo do cliente.
+
+### <a name="gather-required-configuration-settings-for-your-bot"></a>Reunir as definições de configuração necessárias para o bot
+
+Depois que o aplicativo é criado, colete as informações a seguir. Você precisará disso para conectar o bot ao Slack.
+
+1. Tome nota do **Token de Verificação** e do **Segredo de Assinatura** na guia **Informações Básicas** e mantenha-os para definir as configurações do bot mais tarde.
+
+![Tokens do Slack](~/media/bot-service-adapter-connect-slack/slack-tokens.png)
+
+2. Navegue até a página **Instalar Aplicativo** no menu **Configurações** e siga as instruções para instalar seu aplicativo em uma equipe do Slack.  Depois de instalado, copie o **Token de Acesso OAuth do Usuário do Bot** e, novamente, mantenha isso para definir as configurações de bot mais tarde.
+
+## <a name="wiring-up-the-slack-adapter-in-your-bot"></a>Conectando o adaptador do Slack ao seu bot
+
+### <a name="install-the-slack-adapter-nuget-package"></a>Instalar o pacote NuGet do adaptador do Slack
+
+Adicione o pacote NuGet [Microsoft.Bot.Builder.Adapters.Slack](https://www.nuget.org/packages/Microsoft.Bot.Builder.Adapters.Slack/). Para obter mais informações sobre como usar o NuGet, confira [Instalar e gerenciar pacotes no Visual Studio](https://aka.ms/install-manage-packages-vs)
+
+### <a name="create-a-slack-adapter-class"></a>Criar uma classe de adaptador do Slack
+
+Crie uma classe nova que herda da classe ***SlackAdapter***. Essa classe atuará como nosso adaptador para o canal do Slack e incluirá recursos de tratamento de erro (semelhante à classe ***BotFrameworkAdapterWithErrorHandler*** que já está no exemplo, usada para lidar com outras solicitações do Serviço de Bot do Azure).
+
+```csharp
+public class SlackAdapterWithErrorHandler : SlackAdapter
+{
+    public SlackAdapterWithErrorHandler(IConfiguration configuration, ILogger<BotFrameworkHttpAdapter> logger)
+    : base(configuration, logger)
+    {
+        OnTurnError = async (turnContext, exception) =>
+        {
+            // Log any leaked exception from the application.
+            logger.LogError(exception, $"[OnTurnError] unhandled error : {exception.Message}");
+
+            // Send a message to the user
+            await turnContext.SendActivityAsync("The bot encountered an error or bug.");
+            await turnContext.SendActivityAsync("To continue to run this bot, please fix the bot source code.");
+
+            // Send a trace activity, which will be displayed in the Bot Framework Emulator
+            await turnContext.TraceActivityAsync("OnTurnError Trace", exception.Message, "https://www.botframework.com/schemas/error", "TurnError");
+        };
+    }
+}
+```
+
+### <a name="create-a-new-controller-for-handling-slack-requests"></a>Criar um controlador para lidar com as solicitações do Slack
+
+Criaremos um novo controlador que lidará com as solicitações do aplicativo do Slack em um novo ponto de extremidade 'api/slack', em vez do 'api/messages' padrão usado para solicitações de canais do Serviço de Bot do Azure.  Ao adicionar outro ponto de extremidade ao bot, você poderá aceitar solicitações de canais do Serviço de Bot, assim como do Slack, usando o mesmo bot.
+
+```csharp
+[Route("api/slack")]
+[ApiController]
+public class SlackController : ControllerBase
+{
+    private readonly SlackAdapter _adapter;
+    private readonly IBot _bot;
+
+    public SlackController(SlackAdapter adapter, IBot bot)
+    {
+        _adapter = adapter;
+        _bot = bot;
+    }
+
+    [HttpPost]
+    [HttpGet]
+    public async Task PostAsync()
+    {
+        // Delegate the processing of the HTTP POST to the adapter.
+        // The adapter will invoke the bot.
+        await _adapter.ProcessAsync(Request, Response, _bot);
+    }
+}
+```
+
+### <a name="add-slack-app-settings-to-your-bots-configuration-file"></a>Adicionar configurações do aplicativo do Slack ao arquivo de configuração do bot
+
+Adicione as 3 configurações mostradas abaixo ao arquivo appSettings.json do projeto de bot, preenchendo cada uma com os valores coletados anteriormente ao criar o aplicativo do Slack.
+
+```json
+  "SlackVerificationToken": "",
+  "SlackBotToken": "",
+  "SlackClientSigningSecret": ""
+```
+
+### <a name="inject-the-slack-adapter-in-your-bot-startupcs"></a>Injetar o adaptador do Slack no startup.cs do bot
+
+Adicione a seguinte linha ao método ***ConfigureServices*** no arquivo startup.cs. Isso registrará o adaptador do Slack e o disponibilizará para a nova classe de controlador.  As definições de configuração que você adicionou na etapa anterior serão usadas automaticamente pelo adaptador.
+
+```csharp
+services.AddSingleton<SlackAdapter, SlackAdapterWithErrorHandler>();
+```
+
+Depois de ser adicionado, o método ***ConfigureServices*** ficará assim.
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+    // Create the default Bot Framework Adapter (used for Azure Bot Service channels and emulator).
+    services.AddSingleton<IBotFrameworkHttpAdapter, BotFrameworkAdapterWithErrorHandler>();
+
+    // Create the Slack Adapter
+    services.AddSingleton<SlackAdapter, SlackAdapterWithErrorHandler>();
+
+    // Create the bot as a transient. In this case the ASP Controller is expecting an IBot.
+    services.AddTransient<IBot, EchoBot>();
+}
+```
+
+## <a name="complete-configuration-of-your-slack-app"></a>Concluir a configuração do aplicativo do Slack
+
+### <a name="obtain-a-url-for-your-bot"></a>Obter uma URL para o bot
+
+Agora que você criou um aplicativo do Slack e conectou o adaptador ao seu projeto de bot, a última etapa é apontar o aplicativo do Slack para o ponto de extremidade correto no bot e assinar seu aplicativo para garantir que o bot receba mensagens.  Para fazer isso, seu bot deve estar em execução, para que o Slack verifique se a URL para o ponto de extremidade é válida.
+
+Para concluir esta etapa, [implante o bot no Azure](https://aka.ms/bot-builder-deploy-az-cli) e anote a URL do bot implantado.
+
+> [!NOTE]
+> Se você não estiver pronto para implantar o bot no Azure ou desejar depurar o bot ao usar o adaptador do Slack, poderá usar uma ferramenta como a [ngrok](https://www.ngrok.com) (que você provavelmente já terá instalada se usou o emulador do Bot Framework anteriormente) para fazer um túnel para o bot em execução localmente e fornecer uma URL acessível publicamente para isso. 
+> 
+> Se desejar criar um túnel ngrok e obter uma URL para o bot, use o comando a seguir em uma janela do terminal (isso pressupõe que o bot local esteja em execução na porta 3978; altere os números de porta no comando se o bot não estiver).
+> 
+> ```
+> ngrok.exe http 3978 -host-header="localhost:3978"
+> ```
+
+### <a name="update-your-slack-app"></a>Atualizar seu aplicativo do Slack
+
+Navegue de volta para o [painel da API do Slack]([https://api.slack.com/apps]) e selecione seu aplicativo.  Agora você precisa configurar duas URLs para seu aplicativo e assinar os eventos apropriados.
+
+1. Na guia **OAuth & permissões**, a **URL de Redirecionamento** deve ser a URL do bot, além do ponto de extremidade `api/slack` especificado em seu controlador recém-criado. Por exemplo, `https://yourboturl.com/api/slack`.
+
+![URL de redirecionamento do Slack](~/media/bot-service-adapter-connect-slack/redirect-url.png)
+
+2. Na guia **Assinaturas de Evento**, preencha a **URL de Solicitação** com a mesma URL usada na etapa 1.
+
+3. Habilite os eventos usando o botão de alternância na parte superior da página.
+
+4. Expanda a seção **Assinar eventos de bot** e use o botão **Adicionar Evento do Usuário de Bot** para assinar os eventos **im_created** e **message.im**.
+
+![Assinaturas de evento do Slack](~/media/bot-service-adapter-connect-slack/event-subscriptions.png)
+
+## <a name="test-your-bot-with-adapter-in-slack"></a>Testar o bot com o adaptador no Slack
+
+Seu aplicativo do Slack agora está configurado e você já pode fazer logon no workspace do Slack no qual você instalou o aplicativo. (Você o verá listado na seção "aplicativos" do menu à esquerda). Selecione seu aplicativo e tente enviar uma mensagem. Você deve vê-la ecoada de volta para você na janela de mensagens instantâneas.
+
+Você também pode testar esse recurso usando o [bot de exemplo para o adaptador do Slack](https://aka.ms/csharp-60-slack-adapter-sample) preenchendo o arquivo appSettings.json com os mesmos valores descritos nas etapas acima. Este exemplo tem etapas adicionais descritas no arquivo LEIAME para mostrar exemplos de compartilhamento de link, recebimento de anexos e envio de mensagens interativas.
+
+---

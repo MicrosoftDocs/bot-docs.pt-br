@@ -1,5 +1,5 @@
 ---
-title: Personalizar a experiência do usuário com linguagem padrão | Microsoft Docs
+title: Personalizar a experiência do usuário com o idioma padrão – Serviço de Bot
 description: Saiba como personalizar os prompts do FormFlow e substituir os modelos do FormFlow usando linguagem padrão com o SDK do Bot Framework para .NET.
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 032d3c9553c5be774bf5d71fb2477d5a5689ca40
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 43ae6504dcd58c221d0dfe2678c2363323ac63cb
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70297910"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75796814"
 ---
 # <a name="customize-user-experience-with-pattern-language"></a>Personalizar a experiência do usuário com linguagem padrão
 
@@ -32,7 +32,7 @@ Formulários usam modelos para construir automaticamente os prompts e outras coi
 
 ## <a name="elements-of-pattern-language"></a>Elementos da linguagem padrão
 
-A linguagem padrão usa chaves (`{}`) para identificar elementos que serão substituídos em tempo de execução por valores reais. Esta tabela lista os elementos da linguagem padrão.
+A linguagem padrão usa chaves (`{}`) para identificar elementos que serão substituídos em runtime por valores reais. Esta tabela lista os elementos da linguagem padrão.
 
 | Elemento | DESCRIÇÃO |
 |----|----|
@@ -97,7 +97,7 @@ Os prompts e modelos oferecem suporte a esses parâmetros de formatação.
 | `ChoiceLastSeparator` | Aplica-se aos elementos padrão <code>{&#124;&#124;}</code>. Determina se uma lista embutida de opções inclui um separador antes da última opção. |
 | `ChoiceParens` | Aplica-se aos elementos padrão <code>{&#124;&#124;}</code>. Determina se uma lista embutida de opções é mostrada entre parênteses. Se `true`, a lista de opções é mostrada entre parênteses. O padrão é `true`. |
 | `ChoiceSeparator` | Aplica-se aos elementos padrão <code>{&#124;&#124;}</code>. Determina se uma lista embutida de opções inclui um separador antes de cada opção, exceto a última. | 
-| `ChoiceStyle` | Aplica-se aos elementos padrão <code>{&#124;&#124;}</code>. Determina se a lista de opções é mostrada embutida ou por linha. O padrão é `ChoiceStyleOptions.Auto` que determina em tempo de execução se a opção é mostrada de forma embutida ou em uma lista. Para obter os valores possíveis, confira [ChoiceStyleOptions][choiceStyleOptions]. |
+| `ChoiceStyle` | Aplica-se aos elementos padrão <code>{&#124;&#124;}</code>. Determina se a lista de opções é mostrada embutida ou por linha. O padrão é `ChoiceStyleOptions.Auto` que determina em runtime se a opção é mostrada de forma embutida ou em uma lista. Para obter os valores possíveis, confira [ChoiceStyleOptions][choiceStyleOptions]. |
 | `Feedback` | Aplica-se a somente os prompts. Determina se o formulário reflete a escolha do usuário para indicar que o formulário entendeu a seleção. O padrão é `FeedbackOptions.Auto` que reflete a entrada do usuário somente se parte dela não for compreendida. Para obter os valores possíveis, confira [FeedbackOptions][feedbackOptions]. |
 | `FieldCase` | Determina se o texto da descrição do campo é normalizado (por exemplo, se a primeira letra de cada palavra é escrita com letra maiúscula). O padrão é `CaseNormalization.Lower` que converte a descrição em minúsculas. Para obter os valores possíveis, confira [CaseNormalization][caseNormalization]. |
 | `LastSeparator` | Aplica-se aos elementos padrão `{[]}`. Determina se uma lista matriz de itens inclui um separador antes do último item. |
@@ -132,7 +132,7 @@ What kind of sandwich would you like?
 >
 ```
 
-## <a name="sample-code"></a>Exemplo de código
+## <a name="sample-code"></a>Código de exemplo
 
 [!INCLUDE [Sample code](../includes/snippet-dotnet-formflow-samples.md)]
 

@@ -1,5 +1,5 @@
 ---
-title: Usar botão para a entrada | Microsoft Docs
+title: Usar o botão para a entrada – Serviço de Bot
 description: Saiba como enviar ações sugeridas em mensagens usando o SDK do Bot Framework para JavaScript.
 keywords: ações sugeridas, botões, entrada extra
 author: Kaiqb
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/10/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b121a60b72551dd473a880d47868a61763e5afa0
-ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
+ms.openlocfilehash: 7a8ec7dbe7d8079967d66d9461b67fb3d2152d94
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75491497"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798407"
 ---
 # <a name="use-button-for-input"></a>Usar o botão para a entrada
 

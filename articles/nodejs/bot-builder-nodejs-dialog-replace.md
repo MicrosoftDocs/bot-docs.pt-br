@@ -1,5 +1,5 @@
 ---
-title: Substituir diálogos | Microsoft Docs
+title: Substituir caixas de diálogo – Serviço de Bot
 description: Saiba como substituir diálogos para solicitar novamente a entrada e gerenciar o fluxo da conversa usando o SDK do Bot Framework para Node.js.
 author: v-ducvo
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 92782463a4f7d0de6d0fa30693542eea051366bd
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 79083626f60564d8fa6a500cf7c45805e4488e22
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70299832"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75790900"
 ---
 # <a name="replace-dialogs"></a>Substituir diálogos
 

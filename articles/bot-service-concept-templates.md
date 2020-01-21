@@ -1,5 +1,5 @@
 ---
-title: Modelos de serviço de bot | Microsoft Docs
+title: Modelos de Serviço de Bot – Serviço de Bot
 description: Aprenda sobre os diferentes modelos que você pode usar quando cria um bot com o Bot Service.
 author: robstand
 ms.author: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: f1cfa6de6dbc0b1dc6ed0408f405a91493741a93
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.openlocfilehash: 82afb54b7f4a148aee35be15fac761e2f89aed69
+ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70297631"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75793077"
 ---
 # <a name="bot-service-templates"></a>Modelos de serviço de bot
 
