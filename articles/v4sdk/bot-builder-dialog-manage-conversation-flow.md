@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/05/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 9ee6e9445871445008f6ab406f3250af0226c0dd
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 874d22eef5a387df9be8b1cee72935812bf9879b
+ms.sourcegitcommit: df2b8d4e29ebfbb9e8a10091bb580389fe4c34cc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798505"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256009"
 ---
 # <a name="implement-sequential-conversation-flow"></a>Implementar fluxo de conversa sequencial
 
@@ -30,7 +30,7 @@ Você pode gerenciar fluxos de conversa simples e complexos usando a biblioteca 
 ## <a name="prerequisites"></a>Prerequisites
 
 - Conhecimento de [noções básicas de bot][concept-basics], [gerenciamento de estado][concept-state] e [biblioteca de diálogos][concept-dialogs].
-- Uma cópia do **exemplo de prompt de vários turnos** em [**C#**][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
+- Uma cópia do **exemplo de prompt de vários turnos** em [**C#** ][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
@@ -42,7 +42,7 @@ No exemplo de prompt de vários turnos, usamos um diálogo em cascata, alguns pr
 | Perguntar o nome do usuário | Prompt de texto |
 | Perguntar se o usuário deseja fornecer a idade | Prompt de confirmação |
 | Se a resposta for Sim, perguntar a idade dele | Prompt de número com validação para aceitar somente idades maiores que 0 e menores que 150 |
-| Se ele não estiver usando o Microsoft Teams, solicitar uma imagem de perfil | Prompt de anexo com validação para permitir um anexo ausente |
+| Se ele não estiver usando o Microsoft Teams, solicite uma imagem do perfil | Prompt de anexo com validação para permitir um anexo ausente |
 | Perguntar se as informações coletadas estão “OK” | Reutilizar prompt de confirmação |
 
 Finalmente, se ele responder sim, exibir as informações coletadas; caso contrário, dizer ao usuário que as informações dele não serão mantidas.

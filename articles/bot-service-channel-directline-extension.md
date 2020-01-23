@@ -8,12 +8,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 07/09/2019
-ms.openlocfilehash: c4c54e50450ae81098992c880e23a049229fa09f
-ms.sourcegitcommit: 7e901f5f39a0cfb0d37e532321b90a1dcf4baadd
+ms.openlocfilehash: 2145709c9cc458ec5dd9f4fbf1145ddbad893a04
+ms.sourcegitcommit: df2b8d4e29ebfbb9e8a10091bb580389fe4c34cc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72039752"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76255999"
 ---
 # <a name="direct-line-app-service-extension"></a>Direct Line App Service Extension
 
@@ -34,11 +34,12 @@ As extensões de streaming expandem o uso do WebSocket e permitem que **todas as
 A extensão do Serviço de Aplicativo do Direct Line é pré-instalada em todas as instâncias dos Serviços de Aplicativos do Azure em cada data center em todo o mundo. Ela é mantida e gerenciada pela Microsoft sem que haja trabalho de implantação adicional para o cliente. Ela fica desabilitada nos Serviços de Aplicativos do Azure por padrão, mas pode ser ativada facilmente para que possa se conectar ao bot hospedado.
 
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte Também
 
-|NOME|DESCRIÇÃO|
+|Nome|Descrição|
 |---|---|
-|[Configurar o bot do .NET para a extensão](bot-service-channel-directline-extension-net-bot.md)|Atualize um bot para trabalhar com **pipes nomeados** e habilite a extensão de serviço de aplicativo do Direct Line no recurso de **Serviço de Aplicativo do Azure** em que o bot está hospedado.  |
+|[Configurar o bot do .NET para a extensão](bot-service-channel-directline-extension-net-bot.md)|Atualize um bot do .NET para trabalhar com **pipes nomeados** e habilite a Extensão do Serviço de Aplicativo do Direct Line no recurso de **Serviço de Aplicativo do Azure** em que o bot está hospedado.  |
+|[Configurar o bot do Node.js para a extensão](bot-service-channel-directline-extension-node-bot.md)|Atualize um bot do Node.js para trabalhar com **pipes nomeados** e habilite a Extensão do Serviço de Aplicativo do Direct Line no recurso de **Serviço de Aplicativo do Azure** em que o bot está hospedado.  |
 |[Criar cliente .NET com a extensão](bot-service-channel-directline-extension-net-client.md)|Crie um cliente .NET em C# que se conecta à extensão do Serviço de Aplicativo do Direct Line|
 |[Usar a extensão com Webchat](bot-service-channel-directline-extension-webchat-client.md)|Habilitar o WebChat com a extensão de serviço de aplicativo do Direct Line|
 |[Usar a extensão dentro do VNET](bot-service-channel-directline-extension-vnet.md)|Use a extensão do Serviço de Aplicativo do Direct Line com uma VNET (Rede Virtual do Azure)|
