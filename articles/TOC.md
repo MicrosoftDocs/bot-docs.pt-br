@@ -21,6 +21,7 @@
 ## [Autenticação de usuário](v4sdk/bot-builder-concept-authentication.md)
 ## [Gerenciar recursos do bot](v4sdk/bot-file-basics.md)
 ## [Como funcionam os bots do Microsoft Teams](v4sdk/bot-builder-basics-teams.md)
+## [Sobre as habilidades](v4sdk/skills-conceptual.md)
 <!-- [Language understanding](v4sdk/bot-builder-concept-luis.md) -->
 ## [Modelos de Serviço de Bot](bot-service-concept-templates.md)
 ## [Serviços Cognitivos](bot-service-concept-intelligence.md)
@@ -52,6 +53,13 @@
 ### [Gravar diretamente no armazenamento](v4sdk/bot-builder-howto-v4-storage.md)
 ### [Adicionar autenticação ao seu bot ](v4sdk/bot-builder-authentication.md)
 ### [Implementar um armazenamento personalizado para seu bot](v4sdk/bot-builder-custom-storage.md)
+### Habilidades
+#### [Implementar uma habilidade](v4sdk/skill-implement-skill.md)
+#### [Implementar um consumidor de habilidades](v4sdk/skill-implement-consumer.md)
+<!--
+#### [Add claims validation](v4sdk/skill-add-claims-validation.md)
+#### [Manage multiple skills](#)
+-->
 ### [Adicionar telemetria ao seu bot](v4sdk/bot-builder-telemetry.md)
 ### [Adicionar telemetria ao seu bot do QnA](v4sdk/bot-builder-telemetry-QnAMaker.md)
 ### [Analisar os dados telemétricos do seu bot](v4sdk/bot-builder-telemetry-analytics-queries.md)
