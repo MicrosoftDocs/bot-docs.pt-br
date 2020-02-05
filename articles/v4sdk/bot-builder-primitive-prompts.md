@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 8c0572c7c92abfc99ab01c1d734d5ed0dcc463bb
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: ecf9f7fea20ebf85f738c10b963ed9219001f9d4
+ms.sourcegitcommit: 36d6f06ffafad891f6efe4ff7ba921de8a306a94
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75791295"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76895704"
 ---
 # <a name="create-your-own-prompts-to-gather-user-input"></a>Crie seus próprio prompts para coletar entradas do usuário
 
@@ -86,9 +86,7 @@ No **index. js**, crie as propriedades de estado e o bot e, em seguida, chame o 
 
 Em **app.py**, crie as propriedades de estado e o bot.
 
-[!code-python[custom prompt bot](~/../botbuilder-python/samples/python/44.prompt-for-user-input/app.py?range=66-72)]
-
-[!code-python[custom prompt bot](~/../botbuilder-python/samples/python/44.prompt-for-user-input/app.py?range=75-76)]
+[!code-python[custom prompt bot](~/../botbuilder-python/samples/python/44.prompt-for-user-input/app.py?range=67-73)]
 
 ---
 

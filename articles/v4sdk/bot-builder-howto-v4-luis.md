@@ -7,33 +7,35 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 05/23/2019
+ms.date: 01/24/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: eda82d8b929282fe322c0b28cc4683396ae26dbc
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 8d681d8ce30ed5f5bce0a424ffb0b1ecfe865155
+ms.sourcegitcommit: 36d6f06ffafad891f6efe4ff7ba921de8a306a94
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798201"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76895772"
 ---
 # <a name="add-natural-language-understanding-to-your-bot"></a>Adicionar reconhecimento de idioma natural ao seu bot
 
 [!INCLUDE[applies-to](../includes/applies-to.md)]
-A capacidade de entender o que seu usuário quer dizer contextualmente e em conversas pode ser uma tarefa difícil, mas pode dar ao seu bot uma sensação de conversa mais natural. O Language Understanding, chamado LUIS, permite que você faça exatamente isso para que seu bot possa reconhecer a intenção das mensagens do usuário, permitir uma linguagem mais natural do seu usuário e direcionar melhor o fluxo de conversação. Este tópico explica como adicionar LUIS a um aplicativo de reservas de voo para reconhecer intenções e entidades diferentes contidas na entrada do usuário. 
+A capacidade de entender o que seu usuário quer dizer contextualmente e em conversas pode ser uma tarefa difícil, mas pode dar ao seu bot uma sensação de conversa mais natural. O Language Understanding, chamado LUIS, permite que você faça exatamente isso para que seu bot possa reconhecer a intenção das mensagens do usuário, permitir uma linguagem mais natural do seu usuário e direcionar melhor o fluxo de conversação. Este tópico explica como adicionar LUIS a um aplicativo de reservas de voo para reconhecer intenções e entidades diferentes contidas na entrada do usuário.
 
 ## <a name="prerequisites"></a>Prerequisites
+
 - Conta [LUIS](https://www.luis.ai)
-- O código neste artigo baseia-se no exemplo de **Core Bot**. Você precisará de uma cópia do exemplo em **[C#](https://aka.ms/cs-core-sample)** , **[JavaScript](https://aka.ms/js-core-sample)** ou **[Python](https://aka.ms/python-core-sample)** . 
+- O código neste artigo baseia-se no exemplo de **Core Bot**. Você precisará de uma cópia do exemplo em **[C#](https://aka.ms/cs-core-sample)** , **[JavaScript](https://aka.ms/js-core-sample)** ou **[Python](https://aka.ms/python-core-sample)** .
 - Conhecimento das [Noções básicas do bot](bot-builder-basics.md), do [processamento de idioma natural](https://docs.microsoft.com/azure/cognitive-services/luis/what-is-luis) e do [gerenciamento de recursos do bot](bot-file-basics.md).
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
-Este exemplo de codificação de core bot mostra um exemplo de um aplicativo de reservas de voo do aeroporto. Ele usa um serviço do LUIS para reconhecer a entrada do usuário e retornar a melhor intenção reconhecida pelo LUIS. 
+Este exemplo de codificação de core bot mostra um exemplo de um aplicativo de reservas de voo do aeroporto. Ele usa um serviço do LUIS para reconhecer a entrada do usuário e retornar a melhor intenção reconhecida pelo LUIS.
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
 Após cada processamento da entrada do usuário, `DialogBot` salva o estado atual de `UserState` e `ConversationState`. Após a coleta de todas as informações necessárias, o exemplo de codificação cria uma reserva de reserva de voo de demonstração. Neste artigo, abordaremos os aspectos LUIS deste exemplo. No entanto, o fluxo geral do exemplo é mostrado a seguir:
 
-- `OnMembersAddedAsync` é chamado quando um novo usuário é conectado e exibe um cartão de boas-vindas. 
+- `OnMembersAddedAsync` é chamado quando um novo usuário é conectado e exibe um cartão de boas-vindas.
 - `OnMessageActivityAsync` é chamado em cada entrada do usuário recebida.
 
 ![Fluxo lógico do exemplo do LUIS](./media/how-to-luis/luis-logic-flow.png)
@@ -45,9 +47,10 @@ O módulo `OnMessageActivityAsync` executa o diálogo apropriado por meio do mé
 - `Destination` a cidade de destino
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
 Após cada processamento da entrada do usuário, `dialogBot` salva o estado atual de `userState` e `conversationState`. Após a coleta de todas as informações necessárias, o exemplo de codificação cria uma reserva de reserva de voo de demonstração. Neste artigo, abordaremos os aspectos LUIS deste exemplo. No entanto, o fluxo geral do exemplo é mostrado a seguir:
 
-- `onMembersAdded` é chamado quando um novo usuário é conectado e exibe um cartão de boas-vindas. 
+- `onMembersAdded` é chamado quando um novo usuário é conectado e exibe um cartão de boas-vindas.
 - `OnMessage` é chamado em cada entrada do usuário recebida.
 
 ![Fluxo lógico do JavaScript de exemplo do LUIS](./media/how-to-luis/luis-logic-flow-js.png)
@@ -61,9 +64,10 @@ Quando recebe uma resposta de volta, `mainDialog` preserva as informações do u
 - `travelDate` A data da reserva do voo.
 
 # <a name="pythontabpython"></a>[Python](#tab/python)
+
 Após cada processamento da entrada do usuário, `DialogBot` salva o estado atual de `user_state` e `conversation_state`. Após a coleta de todas as informações necessárias, o exemplo de codificação cria uma reserva de reserva de voo de demonstração. Neste artigo, abordaremos os aspectos LUIS deste exemplo. No entanto, o fluxo geral do exemplo é mostrado a seguir:
 
-- `on_members_added_activity` é chamado quando um novo usuário é conectado e exibe um cartão de boas-vindas. 
+- `on_members_added_activity` é chamado quando um novo usuário é conectado e exibe um cartão de boas-vindas.
 - `on_message_activity` é chamado em cada entrada do usuário recebida.
 
 ![Fluxo lógico do Python de exemplo do LUIS](./media/how-to-luis/luis-logic-flow-python.png)
@@ -79,24 +83,29 @@ O módulo `on_message_activity` executa o diálogo apropriado por meio do métod
 Para obter detalhes sobre outros aspectos do exemplo, como diálogos ou estado, confira [Coletar entradas do usuário usando um prompt de diálogo](bot-builder-prompts.md) ou [Salvar dados do usuário e da conversa](bot-builder-howto-v4-state.md).
 
 ## <a name="create-a-luis-app-in-the-luis-portal"></a>Criar um aplicativo LUIS no portal do LUIS
+
 Entrar no portal do LUIS para criar sua própria versão do exemplo de aplicativo LUIS. Você pode criar e gerenciar seus aplicativos em **Meus Aplicativos**.
 
-1. Selecione **Importar novos aplicativos**. 
-1. Clique em **Escolher arquivo do aplicativo (formato JSON)...** 
+1. Selecione **Importar novos aplicativos**.
+1. Clique em **Escolher arquivo do aplicativo (formato JSON)...**
 1. Selecione o arquivo `FlightBooking.json` localizado na parta `CognitiveModels` do exemplo. No **Nome opcional**, insira **FlightBooking**. Esse arquivo contém três intenções: “Reservar voo”, “Cancelar” e “Nenhum”. Vamos usar essas intenções para entender o que o usuário pretende ao enviar uma mensagem ao bot.
 1. [Treine](https://docs.microsoft.com/azure/cognitive-services/LUIS/luis-how-to-train) o aplicativo.
 1. [Publique](https://docs.microsoft.com/azure/cognitive-services/LUIS/publishapp) o aplicativo no ambiente de *produção*.
 
 ### <a name="why-use-entities"></a>Por que usar entidades?
+
 As entidades LUIS permitem que seu bot entenda determinadas coisas ou eventos diferentes das intenções padrão. Assim, você pode coletar mais informações do usuário, o que permite que seu bot responda de forma mais inteligente ou ignore algumas perguntas nas quais ele pede essas informações ao usuário. Além das definições das três intenções do LUIS (“Reservar voo, “Cancelar” e “Nenhum”), o arquivo FlightBooking.json também contém um conjunto de entidades, como “From.Airport” e “To.Airport”. Essas entidades permitem que o LUIS detecte e retorne informações adicionais contidas na entrada original do usuário, quando ele solicitar uma nova reserva de viagem.
 
 Para obter informações de como as informações de entidade aparecem no resultado do LUIS, confira [Extrair dados de texto de enunciado com intenções e entidades](https://docs.microsoft.com/azure/cognitive-services/luis/luis-concept-data-extraction).
 
 ## <a name="obtain-values-to-connect-to-your-luis-app"></a>Obter valores para conectar ao seu aplicativo LUIS
+
 Após a publicação de seu aplicativo LUIS, acesse-o no bot. Será necessário registrar vários valores para acessar seu aplicativo LUIS no bot. Você pode recuperar essas informações usando o portal do LUIS.
 
 ### <a name="retrieve-application-information-from-the-luisai-portal"></a>Recupere as informações do aplicativo no portal LUIS.ai
-O arquivo de configurações (`appsettings.json` ou `.env`) age como um único local para reunir todas as referências de serviço. As informações que você recupera serão adicionadas a esse arquivo na próxima seção. 
+
+O arquivo de configurações (`appsettings.json` ou `.env`) age como um único local para reunir todas as referências de serviço. As informações que você recupera serão adicionadas a esse arquivo na próxima seção.
+
 1. Marque seu aplicativo LUIS publicado em [luis.ai](https://www.luis.ai).
 1. Com o aplicativo LUIS publicado aberto, escolha a guia **GERENCIAR**. ![Gerenciar aplicativo LUIS](./media/how-to-luis/manage-luis-app.png)
 1. Escolha a guia **Informações do Aplicativo** no lado esquerdo, registre o valor mostrado para _ID do Aplicativo_ como <ID_DO_SEU_APLICATIVO>.
@@ -135,13 +144,13 @@ Verifique se o pacote do NuGet **Microsoft.Bot.Builder.AI.Luis** está instalado
 
 Para se conectar ao serviço do LUIS, o bot extrai as informações adicionadas acima do arquivo appsetting.json. A classe `FlightBookingRecognizer` contém código com as configurações do arquivo appsetting.json e consulta o serviço do LUIS chamando o método `RecognizeAsync`.
 
-**FlightBookingRecognizer.cs**  
+**FlightBookingRecognizer.cs**
 
-[!code-csharp[luisHelper](~/../BotBuilder-Samples/samples/csharp_dotnetcore/13.core-bot/FlightBookingRecognizer.cs?range=12-39)]
+[!code-csharp[luisHelper](~/../BotBuilder-Samples/samples/csharp_dotnetcore/13.core-bot/FlightBookingRecognizer.cs?range=12-48)]
 
 O `FlightBookingEx.cs` contém a lógica para extrair *From*, *To* e *TravelDate*; ela estende a classe parcial `FlightBooking.cs` usada para armazenar os resultados do LUIS ao chamar `FlightBookingRecognizer.RecognizeAsync<FlightBooking>` do `MainDialog.cs`.
 
-**CognitiveModels\FlightBookingEx.cs**  
+**CognitiveModels\FlightBookingEx.cs**
 
 [!code-csharp[luis helper](~/../BotBuilder-Samples/samples/csharp_dotnetcore/13.core-bot/CognitiveModels/FlightBookingEx.cs?range=8-35)]
 
@@ -153,7 +162,7 @@ Para se conectar ao serviço do LUIS, o bot usa as informações adicionadas aci
 
 **dialogs/flightBookingRecognizer.js**
 
-[!code-javascript[luis helper](~/../BotBuilder-Samples/samples/javascript_nodejs/13.core-bot/dialogs/flightBookingRecognizer.js?range=6-64)]
+[!code-javascript[luis helper](~/../BotBuilder-Samples/samples/javascript_nodejs/13.core-bot/dialogs/flightBookingRecognizer.js?range=6-70)]
 
 A lógica para extrair From, To e TravelDate é implementada como métodos auxiliares dentro de `flightBookingRecognizer.js`. Esses métodos são usados após chamar `flightBookingRecognizer.executeLuisQuery()` de `mainDialog.js`
 
@@ -165,7 +174,7 @@ Para se conectar ao serviço do LUIS, o bot usa as informações adicionadas aci
 
 **flight_booking_recognizer.py**
 
-[!code-python[config.py](~/../botbuilder-python/samples/python/13.core-bot/flight_booking_recognizer.py?range=8-32)]
+[!code-python[config.py](~/../botbuilder-python/samples/python/13.core-bot/flight_booking_recognizer.py?range=10-34)]
 
 A lógica para extrair *From*, *To* e *travel_date* é implementada como métodos auxiliares da classe `LuisHelper` dentro de `luis_helper.py`. Esses métodos são usados após chamar `LuisHelper.execute_luis_query()` de `main_dialog.py`
 
@@ -185,7 +194,7 @@ Baixe e instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator
 
 ![Entrada de reserva do LUIS](./media/how-to-luis/luis-user-travel-input.png)
 
-Se a melhor intenção retornada pelo LUIS for "Reservar voo", seu bot fará perguntas adicionais até que tenha informações suficientes armazenadas para criar uma reserva de viagem. Nesse ponto, ele retornará essas informações de reserva para o usuário. 
+Se a melhor intenção retornada pelo LUIS for "Reservar voo", seu bot fará perguntas adicionais até que tenha informações suficientes armazenadas para criar uma reserva de viagem. Nesse ponto, ele retornará essas informações de reserva para o usuário.
 
 ![Resultado da reserva do LUIS](./media/how-to-luis/luis-travel-result.png)
 

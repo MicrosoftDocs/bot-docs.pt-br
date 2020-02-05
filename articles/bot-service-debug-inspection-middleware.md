@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/01/2019
-ms.openlocfilehash: 9218ed5019294d2fc18d63b0fe4abe853af83e2b
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 0c5c4b9062fedd0ce8235a533fcb3014cbe16725
+ms.sourcegitcommit: 36d6f06ffafad891f6efe4ff7ba921de8a306a94
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75792598"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76895816"
 ---
 # <a name="debug-a-bot-with-inspection-middleware"></a>Depurar um bot com middleware de inspeção
 Este artigo descreve como depurar o bot usando o middleware de inspeção. Esse recurso permite que o Bot Framework Emulator depure o tráfego dentro e fora do bot, além de examinar o estado atual dele. Você pode usar uma mensagem de rastreamento para enviar dados para o emulador e, em seguida, inspecionar o estado do bot em qualquer determinada rodada da conversa. 
@@ -76,7 +76,7 @@ Configure o estado de inspeção no arquivo **app.py** adicionando um middleware
 
 **app.py**
 
-[!code-python [inspection bot sample](~/../botbuilder-samples/samples/python/47.inspection/app.py?range=74-86)]
+[!code-python [inspection bot sample](~/../botbuilder-samples/samples/python/47.inspection/app.py?range=75-84)]
 
 Atualize a classe do bot no arquivo **echo_bot.py**.
 

@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 05/23/2019
+ms.date: 01/24/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 12863035f0fbe361d75d12021a5bdca5f740b1aa
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 77222da10d69e6ad9a029a3548da66bd1a1806a2
+ms.sourcegitcommit: 36d6f06ffafad891f6efe4ff7ba921de8a306a94
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798380"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76895677"
 ---
 # <a name="send-proactive-notifications-to-users"></a>Enviar notificações proativas para os usuários
 
@@ -87,7 +87,7 @@ O segundo controlador, o controlador _notificar_, é responsável por enviar a m
 Sempre que a página de notificação do bot é solicitada, o controlador de notificação recupera as referências de conversa a partir do dicionário.
 Então, o controlador usa os métodos `ContinueConversationAsync` e `BotCallback` para enviar a mensagem proativa.
 
-[!code-csharp[Notify logic](~/../botbuilder-samples/samples/csharp_dotnetcore/16.proactive-messages/Controllers/NotifyController.cs?range=17-60&highlight=28,40-43)]
+[!code-csharp[Notify logic](~/../botbuilder-samples/samples/csharp_dotnetcore/16.proactive-messages/Controllers/NotifyController.cs?range=17-62&highlight=28,40-44)]
 
 Para enviar uma mensagem proativa, o adaptador requer uma ID do aplicativo para o bot. Em um ambiente de produção, você pode usar a ID do aplicativo do bot. Em um ambiente de teste local, você pode usar qualquer GUID. Se no momento o bot não estiver atribuído a uma ID do aplicativo, o controlador de notificação gera automaticamente um espaço reservado para ID a ser usado para a chamada.
 
@@ -99,15 +99,14 @@ Sempre que a página `/api/notify` do servidor for solicitada, o servidor recupe
 Então, o servidor usa o método `continueConversation` para enviar a mensagem proativa.
 O parâmetro para `continueConversation` é uma função que serve como manipulador de turno do bot para este turno.
 
-[!code-javascript[Notify logic](~/../botbuilder-samples/samples/javascript_nodejs/16.proactive-messages/index.js?range=68-80&highlight=4-6)]
-
+[!code-javascript[Notify logic](~/../botbuilder-samples/samples/javascript_nodejs/16.proactive-messages/index.js?range=68-82&highlight=4-8)]
 
 # <a name="pythontabpython"></a>[Python](#tab/python)
 
 Sempre que a página de notificação do bot for solicitada, o servidor vai recuperar as referências da conversa do dicionário.
 Em seguira, o servidor usará o `_send_proactive_message` para enviar a mensagem proativa.
 
-**app.py** [!code-python[Notify logic](~/../botbuilder-python/samples/python/16.proactive-messages/app.py?range=104-110&highlight=3-7)]
+[!code-python[Notify logic](~/../botbuilder-python/samples/python/16.proactive-messages/app.py?range=97-105&highlight=5-9)]
 
 ---
 
@@ -122,19 +121,19 @@ Em seguira, o servidor usará o `_send_proactive_message` para enviar a mensagem
 
 Além do exemplo usado neste artigo, amostrar adicionais estão disponíveis em C# e JS no [GitHub](https://github.com/Microsoft/BotBuilder-Samples/).
 
-### <a name="avoiding-401-unauthorized-errors"></a>Como evitar erros 401 "Não Autorizados" 
+### <a name="avoiding-401-unauthorized-errors"></a>Como evitar erros 401 "Não Autorizados"
 
 Por padrão, o SDK BotBuilder adiciona um `serviceUrl` à lista de nomes de hosts confiáveis se a solicitação de entrada for autenticada por BotAuthentication. Eles são mantidos em um cache na memória. Se o bot for reiniciado, um usuário que estiver aguardando por uma mensagem proativa não vai recebê-la, a menos que tenha enviado uma mensagem ao bot novamente depois da reinicialização.
 
-Para evitar isso, você deve adicionar manualmente o `serviceUrl` à lista de nomes de host confiáveis, usando: 
+Para evitar isso, você deve adicionar manualmente o `serviceUrl` à lista de nomes de host confiáveis, usando:
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-```csharp 
-MicrosoftAppCredentials.TrustServiceUrl(serviceUrl); 
-``` 
+```csharp
+MicrosoftAppCredentials.TrustServiceUrl(serviceUrl);
+```
 
-Para enviar mensagens proativas, `serviceUrl` é a URL do canal, que o destinatário da mensagem proativa estará usando, e pode ser encontrado no `Activity.ServiceUrl`. 
+Para enviar mensagens proativas, `serviceUrl` é a URL do canal, que o destinatário da mensagem proativa estará usando, e pode ser encontrado no `Activity.ServiceUrl`.
 
 Você deve adicionar o código acima antes do código que envia a mensagem proativa. No [Exemplo de Mensagens Proativas](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/16.proactive-messages), você deve colocá-lo em `NotifyController.cs` logo antes de `await turnContext.SendActivityAsync("proactive hello");`.
 

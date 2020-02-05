@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/06/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 701eea560d46acc9d3917716366c509e1032e30f
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: f1d4acd6b39ce4e7b1a3b72aee2bc12f0b60ee84
+ms.sourcegitcommit: 36d6f06ffafad891f6efe4ff7ba921de8a306a94
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798552"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76895760"
 ---
 # <a name="create-advanced-conversation-flow-using-branches-and-loops"></a>Criar fluxo de conversa avançado usando ramificações e loops
 
@@ -27,7 +27,7 @@ Também mostraremos como passar argumentos entre partes diferentes do diálogo.
 ## <a name="prerequisites"></a>Prerequisites
 
 - Conhecimento sobre [noções básicas de bots][concept-basics], [gerenciamento de estado][concept-state], a [biblioteca de diálogos][concept-dialogs] e como [implementar um fluxo de conversa sequencial][simple-dialog].
-- Uma cópia de exemplo da caixa de diálogo complexa em [**C#**][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
+- Uma cópia de exemplo da caixa de diálogo complexa em [**C#** ][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
@@ -95,7 +95,7 @@ Nós criamos serviços para bot, que os outros blocos do código precisam.
 - Serviços para gerenciamento de estado: armazenamento, estado do usuário e estado da conversa.
 - A caixa de diálogo que o bot usará.
 
-[!code-python[ConfigureServices](~/../botbuilder-python/samples/python/43.complex-dialog/app.py?range=28-75)]
+[!code-python[ConfigureServices](~/../botbuilder-python/samples/python/43.complex-dialog/app.py?range=29-94)]
 
 ---
 

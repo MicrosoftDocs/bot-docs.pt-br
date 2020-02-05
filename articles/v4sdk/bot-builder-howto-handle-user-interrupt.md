@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 11/05/2019
+ms.date: 01/24/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: fca68b09632c89cd027d012a92fe99e186324f70
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 14ce46852e31d347572cbc979fdcd76087452290
+ms.sourcegitcommit: 36d6f06ffafad891f6efe4ff7ba921de8a306a94
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798370"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76895726"
 ---
 # <a name="handle-user-interruptions"></a>Manipular interrupções do usuário
 
@@ -31,7 +31,7 @@ O tratamento de interrupções é um aspecto importante de um bot robusto. Os us
 
 O exemplo usado neste artigo traz um bot de reserva de voo que utiliza caixas de diálogo para obter informações do voo do usuário. A qualquer momento durante a conversa com o bot, o usuário pode solicitar _ajudar_ ou _cancelar_ comandos e gerar uma interrupção. Há dois tipos de interrupções que abordamos aqui:
 
-- **De nível de turno**: ignorar o processamento no nível do turno, mas deixando a caixa de diálogo na pilha com as informações que foram fornecidas. No próximo turno, continuar de onde você parou. 
+- **De nível de turno**: ignorar o processamento no nível do turno, mas deixando a caixa de diálogo na pilha com as informações que foram fornecidas. No próximo turno, continuar de onde você parou.
 - **De nível de caixa de diálogo**: cancelar o processamento completamente para que o bot comece tudo novamente.
 
 ## <a name="define-and-implement-the-interruption-logic"></a>Como definir e implementar a lógica de interrupção
@@ -76,12 +76,12 @@ Se o usuário digitar "help", o método `interrupt` envia uma mensagem e, em seg
 
 Se o usuário digitar "cancelar", ele chamará `cancelAllDialogs` em seu contexto interno de caixa de diálogo, e isso limpa sua pilha de caixa de diálogo fazendo com que ele seja fechado com um status de cancelamento e nenhum valor de resultado. Para `MainDialog` (mostrado posteriormente), aparecerá que a caixa de diálogo de reserva foi finalizada e não retornou resultados, da mesma forma quando o usuário decide não confirmar a reserva.
 
-[!code-javascript[Interrupt](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/dialogs/cancelAndHelpDialog.js??range=20-39)]
-
+[!code-javascript[Interrupt](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/dialogs/cancelAndHelpDialog.js?range=20-39)]
 
 ## <a name="pythontabpython"></a>[Python](#tab/python)
 
-Para usar caixas de diálogo, instale o pacote de `botbuilder-dialogs` e verifique se o arquivo de exemplo `requirements.txt` contém a referência apropriada, como `botbuilder-dialogs>=4.5.0`. Para obter mais informações sobre como instalar os pacotes, consulte o repositório de exemplos no arquivo [LEIAME](https://github.com/microsoft/botbuilder-python).
+Para usar caixas de diálogo, instale o pacote de `botbuilder-dialogs` e verifique se o arquivo de exemplo `requirements.txt` contém a referência apropriada, como `botbuilder-dialogs>=4.5.0`.
+Para obter mais informações sobre como instalar os pacotes, consulte o repositório de exemplos no arquivo [LEIAME](https://github.com/microsoft/botbuilder-python).
 > [!NOTE]
 > Fazer `pip install botbuilder-dialogs` também instalará `botbuilder-core`, `botbulder-connector` e `botbuilder-schema`.
 
@@ -175,7 +175,7 @@ Em nosso exemplo, o manipulador do `onTurnError` do adaptador recebe as exceçõ
 
 Em nosso exemplo, o manipulador do `on_error` do adaptador recebe as exceções geradas pela lógica de turno do seu bot. Se uma exceção for lançada, o manipulador excluirá o estado de conversa da conversa atual para impedir que o bot fique preso em um loop de erro causado por estar em estado inválido.
 
-[!code-python[adapter_with_error_handler](~/../botbuilder-python/samples/python/13.core-bot/adapter_with_error_handler.py?range=15-54)]
+[!code-python[adapter_with_error_handler](~/../botbuilder-python/samples/python/13.core-bot/adapter_with_error_handler.py?range=16-56)]
 
 ---
 
@@ -201,7 +201,7 @@ Para referência, aqui estão as definições de classe que são usadas na chama
 
 Por fim, em `index.js`, o bot é criado.
 
-[!code-javascript[Create bot](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/index.js?range=75-78)]
+[!code-javascript[Create bot](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/index.js?range=78-81)]
 
 Para referência, aqui estão as definições de classe que são usadas na chamada para criar o bot acima.
 
@@ -213,7 +213,7 @@ Para referência, aqui estão as definições de classe que são usadas na chama
 
 **app.py** Por fim, em `app.py`, o bot é criado.
 
-[!code-python[create bot](~/../botbuilder-python/samples/python/13.core-bot/app.py?range=44-48)]
+[!code-python[create bot](~/../botbuilder-python/samples/python/13.core-bot/app.py?range=45-49)]
 
 Para referência, aqui estão as definições de classe que são usadas na chamada para criar o bot.
 
