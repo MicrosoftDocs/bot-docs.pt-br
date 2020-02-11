@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 07/05/2019
+ms.date: 01/28/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 874d22eef5a387df9be8b1cee72935812bf9879b
-ms.sourcegitcommit: df2b8d4e29ebfbb9e8a10091bb580389fe4c34cc
+ms.openlocfilehash: 51068b61776d55fba0f96561463902820b1c14cd
+ms.sourcegitcommit: 36d6f06ffafad891f6efe4ff7ba921de8a306a94
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76256009"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76895742"
 ---
 # <a name="implement-sequential-conversation-flow"></a>Implementar fluxo de conversa sequencial
 
@@ -89,9 +89,9 @@ Na última etapa, verificamos o `stepContext.Result` retornado pelo diálogo cha
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-Para usar diálogos, seu projeto precisa instalar o pacote npm **botbuilder-dialogs**.
+Para usar as caixas de diálogo, seu projeto precisa instalar o pacote do npm, **botbuilder-dialogs**.
 
-O bot interage com o usuário por meio de `UserProfileDialog`. Quando criarmos o bot `DialogBot`, definiremos `UserProfileDialog` como o diálogo principal. O bot, em seguida, usa um método auxiliar `run` para acessar o diálogo.
+O bot interage com o usuário por meio de um `UserProfileDialog`. Quando criarmos o bot `DialogBot`, definiremos `UserProfileDialog` como o diálogo principal. O bot, em seguida, usa um método auxiliar `run` para acessar o diálogo.
 
 ![diálogo de perfil do usuário](media/user-profile-dialog-js.png)
 
@@ -149,7 +149,7 @@ Começamos criando `UserProfileDialog`, que deriva da classe `ComponentDialog` e
 
 No construtor `UserProfileDialog`, crie as etapas de cascata, os prompts e o diálogo de cascata, e adicione-os ao conjunto do diálogo. Os avisos precisam estar no mesmo conjunto do diálogo no qual eles são usados.
 
-[!code-python[Constructor snippet](~/../botbuilder-python/samples/python/05.multi-turn-prompt/dialogs/user_profile_dialog.py?range=25-57)]
+[!code-python[Constructor snippet](~/../botbuilder-python/samples/python/05.multi-turn-prompt/dialogs/user_profile_dialog.py?range=26-57)]
 
 Em seguida, implementamos as etapas usadas pelo diálogo. Para usar um prompt, chame-o de uma etapa no seu diálogo e recupere o resultado do prompt na etapa seguinte usando `step_context.result`. Nos bastidores, os prompts são uma caixa de diálogo em duas etapas. Primeiro, o prompt solicita a entrada; em seguida, ele retorna o valor válido ou recomeça do princípio com um novo prompt até receber uma entrada válida.
 
@@ -197,11 +197,15 @@ O manipulador `OnMessageActivityAsync` usa o método `RunAsync` para iniciar ou 
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-O manipulador `onMessage` usa o método auxiliar para iniciar ou continuar o diálogo. Em `onDialog`, usamos objetos de gerenciamento de estado do bot para persistir as alterações no estado para o armazenamento. O método `onDialog` é chamado por último, depois que outros manipuladores definidos são executados, como `onMessage`. Dessa forma, salvamos o estado depois que o manipulador de mensagens é concluído, mas antes da conclusão do próprio turno.
+O método `onMessage` registra um ouvinte que chama o método `run` da caixa de diálogo para iniciar ou continuar o diálogo.
+
+Separadamente, o bot substitui o método `ActivityHandler.run` para salvar a conversa e o estado do usuário no armazenamento. Dessa forma, salvamos o estado depois que o manipulador de mensagens é concluído, mas antes da conclusão do próprio turno.
 
 **bots/dialogBot.js**
 
-[!code-javascript[overrides](~/../botbuilder-samples/samples/javascript_nodejs/05.multi-turn-prompt/bots/dialogBot.js?range=24-38&highlight=11-13)]
+[!code-javascript[message listener](~/../botbuilder-samples/samples/javascript_nodejs/05.multi-turn-prompt/bots/dialogBot.js?range=24-31&highlight=5)]
+
+[!code-javascript[override](~/../botbuilder-samples/samples/javascript_nodejs/05.multi-turn-prompt/bots/dialogBot.js?range=34-43&highlight=7-9)]
 
 # <a name="pythontabpython"></a>[Python](#tab/python)
 
@@ -235,12 +239,11 @@ Nós registramos serviços para o bot em `index.js`.
 
 [!code-javascript[overrides](~/../botbuilder-samples/samples/javascript_nodejs/05.multi-turn-prompt/index.js?range=19-59)]
 
-
 # <a name="pythontabpython"></a>[Python](#tab/python)
 
 Nós registramos serviços para o bot em `app.py`.
 
-[!code-python[configure services](~/../botbuilder-python/samples/python/05.multi-turn-prompt/app.py?range=27-75)]
+[!code-python[configure services](~/../botbuilder-python/samples/python/05.multi-turn-prompt/app.py?range=27-76)]
 
 ---
 
@@ -276,7 +279,7 @@ Há várias opções para manter as etapas de diálogo e o estado de bot separad
 
 ### <a name="definition-of-a-prompt-validator-method"></a>Definição de um método validador de prompt
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp) 
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 **UserProfileDialog.cs**
 
@@ -296,7 +299,7 @@ Veja abaixo um exemplo de código validador para a definição do método `agePr
 
 **dialogs/user_profile_dialog.py**
 
-Veja abaixo um exemplo de código validador para a definição do método `age_prompt_validator`. `prompt_context.recognized.value` contém o valor analisado, que é um inteiro aqui para o prompt do número. `prompt_context.recognized.succeeded` indica se o prompt foi capaz de analisar a entrada do usuário ou não. O validador deve retornar false para indicar que o valor não foi aceito e a caixa de diálogo de prompt deve perguntar novamente ao usuário; caso contrário, retorna true para aceitar a entrada e retornar da caixa de diálogo de prompt. Observe que você pode alterar o valor no validador de acordo com seu cenário. 
+Veja abaixo um exemplo de código validador para a definição do método `age_prompt_validator`. `prompt_context.recognized.value` contém o valor analisado, que é um inteiro aqui para o prompt do número. `prompt_context.recognized.succeeded` indica se o prompt foi capaz de analisar a entrada do usuário ou não. O validador deve retornar false para indicar que o valor não foi aceito e a caixa de diálogo de prompt deve perguntar novamente ao usuário; caso contrário, retorna true para aceitar a entrada e retornar da caixa de diálogo de prompt. Observe que você pode alterar o valor no validador de acordo com seu cenário.
 
 [!code-python[prompt validator method](~/../botbuilder-samples/samples/python/05.multi-turn-prompt/dialogs/user_profile_dialog.py?range=207-212)]
 
@@ -319,4 +322,3 @@ Veja abaixo um exemplo de código validador para a definição do método `age_p
 [cs-sample]: https://aka.ms/cs-multi-prompts-sample
 [js-sample]: https://aka.ms/js-multi-prompts-sample
 [python-sample]: https://aka.ms/python-multi-prompts-sample
-

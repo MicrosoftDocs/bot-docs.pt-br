@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 96669a1f461975978291fe20a15b5c196f475694
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: a4437910cc0de3772ed8959f54f1643bc62abf41
+ms.sourcegitcommit: 4e1af50bd46debfdf9dcbab9a5d1b1633b541e27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75791198"
+ms.lasthandoff: 01/25/2020
+ms.locfileid: "76752888"
 ---
 # <a name="tutorial-use-qna-maker-in-your-bot-to-answer-questions"></a>Tutorial: usar o QnA Maker em seu bot para responder a perguntas
 
@@ -75,6 +75,7 @@ Esses valores serão usados no seu arquivo `appsettings.json` ou `.env`, na pró
 A base de dados de conhecimento já está pronta para usar seu bot.
 
 ## <a name="add-knowledge-base-information-to-your-bot"></a>Adicionar informações da base de dados de conhecimento ao seu bot
+
 A partir do bot framework v4.3, o Azure não fornece mais um arquivo .bot como parte do código-fonte de bot baixado. Use as seguintes instruções para conectar seu bot CSharp, JavaScript ou Python à base de dados de conhecimento.
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
@@ -128,8 +129,9 @@ class DefaultConfig:
 
 | Campo | Valor |
 |:----|:----|
-
-| QnAKnowledgebaseId | A ID da base de dados de conhecimento que o portal QnA Maker gerou para você. | | QnAAuthKey (QnAEndpointKey in Python)  | A chave de ponto de extremidade que o portal de QnA Maker gerou para você. | | QnAEndpointHostName | A URL do host que o portal QnA Maker gerou. Use a URL completa, começando com `https://` e terminando com `/qnamaker`. A cadeia de caracteres de URL completa será semelhante a "https://< >.azure.net/qnamaker". |
+| QnAKnowledgebaseId | A ID da base de dados de conhecimento que o portal QnA Maker gerou para você. |
+| QnAAuthKey (QnAEndpointKey em Python)  | A chave do ponto de extremidade que o portal QnA Maker gerou para você. |
+| QnAEndpointHostName | A URL do host que o portal QnA Maker gerou. Use a URL completa, começando com `https://` e terminando com `/qnamaker`. A cadeia de caracteres de URL completa será semelhante a "https://< >.azure.net/qnamaker". |
 
 Agora salve suas edições.
 

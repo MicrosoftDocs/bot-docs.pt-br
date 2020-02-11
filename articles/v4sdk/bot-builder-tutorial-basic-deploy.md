@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 05/23/2019
+ms.date: 01/28/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: fadc7410925d337a518129736c9374035fe2114d
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: f4df5e10b545d1c2cf0137400e571d8a45aa465a
+ms.sourcegitcommit: 36d6f06ffafad891f6efe4ff7ba921de8a306a94
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75791208"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76895779"
 ---
 # <a name="tutorial-create-and-deploy-a-basic-bot"></a>Tutorial: Criar e implantar um bot básico
 
@@ -51,6 +51,11 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 [!INCLUDE [deploy prerequisite](~/includes/deploy/snippet-prerequisite.md)]
 
 ### <a name="prepare-for-deployment"></a>Preparar para a implantação
+
+> [!TIP]
+> Este procedimento usa um arquivo zip para implantar o bot. No C#, isso poderá falhar se a configuração da solução no build estiver definida como **Depurar**.
+> No Visual Studio, verifique se a configuração da solução está definida como **Versão** e execute uma recompilação limpa da solução antes de continuar.
+
 [!INCLUDE [deploy prepare intro](~/includes/deploy/snippet-prepare-deploy-intro.md)]
 
 #### <a name="1-login-to-azure"></a>1. Logon no Azure

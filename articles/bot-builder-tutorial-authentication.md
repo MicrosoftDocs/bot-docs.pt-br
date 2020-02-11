@@ -8,12 +8,12 @@ ms.service: bot-service
 ROBOTS: NOINDEX
 ms.date: 11/14/2019
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: e5b04a9b0d5d4c4974b5aaf051d7a01bdb9302f6
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: aab49803939a42974a59b66f47a1f004019421b4
+ms.sourcegitcommit: 4e1af50bd46debfdf9dcbab9a5d1b1633b541e27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75788873"
+ms.lasthandoff: 01/25/2020
+ms.locfileid: "76752778"
 ---
 # <a name="add-authentication-to-your-bot-via-azure-bot-service"></a>Adicionar autenticação ao seu bot por meio do Serviço de Bot do Azure
 
@@ -75,12 +75,12 @@ Você precisa criar um bot de registro em que você definirá o ponto de extremi
 
 ### <a name="register-an-application-in-azure-ad"></a>Registrar um aplicativo no Azure AD
 
-Você precisa de um aplicativo do Azure AD que seu bot possa usar para se conectar à API do Microsoft Graph.
+Você precisa de um aplicativo do Azure AD que seu bot possa usar como um provedor de identidade para se conectar à API do Microsoft Graph.
 
 Para este bot, você pode usar pontos de extremidade do Azure AD v1 ou v2.
 Para obter informações sobre as diferenças entre os pontos de extremidade v1 e v2, consulte a [comparação v1-v2](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-compare) e a [visão geral de ponto de extremidade do Azure AD v 2.0](https://docs.microsoft.com/azure/active-directory/develop/active-directory-appmodel-v2-overview).
 
-#### <a name="to-create-an-azure-ad-application"></a>Para criar um aplicativo do Azure AD
+#### <a name="create-an-azure-ad-identity-provider-application"></a>Criar um aplicativo de provedor de identidade do Azure AD 
 
 Use essas etapas para criar um novo aplicativo do Azure Active Directory. Você pode usar os pontos de extremidade v1 ou v2 com o aplicativo criado.
 
@@ -94,7 +94,7 @@ Use essas etapas para criar um novo aplicativo do Azure Active Directory. Você 
 1. Preencha os campos obrigatórios e crie o registro do aplicativo.
 
    1. Nome do seu aplicativo.
-   1. Selecione os **Tipos de conta compatíveis** para o aplicativo. (Qualquer uma dessas opções funcionará com este exemplo.)
+   1. Selecione os **Tipos de conta compatíveis** para o aplicativo.
    1. Para o **URI de redirecionamento**
        1. Selecione **Web**.
        1. Defina a URL como `https://token.botframework.com/.auth/web/redirect`.
@@ -103,6 +103,9 @@ Use essas etapas para criar um novo aplicativo do Azure Active Directory. Você 
       - Depois de criado, o Azure exibe a página **Visão geral** do aplicativo.
       - Registre o valor da **ID do aplicativo (cliente)** . Você usará esse valor posteriormente como a _ID do cliente_ ao registrar seu aplicativo do Azure AD com seu bot.
       - Registre também o valor da **ID do diretório (locatário)** . Você também usará essas informações para registrar esse aplicativo no bot.
+ 
+    > [!NOTE]
+    > Quando os tipos de conta compatíveis forem definidos como locatário único, se você usar uma assinatura pessoal em vez de uma conta Microsoft, o emulador emitirá o erro: *A ID do aplicativo Microsoft do bot ou a senha do aplicativo Microsoft está incorreta.* Nesse caso, os tipos de conta compatíveis devem ser definidos como *Contas em qualquer diretório organizacional (Qualquer diretório do Azure AD – Multilocatário) e contas pessoais Microsoft (por exemplo, Skype, Xbox)* .
 
 1. No painel de navegação, clique em **Certificados e segredos** para criar um segredo para o aplicativo.
 

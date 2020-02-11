@@ -1,32 +1,32 @@
 ---
 title: Conectar um bot ao Webex Teams | Microsoft Docs
-description: Saiba como configurar a conexão de um bot com o Webex por meio do adaptador do Slack.
+description: Saiba como configurar a conexão de um bot com o Webex por meio do adaptador do Webex.
 keywords: bot adapter, Webex, Webex bot
 author: garypretty
 manager: kamrani
 ms.topic: article
 ms.author: gapretty
 ms.service: bot-service
-ms.date: 12/04/2019
-ms.openlocfilehash: 590a4e3d4f2331580bb1fd823bdcd7a00f5efaab
-ms.sourcegitcommit: 86495b597e55c94309a0c73fc1945a3393ddcbbf
+ms.date: 01/21/2020
+ms.openlocfilehash: 2bf7d99d221a2e48c938c66fb7bef5c1e143f47f
+ms.sourcegitcommit: 4e1af50bd46debfdf9dcbab9a5d1b1633b541e27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75757300"
+ms.lasthandoff: 01/25/2020
+ms.locfileid: "76752798"
 ---
 # <a name="connect-a-bot-to-webex-teams-using-the-webex-adapter"></a>Conectar um bot ao Webex Teams usando o adaptador do Webex
 
 Neste artigo, você aprenderá a conectar um bot ao Webex usando o adaptador disponível no SDK.  Este artigo explicará como modificar o exemplo EchoBot para conectá-lo a um aplicativo do Webex.
 
 > [!NOTE]
-> As instruções a seguir abordam a implementação em C# do adaptador do Slack. Para obter instruções sobre como usar o adaptador JS, parte das bibliotecas BotKit, [consulte a documentação do Slack sobre BotKit](https://botkit.ai/docs/v4/platforms/webex.html).
+> As instruções a seguir abordam a implementação em C# do adaptador do Webex. Para obter instruções sobre como usar a implementação em JavaScript, parte das bibliotecas BotKit, [consulte a documentação do Webex sobre BotKit](https://botkit.ai/docs/v4/platforms/webex.html).
 
 ## <a name="prerequisites"></a>Prerequisites
 
 * O [código de exemplo do EchoBot](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/02.echo-bot)
 
-* Acesso a uma equipe do Webex com permissões suficientes para fazer logon e criar/gerenciar aplicativos em [https://developer.webex.com/my-apps](https://developer.webex.com/my-apps). Se você não tiver acesso a uma equipe do Webex, poderá criar uma conta gratuitamente em https://www.webex.com.
+* Acesso a uma equipe do Webex com permissões suficientes para fazer logon e criar/gerenciar aplicativos em [https://developer.webex.com/my-apps](https://developer.webex.com/my-apps). Se você não tiver acesso a uma equipe do Webex, poderá criar uma conta gratuitamente em [www.webex.com](https://www.webex.com).
 
 ## <a name="create-a-webex-bot-app"></a>Criar um aplicativo de bot do Webex
 
@@ -36,13 +36,13 @@ Neste artigo, você aprenderá a conectar um bot ao Webex usando o adaptador dis
 
 3. Na próxima tela, insira um nome, nome de usuário e uma descrição apropriados para o bot e escolha um ícone ou carregue uma imagem de sua preferência.
 
-![Configurar o bot](~/media/bot-service-adapter-connect-webex/create-bot.png)
+    ![Configurar o bot](~/media/bot-service-adapter-connect-webex/create-bot.png)
 
-Clique no botão "Adicionar bot".
+    Clique no botão "Adicionar bot".
 
 4. Na próxima página, você receberá um token de acesso para o novo aplicativo do Webex. Anote esse token, pois você precisará dele ao configurar o bot.
 
-![Configurar o bot](~/media/bot-service-adapter-connect-webex/create-bot-settings.png)
+    ![Configurar o bot](~/media/bot-service-adapter-connect-webex/create-bot-settings.png)
 
 ## <a name="wiring-up-the-webex-adapter-in-your-bot"></a>Conectando o adaptador do Webex ao seu bot
 
@@ -80,7 +80,7 @@ public class WebexAdapterWithErrorHandler : WebexAdapter
 
 ### <a name="create-a-new-controller-for-handling-webex-requests"></a>Criar um controlador para lidar com as solicitações do Webex
 
-Criaremos um novo controlador que lidará com as solicitações do aplicativo do Webex em um novo ponto de extremidade 'api/webex', em vez do 'api/messages' padrão usado para solicitações de canais do Serviço de Bot do Azure.  Ao adicionar outro ponto de extremidade ao bot, você poderá aceitar solicitações de canais do Serviço de Bot (ou adaptadores adicionais), assim como do Webex, usando o mesmo bot.
+Criaremos um controlador que manipulará as solicitações do aplicativo do Webex em um novo ponto de extremidade "api/webex", em vez do "api/messages" padrão usado para solicitações de canais do Serviço de Bot do Azure.  Ao adicionar outro ponto de extremidade ao bot, você poderá aceitar solicitações de canais do Serviço de Bot (ou adaptadores adicionais), assim como do Webex, usando o mesmo bot.
 
 ```csharp
 [Route("api/webex")]
@@ -111,7 +111,7 @@ public class WebexController : ControllerBase
 Adicione a seguinte linha ao método ***ConfigureServices*** no arquivo Startup.cs, que registrará o adaptador do Webex e o disponibilizará para a nova classe de controlador.  As definições de configuração, descritas na próxima etapa, serão usadas automaticamente pelo adaptador.
 
 ```csharp
-services.AddSingleton<SlackAdapter, WebexAdapterWithErrorHandler>();
+services.AddSingleton<WebexAdapter, WebexAdapterWithErrorHandler>();
 ```
 
 Depois de ser adicionado, o método ***ConfigureServices*** ficará assim.
@@ -124,7 +124,7 @@ public void ConfigureServices(IServiceCollection services)
     // Create the default Bot Framework Adapter (used for Azure Bot Service channels and emulator).
     services.AddSingleton<IBotFrameworkHttpAdapter, BotFrameworkAdapterWithErrorHandler>();
 
-    // Create the Slack Adapter
+    // Create the Webex Adapter
     services.AddSingleton<WebexAdapter, WebexAdapterWithErrorHandler>();
 
     // Create the bot as a transient. In this case the ASP Controller is expecting an IBot.
@@ -136,12 +136,12 @@ public void ConfigureServices(IServiceCollection services)
 
 1. Adicione as quatro configurações mostradas abaixo ao arquivo appSettings.json em seu projeto de bot.
 
-```json
-  "WebexAccessToken": "",
-  "WebexPublicAddress": "",
-  "WebexSecret": "",
-  "WebexWebhookName": ""
-```
+    ```json
+      "WebexAccessToken": "",
+      "WebexPublicAddress": "",
+      "WebexSecret": "",
+      "WebexWebhookName": ""
+    ```
 
 2. Preencha a configuração **WebexAccessToken** no token de acesso do bot do Webex, que foi gerado durante a criação do seu aplicativo de bot do Webex nas etapas anteriores. Deixe as outras três configurações vazias por enquanto, até reunirmos as informações necessárias para elas em etapas posteriores.
 
@@ -153,31 +153,31 @@ Agora que você criou um aplicativo do Webex e vinculou o adaptador ao seu proje
 
 1. Para concluir esta etapa, [implante o bot no Azure](https://aka.ms/bot-builder-deploy-az-cli) e anote a URL do bot implantado. Seu ponto de extremidade de mensagens do Webex é a URL para o bot, a qual será a URL do aplicativo implantado (ou ponto de extremidade ngrok), além de "/api/webex" (por exemplo, `https://yourbotapp.azurewebsites.net/api/webex`).
 
-> [!NOTE]
-> Se você não estiver pronto para implantar o bot no Azure ou desejar depurar o bot ao usar o adaptador do Webex, poderá usar uma ferramenta como a [ngrok](https://www.ngrok.com) (que você provavelmente já terá instalada se usou o emulador do Bot Framework anteriormente) para fazer um túnel para o bot em execução localmente e fornecer uma URL acessível publicamente para isso. 
-> 
-> Se desejar criar um túnel ngrok e obter uma URL para o bot, use o comando a seguir em uma janela do terminal (isso pressupõe que o bot local esteja em execução na porta 3978; altere os números de porta no comando se o bot não estiver).
-> 
-> ```
-> ngrok.exe http 3978 -host-header="localhost:3978"
-> ```
+    > [!NOTE]
+    > Se você não estiver pronto para implantar o bot no Azure ou desejar depurar o bot ao usar o adaptador do Webex, poderá usar uma ferramenta como a [ngrok](https://www.ngrok.com) (que você provavelmente já terá instalada se usou o emulador do Bot Framework anteriormente) para fazer um túnel para o bot em execução localmente e fornecer uma URL acessível publicamente para isso.
+    >
+    > Se desejar criar um túnel ngrok e obter uma URL para o bot, use o comando a seguir em uma janela do terminal (isso pressupõe que o bot local esteja em execução na porta 3978; altere os números de porta no comando se o bot não estiver).
+    >
+    > ```cmd
+    > ngrok.exe http 3978 -host-header="localhost:3978"
+    > ```
 
 2. Navegue até [https://developer.webex.com/docs/api/v1/webhooks](https://developer.webex.com/docs/api/v1/webhooks).
 
-3. Clique no link para o método PUT "https://api.ciscospark.com/v1/webhooks/{webhookId} " (com a descrição "Atualizar um Webhook"). Isso expandirá um formulário, permitindo que você envie uma solicitação ao ponto de extremidade.
+3. Clique no link para o método PUT `https://api.ciscospark.com/v1/webhooks/{webhookId}` (com a descrição "Atualizar um Webhook"). Isso expandirá um formulário, permitindo que você envie uma solicitação ao ponto de extremidade.
 
-![Configurar o bot](~/media/bot-service-adapter-connect-webex/webex-webhook-put-endpoint.png)
+    ![Configurar o bot](~/media/bot-service-adapter-connect-webex/webex-webhook-put-endpoint.png)
 
 4. Preencha o formulário com os seguintes detalhes;
 
-* Nome (forneça um nome para o webhook, como "Webhook de mensagens")
-* URL de destino (a URL completa para o ponto de extremidade do Webex do bot, como https://yourbotapp.azurewebsites.net/api/webex) )
-* Segredo (aqui você deve fornecer um segredo de sua preferência para proteger o webhook)
-* Status (deixe como a configuração padrão de "ativo")
+    * Nome (forneça um nome para o webhook, como "Webhook de mensagens")
+    * URL de destino (a URL completa para o ponto de extremidade do Webex do bot, como `https://yourbotapp.azurewebsites.net/api/webex`)
+    * Segredo (aqui você deve fornecer um segredo de sua preferência para proteger o webhook)
+    * Status (deixe como a configuração padrão de "ativo")
 
-![Configurar o bot](~/media/bot-service-adapter-connect-webex/webex-webhook-form.png)
+    ![Configurar o bot](~/media/bot-service-adapter-connect-webex/webex-webhook-form.png)
 
-5. Clique no botão "Executar", que deve criar seu webhook e fornecer uma mensagem de êxito.
+5. Clique em **Executar**, que deve criar seu webhook e fornecer uma mensagem de êxito.
 
 ### <a name="complete-the-remaining-settings-in-your-bot-application"></a>Concluir as configurações restantes em seu aplicativo de bot
 

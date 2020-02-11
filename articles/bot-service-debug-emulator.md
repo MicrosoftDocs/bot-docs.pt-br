@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 2/26/2019
-ms.openlocfilehash: c7e6dd48df1c80d7a15e06d3fbb874961d3e6aec
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 4828888d2b90cda6854f4195a6bc60f60538820c
+ms.sourcegitcommit: 4e1af50bd46debfdf9dcbab9a5d1b1633b541e27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75792860"
+ms.lasthandoff: 01/25/2020
+ms.locfileid: "76752828"
 ---
 # <a name="debug-with-the-emulator"></a>Depurar com o emulador
 
@@ -110,6 +110,13 @@ Se o bot é executado com [credenciais da MSA (Conta Microsoft)](#use-bot-creden
 ### <a name="use-bot-credentials"></a>Usar credenciais do bot
 
 Quando você abre o bot, defina a **ID do aplicativo Microsoft** e a **senha do aplicativo Microsoft** se seu bot está em execução com as credenciais. Se você criou seu bot com o Serviço de Bot do Azure, as credenciais estão disponíveis no Serviço de Aplicativo do bot, na seção **Configurações -> Configuração**. Se não souber os valores, você poderá remover aqueles do arquivo de configuração do bot sendo executado localmente e depois executar o bot no emulador. Se o bot não estiver em execução com essas configurações, você também não precisará executar o emulador com as configurações. 
+
+Ao criar um aplicativo de provedor de identidade do AD, lembre-se do seguinte:
+
+- Quando os tipos de conta compatíveis forem definidos como locatário único, se você usar uma assinatura pessoal em vez de uma conta Microsoft, o emulador emitirá o erro: *A ID do aplicativo Microsoft do bot ou a senha do aplicativo Microsoft está incorreta.* 
+- Nesse caso, os tipos de conta compatíveis devem ser definidos como *Contas em qualquer diretório organizacional (Qualquer diretório do Azure AD – Multilocatário) e contas pessoais Microsoft (por exemplo, Skype, Xbox)* .
+
+Para obter mais informações, consulte [Criar um aplicativo de provedor de identidade do Azure AD](bot-builder-tutorial-authentication.md#create-an-azure-ad-identity-provider-application).
 
 ## <a name="view-detailed-message-activity-with-the-inspector"></a>Exibir a atividade de mensagem detalhada com o Inspetor de
 

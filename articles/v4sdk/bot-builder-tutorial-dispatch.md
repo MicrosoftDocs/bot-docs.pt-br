@@ -7,14 +7,14 @@ ms.author: diberry
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 11/22/2019
+ms.date: 01/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 0d57ff8bf62625ceef6fc2c0f75c492b32dd2014
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: bea377055010077d964f639518556e12e212f1ad
+ms.sourcegitcommit: 36d6f06ffafad891f6efe4ff7ba921de8a306a94
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75791188"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76895714"
 ---
 # <a name="use-multiple-luis-and-qna-models"></a>Usar vários modelos de LUIS e QnA
 
@@ -284,7 +284,7 @@ npm install --save dotenv
 
 ### <a name="manually-update-your-env-file"></a>Atualizar manualmente o arquivo .env
 
-Depois que todos os aplicativos de serviço forem criados, as informações para cada um precisarão ser adicionadas ao arquivo “.env”. O código inicial do [Exemplo de JavaScript][js-sample] contém um arquivo .env vazio. 
+Depois que todos os aplicativos de serviço forem criados, as informações para cada um precisarão ser adicionadas ao arquivo “.env”. O código inicial do [Exemplo de JavaScript][js-sample] contém um arquivo .env vazio.
 
 **.env**  
 [!code-file[EmptyEnv](~/../botbuilder-samples/samples/javascript_nodejs/14.nlp-with-dispatch/.env?range=1-10)]
@@ -321,13 +321,14 @@ pip install botbuilder-ai
 ```
 
 ### <a name="manually-update-your-configpy-file"></a>Atualizar manualmente o arquivo config.py
-Depois que todos os aplicativos de serviço forem criados, as informações para cada um precisarão ser adicionadas ao arquivo “config.py”. O código do [Exemplo de Python][python-sample] inicial contém um arquivo config.py vazio. 
+Depois que todos os aplicativos de serviço forem criados, as informações para cada um precisarão ser adicionadas ao arquivo “config.py”. O código do [Exemplo de Python][python-sample] inicial contém um arquivo config.py vazio.
 
 **config.py**
 
 [!code-python[config.py](~/../botbuilder-python/samples/python/14.nlp-with-dispatch/config.py?range=10-24)]
 
 Para cada uma das entidades mostradas abaixo, adicione os valores que você registrou anteriormente nas instruções:
+
 ```python
 APP_ID = os.environ.get("MicrosoftAppId", "")
 APP_PASSWORD = os.environ.get("MicrosoftAppPassword", "")
@@ -341,13 +342,14 @@ LUIS_API_KEY = os.environ.get("LuisAPIKey", "<your-luis-endpoint-key>")
 # LUIS endpoint host name, ie "westus.api.cognitive.microsoft.com"
 LUIS_API_HOST_NAME = os.environ.get("LuisAPIHostName", "<your-dispatch-app-region>")
 ```
+
 Quando todas as alterações tiverem sido concluídas, salve esse arquivo.
 
 ---
 
 ### <a name="connect-to-the-services-from-your-bot"></a>Conectar-se aos serviços do seu bot
 
-Para se conectar aos serviços LUIS, QnA Maker e Dispatch, seu bot recupera informações do arquivo de configurações (o arquivo `appsettings.json` ou `.env`).
+Para se conectar aos serviços Dispatch, LUIS e QnA Maker, seu bot obtém informações do arquivo de configurações por pull.
 
 ## <a name="ctabcs"></a>[C#](#tab/cs)
 
@@ -355,7 +357,7 @@ Em **BotServices.cs**, as informações contidas no arquivo de configuração _a
 
 **BotServices.cs**
 
-[!code-csharp[ReadConfigurationInfo](~/../botbuilder-samples/samples/csharp_dotnetcore/14.nlp-with-dispatch/BotServices.cs?range=16-31)]
+[!code-csharp[ReadConfigurationInfo](~/../botbuilder-samples/samples/csharp_dotnetcore/14.nlp-with-dispatch/BotServices.cs?range=14-45)]
 
 ## <a name="javascripttabjs"></a>[JavaScript](#tab/js)
 
@@ -366,11 +368,12 @@ Em **dispatchBot.js**, as informações contidas no arquivo de configuração _.
 [!code-javascript[ReadConfigurationInfo](~/../botbuilder-samples/samples/javascript_nodejs/14.nlp-with-dispatch/bots/dispatchBot.js?range=11-26)]
 
 ## <a name="pythontabpython"></a>[Python](#tab/python)
+
 Em **dispatch_bot.py**, as informações contidas no arquivo de configuração _config.py_ são usadas para conectar o bot de expedição aos serviços _QnAMaker_ e _LuisRecognizer_. Os construtores usam os valores fornecidos para se conectarem a esses serviços.
 
 **bots/dispatch_bot.py**
 
-[!code-python[ReadConfigurationInfo](~/../botbuilder-python/samples/python/14.nlp-with-dispatch/bots/dispatch_bot.py?range=14-30)]
+[!code-python[ReadConfigurationInfo](~/../botbuilder-python/samples/python/14.nlp-with-dispatch/bots/dispatch_bot.py?range=14-34)]
 
 ---
 

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/31/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 30e04ad9e2b4b896cf941cdb440279ad9865837e
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: c562f9889fddbc205a341f5fda3b652dd1fb7c75
+ms.sourcegitcommit: 4e1af50bd46debfdf9dcbab9a5d1b1633b541e27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798792"
+ms.lasthandoff: 01/25/2020
+ms.locfileid: "76752918"
 ---
 # <a name="user-authentication-within-a-conversation"></a>Autenticação de usuário dentro de uma conversa
 
@@ -41,7 +41,11 @@ O serviço de token do Bot Framework é responsável por:
 
 - Facilitar o uso do protocolo OAuth com uma ampla variedade de serviços externos.
 - Armazenar os tokens com segurança para um bot, um canal, uma conversa e um usuário específicos.
-- Gerenciar o ciclo de vida do token, incluindo a tentativa de atualizar tokens.
+- Adquirindo tokens de usuário.
+    > [!TIP]
+    > Se o bot tiver um token de usuário expirado, o bot deverá:
+    >    - Desconecte o usuário
+    >    - Inicie o fluxo de entrada novamente
 
 Por exemplo, um bot que pode verificar os emails recentes de um usuário, usando a API do Microsoft Graph, exigirá um token de usuário do Azure Active Directory. No tempo de design, o desenvolvedor do bot registraria um aplicativo do Azure Active Directory no serviço de token do Bot Framework (por meio do portal do Azure) e, em seguida, definiria uma configuração de conexão OAuth (chamada `GraphConnection`) para o bot. Quando um usuário interagisse com o bot, o fluxo de trabalho seria:
 

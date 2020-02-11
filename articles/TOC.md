@@ -78,6 +78,7 @@
 # Referência
 ## [SDK v4 do .NET](https://aka.ms/botframework-v4-cs-sdk)
 ## [SDK v4 do JavaScript](https://aka.ms/bot-jssdk-v4)
+## [SDK v4 do Python](https://aka.ms/botframework-v4-python-sdk)
 ## [REST](rest-api/TOC.md)
 ## [SDK v3 do .NET](https://aka.ms/botframework-v3-cs-sdk)
 ## [SDK v3 do Node.js](https://aka.ms/bot-jssdk-v3)

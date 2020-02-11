@@ -7,26 +7,26 @@ ms.author: johtaylo
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 05/23/2019
+ms.date: 01/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f34d59c801708b62f1429b9edb17fccc05a3b983
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: e104fefa53c0df1150bd90768be51a9d29abdf64
+ms.sourcegitcommit: 36d6f06ffafad891f6efe4ff7ba921de8a306a94
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75791305"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76895796"
 ---
 # <a name="how-bots-work"></a>Como funcionam os bots
 
 [!INCLUDE[applies-to](../includes/applies-to.md)]
 
-Um bot é um aplicativo com o qual os usuários interagem de maneira conversacional usando texto, gráficos (cartões ou imagens) ou fala. Cada interação entre o usuário e o bot gera uma *atividade*. O Serviço do Bot Framework, que é um componente do Serviço de Bot do Azure, envia informações entre o aplicativo do usuário conectado ao bot (como Facebook, Skype, Slack e outros, que chamamos de *canal*) e o bot. Cada canal pode incluir informações adicionais nas atividades que enviam. Antes de criar bots, é importante entender como um bot usa objetos de atividade para se comunicar com seus usuários. Vamos primeiro dar uma olhada nas atividades que são trocadas quando executamos um bot de eco simples. 
+Um bot é um aplicativo com o qual os usuários interagem de maneira conversacional usando texto, gráficos (cartões ou imagens) ou fala. Cada interação entre o usuário e o bot gera uma *atividade*. O Serviço do Bot Framework, que é um componente do Serviço de Bot do Azure, envia informações entre o aplicativo do usuário conectado ao bot (como Facebook, Skype, Slack e outros, que chamamos de *canal*) e o bot. Cada canal pode incluir informações adicionais nas atividades que enviam. Antes de criar bots, é importante entender como um bot usa objetos de atividade para se comunicar com seus usuários. Vamos primeiro dar uma olhada nas atividades que são trocadas quando executamos um bot de eco simples.
 
 ![diagrama de atividade](media/bot-builder-activity.png)
 
 Dois tipos de atividade ilustrados aqui são: *atualização de conversa* e *mensagem*.
 
-O serviço Bot Framework pode enviar uma atualização de conversa quando um participante ingressa na conversa. Por exemplo, ao iniciar uma conversa com o Bot Framework Emulator, você verá duas atividades de atualização de conversa (uma para o usuário que participa da conversa e outra para o bot que participa da conversa). Para distinguir essas atividades de atualização de conversa, verifique se a propriedade *members added* inclui um membro que não seja o bot. 
+O serviço Bot Framework pode enviar uma atualização de conversa quando um participante ingressa na conversa. Por exemplo, ao iniciar uma conversa com o Bot Framework Emulator, você verá duas atividades de atualização de conversa (uma para o usuário que participa da conversa e outra para o bot que participa da conversa). Para distinguir essas atividades de atualização de conversa, verifique se a propriedade *members added* inclui um membro que não seja o bot.
 
 A atividade de mensagem contém informações de conversa entre as partes. Em um exemplo de bot de eco, as atividades de mensagem transmitem texto simples e o canal renderiza esse texto. Como alternativa, a atividade de mensagem pode conter o texto a ser falado, as ações sugeridas ou os cartões a serem exibidos.
 
@@ -54,9 +54,9 @@ Vamos analisar o diagrama anterior, com foco na chegada de uma atividade de mens
 
 No exemplo acima, o bot respondeu à atividade de mensagem com outra atividade de mensagem contendo a mesma mensagem de texto. O processamento começa com a solicitação HTTP POST, com as informações de atividade transmitidas como uma carga JSON, chegando ao servidor Web. Em C#, isso geralmente será um projeto do ASP.NET e, em um projeto Node.js do JavaScript, isso costuma ser uma das estruturas populares, como Express ou Restify.
 
-O *adaptador*, um componente integrado do SDK, é o núcleo do runtime do SDK. A atividade é executada como JSON no corpo HTTP POST. Este JSON é desserializado para criar o objeto Atividade, que é entregue ao adaptador com uma chamada para o método *processar atividade*. Ao receber a atividade, o adaptador cria um *contexto de turno* e chama o middleware. 
+O *adaptador*, um componente integrado do SDK, é o núcleo do runtime do SDK. A atividade é executada como JSON no corpo HTTP POST. Este JSON é desserializado para criar o objeto Atividade, que é entregue ao adaptador com uma chamada para o método *processar atividade*. Ao receber a atividade, o adaptador cria um *contexto de turno* e chama o middleware.
 
-Conforme mencionado acima, o contexto de turno fornece o mecanismo para que o bot envie atividades de saída, geralmente em resposta a uma atividade de entrada. Para isso, o contexto de turno fornece métodos de resposta _enviar, atualizar e excluir atividade_. Cada método de resposta é executado em um processo assíncrono. 
+Conforme mencionado acima, o contexto de turno fornece o mecanismo para que o bot envie atividades de saída, geralmente em resposta a uma atividade de entrada. Para isso, o contexto de turno fornece métodos de resposta _enviar, atualizar e excluir atividade_. Cada método de resposta é executado em um processo assíncrono.
 
 [!INCLUDE [alert-await-send-activity](../includes/alert-await-send-activity.md)]
 
@@ -66,7 +66,7 @@ Quando o bot recebe uma atividade, ele a transmite a seus *manipuladores de ativ
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-Por exemplo, se o bot recebe uma atividade de mensagem, o manipulador de turno vê a atividade de entrada a envia para o manipulador de atividade `OnMessageActivityAsync`. 
+Por exemplo, se o bot recebe uma atividade de mensagem, o manipulador de turno vê a atividade de entrada a envia para o manipulador de atividade `OnMessageActivityAsync`.
 
 Ao criar seu bot, sua lógica do bot para tratar das mensagens e respondê-las entrará nesse manipulador `OnMessageActivityAsync`. Da mesma forma, sua lógica de tratamento de membros que estão sendo adicionados à conversa vai entrar no manipulador `OnMembersAddedAsync`, que é chamado sempre que um membro é adicionado à conversa.
 
@@ -76,17 +76,20 @@ Há algumas situações em que é melhor substituir o manipulador de turno base,
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-Por exemplo, se o bot recebe uma atividade de mensagem, o manipulador de turno vê a atividade de entrada a envia para o manipulador de atividade `onMessage`.
+O JavaScript `ActivityHandler` usa um emissor de eventos e um padrão de ouvinte.
+Por exemplo, use o método `onMessage` para registrar um ouvinte de eventos para atividades de mensagem. Você pode registrar mais de um ouvinte. Quando o bot recebe uma atividade de mensagem, o manipulador de atividades vê essa atividade de entrada e a envia a cada um dos ouvintes de atividade `onMessage`, na ordem em que elas foram registradas.
 
-Ao criar seu bot, sua lógica do bot para tratar das mensagens e respondê-las entrará nesse manipulador `onMessage`. Da mesma forma, sua lógica de tratamento de membros que estão sendo adicionados à conversa vai entrar no manipulador `onMembersAdded`, que é chamado sempre que um membro é adicionado à conversa.
+Ao criar seu bot, a lógica do bot para tratar das mensagens e respondê-las entrará nos ouvintes `onMessage`. Da mesma forma, a lógica de tratamento de membros que estão sendo adicionados à conversa vai entrar nos ouvintes `onMembersAdded`, que são chamados sempre que um membro é adicionado à conversa.
 
-Para implementar a lógica desses manipuladores, você substituirá esses métodos no seu bot como visto na seção [Lógica do bot](#bot-logic) abaixo. Para cada um desses manipuladores, defina a lógica do bot e **não se esqueça de chamar `next()` no final**. Ao chamar `next()`, você faz com que o próximo manipulador seja executado.
+Para adicionar esses ouvintes, você os registrará em seu bot, como visto na seção [Lógica de bot](#bot-logic) abaixo. Para cada ouvinte, inclua a lógica de bot e, em seguida, **não se esqueça de chamar `next()` no final**. Ao chamar `next()`, você faz com que o próximo ouvinte seja executado.
+Em qualquer ouvinte que atualiza estados, [salve o estado](bot-builder-concept-state.md) antes de o ouvinte sair.
 
-Não existem situações comuns de substituição do manipulador de turno base, ou seja, tenha cuidado ao tentar fazer isso. Para situações do tipo [salvar o estado](bot-builder-concept-state.md), que você deseja fazer no final de um turno, existe um manipulador especial chamado `onDialog`. O manipulador `onDialog` é executado no final, depois que o restante dos manipuladores foi executado, e não está vinculado a nenhum tipo de atividade. Assim como com todos os manipuladores acima, não deixe de chamar `next()` para garantir a conclusão do processo.
+Não existem situações comuns de substituição do manipulador de turno base, ou seja, tenha cuidado ao tentar fazer isso.
+Há um manipulador especial chamado `onDialog`. O manipulador `onDialog` é executado no final, depois que o restante dos manipuladores foi executado, e não está vinculado a nenhum tipo de atividade. Assim como com todos os manipuladores acima, não deixe de chamar `next()` para garantir a conclusão do processo.
 
 # <a name="pythontabpython"></a>[Python](#tab/python)
 
-Por exemplo, se o bot recebe uma atividade de mensagem, o manipulador de turno vê a atividade de entrada a envia para o manipulador de atividade `on_message_activity`. 
+Por exemplo, se o bot recebe uma atividade de mensagem, o manipulador de turno vê a atividade de entrada a envia para o manipulador de atividade `on_message_activity`.
 
 Ao criar seu bot, sua lógica do bot para tratar das mensagens e respondê-las entrará nesse manipulador `on_message_activity`. Da mesma forma, sua lógica de tratamento de membros que estão sendo adicionados à conversa vai entrar no manipulador `on_members_added`, que é chamado sempre que um membro é adicionado à conversa.
 
@@ -204,28 +207,28 @@ public class MyBot : ActivityHandler
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-A lógica principal do bot é definida no código do bot; aqui, ele se chama `bots\echoBot.js`. `EchoBot` deriva de `ActivityHandler`. `ActivityHandler` define vários manipuladores para diferentes tipos de atividades, e você pode modificar o comportamento do bot fornecendo uma lógica adicional, como ocorre com `onMessage` e `onConversationUpdate` aqui.
+A lógica principal do bot é definida no código do bot; aqui, ele se chama `bots\echoBot.js`. `EchoBot` deriva de `ActivityHandler`. `ActivityHandler` define vários eventos para diferentes tipos de atividades e você pode modificar o comportamento do bot registrando ouvintes de eventos, como ocorre com `onMessage` e `onConversationUpdate` aqui.
 
-Os manipuladores definidos em `ActivityHandler` são:
+Use estes métodos para registrar os ouvintes para cada tipo de evento:
 
-| Evento | Manipulador | Descrição |
+| Evento | Método de registro | Descrição |
 | :-- | :-- | :-- |
-| Qualquer tipo de atividade recebido | `onTurn` | Chamado quando qualquer atividade é recebida. |
-| Atividade de mensagem recebida | `onMessage` | Chamado quando uma atividade `message` é recebida. |
-| Atividade de atualização de conversa recebida | `onConversationUpdate` | Chamado quando qualquer atividade `conversationUpdate` é recebida. |
-| Membros ingressaram na conversa | `onMembersAdded` | Chamado quando quaisquer membros ingressaram na conversa, incluindo o bot. |
-| Membros saíram da conversa | `onMembersRemoved` | Chamado quando algum membro saiu da conversa, incluindo o bot. |
-| Atividade de reação de mensagem recebida | `onMessageReaction` | Chamado quando qualquer atividade `messageReaction` é recebida. |
-| Reações de mensagem adicionadas a uma mensagem | `onReactionsAdded` | Chamado quando reações são adicionadas a uma mensagem. |
-| Reações de mensagem removidas de uma mensagem | `onReactionsRemoved` | Chamado quando reações são removidas de uma mensagem. |
-| Atividade de evento recebida | `onEvent` | Chamado quando qualquer atividade `event` é recebida. |
-| Atividade de evento de resposta de token recebida | `onTokenResponseEvent` | Chamado quando um evento `tokens/response` é recebido. |
-| Outro tipo de atividade recebido | `onUnrecognizedActivityType` | Chamado quando um manipulador para o tipo específico de atividade não está definido. |
+| Qualquer tipo de atividade recebido | `onTurn` | Registra um ouvinte para quando qualquer atividade for recebida. |
+| Atividade de mensagem recebida | `onMessage` | Registra um ouvinte para quando uma atividade `message` for recebida. |
+| Atividade de atualização de conversa recebida | `onConversationUpdate` | Registra um ouvinte para quando qualquer atividade `conversationUpdate` for recebida. |
+| Membros ingressaram na conversa | `onMembersAdded` | Registra um ouvinte para quando os membros ingressarem na conversa, incluindo o bot. |
+| Membros saíram da conversa | `onMembersRemoved` | Registra um ouvinte para quando os membros saírem da conversa, incluindo o bot. |
+| Atividade de reação de mensagem recebida | `onMessageReaction` | Registra um ouvinte para quando qualquer atividade `messageReaction` for recebida. |
+| Reações de mensagem adicionadas a uma mensagem | `onReactionsAdded` | Registra um ouvinte para quando as reações forem adicionadas a uma mensagem. |
+| Reações de mensagem removidas de uma mensagem | `onReactionsRemoved` | Registra um ouvinte para quando as reações forem removidas de uma mensagem. |
+| Atividade de evento recebida | `onEvent` | Registra um ouvinte para quando qualquer atividade `event` for recebida. |
+| Atividade de evento de resposta de token recebida | `onTokenResponseEvent` | Registra um ouvinte para quando um evento `tokens/response` for recebido. |
+| Outro tipo de atividade recebido | `onUnrecognizedActivityType` | Registra um ouvinte para quando um manipulador para o tipo específico de atividade não estiver definido. |
 | Manipuladores de atividade concluídos | `onDialog` | Chamado após a conclusão de qualquer manipulador aplicável. |
 
-Chame o parâmetro de função `next` de cada manipulador para permitir que o processamento continue. Se `next` não for chamado, o processamento da atividade terminará.
+Chame a função de continuação `next` de cada manipulador para permitir que o processamento continue. Se `next` não for chamado, o processamento da atividade terminará.
 
-Em cada turno, verificamos primeiro se o bot recebeu uma mensagem. Quando nós recebermos uma mensagem do usuário, ecoaremos a mensagem enviada por ele.
+Por exemplo, esse bot registra ouvintes para mensagens e atualizações de conversa. Quando ele recebe uma mensagem do usuário, ele ecoa de volta a mensagem que o usuário enviou.
 
 ```javascript
 const { ActivityHandler } = require('botbuilder');
