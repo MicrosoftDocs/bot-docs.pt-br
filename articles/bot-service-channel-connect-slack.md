@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 01/09/2019
-ms.openlocfilehash: d4e29d1349d441d8208800cb534e02320f326bb1
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 3147e202a615e29d51f1e3fa3a9d5d70ed54fe83
+ms.sourcegitcommit: d24fe2178832261ac83477219e42606f839dc64d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75791901"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77071734"
 ---
 # <a name="connect-a-bot-to-slack"></a>Conectar um bot ao Slack
 
@@ -42,7 +42,7 @@ Em seguida, você adicionará uma nova URL de Redirecionamento.
 
 1. Selecione a guia **OAuth e Permissões**.
 2. Clique em **Adicionar uma nova URL de Redirecionamento**.
-3. Digite https://slack.botframework.com.
+3. Digite [https://slack.botframework.com](https://slack.botframework.com).
 4. Clique em **Adicionar**.
 5. Clique em **Salvar URLs**.
 
@@ -145,7 +145,7 @@ Assim como o canal disponível no Serviço de Bot do Azure para conectar o bot c
 > [!NOTE]
 > As instruções a seguir abordam a implementação em C# do adaptador do Slack. Para obter instruções sobre como usar o adaptador JS, parte das bibliotecas BotKit, [consulte a documentação do Slack sobre BotKit](https://botkit.ai/docs/v4/platforms/slack.html).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 * O [código de exemplo do EchoBot](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/02.echo-bot)
 

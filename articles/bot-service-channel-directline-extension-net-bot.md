@@ -8,20 +8,20 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 01/16/2020
-ms.openlocfilehash: 04868384268049befd3da7b39582614524542ce9
-ms.sourcegitcommit: 36d6f06ffafad891f6efe4ff7ba921de8a306a94
+ms.openlocfilehash: c49a632696ea0708f817f733aff7b2743600ccb6
+ms.sourcegitcommit: d24fe2178832261ac83477219e42606f839dc64d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76895634"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77071694"
 ---
 # <a name="configure-net-bot-for-extension"></a>Configurar o bot do .NET para a extensão
 
 [!INCLUDE[applies-to-v4](includes/applies-to.md)]
 
-Este artigo descreve como atualizar um bot para trabalhar com **pipes nomeados** e como habilitar a extensão de serviço de aplicativo do Direct Line no recurso de **Serviço de Aplicativo do Azure** em que o bot está hospedado.  
+Este artigo descreve como atualizar um bot para trabalhar com **pipes nomeados** e como habilitar a extensão de serviço de aplicativo do Direct Line no recurso de **Serviço de Aplicativo do Azure** em que o bot está hospedado.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 Para executar as etapas descritas a seguir, você precisa ter o recurso do **Serviço de Aplicativo do Azure** e o **Serviço de Aplicativo** relacionado no Azure.
 
@@ -46,8 +46,6 @@ Esta seção descreve como habilitar a extensão de serviço de aplicativo do Di
 
     ```csharp
 
-    using Microsoft.Bot.Builder.StreamingExtensions;
-
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     {
         if (env.IsDevelopment())
@@ -62,8 +60,8 @@ Esta seção descreve como habilitar a extensão de serviço de aplicativo do Di
         app.UseDefaultFiles();
         app.UseStaticFiles();
 
-        // Allow bot to use named pipes.
-        app.UseBotFrameworkNamedPipe();
+        // Allow the bot to use named pipes.
+        app.UseNamedPipes();
 
         app.UseMvc();
     }
@@ -106,9 +104,10 @@ Esta seção descreve como habilitar a extensão de serviço de aplicativo do Di
 
 ## <a name="confirm-direct-line-app-extension-and-the-bot-are-initialized"></a>Confirme se a Extensão do Aplicativo do Direct Line e o bot foram inicializados
 
-No navegador, navegue até https://<your_app_service>.azurewebsites.net/.bot. Se tudo estiver correto, a página retornará este conteúdo JSON: `{"k":true,"ib":true,"ob":true,"initialized":true}`. Essas são as informações que você obtém quando **tudo funciona corretamente**, onde
+No navegador, navegue até https://<your_app_service>.azurewebsites.net/.bot.
+Se tudo estiver correto, a página retornará este conteúdo JSON: `{"k":true,"ib":true,"ob":true,"initialized":true}`. Essas são as informações que você obtém quando **tudo funciona corretamente**, onde
 
-- **k** determina se a ASE (Extensão do Serviço de Aplicativo) do Direct Line pode ler uma chave de extensão do Serviço de Aplicativo com base na configuração. 
+- **k** determina se a ASE (Extensão do Serviço de Aplicativo) do Direct Line pode ler uma chave de extensão do Serviço de Aplicativo com base na configuração.
 - **initialized** determina se a ASE do Direct Line pode usar a chave de Extensão do Serviço de Aplicativo para baixar os metadados do bot do Serviço de Bot do Azure
 - **ib** determina se a ASE do Direct Line pode estabelecer uma conexão de entrada com o bot.
 - **ob** determina se a ASE do Direct Line pode estabelecer uma conexão de saída com o bot.
