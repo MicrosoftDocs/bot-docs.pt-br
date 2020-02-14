@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 01/16/2019
-ms.openlocfilehash: 3290c12c35cd2095c6436b6a6239d9a7e3f5628b
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 15f30ff5d4db24d222a1a9df3ac98e24e576b238
+ms.sourcegitcommit: d24fe2178832261ac83477219e42606f839dc64d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75789942"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77071884"
 ---
 # <a name="key-concepts"></a>Principais conceitos
 
@@ -20,7 +20,7 @@ Você pode usar o serviço de Conector do Bot para se comunicar com usuários em
 
 ## <a name="bot-connector-service"></a>Serviço do Conector de Bot
 
-O serviço do Conector do Bot permite que seu bot troque mensagens com canais configurados no <a href="https://dev.botframework.com/" target="_blank">Portal do Bot Framework</a>. Ele usa o padrão do setor REST e JSON via HTTPS e permite a autenticação com tokens de Portador JWT. Para obter informações detalhadas sobre como usar o serviço do Conector de Bot, consulte [Autenticação](bot-framework-rest-connector-authentication.md) e os outros artigos desta seção.
+O serviço Bot Connector permite que seu bot troque mensagens com canais configurados no [Portal do Azure](https://portal.azure.com). Ele usa o padrão do setor REST e JSON via HTTPS e permite a autenticação com tokens de Portador JWT. Para obter informações detalhadas sobre como usar o serviço do Conector de Bot, consulte [Autenticação](bot-framework-rest-connector-authentication.md) e os outros artigos desta seção.
 
 ### <a name="activity"></a>Atividade
 

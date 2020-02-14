@@ -9,19 +9,19 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 01/24/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 8d681d8ce30ed5f5bce0a424ffb0b1ecfe865155
-ms.sourcegitcommit: 36d6f06ffafad891f6efe4ff7ba921de8a306a94
+ms.openlocfilehash: 8aeff2ec5fb816139f082d931aa1431edc5e145c
+ms.sourcegitcommit: f3628f48d3471a48773e5d256a75e8fe39717bb6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76895772"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77035478"
 ---
 # <a name="add-natural-language-understanding-to-your-bot"></a>Adicionar reconhecimento de idioma natural ao seu bot
 
 [!INCLUDE[applies-to](../includes/applies-to.md)]
 A capacidade de entender o que seu usuário quer dizer contextualmente e em conversas pode ser uma tarefa difícil, mas pode dar ao seu bot uma sensação de conversa mais natural. O Language Understanding, chamado LUIS, permite que você faça exatamente isso para que seu bot possa reconhecer a intenção das mensagens do usuário, permitir uma linguagem mais natural do seu usuário e direcionar melhor o fluxo de conversação. Este tópico explica como adicionar LUIS a um aplicativo de reservas de voo para reconhecer intenções e entidades diferentes contidas na entrada do usuário.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 - Conta [LUIS](https://www.luis.ai)
 - O código neste artigo baseia-se no exemplo de **Core Bot**. Você precisará de uma cópia do exemplo em **[C#](https://aka.ms/cs-core-sample)** , **[JavaScript](https://aka.ms/js-core-sample)** ou **[Python](https://aka.ms/python-core-sample)** .

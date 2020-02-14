@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 01/06/2019
-ms.openlocfilehash: 83273ade9aa79266c20287682ea3c151b1b0f8a5
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: cb3d156d71d6c5e28303cdf26de8692b13f42c86
+ms.sourcegitcommit: d24fe2178832261ac83477219e42606f839dc64d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75789438"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77071754"
 ---
 # <a name="key-concepts-in-direct-line-api-30"></a>Principais conceitos em linha API 3.0 direto
 
@@ -20,7 +20,7 @@ Você pode ativar a comunicação entre seu bot e seu próprio aplicativo client
 
 ## <a name="authentication"></a>Autenticação
 
-As solicitações da API de Linha Direta 3.0 podem ser autenticadas usando um **segredo** obtido da página de configuração do canal de Linha Direta no <a href="https://dev.botframework.com/" target="_blank">Bot Framework Portal</a> ou usando um **token** que você obtém em runtime. Para obter mais informações, consulte [Autenticação](bot-framework-rest-direct-line-3-0-authentication.md).
+As solicitações da Direct Line API 3.0 podem ser autenticadas usando um **segredo** obtido da página de configuração do canal da Direct Line no [Portal do Azure](https://portal.azure.com) ou usando um **token** que você obtém em runtime. Para obter mais informações, consulte [Autenticação](bot-framework-rest-direct-line-3-0-authentication.md).
 
 ## <a name="starting-a-conversation"></a>Iniciando uma conversa
 

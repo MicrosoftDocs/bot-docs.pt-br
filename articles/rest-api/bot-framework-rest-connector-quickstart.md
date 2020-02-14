@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: f517385fd6d194772004b44b2d8407f2515dc17d
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: f5ac5397d2ef13eb08d92d9cf560fddf582165c4
+ms.sourcegitcommit: d24fe2178832261ac83477219e42606f839dc64d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75789898"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77071874"
 ---
 # <a name="create-a-bot-with-the-bot-connector-service"></a>Crie um bot com o serviço Bot Connector
 > [!div class="op_single_selector"]
@@ -21,7 +21,7 @@ ms.locfileid: "75789898"
 > - [Serviço de bot](../bot-service-quickstart.md)
 > - [REST](../rest-api/bot-framework-rest-connector-quickstart.md)
 
-O serviço Bot Connector permite que seu bot troque mensagens com canais que são configurados no <a href="https://dev.botframework.com/" target="_blank">Portal do Bot Framework</a> usando REST padrão de indústria e JSON sobre HTTPS. Este tutorial orienta você pelo processo de obter um token de acesso do Bot Framework e usar o serviço Bot Connector para trocar mensagens com o usuário.
+O serviço Bot Connector permite que seu bot troque mensagens com canais que são configurados no [Portal do Azure](https://portal.azure.com) usando REST padrão do setor e JSON sobre HTTPS. Este tutorial orienta você pelo processo de obter um token de acesso do Bot Framework e usar o serviço Bot Connector para trocar mensagens com o usuário.
 
 ## <a id="get-token"></a> Obter um token de acesso
 

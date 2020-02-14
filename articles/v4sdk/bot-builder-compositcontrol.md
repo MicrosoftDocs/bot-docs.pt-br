@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 11/05/2019
+ms.date: 01/30/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2e40e6a9a8da2e884be0469fb00f0da5f011f22d
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 2398f4e3bc61ff51a108bd399e6a60976956e714
+ms.sourcegitcommit: d24fe2178832261ac83477219e42606f839dc64d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798882"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77071820"
 ---
 # <a name="reuse-dialogs"></a>Reutilizar diálogos
 
@@ -22,7 +22,7 @@ ms.locfileid: "75798882"
 
 Com os diálogos de componente, é possível criar diálogos independentes para lidar com cenários específicos, como dividir um conjunto de diálogos grande em partes mais gerenciáveis. Cada uma dessas partes tem seu próprio conjunto de diálogos e evita qualquer conflito de nome com o conjunto de diálogos que as contém.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento de [noções básicas de bot][concept-basics], [biblioteca de diálogos][concept-dialogs] e como [gerenciar conversas][simple-flow].
 - Uma cópia do exemplo de prompt de vários turnos em [**C#** ][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
@@ -89,7 +89,7 @@ Para obter mais informações sobre como implementar diálogos em cascata, confi
 
 # <a name="pythontabpython"></a>[Python](#tab/python)
 
-Para usar caixas de diálogo, instale os pacotes do pypi **botbuilder-dialogs** e **botbuilder-ai** executando `pip install botbuilder-dialogs` e `pip install botbuilder-ai` em um terminal.
+Para usar diálogos, instale os pacotes PyPI **botbuilder-dialogs** e **botbuilder-ai** executando `pip install botbuilder-dialogs` e `pip install botbuilder-ai` em um terminal.
 
 **dialogs/user_profile_dialog.py**
 
@@ -151,11 +151,11 @@ O método `run` é chamado pelo método `onMessage` do bot.
 
 No exemplo, adicionamos um método `run_dialog` ao diálogo de perfil do usuário.
 
-[!code-python[First step](~/../botbuilder-python/samples/python/05.multi-turn-prompt/helpers/dialog_helper.py?range=8-19)]
+[!code-python[DialogHelper.run_dialog](~/../botbuilder-python/samples/python/05.multi-turn-prompt/helpers/dialog_helper.py?range=8-19)]
 
 O método `run_dialog` é chamado pelo método `on_message_activity` do bot.
 
-**bots/dialog_bot.py** [!code-python[First step](~/../botbuilder-python/samples/python/05.multi-turn-prompt/bots/dialog_bot.py?range=46-51)]
+**bots/dialog_bot.py** [!code-python[om_message_activity](~/../botbuilder-python/samples/python/05.multi-turn-prompt/bots/dialog_bot.py?range=46-51&highlight=2-6)]
 
 ---
 

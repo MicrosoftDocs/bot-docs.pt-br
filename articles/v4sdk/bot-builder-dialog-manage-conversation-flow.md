@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 01/28/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 51068b61776d55fba0f96561463902820b1c14cd
-ms.sourcegitcommit: 36d6f06ffafad891f6efe4ff7ba921de8a306a94
+ms.openlocfilehash: a9ba4f47cfea6cdfcbb947df887397717c012eaa
+ms.sourcegitcommit: f3628f48d3471a48773e5d256a75e8fe39717bb6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76895742"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77035488"
 ---
 # <a name="implement-sequential-conversation-flow"></a>Implementar fluxo de conversa sequencial
 
@@ -27,7 +27,7 @@ Você pode gerenciar fluxos de conversa simples e complexos usando a biblioteca 
 > [!TIP]
 > Para obter exemplos de como escrever seus próprios prompts sem usar a biblioteca de caixas de diálogo, veja o artigo [Criar seus próprios prompts para coletar entrada do usuário](bot-builder-primitive-prompts.md).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento de [noções básicas de bot][concept-basics], [gerenciamento de estado][concept-state] e [biblioteca de diálogos][concept-dialogs].
 - Uma cópia do **exemplo de prompt de vários turnos** em [**C#** ][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
@@ -137,7 +137,7 @@ O contexto do diálogo permite iniciar um diálogo com a ID da cadeia de caracte
 
 # <a name="pythontabpython"></a>[Python](#tab/python)
 
-Para usar caixas de diálogo, instale os pacotes do pypi **botbuilder-dialogs** e **botbuilder-ai** executando `pip install botbuilder-dialogs` e `pip install botbuilder-ai` em um terminal.
+Para usar diálogos, instale os pacotes PyPI **botbuilder-dialogs** e **botbuilder-ai** executando `pip install botbuilder-dialogs` e `pip install botbuilder-ai` em um terminal.
 
 O bot interage com o usuário por meio de `UserProfileDialog`. Quando criarmos a classe `DialogBot` do bot, vamos definir o `UserProfileDialog` como o diálogo principal. O bot, em seguida, usa um método auxiliar `run_dialog` para acessar o diálogo.
 

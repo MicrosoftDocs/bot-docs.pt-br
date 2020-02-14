@@ -8,19 +8,19 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/01/2019
-ms.openlocfilehash: 0c5c4b9062fedd0ce8235a533fcb3014cbe16725
-ms.sourcegitcommit: 36d6f06ffafad891f6efe4ff7ba921de8a306a94
+ms.openlocfilehash: 142ffed02c9849511840a094cd91ee5953caf6af
+ms.sourcegitcommit: f3628f48d3471a48773e5d256a75e8fe39717bb6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76895816"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77035398"
 ---
 # <a name="debug-a-bot-with-inspection-middleware"></a>Depurar um bot com middleware de inspeção
 Este artigo descreve como depurar o bot usando o middleware de inspeção. Esse recurso permite que o Bot Framework Emulator depure o tráfego dentro e fora do bot, além de examinar o estado atual dele. Você pode usar uma mensagem de rastreamento para enviar dados para o emulador e, em seguida, inspecionar o estado do bot em qualquer determinada rodada da conversa. 
 
 Usamos um EchoBot criado localmente usando o Bot Framework v4 ([C#](https://docs.microsoft.com/azure/bot-service/dotnet/bot-builder-dotnet-sdk-quickstart?view=azure-bot-service-4.0) | [JavaScript](https://docs.microsoft.com/azure/bot-service/javascript/bot-builder-javascript-quickstart?view=azure-bot-service-4.0) | [Python](https://docs.microsoft.com/azure/bot-service/python/bot-builder-python-quickstart?view=azure-bot-service-4.0)) para mostrar como depurar e inspecionar o estado da mensagem do bot. Você também pode [Depurar um bot usando o IDE](./bot-service-debug-bot.md) ou [Depurar com o Bot Framework Emulator](./bot-service-debug-emulator.md), mas, para depurar o estado, você precisa adicionar o middleware de inspeção ao bot. Os exemplos de bot de inspeção estão disponíveis aqui: [C#](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/47.inspection), [JavaScript](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/javascript_nodejs/47.inspection) e [Python](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/python/47.inspection). 
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 - Baixar e instalar o [Bot Framework Emulator](https://aka.ms/Emulator-wiki-getting-started)
 - Conhecimento do [middleware](https://docs.microsoft.com/azure/bot-service/bot-builder-concept-middleware?view=azure-bot-service-4.0) de bot
 - Conhecimento do [estado de gerenciamento](https://docs.microsoft.com/azure/bot-service/bot-builder-concept-state?view=azure-bot-service-4.0) de bot
@@ -67,7 +67,7 @@ Atualize a classe bot no arquivo **bot.js**.
 [!code-javascript [inspection bot sample](~/../botbuilder-samples/samples/javascript_nodejs/47.inspection/bot.js?range=6-50)]
 
 # <a name="pythontabpython"></a>[Python](#tab/python)
-Antes de atualizar a execução de código do bot, instale os pacotes pypi necessários executando os seguintes comandos em um terminal:
+Antes de atualizar a execução de código do bot, instale os pacotes PyPI necessários executando os seguintes comandos em um terminal:
 ```cmd
 pip install aiohttp
 pip install botbuilder-core>=4.7.0

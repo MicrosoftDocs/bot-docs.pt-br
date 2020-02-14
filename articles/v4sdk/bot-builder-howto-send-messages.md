@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b8a4915bd58075cfa1172bdf78878f2f6c9826f0
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 9dc5bfeab8bc56e81888be5e9463be167fcd2b18
+ms.sourcegitcommit: d24fe2178832261ac83477219e42606f839dc64d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798282"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77071804"
 ---
 # <a name="send-and-receive-text-message"></a>Enviar e receber mensagens de texto
 
@@ -81,6 +81,79 @@ Nos manipulares de atividade do bot, use o código a seguir para receber uma men
 
 ```python
 response = context.activity.text
+```
+
+---
+
+## <a name="send-a-typing-indicator"></a>Enviar um indicador de digitação
+Os usuários esperam uma resposta em tempo hábil às suas mensagens. Se o seu bot executar alguma tarefa de longa duração, como chamar um servidor ou executar uma consulta sem dar ao usuário alguma indicação de que o bot ouviu, o usuário pode ficar impaciente e enviar mensagens adicionais ou simplesmente assumir que o bot está quebrado.
+
+Os canais de bot de Webchat e Direct Line são compatíveis com o envio de uma indicação de digitação para mostrar ao usuário que a mensagem foi recebida e está sendo processada. Lembre-se de que o bot precisa deixar o ciclo terminar em 15 segundos ou o serviço Conector atingirá o tempo limite. Para processos mais longos, leia mais sobre como enviar [mensagens proativas](bot-builder-howto-proactive-message.md). 
+
+O exemplo a seguir demonstra como enviar uma indicação de digitação.
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
+```csharp
+protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
+{
+    if (string.Equals(turnContext.Activity.Text, "wait", System.StringComparison.InvariantCultureIgnoreCase))
+    {
+        await turnContext.SendActivitiesAsync(
+            new Activity[] {
+                new Activity { Type = ActivityTypes.Typing },
+                new Activity { Type = "delay", Value= 3000 },
+                MessageFactory.Text("Finished typing", "Finished typing"),
+            },
+            cancellationToken);
+    }
+    else
+    {
+        var replyText = $"Echo: {turnContext.Activity.Text}. Say 'wait' to watch me type.";
+        await turnContext.SendActivityAsync(MessageFactory.Text(replyText, replyText), cancellationToken);
+    }
+}
+```
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+```javascript
+this.onMessage(async (context, next) => {
+    if (context.activity.text === 'wait') {
+        await context.sendActivities([
+            { type: ActivityTypes.Typing },
+            { type: 'delay', value: 3000 },
+            { type: ActivityTypes.Message, text: 'Finished typing' }
+        ]);
+    } else {
+        await context.sendActivity(`You said '${ context.activity.text }'. Say "wait" to watch me type.`);
+    }
+    await next();
+});
+```
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+```python
+async def on_message_activity(self, turn_context: TurnContext):
+    if turn_context.activity.text == "wait":
+        return await turn_context.send_activities([
+            Activity(
+                type=ActivityTypes.typing
+            ),
+            Activity(
+                type="delay",
+                value=3000
+            ),
+            Activity(
+                type=ActivityTypes.message,
+                text="Finished Typing"
+            )
+        ])
+    else:
+        return await turn_context.send_activity(
+            f"You said {turn_context.activity.text}.  Say 'wait' to watch me type."
+        )
 ```
 
 ---

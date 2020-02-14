@@ -7,16 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/22/2019
-ms.openlocfilehash: 59a97acffe26b0bb896ec75dd5ca03fa43eafd67
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 4ae5e5a7972caa0376f2b11dfaab0be4b1e9e924
+ms.sourcegitcommit: d24fe2178832261ac83477219e42606f839dc64d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75789516"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77071774"
 ---
 # <a name="authentication"></a>Autenticação
 
-Um cliente pode autenticar solicitações para a API de Linha Direta 3.0 usando um **segredo** que você [obtém da página de configuração de canal de Linha Direta](../bot-service-channel-connect-directline.md) no Portal Bot Framework ou usando um  **token** obtido em runtime. O segredo ou o token deve ser especificado no cabeçalho `Authorization` de cada solicitação, usando este formato: 
+Um cliente pode autenticar solicitações para a API de Linha Direta 3.0 usando um **segredo** que você [obtém da página de configuração de canal de Linha Direta](../bot-service-channel-connect-directline.md) no Portal Bot Framework ou usando um  **token** obtido em runtime. O segredo ou o token deve ser especificado no cabeçalho `Authorization` de cada solicitação, usando este formato:
 
 ```http
 Authorization: Bearer SECRET_OR_TOKEN
@@ -24,7 +24,7 @@ Authorization: Bearer SECRET_OR_TOKEN
 
 ## <a name="secrets-and-tokens"></a>Segredos e tokens
 
-Um **segredo** de Linha Direta é uma chave mestra que pode ser usada para acessar qualquer conversa que pertença ao bot associado. Um **segredo** também pode ser usado para obter um **token**. Os segredos não expiram. 
+Um **segredo** de Linha Direta é uma chave mestra que pode ser usada para acessar qualquer conversa que pertença ao bot associado. Um **segredo** também pode ser usado para obter um **token**. Os segredos não expiram.
 
 Um **token** de Linha Direta é uma chave que pode ser usada para acessar uma única conversa. Um token expira, mas pode ser atualizado.
 
@@ -36,17 +36,17 @@ Para saber mais, confira a seção [Considerações de segurança](#security-con
 Se você estiver criando um aplicativo de serviço a serviço, a abordagem mais simples poderá ser especificar o **segredo** no cabeçalho `Authorization` de solicitações da API da Linha Direta. Se estiver gravando um aplicativo em que o cliente é executado em um navegador da Web ou em um aplicativo móvel, talvez convenha trocar seu segredo por um token (que funciona somente para uma única conversa e irá expirar se não for atualizado) e especificar o **token** no cabeçalho `Authorization` de solicitações de API da Linha Direta. Escolha o modelo de segurança que funcione melhor para você.
 
 > [!NOTE]
-> Suas credenciais de cliente de Linha Direta são diferentes das credenciais do seu bot. Isso permite revisar as chaves de forma independente e compartilhar os tokens de cliente sem revelar a senha do seu bot. 
+> Suas credenciais de cliente de Linha Direta são diferentes das credenciais do seu bot. Isso permite revisar as chaves de forma independente e compartilhar os tokens de cliente sem revelar a senha do seu bot.
 
 ## <a name="get-a-direct-line-secret"></a>Obter um segredo de Linha Direta
 
-Você pode [obter um segredo de Linha Direta](../bot-service-channel-connect-directline.md) através da página de configuração do canal de Linha Direta para o bot no <a href="https://dev.botframework.com/" target="_blank">Portal do Bot Framework</a>:
+Você pode [obter um segredo da Direct Line](../bot-service-channel-connect-directline.md) por meio da página de configuração do canal da Direct Line do bot no [Portal do Azure](https://portal.azure.com):
 
 ![Configuração da Linha Direta](../media/direct-line-configure.png)
 
 ## <a id="generate-token"></a> Gerar um token de Linha Direta
 
-Para gerar um token da Linha Direta que possa ser usado para acessar uma única conversa, primeiro obtenha o segredo da Linha Direta na página de configuração do canal da Linha Direta no <a href="https://dev.botframework.com/" target="_blank">Portal do Bot Framework</a>. Em seguida, envie essa solicitação para trocar seu segredo da Linha Direta para um token da Linha Direta:
+Para gerar um token da Direct Line que possa ser usado para acessar uma única conversa, primeiro obtenha o segredo da Direct Line na página de configuração do canal da Direct Line no [Portal do Azure](https://portal.azure.com). Em seguida, envie essa solicitação para trocar seu segredo da Linha Direta para um token da Linha Direta:
 
 ```http
 POST https://directline.botframework.com/v3/directline/tokens/generate
@@ -103,13 +103,13 @@ HTTP/1.1 200 OK
 
 ### <a name="generate-token-versus-start-conversation"></a>Gerar Token versus Iniciar Conversa
 
-A operação Gerar Token (`POST /v3/directline/tokens/generate`) é semelhante à operação [Iniciar Conversa](bot-framework-rest-direct-line-3-0-start-conversation.md) (`POST /v3/directline/conversations`), já que ambas retornam um `token`, que pode ser usado para acessar uma única conversa. No entanto, ao contrário da operação Iniciar Conversa, a operação Gerar Token não inicia a conversa, não entra em contato com o bot e não cria uma URL WebSocket de streaming. 
+A operação Gerar Token (`POST /v3/directline/tokens/generate`) é semelhante à operação [Iniciar Conversa](bot-framework-rest-direct-line-3-0-start-conversation.md) (`POST /v3/directline/conversations`), já que ambas retornam um `token`, que pode ser usado para acessar uma única conversa. No entanto, ao contrário da operação Iniciar Conversa, a operação Gerar Token não inicia a conversa, não entra em contato com o bot e não cria uma URL WebSocket de streaming.
 
 Se você planeja distribuir o token para clientes e deseja que eles iniciem a conversa, use a operação Gerar Token. Se você pretende iniciar a conversa imediatamente, use a operação [Iniciar Conversa](bot-framework-rest-direct-line-3-0-start-conversation.md).
 
 ## <a id="refresh-token"></a> Atualizar um token de Linha Direta
 
-Um token de Linha Direta pode ser atualizado uma quantidade ilimitada de vezes, desde que não tenha expirado. Um token expirado não pode ser atualizado. Para atualizar um token de Linha Direta, emita esta solicitação: 
+Um token de Linha Direta pode ser atualizado uma quantidade ilimitada de vezes, desde que não tenha expirado. Um token expirado não pode ser atualizado. Para atualizar um token de Linha Direta, emita esta solicitação:
 
 ```http
 POST https://directline.botframework.com/v3/directline/tokens/refresh
@@ -160,17 +160,23 @@ A **autenticação do Serviço de Bot do Azure** permite que você autentique us
 
 Quando você usa a *autenticação do Serviço de Bot do Azure* com o [Webchat](../bot-service-channel-connect-webchat.md), há algumas considerações importantes sobre segurança que você precisa ter em mente.
 
-1. **Representação**. Representação aqui significa um invasor que faz o bot achar que ele é outra pessoa. No Webchat, um invasor pode representar outra pessoa, **alterando a ID de usuário** da sua instância de Webchat. Para evitar isso, é recomendável que os desenvolvedores de bot tornem a **ID de usuário indecifrável**. Se você habilitar as opções de **autenticação aprimorada**, o Serviço de Bot do Azure poderá detectar e rejeitar ainda mais qualquer alteração da ID de usuário. Isso significa que a ID de usuário (`Activity.From.Id`) em mensagens do Direct Line para seu bot sempre será a mesma com a qual você inicializou o Webchat. Observe que esse recurso requer que a ID de usuário comece com `dl_`
+1. **Representação**. Representação aqui significa um invasor que faz o bot achar que ele é outra pessoa. No Webchat, um invasor pode representar outra pessoa, **alterando a ID de usuário** da sua instância de Webchat. Para evitar isso, é recomendável que os desenvolvedores de bot tornem a **ID de usuário indecifrável**.
+
+    Se você habilitar as opções de **autenticação aprimorada**, o Serviço de Bot do Azure poderá detectar e rejeitar ainda mais qualquer alteração da ID de usuário. Isso significa que a ID de usuário (`Activity.From.Id`) em mensagens do Direct Line para seu bot sempre será a mesma com a qual você inicializou o Webchat. Observe que esse recurso requer que a ID de usuário comece com `dl_`.
+
+    > [!NOTE]
+    > Quando uma *User.Id* é fornecida durante a troca de um segredo para um token, essa *User.Id* é inserida no token. A DirectLine garante que as mensagens enviadas para o bot tenham essa ID como a *From.Id* da atividade. Se um cliente enviar uma mensagem para a DirectLine com uma *From.Id* diferente, ela será alterada para a **ID no token** antes de encaminhar a mensagem para o bot. Portanto, você não pode usar outra ID de usuário depois que um segredo de canal é inicializado com uma ID de usuário
+
 1. **Identidades do usuário**. Você deve saber que está lidando com duas identidades de usuário:
 
     1. A identidade do usuário em um canal.
     1. A identidade do usuário em um provedor de identidade no qual o bot está interessado.
-  
+
     Quando um bot solicita que o usuário A em um canal conecte-se a um provedor de identidade P, o processo de conexão deve garantir que o usuário A seja aquele que se conecta em P. Se outro usuário B tiver permissão para se conectar, então o usuário A terá acesso ao recurso do usuário B por meio do bot. No Webchat, temos dois mecanismos para verificar se o usuário correto entrou conforme descrito a seguir.
 
     1. No final da credencial, no passado, o usuário recebia um código de seis dígitos gerado aleatoriamente (também conhecido como código mágico). O usuário deveria digitar esse código na conversa que iniciava a conexão para concluir o processo de entrada. Esse mecanismo tende a resultar em uma experiência de usuário inadequada. Além disso, ele ainda está suscetível a ataques de phishing. Um usuário mal-intencionado pode induzir outro usuário a se conectar e a obter o código mágico por meio de phishing.
 
-    2. Devido aos problemas com a abordagem anterior, o Serviço de Bot do Azure acabou com a necessidade do código mágico. O Serviço de Bot do Azure garante que o processo de conexão só possa ser concluído na **mesma sessão do navegador** que a do próprio Webchat. 
+    2. Devido aos problemas com a abordagem anterior, o Serviço de Bot do Azure acabou com a necessidade do código mágico. O Serviço de Bot do Azure garante que o processo de conexão só possa ser concluído na **mesma sessão do navegador** que a do próprio Webchat.
     Para habilitar essa proteção, como desenvolvedor de bot, você deve iniciar o Webchat com um **token do Direct Line** que contenha uma **lista de domínios confiáveis que possam hospedar o cliente do Webchat do bot**. Antes, você só poderia obter esse token passando um parâmetro opcional não documentado para a API de token do Direct Line. Agora, com as opções de autenticação avançada, você pode especificar estaticamente a lista de domínios confiáveis (origem) na página de configuração do Direct Line.
 
     Confira também [Adicionar autenticação ao bot por meio do Serviço de Bot do Azure](../v4sdk/bot-builder-authentication.md).
@@ -214,7 +220,7 @@ public class HomeController : Controller
         var config = new ChatConfig()
         {
             Token = token,
-            UserId = userId  
+            UserId = userId
         };
 
         return View(config);
@@ -257,14 +263,14 @@ router.get('/config', function(req, res) {
 
     request.post(options, (error, response, body) => {
         if (!error && response.statusCode < 300) {
-            res.json({ 
+            res.json({
                     token: body.token,
                     userId: userId
                 });
         }
         else {
             res.status(500).send('Call to retrieve token from Direct Line failed');
-        } 
+        }
     });
 });
 

@@ -7,14 +7,14 @@ ms.author: johtaylo
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 01/27/2020
+ms.date: 01/31/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: e104fefa53c0df1150bd90768be51a9d29abdf64
-ms.sourcegitcommit: 36d6f06ffafad891f6efe4ff7ba921de8a306a94
+ms.openlocfilehash: d6ea339d008c54c8a60dc20dd9c5252b31e06142
+ms.sourcegitcommit: d24fe2178832261ac83477219e42606f839dc64d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76895796"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77071854"
 ---
 # <a name="how-bots-work"></a>Como funcionam os bots
 
@@ -80,9 +80,9 @@ O JavaScript `ActivityHandler` usa um emissor de eventos e um padrão de ouvinte
 Por exemplo, use o método `onMessage` para registrar um ouvinte de eventos para atividades de mensagem. Você pode registrar mais de um ouvinte. Quando o bot recebe uma atividade de mensagem, o manipulador de atividades vê essa atividade de entrada e a envia a cada um dos ouvintes de atividade `onMessage`, na ordem em que elas foram registradas.
 
 Ao criar seu bot, a lógica do bot para tratar das mensagens e respondê-las entrará nos ouvintes `onMessage`. Da mesma forma, a lógica de tratamento de membros que estão sendo adicionados à conversa vai entrar nos ouvintes `onMembersAdded`, que são chamados sempre que um membro é adicionado à conversa.
-
 Para adicionar esses ouvintes, você os registrará em seu bot, como visto na seção [Lógica de bot](#bot-logic) abaixo. Para cada ouvinte, inclua a lógica de bot e, em seguida, **não se esqueça de chamar `next()` no final**. Ao chamar `next()`, você faz com que o próximo ouvinte seja executado.
-Em qualquer ouvinte que atualiza estados, [salve o estado](bot-builder-concept-state.md) antes de o ouvinte sair.
+
+Lembre-se de [salvar o estado](bot-builder-concept-state.md) antes que o ciclo seja concluído. Você pode fazer isso substituindo o método `run` do manipulador de atividade e salvando o estado após a conclusão do método `run` do pai.
 
 Não existem situações comuns de substituição do manipulador de turno base, ou seja, tenha cuidado ao tentar fazer isso.
 Há um manipulador especial chamado `onDialog`. O manipulador `onDialog` é executado no final, depois que o restante dos manipuladores foi executado, e não está vinculado a nenhum tipo de atividade. Assim como com todos os manipuladores acima, não deixe de chamar `next()` para garantir a conclusão do processo.

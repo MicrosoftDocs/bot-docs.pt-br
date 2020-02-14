@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 27da3fbe5b122e23e0284c8396f75a5ac73da13b
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: cc852b1298a306b5c9f6e381b48597510dcb1e72
+ms.sourcegitcommit: d24fe2178832261ac83477219e42606f839dc64d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75789756"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77071864"
 ---
 # <a name="authentication"></a>Autenticação
 
@@ -46,13 +46,13 @@ Se você estiver criando um aplicativo de serviço a serviço, a abordagem mais 
 
 ## <a name="get-a-direct-line-secret"></a>Obter um segredo de Linha Direta
 
-Você pode [obter um segredo de Linha Direta](../bot-service-channel-connect-directline.md) através da página de configuração do canal de Linha Direta para o bot no <a href="https://dev.botframework.com/" target="_blank">Portal do Bot Framework</a>:
+Você pode [obter um segredo da Direct Line](../bot-service-channel-connect-directline.md) por meio da página de configuração do canal da Direct Line do bot no [Portal do Azure](https://portal.azure.com):
 
 ![Configuração da Linha Direta](../media/direct-line-configure.png)
 
 ## <a id="generate-token"></a> Gerar um token de Linha Direta
 
-Para gerar um token da Linha Direta que possa ser usado para acessar uma única conversa, primeiro obtenha o segredo da Linha Direta na página de configuração do canal da Linha Direta no <a href="https://dev.botframework.com/" target="_blank">Portal do Bot Framework</a>. Em seguida, envie essa solicitação para trocar seu segredo da Linha Direta para um token da Linha Direta:
+Para gerar um token da Direct Line que possa ser usado para acessar uma única conversa, primeiro obtenha o segredo da Direct Line na página de configuração do canal da Direct Line no [Portal do Azure](https://portal.azure.com). Em seguida, envie essa solicitação para trocar seu segredo da Linha Direta para um token da Linha Direta:
 
 ```http
 POST https://directline.botframework.com/api/tokens/conversation

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 01/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: bea377055010077d964f639518556e12e212f1ad
-ms.sourcegitcommit: 36d6f06ffafad891f6efe4ff7ba921de8a306a94
+ms.openlocfilehash: f5cf5d6628d5186404816b7f7862f2e58293f5e5
+ms.sourcegitcommit: f3628f48d3471a48773e5d256a75e8fe39717bb6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76895714"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77035468"
 ---
 # <a name="use-multiple-luis-and-qna-models"></a>Usar vários modelos de LUIS e QnA
 
@@ -22,7 +22,7 @@ ms.locfileid: "76895714"
 
 Se um bot usar vários modelos do LUIS e bases de dados de conhecimento do QnA Maker, você poderá usar a ferramenta Dispatch para determinar qual modelo do LUIS ou base de dados de conhecimento do QnA Maker tem a melhor correspondência com a entrada do usuário. A ferramenta Dispatch faz isso criando um aplicativo LUIS individual a fim de encaminhar a entrada do usuário para o modelo correto. Para obter mais informações sobre o Dispatch, incluindo os comandos da CLI, consulte o arquivo [LEIAME][dispatch-readme].
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento de [noções básicas de bot](bot-builder-basics.md), [LUIS][howto-luis] e [QnA Maker][howto-qna].
 - [Ferramenta de expedição](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Dispatch)
