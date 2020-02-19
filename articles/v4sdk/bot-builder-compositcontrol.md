@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 01/30/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2398f4e3bc61ff51a108bd399e6a60976956e714
-ms.sourcegitcommit: d24fe2178832261ac83477219e42606f839dc64d
+ms.openlocfilehash: 0d7045f48caeb6a1bcf82993d8d7fcb7e326dde3
+ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77071820"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441734"
 ---
 # <a name="reuse-dialogs"></a>Reutilizar diálogos
 
@@ -47,7 +47,7 @@ No exemplo de prompt de vários turnos, usamos um _diálogo em cascata_, alguns 
 
 Um diálogo de componente encapsula um ou mais diálogos. O diálogo de componente tem um conjunto de diálogos interno e os diálogos e prompts que você adiciona a esse conjunto têm IDs próprias, visíveis somente no diálogo de componente.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 Para usar as caixas de diálogo, instale o pacote do NuGet, **Microsoft.Bot.Builder.Dialogs**.
 
@@ -67,7 +67,7 @@ Esta é a implementação da primeira etapa do diálogo em cascata.
 
 Para obter mais informações sobre como implementar diálogos em cascata, confira como [implementar fluxo da conversa sequencial](bot-builder-dialog-manage-complex-conversation-flow.md).
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Para usar as caixas de diálogo, seu projeto precisa instalar o pacote do npm, **botbuilder-dialogs**.
 
@@ -87,7 +87,7 @@ Esta é a implementação da primeira etapa do diálogo em cascata.
 
 Para obter mais informações sobre como implementar diálogos em cascata, confira como [implementar fluxo da conversa sequencial](bot-builder-dialog-manage-complex-conversation-flow.md).
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 Para usar diálogos, instale os pacotes PyPI **botbuilder-dialogs** e **botbuilder-ai** executando `pip install botbuilder-dialogs` e `pip install botbuilder-ai` em um terminal.
 
@@ -95,15 +95,15 @@ Para usar diálogos, instale os pacotes PyPI **botbuilder-dialogs** e **botbuild
 
 Aqui, a classe `UserProfileDialog` estende `ComponentDialog`.
 
-[!code-python[Class](~/../botbuilder-python/samples/python/05.multi-turn-prompt/dialogs/user_profile_dialog.py?range=25)]
+[!code-python[Class](~/../botbuilder-samples/samples/python/05.multi-turn-prompt/dialogs/user_profile_dialog.py?range=25)]
 
 No construtor, o método `add_dialog` adiciona diálogos e prompts ao diálogo de componente. O primeiro item que você adicionar com esse método será definido como o diálogo inicial, mas é possível alterar isso definindo explicitamente a propriedade `initial_dialog_id`. Ao iniciar um diálogo de componente, ele iniciará seu _diálogo inicial_.
 
-[!code-python[Constructor](~/../botbuilder-python/samples/python/05.multi-turn-prompt/dialogs/user_profile_dialog.py?range=25-57)]
+[!code-python[Constructor](~/../botbuilder-samples/samples/python/05.multi-turn-prompt/dialogs/user_profile_dialog.py?range=25-57)]
 
 Esta é a implementação da primeira etapa do diálogo em cascata.
 
-[!code-python[First step](~/../botbuilder-python/samples/python/05.multi-turn-prompt/dialogs/user_profile_dialog.py?range=59-71)]
+[!code-python[First step](~/../botbuilder-samples/samples/python/05.multi-turn-prompt/dialogs/user_profile_dialog.py?range=59-71)]
 
 Para obter mais informações sobre como implementar diálogos em cascata, confira como [implementar fluxo da conversa sequencial](bot-builder-dialog-manage-complex-conversation-flow.md).
 
@@ -123,7 +123,7 @@ No conjunto de diálogo externo, aquele ao qual você adiciona o diálogo de com
 
 Para usar um diálogo de componente, adicione uma instância dele ao conjunto de diálogo do bot, que é o conjunto de diálogo externo.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 **Bots\DialogBot.cs**
 
@@ -131,7 +131,7 @@ No exemplo, isso é feito usando o método `RunAsync` chamado do método `OnMess
 
 [!code-csharp[OnMessageActivityAsync](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Bots/DialogBot.cs?range=42-48&highlight=6)]
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 **dialogs/userProfileDialog.js**
 
@@ -145,17 +145,17 @@ O método `run` é chamado pelo método `onMessage` do bot.
 
 [!code-javascript[onMessage](~/../botbuilder-samples/samples/javascript_nodejs/05.multi-turn-prompt/bots/dialogBot.js?range=24-31&highlight=5)]
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 **helpers/dialog_helper.py**
 
 No exemplo, adicionamos um método `run_dialog` ao diálogo de perfil do usuário.
 
-[!code-python[DialogHelper.run_dialog](~/../botbuilder-python/samples/python/05.multi-turn-prompt/helpers/dialog_helper.py?range=8-19)]
+[!code-python[DialogHelper.run_dialog](~/../botbuilder-samples/samples/python/05.multi-turn-prompt/helpers/dialog_helper.py?range=8-19)]
 
 O método `run_dialog` é chamado pelo método `on_message_activity` do bot.
 
-**bots/dialog_bot.py** [!code-python[om_message_activity](~/../botbuilder-python/samples/python/05.multi-turn-prompt/bots/dialog_bot.py?range=46-51&highlight=2-6)]
+**bots/dialog_bot.py** [!code-python[om_message_activity](~/../botbuilder-samples/samples/python/05.multi-turn-prompt/bots/dialog_bot.py?range=46-51&highlight=2-6)]
 
 ---
 

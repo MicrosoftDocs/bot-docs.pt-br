@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 01/24/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 14ce46852e31d347572cbc979fdcd76087452290
-ms.sourcegitcommit: 36d6f06ffafad891f6efe4ff7ba921de8a306a94
+ms.openlocfilehash: 0cad95ccb7b83334e514d604da086172320867d8
+ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76895726"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441704"
 ---
 # <a name="handle-user-interruptions"></a>Manipular interrupções do usuário
 
@@ -22,7 +22,7 @@ ms.locfileid: "76895726"
 
 O tratamento de interrupções é um aspecto importante de um bot robusto. Os usuários nem sempre seguirão o fluxo de conversa que você definiu, passo a passo. Eles podem tentar fazer uma pergunta no meio do processo ou simplesmente querer cancelá-lo em vez de concluí-lo. Neste tópico, exploraremos algumas maneiras comuns de lidar com as interrupções dos usuários no seu bot.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento sobre [noções básicas de bots][concept-basics], [gerenciamento de estado][concept-state], a [biblioteca de diálogos][concept-dialogs] e como [reutilizar diálogos][component-dialogs].
 - Uma cópia do exemplo principal de bot em [**CSharp**][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
@@ -38,7 +38,7 @@ O exemplo usado neste artigo traz um bot de reserva de voo que utiliza caixas de
 
 Primeiramente, definimos e implementamos as interrupções de _ajuda_ e _cancelamento_.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 Para usar as caixas de diálogo, instale o pacote do NuGet, **Microsoft.Bot.Builder.Dialogs**.
 
@@ -58,7 +58,7 @@ Se o usuário digitar "cancelar", ele chamará `CancelAllDialogsAsync` em seu co
 
 [!code-csharp[Interrupt](~/../botbuilder-samples/samples/csharp_dotnetcore/13.core-bot/Dialogs/CancelAndHelpDialog.cs?range=33-56)]
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Para usar as caixas de diálogo, instale o pacote de npm **botbuilder-dialogs**.
 
@@ -78,7 +78,7 @@ Se o usuário digitar "cancelar", ele chamará `cancelAllDialogs` em seu context
 
 [!code-javascript[Interrupt](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/dialogs/cancelAndHelpDialog.js?range=20-39)]
 
-## <a name="pythontabpython"></a>[Python](#tab/python)
+## <a name="python"></a>[Python](#tab/python)
 
 Para usar caixas de diálogo, instale o pacote de `botbuilder-dialogs` e verifique se o arquivo de exemplo `requirements.txt` contém a referência apropriada, como `botbuilder-dialogs>=4.5.0`.
 Para obter mais informações sobre como instalar os pacotes, consulte o repositório de exemplos no arquivo [LEIAME](https://github.com/microsoft/botbuilder-python).
@@ -89,17 +89,17 @@ Para obter mais informações sobre como instalar os pacotes, consulte o reposit
 
 Começamos com a implementação da classe `CancelAndHelpDialog` para lidar com as interrupções do usuário.
 
-[!code-python[class signature](~/../botbuilder-python/samples/python/13.core-bot/dialogs/cancel_and_help_dialog.py?range=14)]
+[!code-python[class signature](~/../botbuilder-samples/samples/python/13.core-bot/dialogs/cancel_and_help_dialog.py?range=14)]
 
 Na classe `CancelAndHelpDialog`, o método `on_continue_dialog` chama o método `interrupt` para verificar se o usuário interrompeu o fluxo normal. Se o fluxo for interrompido, os métodos da classe base são chamados; caso contrário, o valor retornado de `InterruptAsync` será retornado.
 
-[!code-python[dialog](~/../botbuilder-python/samples/python/13.core-bot/dialogs/cancel_and_help_dialog.py?range=18-23)]
+[!code-python[dialog](~/../botbuilder-samples/samples/python/13.core-bot/dialogs/cancel_and_help_dialog.py?range=18-23)]
 
 Se o usuário digitar *help* ou *?* , o método `interrupt` enviará uma mensagem e, em seguida, chamará `DialogTurnResult(DialogTurnStatus.Waiting)` para indicar que a caixa de diálogo na parte superior da pilha está aguardando uma resposta do usuário. Dessa forma, o fluxo de conversa é interrompido durante somente um turno e, no próximo turno, continuamos de onde paramos.
 
 Se o usuário digitar *cancelar* ou *encerrar*, ele chamará `cancel_all_dialogs()` em seu contexto de caixa de diálogo interno, o que limpa sua pilha de caixa de diálogo e faz com que ele saia com um status cancelado e nenhum valor de resultado. Para `MainDialog`, mostrada posteriormente, aparecerá que a caixa de diálogo de reserva foi finalizada e não retornou resultados, da mesma forma quando o usuário decide não confirmar a reserva.
 
-[!code-python[interrupt](~/../botbuilder-python/samples/python/13.core-bot/dialogs/cancel_and_help_dialog.py?range=25-47)]
+[!code-python[interrupt](~/../botbuilder-samples/samples/python/13.core-bot/dialogs/cancel_and_help_dialog.py?range=25-47)]
 
 ---
 
@@ -107,7 +107,7 @@ Se o usuário digitar *cancelar* ou *encerrar*, ele chamará `cancel_all_dialogs
 
 Agora que falamos sobre como a classe para lidar com interrupções funciona, vamos voltar e ver o que acontece quando o bot recebe uma nova mensagem do usuário.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 **Dialogs\MainDialog.cs**
 
@@ -121,7 +121,7 @@ Em seguida, no método `FinalStepAsync` da classe `MainDialog`, a caixa de diál
 
 O código em `BookingDialog` não é mostrado aqui, porque não está diretamente relacionado com a manipulação da interrupção. Ele é usado para solicitar os detalhes de reserva aos usuários. Você pode encontrar esse código em **Dialogs\BookingDialogs.cs**.
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 **dialogs/mainDialog.js**
 
@@ -135,17 +135,17 @@ Em seguida, no método `finalStep` da classe `MainDialog`, a caixa de diálogo d
 
 O código em `BookingDialog` não é mostrado aqui, porque não está diretamente relacionado com a manipulação da interrupção. Ele é usado para solicitar os detalhes de reserva aos usuários. Você pode encontrar esse código em **dialogs/bookingDialogs.js**.
 
-## <a name="pythontabpython"></a>[Python](#tab/python)
+## <a name="python"></a>[Python](#tab/python)
 
 **dialogs/main_dialog.py**
 
 Assim que a nova atividade de mensagem chega, o bot executa o `MainDialog`. O `MainDialog` pergunta ao usuário no que pode ajudar. Então, ele inicia o `bookingDialog` no método `MainDialog.act_step`, com uma chamada para `begin_dialog`, conforme mostrado abaixo.
 
-[!code-python[act step](~/../botbuilder-python/samples/python/13.core-bot/dialogs/main_dialog.py?range=63-100&highlight=4-5,20)]
+[!code-python[act step](~/../botbuilder-samples/samples/python/13.core-bot/dialogs/main_dialog.py?range=63-100&highlight=4-5,20)]
 
 Em seguida, no método `final_step` da classe `MainDialog`, a caixa de diálogo de reserva é encerrada e a reserva é considerada finalizada ou cancelada.
 
-[!code-python[final step](~/../botbuilder-python/samples/python/13.core-bot/dialogs/main_dialog.py?range=102-118)]
+[!code-python[final step](~/../botbuilder-samples/samples/python/13.core-bot/dialogs/main_dialog.py?range=102-118)]
 
 ---
 
@@ -153,7 +153,7 @@ Em seguida, no método `final_step` da classe `MainDialog`, a caixa de diálogo 
 
 Em seguida, vamos lidar com exceções sem tratamento que podem ocorrer.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 **AdapterWithErrorHandler.cs**
 
@@ -161,7 +161,7 @@ Em nosso exemplo, o manipulador do `OnTurnError` do adaptador recebe as exceçõ
 
 [!code-csharp[AdapterWithErrorHandler](~/../botbuilder-samples/samples/csharp_dotnetcore/13.core-bot/AdapterWithErrorHandler.cs?range=19-50)]
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 **index.js**
 
@@ -169,19 +169,19 @@ Em nosso exemplo, o manipulador do `onTurnError` do adaptador recebe as exceçõ
 
 [!code-javascript[AdapterWithErrorHandler](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/index.js?range=35-57)]
 
-## <a name="pythontabpython"></a>[Python](#tab/python)
+## <a name="python"></a>[Python](#tab/python)
 
 **adapter_with_error_handler.py**
 
 Em nosso exemplo, o manipulador do `on_error` do adaptador recebe as exceções geradas pela lógica de turno do seu bot. Se uma exceção for lançada, o manipulador excluirá o estado de conversa da conversa atual para impedir que o bot fique preso em um loop de erro causado por estar em estado inválido.
 
-[!code-python[adapter_with_error_handler](~/../botbuilder-python/samples/python/13.core-bot/adapter_with_error_handler.py?range=16-56)]
+[!code-python[adapter_with_error_handler](~/../botbuilder-samples/samples/python/13.core-bot/adapter_with_error_handler.py?range=16-56)]
 
 ---
 
 ## <a name="register-services"></a>Serviços de registro
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 **Startup.cs**
 
@@ -195,7 +195,7 @@ Para referência, aqui estão as definições de classe que são usadas na chama
 [!code-csharp[DialogAndWelcomeBot signature](~/../botbuilder-samples/samples/csharp_dotnetcore/13.core-bot/Bots/DialogAndWelcomeBot.cs?range=16)]
 [!code-csharp[DialogBot signature](~/../botbuilder-samples/samples/csharp_dotnetcore/13.core-bot/Bots/DialogBot.cs?range=18)]
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 **index.js**
 
@@ -209,19 +209,19 @@ Para referência, aqui estão as definições de classe que são usadas na chama
 [!code-javascript[DialogAndWelcomeBot signature](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/bots/dialogAndWelcomeBot.js?range=8)]
 [!code-javascript[DialogBot signature](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/bots/dialogBot.js?range=6)]
 
-## <a name="pythontabpython"></a>[Python](#tab/python)
+## <a name="python"></a>[Python](#tab/python)
 
 **app.py** Por fim, em `app.py`, o bot é criado.
 
-[!code-python[create bot](~/../botbuilder-python/samples/python/13.core-bot/app.py?range=45-49)]
+[!code-python[create bot](~/../botbuilder-samples/samples/python/13.core-bot/app.py?range=45-49)]
 
 Para referência, aqui estão as definições de classe que são usadas na chamada para criar o bot.
 
-[!code-python[main dialog](~/../botbuilder-python/samples/python/13.core-bot/dialogs/main_dialog.py?range=20)]
+[!code-python[main dialog](~/../botbuilder-samples/samples/python/13.core-bot/dialogs/main_dialog.py?range=20)]
 
-[!code-python[dialog and welcome](~/../botbuilder-python/samples/python/13.core-bot/bots/dialog_and_welcome_bot.py?range=21)]
+[!code-python[dialog and welcome](~/../botbuilder-samples/samples/python/13.core-bot/bots/dialog_and_welcome_bot.py?range=21)]
 
-[!code-python[dialog](~/../botbuilder-python/samples/python/13.core-bot/bots/dialog_bot.py?range=9)]
+[!code-python[dialog](~/../botbuilder-samples/samples/python/13.core-bot/bots/dialog_bot.py?range=9)]
 
 ---
 

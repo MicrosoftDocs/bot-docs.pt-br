@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 01/24/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 77222da10d69e6ad9a029a3548da66bd1a1806a2
-ms.sourcegitcommit: 36d6f06ffafad891f6efe4ff7ba921de8a306a94
+ms.openlocfilehash: 704a37569f5ed9017cd4a09618a4efe75469f4a4
+ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76895677"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441625"
 ---
 # <a name="send-proactive-notifications-to-users"></a>Enviar notificações proativas para os usuários
 
@@ -31,7 +31,7 @@ Uma mensagem proativa ad hoc é o tipo mais simples de mensagem proativa. O bot 
 
 Para lidar com notificações de forma mais suave, considere outras maneiras de integrar a notificação no fluxo de conversa, como definir um sinalizador no estado da conversa ou adicionar a notificação a uma fila.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 - Entenda sobre as [Noções básicas do bot](bot-builder-basics.md).
 - Uma cópia do exemplo de mensagens proativas em [**C#** ](https://aka.ms/proactive-sample-cs), [**JavaScript**](https://aka.ms/proactive-sample-js) ou [**Python**](https://aka.ms/bot-proactive-python-sample-code). O exemplo é usado para explicar sobre mensagens proativas neste artigo.
@@ -46,13 +46,13 @@ A amostra tem um bot e um controlador adicional que é usado para enviar mensage
 
 Quando o emulador se conecta ao bot, o bot recebe duas atividades de atualização de conversa. No manipulador de atividade de atualização de conversa do bot, a referência de conversa é recuperada e armazenada em um dicionário, conforme mostrado abaixo.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 **Bots\ProactiveBot.cs**
 
 [!code-csharp[OnConversationUpdateActivityAsync](~/../botbuilder-samples/samples/csharp_dotnetcore/16.proactive-messages/Bots/ProactiveBot.cs?range=26-37&highlight=3-4,9)]
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 **bots/proactiveBot.js**
 
@@ -60,11 +60,11 @@ Quando o emulador se conecta ao bot, o bot recebe duas atividades de atualizaç�
 
 [!code-javascript[onConversationUpdateActivity](~/../botbuilder-samples/samples/javascript_nodejs/16.proactive-messages/bots/proactiveBot.js?range=41-44&highlight=2-3)]
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
-**bots/proactive_bot.py** [!code-python[on_conversation_update_activity](~/../botbuilder-python/samples/python/16.proactive-messages/bots/proactive_bot.py?range=14-16&highlight=2)]
+**bots/proactive_bot.py** [!code-python[on_conversation_update_activity](~/../botbuilder-samples/samples/python/16.proactive-messages/bots/proactive_bot.py?range=14-16&highlight=2)]
 
-[!code-python[on_conversation_update_activity](~/../botbuilder-python/samples/python/16.proactive-messages/bots/proactive_bot.py?range=35-45)]
+[!code-python[on_conversation_update_activity](~/../botbuilder-samples/samples/python/16.proactive-messages/bots/proactive_bot.py?range=35-45)]
 
 ---
 
@@ -80,7 +80,7 @@ O segundo controlador, o controlador _notificar_, é responsável por enviar a m
 1. Chame o método _continuar a conversa_ do adaptador, fornecendo a referência da conversa e a o manipulador de turno delegado para ser usado. O método “continuar conversa” gera um contexto de turno para a conversa referenciada, chamando o manipulador de turno delegado especificado.
 1. Ao delegar, use o contexto de turno para enviar a mensagem proativa.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 **Controllers\NotifyController .cs**
 
@@ -91,7 +91,7 @@ Então, o controlador usa os métodos `ContinueConversationAsync` e `BotCallback
 
 Para enviar uma mensagem proativa, o adaptador requer uma ID do aplicativo para o bot. Em um ambiente de produção, você pode usar a ID do aplicativo do bot. Em um ambiente de teste local, você pode usar qualquer GUID. Se no momento o bot não estiver atribuído a uma ID do aplicativo, o controlador de notificação gera automaticamente um espaço reservado para ID a ser usado para a chamada.
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 **index.js**
 
@@ -101,12 +101,12 @@ O parâmetro para `continueConversation` é uma função que serve como manipula
 
 [!code-javascript[Notify logic](~/../botbuilder-samples/samples/javascript_nodejs/16.proactive-messages/index.js?range=68-82&highlight=4-8)]
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 Sempre que a página de notificação do bot for solicitada, o servidor vai recuperar as referências da conversa do dicionário.
 Em seguira, o servidor usará o `_send_proactive_message` para enviar a mensagem proativa.
 
-[!code-python[Notify logic](~/../botbuilder-python/samples/python/16.proactive-messages/app.py?range=97-105&highlight=5-9)]
+[!code-python[Notify logic](~/../botbuilder-samples/samples/python/16.proactive-messages/app.py?range=97-105&highlight=5-9)]
 
 ---
 
@@ -127,7 +127,7 @@ Por padrão, o SDK BotBuilder adiciona um `serviceUrl` à lista de nomes de host
 
 Para evitar isso, você deve adicionar manualmente o `serviceUrl` à lista de nomes de host confiáveis, usando:
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 MicrosoftAppCredentials.TrustServiceUrl(serviceUrl);
@@ -137,7 +137,7 @@ Para enviar mensagens proativas, `serviceUrl` é a URL do canal, que o destinat�
 
 Você deve adicionar o código acima antes do código que envia a mensagem proativa. No [Exemplo de Mensagens Proativas](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/16.proactive-messages), você deve colocá-lo em `NotifyController.cs` logo antes de `await turnContext.SendActivityAsync("proactive hello");`.
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```js
 MicrosoftAppCredentials.trustServiceUrl(serviceUrl);
@@ -147,7 +147,7 @@ Para enviar mensagens proativas, `serviceUrl` é a URL do canal, que o destinat�
 
 Você deve adicionar o código acima antes do código que envia a mensagem proativa. No [Exemplo de Mensagens Proativas](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/javascript_nodejs/16.proactive-messages), você deve colocá-lo em `index.js` logo antes de `await turnContext.sendActivity('proactive hello');`.
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 ```python
 MicrosoftAppCredentials.trustServiceUrl(serviceUrl)

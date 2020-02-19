@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 02/03/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 56d9b0485cb6e9073cb577d8494c18ab42cd39af
-ms.sourcegitcommit: d24fe2178832261ac83477219e42606f839dc64d
+ms.openlocfilehash: 0afc97e5a4b94b42456bc4c751c3208c1510c1a5
+ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77071814"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441711"
 ---
 # <a name="add-media-to-messages"></a>Adicionar mídia às mensagens
 
@@ -39,7 +39,7 @@ Para enviar o conteúdo do usuário, como uma imagem ou um vídeo, é possível 
 
 Confira a [experiência de usuário de design](../bot-service-design-user-experience.md) para obter exemplos dos cartões disponíveis.
 
-### <a name="ctabcsharp"></a>[C#](#tab/csharp)
+### <a name="c"></a>[C#](#tab/csharp)
 
 A propriedade `Attachments` do objeto `Activity` contém uma matriz de objetos `Attachment` que representam os anexos de mídia e os cartões avançados na mensagem. Para adicionar um anexo de mídia a uma mensagem, crie um objeto `Attachment` para a atividade `reply` (que é criado fora dela com `CreateReply()`) e defina as propriedades `ContentType`, `ContentUrl` e `Name`.
 
@@ -65,7 +65,7 @@ Por fim, um anexo de internet:
 **Bots/AttachmentsBot.cs**  
 [!code-csharp[online attachment](~/../botbuilder-samples/samples/csharp_dotnetcore/15.handling-attachments/Bots/AttachmentsBot.cs?range=217-226)]
 
-### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 O código-fonte mostrado aqui se baseia no exemplo [Tratamento de Anexos JS](https://aka.ms/bot-attachments-sample-code-js).
 
@@ -94,7 +94,7 @@ Por fim, um anexo de internet contido em uma URL:
 **bots/attachmentsBot.js**  
 [!code-javascript[internet attachments](~/../botbuilder-samples/samples/javascript_nodejs/15.handling-attachments/bots/attachmentsBot.js?range=184-191)]
 
-### <a name="pythontabpython"></a>[Python](#tab/python)
+### <a name="python"></a>[Python](#tab/python)
 
 Para criar a mensagem de resposta, defina o texto e, em seguida, configure os anexos. A atribuição dos anexos à resposta é a mesma para cada tipo de anexo, no entanto vários anexos são configurados e definidos de forma diferente, como visto nos snippets de código a seguir.
 
@@ -103,19 +103,19 @@ O código-fonte mostrado aqui se baseia no exemplo [Tratamento de Anexos](https:
 O código a seguir é a configuração da resposta para um anexo embutido:
 
 **bots/attachments_bot.py**  
-[!code-python[attachments](~/../botbuilder-python/samples/python/15.handling-attachments/bots/attachments_bot.py?range=112-113)]
+[!code-python[attachments](~/../botbuilder-samples/samples/python/15.handling-attachments/bots/attachments_bot.py?range=112-113)]
 
 Para enviar ao usuário uma única parte do conteúdo, como uma imagem ou um vídeo, é possível enviar mídia de algumas maneiras diferentes. Primeiro, como um anexo embutido:
 
-**bots/attachments_bot.py** [!code-python[inline attachments](~/../botbuilder-python/samples/python/15.handling-attachments/bots/attachments_bot.py?range=153-170)]
+**bots/attachments_bot.py** [!code-python[inline attachments](~/../botbuilder-samples/samples/python/15.handling-attachments/bots/attachments_bot.py?range=153-170)]
 
 Em seguida, um anexo carregado:
 
-**bots/attachments_bot.py** [!code-python[upload attachments](~/../botbuilder-python/samples/python/15.handling-attachments/bots/attachments_bot.py?range=172-207)]
+**bots/attachments_bot.py** [!code-python[upload attachments](~/../botbuilder-samples/samples/python/15.handling-attachments/bots/attachments_bot.py?range=172-207)]
 
 Por fim, um anexo de internet contido em uma URL:
 
-**bots/attachments_bot.py** [!code-python[internet attachments](~/../botbuilder-python/samples/python/15.handling-attachments/bots/attachments_bot.py?range=209-218)]
+**bots/attachments_bot.py** [!code-python[internet attachments](~/../botbuilder-samples/samples/python/15.handling-attachments/bots/attachments_bot.py?range=209-218)]
 
 ---
 
@@ -125,7 +125,7 @@ Se um anexo for uma imagem, áudio ou vídeo, o serviço do Connector comunicar�
 
 Além de anexos de vídeo ou imagem simples, é possível anexar um **cartão hero**, o que permite a você combinar imagens e botões em um objeto e depois enviá-los ao usuário. O markdown tem suporte na maioria dos campos de texto, mas o suporte pode variar por canal.
 
-### <a name="ctabcsharp"></a>[C#](#tab/csharp)
+### <a name="c"></a>[C#](#tab/csharp)
 
 Para redigir uma mensagem com um cartão hero e um botão, anexe um `HeroCard` a uma mensagem.
 
@@ -134,7 +134,7 @@ O código-fonte mostrado aqui se baseia no exemplo [Tratamento de Anexos](https:
 **Bots/AttachmentsBot.cs**  
 [!code-csharp[Hero card](~/../botbuilder-samples/samples/csharp_dotnetcore/15.handling-attachments/Bots/AttachmentsBot.cs?range=39-58)]
 
-### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Para redigir uma mensagem com um cartão hero e um botão, anexe um `HeroCard` a uma mensagem.
 
@@ -143,13 +143,13 @@ O código-fonte mostrado aqui se baseia no exemplo [Tratamento de Anexos JS](htt
 **bots/attachmentsBot.js**  
 [!code-javascript[hero card](~/../botbuilder-samples/samples/javascript_nodejs/15.handling-attachments/bots/attachmentsBot.js?range=147-165)]
 
-### <a name="pythontabpython"></a>[Python](#tab/python)
+### <a name="python"></a>[Python](#tab/python)
 
 Para redigir uma mensagem com um cartão hero e um botão, anexe um `HeroCard` a uma mensagem.
 
 O código-fonte mostrado aqui se baseia no exemplo [Tratamento de Anexos](https://aka.ms/bot-media-attachments-python-sample-code).
 
-**bots/attachments_bot.py** [!code-python[hero card](~/../botbuilder-python/samples/python/15.handling-attachments/bots/attachments_bot.py?range=125-148)]
+**bots/attachments_bot.py** [!code-python[hero card](~/../botbuilder-samples/samples/python/15.handling-attachments/bots/attachments_bot.py?range=125-148)]
 
 ---
 
@@ -175,7 +175,7 @@ Para funcionar corretamente, atribua um tipo de ação para cada item clicável 
 
 O código a seguir mostra exemplos que usam diversos eventos de cartão avançados.
 
-### <a name="ctabcsharp"></a>[C#](#tab/csharp)
+### <a name="c"></a>[C#](#tab/csharp)
 
 Para obter exemplos de todos os cartões disponíveis, confira o [exemplo de cartões C#](https://aka.ms/bot-cards-sample-code).
 
@@ -185,7 +185,7 @@ Para obter exemplos de todos os cartões disponíveis, confira o [exemplo de car
 **Cards.cs**  
 [!code-csharp[cards](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Cards.cs?range=91-100)]
 
-### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Para obter exemplos de todos os cartões disponíveis, confira o [exemplo de cartões JS](https://aka.ms/bot-cards-js-sample-code).
 
@@ -195,7 +195,7 @@ Para obter exemplos de todos os cartões disponíveis, confira o [exemplo de car
 **dialogs/mainDialog.js**  
 [!code-javascript[sign in cards](~/../botbuilder-samples/samples/javascript_nodejs/06.using-cards/dialogs/mainDialog.js?range=259-265)]
 
-### <a name="pythontabpython"></a>[Python](#tab/python)
+### <a name="python"></a>[Python](#tab/python)
 
 Para obter exemplos de todos os cartões disponíveis, confira o [exemplo de cartões de Python](https://aka.ms/bot-cards-python-sample-code).
 
@@ -219,7 +219,7 @@ Para usar os cartões adaptáveis, certifique-se de adicionar o pacote NuGet `Ad
 > [!NOTE]
 > Você deve testar esse recurso com os canais de que bot será usado para determinar se esses canais dão suporte a cartões adaptáveis.
 
-### <a name="ctabcsharp"></a>[C#](#tab/csharp)
+### <a name="c"></a>[C#](#tab/csharp)
 
 Para usar Cartões Adaptáveis, certifique-se de adicionar o pacote NuGet `AdaptiveCards`.
 
@@ -228,7 +228,7 @@ O código-fonte mostrado aqui se baseia no exemplo [Usando cartões](https://aka
 **Cards.cs**  
 [!code-csharp[adaptive cards](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Cards.cs?range=13-25)]
 
-### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Para usar Cartões Adaptáveis, certifique-se de adicionar o pacote npm `adaptivecards`.
 
@@ -244,11 +244,11 @@ O cartão é criado da seguinte maneira:
 **dialogs/mainDialog.js** [!code-javascript[adaptive cards](~/../botbuilder-samples/samples/javascript_nodejs/06.using-cards/dialogs/mainDialog.js?range=6)]
 [!code-javascript[adaptive cards](~/../botbuilder-samples/samples/javascript_nodejs/06.using-cards/dialogs/mainDialog.js?range=170-172)]
 
-### <a name="pythontabpython"></a>[Python](#tab/python)
+### <a name="python"></a>[Python](#tab/python)
 
 O código-fonte mostrado aqui se baseia no exemplo [Usando cartões](https://aka.ms/bot-cards-python-sample-code).
 
-**dialogs/resources/adaptive_card_example.py** [!code-python[adaptive cards](~/../botbuilder-python/samples/python/06.using-cards/dialogs/resources/adaptive_card_example.py)]
+**dialogs/resources/adaptive_card_example.py** [!code-python[adaptive cards](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/resources/adaptive_card_example.py)]
 
 O cartão é criado da seguinte maneira:
 
@@ -260,7 +260,7 @@ O cartão é criado da seguinte maneira:
 
 As mensagens também podem incluir vários anexos em um layout de carrossel, que coloca os anexos lado a lado e permite ao usuário rolar para deslocar.
 
-### <a name="ctabcsharp"></a>[C#](#tab/csharp)
+### <a name="c"></a>[C#](#tab/csharp)
 
 O código-fonte mostrado aqui se baseia no [exemplo Cartões](https://aka.ms/bot-cards-sample-code).
 
@@ -279,7 +279,7 @@ Depois que os anexos forem adicionados, você poderá enviar a resposta como far
 **Dialogs/MainDialog.cs**  
 [!code-csharp[carousel of cards](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Dialogs/MainDialog.cs?range=117-118)]
 
-### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 O código-fonte mostrado aqui se baseia no [exemplo de cartões JS](https://aka.ms/bot-cards-js-sample-code).
 
@@ -290,7 +290,7 @@ Para enviar um carrossel de cartões, envie uma resposta com os anexos como uma 
 
 [!code-javascript[carousel of cards](~/../botbuilder-samples/samples/javascript_nodejs/06.using-cards/dialogs/mainDialog.js?range=113-116)]
 
-### <a name="pythontabpython"></a>[Python](#tab/python)
+### <a name="python"></a>[Python](#tab/python)
 
 O código-fonte mostrado aqui se baseia no [exemplo de cartões de Python](https://aka.ms/bot-cards-python-sample-code).
 
@@ -348,7 +348,7 @@ Primeiro, adicionamos funcionalidades de botão e de entrada de texto ao cartão
 
 Observe que o campo de entrada é rotulado "text", de modo que nosso cartão adaptável anexará os dados de texto do comentário como Valor.[texto].
 
-### <a name="ctabcsharp"></a>[C#](#tab/csharp)
+### <a name="c"></a>[C#](#tab/csharp)
 
 Nosso validador usa Newtonsoft.json para, primeiro, converter isso em um JObject e, em seguida, criar uma cadeia de caracteres de texto aparada para comparação. Portanto, adicione:
 
@@ -410,7 +410,7 @@ AddDialog(new ChoicePrompt(nameof(ChoicePrompt), ChoiceValidator));
 
 Isso invocará seu validador para procurar pela entrada do Cartão Adaptável sempre que um novo ChoicePrompt for criado.
 
-### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Abra mainDialog.js e localize o método de execução _async run(turnContext, accessor)_ . Esse método manipula a atividade de entrada.
 Logo após a chamada _dialogSet.add(this);_ , adicione o seguinte:
@@ -430,7 +430,7 @@ if(turnContext._activity.text == null
 Se essa verificação encontrar uma entrada de texto inexistente do cliente, ela verificará se há entrada de um Cartão Adaptável.
 Se houver uma entrada de Cartão Adaptável em \_activity.value.text, ela a copiará para o campo de entrada de texto normal.
 
-### <a name="pythontabpython"></a>[Python](#tab/python)
+### <a name="python"></a>[Python](#tab/python)
 
 O código-fonte mostrado aqui se baseia no [exemplo de ações sugeridas](https://aka.ms/SuggestedActionsPython).
 

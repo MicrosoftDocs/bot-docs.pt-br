@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.date: 11/01/2019
 ms.author: kamrani
-ms.openlocfilehash: 1caf469a7ec37e932ae2b7ffde85d0dbf24938a3
-ms.sourcegitcommit: 312a4593177840433dfee405335100ce59aac347
+ms.openlocfilehash: b5a6296e65ab05cd8a5af24872d31e5ef356dcf7
+ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73933484"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441503"
 ---
 # <a name="about-direct-line"></a>Sobre o Direct Line
 
@@ -33,10 +33,10 @@ Você pode escolher qual oferta do Direct Line é melhor avaliando que recursos 
 | Dá suporte a navegadores da web herdados | Sim | Na GA | Sim |
 | Suporte ao SDK do Bot Framework | Todos os v3, v4 | v 4.63+ obrigatório | v 4.63+ obrigatório |
 | Suporte de SDK de cliente    | JS, C# | JS, C# | C++, C#, Unity, JS|
-| Funciona com o Bate-Papo da Web  | Sim | sim | Não|
+| Funciona com o Bate-Papo da Web  | Sim | Sim | Não|
 | VNET | Não | Visualização | Não |
 
 
-## <a name="addtional-resources"></a>Recursos adicionais
+## <a name="additional-resources"></a>Recursos adicionais
 - [Conectar um bot à Linha Direta](bot-service-channel-connect-directline.md)
 - [Conectar um bot ao Direct Line Speech](bot-service-channel-connect-directlinespeech.md)

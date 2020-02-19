@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 01/24/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 8aeff2ec5fb816139f082d931aa1431edc5e145c
-ms.sourcegitcommit: f3628f48d3471a48773e5d256a75e8fe39717bb6
+ms.openlocfilehash: 8ef33478f71afa18568a18cfad67b7f65c50d955
+ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77035478"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441681"
 ---
 # <a name="add-natural-language-understanding-to-your-bot"></a>Adicionar reconhecimento de idioma natural ao seu bot
 
@@ -31,7 +31,7 @@ A capacidade de entender o que seu usuário quer dizer contextualmente e em conv
 
 Este exemplo de codificação de core bot mostra um exemplo de um aplicativo de reservas de voo do aeroporto. Ele usa um serviço do LUIS para reconhecer a entrada do usuário e retornar a melhor intenção reconhecida pelo LUIS.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 Após cada processamento da entrada do usuário, `DialogBot` salva o estado atual de `UserState` e `ConversationState`. Após a coleta de todas as informações necessárias, o exemplo de codificação cria uma reserva de reserva de voo de demonstração. Neste artigo, abordaremos os aspectos LUIS deste exemplo. No entanto, o fluxo geral do exemplo é mostrado a seguir:
 
@@ -46,7 +46,7 @@ O módulo `OnMessageActivityAsync` executa o diálogo apropriado por meio do mé
 - `TravelDate` a data da reserva do voo
 - `Destination` a cidade de destino
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Após cada processamento da entrada do usuário, `dialogBot` salva o estado atual de `userState` e `conversationState`. Após a coleta de todas as informações necessárias, o exemplo de codificação cria uma reserva de reserva de voo de demonstração. Neste artigo, abordaremos os aspectos LUIS deste exemplo. No entanto, o fluxo geral do exemplo é mostrado a seguir:
 
@@ -63,7 +63,7 @@ Quando recebe uma resposta de volta, `mainDialog` preserva as informações do u
 - `origin` A cidade de origem.
 - `travelDate` A data da reserva do voo.
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 Após cada processamento da entrada do usuário, `DialogBot` salva o estado atual de `user_state` e `conversation_state`. Após a coleta de todas as informações necessárias, o exemplo de codificação cria uma reserva de reserva de voo de demonstração. Neste artigo, abordaremos os aspectos LUIS deste exemplo. No entanto, o fluxo geral do exemplo é mostrado a seguir:
 
@@ -114,31 +114,31 @@ O arquivo de configurações (`appsettings.json` ou `.env`) age como um único l
 
 ### <a name="update-the-settings-file"></a>Atualizar o arquivo de configurações
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 Adicione as informações necessárias para acessar o aplicativo LUIS, incluindo ID do aplicativo, chave de criação e região, ao arquivo `appsettings.json`. Estes são os valores que você salvou anteriormente de seu aplicativo LUIS publicado. Lembre-se de que o nome do host da API deve estar no formato `<your region>.api.cognitive.microsoft.com`.
 
 **appsetting.json**  
 [!code-json[appsettings](~/../BotBuilder-Samples/samples/csharp_dotnetcore/13.core-bot/appsettings.json?range=1-7)]
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Adicione as informações necessárias para acessar o aplicativo LUIS, incluindo ID do aplicativo, chave de criação e região, ao arquivo `.env`. Estes são os valores que você salvou anteriormente de seu aplicativo LUIS publicado. Lembre-se de que o nome do host da API deve estar no formato `<your region>.api.cognitive.microsoft.com`.
 
 **.env**  
 [!code[env](~/../BotBuilder-Samples/samples/javascript_nodejs/13.core-bot/.env?range=1-5)]
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 Adicione as informações necessárias para acessar o aplicativo LUIS, incluindo ID do aplicativo, chave de criação e região, ao arquivo `config.py`. Estes são os valores que você salvou anteriormente de seu aplicativo LUIS publicado. Lembre-se de que o nome do host da API deve estar no formato `<your region>.api.cognitive.microsoft.com`.
 
-**config.py** [!code-python[config.py](~/../botbuilder-python/samples/python/13.core-bot/config.py?range=14-19)]
+**config.py** [!code-python[config.py](~/../botbuilder-samples/samples/python/13.core-bot/config.py?range=14-19)]
 
 ---
 
 ## <a name="configure-your-bot-to-use-your-luis-app"></a>Configure seu bot para usar seu aplicativo LUIS
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 Verifique se o pacote do NuGet **Microsoft.Bot.Builder.AI.Luis** está instalado para o seu projeto.
 
@@ -154,7 +154,7 @@ O `FlightBookingEx.cs` contém a lógica para extrair *From*, *To* e *TravelDate
 
 [!code-csharp[luis helper](~/../BotBuilder-Samples/samples/csharp_dotnetcore/13.core-bot/CognitiveModels/FlightBookingEx.cs?range=8-35)]
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Para usar o LUIS, seu projeto precisa instalar o pacote do npm **botbuilder-ai**.
 
@@ -166,7 +166,7 @@ Para se conectar ao serviço do LUIS, o bot usa as informações adicionadas aci
 
 A lógica para extrair From, To e TravelDate é implementada como métodos auxiliares dentro de `flightBookingRecognizer.js`. Esses métodos são usados após chamar `flightBookingRecognizer.executeLuisQuery()` de `mainDialog.js`
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 Certifique-se de que o pacote PyPI **botbuilder-ai** esteja instalado para seu projeto.
 
@@ -174,11 +174,11 @@ Para se conectar ao serviço do LUIS, o bot usa as informações adicionadas aci
 
 **flight_booking_recognizer.py**
 
-[!code-python[config.py](~/../botbuilder-python/samples/python/13.core-bot/flight_booking_recognizer.py?range=10-34)]
+[!code-python[config.py](~/../botbuilder-samples/samples/python/13.core-bot/flight_booking_recognizer.py?range=10-34)]
 
 A lógica para extrair *From*, *To* e *travel_date* é implementada como métodos auxiliares da classe `LuisHelper` dentro de `luis_helper.py`. Esses métodos são usados após chamar `LuisHelper.execute_luis_query()` de `main_dialog.py`
 
-**helpers/luis_helper.py** [!code-python[luis helper](~/../botbuilder-python/samples/python/13.core-bot/helpers/luis_helper.py?range=30-102)]
+**helpers/luis_helper.py** [!code-python[luis helper](~/../botbuilder-samples/samples/python/13.core-bot/helpers/luis_helper.py?range=30-102)]
 
 ---
 

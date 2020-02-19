@@ -8,12 +8,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 07/09/2019
-ms.openlocfilehash: 2145709c9cc458ec5dd9f4fbf1145ddbad893a04
-ms.sourcegitcommit: df2b8d4e29ebfbb9e8a10091bb580389fe4c34cc
+ms.openlocfilehash: 542aee09459bd569ca2aa39fa755a219f46fc7cd
+ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76255999"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441573"
 ---
 # <a name="direct-line-app-service-extension"></a>Direct Line App Service Extension
 
@@ -44,7 +44,7 @@ A extensão do Serviço de Aplicativo do Direct Line é pré-instalada em todas 
 |[Usar a extensão com Webchat](bot-service-channel-directline-extension-webchat-client.md)|Habilitar o WebChat com a extensão de serviço de aplicativo do Direct Line|
 |[Usar a extensão dentro do VNET](bot-service-channel-directline-extension-vnet.md)|Use a extensão do Serviço de Aplicativo do Direct Line com uma VNET (Rede Virtual do Azure)|
 
-## <a name="addtional-resources"></a>Recursos adicionais
+## <a name="additional-resources"></a>Recursos adicionais
 
 - [Conectar um bot à Linha Direta](bot-service-channel-connect-directline.md)
 - [Conectar um bot ao Direct Line Speech](bot-service-channel-connect-directlinespeech.md)

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 01/28/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a9ba4f47cfea6cdfcbb947df887397717c012eaa
-ms.sourcegitcommit: f3628f48d3471a48773e5d256a75e8fe39717bb6
+ms.openlocfilehash: 7a25f0fd283e8e09f5ca27e7a29e96e9f55888ff
+ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77035488"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441720"
 ---
 # <a name="implement-sequential-conversation-flow"></a>Implementar fluxo de conversa sequencial
 
@@ -49,7 +49,7 @@ Finalmente, se ele responder sim, exibir as informações coletadas; caso contr�
 
 ## <a name="create-the-main-dialog"></a>Criar diálogo principal
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 Para usar as caixas de diálogo, instale o pacote do NuGet, **Microsoft.Bot.Builder.Dialogs**.
 
@@ -87,7 +87,7 @@ Na última etapa, verificamos o `stepContext.Result` retornado pelo diálogo cha
 
 [!code-csharp[SummaryStepAsync](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=137-179&highlight=5-11,41-42)]
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Para usar as caixas de diálogo, seu projeto precisa instalar o pacote do npm, **botbuilder-dialogs**.
 
@@ -135,7 +135,7 @@ O contexto do diálogo permite iniciar um diálogo com a ID da cadeia de caracte
 
 [!code-javascript[run method](~/../botbuilder-samples/samples/javascript_nodejs/05.multi-turn-prompt/dialogs/userProfileDialog.js?range=59-68)]
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 Para usar diálogos, instale os pacotes PyPI **botbuilder-dialogs** e **botbuilder-ai** executando `pip install botbuilder-dialogs` e `pip install botbuilder-ai` em um terminal.
 
@@ -149,29 +149,29 @@ Começamos criando `UserProfileDialog`, que deriva da classe `ComponentDialog` e
 
 No construtor `UserProfileDialog`, crie as etapas de cascata, os prompts e o diálogo de cascata, e adicione-os ao conjunto do diálogo. Os avisos precisam estar no mesmo conjunto do diálogo no qual eles são usados.
 
-[!code-python[Constructor snippet](~/../botbuilder-python/samples/python/05.multi-turn-prompt/dialogs/user_profile_dialog.py?range=26-57)]
+[!code-python[Constructor snippet](~/../botbuilder-samples/samples/python/05.multi-turn-prompt/dialogs/user_profile_dialog.py?range=26-57)]
 
 Em seguida, implementamos as etapas usadas pelo diálogo. Para usar um prompt, chame-o de uma etapa no seu diálogo e recupere o resultado do prompt na etapa seguinte usando `step_context.result`. Nos bastidores, os prompts são uma caixa de diálogo em duas etapas. Primeiro, o prompt solicita a entrada; em seguida, ele retorna o valor válido ou recomeça do princípio com um novo prompt até receber uma entrada válida.
 
 Você sempre deve ter um retorno de `DialogTurnResult` não nulo em uma etapa de cascata. Se isso não acontecer, o diálogo poderá não funcionar como planejado. Aqui, mostramos a implementação para o `name_step` no diálogo de cascata.
 
-[!code-python[name step](~/../botbuilder-python/samples/python/05.multi-turn-prompt/dialogs/user_profile_dialog.py?range=73-79)]
+[!code-python[name step](~/../botbuilder-samples/samples/python/05.multi-turn-prompt/dialogs/user_profile_dialog.py?range=73-79)]
 
 Em `age_step`, especificamos um prompt de repetição para quando a entrada do usuário não é validada, seja porque está em um formato que o prompt não consegue analisar, seja porque a entrada não é aprovada pelos critérios de validação especificados no construtor acima. Nesse caso, se nenhum prompt de nova tentativa foi fornecido, o prompt usará o texto de prompt inicial para voltar a solicitar a entrada ao usuário
 
-[!code-python[age step](~/../botbuilder-python/samples/python/05.multi-turn-prompt/dialogs/user_profile_dialog.py?range=100-116)]
+[!code-python[age step](~/../botbuilder-samples/samples/python/05.multi-turn-prompt/dialogs/user_profile_dialog.py?range=100-116)]
 
 **data_models\user_profile.py**
 
 O modo de transporte, o nome e a idade do usuário são salvos em uma instância da classe `UserProfile`.
 
-[!code-python[user profile](~/../botbuilder-python/samples/python/05.multi-turn-prompt/data_models/user_profile.py?range=7-16)]
+[!code-python[user profile](~/../botbuilder-samples/samples/python/05.multi-turn-prompt/data_models/user_profile.py?range=7-16)]
 
 **dialogs\user_profile_dialog.py**
 
 Na última etapa, verificamos o `step_context.result` retornado pelo diálogo chamado na etapa anterior da cascata. Se o valor retornado for true, usaremos o acessador de perfil do usuário para obter e atualizar o perfil do usuário. Para obter o perfil do usuário, chamamos o método `get` e definimos os valores das propriedades `user_profile.transport`, `user_profile.name` e `user_profile.age`. Por fim, resumimos as informações para o usuário antes de chamar `end_dialog`, que termina o diálogo. O fim do diálogo o remove da pilha de diálogo e retorna um resultado opcional ao pai dele. O pai é o método ou diálogo que iniciou o diálogo recém-terminado.
 
-[!code-python[summary step](~/../botbuilder-python/samples/python/05.multi-turn-prompt/dialogs/user_profile_dialog.py?range=166-204)]
+[!code-python[summary step](~/../botbuilder-samples/samples/python/05.multi-turn-prompt/dialogs/user_profile_dialog.py?range=166-204)]
 
 **Criar o método de extensão para executar o diálogo de cascata**
 
@@ -181,13 +181,13 @@ O contexto de diálogo é criado com a chamada do método `create_context` e é 
 
 O contexto do diálogo permite iniciar um diálogo com a ID da cadeia de caracteres ou continuar o diálogo atual (por exemplo, um diálogo em cascata que tem várias etapas). O contexto do diálogo é passado para todas as etapas de cascata e diálogos do bot.
 
-[!code-python[run method](~/../botbuilder-python/samples/python/05.multi-turn-prompt/helpers/dialog_helper.py?range=8-19)]
+[!code-python[run method](~/../botbuilder-samples/samples/python/05.multi-turn-prompt/helpers/dialog_helper.py?range=8-19)]
 
 ---
 
 ## <a name="run-the-dialog"></a>Executar o diálogo
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 **Bots\DialogBot.cs**
 
@@ -195,7 +195,7 @@ O manipulador `OnMessageActivityAsync` usa o método `RunAsync` para iniciar ou 
 
 [!code-csharp[overrides](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Bots/DialogBot.cs?range=33-48&highlight=5-7)]
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 O método `onMessage` registra um ouvinte que chama o método `run` da caixa de diálogo para iniciar ou continuar o diálogo.
 
@@ -207,11 +207,11 @@ Separadamente, o bot substitui o método `ActivityHandler.run` para salvar a con
 
 [!code-javascript[override](~/../botbuilder-samples/samples/javascript_nodejs/05.multi-turn-prompt/bots/dialogBot.js?range=34-43&highlight=7-9)]
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 O manipulador `on_message_activity` usa o método auxiliar para iniciar ou continuar o diálogo. Em `on_turn`, usamos objetos de gerenciamento de estado do bot para persistir as alterações no estado para o armazenamento. O método `on_message_activity` é chamado por último, depois que outros manipuladores definidos são executados, como `on_turn`. Dessa forma, salvamos o estado depois que o manipulador de mensagens é concluído, mas antes da conclusão do próprio turno.
 
-**bots\dialog_bot.py** [!code-python[overrides](~/../botbuilder-python/samples/python/05.multi-turn-prompt/bots/dialog_bot.py?range=39-51&highlight=4-6)]
+**bots\dialog_bot.py** [!code-python[overrides](~/../botbuilder-samples/samples/python/05.multi-turn-prompt/bots/dialog_bot.py?range=39-51&highlight=4-6)]
 
 ---
 
@@ -223,7 +223,7 @@ Tal bot usa os _serviços_ a seguir.
 - Serviços para gerenciamento de estado: armazenamento, estado do usuário e estado da conversa.
 - A caixa de diálogo que o bot usará.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 **Startup.cs**
 
@@ -231,7 +231,7 @@ Nós registramos serviços para o bot em `Startup`. Esses serviços estão dispo
 
 [!code-csharp[ConfigureServices](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Startup.cs?range=17-39)]
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 **index.js**
 
@@ -239,11 +239,11 @@ Nós registramos serviços para o bot em `index.js`.
 
 [!code-javascript[overrides](~/../botbuilder-samples/samples/javascript_nodejs/05.multi-turn-prompt/index.js?range=19-59)]
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 Nós registramos serviços para o bot em `app.py`.
 
-[!code-python[configure services](~/../botbuilder-python/samples/python/05.multi-turn-prompt/app.py?range=27-76)]
+[!code-python[configure services](~/../botbuilder-samples/samples/python/05.multi-turn-prompt/app.py?range=27-76)]
 
 ---
 
@@ -279,7 +279,7 @@ Há várias opções para manter as etapas de diálogo e o estado de bot separad
 
 ### <a name="definition-of-a-prompt-validator-method"></a>Definição de um método validador de prompt
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 **UserProfileDialog.cs**
 
@@ -287,7 +287,7 @@ Veja abaixo um exemplo de código validador para a definição do método `AgePr
 
 [!code-csharp[prompt validator method](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=181-185)]
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 **dialogs\userProfileDialog.js**
 
@@ -295,7 +295,7 @@ Veja abaixo um exemplo de código validador para a definição do método `agePr
 
 [!code-javascript[prompt validator method](~/../botbuilder-samples/samples/javascript_nodejs/05.multi-turn-prompt/dialogs/userProfileDialog.js?range=169-172)]
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 **dialogs/user_profile_dialog.py**
 

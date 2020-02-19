@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 01/30/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 01fb0b919169d27809360f1ccaccb863906df013
-ms.sourcegitcommit: d24fe2178832261ac83477219e42606f839dc64d
+ms.openlocfilehash: f8854469b131b11d53c90047d438af4e26b06f97
+ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77071834"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441631"
 ---
 # <a name="create-advanced-conversation-flow-using-branches-and-loops"></a>Criar fluxo de conversa avançado usando ramificações e loops
 
@@ -38,19 +38,19 @@ Ele usa o estado da conversa para gerenciar os diálogos e usa o estado do usuá
 
 O bot deriva do manipulador de atividade. Como muitos dos bots de exemplo, ele dá boas vindas ao usuário, usa caixas de diálogo para manipular mensagens do usuário e salva o estado do usuário e da conversa antes do término da conversa.
 
-### <a name="ctabcsharp"></a>[C#](#tab/csharp)
+### <a name="c"></a>[C#](#tab/csharp)
 
 Para usar as caixas de diálogo, instale o pacote do NuGet, **Microsoft.Bot.Builder.Dialogs**.
 
 ![Fluxo de bot complexo](./media/complex-conversation-flow.png)
 
-### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Para usar as caixas de diálogo, seu projeto precisa instalar o pacote do npm, **botbuilder-dialogs**.
 
 ![Fluxo de bot complexo](./media/complex-conversation-flow-js.png)
 
-### <a name="pythontabpython"></a>[Python](#tab/python)
+### <a name="python"></a>[Python](#tab/python)
 
 Para usar diálogos, seu projeto precisa instalar o pacote PyPI **botbuilder-dialogs** executando `pip install botbuilder-dialogs`.
 
@@ -62,23 +62,23 @@ Para usar diálogos, seu projeto precisa instalar o pacote PyPI **botbuilder-dia
 
 O perfil do usuário conterá informações coletadas pelos diálogos: o nome do usuário, a idade e as empresas selecionadas para avaliação.
 
-### <a name="ctabcsharp"></a>[C#](#tab/csharp)
+### <a name="c"></a>[C#](#tab/csharp)
 
 **UserProfile.cs**
 
 [!code-csharp[UserProfile class](~/../botbuilder-samples/samples/csharp_dotnetcore/43.complex-dialog/UserProfile.cs?range=8-16)]
 
-### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 **userProfile.js**
 
 [!code-javascript[UserProfile class](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/userProfile.js?range=4-12)]
 
-### <a name="pythontabpython"></a>[Python](#tab/python)
+### <a name="python"></a>[Python](#tab/python)
 
 **data_models/user_profile.py**
 
-[!code-python[UserProfile class](~/../botbuilder-python/samples/python/43.complex-dialog/data_models/user_profile.py?range=7-13)]
+[!code-python[UserProfile class](~/../botbuilder-samples/samples/python/43.complex-dialog/data_models/user_profile.py?range=7-13)]
 
 ---
 
@@ -97,23 +97,23 @@ O diálogo principal tem duas etapas:
 1. Iniciar o diálogo de nível superior.
 1. Recuperar e resumir o perfil do usuário coletado pelo diálogo de nível superior, salvar essas informações no estado do usuário e, finalmente, sinalizar o final do diálogo principal.
 
-#### <a name="ctabcsharp"></a>[C#](#tab/csharp)
+#### <a name="c"></a>[C#](#tab/csharp)
 
 **Dialogs\MainDialog.cs**
 
 [!code-csharp[step implementations](~/../botbuilder-samples/samples/csharp_dotnetcore/43.complex-dialog/Dialogs/MainDialog.cs?range=31-50)]
 
-#### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+#### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 **dialogs/mainDialog.js**
 
 [!code-javascript[step implementations](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/dialogs/mainDialog.js?range=43-55)]
 
-#### <a name="pythontabpython"></a>[Python](#tab/python)
+#### <a name="python"></a>[Python](#tab/python)
 
 **dialogs\main_dialog.py**
 
-[!code-python[step implementations](~/../botbuilder-python/samples/python/43.complex-dialog/dialogs/main_dialog.py?range=29-50)]
+[!code-python[step implementations](~/../botbuilder-samples/samples/python/43.complex-dialog/dialogs/main_dialog.py?range=29-50)]
 
 ---
 
@@ -130,23 +130,23 @@ A primeira etapa cria um perfil do usuário vazio como parte do estado do diálo
 
 Na terceira etapa (iniciar seleção), o fluxo de conversa se ramifica, com base na idade do usuário.
 
-#### <a name="ctabcsharp"></a>[C#](#tab/csharp)
+#### <a name="c"></a>[C#](#tab/csharp)
 
 **Dialogs\TopLevelDialog.cs**
 
 [!code-csharp[step implementations](~/../botbuilder-samples/samples/csharp_dotnetcore/43.complex-dialog/Dialogs/TopLevelDialog.cs?range=39-96&highlight=30-42)]
 
-#### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+#### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 **dialogs/topLevelDialog.js**
 
 [!code-javascript[step implementations](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/dialogs/topLevelDialog.js?range=32-76&highlight=25-33)]
 
-#### <a name="pythontabpython"></a>[Python](#tab/python)
+#### <a name="python"></a>[Python](#tab/python)
 
 **dialogs\top_level_dialog.py**
 
-[!code-python[step implementations](~/../botbuilder-python/samples/python/43.complex-dialog/dialogs/top_level_dialog.py?range=43-95&highlight=29-38)]
+[!code-python[step implementations](~/../botbuilder-samples/samples/python/43.complex-dialog/dialogs/top_level_dialog.py?range=43-95&highlight=29-38)]
 
 ---
 
@@ -163,23 +163,23 @@ O diálogo de seleção da avaliação tem duas etapas:
    - Se o usuário tiver escolhido duas empresas ou tiver optado por sair, encerre o diálogo e retorne a lista coletada.
    - Caso contrário, reinicie o diálogo, inicializando-o com o conteúdo de sua lista.
 
-#### <a name="ctabcsharp"></a>[C#](#tab/csharp)
+#### <a name="c"></a>[C#](#tab/csharp)
 
 **Dialogs\ReviewSelectionDialog.cs**
 
 [!code-csharp[step implementations](~/../botbuilder-samples/samples/csharp_dotnetcore/43.complex-dialog/Dialogs/ReviewSelectionDialog.cs?range=42-106&highlight=55-64)]
 
-#### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+#### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 **dialogs/reviewSelectionDialog.js**
 
 [!code-javascript[step implementations](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/dialogs/reviewSelectionDialog.js?range=33-78&highlight=39-45)]
 
-#### <a name="pythontabpython"></a>[Python](#tab/python)
+#### <a name="python"></a>[Python](#tab/python)
 
 **dialogs/review_selection_dialog.py**
 
-[!code-python[step implementations](~/../botbuilder-python/samples/python/43.complex-dialog/dialogs/review_selection_dialog.py?range=42-99&highlight=51-58)]
+[!code-python[step implementations](~/../botbuilder-samples/samples/python/43.complex-dialog/dialogs/review_selection_dialog.py?range=42-99&highlight=51-58)]
 
 ---
 
@@ -196,24 +196,24 @@ Quando ele recebe uma mensagem do usuário:
    - Caso contrário, os diálogos ainda estarão no meio do processo e isso dará continuidade no diálogo ativo.
 1. Isso salvará o estado, para que as atualizações do usuário, da conversa e do diálogo sejam mantidas.
 
-### <a name="ctabcsharp"></a>[C#](#tab/csharp)
+### <a name="c"></a>[C#](#tab/csharp)
 
 **Bots\DialogBot.cs**
 
 [!code-csharp[Overrides](~/../botbuilder-samples/samples/csharp_dotnetcore/43.complex-dialog/Bots/DialogBot.cs?range=33-48&highlight=5-7,14-15)]
 
-### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 **bots/dialogBot.js**
 
 [!code-javascript[onMessage](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/bots/dialogBot.js?range=24-32&highlight=4-5)]
 [!code-javascript[run](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/bots/dialogBot.js?range=35-44&highlight=7-9)]
 
-### <a name="pythontabpython"></a>[Python](#tab/python)
+### <a name="python"></a>[Python](#tab/python)
 
 **bots/dialog_bot.py**
 
-[!code-python[Overrides](~/../botbuilder-python/samples/python/43.complex-dialog/bots/dialog_bot.py?range=29-41&highlight=4-6,9-13)]
+[!code-python[Overrides](~/../botbuilder-samples/samples/python/43.complex-dialog/bots/dialog_bot.py?range=29-41&highlight=4-6,9-13)]
 
 ---
 
@@ -225,24 +225,24 @@ Crie e registre serviços conforme necessário:
 - Serviços para gerenciamento de estado: armazenamento, estado do usuário e estado da conversa.
 - O diálogo raiz que o bot usará.
 
-### <a name="ctabcsharp"></a>[C#](#tab/csharp)
+### <a name="c"></a>[C#](#tab/csharp)
 
 **Startup.cs**
 
 [!code-csharp[ConfigureServices](~/../botbuilder-samples/samples/csharp_dotnetcore/43.complex-dialog/Startup.cs?range=18-37)]
 
-### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 **index.js**
 
 [!code-javascript[ConfigureServices](~/../botbuilder-samples/samples/javascript_nodejs/43.complex-dialog/index.js?range=26-43)]
 
-### <a name="pythontabpython"></a>[Python](#tab/python)
+### <a name="python"></a>[Python](#tab/python)
 
 **app.py**
 
-[!code-python[ConfigureServices](~/../botbuilder-python/samples/python/43.complex-dialog/app.py?range=29-32)]
-[!code-python[ConfigureServices](~/../botbuilder-python/samples/python/43.complex-dialog/app.py?range=70-77)]
+[!code-python[ConfigureServices](~/../botbuilder-samples/samples/python/43.complex-dialog/app.py?range=29-32)]
+[!code-python[ConfigureServices](~/../botbuilder-samples/samples/python/43.complex-dialog/app.py?range=70-77)]
 
 ---
 

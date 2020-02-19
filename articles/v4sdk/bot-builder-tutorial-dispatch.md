@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 01/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f5cf5d6628d5186404816b7f7862f2e58293f5e5
-ms.sourcegitcommit: f3628f48d3471a48773e5d256a75e8fe39717bb6
+ms.openlocfilehash: 32394b9812340467e9ae584c55fd047b973be1bc
+ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77035468"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441665"
 ---
 # <a name="use-multiple-luis-and-qna-models"></a>Usar vários modelos de LUIS e QnA
 
@@ -34,7 +34,7 @@ Se um bot usar vários modelos do LUIS e bases de dados de conhecimento do QnA M
 
 Este exemplo é baseado em um conjunto predefinido de aplicativos LUIS e QnA Maker.
 
-## <a name="ctabcs"></a>[C#](#tab/cs)
+## <a name="c"></a>[C#](#tab/cs)
 
 ![Fluxo de lógica de exemplo de código](./media/tutorial-dispatch/dispatch-logic-flow.png)
 
@@ -44,7 +44,7 @@ Este exemplo é baseado em um conjunto predefinido de aplicativos LUIS e QnA Mak
 - `ProcessWeatherAsync`: para consultas de previsão do tempo.
 - `ProcessHomeAutomationAsync`: para comandos de iluminação doméstica.
 
-## <a name="javascripttabjs"></a>[JavaScript](#tab/js)
+## <a name="javascript"></a>[JavaScript](#tab/js)
 
 ![Fluxo de lógica de exemplo de código](./media/tutorial-dispatch/dispatch-logic-flow-js.png)
 
@@ -54,7 +54,7 @@ Este exemplo é baseado em um conjunto predefinido de aplicativos LUIS e QnA Mak
 - `processWeather`: para consultas de previsão do tempo.
 - `processHomeAutomation`: para comandos de iluminação doméstica.
 
-## <a name="pythontabpython"></a>[Python](#tab/python)
+## <a name="python"></a>[Python](#tab/python)
 
 ![Fluxo de lógica de exemplo de código](./media/tutorial-dispatch/dispatch-logic-flow-python.png)
 
@@ -228,7 +228,7 @@ O bot precisa dos pontos de extremidade de previsão de consulta para os três a
 
 Esses valores são usados em **appsettings.json** para C# e no arquivo **.env** para JavaScript.
 
-## <a name="ctabcs"></a>[C#](#tab/cs)
+## <a name="c"></a>[C#](#tab/cs)
 
 ### <a name="installing-packages"></a>Instalar pacotes
 
@@ -265,7 +265,7 @@ Para cada uma das entidades mostradas abaixo, adicione os valores que você regi
 
 Quando todas as alterações tiverem sido concluídas, salve esse arquivo.
 
-## <a name="javascripttabjs"></a>[JavaScript](#tab/js)
+## <a name="javascript"></a>[JavaScript](#tab/js)
 
 ### <a name="installing-packages"></a>Instalar pacotes
 
@@ -308,7 +308,7 @@ LuisAPIHostName=<your-dispatch-app-region>
 
 Quando todas as alterações tiverem sido realizadas, salve esse arquivo.
 
-## <a name="pythontabpython"></a>[Python](#tab/python)
+## <a name="python"></a>[Python](#tab/python)
 
 ### <a name="installing-packages"></a>Instalar pacotes
 
@@ -325,7 +325,7 @@ Depois que todos os aplicativos de serviço forem criados, as informações para
 
 **config.py**
 
-[!code-python[config.py](~/../botbuilder-python/samples/python/14.nlp-with-dispatch/config.py?range=10-24)]
+[!code-python[config.py](~/../botbuilder-samples/samples/python/14.nlp-with-dispatch/config.py?range=10-24)]
 
 Para cada uma das entidades mostradas abaixo, adicione os valores que você registrou anteriormente nas instruções:
 
@@ -351,7 +351,7 @@ Quando todas as alterações tiverem sido concluídas, salve esse arquivo.
 
 Para se conectar aos serviços Dispatch, LUIS e QnA Maker, seu bot obtém informações do arquivo de configurações por pull.
 
-## <a name="ctabcs"></a>[C#](#tab/cs)
+## <a name="c"></a>[C#](#tab/cs)
 
 Em **BotServices.cs**, as informações contidas no arquivo de configuração _appsettings.json_ são usadas para conectar o bot de expedição aos serviços `Dispatch` e `SampleQnA`. Os construtores usam os valores fornecidos para se conectarem a esses serviços.
 
@@ -359,7 +359,7 @@ Em **BotServices.cs**, as informações contidas no arquivo de configuração _a
 
 [!code-csharp[ReadConfigurationInfo](~/../botbuilder-samples/samples/csharp_dotnetcore/14.nlp-with-dispatch/BotServices.cs?range=14-45)]
 
-## <a name="javascripttabjs"></a>[JavaScript](#tab/js)
+## <a name="javascript"></a>[JavaScript](#tab/js)
 
 Em **dispatchBot.js**, as informações contidas no arquivo de configuração _.env_ são usadas para conectar o bot de expedição aos serviços _LuisRecognizer(Dispatch)_ e  _QnA Maker_. Os construtores usam os valores fornecidos para se conectarem a esses serviços.
 
@@ -367,13 +367,13 @@ Em **dispatchBot.js**, as informações contidas no arquivo de configuração _.
 
 [!code-javascript[ReadConfigurationInfo](~/../botbuilder-samples/samples/javascript_nodejs/14.nlp-with-dispatch/bots/dispatchBot.js?range=11-26)]
 
-## <a name="pythontabpython"></a>[Python](#tab/python)
+## <a name="python"></a>[Python](#tab/python)
 
 Em **dispatch_bot.py**, as informações contidas no arquivo de configuração _config.py_ são usadas para conectar o bot de expedição aos serviços _QnAMaker_ e _LuisRecognizer_. Os construtores usam os valores fornecidos para se conectarem a esses serviços.
 
 **bots/dispatch_bot.py**
 
-[!code-python[ReadConfigurationInfo](~/../botbuilder-python/samples/python/14.nlp-with-dispatch/bots/dispatch_bot.py?range=14-34)]
+[!code-python[ReadConfigurationInfo](~/../botbuilder-samples/samples/python/14.nlp-with-dispatch/bots/dispatch_bot.py?range=14-34)]
 
 ---
 
@@ -384,7 +384,7 @@ Em **dispatch_bot.py**, as informações contidas no arquivo de configuração _
 
 Para cada entrada do usuário, a lógica do bot verifica a entrada com base no modelo do Dispatch combinado, localiza a principal intenção retornada e usa essas informações para chamar o serviço apropriado para a entrada.
 
-## <a name="ctabcs"></a>[C#](#tab/cs)
+## <a name="c"></a>[C#](#tab/cs)
 
 No arquivo **DispatchBot.cs**, sempre que o método `OnMessageActivityAsync` é chamado, verificamos a mensagem da entrada do usuário com base no modelo do Dispatch. Em seguida, transmitimos `topIntent` e `recognizerResult` do modelo do Dispatch para o método correto para chamar o serviço e retornar o resultado.
 
@@ -392,25 +392,25 @@ No arquivo **DispatchBot.cs**, sempre que o método `OnMessageActivityAsync` é 
 
 [!code-csharp[OnMessageActivity](~/../botbuilder-samples/samples/csharp_dotnetcore/14.nlp-with-dispatch/bots/DispatchBot.cs?range=26-36)]
 
-## <a name="javascripttabjs"></a>[JavaScript](#tab/js)
+## <a name="javascript"></a>[JavaScript](#tab/js)
 
 No método **dispatchBot.js** `onMessage`, verificamos a mensagem de entrada do usuário com base no modelo do Dispatch, encontramos a _topIntent_ e a transmitimos chamando _dispatchToTopIntentAsync_.
 
 [!code-javascript[onMessage](~/../botbuilder-samples/samples/javascript_nodejs/14.nlp-with-dispatch/bots/dispatchBot.js?range=31-44)]
 
-## <a name="pythontabpython"></a>[Python](#tab/python)
+## <a name="python"></a>[Python](#tab/python)
 
 No arquivo **dispatch_bot.py**, sempre que o método `on_message_activity` é chamado, verificamos a mensagem da entrada do usuário com base no modelo do Dispatch. Em seguida, transmitimos `top_intent` e `recognize_result` do modelo do Dispatch para o método correto para chamar o serviço e retornar o resultado.
 
 **bots/dispatch_bot.py**
 
-[!code-python[on_message](~/../botbuilder-python/samples/python/14.nlp-with-dispatch/bots/dispatch_bot.py?range=46-54)]
+[!code-python[on_message](~/../botbuilder-samples/samples/python/14.nlp-with-dispatch/bots/dispatch_bot.py?range=46-54)]
 
 ---
 
 ### <a name="work-with-the-recognition-results"></a>Trabalhar com os resultados de reconhecimento
 
-## <a name="ctabcs"></a>[C#](#tab/cs)
+## <a name="c"></a>[C#](#tab/cs)
 
 Quando o modelo produz um resultado, ele indica qual serviço pode processar mais adequadamente a declaração. O código neste bot encaminha a solicitação para o serviço correspondente e, então, resume a resposta do serviço chamado. Dependendo da _intenção_ retornada pelo Dispatch, esse código usa a intenção retornada para encaminhar para o modelo LUIS ou serviço QnA correto.
 
@@ -422,7 +422,7 @@ Se o método `ProcessHomeAutomationAsync` ou `ProcessWeatherAsync` for invocado,
 
 Se o método `q_sample-qna` for invocado, ele usará a entrada do usuário contida em turnContext para gerar uma resposta da base de dados de conhecimento e exibirá o resultado ao usuário.
 
-## <a name="javascripttabjs"></a>[JavaScript](#tab/js)
+## <a name="javascript"></a>[JavaScript](#tab/js)
 
 Quando o modelo produz um resultado, ele indica qual serviço pode processar mais adequadamente a declaração. O código neste exemplo usa a _topIntent_ reconhecida para mostrar como encaminhar a solicitação para o serviço correspondente.
 
@@ -433,13 +433,13 @@ Se o método `processHomeAutomation` ou `processWeather` for invocado, ele trans
 
 Se o método `q_sample-qna` for invocado, ele usará a entrada do usuário contida em turnContext para gerar uma resposta da base de dados de conhecimento e exibirá o resultado ao usuário.
 
-## <a name="pythontabpython"></a>[Python](#tab/python)
+## <a name="python"></a>[Python](#tab/python)
 
 Quando o modelo produz um resultado, ele indica qual serviço pode processar mais adequadamente a declaração. O código neste exemplo usa a _intenção_ principal reconhecida para mostrar como encaminhar a solicitação para o serviço correspondente.
 
 **bots\dispatch_bot.py**
 
-[!code-python[dispatch top intent](~/../botbuilder-python/samples/python/14.nlp-with-dispatch/bots/dispatch_bot.py?range=56-70)]
+[!code-python[dispatch top intent](~/../botbuilder-samples/samples/python/14.nlp-with-dispatch/bots/dispatch_bot.py?range=56-70)]
 
 Se os métodos `_process_home_automation` ou `_process_weather` forem invocados, eles passarão os resultados do modelo de expedição dentro de _recognizer_result.properties["luisResult"]_ . O método especificado fornece comentários do usuário mostrando a principal intenção do modelo de expedição, além de uma lista classificada de todas as intenções e entidades que foram detectadas.
 
