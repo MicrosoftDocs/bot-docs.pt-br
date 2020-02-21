@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 8bc6f6e0c027e9b949997046133020b74ef18afe
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 91c5128ed7e51ef3d7918c3ba2363264396d935c
+ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75794748"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441542"
 ---
 # <a name="commerce-bot-scenario"></a>Cenário de bot comercial
 

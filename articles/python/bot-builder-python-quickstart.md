@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/10/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 3df1e44b5643f0dae98e659d76b8e30224081782
-ms.sourcegitcommit: 86495b597e55c94309a0c73fc1945a3393ddcbbf
+ms.openlocfilehash: c8208fb387584e38c5ec0a0851cc7a49236c37f7
+ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75756369"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441650"
 ---
 # <a name="create-a-bot-with-the-bot-framework-sdk-for-python"></a>Criar um bot com o SDK do Bot Framework para Python
 
@@ -22,7 +22,7 @@ ms.locfileid: "75756369"
 
 Este guia de início rápido oferece orientações sobre como criar um bot usando o modelo de Python Echo Bot e testá-lo com o Bot Framework Emulator.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 - Python [3.6](https://www.python.org/downloads/release/python-369/) ou [3.7](https://www.python.org/downloads/release/python-375/)
 - [Emulador do bot Framework](https://aka.ms/bot-framework-emulator-readme)
 - [git](https://git-scm.com/)

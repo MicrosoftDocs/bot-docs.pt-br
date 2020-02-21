@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 12/10/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f223766f0dcc4145fa058dcd447d4e3967db93d3
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 5b8b9e23168bdf45180c354edcfba99801d653e3
+ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75790998"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441534"
 ---
 # <a name="whats-new-december-2019"></a>Novidades em dezembro de 2019
 
@@ -47,7 +47,7 @@ O Power Virtual Agent foi projetado para permitir que os usuários corporativos 
 As Caixas de Diálogo Adaptáveis permitem que os desenvolvedores atualizem dinamicamente o fluxo de conversa com base em contexto e eventos. Isso é especialmente prático ao lidar com alternâncias de contexto de conversa e interrupções no meio de uma conversa. [[Docs][48] | [Exemplos de C#][49]] 
 
 #### <a name="language-generation-preview"></a>Geração de Linguagem (Versão prévia)
-Com a Geração de Linguagem, os desenvolvedores podem separar a lógica usada para gerar respostas do bot, incluindo a capacidade de definir diversas variações em uma frase, executar expressões simples baseadas em contexto e consultar a memória conversacional. [[Docs][44] | [Exemplos de C#][45]]
+Com a Geração de Linguagem, os desenvolvedores podem separar a lógica usada para gerar as respostas do bot, incluindo a capacidade de definir diversas variações em uma frase, executar expressões simples baseadas em contexto e consultar a memória conversacional. [[Docs][44] | [Exemplos de C#][45]]
 
 #### <a name="common-expression-language-preview"></a>Linguagem de Expressão Comum (Versão prévia)
 A Linguagem de Expressão Comum permite que você avalie o resultado de uma lógica baseada em condição em runtime. A linguagem comum pode ser usada em todos os componentes de SDK do Bot Framework e de AI conversacional, como Caixas de Diálogo Adaptáveis e Geração de Linguagem. [[Docs][40] | [API][41]]

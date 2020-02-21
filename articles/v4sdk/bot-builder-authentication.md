@@ -5,14 +5,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 11/04/2019
+ms.date: 2/7/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 75dc417f5ac3738b2b96a026860d8377f8ff9c25
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: e1cdfbb96e14175f764b481f9634c2d7c93f0c29
+ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75791315"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441649"
 ---
 <!-- 
 
@@ -87,7 +87,7 @@ Depois de concluir, você terá um bot sendo executado localmente e que pode res
 > [!IMPORTANT]
 > Tenha em mente estas importantes [Considerações de segurança](../rest-api/bot-framework-rest-direct-line-3-0-authentication.md#security-considerations).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento de [fundamentos do bot][concept-basics], [gerenciamento de estado][concept-state], [biblioteca de caixas de diálogo][concept-dialogs], como [implementar o fluxo de conversa sequencial][simple-dialog] e como [reutilizar caixas de diálogo][component-dialogs].
 - Conhecimento do desenvolvimento do Azure e do OAuth 2.0.
@@ -133,8 +133,8 @@ Use essas etapas para criar um novo aplicativo do Azure Active Directory. Você 
    1. Clique em **Registrar**.
 
       - Depois de criado, o Azure exibe a página **Visão geral** do aplicativo.
-      - Registre o valor da **ID do aplicativo (cliente)**. Você usará esse valor posteriormente como a _ID do cliente_ ao registrar seu aplicativo do Azure AD com seu bot.
-      - Registre também o valor da **ID do diretório (locatário)**. Você também usará essas informações para registrar esse aplicativo no bot.
+      - Registre o valor da **ID do aplicativo (cliente)** . Você usará esse valor posteriormente como a _ID do cliente_ ao registrar seu aplicativo do Azure AD com seu bot.
+      - Registre também o valor da **ID do diretório (locatário)** . Você também usará essas informações para registrar esse aplicativo no bot.
 
 1. No painel de navegação, clique em **Certificados e segredos** para criar um segredo para o aplicativo.
 
@@ -183,9 +183,9 @@ A próxima etapa é registrar com seu bot o aplicativo do Azure AD que você aca
     1. Para **URL de logon**, insira `https://login.microsoftonline.com`.
     1.Para **ID do Locatário**, insira a **ID do diretório (locatário)** que você registrou anteriormente para seu aplicativo AAD ou **comum** dependendo dos tipos de conta com suporte selecionados quando você criou o aplicativo AAD. Para decidir qual valor atribuir, siga estes critérios:
 
-        - Ao criar o aplicativo AAD, se você tiver selecionado *Contas neste diretório organizacional apenas (somente Microsoft – Locatário único)* ou *Contas em qualquer diretório organizacional (diretório do Microsoft AAD – multilocatário)*, insira a **ID do locatário** que você registrou anteriormente para o aplicativo do AAD.
+        - Ao criar o aplicativo AAD, se você tiver selecionado *Contas neste diretório organizacional apenas (somente Microsoft – Locatário único)* ou *Contas em qualquer diretório organizacional (diretório do Microsoft AAD – multilocatário)* , insira a **ID do locatário** que você registrou anteriormente para o aplicativo do AAD.
 
-        - Contudo, se você tiver selecionado *Contas em qualquer diretório organizacional (Qualquer diretório do AAD – contas Microsoft multilocatário e pessoais, por ex. Skype, Xbox, Outlook.com)*, insira a palavra **comum** em vez de uma ID de locatário. Caso contrário, o aplicativo AAD verificará o locatário cuja ID foi selecionada e excluirá as contas MS pessoais.
+        - Contudo, se você tiver selecionado *Contas em qualquer diretório organizacional (Qualquer diretório do AAD – contas Microsoft multilocatário e pessoais, por ex. Skype, Xbox, Outlook.com)* , insira a palavra **comum** em vez de uma ID de locatário. Caso contrário, o aplicativo AAD verificará o locatário cuja ID foi selecionada e excluirá as contas MS pessoais.
 
        Esse será o locatário associado aos usuários que podem ser autenticados.
 
@@ -210,9 +210,9 @@ A próxima etapa é registrar com seu bot o aplicativo do Azure AD que você aca
     1. Para **Segredo do cliente**, insira o segredo que você criou para permitir que o bot acesse o aplicativo do Azure AD.
     1. Para **ID do Locatário**, insira a **ID do diretório (locatário)** que você registrou anteriormente para seu aplicativo AAD ou **comum** dependendo dos tipos de conta com suporte selecionados quando você criou o aplicativo AAD. Para decidir qual valor atribuir, siga estes critérios:
 
-        - Ao criar o aplicativo AAD, se você tiver selecionado *Contas neste diretório organizacional apenas (somente Microsoft – Locatário único)* ou *Contas em qualquer diretório organizacional (diretório do Microsoft AAD – multilocatário)*, insira a **ID do locatário** que você registrou anteriormente para o aplicativo do AAD.
+        - Ao criar o aplicativo AAD, se você tiver selecionado *Contas neste diretório organizacional apenas (somente Microsoft – Locatário único)* ou *Contas em qualquer diretório organizacional (diretório do Microsoft AAD – multilocatário)* , insira a **ID do locatário** que você registrou anteriormente para o aplicativo do AAD.
 
-        - Contudo, se você tiver selecionado *Contas em qualquer diretório organizacional (Qualquer diretório do AAD – contas Microsoft multilocatário e pessoais, por ex. Skype, Xbox, Outlook.com)*, insira a palavra **comum** em vez de uma ID de locatário. Caso contrário, o aplicativo AAD verificará o locatário cuja ID foi selecionada e excluirá as contas MS pessoais.
+        - Contudo, se você tiver selecionado *Contas em qualquer diretório organizacional (Qualquer diretório do AAD – contas Microsoft multilocatário e pessoais, por ex. Skype, Xbox, Outlook.com)* , insira a palavra **comum** em vez de uma ID de locatário. Caso contrário, o aplicativo AAD verificará o locatário cuja ID foi selecionada e excluirá as contas MS pessoais.
 
        Esse será o locatário associado aos usuários que podem ser autenticados.
 
@@ -240,7 +240,7 @@ Agora você pode usar esse nome de conexão no código do bot para recuperar tok
 
 Você precisará da ID de aplicativo e da senha do seu bot para concluir este processo.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 <!-- TODO: Add guidance (once we have it) on how not to hard-code IDs and ABS auth. -->
 
@@ -254,7 +254,7 @@ Você precisará da ID de aplicativo e da senha do seu bot para concluir este pr
 
     [!code-json[appsettings](~/../botbuilder-samples/samples/csharp_dotnetcore/18.bot-authentication/appsettings.json)]
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 1. Crie um clone no repositório do github com o qual você deseja trabalhar: [**Autenticação de bot**][js-auth-sample] ou [**Autenticação de bot MSGraph**][js-msgraph-sample].
 1. Atualize **.env**:
@@ -266,7 +266,7 @@ Você precisará da ID de aplicativo e da senha do seu bot para concluir este pr
 
     [!code-txt[.env](~/../botbuilder-samples/samples/javascript_nodejs/18.bot-authentication/.env)]
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 1. Clone o exemplo de [**Autenticação do bot**][python-auth-sample] do repositório do github.
 1. Atualize **config.py**:
@@ -276,7 +276,7 @@ Você precisará da ID de aplicativo e da senha do seu bot para concluir este pr
 
       Dependendo dos caracteres do segredo do bot, você pode precisar ignorar a senha com XML. Por exemplo, qualquer "e" comercial (&) será necessário a ser codificado como `&amp;`.
 
-    [!code-python[config](~/../botbuilder-python/samples/python/18.bot-authentication/config.py)]
+    [!code-python[config](~/../botbuilder-samples/samples/python/18.bot-authentication/config.py)]
 
 ---
 
@@ -335,7 +335,7 @@ As seções a seguir descrevem como o exemplo implementa algumas tarefas de aute
 
 ### <a name="use-an-oauth-prompt-to-sign-the-user-in-and-get-a-token"></a>Use um prompt do OAuth para conectar o usuário e obter um token
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ![Arquitetura de bot](media/how-to-auth/architecture.png)
 
@@ -358,7 +358,7 @@ Dentro da etapa de diálogo a seguir, procure a presença de um token no resulta
 
 [!code-csharp[Get the OAuthPrompt result](~/../botbuilder-samples/samples/csharp_dotnetcore/18.bot-authentication/Dialogs/MainDialog.cs?range=54-56)]
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ![Arquitetura de bot](media/how-to-auth/architecture-js.png)
 
@@ -379,8 +379,7 @@ Dentro da etapa de diálogo a seguir, procure a presença de um token no resulta
 
 [!code-javascript[Get OAuthPrompt result](~/../botbuilder-samples/samples/javascript_nodejs/18.bot-authentication/dialogs/mainDialog.js?range=62-63)]
 
-
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 ![Arquitetura de bot](media/how-to-auth/architecture-python.png)
 
@@ -388,18 +387,18 @@ Dentro da etapa de diálogo a seguir, procure a presença de um token no resulta
 
 Adicione um prompt do OAuth a **MainDialog** em seu construtor. Aqui, o valor do nome da conexão foi recuperado do arquivo **config.py**.
 
-[!code-python[Add OAuthPrompt](~/../botbuilder-python/samples/python/18.bot-authentication/dialogs/main_dialog.py?range=34-44)]
+[!code-python[Add OAuthPrompt](~/../botbuilder-samples/samples/python/18.bot-authentication/dialogs/main_dialog.py?range=34-44)]
 
 Dentro de uma etapa de diálogo, use `begin_dialog` para iniciar o prompt do OAuth, que pede ao usuário para entrar.
 
 - Se o usuário já estiver conectado, isso irá gerar um evento de resposta de token, sem avisar o usuário.
 - Caso contrário, será solicitado que o usuário entre. O Serviço de Bot do Azure envia o evento de resposta do token depois que o usuário tenta entrar.
 
-[!code-python[Add OAuthPrompt](~/../botbuilder-python/samples/python/18.bot-authentication/dialogs/main_dialog.py?range=49)]
+[!code-python[Add OAuthPrompt](~/../botbuilder-samples/samples/python/18.bot-authentication/dialogs/main_dialog.py?range=49)]
 
 Dentro da etapa de diálogo a seguir, procure a presença de um token no resultado da etapa anterior. Se não for nulo, o usuário foi conectado com êxito.
 
-[!code-python[Add OAuthPrompt](~/../botbuilder-python/samples/python/18.bot-authentication/dialogs/main_dialog.py?range=54-65)]
+[!code-python[Add OAuthPrompt](~/../botbuilder-samples/samples/python/18.bot-authentication/dialogs/main_dialog.py?range=54-65)]
 
 ---
 
@@ -407,7 +406,7 @@ Dentro da etapa de diálogo a seguir, procure a presença de um token no resulta
 
 Quando iniciamos um prompt do OAuth, ele aguarda um evento de resposta de token, a partir do qual ele recupera o token do usuário.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 **Bots\AuthBot.cs**
 
@@ -415,7 +414,7 @@ Quando iniciamos um prompt do OAuth, ele aguarda um evento de resposta de token,
 
 [!code-csharp[OnTokenResponseEventAsync](~/../botbuilder-samples/samples/csharp_dotnetcore/18.bot-authentication/Bots/AuthBot.cs?range=32-38)]
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 **bots/authBot.js**
 
@@ -423,13 +422,13 @@ Quando iniciamos um prompt do OAuth, ele aguarda um evento de resposta de token,
 
 [!code-javascript[onTokenResponseEvent](~/../botbuilder-samples/samples/javascript_nodejs/18.bot-authentication/bots/authBot.js?range=29-31)]
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 **bots/auth_bot.py**
 
 **AuthBot** lida explicitamente com atividades de evento de resposta de token. Aqui, damos sequência ao diálogo ativo, que permite que o prompt do OAuth processe o evento e recupere o token.
 
-[!code-python[on_token_response_event](~/../botbuilder-python/samples/python/18.bot-authentication/bots/auth_bot.py?range=38-44)]
+[!code-python[on_token_response_event](~/../botbuilder-samples/samples/python/18.bot-authentication/bots/auth_bot.py?range=38-44)]
 
 ---
 
@@ -437,58 +436,55 @@ Quando iniciamos um prompt do OAuth, ele aguarda um evento de resposta de token,
 
 Considera-se melhor prática permitir que os usuários saiam ou se desconectem explicitamente, em vez de esperar que a conexão atinja o tempo limite.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
-**Dialogs\LogoutDialog.cs**
+**Dialogs\LogoutDialog.cs** [!code-csharp[Allow logout](~/../botbuilder-samples/samples/csharp_dotnetcore/18.bot-authentication/Dialogs/LogoutDialog.cs?range=44-61&highlight=11)]
 
-[!code-csharp[Allow logout](~/../botbuilder-samples/samples/csharp_dotnetcore/18.bot-authentication/Dialogs/LogoutDialog.cs?range=44-61&highlight=11)]
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+**dialogs/logoutDialog.js** [!code-javascript[Allow logout](~/../botbuilder-samples/samples/javascript_nodejs/18.bot-authentication/dialogs/logoutDialog.js?range=31-42&highlight=7)]
 
-**dialogs/logoutDialog.js**
+# <a name="python"></a>[Python](#tab/python)
 
-[!code-javascript[Allow logout](~/../botbuilder-samples/samples/javascript_nodejs/18.bot-authentication/dialogs/logoutDialog.js?range=31-42&highlight=7)]
-
-# <a name="pythontabpython"></a>[Python](#tab/python)
-
-**dialogs/logout_dialog.py**
-
-[!code-python[allow logout](~/../botbuilder-python/samples/python/18.bot-authentication/dialogs/logout_dialog.py?range=27-34&highlight=6)]
+**dialogs/logout_dialog.py** [!code-python[allow logout](~/../botbuilder-samples/samples/python/18.bot-authentication/dialogs/logout_dialog.py?range=27-34&highlight=6)]
 
 ---
 
 ### <a name="adding-teams-authentication"></a>Como adicionar autenticação do Teams
 
 O Teams se comporta de maneira um pouco diferente de outros canais em relação ao OAuth e exige algumas alterações para implementar a autenticação corretamente. Adicionaremos o código do exemplo de Bot de Autenticação do Teams ([C#][cs-teams-auth-sample]/[JavaScript][js-teams-auth-sample]).
- 
-Uma diferença entre outros canais e o Temas é o Teams envia uma atividade de *invocação* para o bot, em vez de uma atividade de *evento*. 
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)  
+Uma diferença entre outros canais e o Temas é o Teams envia uma atividade de *invocação* para o bot, em vez de uma atividade de *evento*.
+
+# <a name="c"></a>[C#](#tab/csharp)
+
 **Bots/TeamsBot.cs**  
 [!code-csharp[Invoke Activity](~/../botbuilder-samples/samples/csharp_dotnetcore/46.teams-auth/Bots/TeamsBot.cs?range=34-42&highlight=1)]
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)   
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 **bots/teamsBot.js**  
 [!code-javascript[Invoke Activity](~/../botbuilder-samples/samples/javascript_nodejs/46.teams-auth/bots/teamsBot.js?range=16-25&highlight=1)]
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 Atualmente, o Microsoft Teams é ligeiramente diferente quanto à maneira da integração da autenticação com o bot. Consulte a [Documentação do Teams](https://aka.ms/teams-docs) na autenticação.
 
 ---
 
-Se você usar um *prompt OAuth*, essa atividade de invocação deverá ser encaminhada para a caixa de diálogo. Faremos isso no `TeamsActivityHandler`. Adicione o código a seguir ao arquivo de caixa de diálogo principal. 
+Se você usar um *prompt OAuth*, essa atividade de invocação deverá ser encaminhada para a caixa de diálogo. Faremos isso no `TeamsActivityHandler`. Adicione o código a seguir ao arquivo de caixa de diálogo principal.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)  
+# <a name="c"></a>[C#](#tab/csharp)
+
 **Bots/DialogBot.cs**  
 [!code-csharp[Dialogs Handler](~/../botbuilder-samples/samples/csharp_dotnetcore/46.teams-auth/Bots/DialogBot.cs?range=19)]
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)  
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
 **Bots/dialogBot.js**  
 [!code-javascript[Dialogs Handler](~/../botbuilder-samples/samples/javascript_nodejs/46.teams-auth/bots/dialogBot.js?range=6)]
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 Atualmente, o Microsoft Teams é ligeiramente diferente quanto à maneira da integração da autenticação com o bot. Consulte a [Documentação do Teams](https://aka.ms/teams-docs) na autenticação.
 

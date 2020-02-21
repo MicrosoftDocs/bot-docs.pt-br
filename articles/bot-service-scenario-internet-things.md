@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 1089296005b060185617e4bf0280cb81198b32a2
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: a6714a7eabb2af22e9a06b2a151cab1c9fa8a2f2
+ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75795046"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441584"
 ---
 # <a name="internet-of-things-iot-bot-scenario"></a>Cenário de Bot de IoT (Internet das Coisas)
 

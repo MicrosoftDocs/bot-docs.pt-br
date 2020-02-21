@@ -9,20 +9,20 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/10/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 7662e5e2d933d7a4500da8eadc0d914f9978800d
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 142be4087cccf39862833dc0308ec19dffc0342e
+ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75789188"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441562"
 ---
 # <a name="set-up-continuous-deployment"></a>Configurar a implantação contínua
 
 [!INCLUDE [applies-to](./includes/applies-to.md)]
 
-Este artigo mostra como configurar a implantação contínua para seu bot. Você pode habilitar a implantação contínua para implantar automaticamente as alterações no código do seu repositório de código-fonte para o Azure. Neste tópico, abordaremos como configurar a implantação contínua para o GitHub. Para obter informações sobre como configurar a implantação contínua com outros sistemas de controle de código-fonte, consulte a seção de recursos adicionais na parte inferior desta página.
+Este artigo mostra como configurar a implantação contínua para seu bot. Você pode habilitar a implantação contínua para implantar automaticamente as alterações no código do seu repositório de código-fonte para o Azure. Neste tópico, abordaremos como configurar a implantação contínua para o GitHub. Para obter informações sobre como configurar a implantação contínua com outros sistemas de controle de código-fonte, confira a seção de recursos adicionais na parte inferior desta página.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 - Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://portal.azure.com) antes de começar.
 - Você **precisa** [implantar o bot no Azure](bot-builder-deploy-az-cli.md) antes de habilitar a implantação contínua.
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: ebf63a7bfceb6f70084a7897508c328a017aa5f0
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 2b7d960514970c0d04d9ff37550874dc9de69cde
+ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75794786"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441238"
 ---
 # <a name="cortana-skills-bot-scenario"></a>Cenário de Bot de Habilidades da Cortana
 

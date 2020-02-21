@@ -8,12 +8,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 07/25/2019
-ms.openlocfilehash: 35772bd4e31cad4787f6ef8b50a56503bfbef55c
-ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
+ms.openlocfilehash: 1b1de46c2b97ca369a6fcc19fd27bafc22838989
+ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75491217"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441492"
 ---
 # <a name="use-webchat-with-the-direct-line-app-service-extension"></a>Habilitar o WebChat com a extensão de serviço de aplicativo do Direct Line
 

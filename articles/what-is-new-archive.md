@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 11/28/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 91a0ba8d2e13d8f17213ac9669eca374e27e3863
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 95ce084b68da41d9d9f434348c4539c9f67a2c78
+ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75791048"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441523"
 ---
 # <a name="whats-new-november-2019"></a>Novidades em novembro de 2019
 
@@ -179,7 +179,7 @@ O [QnA Maker][33] é um serviço de API baseado em nuvem que cria uma camada de 
 Os [Serviços de Fala](https://docs.microsoft.com/azure/cognitive-services/speech-service/) convertem áudio em texto, realizam tradução de fala e conversão de texto em fala com os serviços de Fala unificados. Com os serviços de fala, você pode integrar fala ao seu bot, criar palavras de ativação personalizadas e criar em vários idiomas.
 
 ### <a name="adaptive-cards"></a>Cartões Adaptáveis
-Os [Cartões Adaptáveis](https://adaptivecards.io) são um padrão aberto para desenvolvedores poderem trocar conteúdo de cartão de maneira comum e consistente, e são usados por desenvolvedores do Bot Framework para criar ótimas experiências de conversa entre canais.
+Os [Cartões Adaptáveis](https://adaptivecards.io) são um padrão aberto para desenvolvedores trocarem conteúdo de cartão de maneira comum e consistente e são usados por desenvolvedores do Bot Framework para criar ótimas experiências de conversa entre canais.
 
 ## <a name="additional-information"></a>Informações adicionais
 - Visite a [página do GitHub](https://github.com/Microsoft/botframework/blob/master/whats-new.md#whats-new) para obter mais informações.

@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 3d3f40e5a24b349aff64791d35929017c5c0adfb
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: b4c61d703c3d0a6b5b9191bf8b39a99da3d9be9a
+ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75794846"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441512"
 ---
 # <a name="enterprise-productivity-bot-scenario"></a>Cenário de bot de Produtividade Empresarial
 

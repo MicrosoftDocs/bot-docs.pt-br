@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 1/7/2019
-ms.openlocfilehash: 092a8327f4a4828642a413201dc0c9483b779345
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 7898546aeb517fcf1ea4af50e35851a3f09ba633
+ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75791945"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441552"
 ---
 # <a name="connect-a-bot-to-line"></a>Conectar um bot ao LINE
 
@@ -122,6 +122,6 @@ Como alternativa, você pode optar por manter essas mensagens. Nesse caso, pode 
 ## <a name="troubleshooting"></a>Solução de problemas
 
 * Caso seu bot não esteja respondendo a nenhuma das mensagens, navegue até seu bot no portal do Azure e escolha Testar no Webchat.  
-    * Se o bot funcionar no Webchat, mas não responder no LINE, recarregue a página do Console do desenvolvedor do LINE e repita as instruções para o webhook acima. Certifique-se de que define a **URL do webhook** antes de habilitar os webhooks.
+    * Caso o bot funcione no Webchat, mas não responda no LINE, recarregue a página do Console do Desenvolvedor do LINE e repita as instruções para o webhook acima. Certifique-se de que define a **URL do webhook** antes de habilitar os webhooks.
     * Se o bot não funcionar no Webchat, depure o problema do bot e, em seguida, volte e conclua a configuração do canal do LINE.
 

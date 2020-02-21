@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 596d11bacd55c73011176abf76e07e9b05ecc229
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 33bf7224b31902c9a53f572efb2379323994db00
+ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75792334"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441291"
 ---
 # <a name="design-bot-navigation"></a>Design da navegação do bot
 
