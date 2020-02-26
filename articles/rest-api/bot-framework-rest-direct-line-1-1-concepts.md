@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 227e6e27594db8c51aa8808709cabd47cade4084
-ms.sourcegitcommit: d24fe2178832261ac83477219e42606f839dc64d
+ms.openlocfilehash: d519bd6fa363cf47afa1609aa1930f4635e9e745
+ms.sourcegitcommit: 308e6df385b9bac9c8d60f8b75eabc813b823c38
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77071755"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77520015"
 ---
 # <a name="key-concepts-in-direct-line-api-11"></a>Principais conceitos da API de Linha Direta 1.1
 
@@ -44,7 +44,3 @@ Usando a API de Linha Direta 1.1, um cliente pode receber mensagens por meio da 
 A Estrutura de Bot fornece uma biblioteca de clientes que facilita o acesso à API de Linha Direta 1.1 por meio do C#. Para usar a biblioteca de clientes em um projeto do Visual Studio, instale o <a href="https://www.nuget.org/packages/Microsoft.Bot.Connector.DirectLine/1.1.1" target="_blank">pacote NuGet v1.x</a> do `Microsoft.Bot.Connector.DirectLine`. 
 
 Como alternativa ao uso da biblioteca de clientes do C#, você pode gerar sua própria biblioteca de clientes na linguagem da sua preferência usando o <a href="https://docs.botframework.com/restapi/directline/swagger.json" target="_blank">arquivo Swagger da API de Linha Direta 1.1</a>.
-
-### <a name="web-chat-control"></a>Controle de webchat 
-
-O Bot Framework fornece um controle que permite incorporar um bot de linha direta em seu aplicativo cliente. Para obter mais informações, consulte o <a href="https://github.com/Microsoft/BotFramework-WebChat" target="_blank">controle WebChat do Microsoft Bot Framework</a>.

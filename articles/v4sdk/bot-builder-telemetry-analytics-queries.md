@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 01/10/2020
-ms.openlocfilehash: a1762e79ab1524f05818d546d04c2e8a1df5fcdd
-ms.sourcegitcommit: caaf394017dbdb1cfaba32e2d0a1e32c5ab71792
+ms.openlocfilehash: b6688c99226653bb95290d583028e0e5275c973f
+ms.sourcegitcommit: 4ddee4f90a07813ce570fdd04c8c354b048e22f3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75869826"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77479324"
 ---
 # <a name="analyze-your-bots-telemetry-data"></a>Analisar os dados telemétricos do seu bot 
 
@@ -21,7 +21,7 @@ ms.locfileid: "75869826"
 
 A coleção de consultas a seguir pode ser usada para analisar o comportamento do bot. Você pode usar a coleção para criar consultas personalizadas no [Azure Monitor Log Analytics](https://aka.ms/log-analytics-azure-monitor) e para criar dashboards de monitoramento e de visualização do [PowerBI](https://aka.ms/power-bi-overview).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 É útil ter uma compreensão básica dos seguintes conceitos:
 
 * [Consultas Kusto](https://aka.ms/Kusto-query-overview)
@@ -564,6 +564,6 @@ a instrumentação do QnAMaker armazena os dados nos campos Dimensões Personali
 
 * Para obter um tutorial sobre como escrever consultas de log, confira [Introdução às consultas de log no Azure Monitor](https://aka.ms/azure-monitor-log-queries-get-started)
 * [Visualizar dados do Azure Monitor](https://aka.ms/azure-monitor-visualize-data)
-* Saiba como [Adicionar telemetria ao seu bot](https://aka.ms/AddBotTelemetry)
+* Saiba como [Adicionar telemetria ao seu bot](https://aka.ms/add-bot-telemetry)
 * Saiba mais sobre [Consultas de log do Azure Monitor](https://aka.ms/azure-monitor-log-queries)
 * [Criar e compartilhar dashboards de dados do Log Analytics](https://aka.ms/log-analytics-create-share-dashboards)
