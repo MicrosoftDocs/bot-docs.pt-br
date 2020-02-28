@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 01/09/2020
-ms.openlocfilehash: 9190c2eefbfe290ea43531630473772addb1b60a
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: ad49ab4e1843f6ac06907f785bc3a64c63a85cf0
+ms.sourcegitcommit: 4ddee4f90a07813ce570fdd04c8c354b048e22f3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798880"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77479334"
 ---
 # <a name="create-a-bot-with-azure-bot-service"></a>Criar um bot com o Serviço de Bot do Azure
 
@@ -25,7 +25,7 @@ O Serviço de Bot do Azure fornece os principais componentes para a criação de
 
 [!INCLUDE [Azure vs local development](~/includes/snippet-quickstart-paths.md)]
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 - Conta do [Azure](https://portal.azure.com)
 
@@ -41,7 +41,7 @@ O Serviço de Bot do Azure fornece os principais componentes para a criação de
 3. Na folha **Serviço de Bot**, forneça as informações solicitadas sobre o bot, conforme especificado na tabela abaixo da imagem.  <br/>
  ![Folha Criar Bot de Aplicativo Web](../media/azure-bot-quickstarts/sdk-create-bot-service-blade.png)
 
- | Configuração | Valor sugerido | DESCRIÇÃO |
+ | Configuração | Valor sugerido | Descrição |
  | ---- | ---- | ---- |
  | **Nome do bot** | O nome de exibição do bot | O nome de exibição do bot exibido nos canais e nos diretórios. Esse nome pode ser alterado a qualquer momento. |
  | **Assinatura** | Sua assinatura | Selecione a assinatura do Azure que deseja usar. |
@@ -53,7 +53,7 @@ O Serviço de Bot do Azure fornece os principais componentes para a criação de
  | **Localização/plano de serviço de aplicativo** | O Plano do Serviço de Aplicativo  | Selecione um local para o [Plano do Serviço de Aplicativo](https://azure.microsoft.com/pricing/details/app-service/plans/). Sua escolha de localização pode ser qualquer local listado, embora geralmente seja melhor escolher o mesmo do serviço de bot. |
  | **Contas do LUIS** _Somente disponíveis para o modelo de Bot Básico_ | Nome do Recurso do Azure do LUIS | Depois de [migrar recursos do LUIS para um recurso do Azure](https://docs.microsoft.com/azure/cognitive-services/luis/luis-migration-authoring), insira o nome do recurso do Azure para associar esse aplicativo do LUIS a esse recurso do Azure. 
  | **Application Insights** | Por | Decida se deseja deixar o [Application Insights](/bot-framework/bot-service-manage-analytics) **Ativado** ou **Desativado**. Se você selecionar **Ativar**, será preciso especificar também um local regional. Sua escolha de localização pode ser qualquer local listado, embora geralmente seja melhor escolher o mesmo do serviço de bot. |
- | **ID do Aplicativo e senha da Microsoft** | Criar ID do Aplicativo e senha automaticamente | Use essa opção se precisar inserir manualmente uma ID do Aplicativo e uma senha da Microsoft. Caso contrário, uma nova ID do Aplicativo e uma nova senha da Microsoft serão criados para você no processo de criação de bot. Ao criar um registro de aplicativo manualmente para o Serviço de Bot, verifique se os tipos de conta compatíveis estão definidos como 'Contas em qualquer diretório organizacional' ou 'Contas em qualquer diretório organizacional e contas Microsoft pessoais (por exemplo, Skype, Outlook.com, Xbox etc.)' |
+ | **ID do Aplicativo e senha da Microsoft** | Criar ID do Aplicativo e senha automaticamente | Use essa opção se precisar inserir manualmente uma ID do Aplicativo e uma senha da Microsoft. Caso contrário, uma nova ID do Aplicativo e uma nova senha da Microsoft serão criados para você no processo de criação de bot. Ao criar um registro de aplicativo manualmente para o Serviço de Bot, verifique se os tipos de conta compatíveis estão definidos como "Contas em qualquer diretório organizacional" ou "Contas em qualquer diretório organizacional e contas Microsoft pessoais (por exemplo, Skype, Outlook.com, Xbox etc.)" |
 
 4. Clique em **Criar** para criar o serviço e implantar o bot na nuvem. Esse processo pode levar vários minutos.
 

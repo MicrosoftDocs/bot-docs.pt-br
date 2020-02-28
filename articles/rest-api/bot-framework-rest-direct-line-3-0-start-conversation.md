@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: bc3679c48f67ffc5fadfbc387ee41c69ad96884f
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: db6fc2049cbf5fe44ac4f8713c17b2081019fd82
+ms.sourcegitcommit: 308e6df385b9bac9c8d60f8b75eabc813b823c38
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75789286"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77519914"
 ---
 # <a name="start-a-conversation"></a>Iniciar uma conversa
 
@@ -20,7 +20,7 @@ As conversas de linha diretas explicitamente são abertas pelos clientes e podem
 
 ## <a name="open-a-new-conversation"></a>Abra uma nova conversa
 
-Para abrir uma nova conversa com um bot, execute esta solicitação:
+Para abrir uma nova conversa do cliente, emita POST para o ponto de extremidade /v3/directline/conversations.
 
 ```http
 POST https://directline.botframework.com/v3/directline/conversations
@@ -63,7 +63,7 @@ Normalmente, uma solicitação Iniciar Conversa é usada para abrir uma nova con
 
 A operação Iniciar Conversa (`POST /v3/directline/conversations`) é semelhante à operação [Gerar Token](bot-framework-rest-direct-line-3-0-authentication.md#generate-token) (`POST /v3/directline/tokens/generate`) em que ambas as operações retornam um `token` que pode ser usado para acessar uma única conversa. No entanto, a operação Iniciar Conversa também inicia a conversa, entra em contato com o bot e cria uma URL de fluxo do WebSocket, enquanto que a operação Gerar Token não faz nenhuma dessas coisas. 
 
-Se você pretende iniciar a conversa imediatamente, use a operação Iniciar Conversa. Se você planeja distribuir o token para clientes e deseja que eles iniciem a conversa, use a operação [Gerar Token](bot-framework-rest-direct-line-3-0-authentication.md#generate-token). 
+Se você pretende iniciar a conversa imediatamente com o cliente, use a operação Iniciar Conversa. Se você planeja distribuir o token para clientes e deseja que eles iniciem a conversa, use a operação [Gerar Token](bot-framework-rest-direct-line-3-0-authentication.md#generate-token). 
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

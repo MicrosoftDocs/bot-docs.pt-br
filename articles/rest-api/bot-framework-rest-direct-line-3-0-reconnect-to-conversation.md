@@ -6,13 +6,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 2/09/2019
-ms.openlocfilehash: c3bca14fe3c909417d016c01a9c48f9ec41c8ba4
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.date: 2/20/2020
+ms.openlocfilehash: fda80c8e0dc4aaf5169730615b5cfc3acda16160
+ms.sourcegitcommit: 308e6df385b9bac9c8d60f8b75eabc813b823c38
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75789323"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77519905"
 ---
 # <a name="reconnect-to-a-conversation"></a>Reconectar-se a uma conversa
 
@@ -27,7 +27,7 @@ GET https://directline.botframework.com/v3/directline/conversations/{conversatio
 Authorization: Bearer SECRET_OR_TOKEN
 ```
 
-Nesse URI de solicitação, substitua **{conversationId}** pela ID de conversa e **{watermark_value}** pelo valor de marca-d'água (caso o parâmetro `watermark` seja fornecido). O `watermark` é opcional. Se o parâmetro `watermark` for especificado no URI de solicitação, a conversa será reproduzida com base na marca-d'água, garantindo que nenhuma mensagem seja perdida. Se o parâmetro `watermark` for omitido do URI de solicitação, apenas as mensagens recebidas após a solicitação de reconexão serão reproduzidas.
+Nesse URI de solicitação, substitua **{conversationId}** pela ID de conversa e **{watermark_value}** pelo valor de marca-d'água (caso o parâmetro `watermark` esteja disponível). O `watermark` é opcional. Se o parâmetro `watermark` for especificado no URI de solicitação, a conversa será reproduzida com base na marca-d'água, garantindo que nenhuma mensagem seja perdida. Se o parâmetro `watermark` for omitido do URI de solicitação, apenas as mensagens recebidas após a solicitação de reconexão serão reproduzidas.
 
 Os snippets a seguir fornecem um exemplo da solicitação de Reconexão e da resposta.
 
@@ -59,7 +59,7 @@ HTTP/1.1 200 OK
 
 O cliente precisa usar a nova URL de fluxo do WebSocket para [se reconectar à conversa](bot-framework-rest-direct-line-3-0-receive-activities.md#connect-via-websocket) em até 60 segundos. Se a conexão não puder ser estabelecida durante esse tempo, o cliente precisará emitir outra solicitação de Reconexão para gerar uma nova URL de fluxo.
 
-Se você tiver a “Opção de autenticação avançada” habilitada nas definições de Direct Line, você poderá receber um erro 400 “MissingProperty” dizendo que nenhuma ID de usuário foi especificada.
+Se você tiver a "Opção de autenticação avançada" habilitada nas configurações do Direct Line, poderá receber um erro 400 "MissingProperty" se não tiver um token configurado corretamente anexado à solicitação. 
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

@@ -7,25 +7,23 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 4b8a3046ee53d90fe2abdc97a3c931a4f67c051f
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 67c74bc3f51328370e4d6ba207855b20e4d79497
+ms.sourcegitcommit: 308e6df385b9bac9c8d60f8b75eabc813b823c38
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75789428"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77519995"
 ---
 # <a name="end-a-conversation"></a>Terminar uma conversa
 
 A [atividade](https://aka.ms/botSpecs-activitySchema) **endOfConversation** significa que o canal ou o bot encerrou a conversa. 
 
 > [!NOTE] 
-> Embora o evento **endOfConversation** só seja enviado por pouquíssimos canais, o canal da Cortana é o único que o aceita. Outros canais, incluindo o Direct Line, não implementam essa funcionalidade e, em vez disso, descartam ou encaminham a atividade; cada canal determina como reagir a uma atividade endOfConversation. Se você estiver criando um cliente DirectLine, atualize o cliente para ele se comportar adequadamente, por exemplo, gerar um erro se o bot enviar uma atividade para uma conversa que já terminou.
+> Embora o evento **endOfConversation** só seja enviado por pouquíssimos canais, o canal da Cortana é o único que o aceita. Outros canais, incluindo o Direct Line, não implementam essa funcionalidade e, em vez disso, descartam ou encaminham a atividade; cada canal determina como reagir a uma atividade endOfConversation.
 
 ## <a name="send-an-endofconversation-activity"></a>Enviar uma atividade endOfConversation
 
-Uma atividade **endOfConversation** termina a comunicação entre o bot e o cliente. Depois que uma atividade **endOfConversation** foi enviada, o cliente ainda pode [recuperar mensagens](bot-framework-rest-direct-line-3-0-receive-activities.md#http-get) usando `HTTP GET`, mas nem o cliente nem o bot podem enviar mensagens adicionais para a conversa. 
-
-Para encerrar uma conversa, basta emitir uma solicitação POST para enviar uma atividade **endOfConversation**.
+Para solicitar a finalização de uma conversa com o canal da Cortana, emita o POST de Fim da Atividade de Conversa para o ponto de extremidade de mensagens do canal.
 
 ### <a name="request"></a>Solicitação
 

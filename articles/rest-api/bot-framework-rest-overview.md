@@ -6,13 +6,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 12/13/2017
-ms.openlocfilehash: 2c42b39f838177dcc0e07b53357ab1395500e010
-ms.sourcegitcommit: d24fe2178832261ac83477219e42606f839dc64d
+ms.date: 02/20/2020
+ms.openlocfilehash: 45063ef0d172e8b2874b3943ab74b57860f7c0f1
+ms.sourcegitcommit: 308e6df385b9bac9c8d60f8b75eabc813b823c38
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77071794"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77519945"
 ---
 # <a name="bot-framework-rest-apis"></a>APIs REST do Bot Framework
 > [!div class="op_single_selector"]
@@ -20,17 +20,18 @@ ms.locfileid: "77071794"
 > - [Node.js](../nodejs/bot-builder-nodejs-overview.md)
 > - [REST](../rest-api/bot-framework-rest-overview.md)
 
-As APIs REST do Bot Framework permitem que você crie bots que trocam mensagens com canais configurados no [Portal do Azure](https://portal.azure.com), armazenam e recuperam dados de estado e conectam seus próprios aplicativos de cliente aos seus bots. Todos os serviços de Bot Framework usam REST e JSON padrão do setor sobre HTTPS.
+A maioria dos bots do Bot Framework é criada usando o SDK do Bot Framework, que organiza o bot e processa toda a conversa para você. Uma alternativa ao uso do SDK é enviar mensagens diretamente para o bot usando a API REST.
 
 ## <a name="build-a-bot"></a>Criar um bot
-
-Você pode criar um bot com qualquer linguagem de programação usando o serviço Bot Connector para trocar mensagens com canais configurados no Portal do Bot Framework. 
+Ao codificar as APIs REST do Bot Framework, você pode enviar e receber mensagens com usuários em qualquer canal configurado no registro do Serviço de Bot do Azure do bot.
 
 > [!TIP]
 > O Bot Framework fornece bibliotecas de cliente que podem ser usadas para criar bots em C# ou Node.js. Para criar um bot usando C#, use o [SDK do Bot Framework para C#](../dotnet/bot-builder-dotnet-overview.md). Para criar um bot usando Node.js, use o [SDK do Bot Framework para Node.js](../nodejs/index.md). 
 
-Para saber mais sobre como criar bots usando o serviço Bot Connector, veja [Conceitos principais](bot-framework-rest-connector-concepts.md).
+Consulte [Serviço de Bot do Azure](../bot-service-overview-introduction.md) para saber mais sobre a criação de bots usando o serviço. 
 
-## <a name="build-a-client"></a>Criar um cliente
+## <a name="build-a-direct-line-or-web-chat-client"></a>Criar um cliente do Direct Line ou do Webchat
 
-Você pode habilitar seu próprio aplicativo cliente para se comunicar com seu bot usando a API de Linha Direta. A API de Linha Direta implementa um mecanismo de autenticação que usa os padrões de segredo/token padrão e fornece um esquema estável, mesmo que seu bot mude sua versão de protocolo. Para saber mais sobre como usar a API de Linha Direta para habilitar a comunicação entre um cliente e seu bot, veja [Conceitos principais](bot-framework-rest-direct-line-3-0-concepts.md). 
+A maioria dos canais, como Facebook, Teams ou Slack, fornece clientes, mas, com o Direct Line e o Webchat, você pode habilitar seu próprio aplicativo cliente para comunicar-se com seu bot. A API de Linha Direta implementa um mecanismo de autenticação que usa os padrões de segredo/token padrão e fornece um esquema estável, mesmo que seu bot mude sua versão de protocolo. Para saber mais sobre como usar a API de Linha Direta para habilitar a comunicação entre um cliente e seu bot, veja [Conceitos principais](bot-framework-rest-direct-line-3-0-concepts.md). 
+
+Os clientes do Direct Line e do Webchat podem estar em diferentes linguagens e implantações (por exemplo, um aplicativo, em vez de um serviço). Para obter mais informações, confira [Sobre o Direct Line](https://docs.microsoft.com/azure/bot-service/bot-service-channel-directline?view=azure-bot-service-4.0).

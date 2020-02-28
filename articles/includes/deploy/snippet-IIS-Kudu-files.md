@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3cd58ddac050139b93eb4ee39909b04289afd821
-ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
+ms.openlocfilehash: 3a3d1056e9c6f913efbf563131a5ab377a57d2d0
+ms.sourcegitcommit: 4ddee4f90a07813ce570fdd04c8c354b048e22f3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77446014"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77479242"
 ---
 
 É necessário preparar os arquivos do projeto para implantar o bot de C#, Javascript ou Typescript. Se estiver implantando um bot de Python, ignore esta etapa.
@@ -39,5 +39,8 @@ Esse comando funciona da mesma forma que o JavaScript acima, mas para um bot Typ
 ---
 
 > [!NOTE]
->  Para bots C# e bots JavaScript, o comando `az bot prepare-deploy` deve gerar um arquivo `.deployment` na pasta do projeto do bot.
-> Para bots TypeScript, o comando deve gerar dois arquivos `web.config`. Um deles está na pasta do projeto e o outro na pasta **src** dentro da pasta do projeto. 
+>  Para bots C#, o comando `az bot prepare-deploy` gera o arquivo sa `.deployment` na pasta do projeto de bot.
+> Para bots JavaScript, o comando gera dois arquivos `web.config` na pasta do projeto.
+> Para bots TypeScript, o comando gera dois arquivos `web.config`. Um deles está na pasta do projeto e o outro na pasta **src** dentro da pasta do projeto.
+
+

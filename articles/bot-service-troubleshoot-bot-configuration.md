@@ -7,17 +7,17 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 4/30/2019
-ms.openlocfilehash: 6d5cb95c529a9a49f07681678f11a54c8f9e55b3
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.date: 2/20/2020
+ms.openlocfilehash: 775ffd3a72f69ad721eacbe31b27ddbe5b1fa5e5
+ms.sourcegitcommit: 308e6df385b9bac9c8d60f8b75eabc813b823c38
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75795715"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77519965"
 ---
 # <a name="troubleshoot-bot-configuration-issues"></a>Solucionar problemas de configuração de bot
 
-A primeira etapa na solução de problemas de um bot é testá-lo no Webchat. Isso permitirá que você determine se o problema é específico ao seu bot (o bot não funciona em nenhum canal) ou a um determinado canal (bot funciona em alguns canais, mas não em outros).
+Um bot pode gerar diferentes tipos de erros, como não ser capaz de responder, gerar erros ou trabalhar em um canal, mas não em outro. A primeira etapa na solução de problemas de um bot é testá-lo no Webchat. Isso permitirá que você determine se o problema é específico ao seu bot (o bot não funciona em nenhum canal) ou a um determinado canal (bot funciona em alguns canais, mas não em outros).
 
 ## <a name="test-in-web-chat"></a>Testar no Webchat
 
@@ -31,14 +31,19 @@ Se o bot não responder com a saída esperada, acesse [Bot não funciona no Webc
 
 ## <a name="bot-does-not-work-in-web-chat"></a>Bot não funciona no Webchat
 
-Pode haver vários motivos por que um bot não funciona. Provavelmente, o aplicativo bot está inoperante e não pode receber mensagens ou o bot recebe as mensagens mas não responde.
+Pode haver vários motivos por que um bot não funciona. Provavelmente, o aplicativo bot está inoperante e não pode receber mensagens ou o bot recebe as mensagens mas não responde. Aqui estão algumas das possíveis causas:
+
+- O bot está inoperante e não pode ser acessado.
+- O bot está falhando.
+- O ponto de extremidade do bot está incorreto.
+- O bot está recebendo suas mensagens com sucesso, mas não consegue responder.
 
 Para ver se o bot está em execução:
 
 1. Abra o painel **Visão geral**.
 1. Copie o **ponto de extremidade de mensagens** e cole-o no seu navegador.
 
-Se o ponto de extremidade retornar o erro HTTP 405, isso significa que o bot está acessível e o bot é capaz de responder às mensagens. Você deve investigar se seu bot [expira](https://github.com/daveta/analytics/blob/master/troubleshooting_timeout.md) ou [falha com um erro HTTP 5xx](bot-service-troubleshoot-500-errors.md).
+Se o ponto de extremidade retornar o erro HTTP 404 ou 405, isso significará que o bot está acessível e que é capaz de responder às mensagens. Para investigar problemas de tempo limite, confira os artigos [tempo limite](https://github.com/daveta/analytics/blob/master/troubleshooting_timeout.md) ou [falha com um erro HTTP 5xx](bot-service-troubleshoot-500-errors.md).
 
 Se o ponto de extremidade retornar um erro "Este site não pode ser acessado" ou "não é possível acessar esta página", significa que seu bot está desativado e você precisará reimplantá-lo.
 
@@ -57,12 +62,12 @@ Se o bot funciona conforme o esperado no Webchat mas falha em algum outro canal,
 
 ### <a name="channel-configuration-issues"></a>Problemas de configuração de canal
 
-É possível que os parâmetros de configuração de canal foram definidos incorretamente ou foram alterados externamente. Por exemplo, um bot configurou o canal do Facebook para uma página específica e a página foi posteriormente excluída. A solução mais simples é remover o canal e refazer a configuração do canal.
+É possível que os parâmetros de configuração do canal, como o nome de usuário e a senha do bot, tenham sido definidos de modo incorreto ou alterados externamente. Por exemplo, um bot foi configurado com o canal do Facebook para uma página específica e a página foi posteriormente excluída. A solução mais simples é remover o canal e refazer a configuração do canal.
 
 Os links a seguir fornecem instruções sobre como configurar canais com suporte no Bot Framework:
 
 - [Cortana](bot-service-channel-connect-cortana.md)
-- [DirectLine](bot-service-channel-connect-directline.md)
+- [Linha direta](bot-service-channel-connect-directline.md)
 - [Email](bot-service-channel-connect-email.md)
 - [Facebook](bot-service-channel-connect-facebook.md)
 - [GroupMe](bot-service-channel-connect-groupme.md)
@@ -76,7 +81,7 @@ Os links a seguir fornecem instruções sobre como configurar canais com suporte
 
 ### <a name="channel-specific-behavior"></a>Comportamento específico de canal
 
-A implementação de alguns recursos pode ser diferente por canal. Por exemplo, nem todos os canais dão suporte a cartões adaptáveis. A maioria dos canais oferecem suporte a Botões, mas eles são renderizados em um modo específico de canal. Se detectar diferenças em como alguns tipos de mensagem funcionam em canais distintos, consulte o artigo de [referência de canais](bot-service-channels-reference.md).
+A implementação de alguns recursos pode ser diferente por canal. Por exemplo, nem todos os canais dão suporte a cartões adaptáveis. A maioria dos canais é compatível com Ações (botões), mas é renderizada em um modo específico de canal. Se detectar diferenças em como alguns tipos de mensagem funcionam em canais distintos, consulte o artigo de [referência de canais](bot-service-channels-reference.md).
 
 Abaixo estão alguns links adicionais que podem ajudar com os canais individuais:
 
@@ -88,7 +93,7 @@ Abaixo estão alguns links adicionais que podem ajudar com os canais individuais
 
 ### <a name="channel-outage"></a>Interrupção de canal
 
-Ocasionalmente, alguns canais podem ter uma interrupção de serviço. Geralmente, essas interrupções não duram muito. No entanto, se você suspeitar de uma interrupção, consulte um site da web ou mídia social do canal.
+Ocasionalmente, alguns canais podem ter uma interrupção de serviço. Geralmente, essas interrupções não duram muito. No entanto, se você suspeitar de uma interrupção, confira o site ou a mídia social do canal.
 
 Outra maneira de determinar se um canal tem uma interrupção é criar um bot de teste (por exemplo, um Bot de Eco simples) e adicionar um canal. Se o bot de teste funciona com alguns canais, mas não com outros, indicaria que o problema não está em seu bot de produção.
 

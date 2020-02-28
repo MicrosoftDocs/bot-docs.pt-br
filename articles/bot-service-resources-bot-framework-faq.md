@@ -6,13 +6,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 11/21/2019
-ms.openlocfilehash: 96dfd465c34580dfd41f50c6a9be4d91be9e7b77
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.date: 02/19/2020
+ms.openlocfilehash: d7e667724250d3307a53cf41dc671db788c347bc
+ms.sourcegitcommit: 54d3febefaf0072172b17bd8e4ec456264dfbd42
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75794775"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521400"
 ---
 # <a name="bot-framework-frequently-asked-questions"></a>Perguntas frequentes sobre o Bot Framework
 
@@ -22,7 +22,7 @@ Este artigo contém respostas a algumas perguntas frequentes sobre o Bot Framewo
 
 ### <a name="why-did-microsoft-develop-the-bot-framework"></a>Por que a Microsoft desenvolveu o Bot Framework?
 
-Embora a CUI (Interface do Usuário de Conversa) já esteja entre nós, no momento, poucos desenvolvedores têm o conhecimento e as ferramentas necessárias para criar experiências de conversa ou habilitar aplicativos e serviços existentes com uma interface de conversa que os usuários possam aproveitar. Criamos o Bot Framework para facilitar para os desenvolvedores criar e conectar bots excelentes aos usuários, independentemente de onde eles conversarem, incluindo os canais premier da Microsoft.
+Criamos o Bot Framework para facilitar para os desenvolvedores criar e conectar bots excelentes aos usuários, independentemente do local em que eles conversarem, incluindo os canais premier da Microsoft.
 
 ### <a name="what-is-the-v4-sdk"></a>O que é o SDK v4?
 O SDK do Bot Framework v4 baseia-se nos comentários e nas lições aprendidas dos SDKs anteriores do Bot Framework. Ele apresenta os níveis certos de abstração, ao mesmo tempo que permite a "componentização" avançada dos blocos de construção de bot. Comece com um bot simples e aumente a sofisticação dele usando uma estrutura modular e extensível. Encontre as [perguntas frequentes](https://github.com/Microsoft/botbuilder-dotnet/wiki/FAQ) sobre o SDK no GitHub.
@@ -32,7 +32,7 @@ O SDK do Bot Framework v4 baseia-se nos comentários e nas lições aprendidas d
 <!-- WIP -->
 Antes de falar sobre o uso de um bot offline, o que significa que um bot não foi implantado no Azure ou em outros serviços de host, mas no local, vamos esclarecer alguns pontos.
 
-- Um bot é um serviço Web que não tem uma interface do usuário, portanto, ele deve interagir com o bot por outros meios, na forma de canais, que usam o [Serviço Conector do Azure](rest-api/bot-framework-rest-connector-concepts.md#bot-connector-service). O conector funciona como um *proxy* para retransmitir mensagens entre um cliente e o bot.
+- Um bot é um serviço Web que não tem uma interface do usuário, portanto, ele deve interagir com o bot por outros meios, na forma de canais, que usam o [Bot Framework Service](rest-api/bot-framework-rest-connector-concepts.md). O conector funciona como um *proxy* para retransmitir mensagens entre um cliente e o bot.
 - O **conector** é um aplicativo global hospedado em nós do Azure e distribuído geograficamente para obter disponibilidade e escalabilidade. 
 - Use o [Registro do Canal de Bot](bot-service-quickstart-registration.md) para registrar o bot com o conector.
     >[!NOTE]
@@ -59,8 +59,9 @@ Todos os novos recursos e funcionalidades são desenvolvidos exclusivamente no [
 
 É altamente recomendável começar a migrar seus bots da V3 para a V4. Para dar suporte a essa migração, criamos a documentação relacionada e forneceremos suporte estendido para iniciativas de migração (por meio dos canais padrão como o Stack Overflow e Suporte ao Cliente Microsoft).
 
+
 Para obter mais informações, confira as referências a seguir:
-* [Diretrizes essenciais para migração](https://aka.ms/bfv3v4migration)
+* [Diretrizes essenciais para migração](https://aka.ms/bf-migration-overview)
 * Repositórios v4 primários para desenvolver bots do Bot Framework
   * [Bot Builder para dotnet](https://github.com/microsoft/botbuilder-dotnet)
   * [Bot Builder para JS](https://github.com/microsoft/botbuilder-js) 
@@ -133,9 +134,7 @@ Você pode encontrar mais informações sobre serviços Governamentais [aqui](ht
 ## <a name="security-and-privacy"></a>Segurança e privacidade
 ### <a name="do-the-bots-registered-with-the-bot-framework-collect-personal-information-if-yes-how-can-i-be-sure-the-data-is-safe-and-secure-what-about-privacy"></a>Os bots registrados no Bot Framework coletam informações pessoais? Em caso afirmativo, como posso ter certeza de que os dados estão seguros e protegidos? E quanto à privacidade?
 
-Cada bot é seu próprio serviço, e os desenvolvedores desses serviços são obrigados a fornecer Termos de Serviço e Políticas de Privacidade de acordo com seu Código de Conduta do Desenvolvedor.  Acesse essas informações no cartão do bot no Diretório de Bots.
-
-para fornecer o serviço de E/S, o Bot Framework transmite sua mensagem e o conteúdo da mensagem (incluindo sua ID) do serviço de chat usado para o bot.
+Cada bot é seu próprio serviço, e os desenvolvedores desses serviços são obrigados a fornecer Termos de Serviço e Políticas de Privacidade de acordo com seu Código de Conduta do Desenvolvedor. Para obter mais informações, confira as [diretrizes de análise do bot](https://docs.microsoft.com/azure/bot-service/bot-service-review-guidelines?view=azure-bot-service-4.0).
 
 ### <a name="can-i-host-my-bot-on-my-own-servers"></a>Pode hospedar meu bot em meus próprios servidores?
 Sim. Seu bot pode ser hospedado em qualquer lugar na Internet. Em seus próprios servidores, no Azure ou em qualquer outro datacenter. O único requisito é que o bot deve expor um ponto de extremidade HTTPS publicamente acessível.
@@ -153,25 +152,38 @@ Se tiver um firewall de saída bloqueando o tráfego do seu bot com a Internet, 
 - cortanabfchanneleastus.azurewebsites.net (canal da Cortana)
 - cortanabfchannelwestus.azurewebsites.net (canal da Cortana)
 - *.botframework.com (canais)
+- URLs adicionais para canais específicos do Bot Framework
 
 > [!NOTE] 
 > Você poderá usar `<channel>.botframework.com` se preferir não adicionar uma URL com um asterisco à lista de permissões. `<channel>` é igual a cada canal que seu bot usa, como `directline.botframework.com`, `webchat.botframework.com` e `slack.botframework.com`. Também vale a pena observar o tráfego em seu firewall enquanto testa o bot para verificar se nada mais está sendo bloqueado.
 
-### <a name="can-i-block-all-traffic-to-my-bot-except-traffic-from-the-bot-connector-service"></a>Posso bloquear todo o tráfego para o meu bot, exceto o tráfego do Serviço de Conector do Bot?
-Não. Esse tipo de lista de permissões de DNS ou de endereço IP é inviável. O serviço Bot Framework Connector é hospedado em datacenters do Azure em todo o mundo e a lista de IPs do Azure está em constante mudança. A lista de permissões de determinados endereços IP pode funcionar um dia e parar no próximo, à medida que os Endereços IP do Azure mudam.
+### <a name="can-i-block-all-traffic-to-my-bot-except-traffic-from-the-bot-framework-service"></a>Posso bloquear todo o tráfego para o meu bot, exceto o tráfego do Bot Framework Service?
+Os Bot Framework Services são hospedados em datacenters do Azure em todo o mundo e a lista de IPs do Azure está em constante mudança. A lista de permissões de determinados endereços IP pode funcionar um dia e parar no próximo, à medida que os Endereços IP do Azure mudam.
  
-### <a name="what-keeps-my-bot-secure-from-clients-impersonating-the-bot-framework-connector-service"></a>O que mantém o meu bot protegido de clientes que representam o Serviço Bot Framework Connector ?
-1. O token de segurança que acompanha todas as solicitações feitas para seu bot tem a ServiceUrl codificada dentro dele, o que significa que, mesmo se um invasor obtiver acesso ao token, eles não conseguirá redirecionar a conversa para uma nova ServiceUrl. Isso é imposto por todas as implementações do SDK e documentado em nossos materiais de [referência](https://docs.microsoft.com/azure/bot-service/rest-api/bot-framework-rest-connector-authentication?view=azure-bot-service-3.0#bot-to-connector) de autenticação.
+### <a name="which-rbac-role-is-required-to-create-and-deploy-a-bot"></a>Qual função RBAC é necessária para criar e implantar um bot?
 
-2. Se o token de entrada estiver ausente ou se for malformado, o SDK do Bot Framework não irá gerar um token na resposta. Isso limita o dano que poderá ocorrer se o bot for configurado incorretamente.
-3. Dentro do bot, você pode verificar manualmente a ServiceUrl fornecida no token. Isso torna o bot mais frágil em caso de alterações de topologia de serviço, por isso que é possível, mas não recomendado.
+A criação de um bot no portal do Azure requer acesso de colaborador na assinatura ou em um grupo de recursos específico. Um usuário com a função de *Colaborador* em um grupo de recursos pode criar um bot nesse grupo de recursos específico. Um usuário na função de *Colaborador* para uma assinatura pode criar um bot em um grupo de recursos novo ou existente.
+
+Usando a CLI do Azure, uma abordagem de controle de acesso baseado em função pode dar suporte a funções personalizadas. Se você quiser tornar uma função personalizada com permissões mais restritas, o conjunto a seguir permitirá que o usuário crie e implante um bot compatível também com LUIS, QnA Maker e Application Insights.
+
+  "Microsoft.Web/ *", "Microsoft.BotService/* ", "Microsoft.Storage/ *", "Microsoft.Resources/deployments/* ", "Microsoft.CognitiveServices/ *", "Microsoft.Search/searchServices/* ", "Microsoft.Insights/ *", "Microsoft.Insights/components/* "
+
+O LUIS e o QnA Maker exigem permissões de Serviços Cognitivos. O QnA Maker também requer permissões de Pesquisa. Ao criar uma função personalizada, qualquer permissão de *negar* herdada será substituída por permissões de *permitir*.
+ 
+### <a name="what-keeps-my-bot-secure-from-clients-impersonating-the-bot-framework-service"></a>O que mantém o meu bot protegido de clientes que se passam pelo Bot Framework Service?
+1. Todas as solicitações do Bot Framework autênticas são acompanhadas por um token JWT cuja assinatura criptográfica pode ser verificada seguindo o guia de [autenticação](https://docs.microsoft.com/azure/bot-service/rest-api/bot-framework-rest-connector-authentication?view=azure-bot-service-3.0#bot-to-connector). O token foi projetado para que os invasores não possam se passar por serviços confiáveis.
+
+2. O token de segurança que acompanha todas as solicitações feitas para seu bot tem a ServiceUrl codificada dentro dele, o que significa que, mesmo se um invasor obtiver acesso ao token, eles não conseguirá redirecionar a conversa para uma nova ServiceUrl. Isso é imposto por todas as implementações do SDK e documentado em nossos materiais de [referência](https://docs.microsoft.com/azure/bot-service/rest-api/bot-framework-rest-connector-authentication?view=azure-bot-service-3.0#bot-to-connector) de autenticação.
+
+3. Se o token de entrada estiver ausente ou se for malformado, o SDK do Bot Framework não irá gerar um token na resposta. Isso limita o dano que poderá ocorrer se o bot for configurado incorretamente.
+4. Dentro do bot, você pode verificar manualmente a ServiceUrl fornecida no token. Isso torna o bot mais frágil em caso de alterações de topologia de serviço, por isso que é possível, mas não recomendado.
 
 
 Observe que essas são as conexões de saída do bot para a Internet. Não há uma lista de nomes DNS ou Endereços IP que o Serviço Bot Framework Connector usará para se comunicar com o bot. Não há suporte para a entrada na lista de permissões do Endereço IP.
 
 ## <a name="rate-limiting"></a>Limitação de taxa
 ### <a name="what-is-rate-limiting"></a>O que é a limitação de taxa?
-O serviço Bot Framework precisa proteger a si próprio e a seus clientes contra padrões de chamada abusivos (por exemplo, ataque de negação de serviço), de modo que nenhum bot possa prejudicar o desempenho de outros bots. Para obter esse tipo de proteção, adicionamos limites de taxa (também conhecidos como limitação) a todos os pontos de extremidade. Impondo um limite de taxa, podemos restringir a frequência com a qual um bot pode fazer uma chamada específica. Por exemplo: com a limitação de taxa habilitada, se um bot desejar postar um grande número de atividades, ele precisará espaçá-las por um período. Observe que a finalidade da limitação de taxa não é limitar o volume total de um bot. Ela se destina a prevenir abusos da infraestrutura de conversa que não seguem os padrões de conversa humana.
+O serviço Bot Framework precisa proteger a si próprio e a seus clientes contra padrões de chamada abusivos (por exemplo, ataque de negação de serviço), de modo que nenhum bot possa prejudicar o desempenho de outros bots. Para obter esse tipo de proteção, adicionamos limites de taxa (também conhecidos como limitação) aos nossos pontos de extremidade. Impondo um limite de taxa, podemos restringir a frequência com a qual um cliente ou bot pode fazer uma chamada específica. Por exemplo: com a limitação de taxa habilitada, se um bot desejar postar um grande número de atividades, ele precisará espaçá-las por um período. Observe que a finalidade da limitação de taxa não é limitar o volume total de um bot. Ela se destina a prevenir abusos da infraestrutura de conversa que não seguem os padrões de conversa humana. Por exemplo, inundar duas conversas com mais conteúdo do que duas pessoas jamais poderiam consumir.
 
 ### <a name="how-will-i-know-if-im-impacted"></a>Como saberei se foi afetado?
 É improvável que você enfrentará a limitação de taxa, mesmo com um alto volume. A maior parte da limitação de taxa só ocorrerá devido ao envio em massa de atividades (de um bot ou de um cliente), um teste de carga extrema ou um bug. Quando uma solicitação é limitada, uma resposta HTTP 429 (Número Excessivo de Solicitações) é retornada juntamente com um cabeçalho Retry-After, que indica o tempo (em segundos) que é necessário aguardar antes do êxito da nova tentativa da solicitação. Colete essas informações habilitando a análise no bot por meio do Azure Application Insights. Se preferir, adicione um código ao bot para registrar mensagens em log. 
@@ -185,21 +197,92 @@ Isso pode ocorrer se:
 ### <a name="what-are-the-rate-limits"></a>Quais são os limites de taxa?
 Estamos continuamente ajustando os limites de taxa para torná-los os mais brandos possíveis, ao mesmo tempo que protegemos nosso serviço e nossos usuários. Como os limites serão alterados ocasionalmente, não estamos publicando os números no momento. Caso você seja afetado pela limitação de taxa, fique à vontade para falar conosco pelo email [bf-reports@microsoft.com](mailto://bf-reports@microsoft.com).
 
+## <a name="bot-framework-sdk"></a>SDK do Bot Framework
+## <a name="why-doesnt-the-typing-activity-do-anything"></a>Por que a atividade de Digitação não gera nenhuma ação?
+Alguns canais não dão suporte a atualizações de digitação transitórias nos clientes.
+
+## <a name="what-is-the-difference-between-the-connector-library-and-builder-library-in-the-sdk"></a>Qual é a diferença entre a biblioteca do Connector e a biblioteca do Builder no SDK?
+
+A biblioteca do Connector é a exposição da API REST. A biblioteca do Builder inclui o modelo de programação de diálogo conversacional e outros recursos, como prompts, cascatas, cadeias e preenchimento de formulário guiado. A biblioteca do Builder também fornece acesso a serviços cognitivos como o LUIS.
+
+## <a name="how-do-user-messages-relate-to-https-method-calls"></a>Como as mensagens do usuário estão relacionadas às chamadas de método HTTPS?
+
+Quando o usuário enviar uma mensagem através de um canal, o serviço Web do Bot Framework emitirá um HTTPS POST para o ponto de extremidade do serviço Web do bot. O bot pode enviar zero, uma ou muitas mensagens de volta ao usuário naquele canal, emitindo um HTTPS POST separado para o Bot Framework para cada mensagem que envia.
+
+
+## <a name="how-can-i-intercept-all-messages-between-the-user-and-my-bot"></a>Como é possível interceptar todas as mensagens entre o usuário e o bot?
+
+Com o SDK do Bot Framework para .NET, é possível fornecer implementações das interfaces `IPostToBot` e `IBotToUser` para o contêiner de injeção da dependência `Autofac`. Com o SDK do Bot Framework para qualquer linguagem, é possível usar o middleware para a mesma finalidade. O repositório [BotBuilder-Azure](https://github.com/Microsoft/BotBuilder-Azure) contém as bibliotecas do C# e Node.js que registrarão esses dados em uma tabela do Azure.
+
+## <a name="what-is-the-idialogstackforward-method-in-the-bot-framework-sdk-for-net"></a>O que é o método IDialogStack.Forward no SDK do Bot Framework para .NET?
+
+A finalidade principal de `IDialogStack.Forward` é reutilizar um diálogo filho existente que seja frequentemente "reativo", em que o diálogo filho (em `IDialog.StartAsync`) aguarda um objeto `T` com algum manipulador `ResumeAfter`. Em particular, se tiver um diálogo filho que aguarda um `IMessageActivity``T`, você poderá encaminhar o `IMessageActivity` de entrada (já recebido por algum diálogo pai) usando o método `IDialogStack.Forward`. Por exemplo, para encaminhar um `IMessageActivity` de entrada para um `LuisDialog`, chame `IDialogStack.Forward` para efetuar push de `LuisDialog` para a pilha de diálogo, execute o código em `LuisDialog.StartAsync` até agendar uma espera pela próxima mensagem e, em seguida, imediatamente satisfazer essa espera com o `IMessageActivity` encaminhado.
+
+`T` é geralmente um `IMessageActivity`, uma vez que `IDialog.StartAsync` é normalmente construído para aguardar esse tipo de atividade. É possível usar `IDialogStack.Forward` como `LuisDialog` como um mecanismo para interceptar mensagens do usuário para algum processamento antes de encaminhar a mensagem para um `LuisDialog` existente. Alternativamente, também é possível usar `DispatchDialog` com `ContinueToNextGroup` para essa finalidade.
+
+Você esperaria encontrar o item encaminhado no primeiro manipulador `ResumeAfter` (p. ex. `LuisDialog.MessageReceived`) agendado por `StartAsync`.
+
+
+## <a name="what-is-the-difference-between-proactive-and-reactive"></a>Qual é a diferença entre "proativo" e "reativo"?
+
+Do ponto de vista do bot, "reativo" significa que o usuário inicia a conversa enviando uma mensagem para o bot e o bot reage respondendo a essa mensagem. Em contraste, "proativo" significa que o bot inicia a conversa, enviando a primeira mensagem ao usuário. Por exemplo, um bot pode enviar uma mensagem proativa para notificar um usuário quando um temporizador expirar ou ocorrer um evento.
+
+## <a name="how-can-i-send-proactive-messages-to-the-user"></a>Como enviar mensagens proativas ao usuário?
+
+Para obter exemplos que mostram como enviar mensagens proativas, consulte [Exemplos em C# V4](https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/16.proactive-messages) e [Exemplos em Node.js V4](https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/javascript_nodejs/16.proactive-messages) no repositório BotBuilder-Samples no GitHub.
+
+## <a name="how-can-i-reference-non-serializable-services-from-my-c-dialogs-in-sdk-v3"></a>Como é possível referenciar serviços não serializáveis dos meus diálogos em C#? no SDK v3?
+
+Há várias opções:
+
+* Resolva a dependência através de `Autofac` e `FiberModule.Key_DoNotSerialize`. Essa é a solução mais limpa.
+* Use atributos [NonSerialized](https://msdn.microsoft.com/library/system.nonserializedattribute(v=vs.110).aspx) e [OnDeserialized](https://msdn.microsoft.com/library/system.runtime.serialization.ondeserializedattribute(v=vs.110).aspx) para restaurar a dependência da desserialização. Essa é a solução mais simples.
+* Não armazene essa dependência, para que não seja serializada. Essa solução, embora tecnicamente viável, não é recomendável.
+* Use o substituto de serialização de reflexão. Essa solução pode não ser viável em alguns casos e corre o risco de serializar demasiadamente.
+
+## <a name="what-is-an-etag--how-does-it-relate-to-bot-data-bag-storage"></a>O que é um ETag?  Qual a relação disso com o armazenamento de recipiente de dados de bot?
+
+Um [ETag](https://en.wikipedia.org/wiki/HTTP_ETag) é um mecanismo para [controle de simultaneidade otimista](https://en.wikipedia.org/wiki/Optimistic_concurrency_control). O armazenamento de recipiente de dados de bot usa ETags para impedir atualizações conflitantes nos dados. Um erro de ETag com o código de status HTTP 412 "Falha na pré-condição" indica que foram recebidas várias mensagens em paralelo antes que o bot pudesse concluir a primeira operação.
+
+O estado e a pilha de diálogo são armazenados em recipientes de dados de bot. Por exemplo, será possível ver o erro de ETag "Falha na Pré-Condição" se o bot ainda estiver processando uma mensagem anterior quando receber uma nova mensagem para essa conversa.
+
+## <a name="what-are-the-possible-machine-readable-resolutions-of-the-luis-built-in-date-time-duration-and-set-entities"></a>Quais são as possíveis resoluções legíveis por computador da data, hora, duração interna do LUIS e conjunto de entidades?
+
+Para obter uma lista de exemplos, confira [seção Entidades criadas previamente][LUISPreBuiltEntities] da documentação do LUIS.
+
+## <a name="how-can-i-use-more-than-the-maximum-number-of-luis-intents"></a>Como posso usar mais que o número máximo de intenções de LUIS?
+
+Você pode considerar dividir o modelo e chamar o serviço de LUIS em série ou paralelo.
+
+## <a name="how-can-i-use-more-than-one-luis-model"></a>Como é possível usar mais de um modelo de LUIS?
+
+Tanto o SDK do Bot Framework para Node.js quanto o SDK do Bot Framework para .NET dão suporte a chamada de vários modelos de LUIS a partir de um único diálogo de intenção de LUIS. Tenha em mente as seguintes advertências:
+
+* O uso de vários modelos de LUIS assume que os modelos de LUIS possuem conjuntos de intenções não sobrepostos.
+* O uso de vários modelos de LUIS pressupõe que as pontuações de diferentes modelos sejam comparáveis para selecionar a "melhor intenção combinada" em vários modelos.
+* Usar vários modelos de LUIS significa que, se uma intenção corresponder a um modelo, também corresponderá fortemente à intenção "nenhum" dos outros modelos. Evite selecionar a intenção "nenhum" nessa situação, já que o SDK do Bot Framework para Node.js reduzirá automaticamente a pontuação para "nenhum" para evitar esse problema.
+
+## <a name="where-can-i-get-more-help-on-luis"></a>Onde é possível obter mais ajuda sobre o LUIS?
+
+* [Introdução ao LUIS (Serviço Inteligente de Reconhecimento Vocal) - Serviços Cognitivos da Microsoft](https://www.youtube.com/watch?v=jWeLajon9M8) (vídeo)
+* [Sessão de Aprendizado Avançado para LUIS (Serviço Inteligente de Reconhecimento Vocal)](https://www.youtube.com/watch?v=39L0Gv2EcSk) (vídeo)
+* [Documentação do LUIS](/azure/cognitive-services/LUIS/Home)
+* [Fórum do Serviço Inteligente de Reconhecimento Vocal](https://social.msdn.microsoft.com/forums/azure/home?forum=LUIS) 
+
+
+## <a name="what-are-some-community-authored-dialogs"></a>Quais são alguns diálogos criados pela comunidade?
+
+* [BotAuth](https://www.nuget.org/packages/BotAuth) - Autenticação do Azure Active Directory
+* [BestMatchDialog](http://www.garypretty.co.uk/2016/08/01/bestmatchdialog-for-microsoft-bot-framework-now-available-via-nuget/) - Expedição com base em expressões regulares de texto do usuário para métodos de diálogo
+
+## <a name="what-are-some-community-authored-templates"></a>Quais são alguns modelos criados pela comunidade?
+
+* [ES6 BotBuilder](https://github.com/brene/botbuilder-es6-template) - Modelo do Bot Builder ES6
+
 ## <a name="related-services"></a>Serviços Relacionados
 ### <a name="how-does-the-bot-framework-relate-to-cognitive-services"></a>Como o Bot Framework está relacionado aos Serviços Cognitivos?
 
-O Bot Framework e os [Serviços Cognitivos](https://www.microsoft.com/cognitive) são novas funcionalidades introduzidas no [Microsoft Build 2016](https://build.microsoft.com) que também serão integradas ao Cortana Intelligence Suite em GA. Ambos os serviços foram criados após muitos anos de pesquisa e uso em produtos populares da Microsoft. Essas funcionalidades combinadas com o ‘Cortana Intelligence’ permitem a todas as organizações aproveitar o poder dos dados, da nuvem e da inteligência a fim de criar seus próprios sistemas inteligentes que revelam novas oportunidades, aumentar a velocidade dos negócios e liderar os setores nos quais elas atendem a seus clientes.
-
-### <a name="what-is-cortana-intelligence"></a>O que é o Cortana Intelligence?
-
-O Cortana Intelligence é um pacote de Inteligência, de Análise Avançada e de Big Data totalmente gerenciado que transforma seus dados em ação inteligente.  
-É um pacote abrangente que reúne tecnologias fundadas após muitos anos de pesquisa e inovação em toda a Microsoft (abrangendo análise avançada, aprendizado de máquina, armazenamento de Big Data e processamento na nuvem) e:
-
-* Permite que você colete, gerencie e armazene todos os seus dados que podem aumentar de forma contínua e econômica ao longo do tempo de uma maneira segura e escalonável.
-* Fornece análises fáceis e acionáveis ativadas pela nuvem que permite prever, prescrever e automatizar a tomada de decisões para os problemas mais difíceis.
-* Permite sistemas inteligentes por meio de serviços cognitivos e agentes que possibilitam que você veja, ouça, interprete e entenda o mundo ao seu redor de maneiras mais naturais e contextuais.
-
-Com o Cortana Intelligence, esperamos ajudar nossos clientes empresariais a descobrir novas oportunidades, aumentar a velocidade dos negócios e serem líderes em seus setores.
+O Bot Framework e os [Serviços Cognitivos](https://www.microsoft.com/cognitive) são criados com base em anos de pesquisa e uso em produtos populares da Microsoft. Essas funcionalidades permitem a todas as organizações aproveitar o poder dos dados, da nuvem e da inteligência a fim de criar os próprios sistemas inteligentes que revelam novas oportunidades, aumentar a velocidade dos negócios e liderar os setores nos quais elas atendem a seus clientes.
 
 ### <a name="what-is-the-direct-line-channel"></a>O que é o canal da Linha Direta?
 

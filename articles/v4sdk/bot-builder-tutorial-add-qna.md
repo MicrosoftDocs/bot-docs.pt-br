@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a4437910cc0de3772ed8959f54f1643bc62abf41
-ms.sourcegitcommit: 4e1af50bd46debfdf9dcbab9a5d1b1633b541e27
+ms.openlocfilehash: bb79739e2199556fe6ce3fdd58f2fc34165f36e2
+ms.sourcegitcommit: 308e6df385b9bac9c8d60f8b75eabc813b823c38
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/25/2020
-ms.locfileid: "76752888"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77519975"
 ---
 # <a name="tutorial-use-qna-maker-in-your-bot-to-answer-questions"></a>Tutorial: usar o QnA Maker em seu bot para responder a perguntas
 
@@ -32,11 +32,11 @@ Neste tutorial, você aprenderá como:
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 * O bot criado no [tutorial anterior](bot-builder-tutorial-basic-deploy.md). Vamos adicionar um recurso de pergunta e resposta ao bot.
 * É útil ter alguma familiaridade com o [QnA Maker](https://qnamaker.ai/). Usaremos o portal QnA Maker para criar, treinar e publicar a base de dados de conhecimento que será usada com o bot.
-* familiaridade com a [criação de bot de QnA](https://aka.ms/azure-create-qna) usando o Serviço de Bot do Azure.
+* Familiaridade com a [criação de bot de QnA](https://aka.ms/azure-create-qna) usando o Serviço de Bot do Azure.
 
 Você também já deve ter os pré-requisitos do tutorial anterior.
 
@@ -78,7 +78,7 @@ A base de dados de conhecimento já está pronta para usar seu bot.
 
 A partir do bot framework v4.3, o Azure não fornece mais um arquivo .bot como parte do código-fonte de bot baixado. Use as seguintes instruções para conectar seu bot CSharp, JavaScript ou Python à base de dados de conhecimento.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 Adicione os seguintes valores ao arquivo appsetting.json:
 
@@ -94,7 +94,7 @@ Adicione os seguintes valores ao arquivo appsetting.json:
 }
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Adicione os seguintes valores ao arquivo .env:
 
@@ -108,7 +108,7 @@ QnAAuthKey="qna-maker-resource-key"
 QnAEndpointHostName="your-hostname" // This is a URL ending in /qnamaker
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 Adicione os seguintes valores ao arquivo `config.py`:
 
@@ -139,7 +139,7 @@ Agora salve suas edições.
 
 Atualize seu código de inicialização para carregar as informações de serviço para sua base de dados de conhecimento.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 1. Adicione o pacote NuGet **Microsoft.Bot.Builder.AI.QnA** ao projeto.
 
@@ -231,7 +231,7 @@ Atualize seu código de inicialização para carregar as informações de servi�
    }
    ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 1. Abra um terminal ou um prompt de comando e navegue até o diretório raiz de seu projeto.
 1. Adicione o pacote npm **botbuilder-ai** ao seu projeto.
@@ -302,7 +302,7 @@ Atualize seu código de inicialização para carregar as informações de servi�
     });
     ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 1. Certifique-se de que você instalou os pacotes conforme descrito no arquivo LEIAME do repositório de exemplos.
 1. Adicione a referência `botbuilder-ai` ao arquivo `requirements.txt`, conforme mostrado abaixo.

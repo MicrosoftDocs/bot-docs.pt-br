@@ -6,14 +6,18 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 12/13/2017
-ms.openlocfilehash: 1453ad74725e0084f0b5f45fa7d20475dbee2fa6
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.date: 02/20/2020
+ms.openlocfilehash: 1dc6fa1a9223e61daaa52cf475095fc08e0356d7
+ms.sourcegitcommit: 308e6df385b9bac9c8d60f8b75eabc813b823c38
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75789208"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77519955"
 ---
 # <a name="manage-state-data"></a>Gerenciar dados de estado
 
-O serviço de Estado do Microsoft Bot Framework foi desativado em 30 de março de 2018. Anteriormente, bots criados no Serviço de Bot do Azure ou no SDK do Bot Builder tinham uma conexão padrão com esse serviço hospedado pela Microsoft para armazenar dados de estado do bot. Os bots deverão ser atualizados para usar seu próprio armazenamento de estado.
+Os bots normalmente usam o armazenamento para controlar o local de um usuário na conversa ou detalhes relevantes para o relacionamento deles com o bot. O SDK do Bot Framework gerencia automaticamente o usuário e o estado de conversa para os desenvolvedores de bot. 
+
+Originalmente, o Bot Framework era fornecido com um serviço de estado para armazenar esses dados, mas os bots mais modernos (e todas as versões recentes do SDK do Bot Framework) usam o armazenamento controlado diretamente pelo desenvolvedor de bot, em vez desse serviço gerenciado centralmente. 
+
+O serviço de Estado do Bot Framework central foi desativado em 30 de março de 2018. Para obter mais informações, confira [Lembrete: o serviço de Estado do Bot Framework foi desativado – o que você precisa saber](https://blog.botframework.com/2018/04/02/reminder-the-bot-framework-state-service-has-been-retired-what-you-need-to-know/).

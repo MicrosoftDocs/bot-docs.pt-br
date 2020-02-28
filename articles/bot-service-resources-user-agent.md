@@ -7,16 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: e6b0df6384b6ecc1ffa8922e574c6b161db8369e
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 4eea881d7dee4816c2c8a5d28ffc37662063d340
+ms.sourcegitcommit: 308e6df385b9bac9c8d60f8b75eabc813b823c38
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75794124"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77519935"
 ---
 # <a name="bot-framework-user-agent-requests"></a>Solicitações de agente do usuário do Bot Framework
 
-Se você estiver lendo esta mensagem, provavelmente recebeu uma solicitação de um serviço do Microsoft Bot Framework. Este guia irá ajudá-lo a compreender a natureza dessas solicitações e fornecerá as etapas para pará-las, se desejado.
+Se você está lendo esta mensagem, provavelmente recebeu uma solicitação de um Microsoft Bot Framework Service. Este guia irá ajudá-lo a compreender a natureza dessas solicitações e fornecerá as etapas para pará-las, se desejado.
 
 Se você recebeu uma solicitação do serviço, provavelmente havia um cabeçalho do agente do usuário formatado de forma semelhante à cadeia de caracteres a seguir:
 

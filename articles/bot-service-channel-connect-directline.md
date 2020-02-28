@@ -8,16 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/7/2019
-ms.openlocfilehash: c65957a6bb86e4bbfb7cc41cd740d35b2effe695
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: a7c52ec4a6ab8d1744e2c4d9a94ec2ca5623329a
+ms.sourcegitcommit: 4ddee4f90a07813ce570fdd04c8c354b048e22f3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75790978"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77479214"
 ---
 # <a name="connect-a-bot-to-direct-line"></a>Conecte um bot à linha direta
 
-Você pode ativar seu próprio aplicativo cliente para se comunicar com seu bot usando o canal Direct Line. 
+Você pode ativar seu próprio aplicativo cliente para se comunicar com seu bot usando o canal Direct Line.
 
 ## <a name="add-the-direct-line-channel"></a>Adicionar o canal de linha direta
 
@@ -52,3 +52,8 @@ Por fim, defina as configurações do site.
 > Se você estiver criando uma nova conexão entre seu aplicativo cliente e o bot, use o Direct Line API 3.0.
 
 Quando terminar, clique em **Concluído** para salvar a configuração do site. Você pode repetir esse processo, começando com [Adicionar novo site](#add-new-site), para cada aplicativo cliente que você deseja conectar ao seu bot.
+
+Quando você tiver a **autenticação avançada habilitada**, verá o seguinte comportamento para o qual origens confiáveis são usadas:
+
+- Se você configurar origens confiáveis como parte da página da interface do usuário de configuração, elas **sempre** serão usadas como o único conjunto. Não enviar nenhuma origem confiável ou enviar origens confiáveis adicionais ao gerar um token ou iniciar uma conversa será ignorado (ou seja, **não serão acrescentadas** à lista nem terão validação cruzada).
+- Se você não tiver configurado origens confiáveis como parte da interface do usuário de configuração, qualquer valor enviado como parte das chamadas à API será usado.
