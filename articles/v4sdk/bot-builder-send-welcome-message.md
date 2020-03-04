@@ -22,7 +22,7 @@ ms.locfileid: "77441679"
 
 Ao criar um bot, o principal objetivo é envolver seu usuário em uma conversa produtiva. Uma das melhores maneiras de fazer isso é garantir que, a partir do momento em que o usuário se conecta pela primeira vez, ele entenda o objetivo e os recursos principais do bot, a razão pela qual seu bot foi criado. Este artigo fornece exemplos de código para ajudá-lo a dar boas-vindas aos usuários em seu bot.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 
 - Entenda sobre as [Noções básicas do bot](bot-builder-basics.md).
 - Uma cópia do **Exemplo de boas-vindas ao usuário** em [Exemplo de C#](https://aka.ms/welcome-user-mvc), [Exemplo de JS](https://aka.ms/bot-welcome-sample-js) ou [Exemplo de Python](https://aka.ms/bot-welcome-python-sample-code). O código do exemplo é usado para explicar como enviar mensagens de boas-vindas.

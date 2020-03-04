@@ -6,7 +6,7 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74414604"
 ---
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 - [Visual Studio 2017 ou posterior](https://www.visualstudio.com/downloads)
 - [Modelo de SDK do Bot Framework v4 para C#](https://aka.ms/bot-vsix)
 - [Emulador do bot Framework](https://aka.ms/bot-framework-emulator-readme)

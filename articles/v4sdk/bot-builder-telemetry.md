@@ -36,7 +36,7 @@ Neste artigo, você aprenderá a implementar a telemetria em seu bot usando o Ap
 
 * Visualizar os dados telemétricos no Application Insights
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 
 * O [código de exemplo do CoreBot](https://aka.ms/cs-core-sample)
 

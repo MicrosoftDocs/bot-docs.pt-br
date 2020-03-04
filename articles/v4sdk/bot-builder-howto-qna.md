@@ -24,7 +24,7 @@ O QnA Maker fornece uma camada de pergunta e resposta de conversa sobre seus dad
 
 Um dos requisitos básicos para a criação de seu próprio serviço QnA Maker é preenchê-lo com perguntas e respostas. Em muitos casos, as perguntas e respostas já existem no conteúdo, como as perguntas frequentes ou outra documentação; outras vezes, talvez seja conveniente personalizar as respostas às perguntas de forma mais natural e coloquial.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 
 - O código neste artigo baseia-se no exemplo do QnA Maker. Você precisará de uma cópia dele em **[C#](https://aka.ms/cs-qna)** , **[JavaScript](https://aka.ms/js-qna-sample)** ou **[Python](https://aka.ms/bot-qna-python-sample-code)** . 
 - Conta do [QnA Maker](https://www.qnamaker.ai/)

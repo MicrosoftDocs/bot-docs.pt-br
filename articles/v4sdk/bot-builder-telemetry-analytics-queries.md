@@ -21,7 +21,7 @@ ms.locfileid: "77479324"
 
 A coleção de consultas a seguir pode ser usada para analisar o comportamento do bot. Você pode usar a coleção para criar consultas personalizadas no [Azure Monitor Log Analytics](https://aka.ms/log-analytics-azure-monitor) e para criar dashboards de monitoramento e de visualização do [PowerBI](https://aka.ms/power-bi-overview).
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 É útil ter uma compreensão básica dos seguintes conceitos:
 
 * [Consultas Kusto](https://aka.ms/Kusto-query-overview)

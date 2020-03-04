@@ -22,7 +22,7 @@ ms.locfileid: "77441650"
 
 Este guia de início rápido oferece orientações sobre como criar um bot usando o modelo de Python Echo Bot e testá-lo com o Bot Framework Emulator.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 - Python [3.6](https://www.python.org/downloads/release/python-369/) ou [3.7](https://www.python.org/downloads/release/python-375/)
 - [Emulador do bot Framework](https://aka.ms/bot-framework-emulator-readme)
 - [git](https://git-scm.com/)

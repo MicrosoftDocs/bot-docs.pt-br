@@ -23,7 +23,7 @@ ms.locfileid: "77441631"
 Você pode criar fluxos de conversa complexos usando a biblioteca de diálogos.
 Este artigo aborda como gerenciar conversas complexas com ramificações e loop e como passar argumentos entre diferentes partes do diálogo.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 
 - Conhecimento sobre [noções básicas de bots][concept-basics], [gerenciamento de estado][concept-state], a [biblioteca de diálogos][concept-dialogs] e como [implementar um fluxo de conversa sequencial][simple-dialog].
 - Uma cópia do exemplo de diálogo complexo em [**C#** ][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].

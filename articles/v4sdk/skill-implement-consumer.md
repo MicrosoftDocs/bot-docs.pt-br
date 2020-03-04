@@ -30,7 +30,7 @@ Um _bot raiz_ é um bot voltado para o usuário que pode invocar um ou mais skil
 
 Este artigo demonstra como implementar um consumidor de skills que usa o skill de eco para ecoar a entrada do usuário. Para obter um exemplo de manifesto de skill e informações sobre como implementar o skill de eco, consulte como [implementar um skill](skill-implement-skill.md).
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 
 - Conhecimento [básico sobre bots](bot-builder-basics.md), [como os bots skills funcionam](skills-conceptual.md) e como [implementar um skill](skill-implement-skill.md).
 - Uma assinatura do Azure. Se você não tiver uma, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.

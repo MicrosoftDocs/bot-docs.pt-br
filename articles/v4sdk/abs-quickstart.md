@@ -25,7 +25,7 @@ O Serviço de Bot do Azure fornece os principais componentes para a criação de
 
 [!INCLUDE [Azure vs local development](~/includes/snippet-quickstart-paths.md)]
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 
 - Conta do [Azure](https://portal.azure.com)
 

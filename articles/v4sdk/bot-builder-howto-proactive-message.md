@@ -31,7 +31,7 @@ Uma mensagem proativa ad hoc é o tipo mais simples de mensagem proativa. O bot 
 
 Para lidar com notificações de forma mais suave, considere outras maneiras de integrar a notificação no fluxo de conversa, como definir um sinalizador no estado da conversa ou adicionar a notificação a uma fila.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 
 - Entenda sobre as [Noções básicas do bot](bot-builder-basics.md).
 - Uma cópia do exemplo de mensagens proativas em [**C#** ](https://aka.ms/proactive-sample-cs), [**JavaScript**](https://aka.ms/proactive-sample-js) ou [**Python**](https://aka.ms/bot-proactive-python-sample-code). O exemplo é usado para explicar sobre mensagens proativas neste artigo.

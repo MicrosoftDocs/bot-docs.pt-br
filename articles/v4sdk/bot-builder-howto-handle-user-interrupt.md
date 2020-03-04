@@ -22,7 +22,7 @@ ms.locfileid: "77441704"
 
 O tratamento de interrupções é um aspecto importante de um bot robusto. Os usuários nem sempre seguirão o fluxo de conversa que você definiu, passo a passo. Eles podem tentar fazer uma pergunta no meio do processo ou simplesmente querer cancelá-lo em vez de concluí-lo. Neste tópico, exploraremos algumas maneiras comuns de lidar com as interrupções dos usuários no seu bot.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 
 - Conhecimento sobre [noções básicas de bots][concept-basics], [gerenciamento de estado][concept-state], a [biblioteca de diálogos][concept-dialogs] e como [reutilizar diálogos][component-dialogs].
 - Uma cópia do exemplo principal de bot em [**CSharp**][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].

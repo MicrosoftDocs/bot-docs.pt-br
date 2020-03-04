@@ -21,7 +21,7 @@ Há duas maneiras de configurar o aplicativo de mensagens Slack:
 - Usar o portal do Serviço de Bot do Azure para conectar seu bot
 - Usar o adaptador do Slack
 
-## <a name="azure-bot-service-portaltababs"></a>[Portal do Serviço de Bot do Azure](#tab/abs)
+## <a name="azure-bot-service-portal"></a>[Portal do Serviço de Bot do Azure](#tab/abs)
 ## <a name="create-a-slack-application-for-your-bot"></a>Criar um aplicativo do Slack para o seu bot
 
 Faça logon no [Slack](https://slack.com/signin) e [crie um canal do aplicativo Slack](https://api.slack.com/apps).
@@ -137,7 +137,7 @@ Execute estas etapas para obter a URL de substituição.
 
 Os usuários autorizados podem clicar no botão **Adicionar ao Slack** fornecido por esse HTML modificado para acessar seu bot no Slack.
 
-## <a name="slack-adaptertabadapter"></a>[Adaptador do Slack](#tab/adapter)
+## <a name="slack-adapter"></a>[Adaptador do Slack](#tab/adapter)
 ## <a name="connect-a-bot-to-slack-using-the-slack-adapter"></a>Conectar um bot ao Slack usando o adaptador do Slack
 
 Assim como o canal disponível no Serviço de Bot do Azure para conectar o bot com o Slack, você também pode usar o adaptador do Slack. Neste artigo, você aprenderá a conectar um bot ao Slack usando o adaptador.  Este artigo explicará como modificar o exemplo EchoBot para conectá-lo a um aplicativo do Slack.
@@ -145,7 +145,7 @@ Assim como o canal disponível no Serviço de Bot do Azure para conectar o bot c
 > [!NOTE]
 > As instruções a seguir abordam a implementação em C# do adaptador do Slack. Para obter instruções sobre como usar o adaptador JS, parte das bibliotecas BotKit, [consulte a documentação do Slack sobre BotKit](https://botkit.ai/docs/v4/platforms/slack.html).
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Prerequisites
 
 * O [código de exemplo do EchoBot](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/02.echo-bot)
 
