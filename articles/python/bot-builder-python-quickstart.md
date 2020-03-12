@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/10/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: c8208fb387584e38c5ec0a0851cc7a49236c37f7
-ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
+ms.openlocfilehash: c56d5607ca3c7841ad8a480ce23c7c2d21805968
+ms.sourcegitcommit: 2109d9da53fdf65966f33ed1fa628a40ec851d35
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77441650"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78280137"
 ---
 # <a name="create-a-bot-with-the-bot-framework-sdk-for-python"></a>Criar um bot com o SDK do Bot Framework para Python
 
@@ -22,7 +22,7 @@ ms.locfileid: "77441650"
 
 Este guia de início rápido oferece orientações sobre como criar um bot usando o modelo de Python Echo Bot e testá-lo com o Bot Framework Emulator.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 - Python [3.6](https://www.python.org/downloads/release/python-369/) ou [3.7](https://www.python.org/downloads/release/python-375/)
 - [Emulador do bot Framework](https://aka.ms/bot-framework-emulator-readme)
 - [git](https://git-scm.com/)
@@ -50,7 +50,7 @@ Este comando cria um Bot de Eco com base no [modelo de eco](https://github.com/m
 
 Copie os últimos quatro dígitos no endereço na última linha (geralmente 3978), já que você vai usá-los na próxima etapa. Agora você está pronto para iniciar o bot.
 
-## <a name="start-you-bot"></a>Iniciar o bot
+## <a name="start-your-bot"></a>Inicie seu bot
 1. De um terminal, navegue até a pasta `echo-bot` em que você salvou o bot. Execute `pip install -r requirements.txt` para instalar os pacotes necessários para executar o bot.
 
 2. Depois que os pacotes forem instalados, execute `python app.py` para iniciar o bot. Você saberá que o bot está pronto para teste quando você vir a última linha mostrada na captura de tela abaixo:

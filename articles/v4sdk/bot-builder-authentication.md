@@ -7,12 +7,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 2/7/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: e1cdfbb96e14175f764b481f9634c2d7c93f0c29
-ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
+ms.openlocfilehash: 1971867f7d1c21de00e13a0b1affb0b8fb6ccaed
+ms.sourcegitcommit: 2109d9da53fdf65966f33ed1fa628a40ec851d35
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77441649"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78280127"
 ---
 <!-- 
 
@@ -87,7 +87,7 @@ Depois de concluir, você terá um bot sendo executado localmente e que pode res
 > [!IMPORTANT]
 > Tenha em mente estas importantes [Considerações de segurança](../rest-api/bot-framework-rest-direct-line-3-0-authentication.md#security-considerations).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento de [fundamentos do bot][concept-basics], [gerenciamento de estado][concept-state], [biblioteca de caixas de diálogo][concept-dialogs], como [implementar o fluxo de conversa sequencial][simple-dialog] e como [reutilizar caixas de diálogo][component-dialogs].
 - Conhecimento do desenvolvimento do Azure e do OAuth 2.0.
@@ -438,15 +438,17 @@ Considera-se melhor prática permitir que os usuários saiam ou se desconectem e
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-**Dialogs\LogoutDialog.cs** [!code-csharp[Allow logout](~/../botbuilder-samples/samples/csharp_dotnetcore/18.bot-authentication/Dialogs/LogoutDialog.cs?range=44-61&highlight=11)]
+**Dialogs\LogoutDialog.cs**  
+[!code-csharp[Allow logout](~/../botbuilder-samples/samples/csharp_dotnetcore/18.bot-authentication/Dialogs/LogoutDialog.cs?range=44-61&highlight=11)]
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)  
 
 **dialogs/logoutDialog.js** [!code-javascript[Allow logout](~/../botbuilder-samples/samples/javascript_nodejs/18.bot-authentication/dialogs/logoutDialog.js?range=31-42&highlight=7)]
 
 # <a name="python"></a>[Python](#tab/python)
 
-**dialogs/logout_dialog.py** [!code-python[allow logout](~/../botbuilder-samples/samples/python/18.bot-authentication/dialogs/logout_dialog.py?range=27-34&highlight=6)]
+**dialogs/logout_dialog.py**  
+[!code-python[allow logout](~/../botbuilder-samples/samples/python/18.bot-authentication/dialogs/logout_dialog.py?range=27-34&highlight=6)]
 
 ---
 
