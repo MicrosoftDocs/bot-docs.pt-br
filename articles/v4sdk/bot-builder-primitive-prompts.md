@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 2/7/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4d6d60d343b7bfb5d0639aa8464b68f60162d14c
-ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
+ms.openlocfilehash: a3742837f15038c0e81d1b1405eeff96ba9efdf1
+ms.sourcegitcommit: 2109d9da53fdf65966f33ed1fa628a40ec851d35
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77441594"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78280167"
 ---
 # <a name="create-your-own-prompts-to-gather-user-input"></a>Crie seus próprio prompts para coletar entradas do usuário
 
@@ -25,7 +25,7 @@ Uma conversa entre um bot e um usuário muitas vezes envolve solicitar ao usuár
 > [!TIP]
 > A biblioteca de diálogos fornece prompts internos que oferecem mais funcionalidade do que os usuários podem usar. Exemplos desses prompts podem ser encontrados no artigo [Implementar fluxo de conversa sequencial](bot-builder-dialog-manage-conversation-flow.md).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 - O código neste artigo baseia-se no exemplo de Solicitar Entrada aos Usuários. Você precisará de uma cópia do **[exemplo de C#](https://aka.ms/cs-primitive-prompt-sample), do [exemplo de JavaScript](https://aka.ms/js-primitive-prompt-sample) ou do [exemplo de Python](https://aka.ms/python-primitive-prompt-sample)** .
 - Conhecimento sobre [gerenciar estado](bot-builder-concept-state.md) e como [salvar dados do usuário e da conversa](bot-builder-howto-v4-state.md).
@@ -90,9 +90,11 @@ Crie o usuário e os objetos de estado da conversa em **index.js** e consuma-os 
 
 Crie o usuário e os objetos de estado da conversa em **app.py** e consuma-os no construtor de bot.
 
-**app.py** [!code-python[app.py](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/app.py?range=67-73)]
+**app.py**  
+[!code-python[app.py](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/app.py?range=67-73)]
 
-**bots/custom_prompt_bot.py** [!code-python[constructor](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=29-41)]
+**bots/custom_prompt_bot.py**  
+[!code-python[constructor](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=29-41)]
 
 ---
 
@@ -122,7 +124,8 @@ Antes do fim da rodada, chame `saveChanges` para gravar qualquer alteração de 
 
 No construtor, criamos os acessadores de propriedade de estado e configuramos os objetos de gerenciamento de estado (criados acima) para nossa conversa.
 
-**bots/custom_prompt_bot.py** [!code-python[on_message_activity](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=46-49)]
+**bots/custom_prompt_bot.py**  
+[!code-python[on_message_activity](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=46-49)]
 
 Antes do fim da rodada, chame `SaveChangesAsync` para gravar qualquer alteração de estado no armazenamento.
 
@@ -146,7 +149,8 @@ Ao lidar com atividades de mensagens, o manipulador de mensagens usa um método 
 
 ## <a name="python"></a>[Python](#tab/python)
 
-**bots/custom_prompt_bot.py** [!code-python[message handler](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=46-55)]
+**bots/custom_prompt_bot.py**  
+[!code-python[message handler](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=46-55)]
 
 ---
 
@@ -174,7 +178,8 @@ Os métodos de validação são descritos na seção a seguir.
 
 ## <a name="python"></a>[Python](#tab/python)
 
-**bots/custom_prompt_bot.py** [!code-python[_fill_out_user_profile](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=57-125)]
+**bots/custom_prompt_bot.py**  
+[!code-python[_fill_out_user_profile](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=57-125)]
 
 ---
 
@@ -204,7 +209,8 @@ O bot usa os critérios a seguir para validar a entrada.
 
 ## <a name="python"></a>[Python](#tab/python)
 
-**bots/custom_prompt_bot.py** [!code-python[validation methods](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=127-189)]
+**bots/custom_prompt_bot.py**  
+[!code-python[validation methods](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=127-189)]
 
 ---
 

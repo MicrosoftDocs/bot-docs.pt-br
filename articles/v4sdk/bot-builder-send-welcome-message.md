@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 2/7/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 92ec5c927baa93095beaf304fe17024adf81666b
-ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
+ms.openlocfilehash: bff3aadddf1d4f5dd1126f64da1429dbc0a2967a
+ms.sourcegitcommit: 2109d9da53fdf65966f33ed1fa628a40ec851d35
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77441679"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78280131"
 ---
 # <a name="send-welcome-message-to-users"></a>Enviar mensagem de boas-vinda aos usuários
 
@@ -22,7 +22,7 @@ ms.locfileid: "77441679"
 
 Ao criar um bot, o principal objetivo é envolver seu usuário em uma conversa produtiva. Uma das melhores maneiras de fazer isso é garantir que, a partir do momento em que o usuário se conecta pela primeira vez, ele entenda o objetivo e os recursos principais do bot, a razão pela qual seu bot foi criado. Este artigo fornece exemplos de código para ajudá-lo a dar boas-vindas aos usuários em seu bot.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 - Entenda sobre as [Noções básicas do bot](bot-builder-basics.md).
 - Uma cópia do **Exemplo de boas-vindas ao usuário** em [Exemplo de C#](https://aka.ms/welcome-user-mvc), [Exemplo de JS](https://aka.ms/bot-welcome-sample-js) ou [Exemplo de Python](https://aka.ms/bot-welcome-python-sample-code). O código do exemplo é usado para explicar como enviar mensagens de boas-vindas.
@@ -141,7 +141,8 @@ Ele usa o acessador de propriedade no manipulador de `on_message_activity` e sub
 
 Em **WelcomeUserBot**, verificamos se há uma atualização de atividade, usando `OnMembersAddedAsync()` para ver se um novo usuário foi adicionado à conversa e, em seguida, enviamos a ele um conjunto de três mensagens inicias de boas-vindas: `WelcomeMessage`, `InfoMessage` e `PatternMessage`. O código completo dessa interação é mostrado abaixo.
 
-**Bots\WelcomeUserBot.cs** [!code-csharp[Define messages](~/../BotBuilder-Samples/samples/csharp_dotnetcore/03.welcome-user/bots/WelcomeUserBot.cs?range=20-39)]
+**Bots\WelcomeUserBot.cs**  
+[!code-csharp[Define messages](~/../BotBuilder-Samples/samples/csharp_dotnetcore/03.welcome-user/bots/WelcomeUserBot.cs?range=20-39)]
 [!code-csharp[Send messages](~/../BotBuilder-Samples/samples/csharp_dotnetcore/03.welcome-user/bots/WelcomeUserBot.cs?range=55-66)]
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
@@ -154,7 +155,8 @@ Esse código do JavaScript envia uma mensagem inicial de boas-vindas quando um u
 
 O `on_members_added_activity` verifica se um novo usuário foi adicionado e, em seguida, envia três mensagens de boas-vindas iniciais: uma *mensagem de boas-vindas*, uma *mensagem de informações* e uma *mensagem padrão*.
 
-**bots/welcome-user-bot.py** [!code-python[on_members_added_activity](~/../botbuilder-samples/samples/python/03.welcome-user/bots/welcome_user_bot.py?range=45-74)]
+**bots/welcome-user-bot.py**  
+[!code-python[on_members_added_activity](~/../botbuilder-samples/samples/python/03.welcome-user/bots/welcome_user_bot.py?range=45-74)]
 
 ---
 

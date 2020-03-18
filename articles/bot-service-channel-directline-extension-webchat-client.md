@@ -8,12 +8,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 07/25/2019
-ms.openlocfilehash: 1b1de46c2b97ca369a6fcc19fd27bafc22838989
-ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
+ms.openlocfilehash: aaba2a9de9f35d7615b3a7e5ff077554ef03a2df
+ms.sourcegitcommit: 2109d9da53fdf65966f33ed1fa628a40ec851d35
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77441492"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78280117"
 ---
 # <a name="use-webchat-with-the-direct-line-app-service-extension"></a>Habilitar o WebChat com a extensão de serviço de aplicativo do Direct Line
 
@@ -28,7 +28,7 @@ A versão prévia do DirectLineJS pode ser encontrada aqui: https://github.com/J
 
 ## <a name="integrate-webchat-client"></a>Integrar o cliente do WebChat
 
-De modo geral, a abordagem é a mesma que a de antes. Com a exceção de que foi criada uma nova versão do **WebChat** que dá suporte ao tráfego de **WebSocket** bidirecional, que em vez de conectar-se a https://directline.botframework.com/, conecta-se diretamente ao bot hospedado.
+De modo geral, a abordagem é a mesma que a de antes. Com a exceção da nova versão que foi criada do **WebChat** que dá suporte ao tráfego bidirecional do **WebSocket** e que, em vez de conectar-se a [https://directline.botframework.com/](https://directline.botframework.com/), conecta-se ao seu Bot hospedado.
 A URL do Direct Line para o bot será `https://<your_app_service>.azurewebsites.net/.bot/`, em que a extensão `/.bot/` é o **ponto de extremidade** do Direct Line em seu Serviço de Aplicativo.
 Se puder configurar seu próprio nome de domínio, você ainda precisará acrescentar o caminho `/.bot/` para acessar as APIs REST do Direct Line.
 
