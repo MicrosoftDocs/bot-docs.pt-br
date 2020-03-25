@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: a8b9c430f3cfbdb158c9462da094f6b1c764c474
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 7bb01dd94fe4d7058c857ad0f1c42bf7b35a727d
+ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75791881"
+ms.lasthandoff: 03/22/2020
+ms.locfileid: "80117607"
 ---
 # <a name="connect-a-bot-to-skype-for-business-preview"></a>Conectar um bot ao Skype for Business (versão prévia)
 
@@ -21,5 +21,5 @@ O Skype for Business Online mantém você conectado com colegas e parceiros de n
 
 > [!IMPORTANT]
 > **O canal Skype for Business do Bot Framework foi preterido em 30 de junho de 2019.**
-> 
-> O canal Skype for Business parou de aceitar novos bots em 30 de junho de 2019.  Os bots existentes continuaram operando até 31 de outubro de 2019.  O canal está sendo preterido no momento e nenhuma carga de produção deve usá-lo.  O Microsoft Teams é a ferramenta de comunicação preferencial da Microsoft.  Saiba como [conectar seu bot ao Microsoft Teams](https://msdn.microsoft.com/microsoft-teams/bots).
+>
+> O canal Skype for Business parou de aceitar novos bots em 30 de junho de 2019.  Os bots existentes continuaram operando até 31 de outubro de 2019.  O canal está sendo preterido no momento e nenhuma carga de produção deve usá-lo.  O Microsoft Teams é a ferramenta de comunicação preferencial da Microsoft.  Saiba como [conectar seu bot ao Microsoft Teams](https://aka.ms/channel-connect-teams).

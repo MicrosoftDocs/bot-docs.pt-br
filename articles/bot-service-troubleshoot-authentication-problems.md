@@ -6,44 +6,44 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 04/30/2019
-ms.openlocfilehash: eda2e2887eddce7c113ff69871162a6b67cc398e
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.date: 02/25/2020
+ms.openlocfilehash: 5a430e9ca14bb9dfdfc7916b77912d88e2c0253e
+ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75796919"
+ms.lasthandoff: 03/22/2020
+ms.locfileid: "80117684"
 ---
 # <a name="troubleshooting-bot-framework-authentication"></a>Solucionar problemas de autenticação do Bot Framework
 
-Este guia pode ajudar você a solucionar problemas de autenticação com seu bot por meio da avaliação uma série de cenários para determinar onde há o problema. 
+Este guia pode ajudar você a solucionar problemas de autenticação com seu bot por meio da avaliação uma série de cenários para determinar onde há o problema.
 
 > [!NOTE]
-> Para concluir todas as etapas deste guia, você precisará baixar e usar o [Bot Framework Emulator][Emulator] e ter acesso às configurações de registro do bot no <a href="https://portal.azure.com" target="_blank">Portal do Azure</a>.
+> Para concluir todas as etapas deste guia, você precisará baixar e usar o [Bot Framework Emulator][Emulator] e ter acesso às configurações de registro do bot no [Portal do Azure](https://portal.azure.com).
 
-## <a id="PW"></a> ID de aplicativo e senha
+## <a name="app-id-and-password"></a><a id="PW"></a> ID de aplicativo e senha
 
-A segurança do bot é configurada pela **ID do aplicativo Microsoft** e pela **Senha do aplicativo Microsoft** que você obtém quando registra seu bot com o Bot Framework. Normalmente, esses valores são especificados no arquivo de configuração do bot e usados para recuperar tokens de acesso do serviço Microsoft Account. 
+A segurança do bot é configurada pela **ID do aplicativo Microsoft** e pela **Senha do aplicativo Microsoft** que você obtém quando registra seu bot com o Bot Framework. Normalmente, esses valores são especificados no arquivo de configuração do bot e usados para recuperar tokens de acesso do serviço Microsoft Account.
 
-Se isso ainda não tiver sido feito, [implante seu bot no Azure](~/bot-builder-howto-deploy-azure.md) para obter uma **ID do aplicativo Microsoft** e **Senha do aplicativo Microsoft** que podem ser usados para autenticação. 
+Se isso ainda não tiver sido feito, [implante seu bot no Azure](~/bot-builder-howto-deploy-azure.md) para obter uma **ID do aplicativo Microsoft** e **Senha do aplicativo Microsoft** que podem ser usados para autenticação.
 
 > [!NOTE]
 > Para localizar o **AppID** e **AppPassword** de um bot já implantado, consulte [MicrosoftAppID e MicrosoftAppPassword](bot-service-manage-overview.md#microsoftappid-and-microsoftapppassword).
 
 ## <a name="step-1-disable-security-and-test-on-localhost"></a>Etapa 1: desabilitar a segurança e testar no localhost
 
-Nesta etapa, você verificará se seu bot fica acessível e funcional no localhost quando a segurança estiver desabilitada. 
+Nesta etapa, você verificará se seu bot fica acessível e funcional no localhost quando a segurança estiver desabilitada.
 
 > [!WARNING]
 > Desabilitar a segurança do seu bot pode permitir que invasores desconhecidos se passem pelos usuários. Só implemente o procedimento a seguir se estiver operando em um ambiente de depuração protegido.
 
-### <a id="disable-security-localhost"></a> Desabilitar a segurança
+### <a name="disable-security"></a><a id="disable-security-localhost"></a> Desabilitar a segurança
 
-Para desabilitar a segurança do bot, edite suas definições de configuração para remover os valores da ID e da senha do aplicativo. 
+Para desabilitar a segurança do bot, edite suas definições de configuração para remover os valores da ID e da senha do aplicativo.
 
 ::: moniker range="azure-bot-service-3.0"
 
-Se você estiver usando o SDK do Bot Framework para .NET, edite estas configurações no arquivo Web.config: 
+Se você estiver usando o SDK do Bot Framework para .NET, edite estas configurações no arquivo Web.config:
 
 ```xml
 <appSettings>
@@ -68,8 +68,8 @@ var connector = new builder.ChatConnector({
 Se você estiver usando o SDK do Bot Framework para .NET, edite estas configurações no arquivo `appsettings.json`:
 
 ```json
-  "MicrosoftAppId": "<your app ID>",
-  "MicrosoftAppPassword": "<your app password>"
+  "MicrosoftAppId": "",
+  "MicrosoftAppPassword": ""
 ```
 
 Se você estiver usando o SDK do Bot Framework para Node.js, edite estes valores (ou atualize as variáveis de ambiente correspondentes):
@@ -83,14 +83,14 @@ const adapter = new BotFrameworkAdapter({
 
 ::: moniker-end
 
-### <a name="test-your-bot-on-localhost"></a>Testar o bot no localhost 
+### <a name="test-your-bot-on-localhost"></a>Testar o bot no localhost
 
 Em seguida, teste o bot usando o localhost usando o Emulador do Bot Framework.
 
 1. Inicie o bot no localhost.
 2. Instale o Emulador do Bot Framework.
 3. Conecte-se ao seu bot usando o emulador.
-    - Digite `http://localhost:port-number/api/messages` na barra de endereços do emulador, em que **port-number** corresponde ao número da porta mostrado no navegador em que seu aplicativo está sendo executado. 
+    - Digite `http://localhost:port-number/api/messages` na barra de endereços do emulador, em que **port-number** corresponde ao número da porta mostrado no navegador em que seu aplicativo está sendo executado.
     - Verifique se os campos **ID do aplicativo da Microsoft** e **Senha do aplicativo da Microsoft** estão em branco.
     - Clique em **Conectar**.
 4. Para testar a conectividade com seu bot, digite algum texto no emulador e pressione Enter.
@@ -104,7 +104,7 @@ Se um ou mais erros forem indicados na janela de chat, clique nos erros para obt
 * As configurações do emulador especificam um valor para o campo **ID do aplicativo Microsoft** e/ou o campo **Senha do aplicativo Microsoft**. Ambos os campos devem ficar vazios.
 * A segurança não foi desabilitada para o bot. [Verifique](#disable-security-localhost) se o bot não especifica um valor para a ID ou a senha do aplicativo.
 
-## <a id="step-2"></a> Etapa 2: verificar a ID e a senha do aplicativo do bot
+## <a name="step-2-verify-your-bots-app-id-and-password"></a><a id="step-2"></a> Etapa 2: verificar a ID e a senha do aplicativo do bot
 
 Nesta etapa, você verificará se a ID e a senha do aplicativo e que seu bot usará para autenticação são válidas. (Caso não saiba quais são esses valores, [obtenha-os](#PW) agora.) 
 
@@ -134,11 +134,11 @@ Se a solicitação for bem-sucedida, você verificou que a ID e a senha do aplic
 
 Se você receber um erro em resposta à solicitação, examine a resposta para identificar a causa do erro. Se a resposta indicar que a ID ou a senha do aplicativo é inválida, [obtenha os valores corretos](#PW) no Portal do Bot Framework e emita novamente a solicitação com os novos valores para confirmar se eles são válidos. 
 
-## Etapa 3: habilitar a segurança e testar em localhost <a id="step-3"></a>
+## <a name="step-3-enable-security-and-test-on-localhost"></a>Etapa 3: habilitar a segurança e testar em localhost <a id="step-3"></a>
 
 Neste ponto, você verificou que seu bot fica acessível e funcional no localhost quando a segurança é desabilitada e confirmou que a ID e a senha do aplicativo que o bot usará para autenticação são válidas. Nesta etapa, você verificará se seu bot fica acessível e funcional no localhost quando a segurança estiver habilitada.
 
-### <a id="enable-security-localhost"></a> Habilitar segurança
+### <a name="enable-security"></a><a id="enable-security-localhost"></a> Habilitar segurança
 
 A segurança do seu bot se baseia em serviços da Microsoft, mesmo quando seu bot é executado somente no localhost. Para habilitar a segurança do bot, edite as definições de configuração para preencher a ID e senha do aplicativo com os valores que você verificou na [Etapa 2](#step-2).  Além disso, verifique se os pacotes estão atualizados, especificamente `System.IdentityModel.Tokens.Jwt` e `Microsoft.IdentityModel.Tokens`.
 
@@ -185,7 +185,7 @@ Se um ou mais erros forem indicados na janela de chat, clique nos erros para obt
 * Nas configurações do emulador, os campos **ID do aplicativo Microsoft** e/ou **Senha do aplicativo Microsoft** não contêm valores válidos. Ambos os campos devem ser preenchidos, e cada um deve conter o valor correspondente que você verificou ao [Etapa 2](#step-2).
 * A segurança não foi habilitada para o bot. [Verifique](#enable-security-localhost) se as definições de configuração do bot especificam valores para a ID e para a senha do aplicativo.
 
-## Etapa 4: testar seu bot na nuvem <a id="step-4"></a>
+## <a name="step-4-test-your-bot-in-the-cloud"></a>Etapa 4: testar seu bot na nuvem <a id="step-4"></a>
 
 Neste ponto, você verificou que seu bot fica acessível e funcional no localhost quando a segurança é desabilitada, confirmou que a ID e senha do aplicativo do seu bot são válidas e verificou que seu bot fica acessível e funcional no localhost, quando a segurança é habilitada. Nesta etapa, você implantará seu bot na nuvem e verificará se ele fica acessível e funcional nesse ambiente com a segurança habilitada. 
 

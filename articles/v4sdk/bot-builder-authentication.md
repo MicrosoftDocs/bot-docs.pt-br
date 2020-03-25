@@ -7,12 +7,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 2/7/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 1971867f7d1c21de00e13a0b1affb0b8fb6ccaed
-ms.sourcegitcommit: 2109d9da53fdf65966f33ed1fa628a40ec851d35
+ms.openlocfilehash: 67dcc948995fa76be6c99e2d6720ff1ae9735856
+ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78280127"
+ms.lasthandoff: 03/22/2020
+ms.locfileid: "80117757"
 ---
 <!-- 
 
@@ -441,9 +441,10 @@ Considera-se melhor prática permitir que os usuários saiam ou se desconectem e
 **Dialogs\LogoutDialog.cs**  
 [!code-csharp[Allow logout](~/../botbuilder-samples/samples/csharp_dotnetcore/18.bot-authentication/Dialogs/LogoutDialog.cs?range=44-61&highlight=11)]
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)  
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-**dialogs/logoutDialog.js** [!code-javascript[Allow logout](~/../botbuilder-samples/samples/javascript_nodejs/18.bot-authentication/dialogs/logoutDialog.js?range=31-42&highlight=7)]
+**dialogs/logoutDialog.js**  
+[!code-javascript[Allow logout](~/../botbuilder-samples/samples/javascript_nodejs/18.bot-authentication/dialogs/logoutDialog.js?range=31-42&highlight=7)]
 
 # <a name="python"></a>[Python](#tab/python)
 

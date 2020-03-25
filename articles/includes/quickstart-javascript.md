@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: f6d12b0031ec14e8c7c6e8bee876e7abb96c01f6
-ms.sourcegitcommit: eacf1522d648338eebefe2cc5686c1f7866ec6a2
+ms.openlocfilehash: 77635aab0e1535a2d44ef24c3e33094b13f4a15a
+ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70174576"
+ms.lasthandoff: 03/22/2020
+ms.locfileid: "80117828"
 ---
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 - [Visual Studio Code](https://www.visualstudio.com/downloads)
 - [Node.js](https://nodejs.org/)
@@ -58,10 +58,13 @@ Para criar seu bot e inicializar seus pacotes
 
 Yeoman pede-lhe alguma informação para criar o seu bot. Neste tutorial, use os valores padrão.
 
-- Digite um nome para o seu bot. (my-chat-bot)
-- Digite uma descrição. (Demonstram os principais recursos do Microsoft Bot Framework)
-- Escolha o idioma do seu bot. (JavaScript)
-- Escolha o modelo a ser usado. (Bot de Eco – https://aka.ms/generator-botbuilder-templates)
+```text
+? What's the name of your bot? my-chat-bot
+? What will your bot do? Demonstrate the core capabilities of the Microsoft Bot Framework
+? What programming language do you want to use? JavaScript
+? Which template would you like to start with? Echo Bot - https://aka.ms/bot-template-echo
+? Looking good.  Shall I go ahead and create your new bot? (Y/n)
+```
 
 Graças ao modelo, seu projeto contém todo o código necessário para criar o bot neste início rápido. Na verdade, você não precisa escrever nenhum código adicional.
 

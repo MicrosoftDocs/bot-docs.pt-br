@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/19/2020
-ms.openlocfilehash: d7e667724250d3307a53cf41dc671db788c347bc
-ms.sourcegitcommit: 54d3febefaf0072172b17bd8e4ec456264dfbd42
+ms.openlocfilehash: aac5f7ff6868d79ef398cbe51fc9e5a6d0f424a1
+ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77521400"
+ms.lasthandoff: 03/22/2020
+ms.locfileid: "80117531"
 ---
 # <a name="bot-framework-frequently-asked-questions"></a>Perguntas frequentes sobre o Bot Framework
 
@@ -248,7 +248,7 @@ O estado e a pilha de diálogo são armazenados em recipientes de dados de bot. 
 
 ## <a name="what-are-the-possible-machine-readable-resolutions-of-the-luis-built-in-date-time-duration-and-set-entities"></a>Quais são as possíveis resoluções legíveis por computador da data, hora, duração interna do LUIS e conjunto de entidades?
 
-Para obter uma lista de exemplos, confira [seção Entidades criadas previamente][LUISPreBuiltEntities] da documentação do LUIS.
+Para obter uma lista de exemplos, consulte a seção [Entidades criadas previamente](/azure/cognitive-services/LUIS/luis-reference-prebuilt-entities) da documentação do LUIS.
 
 ## <a name="how-can-i-use-more-than-the-maximum-number-of-luis-intents"></a>Como posso usar mais que o número máximo de intenções de LUIS?
 
@@ -266,7 +266,7 @@ Tanto o SDK do Bot Framework para Node.js quanto o SDK do Bot Framework para .NE
 
 * [Introdução ao LUIS (Serviço Inteligente de Reconhecimento Vocal) - Serviços Cognitivos da Microsoft](https://www.youtube.com/watch?v=jWeLajon9M8) (vídeo)
 * [Sessão de Aprendizado Avançado para LUIS (Serviço Inteligente de Reconhecimento Vocal)](https://www.youtube.com/watch?v=39L0Gv2EcSk) (vídeo)
-* [Documentação do LUIS](/azure/cognitive-services/LUIS/Home)
+* [Documentação do LUIS](/azure/cognitive-services/luis/)
 * [Fórum do Serviço Inteligente de Reconhecimento Vocal](https://social.msdn.microsoft.com/forums/azure/home?forum=LUIS) 
 
 

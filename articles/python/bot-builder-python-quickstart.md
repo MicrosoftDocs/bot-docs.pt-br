@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/10/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: c56d5607ca3c7841ad8a480ce23c7c2d21805968
-ms.sourcegitcommit: 2109d9da53fdf65966f33ed1fa628a40ec851d35
+ms.openlocfilehash: eb03a40f0044866679d0967fe7eaac30b5bc3143
+ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78280137"
+ms.lasthandoff: 03/22/2020
+ms.locfileid: "80117718"
 ---
 # <a name="create-a-bot-with-the-bot-framework-sdk-for-python"></a>Criar um bot com o SDK do Bot Framework para Python
 
@@ -42,7 +42,7 @@ O último pacote, cookiecutter, será usado para gerar o bot. Verifique se o coo
 cookiecutter https://github.com/microsoft/botbuilder-python/releases/download/Templates/echo.zip
 ```
 
-Este comando cria um Bot de Eco com base no [modelo de eco](https://github.com/microsoft/botbuilder-python/tree/master/generators/app/templates/echo) do Python.
+Este comando cria um Bot de Eco com base no [modelo de eco](https://github.com/microsoft/BotBuilder-Samples/tree/master/generators/python/app/templates/echo) do Python.
 
 3. Em seguida, você deverá fornecer o *nome* do bot e uma *descrição*. Nomeie o bot como `echo-bot` e defina a descrição como `A bot that echoes back user response.`, conforme mostrado abaixo:
 
