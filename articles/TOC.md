@@ -18,7 +18,10 @@
 ## [Gerenciar estado](v4sdk/bot-builder-concept-state.md)
 ## [Biblioteca de caixas de diálogo](v4sdk/bot-builder-concept-dialog.md)
 ## [Middleware](v4sdk/bot-builder-concept-middleware.md)
-## [Autenticação de usuário](v4sdk/bot-builder-concept-authentication.md)
+## Autenticação
+### [Autenticação de bot](v4sdk/bot-builder-concept-authentication.md)
+### [Provedores de Identidade](v4sdk/bot-builder-concept-identity-providers.md)
+### [Logon único](v4sdk/bot-builder-concept-sso.md)
 ## [Gerenciar recursos do bot](v4sdk/bot-file-basics.md)
 ## [Como funcionam os bots do Microsoft Teams](v4sdk/bot-builder-basics-teams.md)
 ## [Sobre as habilidades](v4sdk/skills-conceptual.md)
@@ -31,15 +34,15 @@
 ### [Bot de Produtividade Empresarial](bot-service-scenario-enterprise-productivity.md)
 ### [Bot de informações](bot-service-scenario-informational.md)
 ### [Bot de Internet das Coisas](bot-service-scenario-internet-things.md)
-# Instruções 
+# Instruções
 ## [Design](design/TOC.md)
 ## Desenvolver
 <!-- ## [Best practice for welcoming the user](v4sdk/bot-builder-welcome-user.md) -->
 ### [Enviar e receber mensagens de texto](v4sdk/bot-builder-howto-send-messages.md)
 ### [Adicionar mídia às mensagens](v4sdk/bot-builder-howto-add-media-attachments.md)
 ### [Adicionar botões para orientar a ação do usuário](v4sdk/bot-builder-howto-add-suggested-actions.md)
-### [Salvar dados de usuário e de conversa](v4sdk/bot-builder-howto-v4-state.md) 
-### [Solicitar aos usuários por entrada](v4sdk/bot-builder-primitive-prompts.md) 
+### [Salvar dados de usuário e de conversa](v4sdk/bot-builder-howto-v4-state.md)
+### [Solicitar aos usuários por entrada](v4sdk/bot-builder-primitive-prompts.md)
 ### [Enviar mensagem de boas-vinda aos usuários](v4sdk/bot-builder-send-welcome-message.md)
 ### [Enviar notificações proativas para os usuários](v4sdk/bot-builder-howto-proactive-message.md)
 ### [Implementar o fluxo de conversa sequencial](v4sdk/bot-builder-dialog-manage-conversation-flow.md)
@@ -51,7 +54,7 @@
 <!--#### [Implement a greeting dialog](v4sdk/bot-builder-dialogs-greeting.md)--TODO: Add once there's a sample.-->
 ### [Manipular interrupções do usuário](v4sdk/bot-builder-howto-handle-user-interrupt.md)
 ### [Gravar diretamente no armazenamento](v4sdk/bot-builder-howto-v4-storage.md)
-### [Adicionar autenticação ao seu bot ](v4sdk/bot-builder-authentication.md)
+### [Adicionar autenticação a um bot](v4sdk/bot-builder-authentication.md)
 ### [Implementar um armazenamento personalizado para seu bot](v4sdk/bot-builder-custom-storage.md)
 ### Habilidades
 #### [Implementar uma habilidade](v4sdk/skill-implement-skill.md)
