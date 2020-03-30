@@ -8,19 +8,19 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/01/2019
-ms.openlocfilehash: 142ffed02c9849511840a094cd91ee5953caf6af
-ms.sourcegitcommit: f3628f48d3471a48773e5d256a75e8fe39717bb6
+ms.openlocfilehash: 0d48d40efc9f28482c01b42132ab335e433e326f
+ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77035398"
+ms.lasthandoff: 03/22/2020
+ms.locfileid: "80117579"
 ---
 # <a name="debug-a-bot-with-inspection-middleware"></a>Depurar um bot com middleware de inspeção
 Este artigo descreve como depurar o bot usando o middleware de inspeção. Esse recurso permite que o Bot Framework Emulator depure o tráfego dentro e fora do bot, além de examinar o estado atual dele. Você pode usar uma mensagem de rastreamento para enviar dados para o emulador e, em seguida, inspecionar o estado do bot em qualquer determinada rodada da conversa. 
 
 Usamos um EchoBot criado localmente usando o Bot Framework v4 ([C#](https://docs.microsoft.com/azure/bot-service/dotnet/bot-builder-dotnet-sdk-quickstart?view=azure-bot-service-4.0) | [JavaScript](https://docs.microsoft.com/azure/bot-service/javascript/bot-builder-javascript-quickstart?view=azure-bot-service-4.0) | [Python](https://docs.microsoft.com/azure/bot-service/python/bot-builder-python-quickstart?view=azure-bot-service-4.0)) para mostrar como depurar e inspecionar o estado da mensagem do bot. Você também pode [Depurar um bot usando o IDE](./bot-service-debug-bot.md) ou [Depurar com o Bot Framework Emulator](./bot-service-debug-emulator.md), mas, para depurar o estado, você precisa adicionar o middleware de inspeção ao bot. Os exemplos de bot de inspeção estão disponíveis aqui: [C#](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/47.inspection), [JavaScript](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/javascript_nodejs/47.inspection) e [Python](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/python/47.inspection). 
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 - Baixar e instalar o [Bot Framework Emulator](https://aka.ms/Emulator-wiki-getting-started)
 - Conhecimento do [middleware](https://docs.microsoft.com/azure/bot-service/bot-builder-concept-middleware?view=azure-bot-service-4.0) de bot
 - Conhecimento do [estado de gerenciamento](https://docs.microsoft.com/azure/bot-service/bot-builder-concept-state?view=azure-bot-service-4.0) de bot
@@ -36,13 +36,15 @@ Para verificar a versão do seu emulador, selecione **Ajuda** -> **Sobre** no me
 ## <a name="update-your-bots-code"></a>Atualizar o código do bot
 
 # <a name="c"></a>[C#](#tab/csharp)
-Configure o estado de inspeção no arquivo **Startup**. Adicione o middleware de inspeção ao adaptador. O estado de inspeção é fornecido por injeção de dependência. Veja a atualização do código abaixo ou consulte o exemplo de inspeção aqui: [C#](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/47.inspection). 
+Configure o estado de inspeção e adicione o middleware de inspeção ao adaptador no arquivo **Startup.cs**. O estado de inspeção é fornecido por injeção de dependência. Veja a atualização do código abaixo ou consulte o exemplo de inspeção aqui: [C#](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/47.inspection). 
 
 **Startup.cs**  
 [!code-csharp [inspection bot sample](~/../botbuilder-samples/samples/csharp_dotnetcore/47.inspection/Startup.cs?range=17-37)]
 
 **AdapterWithInspection.cs**  
 [!code-csharp [inspection bot sample](~/../botbuilder-samples/samples/csharp_dotnetcore/47.inspection/AdapterwithInspection.cs?range=11-37)]
+
+Atualize a classe do bot no arquivo **EchoBot.cs**.
 
 **EchoBot.cs**  
 [!code-csharp [inspection bot sample](~/../botbuilder-samples/samples/csharp_dotnetcore/47.inspection/Bots/EchoBot.cs?range=14-43)]
@@ -64,7 +66,7 @@ Configure o estado de inspeção e adicione o middleware de inspeção ao adapta
 
 Atualize a classe bot no arquivo **bot.js**. 
 
-[!code-javascript [inspection bot sample](~/../botbuilder-samples/samples/javascript_nodejs/47.inspection/bot.js?range=6-50)]
+[!code-javascript [inspection bot sample](~/../botbuilder-samples/samples/javascript_nodejs/47.inspection/bot.js?range=6-52)]
 
 # <a name="python"></a>[Python](#tab/python)
 Antes de atualizar a execução de código do bot, instale os pacotes PyPI necessários executando os seguintes comandos em um terminal:

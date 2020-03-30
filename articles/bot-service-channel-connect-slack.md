@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 01/09/2019
-ms.openlocfilehash: 3147e202a615e29d51f1e3fa3a9d5d70ed54fe83
-ms.sourcegitcommit: d24fe2178832261ac83477219e42606f839dc64d
+ms.openlocfilehash: 74d7e666ff7a47fa9635a0b8e28f5d99edcaaa45
+ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77071734"
+ms.lasthandoff: 03/22/2020
+ms.locfileid: "80117647"
 ---
 # <a name="connect-a-bot-to-slack"></a>Conectar um bot ao Slack
 
@@ -24,42 +24,53 @@ Há duas maneiras de configurar o aplicativo de mensagens Slack:
 ## <a name="azure-bot-service-portal"></a>[Portal do Serviço de Bot do Azure](#tab/abs)
 ## <a name="create-a-slack-application-for-your-bot"></a>Criar um aplicativo do Slack para o seu bot
 
-Faça logon no [Slack](https://slack.com/signin) e [crie um canal do aplicativo Slack](https://api.slack.com/apps).
+1. Em seu navegador, faça logon no [Slack](https://slack.com/signin).
+1. Navegue até o canal [criar um aplicativo Slack](https://api.slack.com/apps).
 
 ![Configurar o bot](~/media/channels/slack-NewApp.png)
 
 ## <a name="create-an-app-and-assign-a-development-slack-team"></a>Criar um aplicativo e atribuir uma equipe de Desenvolvimento do Slack
 
-Insira um Nome de Aplicativo e selecione uma equipe de Desenvolvimento do Slack. Se você ainda não for membro de uma equipe de Desenvolvimento do Slack, [crie ou ingresse em uma](https://slack.com/).
+1. Clique no botão **Criar Aplicativo**.
+1. Insira um Nome de Aplicativo e selecione uma equipe de Desenvolvimento do Slack.
+Se você ainda não for membro de uma equipe de Desenvolvimento do Slack, [crie ou ingresse em uma](https://slack.com/).
 
 ![Criar aplicativo](~/media/channels/slack-CreateApp.png)
 
-Clique em **Criar Aplicativo**. O Slack criará seu aplicativo e gerará uma ID de Cliente e Segredo do Cliente.
+1. Clique no botão **Criar Aplicativo**. O Slack criará seu aplicativo e gerará uma **ID do Cliente** e um **Segredo do Cliente**.
 
 ## <a name="add-a-new-redirect-url"></a>Adicionar uma nova URL de Redirecionamento
 
-Em seguida, você adicionará uma nova URL de Redirecionamento.
-
-1. Selecione a guia **OAuth e Permissões**.
-2. Clique em **Adicionar uma nova URL de Redirecionamento**.
-3. Digite [https://slack.botframework.com](https://slack.botframework.com).
-4. Clique em **Adicionar**.
-5. Clique em **Salvar URLs**.
+1. No painel esquerdo, clique no link **OAuth e Permissões**.
+2. No painel direito, clique no botão **Adicionar uma nova URL de Redirecionamento**.
+3. Digite o valor a seguir `https://slack.botframework.com`.
+4. Clique no botão **Adicionar** .
+5. Clique no botão **Salvar URLs**.
 
 ![Adicionar URL de redirecionamento](~/media/channels/slack-RedirectURL.png)
 
-## <a name="create-a-slack-bot-user"></a>Criar um Usuário de Bot do Slack
+## <a name="add-bot-token-scopes"></a>Adicionar escopos de token de bot
+<!-- Replaces add user -->
+1. No painel esquerdo, clique no link **OAuth e Permissões**.
+1. No painel direito, role para baixo até **Escopos**.
+1. Na seção **Escopos de Token de Bot**, clique no botão **Adicionar um Escopo OAuth**.
+1. Selecione os seguintes escopos, também mostrados na imagem:
 
-Ao adicionar um Usuário de Bot, você pode atribuir um nome de usuário para o seu bot e escolher se ele sempre será mostrado como online.
+    - `app_mentions:read`
+    - `channels:history`
+    - `channels:read`
+    - `chat:write`
+    - `groups:history`
+    - `groups:read`
+    - `im:history`
+    - `mpim:history`
 
-1. Selecione a guia **Usuários de Bot**.
-2. Clique em **Adicionar um Usuário de Bot**.
+    ![escopos de bot do slack](media/channels/slack-bot-scopes.PNG)
 
-![Criar bot](~/media/channels/slack-CreateBot.png)
+1. No painel esquerdo, selecione o link **Página Inicial do Aplicativo**.
+1. No painel direito, role para baixo e habilite **Sempre Mostrar Meu Bot como Online**.
 
-Clique em **Adicionar Usuário de Bot** para validar suas configurações, defina **Sempre Mostrar meu Bot Online** como **Ligado** e, em seguida, clique em **Salvar Alterações**.
-
-![Criar bot](~/media/channels/slack-CreateApp-AddBotUser.png)
+    ![exibição do bot do slack](media/channels/slack-bot-display.PNG)
 
 ## <a name="subscribe-to-bot-events"></a>Assinar eventos de Bot
 
@@ -76,12 +87,13 @@ Execute estas etapas para assinar seis eventos de bot específicos. Ao assinar e
 
 4. Em **Assinar Eventos de Bot**, clique em **Adicionar Evento de Usuário do Bot**.
 5. Na lista de eventos, selecione esses seis tipos de evento:
-    * `member_joined_channel`
-    * `member_left_channel`
-    * `message.channels`
-    * `message.groups`
-    * `message.im`
-    * `message.mpim`
+
+    - `member_joined_channel`
+    - `member_left_channel`
+    - `message.channels`
+    - `message.groups`
+    - `message.im`
+    - `message.mpim`
 
    ![Assinar eventos: meio](~/media/channels/slack-SubscribeEvents-b.png)
 
@@ -145,7 +157,7 @@ Assim como o canal disponível no Serviço de Bot do Azure para conectar o bot c
 > [!NOTE]
 > As instruções a seguir abordam a implementação em C# do adaptador do Slack. Para obter instruções sobre como usar o adaptador JS, parte das bibliotecas BotKit, [consulte a documentação do Slack sobre BotKit](https://botkit.ai/docs/v4/platforms/slack.html).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 * O [código de exemplo do EchoBot](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/02.echo-bot)
 
@@ -283,10 +295,10 @@ Agora que você criou um aplicativo do Slack e conectou o adaptador ao seu proje
 Para concluir esta etapa, [implante o bot no Azure](https://aka.ms/bot-builder-deploy-az-cli) e anote a URL do bot implantado.
 
 > [!NOTE]
-> Se você não estiver pronto para implantar o bot no Azure ou desejar depurar o bot ao usar o adaptador do Slack, poderá usar uma ferramenta como a [ngrok](https://www.ngrok.com) (que você provavelmente já terá instalada se usou o emulador do Bot Framework anteriormente) para fazer um túnel para o bot em execução localmente e fornecer uma URL acessível publicamente para isso. 
-> 
+> Se você não estiver pronto para implantar o bot no Azure ou desejar depurar o bot ao usar o adaptador do Slack, poderá usar uma ferramenta como a [ngrok](https://www.ngrok.com) (que você provavelmente já terá instalada se usou o emulador do Bot Framework anteriormente) para fazer um túnel para o bot em execução localmente e fornecer uma URL acessível publicamente para isso.
+>
 > Se desejar criar um túnel ngrok e obter uma URL para o bot, use o comando a seguir em uma janela do terminal (isso pressupõe que o bot local esteja em execução na porta 3978; altere os números de porta no comando se o bot não estiver).
-> 
+>
 > ```
 > ngrok.exe http 3978 -host-header="localhost:3978"
 > ```

@@ -8,20 +8,21 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 01/16/2020
-ms.openlocfilehash: c49a632696ea0708f817f733aff7b2743600ccb6
-ms.sourcegitcommit: d24fe2178832261ac83477219e42606f839dc64d
+ms.openlocfilehash: 7f46d5f2b5012db914568e5ae613c18405dfa113
+ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77071694"
+ms.lasthandoff: 03/22/2020
+ms.locfileid: "80117631"
 ---
 # <a name="configure-net-bot-for-extension"></a>Configurar o bot do .NET para a extensão
 
 [!INCLUDE[applies-to-v4](includes/applies-to.md)]
 
-Este artigo descreve como atualizar um bot para trabalhar com **pipes nomeados** e como habilitar a extensão de serviço de aplicativo do Direct Line no recurso de **Serviço de Aplicativo do Azure** em que o bot está hospedado.
+Este artigo descreve como atualizar um bot para trabalhar com **pipes nomeados** e como habilitar a extensão de serviço de aplicativo do Direct Line no recurso de **Serviço de Aplicativo do Azure** em que o bot está hospedado. Leia este artigo complementar [Criar um cliente do .NET para se conectar à extensão do Serviço de Aplicativo do Direct Line](bot-service-channel-directline-extension-net-client.md).
 
-## <a name="prerequisites"></a>Prerequisites
+
+## <a name="prerequisites"></a>Pré-requisitos
 
 Para executar as etapas descritas a seguir, você precisa ter o recurso do **Serviço de Aplicativo do Azure** e o **Serviço de Aplicativo** relacionado no Azure.
 
@@ -84,7 +85,7 @@ Esta seção descreve como habilitar a extensão de serviço de aplicativo do Di
 1. Se ele ainda não estiver habilitado, clique no canal **Direct Line** para habilitá-lo.
 1. Se ele já estiver habilitado, na tabela Conectar-se a canais, clique no link **Editar** na linha do Direct Line.
 1. Role para baixo até a seção Chaves da Extensão do Serviço de Aplicativo.
-1. Clique no link **Mostrar** para revelar uma das chaves e, em seguida, copie seu valor.
+1. Clique no link **Mostrar** para revelar uma das chaves e, em seguida, copie e salve o valor dela. Você usará esse valor na próxima seção.
 
 ![Chaves de extensão do serviço de aplicativo](./media/channels/direct-line-extension-extension-keys.png)
 
@@ -96,8 +97,10 @@ Esta seção descreve como habilitar a extensão de serviço de aplicativo do Di
 
     |Nome|Valor|
     |---|---|
-    |DirectLineExtensionKey|<App_Service_Extension_Key_From_Section_1>|
+    |DirectLineExtensionKey|<App_Service_Extension_Key>|
     |DIRECTLINE_EXTENSION_VERSION|mais recente|
+
+    Em que *App_Service_Extension_Key* é o valor salvo anteriormente.
 
 1. Na seção *Configuração*, clique na seção de configurações **Geral** e ative os **Web Sockets**
 1. Clique em **Salvar** para salvar as configurações. Isso reinicia o Serviço de Aplicativo do Azure.
@@ -111,3 +114,8 @@ Se tudo estiver correto, a página retornará este conteúdo JSON: `{"k":true,"i
 - **initialized** determina se a ASE do Direct Line pode usar a chave de Extensão do Serviço de Aplicativo para baixar os metadados do bot do Serviço de Bot do Azure
 - **ib** determina se a ASE do Direct Line pode estabelecer uma conexão de entrada com o bot.
 - **ob** determina se a ASE do Direct Line pode estabelecer uma conexão de saída com o bot.
+
+## <a name="next-steps"></a>Próximas etapas
+
+> [!div class="nextstepaction"]
+> [Criar cliente do .NET](./bot-service-channel-directline-extension-net-client.md)

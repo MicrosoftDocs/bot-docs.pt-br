@@ -8,26 +8,27 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 07/25/2019
-ms.openlocfilehash: 0ed4bbeb9a882bcf8e4dd75364211f1a3538479b
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: d990700ab06a4bfae34cffcbc1a6846f66ec1d77
+ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75793216"
+ms.lasthandoff: 03/22/2020
+ms.locfileid: "80117613"
 ---
 # <a name="create-net-client-to-connect-to-direct-line-app-service-extension"></a>Criar um cliente .NET para se conectar à extensão do Serviço de Aplicativo do Direct Line
 
 Este artigo descreve como criar um cliente .NET em C# que se conecta à extensão do serviço de aplicativo do Direct Line.
+Leia também este artigo complementar [Configurar bot do .NET da extensão](bot-service-channel-directline-extension-net-bot.md).
 
 ## <a name="gather-your-direct-line-extension-keys"></a>Reunir suas chaves de Extensão do Direct Line
 
 1. Em seu navegador, navegue até o [portal do Azure](https://portal.azure.com/)
 1. No portal do Azure, localize o recurso do **Serviço de Bot do Azure**
 1. Clique em **Canais** para configurar os canais do bot
-1. Se ele ainda não estiver habilitado, clique no canal **Direct Line** para habilitá-lo. 
+1. Se ele ainda não estiver habilitado, clique no canal **Direct Line** para habilitá-lo.
 1. Se ele já estiver habilitado, na tabela Conectar-se a canais, clique no link **Editar** na linha do Direct Line.
 1. Role até a seção Sites. Normalmente, há um Site padrão, a menos que você o tenha excluído ou renomeado.
-1. Clique no link **Mostrar** para revelar uma das chaves e, em seguida, copie seu valor.
+1. Clique no link **Mostrar** para revelar uma das chaves e, em seguida, copie e salve o valor dela. Você usará esse valor na próxima seção.
 
     ![Chaves de extensão do serviço de aplicativo](./media/channels/direct-line-extension-extension-keys-net-client.png)
 
@@ -48,7 +49,7 @@ Os pacotes NuGet em versão prévia necessários para criar um cliente do Direct
 
 ## <a name="create-a-c-direct-line-client"></a>Criar um cliente do Direct Line em C#
 
-As interações com a extensão do serviço de aplicativo do Direct Line acontecem de forma diferente do Direct Line tradicional, pois a maior parte da comunicação ocorre em um *WebSocket*. O cliente do Direct Line atualizado inclui classes auxiliares para abrir e fechar um *WebSocket*, enviar comandos por meio do WebSocket e receber atividades de volta do bot. Esta seção descreve como criar um cliente em C# simples para interagir com um bot.
+As interações com a extensão do serviço de aplicativo do Direct Line acontecem de modo diferente do Direct Line tradicional, pois a maior parte da comunicação ocorre em um *WebSocket*. O cliente do Direct Line atualizado inclui classes auxiliares para abrir e fechar um *WebSocket*, enviar comandos por meio do WebSocket e receber atividades de volta do bot. Esta seção descreve como criar um cliente em C# simples para interagir com um bot.
 
 1. Crie um projeto de aplicativo de console do .NET Core 2.2 no Visual Studio.
 1. Adicione o **NuGet do cliente do Direct Line** ao seu projeto
@@ -57,7 +58,7 @@ As interações com a extensão do serviço de aplicativo do Direct Line acontec
     - Altere a origem do Pacote para aquela que você definiu acima (DL ASE Preview)
     - Localize o pacote *Microsoft.Bot.Connector.Directline* versão v3.0.3-Preview1 ou posterior.
     - Clique em **Instalar Pacote**.
-1. Crie um cliente e gere um token usando um segredo. Esta etapa é o mesmo que criar qualquer outro cliente do Direct Line em C#, exceto pelo ponto de extremidade que você precisa usar em seu bot, ao qual é acrescentado o caminho **.bot/**, conforme mostrado a seguir. Não se esqueça do **/** no final.
+1. Crie um cliente e gere um token usando um segredo. Esta etapa é o mesmo que criar qualquer outro cliente do Direct Line em C#, exceto pelo ponto de extremidade que você precisa usar em seu bot, ao qual é acrescentado o caminho **.bot/** , conforme mostrado a seguir. Não se esqueça do **/** no final.
 
     ```csharp
     string endpoint = "https://<YOUR_BOT_HOST>.azurewebsites.net/.bot/";
@@ -68,6 +69,10 @@ As interações com a extensão do serviço de aplicativo do Direct Line acontec
         new DirectLineClientCredentials(secret));
     var conversation = await tokenClient.Tokens.GenerateTokenForNewConversationAsync();
     ```
+
+    Observe o seguinte:
+    - O valor do ponto de extremidade é a URL do bot que você obteve quando implantou o bot no Azure.  Para obter mais informações, confira [Configurar o bot do .NET da extensão](bot-service-channel-directline-extension-net-bot.md).
+    - O valor secreto mostrado como *YOUR_BOT_SECRET* é o valor que você salvou anteriormente na *seção de sites*.
 
 1. Depois que tiver uma referência de conversa da geração de um token, você poderá usar a ID dessa conversa para abrir um WebSocket com a nova propriedade `StreamingConversations` no `DirectLineClient`. Para fazer isso, você precisa criar um retorno de chamada que será invocado quando o bot quiser enviar `ActivitySets` ao cliente:
 

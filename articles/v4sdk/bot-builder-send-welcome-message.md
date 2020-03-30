@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 2/7/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: bff3aadddf1d4f5dd1126f64da1429dbc0a2967a
-ms.sourcegitcommit: 2109d9da53fdf65966f33ed1fa628a40ec851d35
+ms.openlocfilehash: 553265332f174aec6e9043320bd31188b068f492
+ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78280131"
+ms.lasthandoff: 03/22/2020
+ms.locfileid: "80117724"
 ---
 # <a name="send-welcome-message-to-users"></a>Enviar mensagem de boas-vinda aos usuários
 
@@ -83,25 +83,31 @@ Quando uma nova entrada de usuário é recebida, a propriedade `welcome_user_sta
 
 O objeto de estado do usuário é criado na inicialização e a dependência é injetada no construtor de bot.
 
-**Startup.cs** [!code-csharp[define state](~/../botBuilder-samples/samples/csharp_dotnetcore/03.welcome-user/Startup.cs?range=30-34)]
+**Startup.cs**  
+[!code-csharp[define state](~/../botBuilder-samples/samples/csharp_dotnetcore/03.welcome-user/Startup.cs?range=30-34)]
 
-**Bots\WelcomeUserBot.cs** [!code-csharp[consume state](~/../BotBuilder-Samples/samples/csharp_dotnetcore/03.welcome-user/bots/WelcomeUserBot.cs?range=41-47)]
+**Bots\WelcomeUserBot.cs**  
+[!code-csharp[consume state](~/../BotBuilder-Samples/samples/csharp_dotnetcore/03.welcome-user/bots/WelcomeUserBot.cs?range=41-47)]
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Na inicialização, o estado do usuário é definido em `index.js` e consumido pelo construtor do bot.
 
-**index.js** [!code-javascript[define state](~/../BotBuilder-Samples/samples/javascript_nodejs/03.welcome-users/index.js?range=51-55)]
+**index.js**  
+[!code-javascript[define state](~/../BotBuilder-Samples/samples/javascript_nodejs/03.welcome-users/index.js?range=51-55)]
 
-**bots/welcomeBot.js** [!code-javascript[consume state](~/../BotBuilder-Samples/samples/javascript_nodejs/03.welcome-users/bots/welcomeBot.js?range=16-22)]
+**bots/welcomeBot.js**  
+[!code-javascript[consume state](~/../BotBuilder-Samples/samples/javascript_nodejs/03.welcome-users/bots/welcomeBot.js?range=16-22)]
 
 ### <a name="python"></a>[Python](#tab/python)
 
 Na inicialização, o estado do usuário é definido em `app.py` e consumido pelo construtor do bot.
 
-**app.py** [!code-python[define state](~/../botbuilder-samples/samples/python/03.welcome-user/app.py?range=61-66)]
+**app.py**  
+[!code-python[define state](~/../botbuilder-samples/samples/python/03.welcome-user/app.py?range=61-66)]
 
-**bots/welcome-user-bot.py** [!code-python[consume state](~/../botbuilder-samples/samples/python/03.welcome-user/bots/welcome_user_bot.py?range=23-29)]
+**bots/welcome-user-bot.py**  
+[!code-python[consume state](~/../botbuilder-samples/samples/python/03.welcome-user/bots/welcome_user_bot.py?range=23-29)]
 
 ---
 
@@ -112,21 +118,24 @@ Na inicialização, o estado do usuário é definido em `app.py` e consumido pel
 Agora, criamos um acessador de propriedade que nos fornece um identificador para `WelcomeUserState` dentro do método `OnMessageActivityAsync`.
 Em seguida, chame o método `GetAsync` para obter a chave de escopo correta. Em seguida, salvamos os dados de estado do usuário após cada iteração de entrada do usuário, usando o método `SaveChangesAsync`.
 
-**Bots\WelcomeUserBot.cs** [!code-csharp[Get state](~/../BotBuilder-Samples/samples/csharp_dotnetcore/03.welcome-user/bots/WelcomeUserBot.cs?range=68-71)]
+**Bots\WelcomeUserBot.cs**  
+[!code-csharp[Get state](~/../BotBuilder-Samples/samples/csharp_dotnetcore/03.welcome-user/bots/WelcomeUserBot.cs?range=68-71)]
 [!code-csharp[Save state](~/../BotBuilder-Samples/samples/csharp_dotnetcore/03.welcome-user/bots/WelcomeUserBot.cs?range= 103-105)]
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Criamos agora um acessador de propriedade que nos fornece um identificador para welcomedUserProperty que é persistente dentro de userState.
 
-**bots/welcomeBot.js** [!code-javascript[Get state](~/../BotBuilder-Samples/samples/javascript_nodejs/03.welcome-users/bots/welcomebot.js?range=24-27)]
+**bots/welcomeBot.js**  
+[!code-javascript[Get state](~/../BotBuilder-Samples/samples/javascript_nodejs/03.welcome-users/bots/welcomebot.js?range=24-27)]
 [!code-javascript[Save state](~/../BotBuilder-Samples/samples/javascript_nodejs/03.welcome-users/bots/welcomebot.js?range=89-97)]
 
 ### <a name="python"></a>[Python](#tab/python)
 
 Este exemplo cria um acessador de propriedade de estado de conversa, `user_state_accessor`, no construtor do bot.
 
-**bots/welcome-user-bot.py** [!code-python[constructor](~/../botbuilder-samples/samples/python/03.welcome-user/bots/welcome_user_bot.py?range=31)]
+**bots/welcome-user-bot.py**  
+[!code-python[constructor](~/../botbuilder-samples/samples/python/03.welcome-user/bots/welcome_user_bot.py?range=31)]
 
 Ele usa o acessador de propriedade no manipulador de `on_message_activity` e substitui o manipulador de `on_turn` para salvar o estado antes do final da rodada.
 
@@ -149,7 +158,8 @@ Em **WelcomeUserBot**, verificamos se há uma atualização de atividade, usando
 
 Esse código do JavaScript envia uma mensagem inicial de boas-vindas quando um usuário é adicionado. Isso é feito analisando a atividade da conversa e verificando se um novo membro foi adicionado à conversa.
 
-**bots/welcomeBot.js** [!code-javascript[onMembersAdded](~/../BotBuilder-Samples/samples/javascript_nodejs/03.welcome-users/bots/welcomebot.js?range=63-86)]
+**bots/welcomeBot.js**  
+[!code-javascript[onMembersAdded](~/../BotBuilder-Samples/samples/javascript_nodejs/03.welcome-users/bots/welcomebot.js?range=63-86)]
 
 ### <a name="python"></a>[Python](#tab/python)
 
@@ -166,21 +176,24 @@ O `on_members_added_activity` verifica se um novo usuário foi adicionado e, em 
 
 Também é importante considerar quando a entrada do usuário pode realmente conter informações úteis. Isso pode variar para cada canal. Para garantir que o usuário tenha uma boa experiência em todos os canais possíveis, verificamos o sinalizador de status _didBotWelcomeUser_ e, se ele for “false”, não processaremos a entrada inicial do usuário. Em vez disso, forneceremos ao usuário uma mensagem inicial de boas-vindas. O booliano _welcomedUserProperty_ é definido como "true", armazenado em UserState e nosso código agora processará essa entrada do usuário usando todas as atividades adicionais de mensagem.
 
-**Bots\WelcomeUserBot.cs** [!code-csharp[DidBotWelcomeUser](~/../BotBuilder-Samples/samples/csharp_dotnetcore/03.welcome-user/bots/WelcomeUserBot.cs?range=68-84)]
+**Bots\WelcomeUserBot.cs**  
+[!code-csharp[DidBotWelcomeUser](~/../BotBuilder-Samples/samples/csharp_dotnetcore/03.welcome-user/bots/WelcomeUserBot.cs?range=68-84)]
 [!code-csharp[DidBotWelcomeUser](~/../BotBuilder-Samples/samples/csharp_dotnetcore/03.welcome-user/bots/WelcomeUserBot.cs?range=101-105)]
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Também é importante considerar quando a entrada do usuário pode realmente conter informações úteis. Isso pode variar para cada canal. Para garantir que o usuário tenha uma boa experiência em todos os canais possíveis, verificamos a propriedade didBotWelcomedUser. Caso ela não exista, definimos como "false" e não processamos a entrada inicial do usuário. Em vez disso, forneceremos ao usuário uma mensagem inicial de boas-vindas. Em seguida, o bool didBotWelcomeUser é definido como "true" e nosso código processa a entrada do usuário de todas as atividades de mensagem adicionais.
 
-**bots/welcomeBot.js** [!code-javascript[DidBotWelcomeUser](~/../BotBuilder-Samples/samples/javascript_nodejs/03.welcome-users/bots/welcomebot.js?range=24-39)]
+**bots/welcomeBot.js**  
+[!code-javascript[DidBotWelcomeUser](~/../BotBuilder-Samples/samples/javascript_nodejs/03.welcome-users/bots/welcomebot.js?range=24-39)]
 [!code-javascript[DidBotWelcomeUser](~/../BotBuilder-Samples/samples/javascript_nodejs/03.welcome-users/bots/welcomebot.js?range=57-61)]
 
 ### <a name="python"></a>[Python](#tab/python)
 
 Também é importante considerar quando a entrada do usuário pode realmente conter informações úteis. Isso pode variar para cada canal. Para garantir que o usuário tenha uma boa experiência em todos os canais possíveis, `on_message_activity` verifica a propriedade `did_welcome_user`. Na primeira vez, ele o define como *falso* e não processa a entrada do usuário. Em vez disso, ele fornece ao usuário uma mensagem inicial de boas-vindas. Em seguida, ele define `did_welcome_user` como *true* e processa a entrada do usuário de todas as atividades de mensagem adicionais.
 
-**bots/welcome-user-bot.py** [!code-python[DidBotWelcomeUser](~/../botbuilder-samples/samples/python/03.welcome-user/bots/welcome_user_bot.py?range=85-95)]
+**bots/welcome-user-bot.py**  
+[!code-python[DidBotWelcomeUser](~/../botbuilder-samples/samples/python/03.welcome-user/bots/welcome_user_bot.py?range=85-95)]
 
 ---
 
@@ -192,19 +205,22 @@ Após a recepção de um novo usuário, as informações de entrada do usuário 
 
 Uma entrada de “intro” ou “help” chama a função `SendIntroCardAsync` para apresentar ao usuário um cartão Hero informativo. Esse código é examinado na próxima seção deste artigo.
 
-**Bots\WelcomeUserBot.cs** [!code-csharp[SwitchOnUtterance](~/../BotBuilder-Samples/samples/csharp_dotnetcore/03.welcome-user/bots/WelcomeUserBot.cs?range=85-100)]
+**Bots\WelcomeUserBot.cs**  
+[!code-csharp[SwitchOnUtterance](~/../BotBuilder-Samples/samples/csharp_dotnetcore/03.welcome-user/bots/WelcomeUserBot.cs?range=85-100)]
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Uma entrada de”intro” ou “help” usa CardFactory para apresentar ao usuário um cartão adaptável de introdução. Esse código é examinado na próxima seção deste artigo.
 
-**bots/welcomeBot.js** [!code-javascript[SwitchOnUtterance](~/../BotBuilder-Samples/samples/javascript_nodejs/03.welcome-users/bots/welcomebot.js?range=40-56)]
+**bots/welcomeBot.js**  
+[!code-javascript[SwitchOnUtterance](~/../BotBuilder-Samples/samples/javascript_nodejs/03.welcome-users/bots/welcomebot.js?range=40-56)]
 
 ### <a name="python"></a>[Python](#tab/python)
 
 Uma entrada de um usuário de *introdução* ou *ajuda* faz com que o bot chame `__send_intro_card`, que apresenta ao usuário um cartão adaptável introdutório.
 
-**bots/welcome-user-bot.py** [!code-python[SwitchOnUtterance](~/../botbuilder-samples/samples/python/03.welcome-user/bots/welcome_user_bot.py?range=101-106&highlight=97-106)]
+**bots/welcome-user-bot.py**  
+[!code-python[SwitchOnUtterance](~/../botbuilder-samples/samples/python/03.welcome-user/bots/welcome_user_bot.py?range=101-106&highlight=97-106)]
 
 ---
 
@@ -214,15 +230,18 @@ Conforme mencionado acima, algumas entradas do usuário geram um *cartão Hero* 
 
 ### <a name="c"></a>[C#](#tab/csharp)
 
-**Bots\WelcomeUserBot.cs** [!code-csharp[SendHeroCardGreeting](~/../BotBuilder-Samples/samples/csharp_dotnetcore/03.welcome-user/bots/WelcomeUserBot.cs?range=107-125)]
+**Bots\WelcomeUserBot.cs**  
+[!code-csharp[SendHeroCardGreeting](~/../BotBuilder-Samples/samples/csharp_dotnetcore/03.welcome-user/bots/WelcomeUserBot.cs?range=107-125)]
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-**bots/welcomeBot.js** [!code-javascript[SendIntroCard](~/../BotBuilder-Samples/samples/javascript_nodejs/03.welcome-users/bots/welcomebot.js?range=99-124)]
+**bots/welcomeBot.js**  
+[!code-javascript[SendIntroCard](~/../BotBuilder-Samples/samples/javascript_nodejs/03.welcome-users/bots/welcomebot.js?range=99-124)]
 
 ### <a name="python"></a>[Python](#tab/python)
 
-**bots/welcome-user-bot.py** [!code-python[SendIntroCard](~/../botbuilder-samples/samples/python/03.welcome-user/bots/welcome_user_bot.py?range=108-143)]
+**bots/welcome-user-bot.py**  
+[!code-python[SendIntroCard](~/../botbuilder-samples/samples/python/03.welcome-user/bots/welcome_user_bot.py?range=108-143)]
 
 ---
 

@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/03/2019
-ms.openlocfilehash: ed7395475378e95793592f88826fe4fc849797b8
-ms.sourcegitcommit: 86495b597e55c94309a0c73fc1945a3393ddcbbf
+ms.openlocfilehash: d8465a1cfa567790d62fc58ac29b6a452418f582
+ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75756478"
+ms.lasthandoff: 03/22/2020
+ms.locfileid: "80117568"
 ---
 # <a name="categorized-activities-by-channel"></a>Atividades categorizadas por canal
 
@@ -283,8 +283,10 @@ Para obter mais informações sobre _Ações de Cartão_, consulte a seção [En
 
 *Observação: tecnicamente, o canal de Direct Line dá suporte a todos os cartões, mas cabe ao cliente implementá-los*
 
-* ✔: suporte completo
-* ⚠: suporte parcial – o cartão não poderá enviar se contiver entradas/botões. Varia de acordo com o canal.
+* ✔: com suporte – o cartão é totalmente compatível com a exceção de que alguns canais só dão suporte a um subconjunto de CardActions e/ou pode limitar o número de ações permitidas em cada cartão.  Varia de acordo com o canal.
+* ⚠: suporte parcial – o cartão não poderá ser exibido se contiver entradas e/ou botões. Varia de acordo com o canal.
 * ❌: sem suporte
 * 🔶: o cartão é convertido em imagem
-* 🌐: o cartão é convertido em texto não formatado com links e/ou imagens e/ou a mídia não é reproduzida no cliente
+* 🌐: o cartão é convertido em texto sem formatação – os links não podem ser clicáveis, as imagens não podem ser exibidas e/ou a mídia não pode ser reproduzida. Varia de acordo com o canal.
+
+Essas categorias são intencionalmente amplas e não explicam totalmente como cada recurso de cartão é compatível com cada canal devido às muitas combinações possíveis de cartões, recursos e canais. Use esta tabela como referência de base, mas teste cada um dos seus cartões nos canais desejados.

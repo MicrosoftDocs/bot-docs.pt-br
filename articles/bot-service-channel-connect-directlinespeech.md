@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: travisw
-ms.openlocfilehash: 55bb6b63f35b2cb064229ed0a827af422ca83882
-ms.sourcegitcommit: 490810d278d1c8207330b132f28a5eaf2b37bd07
+ms.openlocfilehash: d8831930934bef15c06679236efb7f4e7962b1aa
+ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73592223"
+ms.lasthandoff: 03/22/2020
+ms.locfileid: "80117507"
 ---
 # <a name="connect-a-bot-to-direct-line-speech"></a>Conectar um bot ao Direct Line Speech
 
@@ -22,7 +22,7 @@ ms.locfileid: "73592223"
 
 Você pode configurar seu bot para permitir que aplicativos cliente se comuniquem com ele por meio do canal do Direct Line Speech.
 
-Depois de criar seu bot, integrá-lo ao Direct Line Speech habilitará uma conexão de baixa latência e alta confiabilidade com aplicativos cliente, usando a [SDK de fala](https://aka.ms/speech/sdk). Essas conexões são otimizadas para experiências de conversação com entrada e saída de voz. Para obter mais informações sobre o Direct Line Speech e como criar aplicativos cliente, visite a página [personalizar assistente virtual que tem como prioridade o uso da voz](https://aka.ms/bots/speech/va). 
+Depois de criar seu bot, integrá-lo ao Direct Line Speech habilitará uma conexão de baixa latência e alta confiabilidade com aplicativos cliente, usando a [SDK de fala](https://aka.ms/speech/sdk). Essas conexões são otimizadas para experiências de conversação com entrada e saída de voz. Para obter mais informações sobre o Direct Line Speech e como criar aplicativos cliente, visite a página [personalizar assistente virtual que tem como prioridade o uso da voz](https://aka.ms/bots/speech/va).
 
 ## <a name="add-the-direct-line-speech-channel"></a>Adicionar o canal do Direct Line Speech
 
@@ -34,9 +34,20 @@ Depois de criar seu bot, integrá-lo ao Direct Line Speech habilitará uma conex
 
     ![selecionar canal do Direct Line Speech](media/voice-first-virtual-assistants/bot-service-channel-directlinespeech-connectspeechchannel.png "conectar o Direct Line Speech")
 
-1. O Canal do Direct Line Speech requer um recurso de Serviços Cognitivos. Você pode usar um recurso existente ou criar um recurso de Serviços Cognitivos seguindo as [instruções](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account). 
+1. Configure o Direct Line Speech, conforme mostrado na imagem abaixo.
 
     ![selecionar canal do Direct Line Speech](media/voice-first-virtual-assistants/bot-service-channel-directlinespeech-cognitivesericesaccount-selection.png "selecionar recurso dos Serviços Cognitivos")
+
+    O Canal do Direct Line Speech requer um recurso de Serviços Cognitivos, especificamente um recurso de serviço cognitivo de **fala**. Você pode usar um grupo de recursos existente ou criar um. Para criar um recurso de fala, siga estas etapas:
+
+    - Acesse [criar recursos no portal do Azure](https://ms.portal.azure.com/#create/hub).
+    - Pesquise *Fala* e selecione-a na lista suspensa. O seguinte resultado é exibido:
+
+        ![criar recurso cognitivo de fala](media/voice-first-virtual-assistants/create-speech-cognitive-resource.PNG "Criar recurso cognitivo de fala")
+
+    - Siga as etapas do assistente.
+
+    Para obter mais informações, confira [Criar um recurso dos Serviços Cognitivos](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account).
 
 1. Depois de ler os termos de uso, clique em `Save` para confirmar a seleção do canal.
 
@@ -46,7 +57,7 @@ Depois de criar seu bot, integrá-lo ao Direct Line Speech habilitará uma conex
 
 Com o canal do Direct Line Speech conectado ao seu bot, agora é preciso habilitar o suporte a extensões de streaming de protocolo do Bot Framework para obter a interação ideal e de baixa latência.
 
-1. Caso ainda não tenha feito, abra a folha do seu bot no [Portal do Azure](https://portal.azure.com). 
+1. Caso ainda não tenha feito, abra a folha do seu bot no [Portal do Azure](https://portal.azure.com).
 
 1. Clique em **Configurações** na categoria **Gerenciamento de Bot** (à direita, abaixo de **Canais**). Marque a caixa de seleção **Habilitar ponto de extremidade de streaming**.
 

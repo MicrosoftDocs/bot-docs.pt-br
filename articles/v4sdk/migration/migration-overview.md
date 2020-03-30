@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/11/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 15cffbcbce7581692e7f993e22f353cb435379b9
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 0746a277f465979639db5c8a26aaddfee9386ac2
+ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798052"
+ms.lasthandoff: 03/22/2020
+ms.locfileid: "80117692"
 ---
 # <a name="migration-overview"></a>Visão geral da migração
 
@@ -30,6 +30,8 @@ Uma abordagem aberta foi adotada, de modo que o SDK v4 do Bot Framework foi cria
 O SDK v3 do Bot Framework será desativado, mas as cargas de trabalho de bot V3 existentes continuarão sendo executadas sem interrupção. Para obter mais informações, consulte: [Suporte de tempo de vida do SDK Versão 3 do Bot Framework.](https://docs.microsoft.com/azure/bot-service/bot-service-resources-bot-framework-faq?view=azure-bot-service-4.0#bot-framework-sdk-version-3-lifetime-support)
 
 É altamente recomendável começar a migrar seus bots da V3 para a V4. Para dar suporte a essa migração, criamos a documentação relacionada e vamos oferecer suporte estendido para iniciativas de migração por meio dos canais padrão.
+
+Se você não puder migrar de um bot v3 para um bot v4 imediatamente, talvez ainda seja interessante aproveitar a funcionalidade adicional disponível no SDK v4. Você pode converter o bot v3 em uma habilidade e criar um bot de consumidor de habilidades com base no SDK v4 para passar mensagens para o bot v3. Para obter mais informações, confira como [converter um bot v3 em uma habilidade](convert-to-skill-overview.md).
 
 ## <a name="advantages"></a>Vantagens
 
@@ -95,7 +97,7 @@ O SDK v4 do Bot Framework é compatível com o mesmo Bot Framework Service subja
 
 As planilhas a seguir podem orientá-lo na estimativa de sua carga de trabalho de migração. Na coluna **Ocorrências**, substitua *contagem* pelo seu valor numérico real. Na coluna **Camiseta**, insira valores como: *Pequeno*, *Médio*, *Grande* com base em sua estimativa.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 | Etapa | V3 | V4 | Ocorrências | Complexidade | Camiseta |
 | -- | -- | -- | -- | -- | -- |
@@ -112,7 +114,7 @@ Substituir o diálogo atual por um novo diálogo | IDialogContext.Forward | Reto
 Sinaliza que o diálogo atual foi concluído | IDialogContext.Done | Retorne esperar o método EndDialogAsync do contexto da etapa. | count | Médio |  
 Falha de um diálogo. | IDialogContext.Fail | Gere uma exceção a ser capturada em outro nível do bot, encerre a etapa com um status de Cancelado ou chame a etapa ou CancelAllDialogsAsync do contexto do diálogo. | count | Pequena |  
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 | Etapa | V3 | V4 | Ocorrências | Complexidade | Camiseta |
 | -- | -- | -- | -- | -- | -- |
@@ -131,7 +133,7 @@ Falha de um diálogo. | Session.pruneDialogStack | Gere uma exceção a ser capt
 
 ---
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 O SDK v4 do Bot Framework baseia-se a mesma API REST subjacente que a v3. No entanto, a v4 é uma refatoração da versão anterior do SDK para permitir mais flexibilidade e controle sobre os bots.
 
@@ -158,7 +160,7 @@ Para obter mais informações, confira [Migrar um bot .NET v3 para um bot .NET F
 
 Para obter mais informações, confira [Migrar um bot .NET v3 para um bot .NET Core v4](conversion-core.md).
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 O **Bot Framework JavaScript SDK v4** introduz várias mudanças fundamentais a como os bots são criados. Essas mudanças afetam a sintaxe para o desenvolvimento de bots em JavaScript, especialmente com relação à criação de objetos de bot, à definição de caixas de diálogo e à lógica de manuseio de evento de codificação. O SDK v4 do Bot Framework baseia-se a mesma API REST subjacente que a v3. No entanto, a v4 é uma refatoração da versão anterior do SDK para dar mais flexibilidade e controle sobre os bots, em particular:
 
@@ -182,24 +184,24 @@ Para obter mais informações, confira [Migrar um bot do SDK v3 em Javascript pa
 
 Os recursos adicionais a seguir fornecem mais informações que podem ajudar durante a migração.  
 
-### <a name="ctabcsharp"></a>[C#](#tab/csharp)
+### <a name="c"></a>[C#](#tab/csharp)
 
 <!-- _Mini-TOC with explainer for .NET topics_ -->
 Os tópicos a seguir descrevem as diferenças entre os SDKs do v3 e v4 do Bot Framework do .NET, as principais alterações entre as duas versões e as etapas para migrar um bot da v3 para a v4.
 
-| Tópico | DESCRIÇÃO |
+| Tópico | Descrição |
 | :--- | :--- |
 | [Diferenças entre o SDK do .NET v3 e v4](migration-about.md) |Diferenças comuns entre os SDKs v3 e v4 |
 | [Referência rápida de migração do .NET](net-migration-quickreference.md) |Principais alterações nos SDKs v3 em comparação à v4 |
 | [Migrar um bot do .NET v3 para um bot do Framework v4](conversion-framework.md) |Migrar um bot v3 para v4 usando o mesmo tipo de projeto |
 | [Migrar um bot .NET v3 para um bot Core v4](conversion-core.md) | Migrar um bot v3 para v4 em um projeto do .NET Core|
 
-### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 <!-- _Mini-TOC with explainer for JavaScript topics_ -->
 Os tópicos a seguir descrevem as diferenças entre os SDKs v3 e v4 do Bot Framework do JavaScript, as principais alterações entre as duas versões e as etapas para migrar um bot da v3 para a v4.
 
-| Tópico | DESCRIÇÃO |
+| Tópico | Descrição |
 | :--- | :--- |
 | [Diferenças entre o SDK do JavaScript v3 e v4](migration-about-javascript.md) | Diferenças comuns entre os SDKs v3 e v4 |
 | [Referência rápida de migração do JavaScript](javascript-migration-quickreference.md)| Principais alterações nos SDKs v3 em comparação à v4|
@@ -211,7 +213,7 @@ Os tópicos a seguir descrevem as diferenças entre os SDKs v3 e v4 do Bot Frame
 
 A seguir estão exemplos de código que você pode usar para aprender o SDK V4 do Bot Framework ou iniciar seu projeto rapidamente.
 
-| Exemplos | DESCRIÇÃO |
+| Exemplos | Descrição |
 | :--- | :--- |
 | [Exemplos de Migração do Bot Framework da V3 para a V4](https://github.com/microsoft/BotBuilder-Samples/tree/master/MigrationV3V4) <img width="200">| Exemplos de migração do SDK V3 do Bot Framework para o SDK V4 |
 | [Exemplos do .NET do Bot Builder](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore) | Exemplos do .NET Core em C# do Bot Builder |
@@ -228,7 +230,7 @@ Os seguintes recursos fornecem mais informações e suporte para desenvolver bot
 
 Confira os seguintes recursos para obter mais detalhes e informações de contexto.
 
-| Tópico | DESCRIÇÃO |
+| Tópico | Descrição |
 | :--- | :--- |
 | [Novidades no Bot Framework](https://docs.microsoft.com/azure/bot-service/what-is-new?view=azure-bot-service-4.0) | Aprimoramentos e recursos principais do Bot Framework e do Serviço de Bot do Azure|
 |[Como funcionam os bots](../bot-builder-basics.md)|O mecanismo interno de um bot|

@@ -1,22 +1,22 @@
 ---
-ms.openlocfilehash: 0eab36869a986d15905cdfde5c317613276c844d
-ms.sourcegitcommit: e573c586472c5328ce875114308d9d1b73651e62
+ms.openlocfilehash: 392eb8bb197105739222c37f695cfd785515b323
+ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70242581"
+ms.lasthandoff: 03/22/2020
+ms.locfileid: "80117841"
 ---
 Alguns canais fornecem recursos que não podem ser implementados apenas com o uso de texto e anexos da mensagem. Para implementar funcionalidades específicas do canal, passe metadados nativos para um canal na propriedade _dados do canal_ do objeto da atividade. Por exemplo, o bot pode usar a propriedade dados do canal para instruir o Telegram a enviar um adesivo ou para instruir o Office 365 a enviar um email.
 
 Este artigo descreve como usar a propriedade dados do canal de uma atividade de mensagem para implementar esta funcionalidade específica do canal:
 
-| Canal | Funcionalidade |
-|----|----|
-| Email | Enviar e receber um email que contém metadados de corpo, assunto e prioridade |
-| Margem de atraso | Enviar mensagens do Slack com fidelidade total |
-| Facebook | Enviar notificações do Facebook nativamente |
-| Telegram | Executar ações específicas do Telegram, como compartilhar um memorando de voz ou um adesivo |
-| Kik | Enviar e receber mensagens nativas do Kik |
+| Canal  | Funcionalidade                                                                  |
+| -------- | ------------------------------------------------------------------------------ |
+| Email    | Enviar e receber um email que contém metadados de corpo, assunto e prioridade |
+| Margem de atraso    | Enviar mensagens do Slack com fidelidade total                                              |
+| Facebook | Enviar notificações do Facebook nativamente                                           |
+| Telegram | Executar ações específicas do Telegram, como compartilhar um memorando de voz ou um adesivo   |
+| Kik      | Enviar e receber mensagens nativas do Kik                                           |
 
 > [!NOTE]
 > O valor da propriedade dados do canal de um objeto de atividade é um objeto JSON.
@@ -27,14 +27,14 @@ Este artigo descreve como usar a propriedade dados do canal de uma atividade de 
 
 Para criar uma mensagem de email, defina a propriedade dados do canal do objeto de atividade como um objeto JSON que contém essas propriedades:
 
-| Propriedade | DESCRIÇÃO |
-|----|----|
-| bccRecipients | Uma cadeia de caracteres delimitada por ponto e vírgula (;) de endereços de email a ser adicionada ao campo Cco (cópia oculta) da mensagem. |
-| ccRecipients | Uma cadeia de caracteres delimitada por ponto e vírgula (;) de endereços de email a ser adicionada ao campo Cc (cópia carbono) da mensagem. |
-| htmlBody | Um documento HTML que especifica o corpo da mensagem de email. Consulte a documentação do canal para obter informações sobre atributos e elementos HTML com suporte. |
-| importância | O nível de importância do email. Os valores válidos são **alta**, **normal**, e **baixa**. O valor padrão é **normal**. |
-| subject | O assunto do email. Consulte a documentação do canal para obter informações sobre requisitos de campo. |
-| toRecipients | Uma cadeia de caracteres delimitada por ponto e vírgula (;) de endereços de email a ser adicionada ao campo Para da mensagem. |
+| Propriedade      | Descrição                                                                                                                                                  |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| bccRecipients | Uma cadeia de caracteres delimitada por ponto e vírgula (;) de endereços de email a ser adicionada ao campo Cco (cópia oculta) da mensagem.                                                   |
+| ccRecipients  | Uma cadeia de caracteres delimitada por ponto e vírgula (;) de endereços de email a ser adicionada ao campo Cc (cópia carbono) da mensagem.                                                          |
+| htmlBody      | Um documento HTML que especifica o corpo da mensagem de email. Consulte a documentação do canal para obter informações sobre atributos e elementos HTML com suporte. |
+| importance    | O nível de importância do email. Os valores válidos são **alta**, **normal**, e **baixa**. O valor padrão é **normal**.                                           |
+| subject       | O assunto do email. Consulte a documentação do canal para obter informações sobre requisitos de campo.                                                               |
+| toRecipients  | Uma cadeia de caracteres delimitada por ponto e vírgula (;) de endereços de email a ser adicionada ao campo Para da mensagem.                                                                        |
 
 > [!NOTE]
 > As mensagens que seu bot recebe de usuários por meio do canal de email podem conter uma propriedade de dados do canal que é preenchida com um objeto JSON como aquele descrito acima.
@@ -248,10 +248,10 @@ Para criar menus interativos, use o seguinte JSON:
 
 Para criar uma notificação do Facebook, defina a propriedade dados do canal do objeto de atividade em um objeto JSON que especifique estas propriedades:
 
-| Propriedade | DESCRIÇÃO |
-|----|----|
-| notification_type | O tipo de notificação (por exemplo, **REGULAR**, **SILENT_PUSH**, **NO_PUSH**).
-| attachment | Um anexo que especifica uma imagem, um vídeo ou outro tipo de multimídia ou um anexo modelo como um recibo. |
+| Propriedade          | Descrição                                                                                                          |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------- |
+| notification_type | O tipo de notificação (por exemplo, **REGULAR**, **SILENT_PUSH**, **NO_PUSH**).                                          |
+| attachment        | Um anexo que especifica uma imagem, um vídeo ou outro tipo de multimídia ou um anexo modelo como um recibo. |
 
 > [!NOTE]
 > Para obter detalhes sobre o formato e o conteúdo das propriedades `notification_type` e `attachment`, confira a <a href="https://developers.facebook.com/docs/messenger-platform/send-api-reference#guidelines" target="_blank">documentação da API do Facebook</a>. 
@@ -275,9 +275,9 @@ Este snippet mostra um exemplo da propriedade `channelData` para um anexo de rec
 
 Para criar uma mensagem que implementa ações específicas do Telegram, como compartilhar um memorando de voz ou um adesivo, defina a propriedade dados do canal do objeto de atividade em um objeto JSON que especifique estas propriedades: 
 
-| Propriedade | DESCRIÇÃO |
-|----|----|
-| method | O método de API do Bot do Telegram a ser chamado. |
+| Propriedade   | Descrição                             |
+| ---------- | --------------------------------------- |
+| method     | O método de API do Bot do Telegram a ser chamado.    |
 | parâmetros | Os parâmetros do método especificado. |
 
 Há suporte para estes métodos do Telegram: 
@@ -345,12 +345,64 @@ Este snippet mostra um exemplo de uma propriedade `channelData` que especifica u
 ]
 ```
 
+Quando um método do Telegram for implementado, seu bot receberá uma mensagem de resposta na qual a propriedade de dados do canal é populada com um objeto JSON. Esse objeto de resposta especifica o conteúdo da mensagem original, incluindo um `update_id` e, no máximo, um parâmetro opcional. Para obter informações sobre como receber respostas de entrada, confira <a href="https://core.telegram.org/bots/api#getting-updates" target="_blank">Receber atualizações</a>.
+
+Este snippet mostra um exemplo da propriedade `channelData` na mensagem recebida por um bot quando uma sondagem é criada.
+
+```json
+"channelData": {
+    "update_id": 43517575,
+    "message": {
+        "message_id": 618,
+        "from": {
+            "id": 803613355,
+            "is_bot": false,
+            "first_name": "Joe",
+            "last_name": "Doe",
+            "username": "jdoe",
+            "language_code": "en"
+        },
+        "chat": {
+            "id": 803613355,
+            "first_name": "Joe",
+            "last_name": "Doe",
+            "username": "jdoe",
+            "type": "private"
+        },
+        "date": 1582577834,
+        "poll": {
+        "id": "5089525250643722242",
+        "question": "How to win?",
+        "options": [
+            {
+                "text": "Be the best",
+                "voter_count": 0
+            },
+            {
+                "text": "Help those in need",
+                "voter_count": 0
+            },
+            {
+                "text": "All of the above",
+                "voter_count": 0
+            }
+        ],
+        "total_voter_count": 0,
+        "is_closed": false,
+        "is_anonymous": true,
+        "type": "regular",
+        "allows_multiple_answers": false
+        }
+    }
+}
+```
+
 ## <a name="create-a-native-kik-message"></a>Criar uma mensagem nativa do Kik
 
 Para criar uma mensagem nativa do Kik, defina a propriedade dados do canal do objeto de atividade como um objeto JSON que especifique esta propriedade:
 
-| Propriedade | DESCRIÇÃO |
-|----|----|
+| Propriedade | Descrição                                                                                                                                                                 |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | da nuvem para o dispositivo | Uma matriz de mensagens do Kik. Para obter detalhes sobre o formato de mensagem do Kik, confira <a href="https://dev.kik.com/#/docs/messaging#message-formats" target="_blank">Formatos de mensagem do Kik</a>. |
 
 Este snippet mostra um exemplo da propriedade `channelData` para uma mensagem nativa do Kik.
@@ -383,9 +435,9 @@ Este snippet mostra um exemplo da propriedade `channelData` para uma mensagem na
 
 Para criar uma mensagem que implementa os tipos de mensagem específicos para LINE (por exemplo, adesivos, modelos ou tipos de ação específica para LINE como abrir a câmera do telefone), defina a propriedade de dados de canal do objeto de atividade como um objeto JSON que especifica os tipos de ação e de mensagem do LINE. 
 
-| Propriedade | DESCRIÇÃO |
-|----|----|
-| Tipo | O nome do tipo de ação ou mensagem do LINE |
+| Propriedade | Descrição                       |
+| -------- | --------------------------------- |
+| type     | O nome do tipo de ação ou mensagem do LINE |
 
 Há suporte para esses tipos de mensagem do LINE:
 * Adesivo

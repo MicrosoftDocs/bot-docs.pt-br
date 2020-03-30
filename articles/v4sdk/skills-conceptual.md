@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/09/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: e4f11b6a1e8bcfce06e1518db7865d6b65ec3d62
-ms.sourcegitcommit: 4e1af50bd46debfdf9dcbab9a5d1b1633b541e27
+ms.openlocfilehash: e512dbf7c7f31a0f2674fc1ea0e4ce825096c314
+ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/25/2020
-ms.locfileid: "76753770"
+ms.lasthandoff: 03/22/2020
+ms.locfileid: "80117702"
 ---
 # <a name="about-skills"></a>Sobre os skills
 
@@ -25,10 +25,10 @@ Desde a versão 4.7 do SDK do Bot Framework, você pode estender um bot usando o
 Um skill pode ser consumido por vários outros bots, facilitando a reutilização e, dessa forma, você pode criar um bot voltado para o usuário e estendê-lo por meio do consumo de seus próprios skills ou de terceiros.
 
 <!-- Terminology -->
-- Um _skill_ é um bot que pode executar um conjunto de tarefas para outro bot e que usa um manifesto para descrever sua interface.
+- Um _skill_ é um bot que pode executar um conjunto de tarefas para outro bot.
   Dependendo do design, um skill também pode funcionar como um bot típico voltado para o usuário.
 - Um _consumidor de skill_ é um bot que pode invocar um ou mais skills. Em relação aos skills, um _bot raiz_ é um bot voltado para o usuário que também é um consumidor de skills.
-- Um _manifesto de skill_ é um arquivo JSON que descreve as atividades que o skill pode executar, seus parâmetros de entrada e saída e os pontos de extremidade do skill.
+- Um _manifesto de habilidade_ é um arquivo JSON que descreve as ações que a habilidade pode executar, os respectivos parâmetros de entrada e saída e os pontos de extremidade da habilidade.
   - Os desenvolvedores que não têm acesso ao código-fonte do skill podem usar as informações do manifesto para criar um consumidor de skill. Veja como [implementar um skill](./skill-implement-skill.md) para um exemplo de manifesto de skill.
   - O _esquema de manifesto do skill_ é um arquivo JSON que descreve o esquema do manifesto de skill. A versão atual é [skill-manifest-2.0.0.json](https://github.com/microsoft/botframework-sdk/blob/master/schemas/skills/skill-manifest-2.0.0.json).
 
@@ -39,12 +39,13 @@ O recurso dos skills é projetado de forma que:
 
 - Os skills podem trabalhar com adaptadores do Bot Framework e adaptadores personalizados.
 - Os skills podem trabalhar com o canal do Microsoft Teams, que faz uso intensivo de atividades de `invoke`.
-- Os skills são compatíveis com a autenticação de usuário; no entanto, a autenticação do usuário é local para o skill e não pode ser transferida para outro bot.
+- As habilidades são compatíveis com a autenticação de usuário; no entanto, a autenticação do usuário é local para habilidade ou para o consumidor de habilidades e não pode ser transferida para outro bot.
 - Um consumidor de skills pode consumir vários skills.
 - Um consumidor de skills pode executar vários skills em paralelo.
+- Um consumidor de habilidades pode consumir uma habilidade independentemente da linguagem ou da versão de SDK da habilidade.
 - O serviço do Bot Connector fornece autenticação de bot para bot; no entanto, você pode testar um bot raiz localmente usando o Emulador.
+- Uma habilidade também pode ser um consumidor de habilidades. A conexão por meio de várias habilidades adicionará latência de rede e o potencial de erro. Esses bots são mais complexos e podem ser mais difíceis de depurar.
 <!--TBD: - Skills support proactive messaging. -->
-<!--TBD: - A skill can also be a skill consumer. -->
 
 ## <a name="architecture"></a>Arquitetura
 
@@ -208,6 +209,24 @@ Cenários específicos a serem considerados incluem:
   - Para verificar por que o skill está terminando, verifique o parâmetro _código_ da atividade, que pode indicar que o skill encontrou um erro.
 - Cancelamento de um skill do consumidor enviando uma atividade `endOfConversation` para o skill.
 
+#### <a name="invoking-a-skill-from-a-dialog"></a>Invocar uma habilidade em uma caixa de diálogo
+
+Se estiver usando a [biblioteca de caixas de diálogo](bot-builder-concept-dialog.md), você poderá usar uma _caixa de diálogo de habilidade_ para gerenciar uma habilidade. Embora a caixa de diálogo de habilidade seja a caixa de diálogo ativa, ela encaminhará atividades para a habilidade associada.
+<!--Language-specific Notes:
+- C#: SkillDialog, SkillDialogOptions, SkillDialogArgs
+  - public SkillDialog(SkillDialogOptions dialogOptions, string dialogId = null)
+- JS: SkillDialog, SkillDialogOptions, BeginSkillDialogOptions
+  - public constructor(dialogOptions: SkillDialogOptions, dialogId?: string)
+- Py (WIP): SkillDialog, SkillDialogOptions, SkillDialogArgs
+  - def __init__(self, dialog_options: SkillDialogOptions, conversation_state: ConversationState)
+-->
+
+- Ao criar a caixa de diálogo de habilidade, use o parâmetro _opções de caixa de diálogo_ para fornecer todas as informações de que a caixa de diálogo precisa para gerenciar a habilidade, como a ID do aplicativo e a URL de retorno de chamada do consumidor, a fábrica da ID de conversa a ser usada, as propriedades da habilidade e assim por diante.
+  - Se desejar gerenciar mais de uma habilidade como uma caixa de diálogo, será necessário criar uma caixa de diálogo de habilidade separada para cada habilidade.
+  - Geralmente, você adicionará a caixa de diálogo de habilidade a uma caixa de diálogo de componente.
+- Para iniciar a caixa de diálogo de habilidade, use o método _begin_ do contexto da caixa de diálogo e forneça a ID da caixa de diálogo de habilidade. Use o parâmetro _opções_ para fornecer a atividade que o consumidor enviará como a primeira atividade para a habilidade.
+- Você pode cancelar ou interromper a caixa de diálogo de habilidade como faria com qualquer outra caixa de diálogo. Confira como [manipular interrupções do usuário](bot-builder-howto-handle-user-interrupt.md) para ver um exemplo.
+
 ## <a name="skill-bots"></a>Bots de skills
 
 Com pequenas modificações, qualquer bot pode agir como um skill. Bots de skills:
@@ -218,6 +237,10 @@ Com pequenas modificações, qualquer bot pode agir como um skill. Bots de skill
 - Sinalize a conclusão ou o cancelamento do skill por meio de uma atividade `endOfConversation`.
   - Forneça o valor retornado, se houver, na propriedade _valor_ da atividade.
   - Forneça um código de erro, se houver, na propriedade _código_ da atividade.
+
+### <a name="skill-activities"></a>Atividades de habilidade
+
+ Algumas habilidades podem executar uma variedade de tarefas ou _atividades_. Por exemplo, uma habilidade de tarefas pendentes pode permitir criar, atualizar, exibir e excluir atividades que podem ser acessadas como conversas discretas. <!--TODO Flesh this out-->
 
 ### <a name="skill-manifest"></a>Manifesto de skills
 
