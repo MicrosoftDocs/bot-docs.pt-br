@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 08/14/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: ad3f9a1cc9ce3f06bad71615e244a791025904d9
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: a7ed19a6e5f7614a0fb24db9d5de08e5ed945ef9
+ms.sourcegitcommit: 64b25f796f89e8bb6fa53d3c824b73b8ce4d6ed8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75791058"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80250085"
 ---
 <!-- This article is on hold -->
 
@@ -26,7 +26,7 @@ O exemplo de código pode ser encontrado [aqui](https://github.com/microsoft/Bot
 > [!NOTE]
 > Um bot mantém o **estado da conversa** para acompanhar e direcionar a conversa e fazer perguntas ao usuário. Ele mantém o **estado do usuário** para acompanhar as respostas dele.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 - npm versão 6.9.0 ou superior (necessário para dar suporte a alias de pacote).
 
@@ -141,7 +141,7 @@ Para saber mais sobre como implantar um bot no Azure, confira [Implantar o bot n
 - [Restify][30]
 - [dotenv][31]
 
-[3]: https://aka.ms/botframework-emulator
+[3]: https://aka.ms/botframework-emulator-github
 [5]: https://github.com/microsoft/botframework-emulator
 [6]: https://github.com/Microsoft/BotFramework-Emulator/releases
 [7]: https://docs.microsoft.com/azure/bot-service/bot-builder-storage-concept

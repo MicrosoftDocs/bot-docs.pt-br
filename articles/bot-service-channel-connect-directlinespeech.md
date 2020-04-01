@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: travisw
-ms.openlocfilehash: d8831930934bef15c06679236efb7f4e7962b1aa
-ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
+ms.openlocfilehash: 3202c8271ffbdb09be10087861449c36f61cfac5
+ms.sourcegitcommit: 64b25f796f89e8bb6fa53d3c824b73b8ce4d6ed8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2020
-ms.locfileid: "80117507"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80250125"
 ---
 # <a name="connect-a-bot-to-direct-line-speech"></a>Conectar um bot ao Direct Line Speech
 
@@ -22,7 +22,7 @@ ms.locfileid: "80117507"
 
 Você pode configurar seu bot para permitir que aplicativos cliente se comuniquem com ele por meio do canal do Direct Line Speech.
 
-Depois de criar seu bot, integrá-lo ao Direct Line Speech habilitará uma conexão de baixa latência e alta confiabilidade com aplicativos cliente, usando a [SDK de fala](https://aka.ms/speech/sdk). Essas conexões são otimizadas para experiências de conversação com entrada e saída de voz. Para obter mais informações sobre o Direct Line Speech e como criar aplicativos cliente, visite a página [personalizar assistente virtual que tem como prioridade o uso da voz](https://aka.ms/bots/speech/va).
+Depois de criar seu bot, integrá-lo ao Direct Line Speech habilitará uma conexão de baixa latência e alta confiabilidade com aplicativos cliente, usando a [SDK de fala](https://aka.ms/speech-service-docs). Essas conexões são otimizadas para experiências de conversação com entrada e saída de voz. Para obter mais informações sobre o Direct Line Speech e como criar aplicativos cliente, visite a página [personalizar assistente virtual que tem como prioridade o uso da voz](https://aka.ms/cognitive-services-voice-assistants).
 
 ## <a name="add-the-direct-line-speech-channel"></a>Adicionar o canal do Direct Line Speech
 

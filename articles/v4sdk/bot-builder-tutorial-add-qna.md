@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: tutorial
 ms.service: bot-service
-ms.date: 05/23/2019
+ms.date: 03/23/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: bb79739e2199556fe6ce3fdd58f2fc34165f36e2
-ms.sourcegitcommit: 308e6df385b9bac9c8d60f8b75eabc813b823c38
+ms.openlocfilehash: 17d88db4e291458bc87d959c90759e0c44bcc283
+ms.sourcegitcommit: 126c4f8f8c7a3581e7521dc3af9a937493e6b1df
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77519975"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80499892"
 ---
 # <a name="tutorial-use-qna-maker-in-your-bot-to-answer-questions"></a>Tutorial: usar o QnA Maker em seu bot para responder a perguntas
 
@@ -32,7 +32,7 @@ Neste tutorial, você aprenderá como:
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 * O bot criado no [tutorial anterior](bot-builder-tutorial-basic-deploy.md). Vamos adicionar um recurso de pergunta e resposta ao bot.
 * É útil ter alguma familiaridade com o [QnA Maker](https://qnamaker.ai/). Usaremos o portal QnA Maker para criar, treinar e publicar a base de dados de conhecimento que será usada com o bot.
@@ -98,7 +98,7 @@ Adicione os seguintes valores ao arquivo appsetting.json:
 
 Adicione os seguintes valores ao arquivo .env:
 
-```
+```text
 MicrosoftAppId=""
 MicrosoftAppPassword=""
 ScmType=None
@@ -235,6 +235,7 @@ Atualize seu código de inicialização para carregar as informações de servi�
 
 1. Abra um terminal ou um prompt de comando e navegue até o diretório raiz de seu projeto.
 1. Adicione o pacote npm **botbuilder-ai** ao seu projeto.
+
    ```shell
    npm i botbuilder-ai
    ```
@@ -242,6 +243,7 @@ Atualize seu código de inicialização para carregar as informações de servi�
 1. Em **index.js**, após a seção // Criar Adaptador, adicione o seguinte código para ler as informações de configuração do arquivo .env necessárias para gerar os serviços do QnA Maker.
 
    **index.js**
+
    ```javascript
    // Map knowledge base endpoint values from .env file into the required format for `QnAMaker`.
    const configuration = {
@@ -255,6 +257,7 @@ Atualize seu código de inicialização para carregar as informações de servi�
 1. Atualize a construção do bot para passar as informações de configuração de serviços de QnA.
 
    **index.js**
+
    ```javascript
    // Create the main dialog.
    const myBot = new MyBot(configuration, {});
@@ -263,6 +266,7 @@ Atualize seu código de inicialização para carregar as informações de servi�
 1. No arquivo **bot.js**, adicione esse requisito para o QnA Maker
 
    **bot.js**
+
    ```javascript
    const { QnAMaker } = require('botbuilder-ai');
    ```
@@ -270,6 +274,7 @@ Atualize seu código de inicialização para carregar as informações de servi�
 1. Modifique o construtor para agora receber os parâmetros de configuração necessários para criar um conector QnA Maker e gerar um erro, caso esses parâmetros não sejam fornecidos.
 
    **bot.js**
+
    ```javascript
       class MyBot extends ActivityHandler {
          constructor(configuration, qnaOptions) {
@@ -386,9 +391,13 @@ Neste ponto, seu bot deve ser capaz de responder a algumas perguntas. Execute o 
 ![exemplo de qna de teste](./media/qna-test-bot.png)
 
 ## <a name="republish-your-bot"></a>Republique seu bot
-Agora você pode republicar seu bot de volta no Azure. Você precisa compactar a pasta do projeto e, em seguida, executar o comando para implantar o bot no Azure. Para obter detalhes, veja o artigo [Implantar um bot](https://docs.microsoft.com/azure/bot-service/bot-builder-deploy-az-cli?view=azure-bot-service-4.0&tabs=csharp). 
 
-### <a name="zip-your-project-folder"></a>Compactar sua pasta de projeto 
+Agora você pode republicar seu bot de volta no Azure. Você precisa compactar a pasta do projeto e, em seguida, executar o comando para implantar o bot no Azure. Para obter detalhes, veja o artigo [Implantar um bot](https://docs.microsoft.com/azure/bot-service/bot-builder-deploy-az-cli?view=azure-bot-service-4.0&tabs=csharp).
+
+[!INCLUDE [Work around for .NET Core 3.1 SDK](~/includes/deploy/samples-workaround-3-1.md)]
+
+### <a name="zip-your-project-folder"></a>Compactar sua pasta de projeto
+
 [!INCLUDE [zip up code](~/includes/deploy/snippet-zip-code.md)]
 
 <!-- > [!IMPORTANT]
@@ -402,6 +411,7 @@ Agora você pode republicar seu bot de volta no Azure. Você precisa compactar a
 > If your root folder location is incorrect, the **bot will fail to run in the Azure portal**. -->
 
 ### <a name="deploy-your-code-to-azure"></a>Implantar seu código no Azure
+
 [!INCLUDE [deploy code to Azure](~/includes/deploy/snippet-deploy-code-to-az.md)]
 
 <!-- # [C#](#tab/csharp)

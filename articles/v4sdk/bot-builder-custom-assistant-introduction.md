@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/01/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 1b3cb313a06f8f834aa7d212db43eafb2a621af5
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 6bde9f24f42a7558d93c333d12e03e9c87d7c4b2
+ms.sourcegitcommit: 64b25f796f89e8bb6fa53d3c824b73b8ce4d6ed8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798616"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80250015"
 ---
 # <a name="custom-assistant-overview"></a>Visão geral do Assistente Personalizado
 
@@ -86,5 +86,5 @@ O Assistente Personalizado abrange vários cenários do setor. Cenários de exem
 
 ## <a name="getting-started"></a>Introdução
 
-No momento estamos executando uma versão prévia e trabalhando com clientes e parceiros inicias em um repositório de software livre para dar vida às primeiras experiências e disponibilizá-las mais amplamente nos próximos meses. Para registrar seu interesse e começar a usar, preencha [este formulário](https://aka.ms/customassistantpreviewform) e entraremos em contato com você.
+No momento estamos executando uma versão prévia e trabalhando com clientes e parceiros inicias em um repositório de software livre para dar vida às primeiras experiências e disponibilizá-las mais amplamente nos próximos meses. Para registrar seu interesse e começar a usar, preencha [este formulário](https://aka.ms/va-scenario-submission-form) e entraremos em contato com você.
 
