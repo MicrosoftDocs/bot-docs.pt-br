@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 2/26/2019
-ms.openlocfilehash: 835ff68dced16ccba2535e378b0b02e0de21e1fb
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 999c664f78d11e67647f9efa28bc7f059c43882b
+ms.sourcegitcommit: 64b25f796f89e8bb6fa53d3c824b73b8ce4d6ed8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75792904"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80250115"
 ---
 # <a name="debug-a-bot"></a>Depurar um bot
 
@@ -22,7 +22,7 @@ Este artigo descreve como depurar seu bot usando um ambiente de desenvolvimento 
 > [!NOTE]
 > Neste artigo, usamos o Bot Framework Emulator para enviar e receber mensagens do bot durante a depuração. Se você estiver procurando outras maneiras de depurar o bot usando o Bot Framework Emulator, leia o artigo [Depurar com o Bot Framework Emulator](https://docs.microsoft.com/azure/bot-service/bot-service-debug-emulator). 
 
-## <a name="prerequisites"></a>Prerequisites 
+## <a name="prerequisites"></a>Pré-requisitos 
 - Baixe e instale o [emulador do Bot Framework](https://aka.ms/Emulator-wiki-getting-started).
 - Baixe e instale o [Visual Studio Code](https://code.visualstudio.com) ou o [Visual Studio](https://www.visualstudio.com/downloads) (Community Edition ou superior).
 
@@ -80,11 +80,11 @@ No Visual Studio (VS), você pode definir pontos de interrupção e executar o b
 
 ::: moniker range="azure-bot-service-3.0"
 
-## <a id="debug-csharp-serverless"></a> Depurar um plano de consumo C\# bot de funções
+## <a name="debug-a-consumption-plan-c-functions-bot"></a><a id="debug-csharp-serverless"></a> Depurar um plano de consumo C\# bot de funções
 
 O ambiente sem servidor C\# do plano de consumo no serviço de Bot tem muito mais em comum com o Node.js do que um típico aplicativo C\# porque ele requer um host de runtime, bem como o mecanismo de Node. No Azure, o runtime faz parte do ambiente de hospedagem na nuvem, mas você deve replicar esse ambiente localmente em sua área de trabalho. 
 
-### <a name="prerequisites"></a>Prerequisites
+### <a name="prerequisites"></a>Pré-requisitos
 
 Antes que você possa depurar seu bot C# de plano de consumo, você deve concluir essas tarefas.
 
@@ -107,7 +107,7 @@ A maneira mais simples para depurar seu bot localmente é iniciar o bot e, em se
 Primeiro, abra um prompt de comando e navegue até a pasta onde o arquivo **project.json** está localizado no repositório. Em seguida, execute o comando `dotnet restore` para restaurar os vários pacotes que são referenciados no seu bot.
 
 > [!NOTE]
-> O Visual Studio 2017 altera como o Visual Studio trata as dependências. Enquanto o Visual Studio 2015 usa **project.json** para tratar as dependências, o Visual Studio 2017 usa um modelo **csproj** durante o carregamento no Visual Studio. Se você estiver usando o Visual Studio 2017, <a href="https://aka.ms/bf-debug-project">baixe este arquivo **.csproj**</a> para a pasta **/mensagens** em seu repositório antes de executar o comando `dotnet restore`.
+> O Visual Studio 2017 altera como o Visual Studio trata as dependências. Enquanto o Visual Studio 2015 usa **project.json** para tratar as dependências, o Visual Studio 2017 usa um modelo **csproj** durante o carregamento no Visual Studio. Se você estiver usando o Visual Studio 2017, baixe este arquivo [ **.csproj**](https://aka.ms/v3-dotnet-debug-csproj) para a pasta **/messages** em seu repositório antes de executar o comando `dotnet restore`.
 
 ![Prompt de comando](~/media/bot-service-debug-bot/csharp-azureservice-debug-envconfig.png)
 
