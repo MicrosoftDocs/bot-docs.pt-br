@@ -1,13 +1,13 @@
 ---
-ms.openlocfilehash: 3a3d1056e9c6f913efbf563131a5ab377a57d2d0
-ms.sourcegitcommit: 4ddee4f90a07813ce570fdd04c8c354b048e22f3
+ms.openlocfilehash: 3e578bcd8301bfb74946eda99d86f5e25eea17b0
+ms.sourcegitcommit: 126c4f8f8c7a3581e7521dc3af9a937493e6b1df
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77479242"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80499844"
 ---
 
-É necessário preparar os arquivos do projeto para implantar o bot de C#, Javascript ou Typescript. Se estiver implantando um bot de Python, ignore esta etapa.
+É necessário preparar os arquivos do projeto para implantar o bot de C#, Javascript ou Typescript. Se estiver implantando um bot de Python, ignore esta etapa e continue na etapa 5.2.
 
 <!-- **C# bots** -->
 ##### <a name="c"></a>[C#](#tab/csharp)
@@ -16,7 +16,9 @@ ms.locfileid: "77479242"
 az bot prepare-deploy --lang Csharp --code-dir "." --proj-file-path "MyBot.csproj"
 ```
 
-Você deve fornecer o caminho do arquivo .csproj relativo a --code-dir. Isso pode ser feito por meio do argumento --proj-file-path. O comando resolveria --code-dir e --proj-file-path com "./MyBot.csproj"
+Você deve fornecer o caminho do arquivo .csproj relativo a --code-dir. Isso pode ser feito por meio do argumento --proj-file-path. O comando resolveria --code-dir e --proj-file-path para "./MyBot.csproj".
+
+Esse comando gera um arquivo `.deployment` na pasta do projeto do bot.
 
 <!-- **JavaScript bots** -->
 ##### <a name="javascript"></a>[JavaScript](#tab/javascript)
@@ -25,7 +27,7 @@ Você deve fornecer o caminho do arquivo .csproj relativo a --code-dir. Isso pod
 az bot prepare-deploy --code-dir "." --lang Javascript
 ```
 
-Esse comando buscará um arquivo web.config que é necessário para aplicativos Node.js trabalharem com o IIS nos Serviços de Aplicativos do Azure. Certifique-se de que o web.config seja salvo na raiz de seu bot.
+O comando gera dois arquivos `web.config` na pasta do projeto. Os aplicativos Node.js precisam do web.config para funcionarem com o IIS nos Serviços de Aplicativos do Azure. Certifique-se de que o web.config seja salvo na raiz de seu bot.
 
 <!-- **TypeScript bots** -->
 ##### <a name="typescript"></a>[TypeScript](#tab/typescript)
@@ -34,13 +36,11 @@ Esse comando buscará um arquivo web.config que é necessário para aplicativos 
 az bot prepare-deploy --code-dir "." --lang Typescript
 ```
 
-Esse comando funciona da mesma forma que o JavaScript acima, mas para um bot Typescript.
+Esse comando funciona de maneira semelhante ao JavaScript, pois ele gera dois arquivos de `web.config`. Um deles está na pasta do projeto e o outro está na pasta **src** dentro da pasta do projeto.
+
+<!-- **TPython bots** -->
+##### <a name="python"></a>[Python](#tab/Python)
+
+Você não precisa preparar seus arquivos de projeto antes de implantar um bot do Python. Prossiga para a etapa 5.2.
 
 ---
-
-> [!NOTE]
->  Para bots C#, o comando `az bot prepare-deploy` gera o arquivo sa `.deployment` na pasta do projeto de bot.
-> Para bots JavaScript, o comando gera dois arquivos `web.config` na pasta do projeto.
-> Para bots TypeScript, o comando gera dois arquivos `web.config`. Um deles está na pasta do projeto e o outro na pasta **src** dentro da pasta do projeto.
-
-

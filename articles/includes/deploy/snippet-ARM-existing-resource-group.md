@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 2559f424e9f50a760837494f87e4f33731ffb358
-ms.sourcegitcommit: 4ddee4f90a07813ce570fdd04c8c354b048e22f3
+ms.openlocfilehash: 27c6079030e6a1da73646c6c325a78614960fa07
+ms.sourcegitcommit: 126c4f8f8c7a3581e7521dc3af9a937493e6b1df
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77479240"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80499833"
 ---
 Nesta etapa, você cria um serviço de aplicativo de bot que define a fase de implantação para o bot. Ao usar um grupo de recursos existente, você pode empregar um plano do serviço de aplicativo existente ou criar um novo. As etapas para as duas opções estão listadas abaixo.
 
@@ -17,8 +17,7 @@ Na saída JSON resultante, copie o valor do campo **id** para usar como o valor 
 
 Nesse caso, estamos usando o Plano do Serviço de Aplicativo existente, mas criando um Aplicativo Web e um Registro de Canais de Bot.
 
-> [!NOTE]
-> Este comando define a ID e o nome de exibição do bot. O parâmetro `botId` deve ser globalmente exclusivo e será usado como a ID imutável do bot. O nome de exibição do bot é mutável.
+O comando abaixo define a ID e o nome de exibição do bot. O parâmetro `botId` deve ser globalmente exclusivo e será usado como a ID imutável do bot. O nome de exibição do bot é mutável.
 
 ```cmd
 az group deployment create --resource-group "<name-of-resource-group>" --template-file "<path-to-template-with-preexisting-rg.json>" --parameters appId="<app-id-from-previous-step>" appSecret="<password-from-previous-step>" botId="<id or bot-app-service-name>" newWebAppName="<bot-app-service-name>" existingAppServicePlan="<name-of-app-service-plan>" appServicePlanLocation="<region-location-name>" --name "<bot-app-service-name>"
