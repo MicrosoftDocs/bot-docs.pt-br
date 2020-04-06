@@ -49,8 +49,8 @@
 ### [Adicionar o reconhecimento de idioma natural ao seu bot](v4sdk/bot-builder-howto-v4-luis.md)
 ### [Responder às perguntas do usuário usando o QnA Maker](v4sdk/bot-builder-howto-qna.md)
 ### [Usar vários modelos de LUIS e QnA](v4sdk/bot-builder-tutorial-dispatch.md)
+### [Gerenciar a complexidade da caixa de diálogo](v4sdk/bot-builder-compositcontrol.md)
 ### [Criar fluxo de conversa avançado usando branches e loops](v4sdk/bot-builder-dialog-manage-complex-conversation-flow.md)
-### [Reutilizar as caixas de diálogo](v4sdk/bot-builder-compositcontrol.md)
 <!--#### [Implement a greeting dialog](v4sdk/bot-builder-dialogs-greeting.md)--TODO: Add once there's a sample.-->
 ### [Manipular interrupções do usuário](v4sdk/bot-builder-howto-handle-user-interrupt.md)
 ### [Gravar diretamente no armazenamento](v4sdk/bot-builder-howto-v4-storage.md)
