@@ -9,7 +9,7 @@
         - name: SDK do Construtor de Bot para .NET
           tocHref: /Bot-Framework/dotnet
           topicHref: /Bot-Framework/dotnet/
-        - name: Construtor de bot do SDK para Node.js
+        - name: SDK do Bot Builder para Node.js
           tocHref: /Bot-Framework/nodejs
           topicHref: /Bot-Framework/nodejs/
         - name: API REST do Bot Framework

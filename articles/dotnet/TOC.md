@@ -3,18 +3,18 @@
 # Mensagens e atividades
 ## [Visão geral das atividades](bot-builder-dotnet-activities.md)
 ## [Criar mensagens](bot-builder-dotnet-create-messages.md)
-## [Adicionar anexos de mídia a mensagens](bot-builder-dotnet-add-media-attachments.md)
-## [Adicionar cartões avançados a mensagens](bot-builder-dotnet-add-rich-card-attachments.md)
+## [Adicionar anexos de mídia às mensagens](bot-builder-dotnet-add-media-attachments.md)
+## [Adicionar cartões ricos mensagens](bot-builder-dotnet-add-rich-card-attachments.md)
 <!-- ## [Send carousel of cards](bot-builder-dotnet-add-carousel-card.md) -->
 ## [Adicionar fala a mensagens](bot-builder-dotnet-text-to-speech.md)
-## [Adicionar dicas de entrada a mensagens](bot-builder-dotnet-add-input-hints.md)
+## [Adicionar dicas de entrada às mensagens](bot-builder-dotnet-add-input-hints.md)
 ## [Adicionar ações sugeridas a mensagens](bot-builder-dotnet-add-suggested-actions.md)
 ## [Enviar e receber atividades](bot-builder-dotnet-connector.md)
 ## [Implementar manipuladores de mensagens globais](bot-builder-dotnet-global-handlers.md)
 ## [Interceptar mensagens](bot-builder-dotnet-middleware.md)
 ## [Enviar mensagens proativas](bot-builder-dotnet-proactive-messages.md)
 # Diálogos
-## [Visão geral dos diálogos](bot-builder-dotnet-dialogs.md)
+## [Visão geral de caixas de diálogo](bot-builder-dotnet-dialogs.md)
 ## [Gerenciar o fluxo da conversa](bot-builder-dotnet-manage-conversation-flow.md)
 ## [Diálogos pontuados](bot-builder-dotnet-scorable-dialogs.md)
 # FormFlow

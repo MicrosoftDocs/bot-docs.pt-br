@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 11/28/2019
 title: Navegador de API do .NET
 ms.openlocfilehash: 4f5c05f107e5c7c181e5fa503f26038d3082ff13
-ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/15/2020
 ms.locfileid: "75491619"
 ---
 # <a name="bot-framework-sdk"></a>SDK do Bot Framework 
