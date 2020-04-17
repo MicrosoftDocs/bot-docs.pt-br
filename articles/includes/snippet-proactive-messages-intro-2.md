@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 4108f02a350d7e02d66db06cd7e65fa9c7a98e7d
-ms.sourcegitcommit: fa6e775dcf95a4253ad854796f5906f33af05a42
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "70297342"
 ---
 Uma **mensagem proativa ad hoc** é o tipo mais simples de mensagem proativa.

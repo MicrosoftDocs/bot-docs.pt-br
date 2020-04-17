@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 86faca976bc95a5e91e17749096cd148483edc61
-ms.sourcegitcommit: fa6e775dcf95a4253ad854796f5906f33af05a42
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "68230705"
 ---
 ## <a name="payment-process-overview"></a>Visão geral do processo de pagamento

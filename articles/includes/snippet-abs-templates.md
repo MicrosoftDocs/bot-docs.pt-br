@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: 8eb45791cfcb578a8dc2fa6a14799c0637daed23
-ms.sourcegitcommit: fa6e775dcf95a4253ad854796f5906f33af05a42
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "68230488"
 ---
-|        Modelo        |                                                                                                         DESCRIÇÃO                                                                                                         |
+|        Modelo        |                                                                                                         Descrição                                                                                                         |
 |------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |         Basic          |                                                                                  Cria um bot que usa diálogos para responder à entrada do usuário.                                                                                  |
 |          Formulário          | Cria um bot que coleta a entrada de um usuário por meio de uma conversa interativa que é criada usando [FormFlow](~/dotnet/bot-builder-dotnet-formflow.md) em C# ou [cascatas](~/nodejs/bot-builder-nodejs-prompts.md) no Node.js. |
