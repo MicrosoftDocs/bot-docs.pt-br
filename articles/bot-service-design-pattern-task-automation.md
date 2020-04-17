@@ -9,10 +9,10 @@ ms.service: bot-service
 ms.date: 2/13/2018
 monikerRange: azure-bot-service-3.0
 ms.openlocfilehash: 0a6643ab0445e569d26a2f3c6b49532e7746a3c2
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75793338"
 ---
 # <a name="create-task-automation-bots"></a>Criar bots de automação de tarefas

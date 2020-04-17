@@ -8,19 +8,19 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 10/11/2018
-ms.openlocfilehash: f87a9de1ee5552c435c32d06094a00817662ba71
-ms.sourcegitcommit: d24fe2178832261ac83477219e42606f839dc64d
+ms.openlocfilehash: 5ec52eabc0ed1a84101a97f793510c6374f3c0f3
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77071674"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80647594"
 ---
 # <a name="connect-a-bot-to-skype"></a>Conectar um bot ao Skype
 
 O Skype mantém você conectado com os usuários por meio de mensagens instantâneas, telefone e videochamadas. Amplie essa funcionalidade criando bots que os usuários podem descobrir e interagir por meio da interface do Skype.
 
 >[!NOTE]
-> Desde 31 de outubro de 2019, o canal do Skype não aceita mais novas solicitações de publicação de bot. Isso significa que você pode continuar a desenvolver bots usando o canal do Skype, mas o bot será limitado a 100 usuários. Você não poderá publicar o bot para um público-alvo maior. Os bots atuais do Skype continuarão a ser executados sem interrupção. Leia mais sobre [por que alguns recursos não estão mais disponíveis no Skype](https://support.skype.com/faq/fa12091/why-are-some-features-not-available-in-skype-anymore).  
+> Desde 31 de outubro de 2019, o canal do Skype não aceita mais novas solicitações de publicação de bot. Isso significa que você pode continuar a desenvolver bots usando o canal do Skype, mas o bot será limitado a 100 usuários. Você não poderá publicar o bot para um público-alvo maior. Os bots atuais do Skype continuarão a ser executados sem interrupção. Leia mais sobre [por que alguns recursos não estão mais disponíveis no Skype](https://support.skype.com/faq/fa12091/why-are-some-features-not-available-in-skype-anymore).
 
 Para adicionar o canal do Skype, abra o bot no [Portal do Azure](https://portal.azure.com/), clique na folha **Canais** e clique em **Skype**.
 

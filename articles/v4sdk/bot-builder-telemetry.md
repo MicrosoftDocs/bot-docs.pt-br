@@ -10,10 +10,10 @@ ms.service: bot-service
 ms.date: 07/17/2019
 monikerRange: azure-bot-service-4.0
 ms.openlocfilehash: e0064980a7b4cb1f5c37485550aa56a338209676
-ms.sourcegitcommit: 9f8fe22e0ed192d4b929bfb7afa90b8e885672f1
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77173041"
 ---
 # <a name="add-telemetry-to-your-bot"></a>Adicionar telemetria ao seu bot
@@ -36,7 +36,7 @@ Neste artigo, você aprenderá a implementar a telemetria em seu bot usando o Ap
 
 * Visualizar os dados telemétricos no Application Insights
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 * O [código de exemplo do CoreBot](https://aka.ms/cs-core-sample)
 

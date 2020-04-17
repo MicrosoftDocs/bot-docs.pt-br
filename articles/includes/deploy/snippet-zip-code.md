@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 71eb85da7a18757806bb5d782723d270f8db0ac2
-ms.sourcegitcommit: 4ddee4f90a07813ce570fdd04c8c354b048e22f3
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77479237"
 ---
 Com o uso da [API de implantação de zip](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file-or-url) não configurada para implantar o código de seu bot, o comportamento do Aplicativo Web/Kudu será o seguinte:

@@ -9,10 +9,10 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 2/26/2019
 ms.openlocfilehash: 999c664f78d11e67647f9efa28bc7f059c43882b
-ms.sourcegitcommit: 64b25f796f89e8bb6fa53d3c824b73b8ce4d6ed8
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/25/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80250115"
 ---
 # <a name="debug-a-bot"></a>Depurar um bot

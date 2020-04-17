@@ -8,10 +8,10 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 ms.openlocfilehash: cc852b1298a306b5c9f6e381b48597510dcb1e72
-ms.sourcegitcommit: d24fe2178832261ac83477219e42606f839dc64d
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77071864"
 ---
 # <a name="authentication"></a>Autenticação
@@ -50,7 +50,7 @@ Você pode [obter um segredo da Direct Line](../bot-service-channel-connect-dire
 
 ![Configuração da Linha Direta](../media/direct-line-configure.png)
 
-## <a id="generate-token"></a> Gerar um token de Linha Direta
+## <a name="generate-a-direct-line-token"></a><a id="generate-token"></a> Gerar um token de Linha Direta
 
 Para gerar um token da Direct Line que possa ser usado para acessar uma única conversa, primeiro obtenha o segredo da Direct Line na página de configuração do canal da Direct Line no [Portal do Azure](https://portal.azure.com). Em seguida, envie essa solicitação para trocar seu segredo da Linha Direta para um token da Linha Direta:
 
@@ -87,7 +87,7 @@ A operação Gerar Token (`POST /api/tokens/conversation`) é semelhante à oper
 
 Se você planeja distribuir o token para clientes e deseja que eles iniciem a conversa, use a operação Gerar Token. Se você pretende iniciar a conversa imediatamente, use a operação [Iniciar Conversa](bot-framework-rest-direct-line-1-1-start-conversation.md).
 
-## <a id="refresh-token"></a> Atualizar um token de Linha Direta
+## <a name="refresh-a-direct-line-token"></a><a id="refresh-token"></a> Atualizar um token de Linha Direta
 
 Um token de Linha Direta é válido por 30 minutos a partir do momento em que é gerado e pode ser atualizado uma quantidade ilimitada de vezes, desde que não tenha expirado. Um token expirado não pode ser atualizado. Para atualizar um token de Linha Direta, emita esta solicitação:
 

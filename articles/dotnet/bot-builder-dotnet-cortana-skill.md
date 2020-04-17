@@ -10,10 +10,10 @@ ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
 ms.openlocfilehash: ecdbf3e573c091893d0f2da8d2c7acb0c6348810
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75796680"
 ---
 # <a name="build-a-speech-enabled-bot-with-cortana-skills"></a>Criar um bot habilitado para fala com habilidades da Cortana
@@ -59,7 +59,7 @@ reply.Speak = "<speak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesi
 A propriedade **InputHint** ajuda a indicar à Cortana se o bot está esperando uma entrada. O valor padrão é **ExpectingInput** para um prompt e **AcceptingInput** para outros tipos de respostas.
 
 
-| Valor | DESCRIÇÃO |
+| Valor | Descrição |
 |------|------|
 | **AcceptingInput** | O bot está passivamente pronto para a entrada, mas não está aguardando uma resposta. A Cortana aceita a entrada do usuário se o usuário mantém pressionado o botão de microfone.|
 | **ExpectingInput** | Indica se o bot está ativamente esperando uma resposta do usuário. A Cortana ouve o usuário falar no microfone.  |
@@ -81,7 +81,7 @@ reply.InputHint = InputHints.ExpectingInput;
 
 Além das respostas faladas, a Cortana também pode exibir anexos de cartão. A Cortana dá suporte aos seguintes cartões avançados:
 
-| Tipo de cartão | DESCRIÇÃO |
+| Tipo de cartão | Descrição |
 |----|----|
 | [HeroCard][heroCard] | Um cartão que geralmente contém uma única imagem grande, um ou mais botões e um texto. |
 | [ThumbnailCard][thumbnailCard] | Um cartão que geralmente contém uma única imagem em miniatura, um ou mais botões e um texto. |

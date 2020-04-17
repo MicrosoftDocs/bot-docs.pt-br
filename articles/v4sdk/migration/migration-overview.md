@@ -10,10 +10,10 @@ ms.service: bot-service
 ms.date: 06/11/2019
 monikerRange: azure-bot-service-4.0
 ms.openlocfilehash: 0746a277f465979639db5c8a26aaddfee9386ac2
-ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80117692"
 ---
 # <a name="migration-overview"></a>Visão geral da migração

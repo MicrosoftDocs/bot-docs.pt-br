@@ -9,10 +9,10 @@ ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
 ms.openlocfilehash: a5e97aa859f8b200fecb6df213bce1f9d9c1f912
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75790351"
 ---
 # <a name="add-speech-to-messages"></a>Adicionar fala a mensagens
@@ -30,13 +30,13 @@ Se você estiver criando um bot para um canal habilitado para fala, como o Corta
 
 Usando o SDK do Bot Framework para Node.js, há várias maneiras de especificar o texto a ser falado pelo seu bot em um canal habilitado para fala. Você pode definir a propriedade `IMessage.speak` e enviar a mensagem usando o método `session.send()`, enviar a mensagem usando o método `session.say()` (passando parâmetros que especificam texto de exibição, texto da fala e opções), ou enviar a mensagem usando um -in prompt (especificando as opções `speak` e `retrySpeak`).
 
-### <a id="message-speak"></a> IMessage.speak
+### <a name="imessagespeak"></a><a id="message-speak"></a> IMessage.speak
 
 Se você estiver criando uma mensagem que será enviada usando o método `session.send()`, defina a propriedade `speak` para especificar o texto a ser falado pelo seu bot. O exemplo de código a seguir cria uma mensagem que especifica o texto a ser falado e indica que o bot está [aceitando a entrada do usuário](bot-builder-nodejs-send-input-hints.md).
 
 [!code-javascript[IMessage.speak](../includes/code/node-text-to-speech.js#IMessageSpeak)]
 
-### <a id="session-say"></a> Session.say()
+### <a name="sessionsay"></a><a id="session-say"></a> Session.say()
 
 Como alternativa ao uso de `session.send()`, você pode chamar o método `session.say()` para criar e enviar uma mensagem que especifique o texto a ser falado, além do texto a ser exibido e outras opções. O método é definido da seguinte maneira:
 
@@ -52,13 +52,13 @@ O exemplo de código a seguir cria uma mensagem que especifica o texto a ser exi
 
 [!code-javascript[Session.say()](../includes/code/node-text-to-speech.js#SessionSay)]
 
-### <a id="prompt-options"></a> Opções de prompts
+### <a name="prompt-options"></a><a id="prompt-options"></a> Opções de prompts
 
 Usando qualquer um dos prompts internos, você pode definir as opções `speak` e `retrySpeak` para especificar o texto a ser falado pelo seu bot. O exemplo de código a seguir cria um prompt que especifica o texto a ser exibido, o texto a ser falado inicialmente e o texto a ser falado após aguardar algum tempo pela entrada do usuário. Isso indica que o bot está [esperando a entrada do usuário](bot-builder-nodejs-send-input-hints.md) e usa a formatação [SSML](#ssml) para especificar que a palavra "sure" deve ser falada com uma quantidade moderada de ênfase.
 
 [!code-javascript[Prompt](../includes/code/node-text-to-speech.js#Prompt)]
 
-## <a id="ssml"></a> Linguagem de marcação de síntese de fala (SSML)
+## <a name="speech-synthesis-markup-language-ssml"></a><a id="ssml"></a> Linguagem de marcação de síntese de fala (SSML)
 
 Para especificar o texto a ser falado pelo seu bot, você pode usar uma string de texto simples ou uma string formatada como SSML (linguagem de marcação de síntese de fala), uma linguagem de marcação baseada em XML que permite controlar várias características do discurso do bot. como voz, taxa, volume, pronúncia, tom e muito mais. Para obter detalhes sobre SSML, consulte <a href="https://msdn.microsoft.com/library/hh378377(v=office.14).aspx" target="_blank">Referência da Linguagem de Marcação de Síntese de Fala</a>.
 

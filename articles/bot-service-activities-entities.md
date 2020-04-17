@@ -9,10 +9,10 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 03/01/2018
 ms.openlocfilehash: cd11cc1fbbacb7e555da4e00337d6fd4b79a4df6
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75789073"
 ---
 # <a name="entities-and-activity-types"></a>Entidades e tipos de atividades
@@ -39,13 +39,13 @@ O objeto mention contém essas propriedades:
 
 Este exemplo de código mostra como adicionar uma entidade mention à coleção de entidades.
 
-# <a name="ctabcs"></a>[C#](#tab/cs)
+# <a name="c"></a>[C#](#tab/cs)
 [!code-csharp[set Mention](includes/code/dotnet-create-messages.cs#setMention)]
 
 > [!TIP]
 > Ao tentar determinar a intenção do usuário, o bot pode querer ignorar essa parte da mensagem no qual ele é mencionado. Chame o método `GetMentions` e avalie os objetos `Mention` retornados na resposta.
 
-# <a name="javascripttabjs"></a>[JavaScript](#tab/js)
+# <a name="javascript"></a>[JavaScript](#tab/js)
 ```javascript
 var entity = context.activity.entities;
 
@@ -89,10 +89,10 @@ O objeto GeoCoordinates contém essas propriedades:
 
 Este exemplo de código mostra como adicionar uma entidade place à coleção de entidades:
 
-# <a name="ctabcs"></a>[C#](#tab/cs)
+# <a name="c"></a>[C#](#tab/cs)
 [!code-csharp[set GeoCoordinates](includes/code/dotnet-create-messages.cs#setGeoCoord)]
 
-# <a name="javascripttabjs"></a>[JavaScript](#tab/js)
+# <a name="javascript"></a>[JavaScript](#tab/js)
 ```javascript
 var entity = context.activity.entities;
 
@@ -112,7 +112,7 @@ entity = [place];
 
 ### <a name="consume-entities"></a>Consumir entidades
 
-# <a name="ctabcs"></a>[C#](#tab/cs)
+# <a name="c"></a>[C#](#tab/cs)
 
 Para consumir entidades, use a palavra-chave `dynamic` ou classes fortemente tipadas.
 
@@ -124,7 +124,7 @@ Este exemplo de código mostra como usar uma classe fortemente tipada para proce
 
 [!code-csharp[examine entity using typed class](includes/code/dotnet-create-messages.cs#examineEntity2)]
 
-# <a name="javascripttabjs"></a>[JavaScript](#tab/js)
+# <a name="javascript"></a>[JavaScript](#tab/js)
 
 Este exemplo de código mostra como processar uma entidade dentro da propriedade `entity` de uma mensagem:
 

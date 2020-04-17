@@ -8,10 +8,10 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 ms.openlocfilehash: e6504c1d6cd8cbcf3eab4fadaa62485deba14efa
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75789712"
 ---
 # <a name="send-a-message-to-the-bot"></a>Enviar uma mensagem para o bot
@@ -65,15 +65,15 @@ O tempo total para postar uma mensagem a uma conversa de linha direta é a soma 
 
 Em algumas situações, um cliente talvez precise enviar anexos para o bot, como imagens ou documentos. Um cliente pode enviar anexos para o bot ou pelo [especificando as URLs](#send-by-url) dos anexos dentro a [mensagem](bot-framework-rest-direct-line-1-1-api-reference.md#message-object) do objeto que ele envia usando `POST /api/conversations/{conversationId}/messages` ou pelo [carregando anexos](#upload-attachments) usando `POST /api/conversations/{conversationId}/upload`.
 
-## <a id="send-by-url"></a> Enviar anexos por URL
+## <a name="send-attachments-by-url"></a><a id="send-by-url"></a> Enviar anexos por URL
 
 Para enviar um ou mais anexos como parte do objeto [Message](bot-framework-rest-direct-line-1-1-api-reference.md#message-object) usando `POST /api/conversations/{conversationId}/messages`, especifique o (s) URL (s) do (s) anexo (s) no array `images` e / ou `attachments` da mensagem.
 
-## <a id="upload-attachments"></a> Enviar anexos por upload
+## <a name="send-attachments-by-upload"></a><a id="upload-attachments"></a> Enviar anexos por upload
 
 Geralmente, um cliente pode ter imagens ou documento (s) em um dispositivo que deseja enviar para o bot, mas não há URLs correspondem a esses arquivos. Nessa situação, um cliente pode emitir um `POST /api/conversations/{conversationId}/upload` solicitação para enviar anexos para o bot pelo carregamento. O formato e conteúdo da solicitação dependerão se o cliente é [enviar um único anexo](#upload-one-attachment) ou [enviando vários anexos](#upload-multiple-attachments).
 
-### <a id="upload-one-attachment"></a> Enviar um anexo por upload
+### <a name="send-a-single-attachment-by-upload"></a><a id="upload-one-attachment"></a> Enviar um anexo por upload
 
 Para enviar um único anexo por upload, envie esta solicitação: 
 
@@ -112,7 +112,7 @@ HTTP/1.1 204 No Content
 [other headers]
 ```
 
-### <a id="upload-multiple-attachments"></a> Enviar vários anexos por upload
+### <a name="send-multiple-attachments-by-upload"></a><a id="upload-multiple-attachments"></a> Enviar vários anexos por upload
 
 Para enviar vários anexos por upload, `POST`uma solicitação multipartes para o endpoint`/api/conversations/{conversationId}/upload`. Defina as `Content-Type` cabeçalho da solicitação para `multipart/form-data` e incluem o `Content-Type` cabeçalho e `Content-Disposition` cabeçalho para cada parte especificar o tipo e nome do arquivo de cada anexo. No URI de solicitação, defina o `userId` parâmetro para a ID do usuário que está enviando a mensagem. 
 

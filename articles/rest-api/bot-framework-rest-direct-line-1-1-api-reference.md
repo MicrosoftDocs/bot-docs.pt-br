@@ -8,10 +8,10 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 ms.openlocfilehash: 6cb2d9cd933952e363631d64f527b4c12d5f3b40
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75791386"
 ---
 # <a name="api-reference---direct-line-api-11"></a>Referência de API – API de Linha Direta 1.1
@@ -132,7 +132,7 @@ POST /api/conversations/{conversationId}/messages
 | **Corpo da solicitação** | Um objeto [Message](#message-object) |
 | **Retorna** | Nenhum dado é retornado no corpo da resposta. O serviço responde com um código de status HTTP 204, se a mensagem foi enviada com êxito. O cliente pode obter sua mensagem enviada (juntamente com quaisquer mensagens que o bot enviou ao cliente) usando a operação [Obter mensagens](#get-messages). |
 
-### <a id="upload-send-files"></a>Carregar e Enviar Arquivo(s)
+### <a name="upload-and-send-files"></a><a id="upload-send-files"></a>Carregar e Enviar Arquivo(s)
 Carrega e envia arquivo(s) como anexo(s). Defina o parâmetro `userId` no URI da solicitação para especificar a ID do usuário que está enviando os anexos.
 ```http 
 POST /api/conversations/{conversationId}/upload?userId={userId}

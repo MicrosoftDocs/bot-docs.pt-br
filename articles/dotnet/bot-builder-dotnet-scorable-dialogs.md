@@ -9,10 +9,10 @@ ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
 ms.openlocfilehash: 101de0274c0daf4cbeb003703e299e0598f12a8a
-ms.sourcegitcommit: a6d02ec4738e7fc90b7108934740e9077667f3c5
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "70297292"
 ---
 # <a name="global-message-handlers-using-scorables"></a>Manipuladores de mensagens globais usando pontuáveis
@@ -165,5 +165,5 @@ public class WebApiApplication : System.Web.HttpApplication
 ## <a name="additional-resources"></a>Recursos adicionais
 * [Amostra de manipuladores de mensagens globais](https://github.com/Microsoft/BotBuilder-Samples/tree/master/CSharp/core-GlobalMessageHandlers)
 * [Amostra de bot pontuável simples](https://github.com/Microsoft/BotFramework-Samples/tree/master/blog-samples/CSharp/ScorableBotSample)
-* [Visão geral dos diálogos](bot-builder-dotnet-dialogs.md)
+* [Visão geral de caixas de diálogo](bot-builder-dotnet-dialogs.md)
 * [AutoFac](https://autofac.org/)

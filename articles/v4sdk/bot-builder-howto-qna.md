@@ -10,10 +10,10 @@ ms.service: bot-service
 ms.date: 11/06/2019
 monikerRange: azure-bot-service-4.0
 ms.openlocfilehash: 769155bbc1aeb8dfaf56788065e2bf31dab15472
-ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/18/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77441697"
 ---
 # <a name="use-qna-maker-to-answer-questions"></a>Usar o QnA Maker para responder a perguntas
@@ -24,7 +24,7 @@ O QnA Maker fornece uma camada de pergunta e resposta de conversa sobre seus dad
 
 Um dos requisitos básicos para a criação de seu próprio serviço QnA Maker é preenchê-lo com perguntas e respostas. Em muitos casos, as perguntas e respostas já existem no conteúdo, como as perguntas frequentes ou outra documentação; outras vezes, talvez seja conveniente personalizar as respostas às perguntas de forma mais natural e coloquial.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 - O código neste artigo baseia-se no exemplo do QnA Maker. Você precisará de uma cópia dele em **[C#](https://aka.ms/cs-qna)** , **[JavaScript](https://aka.ms/js-qna-sample)** ou **[Python](https://aka.ms/bot-qna-python-sample-code)** . 
 - Conta do [QnA Maker](https://www.qnamaker.ai/)

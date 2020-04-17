@@ -9,10 +9,10 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/04/2018
 ms.openlocfilehash: 88f8c629bd907bf6f9af3ef189bfb6e329b36b02
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75793602"
 ---
 # <a name="bot-analytics"></a>Análise de bot

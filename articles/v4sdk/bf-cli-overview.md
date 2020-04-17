@@ -10,10 +10,10 @@ ms.service: bot-service
 ms.date: 11/01/2019
 monikerRange: azure-bot-service-4.0
 ms.openlocfilehash: 8b885b19ed22c4d91163b59abe4e253018531b59
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75791423"
 ---
 <!--TODO:
@@ -26,7 +26,7 @@ ms.locfileid: "75791423"
 
 A CLI (Interface de Linha de Comando) do Bot Framework é uma ferramenta multiplataforma que permite gerenciar bots e serviços relacionados. Ela substitui uma coleção de ferramentas de CLI autônomas mais antigas, agregando-as em uma única ferramenta. 
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 * [Node.js](https://nodejs.org/), versão 10.14.1 ou posterior.
 
@@ -44,7 +44,7 @@ Os seguintes comandos estão disponíveis no momento.
 
 | Ferramenta antiga | Conjunto de comandos do BF | Descrição |
 | :--- | :--- | :--- |
-| ChatDown | [`bf chatdown`](bf-cli-reference.md#bf-chatdown) | Comandos para trabalhar com arquivos de diálogo de chat (**.chat**). |
+| ChatDown | [`bf chatdown`](bf-cli-reference.md#bf-chatdown) | Comandos para trabalhar com arquivos de diálogo de chat ( **.chat**). |
 | na | [`bf config`](bf-cli-reference.md#bf-config) | Define várias configurações na CLI. |
 | LuDown, LuisGen | [`bf luis`](bf-cli-reference.md#bf-luis) | Comandos para trabalhar com arquivos de recursos do LUIS e gerenciar modelos do LUIS. |
 | QnAMaker | [`bf qnamaker`](bf-cli-reference.md#bf-qnamaker) | Comandos para trabalhar com os arquivos de recurso do QnA Maker e gerenciar bases de dados de conhecimento. |

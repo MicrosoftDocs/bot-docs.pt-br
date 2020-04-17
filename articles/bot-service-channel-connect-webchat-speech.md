@@ -10,10 +10,10 @@ ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
 ms.openlocfilehash: 72a247fe0e8373323626a5d01360d2a923b09b09
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75793243"
 ---
 # <a name="enable-speech-in-web-chat"></a>Habilitar o controle por voz no Webchat
@@ -23,7 +23,7 @@ Habilite uma interface de voz no controle de Webchat. Os usuários interagem com
 
 Se o usuário digita em vez de falar uma resposta, o Webchat desativa a funcionalidade de fala e o bot fornece apenas uma resposta textual em vez da fala em voz alta. Para habilitar novamente a resposta falada, o usuário pode usar o microfone para responder ao bot na próxima vez. Se o microfone aceitar a entrada, ele será exibido como escuro ou preenchido. Se ele estiver esmaecido, o usuário clicará nele para habilitá-lo.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
   Antes de executar a amostra, você precisa ter um segredo da Linha Direta ou um token para o bot que deseja executar usando o controle de Webchat. 
   * Confira [Conectar um bot à Linha Direta](bot-service-channel-connect-directline.md) para obter informações sobre como obter um segredo da Linha Direta associado ao bot.
@@ -49,7 +49,7 @@ Para habilitar a funcionalidade de fala no Webchat, você precisa personalizar o
      ```
 4. Direcione o navegador para `http://localhost:8000/samples?parameters`. Por exemplo, `http://localhost:8000/samples?s=YOURDIRECTLINESECRET` invoca o bot usando um segredo da Linha Direta. Os parâmetros que podem ser definidos na cadeia de caracteres de consulta são descritos na seguinte tabela:
 
-   | Parâmetro | DESCRIÇÃO |
+   | Parâmetro | Descrição |
    |-----------|-------------|
    | s | Segredo da Linha Direta. Confira [Conectar um bot à Linha Direta](bot-service-channel-connect-directline.md) para obter informações sobre como obter um segredo da Linha Direta. |
    | t | Token da Linha Direta. Confira [Gerar um token da Linha Direta](rest-api/bot-framework-rest-direct-line-3-0-authentication.md) para obter informações sobre como gerar esse token. |

@@ -8,10 +8,10 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/13/2019
 ms.openlocfilehash: bfe40a33747dfd6724f6a5efe2104ffde01781bc
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75789367"
 ---
 # <a name="receive-activities-from-the-bot"></a>Receber atividades do bot
@@ -35,7 +35,7 @@ Nem todos os [tipos de atividade](https://aka.ms/botSpecs-activitySchema) estão
 | endOfConversation | HTTP GET e WebSocket |
 | todos os demais tipos de atividade | HTTP GET e WebSocket |
 
-## <a id="connect-via-websocket"></a> Receber atividades por meio do fluxo do WebSocket
+## <a name="receive-activities-via-websocket-stream"></a><a id="connect-via-websocket"></a> Receber atividades por meio do fluxo do WebSocket
 
 Quando um cliente envia uma solicitação [Iniciar Conversa](bot-framework-rest-direct-line-3-0-start-conversation.md) para abrir uma conversa com um bot, a resposta do serviço inclui uma propriedade `streamUrl` que o cliente pode subsequentemente usar para se conectar pelo WebSocket. A URL de fluxo vem pré-autorizada e, portanto, a solicitação do cliente para se conectar pelo WebSocket não requer um cabeçalho `Authorization`.
 
@@ -98,7 +98,7 @@ O serviço da Linha Direta pode forçosamente fechar a conexão do WebSocket em 
 
 O fluxo do WebSocket contém atualizações dinâmicas e mensagens muito recentes (uma vez que a chamada para se conectar por meio do WebSocket foi emitida), mas não inclui mensagens que foram enviadas antes da mais recente `POST` para `/v3/directline/conversations/{id}`. Para recuperar as mensagens que foram enviadas anteriormente na conversa, use `HTTP GET` conforme descrito abaixo.
 
-## <a id="http-get"></a> Recuperar atividades com o HTTP GET
+## <a name="retrieve-activities-with-http-get"></a><a id="http-get"></a> Recuperar atividades com o HTTP GET
 
 Os clientes que não podem usar WebSockets podem recuperar as atividades usando `HTTP GET`.
 

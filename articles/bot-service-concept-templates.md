@@ -9,10 +9,10 @@ ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
 ms.openlocfilehash: 82afb54b7f4a148aee35be15fac761e2f89aed69
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75793077"
 ---
 # <a name="bot-service-templates"></a>Modelos de serviço de bot
@@ -48,7 +48,7 @@ Para criar um bot que possa enviar mensagens proativas ao usuário, escolha o **
 
 Quando você cria um bot usando o modelo proativo, vários recursos do Azure são automaticamente criados e adicionados ao seu grupo de recursos. Por padrão, esses recursos do Azure já estão configurados para habilitar um cenário muito simple de mensagens proativo. 
 
-| Recurso | DESCRIÇÃO |
+| Recurso | Descrição |
 |----|----|
 | Armazenamento do Azure | Usado para criar a fila. |
 | Aplicativo de Funções do Azure | Uma `queueTrigger` Função do Azure que é acionada sempre que houver uma mensagem na fila. Ele se comunica com o Serviço de Bot usando [Linha Direta](https://docs.microsoft.com/bot-framework/rest-api/bot-framework-rest-direct-line-3-0-concepts). Essa função usa a associação de bot para enviar a mensagem como parte da carga do gatilho. Nossa função de exemplo encaminha a mensagem do usuário como-está na fila.

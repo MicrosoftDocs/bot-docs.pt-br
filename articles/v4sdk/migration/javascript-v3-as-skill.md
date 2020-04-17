@@ -10,10 +10,10 @@ ms.service: bot-service
 ms.date: 02/19/2020
 monikerRange: azure-bot-service-4.0
 ms.openlocfilehash: 6b29a60d757725e65ae716301e736a66d508332a
-ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80117801"
 ---
 # <a name="convert-a-javascript-v3-bot-to-a-skill"></a>Converter um bot v3 do JavaScript em uma habilidade

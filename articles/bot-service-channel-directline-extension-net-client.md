@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.author: kamrani
 ms.date: 07/25/2019
 ms.openlocfilehash: d990700ab06a4bfae34cffcbc1a6846f66ec1d77
-ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80117613"
 ---
 # <a name="create-net-client-to-connect-to-direct-line-app-service-extension"></a>Criar um cliente .NET para se conectar à extensão do Serviço de Aplicativo do Direct Line

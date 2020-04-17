@@ -8,10 +8,10 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 ms.openlocfilehash: 8d911538b2ee06d255efdba6329c9fd9519056bf
-ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/18/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77441282"
 ---
 # <a name="design-knowledge-bots"></a>Criar bots de dados de Conhecimento

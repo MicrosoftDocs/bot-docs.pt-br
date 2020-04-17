@@ -8,10 +8,10 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 ms.openlocfilehash: 358f5cc7714c2d8803adbf40b60cc4584d3fe506
-ms.sourcegitcommit: 308e6df385b9bac9c8d60f8b75eabc813b823c38
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77520025"
 ---
 # <a name="add-input-hints-to-messages"></a>Adicionar dicas de entrada às mensagens

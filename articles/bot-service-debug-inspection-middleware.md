@@ -9,10 +9,10 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/01/2019
 ms.openlocfilehash: 0d48d40efc9f28482c01b42132ab335e433e326f
-ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80117579"
 ---
 # <a name="debug-a-bot-with-inspection-middleware"></a>Depurar um bot com middleware de inspeção

@@ -9,10 +9,10 @@ ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
 ms.openlocfilehash: e7c852245bdf09ada446a873bd1c974b85417672
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75793349"
 ---
 # <a name="dialogs-in-the-bot-framework-sdk-for-net"></a>Diálogos no SDK do Bot Framework para .NET
@@ -104,7 +104,7 @@ Para usar a reflexão com o objetivo de serializar classes que não estão marca
 
 [!code-csharp[Serialization](../includes/code/dotnet-dialogs.cs#serialization)]
 
-## <a id="dialog-chains"></a> Cadeias de diálogos
+## <a name="dialog-chains"></a><a id="dialog-chains"></a> Cadeias de diálogos
 
 Embora você possa gerenciar explicitamente a pilha de diálogos ativos usando `IDialogStack.Call<R>` e `IDialogStack.Done<R>`, você também pode gerenciar implicitamente a pilha de diálogos ativos usando estes métodos [Chain][chain] fluentes.
 

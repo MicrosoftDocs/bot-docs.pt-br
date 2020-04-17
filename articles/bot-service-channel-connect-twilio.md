@@ -9,10 +9,10 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 10/9/2018
 ms.openlocfilehash: 42e79bbf79418c30ff0b4b6c584ab4791cd246c0
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75793087"
 ---
 # <a name="connect-a-bot-to-twilio"></a>Conectar um bot ao Twilio
@@ -73,7 +73,7 @@ Assim como o canal disponível no Serviço de Bot do Azure para conectar o bot a
 > [!NOTE]
 > As instruções a seguir abordam a implementação em C# do adaptador do Twilio. Para obter instruções sobre como usar o adaptador JS, parte das bibliotecas BotKit, [consulte a documentação do Twilio sobre BotKit](https://botkit.ai/docs/v4/platforms/twilio.html).
 
-### <a name="prerequisites"></a>Prerequisites
+### <a name="prerequisites"></a>Pré-requisitos
 
 * O [código de exemplo do EchoBot](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/02.echo-bot)
 

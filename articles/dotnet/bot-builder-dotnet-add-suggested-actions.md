@@ -9,10 +9,10 @@ ms.service: bot-service
 ms.date: 03/13/2018
 monikerRange: azure-bot-service-3.0
 ms.openlocfilehash: 61aaff340a235f7b9b552d79205fab8e772216f9
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75796675"
 ---
 # <a name="add-suggested-actions-to-messages"></a>Adicionar ações sugeridas a mensagens

@@ -8,10 +8,10 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 ms.openlocfilehash: 4716ff913940b09fa24f199492de9e19cf009b71
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75790006"
 ---
 # <a name="implement-channel-specific-functionality"></a>Implementar a funcionalidade específica do canal
@@ -240,7 +240,7 @@ Para criar uma mensagem nativa do Kik, defina a propriedade `Activity` do objeto
 
 | Propriedade | Descrição |
 |----|----|
-|  da nuvem para o dispositivo | Uma matriz de mensagens do Kik. Para obter detalhes sobre o formato de mensagem do Kik, confira <a href="https://dev.kik.com/#/docs/messaging#message-formats" target="_blank">Formatos de mensagem do Kik</a>. |
+| da nuvem para o dispositivo | Uma matriz de mensagens do Kik. Para obter detalhes sobre o formato de mensagem do Kik, confira <a href="https://dev.kik.com/#/docs/messaging#message-formats" target="_blank">Formatos de mensagem do Kik</a>. |
 
 Este snippet mostra um exemplo da propriedade `channelData` para uma mensagem nativa do Kik.
 

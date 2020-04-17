@@ -9,10 +9,10 @@ ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
 ms.openlocfilehash: a03d1c58bc91cd7966b59e2b62eb1c6ac46c094f
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75797883"
 ---
 # <a name="add-speech-to-messages"></a>Adicionar fala a mensagens
@@ -30,25 +30,25 @@ Se você estiver criando um bot para um canal habilitado para fala, como o Corta
 
 Usando o SDK do Bot Framework para .NET, há várias maneiras de especificar o texto a ser falado pelo seu bot em um canal habilitado para fala. É possível definir a propriedade `Speak` da [mensagem][IMessageActivity], chamar o método `IDialogContext.SayAsync()` ou especificar as opções de prompt `speak` e `retrySpeak` ao enviar uma mensagem usando um prompt interno.
 
-### <a id="message-speak"></a> IMessageActivity.Speak
+### <a name="imessageactivityspeak"></a><a id="message-speak"></a> IMessageActivity.Speak
 
 Se você estiver criando uma [mensagem][IMessageActivity] e definindo as propriedades individuais dela, será possível definir a propriedade `Speak` da mensagem para especificar o texto a ser falado pelo seu bot. O exemplo de código a seguir cria uma mensagem que especifica o texto a ser exibido e o texto a ser falado e indica que o bot está [aceitando a entrada do usuário](bot-builder-dotnet-add-input-hints.md).
 
 [!code-csharp[Set speak property](../includes/code/dotnet-text-to-speech.cs#Speak1)]
 
-### <a id="say-async"></a> IDialogContext.SayAsync()
+### <a name="idialogcontextsayasync"></a><a id="say-async"></a> IDialogContext.SayAsync()
 
 Se você estiver usando [diálogos](bot-builder-dotnet-dialogs.md), será possível chamar o método `SayAsync()` para criar e enviar uma mensagem que especifique o texto a ser falado, além do texto a ser exibido e outras opções. O exemplo de código a seguir cria uma mensagem que especifica o texto a ser exibido e o texto a ser falado.
 
 [!code-csharp[Call SayAsync()](../includes/code/dotnet-text-to-speech.cs#Speak2)]
 
-### <a id="prompt-options"></a> Opções de prompts
+### <a name="prompt-options"></a><a id="prompt-options"></a> Opções de prompts
 
 Usando qualquer um dos prompts internos, você pode definir as opções `speak` e `retrySpeak` para especificar o texto a ser falado pelo seu bot. O exemplo de código a seguir cria um prompt que especifica o texto a ser exibido, o texto a ser falado inicialmente e o texto a ser falado após aguardar algum tempo pela entrada do usuário. Ele usa a formatação [SSML](#ssml) para indicar que "com certeza" deve ser falado com uma quantidade moderada de ênfase.
 
 [!code-csharp[Set Prompt options](../includes/code/dotnet-text-to-speech.cs#Speak3)]
 
-## <a id="ssml"></a> Linguagem de marcação de síntese de fala (SSML)
+## <a name="speech-synthesis-markup-language-ssml"></a><a id="ssml"></a> Linguagem de marcação de síntese de fala (SSML)
 
 Para especificar o texto a ser falado pelo seu bot, você pode dar a ele uma cadeia de caracteres formatada como Speech Synthesis Markup Language (SSML). SSML é uma linguagem de marcação baseada em XML (e portanto, deve ser um XML válido) que permite controlar várias características de fala do bot como voz, velocidade, volume, pronúncia, tom e muito mais. Para obter detalhes sobre SSML, consulte <a href="https://msdn.microsoft.com/library/hh378377(v=office.14).aspx" target="_blank">Referência da Linguagem de Marcação de Síntese de Fala</a>.
 

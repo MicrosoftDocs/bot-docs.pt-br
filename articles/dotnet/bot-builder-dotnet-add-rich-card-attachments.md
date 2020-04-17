@@ -9,10 +9,10 @@ ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
 ms.openlocfilehash: db1c7a1188715a1f23ed0b0cd60538fdaebbe840
-ms.sourcegitcommit: 4e1af50bd46debfdf9dcbab9a5d1b1633b541e27
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/25/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "76752788"
 ---
 # <a name="add-rich-card-attachments-to-messages"></a>Adicionar anexos de cartão avançados às mensagens
@@ -114,7 +114,7 @@ Este exemplo de código mostra como criar uma mensagem de resposta que contém u
 
 [!code-csharp[Add SignInCard attachment](../includes/code/dotnet-add-attachments.cs#addSignInCardAttachment)]
 
-## <a id="adaptive-card"></a> Adicionar um cartão adaptável a uma mensagem
+## <a name="add-an-adaptive-card-to-a-message"></a><a id="adaptive-card"></a> Adicionar um cartão adaptável a uma mensagem
 
 O Cartão Adaptável pode conter qualquer combinação de texto, fala, imagens, botões e campos de entrada.
 Os Cartões Adaptáveis são criados usando o formato JSON especificado em <a href="http://adaptivecards.io" target="_blank">Cartões Adaptáveis</a>, o que fornece a você controle total sobre o conteúdo e o formato do cartão.

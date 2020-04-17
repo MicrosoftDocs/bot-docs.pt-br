@@ -9,10 +9,10 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 1/7/2019
 ms.openlocfilehash: 7898546aeb517fcf1ea4af50e35851a3f09ba633
-ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/18/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77441552"
 ---
 # <a name="connect-a-bot-to-line"></a>Conectar um bot ao LINE

@@ -10,10 +10,10 @@ ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
 ms.openlocfilehash: b57e88dfc5133029a2a847a211c11cb187d9492a
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75798495"
 ---
 # <a name="implement-a-greeting-dialog"></a>Implementar um diálogo de saudação
@@ -24,7 +24,7 @@ Você pode usar um diálogo para dar boas-vindas a um usuário em uma conversa.
 
 Para obter mais informações sobre como dar boas-vindas aos usuários, confira como [Enviar mensagens de boas-vindas aos usuários][send-welcome].
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento sobre o [gerenciamento de estado][concept-state], a [biblioteca de diálogos][concept-dialogs], como [gerenciar conversas][simple-flow] e como [coletar a entrada do usuário usando um prompt de diálogo][prompting].
 - Uma cópia do ??? amostra em [**CSharp**][cs-sample] ou [**JavaScript**][js-sample].

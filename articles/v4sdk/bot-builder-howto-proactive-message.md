@@ -10,10 +10,10 @@ ms.service: bot-service
 ms.date: 01/24/2020
 monikerRange: azure-bot-service-4.0
 ms.openlocfilehash: 704a37569f5ed9017cd4a09618a4efe75469f4a4
-ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/18/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77441625"
 ---
 # <a name="send-proactive-notifications-to-users"></a>Enviar notificações proativas para os usuários
@@ -31,7 +31,7 @@ Uma mensagem proativa ad hoc é o tipo mais simples de mensagem proativa. O bot 
 
 Para lidar com notificações de forma mais suave, considere outras maneiras de integrar a notificação no fluxo de conversa, como definir um sinalizador no estado da conversa ou adicionar a notificação a uma fila.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 - Entenda sobre as [Noções básicas do bot](bot-builder-basics.md).
 - Uma cópia do exemplo de mensagens proativas em [**C#** ](https://aka.ms/proactive-sample-cs), [**JavaScript**](https://aka.ms/proactive-sample-js) ou [**Python**](https://aka.ms/bot-proactive-python-sample-code). O exemplo é usado para explicar sobre mensagens proativas neste artigo.

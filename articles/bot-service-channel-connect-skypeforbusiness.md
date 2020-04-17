@@ -9,10 +9,10 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 ms.openlocfilehash: 7bb01dd94fe4d7058c857ad0f1c42bf7b35a727d
-ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80117607"
 ---
 # <a name="connect-a-bot-to-skype-for-business-preview"></a>Conectar um bot ao Skype for Business (versão prévia)

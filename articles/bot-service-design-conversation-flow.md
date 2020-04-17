@@ -9,10 +9,10 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/19/2019
 ms.openlocfilehash: a282a53ea7f36ec1cd33a496e94bb4f8cdb9b623
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75792405"
 ---
 # <a name="design-and-control-conversation-flow"></a>Projetar e controlar o fluxo da conversa

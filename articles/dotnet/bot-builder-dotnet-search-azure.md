@@ -9,10 +9,10 @@ ms.service: bot-service
 ms.date: 1/28/2019
 monikerRange: azure-bot-service-3.0
 ms.openlocfilehash: 2cdf73fcb5152768d3613cf78f209ebf79ca1edc
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75798540"
 ---
 # <a name="create-data-driven-experiences-with-azure-search"></a>Criar experiências controladas por dados com o Azure Search 
@@ -27,7 +27,7 @@ ms.locfileid: "75798540"
 
 O Azure Search é um serviço do Azure que oferece pesquisa de palavras-chave, linguística interna, pontuação personalizada, faceted navigation, e muito mais. O Azure Search também pode indexar conteúdo de várias fontes, incluindo o Azure SQL DB, DocumentDB, Armazenamento de Blobs e Armazenamento de Tabelas. Ele dá suporte à indexação "push" para outras fontes de dados e pode abrir PDFs, documentos do Office e outros formatos que contém dados não estruturados. Depois de coletado, o conteúdo entra em um índice do Azure Search, que o bot pode então consultar.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 Instale o [pacote Nuget Microsoft.Azure.Search](https://www.nuget.org/packages/Microsoft.Azure.Search/4.0.0-preview) no projeto de bot.
 

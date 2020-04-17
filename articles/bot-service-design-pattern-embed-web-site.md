@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 48b483ad16a5af837869879c5f87d0e249f0788d
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 200ad4fc9528a24390edff8ee54b26d344547e04
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75792188"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80647487"
 ---
 # <a name="embed-a-bot-in-a-website"></a>Inserir um bot em um site
 
@@ -23,6 +23,10 @@ Este artigo explora a integração dos bots com sites, e o processo de usar o me
 A Microsoft fornece duas maneiras diferentes de integrar um bot a um site: o controle da Web do Skype e um controle da Web de software livre.
 
 ## <a name="skype-web-control"></a>Controle da Web do Skype
+
+>[!NOTE]
+> Desde 31 de outubro de 2019, o canal do Skype não aceita mais novas solicitações de publicação de bot. Isso significa que você pode continuar a desenvolver bots usando o canal do Skype, mas o bot será limitado a 100 usuários. Você não poderá publicar o bot para um público-alvo maior. Os bots atuais do Skype continuarão a ser executados sem interrupção. Leia mais sobre [por que alguns recursos não estão mais disponíveis no Skype](https://support.skype.com/faq/fa12091/why-are-some-features-not-available-in-skype-anymore).
+
 
 O [controle da Web do Skype](https://aka.ms/bot-skype-web-control) é, essencialmente, um cliente do Skype em um controle habilitado para Web. A autenticação integrada do Skype permite que o bot autentique e reconheça usuários, sem exigir que o desenvolvedor escreva qualquer código personalizado. O Skype reconhece automaticamente Contas da Microsoft usadas em seu cliente da Web. 
 

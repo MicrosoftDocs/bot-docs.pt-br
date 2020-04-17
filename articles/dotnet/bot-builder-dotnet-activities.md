@@ -9,10 +9,10 @@ ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
 ms.openlocfilehash: 9aa9edf7d0bd20d1fa615ccbba5fc655a8dc40f1
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75797262"
 ---
 # <a name="activities-overview"></a>Visão geral das atividades
@@ -25,7 +25,7 @@ ms.locfileid: "75797262"
 
 Os tipos de atividade a seguir têm suporte do SDK do Bot Framework para .NET.
 
-| Activity.Type | Interface | DESCRIÇÃO |
+| Activity.Type | Interface | Descrição |
 |------|------|------|
 | [message](#message) | IMessageActivity | Representa uma comunicação entre o bot e o usuário. |
 | [conversationUpdate](#conversationupdate) | IConversationUpdateActivity | Indica que o bot foi adicionado a uma conversa, outros membros foram adicionados ou removidos da conversa ou houve alteração de metadados da conversa. |

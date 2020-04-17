@@ -9,10 +9,10 @@ ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
 ms.openlocfilehash: bf22566229d9a502b42a8b516138a1427b5d6845
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75797195"
 ---
 # <a name="basic-features-of-formflow"></a>Recursos básicos do FormFlow
@@ -25,7 +25,7 @@ O FormFlow gera automaticamente as caixas de diálogo que são necessárias para
 
 Este artigo descreve como criar um bot que usa os recursos básicos do FormFlow para coletar informações de um usuário.
 
-## <a id="forms-and-fields"></a>Formulários e campos
+## <a name="forms-and-fields"></a><a id="forms-and-fields"></a>Formulários e campos
 
 Para criar um bot usando FormFlow, você deverá especificar as informações que o bot precisa coletar do usuário. Por exemplo, se o objetivo do bot for registrar o pedido de sanduíche de um usuário, você deverá definir um formulário que contém campos para os dados de que o bot precisa para atender ao pedido. Você pode definir o formulário criando uma classe C# que contém uma ou mais propriedades públicas para representar os dados que o bot irá coletar do usuário. Cada propriedade deve ser um destes tipos de dados:
 
@@ -47,7 +47,7 @@ Para objetos complexos, você deverá criar um formulário para a classe C# de n
 
 Considere este exemplo de um bot de sanduíche simples que foi criado para registrar o pedido de sanduíche de um usuário. 
 
-### <a id="create-class"></a> Criar o formulário
+### <a name="create-the-form"></a><a id="create-class"></a> Criar o formulário
 
 A classe `SandwichOrder` define o formulário e as enumerações definem as opções para a criação de um sanduíche. A classe também inclui o método `BuildForm` estático que usa [FormBuilder][formBuilder] para criar o formulário e definir uma mensagem simples de boas-vindas. 
 

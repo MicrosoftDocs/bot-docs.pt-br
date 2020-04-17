@@ -1,15 +1,15 @@
 ---
 ms.openlocfilehash: c6abff25dcccce4c18ad0083ef24b69495222c9f
-ms.sourcegitcommit: fa6e775dcf95a4253ad854796f5906f33af05a42
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "70297350"
 ---
 Normalmente, cada mensagem que um bot envia ao usuário está diretamente relacionada à entrada anterior do usuário.
 Em alguns casos, talvez o bot precise enviar ao usuário uma mensagem sem relação direta com o tópico atual da conversa ou com a última mensagem enviada pelo usuário. Esses tipos de mensagens são chamados **mensagens proativas**.
 
-Mensagens proativas podem ser úteis em diversos cenários.
+Mensagens proativas podem ser útil em uma variedade de cenários.
 Se um bot definir um timer ou um lembrete, ele terá que notificar o usuário quando chegar a hora.
 Ou, se um bot receber uma notificação de um sistema externo, talvez precise informá-la imediatamente ao usuário.
 Por exemplo, se o usuário tiver solicitado ao bot o monitoramento do preço de um produto, se o preço do produto cair 20%, o bot poderá alertar o usuário. Ou, se o bot precisar de um tempo para compilar uma resposta para a pergunta do usuário, ele poderá informar ao usuário sobre o atraso e permitir que a conversa continue enquanto isso. Quando o bot terminar de compilar a resposta para a pergunta, compartilhará essas informações com o usuário.
@@ -21,7 +21,7 @@ Ao implementar mensagens proativas em seu bot:
 
 Mensagens proativas podem gerar um comportamento inesperado. Considere este cenário.
 
-![como os usuários se comunicam](~/media/designing-bots/capabilities/proactive1.png)
+![como os usuários falam](~/media/designing-bots/capabilities/proactive1.png)
 
 Neste exemplo, o usuário solicitou anteriormente ao bot o monitoramento dos preços de um hotel em Las Vegas.
 O bot iniciou uma tarefa de monitoramento em segundo plano, que permaneceu em execução continuamente nos últimos dias.

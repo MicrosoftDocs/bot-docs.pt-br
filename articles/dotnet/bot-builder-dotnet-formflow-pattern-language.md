@@ -9,10 +9,10 @@ ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
 ms.openlocfilehash: 43ae6504dcd58c221d0dfe2678c2363323ac63cb
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75796814"
 ---
 # <a name="customize-user-experience-with-pattern-language"></a>Personalizar a experiência do usuário com linguagem padrão
@@ -34,7 +34,7 @@ Formulários usam modelos para construir automaticamente os prompts e outras coi
 
 A linguagem padrão usa chaves (`{}`) para identificar elementos que serão substituídos em runtime por valores reais. Esta tabela lista os elementos da linguagem padrão.
 
-| Elemento | DESCRIÇÃO |
+| Elemento | Descrição |
 |----|----|
 | `{<format>}` | Mostra o valor do campo atual (o campo ao qual o atributo se aplica). |
 | `{&}` | Mostra a descrição do campo atual (salvo especificação em contrário, esse é o nome do campo). |
@@ -89,7 +89,7 @@ What kind of sandwich would you like?
 
 Os prompts e modelos oferecem suporte a esses parâmetros de formatação.
 
-| Uso | DESCRIÇÃO |
+| Uso | Descrição |
 |----|----|
 | `AllowDefault` | Aplica-se aos elementos padrão <code>{&#124;&#124;}</code>. Determina se o formulário deve mostrar o valor atual do campo como uma opção possível. Se `true`, o valor atual é mostrado como um valor possível. O padrão é `true`. |
 | `ChoiceCase` | Aplica-se aos elementos padrão <code>{&#124;&#124;}</code>. Determina se o texto de cada opção é normalizado (por exemplo, se a primeira letra de cada palavra é escrita com letra maiúscula). O padrão é `CaseNormalization.None`. Para obter os valores possíveis, confira [CaseNormalization][caseNormalization]. |

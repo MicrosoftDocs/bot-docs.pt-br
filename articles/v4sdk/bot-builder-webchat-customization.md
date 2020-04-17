@@ -9,10 +9,10 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/07/2019
 ms.openlocfilehash: 5016c5810d2c3623d8e8556b0a96d717ee83000d
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75791158"
 ---
 # <a name="web-chat-customization"></a>Personalização de Webchat

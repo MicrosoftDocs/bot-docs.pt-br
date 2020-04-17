@@ -10,10 +10,10 @@ ms.service: bot-service
 ms.date: 07/17/2019
 monikerRange: azure-bot-service-4.0
 ms.openlocfilehash: da99aa82c235bc8f530c9c2ad8d3ea1fa592b001
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75798123"
 ---
 # <a name="how-to-unit-test-bots"></a>Como realizar testes de unidade em bots
@@ -28,13 +28,13 @@ Neste tópico, mostraremos como:
 - Criar diferentes tipos de testes controlados por dados
 - Criar objetos fictícios para as diversas dependências de uma caixa de diálogo (ou seja, reconhecedores do LUIS, etc.)
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
-## <a name="ctabcsharp"></a>[C#](#tab/csharp)
+## <a name="c"></a>[C#](#tab/csharp)
 
 O exemplo de [Testes de CoreBot](https://aka.ms/cs-core-test-sample) usado neste tópico faz referência ao pacote [Microsoft.Bot.Builder.Testing](https://www.nuget.org/packages/Microsoft.Bot.Builder.Testing/), ao [XUnit](https://xunit.net/) e ao [Moq](https://github.com/moq/moq) para criar testes de unidade.
 
-## <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 O exemplo de [Testes de CoreBot](https://aka.ms/js-core-test-sample) usado neste tópico faz referência ao pacote [botbuilder-testing](https://www.npmjs.com/package/botbuilder-testing), [Mocha](https://mochajs.org/) para criar testes de unidade e ao [Mocha Test Explorer](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-mocha-test-adapter) para visualizar os resultados de teste no VS Code.
 
@@ -48,7 +48,7 @@ Usando essa classe, você pode escrever testes de unidade que validam as respost
 
 O exemplo a seguir demonstra os testes derivados de `DialogTestClient`:
 
-## <a name="ctabcsharp"></a>[C#](#tab/csharp)
+## <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 var sut = new BookingDialog();
@@ -75,7 +75,7 @@ Assert.Equal("All set, I have booked your flight to Seattle for tomorrow", reply
 
 A classe `DialogTestClient` é definida no namespace `Microsoft.Bot.Builder.Testing` e incluída no pacote NuGet [Microsoft.Bot.Builder.Testing](https://www.nuget.org/packages/Microsoft.Bot.Builder.Testing/).
 
-## <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const sut = new BookingDialog();
@@ -114,7 +114,7 @@ O construtor `DialogTestClient` fornece parâmetros adicionais que permitem pers
 
 ### <a name="sending-and-receiving-messages"></a>Enviar e receber mensagens
 
-## <a name="ctabcsharp"></a>[C#](#tab/csharp)
+## <a name="c"></a>[C#](#tab/csharp)
 
 O método `SendActivityAsync<IActivity>` permite que você envie um enunciado de texto ou `IActivity` um para a caixa de diálogo e retorna a primeira mensagem recebida. O parâmetro `<T>` é usado para retornar uma instância fortemente tipada da resposta para que você possa declará-la sem precisar convertê-la.
 
@@ -132,7 +132,7 @@ Assert.Equal("All set, I have booked your flight to Seattle for tomorrow", reply
 
 `GetNextReply<IActivity>` retornará null se não houver mais mensagens na fila de resposta.
 
-## <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 O método `sendActivity` permite que você envie um enunciado de texto ou `Activity` um para a caixa de diálogo e retorna a primeira mensagem recebida.
 
@@ -154,7 +154,7 @@ assert.strictEqual(reply.text, 'All set, I have booked your flight to Seattle fo
 
 ### <a name="asserting-activities"></a>Declaração de atividades
 
-## <a name="ctabcsharp"></a>[C#](#tab/csharp)
+## <a name="c"></a>[C#](#tab/csharp)
 
 O código no exemplo CoreBot declara apenas a propriedade `Text` das atividades retornadas. Em bots mais complexos, talvez você queira declarar outras propriedades como `Speak`, `InputHint`, `ChannelData`, etc.
 
@@ -166,7 +166,7 @@ Assert.Equal(InputHints.IgnoringInput, reply.InputHint);
 
 Você pode fazer isso verificando cada propriedade individualmente conforme mostrado acima, pode escrever seus próprios utilitários auxiliares para declaração de atividades ou pode usar outras estruturas como [FluentAssertions](https://fluentassertions.com/) para escrever declarações personalizadas e simplificar seu código de teste.
 
-## <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 O código no exemplo CoreBot declara apenas a propriedade `text` das atividades retornadas. Em bots mais complexos, talvez você queira declarar outras propriedades como `speak`, `inputHint`, `channelData`, etc.
 
@@ -186,7 +186,7 @@ O construtor `DialogTestClient` tem um `initialDialogOptions` que pode ser usado
 
 Você pode implementar isso em um teste da seguinte maneira:
 
-## <a name="ctabcsharp"></a>[C#](#tab/csharp)
+## <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 var inputDialogParams = new BookingDetails()
@@ -210,7 +210,7 @@ private async Task<DialogTurnResult> DestinationStepAsync(WaterfallStepContext s
 }
 ```
 
-## <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const inputDialogParams = {
@@ -235,7 +235,7 @@ async destinationStep(stepContext) {
 
 ### <a name="asserting-dialog-turn-results"></a>Declarando resultados em turnos de caixa de diálogo
 
-## <a name="ctabcsharp"></a>[C#](#tab/csharp)
+## <a name="c"></a>[C#](#tab/csharp)
 
 Algumas caixas de diálogo como `BookingDialog` ou `DateResolverDialog` retornam um valor para a caixa de diálogo que faz a chamada. O objeto `DialogTestClient` expõe uma propriedade `DialogTurnResult` que pode ser usada para analisar e declarar os resultados retornados pela caixa de diálogo.
 
@@ -258,7 +258,7 @@ Assert.Equal("2019-06-21", bookingResults?.TravelDate);
 
 A propriedade `DialogTurnResult` também pode ser usada para inspecionar e declarar resultados intermediários retornados pelas etapas em uma cascata.
 
-## <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Algumas caixas de diálogo como `BookingDialog` ou `DateResolverDialog` retornam um valor para a caixa de diálogo que faz a chamada. O objeto `DialogTestClient` expõe uma propriedade `dialogTurnResult` que pode ser usada para analisar e declarar os resultados retornados pela caixa de diálogo.
 
@@ -287,7 +287,7 @@ A propriedade `dialogTurnResult` também pode ser usada para inspecionar e decla
 
 Às vezes, é necessário ler uma transcrição de teste de unidade para analisar a execução do teste sem a necessidade de depurá-lo.
 
-## <a name="ctabcsharp"></a>[C#](#tab/csharp)
+## <a name="c"></a>[C#](#tab/csharp)
 
 O pacote [Microsoft.Bot.Builder.Testing](https://www.nuget.org/packages/Microsoft.Bot.Builder.Testing/) inclui um `XUnitDialogTestLogger` que registra em log as mensagens enviadas e recebidas pela caixa de diálogo no console.
 
@@ -322,7 +322,7 @@ Aqui está um exemplo do que o `XUnitDialogTestLogger` registra na janela de sa�
 
 Para obter informações adicionais sobre como enviar a saída de teste para o console ao usar o XUnit, confira [Capturar a saída](https://xunit.net/docs/capturing-output.html) na documentação do XUnit.
 
-## <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 O pacote [botbuilder-testing](https://www.npmjs.com/package/botbuilder-testing) inclui um `DialogTestLogger` que registra em log as mensagens enviadas e recebidas pela caixa de diálogo no console.
 
@@ -348,7 +348,7 @@ Por exemplo, o exemplo de teste na seção de visão geral deste documento mostr
 
 Os testes controlados por dados nos permitem testar todas essas permutações sem precisar reescrever os testes.
 
-## <a name="ctabcsharp"></a>[C#](#tab/csharp)
+## <a name="c"></a>[C#](#tab/csharp)
 
 No exemplo de CoreBot, usamos testes `Theory` do XUnit para parametrizar testes.
 
@@ -543,7 +543,7 @@ Aqui está um exemplo dos resultados para os testes de `DialogFlowUseCases` no G
 
 ![BookingDialogTests](media/how-to-unit-test/cs/BookingDialogTestsResults.png)
 
-## <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ### <a name="simple-data-driven-tests"></a>Testes simples controlados por dados
 
@@ -722,7 +722,7 @@ Para tornar sua caixa de diálogo mais fácil de testar e reduzir suas dependên
 
 Por exemplo, em vez de instanciar `BookingDialog` em `MainDialog`:
 
-## <a name="ctabcsharp"></a>[C#](#tab/csharp)
+## <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 public MainDialog()
@@ -734,7 +734,7 @@ public MainDialog()
 }
 ```
 
-## <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 constructor() {
@@ -749,7 +749,7 @@ constructor() {
 
 Passamos uma instância de `BookingDialog` como um parâmetro do construtor:
 
-## <a name="ctabcsharp"></a>[C#](#tab/csharp)
+## <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 public MainDialog(BookingDialog bookingDialog)
@@ -761,7 +761,7 @@ public MainDialog(BookingDialog bookingDialog)
 }
 ```
 
-## <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 constructor(bookingDialog) {
@@ -776,7 +776,7 @@ constructor(bookingDialog) {
 
 Isso nos permite substituir a instância de `BookingDialog` por um objeto fictício e escrever testes de unidade para `MainDialog` sem precisar chamar a verdadeira classe `BookingDialog`.
 
-## <a name="ctabcsharp"></a>[C#](#tab/csharp)
+## <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 // Create the mock object
@@ -788,7 +788,7 @@ var sut = new MainDialog(mockDialog.Object);
 var testClient = new DialogTestClient(Channels.Test, sut);
 ```
 
-## <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 // Create the mock object
@@ -806,7 +806,7 @@ const testClient = new DialogTestClient('test', sut);
 
 Conforme descrito acima, `MainDialog` invoca `BookingDialog` para obter o objeto `BookingDetails`. Implementamos e configuramos uma instância fictícia de `BookingDialog` da seguinte maneira:
 
-## <a name="ctabcsharp"></a>[C#](#tab/csharp)
+## <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 // Create the mock object for BookingDialog.
@@ -836,7 +836,7 @@ var sut = new MainDialog(mockDialog.Object);
 
 Neste exemplo, usamos o [Moq](https://github.com/moq/moq) para criar a caixa de diálogo fictícia e os métodos `Setup` e `Returns` para configurar o comportamento dela.
 
-## <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 class MockBookingDialog extends BookingDialog {
@@ -874,7 +874,7 @@ Neste exemplo, implementamos a caixa de diálogo fictícia derivando de `Booking
 
 Em cenários simples é possível implementar resultados do LUIS fictícios por meio de código, da seguinte maneira:
 
-## <a name="ctabcsharp"></a>[C#](#tab/csharp)
+## <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 var mockRecognizer = new Mock<IRecognizer>();
@@ -894,7 +894,7 @@ mockRecognizer
     });
 ```
 
-## <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 
@@ -921,7 +921,7 @@ const mockRecognizer = new MockFlightBookingRecognizer(mockLuisResult);
 
 Mas os resultados do LUIS podem ser complexos, e quando o são, é mais simples capturar o resultado desejado em um arquivo JSON, adicioná-lo como um recurso ao projeto e desserializá-lo em um resultado do LUIS. Veja um exemplo:
 
-## <a name="ctabcsharp"></a>[C#](#tab/csharp)
+## <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 var mockRecognizer = new Mock<IRecognizer>();
@@ -937,7 +937,7 @@ mockRecognizer
     });
 ```
 
-## <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 // Create a mock result from a json file

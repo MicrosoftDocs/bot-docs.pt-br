@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: 9a2618533dfefe86be1a15fb5d88740182e04b6d
-ms.sourcegitcommit: 46fbb8982144c66864b83889b6457187e890badd
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75752397"
 ---
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 - Python [3.6](https://www.python.org/downloads/release/python-369/) ou [3.7](https://www.python.org/downloads/release/python-375/)
 - [Emulador do bot Framework](https://aka.ms/bot-framework-emulator-readme)
 - [git](https://git-scm.com/)

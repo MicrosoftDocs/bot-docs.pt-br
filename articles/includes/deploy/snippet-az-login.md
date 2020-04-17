@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: c664749bc6ad63d1b0f60e001b2603898e58a9ea
-ms.sourcegitcommit: dd12ddf408c010182b09da88e2aac0de124cef22
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/05/2019
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "70386081"
 ---
 Depois de criar e testar um bot localmente, você poderá implantá-lo no Azure. Abra um prompt de comando para fazer logon no portal do Azure.

@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 5f37468f6c0bd61c54cd1eef66f432c6044978fe
-ms.sourcegitcommit: 64b25f796f89e8bb6fa53d3c824b73b8ce4d6ed8
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/25/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80250195"
 ---
 <!-- Generic Oauth2 provider settings -->

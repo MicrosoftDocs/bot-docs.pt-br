@@ -10,10 +10,10 @@ ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
 ms.openlocfilehash: 2cab43300eb7797649b541f9254d07cb57f57483
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75799097"
 ---
 # <a name="dialogs-library"></a>Biblioteca de diálogos
@@ -70,7 +70,7 @@ Para obter exemplos sobre como usar vários prompts, dê uma olhada em como usar
 
 Nos bastidores, os prompts são uma caixa de diálogo em duas etapas. Primeiro, o prompt solicitará a entrada, em seguida, ele retornará o valor válido ou reiniciará na parte superior com um novo prompt. A biblioteca de diálogos oferece uma série de prompts básicos, cada um deles usado para coletar um tipo de resposta. Os prompts básicos podem interpretar a entrada de linguagem natural, como "dez" ou "uma dúzia" para um número, ou "amanhã" ou "sextas-feira às 10h" para uma data e hora.
 
-| Prompt | DESCRIÇÃO | Retornos |
+| Prompt | Descrição | Retornos |
 |:----|:----|:----|
 | _Prompt de anexo_ | Solicita um ou mais anexos, como um documento ou uma imagem. | Uma coleção de objetos _attachment_. |
 | _Prompt de escolha_ | Solicita a escolha dentre um conjunto de opções. | Um objeto _found choice_. |
@@ -112,7 +112,7 @@ Além disso, o método *next* (**NextAsync** em C#, **next** em JS) continua par
 
 O segundo parâmetro do método de _prompt_ do contexto da etapa usa um objeto _opções de prompt_, que tem as propriedades a seguir.
 
-| Propriedade | DESCRIÇÃO |
+| Propriedade | Descrição |
 | :--- | :--- |
 | _Prompt_ | A atividade inicial para enviar o usuário, para solicitar sua entrada. |
 | _Prompt de nova tentativa_ | A atividade de enviar o usuário se a sua primeira entrada não tiver sido validada. |
@@ -129,7 +129,7 @@ Se a entrada do usuário não for válida, o prompt de nova tentativa será envi
 Você pode validar uma resposta do prompt antes de retornar o valor para a próxima etapa da cascata. Uma função de validador tem um parâmetro de _contexto do validador de prompt_ e retorna um valor booleano que indica se a entrada passa na validação.
 O contexto do validador de prompt inclui as seguintes propriedades:
 
-| Propriedade | DESCRIÇÃO |
+| Propriedade | Descrição |
 | :--- | :--- |
 | _Contexto_ | O contexto de turnos atual para o bot. |
 | _Reconhecido_ | Um _resultado do reconhecedor de prompts_ que contém informações sobre a entrada do usuário, conforme processado pelo reconhecedor. |
@@ -137,7 +137,7 @@ O contexto do validador de prompt inclui as seguintes propriedades:
 
 O resultado do reconhecedor de prompts tem as seguintes propriedades:
 
-| Propriedade | DESCRIÇÃO |
+| Propriedade | Descrição |
 | :--- | :--- |
 | _Êxito_ | Indica se o reconhecedor foi capaz de analisar a entrada. |
 | _Valor_ | O valor retornado do reconhecedor. Se necessário, o código de validação pode modificar esse valor. |

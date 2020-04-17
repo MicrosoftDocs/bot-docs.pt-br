@@ -1,14 +1,14 @@
 ---
 ms.openlocfilehash: 2c06c67099f44fe1df2eb0099a514a697ef0d1c9
-ms.sourcegitcommit: fa6e775dcf95a4253ad854796f5906f33af05a42
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "68230818"
 ---
 Quando você implanta um bot, normalmente esses recursos são criados no portal do Azure:
 
-| Recursos      | DESCRIÇÃO |
+| Recursos      | Descrição |
 |----------------|-------------|
 | Bot do aplicativo Web | Um Serviço de Bot do Azure que é implantado em um Serviço de Aplicativo do Azure.|
 | [Serviço de Aplicativo](https://docs.microsoft.com/azure/app-service/)| Permite criar e hospedar aplicativos Web.|

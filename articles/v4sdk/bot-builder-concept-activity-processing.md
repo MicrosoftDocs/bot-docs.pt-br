@@ -10,10 +10,10 @@ ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
 ms.openlocfilehash: 2896dcf1d99ace250ec73f5ecfc2b3857afb0c83
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75798819"
 ---
 # <a name="activity-processing"></a>Processamento de atividade

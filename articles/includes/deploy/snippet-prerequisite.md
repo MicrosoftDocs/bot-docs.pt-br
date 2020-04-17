@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 194e09ba45be1720f785fe7926361de8d8d588b2
-ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75491167"
 ---
 - Uma assinatura do [Microsoft Azure](https://azure.microsoft.com/free/)

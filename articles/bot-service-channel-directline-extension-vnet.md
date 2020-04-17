@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.author: kamrani
 ms.date: 07/25/2019
 ms.openlocfilehash: 839fd125976fd70cb78817078ff7cf4709974a8a
-ms.sourcegitcommit: a547192effb705e4c7d82efc16f98068c5ba218b
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75491267"
 ---
 # <a name="use-direct-line-app-service-extension-within-a-vnet"></a>Usar a extensão de serviço de aplicativo do Direct Line com uma VNET

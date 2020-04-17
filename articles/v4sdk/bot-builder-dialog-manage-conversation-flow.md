@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 01/28/2020
+ms.date: 03/26/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 7a25f0fd283e8e09f5ca27e7a29e96e9f55888ff
-ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
+ms.openlocfilehash: fe7e7e6f4fa1e2fa43fb3a5ff61dfe93fbda09f2
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77441720"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81395599"
 ---
 # <a name="implement-sequential-conversation-flow"></a>Implementar fluxo de conversa sequencial
 
@@ -27,7 +27,7 @@ Você pode gerenciar fluxos de conversa simples e complexos usando a biblioteca 
 > [!TIP]
 > Para obter exemplos de como escrever seus próprios prompts sem usar a biblioteca de caixas de diálogo, veja o artigo [Criar seus próprios prompts para coletar entrada do usuário](bot-builder-primitive-prompts.md).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento de [noções básicas de bot][concept-basics], [gerenciamento de estado][concept-state] e [biblioteca de diálogos][concept-dialogs].
 - Uma cópia do **exemplo de prompt de vários turnos** em [**C#** ][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
@@ -63,17 +63,17 @@ Começamos criando `UserProfileDialog`, que deriva da classe `ComponentDialog` e
 
 No construtor `UserProfileDialog`, crie as etapas de cascata, os prompts e o diálogo de cascata, e adicione-os ao conjunto do diálogo. Os avisos precisam estar no mesmo conjunto do diálogo no qual eles são usados.
 
-[!code-csharp[Constructor snippet](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=21-48)]
+[!code-csharp[Constructor snippet](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=20-47)]
 
 Em seguida, implementamos as etapas usadas pelo diálogo. Para usar um prompt, chame-o de uma etapa no seu diálogo e recupere o resultado do prompt na etapa seguinte usando `stepContext.Result`. Nos bastidores, os prompts são uma caixa de diálogo em duas etapas. Primeiro, o prompt solicita a entrada; em seguida, ele retorna o valor válido ou recomeça do princípio com um novo prompt até receber uma entrada válida.
 
 Você sempre deve ter um retorno de `DialogTurnResult` não nulo em uma etapa de cascata. Se isso não acontecer, o diálogo poderá não funcionar como planejado. Aqui, mostramos a implementação para o `NameStepAsync` no diálogo de cascata.
 
-[!code-csharp[Name step](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=62-67)]
+[!code-csharp[Name step](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=61-66)]
 
 Em `AgeStepAsync`, especificamos um prompt de repetição para quando a entrada do usuário não é validada, seja porque está em um formato que o prompt não consegue analisar, seja porque a entrada não é aprovada pelos critérios de validação. Nesse caso, se nenhum prompt de nova tentativa foi fornecido, o prompt usará o texto de prompt inicial para voltar a solicitar a entrada ao usuário.
 
-[!code-csharp[Age step](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=80-99&highlight=10)]
+[!code-csharp[Age step](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=79-98&highlight=10)]
 
 **UserProfile.cs**
 
@@ -85,7 +85,7 @@ O modo de transporte, o nome e a idade do usuário são salvos em uma instância
 
 Na última etapa, verificamos o `stepContext.Result` retornado pelo diálogo chamado na etapa anterior da cascata. Se o valor retornado for true, usaremos o acessador de perfil do usuário para obter e atualizar o perfil do usuário. Para obter o perfil do usuário, chamamos o método `GetAsync` e definimos os valores das propriedades `userProfile.Transport`, `userProfile.Name`, `userProfile.Age` e `userProfile.Picture`. Por fim, resumimos as informações para o usuário antes de chamar `EndDialogAsync`, que termina o diálogo. O fim do diálogo o remove da pilha de diálogo e retorna um resultado opcional ao pai dele. O pai é o método ou diálogo que iniciou o diálogo recém-terminado.
 
-[!code-csharp[SummaryStepAsync](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=137-179&highlight=5-11,41-42)]
+[!code-csharp[SummaryStepAsync](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=136-178&highlight=5-11,41-42)]
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -229,7 +229,7 @@ Tal bot usa os _serviços_ a seguir.
 
 Nós registramos serviços para o bot em `Startup`. Esses serviços estão disponíveis para outros blocos do código por meio da injeção de dependência.
 
-[!code-csharp[ConfigureServices](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Startup.cs?range=17-39)]
+[!code-csharp[ConfigureServices](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Startup.cs?range=15-37)]
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -283,17 +283,17 @@ Há várias opções para manter as etapas de diálogo e o estado de bot separad
 
 **UserProfileDialog.cs**
 
-Veja abaixo um exemplo de código validador para a definição do método `AgePromptValidatorAsync`. `promptContext.Recognized.Value` contém o valor analisado, que é um inteiro aqui para o prompt do número. `promptContext.Recognized.Succeeded` indica se o prompt foi capaz de analisar a entrada do usuário ou não. O validador deve retornar false para indicar que o valor não foi aceito e a caixa de diálogo de prompt deve perguntar novamente ao usuário; caso contrário, retorna true para aceitar a entrada e retornar da caixa de diálogo de prompt. Observe que você pode alterar o valor no validador de acordo com seu cenário. 
+Veja abaixo um exemplo de código validador para a definição do método `AgePromptValidatorAsync`. `promptContext.Recognized.Value` contém o valor analisado, que é um inteiro aqui para o prompt do número. `promptContext.Recognized.Succeeded` indica se o prompt foi capaz de analisar a entrada do usuário ou não. O validador deve retornar false para indicar que o valor não foi aceito e a caixa de diálogo de prompt deve perguntar novamente ao usuário; caso contrário, retorna true para aceitar a entrada e retornar da caixa de diálogo de prompt. Observe que você pode alterar o valor no validador de acordo com seu cenário.
 
-[!code-csharp[prompt validator method](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=181-185)]
+[!code-csharp[prompt validator method](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=180-184)]
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 **dialogs\userProfileDialog.js**
 
-Veja abaixo um exemplo de código validador para a definição do método `agePromptValidator`. `promptContext.recognized.value` contém o valor analisado, que é um inteiro aqui para o prompt do número. `promptContext.recognized.succeeded` indica se o prompt foi capaz de analisar a entrada do usuário ou não. O validador deve retornar false para indicar que o valor não foi aceito e a caixa de diálogo de prompt deve perguntar novamente ao usuário; caso contrário, retorna true para aceitar a entrada e retornar da caixa de diálogo de prompt. Observe que você pode alterar o valor no validador de acordo com seu cenário. 
+Veja abaixo um exemplo de código validador para a definição do método `agePromptValidator`. `promptContext.recognized.value` contém o valor analisado, que é um inteiro aqui para o prompt do número. `promptContext.recognized.succeeded` indica se o prompt foi capaz de analisar a entrada do usuário ou não. O validador deve retornar false para indicar que o valor não foi aceito e a caixa de diálogo de prompt deve perguntar novamente ao usuário; caso contrário, retorna true para aceitar a entrada e retornar da caixa de diálogo de prompt. Observe que você pode alterar o valor no validador de acordo com seu cenário.
 
-[!code-javascript[prompt validator method](~/../botbuilder-samples/samples/javascript_nodejs/05.multi-turn-prompt/dialogs/userProfileDialog.js?range=169-172)]
+[!code-javascript[age prompt validator](~/../botbuilder-samples/samples/javascript_nodejs/05.multi-turn-prompt/dialogs/userProfileDialog.js?range=169-172)]
 
 # <a name="python"></a>[Python](#tab/python)
 

@@ -9,10 +9,10 @@ ms.author: egorn
 ms.service: bot-service
 ms.date: 11/01/2019
 ms.openlocfilehash: 9abba3093ce819f7ebc07bb03e342da797971f25
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75791787"
 ---
 # <a name="connect-a-bot-to-wechat"></a>Conectar um bot ao WeChat
@@ -48,7 +48,7 @@ Se quiser apenas testar a integração entre o WeChat e o bot, você poderá usa
 
 O projeto de bot é um projeto comum do SDK do Bot Framework V4. Antes de poder iniciá-lo, você precisa ter certeza de que pode executar o bot. Baixe o [Adaptador do WeChat para o Bot Framework](https://github.com/microsoft/BotFramework-WeChat/).
 
-### <a name="prerequisites"></a>Prerequisites
+### <a name="prerequisites"></a>Pré-requisitos
 
     .NET Core SDK (version 2.2.x)
 

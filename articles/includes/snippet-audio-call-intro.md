@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: faaf64ba35a31f239da68aa824a225fe93fcc5dc
-ms.sourcegitcommit: fa6e775dcf95a4253ad854796f5906f33af05a42
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "68230737"
 ---
 Se você estiver criando um bot para o Skype, seu bot poderá se comunicar com usuários por meio da chamada de áudio. As chamadas de áudio são úteis quando o usuário não deseja ou não pode fornecer entrada digitando, tocando ou clicando.  

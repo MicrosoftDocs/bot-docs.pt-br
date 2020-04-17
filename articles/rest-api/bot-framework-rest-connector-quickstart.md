@@ -8,10 +8,10 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 ms.openlocfilehash: f5ac5397d2ef13eb08d92d9cf560fddf582165c4
-ms.sourcegitcommit: d24fe2178832261ac83477219e42606f839dc64d
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77071874"
 ---
 # <a name="create-a-bot-with-the-bot-connector-service"></a>Crie um bot com o serviço Bot Connector
@@ -23,7 +23,7 @@ ms.locfileid: "77071874"
 
 O serviço Bot Connector permite que seu bot troque mensagens com canais que são configurados no [Portal do Azure](https://portal.azure.com) usando REST padrão do setor e JSON sobre HTTPS. Este tutorial orienta você pelo processo de obter um token de acesso do Bot Framework e usar o serviço Bot Connector para trocar mensagens com o usuário.
 
-## <a id="get-token"></a> Obter um token de acesso
+## <a name="get-an-access-token"></a><a id="get-token"></a> Obter um token de acesso
 
 > [!IMPORTANT]
 > Se você ainda não fez isso, será necessário [registrar seu bot](../bot-service-quickstart-registration.md) com o Bot Framework para obter sua ID do Aplicativo e a senha. Você precisará da AppID e da senha do bot para solicitar um token de acesso.

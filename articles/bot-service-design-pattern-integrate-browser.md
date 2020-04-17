@@ -8,10 +8,10 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 ms.openlocfilehash: 8570873a63a539b4f7c96053aec2ab1a1f615eb9
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75792124"
 ---
 # <a name="integrate-your-bot-with-a-web-browser"></a>Integrar seu bot a um navegador da Web
@@ -58,7 +58,7 @@ Considere cada etapa do fluxo:
 7. O usuário retorna ao bot e cola o 'número mágico' no bate-papo. 
    O bot valida se o 'número mágico' fornecido pelo usuário corresponde ao valor esperado, verificando se o usuário atual é o mesmo usuário que anteriormente clicou no hiperlink para iniciar o fluxo de site. 
 
-### <a id="verify-identity"></a> Verificar a identidade do usuário usando o 'número mágico'
+### <a name="verifying-user-identity-using-the-magic-number"></a><a id="verify-identity"></a> Verificar a identidade do usuário usando o 'número mágico'
 
 A geração de um 'número mágico' durante o fluxo do bot para o site ([etapa 5](#generate-magic-number) acima) permite que o bot, subsequentemente verifique se que o usuário que iniciou o fluxo de site é realmente o usuário para o qual ele foi destinado. Por exemplo, se um bot está realizando um chat de grupo com vários usuários, qualquer um deles poderia ter clicado no hiperlink para iniciar o fluxo de site. Sem o processo de validação do 'número mágico', o bot não tem nenhuma maneira de saber qual usuário concluiu o fluxo. Um usuário pode autenticar e injetar os tokens de acesso na sessão de outro usuário. 
 
@@ -70,7 +70,7 @@ O número mágico deve ser um número aleatório gerado usando uma biblioteca de
 > [!NOTE]
 > A necessidade para o processo de validação do 'número mágico' deve ser preterida porque os canais criam seus próprios modos de exibição da Web incorporados.
 
-### <a id="website-signal-to-bot"></a> Como o site 'sinaliza' o bot?
+### <a name="how-does-the-website-signal-the-bot"></a><a id="website-signal-to-bot"></a> Como o site 'sinaliza' o bot?
 
 Quando o bot [gera o hiperlink](#generate-hyperlink) em que o usuário clicará para iniciar o fluxo do site, isso inclui informações por meio de parâmetros de querystring na URL de destino sobre o contexto da conversa atual, como ID da conversa, a ID do canal e a ID do usuário no canal. Posteriormente, o site pode usar essas informações para ler e gravar as variáveis de estado para esse usuário ou conversa com o SDK do Bot Framework ou APIs REST. Veja a [etapa 6](#signal-to-bot) acima para obter um exemplo de como o site 'sinaliza' para o bot que o fluxo do site foi concluído.
 

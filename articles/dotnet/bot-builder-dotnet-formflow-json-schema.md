@@ -9,10 +9,10 @@ ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
 ms.openlocfilehash: cd884c49507b4d7edc84f4bbd79396fe36073a82
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75796483"
 ---
 # <a name="define-a-form-using-json-schema"></a>Definir um formulário usando o esquema JSON
@@ -27,7 +27,7 @@ O esquema JSON descreve os campos dentro de seu <a href="http://www.newtonsoft.c
 
 O FormFlow dá suporte a estas palavras-chave do <a href="http://json-schema.org/documentation.html" target="_blank">esquema JSON</a> padrão:
 
-| Palavra-chave | DESCRIÇÃO | 
+| Palavra-chave | Descrição | 
 |----|----|
 | type | Define o tipo de dados que o campo contém. |
 | enum | Define os valores válidos para o campo. |
@@ -63,7 +63,7 @@ Para especificar modelos e avisos no esquema JSON, use o mesmo vocabulário, con
 
 ### <a name="additional-properties-as-peers-of-the-type-property"></a>Propriedades adicionais como pares de propriedade de tipo
 
-|   Propriedade   |          Conteúdo           |                                                   DESCRIÇÃO                                                    |
+|   Propriedade   |          Conteúdo           |                                                   Descrição                                                    |
 |--------------|-----------------------------|------------------------------------------------------------------------------------------------------------------|
 |   Datetime   |            bool             |                                  Indica se o campo é um campo `DateTime`.                                  |
 |   Descrever   |      cadeia de caracteres ou objeto       |                  Descrição de um campo, conforme descrito em [DescribeAttribute][describeAttribute].                  |
@@ -86,7 +86,7 @@ Use `{Message:script|[string, ...] ...templateArgs}` dentro do valor da propried
 
 Diversas propriedades que são descritas acima podem conter um script como o valor da propriedade. Um script pode ser qualquer snippet de código C# que você normalmente encontra no corpo de um método. Você pode adicionar referências usando a propriedade **Referências** e/ou a propriedade **Importações**. As variáveis globais especiais incluem:
 
-| Variável | DESCRIÇÃO |
+| Variável | Descrição |
 |----|----|
 | opção | Expedição interna para que o script seja executado. |
 | state | `JObject` estado de formulário associado para todos os scripts. |

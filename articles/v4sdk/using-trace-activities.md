@@ -10,10 +10,10 @@ ms.service: bot-service
 ms.date: 11/18/2019
 monikerRange: azure-bot-service-4.0
 ms.openlocfilehash: 5cfb4e8f2d16c868bcbc7d3d11c7cb0b2455f7cb
-ms.sourcegitcommit: 36d6f06ffafad891f6efe4ff7ba921de8a306a94
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/31/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "76895824"
 ---
 # <a name="add-trace-activities-to-your-bot"></a>Adicionar atividades de rastreamento ao bot
@@ -66,7 +66,7 @@ Esse é um bom lugar para uma atividade de rastreamento, pois você pode enviar 
 
 Este código de exemplo é do exemplo **Bot Principal**. Confira o exemplo completo em [**C#** ](https://aka.ms/cs-core-sample), [**JavaScript**](https://aka.ms/js-core-sample) ou [**Python**](https://aka.ms/py-core-sample).
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 O manipulador **OnTurnError** do adaptador cria a atividade de rastreamento para incluir as informações de exceção e as envia para o Emulator.
 
@@ -74,7 +74,7 @@ O manipulador **OnTurnError** do adaptador cria a atividade de rastreamento para
 
 [!code-csharp[OnTurnError](~/../BotBuilder-Samples/samples/csharp_dotnetcore/13.core-bot/AdapterWithErrorHandler.cs?range=16-51&highlight=33-34)]
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 O manipulador **onTurnError** do adaptador cria a atividade de rastreamento para incluir as informações de exceção e as envia para o Emulator.
 
@@ -82,7 +82,7 @@ O manipulador **onTurnError** do adaptador cria a atividade de rastreamento para
 
 [!code-javascript[onTurnError](~/../BotBuilder-Samples/samples/javascript_nodejs/13.core-bot/index.js?range=35-57&highlight=8-14)]
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 O manipulador **on_error** do adaptador cria a atividade de rastreamento para incluir as informações de exceção e as envia para o Emulator.
 

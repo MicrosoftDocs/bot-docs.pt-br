@@ -10,10 +10,10 @@ ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
 ms.openlocfilehash: 9dc5bfeab8bc56e81888be5e9463be167fcd2b18
-ms.sourcegitcommit: d24fe2178832261ac83477219e42606f839dc64d
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77071804"
 ---
 # <a name="send-and-receive-text-message"></a>Enviar e receber mensagens de texto
@@ -30,7 +30,7 @@ Para um bot em execução que envia e recebe mensagens, siga os guias de início
 
 Para enviar uma mensagem de texto simples, especifique a cadeia de caracteres que você deseja enviar como a atividade:
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 Nos manipuladores de atividade do bot, use o método `SendActivityAsync` de mudança de contexto do objeto para enviar uma resposta de mensagem individual. Também é possível usar o método `SendActivitiesAsync` do objeto para enviar várias respostas ao mesmo tempo.
 
@@ -38,7 +38,7 @@ Nos manipuladores de atividade do bot, use o método `SendActivityAsync` de muda
 await turnContext.SendActivityAsync($"Welcome!");
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Nos manipuladores de atividade do bot, use o método `sendActivity` de mudança de contexto do objeto para enviar uma resposta de mensagem individual. Também é possível usar o método `sendActivities` do objeto para enviar várias respostas ao mesmo tempo.
 
@@ -46,7 +46,7 @@ Nos manipuladores de atividade do bot, use o método `sendActivity` de mudança 
 await context.sendActivity("Welcome!");
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 Nos manipuladores de atividade do bot, use o método `send_activity` de mudança de contexto do objeto para enviar uma resposta de mensagem individual.
 
@@ -59,7 +59,7 @@ await turn_context.send_activity("Welcome!")
 
 Para receber uma mensagem de texto simples, use a propriedade de *texto* do objeto de *atividade*. 
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 Nos manipulares de atividade do bot, use o código a seguir para receber uma mensagem. 
 
@@ -67,7 +67,7 @@ Nos manipulares de atividade do bot, use o código a seguir para receber uma men
 var responseMessage = turnContext.Activity.Text;
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Nos manipulares de atividade do bot, use o código a seguir para receber uma mensagem.
 
@@ -75,7 +75,7 @@ Nos manipulares de atividade do bot, use o código a seguir para receber uma men
 let text = turnContext.activity.text;
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 Nos manipulares de atividade do bot, use o código a seguir para receber uma mensagem.
 
@@ -92,7 +92,7 @@ Os canais de bot de Webchat e Direct Line são compatíveis com o envio de uma i
 
 O exemplo a seguir demonstra como enviar uma indicação de digitação.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
@@ -115,7 +115,7 @@ protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivi
 }
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 this.onMessage(async (context, next) => {
@@ -132,7 +132,7 @@ this.onMessage(async (context, next) => {
 });
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 ```python
 async def on_message_activity(self, turn_context: TurnContext):

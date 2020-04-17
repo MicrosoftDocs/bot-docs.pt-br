@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 11/01/2019
 ms.author: kamrani
 ms.openlocfilehash: b5a6296e65ab05cd8a5af24872d31e5ef356dcf7
-ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/18/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77441503"
 ---
 # <a name="about-direct-line"></a>Sobre o Direct Line

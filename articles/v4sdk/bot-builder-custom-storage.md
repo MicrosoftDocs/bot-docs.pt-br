@@ -10,10 +10,10 @@ ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
 ms.openlocfilehash: 3ab03b552afa780845c8be84df62d97c1f0decd1
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75798606"
 ---
 # <a name="implement-custom-storage-for-your-bot"></a>Implementar um armazenamento personalizado para seu bot
@@ -25,7 +25,7 @@ Interações do bot se enquadram em três áreas: primeiro, o intercâmbio de at
 ![diagrama de expansão](../media/scale-out/scale-out-interaction.png)
 
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 - O código de exemplo completo usado neste artigo pode ser encontrado aqui: [Exemplo de C#](https://aka.ms/scale-out).
 
 Neste artigo, exploraremos a semântica em torno das interações do bot com o Serviço de Bot do Azure e o Store.

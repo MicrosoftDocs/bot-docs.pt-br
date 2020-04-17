@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 01/27/2020
+ms.date: 03/19/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 057e4fdf1846d2480d1a50f679bf66c269f0fe26
-ms.sourcegitcommit: 36d6f06ffafad891f6efe4ff7ba921de8a306a94
+ms.openlocfilehash: f5ec4d8b336f35eb0e66cdb16e4b8eb36317b08a
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76895830"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80648223"
 ---
 # <a name="implement-a-skill"></a>Implementar um skill
 
@@ -30,7 +30,7 @@ Este artigo demonstra como implementar um skill que ecoa a entrada do usuário.
 
 <!-- I haven't discussed passing values back-and-forth mid conversation. That could be the basis of another article. -->
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento de [conceitos básicos de bot](bot-builder-basics.md) e [skills](skills-conceptual.md).
 - Uma assinatura do Azure. Se você não tiver uma, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
@@ -45,15 +45,15 @@ O exemplo **bot para bot de skills simples** inclui projetos para dois bots:
 
 Este artigo se concentra no skill, que inclui a lógica de suporte em seu bot e adaptador.
 
-### <a name="ctabcs"></a>[C#](#tab/cs)
+### <a name="c"></a>[C#](#tab/cs)
 
 ![Diagrama de classe do skill](./media/skills-simple-skill-cs.png)
 
-### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ![Diagrama de classe do skill](./media/skills-simple-skill-js.png)
 
-### <a name="pythontabpython"></a>[Python](#tab/python)
+### <a name="python"></a>[Python](#tab/python)
 
 ![Diagrama de classe do skill](./media/skills-simple-skill-python.png)
 
@@ -74,7 +74,7 @@ Adicione a ID do aplicativo do skill e a senha ao arquivo de configuração do s
 A matriz de _chamadores permitidos_ pode restringir quais consumidores de skills podem acessar o skill.
 Deixe essa matriz vazia para aceitar chamadas de qualquer consumidor de skills.
 
-### <a name="ctabcs"></a>[C#](#tab/cs)
+### <a name="c"></a>[C#](#tab/cs)
 
 **EchoSkillBot\appsettings.json**
 
@@ -82,7 +82,7 @@ Adicione a ID do aplicativo e a senha do skill ao arquivo appsettings.json.
 
 [!code-csharp[configuration file](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/EchoSkillBot/appsettings.json)]
 
-### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 **echo-skill-bot/.env**
 
@@ -90,7 +90,7 @@ Adicione a ID do aplicativo e a senha do skill ao arquivo .env.
 
 [!code-javascript[configuration file](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/echo-skill-bot/.env)]
 
-### <a name="pythontabpython"></a>[Python](#tab/python)
+### <a name="python"></a>[Python](#tab/python)
 
 Adicione a ID do aplicativo e a senha do skill ao arquivo config.py.
 
@@ -115,23 +115,23 @@ Quando o skill envia uma atividade, o consumidor de skills deve encaminhar a ati
 No entanto, você precisa enviar uma atividade `endOfConversation` quando o skill for concluído; caso contrário, o consumidor de skills continuará a encaminhar as atividades do usuário para o skill.
 Opcionalmente, use a propriedade _valor_ da atividade para incluir um valor retornado e use a propriedade _código_ da atividade para indicar por que o skill está terminando.
 
-#### <a name="ctabcs"></a>[C#](#tab/cs)
+#### <a name="c"></a>[C#](#tab/cs)
 
 **EchoSkillBot\Bots\EchoBot.cs**
 
-[!code-csharp[Message handler](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/EchoSkillBot/Bots/EchoBot.cs?range=14-29)]
+[!code-csharp[Message handler](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/EchoSkillBot/Bots/EchoBot.cs?range=13-28)]
 
-#### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+#### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 **echo-skill-bot/bot.js**
 
 [!code-javascript[Message handler](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/echo-skill-bot/bot.js?range=10-26)]
 
-#### <a name="pythontabpython"></a>[Python](#tab/python)
+#### <a name="python"></a>[Python](#tab/python)
 
 **echo-skill-bot/bots/echo_bot.py**
 
-[!code-python[Message handler](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/echo-skill-bot/bots/echo_bot.py?range=10-27)]
+[!code-python[Message handler](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/echo-skill-bot/bots/echo_bot.py?range=10-26)]
 
 ---
 
@@ -141,13 +141,13 @@ Para skills de vários ciclos, você também aceitará atividades `endOfConversa
 
 A lógica desse skill não é alterada de ciclo em ciclo. Se você implementar um skill que aloque recursos de conversa, adicione o código de limpeza de recurso ao manipulador de fim de conversa.
 
-#### <a name="ctabcs"></a>[C#](#tab/cs)
+#### <a name="c"></a>[C#](#tab/cs)
 
 **EchoSkillBot\Bots\EchoBot.cs**
 
-[!code-csharp[End-of-conversation handler](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/EchoSkillBot/Bots/EchoBot.cs?range=31-37)]
+[!code-csharp[End-of-conversation handler](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/EchoSkillBot/Bots/EchoBot.cs?range=30-36)]
 
-#### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+#### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 **echo-skill-bot/bot.js**
 
@@ -155,7 +155,7 @@ A lógica desse skill não é alterada de ciclo em ciclo. Se você implementar u
 
 [!code-javascript[End-of-conversation handler](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/echo-skill-bot/bot.js?range=28-35)]
 
-#### <a name="pythontabpython"></a>[Python](#tab/python)
+#### <a name="python"></a>[Python](#tab/python)
 
 **echo-skill-bot/bots/echo_bot.py**
 
@@ -174,7 +174,7 @@ Você pode adicionar um _validador de declarações_ à configuração de autent
 
 <!--TODO Need a link for more information about claims and claims-based validation.-->
 
-### <a name="ctabcs"></a>[C#](#tab/cs)
+### <a name="c"></a>[C#](#tab/cs)
 
 Derive um validador de declarações da classe `ClaimsValidator`. Ele emitirá um `UnauthorizedAccessException` para rejeitar uma solicitação de entrada. Observe que o método `IConfiguration.Get` retornará NULL se o valor no arquivo de configuração for uma matriz vazia.
 
@@ -182,7 +182,7 @@ Derive um validador de declarações da classe `ClaimsValidator`. Ele emitirá u
 
 [!code-csharp[Claims validator](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/EchoSkillBot/Authentication/AllowedCallersClaimsValidator.cs?range=22-52&highlight=24-27)]
 
-### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Defina um método de validação de declarações que gere um erro para rejeitar uma solicitação de entrada.
 
@@ -190,7 +190,7 @@ Defina um método de validação de declarações que gere um erro para rejeitar
 
 [!code-javascript[Claims validator](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/echo-skill-bot/authentication/allowedCallersClaimsValidator.js?range=6-27&highlight=18-20)]
 
-### <a name="pythontabpython"></a>[Python](#tab/python)
+### <a name="python"></a>[Python](#tab/python)
 
 Defina um método de validação de declarações que gere um erro para rejeitar uma solicitação de entrada.
 
@@ -204,19 +204,19 @@ Defina um método de validação de declarações que gere um erro para rejeitar
 
 Quando ocorre um erro, o adaptador do skill deve limpar o estado da conversa para o skill e também deve enviar uma atividade `endOfConversation` para o consumidor de skills. Use a propriedade _código_ da atividade para sinalizar que o skill foi encerrado devido a um erro.
 
-### <a name="ctabcs"></a>[C#](#tab/cs)
+### <a name="c"></a>[C#](#tab/cs)
 
 **EchoSkillBot\SkillAdapterWithErrorHandler.cs**
 
 [!code-csharp[Error handler](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/EchoSkillBot/SkillAdapterWithErrorHandler.cs?range=20-59&highlight=19-24)]
 
-### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 **echo-skill-bot/index.js**
 
 [!code-javascript[Error handler](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/echo-skill-bot/index.js?range=41-69&highlight=21-28)]
 
-### <a name="pythontabpython"></a>[Python](#tab/python)
+### <a name="python"></a>[Python](#tab/python)
 
 **echo-skill-bot/app.py**
 
@@ -230,25 +230,24 @@ O _adaptador do Bot Framework_ usa um objeto de _configuração de autenticaçã
 
 Este exemplo adiciona validação de declarações à configuração de autenticação e usa o _adaptador de skill com o manipulador de erros_ descrito na seção anterior.
 
-### <a name="ctabcs"></a>[C#](#tab/cs)
+### <a name="c"></a>[C#](#tab/cs)
 
 **EchoSkillBot\Startup.cs**
 
 [!code-csharp[Configuration](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/EchoSkillBot/Startup.cs?range=28-32)]
 
-### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 **echo-skill-bot/index.js**
 
 [!code-javascript[configuration](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/echo-skill-bot/index.js?range=34-38)]
 
 <!--C# & JS snippets checked 1/14-->
-### <a name="pythontabpython"></a>[Python](#tab/python)
+### <a name="python"></a>[Python](#tab/python)
 
 **app.py**
 
 [!code-python[configuration](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/echo-skill-bot/app.py?range=22-34)]
-
 
 ---
 
@@ -257,19 +256,19 @@ Este exemplo adiciona validação de declarações à configuração de autentic
 Um _manifesto de skill_ é um arquivo JSON que descreve as atividades que o skill pode executar, seus parâmetros de entrada e saída e os pontos de extremidade do skill.
 O manifesto contém as informações necessárias para acessar o skill por meio de outro bot.
 
-### <a name="ctabcs"></a>[C#](#tab/cs)
+### <a name="c"></a>[C#](#tab/cs)
 
 **EchoSkillBot\wwwroot\manifest\echoskillbot-manifest-1.0.json**
 
 [!code-json[Manifest](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/EchoSkillBot/wwwroot/manifest/echoskillbot-manifest-1.0.json)]
 
-### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 **echo-skill-bot/manifest/echoskillbot-manifest-1.0.json**
 
 [!code-json[Manifest](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/echo-skill-bot/manifest/echoskillbot-manifest-1.0.json)]
 
-### <a name="pythontabpython"></a>[Python](#tab/python)
+### <a name="python"></a>[Python](#tab/python)
 
 **echo_skill_bot/wwwroot/manifest/echoskillbot-manifest-1.0.json**
 

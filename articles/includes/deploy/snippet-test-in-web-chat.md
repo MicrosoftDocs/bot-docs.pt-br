@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: d90bc0c0ecbef356ec4f917199dcc1e6471d2aed
-ms.sourcegitcommit: 4ddee4f90a07813ce570fdd04c8c354b048e22f3
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77479239"
 ---
 1. Em seu navegador, navegue até o [portal do Azure](https://ms.portal.azure.com).

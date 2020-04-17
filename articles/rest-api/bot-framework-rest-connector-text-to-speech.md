@@ -8,10 +8,10 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 02/20/2020
 ms.openlocfilehash: f5bf6cf254b4c095ce9f49619bb39ef5b48fa5ed
-ms.sourcegitcommit: 308e6df385b9bac9c8d60f8b75eabc813b823c38
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77519925"
 ---
 # <a name="add-speech-to-messages"></a>Adicionar fala a mensagens

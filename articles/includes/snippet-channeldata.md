@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 392eb8bb197105739222c37f695cfd785515b323
-ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80117841"
 ---
 Alguns canais fornecem recursos que não podem ser implementados apenas com o uso de texto e anexos da mensagem. Para implementar funcionalidades específicas do canal, passe metadados nativos para um canal na propriedade _dados do canal_ do objeto da atividade. Por exemplo, o bot pode usar a propriedade dados do canal para instruir o Telegram a enviar um adesivo ou para instruir o Office 365 a enviar um email.

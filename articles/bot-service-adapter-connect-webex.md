@@ -9,10 +9,10 @@ ms.author: gapretty
 ms.service: bot-service
 ms.date: 01/21/2020
 ms.openlocfilehash: 2bf7d99d221a2e48c938c66fb7bef5c1e143f47f
-ms.sourcegitcommit: 4e1af50bd46debfdf9dcbab9a5d1b1633b541e27
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/25/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "76752798"
 ---
 # <a name="connect-a-bot-to-webex-teams-using-the-webex-adapter"></a>Conectar um bot ao Webex Teams usando o adaptador do Webex
@@ -22,7 +22,7 @@ Neste artigo, você aprenderá a conectar um bot ao Webex usando o adaptador dis
 > [!NOTE]
 > As instruções a seguir abordam a implementação em C# do adaptador do Webex. Para obter instruções sobre como usar a implementação em JavaScript, parte das bibliotecas BotKit, [consulte a documentação do Webex sobre BotKit](https://botkit.ai/docs/v4/platforms/webex.html).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 * O [código de exemplo do EchoBot](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/02.echo-bot)
 

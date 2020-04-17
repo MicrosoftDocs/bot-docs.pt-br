@@ -9,10 +9,10 @@ ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
 ms.openlocfilehash: b4b8d6763c79cea6fc06666145dc851283bd8a63
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75790627"
 ---
 # <a name="request-payment"></a>Solicitar pagamento
@@ -27,7 +27,7 @@ ms.locfileid: "75790627"
 
 Se o bot permitir que os usuários comprem itens, ele poderá solicitar o pagamento incluindo um tipo especial de botão em [rich card](bot-builder-nodejs-send-rich-cards.md). Este artigo descreve como enviar uma solicitação de pagamento usando o SDK do Bot Framework para Node.js.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 Antes de enviar uma solicitação de pagamento usando o SDK do Bot Framework para Node.js, você deve concluir essas tarefas de pré-requisito.
 
@@ -61,7 +61,7 @@ O exemplo de <a href="https://github.com/Microsoft/BotBuilder-Samples/tree/maste
 
 As próximas seções deste artigo descrevem as três partes do processo de pagamento, no contexto do **Payment Bot** exemplo.
 
-## <a id="request-payment"></a> Solicitar pagamento
+## <a name="requesting-payment"></a><a id="request-payment"></a> Solicitar pagamento
 
 O bot pode solicitar o pagamento de um usuário, enviando uma mensagem que contém um [cartão avançado](bot-builder-nodejs-send-rich-cards.md) com um botão que especifica `type` de "pagamento". Esse snippet de código do exemplo de **Bot de Pagamento** cria uma mensagem que contém um cartão Hero com um botão **Comprar**, no qual o usuário pode clicar (ou tocar) para iniciar o processo de pagamento. 
 
@@ -76,7 +76,7 @@ Esta captura de tela mostra o cartão de Hero (com **comprar** botão) que é ge
 > [!IMPORTANT]
 > Qualquer usuário que tenha acesso para o **comprar** botão pode usá-lo para iniciar o processo de pagamento. No contexto de uma conversa em grupo, não é possível designar um botão para uso por apenas um usuário específico. 
 
-## <a id="user-experience"></a> Experiência do usuário
+## <a name="user-experience"></a><a id="user-experience"></a> Experiência do usuário
 
 Quando um usuário clicar no botão **Comprar**, o usuário será direcionado à experiência na Web de pagamento para fornecer todas as informações necessárias de pagamento, envio e contato por meio da conta Microsoft. 
 
@@ -96,7 +96,7 @@ Chamadas de retorno HTTP serão enviadas ao seu bot para indicar que ele deve ex
 > [!NOTE]
 > `invoke` é um tipo de evento especial que é reservado para uso pelo Microsoft Bot Framework. O remetente de um evento `invoke` espera que o bot reconheça o retorno de chamada enviando uma resposta HTTP.
 
-## <a id="process-callbacks"></a> Retornos de chamada de processamento
+## <a name="processing-callbacks"></a><a id="process-callbacks"></a> Retornos de chamada de processamento
 
 [!INCLUDE [Process callbacks overview](../includes/snippet-payment-process-callbacks-overview.md)]
 

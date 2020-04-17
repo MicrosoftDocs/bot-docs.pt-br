@@ -9,10 +9,10 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 2/20/2020
 ms.openlocfilehash: 775ffd3a72f69ad721eacbe31b27ddbe5b1fa5e5
-ms.sourcegitcommit: 308e6df385b9bac9c8d60f8b75eabc813b823c38
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77519965"
 ---
 # <a name="troubleshoot-bot-configuration-issues"></a>Solucionar problemas de configuração de bot

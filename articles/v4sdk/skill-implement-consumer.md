@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 01/22/2020
+ms.date: 03/19/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 9211f3f1df98ef5972571c1c36ecdeefc27639bf
-ms.sourcegitcommit: 308e6df385b9bac9c8d60f8b75eabc813b823c38
+ms.openlocfilehash: f49780dcef56b3517798435ce4ad77be75d6d2ad
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77519985"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80648200"
 ---
 # <a name="implement-a-skill-consumer"></a>Implementar um consumidor de skills
 
@@ -30,7 +30,7 @@ Um _bot raiz_ é um bot voltado para o usuário que pode invocar um ou mais skil
 
 Este artigo demonstra como implementar um consumidor de skills que usa o skill de eco para ecoar a entrada do usuário. Para obter um exemplo de manifesto de skill e informações sobre como implementar o skill de eco, consulte como [implementar um skill](skill-implement-skill.md).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento [básico sobre bots](bot-builder-basics.md), [como os bots skills funcionam](skills-conceptual.md) e como [implementar um skill](skill-implement-skill.md).
 - Uma assinatura do Azure. Se você não tiver uma, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
@@ -243,11 +243,11 @@ O bot raiz também define um acessador de propriedade de estado de conversa para
 
 Este exemplo tem um método auxiliar para encaminhar atividades a um skill. Ele salva o estado da conversa antes de invocar o skill e verifica se a solicitação HTTP foi bem-sucedida.
 
-[!code-javascript[Send to skill](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/rootBot.js?range=119-131)]
+[!code-javascript[Send to skill](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/rootBot.js?range=117-129)]
 
 É importante observar que o bot raiz inclui a lógica para encaminhar atividades para a habilidade, iniciar a habilidade mediante solicitação do usuário e interromper a habilidade quando ela é concluída.
 
-[!code-javascript[message/end-of-conversation handlers](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/rootBot.js?range=32-94)]
+[!code-javascript[message/end-of-conversation handlers](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/rootBot.js?range=32-92)]
 
 ### <a name="python"></a>[Python](#tab/python)
 
@@ -285,7 +285,6 @@ Neste exemplo, a lógica de erro de ciclo é dividida entre alguns métodos auxi
 ### <a name="javascript"></a>[JavaScript](#tab/js)
 
 **simple-root-bot/index.js**
-
 
 [!code-javascript[On turn error](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/index.js?range=34-87)]
 
@@ -331,7 +330,7 @@ Inclui um objeto de configuração de autenticação com qualquer validação de
 
 **SimpleRootBot\Startup.cs**
 
-[!code-csharp[services](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/SimpleRootBot/Startup.cs?range=22-53)]
+[!code-csharp[services](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/SimpleRootBot/Startup.cs?range=21-53)]
 
 ### <a name="javascript"></a>[JavaScript](#tab/js)
 

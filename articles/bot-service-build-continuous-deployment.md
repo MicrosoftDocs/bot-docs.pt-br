@@ -10,10 +10,10 @@ ms.service: bot-service
 ms.date: 03/23/2020
 monikerRange: azure-bot-service-4.0
 ms.openlocfilehash: 851fc2fd9def0e36894b0b90bdbb029d3c931824
-ms.sourcegitcommit: 126c4f8f8c7a3581e7521dc3af9a937493e6b1df
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80499793"
 ---
 # <a name="set-up-continuous-deployment"></a>Configurar a implantação contínua

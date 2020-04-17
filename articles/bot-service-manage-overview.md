@@ -9,10 +9,10 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 8/13/2019
 ms.openlocfilehash: 9a62a6d2bc1d47862d8ab25250dd3839d3e21d56
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75794151"
 ---
 # <a name="manage-a-bot"></a>Gerenciar um bot
@@ -33,7 +33,7 @@ Na folha **Visão geral**, você pode encontrar informações de alto nível sob
 
 ![Gerenciamento de bot](~/media/azure-manage-a-bot/bot-management.png)
 
-| Opção |  DESCRIÇÃO |
+| Opção |  Descrição |
 | ---- | ---- |
 | **Compilar** | A guia Compilar fornece opções para fazer alterações no bot. Essa opção não está disponível para **Bot Somente Registro**. |
 | **Testar no Webchat** | Use o controle de Webchat integrado para ajudá-lo a testar rapidamente o seu bot. |

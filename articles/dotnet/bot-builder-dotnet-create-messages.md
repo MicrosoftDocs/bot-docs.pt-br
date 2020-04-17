@@ -9,10 +9,10 @@ ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
 ms.openlocfilehash: 8f043afc1b4faad3f7edc66c7ef1d788c42d8403
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "75794667"
 ---
 # <a name="create-messages"></a>Criar mensagens
@@ -45,7 +45,7 @@ A propriedade `Entities` de uma mensagem é uma matriz de objetos <a href="http:
 
 Vários canais dão suporte à capacidade de um usuário ou bot "mencionar" alguém dentro do contexto de uma conversa. Para mencionar um usuário em uma mensagem, preencha a propriedade `Entities` da mensagem com um objeto `Mention`. O objeto `Mention` contém essas propriedades: 
 
-| Propriedade | DESCRIÇÃO | 
+| Propriedade | Descrição | 
 |----|----|
 | Type | tipo da entidade ("mention") | 
 | Mencionado | O objeto `ChannelAccount` que indica que o usuário foi mencionado | 
@@ -64,7 +64,7 @@ As <a href="https://schema.org/Place" target="_blank">informações relacionadas
 
 O objeto `Place` contém essas propriedades:
 
-| Propriedade | DESCRIÇÃO | 
+| Propriedade | Descrição | 
 |----|----|
 | Type | tipo da entidade ("Place") |
 | Endereço | descrição ou objeto `PostalAddress` (futuro) | 
@@ -74,7 +74,7 @@ O objeto `Place` contém essas propriedades:
 
 O objeto `GeoCoordinates` contém essas propriedades:
 
-| Propriedade | DESCRIÇÃO | 
+| Propriedade | Descrição | 
 |----|----|
 | Type | tipo da entidade ("GeoCoordinates") |
 | Nome | nome do local |

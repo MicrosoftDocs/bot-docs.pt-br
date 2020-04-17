@@ -9,10 +9,10 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/07/2019
 ms.openlocfilehash: a85f1ddcb9a1440d8b157b3e28a7cbefb834955a
-ms.sourcegitcommit: d24fe2178832261ac83477219e42606f839dc64d
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77071784"
 ---
 # <a name="web-chat-overview"></a>Visão geral de Webchat
