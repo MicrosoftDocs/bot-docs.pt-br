@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: d88fa567d25358dba33b776082da69b675f93892
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: abc1600bdc53ad5fa2cdfdeaf031666c414c8943
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75790958"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80648420"
 ---
 # <a name="key-concepts-in-the-bot-framework-sdk-for-nodejs"></a>Principais conceitos no SDK do Bot Framework para Node.js
 
@@ -26,7 +26,7 @@ ms.locfileid: "75790958"
 Este artigo apresenta os principais conceitos no SDK do Bot Framework para Node.js. Para obter uma introdução ao Bot Framework, consulte [visão geral do Bot Framework](../overview-introduction-bot-framework.md).
 
 ## <a name="connector"></a>Conector
-O Bot Framework Connector é um serviço que conecta seu bot a vários *canais*, que são clientes como [Teams](https://docs.microsoft.com/microsoftteams/platform/concepts/bots/bots-create), Skype, Facebook, Slack e SMS. 
+O Bot Framework Connector é um serviço que conecta seu bot a vários *canais*, que são clientes como [Teams](https://docs.microsoft.com/microsoftteams/platform/concepts/bots/bots-create), Facebook, Slack e SMS. 
 
 O Conector facilita a comunicação entre o bot e o usuário, transmitindo mensagens do bot para o canal e do canal para o bot. A lógica do seu bot é hospedada como um serviço web que recebe mensagens dos usuários através do serviço Connector, e as respostas do seu bot são enviadas para o Connector usando HTTPS POST. 
 
@@ -61,7 +61,7 @@ Você pode usar o reconhecedor de expressões regulares interno que o SDK do Bot
 
 ## <a name="saving-state"></a>Salvar estado
 
-Uma chave para um bom projeto de bot é rastrear o contexto de uma conversa, para que seu bot se lembre de coisas como a última pergunta que o usuário fez. Bots construídos usando o SDK do Bot Framework são projetados para serem sem estado para que possam ser escalonados facilmente a fim de serem executados em vários nós de computação. O Bot Framework fornece um sistema de armazenamento que armazena os dados do bot, para que o serviço da web do bot possa ser dimensionado. Por causa disso, você geralmente deve evitar salvar o estado usando uma variável global ou fechamento de função. Isso criará problemas quando você quiser expandir seu bot. Em vez disso, use as seguintes propriedades do [objeto][Session] do seu bot para salvar dados relativos a um usuário ou conversa:
+Uma chave para um bom projeto de bot é rastrear o contexto de uma conversa, para que seu bot se lembre de coisas como a última pergunta que o usuário fez. Bots construídos usando o SDK do Bot Framework são projetados para serem sem estado para que possam ser escalonados facilmente a fim de serem executados em vários nós de computação. O Bot Framework fornece um sistema de armazenamento que armazena os dados do bot, para que o serviço da web do bot possa ser dimensionado. Por causa disso, você geralmente deve evitar salvar o estado usando uma variável global ou fechamento de função. Isso criará problemas quando você quiser escalar horizontalmente seu bot. Em vez disso, use as seguintes propriedades do [objeto][Session] do seu bot para salvar dados relativos a um usuário ou conversa:
 
 * **userData** armazena informações globalmente para o usuário em todas as conversas.
 * **conversationData** armazena informações globalmente para uma única conversa. Esses dados são visíveis para todos dentro da conversa, portanto, tenha cuidado ao armazenar dados nessa propriedade. Ele é habilitado por padrão e você pode desabilitá-lo usando a configuração [persistConversationData][PersistConversationData] do bot.

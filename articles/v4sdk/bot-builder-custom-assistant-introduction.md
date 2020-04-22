@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/01/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 6bde9f24f42a7558d93c333d12e03e9c87d7c4b2
-ms.sourcegitcommit: 64b25f796f89e8bb6fa53d3c824b73b8ce4d6ed8
+ms.openlocfilehash: a55fff4036e6e57c4dcc4fb100422a6ec169fb33
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80250015"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80648304"
 ---
 # <a name="custom-assistant-overview"></a>Visão geral do Assistente Personalizado
 
@@ -39,7 +39,7 @@ O Assistente Personalizado que será implantado na assinatura do Azure. Portanto
 
 ## <a name="your-assistant-anywhere"></a>Seu assistente em qualquer lugar...
 
-O Assistente Personalizado utiliza a plataforma de inteligência artificial de conversação da Microsoft e, portanto, pode aparecer em qualquer [canal](https://docs.microsoft.com/azure/bot-service/bot-service-manage-channels?view=azure-bot-service-4.0) do Bot Framework, por exemplo, WebChat, FaceBook Messenger, Skype, etc. Além disso, pelo canal [Linha Direta](https://docs.microsoft.com/azure/bot-service/rest-api/bot-framework-rest-direct-line-3-0-concepts?view=azure-bot-service-4.0), podemos inserir experiências na área de trabalho e nos aplicativos móveis, incluindo dispositivos como Carros, Alto-falantes, Despertadores, etc.
+O Assistente Personalizado utiliza a plataforma de inteligência artificial de conversação da Microsoft e, portanto, pode aparecer em qualquer [canal](https://docs.microsoft.com/azure/bot-service/bot-service-manage-channels?view=azure-bot-service-4.0) do Bot Framework, por exemplo, WebChat, Facebook Messenger etc. Além disso, pelo canal [Linha Direta](https://docs.microsoft.com/azure/bot-service/rest-api/bot-framework-rest-direct-line-3-0-concepts?view=azure-bot-service-4.0), podemos inserir experiências na área de trabalho e nos aplicativos móveis, incluindo dispositivos como Carros, Alto-falantes, Despertadores, etc.
 
 ## <a name="built-on-enterprise-grade-technology"></a>Baseado na mesma tecnologia do Enterprise
 

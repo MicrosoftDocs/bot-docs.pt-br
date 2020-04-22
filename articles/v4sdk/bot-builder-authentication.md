@@ -7,12 +7,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 2/7/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b17adabf6eaf845fa8cfc5f36956c89654f59550
-ms.sourcegitcommit: 64b25f796f89e8bb6fa53d3c824b73b8ce4d6ed8
+ms.openlocfilehash: daaaa0cdbadf5139bca674e053ff464606d071ce
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80250075"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80648371"
 ---
 <!--
 
@@ -30,7 +30,7 @@ Related TODO:
 - This doc is a sample walkthrough, but there's no deeper documentation explaining how the Azure Bot Service is handling tokens. How does the OAuth flow work? Where is it storing my users' access tokens? What's the security and best practices around using it?
 
 "Minor issues":
-- AAD v2 steps tell you to add delegated permission scopes during registration, but this shouldn't be necessary in AAD v2 due to dynamic scopes. (Ming, "This is currently necessary because scopes are not exposed through our runtime API. We don’t currently have a way for the developer to specify which scope he wants at runtime.")
+- AAD v2 steps tell you to add delegated permission scopes during registration, but this shouldn't be necessary in AAD v2 due to dynamic scopes. (Ming, "This is currently necessary because scopes are not exposed through our runtime API. We don't currently have a way for the developer to specify which scope he wants at runtime.")
 
 - "The scope of the connection setting needs to have both openid and a resource in the Azure AD graph, such as Mail.Read." Unclear if I need to take some action at this point to make happen. Kind of out of context. I'm registering an AAD application in the portal, there's no connection setting
 - Does the bot need all of these scopes for the samples? (e.g. "Read all users' basic profiles")
@@ -210,8 +210,7 @@ A próxima etapa é registrar o aplicativo do Azure AD que você acabou de criar
     1. Para **ID do Locatário**, insira a **ID do diretório (locatário)** que você registrou anteriormente para seu aplicativo do Azure AD ou **comum** dependendo dos tipos de conta com suporte selecionados quando você criou o aplicativo do ADD. Para decidir qual valor atribuir, siga estes critérios:
 
         - Ao criar o aplicativo do Azure AD, se você tiver selecionado *Somente contas neste diretório organizacional (somente Microsoft – Locatário único)* ou *Contas em qualquer diretório organizacional (diretório do Microsoft Azure AD – multilocatário)* , insira a **ID do locatário** que você registrou anteriormente para o aplicativo do Azure AD.
-
-        - Contudo, se você tiver selecionado *Contas em qualquer diretório organizacional (Qualquer diretório do Azure AD – contas Microsoft multilocatário e pessoais, por ex. Skype, Xbox, Outlook.com)* , insira a palavra **comum** em vez de uma ID de locatário. Caso contrário, o aplicativo do Azure AD verificará o locatário cuja ID foi selecionada e excluirá as contas MS pessoais.
+        - Contudo, se você tiver selecionado *Contas em qualquer diretório organizacional (Qualquer diretório do AAD – contas Microsoft multilocatário e pessoais, por exemplo, Xbox, Outlook.com)* , insira a palavra **comum** em vez de uma ID de locatário. Caso contrário, o aplicativo AAD verificará o locatário cuja ID foi selecionada e excluirá as contas MS pessoais.
 
        Esse será o locatário associado aos usuários que podem ser autenticados.
 
@@ -236,8 +235,7 @@ A próxima etapa é registrar o aplicativo do Azure AD que você acabou de criar
     1. Para **ID do Locatário**, insira a **ID do diretório (locatário)** que você registrou anteriormente para seu aplicativo do AAD ou **comum** dependendo dos tipos de conta com suporte selecionados quando você criou o aplicativo do Azure AD. Para decidir qual valor atribuir, siga estes critérios:
 
         - Ao criar o aplicativo do Azure AD, se você tiver selecionado *Somente contas neste diretório organizacional (somente Microsoft – Locatário único)* ou *Contas em qualquer diretório organizacional (diretório do Microsoft Azure AD – multilocatário)* , insira a **ID do locatário** que você registrou anteriormente para o aplicativo do AAD.
-
-        - Contudo, se você tiver selecionado *Contas em qualquer diretório organizacional (Qualquer diretório do Azure AD – contas Microsoft multilocatário e pessoais, por ex. Skype, Xbox, Outlook.com)* , insira a palavra **comum** em vez de uma ID de locatário. Caso contrário, o aplicativo do Azure AD verificará o locatário cuja ID foi selecionada e excluirá as contas MS pessoais.
+        - Contudo, se você tiver selecionado *Contas em qualquer diretório organizacional (Qualquer diretório do AAD – contas Microsoft multilocatário e pessoais, por exemplo, Xbox, Outlook.com)* , insira a palavra **comum** em vez de uma ID de locatário. Caso contrário, o aplicativo AAD verificará o locatário cuja ID foi selecionada e excluirá as contas MS pessoais.
 
        Esse será o locatário associado aos usuários que podem ser autenticados.
 

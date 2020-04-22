@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: a6714a7eabb2af22e9a06b2a151cab1c9fa8a2f2
-ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
+ms.openlocfilehash: 16331f1f4d75c9f379b88539677f384ef2744ae6
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77441584"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80647739"
 ---
 # <a name="internet-of-things-iot-bot-scenario"></a>Cenário de Bot de IoT (Internet das Coisas)
 
@@ -34,7 +34,7 @@ Este é o fluxo lógico de um bot de IoT:
 5. O Application Insights coleta a telemetria do runtime para ajudar o desenvolvimento com o desempenho e uso do bot.
 
 ## <a name="sample-bot"></a>Bot de exemplo
-O bot de IoT permitirá que você use rapidamente comandos de chat de canais como Skype ou Slack para controlar sua Hue. Para facilitar o acesso remoto, você chamará miniaplicativos IFTTT predefinidos para trabalhar com a Hue.
+O bot de IoT permitirá que você use rapidamente comandos de chat de canais como o Slack para controlar sua Hue. Para facilitar o acesso remoto, você chamará miniaplicativos IFTTT predefinidos para trabalhar com a Hue.
 
 Baixe ou clone o código-fonte desse bot de exemplo em [Exemplos para cenários comuns do Bot Framework](https://aka.ms/abs-scenarios).
 

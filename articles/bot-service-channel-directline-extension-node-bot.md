@@ -8,12 +8,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: dev
 ms.date: 01/15/2020
-ms.openlocfilehash: 025b3db49f82643d0942518ff87810714389b54c
-ms.sourcegitcommit: df2b8d4e29ebfbb9e8a10091bb580389fe4c34cc
+ms.openlocfilehash: 68961133eef80b22939bd4ad251a22f10f874c2c
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76256437"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81395659"
 ---
 # <a name="configure-nodejs-bot-for-extension"></a>Configurar o bot do Node.js para a extensão
 
@@ -21,7 +21,7 @@ ms.locfileid: "76256437"
 
 Este artigo descreve como atualizar um bot para trabalhar com **pipes nomeados** e como habilitar a extensão de serviço de aplicativo do Direct Line no recurso de **Serviço de Aplicativo do Azure** em que o bot está hospedado.  
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 Para executar as etapas descritas a seguir, você precisa ter o recurso do **Serviço de Aplicativo do Azure** e o **Serviço de Aplicativo** relacionado no Azure.
 
@@ -41,8 +41,10 @@ Esta seção descreve como habilitar a extensão de serviço de aplicativo do Di
     
     adapter.useNamedPipe(async (context) => {
         await myBot.run(context);
-    });
-    ```
+        },
+        process.env.APPSETTING_WEBSITE_SITE_NAME + '.directline'
+    );
+    ```   
 
 1. Salve o arquivo `index.js`.
 1. Atualize o arquivo `Web.Config` padrão para adicionar o manipulador `AspNetCore` necessário para a Extensão do Serviço de Aplicativo do Direct Line para solicitações de serviço:
@@ -97,9 +99,10 @@ Esta seção descreve como habilitar a extensão de serviço de aplicativo do Di
 
 ### <a name="confirm-direct-line-app-extension-and-the-bot-are-initialized"></a>Confirme se a Extensão do Aplicativo do Direct Line e o bot foram inicializados
 
-1. No navegador, navegue até https://<your_app_service>.azurewebsites.net/.bot. Se tudo estiver correto, a página retornará este conteúdo JSON: `{"k":true,"ib":true,"ob":true,"initialized":true}`. Essas são as informações que você obtém quando **tudo funciona corretamente**, onde
+1. No navegador, navegue até https://<your_app_service>.azurewebsites.net/.bot. Se tudo estiver correto, a página retornará este conteúdo JSON: `{"v":"123","k":true,"ib":true,"ob":true,"initialized":true}`. Essas são as informações que você obtém quando **tudo funciona corretamente**, onde
 
-    - **k** determina se a ASE (Extensão do Serviço de Aplicativo) do Direct Line pode ler uma chave de extensão do Serviço de Aplicativo com base na configuração. 
+    - **v** exibe a versão de build da ASE (Extensão de Serviço de Aplicativo) do Direct Line.
+    - **k** determina se a ASE do Direct Line pode ler uma chave de Extensão de Serviço de Aplicativo com base na respectiva configuração. 
     - **initialized** determina se a ASE do Direct Line pode usar a chave de Extensão do Serviço de Aplicativo para baixar os metadados do bot do Serviço de Bot do Azure
     - **ib** determina se a ASE do Direct Line pode estabelecer uma conexão de entrada com o bot.
     - **ob** determina se a ASE do Direct Line pode estabelecer uma conexão de saída com o bot. 

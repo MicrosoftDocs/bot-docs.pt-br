@@ -8,18 +8,18 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: fde01bafdb20daf50ce0eb6d83ae6248f2a2a0a7
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 9e4a1417dfe60805b09e4f30880aeec6d50a3d3f
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798532"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80648406"
 ---
 # <a name="secure-your-bot"></a>Proteger o bot
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
-O bot pode ser conectado a muitos canais de comunicação diferentes (Skype, SMS, email e outros) por meio do serviço Bot Framework Connector. Este artigo descreve como proteger seu bot usando a autenticação HTTPS e do Bot Framework.
+O bot pode ser conectado a muitos canais de comunicação diferentes (SMS, email e outros) por meio do serviço Bot Framework Connector. Este artigo descreve como proteger seu bot usando a autenticação HTTPS e do Bot Framework.
 
 ## <a name="use-https-and-bot-framework-authentication"></a>Usar a autenticação HTTPS e do Bot Framework
 

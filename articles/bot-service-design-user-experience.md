@@ -8,16 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 09/20/2018
-ms.openlocfilehash: 54b797c10ba69684c64c7d9f6c7e144d603084ca
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 27cae2476a77ce3e5d05f6e27427809f818a2b7b
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75793514"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80647479"
 ---
 # <a name="design-the-user-experience"></a>Projetar a experiência do usuário
 
-Você pode criar bots com vários recursos, como texto, botões, imagens, cartões avançados exibidos em formato carrossel ou de lista e muito mais. No entanto, cada canal, como Facebook, Slack, Skype etc. por fim, controla como os seus clientes de mensagens renderizam recursos. Mesmo quando vários canais forem compatíveis com um recurso, cada canal poderá renderizar o recurso de um jeito ligeiramente diferente. Em casos nos quais uma mensagem contém um ou mais recursos sem suporte nativo de canal, o canal pode tentar simplificar a renderização do conteúdo da mensagem como texto ou imagem estática, o que pode afetar consideravelmente a aparência da mensagem no cliente. Em alguns casos, talvez um canal não dê suporte algum a um recurso específico. Por exemplo, clientes do GroupMe não podem exibir um indicador de digitação.
+Você pode criar bots com vários recursos, como texto, botões, imagens, cartões avançados exibidos em formato carrossel ou de lista e muito mais. No entanto, cada canal, como Facebook, Slack etc. por fim, controla como os seus clientes de mensagens renderizam recursos. Mesmo quando vários canais forem compatíveis com um recurso, cada canal poderá renderizar o recurso de um jeito ligeiramente diferente. Em casos nos quais uma mensagem contém um ou mais recursos sem suporte nativo de canal, o canal pode tentar simplificar a renderização do conteúdo da mensagem como texto ou imagem estática, o que pode afetar consideravelmente a aparência da mensagem no cliente. Em alguns casos, talvez um canal não dê suporte algum a um recurso específico. Por exemplo, clientes do GroupMe não podem exibir um indicador de digitação.
 
 ## <a name="rich-user-controls"></a>Controles de usuário avançados
 
@@ -31,7 +31,7 @@ Os cartões permitem apresentar aos usuários uma variedade de mensagens visuais
 
 Os cartões do Serviço de Bot da Microsoft são objetos programáveis que contêm coleções padronizadas de controles de usuário avançados que são reconhecidos em uma ampla variedade de canais. A tabela a seguir descreve a lista de cartões disponíveis e sugestões de melhor prática de uso para cada tipo de cartão.
 
-| Tipo de cartão | Exemplo | DESCRIÇÃO |
+| Tipo de cartão | Exemplo | Descrição |
 | ---- | ---- | ---- |
 | AdaptiveCard | ![Imagem do Cartão adaptável](./media/adaptive-card.png) | Um formato de troca de cartão aberto renderizado como um objeto JSON. Normalmente usado para implantação entre canais de cartões. Os cartões se adaptam à aparência de cada canal de host. |
 | AnimationCard | ![Imagem de Cartão de animação](./media/animation-card1.png) | Um cartão que pode reproduzir GIFs animados ou vídeos curtos. |

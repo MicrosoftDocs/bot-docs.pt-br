@@ -9,19 +9,19 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 01/24/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 8ef33478f71afa18568a18cfad67b7f65c50d955
-ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
+ms.openlocfilehash: f1ac92f24bff862ece8ab3092659fce51e11409d
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77441681"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80648262"
 ---
 # <a name="add-natural-language-understanding-to-your-bot"></a>Adicionar reconhecimento de idioma natural ao seu bot
 
 [!INCLUDE[applies-to](../includes/applies-to.md)]
 A capacidade de entender o que seu usuário quer dizer contextualmente e em conversas pode ser uma tarefa difícil, mas pode dar ao seu bot uma sensação de conversa mais natural. O Language Understanding, chamado LUIS, permite que você faça exatamente isso para que seu bot possa reconhecer a intenção das mensagens do usuário, permitir uma linguagem mais natural do seu usuário e direcionar melhor o fluxo de conversação. Este tópico explica como adicionar LUIS a um aplicativo de reservas de voo para reconhecer intenções e entidades diferentes contidas na entrada do usuário.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 - Conta [LUIS](https://www.luis.ai)
 - O código neste artigo baseia-se no exemplo de **Core Bot**. Você precisará de uma cópia do exemplo em **[C#](https://aka.ms/cs-core-sample)** , **[JavaScript](https://aka.ms/js-core-sample)** ou **[Python](https://aka.ms/python-core-sample)** .
@@ -104,13 +104,15 @@ Após a publicação de seu aplicativo LUIS, acesse-o no bot. Será necessário 
 
 ### <a name="retrieve-application-information-from-the-luisai-portal"></a>Recupere as informações do aplicativo no portal LUIS.ai
 
-O arquivo de configurações (`appsettings.json` ou `.env`) age como um único local para reunir todas as referências de serviço. As informações que você recupera serão adicionadas a esse arquivo na próxima seção.
+O arquivo de configurações (`appsettings.json`, `.env` ou `config.py`) age como um único local para reunir todas as referências de serviço. As informações que você recupera serão adicionadas a esse arquivo na próxima seção.
 
 1. Marque seu aplicativo LUIS publicado em [luis.ai](https://www.luis.ai).
-1. Com o aplicativo LUIS publicado aberto, escolha a guia **GERENCIAR**. ![Gerenciar aplicativo LUIS](./media/how-to-luis/manage-luis-app.png)
-1. Escolha a guia **Informações do Aplicativo** no lado esquerdo, registre o valor mostrado para _ID do Aplicativo_ como <ID_DO_SEU_APLICATIVO>.
-1. Escolha a guia **Chaves e Pontos de Extremidade** no lado esquerdo, registre o valor mostrado para _Chave de Criação_ como <SUA_CHAVE_DE_CRIAÇÃO>.
-1. Role para baixo até o final da página, registre o valor mostrado para _Região_ como <YOUR_REGION>.
+1. Com o aplicativo LUIS publicado aberto, escolha a guia **GERENCIAR**.
+1. Selecione a guia **Informações do Aplicativo** no lado esquerdo. Registre o valor mostrado para _ID do Aplicativo_ como <SUA_ID_DO_APLICATIVO>.
+    ![Gerenciar o Aplicativo LUIS – Informações do Aplicativo](./media/how-to-luis/manage-luis-app-app-info.png)
+1. Selecione a guia **Recursos do Azure** no lado esquerdo. Registre o valor mostrado para _Região_ como <SUA_REGIÃO> e _Chave primária_ como <SUA_CHAVE_DE_CRIAÇÃO>.
+    ![Gerenciar o Aplicativo LUIS – Informações do Aplicativo](./media/how-to-luis/manage-luis-app-azure-resources.png)
+    
 
 ### <a name="update-the-settings-file"></a>Atualizar o arquivo de configurações
 
@@ -118,21 +120,25 @@ O arquivo de configurações (`appsettings.json` ou `.env`) age como um único l
 
 Adicione as informações necessárias para acessar o aplicativo LUIS, incluindo ID do aplicativo, chave de criação e região, ao arquivo `appsettings.json`. Estes são os valores que você salvou anteriormente de seu aplicativo LUIS publicado. Lembre-se de que o nome do host da API deve estar no formato `<your region>.api.cognitive.microsoft.com`.
 
-**appsetting.json**  
+**appsetting.json**
+
 [!code-json[appsettings](~/../BotBuilder-Samples/samples/csharp_dotnetcore/13.core-bot/appsettings.json?range=1-7)]
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Adicione as informações necessárias para acessar o aplicativo LUIS, incluindo ID do aplicativo, chave de criação e região, ao arquivo `.env`. Estes são os valores que você salvou anteriormente de seu aplicativo LUIS publicado. Lembre-se de que o nome do host da API deve estar no formato `<your region>.api.cognitive.microsoft.com`.
 
-**.env**  
+**.env**
+
 [!code[env](~/../BotBuilder-Samples/samples/javascript_nodejs/13.core-bot/.env?range=1-5)]
 
 # <a name="python"></a>[Python](#tab/python)
 
 Adicione as informações necessárias para acessar o aplicativo LUIS, incluindo ID do aplicativo, chave de criação e região, ao arquivo `config.py`. Estes são os valores que você salvou anteriormente de seu aplicativo LUIS publicado. Lembre-se de que o nome do host da API deve estar no formato `<your region>.api.cognitive.microsoft.com`.
 
-**config.py** [!code-python[config.py](~/../botbuilder-samples/samples/python/13.core-bot/config.py?range=14-19)]
+**config.py**
+
+[!code-python[config.py](~/../botbuilder-samples/samples/python/13.core-bot/config.py?range=14-19)]
 
 ---
 
@@ -178,7 +184,9 @@ Para se conectar ao serviço do LUIS, o bot usa as informações adicionadas aci
 
 A lógica para extrair *From*, *To* e *travel_date* é implementada como métodos auxiliares da classe `LuisHelper` dentro de `luis_helper.py`. Esses métodos são usados após chamar `LuisHelper.execute_luis_query()` de `main_dialog.py`
 
-**helpers/luis_helper.py** [!code-python[luis helper](~/../botbuilder-samples/samples/python/13.core-bot/helpers/luis_helper.py?range=30-102)]
+**helpers/luis_helper.py**
+
+[!code-python[luis helper](~/../botbuilder-samples/samples/python/13.core-bot/helpers/luis_helper.py?range=30-102)]
 
 ---
 
@@ -198,7 +206,7 @@ Se a melhor intenção retornada pelo LUIS for "Reservar voo", seu bot fará per
 
 ![Resultado da reserva do LUIS](./media/how-to-luis/luis-travel-result.png)
 
-Nesse momento, a lógica de bot do código reiniciará e você poderá continuar a criar reservas adicionais. 
+Nesse momento, a lógica de bot do código reiniciará e você poderá continuar a criar reservas adicionais.
 
 ## <a name="next-steps"></a>Próximas etapas
 

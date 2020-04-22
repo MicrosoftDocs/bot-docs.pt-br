@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 027006f2ad3d6aff1094142a41d791ba0e5d8922
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 52d6d847c7187372901271a32d852cc089acc27e
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75789817"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80648155"
 ---
 # <a name="key-concepts-in-the-bot-framework-sdk-for-net"></a>Principais conceitos no SDK do Bot Framework para .NET
 
@@ -27,7 +27,7 @@ Este artigo apresenta os principais conceitos no SDK do Bot Framework para .NET.
 
 ## <a name="connector"></a>Conector
 
-O [Conector do Bot Framework](bot-builder-dotnet-connector.md) oferece uma única API REST que permite que um bot se comunique por diversos canais, como Skype, Email, Slack e muito mais. Ele facilita a comunicação entre o bot e o usuário por mensagens de retransmissão do bot para o canal e do canal para o bot. 
+O [Bot Framework Connector](bot-builder-dotnet-connector.md) oferece uma única API REST que permite a um bot se comunicar por diversos canais, como Email, Slack e mais. Ele facilita a comunicação entre o bot e o usuário por mensagens de retransmissão do bot para o canal e do canal para o bot. 
 
 No SDK do Bot Framework para .NET, a biblioteca do [Connector][connectorLibrary] permite o acesso ao Connector. 
 

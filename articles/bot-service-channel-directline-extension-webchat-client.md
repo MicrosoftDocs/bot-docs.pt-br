@@ -8,12 +8,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 07/25/2019
-ms.openlocfilehash: aaba2a9de9f35d7615b3a7e5ff077554ef03a2df
-ms.sourcegitcommit: 2109d9da53fdf65966f33ed1fa628a40ec851d35
+ms.openlocfilehash: a3cb2e438d2b042f66d97ef90b162cf172aeb3f3
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78280117"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81395639"
 ---
 # <a name="use-webchat-with-the-direct-line-app-service-extension"></a>Habilitar o WebChat com a extensão de serviço de aplicativo do Direct Line
 
@@ -27,6 +27,9 @@ A primeira etapa é encontrar seu segredo do Direct Line. Você pode fazer isso 
 A versão prévia do DirectLineJS pode ser encontrada aqui: https://github.com/Jeffders/DirectLineAppServiceExtensionPreview/tree/master/libraries
 
 ## <a name="integrate-webchat-client"></a>Integrar o cliente do WebChat
+
+> [!NOTE]
+> Os cartões adaptáveis enviados por meio da Extensão de Serviço de Aplicativo do Direct Line não passam pelo mesmo processamento que aqueles enviados por meio de outras versões do canal do Direct Line. Por causa disso, a representação JSON do cartão adaptável enviado ao WebChat da Extensão de Serviço de Aplicativo do Direct Line não terá valores padrão adicionados pelo canal se os campos forem omitidos pelo bot quando o cartão for criado.
 
 De modo geral, a abordagem é a mesma que a de antes. Com a exceção da nova versão que foi criada do **WebChat** que dá suporte ao tráfego bidirecional do **WebSocket** e que, em vez de conectar-se a [https://directline.botframework.com/](https://directline.botframework.com/), conecta-se ao seu Bot hospedado.
 A URL do Direct Line para o bot será `https://<your_app_service>.azurewebsites.net/.bot/`, em que a extensão `/.bot/` é o **ponto de extremidade** do Direct Line em seu Serviço de Aplicativo.

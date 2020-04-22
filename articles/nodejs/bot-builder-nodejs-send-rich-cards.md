@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: cd2997bc4795a922d25f6c4b4f5fef3d7dd4f366
-ms.sourcegitcommit: 4e1af50bd46debfdf9dcbab9a5d1b1633b541e27
+ms.openlocfilehash: 127b41a420e9ebd2fa01961f6bf92830ec38e3ba
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/25/2020
-ms.locfileid: "76752908"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80648382"
 ---
 # <a name="add-rich-card-attachments-to-messages"></a>Adicionar anexos de cartão avançados às mensagens
 
@@ -24,7 +24,7 @@ ms.locfileid: "76752908"
 > - [Node.js](../nodejs/bot-builder-nodejs-send-rich-cards.md)
 > - [REST](../rest-api/bot-framework-rest-connector-add-rich-cards.md)
 
-Vários canais, como o Skype e o Facebook, dão suporte ao envio de cartões gráficos avançados para usuários com botões interativos nos quais o usuário clica para iniciar uma ação.
+Vários canais, como o Facebook, dão suporte ao envio de cartões gráficos avançados para usuários com botões interativos nos quais o usuário clica para iniciar uma ação.
 O SDK fornece várias classes de construtor de cartão e mensagem que podem ser usadas para criar e enviar cartões. O Serviço Bot Framework Connector renderizará esses cartões usando o esquema nativo do canal, dando suporte à comunicação multiplataforma. Se o canal não der suporte a cartões, como SMS, o Bot Framework fará o melhor para renderizar uma experiência razoável para os usuários.
 
 ## <a name="types-of-rich-cards"></a>Tipos de cartões avançados

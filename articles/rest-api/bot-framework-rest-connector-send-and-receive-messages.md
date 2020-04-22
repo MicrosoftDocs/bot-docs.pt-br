@@ -7,18 +7,18 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: dc86478de7d73b15bd0d816c5da4e140b3e4de40
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 849475745372a42269d4c28dab09b4f617bac5a2
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75789888"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80648355"
 ---
 # <a name="send-and-receive-messages"></a>Enviar e receber mensagens
 
-O serviço Bot Connector permite que um bot se comunique em vários canais como Skype, Email, Slack e muito mais. Ele facilita a comunicação entre o bot e o usuário por [atividades](https://aka.ms/botSpecs-activitySchema) de retransmissão do bot para o canal e do canal para o bot. Cada atividade contém as informações usadas para encaminhar a mensagem para o destino apropriado, juntamente com informações sobre quem criou a mensagem, o contexto e o destinatário da mensagem. Este artigo descreve como usar o serviço Bot Connector para trocar atividades de **mensagem** entre o bot e o usuário em um canal. 
+O serviço Bot Connector permite que um bot se comunique em vários canais, como Email, Slack e muito mais. Ele facilita a comunicação entre o bot e o usuário por [atividades](https://aka.ms/botSpecs-activitySchema) de retransmissão do bot para o canal e do canal para o bot. Cada atividade contém as informações usadas para encaminhar a mensagem para o destino apropriado, juntamente com informações sobre quem criou a mensagem, o contexto e o destinatário da mensagem. Este artigo descreve como usar o serviço Bot Connector para trocar atividades de **mensagem** entre o bot e o usuário em um canal. 
 
-## <a id="create-reply"></a> Responder a uma mensagem
+## <a name="reply-to-a-message"></a><a id="create-reply"></a> Responder a uma mensagem
 
 ### <a name="create-a-reply"></a>Criar uma resposta 
 
@@ -75,7 +75,7 @@ Content-Type: application/json
 }
 ```
 
-## <a id="send-message"></a> Enviar uma mensagem (não resposta)
+## <a name="send-a-non-reply-message"></a><a id="send-message"></a> Enviar uma mensagem (não resposta)
 
 A maioria das mensagens enviadas pelo bot será em resposta às mensagens que ele recebe do usuário. No entanto, pode haver ocasiões em que o bot precisa enviar uma mensagem para a conversa que não seja uma resposta direta a nenhuma mensagem do usuário. Por exemplo, talvez o bot precise iniciar um novo tópico de conversa ou enviar uma mensagem de despedida no final da conversa. 
 

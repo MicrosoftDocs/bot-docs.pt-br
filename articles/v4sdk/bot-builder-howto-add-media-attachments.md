@@ -9,20 +9,20 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 02/03/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 0afc97e5a4b94b42456bc4c751c3208c1510c1a5
-ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
+ms.openlocfilehash: 767fee3a7391f7819119b4a601c045c2d603478d
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77441711"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81395439"
 ---
 # <a name="add-media-to-messages"></a>Adicionar mídia às mensagens
 
 [!INCLUDE[applies-to](../includes/applies-to.md)]
 
-A troca de mensagens entre usuário e bot pode conter anexos de mídia como imagens, vídeo, áudio e arquivos. O SDK do Bot Framework oferece suporte à tarefa de envio de mensagens avançadas para o usuário. Para determinar o tipo de mensagens avançadas com suporte de um canal (Facebook, Skype, Slack etc), consulte a documentação do canal para obter informações sobre as limitações.
+A troca de mensagens entre usuário e bot pode conter anexos de mídia como imagens, vídeo, áudio e arquivos. O SDK do Bot Framework oferece suporte à tarefa de envio de mensagens avançadas para o usuário. Para determinar o tipo de mensagens avançadas compatíveis com um canal (Facebook, Slack etc.), consulte a documentação do canal para obter informações sobre as limitações.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento sobre os [conceitos básicos do bot](bot-builder-basics.md).
 - O código deste artigo baseia-se nas seguintes amostras:
@@ -47,22 +47,26 @@ O código-fonte mostrado aqui se baseia no exemplo [Tratamento de Anexos](https:
 
 Para criar a mensagem de resposta, defina o texto e, em seguida, configure os anexos. A atribuição dos anexos à resposta é a mesma para cada tipo de anexo, no entanto vários anexos são configurados e definidos de forma diferente, como visto nos snippets de código a seguir. O código a seguir é a configuração da resposta para um anexo embutido:
 
-**Bots/AttachmentsBot.cs**  
-[!code-csharp[inline attachment](~/../botbuilder-samples/samples/csharp_dotnetcore/15.handling-attachments/Bots/AttachmentsBot.cs?range=105-106)]
+**Bots/AttachmentsBot.cs**
+
+[!code-csharp[reply inline](~/../botbuilder-samples/samples/csharp_dotnetcore/15.handling-attachments/Bots/AttachmentsBot.cs?range=105-106)]
 
 Em seguida, vamos examinar os tipos de anexos. O primeiro é um anexo embutido:
 
-**Bots/AttachmentsBot.cs**  
+**Bots/AttachmentsBot.cs**
+
 [!code-csharp[inline attachment](~/../botbuilder-samples/samples/csharp_dotnetcore/15.handling-attachments/Bots/AttachmentsBot.cs?range=167-178)]
 
 Em seguida, um anexo carregado:
 
-**Bots/AttachmentsBot.cs**  
+**Bots/AttachmentsBot.cs**
+
 [!code-csharp[uploaded attachment](~/../botbuilder-samples/samples/csharp_dotnetcore/15.handling-attachments/Bots/AttachmentsBot.cs?range=181-214)]
 
 Por fim, um anexo de internet:
 
-**Bots/AttachmentsBot.cs**  
+**Bots/AttachmentsBot.cs**
+
 [!code-csharp[online attachment](~/../botbuilder-samples/samples/csharp_dotnetcore/15.handling-attachments/Bots/AttachmentsBot.cs?range=217-226)]
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
@@ -71,27 +75,32 @@ O código-fonte mostrado aqui se baseia no exemplo [Tratamento de Anexos JS](htt
 
 Para usar anexos, inclua as seguintes bibliotecas em seu bot:
 
-**bots/attachmentsBot.js**  
+**bots/attachmentsBot.js**
+
 [!code-javascript[attachments libraries](~/../botbuilder-samples/samples/javascript_nodejs/15.handling-attachments/bots/attachmentsBot.js?range=4)]
 
 Para criar a mensagem de resposta, defina o texto e, em seguida, configure os anexos. A atribuição dos anexos à resposta é a mesma para cada tipo de anexo, no entanto vários anexos são configurados e definidos de forma diferente, como visto nos snippets de código a seguir. O código a seguir é a configuração da resposta para um anexo embutido:
 
-**bots/attachmentsBot.js**  
+**bots/attachmentsBot.js**
+
 [!code-javascript[attachments](~/../botbuilder-samples/samples/javascript_nodejs/15.handling-attachments/bots/attachmentsBot.js?range=119,128-129)]
 
 Para enviar ao usuário uma única parte do conteúdo, como uma imagem ou um vídeo, é possível enviar mídia de algumas maneiras diferentes. Primeiro, como um anexo embutido:
 
-**bots/attachmentsBot.js**  
+**bots/attachmentsBot.js**
+
 [!code-javascript[inline attachments](~/../botbuilder-samples/samples/javascript_nodejs/15.handling-attachments/bots/attachmentsBot.js?range=170-179)]
 
 Em seguida, um anexo carregado:
 
-**bots/attachmentsBot.js**  
+**bots/attachmentsBot.js**
+
 [!code-javascript[uploaded attachments](~/../botbuilder-samples/samples/javascript_nodejs/15.handling-attachments/bots/attachmentsBot.js?range=197-215)]
 
 Por fim, um anexo de internet contido em uma URL:
 
-**bots/attachmentsBot.js**  
+**bots/attachmentsBot.js**
+
 [!code-javascript[internet attachments](~/../botbuilder-samples/samples/javascript_nodejs/15.handling-attachments/bots/attachmentsBot.js?range=184-191)]
 
 ### <a name="python"></a>[Python](#tab/python)
@@ -102,20 +111,27 @@ O código-fonte mostrado aqui se baseia no exemplo [Tratamento de Anexos](https:
 
 O código a seguir é a configuração da resposta para um anexo embutido:
 
-**bots/attachments_bot.py**  
+**bots/attachments_bot.py**
+
 [!code-python[attachments](~/../botbuilder-samples/samples/python/15.handling-attachments/bots/attachments_bot.py?range=112-113)]
 
 Para enviar ao usuário uma única parte do conteúdo, como uma imagem ou um vídeo, é possível enviar mídia de algumas maneiras diferentes. Primeiro, como um anexo embutido:
 
-**bots/attachments_bot.py** [!code-python[inline attachments](~/../botbuilder-samples/samples/python/15.handling-attachments/bots/attachments_bot.py?range=153-170)]
+**bots/attachments_bot.py**
+
+[!code-python[inline attachments](~/../botbuilder-samples/samples/python/15.handling-attachments/bots/attachments_bot.py?range=153-170)]
 
 Em seguida, um anexo carregado:
 
-**bots/attachments_bot.py** [!code-python[upload attachments](~/../botbuilder-samples/samples/python/15.handling-attachments/bots/attachments_bot.py?range=172-207)]
+**bots/attachments_bot.py**
+
+[!code-python[upload attachments](~/../botbuilder-samples/samples/python/15.handling-attachments/bots/attachments_bot.py?range=172-207)]
 
 Por fim, um anexo de internet contido em uma URL:
 
-**bots/attachments_bot.py** [!code-python[internet attachments](~/../botbuilder-samples/samples/python/15.handling-attachments/bots/attachments_bot.py?range=209-218)]
+**bots/attachments_bot.py**
+
+[!code-python[internet attachments](~/../botbuilder-samples/samples/python/15.handling-attachments/bots/attachments_bot.py?range=209-218)]
 
 ---
 
@@ -131,7 +147,8 @@ Para redigir uma mensagem com um cartão hero e um botão, anexe um `HeroCard` a
 
 O código-fonte mostrado aqui se baseia no exemplo [Tratamento de Anexos](https://aka.ms/bot-attachments-sample-code).
 
-**Bots/AttachmentsBot.cs**  
+**Bots/AttachmentsBot.cs**
+
 [!code-csharp[Hero card](~/../botbuilder-samples/samples/csharp_dotnetcore/15.handling-attachments/Bots/AttachmentsBot.cs?range=39-58)]
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
@@ -140,7 +157,8 @@ Para redigir uma mensagem com um cartão hero e um botão, anexe um `HeroCard` a
 
 O código-fonte mostrado aqui se baseia no exemplo [Tratamento de Anexos JS](https://aka.ms/bot-attachments-sample-code-js).
 
-**bots/attachmentsBot.js**  
+**bots/attachmentsBot.js**
+
 [!code-javascript[hero card](~/../botbuilder-samples/samples/javascript_nodejs/15.handling-attachments/bots/attachmentsBot.js?range=147-165)]
 
 ### <a name="python"></a>[Python](#tab/python)
@@ -149,7 +167,9 @@ Para redigir uma mensagem com um cartão hero e um botão, anexe um `HeroCard` a
 
 O código-fonte mostrado aqui se baseia no exemplo [Tratamento de Anexos](https://aka.ms/bot-media-attachments-python-sample-code).
 
-**bots/attachments_bot.py** [!code-python[hero card](~/../botbuilder-samples/samples/python/15.handling-attachments/bots/attachments_bot.py?range=125-148)]
+**bots/attachments_bot.py**
+
+[!code-python[hero card](~/../botbuilder-samples/samples/python/15.handling-attachments/bots/attachments_bot.py?range=125-148)]
 
 ---
 
@@ -179,33 +199,42 @@ O código a seguir mostra exemplos que usam diversos eventos de cartão avançad
 
 Para obter exemplos de todos os cartões disponíveis, confira o [exemplo de cartões C#](https://aka.ms/bot-cards-sample-code).
 
-**Cards.cs**  
+**Cards.cs**
+
 [!code-csharp[hero cards](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Cards.cs?range=27-40)]
 
-**Cards.cs**  
+**Cards.cs**
+
 [!code-csharp[cards](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Cards.cs?range=91-100)]
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Para obter exemplos de todos os cartões disponíveis, confira o [exemplo de cartões JS](https://aka.ms/bot-cards-js-sample-code).
 
-**dialogs/mainDialog.js**  
+**dialogs/mainDialog.js**
+
 [!code-javascript[hero cards](~/../botbuilder-samples/samples/javascript_nodejs/06.using-cards/dialogs/mainDialog.js?range=206-218)]
 
-**dialogs/mainDialog.js**  
+**dialogs/mainDialog.js**
+
 [!code-javascript[sign in cards](~/../botbuilder-samples/samples/javascript_nodejs/06.using-cards/dialogs/mainDialog.js?range=259-265)]
 
 ### <a name="python"></a>[Python](#tab/python)
 
 Para obter exemplos de todos os cartões disponíveis, confira o [exemplo de cartões de Python](https://aka.ms/bot-cards-python-sample-code).
 
-**dialogs/main_dialog.py** [!code-python[hero cards](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/main_dialog.py?range=163-179)]
+**dialogs/main_dialog.py**
 
-**dialogs/main_dialog.py** [!code-python[hero cards](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/main_dialog.py?range=245-256)]
+[!code-python[hero cards](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/main_dialog.py?range=163-179)]
+
+**dialogs/main_dialog.py**
+
+[!code-python[hero cards](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/main_dialog.py?range=245-256)]
 
 ---
 
 ## <a name="send-an-adaptive-card"></a>Enviar um cartão adaptável
+
 O Cartão Adaptável e MessageFactory são usados para enviar mensagens avançadas incluindo textos, imagens, vídeo, áudio e arquivos para se comunicar com os usuários. No entanto, há algumas diferenças entre eles.
 
 Primeiro, somente alguns canais dão suporte aos Cartões Adaptáveis, e os canais que dão suporte podem dar suporte parcial aos Cartões Adaptáveis. Por exemplo, se você enviar um Cartão Adaptável no Facebook, os botões não funcionarão se textos e imagens funcionarem bem. MessageFactory é simplesmente uma classe auxiliar dentro do SDK do Bot Framework para automatizar as etapas de criação para você e oferece suporte para a maioria dos canais.
@@ -225,34 +254,42 @@ Para usar Cartões Adaptáveis, certifique-se de adicionar o pacote NuGet `Adapt
 
 O código-fonte mostrado aqui se baseia no exemplo [Usando cartões](https://aka.ms/bot-cards-sample-code).
 
-**Cards.cs**  
+**Cards.cs**
+
 [!code-csharp[adaptive cards](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Cards.cs?range=13-25)]
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Para usar Cartões Adaptáveis, certifique-se de adicionar o pacote npm `adaptivecards`.
 
-O código-fonte mostrado aqui se baseia no exemplo [Usando Cartões JS](https://aka.ms/bot-cards-js-sample-code). 
+O código-fonte mostrado aqui se baseia no exemplo [Usando Cartões JS](https://aka.ms/bot-cards-js-sample-code).
 
 Aqui, o cartão Adaptável é armazenado em seu próprio arquivo e incluído em nosso bot:
 
-**resources/adaptiveCard.json**  
+**resources/adaptiveCard.json**
+
 [!code-json[adaptive cards](~/../botbuilder-samples/samples/javascript_nodejs/06.using-cards/resources/adaptiveCard.json)]
 
 O cartão é criado da seguinte maneira:
 
-**dialogs/mainDialog.js** [!code-javascript[adaptive cards](~/../botbuilder-samples/samples/javascript_nodejs/06.using-cards/dialogs/mainDialog.js?range=6)]
+**dialogs/mainDialog.js**
+
+[!code-javascript[adaptive cards](~/../botbuilder-samples/samples/javascript_nodejs/06.using-cards/dialogs/mainDialog.js?range=6)]
 [!code-javascript[adaptive cards](~/../botbuilder-samples/samples/javascript_nodejs/06.using-cards/dialogs/mainDialog.js?range=170-172)]
 
 ### <a name="python"></a>[Python](#tab/python)
 
 O código-fonte mostrado aqui se baseia no exemplo [Usando cartões](https://aka.ms/bot-cards-python-sample-code).
 
-**dialogs/resources/adaptive_card_example.py** [!code-python[adaptive cards](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/resources/adaptive_card_example.py)]
+**dialogs/resources/adaptive_card_example.py**
+
+[!code-python[adaptive cards](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/resources/adaptive_card_example.py)]
 
 O cartão é criado da seguinte maneira:
 
-**bots/main_dialog.py** [!code-python[hero cards](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/main_dialog.py?range=127-128)]
+**bots/main_dialog.py**
+
+[!code-python[hero cards](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/main_dialog.py?range=127-128)]
 
 ---
 
@@ -266,17 +303,20 @@ O código-fonte mostrado aqui se baseia no [exemplo Cartões](https://aka.ms/bot
 
 Primeiro, crie a resposta e defina os anexos como uma lista.
 
-**Dialogs/MainDialog.cs**  
+**Dialogs/MainDialog.cs**
+
 [!code-csharp[carousel of cards](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Dialogs/MainDialog.cs?range=61-66)]
 
 Em seguida, adicione os anexos. Aqui estamos adicionando-os um de cada vez, mas sinta-se à vontade para manipular a lista e adicionar os cartões como preferir.
 
-**Dialogs/MainDialog.cs**  
+**Dialogs/MainDialog.cs**
+
 [!code-csharp[carousel of cards](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Dialogs/MainDialog.cs?range=104-113)]
 
 Depois que os anexos forem adicionados, você poderá enviar a resposta como faria com qualquer outra.
 
-**Dialogs/MainDialog.cs**  
+**Dialogs/MainDialog.cs**
+
 [!code-csharp[carousel of cards](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Dialogs/MainDialog.cs?range=117-118)]
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
@@ -285,8 +325,7 @@ O código-fonte mostrado aqui se baseia no [exemplo de cartões JS](https://aka.
 
 Para enviar um carrossel de cartões, envie uma resposta com os anexos como uma matriz e o tipo de layout definido como `Carousel`:
 
-**dialogs/mainDialog.js**  
-[!code-javascript[carousel of cards](~/../botbuilder-samples/samples/javascript_nodejs/06.using-cards/dialogs/mainDialog.js?range=97-108)]
+**dialogs/mainDialog.js** [!code-javascript[carousel of cards](~/../botbuilder-samples/samples/javascript_nodejs/06.using-cards/dialogs/mainDialog.js?range=97-108)]
 
 [!code-javascript[carousel of cards](~/../botbuilder-samples/samples/javascript_nodejs/06.using-cards/dialogs/mainDialog.js?range=113-116)]
 
@@ -296,11 +335,15 @@ O código-fonte mostrado aqui se baseia no [exemplo de cartões de Python](https
 
 Para enviar um carrossel de cartões, envie uma resposta com os anexos como uma matriz e o tipo de layout definido como `Carousel`:
 
-**dialogs/main_dialog.py** [!code-python[hero cards](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/main_dialog.py?range=104-112)]
+**dialogs/main_dialog.py**
+
+[!code-python[hero cards](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/main_dialog.py?range=104-112)]
 
 Depois que os anexos forem adicionados, você poderá enviar a resposta.
 
-**dialogs/main_dialog.py** [!code-python[hero cards](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/main_dialog.py?range=114-115)]
+**dialogs/main_dialog.py**
+
+[!code-python[hero cards](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/main_dialog.py?range=114-115)]
 
 ---
 

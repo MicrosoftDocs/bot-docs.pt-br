@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/02/2019
-ms.openlocfilehash: 7788a3bc8ecc3ee01cd44b25297a637f8fc07b01
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: edfb73febe4b250d52b46065e3318a32a7258922
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75790067"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81379394"
 ---
 # <a name="api-reference"></a>Referência de API
 
@@ -110,6 +110,7 @@ O <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" target="_blan
 | 401 | O bot não está autorizado a fazer a solicitação. |
 | 403 | O bot não tem permissão para executar a operação solicitada. |
 | 404 | O recurso solicitado não foi localizado. |
+| 405 | O canal não é compatível com a operação solicitada. |
 | 500 | Ocorreu um erro interno no servidor. |
 | 503 | O serviço está indisponível. |
 
@@ -124,16 +125,17 @@ Use essas operações para criar conversas, enviar mensagens (atividades) e gere
 | Operação | Descrição |
 |----|----|
 | [Criar conversa](#create-conversation) | Cria uma nova conversa. |
-| [Enviar para conversa](#send-to-conversation) | Envia uma atividade (mensagem) para o final da conversa especificada. |
-| [Responder a atividade](#reply-to-activity) | Envia uma atividade (mensagem) para a conversa especificada, como uma resposta à atividade especificada. |
-| [Obter conversas](#get-conversations) | Obtém uma lista das conversas de que o bot participou. |
-| [Obter membros da conversa](#get-conversation-members) | Obtém os membros da conversa especificada. |
-| [Obter membros paginados da conversa](#get-conversation-paged-members) | Obtém os membros da conversa especificada, uma página de cada vez. |
-| [Obter membros da atividade](#get-activity-members) | Obtém os membros da atividade especificada na conversa especificada. |
-| [Atualizar atividade](#update-activity) | Atualiza uma atividade existente. |
 | [Excluir atividade](#delete-activity) | Exclui uma atividade existente. |
 | [Excluir membro da conversa](#delete-conversation-member) | Remove um membro de uma conversa. |
+| [Obter membros da atividade](#get-activity-members) | Obtém os membros da atividade especificada na conversa especificada. |
+| [Obter membro da conversa](#get-conversation-member) | Obtém detalhes sobre um membro de uma conversa. |
+| [Obter membros da conversa](#get-conversation-members) | Obtém os membros da conversa especificada. |
+| [Obter membros paginados da conversa](#get-conversation-paged-members) | Obtém os membros da conversa especificada, uma página de cada vez. |
+| [Obter conversas](#get-conversations) | Obtém uma lista das conversas de que o bot participou. |
+| [Responder a atividade](#reply-to-activity) | Envia uma atividade (mensagem) para a conversa especificada, como uma resposta à atividade especificada. |
 | [Enviar histórico da conversa](#send-conversation-history) | Carrega uma transcrição de atividades anteriores para a conversa. |
+| [Enviar para conversa](#send-to-conversation) | Envia uma atividade (mensagem) para o final da conversa especificada. |
+| [Atualizar atividade](#update-activity) | Atualiza uma atividade existente. |
 | [Carregar anexo ao canal](#upload-attachment-to-channel) | Carrega um anexo diretamente no armazenamento de blobs de um canal. |
 
 ### <a name="create-conversation"></a>Criar conversa
@@ -148,97 +150,6 @@ POST /v3/conversations
 |----|----|
 | **Corpo da solicitação** | Um objeto [ConversationParameters](#conversationparameters-object) |
 | **Retorna** | Um objeto [ConversationResourceResponse](#conversationresourceresponse-object) |
-
-### <a name="send-to-conversation"></a>Enviar para conversa
-
-Envia uma atividade (mensagem) para a conversa especificada. A atividade será anexada ao final da conversa, de acordo com o carimbo de data/hora ou semântica do canal. Para responder a uma mensagem específica na conversa, use [Responder a atividade](#reply-to-activity).
-
-```http
-POST /v3/conversations/{conversationId}/activities
-```
-
-| | |
-|----|----|
-| **Corpo da solicitação** | Um objeto [Atividade](#activity-object) |
-| **Retorna** | Um objeto [ResourceResponse](#resourceresponse-object) |
-
-### <a name="reply-to-activity"></a>Responder a atividade
-
-Envia uma atividade (mensagem) para a conversa especificada, como uma resposta à atividade especificada. A atividade será adicionada como resposta a outra atividade, se houver suporte para isso no canal. Se o canal não der suporte a respostas aninhadas, essa operação se comportará como [Enviar para conversa](#send-to-conversation).
-
-```http
-POST /v3/conversations/{conversationId}/activities/{activityId}
-```
-
-| | |
-|----|----|
-| **Corpo da solicitação** | Um objeto [Atividade](#activity-object) |
-| **Retorna** | Um objeto [ResourceResponse](#resourceresponse-object) |
-
-### <a name="get-conversations"></a>Obter conversas
-
-Obtém uma lista das conversas de que o bot participou.
-
-```http
-GET /v3/conversations?continuationToken={continuationToken}
-```
-
-| | |
-|----|----|
-| **Corpo da solicitação** | n/d |
-| **Retorna** | Um objeto [ConversationsResult](#conversationsresult-object) |
-
-### <a name="get-conversation-members"></a>Obter membros da conversa
-
-Obtém os membros da conversa especificada.
-
-```http
-GET /v3/conversations/{conversationId}/members
-```
-
-| | |
-|----|----|
-| **Corpo da solicitação** | n/d |
-| **Retorna** | Uma matriz de objetos [ChannelAccount](#channelaccount-object) |
-
-### <a name="get-conversation-paged-members"></a>Obter membros paginados da conversa
-
-Obtém os membros da conversa especificada, uma página de cada vez.
-
-```http
-GET /v3/conversations/{conversationId}/pagedmembers?pageSize={pageSize}&continuationToken={continuationToken}
-```
-
-| | |
-|----|----|
-| **Corpo da solicitação** | n/d |
-| **Retorna** | Um objeto [PagedMembersResult](#pagedmembersresult-object) |
-
-### <a name="get-activity-members"></a>Obter membros da atividade
-
-Obtém os membros da atividade especificada na conversa especificada.
-
-```http
-GET /v3/conversations/{conversationId}/activities/{activityId}/members
-```
-
-| | |
-|----|----|
-| **Corpo da solicitação** | n/d |
-| **Retorna** | Uma matriz de objetos [ChannelAccount](#channelaccount-object) |
-
-### <a name="update-activity"></a>Atualizar atividade
-
-Alguns canais permitem editar uma atividade existente para refletir o novo estado de uma conversa de bot. Por exemplo, será possível remover botões de uma mensagem na conversa depois que o usuário clicar em um dos botões. Se tiver êxito, essa operação atualizará a atividade especificada dentro da conversa especificada.
-
-```http
-PUT /v3/conversations/{conversationId}/activities/{activityId}
-```
-
-| | |
-|----|----|
-| **Corpo da solicitação** | Um objeto [Atividade](#activity-object) |
-| **Retorna** | Um objeto [ResourceResponse](#resourceresponse-object) |
 
 ### <a name="delete-activity"></a>Excluir atividade
 
@@ -266,6 +177,84 @@ DELETE /v3/conversations/{conversationId}/members/{memberId}
 | **Corpo da solicitação** | n/d |
 | **Retorna** | Um código de status HTTP que indica o resultado da operação. Nada é especificado no corpo da resposta. |
 
+### <a name="get-activity-members"></a>Obter membros da atividade
+
+Obtém os membros da atividade especificada na conversa especificada.
+
+```http
+GET /v3/conversations/{conversationId}/activities/{activityId}/members
+```
+
+| | |
+|----|----|
+| **Corpo da solicitação** | n/d |
+| **Retorna** | Uma matriz de objetos [ChannelAccount](#channelaccount-object) |
+
+### <a name="get-conversations"></a>Obter conversas
+
+Obtém uma lista das conversas de que o bot participou.
+
+```http
+GET /v3/conversations?continuationToken={continuationToken}
+```
+
+| | |
+|----|----|
+| **Corpo da solicitação** | n/d |
+| **Retorna** | Um objeto [ConversationsResult](#conversationsresult-object) |
+
+### <a name="get-conversation-member"></a>Obter membro da conversa
+
+Obtém detalhes sobre um membro específico de uma conversa específica.
+
+```http
+GET /v3/conversations/{conversationId}/members/{memberId}
+```
+
+| | |
+|----|----|
+| **Corpo da solicitação** | n/d |
+| **Retorna** | Um objeto [ChannelAccount](#channelaccount-object) para o membro. |
+
+### <a name="get-conversation-members"></a>Obter membros da conversa
+
+Obtém os membros da conversa especificada.
+
+```http
+GET /v3/conversations/{conversationId}/members
+```
+
+| | |
+|----|----|
+| **Corpo da solicitação** | n/d |
+| **Retorna** | Uma matriz de objetos [ChannelAccount](#channelaccount-object) para os membros da conversa. |
+
+### <a name="get-conversation-paged-members"></a>Obter membros paginados da conversa
+
+Obtém os membros da conversa especificada, uma página de cada vez.
+
+```http
+GET /v3/conversations/{conversationId}/pagedmembers?pageSize={pageSize}&continuationToken={continuationToken}
+```
+
+| | |
+|----|----|
+| **Corpo da solicitação** | n/d |
+| **Retorna** | Um objeto [PagedMembersResult](#pagedmembersresult-object) |
+
+### <a name="reply-to-activity"></a>Responder a atividade
+
+Envia uma atividade (mensagem) para a conversa especificada, como uma resposta à atividade especificada. A atividade será adicionada como resposta a outra atividade, se houver suporte para isso no canal. Se o canal não der suporte a respostas aninhadas, essa operação se comportará como [Enviar para conversa](#send-to-conversation).
+
+```http
+POST /v3/conversations/{conversationId}/activities/{activityId}
+```
+
+| | |
+|----|----|
+| **Corpo da solicitação** | Um objeto [Atividade](#activity-object) |
+| **Retorna** | Um objeto [ResourceResponse](#resourceresponse-object) |
+
 ### <a name="send-conversation-history"></a>Enviar histórico da conversa
 
 Carrega uma transcrição de atividades anteriores para a conversa para que o cliente possa renderizá-las.
@@ -278,6 +267,32 @@ POST /v3/conversations/{conversationId}/activities/history
 |----|----|
 | **Corpo da solicitação** | Um objeto [Transcript](#transcript-object). |
 | **Retorna** | Um objeto [ResourceResponse](#resourceresponse-object). |
+
+### <a name="send-to-conversation"></a>Enviar para conversa
+
+Envia uma atividade (mensagem) para a conversa especificada. A atividade será anexada ao final da conversa, de acordo com o carimbo de data/hora ou semântica do canal. Para responder a uma mensagem específica na conversa, use [Responder a atividade](#reply-to-activity).
+
+```http
+POST /v3/conversations/{conversationId}/activities
+```
+
+| | |
+|----|----|
+| **Corpo da solicitação** | Um objeto [Atividade](#activity-object) |
+| **Retorna** | Um objeto [ResourceResponse](#resourceresponse-object) |
+
+### <a name="update-activity"></a>Atualizar atividade
+
+Alguns canais permitem editar uma atividade existente para refletir o novo estado de uma conversa de bot. Por exemplo, será possível remover botões de uma mensagem na conversa depois que o usuário clicar em um dos botões. Se tiver êxito, essa operação atualizará a atividade especificada dentro da conversa especificada.
+
+```http
+PUT /v3/conversations/{conversationId}/activities/{activityId}
+```
+
+| | |
+|----|----|
+| **Corpo da solicitação** | Um objeto [Atividade](#activity-object) |
+| **Retorna** | Um objeto [ResourceResponse](#resourceresponse-object) |
 
 ### <a name="upload-attachment-to-channel"></a>Carregar anexo ao canal
 

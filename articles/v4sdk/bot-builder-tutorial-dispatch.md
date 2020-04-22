@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 01/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 32394b9812340467e9ae584c55fd047b973be1bc
-ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
+ms.openlocfilehash: 48cc24fd3e78d39388bb600477f3d23e03a89fd9
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77441665"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81395649"
 ---
 # <a name="use-multiple-luis-and-qna-models"></a>Usar vários modelos de LUIS e QnA
 
@@ -22,7 +22,7 @@ ms.locfileid: "77441665"
 
 Se um bot usar vários modelos do LUIS e bases de dados de conhecimento do QnA Maker, você poderá usar a ferramenta Dispatch para determinar qual modelo do LUIS ou base de dados de conhecimento do QnA Maker tem a melhor correspondência com a entrada do usuário. A ferramenta Dispatch faz isso criando um aplicativo LUIS individual a fim de encaminhar a entrada do usuário para o modelo correto. Para obter mais informações sobre o Dispatch, incluindo os comandos da CLI, consulte o arquivo [LEIAME][dispatch-readme].
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento de [noções básicas de bot](bot-builder-basics.md), [LUIS][howto-luis] e [QnA Maker][howto-qna].
 - [Ferramenta de expedição](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Dispatch)
@@ -253,7 +253,7 @@ Para cada uma das entidades mostradas abaixo, adicione os valores que você regi
 ```json
 "MicrosoftAppId": "",
 "MicrosoftAppPassword": "",
-  
+
 "QnAKnowledgebaseId": "<knowledge-base-id>",
 "QnAEndpointKey": "<qna-maker-resource-key>",
 "QnAEndpointHostName": "<your-hostname>",
@@ -286,8 +286,7 @@ npm install --save dotenv
 
 Depois que todos os aplicativos de serviço forem criados, as informações para cada um precisarão ser adicionadas ao arquivo “.env”. O código inicial do [Exemplo de JavaScript][js-sample] contém um arquivo .env vazio.
 
-**.env**  
-[!code-file[EmptyEnv](~/../botbuilder-samples/samples/javascript_nodejs/14.nlp-with-dispatch/.env?range=1-10)]
+**.env** [!code-file[EmptyEnv](~/../botbuilder-samples/samples/javascript_nodejs/14.nlp-with-dispatch/.env?range=1-10)]
 
 Adicione os valores de conexão de serviço conforme mostrado abaixo:
 
@@ -357,7 +356,7 @@ Em **BotServices.cs**, as informações contidas no arquivo de configuração _a
 
 **BotServices.cs**
 
-[!code-csharp[ReadConfigurationInfo](~/../botbuilder-samples/samples/csharp_dotnetcore/14.nlp-with-dispatch/BotServices.cs?range=14-45)]
+[!code-csharp[ReadConfigurationInfo](~/../botbuilder-samples/samples/csharp_dotnetcore/14.nlp-with-dispatch/BotServices.cs?range=10-47)]
 
 ## <a name="javascript"></a>[JavaScript](#tab/js)
 
@@ -426,8 +425,7 @@ Se o método `q_sample-qna` for invocado, ele usará a entrada do usuário conti
 
 Quando o modelo produz um resultado, ele indica qual serviço pode processar mais adequadamente a declaração. O código neste exemplo usa a _topIntent_ reconhecida para mostrar como encaminhar a solicitação para o serviço correspondente.
 
-**bots/dispatchBot.js**  
-[!code-javascript[dispatchToTopIntentAsync](~/../botbuilder-samples/samples/javascript_nodejs/14.nlp-with-dispatch/bots/dispatchBot.js?range=61-77)]
+**bots/dispatchBot.js** [!code-javascript[dispatchToTopIntentAsync](~/../botbuilder-samples/samples/javascript_nodejs/14.nlp-with-dispatch/bots/dispatchBot.js?range=61-77)]
 
 Se o método `processHomeAutomation` ou `processWeather` for invocado, ele transmitirá os resultados do modelo de expedição em _recognizerResult.luisResult_. O método especificado fornece comentários do usuário mostrando a principal intenção do modelo de expedição, além de uma lista classificada de todas as intenções e entidades que foram detectadas.
 
@@ -452,7 +450,7 @@ Se o método `q_sample-qna` for invocado, ele usará a entrada do usuário conti
 
 ## <a name="test-your-bot"></a>Testar seu bot
 
-1. Usando o ambiente de desenvolvimento, inicie o código de exemplo. Observe o endereço de _localhost_ mostrado na barra de endereços da janela do navegador aberta por seu aplicativo: "https://localhost:<Port_Number>". 
+1. Usando o ambiente de desenvolvimento, inicie o código de exemplo. Observe o endereço de _localhost_ mostrado na barra de endereços da janela do navegador aberta por seu aplicativo: "https://localhost:<Port_Number>".
 1. Abre o Bot Framework Emulator e selecione `Create a new bot configuration`. Um arquivo `.bot` permite que você use o _Inspetor_ do emulador de bor para ver o JSON retornado do LUIS e do QnA Maker.
 1. Na caixa de diálogo **Nova configuração de bot**, digite o nome do bot e a URL do ponto de extremidade, como `http://localhost:3978/api/messages`. Salve o arquivo na raiz de seu projeto de código de amostra do bot.
 1. Abra o arquivo de bot e adicione seções para seus aplicativos do LUIS e do QnA Maker. Use [este arquivo de exemplo](https://github.com/microsoft/botbuilder-tools/blob/master/packages/MSBot/docs/sample-bot-file.json) como modelo para as configurações. Salve as alterações.
@@ -549,7 +547,7 @@ Você pode usar a ferramenta de linha de comando [Dispatch][dispatch-readme] par
 
 Este exemplo é baseado em um modelo predefinido do LUIS. Confira [aqui](https://aka.ms/create-luis-model#updating-your-cognitive-models) mais informações para ajudá-lo a atualizar esse modelo ou criar um novo modelo do LUIS.
 
-Depois de atualizar os modelos subjacentes (QnA ou LUIS), execute `dispatch refresh` para atualizar seu aplicativo de Expedição do LUIS. `dispatch refresh` é basicamente o mesmo comando que `dispatch create`, exceto pelo fato de que nenhuma nova ID do aplicativo do LUIS é criada. 
+Depois de atualizar os modelos subjacentes (QnA ou LUIS), execute `dispatch refresh` para atualizar seu aplicativo de Expedição do LUIS. `dispatch refresh` é basicamente o mesmo comando que `dispatch create`, exceto pelo fato de que nenhuma nova ID do aplicativo do LUIS é criada.
 
 Observe que os enunciados que foram adicionados diretamente no LUIS não serão mantidos ao executar `dispatch refresh`. Para manter esses enunciados extras no aplicativo de expedição, adicione-os em um arquivo de texto (um enunciado por linha) e, em seguida, adicione o arquivo à Expedição executando o comando:
 

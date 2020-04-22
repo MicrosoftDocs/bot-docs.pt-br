@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/19/2020
-ms.openlocfilehash: aac5f7ff6868d79ef398cbe51fc9e5a6d0f424a1
-ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
+ms.openlocfilehash: c1e95370a58fa1f020bbc170c83ee732b10e92b9
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2020
-ms.locfileid: "80117531"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81395669"
 ---
 # <a name="bot-framework-frequently-asked-questions"></a>Perguntas frequentes sobre o Bot Framework
 
@@ -75,14 +75,14 @@ Para obter mais informações, confira as referências a seguir:
 ### <a name="v3-status-summary"></a>Resumo do Status V3
 
 #### <a name="abs-service"></a>Serviço de ABS
-1.  O lado do serviço do ABS continuará a dar suporte a bots do V3 em execução sem nenhum fim de vida planejado. Eventuais bots em execução não serão interrompidos. 
-2.  Os canais permanecerão compatíveis com V3 sem interrupção nem plano de fim de vida útil.
-3.  A criação de novos bots V3 está desabilitada no portal. No entanto, os usuários especialistas que desejarem implantar seus bots V3 de modo independente e sem o ABS (por exemplo, como serviço de aplicativo Web) poderão fazê-lo.
+1.    O lado do serviço do ABS continuará a dar suporte a bots do V3 em execução sem nenhum fim de vida planejado. Eventuais bots em execução não serão interrompidos. 
+2.    Os canais permanecerão compatíveis com V3 sem interrupção nem plano de fim de vida útil.
+3.    A criação de novos bots V3 está desabilitada no portal. No entanto, os usuários especialistas que desejarem implantar seus bots V3 de modo independente e sem o ABS (por exemplo, como serviço de aplicativo Web) poderão fazê-lo.
 
 #### <a name="sdk-and-tools"></a>SDK e Ferramentas
-1.  Não estamos investindo na V3 do lado do SDK e aplicaremos apenas correções de segurança críticas às ramificações do SDK no futuro próximo (exceção: planejamos adicionar um conector de habilidades para permitir que os bots V4 chamem bots V3 herdados).
-2.  O desenvolvimento de SDKs e ferramentas é exclusivamente no V4, sem nenhum trabalho V3 feito ou planejado (portanto, já é o cenário em que estamos).
-3.  Não impedimos que ninguém execute ferramentas antigas para gerenciar seus próprios bots V3. 
+1.    Não estamos investindo na V3 do lado do SDK e aplicaremos apenas correções de segurança críticas às ramificações do SDK no futuro próximo (exceção: planejamos adicionar um conector de habilidades para permitir que os bots V4 chamem bots V3 herdados).
+2.    O desenvolvimento de SDKs e ferramentas é exclusivamente no V4, sem nenhum trabalho V3 feito ou planejado (portanto, já é o cenário em que estamos).
+3.    Não impedimos que ninguém execute ferramentas antigas para gerenciar seus próprios bots V3. 
 
 
 ## <a name="how-can-i-migrate-azure-bot-service-from-one-region-to-another"></a>Como migrar o Serviço de Bot do Azure de uma região para outra?
@@ -141,20 +141,22 @@ Sim. Seu bot pode ser hospedado em qualquer lugar na Internet. Em seus próprios
 
 ### <a name="how-do-you-ban-or-remove-bots-from-the-service"></a>Como os bots são vetados ou removidos do serviço?
 
-Os usuários têm uma maneira de relatar o comportamento inadequado de um bot por meio do cartão de visita do bot no diretório. Os desenvolvedores precisam respeitar os termos de serviço da Microsoft para participar do serviço.
+Os usuários têm um modo para relatar o comportamento inadequado de um bot, que é o cartão de visita do bot no diretório. Os desenvolvedores precisam respeitar os termos de serviço da Microsoft para participar do serviço.
 
 ### <a name="which-specific-urls-do-i-need-to-whitelist-in-my-corporate-firewall-to-access-bot-framework-services"></a>Quais URLs específicas preciso incluir na lista de permissões de meu firewall corporativo para acessar os serviços Bot Framework?
+
 Se tiver um firewall de saída bloqueando o tráfego do seu bot com a Internet, você precisará colocar as URLs a seguir no firewall:
-- login.botframework.com (autenticação do Bot)
-- login.microsoftonline.com (autenticação do Bot)
-- westus.api.cognitive.microsoft.com (para a integração NLP do Luis.ai)
-- state.botframework.com (armazenamento de estado do Bot para criação de protótipos)
-- cortanabfchanneleastus.azurewebsites.net (canal da Cortana)
-- cortanabfchannelwestus.azurewebsites.net (canal da Cortana)
-- *.botframework.com (canais)
+
+- `login.botframework.com` (Autenticação do bot)
+- `login.microsoftonline.com` (Autenticação do bot)
+- `westus.api.cognitive.microsoft.com` (para integração do NLP no Luis.ai)
+- `cortanabfchanneleastus.azurewebsites.net` (canal da Cortana)
+- `cortanabfchannelwestus.azurewebsites.net` (Canal da Cortana)
+- `*.botframework.com` (canais)
+- `state.botframework.com` (compatibilidade com versões anteriores)
 - URLs adicionais para canais específicos do Bot Framework
 
-> [!NOTE] 
+> [!NOTE]
 > Você poderá usar `<channel>.botframework.com` se preferir não adicionar uma URL com um asterisco à lista de permissões. `<channel>` é igual a cada canal que seu bot usa, como `directline.botframework.com`, `webchat.botframework.com` e `slack.botframework.com`. Também vale a pena observar o tráfego em seu firewall enquanto testa o bot para verificar se nada mais está sendo bloqueado.
 
 ### <a name="can-i-block-all-traffic-to-my-bot-except-traffic-from-the-bot-framework-service"></a>Posso bloquear todo o tráfego para o meu bot, exceto o tráfego do Bot Framework Service?
@@ -185,17 +187,17 @@ Observe que essas são as conexões de saída do bot para a Internet. Não há u
 ### <a name="what-is-rate-limiting"></a>O que é a limitação de taxa?
 O serviço Bot Framework precisa proteger a si próprio e a seus clientes contra padrões de chamada abusivos (por exemplo, ataque de negação de serviço), de modo que nenhum bot possa prejudicar o desempenho de outros bots. Para obter esse tipo de proteção, adicionamos limites de taxa (também conhecidos como limitação) aos nossos pontos de extremidade. Impondo um limite de taxa, podemos restringir a frequência com a qual um cliente ou bot pode fazer uma chamada específica. Por exemplo: com a limitação de taxa habilitada, se um bot desejar postar um grande número de atividades, ele precisará espaçá-las por um período. Observe que a finalidade da limitação de taxa não é limitar o volume total de um bot. Ela se destina a prevenir abusos da infraestrutura de conversa que não seguem os padrões de conversa humana. Por exemplo, inundar duas conversas com mais conteúdo do que duas pessoas jamais poderiam consumir.
 
-### <a name="how-will-i-know-if-im-impacted"></a>Como saberei se foi afetado?
-É improvável que você enfrentará a limitação de taxa, mesmo com um alto volume. A maior parte da limitação de taxa só ocorrerá devido ao envio em massa de atividades (de um bot ou de um cliente), um teste de carga extrema ou um bug. Quando uma solicitação é limitada, uma resposta HTTP 429 (Número Excessivo de Solicitações) é retornada juntamente com um cabeçalho Retry-After, que indica o tempo (em segundos) que é necessário aguardar antes do êxito da nova tentativa da solicitação. Colete essas informações habilitando a análise no bot por meio do Azure Application Insights. Se preferir, adicione um código ao bot para registrar mensagens em log. 
+### <a name="how-will-i-know-if-im-impacted"></a>Como poderei saber se fui afetado?
+É improvável que você enfrente a limitação de taxa, mesmo com um alto volume. A maior parte da limitação de taxa só ocorrerá devido ao envio em massa de atividades (de um bot ou de um cliente), um teste de carga extrema ou um bug. Quando uma solicitação é limitada, uma resposta HTTP 429 (Número Excessivo de Solicitações) é retornada juntamente com um cabeçalho Retry-After, que indica o tempo (em segundos) que é necessário aguardar antes do êxito da nova tentativa da solicitação. Colete essas informações habilitando a análise no bot por meio do Azure Application Insights. Se preferir, adicione um código ao bot para registrar mensagens em log. 
 
 ### <a name="how-does-rate-limiting-occur"></a>Como ocorre a limitação de taxa?
 Isso pode ocorrer se:
--   um bot envia mensagens com muita frequência
--   um cliente de um bot envia mensagens com muita frequência
--   os clientes da Linha Direta solicitam um novo Soquete da Web com muita frequência
+-    um bot envia mensagens com muita frequência
+-    um cliente de um bot envia mensagens com muita frequência
+-    os clientes da Linha Direta solicitam um novo Soquete da Web com muita frequência
 
 ### <a name="what-are-the-rate-limits"></a>Quais são os limites de taxa?
-Estamos continuamente ajustando os limites de taxa para torná-los os mais brandos possíveis, ao mesmo tempo que protegemos nosso serviço e nossos usuários. Como os limites serão alterados ocasionalmente, não estamos publicando os números no momento. Caso você seja afetado pela limitação de taxa, fique à vontade para falar conosco pelo email [bf-reports@microsoft.com](mailto://bf-reports@microsoft.com).
+Estamos continuamente ajustando os limites de taxa para torná-los os mais brandos possíveis, ao mesmo tempo em que protegemos nosso serviço e nossos usuários. Como os limites serão alterados ocasionalmente, não estamos publicando os números no momento. Caso você seja afetado pela limitação de taxa, fique à vontade para falar conosco pelo email [bf-reports@microsoft.com](mailto://bf-reports@microsoft.com).
 
 ## <a name="bot-framework-sdk"></a>SDK do Bot Framework
 ## <a name="why-doesnt-the-typing-activity-do-anything"></a>Por que a atividade de Digitação não gera nenhuma ação?
@@ -318,7 +320,7 @@ Para criar sua própria ID do aplicativo, siga as etapas abaixo.
 3. Insira um nome de exibição para o registro de aplicativo no campo *Nome* e selecione os tipos de conta compatíveis. O nome não precisa corresponder à ID do bot.
 
     > [!IMPORTANT]
-    > Nos *Tipos de conta compatíveis*, selecione o botão de opção *Contas em qualquer diretório organizacional e contas pessoais da Microsoft (por exemplo, Skype, Xbox, Outlook.com)* . Se qualquer uma das outras opções estiver selecionada, **o bot ficará inutilizável**.
+    > Nos *Tipos de conta compatíveis*, selecione o botão de opção *Contas em qualquer diretório organizacional e contas pessoais da Microsoft (por exemplo, Xbox, Outlook.com)* . Se qualquer uma das outras opções estiver selecionada, **o bot ficará inutilizável**.
 
     ![detalhes do registro](media/app-registration/registration-details.png)
 
@@ -337,7 +339,7 @@ Se você estiver recriando seu bot no portal do Azure, será preciso gerar um se
 
     ![novo segredo](media/app-registration/new-secret.png)
 
-3. Copie o valor do seu segredo da tabela sob *Segredos do cliente* e cole-o no campo *Senha* para o seu aplicativo e, em seguida, clique em **OK** na parte inferior da folha. Em seguida, prossiga com a criação do bot. 
+3. Copie o valor do seu segredo da tabela sob *Segredos do cliente* e cole-o no campo *Senha* para o seu aplicativo, depois clique em **OK** na parte inferior da folha. Em seguida, prossiga com a criação do bot. 
 
     > [!NOTE]
     > O segredo só ficará visível nessa folha e você não será capaz de recuperá-lo depois de sair dessa página. Copie-o em um local seguro.

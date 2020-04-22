@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/22/2019
-ms.openlocfilehash: 4ae5e5a7972caa0376f2b11dfaab0be4b1e9e924
-ms.sourcegitcommit: d24fe2178832261ac83477219e42606f839dc64d
+ms.openlocfilehash: de65f9f45249180197de16909e166360e5a230cf
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77071774"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81395589"
 ---
 # <a name="authentication"></a>Autenticação
 
@@ -44,7 +44,7 @@ Você pode [obter um segredo da Direct Line](../bot-service-channel-connect-dire
 
 ![Configuração da Linha Direta](../media/direct-line-configure.png)
 
-## <a id="generate-token"></a> Gerar um token de Linha Direta
+## <a name="generate-a-direct-line-token"></a><a id="generate-token"></a> Gerar um token de Linha Direta
 
 Para gerar um token da Direct Line que possa ser usado para acessar uma única conversa, primeiro obtenha o segredo da Direct Line na página de configuração do canal da Direct Line no [Portal do Azure](https://portal.azure.com). Em seguida, envie essa solicitação para trocar seu segredo da Linha Direta para um token da Linha Direta:
 
@@ -107,7 +107,7 @@ A operação Gerar Token (`POST /v3/directline/tokens/generate`) é semelhante �
 
 Se você planeja distribuir o token para clientes e deseja que eles iniciem a conversa, use a operação Gerar Token. Se você pretende iniciar a conversa imediatamente, use a operação [Iniciar Conversa](bot-framework-rest-direct-line-3-0-start-conversation.md).
 
-## <a id="refresh-token"></a> Atualizar um token de Linha Direta
+## <a name="refresh-a-direct-line-token"></a><a id="refresh-token"></a> Atualizar um token de Linha Direta
 
 Um token de Linha Direta pode ser atualizado uma quantidade ilimitada de vezes, desde que não tenha expirado. Um token expirado não pode ser atualizado. Para atualizar um token de Linha Direta, emita esta solicitação:
 

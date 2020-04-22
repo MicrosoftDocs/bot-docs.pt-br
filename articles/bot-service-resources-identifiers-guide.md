@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 04/30/2019
-ms.openlocfilehash: 1e32c47c394a3dafe4d49d2b23107a46610df14f
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: fba163671e4309de8c2ac2ecb5b8ba816cfe8141
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75788738"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80648075"
 ---
 # <a name="id-fields-in-the-bot-framework"></a>Campos de ID no Bot Framework
 
@@ -23,7 +23,7 @@ Este guia descreve as características dos campos de ID presentes no protocolo v
 
 Cada canal do Bot Framework é identificado por uma ID exclusiva.
 
-Exemplo: `"channelId": "skype"`
+Exemplo: `"channelId": "slack"`
 
 IDs de canal servem como namespaces para outras IDs. Chamadas de runtime no protocolo do Bot Framework devem ocorrer dentro do contexto de um cana; o canal fornece um significado para a conversa e as IDs da conta usada na comunicação.
 
@@ -76,13 +76,13 @@ Todo o bot e o usuário tem uma conta dentro de cada canal. A conta contém um i
 
 Exemplo: `"from": { "id": "john.doe@contoso.com", "name": "John Doe" }`
 
-Essa conta descreve o endereço dentro do canal em que mensagens podem ser enviadas e recebidas. Em alguns casos, esses registros existem em um único serviço (por exemplo, Skype, Facebook). Em outros, eles são registrados em vários sistemas (endereços de email, números de telefone). Em canais mais anônimos (por exemplo, Webchat), o registro pode ser efêmero.
+Essa conta descreve o endereço dentro do canal em que mensagens podem ser enviadas e recebidas. Em alguns casos, esses registros existem em um único serviço (por exemplo, Facebook). Em outros, eles são registrados em vários sistemas (endereços de email, números de telefone). Em canais mais anônimos (por exemplo, Webchat), o registro pode ser efêmero.
 
 Contas de canal são aninhadas em canais. Uma conta do Facebook, por exemplo, é simplesmente um número. Esse número pode ter um significado diferente em outros canais, não tendo significado fora de todos os canais.
 
 A relação entre as contas de canal e os usuários (pessoas reais) depende das convenções associadas a cada canal. Por exemplo, um número SMS geralmente se refere a uma pessoa por um período de tempo, após o qual o número pode ser transferido para outra pessoa. Por outro lado, uma conta do Facebook geralmente se refere a uma pessoa perpetuamente, embora não seja incomum que duas pessoas compartilhem uma conta do Facebook.
 
-Na maioria dos canais, é apropriado imaginar uma conta de canal como um tipo de caixa de correio onde mensagens podem ser entregues. É comum para a maioria dos canais permitir que vários endereços sejam mapeados em uma única caixa de correio; por exemplo, "jdoe@contoso.com" e "john.doe@service.contoso.com" pode resolver a mesma caixa de entrada. Alguns canais vão mais além e alteram o endereço da conta com base em qual bot está acessado-a; por exemplo, o Skype e o Facebook alteram as IDs de usuário para que cada bot tenha um endereço diferente para enviar e receber mensagens.
+Na maioria dos canais, é apropriado imaginar uma conta de canal como um tipo de caixa de correio onde mensagens podem ser entregues. É comum para a maioria dos canais permitir que vários endereços sejam mapeados em uma única caixa de correio; por exemplo, "jdoe@contoso.com" e "john.doe@service.contoso.com" pode resolver a mesma caixa de entrada. Alguns canais vão mais além e alteram o endereço da conta com base em qual bot está acessando-a; por exemplo, o Facebook altera as IDs de usuário para que cada bot tenha um endereço diferente para enviar e receber mensagens.
 
 Embora em alguns casos seja possível estabelecer equivalência entre endereços, estabelecer equivalência entre caixas de correio e equivalência entre pessoas requer conhecimento das convenções dentro do canal, o que em muitos casos não é possível.
 
@@ -106,7 +106,7 @@ Uma conversa contém uma troca de mensagens e outras atividades. Cada conversa t
 
 As atividades dentro de uma conversa são enviadas por usuários e bots. A definição de quais usuários "participam" de uma conversa varia de acordo com o canal e, teoricamente, pode incluir os usuários presentes, usuários que nunca receberam uma mensagem, ou usuários que enviaram uma mensagem.
 
-Vários canais (por exemplo, SMS, Skype e possivelmente outros) têm a peculiaridade de que a Identificação da conversa é atribuída a uma conversa de 1:1 é a ID da conta de canal remoto. Essa peculiaridade tem dois efeitos colaterais:
+Vários canais (por exemplo, SMS e possivelmente outros) têm a peculiaridade de que a ID da conversa atribuída a uma conversa de 1:1 é a ID da conta de canal remoto. Essa peculiaridade tem dois efeitos colaterais:
 1. A Identificação da conversa é subjetiva com base em quem está visualizando ela. Se os participantes A e B estão falando, o participante A vê a Identificação da conversa como "B" e o participante B vê a Identificação da conversa como "A".
 2. Se o bot tiver várias contas de canal dentro desse canal (por exemplo, se o bot tiver dois números SMS), a Identificação da conversa não é suficiente para identificar exclusivamente a conversa dentro do campo de visão do bot.
 

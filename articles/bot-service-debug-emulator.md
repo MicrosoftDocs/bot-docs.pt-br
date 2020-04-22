@@ -8,25 +8,25 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 2/26/2019
-ms.openlocfilehash: 4828888d2b90cda6854f4195a6bc60f60538820c
-ms.sourcegitcommit: 4e1af50bd46debfdf9dcbab9a5d1b1633b541e27
+ms.openlocfilehash: 8e5b094f7dcd870352de197feb04eb5976daea1f
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/25/2020
-ms.locfileid: "76752828"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80647629"
 ---
 # <a name="debug-with-the-emulator"></a>Depurar com o emulador
 
 O Bot Framework Emulator é um aplicativo de desktop que permite que os desenvolvedores de bot testem e depurem seus bots, seja local ou remotamente. Usando o emulador, você pode conversar com seu bot e inspecionar as mensagens que seu bot envia e recebe. O emulador exibe mensagens como elas apareceriam em uma interface de usuário do bate-papo na Web e registra solicitações e respostas JSON à medida que você troca mensagens com seu bot. Antes de implantar seu bot na nuvem, execute-o localmente e teste-o usando o emulador. Você pode testar seu bot usando o emulador mesmo se você ainda não o [criou](./bot-service-quickstart.md) com o Serviço de Bot do Azure ou o configurou para rodar em qualquer canal.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 - Instalar o [Bot Framework Emulator](https://aka.ms/Emulator-wiki-getting-started)
 
 ## <a name="run-a-bot-locally"></a>Executar um bot localmente
 Antes de conectar o bot ao Bot Framework Emulator, você precisa executar o bot localmente. Você pode usar o Visual Studio, o Visual Studio Code ou a linha de comando para executar o bot. Para executar um bot usando a linha de comando, faça o seguinte:
 
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 * Vá para o prompt de comando e altere o diretório para o diretório de projeto do bot.
 * Inicie o bot executando o seguinte comando: 
@@ -38,7 +38,7 @@ Antes de conectar o bot ao Bot Framework Emulator, você precisa executar o bot 
     ![Número da porta do C#](media/bot-service-debug-emulator/csharp_port_number.png)
 
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 * Vá para o prompt de comando e altere o diretório para o diretório de projeto do bot.
 * Inicie o bot executando o seguinte comando:
@@ -49,7 +49,7 @@ Antes de conectar o bot ao Bot Framework Emulator, você precisa executar o bot 
 
     ![Número da porta do JS](media/bot-service-debug-emulator/js_port_number.png)
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 * Vá para o prompt de comando e altere o diretório para o diretório de projeto do bot.
 * Inicie o bot executando o seguinte comando:
     ```
@@ -114,7 +114,7 @@ Quando você abre o bot, defina a **ID do aplicativo Microsoft** e a **senha do 
 Ao criar um aplicativo de provedor de identidade do AD, lembre-se do seguinte:
 
 - Quando os tipos de conta compatíveis forem definidos como locatário único, se você usar uma assinatura pessoal em vez de uma conta Microsoft, o emulador emitirá o erro: *A ID do aplicativo Microsoft do bot ou a senha do aplicativo Microsoft está incorreta.* 
-- Nesse caso, os tipos de conta compatíveis devem ser definidos como *Contas em qualquer diretório organizacional (Qualquer diretório do Azure AD – Multilocatário) e contas pessoais Microsoft (por exemplo, Skype, Xbox)* .
+- Nesse caso, os tipos de conta compatíveis devem ser definidos como *Contas em qualquer diretório organizacional (Qualquer diretório do Azure AD – Multilocatário) e contas pessoais Microsoft (por exemplo, Xbox)* .
 
 Para obter mais informações, consulte [Criar um aplicativo de provedor de identidade do Azure AD](bot-builder-tutorial-authentication.md#create-an-azure-ad-identity-provider-application).
 

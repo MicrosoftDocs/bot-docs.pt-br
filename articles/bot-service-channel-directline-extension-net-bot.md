@@ -8,12 +8,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 01/16/2020
-ms.openlocfilehash: 7f46d5f2b5012db914568e5ae613c18405dfa113
-ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
+ms.openlocfilehash: e695a35b1f98a2ec8cfe5cbb24c13cf5cf18a648
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2020
-ms.locfileid: "80117631"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81395689"
 ---
 # <a name="configure-net-bot-for-extension"></a>Configurar o bot do .NET para a extensão
 
@@ -32,18 +32,11 @@ Esta seção descreve como habilitar a extensão de serviço de aplicativo do Di
 
 ## <a name="update-net-bot-to-use-direct-line-app-service-extension"></a>Atualize o bot do .NET para usar a extensão do Serviço de Aplicativo do Direct Line
 
-> [!NOTE]
-> `Microsoft.Bot.Builder.StreamingExtensions` são pacotes em versão prévia e não serão atualizados. O SDK v4.7 contém o [código de streaming](https://github.com/microsoft/botbuilder-dotnet/tree/master/libraries/Microsoft.Bot.Builder/Streaming) e você não precisa instalar os Pacotes de Streaming separadamente.
-
 1. No Visual Studio, abra o projeto do bot.
-2. Adicione o pacote **NuGet da Extensão de Streaming** ao seu projeto:
-    1. Em seu projeto, clique o botão direito do mouse em **Dependências** e selecione **Gerenciar Pacotes NuGet**.
-    2. Na guia *Procurar*, clique em **Incluir pré-lançamento** para mostrar os pacotes em versão prévia.
-    3. Selecione o pacote **Microsoft.Bot.Builder.StreamingExtensions**.
-    4. Clique no botão **Instalar** para instalar o pacote; leia e concorde com o contrato de licença.
+2. Verifique se o projeto está usando a versão 4.8 ou superior do SDK do Bot Builder.
 3. Permite que o aplicativo use o **Bot Framework NamedPipe**:
     - Abra o arquivo `Startup.cs` .
-    - No método ``Configure``, adicione código a ``UseBotFrameworkNamedPipe``
+    - No método ``Configure``, adicione código a ``UseNamedPipes``
 
     ```csharp
 
@@ -62,7 +55,7 @@ Esta seção descreve como habilitar a extensão de serviço de aplicativo do Di
         app.UseStaticFiles();
 
         // Allow the bot to use named pipes.
-        app.UseNamedPipes();
+        app.UseNamedPipes(System.Environment.GetEnvironmentVariable("APPSETTING_WEBSITE_SITE_NAME") + ".directline");
 
         app.UseMvc();
     }
@@ -108,9 +101,10 @@ Esta seção descreve como habilitar a extensão de serviço de aplicativo do Di
 ## <a name="confirm-direct-line-app-extension-and-the-bot-are-initialized"></a>Confirme se a Extensão do Aplicativo do Direct Line e o bot foram inicializados
 
 No navegador, navegue até https://<your_app_service>.azurewebsites.net/.bot.
-Se tudo estiver correto, a página retornará este conteúdo JSON: `{"k":true,"ib":true,"ob":true,"initialized":true}`. Essas são as informações que você obtém quando **tudo funciona corretamente**, onde
+Se tudo estiver correto, a página retornará este conteúdo JSON: `{"v":"123","k":true,"ib":true,"ob":true,"initialized":true}`. Essas são as informações que você obtém quando **tudo funciona corretamente**, onde
 
-- **k** determina se a ASE (Extensão do Serviço de Aplicativo) do Direct Line pode ler uma chave de extensão do Serviço de Aplicativo com base na configuração.
+- **v** exibe a versão de build da ASE (Extensão de Serviço de Aplicativo) do Direct Line.
+- **k** determina se a ASE do Direct Line pode ler uma chave de Extensão de Serviço de Aplicativo com base na respectiva configuração.
 - **initialized** determina se a ASE do Direct Line pode usar a chave de Extensão do Serviço de Aplicativo para baixar os metadados do bot do Serviço de Bot do Azure
 - **ib** determina se a ASE do Direct Line pode estabelecer uma conexão de entrada com o bot.
 - **ob** determina se a ASE do Direct Line pode estabelecer uma conexão de saída com o bot.

@@ -8,18 +8,18 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: c361067c7c51a4230d6b3da127a932fcb93cd2fe
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: 25fb8c82854b239889779571e741e2d876c627c0
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75796661"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80648145"
 ---
 # <a name="send-and-receive-activities"></a>Enviar e receber atividades
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
-O Bot Framework Connector oferece uma única API REST que permite a um bot se comunicar por diversos canais, como Skype, Email, Slack e mais. Ele facilita a comunicação entre o bot e o usuário por mensagens de retransmissão do bot ao canal e do canal ao bot. 
+O Bot Framework Connector oferece uma única API REST que permite a um bot se comunicar por diversos canais, como Email, Slack e mais. Ele facilita a comunicação entre o bot e o usuário por mensagens de retransmissão do bot ao canal e do canal ao bot. 
 
 Este artigo descreve como usar o Connector por meio do SDK do Bot Framework para .NET para trocar informações entre o usuário e o bot em um canal. 
 
@@ -37,7 +37,7 @@ A classe [ConnectorClient][ConnectorClient] contém os métodos que um bot usa p
 >
 > Se o bot precisar iniciar a conversa, ele poderá usar um ponto de extremidade armazenado em cache para o canal especificado (já que não haverá nenhum objeto `Activity` de entrada nesse cenário), mas o bot deve atualizar os pontos de extremidade armazenados em cache com frequência. 
 
-## <a id="create-reply"></a> Criar uma resposta
+## <a name="create-a-reply"></a><a id="create-reply"></a> Criar uma resposta
 
 O Connector usa um objeto [Atividade](bot-builder-dotnet-activities.md) para circular informações entre o bot e canal (usuário). Cada atividade contém as informações usadas para rotear a mensagem ao destino apropriado juntamente com informações sobre quem criou a mensagem (propriedade `From`), o contexto da mensagem e o destinatário da mensagem (propriedade `Recipient`).
 

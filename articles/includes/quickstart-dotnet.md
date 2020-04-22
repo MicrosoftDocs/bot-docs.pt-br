@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: 9c86001a51914f359163e7d755aa57e1c54127f8
-ms.sourcegitcommit: dcacda776c927bcc7c76d00ff3cc6b00b062bd6b
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "74414604"
 ---
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 - [Visual Studio 2017 ou posterior](https://www.visualstudio.com/downloads)
 - [Modelo de SDK do Bot Framework v4 para C#](https://aka.ms/bot-vsix)
 - [Emulador do bot Framework](https://aka.ms/bot-framework-emulator-readme)
@@ -20,7 +20,7 @@ No Visual Studio, crie um novo projeto de bot usando o modelo do **Echo Bot (Bot
 ![Caixa de diálogo Criar um projeto do Visual Studio](../media/azure-bot-quickstarts/bot-builder-dotnet-project-vs2019.png)
 
 > [!TIP] 
-> Se estiver usando o Visual Studio 2017, verifique se o tipo de build do projeto é ``.Net Core 2.1`` ou posterior. Se também for necessário, atualize os [pacotes NuGet](https://docs.microsoft.com/nuget/quickstart/install-and-use-a-package-in-visual-studio) do `Microsoft.Bot.Builder`.
+> Se estiver usando o Visual Studio 2017, verifique se o tipo de build do projeto é ``.Net Core 2.1`` ou posterior. Além disso, se for necessário, atualize os [pacotes NuGet](https://docs.microsoft.com/nuget/quickstart/install-and-use-a-package-in-visual-studio) do `Microsoft.Bot.Builder`.
 
 Graças ao modelo, seu projeto contém todo o código necessário para criar o bot neste início rápido. Na verdade, você não precisa escrever nenhum código adicional.
 

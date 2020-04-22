@@ -9,18 +9,18 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 01/31/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: d6ea339d008c54c8a60dc20dd9c5252b31e06142
-ms.sourcegitcommit: d24fe2178832261ac83477219e42606f839dc64d
+ms.openlocfilehash: af08588929fc6d1717de261c6e6588c201e96af0
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77071854"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80648342"
 ---
 # <a name="how-bots-work"></a>Como funcionam os bots
 
 [!INCLUDE[applies-to](../includes/applies-to.md)]
 
-Um bot é um aplicativo com o qual os usuários interagem de maneira conversacional usando texto, gráficos (cartões ou imagens) ou fala. Cada interação entre o usuário e o bot gera uma *atividade*. O Serviço do Bot Framework, que é um componente do Serviço de Bot do Azure, envia informações entre o aplicativo do usuário conectado ao bot (como Facebook, Skype, Slack e outros, que chamamos de *canal*) e o bot. Cada canal pode incluir informações adicionais nas atividades que enviam. Antes de criar bots, é importante entender como um bot usa objetos de atividade para se comunicar com seus usuários. Vamos primeiro dar uma olhada nas atividades que são trocadas quando executamos um bot de eco simples.
+Um bot é um aplicativo com o qual os usuários interagem de maneira conversacional usando texto, gráficos (cartões ou imagens) ou fala. Cada interação entre o usuário e o bot gera uma *atividade*. O Bot Framework Service, que é um componente do Serviço de Bot do Azure, envia informações entre o aplicativo do usuário conectado ao bot (como Facebook, Skype e outros, que chamamos de *canal*) e o bot. Cada canal pode incluir informações adicionais nas atividades que enviam. Antes de criar bots, é importante entender como um bot usa objetos de atividade para se comunicar com seus usuários. Vamos primeiro dar uma olhada nas atividades que são trocadas quando executamos um bot de eco simples.
 
 ![diagrama de atividade](media/bot-builder-activity.png)
 
@@ -64,7 +64,7 @@ Conforme mencionado acima, o contexto de turno fornece o mecanismo para que o bo
 
 Quando o bot recebe uma atividade, ele a transmite a seus *manipuladores de atividade*. Nos bastidores, há um manipulador base chamado de *manipulador de turno*. Todas as atividades são encaminhadas por ele. Esse manipulador de turno chama o manipulador de atividade específico para qualquer tipo de atividade recebida.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 Por exemplo, se o bot recebe uma atividade de mensagem, o manipulador de turno vê a atividade de entrada a envia para o manipulador de atividade `OnMessageActivityAsync`.
 
@@ -74,7 +74,7 @@ Para implementar a lógica desses manipuladores, você substituirá esses métod
 
 Há algumas situações em que é melhor substituir o manipulador de turno base, por exemplo, ao [salvar o estado](bot-builder-concept-state.md) no final de um turno. Ao fazer isso, chame primeiro `await base.OnTurnAsync(turnContext, cancellationToken);` para fazer com que a implementação base de `OnTurnAsync` seja executada antes do código adicional. A implementação base é, entre outras coisas, responsável por chamar o resto dos manipuladores de atividade, como `OnMessageActivityAsync`.
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 O JavaScript `ActivityHandler` usa um emissor de eventos e um padrão de ouvinte.
 Por exemplo, use o método `onMessage` para registrar um ouvinte de eventos para atividades de mensagem. Você pode registrar mais de um ouvinte. Quando o bot recebe uma atividade de mensagem, o manipulador de atividades vê essa atividade de entrada e a envia a cada um dos ouvintes de atividade `onMessage`, na ordem em que elas foram registradas.
@@ -87,7 +87,7 @@ Lembre-se de [salvar o estado](bot-builder-concept-state.md) antes que o ciclo s
 Não existem situações comuns de substituição do manipulador de turno base, ou seja, tenha cuidado ao tentar fazer isso.
 Há um manipulador especial chamado `onDialog`. O manipulador `onDialog` é executado no final, depois que o restante dos manipuladores foi executado, e não está vinculado a nenhum tipo de atividade. Assim como com todos os manipuladores acima, não deixe de chamar `next()` para garantir a conclusão do processo.
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 Por exemplo, se o bot recebe uma atividade de mensagem, o manipulador de turno vê a atividade de entrada a envia para o manipulador de atividade `on_message_activity`.
 
@@ -113,7 +113,7 @@ Nas seções a seguir, examinaremos _partes essenciais_ de um EchoBot que você 
 
 Um bot é um aplicativo Web, e fornecemos modelos a cada linguagem.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 O modelo VSIX gera um aplicativo Web [ASP.NET MVC Core](https://dotnet.microsoft.com/apps/aspnet/mvc). Se você examinar os conceitos básicos do [ASP.NET](https://docs.microsoft.com/aspnet/core/fundamentals/index?view=aspnetcore-2.1&tabs=aspnetcore2x), verá um código semelhante em arquivos como **Program.cs** e **Startup.cs**. Esses arquivos são necessários para todos os aplicativos Web e não são específicos do bot.
 
@@ -121,7 +121,7 @@ O modelo VSIX gera um aplicativo Web [ASP.NET MVC Core](https://dotnet.microsoft
 
 O arquivo **appsettings.json** especifica as informações de configuração para o bot, como a ID do aplicativo e a senha, entre outras coisas. Se estiver usando algumas tecnologias ou este bot em produção, você precisará adicionar suas chaves específicas ou a URL a essa configuração. No entanto, para este bot Eco, você não precisa fazer nada aqui no momento; a ID do aplicativo e a senha podem ser deixadas indefinidas por enquanto.
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 <!-- TODO: Update this aka link to point to samples/javascript_nodejs/02.echobot (instead of samples/javascript_nodejs/02.a.echobot) once work-in-progress is merged into master. -->
 
@@ -139,7 +139,7 @@ Para usar o arquivo de configuração **.env**, o modelo precisará de um pacote
 
 `npm install dotenv`
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 ### <a name="requirementstxt"></a>requirements.txt
 
@@ -157,7 +157,7 @@ O arquivo **config.py** especifica as informações de configuração do bot, co
 
 A lógica do bot processa as atividades de entrada de um ou mais canais e gera atividades de saída em resposta.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 A lógica principal do bot é definida no código do bot; aqui, ele se chama `Bots/EchoBot.cs`. `EchoBot` deriva de `ActivityHandler`, que por sua vez deriva da interface `IBot`. `ActivityHandler` define vários manipuladores para diferentes tipos de atividades, como os dois definidos aqui: `OnMessageActivityAsync` e `OnMembersAddedAsync`. Esses métodos são protegidos, mas podem ser substituídos, já que estamos derivando de `ActivityHandler`.
 
@@ -205,7 +205,7 @@ public class MyBot : ActivityHandler
 }
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 A lógica principal do bot é definida no código do bot; aqui, ele se chama `bots\echoBot.js`. `EchoBot` deriva de `ActivityHandler`. `ActivityHandler` define vários eventos para diferentes tipos de atividades e você pode modificar o comportamento do bot registrando ouvintes de eventos, como ocorre com `onMessage` e `onConversationUpdate` aqui.
 
@@ -253,7 +253,7 @@ class MyBot extends ActivityHandler {
 module.exports.MyBot = MyBot;
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 A lógica principal do bot é definida no código do bot; aqui, ele se chama `bots/echo_bot.py`. `EchoBot` deriva de `ActivityHandler`, que por sua vez deriva da interface `Bot`. `ActivityHandler` define vários manipuladores para diferentes tipos de atividades, como os dois definidos aqui: `on_message_activity` e `on_members_added`. Esses métodos são protegidos, mas podem ser substituídos, já que estamos derivando de `ActivityHandler`.
 
@@ -302,7 +302,7 @@ class MyBot(ActivityHandler):
 
 ### <a name="access-the-bot-from-your-app"></a>Acessar o bot no seu aplicativo
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 #### <a name="set-up-services"></a>Configurar serviços
 
@@ -364,7 +364,7 @@ public class BotController : ControllerBase
 }
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 #### <a name="indexjs"></a>index.js
 
@@ -438,7 +438,7 @@ server.post('/api/messages', (req, res) => {
 });
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 #### <a name="apppy"></a>app.py
 

@@ -1,6 +1,6 @@
 ---
-title: Reutilizar caixas de diálogo – Serviço de Bot
-description: Saiba como modularizar a lógica de bot usando diálogos de componente no SDK do Bot Framework.
+title: Gerenciar a complexidade da caixa de diálogo | Microsoft Docs
+description: Saiba como modularizar a complexidade da caixa de diálogo usando caixas de diálogo de componente no SDK do Bot Framework.
 keywords: controle composto, lógica de bot modular
 author: v-ducvo
 ms.author: kamrani
@@ -9,20 +9,23 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 01/30/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 0d7045f48caeb6a1bcf82993d8d7fcb7e326dde3
-ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
+ms.openlocfilehash: dbf56827aa2a371f6d5d6f9eefecf2524779d57c
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77441734"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81395610"
 ---
-# <a name="reuse-dialogs"></a>Reutilizar diálogos
+# <a name="manage-dialog-complexity"></a>Gerenciar a complexidade da caixa de diálogo
 
 [!INCLUDE[applies-to](../includes/applies-to.md)]
 
-Com os diálogos de componente, é possível criar diálogos independentes para lidar com cenários específicos, como dividir um conjunto de diálogos grande em partes mais gerenciáveis. Cada uma dessas partes tem seu próprio conjunto de diálogos e evita qualquer conflito de nome com o conjunto de diálogos que as contém.
+Com os diálogos de componente, é possível criar diálogos independentes para lidar com cenários específicos, como dividir um conjunto de diálogos grande em partes mais gerenciáveis. Cada uma dessas partes tem seu próprio conjunto de diálogos e evita qualquer conflito de nome com o conjunto de diálogos que as contém. As caixas de diálogo de componente são reutilizáveis, pois podem ser:
+- adicionadas a outro `ComponentDialog` ou `DialogSet` em seu bot
+- exportadas como parte de um pacote
+- usadas em outros bots 
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento de [noções básicas de bot][concept-basics], [biblioteca de diálogos][concept-dialogs] e como [gerenciar conversas][simple-flow].
 - Uma cópia do exemplo de prompt de vários turnos em [**C#** ][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
@@ -55,15 +58,15 @@ Para usar as caixas de diálogo, instale o pacote do NuGet, **Microsoft.Bot.Buil
 
 Aqui, a classe `UserProfileDialog` é derivada da classe `ComponentDialog`.
 
-[!code-csharp[Class](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=17)]
+[!code-csharp[Class](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=16)]
 
 No construtor, o método `AddDialog` adiciona diálogos e prompts ao diálogo de componente. O primeiro item que você adicionar com esse método será definido como o diálogo inicial, mas é possível alterar isso definindo explicitamente a propriedade `InitialDialogId`. Ao iniciar um diálogo de componente, ele iniciará seu _diálogo inicial_.
 
-[!code-csharp[Constructor](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=21-48)]
+[!code-csharp[Constructor](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=20-47)]
 
 Esta é a implementação da primeira etapa do diálogo em cascata.
 
-[!code-csharp[First step](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=50-60)]
+[!code-csharp[First step](~/../botbuilder-samples/samples/csharp_dotnetcore/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=61-66)]
 
 Para obter mais informações sobre como implementar diálogos em cascata, confira como [implementar fluxo da conversa sequencial](bot-builder-dialog-manage-complex-conversation-flow.md).
 
@@ -178,22 +181,22 @@ Se você chamar _cancel all dialogs_ pelo contexto externo, o componente será c
 Lembre-se disso ao gerenciar diálogos de componente aninhado em seu bot.
 
 ## <a name="next-steps"></a>Próximas etapas
-
-Você pode aprimorar os bots para que reajam a uma entrada adicional, como "ajuda" ou "cancelar", que pode interromper o fluxo normal da conversa.
+Saiba como criar conversas complexas que se ramificam e entram em loop.
 
 > [!div class="nextstepaction"]
-> [Manipular interrupções do usuário](bot-builder-howto-handle-user-interrupt.md)
+> [Manipular interrupções do usuário](bot-builder-dialog-manage-complex-conversation-flow.md)
 
 <!-- Footnote-style links -->
 
+<!--concepts-->
 [concept-basics]: bot-builder-basics.md
 [concept-state]: bot-builder-concept-state.md
 [concept-dialogs]: bot-builder-concept-dialog.md
-
+<!--how to-->
 [simple-flow]: bot-builder-dialog-manage-conversation-flow.md
 [prompting]: bot-builder-prompts.md
 [component-dialogs]: bot-builder-compositcontrol.md
-
+<!--samples-->
 [cs-sample]: https://aka.ms/cs-multi-prompts-sample
 [js-sample]: https://aka.ms/js-multi-prompts-sample
 [python-sample]: https://aka.ms/python-multi-prompts-sample

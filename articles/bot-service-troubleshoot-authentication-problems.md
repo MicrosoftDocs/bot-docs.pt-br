@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/25/2020
-ms.openlocfilehash: 5a430e9ca14bb9dfdfc7916b77912d88e2c0253e
-ms.sourcegitcommit: 772b9278d95e4b6dd4afccf4a9803f11a4b09e42
+ms.openlocfilehash: e9f7cd8e7959d9ba2e395eb73d565ac790b3a585
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2020
-ms.locfileid: "80117684"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80647682"
 ---
 # <a name="troubleshooting-bot-framework-authentication"></a>Solucionar problemas de autenticação do Bot Framework
 
@@ -215,7 +215,7 @@ Se for indicado um erro na janela de bate-papo, use a mensagem de erro para dete
 * O **Ponto de extremidade de mensagens** especificado na página **Configurações** de seu bot no Portal do Bot Framework não começa com `https` ou não é confiável de acordo com o Bot Framework. Seu bot deve ter um certificado válido e de cadeia confiável.
 * O bot é configurado com valores ausentes ou incorretos para a ID ou senha do aplicativo. [Verifique](#enable-security-localhost) se as definições de configuração do bot especificam valores válidos para a ID e senha do aplicativo.
 
-Se o bot responder apropriadamente à entrada, você verificou que ele fica acessível e funcional na nuvem com a segurança habilitada. Neste ponto, seu bot está pronto para se [conectar a um canal](~/bot-service-manage-channels.md) com segurança, como Skype, Facebook Messenger, Direct Line e outros.
+Se o bot responder apropriadamente à entrada, você verificou que ele fica acessível e funcional na nuvem com a segurança habilitada. Neste ponto, seu bot está pronto para se [conectar a um canal](~/bot-service-manage-channels.md) com segurança, como Facebook Messenger, Direct Line e outros.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

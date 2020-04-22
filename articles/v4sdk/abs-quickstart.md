@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 01/09/2020
-ms.openlocfilehash: ad49ab4e1843f6ac06907f785bc3a64c63a85cf0
-ms.sourcegitcommit: 4ddee4f90a07813ce570fdd04c8c354b048e22f3
+ms.openlocfilehash: 0336291a08059851fd739ae10e9be7a47a60c937
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77479334"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80648374"
 ---
 # <a name="create-a-bot-with-azure-bot-service"></a>Criar um bot com o Serviço de Bot do Azure
 
@@ -25,7 +25,7 @@ O Serviço de Bot do Azure fornece os principais componentes para a criação de
 
 [!INCLUDE [Azure vs local development](~/includes/snippet-quickstart-paths.md)]
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 - Conta do [Azure](https://portal.azure.com)
 
@@ -53,7 +53,7 @@ O Serviço de Bot do Azure fornece os principais componentes para a criação de
  | **Localização/plano de serviço de aplicativo** | O Plano do Serviço de Aplicativo  | Selecione um local para o [Plano do Serviço de Aplicativo](https://azure.microsoft.com/pricing/details/app-service/plans/). Sua escolha de localização pode ser qualquer local listado, embora geralmente seja melhor escolher o mesmo do serviço de bot. |
  | **Contas do LUIS** _Somente disponíveis para o modelo de Bot Básico_ | Nome do Recurso do Azure do LUIS | Depois de [migrar recursos do LUIS para um recurso do Azure](https://docs.microsoft.com/azure/cognitive-services/luis/luis-migration-authoring), insira o nome do recurso do Azure para associar esse aplicativo do LUIS a esse recurso do Azure. 
  | **Application Insights** | Por | Decida se deseja deixar o [Application Insights](/bot-framework/bot-service-manage-analytics) **Ativado** ou **Desativado**. Se você selecionar **Ativar**, será preciso especificar também um local regional. Sua escolha de localização pode ser qualquer local listado, embora geralmente seja melhor escolher o mesmo do serviço de bot. |
- | **ID do Aplicativo e senha da Microsoft** | Criar ID do Aplicativo e senha automaticamente | Use essa opção se precisar inserir manualmente uma ID do Aplicativo e uma senha da Microsoft. Caso contrário, uma nova ID do Aplicativo e uma nova senha da Microsoft serão criados para você no processo de criação de bot. Ao criar um registro de aplicativo manualmente para o Serviço de Bot, verifique se os tipos de conta compatíveis estão definidos como "Contas em qualquer diretório organizacional" ou "Contas em qualquer diretório organizacional e contas Microsoft pessoais (por exemplo, Skype, Outlook.com, Xbox etc.)" |
+ | **ID do Aplicativo e senha da Microsoft** | Criar ID do Aplicativo e senha automaticamente | Use essa opção se precisar inserir manualmente uma ID do Aplicativo e uma senha da Microsoft. Caso contrário, uma nova ID do Aplicativo e uma nova senha da Microsoft serão criados para você no processo de criação de bot. Ao criar um registro de aplicativo manualmente para o Serviço de Bot, verifique se os tipos de conta compatíveis estão definidos como "Contas em qualquer diretório organizacional" ou "Contas em qualquer diretório organizacional e contas Microsoft pessoais (por exemplo, Outlook.com, Xbox etc.)" |
 
 4. Clique em **Criar** para criar o serviço e implantar o bot na nuvem. Esse processo pode levar vários minutos.
 

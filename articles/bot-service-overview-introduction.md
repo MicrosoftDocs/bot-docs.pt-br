@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/15/2019
-ms.openlocfilehash: 52b39c8f0d524785a0ef81d262dd1b7380b0b6e2
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: a2b1274f93ba2ce5960e8c2ca705a54b0498a825
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75794711"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80647329"
 ---
 # <a name="about-azure-bot-service"></a>Sobre o Serviço de Bot do Azure
 
@@ -52,7 +52,7 @@ Seu bot é um serviço Web que implementa uma interface de conversação e se co
 
 Como parte do Serviço de Bot do Azure e do Bot Framework, oferecemos componentes adicionais que você pode usar para estender a funcionalidade do seu bot:
 
-| Recurso | DESCRIÇÃO | Link |
+| Recurso | Descrição | Link |
 | --- | --- | --- |
 | Adicionar processamento de idioma natural | Habilite seu bot para entender a linguagem natural, entender os erros de ortografia, usar a fala e reconhecer a intenção do usuário | Como usar o [LUIS](~/v4sdk/bot-builder-howto-v4-luis.md) 
 | Responder a perguntas | Adicionar uma base de conhecimento para responder a perguntas que os usuários fazem de forma mais natural e conversacional | Como usar o [QnA Maker](~/v4sdk/bot-builder-howto-qna.md) 
@@ -81,7 +81,7 @@ Os bots estão aplicativos complexos, com muitas partes diferentes, trabalhem em
 Quando estiver pronto para disponibilizar seu bot na Web, publique seu bot no [Azure](bot-builder-howto-deploy-azure.md) ou em seu próprio serviço Web ou data center. A primeira etapa para o bot ganhar vida em seu site, ou dentro de canais de chat, é ter um endereço na Internet pública.
 
 ### <a name="connect"></a>Conectar          
-Conecte seu bot a canais como Facebook, Messenger, Kik, Skype, Slack, Microsoft Teams, Telegram, texto/SMS, Twilio, Cortana e Skype. O Bot Framework faz a maior parte do trabalho necessário para enviar e receber mensagens de todas essas diferentes plataformas. Seu aplicativo bot recebe um fluxo de mensagens unificado e normalizado, independentemente do número e tipo de canais aos quais ele está conectado. Para obter informações sobre como adicionar canais, confira o tópico [canais](bot-service-manage-channels.md).
+Conecte seu bot a canais como Facebook, Messenger, Kik, Slack, Microsoft Teams, Telegram, texto/SMS, Twilio e Cortana. O Bot Framework faz a maior parte do trabalho necessário para enviar e receber mensagens de todas essas diferentes plataformas. Seu aplicativo bot recebe um fluxo de mensagens unificado e normalizado, independentemente do número e tipo de canais aos quais ele está conectado. Para obter informações sobre como adicionar canais, confira o tópico [canais](bot-service-manage-channels.md).
 
 ### <a name="evaluate"></a>Avaliar 
 Use os dados coletados no portal do Azure para identificar oportunidades de melhorar os recursos e o desempenho do seu bot. Você pode obter dados de nível de serviço e de instrumentação, como tráfego, latência e integrações. O Google Analytics também fornece relatórios no nível da conversa sobre dados de usuários, mensagens e canais. Para obter mais informações, confira [como reunir as análises](bot-service-manage-analytics.md).

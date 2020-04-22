@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/20/2020
-ms.openlocfilehash: 6df2b5322233d905b2896ea93b77ba03516e6162
-ms.sourcegitcommit: 54d3febefaf0072172b17bd8e4ec456264dfbd42
+ms.openlocfilehash: 5a4cf92cf7d51cf6d871be8ab632e7e2b6b30303
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77521489"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80647601"
 ---
 # <a name="troubleshooting-general-problems"></a>Solução de problemas gerais
 Essas perguntas frequentes podem ajudá-lo a solucionar problemas comuns de desenvolvimento de bot ou operacionais.
@@ -85,7 +85,7 @@ Para mais detalhes sobre os identificadores no Bot Framework, consulte o [guia p
 
 ## <a name="how-can-i-get-access-to-the-user-id"></a>Como é possível obter acesso à ID de usuário?
 
-Os canais do Bot Framework apresentam a ID do usuário no campo `from.Id` de qualquer Atividade enviada pelo usuário. SMS e mensagens de email fornecerão a ID de usuário bruta nessa propriedade. Canais como o Skype ocultam a propriedade `from.Id`, portanto, ela contém uma ID exclusiva para o usuário que difere da ID do Skype do usuário. Se for necessário conectar uma conta existente, você poderá usar um cartão de entrada e implementar seu próprio fluxo do OAuth para conectar a ID de usuário à ID de usuário do seu próprio serviço.
+Os canais do Bot Framework apresentam a ID do usuário no campo `from.Id` de qualquer Atividade enviada pelo usuário. SMS e mensagens de email fornecerão a ID de usuário bruta nessa propriedade. Alguns canais ocultam a propriedade `from.Id`, portanto, ela contém uma ID exclusiva para o usuário que difere da ID do usuário no canal. Se for necessário conectar uma conta existente, você poderá usar um cartão de entrada e implementar seu próprio fluxo do OAuth para conectar a ID de usuário à ID de usuário do seu próprio serviço.
 
 ## <a name="why-are-my-facebook-user-names-not-showing-anymore"></a>Por que meus nomes de usuário do Facebook não estão mais sendo exibidos?
 
@@ -106,7 +106,7 @@ Para a autenticação do Azure Active Directory, consulte Adicionar autenticaç�
 
 Alguns canais, como SMS e email, fornecem endereços sem escopo. Nesses casos, as mensagens do usuário conterão a ID de usuário bruta na propriedade `from.Id`.
 
-Outros canais, como Skype, Facebook e Slack, fornecem endereços com escopo ou locados de forma a impedir que um bot possa prever a ID de um usuário com antecedência. Nesses casos, você precisará autenticar o usuário por meio de um link de logon ou segredo compartilhado para determinar se estão ou não autorizados a usar o bot.
+Outros canais, como Facebook e Slack, fornecem endereços com escopo ou locados de modo a impedir que um bot possa prever a ID de um usuário com antecedência. Nesses casos, você precisará autenticar o usuário por meio de um link de logon ou segredo compartilhado para determinar se estão ou não autorizados a usar o bot.
 
 ## <a name="why-does-my-direct-line-11-conversation-start-over-after-every-message"></a>Por que minha conversa com Direct Line 1.1 inicia novamente após cada mensagem?
 

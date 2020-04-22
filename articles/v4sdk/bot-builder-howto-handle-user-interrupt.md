@@ -7,36 +7,36 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 01/24/2020
+ms.date: 03/25/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 0cad95ccb7b83334e514d604da086172320867d8
-ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
+ms.openlocfilehash: f8c79d41cca1f800de470ca1dc6193022b2a4986
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77441704"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80648164"
 ---
 # <a name="handle-user-interruptions"></a>Manipular interrupções do usuário
 
 [!INCLUDE[applies-to](../includes/applies-to.md)]
 
-O tratamento de interrupções é um aspecto importante de um bot robusto. Os usuários nem sempre seguirão o fluxo de conversa que você definiu, passo a passo. Eles podem tentar fazer uma pergunta no meio do processo ou simplesmente querer cancelá-lo em vez de concluí-lo. Neste tópico, exploraremos algumas maneiras comuns de lidar com as interrupções dos usuários no seu bot.
+O tratamento de interrupções é um aspecto importante de um bot robusto. Os usuários nem sempre seguirão o fluxo de conversa que você definiu, passo a passo. Eles podem tentar fazer uma pergunta no meio do processo ou simplesmente querer cancelá-lo em vez de concluí-lo. Este tópico descreve algumas maneiras comuns de manipular as interrupções do usuário no bot.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento sobre [noções básicas de bots][concept-basics], [gerenciamento de estado][concept-state], a [biblioteca de diálogos][concept-dialogs] e como [reutilizar diálogos][component-dialogs].
 - Uma cópia do exemplo principal de bot em [**CSharp**][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
-O exemplo usado neste artigo traz um bot de reserva de voo que utiliza caixas de diálogo para obter informações do voo do usuário. A qualquer momento durante a conversa com o bot, o usuário pode solicitar _ajudar_ ou _cancelar_ comandos e gerar uma interrupção. Há dois tipos de interrupções que abordamos aqui:
+O exemplo usado neste artigo traz um bot de reserva de voo que utiliza caixas de diálogo para obter informações do voo do usuário. A qualquer momento durante a conversa com o bot, o usuário pode solicitar _ajudar_ ou _cancelar_ comandos e gerar uma interrupção. Dois tipos de interrupções são abordados:
 
-- **De nível de turno**: ignorar o processamento no nível do turno, mas deixando a caixa de diálogo na pilha com as informações que foram fornecidas. No próximo turno, continuar de onde você parou.
+- **De nível de turno**: ignorar o processamento no nível do turno, mas deixando a caixa de diálogo na pilha com as informações que foram fornecidas. No próximo turno, continuar do ponto em que a conversa parou.
 - **De nível de caixa de diálogo**: cancelar o processamento completamente para que o bot comece tudo novamente.
 
 ## <a name="define-and-implement-the-interruption-logic"></a>Como definir e implementar a lógica de interrupção
 
-Primeiramente, definimos e implementamos as interrupções de _ajuda_ e _cancelamento_.
+Primeiramente, defina e implemente as interrupções de _ajuda_ e _cancelamento_.
 
 # <a name="c"></a>[C#](#tab/csharp)
 
@@ -44,7 +44,7 @@ Para usar as caixas de diálogo, instale o pacote do NuGet, **Microsoft.Bot.Buil
 
 **Dialogs\CancelAndHelpDialog.cs**
 
-Começamos com a implementação da classe `CancelAndHelpDialog` para lidar com as interrupções do usuário.
+Implemente a classe `CancelAndHelpDialog` para manipular as interrupções do usuário. As caixas de diálogo canceláveis `BookingDialog` e `DateResolverDialog` derivam dessa classe.
 
 [!code-csharp[Class signature](~/../botbuilder-samples/samples/csharp_dotnetcore/13.core-bot/Dialogs/CancelAndHelpDialog.cs?range=12)]
 
@@ -52,7 +52,7 @@ Na classe `CancelAndHelpDialog`, o método `OnContinueDialogAsync` chama o méto
 
 [!code-csharp[Overrides](~/../botbuilder-samples/samples/csharp_dotnetcore/13.core-bot/Dialogs/CancelAndHelpDialog.cs?range=22-31)]
 
-Se o usuário digitar "help", o método `InterrupAsync` enviará uma mensagem e, em seguida, chama `DialogTurnResult (DialogTurnStatus.Waiting)` para indicar que a caixa de diálogo principal está aguardando uma resposta do usuário. Dessa forma, o fluxo de conversa é interrompido durante somente um turno e, no próximo turno, continuamos de onde paramos.
+Se o usuário digitar "help", o método `InterrupAsync` enviará uma mensagem e, em seguida, chama `DialogTurnResult (DialogTurnStatus.Waiting)` para indicar que a caixa de diálogo principal está aguardando uma resposta do usuário. Dessa forma, o fluxo de conversa é interrompido durante somente um turno e, no próximo turno, continua do ponto em que a conversa parou.
 
 Se o usuário digitar "cancelar", ele chamará `CancelAllDialogsAsync` em seu contexto interno de caixa de diálogo, e isso limpa sua pilha de caixa de diálogo fazendo com que ele seja fechado com um status de cancelamento e nenhum valor de resultado. Para `MainDialog` (mostrado posteriormente), aparecerá que a caixa de diálogo de reserva foi finalizada e não retornou resultados, da mesma forma quando o usuário decide não confirmar a reserva.
 
@@ -64,7 +64,7 @@ Para usar as caixas de diálogo, instale o pacote de npm **botbuilder-dialogs**.
 
 **dialogs/cancelAndHelpDialog.js**
 
-Começamos com a implementação da classe `CancelAndHelpDialog` para lidar com as interrupções do usuário.
+Implemente a classe `CancelAndHelpDialog` para manipular as interrupções do usuário. As caixas de diálogo canceláveis `BookingDialog` e `DateResolverDialog` estendem essa classe.
 
 [!code-javascript[Class signature](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/dialogs/cancelAndHelpDialog.js?range=11)]
 
@@ -72,7 +72,7 @@ Na classe `CancelAndHelpDialog`, o método `onContinueDialog` chama o método `i
 
 [!code-javascript[Overrides](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/dialogs/cancelAndHelpDialog.js?range=12-18)]
 
-Se o usuário digitar "help", o método `interrupt` envia uma mensagem e, em seguida, retorna um objeto `{ status: DialogTurnStatus.waiting }` para indicar que a caixa de diálogo principal está aguardando uma resposta do usuário. Dessa forma, o fluxo de conversa é interrompido durante somente um turno e, no próximo turno, continuamos de onde paramos.
+Se o usuário digitar "help", o método `interrupt` envia uma mensagem e, em seguida, retorna um objeto `{ status: DialogTurnStatus.waiting }` para indicar que a caixa de diálogo principal está aguardando uma resposta do usuário. Dessa forma, o fluxo de conversa é interrompido durante somente um turno e, no próximo turno, continua do ponto em que a conversa parou.
 
 Se o usuário digitar "cancelar", ele chamará `cancelAllDialogs` em seu contexto interno de caixa de diálogo, e isso limpa sua pilha de caixa de diálogo fazendo com que ele seja fechado com um status de cancelamento e nenhum valor de resultado. Para `MainDialog` (mostrado posteriormente), aparecerá que a caixa de diálogo de reserva foi finalizada e não retornou resultados, da mesma forma quando o usuário decide não confirmar a reserva.
 
@@ -87,7 +87,7 @@ Para obter mais informações sobre como instalar os pacotes, consulte o reposit
 
 **dialogs/cancel-and-help-dialog.py**
 
-Começamos com a implementação da classe `CancelAndHelpDialog` para lidar com as interrupções do usuário.
+Implemente a classe `CancelAndHelpDialog` para manipular as interrupções do usuário. As caixas de diálogo canceláveis `BookingDialog` e `DateResolverDialog` derivam dessa classe.
 
 [!code-python[class signature](~/../botbuilder-samples/samples/python/13.core-bot/dialogs/cancel_and_help_dialog.py?range=14)]
 
@@ -95,7 +95,7 @@ Na classe `CancelAndHelpDialog`, o método `on_continue_dialog` chama o método 
 
 [!code-python[dialog](~/../botbuilder-samples/samples/python/13.core-bot/dialogs/cancel_and_help_dialog.py?range=18-23)]
 
-Se o usuário digitar *help* ou *?* , o método `interrupt` enviará uma mensagem e, em seguida, chamará `DialogTurnResult(DialogTurnStatus.Waiting)` para indicar que a caixa de diálogo na parte superior da pilha está aguardando uma resposta do usuário. Dessa forma, o fluxo de conversa é interrompido durante somente um turno e, no próximo turno, continuamos de onde paramos.
+Se o usuário digitar *help* ou *?* , o método `interrupt` enviará uma mensagem e, em seguida, chamará `DialogTurnResult(DialogTurnStatus.Waiting)` para indicar que a caixa de diálogo na parte superior da pilha está aguardando uma resposta do usuário. Dessa forma, o fluxo de conversa é interrompido durante somente um turno e, no próximo turno, continua do ponto em que a conversa parou.
 
 Se o usuário digitar *cancelar* ou *encerrar*, ele chamará `cancel_all_dialogs()` em seu contexto de caixa de diálogo interno, o que limpa sua pilha de caixa de diálogo e faz com que ele saia com um status cancelado e nenhum valor de resultado. Para `MainDialog`, mostrada posteriormente, aparecerá que a caixa de diálogo de reserva foi finalizada e não retornou resultados, da mesma forma quando o usuário decide não confirmar a reserva.
 
@@ -105,7 +105,7 @@ Se o usuário digitar *cancelar* ou *encerrar*, ele chamará `cancel_all_dialogs
 
 ## <a name="check-for-interruptions-each-turn"></a>Como verificar se há interrupções em cada turno
 
-Agora que falamos sobre como a classe para lidar com interrupções funciona, vamos voltar e ver o que acontece quando o bot recebe uma nova mensagem do usuário.
+Depois que a classe de manipulação de interrupção for implementada, examine o que acontece quando esse bot recebe uma nova mensagem do usuário.
 
 # <a name="c"></a>[C#](#tab/csharp)
 
@@ -151,7 +151,7 @@ Em seguida, no método `final_step` da classe `MainDialog`, a caixa de diálogo 
 
 ## <a name="handle-unexpected-errors"></a>Como lidar com erros inesperados
 
-Em seguida, vamos lidar com exceções sem tratamento que podem ocorrer.
+O manipulador de erros do adaptador lida com quaisquer exceções que não foram capturadas no bot.
 
 # <a name="c"></a>[C#](#tab/csharp)
 
@@ -193,7 +193,7 @@ Para referência, aqui estão as definições de classe que são usadas na chama
 
 [!code-csharp[MainDialog signature](~/../botbuilder-samples/samples/csharp_dotnetcore/13.core-bot/Dialogs/MainDialog.cs?range=17)]
 [!code-csharp[DialogAndWelcomeBot signature](~/../botbuilder-samples/samples/csharp_dotnetcore/13.core-bot/Bots/DialogAndWelcomeBot.cs?range=16)]
-[!code-csharp[DialogBot signature](~/../botbuilder-samples/samples/csharp_dotnetcore/13.core-bot/Bots/DialogBot.cs?range=18)]
+[!code-csharp[DialogBot signature](~/../botbuilder-samples/samples/csharp_dotnetcore/13.core-bot/Bots/DialogBot.cs?range=18-19)]
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 

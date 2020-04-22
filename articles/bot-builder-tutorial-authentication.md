@@ -8,12 +8,12 @@ ms.service: bot-service
 ROBOTS: NOINDEX
 ms.date: 11/14/2019
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: aab49803939a42974a59b66f47a1f004019421b4
-ms.sourcegitcommit: 4e1af50bd46debfdf9dcbab9a5d1b1633b541e27
+ms.openlocfilehash: e7ae8eea8dcf7f7f66d406f120f15ec89cfb8f4f
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/25/2020
-ms.locfileid: "76752778"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80647240"
 ---
 # <a name="add-authentication-to-your-bot-via-azure-bot-service"></a>Adicionar autenticação ao seu bot por meio do Serviço de Bot do Azure
 
@@ -105,7 +105,7 @@ Use essas etapas para criar um novo aplicativo do Azure Active Directory. Você 
       - Registre também o valor da **ID do diretório (locatário)** . Você também usará essas informações para registrar esse aplicativo no bot.
  
     > [!NOTE]
-    > Quando os tipos de conta compatíveis forem definidos como locatário único, se você usar uma assinatura pessoal em vez de uma conta Microsoft, o emulador emitirá o erro: *A ID do aplicativo Microsoft do bot ou a senha do aplicativo Microsoft está incorreta.* Nesse caso, os tipos de conta compatíveis devem ser definidos como *Contas em qualquer diretório organizacional (Qualquer diretório do Azure AD – Multilocatário) e contas pessoais Microsoft (por exemplo, Skype, Xbox)* .
+    > Quando os tipos de conta compatíveis forem definidos como locatário único, se você usar uma assinatura pessoal em vez de uma conta Microsoft, o emulador emitirá o erro: *A ID do aplicativo Microsoft do bot ou a senha do aplicativo Microsoft está incorreta.* Nesse caso, os tipos de conta compatíveis devem ser definidos como *Contas em qualquer diretório organizacional (Qualquer diretório do Azure AD – Multilocatário) e contas pessoais Microsoft (por exemplo, Xbox)* .
 
 1. No painel de navegação, clique em **Certificados e segredos** para criar um segredo para o aplicativo.
 
@@ -143,7 +143,7 @@ Crie um **Registro de Canais de Bot** usando o [Portal do Azure](https://portal.
 
 A próxima etapa é registrar com seu bot o aplicativo do Azure AD que você acabou de criar.
 
-# <a name="azure-ad-v1tabaadv1"></a>[Azure AD v1](#tab/aadv1)
+# <a name="azure-ad-v1"></a>[Azure AD v1](#tab/aadv1)
 
 1. Navegue até a página de recurso do seu bot no [Portal do Azure](https://portal.azure.com/).
 1. Clique em **Configurações**.
@@ -168,7 +168,7 @@ A próxima etapa é registrar com seu bot o aplicativo do Azure AD que você aca
 > [!NOTE]
 > Esses valores permitem que seu aplicativo acesse os dados do Office 365 por meio da API do Microsoft Graph.
 
-# <a name="azure-ad-v2tabaadv2"></a>[Azure AD v2](#tab/aadv2)
+# <a name="azure-ad-v2"></a>[Azure AD v2](#tab/aadv2)
 
 1. Navegue até a página Registro de Canais de Bot do seu bot no [Portal do Azure](https://portal.azure.com/).
 1. Clique em **Configurações**.

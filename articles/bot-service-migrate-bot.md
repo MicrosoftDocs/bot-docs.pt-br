@@ -8,18 +8,18 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 3/22/2019
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 5a13aa3a5d97adde294389d103ddb22bb0964aaa
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: f6700613c59e1ef1ed573baeb031f676c7f78fe5
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75793558"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80647280"
 ---
 # <a name="migrate-your-bot-to-azure"></a>Migrar bot para Azure
 
 Todos os bots do **Serviço de Bot do Azure (versão prévia)** criados no [portal do Bot Framework](http://dev.botframework.com) devem migrar para o novo Serviço de Bot no Azure. O serviço foi disponibilizado de forma geral (GA) em dezembro de 2017. 
 
-Observe que os bots de registro conectados apenas aos canais a seguir *não* precisam migrar: **Teams**, **Skype** ou **Cortana**. Por exemplo, um bot de registro conectado ao **Facebook** e **Skype** *precisa migrar*, mas um bot de registro conectado ao **Skype** e à **Cortana** *não precisa*.
+Observe que os bots de registro conectados apenas aos canais a seguir *não* precisam migrar: **Microsoft Teams** e **Cortana**. Por exemplo, um bot de registro conectado ao **Facebook** e **Slack** *precisa migrar*, mas um bot de registro conectado ao **Facebook** e à **Cortana** *não precisa*.
 
 > [!IMPORTANT]
 > Antes de migrar um bot do Azure Functions criado com o Node.js, será necessário usar o **Pacote do Azure Functions** para empacotar os módulos **node_modules** em conjunto. Isso aumentará o desempenho durante a migração e execução do bot do Functions depois que for migrado. Para empacotar os módulos, consulte [Empacotar um bot do Functions com Funcpack](#package-a-functions-bot-with-funcpack).

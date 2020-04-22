@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: b4c61d703c3d0a6b5b9191bf8b39a99da3d9be9a
-ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
+ms.openlocfilehash: 8d4199e20336e44611e09bbd430dbb4d20427402
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77441512"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80647784"
 ---
 # <a name="enterprise-productivity-bot-scenario"></a>Cenário de bot de Produtividade Empresarial
 
@@ -37,7 +37,7 @@ Aqui é apresentado o fluxo lógico de um bot de Produtividade Empresarial:
 Baixe ou clone o código-fonte desse bot de exemplo em [Exemplos para cenários comuns do Bot Framework](https://aka.ms/abs-scenarios).
 
 ## <a name="sample-bot"></a>Bot de exemplo
-Como os bots são acessíveis através de uma variedade de canais, é possível utilizá-los na área de trabalho a partir de um portal corporativo ou pelo Skype, onde quer que você esteja - basta autenticar-se. Com a integração do Azure AD, o bot de Produtividade Empresarial reconhece que se é possível acessá-lo, significa que você foi autenticado pelo Azure AD. A partir disso, será possível pedir ao bot para verificar o próximo compromisso com um cliente específico. O bot obtém essas informações, consultando o Office 365 por meio da API do Graph. Portanto, se houver um compromisso nos próximos sete dias, o bot consultará o CRM procurando por casos recentes para o cliente. O bot responderá o número de casos em aberto ou fechados ou se nenhum caso foi encontrado. Em seguida, será possível pedir ao Bot para listar os casos por tipo e detalhar casos individuais.
+Como os bots são acessíveis por uma variedade de canais, é possível usá-los na área de trabalho em um portal corporativo, onde quer que você esteja – basta autenticar-se. Com a integração do Azure AD, o bot de Produtividade Empresarial reconhece que se é possível acessá-lo, significa que você foi autenticado pelo Azure AD. A partir disso, será possível pedir ao bot para verificar o próximo compromisso com um cliente específico. O bot obtém essas informações, consultando o Office 365 por meio da API do Graph. Portanto, se houver um compromisso nos próximos sete dias, o bot consultará o CRM procurando por casos recentes para o cliente. O bot responderá o número de casos em aberto ou fechados ou se nenhum caso foi encontrado. Em seguida, será possível pedir ao Bot para listar os casos por tipo e detalhar casos individuais.
 
 ## <a name="components-youll-use"></a>Componentes que serão utilizados
 O bot de Produtividade Empresarial usa os componentes a seguir:

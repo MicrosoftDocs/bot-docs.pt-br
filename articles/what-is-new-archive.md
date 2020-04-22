@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 11/28/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 95ce084b68da41d9d9f434348c4539c9f67a2c78
-ms.sourcegitcommit: e5bf9a7fa7d82802e40df94267bffbac7db48af7
+ms.openlocfilehash: f3d33f9f3f19a32b7b01aa92b809b4e16cae76e1
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77441523"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80648173"
 ---
 # <a name="whats-new-november-2019"></a>Novidades em novembro de 2019
 
@@ -131,7 +131,7 @@ O [repositório de Soluções do Bot Framework](https://github.com/Microsoft/AI#
 |[**Analytics**](https://github.com/Microsoft/AI/blob/master/docs/readme.md#analytics)| Obtenha insights essenciais sobre a integridade e o comportamento do seu bot com as soluções de análise de inteligência Artificial de Conversação. Examine os dados telemétricos disponíveis, os exemplos de consultas do Application Insights e os painéis do Power BI para compreender a amplitude das conversas do seu bot com os usuários. |
 
 ## <a name="azure-bot-service"></a>Serviço de Bot do Azure
-O Serviço de Bot do Azure permite que você hospede bots inteligentes e de nível empresarial com total controle e propriedade sobre seus dados. Os desenvolvedores podem registrar e conectar seus bots a usuários no Skype, no Microsoft Teams, na Cortana, no Web Chat e muito mais. [Azure][27]  |  [docs][28] | [conectar-se a canais][29] 
+O Serviço de Bot do Azure permite que você hospede bots inteligentes e de nível empresarial com total controle e propriedade sobre seus dados. Os desenvolvedores podem registrar e conectar seus bots a usuários no Microsoft Teams, na Cortana, no Webchat e muito mais. [Azure][27]  |  [docs][28] | [conectar-se a canais][29] 
 
 * **Cliente JS Direct Line**: se você quiser usar o canal Direct Line no Serviço de Bot do Azure e não estiver usando o cliente WebChat, o cliente JS Direct Line poderá ser usado no seu aplicativo personalizado. Vá para o [GitHub][30] para obter mais informações.
 
@@ -148,7 +148,7 @@ O [Bot Framework Emulator][60] é um aplicativo de área de trabalho multiplataf
 <a name="Emulator-whats-new"></a>
 ### <a name="bot-inspector-new-in-preview"></a>Inspetor de Bot (Novo! Em versão prévia)
 
-O Bot Framework Emulator lançou uma versão beta do novo recurso Inspetor de Bot. Ele fornece uma maneira de depurar e testar seus bots do SDK do Bot Framework v4 em canais como Microsoft Teams, Slack, Cortana, Facebook Messenger, Skype etc. Durante a conversa, as mensagens serão espelhadas para o Bot Framework Emulator, no qual você poderá inspecionar os dados da mensagem que o bot recebeu. Além disso, é renderizado um instantâneo do estado do bot em todos os turnos entre o canal e o bot. Leia mais sobre o [Inspetor de Bot](https://github.com/Microsoft/BotFramework-Emulator/blob/master/content/CHANNELS.md).
+O Bot Framework Emulator lançou uma versão beta do novo recurso Inspetor de Bot. Ele fornece um modo de depurar e testar seus bots do SDK do Bot Framework v4 em canais como Microsoft Teams, Slack, Cortana, Facebook Messenger etc. Durante a conversa, as mensagens serão espelhadas para o Bot Framework Emulator, no qual você poderá inspecionar os dados da mensagem que o bot recebeu. Além disso, é renderizado um instantâneo do estado do bot em todos os turnos entre o canal e o bot. Leia mais sobre o [Inspetor de Bot](https://github.com/Microsoft/BotFramework-Emulator/blob/master/content/CHANNELS.md).
 
 
 ## <a name="related-services"></a>Serviços Relacionados

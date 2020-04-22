@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 4471507ff64e69ca2d438d55ccf8ba7e08fbcdfd
-ms.sourcegitcommit: f8b5cc509a6351d3aae89bc146eaabead973de97
+ms.openlocfilehash: b60d8a08650de3e4f7501173acb9f1cbbf06e43d
+ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75794721"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80647264"
 ---
 # <a name="register-a-bot-with-azure-bot-service"></a>Registrar um bot com o Serviço de Bot do Azure
 
 Este tópico mostra como criar um recurso do **Serviço de Bot do Azure** para registrar seu bot. Você precisará disso se o bot estiver hospedado em outro lugar e você quiser disponibilizá-lo no Azure e conectá-lo aos canais do Serviço de Bot do Azure.
 
-Isso permite que você crie, conecte e gerencie seu bot para interagir com os usuários, onde quer que estejam, pelo Cortana, Skype, Messenger e muitos outros serviços.
+Isso permite que você crie, conecte e gerencie seu bot para interagir com os usuários, onde quer que estejam, pelo Cortana, Messenger e muitos outros serviços.
 
 > [!IMPORTANT] 
 > Você só precisará registrar o seu bot se ele não estiver hospedado no Azure. Se você [criou um bot](v4sdk/abs-quickstart.md) pelo portal do Azure, ele já foi registrado no serviço.
@@ -38,7 +38,7 @@ No **Aplicativo Web do bot**, siga as etapas descritas no artigo: [Criar um bot 
 
    ![Criar uma folha de bot de registro](media/azure-bot-quickstarts/registration-create-bot-service-blade.png)
 
-   |Configuração |Valor sugerido|DESCRIÇÃO|
+   |Configuração |Valor sugerido|Descrição|
    |---|---|--|
    |**Nome do bot** <img width="300px">|O nome de exibição do bot|O nome de exibição do bot exibido nos canais e nos diretórios. Esse nome pode ser alterado a qualquer momento.|
    |**Assinatura**|Sua assinatura|Selecione a assinatura do Azure que deseja usar.|
@@ -87,7 +87,7 @@ Um registro manual é necessário para situações como:
 Confira [Perguntas frequentes – Registro do Aplicativo](bot-service-resources-bot-framework-faq.md#app-registration).
 
 > [!IMPORTANT]
-> Na seção *Dá suporte aos tipos de conta*, você deve escolher um dos dois tipos de multilocatário que seja: *Contas em qualquer diretório organizacional (Qualquer Azure AD – Multilocatário)* ou *Contas em qualquer diretório organizacional (Qualquer Azure AD – Multilocatário) e contas Microsoft pessoais (por ex., Skype, Xbox, Outlook.com)* , ao criar o aplicativo; caso contrário, o bot não funcionará. Para saber mais, confira [Registrar um novo aplicativo usando o portal do Azure](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app#register-a-new-application-using-the-azure-portal).
+> Na seção *Dá suporte aos tipos de conta*, você deve escolher um dos dois tipos de multilocatário que seja: *Contas em qualquer diretório organizacional (Qualquer Azure AD – Multilocatário)* ou *Contas em qualquer diretório organizacional (Qualquer Azure AD – Multilocatário) e contas Microsoft pessoais (por exemplo, Xbox, Outlook.com)* , ao criar o aplicativo; caso contrário, o bot não funcionará. Para saber mais, confira [Registrar um novo aplicativo usando o portal do Azure](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app#register-a-new-application-using-the-azure-portal).
 
 ## <a name="update-the-bot"></a>Atualizar o bot
 
