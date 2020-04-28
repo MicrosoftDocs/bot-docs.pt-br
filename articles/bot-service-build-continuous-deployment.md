@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 03/23/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 851fc2fd9def0e36894b0b90bdbb029d3c931824
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: edb1d18273179939a333835b6ff27b7aed9f156b
+ms.sourcegitcommit: 2412f96ad8f74dfa615c71f566c5befffb920658
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80499793"
+ms.lasthandoff: 04/25/2020
+ms.locfileid: "82158773"
 ---
 # <a name="set-up-continuous-deployment"></a>Configurar a implantação contínua
 
@@ -57,17 +57,6 @@ Para habilitar a implantação contínua com o GitHub, navegue até a página **
         > ![Continue to build provider](~/media/azure-bot-build/azure-deployment-continue.png)
 
 1. Na página **Provedor de build**, selecione o provedor de build que deseja usar e clique em **Continuar**.
-
-    > [!IMPORTANT]
-    > Com o lançamento do SDK do Bot Framework 4.8, os exemplos do .NET Bot Framework agora têm como destino o SDK do .NET Core 3.1.
-    > Nem todos os data centers do Azure estão configurados para criar tais bots.
-    >
-    > Consulte o mapa do [.NET Core no Serviço de Aplicativo](https://aspnetcoreon.azurewebsites.net/) para os centros nos quais você pode criar aplicativos do .NET Core 3.1 usando o Kudu. (Todos os centros podem executar aplicativos do .NET Core 3.1.)
-    >
-    > Se você estiver implantando um bot direcionado ao SDK do .NET Core 3.1 e estiver implantando em um centro que não pode compilar aplicativos do .NET Core 3.1 usando o Kudu, use as **GitHub Actions (versão prévia)** ou o **Azure Pipelines (versão prévia)** para seu provedor de build.
-
-    > [!div class="mx-imgBorder"]
-    > ![Selecionar provedor de build](~/media/azure-bot-build/azure-deployment-build-provider.png)
 
 1. Na página **Configurar**, insira as informações necessárias e clique em **Continuar**. As informações necessárias dependerão de qual serviço de controle do código-fonte e provedor de compilação você escolheu.
 

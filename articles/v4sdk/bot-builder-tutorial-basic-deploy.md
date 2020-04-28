@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 03/23/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 3b4e3652f7799fb09219b8536bd98a78e0952223
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: c4d3daed29f10a27754c059b8ca2f2ad72641606
+ms.sourcegitcommit: 2412f96ad8f74dfa615c71f566c5befffb920658
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80499904"
+ms.lasthandoff: 04/25/2020
+ms.locfileid: "82158863"
 ---
 # <a name="tutorial-create-and-deploy-a-basic-bot"></a>Tutorial: Criar e implantar um bot básico
 
@@ -88,8 +88,6 @@ Você pode implantar seu bot em um novo grupo de recursos ou em um grupo de recu
 [!INCLUDE [ARM with existing resourece group](~/includes/deploy/snippet-ARM-existing-resource-group.md)]
 
 #### <a name="5-prepare-your-code-for-deployment"></a>5. Preparar seu código para implantação
-
-[!INCLUDE [Work around for .NET Core 3.1 SDK](~/includes/deploy/samples-workaround-3-1.md)]
 
 ##### <a name="retrieve-or-create-necessary-iiskudu-files"></a>**Recuperar ou criar os arquivos necessários do IIS/do Kudu**
 
