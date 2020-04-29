@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: d10f60bb4291cbd53eb526423e5bdcd711afa8f2
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 94c03c0a7ba5cc602d46b73989e06485535e95c5
+ms.sourcegitcommit: 2412f96ad8f74dfa615c71f566c5befffb920658
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75791178"
+ms.lasthandoff: 04/25/2020
+ms.locfileid: "82158823"
 ---
 # <a name="debugging-guidelines"></a>Diretrizes de depuração
 
@@ -31,9 +31,9 @@ A criação de seu próprio cliente permite que você defina o funcionamento int
 
 O uso do Emulador e do Webchat por meio do portal do Azure aqui pode fornecer mais insights sobre o desempenho do bot durante a interação com diferentes canais.
 
-A depuração do bot funciona da mesma forma que outros aplicativos multi-thread, com a capacidade de definir pontos de interrupção ou usar recursos como a janela imediata. 
+A depuração do bot funciona da mesma forma que outros aplicativos multi-thread, com a capacidade de definir pontos de interrupção ou usar recursos como a janela imediata.
 
-Os bots seguem um paradigma de programação controlada por evento, que poderá ser difícil de ser racionalizado se você não estiver familiarizado com ele. A ideia de o bot ser sem estado, multi-thread e lidar com chamadas assíncronas/await pode resultar em bugs inesperados. Embora a depuração do bot funcione de forma semelhante a outros aplicativos multi-thread, abordaremos algumas sugestões, ferramentas e recursos para ajudar.
+Os bots seguem um paradigma de programação controlada por evento, que poderá ser difícil de ser racionalizado se você não estiver familiarizado com ele. A ideia de o bot ser sem estado, multi-thread e lidar com chamadas assíncronas/await pode resultar em bugs inesperados. Embora a depuração do bot funcione de modo semelhante a outros aplicativos multithread, abordaremos algumas sugestões, ferramentas e recursos para ajudar.
 
 ## <a name="understanding-bot-activities-with-the-emulator"></a>Noções básicas de atividades do bot com o emulador
 
@@ -41,7 +41,7 @@ O bot lida com diferentes tipos de [atividades](bot-builder-basics.md#the-activi
 
 ## <a name="saving-and-retrieving-user-interactions-with-transcripts"></a>Salvar e recuperar as interações do usuário com transcrições
 
-O armazenamento de transcrição de Blobs do Azure fornece um recurso especializado em que você pode [armazenar e recuperar transcrições](bot-builder-howto-v4-storage.md) contendo as interações entre os usuários e seu bot.  
+O armazenamento de transcrição de Blobs do Azure fornece um recurso especializado em que você pode [armazenar e recuperar transcrições](bot-builder-howto-v4-storage.md) contendo as interações entre os usuários e seu bot.
 
 Além disso, depois que as interações de entrada do usuário foram armazenadas, você pode usar o “_gerenciador de armazenamento_” do Azure para exibir manualmente os dados contidos em transcrições armazenadas em seu repositório de transcrição de blob. O exemplo a seguir abre o “_gerenciador de armazenamento_” a partir das configurações para “_mynewtestblobstorage_”. Para abrir uma entrada de usuário salva selecione:    Contêiner de Blob > ChannelId > TranscriptId > ConversationId
 
@@ -51,11 +51,11 @@ Isso abre a entrada de conversação do usuário armazenada no formato JSON. A e
 
 ## <a name="how-middleware-works"></a>Como funciona o middleware
 
-O [middleware](bot-builder-concept-middleware.md) pode não ser intuitivo na primeira tentativa de usá-lo, particularmente, com relação à continuação, ou curto-circuito, de execução. O middleware pode ser executado na borda à esquerda ou à direita de um turno, com uma chamada ao delegado `next()` que instrui quando a execução é passada para a lógica do bot. 
+O [middleware](bot-builder-concept-middleware.md) pode não ser intuitivo na primeira tentativa de usá-lo, particularmente, com relação à continuação, ou curto-circuito, de execução. O middleware pode ser executado na borda à esquerda ou à direita de um turno, com uma chamada ao delegado `next()` que instrui quando a execução é passada para a lógica do bot.
 
 Se você estiver usando várias partes do middleware, o delegado poderá passar a execução para uma parte diferente do middleware se o pipeline for orientado desse modo. Detalhes sobre o [pipeline de middleware do bot](bot-builder-concept-middleware.md#the-bot-middleware-pipeline) podem ajudar a esclarecer essa ideia.
 
-Se o delegado `next()` não for chamado, isso será conhecido como [roteamento de curto-circuito](bot-builder-concept-middleware.md#short-circuiting). Isso acontece quando o middleware atende à atividade atual e determina que não é necessário passar a execução. 
+Se o delegado `next()` não for chamado, isso será conhecido como [roteamento de curto-circuito](bot-builder-concept-middleware.md#short-circuiting). Isso acontece quando o middleware atende à atividade atual e determina que não é necessário passar a execução.
 
 Compreender quando e por quê o middleware causa curto-circuito ajuda a indicar qual parte do middleware deve vir primeiro no pipeline. Além disso, é particularmente importante compreender o que esperar para o middleware interno fornecido pelo SDK ou por outros desenvolvedores. Algumas pessoas acreditam ser útil tentar criar seu próprio middleware primeiro para experimentar um pouco antes de se aprofundarem no middleware interno.
 
@@ -68,6 +68,9 @@ For example [QnA maker](bot-builder-howto-qna.md) is designed to handle certain 
 O acompanhamento do estado é uma parte importante do bot, particularmente, para tarefas complexas. Em geral, a melhor prática é processar as atividades o mais rapidamente possível e permitir a conclusão do processamento para que o estado seja persistido. As atividades podem ser enviadas ao bot praticamente ao mesmo tempo, e isso pode introduzir bugs muito confusos devido à arquitetura assíncrona.
 
 O mais importante é garantir a persistência do estado de uma maneira que corresponda às suas expectativas. Dependendo do local em que reside o estado persistente, os emuladores de armazenamento do [Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/local-emulator) e do [Armazenamento de Tabelas do Azure](https://docs.microsoft.com/azure/storage/common/storage-use-emulator) podem ajudá-lo a verificar o estado antes de usar o armazenamento de produção.
+
+>[!IMPORTANT]
+> A classe de _armazenamento do Cosmos DB_ foi preterida. Os contêineres criados com o _armazenamento do Cosmos DB_ podem ser usados com o _armazenamento particionado do Cosmos DB_ com a adição do [sinalizador](https://aka.ms/azure-dotnet-cosmosdb-partitionedstorage#L289) `compatibilityMode`. Para obter mais informações, leia [Particionamento no Azure Cosmos DB](https://aka.ms/azure-cosmosdb-partitioning-overview).
 
 ## <a name="how-to-use-activity-handlers"></a>Como usar manipuladores de atividades
 

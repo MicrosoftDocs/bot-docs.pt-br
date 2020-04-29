@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/01/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 35f113bacb84aa9e712ffe112780f0d121c1423e
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 44f3e532459529c02d4ce5ea06d762f28ab8796a
+ms.sourcegitcommit: 2412f96ad8f74dfa615c71f566c5befffb920658
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80117733"
+ms.lasthandoff: 04/25/2020
+ms.locfileid: "82158843"
 ---
 # <a name="write-directly-to-storage"></a>Gravar diretamente no armazenamento
 
@@ -317,6 +317,9 @@ Envie uma mensagem ao bot. Ele listará as mensagens recebidas.
 
 ## <a name="using-cosmos-db"></a>Usar o Cosmos DB
 
+>[!IMPORTANT]
+> A classe de _armazenamento do Cosmos DB_ foi preterida. Os contêineres criados com o _armazenamento do Cosmos DB_ podem ser usados com o _armazenamento particionado do Cosmos DB_ com a adição do [sinalizador](https://aka.ms/azure-dotnet-cosmosdb-partitionedstorage#L289) `compatibilityMode`. Para obter mais informações, leia [Particionamento no Azure Cosmos DB](https://aka.ms/azure-cosmosdb-partitioning-overview).
+
 Agora que você usou o armazenamento de memória, vamos atualizar o código para usar o Azure Cosmos DB. O Cosmos DB é o banco de dados multimodelo globalmente distribuído da Microsoft. O Azure Cosmos DB permite que você dimensione a taxa de transferência e o armazenamento de maneira elástica e independente em qualquer número de regiões geográficas do Azure. Ele oferece garantias de taxa de transferência, disponibilidade, latência e consistência com contratos de nível de serviço (SLAs) abrangentes.
 
 ### <a name="set-up"></a>Configuração
@@ -341,7 +344,7 @@ A criação da conta leva alguns minutos. Aguarde até que o portal exiba a pág
 
 ### <a name="add-a-database"></a>Adicionar um banco de dados
 
-1. Navegue até a página **Data Explorer** em sua conta do Cosmos DB recém-criada e, em seguida, escolha **Criar Banco de Dados** na caixa suspensa ao lado do botão **Criar Contêiner**. Um painel será então aberto no lado direito da janela, no qual você poderá inserir os detalhes do novo contêiner.
+1. Navegue até a página **Data Explorer** em sua conta do Cosmos DB recém-criada e, em seguida, escolha **Criar Banco de Dados** na caixa suspensa ao lado do botão **Criar Contêiner**. Um painel será aberto no lado direito da janela, no qual você poderá inserir os detalhes do novo banco de dados.
 
     ![Cosmos DB](./media/create-cosmosdb-database-resource.png)
 
@@ -368,18 +371,15 @@ Nossos dados de configuração para adicionar o armazenamento do Cosmos DB são 
 
 ### <a name="c"></a>[C#](#tab/csharp)
 
-**EchoBot.cs**
+Adicione as informações a seguir ao arquivo de configuração.
 
-```csharp
-public class EchoBot : ActivityHandler
-{
-   private const string CosmosServiceEndpoint = "<your-cosmos-db-URI>";
-   private const string CosmosDBKey = "<your-authorization-key>";
-   private const string CosmosDBDatabaseId = "<your-database-id>";
-   private const string CosmosDBContainerId = "bot-storage";
-   ...
+**appsettings.json**
 
-}
+```json
+"CosmosDbEndpoint": "<your-cosmosdb-uri>",
+"CosmosDbAuthKey": "<your-authorization-key>",
+"CosmosDbDatabaseId": "<your-database-id>",
+"CosmosDbContainerId": "<your-container-id>"
 ```
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
@@ -389,28 +389,30 @@ Adicione as informações a seguir ao arquivo `.env`.
 **.env**
 
 ```javascript
-DB_SERVICE_ENDPOINT="<your-cosmos-db-URI>"
-AUTH_KEY="<your-authorization-key>"
-DATABASE_ID="<your-database-id>"
-CONTAINER="bot-storage"
+CosmosDbEndpoint="<your-cosmos-db-uri>"
+CosmosDbAuthKey="<your-authorization-key>"
+CosmosDbDatabaseId="<your-database-id>"
+CosmosDbContainerId="<your-container-id>"
 ```
 
 ### <a name="python"></a>[Python](#tab/python)
 
-Adicione as informações a seguir ao arquivo `bot.py`.
+Adicione as informações a seguir ao arquivo de configuração.
+
+**config.py**
 
 ```python
-COSMOSDB_SERVICE_ENDPOINT = "<your-cosmos-db-URI>"
-COSMOSDB_KEY = "<your-authorization-key>"
-COSMOSDB_DATABASE_ID = "<your-database-id>"
-COSMOSDB_CONTAINER_ID = "bot-storage"
+COSMOS_DB_ENDPOINT = "<your-cosmos-db-uri>"
+COSMOS_DB_AUTH_KEY="<your-authorization-key>"
+COSMOS_DB_DATABASE_ID="<your-database-id>"
+COSMOS_DB_CONTAINER_ID="<your-container-id>"
 ```
 
 ---
 
 #### <a name="installing-packages"></a>Instalar pacotes
 
-Verifique se você possui os pacotes necessários para o Cosmos DB
+Verifique se você tem os pacotes necessários para o Cosmos DB.
 
 ### <a name="c"></a>[C#](#tab/csharp)
 
@@ -421,8 +423,7 @@ Install-Package Microsoft.Bot.Builder.Azure
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Você pode adicionar referências ao botbuilder-azure em seu projeto por meio do npm.
->**Observação**: esse pacote npm se baseia em uma instalação do Python existente no seu computador de desenvolvimento. Caso não tenha o Python instalado, você pode encontrar os recursos de instalação no seu computador aqui: [Python.org](https://www.python.org/downloads/)
-
+>**Observação**: esse pacote npm se baseia em uma instalação do Python existente no seu computador de desenvolvimento. Caso não tenha o Python instalado, você pode encontrar os recursos de instalação no seu computador em [python.org](https://www.python.org/downloads/).
 ```powershell
 npm install --save botbuilder-azure
 ```
@@ -446,38 +447,33 @@ pip install botbuilder-azure
 ### <a name="implementation"></a>Implementação
 
 > [!NOTE]
-> A versão 4.6 introduziu um novo provedor de armazenamento do Cosmos DB, `CosmosDbPartitionedStorage`. Os bots existentes usando o `CosmosDbStorage` original devem continuar usando `CosmosDbStorage`. Os bots que usam o provedor mais antigo continuarão funcionando conforme o esperado. Os novos bots devem usar o `CosmosDbPartitionedStorage`, pois o particionamento proporciona maior desempenho.
+> A versão 4.6 introduziu um novo provedor de armazenamento do Cosmos DB, a classe de _armazenamento particionado do Cosmos DB_. A classe de _armazenamento do Cosmos DB_ original foi preterida. Os contêineres criados com o _armazenamento do Cosmos DB_ podem ser usados com o _armazenamento particionado do Cosmos DB_ com a adição do [sinalizador](https://aka.ms/azure-dotnet-cosmosdb-partitionedstorage#L289) `compatibilityMode`.
 
 ### <a name="c"></a>[C#](#tab/csharp)
 
 O código de exemplo a seguir é executado usando o mesmo código de bot do exemplo de [armazenamento de memória](#memory-storage) fornecido acima.
 O snippet de código a seguir mostra uma implementação de armazenamento do Cosmos DB para '_myStorage_' que substitui o armazenamento de memória local. O Armazenamento de memória é comentado e substituído por uma referência ao Cosmos DB.
 
-**EchoBot.cs**
+**Startup.cs**
 
 ```csharp
-
-using System;
-...
 using Microsoft.Bot.Builder.Azure;
-...
-public class EchoBot : ActivityHandler
-{
-   // Create local Memory Storage - commented out.
-   // private static readonly MemoryStorage _myStorage = new MemoryStorage();
+```
 
-   // Replaces Memory Storage with reference to Cosmos DB.
-   private static readonly CosmosDbStorage _myStorage = new CosmosDbPartitionedStorage(new CosmosDbPartitionedStorageOptions
-   {
-        CosmosDbEndpoint = CosmosServiceEndpoint,
-        AuthKey = CosmosDBKey,
-        DatabaseId = CosmosDBDatabaseId,
-        ContainerId = CosmosDBContainerId,
-   });
+Em `ConfigureServices`, crie a instância de armazenamento para o armazenamento particionado do CosmosDB.
 
-   ...
-}
-
+```csharp
+// Use partitioned CosmosDB for storage, instead of in-memory storage.
+services.AddSingleton<IStorage>(
+    new CosmosDbPartitionedStorage(
+        new CosmosDbPartitionedStorageOptions
+        {
+            CosmosDbEndpoint = Configuration.GetValue<string>("CosmosDbEndpoint"),
+            AuthKey = Configuration.GetValue<string>("CosmosDbAuthKey"),
+            DatabaseId = Configuration.GetValue<string>("CosmosDbDatabaseId"),
+            ContainerId = Configuration.GetValue<string>("CosmosDbContainerId"),
+            CompatibilityMode = false,
+        }));
 ```
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
@@ -489,7 +485,7 @@ Requer o `CosmosDbPartitionedStorage` do `botbuilder-azure` e a configuração d
 **bot.js**
 
 ```javascript
-const { CosmosDbPartitionedStorage } = require("botbuilder-azure");
+const { CosmosDbPartitionedStorage } = require('botbuilder-azure');
 ```
 
 Comentário sobre o Armazenamento de Memória, substitua-o com referência ao Cosmos DB.
@@ -497,33 +493,29 @@ Comentário sobre o Armazenamento de Memória, substitua-o com referência ao Co
 **bot.js**
 
 ```javascript
-// initialized to access values in .env file.
-const ENV_FILE = path.join(__dirname, '.env');
-require('dotenv').config({ path: ENV_FILE });
-
-// Create local Memory Storage - commented out.
-// var storage = new MemoryStorage();
-
-// Create access to CosmosDb Storage - this replaces local Memory Storage.
-var storage = new CosmosDbPartitionedStorage({
-    cosmosDbEndpoint: process.env.DB_SERVICE_ENDPOINT,
-    authKey: process.env.AUTH_KEY,
-    databaseId: process.env.DATABASE_ID,
-    containerId: process.env.CONTAINER
-})
-
+...
+const { CosmosDbPartitionedStorage } = require('botbuilder-azure');
+...
+const storage = new CosmosDbPartitionedStorage({
+    cosmosDbEndpoint: process.env.CosmosDbEndpoint,
+    authKey: process.env.CosmosDbAuthKey,
+    databaseId: process.env.CosmosDbDatabaseId,
+    containerId: process.env.CosmosDbContainerId,
+    compatibilityMode: false
+});
+...
 ```
 
 ### <a name="python"></a>[Python](#tab/python)
 
 O código de exemplo a seguir é semelhante ao [armazenamento de memória](#memory-storage), mas com pequenas alterações.
 
-Exija `CosmosDbStorage` de `botbuilder-azure` e criar o objeto CosmosDBStorage.
+Exija `CosmosDbPartitionedStorage` e `CosmosDbPartitionedConfig` de `botbuilder-azure` e crie o objeto CosmosDBStorage.
 
 **bot.py**
 
 ```py
-from botbuilder.azure import CosmosDbStorage, CosmosDbConfig
+from botbuilder.azure import CosmosDbPartitionedStorage, CosmosDbPartitionedConfig
 ```
 
 Comente o armazenamento de memória em `__init__` e substitua por uma referência ao Cosmos DB.  Use o ponto de extremidade, a chave de autenticação, a ID do banco de dados e a ID do contêiner usados acima.
@@ -532,13 +524,14 @@ Comente o armazenamento de memória em `__init__` e substitua por uma referênci
 
 ```py
 def __init__(self):
-    cosmos_config = CosmosDbConfig(
-        endpoint=COSMOSDB_SERVICE_ENDPOINT,
-        masterkey=COSMOSDB_KEY,
-        database=COSMOSDB_DATABASE_ID,
-        container=COSMOSDB_CONTAINER_ID
+    cosmos_config = CosmosDbPartitionedConfig(
+        cosmos_db_endpoint=COSMOSDB_SERVICE_ENDPOINT,
+        auth_key=COSMOSDB_KEY,
+        database_id=COSMOSDB_DATABASE_ID,
+        container_id=COSMOSDB_CONTAINER_ID,
+        compatibility_mode = False
     )
-    self.storage = CosmosDbStorage(cosmos_config)
+    self.storage = CosmosDbPartitionedStorage(cosmos_config)
 ```
 
 ---

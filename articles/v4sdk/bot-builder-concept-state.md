@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 05/23/2019
+ms.date: 04/03/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 05e06f65203566fd9176303b8680b5196368f7d3
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: adace7cc7a7c59ca7b2a820c99519bde783b375f
+ms.sourcegitcommit: 2412f96ad8f74dfa615c71f566c5befffb920658
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75798721"
+ms.lasthandoff: 04/25/2020
+ms.locfileid: "82158833"
 ---
 # <a name="managing-state"></a>Gerenciar estado
 
@@ -42,7 +42,10 @@ O SDK do Bot Framework inclui algumas implementações para a camada de armazena
 
 - **Armazenamento da memória** implementa o armazenamento na memória para fins de teste. O armazenamento de dados na memória serve apenas para teste local, pois esse armazenamento é volátil e temporário. Os dados serão limpos sempre que o bot for reiniciado.
 - O **Armazenamento de Blobs do Azure** se conecta a um banco de dados de objeto do Armazenamento de Blobs do Azure.
-- O **Armazenamento do Azure Cosmos DB** se conecta a um banco de dados NoSQL do Cosmos DB.
+- O **armazenamento particionado do Azure Cosmos DB** se conecta a um banco de dados NoSQL particionado do Cosmos DB.
+
+>[!IMPORTANT]
+> A classe de _armazenamento do Cosmos DB_ foi preterida. Os contêineres criados com o _armazenamento do Cosmos DB_ podem ser usados com o _armazenamento particionado do Cosmos DB_ com a adição do [sinalizador](https://aka.ms/azure-dotnet-cosmosdb-partitionedstorage#L289) `compatibilityMode`. Para obter mais informações, leia [Particionamento no Azure Cosmos DB](https://aka.ms/azure-cosmosdb-partitioning-overview).
 
 Para obter instruções sobre como se conectar a outras opções de armazenamento, confira [Gravar diretamente no armazenamento](bot-builder-howto-v4-storage.md).
 

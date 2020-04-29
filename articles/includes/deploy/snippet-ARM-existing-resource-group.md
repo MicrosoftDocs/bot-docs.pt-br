@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 27c6079030e6a1da73646c6c325a78614960fa07
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 0fba3baa39903740c56beff4b4ade7ebb9cb8962
+ms.sourcegitcommit: 2412f96ad8f74dfa615c71f566c5befffb920658
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80499833"
+ms.lasthandoff: 04/25/2020
+ms.locfileid: "82158803"
 ---
 Nesta etapa, você cria um serviço de aplicativo de bot que define a fase de implantação para o bot. Ao usar um grupo de recursos existente, você pode empregar um plano do serviço de aplicativo existente ou criar um novo. As etapas para as duas opções estão listadas abaixo.
 

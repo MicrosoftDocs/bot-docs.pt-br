@@ -9,18 +9,23 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 03/23/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 9e4c67f644e9797f3e210546a91d09f5161aa100
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: eb440684b57cf1e664214a9924095df2481a9944
+ms.sourcegitcommit: 2412f96ad8f74dfa615c71f566c5befffb920658
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80499859"
+ms.lasthandoff: 04/25/2020
+ms.locfileid: "82158804"
 ---
 # <a name="deploy-your-bot"></a>Implantar seu bot
 
 [!INCLUDE [applies-to](./includes/applies-to.md)]
 
 Neste artigo, mostraremos como implantar um bot básico no Azure. Explicaremos como preparar seu bot para implantação, implantá-lo no Azure e testá-lo no Webchat. Seria útil ler este artigo antes de seguir as etapas, para que você entenda tudo que está relacionado à implantação de um bot.
+
+> [!IMPORTANT]
+> Verifique se você está usando a versão atualizada da CLI do Azure.
+> Para obter mais informações sobre a versão mais recente, confira [Instalar a CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -64,8 +69,6 @@ Você deve ter o caminho correto para o diretório de modelos de implantação d
 ---
 
 ### <a name="5-prepare-your-code-for-deployment"></a>5. Preparar seu código para implantação
-
-[!INCLUDE [Work around for .NET Core 3.1 SDK](~/includes/deploy/samples-workaround-3-1.md)]
 
 #### <a name="51-retrieve-or-create-necessary-iiskudu-files"></a>5.1 Recuperar ou criar os arquivos IIS/Kudu necessários
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4f817ff4911229d8bc36d2c50348bf0320d09e47
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 38b7d497e3f46047d8d5d7233c806b9cc146249e
+ms.sourcegitcommit: 2412f96ad8f74dfa615c71f566c5befffb920658
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75791854"
+ms.lasthandoff: 04/25/2020
+ms.locfileid: "82158787"
 ---
 # <a name="virtual-assistant-overview"></a>Visão geral do Assistente Virtual
 
@@ -35,7 +35,7 @@ O escopo da funcionalidade do Assistente Virtual é amplo, normalmente oferecend
 
 Examine a documentação [Assistente Virtual e Habilidades](https://aka.ms/bf-solutions-docs) para ver informações mais detalhadas.
 
-## <a name="whats-in-the-box"></a>Conteúdo 
+## <a name="whats-in-the-box"></a>Conteúdo
 
 O Modelo de Assistente Virtual reúne várias da melhores práticas que identificamos durante a construção de experiências de conversação e automatiza a integração de componentes que consideramos altamente benéficos para desenvolvedores do Bot Framework. Esta seção cobre algumas informações básicas em relação a decisões importantes para ajudar a explicar por que o modelo funciona dessa forma.
 
@@ -55,6 +55,9 @@ Integração do dispositivo | Nossos SDKs do Serviço de Bot do Azure (DirectLin
 Agentes de teste | Além do Bot Framework Emulator, um agente de teste baseado em WebChat é fornecido para permitir o teste de cenários mais complexos de autenticação. Um agente de teste simples baseado em console demonstra a abordagem de troca de mensagens a fim de mostrar a facilidade de integração do dispositivo.
 Implantação automatizada | Todos os recursos do Azure necessários para o seu Assistente são implantados automaticamente: Registro de bot, Serviço de Aplicativo do Azure, LUIS, QnA Maker, Content Moderator, Cosmos DB, Armazenamento do Azure e Application Insights. Além disso, modelos do LUIS para todas as habilidades, do QnAMaker e de expedição são criados, treinados e publicados para habilitar o teste de imediato.
 Modelo de linguagem automotiva | Um modelo de linguagem automotiva que abrange domínios nucleares, como telefone, navegação e controle de recursos no carro, estará disponível em breve.
+
+>[!IMPORTANT]
+> A classe de _armazenamento do Cosmos DB_ foi preterida. Os contêineres criados com o _armazenamento do Cosmos DB_ podem ser usados com o _armazenamento particionado do Cosmos DB_ com a adição do [sinalizador](https://aka.ms/azure-dotnet-cosmosdb-partitionedstorage#L289) `compatibilityMode`. Para obter mais informações, leia [Particionamento no Azure Cosmos DB](https://aka.ms/azure-cosmosdb-partitioning-overview).
 
 ## <a name="example-scenarios"></a>Cenários de Exemplo
 
@@ -100,7 +103,7 @@ Além do assistente de base, existe um amplo conjunto de funcionalidades comuns 
 
 Isso fica ainda mais complicado pela necessidade de dar suporte a vários idiomas e resultados em uma grande quantidade de trabalho exigida de uma organização que esteja criando seu próprio assistente.
 
-Nossa solução Assistente Virtual inclui uma nova funcionalidade de habilidade que permite que novas funcionalidades sejam inseridas em um assistente personalizado somente por meio de configuração. 
+Nossa solução Assistente Virtual inclui uma nova funcionalidade de habilidade que permite que novas funcionalidades sejam inseridas em um assistente personalizado somente por meio de configuração.
 
 Todos os aspectos de cada habilidade (modelo de linguagem, diálogos, código de integração e geração de linguagem) são totalmente personalizados por desenvolvedores, já que o código-fonte completo é fornecido no GitHub, juntamente com o Assistente Virtual.
 
