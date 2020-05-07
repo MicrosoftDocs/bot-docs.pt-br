@@ -48,6 +48,7 @@
     "globalMetadata": {
       "apiPlatform": "dotnet",
       "author": "dotnet-bot",
+      "uhfHeaderId": "azure",
       "disable_contribution_on_translation_quality": [
         "MT",
         "MTE75",
