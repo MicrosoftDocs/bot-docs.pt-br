@@ -4,7 +4,7 @@
       {
         "files": [
           "**/*.md",
-          "api/*.json"
+          "**/*.yml"
         ],
         "exclude": [
           "**/obj/**",
@@ -31,6 +31,7 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
+      "uhfHeaderId": "azure",
       "disable_contribution_on_translation_quality": [
         "MT",
         "MTE75",
