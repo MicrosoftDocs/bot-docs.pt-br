@@ -58,10 +58,12 @@
 ### [Implementar um armazenamento personalizado para seu bot](v4sdk/bot-builder-custom-storage.md)
 ### Habilidades
 #### [Implementar uma habilidade](v4sdk/skill-implement-skill.md)
+#### [Usar caixas de diálogo dentro de uma habilidade](v4sdk/skill-actions-in-dialogs.md)
 #### [Implementar um consumidor de habilidades](v4sdk/skill-implement-consumer.md)
+#### [Usar uma caixa de diálogo para consumir uma habilidade](v4sdk/skill-use-skilldialog.md)
 <!--
+#### [Use middleware in a skill consumer](v4sdk/skill-middleware-in-consumer.md)
 #### [Add claims validation](v4sdk/skill-add-claims-validation.md)
-#### [Manage multiple skills](#)
 -->
 ### [Adicionar telemetria ao seu bot](v4sdk/bot-builder-telemetry.md)
 ### [Adicionar telemetria ao seu bot do QnA](v4sdk/bot-builder-telemetry-QnAMaker.md)
