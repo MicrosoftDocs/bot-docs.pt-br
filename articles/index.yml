@@ -1,88 +1,62 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Documentação do Serviço de Bot do Azure
+summary: O Serviço de Bot do Azure fornece um ambiente integrado criado especialmente para desenvolvimento de bot.
 metadata:
-  document_id: 1d934240-28c7-635f-d41b-3e43ae02970c
-  title: 'Documentação do Serviço de Bot do Azure – Tutoriais, Referência da API'
-  meta.description: 'Learn how to create bots. Documentation helps you create, deploy, and manage bots in the cloud.'
-  author: ivorb
-  manager: kamrani
+  title: Documentação do Serviço de Bot do Azure
+  description: O Serviço de Bot do Azure fornece um ambiente integrado criado especialmente para desenvolvimento de bot.
   ms.service: bot-service
-  ms.tgt_pltfrm: na
-  ms.devlang: na
   ms.topic: landing-page
-  ms.date: 11/11/2019
+  author: ivorb
   ms.author: ivorb
-abstract:
-  description: 'O Serviço de Bot do Azure fornece um ambiente integrado criado especificamente para desenvolver bots, permitindo criar, conectar, testar, implantar e gerenciar bots inteligentes em um único lugar. O Serviço de Bot do Azure aproveita o SDK do Bot Framework com suporte para C# e JavaScript. Saiba como usar o Serviço de Bot com nossos guias de início rápido, tutoriais e exemplos.'
-  aside:
-    image:
-      alt: null
-      height: 110
-      src: media/video/satya-video.png
-      width: 250
-    title: 'Apresentação do Ignite 2019 feita por Satya Nadella. (1:52)'
-    href: 'https://myignite.techcommunity.microsoft.com/sessions/77831?source=sessions'
-    width: 250
-sections:
-  - items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: 'https://docs.microsoft.com/azure/bot-service/what-is-new'
-            html: <p>Novidades no Serviço de Bot do Azure.</p>
-            image:
-              src: media/index/i_guidelines.png
-            title: Novidades
-          - href: 'https://docs.microsoft.com/azure/bot-service/bot-service-overview-introduction'
-            html: <p>Saiba mais sobre o Serviço de Bot do Azure.</p>
-            image:
-              src: media/index/i_overview.png
-            title: O que é o Serviço de Bot do Azure?
-          - href: 'https://docs.microsoft.com/azure/bot-service/bot-builder-basics'
-            html: <p>Entenda como funcionam os bots.</p>
-            image:
-              src: media/index/i_guidelines.png
-            title: Como funcionam os bots
-  - title: Guias de início rápido de 5 minutos
-    items:
-      - type: paragraph
-        text: 'Saiba como criar seu primeiro bot:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: v4sdk/media/logo_csharp.svg
-            text: 'C#'
-            href: 'https://docs.microsoft.com/azure/bot-service/dotnet/bot-builder-dotnet-sdk-quickstart'
-          - image:
-              src: v4sdk/media/logo_js.svg
-            text: JavaScript
-            href: 'https://docs.microsoft.com/azure/bot-service/javascript/bot-builder-javascript-quickstart'
-          - image:
-              src: v4sdk/media/logo_python.svg
-            text: Python
-            href: 'https://docs.microsoft.com/azure/bot-service/python/bot-builder-python-quickstart'
-          - image:
-              src: media/index/azure_portal.png
-            text: Portal do Azure
-            href: 'https://docs.microsoft.com/azure/bot-service/bot-service-quickstart'
-  - title: Tutoriais passo a passo
-    items:
-      - type: paragraph
-        text: Saiba como criar e implantar bots no Azure.
-      - type: list
-        style: ordered
-        items:
-          - html: <a href="/bot-framework/bot-builder-tutorial-basic-deploy">Criar e implantar um bot simples</a>
-          - html: <a href="/bot-framework/bot-builder-tutorial-add-qna">Adicionar o QnA Maker e reimplantar um bot</a>
-  - title: Referência
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Languages
-            html: '<p><a href="/dotnet/api/?view=botbuilder-dotnet-stable">.NET</a></p><p><a href="https://docs.microsoft.com/en-us/javascript/api/botbuilder/index?view=botbuilder-ts-latest">JavaScript</a></p>'
+  ms.date: 11/11/2019
+  ms.openlocfilehash: 4a37c426cbe6a3adaff2b4b63f197bb71a2d7f39
+  ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+  ms.translationtype: HT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 05/19/2020
+  ms.locfileid: "83555597"
+landingContent:
+- title: Sobre o Serviço de Bot do Azure
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: Novidades
+      url: https://docs.microsoft.com/azure/bot-service/what-is-new
+  - linkListType: overview
+    links:
+    - text: O que é o Serviço de Bot do Azure?
+      url: https://docs.microsoft.com/azure/bot-service/bot-builder-basics
+  - linkListType: concept
+    links:
+    - text: Como funcionam os bots
+      url: https://docs.microsoft.com/azure/bot-service/bot-builder-basics
+- title: Guias de início rápido de 5 minutos
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Criar um bot usando o .NET
+      url: https://docs.microsoft.com/azure/bot-service/dotnet/bot-builder-dotnet-sdk-quickstart
+    - text: Criar um bot usando JavaScript
+      url: https://docs.microsoft.com/azure/bot-service/javascript/bot-builder-javascript-quickstart
+    - text: Criar um bot usando Python
+      url: https://docs.microsoft.com/azure/bot-service/python/bot-builder-python-quickstart
+    - text: Criar um bot usando o Serviço de Bot do Azure
+      url: https://docs.microsoft.com/azure/bot-service/abs-quickstart
+- title: Tutoriais passo a passo
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Criar e implantar um bot simples
+      url: https://docs.microsoft.com/bot-framework/bot-builder-tutorial-basic-deploy
+    - text: Adicionar o QnA Maker e reimplantar um bot
+      url: https://docs.microsoft.com/bot-framework/bot-builder-tutorial-add-qna
+- title: Languages
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: .NET
+      url: https://docs.microsoft.com/dotnet/api/?view=botbuilder-dotnet-stable
+    - text: JavaScript
+      url: https://docs.microsoft.com/javascript/api/botbuilder
+    - text: Python
+      url: https://docs.microsoft.com/python/api/?view=botbuilder-py-latest

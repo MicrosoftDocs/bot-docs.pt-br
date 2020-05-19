@@ -14,6 +14,7 @@
 #### [Criar Cliente .NET com a extensão](../bot-service-channel-directline-extension-net-client.md)
 #### [Usar a extensão com Webchat](../bot-service-channel-directline-extension-webchat-client.md)
 #### [Usar a extensão dentro do VNET](../bot-service-channel-directline-extension-vnet.md)
+## [Alexa](../bot-service-channel-connect-alexa.md)
 ## [Email](../bot-service-channel-connect-email.md)
 ## [Habilitar o controle por voz no Webchat](../bot-service-channel-connect-webchat-speech.md)
 ## [Facebook](../bot-service-channel-connect-facebook.md)

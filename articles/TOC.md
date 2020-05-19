@@ -18,13 +18,26 @@
 ## [Gerenciar estado](v4sdk/bot-builder-concept-state.md)
 ## [Biblioteca de caixas de diálogo](v4sdk/bot-builder-concept-dialog.md)
 ## [Middleware](v4sdk/bot-builder-concept-middleware.md)
+## Caixas de diálogo adaptáveis
+### [Introdução às caixas de diálogo adaptáveis](v4sdk/bot-builder-adaptive-dialog-Introduction.md)
+### [Eventos e gatilhos em caixas de diálogo adaptáveis](v4sdk/bot-builder-concept-adaptive-dialog-Triggers.md)
+### [Ações em caixas de diálogo adaptáveis](v4sdk/bot-builder-concept-adaptive-dialog-Actions.md)
+### [Solicitar entrada do usuário usando caixas de diálogo adaptáveis ](v4sdk/bot-builder-concept-adaptive-dialog-Inputs.md)
+### [Reconhecedores em caixas de diálogo adaptáveis](v4sdk/bot-builder-concept-adaptive-dialog-recognizers.md)
+### [Geração de linguagem em caixas de diálogo adaptáveis](v4sdk/bot-builder-concept-adaptive-dialog-generators.md)
+### [Escopos de memória e gerenciamento de estado em caixas de diálogo adaptáveis](v4sdk/bot-builder-concept-adaptive-dialog-memory-states.md)
 ## Autenticação
 ### [Autenticação de bot](v4sdk/bot-builder-concept-authentication.md)
 ### [Provedores de Identidade](v4sdk/bot-builder-concept-identity-providers.md)
 ### [Logon único](v4sdk/bot-builder-concept-sso.md)
 ## [Gerenciar recursos do bot](v4sdk/bot-file-basics.md)
 ## [Como funcionam os bots do Microsoft Teams](v4sdk/bot-builder-basics-teams.md)
-## [Sobre as habilidades](v4sdk/skills-conceptual.md)
+## Habilidades
+### [Sobre as habilidades](v4sdk/skills-conceptual.md)
+### [Sobre bots de habilidades](v4sdk/skills-about-skill-bots.md)
+### [Sobre consumidores de habilidades](v4sdk/skills-about-skill-consumers.md)
+## [Expressões adaptáveis](v4sdk/bot-builder-concept-adaptive-expressions.md)
+## [Geração de Linguagem](v4sdk/bot-builder-concept-language-generation.md)
 <!-- [Language understanding](v4sdk/bot-builder-concept-luis.md) -->
 ## [Modelos de Serviço de Bot](bot-service-concept-templates.md)
 ## [Serviços Cognitivos](bot-service-concept-intelligence.md)
@@ -53,11 +66,20 @@
 ### [Criar fluxo de conversa avançado usando branches e loops](v4sdk/bot-builder-dialog-manage-complex-conversation-flow.md)
 <!--#### [Implement a greeting dialog](v4sdk/bot-builder-dialogs-greeting.md)--TODO: Add once there's a sample.-->
 ### [Manipular interrupções do usuário](v4sdk/bot-builder-howto-handle-user-interrupt.md)
+### Caixas de diálogo adaptáveis
+#### [Criar um bot usando caixas de diálogo adaptáveis](v4sdk\bot-builder-dialogs-adaptive.md)
+#### [Criar um bot usando caixas de diálogo adaptáveis, de componente, de cascata e personalizadas](v4sdk/bot-builder-mixed-dialogs.md)
 ### [Gravar diretamente no armazenamento](v4sdk/bot-builder-howto-v4-storage.md)
-### [Adicionar autenticação a um bot](v4sdk/bot-builder-authentication.md)
+### Autenticação
+#### [Adicionar autenticação a um bot](v4sdk/bot-builder-authentication.md)
+#### [Adicionar logon único a um bot](v4sdk/bot-builder-authentication-sso.md)
 ### [Implementar um armazenamento personalizado para seu bot](v4sdk/bot-builder-custom-storage.md)
+### Geração de Linguagem
+#### [Usar modelos de geração de linguagem em seu bot](language-generation/bot-builder-howto-use-lg-templates.md)
 ### Habilidades
 #### [Implementar uma habilidade](v4sdk/skill-implement-skill.md)
+#### [Escrever um manifesto de habilidades v2.1](v4sdk/skills-write-manifest-2-1.md)
+#### [Escrever um manifesto de habilidades v2.0](v4sdk/skills-write-manifest-2-0.md)
 #### [Usar caixas de diálogo dentro de uma habilidade](v4sdk/skill-actions-in-dialogs.md)
 #### [Implementar um consumidor de habilidades](v4sdk/skill-implement-consumer.md)
 #### [Usar uma caixa de diálogo para consumir uma habilidade](v4sdk/skill-use-skilldialog.md)
@@ -90,5 +112,16 @@
 ## Referência da ferramenta de CLI do BF
 ### [Visão geral da CLI do BF](v4sdk/bf-cli-overview.md)
 ### [Referência da CLI do BF](v4sdk/bf-cli-reference.md)
+## Expressões adaptáveis
+### [Funções predefinidas](adaptive-expressions/adaptive-expressions-prebuilt-functions.md)
+### [Referência de API](adaptive-expressions/adaptive-expressions-API-reference.md)
+## LG
+### [Referência de API](language-generation/language-generation-API-reference.md)
+### [Formato de arquivo .lg](file-format/bot-builder-lg-file-format.md)
+### [Modelo de resposta estruturado](language-generation/language-generation-structured-response-template.md)
+### [Funções injetadas de LG](language-generation/functions-injected-from-language-generation.md)
+## Formatos de arquivo
+### [Formato de arquivo .lu](file-format/bot-builder-lu-file-format.md)
+### [Formato de arquivo .qna](file-format/bot-builder-qna-file-format.md)
 ## [Entidades e tipos de atividades](bot-service-activities-entities.md)
 # [Recursos](resources/TOC.md)
