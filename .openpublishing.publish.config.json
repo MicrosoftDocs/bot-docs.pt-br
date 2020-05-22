@@ -4,7 +4,7 @@
          "docset_name":"bot-framework",
          "build_source_folder":"articles",
          "build_output_subfolder":"bot-framework",
-         "locale":"de-de",
+         "locale":"pt-br",
          "monikers":[],
          "moniker_ranges":[
             ">= azure-bot-service-3.0",
@@ -25,7 +25,7 @@
          "docset_name":"bot-framework-rest-api",
          "build_source_folder":"rest",
          "build_output_subfolder":"bot-framework-rest-api",
-         "locale":"de-de",
+         "locale":"pt-br",
          "monikers":[],
          "open_to_public_contributors":true,
          "type_mapping":{
@@ -42,7 +42,7 @@
          "docset_name":"bot-framework-dotnet-api",
          "build_source_folder":"dotnet",
          "build_output_subfolder":"bot-framework-dotnet-api",
-         "locale":"de-de",
+         "locale":"pt-br",
          "open_to_public_contributors":true,
          "type_mapping":{
             "Conceptual":"Content",
