@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f9d351771bb19eede4b9f5e1bfd684c356b003bf
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 326e02da1f3b9a323dc4221122f6c1a8ae5eb0c0
+ms.sourcegitcommit: eb0e5dec0ecd4e375d33825030b1ba46ff6e032c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75797598"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83791326"
 ---
 # <a name="create-a-bot-with-the-bot-framework-sdk-for-javascript"></a>Criar um bot com o SDK do Bot Framework para JavaScript
 
@@ -22,9 +22,9 @@ ms.locfileid: "75797598"
 
 Este início rápido orienta você na criação de um único bot usando o gerador do Yeoman Bot Builder e o SDK do Bot Framework para JavaScript e, em seguida, testando-o com o Bot Framework Emulator.
 
-[!INCLUDE [Azure vs local development](~/includes/snippet-quickstart-paths.md)]
+[!INCLUDE [Azure vs local development](../includes/snippet-quickstart-paths.md)]
 
-[!INCLUDE [javascript quickstart](~/includes/quickstart-javascript.md)]
+[!INCLUDE [javascript quickstart](../includes/quickstart-javascript.md)]
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

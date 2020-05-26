@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 776ba2013e7f66abc36cbf4810a7520a8da8e496
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: b57cf35b57a9a63272ece0253e00ce9513a97f9c
+ms.sourcegitcommit: eb0e5dec0ecd4e375d33825030b1ba46ff6e032c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75791098"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83791354"
 ---
 # <a name="migrate-a-net-v3-bot-to-a-net-core-v4-bot"></a>Migrar um bot v3 do .NET para um bot v4 do .NET Core
 
@@ -42,7 +42,7 @@ Para obter mais informações sobre alterações específicas, confira [as difer
 
 ## <a name="create-the-new-project-using-a-template"></a>Criar o projeto usando um modelo
 
-Crie um projeto para o bot.
+[!INCLUDE [VSIX templates](~/includes/vsix-templates-versions.md)]
 
 1. Se ainda não tiver feito isso, instale o [modelo para C#](https://aka.ms/bot-vsix) do SDK v4 do Bot Framework.
 1. Abra o Visual Studio e crie um projeto de Bot de Eco com base no modelo. Nomeie o projeto `ContosoHelpdeskChatBot`.
@@ -70,10 +70,12 @@ Vamos criar uma propriedade de estado para `DialogState`, que agora é necessár
 
 Em **Startup.cs**:
 
-1. Atualize as instruções `using`:  
+1. Atualize as instruções `using`:
+
     [!code-csharp[Using statements](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Startup.cs?range=4-13)]
 
 1. Remova este construtor:
+
     ```csharp
     public Startup(IConfiguration configuration)
     {
@@ -83,13 +85,14 @@ Em **Startup.cs**:
 
 1. Remova a propriedade `Configuration`.
 
-1. Atualize o método `ConfigureServices` por este código:  
+1. Atualize o método `ConfigureServices` por este código:
+
     [!code-csharp[Using statements](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Startup.cs?range=19-41)]
 
-Você encontrará erros de tempo de compilação neste momento. Nós os corrigiremos nas próximas etapas. 
+Você encontrará erros de tempo de compilação neste momento. Nós os corrigiremos nas próximas etapas.
 
 ## <a name="messagescontroller-class"></a>Classe MessagesController
-Esta classe manipula uma solicitação. A injeção de dependência fornecerá a implementação do adaptador e do IBot em runtime. Essa classe de modelo permanece inalterada. 
+Esta classe manipula uma solicitação. A injeção de dependência fornecerá a implementação do adaptador e do IBot em runtime. Essa classe de modelo permanece inalterada.
 
 É nesse ponto que o bot inicia um turno em v4, que é bastante diferente do controlador de mensagens v3. Exceto para o manipulador de turnos do bot em si, grande parte disso pode ser pensada como texto clichê.
 
@@ -105,13 +108,16 @@ No v4, a lógica de loop de mensagem ou do manipulador de turno está, fundament
 
 1. Atualize o arquivo **Bots\DialogBots.cs**.
 
-1. Atualize as instruções `using`:  
+1. Atualize as instruções `using`:
+
     [!code-csharp[Using statements](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Bots/DialogBot.cs?range=4-8)]
 
 1. Atualize `DialogBot` para incluir um parâmetro genérico para a caixa de diálogo.
+
     [!code-csharp[Class definition](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Bots/DialogBot.cs?range=19)]
 
 1. Adicione esses campos e um construtor para inicializá-los. Novamente, o ASP.NET usa a injeção de dependência para obter os valores de parâmetros.
+
     [!code-csharp[Fields and constructor](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Bots/DialogBot.cs?range=21-28)]
 
 1. Atualize a implementação `OnMessageActivityAsync` para invocar nossa caixa de diálogo principal. (Vamos definir o método de extensão `Run` em breve.)
@@ -119,6 +125,7 @@ No v4, a lógica de loop de mensagem ou do manipulador de turno está, fundament
 [!code-csharp[OnMessageActivityAsync](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Bots/DialogBot.cs?range=38-47)]
 
 1. Atualize `OnTurnAsync` para salvar o estado de conversa no final do turno. No V4, precisamos fazer isso explicitamente para gravar o estado na camada de persistência. O método `ActivityHandler.OnTurnAsync` chama métodos específicos do manipulador de atividades com base no tipo de atividade recebida, portanto, salvamos o estado após a chamada do método base.
+
     [!code-csharp[OnTurnAsync](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Bots/DialogBot.cs?range=30-36)]
 
 ### <a name="create-the-run-extension-method"></a>Criar o método de extensão Run
@@ -126,6 +133,7 @@ No v4, a lógica de loop de mensagem ou do manipulador de turno está, fundament
 Estamos criando um método de extensão para consolidar o código necessário para executar uma caixa de diálogo de componente bare do nosso bot.
 
 Criar um arquivo **DialogExtensions.cs** e implementar um método de extensão `Run`.
+
 [!code-csharp[The extension](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/DialogExtensions.cs?range=4-26)]
 
 ## <a name="copy-over-and-convert-your-dialogs"></a>Copiar e converter as caixas de diálogo
@@ -188,10 +196,12 @@ Nesse bot, o diálogo raiz solicita que o usuário escolha uma das opções de u
 
 No arquivo **Dialogs/RootDialog.cs**:
 
-1. Atualize as instruções `using`:  
+1. Atualize as instruções `using`:
+
     [!code-csharp[Using statements](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Dialogs/RootDialog.cs?range=4-10)]
 
 1. É preciso converter as opções `HelpdeskOptions` de uma lista de cadeias de caracteres para uma lista de opções. Isso será usado com um prompt de escolha, que aceitará o número da opção (na lista), o valor de opção ou qualquer um dos sinônimos da opção como uma entrada válida.
+
     [!code-csharp[HelpDeskOptions](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Dialogs/RootDialog.cs?range=28-33)]
 
 1. Adicione um construtor. O código faz o seguinte:
@@ -203,6 +213,7 @@ No arquivo **Dialogs/RootDialog.cs**:
      - Por fim, se reiniciará.
    - Cada etapa da cascata é um delegado, e as implementaremos a seguir, obtendo o código existente do diálogo original sempre que possível.
    - Ao iniciar um diálogo de componente, ele iniciará seu _diálogo inicial_. Por padrão, esse é o primeiro diálogo filho adicionado a um diálogo de componente. Estamos explicitamente definindo a propriedade `InitialDialogId`, o que significa que o principal diálogo em cascata não precisa ser o primeiro adicionado ao conjunto. Por exemplo, caso prefira, você poderia adicionar prompts primeiro sem causar um problema de tempo de execução.
+
     [!code-csharp[Constructor](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Dialogs/RootDialog.cs?range=35-49)]
 
 1. Podemos excluir o método `StartAsync`. Quando um diálogo de componente for iniciado, ele iniciará seu diálogo _inicial_ automaticamente. Nesse caso, é o diálogo em cascata que definimos no construtor. Ele também inicia automaticamente em sua primeira etapa.
@@ -211,16 +222,19 @@ No arquivo **Dialogs/RootDialog.cs**:
    - Aqui você pode ver que a lista de opções e as mensagens de saudação e erro são fornecidas como opções na chamada para nosso prompt de escolha.
    - Não precisamos especificar o próximo método a ser chamado no diálogo porque a cascata continuará até a próxima etapa, quando o prompt de escolha é concluído.
    - O prompt de escolha fará um loop até receber uma entrada válida ou até a pilha inteira dede diálogo ser cancelada.
+
     [!code-csharp[PromptForOptionsAsync](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Dialogs/RootDialog.cs?range=51-65)]
 
 1. Podemos substituir `OnOptionSelected` pela segunda etapa da nossa cascata. Ainda iniciaremos um diálogo filho com base na entrada do usuário.
    - O prompt de escolha retorna um valor `FoundChoice`. Isso é mostrado na propriedade de contexto `Result` da etapa. A pilha de diálogo trata todos os valores retornados como objetos. Se o valor retornado for um dos seus diálogos, você saberá qual é o tipo de valor do objeto. Para obter uma lista com o que cada tipo de prompt retorna, confira [tipos de prompt](../bot-builder-concept-dialog.md#prompt-types).
    - Como o prompt de escolha não lançará uma exceção, nós podemos remover o bloco try-catch.
    - Precisamos adicionar uma passagem para que esse método sempre retorne um valor apropriado. Esse código nunca deve ser atingido, mas se o for, ele permitirá que o diálogo “falhe graciosamente”.
+
     [!code-csharp[ShowChildDialogAsync](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Dialogs/RootDialog.cs?range=67-102)]
 
 1. Por fim, substitua o antigo método `ResumeAfterOptionDialog` pela última etapa da nossa cascata.
     - Em vez encerrar o diálogo e retornar o número do tíquete como fizemos no diálogo original, estamos reiniciando a cascata ao substituir a pilha da instância original por uma nova instância de si mesmo. Podemos fazer isso, uma vez que o aplicativo original sempre ignorou o valor retornado (o número de tíquete) e reiniciou o diálogo raiz.
+
     [!code-csharp[ResumeAfterAsync](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Dialogs/RootDialog.cs?range=104-138)]
 
 ### <a name="update-the-install-app-dialog"></a>Atualizar o diálogo de instalação do aplicativo
@@ -237,18 +251,22 @@ O diálogo de instalação do aplicativo executa algumas tarefas lógicas, as qu
 
 No arquivo **Dialogs/InstallAppDialog.cs**:
 
-1. Atualize as instruções `using`:  
+1. Atualize as instruções `using`:
+
     [!code-csharp[Using statements](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Dialogs/InstallAppDialog.cs?range=4-11)]
 
 1. Defina uma constante para a chave que usaremos para rastrear as informações coletadas.
+
     [!code-csharp[Key ID](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Dialogs/InstallAppDialog.cs?range=17-18)]
 
 1. Adicione um construtor e inicialize o conjunto de diálogos do componente.
+
     [!code-csharp[Constructor](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Dialogs/InstallAppDialog.cs?range=20-33)]
 
 1. Podemos substituir `StartAsync` pela primeira etapa da nossa cascata.
     - Nós mesmos precisamos gerenciar o estado, portanto, vamos rastrear o objeto do aplicativo de instalação no estado de diálogo.
     - A mensagem solicitando entradas do usuário se torna uma opção na chamada ao prompt.
+
     [!code-csharp[GetSearchTermAsync](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Dialogs/InstallAppDialog.cs?range=35-50)]
 
 1. Podemos substituir `appNameAsync` e `multipleAppsAsync` pela segunda etapa da nossa cascata.
@@ -257,20 +275,24 @@ No arquivo **Dialogs/InstallAppDialog.cs**:
         - Se tivermos uma ocorrência, atualizaremos o estado do diálogo e seguiremos para a próxima etapa.
         - Se tivermos várias ocorrências, usaremos o prompt de nossa escolha para solicitar que o usuário escolha uma das opções da lista. Isso significa que podemos simplesmente excluir o `multipleAppsAsync`.
         - Se não tivermos nenhuma ocorrência, encerraremos esse diálogo e retornaremos nulos para o diálogo raiz.
+
     [!code-csharp[ResolveAppNameAsync](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Dialogs/InstallAppDialog.cs?range=52-91)]
 
 1. O `appNameAsync` também solicitou o nome do computador do usuário depois que ele resolveu a consulta. Vamos capturar essa parte da lógica na próxima etapa da cascata.
     - Novamente, na v4, nós mesmos temos de gerenciar o estado. A única dificuldade é que podemos chegar a essa etapa por dois branches de lógica diferentes na etapa anterior.
     - Solicitaremos ao usuário um nome de computador usando o mesmo prompt de texto de antes, mas fornecendo opções diferentes desta vez.
+
     [!code-csharp[GetMachineNameAsync](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Dialogs/InstallAppDialog.cs?range=93-114)]
 
 1. A lógica de `machineNameAsync` é encapsulada na etapa final da nossa cascata.
     - Recuperamos o nome do computador do resultado do prompt de texto e atualizamos o estado do diálogo.
     - Estamos removendo a chamada para atualizar o banco de dados porque o código de suporte está em um projeto diferente.
     - Depois, enviaremos a mensagem de êxito para o usuário e finalizaremos o diálogo.
+
     [!code-csharp[SubmitRequestAsync](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Dialogs/InstallAppDialog.cs?range=116-135)]
 
 1. Para simular a chamada de banco de dados, nós simulamos `getAppsAsync` para consultar uma lista estática em vez do banco de dados.
+
     [!code-csharp[GetAppsAsync](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Dialogs/InstallAppDialog.cs?range=137-200)]
 
 ### <a name="update-the-local-admin-dialog"></a>Atualizar o diálogo do administrador local
@@ -278,20 +300,25 @@ No arquivo **Dialogs/InstallAppDialog.cs**:
 Na v3, esse diálogo saudou o usuário, iniciou o diálogo Formflow e salvou o resultado em um banco de dados. Isso se traduz facilmente em uma cascata de duas etapas.
 
 1. Atualize as instruções `using`. Observe que esse diálogo inclui um diálogo de Formflow da v3. Na v4, podemos usar a biblioteca de Formflow da comunidade.
+
     [!code-csharp[Using statements](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Dialogs/LocalAdminDialog.cs?range=4-8)]
 
 1. Podemos remover a propriedade de instância para `LocalAdmin`, pois o resultado estará disponível no estado do diálogo.
 
 1. Adicione um construtor e inicialize o conjunto de diálogos do componente. O diálogo Formflow é criado da mesma forma. Estamos apenas adicionando-o ao conjunto do diálogo do nosso componente no construtor.
+
     [!code-csharp[Constructor](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Dialogs/LocalAdminDialog.cs?range=14-23)]
 
 1. Podemos substituir `StartAsync` pela primeira etapa da nossa cascata. Já criamos o Formflow no construtor, e as outras duas instruções se traduzem nisso. Observe que `FormBuilder` atribui o nome do tipo do modelo como a ID da caixa de diálogo gerada, que é `LocalAdminPrompt` para este modelo.
+
     [!code-csharp[BeginFormflowAsync](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Dialogs/LocalAdminDialog.cs?range=25-35)]
 
 1. Podemos substituir `ResumeAfterLocalAdminFormDialog` pela segunda etapa da nossa cascata. Precisamos obter o valor retornado do contexto da etapa em vez de uma propriedade de instância.
+
     [!code-csharp[SaveResultAsync](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Dialogs/LocalAdminDialog.cs?range=37-50)]
 
 1. O `BuildLocalAdminForm` permanece praticamente o mesmo, com a diferença que o Formflow não atualiza a propriedade da instância.
+
     [!code-csharp[BuildLocalAdminForm](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Dialogs/LocalAdminDialog.cs?range=52-76)]
 
 ### <a name="update-the-reset-password-dialog"></a>Atualizar o diálogo de redefinição de senha
@@ -299,24 +326,29 @@ Na v3, esse diálogo saudou o usuário, iniciou o diálogo Formflow e salvou o r
 Na v3, esse diálogo saudou o usuário, autorizou o usuário com um código-chave, falhou ou iniciou o diálogo Formflow e, em seguida, redefiniu a senha. Isso ainda se traduz bem em uma cascata.
 
 1. Atualize as instruções `using`. Observe que esse diálogo inclui um diálogo de Formflow da v3. Na v4, podemos usar a biblioteca de Formflow da comunidade.
+
     [!code-csharp[Using statements](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Dialogs/ResetPasswordDialog.cs?range=4-9)]
 
 1. Adicione um construtor e inicialize o conjunto de diálogos do componente. O diálogo Formflow é criado da mesma forma. Estamos apenas adicionando-o ao conjunto do diálogo do nosso componente no construtor.
+
     [!code-csharp[Constructor](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Dialogs/ResetPasswordDialog.cs?range=15-25)]
 
 1. Podemos substituir `StartAsync` pela primeira etapa da nossa cascata. Já criamos o Formflow no construtor. Caso contrário, estamos mantendo a mesma lógica, traduzindo apenas as chamadas da v3 em seus equivalentes da v4.
+
     [!code-csharp[BeginFormflowAsync](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Dialogs/ResetPasswordDialog.cs?range=27-45)]
 
 1. O `sendPassCode` é deixado principalmente como um exercício. O código original é transformado em comentário, e o método simplesmente retorna true. Além disso, podemos remover o endereço de email novamente, pois ele não foi usado no bot original.
+
     [!code-csharp[SendPassCode](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Dialogs/ResetPasswordDialog.cs?range=47-81)]
 
 1. `BuildResetPasswordForm` não tem alterações.
 
 1. Podemos substituir `ResumeAfterResetPasswordFormDialog` pela segunda etapa da nossa cascata e obteremos o valor retornado do contexto da etapa. Removemos o endereço de email com o qual o diálogo original não fez nada e fornecemos um resultado fictício em vez de consultar o banco de dados. Estamos mantendo a mesma lógica, traduzindo apenas as chamadas da v3 em seus equivalentes da v4.
+
     [!code-csharp[ProcessRequestAsync](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Dialogs/ResetPasswordDialog.cs?range=90-113)]
 
 ## <a name="copy-over-and-update-models-as-necessary"></a>Copiar e atualizar modelos conforme necessário
-Você pode usar os mesmos modelos v3 com a biblioteca de fluxo de formulário de comunidade v4. 
+Você pode usar os mesmos modelos v3 com a biblioteca de fluxo de formulário de comunidade v4.
 
 1. Crie uma pasta **Models** em seu projeto.
 1. Copie estes arquivos do diretório models do projeto v3 para seu novo diretório models.
@@ -330,13 +362,16 @@ Você pode usar os mesmos modelos v3 com a biblioteca de fluxo de formulário de
 
 Precisamos atualizar instruções `using` nas classes de modelo, conforme mostrado a seguir.
 
-1. Em **InstallApps.cs**, altere-os para isto:  
+1. Em **InstallApps.cs**, altere-os para isto:
+
     [!code-csharp[Using statements](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Models/InstallApp.cs?range=4-5)]
 
-1. Em **LocalAdmin.cs**, altere-os para isto:  
+1. Em **LocalAdmin.cs**, altere-os para isto:
+
     [!code-csharp[Using statements](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Models/LocalAdmin.cs?range=4-5)]
 
-1. Em **LocalAdminPrompt.cs**, altere-os para isto:  
+1. Em **LocalAdminPrompt.cs**, altere-os para isto:
+
     [!code-csharp[Using statements](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Models/LocalAdminPrompt.cs?range=4)]
 
 1. Em **ResetPassword.cs**, altere-os para isto:
@@ -344,7 +379,8 @@ Precisamos atualizar instruções `using` nas classes de modelo, conforme mostra
 [!code-csharp[Using statements](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Models/ResetPassword.cs?range=4-5)]
     Além disso, exclua as instruções `using` dentro do namespace.
 
-1. Em **ResetPasswordPrompt.cs**, altere-os para isto:  
+1. Em **ResetPasswordPrompt.cs**, altere-os para isto:
+
     [!code-csharp[Using statements](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Models/ResetPasswordPrompt.cs?range=4-5)]
 
 ### <a name="additional-changes"></a>Alterações adicionais
@@ -353,7 +389,7 @@ Em **ResetPassword.cs**, altere o tipo de retorno do `MobileNumber` da seguinte 
 
 [!code-csharp[MobileNumber](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Models/ResetPassword.cs?range=17)]
 
-## <a name="final-porting-steps"></a>Etapas finais de portabilidade 
+## <a name="final-porting-steps"></a>Etapas finais de portabilidade
 Para concluir o processo de portabilidade, execute estas etapas:
 
 1. Crie uma classe `AdapterWithErrorHandler` para definir um adaptador que inclui um manipulador de erro que pode capturar exceções no aplicativo ou middleware. O adaptador processa e direciona atividades de entrada através do pipeline de middleware de bot para a lógica do seu bot e, em seguida, recua novamente. Use o código a seguir para criar a classe:

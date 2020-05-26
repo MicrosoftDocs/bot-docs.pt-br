@@ -7,13 +7,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 2/20/2020
-ms.openlocfilehash: 775ffd3a72f69ad721eacbe31b27ddbe5b1fa5e5
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.date: 5/17/2020
+ms.openlocfilehash: 53d718d607a7a911bb800fb8a5cedea2688858b9
+ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77519965"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83555607"
 ---
 # <a name="troubleshoot-bot-configuration-issues"></a>Solucionar problemas de configuração de bot
 
@@ -65,7 +65,7 @@ Se o bot funciona conforme o esperado no Webchat mas falha em algum outro canal,
 É possível que os parâmetros de configuração do canal, como o nome de usuário e a senha do bot, tenham sido definidos de modo incorreto ou alterados externamente. Por exemplo, um bot foi configurado com o canal do Facebook para uma página específica e a página foi posteriormente excluída. A solução mais simples é remover o canal e refazer a configuração do canal.
 
 Os links a seguir fornecem instruções sobre como configurar canais com suporte no Bot Framework:
-
+- [Alexa](bot-service-channel-connect-alexa.md)
 - [Cortana](bot-service-channel-connect-cortana.md)
 - [Linha direta](bot-service-channel-connect-directline.md)
 - [Email](bot-service-channel-connect-email.md)

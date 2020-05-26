@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/11/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 0746a277f465979639db5c8a26aaddfee9386ac2
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: e7b76ecfa20c6f6feb1207579fc4c0b520ad10d6
+ms.sourcegitcommit: eb0e5dec0ecd4e375d33825030b1ba46ff6e032c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80117692"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83791365"
 ---
 # <a name="migration-overview"></a>Visão geral da migração
 
@@ -66,7 +66,7 @@ Se você não puder migrar de um bot v3 para um bot v4 imediatamente, talvez ain
 - Futuro
   - O design declarativo permite um nível de abstração para designers
   - Designer de Diálogo da GUI
-- Serviço de Bot do Azure 
+- Serviço de Bot do Azure
   - Canal de Fala do Direct Line. Reunindo o Bot Framework e os Serviços de Fala da Microsoft. Isso fornece um canal que permite a transmissão bidirecional de fala e texto simplificada do cliente para o aplicativo do bot
 
 ## <a name="whats-changed"></a>O que mudou
@@ -101,35 +101,35 @@ As planilhas a seguir podem orientá-lo na estimativa de sua carga de trabalho d
 
 | Etapa | V3 | V4 | Ocorrências | Complexidade | Camiseta |
 | -- | -- | -- | -- | -- | -- |
-Para obter a atividade de entrada | IDialogContext.Activity | ITurnContext.Activity | count | Pequena  
+Para obter a atividade de entrada | IDialogContext.Activity | ITurnContext.Activity | count | Pequena
 Para criar e enviar uma atividade para o usuário | activity.CreateReply(“text”) IDialogContext.PostAsync | MessageFactory.Text(“text”) ITurnContext.SendActivityAsync | count | Pequena |
 Gerenciamento de estado | UserData, ConversationData, and PrivateConversationData context.UserData.SetValue context.UserData.TryGetValue botDataStore.LoadAsyn | UserState, ConversationState e PrivateConversationState  Com acessadores de propriedade | context.UserData.SetValue – count context.UserData.TryGetValue – count botDataStore.LoadAsyn – count | Médio a Grande (confira [gerenciamento de estado do usuário](https://docs.microsoft.com/azure/bot-service/bot-builder-concept-state?view=azure-bot-service-4.0#state-management) disponível) |
-Manipula o início do diálogo | Implemente IDialog.StartAsync | Torne essa a primeira etapa de um diálogo em cascata. | count | Pequena |  
-Enviar uma atividade | IDialogContext.PostAsync. | Chame ITurnContext.SendActivityAsync. | count | Pequena |  
-Aguarde a resposta do usuário | Use um parâmetro IAwaitable<IMessageActivity>e chame IDialogContext.Wait | Retorne esperar ITurnContext.PromptAsync para iniciar um diálogo de aviso. Em seguida, recupere o resultado na etapa seguinte da cascata. | count | Médio (depende do fluxo) |  
-Manipula a continuação do diálogo | IDialogContext.Wait | Adicione mais etapas a um diálogo em cascata ou implemente Dialog.ContinueDialogAsync | count | grande |  
-Sinalize o final do processamento até a mensagem seguinte do usuário | IDialogContext.Wait | Retorne Dialog.EndOfTurn. | count | Médio |  
-Iniciar um diálogo filho | IDialogContext.Call | Retorne esperar o BeginDialogAsyncmethod do contexto da etapa. Se o diálogo filho retornar um valor, esse valor estará disponível na etapa seguinte da cascata por meio da propriedade Result do contexto da etapa. | count | Médio |  
-Substituir o diálogo atual por um novo diálogo | IDialogContext.Forward | Retorne esperar ITurnContext.ReplaceDialogAsync. | count | grande |  
-Sinaliza que o diálogo atual foi concluído | IDialogContext.Done | Retorne esperar o método EndDialogAsync do contexto da etapa. | count | Médio |  
-Falha de um diálogo. | IDialogContext.Fail | Gere uma exceção a ser capturada em outro nível do bot, encerre a etapa com um status de Cancelado ou chame a etapa ou CancelAllDialogsAsync do contexto do diálogo. | count | Pequena |  
+Manipula o início do diálogo | Implemente IDialog.StartAsync | Torne essa a primeira etapa de um diálogo em cascata. | count | Pequena |
+Enviar uma atividade | IDialogContext.PostAsync. | Chame ITurnContext.SendActivityAsync. | count | Pequena |
+Aguarde a resposta do usuário | Use um parâmetro IAwaitable<IMessageActivity>e chame IDialogContext.Wait | Retorne esperar ITurnContext.PromptAsync para iniciar um diálogo de aviso. Em seguida, recupere o resultado na etapa seguinte da cascata. | count | Médio (depende do fluxo) |
+Manipula a continuação do diálogo | IDialogContext.Wait | Adicione mais etapas a um diálogo em cascata ou implemente Dialog.ContinueDialogAsync | count | grande |
+Sinalize o final do processamento até a mensagem seguinte do usuário | IDialogContext.Wait | Retorne Dialog.EndOfTurn. | count | Médio |
+Iniciar um diálogo filho | IDialogContext.Call | Retorne esperar o BeginDialogAsyncmethod do contexto da etapa. Se o diálogo filho retornar um valor, esse valor estará disponível na etapa seguinte da cascata por meio da propriedade Result do contexto da etapa. | count | Médio |
+Substituir o diálogo atual por um novo diálogo | IDialogContext.Forward | Retorne esperar ITurnContext.ReplaceDialogAsync. | count | grande |
+Sinaliza que o diálogo atual foi concluído | IDialogContext.Done | Retorne esperar o método EndDialogAsync do contexto da etapa. | count | Médio |
+Falha de um diálogo. | IDialogContext.Fail | Gere uma exceção a ser capturada em outro nível do bot, encerre a etapa com um status de Cancelado ou chame a etapa ou CancelAllDialogsAsync do contexto do diálogo. | count | Pequena |
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 | Etapa | V3 | V4 | Ocorrências | Complexidade | Camiseta |
 | -- | -- | -- | -- | -- | -- |
-Para obter a atividade de entrada | IMessage | TurnContext.activity | count | Pequena  
+Para obter a atividade de entrada | IMessage | TurnContext.activity | count | Pequena
 Para criar e enviar uma atividade para o usuário | Chamar Session.send('message') | Chamar TurnContext.sendActivity | count | Pequena |
 Gerenciamento de estado | UserState & ConversationState UserState.get(), UserState.saveChanges(), ConversationState.get(), ConversationState.saveChanges() | UserState e ConversationState com acessadores de propriedade | count | Médio a Grande (confira [gerenciamento de estado do usuário](https://docs.microsoft.com/azure/bot-service/bot-builder-concept-state?view=azure-bot-service-4.0#state-management) disponível) |
-Manipula o início do diálogo | chamar session.beginDialog, passando a ID da caixa de diálogo | chamar DialogContext.beginDialog | count | Pequena |  
-Enviar uma atividade | Chamar Session.send | Chamar TurnContext.sendActivity | count | Pequena |  
-Aguarde a resposta do usuário | chame um prompt de dentro da etapa de cascata, ex: builder.Prompts.text(session, 'Insira seu destino'). Recupere a resposta na próxima etapa. | Retorne aguardar TurnContext.prompt para iniciar uma caixa de diálogo de prompt. Em seguida, recupere o resultado na etapa seguinte da cascata. | count | Médio (depende do fluxo) |  
-Manipula a continuação do diálogo | Automático | Adicione mais etapas a uma caixa de diálogo em cascata ou implemente Dialog.continueDialog | count | grande |  
-Sinalize o final do processamento até a mensagem seguinte do usuário | Session.endDialog | Retorne Dialog.EndOfTurn | count | Médio |  
-Iniciar um diálogo filho | Session.beginDialog | Retorne aguardar o método beginDialog do contexto da etapa. Se a caixa de diálogo filho retornar um valor, esse valor estará disponível na próxima etapa da cascata por meio da propriedade Result do contexto da etapa. | count | Médio |  
-Substituir o diálogo atual por um novo diálogo | Session.replaceDialog | ITurnContext.replaceDialog | count | grande |  
-Sinaliza que o diálogo atual foi concluído | Session.endDialog | Retorne aguardar o método endDialog do contexto da etapa. | count | Médio |  
-Falha de um diálogo. | Session.pruneDialogStack | Gere uma exceção a ser capturada em outro nível do bot, encerre a etapa com um status de Cancelado ou chame a etapa ou cancelAllDialogs do contexto da caixa de diálogo. | count | Pequena |  
+Manipula o início do diálogo | chamar session.beginDialog, passando a ID da caixa de diálogo | chamar DialogContext.beginDialog | count | Pequena |
+Enviar uma atividade | Chamar Session.send | Chamar TurnContext.sendActivity | count | Pequena |
+Aguarde a resposta do usuário | chame um prompt de dentro da etapa de cascata, ex: builder.Prompts.text(session, 'Insira seu destino'). Recupere a resposta na próxima etapa. | Retorne aguardar TurnContext.prompt para iniciar uma caixa de diálogo de prompt. Em seguida, recupere o resultado na etapa seguinte da cascata. | count | Médio (depende do fluxo) |
+Manipula a continuação do diálogo | Automático | Adicione mais etapas a uma caixa de diálogo em cascata ou implemente Dialog.continueDialog | count | grande |
+Sinalize o final do processamento até a mensagem seguinte do usuário | Session.endDialog | Retorne Dialog.EndOfTurn | count | Médio |
+Iniciar um diálogo filho | Session.beginDialog | Retorne aguardar o método beginDialog do contexto da etapa. Se a caixa de diálogo filho retornar um valor, esse valor estará disponível na próxima etapa da cascata por meio da propriedade Result do contexto da etapa. | count | Médio |
+Substituir o diálogo atual por um novo diálogo | Session.replaceDialog | ITurnContext.replaceDialog | count | grande |
+Sinaliza que o diálogo atual foi concluído | Session.endDialog | Retorne aguardar o método endDialog do contexto da etapa. | count | Médio |
+Falha de um diálogo. | Session.pruneDialogStack | Gere uma exceção a ser capturada em outro nível do bot, encerre a etapa com um status de Cancelado ou chame a etapa ou cancelAllDialogs do contexto da caixa de diálogo. | count | Pequena |
 
 ---
 
@@ -137,7 +137,8 @@ Falha de um diálogo. | Session.pruneDialogStack | Gere uma exceção a ser capt
 
 O SDK v4 do Bot Framework baseia-se a mesma API REST subjacente que a v3. No entanto, a v4 é uma refatoração da versão anterior do SDK para permitir mais flexibilidade e controle sobre os bots.
 
-É recomendável migrar para o .NET Core, já que o desempenho é muito melhor. Porém, alguns bots V3 existentes estão usando bibliotecas externas que não têm um equivalente do .NET Core. Neste caso, o SDK v4 do Bot Framework pode ser usado com o .NET Framework versão 4.6.1 ou superior. Encontre um exemplo no local do [corebot](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_webapi).
+É recomendável migrar para o .NET Core, já que o desempenho é muito melhor.
+Porém, alguns bots V3 existentes estão usando bibliotecas externas que não têm um equivalente do .NET Core. Neste caso, o SDK v4 do Bot Framework pode ser usado com o .NET Framework versão 4.6.1 ou superior. Encontre um exemplo no local do [corebot](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_webapi).
 
 Ao migrar um projeto da v3 para a v4, você pode escolher uma destas opções: converter no local para **.NET Framework** ou realizar a portabilidade para um novo projeto para **.NET Core**.
 
@@ -153,10 +154,14 @@ Para obter mais informações, confira [Migrar um bot .NET v3 para um bot .NET F
 #### <a name="net-core"></a>.NET Core
 
 - Criar o projeto usando um modelo
+
+ [!INCLUDE [VSIX templates](~/includes/vsix-templates-versions.md)]
+
 - Instalar pacotes adicionais do NuGet conforme necessário
 - Personalizar seu bot, atualizar o arquivo Startup.cs e atualizar sua classe de controlador
 - Atualizar a classe de bot
 - Copiar e atualizar seus modelos e caixas de diálogo
+
 
 Para obter mais informações, confira [Migrar um bot .NET v3 para um bot .NET Core v4](conversion-core.md).
 
@@ -182,7 +187,7 @@ Para obter mais informações, confira [Migrar um bot do SDK v3 em Javascript pa
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-Os recursos adicionais a seguir fornecem mais informações que podem ajudar durante a migração.  
+Os recursos adicionais a seguir fornecem mais informações que podem ajudar durante a migração.
 
 ### <a name="c"></a>[C#](#tab/csharp)
 
@@ -237,7 +242,7 @@ Confira os seguintes recursos para obter mais detalhes e informações de contex
 |[Gerenciar estado](../bot-builder-concept-state.md)|Abstrações para facilitar o gerenciamento de estado|
 |[Biblioteca de caixas de diálogo](../bot-builder-concept-dialog.md)| Conceitos centrais para gerenciar uma conversa|
 |[Enviar e receber mensagens de texto](../bot-builder-howto-send-messages.md)|Principal maneira de um bot comunicar-se com usuários|
-|[Enviar Mídia](../bot-builder-howto-add-media-attachments.md)|Anexos de mídia, como imagens, vídeo, áudio e arquivos| 
+|[Enviar Mídia](../bot-builder-howto-add-media-attachments.md)|Anexos de mídia, como imagens, vídeo, áudio e arquivos|
 |[Fluxo de conversa sequencial](../bot-builder-dialog-manage-conversation-flow.md)| Questionamento como o principal meio de um bot interagir com os usuários|
 |[Salvar dados de usuário e de conversa](../bot-builder-howto-v4-state.md)|Como acompanhar uma conversa sem estado|
 |[Fluxo Complexo](../bot-builder-dialog-manage-complex-conversation-flow.md)|Gerenciar fluxos de conversas complexos |

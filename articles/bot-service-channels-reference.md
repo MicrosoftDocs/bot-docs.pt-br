@@ -7,13 +7,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 12/03/2019
-ms.openlocfilehash: d8465a1cfa567790d62fc58ac29b6a452418f582
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.date: 05/19/2020
+ms.openlocfilehash: 77f8116ceae65a487831f46572969253cd4ce809
+ms.sourcegitcommit: e67f0b534bf84016a73eb8448deae75798a4d1d6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80117568"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83665908"
 ---
 # <a name="categorized-activities-by-channel"></a>Atividades categorizadas por canal
 
@@ -229,9 +229,9 @@ Invoke.ComposeResponse     | :x:                  | :x:                  | :x:  
 MessageUpdate              | :x:                  | :x:                  | :x:                    | :x:                  | :x:                  | :x:      | :x:  | :white_check_mark: | :white_large_square:  | :x:    | :x:             | :x:       | :x:     
 MessageDelete              | :x:                  | :x:                  | :x:                    | :x:                  | :x:                  | :x:      | :x:  | :white_check_mark: | :white_large_square:  | :x:    | :x:             | :x:       | :x:     
 Event.TokenResponse        | :white_large_square: | :white_check_mark:   | :white_check_mark:     | :x:                  | :white_large_square: | :white_large_square: | :white_large_square: | :x:    | :white_large_square: | :white_large_square: | :white_large_square:       | :white_large_square: | :white_large_square: 
-EndOfConversation          | :x:                  | :white_check_mark:   | :white_check_mark:     | :x:                  | :x:      | :x:     | :x:     | :x:   | :x:   | :x:   | :x:            | :x:      | :x:     
-InstallationUpdate         | :x:                  | :white_check_mark:   | :white_check_mark:     | :x:                  | :x:      | :x:     | :x:     | :x:   | :x:   | :x:   | :x:            | :x:      | :x:     
-Digitação                     | :x:                  | :white_check_mark:   | :white_check_mark:     | :x:                  | :x:      | :x:     | :x:     | :x:   | :x:   | :x:   | :x:            | :x:      | :x:     
+EndOfConversation          | :x:                  | :white_check_mark:   | :white_check_mark:     | :x:                  | :x:      | :x:       | :x:     | :x:   | :x:   | :x:   | :x:            | :x:      | :x:     
+InstallationUpdate         | :x:                  | :white_check_mark:   | :white_check_mark:     | :x:                  | :x:      | :x:       | :x:     | :x:   | :x:   | :x:   | :x:            | :x:      | :x:     
+Digitação                     | :x:                  | :white_check_mark:   | :white_check_mark:     | :x:                  | :white_check_mark:   | :x:     | :x:     | :white_check_mark:   | :white_check_mark:   | :x:   | :x:            | :white_check_mark:      | :x:     
 Entrega                    | :x:                  | :x:                  | :x:                    | :x:                  | :x:      | :x:     | :x:     | :x:   | :x:   | :x:   | :x:            | :x:      | :x:     
 
 ## <a name="web-chat"></a>Chat na Web 

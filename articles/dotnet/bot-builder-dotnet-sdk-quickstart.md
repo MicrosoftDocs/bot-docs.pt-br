@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 7b5bb7e7d09bad3736bfd69647a85c30c6772d52
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: b9d1441c0fc2a8a7a05e8f461eecd09be81da2f8
+ms.sourcegitcommit: eb0e5dec0ecd4e375d33825030b1ba46ff6e032c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75797981"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83791220"
 ---
 # <a name="create-a-bot-with-the-bot-framework-sdk-for-net"></a>Criar um bot com o SDK do Bot Framework para .NET
 
@@ -22,9 +22,9 @@ ms.locfileid: "75797981"
 
 Este guia de início rápido oferece orientações sobre como criar um bot usando o modelo de C# e testá-lo com o Bot Framework Emulator.
 
-[!INCLUDE [Azure vs local development](~/includes/snippet-quickstart-paths.md)]
+[!INCLUDE [Azure vs local development](../includes/snippet-quickstart-paths.md)]
 
-[!INCLUDE [dotnet quickstart](~/includes/quickstart-dotnet.md)]
+[!INCLUDE [dotnet quickstart](../includes/quickstart-dotnet.md)]
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
@@ -34,4 +34,3 @@ Confira [túnel (ngrok)](https://github.com/Microsoft/BotFramework-Emulator/wiki
 
 > [!div class="nextstepaction"]
 > [Implantar seu bot no Azure](../bot-builder-deploy-az-cli.md)
-
