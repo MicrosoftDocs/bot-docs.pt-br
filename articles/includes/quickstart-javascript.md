@@ -1,19 +1,17 @@
 ---
-ms.openlocfilehash: 77635aab0e1535a2d44ef24c3e33094b13f4a15a
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 5e103e1e260db865d32a1c2081ef157143abe2c1
+ms.sourcegitcommit: eb0e5dec0ecd4e375d33825030b1ba46ff6e032c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80117828"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83791314"
 ---
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- [Visual Studio Code](https://www.visualstudio.com/downloads)
 - [Node.js](https://nodejs.org/)
-- [Yeoman](http://yeoman.io/), que usa um gerador para criar um bot para você
-- [git](https://git-scm.com/)
 - [Emulador do bot Framework](https://aka.ms/bot-framework-emulator-readme)
 - Conhecimento de [restify](http://restify.com/) e programação assíncrona em JavaScript
+- [Visual Studio Code](https://www.visualstudio.com/downloads) ou seu IDE favorito, se você quiser editar o código de bot.
 
 > [!NOTE]
 > A instalação das ferramentas de compilação do Windows listadas abaixo só é necessária se você usar o Windows como seu sistema operacional de desenvolvimento.
@@ -22,7 +20,7 @@ ms.locfileid: "80117828"
 > Essa chamada também pode ficar suspensa sem sair se o python já estiver instalado no seu sistema:
 
 > ```bash
-> # only run this command if you are on Windows. Read the above note. 
+> # only run this command if you are on Windows. Read the above note.
 > npm install -g windows-build-tools
 > ```
 
@@ -31,7 +29,8 @@ ms.locfileid: "80117828"
 Para criar seu bot e inicializar seus pacotes
 
 1. Abra um prompt de comandos com privilégios elevados ou terminais.
-1. Se você ainda não tiver um diretório para seus bots JavaScript, crie um e altere os diretórios para ele. (Estamos criando um diretório para seus bots JavaScript em geral, apesar de criarmos apenas um bot neste tutorial.)
+
+1. Alterne para o diretório dos seus bots do JavaScript. Crie-o primeiro se você ainda não tiver um.
 
    ```bash
    mkdir myJsBots
@@ -44,7 +43,7 @@ Para criar seu bot e inicializar seus pacotes
    npm install -g npm
    ```
 
-1. Em seguida, instale Yeoman e o gerador para JavaScript.
+1. Em seguida, instale ou atualize o Yeoman e o gerador para JavaScript. (O Yeoman é uma ferramenta para criar aplicativos. Para saber mais, confira [yeoman.io](https://yeoman.io)).
 
    ```bash
    npm install -g yo generator-botbuilder
@@ -56,31 +55,45 @@ Para criar seu bot e inicializar seus pacotes
    yo botbuilder
    ```
 
-Yeoman pede-lhe alguma informação para criar o seu bot. Neste tutorial, use os valores padrão.
+   Yeoman pede-lhe alguma informação para criar o seu bot. Neste tutorial, use os valores padrão.
 
-```text
-? What's the name of your bot? my-chat-bot
-? What will your bot do? Demonstrate the core capabilities of the Microsoft Bot Framework
-? What programming language do you want to use? JavaScript
-? Which template would you like to start with? Echo Bot - https://aka.ms/bot-template-echo
-? Looking good.  Shall I go ahead and create your new bot? (Y/n)
-```
+   ```text
+   ? What's the name of your bot? my-chat-bot
+   ? What will your bot do? Demonstrate the core capabilities of the Microsoft Bot Framework
+   ? What programming language do you want to use? JavaScript
+   ? Which template would you like to start with? Echo Bot - https://aka.ms/bot-template-echo
+   ? Looking good.  Shall I go ahead and create your new bot? Yes
+   ```
 
-Graças ao modelo, seu projeto contém todo o código necessário para criar o bot neste início rápido. Na verdade, você não precisa escrever nenhum código adicional.
+Graças ao modelo, seu projeto contém todo o código necessário para criar o bot neste início rápido. Você não precisa de nenhum código adicional para testar o bot.
 
 > [!NOTE]
-> Se você optar por criar um bot `Core`, será necessário um modelo de linguagem do LUIS. É possível criar um em [luis.ai](https://www.luis.ai). Após a criação do modelo, atualize o arquivo de configuração.
+> Se você optar por criar um bot `Core`, será necessário um modelo de linguagem LUIS. (Você pode criar um modelo de linguagem em [luis.ai](https://www.luis.ai)). Após a criação do modelo, atualize o arquivo de configuração.
 
 ## <a name="start-your-bot"></a>Inicie seu bot
 
-Em um terminal ou prompt de comando, altere os diretórios para aquele criado para o seu bot e inicie-o com `npm start`. Neste ponto, seu bot está em execução localmente.
+Em um terminal ou prompt de comando, altere os diretórios para aquele criado para o seu bot e inicie-o com `npm start`.
+
+```bash
+cd my-chat-bot
+npm start
+```
+
+Neste ponto, seu bot está em execução localmente na porta 3978.
 
 ## <a name="start-the-emulator-and-connect-your-bot"></a>Iniciar o emulador e conectar seu bot
 
 1. Instale o Emulador do Bot Framework.
-2. Clique no link **Criar uma nova configuração de bot** na guia de “Boas-vindas” do emulador. 
-3. Preencha os campos de seu bot. Use o endereço da página inicial do seu bot (normalmente http://localhost:3978), e acrescente informações de roteamento '/api/messages' para esse endereço.
-4. Em seguida, clique em **Salvar e conectar-se**.
 
-Envie uma mensagem para seu bot e o bot responderá com uma mensagem.
-![Emulador em execução](../media/emulator-v4/js-quickstart.png)
+2. Clique em **Abrir Bot** na guia **Bem-vindo** do Emulador.
+
+3. Insira a URL do bot, que é a URL da porta local, com /api/messages adicionado ao caminho, normalmente `http://localhost:3978/api/messages`.
+
+   <!--This is the same process in the Emulator for all three languages.-->
+   ![abrir uma tela de bot](../media/python/quickstart/open-bot.png)
+
+4. E clique em **Conectar**.
+
+   Envie uma mensagem para seu bot e o bot responderá com uma mensagem.
+
+   ![Emulador em execução](../media/emulator-v4/js-quickstart.png)

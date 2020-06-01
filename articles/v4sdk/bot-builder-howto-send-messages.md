@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 05/23/2019
+ms.date: 05/14/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 9dc5bfeab8bc56e81888be5e9463be167fcd2b18
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: fa45a5acf0a40c77b9e883a65633d45cfa96e179
+ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77071804"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83555308"
 ---
 # <a name="send-and-receive-text-message"></a>Enviar e receber mensagens de texto
 
@@ -54,14 +54,28 @@ Nos manipuladores de atividade do bot, use o método `send_activity` de mudança
 await turn_context.send_activity("Welcome!")
 ```
 
+# <a name="lg"></a>[LG](#tab/lg)
+
+A **LG** (geração de linguagem) fornece modelos que incluem uma ou mais variações de texto que são usadas para composição e expansão.
+Uma das variações fornecidas será selecionada aleatoriamente pelo sistema LG.
+
+O exemplo a seguir mostra um modelo simples que inclui duas variações.
+
+```markdown
+# GreetingPrefix
+- Hi
+- Hello
+```
+
 ---
+
 ## <a name="receive-a-text-message"></a>Receber uma mensagem de texto
 
-Para receber uma mensagem de texto simples, use a propriedade de *texto* do objeto de *atividade*. 
+Para receber uma mensagem de texto simples, use a propriedade de *texto* do objeto de *atividade*.
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-Nos manipulares de atividade do bot, use o código a seguir para receber uma mensagem. 
+Nos manipulares de atividade do bot, use o código a seguir para receber uma mensagem.
 
 ```cs
 var responseMessage = turnContext.Activity.Text;
@@ -83,12 +97,21 @@ Nos manipulares de atividade do bot, use o código a seguir para receber uma men
 response = context.activity.text
 ```
 
+# <a name="lg"></a>[LG](#tab/lg)
+
+Adicione o modelo LG a seguir ao arquivo .lg para receber uma mensagem.
+
+```markdown
+# EchoMessage
+You said ‘${turn.activity.text}’
+```
+
 ---
 
 ## <a name="send-a-typing-indicator"></a>Enviar um indicador de digitação
 Os usuários esperam uma resposta em tempo hábil às suas mensagens. Se o seu bot executar alguma tarefa de longa duração, como chamar um servidor ou executar uma consulta sem dar ao usuário alguma indicação de que o bot ouviu, o usuário pode ficar impaciente e enviar mensagens adicionais ou simplesmente assumir que o bot está quebrado.
 
-Os canais de bot de Webchat e Direct Line são compatíveis com o envio de uma indicação de digitação para mostrar ao usuário que a mensagem foi recebida e está sendo processada. Lembre-se de que o bot precisa deixar o ciclo terminar em 15 segundos ou o serviço Conector atingirá o tempo limite. Para processos mais longos, leia mais sobre como enviar [mensagens proativas](bot-builder-howto-proactive-message.md). 
+Os canais de bot de Webchat e Direct Line são compatíveis com o envio de uma indicação de digitação para mostrar ao usuário que a mensagem foi recebida e está sendo processada. Lembre-se de que o bot precisa deixar o ciclo terminar em 15 segundos ou o serviço Conector atingirá o tempo limite. Para processos mais longos, leia mais sobre como enviar [mensagens proativas](bot-builder-howto-proactive-message.md).
 
 O exemplo a seguir demonstra como enviar uma indicação de digitação.
 
@@ -156,12 +179,22 @@ async def on_message_activity(self, turn_context: TurnContext):
         )
 ```
 
+# <a name="lg"></a>[LG](#tab/lg)
+
+```markdown
+# TypingIndicator
+[Activity
+    Type = typing
+]
+```
+
 ---
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- Para obter mais informações sobre o processamento de atividade, confira [processamento de atividade](~/v4sdk/bot-builder-basics.md#the-activity-processing-stack).
-- Para obter mais informações sobre a formatação, confira a [seção de atividades de mensagem](https://aka.ms/botSpecs-activitySchema#message-activity) do esquema de Atividade do Bot Framework.
+- [Processamento de atividade](~/v4sdk/bot-builder-basics.md#the-activity-processing-stack)
+- [Seção Atividade de mensagem](https://aka.ms/botSpecs-activitySchema#message-activity)
+- [Geração de Linguagem](bot-builder-concept-language-generation.md)
 
 ## <a name="next-steps"></a>Próximas etapas
 

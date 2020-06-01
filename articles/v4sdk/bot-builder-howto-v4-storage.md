@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/01/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 44f3e532459529c02d4ce5ea06d762f28ab8796a
-ms.sourcegitcommit: 2412f96ad8f74dfa615c71f566c5befffb920658
+ms.openlocfilehash: 269036b7cbbef9556686672a8d0a7eb2640ec8fa
+ms.sourcegitcommit: eb0e5dec0ecd4e375d33825030b1ba46ff6e032c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158843"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83791287"
 ---
 # <a name="write-directly-to-storage"></a>Gravar diretamente no armazenamento
 
@@ -25,8 +25,10 @@ Você pode ler e gravar diretamente em seu objeto de armazenamento sem usar midd
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - Se você não tiver uma assinatura do Azure, crie uma conta [gratuita](https://azure.microsoft.com/free/) antes de começar.
-- Familiaridade com o artigo: Crie um bot localmente para [dotnet](https://aka.ms/bot-framework-www-c-sharp-quickstart), [nodeJS](https://aka.ms/bot-framework-www-node-js-quickstart) ou [Python](https://aka.ms/bot-framework-www-node-python-quickstart).
-- Modelo SDK do Bot Framework v4 para o [Modelo C#](https://aka.ms/bot-vsix), [nodeJS](https://nodejs.org) e [yeoman](http://yeoman.io).
+- Familiaridade com o artigo: Crie um bot localmente para [.NET](https://aka.ms/bot-framework-www-c-sharp-quickstart), [JavaScript](https://aka.ms/bot-framework-www-node-js-quickstart) ou [Python](https://aka.ms/bot-framework-www-node-python-quickstart).
+- Modelos do SDK do Bot Framework v4 para [Visual Studio (C#)](https://aka.ms/bot-vsix), [Node.js](https://nodejs.org) ou [Yeoman](http://yeoman.io).
+
+[!INCLUDE [VSIX templates](~/includes/vsix-templates-versions.md)]
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 

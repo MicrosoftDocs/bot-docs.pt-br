@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 03/19/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f49780dcef56b3517798435ce4ad77be75d6d2ad
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: a282db92179da22273cf41d1ddf0ad755442aba5
+ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80648200"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83555687"
 ---
 # <a name="implement-a-skill-consumer"></a>Implementar um consumidor de skills
 
@@ -29,6 +29,8 @@ Um _bot raiz_ é um bot voltado para o usuário que pode invocar um ou mais skil
 - Os desenvolvedores que não têm acesso ao código-fonte do skill podem usar as informações do manifesto do skill para criar um consumidor de skills.
 
 Este artigo demonstra como implementar um consumidor de skills que usa o skill de eco para ecoar a entrada do usuário. Para obter um exemplo de manifesto de skill e informações sobre como implementar o skill de eco, consulte como [implementar um skill](skill-implement-skill.md).
+
+Para saber mais sobre como usar uma caixa de diálogo de skill para consumir um skill, confira como [usar uma caixa de diálogo para consumir um skill](skill-use-skilldialog.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -102,7 +104,7 @@ Adicione a ID do aplicativo e a senha do bot raiz ao arquivo .env. Além disso, 
 
 Adicione a ID do aplicativo e a senha do bot raiz ao arquivo .env. Além disso, adicione a ID do aplicativo para o bot skill de eco.
 
-[!code-python[configuration file](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/simple-root-bot/config.py?range=16-29)]
+[!code-python[configuration file](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/simple-root-bot/config.py?range=14-27)]
 
 ---
 
@@ -122,12 +124,11 @@ Este exemplo lê informações de cada skill no arquivo de configuração em uma
 
 [!code-javascript[skills configuration](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/skillsConfiguration.js?range=7-33)]
 
-
 ### <a name="python"></a>[Python](#tab/python)
 
 **simple-root-bot/config.py**
 
-[!code-python[skills configuration](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/simple-root-bot/config.py?range=32-36)]
+[!code-python[skills configuration](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/simple-root-bot/config.py?range=34-38)]
 
 ---
 
@@ -144,19 +145,19 @@ O alocador de ID de conversa deste exemplo é compatível com um cenário simple
 
 **SimpleRootBot\SkillConversationIdFactory.cs**
 
-[!code-csharp[Conversation ID factory](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/SimpleRootBot/SkillConversationIdFactory.cs?range=17-40)]
+[!code-csharp[Conversation ID factory](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/SimpleRootBot/SkillConversationIdFactory.cs?range=17-44)]
 
 ### <a name="javascript"></a>[JavaScript](#tab/js)
 
 **simple-root-bot/skillConversationIdFactory.js**
 
-[!code-javascript[Conversation ID factory](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/skillConversationIdFactory.js?range=10-29)]
+[!code-javascript[Conversation ID factory](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/skillConversationIdFactory.js?range=10-34)]
 
 ### <a name="python"></a>[Python](#tab/python)
 
 **simple-root-bot/skill_conversation_id_factory.py**
 
-[!code-python[Conversation ID factory](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/simple-root-bot/skill_conversation_id_factory.py?range=9-47)]
+[!code-python[Conversation ID factory](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/simple-root-bot/skill_conversation_id_factory.py?range=14-75)]
 
 ---
 
@@ -183,17 +184,17 @@ O manipulador usa o alocador de ID de conversa, a configuração de autenticaç�
 
 **simple-root-bot/index.js**
 
-[!code-javascript[skill client](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/index.js?range=107-108)]
+[!code-javascript[skill client](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/index.js?range=120-121)]
 
-[!code-javascript[skill handler](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/index.js?range=132)]
+[!code-javascript[skill handler](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/index.js?range=147)]
 
 ### <a name="python"></a>[Python](#tab/python)
 
 **simple-root-bot/app.py**
 
-[!code-python[skill client](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/simple-root-bot/app.py?range=58)]
+[!code-python[skill client](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/simple-root-bot/app.py?range=51)]
 
-[!code-python[skill handler](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/simple-root-bot/app.py?range=120-122)]
+[!code-python[skill handler](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/simple-root-bot/app.py?range=60-62)]
 
 ---
 
@@ -226,11 +227,13 @@ O bot raiz também define um acessador de propriedade de estado de conversa para
 
 Este exemplo tem um método auxiliar para encaminhar atividades a um skill. Ele salva o estado da conversa antes de invocar o skill e verifica se a solicitação HTTP foi bem-sucedida.
 
-[!code-csharp[Send to skill](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/SimpleRootBot/Bots/RootBot.cs?range=134-148)]
+[!code-csharp[Send to skill](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/SimpleRootBot/Bots/RootBot.cs?range=135-149)]
 
 É importante observar que o bot raiz inclui a lógica para encaminhar atividades para a habilidade, iniciar a habilidade mediante solicitação do usuário e interromper a habilidade quando ela é concluída.
 
-[!code-csharp[message/end-of-conversation handlers](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/SimpleRootBot/Bots/RootBot.cs?range=57-121)]
+[!code-csharp[OnMessageActivityAsync](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/SimpleRootBot/Bots/RootBot.cs?range=77-96)]
+
+[!code-csharp[OnEndOfConversationActivityAsync](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/SimpleRootBot/Bots/RootBot.cs?range=98-122)]
 
 ### <a name="javascript"></a>[JavaScript](#tab/js)
 
@@ -247,7 +250,9 @@ Este exemplo tem um método auxiliar para encaminhar atividades a um skill. Ele 
 
 É importante observar que o bot raiz inclui a lógica para encaminhar atividades para a habilidade, iniciar a habilidade mediante solicitação do usuário e interromper a habilidade quando ela é concluída.
 
-[!code-javascript[message/end-of-conversation handlers](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/rootBot.js?range=32-92)]
+[!code-javascript[onMessage](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/rootBot.js?range=50-65)]
+
+[!code-javascript[onEndOfConversation](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/rootBot.js?range=68-92)]
 
 ### <a name="python"></a>[Python](#tab/python)
 
@@ -260,11 +265,11 @@ O bot raiz também define um acessador de propriedade de estado de conversa para
 
 Este exemplo tem um método auxiliar para encaminhar atividades a um skill. Ele salva o estado da conversa antes de invocar o skill e verifica se a solicitação HTTP foi bem-sucedida.
 
-[!code-python[Send to skill](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/simple-root-bot/bots/root_bot.py?range=111-124)]
+[!code-python[Send to skill](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/simple-root-bot/bots/root_bot.py?range=109-122)]
 
 É importante observar que o bot raiz inclui a lógica para encaminhar atividades para a habilidade, iniciar a habilidade mediante solicitação do usuário e interromper a habilidade quando ela é concluída.
 
-[!code-python[Handled activities](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/simple-root-bot/bots/root_bot.py?range=39-100)]
+[!code-python[Handled activities](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/simple-root-bot/bots/root_bot.py?range=38-98)]
 
 ---
 
@@ -280,26 +285,25 @@ Quando ocorre um erro, o adaptador limpa o estado da conversa para redefinir a c
 
 Neste exemplo, a lógica de erro de ciclo é dividida entre alguns métodos auxiliares.
 
-[!code-csharp[On turn error](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/SimpleRootBot/AdapterWithErrorHandler.cs?range=40-120)]
+[!code-csharp[On turn error](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/SimpleRootBot/AdapterWithErrorHandler.cs?range=40-117)]
 
 ### <a name="javascript"></a>[JavaScript](#tab/js)
 
 **simple-root-bot/index.js**
 
-[!code-javascript[On turn error](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/index.js?range=34-87)]
+[!code-javascript[On turn error](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/index.js?range=34-100)]
 
 ### <a name="python"></a>[Python](#tab/python)
 
-**app.py**
+**simple-root-bot/adapter_with_error_handler.py**
 
-[!code-python[On turn error](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/simple-root-bot/app.py?range=62-115)]
+[!code-python[On turn error](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/simple-root-bot/adapter_with_error_handler.py?range=42-134)]
 
 ---
 
 ## <a name="skills-endpoint"></a>Ponto de extremidade de skills
 
 O bot define um ponto de extremidade que encaminha as atividades de skills de entrada para o manipulador de skills do bot raiz.
-
 
 ### <a name="c"></a>[C#](#tab/cs)
 
@@ -311,14 +315,13 @@ O bot define um ponto de extremidade que encaminha as atividades de skills de en
 
 **simple-root-bot/index.js**
 
-
-[!code-javascript[skill endpoint](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/index.js?range=133-134)]
+[!code-javascript[skill endpoint](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/index.js?range=145-149)]
 
 ### <a name="python"></a>[Python](#tab/python)
 
 **simple-root-bot/app.py**
 
-[!code-python[skill endpoint](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/simple-root-bot/app.py?range=144)]
+[!code-python[skill endpoint](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/simple-root-bot/app.py?range=82)]
 
 ---
 
@@ -338,15 +341,13 @@ Inclui um objeto de configuração de autenticação com qualquer validação de
 
 [!code-javascript[services](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/index.js?range=27-31)]
 
-[!code-javascript[services](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/index.js?range=95-134)]
+[!code-javascript[services](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/index.js?range=108-143)]
 
 ### <a name="python"></a>[Python](#tab/python)
 
 **simple-root-bot/app.py**
 
-[!code-python[services](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/simple-root-bot/app.py?range=35-58)]
-
-[!code-python[services](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/simple-root-bot/app.py?range=118-144)]
+[!code-python[services](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/simple-root-bot/app.py?range=38-81)]
 
 ---
 

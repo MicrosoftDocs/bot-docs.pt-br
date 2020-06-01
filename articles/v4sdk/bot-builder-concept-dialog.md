@@ -2,45 +2,71 @@
 title: Caixas de diálogo no SDK do Bot Framework – Serviço de Bot
 description: Descreve o que é um diálogo e como ele funciona no SDK do Bot Framework.
 keywords: fluxo de conversa, prompt, estado de diálogo, reconhecer intenção, turno único, multiturno, conversa de bot, diálogos, solicitações, cascatas, conjunto de caixas de diálogo
-author: johnataylor
-ms.author: johtaylo
+author: JonathanFingold
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 05/23/2019
+ms.date: 05/14/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2cab43300eb7797649b541f9254d07cb57f57483
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 458f224e5c27b43a79bcd45e0c2d1206437c57fa
+ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75799097"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83555427"
 ---
 # <a name="dialogs-library"></a>Biblioteca de diálogos
 
 [!INCLUDE [applies-to-v4](../includes/applies-to.md)]
 
-Os *diálogos* são um conceito central no SDK e fornecem uma maneira útil para gerenciar uma conversa com o usuário. Os diálogos são estruturas em seu bot que atuam como funções no programa do seu bot. Cada diálogo foi projetado para executar uma tarefa específica, em uma ordem específica. Você pode especificar a ordem dos diálogos individuais para orientar a conversa e invocá-los de maneiras diferentes – às vezes, em resposta a um usuário, às vezes, em resposta a algum estímulo externo, ou de outros diálogos.
+Os *diálogos* são um conceito central no SDK e fornecem uma maneira útil para gerenciar uma conversa com o usuário. As caixas de diálogo são estruturas em seu bot que atuam como funções no programa do bot. Cada caixa de diálogo foi projetada para executar uma tarefa específica. Você pode especificar a ordem dos diálogos individuais para orientar a conversa e invocá-los de maneiras diferentes – às vezes, em resposta a um usuário, às vezes, em resposta a algum estímulo externo, ou de outros diálogos.
 
-A biblioteca de diálogos fornece alguns recursos internos, tais como *prompts* e *diálogos em cascata* para facilitar a conversa do seu bot. Os [prompts](#prompts) são usados para solicitar diferentes tipos de informações, como texto, um número ou uma data. Os [diálogos em cascata](#waterfall-dialogs) podem combinar várias etapas em uma única sequência, permitindo que seu bot facilmente siga essa sequência predefinida e passe as informações para a etapa seguinte.
+Este artigo descreve os principais recursos da biblioteca de caixas de diálogo.
+Você deve estar familiarizado com o [modo como os bots funcionam](bot-builder-basics.md) e com o [gerenciamento de estado](bot-builder-concept-state.md).
 
-<!-- When we have samples for building your own, add links and one liner about them -->
+A biblioteca de caixas de diálogo fornece alguns recursos incorporados para facilitar o gerenciamento da conversa do seu bot.
+
+- As caixas de diálogo [Cascata](#waterfall-dialogs) e [prompt](#prompts) combinam várias etapas, permitindo que o bot siga uma sequência predefinida e passe informações de uma etapa para outra.
+- As [caixas de diálogo de componentes](#component-dialog) permitem encapsular e reutilizar conjuntos de caixas de diálogo.
+- Caixas de diálogo adaptáveis, de ação e de entrada têm um design orientado a eventos para permitir a criação de conversas sofisticadas.
+- As caixas de diálogo de skills automatizam o gerenciamento de bots de skills a partir de um consumidor de skill.
+
+### <a name="adaptive-dialogs"></a>Caixas de diálogo adaptáveis
+
+As caixas de diálogo adaptáveis usam um modelo controlado por eventos nas conversas. Elas disponibilizam vários recursos internos, incluindo a manipulação de interrupções, a anexação de um reconhecedor a cada caixa de diálogo, o uso do sistema de geração de linguagem e muito mais. Com as caixas de diálogo adaptáveis, você pode se concentrar mais em modelar a conversa e menos na mecânica da caixa de diálogo.
+
+Uma caixa de diálogo adaptável faz parte da biblioteca de caixas de diálogo e funciona com todos os outros tipos de caixas de diálogo.
+Você pode criar facilmente um bot que usa muitos tipos de caixa de diálogo.
+
+Considere o uso de caixas de diálogo adaptáveis se o bot:
+
+- Exigir que o fluxo de conversa se ramifique ou tenha um loop com base na lógica de negócios, entrada do usuário ou outros fatores.
+- Precisar se ajustar ao contexto, aceitar informações em uma ordem arbitrária ou permitir que um thread de conversação seja pausado para uma conversa simultânea e, em seguida, retorne à ação.
+- Precisar de modelos de compreensão de linguagem específicos de contextos ou precisar extrair informações de entidade da entrada do usuário.
+- Beneficiar-se do processamento de entrada personalizado ou da geração de resposta.
+
+A [Introdução às caixas de diálogo adaptáveis](bot-builder-adaptive-dialog-introduction.md) e seus tópicos associados descrevem os recursos que têm suporte em caixas de diálogo adaptáveis: reconhecimento de linguagem e suporte à geração de idioma, uso de gatilhos e ações para modelar o fluxo de conversa e acesso a escopos de memória.
 
 ## <a name="dialogs-and-their-pieces"></a>Diálogos e suas partes
 
-A biblioteca de diálogos tem algumas informações adicionais incluídas para tornar os diálogos mais úteis. Além dos diferentes [tipos de diálogos](#dialog-types) discutidos abaixo, a biblioteca contém a ideia de um *conjunto de diálogos*, o *contexto do diálogo* e o *resultado do diálogo*.
+<!-- TODO: review and rewrite post R9 -->
 
-Os *conjuntos de diálogos* são, em termos mais simples, uma coleção de diálogos. Eles podem ser elementos como prompts, diálogos em cascata, ou [componentes de diálogos](#component-dialog). Todos eles são implementações de um diálogo, que são adicionados ao conjunto de diálogos com uma ID de cadeia de caracteres específica. Quando seu bot deseja iniciar um determinado diálogo ou prompt dentro do conjunto de diálogos, ele usa essa ID de cadeia de caracteres para especificar qual diálogo será usado.
+A biblioteca de diálogos tem algumas informações adicionais incluídas para tornar os diálogos mais úteis. Além dos diferentes [tipos de caixas de diálogo](#dialog-types) discutidos abaixo, a biblioteca contém a ideia de um *conjunto de caixas de diálogo*, o *contexto da caixa de diálogo*, o *resultado da caixa de diálogo* e o *gerenciador da caixa de diálogo*.
 
-O *contexto do diálogo* contém informações referentes ao diálogo e é usado para interagir com um conjunto de diálogos de dentro do manipulador de turnos do seu bot. O contexto do diálogo inclui o contexto do turno atual, o diálogo pai e o [estado do diálogo](#dialog-state), que fornece um método para preservar informações no diálogo. O contexto do diálogo permite iniciá-lo com a ID da cadeia de caracteres ou continuar o diálogo atual (por exemplo, um diálogo em cascata que tenha várias etapas).
+Um *conjunto de caixas de diálogo* é uma coleção de caixas de diálogo. Cada instância de caixa de diálogo é adicionada ao conjunto de caixas de diálogo com uma ID exclusiva para esse conjunto. Quando seu bot deseja iniciar determinada caixa de diálogo ou prompt dentro do conjunto de caixas de diálogo, ele usa essa ID para especificar qual caixa de diálogo será usada. As caixas de diálogo adaptáveis e de componentes contêm um conjunto de caixas de diálogo internas.
+
+O *contexto da caixa de diálogo* contém informações referentes ao conjunto de caixas de diálogo e é usado na estrutura para interagir com essas caixas de diálogo. O contexto do diálogo inclui o contexto do turno atual, o diálogo pai e o [estado do diálogo](#dialog-state), que fornece um método para preservar informações no diálogo. O contexto do diálogo permite iniciá-lo com a ID da cadeia de caracteres ou continuar o diálogo atual (por exemplo, um diálogo em cascata que tenha várias etapas).
 
 Quando um diálogo termina, ele pode retornar um *resultado de diálogo* com algumas informações resultantes sobre o diálogo. Esse resultado é retornado para permitir que o método de chamada veja o que aconteceu no diálogo e salve as informações em algum local persistente, se desejado.
 
+Um *gerenciador da caixa de diálogo* automatiza muitas das tarefas de gerenciamento de caixas de diálogo para você. Para executar uma caixa de diálogo adaptável (ou outra caixa de diálogo que contenha uma caixa de diálogo adaptável), você deve iniciá-la em um gerenciador de caixas de diálogo.
+
 ## <a name="dialog-state"></a>Estado do diálogo
 
-As caixas de diálogo são uma abordagem usada para implementar uma conversa com vários turnos e, por isso, são um exemplo de um recurso do SDK que se baseia em um estado persistente em vários turnos. Sem o estado nos diálogos, seu bot não saberia onde está no conjunto de diálogos ou quais informações foram coletadas.
+As caixas de diálogo proporcionam uma abordagem para implementar uma conversa com vários turnos e, como tal, se baseiam em um estado persistente por vários turnos. Sem o estado nas caixas de diálogo, seu bot não saberia onde está na conversa ou quais informações já foram coletadas. Novamente, um gerenciador de caixas de diálogo automatiza muitas dessas tarefas para você.
 
-Um bot baseado em caixas de diálogo normalmente contém uma coleção de conjunto de diálogos como variável de membro em sua implementação de bot. Esse conjunto de caixas de diálogo é criado com um identificador para um objeto chamado acessador que fornece acesso ao estado persistente. Para obter informações sobre o estado dentro dos bots, confira [Gerenciando o estado](bot-builder-concept-state.md).
+Um bot baseado em caixas de diálogo pode conter uma coleção de conjuntos de caixas de diálogo como variável de membro na implementação de bot. Esse conjunto de caixas de diálogo é criado com um identificador para um objeto chamado acessador que fornece acesso ao estado persistente. Para obter informações sobre o estado dentro dos bots, confira [Gerenciando o estado](bot-builder-concept-state.md). O gerenciador de caixas de diálogo gerencia o estado das caixas de diálogo adaptáveis.
 
 No manipulador de turnos do bot, o bot inicializa o subsistema do diálogo chamando *create context* no conjunto de diálogos, que retorna o *contexto do diálogo*. Esse contexto de caixa de diálogo contém as informações necessárias para a caixa de diálogo.
 
@@ -48,9 +74,14 @@ A criação de um contexto de caixa de diálogo requer o estado, que é acessado
 
 ## <a name="dialog-types"></a>Tipos de diálogo
 
-Os diálogos possuem alguns tipos diferentes: prompts, caixas de diálogos em cascata e componentes de diálogo, conforme mostrado nesta hierarquia de classe.
+Existem alguns tipos diferentes de caixas de diálogo, como mostrado nesta hierarquia de classe.
 
 ![classes de diálogo](media/bot-builder-dialog-classes.png)
+
+As caixas de diálogo de prompt são projetadas para funcionar como caixas de diálogo em cascata.
+As caixas de diálogo de ação e entrada foram projetadas para trabalhar com caixas de diálogo adaptáveis.
+As caixas de diálogo adaptáveis e de componentes gerenciam um conjunto de caixas de diálogo _filhas_.
+As caixas de diálogo de skill e do QnA Maker encapsulam os skills e os recursos do QnA Maker como caixas de diálogo.
 
 ### <a name="prompts"></a>Solicitações
 
@@ -79,7 +110,7 @@ Nos bastidores, os prompts são uma caixa de diálogo em duas etapas. Primeiro, 
 | _Prompt de número_ | Solicita um número. | Um valor numérico. |
 | _Texto do prompt_ | Solicita a entrada de texto geral. | Uma cadeia de caracteres. |
 
-Para solicitar uma entrada ao usuário, defina um prompt usando uma das classes internas, como _text prompt_, e adicione-o ao seu conjunto de diálogos. Os prompts têm IDs fixas que devem ser exclusivas dentro de um conjunto de caixas de diálogo. Você pode ter um validador personalizado para cada prompt, e para alguns prompts, você pode especificar uma _localidade padrão_. 
+Para solicitar uma entrada ao usuário, defina um prompt usando uma das classes internas, como _text prompt_, e adicione-o ao seu conjunto de diálogos. Os prompts têm IDs fixas que devem ser exclusivas dentro de um conjunto de caixas de diálogo. Você pode ter um validador personalizado para cada prompt, e para alguns prompts, você pode especificar uma _localidade padrão_.
 
 #### <a name="prompt-locale"></a>Localidade do prompt
 
@@ -102,9 +133,9 @@ Dentro de uma etapa de cascata, o diálogo fornece o valor retornado na propried
 
 O contexto da etapa em cascata contém o seguinte:
 
-* *Opções*: contém informações de entrada para o diálogo.
-* *Valores*: contém informações que você pode adicionar ao contexto e são repassados para as etapas seguintes.
-* *Resultado*: contém o resultado da etapa anterior.
+- *Opções*: contém informações de entrada para o diálogo.
+- *Valores*: contém informações que você pode adicionar ao contexto e são repassados para as etapas seguintes.
+- *Resultado*: contém o resultado da etapa anterior.
 
 Além disso, o método *next* (**NextAsync** em C#, **next** em JS) continua para a próxima etapa do diálogo em cascata dentro do mesmo turno, permitindo que seu bot ignore uma etapa específica, se necessário.
 
@@ -118,13 +149,13 @@ O segundo parâmetro do método de _prompt_ do contexto da etapa usa um objeto _
 | _Prompt de nova tentativa_ | A atividade de enviar o usuário se a sua primeira entrada não tiver sido validada. |
 | _Opções_ | Uma lista de opções para o usuário escolher, para ser usado com um prompt de escolha. |
 | _Validações_ | Parâmetros adicionais a serem usados com um validador personalizado. |
-| _Estilo_ | Define como as opções de um prompt de escolha ou prompt de confirmação serão apresentadas a um usuário. | 
+| _Estilo_ | Define como as opções de um prompt de escolha ou prompt de confirmação serão apresentadas a um usuário. |
 
-Você sempre deve especificar a atividade do prompt inicial a ser enviado ao usuário, bem como um prompt de nova tentativa para instâncias em que a entrada do usuário não é validada. 
+Você sempre deve especificar a atividade do prompt inicial a ser enviado ao usuário, bem como um prompt de nova tentativa para instâncias em que a entrada do usuário não é validada.
 
-Se a entrada do usuário não for válida, o prompt de nova tentativa será enviado ao usuário. Se não houver uma nova tentativa especificada, o prompt inicial será enviado novamente. No entanto, se uma atividade for enviada de volta ao usuário de dentro do validador, nenhum aviso de nova tentativa será enviado. 
+Se a entrada do usuário não for válida, o prompt de nova tentativa será enviado ao usuário. Se não houver uma nova tentativa especificada, o prompt inicial será enviado novamente. No entanto, se uma atividade for enviada de volta ao usuário de dentro do validador, nenhum aviso de nova tentativa será enviado.
 
-##### <a name="prompt-validation"></a>Validação da prompt 
+##### <a name="prompt-validation"></a>Validação da prompt
 
 Você pode validar uma resposta do prompt antes de retornar o valor para a próxima etapa da cascata. Uma função de validador tem um parâmetro de _contexto do validador de prompt_ e retorna um valor booleano que indica se a entrada passa na validação.
 O contexto do validador de prompt inclui as seguintes propriedades:
@@ -156,7 +187,6 @@ Diálogos podem ser considerados como uma pilha programática, que chamamos de *
 
 Quando um diálogo é iniciado, ele é enviado para a pilha e será o diálogo ativo. Ele permanece como o diálogo ativo até que seja concluído, removido pelo método [replace dialog](#repeating-a-dialog) ou quando outro diálogo é enviado para a pilha (pelo manipulador de turnos ou pelo próprio diálogo ativo) e torna-se o diálogo ativo. Quando esse novo diálogo termina, ele é retirado da pilha e o diálogo seguinte abaixo se torna o diálogo ativo. Isso permite [repetir um diálogo](#repeating-a-dialog) ou [ramificar uma conversa](#branch-a-conversation), o que será discutido abaixo.
 
-
 ### <a name="create-the-dialog-context"></a>Criar o contexto do diálogo
 
 Para criar o contexto do diálogo, chame o método *create context* no seu conjunto de diálogos. Criar o contexto obtém a propriedade de *estado do diálogo* do conjunto de diálogos e usa isso para criar o contexto do diálogo. O contexto do diálogo, em seguida, é usado para iniciar, continuar ou controlar de alguma forma os diálogos no conjunto.
@@ -167,8 +197,8 @@ O conjunto de diálogos requer o uso de um *acessador de propriedade de estado* 
 
 Para iniciar um diálogo, passe a *ID do diálogo* que você deseja iniciar no método *begin dialog*, *prompt* ou *replace dialog* do contexto do diálogo.
 
-* O método begin dialog enviará o diálogo por push para o topo da pilha.
-* O método replace dialog destacará o diálogo atual na fila e enviará o diálogo de substituição por push para a fila. O diálogo de substituição é cancelado, e todas as informações contidas nessa instância são descartadas.
+- O método begin dialog enviará o diálogo por push para o topo da pilha.
+- O método replace dialog destacará o diálogo atual na fila e enviará o diálogo de substituição por push para a fila. O diálogo de substituição é cancelado, e todas as informações contidas nessa instância são descartadas.
 
 Use o parâmetro _options_ para passar informações para a nova instância do diálogo.
 As opções passadas para o novo diálogo podem ser acessadas por meio da propriedade *options* do contexto da etapa em qualquer etapa do diálogo.
@@ -211,7 +241,12 @@ Um diálogo pode iniciar um novo diálogo no mesmo conjunto de diálogo chamando
 
 Assim, você pode criar uma ramificação dentro do fluxo da sua conversa incluindo uma etapa em um diálogo que possa escolher condicionalmente um diálogo para iniciar a partir de um conjunto de diálogos disponíveis.
 
+## <a name="additional-information"></a>Informações adicionais
+
+- Confira mais informações sobre caixas de diálogo adaptáveis em [Introdução às caixas de diálogo adaptáveis](bot-builder-adaptive-dialog-Introduction.md).
+- Confira mais informações em [Sobre os skills](skills-conceptual.md).
+
 ## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
-> [Use a biblioteca de caixa de diálogo para coletar entrada do usuário](bot-builder-prompts.md)
+> [Usar a biblioteca de caixas de diálogo para coletar entradas do usuário](bot-builder-prompts.md)

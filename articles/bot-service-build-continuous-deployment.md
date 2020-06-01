@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 03/23/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: edb1d18273179939a333835b6ff27b7aed9f156b
-ms.sourcegitcommit: 2412f96ad8f74dfa615c71f566c5befffb920658
+ms.openlocfilehash: 6d52d9b76c031fe63d201786f8b6e0377750fcae
+ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158773"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83555638"
 ---
 # <a name="set-up-continuous-deployment"></a>Configurar a implantação contínua
 
@@ -53,8 +53,8 @@ Para habilitar a implantação contínua com o GitHub, navegue até a página **
 
 1. Clique em **Continuar**.
 
-        > [!div class="mx-imgBorder"]
-        > ![Continue to build provider](~/media/azure-bot-build/azure-deployment-continue.png)
+      > [!div class="mx-imgBorder"]
+      > ![Prosseguir para provedor de build](~/media/azure-bot-build/azure-deployment-continue.png)
 
 1. Na página **Provedor de build**, selecione o provedor de build que deseja usar e clique em **Continuar**.
 

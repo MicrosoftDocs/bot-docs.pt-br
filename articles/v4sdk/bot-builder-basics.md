@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 01/31/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: af08588929fc6d1717de261c6e6588c201e96af0
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: cacd54299444caa5571f08e2aa9eb83d135421d0
+ms.sourcegitcommit: eb0e5dec0ecd4e375d33825030b1ba46ff6e032c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80648342"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83791304"
 ---
 # <a name="how-bots-work"></a>Como funcionam os bots
 
@@ -107,11 +107,13 @@ O manipulador de turnos recebe um contexto de turno como seu argumento, normalme
 
 ## <a name="bot-structure"></a>Estrutura do bot
 
-Nas seções a seguir, examinaremos _partes essenciais_ de um EchoBot que você pode criar facilmente usando os modelos fornecidos para [**CSharp**](../dotnet/bot-builder-dotnet-sdk-quickstart.md) ou [**JavaScript**](../javascript/bot-builder-javascript-quickstart.md).
+Nas seções a seguir, examinaremos as _partes essenciais_ de um EchoBot que você pode criar facilmente usando os modelos fornecidos para [**CSharp**](../dotnet/bot-builder-dotnet-sdk-quickstart.md) ou [**JavaScript**](../javascript/bot-builder-javascript-quickstart.md) ou [**Python**](../python/bot-builder-python-quickstart.md).
 
 <!--Need to add section calling out the controller in code, and explaining it further-->
 
-Um bot é um aplicativo Web, e fornecemos modelos a cada linguagem.
+Um bot é um aplicativo Web, e modelos são fornecidos para cada linguagem.
+
+[!INCLUDE [VSIX templates](~/includes/vsix-templates-versions.md)]
 
 # <a name="c"></a>[C#](#tab/csharp)
 

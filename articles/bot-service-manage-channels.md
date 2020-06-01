@@ -7,17 +7,17 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 09/22/2018
-ms.openlocfilehash: 4d25bfaf81d87d4b4d147a046bf5e482f295cacd
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.date: 05/17/2019
+ms.openlocfilehash: e9b4cf43625e8592cf2321e354895e15c90a610c
+ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80647496"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83555617"
 ---
 # <a name="connect-a-bot-to-channels"></a>Conectar um bot aos canais
 
-Um canal é uma conexão entre o bot e os aplicativos de comunicação. Você configura um bot para se conectar aos canais nos quais você deseja ele fique disponível. O Serviço Bot Framework, configurado no portal do Azure, conecta o bot a esses canais e facilita a comunicação entre o bot e o usuário. Você pode se conectar a muitos serviços populares, como [Cortana](bot-service-channel-connect-cortana.md), [Facebook Messenger](bot-service-channel-connect-facebook.md), [Kik](bot-service-channel-connect-kik.md) e [Slack](bot-service-channel-connect-slack.md), assim como vários outros. O canal do [Web Chat](bot-service-channel-connect-webchat.md) é pré-configurado para você. Além dos canais padrão fornecidos com o Serviço do Bot Connector, também é possível conectar o bot ao seu próprio aplicativo cliente usando [Direct Line](bot-service-channel-connect-directline.md) como o canal.
+Um canal é uma conexão entre o bot e os aplicativos de comunicação. Você configura um bot para se conectar aos canais nos quais você deseja ele fique disponível. O Serviço Bot Framework, configurado no portal do Azure, conecta o bot a esses canais e facilita a comunicação entre o bot e o usuário. Você pode se conectar a muitos serviços populares, como a Cortana, o Facebook Messenger, o Kik e o Slack, assim como vários outros. O canal de Webchat foi pré-configurado para você. Além dos canais padrão fornecidos com o Serviço do Bot Connector, também é possível conectar seu bot ao seu próprio aplicativo cliente usando Direct Line como o canal.
 
 O Serviço Bot Framework permite que você desenvolva o bot de maneira independente de canal, normalizando as mensagens que o bot envia a um canal. Isso envolve convertê-lo do esquema do Bot Framework no esquema do canal. No entanto, se o canal não der suporte a todos os aspectos do esquema do Bot Framework, o serviço tentará converter a mensagem em um formato com suporte pelo canal. Por exemplo, se o bot enviar uma mensagem contendo um cartão com botões de ação ao canal de email, o conector poderá enviar o cartão como uma imagem e incluir as ações como links no texto da mensagem.
 

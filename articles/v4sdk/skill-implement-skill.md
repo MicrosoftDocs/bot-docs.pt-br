@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 03/19/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f5ec4d8b336f35eb0e66cdb16e4b8eb36317b08a
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 4d066bd6ea532ec5c959852913980257c1cd62ed
+ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80648223"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83555677"
 ---
 # <a name="implement-a-skill"></a>Implementar um skill
 
@@ -96,7 +96,7 @@ Adicione a ID do aplicativo e a senha do skill ao arquivo config.py.
 
 **config.py**
 
-[!code-python[configuration file](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/echo-skill-bot/config.py?range=14-19)]
+[!code-python[configuration file](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/echo-skill-bot/config.py?range=12-17)]
 
 ---
 
@@ -119,7 +119,7 @@ Opcionalmente, use a propriedade _valor_ da atividade para incluir um valor reto
 
 **EchoSkillBot\Bots\EchoBot.cs**
 
-[!code-csharp[Message handler](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/EchoSkillBot/Bots/EchoBot.cs?range=13-28)]
+[!code-csharp[Message handler](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/EchoSkillBot/Bots/EchoBot.cs?range=13-31)]
 
 #### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -131,7 +131,7 @@ Opcionalmente, use a propriedade _valor_ da atividade para incluir um valor reto
 
 **echo-skill-bot/bots/echo_bot.py**
 
-[!code-python[Message handler](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/echo-skill-bot/bots/echo_bot.py?range=10-26)]
+[!code-python[Message handler](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/echo-skill-bot/bots/echo_bot.py?range=9-27)]
 
 ---
 
@@ -145,7 +145,7 @@ A lógica desse skill não é alterada de ciclo em ciclo. Se você implementar u
 
 **EchoSkillBot\Bots\EchoBot.cs**
 
-[!code-csharp[End-of-conversation handler](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/EchoSkillBot/Bots/EchoBot.cs?range=30-36)]
+[!code-csharp[End-of-conversation handler](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/EchoSkillBot/Bots/EchoBot.cs?range=33-39)]
 
 #### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -180,7 +180,7 @@ Derive um validador de declarações da classe `ClaimsValidator`. Ele emitirá u
 
 **EchoSkillBot\Authentication\AllowedCallersClaimsValidator.cs**
 
-[!code-csharp[Claims validator](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/EchoSkillBot/Authentication/AllowedCallersClaimsValidator.cs?range=22-52&highlight=24-27)]
+[!code-csharp[Claims validator](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/EchoSkillBot/Authentication/AllowedCallersClaimsValidator.cs?range=17-58)]
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -188,7 +188,7 @@ Defina um método de validação de declarações que gere um erro para rejeitar
 
 **echo-skill-bot/authentication/allowedCallersClaimsValidator.js**
 
-[!code-javascript[Claims validator](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/echo-skill-bot/authentication/allowedCallersClaimsValidator.js?range=6-27&highlight=18-20)]
+[!code-javascript[Claims validator](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/echo-skill-bot/authentication/allowedCallersClaimsValidator.js?range=11-31)]
 
 ### <a name="python"></a>[Python](#tab/python)
 
@@ -196,7 +196,7 @@ Defina um método de validação de declarações que gere um erro para rejeitar
 
 **echo-skill-bot/authentication/allowed_callers_claims_validator.py**
 
-[!code-python[Claims validator](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/echo-skill-bot/authentication/allowed_callers_claims_validator.py?range=7-28&highlight=17-22)]
+[!code-python[Claims validator](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/echo-skill-bot/authentication/allowed_callers_claims_validator.py?range=10-44)]
 
 ---
 
@@ -208,19 +208,19 @@ Quando ocorre um erro, o adaptador do skill deve limpar o estado da conversa par
 
 **EchoSkillBot\SkillAdapterWithErrorHandler.cs**
 
-[!code-csharp[Error handler](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/EchoSkillBot/SkillAdapterWithErrorHandler.cs?range=20-59&highlight=19-24)]
+[!code-csharp[Error handler](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/EchoSkillBot/SkillAdapterWithErrorHandler.cs?range=20-75)]
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 **echo-skill-bot/index.js**
 
-[!code-javascript[Error handler](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/echo-skill-bot/index.js?range=41-69&highlight=21-28)]
+[!code-javascript[Error handler](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/echo-skill-bot/index.js?range=34-82)]
 
 ### <a name="python"></a>[Python](#tab/python)
 
-**echo-skill-bot/app.py**
+**echo-skill-bot/adapter_with_error_handler.py**
 
-[!code-python[Error handler](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/echo-skill-bot/app.py?range=38-69&highlight=27-32)]
+[!code-python[Error handler](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/echo-skill-bot/adapter_with_error_handler.py?range=16-77)]
 
 ---
 
@@ -247,7 +247,7 @@ Este exemplo adiciona validação de declarações à configuração de autentic
 
 **app.py**
 
-[!code-python[configuration](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/echo-skill-bot/app.py?range=22-34)]
+[!code-python[configuration](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/echo-skill-bot/app.py?range=23-30)]
 
 ---
 
@@ -276,7 +276,7 @@ O manifesto contém as informações necessárias para acessar o skill por meio 
 
 ---
 
-O _esquema de manifesto do skill_ é um arquivo JSON que descreve o esquema do manifesto de skill. A versão atual do esquema é [skill-manifest-2.0.0.json](https://github.com/microsoft/botframework-sdk/blob/master/schemas/skills/skill-manifest-2.0.0.json).
+O _esquema de manifesto do skill_ é um arquivo JSON que descreve o esquema do manifesto de skill. A versão atual do esquema é [2.1.0](https://schemas.botframework.com/schemas/skills/v2.1/skill-manifest.json).
 
 ## <a name="test-the-skill"></a>Testar o skill
 
@@ -292,4 +292,4 @@ Baixe e instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator
 ## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
-> [Implementar um consumidor de habilidades](skill-implement-consumer.md)
+> [Implementar uma habilidade para Power Virtual Agents](skill-pva.md)

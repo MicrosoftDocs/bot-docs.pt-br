@@ -7,12 +7,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 2/7/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: daaaa0cdbadf5139bca674e053ff464606d071ce
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 317e948060f241d4254718918e3a4f0a24df270a
+ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80648371"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83555557"
 ---
 <!--
 
@@ -51,12 +51,12 @@ Para obter uma visão geral de como o Bot Framework processa a autenticação, c
 Este artigo faz referência a dois exemplos. Um deles mostra como obter um token de autenticação. O outro é mais complexo e mostra como acessar o [Microsoft Graph](https://developer.microsoft.com/en-us/graph) em nome do usuário. Em ambos os casos, você pode usar o Azure AD (Azure Active Directory) v1 ou o Azure AD v2 como um provedor de identidade para obter um token OAuth para o bot.
 Este artigo explica como:
 
-- [Criar o aplicativo de bot do Azure](#create-the-azure-bot-application)
+- [Criar o registro de bot do Azure](#create-the-azure-bot-registration)
 - [Criar o aplicativo de identidade do Azure AD](#create-the-azure-ad-identity-application)
 - [Registrar o aplicativo OAuth do Azure AD com o bot](#register-the-azure-ad-oauth-application-with-the-bot)
 - [Preparar o código do bot](#prepare-the-bot-code)
 
-Depois de concluir este artigo, você terá um bot que pode responder a algumas tarefas simples. No exemplo do Microsoft Graph, você verifica e envia um email e exibe quem é seu gerente. Você não precisa publicar o bot para testar os recursos de entrada do OAuth. No entanto, o bot precisará de uma ID do aplicativo e senha do Azure válidas.
+Depois de concluir este artigo, você terá um bot que pode responder a algumas tarefas simples. No caso do exemplo do Microsoft Graph, você pode enviar um email, mostrar quem você é e verificar os emails recentes. Você não precisa publicar o bot para testar os recursos de entrada do OAuth. No entanto, o bot precisará de uma ID do aplicativo e senha do Azure válidas.
 
 ### <a name="web-chat-and-direct-line-considerations"></a>Considerações de Webchat e Direct Line
 
@@ -89,7 +89,7 @@ Para executar os exemplos referenciados neste artigo, você precisará do seguin
 > [!IMPORTANT]
 > Sempre que você registra um bot no Azure, um aplicativo do Azure AD é atribuído a ele. No entanto, esse aplicativo protege o acesso do canal ao bot. Você precisa de um aplicativo do Azure AD adicional para cada recurso protegido externo que deseja que o bot acesse em nome do usuário.
 
-## <a name="create-the-azure-bot-application"></a>Criar o aplicativo de bot do Azure
+## <a name="create-the-azure-bot-registration"></a>Criar o registro de bot do Azure
 
 Esta seção mostra como registrar um recurso de bot com o Azure para hospedar o código do bot.
 

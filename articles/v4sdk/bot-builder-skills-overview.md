@@ -1,6 +1,6 @@
 ---
-title: Visão geral das Habilidades do Bot Framework – Serviço de Bot
-description: Saiba mais sobre as Habilidades do Bot Framework
+title: Visão geral das Habilidades do Assistente Virtual – Serviço de Bot
+description: Saiba mais sobre as Habilidades do Assistente Virtual
 author: darrenj
 ms.author: darrenj
 manager: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 10/09/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 7d7c4271fd03100c24ba7dd774dea93909bdd8a0
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 5ee7fd32ad0d45ed91572854eb0fbad7daeb69fa
+ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75791228"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83555361"
 ---
 # <a name="virtual-assistant---skills-overview"></a>Assistente Virtual - Visão Geral das Habilidades
 
@@ -24,7 +24,7 @@ ms.locfileid: "75791228"
 
 Os desenvolvedores podem compor experiências de conversação combinando recursos de conversa reutilizáveis, conhecidos como Habilidades.
 
-Dentro de uma empresa poderíamos ter a criação de um único bot pai reunindo vários sub-bots pertencentes a diferentes equipes ou o aproveitamento mais amplo dos recursos comuns fornecidos por outros desenvolvedores. Com essa versão prévia das Habilidades, os desenvolvedores podem criar um novo bot (normalmente por meio do modelo de Assistente Virtual) e adicionar/remover Habilidades com uma única operação de linha de comando incorporando todas as alterações na Expedição e Configuração.     
+Dentro de uma empresa poderíamos ter a criação de um único bot pai reunindo vários sub-bots pertencentes a diferentes equipes ou o aproveitamento mais amplo dos recursos comuns fornecidos por outros desenvolvedores. Com essa versão prévia das Habilidades, os desenvolvedores podem criar um novo bot (normalmente por meio do modelo de Assistente Virtual) e adicionar/remover Habilidades com uma única operação de linha de comando incorporando todas as alterações na Expedição e Configuração.
 
 As próprias Habilidades são Bots, chamados remotamente, e um modelo de desenvolvedor (.NET, TS) está disponível para facilitar a criação de novas Habilidades.
 
