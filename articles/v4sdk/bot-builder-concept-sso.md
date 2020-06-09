@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 03/19/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 02b5e318699a31ffcf6b42befda2a4bb88c8352c
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 858c3498031821f6b2117e61f9387c7f97d2ba60
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80250175"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420417"
 ---
 # <a name="single-sign-on"></a>Logon único
 
@@ -85,33 +85,7 @@ Vamos analisar o fluxo.
 
 1. Se o `TokenExchangeInvokeResponse` tiver um `status` de `200`, o cliente não mostrará o cartão OAuth. Confira o diagrama *fluxo normal*. Para qualquer outro `status` ou se o `TokenExchangeInvokeResponse` não for recebido, o cliente mostrará o cartão OAuth ao usuário. Confira o diagrama de *fluxo de fallback*. Isso verifica se o fluxo de SSO volta ao fluxo de OAuthCard normal em caso de erros ou dependências não atendidas, como o consentimento do usuário.
 
-<!--
-This section belongs to a how to (sample) article (TBD).
+## <a name="next-steps"></a>Próximas etapas
 
-## Create Azure AD applications
-
-Currently SSO in botframework is only supported for aadV2 apps.
-We need to create 2 applications - one for the client and one for the Bot.
-Depending on the scenario, the client may be webchat or a virtual assistant.
-The general case for a Bot would be a skill Bot.
-
-## Client Azure AD app
-
-The client AAD application will be used to create an exchangeable token that will be passed onto the bot.
-For an example of how to create an AAD app, look at the [bot builder authentication docs](https://docs.microsoft.com/azure/bot-service/bot-builder-authentication?view=azure-bot-service-4.0&tabs=csharp#create-your-azure-ad-application).
-
-## Service Azure AD app
-
-1) Follow the steps on [Create your Azure AD application](https://docs.microsoft.com/azure/bot-service/bot-builder-authentication?view=azure-bot-service-4.0&tabs=csharp#create-your-azure-ad-application).
-2) In the **Expose an api** panel, click **Add a scope**. Fill in the fields
-    - Click the **Add scope button**.
-    - Click the **Add a client application** button, and enter the app Id for the client AAD app. Select the Scope that you created in the previous step. This ensures that the user will not be asked to consent when the client tries to get an exchangeable token for this app's scope
-3) In the **Manifest** panel, set the `accessTokenAcceptedVersion` key to be `2`.
-
-## Service Auth Connection
-
-Remove these links and add back to how to page after sample is posted to botbuilder-samples experimental folder
-
-1) Follow the directions in the [bot builder authentication doc](https://docs.microsoft.com/azure/bot-service/bot-builder-authentication?view=azure-bot-service-4.0&tabs=csharp#azure-ad-v2)
-2) In the **Expose an api** panel, copy the scope that you added earlier. Fill it in the **Token Exchange Uri** field.
-3) Save the connection setting. -->
+> [!div class="nextstepaction"]
+> [Adicionar logon único a um bot](bot-builder-authentication-sso.md)

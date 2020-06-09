@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 2/7/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 23fe091c048b4af6be0e849f13cc4a83f752909f
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 71bd0cbd27f67c222141a20454797e76f91399da
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81395229"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420327"
 ---
 # <a name="save-user-and-conversation-data"></a>Salvar dados do usuário e da conversa
 
@@ -121,7 +121,7 @@ Em seguida, registramos `MemoryStorage`, que é usado para criar os objetos `Use
 
 **app.py**
 
-[!code-python[app.py](~/../botbuilder-samples/samples/python/45.state-management/app.py?range=67-70)]
+[!code-python[app.py](~/../botbuilder-samples/samples/python/45.state-management/app.py?range=68-71)]
 
 **bots/state_management_bot.py**
 

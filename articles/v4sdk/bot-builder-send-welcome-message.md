@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 2/7/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 6c01c983c6ddca34297374772b80636f05381e3a
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: c4a1ba6b289f450a7f1a87b7661e45d05caa96c3
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80648233"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420277"
 ---
 # <a name="send-welcome-message-to-users"></a>Enviar mensagem de boas-vinda aos usuários
 
@@ -103,9 +103,13 @@ Na inicialização, o estado do usuário é definido em `index.js` e consumido p
 
 Na inicialização, o estado do usuário é definido em `app.py` e consumido pelo construtor do bot.
 
-**app.py** [!code-python[define state](~/../botbuilder-samples/samples/python/03.welcome-user/app.py?range=61-66)]
+**app.py**
 
-**bots/welcome-user-bot.py** [!code-python[consume state](~/../botbuilder-samples/samples/python/03.welcome-user/bots/welcome_user_bot.py?range=23-29)]
+[!code-python[define state](~/../botbuilder-samples/samples/python/03.welcome-user/app.py?range=62-67)]
+
+**bots/welcome-user-bot.py**
+
+[!code-python[consume state](~/../botbuilder-samples/samples/python/03.welcome-user/bots/welcome_user_bot.py?range=23-29)]
 
 ---
 

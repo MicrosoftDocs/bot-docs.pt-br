@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 2/7/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 71dfb4fc5f74634ad49b72608326a27c3aa4a620
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: e1789a727a0a5c92d0630cc4f04841f867d1b721
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80648204"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420297"
 ---
 # <a name="create-your-own-prompts-to-gather-user-input"></a>Crie seus próprio prompts para coletar entradas do usuário
 
@@ -90,9 +90,13 @@ Crie o usuário e os objetos de estado da conversa em **index.js** e consuma-os 
 
 Crie o usuário e os objetos de estado da conversa em **app.py** e consuma-os no construtor de bot.
 
-**app.py** [!code-python[app.py](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/app.py?range=67-73)]
+**app.py**
 
-**bots/custom_prompt_bot.py** [!code-python[constructor](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=29-41)]
+[!code-python[app.py](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/app.py?range=68-74)]
+
+**bots/custom_prompt_bot.py**
+
+[!code-python[constructor](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=29-41)]
 
 ---
 

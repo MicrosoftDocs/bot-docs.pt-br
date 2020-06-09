@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4cb732dd022cedfd2f9fb42c60faedf1dddf6c60
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: ecfa949568b6f57f2d5b5557407c619dd4e8292f
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83566446"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420747"
 ---
 # <a name="api-reference-for-lg"></a>Referência de API da LG 
 
@@ -100,24 +100,20 @@ public string Content { get; set; }
 public string Id { get; set; }
 
 /// <summary>
-/// Gets or sets lG file options.
+/// Gets the evluation options for current LG file.
 /// </summary>
 /// <value>
-/// LG file options.
+/// An EvaluationOption.
 /// </value>
-public IList<string> Options { get; set; }
+public EvaluationOptions LgOptions => new EvaluationOptions(Options);
 
 /// <summary>
-/// Gets a value indicating whether lG parser/checker/evaluate strict mode.
-/// If strict mode is on, expression would throw exception instead of return
-/// null or make the condition failed.
+/// Gets the namespace to register for current LG file.
 /// </summary>
 /// <value>
-/// A value indicating whether lG parser/checker/evaluate strict mode.
-/// If strict mode is on, expression would throw exception instead of return
-/// null or make the condition failed.
+/// A string value.
 /// </value>
-public bool StrictMode => GetStrictModeFromOptions(Options);
+public string Namespace => ExtractNameSpace(Options);
 ```
 
 ### <a name="constructors"></a>Construtores
@@ -183,16 +179,18 @@ public static Templates ParseText(
 /// </summary>
 /// <param name="templateName">Template name to be evaluated.</param>
 /// <param name="scope">The state visible in the evaluation.</param>
+/// <param name="opt">The EvaluationOptions in evaluating a template.</param>
 /// <returns>Evaluate result.</returns>
-public object Evaluate(string templateName, object scope = null);
+public object Evaluate(string templateName, object scope = null, EvaluationOptions opt = null);
 
 /// <summary>
 /// Use to evaluate an inline template str.
 /// </summary>
-/// <param name="text">inline string which will be evaluated.</param>
-/// <param name="scope">scope object or JToken.</param>
+/// <param name="text">Inline string which will be evaluated.</param>
+/// <param name="scope">Scope object or JToken.</param>
+/// <param name="opt">The EvaluationOptions in evaluating a template.</param>
 /// <returns>Evaluate result.</returns>
-public object EvaluateText(string text, object scope = null);
+public object EvaluateText(string text, object scope = null, EvaluationOptions opt = null);
 
 /// <summary>
 /// Expand a template with given name and scope.

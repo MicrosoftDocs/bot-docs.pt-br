@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/14/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 0a56aafbbb31772f9404143a6de1af73e02b4de6
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: 77750c3d6d85df1ccc01832d3ae752844f6d8b60
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83555547"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420437"
 ---
 # <a name="manage-dialog-complexity"></a>Gerenciar a complexidade da caixa de diálogo
 
@@ -31,7 +31,7 @@ Com os diálogos de componente, é possível criar diálogos independentes para 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento de [noções básicas de bot][concept-basics], [biblioteca de diálogos][concept-dialogs] e como [gerenciar conversas][simple-flow].
-- Uma cópia do exemplo de prompt de vários turnos em [**C#** ][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample]<!--, or [**Language Generation**][lg-sample]-->.
+- Uma cópia do exemplo de prompt de vários turnos em [**C#** ][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
 
 ## <a name="about-the-sample"></a>Sobre o exemplo
 
@@ -113,32 +113,6 @@ Esta é a implementação da primeira etapa do diálogo em cascata.
 
 Para obter mais informações sobre como implementar diálogos em cascata, confira como [implementar fluxo da conversa sequencial](bot-builder-dialog-manage-complex-conversation-flow.md).
 
-<!--
-# [LG](#tab/lg)
-
-To use dialogs, install the **Microsoft.Bot.Builder.Dialogs** NuGet package.
-
-**Dialogs\UserProfileDialog.cs**
-
-Here the `UserProfileDialog` class derives from the `ComponentDialog` class.
-
-[!code-csharp[Class](~/../BotBuilder-Samples/samples/csharp_dotnetcore/language-generation/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=15)]
-
-Within the constructor, the `AddDialog` method adds dialogs and prompts to the component dialog. The first item you add with this method is set as the initial dialog, but you can change this by explicitly setting the `InitialDialogId` property. When you start a component dialog, it will start its *initial dialog*.
-Notice the `paths` definition referencing the `UserProfileDialog.lg` containing the LG template items.
-
-[!code-csharp[Constructor](~/../BotBuilder-Samples/samples/csharp_dotnetcore/language-generation/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=15-47&highlight=10)]
-
-This is the implementation of the first step of the waterfall dialog,
-Notice the use of the template item `AskForName`.
-
-[!code-csharp[First step](~/../BotBuilder-Samples/samples/csharp_dotnetcore/language-generation/05.multi-turn-prompt/Dialogs/UserProfileDialog.cs?range=62-67&highlight=5)]
-
-The prompt dialog is generated using the `GenerateActivity` function and passing to it the LG `AskForName` parameter defined in the template file [UserProfileDialog.LG](https://github.com/microsoft/BotBuilder-Samples/samples/csharp_dotnetcore/language-generation/05.multi-turn-prompt/Resources/UserProfileDialog.LG). Similar prompt generation is applicable to all the items in the template.
-
-For more information on implementing waterfall dialogs, see how to [implement sequential conversation flow](bot-builder-dialog-manage-complex-conversation-flow.md).
--->
-
 ---
 
 Em tempo de execução, o diálogo de componente mantém sua própria pilha de diálogo. Quando o diálogo de componente é iniciado:
@@ -189,41 +163,32 @@ O método `run_dialog` é chamado pelo método `on_message_activity` do bot.
 
 **bots/dialog_bot.py** [!code-python[om_message_activity](~/../botbuilder-samples/samples/python/05.multi-turn-prompt/bots/dialog_bot.py?range=46-51&highlight=2-6)]
 
-<!--
-# [LG](#tab/lg)
-
-**Bots\DialogBot.cs**
-
-In the sample, this is done using the `Run` method that is called from the bot's `OnMessageActivityAsync` method.
-
-[!code-csharp[OnMessageActivityAsync](~/../BotBuilder-Samples/samples/csharp_dotnetcore/language-generation/05.multi-turn-prompt/Bots/DialogBot.cs?range=42-48&highlight=6)]
-
 ---
 
-## To test the bot
+## <a name="to-test-the-bot"></a>Para testar o bot
 
-1. If you have not done so already, install the [Bot Framework Emulator](https://aka.ms/bot-framework-emulator-readme).
-1. Run the sample locally on your machine.
-1. Start the emulator, connect to your bot, and send messages as shown below.
+1. Se ainda não tiver feito isso, instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator-readme).
+1. Execute o exemplo localmente em seu computador.
+1. Inicie o emulador, conecte ao seu bot e envie mensagens conforme mostrado a seguir.
 
-![Sample run of the multi-turn prompt dialog](../media/emulator-v4/multi-turn-prompt.png)
+![Execução de exemplo do diálogo de prompt de vários turnos](../media/emulator-v4/multi-turn-prompt.png)
 
-## Additional information
+## <a name="additional-information"></a>Informações adicionais
 
-### How cancellation works for component dialogs
+### <a name="how-cancellation-works-for-component-dialogs"></a>Como funciona o cancelamento nos diálogos de componente
 
-If you call _cancel all dialogs_ from the component dialog's context, the component dialog will cancel all of the dialogs on its inner stack and then end, returning control to the next dialog on the outer stack.
+Se você chamar _cancel all dialogs_ pelo contexto do diálogo de componente, esse diálogo cancelará todos os diálogo de sua pilha interna e, em seguida, encerrará, devolvendo o controle ao próximo diálogo na pilha externa.
 
-If you call _cancel all dialogs_ from the outer context, the component is cancelled, along with the rest of the dialogs on the outer context.
+Se você chamar _cancel all dialogs_ pelo contexto externo, o componente será cancelado, bem como os demais diálogos no contexto externo.
 
-Keep this in mind when managing nested component dialogs in your bot.
+Lembre-se disso ao gerenciar diálogos de componente aninhado em seu bot.
 
-## Next steps
+## <a name="next-steps"></a>Próximas etapas
 
-Learn how to create complex conversations that branch and loop.
+Saiba como criar conversas complexas que se ramificam e entram em loop.
 
 > [!div class="nextstepaction"]
-> [Handle user interruptions](bot-builder-dialog-manage-complex-conversation-flow.md)
+> [Manipular interrupções do usuário](bot-builder-dialog-manage-complex-conversation-flow.md)
 
 <!-- Footnote-style links -->
 
@@ -240,4 +205,3 @@ Learn how to create complex conversations that branch and loop.
 [js-sample]: https://aka.ms/js-multi-prompts-sample
 [python-sample]: https://aka.ms/python-multi-prompts-sample
 [lg-sample]: https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/language-generation/05.multi-turn-prompt
-

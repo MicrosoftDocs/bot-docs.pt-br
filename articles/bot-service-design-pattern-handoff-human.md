@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 5/16/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: d3452ac9e4a82b5894b84187a62792a37c94ede5
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: ef86854839a2321d4d07bbff1028c564c1e276a7
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83555627"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420637"
 ---
 # <a name="transition-conversations-from-bot-to-human"></a>Fazer a transição de conversas do bot para humanos
 
@@ -39,7 +39,9 @@ O evento contém dois componentes:
  - O contexto da solicitação de entrega que é necessário para rotear a conversa para o agente correto.
  - A transcrição da conversa. O agente pode ler a conversa que ocorreu entre o cliente e o bot antes do início da entrega.
 
-Leia mais sobre o protocolo de entrega do Bot Framework <a href="https://aka.ms/bfhandoffprotocol" target="blank">aqui</a>. 
+<!-- We don't own this aka link, and for v4, I think there is an updated pattern.
+You can read more about the Bot Framework handoff protocol <a href="https://aka.ms/bfhandoffprotocol" target="blank">here</a>. 
+-->
 
 ## <a name="handoff-integration-models"></a>Modelos de integração de entrega
 

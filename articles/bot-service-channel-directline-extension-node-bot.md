@@ -8,12 +8,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: dev
 ms.date: 01/15/2020
-ms.openlocfilehash: 68961133eef80b22939bd4ad251a22f10f874c2c
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: cb9a4e677d44ceecf54b85ba034448c76add976c
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81395659"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420697"
 ---
 # <a name="configure-nodejs-bot-for-extension"></a>Configurar o bot do Node.js para a extensão
 
@@ -99,7 +99,7 @@ Esta seção descreve como habilitar a extensão de serviço de aplicativo do Di
 
 ### <a name="confirm-direct-line-app-extension-and-the-bot-are-initialized"></a>Confirme se a Extensão do Aplicativo do Direct Line e o bot foram inicializados
 
-1. No navegador, navegue até https://<your_app_service>.azurewebsites.net/.bot. Se tudo estiver correto, a página retornará este conteúdo JSON: `{"v":"123","k":true,"ib":true,"ob":true,"initialized":true}`. Essas são as informações que você obtém quando **tudo funciona corretamente**, onde
+1. No navegador, navegue até `https://<your_app_service>.azurewebsites.net/.bot/`. Se tudo estiver correto, a página retornará este conteúdo JSON: `{"v":"123","k":true,"ib":true,"ob":true,"initialized":true}`. Essas são as informações que você obtém quando **tudo funciona corretamente**, onde
 
     - **v** exibe a versão de build da ASE (Extensão de Serviço de Aplicativo) do Direct Line.
     - **k** determina se a ASE do Direct Line pode ler uma chave de Extensão de Serviço de Aplicativo com base na respectiva configuração. 

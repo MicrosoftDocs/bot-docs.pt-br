@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/18/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 5cfb4e8f2d16c868bcbc7d3d11c7cb0b2455f7cb
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 5e2068e285a5f359235557bf58b633b56ee5a7ad
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "76895824"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420217"
 ---
 # <a name="add-trace-activities-to-your-bot"></a>Adicionar atividades de rastreamento ao bot
 
@@ -80,7 +80,7 @@ O manipulador **onTurnError** do adaptador cria a atividade de rastreamento para
 
 **index.js**
 
-[!code-javascript[onTurnError](~/../BotBuilder-Samples/samples/javascript_nodejs/13.core-bot/index.js?range=35-57&highlight=8-14)]
+[!code-javascript[onTurnError](~/../BotBuilder-Samples/samples/javascript_nodejs/13.core-bot/index.js?range=36-58&highlight=8-14)]
 
 # <a name="python"></a>[Python](#tab/python)
 

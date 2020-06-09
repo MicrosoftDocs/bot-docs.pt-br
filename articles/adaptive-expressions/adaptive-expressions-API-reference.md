@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 84c328814d9d74d9866954cda04926126b102a8b
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: ca0ec29b1bb97f45b28391d41d836ab975d3eefe
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83566596"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420557"
 ---
 # <a name="api-reference-for-adaptive-expressions"></a>Referência de API das expressões adaptáveis
 
@@ -164,8 +164,9 @@ public void ValidateTree();
 /// Global state to evaluate accessor expressions against.  Can be <see cref="System.Collections.Generic.IDictionary{String, Object}"/>,
 /// <see cref="System.Collections.IDictionary"/> otherwise reflection is used to access property and then indexer.
 /// </param>
+/// <param name="options">Options used in the evaluation. </param>
 /// <returns>Computed value and an error string.  If the string is non-null, then there was an evaluation error.</returns>
-public (object value, string error) TryEvaluate(object state);
+public (object value, string error) TryEvaluate(object state, Options options = null)
 
 /// <summary>
 /// Evaluate the expression.
@@ -174,19 +175,9 @@ public (object value, string error) TryEvaluate(object state);
 /// Global state to evaluate accessor expressions against.  Can be <see cref="System.Collections.Generic.IDictionary{String, Object}"/>,
 /// <see cref="System.Collections.IDictionary"/> otherwise reflection is used to access property and then indexer.
 /// </param>
+/// <param name="options">Options used in the evaluation. </param>
 /// <returns>Computed value and an error string.  If the string is non-null, then there was an evaluation error.</returns>
-public (object value, string error) TryEvaluate(IMemory state);
-
-/// <summary>
-/// Evaluate the expression.
-/// </summary>
-/// <typeparam name="T">type of result of the expression.</typeparam>
-/// <param name="state">
-/// Global state to evaluate accessor expressions against.  Can be <see cref="System.Collections.Generic.IDictionary{String, Object}"/>,
-/// <see cref="System.Collections.IDictionary"/> otherwise reflection is used to access property and then indexer.
-/// </param>
-/// <returns>Computed value and an error string.  If the string is non-null, then there was an evaluation error.</returns>
-public (T value, string error) TryEvaluate<T>(object state);
+public (object value, string error) TryEvaluate(IMemory state, Options options = null);
 
 /// <summary>
 /// Evaluate the expression.
@@ -196,6 +187,19 @@ public (T value, string error) TryEvaluate<T>(object state);
 /// Global state to evaluate accessor expressions against.  Can be <see cref="System.Collections.Generic.IDictionary{String, Object}"/>,
 /// <see cref="System.Collections.IDictionary"/> otherwise reflection is used to access property and then indexer.
 /// </param>
+/// <param name="options">Options used in the evaluation. </param>
 /// <returns>Computed value and an error string.  If the string is non-null, then there was an evaluation error.</returns>
-public (T value, string error) TryEvaluate<T>(IMemory state);
+public (T value, string error) TryEvaluate<T>(object state, Options options = null);
+
+/// <summary>
+/// Evaluate the expression.
+/// </summary>
+/// <typeparam name="T">type of result of the expression.</typeparam>
+/// <param name="state">
+/// Global state to evaluate accessor expressions against.  Can be <see cref="System.Collections.Generic.IDictionary{String, Object}"/>,
+/// <see cref="System.Collections.IDictionary"/> otherwise reflection is used to access property and then indexer.
+/// </param>
+/// <param name="options">Options used in the evaluation. </param>
+/// <returns>Computed value and an error string.  If the string is non-null, then there was an evaluation error.</returns>
+public (T value, string error) TryEvaluate<T>(IMemory state, Options options = null)
 ```

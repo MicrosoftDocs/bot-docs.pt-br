@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 03/26/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: ebeb600d43386e93f01255bdc9cb29c4fbd7d283
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: ebdfb9eff6f55c225302eab7b348767f6b06edcb
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81395609"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420387"
 ---
 # <a name="create-advanced-conversation-flow-using-branches-and-loops"></a>Criar fluxo de conversa avançado usando ramificações e loops
 
@@ -241,8 +241,9 @@ Crie e registre serviços conforme necessário:
 
 **app.py**
 
-[!code-python[ConfigureServices](~/../botbuilder-samples/samples/python/43.complex-dialog/app.py?range=29-32)]
-[!code-python[ConfigureServices](~/../botbuilder-samples/samples/python/43.complex-dialog/app.py?range=70-77)]
+[!code-python[ConfigureServices](~/../botbuilder-samples/samples/python/43.complex-dialog/app.py?range=30-33)]
+
+[!code-python[ConfigureServices](~/../botbuilder-samples/samples/python/43.complex-dialog/app.py?range=71-78)]
 
 ---
 

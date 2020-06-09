@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 59b374f7c3051d6557547efed1736ded6011a376
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: 844d518f57494250ccf4ee32859ed5d1a0c073cd
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83566136"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420427"
 ---
 # <a name="adaptive-expressions"></a>Expressões adaptáveis
 
@@ -22,7 +22,7 @@ ms.locfileid: "83566136"
 
 Os bots usam expressões para avaliar o resultado de uma condição com base nas informações de runtime disponíveis na memória para o diálogo ou no sistema de [Geração de Linguagem](bot-builder-concept-language-generation.md). Essas avaliações determinam como o bot responde à entrada do usuário e a outros fatores que afetam a funcionalidade dele.
 
-As expressões adaptáveis abordam essa necessidade básica, fornecendo uma linguagem de expressão adaptável que pode ser usada com o SDK do Bot Framework e outros componentes da IA de conversa, como o [Bot Framework Composer](https://github.com/microsoft/BotFramework-Composer), a [Geração de Linguagem](bot-builder-concept-language-generation.md), os [diálogos adaptáveis](https://aka.ms/adaptive-dialogs-concept) e os [Cartões Adaptáveis](https://docs.microsoft.com/adaptive-cards/).
+As expressões adaptáveis abordam essa necessidade básica, fornecendo uma linguagem de expressão adaptável que pode ser usada com o SDK do Bot Framework e outros componentes da IA de conversa, como o [Bot Framework Composer](https://github.com/microsoft/BotFramework-Composer), a [Geração de Linguagem](bot-builder-concept-language-generation.md), os [diálogos adaptáveis](bot-builder-adaptive-dialog-Introduction.md) e os [Cartões Adaptáveis](https://docs.microsoft.com/adaptive-cards/).
 
 Uma expressão adaptável pode conter um ou mais valores explícitos, [funções predefinidas](../adaptive-expressions/adaptive-expressions-prebuilt-functions.md) ou funções personalizadas. Os consumidores de expressões adaptáveis também podem injetar funções adicionais compatíveis. Por exemplo, todos os modelos de Geração de Linguagem estão disponíveis como funções, bem como funções adicionais que só estão disponíveis no uso do componente de expressões adaptáveis.
 

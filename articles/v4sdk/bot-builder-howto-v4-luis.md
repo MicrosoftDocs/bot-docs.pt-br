@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 01/24/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f1ac92f24bff862ece8ab3092659fce51e11409d
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 8fd50f6d6ddc02d95bba6dfb16882c839b30949c
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80648262"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420307"
 ---
 # <a name="add-natural-language-understanding-to-your-bot"></a>Adicionar reconhecimento de idioma natural ao seu bot
 
@@ -112,7 +112,7 @@ O arquivo de configurações (`appsettings.json`, `.env` ou `config.py`) age com
     ![Gerenciar o Aplicativo LUIS – Informações do Aplicativo](./media/how-to-luis/manage-luis-app-app-info.png)
 1. Selecione a guia **Recursos do Azure** no lado esquerdo. Registre o valor mostrado para _Região_ como <SUA_REGIÃO> e _Chave primária_ como <SUA_CHAVE_DE_CRIAÇÃO>.
     ![Gerenciar o Aplicativo LUIS – Informações do Aplicativo](./media/how-to-luis/manage-luis-app-azure-resources.png)
-    
+
 
 ### <a name="update-the-settings-file"></a>Atualizar o arquivo de configurações
 
@@ -180,7 +180,7 @@ Para se conectar ao serviço do LUIS, o bot usa as informações adicionadas aci
 
 **flight_booking_recognizer.py**
 
-[!code-python[config.py](~/../botbuilder-samples/samples/python/13.core-bot/flight_booking_recognizer.py?range=10-34)]
+[!code-python[config.py](~/../botbuilder-samples/samples/python/13.core-bot/flight_booking_recognizer.py?range=10-36&highlight=26)]
 
 A lógica para extrair *From*, *To* e *travel_date* é implementada como métodos auxiliares da classe `LuisHelper` dentro de `luis_helper.py`. Esses métodos são usados após chamar `LuisHelper.execute_luis_query()` de `main_dialog.py`
 

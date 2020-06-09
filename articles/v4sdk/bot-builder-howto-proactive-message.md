@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 01/24/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 704a37569f5ed9017cd4a09618a4efe75469f4a4
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 61fb04f7f0e65bbc4f1730cac9cacf8ed47af6a8
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77441625"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420317"
 ---
 # <a name="send-proactive-notifications-to-users"></a>Enviar notificações proativas para os usuários
 
@@ -106,7 +106,7 @@ O parâmetro para `continueConversation` é uma função que serve como manipula
 Sempre que a página de notificação do bot for solicitada, o servidor vai recuperar as referências da conversa do dicionário.
 Em seguira, o servidor usará o `_send_proactive_message` para enviar a mensagem proativa.
 
-[!code-python[Notify logic](~/../botbuilder-samples/samples/python/16.proactive-messages/app.py?range=97-105&highlight=5-9)]
+[!code-python[Notify logic](~/../botbuilder-samples/samples/python/16.proactive-messages/app.py?range=98-106&highlight=5-9)]
 
 ---
 
