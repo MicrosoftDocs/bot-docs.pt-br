@@ -8,12 +8,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 07/25/2019
-ms.openlocfilehash: 839fd125976fd70cb78817078ff7cf4709974a8a
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: fe353baa34b669d76e34ce5223a760789b48879f
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75491267"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420670"
 ---
 # <a name="use-direct-line-app-service-extension-within-a-vnet"></a>Usar a extensão de serviço de aplicativo do Direct Line com uma VNET
 
@@ -34,27 +34,12 @@ Este artigo descreve como usar a Extensão de Serviço de Aplicativo do Direct L
 
 1. A Extensão do Serviço de Aplicativo do Direct Line requer uma conexão de saída para que possa emitir solicitações HTTP. Isso pode ser configurado como uma regra de saída no NSG da VNET associado à sub-rede do Ambiente do Serviço de Aplicativo. A regra necessária é a seguinte:
 
-|Fonte|Qualquer|
+|Campo|Valor|
 |---|---|
+|Fonte|Qualquer|
 |Porta de origem|*|
-|Destino|Endereços IP|
-|Endereços IP de destino|20.38.80.64, 40.82.248.64|
+|Destino|Marca de serviço|
+|Marca de serviço de destino|AzureBotService|
 |Intervalos de portas de destino|443|
 |Protocolo|Qualquer|
 |Ação|Allow|
-
-
-![Arquitetura da extensão do Direct Line](./media/channels/direct-line-extension-vnet.png)
-
->[!NOTE]
-> Os endereços IP fornecidos são explicitamente para a versão prévia. Ainda neste ano, vamos mudar para uma Marca de Serviço do Serviço de Bot do Azure que alterará essa configuração.
-
-### <a name="configure-your-bots-app-service"></a>Configurar o Serviço de Aplicativo de seu bot
-
-Para a versão prévia, você precisará alterar como sua Extensão do Serviço de Aplicativo do Direct Line se comunica com o Azure. Isso pode ser feito adicionando uma nova **Configuração de aplicativo do Serviço de Aplicativo** ao seu aplicativo usando o portal ou o arquivo `applicationsettings.json`:
-
-- Propriedade: DirectLineExtensionABSEndpoint
-- Valor: https://st-directline.botframework.com/v3/extension
-
->[!NOTE]
-> Isso será necessário apenas para a versão prévia da Extensão do Serviço de Aplicativo do Direct Line.

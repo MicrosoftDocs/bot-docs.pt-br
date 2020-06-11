@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/22/2019
-ms.openlocfilehash: de65f9f45249180197de16909e166360e5a230cf
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 1fdbc7595c78dcef411ce17d99af7b3fe3429229
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81395589"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420457"
 ---
 # <a name="authentication"></a>Autenticação
 

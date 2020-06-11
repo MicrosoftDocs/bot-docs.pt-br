@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/07/2019
-ms.openlocfilehash: a85f1ddcb9a1440d8b157b3e28a7cbefb834955a
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 0bc86d4ec55532e3e25a7a57664cc4ccfdae4bdb
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77071784"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420247"
 ---
 # <a name="web-chat-overview"></a>Visão geral de Webchat
 
@@ -199,7 +199,7 @@ Há várias propriedades que você pode passar para seu componente React do Webc
 | `webSpeechPonyFillFactory` | Especificar o objeto de Fala da Web para conversão de texto em fala e de fala em texto.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 ## <a name="browser-compatibility"></a>Compatibilidade de navegador
 O Webchat é compatível com as duas versões mais recentes dos navegadores modernos, como Chrome, Microsoft Edge e Firefox.
-Se você precisa do Webchat no Internet Explorer 11, consulte a [Demonstração de pacote do ES5](https://microsoft.github.io/BotFramework-WebChat/01.b.getting-started-es5-bundle).
+Se você precisar do Webchat no Internet Explorer 11, confira [pacote ES5](https://github.com/microsoft/BotFramework-WebChat/tree/master/samples/01.getting-started/c.es5-bundle) e [demonstração](https://microsoft.github.io/BotFramework-WebChat/01.getting-started/c.es5-bundle/).
 
 No entanto, observe que:
 - O Webchat não é compatível com versões do Internet Explorer anteriores à 11

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 05/18/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: afe976529f9356d4247e29475919abc75a532b13
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: 195909410f815b1cc9b8be1733dd56e65a029a15
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83555313"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420207"
 ---
 # <a name="whats-new-may-2020"></a>Novidades de maio de 2020
 
@@ -39,8 +39,9 @@ Bem-vindo à versão de maio de 2020 do SDK do Bot Framework. Há uma série de 
 * [Geração de Linguagem](#language-generation) – adicione respostas com personalidade e elementos de linguagem às suas conversas de bot. 
 * [Expressões Adaptáveis](#adaptive-expressions) – use expressões com reconhecimento de bot para reagir à entrada do usuário e à funcionalidade de bot da unidade.
 * [Melhorias de Autenticação](#authentication-improvements) – SSO entre bots e skills e melhorias na autenticação X.509.
-* [Caixas de diálogo geradas](#generated-dialogs---early-preview) (versão prévia antecipada) – crie automaticamente ativos robustos do Bot Framework Composer a partir de JSON ou Esquema JSON que aproveitem as caixas de diálogo adaptáveis.   
+* [Caixas de diálogo geradas](#generated-dialogs---early-preview) (versão prévia antecipada) – crie automaticamente ativos robustos do Bot Framework Composer a partir de JSON ou Esquema JSON que aproveitem as caixas de diálogo adaptáveis.
 * [Depurador do VS Code para caixas de diálogo adaptáveis](#vs-code-debugger---early-preview) (versão preliminar antecipada) – crie e valide documentos .lu e .lg e depure caixas de diálogo adaptáveis definidas declarativamente.
+* [Bot Framework Composer](#bot-framework-composer) – uma tela de criação visual para desenvolvedores e equipes multidisciplinares criarem bots.
 
 **Participantes do Programa Windows Insider**: deseja experimentar novos recursos assim que possível? Você pode baixar o build noturno para Participantes do Programa Windows Insider [[C#](https://github.com/microsoft/botbuilder-dotnet/blob/master/UsingMyGet.md)] [[JS](https://github.com/microsoft/botbuilder-js/blob/master/UsingMyGet.md)] [[Python](https://github.com/microsoft/botbuilder-python/blob/master/UsingTestPyPI.md)] [[CLI](https://github.com/Microsoft/botframework-cli#nightly-builds)] e experimentar as atualizações mais recentes assim que estiverem disponíveis. E, para obter as notícias, atualizações e conteúdo mais recentes sobre o Bot Framework, siga-nos no Twitter @msbotframework!
 
@@ -66,7 +67,7 @@ Os bots agora capturam eventos de Exibição de Página, nativos do Application 
 ## <a name="adaptive-dialogs"></a>Caixas de Diálogo Adaptáveis 
 Também estamos empolgados em tornar as [caixas de diálogo adaptáveis](v4sdk/bot-builder-adaptive-dialog-introduction.md) disponíveis ao público geral no C# e como uma versão prévia no JavaScript! 
 
-As caixas de diálogo adaptáveis, que sustentam o design da caixa de diálogo e os recursos de criação de gerenciamento encontrados no Bot Framework Composer, permitem que os desenvolvedores atualizem dinamicamente o fluxo de conversa com base no contexto e nos eventos. Isso é especialmente útil ao lidar com requisitos de conversa mais sofisticados, como alternâncias de contexto e interrupções.  Os skills do Bot Framework agora podem também aproveitar as caixas de diálogo adaptáveis. 
+As caixas de diálogo adaptáveis, que sustentam o design da caixa de diálogo e os recursos de criação de gerenciamento encontrados no Bot Framework Composer, permitem que os desenvolvedores atualizem dinamicamente o fluxo de conversa com base no contexto e nos eventos. Isso é especialmente útil ao lidar com requisitos de conversa mais sofisticados, como alternâncias de contexto e interrupções.  Os skills do Bot Framework agora podem também aproveitar as caixas de diálogo adaptáveis.
 
 As caixas de diálogo adaptáveis agora também dão suporte à Telemetria. Os dados das caixas de diálogo adaptáveis, incluindo gatilhos, ações e reconhecedores, agora fluem para sua instância do Azure Application Insights.
 
@@ -102,7 +103,7 @@ As [Expressões Adaptáveis](v4sdk/bot-builder-concept-adaptive-expressions.md) 
 
 Os bots usam expressões para avaliar o resultado de uma condição com base nas informações de runtime disponíveis na memória para a caixa de diálogo ou o sistema de Geração de Linguagem. Essas avaliações determinam como o bot reage à entrada do usuário e a outros fatores que afetam a funcionalidade de bot.
 
-As expressões adaptáveis foram criadas para atender a essa necessidade básica, bem como fornecer uma linguagem de expressão adaptável que possa ser usada com o SDK do Bot Framework e outros componentes de IA de conversação, como o [Bot Framework Composer](https:/docs.microsoft.com/composer), Geração de idioma, caixas de diálogo adaptáveis e [Cartões Adaptáveis](https://docs.microsoft.com/adaptive-cards/).
+As expressões adaptáveis foram criadas para atender a essa necessidade básica, bem como fornecer uma linguagem de expressão adaptável que possa ser usada com o SDK do Bot Framework e outros componentes de IA de conversação, como o [Bot Framework Composer](https:/docs.microsoft.com/composer/), Geração de idioma, caixas de diálogo adaptáveis e [Cartões Adaptáveis](https://docs.microsoft.com/adaptive-cards/).
 
 Uma expressão adaptável pode conter um ou mais valores explícitos, funções predefinidas ou funções personalizadas. Os consumidores de expressões adaptáveis também têm a capacidade de injetar funções adicionais com suporte. Por exemplo, todos os modelos de geração de linguagem estão disponíveis como funções, bem como funções adicionais que só estão disponíveis no uso do componente de expressões adaptáveis.
 
@@ -139,6 +140,17 @@ Durante essa versão, a Comunidade do Bot Builder aumentou ainda mais a exigênc
 
 3. Um [Adaptador do RingCentral](https://github.com/BotBuilderCommunity/botbuilder-community-dotnet/tree/develop/libraries/Bot.Builder.Community.Adapters.RingCentral). O adaptador do [RingCentral](https://www.ringcentral.com/) Engage permite que você adicione um ponto de extremidade extra ao bot para integração da [RingCentral Engage Digital Platform](https://www.ringcentral.com/digital-customer-engagement.html). O ponto de extremidade RingCentral pode ser usado em conjunto com outros canais, o que significa que, por exemplo, você pode ter um bot exposto em canais prontos para uso, como o Facebook e o Teams, mas também integrado como um [SDK do RingCentral Digital Source](https://support.ringcentral.com/s/article/RingCentral-Engage-Digital-Introduction?language=en_US) ao RingCentral.
 
+## <a name="bot-framework-composer"></a>Bot Framework Composer
+
+O [Bot Framework Composer](https://docs.microsoft.com/composer/) está em GA (disponibilidade geral) nas plataformas [Windows](https://aka.ms/bf-composer-download-win) | [macOS](https://aka.ms/bf-composer-download-mac) | [Linux](https://aka.ms/bf-composer-download-linux).
+
+O Bot Framework Composer é uma tela de criação visual para desenvolvedores e equipes multidisciplinares criarem bots. É um aplicativo de conversa de software livre baseado no SDK do Microsoft Bot Framework. No Composer, você encontrará tudo de que precisa para criar uma experiência de conversa sofisticada:
+
+* Uma tela de edição visual para o fluxo de conversa.
+* Edição contextualizada para reconhecimento vocal.
+* Ferramentas para treinar e gerenciar os componentes de reconhecimento vocal (como LUIS e QnA Maker).
+* Sistemas avançados de criação de modelos e geração de linguagem.
+* Um executável de tempo de execução de bot pronto para uso.
 
 [1]:https://github.com/Microsoft/botbuilder-dotnet/#packages
 [2]:https://github.com/Microsoft/botbuilder-js#packages

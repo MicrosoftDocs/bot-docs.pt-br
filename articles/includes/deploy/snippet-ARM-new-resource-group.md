@@ -1,21 +1,20 @@
 ---
-ms.openlocfilehash: 4cee4c59fc7baa4d9aa18b573f7aebce8e99d1bb
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 43b9497c2d677636fe57df055e3c09051dca199c
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77479236"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420570"
 ---
-Nesta etapa, você criará um serviço de aplicativo de bot que define a fase de implantação para o bot. Você usará um modelo ARM, um novo plano de serviço e um novo grupo de recursos.
-
-Na saída JSON resultante, copie o valor numérico do campo **id** para usar como o valor para a **id da assinatura do registro** na próxima etapa.
-
-> [!NOTE]
-> A conclusão dessa etapa pode levar alguns minutos.
+Nesta etapa, você criará um serviço de aplicativo de bot que define a fase de implantação para o bot. Você usará um modelo ARM, um novo plano de serviço e um novo grupo de recursos. Execute o seguinte comando da CLI do Azure para iniciar uma implantação no escopo da assinatura de um arquivo de modelo local. 
 
 ```cmd
 az deployment create --template-file "<path-to-template-with-new-rg.json" --location <region-location-name> --parameters appId="<app-id-from-previous-step>" appSecret="<password-from-previous-step>" botId="<id or bot-app-service-name>" botSku=F0 newAppServicePlanName="<new-service-plan-name>" newWebAppName="<bot-app-service-name>" groupName="<new-group-name>" groupLocation="<region-location-name>" newAppServicePlanLocation="<region-location-name>" --name "<bot-app-service-name>"
 ```
+
+> [!NOTE]
+> A conclusão dessa etapa pode levar alguns minutos.
+
 
 | Opção   | Descrição |
 |:---------|:------------|
@@ -24,7 +23,7 @@ az deployment create --template-file "<path-to-template-with-new-rg.json" --loca
 | local |Local. Valores de: `az account list-locations`. Você pode configurar o local padrão usando `az configure --defaults location=<location>`. |
 | parâmetros | Parâmetros de implantação, fornecidos como uma lista de pares chave=valor. Insira os seguintes valores de parâmetro:
 
-- `appId` – o valor de *id do aplicativo* gerado pela etapa anterior.
+- `appId` – O valor *app id* da saída JSON gerada pela etapa [criar o registro de aplicativo](https://docs.microsoft.com/azure/bot-service/bot-builder-deploy-az-cli?view=azure-bot-service-4.0&tabs=csharp#3-create-the-application-registration).
 - `appSecret` – a senha que você forneceu na etapa anterior.
 - `botId` – um nome para o recurso de Registro de Canais do Bot a ser criado. Deve ser globalmente exclusivo. É usado como a ID do bot imutável. Também é usado como o nome de exibição padrão, que é mutável.
 - `botSku` – o tipo de preço e pode ser F0 (Gratuito) ou S1 (Standard).

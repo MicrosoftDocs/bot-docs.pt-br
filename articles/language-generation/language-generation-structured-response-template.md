@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2f49e2364e62877f77cc99d7ae6769ebf8981c1c
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: 8e6918a1872db7b9ea8efee46e8e6d16245b21e6
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83566436"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420737"
 ---
 # <a name="structured-response-template"></a>Modelo de resposta estruturada
 
@@ -177,7 +177,7 @@ Veja como exibir um carrossel de cartões:
 ]
 ```
 
-Use **\\** para fazer escape dos caracteres.
+Use **\\** para escapar |.
 
 ```.lg
 # AskForAge.prompt
@@ -413,5 +413,4 @@ Here's an example:
 
 [1]:https://github.com/microsoft/botframework-cli/blob/master/packages/chatdown/docs/
 [2]:https://github.com/Microsoft/botframework-sdk/blob/master/specs/botframework-activity/botframework-activity.md
-[3]:https://github.com/microsoft/BotBuilder-Samples/tree/master/experimental/common-expression-language
 [4]:https://github.com/microsoft/botbuilder-dotnet/blob/master/tests/Microsoft.Bot.Builder.Dialogs.Adaptive.Templates.Tests/lg/NormalStructuredLG.lg

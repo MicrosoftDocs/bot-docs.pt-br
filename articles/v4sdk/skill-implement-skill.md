@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 03/19/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4d066bd6ea532ec5c959852913980257c1cd62ed
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: 7470296952166aa9ec326a7625cb484fa5df3bba
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83555677"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420227"
 ---
 # <a name="implement-a-skill"></a>Implementar um skill
 
@@ -196,7 +196,7 @@ Defina um método de validação de declarações que gere um erro para rejeitar
 
 **echo-skill-bot/authentication/allowed_callers_claims_validator.py**
 
-[!code-python[Claims validator](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/echo-skill-bot/authentication/allowed_callers_claims_validator.py?range=10-44)]
+[!code-python[Claims validator](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/echo-skill-bot/authentication/allowed_callers_claims_validator.py?range=8-44&highlight=28-33)]
 
 ---
 
@@ -214,13 +214,13 @@ Quando ocorre um erro, o adaptador do skill deve limpar o estado da conversa par
 
 **echo-skill-bot/index.js**
 
-[!code-javascript[Error handler](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/echo-skill-bot/index.js?range=34-82)]
+[!code-javascript[Error handler](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/echo-skill-bot/index.js?range=40-82)]
 
 ### <a name="python"></a>[Python](#tab/python)
 
 **echo-skill-bot/adapter_with_error_handler.py**
 
-[!code-python[Error handler](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/echo-skill-bot/adapter_with_error_handler.py?range=16-77)]
+[!code-python[Error handler](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/echo-skill-bot/adapter_with_error_handler.py?range=23-77&highlight=42-48)]
 
 ---
 
@@ -228,7 +228,7 @@ Quando ocorre um erro, o adaptador do skill deve limpar o estado da conversa par
 
 O _adaptador do Bot Framework_ usa um objeto de _configuração de autenticação_ (definido quando o adaptador é criado) para validar o cabeçalho de autenticação em solicitações de entrada.
 
-Este exemplo adiciona validação de declarações à configuração de autenticação e usa o _adaptador de skill com o manipulador de erros_ descrito na seção anterior.
+Este exemplo adiciona validação de declarações à configuração de autenticação e usa o _adaptador de habilidade com o manipulador de erros_ descrito na seção anterior.
 
 ### <a name="c"></a>[C#](#tab/cs)
 
@@ -240,14 +240,14 @@ Este exemplo adiciona validação de declarações à configuração de autentic
 
 **echo-skill-bot/index.js**
 
-[!code-javascript[configuration](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/echo-skill-bot/index.js?range=34-38)]
+[!code-javascript[configuration](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/echo-skill-bot/index.js?range=32-38)]
 
 <!--C# & JS snippets checked 1/14-->
 ### <a name="python"></a>[Python](#tab/python)
 
-**app.py**
+**echo-skill-bot/app.py**
 
-[!code-python[configuration](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/echo-skill-bot/app.py?range=23-30)]
+[!code-python[configuration](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/echo-skill-bot/app.py?range=19-30)]
 
 ---
 

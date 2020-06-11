@@ -1,36 +1,47 @@
 ---
-title: Conformidade do Serviço de Bot – Serviço de Bot
-description: Conformidade do Serviço de Bot
-author: v-ducvo
-ms.author: kamrani
-manager: kamrani
-ms.topic: article
+title: Criptografia do Serviço de Bot do Azure para dados em repouso | Microsoft Docs
+description: O Serviço de Bot do Azure protege seus dados criptografando-os automaticamente antes de mantê-los na nuvem com as chaves de criptografia fornecidas pela Microsoft.
 ms.service: bot-service
-ms.date: 05/23/2019
-monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: fa1dcec8c803328bac8211e4eabbd1a815960116
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.date: 05/21/2020
+ms.topic: conceptual
+ms.author: jameslew
+ms.openlocfilehash: 9e87afc74c942ed4aaf6ef345619e280864511b0
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75791118"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420228"
 ---
-# <a name="bot-service-compliance"></a>Conformidade do Serviço de Bot
+# <a name="azure-bot-service-encryption-for-data-at-rest"></a>Criptografia do Serviço de Bot do Azure para dados em repouso
 
-[!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
+O Serviço de Bot do Azure criptografa automaticamente seus dados ao mantê-los na nuvem. A criptografia protege seus dados e ajuda a atender aos compromissos de conformidade e segurança de sua organização. Os dados no Serviço de Bot do Azure são criptografados de maneira transparente usando a [criptografia AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) de 256 bits, uma das codificações de bloco mais fortes disponíveis, além de estar em conformidade com o FIPS 140-2. Uma técnica de soma de verificação também é usada para detectar a adulteração de dados não criptografados, como GUIDs.
 
-O Serviço de Bot do Azure está em conformidade com ISO 27001:2013, ISO 27019:2014, SOC 1 e 2, PCI DSS (Payment Card Industry Data Security Standard) e com HIPAA BAA (Health Insurance Portability and Accountability Act Business Associate Agreement)
+## <a name="types-of-data-encrypted-in-the-azure-bot-service"></a>Tipos de dados criptografados no Serviço de Bot do Azure
 
-## <a name="azure-bot-service-is-compliant-with-iso-270012013-and-iso-270182014"></a>O Serviço de Bot do Azure está em conformidade com ISO 27001:2013 e ISO 27018:2014 
-O Serviço de Bot do Azure concluiu com sucesso a auditoria ISO 27001:2013 e ISO 27018:2014 com ZERO não conformidades (descobertas) no relatório de auditoria. Além disso, também obtivemos o Certificado CSA STAR com o Prêmio Ouro mais alto possível para a avaliação de funcionalidade de maturidade.  O Azure é o primeiro grande provedor de serviços de nuvem pública para ganhar essa certificação. Para obter mais detalhes, é possível encontrar o Serviço de Bot do Azure incluído na instrução de escopo atualizada no principal documento de [visão geral de conformidade](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) do Azure referenciado nas páginas ISO da [Central de Confiabilidade](https://www.microsoft.com/trustcenter/compliance/iso-iec-27001).  
- 
-## <a name="azure-bot-service-is-compliant-with-pci-dss"></a>O Serviço de Bot do Azure está em conformidade com o PCI DSS
-O Serviço de Bot do Azure obteve a conformidade com PCI DSS (Payment Card Industry Data Security Standard)! A avaliação resulta em um Atestado de Conformidade (AoC) e no Relatório de Conformidade (RoC) emitido pela QSA (auditor). O período efetivo da conformidade começa após a aprovação na auditoria e o recebimento do AoC do avaliador, e termina um ano após a assinatura do AoC (22 de dezembro de 2017). Para obter mais detalhes, é possível encontrar o Serviço de Bot do Azure incluído na instrução de escopo atualizada no principal documento de [visão geral de conformidade](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) do Azure referenciado nas páginas de PCI da [Central de Confiabilidade](https://www.microsoft.com/trustcenter/compliance/iso-iec-27001).  Encontre certificados no [Portal de Confiança do Serviço](https://servicetrust.microsoft.com/).
- 
-## <a name="azure-bot-service-is-now-covered-under-microsofts-hipaa-baa"></a>Agora, o Serviço de Bot do Azure é coberto pela HIPAA BAA da Microsoft
-Agora, o Serviço de Bot do Azure é coberto pela HIPAA BAA (Health Insurance Portability and Accountability Act Business Associate Agreement) da Microsoft! Para obter mais detalhes, é possível encontrar o Serviço de Bot do Azure incluído na instrução de escopo atualizada no principal documento de [visão geral de conformidade](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) do Azure referenciado nas páginas de HIPAA da [Central de Confiabilidade](https://www.microsoft.com/TrustCenter/Compliance/HIPAA).  
+O Serviço de Bot do Azure criptografa seus dados no serviço bot. Os exemplos incluem, entre outros:
 
+1) Todos os dados de conta de desenvolvedor, como nome ou email
+2) Todos os dados confidenciais sobre o bot (incluindo URLs, credenciais de canal de terceiros, nomes e descrições de bot)
+3) Todos os dados armazenados temporariamente ao entregar atividades, incluindo anexos e dados de conversa
 
-## <a name="azure-bot-service-is-compliant-with-soc-1-and-soc-2"></a>O Serviço de Bot do Azure está em conformidade com SOC 1 e SOC 2 
-O Serviço de Bot do Azure concluiu com êxito a auditoria de SOC 1 e 2. A auditoria dos serviços de nuvem da Microsoft aborda os controles de segurança, disponibilidade, processamento, integridade e confidencialidade dos dados, conforme aplicável aos princípios de confiança em escopo de cada serviço. Para obter mais detalhes, é possível encontrar o Serviço de Bot do Azure incluído na instrução de escopo atualizada no principal documento de [visão geral de conformidade](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) do Azure referenciado nas páginas de SOC da [Central de Confiabilidade](https://www.microsoft.com/trustcenter/compliance/iso-iec-27001).  
- 
+## <a name="about-encryption-key-management"></a>Sobre o gerenciamento de chaves de criptografia
+
+O Serviço de Bot do Azure criptografa dados com as chaves fornecidas pela Microsoft que são giradas de modo predefinido.  
+
+|                                        |    Chaves gerenciadas pela Microsoft                             | 
+|----------------------------------------|-------------------------------------------------------|
+|    Operações de criptografia/descriptografia    |    Azure                                              |
+|    Armazenamento de chave                         |    Cofre de Chave do Azure                              |
+|    Responsabilidade de rotação de chave         |    Microsoft                                          |
+|    Uso de chave                           |    Microsoft                                          |
+|    Acesso à chave                          |    Somente Microsoft                                     |
+
+As seções a seguir descrevem mais detalhadamente cada uma das opções de gerenciamento de chaves.
+
+## <a name="microsoft-managed-keys"></a>Chaves gerenciadas pela Microsoft
+
+O recurso de Serviço de Bot do Azure usa chaves de criptografia gerenciadas pela Microsoft. O Serviço de Bot do Azure está em conformidade com as melhores práticas da Microsoft para acesso de armazenamento de Chave, algoritmos de criptografia e rotação de chaves.
+
+## <a name="customer-managed-keys"></a>Chaves gerenciadas pelo cliente
+
+No momento, o Serviço de Bot do Azure não oferece capacidade de chaves de criptografia gerenciadas pelo cliente para dados em repouso.

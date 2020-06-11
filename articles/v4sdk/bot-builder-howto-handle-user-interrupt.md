@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 03/25/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f8c79d41cca1f800de470ca1dc6193022b2a4986
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: f5ab62b3ec7ce84ca8f9be54c1d8f4c703c1ea77
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80648164"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420357"
 ---
 # <a name="handle-user-interruptions"></a>Manipular interrupções do usuário
 
@@ -167,7 +167,7 @@ Em nosso exemplo, o manipulador do `OnTurnError` do adaptador recebe as exceçõ
 
 Em nosso exemplo, o manipulador do `onTurnError` do adaptador recebe as exceções geradas pela lógica de turno do seu bot. Se uma exceção for lançada, o manipulador excluirá o estado de conversa da conversa atual para impedir que o bot fique preso em um loop de erro causado por estar em estado inválido.
 
-[!code-javascript[AdapterWithErrorHandler](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/index.js?range=35-57)]
+[!code-javascript[AdapterWithErrorHandler](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/index.js?range=37-59)]
 
 ## <a name="python"></a>[Python](#tab/python)
 
@@ -201,7 +201,7 @@ Para referência, aqui estão as definições de classe que são usadas na chama
 
 Por fim, em `index.js`, o bot é criado.
 
-[!code-javascript[Create bot](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/index.js?range=78-81)]
+[!code-javascript[Create bot](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/index.js?range=70-83)]
 
 Para referência, aqui estão as definições de classe que são usadas na chamada para criar o bot acima.
 
@@ -213,7 +213,7 @@ Para referência, aqui estão as definições de classe que são usadas na chama
 
 **app.py** Por fim, em `app.py`, o bot é criado.
 
-[!code-python[create bot](~/../botbuilder-samples/samples/python/13.core-bot/app.py?range=45-49)]
+[!code-python[create bot](~/../botbuilder-samples/samples/python/13.core-bot/app.py?range=46-50)]
 
 Para referência, aqui estão as definições de classe que são usadas na chamada para criar o bot.
 
@@ -235,7 +235,7 @@ Para referência, aqui estão as definições de classe que são usadas na chama
 
 ## <a name="additional-information"></a>Informações adicionais
 
-- O [exemplo de autenticação](https://aka.ms/logout) mostra como lidar com o logoff que usa um padrão semelhante ao mostrado aqui para lidar com interrupções.
+- O exemplo 24.bot-authentication-msgraph em [**C#** ](https://aka.ms/auth-sample-cs), [**JavaScript**](https://aka.ms/auth-sample-js) ou [**Python**](https://aka.ms/auth-sample-py)) mostra como lidar com uma solicitação de logoff. Ele usa um padrão semelhante ao mostrado aqui para lidar com as interrupções.
 
 - Você deverá enviar uma resposta padrão em vez de não realizar nenhuma ação e deixar o usuário se perguntando o que está acontecendo. A resposta padrão deve informar o usuário quais comandos são reconhecidos pelo bot, de modo que o usuário possa voltar para um tópico adequado.
 

@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/01/2019
-ms.openlocfilehash: 0d48d40efc9f28482c01b42132ab335e433e326f
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 282667e1168996615bcb422e6fd0a3b671509545
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80117579"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420687"
 ---
 # <a name="debug-a-bot-with-inspection-middleware"></a>Depurar um bot com middleware de inspeção
 Este artigo descreve como depurar o bot usando o middleware de inspeção. Esse recurso permite que o Bot Framework Emulator depure o tráfego dentro e fora do bot, além de examinar o estado atual dele. Você pode usar uma mensagem de rastreamento para enviar dados para o emulador e, em seguida, inspecionar o estado do bot em qualquer determinada rodada da conversa. 
@@ -78,7 +78,7 @@ Configure o estado de inspeção no arquivo **app.py** adicionando um middleware
 
 **app.py**
 
-[!code-python [inspection bot sample](~/../botbuilder-samples/samples/python/47.inspection/app.py?range=75-84)]
+[!code-python [inspection bot sample](~/../botbuilder-samples/samples/python/47.inspection/app.py?range=76-84)]
 
 Atualize a classe do bot no arquivo **echo_bot.py**.
 
@@ -116,12 +116,14 @@ python app.py
 
 3. Agora, abra outro emulador. Esse segundo emulador funcionará como um depurador. Siga as instruções descritas na etapa anterior. Marque **Abrir no modo de depuração** e clique em **Conectar**. 
 
-4. Neste ponto, você verá um UUID (`/INSPECT attach <identifier>`) no emulador de depuração. Copie o UUID e cole-o na caixa de chat do primeiro emulador. 
+4. Neste ponto, você verá um comando com um identificador exclusivo (`/INSPECT attach <identifier>`) em seu emulador de depuração. Copie o comando inteiro com o identificador do Emulador de depuração e cole-o na caixa de chat do primeiro Emulador.
 
 > [!NOTE]
-> Um UUID (identificador universal exclusivo) é uma ID exclusiva para identificar informações. Um UUID é gerado toda vez que o emulador é iniciado no modo de depuração depois que você adiciona o middleware de inspeção no código do bot. 
+> Um identificador exclusivo é gerado toda vez que o emulador é iniciado no modo de depuração depois que você adiciona o middleware de inspeção no código do bot.
 
-5. Agora você pode enviar mensagens na caixa de chat do seu primeiro emulador e inspecionar as mensagens no emulador de depuração. Para inspecionar o estado das mensagens, clique em **Estado do Bot** no emulador de depuração e desdobre os **valores** na janela **JSON** à direita. Você poderá ver o estado do bot da seguinte maneira: ![estado do bot](./media/bot-debug-inspection-middleware/bot-debug-bot-state.png)
+5. Agora você pode enviar mensagens na caixa de chat do seu primeiro emulador e inspecionar as mensagens no emulador de depuração. Para inspecionar o estado das mensagens, clique em **Estado do Bot** no emulador de depuração e desdobre os **valores** na janela **JSON** à direita. Você verá o estado do bot no emulador de depuração:
+
+    ![estado do bot](./media/bot-debug-inspection-middleware/bot-debug-bot-state.png)
 
 ## <a name="inspect-the-state-of-a-bot-configured-in-azure"></a>Inspecionar o estado de um bot configurado no Azure 
 Se você quiser inspecionar o estado do bot configurado no Azure e conectado aos canais (como o Teams), precisará instalar e executar o [ngrok](https://ngrok.com/).
@@ -135,27 +137,32 @@ Para executar o bot localmente, faça o seguinte:
 2. Execute o bot localmente. Você verá o bot expor um número da porta como 3978. 
 
 3. Abra outro prompt de comando e navegue até a pasta do projeto do bot. Execute o comando a seguir:
-```
-ngrok http 3978
-```
-4. O ngrok agora está conectado ao bot executado localmente. Copie o endereço IP público. 
-![ngrok-success](./media/bot-debug-inspection-middleware/bot-debug-ngrok.png)
+    ```
+    ngrok http 3978
+    ```
+4. O ngrok agora está conectado ao bot executado localmente. Copie o endereço IP público.
+
+    ![ngrok-success](./media/bot-debug-inspection-middleware/bot-debug-ngrok.png)
 
 ### <a name="update-channel-registrations-for-your-bot"></a>Atualizar registros de canal para o bot
 Agora que o bot local está conectado ao ngrok, você pode configurar o bot local para o registro de canais de bot no Azure.
 
 1. Vá até o registro de canais de bot no Azure. Clique em **Configurações** no menu à esquerda e defina o **ponto de extremidade de mensagens** com seu IP do ngrok. Se necessário, adicione **/api/messages** após o endereço IP. (Por exemplo: https://e58549b6.ngrok.io/api/messages). Marque **Habilitar Ponto de Extremidade de Streaming** e **Salvar**.
-![endpoint](./media/bot-debug-inspection-middleware/bot-debug-channels-setting-ngrok.png)
+
+    ![endpoint](./media/bot-debug-inspection-middleware/bot-debug-channels-setting-ngrok.png)
+
 > [!TIP]
 > Se **Salvar** não estiver habilitado, você poderá desmarcar **Habilitar Ponto de Extremidade de Streaming** e clicar em **Salvar**, depois marcar **Habilitar Ponto de Extremidade de Streaming** e clicar em **Salvar** novamente. Você precisa verificar se **Habilitar Ponto de Extremidade de Streaming** está marcado e a configuração do ponto de extremidade foi salva. 
 
-2. Vá para o grupo de recursos do bot, clique em **Implantação** e selecione o registro de canais de bot que foi implantado anteriormente com êxito. Clique em **Entradas** no lado esquerdo para obter **appId** e **appSecret**. Atualize o arquivo **.env** do bot (ou arquivo **appsettings.json** se você tiver um bot C#) com o **appId** e o **appSecret**. 
-![get-inputs](./media/bot-debug-inspection-middleware/bot-debug-get-inputs-id-secret.png)
+2. Vá para o grupo de recursos do bot, clique em **Implantação** e selecione o registro de canais de bot que foi implantado anteriormente com êxito. Clique em **Entradas** no lado esquerdo para obter **appId** e **appSecret**. Atualize o arquivo **.env** do bot (ou arquivo **appsettings.json** se você tiver um bot C#) com o **appId** e o **appSecret**.
+
+    ![get-inputs](./media/bot-debug-inspection-middleware/bot-debug-get-inputs-id-secret.png)
 
 3. Inicie o emulador, clique em **Abrir Bot** e coloque http://localhost:3978/api/messages na **URL do Bot**. Preencha a **ID do Aplicativo Microsoft** e a **Senha do Aplicativo Microsoft** com os mesmos **appId** e **appSecret** que você adicionou ao arquivo **.env** do nosso bot (**appsettings.json**). E clique em **Conectar**. 
 
-4. O bot em execução agora está conectado ao registro de canais de bot no Azure. Você pode testar o Webchat clicando em **Testar no Webchat** e enviando mensagens na caixa de chat. 
-![test-web-chat](./media/bot-debug-inspection-middleware/bot-debug-test-webchat.png)
+4. O bot em execução agora está conectado ao registro de canais de bot no Azure. Você pode testar o Webchat clicando em **Testar no Webchat** e enviando mensagens na caixa de chat.
+
+    ![test-web-chat](./media/bot-debug-inspection-middleware/bot-debug-test-webchat.png)
 
 5. Agora, vamos habilitar o modo de depuração no emulador. Em seu emulador, selecione **Depurar** -> **Iniciar Depuração**. Preencha o endereço IP do ngrok (não se esqueça de adicionar **/api/messages**) na **URL do Bot** (por exemplo, https://e58549b6.ngrok.io/api/messages). Preencha a **ID do Aplicativo Microsoft** com a **appId** e a **Senha do Aplicativo Microsoft** com **appSecret**. Verifique se a opção **Abrir no modo de depuração** também está marcada. Clique em **Conectar**. 
 

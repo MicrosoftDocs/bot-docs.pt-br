@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 04/20/2020
-ms.openlocfilehash: 1c2ec05986311d39de7835b2ba3a466acfbc5833
-ms.sourcegitcommit: 2412f96ad8f74dfa615c71f566c5befffb920658
+ms.openlocfilehash: c88cc00423d86f1cb937ba9541b0dd36bddd9fad
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158853"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420707"
 ---
 # <a name="connect-a-bot-to-slack"></a>Conectar um bot ao Slack
 
@@ -90,8 +90,8 @@ Execute estas etapas para assinar seis eventos de bot específicos. Ao assinar e
 
 > [!TIP]
 > Seu identificador de bot é o nome do seu bot.
-> Para localizar o identificador de um bot, visite o [portal do Azure][azure portal].
-> Selecione o serviço de aplicativo bot que você criou e registre o nome do bot.
+>
+> Para localizar o identificador de um bot, acesse o [portal do Azure][azure portal] e vá para o **Registro dos Canais de Bot** para o bot. Clique em **Configurações** em **Gerenciamento de bot** à esquerda para ver o **Identificador de bot**.
 
 1. Selecione a guia **Assinaturas de Evento**.
 2. Defina **Habilitar Eventos** como **Ligado**.

@@ -7,12 +7,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 2/7/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 317e948060f241d4254718918e3a4f0a24df270a
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: 8c0d01e25ee8c2fe167e00e99d6bfb62e93a3d53
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83555557"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420467"
 ---
 <!--
 
@@ -192,6 +192,33 @@ Agora você tem um aplicativo do Azure AD configurado.
 
 A próxima etapa é registrar o aplicativo do Azure AD que você acabou de criar com o bot.
 
+# <a name="azure-ad-v2"></a>[Azure AD v2](#tab/aadv2)
+
+#### <a name="azure-ad-v2"></a>Azure AD v2
+
+1. Navegue até a página Registro de Canais de Bot do seu bot no [Portal do Azure][azure-portal].
+1. Clique em **Configurações**.
+1. Em **Configurações de Conexão do OAuth** na parte inferior da página, clique em **Adicionar configuração**.
+1. Preencha o formulário da seguinte maneira:
+
+    1. Para **Nome**, insira um nome para sua conexão. Você o usará em seu código de bot.
+    1. Para **Provedor de serviços**, selecione **Azure Active Directory v2**. Depois que você selecionar esta opção, os campos específicos do Azure AD serão exibidos.
+    1. Para **ID do cliente**, insira a ID do aplicativo (cliente) que você registrou para o aplicativo do Azure AD v1.
+    1. Para **Segredo do cliente**, insira o segredo que você criou para permitir que o bot acesse o aplicativo do Azure AD.
+    1. Para **ID do Locatário**, insira a **ID do diretório (locatário)** que você registrou anteriormente para seu aplicativo do AAD ou **comum** dependendo dos tipos de conta com suporte selecionados quando você criou o aplicativo do Azure AD. Para decidir qual valor atribuir, siga estes critérios:
+
+        - Ao criar o aplicativo do Azure AD, se você tiver selecionado *Contas neste diretório organizacional somente (somente Microsoft – locatário único)* insira a **ID de locatário** que você registrou antes para o aplicativo AAD.
+        - No entanto, se você tiver selecionado *Contas em qualquer diretório organizacional (qualquer conta Microsoft pessoal e multilocatário do diretório do AAD, por exemplo, XBox, Outlook.com)* ou *Contas em qualquer diretório organizacional (diretório do Microsoft Azure AD – multilocatário)* , insira a palavra **common**, em vez de uma ID de locatário. Caso contrário, o aplicativo AAD verificará o locatário cuja ID foi selecionada e excluirá as contas MS pessoais.
+
+        Esse será o locatário associado aos usuários que podem ser autenticados. Para obter mais informações, confira [Locação no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/single-and-multi-tenant-apps).
+
+    1. Para **Escopos**, digite os nomes da permissão que você escolheu no registro do aplicativo: `Mail.Read Mail.Send openid profile User.Read User.ReadBasic.All`.
+
+        > [!NOTE]
+        > Para o Azure AD v2, o campo **Escopos** usa uma lista de valores separada por espaços que diferencia maiúsculas de minúsculas.
+
+1. Clique em **Save** (Salvar).
+
 # <a name="azure-ad-v1"></a>[Azure AD v1](#tab/aadv1)
 
 #### <a name="azure-ad-v1"></a>Azure AD v1
@@ -209,40 +236,13 @@ A próxima etapa é registrar o aplicativo do Azure AD que você acabou de criar
     1. Para **URL de logon**, insira `https://login.microsoftonline.com`.
     1. Para **ID do Locatário**, insira a **ID do diretório (locatário)** que você registrou anteriormente para seu aplicativo do Azure AD ou **comum** dependendo dos tipos de conta com suporte selecionados quando você criou o aplicativo do ADD. Para decidir qual valor atribuir, siga estes critérios:
 
-        - Ao criar o aplicativo do Azure AD, se você tiver selecionado *Somente contas neste diretório organizacional (somente Microsoft – Locatário único)* ou *Contas em qualquer diretório organizacional (diretório do Microsoft Azure AD – multilocatário)* , insira a **ID do locatário** que você registrou anteriormente para o aplicativo do Azure AD.
-        - Contudo, se você tiver selecionado *Contas em qualquer diretório organizacional (Qualquer diretório do AAD – contas Microsoft multilocatário e pessoais, por exemplo, Xbox, Outlook.com)* , insira a palavra **comum** em vez de uma ID de locatário. Caso contrário, o aplicativo AAD verificará o locatário cuja ID foi selecionada e excluirá as contas MS pessoais.
+        - Ao criar o aplicativo do Azure AD, se você tiver selecionado *Contas neste diretório organizacional somente (somente Microsoft – locatário único)* insira a **ID de locatário** que você registrou antes para o aplicativo AAD.
+        - No entanto, se você selecionou *Contas em qualquer diretório organizacional (qualquer conta Microsoft pessoal e multilocatário do diretório do AAD, por exemplo, XBox, Outlook.com)* ou *Contas em qualquer diretório organizacional (diretório do Microsoft Azure AD – multilocatário)* , insira a palavra **common**, em vez de uma ID de locatário. Caso contrário, o aplicativo AAD verificará o locatário cuja ID foi selecionada e excluirá as contas MS pessoais.
 
-       Esse será o locatário associado aos usuários que podem ser autenticados.
+       Esse será o locatário associado aos usuários que podem ser autenticados. Para obter mais informações, confira [Locação no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/single-and-multi-tenant-apps).
 
     1. Para a **URL do Recurso**, insira `https://graph.microsoft.com/`.
     1. Deixe **Escopos** em branco.
-
-1. Clique em **Save** (Salvar).
-
-# <a name="azure-ad-v2"></a>[Azure AD v2](#tab/aadv2)
-
-#### <a name="azure-ad-v2"></a>Azure AD v2
-
-1. Navegue até a página Registro de Canais de Bot do seu bot no [Portal do Azure][azure-portal].
-1. Clique em **Configurações**.
-1. Em **Configurações de Conexão do OAuth** na parte inferior da página, clique em **Adicionar configuração**.
-1. Preencha o formulário da seguinte maneira:
-
-    1. Para **Nome**, insira um nome para sua conexão. Você o usará em seu código de bot.
-    1. Para **Provedor de serviços**, selecione **Azure Active Directory v2**. Depois que você selecionar esta opção, os campos específicos do Azure AD serão exibidos.
-    1. Para **ID do cliente**, insira a ID do aplicativo (cliente) que você registrou para o aplicativo do Azure AD v1.
-    1. Para **Segredo do cliente**, insira o segredo que você criou para permitir que o bot acesse o aplicativo do Azure AD.
-    1. Para **ID do Locatário**, insira a **ID do diretório (locatário)** que você registrou anteriormente para seu aplicativo do AAD ou **comum** dependendo dos tipos de conta com suporte selecionados quando você criou o aplicativo do Azure AD. Para decidir qual valor atribuir, siga estes critérios:
-
-        - Ao criar o aplicativo do Azure AD, se você tiver selecionado *Somente contas neste diretório organizacional (somente Microsoft – Locatário único)* ou *Contas em qualquer diretório organizacional (diretório do Microsoft Azure AD – multilocatário)* , insira a **ID do locatário** que você registrou anteriormente para o aplicativo do AAD.
-        - Contudo, se você tiver selecionado *Contas em qualquer diretório organizacional (Qualquer diretório do AAD – contas Microsoft multilocatário e pessoais, por exemplo, Xbox, Outlook.com)* , insira a palavra **comum** em vez de uma ID de locatário. Caso contrário, o aplicativo AAD verificará o locatário cuja ID foi selecionada e excluirá as contas MS pessoais.
-
-       Esse será o locatário associado aos usuários que podem ser autenticados.
-
-    1. Para **Escopos**, digite os nomes da permissão que você escolheu no registro do aplicativo: `Mail.Read Mail.Send openid profile User.Read User.ReadBasic.All`.
-
-        > [!NOTE]
-        > Para o Azure AD v2, o campo **Escopos** usa uma lista de valores separada por espaços que diferencia maiúsculas de minúsculas.
 
 1. Clique em **Save** (Salvar).
 
@@ -258,7 +258,7 @@ A próxima etapa é registrar o aplicativo do Azure AD que você acabou de criar
 1. Clique em **Testar Conexão** na parte superior do painel **Configuração de Conexão do Provedor de Serviços**.
 1. Na primeira vez, deve abrir uma nova guia do navegador listando as permissões que seu aplicativo está solicitando e solicitará que você aceite.
 1. Clique em **Aceitar**.
-1. Isso deverá direcionar você para uma página **Testar conexão para \<nome-da-sua-conexão> bem-sucedida**.
+1. Isso deve, então, redirecioná-lo para uma página **Teste da conexão com \<your-connection-name> bem-sucedido**.
 
 Agora você pode usar esse nome de conexão no código do bot para recuperar tokens de usuário.
 
@@ -321,6 +321,12 @@ Para que o logon de exemplo do bot funcione é necessário configurar o emulador
 ### <a name="testing"></a>Testando
 
 Após configurar o mecanismo de autenticação é possível executar o teste de exemplo do bot real.
+
+> [!NOTE]
+> Talvez seja necessário inserir um *código mágico* devido à maneira como a amostra de bot é implementada. Este código mágico faz parte do [RFC#7636](https://tools.ietf.org/html/rfc7636#page-5) e está lá para adicionar um elemento de segurança extra. Ao remover o código mágico, há um risco maior à segurança. É possível mitigar isso usando a segurança avançada do Direct Line que permite a configuração de domínios *válidos* que têm permissão para serem autenticados.
+>
+> Confira [Conectar um bot ao Direct Line](~/bot-service-channel-connect-directline.md#configure-settings) e [Recursos Avançados de Autenticação do Direct Line](https://blog.botframework.com/2018/09/25/enhanced-direct-line-authentication-features/).
+
 
 1. Execute o exemplo do bot localmente em seu computador.
 1. Inicie o emulador.

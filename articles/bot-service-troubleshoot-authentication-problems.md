@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/25/2020
-ms.openlocfilehash: e9f7cd8e7959d9ba2e395eb73d565ac790b3a585
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: a48ce837e07ea11d2e8a19f097ab111aee73ed52
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80647682"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420717"
 ---
 # <a name="troubleshooting-bot-framework-authentication"></a>Solucionar problemas de autenticação do Bot Framework
 
@@ -204,10 +204,9 @@ Para testar seu bot na nuvem com a segurança habilitada, conclua as etapas a se
 
 1. Verifique se seu bot foi implantado com êxito e está em execução. 
 2. Entre no <a href="https://portal.azure.com" target="_blank">Portal do Azure</a>.
-3. Clique em **Meus Bots**.
-4. Selecione o bot que você deseja testar.
-5. Clique em **Testar** para abrir o bot em um controle de chat da Web incorporado.
-6. Para testar a conectividade ao seu bot, digite algum texto no controle de chat da Web e pressione Enter.
+3. Navegue até o **Registro de Canais do Bot** para o bot no portal.
+4. Clique em **Testar no Webchat** no painel **Gerenciamento de bot** à esquerda.
+5. Para testar a conectividade ao seu bot, digite algum texto no controle de chat da Web e pressione Enter.
 
 Se for indicado um erro na janela de bate-papo, use a mensagem de erro para determinar sua causa. Entre os problemas comuns, há: 
 

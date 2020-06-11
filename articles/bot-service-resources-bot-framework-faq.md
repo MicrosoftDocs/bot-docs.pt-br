@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/19/2020
-ms.openlocfilehash: c1e95370a58fa1f020bbc170c83ee732b10e92b9
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 0b41b6738726c5565edce50acdef9ddfe16a6abe
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81395669"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420647"
 ---
 # <a name="bot-framework-frequently-asked-questions"></a>Perguntas frequentes sobre o Bot Framework
 
@@ -154,6 +154,9 @@ Se tiver um firewall de saída bloqueando o tráfego do seu bot com a Internet, 
 - `cortanabfchannelwestus.azurewebsites.net` (Canal da Cortana)
 - `*.botframework.com` (canais)
 - `state.botframework.com` (compatibilidade com versões anteriores)
+- `login.windows.net` (Logon do Windows)
+- `login.windows.com` (Logon do Windows)
+- `sts.windows.net` (Logon do Windows)
 - URLs adicionais para canais específicos do Bot Framework
 
 > [!NOTE]

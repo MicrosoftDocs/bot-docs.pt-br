@@ -1,14 +1,12 @@
 ---
-ms.openlocfilehash: 0fba3baa39903740c56beff4b4ade7ebb9cb8962
-ms.sourcegitcommit: 2412f96ad8f74dfa615c71f566c5befffb920658
+ms.openlocfilehash: 1c4fbc2064a8567424331698403c52aa8ba992c8
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158803"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420568"
 ---
 Nesta etapa, você cria um serviço de aplicativo de bot que define a fase de implantação para o bot. Ao usar um grupo de recursos existente, você pode empregar um plano do serviço de aplicativo existente ou criar um novo. As etapas para as duas opções estão listadas abaixo.
-
-Na saída JSON resultante, copie o valor do campo **id** para usar como o valor para a **id da assinatura do registro** na próxima etapa.
 
 > [!NOTE]
 > A conclusão dessa etapa pode levar alguns minutos.
@@ -39,7 +37,7 @@ az group deployment create --resource-group "<name-of-resource-group>" --templat
 | local |Local. Valores de: `az account list-locations`. Você pode configurar o local padrão usando `az configure --defaults location=<location>`. |
 | parâmetros | Parâmetros de implantação, fornecidos como uma lista de pares chave=valor. Insira os seguintes valores de parâmetro:
 
-- `appId` – o valor de *id do aplicativo* gerado pela etapa anterior.
+- `appId` – O valor *app id* gerado pela etapa [criar o registro de aplicativo](https://docs.microsoft.com/azure/bot-service/bot-builder-deploy-az-cli?view=azure-bot-service-4.0&tabs=csharp#3-create-the-application-registration).
 - `appSecret` – a senha que você forneceu na etapa anterior.
 - `botId` – um nome para o recurso de Registro de Canais do Bot a ser criado. Deve ser globalmente exclusivo. É usado como a ID do bot imutável. Também é usado como o nome de exibição padrão, que é mutável.
 - `newWebAppName` – um nome para o serviço de aplicativo de bot.

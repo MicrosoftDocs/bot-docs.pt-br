@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 03/23/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: eb440684b57cf1e664214a9924095df2481a9944
-ms.sourcegitcommit: 2412f96ad8f74dfa615c71f566c5befffb920658
+ms.openlocfilehash: eb88f154242286cb3067f402cd7f5c9ef8225099
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158804"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420571"
 ---
 # <a name="deploy-your-bot"></a>Implantar seu bot
 
@@ -24,8 +24,8 @@ Neste artigo, mostraremos como implantar um bot básico no Azure. Explicaremos c
 
 > [!IMPORTANT]
 > Verifique se você está usando a versão atualizada da CLI do Azure.
-> Para obter mais informações sobre a versão mais recente, confira [Instalar a CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
-
+> Para obter mais informações sobre a versão mais recente, confira [Instalar a CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). \
+Além disso, não misture a implantação da CLI do Azure, mostrada neste artigo, com a implantação do portal do Azure.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 

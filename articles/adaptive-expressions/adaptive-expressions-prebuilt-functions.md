@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 05/16/2020
+ms.date: 05/19/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 20d31dbf0c81ef2b7103f498bc996b284f242a41
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: b2cb0ff374b7b0c6f0636bb72f71f5b1c19b17cd
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83566616"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420657"
 ---
 # <a name="adaptive-expressions-prebuilt-functions"></a>Funções predefinidas de expressões adaptáveis
 
@@ -62,7 +62,6 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 |Função   |Explicação|
 |-----------|-----------|
 |[contains](#contains)  |Funciona para localizar um item em uma cadeia de caracteres, localizar um item em uma matriz ou localizar um parâmetro em um objeto complexo. <br> **Exemplos**: <br> contains('hello world', 'hello')<br> contains(createArray('1','2'), '1')<br> contains(json("{'foo':'bar'}"), 'foo')|
-|[empty](#empty)|Verificar se a coleção está vazia.|
 |[first](#first)|Retornar o primeiro item da coleção.|
 |[join](#join) |Retornar uma cadeia de caracteres que tem todos os itens de uma matriz e tem cada caractere separado por um delimitador. join(collection, delimiter). <br>**Exemplo**: <br> join(createArray('a','b'), '.') = "a.b"|
 |[last](#last) |Retornar o último item da coleção.|
@@ -87,6 +86,7 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 |-----------|-----------|
 |[and](#and)|And lógico. Retornar true se todas as expressões especificadas forem avaliadas como true.|
 |[equals](#equals)|Comparação igual. Retornar true se os valores especificados forem iguais.|
+|[empty](#empty)|Verifique se o destino está vazio.|
 |[greater](#greater)|Comparação maior que. Retornar `true` se o primeiro valor for maior ou retornar `false` se for menor.|
 |[greaterOrEquals](#greaterOrEquals)|Comparação maior que ou igual a. Retornar `true` se o primeiro valor for maior ou igual ou retornar `false` se o primeiro valor for menor.|
 |[if](#if)|Verificar se uma expressão é verdadeira ou falsa. Com base no resultado, retornar um valor especificado.|
@@ -121,7 +121,7 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 
 |Função|Explicação|
 |-----------|-----------|
-|[adicionar](#add)|And matemático. Retornar o resultado da adição de dois números.|
+|[adicionar](#add)|And matemático. Retornar o resultado de adicionar dois números (caso de número puro) ou concatenar duas ou mais cadeias de caracteres.|
 |[div](#div)|Divisão matemática. Retornar o resultado inteiro da divisão de dois números.|
 |[max](#max)|Retornar o maior valor de uma coleção.|
 |[min](#min)|Retornar o menor valor de uma coleção.|
@@ -146,6 +146,8 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 |[dayOfWeek](#dayOfWeek)|Retornar o dia da semana de um carimbo de data/hora fornecido.|
 |[dayOfYear](#dayOfYear)|Retornar o dia do ano de um carimbo de data/hora fornecido.|
 |[formatDateTime](#formatDateTime)|Retornar um carimbo de data/hora no formato especificado.|
+|[formatEpoch](#formatEpoch)|Retornar um carimbo de data/hora da Época do UNIX (horário do UNIX, hora do POSIX).|
+|[formatTicks](#formatTicks)|Retornar um carimbo de data/hora de tiques.|
 |[subtractFromTime](#subtractFromTime)|Subtrair um número de unidades de tempo de um carimbo de data/hora.|
 |[utcNow](#utcNow)|Retornar o carimbo de data/hora atual como cadeia de caracteres.|
 |[dateReadBack](#dateReadBack)|Usar a biblioteca de data e hora para fornecer um readback de data.|
@@ -217,22 +219,24 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 |[isDateTime](#isDateTime)|Retornar true se a entrada fornecida for um carimbo de data/hora de formato UTC ISO.|
 |[isString](#isString)|Retornar true se a entrada fornecida for uma cadeia de caracteres.|
 
+<a name="add"></a>
+
 ### <a name="add"></a>add
 
-Retornar o resultado da adição de dois números.
+Retornar o resultado de adicionar dois ou mais números (caso de número puro) ou concatenar duas ou mais cadeias de caracteres (outro caso).
 
 ```
-add(<summand**1>, <summand**2>)
+add(<item1>, <item2>, ...)
 ```
 
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
-| <*summand**1*>, <*summand**2*> | Sim | inteiro, float ou misto | Os números a serem adicionados |
+| <*item1*>, <*item2*>,... | Sim | any | itens |
 |||||
 
 | Valor retornado | Type | Descrição |
 | ------------ | -----| ----------- |
-| <*result-sum*> | inteiro ou float | O resultado da adição dos números especificados |
+| <*result-sum*> | número ou cadeia de caracteres | O resultado de adicionar os números especificados ou do resultado de concatenar.|
 ||||
 
 *Exemplo*
@@ -244,6 +248,17 @@ add(1, 1.5)
 ```
 
 E retorna o resultado **2,5**.
+
+Este exemplo concatena os itens especificados:
+
+```
+add('hello',null)
+add('hello','world')
+```
+
+E retorna os resultados
+- **hello**
+- **helloworld**
 
 <a name="addDays"></a>
 
@@ -1316,36 +1331,46 @@ Retorna o resultado **5,5**.
 
 ### <a name="empty"></a>empty
 
-Verifique se uma coleção está vazia. Retornar `true` se a coleção estiver vazia ou retornar `false` se não estiver vazia.
+Verifique se uma instância está vazia. Retorne `true` se a entrada estiver vazia.
+Vazio significa:
+
+- a entrada é nula ou indefinida
+- a entrada é uma cadeia de caracteres nula ou vazia
+- a entrada tem uma coleção de tamanho zero
+- a entrada é um objeto sem propriedade.
 
 ```
-empty('<collection>')
-empty([<collection>])
+empty('<instance>')
+empty([<instance>])
 ```
 
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
-| <*collection*> | Sim | any | A coleção a ser verificada |
+| <*instância*> | Sim | any | A instância a ser verificada |
 |||||
 
 | Valor retornado | Type | Descrição |
 | ------------ | ---- | ----------- |
-| true ou false | Boolean | Retornar `true` quando a coleção estiver vazia. Retornar `false` quando não estiver vazia. |
+| true ou false | Boolean | Retorne `true` quando a instância estiver vazia.|
 ||||
 
 *Exemplo*
 
-Esses exemplos verificam se as coleções especificadas estão vazias:
+Esses exemplos verificam se a instância especificada está vazia:
 
 ```
 empty('')
 empty('abc')
+empty([1])
+empty(null)
 ```
 
 E retornam estes resultados, respectivamente:
 
 * Passa uma cadeia de caracteres vazia para que a função retorne `true`.
 * Passa uma cadeia de caracteres **abc**, para que a função retorne `false`.
+* Passa a coleção com um item, de modo que a função retorna `false`.
+* Passa o objeto nulo, de modo que a função retorna `true`.
 
 <a name="endsWith"></a>
 
@@ -1644,7 +1669,7 @@ formatDateTime('<timestamp>', '<format>'?)
 
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
-| <*timestamp*> | Sim | Cadeia de caracteres ou número | Uma cadeia de caracteres que contém o carimbo de data/hora |
+| <*timestamp*> | Sim | string | Uma cadeia de caracteres que contém o carimbo de data/hora |
 | <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
 |||||
 
@@ -1659,13 +1684,74 @@ Estes exemplos convertem um carimbo de data/hora ou um carimbo de data/hora Unix
 
 ```
 formatDateTime('03/15/2018 12:00:00', 'yyyy-MM-ddTHH:mm:ss')
-formatDateTime(1521118800,, 'yyyy-MM-ddTHH:mm:ss.fffZ)'
 ```
 
 E retorna os seguintes resultados:
 
 - **2018-03-15T12:00:00**
-- **2018-03-15T12:00:00.000Z**
+
+<a name="formatEpoch"></a>
+
+### <a name="formatepoch"></a>formatEpoch
+
+Retorna um carimbo de data/hora no formato especificado da hora do UNIX (também conhecida como hora da Época, hora do POSIX, hora da Época do UNIX).
+
+```
+formatEpoch('<epoch>', '<format>'?)
+```
+
+| Parâmetro | Obrigatório | Type | Descrição |
+| --------- | -------- | ---- | ----------- |
+| <*epoch*> | Sim | número | O número de época |
+| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+|||||
+
+| Valor retornado | Type | Descrição |
+| ------------ | ---- | ----------- |
+| <*reformatted-timestamp*> | string | O carimbo de data/hora atualizado no formato especificado |
+||||
+
+*Exemplos*
+
+Este exemplo converte um carimbo de data/hora do Unix no formato especificado:
+
+```
+formatEpoch(1521118800, 'yyyy-MM-ddTHH:mm:ss.fffZ)'
+```
+
+E retorna o resultado **2018-03-15T12:00:00.000Z**.
+
+
+<a name="formatTicks"></a>
+
+### <a name="formatticks"></a>formatTicks
+
+Retornar um carimbo de data/hora no formato especificado de tiques.
+
+```
+formatTicks('<ticks>', '<format>'?)
+```
+
+| Parâmetro | Obrigatório | Type | Descrição |
+| --------- | -------- | ---- | ----------- |
+| <*epoch*> | Sim | número (ou bigint em JavaScript)| O número de tiques |
+| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+|||||
+
+| Valor retornado | Type | Descrição |
+| ------------ | ---- | ----------- |
+| <*reformatted-timestamp*> | string | O carimbo de data/hora atualizado no formato especificado |
+||||
+
+*Exemplos*
+
+Este exemplo converte tiques no formato especificado:
+
+```
+formatTicks(637243624200000000, 'yyyy-MM-ddTHH:mm:ss.fffZ)'
+```
+
+E retorna o resultado **2020-05-06T11:47:00.000Z**.
 
 <a name="getFutureTime"></a>
 
@@ -4183,7 +4269,7 @@ ticks('<timestamp>')
 
 | Valor retornado | Type | Descrição |
 | ------------ | -----| ----------- |
-| <*ticks-number*> | inteiro | O número de tiques desde o carimbo de data/hora especificado |
+| <*ticks-number*> | inteiro (bigint em JavaScript)| O número de tiques desde o carimbo de data/hora especificado |
 ||||
 
 *Exemplo*
@@ -4812,4 +4898,3 @@ year('2018-03-15T00:00:00.000Z')
 ```
 
 E retorna o resultado **2018**.
-

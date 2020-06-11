@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 452c0c8511a995cb0fb738afbd22e1304276ce9a
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: 3393c3775f5179f56b4941e10c35a73d81f58294
+ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83566506"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84420727"
 ---
 # <a name="lg-file-format"></a>Formato de arquivo .lg
 
@@ -370,6 +370,36 @@ O exemplo abaixo mostra como definir a opção lineBreakStyle como `markdown`:
 ```.lg
 > !# @lineBreakStyle = markdown
 ```
+
+### <a name="namespace-option"></a>Opção de namespace
+
+Você pode registrar um namespace para os modelos LG que deseja exportar. Se não houver nenhum namespace especificado, o namespace será definido como o nome de arquivo sem uma extensão.
+
+O seguinte exemplo mostra como definir a opção de namespace como `foo`:
+
+```.lg
+> !# @Namespace = foo
+```
+
+### <a name="exports-option"></a>Opção de exportações
+
+Você pode especificar uma lista de modelos LG para exportar. Os modelos exportados podem ser chamados como funções predefinidas. 
+
+O seguinte exemplo mostra como definir a opção de exportações como `template1, template2`:
+
+```.lg
+> !# @Namespace = foo
+> !# @Exports = template1, template2
+
+# template1(a, b)
+- ${a + b}
+
+# template2(a, b)
+- ${join(a, b)}
+```
+
+Use `foo.template1(1,2), foo.template2(['a', 'b', 'c'], ',')` para chamar esses modelos exportados.
+
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
