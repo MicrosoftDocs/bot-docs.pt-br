@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 04/20/2020
-ms.openlocfilehash: c88cc00423d86f1cb937ba9541b0dd36bddd9fad
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: 2a6ade09b4dc8ca516504f1236021d0765b95b5b
+ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420707"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85073601"
 ---
 # <a name="connect-a-bot-to-slack"></a>Conectar um bot ao Slack
 
@@ -294,7 +294,7 @@ public class SlackController : ControllerBase
     {
         // Delegate the processing of the HTTP POST to the adapter.
         // The adapter will invoke the bot.
-        await _adapter.ProcessAsync(Request, Response, _bot);
+        await _adapter.ProcessAsync(Request, Response, _bot, default);
     }
 }
 ```

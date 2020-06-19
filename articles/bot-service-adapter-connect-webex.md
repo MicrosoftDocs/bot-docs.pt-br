@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: gapretty
 ms.service: bot-service
 ms.date: 01/21/2020
-ms.openlocfilehash: 2bf7d99d221a2e48c938c66fb7bef5c1e143f47f
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: eaa71c7d0ce5fa1fbac3d0415e8f5a3490460f40
+ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "76752798"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85073551"
 ---
 # <a name="connect-a-bot-to-webex-teams-using-the-webex-adapter"></a>Conectar um bot ao Webex Teams usando o adaptador do Webex
 
@@ -101,7 +101,7 @@ public class WebexController : ControllerBase
     {
         // Delegate the processing of the HTTP POST to the adapter.
         // The adapter will invoke the bot.
-        await _adapter.ProcessAsync(Request, Response, _bot);
+        await _adapter.ProcessAsync(Request, Response, _bot, default);
     }
 }
 ```

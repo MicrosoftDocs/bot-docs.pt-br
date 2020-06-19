@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: bot-service
 ms.date: 03/23/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 001dbe5d9e2f8ad79d21a51da64e7e85bdb77c1e
-ms.sourcegitcommit: 2412f96ad8f74dfa615c71f566c5befffb920658
+ms.openlocfilehash: 80b8dc4bbfebb87184384240cb2573ffd292a033
+ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158873"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85073802"
 ---
 # <a name="tutorial-use-qna-maker-in-your-bot-to-answer-questions"></a>Tutorial: usar o QnA Maker em seu bot para responder a perguntas
 
@@ -324,8 +324,8 @@ Atualize seu código de inicialização para carregar as informações de servi�
    **app.py**
 
    ```python
-   # Create the main dialog
-   BOT = MyBot(APP.config)
+   # Create the bot
+   BOT = EchoBot(CONFIG)
    ```
 
 1. No arquivo `bot.py`, importe `QnAMaker` e `QnAMakerEndpoint`; importe também `Config`, conforme mostrado abaixo.

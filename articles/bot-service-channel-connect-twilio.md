@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 10/9/2018
-ms.openlocfilehash: 42e79bbf79418c30ff0b4b6c584ab4791cd246c0
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: de6e8cd046dcb5980f2758bcc35987b9e4c91f2a
+ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75793087"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85073593"
 ---
 # <a name="connect-a-bot-to-twilio"></a>Conectar um bot ao Twilio
 
@@ -149,7 +149,7 @@ public class TwilioController : ControllerBase
     {
         // Delegate the processing of the HTTP POST to the adapter.
         // The adapter will invoke the bot.
-        await _adapter.ProcessAsync(Request, Response, _bot);
+        await _adapter.ProcessAsync(Request, Response, _bot, default);
     }
 }
 ```

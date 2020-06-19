@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/08/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 6f340981a3cf0ee2e7ae247b937c94aaf6de526a
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: a6f20d9d156e817c253bbca869fe23f88ac4e1eb
+ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420367"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85073889"
 ---
 # <a name="create-a-bot-using-adaptive-dialogs"></a>Criar um bot usando diálogos adaptáveis  
 
@@ -40,8 +40,8 @@ Você precisará seguir as etapas descritas abaixo para adicionar um diálogo ad
 
 Esta amostra usa um diálogo adaptável, algumas solicitações e um diálogo de componente para criar uma interação simples que faz uma série de perguntas ao usuário. As perguntas são criadas por meio de modelos LG:
 
-- Para o C#, definido em [RootDialog.lg](https://github.com/microsoft/BotBuilder-Samples/blob/vishwac/r9/js/experimental/adaptive-dialog/csharp_dotnetcore/01.multi-turn-prompt/Dialogs/RootDialog.lg)
-- Para JavaScript, definido em [userProfileDialog.lg](https://github.com/microsoft/BotBuilder-Samples/blob/vishwac/r9/js/experimental/adaptive-dialog/javascript_nodejs/01.multi-turn-prompt/dialogs/userProfileDialog.lg) (JavaScript).
+- Para o C#, definido em [RootDialog.lg](https://github.com/microsoft/BotBuilder-Samples/blob/master/samples/csharp_dotnetcore/adaptive-dialog/01.multi-turn-prompt/Dialogs/RootDialog.lg)
+- Para JavaScript, definido em [userProfileDialog.lg](https://github.com/microsoft/BotBuilder-Samples/blob/master/experimental/adaptive-dialog/javascript_nodejs/01.multi-turn-prompt/dialogs/userProfileDialog.lg) (JavaScript).
 
 O código usa um diálogo para percorrer estas etapas:
 
@@ -62,7 +62,7 @@ Finalmente, se ele responder sim, exibir as informações coletadas; caso contr�
 
 Para usar os diálogos, instale o pacote NuGet **Microsoft.Bot.Builder.Dialogs.Adaptive**.
 
-O bot interage com o usuário por meio do `RootDialog`. Quando o `RootDialog` do bot é criado, o `AdaptiveDialog` é definido como o diálogo principal. Em seguida, o bot usa o `DialogManager.OnTurnAync` para executar o diálogo.
+O bot interage com o usuário por meio do `RootDialog`. Quando o `RootDialog` do bot é criado, o `AdaptiveDialog` é definido como o diálogo principal. Em seguida, o bot usa o `DialogManager.OnTurnAsync` para executar o diálogo.
 
 ![Diálogo raiz](media/bot-builder-root-dialog-adaptive.png)
 
@@ -76,7 +76,6 @@ O diálogo criado é adicionado ao `DialogSet`, e o nome é salvo no estado do d
 O diálogo raiz é um diálogo de componente:
 
 [!code-csharp[RootDialog snippet](~/../botbuilder-samples/samples/csharp_dotnetcore/adaptive-dialog/01.multi-turn-prompt/Dialogs/RootDialog.cs?range=21&highlight=1)]
-
 
 Observe também:
 
@@ -92,13 +91,11 @@ Em `WelcomeUserSteps`, o método fornece as ações a serem executadas quando o 
 
 [!code-csharp[RootDialog snippet](~/../botbuilder-samples/samples/csharp_dotnetcore/adaptive-dialog/01.multi-turn-prompt/Dialogs/RootDialog.cs?range=54-76&highlight=13-20)]
 
-
 As `OnBeginDialogSteps` implementam as **etapas** usadas pelo diálogo. Elas definem as solicitações usando os modelos LG do arquivo `RootDialog.lg`. O código abaixo mostra como a solicitação `Name` é criada.
 
 A ação `IfCondition` usa uma expressão adaptável para solicitar a idade do usuário ou enviar uma mensagem de reconhecimento, dependendo da resposta à pergunta anterior. Novamente, ela usa modelos LG para formatar as solicitações e as mensagens.
 
 [!code-csharp[RootDialog snippet](~/../botbuilder-samples/samples/csharp_dotnetcore/adaptive-dialog/01.multi-turn-prompt/Dialogs/RootDialog.cs?range=80-144&highlight=12-16,31-59)]
-
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -131,9 +128,7 @@ Você registra os diálogos adaptáveis na classe `Startup`, juntamente com outr
 
 [!code-csharp[ConfigureServices](~/../botbuilder-samples/samples/csharp_dotnetcore/adaptive-dialog/01.multi-turn-prompt/Startup.cs?range=22-55&highlight=5-18)]
 
-
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
-
 
 **index.js**
 
@@ -173,7 +168,6 @@ A implementação mostrada pode executar qualquer tipo de `Dialog`. O `Conversat
 [!code-csharp[Dialogs](~/../botbuilder-samples/samples/csharp_dotnetcore/adaptive-dialog/01.multi-turn-prompt/Bots/DialogBot.cs?range=18-40&highlight=20)]
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
-
 
 **bots/dialogBot.js**
 
