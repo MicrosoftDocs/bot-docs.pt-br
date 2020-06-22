@@ -14,10 +14,11 @@
 # Exemplos
 ## [Repositório de exemplos do Bot Framework no GitHub](https://github.com/Microsoft/BotBuilder-Samples/blob/master/README.md)
 # Conceitos
-## [Como funcionam os bots](v4sdk/bot-builder-basics.md)
-## [Gerenciar estado](v4sdk/bot-builder-concept-state.md)
-## [Biblioteca de caixas de diálogo](v4sdk/bot-builder-concept-dialog.md)
-## [Middleware](v4sdk/bot-builder-concept-middleware.md)
+## Bot
+### [Como funcionam os bots](v4sdk/bot-builder-basics.md)
+### [Gerenciar estado](v4sdk/bot-builder-concept-state.md)
+### [Biblioteca de caixas de diálogo](v4sdk/bot-builder-concept-dialog.md)
+### [Middleware](v4sdk/bot-builder-concept-middleware.md)
 ## Caixas de diálogo adaptáveis
 ### [Introdução às caixas de diálogo adaptáveis](v4sdk/bot-builder-adaptive-dialog-Introduction.md)
 ### [Eventos e gatilhos em caixas de diálogo adaptáveis](v4sdk/bot-builder-concept-adaptive-dialog-Triggers.md)
@@ -26,6 +27,7 @@
 ### [Reconhecedores em caixas de diálogo adaptáveis](v4sdk/bot-builder-concept-adaptive-dialog-recognizers.md)
 ### [Geração de linguagem em caixas de diálogo adaptáveis](v4sdk/bot-builder-concept-adaptive-dialog-generators.md)
 ### [Escopos de memória e gerenciamento de estado em caixas de diálogo adaptáveis](v4sdk/bot-builder-concept-adaptive-dialog-memory-states.md)
+### [Como usar ativos declarativos em diálogos adaptáveis](v4sdk/bot-builder-concept-adaptive-dialog-declarative.md)
 ## Autenticação
 ### [Autenticação de bot](v4sdk/bot-builder-concept-authentication.md)
 ### [Provedores de Identidade](v4sdk/bot-builder-concept-identity-providers.md)
@@ -69,6 +71,7 @@
 ### Caixas de diálogo adaptáveis
 #### [Criar um bot usando caixas de diálogo adaptáveis](v4sdk\bot-builder-dialogs-adaptive.md)
 #### [Criar um bot usando caixas de diálogo adaptáveis, de componente, de cascata e personalizadas](v4sdk/bot-builder-mixed-dialogs.md)
+#### [Criar um bot usando diálogos adaptáveis declarativos](v4sdk/bot-builder-dialogs-declarative.md)
 ### [Gravar diretamente no armazenamento](v4sdk/bot-builder-howto-v4-storage.md)
 ### Autenticação
 #### [Adicionar autenticação a um bot](v4sdk/bot-builder-authentication.md)
@@ -103,15 +106,16 @@
 ## [Gerenciar](manage/TOC.md)
 ## [Migrar](v4sdk/migration/TOC.md)
 # Referência
-## [SDK v4 do .NET](https://aka.ms/botframework-v4-cs-sdk)
-## [SDK v4 do JavaScript](https://aka.ms/bot-jssdk-v4)
-## [SDK v4 do Python](https://aka.ms/botframework-v4-python-sdk)
+## Referência de SDK da API
+### v4
+#### [SDK v4 do .NET](https://aka.ms/botframework-v4-cs-sdk)
+#### [SDK v4 do JavaScript](https://aka.ms/bot-jssdk-v4)
+#### [SDK v4 do Python](https://aka.ms/botframework-v4-python-sdk)
+### v3
+#### [SDK v3 do .NET](https://aka.ms/botframework-v3-cs-sdk)
+#### [SDK v3 do Node.js](https://aka.ms/bot-jssdk-v3)
 ## [REST](rest-api/TOC.md)
-## [SDK v3 do .NET](https://aka.ms/botframework-v3-cs-sdk)
-## [SDK v3 do Node.js](https://aka.ms/bot-jssdk-v3)
-## Referência da ferramenta de CLI do BF
-### [Visão geral da CLI do BF](v4sdk/bf-cli-overview.md)
-### [Referência da CLI do BF](v4sdk/bf-cli-reference.md)
+## [Ferramenta da CLI do Bot Framework](v4sdk/bf-cli-overview.md)
 ## Expressões adaptáveis
 ### [Funções predefinidas](adaptive-expressions/adaptive-expressions-prebuilt-functions.md)
 ### [Referência de API](adaptive-expressions/adaptive-expressions-API-reference.md)
