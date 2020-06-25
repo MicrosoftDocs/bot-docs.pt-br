@@ -2,19 +2,19 @@
 title: Usar o QnA Maker para responder a perguntas – Serviço de Bot
 description: Aprenda a usar o QnA Maker no seu bot.
 keywords: perguntas e respostas, QnA, perguntas frequentes, QnA Maker
-author: ivorb
+author: JonathanFingold
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 11/06/2019
+ms.date: 06/02/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 769155bbc1aeb8dfaf56788065e2bf31dab15472
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 84afcc365b784933212ad7a6d76bf158a27b2ab3
+ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77441697"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85073942"
 ---
 # <a name="use-qna-maker-to-answer-questions"></a>Usar o QnA Maker para responder a perguntas
 
@@ -26,13 +26,13 @@ Um dos requisitos básicos para a criação de seu próprio serviço QnA Maker �
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- O código neste artigo baseia-se no exemplo do QnA Maker. Você precisará de uma cópia dele em **[C#](https://aka.ms/cs-qna)** , **[JavaScript](https://aka.ms/js-qna-sample)** ou **[Python](https://aka.ms/bot-qna-python-sample-code)** . 
-- Conta do [QnA Maker](https://www.qnamaker.ai/)
+- Uma conta do [QnA Maker](https://www.qnamaker.ai/)
 - Conhecimento das [Noções básicas do bot](bot-builder-basics.md), do [QnA Maker](https://docs.microsoft.com/azure/cognitive-services/qnamaker/overview/overview) e do [gerenciamento de recursos do bot](bot-file-basics.md).
+- Uma cópia da amostra do **QnA Maker**. Você precisará de uma cópia dela em [**C#** ](https://aka.ms/cs-qna), [**JavaScript**](https://aka.ms/js-qna-sample) ou [**Python**](https://aka.ms/bot-qna-python-sample-code).
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
-Para usar o QnA Maker em seu bot, você precisa criar uma base de dados de conhecimento no portal do [QnA Maker](https://www.qnamaker.ai/), conforme mostrado na próxima seção. Em seguida, o bot pode enviar as perguntas do usuário para o fabricante, que fornecerá as melhores respostas.
+Para usar o QnA Maker em seu bot, você precisa criar uma base de dados de conhecimento no portal do [QnA Maker](https://www.qnamaker.ai/), conforme mostrado na próxima seção. Em seguida, o bot pode usar a base de dados de conhecimento para responder às perguntas do usuário.
 
 ## <a name="c"></a>[C#](#tab/cs)
 
@@ -58,11 +58,13 @@ A entrada do usuário é enviada à sua base de dados de conhecimento e a melhor
 
 ## <a name="create-a-qna-maker-service-and-publish-a-knowledge-base"></a>Criar um serviço do QnA Maker e publicar uma base de Conhecimento
 
-A primeira etapa é criar um serviço do QnA Maker. Siga as etapas listadas na [documentação](https://docs.microsoft.com/azure/cognitive-services/qnamaker/how-to/set-up-qnamaker-service-azure) do QnA Maker para criar o serviço no Azure.
+1. Crie um serviço do QnA Maker.
+1. Crie uma base de dados de conhecimento usando o arquivo **smartLightFAQ.tsv** localizado na pasta CognitiveModels do projeto de amostra. Nomeie a sua base de dados de conhecimento `qna` e use o arquivo **smartLightFAQ.tsv** para preenchê-la.
 
-Em seguida, você criará uma base de conhecimento usando o arquivo `smartLightFAQ.tsv` localizado na pasta CognitiveModels do projeto de exemplo. As etapas para criar, treinar e publicar sua [base de dados de conhecimento](https://docs.microsoft.com/azure/cognitive-services/qnamaker/quickstarts/create-publish-knowledge-base) do QnA Maker são listadas na documentação do QnA Maker. Ao seguir essas etapas, nomeie a KB `qna`e use o arquivo `smartLightFAQ.tsv` para preencher sua KB.
+Você também pode usar essas etapas para acessar as suas próprias bases de dados de conhecimento do QnA Maker.
 
-> Observação. Este artigo também pode ser usado para acessar sua própria base de dados de conhecimento do QnA Maker desenvolvida pelo usuário.
+> [!NOTE]
+> A documentação do QnA Maker tem instruções sobre como [criar um serviço](https://docs.microsoft.com/azure/cognitive-services/qnamaker/how-to/set-up-qnamaker-service-azure) no Azure e como [criar, treinar e publicar a sua base de dados de conhecimento](https://docs.microsoft.com/azure/cognitive-services/qnamaker/quickstarts/create-publish-knowledge-base).
 
 ## <a name="obtain-values-to-connect-your-bot-to-the-knowledge-base"></a>Obtenha os valores para conectar seu bot à base de conhecimento
 
@@ -70,35 +72,35 @@ Em seguida, você criará uma base de conhecimento usando o arquivo `smartLightF
 1. Com sua base de conhecimento aberta, selecione **Settings** (Configurações). Registre o valor mostrado para o _nome do serviço_. Esse valor é útil para localizar sua base de dados de conhecimento de interesse ao usar a interface do portal do QnA Maker. Ele não é usado para conectar seu aplicativo bot a esta base de dados de conhecimento.
 1. Role a tela para baixo até encontrar **Detalhes da implantação** e registre estes valores na solicitação HTTP do exemplo Postman:
    - POST /knowledgebases/\<knowledge-base-id>/generateAnswer
-   - Host: \<your-hostname> // URL completo terminando com /qnamaker
+   - Host: \<your-host-url>
    - Autorização: EndpointKey \<your-endpoint-key>
 
-A cadeia de caracteres da URL completa do seu nome do host será semelhante a "https://< >.azure.net/qnamaker". Esses três valores fornecerão as informações necessárias para o aplicativo se conectar à sua base de dados de conhecimento do QnA Maker por meio do serviço do QnA do Azure.  
+A URL do host será iniciada com `https://` e terminará com `/qnamaker`, como `https://<hostname>.azure.net/qnamaker`. O bot precisará da ID da base de dados de conhecimento, da URL do host e da chave do ponto de extremidade para se conectar à sua base de dados de conhecimento do QnA Maker.
 
 ## <a name="update-the-settings-file"></a>Atualizar o arquivo de configurações
 
-Primeiro, adicione ao arquivo de configurações as informações necessárias para acessar sua base de conhecimento, incluindo nome do host, chave de ponto de extremidade e a ID da base de conhecimento (kbId). Esses são os valores que você salvou na guia **Configurações** de sua base de conhecimento do QnA Maker.
+Primeiro, adicione ao arquivo de configurações as informações necessárias para acessar a sua base de dados de conhecimento, incluindo nome do host, a chave de ponto de extremidade e a kbId (ID da base de dados de conhecimento). Esses são os valores que você salvou na guia **Configurações** de sua base de conhecimento do QnA Maker.
 
-Se essa implantação não for para produção, os campos ID do aplicativo e senha poderão ser deixados em branco.
+Se essa implantação não for para produção, os campos de senha e a ID do aplicativo do seu bot poderão ser deixados em branco.
 
 > [!NOTE]
-> Caso esteja adicionando o acesso a uma base de dados de conhecimento do QnA Maker em um aplicativo bot existente, certifique-se de adicionar títulos informativos para suas entradas do QnA. O valor "name" dessa seção fornece a chave necessária para acessar essas informações de dentro de seu aplicativo.
+> Para adicionar uma base de dados de conhecimento do QnA Maker em um aplicativo bot existente, certifique-se de adicionar títulos informativos para as suas entradas do QnA. O valor "name" dessa seção fornece a chave necessária para acessar essas informações de dentro de seu aplicativo.
 
 ## <a name="c"></a>[C#](#tab/cs)
 
-### <a name="update-your-appsettingsjson-file"></a>Atualizar o arquivo appsettings.json
+**appsettings.json**
 
 [!code-csharp[appsettings](~/../botbuilder-samples/samples/csharp_dotnetcore/11.qnamaker/appsettings.json)]
 
 ## <a name="javascript"></a>[JavaScript](#tab/js)
 
-### <a name="update-your-env-file"></a>Atualizar o arquivo .env
+**.env**
 
 [!code-javascript[.env file](~/../botbuilder-samples/samples/javascript_nodejs/11.qnamaker/.env)]
 
 ## <a name="python"></a>[Python](#tab/python)
 
-### <a name="update-your-configpy-file"></a>Atualizar o arquivo config.py
+**config.py**
 
 [!code-python[config.py](~/../botbuilder-samples/samples/python/11.qnamaker/config.py?range=10-18)]
 
@@ -166,8 +168,8 @@ No arquivo **qna_bot.py**, passamos a entrada do usuário para o método `get_an
 
 ## <a name="test-the-bot"></a>Testar o bot
 
-Execute o exemplo localmente em seu computador. Se ainda não tiver feito isso, instale o [Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator/blob/master/README.md#download). Para obter mais instruções, veja [Exemplo de C#](https://aka.ms/cs-qna) ou [Exemplo de JS](https://aka.ms/js-qna-sample) no arquivo LEIAME.
-ou [exemplo de Python](https://aka.ms/bot-qna-python-sample-code). 
+Execute o exemplo localmente em seu computador. Se ainda não tiver feito isso, instale o [Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator/blob/master/README.md#download). Para obter mais instruções, consulte o arquivo Leiame do [C#](https://aka.ms/cs-qna) ou do [Javascript](https://aka.ms/js-qna-sample).
+ou da amostra de [Python](https://aka.ms/bot-qna-python-sample-code).
 
 Inicie o emulador, conecte-se ao seu bot e envie uma mensagem, conforme mostrado a seguir.
 
@@ -175,13 +177,20 @@ Inicie o emulador, conecte-se ao seu bot e envie uma mensagem, conforme mostrado
 
 ## <a name="additional-information"></a>Informações adicionais
 
-### <a name="multi-turn-prompts"></a>Prompts de vários turnos
+A amostra de **vários turnos do QnA Maker** ([**C#** ](https://aka.ms/cs-qna-multiturn), [**JavaScript**](https://aka.ms/js-qna-multiturn), [**Python**](https://aka.ms/py-qna-multiturn)) mostra como usar um diálogo do QnA Maker para dar suporte a prompts de acompanhamento e recursos de aprendizado ativo do QnA Maker.
 
-O QnA Maker dá suporte a avisos de acompanhamento, também conhecidos como prompts de vários turnos.
+- O QnA Maker dá suporte a avisos de acompanhamento, também conhecidos como prompts de vários turnos.
 Se a base de dados de conhecimento do QnA Maker exigir uma resposta adicional do usuário, o QnA Maker enviará informações de contexto que você poderá usar para enviar avisos ao usuário. Essas informações também são usadas para fazer qualquer chamada de acompanhamento para o serviço QnA Maker.
 Na versão 4.6, o SDK do Bot Framework adicionou suporte para esse recurso.
 
-Para construir essa base de dados de conhecimento, consulte a documentação QnA Maker sobre como [Usar avisos de acompanhamento para criar várias rodadas de uma conversa](https://aka.ms/qnamaker-multiturn-conversation). <!--To learn how to incorporate multi-turn support in your bot, take a look at the QnA Maker Multi-turn [[**C#**](https://aka.ms/cs-qna-multiturn) | [**JS**](https://aka.ms/js-qna-multiturn)] sample.-->
+  Para construir essa base de dados de conhecimento, consulte a documentação QnA Maker sobre como [Usar avisos de acompanhamento para criar várias rodadas de uma conversa](https://aka.ms/qnamaker-multiturn-conversation).
+
+- O QnA Maker também dá suporte a sugestões de aprendizado ativo, permitindo que a base de dados de conhecimento seja aprimorada ao longo do tempo.
+O diálogo do QnA Maker dá suporte a comentários explícitos para o recurso de aprendizado ativo.
+
+  Para habilitar esse recurso em uma base de dados de conhecimento, consulte a documentação do QnA Maker sobre [Sugestões de aprendizado ativo](https://aka.ms/qnamaker-active-learning).
+
+<!--To learn how to incorporate multi-turn support in your bot, take a look at the QnA Maker Multi-turn [[**C#**](https://aka.ms/cs-qna-multiturn) | [**JS**](https://aka.ms/js-qna-multiturn)] sample.-->
 
 <!--TODO: Update code based on final sample 
 The following code snippets come from the proof-of-concept **multi-turn QnA Maker prompts** sample for

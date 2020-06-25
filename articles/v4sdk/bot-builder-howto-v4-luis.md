@@ -2,34 +2,39 @@
 title: Adicionar o reconhecimento vocal natural ao seu bot – Serviço de Bot
 description: Aprenda a usar o LUIS para reconhecimento de linguagem natural com o SDK do Bot Framework.
 keywords: Entendimento de Linguagem, LUIS, intenção, reconhecedor, entidades, middleware
-author: ivorb
+author: JonathanFingold
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 01/24/2020
+ms.date: 06/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 8fd50f6d6ddc02d95bba6dfb16882c839b30949c
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: 8d4886041fba86fbdd9c0e36e3a9c882782a7242
+ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420307"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85073935"
 ---
 # <a name="add-natural-language-understanding-to-your-bot"></a>Adicionar reconhecimento de idioma natural ao seu bot
 
 [!INCLUDE[applies-to](../includes/applies-to.md)]
-A capacidade de entender o que seu usuário quer dizer contextualmente e em conversas pode ser uma tarefa difícil, mas pode dar ao seu bot uma sensação de conversa mais natural. O Language Understanding, chamado LUIS, permite que você faça exatamente isso para que seu bot possa reconhecer a intenção das mensagens do usuário, permitir uma linguagem mais natural do seu usuário e direcionar melhor o fluxo de conversação. Este tópico explica como adicionar LUIS a um aplicativo de reservas de voo para reconhecer intenções e entidades diferentes contidas na entrada do usuário.
+
+A capacidade de entender o que seu usuário quer dizer contextualmente e em conversas pode ser uma tarefa difícil, mas pode dar ao seu bot uma sensação de conversa mais natural. O _LUIS (Reconhecimento vocal)_ é um serviço de API baseado em nuvem que permite que você faça exatamente isso, para que o seu bot possa reconhecer a intenção das mensagens do usuário, permitir uma linguagem mais natural do seu usuário e direcionar melhor o fluxo de conversação.
+
+Este tópico explica como adicionar LUIS a um aplicativo de reservas de voo para reconhecer intenções e entidades diferentes contidas na entrada do usuário.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- Conta [LUIS](https://www.luis.ai)
-- O código neste artigo baseia-se no exemplo de **Core Bot**. Você precisará de uma cópia do exemplo em **[C#](https://aka.ms/cs-core-sample)** , **[JavaScript](https://aka.ms/js-core-sample)** ou **[Python](https://aka.ms/python-core-sample)** .
+- Uma conta do [LUIS](https://www.luis.ai).
+- Uma cópia da amostra de **Bot Básico** em [**C#** ](https://aka.ms/cs-core-sample), [**JavaScript**](https://aka.ms/js-core-sample) ou [**Python**](https://aka.ms/python-core-sample).
 - Conhecimento das [Noções básicas do bot](bot-builder-basics.md), do [processamento de idioma natural](https://docs.microsoft.com/azure/cognitive-services/luis/what-is-luis) e do [gerenciamento de recursos do bot](bot-file-basics.md).
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
-Este exemplo de codificação de core bot mostra um exemplo de um aplicativo de reservas de voo do aeroporto. Ele usa um serviço do LUIS para reconhecer a entrada do usuário e retornar a melhor intenção reconhecida pelo LUIS.
+Essa amostra de bot básico mostra um exemplo de um aplicativo de reservas de voo em aeroportos. Ele usa um serviço do LUIS para reconhecer a entrada do usuário e retornar a melhor intenção reconhecida pelo LUIS.
+
+O modelo de linguagem contém três intenções: `Book Flight`, `Cancel` e `None`. O LUIS usará essas intenções para entender o que o usuário pretendia ao enviar uma mensagem ao bot. O modelo de linguagem também define as entidades que o LUIS pode extrair da entrada do usuário, como o aeroporto de origem ou de destino.
 
 # <a name="c"></a>[C#](#tab/csharp)
 
@@ -80,23 +85,24 @@ O módulo `on_message_activity` executa o diálogo apropriado por meio do métod
 
 ---
 
-Para obter detalhes sobre outros aspectos do exemplo, como diálogos ou estado, confira [Coletar entradas do usuário usando um prompt de diálogo](bot-builder-prompts.md) ou [Salvar dados do usuário e da conversa](bot-builder-howto-v4-state.md).
+Este artigo aborda como adicionar o LUIS a um bot. Para obter informações sobre como usar diálogos ou estado, consulte como [coletar entradas do usuário usando um prompt de diálogo](bot-builder-prompts.md) ou como [salvar dados do usuário e da conversa](bot-builder-howto-v4-state.md), respectivamente.
 
 ## <a name="create-a-luis-app-in-the-luis-portal"></a>Criar um aplicativo LUIS no portal do LUIS
 
-Entrar no portal do LUIS para criar sua própria versão do exemplo de aplicativo LUIS. Você pode criar e gerenciar seus aplicativos em **Meus Aplicativos**.
-
-1. Selecione **Importar novos aplicativos**.
-1. Clique em **Escolher arquivo do aplicativo (formato JSON)...**
-1. Selecione o arquivo `FlightBooking.json` localizado na parta `CognitiveModels` do exemplo. No **Nome opcional**, insira **FlightBooking**. Esse arquivo contém três intenções: “Reservar voo”, “Cancelar” e “Nenhum”. Vamos usar essas intenções para entender o que o usuário pretende ao enviar uma mensagem ao bot.
-1. [Treine](https://docs.microsoft.com/azure/cognitive-services/LUIS/luis-how-to-train) o aplicativo.
-1. [Publique](https://docs.microsoft.com/azure/cognitive-services/LUIS/publishapp) o aplicativo no ambiente de *produção*.
+1. Entre no portal do [LUIS](https://www.luis.ai).
+    - Se você ainda não tem uma conta, crie uma.
+    - Se você ainda não tem um recurso de criação, crie um.
+    - Para obter mais informações, consulte a documentação do LUIS sobre como [entrar no portal do LUIS](/azure/cognitive-services/luis/luis-how-to-start-new-app#sign-in-to-luis-portal).
+1. Na página **Meus Aplicativos**, clique em **Novo aplicativo para conversa** e selecione **Importar como JSON**.
+1. No diálogo **Importar novo aplicativo**:
+    1. Escolha o arquivo **FlightBooking.json** na pasta **CognitiveModels** da amostra.
+    1. Insira `FlightBooking` como o nome opcional do aplicativo e clique em **Concluído**.
+1. Treine e publique o seu aplicativo.
+    Para obter mais informações, consulte a documentação do LUIS sobre como [treinar](/azure/cognitive-services/LUIS/luis-how-to-train) e [publicar](/azure/cognitive-services/LUIS/publishapp) um aplicativo no ambiente de produção.
 
 ### <a name="why-use-entities"></a>Por que usar entidades?
 
 As entidades LUIS permitem que seu bot entenda determinadas coisas ou eventos diferentes das intenções padrão. Assim, você pode coletar mais informações do usuário, o que permite que seu bot responda de forma mais inteligente ou ignore algumas perguntas nas quais ele pede essas informações ao usuário. Além das definições das três intenções do LUIS (“Reservar voo, “Cancelar” e “Nenhum”), o arquivo FlightBooking.json também contém um conjunto de entidades, como “From.Airport” e “To.Airport”. Essas entidades permitem que o LUIS detecte e retorne informações adicionais contidas na entrada original do usuário, quando ele solicitar uma nova reserva de viagem.
-
-Para obter informações de como as informações de entidade aparecem no resultado do LUIS, confira [Extrair dados de texto de enunciado com intenções e entidades](https://docs.microsoft.com/azure/cognitive-services/luis/luis-concept-data-extraction).
 
 ## <a name="obtain-values-to-connect-to-your-luis-app"></a>Obter valores para conectar ao seu aplicativo LUIS
 
@@ -108,11 +114,12 @@ O arquivo de configurações (`appsettings.json`, `.env` ou `config.py`) age com
 
 1. Marque seu aplicativo LUIS publicado em [luis.ai](https://www.luis.ai).
 1. Com o aplicativo LUIS publicado aberto, escolha a guia **GERENCIAR**.
-1. Selecione a guia **Informações do Aplicativo** no lado esquerdo. Registre o valor mostrado para _ID do Aplicativo_ como <SUA_ID_DO_APLICATIVO>.
+1. Selecione a guia **Configurações** no lado esquerdo.
+    Registre o valor mostrado para a _ID do Aplicativo_ como \<YOUR_APP_ID>.
     ![Gerenciar o Aplicativo LUIS – Informações do Aplicativo](./media/how-to-luis/manage-luis-app-app-info.png)
-1. Selecione a guia **Recursos do Azure** no lado esquerdo. Registre o valor mostrado para _Região_ como <SUA_REGIÃO> e _Chave primária_ como <SUA_CHAVE_DE_CRIAÇÃO>.
+1. Selecione a guia **Recursos do Azure** no lado esquerdo e selecione o grupo **Recurso de Criação**.
+    Registre o valor mostrado para _Localização_ como \<YOUR_REGION> e _Chave Primária_ como \<YOUR_AUTHORING_KEY>.
     ![Gerenciar o Aplicativo LUIS – Informações do Aplicativo](./media/how-to-luis/manage-luis-app-azure-resources.png)
-
 
 ### <a name="update-the-settings-file"></a>Atualizar o arquivo de configurações
 
@@ -207,6 +214,14 @@ Se a melhor intenção retornada pelo LUIS for "Reservar voo", seu bot fará per
 ![Resultado da reserva do LUIS](./media/how-to-luis/luis-travel-result.png)
 
 Nesse momento, a lógica de bot do código reiniciará e você poderá continuar a criar reservas adicionais.
+
+## <a name="additional-information"></a>Informações adicionais
+
+Para obter mais informações sobre o LUIS, consulte a documentação dele:
+
+- [O que é o LUIS (Reconhecimento vocal)?](/azure/cognitive-services/LUIS/what-is-luis)
+- [Criar um aplicativo LUIS no portal do LUIS](/azure/cognitive-services/LUIS/luis-how-to-start-new-app)
+- [Design com intenção e modelos de entidade](/azure/cognitive-services/LUIS/luis-concept-model)
 
 ## <a name="next-steps"></a>Próximas etapas
 

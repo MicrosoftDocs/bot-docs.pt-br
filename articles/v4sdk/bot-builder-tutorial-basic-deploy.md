@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 03/23/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: c4d3daed29f10a27754c059b8ca2f2ad72641606
-ms.sourcegitcommit: 2412f96ad8f74dfa615c71f566c5befffb920658
+ms.openlocfilehash: 0cba227821f0934407692449c197925672bd4a3d
+ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158863"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85073881"
 ---
 # <a name="tutorial-create-and-deploy-a-basic-bot"></a>Tutorial: Criar e implantar um bot básico
 
@@ -47,6 +47,11 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 
 ## <a name="deploy-your-bot"></a>Implantar seu bot
 
+Neste artigo, mostraremos como implantar um bot básico no Azure. Explicaremos como preparar seu bot para implantação, implantá-lo no Azure e testá-lo no Webchat. Seria útil ler este artigo antes de seguir as etapas, para que você entenda tudo que está relacionado à implantação de um bot.
+
+> [!IMPORTANT]
+> Verifique se você está usando a versão mais recente da [CLI do Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest). Se você estiver usando uma versão da CLI do Azure mais antiga que [2.2.0](https://github.com/MicrosoftDocs/azure-docs-cli/blob/master/docs-ref-conceptual/release-notes-azure-cli.md#march-10-2020), encontrará erros de preterimento de comandos da CLI. Além disso, não misture a implantação da CLI do Azure mostrada neste artigo com a implantação do portal do Azure.
+
 ### <a name="prerequisites"></a>Pré-requisitos
 
 [!INCLUDE [deploy prerequisite](~/includes/deploy/snippet-prerequisite.md)]
@@ -73,15 +78,17 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 
 #### <a name="4-deploy-via-arm-template"></a>4. Implantar por meio do modelo do Resource Manager
 
-Você pode implantar seu bot em um novo grupo de recursos ou em um grupo de recursos existente. Escolha a opção que funcione melhor para você.
+Ao criar o serviço de aplicativo de bot, você pode implantar o seu bot em um grupo de recursos novo ou existente, ambos por meio do [modelo do ARM (Azure Resource Manager)](https://docs.microsoft.com/azure/azure-resource-manager/templates/overview). Um modelo ARM é um arquivo JSON que define declarativamente um ou mais recursos do Azure e as dependências entre os recursos implantados. Verifique se você tem o caminho correto para o diretório de modelos de implantação do ARM do projeto de bot `DeploymentTemplates`, pois precisará dele para atribuir o valor ao arquivo de modelo. Escolha a opção que funciona melhor para você:
+
+* [Implantar por meio do modelo ARM com um novo grupo de recursos](#deploy-via-arm-template-with-new-resource-group)
+* [Implantar por meio do modelo ARM com um grupo de recursos existente](#deploy-via-arm-template-with-existing-resource-group)
 
 > [!NOTE]
 > Os bots do Python não podem ser implantados em um grupo de recursos que contém serviços/bots do Windows.  Vários bots do Python podem ser implantados no mesmo grupo de recursos, mas criam outros serviços (LUIS, P e R etc.) em outro grupo de recursos.
->
 
 ##### <a name="deploy-via-arm-template-with-new-resource-group"></a>**Implantar por meio do modelo ARM com um novo grupo de recursos**
 
-[!INCLUDE [ARM with new resourece group](~/includes/deploy/snippet-ARM-new-resource-group.md)]
+[!INCLUDE [ARM with new resource group](~/includes/deploy/snippet-ARM-new-resource-group.md)]
 
 ##### <a name="deploy-via-arm-template-with-existing-resource-group"></a>**Implantar por meio do modelo ARM com um grupo de recursos existente**
 

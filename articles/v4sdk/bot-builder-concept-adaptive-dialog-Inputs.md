@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 04/27/2020
-ms.openlocfilehash: 38ad8db21a041406e9af2e3c2cadfb15aac13a84
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: e10a3c367e0052492b30bf0a25f9b78630e5d0b1
+ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83566236"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85073964"
 ---
 <!--TODO P2: For each of the inputs in this article, link to relevant samples in BotBuilder-Samples as examples of how that input is used-->
 # <a name="asking-for-user-input-in-adaptive-dialogs"></a>Solicitar entrada do usuário em caixas de diálogo adaptáveis
@@ -33,7 +33,7 @@ O SDK do Bot Framework define diversas caixas de diálogo de entrada para coleta
 * Obtenha familiaridade com [Expressões adaptáveis][10].
 
 > [!TIP]
-> Essa sintaxe definida nos [Modelos de geração de linguagem][9], que inclui [Expressões adaptáveis][10], é usada no objeto `ActivityTemplate` que é exigido por vários parâmetros usados na maioria das ações de entrada fornecidas no SDK do Bot Framework.
+> Essa sintaxe definida nos [modelos de Geração de Linguagem][9], que inclui [Expressões adaptáveis][10], é usada no objeto `ActivityTemplate` que é exigido por vários parâmetros usados na maioria das ações de entrada fornecidas no SDK do Bot Framework.
 
 ## <a name="inputs"></a>Entradas
 
@@ -66,7 +66,7 @@ A biblioteca de diálogos adaptáveis define os seguintes tipos de entrada:
 
 ### <a name="inputdialog"></a>InputDialog
 
-As classes de entrada fornecidas pelo SDK do Bot Framework derivam da _caixa de diálogo de entrada_ de base, que deriva da classe da _caixa de diálogo_. Todas as caixas de diálogo de entrada têm estas propriedades em comum:
+As classes de entrada fornecidas pelo SDK do Bot Framework derivam do _diálogo de entrada_ de base, que deriva da classe de _diálogo_. Todas as caixas de diálogo de entrada têm estas propriedades em comum:
 
 #### <a name="allowinterruptions"></a>AllowInterruptions
 
@@ -331,7 +331,7 @@ A ação `ChoiceInput` herda todas as propriedades definidas em [InputDialog](#i
     4. `List`: adiciona opções ao prompt, como uma lista numerada.
     5. `SuggestedAction`: adiciona opções ao prompt, como ações sugeridas.
     6. `HeroCard`: adiciona opções ao prompt, como um HeroCard com botões.
-6. `RecognizerOptions`: FindChoicesOptions ou expressão que é avaliada como FindChoicesOptions. O FindChoicesOptions tem estas propriedades:
+6. `RecognizerOptions`: `FindChoicesOptions` ou a expressão que é avaliada como `FindChoicesOptions`. O `FindChoicesOptions` tem estas propriedades:
     1. `NoValue`: Um valor booliano. `true` para pesquisar na propriedade de _valor_ de cada opção; caso contrário, `false`. O padrão é `false`.
     2. `NoAction`: Um valor booliano. `true` para pesquisar o título na propriedade de _ação_ de cada opção; caso contrário, `false`. O padrão é `false`.
     3. `RecognizeNumbers`: Um valor booliano. `true` para permitir que a entrada volte a usar um reconhecedor de número para corresponder às opções de entrada; caso contrário, `false`. O padrão é `true`.
@@ -410,7 +410,7 @@ Use para solicitar um anexo do usuário como entrada.
 
 A ação `AttachmentInput` herda todas as propriedades definidas em [InputDialog](#inputdialog) e define esta propriedade adicional:
 
-- `OutputFormat`: o AttachmentOutputFormat ou uma expressão que é avaliada como um AttachmentOutputFormat. Os valores de `AttachmentOutputFormat` válidos são:
+- `OutputFormat`: O `AttachmentOutputFormat` ou uma expressão que é avaliada como `AttachmentOutputFormat`. Os valores de `AttachmentOutputFormat` válidos são:
     1. `All`: retorna todos os anexos como uma lista.
     2. `First`: retorna somente o primeiro anexo.
 
@@ -491,7 +491,7 @@ var rootDialog = new AdaptiveDialog(nameof(AdaptiveDialog))
 
 #### <a name="additional-information-related-to-oauth"></a>Informações adicionais relacionadas ao OAuth
 
-Os links a seguir fornecem informações generalizadas sobre o tópico de autenticação no Microsoft Bot Framework. Essas informações não são personalizadas ou específicas de caixas de diálogo adaptáveis.
+Os links a seguir fornecem informações generalizadas sobre o tópico de autenticação no SKD do Microsoft Bot Framework. Essas informações não são personalizadas ou específicas de caixas de diálogo adaptáveis.
 
 * [Autenticação de bot][5]
 * [Adicionar autenticação a um bot][6]

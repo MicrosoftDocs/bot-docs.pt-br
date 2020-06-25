@@ -8,16 +8,16 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 04/24/2020
-ms.openlocfilehash: 39aa69c30221b113fc895a3eedb14f9f52edf498
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: 07a1f666717a006163e0f1f4e1c1611130593050
+ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83566366"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85073994"
 ---
 # <a name="introduction-to-adaptive-dialogs"></a>Introdução aos diálogos adaptáveis
 
-Os diálogos adaptáveis oferecem uma nova adição baseada em evento à [biblioteca de Diálogos][1], que permite começar o diálogo de maneira simples e rapidamente inserir técnicas sofisticadas de gerenciamento de conversa, como tratamento de interrupções, expedição, entre outros.
+Os diálogos adaptáveis oferecem uma nova adição baseada em evento à [biblioteca de Diálogos][1], que permite começar de maneira simples e rapidamente inserir técnicas sofisticadas de gerenciamento de conversa, como tratamento de interrupções, expedição, entre outros.
 
 > [!IMPORTANT]
 > Atualmente, os diálogos adaptáveis estão disponíveis na versão .NET do SDK do Bot Framework. Encontre bots de exemplo criados com diálogos adaptáveis no [repositório BotBuilder-Samples][16] do GitHub; no entanto, a versão do JavaScript agora está em [versão prévia][15].
@@ -94,7 +94,7 @@ Confira o artigo [_Escopos de memória e gerenciamento de estado em diálogos ad
 
 ### <a name="declarative-assets"></a>Ativos declarativos
 
-Os diálogos adaptáveis permitem definir o diálogo como uma classe criando um objeto AdaptiveDialog e definindo os gatilhos e as ações no arquivo de origem de classes, mas você também pode criar o diálogo usando uma abordagem declarativa em que define todos os atributos do diálogo em um arquivo JSON com uma extensão de arquivo .dialog.  Nenhum código-fonte é necessário para definir os diálogos e você pode ter vários diálogos usando ambas as abordagens no mesmo bot. Em runtime, o bot vai gerar e executar o código do diálogo conforme definido nesses arquivos de diálogo declarativos.
+Os diálogos adaptáveis permitem que você defina o seu diálogo como uma classe criando um novo objeto `AdaptiveDialog` e definindo os seus gatilhos e ações no arquivo de origem de classes. Você também pode criar o seu diálogo usando uma abordagem declarativa na qual você define todos os atributos do diálogo em um arquivo JSON com uma extensão de arquivo .dialog.  Nenhum código-fonte é necessário para definir os diálogos e você pode ter vários diálogos usando ambas as abordagens no mesmo bot. Em runtime, o bot vai gerar e executar o código do diálogo conforme definido nesses arquivos de diálogo declarativos.
 
 <!--See the [_Using declarative assets_][9] article for more information on using _declarative assets_ in adaptive dialogs.-->
 
@@ -146,7 +146,7 @@ Como o diálogo `bookFlightDialog` não tem nenhum gatilho `OnIntent` para proce
 
 Resumidamente:
 
-O _reconhecedor_ de cada diálogo analisa a entrada do usuário para determinar a intenção dele. Quando a intenção é determinada, o _reconhecedor_ emite um evento `IntentRecognized`, que o diálogo processa usando um gatilho `OnIntent`. Se não houver nenhum gatilho `OnIntent` no diálogo ativo que possa processar essa intenção, o bot o enviará para o diálogo pai do diálogo. Se o diálogo pai não tiver um gatilho para processar a intenção, ele será levado para cima até atingir o diálogo raiz. Quando o gatilho que processa essa intenção é concluído, ele envia o controle novamente para o diálogo que iniciou esse processo, no qual ele pode continuar o fluxo de conversa no ponto em que parou.
+O _reconhecedor_ de cada diálogo analisa a entrada do usuário para determinar a intenção dele. Quando a intenção é determinada, o _reconhecedor_ emite um evento `IntentRecognized`, que o diálogo processa usando um gatilho `OnIntent`. Se não houver nenhum gatilho `OnIntent` no diálogo ativo que possa processar essa intenção, o bot o enviará para o diálogo pai do diálogo. Se o diálogo pai não tiver um gatilho para processar a intenção, ele emergirá até atingir o diálogo raiz. Quando o gatilho que processa essa intenção é concluído, ele envia o controle novamente para o diálogo que iniciou esse processo, no qual ele pode continuar o fluxo de conversa no ponto em que parou.
 
 ## <a name="additional-information"></a>Informações adicionais
 

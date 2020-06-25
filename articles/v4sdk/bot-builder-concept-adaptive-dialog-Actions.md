@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 04/27/2020
-ms.openlocfilehash: a67578f59368d21b8e613ce378f6ed473438c8cf
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: 1d60fb65bad1c2940cbd3e104fb0fc0365ca594b
+ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83566256"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85073972"
 ---
 <!--P2: Once the samples are done, link to them in each section on the individual actions to point to them as examples of how they are used-->
 # <a name="actions-in-adaptive-dialogs"></a>Ações em caixas de diálogo adaptáveis
@@ -48,9 +48,9 @@ As caixas de diálogo adaptáveis fornecem suporte para as seguintes ações:
 
 ### <a name="send-a-response"></a>Enviar uma resposta
 
-| Atividade a realizar                         | Nome da ação                   | O que essa ação faz                                              |
-| ---------------------------------------------- | ----------------------------- | ------------------------------------------------------------------ |
-| Enviar qualquer atividade, como responder a um usuário.| [SendActivity](#send-activity) | Permite que você envie qualquer tipo de atividade, como responder a usuários. |
+| Atividade a realizar                         | Nome da ação                    | O que essa ação faz                                              |
+| ---------------------------------------------- | ------------------------------ | ------------------------------------------------------------------ |
+| Enviar qualquer atividade, como responder a um usuário.| [SendActivity](#send-activity) | Envia qualquer tipo de atividade, como responder a usuários. |
 
 Para obter um exemplo de código, confira [Enviar um exemplo de resposta](#send-a-response-example).
 
@@ -87,16 +87,15 @@ There's a mix of concepts going on here. There's the action sequence, which are 
 | Atividade a realizar | Nome da ação                      | O que essa ação faz                                                     |
 | ---------------------- | -------------------------------- | ------------------------------------------------------------------------- |
 | Começar uma nova caixa de diálogo     | [BeginDialog](#begindialog)      | Começa a executar outra caixa de diálogo. Quando essa caixa de diálogo for concluída, a execução do gatilho atual será retomada.    |
-| Cancelar um diálogo        | CancelDialog<!--[CancelDialog](#canceldialog)-->| Cancela a caixa de diálogo ativa. Use quando desejar que a caixa de diálogo seja fechada imediatamente, mesmo que isso signifique parar o processo intermediário.|
+| Cancelar um diálogo        | `CancelDialog`<!--[CancelDialog](#canceldialog)-->| Cancela a caixa de diálogo ativa. Use quando desejar que a caixa de diálogo seja fechada imediatamente, mesmo que isso signifique parar o processo intermediário.|
 | Cancelar todas as caixas de diálogo     | [CancelAllDialogs](#cancelalldialog)| Cancela todas as caixas de diálogo ativas, incluindo qualquer caixa de diálogo pai ativa. Use caso você queira remover todas as caixas de diálogo da pilha; é possível limpar a pilha de caixas de diálogo chamando o método cancelar todas as caixas de diálogo no contexto da caixa de diálogo. Emite o evento `CancelAllDialogs`.|
 | Fechar esta caixa de diálogo        | [EndDialog](#enddialog)          | Encerra a caixa de diálogo ativa.  Use quando desejar que a caixa de diálogo seja concluída e retorne os resultados antes de ser encerrada. Emite o evento `EndDialog`.|
 | Encerrar o turno da caixa de diálogo        | [EndTurn](#endturn)              | Encerra o turno atual da conversa sem encerrar a caixa de diálogo.          |
 | Repetir essa caixa de diálogo     | [RepeatDialog](#repeatdialog)    | Usado para reiniciar a caixa de diálogo pai.                                        |
 | Substituir essa caixa de diálogo    | [ReplaceDialog](#replacedialog)  | Substitui a caixa de diálogo atual por uma nova                             |
-| Atualizar uma atividade     | [UpdateActivity](#update-activity)| Permite atualizar uma atividade que foi enviada.                     |
-| DeleteActivity        | [DeleteActivity](#delete-activity) | Permite excluir uma atividade que foi enviada.                          |
-| Obter membros da atividade | [GetActivityMembers](#get-activity-members)| Permite obter uma lista de membros da atividade e salvá-la em uma propriedade na [memória][11].|
-| GetConversationMembers| [GetConversationMembers](#get-conversation-members) | Permite obter uma lista de membros da conversa e salvá-la em uma propriedade na [memória][11].|
+| Atualizar uma atividade     | [UpdateActivity](#update-activity)| Atualiza uma atividade que foi enviada.                    |
+| Obter membros da atividade | [GetActivityMembers](#get-activity-members)| Obtém uma lista de membros da atividade e salva-a em uma propriedade na [memória][11].|
+| GetConversationMembers| [GetConversationMembers](#get-conversation-members) | Obtém uma lista de membros da conversa e salva-a em uma propriedade na [memória][11].|
 | EditActions    | [EditActions](#editactions) | Permite editar imediatamente a sequência de ação atual com base na entrada do usuário. Especialmente útil ao lidar com interrupções. <!--TODO P1: [interruptions][6]--> |
 
 Confira os exemplos de códigos em [Exemplos de gerenciamento de caixa de diálogo](#dialog-management-examples).
@@ -105,25 +104,25 @@ Confira os exemplos de códigos em [Exemplos de gerenciamento de caixa de diálo
 
 ### <a name="manage-properties"></a>Gerenciar propriedades
 
-| Atividade a realizar | Nome da ação                           | O que essa ação faz                                                     |
-| ---------------------- | ------------------------------------- | ------------------------------------------------------------------------- |
-| Editar uma matriz          | [EditArray](#editarray)               | Permite executar operações de edição em uma matriz.                  |
-| Excluir uma propriedade      | [DeleteProperty](#deleteproperty)     | Permite remover uma propriedade da [memória][11].                        |
-| Excluir propriedades      | [DeleteProperties](#deleteproperties) | Permite excluir mais de uma propriedade em uma única ação.     |
-| Criar ou atualizar uma propriedade | [SetProperty](#setproperty)      | Permite definir o valor de uma propriedade na [memória][11].                     |
-| Criar ou atualizar propriedades | [SetProperties](#setproperties)  | Permite inicializar uma ou mais propriedades em uma única ação. |
+| Atividade a realizar | Nome da ação                           | O que essa ação faz                                 |
+| ---------------------- | ------------------------------------- | ----------------------------------------------------- |
+| Editar uma matriz          | [EditArray](#editarray)               | Executa operações de edição em uma matriz.                  |
+| Excluir uma propriedade      | [DeleteProperty](#deleteproperty)     | Remove uma propriedade da [memória][11].                  |
+| Excluir propriedades      | [DeleteProperties](#deleteproperties) | Exclui mais de uma propriedade em uma única ação.     |
+| Criar ou atualizar uma propriedade | [SetProperty](#setproperty)      | Define o valor de uma propriedade na [memória][11].               |
+| Criar ou atualizar propriedades | [SetProperties](#setproperties)  | Inicializa uma ou mais propriedades em uma única ação. |
 
 Confira os exemplos de códigos em [Exemplos de gerenciamento de propriedades](#manage-properties-examples).
 
 ### <a name="access-external-resources"></a>Acessar recursos externos
 
-| Atividade a realizar | Nome da ação                | O que essa ação faz                                                                                       |
-| ---------------------- | -------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| Iniciar uma caixa de diálogo de skill   | [BeginSkill](#beginskill) | Use a caixa de diálogo adaptável de skill para executar um skill.                                              |
-| Enviar uma solicitação HTTP   | [HttpRequest](#httprequest)| Permite fazer solicitações HTTP para qualquer ponto de extremidade.                                                          |
-| Emitir um evento personalizado    | [EmitEvent](#emitevent)    | Permite gerar um evento personalizado para o qual o bot pode responder usando um [gatilho personalizado][8].               |
-| Desconectar um usuário        | [SignOutUser](#sign-out-user)| Permite desconectar o usuário atualmente conectado.                                                       |
-| Chamar código personalizado       | [CodeAction](#codeaction)    | Permite chamar seu código personalizado.                                                                   |
+| Atividade a realizar | Nome da ação                  | O que essa ação faz                                                          |
+| ---------------------- | ---------------------------- | ------------------------------------------------------------------------------ |
+| Iniciar uma caixa de diálogo de skill   | [BeginSkill](#beginskill)    | Use a caixa de diálogo adaptável de skill para executar um skill.                                  |
+| Enviar uma solicitação HTTP   | [HttpRequest](#httprequest)  | Faz solicitações HTTP para qualquer ponto de extremidade.                                            |
+| Emitir um evento personalizado    | [EmitEvent](#emitevent)      | Aciona um evento personalizado que o bot pode responder usando um [gatilho personalizado][8]. |
+| Desconectar um usuário        | [SignOutUser](#sign-out-user)| Desconecta o usuário atualmente conectado.                                         |
+| Chamar código personalizado       | [CodeAction](#codeaction)    | Chama o seu código personalizado.                                                     |
 
 Confira exemplos de código em [Exemplos de acesso a recursos externos](#access-external-resource-examples).
 
@@ -131,7 +130,7 @@ Confira exemplos de código em [Exemplos de acesso a recursos externos](#access-
 
 | Atividade a realizar | Nome da ação                     | O que essa ação faz                                                       |
 | ---------------------- | ------------------------------- | --------------------------------------------------------------------------- |
-| Registrar no console         | [LogAction](#log-action)           | Grava no console e, opcionalmente, envia a mensagem como uma atividade de rastreamento. |
+| Registrar no console         | [LogAction](#log-action)        | Grava no console e, opcionalmente, envia a mensagem como uma atividade de rastreamento. |
 | Emitir um evento de rastreamento     | [TraceActivity](#traceactivity) | Envia uma atividade de rastreamento com qualquer payload que você especificar.                   |
 
 Confira exemplos de códigos em [Exemplos de opção de depuração](#debugging-option-examples).
@@ -466,9 +465,9 @@ var adaptiveDialog = new AdaptiveDialog()
 
 #### <a name="begindialog"></a>BeginDialog
 
-Inicia uma nova caixa de diálogo e a envia para a pilha de caixas de diálogo. `BeginDialog` requer o nome da caixa de diálogo de destino, que pode ser qualquer tipo de caixa de diálogo, incluindo caixa de diálogo adaptável, em cascata etc.
+Inicia uma nova caixa de diálogo e a envia para a pilha de caixas de diálogo. A ação _begin dialog_ requer o nome do diálogo de destino, que pode ser qualquer tipo de diálogo, incluindo o diálogo Adaptável, Em cascata etc.
 
-A ação `BeginDialog` define uma propriedade chamada `ResultProperty` que permite especificar onde salvar os resultados quando a caixa de diálogo for encerrada.
+A ação _begin dialog_ define uma propriedade chamada `ResultProperty` que permite especificar onde salvar os resultados quando o diálogo for encerrado.
 
 ``` C#
 new BeginDialog("BookFlightDialog")
@@ -479,13 +478,13 @@ new BeginDialog("BookFlightDialog")
 ```
 
 > [!TIP]
-> Assim como ao invocar qualquer caixa de diálogo no SDK do Bot Framework, ao chamar `BeginDialog` para invocar uma caixa de diálogo adaptável, você pode usar o parâmetro `options` para transmitir informações de entrada à caixa de diálogo.
+> Assim como ao invocar qualquer diálogo no SDK do Bot Framework, ao chamar `BeginDialog` para invocar um diálogo adaptável, você pode usar o parâmetro `options` para transmitir informações de entrada ao diálogo.
 
 #### <a name="enddialog"></a>EndDialog
 
 Encerra a caixa de diálogo ativa ao removê-la da pilha e retorna um resultado opcional na caixa de diálogo pai.
 
-Por padrão, as caixas de diálogo adaptáveis têm `defaultResultProperty` definida como `dialog.results`, de modo que qualquer coisa definida no [escopo da memória][11] retornará automaticamente para o chamador em cenários em que a caixa de diálogo foi encerrada automaticamente. Se você encerrar a caixa de diálogo usando a ação `EndDialog`, precisará especificar o que será retornado para o chamador na propriedade `value`.
+Por padrão, as caixas de diálogo adaptáveis têm `defaultResultProperty` definida como `dialog.results`, de modo que qualquer coisa definida no [escopo da memória][11] retornará automaticamente para o chamador em cenários em que a caixa de diálogo foi encerrada automaticamente. Se você encerrar o diálogo usando a ação _encerrar diálogo_, precisará especificar o que será retornado para o chamador na propriedade `value`.
 
 ``` C#
 new EndDialog()
@@ -695,7 +694,7 @@ new GetConversationMembers()
 
 #### <a name="editactions"></a>EditActions
 
-Modifica a sequência de ações atual. Especialmente útil ao lidar com uma interrupção. Você pode usar EditActions para inserir ou remover ações em qualquer lugar da sequência, incluindo a adição de ações no início ou no final da sequência.
+Modifica a sequência de ações atual. Especialmente útil ao lidar com uma interrupção. Você pode usar `EditActions` para inserir ou remover ações em qualquer lugar da sequência, incluindo a adição de ações no início ou no final da sequência.
 
 ``` C#
 var rootDialog = new AdaptiveDialog(nameof(AdaptiveDialog))

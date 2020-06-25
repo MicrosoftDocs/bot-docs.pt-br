@@ -8,17 +8,17 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/04/2020
-monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 9e8c524142570d67f9caf4806bde0adf4f198668
+monikerRange: azure-bot-service-3.0
+ms.openlocfilehash: 6f9955ee38ce0fc0f3f3ea9c004529334a9a7b96
 ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 06/19/2020
-ms.locfileid: "85073644"
+ms.locfileid: "85081204"
 ---
 # <a name="debug-a-bot"></a>Depurar um bot
 
-[!INCLUDE [applies-to](./includes/applies-to.md)]
+[!INCLUDE [pre-release-label](../articles/includes/pre-release-label-v3.md)]
 
 Este artigo descreve como depurar seu bot usando um ambiente de desenvolvimento integrado (IDE), como o Visual Studio ou Visual Studio Code e o emulador de Bot Framework. Embora você possa usar esses métodos para depurar qualquer bot localmente, este artigo usa um bot em [C#](~/dotnet/bot-builder-dotnet-sdk-quickstart.md), em [Javascript](~/javascript/bot-builder-javascript-quickstart.md) ou em [Python](~/python/bot-builder-python-quickstart.md) criado no guia de início rápido.
 
@@ -50,13 +50,11 @@ For more information, see [Debug with the Emulator](bot-service-debug-emulator.m
 
 [!INCLUDE [csharp visual studio](../articles/includes/bot-service-debug-bot/csharp-vs.md)]
 
+[!INCLUDE [csharp consumption](../articles/includes/bot-service-debug-bot/csharp-consumption.md)]
+
 ## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 [!INCLUDE [javascript vscode](../articles/includes/bot-service-debug-bot/js-vscode.md)]
-
-## <a name="python"></a>[Python](#tab/python)
-
-[!INCLUDE [python vscode](../articles/includes/bot-service-debug-bot/python-vscode.md)]
 
 ---
 

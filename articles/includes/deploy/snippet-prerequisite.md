@@ -1,15 +1,15 @@
 ---
-ms.openlocfilehash: 194e09ba45be1720f785fe7926361de8d8d588b2
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 076e7914e641f7e2d4386897ab4d39d00c8e0e89
+ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75491167"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85073725"
 ---
-- Uma assinatura do [Microsoft Azure](https://azure.microsoft.com/free/)
-- Um bot C#, JavaScript, TypeScript ou Python que você desenvolveu no computador local
-- Última versão da [CLI do Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)
-- Familiaridade com [a CLI do Azure e os modelos ARM](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview)
+- Uma assinatura do [Microsoft Azure](https://azure.microsoft.com/free/).
+- Um bot em C#, em JavaScript, em TypeScript ou em Python que você desenvolveu no computador local.
+- A versão mais recente da [CLI do Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
+- Conhecimento de [modelos ARM e a CLI do Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview).
 
 <!-- - If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
 - Install the latest version of the [Azure cli tool](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).

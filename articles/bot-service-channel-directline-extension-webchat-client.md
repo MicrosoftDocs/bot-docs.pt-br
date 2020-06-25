@@ -1,95 +1,91 @@
 ---
-title: Habilitar o WebChat com a extensão de serviço de aplicativo do Direct Line
+title: Usar o Webchat com a extensão de serviço de aplicativo do Direct Line
 titleSuffix: Bot Service
-description: Habilitar o WebChat com a extensão de serviço de aplicativo do Direct Line
+description: Usar o Webchat com a extensão de serviço de aplicativo do Direct Line
 services: bot-service
 manager: kamrani
 ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 07/25/2019
-ms.openlocfilehash: a3cb2e438d2b042f66d97ef90b162cf172aeb3f3
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: a843cccf695bad02a0bfd9b9f225c761b497f978
+ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81395639"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85073546"
 ---
-# <a name="use-webchat-with-the-direct-line-app-service-extension"></a>Habilitar o WebChat com a extensão de serviço de aplicativo do Direct Line
-
-Este artigo descreve como habilitar o WebChat com a extensão de serviço de aplicativo do Direct Line.
-
-## <a name="get-your-direct-line-secret"></a>Obter o segredo do Direct Line
-
-A primeira etapa é encontrar seu segredo do Direct Line. Você pode fazer isso seguindo as instruções descritas no artigo [Conectar um bot ao Direct Line](bot-service-channel-connect-directline.md).
-
-## <a name="get-the-preview-version-of-directlinejs"></a>Obter a versão prévia do DirectLineJS
-A versão prévia do DirectLineJS pode ser encontrada aqui: https://github.com/Jeffders/DirectLineAppServiceExtensionPreview/tree/master/libraries
-
-## <a name="integrate-webchat-client"></a>Integrar o cliente do WebChat
+# <a name="use-web-chat-with-the-direct-line-app-service-extension"></a>Usar o Webchat com a extensão de serviço de aplicativo do Direct Line
 
 > [!NOTE]
-> Os cartões adaptáveis enviados por meio da Extensão de Serviço de Aplicativo do Direct Line não passam pelo mesmo processamento que aqueles enviados por meio de outras versões do canal do Direct Line. Por causa disso, a representação JSON do cartão adaptável enviado ao WebChat da Extensão de Serviço de Aplicativo do Direct Line não terá valores padrão adicionados pelo canal se os campos forem omitidos pelo bot quando o cartão for criado.
+> O Webchat versão 4.9.1 ou superior é necessário para suporte nativo da Extensão do Serviço de Aplicativo do Direct Line. 
 
-De modo geral, a abordagem é a mesma que a de antes. Com a exceção da nova versão que foi criada do **WebChat** que dá suporte ao tráfego bidirecional do **WebSocket** e que, em vez de conectar-se a [https://directline.botframework.com/](https://directline.botframework.com/), conecta-se ao seu Bot hospedado.
+Este artigo descreve como usar o Webchat com a Extensão do Serviço de Aplicativo do Direct Line.
+
+## <a name="integrate-web-chat-client"></a>Integrar cliente do Webchat
+
+> [!NOTE]
+> Os Cartões Adaptáveis enviados por meio da Extensão do Serviço de Aplicativo do Direct Line não passam pelo mesmo processamento que aqueles enviados por meio de outras versões do canal do Direct Line. Por causa disso, a declaração JSON do Cartão Adaptável enviado ao Webchat da Extensão do Serviço de Aplicativo do Direct Line não terá valores padrão adicionados pelo canal se os campos forem omitidos pelo bot quando o cartão for criado.
+
+De modo geral, a abordagem é a mesma que a de antes. Com exceção da versão 4.9.1 ou superior do **Webchat** há suporte interno para estabelecer um **WebSocket** bidirecional, que, em vez de conectar-se ao [https://directline.botframework.com/](https://directline.botframework.com/), se conecta diretamente ao bot hospedado.
 A URL do Direct Line para o bot será `https://<your_app_service>.azurewebsites.net/.bot/`, em que a extensão `/.bot/` é o **ponto de extremidade** do Direct Line em seu Serviço de Aplicativo.
-Se puder configurar seu próprio nome de domínio, você ainda precisará acrescentar o caminho `/.bot/` para acessar as APIs REST do Direct Line.
+Se você configurar o seu próprio nome de domínio, ainda precisará acrescentar o caminho `/.bot/` para acessar as APIs REST do Direct Line.
 
 1. Troque o segredo por um token seguindo as instruções no artigo [Autenticação](https://docs.microsoft.com/azure/bot-service/rest-api/bot-framework-rest-direct-line-3-0-authentication?view=azure-bot-service-4.0). Mas, em vez de obter um token neste local: `https://directline.botframework.com/v3/directline/tokens/generate`, você gera o token diretamente de sua Extensão de Serviço de Aplicativo do Direct Line neste local: `https://<your_app_service>.azurewebsites.net/.bot/v3/directline/tokens/generate`.  
 
-1. Quando tiver um token, você poderá atualizar a página da Web que usa o WebChat com estas alterações:
+1. A amostra a seguir inclui uma chamada para buscar um token do serviço de host, semelhante ao que está incluído nas [Amostras de Webchat](https://github.com/microsoft/BotFramework-WebChat/tree/master/samples/01.getting-started/i.protocol-direct-line-app-service-extension). Você pode atualizar a página da Web que usa o Webchat com estas alterações:
 
 ```html
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
-    <title>Direct Line Streaming Sample</title>
-    <script src="~/directLine.js"></script>
-    <script src="https://cdn.botframework.com/botframework-webchat/master/webchat.js"></script>
+  <head>
+    <title>Web Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      crossorigin="anonymous"
+      src="https://cdn.botframework.com/botframework-webchat/latest/webchat-minimal.js"
+    ></script>
     <style>
-        html, body {
-            height: 100%
-        }
+      html,
+      body {
+        background-color: #f7f7f7;
+        height: 100%;
+      }
 
-        body {
-            margin: 0
-        }
+      body {
+        margin: 0;
+      }
 
-        #webchat,
-
-        #webchat > * {
-            height: 100%;
-            width: 100%;
-        }
+      #webchat {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        height: 100%;
+        margin: auto;
+        max-width: 480px;
+        min-width: 360px;
+      }
     </style>
-</head>
-
-<body>
+  </head>
+  <body>
     <div id="webchat" role="main"></div>
     <script>
-        const activityMiddleware = () => next => card => {
-            if (card.activity.type === 'trace') {
-                // Return false means, don't render the trace activities
-                return () => false;
-            } else {
-                return children => next(card)(children);
-            }
-        };
+      (async function() {
+        const res = await fetch('https://<your_app_service>.azurewebsites.net/api/token/directlinease', { method: 'POST' });
+        const { token } = await res.json();
 
+        window.WebChat.renderWebChat(
+          {
+            directLine: await window.WebChat.createDirectLineAppServiceExtension({
+              domain: 'https://<your_app_service>.azurewebsites.net/.bot/v3/directline',
+              token
+            })
+          },
+          document.getElementById('webchat')
+        );
 
-        var dl = new DirectLine.DirectLine({
-            secret: '<your token>',
-            domain: 'https://<your_site>.azurewebsites.net/.bot/v3/directline',
-            webSocket: true,
-            conversationId: '<your conversation id>'
-        });
-        window.WebChat.renderWebChat({
-            activityMiddleware,
-            directLine: dl,
-            userID: '<your generated user id>'
-        }, document.getElementById('webchat'));
+        document.querySelector('#webchat > *').focus();
+      })().catch(err => console.error(err));
     </script>
-</body>
+  </body>
 </html>
 
 ```

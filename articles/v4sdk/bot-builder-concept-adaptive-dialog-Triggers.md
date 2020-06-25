@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 04/27/2020
-ms.openlocfilehash: 914281a8966aff317fffcfcec964c6ab832d99fd
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: d18a8ab6fc79398af0e2df9751e40a46f0c04da7
+ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83566226"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85073952"
 ---
 # <a name="events-and-triggers-in-adaptive-dialogs"></a>Eventos e gatilhos em caixas de diálogo adaptáveis
 
@@ -65,10 +65,10 @@ Os [reconhecedores][8] extraem informações significativas da entrada de um usu
 
 | Causa do evento               | Nome do gatilho  | Evento base    | Descrição                                                       |
 | ------------------------- | ------------- | ------------- | ----------------------------------------------------------------- |
-| Escolher intenção | OnChooseIntent |ChooseIntent | Esse gatilho é executado quando uma ambiguidade é detectada entre intenções de vários reconhecedores em um [CrossTrainedRecognizerSet][11].|
-| Intenção reconhecida| OnIntent | RecognizedIntent | Ações a serem executadas quando a intenção especificada for reconhecida.           |
-|Intenção QnAMatch|OnQnAMatch| RecognizedIntent |Esse gatilho será executado quando o [QnAMakerRecognizer][12] tiver retornado uma intenção de QnAMatch. A entidade @answer terá a resposta QnAMaker.|
-|Intenção desconhecida reconhecida| OnUnknownIntent | UnknownIntent | Ações a serem executadas quando a entrada do usuário não for reconhecida ou nenhuma correspondência for encontrada em nenhum dos gatilhos `OnIntent`. Você também pode usar isso como seu primeiro gatilho na caixa de diálogo raiz no lugar de `OnBeginDialog` para poder realizar as tarefas necessárias quando a caixa de diálogo for iniciada pela primeira vez. |
+| Escolher intenção | `OnChooseIntent` |`ChooseIntent` | Esse gatilho é executado quando uma ambiguidade é detectada entre intenções de vários reconhecedores em um [CrossTrainedRecognizerSet][11].|
+| Intenção reconhecida| `OnIntent` | `RecognizedIntent` | Ações a serem executadas quando a intenção especificada for reconhecida.           |
+|Intenção QnAMatch|`OnQnAMatch`| `RecognizedIntent` |Esse gatilho será executado quando o [QnAMakerRecognizer][12] tiver retornado uma intenção de `QnAMatch`. A entidade `@answer` terá a resposta `QnAMaker`.|
+|Intenção desconhecida reconhecida| `OnUnknownIntent` | `UnknownIntent` | Ações a serem executadas quando a entrada do usuário não for reconhecida ou nenhuma correspondência for encontrada em nenhum dos gatilhos `OnIntent`. Você também pode usar isso como o seu primeiro gatilho no diálogo raiz no lugar de `OnBeginDialog` para realizar as tarefas necessárias quando o diálogo for iniciado pela primeira vez. |
 
 #### <a name="recognizer-trigger-examples"></a>Exemplos de gatilhos de reconhecedores
 
@@ -76,8 +76,8 @@ Exemplos de gatilhos `OnIntent` e `OnUnknownIntent` são fornecidos abaixo para 
 
 > [!NOTE]
 >
-> * O gatilho `OnIntent` permite que você manipule o evento "recognizedIntent". O evento "recognizedIntent" é gerado pelo [reconhecedor][8]. Todos os reconhecedores internos do SDK do Bot Framework emitem esse evento quando identificam com êxito a _entrada_ de um usuário para que o bot possa responder adequadamente.
-> * Use o gatilho `OnUnknownIntent` para capturar e responder quando um evento "recognizedIntent" não foi capturado e manipulado por nenhum dos outros gatilhos. <!--This is especially helpful to capture and handle cases where your dialog wishes to participate in consultation.-->
+> * O gatilho `OnIntent` permite que você manipule o evento `recognizedIntent`. O evento `recognizedIntent` é acionado pelo [reconhecedor][8]. Todos os reconhecedores internos do SDK do Bot Framework emitem esse evento quando identificam com êxito a _entrada_ de um usuário para que o bot possa responder adequadamente.
+> * Use o gatilho `OnUnknownIntent` para capturar e responder quando um evento `recognizedIntent` não tiver sido capturado e nem for manipulado por nenhum dos outros gatilhos. <!--This is especially helpful to capture and handle cases where your dialog wishes to participate in consultation.-->
 
 ``` C#
 // Create the root dialog as an Adaptive dialog.
@@ -134,22 +134,22 @@ rootDialog.Triggers.Add(unhandledIntentTrigger);
 A caixa de diálogo dispara eventos específicos de caixa de diálogo relacionados ao "ciclo de vida" da caixa.  Atualmente, há seis gatilhos de caixa de diálogo no SDK do Bot Framework, e todos eles derivam da classe `OnDialogEvent`.
 
 > [!TIP]
-> Eles não são como manipuladores de eventos de interrupção normais, em que as ações secundárias continuarão em execução depois que as ações dos manipuladores forem concluídas. Para todos os eventos abaixo, o bot executará um novo conjunto de ações e encerrará o turno quando essas ações forem concluídas.
+> Eles não são como manipuladores de eventos de interrupção normais, em que as ações do filho continuarão em execução depois que as ações dos manipuladores forem concluídas. Para todos os eventos abaixo, o bot executará um novo conjunto de ações e encerrará o turno quando essas ações forem concluídas.
 
 > Você deve usar _gatilhos de caixa de diálogo_ para:
 >
 > * Tomar uma atitude imediatamente quando a caixa de diálogo for iniciada, mesmo antes da chamada ao reconhecedor.
-> * Executar ações quando um evento "cancelar" ocorrer.
+> * Executar ações quando um evento de _cancelamento_ ocorrer.
 > * Executar ações em mensagens recebidas ou enviadas.
 > * Avaliar e tomar medidas com base no conteúdo de uma atividade de entrada.
 
 | Nome do gatilho     | Evento base   | Descrição                                                                                                                         |
 | ---------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
-| OnBeginDialog    | BeginDialog  | Ações a serem executadas quando a caixa de diálogo for iniciada. Para uso somente com caixas de diálogo secundárias, não deve ser usado na caixa de diálogo raiz; em caixa de diálogo raiz, use `OnUnknownIntent` para executar atividades de inicialização de caixa de diálogo.|
-| OnCancelDialog   | CancelDialog | Esse evento permite impedir que a caixa de diálogo atual seja cancelada devido a uma caixa de diálogo secundária estar executando uma ação CancelAllDialogs. |
-| OnEndOfActions   | EndOfActions | Esse evento ocorrerá assim que todas as ações e eventos de ambiguidade forem processados.                                                        |
-| OnError          | Erro        | Ação a ser executada quando ocorrer um evento de caixa de diálogo "Error". Esse evento é semelhante a `OnCancelDialog`, pois você está impedindo que a caixa de diálogo atual termine, neste caso devido a um erro em uma caixa de diálogo secundária.|
-| OnRepromptDialog |RepromptDialog| Ações a serem executadas quando o evento "RepromptDialog" ocorrer.                                                                              |
+| `OnBeginDialog`    | `BeginDialog`  | Ações a serem executadas quando a caixa de diálogo for iniciada. Para uso somente com caixas de diálogo secundárias, não deve ser usado na caixa de diálogo raiz; em caixa de diálogo raiz, use `OnUnknownIntent` para executar atividades de inicialização de caixa de diálogo.|
+| `OnCancelDialog`   | `CancelDialog` | Esse evento permite impedir que o diálogo atual seja cancelado devido a um diálogo secundário estar executando uma ação `CancelAllDialogs`. |
+| `OnEndOfActions`   | `EndOfActions` | Esse evento ocorrerá assim que todas as ações e eventos de ambiguidade forem processados.                                                        |
+| `OnError`          | `Error`        | Ação a ser executada quando ocorrer um evento do diálogo `Error`. Esse evento é semelhante a `OnCancelDialog`, pois você está impedindo que a caixa de diálogo atual termine, neste caso devido a um erro em uma caixa de diálogo secundária.|
+| `OnRepromptDialog` |`RepromptDialog`| Ações a serem executadas quando o evento `RepromptDialog` ocorrer.                                                                              |
 
 > [!TIP]
 > A maioria das caixas de diálogo secundárias inclui um gatilho `OnBeginDialog` que responde ao evento `BeginDialog`. Esse gatilho é acionado automaticamente quando a caixa de diálogo é iniciada, o que pode permitir que o bot responda imediatamente com uma [mensagem de boas-vindas](#dialog-event-trigger-example) ou um [prompt de entrada do usuário][14].
@@ -181,22 +181,22 @@ var adaptiveDialog = new AdaptiveDialog()
 
 Os gatilhos de atividade permitem associar ações a qualquer atividade de entrada do cliente, como quando um novo usuário ingressa e o bot inicia uma nova conversa. Informações adicionais sobre atividades podem ser encontradas no [esquema de Atividade do Bot Framework][3].
 
-Todos os eventos de atividade têm um evento base de `ActivityReceived` e são refinados pelo seu `ActivityType`. A classe base da qual todos os gatilhos de atividade derivam é `OnActivity`.
+Todos os eventos de atividade têm um evento base de `ActivityReceived` e são refinados pelo seu _tipo de atividade_. A classe base da qual todos os gatilhos de atividade derivam é `OnActivity`.
 
-| Causa do evento         | activityType | Nome do gatilho                 | Descrição                                                                       |
-| ------------------- | ------------ | ---------------------------- | --------------------------------------------------------------------------------- |
-| Saudação            | ConversationUpdate | OnConversationUpdateActivity | Manipule os eventos acionados quando um usuário inicia uma nova conversa com o bot. |
-| Conversa encerrada  | EndOfConversation | OnEndOfConversationActivity  | Ações a serem executadas no recebimento de uma atividade com o tipo "EndOfConversation".  |
-| Evento recebido      | Evento        | OnEventActivity              | Ações a serem executadas no recebimento de uma atividade com o tipo "Event".                   |
-| Transferir para um humano   | Entrega      | OnHandoffActivity            | Ações a serem executadas no recebimento de uma atividade com o tipo "HandOff".                 |
-| Conversa invocada| Invoke       | OnInvokeActivity             | Ações a serem executadas no recebimento de uma atividade com o tipo "Invoke".                  |
-| O usuário está digitando      | Digitação       | OnTypingActivity             | Ações a serem executadas no recebimento de uma atividade com o tipo "Typing".                  |
+| Causa do evento         | activityType   | Nome do gatilho                   | Descrição                                                                       |
+| ------------------- | -------------- | ------------------------------ | --------------------------------------------------------------------------------- |
+| Saudação            | `ConversationUpdate` | `OnConversationUpdateActivity` | Manipule os eventos acionados quando um usuário inicia uma nova conversa com o bot. |
+| Conversa encerrada  | `EndOfConversation` | `OnEndOfConversationActivity`  | Ações a serem executadas no recebimento de uma atividade com o tipo `EndOfConversation`.  |
+| Evento recebido      | `Event`        | `OnEventActivity`              | Ações a serem executadas no recebimento de uma atividade com o tipo `Event`.                   |
+| Transferir para um humano   | `Handoff`      | `OnHandoffActivity`            | Ações a serem executadas no recebimento de uma atividade com o tipo `HandOff`.                 |
+| Conversa invocada| `Invoke`       | `OnInvokeActivity`             | Ações a serem executadas no recebimento de uma atividade com o tipo `Invoke`.                  |
+| O usuário está digitando      | `Typing`       | `OnTypingActivity`             | Ações a serem executadas no recebimento de uma atividade com o tipo `Typing`.                  |
 
 #### <a name="activity-events-examples"></a>Exemplos de eventos de atividade
 
 ##### <a name="onconversationupdateactivity"></a>OnConversationUpdateActivity
 
-O gatilho `OnConversationUpdateActivity` é um dos gatilhos que permitem manipular um evento "ActivityReceived". O gatilho `OnConversationUpdateActivity` só será acionado quando a seguinte condição for atendida: _ActivityTypes.ConversationUpdate_.
+O gatilho `OnConversationUpdateActivity` é um dos gatilhos que permitem que você manipule um evento de _atividade recebida_. O gatilho `OnConversationUpdateActivity` só será acionado quando a condição _ActivityTypes.conversationUpdate_ for atendida.
 
 O snippet de código a seguir demonstra como você pode criar um gatilho `OnConversationUpdateActivity`:
 
@@ -220,14 +220,14 @@ var myDialog = new AdaptiveDialog(nameof(AdaptiveDialog))
 
 Os gatilhos de **evento de mensagem** permitem reagir a qualquer evento de mensagem, como quando uma mensagem é atualizada (`MessageUpdate`) ou excluída (`MessageDeletion`) ou quando alguém reage (`MessageReaction`) a uma mensagem (por exemplo, algumas das reações de mensagens comuns incluem Curtida, Coração, Gargalhada, Surpreso, Triste e Irritado).
 
-Os eventos de mensagem são um tipo de evento de atividade e, como tal, todos eles têm um evento base de `ActivityReceived` e são refinados por ActivityType. A classe base da qual todos os gatilhos de mensagem derivam é `OnActivity`.
+Os eventos de mensagem são um tipo de evento de atividade e, como tal, todos eles têm um evento base de `ActivityReceived` e são refinados pelo _tipo de atividade_. A classe base da qual todos os gatilhos de mensagem derivam é `OnActivity`.
 
-| Causa do evento      | activityType    | Nome do gatilho             | Descrição                                                               |
-| ---------------- | --------------- | ------------------------ | ------------------------------------------------------------------------- |
-| Mensagem recebida | Mensagem         | OnMessageActivity        | Ações a serem executadas no recebimento de uma atividade com o tipo "MessageReceived". | <!--Overrides Intent trigger.-->
-| Mensagem excluída  | MessageDeletion | OnMessageDeleteActivity  | Ações a serem executadas no recebimento de uma atividade com o tipo "MessageDelete".   |
-| Reação de mensagem | MessageReaction | OnMessageReactionActivity| Ações a serem executadas no recebimento de uma atividade com o tipo "MessageReaction". |
-| Mensagem atualizada  | MessageUpdate   | OnMessageUpdateActivity  | Ações a serem executadas no recebimento de uma atividade com o tipo "MessageUpdate".   |
+| Causa do evento      | activityType      | Nome do gatilho               | Descrição                                                               |
+| ---------------- | ----------------- | -------------------------- | ------------------------------------------------------------------------- |
+| Mensagem recebida | `Message`         | `OnMessageActivity`        | Ações a serem executadas no recebimento de uma atividade com o tipo `MessageReceived`. | <!--Overrides Intent trigger.-->
+| Mensagem excluída  | `MessageDeletion` | `OnMessageDeleteActivity`  | Ações a serem executadas no recebimento de uma atividade com o tipo `MessageDelete`.   |
+| Reação de mensagem | `MessageReaction` | `OnMessageReactionActivity`| Ações a serem executadas no recebimento de uma atividade com o tipo `MessageReaction`. |
+| Mensagem atualizada  | `MessageUpdate`   | `OnMessageUpdateActivity`  | Ações a serem executadas no recebimento de uma atividade com o tipo `MessageUpdate`.   |
 
 <!--TODO P1: Need Message event examples
 #### Message event examples
@@ -241,9 +241,9 @@ Você pode emitir seus eventos adicionando a ação [EmitEvent][13] a qualquer g
 > [!TIP]
 > Você pode permitir que outras caixas de diálogo em seu bot manipulem o evento personalizado definindo a propriedade `BubbleEvent` de EmitEvent como true.
 
-| Causa do evento  | Nome do gatilho  | Classe base  | Descrição                                                                                                        |
-| ------------ | ------------- | ----------- | ------------------------------------------------------------------------------------------------------------------ |
-| Evento personalizado | OnDialogEvent | OnCondition | Ações a serem executadas quando um evento personalizado for detectado. Use a ação [Emitir um evento personalizado][13] para gerar um evento personalizado. |
+| Causa do evento  | Nome do gatilho    | Classe base    | Descrição                                                                                                        |
+| ------------ | --------------- | ------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Evento personalizado | `OnDialogEvent` | `OnCondition` | Ações a serem executadas quando um evento personalizado for detectado. Use a ação [Emitir um evento personalizado][13] para gerar um evento personalizado. |
 
 <!--Was: OnCustomEvent-->
 

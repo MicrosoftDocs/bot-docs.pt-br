@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4ea2daa3002c18c58117cd8b69372c32cd591aec
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: f061e5be587e5fac95fb6ea512c2016e85b6b324
+ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83566126"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85073860"
 ---
 # <a name="language-generation"></a>Geração de Linguagem
 
@@ -62,6 +62,7 @@ Inclua a biblioteca de geração de linguagem [`botbuilder-lg`][15]. Em seguida,
 ```typescript
      let lgTemplates = Templates.parseFile(filePath, importResolver?);
 ```
+
 ---
 
 Quando precisar de expansão de modelo, use `Evaluate` e passe o nome do modelo relevante.
@@ -77,6 +78,7 @@ Quando precisar de expansão de modelo, use `Evaluate` e passe o nome do modelo 
 ```typescript
     let lgOutput = lgTemplates.evaluate("<TemplateName>", evalData)
 ```
+
 ---
 
 Se o modelo precisar de propriedades específicas a serem passadas para resolução/expansão, você poderá passá-las ao chamar `Evaluate`.
@@ -92,21 +94,22 @@ Se o modelo precisar de propriedades específicas a serem passadas para resoluç
 ```typescript
     let lgOutput = lgTemplates.evaluate("WordGameReply", { GameName = "MarcoPolo" } )
 ```
+
 ---
 
 ## <a name="multi-lingual-generation-and-language-fallback-policy"></a>Política de fallback de linguagem e geração multilíngue
 
-O bot pode ser direcionado para mais de um idioma falado ou de exibição. Você pode gerenciar instâncias separadas do *TemplateEngine*, uma por idioma de destino. Confira o [exemplo 05.a.multi-turn-prompt-with-language-fallback](https://github.com/microsoft/BotBuilder-Samples/tree/master/experimental/language-generation/csharp_dotnetcore/05.a.multi-turn-prompt-with-language-fallback) para obter um exemplo de como adicionar vários idiomas, também conhecido como fallback de idioma, ao seu bot.
+O bot pode ser direcionado para mais de um idioma falado ou de exibição. Você pode gerenciar instâncias separadas do *TemplateEngine*, uma por idioma de destino. Para obter um exemplo de como adicionar vários idiomas, também conhecido como fallback de idioma, ao seu bot, confira o prompt de vários turnos com uma amostra de fallback de idioma no [C#](https://aka.ms/csharp-lg-multi-turn-prompt-language-fallback-sample) ou no [JavaScript](https://aka.ms/js-lg-multi-turn-prompt-language-fallback-sample).
 
 <!--
-## Grammar check and correction 
+## Grammar check and correction
 The current library does not include any capabilities for grammar check or correction-->
 
 ## <a name="expand-api"></a>API de expansão
 
 Para obter todas as expansões possíveis de um modelo, você pode usar `ExpandTemplate`.
-# <a name="c"></a>[C#](#tab/csharp)
 
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```c#
     var results = lgTemplates.ExpandTemplate("WordGameReply", { GameName = "MarcoPolo" } )
@@ -144,12 +147,14 @@ Por exemplo, dado este conteúdo de LG:
 ```
 
 A chamada `ExpandTemplate("FinalGreeting")` resulta em quatro avaliações:
+
 - **Hi Morning**
 - **Hi Evening**
-- **Hello Morning** 
+- **Hello Morning**
 - **Hello Evening**
 
 A chamada `ExpandTemplate("TimeOfDayWithCondition", new { time = "evening" })` com escopo resulta em duas expansões:
+
 - **Hi Evening**
 - **Hello Evening**
 

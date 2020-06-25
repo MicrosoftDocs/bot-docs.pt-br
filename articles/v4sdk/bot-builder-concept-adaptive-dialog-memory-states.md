@@ -8,24 +8,22 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 05/08/2020
-ms.openlocfilehash: 84005f187ca39071d77a53958607f45a433388e5
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: 98ea298a9e281625f94611e9ea84251c548c82e3
+ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83566206"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85073905"
 ---
 # <a name="managing-state-in-adaptive-dialogs"></a>Como gerenciar o estado em diálogos adaptáveis
 
 Os termos _com estado_ e _sem estado_ são expressões que descrevem se um aplicativo foi projetado para lembrar um ou mais eventos anteriores em determinada sequência de interações com um usuário (ou qualquer outra atividade). Com estado significa que o aplicativo _acompanha_ o estado das interações, normalmente salvando os valores na memória na forma de propriedades. Sem estado significa que o aplicativo _não_ acompanha o estado das interações, o que significa que não há memória de nenhuma interação anterior e todas as solicitações de entrada precisam conter todas as informações relevantes necessárias para executar a ação solicitada. Considere o _estado_ como o conjunto atual de valores ou do conteúdo do bot, como a ID da conversa ou o nome do usuário ativo.
 
-O SDK do Bot Framework segue os mesmos paradigmas dos aplicativos Web modernos e não gerencia ativamente o estado. No entanto, o SDK do Bot Framework fornece algumas abstrações que facilitam muito a incorporação do gerenciamento de estado ao bot. Este tópico é abordado detalhadamente no artigo [Como gerenciar o estado][3] do SDK do Bot Framework. Recomendamos que você leia e entenda as informações abordadas nele antes de ler este artigo.
-
-<!--TODO P2: reword this so it doesn't sound like the contents of this article are a summary of the managing state article. -->
+O SDK do Bot Framework segue os mesmos paradigmas dos aplicativos Web modernos e não gerencia ativamente o estado. No entanto, o SDK do Bot Framework fornece algumas abstrações que facilitam muito a incorporação do gerenciamento de estado ao bot. Esse tópico é abordado detalhadamente no artigo [Como gerenciar o estado][3] do SDK do Bot Framework. Recomendamos que você leia e entenda as informações abordadas nele antes de ler este artigo.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Uma compreensão geral de [como funcionam os bots][1].
+* Uma compreensão geral de [Como funcionam os bots][1].
 * Uma compreensão geral dos diálogos adaptáveis. Para obter mais informações, confira [Introdução aos diálogos adaptáveis][2] e [Bibliotecas de diálogos][8].
 * Confira o artigo [Como gerenciar o estado][3] do SDK do Bot Framework para obter uma visão geral do gerenciamento de estado.
 
@@ -166,7 +164,7 @@ Value = "=@fromCity.location"
 
 #### <a name="turndialogevent"></a>turn.dialogEvent
 
-`turn.dialogEvent` contém o conteúdo de um evento gerado pelo sistema ou pelo código. Acesse as informações contidas no conteúdo acessando o escopo turn.dialogEvent.\<eventName\>.value.
+`turn.dialogEvent` contém o conteúdo de um evento gerado pelo sistema ou pelo código. Você pode acessar as informações contidas no conteúdo acessando escopo turn.dialogEvent.\<eventName\>.value.
 
 #### <a name="turnlastresult"></a>turn.lastResult
 
@@ -182,11 +180,11 @@ Value = "=@fromCity.location"
 
 ## <a name="settings-scope"></a>Escopo das configurações
 
-Isso representa qualquer configuração disponibilizada para o bot por meio do sistema de definição das configurações específicas da plataforma; por exemplo, se você estiver desenvolvendo seu bot usando o C#, essas configurações serão exibidas no arquivo `appsettings.json`, se você estiver desenvolvendo o bot usando o JavaScript, essas configurações serão exibidas no arquivo `.env` ou no arquivo `config.py` no desenvolvimento com o Python. Além disso, algumas configurações estão contidas nas configurações de ambiente dinâmico no Azure e todas estão disponíveis no escopo das configurações.
+Isso representa qualquer configuração disponibilizada para o bot por meio do sistema de definição das configurações específicas da plataforma. Por exemplo, se você estiver desenvolvendo o seu bot usando o C#, essas configurações serão exibidas no arquivo appsettings.json; se estiver desenvolvendo o bot usando o JavaScript, essas configurações serão exibidas no arquivo .env ou no arquivo config.py no desenvolvimento com o Python. Além disso, algumas configurações estão contidas nas configurações de ambiente dinâmico no Azure e todas estão disponíveis no escopo das configurações.
 
 ### <a name="settings-scope-example"></a>Exemplo de escopo das configurações
 <!--TODO P2: rewrite this with language tabs for C#/JS. -->
-Este é um exemplo de appsettings.json que contém definições de configuração para o bot:
+Este é um exemplo de um arquivo appsettings.json que contém definições de configuração para o bot:
 
 ```json
 {
@@ -200,7 +198,7 @@ Este é um exemplo de appsettings.json que contém definições de configuraçã
 }
 ```
 
-Este é um exemplo de como se referir às definições de configuração armazenadas no arquivo `appsettings.json` usando o escopo de memória de configurações:
+Este é um exemplo de como se referir às definições de configuração armazenadas no arquivo appsettings.json usando o escopo de memória de configurações:
 
 ```csharp
 var recognizer = new QnAMakerRecognizer()
@@ -252,13 +250,13 @@ new TextInput()
 
 Há poucas notações abreviadas compatíveis para acessar os escopos da memória específicos.
 
-| Símbolo | Uso         | Expansão                           | Observações                                                                                                                 |
-|--------|---------------|-------------------------------------|---------------------------------------------------------------------------------------------------------------------- |
-| $      | $userName     | dialog.userName                     | Notação abreviada que representa o escopo do diálogo.                                                                 |
-| #      | #intentName   | turn.recognized.intents.intentName  | Abreviação usada para indicar uma intenção nomeada retornada pelo reconhecedor.                                                  |
-| @      | @entityName   | turn.recognized.entities.entityName | @entityName retorna o primeiro e o _único_ primeiro valor encontrado para a entidade, independentemente da cardinalidade do valor. |
-| @@     | @@entityName  | turn.recognized.entities.entityName | @@entityName retornará o valor real da entidade, preservando a cardinalidade do valor.                          |
-| %      | %propertyName | class.propertyName                  | Usado para referenciar propriedades da instância (por exemplo, MaxTurnCount, DefaultValue etc.).                                           |
+| Símbolo | Uso           | Expansão                             | Observações                                                                                                                   |
+|--------|-----------------|---------------------------------------|------------------------------------------------------------------------------------------------------------------------ |
+| $      | `$userName`     | `dialog.userName`                     | Notação abreviada que representa o escopo do diálogo.                                                                   |
+| #      | `#intentName`   | `turn.recognized.intents.intentName`  | Abreviação usada para indicar uma intenção nomeada retornada pelo reconhecedor.                                                    |
+| @      | `@entityName`   | `turn.recognized.entities.entityName` | `@entityName` retorna o primeiro e o _único_ primeiro valor encontrado para a entidade, independentemente da cardinalidade do valor. |
+| @@     | `@@entityName`  | `turn.recognized.entities.entityName` | O `@@entityName` retornará o valor real da entidade, preservando a cardinalidade do valor.                          |
+| %      | `%propertyName` | `class.propertyName`                  | Usado para fazer referência a propriedades de instância (por exemplo, `MaxTurnCount`, `DefaultValue` etc.).                                         |
 
 [1]:bot-builder-basics.md
 [2]:bot-builder-adaptive-dialog-introduction.md

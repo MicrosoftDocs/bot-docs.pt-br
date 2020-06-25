@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 05/06/2020
-ms.openlocfilehash: 36065d0fddb94e796c388fcd25e02e98e3613a76
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: 7d6a64a6a6638455e233ca29ed40b3c11a7a183c
+ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83566246"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85073872"
 ---
 # <a name="recognizers-in-adaptive-dialogs"></a>Reconhecedores em diálogos adaptáveis
 
@@ -118,7 +118,7 @@ https://github.com/MicrosoftDocs/bot-docs-pr/pull/2123#discussion_r423237812
 
 ## <a name="recognizer-types"></a>Tipos de reconhecedores
 
-O SDK do Bot Framework fornece mais de uma dezena de reconhecedores diferentes e a capacidade de criar um reconhecedor próprio.
+O SDK do Bot Framework fornece diversos reconhecedores e a capacidade de criar um reconhecedor próprio.
 
 Os diálogos adaptáveis dão suporte aos seguintes reconhecedores:
 
@@ -128,40 +128,37 @@ Os diálogos adaptáveis dão suporte aos seguintes reconhecedores:
 * [Reconhecedor de vários idiomas](#multi-language-recognizer)
 * [Conjunto de reconhecedor CrossTrained](#cross-trained-recognizer-set)
 * [RecognizerSet](#recognizer-set)
-<!--* [Value recognizer](#value-recognizer)-->
-
-<!--TODO P2: Post R9, refactor the linked content out of this article and into one or more reference-like articles.-->
 
 ### <a name="regexrecognizer"></a>RegexRecognizer
 
-O _reconhecedor RegEx_ oferece a capacidade de extrair dados de intenção e de entidade de um enunciado com base em padrões de expressão regular. 
+O _reconhecedor RegEx_ oferece a capacidade de extrair dados de intenção e de entidade de um enunciado com base em padrões de expressão regular.
 
 `RegexRecognizer` consiste principalmente em:
 
 * `Intents`. O objeto `Intents` contém uma lista de objetos `IntentPattern`, e esses `IntentPattern` objetos consistem em uma propriedade `Intent` que é o nome da intenção e uma propriedade `Pattern` que contém uma expressão regular usada para analisar o enunciado a fim de determinar a intenção.
 * `Entities`. O objeto `Entities` contém uma lista de objetos `EntityRecognizer`.  O SDK do Bot Framework define várias classes `EntityRecognizer` para ajudar você a determinar as entidades contidas em um enunciado dos usuários:
-  * AgeEntityRecognizer
-  * ConfirmationEntityRecognizer
-  * CurrencyEntityRecognizer
-  * DateTimeEntityRecognizer
-  * DimensionEntityRecognizer
-  * EmailEntityRecognizer
-  * EntityRecognizer
-  * EntityRecognizerSet
-  * GuidEntityRecognizer
-  * HashtagEntityRecognizer
-  * IpEntityRecognizer
-  * MentionEntityRecognizer
-  * NumberEntityRecognizer
-  * NumberRangeEntityRecognizer
-  * OrdinalEntityRecognizer
-  * PercentageEntityRecognizer
-  * PhoneNumberEntityRecognizer
-  * RegExEntityRecognizer
-  * TemperatureEntityRecognizer
-  * TextEntity
-  * TextEntityRecognizer
-  * UrlEntityRecognizer
+  * `AgeEntityRecognizer`
+  * `ConfirmationEntityRecognizer`
+  * `CurrencyEntityRecognizer`
+  * `DateTimeEntityRecognizer`
+  * `DimensionEntityRecognizer`
+  * `EmailEntityRecognizer`
+  * `EntityRecognizer`
+  * `EntityRecognizerSet`
+  * `GuidEntityRecognizer`
+  * `HashtagEntityRecognizer`
+  * `IpEntityRecognizer`
+  * `MentionEntityRecognizer`
+  * `NumberEntityRecognizer`
+  * `NumberRangeEntityRecognizer`
+  * `OrdinalEntityRecognizer`
+  * `PercentageEntityRecognizer`
+  * `PhoneNumberEntityRecognizer`
+  * `RegExEntityRecognizer`
+  * `TemperatureEntityRecognizer`
+  * `TextEntity`
+  * `TextEntityRecognizer`
+  * `UrlEntityRecognizer`
 
 #### <a name="regexrecognizer-code-sample"></a>Exemplo de código do RegexRecognizer
 
@@ -200,8 +197,8 @@ var rootDialog = new AdaptiveDialog("rootDialog")
 
 > [!TIP]
 >
-> * O RegexRecognizer emitirá uma intenção 'None' quando o enunciado de entrada não corresponder a nenhuma intenção definida. Você pode criar um gatilho `OnIntent` com `Intent = "None"` para lidar com esse cenário.
-> * O RegexRecognizer é útil para teste e criação rápida de protótipos. Para bots mais sofisticados, recomendamos o uso do reconhecedor LUIS.
+> * O `RegexRecognizer` emitirá uma intenção 'None' quando o enunciado de entrada não corresponder a nenhuma intenção definida. Você pode criar um gatilho `OnIntent` com `Intent = "None"` para lidar com esse cenário.
+> * O `RegexRecognizer` é útil para teste e criação rápida de protótipos. Para bots mais sofisticados, recomendamos o uso do reconhecedor LUIS.
 > * A [Referência Rápida][7] do RegEx (linguagem de expressão regular) pode ser útil.
 
 ### <a name="luis-recognizer"></a>Reconhecedor LUIS
