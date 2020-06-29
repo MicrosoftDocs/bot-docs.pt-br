@@ -10,7 +10,7 @@ ms.date: 12/13/2017
 ROBOTS: NoIndex, NoFollow
 ms.openlocfilehash: 2d7c898a555dde53f01cf09b6ab54abf2c91960d
 ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/16/2020
 ms.locfileid: "75795915"

@@ -5,7 +5,7 @@ ms.service: bot-service
 title: Diretrizes de revisão de bot
 ms.openlocfilehash: 24477b5ca04ab71d61064d3f8a6689e10b623f28
 ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/16/2020
 ms.locfileid: "80648035"

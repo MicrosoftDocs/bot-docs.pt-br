@@ -12,7 +12,7 @@ ms.reviewer: ''
 monikerRange: azure-bot-service-4.0
 ms.openlocfilehash: 00d2d55c5738712ef91cdee1468deedb3e09c66e
 ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/16/2020
 ms.locfileid: "75799070"
