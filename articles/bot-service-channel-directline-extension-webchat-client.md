@@ -10,7 +10,7 @@ ms.author: kamrani
 ms.date: 07/25/2019
 ms.openlocfilehash: a843cccf695bad02a0bfd9b9f225c761b497f978
 ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 06/19/2020
 ms.locfileid: "85073546"

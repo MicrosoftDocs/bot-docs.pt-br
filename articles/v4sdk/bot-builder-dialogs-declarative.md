@@ -11,7 +11,7 @@ ms.date: 05/25/2020
 monikerRange: azure-bot-service-4.0
 ms.openlocfilehash: 2f276feb23caae812902fc7477beb9cb9128db4c
 ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 06/19/2020
 ms.locfileid: "85081208"

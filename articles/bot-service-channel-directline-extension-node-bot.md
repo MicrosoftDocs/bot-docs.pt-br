@@ -10,7 +10,7 @@ ms.author: dev
 ms.date: 01/15/2020
 ms.openlocfilehash: cb9a4e677d44ceecf54b85ba034448c76add976c
 ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 06/04/2020
 ms.locfileid: "84420697"

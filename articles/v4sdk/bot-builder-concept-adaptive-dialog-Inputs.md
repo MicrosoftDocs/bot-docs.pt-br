@@ -10,7 +10,7 @@ ms.service: bot-service
 ms.date: 04/27/2020
 ms.openlocfilehash: e10a3c367e0052492b30bf0a25f9b78630e5d0b1
 ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 06/19/2020
 ms.locfileid: "85073964"
