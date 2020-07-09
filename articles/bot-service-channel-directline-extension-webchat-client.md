@@ -8,12 +8,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 07/25/2019
-ms.openlocfilehash: a843cccf695bad02a0bfd9b9f225c761b497f978
-ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
+ms.openlocfilehash: ab0eb618a1d01ea3e8fa93e9c91c05f5d03516f8
+ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85073546"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86124516"
 ---
 # <a name="use-web-chat-with-the-direct-line-app-service-extension"></a>Usar o Webchat com a extensão de serviço de aplicativo do Direct Line
 
@@ -69,7 +69,7 @@ Se você configurar o seu próprio nome de domínio, ainda precisará acrescenta
     <div id="webchat" role="main"></div>
     <script>
       (async function() {
-        const res = await fetch('https://<your_app_service>.azurewebsites.net/api/token/directlinease', { method: 'POST' });
+        const res = await fetch('<URL of your Token Service as described in Steps 1 and 2 above.>', { method: 'POST' });
         const { token } = await res.json();
 
         window.WebChat.renderWebChat(

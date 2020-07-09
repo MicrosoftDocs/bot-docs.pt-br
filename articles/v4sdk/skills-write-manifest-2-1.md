@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/04/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 240ebc0ab1e12606d9eb9a194ec8cf486136f799
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: de98337779ce952df281c4610fdee88339601c7d
+ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83566666"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86124523"
 ---
 # <a name="how-to-write-a-v21-skill-manifest"></a>Como escrever um manifesto de habilidades v2.1
 
@@ -64,7 +64,7 @@ Veja a seguir o esquema completo da v2.1 do manifesto de habilidades do Bot Fram
 | **Definições**
 | definitions | objeto | Opcional | Um objeto que contém subesquemas para os objetos usados no manifesto. |
 | **Modelos de expedição**
-| dispatchModels | Objeto [dispatchModels](#dispatch-models) | Opcional | Descreve os modelos de linguagem e as intenções de nível superior compatíveis com a habilidade. Confira para obter o esquema desse objeto. |
+| dispatchModels | Objeto [dispatchModels](#dispatch-models) | Opcional | Descreve os modelos de linguagem e as intenções de nível superior compatíveis com a habilidade. Veja [abaixo](#dispatch-models) o esquema deste objeto. |
 
 ## <a name="endpoints"></a>Pontos de extremidade
 

@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: dc3a05115e6238b90c7e40b57c0822e476aa86f4
-ms.sourcegitcommit: eb0e5dec0ecd4e375d33825030b1ba46ff6e032c
+ms.openlocfilehash: ab18f383e20a6725c8b096977207776234d54f5f
+ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83791383"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86156659"
 ---
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - Python [3.6](https://www.python.org/downloads/release/python-369/), [3.7](https://www.python.org/downloads/release/python-375/) ou [3.8](https://www.python.org/downloads/release/python-383/)
 - [Emulador do bot Framework](https://aka.ms/bot-framework-emulator-readme)
-- Conhecimento da programação assíncrona em Python
+- Conhecimento da programação assíncrona no Python
 
 ## <a name="create-a-bot"></a>Criar um bot
 

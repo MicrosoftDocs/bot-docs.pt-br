@@ -7,14 +7,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/20/2020
-ms.openlocfilehash: 5a4cf92cf7d51cf6d871be8ab632e7e2b6b30303
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 04dda50ea23ac1eea00f5673cf8f769b78e59cd5
+ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80647601"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86124437"
 ---
-# <a name="troubleshooting-general-problems"></a>Solução de problemas gerais
+# <a name="troubleshoot-general"></a>Solucionar problemas gerais
 Essas perguntas frequentes podem ajudá-lo a solucionar problemas comuns de desenvolvimento de bot ou operacionais.
 
 ## <a name="how-can-i-troubleshoot-issues-with-my-bot"></a>Como é possível solucionar problemas com o bot?
@@ -33,31 +33,31 @@ Para obter detalhes sobre como solucionar problemas de autenticação com o bot,
 
 ## <a name="im-using-the-bot-framework-sdk-for-net-how-can-i-troubleshoot-issues-with-my-bot"></a>Estou usando o SDK do Bot Framework para .NET. Como é possível solucionar problemas com o bot?
 
-**Procure exceções.**  
+**Procure exceções.**
 No Visual Studio 2019, acesse **Depurar** > **Windows** > **Configurações de Exceção**. Na janela **Configurações de Exceção**, marque a caixa de seleção **Interromper Quando Lançado** próximo a **Exceções do Common Language Runtime**. Também é possível ver a saída de diagnóstico na janela Saída quando houver exceções lançadas ou não tratadas.
 
-**Verifique a pilha de chamadas.**  
+**Verifique a pilha de chamadas.**
 No Visual Studio, é possível escolher se está depurando [Apenas Meu Código](https://msdn.microsoft.com/library/dn457346.aspx) ou não. Examinar a pilha de chamadas completa pode fornecer informações adicionais sobre quaisquer problemas.
 
-**Assegure-se de que todos os métodos de diálogo terminem com um plano para manipular a próxima mensagem.**  
+**Assegure-se de que todos os métodos de diálogo terminem com um plano para manipular a próxima mensagem.**
 Todas as etapas do diálogo precisam alimentar a próxima etapa da cascata, ou encerrar o diálogo atual para retirá-lo na pilha. Se uma etapa não for tratada corretamente, a conversa não continuará como você espera. Dê uma olhada no artigo de conceito sobre [diálogos](v4sdk/bot-builder-concept-dialog.md) para saber mais sobre diálogos.
 
 
 ## <a name="what-causes-an-error-with-http-status-code-429-too-many-requests"></a>O que causa um erro com o código de status HTTP 429 "Muitas solicitações"?
 
-Uma resposta de erro com o código de status HTTP 429 indica que muitas solicitações foram emitidas em um determinado período de tempo. O corpo da resposta deve incluir uma explicação do problema e também especificar o intervalo mínimo requerido entre as solicitações. Uma possível origem desse erro é a ferramenta [ngrok](https://ngrok.com/). Se estiver em um plano gratuito e executando nos limites do ngrok, acesse a página de limites e preços no site para obter mais [opções](https://ngrok.com/product#pricing). 
+Uma resposta de erro com o código de status HTTP 429 indica que muitas solicitações foram emitidas em um determinado período de tempo. O corpo da resposta deve incluir uma explicação do problema e também especificar o intervalo mínimo requerido entre as solicitações. Uma possível origem desse erro é a ferramenta [ngrok](https://ngrok.com/). Se estiver em um plano gratuito e executando nos limites do ngrok, acesse a página de limites e preços no site para obter mais [opções](https://ngrok.com/product#pricing).
 
 ## <a name="why-arent-my-bot-messages-getting-received-by-the-user"></a>Por que as mensagens do meu bot não estão sendo recebidas pelo usuário?
 
-A atividade de mensagem gerada em resposta deve ser encaminhada corretamente, caso contrário, não chegará ao destino pretendido. Na grande maioria dos casos, você não precisará lidar com isso explicitamente. O SDK se encarrega do encaminhamento da atividade de mensagem para você. 
+A atividade de mensagem gerada em resposta deve ser encaminhada corretamente, caso contrário, não chegará ao destino pretendido. Na grande maioria dos casos, você não precisará lidar com isso explicitamente. O SDK se encarrega do encaminhamento da atividade de mensagem para você.
 
-Tratar corretamente uma atividade significa incluir os detalhes de *IDs de conversa* apropriados juntamente com detalhes sobre o remetente. Na maioria dos casos, a atividade de mensagem é enviada em resposta a uma que chegou. Portanto, os detalhes de encaminhamento podem ser retirados da atividade de entrada. 
+Tratar corretamente uma atividade significa incluir os detalhes de *IDs de conversa* apropriados juntamente com detalhes sobre o remetente. Na maioria dos casos, a atividade de mensagem é enviada em resposta a uma que chegou. Portanto, os detalhes de encaminhamento podem ser retirados da atividade de entrada.
 
 Se você examinar os rastreamentos ou logs de auditoria, poderá verificar se as mensagens foram encaminhadas corretamente. Se não tiverem sido, defina um ponto de interrupção em seu bot e veja onde as IDs estão sendo definidas para a mensagem.
 
-## <a name="how-can-i-run-background-tasks-in-aspnet"></a>Como é possível executar tarefas em segundo plano no ASP.NET? 
+## <a name="how-can-i-run-background-tasks-in-aspnet"></a>Como é possível executar tarefas em segundo plano no ASP.NET?
 
-Em alguns casos, convém iniciar uma tarefa assíncrona que aguarda alguns segundos e, em seguida, executa algum código para limpar o perfil do usuário ou redefinir o estado de diálogo/conversa. Para obter detalhes sobre como realizar isso, consulte [Como executar tarefas em segundo plano no ASP.NET](https://www.hanselman.com/blog/HowToRunBackgroundTasksInASPNET.aspx). Em particular, considere o uso de [HostingEnvironment.QueueBackgroundWorkItem](https://msdn.microsoft.com/library/dn636893(v=vs.110).aspx). 
+Em alguns casos, convém iniciar uma tarefa assíncrona que aguarda alguns segundos e, em seguida, executa algum código para limpar o perfil do usuário ou redefinir o estado de diálogo/conversa. Para obter detalhes sobre como realizar isso, consulte [Como executar tarefas em segundo plano no ASP.NET](https://www.hanselman.com/blog/HowToRunBackgroundTasksInASPNET.aspx). Em particular, considere o uso de [HostingEnvironment.QueueBackgroundWorkItem](https://msdn.microsoft.com/library/dn636893(v=vs.110).aspx).
 
 ## <a name="my-bot-is-slow-to-respond-to-the-first-message-it-receives-how-can-i-make-it-faster"></a>O bot demora a responder à primeira mensagem que recebe. Como é possível torná-lo mais rápido?
 
@@ -67,17 +67,18 @@ Algumas plataformas de hospedagem permitem que você configure o serviço para q
 
 ## <a name="how-can-i-guarantee-message-delivery-order"></a>Como é possível garantir a ordem de entrega da mensagem?
 
-O Bot Framework irá preservar a ordem das mensagens, tanto quanto possível. Por exemplo, se você enviar a mensagem A e aguardar a conclusão dessa operação HTTP antes de iniciar outra operação HTTP para enviar a mensagem B. Alguns canais, como SMS e email, não garantem a ordenação para o dispositivo do usuário. 
+O Bot Framework irá preservar a ordem das mensagens, tanto quanto possível. Por exemplo, se você enviar a mensagem A e aguardar a conclusão dessa operação HTTP antes de iniciar outra operação HTTP para enviar a mensagem B. Alguns canais, como SMS e email, não garantem a ordenação para o dispositivo do usuário.
 
 ## <a name="why-are-parts-of-my-message-text-being-dropped"></a>Por que partes do texto da mensagem estão sendo removidas?
 
 O Bot Framework e muitos canais interpretam o texto como se estivesse formatado com [Markdown](https://en.wikipedia.org/wiki/Markdown). Verifique se o texto contém caracteres que podem ser interpretados como sintaxe de Markdown.
 
-## <a name="how-can-i-support-multiple-bots-at-the-same-bot-service-endpoint"></a>Como dar suporte a vários bots no mesmo ponto de extremidade de serviço de bot? 
+## <a name="how-can-i-support-multiple-bots-at-the-same-bot-service-endpoint"></a>Como dar suporte a vários bots no mesmo ponto de extremidade de serviço de bot?
 
 Esse [exemplo](https://github.com/Microsoft/BotBuilder/issues/2258#issuecomment-280506334) mostra como configurar o `Conversation.Container` com o `MicrosoftAppCredentials` correto e usar um `MultiCredentialProvider` simples para autenticar várias IDs do Aplicativo e senhas.
 
 ## <a name="identifiers"></a>Identificadores
+___
 
 ## <a name="how-do-identifiers-work-in-the-bot-framework"></a>Como os identificadores funcionam no Bot Framework?
 
@@ -97,9 +98,9 @@ São permitidos 50 assinantes para bots em desenvolvimento no Kik. Após 50 usu�
 
 ## <a name="how-can-i-use-authenticated-services-from-my-bot"></a>Como é possível usar serviços autenticados do meu bot?
 
-Para a autenticação do Azure Active Directory, consulte Adicionar autenticação [V3](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-authentication?view=azure-bot-service-3.0&tabs=csharp) | [V4](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-authentication?view=azure-bot-service-4.0&tabs=csharp). 
+Para a autenticação do Azure Active Directory, consulte Adicionar autenticação [V3](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-authentication?view=azure-bot-service-3.0&tabs=csharp) | [V4](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-authentication?view=azure-bot-service-4.0&tabs=csharp).
 
-> [!NOTE] 
+> [!NOTE]
 > Se você adicionar a funcionalidade de autenticação e segurança ao bot, certifique-se de que os padrões implementados no código estejam em conformidade com os padrões de segurança apropriados ao aplicativo.
 
 ## <a name="how-can-i-limit-access-to-my-bot-to-a-pre-determined-list-of-users"></a>Como é possível limitar o acesso ao bot para uma lista pré-determinada de usuários?
@@ -111,21 +112,21 @@ Outros canais, como Facebook e Slack, fornecem endereços com escopo ou locados 
 ## <a name="why-does-my-direct-line-11-conversation-start-over-after-every-message"></a>Por que minha conversa com Direct Line 1.1 inicia novamente após cada mensagem?
 
 > [!NOTE]
-> 
-> Estas seções não se aplicam à versão mais recente do protocolo do Direct Line, 3.0 
+>
+> Estas seções não se aplicam à versão mais recente do protocolo do Direct Line, 3.0
 
 Se a conversa com Direct Line parece iniciar novamente após cada mensagem, a propriedade `from` provavelmente está ausente ou `null` nas mensagens que o cliente Direct Line enviou para o bot. Quando um cliente Direct Line enviar uma mensagem com a propriedade `from` ausente ou `null`, o serviço Direct Line alocará automaticamente uma ID, portanto, todas as mensagens enviadas pelo cliente parecerão originar de um novo usuário diferente.
 
 Para corrigir isso, defina a propriedade `from` em cada mensagem que o cliente Direct Line envia para um valor estável que represente exclusivamente o usuário que está enviando a mensagem. Por exemplo, se um usuário já estiver conectado a um aplicativo ou página da Web, será possível usar essa ID de usuário existente como o valor da propriedade `from` nas mensagens que o usuário enviar. Como alternativa, é possível optar por gerar uma ID de usuário aleatória no carregamento da página ou carregamento do aplicativo, armazenar a ID em um estado do dispositivo ou cookie e usar essa ID como o valor da propriedade `from` nas mensagens que o usuário enviar.
 
 ## <a name="what-causes-the-direct-line-30-service-to-respond-with-http-status-code-502-bad-gateway"></a>O que faz com que o serviço Direct Line 3.0 responda com o código de status HTTP 502 "Gateway Incorreto"?
-O Direct Line 3.0 retorna o código de status HTTP 502 quando tenta contatar o bot mas a solicitação não é concluída com êxito. Esse erro indica que o bot retornou um erro ou a solicitação atingiu o tempo limite. Para obter mais informações sobre erros que o bot gera, acesse o painel do bot no <a href="https://portal.azure.com" target="_blank">Portal do Azure</a> e clique no link "Problemas" do canal afetado. Se você tiver o Application Insights configurado para o bot, também poderá localizar informações detalhadas sobre erros. 
+O Direct Line 3.0 retorna o código de status HTTP 502 quando tenta contatar o bot mas a solicitação não é concluída com êxito. Esse erro indica que o bot retornou um erro ou a solicitação atingiu o tempo limite. Para obter mais informações sobre erros que o bot gera, acesse o painel do bot no <a href="https://portal.azure.com" target="_blank">Portal do Azure</a> e clique no link "Problemas" do canal afetado. Se você tiver o Application Insights configurado para o bot, também poderá localizar informações detalhadas sobre erros.
 
 ::: moniker range="azure-bot-service-3.0"
 
 ## <a name="where-is-conversation-state-stored"></a>Onde o estado de conversa é armazenado?
 
-Os dados nos recipientes de propriedades de conversa privada, conversa e usuário são armazenados usando a interface `IBotState` do Connector. Cada recipiente de propriedades é delimitado pela ID do bot. O recipiente de propriedades do usuário é inserido pela ID de usuário, o recipiente de propriedades de conversa é inserido pela ID da conversa e o recipiente de propriedades de conversa privada é inserida por ambas ID de usuário e ID da conversa. 
+Os dados nos recipientes de propriedades de conversa privada, conversa e usuário são armazenados usando a interface `IBotState` do Connector. Cada recipiente de propriedades é delimitado pela ID do bot. O recipiente de propriedades do usuário é inserido pela ID de usuário, o recipiente de propriedades de conversa é inserido pela ID da conversa e o recipiente de propriedades de conversa privada é inserida por ambas ID de usuário e ID da conversa.
 
 Se você usar o SDK do Bot Framework para .NET ou o SDK do Bot Framework para Node.js para compilar o bot, a pilha de diálogo e os dados de diálogo serão automaticamente armazenados como entradas no recipiente de propriedades de conversa privada. A implementação do C# usa serialização binária e a implementação do Node.js usa a serialização JSON.
 
@@ -144,7 +145,7 @@ O serviço `IBotState` do Connector é usado para armazenar os recipientes de da
 
 ## <a name="how-can-i-fix-precondition-failed-412-or-conflict-409-errors"></a>Como corrigir erros de "Falha na Pré-Condição" (412) ou "Conflito" (409)?
 
-Esses erros indicam que o bot processou várias mensagens para a mesma conversa de uma só vez. Se o bot estiver conectado a serviços que exigem mensagens ordenadas com precisão, considere bloquear o estado de conversa para garantir que as mensagens não sejam processadas em paralelo. 
+Esses erros indicam que o bot processou várias mensagens para a mesma conversa de uma só vez. Se o bot estiver conectado a serviços que exigem mensagens ordenadas com precisão, considere bloquear o estado de conversa para garantir que as mensagens não sejam processadas em paralelo.
 
 O SDK do Bot Framework para .NET fornece um mecanismo (classe `LocalMutualExclusion` que implementa `IScope`) para serializar pessimisticamente a manipulação de uma conversa única com um sinal na memória. É possível estender essa implementação para usar uma concessão do Redis, com escopo definido pelo endereço da conversa.
 
@@ -165,7 +166,7 @@ builder.Update(Conversation.Container);
 > [!IMPORTANT]
 > A API de Serviço de Estado do Bot Framework não é recomendada para ambientes de produção ou bots v4, e poderá ser totalmente preterida em uma versão futura. É recomendável que você atualize o código do bot para que ele use o armazenamento em memória para fins de teste ou use uma das **Extensões do Azure** para bots de produção. Para obter mais informações, consulte o tópico [Gerenciar dados de estado](v4sdk/bot-builder-howto-v4-state.md).
 
-O serviço de Estado permite que você persista o progresso através dos diálogos em uma conversa para que um usuário possa retornar a uma conversa com um bot posteriormente sem perder a posição. Para preservar isso, os recipientes de propriedades de dados de bot armazenados por meio da API de Estado não são automaticamente excluídos quando você modifica o código do bot. É necessário decidir se os dados do bot devem ou não ser limpos, dependendo se o código modificado é compatível com as versões mais antigas dos dados. 
+O serviço de Estado permite que você persista o progresso através dos diálogos em uma conversa para que um usuário possa retornar a uma conversa com um bot posteriormente sem perder a posição. Para preservar isso, os recipientes de propriedades de dados de bot armazenados por meio da API de Estado não são automaticamente excluídos quando você modifica o código do bot. É necessário decidir se os dados do bot devem ou não ser limpos, dependendo se o código modificado é compatível com as versões mais antigas dos dados.
 
 * Se você quiser redefinir manualmente a pilha de diálogo e o estado de conversa durante o desenvolvimento do bot, poderá usar o comando `/deleteprofile` para excluir os dados de estado. Certifique-se de incluir o espaço inicial neste comando para evitar que o canal o interprete.
 * Depois que o bot for implantado na produção, você poderá criar uma versão dos dados de bot para que, se você aumentar a versão, os dados de estado associados sejam limpos. Com o SDK do Bot Framework para Node.js, isso pode ser realizado usando middleware e com o SDK do Bot Framework para .NET, isso pode ser feito usando uma implementação `IPostToBot`.

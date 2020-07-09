@@ -3,18 +3,18 @@ title: Usar vários modelos de LUIS e QnA – Serviço de Bot
 description: Aprenda a usar o criador LUIS e QnA no seu bot.
 keywords: Luis, QnA, ferramenta Dispatch, vários serviços, rotear intenções
 author: diberry
-ms.author: diberry
+ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 01/27/2020
+ms.date: 06/29/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 48cc24fd3e78d39388bb600477f3d23e03a89fd9
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: d5e7fff96aa8139d8327d4bc05477ab5737ae7ad
+ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81395649"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86124163"
 ---
 # <a name="use-multiple-luis-and-qna-models"></a>Usar vários modelos de LUIS e QnA
 
@@ -24,15 +24,15 @@ Se um bot usar vários modelos do LUIS e bases de dados de conhecimento do QnA M
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- Conhecimento de [noções básicas de bot](bot-builder-basics.md), [LUIS][howto-luis] e [QnA Maker][howto-qna].
-- [Ferramenta de expedição](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Dispatch)
-- Uma cópia do **NLP com Dispatch** do repositório de códigos de [Exemplo de C#][cs-sample], [Exemplo de JS][js-sample] ou [Exemplo de Python][python-sample].
 - Uma conta [luis.ai](https://www.luis.ai/) para publicar aplicativos LUIS.
 - Uma conta do [QnA Maker](https://www.qnamaker.ai/) para publicar a base de conhecimento do QnA.
+- Uma cópia do **NLP com** amostra de expedição em [C#][cs-sample], [JavaScript][js-sample]ou [Python][python-sample].
+- Conhecimento de [noções básicas de bot](bot-builder-basics.md), [LUIS][howto-luis] e [QnA Maker][howto-qna].
+- A [ferramenta de expedição](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Dispatch) de linha de comando
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
-Este exemplo é baseado em um conjunto predefinido de aplicativos LUIS e QnA Maker.
+Este exemplo se baseia em um conjunto predefinido de aplicativos LUIS e QnA Maker.
 
 ## <a name="c"></a>[C#](#tab/cs)
 
@@ -78,33 +78,20 @@ Antes de criar o modelo do Dispatch, você precisará ter seus aplicativos LUIS 
 | Clima | Um aplicativo LUIS que reconhece intenções relacionadas ao clima com os dados de localização.|
 | QnAMaker  | Uma base de dados de conhecimento do QnA Maker que fornece respostas a perguntas simples sobre o bot. |
 
-### <a name="create-luis-apps"></a>Criar aplicativos LUIS
+### <a name="create-the-luis-apps"></a>Crie o LUIS aplicativos
 
-1. Faça logon no [portal da Web do LUIS](https://www.luis.ai/). Na seção _Meus aplicativos_, selecione a guia _Importar novo aplicativo_. A caixa de diálogo a seguir será exibida:
+1. Crie um aplicativo LUIS do arquivo JSON de _automação inicial_ no diretório de _modelos cognitivas_ do exemplo.
+    1. Treine e publique o aplicativo no ambiente de produção.
+    1. Registre a ID do aplicativo, o nome de exibição, a chave de criação e o local.
+1. Repita essas etapas para o arquivo JSON do _clima_ .
 
-    ![Importar arquivo json do LUIS](./media/tutorial-dispatch/import-new-luis-app.png)
+Para obter mais informações, consulte como **criar um aplicativo Luis no portal do Luis** e **obter valores para se conectar ao seu aplicativo Luis** em [Adicionar reconhecimento de idioma natural ao bot](bot-builder-howto-v4-luis.md) e à documentação do Luis sobre como [treinar](/azure/cognitive-services/LUIS/luis-how-to-train) e [publicar](/azure/cognitive-services/LUIS/publishapp) um aplicativo no ambiente de produção.
 
-2. Selecione o botão _Escolher arquivo de aplicativo_, navegue até a pasta CognitiveModel do código de exemplo e selecione o arquivo 'HomeAutomation.json'. Deixe o campo de nome opcional em branco.
-
-3. Selecione _Concluído_.
-
-4. Depois que o LUIS abrir seu aplicativo de automação residencial, selecione o botão _Treinar_. Isso treinará seu aplicativo usando o conjunto de declarações que você acabou de importar usando o arquivo “home-automation.json”.
-
-5. Quando o treinamento estiver concluído, selecione o botão _Publicar_. A caixa de diálogo a seguir será exibida:
-
-    ![Publicar aplicativo LUIS](./media/tutorial-dispatch/publish-luis-app.png)
-
-6. Escolha o ambiente de “produção” e, em seguida, selecione o botão _Publicar_.
-
-7. Depois que seu novo aplicativo LUIS tiver sido publicado, selecione a guia _GERENCIAR_. Na página de informações do aplicativo, registre os valores `Application ID` como "_app-id-for-app_" e `Display name` como "_name-of-app_". Na página 'Chave e Pontos de Extremidade', registre os valores `Authoring Key` como "_your-luis-authoring-key_" e `Region` como "_your-region_". Esses valores serão usados posteriormente no seu arquivo “appsetting.json”.
-
-8. Uma vez concluído, _Treine_ e _Publique_ os aplicativos de **Automação residencial** e de **Previsão do tempo** do LUIS repetindo as etapas acima para o arquivo 'Weather.json'.
-
-### <a name="create-qna-maker-knowledge-base"></a>Criar uma base de dados de conhecimento do QnA Maker
+### <a name="create-the-qna-maker-knowledge-base"></a>Criar a base de dados de conhecimento QnA Maker
 
 O primeiro passo para definir uma base de dados de conhecimento do QnA Maker é configurar um serviço do QnA Maker no Azure. Para fazer isso, siga as instruções passo a passo encontradas [aqui](https://aka.ms/create-qna-maker).
 
-Depois que o serviço QnA Maker é criado no Azure, você precisa registrar a _Chave 1_ dos Serviços Cognitivos fornecida por seu serviço QnA Maker. Ela será usada como \<azure-qna-service-key1> ao adicionar o aplicativo do QnA Maker ao seu aplicativo Dispatch.
+Depois que o serviço QnA Maker é criado no Azure, você precisa registrar a _Chave 1_ dos Serviços Cognitivos fornecida por seu serviço QnA Maker. Isso será usado como \<azure-qna-service-key1> ao adicionar o aplicativo QnA Maker ao seu aplicativo de expedição.
 
 Saiba mais sobre os [dois tipos diferentes de chaves](https://docs.microsoft.com/azure/cognitive-services/qnamaker/how-to/set-up-qnamaker-service-azure#types-of-keys-in-qna-maker) usadas com o QnA Maker.
 
@@ -120,7 +107,7 @@ As etapas a seguir fornecem essa chave:
 
     ![Selecionar chave 1 do Serviço Cognitivo](./media/tutorial-dispatch/select-cognitive-service-key1.png)
 
-1. Copie o valor da _Chave 1_ para a área de transferência e salve-a localmente. Ela será usada posteriormente no valor de chave (-k) \<azure-qna-service-key1> ao adicionar p aplicativo do QnA Maker ao aplicativo Dispatch.
+1. Copie o valor da _Chave 1_ para a área de transferência e salve-a localmente. posteriormente, isso será usado para o valor de chave (-k) \<azure-qna-service-key1> ao adicionar o aplicativo QnA Maker ao seu aplicativo de expedição.
 
 1. Agora entre no [portal da Web do QnA Maker](https://qnamaker.ai).
 
@@ -162,10 +149,12 @@ A ferramenta Dispatch precisa de acesso de criação para ler os aplicativos exi
 
 A **chave de criação** é usada apenas para criar e editar os modelos. É necessário ter uma ID e uma chave para cada um dos dois aplicativos do LUIS e o aplicativo do QnA Maker.
 
-|Aplicativo|Localização das informações|
-|--|--|
-|LUIS|**ID do aplicativo** – encontrada no [portal do LUIS](https://www.luis.ai) para cada aplicativo: Gerenciar -> Informações do Aplicativo<br>**Chave de criação** – encontrada no portal do LUIS, no canto superior direito, selecione seu próprio Usuário e, em seguida, Configurações.|
-|QnA Maker| **ID do aplicativo** – encontrada no [portal do QnA Maker](https://http://qnamaker.ai), na página de Configurações, após você publicar o aplicativo. Esta é a ID encontrada na primeira parte do comando POST após a base de dados de conhecimento. Um exemplo de onde encontrar a ID do aplicativo é `POST /knowledgebases/<APP-ID>/generateAnswer`.<br>**Chave de criação** – encontrada no portal do Azure, para o recurso do QnA Maker, em **Chaves**. Você precisa apenas de uma das chaves.|
+- para LUIS
+  - A **ID do aplicativo** é encontrada no [portal do Luis](https://www.luis.ai) para cada aplicativo, gerenciar configurações de > > configurações do aplicativo
+  - A **chave de criação** é encontrada no portal do Luis, no canto superior direito, selecione seu próprio usuário e, em seguida, configurações.
+- para o QnA Maker
+  - A **ID do aplicativo** é encontrada no [portal de QnA Maker](https://http://qnamaker.ai) na página configurações depois que você publicar o aplicativo. Esta é a ID encontrada na primeira parte do comando POST após a base de dados de conhecimento. Um exemplo de onde encontrar a ID do aplicativo é `POST /knowledgebases/<APP-ID>/generateAnswer`.
+  - A **chave de criação** é encontrada no portal do Azure, para o recurso de QnA Maker, sob as **chaves**. Você precisa apenas de uma das chaves.
 
 A chave de criação não é usada para obter uma pontuação de previsão nem uma pontuação de confiança do aplicativo publicado. Você precisa das chaves do ponto de extremidade para esta ação. As **[chaves do ponto de extremidade](#service-endpoint-keys)** são encontradas e usadas posteriormente neste tutorial.
 
@@ -219,14 +208,12 @@ O bot precisa de informações sobre os serviços publicados para poder acessar 
 
 ### <a name="service-endpoint-keys"></a>Chaves do ponto de extremidade de serviço
 
-O bot precisa dos pontos de extremidade de previsão de consulta para os três aplicativos do LUIS (Dispatch, Clima e HomeAutomation) e única base de dados de conhecimento do QnA Maker. Use a tabela a seguir para encontrar as chaves de pontos de extremidade:
+O bot precisa dos pontos de extremidade de previsão de consulta para os três aplicativos do LUIS (Dispatch, Clima e HomeAutomation) e única base de dados de conhecimento do QnA Maker. Localize as chaves do ponto de extremidade nos portais LUIS e QnA Maker:
 
-|Aplicativo|Localização da chave do ponto de extremidade de consulta|
-|--|--|
-|LUIS|No portal do LUIS, para cada aplicativo do LUIS, na seção Gerenciar, selecione **Configurações de chaves e ponto de extremidade** para localizar as chaves associadas a cada aplicativo. Se você estiver seguindo este tutorial, a chave do ponto de extremidade será a mesma chave que o `<your-luis-authoring-key>`. A chave de criação permite 1000 ocorrências de ponto de extremidade e, em seguida, expira.|
-|QnA Maker|No portal do QnA Maker, para a base de dados de conhecimento, em Gerenciar configurações, use o valor de chave mostrado nas configurações do Postman para o cabeçalho **Autorização**, sem o texto de `EndpointKey`.|
+- No portal do LUIS, para cada aplicativo do LUIS, na seção Gerenciar, selecione **Configurações de chaves e ponto de extremidade** para localizar as chaves associadas a cada aplicativo. Se você estiver seguindo este tutorial, a chave do ponto de extremidade será a mesma chave que o `<your-luis-authoring-key>`. A chave de criação permite 1000 ocorrências de ponto de extremidade e, em seguida, expira.
+- No portal do QnA Maker, para a base de dados de conhecimento, em Gerenciar configurações, use o valor de chave mostrado nas configurações do Postman para o cabeçalho **Autorização**, sem o texto de `EndpointKey`.
 
-Esses valores são usados em **appsettings.json** para C# e no arquivo **.env** para JavaScript.
+Esses valores são usados no arquivo de configuração do exemplo: **appsettings.jsem** (C#), **. env** (JavaScript) ou **config.py** (Python).
 
 ## <a name="c"></a>[C#](#tab/cs)
 

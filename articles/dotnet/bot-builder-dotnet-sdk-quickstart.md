@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b9d1441c0fc2a8a7a05e8f461eecd09be81da2f8
-ms.sourcegitcommit: eb0e5dec0ecd4e375d33825030b1ba46ff6e032c
+ms.openlocfilehash: 52feb8cc344698e114a6b4db206326c9db53a5c6
+ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83791220"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86124416"
 ---
 # <a name="create-a-bot-with-the-bot-framework-sdk-for-net"></a>Criar um bot com o SDK do Bot Framework para .NET
 
@@ -28,7 +28,9 @@ Este guia de início rápido oferece orientações sobre como criar um bot usand
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-Confira [túnel (ngrok)](https://github.com/Microsoft/BotFramework-Emulator/wiki/Tunneling-(ngrok)) para saber como se conectar a um bot hospedado remotamente.
+- Consulte o Leiame de [modelos de SDK do .NET Core](https://github.com/microsoft/BotBuilder-Samples/tree/master/generators/dotnet-templates#net-core-sdk-templates) para moreinformation sobre os modelos do .NET Core.
+- Consulte como [depurar um bot](~/bot-service-debug-channel-ngrok.md) para depurar usando o Visual Studio ou Visual Studio Code e o emulador do bot Framework.
+- Consulte [tunelamento (ngrok)](https://github.com/Microsoft/BotFramework-Emulator/wiki/Tunneling-(ngrok)) para obter informações sobre como instalar o ngrok.
 
 ## <a name="next-steps"></a>Próximas etapas
 

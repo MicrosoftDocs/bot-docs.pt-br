@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 94c03c0a7ba5cc602d46b73989e06485535e95c5
-ms.sourcegitcommit: 2412f96ad8f74dfa615c71f566c5befffb920658
+ms.openlocfilehash: 9d830c65153d7417f2f49d816d538ed88116994c
+ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158823"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86124006"
 ---
 # <a name="debugging-guidelines"></a>Diretrizes de depuração
 
@@ -70,7 +70,7 @@ O acompanhamento do estado é uma parte importante do bot, particularmente, para
 O mais importante é garantir a persistência do estado de uma maneira que corresponda às suas expectativas. Dependendo do local em que reside o estado persistente, os emuladores de armazenamento do [Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/local-emulator) e do [Armazenamento de Tabelas do Azure](https://docs.microsoft.com/azure/storage/common/storage-use-emulator) podem ajudá-lo a verificar o estado antes de usar o armazenamento de produção.
 
 >[!IMPORTANT]
-> A classe de _armazenamento do Cosmos DB_ foi preterida. Os contêineres criados com o _armazenamento do Cosmos DB_ podem ser usados com o _armazenamento particionado do Cosmos DB_ com a adição do [sinalizador](https://aka.ms/azure-dotnet-cosmosdb-partitionedstorage#L289) `compatibilityMode`. Para obter mais informações, leia [Particionamento no Azure Cosmos DB](https://aka.ms/azure-cosmosdb-partitioning-overview).
+> A classe de _armazenamento do Cosmos DB_ foi preterida. Os contêineres criados com o _armazenamento do Cosmos DB_ podem ser usados com o _armazenamento particionado do Cosmos DB_ com a adição do [sinalizador](https://aka.ms/azure-dotnet-cosmosdb-partitionedstorage#L289) `compatibilityMode`. Para obter mais informações, leia [Particionamento no Azure Cosmos DB](https://aka.ms/azure-cosmosdb-partitioning-overview). Observe também que, diferentemente do armazenamento de Cosmos DB herdado, o armazenamento particionado Cosmos DB não cria automaticamente um banco de dados dentro de sua conta de Cosmos DB. Quando você cria um novo banco de dados, o Cosmos DB cria um contêiner no banco de dados automaticamente.
 
 ## <a name="how-to-use-activity-handlers"></a>Como usar manipuladores de atividades
 

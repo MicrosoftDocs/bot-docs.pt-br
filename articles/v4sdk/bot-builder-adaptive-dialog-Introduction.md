@@ -7,20 +7,20 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
-ms.date: 04/24/2020
-ms.openlocfilehash: 07a1f666717a006163e0f1f4e1c1611130593050
-ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
+ms.date: 06/24/2020
+ms.openlocfilehash: c701746a8cacdab7cd3a28f65fa8256ea66f7b05
+ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85073994"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86124326"
 ---
 # <a name="introduction-to-adaptive-dialogs"></a>Introdução aos diálogos adaptáveis
 
-Os diálogos adaptáveis oferecem uma nova adição baseada em evento à [biblioteca de Diálogos][1], que permite começar de maneira simples e rapidamente inserir técnicas sofisticadas de gerenciamento de conversa, como tratamento de interrupções, expedição, entre outros.
+As caixas de diálogo adaptáveis oferecem uma nova adição baseada em eventos à [biblioteca de caixas de diálogo][1] que permite que você aplique uma camada facilmente em técnicas sofisticadas de gerenciamento de conversa, como a manipulação de interrupções, a expedição e muito mais.
 
 > [!IMPORTANT]
-> Atualmente, os diálogos adaptáveis estão disponíveis na versão .NET do SDK do Bot Framework. Encontre bots de exemplo criados com diálogos adaptáveis no [repositório BotBuilder-Samples][16] do GitHub; no entanto, a versão do JavaScript agora está em [versão prévia][15].
+> Atualmente, as caixas de diálogo adaptáveis só estão disponíveis na versão .NET do SDK do bot Framework. Você pode encontrar bots de exemplo criados usando caixas de diálogo adaptáveis no [repositório BotBuilder-Samples][16] no github.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -29,15 +29,16 @@ Os diálogos adaptáveis oferecem uma nova adição baseada em evento à [biblio
 
 ## <a name="adaptive-dialogs-defined"></a>Definição de diálogos adaptáveis
 
-### <a name="why-adaptive-dialog"></a>Por que diálogos adaptáveis
+### <a name="why-adaptive-dialogs"></a>Por que caixas de diálogo adaptáveis
 <!--This needs work-->
 
-Porque os diálogos adaptáveis:
+As caixas de diálogo adaptáveis têm muitas vantagens para [WaterfallDialogs][17]. Principalmente, eles:
 
-* Proporcionam a flexibilidade que permite modelar as conversas como uma sequência de etapas enquanto possibilita simultaneamente as regras que se ajustam ao contexto de maneira dinâmica. Isso é especialmente útil quando os usuários não fornecem as informações solicitadas em ordem ou decidem iniciar uma nova conversa no meio de um diálogo ativo.
-* Dá suporte e se baseia em um sistema de eventos avançado para diálogos e, portanto, a modelagem de interrupções, o cancelamento e a semântica do planejamento de execução são muito mais fáceis de serem descritos e gerenciados.
-* Reúnem o reconhecimento de entrada, o tratamento de eventos por meio de regras, o modelo da conversa (diálogo) e a geração de saída em uma unidade coesa e autônoma.
-* Dão suporte a pontos de extensibilidade para reconhecimento, regras de eventos e machine learning.
+* Forneça flexibilidade que permita que você atualize dinamicamente o fluxo de conversa com base em contexto e eventos. Isso é especialmente prático ao lidar com alternâncias de contexto de conversa e interrupções no meio de uma conversa.
+* Dê suporte e fique à frente de um sistema de eventos avançado para caixas de diálogo, portanto, as interrupções de modelagem, o cancelamento e a semântica de planejamento de execução são muito mais fáceis de descrever e gerenciar.
+* Traga reconhecimento de entrada e manipulação de eventos baseados em regras
+* Combine o modelo de conversa (caixa de diálogo) e a geração de saída em uma unidade coesa e autônoma.
+* Suporte a pontos de extensibilidade para reconhecimento, regras de eventos e aprendizado de máquina.
 * Foram projetados para serem declarativos desde o início. Isso permite ferramentas que incluem produtos como o [Bot Framework](https://aka.ms/bf-composer-docs-welcome-page) que fornecem uma tela visual para modelar as conversas.
 
 ## <a name="anatomy-of-an-adaptive-dialog"></a>Anatomia de um diálogo adaptável  
@@ -94,7 +95,7 @@ Confira o artigo [_Escopos de memória e gerenciamento de estado em diálogos ad
 
 ### <a name="declarative-assets"></a>Ativos declarativos
 
-Os diálogos adaptáveis permitem que você defina o seu diálogo como uma classe criando um novo objeto `AdaptiveDialog` e definindo os seus gatilhos e ações no arquivo de origem de classes. Você também pode criar o seu diálogo usando uma abordagem declarativa na qual você define todos os atributos do diálogo em um arquivo JSON com uma extensão de arquivo .dialog.  Nenhum código-fonte é necessário para definir os diálogos e você pode ter vários diálogos usando ambas as abordagens no mesmo bot. Em runtime, o bot vai gerar e executar o código do diálogo conforme definido nesses arquivos de diálogo declarativos.
+Os diálogos adaptáveis permitem definir o diálogo como uma classe criando um objeto AdaptiveDialog e definindo os gatilhos e as ações no arquivo de origem de classes, mas você também pode criar o diálogo usando uma abordagem declarativa em que define todos os atributos do diálogo em um arquivo JSON com uma extensão de arquivo .dialog.  Nenhum código-fonte é necessário para definir os diálogos e você pode ter vários diálogos usando ambas as abordagens no mesmo bot. Em runtime, o bot vai gerar e executar o código do diálogo conforme definido nesses arquivos de diálogo declarativos.
 
 <!--See the [_Using declarative assets_][9] article for more information on using _declarative assets_ in adaptive dialogs.-->
 
@@ -146,7 +147,7 @@ Como o diálogo `bookFlightDialog` não tem nenhum gatilho `OnIntent` para proce
 
 Resumidamente:
 
-O _reconhecedor_ de cada diálogo analisa a entrada do usuário para determinar a intenção dele. Quando a intenção é determinada, o _reconhecedor_ emite um evento `IntentRecognized`, que o diálogo processa usando um gatilho `OnIntent`. Se não houver nenhum gatilho `OnIntent` no diálogo ativo que possa processar essa intenção, o bot o enviará para o diálogo pai do diálogo. Se o diálogo pai não tiver um gatilho para processar a intenção, ele emergirá até atingir o diálogo raiz. Quando o gatilho que processa essa intenção é concluído, ele envia o controle novamente para o diálogo que iniciou esse processo, no qual ele pode continuar o fluxo de conversa no ponto em que parou.
+O _reconhecedor_ de cada diálogo analisa a entrada do usuário para determinar a intenção dele. Quando a intenção é determinada, o _reconhecedor_ emite um evento `IntentRecognized`, que o diálogo processa usando um gatilho `OnIntent`. Se não houver nenhum gatilho `OnIntent` no diálogo ativo que possa processar essa intenção, o bot o enviará para o diálogo pai do diálogo. Se o diálogo pai não tiver um gatilho para processar a intenção, ele será levado para cima até atingir o diálogo raiz. Quando o gatilho que processa essa intenção é concluído, ele envia o controle novamente para o diálogo que iniciou esse processo, no qual ele pode continuar o fluxo de conversa no ponto em que parou.
 
 ## <a name="additional-information"></a>Informações adicionais
 
@@ -181,3 +182,4 @@ O _reconhecedor_ de cada diálogo analisa a entrada do usuário para determinar 
 [14]:https://aka.ms/bot-builder-concept-dialog#prompts
 [15]:https://github.com/microsoft/botbuilder-samples/tree/master/experimental/adaptive-dialog
 [16]:https://github.com/microsoft/botbuilder-samples/tree/master/samples/csharp_dotnetcore
+[17]: https://docs.microsoft.com/azure/bot-service/bot-builder-concept-dialog?view=azure-bot-service-4.0#waterfall-dialogs

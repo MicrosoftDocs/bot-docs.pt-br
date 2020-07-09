@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 04/15/2020
+ms.date: 06/17/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: bec4f891c8870ecadd2e04e82d5ff33e6f73a8aa
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: 76068e11174642ecc448d5ecb29c3ecf318e6fb0
+ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83566646"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86124482"
 ---
 # <a name="implement-a-skill-for-use-in-power-virtual-agents"></a>Implementar uma habilidade para uso no Power Virtual Agents
 
@@ -22,7 +22,7 @@ ms.locfileid: "83566646"
 
 Uma habilidade é um bot que pode ser usado por outro bot. Dessa forma, você pode criar um só bot voltado para o usuário e estendê-lo com uma ou mais habilidades. Saiba mais sobre as habilidades em geral na [Visão geral das habilidades](skills-conceptual.md) e como criá-las em [Implementar uma habilidade](skill-implement-skill.md). Como alternativa, os modelos do Assistente Virtual contêm um conjunto de [habilidades predefinidas](bot-builder-skills-overview.md) que você pode personalizar e implantar em vez de criar uma do zero.
 
-Se você espera que as suas habilidades sejam consumidas em um bot do [Power Virtual Agents](https://powerva.microsoft.com/#/), há algumas restrições adicionais impostas às habilidades que você precisará considerar.
+Se você espera que suas habilidades sejam consumidas de um bot de [agentes virtuais de energia](https://powerva.microsoft.com/#/) , há algumas restrições adicionais colocadas em suas habilidades que você precisará considerar.
 
 ## <a name="manifest-restrictions"></a>Restrições de manifesto
 
@@ -31,7 +31,6 @@ O Power Virtual Agents impõe restrições no que pode ser declarado no [manifes
 - Você pode declarar apenas 25 ou menos ações.
 - Cada ação é limitada a 25 ou menos entradas ou saídas.
 - Você não pode usar o tipo de matriz para entradas ou saídas.
-- No momento, há suporte apenas para o idioma inglês (localidade 'en')
 
 ## <a name="same-tenant-restriction"></a>Restrição de mesmo locatário
 
@@ -43,19 +42,19 @@ Para fazer o registro do bot como uma habilidade no Power Virtual Agents, verifi
 
 Quando um usuário final tenta se conectar à sua habilidade em um bot do Power Virtual Agents, primeiro ele precisa [importar a habilidade para o Power Virtual Agents](/power-virtual-agents/advanced-use-skills). Sua habilidade passará por uma série de verificações de validação. Uma falha em uma dessas verificações poderá resultar em uma mensagem de erro, conforme descrito nesta tabela.
 
-Etapa de validação|Mensagem de erro|Descrição ou mitigação
-|---|---|---
-|Validar URL do manifesto de habilidades|O link não é válido; o link precisa começar com https:// | Insira novamente o link como uma URL segura. |
-|Validar se o manifesto de habilidades pode ser recuperado|Encontramos problemas ao obter o manifesto de habilidades.| Confirme se a URL do manifesto é um link para o manifesto e pode ser baixada como um arquivo .json.|
-|Validar se o manifesto de habilidades pode ser lido|O manifesto é muito grande; o manifesto é incompatível.| Corrija os erros sintáticos no manifesto. Confira [Restrições de manifesto](#manifest-restrictions) |
-|Validar se a habilidade foi registrada anteriormente|Esta habilidade já foi adicionada ao bot.|O usuário final já adicionou sua habilidade ao PVA. |
-|Validar a origem do ponto de extremidade do manifesto de habilidade|Há uma incompatibilidade nos pontos de extremidade da habilidade.|O domínio da URL da home page do aplicativo do AAD e o domínio da URL do manifesto precisam ser correspondentes. Confira [Restrição de mesmo locatário](#same-tenant-restriction)|
-|Validar se a habilidade está hospedada no locatário do usuário conectado|Para adicionar uma habilidade, primeiro ela precisa ser registrada.| Um administrador global precisa registrar a habilidade na organização do usuário conectado. |
-|Validar as ações da habilidade|A habilidade é limitada a 25 ações.|Há muitas ações de habilidades definidas no manifesto de habilidades. Remova as ações e tente novamente. |
-|Validar parâmetros de entrada da ação da habilidade|As ações são limitadas a 25 entradas.|Há muitos parâmetros de entrada da ação da habilidade. Remova os parâmetros e tente novamente. |
-|Validar os parâmetros de saída da ação da habilidade|As ações são limitadas a 25 saídas.|Há muitos parâmetros de saída da ação da habilidade. Remova o parâmetro e tente novamente. |
-|Validar a contagem de habilidades|O bot pode ter um máximo de 25 habilidades.| Há muitas habilidades adicionadas a um bot. Remova uma habilidade existente e tente novamente. |
-|Validar o idioma da ação da habilidade|Atualmente, há suporte apenas para o inglês nas habilidades.| A habilidade tem ações com localidades sem suporte. Só há suporte para habilidades com ações em inglês (localidades `en-`). |
-|Validar a configuração de aplicativo do AAD |A habilidade precisa ser registrada como multilocatário.| Verifique se o aplicativo do AAD está marcado como multilocatário. Confira [Converter o aplicativo em multilocatário](/azure/active-directory/develop/howto-convert-app-to-be-multi-tenant#update-registration-to-be-multi-tenant) |
-|Validar o token de segurança |Parece que algo deu errado.|Pode haver um erro transitório para adquirir um token de segurança e disparar a habilidade. Tente importar a habilidade novamente.|
-|Validar a integridade da habilidade|Algo deu errado ao verificar sua habilidade.|O PVA recebeu uma resposta desconhecida ao enviar uma atividade `EndOfConversation` para a sua habilidade. Verifique se a habilidade está em execução e se ela responde corretamente.|
+| Etapa de validação | Código do erro | Mensagem de erro | Descrição ou mitigação
+| :-- | :-- | :-- | :--
+| A URL do manifesto é válida | `URL_MALFORMED`, `URL_NOT_HTTPS` | O link não é válido; o link precisa começar com https:// | Insira novamente o link como uma URL segura.
+| O manifesto é recuperável | `MANIFEST_FETCH_FAILED` | Encontramos problemas ao obter o manifesto de habilidades. | Verifique se a URL do manifesto é um link para seu manifesto; Tente abrir a URL do manifesto em um navegador da Web. Se a URL renderizar a página em 10 segundos, registre novamente sua habilidade.
+| O manifesto é legível | `MANIFEST_TOO_LARGE` | O manifesto é muito grande. | Seu manifesto deve ter 500 KB ou menos.
+| O manifesto é legível | `MANIFEST_MALFORMED` | O manifesto é incompatível. | Verifique se o manifesto é um arquivo JSON válido. Verifique se o manifesto contém as propriedades necessárias, como `name` , `msaAppId` e assim por diante. Consulte [restrições de manifesto](#manifest-restrictions) para obter mais informações.
+| A habilidade ainda não está registrada | `MANIFEST_ALREADY_IMPORTED` | Esta habilidade já foi adicionada ao bot. | Exclua a habilidade e registre-a novamente.
+| Correspondência de domínios de ponto de extremidade de manifesto e página inicial | `MANIFEST_ENDPOINT_ORIGIN_MISMATCH` | Há uma incompatibilidade nos pontos de extremidade da habilidade. | O domínio da URL da home page do aplicativo do Azure AD e o domínio da URL do manifesto devem corresponder. Confira [Restrição de mesmo locatário](#same-tenant-restriction)
+| A habilidade está hospedada no locatário do usuário conectado | `APPID_NOT_IN_TENANT` | Para adicionar uma habilidade, primeiro ela precisa ser registrada.| Um administrador global precisa registrar a habilidade na organização do usuário conectado.
+| As ações são limitadas | `LIMITS_TOO_MANY_ACTIONS` | A habilidade é limitada a 25 ações.|Há muitas ações de habilidades definidas no manifesto de habilidades. Remova as ações e tente novamente.
+| Os parâmetros de entrada da ação são limitados | `LIMITS_TOO_MANY_INPUTS` | As ações são limitadas a 25 entradas.|Há muitos parâmetros de entrada da ação da habilidade. Remova os parâmetros e tente novamente.
+| Parâmetros de saída de ação são limitados | `LIMITS_TOO_MANY_OUTPUTS` | As ações são limitadas a 25 saídas.|Há muitos parâmetros de saída da ação da habilidade. Remova o parâmetro e tente novamente.
+| A contagem de habilidades é limitada | `LIMITS_TOO_MANY_SKILLS` | O bot pode ter um máximo de 25 habilidades.| Há muitas habilidades adicionadas a um bot. Remova uma habilidade existente e tente novamente.
+| O token de segurança é válido | `AADERROR_OTHER` | Parece que algo deu errado.|Pode haver um erro transitório para adquirir um token de segurança e disparar a habilidade. Tente importar a habilidade novamente.
+| A habilidade está íntegra | `ENDPOINT_HEALTHCHECK_FAILED`, `HEALTH_PING_FAILED` | Algo deu errado ao verificar sua habilidade. | Os agentes virtuais de energia receberam uma resposta desconhecida ao enviar uma `EndOfConversation` atividade para sua habilidade. Verifique se a habilidade está em execução e se ela responde corretamente.
+| A habilidade é autorizada | `ENDPOINT_HEALTHCHECK_UNAUTHORIZED` | Essa habilidade não permite-listar o bot. | Verifique se o bot foi adicionado à lista de permissões da habilidade. Para obter mais informações, consulte os agentes virtuais de energia como [Configurar uma habilidade](/power-virtual-agents/configuration-add-skills#configure-a-skill-for-use-in-power-virtual-agents).

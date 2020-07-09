@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 38b7d497e3f46047d8d5d7233c806b9cc146249e
-ms.sourcegitcommit: 2412f96ad8f74dfa615c71f566c5befffb920658
+ms.openlocfilehash: fbaea38346ef5ec364f697e9a8e4a70794de0b90
+ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158787"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86123949"
 ---
 # <a name="virtual-assistant-overview"></a>Visão geral do Assistente Virtual
 
@@ -57,7 +57,7 @@ Implantação automatizada | Todos os recursos do Azure necessários para o seu 
 Modelo de linguagem automotiva | Um modelo de linguagem automotiva que abrange domínios nucleares, como telefone, navegação e controle de recursos no carro, estará disponível em breve.
 
 >[!IMPORTANT]
-> A classe de _armazenamento do Cosmos DB_ foi preterida. Os contêineres criados com o _armazenamento do Cosmos DB_ podem ser usados com o _armazenamento particionado do Cosmos DB_ com a adição do [sinalizador](https://aka.ms/azure-dotnet-cosmosdb-partitionedstorage#L289) `compatibilityMode`. Para obter mais informações, leia [Particionamento no Azure Cosmos DB](https://aka.ms/azure-cosmosdb-partitioning-overview).
+> A classe de _armazenamento do Cosmos DB_ foi preterida. Os contêineres criados com o _armazenamento do Cosmos DB_ podem ser usados com o _armazenamento particionado do Cosmos DB_ com a adição do [sinalizador](https://aka.ms/azure-dotnet-cosmosdb-partitionedstorage#L289) `compatibilityMode`. Para obter mais informações, leia [Particionamento no Azure Cosmos DB](https://aka.ms/azure-cosmosdb-partitioning-overview). Observe também que, diferentemente do armazenamento de Cosmos DB herdado, o armazenamento particionado Cosmos DB não cria automaticamente um banco de dados dentro de sua conta de Cosmos DB. Quando você cria um novo banco de dados, o Cosmos DB cria um contêiner no banco de dados automaticamente.
 
 ## <a name="example-scenarios"></a>Cenários de Exemplo
 

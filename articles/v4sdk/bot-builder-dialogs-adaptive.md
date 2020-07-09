@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/08/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a6f20d9d156e817c253bbca869fe23f88ac4e1eb
-ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
+ms.openlocfilehash: 54c77a656ba9e59334bc5a986c1e0a886aa9d4dc
+ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85073889"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86124048"
 ---
 # <a name="create-a-bot-using-adaptive-dialogs"></a>Criar um bot usando diálogos adaptáveis  
 
@@ -62,20 +62,15 @@ Finalmente, se ele responder sim, exibir as informações coletadas; caso contr�
 
 Para usar os diálogos, instale o pacote NuGet **Microsoft.Bot.Builder.Dialogs.Adaptive**.
 
-O bot interage com o usuário por meio do `RootDialog`. Quando o `RootDialog` do bot é criado, o `AdaptiveDialog` é definido como o diálogo principal. Em seguida, o bot usa o `DialogManager.OnTurnAsync` para executar o diálogo.
+O bot interage com o usuário por meio de uma caixa de diálogo adaptável raiz. Em seguida, o bot usa o `DialogManager.OnTurnAsync` para executar o diálogo.
 
 ![Diálogo raiz](media/bot-builder-root-dialog-adaptive.png)
 
-**Dialogs/RootDialog.cs**
+**Bots\DialogBot.cs**
 
-O código começa criando uma instância da classe `RootDialog` que, por sua vez, cria uma instância do `AdaptiveDialog`. Neste momento, as `WelcomeUserSteps` e as `OnBeginDialogSteps` a seguir são adicionadas ao diálogo.
-O diálogo criado é adicionado ao `DialogSet`, e o nome é salvo no estado do diálogo. Por fim, o nome do diálogo inicial a ser executado é atribuído à `InitialDialogId`. Observe a definição de `paths` referenciando o arquivo `RootDialog.lg` que contém os modelos LG usados na criação do diálogo adaptável.
+O código começa instanciando a caixa de diálogo adaptável raiz. Neste momento, as `WelcomeUserSteps` e as `OnBeginDialogSteps` a seguir são adicionadas ao diálogo. Observe a definição de `paths` referenciando o arquivo `Dialogs\RootDialog.lg` que contém os modelos LG usados na criação do diálogo adaptável.
 
-[!code-csharp[RootDialog snippet](~/../botbuilder-samples/samples/csharp_dotnetcore/adaptive-dialog/01.multi-turn-prompt/Dialogs/RootDialog.cs?range=21-52&highlight=6-25)]
-
-O diálogo raiz é um diálogo de componente:
-
-[!code-csharp[RootDialog snippet](~/../botbuilder-samples/samples/csharp_dotnetcore/adaptive-dialog/01.multi-turn-prompt/Dialogs/RootDialog.cs?range=21&highlight=1)]
+[!code-csharp[define dialog snippet](~/../botbuilder-samples/samples/csharp_dotnetcore/adaptive-dialog/01.multi-turn-prompt/Bots/DialogBot.cs?range=41-62&highlight=4)]
 
 Observe também:
 
@@ -89,13 +84,13 @@ Em `WelcomeUserSteps`, o método fornece as ações a serem executadas quando o 
 > Alguns canais enviam dois eventos de atualização de conversa: um para o bot adicionado à conversa e outro para o usuário.
 > O código filtra os casos em que o próprio bot é o destinatário da mensagem. Para obter mais informações, confira [Atividades categorizadas por canal](https://docs.microsoft.com/azure/bot-service/bot-service-channels-reference?view=azure-bot-service-4.0#welcome).
 
-[!code-csharp[RootDialog snippet](~/../botbuilder-samples/samples/csharp_dotnetcore/adaptive-dialog/01.multi-turn-prompt/Dialogs/RootDialog.cs?range=54-76&highlight=13-20)]
+[!code-csharp[Welcome user](~/../botbuilder-samples/samples/csharp_dotnetcore/adaptive-dialog/01.multi-turn-prompt/Bots/DialogBot.cs?range=73-97)]
 
 As `OnBeginDialogSteps` implementam as **etapas** usadas pelo diálogo. Elas definem as solicitações usando os modelos LG do arquivo `RootDialog.lg`. O código abaixo mostra como a solicitação `Name` é criada.
 
 A ação `IfCondition` usa uma expressão adaptável para solicitar a idade do usuário ou enviar uma mensagem de reconhecimento, dependendo da resposta à pergunta anterior. Novamente, ela usa modelos LG para formatar as solicitações e as mensagens.
 
-[!code-csharp[RootDialog snippet](~/../botbuilder-samples/samples/csharp_dotnetcore/adaptive-dialog/01.multi-turn-prompt/Dialogs/RootDialog.cs?range=80-144&highlight=12-16,31-59)]
+[!code-csharp[On begin dialog](~/../botbuilder-samples/samples/csharp_dotnetcore/adaptive-dialog/01.multi-turn-prompt/Bots/DialogBot.cs?range=99-163)]
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -122,11 +117,7 @@ Para permitir o uso do diálogo adaptável, o código de inicialização precisa
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-**Startup.cs**
-
-Você registra os diálogos adaptáveis na classe `Startup`, juntamente com outros serviços.
-
-[!code-csharp[ConfigureServices](~/../botbuilder-samples/samples/csharp_dotnetcore/adaptive-dialog/01.multi-turn-prompt/Startup.cs?range=22-55&highlight=5-18)]
+A caixa de diálogo adaptável raiz é criada quando o bot é criado.
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -165,7 +156,7 @@ Ouça as solicitações de entrada e encaminhe a mensagem para o manipulador pri
 O `DialogManager.OnTurnAsync` executa o diálogo adaptável com atividades.
 A implementação mostrada pode executar qualquer tipo de `Dialog`. O `ConversationState` é usado pelo sistema de diálogo. No entanto, o `UserState` não pode ter sido usado em uma implementação de diálogo. O método `DialogManager.OnTurnAsync` fica responsável por salvar o estado.
 
-[!code-csharp[Dialogs](~/../botbuilder-samples/samples/csharp_dotnetcore/adaptive-dialog/01.multi-turn-prompt/Bots/DialogBot.cs?range=18-40&highlight=20)]
+[!code-csharp[Dialogs](~/../botbuilder-samples/samples/csharp_dotnetcore/adaptive-dialog/01.multi-turn-prompt/Bots/DialogBot.cs?range=67-71&highlight=4)]
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 

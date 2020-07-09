@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 04/03/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: adace7cc7a7c59ca7b2a820c99519bde783b375f
-ms.sourcegitcommit: 2412f96ad8f74dfa615c71f566c5befffb920658
+ms.openlocfilehash: 684df6cbfedb67038320c529f91a0a5ddcba4a69
+ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158833"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86124009"
 ---
 # <a name="managing-state"></a>Gerenciar estado
 
@@ -45,7 +45,7 @@ O SDK do Bot Framework inclui algumas implementações para a camada de armazena
 - O **armazenamento particionado do Azure Cosmos DB** se conecta a um banco de dados NoSQL particionado do Cosmos DB.
 
 >[!IMPORTANT]
-> A classe de _armazenamento do Cosmos DB_ foi preterida. Os contêineres criados com o _armazenamento do Cosmos DB_ podem ser usados com o _armazenamento particionado do Cosmos DB_ com a adição do [sinalizador](https://aka.ms/azure-dotnet-cosmosdb-partitionedstorage#L289) `compatibilityMode`. Para obter mais informações, leia [Particionamento no Azure Cosmos DB](https://aka.ms/azure-cosmosdb-partitioning-overview).
+> A classe de _armazenamento do Cosmos DB_ foi preterida. Os contêineres criados com o _armazenamento do Cosmos DB_ podem ser usados com o _armazenamento particionado do Cosmos DB_ com a adição do [sinalizador](https://aka.ms/azure-dotnet-cosmosdb-partitionedstorage#L289) `compatibilityMode`. Para obter mais informações, leia [Particionamento no Azure Cosmos DB](https://aka.ms/azure-cosmosdb-partitioning-overview). Observe também que, diferentemente do armazenamento de Cosmos DB herdado, o armazenamento particionado Cosmos DB não cria automaticamente um banco de dados dentro de sua conta de Cosmos DB. Quando você cria um novo banco de dados, o Cosmos DB cria um contêiner no banco de dados automaticamente.
 
 Para obter instruções sobre como se conectar a outras opções de armazenamento, confira [Gravar diretamente no armazenamento](bot-builder-howto-v4-storage.md).
 

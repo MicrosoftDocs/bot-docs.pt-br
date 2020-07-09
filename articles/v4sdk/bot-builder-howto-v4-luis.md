@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 8d4886041fba86fbdd9c0e36e3a9c882782a7242
-ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
+ms.openlocfilehash: fbfe38984992ece838dcf5e015ee0acf7fd39f49
+ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85073935"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86124150"
 ---
 # <a name="add-natural-language-understanding-to-your-bot"></a>Adicionar reconhecimento de idioma natural ao seu bot
 
@@ -114,12 +114,13 @@ O arquivo de configurações (`appsettings.json`, `.env` ou `config.py`) age com
 
 1. Marque seu aplicativo LUIS publicado em [luis.ai](https://www.luis.ai).
 1. Com o aplicativo LUIS publicado aberto, escolha a guia **GERENCIAR**.
-1. Selecione a guia **Configurações** no lado esquerdo.
-    Registre o valor mostrado para a _ID do Aplicativo_ como \<YOUR_APP_ID>.
-    ![Gerenciar o Aplicativo LUIS – Informações do Aplicativo](./media/how-to-luis/manage-luis-app-app-info.png)
+1. Selecione a guia **configurações** no lado esquerdo e registre o valor mostrado para a _ID do aplicativo_ como \<YOUR_APP_ID> .
+    > [!div class="mx-imgBorder"]
+    > ![Gerenciar o Aplicativo LUIS – Informações do Aplicativo](./media/how-to-luis/manage-luis-app-app-info.png)
 1. Selecione a guia **Recursos do Azure** no lado esquerdo e selecione o grupo **Recurso de Criação**.
     Registre o valor mostrado para _Localização_ como \<YOUR_REGION> e _Chave Primária_ como \<YOUR_AUTHORING_KEY>.
-    ![Gerenciar o Aplicativo LUIS – Informações do Aplicativo](./media/how-to-luis/manage-luis-app-azure-resources.png)
+    > [!div class="mx-imgBorder"]
+    > ![Gerenciar o Aplicativo LUIS – Informações do Aplicativo](./media/how-to-luis/manage-luis-app-azure-resources.png)
 
 ### <a name="update-the-settings-file"></a>Atualizar o arquivo de configurações
 
