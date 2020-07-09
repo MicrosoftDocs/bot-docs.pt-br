@@ -116,6 +116,12 @@
 #### [SDK v3 do Node.js](https://aka.ms/bot-jssdk-v3)
 ## [REST](rest-api/TOC.md)
 ## [Ferramenta da CLI do Bot Framework](v4sdk/bf-cli-overview.md)
+## Caixas de diálogo adaptáveis
+### [Eventos e gatilhos](adaptive-dialog/adaptive-dialog-prebuilt-triggers.md)
+### [Ações](adaptive-dialog/adaptive-dialog-prebuilt-actions.md)
+### [Entradas](adaptive-dialog/adaptive-dialog-prebuilt-inputs.md)
+### [Reconhecedores](adaptive-dialog/adaptive-dialog-prebuilt-recognizers.md)
+### [Escopos de memória](adaptive-dialog/adaptive-dialog-prebuilt-memory-states.md)
 ## Expressões adaptáveis
 ### [Funções predefinidas](adaptive-expressions/adaptive-expressions-prebuilt-functions.md)
 ### [Referência de API](adaptive-expressions/adaptive-expressions-API-reference.md)
