@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 05/08/2020
-ms.openlocfilehash: 92dcac068efe8ac9ecdc121073859f8baf76995c
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: aaf69588e047f0f7afa7c984a5bad14e9594e1d7
+ms.sourcegitcommit: 6eb30a963a845ca72326eb03a297a800b37a3f47
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124235"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86418585"
 ---
 <!--
 I'd keep prerequisites, managing state, and memory short-hand notation sections in the concept article, and move the rest to a ref topic. Then, possibly add a little more about how memory scopes and paths are used in the abstract to the concept article, common patterns, etc. I'd also convert the list of scopes into a table with short descriptions.
@@ -74,7 +74,7 @@ Há poucas notações abreviadas compatíveis para acessar os escopos da memóri
 * Para obter informações mais detalhadas sobre o gerenciamento de estado, incluindo exemplos, consulte o artigo [Gerenciamento de estado em caixas de diálogo adaptáveis – guia de referência][managing-state-ref] .
 
 <!-- Links to other articles-->
-[managing-state-ref]:../adaptive-dialog/adaptive-dialog-prebuilt-actions.md
+[managing-state-ref]:../adaptive-dialog/adaptive-dialog-prebuilt-memory-states.md
 [bot-builder-basics]:bot-builder-basics.md
 [introduction]:bot-builder-adaptive-dialog-introduction.md
 [managing-state]:bot-builder-concept-state.md
