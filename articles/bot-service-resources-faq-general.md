@@ -6,13 +6,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 06/09/2020
-ms.openlocfilehash: 7ca3d7357b8ea4b2025fbd02b6acafcd325fda6d
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.date: 07/10/2020
+ms.openlocfilehash: ffc7f367e0c210ad7464910823d0126f741382be
+ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124591"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86542402"
 ---
 # <a name="bot-framework-general"></a>Do bot Framework geral
 
@@ -41,7 +41,6 @@ A finalidade principal de `IDialogStack.Forward` é reutilizar um diálogo filho
 
 Você esperaria encontrar o item encaminhado no primeiro manipulador `ResumeAfter` (p. ex. `LuisDialog.MessageReceived`) agendado por `StartAsync`.
 
-
 ## <a name="what-is-the-difference-between-proactive-and-reactive"></a>Qual é a diferença entre "proativo" e "reativo"?
 
 Do ponto de vista do bot, "reativo" significa que o usuário inicia a conversa enviando uma mensagem para o bot e o bot reage respondendo a essa mensagem. Em contraste, "proativo" significa que o bot inicia a conversa, enviando a primeira mensagem ao usuário. Por exemplo, um bot pode enviar uma mensagem proativa para notificar um usuário quando um temporizador expirar ou ocorrer um evento.
@@ -65,14 +64,16 @@ Um [ETag](https://en.wikipedia.org/wiki/HTTP_ETag) é um mecanismo para [control
 
 O estado e a pilha de diálogo são armazenados em recipientes de dados de bot. Por exemplo, será possível ver o erro de ETag "Falha na Pré-Condição" se o bot ainda estiver processando uma mensagem anterior quando receber uma nova mensagem para essa conversa.
 
-## <a name="what-are-some-community-authored-dialogs"></a>Quais são alguns diálogos criados pela comunidade?
+<!-- Retired, re: https://github.com/MicrosoftDocs/bot-docs/issues/1698
+## What are some community-authored dialogs?
 
-* [BotAuth](https://www.nuget.org/packages/BotAuth) - Autenticação do Azure Active Directory
-* [BestMatchDialog](http://www.garypretty.co.uk/2016/08/01/bestmatchdialog-for-microsoft-bot-framework-now-available-via-nuget/) - Expedição com base em expressões regulares de texto do usuário para métodos de diálogo
+* [BotAuth](https://www.nuget.org/packages/BotAuth) - Azure Active Directory authentication
+* [BestMatchDialog](http://www.garypretty.co.uk/2016/08/01/bestmatchdialog-for-microsoft-bot-framework-now-available-via-nuget/) - Regular expression-based dispatch of user text to dialog methods
 
-## <a name="what-are-some-community-authored-templates"></a>Quais são alguns modelos criados pela comunidade?
+## What are some community-authored templates?
 
-* [ES6 BotBuilder](https://github.com/brene/botbuilder-es6-template) - Modelo do Bot Builder ES6
+* [ES6 BotBuilder](https://github.com/brene/botbuilder-es6-template) - ES6 Bot Builder template
+-->
 
 ## <a name="what-is-rate-limiting"></a>O que é a limitação de taxa?
 
@@ -93,3 +94,45 @@ Isso pode ocorrer se:
 ### <a name="what-are-the-rate-limits"></a>Quais são os limites de taxa?
 
 Estamos continuamente ajustando os limites de taxa para torná-los os mais brandos possíveis, ao mesmo tempo em que protegemos nosso serviço e nossos usuários. Como os limites serão alterados ocasionalmente, não estamos publicando os números no momento. Caso você seja afetado pela limitação de taxa, fique à vontade para falar conosco pelo email [bf-reports@microsoft.com](mailto://bf-reports@microsoft.com).
+
+## <a name="how-to-implement-human-handoff"></a>Como implementar a entrega humana?
+
+Às vezes, é necessário transferir (entrega) uma conversa de um bot para um humano. Isso ocorre por exemplo, se o bot não entender o usuário, ou se a solicitação não puder ser automatizada. Nesses casos, o bot fornece uma transição para os seres humanos.
+
+<!-- Handoff are [event activities](https://github.com/Microsoft/botframework-sdk/blob/master/specs/botframework-activity/botframework-activity.md#event-activity) from bot to channels. These events are used for the handoff between a bot and the agent hub and are also known as **handoff events**.
+
+When a bot detects the need to hand the conversation off to an agent, it signals its intent by sending a **handoff initiation event**. See this [handoff protocol](~/bot-service-design-pattern-handoff-human.md#handoff-protocol) example. -->
+
+O SDK do bot Framework dá suporte à entrega a um humano. Há alguns **tipos de evento** para a sinalização de operações de entrega. Esses eventos são trocados entre um **bot** e um **Hub de agente**, também chamado de Hub de envolvimento. Esse Hub de agente é definido como um aplicativo ou um sistema que permite que agentes, normalmente humanos, recebam e manipulem solicitações de usuários, bem como solicitações de escalonamento de bots.
+
+Para obter informações detalhadas, confira [conversações de transição do bot para](~/bot-service-design-pattern-handoff-human.md) o artigo humano.
+
+<!-- See [Handoff Library](https://github.com/microsoft/BotBuilder-Samples/tree/master/experimental/handoff-library#handoff-library).
+
+You can select one of the following models for integration with the agent hubs:
+
+- [Bot as an agent](~/bot-service-design-pattern-handoff-human.md#bot-as-an-agent)
+- [Bot as a proxy](~/bot-service-design-pattern-handoff-human.md#bot-as-a-proxy)
+
+The handoff protocol is identical for both models, however the onboarding details differ between the models and the agent engagement hubs. The protocol is centered around events for initiation (sent by the bot to the channel) and status update (sent by the channel to the bot). For more information, see the [protocol](https://github.com/microsoft/BotBuilder-Samples/tree/master/experimental/handoff-library#protocol) of the **hand off library**.
+
+> [!NOTE]
+> DirectLine channel supports handoff in the [bot as an agent](~/bot-service-design-pattern-handoff-human.md#bot-as-an-agent) scenario.  This is because there is an application that handles the handoff event.
+
+In the case of channels that do not handle the handoff, the middleware is used to transform the handoff event into API calls specific to the agent hub.
+-->
+
+<!--
+### ??Questions??
+
+1. The [Transition conversations from bot to human](~/bot-service-design-pattern-handoff-human.md) article refers to the following:
+
+    - [Integration with Microsoft Dynamics Omnichannel for Customer Service](https://github.com/microsoft/BotBuilder-Samples/tree/master/experimental/handoff-library/csharp_dotnetcore/samples)
+    - [Integration with LiverPerson LiveEngage platform](https://developers.liveperson.com/third-party-bots-microsoft-bot-framework.html)
+
+    **Q1: Do we need to show how to use them perhaps in a specific how to article?**
+
+1. The [PR 1786](https://github.com/MicrosoftDocs/bot-docs/issues/1786) says *We and customers have implemented connectors (middleware + adapter) for LivePerson proxy, ServiceNow, RingCentral and others.*
+
+    **Q2: Do we need to refer to this?**: [HandoffMiddleware.cs](https://github.com/microsoft/BotBuilder-Samples/blob/master/experimental/handoff-library/csharp_dotnetcore/samples/LivePersonAgentBot/Middleware/HandoffMiddleware.cs).
+>

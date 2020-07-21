@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 2/7/2020
+ms.date: 07/13/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: e1789a727a0a5c92d0630cc4f04841f867d1b721
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: a2af5ef79fb81a7cae0aa12966c83bb2a8d312d8
+ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420297"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86542501"
 ---
 # <a name="create-your-own-prompts-to-gather-user-input"></a>Crie seus próprio prompts para coletar entradas do usuário
 
@@ -71,9 +71,11 @@ Usamos o manipulador de turno de mensagem do bot e as propriedades do estado da 
 
 Crie o usuário e os objetos de estado da conversa na inicialização e consuma-os por meio da injeção de dependência no construtor de bot.
 
-**Startup.cs** [!code-csharp[Startup.cs](~/../botbuilder-samples/samples/csharp_dotnetcore/44.prompt-users-for-input/Startup.cs?range=23-30)]
+**Startup.cs**  
+[!code-csharp[Startup.cs](~/../botbuilder-samples/samples/csharp_dotnetcore/44.prompt-users-for-input/Startup.cs?range=23-30)]
 
-**Bots/CustomPromptBot.cs** [!code-csharp[constructor](~/../botbuilder-samples/samples/csharp_dotnetcore/44.prompt-users-for-input/Bots/CustomPromptBot.cs?range=21-28)]
+**Bots/CustomPromptBot.cs**  
+[!code-csharp[constructor](~/../botbuilder-samples/samples/csharp_dotnetcore/44.prompt-users-for-input/Bots/CustomPromptBot.cs?range=21-28)]
 
 ## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -90,11 +92,11 @@ Crie o usuário e os objetos de estado da conversa em **index.js** e consuma-os 
 
 Crie o usuário e os objetos de estado da conversa em **app.py** e consuma-os no construtor de bot.
 
-**app.py**
+**app.py**  
 
 [!code-python[app.py](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/app.py?range=68-74)]
 
-**bots/custom_prompt_bot.py**
+**bots/custom_prompt_bot.py**  
 
 [!code-python[constructor](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=29-41)]
 
@@ -128,7 +130,8 @@ Antes do fim da rodada, chame `saveChanges` para gravar qualquer alteração de 
 
 No construtor, criamos os acessadores de propriedade de estado e configuramos os objetos de gerenciamento de estado (criados acima) para nossa conversa.
 
-**bots/custom_prompt_bot.py** [!code-python[on_message_activity](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=46-49)]
+**bots/custom_prompt_bot.py**  
+[!code-python[on_message_activity](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=46-49)]
 
 Antes do fim da rodada, chame `SaveChangesAsync` para gravar qualquer alteração de estado no armazenamento.
 
@@ -142,15 +145,18 @@ Ao lidar com atividades de mensagens, o manipulador de mensagens usa um método 
 
 ## <a name="c"></a>[C#](#tab/csharp)
 
-**Bots/CustomPromptBot.cs** [!code-csharp[message handler](~/../botbuilder-samples/samples/csharp_dotnetcore/44.prompt-users-for-input/Bots/CustomPromptBot.cs?range=30-44)]
+**Bots/CustomPromptBot.cs**  
+[!code-csharp[message handler](~/../botbuilder-samples/samples/csharp_dotnetcore/44.prompt-users-for-input/Bots/CustomPromptBot.cs?range=30-44)]
 
 ## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-**bots/customPromptBot.js** [!code-javascript[message handler](~/../botbuilder-samples/samples/javascript_nodejs/44.prompt-for-user-input/bots/customPromptBot.js?range=31-39)]
+**bots/customPromptBot.js**  
+[!code-javascript[message handler](~/../botbuilder-samples/samples/javascript_nodejs/44.prompt-for-user-input/bots/customPromptBot.js?range=31-39)]
 
 ## <a name="python"></a>[Python](#tab/python)
 
-**bots/custom_prompt_bot.py** [!code-python[message handler](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=46-55)]
+**bots/custom_prompt_bot.py**  
+[!code-python[message handler](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=46-55)]
 
 ---
 
@@ -168,15 +174,18 @@ Os métodos de validação são descritos na seção a seguir.
 
 ## <a name="c"></a>[C#](#tab/csharp)
 
-**Bots/CustomPromptBot.cs** [!code-csharp[FillOutUserProfileAsync](~/../botbuilder-samples/samples/csharp_dotnetcore/44.prompt-users-for-input/Bots/CustomPromptBot.cs?range=46-103)]
+**Bots/CustomPromptBot.cs**  
+[!code-csharp[FillOutUserProfileAsync](~/../botbuilder-samples/samples/csharp_dotnetcore/44.prompt-users-for-input/Bots/CustomPromptBot.cs?range=46-103)]
 
 ## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-**bots/customPromptBot.js** [!code-javascript[fillOutUserProfile](~/../botbuilder-samples/samples/javascript_nodejs/44.prompt-for-user-input/bots/customPromptBot.js?range=53-118)]
+**bots/customPromptBot.js**  
+[!code-javascript[fillOutUserProfile](~/../botbuilder-samples/samples/javascript_nodejs/44.prompt-for-user-input/bots/customPromptBot.js?range=53-118)]
 
 ## <a name="python"></a>[Python](#tab/python)
 
-**bots/custom_prompt_bot.py** [!code-python[_fill_out_user_profile](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=57-125)]
+**bots/custom_prompt_bot.py**  
+[!code-python[_fill_out_user_profile](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=57-125)]
 
 ---
 
@@ -196,15 +205,18 @@ O bot usa os critérios a seguir para validar a entrada.
 
 ## <a name="c"></a>[C#](#tab/csharp)
 
-**Bots/CustomPromptBot.cs** [!code-csharp[validation methods](~/../botbuilder-samples/samples/csharp_dotnetcore/44.prompt-users-for-input/Bots/CustomPromptBot.cs?range=105-203)]
+**Bots/CustomPromptBot.cs**  
+[!code-csharp[validation methods](~/../botbuilder-samples/samples/csharp_dotnetcore/44.prompt-users-for-input/Bots/CustomPromptBot.cs?range=105-203)]
 
 ## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-**bots/customPromptBot.cs** [!code-javascript[validation methods](~/../botbuilder-samples/samples/javascript_nodejs/44.prompt-for-user-input/bots/customPromptBot.js?range=120-190)]
+**bots/customPromptBot.cs** [!code-javascript[validation methods](~/../botbuilder-samples/samples/javascript_nodejs/44.prompt-for-user-input/bots/customPromptBot.js?range=120-191)]
+
 
 ## <a name="python"></a>[Python](#tab/python)
 
-**bots/custom_prompt_bot.py** [!code-python[validation methods](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=127-189)]
+**bots/custom_prompt_bot.py**  
+[!code-python[validation methods](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=127-189)]
 
 ---
 

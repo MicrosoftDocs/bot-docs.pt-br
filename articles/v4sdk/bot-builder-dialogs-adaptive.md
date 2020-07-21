@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/08/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 54c77a656ba9e59334bc5a986c1e0a886aa9d4dc
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: aeca38068e9dd81f586c8a6223ad8d063c145559
+ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124048"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86542543"
 ---
 # <a name="create-a-bot-using-adaptive-dialogs"></a>Criar um bot usando diálogos adaptáveis  
 
@@ -66,31 +66,33 @@ O bot interage com o usuário por meio de uma caixa de diálogo adaptável raiz.
 
 ![Diálogo raiz](media/bot-builder-root-dialog-adaptive.png)
 
-**Bots\DialogBot.cs**
+**Dialogs\RootDialog.cs**
 
 O código começa instanciando a caixa de diálogo adaptável raiz. Neste momento, as `WelcomeUserSteps` e as `OnBeginDialogSteps` a seguir são adicionadas ao diálogo. Observe a definição de `paths` referenciando o arquivo `Dialogs\RootDialog.lg` que contém os modelos LG usados na criação do diálogo adaptável.
 
-[!code-csharp[define dialog snippet](~/../botbuilder-samples/samples/csharp_dotnetcore/adaptive-dialog/01.multi-turn-prompt/Bots/DialogBot.cs?range=41-62&highlight=4)]
+[!code-csharp[define dialog snippet](~/../botbuilder-samples/samples/csharp_dotnetcore/adaptive-dialog/01.multi-turn-prompt/Dialogs/RootDialog.cs?range=17-38&highlight=3-4,21)]
 
 Observe também:
 
 - O gerador de modelo LG é adicionado ao diálogo adaptável para habilitar o uso dos **modelos LG**.
 - Os dois gatilhos são adicionados, com as ações sendo fornecidas pelos dois métodos auxiliares.
 
-Em `WelcomeUserSteps`, o método fornece as ações a serem executadas quando o gatilho for acionado. As ações `Foreach` iteram na lista `membersAdded` para saudar o usuário adicionado à conversa.
+O `WelcomeUserSteps` método fornece as ações a serem executadas quando o gatilho for acionado. As ações `Foreach` iteram na lista `membersAdded` para saudar o usuário adicionado à conversa.
 
 > [!NOTE]
 > No contexto de diálogos adaptáveis e gatilhos, todos os diálogos são ações válidas e os tipos de ação (`Foreach`, `IfCondition`, `SendActivity`) são todos diálogos.
 > Alguns canais enviam dois eventos de atualização de conversa: um para o bot adicionado à conversa e outro para o usuário.
 > O código filtra os casos em que o próprio bot é o destinatário da mensagem. Para obter mais informações, confira [Atividades categorizadas por canal](https://docs.microsoft.com/azure/bot-service/bot-service-channels-reference?view=azure-bot-service-4.0#welcome).
 
-[!code-csharp[Welcome user](~/../botbuilder-samples/samples/csharp_dotnetcore/adaptive-dialog/01.multi-turn-prompt/Bots/DialogBot.cs?range=73-97)]
+[!code-csharp[Welcome user](~/../botbuilder-samples/samples/csharp_dotnetcore/adaptive-dialog/01.multi-turn-prompt/Dialogs/RootDialog.cs?range=40-64)]
 
-As `OnBeginDialogSteps` implementam as **etapas** usadas pelo diálogo. Elas definem as solicitações usando os modelos LG do arquivo `RootDialog.lg`. O código abaixo mostra como a solicitação `Name` é criada.
+As `GatherUserInformation` implementam as **etapas** usadas pelo diálogo. Elas definem as solicitações usando os modelos LG do arquivo `RootDialog.lg`. O código abaixo mostra como a solicitação `Name` é criada.
+
+[!code-csharp[gather user information](~/../botbuilder-samples/samples/csharp_dotnetcore/adaptive-dialog/01.multi-turn-prompt/Dialogs/RootDialog.cs?range=66-133)]
 
 A ação `IfCondition` usa uma expressão adaptável para solicitar a idade do usuário ou enviar uma mensagem de reconhecimento, dependendo da resposta à pergunta anterior. Novamente, ela usa modelos LG para formatar as solicitações e as mensagens.
 
-[!code-csharp[On begin dialog](~/../botbuilder-samples/samples/csharp_dotnetcore/adaptive-dialog/01.multi-turn-prompt/Bots/DialogBot.cs?range=99-163)]
+[!code-csharp[if condition](~/../botbuilder-samples/samples/csharp_dotnetcore/adaptive-dialog/01.multi-turn-prompt/Dialogs/RootDialog.cs?range=91-119)]
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -156,7 +158,7 @@ Ouça as solicitações de entrada e encaminhe a mensagem para o manipulador pri
 O `DialogManager.OnTurnAsync` executa o diálogo adaptável com atividades.
 A implementação mostrada pode executar qualquer tipo de `Dialog`. O `ConversationState` é usado pelo sistema de diálogo. No entanto, o `UserState` não pode ter sido usado em uma implementação de diálogo. O método `DialogManager.OnTurnAsync` fica responsável por salvar o estado.
 
-[!code-csharp[Dialogs](~/../botbuilder-samples/samples/csharp_dotnetcore/adaptive-dialog/01.multi-turn-prompt/Bots/DialogBot.cs?range=67-71&highlight=4)]
+[!code-csharp[Dialogs](~/../botbuilder-samples/samples/csharp_dotnetcore/adaptive-dialog/01.multi-turn-prompt/Bots/DialogBot.cs?range=30-34&highlight=4)]
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 

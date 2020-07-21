@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 04/02/2020
+ms.date: 07/15/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 147ee3292c16ba34f956d3d28824568b98c0b8b1
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: 4a95cac0e73a99756bbbb3036a3ed400865213d8
+ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83555667"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86542442"
 ---
 # <a name="use-a-dialog-to-consume-a-skill"></a>Usar uma caixa de diálogo para consumir um skill
 
@@ -72,7 +72,7 @@ Registre tanto o skill quanto o consumidor de skills com o Azure. Você pode usa
 ## <a name="application-configuration"></a>Configuração de aplicativo
 
 1. Adicione a ID do aplicativo e a senha do bot raiz.
-1. Adicione a URL do ponto de extremidade ao qual os skills devem responder ao consumidor de skills.
+1. Adicione o ponto de extremidade do host de habilidades (o serviço ou a URL de retorno de chamada) ao qual as habilidades devem responder ao consumidor de habilidades.
 1. Adicione uma entrada para cada skill que o consumidor de skills usará. Cada entrada inclui:
    - Uma ID que o consumidor de skills usará para identificar cada skill.
    - A ID do aplicativo do skill.

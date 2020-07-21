@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/19/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b2cb0ff374b7b0c6f0636bb72f71f5b1c19b17cd
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: f13e6629276ebe3c708c9107093c91b2a7ef472b
+ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420657"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86542342"
 ---
 # <a name="adaptive-expressions-prebuilt-functions"></a>Funções predefinidas de expressões adaptáveis
 
@@ -4193,7 +4193,7 @@ E retorna o resultado usando o formato *D* opcional: **Monday, January, 1, 2018*
 Retornar o resultado da adição de números em uma lista.
 
 ```
-add([<list of numbers>])
+sum([<list of numbers>])
 ```
 
 | Parâmetro | Obrigatório | Type | Descrição |
@@ -4211,7 +4211,7 @@ add([<list of numbers>])
 Esse exemplo adiciona os números especificados:
 
 ```
-add(createArray(1, 1.5))
+sum(createArray(1, 1.5))
 ```
 
 E retorna o resultado **2,5**.

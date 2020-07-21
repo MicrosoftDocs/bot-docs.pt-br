@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 03/19/2020
+ms.date: 07/08/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 7470296952166aa9ec326a7625cb484fa5df3bba
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: 214eb5bc522b922d2dbfb06cc84c3e6650e94433
+ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420227"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86542452"
 ---
 # <a name="implement-a-skill"></a>Implementar um skill
 
@@ -180,7 +180,7 @@ Derive um validador de declarações da classe `ClaimsValidator`. Ele emitirá u
 
 **EchoSkillBot\Authentication\AllowedCallersClaimsValidator.cs**
 
-[!code-csharp[Claims validator](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/EchoSkillBot/Authentication/AllowedCallersClaimsValidator.cs?range=17-58)]
+[!code-csharp[Claims validator](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/EchoSkillBot/Authentication/AllowedCallersClaimsValidator.cs?range=17-59)]
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -220,7 +220,7 @@ Quando ocorre um erro, o adaptador do skill deve limpar o estado da conversa par
 
 **echo-skill-bot/adapter_with_error_handler.py**
 
-[!code-python[Error handler](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/echo-skill-bot/adapter_with_error_handler.py?range=23-77&highlight=42-48)]
+[!code-python[Error handler](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/echo-skill-bot/adapter_with_error_handler.py?range=23-77&highlight=43-49)]
 
 ---
 

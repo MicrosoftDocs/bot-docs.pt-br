@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/08/2020
-ms.openlocfilehash: 581fe047e99cb8ccd4d5e5263c2cf7f8e29a4b1e
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: feb6b8070c1bcf68ebbb47e472b9274ab29ba3c5
+ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124592"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86542312"
 ---
 # <a name="ecosystem"></a>Ecossistema
 
@@ -73,6 +73,40 @@ A Linha Direta é adequada para:
 - Aplicativos da área de trabalho no Windows, no OSX e muito mais
 - Páginas da Web em que você precisa de mais personalização do que o [canal de bate-papo de Internet incorporável] ofertas
 - Aplicativos de serviço a serviço
+
+## <a name="what-are-the-steps-to-configure-web-chat-and-direct-line-for-azure-government"></a>Quais são as etapas para configurar o chat da Web e a linha direta para o Azure governamental?
+
+As etapas para configurar o chat da Web e a linha direta para o Azure governamental são semelhantes às usadas para o Azure público. No Azure governamental, você define o [domínio](https://github.com/microsoft/BotFramework-WebChat/blob/master/packages/bundle/src/createDirectLine.js#L6) para a URL do Azure governamental porque o [domínio padrão](https://github.com/microsoft/BotFramework-DirectLineJS/blob/master/src/directLine.ts#L456) se aplica ao Azure público, não ao Azure governamental. Observe também que a URL pública do Azure ( `https://webchat.botframework.com/v3/directline` ) é diferente da URL do Azure governamental ( `https://webchat.botframework.azure.us/v3/directline` ) para o chat da Web e a configuração de linha direta.  
+
+O exemplo a seguir mostra como definir o domínio para a URL do Azure governamental: 
+
+```html
+<body>
+    <div id="webchat" role="main"></div>
+    <script>
+      window.WebChat.renderWebChat(
+        {
+          directLine: window.WebChat.createDirectLine({
+          token: 'YOUR_TOKEN_SECRET', 
+          domain: 'https://webchat.botframework.azure.us/v3/directline'
+          }),
+          userID: 'YOUR_USER_ID',
+          username: 'Web Chat User',
+          locale: 'en-US',
+          botAvatarInitials: 'WC',
+          userAvatarInitials: 'WW'
+        },
+        document.getElementById('webchat')
+      );
+    </script>
+  </body>
+
+```
+Saiba mais nos documentos a seguir:
+* [Conectar um bot ao Webchat](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-webchat?view=azure-bot-service-4.0) 
+* [Conectar um bot à Linha Direta](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directline?view=azure-bot-service-4.0)
+* Para uma abordagem programática para trocar seu segredo para um token, use o trecho de código fornecido [aqui](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-webchat?view=azure-bot-service-4.0#production-embedding--option) e ajuste as URLs do Azure público para o Azure governamental.
+
 
 ## <a name="how-does-the-bot-framework-relate-to-cognitive-services"></a>Como o Bot Framework está relacionado aos Serviços Cognitivos?
 

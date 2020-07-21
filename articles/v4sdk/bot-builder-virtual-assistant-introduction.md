@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: fbaea38346ef5ec364f697e9a8e4a70794de0b90
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: dae9261ae4e6d522f148472f7b95c15aaf0dba88
+ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86123949"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86542432"
 ---
 # <a name="virtual-assistant-overview"></a>Visão geral do Assistente Virtual
 
@@ -57,7 +57,11 @@ Implantação automatizada | Todos os recursos do Azure necessários para o seu 
 Modelo de linguagem automotiva | Um modelo de linguagem automotiva que abrange domínios nucleares, como telefone, navegação e controle de recursos no carro, estará disponível em breve.
 
 >[!IMPORTANT]
-> A classe de _armazenamento do Cosmos DB_ foi preterida. Os contêineres criados com o _armazenamento do Cosmos DB_ podem ser usados com o _armazenamento particionado do Cosmos DB_ com a adição do [sinalizador](https://aka.ms/azure-dotnet-cosmosdb-partitionedstorage#L289) `compatibilityMode`. Para obter mais informações, leia [Particionamento no Azure Cosmos DB](https://aka.ms/azure-cosmosdb-partitioning-overview). Observe também que, diferentemente do armazenamento de Cosmos DB herdado, o armazenamento particionado Cosmos DB não cria automaticamente um banco de dados dentro de sua conta de Cosmos DB. Quando você cria um novo banco de dados, o Cosmos DB cria um contêiner no banco de dados automaticamente.
+> A classe de _armazenamento do Cosmos DB_ foi preterida. Os contêineres criados originalmente com CosmosDbStorage não tinham nenhum conjunto de chaves de partição e receberam a chave de partição padrão de _ \/ _partitionKey_.
+>
+> Contêineres criados com _Cosmos DB armazenamento_ podem ser usados com _Cosmos DB armazenamento particionado_. Para obter mais informações, leia [Particionamento no Azure Cosmos DB](https://aka.ms/azure-cosmosdb-partitioning-overview).
+>
+> Observe também que, diferentemente do armazenamento de Cosmos DB herdado, o armazenamento particionado Cosmos DB não cria automaticamente um banco de dados dentro de sua conta de Cosmos DB. Você precisa [criar um novo banco de dados manualmente](https://docs.microsoft.com/azure/cosmos-db/create-cosmosdb-resources-portal), mas ignorar a criação manual de um contêiner, pois o _CosmosDbPartitionedStorage_ criará o contêiner para você.
 
 ## <a name="example-scenarios"></a>Cenários de Exemplo
 
@@ -110,4 +114,3 @@ Todos os aspectos de cada habilidade (modelo de linguagem, diálogos, código de
 ## <a name="getting-started"></a>Introdução
 
 Consulte os [tutoriais](https://aka.ms/bfs-tutorials) para saber como criar e implantar seu Assistente Virtual.
-

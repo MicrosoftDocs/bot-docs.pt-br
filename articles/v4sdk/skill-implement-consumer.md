@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 03/19/2020
+ms.date: 07/15/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a282db92179da22273cf41d1ddf0ad755442aba5
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: 7194834c795d35bd18f7b9da7aff32d7d360ea0f
+ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83555687"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86542601"
 ---
 # <a name="implement-a-skill-consumer"></a>Implementar um consumidor de skills
 
@@ -76,7 +76,7 @@ Registre tanto o skill quanto o consumidor de skills com o Azure. Você pode usa
 ## <a name="application-configuration"></a>Configuração de aplicativo
 
 1. Adicione a ID do aplicativo e a senha do bot raiz.
-1. Adicione a URL do ponto de extremidade ao qual os skills devem responder ao consumidor de skills.
+1. Adicione o ponto de extremidade do host de habilidades (o serviço ou a URL de retorno de chamada) ao qual as habilidades devem responder ao consumidor de habilidades.
 1. Adicione uma entrada para cada skill que o consumidor de skills usará. Cada entrada inclui:
    - Uma ID que o consumidor de skills usará para identificar cada skill.
    - A ID do aplicativo do skill.
@@ -380,6 +380,12 @@ Para enviar parâmetros para o skill, o consumidor de skills pode definir a prop
 - Se um skill estiver ativo, o bot raiz precisará determinar qual skill está ativo e encaminhar a mensagem do usuário para o skill correto.
 - Se nenhum skill estiver ativo, o bot raiz precisará determinar qual skill deve ser iniciado, se houver algum, com base no estado do bot e na entrada do usuário.
 - Se você quiser permitir que o usuário alterne entre vários skills simultâneos, o bot raiz precisará determinar a quais dos skills ativos o usuário está pretendendo interagir antes de encaminhar a mensagem do usuário.
+
+### <a name="to-use-deliverymode-expectreplies"></a>Para usar o ExpectReplies de entrega
+
+- Altere DeliveryMode para ExpectReplies antes de enviar a atividade do bot raiz para as habilidades.
+- Leia ExpectedReplies do corpo de InvokeResponse retornado da resposta de solicitação. (O SkillDialog executa essa etapa automaticamente.)
+- Processe cada atividade, seja dentro do bot raiz ou enviando-a para o canal que iniciou a solicitação original. (O SkillDialog executa essa etapa automaticamente.)
 
 <!--
 ## Next steps

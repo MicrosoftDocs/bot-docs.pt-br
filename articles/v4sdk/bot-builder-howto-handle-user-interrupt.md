@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 03/25/2020
+ms.date: 07/08/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f5ab62b3ec7ce84ca8f9be54c1d8f4c703c1ea77
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: b156a12590be92b329f74c86f010efdb6ef98782
+ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420357"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86542511"
 ---
 # <a name="handle-user-interruptions"></a>Manipular interrupções do usuário
 
@@ -25,7 +25,7 @@ O tratamento de interrupções é um aspecto importante de um bot robusto. Os us
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento sobre [noções básicas de bots][concept-basics], [gerenciamento de estado][concept-state], a [biblioteca de diálogos][concept-dialogs] e como [reutilizar diálogos][component-dialogs].
-- Uma cópia do exemplo principal de bot em [**CSharp**][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
+- Uma cópia do exemplo principal de bot em [**C#**][cs-sample], [**JavaScript**][js-sample] ou [**python**][python-sample].
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
@@ -113,11 +113,11 @@ Depois que a classe de manipulação de interrupção for implementada, examine 
 
 Assim que a nova atividade de mensagem chega, o bot executa o `MainDialog`. O `MainDialog` pergunta ao usuário no que pode ajudar. Então, ele inicia o `BookingDialog` no método `MainDialog.ActStepAsync`, com uma chamada para `BeginDialogAsync`, conforme mostrado abaixo.
 
-[!code-csharp[ActStepAsync](~/../botbuilder-samples/samples/csharp_dotnetcore/13.core-bot/Dialogs/MainDialog.cs?range=58-101&highlight=6,26)]
+[!code-csharp[ActStepAsync](~/../botbuilder-samples/samples/csharp_dotnetcore/13.core-bot/Dialogs/MainDialog.cs?range=59-102&highlight=6,26)]
 
 Em seguida, no método `FinalStepAsync` da classe `MainDialog`, a caixa de diálogo de reserva é encerrada e a reserva é considerada finalizada ou cancelada.
 
-[!code-csharp[FinalStepAsync](~/../botbuilder-samples/samples/csharp_dotnetcore/13.core-bot/Dialogs/MainDialog.cs?range=130-150)]
+[!code-csharp[FinalStepAsync](~/../botbuilder-samples/samples/csharp_dotnetcore/13.core-bot/Dialogs/MainDialog.cs?range=131-151)]
 
 O código em `BookingDialog` não é mostrado aqui, porque não está diretamente relacionado com a manipulação da interrupção. Ele é usado para solicitar os detalhes de reserva aos usuários. Você pode encontrar esse código em **Dialogs\BookingDialogs.cs**.
 
@@ -127,11 +127,11 @@ O código em `BookingDialog` não é mostrado aqui, porque não está diretament
 
 Assim que a nova atividade de mensagem chega, o bot executa o `MainDialog`. O `MainDialog` pergunta ao usuário no que pode ajudar. Então, ele inicia o `bookingDialog` no método `MainDialog.actStep`, com uma chamada para `beginDialog`, conforme mostrado abaixo.
 
-[!code-javascript[Act step](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/dialogs/mainDialog.js?range=71-115&highlight=6,27)]
+[!code-javascript[Act step](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/dialogs/mainDialog.js?range=73-117&highlight=6,27)]
 
 Em seguida, no método `finalStep` da classe `MainDialog`, a caixa de diálogo de reserva é encerrada e a reserva é considerada finalizada ou cancelada.
 
-[!code-javascript[Final step](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/dialogs/mainDialog.js?range=142-159)]
+[!code-javascript[Final step](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/dialogs/mainDialog.js?range=144-161)]
 
 O código em `BookingDialog` não é mostrado aqui, porque não está diretamente relacionado com a manipulação da interrupção. Ele é usado para solicitar os detalhes de reserva aos usuários. Você pode encontrar esse código em **dialogs/bookingDialogs.js**.
 
@@ -141,7 +141,7 @@ O código em `BookingDialog` não é mostrado aqui, porque não está diretament
 
 Assim que a nova atividade de mensagem chega, o bot executa o `MainDialog`. O `MainDialog` pergunta ao usuário no que pode ajudar. Então, ele inicia o `bookingDialog` no método `MainDialog.act_step`, com uma chamada para `begin_dialog`, conforme mostrado abaixo.
 
-[!code-python[act step](~/../botbuilder-samples/samples/python/13.core-bot/dialogs/main_dialog.py?range=63-100&highlight=4-5,20)]
+[!code-python[act step](~/../botbuilder-samples/samples/python/13.core-bot/dialogs/main_dialog.py?range=63-100&highlight=4-6,20)]
 
 Em seguida, no método `final_step` da classe `MainDialog`, a caixa de diálogo de reserva é encerrada e a reserva é considerada finalizada ou cancelada.
 
@@ -167,7 +167,7 @@ Em nosso exemplo, o manipulador do `OnTurnError` do adaptador recebe as exceçõ
 
 Em nosso exemplo, o manipulador do `onTurnError` do adaptador recebe as exceções geradas pela lógica de turno do seu bot. Se uma exceção for lançada, o manipulador excluirá o estado de conversa da conversa atual para impedir que o bot fique preso em um loop de erro causado por estar em estado inválido.
 
-[!code-javascript[AdapterWithErrorHandler](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/index.js?range=37-59)]
+[!code-javascript[AdapterWithErrorHandler](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/index.js?range=37-58)]
 
 ## <a name="python"></a>[Python](#tab/python)
 
@@ -201,12 +201,14 @@ Para referência, aqui estão as definições de classe que são usadas na chama
 
 Por fim, em `index.js`, o bot é criado.
 
-[!code-javascript[Create bot](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/index.js?range=70-83)]
+[!code-javascript[Create bot](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/index.js?range=69-82)]
 
 Para referência, aqui estão as definições de classe que são usadas na chamada para criar o bot acima.
 
-[!code-javascript[MainDialog signature](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/dialogs/mainDialog.js?range=11)]
+[!code-javascript[MainDialog signature](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/dialogs/mainDialog.js?range=12)]
+
 [!code-javascript[DialogAndWelcomeBot signature](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/bots/dialogAndWelcomeBot.js?range=8)]
+
 [!code-javascript[DialogBot signature](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/bots/dialogBot.js?range=6)]
 
 ## <a name="python"></a>[Python](#tab/python)
@@ -235,7 +237,7 @@ Para referência, aqui estão as definições de classe que são usadas na chama
 
 ## <a name="additional-information"></a>Informações adicionais
 
-- O exemplo 24.bot-authentication-msgraph em [**C#** ](https://aka.ms/auth-sample-cs), [**JavaScript**](https://aka.ms/auth-sample-js) ou [**Python**](https://aka.ms/auth-sample-py)) mostra como lidar com uma solicitação de logoff. Ele usa um padrão semelhante ao mostrado aqui para lidar com as interrupções.
+- O exemplo 24. bot-Authentication-msgraph em [**C#**](https://aka.ms/auth-sample-cs), [**JavaScript**](https://aka.ms/auth-sample-js)ou [**python**](https://aka.ms/auth-sample-py) mostra como tratar uma solicitação de logout. Ele usa um padrão semelhante ao mostrado aqui para lidar com as interrupções.
 
 - Você deverá enviar uma resposta padrão em vez de não realizar nenhuma ação e deixar o usuário se perguntando o que está acontecendo. A resposta padrão deve informar o usuário quais comandos são reconhecidos pelo bot, de modo que o usuário possa voltar para um tópico adequado.
 

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/01/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: e9d92bb8bfd3acd9b8ded40222bb417debeb9a06
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: 7a97d841c033d20bea3a33234ad28a23221337ee
+ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124182"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86542521"
 ---
 # <a name="write-directly-to-storage"></a>Gravar diretamente no armazenamento
 
@@ -320,7 +320,11 @@ Envie uma mensagem ao bot. Ele listará as mensagens recebidas.
 ## <a name="using-cosmos-db"></a>Usar o Cosmos DB
 
 >[!IMPORTANT]
-> A classe de _armazenamento do Cosmos DB_ foi preterida. Os contêineres criados com o _armazenamento do Cosmos DB_ podem ser usados com o _armazenamento particionado do Cosmos DB_ com a adição do [sinalizador](https://aka.ms/azure-dotnet-cosmosdb-partitionedstorage#L289) `compatibilityMode`. Para obter mais informações, leia [Particionamento no Azure Cosmos DB](https://aka.ms/azure-cosmosdb-partitioning-overview). Observe também que, diferentemente do armazenamento de Cosmos DB herdado, o armazenamento particionado Cosmos DB não cria automaticamente um banco de dados dentro de sua conta de Cosmos DB. Quando você cria um novo banco de dados, o Cosmos DB cria um contêiner no banco de dados automaticamente.
+> A classe de _armazenamento do Cosmos DB_ foi preterida. Os contêineres criados originalmente com CosmosDbStorage não tinham nenhum conjunto de chaves de partição e receberam a chave de partição padrão de _ \/ _partitionKey_.
+>
+> Contêineres criados com _Cosmos DB armazenamento_ podem ser usados com _Cosmos DB armazenamento particionado_. Para obter mais informações, leia [Particionamento no Azure Cosmos DB](https://aka.ms/azure-cosmosdb-partitioning-overview).
+>
+> Observe também que, diferentemente do armazenamento de Cosmos DB herdado, o armazenamento particionado Cosmos DB não cria automaticamente um banco de dados dentro de sua conta de Cosmos DB. Você precisa [criar um novo banco de dados manualmente](https://docs.microsoft.com/azure/cosmos-db/create-cosmosdb-resources-portal), mas ignorar a criação manual de um contêiner, pois o _CosmosDbPartitionedStorage_ criará o contêiner para você.
 
 Agora que você usou o armazenamento de memória, vamos atualizar o código para usar o Azure Cosmos DB. O Cosmos DB é o banco de dados multimodelo globalmente distribuído da Microsoft. O Azure Cosmos DB permite que você dimensione a taxa de transferência e o armazenamento de maneira elástica e independente em qualquer número de regiões geográficas do Azure. Ele oferece garantias de taxa de transferência, disponibilidade, latência e consistência com contratos de nível de serviço (SLAs) abrangentes.
 
@@ -452,7 +456,9 @@ pip install botbuilder-azure
 ### <a name="implementation"></a>Implementação
 
 > [!NOTE]
-> A versão 4.6 introduziu um novo provedor de armazenamento do Cosmos DB, a classe de _armazenamento particionado do Cosmos DB_. A classe de _armazenamento do Cosmos DB_ original foi preterida. Os contêineres criados com o _armazenamento do Cosmos DB_ podem ser usados com o _armazenamento particionado do Cosmos DB_ com a adição do [sinalizador](https://aka.ms/azure-dotnet-cosmosdb-partitionedstorage#L289) `compatibilityMode`. Observe também que, diferentemente do armazenamento de Cosmos DB herdado, o armazenamento particionado Cosmos DB não cria automaticamente um banco de dados dentro de sua conta de Cosmos DB. Quando você cria um novo banco de dados, o Cosmos DB cria um contêiner no banco de dados automaticamente.
+> A versão 4.6 introduziu um novo provedor de armazenamento do Cosmos DB, a classe de _armazenamento particionado do Cosmos DB_. A classe de _armazenamento do Cosmos DB_ original foi preterida. Contêineres criados com _Cosmos DB armazenamento_ podem ser usados com _Cosmos DB armazenamento particionado_. Para obter mais informações, leia [Particionamento no Azure Cosmos DB](https://aka.ms/azure-cosmosdb-partitioning-overview).
+>
+> Observe também que, diferentemente do armazenamento de Cosmos DB herdado, o armazenamento particionado Cosmos DB não cria automaticamente um banco de dados dentro de sua conta de Cosmos DB. Você precisa [criar um novo banco de dados manualmente](https://docs.microsoft.com/azure/cosmos-db/create-cosmosdb-resources-portal), mas ignorar a criação manual de um contêiner, pois o _CosmosDbPartitionedStorage_ criará o contêiner para você.
 
 ### <a name="c"></a>[C#](#tab/csharp)
 
@@ -557,7 +563,7 @@ Agora inicie o Bot Framework Emulator e conecte-se ao seu bot:
 Envie uma mensagem ao bot e o bot listará as mensagens recebidas por ele.
 ![Emulador em execução](./media/emulator-direct-storage-test.png)
 
-### <a name="view-your-data"></a>Ver seus dados
+### <a name="view-your-data"></a>Exibir seus dados
 
 Depois de executar o bot e salvar suas informações, poderemos exibir os dados armazenados no portal do Azure na guia **Data Explorer**.
 

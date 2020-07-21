@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/17/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 1e3d3cceeb6c3e779dacde6b0f7f3b231d63c18f
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: a5af3c0982b48807bca913cdc217a8f51b398c2d
+ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124020"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86542481"
 ---
 # <a name="send-proactive-notifications-to-users"></a>Enviar notificações proativas para os usuários
 
@@ -82,7 +82,9 @@ O segundo controlador, o controlador _notificar_, é responsável por enviar a m
 1. No delegado, o usa o contexto de ativação para enviar a mensagem proativa.
 
 > [!NOTE]
-> A URL do serviço pode mudar ao longo do tempo. Se a URL do serviço for alterada, as referências anteriores à conversa não serão mais válidas e as chamadas para _continuar a conversa_ gerarão um erro ou exceção. Nesse caso, o bot precisará adquirir uma nova referência de conversa para o usuário antes de poder enviar mensagens proativas novamente.
+> Embora cada canal deva usar uma URL de serviço estável, a URL pode mudar ao longo do tempo. Para obter mais informações sobre a URL de serviço, consulte as seções [básicas de estrutura de atividade](https://github.com/microsoft/botframework-sdk/blob/master/specs/botframework-activity/botframework-activity.md#basic-activity-structure) e URL de [serviço](https://github.com/microsoft/botframework-sdk/blob/master/specs/botframework-activity/botframework-activity.md#service-url) do esquema de atividade do bot Framework.
+>
+> Se a URL do serviço for alterada, as referências anteriores à conversa não serão mais válidas e as chamadas para _continuar a conversa_ gerarão um erro ou exceção. Nesse caso, o bot precisará adquirir uma nova referência de conversa para o usuário antes de poder enviar mensagens proativas novamente.
 
 # <a name="c"></a>[C#](#tab/csharp)
 

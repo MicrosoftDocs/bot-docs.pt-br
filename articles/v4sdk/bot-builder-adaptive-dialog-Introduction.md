@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 06/24/2020
-ms.openlocfilehash: c701746a8cacdab7cd3a28f65fa8256ea66f7b05
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: 8076e81526ec35ea738cf0bb1862c43e451e943d
+ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124326"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86542591"
 ---
 # <a name="introduction-to-adaptive-dialogs"></a>Introdução aos diálogos adaptáveis
 
@@ -73,7 +73,7 @@ As _entradas_ são para os diálogos adaptáveis os que as [solicitações][14] 
 * Salve a entrada na propriedade especificada se ela corresponder ao tipo de entidade esperado.
 * Aceitar restrições – mín., máx. etc.
 
-Confira o artigo [Como solicitar a entrada de usuário usando diálogos adaptáveis][5] para obter mais informações sobre as _entradas_ em diálogos adaptáveis.
+Consulte o artigo [_solicitando entrada de usuário usando caixas de diálogo adaptáveis_][5] para obter mais informações sobre _entradas_ em caixas de diálogo adaptáveis.
 
 ### <a name="recognizers"></a>Reconhecedores
 
@@ -91,13 +91,13 @@ Confira o artigo [_Geração de Linguagem em diálogos adaptáveis_][7] para obt
 
 Os diálogos adaptáveis oferecem um modo de acessar e gerenciar a memória. Todos os diálogos adaptáveis, por padrão, usam esse modelo, de modo que todos os componentes que consomem ou contribuem para a memória tenham um método comum para ler e gravar informações no escopo apropriado. Todas as propriedades em todos os escopos são recipientes de propriedades, o que oferece a capacidade de modificar dinamicamente as propriedades que são armazenadas.
 
-Confira o artigo [_Escopos de memória e gerenciamento de estado em diálogos adaptáveis_][7] para obter mais informações sobre os _escopos de memória_ e o _gerenciamento de estado_ em diálogos adaptáveis.
+Confira o artigo [_Escopos de memória e gerenciamento de estado em diálogos adaptáveis_][8] para obter mais informações sobre os _escopos de memória_ e o _gerenciamento de estado_ em diálogos adaptáveis.
 
 ### <a name="declarative-assets"></a>Ativos declarativos
 
 Os diálogos adaptáveis permitem definir o diálogo como uma classe criando um objeto AdaptiveDialog e definindo os gatilhos e as ações no arquivo de origem de classes, mas você também pode criar o diálogo usando uma abordagem declarativa em que define todos os atributos do diálogo em um arquivo JSON com uma extensão de arquivo .dialog.  Nenhum código-fonte é necessário para definir os diálogos e você pode ter vários diálogos usando ambas as abordagens no mesmo bot. Em runtime, o bot vai gerar e executar o código do diálogo conforme definido nesses arquivos de diálogo declarativos.
 
-<!--See the [_Using declarative assets_][9] article for more information on using _declarative assets_ in adaptive dialogs.-->
+Consulte o artigo [_usando ativos declarativos_][9] para obter mais informações sobre como usar _ativos declarativos_ em caixas de diálogo adaptáveis.
 
 ## <a name="tying-it-all-together"></a>Reunindo tudo isso
 
@@ -159,9 +159,9 @@ O _reconhecedor_ de cada diálogo analisa a entrada do usuário para determinar 
 * [Reconhecedores em caixas de diálogo adaptáveis][6]
 * [Geração de linguagem em caixas de diálogo adaptáveis][7]
 * [Escopos de memória e gerenciamento de estado em caixas de diálogo adaptáveis][8]
-<!--* [Using declarative assets][9]-->
+* [Usando ativos declarativos][9]
 
-### <a name="how-to-develop-a-bot-using-adaptive-dialogadaptive"></a>Como desenvolver um bot usando o dialogAdaptive adaptável
+### <a name="how-to-develop-a-bot-using-adaptive-dialogs"></a>Como desenvolver um bot usando caixas de diálogo adaptáveis
 
 * [Criar um bot usando caixas de diálogo adaptáveis][10]
 <!--* [Create a bot using Declarative adaptive dialogs][11]--->

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/18/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 5e2068e285a5f359235557bf58b633b56ee5a7ad
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: e6e3941b5fb65f4fe23da4afea03738defdb08cf
+ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420217"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86542372"
 ---
 # <a name="add-trace-activities-to-your-bot"></a>Adicionar atividades de rastreamento ao bot
 
@@ -72,7 +72,7 @@ O manipulador **OnTurnError** do adaptador cria a atividade de rastreamento para
 
 **AdapterWithErrorHandler.cs**
 
-[!code-csharp[OnTurnError](~/../BotBuilder-Samples/samples/csharp_dotnetcore/13.core-bot/AdapterWithErrorHandler.cs?range=16-51&highlight=33-34)]
+[!code-csharp[OnTurnError](~/../BotBuilder-Samples/samples/csharp_dotnetcore/13.core-bot/AdapterWithErrorHandler.cs?range=16-54&highlight=36-37)]
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -80,7 +80,7 @@ O manipulador **onTurnError** do adaptador cria a atividade de rastreamento para
 
 **index.js**
 
-[!code-javascript[onTurnError](~/../BotBuilder-Samples/samples/javascript_nodejs/13.core-bot/index.js?range=36-58&highlight=8-14)]
+[!code-javascript[onTurnError](~/../BotBuilder-Samples/samples/javascript_nodejs/13.core-bot/index.js?range=36-59&highlight=9-15)]
 
 # <a name="python"></a>[Python](#tab/python)
 

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 03/26/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 615f9df99a5c354f3306e08174d252167574eaab
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: 194bce44f4a229aeb34e329038b6551bc0e6fbc5
+ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420377"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86542571"
 ---
 # <a name="implement-sequential-conversation-flow"></a>Implementar fluxo de conversa sequencial
 
@@ -237,7 +237,7 @@ Nós registramos serviços para o bot em `Startup`. Esses serviços estão dispo
 
 Nós registramos serviços para o bot em `index.js`.
 
-[!code-javascript[overrides](~/../botbuilder-samples/samples/javascript_nodejs/05.multi-turn-prompt/index.js?range=19-59)]
+[!code-javascript[overrides](~/../botbuilder-samples/samples/javascript_nodejs/05.multi-turn-prompt/index.js?range=19-60)]
 
 # <a name="python"></a>[Python](#tab/python)
 

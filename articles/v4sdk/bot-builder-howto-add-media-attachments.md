@@ -2,19 +2,19 @@
 title: Adicionar mídia a mensagens – Serviço de Bot
 description: Saiba como adicionar mídia às mensagens usando o SDK do Bot Framework.
 keywords: mídia, mensagens, imagens, áudio, vídeo, arquivos, MessageFactory, rich cards, mensagens, cartões adaptáveis, cartão hero e ações sugeridas
-author: ivorb
+author: JonathanFingold
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 02/03/2020
+ms.date: 07/08/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 767fee3a7391f7819119b4a601c045c2d603478d
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 221dddef9cdb697447a4565d83afdc7bc93c9e66
+ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81395439"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86542531"
 ---
 # <a name="add-media-to-messages"></a>Adicionar mídia às mensagens
 
@@ -61,13 +61,13 @@ Em seguida, um anexo carregado:
 
 **Bots/AttachmentsBot.cs**
 
-[!code-csharp[uploaded attachment](~/../botbuilder-samples/samples/csharp_dotnetcore/15.handling-attachments/Bots/AttachmentsBot.cs?range=181-214)]
+[!code-csharp[uploaded attachment](~/../botbuilder-samples/samples/csharp_dotnetcore/15.handling-attachments/Bots/AttachmentsBot.cs?range=181-215)]
 
 Por fim, um anexo de internet:
 
 **Bots/AttachmentsBot.cs**
 
-[!code-csharp[online attachment](~/../botbuilder-samples/samples/csharp_dotnetcore/15.handling-attachments/Bots/AttachmentsBot.cs?range=217-226)]
+[!code-csharp[online attachment](~/../botbuilder-samples/samples/csharp_dotnetcore/15.handling-attachments/Bots/AttachmentsBot.cs?range=218-227)]
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -201,11 +201,11 @@ Para obter exemplos de todos os cartões disponíveis, confira o [exemplo de car
 
 **Cards.cs**
 
-[!code-csharp[hero cards](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Cards.cs?range=27-40)]
+[!code-csharp[GetHeroCard](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Cards.cs?range=28-41)]
 
 **Cards.cs**
 
-[!code-csharp[cards](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Cards.cs?range=91-100)]
+[!code-csharp[GetSigninCard](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Cards.cs?range=92-101)]
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -213,11 +213,11 @@ Para obter exemplos de todos os cartões disponíveis, confira o [exemplo de car
 
 **dialogs/mainDialog.js**
 
-[!code-javascript[hero cards](~/../botbuilder-samples/samples/javascript_nodejs/06.using-cards/dialogs/mainDialog.js?range=206-218)]
+[!code-javascript[createHeroCard](~/../botbuilder-samples/samples/javascript_nodejs/06.using-cards/dialogs/mainDialog.js?range=214-226)]
 
 **dialogs/mainDialog.js**
 
-[!code-javascript[sign in cards](~/../botbuilder-samples/samples/javascript_nodejs/06.using-cards/dialogs/mainDialog.js?range=259-265)]
+[!code-javascript[createOAuthCard](~/../botbuilder-samples/samples/javascript_nodejs/06.using-cards/dialogs/mainDialog.js?range=228-234)]
 
 ### <a name="python"></a>[Python](#tab/python)
 
@@ -225,11 +225,11 @@ Para obter exemplos de todos os cartões disponíveis, confira o [exemplo de car
 
 **dialogs/main_dialog.py**
 
-[!code-python[hero cards](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/main_dialog.py?range=163-179)]
+[!code-python[create_hero_card](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/main_dialog.py?range=167-183)]
 
 **dialogs/main_dialog.py**
 
-[!code-python[hero cards](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/main_dialog.py?range=245-256)]
+[!code-python[create_oauth_card](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/main_dialog.py?range=185-197)]
 
 ---
 
@@ -241,9 +241,7 @@ Primeiro, somente alguns canais dão suporte aos Cartões Adaptáveis, e os cana
 
 Em segundo lugar, o Cartão Adaptável entrega as mensagens no formato de cartão e o canal determina o layout do cartão. O formato das mensagens que o MessageFactory entrega depende do canal e não é necessariamente no formato de cartão. a menos que o Cartão Adaptável faça parte do anexo.
 
-Para localizar as informações mais recentes sobre o suporte de canal do Cartão Adaptável, confira o <a href="http://adaptivecards.io/designer/">Designer de Cartões Adaptáveis</a>.
-
-Para usar os cartões adaptáveis, certifique-se de adicionar o pacote NuGet `AdaptiveCards`.
+Para localizar as informações mais recentes sobre o suporte de canal do Cartão Adaptável, confira o [Designer de Cartões Adaptáveis](http://adaptivecards.io/designer/).
 
 > [!NOTE]
 > Você deve testar esse recurso com os canais de que bot será usado para determinar se esses canais dão suporte a cartões adaptáveis.
@@ -256,7 +254,9 @@ O código-fonte mostrado aqui se baseia no exemplo [Usando cartões](https://aka
 
 **Cards.cs**
 
-[!code-csharp[adaptive cards](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Cards.cs?range=13-25)]
+Este exemplo lê o JSON de cartão adaptável de um arquivo e o adiciona como um anexo.
+
+[!code-csharp[CreateAdaptiveCardAttachment](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Cards.cs?range=13-26&highlight=9-10)]
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -264,32 +264,25 @@ Para usar Cartões Adaptáveis, certifique-se de adicionar o pacote npm `adaptiv
 
 O código-fonte mostrado aqui se baseia no exemplo [Usando Cartões JS](https://aka.ms/bot-cards-js-sample-code).
 
-Aqui, o cartão Adaptável é armazenado em seu próprio arquivo e incluído em nosso bot:
-
-**resources/adaptiveCard.json**
-
-[!code-json[adaptive cards](~/../botbuilder-samples/samples/javascript_nodejs/06.using-cards/resources/adaptiveCard.json)]
-
-O cartão é criado da seguinte maneira:
-
 **dialogs/mainDialog.js**
 
-[!code-javascript[adaptive cards](~/../botbuilder-samples/samples/javascript_nodejs/06.using-cards/dialogs/mainDialog.js?range=6)]
-[!code-javascript[adaptive cards](~/../botbuilder-samples/samples/javascript_nodejs/06.using-cards/dialogs/mainDialog.js?range=170-172)]
+Este exemplo lê o JSON de cartão adaptável de um arquivo e cria uma atividade de mensagem com o cartão anexado.
+
+[!code-javascript[import JSON file](~/../botbuilder-samples/samples/javascript_nodejs/06.using-cards/dialogs/mainDialog.js?range=6)]
+
+[!code-javascript[createAdaptiveCard](~/../botbuilder-samples/samples/javascript_nodejs/06.using-cards/dialogs/mainDialog.js?range=178-180)]
 
 ### <a name="python"></a>[Python](#tab/python)
 
 O código-fonte mostrado aqui se baseia no exemplo [Usando cartões](https://aka.ms/bot-cards-python-sample-code).
 
-**dialogs/resources/adaptive_card_example.py**
-
-[!code-python[adaptive cards](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/resources/adaptive_card_example.py)]
-
-O cartão é criado da seguinte maneira:
-
 **bots/main_dialog.py**
 
-[!code-python[hero cards](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/main_dialog.py?range=127-128)]
+Este exemplo lê o JSON de cartão adaptável de um arquivo e cria uma atividade de mensagem com o cartão anexado.
+
+[!code-python[import JSON file](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/main_dialog.py?range=33)]
+
+[!code-python[create_adaptive_card](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/main_dialog.py?range=131-132)]
 
 ---
 
@@ -299,51 +292,52 @@ As mensagens também podem incluir vários anexos em um layout de carrossel, que
 
 ### <a name="c"></a>[C#](#tab/csharp)
 
-O código-fonte mostrado aqui se baseia no [exemplo Cartões](https://aka.ms/bot-cards-sample-code).
+O código-fonte mostrado aqui se baseia no [exemplo de cartões](https://aka.ms/bot-cards-sample-code).
+
+**Dialogs/MainDialog.cs**
 
 Primeiro, crie a resposta e defina os anexos como uma lista.
 
-**Dialogs/MainDialog.cs**
+[!code-csharp[ShowCardStepAsync excerpt](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Dialogs/MainDialog.cs?range=61-66)]
 
-[!code-csharp[carousel of cards](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Dialogs/MainDialog.cs?range=61-66)]
+Em seguida, adicione os anexos e defina o tipo de layout como _carrossel_.
+Aqui estamos adicionando-os um de cada vez, mas sinta-se à vontade para manipular a lista e adicionar os cartões como preferir.
 
-Em seguida, adicione os anexos. Aqui estamos adicionando-os um de cada vez, mas sinta-se à vontade para manipular a lista e adicionar os cartões como preferir.
-
-**Dialogs/MainDialog.cs**
-
-[!code-csharp[carousel of cards](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Dialogs/MainDialog.cs?range=104-113)]
+[!code-csharp[ShowCardStepAsync excerpt](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Dialogs/MainDialog.cs?range=108-118)]
 
 Depois que os anexos forem adicionados, você poderá enviar a resposta como faria com qualquer outra.
 
-**Dialogs/MainDialog.cs**
-
-[!code-csharp[carousel of cards](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Dialogs/MainDialog.cs?range=117-118)]
+[!code-csharp[ShowCardStepAsync excerpt](~/../botbuilder-samples/samples/csharp_dotnetcore/06.using-cards/Dialogs/MainDialog.cs?range=122-123)]
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-O código-fonte mostrado aqui se baseia no [exemplo de cartões JS](https://aka.ms/bot-cards-js-sample-code).
+O código-fonte mostrado aqui se baseia no [exemplo de cartões](https://aka.ms/bot-cards-js-sample-code).
 
-Para enviar um carrossel de cartões, envie uma resposta com os anexos como uma matriz e o tipo de layout definido como `Carousel`:
+**dialogs/mainDialog.js**
 
-**dialogs/mainDialog.js** [!code-javascript[carousel of cards](~/../botbuilder-samples/samples/javascript_nodejs/06.using-cards/dialogs/mainDialog.js?range=97-108)]
+Adicione os anexos e defina o tipo de layout como _carrossel_.
+Depois que os anexos forem adicionados, você poderá enviar a resposta como faria com qualquer outra.
 
-[!code-javascript[carousel of cards](~/../botbuilder-samples/samples/javascript_nodejs/06.using-cards/dialogs/mainDialog.js?range=113-116)]
+[!code-javascript[showCardStep excerpt](~/../botbuilder-samples/samples/javascript_nodejs/06.using-cards/dialogs/mainDialog.js?range=100-113)]
 
 ### <a name="python"></a>[Python](#tab/python)
 
-O código-fonte mostrado aqui se baseia no [exemplo de cartões de Python](https://aka.ms/bot-cards-python-sample-code).
-
-Para enviar um carrossel de cartões, envie uma resposta com os anexos como uma matriz e o tipo de layout definido como `Carousel`:
+O código-fonte mostrado aqui se baseia no [exemplo de cartões](https://aka.ms/bot-cards-python-sample-code).
 
 **dialogs/main_dialog.py**
 
-[!code-python[hero cards](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/main_dialog.py?range=104-112)]
+Primeiro, crie a resposta e defina os anexos como uma lista.
 
-Depois que os anexos forem adicionados, você poderá enviar a resposta.
+[!code-python[show_card_step excerpt](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/main_dialog.py?range=85)]
 
-**dialogs/main_dialog.py**
+Em seguida, adicione os anexos e defina o tipo de layout como _carrossel_.
+Aqui estamos adicionando-os um de cada vez, mas sinta-se à vontade para manipular a lista e adicionar os cartões como preferir.
 
-[!code-python[hero cards](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/main_dialog.py?range=114-115)]
+[!code-python[hero cards](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/main_dialog.py?range=107-116)]
+
+Depois que os anexos forem adicionados, você poderá enviar a resposta como faria com qualquer outra.
+
+[!code-python[hero cards](~/../botbuilder-samples/samples/python/06.using-cards/dialogs/main_dialog.py?range=118-119)]
 
 ---
 
@@ -362,12 +356,11 @@ Ele estende o atual exemplo 06.using-cards validando a entrada recebida no campo
 Primeiro, adicionamos funcionalidades de botão e de entrada de texto ao cartão adaptável existente adicionando o seguinte código antes do colchete final de adaptiveCard.json, encontrado na pasta de recursos:
 
 ```json
-...
-  "actions": [
-    {
-      "type": "Action.ShowCard",
-      "title": "Text",
-      "card": {
+"actions": [
+  {
+    "type": "Action.ShowCard",
+    "title": "Text",
+    "card": {
       "type": "AdaptiveCard",
       "body": [
         {
@@ -386,7 +379,6 @@ Primeiro, adicionamos funcionalidades de botão e de entrada de texto ao cartão
     }
   }
 ]
-
 ```
 
 Observe que o campo de entrada é rotulado "text", de modo que nosso cartão adaptável anexará os dados de texto do comentário como Valor.[texto].

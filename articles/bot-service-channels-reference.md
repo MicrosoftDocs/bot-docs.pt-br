@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 05/19/2020
-ms.openlocfilehash: 77f8116ceae65a487831f46572969253cd4ce809
-ms.sourcegitcommit: e67f0b534bf84016a73eb8448deae75798a4d1d6
+ms.openlocfilehash: fd5f5d15ae161be96728440555e323d6e58632b7
+ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83665908"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86542322"
 ---
 # <a name="categorized-activities-by-channel"></a>Atividades categorizadas por canal
 
@@ -255,7 +255,7 @@ A tabela a seguir mostra o número máximo de Ações Sugeridas e Ações de Car
 
 | \                 | Cortana | Linha Direta | Direct Line (Webchat) | Email | Facebook | GroupMe |   Kik   | Linha  | Teams | Margem de atraso | Skype | Skype Business | Telegram | Twilio | 
 | :---------------- | :-----: | :---------: | :--------------------: |:----: | :------: | :-----: | :-----: | :---: | :---: | :---: | :---: | :------------: | :------: | :----: |
-| Ações Sugeridas |   :x:   |     100     |          100           |  :x:  |    10    |   :x:   |   20    |  13   |  :x:  |  100  |  10   |      :x:       |    100   |   :x:  |  
+| Ações Sugeridas |   :x:   |     100     |          100           |  :x:  |    10    |   :x:   |   20    |  13   |  :x:  |  :x:  |  10  |      :x:       |    100   |   :x:  |  
 | Ações de cartão      |   100   |     100     |          100           |  :x:  |     3    |   :x:   |   20    |  99   |   3   |  100  |   3   |      :x:       |    :x:   |   :x:  |  
 
 Para obter mais informações sobre os números mostrados na tabela acima, confira o código de suporte ao canal listado [aqui](https://aka.ms/channelactions). 

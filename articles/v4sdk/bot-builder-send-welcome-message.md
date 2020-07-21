@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 2/7/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: c4a1ba6b289f450a7f1a87b7661e45d05caa96c3
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: 2bbd325f2b35b4e91d906bd4b333919c643a087e
+ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420277"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86542491"
 ---
 # <a name="send-welcome-message-to-users"></a>Enviar mensagem de boas-vinda aos usuários
 
@@ -94,20 +94,20 @@ O objeto de estado do usuário é criado na inicialização e a dependência é 
 Na inicialização, o estado do usuário é definido em `index.js` e consumido pelo construtor do bot.
 
 **index.js**  
-[!code-javascript[define state](~/../BotBuilder-Samples/samples/javascript_nodejs/03.welcome-users/index.js?range=51-55)]
+[!code-javascript[define state](~/../BotBuilder-Samples/samples/javascript_nodejs/03.welcome-users/index.js?range=52-53)]
 
 **bots/welcomeBot.js**  
-[!code-javascript[consume state](~/../BotBuilder-Samples/samples/javascript_nodejs/03.welcome-users/bots/welcomeBot.js?range=16-22)]
+[!code-javascript[consume state](~/../BotBuilder-Samples/samples/javascript_nodejs/03.welcome-users/bots/welcomeBot.js?range=16-23)]
 
 ### <a name="python"></a>[Python](#tab/python)
 
 Na inicialização, o estado do usuário é definido em `app.py` e consumido pelo construtor do bot.
 
-**app.py**
+**app.py**  
 
 [!code-python[define state](~/../botbuilder-samples/samples/python/03.welcome-user/app.py?range=62-67)]
 
-**bots/welcome-user-bot.py**
+**bots/welcome-user-bot.py**  
 
 [!code-python[consume state](~/../botbuilder-samples/samples/python/03.welcome-user/bots/welcome_user_bot.py?range=23-29)]
 
@@ -136,7 +136,8 @@ Criamos agora um acessador de propriedade que nos fornece um identificador para 
 
 Este exemplo cria um acessador de propriedade de estado de conversa, `user_state_accessor`, no construtor do bot.
 
-**bots/welcome-user-bot.py** [!code-python[constructor](~/../botbuilder-samples/samples/python/03.welcome-user/bots/welcome_user_bot.py?range=31)]
+**bots/welcome-user-bot.py**  
+[!code-python[constructor](~/../botbuilder-samples/samples/python/03.welcome-user/bots/welcome_user_bot.py?range=31)]
 
 Ele usa o acessador de propriedade no manipulador de `on_message_activity` e substitui o manipulador de `on_turn` para salvar o estado antes do final da rodada.
 
@@ -151,7 +152,8 @@ Ele usa o acessador de propriedade no manipulador de `on_message_activity` e sub
 
 Em **WelcomeUserBot**, verificamos se há uma atualização de atividade, usando `OnMembersAddedAsync()` para ver se um novo usuário foi adicionado à conversa e, em seguida, enviamos a ele um conjunto de três mensagens inicias de boas-vindas: `WelcomeMessage`, `InfoMessage` e `PatternMessage`. O código completo dessa interação é mostrado abaixo.
 
-**Bots\WelcomeUserBot.cs** [!code-csharp[Define messages](~/../BotBuilder-Samples/samples/csharp_dotnetcore/03.welcome-user/bots/WelcomeUserBot.cs?range=20-39)]
+**Bots\WelcomeUserBot.cs**  
+[!code-csharp[Define messages](~/../BotBuilder-Samples/samples/csharp_dotnetcore/03.welcome-user/bots/WelcomeUserBot.cs?range=20-39)]
 [!code-csharp[Send messages](~/../BotBuilder-Samples/samples/csharp_dotnetcore/03.welcome-user/bots/WelcomeUserBot.cs?range=55-66)]
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
@@ -165,7 +167,8 @@ Esse código do JavaScript envia uma mensagem inicial de boas-vindas quando um u
 
 O `on_members_added_activity` verifica se um novo usuário foi adicionado e, em seguida, envia três mensagens de boas-vindas iniciais: uma *mensagem de boas-vindas*, uma *mensagem de informações* e uma *mensagem padrão*.
 
-**bots/welcome-user-bot.py** [!code-python[on_members_added_activity](~/../botbuilder-samples/samples/python/03.welcome-user/bots/welcome_user_bot.py?range=45-74)]
+**bots/welcome-user-bot.py**  
+[!code-python[on_members_added_activity](~/../botbuilder-samples/samples/python/03.welcome-user/bots/welcome_user_bot.py?range=45-74)]
 
 ---
 
@@ -191,7 +194,8 @@ Também é importante considerar quando a entrada do usuário pode realmente con
 
 Também é importante considerar quando a entrada do usuário pode realmente conter informações úteis. Isso pode variar para cada canal. Para garantir que o usuário tenha uma boa experiência em todos os canais possíveis, `on_message_activity` verifica a propriedade `did_welcome_user`. Na primeira vez, ele o define como *falso* e não processa a entrada do usuário. Em vez disso, ele fornece ao usuário uma mensagem inicial de boas-vindas. Em seguida, ele define `did_welcome_user` como *true* e processa a entrada do usuário de todas as atividades de mensagem adicionais.
 
-**bots/welcome-user-bot.py** [!code-python[DidBotWelcomeUser](~/../botbuilder-samples/samples/python/03.welcome-user/bots/welcome_user_bot.py?range=85-95)]
+**bots/welcome-user-bot.py**  
+[!code-python[DidBotWelcomeUser](~/../botbuilder-samples/samples/python/03.welcome-user/bots/welcome_user_bot.py?range=85-95)]
 
 ---
 
@@ -217,7 +221,8 @@ Uma entrada de”intro” ou “help” usa CardFactory para apresentar ao usuá
 
 Uma entrada de um usuário de *introdução* ou *ajuda* faz com que o bot chame `__send_intro_card`, que apresenta ao usuário um cartão adaptável introdutório.
 
-**bots/welcome-user-bot.py** [!code-python[SwitchOnUtterance](~/../botbuilder-samples/samples/python/03.welcome-user/bots/welcome_user_bot.py?range=101-106&highlight=97-106)]
+**bots/welcome-user-bot.py**  
+[!code-python[SwitchOnUtterance](~/../botbuilder-samples/samples/python/03.welcome-user/bots/welcome_user_bot.py?range=101-106&highlight=97-106)]
 
 ---
 
@@ -237,7 +242,8 @@ Conforme mencionado acima, algumas entradas do usuário geram um *cartão Hero* 
 
 ### <a name="python"></a>[Python](#tab/python)
 
-**bots/welcome-user-bot.py** [!code-python[SendIntroCard](~/../botbuilder-samples/samples/python/03.welcome-user/bots/welcome_user_bot.py?range=108-143)]
+**bots/welcome-user-bot.py**  
+[!code-python[SendIntroCard](~/../botbuilder-samples/samples/python/03.welcome-user/bots/welcome_user_bot.py?range=108-143)]
 
 ---
 

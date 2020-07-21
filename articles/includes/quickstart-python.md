@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ab18f383e20a6725c8b096977207776234d54f5f
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: 590466b62c653ab5829775e4635e994152c2a2fa
+ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86156659"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86544598"
 ---
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -24,7 +24,7 @@ ms.locfileid: "86156659"
 - `pip install botbuilder-core`
 - `pip install asyncio`
 - `pip install aiohttp`
-- `pip install cookiecutter`
+- `pip install cookiecutter==1.7.0`
 
 O último pacote, cookiecutter, será usado para gerar o bot. Verifique se o cookiecutter foi instalado corretamente executando `cookiecutter --help`.
 

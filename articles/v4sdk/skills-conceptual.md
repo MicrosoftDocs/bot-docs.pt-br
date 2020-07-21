@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 04/28/2020
+ms.date: 07/15/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 1129ff89a7b6d41b53b10bd55440f6810525da61
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: 7a99089687ff7d316efd019fe76ff08822ff1f02
+ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83555697"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86542412"
 ---
 # <a name="skills-overview"></a>Visão geral de skills
 
@@ -54,19 +54,24 @@ Este diagrama mostra algumas das possíveis permutações.
 
 ## <a name="conceptual-architecture"></a>Arquitetura conceitual
 
-Um consumidor de skills e um skill são bots diferentes e você os publica de forma independente. Um skill precisa incluir lógica adicional para enviar uma atividade `endOfConversation` quando ela for concluída, para que o consumidor de skills saiba quando parar de encaminhar atividades para o skill.
+Um consumidor de skills e um skill são bots diferentes e você os publica de forma independente.
 
-Um bot raiz implementa pelo menos dois pontos de extremidade HTTP, um para receber atividades do usuário e outro para receber atividades de skills. O consumidor de skill precisa emparelhar o código que recebe a solicitação do método HTTP de um skill com um manipulador de skills.
-Ele requer uma lógica adicional para gerenciar um skill, como ao chamar ou cancelar o skill e assim por diante. Além dos objetos de bot e adaptador usuais, o consumidor inclui alguns objetos relacionados ao skill, usados para trocar atividades com o skill.
+- Um consumidor de habilidades requer uma lógica adicional para gerenciar uma habilidade, como quando chamar ou cancelar a habilidade, e assim por diante. Além dos objetos de bot e adaptador usuais, o consumidor inclui alguns objetos relacionados ao skill, usados para trocar atividades com o skill. Um consumidor de habilidades implementa pelo menos dois pontos de extremidade HTTP:
+  - Um _ponto de extremidade de mensagens_ recebe atividades do usuário ou do canal. Esse é o ponto de extremidade de mensagens usual que todos os bots implementam.
+  - Um _ponto de extremidade do host de habilidades_ para receber atividades de uma habilidade. Isso atua como uma URL de retorno de chamada, a URL de serviço para a qual a habilidade responde. (O consumidor de habilidades precisa emparelhar o código que recebe a solicitação do método HTTP da habilidade com um manipulador de habilidades.)
+- Uma habilidade requer uma lógica adicional para enviar uma `endOfConversation` atividade quando ela é concluída, para que o consumidor de habilidades saiba quando parar de encaminhar atividades para a habilidade.
 
 Este diagrama descreve o fluxo de atividades do usuário para o bot raiz, para um skill e vice-versa.
 
 ![Diagrama de arquitetura](./media/skills-conceptual-architecture.png)
 
 1. O adaptador do bot raiz recebe atividades do usuário e as encaminha para o manipulador de atividade do bot raiz.
-1. O bot raiz usa um cliente HTTP de skill para enviar uma atividade para o skill. Ele obtém as informações de conversa do skill consumidor de uma definição de skill e um alocador de ID de conversa de skill. Isso inclui a URL de serviço que será usada pelo skill para responder à atividade.
+   (As atividades do usuário são recebidas no ponto de extremidade do sistema de mensagens do bot raiz.)
+1. O bot raiz usa um cliente HTTP de skill para enviar uma atividade para o skill. O cliente obtém as informações de conversa de habilidades do consumidor de uma definição de habilidade e uma fábrica de ID de conversa de habilidade. Isso inclui a URL de serviço que será usada pelo skill para responder à atividade.
 1. O adaptador de skill recebe atividades do consumidor de skill e as encaminha para o manipulador de atividades do skill.
+   (As atividades do consumidor são recebidas no ponto de extremidade do sistema de mensagens do bot de habilidades.)
 1. Quando o skill responde, o manipulador de skills do bot raiz recebe a atividade. Ele obtém as informações de conversa do usuário raiz do alocador de ID de conversa de skill. Em seguida, ele encaminha a atividade para o adaptador do bot raiz.
+   (As atividades da habilidade são recebidas no ponto de extremidade do host de habilidades do bot raiz.)
 1. O adaptador do bot raiz gera internamente uma mensagem proativa para retomar a conversa com o usuário.
 1. O adaptador do bot raiz envia as mensagens do skill para o usuário.
 
@@ -76,7 +81,7 @@ Esses objetos ajudam a gerenciar os skills e rotear o seu tráfego:
 - Um _cliente HTTP de skill_ envia atividades a um skill.
 - Um _manipulador de skills_ recebe atividades de um skill.
 - O _alocador de ID de conversa de skill_ faz a conversão entre a referência de conversa usuário-raiz e a referência de conversa raiz-skill.
-- O serviço do Bot Connector fornece a autenticação de canal e de bot para bot. Usando um objeto de _configuração de autenticação_, você pode adicionar validação de declarações a um bot (skill ou consumidor de skills) para limitar quais aplicativos ou usuários têm acesso.
+- O serviço do Bot Connector fornece a autenticação de canal e de bot para bot. Usando um objeto de _configuração de autenticação_ , você pode adicionar a validação de declarações a um consumidor de habilidades ou habilidades para limitar quais aplicativos ou usuários têm acesso.
 
 Os objetos de cliente de skill e de manipulador de skill usam o _alocador de ID de conversa_ para converter entre a conversa que o bot raiz usa para interagir com o usuário e a conversa que o bot raiz usa para interagir com o skill.
 
@@ -129,9 +134,10 @@ O consumidor de skills e o skill gerenciam seu próprio estado separadamente. No
 
 <!-- TODO Add appropriate info about this new(?) feature to the bot basics article. -->
 
-A autenticação de nível de serviço é gerenciada pelo serviço do Bot Connector. A estrutura usa tokens de portador e IDs de aplicativo de bot para verificar a identidade de cada bot.
+A autenticação de nível de serviço é gerenciada pelo serviço do Bot Connector. A estrutura usa tokens de portador e IDs de aplicativo de bot para verificar a identidade de cada bot. (A estrutura de bot usa um objeto de _configuração de autenticação_ para validar o cabeçalho de autenticação em solicitações de entrada.)
 
-O Bot Framework usa um objeto de _configuração de autenticação_ para validar o cabeçalho de autenticação em solicitações de entrada.
+> [!IMPORTANT]
+> Isso exige que todos os bots (o consumidor de habilidades e quaisquer habilidades consumidas) tenham credenciais de aplicativo válidas.
 
 #### <a name="claims-validation"></a>Validação de declarações
 

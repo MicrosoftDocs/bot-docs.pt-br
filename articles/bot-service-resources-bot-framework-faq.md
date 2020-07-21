@@ -6,13 +6,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 06/08/2020
-ms.openlocfilehash: 651fc2b5e617edd077da9c8b6bb5fd8a52721d62
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.date: 07/10/2020
+ms.openlocfilehash: 67f672ef629a6a33cca708e5b8ff707cb20e5022
+ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124496"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86542332"
 ---
 # <a name="bot-framework-faq-index"></a>Índice de perguntas frequentes do bot Framework
 
@@ -38,8 +38,12 @@ ms.locfileid: "86124496"
 - [Como enviar mensagens proativas ao usuário?](bot-service-resources-faq-general.md#how-can-i-send-proactive-messages-to-the-user)
 - [Como é possível referenciar serviços não serializáveis dos meus diálogos em C#? no SDK v3?](bot-service-resources-faq-general.md#how-can-i-reference-non-serializable-services-from-my-c-dialogs-in-sdk-v3)
 - [O que é uma ETag? Como ele está relacionado ao armazenamento da bolsa de dados de bot?](bot-service-resources-faq-general.md#what-is-an-etag--how-does-it-relate-to-bot-data-bag-storage)
-- [Quais são alguns diálogos criados pela comunidade?](bot-service-resources-faq-general.md#what-are-some-community-authored-dialogs)
-- [Quais são alguns modelos criados pela comunidade?](bot-service-resources-faq-general.md#what-are-some-community-authored-templates)
+- [Como implementar a entrega humana?](bot-service-resources-faq-general.md#how-to-implement-human-handoff)
+
+<!-- Retired, re: https://github.com/MicrosoftDocs/bot-docs/issues/1698
+- [What are some community-authored dialogs?](bot-service-resources-faq-general.md#what-are-some-community-authored-dialogs)
+- [What are some community-authored templates?](bot-service-resources-faq-general.md#what-are-some-community-authored-templates)
+-->
 
 ## <a name="ecosystem"></a>Ecossistema
 
@@ -49,6 +53,7 @@ ms.locfileid: "86124496"
 - [Como fazer para criar um bot que usa o data center do Governo dos EUA?](bot-service-resources-faq-ecosystem.md#how-do-i-create-a-bot-that-uses-the-us-government-data-center)
 - [O que é o canal da Linha Direta?](bot-service-resources-faq-ecosystem.md#what-is-the-direct-line-channel)
 - [Como o Bot Framework está relacionado aos Serviços Cognitivos?](bot-service-resources-faq-ecosystem.md#how-does-the-bot-framework-relate-to-cognitive-services)
+- [Quais são as etapas para configurar o chat da Web e a linha direta para o Azure governamental?](bot-service-resources-faq-ecosystem.md#what-are-the-steps-to-configure-web-chat-and-direct-line-for-azure-government)
 - [Quais são as possíveis resoluções legíveis por computador da data, hora, duração interna do LUIS e conjunto de entidades?](bot-service-resources-faq-ecosystem.md#what-are-the-possible-machine-readable-resolutions-of-the-luis-built-in-date-time-duration-and-set-entities)
 - [Como posso usar mais que o número máximo de intenções de LUIS?](bot-service-resources-faq-ecosystem.md#how-can-i-use-more-than-the-maximum-number-of-luis-intents)
 - [Como é possível usar mais de um modelo de LUIS?](bot-service-resources-faq-ecosystem.md#how-can-i-use-more-than-one-luis-model)

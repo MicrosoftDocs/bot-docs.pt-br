@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 04/28/2020
+ms.date: 07/15/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 049bcf78b098a39858e57ce02761b804567334b2
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: aef963d7823363d5e6c239d78deba4051a57a935
+ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83566676"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86542422"
 ---
 # <a name="about-skill-consumers"></a>Sobre os consumidores de habilidades
 
@@ -38,6 +38,11 @@ Como um consumidor de skills, um bot raiz inclui algumas lógicas adicionais par
 
 O início e a permissão de execução de uma só habilidade até a conclusão são gerenciados com algumas adições ao consumidor de habilidades. Cenários mais complicados são possíveis, com várias habilidades ou threads de conversa.
 
+Um consumidor de habilidades implementa pelo menos dois pontos de extremidade HTTP:
+
+- Um _ponto de extremidade de mensagens_ recebe atividades do usuário ou do canal. Esse é o ponto de extremidade de mensagens usual que todos os bots implementam.
+- Um _ponto de extremidade do host de habilidades_ para receber atividades de uma habilidade. Isso atua como uma URL de retorno de chamada, a URL de serviço para a qual a habilidade responde. (O consumidor de habilidades precisa emparelhar o código que recebe a solicitação do método HTTP da habilidade com um manipulador de habilidades.)
+
 ### <a name="skill-descriptions"></a>Descrições de skills
 
 Para cada skill, adicione um objeto de _skill do Bot Framework_ ao arquivo de configuração do consumidor de skills. Cada um terá uma ID, uma ID do aplicativo e um ponto de extremidade para a habilidade.
@@ -54,6 +59,7 @@ Para cada skill, adicione um objeto de _skill do Bot Framework_ ao arquivo de co
 O consumidor de skills usa um cliente de skills para enviar atividades a um skill. O cliente:
 
 - Seleciona uma atividade a ser enviada para a habilidade, seja de um usuário ou gerada pelo consumidor.
+- Define a URL do serviço na atividade enviada para a habilidade para o ponto de extremidade do host de habilidades do consumidor.
 - Substitui a referência de conversa original por uma para a conversa consumidora de skills.
 - Adiciona um token de autenticação de bot para bot.
 - Envia a atividade atualizada para o skill.
@@ -92,3 +98,9 @@ Se estiver usando a [biblioteca de caixas de diálogo](bot-builder-concept-dialo
 - Você pode cancelar ou interromper a caixa de diálogo de habilidade como faria com qualquer outra caixa de diálogo. Confira como [manipular interrupções do usuário](bot-builder-howto-handle-user-interrupt.md) para ver um exemplo.
 
 Confira como [Usar um diálogo para consumir uma habilidade](skill-use-skilldialog.md) para obter um consumidor que usa um diálogo para gerenciar uma habilidade.
+
+## <a name="using-deliverymode-expectreplies"></a>Usando ExpectReplies de DeliveryMode
+
+Os bots e as habilidades usam REST padrão do setor e JSON por HTTPS para comunicação. O fluxo de processamento de atividades normais começa quando o bot raiz recebe uma postagem de um canal no MessagingEndpoint. Em seguida, o bot raiz envia a atividade para a habilidade de processamento. As respostas da habilidade são postadas de volta no SkillHostEndpoint do bot raiz, não no MessagingEndpoint. Por fim, as respostas são processadas mais detalhadamente ou enviadas de volta ao canal pelo bot raiz. Esse fluxo normal pode ser alterado alterando o DeliveryMode da atividade enviada para a habilidade. Se DeliveryMode for ExpectReplies, as habilidades não serão postadas de volta para o SkillHostEndpoint.  Em vez disso, todas as atividades de resposta são serializadas no corpo da resposta.  Em seguida, o bot raiz itera essas atividades, processando-as de forma semelhante a como elas seriam processadas pelo SkillHostEndpoint.
+
+Para obter informações, consulte o [modo de entrega](https://github.com/microsoft/botframework-sdk/blob/master/specs/botframework-activity/botframework-activity.md#delivery-mode) na especificação da atividade.
