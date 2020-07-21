@@ -28,7 +28,8 @@
 ### [Geração de linguagem em caixas de diálogo adaptáveis](v4sdk/bot-builder-concept-adaptive-dialog-generators.md)
 ### [Escopos de memória e gerenciamento de estado em caixas de diálogo adaptáveis](v4sdk/bot-builder-concept-adaptive-dialog-memory-states.md)
 ### [Como usar ativos declarativos em diálogos adaptáveis](v4sdk/bot-builder-concept-adaptive-dialog-declarative.md)
-## Autenticação
+## Segurança
+### [Diretrizes de segurança](v4sdk/bot-builder-security-guidelines.md)
 ### [Autenticação de bot](v4sdk/bot-builder-concept-authentication.md)
 ### [Provedores de Identidade](v4sdk/bot-builder-concept-identity-providers.md)
 ### [Logon único](v4sdk/bot-builder-concept-sso.md)
