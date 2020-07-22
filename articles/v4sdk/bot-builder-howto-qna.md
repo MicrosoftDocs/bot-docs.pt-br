@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/02/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 84afcc365b784933212ad7a6d76bf158a27b2ab3
-ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
+ms.openlocfilehash: 6d18108753524116bb0a500b3d85dc9dc272f5c7
+ms.sourcegitcommit: 757ddf4f3fd3557ad9746dfa83ca742d54ac4763
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85073942"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86876366"
 ---
 # <a name="use-qna-maker-to-answer-questions"></a>Usar o QnA Maker para responder a perguntas
 
@@ -148,7 +148,7 @@ Quando seu bot precisar de uma resposta do QnAMaker, chame `GetAnswersAsync()` d
 
 **Bots/QnABot.cs**
 
-[!code-csharp[qna get answers](~/../botbuilder-samples/samples/csharp_dotnetcore/11.qnamaker/Bots/QnABot.cs?range=43-52)]
+[!code-csharp[qna get answers](~/../botbuilder-samples/samples/csharp_dotnetcore/11.qnamaker/Bots/QnABot.cs?range=43-54)]
 
 ## <a name="javascript"></a>[JavaScript](#tab/js)
 
@@ -156,13 +156,13 @@ No arquivo **QnABot.js**, passamos a entrada do usuário para o método `getAnsw
 
 **bots/QnABot.js**
 
-[!code-javascript[OnMessage](~/../botbuilder-samples/samples/javascript_nodejs/11.qnamaker/bots/QnABot.js?range=46-55)]
+[!code-javascript[OnMessage](~/../botbuilder-samples/samples/javascript_nodejs/11.qnamaker/bots/QnABot.js?range=45-54)]
 
 ## <a name="python"></a>[Python](#tab/python)
 
 No arquivo **qna_bot.py**, passamos a entrada do usuário para o método `get_answers` do serviço do QnA Maker a fim de obter respostas da base de conhecimento. Se o QnA Maker retornar uma resposta, ela será mostrada ao usuário. Caso contrário, o usuário receberá a mensagem *Nenhuma resposta do QnA Maker foi localizada.*
 
-**bots/qna_bot.py** [!code-python[get_answers](~/../botbuilder-samples/samples/python/11.qnamaker/bots/qna_bot.py?range=33-37)]
+**bots/qna_bot.py** [!code-python[get_answers](~/../botbuilder-samples/samples/python/11.qnamaker/bots/qna_bot.py?range=32-37)]
 
 ---
 

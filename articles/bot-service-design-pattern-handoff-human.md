@@ -6,14 +6,14 @@ ms.author: arturl
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 5/16/2019
+ms.date: 07/20/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: ef86854839a2321d4d07bbff1028c564c1e276a7
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: 30379c722d288c219fd78c81906e72c70fd533ae
+ms.sourcegitcommit: ee94943420ef6c28638297a6ec44ee995de27d3b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420637"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865944"
 ---
 # <a name="transition-conversations-from-bot-to-human"></a>Fazer a transição de conversas do bot para humanos
 
@@ -78,7 +78,7 @@ O bot analisa o conteúdo das mensagens do usuário usando a <a href="https://ww
 
 - <a href="https://github.com/microsoft/BotBuilder-Samples/tree/master/experimental/handoff-library/csharp_dotnetcore/samples" target="blank">Integração ao Omnicanal para Customer Service do Microsoft Dynamics</a> 
 
-- <a href="https://developers.liveperson.com/third-party-bots-microsoft-bot-framework.html" target="blank">Integração à plataforma LivePerson LiveEngage</a> 
+- <a href="https://developers.liveperson.com/third-party-bots-microsoft-bot-framework.html" target="blank">Integração com a plataforma LivePerson LiveEngage</a> 
 
 - [Diálogos](v4sdk/bot-builder-dialog-manage-conversation-flow.md)
 - <a href="https://www.microsoft.com/cognitive-services/text-analytics-api" target="blank">API de Análise de Texto do Azure Machine Learning</a>

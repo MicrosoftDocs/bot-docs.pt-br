@@ -6,14 +6,15 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 12/13/2017
+ms.date: 07/20/2020
+ROBOTS: NOINDEX
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 68092ec4f69894d4e58aa66cf3bfbff39eab989c
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 4cd3528b052c38b46e51f9e0e6a82b2bb140fca5
+ms.sourcegitcommit: ee94943420ef6c28638297a6ec44ee995de27d3b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80648093"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865964"
 ---
 # <a name="conduct-audio-calls-with-skype"></a>Realizar chamadas de áudio com o Skype
 

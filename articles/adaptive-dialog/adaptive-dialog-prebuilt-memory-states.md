@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 06/12/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a7e528d8b264a7d7f74f797a986a13f5107b0412
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: 4320a8e11ebf0e0d07d59ed95b91b5c3002fec21
+ms.sourcegitcommit: 757ddf4f3fd3557ad9746dfa83ca742d54ac4763
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124613"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86876356"
 ---
 # <a name="managing-state-in-adaptive-dialogs---reference-guide"></a>Gerenciando o estado em caixas de diálogo adaptáveis – guia de referência
 
@@ -121,7 +121,7 @@ ItemsProperty = "turn.activity.membersAdded"
 
 #### <a name="turnrecognized"></a>turn.recognized
 
-Todas as intenções e entidades retornadas de um [Recognizer] [Recognizers] em qualquer determinado retorno, são definidas automaticamente no `turn.recognized` escopo e permanecem disponíveis até que a próxima ativação ocorra. o escopo `turn.recognized` tem três propriedades:
+Todas as intenções e entidades retornadas de um [reconhecedor][recognizers] em qualquer turno especificado são definidas automaticamente no escopo `turn.recognized` e permanecem disponíveis até que o próximo turno ocorra. o escopo `turn.recognized` tem três propriedades:
 
 * `turn.recognized.intents.xxx`: uma lista das principais intenções classificadas pelo reconhecedor para esse turno.
 * `turn.recognized.entities.xxx`: uma lista das entidades reconhecidas nesse turno.
@@ -233,3 +233,4 @@ new TextInput()
 [managing-state]: ../v4sdk/bot-builder-concept-adaptive-dialog-memory-states.md
 [foreach-action]: ./adaptive-dialog-prebuilt-actions.md#foreach
 [botframework-activity]: https://github.com/microsoft/botframework-sdk/blob/master/specs/botframework-activity/botframework-activity.md
+[recognizers]: ../v4sdk/bot-builder-concept-adaptive-dialog-recognizers.md

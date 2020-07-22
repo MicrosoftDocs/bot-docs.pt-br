@@ -1,0 +1,110 @@
+### YamlMime:Landing
+title: Documentação do Serviço de Bot do Azure
+summary: O Serviço de Bot do Azure fornece um ambiente integrado criado especialmente para desenvolvimento de bot.
+metadata:
+  title: Documentação do Serviço de Bot do Azure
+  description: O Serviço de Bot do Azure fornece um ambiente integrado criado especialmente para desenvolvimento de bot.
+  ms.service: bot-service
+  ms.topic: landing-page
+  author: ivorb
+  ms.author: ivorb
+  ms.date: 11/11/2019
+  ms.openlocfilehash: 72351f086d46085be408929e64625aad5e8953de
+  ms.sourcegitcommit: 757ddf4f3fd3557ad9746dfa83ca742d54ac4763
+  ms.translationtype: MT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 07/22/2020
+  ms.locfileid: "86876547"
+landingContent:
+- title: Sobre o Serviço de Bot do Azure
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: Novidades
+      url: https://docs.microsoft.com/azure/bot-service/what-is-new
+  - linkListType: overview
+    links:
+    - text: O que é o Serviço de Bot do Azure?
+      url: https://docs.microsoft.com/azure/bot-service/bot-builder-basics
+  - linkListType: concept
+    links:
+    - text: Como funcionam os bots
+      url: https://docs.microsoft.com/azure/bot-service/bot-builder-basics
+- title: Guias de início rápido de 5 minutos
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Criar um bot usando o .NET
+      url: https://docs.microsoft.com/azure/bot-service/dotnet/bot-builder-dotnet-sdk-quickstart
+    - text: Criar um bot usando JavaScript
+      url: https://docs.microsoft.com/azure/bot-service/javascript/bot-builder-javascript-quickstart
+    - text: Criar um bot usando Python
+      url: https://docs.microsoft.com/azure/bot-service/python/bot-builder-python-quickstart
+    - text: Criar um bot usando o Serviço de Bot do Azure
+      url: https://docs.microsoft.com/azure/bot-service/abs-quickstart
+- title: Tutoriais passo a passo
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Criar e implantar um bot simples
+      url: https://docs.microsoft.com/bot-framework/bot-builder-tutorial-basic-deploy
+    - text: Adicionar o QnA Maker e reimplantar um bot
+      url: https://docs.microsoft.com/bot-framework/bot-builder-tutorial-add-qna
+- title: Languages
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: .NET
+      url: https://docs.microsoft.com/dotnet/api/?view=botbuilder-dotnet-stable
+    - text: JavaScript
+      url: https://docs.microsoft.com/javascript/api/botbuilder
+    - text: Python
+      url: https://docs.microsoft.com/python/api/?view=botbuilder-py-latest
+- title: Precisa de ajuda?
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Perguntas frequentes
+      url: https://docs.microsoft.com/azure/bot-service/bot-service-resources-bot-framework-faq
+    - text: Obtenha suporte
+      url: https://docs.microsoft.com/azure/bot-service/bot-service-resources-links-help
+    - text: Exemplos
+      url: https://github.com/Microsoft/BotBuilder-Samples/blob/master/README.md
+- title: Recursos externos
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Compositor
+      url: https://docs.microsoft.com/composer/
+    - text: Tutorial do Compositor
+      url: https://docs.microsoft.com/composer/tutorial/tutorial-introduction/
+  - linkListType: concept
+    links:
+    - text: Power Virtual Agents
+      url: https://docs.microsoft.com/power-virtual-agents/
+  - linkListType: concept
+    links:
+    - text: Visão geral do Microsoft Teams
+      url: https://docs.microsoft.com/microsoftteams/teams-overview
+    - text: Como os bots do Microsoft Teams funcionam
+      url: https://docs.microsoft.com/azure/bot-service/bot-builder-basics-teams
+- title: Implantação
+  linkLists:
+  - linkListType: deploy
+    links:
+    - text: Implantar um bot no Azure
+      url: https://docs.microsoft.com/azure/bot-service/bot-builder-deploy-az-cli
+    - text: Implantação contínua
+      url: https://docs.microsoft.com/azure/bot-service/bot-service-build-continuous-deployment
+    - text: Perguntas frequentes do Azure
+      url: https://docs.microsoft.com/azure/bot-service/bot-service-resources-faq-azure
+- title: Autenticação
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Autenticação do bot
+      url: https://docs.microsoft.com/azure/bot-service/bot-builder-concept-authentication
+    - text: Adicionar autenticação a um bot
+      url: https://docs.microsoft.com/azure/bot-service/bot-builder-authentication
+    - text: Solucionar problemas de autenticação
+      url: https://docs.microsoft.com/azure/bot-service/bot-service-troubleshoot-authentication-problems

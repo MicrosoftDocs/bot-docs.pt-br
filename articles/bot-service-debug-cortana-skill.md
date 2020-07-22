@@ -7,14 +7,15 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 05/01/2018
+ms.date: 07/20/2020
+ROBOTS: NOINDEX
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 62ed0fb7cb05072024617d65266cf457c554d4c7
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 0664089eae0729b9be97381521c0c1cfe0769105
+ms.sourcegitcommit: ee94943420ef6c28638297a6ec44ee995de27d3b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75792765"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865954"
 ---
 # <a name="test-a-cortana-skill"></a>Testar uma habilidade da Cortana
 
