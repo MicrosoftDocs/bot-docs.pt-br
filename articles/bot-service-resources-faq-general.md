@@ -7,14 +7,18 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 07/10/2020
-ms.openlocfilehash: ffc7f367e0c210ad7464910823d0126f741382be
-ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
+ms.openlocfilehash: 40f7726820c09010f32246a3ab05fe881b14e59f
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86542402"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143665"
 ---
 # <a name="bot-framework-general"></a>Do bot Framework geral
+
+<!-- Attention writers!!
+     1 - This article contains FAQs regarding Bot Framework generalities.
+     1 - When you create a new FAQ, please add the related link to the proper section in bot-service-resources-bot-framework-faq.md.-->
 
 ## <a name="why-doesnt-the-typing-activity-do-anything"></a>Por que a atividade de Digitação não gera nenhuma ação?
 

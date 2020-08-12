@@ -8,14 +8,17 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 5/17/2020
-ms.openlocfilehash: 53d718d607a7a911bb800fb8a5cedea2688858b9
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: f8887f2c231ab378084390b9c809cca1986014a1
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83555607"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143505"
 ---
 # <a name="troubleshoot-bot-configuration-issues"></a>Solucionar problemas de configuração de bot
+
+<!-- Attention writers!!
+     When you create a new FAQ, please add the related link to the proper section in the bot-service-troubleshoot-index.md. -->
 
 Um bot pode gerar diferentes tipos de erros, como não ser capaz de responder, gerar erros ou trabalhar em um canal, mas não em outro. A primeira etapa na solução de problemas de um bot é testá-lo no Webchat. Isso permitirá que você determine se o problema é específico ao seu bot (o bot não funciona em nenhum canal) ou a um determinado canal (bot funciona em alguns canais, mas não em outros).
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: gapretty
 ms.service: bot-service
 ms.date: 01/21/2020
-ms.openlocfilehash: eaa71c7d0ce5fa1fbac3d0415e8f5a3490460f40
-ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
+ms.openlocfilehash: 242d512834d938c382bcc4b3ab16b9090c4b3b8e
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85073551"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143885"
 ---
 # <a name="connect-a-bot-to-webex-teams-using-the-webex-adapter"></a>Conectar um bot ao Webex Teams usando o adaptador do Webex
 
@@ -164,18 +164,21 @@ Agora que você criou um aplicativo do Webex e vinculou o adaptador ao seu proje
 
 2. Navegue até [https://developer.webex.com/docs/api/v1/webhooks](https://developer.webex.com/docs/api/v1/webhooks).
 
-3. Clique no link para o método PUT `https://api.ciscospark.com/v1/webhooks/{webhookId}` (com a descrição "Atualizar um Webhook"). Isso expandirá um formulário, permitindo que você envie uma solicitação ao ponto de extremidade.
 
-    ![Configurar o bot](~/media/bot-service-adapter-connect-webex/webex-webhook-put-endpoint.png)
+3. Clique no link para o **POST** método post `https://webexapis.com/v1/webhooks` (com a descrição *criar um webhook*). Isso exibirá um formulário que permite enviar uma solicitação ao ponto de extremidade.
 
-4. Preencha o formulário com os seguintes detalhes;
+    ![ponto de extremidade do webhook](~/media/bot-service-adapter-connect-webex/webex-webhook-post-endpoint.png)
 
-    * Nome (forneça um nome para o webhook, como "Webhook de mensagens")
-    * URL de destino (a URL completa para o ponto de extremidade do Webex do bot, como `https://yourbotapp.azurewebsites.net/api/webex`)
-    * Segredo (aqui você deve fornecer um segredo de sua preferência para proteger o webhook)
-    * Status (deixe como a configuração padrão de "ativo")
+4. Preencha o formulário com os seguintes detalhes:
 
-    ![Configurar o bot](~/media/bot-service-adapter-connect-webex/webex-webhook-form.png)
+    1. **Nome** -o nome de seu webhook, por exemplo, *mensagens webhook*.
+    1. **TargetURL** -a URL completa para o ponto de extremidade WebEx do bot, como `https://yourbotapp.azurewebsites.net/api/webex` ).
+    1. **Recursos** -mensagens.
+    1. Criado pelo **evento** .
+    1. **filtro** -deixe em branco.
+    1. **segredo** -um segredo de sua escolha para proteger seu webhook. Posteriormente, você o adicionará ao seu bot `appsettings.json` .
+
+    ![formulário de webhook](~/media/bot-service-adapter-connect-webex/webex-webhook-form.png)
 
 5. Clique em **Executar**, que deve criar seu webhook e fornecer uma mensagem de êxito.
 
@@ -189,7 +192,7 @@ Conclua as três configurações restantes no arquivo appsettings.json do bot (v
 
 ## <a name="re-deploy-your-bot-in-your-webex-team"></a>Reimplante o bot na equipe do Webex
 
-Agora que você concluiu a configuração das definições do bot no appsettings.json, reimplante o bot (ou reinicie o bot se estiver fazendo um túnel para um ponto de extremidade local usando o ngrok).  Agora a configuração do aplicativo e bot do Webex está concluída.  
+Agora que você concluiu a configuração das definições do bot no appsettings.json, reimplante o bot (ou reinicie o bot se estiver fazendo um túnel para um ponto de extremidade local usando o ngrok).  Agora a configuração do aplicativo e bot do Webex está concluída.
 Faça logon na equipe do Webex em [https://www.webex.com](https://www.webex.com) e faça um chat com o bot enviando uma mensagem, da mesma maneira que você entraria em contato com outra pessoa.
 
 ![Configurar o bot](~/media/bot-service-adapter-connect-webex/webex-contact-person.png)

@@ -8,22 +8,87 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/20/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 30379c722d288c219fd78c81906e72c70fd533ae
-ms.sourcegitcommit: ee94943420ef6c28638297a6ec44ee995de27d3b
+ms.openlocfilehash: fb62a202e1d46b98b3fbe57c62552641f4c2ee8f
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865944"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143725"
 ---
 # <a name="transition-conversations-from-bot-to-human"></a>Fazer a transição de conversas do bot para humanos
 
 Independentemente do nível de inteligência artificial de um bot, ainda pode haver vezes quando ele precisa entregar a conversa para um ser humano. Isso pode ser necessário porque o bot não entende o usuário (devido a uma limitação da IA) ou se a solicitação não pode ser automatizada e exige uma ação humana. Nesses casos, o bot deve reconhecer quando ele precisa entregar e fornecer ao usuário uma transição tranquila.
 
-O Microsoft Bot Framework é uma plataforma aberta que permite aos desenvolvedores fazer a integração a uma variedade de plataformas de participação do agente. 
+O Microsoft Bot Framework é uma plataforma aberta que permite aos desenvolvedores fazer a integração a uma variedade de plataformas de participação do agente.
+
+
+<!-- We don't own this aka link, and for v4, I think there is an updated pattern.
+You can read more about the Bot Framework handoff protocol <a href="https://aka.ms/bfhandoffprotocol" target="blank">here</a>.
+-->
+
+## <a name="handoff-integration-models"></a>Modelos de integração de entrega
+
+O Microsoft Bot Framework dá suporte a dois modelos de integração às plataformas de participação do agente. O protocolo de entrega é idêntico para ambos os modelos; no entanto, os detalhes de integração diferem entre os modelos e as plataformas de participação do agente.
+
+O objetivo não é oferecer uma solução universal para integração com o sistema de qualquer cliente, mas sim fornecer uma **linguagem comum** e **práticas recomendadas** para desenvolvedores de bot e integradores de sistemas que criam sistemas de ia de conversação com o humano no loop.
+
+### <a name="bot-as-an-agent"></a>Bot como um agente
+
+No primeiro modelo, conhecido como "Bot como um agente", o bot une as classificações dos agentes humanos conectados ao hub do agente e responde às solicitações do usuário como se as solicitações viessem de qualquer outro canal do Bot Framework. A conversa entre o usuário e o bot pode ser encaminhada para um agente humano. Nesse ponto o bot se desconecta da conversa ativa.
+
+A principal vantagem desse modo é a simplicidade: um bot existente pode ser integrado ao hub do agente com mínimo esforço, com toda a complexidade do roteamento de mensagens sob a responsabilidade do hub do agente.
+
+![Cenário de bot como um agente](~/media/designing-bots/patterns/bot-as-agent-2.PNG)
+
+### <a name="bot-as-a-proxy"></a>Bot como um proxy
+
+O segundo modelo é conhecido como "Bot como um proxy". O usuário se comunica diretamente com o bot, até que o bot decida que precisa da ajuda de um agente humano. O componente de roteador de mensagem no bot redireciona a conversa para o hub do agente, que a expede para o agente apropriado. O bot permanece no loop e pode coletar a transcrição da conversa, filtrar mensagens ou fornecer conteúdo adicional ao agente e ao usuário.
+
+A flexibilidade e o controle são as principais vantagens desse modelo. O bot pode dar suporte a uma variedade de canais e ter controle sobre como as conversas são encaminhadas e roteadas entre o usuário, o bot e o hub do agente.
+
+![Cenário de bot como um proxy](~/media/designing-bots/patterns/bot-as-proxy-2.PNG)
 
 ## <a name="handoff-protocol"></a>Protocolo de entrega
 
-Quando um bot detecta a necessidade de entregar a conversa a um agente, ele sinaliza a intenção dele enviando um evento de início da entrega, conforme demonstrado no snippet de código C# a seguir.
+O protocolo é centralizado em volta de eventos para inicialização, enviado pelo bot para o canal e atualização de status, enviado pelo canal para o bot.
+
+
+### <a name="handoff-initiation"></a>Início da entrega
+
+O evento de *início de entrega* é criado pelo bot para iniciar a entrega.
+
+O evento contém dois componentes:
+
+- O **contexto da solicitação de entrega** que é necessário para rotear a conversa para o agente correto.
+- A **transcrição da conversa**. O agente pode ler a conversa que ocorreu entre o cliente e o bot antes do início da entrega.
+
+Estes são os campos de evento de início da entrega:
+
+- **Nome** – o `name` é um campo **obrigatório** que é definido como `"handoff.initiate"` .
+- **Valor** -o `value` campo é um objeto que contém o conteúdo JSON específico do Hub do Agent, como a habilidade do agente necessária e assim por diante.  Esse campo é **opcional**.
+
+    ```json
+    { "Skill" : "credit cards" }
+    ```
+
+- **Anexos** – o `attachments` é um campo **opcional** que contém a lista de `Attachment` objetos. O bot Framework define o tipo de anexo "transcrição" que é usado para enviar a transcrição de conversa para o Hub do agente, se necessário. Os anexos podem ser enviados embutidos (sujeitos a um limite de tamanho) ou offline fornecendo `ContentUrl` .
+
+    ```C#
+    handoffEvent.Attachments = new List<Attachment> {
+        new Attachment {
+            Content = transcript,
+            ContentType = "application/json",
+            Name = "Trasnscript",
+        }};
+    ```
+
+    > [!NOTE]
+    > Os hubs de agente **devem ignorar** os tipos de anexos que eles não entendem.
+
+- **Conversa** -o `conversation` é um campo **obrigatório** do tipo `ConversationAccount` que descreve a conversa que está sendo enviada. Criticamente, ele deve incluir a conversa `Id` que pode ser usada para correlação com os outros eventos.
+
+Quando um bot detecta a necessidade de entregar a conversa a um agente, ele sinaliza sua intenção enviando um evento de início de entrega.
+Em C#, um método de API de nível superior `CreateHandoffInitiation` pode ser usado como demonstrado no trecho de código abaixo.
 
 ```C#
 var activities = GetRecentActivities();
@@ -34,51 +99,55 @@ var handoffEvent =
 await turnContext.SendActivityAsync(handoffEvent);
 ```
 
-O evento contém dois componentes:
- 
- - O contexto da solicitação de entrega que é necessário para rotear a conversa para o agente correto.
- - A transcrição da conversa. O agente pode ler a conversa que ocorreu entre o cliente e o bot antes do início da entrega.
+### <a name="handoff-status"></a>Status da entrega
 
-<!-- We don't own this aka link, and for v4, I think there is an updated pattern.
-You can read more about the Bot Framework handoff protocol <a href="https://aka.ms/bfhandoffprotocol" target="blank">here</a>. 
--->
+O evento de *status de entrega* é enviado para o bot pelo Hub do agente. O evento informa o bot sobre o status da operação de entrega iniciada.
 
-## <a name="handoff-integration-models"></a>Modelos de integração de entrega
+> [!NOTE]
+> Os bots **não são necessários** para manipular o evento, no entanto, eles **não devem** rejeitá-lo.
 
-O Microsoft Bot Framework dá suporte a dois modelos de integração às plataformas de participação do agente. O protocolo de entrega é idêntico para ambos os modelos; no entanto, os detalhes de integração diferem entre os modelos e as plataformas de participação do agente.
+A seguir estão os campos de evento de status de entrega:
 
-## <a name="bot-as-an-agent"></a>Bot como um agente
+- **Nome** – o `name` é um campo **obrigatório** que é definido como `"handoff.status"` .
 
-No primeiro modelo, conhecido como "Bot como um agente", o bot une as classificações dos agentes humanos conectados ao hub do agente e responde às solicitações do usuário como se as solicitações viessem de qualquer outro canal do Bot Framework. A conversa entre o usuário e o bot pode ser encaminhada para um agente humano. Nesse ponto o bot se desconecta da conversa ativa.
+- **Valor** -o `value` é um campo **obrigatório** que descreve o status atual da operação de entrega. É um objeto JSON que contém o **required** campo obrigatório `state` e um campo opcional `message` , conforme definido abaixo.
 
-A principal vantagem desse modo é a simplicidade: um bot existente pode ser integrado ao hub do agente com mínimo esforço, com toda a complexidade do roteamento de mensagens sob a responsabilidade do hub do agente.
+O `state` tem um dos seguintes valores:
 
-![Cenário de bot como um agente](~/media/designing-bots/patterns/bot-as-agent.PNG)
+- `accepted`-Um agente aceitou a solicitação e assumiu o controle da conversa.
+- `failed`-A solicitação de entrega falhou. O `message` pode conter informações adicionais relevantes para a falha.
+- `completed`-A solicitação de entrega foi concluída.
 
-## <a name="bot-as-a-proxy"></a>Bot como um proxy
+O formato e o valor possível do `message` campo não são especificados.
 
-O segundo modelo é conhecido como "Bot como um proxy". O usuário se comunica diretamente com o bot, até que o bot decida que precisa da ajuda de um agente humano. O componente de roteador de mensagem no bot redireciona a conversa para o hub do agente, que a expede para o agente apropriado. O bot permanece no loop e pode coletar a transcrição da conversa, filtrar mensagens ou fornecer conteúdo adicional ao agente e ao usuário.
+- Conclusão de entrega bem-sucedida:
 
-A flexibilidade e o controle são as principais vantagens desse modelo. O bot pode dar suporte a uma variedade de canais e ter controle sobre como as conversas são encaminhadas e roteadas entre o usuário, o bot e o hub do agente.
+    ```json
+    { "state" : "completed" }
+    ```
 
-![Cenário de bot como um proxy](~/media/designing-bots/patterns/bot-as-proxy.PNG)
+- Falha na operação de entrega devido a um tempo limite:
 
-## <a name="natural-language"></a>Linguagem natural
+    ```json
+    { "state" : "failed", "message" : "Cannot find agent with requested skill" }
+    ```
 
-Compreensão de linguagem natural e análise de sentimento ajudam o bot decidir quando transferir o controle da conversa a um agente humano. Isso é particularmente importante ao tentar determinar quando o usuário está frustrado ou quer falar com um agente humano. 
- 
-O bot analisa o conteúdo das mensagens do usuário usando a <a href="https://www.microsoft.com/cognitive-services/text-analytics-api" target="blank">API de Análise de Texto</a> para inferir sentimento ou usando a <a href="https://www.luis.ai" target="_blank">API LUIS</a>. 
+- **Conversation**  - Conversa `Conversation` é um campo **obrigatório** do tipo `ConversationAccount` que descreve a conversa que foi aceita ou rejeitada. O `Id` da conversa deve ser o mesmo que o HandoffInitiation que iniciou a entrega.
 
+## <a name="handoff-library"></a>Biblioteca de entrega
 
-> [!TIP]
-> Compreensão de linguagem natural pode não ser sempre o melhor método para determinar quando um bot deve transferir o controle da conversa para um ser humano. Bots, como humanos, nem sempre adivinham corretamente e respostas inválidas frustrarão o usuário. No entanto, se o usuário seleciona em um menu de opções válidas, o bot sempre responderá adequadamente a essa entrada. 
+A [biblioteca de entrega](https://github.com/microsoft/BotBuilder-Samples/tree/master/experimental/handoff-library) foi criada para complementar o SDK do bot Framework V4 no suporte à entrega; especificamente
 
+- Implementa as adições ao SDK do bot Framework para dar suporte à entrega a um agente (também conhecido como *escalonamento*.
+- Contém definições de três tipos de evento para operações de entrega de sinalização.
+
+> [!NOTE]
+> As integrações com hubs de agente específicos não fazem parte da biblioteca.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- <a href="https://github.com/microsoft/BotBuilder-Samples/tree/master/experimental/handoff-library/csharp_dotnetcore/samples" target="blank">Integração ao Omnicanal para Customer Service do Microsoft Dynamics</a> 
-
-- <a href="https://developers.liveperson.com/third-party-bots-microsoft-bot-framework.html" target="blank">Integração com a plataforma LivePerson LiveEngage</a> 
-
+- [Integração ao Omnicanal para Customer Service do Microsoft Dynamics](https://github.com/microsoft/BotBuilder-Samples/tree/master/experimental/handoff-library/csharp_dotnetcore/samples)
+- [Integração com a plataforma LivePerson LiveEngage](https://developers.liveperson.com/third-party-bots-microsoft-bot-framework.html)
 - [Diálogos](v4sdk/bot-builder-dialog-manage-conversation-flow.md)
-- <a href="https://www.microsoft.com/cognitive-services/text-analytics-api" target="blank">API de Análise de Texto do Azure Machine Learning</a>
+- [Serviços cognitivos](https://www.microsoft.com/cognitive-services/text-analytics-api)
+

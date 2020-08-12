@@ -7,199 +7,22 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 05/16/2020
+ms.date: 07/21/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: ca0ec29b1bb97f45b28391d41d836ab975d3eefe
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: ce76dd093c6e8672da5d4b718a8a0ceb31b88156
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420557"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143925"
 ---
 # <a name="api-reference-for-adaptive-expressions"></a>Referência de API das expressões adaptáveis
 
 [!INCLUDE[applies-to](../includes/applies-to.md)]
 
-## <a name="expression-class"></a>Classe de expressão
+## <a name="api-reference-links"></a>Links de referência de API
 
-### <a name="constructors"></a>Construtores
-```C#
-/// <summary>
-/// Initializes a new instance of the <see cref="Expression"/> class.
-/// Built-in expression constructor.
-/// </summary>
-/// <param name="type">Type of built-in expression from <see cref="ExpressionType"/>.</param>
-/// <param name="children">Child expressions.</param>
-public Expression(string type, params Expression[] children)
+As expressões adaptáveis são independentes de idioma. As referências de API estão disponíveis para desenvolvedores de bot trabalhando com expressões adaptáveis nos seguintes idiomas:
 
-/// <summary>
-/// Initializes a new instance of the <see cref="Expression"/> class.
-/// Expression constructor.
-/// </summary>
-/// <param name="evaluator">Information about how to validate and evaluate expression.</param>
-/// <param name="children">Child expressions.</param>
-public Expression(ExpressionEvaluator evaluator, params Expression[] children)
-```
-### <a name="methods"></a>Métodos
-```C#
-/// <summary>
-/// Parse an expression string into an expression object.
-/// </summary>
-/// <param name="expression">expression string.</param>
-/// <param name="lookup">Optional function lookup when parsing the expression. Default is Expression.Lookup which uses Expression.Functions table.</param>
-/// <returns>expression object.</returns>
-public static Expression Parse(string expression, EvaluatorLookup lookup = null);
-
-/// <summary>
-/// Lookup a ExpressionEvaluator (function) by name.
-/// </summary>
-/// <param name="functionName">function name.</param>
-/// <returns>ExpressionEvaluator.</returns>
-public static ExpressionEvaluator Lookup(string functionName);
-
-/// <summary>
-/// Make an expression and validate it.
-/// </summary>
-/// <param name="type">Type of expression from <see cref="ExpressionType"/>.</param>
-/// <param name="children">Child expressions.</param>
-/// <returns>New expression.</returns>
-public static Expression MakeExpression(string type, params Expression[] children);
-
-/// <summary>
-/// Make an expression and validate it.
-/// </summary>
-/// <param name="evaluator">Information about how to validate and evaluate expression.</param>
-/// <param name="children">Child expressions.</param>
-/// <returns>New expression.</returns>
-public static Expression MakeExpression(ExpressionEvaluator evaluator, params Expression[] children);
-
-/// <summary>
-/// Construct an expression from a <see cref="EvaluateExpressionDelegate"/>.
-/// </summary>
-/// <param name="function">Function to create an expression from.</param>
-/// <returns>New expression.</returns>
-public static Expression LambaExpression(EvaluateExpressionDelegate function);
-
-/// <summary>
-/// Construct an expression from a lambda expression over the state.
-/// </summary>
-/// <remarks>Exceptions will be caught and surfaced as an error string.</remarks>
-/// <param name="function">Lambda expression to evaluate.</param>
-/// <returns>New expression.</returns>
-public static Expression Lambda(Func<object, object> function);
-
-/// <summary>
-/// Construct and validate an Set a property expression to a value expression.
-/// </summary>
-/// <param name="property">property expression.</param>
-/// <param name="value">value expression.</param>
-/// <returns>New expression.</returns>
-public static Expression SetPathToValue(Expression property, Expression value);
-
-/// <summary>
-/// Construct and validate an Set a property expression to a value expression.
-/// </summary>
-/// <param name="property">property expression.</param>
-/// <param name="value">value object.</param>
-/// <returns>New expression.</returns>
-public static Expression SetPathToValue(Expression property, object value);
-
-/// <summary>
-/// Construct and validate an Equals expression.
-/// </summary>
-/// <param name="children">Child clauses.</param>
-/// <returns>New expression.</returns>
-public static Expression EqualsExpression(params Expression[] children);
-
-/// <summary>
-/// Construct and validate an And expression.
-/// </summary>
-/// <param name="children">Child clauses.</param>
-/// <returns>New expression.</returns>
-public static Expression AndExpression(params Expression[] children);
-
-/// <summary>
-/// Construct and validate an Or expression.
-/// </summary>
-/// <param name="children">Child clauses.</param>
-/// <returns>New expression.</returns>
-public static Expression OrExpression(params Expression[] children);
-
-/// <summary>
-/// Construct and validate a Not expression.
-/// </summary>
-/// <param name="child">Child clauses.</param>
-/// <returns>New expression.</returns>
-public static Expression NotExpression(Expression child);
-
-/// <summary>
-/// Construct a constant expression.
-/// </summary>
-/// <param name="value">Constant value.</param>
-/// <returns>New expression.</returns>
-public static Expression ConstantExpression(object value);
-
-/// <summary>
-/// Construct and validate a property accessor.
-/// </summary>
-/// <param name="property">Property to lookup.</param>
-/// <param name="instance">Expression to get instance that contains property or null for global state.</param>
-/// <returns>New expression.</returns>
-public static Expression Accessor(string property, Expression instance = null);
-
-/// <summary>
-/// Validate immediate expression.
-/// </summary>
-public void Validate();
-
-/// <summary>
-/// Recursively validate the expression tree.
-/// </summary>
-public void ValidateTree();
-
-/// <summary>
-/// Evaluate the expression.
-/// </summary>
-/// <param name="state">
-/// Global state to evaluate accessor expressions against.  Can be <see cref="System.Collections.Generic.IDictionary{String, Object}"/>,
-/// <see cref="System.Collections.IDictionary"/> otherwise reflection is used to access property and then indexer.
-/// </param>
-/// <param name="options">Options used in the evaluation. </param>
-/// <returns>Computed value and an error string.  If the string is non-null, then there was an evaluation error.</returns>
-public (object value, string error) TryEvaluate(object state, Options options = null)
-
-/// <summary>
-/// Evaluate the expression.
-/// </summary>
-/// <param name="state">
-/// Global state to evaluate accessor expressions against.  Can be <see cref="System.Collections.Generic.IDictionary{String, Object}"/>,
-/// <see cref="System.Collections.IDictionary"/> otherwise reflection is used to access property and then indexer.
-/// </param>
-/// <param name="options">Options used in the evaluation. </param>
-/// <returns>Computed value and an error string.  If the string is non-null, then there was an evaluation error.</returns>
-public (object value, string error) TryEvaluate(IMemory state, Options options = null);
-
-/// <summary>
-/// Evaluate the expression.
-/// </summary>
-/// <typeparam name="T">type of result of the expression.</typeparam>
-/// <param name="state">
-/// Global state to evaluate accessor expressions against.  Can be <see cref="System.Collections.Generic.IDictionary{String, Object}"/>,
-/// <see cref="System.Collections.IDictionary"/> otherwise reflection is used to access property and then indexer.
-/// </param>
-/// <param name="options">Options used in the evaluation. </param>
-/// <returns>Computed value and an error string.  If the string is non-null, then there was an evaluation error.</returns>
-public (T value, string error) TryEvaluate<T>(object state, Options options = null);
-
-/// <summary>
-/// Evaluate the expression.
-/// </summary>
-/// <typeparam name="T">type of result of the expression.</typeparam>
-/// <param name="state">
-/// Global state to evaluate accessor expressions against.  Can be <see cref="System.Collections.Generic.IDictionary{String, Object}"/>,
-/// <see cref="System.Collections.IDictionary"/> otherwise reflection is used to access property and then indexer.
-/// </param>
-/// <param name="options">Options used in the evaluation. </param>
-/// <returns>Computed value and an error string.  If the string is non-null, then there was an evaluation error.</returns>
-public (T value, string error) TryEvaluate<T>(IMemory state, Options options = null)
-```
+- [C#](https://docs.microsoft.com/dotnet/api/adaptiveexpressions)
+- [JavaScript](https://docs.microsoft.com/javascript/api/adaptive-expressions)

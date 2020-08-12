@@ -7,17 +7,19 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 07/10/2020
-ms.openlocfilehash: 67f672ef629a6a33cca708e5b8ff707cb20e5022
-ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
+ms.openlocfilehash: 7dfc8a1d41d467764c9152045012c593041ed62b
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86542332"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143615"
 ---
 # <a name="bot-framework-faq-index"></a>Índice de perguntas frequentes do bot Framework
 
-> [!NOTE]
-> As perguntas podem ser postadas no [Stack Overflow](https://stackoverflow.com/questions/tagged/botframework) usando a marcação `botframework`. Os novos usuários devem visitar o [centro de ajuda do Stack Overflow](https://stackoverflow.com/help/how-to-ask).
+<!-- Attention writers!! When you create a new FAQ, please add the related link in the proper section below. -->
+
+A seguir estão algumas perguntas comuns que abordam os problemas que você pode enfrentar.
+Caso você não encontre a resposta que está procurando, poderá postar suas perguntas em [Stack Overflow](https://stackoverflow.com/questions/tagged/botframework) usando a `botframework` marca. Se você for um novo usuário, visite a [Stack Overflow centro de ajuda](https://stackoverflow.com/help/how-to-ask).
 
 ## <a name="background-and-availability"></a>Informações e disponibilidade
 
@@ -47,6 +49,7 @@ ms.locfileid: "86542332"
 
 ## <a name="ecosystem"></a>Ecossistema
 
+- [Como fazer habilitar o emulador para se conectar ao localhost enquanto estiver atrás de um proxy corporativo?](bot-service-resources-faq-ecosystem.md#how-do-i-enable-the-emulator-to-connect-to-localhost-while-behind-a-corporate-proxy)
 - [Quando vocês adicionarão mais experiências de conversa ao Bot Framework?](bot-service-resources-faq-ecosystem.md#when-will-you-add-more-conversation-experiences-to-the-bot-framework)
 - [Tenho um canal de comunicação que eu gostaria de configurá-lo com o bot Framework. Posso trabalhar com a Microsoft para fazer isso?](bot-service-resources-faq-ecosystem.md#i-have-a-communication-channel-id-like-to-be-configurable-with-bot-framework-can-i-work-with-microsoft-to-do-that)
 - [Se eu quiser criar um bot para o Microsoft Teams, quais ferramentas e serviços deverei usar?](bot-service-resources-faq-ecosystem.md#if-i-want-to-create-a-bot-for-microsoft-teams-what-tools-and-services-should-i-use)
@@ -64,7 +67,7 @@ ms.locfileid: "86542332"
 - [Os bots registrados com a estrutura de bot coletam informações pessoais? Em caso afirmativo, como posso ter certeza de que os dados estão seguros e seguros? E quanto à privacidade?](bot-service-resources-faq-security.md#do-the-bots-registered-with-the-bot-framework-collect-personal-information-if-yes-how-can-i-be-sure-the-data-is-safe-and-secure-what-about-privacy)
 - [Pode hospedar meu bot em meus próprios servidores?](bot-service-resources-faq-security.md#can-i-host-my-bot-on-my-own-servers)
 - [Como os bots são vetados ou removidos do serviço?](bot-service-resources-faq-security.md#how-do-you-ban-or-remove-bots-from-the-service)
-- [Quais URLs específicas preciso incluir na lista de permissões de meu firewall corporativo para acessar os serviços Bot Framework?](bot-service-resources-faq-security.md#which-specific-urls-do-i-need-to-whitelist-in-my-corporate-firewall-to-access-bot-framework-services)
+- [Quais URLs específicas eu preciso para permitir-list no meu firewall corporativo para acessar os serviços do bot Framework?](bot-service-resources-faq-security.md#which-specific-urls-do-i-need-to-allow-list-in-my-corporate-firewall-to-access-bot-framework-services)
 - [Posso bloquear todo o tráfego para o meu bot, exceto o tráfego do Bot Framework Service?](bot-service-resources-faq-security.md#can-i-block-all-traffic-to-my-bot-except-traffic-from-the-bot-framework-service)
 - [Qual função RBAC é necessária para criar e implantar um bot?](bot-service-resources-faq-security.md#which-rbac-role-is-required-to-create-and-deploy-a-bot)
 - [O que mantém o meu bot protegido de clientes que se passam pelo Bot Framework Service?](bot-service-resources-faq-security.md#what-keeps-my-bot-secure-from-clients-impersonating-the-bot-framework-service)

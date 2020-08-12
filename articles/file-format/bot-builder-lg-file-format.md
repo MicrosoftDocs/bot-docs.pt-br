@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 3393c3775f5179f56b4941e10c35a73d81f58294
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: 569d66f6e4cdc6b13d06a81bd79b99ff8a72160f
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420727"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143475"
 ---
 # <a name="lg-file-format"></a>Formato de arquivo .lg
 
@@ -48,8 +48,8 @@ Os **modelos** são o conceito básico do sistema de geração de linguagem. Cad
 - uma lista de valores de texto de variação one-of
 - uma definição de conteúdo estruturado
 - uma coleção de condições, cada uma com:
-    - uma [expressão adaptável][3]
-    - uma lista de valores de texto de variação one-of por condição
+  - uma [expressão adaptável][3]
+  - uma lista de valores de texto de variação one-of por condição
 
 Os nomes de modelos seguem a definição do cabeçalho Markdown.
 
@@ -91,9 +91,9 @@ Este é um exemplo de um modelo simples que inclui duas variações.
 ### <a name="conditional-response-template"></a>Modelo de resposta condicional
 
 Os modelos de resposta condicional permitem criar um conteúdo selecionado com base em uma condição. Todas as condições são expressas por meio de [expressões adaptáveis][3].
- 
+
 > [!IMPORTANT]
-> Os modelos condicionais não podem ser aninhados em um só modelo de resposta condicional. Use a composição em um [modelo de resposta estruturada](../language-generation/language-generation-structured-response-template.md) para aninhar condicionais. 
+> Os modelos condicionais não podem ser aninhados em um só modelo de resposta condicional. Use a composição em um [modelo de resposta estruturada](../language-generation/language-generation-structured-response-template.md) para aninhar condicionais.
 
 #### <a name="if-else-template"></a>Modelo if-else
 
@@ -153,7 +153,7 @@ Veja um exemplo mais complicado de SWITCH CASE DEFAULT:
     - ${apology-phrase()}, ${defaultResponseTemplate()}
 ```
 
-Assim como os modelos condicionais, os modelos de opção também não podem ser aninhados. 
+Assim como os modelos condicionais, os modelos de opção também não podem ser aninhados.
 
 ### <a name="structured-response-template"></a>Modelo de resposta estruturada
 
@@ -170,7 +170,7 @@ Leia mais sobre os [modelos de resposta estruturada](../language-generation/lang
 
 ### <a name="references-to-templates"></a>Referências a modelos
 
-O texto de variação pode incluir referências a outro modelo nomeado para auxiliar na composição e na resolução de respostas sofisticadas. Referências a outros modelos nomeados são indicadas por meio de chaves, como **${<TemplateName>()}** .
+O texto de variação pode incluir referências a outro modelo nomeado para auxiliar na composição e na resolução de respostas sofisticadas. Referências a outros modelos nomeados são indicadas por meio de chaves, como **${\<TemplateName>()}** .
 
 ```.lg
 > Example of a template that includes composition reference to another template.
@@ -206,6 +206,7 @@ Hello, good evening
 Quando usadas diretamente em um texto de variação one-of, as referências de entidade são indicadas colocando-as entre chaves, como ${`entityName`}, ou sem chaves quando usadas como um parâmetro.
 
 As entidades podem ser usadas como um parâmetro:
+
 - dentro de uma [função predefinida][4]
 - dentro de uma condição em um [modelo de resposta condicional](#conditional-response-template)
 - para a [chamada de resolução de modelo](#parametrization-of-templates)
@@ -306,7 +307,6 @@ Você pode dividir os modelos de geração de linguagem em arquivos separados e 
 
 Todos os modelos definidos no arquivo de destino serão recebidos. Verifique se os nomes de modelo são exclusivos (ou têm o namespace `# \<namespace>.\<templatename>`) em todos os arquivos que estão sendo recebidos.
 
-
 ```.lg
 [Shared](../shared/common.lg)
 ```
@@ -317,7 +317,7 @@ As [expressões adaptáveis][3] fornecem a capacidade de injetar um conjunto per
 
 ## <a name="options"></a>Opções
 
-O desenvolvedor pode definir opções do analisador para personalizar ainda mais a forma como a entrada é avaliada. Use a notação `> !#` para definir as opções do analisador.
+Os desenvolvedores podem definir opções de analisador para personalizar ainda mais a forma como a entrada é avaliada. Use a notação `> !#` para definir as opções do analisador.
 
 > [!IMPORTANT]
 >
@@ -344,10 +344,10 @@ Se o nome for nulo, o diagnóstico será **'name' avaliado como nulo. [welcome] 
 
 ### <a name="replacenull-option"></a>Opção replaceNull
 
-Os desenvolvedores podem criar representantes para substituir valores nulos em expressões avaliadas usando a opção **replaceNull**:
+Os desenvolvedores podem criar delegados para substituir valores nulos em expressões avaliadas usando a opção **replaceNull** :
 
 ```.lg
-> !# @replaceNull = ${path} is undefined 
+> !# @replaceNull = ${path} is undefined
 ```
 
 No exemplo acima, a entrada nula na variável `path` será substituída por **${path} é indefinido**. A seguinte entrada, em que `user.name` é nulo:
@@ -383,7 +383,7 @@ O seguinte exemplo mostra como definir a opção de namespace como `foo`:
 
 ### <a name="exports-option"></a>Opção de exportações
 
-Você pode especificar uma lista de modelos LG para exportar. Os modelos exportados podem ser chamados como funções predefinidas. 
+Você pode especificar uma lista de modelos LG para exportar. Os modelos exportados podem ser chamados como funções predefinidas.
 
 O seguinte exemplo mostra como definir a opção de exportações como `template1, template2`:
 
@@ -400,14 +400,12 @@ O seguinte exemplo mostra como definir a opção de exportações como `template
 
 Use `foo.template1(1,2), foo.template2(['a', 'b', 'c'], ',')` para chamar esses modelos exportados.
 
-
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [Referência de API de geração de linguagem][2]
-
+- [Referência da API do C#](https://docs.microsoft.com/dotnet/api/microsoft.bot.builder.languagegeneration)
+- [Referência da API JavaScript](https://docs.microsoft.com/javascript/api/botbuilder-lg)
 
 [1]:https://github.com/Microsoft/botbuilder-tools/blob/master/packages/Ludown/docs/lu-file-format.md
-[2]:../language-generation/language-generation-API-reference.md
 [3]:../v4sdk/bot-builder-concept-adaptive-expressions.md
 [4]:../adaptive-expressions/adaptive-expressions-prebuilt-functions.md
 [5]:../adaptive-expressions/adaptive-expressions-prebuilt-functions.md#join

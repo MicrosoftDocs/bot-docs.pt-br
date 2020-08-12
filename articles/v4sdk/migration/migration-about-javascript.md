@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/28/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 5d614fc34f3daa9deddb2ccedbe58bdef2ba067a
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: f566db6f1cadf3c6df97bf92046405aad5ce4a9b
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75791038"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143955"
 ---
 # <a name="differences-between-the-v3-and-v4-javascript-sdk"></a>Diferenças entre o SDK do JavaScript v3 e v4
 
@@ -147,7 +147,7 @@ Outras observações sobre o código da v4:
 
 ### <a name="passing-state-between-and-within-dialogs"></a>Transmitir o estado entre e dentro de diálogos
 
-As seções [estado do diálogo](../bot-builder-concept-dialog.md#dialog-state), [propriedades de contexto da etapa em cascata](../bot-builder-concept-dialog.md#waterfall-step-context-properties) e [usar diálogos](../bot-builder-concept-dialog.md#using-dialogs) do artigo **biblioteca de diálogos** descrevem como gerenciar o estado do diálogo na v4.
+A seção [estado da caixa](../bot-builder-concept-dialog.md#dialog-state) de diálogo do artigo da biblioteca de caixas de **diálogo** e as seções Propriedades do [contexto](../bot-builder-concept-waterfall-dialogs.md#waterfall-step-context-properties) e uso de [caixas de diálogo](../bot-builder-concept-waterfall-dialogs.md#using-dialogs) do **componente sobre componentes e caixas** de diálogo de cascata descrevem como gerenciar o estado da caixa de diálogo no v4.
 
 ### <a name="get-user-response"></a>Obter resposta do usuário
 

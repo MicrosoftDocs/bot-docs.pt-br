@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 90eeb3157cf53f1ee87d1ac08313c6d659e6c1d9
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 91215618e46d8255d84b79e3b38cd419cee2affb
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75789313"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143215"
 ---
 # <a name="send-an-activity-to-the-bot"></a>Enviar uma atividade para o bot
 
@@ -35,6 +35,7 @@ Content-Type: application/json
 
 ```json
 {
+    "locale": "en-EN",
     "type": "message",
     "from": {
         "id": "user1"

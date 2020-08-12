@@ -7,14 +7,28 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/08/2020
-ms.openlocfilehash: feb6b8070c1bcf68ebbb47e472b9274ab29ba3c5
-ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
+ms.openlocfilehash: 529ec82ed8f00136b2fa3272fef62d58efb8d07e
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86542312"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143565"
 ---
 # <a name="ecosystem"></a>Ecossistema
+
+<!-- Attention writers!!
+     1 - This article contains FAQs regarding Bot Framework ecosystem.
+     1 - When you create a new FAQ, please add the related link to the proper section in bot-service-resources-bot-framework-faq.md.-->
+
+## <a name="how-do-i-enable-the-emulator-to-connect-to-localhost-while-behind-a-corporate-proxy"></a>Como fazer habilitar o emulador para se conectar ao localhost enquanto estiver atrás de um proxy corporativo?
+
+Ao desenvolver um bot em um ambiente corporativo, normalmente, o proxy bloqueará a conexão, a menos que você especifique que ela deve ser ignorada para o `localhost` . Para fazer isso em seu computador local, você deve definir a seguinte variável de ambiente:
+
+```cmd
+    NO_PROXY=localhost
+```
+
+Para saber mais, consulte [Definir as configurações de proxy](bot-service-debug-emulator.md#configure-proxy-settings).
 
 ## <a name="when-will-you-add-more-conversation-experiences-to-the-bot-framework"></a>Quando vocês adicionarão mais experiências de conversa ao Bot Framework?
 
@@ -76,9 +90,9 @@ A Linha Direta é adequada para:
 
 ## <a name="what-are-the-steps-to-configure-web-chat-and-direct-line-for-azure-government"></a>Quais são as etapas para configurar o chat da Web e a linha direta para o Azure governamental?
 
-As etapas para configurar o chat da Web e a linha direta para o Azure governamental são semelhantes às usadas para o Azure público. No Azure governamental, você define o [domínio](https://github.com/microsoft/BotFramework-WebChat/blob/master/packages/bundle/src/createDirectLine.js#L6) para a URL do Azure governamental porque o [domínio padrão](https://github.com/microsoft/BotFramework-DirectLineJS/blob/master/src/directLine.ts#L456) se aplica ao Azure público, não ao Azure governamental. Observe também que a URL pública do Azure ( `https://webchat.botframework.com/v3/directline` ) é diferente da URL do Azure governamental ( `https://webchat.botframework.azure.us/v3/directline` ) para o chat da Web e a configuração de linha direta.  
+As etapas para configurar o chat da Web e a linha direta para o Azure governamental são semelhantes às usadas para o Azure público. No Azure governamental, você define o [domínio](https://github.com/microsoft/BotFramework-WebChat/blob/master/packages/bundle/src/createDirectLine.js#L6) para a URL do Azure governamental porque o [domínio padrão](https://github.com/microsoft/BotFramework-DirectLineJS/blob/master/src/directLine.ts#L456) se aplica ao Azure público, não ao Azure governamental. Observe que a URL pública do Azure ( `https://webchat.botframework.com/v3/directline` ) é diferente da URL do Azure governamental ( `https://webchat.botframework.azure.us/v3/directline` ) para o chat da Web e a configuração de linha direta.
 
-O exemplo a seguir mostra como definir o domínio para a URL do Azure governamental: 
+O exemplo a seguir mostra como definir o domínio para a URL do Azure governamental:
 
 ```html
 <body>
@@ -87,7 +101,7 @@ O exemplo a seguir mostra como definir o domínio para a URL do Azure governamen
       window.WebChat.renderWebChat(
         {
           directLine: window.WebChat.createDirectLine({
-          token: 'YOUR_TOKEN_SECRET', 
+          token: 'YOUR_TOKEN_SECRET',
           domain: 'https://webchat.botframework.azure.us/v3/directline'
           }),
           userID: 'YOUR_USER_ID',
@@ -103,7 +117,7 @@ O exemplo a seguir mostra como definir o domínio para a URL do Azure governamen
 
 ```
 Saiba mais nos documentos a seguir:
-* [Conectar um bot ao Webchat](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-webchat?view=azure-bot-service-4.0) 
+* [Conectar um bot ao Webchat](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-webchat?view=azure-bot-service-4.0)
 * [Conectar um bot à Linha Direta](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directline?view=azure-bot-service-4.0)
 * Para uma abordagem programática para trocar seu segredo para um token, use o trecho de código fornecido [aqui](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-webchat?view=azure-bot-service-4.0#production-embedding--option) e ajuste as URLs do Azure público para o Azure governamental.
 

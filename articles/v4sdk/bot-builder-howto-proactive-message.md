@@ -2,19 +2,19 @@
 title: Enviar notificações proativas para os usuários – Serviço de Bot
 description: Entenda como enviar mensagens de notificação
 keywords: mensagem proativa, mensagem de notificação, notificação de bot,
-author: jonathanfingold
+author: JonathanFingold
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 06/17/2020
+ms.date: 08/06/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a5af3c0982b48807bca913cdc217a8f51b398c2d
-ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
+ms.openlocfilehash: 4fb3d2e29c0710858572aae06d605266728d0748
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86542481"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143115"
 ---
 # <a name="send-proactive-notifications-to-users"></a>Enviar notificações proativas para os usuários
 
@@ -25,11 +25,16 @@ Em alguns casos, talvez o bot precise enviar ao usuário uma mensagem sem relaç
 
 Mensagens proativas podem ser útil em uma variedade de cenários. Por exemplo, se o usuário tiver solicitado ao bot o monitoramento do preço de um produto, se o preço do produto cair 20%, o bot poderá alertar o usuário. Ou, se o bot precisar de um tempo para compilar uma resposta para a pergunta do usuário, ele poderá informar ao usuário sobre o atraso e permitir que a conversa continue enquanto isso. Quando o bot terminar de compilar a resposta para a pergunta, compartilhará essas informações com o usuário.
 
-Ao implementar mensagens proativas em seu bot, não envie várias mensagens proativas em um curto período de tempo. Alguns canais impõem restrições sobre a frequência de envio de mensagens para o usuário de um bot, e desabilitarão o bot se ele violar essas restrições.
+## <a name="requirements"></a>Requisitos
 
-Uma mensagem proativa ad hoc é o tipo mais simples de mensagem proativa. O bot apenas injeta a mensagem na conversa sempre que ele é disparado, sem considerar se o usuário está envolvido em um tópico separado de conversa com o bot e não tentará alterar a conversa de modo algum.
+Antes que você possa enviar uma mensagem proativa, seu bot precisa de uma _referência de conversa_. O bot pode recuperar a referência de conversa de qualquer atividade recebida do usuário, mas isso normalmente requer que o usuário interaja com o bot pelo menos uma vez antes que o bot possa enviar uma mensagem proativa.
 
-Para lidar com notificações de forma mais suave, considere outras maneiras de integrar a notificação no fluxo de conversa, como definir um sinalizador no estado da conversa ou adicionar a notificação a uma fila.
+Muitos canais proíbem um bot de enviar mensagens para um usuário, a menos que o usuário tenha acionado o bot pelo menos uma vez. Alguns canais permitem exceções. Por exemplo, o canal de equipes permite que o bot envie uma mensagem proativa (ou 1-em-1) para indivíduos em uma conversa de grupo já estabelecida que inclua o bot.
+
+Mais informações sobre as mensagens proativas em equipes podem ser encontradas nesses recursos:
+
+- O exemplo de **bot de conversa de equipes** em [**C#**](https://aka.ms/cs-teams-conversations-sample), [**JavaScript**](https://aka.ms/js-teams-conversations-sample)ou [**Python**](https://aka.ms/py-teams-conversations-sample).
+- Documentação do Microsoft Teams sobre como [enviar mensagens proativas](/microsoftteams/platform/bots/how-to/conversations/send-proactive-messages)
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -126,6 +131,14 @@ Em seguira, o servidor usará o `_send_proactive_message` para enviar a mensagem
 ## <a name="additional-information"></a>Informações adicionais
 
 Além do exemplo usado neste artigo, exemplos adicionais estão disponíveis no [GitHub](https://github.com/Microsoft/BotBuilder-Samples/).
+
+### <a name="design-considerations"></a>Considerações sobre o design
+
+Ao implementar mensagens proativas em seu bot, não envie várias mensagens proativas em um curto período de tempo. Alguns canais impõem restrições sobre a frequência de envio de mensagens para o usuário de um bot, e desabilitarão o bot se ele violar essas restrições.
+
+Uma mensagem proativa ad hoc é o tipo mais simples de mensagem proativa. O bot apenas injeta a mensagem na conversa sempre que ele é disparado, sem considerar se o usuário está envolvido em um tópico separado de conversa com o bot e não tentará alterar a conversa de modo algum.
+
+Para lidar com notificações de forma mais suave, considere outras maneiras de integrar a notificação no fluxo de conversa, como definir um sinalizador no estado da conversa ou adicionar a notificação a uma fila.
 
 ### <a name="avoiding-401-unauthorized-errors"></a>Como evitar erros 401 "Não Autorizados"
 

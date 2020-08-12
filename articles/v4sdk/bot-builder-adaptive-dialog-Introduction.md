@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 06/24/2020
-ms.openlocfilehash: 8076e81526ec35ea738cf0bb1862c43e451e943d
-ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
+ms.openlocfilehash: 4ebecb4f41a3294685dd97a8a8a31be6d4a9f3f6
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86542591"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143245"
 ---
 # <a name="introduction-to-adaptive-dialogs"></a>Introdução aos diálogos adaptáveis
 
@@ -147,7 +147,7 @@ Como o diálogo `bookFlightDialog` não tem nenhum gatilho `OnIntent` para proce
 
 Resumidamente:
 
-O _reconhecedor_ de cada diálogo analisa a entrada do usuário para determinar a intenção dele. Quando a intenção é determinada, o _reconhecedor_ emite um evento `IntentRecognized`, que o diálogo processa usando um gatilho `OnIntent`. Se não houver nenhum gatilho `OnIntent` no diálogo ativo que possa processar essa intenção, o bot o enviará para o diálogo pai do diálogo. Se o diálogo pai não tiver um gatilho para processar a intenção, ele será levado para cima até atingir o diálogo raiz. Quando o gatilho que processa essa intenção é concluído, ele envia o controle novamente para o diálogo que iniciou esse processo, no qual ele pode continuar o fluxo de conversa no ponto em que parou.
+O _reconhecedor_ de cada diálogo analisa a entrada do usuário para determinar a intenção dele. Quando a intenção é determinada, o _reconhecedor_ emite um evento `IntentRecognized`, que o diálogo processa usando um gatilho `OnIntent`. Se não houver nenhum gatilho `OnIntent` no diálogo ativo que possa processar essa intenção, o bot o enviará para o diálogo pai do diálogo. Se o diálogo pai não tiver um gatilho para processar a intenção, ele emergirá até atingir o diálogo raiz. Quando o gatilho que processa essa intenção é concluído, ele envia o controle novamente para o diálogo que iniciou esse processo, no qual ele pode continuar o fluxo de conversa no ponto em que parou.
 
 ## <a name="additional-information"></a>Informações adicionais
 

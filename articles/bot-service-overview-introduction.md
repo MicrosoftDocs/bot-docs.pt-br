@@ -1,6 +1,6 @@
 ---
-title: Introdução ao Serviço de Bot do Azure – Serviço de Bot
-description: Saiba mais sobre o serviço de bot, um serviço para criar, conectar, testar, implantar, monitorar e gerenciar bots.
+title: O que é o SDK do bot Framework? -Serviço bot
+description: Saiba mais sobre o serviço de bot do Azure e o SDK do bot Framework para criar, conectar, testar, implantar, monitorar e gerenciar bots.
 keywords: Visão geral, a estrutura de tópicos de Introdução, SDK
 author: Kaiqb
 ms.author: kamrani
@@ -8,18 +8,26 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/15/2019
-ms.openlocfilehash: 29fc77a9dc04dd944b95f846beb255d04d98fb94
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: 17bc03d9e7536d47d1d79dfb4870e04ecde5bcbb
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420667"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143705"
 ---
-# <a name="about-azure-bot-service"></a>Sobre o Serviço de Bot do Azure
+# <a name="what-is-the-bot-framework-sdk"></a>O que é o SDK do bot Framework?
+
+<!-- Alternate titles:
+# About the Bot Framework SDK and the Azure Bot Service
+-->
 
 [!INCLUDE [applies-to-both](includes/applies-to-both.md)]
 
-O Serviço de Bot do Azure e o Bot Framework fornecem ferramentas para criar, testar, implantar e gerenciar bots inteligentes em um só lugar. Por meio do uso da estrutura modular e extensível fornecida pelo SDK, pelas ferramentas, pelos modelos e serviços de inteligência artificial, os desenvolvedores podem criar bots que utilizam fala, compreendem linguagem natural, lidam com perguntas e respostas e muito mais.
+O bot Framework, juntamente com o serviço de bot do Azure, fornece ferramentas para criar, testar, implantar e gerenciar bots inteligentes, tudo em um só lugar. A estrutura de bot inclui um SDK modular e extensível para a criação de bots, bem como ferramentas, modelos e serviços de ia relacionados. Com essa estrutura, os desenvolvedores podem criar bots que usam fala, compreender a linguagem natural, lidar com perguntas e respostas e muito mais.
+
+<!-- [Azure] Bot Service - The service that accelerates the process of developing a bot. It provisions a web host with one of five bot templates that can be modified in an integrated environment. -->
+<!-- bot service - An instance created by the user using Azure Bot Service. -->
+<!-- [Microsoft] Bot Framework - The comprehensive offering to build and deploy high quality bots for users to enjoy wherever they are talking. Users can start conversations with your bot from any channel that you’ve configured your bot to work on, such as SMS, Skype, Slack, Facebook, and other popular services. -->
 
 ## <a name="what-is-a-bot"></a>O que é um bot?
 
@@ -29,9 +37,9 @@ Os bots são muito semelhantes aos aplicativos Web modernos, residindo na Intern
 
 Os bots podem fazer as mesmas coisas que outros tipos de software podem fazer: ler e gravar arquivos, usar bancos de dados e APIs e realizar tarefas computacionais normais. O que torna os bots únicos é o uso de mecanismos geralmente reservados à comunicação entre seres humanos.
 
-O Serviço de Bot do Azure e o Bot Framework oferecem:
+O serviço de bot do Azure e o bot Framework oferecem:
 
-- SDK do Bot Framework para o desenvolvimento de bots
+- O SDK do bot Framework para desenvolvimento de bots
 - Ferramentas do Bot Framework para cobrir o fluxo de trabalho de desenvolvimento de bot de ponta a ponta
 - Serviço do Bot Framework (BFS) para enviar e receber mensagens e eventos entre bots e canais
 - Implantação do bot e configuração do canal no Azure
@@ -40,6 +48,10 @@ Além disso, os bots podem usar outros serviços do Azure, como:
 
 - Serviços Cognitivos do Azure para compilar aplicativos inteligentes
 - Armazenamento do Azure para a solução de armazenamento em nuvem
+
+<!-- Bot Framework Service - The service that communicates with your bot to send and receive messages and events. -->
+<!-- [Microsoft] Azure Storage - The Microsoft Azure service that lets you store binary data and text data in blobs, unstructured non-relational data in tables, and messages for workflow and communication in queues. -->
+<!-- [Microsoft] Cognitive Services - The family of services to build apps with powerful algorithms using just a few lines of code, which work across devices and platforms such as iOS, Android, and Windows, are easy to set up and enable natural and contextual interaction with tools that augment users' experiences using the power of machine-based intelligence. Microsoft Translator is part of Cognitive Services. -->
 
 ## <a name="building-a-bot"></a>Criação de um bot
 

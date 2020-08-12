@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 06/09/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 44f08ba2b763c38fb4f3fa80ca835af1206d7ecd
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: 07e16d04c3f3a874f2cca74f245881d09f17cba3
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124607"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143935"
 ---
 # <a name="actions-in-adaptive-dialogs---reference-guide"></a>Ações em caixas de diálogo adaptáveis – guia de referência
 
@@ -80,7 +80,7 @@ There's a mix of concepts going on here. There's the action sequence, which are 
 | ---------------------- | -------------------------------- | ------------------------------------------------------------------------- |
 | Começar uma nova caixa de diálogo     | [BeginDialog](#begindialog)      | Começa a executar outra caixa de diálogo. Quando essa caixa de diálogo for concluída, a execução do gatilho atual será retomada.    |
 | Cancelar um diálogo        | `CancelDialog`<!--[CancelDialog](#canceldialog)-->| Cancela a caixa de diálogo ativa. Use quando desejar que a caixa de diálogo seja fechada imediatamente, mesmo que isso signifique parar o processo intermediário.|
-| Cancelar todas as caixas de diálogo     | [CancelAllDialogs](#cancelalldialog)| Cancela todas as caixas de diálogo ativas, incluindo qualquer caixa de diálogo pai ativa. Use caso você queira remover todas as caixas de diálogo da pilha; é possível limpar a pilha de caixas de diálogo chamando o método cancelar todas as caixas de diálogo no contexto da caixa de diálogo. Emite o evento `CancelAllDialogs`.|
+| Cancelar todas as caixas de diálogo     | [CancelAllDialogs](#cancelalldialogs)| Cancela todas as caixas de diálogo ativas, incluindo qualquer caixa de diálogo pai ativa. Use caso você queira remover todas as caixas de diálogo da pilha; é possível limpar a pilha de caixas de diálogo chamando o método cancelar todas as caixas de diálogo no contexto da caixa de diálogo. Emite o evento `CancelAllDialogs`.|
 | Fechar esta caixa de diálogo        | [EndDialog](#enddialog)          | Encerra a caixa de diálogo ativa.  Use quando desejar que a caixa de diálogo seja concluída e retorne os resultados antes de ser encerrada. Emite o evento `EndDialog`.|
 | Encerrar o turno da caixa de diálogo        | [EndTurn](#endturn)              | Encerra o turno atual da conversa sem encerrar a caixa de diálogo.          |
 | Repetir essa caixa de diálogo     | [RepeatDialog](#repeatdialog)    | Usado para reiniciar a caixa de diálogo pai.                                        |
@@ -521,12 +521,12 @@ new EndDialog()
 > [!TIP]
 > As caixas de diálogo adaptáveis serão encerradas automaticamente por padrão se a caixa de diálogo tiver concluído a execução de todas as suas ações. Para substituir esse comportamento, defina a propriedade `AutoEndDialog` na Caixa de Diálogo Adaptável como false.
 
-#### <a name="cancelalldialog"></a>CancelAllDialog
+#### <a name="cancelalldialogs"></a>CancelAllDialogs
 
 Exclui todas as caixas de diálogo na pilha, inclusive as caixas de diálogo pai e filho.
 
 ```csharp
-new CancelAllDialog()
+new CancelAllDialogs()
 ```
 
 #### <a name="endturn"></a>EndTurn

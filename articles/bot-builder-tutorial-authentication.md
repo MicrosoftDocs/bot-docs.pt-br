@@ -8,16 +8,16 @@ ms.service: bot-service
 ROBOTS: NOINDEX
 ms.date: 11/14/2019
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: e7ae8eea8dcf7f7f66d406f120f15ec89cfb8f4f
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: c45a913243e57844928d2628800841c2ff8aef1f
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80647240"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143905"
 ---
 # <a name="add-authentication-to-your-bot-via-azure-bot-service"></a>Adicionar autenticação ao seu bot por meio do Serviço de Bot do Azure
 
-[!INCLUDE [pre-release-label](includes/pre-release-label-v3.md)]  
+[!INCLUDE [pre-release-label](includes/pre-release-label-v3.md)]
 
 Este tutorial usa os novos recursos de autenticação do bot no Serviço de Bot do Azure, fornecendo recursos para facilitar o desenvolvimento de um bot que autentica usuários em vários provedores de identidade como o Azure AD (Azure Active Directory), GitHub, Uber e assim por diante. Essas atualizações também avançam em direção a uma experiência de usuário aprimorada, eliminando a _verificação de código mágico_ para alguns clientes.
 
@@ -80,7 +80,7 @@ Você precisa de um aplicativo do Azure AD que seu bot possa usar como um proved
 Para este bot, você pode usar pontos de extremidade do Azure AD v1 ou v2.
 Para obter informações sobre as diferenças entre os pontos de extremidade v1 e v2, consulte a [comparação v1-v2](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-compare) e a [visão geral de ponto de extremidade do Azure AD v 2.0](https://docs.microsoft.com/azure/active-directory/develop/active-directory-appmodel-v2-overview).
 
-#### <a name="create-an-azure-ad-identity-provider-application"></a>Criar um aplicativo de provedor de identidade do Azure AD 
+#### <a name="create-an-azure-ad-identity-provider-application"></a>Criar um aplicativo de provedor de identidade do Azure AD
 
 Use essas etapas para criar um novo aplicativo do Azure Active Directory. Você pode usar os pontos de extremidade v1 ou v2 com o aplicativo criado.
 
@@ -103,9 +103,10 @@ Use essas etapas para criar um novo aplicativo do Azure Active Directory. Você 
       - Depois de criado, o Azure exibe a página **Visão geral** do aplicativo.
       - Registre o valor da **ID do aplicativo (cliente)** . Você usará esse valor posteriormente como a _ID do cliente_ ao registrar seu aplicativo do Azure AD com seu bot.
       - Registre também o valor da **ID do diretório (locatário)** . Você também usará essas informações para registrar esse aplicativo no bot.
- 
+
     > [!NOTE]
-    > Quando os tipos de conta compatíveis forem definidos como locatário único, se você usar uma assinatura pessoal em vez de uma conta Microsoft, o emulador emitirá o erro: *A ID do aplicativo Microsoft do bot ou a senha do aplicativo Microsoft está incorreta.* Nesse caso, os tipos de conta compatíveis devem ser definidos como *Contas em qualquer diretório organizacional (Qualquer diretório do Azure AD – Multilocatário) e contas pessoais Microsoft (por exemplo, Xbox)* .
+> Quando os tipos de conta com suporte forem definidos como locatário único, se você usar uma assinatura pessoal em vez de um conta Microsoft o emulador enviará o erro: *a ID do aplicativo Microsoft do bot ou a senha do aplicativo Microsoft está incorreta.*.
+    > Nesse caso, os tipos de conta compatíveis devem ser definidos como *Contas em qualquer diretório organizacional (Qualquer diretório do Azure AD – Multilocatário) e contas pessoais Microsoft (por exemplo, Xbox)* .
 
 1. No painel de navegação, clique em **Certificados e segredos** para criar um segredo para o aplicativo.
 
@@ -227,7 +228,7 @@ A próxima etapa é registrar com seu bot o aplicativo do Azure AD que você aca
     </appSettings>
     ```
 
-    Se você não souber como obter seus valores de **ID do aplicativo Microsoft** e **senha de aplicativo do Microsoft**, você pode criar uma nova senha conforme descrito aqui: [bot-channels-registration-password](bot-service-quickstart-registration.md#get-registration-password); ou recuperar a **ID do aplicativo Microsoft** e a **senha de aplicativo do Microsoft** provisionadas com o **registro de canais do Bot** com a seguinte implantação:  [find-your-azure-bots-appid-and-appsecret](https://blog.botframework.com/2018/07/03/find-your-azure-bots-appid-and-appsecret)
+    Para obter a **ID do aplicativo** da Microsoft e os valores de **senha do aplicativo da Microsoft** , consulte [obter senha de registro](~/bot-service-manage-settings.md#get-registration-password).
 
     > [!NOTE]
     > Agora você pode publicar esse código de bot em sua assinatura do Azure (clique com o botão direito no projeto e escolha **Publicar**), mas não é necessário para este tutorial. Você precisará definir uma configuração de publicação que usa o aplicativo e o plano de hospedagem que você usou ao configurar o bot no Portal do Azure.
@@ -247,11 +248,6 @@ Você precisará instalar o [Emulador de Bot](https://github.com/Microsoft/BotFr
 1. Quando você tiver entrado, você não precisa fornecer suas credenciais novamente até sair.
 1. Para sair e cancelar a sua autenticação, digite `signout`.
 
-<!--To restart completely from scratch you also need to:
-1. Navigate to the **AppData** folder for your account.
-1. Go to the **Roaming/botframework-emulator** subfolder.
-1. Delete the **Cookies** and **Coolies-journal** files.
--->
 
 > [!NOTE]
 > A autenticação do bot requer o uso do Serviço de Conector de Bot. O serviço acessa as informações de registro de canais de bot para seu bot, por isso, você precisará definir o ponto de extremidade de mensagens do seu bot no portal. A autenticação também exige o uso de HTTPS, por isso, você precisará criar um endereço de encaminhamento HTTPS para seu bot executar localmente.

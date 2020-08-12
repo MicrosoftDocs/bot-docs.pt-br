@@ -7,17 +7,19 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/15/2020
-ms.openlocfilehash: a4aa0fbf476223f4e0c92b7ee7dfb0d740bba3a4
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: c91082dd3763d654f0019456dff43c1b13e34b05
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124589"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143395"
 ---
 # <a name="troubleshoot-index"></a>Solucionar problemas de índice
 
-> [!NOTE]
-> As perguntas podem ser postadas no [Stack Overflow](https://stackoverflow.com/questions/tagged/botframework) usando a marcação `botframework`. Os novos usuários devem visitar o [centro de ajuda do Stack Overflow](https://stackoverflow.com/help/how-to-ask).
+<!-- Attention writers!! When you create a new FAQ, please add the related link to the proper section below. -->
+
+A seguir estão algumas perguntas comuns que abordam os problemas que você pode enfrentar.
+Caso você não encontre a resposta que está procurando, poderá postar suas perguntas em [Stack Overflow](https://stackoverflow.com/questions/tagged/botframework) usando a `botframework` marca. Se você for um novo usuário, visite a [Stack Overflow centro de ajuda](https://stackoverflow.com/help/how-to-ask).
 
 ## <a name="troubleshoot-general"></a>Solucionar problemas gerais
 

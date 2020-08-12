@@ -7,14 +7,18 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/08/2020
-ms.openlocfilehash: fa982eec09068939f5261728c098b6bbbede09e1
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: 3582149b7c97c16ee78c21cf4e92af4ce93b32be
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124603"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143625"
 ---
 # <a name="background-and-availability"></a>Informações e disponibilidade
+
+<!-- Attention writers!!
+     1 - This article contains FAQs regarding Bot Framework background and availability.
+     1 - When you create a new FAQ, please add the related link to the proper section in bot-service-resources-bot-framework-faq.md.-->
 
 ## <a name="why-did-microsoft-develop-the-bot-framework"></a>Por que a Microsoft desenvolveu o Bot Framework?
 

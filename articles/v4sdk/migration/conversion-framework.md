@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4629e1573170d2843037a1189b6885cd194db591
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 92426d644f25df07028264ff51a282d8e2ed3018
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75791108"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143965"
 ---
 # <a name="migrate-a-net-v3-bot-to-a-net-framework-v4-bot"></a>Migrar um bot v3 do .NET para um bot v4 do .NET Framework
 
@@ -205,7 +205,7 @@ No arquivo **Dialogs/RootDialog.cs**:
     [!code-csharp[PromptForOptionsAsync](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetFramework/ContosoHelpdeskChatBot/Dialogs/RootDialog.cs?range=51-65)]
 
 1. Podemos substituir `OnOptionSelected` pela segunda etapa da nossa cascata. Ainda iniciaremos um diálogo filho com base na entrada do usuário.
-   - O prompt de escolha retorna um valor `FoundChoice`. Isso é mostrado na propriedade de contexto `Result` da etapa. A pilha de diálogo trata todos os valores retornados como objetos. Se o valor retornado for um dos seus diálogos, você saberá qual é o tipo de valor do objeto. Para obter uma lista com o que cada tipo de prompt retorna, confira [tipos de prompt](../bot-builder-concept-dialog.md#prompt-types).
+   - O prompt de escolha retorna um valor `FoundChoice`. Isso é mostrado na propriedade de contexto `Result` da etapa. A pilha de diálogo trata todos os valores retornados como objetos. Se o valor retornado for um dos seus diálogos, você saberá qual é o tipo de valor do objeto. Para obter uma lista com o que cada tipo de prompt retorna, confira [tipos de prompt](../bot-builder-concept-waterfall-dialogs.md#prompt-types).
    - Como o prompt de escolha não lançará uma exceção, nós podemos remover o bloco try-catch.
    - Precisamos adicionar uma passagem para que esse método sempre retorne um valor apropriado. Esse código nunca deve ser atingido, mas se o for, ele permitirá que o diálogo “falhe graciosamente”.  
     [!code-csharp[ShowChildDialogAsync](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetFramework/ContosoHelpdeskChatBot/Dialogs/RootDialog.cs?range=67-102)]

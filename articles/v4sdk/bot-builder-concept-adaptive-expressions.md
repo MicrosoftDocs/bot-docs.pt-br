@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 844d518f57494250ccf4ee32859ed5d1a0c073cd
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: 5092a86a57504035caa7085dbe5cf7022c0960b9
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420427"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143195"
 ---
 # <a name="adaptive-expressions"></a>Expressões adaptáveis
 
@@ -40,10 +40,10 @@ As expressões adaptáveis dão suporte aos seguintes tipos de operadores e à s
 | Operador    |                                  Funcionalidade                                            |   Equivalente da função predefinida    |
 |-----------|-------------------------------------------------------------------------------------------|-----------------------------------|
 |+          | Adição. Exemplo: A + B                                                    |[adicionar][1]                           |
-|-            | Subtração. Exemplo: A – B                                                |[sub][2]                           |
+|-            | Subtração. Exemplo: A-B                                                |[sub][2]                           |
 |unário +    | Valor positivo. Exemplo: +1, +A                                                    |N/D                                |
-|unário -    | Valor negativo. Exemplo: -2, -B                                            |N/D                                |
-|*            | Multiplicação. Exemplo: A * B                                            |[mul][3]                           |
+|unário -    | Valor negativo. Exemplo:-2,-B                                            |N/D                                |
+|\*            | Multiplicação. Exemplo: A \* B                                            |[mul][3]                           |
 |/            | Divisão. Exemplo: A / B                                                    |[div][4]                           |
 |^            | Exponenciação. Exemplo: A ^ B                                            |[exp][5]                           |
 |%            | Módulo. Exemplo: A % B                                                    |[mod][6]                           |
@@ -53,11 +53,11 @@ As expressões adaptáveis dão suporte aos seguintes tipos de operadores e à s
 | Operador    |                                  Funcionalidade                                            |   Equivalente da função predefinida    |
 |-----------|-------------------------------------------------------------------------------------------|-----------------------------------|
 |==            | Igual a. Exemplo: A == B                                                    |[equals][7]                        |
-|!=            | Não é igual a. Exemplo: A != B                                                |[not][8]([equals][7]())            |
-|>            | Maior que. Exemplo: A > B                                                   |[greater][9]                       |
-|<            | Menor que. Exemplo: A < B                                                        |[less][10]                         |
-|>=         | Maior que ou igual a. Exemplo: A >= B                                        |[greaterOrEquals][11]              |
-|<=            | Menor que ou igual a. Exemplo: A <= B                                            |[lessOrEquals][12]                 |
+|\!=            | Não é igual a. Exemplo: A != B                                                |[not][8]([equals][7]())            |
+|\>            | Maior que. Exemplo: A > B                                                   |[greater][9]                       |
+|\<            | Menor que. Exemplo: A < B                                                        |[less][10]                         |
+|\>=         | Maior que ou igual a. Exemplo: A >= B                                        |[greaterOrEquals][11]              |
+|\<=            | Menor que ou igual a. Exemplo: A <= B                                            |[lessOrEquals][12]                 |
 
 ### <a name="logical-operators"></a>Operadores lógicos
 
@@ -65,7 +65,7 @@ As expressões adaptáveis dão suporte aos seguintes tipos de operadores e à s
 |-----------|-------------------------------------------------------------------------------------------|-----------------------------------|
 |&&            |E. Exemplo: exp1 && exp2                                                    |[and][13]                          |
 |\|\|        |Ou. Exemplo: exp1 \|\| exp2                                                    |[or][14]                           |
-|!            |Não. Exemplo: !exp1                                                            |[not][8]                           |
+|\!            |Não. Exemplo: !exp1                                                            |[not][8]                           |
 
 
 ### <a name="other-operators-and-expression-syntax"></a>Outros operadores e sintaxe de expressão
@@ -75,12 +75,12 @@ As expressões adaptáveis dão suporte aos seguintes tipos de operadores e à s
 |&, +            |Operadores de concatenação. Os operandos sempre serão convertidos em cadeia de caracteres. Exemplos: A & B, 'foo' + ' bar' => 'foo bar', 'foo' + 3 => 'foo3', 'foo' + (3 + 3) => 'foo6'                |N/D                                |
 |'            |Usado para encapsular um literal de cadeia de caracteres. Exemplo: 'myValue'                                                |N/D                                |
 |"            |Usado para encapsular um literal de cadeia de caracteres. Exemplo: "myValue"                                                |N/D                                |
-|[]            |Usado para referenciar um item em uma lista pelo respectivo índice. Exemplo: A[0]                                    |N/D                                |
+|\[\]            |Usado para referenciar um item em uma lista pelo respectivo índice. Exemplo: A[0]                                    |N/D                                |
 |${}        |Usado para indicar uma expressão. Exemplo: ${A == B}.                                              |N/D                                |
 |${}        |Usado para indicar uma variável na expansão do modelo. Exemplo: ${myVariable}                        |N/D                                |
-|()            |Impõe a ordem de precedência e agrupa as subexpressões em expressões maiores. Exemplo: (A+B)*C    |N/D                                |
-|.            |Seletor de propriedade. Exemplo: myObject.Property1                                                    |N/D                                |
-|\            |Caractere de escape para modelos e expressões.                                               |N/D                                |
+|\(\)            |Impõe a ordem de precedência e agrupa as subexpressões em expressões maiores. Exemplo: (A + B) \* C    |N/D                                |
+|\.            |Seletor de propriedade. Exemplo: myObject.Property1                                                    |N/D                                |
+|\\            |Caractere de escape para modelos e expressões.                                               |N/D                                |
 
 ## <a name="variables"></a>Variáveis
 
@@ -97,9 +97,9 @@ Os valores explícitos podem ser colocados entre aspas simples 'myExplicitValue'
 - Pacote [NuGet AdaptiveExpressions](https://www.nuget.org/packages/AdaptiveExpressions) para C#
 - Pacote [npm adaptive-expressions](https://www.npmjs.com/package/adaptive-expressions) para JavaScript
 - [Funções predefinidas](../adaptive-expressions/adaptive-expressions-prebuilt-functions.md) compatíveis com a biblioteca de Expressões Adaptáveis
-<!--
-- [API reference](../adaptive-expressions/adaptive-expressions-api-reference.md) for Adaptive Expressions
-- [Extend functions](./extend-functions.md)-->
+- [Referência do C #API](https://docs.microsoft.com/dotnet/api/adaptiveexpressions)
+- [Referência de API de JavaScript](https://docs.microsoft.com/javascript/api/adaptive-expressions)   
+<!--- [Extend functions](./extend-functions.md)-->
 
 [1]:../adaptive-expressions/adaptive-expressions-prebuilt-functions.md#add
 [2]:../adaptive-expressions/adaptive-expressions-prebuilt-functions.md#sub

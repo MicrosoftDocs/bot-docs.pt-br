@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 2/26/2019
-ms.openlocfilehash: 8e5b094f7dcd870352de197feb04eb5976daea1f
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: d6337a209d54e5c59d4d6b7ca0a8851fa21563c4
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80647629"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143845"
 ---
 # <a name="debug-with-the-emulator"></a>Depurar com o emulador
 
@@ -23,13 +23,14 @@ O Bot Framework Emulator é um aplicativo de desktop que permite que os desenvol
 - Instalar o [Bot Framework Emulator](https://aka.ms/Emulator-wiki-getting-started)
 
 ## <a name="run-a-bot-locally"></a>Executar um bot localmente
-Antes de conectar o bot ao Bot Framework Emulator, você precisa executar o bot localmente. Você pode usar o Visual Studio, o Visual Studio Code ou a linha de comando para executar o bot. Para executar um bot usando a linha de comando, faça o seguinte:
+Antes de conectar o bot ao Bot Framework Emulator, você precisa executar o bot localmente. Você pode usar o Visual Studio, o Visual Studio Code ou a linha de comando para executar o bot.
+Para executar um bot usando a linha de comando, faça o seguinte:
 
 
 # <a name="c"></a>[C#](#tab/csharp)
 
 * Vá para o prompt de comando e altere o diretório para o diretório de projeto do bot.
-* Inicie o bot executando o seguinte comando: 
+* Inicie o bot executando o seguinte comando:
     ```
     dotnet run
     ```
@@ -61,10 +62,22 @@ Antes de conectar o bot ao Bot Framework Emulator, você precisa executar o bot 
 
 ---
 
-Neste ponto, seu bot está em execução localmente. 
+Neste ponto, seu bot está em execução localmente.
 
 
 ## <a name="connect-to-a-bot-running-on-localhost"></a>Conectar-se a um bot em execução no localhost
+
+### <a name="configure-proxy-settings"></a>Definir configurações de proxy
+
+Quando você estiver desenvolvendo por trás de um proxy corporativo, o emulador usará as variáveis de ambiente configuradas `HTTP_PROXY` e `HTTPS_PROXY` , que especificarão a rota de URL de proxy para solicitações HTTP e HTTPS, respectivamente.
+
+Se você estiver se conectando a um bot em execução no `localhost` , o emulador primeiro tentará rotear pelo proxy antes de se conectar ao `localhost` . Normalmente, o proxy bloqueará a conexão, a menos que você especifique que ela deve ser ignorada para o `localhost` .
+
+Para ignorar as `HTTP_PROXY` `HTTPS_PROXY` configurações e e permitir que o emulador se conecte ao `localhost` , em seu computador local, você deve definir a seguinte variável de ambiente:
+
+```cmd
+    NO_PROXY=localhost
+```
 
 <!-- auth config steps -->
 ### <a name="configure-the-emulator-for-authentication"></a>Configurar o emulador para autenticação
@@ -109,14 +122,14 @@ Se o bot é executado com [credenciais da MSA (Conta Microsoft)](#use-bot-creden
 
 ### <a name="use-bot-credentials"></a>Usar credenciais do bot
 
-Quando você abre o bot, defina a **ID do aplicativo Microsoft** e a **senha do aplicativo Microsoft** se seu bot está em execução com as credenciais. Se você criou seu bot com o Serviço de Bot do Azure, as credenciais estão disponíveis no Serviço de Aplicativo do bot, na seção **Configurações -> Configuração**. Se não souber os valores, você poderá remover aqueles do arquivo de configuração do bot sendo executado localmente e depois executar o bot no emulador. Se o bot não estiver em execução com essas configurações, você também não precisará executar o emulador com as configurações. 
+Quando você abre o bot, defina a **ID do aplicativo Microsoft** e a **senha do aplicativo Microsoft** se seu bot está em execução com as credenciais. Se você criou seu bot com o Serviço de Bot do Azure, as credenciais estão disponíveis no Serviço de Aplicativo do bot, na seção **Configurações -> Configuração**. Se não souber os valores, você poderá remover aqueles do arquivo de configuração do bot sendo executado localmente e depois executar o bot no emulador. Se o bot não estiver em execução com essas configurações, você também não precisará executar o emulador com as configurações.
 
 Ao criar um aplicativo de provedor de identidade do AD, lembre-se do seguinte:
 
-- Quando os tipos de conta compatíveis forem definidos como locatário único, se você usar uma assinatura pessoal em vez de uma conta Microsoft, o emulador emitirá o erro: *A ID do aplicativo Microsoft do bot ou a senha do aplicativo Microsoft está incorreta.* 
+- Quando os tipos de conta compatíveis forem definidos como locatário único, se você usar uma assinatura pessoal em vez de uma conta Microsoft, o emulador emitirá o erro: *A ID do aplicativo Microsoft do bot ou a senha do aplicativo Microsoft está incorreta.*
 - Nesse caso, os tipos de conta compatíveis devem ser definidos como *Contas em qualquer diretório organizacional (Qualquer diretório do Azure AD – Multilocatário) e contas pessoais Microsoft (por exemplo, Xbox)* .
 
-Para obter mais informações, consulte [Criar um aplicativo de provedor de identidade do Azure AD](bot-builder-tutorial-authentication.md#create-an-azure-ad-identity-provider-application).
+Para obter mais informações, consulte [criar um aplicativo de provedor de identidade do Azure ad](bot-builder-tutorial-authentication.md#create-an-azure-ad-identity-provider-application) e [registrar um novo aplicativo usando o portal do Azure](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app#register-a-new-application-using-the-azure-portal).
 
 ## <a name="view-detailed-message-activity-with-the-inspector"></a>Exibir a atividade de mensagem detalhada com o Inspetor de
 
@@ -130,20 +143,20 @@ Envie uma mensagem ao bot, que deve responder de volta. Você pode clicar na bol
 <!--
 ## Save and load conversations with bot transcripts
 
-Activities in the emulator can be saved as transcripts. From an open live chat window, select **Save Transcript As** to the transcript file. The **Start Over** button can be used any time to clear a conversation and restart a connection to the bot.  
+Activities in the emulator can be saved as transcripts. From an open live chat window, select **Save Transcript As** to the transcript file. The **Start Over** button can be used any time to clear a conversation and restart a connection to the bot.
 
 ![Emulator save transcripts](media/emulator-v4/emulator-save-transcript.png)
 
-To load transcripts, simply select **File > Open Transcript File** and select the transcript. A new Transcript window will open and render the message activity to the output window. 
+To load transcripts, simply select **File > Open Transcript File** and select the transcript. A new Transcript window will open and render the message activity to the output window.
 
 ![Emulator load transcripts](media/emulator-v4/emulator-load-transcript.png)
 --->
 <!---
-## Add services 
+## Add services
 
-You can easily add a LUIS app, QnA knowledge base, or dispatch model to your bot directly from the emulator. When the bot is loaded, select the services button on the far left of the emulator window. You will see options under the **Services** menu to add LUIS, QnA Maker, and Dispatch. 
+You can easily add a LUIS app, QnA knowledge base, or dispatch model to your bot directly from the emulator. When the bot is loaded, select the services button on the far left of the emulator window. You will see options under the **Services** menu to add LUIS, QnA Maker, and Dispatch.
 
-To add a service app, simply click on the **+** button and select the service you want to add. You will be prompted to sign in to the Azure portal to add the service to the bot file, and connect the service to your bot application. 
+To add a service app, simply click on the **+** button and select the service you want to add. You will be prompted to sign in to the Azure portal to add the service to the bot file, and connect the service to your bot application.
 
 > [!IMPORTANT]
 > Adding services only works if you're using a `.bot` configuration file. Services will need to be added independently. For details on that, see [Manage bot resources](v4sdk/bot-file-basics.md) or the individual how to articles for the service you're trying to add.
@@ -152,7 +165,7 @@ To add a service app, simply click on the **+** button and select the service yo
 
 ![LUIS connect](media/emulator-v4/emulator-connect-luis-btn.png)
 
-When either service is connected, you can go back to a live chat window and verify that your services are connected and working. 
+When either service is connected, you can go back to a live chat window and verify that your services are connected and working.
 
 ![QnA connected](media/emulator-v4/emulator-view-message-activity.png)
 
@@ -160,11 +173,11 @@ When either service is connected, you can go back to a live chat window and veri
 
 ## <a name="inspect-services"></a>Inspecionar serviços
 
-Com o novo emulador v4, você também pode inspecionar as respostas JSON de LUIS e QnA. Usando um bot com um serviço de idiomas conectado, você pode selecionar **trace** na janela LOG no canto inferior direito. Esta nova ferramenta também fornece recursos para atualizar seus serviços de idioma diretamente do emulador. 
+Com o novo emulador v4, você também pode inspecionar as respostas JSON de LUIS e QnA. Usando um bot com um serviço de idiomas conectado, você pode selecionar **trace** na janela LOG no canto inferior direito. Esta nova ferramenta também fornece recursos para atualizar seus serviços de idioma diretamente do emulador.
 
 ![Inspetor LUIS](media/emulator-v4/emulator-luis-inspector.png)
 
-Com um serviço LUIS conectado, você notará que o link de rastreamento especifica **Luis Trace**. Quando selecionado, você verá a resposta bruta de seu serviço LUIS, que inclui intenções, entidades e suas pontuações especificadas. Você também tem a opção de reatribuir intenções para suas declarações de usuário. 
+Com um serviço LUIS conectado, você notará que o link de rastreamento especifica **Luis Trace**. Quando selecionado, você verá a resposta bruta de seu serviço LUIS, que inclui intenções, entidades e suas pontuações especificadas. Você também tem a opção de reatribuir intenções para suas declarações de usuário.
 
 ![Inspetor do QnA](media/emulator-v4/emulator-qna-inspector.png)
 
@@ -181,7 +194,7 @@ Open the **Emulator Settings**, enter the path to ngrok, select whether or not t
 
 <!---## Login to Azure
 
-You can use Emulator to login in to your Azure account. This is particularly helpful for you to add and manage services your bot depends on. 
+You can use Emulator to login in to your Azure account. This is particularly helpful for you to add and manage services your bot depends on.
 See [above](#add-services) to learn more about services you can manage using the Emulator.
 -->
 
@@ -206,7 +219,7 @@ Se decidir que não deseja permitir que o Emulador colete dados de uso, você po
 3. Clique no botão "Salvar".
 
     ![desabilitar coleta de dados](media/emulator-v4/emulator-disable-data-3.png)
-    
+
 Se você mudar de ideias, poderá habilitá-lo novamente marcando a caixa de seleção.
 
 ## <a name="additional-resources"></a>Recursos adicionais

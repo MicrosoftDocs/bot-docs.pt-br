@@ -8,20 +8,24 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/19/2019
-ms.openlocfilehash: 23d11a6199b6e031e93f6a2025f30247bb3e625d
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 018cc19c5d90c070c2b5f4d72f3df9a843d3cac0
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75795356"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143495"
 ---
 # <a name="troubleshoot-http-500-errors"></a>Solucionar erros de HTTP 500
 
+<!-- Attention writers!!
+     1 - When you create a new FAQ, please add the related link to the proper section in bot-service-troubleshoot-index.md.-->
+
 A primeira etapa na solução de erros 500 é habilitar o Application Insights.
 
-<!-- TODO: Add links back in once there's a fresh AppInsights sample.
-The luis-with-appinsights ([C# sample](https://aka.ms/cs-luis-with-appinsights-sample) / [JS sample](https://aka.ms/js-luis-with-appinsights-sample)) and qna-with-appinsights ([C# sample](https://aka.ms/qna-with-appinsights) / [JS sample](https://aka.ms/js-qna-with-appinsights-sample)) samples demonstrate bots that support Azure Application Insights.
--->
+Para obter exemplos de AppInsights, consulte o exemplo de [C#](https://aka.ms/cs-luis-with-appinsights-sample) de Luis-com-AppInsights e exemplo de [js](https://aka.ms/js-luis-with-appinsights-sample).
+
+ <!-- qna-with-appinsights ([C# sample](https://aka.ms/qna-with-appinsights) / [JS sample](https://aka.ms/js-qna-with-appinsights-sample)) samples demonstrate bots that support Azure Application Insights.-->
+
 Confira [telemetria de análise de conversa](https://aka.ms/botframeworkanalytics) para obter informações sobre como adicionar o Application Insights a um bot existente.
 
 ## <a name="enable-application-insights-on-aspnet"></a>Habilitar o Application Insights no ASP.Net

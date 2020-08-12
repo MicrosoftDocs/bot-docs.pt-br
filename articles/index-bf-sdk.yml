@@ -1,35 +1,35 @@
 ### YamlMime:Landing
-title: Documentação do Serviço de Bot do Azure
-summary: O Serviço de Bot do Azure fornece um ambiente integrado criado especialmente para desenvolvimento de bot.
+title: Documentação do SDK do bot Framework
+summary: O SDK do bot Framework permite que você crie e desenvolva bots para o serviço de bot do Azure.
 metadata:
-  title: Documentação do Serviço de Bot do Azure
-  description: O Serviço de Bot do Azure fornece um ambiente integrado criado especialmente para desenvolvimento de bot.
+  title: Documentação do SDK do bot Framework
+  description: O SDK do bot Framework permite que você crie e desenvolva bots para o serviço de bot do Azure.
   ms.service: bot-service
   ms.topic: landing-page
-  author: ivorb
-  ms.author: ivorb
-  ms.date: 11/11/2019
-  ms.openlocfilehash: 72351f086d46085be408929e64625aad5e8953de
-  ms.sourcegitcommit: 757ddf4f3fd3557ad9746dfa83ca742d54ac4763
+  author: JonathanFingold
+  ms.author: botcc
+  ms.date: 07/22/2020
+  ms.openlocfilehash: 9bbb6d7cafb10d336e8d532202120581ae186f74
+  ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
   ms.translationtype: MT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 07/22/2020
-  ms.locfileid: "86876547"
+  ms.lasthandoff: 08/12/2020
+  ms.locfileid: "88143335"
 landingContent:
-- title: Sobre o Serviço de Bot do Azure
+- title: Sobre o SDK do bot Framework
   linkLists:
   - linkListType: whats-new
     links:
     - text: Novidades
-      url: https://docs.microsoft.com/azure/bot-service/what-is-new
+      url: what-is-new.md
   - linkListType: overview
     links:
-    - text: O que é o Serviço de Bot do Azure?
-      url: https://docs.microsoft.com/azure/bot-service/bot-builder-basics
+    - text: O que é o SDK do bot Framework?
+      url: bot-service-overview-introduction.md
   - linkListType: concept
     links:
     - text: Como funcionam os bots
-      url: https://docs.microsoft.com/azure/bot-service/bot-builder-basics
+      url: v4sdk/bot-builder-basics.md
 - title: Guias de início rápido de 5 minutos
   linkLists:
   - linkListType: quickstart
@@ -70,11 +70,11 @@ landingContent:
       url: https://docs.microsoft.com/azure/bot-service/bot-service-resources-links-help
     - text: Exemplos
       url: https://github.com/Microsoft/BotBuilder-Samples/blob/master/README.md
-- title: Recursos externos
+- title: Recursos
   linkLists:
   - linkListType: concept
     links:
-    - text: Compositor
+    - text: Bot Framework Composer
       url: https://docs.microsoft.com/composer/
     - text: Tutorial do Compositor
       url: https://docs.microsoft.com/composer/tutorial/tutorial-introduction/

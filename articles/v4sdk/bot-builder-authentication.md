@@ -7,12 +7,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 2/7/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 8c0d01e25ee8c2fe167e00e99d6bfb62e93a3d53
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: b773a65d7dd226c6d95b1a6e570bf994dda8606f
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420467"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143305"
 ---
 <!--
 
@@ -306,7 +306,7 @@ Você precisará da ID de aplicativo e da senha do seu bot para concluir este pr
 
 ---
 
-Se você não souber como obter os valores da **ID do aplicativo Microsoft** e da **senha do aplicativo Microsoft**, crie uma senha [conforme a descrição abaixo](../bot-service-quickstart-registration.md#get-registration-password)
+Para obter a **ID do aplicativo** da Microsoft e os valores de **senha do aplicativo da Microsoft** , consulte [obter senha de registro](~/bot-service-manage-settings.md#get-registration-password).
 
 > [!NOTE]
 > Agora você poderia publicar esse código de bot em sua assinatura do Azure (clique com o botão direito no projeto e escolha **Publicar**), mas isso não é necessário para este artigo. Você precisaria definir uma configuração de publicação que usasse o aplicativo e o plano de hospedagem que você usou ao configurar o bot no portal do Azure.

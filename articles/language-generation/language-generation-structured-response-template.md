@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 8e6918a1872db7b9ea8efee46e8e6d16245b21e6
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: 738f1bea52cda7a754f970106e05c97dde3c32ce
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420737"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143325"
 ---
 # <a name="structured-response-template"></a>Modelo de resposta estruturada
 
@@ -407,9 +407,11 @@ Here's an example:
 ```
 
 [more test samples][4]
+--> 
 
-## Additional Information
-- [Language generation API Reference](language-generation-API-reference.md)-->
+## <a name="additional-information"></a>Informações adicionais
+- [Referência da API do C#](https://docs.microsoft.com/dotnet/api/microsoft.bot.builder.languagegeneration)
+- [Referência da API JavaScript](https://docs.microsoft.com/javascript/api/botbuilder-lg)
 
 [1]:https://github.com/microsoft/botframework-cli/blob/master/packages/chatdown/docs/
 [2]:https://github.com/Microsoft/botframework-sdk/blob/master/specs/botframework-activity/botframework-activity.md

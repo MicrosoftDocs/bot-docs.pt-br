@@ -7,16 +7,18 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/25/2020
-ms.openlocfilehash: f9e2d7cb4cb9e9610b0924f839eca80de86b2936
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: 4771d5683c9e82d05f71b85f5753886fdcadb17f
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124477"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143485"
 ---
 # <a name="troubleshooting-bot-framework-authentication"></a>Solucionar problemas de autenticação do Bot Framework
 
-<!-- Sync -->
+<!-- Attention writers!!
+     1 - When you create a new FAQ, please add the related link to the proper section in bot-service-troubleshoot-index.md.-->
+
 Este guia pode ajudar você a solucionar problemas de autenticação com seu bot por meio da avaliação uma série de cenários para determinar onde há o problema.
 
 > [!NOTE]

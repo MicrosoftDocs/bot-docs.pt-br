@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 05/31/2020
-ms.openlocfilehash: 4a0c1d0c613bac95d59c36641399e34326cfea9a
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: 946ca4cc602d5cc805f9bad4114a24695b00d9fe
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124252"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143165"
 ---
 # <a name="using-declarative-assets-in-adaptive-dialogs"></a>Como usar ativos declarativos em diálogos adaptáveis
 
@@ -335,7 +335,7 @@ Esta seção contém todas as [ações](bot-builder-concept-adaptive-dialog-acti
 | ----------------------- | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 |`Microsoft.BeginDialog`  | [BeginDialog][begindialog]         | Começa a executar outra caixa de diálogo. Quando essa caixa de diálogo for concluída, a execução do gatilho atual será retomada.           |
 |`Microsoft.CancelDialog` | `CancelDialog`                     | Cancela a caixa de diálogo ativa. Use quando desejar que a caixa de diálogo seja fechada imediatamente, mesmo que isso signifique parar o processo intermediário.  |
-|`Microsoft.CancelAllDialogs`| [CancelAllDialogs][cancelalldialog]| Cancela todas as caixas de diálogo ativas, incluindo qualquer caixa de diálogo pai ativa. Use caso você queira remover todas as caixas de diálogo da pilha; é possível limpar a pilha de caixas de diálogo chamando o método cancelar todas as caixas de diálogo no contexto da caixa de diálogo. Emite o evento `CancelAllDialogs`.|
+|`Microsoft.CancelAllDialogs`| [CancelAllDialogs][cancelalldialogs]| Cancela todas as caixas de diálogo ativas, incluindo qualquer caixa de diálogo pai ativa. Use caso você queira remover todas as caixas de diálogo da pilha; é possível limpar a pilha de caixas de diálogo chamando o método cancelar todas as caixas de diálogo no contexto da caixa de diálogo. Emite o evento `CancelAllDialogs`.|
 |`Microsoft.EndDialog`    | [EndDialog][enddialog]            | Encerra a caixa de diálogo ativa.  Use quando desejar que a caixa de diálogo seja concluída e retorne os resultados antes de ser encerrada. Emite o evento `EndDialog`.|
 |`Microsoft.EndTurn`      | [EndTurn][endturn]                | Encerra o turno atual da conversa sem encerrar a caixa de diálogo.                                                         |
 |`Microsoft.RepeatDialog` | [RepeatDialog][repeatdialog]      | Usado para reiniciar a caixa de diálogo pai.                                                                                       |
@@ -481,7 +481,7 @@ O valor [generator][generator] contém um link para o arquivo .lg associado ao d
 
 <!--  (Actions) Dialog management -->
 [begindialog]: ../adaptive-dialog/adaptive-dialog-prebuilt-actions.md#begindialog
-[cancelalldialog]: ../adaptive-dialog/adaptive-dialog-prebuilt-actions.md#cancelalldialog
+[cancelalldialogs]: ../adaptive-dialog/adaptive-dialog-prebuilt-actions.md#cancelalldialogs
 [enddialog]: ../adaptive-dialog/adaptive-dialog-prebuilt-actions.md#enddialog
 [endturn]: ../adaptive-dialog/adaptive-dialog-prebuilt-actions.md#endturn
 [repeatdialog]: ../adaptive-dialog/adaptive-dialog-prebuilt-actions.md#repeatdialog

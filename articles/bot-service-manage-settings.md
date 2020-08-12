@@ -8,33 +8,63 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: a34c99e6995835341cb610525d8033567d914e5c
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: cdefb3de187ebf712392a0e569b6847332d55a8f
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81395699"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143685"
 ---
-# <a name="configure-bot-settings"></a>Definir as configurações do bot
+# <a name="configure-bot-registration-settings"></a>Definir configurações de registro de bot
 
-As configurações do bot, como Nome de Exibição, Ícone e Application Insights, podem ser exibidas e modificadas em sua folha **Configurações**.
+As configurações de registro de bot, como nome de exibição, ícone e Application insights, podem ser exibidas e modificadas no painel **configurações** .
 
-![A folha de configurações do bot](~/media/bot-service-portal-configure-settings/bot-settings-blade.png)
+![configurações de registro de bot](media/bot-service-portal-configure-settings/bot-service-settings.png)
 
-Veja abaixo a lista de campos na folha **Configurações**:
+Abaixo está a lista dos campos de **configurações** :
 
-| Campo | Descrição |
-| :---  | :---        |
-| ícone | Um ícone personalizado para identificar visualmente seu bot nos canais e como o ícone para Cortana e outros serviços. Esse ícone deve estar no formato PNG e não pode exceder 30K em tamanho. Esse valor pode ser alterado a qualquer momento. |
-| Nome de exibição | O nome do seu bot em canais e diretórios. Esse valor pode ser alterado a qualquer momento. Limite de 35 caracteres. |
-| Identificador de Bot | Identificador exclusivo para seu bot. Esse valor não pode ser alterado depois de criar seu bot com o Serviço de Bot. |
-| Ponto de extremidade de mensagens | O ponto de extremidade para se comunicar com seu bot. |
-| ID do Aplicativo da Microsoft | Identificador exclusivo para seu bot. Esse valor não pode ser alterado. Você pode gerar uma nova senha clicando no link **Gerenciar**. |
-| Chave de instrumentação do Application Insights | Chave exclusiva para a telemetria de bot. Copie sua chave do Application Insights do Azure para esse campo se você quiser receber telemetria de bot para este bot. Esse valor é opcional. Os bots criados no Portal do Azure terão essa chave gerada para eles. Para obter mais detalhes sobre esse campo, veja [Chaves do Application Insights](~/bot-service-resources-app-insights-keys.md). |
-| Chave de API do Application Insights | Chave exclusiva para a análise de bot. Copie sua chave de API do Application Insights do Azure para esse campo se você quiser exibir análises sobre seu bot no painel. Esse valor é opcional. Para obter mais detalhes sobre esse campo, veja [Chaves do Application Insights](~/bot-service-resources-app-insights-keys.md). |
-| ID do Aplicativo do Application Insights | Chave exclusiva para a análise de bot. Copie sua chave da ID do Application Insights do Azure para esse campo se você quiser exibir análises sobre seu bot no painel. Esse valor é opcional. Os bots criados no Portal do Azure terão essa chave gerada para eles. Para obter mais detalhes sobre esse campo, veja [Chaves do Application Insights](~/bot-service-resources-app-insights-keys.md). |
+> [!div class="mx-tdBreakAll"]
+> | Campo <img width="400px"/>| Descrição |
+> | :---  | :---        |
+> | ícone | Um ícone personalizado para identificar visualmente seu bot nos canais e como o ícone para Cortana e outros serviços. Esse ícone deve estar no formato PNG e não pode exceder 30K em tamanho. Esse valor pode ser alterado a qualquer momento. |
+> | Nome de exibição | O nome do seu bot em canais e diretórios. Esse valor pode ser alterado a qualquer momento. Limite de 35 caracteres. |
+> | Identificador de Bot | Identificador exclusivo para seu bot. Esse valor não pode ser alterado depois de criar seu bot com o Serviço de Bot. |
+> | Ponto de extremidade de mensagens | O ponto de extremidade para se comunicar com seu bot. |
+> | ID do Aplicativo da Microsoft | Identificador exclusivo para seu bot. Esse valor não pode ser alterado. Você pode gerar uma nova senha clicando no link **Gerenciar**. |
+> | Chave de instrumentação do Application Insights | Chave exclusiva para a telemetria de bot. Copie sua chave do Application Insights do Azure para esse campo se você quiser receber telemetria de bot para este bot. Esse valor é opcional. Os bots criados no Portal do Azure terão essa chave gerada para eles. Para obter mais detalhes sobre esse campo, veja [Chaves do Application Insights](~/bot-service-resources-app-insights-keys.md). |
+> | Chave de API do Application Insights | Chave exclusiva para a análise de bot. Copie sua chave de API do Application Insights do Azure para esse campo se você quiser exibir análises sobre seu bot no painel. Esse valor é opcional. Para obter mais detalhes sobre esse campo, veja [Chaves do Application Insights](~/bot-service-resources-app-insights-keys.md). |
+> | ID do Aplicativo do Application Insights | ID exclusiva para análise de bot. Copie sua chave da ID do Application Insights do Azure para esse campo se você quiser exibir análises sobre seu bot no painel. Esse valor é opcional. Os bots criados no Portal do Azure terão essa chave gerada para eles. Para obter mais detalhes sobre esse campo, veja [Chaves do Application Insights](~/bot-service-resources-app-insights-keys.md). |
 
 Depois de alterar as configurações para o bot, clique no botão **Salvar** na parte superior da folha para salvar as configurações de seu novo bot.
+
+## <a name="application-id-and-password"></a>ID do aplicativo e senha
+
+A ID e a senha do aplicativo de registro são atribuídas às variáveis do bot `MicrosoftAppID` e `MicrosoftAppPassword` nos arquivos `appsettings.json` (.net) e `.env` (JavaScript).
+
+> [!NOTE]
+> O registro de canais de bot tem uma ID de aplicativo, mas como não há nenhum serviço de aplicativo associado a ele, não há senha. Para gerar a senha, siga as etapas na próxima seção. 
+
+### <a name="get-registration-password"></a>Obter a senha de registro
+
+Um aplicativo de registro tem uma **ID de aplicativo** (ID de aplicativo) e uma **senha** associada a ele.
+O serviço de bot do Azure atribui uma ID de aplicativo exclusiva ao aplicativo. Você pode obter a senha seguindo as etapas descritas abaixo.
+
+1. Em seu navegador, navegue até o [portal do Azure](https://ms.portal.azure.com).
+1. Na lista de recursos, clique no nome do aplicativo de registro.
+1. No painel direito, vá para a seção *Gerenciamento de bot* e clique em **configurações**. A página *configurações* do aplicativo de registro será exibida.
+1. Clique no link **gerenciar** ao lado de *ID do aplicativo da Microsoft*.
+
+    ![senha de configurações de registro de bot](media/azure-bot-quickstarts/bot-channels-registration-password.png)
+
+1. Na página exibida *Certificados e segredos*, clique no botão **Novo segredo do cliente**.
+
+    ![senha de configurações de registro de bot](media/azure-bot-quickstarts/bot-channels-registration-app-secrets.png)
+
+1. Adicione a descrição, selecione a hora de expiração e clique no botão **Adicionar**.
+
+    ![senha de configurações de registro de bot](media/azure-bot-quickstarts/bot-channels-registration-app-secrets-create.png)
+
+    Isso irá gerar uma nova senha para o seu bot. Copie esta senha e salve-a em um arquivo. Esta é a única vez que você verá a senha. Se você não tiver a senha completa salva, será preciso repetir o processo para criar uma nova senha caso precise dela posteriormente.
 
 ## <a name="additional-information"></a>Informações adicionais
 

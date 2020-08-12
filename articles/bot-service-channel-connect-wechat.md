@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: egorn
 ms.service: bot-service
 ms.date: 11/01/2019
-ms.openlocfilehash: 9abba3093ce819f7ebc07bb03e342da797971f25
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: ca12ea3b454d49303d8c7e361e25caf6b2e6d5d1
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75791787"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143875"
 ---
 # <a name="connect-a-bot-to-wechat"></a>Conectar um bot ao WeChat
 
@@ -136,7 +136,7 @@ Você precisará configurar o appsettings.json antes de iniciar o bot. O que voc
 
 Se já tiver uma conta de serviço e estiver pronto para implantar, você poderá encontrar **AppID**, **AppSecret**, **EncodingAESKey** e **Token** nas configurações básicas na barra de navegação à esquerda, conforme mostrado abaixo.
 
-Não se esqueça de que você precisa configurar a lista de permissões de IP; caso contrário, o WeChat não aceitará sua solicitação.
+Não se esquece de que você precisa configurar a lista de permissões de IP, caso contrário, o WeChat não aceitará sua solicitação.
 
  ![serviceaccount_console](./media/channels/wechat-serviceaccount-console.png)
 

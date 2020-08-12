@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/22/2019
-ms.openlocfilehash: f25b77e9147b7693f7c77849f31e913fe00fc3f0
-ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
+ms.openlocfilehash: f2aaad99ee08b6f87a7267472ca40f1fd9426d0d
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86542352"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143855"
 ---
 # <a name="connect-a-bot-to-web-chat"></a>Conectar um bot ao Webchat
 
@@ -21,7 +21,7 @@ ms.locfileid: "86542352"
 
 Quando você [cria um bot](bot-service-quickstart.md) com o serviço de bot de estrutura, o canal de chat da Web é configurado automaticamente para você. O canal de chat da Web inclui o [controle de chat da Web](https://github.com/microsoft/BotFramework-WebChat), que fornece a capacidade para os usuários interagirem com o bot diretamente em uma página da Web.
 
-![Amostra de Webchat](./media/bot-service-channel-webchat/create-a-bot.png)
+![Amostra de Webchat](~/media/bot-service-channel-webchat/create-a-bot.png)
 
 O canal de chat da Web no portal do bot Framework contém tudo o que você precisa para inserir o controle de chat da Web em uma página da Web. Basta usar o controle de Webchat para inserir a chave secreta do bot e o controle em uma página da Web.
 
@@ -33,7 +33,7 @@ Quando você usa a autenticação do Serviço de Bot do Azure com o Webchat, há
 
 A imagem a seguir mostra os componentes envolvidos ao inserir o controle de chat da Web em uma página da Web.
 
-  ![componentes de inserção de bot](./media/bot-service-channel-webchat/webchat-control.png)
+  ![componentes de inserção de bot](~/media/bot-service-channel-webchat/webchat-control.png)
 
 > [!NOTE]
 > Este artigo pressupõe que você já tenha um bot implantado no Azure. Para obter informações sobre a implantação, consulte [implantar o bot](https://docs.microsoft.com/azure/bot-service/bot-builder-deploy-az-cli?view=azure-bot-service-4.0&tabs=csharp).
@@ -45,11 +45,11 @@ A imagem a seguir mostra os componentes envolvidos ao inserir o controle de chat
 
 2. Clique em **Editar** no canal de **Webchat**.
 
-    ![Canal de Webchat](./media/bot-service-channel-webchat/bot-service-channel-list.png)
+    ![Canal de Webchat](~/media/bot-service-channel-webchat/bot-service-channel-list.png)
 
 3. Em **Chaves secretas**, clique em **Mostrar** para a primeira chave.
 
-    ![Chave secreta](./media/bot-service-channel-webchat/secret-key.png)
+    ![Chave secreta](~/media/bot-service-channel-webchat/secret-key.png)
 
 4. Copie a **Chave secreta** e o **Código de inserção**.
 
@@ -80,7 +80,7 @@ requestGET https://webchat.botframework.com/api/tokens
 Authorization: BotConnector YOUR_SECRET_HERE
 ```
 > [!NOTE]
-> Observe que, para o Azure governamental, a URL de troca do token é diferente. 
+> Observe que, para o Azure governamental, a URL de troca do token é diferente.
 
 ```
 requestGET https://webchat.botframework.azure.us/api/tokens
@@ -100,7 +100,7 @@ Authorization: BotConnector YOUR_SECRET_HERE
 ```
 
 > [!NOTE]
-> Observe que, para o Azure governamental, o iframe de exemplo é diferente. 
+> Observe que, para o Azure governamental, o iframe de exemplo é diferente.
 
 ```html
 <iframe src="https://webchat.botframework.azure.us/embed/YOUR_BOT_ID?t=YOUR_TOKEN_HERE"></iframe>
@@ -158,10 +158,7 @@ Para inserir o bot em uma página da Web especificando o segredo dentro da `ifra
 <iframe style="height:480px; width:402px" src="https://webchat.botframework.azure.us/embed/YOUR_BOT_ID?s=YOUR_SECRET_HERE"></iframe>
 ```
 
-  ![Cliente de chat da Web](./media/bot-service-channel-webchat/web-chat-client.png)
-
-<!-- ![Chat control Client](./media/chatwidget-client.png) -->
-
+  ![Cliente de chat da Web](~/media/bot-service-channel-webchat/webchat-client.png)
 
 ### <a name="production-embedding--option"></a>Opção de inserção de produção
 
@@ -240,3 +237,4 @@ Para obter exemplos de como gerar um token, consulte:
 - [Habilitar o controle por voz no Webchat](~/bot-service-channel-connect-webchat-speech.md)
 - [Usar o Webchat com a extensão de serviço de aplicativo do Direct Line](~/bot-service-channel-directline-extension-webchat-client.md)
 - [Conectar um bot ao Direct Line Speech](~/bot-service-channel-connect-directlinespeech.md)
+- [Adicionar logon único ao Webchat](~/v4sdk/bot-builder-webchat-sso.md)

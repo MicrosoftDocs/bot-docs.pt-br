@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 05/18/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 195909410f815b1cc9b8be1733dd56e65a029a15
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: 5c35e70fa09cbfde025266470a9fce6c59255b7b
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420207"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143945"
 ---
 # <a name="whats-new-may-2020"></a>Novidades de maio de 2020
 
@@ -84,7 +84,7 @@ Novas ferramentas da CLI foram adicionadas para gerenciamento de caixas de diál
 
 A LG tem GA (em disponibilidade geral) nas plataformas C# e JS. 
 
-A [LG (Geração de Linguagem)](v4sdk/bot-builder-concept-language-generation.md) permite que você defina diversas variações de uma frase, execute expressões simples com base no contexto e confira a memória de conversação. No núcleo da geração de linguagem fica a expansão de modelo e a substituição de entidades. Você pode fornecer uma variação única para expansão, bem como expandir condicionalmente um modelo. A saída da geração de linguagem pode ser uma cadeia de caracteres de texto simples ou uma resposta de várias linhas ou uma carga de objeto complexo que uma camada acima da geração de linguagem usará para construir uma atividade completa. O Bot Framework Composer dá suporte nativo à geração de linguagem para produzir atividades de saída usando o sistema de modelagem da LG.
+A [LG (Geração de Linguagem)](v4sdk/bot-builder-concept-language-generation.md) permite que você defina diversas variações de uma frase, execute expressões simples com base no contexto e confira a memória de conversação. No núcleo da geração de linguagem fica a expansão de modelo e a substituição de entidades. Você pode fornecer uma das variações de expansão, bem como a expansão condicional de um modelo. A saída da geração de linguagem pode ser uma cadeia de caracteres de texto simples ou uma resposta de várias linhas ou uma carga de objeto complexo que uma camada acima da geração de linguagem usará para construir uma atividade completa. O Bot Framework Composer dá suporte nativo à geração de linguagem para produzir atividades de saída usando o sistema de modelagem da LG.
 
 Você pode usar a Geração de Linguagem para:
 * Obter um tom de voz com personalidade coerente para o bot.
@@ -136,7 +136,7 @@ Durante essa versão, a Comunidade do Bot Builder aumentou ainda mais a exigênc
 
 1. Um [Adaptador da Alexa](https://github.com/BotBuilderCommunity/botbuilder-community-dotnet/tree/develop/libraries/Bot.Builder.Community.Adapters.Alexa) em C# revisado e um [Adaptador do Google Home]() reconstruído a partir do zero, começando com a Alexa, para permitir que os adaptadores sejam consumidos pelo Serviço de Bot do Azure e disponibilizados como canais. Os aprimoramentos incluem melhor mapeamento de tipos de atividade nativa, renderização de markdown e suporte aprimorados para cenários mais complexos (como a mesclagem de várias atividades de saída).
 
-2. Um novo [Adaptador do Zoom](https://github.com/BotBuilderCommunity/botbuilder-community-dotnet/tree/develop/libraries/Bot.Builder.Community.Adapters.Zoom) em C#. Atualmente, dá suporte ao Zoom 1:1 e a recursos de chat do canal, sendo convertidos em tipos de atividade BF nativos. Também dá suporte à assinatura de qualquer evento com o qual o Zoom é compatível (convertido em atividades de Evento), com suporte completo para mensagens interativas do Zoom e modelos de mensagem avançados.
+2. Um novo [adaptador de zoom](https://github.com/BotBuilderCommunity/botbuilder-community-dotnet/tree/develop/libraries/Bot.Builder.Community.Adapters.Zoom) em C# que dá suporte aos recursos de zoom 1:1 e canal de bate-papo e os converte em tipos de atividade BF nativos. Com ele, você pode assinar qualquer evento com suporte com zoom, com suporte total para mensagens interativas de zoom e modelos de mensagens avançadas. (O adaptador traduz eventos de zoom em atividades de evento BF.)
 
 3. Um [Adaptador do RingCentral](https://github.com/BotBuilderCommunity/botbuilder-community-dotnet/tree/develop/libraries/Bot.Builder.Community.Adapters.RingCentral). O adaptador do [RingCentral](https://www.ringcentral.com/) Engage permite que você adicione um ponto de extremidade extra ao bot para integração da [RingCentral Engage Digital Platform](https://www.ringcentral.com/digital-customer-engagement.html). O ponto de extremidade RingCentral pode ser usado em conjunto com outros canais, o que significa que, por exemplo, você pode ter um bot exposto em canais prontos para uso, como o Facebook e o Teams, mas também integrado como um [SDK do RingCentral Digital Source](https://support.ringcentral.com/s/article/RingCentral-Engage-Digital-Introduction?language=en_US) ao RingCentral.
 

@@ -8,12 +8,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 01/16/2020
-ms.openlocfilehash: bda857cc3d0b79369760cf5f5bd396649943b8b7
-ms.sourcegitcommit: 2412f96ad8f74dfa615c71f566c5befffb920658
+ms.openlocfilehash: 4e9377f768b43f442209266689d3a5565be30ce7
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158777"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143865"
 ---
 # <a name="configure-net-bot-for-extension"></a>Configurar o bot do .NET para a extensão
 
@@ -24,20 +24,20 @@ Este artigo descreve como atualizar um bot para trabalhar com **pipes nomeados**
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Para executar as etapas descritas a seguir, você precisa ter o recurso do **Serviço de Aplicativo do Azure** e o **Serviço de Aplicativo** relacionado no Azure.
+Para executar as etapas descritas a seguir, você precisa ter o recurso de **registro do canal de bot** e o serviço de aplicativo de **bot** relacionado (seu bot) no Azure.
 
-## <a name="enable-direct-line-app-service-extension"></a>Habilitar a Extensão de Serviço de Aplicativo do Direct Line
+## <a name="enable-direct-line-app-service-extension"></a>Habilitar extensão de serviço de aplicativo de linha direta
 
-Esta seção descreve como habilitar a extensão de serviço de aplicativo do Direct Line usando chaves da configuração do canal de seu bot e o recurso do **Serviço de Aplicativo do Azure** em que o bot está hospedado.
+Esta seção descreve como habilitar a extensão do serviço de aplicativo de linha direta usando a chave de extensão do serviço de aplicativo da configuração de canal de linha direta do bot.
 
-## <a name="update-net-bot-to-use-direct-line-app-service-extension"></a>Atualize o bot do .NET para usar a extensão do Serviço de Aplicativo do Direct Line
+### <a name="update-bot-code"></a>Atualizar código de bot
 
-> [!NOTE]   
-> Os pacotes de visualização do `Microsoft.Bot.Builder.StreamingExtensions` foram preteridos. O SDK v4.8 agora contém o [código de streaming](https://github.com/microsoft/botbuilder-dotnet/tree/master/libraries/Microsoft.Bot.Builder/Streaming). Se um bot usou anteriormente os pacotes de visualização, eles devem ser removidos antes de você seguir as etapas abaixo. 
+> [!NOTE]
+> Os pacotes de visualização do `Microsoft.Bot.Builder.StreamingExtensions` foram preteridos. O SDK v4.8 agora contém o [código de streaming](https://github.com/microsoft/botbuilder-dotnet/tree/master/libraries/Microsoft.Bot.Builder/Streaming). Se um bot usou anteriormente os pacotes de visualização, eles devem ser removidos antes de você seguir as etapas abaixo.
 
 1. No Visual Studio, abra o projeto do bot.
-2. Verifique se o projeto está usando a versão 4.8 ou superior do SDK do Bot Builder.
-3. Permite que o aplicativo use o **Bot Framework NamedPipe**:
+1. Certifique-se de que o projeto usa a versão 4,8 ou superior do SDK Bot Builder. Verifique também se o pacote [Microsoft. bot. Connector. directize](https://www.nuget.org/packages/Microsoft.Bot.Connector.DirectLine/3.0.3-Preview1) versão v 3.0.3-Preview1 ou posterior está instalado.
+1. Permite que o aplicativo use o **Bot Framework NamedPipe**:
     - Abra o arquivo `Startup.cs` .
     - No método ``Configure``, adicione código a ``UseNamedPipes``
 
@@ -64,16 +64,17 @@ Esta seção descreve como habilitar a extensão de serviço de aplicativo do Di
     }
     ```
 
-4. Salve o arquivo `Startup.cs`.
-5. Abra o arquivo `appsettings.json` e insira os seguintes valores:
+1. Salve o arquivo `Startup.cs`.
+
+1. Abra o arquivo `appsettings.json` e insira os seguintes valores:
     1. `"MicrosoftAppId": "<secret Id>"`
     2. `"MicrosoftAppPassword": "<secret password>"`
 
-    Os valores são a **appID** e o **appSecret** associados ao grupo de registro do serviço.
+    Os valores são o **AppID** e o **appSecret** associado ao registro de canais de bot.
 
-6. **Publique** o bot em seu Serviço de Aplicativo do Azure.
+1. **Publique** o bot em seu Serviço de Aplicativo do Azure.
 
-### <a name="gather-your-direct-line-extension-keys"></a>Reunir suas chaves de Extensão do Direct Line
+### <a name="enable-bot-direct-line-app-service-extension"></a>Habilitar extensão do serviço de aplicativo de linha direta de bot
 
 1. Em seu navegador, navegue até o [portal do Azure](https://portal.azure.com/)
 1. No portal do Azure, localize o recurso do **Serviço de Bot do Azure**
@@ -81,15 +82,13 @@ Esta seção descreve como habilitar a extensão de serviço de aplicativo do Di
 1. Se ele ainda não estiver habilitado, clique no canal **Direct Line** para habilitá-lo.
 1. Se ele já estiver habilitado, na tabela Conectar-se a canais, clique no link **Editar** na linha do Direct Line.
 1. Role para baixo até a seção Chaves da Extensão do Serviço de Aplicativo.
-1. Clique no link **Mostrar** para revelar uma das chaves e, em seguida, copie e salve o valor dela. Você usará esse valor na próxima seção.
+1. Clique no link **Mostrar** para revelar uma das chaves e, em seguida, copie e salve seu valor. Você usará esse valor nas etapas abaixo.
 
-![Chaves de extensão do serviço de aplicativo](./media/channels/direct-line-extension-extension-keys.png)
+    ![Chaves de extensão do serviço de aplicativo](./media/channels/direct-line-extension-extension-keys.png)
 
-### <a name="enable-the-direct-line-app-service-extension"></a>Habilitar a Extensão de Serviço de Aplicativo do Direct Line
-
-1. Em seu navegador, navegue até o [portal do Azure](https://portal.azure.com/)
-1. Na portal do Azure, localize a página do recursos **Serviço de Aplicativo do Azure** para o aplicativo Web em que o bot está ou será hospedado
-1. Clique em **Configuração**. Na seção *Configurações do aplicativo*, adicione as seguintes novas configurações:
+1. Na portal do Azure, localize a página de recursos do **serviço de aplicativo bot** .
+1. No painel esquerdo, na seção *configurações do aplicativo* , clique no item de **configuração** .
+1. No painel direito, adicione as seguintes novas configurações:
 
     |Nome|Valor|
     |---|---|
@@ -101,7 +100,7 @@ Esta seção descreve como habilitar a extensão de serviço de aplicativo do Di
 1. Na seção *Configuração*, clique na seção de configurações **Geral** e ative os **Web Sockets**
 1. Clique em **Salvar** para salvar as configurações. Isso reinicia o Serviço de Aplicativo do Azure.
 
-## <a name="confirm-direct-line-app-extension-and-the-bot-are-initialized"></a>Confirme se a Extensão do Aplicativo do Direct Line e o bot foram inicializados
+## <a name="confirm-direct-line-app-extension-and-the-bot-are-configured"></a>Confirme se a extensão do aplicativo de linha direta e o bot estão configurados
 
 No navegador, navegue até https://<your_app_service>.azurewebsites.net/.bot.
 Se tudo estiver correto, a página retornará este conteúdo JSON: `{"v":"123","k":true,"ib":true,"ob":true,"initialized":true}`. Essas são as informações que você obtém quando **tudo funciona corretamente**, onde

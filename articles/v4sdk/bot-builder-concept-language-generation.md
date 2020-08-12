@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f061e5be587e5fac95fb6ea512c2016e85b6b324
-ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
+ms.openlocfilehash: 5da0f0728a3c5b1440b2a88754c3ba6e9742e754
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85073860"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88143135"
 ---
 # <a name="language-generation"></a>Geração de Linguagem
 
@@ -162,8 +162,10 @@ A chamada `ExpandTemplate("TimeOfDayWithCondition", new { time = "evening" })` c
 
 - Confira o [formato de arquivo .lg][3] para saber mais sobre arquivos .lg.
 - Leia [modelos de resposta estruturados](../language-generation/language-generation-structured-response-template.md) para saber mais sobre modelos complexos.
+- [Referência da API do C#](https://docs.microsoft.com/dotnet/api/microsoft.bot.builder.languagegeneration)
+- [Referência da API JavaScript](https://docs.microsoft.com/javascript/api/botbuilder-lg)
 
-<!--- [Language generation API reference][2]
+<!---
 ## Change Log
 ### 4.8 PREVIEW
 - \[**BREAKING CHANGES**\]:
@@ -223,7 +225,6 @@ A chamada `ExpandTemplate("TimeOfDayWithCondition", new { time = "evening" })` c
 - Initial preview release
 -->
 [1]:https://github.com/Microsoft/BotBuilder/blob/master/specs/botframework-activity/botframework-activity.md
-[2]:../language-generation/language-generation-API-reference.md
 [3]:../file-format/bot-builder-lg-file-format.md
 [6]:https://github.com/microsoft/botframework-cli/tree/master/packages/chatdown
 [7]:https://github.com/microsoft/botframework-cli/blob/master/packages/chatdown/docs/chatdown-format.md
