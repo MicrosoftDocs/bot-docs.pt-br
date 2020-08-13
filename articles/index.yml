@@ -11,17 +11,17 @@ metadata:
   author: JonathanFingold
   ms.author: botcc
   ms.date: 07/13/2020
-  ms.openlocfilehash: cf8e86aa71ceef7241d0f6c9360d28ecd5c2f477
-  ms.sourcegitcommit: 757ddf4f3fd3557ad9746dfa83ca742d54ac4763
+  ms.openlocfilehash: 26c7386da8f7385b7cbe4d36923913bc067d543d
+  ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
   ms.translationtype: HT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 07/22/2020
-  ms.locfileid: "86876310"
+  ms.lasthandoff: 08/12/2020
+  ms.locfileid: "88143405"
 highlightedContent:
   items:
   - title: 'Criar bots usando um designer visual: Bot Framework Composer'
     itemType: overview
-    url: https://docs.microsoft.com/composer/
+    url: /composer
   - title: 'Criar bots usando código: SDK do Bot Framework'
     itemType: overview
     url: index-bf-sdk.yml
@@ -92,9 +92,13 @@ additionalContent:
         url: /power-virtual-agents/fundamentals-what-is-power-virtual-agents
       - text: Assistente Virtual
         url: v4sdk/bot-builder-virtual-assistant-introduction.md
-      - text: LUIS
+      - text: Microsoft Teams
+        url: /microsoftteams/platform
+      - text: Reconhecimento Vocal (LUIS)
         url: /azure/cognitive-services/luis
       - text: QnA Maker
         url: /azure/cognitive-services/qnamaker
+      - text: Serviço de Fala
+        url: /azure/cognitive-services/speech-service
       - text: Cartões Adaptáveis
         url: /adaptive-cards
