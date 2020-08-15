@@ -1,6 +1,6 @@
-# [Documentação do Serviço de Bot do Azure](index.yml)
+# [Documentação do SDK do Bot Framework](index-bf-sdk.yml)
 # Visão geral
-## [Sobre o Serviço de Bot do Azure](bot-service-overview-introduction.md)
+## [O que é o SDK do Bot Framework?](bot-service-overview-introduction.md)
 ## [Novidades](what-is-new.md)
 # Guia de Início Rápido
 ## [Criar um bot usando o .NET](dotnet/bot-builder-dotnet-sdk-quickstart.md)
@@ -18,6 +18,7 @@
 ### [Como funcionam os bots](v4sdk/bot-builder-basics.md)
 ### [Gerenciar estado](v4sdk/bot-builder-concept-state.md)
 ### [Biblioteca de caixas de diálogo](v4sdk/bot-builder-concept-dialog.md)
+### [Diálogos em cascata](v4sdk/bot-builder-concept-waterfall-dialogs.md)
 ### [Middleware](v4sdk/bot-builder-concept-middleware.md)
 ## Caixas de diálogo adaptáveis
 ### [Introdução às caixas de diálogo adaptáveis](v4sdk/bot-builder-adaptive-dialog-Introduction.md)

@@ -1,9 +1,12 @@
 # [Gerenciar um bot](../bot-service-manage-overview.md)
+# [Registro de canais do bot](../bot-service-quickstart-registration.md)
 # [Análise de bot](../bot-service-manage-analytics.md)
+# [Definir as configurações do bot](../bot-service-manage-settings.md)
+# [Configurar a desobstrução de fala](../bot-service-manage-speech-priming.md)
 # Canais
 ## [Conectar um bot aos canais](../bot-service-manage-channels.md)
 ## [Implementar a funcionalidade específica do canal](../v4sdk/bot-builder-channeldata.md)
-## [Cortana](../bot-service-channel-connect-cortana.md) 
+## [Cortana](../bot-service-channel-connect-cortana.md)
 ## Linha Direta
 ### [Sobre o Direct Line](../bot-service-channel-directline.md)
 ### [Ligar ao Direct Line](../bot-service-channel-connect-directline.md)
@@ -24,14 +27,18 @@
 ## [Equipes da Microsoft](../channel-connect-teams.md)
 ## [Skype](../bot-service-channel-connect-skype.md)
 ## [Skype for Business](../bot-service-channel-connect-skypeforbusiness.md)
-## [Margem de atraso](../bot-service-channel-connect-slack.md) 
-## [Telegram](../bot-service-channel-connect-telegram.md) 
+## [Margem de atraso](../bot-service-channel-connect-slack.md)
+## [Telegram](../bot-service-channel-connect-telegram.md)
 ## [Twilio](../bot-service-channel-connect-twilio.md)
 ## [WeChat](../bot-service-channel-connect-wechat.md)
 ## [Web Chat](../bot-service-channel-connect-webchat.md)
 ## [Webex](../bot-service-adapter-connect-webex.md)
 ## [Canais adicionais](../bot-service-channel-additional-channels.md)
-# [Definir as configurações do bot](../bot-service-manage-settings.md)
-# [Configurar a desobstrução de fala](../bot-service-manage-speech-priming.md)
-# [Registrar um bot com o Serviço de Bot do Azure](../bot-service-quickstart-registration.md)
-# [Migrar seu bot](../bot-service-migrate-bot.md)
+
+<!--
+Moved up
+# [Configure bot settings](../bot-service-manage-settings.md)
+# [Configure speech priming](../bot-service-manage-speech-priming.md)
+# [Register a bot with Azure Bot Service](../bot-service-quickstart-registration.md)
+-->
+<!-- # Obsolete [Migrate your bot](../bot-service-migrate-bot.md) -->
