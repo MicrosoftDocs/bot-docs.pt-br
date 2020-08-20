@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 3fc1bc1cee794167fa8903271cd39a9e7e672e25
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
+ms.lasthandoff: 08/19/2020
 ms.locfileid: "84420567"
 ---
 Neste ponto, estamos prontos para implantar o código no aplicativo Web do Azure. Execute o seguinte comando na linha de comando para executar a implantação usando o serviço de implantação de zip por push do kudu para um aplicativo web.
