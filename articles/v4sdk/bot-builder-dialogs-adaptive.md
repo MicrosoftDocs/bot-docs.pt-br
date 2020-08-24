@@ -80,7 +80,7 @@ Observe também:
 O `WelcomeUserSteps` método fornece as ações a serem executadas quando o gatilho for acionado. As ações `Foreach` iteram na lista `membersAdded` para saudar o usuário adicionado à conversa.
 
 > [!NOTE]
-> No contexto de diálogos adaptáveis e gatilhos, todos os diálogos são ações válidas e os tipos de ação (`Foreach`, `IfCondition`, `SendActivity`) são todos diálogos.
+> No contexto de diálogos adaptáveis e gatilhos, todos os diálogos são ações válidas e os tipos de ação (`Foreach`, `IfCondition`, `SendActivity`) são todos diálogos.\
 > Alguns canais enviam dois eventos de atualização de conversa: um para o bot adicionado à conversa e outro para o usuário.
 > O código filtra os casos em que o próprio bot é o destinatário da mensagem. Para obter mais informações, confira [Atividades categorizadas por canal](https://docs.microsoft.com/azure/bot-service/bot-service-channels-reference?view=azure-bot-service-4.0#welcome).
 
