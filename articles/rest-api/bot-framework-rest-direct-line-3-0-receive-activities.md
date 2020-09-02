@@ -1,18 +1,18 @@
 ---
 title: Receber atividades do bot – Serviço de Bot
-description: Saiba como receber atividades do bot usando a API da Linha Direta v3.0.
+description: Saiba como receber atualizações de atividade de bots. Consulte como usar a versão 3,0 da API de linha direta para se conectar usando fluxos WebSocket ou solicitações HTTP GET.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/13/2019
-ms.openlocfilehash: bfe40a33747dfd6724f6a5efe2104ffde01781bc
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: db6e1b93ad4bc0822919a2a41202b1f522a6d1fc
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75789367"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361739"
 ---
 # <a name="receive-activities-from-the-bot"></a>Receber atividades do bot
 

@@ -1,6 +1,6 @@
 ---
 title: Conectar um bot com o LINE – Serviço de Bot
-description: Saiba como configurar a conexão do bot com o LINE.
+description: Saiba como conectar bots à linha. Consulte como configurar os bots para se comunicar com pessoas por meio do aplicativo de linha. Exibir dicas de solução de problemas.
 keywords: conectar um bot, canal do bot, bot do LINE, credenciais, configurar, telefone
 author: ivorb
 ms.author: kamrani
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 1/7/2019
-ms.openlocfilehash: 7898546aeb517fcf1ea4af50e35851a3f09ba633
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 41c1b07d2a45a45fd78729af21bdbb58ad2217b8
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77441552"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362139"
 ---
 # <a name="connect-a-bot-to-line"></a>Conectar um bot ao LINE
 

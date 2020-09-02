@@ -1,6 +1,6 @@
 ---
 title: Conectar um bot ao Skype – Serviço de Bot
-description: Saiba como configurar um bot para acesso por meio da interface do Skype.
+description: Saiba como tornar um bot disponível no Skype. Consulte como definir as configurações do Skype para que os usuários possam interagir com o bot por meio do canal do Skype.
 keywords: skype, canais de bot, configurar skype, publicar, conectar-se aos canais
 author: v-ducvo
 ms.author: kamrani
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 10/11/2018
-ms.openlocfilehash: 5ec52eabc0ed1a84101a97f793510c6374f3c0f3
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: d32796c6964815d9f30e8a09b406564244e569f3
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80647594"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362069"
 ---
 # <a name="connect-a-bot-to-skype"></a>Conectar um bot ao Skype
 

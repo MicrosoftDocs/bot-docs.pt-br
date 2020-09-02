@@ -1,18 +1,18 @@
 ---
 title: Crie um bot com o serviço Bot Connector – Serviço de Bot
-description: Crie um bot com o serviço Bot Connector.
+description: Saiba como criar um bot. Veja como obter um token de acesso da estrutura de bot e use o serviço de conector de bot para trocar mensagens com usuários.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: f5ac5397d2ef13eb08d92d9cf560fddf582165c4
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 691cd0b07c8f79a125040521362e749c60fe8ba1
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77071874"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361869"
 ---
 # <a name="create-a-bot-with-the-bot-connector-service"></a>Crie um bot com o serviço Bot Connector
 > [!div class="op_single_selector"]

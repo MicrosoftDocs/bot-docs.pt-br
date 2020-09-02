@@ -1,6 +1,6 @@
 ---
 title: Conectar um bot ao email do Office 365 – Serviço de Bot
-description: Saiba como configurar um bot para enviar e receber email com o Office 365.
+description: Saiba como configurar os bots para enviar e receber mensagens de email conectando-as ao Microsoft 365 email. Consulte como personalizar mensagens.
 keywords: O Office 365, canais de bot, email, credenciais de email, portal do azure, email personalizado
 author: kamrani
 ms.author: kamrani
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/15/2019
-ms.openlocfilehash: 8ca2735dac838982af3ba97221e07d80155153b7
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 4dcdedbfbadc3f1fc60bd57d9bd3657e38c98255
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75792087"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362119"
 ---
 # <a name="connect-a-bot-to-office-365-email"></a>Conectar um bot ao email do Office 365
 

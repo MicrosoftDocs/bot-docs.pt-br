@@ -1,6 +1,6 @@
 ---
 title: Conectar um bot ao GroupMe – Serviço de Bot
-description: Saiba como configurar a conexão de um bot com o GroupMe.
+description: Saiba como configurar os bots para usar o aplicativo de mensagens do grupo GroupMe para se comunicar com pessoas. Consulte Como conectar bots ao GroupMe.
 keywords: canal de bot, GroupMe, criar GroupMe, credenciais
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: ae2f2e289d6c0b4e90041fc2ad60452b1996d53d
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 426d5c9707c644c3efc9676eea682d21bd8a16e7
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75791972"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362099"
 ---
 # <a name="connect-a-bot-to-groupme"></a>Conectar um bot ao GroupMe
 

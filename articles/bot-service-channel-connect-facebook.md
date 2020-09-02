@@ -1,18 +1,18 @@
 ---
 title: Conectar um bot ao Facebook Messenger – Serviço de Bot
-description: Saiba como configurar a conexão de um bot com o Facebook Messenger.
+description: Saiba como conectar bots ao Facebook Messenger e ao Workplace Facebook. Consulte Como conectar bots ao Facebook usando o adaptador do Facebook.
 keywords: Facebook Messenger, canal de bot, Aplicativo Facebook, ID do Aplicativo, Segredo do Aplicativo, bot do Facebook, credenciais
 manager: kamrani
 ms.topic: article
 ms.author: kamrani
 ms.service: bot-service
 ms.date: 01/16/2020
-ms.openlocfilehash: 84544f5c4082f88991718c5d84dc2aead05f5eb2
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 69ca6c32287638ca390f7777314e93d82f37fcde
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80250135"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362169"
 ---
 # <a name="connect-a-bot-to-facebook"></a>Conectar um bot ao Facebook
 

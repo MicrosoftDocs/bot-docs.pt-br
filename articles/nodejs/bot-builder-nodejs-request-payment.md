@@ -1,6 +1,6 @@
 ---
 title: Solicitar pagamento (JS v3) – Serviço de Bot
-description: Saiba como enviar uma solicitação de pagamento usando o SDK do Bot Framework para Node.js.
+description: Saiba como usar os bots para enviar solicitações de pagamento. Consulte exemplos de código que usam o SDK do bot Framework para Node.js adicionar cartões avançados a mensagens e processar pagamentos.
 author: v-ducvo
 ms.author: kamrani
 manager: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: b4b8d6763c79cea6fc06666145dc851283bd8a63
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 188aa47806af8b78736f61c91f1839d5b126b6da
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75790627"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362259"
 ---
 # <a name="request-payment"></a>Solicitar pagamento
 

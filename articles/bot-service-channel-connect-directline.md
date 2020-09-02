@@ -1,6 +1,6 @@
 ---
 title: Conectar um bot à Direct Line – Serviço de Bot
-description: Aprenda como configurar a conexão de um bot para a linha direta.
+description: Saiba como configurar os bots para se comunicar com aplicativos cliente. Consulte como usar o canal de linha direta para essa finalidade.
 keywords: linha direta, canais bot, cliente customizado, conectar aos canais, configurar
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/7/2019
-ms.openlocfilehash: a7c52ec4a6ab8d1744e2c4d9a94ec2ca5623329a
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: dc60d7080aac5a632c07dfb5e1aa310570f75069
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77479214"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362109"
 ---
 # <a name="connect-a-bot-to-direct-line"></a>Conecte um bot à linha direta
 

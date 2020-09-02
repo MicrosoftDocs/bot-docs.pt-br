@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 01/09/2020
-ms.openlocfilehash: 096edfb04d66a71cef5bd633c7f88f62c623bdb3
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: dde9c10ca22b9ef253ee9aff4f2b64a89bc7ffeb
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124357"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361759"
 ---
 # <a name="create-a-bot-with-azure-bot-service"></a>Criar um bot com o Serviço de Bot do Azure
 
@@ -20,8 +20,10 @@ ms.locfileid: "86124357"
 
 O Serviço de Bot do Azure fornece os principais componentes para a criação de bots, incluindo o SDK do Bot Framework para o desenvolvimento de bots e o serviço de bot para conectar os bots aos canais. No tópico, você pode escolher o modelo .NET ou Node.js para criar um bot usando o SDK do Bot Framework v4.
 
->[!NOTE]
-> O bot criado é registrado automaticamente no Serviço de Bot do Azure. Se você já tiver um bot hospedado em outro lugar e desejar registrá-lo, confira o artigo: [Registrar um bot no Serviço de Bot do Azure](../bot-service-quickstart-registration.md).
+Há duas maneiras de registrar um bot com o Azure:
+
+1. Seguindo as etapas neste artigo, o bot é criado e registrado com o Azure e um aplicativo Web é criado para hospedar o bot. Você usará essa abordagem se desenvolver e hospedar um bot no Azure.
+1. Para criar e desenvolver seu bot localmente, siga as etapas no artigo [registrar um bot com o serviço de bot do Azure](~/bot-service-quickstart-registration.md) . Ao registrar o bot, você fornece o endereço da Web onde o bot está hospedado. Você ainda pode hospedá-lo no Azure.
 
 [!INCLUDE [Azure vs local development](~/includes/snippet-quickstart-paths.md)]
 

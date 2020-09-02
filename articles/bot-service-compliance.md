@@ -1,6 +1,6 @@
 ---
 title: Conformidade no serviço de bot do Azure-serviço bot
-description: Conformidade do serviço de bot do Azure
+description: Saiba como o serviço de bot do Azure ajuda os usuários a atender às obrigações de conformidade. Veja quais certificados o serviço mantém em vários setores e áreas geográficas.
 keywords: serviço de bot, conformidade
 author: Kaiqb
 ms.author: jameslew
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 07/21/2020
-ms.openlocfilehash: 0f6e9151be2fb7c77deadf3807aadf5d8023b9e0
-ms.sourcegitcommit: 757ddf4f3fd3557ad9746dfa83ca742d54ac4763
+ms.openlocfilehash: bae3e3b33df3fa2b081ba2240330e21e407ace7a
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86876545"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361909"
 ---
 # <a name="compliance-in-azure-bot-service"></a>Conformidade no serviço de bot do Azure 
 

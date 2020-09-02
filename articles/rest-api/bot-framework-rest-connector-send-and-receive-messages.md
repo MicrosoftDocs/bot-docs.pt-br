@@ -1,18 +1,18 @@
 ---
 title: Enviar e receber mensagens – Serviço de Bot
-description: Saiba como enviar e receber mensagens usando o serviço Bot Connector.
+description: Saiba como usar os bots para trocar mensagens com usuários. Consulte como usar o serviço de conector de bot para enviar mensagens e respostas e iniciar conversas.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 849475745372a42269d4c28dab09b4f617bac5a2
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 7e20c51a3aab119cd5284c63806ac3b5a8ea97b3
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80648355"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361859"
 ---
 # <a name="send-and-receive-messages"></a>Enviar e receber mensagens
 

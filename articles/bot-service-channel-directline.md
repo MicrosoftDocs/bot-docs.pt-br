@@ -1,7 +1,7 @@
 ---
 title: Sobre o canal Direct Line
 titleSuffix: Bot Service
-description: Recursos do canal Direct Line
+description: Saiba mais sobre três formas do canal de linha direto do bot Framework. Veja qual formulário usar para integrar os bots em aplicativos móveis, páginas da Web e outros aplicativos.
 services: bot-service
 author: ivorb
 manager: kamrani
@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.date: 11/01/2019
 ms.author: kamrani
-ms.openlocfilehash: b5a6296e65ab05cd8a5af24872d31e5ef356dcf7
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 342e3ecf21ed78d445e375eb2a4d37551a080d5c
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77441503"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361929"
 ---
 # <a name="about-direct-line"></a>Sobre o Direct Line
 

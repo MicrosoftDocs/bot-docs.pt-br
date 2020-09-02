@@ -1,18 +1,18 @@
 ---
 title: Adicionar dicas de entrada a mensagens – Serviço de Bot
-description: Saiba como adicionar dicas de entrada a mensagens usando o serviço Bot Connector.
+description: Saiba como adicionar dicas de entrada a mensagens de bot. Consulte como usar o serviço de conector de bot para especificar se um bot está aceitando, esperando ou ignorando a entrada do usuário.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 358f5cc7714c2d8803adbf40b60cc4584d3fe506
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 21ba64abd628e44e60c1fb504530b6a63a21009f
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77520025"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361889"
 ---
 # <a name="add-input-hints-to-messages"></a>Adicionar dicas de entrada às mensagens
 > [!div class="op_single_selector"]

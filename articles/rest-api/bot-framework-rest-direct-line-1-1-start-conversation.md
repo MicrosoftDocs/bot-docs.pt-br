@@ -1,18 +1,18 @@
 ---
 title: Iniciar uma conversa usando a Direct Line API 1.1 – Serviço de Bot
-description: Saiba como iniciar uma conversa usando a API de linha direta v1.1.
+description: Saiba como usar a versão 1,1 da API de linha direta para iniciar conversas com bots. Descubra como as operações iniciar conversa e gerar token são diferentes.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 6aa107dc54f6a960aabc4f03b5e9acb49a9c6cb0
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: e12490701e9186a01f3a88cba545b1edbb4072b1
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75789587"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361799"
 ---
 # <a name="start-a-conversation"></a>Iniciar uma conversa
 

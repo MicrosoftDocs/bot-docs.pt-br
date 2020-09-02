@@ -1,18 +1,18 @@
 ---
 title: Adicionar fala a mensagens – Serviço de Bot
-description: Saiba como adicionar fala às mensagens usando o serviço Bot Connector.
+description: Saiba como adicionar fala a mensagens de bot. Consulte como especificar e formatar o texto que os bots usam em canais habilitados para fala e como incluir dicas de entrada.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/20/2020
-ms.openlocfilehash: f5bf6cf254b4c095ce9f49619bb39ef5b48fa5ed
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 514979e6d52604592b53f1594094dba790c96105
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77519925"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361849"
 ---
 # <a name="add-speech-to-messages"></a>Adicionar fala a mensagens
 > [!div class="op_single_selector"]

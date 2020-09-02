@@ -1,18 +1,18 @@
 ---
 title: Autenticação – Serviço de Bot
-description: Saiba como autenticar solicitações de API na API de Linha Direta versão 3.0.
+description: Familiarize-se com a autenticação na versão 3,0 da API de linha direta. Consulte como usar segredos e tokens. Saiba mais sobre a autenticação do serviço de bot do Azure.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/22/2019
-ms.openlocfilehash: 1fdbc7595c78dcef411ce17d99af7b3fe3429229
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: 41ba224896454a1b0d736149f31ed4ae88dc6911
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420457"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361789"
 ---
 # <a name="authentication"></a>Autenticação
 
@@ -78,7 +78,7 @@ O conteúdo da solicitação, que inclui os parâmetros de token, é opcional ma
 }
 ```
 
-| Parâmetro | Type | Descrição |
+| Parâmetro | Tipo | Descrição |
 | :--- | :--- | :--- |
 | `user.id` | string | Opcional. ID de usuário específica do canal para codificação dentro do token. Para um usuário do Direct Line, isso deve começar com `dl_`. Você pode criar uma ID de usuário exclusiva para cada conversa, e para uma melhor segurança, deve tornar essa ID indecifrável. |
 | `user.name` | string | Opcional. O nome de exibição amigável do usuário a ser codificado dentro do token. |

@@ -1,6 +1,6 @@
 ---
 title: Entidades e tipos de atividades – Serviço de Bot
-description: Entidades e tipos de atividades.
+description: Saiba como as entidades armazenam informações que os bots e os canais usam ao trocar mensagens. Consulte como preencher as propriedades de entidade e como consumir entidades.
 keywords: mencionar entidades, tipos de atividades, consumir entidades
 author: ivorb
 ms.author: kamrani
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 03/01/2018
-ms.openlocfilehash: cd11cc1fbbacb7e555da4e00337d6fd4b79a4df6
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: e4af26fc1e4dd3b8cc92a113a8c0b6feafbb809d
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75789073"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362159"
 ---
 # <a name="entities-and-activity-types"></a>Entidades e tipos de atividades
 

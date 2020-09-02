@@ -1,18 +1,18 @@
 ---
 title: Enviar uma atividade ao bot – Serviço de Bot
-description: Saiba como enviar uma atividade para o bot usando a API de linha direta v3.0.
+description: Saiba como enviar informações de atividade para bots. Consulte como usar a versão 3,0 da API de linha direta para enviar objetos de atividade com anexos opcionais.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 91215618e46d8255d84b79e3b38cd419cee2affb
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: bd230a16a0d7beb7f5c3ade3dd038db646336ca0
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143215"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361729"
 ---
 # <a name="send-an-activity-to-the-bot"></a>Enviar uma atividade para o bot
 

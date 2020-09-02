@@ -1,6 +1,6 @@
 ---
 title: Adicionar fala a mensagens (JS v3) – Serviço de Bot
-description: Saiba como adicionar fala a mensagens usando o SDK do Bot Framework para Node.js.
+description: Saiba como adicionar fala a mensagens de bot. Consulte como usar o SDK do bot Framework para Node.js Formatar e especificar o texto que os bots usam em canais habilitados para fala.
 author: v-ducvo
 ms.author: kamrani
 manager: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: a5e97aa859f8b200fecb6df213bce1f9d9c1f912
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 6d4aaeb883eeba433d8329b65d0401719f1e5ee4
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75790351"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362249"
 ---
 # <a name="add-speech-to-messages"></a>Adicionar fala a mensagens
 

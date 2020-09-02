@@ -1,18 +1,18 @@
 ---
 title: Enviar uma mensagem o bot – Serviço de Bot
-description: Saiba como enviar uma mensagem para o bot usando a API de linha direta v1.1.
+description: Descubra como usar a versão 1,1 da API de linha direta para enviar mensagens para bots. Saiba como criar e enviar mensagens e anexos. Consulte as respostas esperadas.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: e6504c1d6cd8cbcf3eab4fadaa62485deba14efa
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 09b22007fb590f0dc628bb729beaf8acaf32bb52
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75789712"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361819"
 ---
 # <a name="send-a-message-to-the-bot"></a>Enviar uma mensagem para o bot
 

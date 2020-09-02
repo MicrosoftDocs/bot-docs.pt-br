@@ -1,18 +1,18 @@
 ---
 title: Criar mensagens com a API do Conector de Bot – Serviço de Bot
-description: Saiba mais sobre as propriedades de mensagens comumente usadas na API do Conector de Bot.
+description: Familiarize-se com as mensagens que os bots usam para se comunicar com os usuários. Saiba mais sobre as propriedades usadas para formatar texto, anexar arquivos e especificar outro comportamento.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: f3f084f65c1fb4fc84a6c8c75ce36b56487ebd0d
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 2c92244914a6bfc01007d17bf00732d85fd6f953
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75789953"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361879"
 ---
 # <a name="create-messages"></a>Criar mensagens
 

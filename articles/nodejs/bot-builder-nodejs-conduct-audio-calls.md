@@ -1,6 +1,6 @@
 ---
 title: Realizar chamadas de áudio – Serviço de Bot
-description: Saiba como realizar chamadas de voz com o Skype em um bot usando o Node.js
+description: Saiba como os usuários podem fazer chamadas de áudio do Skype para bots. Consulte como usar o SDK de chamada do Bot Builder para Node.js SDK para adicionar recursos de chamada a bots de bate-papo.
 author: v-ducvo
 ms.author: kamrani
 manager: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: e93dda29545b8bfd2b83d6c92bf5d3d0e1cdafc2
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: b09a807ed45a2e2f547f3c38e22bb84adabf0881
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80648396"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362319"
 ---
 # <a name="support-audio-calls-with-skype"></a>Dar suporte a chamadas de voz com o Skype
 

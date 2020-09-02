@@ -1,18 +1,18 @@
 ---
 title: Principais conceitos da Direct Line API do Bot Framework 1.1 – Serviço de Bot
-description: Entenda os principais conceitos da API de Linha Direta do Bot Framework 1.1.
+description: Saiba mais sobre a versão 1,1 da API de linha do bot Framework Direct. Exibir informações sobre autenticação, iniciar conversas, mensagens e recursos de desenvolvedor.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: d519bd6fa363cf47afa1609aa1930f4635e9e745
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 1a97da1740e19df0190303035bfb2e4d28b5f66f
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77520015"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361809"
 ---
 # <a name="key-concepts-in-direct-line-api-11"></a>Principais conceitos da API de Linha Direta 1.1
 

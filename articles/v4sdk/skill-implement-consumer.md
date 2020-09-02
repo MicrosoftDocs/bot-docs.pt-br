@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 07/15/2020
+ms.date: 09/01/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 7194834c795d35bd18f7b9da7aff32d7d360ea0f
-ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
+ms.openlocfilehash: cba3952acab3f950db5fbda1ec0b3a207f76b2ab
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86542601"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362359"
 ---
 # <a name="implement-a-skill-consumer"></a>Implementar um consumidor de skills
 
@@ -184,9 +184,9 @@ O manipulador usa o alocador de ID de conversa, a configuração de autenticaç�
 
 **simple-root-bot/index.js**
 
-[!code-javascript[skill client](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/index.js?range=120-121)]
+[!code-javascript[skill client](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/index.js?range=113,119,122)]
 
-[!code-javascript[skill handler](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/index.js?range=147)]
+[!code-javascript[skill handler](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/index.js?range=147-148)]
 
 ### <a name="python"></a>[Python](#tab/python)
 
@@ -285,13 +285,13 @@ Quando ocorre um erro, o adaptador limpa o estado da conversa para redefinir a c
 
 Neste exemplo, a lógica de erro de ciclo é dividida entre alguns métodos auxiliares.
 
-[!code-csharp[On turn error](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/SimpleRootBot/AdapterWithErrorHandler.cs?range=40-117)]
+[!code-csharp[On turn error](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/SimpleRootBot/AdapterWithErrorHandler.cs?range=40-120)]
 
 ### <a name="javascript"></a>[JavaScript](#tab/js)
 
 **simple-root-bot/index.js**
 
-[!code-javascript[On turn error](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/index.js?range=34-100)]
+[!code-javascript[On turn error](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/index.js?range=34-101)]
 
 ### <a name="python"></a>[Python](#tab/python)
 
@@ -315,7 +315,7 @@ O bot define um ponto de extremidade que encaminha as atividades de skills de en
 
 **simple-root-bot/index.js**
 
-[!code-javascript[skill endpoint](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/index.js?range=145-149)]
+[!code-javascript[skill endpoint](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/index.js?range=149-150)]
 
 ### <a name="python"></a>[Python](#tab/python)
 
@@ -341,7 +341,7 @@ Inclui um objeto de configuração de autenticação com qualquer validação de
 
 [!code-javascript[services](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/index.js?range=27-31)]
 
-[!code-javascript[services](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/index.js?range=108-143)]
+[!code-javascript[services](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/index.js?range=109-144)]
 
 ### <a name="python"></a>[Python](#tab/python)
 

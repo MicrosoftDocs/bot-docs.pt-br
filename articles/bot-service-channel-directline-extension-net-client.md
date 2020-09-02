@@ -1,19 +1,19 @@
 ---
 title: Criar cliente .NET para a extensão de serviço de aplicativo do Direct Line
 titleSuffix: Bot Service
-description: Cliente .NET em C# para se conectar à extensão do serviço de aplicativo do Direct Line
+description: Saiba como criar clientes .NET que se conectam a extensões do serviço de aplicativo Direct line. Veja como configurar clientes C# que se comunicam com bots por WebSockets.
 services: bot-service
 manager: kamrani
 ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 07/25/2019
-ms.openlocfilehash: ef1b05d6bca2064f71fba517c3d2af7411d8be23
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: 54d36e77a5ab7abdc5055ee2e690388c21276d76
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143835"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362009"
 ---
 # <a name="create-net-client-to-connect-to-direct-line-app-service-extension"></a>Criar um cliente .NET para se conectar à extensão do Serviço de Aplicativo do Direct Line
 

@@ -1,6 +1,6 @@
 ---
 title: Criar mensagens – Serviço de Bot
-description: Saiba como criar mensagens com o SDK do Bot Framework para Node.js.
+description: Saiba como os bots podem enviar, receber e personalizar mensagens. Veja como usar o SDK do bot Framework para Node.js trocar mensagens entre bots e usuários.
 author: v-ducvo
 ms.author: kamrani
 manager: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 09/7/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 1837b302b8d0b1d05e16d4d979b5807fa3e2d268
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: c1f94c21869662156a91bda625d09e1452ffbdd7
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75790841"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362279"
 ---
 # <a name="create-messages"></a>Criar mensagens
 

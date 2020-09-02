@@ -1,6 +1,6 @@
 ---
 title: Criar um bot para o Telegram – Serviço de Bot
-description: Saiba como configurar a conexão de um bot com o Telegram.
+description: Saiba como configurar os bots para usar o aplicativo de mensagens Telegram para se comunicar com pessoas. Consulte Como conectar bots ao Telegram.
 keywords: configurar bot, Telegram, canal de bot, bot do Telegram, token de acesso
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: fd60fbb10e9560e3df6e427f0d5193df463ec473
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 21c330cd452ee94190978f657825bc2f5cb43433
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75791814"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362059"
 ---
 # <a name="connect-a-bot-to-telegram"></a>Conectar um bot ao Telegram
 

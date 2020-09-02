@@ -7,12 +7,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 4/15/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2a6e60bec28eaf0cf9604a46f1636119a562ba40
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: 6cec9382509f9488d9a3e775b0ec72bdc9557994
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83566296"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362269"
 ---
 # <a name="add-single-sign-on-to-a-bot"></a>Adicionar logon único a um bot
 
@@ -81,7 +81,7 @@ Para cada projeto no exemplo, você precisa do seguinte:
 
 O Azure AD é um serviço de identidade de nuvem que permite criar aplicativos que conectam usuários com segurança usando protocolos padrão do setor, como o OAuth2.0.
 
-1. Crie um aplicativo de identidade para o `RootBot` que usa o Azure AD v2 para autenticar o usuário. Siga as etapas descritas em [Criar aplicativo de identidade no Azure AD](bot-builder-authentication.md#create-the-azure-ad-identity-application).
+1. Crie um aplicativo de identidade para o `RootBot` que usa o Azure AD v2 para autenticar o usuário. Siga as etapas descritas em [criar o provedor de identidade do Azure ad](bot-builder-authentication.md#create-the-azure-ad-identity-provider).
 
 1. No painel esquerdo, clique em **Manifesto**.
 1. Defina `accessTokenAcceptedVersion` como 2.
@@ -111,7 +111,7 @@ O Azure AD é um serviço de identidade de nuvem que permite criar aplicativos q
 
 O Azure AD é um serviço de identidade de nuvem que permite criar aplicativos que conectam usuários com segurança usando protocolos padrão do setor, como o OAuth2.0.
 
-1. Crie um aplicativo de identidade para o `SkillBot` que usa o Azure AD v2 para autenticar o bot. Siga as etapas descritas em [Criar aplicativo de identidade no Azure AD](bot-builder-authentication.md#create-the-azure-ad-identity-application).
+1. Crie um aplicativo de identidade para o `SkillBot` que usa o Azure AD v2 para autenticar o bot. Siga as etapas descritas em [criar o provedor de identidade do Azure ad](bot-builder-authentication.md#create-the-azure-ad-identity-provider).
 
 1. No painel esquerdo, clique em **Manifesto**.
 1. Defina `accessTokenAcceptedVersion` como 2.
@@ -155,7 +155,7 @@ O Azure AD é um serviço de identidade de nuvem que permite criar aplicativos q
 1. Clique em **Testar Conexão** na parte superior do painel **Configuração de Conexão do Provedor de Serviços**.
 1. Na primeira vez, deve abrir uma nova guia do navegador listando as permissões que seu aplicativo está solicitando e solicitará que você aceite.
 1. Clique em **Aceitar**.
-1. Isso deverá direcionar você para uma página **Testar conexão para \<nome-da-sua-conexão> bem-sucedida**.
+1. Isso deve, então, redirecioná-lo para uma página **Teste da conexão com \<your-connection-name> bem-sucedido**.
 
 Confira mais informações em [Visão geral do Azure Active Directory para desenvolvedores (v1.0)](https://docs.microsoft.com/azure/active-directory/azuread-dev/v1-overview) e [Visão geral da plataforma de identidade da Microsoft (v2.0)](https://docs.microsoft.com/azure/active-directory/develop/active-directory-appmodel-v2-overview).
 Para obter informações sobre as diferenças entre os pontos de extremidade v1 e v2, confira [Por que atualizar para a plataforma de identidade da Microsoft (v2.0)?](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-compare). Para obter informações completas, confira [Plataforma de identidade da Microsoft (conhecida anteriormente como Azure Active Directory para desenvolvedores)](https://docs.microsoft.com/azure/active-directory/develop/).

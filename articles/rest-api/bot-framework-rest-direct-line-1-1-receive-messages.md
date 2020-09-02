@@ -1,18 +1,18 @@
 ---
 title: Receber mensagens do bot – Serviço de Bot
-description: Saiba como receber mensagens do bot usando a API da Linha Direta v1.1.
+description: Saiba como usar a versão 1,1 da API de linha direta para receber mensagens de bots. Consulte como emitir solicitações GET. Familiarize-se com as considerações de tempo.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: c88d3f363bf4bcc40fa7a21aa1fcdd0b764abe1e
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 6523b785cdfd7ab310946ce51e99517cf79960c7
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75789692"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361829"
 ---
 # <a name="receive-messages-from-the-bot"></a>Receber mensagens do bot
 

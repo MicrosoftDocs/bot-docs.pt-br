@@ -1,18 +1,18 @@
 ---
 title: Reconectar-se a uma conversa – Serviço de Bot
-description: Saiba como se reconectar a uma conversa usando a API de Linha Direta v3.0.
+description: Saiba como reconectar-se a conversas com bots após perder o contato. Consulte como usar a versão 3,0 da API de linha direta para gerar novas URLs de fluxo WebSocket.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 2/20/2020
-ms.openlocfilehash: fda80c8e0dc4aaf5169730615b5cfc3acda16160
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: e69c3cce6f0cae0d7968ba37311e2d210baaccfe
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77519905"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361749"
 ---
 # <a name="reconnect-to-a-conversation"></a>Reconectar-se a uma conversa
 

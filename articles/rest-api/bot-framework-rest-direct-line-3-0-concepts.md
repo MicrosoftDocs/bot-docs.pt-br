@@ -1,18 +1,18 @@
 ---
 title: Principais conceitos da Direct Line API do Bot Framework 3.0 – Serviço de Bot
-description: Entenda os principais conceitos da API de linha direta do Bot Framework 3.0.
+description: Saiba mais sobre a versão 3,0 da API de linha do bot Framework Direct. Exibir informações sobre autenticação, iniciar conversas, mensagens e recursos de desenvolvedor.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 01/06/2019
-ms.openlocfilehash: 5d86cd325c296aceba6f52e81841028d6da79c4a
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: ebf55146ac74e654f1c7854714150b0aaf73f9e6
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77520005"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361779"
 ---
 # <a name="key-concepts-in-direct-line-api-30"></a>Principais conceitos em linha API 3.0 direto
 

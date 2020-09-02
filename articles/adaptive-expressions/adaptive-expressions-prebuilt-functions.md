@@ -9,18 +9,20 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/19/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f13e6629276ebe3c708c9107093c91b2a7ef472b
-ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
+ms.openlocfilehash: a58b0ec1e86787dd7250d43a94e84c3d833ea8eb
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86542342"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362179"
 ---
 # <a name="adaptive-expressions-prebuilt-functions"></a>Funções predefinidas de expressões adaptáveis
 
 [!INCLUDE[applies-to](../includes/applies-to.md)]
 
-Este artigo lista as funções predefinidas disponíveis ordenadas por seu uso geral. As expressões predefinidas são divididas nos seguintes tipos de função:
+Este artigo lista as funções predefinidas disponíveis ordenadas por seu uso geral. Para obter informações sobre operadores usados em funções predefinidas e sintaxe de expressão, consulte [operadores](../v4sdk/bot-builder-concept-adaptive-expressions.md#operators).
+
+As expressões predefinidas são divididas nos seguintes tipos de função:
 
 - [Cadeia de caracteres](#string-functions)
 - [Coleção](#collection-functions)
@@ -56,6 +58,8 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 |[newGuid](#newGuid)|Retornar uma nova cadeia de caracteres Guid.|
 |[indexOf](#indexOf)|Retornar a posição inicial ou o valor de índice de uma substring **ou** procurar o objeto especificado e retornar o índice de base zero da primeira ocorrência na lista inteira. Essa função não diferencia maiúsculas de minúsculas, e os índices começam com o número 0.|
 |[lastIndexOf](#lastIndexOf)|Retornar a posição inicial ou o valor de índice da última ocorrência de uma substring **ou** pesquisar o objeto especificado e retornar o índice de base zero da última ocorrência dentro do intervalo de elementos na lista. Essa função não diferencia maiúsculas de minúsculas, e os índices começam com o número 0.|
+|[sentenceCase](#sentenceCase)|Colocar em maiúscula a primeira letra da primeira palavra em uma cadeia de caracteres.|
+|[titleCase](#titleCase)|Colocar em maiúscula a primeira letra de cada palavra em uma cadeia de caracteres.|
 
 ### <a name="collection-functions"></a>Funções de coleção
 
@@ -63,7 +67,7 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 |-----------|-----------|
 |[contains](#contains)  |Funciona para localizar um item em uma cadeia de caracteres, localizar um item em uma matriz ou localizar um parâmetro em um objeto complexo. <br> **Exemplos**: <br> contains('hello world', 'hello')<br> contains(createArray('1','2'), '1')<br> contains(json("{'foo':'bar'}"), 'foo')|
 |[first](#first)|Retornar o primeiro item da coleção.|
-|[join](#join) |Retornar uma cadeia de caracteres que tem todos os itens de uma matriz e tem cada caractere separado por um delimitador. join(collection, delimiter). <br>**Exemplo**: <br> join(createArray('a','b'), '.') = "a.b"|
+|[join](#join) |Retornar uma cadeia de caracteres que tem todos os itens de uma matriz e tem cada caractere separado por um delimitador.<br>**Exemplo**: <br> join(createArray('a','b'), '.') = "a.b"|
 |[last](#last) |Retornar o último item da coleção.|
 |[contagem](#count)|Retornar o número de itens na coleção.|
 |[foreach](#foreach)|Operar em cada elemento e retornar a nova coleção.|
@@ -116,6 +120,7 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 |[uriComponent](#uriComponent)|Retornar a versão codificada para URI correspondente a um valor de entrada substituindo caracteres não seguros para URL por caracteres de escape.|
 |[uriComponentToString](#uriComponentToString)|Retornar a versão de cadeia de caracteres de uma cadeia de caracteres codificada em URI.|
 |[xml](#xml)|Somente C#. Retornar a versão XML de uma cadeia de caracteres.|
+|[formatNumber](#formatNumber)|Formate um valor para o número mais próximo para o número especificado de dígitos fracionários e uma localidade opcional especificada.|
 
 ### <a name="math-functions"></a>Funções matemáticas
 
@@ -133,6 +138,9 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 |[range](#range)|Retornar uma matriz de inteiros que começa em um inteiro especificado.|
 |[exp](#exp)|Retornar a exponenciação de um número para outro.|
 |[average](#average)|Retornar o número médio de uma matriz numérica.|
+|[Floor](#floor)|Retorna o maior valor integral menor ou igual ao número especificado.|
+|[limite](#ceiling)|Retorna o menor valor integral maior ou igual ao número especificado.|
+|[idas](#round)|Arredonde um valor para o inteiro mais próximo ou para o número especificado de dígitos fracionários.|
 
 ### <a name="date-and-time-functions"></a>Funções de data e hora
 
@@ -164,6 +172,10 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 |[startOfHour](#startOfHour)   |Retornar o início da hora de um carimbo de data/hora. |
 |[startOfMonth](#startOfMonth) |Retornar o início do mês de um carimbo de data/hora.|
 |[ticks](#ticks)   |Retornar o valor de propriedade ticks de um carimbo de data/hora especificado.|
+|[ticksToDays](#ticksToDays)| Converta um valor de propriedade de tiques para o número de dias. |
+|[ticksToHours](#ticksToHours)| Converta um valor de propriedade de tiques para o número de horas. |
+|[ticksToMinutes](#ticksToMinutes)| Converta um valor de propriedade de tiques para o número de minutos. |
+|[dateTimeDiff](#dateTimeDiff)| Retorna a diferença em tiques entre dois carimbos de data/hora. |
 
 ### <a name="timex-functions"></a>Funções timex
 
@@ -195,7 +207,7 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 |[addProperty](#addProperty)   |Adicionar uma propriedade e seu valor, ou par nome-valor, a um objeto JSON e retornar o objeto atualizado.|
 |[removeProperty](#removeProperty) |Remover uma propriedade de um objeto JSON e retornar o objeto atualizado.|
 |[setProperty](#setProperty)   |Definir o valor da propriedade de um objeto JSON e retornar o objeto atualizado.|
-|[getProperty](#getProperty)   |Retornar o valor da propriedade fornecida em um objeto JSON. |
+|[getProperty](#getProperty)   |Retorna o valor de uma propriedade ou Propriedade raiz especificada de um objeto JSON. |
 |[coalesce](#coalesce) |Retornar o primeiro valor não nulo de um ou mais parâmetros. |
 |[xPath](#xPath)   |Somente C#. Verificar o XML em busca de nós ou valores correspondentes a uma expressão XPath (Linguagem XPath) e retornar esses nós ou valores.|
 |[jPath](#jPath)   |Marcar JSON ou uma cadeia de caracteres JSON para nós ou valores que correspondam a uma expressão de caminho e retornar os nós correspondentes.|
@@ -211,6 +223,7 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 
 |Função|Explicação|
 |-----------|-----------|
+|[MERCADO](#EOL)| Somente C#. Retornar o texto da sequência de fim de linha (EOL).|
 |[isInteger](#isInteger)|Retornar true se a entrada fornecida for um número inteiro|
 |[isFloat](#isFloat)|Retornar true se a entrada fornecida for um número de ponto flutuante|
 |[isBoolean](#isBoolean)|Retornar true se a entrada fornecida for um booliano.|
@@ -782,6 +795,36 @@ E, respectivamente, retorna estes resultados:
 * `true`
 * `false`
 
+<a name="ceiling"></a>
+
+### <a name="ceiling"></a>ceiling
+
+Retorna o maior valor integral menor ou igual ao número especificado.
+
+```
+ceiling('<number>')
+```
+
+| Parâmetro | Obrigatório | Type | Descrição |
+| --------- | -------- | ---- | ----------- |
+| <*number*> | Sim | número | Um número de entrada |
+|||||
+
+| Valor retornado | Type | Descrição |
+| ------------ | ---- | ----------- |
+| <*valor inteiro*> | inteiro | O maior valor integral maior ou igual ao número de entrada |
+||||
+
+*Exemplo*
+
+Este exemplo retorna o maior valor integral menor ou igual ao número **10,333**:
+
+```
+ceiling(10.333)
+```
+
+E retorna o inteiro **11**.
+
 <a name="coalesce"></a>
 
 ### <a name="coalesce"></a>coalesce
@@ -802,17 +845,17 @@ coalesce(<object**1>, <object**2>, ...)
 | <*first-non-null-item*> | any | O primeiro item ou valor não nulo. Se todos os parâmetros forem nulos, essa função retornará null. |
 ||||
 
-*Exemplo*<br>
-Estes exemplos retornarão o primeiro valor não nulo dos valores especificados ou null quando todos os valores forem nulos.
+*Exemplo*
 
-Estes são alguns exemplos:
+Esses exemplos retornarão o primeiro valor não nulo dos valores especificados ou null quando todos os valores forem nulos:
+
 ```
 coalesce(null, true, false)
 coalesce(null, 'hello', 'world')
 coalesce(null, null, null)
 ```
 
-Eles, respectivamente, retornam estes resultados:
+E, respectivamente, retornam:
 
 - `true`
 - **hello**
@@ -822,7 +865,7 @@ Eles, respectivamente, retornam estes resultados:
 
 ### <a name="concat"></a>concat
 
-Combinar duas ou mais cadeias de caracteres e retornar a cadeia de caracteres combinada.
+Combine dois ou mais objetos e retorne os objetos combinados em uma lista ou cadeia de caracteres.
 
 ```
 concat('<text1>', '<text2>', ...)
@@ -830,13 +873,19 @@ concat('<text1>', '<text2>', ...)
 
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
-| <*text1*>, <*text2*>, ... | Sim | string | Pelo menos duas cadeias de caracteres a serem combinadas |
+| <*object1*>, <*object2*>, ... | Sim | any | Pelo menos dois objetos para Concat. |
 |||||
 
 | Valor retornado | Type | Descrição |
 | ------------ | ---- | ----------- |
-| <*text1text2...* > | string | A cadeia de caracteres criada das cadeias de caracteres de entrada combinadas |
+| <*object1object2...*> | Cadeia de caracteres ou lista | A cadeia de caracteres ou lista combinada. Valores nulos são ignorados. |
 ||||
+
+Valores de retorno esperados:
+
+- Se todos os itens forem listas, uma lista será retornada.
+- Se existir um item que não seja uma lista, uma cadeia de caracteres será retornada.
+- Se um valor for NULL, ele será ignorado e não concatanated.
 
 *Exemplo*
 
@@ -847,6 +896,44 @@ concat('Hello', 'World')
 ```
 
 E retorna o resultado **HelloWorld**.
+
+*Exemplo 2*
+
+Este exemplo combina as listas **[1, 2]** e **[3, 4]**:
+
+```
+concat([1,2],[3,4])
+```
+
+E retorna o resultado **[1, 2, 3, 4]**.
+
+*Exemplo 3*
+
+Esses exemplos combinam objetos de tipos diferentes:
+
+```
+concat('a', 'b', 1, 2)
+concat('a', [1,2])
+```
+
+E retornam os seguintes resultados, respectivamente:
+
+- A cadeia de caracteres **AB12**.
+- O objeto **System. Collections. Generic. lista 1 [System. Object]**. Isso é ilegível e o melhor a ser evitado.
+
+*Exemplo 4*
+
+Esses objetos de combinação de exemplo irão `null` :
+
+```
+concat([1,2], null)
+concat('a', 1, null)
+```
+
+E retornam os seguintes resultados, respectivamente:
+
+- A lista **[1, 2]**.
+- A cadeia de caracteres **a1**.
 
 <a name="contains"></a>
 
@@ -1195,7 +1282,48 @@ dateReadBack('2018-03-15T13:00:00.000Z', '2018-03-16T13:00:00.000Z')
 
 Retorna o resultado em **tomorrow**.
 
-<a name="dayOfMonth"></a>
+<a name="dateTimeDiff"></a>
+
+### <a name="datetimediff"></a>dateTimeDiff
+
+Retorna a diferença em tiques entre dois carimbos de data/hora.
+
+```
+dateTimeDiff('<timestamp1>', '<timestamp2>')
+```
+
+| Parâmetro | Obrigatório | Type | Descrição |
+| --------- | -------- | ---- | ----------- |
+| <*timestamp1*> | Sim | string | A primeira cadeia de carimbo de data/hora para comparação |
+| <*timestamp2*> | Sim | string | A segunda cadeia de carimbo de data/hora para comparar |
+|||||
+
+| Valor retornado | Type | Descrição |
+| ------------ | ---- | ----------- |
+| <*tiques*> | número | A diferença em tiques entre dois carimbos de data/hora  |
+||||
+
+*Exemplo 1*
+
+Este exemplo retorna a diferença em tiques entre dois carimbos de data/hora:
+
+```
+dateTimeDiff('2019-01-01T08:00:00.000Z','2018-01-01T08:00:00.000Z')
+```
+
+E retorna o número **315360000000000**.
+
+*Exemplo 2*
+
+Este exemplo retorna a diferença em tiques entre dois carimbos de data/hora:
+
+```
+dateTimeDiff('2018-01-01T08:00:00.000Z', '2019-01-01T08:00:00.000Z')
+```
+
+Retorna o resultado **-315360000000000**. Observe que o valor é um número negativo.
+
+<a name="dayOfMonth"></a>   <a name="dayOfMonth"></a>
 
 ### <a name="dayofmonth"></a>dayOfMonth
 
@@ -1413,6 +1541,34 @@ endsWith('hello world', 'universe')
 
 E retorna o resultado `false`.
 
+<a name="EOL"></a>
+
+### <a name="eol"></a>MERCADO
+
+Somente C#. Retornar o texto da sequência de fim de linha (EOL).
+
+```
+EOL()
+```
+
+| Valor retornado | Type | Descrição |
+| ------------ | ---- | ----------- |
+| <*IsOSPlatform*>| string | Return **\r\n** no Windows e **\n** no Mac e no Linux. |
+||||
+
+*Exemplo*
+
+Este exemplo verifica o final do texto da sequência de linhas:
+
+```
+EOL()
+```
+
+E retorna as seguintes cadeias de caracteres:
+
+- Windows: **\r\n**
+- Mac ou Linux: **\n**
+
 <a name="equals"></a>
 
 ### <a name="equals"></a>equals
@@ -1544,7 +1700,7 @@ E retornam estes resultados, respectivamente:
 * **h**
 * **0**
 
-<a name="flatten"/>
+<a name="flatten"></a>
 
 ### <a name="flatten"></a>mesclar
 
@@ -1607,13 +1763,43 @@ float('<value>')
 
 *Exemplo*
 
-Este exemplo cria uma versão de cadeia de caracteres do seguinte número de ponto flutuante:
+Este exemplo converte a versão float de uma cadeia de caracteres:
 
 ```
 float('10.333')
 ```
 
-E retorna a cadeia de caracteres resultante **10,333**.
+E retorna o float **10,333**.
+
+<a name="floor"></a>
+
+### <a name="floor"></a>floor
+
+Retorna o maior valor integral menor ou igual ao número especificado.
+
+```
+floor('<number>')
+```
+
+| Parâmetro | Obrigatório | Type | Descrição |
+| --------- | -------- | ---- | ----------- |
+| <*number*> | Sim | número | Um número de entrada |
+|||||
+
+| Valor retornado | Type | Descrição |
+| ------------ | ---- | ----------- |
+| <*valor inteiro*> | inteiro | O maior valor integral menor ou igual ao número de entrada |
+||||
+
+*Exemplo*
+
+Este exemplo calcula o valor de piso do número **10,333**:
+
+```
+floor(10.333)
+```
+
+E retorna o inteiro **10**.
 
 <a name="foreach"></a>
 
@@ -1649,13 +1835,14 @@ E retorna o resultado **[1, 2, 3, 4]** .
 
 *Exemplo 2*
 
-Este exemplo gera uma nova coleção:
+Estes exemplos geram uma nova coleção:
 
 ```
 foreach(json("{'name': 'jack', 'age': '15'}"), x, concat(x.key, ':', x.value))
+foreach(json("{'name': 'jack', 'age': '15'}"), x=> concat(x.key, ':', x.value))
 ```
 
-E retorna o resultado **['name:jack', 'age:15']** .
+E retornar o resultado **[' Name: Jack ', ' Age: 15 ']**. Observe que a segunda expressão é uma *expressão lambda*, que é mais legível.
 
 <a name="formatDateTime"></a>
 
@@ -1721,6 +1908,47 @@ formatEpoch(1521118800, 'yyyy-MM-ddTHH:mm:ss.fffZ)'
 
 E retorna o resultado **2018-03-15T12:00:00.000Z**.
 
+<a name="formatNumber"></a>
+
+### <a name="formatnumber"></a>formatNumber
+
+Formate um valor para o número especificado de dígitos fracionários e uma localidade opcional especificada.
+
+```
+formatNumber('<number>', '<precision-digits>', '<locale>')
+```
+
+| Parâmetro | Obrigatório | Type | Descrição |
+| --------- | -------- | ---- | ----------- |
+| <*number*> | Sim | número | Um número de entrada |
+| <*dígitos de precisão*> | Sim | inteiro | Um número especificado de dígitos fracionários|
+| <*locale*> | Não| string | Uma localidade opcional de informações de cultura |
+|||||
+
+| Valor retornado | Type | Descrição |
+| ------------ | ---- | ----------- |
+| <*valor de retorno*> | número | O valor de retorno da entrada formatada em um número especificado de dígitos fracionários e uma localidade especificada |
+||||
+
+*Exemplo 1*
+
+Este exemplo formata o número **10,333** a **2** dígitos fracionários:
+
+```
+formatNumber(10.333, 2)
+```
+
+E retorna a cadeia de caracteres **10,33**.
+
+*Exemplo 2*
+
+Este exemplo formata o número **10,333** a **4** dígitos fracionários usando a formatação **fr-fr** :
+
+```
+formatNumber(12000.3, 4, 'fr-fr')
+```
+
+E retorna a cadeia de caracteres **"12 000, 3000"**.
 
 <a name="formatTicks"></a>
 
@@ -1841,31 +2069,88 @@ E retorna o resultado **02-26-18**.
 
 ### <a name="getproperty"></a>getProperty
 
-Recuperar o valor da propriedade especificada do objeto JSON.
+Retorna o valor de uma propriedade especificada ou a propriedade raiz de um objeto JSON.
+
+#### <a name="return-the-value-of-a-specified-property"></a>Retornar o valor de uma propriedade especificada
 
 ```
-getProperty(<JSONObject>, '<Property>')
+getProperty(<JSONObject>, '<propertyName>')
 ```
 
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
-| <*JSONObject*> | Sim | objeto | O objeto JSON contém a propriedade e o valor que você deseja obter |
-| <*property*> | Sim | string | A propriedade especificada que você deseja obter do objeto JSON |
+| <*JSONObject*> | Sim | objeto | O objeto JSON que contém a propriedade e os valores. |
+| <*propertyName*> | Não | string | O nome da propriedade opcional para a qual acessar valores.|
+|||||
 
 | Valor retornado | Type | Descrição |
 | ------------ | ---- | ----------- |
-| value | objeto | O valor da propriedade especificada que você deseja obter do objeto JSON|
+| value | string | O valor da propriedade especificada no objeto JSON. |
 ||||
 
 *Exemplo*
 
-Este exemplo obtém as propriedades de **item = {'name': 'myName', 'age': 18, 'state': ['single', 'junior', 'Grade A']}** :
+Digamos que você tenha o seguinte objeto JSON:
+
+```json
+{
+   "a:b" : "a:b value",
+   "c":
+   {
+        "d": "d key"
+    }
+}
+```
+
+Estes exemplos recuperam uma propriedade especificada do objeto JSON acima:
 
 ```
-getProperty(item, 'state')
+getProperty({"a:b": "value"}, 'a:b')
+getProperty(c, 'd')
 ```
 
-E retorna o resultado **['single', 'junior', 'Grade A']** .
+E retorne as seguintes cadeias de caracteres, respectivamente:
+
+- **valor de a:b**
+- **chave d**
+
+#### <a name="return-the-root-property"></a>Retornar a propriedade raiz
+
+```
+getProperty('<propertyName>')
+```
+
+| Parâmetro | Obrigatório | Type | Descrição |
+| --------- | -------- | ---- | ----------- |
+| <*propertyName*> | Sim | string | O nome da propriedade opcional para acessar valores do escopo de memória raiz. |
+|||||
+
+| Valor retornado | Type | Descrição |
+| ------------ | ---- | ----------- |
+| value | string | O valor da propriedade raiz em um objeto JSON. |
+||||
+
+*Exemplo*
+
+Digamos que você tenha o seguinte objeto JSON:
+
+```json
+{
+   "a:b" : "a:b value",
+   "c":
+   {
+        "d": "d key"
+    }
+}
+```
+
+Este exemplo recupera a propriedade raiz do objeto JSON acima:
+
+```
+getProperty("a:b")
+```
+
+E retorna o **valor de a:b**da cadeia de caracteres.
 
 <a name="getTimeOfDay"></a>
 
@@ -3566,6 +3851,48 @@ replace('the old string', 'old', 'new')
 
 E retorna o resultado **the new string**.
 
+<a name="round"></a>
+
+### <a name="round"></a>round
+
+Arredonde um valor para o inteiro mais próximo ou para o número especificado de dígitos fracionários.
+
+```
+round('<number>', '<precision-digits>')
+```
+
+| Parâmetro | Obrigatório | Type | Descrição |
+| --------- | -------- | ---- | ----------- |
+| <*number*> | Sim | número | Um número de entrada |
+| <*dígitos de precisão*> | Não | inteiro | Um número especificado de dígitos fracionários. O padrão é 0. |
+|||||
+
+| Valor retornado | Type | Descrição |
+| ------------ | ---- | ----------- |
+| <*valor de retorno*> | número | O valor de retorno da entrada arredondado em um número especificado de dígitos fracionários |
+||||
+
+*Exemplo 1*
+
+Este exemplo arredonda o número **10,333**:
+
+```
+round(10.333)
+```
+
+E retorna o número **10**.
+
+*Exemplo 2*
+
+Este exemplo arredonda o número de **10,3313** a **2** dígitos fracionários:
+
+```
+round(10.3313, 2)
+```
+
+E retorna o número **10,33**.
+
+
 <a name="select"></a>
 
 ### <a name="select"></a>select
@@ -3579,7 +3906,7 @@ select([<collection/instance>], <iteratorName>, <function>)
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
 | <*collection/instance*> | Sim | matriz | A coleção com os itens |
-| <*iteratorName*> | Sim | Nome do iterador | O item principal da função de seta |
+| <*iteratorName*> | Sim | Nome do iterador | O item-chave |
 | <*function*> | Sim | expressão | Função que pode conter `iteratorName` |
 |||||
 
@@ -3590,7 +3917,7 @@ select([<collection/instance>], <iteratorName>, <function>)
 
 *Exemplo 1*
 
-Este exemplo gera novas coleções:
+Este exemplo gera uma nova coleção:
 
 ```
 select(createArray(0, 1, 2, 3), x, x + 1)
@@ -3600,13 +3927,15 @@ E retorna o resultado **[1, 2, 3, 4]** .
 
 *Exemplo 2*
 
-Este exemplo gera uma nova coleção para uma instância:
+Estes exemplos geram uma nova coleção:
 
 ```
 select(json("{'name': 'jack', 'age': '15'}"), x, concat(x.key, ':', x.value))
+select(json("{'name': 'jack', 'age': '15'}"), x=> concat(x.key, ':', x.value))
+
 ```
 
-E retorna o resultado **['name:jack', 'age:15']** .
+E retornar o resultado **[' Name: Jack ', ' Age: 15 ']**. Observe que a segunda expressão é uma *expressão lambda*, que é mais legível.
 
 <a name="setPathToValue"></a>
 
@@ -3839,7 +4168,7 @@ E retorna este resultado:
 
 ### <a name="split"></a>split
 
-Retorna uma matriz que contém substrings separadas por vírgulas, com base no caractere delimitador especificado na cadeia de caracteres original.
+Retorna uma matriz que contém substrings separadas por vírgulas com base no caractere delimitador especificado na cadeia de caracteres original.
 
 ```
 split('<text>', '<delimiter>'?)
@@ -3871,7 +4200,7 @@ split('hello')
 E retorna as seguintes matrizes como o resultado, respectivamente:
 - **["a", "b", "c"]**
 - **["h", "e", "l", "l", "o"]**
-- **[""]** , **[ ]**
+- **[""]**, **[ ]**
 - **["h", "e", "l", "l", "o"]**
 
 <a name="startOfDay"></a>
@@ -4007,6 +4336,42 @@ startsWith('hello world', 'greeting')
 ```
 
 E retorna o resultado `false`.
+
+<a name="sentenceCase"></a>
+
+### <a name="sentencecase"></a>sentenceCase
+
+Colocar em maiúscula a primeira letra da primeira palavra em uma cadeia de caracteres.
+
+```
+sentenceCase('<text>')
+```
+
+| Parâmetro | Obrigatório | Type | Descrição |
+| --------- | -------- | ---- | ----------- |
+| <*text*> | Sim | string | A cadeia de caracteres original |
+|||||
+
+| Valor retornado | Type | Descrição |
+| ------------ | ---- | ----------- |
+| Cadeia de caracteres de resultado | string | Retorna o resultado do caso de sentença |
+||||
+
+*Exemplo*
+
+Esses exemplos capitalizam a primeira letra de uma cadeia de caracteres:
+
+```
+sentenceCase('a')
+sentenceCase('abc def')
+sentenceCase('aBC dEF')
+```
+
+E retornam os seguintes resultados, respectivamente:
+
+- **A**
+- **Def. de ABC**
+- **Def. de ABC**
 
 <a name="string"></a>
 
@@ -4281,6 +4646,132 @@ ticks('2018-01-01T08:00:00.000Z')
 ```
 
 E retorna o resultado **636503904000000000**.
+
+<a name='ticksToDays'></a>
+
+### <a name="tickstodays"></a>ticksToDays
+
+Converta um valor de propriedade de tiques para o número de dias.
+
+```
+ticksToDays('ticks')
+```
+
+| Parâmetro | Obrigatório | Type | Descrição |
+| --------- | -------- | ---- | ----------- |
+| <*tiques*>| Sim | inteiro | O valor da propriedade ticks a ser convertido |
+|||||
+
+| Valor retornado | Type | Descrição |
+| ------------ | -----| ----------- |
+| <*número de dias*> | número | O número de dias convertidos do valor da propriedade ticks |
+||||
+
+*Exemplo*
+
+Este exemplo converte um valor de propriedade de tiques em um número de dias:
+
+```
+ticksToDays(2193385800000000)
+```
+
+E retorna o número **2538,64097222**.
+
+<a name='ticksToHours'></a>
+
+### <a name="tickstohours"></a>ticksToHours
+
+Converta um valor de propriedade de tiques para o número de horas.
+
+```
+ticksToHours('ticks')
+```
+
+| Parâmetro | Obrigatório | Type | Descrição |
+| --------- | -------- | ---- | ----------- |
+| <*tiques*>| Sim | Integer | O valor da propriedade ticks a ser convertido |
+|||||
+
+| Valor retornado | Type | Descrição |
+| ------------ | -----| ----------- |
+| <*número de horas*> | número | O número de horas convertidas do valor da propriedade ticks |
+||||
+
+*Exemplo*
+
+Este exemplo converte um valor de propriedade ticks em um número de horas:
+
+```
+ticksToHours(2193385800000000)
+```
+
+E retorna o número **60927.383333333331**.
+
+<a name='ticksToMinutes'></a>
+
+### <a name="tickstominutes"></a>ticksToMinutes
+
+Converta um valor de propriedade de tiques para o número de minutos.
+
+```
+ticksToMinutes('ticks')
+```
+
+| Parâmetro | Obrigatório | Type | Descrição |
+| --------- | -------- | ---- | ----------- |
+| <*tiques*>| Sim | inteiro | O valor da propriedade ticks a ser convertido |
+|||||
+
+| Valor retornado | Type | Descrição |
+| ------------ | -----| ----------- |
+| <*número de minutos*> | número | O número de minutos convertidos do valor da propriedade ticks |
+||||
+
+*Exemplo*
+
+Este exemplo converte um valor de propriedade de tiques em um número de minutos:
+
+```
+ticksToMinutes(2193385800000000)
+```
+
+E retorna o número **3655643, 185**.
+
+<a name="titleCase"></a>
+
+### <a name="titlecase"></a>titleCase
+
+Colocar em maiúscula a primeira letra de cada palavra em uma cadeia de caracteres.
+
+```
+titleCase('<text>')
+```
+
+| Parâmetro | Obrigatório | Type | Descrição |
+| --------- | -------- | ---- | ----------- |
+| <*text*> | Sim | string | A cadeia de caracteres original |
+|||||
+
+| Valor retornado | Type | Descrição |
+| ------------ | ---- | ----------- |
+| Cadeia de caracteres de resultado | string | O resultado do caso de título |
+||||
+
+*Exemplo*
+
+Esses exemplos capitalizam a primeira letra de cada palavra em uma cadeia de caracteres:
+
+```
+titleCase('a')
+titleCase('abc def')
+sentenceCase('aBC dEF')
+```
+
+E retornam os seguintes resultados, respectivamente:
+
+- **A**
+- **Def. de ABC**
+- **Def. de ABC**
 
 <a name="toLower"></a>
 
@@ -4729,7 +5220,7 @@ where([<collection/instance>], <iteratorName>, <function>)
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
 | <*collection/instance*> | Sim | matriz | A coleção com os itens |
-| <*iteratorName*> | Sim | nome do iterador | O item principal da função de seta |
+| <*iteratorName*> | Sim | nome do iterador | O item-chave |
 | <*function*> | Sim | expressão | Função Condition usada para filtrar itens|
 |||||
 
@@ -4740,7 +5231,7 @@ where([<collection/instance>], <iteratorName>, <function>)
 
 *Exemplo 1*
 
-Este exemplo gera novas coleções:
+Este exemplo gera uma nova coleção:
 
 ```
 where(createArray(0, 1, 2, 3), x, x > 1)
@@ -4750,13 +5241,14 @@ E retorna o resultado **[2, 3]** .
 
 *Exemplo 2*
 
-Este exemplo gera um novo objeto:
+Estes exemplos geram uma nova coleção:
 
 ```
 where(json("{'name': 'jack', 'age': '15'}"), x, x.value == 'jack')
+where(json("{'name': 'jack', 'age': '15'}"), x=> x.value == 'jack')
 ```
 
-E retorna o resultado **{'name': 'jack'}** .
+E retornar o resultado **[' Name: Jack ', ' Age: 15 ']**. Observe que a segunda expressão é uma *expressão lambda*, que é mais legível.
 
 <a name="xml"></a>
 

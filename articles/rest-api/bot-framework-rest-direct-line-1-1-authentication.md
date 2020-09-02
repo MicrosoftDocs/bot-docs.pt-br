@@ -1,18 +1,18 @@
 ---
 title: Autenticação da Direct Line API 1.1 – Serviço de Bot
-description: Saiba como autenticar solicitações de API na API da Linha Direta v1.1.
+description: Saiba mais sobre a autenticação na versão 1,1 da API de linha direta. Consulte como usar segredos e tokens para acessar conversas. Descubra como atualizar tokens.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: cc852b1298a306b5c9f6e381b48597510dcb1e72
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 9cea033dc86c8a742f221c4f03ac756bc78c4c79
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77071864"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361839"
 ---
 # <a name="authentication"></a>Autenticação
 

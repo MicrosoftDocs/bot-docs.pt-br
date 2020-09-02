@@ -1,6 +1,6 @@
 ---
 title: Conectar um bot ao Twilio – Serviço de Bot
-description: Saiba como configurar a conexão de um bot com o Twilio.
+description: Saiba como configurar os bots para usar o twilio para se comunicar com as pessoas. Consulte Como conectar bots ao twilio por meio de um adaptador twilio ou um aplicativo TwiML.
 keywords: Twilio, canais de bot, SMS, Aplicativo, telefone, configurar o Twilio, comunicação em nuvem, texto
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 10/9/2018
-ms.openlocfilehash: de6e8cd046dcb5980f2758bcc35987b9e4c91f2a
-ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
+ms.openlocfilehash: 17a75bff521b4503410d0fc625aa6c6164a03a25
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85073593"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362019"
 ---
 # <a name="connect-a-bot-to-twilio"></a>Conectar um bot ao Twilio
 

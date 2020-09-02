@@ -1,19 +1,19 @@
 ---
 title: Usar a extensão de serviço de aplicativo do Direct Line com uma VNET
 titleSuffix: Bot Service
-description: Usar a extensão de serviço de aplicativo do Direct Line com uma VNET
+description: Saiba como usar uma extensão de serviço de aplicativo de linha direta com uma rede virtual do Azure. Consulte como criar um ambiente e configurar uma conexão de saída.
 services: bot-service
 manager: kamrani
 ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 07/25/2019
-ms.openlocfilehash: fe353baa34b669d76e34ce5223a760789b48879f
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: 76b65646c97205d976d999bc40b521b14104e297
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420670"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361999"
 ---
 # <a name="use-direct-line-app-service-extension-within-a-vnet"></a>Usar a extensão de serviço de aplicativo do Direct Line com uma VNET
 

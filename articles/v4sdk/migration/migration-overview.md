@@ -1,6 +1,6 @@
 ---
 title: Visão geral de Migração de SDK do Bot Framework – Serviço de Bot
-description: Apresenta uma visão geral das alterações ao SDK e como migrar da v3 para a v4.
+description: Consulte como migrar bots da versão 3 para 4 do SDK do bot Framework. Saiba mais sobre as alterações na versão 4 em gerenciamento de estado, caixas de diálogo e outras áreas.
 keywords: migração do bot
 author: mmiele
 ms.author: v-mimiel
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/11/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: e7b76ecfa20c6f6feb1207579fc4c0b520ad10d6
-ms.sourcegitcommit: eb0e5dec0ecd4e375d33825030b1ba46ff6e032c
+ms.openlocfilehash: dd8570f44e9845ed4f9d21923b33c72b65625641
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83791365"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362229"
 ---
 # <a name="migration-overview"></a>Visão geral da migração
 

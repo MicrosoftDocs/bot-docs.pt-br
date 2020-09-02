@@ -1,6 +1,6 @@
 ---
 title: Conectar um bot ao Slack – Serviço de Bot
-description: Saiba como configurar a conexão do bot com o Slack.
+description: Saiba como conectar bots à margem de atraso. Use o serviço de bot do Azure ou o adaptador de margem de atraso para configurar bots para responder a mensagens de margem de atraso e atividade de canal.
 keywords: conectar um bot, canal de bot, bot do Slack, aplicativo de mensagens do Slack, adaptador do Slack
 author: arturl
 ms.author: arturl
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 07/09/2020
-ms.openlocfilehash: 20005512b1a042b457eb450b8fa930deb113df9b
-ms.sourcegitcommit: 3a555eaf528d3c81dedf1d99cba2c5106113181f
+ms.openlocfilehash: cc9c93801c94f10e9d61a39523f4a4c5a6b5c3c0
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86137809"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362079"
 ---
 # <a name="connect-a-bot-to-slack"></a>Conectar um bot ao Slack
 

@@ -1,18 +1,18 @@
 ---
 title: Adicionar anexos de cartão avançado a mensagens – Serviço de Bot
-description: Saiba como adicionar cartões avançados a mensagens usando o serviço Conector de Bot.
+description: Descubra como adicionar imagens, vídeos, áudio e arquivos a mensagens de bot. Saiba mais sobre os diferentes tipos de cartões e eventos avançados que os bots podem processar em cartões.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: e51d4bcc7059e1130932ca6a8b956dd3b097ef8c
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 801763ee015e40037e9f46cc6045cd745e0e0a3f
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "76752898"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361919"
 ---
 # <a name="add-rich-card-attachments-to-messages"></a>Adicionar anexos de cartão avançados às mensagens
 
@@ -49,7 +49,7 @@ Atualmente, o Bot Framework dá suporte a oito tipos de cartões avançados:
 
 Para processar eventos em cartões avançados, use objetos [CardAction][] para especificar o que deve acontecer quando o usuário clica em um botão ou toca em uma seção do cartão. Cada objeto `CardAction` contém estas propriedades:
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | channelData | string | dados específicos do canal associados a esta ação |
 | displayText | string | texto a ser exibido no feed do chat se o botão receber um clique |

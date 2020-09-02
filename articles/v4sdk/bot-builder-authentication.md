@@ -7,12 +7,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 2/7/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b773a65d7dd226c6d95b1a6e570bf994dda8606f
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: a59cd3a5f272b97b1a9d48c6054b8233d6367b17
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143305"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362291"
 ---
 <!--
 
@@ -41,19 +41,19 @@ Related TODO:
 
 [!INCLUDE [applies-to-v4](../includes/applies-to.md)]
 
-O SDK do Serviço de Bot do Azure v4 facilita o desenvolvimento de bots que podem acessar recursos online que exigem autenticação. O bot não precisa gerenciar tokens de autenticação. O Azure faz isso para você usando o OAuth2 para gerar um token, com base nas credenciais de cada usuário. O bot usa o token gerado pelo Azure para acessar esses recursos. Dessa forma, o usuário não precisa fornecer a ID nem a senha para o bot para acessar um recurso protegido, mas apenas para um provedor de identidade confiável.
+O SDK v4 do serviço de bot do Azure facilita o desenvolvimento de bots que podem acessar recursos online que exigem autenticação do usuário. O bot não precisa gerenciar tokens de autenticação porque o Azure faz isso para você usando o OAuth 2,0 para gerar um token baseado nas credenciais de cada usuário. O bot usa o token gerado pelo Azure para acessar esses recursos. Dessa forma, o usuário não precisa fornecer a ID nem a senha para o bot para acessar um recurso protegido, mas apenas para um provedor de identidade confiável.
 
-Para obter uma visão geral de como o Bot Framework processa a autenticação, confira [Autenticação de bot](bot-builder-concept-authentication.md).
+Para obter uma visão geral de como a estrutura de bot lida com esse tipo de autenticação, consulte [autenticação do usuário](bot-builder-concept-authentication.md).
 
 > [!NOTE]
 > A autenticação também funciona com o BotBuilder v3. No entanto, este artigo aborda apenas o código de exemplo v4.
 
-Este artigo faz referência a dois exemplos. Um deles mostra como obter um token de autenticação. O outro é mais complexo e mostra como acessar o [Microsoft Graph](https://developer.microsoft.com/en-us/graph) em nome do usuário. Em ambos os casos, você pode usar o Azure AD (Azure Active Directory) v1 ou o Azure AD v2 como um provedor de identidade para obter um token OAuth para o bot.
+Este artigo faz referência a dois exemplos. Um deles mostra como obter um token de autenticação. A outra é mais complexa e mostra como acessar [Microsoft Graph](https://developer.microsoft.com/en-us/graph) em nome do usuário. Em ambos os casos, você pode usar o Azure AD (Azure Active Directory) v1 ou o Azure AD v2 como um provedor de identidade para obter um token OAuth para o bot.
 Este artigo explica como:
 
 - [Criar o registro de bot do Azure](#create-the-azure-bot-registration)
-- [Criar o aplicativo de identidade do Azure AD](#create-the-azure-ad-identity-application)
-- [Registrar o aplicativo OAuth do Azure AD com o bot](#register-the-azure-ad-oauth-application-with-the-bot)
+- [Criar o provedor de identidade do Azure AD](#create-the-azure-ad-identity-provider)
+- [Registrar o provedor de identidade do Azure AD com o bot](#register-the-azure-ad-identity-provider-with-the-bot)
 - [Preparar o código do bot](#prepare-the-bot-code)
 
 Depois de concluir este artigo, você terá um bot que pode responder a algumas tarefas simples. No caso do exemplo do Microsoft Graph, você pode enviar um email, mostrar quem você é e verificar os emails recentes. Você não precisa publicar o bot para testar os recursos de entrada do OAuth. No entanto, o bot precisará de uma ID do aplicativo e senha do Azure válidas.
@@ -117,10 +117,13 @@ Esta seção mostra como registrar um recurso de bot com o Azure para hospedar o
     1. Copie o novo segredo do cliente e salve-o em um arquivo.
         > [!WARNING]
         > Registre o segredo por tempo suficiente para que o bot seja configurado.
-        > Não mantenha uma cópia dele, a menos que você tenha um bom motivo e, nesse caso, guarde-a em um local seguro.
+        > Não mantenha uma cópia delas, a menos que você tenha um bom motivo, nesse caso, mantenha-a em um local seguro.
 1. Volte para a janela *Registro do Canal do Bot* e copie a **ID do Aplicativo** e o **Segredo do cliente** nas caixas **ID do Aplicativo da Microsoft** e **Senha**, respectivamente.
 1. Clique em **OK**.
 1. Por fim, clique em **Criar**.
+
+> [!NOTE]
+> Você atribuirá a **ID do aplicativo (cliente)** e o **segredo do cliente**, salvo em um arquivo, às variáveis de configuração do bot: `MicrosoftAppId` e `MicrosoftAppPassword` . Consulte a seção [preparar o código de bot](#prepare-the-bot-code) .
 
 Depois que o Azure tiver concluído o registro, o registro de canais de bot e o serviço de aplicativo bot serão incluídos no grupo de recursos selecionado.
 
@@ -136,9 +139,9 @@ Para obter mais informações, confira a [visão geral do Azure Active Directory
 
 Para obter informações sobre as diferenças entre os pontos de extremidade v1 e v2, confira [Por que atualizar para a plataforma de identidade da Microsoft (v2.0)?](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-compare). Para obter informações completas, confira [Plataforma de identidade da Microsoft (conhecida anteriormente como Azure Active Directory para desenvolvedores)](https://docs.microsoft.com/azure/active-directory/develop/).
 
-### <a name="create-the-azure-ad-identity-application"></a>Criar o aplicativo de identidade do Azure AD
+### <a name="create-the-azure-ad-identity-provider"></a>Criar o provedor de identidade do Azure AD
 
-Esta seção mostra como criar um aplicativo de identidade do Azure AD que usa OAuth2 para autenticar o bot. Você pode usar os pontos de extremidade do Azure AD v1 ou Azure AD v2.
+Esta seção mostra como criar um provedor de identidade do Azure AD que usa OAuth2 para autenticar o bot. Você pode usar os pontos de extremidade do Azure AD v1 ou Azure AD v2.
 
 > [!TIP]
 > Você precisará criar e registrar o aplicativo do Azure AD em um locatário no qual você pode consentir em delegar permissões solicitadas por um aplicativo.
@@ -157,8 +160,8 @@ Esta seção mostra como criar um aplicativo de identidade do Azure AD que usa O
    1. Clique em **Registrar**.
 
       - Depois de criado, o Azure exibe a página **Visão geral** do aplicativo.
-      - Registre o valor da **ID do aplicativo (cliente)** . Você usará esse valor posteriormente como a _ID do cliente_ ao registrar seu aplicativo do Azure AD com seu bot.
-      - Registre também o valor da **ID do diretório (locatário)** . Você também usará essas informações para registrar esse aplicativo no bot.
+      - Registre o valor da **ID do aplicativo (cliente)** . Você usará esse valor posteriormente como a _ID do cliente_ ao criar a cadeia de conexão e registrar o provedor do AD do Azure com o registro de bot.
+      - Registre também o valor da **ID do diretório (locatário)** . Você também usará isso para registrar este aplicativo de provedor com o bot.
 
 1. No painel de navegação, clique em **Certificados e segredos** para criar um segredo para o aplicativo.
 
@@ -188,7 +191,10 @@ Esta seção mostra como criar um aplicativo de identidade do Azure AD que usa O
 
 Agora você tem um aplicativo do Azure AD configurado.
 
-### <a name="register-the-azure-ad-oauth-application-with-the-bot"></a>Registrar o aplicativo OAuth do Azure AD com o bot
+> [!NOTE]
+> Você atribuirá a **ID do aplicativo (cliente)** e o **segredo do cliente**, quando criar a cadeia de conexão e registrar o provedor de identidade com o registro do bot. Consulte a próxima seção.
+
+### <a name="register-the-azure-ad-identity-provider-with-the-bot"></a>Registrar o provedor de identidade do Azure AD com o bot
 
 A próxima etapa é registrar o aplicativo do Azure AD que você acabou de criar com o bot.
 
@@ -201,18 +207,19 @@ A próxima etapa é registrar o aplicativo do Azure AD que você acabou de criar
 1. Em **Configurações de Conexão do OAuth** na parte inferior da página, clique em **Adicionar configuração**.
 1. Preencha o formulário da seguinte maneira:
 
-    1. Para **Nome**, insira um nome para sua conexão. Você o usará em seu código de bot.
-    1. Para **Provedor de serviços**, selecione **Azure Active Directory v2**. Depois que você selecionar esta opção, os campos específicos do Azure AD serão exibidos.
-    1. Para **ID do cliente**, insira a ID do aplicativo (cliente) que você registrou para o aplicativo do Azure AD v1.
-    1. Para **Segredo do cliente**, insira o segredo que você criou para permitir que o bot acesse o aplicativo do Azure AD.
-    1. Para **ID do Locatário**, insira a **ID do diretório (locatário)** que você registrou anteriormente para seu aplicativo do AAD ou **comum** dependendo dos tipos de conta com suporte selecionados quando você criou o aplicativo do Azure AD. Para decidir qual valor atribuir, siga estes critérios:
+    1. **Nome**. Digite um nome para a conexão. Você o usará em seu código de bot.
+    1. **Provedor de serviços**. Selecione **Azure Active Directory v2**. Depois que você selecionar esta opção, os campos específicos do Azure AD serão exibidos.
+    1. **ID do cliente**. Insira a ID do aplicativo (cliente) que você registrou para seu provedor de identidade do Azure AD v2.
+    1. **Segredo do cliente**. Insira o segredo que você gravou para seu provedor de identidade do Azure AD v2.
+    1. **URL de troca de token**. Deixe em branco porque ele é usado somente para SSO no Azure AD v2.
+    1. **ID do locatário**. Insira a **ID do diretório (locatário)** que você registrou anteriormente para seu aplicativo AAD ou **comum** , dependendo dos tipos de conta com suporte selecionados quando você criou o aplicativo DD do Azure. Para decidir qual valor atribuir, siga estes critérios:
 
         - Ao criar o aplicativo do Azure AD, se você tiver selecionado *Contas neste diretório organizacional somente (somente Microsoft – locatário único)* insira a **ID de locatário** que você registrou antes para o aplicativo AAD.
-        - No entanto, se você tiver selecionado *Contas em qualquer diretório organizacional (qualquer conta Microsoft pessoal e multilocatário do diretório do AAD, por exemplo, XBox, Outlook.com)* ou *Contas em qualquer diretório organizacional (diretório do Microsoft Azure AD – multilocatário)* , insira a palavra **common**, em vez de uma ID de locatário. Caso contrário, o aplicativo AAD verificará o locatário cuja ID foi selecionada e excluirá as contas MS pessoais.
+        - No entanto, se você selecionou *Contas em qualquer diretório organizacional (qualquer conta Microsoft pessoal e multilocatário do diretório do AAD, por exemplo, XBox, Outlook.com)* ou *Contas em qualquer diretório organizacional (diretório do Microsoft Azure AD – multilocatário)* , insira a palavra **common**, em vez de uma ID de locatário. Caso contrário, o aplicativo AAD verificará o locatário cuja ID foi selecionada e excluirá as contas MS pessoais.
 
         Esse será o locatário associado aos usuários que podem ser autenticados. Para obter mais informações, confira [Locação no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/single-and-multi-tenant-apps).
 
-    1. Para **Escopos**, digite os nomes da permissão que você escolheu no registro do aplicativo: `Mail.Read Mail.Send openid profile User.Read User.ReadBasic.All`.
+    1. Para **escopos**, insira os nomes da permissão escolhida no registro do aplicativo. Para fins de teste, você pode simplesmente inserir: `openid profile` .
 
         > [!NOTE]
         > Para o Azure AD v2, o campo **Escopos** usa uma lista de valores separada por espaços que diferencia maiúsculas de minúsculas.

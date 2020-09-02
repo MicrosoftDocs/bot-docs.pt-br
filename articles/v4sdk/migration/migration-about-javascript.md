@@ -1,6 +1,6 @@
 ---
 title: Diferenças entre o SDK do NodeJS v3 e v4 – Serviço de Bot
-description: Descreve as diferenças entre o SDK do NodeJS v3 e v4.
+description: Descubra como as versões 3 e 4 do SDK do JavaScript do bot Framework diferem. Saiba mais sobre as alterações no processamento de atividades, no gerenciamento de estado e nas caixas de diálogo.
 keywords: migração de bot, caixas de diálogo, estado
 author: mmiele
 ms.author: v-mimiel
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/28/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f566db6f1cadf3c6df97bf92046405aad5ce4a9b
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: b570348e7b9312eb5be94860e86045fba712fa65
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143955"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362239"
 ---
 # <a name="differences-between-the-v3-and-v4-javascript-sdk"></a>Diferenças entre o SDK do JavaScript v3 e v4
 

@@ -1,19 +1,19 @@
 ---
 title: Extensão de Serviço de Aplicativo do Direct Line
 titleSuffix: Bot Service
-description: Recursos da extensão de serviço de aplicativo do Direct Line
+description: Familiarize-se com extensões de serviço de aplicativo de linha direta. Consulte como usar extensões de streaming para se conectar diretamente a bots hospedados. Exibir recursos adicionais.
 services: bot-service
 manager: kamrani
 ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 05/19/2020
-ms.openlocfilehash: 9d2b39137d106bd049df72e7328a6a4aca296e6c
-ms.sourcegitcommit: e67f0b534bf84016a73eb8448deae75798a4d1d6
+ms.openlocfilehash: a686cc03c17cc3a6c227aa4e51223db2d4d372de
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83665916"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361989"
 ---
 # <a name="direct-line-app-service-extension"></a>Direct Line App Service Extension
 

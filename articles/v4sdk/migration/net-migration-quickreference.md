@@ -1,6 +1,6 @@
 ---
 title: Referência rápida da migração do .NET v3 para v4 – Serviço de Bot
-description: Uma descrição das principais diferenças no SDK v3 e v4 do Bot Framework para .NET.
+description: Exiba exemplos de código que ilustram como trabalhar com mensagens, caixas de diálogo, eventos e serviços nas versões 3 e 4 do SDK do .NET bot Framework.
 keywords: .net, migração de bot, caixas de diálogo, bot v3
 author: JonathanFingold
 ms.author: kamrani
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/31/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f8569aa3d4e2e227e7b348675429e5f347b13329
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: c34cf04d1e54776855a7908af32aedc722fba742
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75791018"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362209"
 ---
 # <a name="net-migration-quick-reference"></a>Referência rápida da migração do .NET
 

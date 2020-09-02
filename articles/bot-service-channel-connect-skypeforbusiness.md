@@ -1,6 +1,6 @@
 ---
 title: Conectar um bot ao Skype for Business – Serviço de Bot
-description: Saiba como conectar um bot ao locatário do Skype for Business.
+description: Descubra como configurar bots para mensagens instantâneas, telefone e chamadas de vídeo. Saiba mais sobre as equipes, uma alternativa ao canal do Skype for Business preterido.
 keywords: skype para empresas, canais de bot
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 7bb01dd94fe4d7058c857ad0f1c42bf7b35a727d
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 1999a464c800b26953aec6d783a0c0f27650fe0e
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80117607"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362049"
 ---
 # <a name="connect-a-bot-to-skype-for-business-preview"></a>Conectar um bot ao Skype for Business (versão prévia)
 

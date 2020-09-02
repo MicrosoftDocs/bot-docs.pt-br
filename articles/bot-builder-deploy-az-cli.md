@@ -1,6 +1,6 @@
 ---
 title: Implantar o bot – Serviço de Bot
-description: Implantar seu bot na nuvem do Azure
+description: Saiba como implantar bots na nuvem do Azure. Veja como preparar os bots para implantação, implantar o código no aplicativo Web do Azure e testar os bots no chat da Web.
 keywords: implantar bot, implantar bot no azure, publicar bot
 author: ivorb
 ms.author: kamrani
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 06/09/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: c63909a16ced316b6200e48f64feaad02dc915f8
-ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
+ms.openlocfilehash: bd20d94e8cd78b24f77db8959d066d69f4e8f650
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85073685"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362199"
 ---
 # <a name="deploy-your-bot"></a>Implantar seu bot
 
@@ -68,7 +68,7 @@ Ao criar o serviço de aplicativo de bot, você pode implantar o seu bot em um g
 
 ### <a name="5-prepare-your-code-for-deployment"></a>5. Preparar seu código para implantação
 
-#### <a name="51-retrieve-or-create-necessary-iiskudu-files"></a>5.1 Recuperar ou criar os arquivos IIS/Kudu necessários
+#### <a name="51-retrieve-or-create-necessary-files"></a>5,1 recuperar ou criar arquivos necessários
 
 [!INCLUDE [retrieve or create IIS/Kudu files](~/includes/deploy/snippet-IIS-Kudu-files.md)]
 

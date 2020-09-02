@@ -1,6 +1,6 @@
 ---
 title: Diferenças entre o SDK v3 e v4 – Serviço de Bot
-description: Descreve as diferenças entre o SDK da v3 e v4.
+description: Descubra como as versões 3 e 4 do SDK do bot Framework são diferentes. Saiba mais sobre as alterações no processamento de atividades, gerenciamento de estado, caixas de diálogo e suporte ASP.NET Core.
 keywords: migração de bot, formflow, diálogos, estado
 author: JonathanFingold
 ms.author: kamrani
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 74718b75eed95378b917b3952c8ae6617b7b3a3d
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: 2574082067a5687f442c110227a7defb7f540670
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143915"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362219"
 ---
 # <a name="differences-between-the-v3-and-v4-net-sdk"></a>Diferenças entre o SDK do .NET v3 e v4
 

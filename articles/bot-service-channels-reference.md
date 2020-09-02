@@ -1,6 +1,6 @@
 ---
 title: Referência de canais
-description: Referência de canais do Bot Framework
+description: Exiba informações de referência sobre canais de bot. Veja quais canais geram quais eventos e suporte quais cartões. Consulte o número de ações que os canais dão suporte.
 keywords: referência de canais, canais do bot builder, canais do bot framework
 author: ivorb
 ms.author: kamrani
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 05/19/2020
-ms.openlocfilehash: fd5f5d15ae161be96728440555e323d6e58632b7
-ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
+ms.openlocfilehash: 870ba1a6aff7a1207029b8bf2005a02952b69644
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86542322"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361899"
 ---
 # <a name="categorized-activities-by-channel"></a>Atividades categorizadas por canal
 

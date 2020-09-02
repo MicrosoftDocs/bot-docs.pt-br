@@ -1,18 +1,18 @@
 ---
 title: Terminar uma conversa – Serviço de Bot
-description: Saiba como encerrar uma conversa usando a API de linha direta v3.0.
+description: Saiba como usar a versão 3,0 da API de linha direta para encerrar conversas entre bots e canais Cortana. Consulte como configurar e enviar eventos do endOfConversation.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 67c74bc3f51328370e4d6ba207855b20e4d79497
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: b1465ed477f3545c8c4c893e62e6ebaa6417c186
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77519995"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361769"
 ---
 # <a name="end-a-conversation"></a>Terminar uma conversa
 

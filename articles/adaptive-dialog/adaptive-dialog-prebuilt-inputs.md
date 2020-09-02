@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 06/09/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 3d9db1809fe26e3b9151e19d0876d3e811b2e7c7
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: b772372959b9bd4df44127636099ffdb37ea4e86
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124599"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362189"
 ---
 # <a name="inputs-in-adaptive-dialogs---reference-guide"></a>Entradas em caixas de diálogo adaptáveis – guia de referência
 
@@ -47,7 +47,7 @@ As classes de entrada fornecidas pelo SDK do Bot Framework derivam do _diálogo 
 
 Uma expressão booliana. `true` para permitir que a caixa de diálogo pai interrompa a caixa de diálogo de entrada; caso contrário, `false`.
 
-<!--TODO P0.5: Link to information on interruptions-->
+Para obter informações sobre interrupções, consulte o artigo conceito que [manipula interrupções em caixas de diálogo adaptáveis][interruptions].
 
 > [!NOTE]
 > A caixa de diálogo pai de entrada também pode causar interrupções. Ou seja, quando `AllowInterruptions` for `true`, o reconhecedor na caixa de diálogo adaptável pai das entradas será executado, e seus gatilhos serão avaliados.
@@ -430,38 +430,161 @@ A ação `OAuthInput` também define dois novos métodos:
 1. `GetUserTokenAsync`: esse método tenta recuperar o token do usuário.
 2. `SignOutUserAsync`: esse método desconecta o usuário.
 
+A `OAuthInput` ação retorna um `TokenResponse` objeto que contém valores para `ChannelId` , `ConnectionName` , `Token` , `Expiration` . No exemplo a seguir, o valor de retorno é colocado no `turn` escopo de memória: `turn.oauth` . Você pode acessar valores desse, conforme demonstrado no `LoginSteps()` método: `new SendActivity("Here is your token '${turn.oauth.token}'.")` .
 
-### <a name="oauth-example"></a>Exemplo de OAuth
+### <a name="oauthinput-example"></a>Exemplo de OAuthInput
+
+Neste exemplo, o `TokenResponse` objeto retornado pela `OAuthInput` ação é salvo na `MyOAuthInput` variável. Isso lhe permitirá:
+
+* Chame a caixa de diálogo OAuthInput em qualquer vez em que o bot precisará do token.
+* Configure o OAuthInput para gravar a resposta do token para ativar o escopo de memória.
+* Leia a resposta de token do escopo de memória de ativação e consuma-a conforme apropriado para a API com a qual você está usando. Por exemplo, você o adiciona como um token de portador para o API do Graph.
+
 
 ```C#
-var rootDialog = new AdaptiveDialog(nameof(AdaptiveDialog))
+public class RootDialog : AdaptiveDialog
 {
-    Generator = new TemplateEngineLanguageGenerator(_templateEngine),
-    Triggers = new List<OnCondition>()
+    this.configuration = configuration;
+    _templates = Templates.ParseFile(Path.Combine(".", "Dialogs", "RootDialog", "RootDialog.lg"));
+    private OAuthInput MyOAuthInput { get; }
+
+    public RootDialog(IConfiguration configuration) : base(nameof(RootDialog))
     {
-        new OnUnknownIntent()
+        Recognizer = CreateLuisRecognizer(this.configuration),
+        Generator = new TemplateEngineLanguageGenerator(_Templates);
+
+        MyOAuthInput = new OAuthInput
         {
-            Actions = new List<Dialog>()
+            // The name of the connection configured on Azure Bot Service for the OAuth connection.
+            ConnectionName = configuration["ConnectionName"],
+
+            // The title of the sign in card.
+            Title = "Please log in",
+
+            // The text displayed in sign in card.
+            Text = "This will give you access!",
+
+            // Title of the sign in card.
+            InvalidPrompt = new ActivityTemplate("Login was not successful please try again."),
+
+            // The number of milliseconds the prompt waits for the user to authenticate.
+            // Tip: For an easy way to set the timeout to a specific number of minutes,
+            // you can multiple the number of minutes by 60,000.  5 * 60000 = 5 minutes.
+            Timeout = 5 * 60000,
+
+            // The maximum number of times to ask the user for this value before the dialog gives up.
+            MaxTurnCount = 3,
+
+            // Property path to store the value (a TokenResponse object) that is returned by the OAuthInput action.
+            // Since the token can be short-lived, you should call the OAuthInput on any turn in which your bot
+            // needs to access associated resources on behalf of the user. If the token is still valid, the sign-in
+            // card will not be displayed, if it is not still active the user will be prompted to sign in again.
+            Property = "turn.oauth",
+        };
+        // Save the MyOAuthInput dialog instance in the adaptive dialog's dialog set.
+        // This will enable consultation, logging telemetry data etc.
+        Dialogs.Add(MyOAuthInput);
+
+        // These steps are executed when this Adaptive Dialog begins
+        Triggers = new List<OnCondition>
             {
-                new OAuthInput()
+                // Add a rule to welcome user
+                new OnConversationUpdateActivity
                 {
-                    // Name of the connection configured on Azure Bot Service for the OAuth connection.
-                    ConnectionName = "GitHub",
-
-                    // Title of the sign in card.
-                    Title = "Sign in",
-
-                    // Text displayed in sign in card.
-                    Text = "Please sign in to your GitHub account.",
-
-                    // Property path to store the authorization token.
-                    TokenProperty = "user.authToken"
+                    Actions = WelcomeUserSteps(),
                 },
-                new SendActivity("You are signed in with token = ${user.authToken}")
-            }
-        }
+
+                // Respond to user on message activity
+                new OnUnknownIntent
+                {
+                    Actions = LoginSteps(),
+                },
+
+                // Allow the use to sign out.
+                new OnIntent("logout")
+                {
+                    Actions =
+                    {
+                        new CodeAction(async (dc, opt) =>
+                        {
+                            await MyOAuthInput.SignOutUserAsync(dc);
+                            return new DialogTurnResult(DialogTurnStatus.Complete);
+                        }),
+                    }
+                },
+            };
     }
-};
+
+    private static List<Dialog> WelcomeUserSteps()
+    {
+        return new List<Dialog>
+        {
+            // Iterate through membersAdded list and greet user added to the conversation.
+            new Foreach()
+            {
+                ItemsProperty = "turn.activity.membersAdded",
+                Actions =
+                {
+                    // Note: Some channels send two conversation update events - one for the Bot added to the conversation and another for user.
+                    // Filter cases where the bot itself is the recipient of the message. 
+                    new IfCondition()
+                    {
+                        Condition = "$foreach.value.name != turn.activity.recipient.name",
+                        Actions =
+                        {
+                            new SendActivity("Hello, I'm the multi-turn prompt bot. Please send a message to get started!")
+                        }
+                    }
+                }
+            }
+        };
+    }
+
+    private List<Dialog> LoginSteps()
+    {
+        return new List<Dialog>
+        {
+            MyOAuthInput,
+            new IfCondition
+            {
+                Condition = "turn.oauth.token && length(turn.oauth.token)",
+                Actions = LoginSuccessSteps(),
+                ElseActions =
+                {
+                    new SendActivity("Sorry, we were unable to log you in."),
+                },
+            },
+            new EndDialog(),
+        };
+    }
+
+    private List<Dialog> LoginSuccessSteps()
+    {
+        return new List<Dialog>
+        {
+            new SendActivity("You are now logged in."),
+            new ConfirmInput
+            {
+                Prompt = new ActivityTemplate("Would you like to view your token?"),
+                InvalidPrompt = new ActivityTemplate("Oops, I didn't understand. Would you like to view your token?"),
+                MaxTurnCount = 3,
+            },
+            new IfCondition
+            {
+                Condition = "turn.lastResult == true",
+                ElseActions =
+                {
+                    new SendActivity("Great. Type anything to continue."),
+                },
+                Actions =
+                {
+                    MyOAuthInput,
+                    new SendActivity("Here is your token `${turn.oauth.token}`."),
+                },
+            },
+        };
+    }
+}
 ```
 
 ### <a name="additional-information-related-to-oauth"></a>Informações adicionais relacionadas ao OAuth
@@ -476,3 +599,4 @@ Os links a seguir fornecem informações generalizadas sobre o tópico de autent
 [add-authentication]:https://aka.ms/azure-bot-add-authentication
 [recognizers]:../v4sdk/bot-builder-concept-adaptive-dialog-recognizers.md
 [adaptive-expressions]:../v4sdk/bot-builder-concept-adaptive-expressions.md
+[interruptions]: ../v4sdk/bot-builder-concept-adaptive-dialog-interruptions.md

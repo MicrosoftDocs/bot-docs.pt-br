@@ -1,6 +1,6 @@
 ---
 title: Conectar um bot à Cortana – Serviço de Bot
-description: Saiba como configurar um bot para acesso por meio da interface da Cortana.
+description: Saiba como adicionar a funcionalidade de fala aos bots conectando-os à Cortana, um canal habilitado para fala. Veja como publicar bots como habilidades da Cortana.
 keywords: cortana, canal de bot, configurar cortana
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/22/2019
-ms.openlocfilehash: 5d7823697262e37619ca6c82bf9582449ea4bdde
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: b0eb9c86bd2355318661ec7f66911f5c2e8cefab
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75789665"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362129"
 ---
 # <a name="connect-a-bot-to-cortana"></a>Conectar um bot à Cortana
 

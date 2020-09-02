@@ -1,6 +1,6 @@
 ---
 title: Conectar um bot ao Kik – Serviço de Bot
-description: Saiba como configurar a conexão do bot com o Kik.
+description: Saiba como configurar os bots para usar o aplicativo de mensagens Kik para se comunicar com pessoas. Consulte Como conectar bots ao kik.
 keywords: conectar um bot, canal de bot, bot do Kik, credenciais, configurar, telefone
 author: RobStand
 ms.author: kamrani
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 640c430786bbba6ec78d6ce3b1c02d8955a54b09
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 4535f2913e95a7c348a829a0d3e4c7ee05586b52
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75791975"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362089"
 ---
 # <a name="connect-a-bot-to-kik"></a>Conectar um bot ao Kik
 

@@ -1,6 +1,6 @@
 ---
 title: Canais adicionais – Serviço de Bot
-description: Saiba como configurar canais adicionais para o bot.
+description: Saiba como conectar bots a equipes WebEx, WebSocket, WebHooks, Google hangouts, assistente do Google e Amazon Alexa. Compare o uso de adaptadores e canais.
 keywords: canais de bot, hangouts, Twilio, facebook, portal do azure
 author: ivorb
 ms.author: kamrani
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/08/2019
-ms.openlocfilehash: 7aff1376ffa7cc720548ca34eec92acc2d2ef057
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: c24f807bdcfdde1d27e76ae46aa75c47f231058a
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75789144"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362149"
 ---
 # <a name="additional-channels"></a>Canais adicionais
 
