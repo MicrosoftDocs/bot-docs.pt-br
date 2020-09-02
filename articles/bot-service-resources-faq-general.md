@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 07/10/2020
-ms.openlocfilehash: 40f7726820c09010f32246a3ab05fe881b14e59f
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: 93c01c16461b9d9628fb7f9bcb70da371268d4ac
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143665"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360929"
 ---
 # <a name="bot-framework-general"></a>Do bot Framework geral
 
@@ -83,21 +83,22 @@ O estado e a pilha de diálogo são armazenados em recipientes de dados de bot. 
 
 O serviço Bot Framework precisa proteger a si próprio e a seus clientes contra padrões de chamada abusivos (por exemplo, ataque de negação de serviço), de modo que nenhum bot possa prejudicar o desempenho de outros bots. Para obter esse tipo de proteção, adicionamos limites de taxa (também conhecidos como limitação) aos nossos pontos de extremidade. Impondo um limite de taxa, podemos restringir a frequência com a qual um cliente ou bot pode fazer uma chamada específica. Por exemplo: com a limitação de taxa habilitada, se um bot desejar postar um grande número de atividades, ele precisará espaçá-las por um período. Observe que a finalidade da limitação de taxa não é limitar o volume total de um bot. Ela se destina a prevenir abusos da infraestrutura de conversa que não seguem os padrões de conversa humana. Por exemplo, inundar duas conversas com mais conteúdo do que duas pessoas jamais poderiam consumir.
 
-## <a name="how-will-i-know-if-im-impacted"></a>Como poderei saber se fui afetado?
+## <a name="what-are-the-rate-limits"></a>Quais são os limites de taxa?
+
+Estamos continuamente ajustando os limites de taxa para torná-los os mais brandos possíveis, ao mesmo tempo em que protegemos nosso serviço e nossos usuários. Como os limites serão alterados ocasionalmente, não estamos publicando os números no momento.  Por fim, se você estiver hospedando o bot em um serviço de aplicativo, o bot será associado às limitações do serviço de aplicativo. Para obter mais informações, consulte [Resumo de SLA para serviços do Azure](https://azure.microsoft.com/support/legal/sla/summary/) se você for afetado por limitação de taxa, fique à vontade para entrar em contato conosco em [bf-reports@microsoft.com](mailto://bf-reports@microsoft.com) .
+
+## <a name="how-will-i-know-if-im-impacted-by-rate-limiting"></a>Como saber se estou impactado pela limitação de taxa?
 
 É improvável que você enfrente a limitação de taxa, mesmo com um alto volume. A maior parte da limitação de taxa só ocorrerá devido ao envio em massa de atividades (de um bot ou de um cliente), um teste de carga extrema ou um bug. Quando uma solicitação é limitada, uma resposta HTTP 429 (Número Excessivo de Solicitações) é retornada juntamente com um cabeçalho Retry-After, que indica o tempo (em segundos) que é necessário aguardar antes do êxito da nova tentativa da solicitação. Colete essas informações habilitando a análise no bot por meio do Azure Application Insights. Se preferir, adicione um código ao bot para registrar mensagens em log.
 
 ## <a name="how-does-rate-limiting-occur"></a>Como ocorre a limitação de taxa?
 
-Isso pode ocorrer se:
+A limitação de taxa é causada por qualquer uma das seguintes condições:
 
 * Um bot envia mensagens com muita frequência
 * Um cliente de um bot envia mensagens com muita frequência
 * os clientes da Linha Direta solicitam um novo Soquete da Web com muita frequência
 
-### <a name="what-are-the-rate-limits"></a>Quais são os limites de taxa?
-
-Estamos continuamente ajustando os limites de taxa para torná-los os mais brandos possíveis, ao mesmo tempo em que protegemos nosso serviço e nossos usuários. Como os limites serão alterados ocasionalmente, não estamos publicando os números no momento. Caso você seja afetado pela limitação de taxa, fique à vontade para falar conosco pelo email [bf-reports@microsoft.com](mailto://bf-reports@microsoft.com).
 
 ## <a name="how-to-implement-human-handoff"></a>Como implementar a entrega humana?
 

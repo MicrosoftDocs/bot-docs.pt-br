@@ -1,6 +1,6 @@
 ---
 title: Usar vários modelos de LUIS e QnA – Serviço de Bot
-description: Aprenda a usar o criador LUIS e QnA no seu bot.
+description: Saiba como os bots podem usar vários modelos de LUIS e QnA Maker base de dados de conhecimento. Consulte como usar as ferramentas de expedição para rotear a entrada do usuário para o modelo correto.
 keywords: Luis, QnA, ferramenta Dispatch, vários serviços, rotear intenções
 author: diberry
 ms.author: kamrani
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/29/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: d5e7fff96aa8139d8327d4bc05477ab5737ae7ad
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: da1385a36beb186c048495deca0395077936663e
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124163"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359959"
 ---
 # <a name="use-multiple-luis-and-qna-models"></a>Usar vários modelos de LUIS e QnA
 

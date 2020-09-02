@@ -1,18 +1,18 @@
 ---
 title: Inserir um bot em um aplicativo – Serviço de Bot
-description: Saiba como criar um bot que será inserido em outro aplicativo.
+description: Saiba como inserir bots em aplicativos. Veja como integrar bots a aplicativos móveis nativos, aplicativos móveis baseados na Web, aplicativos de IoT e outros tipos de aplicativos. Exiba o código de exemplo.
 author: matvelloso
 ms.author: mateusv
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/15/2018
-ms.openlocfilehash: a8f6b4f70ca51e4b4c607dcf116c78030e28506d
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 1dc383ea12fc41b01f5b307b6f5d24b0dcaecf8f
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75793612"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360981"
 ---
 # <a name="embed-a-bot-in-an-app"></a>Inserir um bot em um aplicativo
 

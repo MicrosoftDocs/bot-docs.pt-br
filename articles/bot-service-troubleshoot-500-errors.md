@@ -1,6 +1,6 @@
 ---
 title: Solucionar problemas de erros HTTP 500 do bot – Serviço de Bot
-description: Como solucionar problemas de erros HTTP 500 em um bot implantado.
+description: Saiba como solucionar problemas de erros HTTP 500. Consulte Como habilitar Application Insights, recuperar informações sobre exceções e verificar logs e arquivos de configuração.
 keywords: solucionar problemas, HTTP 500, problemas.
 author: jonathanFingold
 ms.author: kamrani
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/19/2019
-ms.openlocfilehash: 018cc19c5d90c070c2b5f4d72f3df9a843d3cac0
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: 42084bcd8cb551406d1b3155a694c02b9a628be4
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143495"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360849"
 ---
 # <a name="troubleshoot-http-500-errors"></a>Solucionar erros de HTTP 500
 

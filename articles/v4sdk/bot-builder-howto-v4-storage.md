@@ -1,6 +1,6 @@
 ---
 title: Gravar diretamente no armazenamento – Serviço de Bot
-description: Saiba como gravar diretamente no armazenamento com o SDK do Bot Framework para .NET.
+description: Saiba como usar o SDK do bot Framework para .NET para gravar dados de bot diretamente em vários tipos de armazenamento persistente sem usar um Gerenciador de estado.
 keywords: armazenamento, ler e gravar, armazenamento de memória, eTag
 author: DeniseMak
 ms.author: kamrani
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/01/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 7a97d841c033d20bea3a33234ad28a23221337ee
-ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
+ms.openlocfilehash: aa634391e9fb81ba77ad09fd6ca8535e9baf3f1f
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86542521"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360169"
 ---
 # <a name="write-directly-to-storage"></a>Gravar diretamente no armazenamento
 
@@ -563,7 +563,7 @@ Agora inicie o Bot Framework Emulator e conecte-se ao seu bot:
 Envie uma mensagem ao bot e o bot listará as mensagens recebidas por ele.
 ![Emulador em execução](./media/emulator-direct-storage-test.png)
 
-### <a name="view-your-data"></a>Exibir seus dados
+### <a name="view-your-data"></a>Ver seus dados
 
 Depois de executar o bot e salvar suas informações, poderemos exibir os dados armazenados no portal do Azure na guia **Data Explorer**.
 

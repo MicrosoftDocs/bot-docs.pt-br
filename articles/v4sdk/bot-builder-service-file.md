@@ -1,6 +1,6 @@
 ---
 title: Criar um bot usando o SDK do Bot Framework para JavaScript – Arquivo – Serviço de Bot
-description: Crie rapidamente um bot usando o SDK do Bot Framework para JavaScript.
+description: Exiba um arquivo. bot de exemplo que um bot pode usar para gerenciar um recurso que ele usa, como Reconhecimento vocal (LUIS).
 keywords: início rápido, sdk do bot framework, introdução
 author: jonathanfingold
 ms.author: kamrani
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 26f54b3a3f76f39a33bc43a6a3d2f5fb66bd0ea2
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 2076e87136b77a44a4d6db1f2ac4de0cab4d77eb
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75791248"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360019"
 ---
 # <a name="sample-bot-file"></a>Arquivo .bot de exemplo
 

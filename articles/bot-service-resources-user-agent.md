@@ -1,18 +1,18 @@
 ---
 title: Solicitações de agente do usuário do Bot Framework – Serviço de Bot
-description: Noções básicas sobre solicitações do Bot Framework para o servidor Web.
+description: Saiba mais sobre as solicitações que o serviço bot Framework envia aos servidores Web. Entenda por que o serviço envia essas chamadas de webhook. Veja como pará-los.
 author: JohnD-ms
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: f30cf7b8d86195595575260dfd2fbcd8c14c1a15
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 53f006bbbe4d7b4337264b8421b05c4ed4d7c117
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80648043"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360909"
 ---
 # <a name="bot-framework-user-agent-requests"></a>Solicitações de agente do usuário do Bot Framework
 

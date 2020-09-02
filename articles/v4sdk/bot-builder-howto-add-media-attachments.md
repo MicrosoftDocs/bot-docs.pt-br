@@ -1,6 +1,6 @@
 ---
 title: Adicionar mídia a mensagens – Serviço de Bot
-description: Saiba como adicionar mídia às mensagens usando o SDK do Bot Framework.
+description: Saiba como adicionar imagens, vídeo, áudio, arquivos e outros anexos de mídia a mensagens. Exiba o código para enviar anexos de mídia, cartões Heroes e cartões adaptáveis.
 keywords: mídia, mensagens, imagens, áudio, vídeo, arquivos, MessageFactory, rich cards, mensagens, cartões adaptáveis, cartão hero e ações sugeridas
 author: JonathanFingold
 ms.author: kamrani
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/08/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 221dddef9cdb697447a4565d83afdc7bc93c9e66
-ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
+ms.openlocfilehash: bb04fa2f084d20df85ab908dca7971228abe3bec
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86542531"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360259"
 ---
 # <a name="add-media-to-messages"></a>Adicionar mídia às mensagens
 

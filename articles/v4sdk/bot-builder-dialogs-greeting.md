@@ -1,6 +1,6 @@
 ---
 title: Implementar uma caixa de diálogo de saudação – Serviço de Bot
-description: Use um diálogo para saudar um usuário quando ele entrar em uma conversa.
+description: Saiba como usar caixas de diálogo para bem-vindo aos usuários para conversas. Exiba o código de exemplo e veja como usar o emulador do bot Framework para testar mensagens de boas-vindas.
 keywords: saudação, diálogos, fluxo da conversa, conjunto de diálogos
 author: JonathanFingold
 ms.author: kamrani
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b57e88dfc5133029a2a847a211c11cb187d9492a
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: d05609270b536ceb6f217200c89d6235a079ca97
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75798495"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360249"
 ---
 # <a name="implement-a-greeting-dialog"></a>Implementar um diálogo de saudação
 
@@ -29,7 +29,7 @@ Para obter mais informações sobre como dar boas-vindas aos usuários, confira 
 - Conhecimento sobre o [gerenciamento de estado][concept-state], a [biblioteca de diálogos][concept-dialogs], como [gerenciar conversas][simple-flow] e como [coletar a entrada do usuário usando um prompt de diálogo][prompting].
 - Uma cópia do ??? amostra em [**CSharp**][cs-sample] ou [**JavaScript**][js-sample].
 
-## <a name="task-as-in-to-do-x-do-these-things"></a>\<task> [como em para fazer X, fazer essas coisas]
+## <a name="task-as-in-to-do-x-do-these-things"></a>\<task> [como em para fazer X, faça o seguinte]
 
 <!--The key lines of code for this task.
     here are the cool lines that do that.

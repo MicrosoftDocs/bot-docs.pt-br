@@ -1,18 +1,18 @@
 ---
 title: Recursos adicionais de suporte para o Bot Framework – Serviço de Bot
-description: Saiba mais sobre recursos adicionais de suporte para o Bot Framework.
+description: Saiba mais sobre os recursos como o repositório de exemplos do bot Framework, Stack Overflow e Gitter que fornecem informações sobre como usar o bot Framework para desenvolver bots.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 2e6665442091a29d21cdc1be07bd674c5a8d8f22
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 06464de5013ead7243a56b9d762b5a86859ede19
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80117498"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360919"
 ---
 # <a name="bot-framework-additional-resources"></a>Recursos adicionais do Bot Framework
 

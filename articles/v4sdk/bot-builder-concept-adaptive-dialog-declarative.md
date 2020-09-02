@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 05/31/2020
-ms.openlocfilehash: 946ca4cc602d5cc805f9bad4114a24695b00d9fe
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: ea1c0de24d214d449826668adeca3e648d69dc5a
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143165"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360329"
 ---
 # <a name="using-declarative-assets-in-adaptive-dialogs"></a>Como usar ativos declarativos em diálogos adaptáveis
 
@@ -344,7 +344,7 @@ Esta seção contém todas as [ações](bot-builder-concept-adaptive-dialog-acti
 |`Microsoft.DeleteActivity` | [DeleteActivity][delete-activity]| Permite excluir uma atividade que foi enviada.                                                                        |
 |`Microsoft.GetActivityMembers` | [GetActivityMembers][get-activity-members]| Permite obter uma lista de membros da atividade e salvá-la em uma propriedade na [memória][memory-states].        |
 |`Microsoft.GetConversationMembers`| [GetConversationMembers][get-conversation-members] | Permite obter uma lista de membros da conversa e salvá-la em uma propriedade na [memória][memory-states].|
-|`Microsoft.EditActions`  | [EditActions][editactions] | Permite editar imediatamente a sequência de ação atual com base na entrada do usuário. Especialmente útil ao lidar com interrupções. <!--TODO P1: [interruptions][6]--> |
+|`Microsoft.EditActions`  | [EditActions][editactions] | Permite editar imediatamente a sequência de ação atual com base na entrada do usuário. Especialmente útil ao lidar com [interrupções][interruptions]. |
 
 #### <a name="manage-properties"></a>Gerenciar propriedades
 
@@ -492,6 +492,7 @@ O valor [generator][generator] contém um link para o arquivo .lg associado ao d
 [get-conversation-members]: ../adaptive-dialog/adaptive-dialog-prebuilt-actions.md#get-conversation-members
 [editactions]: ../adaptive-dialog/adaptive-dialog-prebuilt-actions.md#editactions
 [memory-states]:bot-builder-concept-adaptive-dialog-memory-states.md
+[interruptions]: bot-builder-concept-adaptive-dialog-interruptions.md
 
 <!--  (Actions) Manage properties -->
 [editarray]: ../adaptive-dialog/adaptive-dialog-prebuilt-actions.md#editarray

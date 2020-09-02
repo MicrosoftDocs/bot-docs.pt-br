@@ -1,6 +1,6 @@
 ---
 title: Middleware – Serviço de Bot
-description: Entenda a middleware e de seus usos dentro de bot do SDK.
+description: Saiba mais sobre middleware, a camada entre os adaptadores e os bots. Veja o tipo de funcionalidade a ser implementado no middleware e saiba mais sobre o curto circuito.
 keywords: middleware, pipeline de middleware, curto-circuito, usos de middleware
 author: ivorb
 ms.author: kamrani
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: ff735f3a382369da2e4d96d8128cd21f6abd0c15
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 943a60c7b3493d4fddbb15ccb808e2a6cfad8c87
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75798731"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360299"
 ---
 # <a name="middleware"></a>Middleware
 

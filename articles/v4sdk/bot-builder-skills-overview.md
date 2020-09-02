@@ -1,6 +1,6 @@
 ---
 title: Visão geral das Habilidades do Assistente Virtual – Serviço de Bot
-description: Saiba mais sobre as Habilidades do Assistente Virtual
+description: Familiarize-se com as habilidades do assistente virtual. Saiba mais sobre as habilidades do bot Framework que estão disponíveis para uso em bots, como o calendário e as habilidades de email.
 author: darrenj
 ms.author: darrenj
 manager: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 10/09/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 5ee7fd32ad0d45ed91572854eb0fbad7daeb69fa
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: 10bce6acc9f73b830bfae563706115e2c2ecef00
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83555361"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359989"
 ---
 # <a name="virtual-assistant---skills-overview"></a>Assistente Virtual - Visão Geral das Habilidades
 

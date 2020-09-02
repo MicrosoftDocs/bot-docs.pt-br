@@ -1,6 +1,6 @@
 ---
 title: Visão geral do Assistente Virtual – Serviço de Bot
-description: Saiba mais sobre como criar seu próprio Assistente Virtual
+description: Familiarize-se com o modelo de assistente virtual do bot Framework. Saiba mais sobre os recursos, entenda os princípios de design e veja cenários de exemplo.
 author: darrenj
 ms.author: darrenj
 manager: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: dae9261ae4e6d522f148472f7b95c15aaf0dba88
-ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
+ms.openlocfilehash: ae8a1569e43c70136f715b91b1fa3930c89b3ffb
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86542432"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359859"
 ---
 # <a name="virtual-assistant-overview"></a>Visão geral do Assistente Virtual
 

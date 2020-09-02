@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 251a88ad6b7b7bd604d9795563694da1d3e68606
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: 23ca923209b173910b5b909b1ff74eff0a49874e
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124086"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360070"
 ---
 Em seguida, implementaremos a funcionalidade de telemetria em seu serviço LUIS. O serviço LUIS tem o registro em log de telemetria interno disponível para que o esforço necessário para começar a obter dados de telemetria do LUIS seja mínimo.  <!---If you are interested in enabling telemetry in a QnA Maker enabled bot, see [Add telemetry to your QnAMaker bot](../v4sdk/bot-builder-telemetry-QnAMaker.md).-->
 
@@ -24,7 +24,7 @@ Para habilitar o cliente de telemetria em seu reconhecedor do LUIS:
 
 3. Defina o `telemetryClient` campo do `recognizerOptions` objeto para a `telemetryClient` propriedade que é passada para o `FlightBookingRecognizer` Construtor, uma vez feito, o Construtor será exibido da seguinte maneira:
 
-    [!code-javascript[FlightBookingRecognizer](~/../botbuilder-samples/samples/javascript_nodejs/21.corebot-app-insights/dialogs/flightBookingRecognizer.js?range=9-15&highlight=14)]
+    [!code-javascript[FlightBookingRecognizer](~/../botbuilder-samples/samples/javascript_nodejs/21.corebot-app-insights/dialogs/flightBookingRecognizer.js?range=9-18&highlight=6)]
 
     <!-- This is the code block that the code snippet link should point to:
     ```javascript
@@ -40,7 +40,7 @@ Para habilitar o cliente de telemetria em seu reconhecedor do LUIS:
 
 4. E, finalmente, você precisa incluir o `telemetryClient` ao criar uma instância do `FlightBookingRecognizer` no `index.js` :
 
-    [!code-javascript[FlightBookingRecognizer](~/../botbuilder-samples/samples/javascript_nodejs/21.corebot-app-insights/index.js?range=84)]
+    [!code-javascript[FlightBookingRecognizer](~/../botbuilder-samples/samples/javascript_nodejs/21.corebot-app-insights/index.js?range=86)]
 
     <!-- This is the code block that the code snippet link should point to:
     ```javascript

@@ -1,6 +1,6 @@
 ---
 title: Cenário de bot de Produtividade Empresarial – Serviço de Bot
-description: Explore o cenário de bot de Produtividade Empresarial com o Bot Framework.
+description: Saiba mais sobre o cenário de bot de produtividade da empresa. Veja como esse bot pode aumentar a produtividade acessando Microsoft 365 calendário e Dynamics CRM.
 author: BrianRandell
 ms.author: kamrani
 manager: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 8d4199e20336e44611e09bbd430dbb4d20427402
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: dbff0cc02ae9aa687db91091fc04e3461ca381a2
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80647784"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360889"
 ---
 # <a name="enterprise-productivity-bot-scenario"></a>Cenário de bot de Produtividade Empresarial
 

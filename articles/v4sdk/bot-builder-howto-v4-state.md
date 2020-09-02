@@ -1,6 +1,6 @@
 ---
 title: Salvar dados do usuário e de conversa – Serviço de Bot
-description: Saiba como salvar e recuperar dados de estado com o SDK do Bot Framework para SDK.
+description: Saiba como o SDK do bot Framework gerencia dados de usuário e de conversa (estado). Consulte exemplos de código que configuram o armazenamento para esses dados e que leem e gravam.
 keywords: estado da conversa, estado do usuário, conversa, salvar estado, gerenciar o estado do bot
 author: ivorb
 ms.author: kamrani
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 2/7/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 71bd0cbd27f67c222141a20454797e76f91399da
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: 46906209d5bd7dcef3a28c0a743a60795c34c798
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420327"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360199"
 ---
 # <a name="save-user-and-conversation-data"></a>Salvar dados do usuário e da conversa
 

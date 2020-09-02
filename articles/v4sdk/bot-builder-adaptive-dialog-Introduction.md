@@ -8,16 +8,16 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 06/24/2020
-ms.openlocfilehash: 4ebecb4f41a3294685dd97a8a8a31be6d4a9f3f6
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: 1e4fe997ee1504616525c3e758deb9f6a8de4afa
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143245"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361699"
 ---
 # <a name="introduction-to-adaptive-dialogs"></a>Introdução aos diálogos adaptáveis
 
-As caixas de diálogo adaptáveis oferecem uma nova adição baseada em eventos à [biblioteca de caixas de diálogo][1] que permite que você aplique uma camada facilmente em técnicas sofisticadas de gerenciamento de conversa, como a manipulação de interrupções, a expedição e muito mais.
+As caixas de diálogo adaptáveis oferecem uma nova adição baseada em eventos à [biblioteca de caixas de diálogo][1] que permite que você aplique uma camada facilmente em técnicas sofisticadas de gerenciamento de conversa, como lidar com [interrupções][interruptions], expedição e muito mais.
 
 > [!IMPORTANT]
 > Atualmente, as caixas de diálogo adaptáveis só estão disponíveis na versão .NET do SDK do bot Framework. Você pode encontrar bots de exemplo criados usando caixas de diálogo adaptáveis no [repositório BotBuilder-Samples][16] no github.
@@ -34,8 +34,8 @@ As caixas de diálogo adaptáveis oferecem uma nova adição baseada em eventos 
 
 As caixas de diálogo adaptáveis têm muitas vantagens para [WaterfallDialogs][17]. Principalmente, eles:
 
-* Forneça flexibilidade que permita que você atualize dinamicamente o fluxo de conversa com base em contexto e eventos. Isso é especialmente prático ao lidar com alternâncias de contexto de conversa e interrupções no meio de uma conversa.
-* Dê suporte e fique à frente de um sistema de eventos avançado para caixas de diálogo, portanto, as interrupções de modelagem, o cancelamento e a semântica de planejamento de execução são muito mais fáceis de descrever e gerenciar.
+* Forneça flexibilidade que permita que você atualize dinamicamente o fluxo de conversa com base em contexto e eventos. Isso é especialmente útil ao lidar com alternâncias de contexto de conversa e [interrupções][interruptions] no meio de uma conversa.
+* Dê suporte e fique à frente de um sistema de eventos avançado para caixas de diálogo, portanto, as [interrupções][interruptions]de modelagem, o cancelamento e a semântica de planejamento de execução são muito mais fáceis de descrever e gerenciar.
 * Traga reconhecimento de entrada e manipulação de eventos baseados em regras
 * Combine o modelo de conversa (caixa de diálogo) e a geração de saída em uma unidade coesa e autônoma.
 * Suporte a pontos de extensibilidade para reconhecimento, regras de eventos e aprendizado de máquina.
@@ -59,7 +59,7 @@ _Triggers_ enable you to catch and respond to events. The broadest trigger is th
 
 ### <a name="actions"></a>Ações
 
-As _ações_ definem o fluxo de conversa quando um evento específico é capturado por meio de um gatilho. Ao contrário de um diálogo em cascata em que cada etapa é uma função, cada ação em um diálogo adaptável é, em si, um diálogo. Isso torna os diálogos adaptáveis eficientes e flexíveis e permite que os diálogos adaptáveis processem com facilidade as interrupções e sejam ramificados condicionalmente com base no contexto ou no estado atual.
+As _ações_ definem o fluxo de conversa quando um evento específico é capturado por meio de um gatilho. Ao contrário de um diálogo em cascata em que cada etapa é uma função, cada ação em um diálogo adaptável é, em si, um diálogo. Isso torna as caixas de diálogo adaptáveis poderosas e flexíveis e permite que caixas de diálogo adaptáveis manipulem com facilidade as [interrupções][interruptions] e a ramificação condicionalmente com base no contexto ou no estado atual.
 
 O SDK do Bot Framework fornece muitas ações internas para permitir que você execute várias ações, como manipulação de memória, gerenciamento de diálogos e controle do fluxo de conversa do seu bot. Como as ações são, de fato, diálogos, elas são extensíveis, possibilitando a criação de ações personalizadas próprias.
 
@@ -183,3 +183,4 @@ O _reconhecedor_ de cada diálogo analisa a entrada do usuário para determinar 
 [15]:https://github.com/microsoft/botbuilder-samples/tree/master/experimental/adaptive-dialog
 [16]:https://github.com/microsoft/botbuilder-samples/tree/master/samples/csharp_dotnetcore
 [17]: https://docs.microsoft.com/azure/bot-service/bot-builder-concept-dialog?view=azure-bot-service-4.0#waterfall-dialogs
+[interruptions]: bot-builder-concept-adaptive-dialog-interruptions.md

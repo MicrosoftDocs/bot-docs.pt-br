@@ -1,6 +1,6 @@
 ---
 title: Gerenciar recursos do bot – Serviço de Bot
-description: Descreve a finalidade e uso do arquivo de bot.
+description: Saiba como ler arquivos de configuração para que os bots possam se conectar aos recursos. Consulte como migrar configurações de arquivos. bot para appsettings.jsnos arquivos ou. env.
 keywords: arquivo de bot, .bot, arquivo .bot, msbot, recursos do bot, gerenciar recursos do bot
 author: ivorb
 ms.author: kamrani
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 65b7b3c3da9fb04d1d086c5304439b53bbc30cf7
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 58f1196bf397ea8b914f23687b00e4bd74a9e281
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75791138"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359869"
 ---
 # <a name="manage-bot-resources"></a>Gerenciar recursos do bot
 

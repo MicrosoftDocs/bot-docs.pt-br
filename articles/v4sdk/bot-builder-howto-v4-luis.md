@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: fbfe38984992ece838dcf5e015ee0acf7fd39f49
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: 1ae069645df1ffa73dc5cdd934041153d22040ae
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124150"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360229"
 ---
 # <a name="add-natural-language-understanding-to-your-bot"></a>Adicionar reconhecimento de idioma natural ao seu bot
 
@@ -223,6 +223,8 @@ Para obter mais informações sobre o LUIS, consulte a documentação dele:
 - [O que é o LUIS (Reconhecimento vocal)?](/azure/cognitive-services/LUIS/what-is-luis)
 - [Criar um aplicativo LUIS no portal do LUIS](/azure/cognitive-services/LUIS/luis-how-to-start-new-app)
 - [Design com intenção e modelos de entidade](/azure/cognitive-services/LUIS/luis-concept-model)
+- [Migrar para as APIS de criação v3](https://docs.microsoft.com/azure/cognitive-services/luis/luis-migration-authoring-entities)
+- [Migrar para APIs de previsão V3](https://docs.microsoft.com/azure/cognitive-services/luis/luis-migration-api-v3)
 
 ## <a name="next-steps"></a>Próximas etapas
 

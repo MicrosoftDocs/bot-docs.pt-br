@@ -1,6 +1,6 @@
 ---
 title: Adicionar telemetria ao seu bot – Serviço de Bot
-description: Saiba como integrar seu bot aos novos recursos de telemetria.
+description: Saiba como exibir informações sobre a disponibilidade, o desempenho, o uso e o comportamento do bot. Consulte Como ativar o acompanhamento de telemetria para Application Insights.
 keywords: telemetria, appinsights, bot de monitor
 author: WashingtonKayaker
 ms.author: kamrani
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 0e0e3228098348007ccd141058d91d0c9bbedf1a
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: c9f14cdf01cabf5178bb8b1779cb53b63bb8cb42
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124152"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360072"
 ---
 # <a name="add-telemetry-to-your-bot"></a>Adicionar telemetria ao seu bot
 

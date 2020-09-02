@@ -1,6 +1,6 @@
 ---
 title: Depurar um bot – Serviço de Bot
-description: Saiba como depurar um bot criado usando o Serviço de Bot.
+description: Saiba como usar o emulador do bot Framework para depurar bots. Consulte como definir pontos de interrupção em IDEs e como trocar mensagens com bots durante a depuração.
 author: v-ducvo
 ms.author: kamrani
 keywords: SDK do Bot Framework, depurar o bot, testar o bot, emulador do bot, emulador
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/04/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 9e8c524142570d67f9caf4806bde0adf4f198668
-ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
+ms.openlocfilehash: 1e20d767a6c17452cddf532b742208ba9f5b3435
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85073644"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361069"
 ---
 # <a name="debug-a-bot"></a>Depurar um bot
 

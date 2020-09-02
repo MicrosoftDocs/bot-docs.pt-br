@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: dad9b63bd55a29a5d24f565d55e41397c6150181
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: efa93df31b37bc5b9ba8f467c5fa27c949b507c7
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83566456"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360729"
 ---
 # <a name="functions-injected-from-the-language-generation-library"></a>Funções injetadas da biblioteca de geração de linguagem
 
@@ -112,6 +112,41 @@ Ele retorna um `herocard`:
 }
 ```
 
+## <a name="expandtext"></a>expandText
+
+Avaliar o texto sem formatação em um objeto e retornar os dados de texto expandido.
+
+```.lg
+expandText(<object>)
+```
+
+| Parâmetro | Obrigatório | Type | Descrição |
+| --------- | -------- | ---- | ----------- |
+| <*object*> | Sim | objeto | O objeto com texto a ser expandido. |
+||||
+
+| Valor retornado | Type | Descrição |
+| ------------ | -----| ----------- |
+| <*evaluated-result*> | objeto | Os dados de texto expandidos. |
+||||
+
+*Exemplo*
+
+Este exemplo avalia o texto sem formatação em um objeto JSON e retorna o resultado do texto expandido.
+
+Digamos que você tenha o seguinte objeto:
+
+```json
+{
+    "@answer": "hello ${user.name}",
+    "user": {
+        "name": "vivian"
+    }
+}
+``` 
+
+`expandText(@answer)`A chamada resultará no objeto **Hello Vivian**.
+
 ## <a name="template"></a>template
 
 Retorna o resultado avaliado de determinado nome de modelo e escopo.
@@ -131,7 +166,7 @@ template(<templateName>, '<param1>', '<param2>', ...)
 | <*evaluated-result*> | objeto | O resultado foi avaliado com base no modelo como uma função  |
 ||||
 
-*Exemplo*:
+*Exemplo*
 
 Este exemplo avalia o resultado da chamada do modelo como uma função.
 
@@ -196,7 +231,7 @@ isTemplate(<templateName>)
 
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
-| <*tempalteName*> | Sim | String  | Um nome de modelo a ser verificado |
+| <*templateName*> | Sim | String  | Um nome de modelo a ser verificado |
 |||||
 
 | Valor retornado | Type | Descrição |
@@ -221,7 +256,7 @@ Este exemplo usa a função `isTemplate()` para verificar se determinado nome de
 
 A chamada de `isTemplate("welcome")` será avaliada como `true`. A chamada de `isTemplate("delete-to-do")` será avaliada como `false`.
 
-<!--
-## Additional Information
+## <a name="additional-information"></a>Informações adicionais
 
-- For more information about .lg templates read the [.lg file format](../file-format/bot-builder-lg-file-format.md) and [structured response template](language-generation-structured-response-template.md) reference articles.-->
+- [Formato de arquivo .lg](../file-format/bot-builder-lg-file-format.md) 
+- [Modelo de resposta estruturado](language-generation-structured-response-template.md) 

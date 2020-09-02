@@ -1,18 +1,18 @@
 ---
 title: Gerenciar dados de estado – Serviço de Bot
-description: Saiba como armazenar e recuperar dados de estado usando o serviço de Estado do Bot.
+description: Saiba mais sobre as alternativas para o serviço de Estado do Bot preterido. Veja como controlar as informações sobre usuários e conversas sem usar esse serviço.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/20/2020
-ms.openlocfilehash: 1dc6fa1a9223e61daaa52cf475095fc08e0356d7
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 2acf253b97d4c3f9b9313ce7108109fd1e4c7cac
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77519955"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361689"
 ---
 # <a name="manage-state-data"></a>Gerenciar dados de estado
 

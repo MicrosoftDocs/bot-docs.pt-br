@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 569d66f6e4cdc6b13d06a81bd79b99ff8a72160f
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: 0fe19b6cad02abc6950b489720fc12a0c94edf0c
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143475"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360749"
 ---
 # <a name="lg-file-format"></a>Formato de arquivo .lg
 
@@ -39,6 +39,37 @@ Use **\\** como um caractere de escape.
 ```.lg
 # TemplateName
 - You can say cheese and tomato \[toppings are optional\]
+```
+
+## <a name="arrays-and-objects"></a>Matrizes e objetos
+
+### <a name="create-an-array"></a>Criar uma matriz
+
+Para criar uma matriz, use a sintaxe **$ {[object1, object2,...]}** . Por exemplo, esta expressão:
+
+```.lg
+${['a', 'b', 'c']}
+```
+
+Retorna a matriz `['a', 'b', 'c']` .
+
+### <a name="create-an-object"></a>Criar um objeto
+
+Para criar um objeto, use **$ {{key1: value1, Key2: value2,...}}** . Por exemplo, esta expressão:
+
+```.lg
+${{user: {name: "Wilson", age: 27}}}
+```
+
+Retorna o seguinte objeto JSON:
+
+```json
+{
+  "user": {
+    "name": "Wilson",
+    "age": 27
+  }
+}
 ```
 
 ## <a name="templates"></a>Modelos
@@ -153,7 +184,8 @@ Veja um exemplo mais complicado de SWITCH CASE DEFAULT:
     - ${apology-phrase()}, ${defaultResponseTemplate()}
 ```
 
-Assim como os modelos condicionais, os modelos de opção também não podem ser aninhados.
+> [!NOTE]
+> Como os modelos condicionais, os modelos de comutador não podem ser aninhados.
 
 ### <a name="structured-response-template"></a>Modelo de resposta estruturada
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 04/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 89fc9b76fade1177f91d3f5cf7608a14ab2cff9b
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: d38fa5b7a301388773c5d77d38223b7a98f30205
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124305"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360339"
 ---
 <!--P2: Once the samples are done, link to them in each section on the individual actions to point to them as examples of how they are used-->
 # <a name="actions-in-adaptive-dialogs"></a>Ações em caixas de diálogo adaptáveis
@@ -44,7 +44,7 @@ As ações incluídas com o SDK do Bot Framework fornecem a capacidade de execut
 >[!TIP]
 > Ao contrário de uma caixa de diálogo em cascata em que cada etapa é uma função, cada ação de uma caixa de diálogo adaptável é uma caixa de diálogo totalmente funcional com todo o poder e a flexibilidade necessários. Isso permite que caixas de diálogo adaptáveis por design possam:
 >
-> * Fornecer uma maneira mais fácil de lidar com interrupções. <!--TODO P1: [interruptions][interruptions-inputs]-->
+> * Fornecer uma maneira mais fácil de lidar com [interrupções][interruptions]. 
 > * Executar ramificação condicional com base no contexto ou no estado.
 
 As caixas de diálogo adaptáveis fornecem suporte para as seguintes ações:
@@ -92,7 +92,7 @@ As ações de gerenciamento de diálogo são projetadas para dar a você o contr
 * **Repita esta caixa de diálogo**. Usado para reiniciar a caixa de diálogo pai.
 * **Substitua esta caixa de diálogo**. Substitui a caixa de diálogo atual por uma nova caixa de diálogo.
 * **GetConversationMembers**. Permite obter uma lista de membros da conversa e salvá-la em uma propriedade na [memória][memory-states].
-* **EditActions**. Permite editar imediatamente a sequência de ação atual com base na entrada do usuário. Especialmente útil ao lidar com interrupções.
+* **EditActions**. Permite editar imediatamente a sequência de ação atual com base na entrada do usuário. Especialmente útil ao lidar com [interrupções][interruptions].
 
 Para obter informações detalhadas e exemplos, consulte a seção de [Gerenciamento de diálogo](../adaptive-dialog/adaptive-dialog-prebuilt-actions.md#dialog-management) no __guia ações em caixas de diálogo adaptáveis-referência__.
 
@@ -144,3 +144,4 @@ Para obter informações detalhadas e exemplos, consulte a seção [Opções de 
 [generators]:bot-builder-concept-adaptive-dialog-generators.md
 [adaptive-expressions]:bot-builder-concept-adaptive-expressions.md
 [memory-states]:bot-builder-concept-adaptive-dialog-memory-states.md
+[interruptions]: bot-builder-concept-adaptive-dialog-interruptions.md

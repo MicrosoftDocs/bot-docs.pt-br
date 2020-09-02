@@ -1,6 +1,6 @@
 ---
 title: Testar uma habilidade da Cortana – Serviço de Bot
-description: Saiba como testar um bot da Cortana invocando uma habilidade da Cortana.
+description: Saiba como testar os bots de habilidades da Cortana. Veja como testar os bots do SDK do bot Framework que implementam as habilidades da Cortana invocando os bots do Cortana.
 keywords: SDK do Bot Framework, registrar o bot, Cortana
 author: v-ducvo
 ms.author: kamrani
@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.date: 07/20/2020
 ROBOTS: NOINDEX
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 0664089eae0729b9be97381521c0c1cfe0769105
-ms.sourcegitcommit: ee94943420ef6c28638297a6ec44ee995de27d3b
+ms.openlocfilehash: 16cd5ece436fa6d9090161df0e3bd93d208436c2
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865954"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361019"
 ---
 # <a name="test-a-cortana-skill"></a>Testar uma habilidade da Cortana
 

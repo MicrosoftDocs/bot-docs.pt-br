@@ -1,20 +1,20 @@
 ---
 title: Manipular interrupções do usuário – Serviço de Bot
-description: Saiba como manipular as interrupções do usuário e orientar o fluxo da conversa.
+description: Saiba como os bots lidam com interrupções de usuários. Veja como implementar a ajuda e cancelar interrupções, como criar e testar bots e como lidar com erros inesperados.
 keywords: interromper, interrupções, mudando o tópico, interrupção
 author: ivorb
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 07/08/2020
+ms.date: 09/01/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b156a12590be92b329f74c86f010efdb6ef98782
-ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
+ms.openlocfilehash: a5c26f22f7b9dad0aa8bf34b79b57672b393de15
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86542511"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360239"
 ---
 # <a name="handle-user-interruptions"></a>Manipular interrupções do usuário
 
@@ -159,7 +159,7 @@ O manipulador de erros do adaptador lida com quaisquer exceções que não foram
 
 Em nosso exemplo, o manipulador do `OnTurnError` do adaptador recebe as exceções geradas pela lógica de turno do seu bot. Se uma exceção for lançada, o manipulador excluirá o estado de conversa da conversa atual para impedir que o bot fique preso em um loop de erro causado por estar em estado inválido.
 
-[!code-csharp[AdapterWithErrorHandler](~/../botbuilder-samples/samples/csharp_dotnetcore/13.core-bot/AdapterWithErrorHandler.cs?range=19-50)]
+[!code-csharp[AdapterWithErrorHandler](~/../botbuilder-samples/samples/csharp_dotnetcore/13.core-bot/AdapterWithErrorHandler.cs?range=19-53)]
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -167,7 +167,7 @@ Em nosso exemplo, o manipulador do `OnTurnError` do adaptador recebe as exceçõ
 
 Em nosso exemplo, o manipulador do `onTurnError` do adaptador recebe as exceções geradas pela lógica de turno do seu bot. Se uma exceção for lançada, o manipulador excluirá o estado de conversa da conversa atual para impedir que o bot fique preso em um loop de erro causado por estar em estado inválido.
 
-[!code-javascript[AdapterWithErrorHandler](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/index.js?range=37-58)]
+[!code-javascript[AdapterWithErrorHandler](~/../botbuilder-samples/samples/javascript_nodejs/13.core-bot/index.js?range=31-35,37-62)]
 
 ## <a name="python"></a>[Python](#tab/python)
 

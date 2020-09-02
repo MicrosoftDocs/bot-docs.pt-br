@@ -1,6 +1,6 @@
 ---
 title: Solicitar pagamento (C# v3) – Serviço de Bot
-description: Saiba como enviar uma solicitação de pagamento usando o SDK do Bot Framework para .NET.
+description: Saiba como usar os bots para enviar solicitações de pagamento. Consulte exemplos de código que usam o SDK do bot Framework para adicionar cartões avançados a mensagens e processar pagamentos.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 026b6ad3b6b9037a09b2727838e7499562b83fba
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 743a4ae550758b0578780dc7d407e3032aa8435f
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75797991"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360789"
 ---
 # <a name="request-payment"></a>Solicitar pagamento
 

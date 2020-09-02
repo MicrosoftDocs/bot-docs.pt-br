@@ -1,6 +1,6 @@
 ---
 title: Cenários de bot da Internet das Coisas – Serviço de Bot
-description: Explore o cenário de bot de Internet das Coisas com o Bot Framework.
+description: Saiba mais sobre o cenário de bot de Internet das Coisas (IoT). Veja como esse bot usa comandos de voz ou de bate-papo interativos com miniaplicativos IFTTT para controlar dispositivos em residências.
 author: BrianRandell
 ms.author: kamrani
 manager: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 16331f1f4d75c9f379b88539677f384ef2744ae6
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: e8cc22ee4eb0e260dc6b9c799dc19c61b4860b48
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80647739"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360859"
 ---
 # <a name="internet-of-things-iot-bot-scenario"></a>Cenário de Bot de IoT (Internet das Coisas)
 

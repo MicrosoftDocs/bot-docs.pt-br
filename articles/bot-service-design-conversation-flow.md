@@ -1,6 +1,6 @@
 ---
 title: Criar e controlar o fluxo de conversa – Serviço de Bot
-description: Saiba como projetar e controlar o fluxo da conversa no bot para fornecer uma ótima experiência do usuário.
+description: Saiba como fornecer uma boa experiência do usuário com bots. Compreenda o fluxo de conversa de procedimento, a manipulação de interrupções e outros conceitos de design.
 keywords: design, controle, fluxo da conversa, manipular interrupções, visão geral
 author: v-ducvo
 ms.author: kamrani
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/19/2019
-ms.openlocfilehash: a282a53ea7f36ec1cd33a496e94bb4f8cdb9b623
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: fb05082dc4686c82aac916be6dfffce97578fe0f
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75792405"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361009"
 ---
 # <a name="design-and-control-conversation-flow"></a>Projetar e controlar o fluxo da conversa
 
@@ -132,6 +132,20 @@ Como o bot deve responder?
 - Tentar responder a pergunta do usuário e, em seguida, retornar a essa pergunta sim/não e tentar retomar desse ponto.
 
 Não há resposta *certa* para essa pergunta, pois a melhor solução dependerá das especificidades do cenário e de como o usuário esperaria que o bot respondesse. Para obter mais informações, confira [Manipular as interrupções do usuário](v4sdk/bot-builder-howto-handle-user-interrupt.md).
+
+## <a name="expire-a-conversation"></a>Expirar uma conversa
+
+Há ocasiões em que é útil reiniciar uma conversa desde o início.  Por exemplo, se um usuário não responder após um determinado período de tempo.  Métodos diferentes para expirar uma conversa incluem:
+
+- Acompanhe a última vez em que uma mensagem foi recebida de um usuário e limpe o estado se o tempo for maior do que um comprimento pré-configurado ao receber a próxima mensagem do usuário.
+- Use um recurso de camada de armazenamento, como o CosmosDb time to Live, para limpar o estado após um período de tempo pré-configurado.
+<!--
+NOTE: in the future, provide guidance on an azure function queue or time trigger
+
+- Track the last time a message was received from a user, and run a Web Job or Azure Function to clear the state and/or proactively message the user.
+-->
+
+Para obter mais informações, consulte [como: expirar uma conversa](v4sdk/bot-builder-howto-expire-conversation.md)
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -1,6 +1,6 @@
 ---
 title: Adicionar fala a mensagens (C# v3) – Serviço de Bot
-description: Saiba como adicionar fala a mensagens usando o SDK do Bot Framework para .NET.
+description: Saiba como adicionar fala a mensagens de bot. Consulte como usar a versão 3 do SDK do bot Framework para especificar o texto que os bots usam em canais habilitados para fala.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: a03d1c58bc91cd7966b59e2b62eb1c6ac46c094f
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 90126588ceabdd7bee0b346d3355051c0bca6da4
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75797883"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360779"
 ---
 # <a name="add-speech-to-messages"></a>Adicionar fala a mensagens
 

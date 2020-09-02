@@ -1,6 +1,6 @@
 ---
 title: Processamento de atividade – Serviço de Bot
-description: Entenda o processamento de atividades no bot SDK.
+description: Entenda como os bots e os usuários interagem. Saiba mais sobre atividades, ativações, objetos de contexto, autenticação, adaptadores, middleware e manipuladores de resposta.
 keywords: adaptador de bot, middleware personalizado, curto-circuito, fallback, manipuladores de eventos
 author: jonathanfingold
 ms.author: kamrani
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2896dcf1d99ace250ec73f5ecfc2b3857afb0c83
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 785be45a642b7a34b0db238ca2edb43326110eab
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75798819"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360349"
 ---
 # <a name="activity-processing"></a>Processamento de atividade
 

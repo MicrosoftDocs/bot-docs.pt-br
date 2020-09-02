@@ -1,6 +1,6 @@
 ---
 title: Como funcionam os bots – Serviço de Bot
-description: Descreve como a atividade e o HTTP funcionam no SDK do Bot Framework.
+description: Familiarize-se com o SDK do bot Framework. Entenda como os bots se comunicam com os usuários. Saiba mais sobre atividades, canais, solicitações HTTP POST e outros tópicos.
 keywords: fluxo da conversa, turno, conversa de bot, diálogos, prompts, cascatas, conjunto de diálogos
 author: johnataylor
 ms.author: johtaylo
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 01/31/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: cacd54299444caa5571f08e2aa9eb83d135421d0
-ms.sourcegitcommit: eb0e5dec0ecd4e375d33825030b1ba46ff6e032c
+ms.openlocfilehash: 8cb6fc0d97af733dc6f03f9059301b40c4a27cdb
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83791304"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360359"
 ---
 # <a name="how-bots-work"></a>Como funcionam os bots
 
@@ -37,6 +37,9 @@ Neste exemplo, o bot criou e enviou uma atividade de mensagem em resposta à ati
 As atividades chegam ao bot do serviço Bot Framework por meio de uma solicitação HTTP POST. O bot responde à solicitação POST de entrada com um código de status HTTP 200. As atividades enviadas do bot para o canal são enviadas em uma HTTP POST separada para o serviço Bot Framework. Isso, por sua vez, é confirmado com um código de status HTTP 200.
 
 O protocolo não especifica a ordem em que as solicitações POST e suas confirmações são feitas. No entanto, para se ajustar a estruturas de serviço HTTP comuns, essas solicitações normalmente são aninhadas, o que significa que a solicitação HTTP de saída é feita do bot dentro do escopo da solicitação HTTP de entrada. Esse padrão é ilustrado no diagrama acima. Como há duas conexões HTTP distintas de ponta a ponta, o modelo de segurança deve servir a ambas.
+
+> [!NOTE]
+> O bot tem 15 segundos para confirmar a chamada com um status 200 na maioria dos canais. Se o bot não responder em 15 segundos, ocorrerá um erro HTTP GatewayTimeout (504).
 
 ### <a name="defining-a-turn"></a>Definir um turno
 

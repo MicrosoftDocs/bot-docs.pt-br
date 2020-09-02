@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 738f1bea52cda7a754f970106e05c97dde3c32ce
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: 55bdfa8f8a186f135ce9b6d2de665915bb3caa64
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143325"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360719"
 ---
 # <a name="structured-response-template"></a>Modelo de resposta estruturada
 
@@ -23,10 +23,11 @@ ms.locfileid: "88143325"
 Os modelos de resposta estruturada permitem que os desenvolvedores definam uma estrutura complexa que dá suporte à ampla funcionalidade de [LG (geração de linguagem)](../v4sdk/bot-builder-concept-language-generation.md), como criação de modelos, composição, deixando a interpretação da resposta estruturada para o chamador da biblioteca LG.
 
 Para aplicativos de bot, o seguinte suporte é fornecido:
-- definição de atividade
-- definição de cartão
 
-A [atividade do Bot Framework][2] inclui vários campos personalizáveis. As propriedades mostradas abaixo são as mais usadas e podem ser configuradas por meio de uma definição de modelo de atividade:
+- Definição da [atividade](https://aka.ms/botSpecs-activitySchema)
+- definição do [cartão](https://aka.ms/botSpecs-cardSchema)
+
+O modelo de [atividade do bot Framework](https://aka.ms/botSpecs-activitySchema) inclui vários campos personalizáveis. As propriedades a seguir são as mais comumente usadas e podem ser configuradas por meio de uma definição de modelo de atividade:
 
 | Propriedade          | Caso de uso                                                                                                                          |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------|
@@ -70,29 +71,32 @@ Veja um exemplo de um modelo de texto básico:
 Este é um exemplo de texto com uma ação sugerida. Use **|** para indicar uma lista.
 
 ```.lg
+> With '|' you are making attachments a list.
 # AskForAge.prompt
 [Activity
     Text = ${GetAge()}
     SuggestedActions = 10 | 20 | 30
 ]
-
-# GetAge
-- how old are you?
-- what is your age?
 ```
 
 Este é um exemplo de uma definição de [cartão Hero](https://docs.microsoft.com/microsoftteams/platform/task-modules-and-cards/cards/cards-reference#hero-card):
 
 ```.lg
-# HeroCard (params)
+# HeroCard
 [Herocard
-    title = ${params.title}
+    title = Hero Card Example
     subtitle = Microsoft Bot Framework
     text = Build and connect intelligent bots to interact with your users naturally wherever they are, from text/sms to Skype, Slack, Office 365 mail and other popular services.
     images = https://sec.ch9.ms/ch9/7ff5/e07cfef0-aa3b-40bb-9baa-7c9ef8ff7ff5/buildreactionbotframework_960.jpg
-    buttons = Show more cards
+    buttons = Option 1| Option 2| Option 3
 ]
 ```
+
+> [!NOTE]
+>
+> O LG fornece alguma variabilidade na definição do cartão, que é convertida para alinhar com a [definição da placa do SDK](https://aka.ms/botSpecs-cardSchema). Por exemplo, os `image` `images` campos e têm suporte em todas as definições de cartão no LG, embora apenas `images` tenham suporte na definição da placa do SDK.
+>
+>Os valores definidos em todos os `image` campos e `images` em um cartão de HeroCard ou miniatura são combinados e convertidos em uma lista de imagens no cartão gerado. Para os outros tipos de cartões, o último valor definido no modelo será atribuído ao `image` campo. Os valores que você atribui ao `image/images` campo podem ser uma cadeia de caracteres, uma [expressão adaptável](https://docs.microsoft.com/azure/bot-service/bot-builder-concept-adaptive-expressions)ou uma matriz no formato usando **|** .
 
 Veja abaixo a combinação dos modelos anteriores:
 
@@ -110,13 +114,13 @@ Veja abaixo a combinação dos modelos anteriores:
 - how old are you?
 - what is your age?
 
-# HeroCard (params)
+# HeroCard
 [Herocard
-    title = ${params.title}
+    title = Hero Card Example
     subtitle = Microsoft Bot Framework
     text = Build and connect intelligent bots to interact with your users naturally wherever they are, from text/sms to Skype, Slack, Office 365 mail and other popular services.
     images = https://sec.ch9.ms/ch9/7ff5/e07cfef0-aa3b-40bb-9baa-7c9ef8ff7ff5/buildreactionbotframework_960.jpg
-    buttons = Show more cards
+    buttons = Option 1| Option 2| Option 3
 ]
 ```
 
@@ -173,19 +177,19 @@ Veja como exibir um carrossel de cartões:
     subtitle = ${subtitle}
     text = ${text}
     images = https://sec.ch9.ms/ch9/7ff5/e07cfef0-aa3b-40bb-9baa-7c9ef8ff7ff5/buildreactionbotframework_960.jpg
-    buttons = Show more cards
+    buttons = Option 1| Option 2| Option 3
 ]
 ```
 
-Use **\\** para escapar |.
+Use **\\**  como um caractere de escape.
 
 ```.lg
+> You can use '\' as an escape character
+> \${GetAge()} would not be evaluated as expression, would be parsed as '${getAge()}' string
 # AskForAge.prompt
 [Activity
-> With '|' you are making attachments a list.
-        Attachments = ${HeroCard()} |
-> You can use '\' as an escape character
-        Suggestions = 10 \\| cards | 20 \\| cards
+        Text = \${GetAge()}
+        SuggestedActions = 10 \| cards | 20 \| cards
 ]
 ```
 
@@ -247,7 +251,6 @@ Com esse conteúdo, uma chamada a `evaluateTemplate('ST1')` resultará na seguin
 [MyStruct
     Text = foo
     Speak = bar
-
 ]
 ```
 
@@ -315,6 +318,7 @@ Use também anexos, vistos abaixo:
     content = ${json(fromFile('../../card.json'))}
 ]
 ```
+
 <!--
 ## Chatdown style content as structured activity template
 It is a natural extension to also define full [chatdown][1] style templates using the structured template definition capability. This helps eliminate the need to always define chatdown style cards in a multi-line definition
@@ -391,7 +395,7 @@ Here's an example:
     subtitle = Microsoft Bot Framework
     text = Build and connect intelligent bots to interact with your users naturally wherever they are, from text/sms to Skype, Slack, Office 365 mail and other popular services.
     image = https://sec.ch9.ms/ch9/7ff5/e07cfef0-aa3b-40bb-9baa-7c9ef8ff7ff5/buildreactionbotframework_960.jpg
-    buttons = {CardAction('Show more cards')} | {CardAction('See our library', 'postBack', 'http://contoso.com/cards/all')}
+    buttons = {CardAction('Option 1| Option 2| Option 3')} | {CardAction('See our library', 'postBack', 'http://contoso.com/cards/all')}
 ]
 ```
 
@@ -407,8 +411,7 @@ Here's an example:
 ```
 
 [more test samples][4]
---> 
-
+-->
 ## <a name="additional-information"></a>Informações adicionais
 - [Referência da API do C#](https://docs.microsoft.com/dotnet/api/microsoft.bot.builder.languagegeneration)
 - [Referência da API JavaScript](https://docs.microsoft.com/javascript/api/botbuilder-lg)

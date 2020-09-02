@@ -1,6 +1,6 @@
 ---
 title: Personalização do Webchat – Serviço de Bot
-description: Saiba como personalizar o Webchat do Bot Framework.
+description: Saiba como personalizar o Webchat do Bot Framework. Exiba o código que adiciona anexos e modifica a fonte, a cor, o tamanho do contêiner e o avatar do bot.
 keywords: bot framework, webchat, chat, exemplos, react, referência
 author: ivorb
 ms.author: kamrani
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/07/2019
-ms.openlocfilehash: 5016c5810d2c3623d8e8556b0a96d717ee83000d
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 19166e577c07fbdbaa614362c22c1056ebfcb018
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75791158"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359839"
 ---
 # <a name="web-chat-customization"></a>Personalização de Webchat
 

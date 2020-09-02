@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 5/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2b65c67f51a4f12ba34bba95ec97f09b678cadb6
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: 8c22b795e3ba5e87bf64c7608486e5143a6ce953
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83566466"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360739"
 ---
 # <a name="use-language-generation-templates-in-your-bot"></a>Usar modelos de geração de linguagem em seu bot
 
@@ -181,7 +181,6 @@ Por fim, o `WelcomeCard` chama o modelo `AdaptiveCard` para retornar o objeto JS
 
 Para obter mais informações sobre a função `ActivityAttachment()`, leia [Injetar funções da biblioteca LG](functions-injected-from-language-generation.md)
 
----
 
 ## <a name="add-luis-to-your-bot"></a>Adicionar o LUIS ao bot
 
@@ -193,7 +192,7 @@ Depois de atualizar a lógica do bot e os modelos LG, você estará pronto para 
 
 ## <a name="test-the-bot"></a>Testar o bot
 
-Baixe e instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator-readme) mais recente
+Baixe e instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator-readme) mais recente.
 
 1. Execute o exemplo localmente em seu computador. Se você precisar de instruções, consulte o arquivo LEIAME para o [Exemplo de C#](https://aka.ms/cs-core-sample), [Exemplo de JS](https://aka.ms/js-core-sample) ou [Exemplo de Python](https://aka.ms/python-core-sample).
 

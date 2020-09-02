@@ -9,33 +9,33 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 5092a86a57504035caa7085dbe5cf7022c0960b9
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: 07cbd9349f3edd28a2f69ed583db73db4fdf3bc1
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143195"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360319"
 ---
 # <a name="adaptive-expressions"></a>Expressões adaptáveis
 
 [!INCLUDE[applies-to](../includes/applies-to.md)]
 
-Os bots usam expressões para avaliar o resultado de uma condição com base nas informações de runtime disponíveis na memória para o diálogo ou no sistema de [Geração de Linguagem](bot-builder-concept-language-generation.md). Essas avaliações determinam como o bot responde à entrada do usuário e a outros fatores que afetam a funcionalidade dele.
+Os bots usam expressões adaptáveis para avaliar o resultado de uma condição com base nas informações de tempo de execução disponíveis na memória para a caixa de diálogo ou o sistema de [geração de idioma](bot-builder-concept-language-generation.md) . Essas avaliações determinam como o bot responde à entrada do usuário e a outros fatores que afetam a funcionalidade dele.
 
-As expressões adaptáveis abordam essa necessidade básica, fornecendo uma linguagem de expressão adaptável que pode ser usada com o SDK do Bot Framework e outros componentes da IA de conversa, como o [Bot Framework Composer](https://github.com/microsoft/BotFramework-Composer), a [Geração de Linguagem](bot-builder-concept-language-generation.md), os [diálogos adaptáveis](bot-builder-adaptive-dialog-Introduction.md) e os [Cartões Adaptáveis](https://docs.microsoft.com/adaptive-cards/).
+As expressões adaptáveis abordam essa necessidade básica, fornecendo uma linguagem de expressão adaptável que pode ser usada com o SDK do bot Framework e outros componentes de ia de conversação, como o [bot Framework Composer](https://github.com/microsoft/BotFramework-Composer), [geração de linguagem](bot-builder-concept-language-generation.md), [caixas de diálogo adaptáveis](bot-builder-adaptive-dialog-Introduction.md)e [modelagem de cartões adaptáveis](https://docs.microsoft.com/adaptive-cards/templating).
 
-Uma expressão adaptável pode conter um ou mais valores explícitos, [funções predefinidas](../adaptive-expressions/adaptive-expressions-prebuilt-functions.md) ou funções personalizadas. Os consumidores de expressões adaptáveis também podem injetar funções adicionais compatíveis. Por exemplo, todos os modelos de Geração de Linguagem estão disponíveis como funções, bem como funções adicionais que só estão disponíveis no uso do componente de expressões adaptáveis.
+Uma expressão adaptável pode conter um ou mais valores explícitos, [funções predefinidas](../adaptive-expressions/adaptive-expressions-prebuilt-functions.md) ou funções personalizadas. Os consumidores de expressões adaptáveis também podem injetar funções adicionais compatíveis. Por exemplo, todos os modelos de geração de linguagem estão disponíveis como funções, bem como funções adicionais que só estão disponíveis no uso do componente de expressões adaptáveis.
 
 ## <a name="operators"></a>Operadores
 
 As expressões adaptáveis dão suporte aos seguintes tipos de operadores e à seguinte sintaxe de expressão:
 
-- [aritmético](#arithmetic-operators)
-- [comparação](#comparison-operators)
-- [lógico](#logical-operators)
-- [aritmético](#other-operators-and-expression-syntax)
+- aritmética
+- comparação
+- logical
+- sintaxe de outros operadores e expressões
 
-### <a name="arithmetic-operators"></a>Operadores aritméticos
+### <a name="arithmetic"></a>[Aritmético](#tab/arithmetic)
 
 | Operador    |                                  Funcionalidade                                            |   Equivalente da função predefinida    |
 |-----------|-------------------------------------------------------------------------------------------|-----------------------------------|
@@ -48,7 +48,7 @@ As expressões adaptáveis dão suporte aos seguintes tipos de operadores e à s
 |^            | Exponenciação. Exemplo: A ^ B                                            |[exp][5]                           |
 |%            | Módulo. Exemplo: A % B                                                    |[mod][6]                           |
 
-### <a name="comparison-operators"></a>Operadores de comparação
+### <a name="comparison"></a>[Comparação](#tab/comparison)
 
 | Operador    |                                  Funcionalidade                                            |   Equivalente da função predefinida    |
 |-----------|-------------------------------------------------------------------------------------------|-----------------------------------|
@@ -59,7 +59,7 @@ As expressões adaptáveis dão suporte aos seguintes tipos de operadores e à s
 |\>=         | Maior que ou igual a. Exemplo: A >= B                                        |[greaterOrEquals][11]              |
 |\<=            | Menor que ou igual a. Exemplo: A <= B                                            |[lessOrEquals][12]                 |
 
-### <a name="logical-operators"></a>Operadores lógicos
+### <a name="logical"></a>[Lógico](#tab/logical)
 
 | Operador    |                                  Funcionalidade                                            |   Equivalente da função predefinida    |
 |-----------|-------------------------------------------------------------------------------------------|-----------------------------------|
@@ -67,8 +67,7 @@ As expressões adaptáveis dão suporte aos seguintes tipos de operadores e à s
 |\|\|        |Ou. Exemplo: exp1 \|\| exp2                                                    |[or][14]                           |
 |\!            |Não. Exemplo: !exp1                                                            |[not][8]                           |
 
-
-### <a name="other-operators-and-expression-syntax"></a>Outros operadores e sintaxe de expressão
+### <a name="other"></a>[Outras](#tab/other)
 
 | Operador    |                                  Funcionalidade                                            |   Equivalente da função predefinida    |
 |-----------|-------------------------------------------------------------------------------------------|-----------------------------------|
@@ -82,6 +81,8 @@ As expressões adaptáveis dão suporte aos seguintes tipos de operadores e à s
 |\.            |Seletor de propriedade. Exemplo: myObject.Property1                                                    |N/D                                |
 |\\            |Caractere de escape para modelos e expressões.                                               |N/D                                |
 
+---
+
 ## <a name="variables"></a>Variáveis
 
 As variáveis são sempre referenciadas pelo nome no formato `${myVariable}`.  Elas podem ser referenciadas pelo operador de seletor de propriedade na forma de `myParent.myVariable`, usando o operador de seleção de índice de item, como em `myParent.myList[0]`, ou pela função [getProperty()](../adaptive-expressions/adaptive-expressions-prebuilt-functions.md#getProperty).
@@ -92,14 +93,79 @@ Há duas variáveis especiais. **[]** representa uma lista vazia e **{}** repres
 
 Os valores explícitos podem ser colocados entre aspas simples 'myExplicitValue' ou entre aspas duplas "myExplicitValue".
 
+## <a name="functions"></a>Funções
+
+Uma expressão adaptável tem uma ou mais funções. Para obter mais informações sobre as funções com suporte por expressões adaptáveis, consulte o artigo de referência de [funções predefinidas](../adaptive-expressions/adaptive-expressions-prebuilt-functions.md) .
+
+## <a name="bot-framework-composer"></a>Bot Framework Composer
+
+O bot Framework Composer é uma tela de criação visual de software livre para desenvolvedores e equipes multidisciplinares criarem bots. O Composer usa expressões adaptáveis para criar, calcular e modificar valores. As expressões adaptáveis podem ser usadas em definições de modelo de geração de linguagem e como propriedades na tela de criação. Como visto no exemplo abaixo, as propriedades na memória também podem ser usadas em uma expressão adaptável. 
+
+A expressão `(dialog.orderTotal + dialog.orderTax) > 50` adiciona os valores das propriedades `dialog.orderTotal` e `dialog.orderTax` , e avalia `True` se a soma é maior que 50 ou `False` se a soma é menor que 50.
+
+Leia [fluxo de conversa e memória](https://docs.microsoft.com/composer/concept-memory) para obter mais informações sobre como as expressões são usadas na memória.
+
+## <a name="language-generation"></a>Geração de linguagem
+
+As expressões adaptáveis são usadas por sistemas LG (geração de linguagem) para avaliar as condições descritas em modelos de LG. No exemplo a seguir, a função de [junção](../adaptive-expressions/adaptive-expressions-prebuilt-functions.md#join) predefinida é usada para listar todos os valores na `recentTasks` coleção.
+
+```.lg
+# RecentTasks
+- IF: ${count(recentTasks) == 1}
+    - Your most recent task is ${recentTasks[0]}. You can let me know if you want to add or complete a task.
+- ELSEIF: ${count(recentTasks) == 2}
+    - Your most recent tasks are ${join(recentTasks, ', ', ' and ')}. You can let me know if you want to add or complete a task.
+- ELSEIF: ${count(recentTasks) > 2}
+    - Your most recent ${count(recentTasks)} tasks are ${join(recentTasks, ', ', ' and ')}. You can let me know if you want to add or complete a task.
+- ELSE:
+    - You don't have any tasks.
+```
+
+Leia a seção [usando a função predefinida em variações](../file-format/bot-builder-lg-file-format.md#using-prebuilt-functions-in-variations) do artigo [formato de arquivo. LG](../file-format/bot-builder-lg-file-format.md) para obter mais informações.
+
+## <a name="adaptive-cards-templating"></a>Modelagem de cartões adaptáveis
+
+[Modelos de cartões adaptáveis](https://docs.microsoft.com/adaptive-cards/templating/) podem ser usados por desenvolvedores de bots e outras tecnologias para separar dados do layout em um cartão adaptável. Os desenvolvedores podem fornecer [dados embutidos](https://docs.microsoft.com/adaptive-cards/templating/language#option-a-inline-data) com a `AdaptiveCard` carga ou a abordagem mais comum de [separar os dados do modelo](https://docs.microsoft.com/adaptive-cards/templating/language#option-b-separating-the-template-from-the-data).
+
+Por exemplo, digamos que você tenha os seguintes dados:
+
+```json
+{
+    "id": "1291525457129548",
+    "status": 4,
+    "author": "Matt Hidinger",
+    "message": "{\"type\":\"Deployment\",\"buildId\":\"9542982\",\"releaseId\":\"129\",\"buildNumber\":\"20180504.3\",\"releaseName\":\"Release-104\",\"repoProvider\":\"GitHub\"}",
+    "start_time": "2018-05-04T18:05:33.3087147Z",
+    "end_time": "2018-05-04T18:05:33.3087147Z"
+}
+```
+A `message` propriedade é uma cadeia de caracteres serializada em JSON. Para acessar os valores dentro da cadeia de caracteres, a função predefinida [JSON](../adaptive-expressions/adaptive-expressions-prebuilt-functions.md#json) pode ser chamada:
+
+```json
+{
+    "type": "TextBlock",
+    "text": "${json(message).releaseName}"
+}
+```
+
+E resultará no seguinte objeto:
+
+```json
+{
+    "type": "TextBlock",
+    "text": "Release-104"
+}
+```
+
+Para obter mais informações e exemplos, consulte a [documentação de modelagem de cartões adaptáveis](https://docs.microsoft.com/adaptive-cards/templating/).
+
 ## <a name="additional-resources"></a>Recursos adicionais
 
 - Pacote [NuGet AdaptiveExpressions](https://www.nuget.org/packages/AdaptiveExpressions) para C#
-- Pacote [npm adaptive-expressions](https://www.npmjs.com/package/adaptive-expressions) para JavaScript
-- [Funções predefinidas](../adaptive-expressions/adaptive-expressions-prebuilt-functions.md) compatíveis com a biblioteca de Expressões Adaptáveis
-- [Referência do C #API](https://docs.microsoft.com/dotnet/api/adaptiveexpressions)
-- [Referência de API de JavaScript](https://docs.microsoft.com/javascript/api/adaptive-expressions)   
-<!--- [Extend functions](./extend-functions.md)-->
+- pacote de [expressões adaptáveis NPM](https://www.npmjs.com/package/adaptive-expressions) para JavaScript
+- [Funções predefinidas](../adaptive-expressions/adaptive-expressions-prebuilt-functions.md) com suporte da biblioteca de expressões adaptáveis
+- [Referência da API do C#](https://docs.microsoft.com/dotnet/api/adaptiveexpressions)
+- [Referência da API JavaScript](https://docs.microsoft.com/javascript/api/adaptive-expressions)
 
 [1]:../adaptive-expressions/adaptive-expressions-prebuilt-functions.md#add
 [2]:../adaptive-expressions/adaptive-expressions-prebuilt-functions.md#sub

@@ -1,6 +1,6 @@
 ---
 title: Desenvolver bot do DirectLine Speech – Serviço de Bot
-description: Desenvolver bot do DirectLine Speech
+description: Saiba como usar a Direct line Speech com bots. Veja como os bots podem usar um recurso de streaming com base em Websockets para trocar mensagens com este canal.
 keywords: desenvolver bot do Direct Line Speech, bot de fala
 author: ivorb
 ms.author: kamrani
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/01/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4d5094c7785093d624617d0ed6f1816f3fd0b360
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: c642e8fa3f81f6e47ff3f57c21a455cb69f66a38
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81395629"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360809"
 ---
 # <a name="use-direct-line-speech-in-your-bot"></a>Usar o Direct Line Speech no seu bot
 

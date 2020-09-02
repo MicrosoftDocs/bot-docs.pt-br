@@ -1,6 +1,6 @@
 ---
 title: Tutorial sobre como criar e implantar um bot básico – Serviço de Bot
-description: Saiba como criar um bot básico e, em seguida, implantá-lo no Azure.
+description: Saiba como criar bots com o SDK do bot Framework e implantá-los no Azure. Consulte as etapas necessárias para compilar, executar, conectar, implantar e testar bots.
 keywords: bot de eco, implantar, azure, tutorial
 author: Ivorb
 ms.author: kamrani
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 03/23/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 0cba227821f0934407692449c197925672bd4a3d
-ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
+ms.openlocfilehash: 786b31ee2d2f97a87b7f675fa5a2a90ad49d0f45
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85073881"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360110"
 ---
 # <a name="tutorial-create-and-deploy-a-basic-bot"></a>Tutorial: Criar e implantar um bot básico
 

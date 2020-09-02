@@ -1,37 +1,36 @@
 ---
 title: Criar um Registro de Canais de Bot com o Serviço de Bot – Serviço de Bot
-description: Saiba como registrar um bot existente com o Serviço de Bot.
+description: Saiba como registrar bots com o serviço bot. Consulte Como conectar bots aos canais do serviço de bot do Azure para que eles possam interagir com os usuários.
 ms.author: kamrani
 manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 07/30/2020
-monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: f813a0c54320b2fef1af1b6dd9388dffe8244e50
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+monikerRange: azure-bot-service-4.0
+ms.openlocfilehash: eaf93be0cb6970f11ac8531f132170f4ccf39050
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143645"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360959"
 ---
-# <a name="bot-channels-registration"></a>Registro de canais de bot
+# <a name="bot-channels-registration"></a>Registro de canais do bot
 
-Este artigo mostra como registrar um bot com o **serviço de bot do Azure**. Se o bot estiver hospedado em outro lugar, isso permitirá que você o torne disponível no Azure e o conecte aos canais com suporte.
+Este artigo mostra como registrar um bot com o **serviço de bot do Azure**. Se o bot estiver hospedado em outro lugar, você também poderá disponibilizá-lo no Azure e conectá-lo aos canais com suporte. Há duas maneiras de registrar um bot com o Azure:
+
+1. Seguindo as etapas no artigo [criar um bot com o serviço de bot do Azure](~/v4sdk/abs-quickstart.md), o bot é criado e registrado com o Azure e um aplicativo Web é criado para hospedar o bot. Você usará essa abordagem se desenvolver e hospedar um bot no Azure.
+1. Para criar e desenvolver seu bot localmente, siga as etapas neste artigo. Ao registrar o bot, você fornece o endereço da Web onde o bot está hospedado. Você ainda pode hospedá-lo no Azure.
 
 > [!IMPORTANT]
 > Você só precisa registrar um bot se ele não estiver hospedado no Azure.
-Os bots criados usando o portal do Azure ou a CLI (interface de linha de comando) já estão registrados com o serviço de bot do Azure. Para obter mais informações, consulte [implantar seu bot](bot-builder-deploy-az-cli.md) e [criar um bot com o serviço de bot do Azure](v4sdk/abs-quickstart.md).
+Os bots criados usando o portal do Azure ou a CLI (interface de linha de comando) já estão registrados com o serviço de bot do Azure. Para obter mais informações, consulte [implantar seu bot](~/bot-builder-deploy-az-cli.md) e [criar um bot com o serviço de bot do Azure](~/v4sdk/abs-quickstart.md).
 
 ## <a name="create-a-registration-application"></a>Criar um aplicativo de registro
 
 1. Em seu navegador, navegue até o [portal do Azure](https://ms.portal.azure.com). Se você não tiver uma assinatura, poderá se inscrever para obter uma <a href="https://azure.microsoft.com/free/" target="_blank">conta gratuita</a>.
 
 1. No painel esquerdo, clique em **criar um recurso**.
-1. Na caixa de seleção do painel direito, digite *bot*. Na lista suspensa, selecione o **registro de canais de bot** ou o bot do **aplicativo Web** , dependendo do seu aplicativo.
-
-    > [!WARNING]
-    > Se você escolheu **aplicativo de bot da Web**, siga as etapas descritas no artigo [criar um bot com o serviço de bot do Azure](v4sdk/abs-quickstart.md). Você criará um bot no Azure que é registrado automaticamente no Serviço de Bot do Azure.
-
+1. Na caixa de seleção do painel direito, digite *bot*. Na lista suspensa, selecione o **registro de canais de bot**.
 1. Selecione o botão **Criar**.
 1. No formulário de **registro de canais de bot** , forneça as informações solicitadas sobre o bot conforme especificado na tabela a seguir.
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 06/09/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 07e16d04c3f3a874f2cca74f245881d09f17cba3
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: 19847bacb0f3daa97340ad2146f06989f18eba6c
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143935"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361079"
 ---
 # <a name="actions-in-adaptive-dialogs---reference-guide"></a>Ações em caixas de diálogo adaptáveis – guia de referência
 
@@ -86,7 +86,7 @@ There's a mix of concepts going on here. There's the action sequence, which are 
 | Repetir essa caixa de diálogo     | [RepeatDialog](#repeatdialog)    | Usado para reiniciar a caixa de diálogo pai.                                        |
 | Substituir essa caixa de diálogo    | [ReplaceDialog](#replacedialog)  | Substitui a caixa de diálogo atual por uma nova                             |
 | GetConversationMembers| [GetConversationMembers](#get-conversation-members) | Permite obter uma lista de membros da conversa e salvá-la em uma propriedade na [memória][11].|
-| EditActions    | [EditActions](#editactions) | Permite editar imediatamente a sequência de ação atual com base na entrada do usuário. Especialmente útil ao lidar com interrupções. <!--TODO P1: [interruptions][6]--> |
+| EditActions    | [EditActions](#editactions) | Permite editar imediatamente a sequência de ação atual com base na entrada do usuário. Especialmente útil ao lidar com [interrupções][interruptions].  |
 
 Confira os exemplos de códigos em [Exemplos de gerenciamento de caixa de diálogo](#dialog-management-examples).
 
@@ -684,7 +684,7 @@ new GetConversationMembers()
 
 #### <a name="editactions"></a>EditActions
 
-Modifica a sequência de ações atual. Especialmente útil ao lidar com uma interrupção. Você pode usar EditActions para inserir ou remover ações em qualquer lugar da sequência, incluindo a adição de ações no início ou no final da sequência.
+Modifica a sequência de ações atual. Especificamente útil ao lidar com [interrupções][interruptions]. Você pode usar EditActions para inserir ou remover ações em qualquer lugar da sequência, incluindo a adição de ações no início ou no final da sequência.
 
 ```csharp
 var rootDialog = new AdaptiveDialog(nameof(AdaptiveDialog))
@@ -1071,3 +1071,4 @@ new LogAction()
 [12]:https://www.qnamaker.ai/
 [13]:https://github.com/microsoft/botbuilder-samples
 [oauthinput]: ../adaptive-dialog/adaptive-dialog-prebuilt-inputs.md#oauthinput
+[interruptions]: ../v4sdk/bot-builder-concept-adaptive-dialog-interruptions.md

@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 07/10/2020
-ms.openlocfilehash: 7dfc8a1d41d467764c9152045012c593041ed62b
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: 67046fe90358a26db921005055e55eb37e958398
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143615"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360939"
 ---
 # <a name="bot-framework-faq-index"></a>Índice de perguntas frequentes do bot Framework
 
@@ -40,6 +40,10 @@ Caso você não encontre a resposta que está procurando, poderá postar suas pe
 - [Como enviar mensagens proativas ao usuário?](bot-service-resources-faq-general.md#how-can-i-send-proactive-messages-to-the-user)
 - [Como é possível referenciar serviços não serializáveis dos meus diálogos em C#? no SDK v3?](bot-service-resources-faq-general.md#how-can-i-reference-non-serializable-services-from-my-c-dialogs-in-sdk-v3)
 - [O que é uma ETag? Como ele está relacionado ao armazenamento da bolsa de dados de bot?](bot-service-resources-faq-general.md#what-is-an-etag--how-does-it-relate-to-bot-data-bag-storage)
+- [O que é a limitação de taxa?](bot-service-resources-faq-general.md#what-is-rate-limiting)
+- [Como ocorre a limitação de taxa?](bot-service-resources-faq-general.md#how-does-rate-limiting-occur)
+- [Quais são os limites de taxa?](bot-service-resources-faq-general.md#what-are-the-rate-limits)
+- [Como saber se estou impactado pela limitação de taxa?](bot-service-resources-faq-general.md#how-will-i-know-if-im-impacted-by-rate-limiting)
 - [Como implementar a entrega humana?](bot-service-resources-faq-general.md#how-to-implement-human-handoff)
 
 <!-- Retired, re: https://github.com/MicrosoftDocs/bot-docs/issues/1698
@@ -78,5 +82,5 @@ Caso você não encontre a resposta que está procurando, poderá postar suas pe
 - [Quais arquivos preciso para compactar para implantação?](bot-service-resources-faq-azure.md#what-files-do-i-need-to-zip-up-for-deployment)
 - [Qual versão do CLI do Azure devo usar para implantar um bot?](bot-service-resources-faq-azure.md#what-version-of-azure-cli-should-i-use-to-deploy-a-bot)
 - [O que devo fazer ao obter CLI do Azure erros de substituição?](bot-service-resources-faq-azure.md#what-should-i-do-when-getting-azure-cli-deprecation-errors)
-- [Quais são os comandos preteridos da CLI relacionados ao`az deployment?`](bot-service-resources-faq-azure.md#what-are-the-cli-deprecated-commands-related-to-az-deployment)
+- [Quais são os comandos preteridos da CLI relacionados ao `az deployment?`](bot-service-resources-faq-azure.md#what-are-the-cli-deprecated-commands-related-to-az-deployment)
 - [Como fazer saber se os comandos de CLI do Azure foram preteridos?](bot-service-resources-faq-azure.md#how-do-i-know-whether-the-azure-cli-commands-are-deprecated)

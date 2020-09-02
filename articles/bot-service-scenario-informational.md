@@ -1,6 +1,6 @@
 ---
 title: Cenário de bot de informações – Serviço de Bot
-description: Explore o cenário de bot de Informações com o Bot Framework.
+description: Saiba mais sobre o cenário de bot de informações. Veja como esse bot usa serviços cognitivas QnA Maker e Azure Search para consultar um banco de dados SQL e responder a perguntas.
 author: BrianRandell
 ms.author: kamrani
 manager: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 5e2e696b7f5643779b3cd9badb0351d79b6732df
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: aea39a87cd0bdfee482e976ee9029fd5c5d295fe
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77441263"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360869"
 ---
 # <a name="information-bot-scenario"></a>Cenário de Bot de Informações
 

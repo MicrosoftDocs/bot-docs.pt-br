@@ -1,6 +1,6 @@
 ---
 title: Depurar o bot usando arquivos de transcrição – Serviço de Bot
-description: Entenda como usar um arquivo de transcrição para ajudar a depurar seu bot.
+description: Saiba como usar arquivos de transcrição para depurar bots. Veja como criar e recuperar esses arquivos, que fornecem conjuntos detalhados de interações de usuário e respostas de bot.
 keywords: depuração, perguntas frequentes, arquivo de transcrição, emulador
 author: DanDev33
 ms.author: kamrani
@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservices: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 6d1f3aafb805eba6ebf09fc7b15f29df4437d11c
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 0542e9b553409ee6f52a622e01fc09f60f01f98b
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75798596"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360279"
 ---
 # <a name="debug-your-bot-using-transcript-files"></a>Depurar seu bot usando arquivos de transcrição
 

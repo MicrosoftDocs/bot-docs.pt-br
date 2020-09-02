@@ -1,6 +1,6 @@
 ---
 title: Eventos gerados pela telemetria do Bot Framework Service – Serviço de Bot
-description: Saiba quais eventos são disparados com os novos recursos de telemetria.
+description: Saiba mais sobre os eventos que o serviço de canal do bot Framework registra quando os bots recebem mensagens, geram erros ou experimentam outras atividades.
 keywords: telemetria, appinsights, bot de monitor
 author: ivorb
 ms.author: kamrani
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f4de4c0f6e4c90461a46d471806cb290b183935e
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 2d9a728ab60acc5ad276ed035410ef8ec0d49cca
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75792026"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359940"
 ---
 # <a name="events-generated-by-the-bot-framework-service-telemetry"></a>Eventos gerados pela telemetria do Bot Framework Service
 

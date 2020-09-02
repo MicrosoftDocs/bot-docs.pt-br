@@ -1,13 +1,13 @@
 ---
-ms.openlocfilehash: 4abe0e963519b211ba27dd2398d91c9f7306dffc
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: fcf42541da048ecdbf1281c4409817ff4cc4b36c
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420569"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360109"
 ---
 
-É necessário preparar os arquivos do projeto para implantar o bot de C#, Javascript ou Typescript. Se estiver implantando um bot de Python, ignore esta etapa e continue na etapa 5.2.
+É necessário preparar os arquivos do projeto para implantar o bot de C#, Javascript ou Typescript. Consulte as informações do Python se você precisar preparar os arquivos do projeto antes de implantar o bot do Python.  
 
 <!-- **C# bots** -->
 ##### <a name="c"></a>[C#](#tab/csharp)
@@ -41,6 +41,9 @@ Esse comando gera um arquivo `web.config` na pasta do projeto.
 <!-- **TPython bots** -->
 ##### <a name="python"></a>[Python](#tab/Python)
 
-Você não precisa preparar seus arquivos de projeto antes de implantar um bot do Python. Prossiga para a etapa 5.2.
+Se você não tiver dependências adicionais, poderá ignorar isso e continuar na etapa 5,2.
+
+Se você estiver usando um Gerenciador de dependências e pacotes, precisará converter sua lista de dependências em um `requirements.txt` arquivo e adicioná-la à pasta que contém `app.py` . Isso é necessário porque a instalação de dependência ocorre no lado do servidor para bots do Python, não localmente como faz para bots em outras linguagens. Os arquivos em `deploymentTemplates` procure `requirements.txt` , e sem o arquivo, suas dependências não serão instaladas. 
+
 
 ---

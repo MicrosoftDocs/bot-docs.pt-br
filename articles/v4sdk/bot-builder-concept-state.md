@@ -1,6 +1,6 @@
 ---
 title: Gerenciar estado – Serviço de Bot
-description: Descreve como o estado funciona dentro do SDK do Bot Framework.
+description: Entenda como os bots funcionam com informações sobre os usuários no SDK do bot Framework. Saiba mais sobre a camada de armazenamento, o gerenciamento de estado e os acessadores de propriedade de estado.
 keywords: estado, estado do bot, estado da conversa, estado do usuário
 author: ivorb
 ms.author: kamrani
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 04/03/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a2ee9d18bbf0587829b4d50d4fa4e8bc00cf866d
-ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
+ms.openlocfilehash: 1bd63b8386eba049fa2d7ab4f89f792cdbcba48e
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86542581"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360289"
 ---
 # <a name="managing-state"></a>Gerenciar estado
 

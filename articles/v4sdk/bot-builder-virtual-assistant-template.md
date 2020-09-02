@@ -1,6 +1,6 @@
 ---
 title: Visão geral do Modelo de Assistente Virtual – Serviço de Bot
-description: Saiba mais sobre o Modelo de Assistente Virtual
+description: Familiarize-se com o modelo de assistente virtual do bot Framework. Entenda como o modelo funciona e aprenda sobre recursos, telemetria e outros componentes.
 author: darrenj
 ms.author: darrenj
 manager: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: fdbed58a4093f70b57d65e8f89ee76b305777a1a
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 313f2f3fd0db12400b84612e9784337b2e9f9e34
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75791168"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359898"
 ---
 # <a name="virtual-assistant---template-outline"></a>Assistente Virtual - Descrição do Modelo
 

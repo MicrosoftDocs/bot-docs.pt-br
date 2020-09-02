@@ -1,20 +1,20 @@
 ---
 title: Enviar notificações proativas para os usuários – Serviço de Bot
-description: Entenda como enviar mensagens de notificação
+description: Saiba como os bots enviam mensagens de notificação. Consulte como recuperar referências de conversa e testar mensagens proativas. Exibir exemplos de código e considerações de design.
 keywords: mensagem proativa, mensagem de notificação, notificação de bot,
 author: JonathanFingold
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 08/06/2020
+ms.date: 09/01/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4fb3d2e29c0710858572aae06d605266728d0748
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: 62eae5954ed2461b4c3de06fed7797fc3874d07d
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143115"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360209"
 ---
 # <a name="send-proactive-notifications-to-users"></a>Enviar notificações proativas para os usuários
 
@@ -98,7 +98,7 @@ O segundo controlador, o controlador _notificar_, é responsável por enviar a m
 Sempre que a página de notificação do bot é solicitada, o controlador de notificação recupera as referências de conversa a partir do dicionário.
 Então, o controlador usa os métodos `ContinueConversationAsync` e `BotCallback` para enviar a mensagem proativa.
 
-[!code-csharp[Notify logic](~/../botbuilder-samples/samples/csharp_dotnetcore/16.proactive-messages/Controllers/NotifyController.cs?range=17-62&highlight=28,40-44)]
+[!code-csharp[Notify logic](~/../botbuilder-samples/samples/csharp_dotnetcore/16.proactive-messages/Controllers/NotifyController.cs?range=17-62&highlight=28,40-45)]
 
 Para enviar uma mensagem proativa, o adaptador requer uma ID do aplicativo para o bot. Em um ambiente de produção, você pode usar a ID do aplicativo do bot. Em um ambiente de teste local, você pode usar qualquer GUID. Se no momento o bot não estiver atribuído a uma ID do aplicativo, o controlador de notificação gera automaticamente um espaço reservado para ID a ser usado para a chamada.
 
@@ -110,7 +110,7 @@ Sempre que a página `/api/notify` do servidor for solicitada, o servidor recupe
 Então, o servidor usa o método `continueConversation` para enviar a mensagem proativa.
 O parâmetro para `continueConversation` é uma função que serve como manipulador de turno do bot para este turno.
 
-[!code-javascript[Notify logic](~/../botbuilder-samples/samples/javascript_nodejs/16.proactive-messages/index.js?range=68-82&highlight=4-8)]
+[!code-javascript[Notify logic](~/../botbuilder-samples/samples/javascript_nodejs/16.proactive-messages/index.js?range=70-84&highlight=4-8)]
 
 # <a name="python"></a>[Python](#tab/python)
 

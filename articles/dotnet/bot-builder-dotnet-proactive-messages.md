@@ -1,6 +1,6 @@
 ---
 title: Enviar mensagens proativas (C# v3) – Serviço de Bot
-description: Saiba como enviar mensagens proativas usando o SDK do Bot Framework para .NET.
+description: Saiba como usar os bots para enviar mensagens proativas. Consulte exemplos de código que usam a versão 3 do SDK do bot Framework para mensagens pró-ativas baseadas em caixa de diálogo e ad hoc.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: a6dd39b76d12262097013095be67b8e401846cbc
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 0aa7bdc03f072f1a195b81911b7badd69e8f1e06
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75795467"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360799"
 ---
 # <a name="send-proactive-messages"></a>Enviar mensagens proativas
 

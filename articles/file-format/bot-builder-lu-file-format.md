@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 1a2a06e944a2e6bfd0277be8e930aa8b2dbaeb60
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: 1889fa3fb39083e9470cd354349e82f960a76185
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83566486"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360763"
 ---
 # <a name="lu-file-format"></a>Formato de arquivo .lu
 
@@ -594,6 +594,10 @@ Observe que todas as informações passadas explicitamente por meio de argumento
 
 ## <a name="external-references"></a>Referências externas
 
+As seções abaixo detalham como fazer referências de [arquivo local](#local-file-references) e [URI](#uri-references) .
+
+### <a name="local-file-references"></a>Referências de arquivo local
+
 Referencia o arquivo .lu. siga a sintaxe de link Markdown. As referências com suporte incluem:
 
 - Referência a outro arquivo .lu por meio de `[link name](<.lu file name>)`. A referência pode ser um caminho absoluto ou um caminho relativo do arquivo .lu contido.
@@ -658,6 +662,31 @@ Este é um exemplo das referências mencionadas anteriormente:
 - [QnA questions](./qna1.qna#?)
 
 > With the above statement, the parser will parse qna1.lu and extract out all questions from QnA pairs in that file and add them under 'None' intent as defined in this file.
+```
+
+### <a name="uri-references"></a>Referências de URI
+
+Abaixo estão exemplos de como fazer referências de URI:
+
+```.lu
+> URI to LU resource
+[import](http://.../foo.lu)
+
+# intent1
+> Ability to pull in specific utterances from an intent
+- [import](http://.../foo.lu#None)
+
+# intent2
+> Ability to pull in utterances or patterns or both from a specific intent 'None'
+- [import](http://..../foo.lu#None*utterances*)
+- [import](http://..../bar.lu#None*patterns*)
+- [import](http://..../taz.lu#None*utterancesandpatterns*)
+
+# intent3
+> Ability to pull in all utterances or patterns or both across all intents
+- [import](http://..../foo.lu#*utterances*)
+- [import](http://..../bar.lu#*patterns*)
+- [import](http://..../taz.lu#*utterancesandpatterns*)
 ```
 
 ## <a name="additional-information"></a>Informações adicionais:

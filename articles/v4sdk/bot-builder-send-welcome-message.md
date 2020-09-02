@@ -1,6 +1,6 @@
 ---
 title: Enviar mensagem de boas-vindas aos usuários – Serviço de Bot
-description: Saiba como desenvolver seu bot para fornecer uma experiência do usuário calorosa.
+description: Descubra como envolver usuários em conversas significativas com bots aprendendo sobre mensagens de boas-vindas. Consulte exemplos de código que detectam e saudam novos usuários.
 keywords: visão geral, desenvolver, experiência do usuário, boas-vindas, experiência personalizada, C#, JS, mensagem de boas-vindas, bot, saudar, saudação
 author: DanDev33
 ms.author: kamrani
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 2/7/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2bbd325f2b35b4e91d906bd4b333919c643a087e
-ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
+ms.openlocfilehash: 9f003424be2acd07b823dd2583224eb03ff068aa
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86542491"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360139"
 ---
 # <a name="send-welcome-message-to-users"></a>Enviar mensagem de boas-vinda aos usuários
 

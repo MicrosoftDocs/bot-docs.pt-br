@@ -1,6 +1,6 @@
 ---
 title: Autenticação de usuário no Serviço de Bot do Azure – Serviço de Bot
-description: Saiba mais sobre os recursos de autenticação de usuário no Serviço de Bot do Azure.
+description: Saiba mais sobre os recursos de autenticação de usuário no Serviço de Bot do Azure. Veja como os bots usam conexões OAuth para conectar usuários e acessar recursos online protegidos.
 keywords: serviço de bot do azure, autenticação, serviço de token do bot framework
 author: JonathanFingold
 ms.author: kamrani
@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/31/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: c6566a0b4d1150b3662734200c3ffd7c62dff0f6
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 40a02bd5fc52f4e93af4f1a902faae4dbd1254f6
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80250035"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361679"
 ---
-# <a name="bot-authentication"></a>Autenticação do bot
+# <a name="user-authentication"></a>Autenticação de usuário
 
-Há ocasiões em que um bot deve acessar recursos online protegidos em nome do usuário, e o bot deve estar autorizado a fazer isso. A autorização assume a forma de um token de portador. Isso é feito por um conjunto de componentes que faz parte da arquitetura do **Serviço de Bot do Azure** descrita abaixo.
+Às vezes, um bot deve acessar recursos online protegidos em nome do usuário. Para fazer isso, o bot deve ser autorizado. A autorização assume a forma de um token de portador. Isso é feito usando o OAuth e por um conjunto de componentes que fazem parte da arquitetura do **serviço de bot do Azure** , conforme descrito abaixo.
 
 1. **Aplicativo de Registro de Canais de Bot**. Esse é o mecanismo para *integrar* um bot dentro da infraestrutura do Azure, o que permite ao usuário comunicar-se por meio de canais com o bot.
 1. **Bot**. O bot pode ser hospedado em qualquer lugar, incluindo o Azure.
@@ -103,26 +103,12 @@ Alguns canais, como a Cortana, o Microsoft Teams, o Direct Line e o WebChat, pod
 > Tenha em mente estas importantes [Considerações de segurança](~/rest-api/bot-framework-rest-direct-line-3-0-authentication.md#security-considerations).
 > Você pode encontrar informações adicionais nesta postagem no blog: [Usar o WebChat com a Autenticação do Serviço de Bot do Azure](https://blog.botframework.com/2018/09/01/using-webchat-with-azure-bot-services-authentication/).
 
+## <a name="next-steps"></a>Próximas etapas
 
-## <a name="azure-activity-directory-in-a-bot"></a>Azure Active Directory em um bot
-
-O Azure Active Directory desempenha uma função dinâmica quando um bot é implantado no Azure, conforme descrito abaixo.
-
-### <a name="bot-registration"></a>Registro do bot
-
- Quando você registra um bot no Azure, por exemplo, por meio do registro de canais de bot, um aplicativo de registro do Active Directory é criado. Esse aplicativo tem a própria ID de aplicativo (ID do aplicativo) e o segredo do cliente (senha) necessários para configurar o bot para implantação. A ID do aplicativo também é necessária para proteger o serviço para a comunicação de serviço entre o bot e os Serviços de Canal do Bot Framework.
-
-### <a name="bot-authentication"></a>Autenticação do bot
-
-O Azure Active Directory é um provedor de identidade de nuvem que permite conectar com segurança os usuários usando protocolos padrão do setor, como **OAuth2.0**. Para obter mais informações, confira [Provedor de identidade do Azure Active Directory](bot-builder-concept-identity-providers.md#azure-active-directory-identity-provider).
-
-
-### <a name="next-steps"></a>Próximas etapas
-
-Agora que você sabe a função que o AD desempenha, vamos dar uma olhada em como autenticar um bot.
+Agora que você conhece a autenticação do usuário, vamos dar uma olhada em como aplicá-la ao bot.
 
 > [!div class="nextstepaction"]
-> [Adicionar autenticação a um bot](bot-builder-authentication.md).
+> [Adicionar autenticação a um bot](bot-builder-authentication.md)
 
 ## <a name="see-also"></a>Confira também
 

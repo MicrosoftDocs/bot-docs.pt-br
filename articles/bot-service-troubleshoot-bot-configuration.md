@@ -1,6 +1,6 @@
 ---
 title: Solucionar problemas de configuração de bot – Serviço de Bot
-description: Como solucionar problemas de configuração em um bot implantado.
+description: Saiba como solucionar erros de bot. Veja como testar os bots no chat da Web, verificar a capacidade de resposta, investigar problemas de tempo limite e resolver problemas com canais.
 keywords: solucionar problemas, configuração, bate-papo, problemas.
 author: jonathanFingold
 ms.author: kamrani
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 5/17/2020
-ms.openlocfilehash: f8887f2c231ab378084390b9c809cca1986014a1
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: d86e6a245764c7050d5475f3b35b6681bcec0dd6
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143505"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360829"
 ---
 # <a name="troubleshoot-bot-configuration-issues"></a>Solucionar problemas de configuração de bot
 

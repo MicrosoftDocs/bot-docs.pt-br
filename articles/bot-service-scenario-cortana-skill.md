@@ -1,6 +1,6 @@
 ---
 title: Cenário de bot de habilidades da Cortana – Serviço de Bot
-description: Explore o cenário de bot de Habilidades da Cortana com o Bot Framework.
+description: Saiba mais sobre o cenário de bot de habilidades da Cortana. Veja como esse bot usa a Cortana para acessar o calendário e o local de um usuário e, em seguida, agendar um compromisso.
 author: BrianRandell
 ms.author: kamrani
 manager: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 2b7d960514970c0d04d9ff37550874dc9de69cde
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: c04eb2f5a9aa3b0799b3f5d4edf2420510fdb0a8
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77441238"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360879"
 ---
 # <a name="cortana-skills-bot-scenario"></a>Cenário de Bot de Habilidades da Cortana
 

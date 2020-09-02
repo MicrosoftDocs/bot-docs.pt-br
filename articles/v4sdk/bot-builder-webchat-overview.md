@@ -1,6 +1,6 @@
 ---
 title: Visão geral do Webchat – Serviço de Bot
-description: Saiba como configurar o Webchat do Bot Framework.
+description: Familiarize-se com o componente de chat da Web do bot Framework. Saiba como usar e personalizar este componente. Exiba as propriedades disponíveis e outras informações.
 keywords: bot framework, webchat, chat, exemplos, react, referência
 author: ivorb
 ms.author: kamrani
@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/07/2019
-ms.openlocfilehash: 0bc86d4ec55532e3e25a7a57664cc4ccfdae4bdb
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: f30c2db927ec8e69e046c2267a365de76552a914
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420247"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359809"
 ---
 # <a name="web-chat-overview"></a>Visão geral de Webchat
 

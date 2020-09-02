@@ -1,6 +1,6 @@
 ---
 title: Diretrizes de depuração – Serviço de Bot
-description: Entenda como depurar o bot.
+description: Exibir dicas de depuração de bot, como usar o emulador e transcrições para inspecionar o comportamento. Compreenda os erros potenciais de middleware, estado e manipulador de atividade.
 keywords: depuração de bots, depuração de botframework
 author: ivorb
 ms.author: kamrani
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: ca2715a7a7a5081219abeaa83d99d729675f5e4a
-ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
+ms.openlocfilehash: a964c8dedf041a2a587a001b487a7063154eeb71
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86542471"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359929"
 ---
 # <a name="debugging-guidelines"></a>Diretrizes de depuração
 

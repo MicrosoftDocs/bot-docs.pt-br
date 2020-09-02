@@ -1,6 +1,6 @@
 ---
 title: Caixas de diálogo no SDK do Bot Framework – Serviço de Bot
-description: Descreve o que é um diálogo e como ele funciona no SDK do Bot Framework.
+description: Familiarize-se com caixas de diálogo no SDK do bot Framework. Saiba mais sobre as classes e os recursos da caixa de diálogo, tipos diferentes de caixas de diálogo e padrões de design para usar caixas de diálogo.
 keywords: fluxo de conversa, caixas de diálogo, estado da caixa de diálogo, conversa de bot, conjunto de caixas de diálogo, contexto de diálogo, pilha de diálogo
 author: JonathanFingold
 ms.author: kamrani
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 08/03/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 8a8e3bd52fa1b2125d9d044d4d8c1abaf6d9191e
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: 09abba29797555bf9cd82c22f739e9a6420e6f02
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143255"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360309"
 ---
 # <a name="dialogs-library"></a>Biblioteca de diálogos
 
@@ -67,7 +67,7 @@ Embora normalmente você não precise interagir com essas classes diretamente, e
 
 A biblioteca de caixas de diálogo fornece alguns tipos de caixas de diálogo para facilitar o gerenciamento das conversas de bot.
 
-| Type | Descrição
+| Tipo | Descrição
 | :--  | :--
 | _'_ | A classe base para todas as caixas de diálogo.
 | _caixa de diálogo contêiner_ | A classe base para todas as caixas de diálogo de _contêiner_ , como componentes e caixas de diálogo adaptáveis. Ele mantém um conjunto de diálogo interno e permite tratar uma coleção de caixas de diálogo como uma unidade.

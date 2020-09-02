@@ -1,6 +1,6 @@
 ---
 title: Como funciona o Serviço de Bot – Serviço de Bot
-description: Saiba mais sobre os recursos e funcionalidades do Serviço de Bot.
+description: Familiarize-se com o serviço de bot. Saiba mais sobre os planos e modelos de hospedagem. Consulte como usar esse serviço para desenvolver e implantar bots.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 1a49b9c3653af1a9fa56724a1562d34eb1834f43
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: d4a10504702fdac673f57d4a4d81ea9c7bf5090c
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75794623"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360969"
 ---
 # <a name="how-bot-service-works"></a>Como funciona o Serviço de Bot
 

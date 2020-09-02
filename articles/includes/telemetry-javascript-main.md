@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3be177ba20b0ec6bd61c90072b54eb80adcb59ad
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: 593a61a8908dbb6b9e8b460b0d445bd0c610bffd
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124134"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360071"
 ---
 
 Este artigo começa com o [aplicativo de exemplo CoreBot](https://aka.ms/js-core-sample) e adiciona o código necessário para integrar a telemetria em qualquer bot. Isso permitirá que o Application Insights comece a acompanhar as solicitações.
@@ -31,9 +31,9 @@ Este artigo começa com o [aplicativo de exemplo CoreBot](https://aka.ms/js-core
 
     Observação: Detalhes sobre como obter a _chave de instrumentação do Application Insights_ podem ser encontrados no artigo [Chaves do Application Insights](../bot-service-resources-app-insights-keys.md).
 
-3. Adicione uma referência aos módulos `ApplicationInsightsTelemetryClient` e `TelemetryInitializerMiddleware` que estão localizados em `botbuilder-applicationinsights` no SDK do bot Framework. Para fazer isso, adicione o seguinte código, começando próximo à parte superior de `index.js` , logo após o código para importar os pacotes necessários:
+3. Adicione uma referência aos módulos `ApplicationInsightsTelemetryClient` e `TelemetryInitializerMiddleware`  que estão localizados em `botbuilder-applicationinsights` no SDK do bot Framework. Para fazer isso, adicione o seguinte código, começando próximo à parte superior de `index.js` , logo após o código para importar os pacotes necessários:
 
-    [!code-javascript[Import](~/../botbuilder-samples/samples/javascript_nodejs/21.corebot-app-insights/index.js?range=10-12)]
+    [!code-javascript[Import](~/../botbuilder-samples/samples/javascript_nodejs/21.corebot-app-insights/index.js?range=16-17)]
 
     <!-- This is the code block that the code snippet link should point to:
     ```javascript
@@ -46,9 +46,9 @@ Este artigo começa com o [aplicativo de exemplo CoreBot](https://aka.ms/js-core
     > [!TIP]
     > Os [exemplos de bot de JavaScript](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/javascript_nodejs) usam Node.js que segue o sistema de módulo CommonJS e a `require` função interna para incluir módulos que existem em arquivos separados.
 
-4. Crie uma nova função no final do `index.js` nome `getTelemetryClient` que usa sua chave de instrumentação como um parâmetro e retorna um _cliente de telemetria_ usando o `ApplicationInsightsTelemetryClient` módulo referenciado anteriormente. Esse _cliente de telemetria_ é onde os dados de telemetria serão enviados, neste caso Application insights.
+4. Crie uma nova função no final do `index.js` nome `getTelemetryClient` que usa sua chave de instrumentação como um parâmetro e retorna um _cliente de telemetria_ usando o `ApplicationInsightsTelemetryClient` módulo referenciado anteriormente. Esse  _cliente de telemetria_ é onde os dados de telemetria serão enviados, neste caso Application insights.
 
-    [!code-javascript[getTelemetryClient](~/../botbuilder-samples/samples/javascript_nodejs/21.corebot-app-insights/index.js?range=114-120)]
+    [!code-javascript[getTelemetryClient](~/../botbuilder-samples/samples/javascript_nodejs/21.corebot-app-insights/index.js?range=116-122)]
 
     <!-- This is the code block that the code snippet link should point to:
     ```javascript
@@ -70,7 +70,7 @@ Este artigo começa com o [aplicativo de exemplo CoreBot](https://aka.ms/js-core
         - 
     -->
 
-    [!code-javascript[telemetryClient](~/../botbuilder-samples/samples/javascript_nodejs/21.corebot-app-insights/index.js?range=64-68)]
+    [!code-javascript[telemetryClient](~/../botbuilder-samples/samples/javascript_nodejs/21.corebot-app-insights/index.js?range=66-70)]
 
     <!-- This is the code block that the code snippet link should point to:
     ```javascript
@@ -82,9 +82,9 @@ Este artigo começa com o [aplicativo de exemplo CoreBot](https://aka.ms/js-core
     ```
     -->
 
-6. Para que sua caixa de diálogo relate dados de telemetria, seu `telemetryClient` deve corresponder ao que foi usado para o middleware de telemetria, ou seja,`dialog.telemetryClient = telemetryClient;`
+6. Para que sua caixa de diálogo relate dados de telemetria, seu `telemetryClient` deve corresponder ao que foi usado para o middleware de telemetria, ou seja, `dialog.telemetryClient = telemetryClient;`
 
-    [!code-javascript[dialog.telemetryClient](~/../botbuilder-samples/samples/javascript_nodejs/21.corebot-app-insights/index.js?range=86-91&highlight=6)]
+    [!code-javascript[dialog.telemetryClient](~/../botbuilder-samples/samples/javascript_nodejs/21.corebot-app-insights/index.js?range=88-93&highlight=6)]
 
     <!-- This is the code block that the code snippet link should point to:
     ```javascript
@@ -99,7 +99,7 @@ Este artigo começa com o [aplicativo de exemplo CoreBot](https://aka.ms/js-core
 
 7. Depois de criar o objeto de servidor Web HTTP restify, instrua-o a usar o `bodyParser` manipulador. <!--Need better/more detail-->
 
-    [!code-javascript[dialog.telemetryClient](~/../botbuilder-samples/samples/javascript_nodejs/21.corebot-app-insights/index.js?range=110-112)]
+    [!code-javascript[dialog.telemetryClient](~/../botbuilder-samples/samples/javascript_nodejs/21.corebot-app-insights/index.js?range=112-114)]
 
     <!-- This is the code block that the code snippet link should point to:
     ```javascript

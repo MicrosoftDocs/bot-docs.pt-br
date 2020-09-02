@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/04/2020
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 6f9955ee38ce0fc0f3f3ea9c004529334a9a7b96
-ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
+ms.openlocfilehash: a88aa2b8ec81e458f45cab4c7f8f874b67d76ea3
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85081204"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89361041"
 ---
 # <a name="debug-a-bot"></a>Depurar um bot
 
-[!INCLUDE [pre-release-label](../articles/includes/pre-release-label-v3.md)]
+[!INCLUDE [pre-release-label](~/includes/pre-release-label-v3.md)]
 
 Este artigo descreve como depurar seu bot usando um ambiente de desenvolvimento integrado (IDE), como o Visual Studio ou Visual Studio Code e o emulador de Bot Framework. Embora você possa usar esses métodos para depurar qualquer bot localmente, este artigo usa um bot em [C#](~/dotnet/bot-builder-dotnet-sdk-quickstart.md), em [Javascript](~/javascript/bot-builder-javascript-quickstart.md) ou em [Python](~/python/bot-builder-python-quickstart.md) criado no guia de início rápido.
 
@@ -46,15 +46,15 @@ For more information, see [Debug with the Emulator](bot-service-debug-emulator.m
 
 ## <a name="c"></a>[C#](#tab/csharp)
 
-[!INCLUDE [csharp vscode](../articles/includes/bot-service-debug-bot/csharp-vscode.md)]
+[!INCLUDE [csharp vscode](~/includes/bot-service-debug-bot/csharp-vscode.md)]
 
-[!INCLUDE [csharp visual studio](../articles/includes/bot-service-debug-bot/csharp-vs.md)]
+[!INCLUDE [csharp visual studio](~/includes/bot-service-debug-bot/csharp-vs.md)]
 
-[!INCLUDE [csharp consumption](../articles/includes/bot-service-debug-bot/csharp-consumption.md)]
+[!INCLUDE [csharp consumption](~/includes/bot-service-debug-bot/csharp-consumption.md)]
 
 ## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-[!INCLUDE [javascript vscode](../articles/includes/bot-service-debug-bot/js-vscode.md)]
+[!INCLUDE [javascript vscode](~/includes/bot-service-debug-bot/js-vscode.md)]
 
 ---
 

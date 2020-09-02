@@ -1,18 +1,18 @@
 ---
 title: Inserir um bot em um site – Serviço de Bot
-description: Saiba como criar um bot que será inserido em um site.
+description: Saiba como inserir bots em sites usando um controle da Web. Veja como o mecanismo de backchannel facilita a comunicação privada entre as páginas da Web e os bots.
 author: matvelloso
 ms.author: mateusv
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 200ad4fc9528a24390edff8ee54b26d344547e04
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 3ad05ea9c48c66842f29a11fd419576dc379aa05
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80647487"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360999"
 ---
 # <a name="embed-a-bot-in-a-website"></a>Inserir um bot em um site
 

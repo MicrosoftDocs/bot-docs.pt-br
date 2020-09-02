@@ -1,18 +1,18 @@
 ---
 title: Solucionar problemas de autenticação do Bot Framework – Serviço de Bot
-description: Saiba como solucionar erros de autenticação com seu bot.
+description: Saiba como solucionar problemas de erros de autenticação de bot, como problemas de conectividade e problemas com IDs e senhas de aplicativo. Exibir recursos adicionais.
 author: DeniseMak
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/25/2020
-ms.openlocfilehash: 4771d5683c9e82d05f71b85f5753886fdcadb17f
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: dbfaea34a08b5a9b51e42a24d7dd8493a02c544d
+ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143485"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89360839"
 ---
 # <a name="troubleshooting-bot-framework-authentication"></a>Solucionar problemas de autenticação do Bot Framework
 
