@@ -1,0 +1,73 @@
+- name: Gerenciar um bot
+  href: ../bot-service-manage-overview.md
+- name: Registro de canais do bot
+  href: ../bot-service-quickstart-registration.md
+- name: Análise de bot
+  href: ../bot-service-manage-analytics.md
+- name: Definir as configurações do bot
+  href: ../bot-service-manage-settings.md
+- name: Configurar a desobstrução de fala
+  href: ../bot-service-manage-speech-priming.md
+- name: Canais
+  items:
+    - name: Conectar um bot aos canais
+      href: ../bot-service-manage-channels.md
+    - name: Implementar a funcionalidade específica do canal
+      href: ../v4sdk/bot-builder-channeldata.md
+    - name: Cortana
+      href: ../bot-service-channel-connect-cortana.md
+    - name: Linha Direta
+      items:
+        - name: Sobre o Direct Line
+          href: ../bot-service-channel-directline.md
+        - name: Ligar ao Direct Line
+          href: ../bot-service-channel-connect-directline.md
+        - name: Ligar ao Direct Line por Fala
+          href: ../bot-service-channel-connect-directlinespeech.md
+        - name: Direct Line App Service Extension
+          href: ../bot-service-channel-directline-extension.md
+          items:
+            - name: Configurar o bot do .NET para a extensão
+              href: ../bot-service-channel-directline-extension-net-bot.md
+            - name: Configurar o bot do Node.js para a extensão
+              href: ../bot-service-channel-directline-extension-node-bot.md
+            - name: Criar Cliente .NET com a extensão
+              href: ../bot-service-channel-directline-extension-net-client.md
+            - name: Usar a extensão com Webchat
+              href: ../bot-service-channel-directline-extension-webchat-client.md
+            - name: Usar a extensão dentro do VNET
+              href: ../bot-service-channel-directline-extension-vnet.md
+    - name: Alexa
+      href: ../bot-service-channel-connect-alexa.md
+    - name: Email
+      href: ../bot-service-channel-connect-email.md
+    - name: Habilitar o controle por voz no Webchat
+      href: ../bot-service-channel-connect-webchat-speech.md
+    - name: Facebook
+      href: ../bot-service-channel-connect-facebook.md
+    - name: GroupMe
+      href: ../bot-service-channel-connect-groupme.md
+    - name: Kik
+      href: ../bot-service-channel-connect-kik.md
+    - name: LINE
+      href: ../bot-service-channel-connect-line.md
+    - name: Microsoft Teams
+      href: ../channel-connect-teams.md
+    - name: Skype
+      href: ../bot-service-channel-connect-skype.md
+    - name: Skype for Business
+      href: ../bot-service-channel-connect-skypeforbusiness.md
+    - name: Margem de atraso
+      href: ../bot-service-channel-connect-slack.md
+    - name: Telegram
+      href: ../bot-service-channel-connect-telegram.md
+    - name: Twilio
+      href: ../bot-service-channel-connect-twilio.md
+    - name: WeChat
+      href: ../bot-service-channel-connect-wechat.md
+    - name: Chat na Web
+      href: ../bot-service-channel-connect-webchat.md
+    - name: Webex
+      href: ../bot-service-adapter-connect-webex.md
+    - name: Canais adicionais
+      href: ../bot-service-channel-additional-channels.md

@@ -1,0 +1,74 @@
+- name: SDK do Bot Framework para .NET
+  href: bot-builder-dotnet-overview.md
+- name: Principais conceitos
+  href: bot-builder-dotnet-concepts.md
+- name: Mensagens e atividades
+  items:
+    - name: Visão geral das atividades
+      href: bot-builder-dotnet-activities.md
+    - name: Criar mensagens
+      href: bot-builder-dotnet-create-messages.md
+    - name: Adicionar anexos de mídia às mensagens
+      href: bot-builder-dotnet-add-media-attachments.md
+    - name: Adicionar cartões ricos mensagens
+      href: bot-builder-dotnet-add-rich-card-attachments.md
+    - name: Adicionar fala a mensagens
+      href: bot-builder-dotnet-text-to-speech.md
+    - name: Adicionar dicas de entrada às mensagens
+      href: bot-builder-dotnet-add-input-hints.md
+    - name: Adicionar ações sugeridas a mensagens
+      href: bot-builder-dotnet-add-suggested-actions.md
+    - name: Enviar e receber atividades
+      href: bot-builder-dotnet-connector.md
+    - name: Implementar manipuladores de mensagens globais
+      href: bot-builder-dotnet-global-handlers.md
+    - name: Interceptar mensagens
+      href: bot-builder-dotnet-middleware.md
+    - name: Enviar mensagens proativas
+      href: bot-builder-dotnet-proactive-messages.md
+- name: Diálogos
+  items:
+    - name: Visão geral de caixas de diálogo
+      href: bot-builder-dotnet-dialogs.md
+    - name: Gerenciar o fluxo da conversa
+      href: bot-builder-dotnet-manage-conversation-flow.md
+    - name: Diálogos pontuados
+      href: bot-builder-dotnet-scorable-dialogs.md
+- name: FormFlow
+  items:
+    - name: Recursos básicos do FormFlow
+      href: bot-builder-dotnet-formflow.md
+    - name: Recursos avançados do FormFlow
+      href: bot-builder-dotnet-formflow-advanced.md
+    - name: FormBuilder
+      href: bot-builder-dotnet-formflow-formbuilder.md
+    - name: Idioma padrão
+      href: bot-builder-dotnet-formflow-pattern-language.md
+    - name: Localização
+      href: bot-builder-dotnet-formflow-localize.md
+    - name: JSON schema
+      href: bot-builder-dotnet-formflow-json-schema.md
+- name: Canais
+  items:
+    - name: Implementar a funcionalidade específica do canal
+      href: bot-builder-dotnet-channeldata.md
+    - name: Criar uma habilidade da Cortana
+      href: bot-builder-dotnet-cortana-skill.md
+    - name: Realizar chamadas de áudio com o Skype
+      href: bot-builder-dotnet-audio-calls.md
+- name: Dados de estado
+  items:
+    - name: Gerenciar dados de estado
+      href: bot-builder-dotnet-state.md
+    - name: Gerenciar dados de estado usando o Cosmos DB
+      href: bot-builder-dotnet-state-azure-cosmosdb.md
+    - name: Gerenciar dados de estado usando o armazenamento de tabelas
+      href: bot-builder-dotnet-state-azure-table-storage.md
+- name: Reconhecer intenções com o LUIS
+  href: bot-builder-dotnet-luis-dialogs.md
+- name: Solicitar pagamento
+  href: bot-builder-dotnet-request-payment.md
+- name: Adicionar o Azure Search
+  href: bot-builder-dotnet-search-azure.md
+- name: Proteger o bot
+  href: bot-builder-dotnet-security.md

@@ -1,0 +1,66 @@
+- name: SDK do Bot Framework para Node.js
+  href: bot-builder-nodejs-overview.md
+- name: Principais conceitos
+  href: bot-builder-nodejs-concepts.md
+- name: Diálogos
+  items:
+    - name: Visão geral de caixas de diálogo
+      href: bot-builder-nodejs-dialog-overview.md
+    - name: Definir etapas de conversa
+      href: bot-builder-nodejs-dialog-waterfall.md
+    - name: Prompt de entrada do usuário
+      href: bot-builder-nodejs-dialog-prompt.md
+    - name: Gerenciar o fluxo da conversa
+      href: bot-builder-nodejs-dialog-manage-conversation-flow.md
+    - name: Substituir diálogos
+      href: bot-builder-nodejs-dialog-replace.md
+    - name: Tratar ações do usuário
+      href: bot-builder-nodejs-dialog-actions.md
+- name: Mensagens
+  items:
+    - name: Criar mensagens
+      href: bot-builder-nodejs-message-create.md
+    - name: Enviar e receber anexos
+      href: bot-builder-nodejs-send-receive-attachments.md
+    - name: Enviar mensagens proativas
+      href: bot-builder-nodejs-proactive-messages.md
+    - name: Adicionar cartões ricos mensagens
+      href: bot-builder-nodejs-send-rich-cards.md
+    - name: Adicionar fala a mensagens
+      href: bot-builder-nodejs-text-to-speech.md
+    - name: Adicionar dicas de entrada às mensagens
+      href: bot-builder-nodejs-send-input-hints.md
+    - name: Adicionar ações sugeridas a mensagens
+      href: bot-builder-nodejs-send-suggested-actions.md
+    - name: Enviar um indicador de digitação
+      href: bot-builder-nodejs-send-typing-indicator.md
+    - name: Interceptar mensagens
+      href: bot-builder-nodejs-intercept-messages.md
+- name: Canais
+  items:
+    - name: Criar uma habilidade da Cortana
+      href: bot-builder-nodejs-cortana-skill.md
+    - name: Realizar chamadas do Skype
+      href: bot-builder-nodejs-conduct-audio-calls.md
+- name: Dados de estado
+  items:
+    - name: Gerenciar dados de estado
+      href: bot-builder-nodejs-state.md
+    - name: Gerenciar dados de estado com o Cosmos DB
+      href: bot-builder-nodejs-state-azure-cosmosdb.md
+    - name: Gerenciar dados de estado com o armazenamento de tabela
+      href: bot-builder-nodejs-state-azure-table-storage.md
+- name: Reconhecer a intenção do conteúdo da mensagem
+  href: bot-builder-nodejs-recognize-intent-messages.md
+- name: Reconhecer intenções com o LUIS
+  href: bot-builder-nodejs-recognize-intent-luis.md
+- name: Manipular eventos de usuário e de conversa
+  href: bot-builder-nodejs-handle-conversation-events.md
+- name: Suporte à localização
+  href: bot-builder-nodejs-localization.md
+- name: Usar mecanismo de backchannel
+  href: bot-builder-nodejs-backchannel.md
+- name: Solicitar pagamento
+  href: bot-builder-nodejs-request-payment.md
+- name: Adicionar o Azure Search
+  href: bot-builder-nodejs-search-azure.md
