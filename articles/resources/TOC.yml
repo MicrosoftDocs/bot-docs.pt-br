@@ -1,0 +1,68 @@
+- name: Obter suporte
+  href: ../bot-service-resources-links-help.md
+- name: Chaves do App Insights
+  href: ../bot-service-resources-app-insights-keys.md
+- name: Conformidade do Serviço de Bot
+  href: ../bot-service-compliance.md
+- name: Criptografia do Serviço de Bot
+  href: ../bot-service-encryption.md
+- name: Diretrizes de revisão de bot
+  href: ../bot-service-review-guidelines.md
+- name: Referência do canal
+  href: ../bot-service-channels-reference.md
+- name: Guia de identificadores
+  href: ../bot-service-resources-identifiers-guide.md
+- name: Implementar uma habilidade para Power Virtual Agents
+  href: ../v4sdk/skill-pva.md
+- name: Solicitações de agente do usuário
+  href: ../bot-service-resources-user-agent.md
+- name: Perguntas frequentes
+  items:
+    - name: Índice
+      href: ../bot-service-resources-bot-framework-faq.md
+    - name: Disponibilidade
+      href: ../bot-service-resources-faq-availability.md
+    - name: Geral
+      href: ../bot-service-resources-faq-general.md
+    - name: Ecossistema
+      href: ../bot-service-resources-faq-ecosystem.md
+    - name: Segurança
+      href: ../bot-service-resources-faq-security.md
+    - name: Azure
+      href: ../bot-service-resources-faq-azure.md
+- name: Solucionar problemas
+  items:
+    - name: Índice
+      href: ../bot-service-troubleshoot-index.md
+    - name: Geral
+      href: ../bot-service-troubleshoot-general-problems.md
+    - name: Configuração
+      href: ../bot-service-troubleshoot-bot-configuration.md
+    - name: Erros HTTP 500
+      href: ../bot-service-troubleshoot-500-errors.md
+    - name: Autenticação
+      href: ../bot-service-troubleshoot-authentication-problems.md
+- name: Esquemas do Bot Framework
+  items:
+    - name: Esquema da atividade
+      href: 'https://aka.ms/botSpecs-activitySchema'
+    - name: Esquema de cartão
+      href: 'https://aka.ms/botSpecs-cardSchema'
+    - name: Esquema da transcrição
+      href: 'https://aka.ms/botSpecs-transcripts'
+- name: Assistente Virtual
+  items:
+    - name: Visão geral
+      href: ../v4sdk/bot-builder-virtual-assistant-introduction.md
+    - name: Introdução ao modelo
+      href: ../v4sdk/bot-builder-virtual-assistant-template.md
+    - name: Habilidades do Assistente Virtual
+      href: ../v4sdk/bot-builder-skills-overview.md
+- name: WebChat
+  items:
+    - name: Visão geral
+      href: ../v4sdk/bot-builder-webchat-overview.md
+    - name: Personalização
+      href: ../v4sdk/bot-builder-webchat-customization.md
+    - name: Adicionar logon único ao Webchat
+      href: ../v4sdk/bot-builder-webchat-sso.md
