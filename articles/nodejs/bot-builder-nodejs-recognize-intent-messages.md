@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: cab45fa2eca7fad94ce8a66e2a17495a529935c3
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 80ffcd2610b10be3d507197a49f7e9f185f4ad69
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75790679"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824736"
 ---
-# <a name="recognize-user-intent-from-message-content"></a>Reconhecer a intenção do usuário do conteúdo da mensagem
+# <a name="recognize-user-intent-from-message-content-in-the-v3-javascript-sdk"></a>Reconhecer a intenção do conteúdo da mensagem no SDK do JavaScript v3
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

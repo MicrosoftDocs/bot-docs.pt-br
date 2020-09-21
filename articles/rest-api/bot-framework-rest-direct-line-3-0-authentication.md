@@ -7,14 +7,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/22/2019
-ms.openlocfilehash: 41ba224896454a1b0d736149f31ed4ae88dc6911
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 43f5460bd8a0d649f41b8d2b537279f144f1ee03
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89361789"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824436"
 ---
-# <a name="authentication"></a>Autenticação
+# <a name="authentication-in-direct-line-api-30"></a>Autenticação na API de linha direta 3,0
 
 Um cliente pode autenticar solicitações para a API de Linha Direta 3.0 usando um **segredo** que você [obtém da página de configuração de canal de Linha Direta](../bot-service-channel-connect-directline.md) no Portal Bot Framework ou usando um  **token** obtido em runtime. O segredo ou o token deve ser especificado no cabeçalho `Authorization` de cada solicitação, usando este formato:
 
@@ -78,7 +78,7 @@ O conteúdo da solicitação, que inclui os parâmetros de token, é opcional ma
 }
 ```
 
-| Parâmetro | Tipo | Descrição |
+| Parâmetro | Type | Descrição |
 | :--- | :--- | :--- |
 | `user.id` | string | Opcional. ID de usuário específica do canal para codificação dentro do token. Para um usuário do Direct Line, isso deve começar com `dl_`. Você pode criar uma ID de usuário exclusiva para cada conversa, e para uma melhor segurança, deve tornar essa ID indecifrável. |
 | `user.name` | string | Opcional. O nome de exibição amigável do usuário a ser codificado dentro do token. |

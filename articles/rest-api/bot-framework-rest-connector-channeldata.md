@@ -7,14 +7,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 4716ff913940b09fa24f199492de9e19cf009b71
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 9f735a75a3bb9758b119efa6ceb749325422f0b3
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75790006"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824556"
 ---
-# <a name="implement-channel-specific-functionality"></a>Implementar a funcionalidade específica do canal
+# <a name="implement-channel-specific-functionality-with-the-bot-connector-api"></a>Implementar a funcionalidade específica do canal com a API do conector do bot
 
 Alguns canais fornecem recursos que não podem ser implementados apenas com o uso de [texto e anexos da mensagem](bot-framework-rest-connector-create-messages.md). Para implementar funcionalidades específicas do canal, passe metadados nativos para um canal na propriedade `channelData` do objeto [Activity[]]. Por exemplo, o bot pode usar a propriedade `channelData` para instruir o Telegram a enviar um adesivo ou para instruir o Office 365 a enviar um email.
 

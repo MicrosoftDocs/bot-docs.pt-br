@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 02/19/2019
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: ebad14abfdef2e274562b17ca1945d709a2c8d54
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 41a6db69c31f125de29dbfd2dc4463fbc974d247
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75790381"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824676"
 ---
-# <a name="add-suggested-actions-to-messages"></a>Adicionar ações sugeridas a mensagens
+# <a name="add-suggested-actions-to-messages-in-the-v3-javascript-sdk"></a>Adicionar ações sugeridas a mensagens no SDK do JavaScript v3
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

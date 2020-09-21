@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 872995a6e7a5c44987aefbda2865293037780437
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: a95c4bb47ca75f9f617ce52fa2021cccc92b0fea
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360269"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824336"
 ---
 # <a name="implement-custom-storage-for-your-bot"></a>Implementar um armazenamento personalizado para seu bot
 
@@ -22,7 +22,7 @@ ms.locfileid: "89360269"
 
 As interações do bot se enquadram em três áreas: primeiro, o intercâmbio de atividades com o Serviço de Bot do Azure; segundo, o carregamento e salvamento do diálogo de estado com um Repositório e, por fim, qualquer outro serviço de back-end que o bot precise para trabalhar e concluir seu trabalho.
 
-![diagrama de expansão](../media/scale-out/scale-out-interaction.png)
+![diagrama de interação do scale out](../media/scale-out/scale-out-interaction.png)
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -40,7 +40,7 @@ Especificamente, a estrutura não dita a relação entre o intercâmbio de ativi
 
 Em primeiro lugar, vamos examinar a implementação padrão que é fornecida como parte dos pacotes de estrutura, conforme mostrado pelo seguinte diagrama de sequência:
 
-![diagrama de expansão](../media/scale-out/scale-out-default.png)
+![diagrama padrão de scale out](../media/scale-out/scale-out-default.png)
 
 Ao receber uma Atividade, o bot carrega o estado correspondente para esta conversa. Em seguida, ele executa a lógica de diálogo com esse estado e a atividade que acabou de chegar. No processo de executar o diálogo, uma ou mais atividades de saída são criadas e enviadas imediatamente. Quando o processamento do diálogo estiver concluído, o bot salva o estado atualizado, substituindo o estado antigo por novos.
 
@@ -57,7 +57,7 @@ A solução é apresentar algum bloqueio em torno do estado. O estilo específic
 
 Vamos usar um mecanismo HTTP padrão com base no cabeçalho de marca da entidade, (ETag). Entender esse mecanismo é crucial para entender o código a seguir. O diagrama a seguir ilustra a sequência.
 
-![diagrama de expansão](../media/scale-out/scale-out-precondition-failed.png)
+![diagrama de falha de pré-condição de expansão](../media/scale-out/scale-out-precondition-failed.png)
 
 O diagrama ilustra o caso de dois clientes que estão executando uma atualização para algum recurso. Quando um cliente emite uma solicitação GET e um recurso é retornado do servidor, ela é acompanhada por um cabeçalho ETag. O cabeçalho ETag é um valor opaco que representa o estado do recurso. Se um recurso for alterado, a ETag será atualizada. Quando o cliente tiver feito sua atualização para o estado, ele lança-a (POST) novamente para o servidor. Fazendo esta solicitação, o cliente anexa o valor de ETag que tinha recebido anteriormente em um cabeçalho de pré-condição If-Match. Se esta ETag não corresponde ao valor, a verificação do servidor retornado pela última vez (em qualquer resposta, para qualquer cliente) falha com uma Falha de Pré-condição 412. Esta falha é um indicador para o cliente que fez a solicitação POST de que o recurso foi atualizado. Ao ver esta falha, o comportamento típico de um cliente será obter (GET) o recurso novamente, aplicar a atualização desejada e lançar (POST) novamente o recurso. O segundo POST será bem-sucedido, pressupondo, é claro, que nenhum outro cliente atualizou o recurso e, caso isso tenha acontecido, o cliente simplesmente terá que tentar novamente.
 
@@ -72,11 +72,11 @@ Afinal de contas, a atividade normalmente se resume em transportar uma mensagem 
 
 O mais importante que queremos evitar com o envio de atividades é enviá-las várias vezes. O problema que temos é que o mecanismo de bloqueio otimista exige que executemos novamente nossa lógica, possivelmente, várias vezes. A solução é simples: devemos armazenar em buffer as atividades do diálogo até termos certeza de que não vamos executar a lógica novamente. Ou seja, até termos uma operação Salvar bem-sucedida. Estamos procurando um fluxo que se parece com o seguinte:
 
-![diagrama de expansão](../media/scale-out/scale-out-buffer.png)
+![diagrama de buffer de expansão](../media/scale-out/scale-out-buffer.png)
 
 Supondo que podemos criar um loop de repetição em torno da execução do diálogo, obtemos o seguinte comportamento quando há uma falha na pré-condição na operação Salvar:
 
-![diagrama de expansão](../media/scale-out/scale-out-save.png)
+![salvar diagrama de escala](../media/scale-out/scale-out-save.png)
 
 Aplicando esse mecanismo e revisitando nosso exemplo anterior, nunca deveríamos ver uma confirmação positiva errônea de um recheio de pizza sendo adicionado a um pedido. Na verdade, embora tenhamos expandido nossa implantação por vários computadores, serializamos de forma eficaz nossas atualizações de estado com o esquema de bloqueio otimista. Em nosso pedido de pizza, a confirmação de um item adicional agora pode até mesmo ser gravado para refletir o estado completo com precisão. Por exemplo, se o usuário digita imediatamente "queijo" e, em seguida, antes que o bot tenha tido a chance de responder "cogumelo", as duas respostas agora podem ser "pizza com queijo" e então "pizza com queijo e cogumelo".
 
@@ -86,7 +86,10 @@ Juntando tudo isso, em nossa nova solução de armazenamento personalizado, vamo
 
 ## <a name="implementing-etag-support"></a>Implementação do suporte de ETag
 
-Para dar suporte a testes de unidade começamos definindo uma interface para o nosso novo repositório com o suporte de ETag. Ter a interface significa que podemos escrever duas versões, uma para os testes de unidade que são executados na memória, sem a necessidade de usar a rede, e outra para a produção. A interface tornará muito fácil aproveitar os mecanismos de injeção de dependência que temos no ASP.NET.
+Começamos definindo uma interface para nossa nova loja com suporte a ETag.
+A interface tornará muito fácil aproveitar os mecanismos de injeção de dependência que temos no ASP.NET.
+Ter a interface significa que podemos implementar uma versão para produção.
+Também poderíamos implementar uma versão para testes de unidade que é executada na memória sem a necessidade de atingir a rede.
 
 A interface consiste nos métodos Load e Save. Ambos usam a chave que usaremos para o estado. Load retornará os dados e a ETag associada. E Save os utilizará. Além disso, Save retornará o bool. Esse bool indicará se a ETag é correspondente e se o Save foi bem-sucedido. O objetivo não é ser um indicador de erro geral, mas um indicador específico de falha de pré-condição, que podemos modelar como um código de retorno em vez de uma exceção, porque escreveremos a lógica de fluxo de controle em torno dele na forma do nosso loop de repetição.
 

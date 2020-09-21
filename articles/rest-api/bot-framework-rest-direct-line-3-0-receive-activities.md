@@ -7,14 +7,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/13/2019
-ms.openlocfilehash: db6e1b93ad4bc0822919a2a41202b1f522a6d1fc
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 8ff3b3265a4cc9fe840705df190e79bb70afb055
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89361739"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824416"
 ---
-# <a name="receive-activities-from-the-bot"></a>Receber atividades do bot
+# <a name="receive-activities-from-the-bot-in-direct-line-api-30"></a>Receber atividades do bot na API de linha direta 3,0
 
 Usando o protocolo da Linha Direta 3.0, os clientes podem receber atividades pelo stream `WebSocket` ou recuperar as atividades emitindo solicitações `HTTP GET`.
 

@@ -7,14 +7,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: b1465ed477f3545c8c4c893e62e6ebaa6417c186
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 6f214b0b903f5c39437efe760b0c953e9ed9cb8a
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89361769"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824426"
 ---
-# <a name="end-a-conversation"></a>Terminar uma conversa
+# <a name="end-a-conversation-in-direct-line-api-30"></a>Encerrar uma conversa na API de linha direta 3,0
 
 A [atividade](https://aka.ms/botSpecs-activitySchema) **endOfConversation** significa que o canal ou o bot encerrou a conversa. 
 

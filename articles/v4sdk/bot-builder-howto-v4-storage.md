@@ -2,25 +2,25 @@
 title: Gravar diretamente no armazenamento – Serviço de Bot
 description: Saiba como usar o SDK do bot Framework para .NET para gravar dados de bot diretamente em vários tipos de armazenamento persistente sem usar um Gerenciador de estado.
 keywords: armazenamento, ler e gravar, armazenamento de memória, eTag
-author: DeniseMak
+author: JonathanFingold
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 11/01/2019
+ms.date: 08/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: aa634391e9fb81ba77ad09fd6ca8535e9baf3f1f
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: b90a61c94817910a9bbad8054178ffb3c4db19bc
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360169"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824276"
 ---
 # <a name="write-directly-to-storage"></a>Gravar diretamente no armazenamento
 
 [!INCLUDE[applies-to](../includes/applies-to.md)]
 
-Você pode ler e gravar diretamente em seu objeto de armazenamento sem usar middleware ou objeto de contexto. Isso pode ser apropriado para dados que seu bot usa para preservar a conversa ou dados originados de uma fonte fora do fluxo de conversa do bot. Nesse modelo de armazenamento de dados, os dados são lidos diretamente do armazenamento em vez de usar um gerenciador de estado. Os exemplos de código neste artigo mostram como você lê e grava dados no armazenamento usando o **Armazenamento de Memória**, o **Cosmos DB**, o **Armazenamento de Blobs**, o **Armazenamento de Tabela do Azure** e o **Armazenamento de Transcrições do Blob do Azure**.
+Você pode ler e gravar diretamente em seu objeto de armazenamento sem usar middleware ou objeto de contexto. Isso pode ser apropriado para dados que seu bot usa para preservar a conversa ou dados originados de uma fonte fora do fluxo de conversa do bot. Nesse modelo de armazenamento de dados, os dados são lidos diretamente do armazenamento em vez de usar um gerenciador de estado. Os exemplos de código neste artigo mostram como ler e gravar dados no armazenamento usando **memória**, **Cosmos DB**, **blob do Azure**e armazenamento de **transcrição de blob do Azure** .
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -32,11 +32,11 @@ Você pode ler e gravar diretamente em seu objeto de armazenamento sem usar midd
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
-O código de exemplo neste artigo começa com a estrutura de um bot de eco básico e estende a funcionalidade dele, adicionando códigos (fornecidos abaixo). Esse código estendido cria uma lista para preservar as entradas do usuário conforme elas são recebidas. A cada turno, a lista completa de entradas do usuário é ecoada de volta para o usuário. A estrutura de dados que contém essa lista de entradas é então salva no armazenamento ao final desse turno. Vários tipos de armazenamento são explorados à medida que outras funcionalidades são adicionadas a este código de exemplo.
+O código de exemplo neste artigo começa com a estrutura de um bot de eco básico e estende a funcionalidade dele, adicionando códigos (fornecidos abaixo). Esse código estendido cria uma lista para preservar as entradas do usuário conforme elas são recebidas. A cada turno, a lista completa de entradas do usuário é ecoada de volta para o usuário. A estrutura de dados que contém essa lista de entradas é então salva no armazenamento ao final desse turno. Vários tipos de armazenamento são explorados conforme a funcionalidade adicional é adicionada a este código de exemplo.
 
 ## <a name="memory-storage"></a>Armazenamento de memória
 
-O SDK do Bot Framework permite que você armazene entradas do usuário usando o armazenamento na memória. O armazenamento de memória é usado somente para testes e não deve ser usado na produção. O armazenamento na memória é volátil e temporário pois os dados são apagados cada vez que o bot é reiniciado. Os tipos de armazenamento persistentes, como o armazenamento de banco de dados, são melhores para bots de produção. Defina o armazenamento como **Cosmos DB**, **Armazenamento de Blobs** ou [**Armazenamento de Tabela do Azure**](~/nodejs/bot-builder-nodejs-state-azure-table-storage.md) antes de publicar seu bot.
+O SDK do Bot Framework permite que você armazene entradas do usuário usando o armazenamento na memória. O armazenamento de memória é usado somente para testes e não deve ser usado na produção. O armazenamento na memória é volátil e temporário pois os dados são apagados cada vez que o bot é reiniciado. Os tipos de armazenamento persistentes, como o armazenamento de banco de dados, são melhores para bots de produção. Defina o armazenamento como **Cosmos DB**, **Armazenamento de Blobs** ou **Armazenamento de Tabela do Azure** antes de publicar seu bot.
 
 ## <a name="build-a-basic-bot"></a>Crie um bot básico
 
@@ -82,10 +82,11 @@ public class EchoBot : ActivityHandler
    {
       // preserve user input.
       var utterance = turnContext.Activity.Text;
-      // make empty local logitems list.
+
+      // Make empty local log-items list.
       UtteranceLog logItems = null;
 
-      // see if there are previous messages saved in storage.
+      // See if there are previous messages saved in storage.
       try
       {
          string[] utteranceList = { "UtteranceLog" };
@@ -93,23 +94,24 @@ public class EchoBot : ActivityHandler
       }
       catch
       {
-         // Inform the user an error occured.
+         // Inform the user an error occurred.
          await turnContext.SendActivityAsync("Sorry, something went wrong reading your stored messages!");
       }
 
       // If no stored messages were found, create and store a new entry.
       if (logItems is null)
       {
-         // add the current utterance to a new object.
+         // Add the current utterance to a new object.
          logItems = new UtteranceLog();
          logItems.UtteranceList.Add(utterance);
-         // set initial turn counter to 1.
+
+         // Set initial turn counter to 1.
          logItems.TurnNumber++;
 
          // Show user new user message.
          await turnContext.SendActivityAsync($"{logItems.TurnNumber}: The list is now: {string.Join(", ", logItems.UtteranceList)}");
 
-         // Create Dictionary object to hold received user messages.
+         // Create dictionary object to hold received user messages.
          var changes = new Dictionary<string, object>();
          {
             changes.Add("UtteranceLog", logItems);
@@ -121,11 +123,11 @@ public class EchoBot : ActivityHandler
          }
          catch
          {
-            // Inform the user an error occured.
+            // Inform the user an error occurred.
             await turnContext.SendActivityAsync("Sorry, something went wrong storing your message!");
          }
       }
-      // Else, our Storage already contained saved user messages, add new one to the list.
+      // Else, our storage already contained saved user messages, add new one to the list.
       else
       {
          // add new message to list of messages to display.
@@ -149,7 +151,7 @@ public class EchoBot : ActivityHandler
          }
          catch
          {
-            // Inform the user an error occured.
+            // Inform the user an error occurred.
             await turnContext.SendActivityAsync("Sorry, something went wrong storing your message!");
          }
       }
@@ -328,7 +330,7 @@ Envie uma mensagem ao bot. Ele listará as mensagens recebidas.
 
 Agora que você usou o armazenamento de memória, vamos atualizar o código para usar o Azure Cosmos DB. O Cosmos DB é o banco de dados multimodelo globalmente distribuído da Microsoft. O Azure Cosmos DB permite que você dimensione a taxa de transferência e o armazenamento de maneira elástica e independente em qualquer número de regiões geográficas do Azure. Ele oferece garantias de taxa de transferência, disponibilidade, latência e consistência com contratos de nível de serviço (SLAs) abrangentes.
 
-### <a name="set-up"></a>Configuração
+### <a name="set-up-a-cosmos-db-resource"></a>Configurar um recurso de Cosmos DB
 
 Para usar o Cosmos DB em seu bot, você precisará criar um recurso de banco de dados antes de mexer no código. Para obter uma descrição detalhada da criação do banco de dados Cosmos DB e do aplicativo, acesse a documentação para [dotnet do Cosmos DB](https://aka.ms/Bot-framework-create-dotnet-cosmosdb) ou [nodejs do Cosmos DB](https://aka.ms/Bot-framework-create-nodejs-cosmosdb).
 
@@ -355,11 +357,11 @@ A criação da conta leva alguns minutos. Aguarde até que o portal exiba a pág
 
 1. Navegue até a página **Data Explorer** em sua conta do Cosmos DB recém-criada e, em seguida, escolha **Criar Banco de Dados** na caixa suspensa ao lado do botão **Criar Contêiner**. Um painel será aberto no lado direito da janela, no qual você poderá inserir os detalhes do novo banco de dados.
 
-    ![Cosmos DB](./media/create-cosmosdb-database-resource.png)
+    ![Criar imagem de recurso do cosmosdb dado](./media/create-cosmosdb-database-resource.png)
 
 2. Insira uma ID para o novo banco de dados e, opcionalmente, defina a taxa de transferência (você poderá alterar isso mais tarde) e, por fim, clique em **OK** para criar seu banco de dados. Ao configurar seu bot, anote essa ID de banco de dados para uso posterior.
 
-    ![Cosmos DB](./media/create-cosmosdb-database-resource-details.png)
+    ![Imagem de detalhes do recurso de banco de dados Cosmos cosmosdb](./media/create-cosmosdb-database-resource-details.png)
 
 3. Agora que criou uma conta do Cosmos DB e um banco de dados, você precisa copiar alguns dos valores para integrar seu novo banco de dados ao bot.  Para recuperá-los, navegue até a guia **Chaves** na seção de configurações do banco de dados da sua conta do Cosmos DB.  Dessa página, você precisará do ponto de extremidade do Cosmos DB (**URI**) e da sua chave de autorização (**CHAVE PRIMÁRIA**).
 
@@ -371,7 +373,7 @@ Agora você já deve ter uma conta Cosmos DB que contenha um banco de dados e te
 - Chave de autorização
 - ID do banco de dados
 
-### <a name="add-configuration-information"></a>Adicionar informações de configuração
+### <a name="add-cosmos-db-configuration-information"></a>Adicionar informações de configuração de Cosmos DB
 
 Nossos dados de configuração para adicionar o armazenamento do Cosmos DB são curtos e simples.  Use os detalhes que você anotou na parte anterior deste artigo para definir o ponto de extremidade, a chave de autorização e a ID do banco de dados.  Por fim, você precisa escolher um nome apropriado para o contêiner que será criado no banco de dados para armazenar o estado do bot. No exemplo abaixo, o contêiner será chamado de "bot-storage".
 
@@ -419,7 +421,7 @@ COSMOS_DB_CONTAINER_ID="<your-container-id>"
 
 ---
 
-#### <a name="installing-packages"></a>Instalar pacotes
+#### <a name="installing-cosmos-db-packages"></a>Instalando pacotes de Cosmos DB
 
 Verifique se você tem os pacotes necessários para o Cosmos DB.
 
@@ -432,7 +434,9 @@ Install-Package Microsoft.Bot.Builder.Azure
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Você pode adicionar referências ao botbuilder-azure em seu projeto por meio do npm.
->**Observação**: esse pacote npm se baseia em uma instalação do Python existente no seu computador de desenvolvimento. Caso não tenha o Python instalado, você pode encontrar os recursos de instalação no seu computador em [python.org](https://www.python.org/downloads/).
+> [!NOTE]
+> Este pacote NPM depende de uma instalação do Python existente em seu computador de desenvolvimento. Caso não tenha o Python instalado, você pode encontrar os recursos de instalação no seu computador em [python.org](https://www.python.org/downloads/).
+
 ```powershell
 npm install --save botbuilder-azure
 ```
@@ -453,7 +457,7 @@ pip install botbuilder-azure
 
 ---
 
-### <a name="implementation"></a>Implementação
+### <a name="cosmos-db-implementation"></a>Implementação de Cosmos DB
 
 > [!NOTE]
 > A versão 4.6 introduziu um novo provedor de armazenamento do Cosmos DB, a classe de _armazenamento particionado do Cosmos DB_. A classe de _armazenamento do Cosmos DB_ original foi preterida. Contêineres criados com _Cosmos DB armazenamento_ podem ser usados com _Cosmos DB armazenamento particionado_. Para obter mais informações, leia [Particionamento no Azure Cosmos DB](https://aka.ms/azure-cosmosdb-partitioning-overview).
@@ -547,23 +551,23 @@ def __init__(self):
 
 ---
 
-## <a name="start-your-bot"></a>Inicie seu bot
+## <a name="start-your-cosmos-db-bot"></a>Iniciar o bot de Cosmos DB
 
 Execute o bot localmente.
 
-## <a name="test-your-bot-with-bot-framework-emulator"></a>Testar o bot usando o Bot Framework Emulator
+## <a name="test-your-cosmos-db-bot-with-bot-framework-emulator"></a>Testar o bot de Cosmos DB com o emulador do bot Framework
 
 Agora inicie o Bot Framework Emulator e conecte-se ao seu bot:
 
 1. Clique no link **Criar nova configuração de bot** na guia “Boas-vindas” do emulador.
 2. Preencha os campos para se conectar ao seu bot considerando as informações na página da Web exibida ao iniciar o bot.
 
-## <a name="interact-with-your-bot"></a>Interagir com o bot
+## <a name="interact-with-your-cosmos-db-bot"></a>Interagir com o bot de Cosmos DB
 
 Envie uma mensagem ao bot e o bot listará as mensagens recebidas por ele.
 ![Emulador em execução](./media/emulator-direct-storage-test.png)
 
-### <a name="view-your-data"></a>Ver seus dados
+### <a name="view-your-cosmos-db-data"></a>Exibir seus dados de Cosmos DB
 
 Depois de executar o bot e salvar suas informações, poderemos exibir os dados armazenados no portal do Azure na guia **Data Explorer**.
 
@@ -601,7 +605,7 @@ Depois de criar sua conta de Armazenamento de Blobs, abra esta conta
 3. Clique com botão direito do mouse em CONTÊINERES DE BLOBS e selecione _Criar contêiner de blobs_.
 4. Adicione um nome. Você usará esse nome para o valor "your-blob-storage-container-name" para fornecer acesso à sua conta de Armazenamento de Blobs.
 
-#### <a name="add-configuration-information"></a>Adicionar informações de configuração
+#### <a name="add-blob-storage-configuration-information"></a>Adicionar informações de configuração de armazenamento de BLOBs
 
 Localize as chaves do Armazenamento de Blobs necessárias para configurá-lo para o bot, conforme mostrado acima:
 
@@ -611,14 +615,14 @@ Localize as chaves do Armazenamento de Blobs necessárias para configurá-lo par
 
 Você usará a chave1 _Cadeia de conexão_ como o valor "your-blob-storage-account-string" para fornecer acesso à sua conta de Armazenamento de Blobs.
 
-#### <a name="installing-packages"></a>Instalar pacotes
+#### <a name="installing-blob-storage-packages"></a>Instalando pacotes de armazenamento de BLOBs
 
-Caso ainda não os tenha instalado para usar o Cosmos DB, instale os pacotes a seguir.
+Se não tiver sido instalado anteriormente, instale os pacotes a seguir.
 
 ### <a name="c"></a>[C#](#tab/csharp)
 
 ```powershell
-Install-Package Microsoft.Bot.Builder.Azure
+Install-Package Microsoft.Bot.Builder.Azure.Blobs
 ```
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
@@ -646,14 +650,19 @@ pip install botbuilder-azure
 
 ---
 
-### <a name="implementation"></a>Implementação
+### <a name="blob-storage-implementation"></a>Implementação do armazenamento de BLOBs
+
+O _armazenamento de BLOBs_ é projetado para armazenar o estado do bot.
 
 ### <a name="c"></a>[C#](#tab/csharp)
+
+> [!NOTE]
+> A partir da versão 4,10, `Microsoft.Bot.Builder.Azure.AzureBlobStorage` é preterida. Use o novo `Microsoft.Bot.Builder.Azure.Blobs.BlobsStorage` em seu lugar.
 
 **EchoBot.cs**
 
 ```csharp
-using Microsoft.Bot.Builder.Azure;
+using Microsoft.Bot.Builder.Azure.Blobs;
 ```
 
 Atualize a linha de código que aponta "_myStorage_" para a conta do Armazenamento de Blobs existente.
@@ -661,7 +670,7 @@ Atualize a linha de código que aponta "_myStorage_" para a conta do Armazenamen
 **EchoBot.cs**
 
 ```csharp
-private static readonly AzureBlobStorage _myStorage = new AzureBlobStorage("<your-blob-storage-account-string>", "<your-blob-storage-container-name>");
+private static readonly BlobsStorage _myStorage = new BlobsStorage("<your-azure-storage-connection-string>", "<your-blob-storage-container-name>");
 ```
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
@@ -731,24 +740,24 @@ def __init__(self):
 
 Quando o armazenamento estiver definido para apontar para a conta do Armazenamento de Blobs, o código do bot armazenará e recuperará dados do Armazenamento de Blobs.
 
-## <a name="start-your-bot"></a>Inicie seu bot
+## <a name="start-your-blob-storage-bot"></a>Iniciar o bot do armazenamento de BLOBs
 
 Execute o bot localmente.
 
-## <a name="start-the-emulator-and-connect-your-bot"></a>Iniciar o emulador e conectar seu bot
+## <a name="start-the-emulator-and-connect-your-blob-storage-bot"></a>Iniciar o emulador e conectar o bot do armazenamento de BLOBs
 
 Em seguida, inicie o emulador e, em seguida, conecte-se ao seu bot no emulador:
 
 1. Clique no link **Criar nova configuração de bot** na guia “Boas-vindas” do emulador.
 2. Preencha os campos para se conectar ao seu bot considerando as informações na página da Web exibida ao iniciar o bot.
 
-## <a name="interact-with-your-bot"></a>Interagir com o bot
+## <a name="interact-with-your-blob-storage-bot"></a>Interagir com o bot do armazenamento de BLOBs
 
 Envie uma mensagem ao bot, e ele listará as mensagens recebidas.
 
 ![Bot de armazenamento de teste do emulador](./media/emulator-direct-storage-test.png)
 
-### <a name="view-your-data"></a>Ver seus dados
+### <a name="view-your-blob-storage-data"></a>Exibir seus dados de armazenamento de BLOBs
 
 Depois de executar o bot e salvar suas informações, poderemos exibi-lo na guia **Gerenciador de Armazenamento** no portal do Azure.
 
@@ -756,9 +765,11 @@ Depois de executar o bot e salvar suas informações, poderemos exibi-lo na guia
 
 O armazenamento de transcrições do Blob do Azure fornece uma opção de armazenamento especializado que permite salvar e recuperar facilmente conversas do usuário como transcrições gravadas. O armazenamento de transcrições de blob do Azure é bastante útil para capturar respostas do usuário automaticamente e examiná-las durante a depuração de desempenho do seu bot.
 
-**OBSERVAÇÃO: Atualmente, o JavaScript e o Python não dão suporte a AzureBlobTranscriptStore.  As instruções a seguir são referentes apenas ao C#.**
+> [!NOTE]
+> No momento, o Python não oferece suporte ao _armazenamento de transcrição de blob do Azure_.
+> Embora o JavaScript dê suporte ao armazenamento de transcrição de BLOB, as instruções a seguir são apenas para C#.
 
-### <a name="set-up"></a>Configuração
+### <a name="set-up-a-blob-transcript-storage-container"></a>Configurar um contêiner de armazenamento de transcrição de BLOB
 
 O armazenamento de transcrições do Blob do Azure pode usar a mesma conta de Armazenamento de Blobs criada seguindo as etapas detalhadas nas seções "_Criar sua conta de Armazenamento de Blobs_" e "_Adicionar informações de configuração_" acima. Agora, adicionamos um contêiner para manter nossas transcrições.
 
@@ -769,20 +780,25 @@ O armazenamento de transcrições do Blob do Azure pode usar a mesma conta de Ar
 1. Clique com botão direito do mouse em _CONTÊINERES DE BLOBS_ e selecione _Criar contêiner de blobs_.
 1. Insira um nome para o contêiner de transcrição e selecione _OK_. (Nomeamos como mybottranscripts)
 
-### <a name="implementation"></a>Implementação
+### <a name="blob-transcript-storage-implementation"></a>Implementação de armazenamento de transcrição de BLOB
 
-O código a seguir conecta o ponteiro de armazenamento de transcrição `_myTranscripts` à sua nova conta de armazenamento de transcrições do Blob do Azure. Para criar esse link com um novo nome de contêiner, <your-blob-transcript-container-name>, crie um novo contêiner no Armazenamento de Blobs para manter os arquivos de transcrição.
+O código a seguir conecta o ponteiro de armazenamento de transcrição `_myTranscripts` à sua nova conta de armazenamento de transcrições do Blob do Azure. Para criar esse link com um novo nome de contêiner, \<your-blob-transcript-container-name> , cria um novo contêiner dentro do armazenamento de BLOBs para manter seus arquivos de transcrição.
+
+O _armazenamento de transcrição de blob_ é projetado para armazenar transcrições de bot.
+
+> [!NOTE]
+> A partir da versão 4,10, `Microsoft.Bot.Builder.Azure.AzureBlobTranscriptStore` é preterida. Use o novo `Microsoft.Bot.Builder.Azure.Blobs.BlobsTranscriptStore` em seu lugar.
 
 **echoBot.cs**
 
 ```csharp
-using Microsoft.Bot.Builder.Azure;
+using Microsoft.Bot.Builder.Azure.Blobs;
 
 public class EchoBot : ActivityHandler
 {
    ...
 
-   private readonly AzureBlobTranscriptStore _myTranscripts = new AzureBlobTranscriptStore("<your-blob-transcript-storage-account-string>", "<your-blob-transcript-container-name>");
+   private readonly BlobsTranscriptStore _myTranscripts = new BlobsTranscriptStore("<your-azure-storage-connection-string>", "<your-blob-transcript-container-name>");
 
    ...
 }
@@ -882,14 +898,17 @@ O link a seguir fornece mais informações referentes ao [Armazenamento de trans
 ## <a name="additional-information"></a>Informações adicionais
 
 ### <a name="manage-concurrency-using-etags"></a>Gerenciar simultaneidade usando eTags
+
 Em nosso exemplo de código do bot, definimos a propriedade `eTag` de cada `IStoreItem` como `*`. O membro (marca da entidade) `eTag` do objeto de repositório é usado no Cosmos DB para gerenciar a simultaneidade. `eTag` indica ao banco dados o que fazer caso outra instância do bot altere o objeto no mesmo armazenamento onde o bot está gravando.
 
 <!-- define optimistic concurrency -->
 
 #### <a name="last-write-wins---allow-overwrites"></a>A última gravação prevalece - permite substituições
+
 Um valor da propriedade `eTag` do asterisco (`*`) indica que o último gravador prevalece. Ao criar um novo armazenamento de dados, é possível definir `eTag` de uma propriedade como `*` para indicar que os dados em gravação não foram salvos anteriormente, ou que você deseja que o último gravador substitua qualquer propriedade salva anteriormente. Se a simultaneidade não for um problema para o bot, a definição da propriedade `eTag` como `*` para qualquer dado que você esteja gravando viabilizará as substituições.
 
 #### <a name="maintain-concurrency-and-prevent-overwrites"></a>Manter simultaneidade e evitar substituições
+
 Ao armazenar seus dados no Cosmos DB, use um valor diferente de `*` para `eTag` se quiser impedir o acesso simultâneo a uma propriedade e evitar a substituição de alterações por outra instância do bot. O bot receberá uma resposta de erro com a mensagem `etag conflict key=` ao tentar salvar dados de estado se a `eTag` não tiver o mesmo valor da `eTag` em armazenamento. <!-- To control concurrency of data that is stored using `IStorage`, the BotBuilder SDK checks the entity tag (ETag) for `Storage.Write()` requests. -->
 
 Por padrão, o armazenamento do Cosmos DB verificará a propriedade `eTag` de um objeto de armazenamento quanto à igualdade sempre que um bot gravar esse item e, em seguida, atualizará para um novo valor exclusivo após cada gravação. Se a propriedade `eTag` na gravação não corresponder com `eTag` no armazenamento, isso significa que outro bot ou thread alterou os dados.

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2574082067a5687f442c110227a7defb7f540670
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 124bd1f11b67f0ea5ae0635ad60ae560def3e558
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362219"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824516"
 ---
 # <a name="differences-between-the-v3-and-v4-net-sdk"></a>Diferenças entre o SDK do .NET v3 e v4
 
@@ -48,7 +48,7 @@ O manipulador de turnos pode receber vários tipos de atividades. Em geral, voc�
 
 Ao manipular uma mensagem, use o contexto do turno para obter informações sobre a atividade de entrada e enviar as atividades para o usuário:
 
-| | |
+| Tarefa | Processo |
 |-|-|
 | Para obter a atividade de entrada | Obtenha a propriedade `Activity` do contexto do turno. |
 | Para criar e enviar uma atividade para o usuário | Chame o método `SendActivityAsync` do contexto do turno.<br/>Para obter mais informações, confira [enviar e receber uma mensagem de texto][send-messages] e [adicionar mídia às mensagens][send-media]. |
@@ -87,7 +87,7 @@ O estado deve ser configurado como singletons sempre que possível, no **Startup
 Você pode usar a injeção de dependência para acessá-lo sempre que seu bot é criado.
 (No ASP.NET, uma nova instância do seu controlador de mensagem ou bot é criada para cada turno.) Use os acessadores de propriedade de estado para obter e atualizar suas propriedades e use os objetos de gerenciamento de estado para gravar todas as alterações no armazenamento. Com o entendimento de que você deve levar em conta problemas de simultaneidade, aqui está como realizar algumas tarefas comuns.
 
-| | |
+| Tarefa | Processo |
 |-|-|
 | Para criar um acessador de propriedade de estado | Chame `BotState.CreateProperty<T>`.<br/>`BotState` é a classe base abstrata para a conversa, conversa privada e estado do usuário. |
 | Para obter o valor atual de uma propriedade | Chame `IStatePropertyAccessor<T>.GetAsync`.<br/>Se nenhum valor tiver sido definido, o parâmetro de fábrica padrão será usado para gerar um valor. |
@@ -115,7 +115,7 @@ A v3 fornecia uma maneira flexível de implementar diálogos usando a interface 
 
 Agora você tem algumas opções de como definir os diálogos:
 
-| | |
+| Tipo de diálogo | Descrição |
 |:--|:--|
 | Um componente de diálogo, derivado da classe `ComponentDialog` | Permite que você encapsule o código do diálogo sem conflitos de nomenclatura com os contextos externos. Confira [reutilizar os diálogos][reuse-dialogs]. |
 | Um diálogo em cascata, uma instância da classe `WaterfallDialog` | Projetado para funcionar bem com os diálogos de prompt, que solicitam e validam os vários tipos de entrada do usuário. A cascata automatiza a maior parte do processo para você, mas impõe uma determinada forma ao código do diálogo; confira [fluxo de conversa sequencial][sequential-flow]. |

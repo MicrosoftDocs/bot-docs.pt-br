@@ -7,14 +7,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 3c9fa8dbac3d2820b011f5b572b2b9af45828538
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 76f585c522f1b7d967760809c3cf165658441d0a
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89361719"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824386"
 ---
-# <a name="start-a-conversation"></a>Iniciar uma conversa
+# <a name="start-a-conversation-in-direct-line-api-30"></a>Iniciar uma conversa na API de linha direta 3,0
 
 As conversas de linha diretas explicitamente são abertas pelos clientes e podem ser executadas desde que o cliente e o bot participarem e tem credenciais válidas. Enquanto a conversa está aberta, o bot e o cliente podem enviar mensagens. Mais de um cliente pode se conectar a uma determinada conversa e cada cliente pode participar em nome de vários usuários.
 

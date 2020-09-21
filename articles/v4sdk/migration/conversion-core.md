@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: d149b9d340fbc3e26f44f329a6d31a832db5a04b
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: f3202153322c421d538feb53a89dd6ae8dd41b8b
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143975"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90823796"
 ---
 # <a name="migrate-a-net-v3-bot-to-a-net-core-v4-bot"></a>Migrar um bot v3 do .NET para um bot v4 do .NET Core
 
@@ -145,7 +145,7 @@ Todos os nossos diálogos serão derivados de `ComponentDialog`, em vez de imple
 
 Esse bot tem quatro diálogos que precisam ser convertidos:
 
-| | |
+| caixa de diálogo | Descrição |
 |---|---|
 | [RootDialog](#update-the-root-dialog) | Apresenta opções e inicia os outros diálogos. |
 | [InstallAppDialog](#update-the-install-app-dialog) | Manipula as solicitações para instalar um aplicativo em um computador. |
@@ -376,7 +376,8 @@ Precisamos atualizar instruções `using` nas classes de modelo, conforme mostra
 
 1. Em **ResetPassword.cs**, altere-os para isto:
 
-[!code-csharp[Using statements](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Models/ResetPassword.cs?range=4-5)]
+    [!code-csharp[Using statements](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/Models/ResetPassword.cs?range=4-5)]
+
     Além disso, exclua as instruções `using` dentro do namespace.
 
 1. Em **ResetPasswordPrompt.cs**, altere-os para isto:

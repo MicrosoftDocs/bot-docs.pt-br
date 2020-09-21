@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 1f3af516aa119ef8fcb56075ef0f024ecba0cc52
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: b1b4c350f101feb07c4466d7620343705e2cc13c
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75795969"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824126"
 ---
-# <a name="customize-a-form-using-formbuilder"></a>Personalizar um formulário usando FormBuilder
+# <a name="customize-a-form-using-formbuilder-in-the-v3-c-sdk"></a>Personalizar um formulário usando o FormBuilder no SDK do C v3 \#
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

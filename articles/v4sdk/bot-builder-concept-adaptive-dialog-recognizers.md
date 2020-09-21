@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 05/06/2020
-ms.openlocfilehash: 50a0b6b6888bb723bcfd4705e2e192310ea5168e
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: 437236a238b107ecb1d3f7815a7535c18645d5ae
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124176"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824356"
 ---
 # <a name="recognizers-in-adaptive-dialogs"></a>Reconhecedores em diálogos adaptáveis
 
@@ -146,6 +146,8 @@ O LUIS (Serviço Inteligente de Reconhecimento vocal) é um serviço de API base
 
 Para obter informações detalhadas e um exemplo de como criar um reconhecedor LUIS, consulte a seção [Recognizer Luis](../adaptive-dialog/adaptive-dialog-prebuilt-recognizers.md#luis-recognizer) no guia de referência de reconhecedores em caixas de diálogo adaptáveis.
 
+Para obter etapas detalhadas sobre como criar seu aplicativo LUIS e implantar seus modelos do LUIS usando a CLI do bot Framework, consulte [como implantar recursos do Luis usando os comandos da CLI do SDK do bot Framework Luis][how-to-deploy-using-luis-cli].
+
 
 ### <a name="qna-maker-recognizer"></a>Reconhecedor do QnA Maker
 
@@ -202,3 +204,4 @@ Para obter informações detalhadas e um exemplo de como criar um conjunto de re
 [13]:https://qnamaker.ai
 [14]:https://azure.microsoft.com/services/cognitive-services/
 [15]:https://aka.ms/adaptive-cards-overview
+[how-to-deploy-using-luis-cli]: ../v4sdk/bot-builder-howto-bf-cli-deploy-luis.md

@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: f34fd8a868f8de68b016b5f12c6cc1569a46d951
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: f385d349a22df63afbbab26554d52c6eff245d22
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75788883"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824096"
 ---
-# <a name="recognize-intents-and-entities-with-luis"></a>Reconhecer intenções e entidades com o LUIS 
+# <a name="recognize-intents-and-entities-with-luis-in-the-v3-c-sdk"></a>Reconhecer tentativas e entidades com LUIS no SDK do C v3 \#
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

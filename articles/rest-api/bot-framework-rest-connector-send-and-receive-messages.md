@@ -7,14 +7,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 7e20c51a3aab119cd5284c63806ac3b5a8ea97b3
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 3f0bd032b9c3b734b9340c2840e778698c4f017a
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89361859"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824496"
 ---
-# <a name="send-and-receive-messages"></a>Enviar e receber mensagens
+# <a name="send-and-receive-messages-with-the-bot-connector-api"></a>Enviar e receber mensagens com a API do conector de bot
 
 O serviço Bot Connector permite que um bot se comunique em vários canais, como Email, Slack e muito mais. Ele facilita a comunicação entre o bot e o usuário por [atividades](https://aka.ms/botSpecs-activitySchema) de retransmissão do bot para o canal e do canal para o bot. Cada atividade contém as informações usadas para encaminhar a mensagem para o destino apropriado, juntamente com informações sobre quem criou a mensagem, o contexto e o destinatário da mensagem. Este artigo descreve como usar o serviço Bot Connector para trocar atividades de **mensagem** entre o bot e o usuário em um canal. 
 

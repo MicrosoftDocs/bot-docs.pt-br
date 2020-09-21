@@ -7,14 +7,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 64cb83ada9d67bef3f9de309786656e2f006365d
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: f6eaa16291d4670cb9f7009dc258399949e6be43
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124329"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824566"
 ---
-# <a name="authentication"></a>Autenticação
+# <a name="authentication-with-the-bot-connector-api"></a>Autenticação com a API do conector de bot
 
 O bot comunica-se com o serviço do Bot Connector usando HTTP em um canal seguro (SSL/TLS).
 Quando o bot envia uma solicitação ao serviço do Connector, ele deve incluir informações que o serviço do Connector pode usar para verificar a identidade do bot.

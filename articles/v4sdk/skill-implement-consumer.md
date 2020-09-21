@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 09/01/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: cba3952acab3f950db5fbda1ec0b3a207f76b2ab
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: f42754139197275e82c1f59bcb43cc2d34fe854c
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362359"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824526"
 ---
 # <a name="implement-a-skill-consumer"></a>Implementar um consumidor de skills
 
@@ -24,7 +24,7 @@ Você pode usar skills para estender outro bot.
 Um _skill_ é um bot que pode executar um conjunto de tarefas para outro bot e que usa um manifesto para descrever sua interface.
 Um _bot raiz_ é um bot voltado para o usuário que pode invocar um ou mais skills. Um bot raiz é um tipo de _consumidor de skills_.
 
-- Um consumidor de skills pode usar a validação de declarações para gerenciar quais skills ou usuários podem acessá-lo.
+- Um consumidor de habilidades deve usar a validação de declarações para gerenciar quais habilidades podem acessá-lo.
 - Um consumidor de skills pode usar vários skills.
 - Os desenvolvedores que não têm acesso ao código-fonte do skill podem usar as informações do manifesto do skill para criar um consumidor de skills.
 
@@ -53,15 +53,15 @@ Este artigo se concentra no bot raiz, que inclui a lógica de suporte em seus ob
 
 ### <a name="c"></a>[C#](#tab/cs)
 
-![Diagrama de classe de consumidor de skills](./media/skills-simple-root-cs.png)
+![Diagrama Csharp da classe consumidor de habilidades](./media/skills-simple-root-cs.png)
 
 ### <a name="javascript"></a>[JavaScript](#tab/js)
 
-![Diagrama de classe de consumidor de skills](./media/skills-simple-root-js.png)
+![Diagrama js de classe de consumidor de habilidades](./media/skills-simple-root-js.png)
 
 ### <a name="python"></a>[Python](#tab/python)
 
-![Diagrama de classe de consumidor de skills](./media/skills-simple-root-python-2.png)
+![Diagrama Python da classe consumidor de habilidades](./media/skills-simple-root-python-2.png)
 
 ---
 
@@ -328,6 +328,7 @@ O bot define um ponto de extremidade que encaminha as atividades de skills de en
 ## <a name="service-registration"></a>Registro do serviço
 
 Inclui um objeto de configuração de autenticação com qualquer validação de declarações, além de todos os objetos adicionais.
+Este exemplo usa a mesma lógica de configuração de autenticação para validar atividades de usuários e habilidades.
 
 ### <a name="c"></a>[C#](#tab/cs)
 

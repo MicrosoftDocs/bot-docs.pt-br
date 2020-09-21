@@ -7,14 +7,15 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: ea8c76df736678754db95d7306605f5ef10b6a11
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: cae6d8ee60ed8c7a18a4f12dfa430fd7ed4cfdb8
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75790077"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824586"
 ---
-# <a name="add-suggested-actions-to-messages"></a>Adicionar ações sugeridas a mensagens
+# <a name="add-suggested-actions-to-messages-with-the-bot-connector-api"></a>Adicionar ações sugeridas a mensagens com a API do conector de bot
+
 > [!div class="op_single_selector"]
 > - [.NET](../dotnet/bot-builder-dotnet-add-suggested-actions.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-send-suggested-actions.md)

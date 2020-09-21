@@ -3,18 +3,18 @@ title: Sobre o componente e caixas de diálogo de cascata-serviço bot
 description: Descreve quais componentes, cascata e caixas de diálogo de prompt são e como eles funcionam no SDK do bot Framework.
 keywords: fluxo de conversa, conversa de bot, caixa de diálogo de componente, caixa de diálogo em cascata, caixa de diálogo de prompt, conjunto
 author: JonathanFingold
-ms.author: botcc
+ms.author: v-jofin
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/03/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 6443f39c79bc8a8649c4838712aa4c5072674cdb
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: 66237f6c74a79f19e0a1279a7f2613fd7114276c
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88144185"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824346"
 ---
 # <a name="about-component-and-waterfall-dialogs"></a>Sobre caixas de diálogo de componente e de cascata
 

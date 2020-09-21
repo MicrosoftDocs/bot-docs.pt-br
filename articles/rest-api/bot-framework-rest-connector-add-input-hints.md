@@ -7,14 +7,15 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 21ba64abd628e44e60c1fb504530b6a63a21009f
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 15aac24f228e52de966326af396dbba17fdbdf03
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89361889"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824616"
 ---
-# <a name="add-input-hints-to-messages"></a>Adicionar dicas de entrada às mensagens
+# <a name="add-input-hints-to-messages-with-the-bot-connector-api"></a>Adicionar dicas de entrada a mensagens com a API do conector de bot
+
 > [!div class="op_single_selector"]
 > - [.NET](../dotnet/bot-builder-dotnet-add-input-hints.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-send-input-hints.md)

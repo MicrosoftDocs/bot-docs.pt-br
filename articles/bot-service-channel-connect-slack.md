@@ -8,20 +8,22 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 07/09/2020
-ms.openlocfilehash: cc9c93801c94f10e9d61a39523f4a4c5a6b5c3c0
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 0e5cb90864b3f8e1a4c51cbbe13d40e71c135ff3
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362079"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824036"
 ---
 # <a name="connect-a-bot-to-slack"></a>Conectar um bot ao Slack
 
-Há duas maneiras de configurar o aplicativo de mensagens Slack:
+Há duas maneiras pelas quais você pode configurar o aplicativo de mensagens de margem de atraso:
+
 - Usar o portal do Serviço de Bot do Azure para conectar seu bot
 - Usar o adaptador do Slack
 
 ## <a name="azure-bot-service-portal"></a>[Portal do Serviço de Bot do Azure](#tab/abs)
+
 ## <a name="create-a-slack-application-for-your-bot"></a>Criar um aplicativo do Slack para o seu bot
 
 Faça logon no [Slack](https://slack.com/signin) e [crie um canal do aplicativo Slack](https://api.slack.com/apps).
@@ -55,11 +57,11 @@ Ao adicionar um Usuário de Bot, você pode atribuir um nome de usuário para o 
 1. Selecione a guia **Usuários de Bot**.
 2. Clique em **Adicionar um Usuário de Bot**.
 
-![Criar bot](~/media/channels/slack-CreateBot.png)
+![Criar margem de atraso da imagem do bot](~/media/channels/slack-CreateBot.png)
 
 Clique em **Adicionar Usuário de Bot** para validar suas configurações, defina **Sempre Mostrar meu Bot Online** como **Ligado** e, em seguida, clique em **Salvar Alterações**.
 
-![Criar bot](~/media/channels/slack-CreateApp-AddBotUser.png)
+![CreateApp da margem de atraso AddBotUser imagem](~/media/channels/slack-CreateApp-AddBotUser.png)
 
 ## <a name="subscribe-to-bot-events"></a>Assinar eventos de Bot
 
@@ -141,6 +143,7 @@ Os usuários autorizados podem clicar no botão **Adicionar ao Slack** fornecido
 > A partir do canal de margem de atraso de junho de 2020 dá suporte a escopos de permissão v2 de margem de atraso que permitem que o bot especifique seus recursos e permissões de maneira mais granular. Todos os canais de margem de atraso configurados recentemente usarão os escopos v2. Para alternar o bot para os escopos v2, exclua e recrie a configuração de canal de margem de atraso na folha canais. O link que você colou no valor href do HTML contém escopos que podem ser refinados conforme necessário. Consulte [https://api.slack.com/scopes](https://api.slack.com/scopes) a lista completa de escopos disponíveis.
 
 ## <a name="slack-adapter"></a>[Adaptador do Slack](#tab/adapter)
+
 ## <a name="connect-a-bot-to-slack-using-the-slack-adapter"></a>Conectar um bot ao Slack usando o adaptador do Slack
 
 Assim como o canal disponível no Serviço de Bot do Azure para conectar o bot com o Slack, você também pode usar o adaptador do Slack. Neste artigo, você aprenderá a conectar um bot ao Slack usando o adaptador.  Este artigo explicará como modificar o exemplo EchoBot para conectá-lo a um aplicativo do Slack.
@@ -154,7 +157,7 @@ Assim como o canal disponível no Serviço de Bot do Azure para conectar o bot c
 
 * Acesso a um workspace do Slack com permissões suficientes para criar e gerenciar aplicativos em [https://api.slack.com/apps](https://api.slack.com/apps). Se você não tiver acesso a um ambiente do Slack, poderá criar um workspace [gratuitamente](https://www.slack.com).
 
-## <a name="create-a-slack-application-for-your-bot"></a>Criar um aplicativo do Slack para o seu bot
+## <a name="create-a-slack-application-and-configure-it-for-your-bot"></a>Criar um aplicativo de margem de atraso e configurá-lo para o bot
 
 Faça logon no [Slack](https://slack.com/signin) e [crie um canal do aplicativo Slack](https://api.slack.com/apps).
 
@@ -296,7 +299,7 @@ Para concluir esta etapa, [implante o bot no Azure](https://aka.ms/bot-builder-d
 
 ### <a name="update-your-slack-app"></a>Atualizar seu aplicativo do Slack
 
-Navegue de volta para o [painel da API do Slack]([https://api.slack.com/apps]) e selecione seu aplicativo.  Agora você precisa configurar duas URLs para seu aplicativo e assinar os eventos apropriados.
+Navegue de volta para o [painel da API do Slack](https://api.slack.com/apps) e selecione seu aplicativo.  Agora você precisa configurar duas URLs para seu aplicativo e assinar os eventos apropriados.
 
 1. Na guia **OAuth & permissões**, a **URL de Redirecionamento** deve ser a URL do bot, além do ponto de extremidade `api/slack` especificado em seu controlador recém-criado. Por exemplo, `https://yourboturl.com/api/slack`.
 

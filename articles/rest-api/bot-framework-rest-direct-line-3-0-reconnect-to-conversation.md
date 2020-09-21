@@ -7,14 +7,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 2/20/2020
-ms.openlocfilehash: e69c3cce6f0cae0d7968ba37311e2d210baaccfe
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: ca7045553a16c5e31396648abecb414db0cdf796
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89361749"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824406"
 ---
-# <a name="reconnect-to-a-conversation"></a>Reconectar-se a uma conversa
+# <a name="reconnect-to-a-conversation-in-direct-line-api-30"></a>Reconectar-se a uma conversa na API de linha direta 3,0
 
 Se um cliente estiver usando a [interface do WebSocket](bot-framework-rest-direct-line-3-0-receive-activities.md#connect-via-websocket) para receber mensagens, mas perder a conexão, talvez ele precise se reconectar. Nesse cenário, o cliente precisa gerar uma nova URL de fluxo do WebSocket que ele pode usar para se reconectar à conversa.
 

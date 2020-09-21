@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 1/28/2019
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 2cdf73fcb5152768d3613cf78f209ebf79ca1edc
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 51c01cc950cf26bddc73a2c3e7e4da2cfb4e6b5f
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75798540"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824066"
 ---
-# <a name="create-data-driven-experiences-with-azure-search"></a>Criar experiências controladas por dados com o Azure Search 
+# <a name="create-data-driven-experiences-with-azure-search-in-the-v3-c-sdk"></a>Crie experiências controladas por dados com Azure Search no SDK do C v3 \#
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

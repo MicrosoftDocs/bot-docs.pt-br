@@ -7,14 +7,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/20/2020
-ms.openlocfilehash: 2acf253b97d4c3f9b9313ce7108109fd1e4c7cac
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 1df952b249cecc208c0fc7b0a35d383e7a211253
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89361689"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824376"
 ---
-# <a name="manage-state-data"></a>Gerenciar dados de estado
+# <a name="manage-state-data-with-the-rest-api"></a>Gerenciar dados de estado com a API REST
 
 Os bots normalmente usam o armazenamento para controlar o local de um usuário na conversa ou detalhes relevantes para o relacionamento deles com o bot. O SDK do Bot Framework gerencia automaticamente o usuário e o estado de conversa para os desenvolvedores de bot. 
 

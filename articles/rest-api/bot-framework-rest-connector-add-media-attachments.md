@@ -7,14 +7,15 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 10/25/2018
-ms.openlocfilehash: 35a4a1846aadddb7505015872f830132cf625841
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: a35936522ef15b84b6174898e9be20e7ddad230b
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75790165"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824596"
 ---
-# <a name="add-media-attachments-to-messages"></a>Adicionar anexos de mídia às mensagens
+# <a name="add-media-attachments-to-messages-with-the-bot-connector-api"></a>Adicionar anexos de mídia a mensagens com a API do conector do bot
+
 > [!div class="op_single_selector"]
 > - [.NET](../dotnet/bot-builder-dotnet-add-media-attachments.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-send-receive-attachments.md)

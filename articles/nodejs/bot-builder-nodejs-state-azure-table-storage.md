@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 6eb4645437210f98cf43270a50b1654faf30ef25
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: acfedc1e591ad262d99fc77b54715870ef0c552c
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75790341"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824646"
 ---
-# <a name="manage-custom-state-data-with-azure-table-storage-for-nodejs"></a>Gerenciar dados de estado personalizado com o armazenamento de Tabela do Azure para Node.js
+# <a name="manage-custom-state-data-with-azure-table-storage-for-nodejs-in-the-v3-javascript-sdk"></a>Gerenciar dados de estado personalizado com o armazenamento de tabelas do Azure para Node.js no SDK do JavaScript v3
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

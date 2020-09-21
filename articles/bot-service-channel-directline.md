@@ -9,24 +9,26 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.date: 11/01/2019
 ms.author: kamrani
-ms.openlocfilehash: 342e3ecf21ed78d445e375eb2a4d37551a080d5c
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: d09e85c2024eff76f5b5ff36eabd021705d41478
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89361929"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824216"
 ---
 # <a name="about-direct-line"></a>Sobre o Direct Line
 
 O canal Direct Line do Bot Framework é uma maneira fácil de integrar o bot ao seu aplicativo móvel, página da Web ou outro aplicativo.
 O Direct Line está disponível em três formas:
+
 - Serviço Direct Line: um serviço global e robusto para a maioria dos desenvolvedores
 - Extensões de Serviço de Aplicativo do Direct Line – funcionalidade do Direct Line dedicada para segurança e desempenho (disponível na versão prévia pública)
 - Direct Line Speech – otimizado para fala de alto desempenho (GA)
 
-Você pode escolher qual oferta do Direct Line é melhor avaliando que recursos cada uma oferece e as necessidades de sua solução. Essas ofertas serão simplificadas ao longo do tempo.
+Você pode escolher qual oferta do Direct Line é melhor avaliando que recursos cada uma oferece e as necessidades de sua solução.
+Essas ofertas serão simplificadas ao longo do tempo.
 
-|                            | Linha Direta | Direct Line App Service Extension | Direct Line Speech |
+| Recurso                    | Linha Direta | Direct Line App Service Extension | Direct Line Speech |
 |----------------------------|-------------|-----------------------------------|--------------------|
 | Disponibilidade e licenciamento    | Disponibilidade Geral | Versão prévia pública, sem SLA  | GA |
 | Desempenho de texto-fala e reconhecimento de fala | Standard | Standard | Alto desempenho |
@@ -36,7 +38,7 @@ Você pode escolher qual oferta do Direct Line é melhor avaliando que recursos 
 | Funciona com o Bate-Papo da Web  | Sim | Sim | Não|
 | VNET | Não | Visualização | Não |
 
-
 ## <a name="additional-resources"></a>Recursos adicionais
+
 - [Conectar um bot à Linha Direta](bot-service-channel-connect-directline.md)
 - [Conectar um bot ao Direct Line Speech](bot-service-channel-connect-directlinespeech.md)

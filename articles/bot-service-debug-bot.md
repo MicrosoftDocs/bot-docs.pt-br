@@ -1,5 +1,5 @@
 ---
-title: Depurar um bot – Serviço de Bot
+title: Como depurar um serviço bot-bot
 description: Saiba como usar o emulador do bot Framework para depurar bots. Consulte como definir pontos de interrupção em IDEs e como trocar mensagens com bots durante a depuração.
 author: v-ducvo
 ms.author: kamrani
@@ -9,14 +9,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/04/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 1e20d767a6c17452cddf532b742208ba9f5b3435
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: f943e7d406ef91b01ae323db7f3c5e2851cca596
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89361069"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824186"
 ---
-# <a name="debug-a-bot"></a>Depurar um bot
+# <a name="debugging-a-bot"></a>Depurando um bot
 
 [!INCLUDE [applies-to](./includes/applies-to.md)]
 
@@ -46,17 +46,17 @@ For more information, see [Debug with the Emulator](bot-service-debug-emulator.m
 
 ## <a name="c"></a>[C#](#tab/csharp)
 
-[!INCLUDE [csharp vscode](../articles/includes/bot-service-debug-bot/csharp-vscode.md)]
+[!INCLUDE [csharp vscode](~/includes/bot-service-debug-bot/csharp-vscode.md)]
 
-[!INCLUDE [csharp visual studio](../articles/includes/bot-service-debug-bot/csharp-vs.md)]
+[!INCLUDE [csharp visual studio](~/includes/bot-service-debug-bot/csharp-vs.md)]
 
 ## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-[!INCLUDE [javascript vscode](../articles/includes/bot-service-debug-bot/js-vscode.md)]
+[!INCLUDE [javascript vscode](~/includes/bot-service-debug-bot/js-vscode.md)]
 
 ## <a name="python"></a>[Python](#tab/python)
 
-[!INCLUDE [python vscode](../articles/includes/bot-service-debug-bot/python-vscode.md)]
+[!INCLUDE [python vscode](~/includes/bot-service-debug-bot/python-vscode.md)]
 
 ---
 

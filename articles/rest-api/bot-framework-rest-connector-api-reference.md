@@ -7,14 +7,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/02/2019
-ms.openlocfilehash: edfb73febe4b250d52b46065e3318a32a7258922
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 10a4d9394c3ec957ddb3f003e3f2335a78d7c263
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81379394"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824576"
 ---
-# <a name="api-reference"></a>Referência de API
+# <a name="api-reference---bot-connector"></a>Referência de API-conector de bot
 
 > [!NOTE]
 > A API REST não é equivalente ao SDK. A API REST é fornecida para permitir a comunicação REST padrão, no entanto, o método preferido de interação com o Framework Bot é o SDK.

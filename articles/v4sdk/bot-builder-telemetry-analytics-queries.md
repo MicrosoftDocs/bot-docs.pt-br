@@ -8,14 +8,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 01/10/2020
-ms.openlocfilehash: b6688c99226653bb95290d583028e0e5275c973f
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 3995cab570a5672cf348dd0dc4b8b9399a741ae9
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77479324"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824256"
 ---
-# <a name="analyze-your-bots-telemetry-data"></a>Analisar os dados telemétricos do seu bot 
+# <a name="analyze-your-bots-telemetry-data"></a>Analisar os dados telemétricos do seu bot
 
 ## <a name="analyzing-bot-behavior"></a>Analisar o comportamento do bot
 
@@ -239,23 +239,18 @@ customEvents
 ```
 
 > [!TIP]
-> O [operador order](https://aka.ms/kusto-query-order-operator) do Kusto (o mesmo que `sort operator`) é usado para classificar as linhas da tabela de entrada em ordem por uma ou mais colunas.  Observação: se desejar excluir valores nulos dos resultados de qualquer consulta, você poderá filtrá-los em sua instrução where, por exemplo, você poderia adicionar "and isnotnull(Timestamp)" ou para retornar valores no início ou no fim, adicionar o `nulls first` ou `nulls first` ao fim da instrução order. 
->
+> O [operador order](https://aka.ms/kusto-query-order-operator) do Kusto (o mesmo que `sort operator`) é usado para classificar as linhas da tabela de entrada em ordem por uma ou mais colunas.  Observação: se desejar excluir valores nulos dos resultados de qualquer consulta, você poderá filtrá-los em sua instrução where, por exemplo, você poderia adicionar "and isnotnull(Timestamp)" ou para retornar valores no início ou no fim, adicionar o `nulls first` ou `nulls first` ao fim da instrução order.
 
 #### <a name="sample-query-results"></a>Resultados da consulta de exemplo
 
-![](./media/cancelleddialogs.PNG)
+![Resultados da consulta de exemplo para a operação resumir](./media/cancelleddialogs.PNG)
 
-
-
-
-
-### <a name="dialog-sequence-drill-down"></a>Busca detalhada de sequência da caixa de diálogo 
+### <a name="dialog-sequence-drill-down"></a>Busca detalhada de sequência da caixa de diálogo
 
 #### <a name="waterfall-startstepcomplete-for-dialog-in-conversation"></a>Início/etapa/conclusão da cascata para caixa de diálogo na conversa
 Esse exemplo mostra a sequência de etapas de caixa de diálogo, agrupadas por conversa (instanceId). Isso pode ser útil para determinar quais etapas levam à interrupção da caixa de diálogo. 
 
-Para executar esta consulta, insira o valor do `DialogId` desejado no lugar de \<SampleDialogId> 
+Para executar esta consulta, insira o valor do desejado `DialogId` em vez de \<SampleDialogId> 
 
 ```Kusto
 // Drill down: Show waterfall start/step/complete for specific dialog
@@ -376,7 +371,7 @@ not(isnull(timestamp2)), timestamp2 - timestamp, 0s) // Abandoned are not counte
 
 #### <a name="sample-query-results"></a>Resultados da consulta de exemplo
 
-![dialogduration](./media/dialogduration.PNG)
+![Resultados da consulta de exemplo para duração da caixa de diálogo](./media/dialogduration.PNG)
 
 
 ### <a name="average-steps-in-dialog"></a>Etapas médias na caixa de diálogo
@@ -454,7 +449,7 @@ customEvents
 
 #### <a name="sample-query-results"></a>Resultados da consulta de exemplo
 
-![ChannelsUsage](./media/ChannelsUsage.PNG)
+![Exemplos de resultados de consulta para uso de canal](./media/ChannelsUsage.PNG)
 
  _Interpretação: o teste de emulador é usado para ser o mais popular, mas depois que entramos em operação, DirectLineSpeech é o canal mais popular._
 
@@ -490,7 +485,7 @@ customEvents
 
 #### <a name="sample-query-results"></a>Resultados da consulta de exemplo
 
-![IntentPopularity](./media/Telemetry/IntentPopularity.PNG)
+![Resultados da consulta de exemplo para popularidade da intenção](./media/Telemetry/IntentPopularity.PNG)
 
 _Interpretação: por exemplo, a intenção mais popular, a confirmação é detectada apenas com 23% de confiança em média._
 
@@ -509,7 +504,7 @@ Campos de análise de logs comuns na instrumentação do Application Insights.
 | **Campo**        | **Descrição**        | **Valores de Exemplo**                                            |
 | ---------------- | ---------------------- | ------------------------------------------------------------ |
 | name             | Tipo de mensagem           | BotMessageSend, BotMessageReceived, LuisResult, WaterfallStep, WaterfallStart, SkillWebSocketProcessRequestLatency, SkillWebSocketOpenCloseLatency, WaterfallComplete, QnaMessage, WaterfallCancel, SkillWebSocketTurnLatency, AuthPromptValidatorAsyncFailure |
-| customDimensions | Análise de Bot do SDK      | activityId=\<id>,  activityType=message,  channelId=emulator,  fromId=\<id>,  fromName=User,  locale=en-us,  recipientId=\<id>,  recipientName=Bot,  text=find  a coffee shop |
+| customDimensions | Análise de Bot do SDK      | ActivityId = \<id> , activityvalue = mensagem, channelId = emulador, daid = \<id> , FromName = usuário, localidade = en-US, destinatário = \<id> , destinatário = bot, texto = encontrar uma lanchonete |
 | timestamp        | Horário do evento          | 2019-09-05T18:32:45.287082Z                                  |
 | instance_Id      | ID da conversa        | f7b2c416-a680-4b2c-b4cc-79c0f03d8711                         |
 | operation_Id     | ID do turno                | 084b2856947e3844a5a18a8476d99aaa                             |

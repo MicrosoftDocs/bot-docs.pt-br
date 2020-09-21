@@ -7,14 +7,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 2c92244914a6bfc01007d17bf00732d85fd6f953
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 7e4eafd75d6d60b78906a33d537adec3eadf7dab
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89361879"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824536"
 ---
-# <a name="create-messages"></a>Criar mensagens
+# <a name="create-messages-with-the-bot-connector-api"></a>Criar mensagens com a API do conector de bot
 
 Seu bot enviará objetos [Atividade][] do tipo **message** para comunicar informações aos usuários e, da mesma forma, também receberá atividades **message** dos usuários. Algumas mensagens podem simplesmente consistir em texto sem formatação, enquanto outras podem conter conteúdo mais elaborado, como [texto a ser falado](bot-framework-rest-connector-text-to-speech.md), [ações sugeridas](bot-framework-rest-connector-add-suggested-actions.md), [anexos de mídia](bot-framework-rest-connector-add-media-attachments.md), [cartões avançados](bot-framework-rest-connector-add-rich-cards.md) e [dados específicos do canal](bot-framework-rest-connector-channeldata.md). Este artigo descreve algumas das propriedades de mensagem comumente usadas.
 

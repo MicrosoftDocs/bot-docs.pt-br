@@ -9,14 +9,14 @@ ms.service: bot-service
 ms.date: 07/20/2020
 ROBOTS: NOINDEX
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 4cd3528b052c38b46e51f9e0e6a82b2bb140fca5
-ms.sourcegitcommit: ee94943420ef6c28638297a6ec44ee995de27d3b
+ms.openlocfilehash: ba73dbc770bfb6a75f4ec85a53d4a2559cd78f00
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865964"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824146"
 ---
-# <a name="conduct-audio-calls-with-skype"></a>Realizar chamadas de áudio com o Skype
+# <a name="conduct-audio-calls-with-skype-in-the-v3-c-sdk"></a>Realizar chamadas de áudio com o Skype no SDK do C v3 \#
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

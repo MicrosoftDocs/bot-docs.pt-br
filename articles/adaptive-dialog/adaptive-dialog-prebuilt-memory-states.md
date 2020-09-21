@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 06/12/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4320a8e11ebf0e0d07d59ed95b91b5c3002fec21
-ms.sourcegitcommit: 757ddf4f3fd3557ad9746dfa83ca742d54ac4763
+ms.openlocfilehash: 350e146ac924d6558e32967f4d115fbe06608b72
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86876356"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824176"
 ---
 # <a name="managing-state-in-adaptive-dialogs---reference-guide"></a>Gerenciando o estado em caixas de diálogo adaptáveis – guia de referência
 
@@ -45,8 +45,10 @@ O escopo do usuário são dados persistentes no escopo da ID do usuário com o q
 
 Exemplos:
 
-    user.name
-    user.address.city
+```
+user.name
+user.address.city
+```
 
 ## <a name="conversation-scope"></a>Escopo da conversa
 
@@ -54,11 +56,13 @@ O escopo da conversa são dados persistentes no escopo da ID da conversa que voc
 
 Exemplos:
 
-    conversation.hasAccepted
-    conversation.dateStarted
-    conversation.lastMaleReference
-    conversation.lastFemaleReference
-    conversation.lastLocationReference
+```
+conversation.hasAccepted
+conversation.dateStarted
+conversation.lastMaleReference
+conversation.lastFemaleReference
+conversation.lastLocationReference
+```
 
 No exemplo a seguir demonstra como você pode usar o escopo da conversa para coletar entrada do usuário, criando um novo `PropertyAssignment` objeto para uso na `SetProperties` [Action] [SetProperties-Action], obtendo o valor do escopo da conversa.
 
@@ -98,8 +102,10 @@ O escopo do turno contém dados _não persistentes_ que têm o escopo definido a
 
 ### <a name="this-scope-example"></a>Exemplo de Este escopo
 
-    turn.bookingConfirmation
-    turn.activityProcessed
+```
+turn.bookingConfirmation
+turn.activityProcessed
+```
 
 ### <a name="turn-sub-scopes"></a>Subescopos do turno
 

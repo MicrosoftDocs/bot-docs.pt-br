@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 0856805c285f47f1f219e49d36daf4892af2dcc7
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 2a59450fded0a7fbc4c3ec408c89c896bf6fa869
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75797856"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824046"
 ---
-# <a name="manage-state-data"></a>Gerenciar dados de estado
+# <a name="manage-state-data-in-the-v3-c-sdk"></a>Gerenciar dados de estado no SDK C v3 \#
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

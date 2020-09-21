@@ -7,24 +7,24 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 801763ee015e40037e9f46cc6045cd745e0e0a3f
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 23dfd922e65ac39b4edbee02789153e3344b0561
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89361919"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824606"
 ---
-# <a name="add-rich-card-attachments-to-messages"></a>Adicionar anexos de cartão avançados às mensagens
+# <a name="adding-rich-card-attachments-to-messages-with-the-bot-connector-api"></a>Adicionando anexos de cartão avançados a mensagens com a API do conector de bot
 
 > [!div class="op_single_selector"]
 > - [.NET](../dotnet/bot-builder-dotnet-add-rich-card-attachments.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-send-rich-cards.md)
 > - [REST](../rest-api/bot-framework-rest-connector-add-rich-cards.md)
 
-Bots e canais normalmente trocam cadeias de caracteres de texto, mas alguns canais também oferecem suporte a troca de anexos, o que permite que seu bot envie mensagens mais ricas para os usuários. Por exemplo, seu bot pode enviar anexos de cartões avançados e de mídia (por exemplo, imagens, vídeos, áudio, arquivos). Este artigo descreve como adicionar anexos de cartão avançado às mensagens usando o serviço Conector de Bot.
+Alguns canais permitem que o bot envie _cartões avançados_ para os usuários. Um cartão avançado é um anexo que contém elementos interativos, como botões, texto, imagens, áudio, vídeo e assim por diante.
 
-> [!NOTE]
-> Para obter informações sobre como adicionar anexos de mídia às mensagens, consulte [Adicionar anexos de mídia às mensagens](bot-framework-rest-connector-add-media-attachments.md).
+Este artigo descreve como criar cartões avançados que você pode anexar a uma mensagem.
+Consulte como [Adicionar anexos de mídia a mensagens](bot-framework-rest-connector-add-media-attachments.md) para obter instruções específicas sobre como adicionar um anexo a uma mensagem.
 
 ## <a name="types-of-rich-cards"></a>Tipos de cartões avançados
 
@@ -49,7 +49,7 @@ Atualmente, o Bot Framework dá suporte a oito tipos de cartões avançados:
 
 Para processar eventos em cartões avançados, use objetos [CardAction][] para especificar o que deve acontecer quando o usuário clica em um botão ou toca em uma seção do cartão. Cada objeto `CardAction` contém estas propriedades:
 
-| Propriedade | Tipo | Descrição |
+| Propriedade | Type | Descrição |
 |----|----|----|
 | channelData | string | dados específicos do canal associados a esta ação |
 | displayText | string | texto a ser exibido no feed do chat se o botão receber um clique |
@@ -79,7 +79,13 @@ Esta tabela lista os valores válidos para a propriedade `type` de um objeto `Ca
 
 ## <a name="add-a-hero-card-to-a-message"></a>Adicionar um cartão Hero a uma mensagem
 
-Para adicionar um anexo de cartão avançado a uma mensagem, primeiro crie um objeto que corresponda ao [tipo do cartão](#types-of-rich-cards) que você deseja adicionar à mensagem. Em seguida, crie um objeto [Anexo][], defina sua propriedade `contentType` como o tipo de mídia do cartão e sua propriedade `content` ao objeto que você criou para representar o cartão. Especifique seu objeto `Attachment` dentro da matriz `attachments` da mensagem.
+Para adicionar um anexo de cartão avançado a uma mensagem:
+
+1. Crie um objeto que represente o [tipo de cartão](#types-of-rich-cards) que você deseja adicionar à mensagem.
+1. Criar um objeto de [anexo][] :
+    - Defina sua `contentType` propriedade como o tipo de mídia do cartão.
+    - Defina sua `content` propriedade para o objeto que você criou para representar o cartão.
+1. Adicione o `Attachment` objeto à `attachments` matriz da mensagem.
 
 > [!TIP]
 > As mensagens que contêm de cartão avançado normalmente não especificam `text`.
@@ -91,7 +97,7 @@ Alguns canais permitem que você adicione vários cartões avançados à matriz 
 > Para exibir vários cartões avançados em formato de carrossel, defina a propriedade `Activity` do objeto `attachmentLayout` como "carrossel".
 > Se o canal não der suporte para formato de carrossel, ele exibirá os cartões avançados no formato de lista, mesmo se a propriedade `attachmentLayout` especificar "carrossel".
 
-O exemplo a seguir mostra uma solicitação que envia uma mensagem contendo um único anexo de cartão de destaque. Nessa solicitação de exemplo, `https://smba.trafficmanager.net/apis` representa o URI base; o URI base das solicitações emitidas pelo bot pode ser diferente. Para obter detalhes sobre como definir o URI base, confira [Referência de API](bot-framework-rest-connector-api-reference.md#base-uri).
+O exemplo a seguir mostra uma mensagem completa que contém um único anexo de cartão Hero. Nessa solicitação de exemplo, `https://smba.trafficmanager.net/apis` representa o URI base; o URI base das solicitações emitidas pelo bot pode ser diferente. Para obter detalhes sobre como definir o URI base, confira [Referência de API](bot-framework-rest-connector-api-reference.md#base-uri).
 
 ```http
 POST https://smba.trafficmanager.net/apis/v3/conversations/abcd1234/activities/5d5cdc723
@@ -156,7 +162,9 @@ Content-Type: application/json
 O Cartão Adaptável pode conter qualquer combinação de texto, fala, imagens, botões e campos de entrada.
 Os Cartões Adaptáveis são criados usando o formato JSON especificado em [Cartões Adaptáveis](http://adaptivecards.io), o que fornece a você controle total sobre o conteúdo e o formato do cartão.
 
-Aproveite as informações dentro do site [Cartões Adaptáveis](http://adaptivecards.io) para compreender o esquema de Cartão Adaptável, explore os elementos do Cartão Adaptável e veja exemplos de JSON que podem ser usados para criar cartões de composição e complexidade variadas. Além disso, você pode usar o Visualizador Interativo para criar o conteúdo de Cartão Adaptável e visualizar a saída do cartão. O exemplo a seguir é um único Cartão Adaptável para uma atribuição de trabalho.
+Aproveite as informações dentro do site [Cartões Adaptáveis](http://adaptivecards.io) para compreender o esquema de Cartão Adaptável, explore os elementos do Cartão Adaptável e veja exemplos de JSON que podem ser usados para criar cartões de composição e complexidade variadas. Além disso, você pode usar o Visualizador Interativo para criar o conteúdo de Cartão Adaptável e visualizar a saída do cartão.
+
+O exemplo a seguir mostra um único objeto de anexo de cartão adaptável, representando uma atribuição de trabalho. Para enviar isso a um usuário, você precisará adicioná-lo como um anexo em uma mensagem.
 
 ```json
 {
@@ -284,8 +292,9 @@ O cartão resultante contém um título, informações sobre quem criou o cartã
 - [Criar mensagens](bot-framework-rest-connector-create-messages.md)
 - [Enviar e receber mensagens](bot-framework-rest-connector-send-and-receive-messages.md)
 - [Adicionar anexos de mídia às mensagens](bot-framework-rest-connector-add-media-attachments.md)
+- [Referência do canal][ChannelInspector]
 - [Esquema de atividade Bot Framework](https://aka.ms/botSpecs-activitySchema)
-- [Channel Inspector][ChannelInspector]
+- [Esquema de placas do bot Framework](https://aka.ms/botSpecs-cardSchema)
 
 [ChannelInspector]: ../bot-service-channels-reference.md
 [Atividade]: bot-framework-rest-connector-api-reference.md#activity-object

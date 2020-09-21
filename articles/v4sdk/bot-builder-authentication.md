@@ -1,18 +1,18 @@
 ---
-title: Adicionar autenticação ao bot por meio do Serviço de Bot do Azure – Serviço de Bot
-description: Saiba como usar os recursos de autenticação do Serviço de Bot do Azure para adicionar o SSO ao seu bot.
+title: Adicionar autenticação a um bot por meio do serviço de bot do Azure
+description: Descreve como usar os recursos de autenticação do serviço de bot do Azure para adicionar o SSO ao bot.
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 2/7/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a59cd3a5f272b97b1a9d48c6054b8233d6367b17
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 707e0c164d8c9964631bbff869522d372efeb8f1
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362291"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824366"
 ---
 <!--
 
@@ -351,13 +351,13 @@ Após configurar o mecanismo de autenticação é possível executar o teste de 
 
 No exemplo **Autenticação de Bot**, o diálogo foi projetado para recuperar o token de usuário após este se conectar.
 
-![Saída de exemplo](media/how-to-auth/auth-bot-test.png)
+![imagem de teste do bot de autenticação](media/how-to-auth/auth-bot-test.png)
 
 ## <a name="bot-authentication-msgraph-example"></a>Exemplo do MSGraph de autenticação de bot
 
 No exemplo **Autenticação de Bot MSGraph**, o diálogo é projetado para aceitar um conjunto limitado de comandos depois que o usuário faz logon.
 
-![Saída de exemplo](media/how-to-auth/msgraph-bot-test.png)
+![imagem de teste do bot msgraph](media/how-to-auth/msgraph-bot-test.png)
 
 ---
 
@@ -376,7 +376,7 @@ As seções a seguir descrevem como o exemplo implementa algumas tarefas de aute
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-![Arquitetura de bot](media/how-to-auth/architecture.png)
+![imagem da arquitetura Csharp](media/how-to-auth/architecture.png)
 
 <!-- Submit changes for line break issues -->
 <!-- The two authentication samples have nearly identical architecture. Using 18.bot-authentication for the sample code. -->
@@ -400,7 +400,7 @@ Dentro da etapa de diálogo a seguir, procure a presença de um token no resulta
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-![Arquitetura de bot](media/how-to-auth/architecture-js.png)
+![imagem da arquitetura js](media/how-to-auth/architecture-js.png)
 
 **dialogs/mainDialog.js**
 
@@ -421,7 +421,7 @@ Dentro da etapa de diálogo a seguir, procure a presença de um token no resulta
 
 # <a name="python"></a>[Python](#tab/python)
 
-![Arquitetura de bot](media/how-to-auth/architecture-python.png)
+![imagem de arquitetura Python](media/how-to-auth/architecture-python.png)
 
 **dialogs/main_dialog.py**
 
@@ -574,4 +574,4 @@ O `TeamsActivityHandler` também envia atividades de *reação de mensagem*. Uma
 [js-msgraph-sample]: https://aka.ms/v4js-auth-msgraph-sample
 [cs-teams-auth-sample]:https://aka.ms/cs-teams-auth-sample
 [js-teams-auth-sample]:https://aka.ms/js-teams-auth-sample
-[teams-activity-feed]:[https://aka.ms/teams-activity-feed
+[teams-activity-feed]:https://aka.ms/teams-activity-feed

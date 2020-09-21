@@ -3,18 +3,18 @@ title: Expirar um serviço de bot de conversa
 description: Saiba como expirar a conversa de um usuário com um bot.
 keywords: expirar, tempo limite
 author: ericdahlvang
-ms.author: ericdahlvang
+ms.author: erdahlva
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 07/14/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: e207aa011d03db30c68615440cb588e3e8c0d125
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: f3415773a8afa74d8c8e3d5f4b555903db88b0bf
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89364384"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824326"
 ---
 # <a name="expire-a-conversation"></a>Expirar uma conversa
 

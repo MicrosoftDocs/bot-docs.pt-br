@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 5f4e67818288c5dc1a5fbb78261dea11c8b3a4c5
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 2e7b83a9462cc473ec4a9f261022b41c2d00153d
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75790371"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824666"
 ---
-# <a name="send-a-typing-indicator"></a>Enviar um indicador de digitação 
+# <a name="send-a-typing-indicator-in-the-v3-javascript-sdk"></a>Enviar um indicador de digitação no SDK do JavaScript v3
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

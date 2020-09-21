@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: cd884c49507b4d7edc84f4bbd79396fe36073a82
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 5459243da55a9506b62fcf21af81a44ca26b6a87
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75796483"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824116"
 ---
-# <a name="define-a-form-using-json-schema"></a>Definir um formulário usando o esquema JSON
+# <a name="define-a-form-using-json-schema-in-the-v3-c-sdk"></a>Definir um formulário usando o esquema JSON no SDK do C v3 \#
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

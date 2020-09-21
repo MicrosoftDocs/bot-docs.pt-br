@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 182fb3ab327b55d8976a607871bb2380a88f8b30
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: e15b4018f407846c1ac8d1e0fee7007620a3e830
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75790554"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824696"
 ---
-# <a name="send-and-receive-attachments"></a>Enviar e receber anexos
+# <a name="send-and-receive-attachments-in-the-v3-javascript-sdk"></a>Enviar e receber anexos no SDK do JavaScript v3
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

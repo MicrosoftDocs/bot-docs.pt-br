@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 1ae069645df1ffa73dc5cdd934041153d22040ae
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: fb4ead689bb6cb9893f8940fec97d8fbf21339e0
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360229"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824286"
 ---
 # <a name="add-natural-language-understanding-to-your-bot"></a>Adicionar reconhecimento de idioma natural ao seu bot
 
@@ -97,6 +97,10 @@ Este artigo aborda como adicionar o LUIS a um bot. Para obter informações sobr
 1. No diálogo **Importar novo aplicativo**:
     1. Escolha o arquivo **FlightBooking.json** na pasta **CognitiveModels** da amostra.
     1. Insira `FlightBooking` como o nome opcional do aplicativo e clique em **Concluído**.
+1. Você pode ser solicitado a atualizar suas entidades compostas. Você pode ignorar isso e clicar em **lembrar mais tarde**:
+
+    ![ignorar entidades de composição](./media/how-to-luis/luis-upgrade-composite-entities.png)
+
 1. Treine e publique o seu aplicativo.
     Para obter mais informações, consulte a documentação do LUIS sobre como [treinar](/azure/cognitive-services/LUIS/luis-how-to-train) e [publicar](/azure/cognitive-services/LUIS/publishapp) um aplicativo no ambiente de produção.
 
@@ -120,7 +124,7 @@ O arquivo de configurações (`appsettings.json`, `.env` ou `config.py`) age com
 1. Selecione a guia **Recursos do Azure** no lado esquerdo e selecione o grupo **Recurso de Criação**.
     Registre o valor mostrado para _Localização_ como \<YOUR_REGION> e _Chave Primária_ como \<YOUR_AUTHORING_KEY>.
     > [!div class="mx-imgBorder"]
-    > ![Gerenciar o Aplicativo LUIS – Informações do Aplicativo](./media/how-to-luis/manage-luis-app-azure-resources.png)
+    > ![Gerenciar informações de criação de aplicativo LUIS](./media/how-to-luis/manage-luis-app-azure-resources.png)
 
 ### <a name="update-the-settings-file"></a>Atualizar o arquivo de configurações
 

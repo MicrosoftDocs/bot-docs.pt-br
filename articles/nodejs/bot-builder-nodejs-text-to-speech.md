@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 6d4aaeb883eeba433d8329b65d0401719f1e5ee4
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 5521ccd7110f39b30d8ff8c3839dc460760bf962
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362249"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824626"
 ---
-# <a name="add-speech-to-messages"></a>Adicionar fala a mensagens
+# <a name="add-speech-to-messages-in-the-v3-javascript-sdk"></a>Adicionar fala a mensagens no SDK do JavaScript v3
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

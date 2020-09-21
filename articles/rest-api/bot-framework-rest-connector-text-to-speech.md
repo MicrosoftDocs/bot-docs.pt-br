@@ -7,22 +7,23 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/20/2020
-ms.openlocfilehash: 514979e6d52604592b53f1594094dba790c96105
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: eb8aff33329ab0ad8ec7b1ce97834e4d99a8f1b6
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89361849"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824486"
 ---
-# <a name="add-speech-to-messages"></a>Adicionar fala a mensagens
+# <a name="add-speech-to-messages-with-the-bot-connector-api"></a>Adicionar fala a mensagens com a API do conector de bot
+
 > [!div class="op_single_selector"]
 > - [.NET](../dotnet/bot-builder-dotnet-text-to-speech.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-text-to-speech.md)
 > - [REST](../rest-api/bot-framework-rest-connector-text-to-speech.md)
 
-Se você estiver criando um bot para um canal habilitado para fala, como o Cortana, será possível criar mensagens que especifiquem o texto a ser falado pelo seu bot. Você também pode tentar influenciar o estado do microfone do cliente especificando uma [dica de entrada](bot-framework-rest-connector-add-input-hints.md) para indicar se o seu bot está aceitando, esperando ou ignorando a entrada do usuário. 
+Se você estiver criando um bot para um canal habilitado para fala, como o Cortana, será possível criar mensagens que especifiquem o texto a ser falado pelo seu bot. Você também pode tentar influenciar o estado do microfone do cliente especificando uma [dica de entrada](bot-framework-rest-connector-add-input-hints.md) para indicar se o seu bot está aceitando, esperando ou ignorando a entrada do usuário.
 
-Você pode configurar seu bot para permitir que aplicativos cliente se comuniquem com ele por meio do [canal do Direct Line Speech](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech?view=azure-bot-service-4.0).
+Você pode configurar seu bot para permitir que aplicativos cliente se comuniquem com ele por meio do [canal do Direct Line Speech](../bot-service-channel-connect-directlinespeech.md).
 
 ## <a name="specify-text-to-be-spoken-by-your-bot"></a>Especifique o texto a ser falado pelo seu bot
 
@@ -61,13 +62,13 @@ Content-Type: application/json
 
 ## <a name="input-hints"></a>Dicas de entrada
 
-Quando você envia uma mensagem em um canal habilitado para fala, é possível expressar o estado desejado do microfone do cliente incluindo também uma dica de entrada para indicar se seu bot está aceitando, esperando ou ignorando a entrada do usuário. Para obter mais informações, consulte [adicionar dicas de entrada mensagens](bot-framework-rest-connector-add-input-hints.md).
+Ao enviar uma mensagem em um canal habilitado para fala, você pode expressar o estado pretendido do microfone do cliente, incluindo também uma dica de entrada para indicar se o bot está aceitando, esperando ou ignorando a entrada do usuário. Para obter mais informações, consulte [adicionar dicas de entrada mensagens](bot-framework-rest-connector-add-input-hints.md).
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
 - [Criar mensagens](bot-framework-rest-connector-create-messages.md)
 - [Enviar e receber mensagens](bot-framework-rest-connector-send-and-receive-messages.md)
 - [Adicionar dicas de entrada às mensagens](bot-framework-rest-connector-add-input-hints.md)
-- <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-synthesis-markup" target="_blank">Linguagem de marcação de síntese de fala (SSML)</a>
+- [Linguagem de marcação de síntese de fala (SSML)](/azure/cognitive-services/speech-service/speech-synthesis-markup)
 
 [Activity]: bot-framework-rest-connector-api-reference.md#activity-object

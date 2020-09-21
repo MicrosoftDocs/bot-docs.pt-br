@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: bot-service
 ms.date: 03/23/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4780fb3ad893518c90fbd2d3de3e9c32eacb38a2
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 9e6917a440b0b4b66966edf7ac99fb6a7fc9d0ae
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359969"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824246"
 ---
 # <a name="tutorial-use-qna-maker-in-your-bot-to-answer-questions"></a>Tutorial: usar o QnA Maker em seu bot para responder a perguntas
 
@@ -348,9 +348,9 @@ Atualize seu código de inicialização para carregar as informações de servi�
    def __init__(self, config: Config):
       self.qna_maker = QnAMaker(
          QnAMakerEndpoint(
-            knowledge_base_id=config["QNA_KNOWLEDGEBASE_ID"],
-            endpoint_key=config["QNA_ENDPOINT_KEY"],
-            host=config["QNA_ENDPOINT_HOST"],
+            knowledge_base_id=config.QNA_KNOWLEDGEBASE_ID,
+            endpoint_key=config.QNA_ENDPOINT_KEY,
+            host=config.QNA_ENDPOINT_HOST,
       )
    )
 
@@ -389,7 +389,7 @@ Neste ponto, seu bot deve ser capaz de responder a algumas perguntas. Execute o 
 
 ## <a name="republish-your-bot"></a>Republique seu bot
 
-Agora você pode republicar seu bot de volta no Azure. Você precisa compactar a pasta do projeto e, em seguida, executar o comando para implantar o bot no Azure. Para obter detalhes, veja o artigo [Implantar um bot](https://docs.microsoft.com/azure/bot-service/bot-builder-deploy-az-cli?view=azure-bot-service-4.0&tabs=csharp).
+Agora você pode republicar seu bot de volta no Azure. Você precisa compactar a pasta do projeto e, em seguida, executar o comando para implantar o bot no Azure. Para obter detalhes, veja o artigo [Implantar um bot](../bot-builder-deploy-az-cli.md).
 
 ### <a name="zip-your-project-folder"></a>Compactar sua pasta de projeto
 

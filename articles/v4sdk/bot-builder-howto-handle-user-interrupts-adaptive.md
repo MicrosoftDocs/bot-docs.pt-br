@@ -9,14 +9,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f734b1d981c50da0c0d2c4288865091ea30c15a6
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: fad81c509190d592e23947c860f981fe37910240
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89364380"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824316"
 ---
-# <a name="handle-user-interruptions-in-adaptive-dialogs"></a>Lidar com interrupções de usuário em caixas de diálogo adaptáveis
+# <a name="handle-user-interruptions-in-adaptive-dialogs"></a>Lidar com interrupções do usuário em caixas de diálogo adaptáveis
 
 [!INCLUDE[applies-to](../includes/applies-to.md)]
 
@@ -52,11 +52,11 @@ O que é abordado nesta seção:
 1. Vá para a página [criar serviços cognitivas][CognitiveServicesLUISAllInOne] do Azure.  
 2. Na seção **criar opções** , selecione **criação**.
 
-   ![Definir opções de criação para criação](./media/adaptive-dialogs/create-options-authoring.png)
+   ![Criar opções para a criação de imagem](./media/adaptive-dialogs/create-options-authoring.png)
 
 3. Insira valores para cada um dos campos e, em seguida, selecione o botão **revisar + criar** .
 
-   ![Definir opções de criação para criação](./media/adaptive-dialogs/create-cognitive-services.png)
+   ![Criar imagem de serviços cognitivas](./media/adaptive-dialogs/create-cognitive-services.png)
 
     > [!NOTE]
     > Ao inserir o **grupo de recursos** e o **nome**, tenha em mente que você não poderá alterar esses valores posteriormente. Observe também que o valor que você atribui para o **nome** será parte da **URL do ponto de extremidade**.
@@ -69,14 +69,14 @@ Agora que você criou o recurso LUIS no portal do Azure, você pode obter sua ch
 
 1. Quando o Azure terminar de criar os recursos do LUIS no portal do Azure, você verá uma notificação **de que sua implantação está concluída** , clique em **ir para o recurso**.
 
-   ![Selecione o botão ir para o recurso](./media/adaptive-dialogs/your-deployment-is-complete.png)
+   ![a implantação está completa](./media/adaptive-dialogs/your-deployment-is-complete.png)
 
 2. No painel esquerdo, selecione **chaves e ponto de extremidade**.
 3. Copie o valor da **chave 1** , essa é a sua *chave de criação*. Você precisa inserir isso como o valor para:
     -  `LuisAPIKey`: Uma configuração no arquivo de configuração.
     - `--authoringKey`: Uma propriedade do `bf luis:build` comando da CLI que é discutida na seção a seguir.
 
-   ![Selecione o botão ir para o recurso](./media/adaptive-dialogs/keys-and-endpoint.png)
+   ![chaves e imagem do ponto de extremidade](./media/adaptive-dialogs/keys-and-endpoint.png)
 
 4. Copie e salve o **ponto de extremidade**. Você atribuirá esse valor ao `LuisAPIHostName` no arquivo de configuração.
 
@@ -114,7 +114,7 @@ Esta seção explica como usar a CLI do bot Framework para conectar o bot aos re
     - `botName`: Use o mesmo valor que você usou para **nome** na etapa 3 da seção [criar recursos do Luis na portal do Azure](#setting-up-luis-to-work-in-your-bot) acima.
     - `authoringKey`: Sua [chave de criação](#get-your-authoring-key).
 
-    Executar o `bf luis:build` comando faz várias coisas. Ele carrega todas as informações contidas em todos os seus arquivos. Lu para o recurso LUIS no Azure e, em seguida, executa o treinamento e a publicação de LUIS necessários.  Tudo o que você precisa fazer agora é atualizar seu arquivo de configuração com as informações geradas como resultado das etapas realizadas anteriormente.
+    Executar o `bf luis:build` comando faz várias coisas. Ele carrega todas as informações contidas em todos os arquivos. Lu para o recurso LUIS no Azure e, em seguida, executa o treinamento e a publicação de LUIS necessários.  Tudo o que você precisa fazer agora é atualizar seu arquivo de configuração com as informações geradas como resultado das etapas realizadas anteriormente.
 
 #### <a name="files-generated"></a>Arquivos gerados
 
@@ -685,7 +685,7 @@ A captura de tela mostrada abaixo verifica se você pode interromper o fluxo de 
 [recognizer-types]: bot-builder-concept-adaptive-dialog-recognizers.md#recognizer-types
 
 [OnConversationUpdateActivity]: ../adaptive-dialog/adaptive-dialog-prebuilt-triggers.md#onconversationupdateactivity
-[confirm-input]: ../adaptive-dialog/adaptive-dialog-prebuilt-inputs.md##confirminput
+[confirm-input]: ../adaptive-dialog/adaptive-dialog-prebuilt-inputs.md#confirminput
 [cancel-all-dialogs]: ../adaptive-dialog/adaptive-dialog-prebuilt-actions.md#cancelalldialogs
 
 [lu]: ../file-format/bot-builder-lu-file-format.md

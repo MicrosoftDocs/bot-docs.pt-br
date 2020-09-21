@@ -1,30 +1,30 @@
 ### YamlMime:Landing
-title: Documentação do SDK do bot Framework
+title: Documentação do SDK do Bot Framework
 summary: O SDK do bot Framework permite que você crie e desenvolva bots para o serviço de bot do Azure.
 metadata:
-  title: Documentação do SDK do bot Framework
+  title: Documentação do SDK do Bot Framework
   description: O SDK do bot Framework permite que você crie e desenvolva bots para o serviço de bot do Azure.
   ms.service: bot-service
   ms.topic: landing-page
   author: JonathanFingold
   ms.author: botcc
   ms.date: 07/22/2020
-  ms.openlocfilehash: 9bbb6d7cafb10d336e8d532202120581ae186f74
-  ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+  ms.openlocfilehash: 4c7318fdd68550cdda751a198d7ee53e6a15de42
+  ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
   ms.translationtype: MT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 08/12/2020
-  ms.locfileid: "88143335"
+  ms.lasthandoff: 09/20/2020
+  ms.locfileid: "90824196"
 landingContent:
 - title: Sobre o SDK do bot Framework
   linkLists:
   - linkListType: whats-new
     links:
-    - text: Novidades
+    - text: Quais são as novidades?
       url: what-is-new.md
   - linkListType: overview
     links:
-    - text: O que é o SDK do bot Framework?
+    - text: O que é o SDK do Bot Framework?
       url: bot-service-overview-introduction.md
   - linkListType: concept
     links:
@@ -56,6 +56,8 @@ landingContent:
     links:
     - text: .NET
       url: https://docs.microsoft.com/dotnet/api/?view=botbuilder-dotnet-stable
+    - text: Java (versão prévia)
+      url: https://docs.microsoft.com/java/api/?view=botbuilder-java-preview
     - text: JavaScript
       url: https://docs.microsoft.com/javascript/api/botbuilder
     - text: Python

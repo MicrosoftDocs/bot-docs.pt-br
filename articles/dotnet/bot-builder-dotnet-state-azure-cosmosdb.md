@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 5057b05d598e8ff985a1d0daf5d18fef6c0ffc95
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 3d318ef49beb1f762d0fc0c1b746bf605f9e327d
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75797937"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824056"
 ---
-# <a name="manage-custom-state-data-with-azure-cosmos-db-for-net"></a>Gerenciar dados de estado personalizados com o Azure Cosmos DB para .NET
+# <a name="manage-custom-state-data-with-azure-cosmos-db-for-net-in-the-v3-c-sdk"></a>Gerenciar dados de estado personalizado com o Azure Cosmos DB para .NET no SDK do C v3 \#
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

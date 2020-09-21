@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/07/2019
-ms.openlocfilehash: f30c2db927ec8e69e046c2267a365de76552a914
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 9ce60aadaf79baf9be8382ff472d2f34c32bde06
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359809"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824226"
 ---
 # <a name="web-chat-overview"></a>Visão geral de Webchat
 
@@ -122,12 +122,11 @@ Veja um exemplo funcional do [Webchat renderizado por meio do React](https://git
 > [!TIP]
 > Se ainda não tiver usado o React e o JSX, você poderá encontrar treinamento na página de [Introdução](https://reactjs.org/docs/getting-started.html) do React.
 
-
 ## <a name="customize-web-chat-ui"></a>Personalizar a interface do usuário do Webchat
 
 O Webchat é projetado para ser personalizável sem criação de fork do código-fonte. A tabela a seguir descreve quais tipos de personalizações você pode obter quando está importando o Webchat de maneiras diferentes. Esta lista não é exaustiva.
 
-|                               | Pacote CDN         | React              |
+| Personalização                 | Pacote CDN         | React              |
 | ----------------------------- | ------------------ | ------------------ |
 | Alterar cores                 | :heavy_check_mark: | :heavy_check_mark: |
 | Alterar tamanhos                  | :heavy_check_mark: | :heavy_check_mark: |

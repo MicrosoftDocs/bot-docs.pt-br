@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 66ffc88fd8bad927311222183017c3b92fec8f70
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: c9bf31b463a13065167ffa8b714b731960bc81d1
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75794958"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824136"
 ---
-# <a name="implement-channel-specific-functionality"></a>Implementar a funcionalidade específica do canal
+# <a name="implement-channel-specific-functionality-in-the-v3-c-sdk"></a>Implementar a funcionalidade específica do canal no SDK do v3 C \#
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/19/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a58b0ec1e86787dd7250d43a94e84c3d833ea8eb
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: e41be476658d8e56e0dc99ca5d44ebf804ce295a
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362179"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90823926"
 ---
 # <a name="adaptive-expressions-prebuilt-functions"></a>Funções predefinidas de expressões adaptáveis
 
@@ -46,9 +46,9 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 |[substitui](#replace)|Substituir uma substring pela cadeia de caracteres especificada e retornar a cadeia de caracteres atualizada. Essa função diferencia maiúsculas de minúsculas.|
 |[replaceIgnoreCase](#replaceIgnoreCase)|   Substituir uma subcadeia de caracteres pela cadeia de caracteres especificada e retornar a cadeia de caracteres atualizada. Essa função não diferencia maiúsculas de minúsculas.|
 |[split](#split)    |Retornar uma matriz que contém substrings com base no delimitador especificado.|
-|[substring](#substring)|Retornar caracteres de uma cadeia de caracteres. substring(sourceString, startPos, endPos). startPos não pode ser menor que 0. Um endPos maior que o comprimento da cadeia de caracteres de origem será obtido como o comprimento máximo da cadeia de caracteres.|
-|[toLower](#toLower)|Converter uma cadeia de caracteres em minúsculas.|
-|[toUpper](#toUpper)|Converter uma cadeia de caracteres em maiúsculas.|
+|[substring](#substring)|Retornar caracteres de uma cadeia de caracteres.|
+|[toLower](#toLower)|Retornar uma cadeia de caracteres em minúsculas em um formato de localidade opcional.|
+|[toUpper](#toUpper)|Retornar uma cadeia de caracteres em maiúsculas em um formato de localidade opcional.|
 |[cortar](#trim)|Remover os espaços em branco à esquerda e à direita de uma cadeia de caracteres.|
 |[addOrdinal](#addOrdinal)|Retornar o número ordinal do número de entrada.|
 |[endsWith](#endsWith)|Verificar se uma cadeia de caracteres termina com uma subcadeia de caracteres específica. Retornar `true` se a substring for encontrada ou retornar `false` se não for encontrada. Essa função não diferencia maiúsculas de minúsculas.|
@@ -58,8 +58,8 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 |[newGuid](#newGuid)|Retornar uma nova cadeia de caracteres Guid.|
 |[indexOf](#indexOf)|Retornar a posição inicial ou o valor de índice de uma substring **ou** procurar o objeto especificado e retornar o índice de base zero da primeira ocorrência na lista inteira. Essa função não diferencia maiúsculas de minúsculas, e os índices começam com o número 0.|
 |[lastIndexOf](#lastIndexOf)|Retornar a posição inicial ou o valor de índice da última ocorrência de uma substring **ou** pesquisar o objeto especificado e retornar o índice de base zero da última ocorrência dentro do intervalo de elementos na lista. Essa função não diferencia maiúsculas de minúsculas, e os índices começam com o número 0.|
-|[sentenceCase](#sentenceCase)|Colocar em maiúscula a primeira letra da primeira palavra em uma cadeia de caracteres.|
-|[titleCase](#titleCase)|Colocar em maiúscula a primeira letra de cada palavra em uma cadeia de caracteres.|
+|[sentenceCase](#sentenceCase)|Colocar em maiúscula a primeira letra da primeira palavra em uma cadeia de caracteres em um formato local opcional.|
+|[titleCase](#titleCase)|Colocar em maiúscula a primeira letra de cada palavra em uma cadeia de caracteres em um formato de localidade opcional.|
 
 ### <a name="collection-functions"></a>Funções de coleção
 
@@ -106,7 +106,7 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 |-----------|-----------|
 |[float](#float)|Retornar a representação de ponto flutuante da cadeia de caracteres especificada ou a própria cadeia de caracteres se a conversão não for possível.|
 |[int](#int)|Retornar a representação de inteiro da cadeia de caracteres especificada ou a própria cadeia de caracteres se a conversão não for possível.|
-|[cadeia de caracteres](#string)|Retornar a versão de cadeia de caracteres do valor especificado.|
+|[cadeia de caracteres](#string)|Retorna a versão da cadeia de caracteres do valor especificado em um formato de localidade opcional.|
 |[bool](#bool)|Retornar uma representação booliana da cadeia de caracteres especificada.|
 |[createArray](#createArray)|Criar uma matriz de várias entradas.|
 |[json](#json) |Retornar o objeto ou valor de tipo JSON (JavaScript Object Notation) de uma cadeia de caracteres ou XML.|
@@ -146,36 +146,40 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 
 |Função|Explicação|
 |-----------|-----------|
-|[addDays](#addDays)|Adicionar um número especificado de dias a um carimbo de data/hora fornecido.|
-|[addHours](#addHours)|Adicionar um número especificado de horas a um carimbo de data/hora fornecido.|
-|[addMinutes](#addMinutes)|Adicionar um número especificado de minutos a um carimbo de data/hora fornecido.|
+|[addDays](#addDays)|Adicione um número de dias especificados a um determinado carimbo de data/hora em um formato de localidade opcional.|
+|[addHours](#addHours)|Adicione um número especificado de horas a um determinado carimbo de data/hora em um formato de localidade opcional.|
+|[addMinutes](#addMinutes)|Adicione um número especificado de minutos a um determinado carimbo de data/hora em um formato de localidade opcional.|
 |[addSeconds](#addSeconds)|Adicionar um número especificado de segundos a um carimbo de data/hora fornecido.|
 |[dayOfMonth](#dayOfMonth)|Retornar o dia de um mês de um carimbo de data/hora ou expressão Timex fornecido.|
 |[dayOfWeek](#dayOfWeek)|Retornar o dia da semana de um carimbo de data/hora fornecido.|
 |[dayOfYear](#dayOfYear)|Retornar o dia do ano de um carimbo de data/hora fornecido.|
-|[formatDateTime](#formatDateTime)|Retornar um carimbo de data/hora no formato especificado.|
-|[formatEpoch](#formatEpoch)|Retornar um carimbo de data/hora da Época do UNIX (horário do UNIX, hora do POSIX).|
-|[formatTicks](#formatTicks)|Retornar um carimbo de data/hora de tiques.|
-|[subtractFromTime](#subtractFromTime)|Subtrair um número de unidades de tempo de um carimbo de data/hora.|
-|[utcNow](#utcNow)|Retornar o carimbo de data/hora atual como cadeia de caracteres.|
+|[formatDateTime](#formatDateTime)|Retornar um carimbo de data/hora em um formato de localidade opcional.|
+|[formatEpoch](#formatEpoch)|Retornar um carimbo de data/hora em um formato de localidade opcional do tempo de época do UNIX (horário do UNIX, hora do POSIX).|
+|[formatTicks](#formatTicks)|Retorna um carimbo de data/hora em um formato de localidade opcional de tiques.|
+|[subtractFromTime](#subtractFromTime)|Subtraia um número de unidades de tempo de um carimbo de data/hora em um formato de localidade opcional.|
+|[utcNow](#utcNow)|Retorna o carimbo de data/hora atual em um formato de localidade opcional como uma cadeia de caracteres.|
 |[dateReadBack](#dateReadBack)|Usar a biblioteca de data e hora para fornecer um readback de data.|
 |[month](#month)|Retornar o mês de um carimbo de data/hora fornecido.|
 |[date](#date)|Retornar a data de um carimbo de data/hora fornecido.|
 |[year](#year)|Retornar o ano de um carimbo de data/hora fornecido.|
 |[getTimeOfDay](#getTimeOfDay)|Retornar a hora do dia de um carimbo de data/hora fornecido. |
-|[getFutureTime](#getFutureTime)|Retornar o carimbo de data/hora atual mais as unidades de tempo especificadas.   |
-|[getPastTime](#getPastTime)|Retornar o carimbo de data/hora atual menos as unidades de tempo especificadas.  |
-|[addToTime](#addToTime)   |Adicionar um número de unidades de tempo a um carimbo de data/hora.   |
-|[convertFromUTC](#convertFromUTC) |Converter um carimbo de data/hora de UTC (Tempo Universal Coordenado). |
-|[convertToUTC](#convertToUTC) |Converter um carimbo de data/hora para UTC (Tempo Universal Coordenado).  |
-|[startOfDay](#startOfDay) |Retornar o início do dia de um carimbo de data/hora.|
-|[startOfHour](#startOfHour)   |Retornar o início da hora de um carimbo de data/hora. |
-|[startOfMonth](#startOfMonth) |Retornar o início do mês de um carimbo de data/hora.|
+|[getFutureTime](#getFutureTime)|Retorne o carimbo de data/hora atual em um formato de localidade opcional mais as unidades de tempo especificadas.   |
+|[getPastTime](#getPastTime)|Retorna o carimbo de data/hora atual em um formato de localidade opcional menos as unidades de tempo especificadas.  |
+|[addToTime](#addToTime)   |Adicione um número de unidades de tempo a um carimbo de data/hora em um formato de localidade opcional.   |
+|[convertFromUTC](#convertFromUTC) |Converta um carimbo de data/hora em um formato de localidade opcional de UTC (tempo Universal Coordenado). |
+|[convertToUTC](#convertToUTC) |Converta um carimbo de data/hora em um formato de localidade opcional para UTC (tempo Universal Coordenado).  |
+|[startOfDay](#startOfDay) |Retorna o início do dia para um carimbo de data/hora em um formato de localidade opcional.|
+|[startOfHour](#startOfHour)   |Retorna o início da hora para um carimbo de data/hora em um formato de localidade opcional. |
+|[startOfMonth](#startOfMonth) |Retorna o início do mês para um carimbo de data/hora em um formato de localidade opcional.|
 |[ticks](#ticks)   |Retornar o valor de propriedade ticks de um carimbo de data/hora especificado.|
 |[ticksToDays](#ticksToDays)| Converta um valor de propriedade de tiques para o número de dias. |
 |[ticksToHours](#ticksToHours)| Converta um valor de propriedade de tiques para o número de horas. |
 |[ticksToMinutes](#ticksToMinutes)| Converta um valor de propriedade de tiques para o número de minutos. |
 |[dateTimeDiff](#dateTimeDiff)| Retorna a diferença em tiques entre dois carimbos de data/hora. |
+|[getPreviousViableDate](#getPreviousViableDate) | Retorna a data viável anterior de uma expressão Timex com base na data atual e em um fuso horário especificado opcionalmente. |
+|[getNextViableDate](#getNextViableDate) | Retorna a próxima data viável de uma expressão Timex com base na data atual e em um fuso horário especificado opcionalmente. |
+|[getPreviousViableTime](#getPreviousViableTime) | Retorna o tempo viável anterior de uma expressão Timex com base na hora atual e em um fuso horário especificado opcionalmente. |
+|[getNextViableTime](#getNextViableTime) | Retorna o próximo horário viável de uma expressão Timex com base na hora atual e em um fuso horário especificado opcionalmente. |
 
 ### <a name="timex-functions"></a>Funções timex
 
@@ -277,10 +281,10 @@ E retorna os resultados
 
 ### <a name="adddays"></a>addDays
 
-Adicionar um número de dias a um carimbo de data/hora.
+Adicione um número de dias a um carimbo de data/hora em um formato de localidade opcional.
 
 ```
-addDays('<timestamp>', <days>, '<format>'?)
+addDays('<timestamp>', <days>, '<format>'?, '<locale>'?)
 ```
 
 | Parâmetro | Obrigatório | Type | Descrição |
@@ -288,6 +292,7 @@ addDays('<timestamp>', <days>, '<format>'?)
 | <*timestamp*> | Sim | string | A cadeia de caracteres que contém o carimbo de data/hora que deve estar no formato UTC ISO padrão<br>AAAA-MM-DDTHH:mm:ss.fffZ |
 | <*days*> | Sim | inteiro | O número positivo ou negativo de dias a ser adicionado |
 | <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
 | Valor retornado | Type | Descrição |
@@ -297,7 +302,7 @@ addDays('<timestamp>', <days>, '<format>'?)
 
 *Exemplo 1*
 
-Esse exemplo adiciona 10 dias ao carimbo de data/hora especificado:
+Este exemplo adiciona **10** dias ao carimbo de data/hora especificado:
 
 ```
 addDays('2018-03-15T13:00:00.000Z', 10)
@@ -315,14 +320,24 @@ addDays('2018-03-15T00:00:00.000Z', -5)
 
 E retorna o resultado **2018-03-10T00:00:00.000Z**.
 
+*Exemplo 3*
+
+Este exemplo adiciona **1** dia ao carimbo de data/hora especificado na localidade **de-de** :
+
+```
+addDays('2018-03-15T13:00:00.000Z', 1, '', 'de-dE')
+```
+
+E retorna o resultado **16.03.18 13:00:00**.
+
 <a name="addHours"></a>
 
 ### <a name="addhours"></a>addHours
 
-Adicionar um número de horas a um carimbo de data/hora.
+Adicione um número de horas a um carimbo de data/hora em um formato de localidade opcional.
 
 ```
-addHours('<timestamp>', <hours>, '<format>'?)
+addHours('<timestamp>', <hours>, '<format>'?, '<locale>'?)
 ```
 
 | Parâmetro | Obrigatório | Type | Descrição |
@@ -330,6 +345,7 @@ addHours('<timestamp>', <hours>, '<format>'?)
 | <*timestamp*> | Sim | string | Uma cadeia de caracteres que contém o carimbo de data/hora |
 | <*hours*> | Sim | inteiro | O número positivo ou negativo de horas a ser adicionado |
 | <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
 | Valor retornado | Type | Descrição |
@@ -339,7 +355,7 @@ addHours('<timestamp>', <hours>, '<format>'?)
 
 *Exemplo 1*
 
-Esse exemplo adiciona 10 horas ao carimbo de data/hora especificado:
+Este exemplo adiciona **10** horas ao carimbo de data/hora especificado:
 
 ```
 addHours('2018-03-15T00:00:00.000Z', 10)
@@ -357,14 +373,24 @@ addHours('2018-03-15T15:00:00.000Z', -5)
 
 E retorna o resultado **2018-03-15T10:00:00.000Z**.
 
+*Exemplo 3*
+
+Este exemplo adiciona **2** horas ao carimbo de data/hora especificado na localidade **de-de** :
+
+```
+addHours('2018-03-15T13:00:00.000Z', 2, '', 'de-DE')
+```
+
+E retorna o resultado **15.03.18 15:00:00**.
+
 <a name="addMinutes"></a>
 
 ### <a name="addminutes"></a>addMinutes
 
-Adicionar um número de minutos a um carimbo de data/hora.
+Adicione um número de minutos a um carimbo de data/hora em um formato de localidade opcional.
 
 ```
-addMinutes('<timestamp>', <minutes>, '<format>'?)
+addMinutes('<timestamp>', <minutes>, '<format>'?, '<locale>'?)
 ```
 
 | Parâmetro | Obrigatório | Type | Descrição |
@@ -372,6 +398,7 @@ addMinutes('<timestamp>', <minutes>, '<format>'?)
 | <*timestamp*> | Sim | string | Uma cadeia de caracteres que contém o carimbo de data/hora |
 | <*minutes*> | Sim | inteiro | O número positivo ou negativo de minutos a ser adicionado |
 | <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
 | Valor retornado | Type | Descrição |
@@ -381,7 +408,7 @@ addMinutes('<timestamp>', <minutes>, '<format>'?)
 
 *Exemplo 1*
 
-Esse exemplo adiciona 10 minutos ao carimbo de data/hora especificado:
+Este exemplo adiciona **10** minutos ao carimbo de data/hora especificado:
 
 ```
 addMinutes('2018-03-15T00:10:00.000Z', 10)
@@ -398,6 +425,16 @@ addMinutes('2018-03-15T00:20:00.000Z', -5)
 ```
 
 E retorna o resultado **2018-03-15T00:15:00.000Z**.
+
+*Exemplo 3*
+
+Este exemplo adiciona **30** minutos ao carimbo de data/hora especificado na localidade **de-de** :
+
+```
+addMinutes('2018-03-15T00:00:00.000Z', 30, '', 'de-DE')
+```
+
+E retorna o resultado **15.03.18 13:30:00**.
 
 <a name="addOrdinal"></a>
 
@@ -512,10 +549,10 @@ E retorna o resultado **2018-03-15T00:00:25.000Z**.
 
 ### <a name="addtotime"></a>addToTime
 
-Adicionar um número de unidades de tempo a um carimbo de data/hora. Consulte também [getFutureTime()](#getFutureTime).
+Adicione um número de unidades de tempo a um carimbo de data/hora em um formato de localidade opcional. Consulte também [getFutureTime()](#getFutureTime).
 
 ```
-addToTime('<timestamp>', '<interval>', <timeUnit>, '<format>'?)
+addToTime('<timestamp>', '<interval>', <timeUnit>, '<format>'?, '<locale>'?)
 ```
 
 | Parâmetro | Obrigatório | Type | Descrição |
@@ -524,13 +561,16 @@ addToTime('<timestamp>', '<interval>', <timeUnit>, '<format>'?)
 | <*interval*> | Sim | inteiro | O número de unidades de tempo especificadas a ser adicionado |
 | <*timeUnit*> | Sim | string | A unidade de tempo a ser usada com *interval*. As unidades possíveis são "Second", "Minute", "Hour", "Day", "Week", "Month" e "Year". |
 | <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
+|||||
 
 | Valor retornado | Type | Descrição |
 | ------------ | ---- | ----------- |
 | <*updated-timestamp*> | string | O carimbo de data/hora mais o número de unidades de tempo especificadas com o formato fornecido. |
 ||||
 
-*Exemplo 1*<br>
+*Exemplo 1*
+
 Este exemplo adiciona um dia ao carimbo de data/hora especificado.
 
 ```
@@ -539,7 +579,8 @@ addToTime('2018-01-01T00:00:00.000Z', 1, 'Day')
 
 E retorna o resultado **2018-01-02T00:00:00.000Z**.
 
-*Exemplo 2*<br>
+*Exemplo 2*
+
 Este exemplo adiciona duas semanas ao carimbo de data/hora especificado.
 
 ```
@@ -547,7 +588,6 @@ addToTime('2018-01-01T00:00:00.000Z', 2, 'Week', 'MM-DD-YY')
 ```
 
 E retorna o resultado no formato 'MM-DD-AA' como **01-15-18**.
-
 
 <a name="and"></a>
 
@@ -581,9 +621,9 @@ and(false, false)
 
 E, respectivamente, retorna estes resultados:
 
-* Ambas as expressões são true, então as funções retornam `true`.
-* Uma expressão é false, então as funções retornam `false`.
-* Ambas as expressões são false, então a função retorna `false`.
+- Ambas as expressões são true, então as funções retornam `true`.
+- Uma expressão é false, então as funções retornam `false`.
+- Ambas as expressões são false, então a função retorna `false`.
 
 *Exemplo 2*
 
@@ -812,7 +852,7 @@ ceiling('<number>')
 
 | Valor retornado | Type | Descrição |
 | ------------ | ---- | ----------- |
-| <*valor inteiro*> | inteiro | O maior valor integral maior ou igual ao número de entrada |
+| <*valor inteiro*> | Número inteiro | O maior valor integral maior ou igual ao número de entrada |
 ||||
 
 *Exemplo*
@@ -1049,10 +1089,10 @@ E retorna o resultado **2**.
 
 ### <a name="convertfromutc"></a>convertFromUTC
 
-Converter um carimbo de data/hora de UTC (Tempo Universal Coordenado) para o fuso horário de destino.
+Converta um carimbo de data/hora em um formato de localidade opcional de UTC (tempo Universal Coordenado) em um fuso horário de destino.
 
 ```
-convertFromUTC('<timestamp>', '<destinationTimeZone>', '<format>'?)
+convertFromUTC('<timestamp>', '<destinationTimeZone>', '<format>'?, '<locale>'?)
 ```
 
 | Parâmetro | Obrigatório | Type | Descrição |
@@ -1060,6 +1100,8 @@ convertFromUTC('<timestamp>', '<destinationTimeZone>', '<format>'?)
 | <*timestamp*> | Sim | string | Uma cadeia de caracteres que contém o carimbo de data/hora |
 | <*destinationTimeZone*> | Sim | string | O nome do fuso horário de destino. Compatível com fusos horários Windows e Iana. |
 | <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
+|||||
 
 | Valor retornado | Type | Descrição |
 | ------------ | ---- | ----------- |
@@ -1071,7 +1113,7 @@ convertFromUTC('<timestamp>', '<destinationTimeZone>', '<format>'?)
 Estes exemplos convertem de UTC para Horário Padrão do Pacífico:
 
 ```
-convertFromUTC("convertFromUTC('2018-02-02T02:00:00.000Z', 'Pacific Standard Time', 'MM-DD-YY')"
+convertFromUTC('2018-02-02T02:00:00.000Z', 'Pacific Standard Time', 'MM-DD-YY')
 convertFromUTC('2018-02-02T02:00:00.000Z', 'Pacific Standard Time')
 ```
 
@@ -1080,14 +1122,24 @@ E, respectivamente, retornam estes resultados:
 * **02-01-18**
 * **2018-02-01T18:00:00.000-08:00**
 
+*Exemplo 2*
+
+Este exemplo converte um carimbo de data/hora na localidade **de** de UTC para hora padrão do Pacífico:
+
+```
+convertFromUTC('2018-01-02T02:00:00.000Z', 'Pacific Standard Time', '', 'de-DE')
+```
+
+E retorna o resultado **01.01.18 18:00:00**.
+
 <a name="convertToUTC"></a>
 
 ### <a name="converttoutc"></a>convertToUTC
 
-Converter um carimbo de data/hora do fuso horário de origem para UTC (Tempo Universal Coordenado).
+Converta um carimbo de data/hora em um formato de localidade opcional para UTC (tempo Universal Coordenado) do fuso horário de origem.
 
 ```
-convertToUTC('<timestamp>', '<sourceTimeZone>', '<format>'?)
+convertToUTC('<timestamp>', '<sourceTimeZone>', '<format>'?, '<locale>'?)
 ```
 
 | Parâmetro | Obrigatório | Type | Descrição |
@@ -1095,6 +1147,8 @@ convertToUTC('<timestamp>', '<sourceTimeZone>', '<format>'?)
 | <*timestamp*> | Sim | string | Uma cadeia de caracteres que contém o carimbo de data/hora |
 | <*sourceTimeZone*> | Sim | string | O nome do fuso horário de destino. Compatível com fusos horários Windows e Iana. |
 | <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
+|||||
 
 | Valor retornado | Type | Descrição |
 | ------------ | ---- | ----------- |
@@ -1103,11 +1157,23 @@ convertToUTC('<timestamp>', '<sourceTimeZone>', '<format>'?)
 
 *Exemplo*
 
+Este exemplo converte um carimbo de data/hora em UTC do horário padrão do Pacífico
+
 ```
-convertToUTC('01/01/2018 00:00:00',', 'Pacific Standard Time')
+convertToUTC('01/01/2018 00:00:00', 'Pacific Standard Time')
 ```
 
-Retorna o resultado **2018-01-01T08:00:00.000 Z**.
+E retorna o resultado **2018-01-01T08:00:00.000 z**.
+
+*Exemplo 2*
+
+Este exemplo converte um carimbo de data/hora na localidade **de-de** para UTC do horário padrão do Pacífico:
+
+```
+convertToUTC('01/01/2018 00:00:00', 'Pacific Standard Time', '', 'de-DE')
+```
+
+E retorna o resultado **01.01.18 08:00:00**.
 
 <a name="createArray"></a>
 
@@ -1788,7 +1854,7 @@ floor('<number>')
 
 | Valor retornado | Type | Descrição |
 | ------------ | ---- | ----------- |
-| <*valor inteiro*> | inteiro | O maior valor integral menor ou igual ao número de entrada |
+| <*valor inteiro*> | Número inteiro | O maior valor integral menor ou igual ao número de entrada |
 ||||
 
 *Exemplo*
@@ -1848,49 +1914,60 @@ E retornar o resultado **[' Name: Jack ', ' Age: 15 ']**. Observe que a segunda 
 
 ### <a name="formatdatetime"></a>formatDateTime
 
-Retornar um carimbo de data/hora no formato especificado.
+Retornar um carimbo de data/hora em um formato de localidade opcional.
 
 ```
-formatDateTime('<timestamp>', '<format>'?)
+formatDateTime('<timestamp>', '<format>'?, '<locale>'?)
 ```
 
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Sim | string | Uma cadeia de caracteres que contém o carimbo de data/hora |
 | <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
+
 
 | Valor retornado | Type | Descrição |
 | ------------ | ---- | ----------- |
 | <*reformatted-timestamp*> | string | O carimbo de data/hora atualizado no formato especificado |
 ||||
 
-*Exemplos*
+*Exemplo 1*
 
-Estes exemplos convertem um carimbo de data/hora ou um carimbo de data/hora Unix para o formato especificado:
+Esse exemplo converte um carimbo de data/hora no formato especificado:
 
 ```
 formatDateTime('03/15/2018 12:00:00', 'yyyy-MM-ddTHH:mm:ss')
 ```
 
-E retorna os seguintes resultados:
+E retorna o resultado **2018-03-15T12:00:00**.
 
-- **2018-03-15T12:00:00**
+*Exemplo 2*
+
+Este exemplo converte um carimbo de data/hora na localidade **de-de** :
+
+```
+formatDateTime('2018-03-15', '', 'de-DE')
+```
+
+E retorna o resultado **15.03.18 00:00:00**.
 
 <a name="formatEpoch"></a>
 
 ### <a name="formatepoch"></a>formatEpoch
 
-Retorna um carimbo de data/hora no formato especificado da hora do UNIX (também conhecida como hora da Época, hora do POSIX, hora da Época do UNIX).
+Retorna um carimbo de data/hora em um formato de localidade opcional no formato especificado do tempo do UNIX (também conhecido como hora da época, hora do POSIX, horário do UNIX).
 
 ```
-formatEpoch('<epoch>', '<format>'?)
+formatEpoch('<epoch>', '<format>'?, '<locale>'?)
 ```
 
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
 | <*epoch*> | Sim | número | O número de época |
 | <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
 | Valor retornado | Type | Descrição |
@@ -1898,15 +1975,25 @@ formatEpoch('<epoch>', '<format>'?)
 | <*reformatted-timestamp*> | string | O carimbo de data/hora atualizado no formato especificado |
 ||||
 
-*Exemplos*
+*Exemplo*
 
-Este exemplo converte um carimbo de data/hora do Unix no formato especificado:
+Este exemplo converte um carimbo de data/hora UNIX no formato especificado:
 
 ```
 formatEpoch(1521118800, 'yyyy-MM-ddTHH:mm:ss.fffZ)'
 ```
 
 E retorna o resultado **2018-03-15T12:00:00.000Z**.
+
+*Exemplo*
+
+Este exemplo converte um carimbo de data/hora do UNIX na localidade **de de-de** :
+
+```
+formatEpoch(1521118800, '', 'de-DE')
+```
+
+E retorna o resultado **15.03.18 13:00:00**.
 
 <a name="formatNumber"></a>
 
@@ -1915,7 +2002,7 @@ E retorna o resultado **2018-03-15T12:00:00.000Z**.
 Formate um valor para o número especificado de dígitos fracionários e uma localidade opcional especificada.
 
 ```
-formatNumber('<number>', '<precision-digits>', '<locale>')
+formatNumber('<number>', '<precision-digits>', '<locale>'?)
 ```
 
 | Parâmetro | Obrigatório | Type | Descrição |
@@ -1942,28 +2029,36 @@ E retorna a cadeia de caracteres **10,33**.
 
 *Exemplo 2*
 
-Este exemplo formata o número **10,333** a **4** dígitos fracionários usando a formatação **fr-fr** :
+Esses exemplos formatam números para um número especificado de dígitos na localidade **en-US** :
 
 ```
-formatNumber(12000.3, 4, 'fr-fr')
+formatNumber(12.123, 4, 'en-US')
+formatNumber(1.551, 2, 'en-US')
+formatNumber(12.123, 4, 'en-US')
 ```
 
-E retorna a cadeia de caracteres **"12 000, 3000"**.
+E retornam os seguintes resultados, respectivamente:
+
+- **12,12**
+- **1,55**
+- **12,1230**
+
 
 <a name="formatTicks"></a>
 
 ### <a name="formatticks"></a>formatTicks
 
-Retornar um carimbo de data/hora no formato especificado de tiques.
+Retorna um carimbo de data/hora em um formato de localidade opcional no formato especificado de tiques.
 
 ```
-formatTicks('<ticks>', '<format>'?)
+formatTicks('<ticks>', '<format>'?, '<locale>'?)
 ```
 
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
 | <*epoch*> | Sim | número (ou bigint em JavaScript)| O número de tiques |
 | <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
 | Valor retornado | Type | Descrição |
@@ -1971,24 +2066,34 @@ formatTicks('<ticks>', '<format>'?)
 | <*reformatted-timestamp*> | string | O carimbo de data/hora atualizado no formato especificado |
 ||||
 
-*Exemplos*
+*Exemplo 1*
 
 Este exemplo converte tiques no formato especificado:
 
 ```
-formatTicks(637243624200000000, 'yyyy-MM-ddTHH:mm:ss.fffZ)'
+formatTicks(637243624200000000, 'yyyy-MM-ddTHH:mm:ss.fffZ')
 ```
 
 E retorna o resultado **2020-05-06T11:47:00.000Z**.
+
+*Exemplo 2*
+
+Este exemplo converte tiques para o formato especificado na localidade **de-de** :
+
+```
+formatTicks(637243624200000000, '', 'de-DE')
+```
+
+E retorna o resultado **06.05.20 11:47:00**.
 
 <a name="getFutureTime"></a>
 
 ### <a name="getfuturetime"></a>getFutureTime
 
-Retornar o carimbo de data/hora atual mais as unidades de tempo especificadas.
+Retorne o carimbo de data/hora atual em um formato de localidade opcional mais as unidades de tempo especificadas.
 
 ```
-getFutureTime(<interval>, <timeUnit>, '<format>'?)
+getFutureTime(<interval>, <timeUnit>, '<format>'?, '<locale>'?)
 ```
 
 | Parâmetro | Obrigatório | Type | Descrição |
@@ -1996,6 +2101,7 @@ getFutureTime(<interval>, <timeUnit>, '<format>'?)
 | <*interval*> | Sim | inteiro | O número de unidades de tempo especificadas a serem adicionadas |
 | <*timeUnit*> | Sim | string | A unidade de tempo a ser usada com *interval*. As unidades possíveis são "Second", "Minute", "Hour", "Day", "Week", "Month" e "Year".|
 | <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
 | Valor retornado | Type | Descrição |
@@ -2023,6 +2129,90 @@ getFutureTime(5, 'Day', 'MM-DD-YY')
 
 E retorna o resultado **03-06-18**.
 
+*Exemplo 3*
+
+Suponha que o carimbo de data/hora atual seja **2020-05-01T00:00:00.000 z** e a localidade seja **de-de**. O exemplo a seguir adiciona **1** dia ao carimbo de data/hora:
+
+```
+getFutureTime(1,'Day', '', 'de-DE')
+```
+
+E retorna o resultado **02.05.20 00:00:00**.
+
+<a name="getNextViableDate"></a>
+
+### <a name="getnextviabledate"></a>getNextViableDate
+
+Retorna a próxima data viável de uma expressão Timex com base na data atual e em um fuso horário especificado opcionalmente.
+
+```
+getNextViableDate(<timexString>, <timezone>?)
+```
+
+| Parâmetro | Obrigatório | Type | Descrição |
+| --------- | -------- | ---- | ----------- |
+| <*timexstring*> | Sim | string | A cadeia de caracteres Timex da data a ser avaliada. |
+| <*fuso horário*> | Não | string | O fuso horário opcional. |
+|||||
+
+| Valor retornado | Type | Descrição |
+| ------------ | ---- | ----------- |
+| <*nextViableTime*> | string | A próxima data viável. |
+||||
+
+*Exemplos*
+
+Digamos que a data seja **2020-06-12** e a hora atual seja **15:42:21**.
+
+Esses exemplos avaliam a cadeia de caracteres Timex para a próxima data viável com base na data e hora acima:
+
+```
+getPreviousViableDate("XXXX-12-20", "America/Los_Angeles")
+getPreviousViableDate("XXXX-02-29")
+```
+
+E retorne as seguintes cadeias de caracteres, respectivamente:
+
+- **2020-12-20**
+- **2024-02-29**
+
+<a name="getNextViableTime"></a>
+
+### <a name="getnextviabletime"></a>getNextViableTime
+
+Retorna o próximo horário viável de uma expressão Timex com base na hora atual e em um fuso horário especificado opcionalmente.
+
+```
+getNextViableTime(<timexString>, <timezone>?)
+```
+
+| Parâmetro | Obrigatório | Type | Descrição |
+| --------- | -------- | ---- | ----------- |
+| <*timexstring*> | Sim | string | A cadeia de caracteres Timex do tempo a ser avaliado. |
+| <*fuso horário*> | Não | string | O fuso horário opcional. |
+|||||
+
+| Valor retornado | Type | Descrição |
+| ------------ | ---- | ----------- |
+| <*nextViableTime*> | string | O próximo horário viável. |
+||||
+
+*Exemplos*
+
+Digamos que a data seja **2020-06-12** e a hora atual seja **15:42:21**.
+
+Esses exemplos avaliam uma cadeia de caracteres Timex para o próximo horário viável com base na data e hora acima:
+
+```
+getNextViableTime("TXX:12:14", "Asia/Tokyo")
+getNextViableTime("TXX:52:14")
+```
+
+E retorne as seguintes cadeias de caracteres repsectively:
+
+- **T16:12:14**
+- **T15:52:14**
+
 <a name="getPastTime"></a>
 
 ### <a name="getpasttime"></a>getPastTime
@@ -2047,7 +2237,7 @@ getPastTime(<interval>, <timeUnit>, '<format>'?)
 
 *Exemplo 1*
 
-Suponha que o carimbo de data/hora seja **2018-02-01T00:00:00.000Z**. Esse exemplo adiciona cinco dias a esse carimbo de data/hora:
+Suponha que o carimbo de data/hora seja **2018-02-01T00:00:00.000Z**. Esse exemplo subtrai cinco dias desse carimbo de data/hora:
 
 ```
 getPastTime(5, 'Day')
@@ -2057,13 +2247,97 @@ E retorna o resultado **2019-01-27T00:00:00.000Z**.
 
 *Exemplo 2*
 
-Suponha que o carimbo de data/hora seja **2018-03-01T00:00:00.000Z**. Este exemplo adiciona cinco dias ao carimbo de data/hora e converte o resultado para o formato **MM-DD-AA**:
+Suponha que o carimbo de data/hora seja **2018-03-01T00:00:00.000Z**. Este exemplo subtrai cinco dias para o carimbo de data/hora no formato **mm-dd-aa** :
 
 ```
 getPastTime(5, 'Day', 'MM-DD-YY')
 ```
 
 E retorna o resultado **02-26-18**.
+
+*Exemplo 3*
+
+Suponha que o carimbo de data/hora atual seja **2020-05-01T00:00:00.000 z** e a localidade seja **de-de**. O exemplo a seguir subtrai **1** dia do carimbo de data/hora:
+
+```
+getPastTime(1,'Day', '', 'de-DE')
+```
+
+E retorna o resultado **31.04.20 00:00:00**.
+
+<a name="getPreviousViableDate"></a>
+
+### <a name="getpreviousviabledate"></a>getPreviousViableDate
+
+Retorna a data viável anterior de uma expressão Timex com base na data atual e em um fuso horário especificado opcionalmente.
+
+```
+getPreviousViableDate(<timexString>, <timezone>?)
+```
+
+| Parâmetro | Obrigatório | Type | Descrição |
+| --------- | -------- | ---- | ----------- |
+| <*timexstring*> | Sim | string | A cadeia de caracteres Timex da data a ser avaliada. |
+| <*fuso horário*> | Não | string | O fuso horário opcional. |
+|||||
+
+| Valor retornado | Type | Descrição |
+| ------------ | ---- | ----------- |
+| <*previousViableDate*> | string | A data viável anterior. |
+||||
+
+*Exemplos*
+
+Digamos que a data seja **2020-06-12** e a hora atual seja **15:42:21**.
+
+Esses exemplos avaliam uma cadeia de caracteres Timex para a data viável anterior com base na data e hora acima:
+
+```
+getPreviousViableDate("XXXX-12-20", "Eastern Standard Time")
+getPreviousViableDate("XXXX-02-29")
+```
+
+E retorne as seguintes cadeias de caracteres repsectively:
+
+- **2019-12-20**
+- **2020-02-29**
+
+<a name="getPreviousViableTime"></a>
+
+### <a name="getpreviousviabletime"></a>getPreviousViableTime
+
+Retorna o tempo viável anterior de uma expressão Timex com base na data atual e em um fuso horário especificado opcionalmente.
+
+```
+getPreviousViableTime(<timexString>, <timezone>?)
+```
+
+| Parâmetro | Obrigatório | Type | Descrição |
+| --------- | -------- | ---- | ----------- |
+| <*timexstring*> | Sim | string | A cadeia de caracteres Timex do tempo a ser avaliado. |
+| <*fuso horário*> | Não | string | O fuso horário opcional. |
+|||||
+
+| Valor retornado | Type | Descrição |
+| ------------ | ---- | ----------- |
+| <*previousViableTime*> | string | O tempo viável anterior. |
+||||
+
+*Exemplos*
+
+Digamos que a data seja **2020-06-12** e a hora atual seja **15:42:21**.
+
+Esses exemplos avaliam uma cadeia de caracteres Timex para o tempo viável anterior com base na data e hora acima:
+
+```
+getPreviousViableTime("TXX:52:14")
+getPreviousViableTime("TXX:12:14", 'Europe/London')
+```
+
+E retorne as seguintes cadeias de caracteres repsectively:
+
+- **T14:52:14**
+- **T15:12:14**
 
 <a name="getProperty"></a>
 
@@ -3177,7 +3451,7 @@ json('<value>')
 
 | Valor retornado | Type | Descrição |
 | ------------ | ---- | ----------- |
-| <*JSON-result*> | string | A cadeia de caracteres resultante criada com base em todos os itens na matriz especificada |
+| <*JSON-result*> | string | O objeto JSON resultante criado a partir da cadeia de caracteres ou XML especificado. |
 ||||
 
 *Exemplo 1*
@@ -3937,6 +4211,59 @@ select(json("{'name': 'jack', 'age': '15'}"), x=> concat(x.key, ':', x.value))
 
 E retornar o resultado **[' Name: Jack ', ' Age: 15 ']**. Observe que a segunda expressão é uma *expressão lambda*, que é mais legível.
 
+<a name="sentenceCase"></a>
+
+### <a name="sentencecase"></a>sentenceCase
+
+Colocar em maiúscula a primeira letra da primeira palavra em uma cadeia de caracteres em um formato de localidade opcional.
+
+```
+sentenceCase('<text>', '<locale>'?)
+```
+
+| Parâmetro | Obrigatório | Type | Descrição |
+| --------- | -------- | ---- | ----------- |
+| <*text*> | Sim | string | A cadeia de caracteres original |
+| <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
+|||||
+
+| Valor retornado | Type | Descrição |
+| ------------ | ---- | ----------- |
+| Cadeia de caracteres de resultado | string | Retorna o resultado do caso de sentença |
+||||
+
+*Exemplo 1*
+
+Esses exemplos capitalizam a primeira letra de uma cadeia de caracteres:
+
+```
+sentenceCase('a')
+sentenceCase('abc def')
+sentenceCase('aBC dEF')
+```
+
+E retornam os seguintes resultados, respectivamente:
+
+- **A**
+- **Def. de ABC**
+- **Def. de ABC**
+
+*Exemplo 2*
+
+Esses exemplos coloca em maiúscula a primeira letra de uma cadeia de caracteres no formato de localidade especificado:
+
+```
+sentenceCase('a', 'fr-FR')
+sentenceCase('abc', 'en-US')
+sentenceCase('aBC', 'fr-FR')
+```
+
+E retornam os seguintes resultados, respectivamente:
+
+- **A**
+- **ABC**
+- **ABC**
+
 <a name="setPathToValue"></a>
 
 ### <a name="setpathtovalue"></a>setPathToValue
@@ -4207,16 +4534,17 @@ E retorna as seguintes matrizes como o resultado, respectivamente:
 
 ### <a name="startofday"></a>startOfDay
 
-Retornar o início do dia de um carimbo de data/hora.
+Retorna o início do dia para um carimbo de data/hora em um formato de localidade opcional.
 
 ```
-startOfDay('<timestamp>', '<format>'?)
+startOfDay('<timestamp>', '<format>'?, '<locale>'?)
 ```
 
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Sim | string | Uma cadeia de caracteres que contém o carimbo de data/hora |
 | <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
 | Valor retornado | Type | Descrição |
@@ -4224,7 +4552,7 @@ startOfDay('<timestamp>', '<format>'?)
 | '<*updated-timestamp*>'| string | O carimbo de data/hora especificado começando na marca de zero hora para o dia |
 ||||
 
-*Exemplo*
+*Exemplo 1*
 
 Este exemplo localiza o início do dia:
 
@@ -4234,20 +4562,31 @@ startOfDay('2018-03-15T13:30:30.000Z')
 
 E retorna o resultado **2018-03-15T00:00:00.000Z**.
 
+*Exemplo 2*
+
+Este exemplo localiza o início do dia com a localidade **fr-fr**:
+
+```
+startOfDay('2018-03-15T13:30:30.000Z', '', 'fr-FR')
+```
+
+E retorna o resultado **15/03/2018 00:00:00**.
+
 <a name="startOfHour"></a>
 
 ### <a name="startofhour"></a>startOfHour
 
-Retornar o início da hora de um carimbo de data/hora.
+Retorna o início da hora para um carimbo de data/hora em um formato de localidade opcional.
 
 ```
-startOfHour('<timestamp>', '<format>'?)
+startOfHour('<timestamp>', '<format>'?, '<locale>'?)
 ```
 
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Sim | string | Uma cadeia de caracteres que contém o carimbo de data/hora |
 | <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
 | Valor retornado | Type | Descrição |
@@ -4255,7 +4594,7 @@ startOfHour('<timestamp>', '<format>'?)
 | '<*updated-timestamp*>'| string | O carimbo de data/hora especificado começando na marca de zero minuto para o dia |
 ||||
 
-*Exemplo*
+*Exemplo 1*
 
 Este exemplo localiza o início da hora:
 
@@ -4265,20 +4604,31 @@ startOfHour('2018-03-15T13:30:30.000Z')
 
 E retorna o resultado **2018-03-15T13:00:00.000Z**.
 
+*Exemplo 2*
+
+Este exemplo localiza o início da hora com a localidade **fr-fr**:
+
+```
+startOfHour('2018-03-15T13:30:30.000Z', '', 'fr-FR')
+```
+
+E retorna o resultado **15/03/2018 13:00:00**.
+
 <a name="startOfMonth"></a>
 
 ### <a name="startofmonth"></a>startOfMonth
 
-Retornar o início do mês de um carimbo de data/hora.
+Retorna o início do mês para um carimbo de data/hora em um formato de localidade opcional.
 
 ```
-startOfDay('<timestamp>', '<format>'?)
+startOfMonth('<timestamp>', '<format>'?, '<locale>'?)
 ```
 
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Sim | string | Uma cadeia de caracteres que contém o carimbo de data/hora |
 | <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
 | Valor retornado | Type | Descrição |
@@ -4286,15 +4636,25 @@ startOfDay('<timestamp>', '<format>'?)
 | '<*updated-timestamp*>'| string | O carimbo de data/hora especificado começando no primeiro dia do mês na marca de zero hora |
 ||||
 
-*Exemplo*
+*Exemplo 1*
 
 Este exemplo localiza o início do mês:
 
 ```
-startOfDay('2018-03-15T13:30:30.000Z')
+startOfMonth('2018-03-15T13:30:30.000Z')
 ```
 
 E retorna o resultado **2018-03-01T00:00:00.000Z**.
+
+*Exemplo 2*
+
+Este exemplo localiza o início do mês com a localidade **fr-fr**:
+
+```
+startOfMonth('2018-03-15T13:30:30.000Z', '', 'fr-FR')
+```
+
+E retorna o resultado **01/03/2018 00:00:00**.
 
 <a name="startsWith"></a>
 
@@ -4337,55 +4697,20 @@ startsWith('hello world', 'greeting')
 
 E retorna o resultado `false`.
 
-<a name="sentenceCase"></a>
-
-### <a name="sentencecase"></a>sentenceCase
-
-Colocar em maiúscula a primeira letra da primeira palavra em uma cadeia de caracteres.
-
-```
-sentenceCase('<text>')
-```
-
-| Parâmetro | Obrigatório | Type | Descrição |
-| --------- | -------- | ---- | ----------- |
-| <*text*> | Sim | string | A cadeia de caracteres original |
-|||||
-
-| Valor retornado | Type | Descrição |
-| ------------ | ---- | ----------- |
-| Cadeia de caracteres de resultado | string | Retorna o resultado do caso de sentença |
-||||
-
-*Exemplo*
-
-Esses exemplos capitalizam a primeira letra de uma cadeia de caracteres:
-
-```
-sentenceCase('a')
-sentenceCase('abc def')
-sentenceCase('aBC dEF')
-```
-
-E retornam os seguintes resultados, respectivamente:
-
-- **A**
-- **Def. de ABC**
-- **Def. de ABC**
-
 <a name="string"></a>
 
 ### <a name="string"></a>string
 
-Retornar a versão de cadeia de caracteres de um valor.
+Retornar a versão de cadeia de caracteres de um valor em um formato de localidade opcional.
 
 ```
-string(<value>)
+string(<value>, '<locale>'?)
 ```
 
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
 | <*value*> | Sim | any | O valor a ser convertido |
+| <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
 | Valor retornado | Type | Descrição |
@@ -4411,7 +4736,21 @@ Este exemplo cria uma cadeia de caracteres para o objeto JSON especificado e usa
 string( { "name": "Sophie Owen" } )
 ```
 
-E retorna o resultado **{ \\"name\\": \\"Sophie Owen\\" }**
+E retorna o resultado **{"Name": "como Sophie Owen"}**
+
+*Exemplo 3*
+
+Este exemplo cria uma versão de cadeia de caracteres do número **10** em uma localidade específica:
+
+```
+string(100.1, 'fr-FR')
+string(100.1, 'en-US')
+```
+
+E retorna as seguintes cadeias de caracteres, respectivamente:
+
+- **100, 1**
+- **100,1*
 
 <a name="sub"></a>
 
@@ -4512,10 +4851,10 @@ E retorna o resultado **world**.
 
 ### <a name="subtractfromtime"></a>subtractFromTime
 
-Subtrair um número de unidades de tempo de um carimbo de data/hora. Confira também [getPastTime()](#getPastTime).
+Subtraia um número de unidades de tempo de um carimbo de data/hora em um formato de localidade opcional. Confira também [getPastTime()](#getPastTime).
 
 ```
-subtractFromTime('<timestamp>', <interval>, '<timeUnit>', '<format>'?)
+subtractFromTime('<timestamp>', <interval>, '<timeUnit>', '<format>'?, '<locale>'?)
 ```
 
 | Parâmetro | Obrigatório | Type | Descrição |
@@ -4524,6 +4863,7 @@ subtractFromTime('<timestamp>', <interval>, '<timeUnit>', '<format>'?)
 | <*interval*> | Sim | inteiro | O número de unidades de tempo especificadas a serem subtraídas |
 | <*timeUnit*> | Sim | string | A unidade de tempo a ser usada com *interval*. As unidades possíveis são "Second", "Minute", "Hour", "Day", "Week", "Month" e "Year". |
 | <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
 | Valor retornado | Type | Descrição |
@@ -4533,7 +4873,7 @@ subtractFromTime('<timestamp>', <interval>, '<timeUnit>', '<format>'?)
 
 *Exemplo 1*
 
-Este exemplo subtrai um dia do seguinte carimbo de data/hora:
+Este exemplo subtrai um dia de um carimbo de data/hora a seguir:
 
 ```
 subtractFromTime('2018-01-02T00:00.000Z', 1, 'Day')
@@ -4543,13 +4883,23 @@ E retorna o resultado **2018-01-01T00:00:00.000Z**.
 
 *Exemplo 2*
 
-Este exemplo subtrai um dia do seguinte carimbo de data/hora:
+Este exemplo subtrai um dia de um carimbo de data/hora usando o formato **D** :
 
 ```
 subtractFromTime('2018-01-02T00:00.000Z', 1, 'Day', 'D')
 ```
 
-E retorna o resultado usando o formato *D* opcional: **Monday, January, 1, 2018**.
+E retorna o resultado **segunda-feira, Janeiro, 1, 2018**.
+
+*Exemplo 3*
+
+Este exemplo subtrai **1** hora de um timestamp na localidade **de-de** :
+
+```
+subtractFromTime('2018-03-15T13:00:00.000Z', 1, 'Hour', '', 'de-DE')
+```
+
+E retorna o resultado **15.03.18 12:00:00**.
 
 <a name="sum"></a>
 
@@ -4741,15 +5091,16 @@ E retorna o número **3655643, 185**.
 
 ### <a name="titlecase"></a>titleCase
 
-Colocar em maiúscula a primeira letra de cada palavra em uma cadeia de caracteres.
+Colocar em maiúscula a primeira letra de cada palavra em uma cadeia de caracteres em um formato local opcional.
 
 ```
-titleCase('<text>')
+titleCase('<text>', '<locale>'?)
 ```
 
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
 | <*text*> | Sim | string | A cadeia de caracteres original |
+| <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
 | Valor retornado | Type | Descrição |
@@ -4757,14 +5108,14 @@ titleCase('<text>')
 | Cadeia de caracteres de resultado | string | O resultado do caso de título |
 ||||
 
-*Exemplo*
+*Exemplo 1*
 
 Esses exemplos capitalizam a primeira letra de cada palavra em uma cadeia de caracteres:
 
 ```
 titleCase('a')
 titleCase('abc def')
-sentenceCase('aBC dEF')
+titleCase('aBC dEF')
 ```
 
 E retornam os seguintes resultados, respectivamente:
@@ -4773,19 +5124,34 @@ E retornam os seguintes resultados, respectivamente:
 - **Def. de ABC**
 - **Def. de ABC**
 
+*Exemplo 2*
+
+Esses exemplos capitalizam a primeira letra de uma cadeia de caracteres no formato **en-US** :
+
+```
+titleCase('a', 'en-US')
+titleCase('aBC dEF', 'en-US')
+```
+
+E retornam os seguintes resultados, respectivamente:
+
+- **A**
+- **Def. de ABC**
+
 <a name="toLower"></a>
 
 ### <a name="tolower"></a>toLower
 
-Retornar uma cadeia de caracteres em letras minúsculas. Se um caractere na cadeia de caracteres não tiver uma versão em minúsculas, esse caractere permanecerá inalterado na cadeia de caracteres retornada.
+Retornar uma cadeia de caracteres em minúsculas em um formato de localidade opcional. Se um caractere na cadeia de caracteres não tiver uma versão em minúsculas, esse caractere permanecerá inalterado na cadeia de caracteres retornada.
 
 ```
-toLower('<text>')
+toLower('<text>', '<locale>'?)
 ```
 
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
 | <*text*> | Sim | string | A cadeia de caracteres a ser retornada no formato em minúsculas |
+| <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
 | Valor retornado | Type | Descrição |
@@ -4793,7 +5159,7 @@ toLower('<text>')
 | <*lowercase-text*> | string | A cadeia de caracteres original no formato em minúsculas |
 ||||
 
-*Exemplo*
+*Exemplo 1*
 
 Este exemplo converte uma cadeia de caracteres em minúsculas:
 
@@ -4803,19 +5169,30 @@ toLower('Hello World')
 
 E retorna o resultado **hello world**.
 
+*Exemplo 2*
+
+Este exemplo converte uma cadeia de caracteres em minúsculas no formato **fr-fr** :
+
+```
+toUpper('Hello World', 'fr-FR')
+```
+
+E retorna o resultado **hello world**.
+
 <a name="toUpper"></a>
 
 ### <a name="toupper"></a>toUpper
 
-Retornar uma cadeia de caracteres em letras maiúsculas. Se um caractere na cadeia de caracteres não tiver uma versão em maiúsculas, esse caractere permanecerá inalterado na cadeia de caracteres retornada.
+Retornar uma cadeia de caracteres em maiúsculas em um formato de localidade opcional.. Se um caractere na cadeia de caracteres não tiver uma versão em maiúsculas, esse caractere permanecerá inalterado na cadeia de caracteres retornada.
 
 ```
-toUpper('<text>')
+toUpper('<text>', '<locale>'?)
 ```
 
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
 | <*text*> | Sim | string | A cadeia de caracteres a ser retornada no formato em maiúsculas |
+| <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
 | Valor retornado | Type | Descrição |
@@ -4823,12 +5200,22 @@ toUpper('<text>')
 | <*uppercase-text*> | string | A cadeia de caracteres original no formato em maiúsculas |
 ||||
 
-*Exemplo*
+*Exemplo 1*
 
 Este exemplo converte uma cadeia de caracteres em maiúsculas:
 
 ```
 toUpper('Hello World')
+```
+
+E retorna o resultado **HELLO WORLD**.
+
+*Exemplo 2*
+
+Este exemplo converte uma cadeia de caracteres em maiúsculas no formato **fr-fr** :
+
+```
+toUpper('Hello World', 'fr-FR')
 ```
 
 E retorna o resultado **HELLO WORLD**.
@@ -5168,10 +5555,10 @@ E retorna o resultado **http**.
 
 ### <a name="utcnow"></a>utcNow
 
-Retornar o carimbo de data/hora atual.
+Retorna o carimbo de data/hora atual em um formato de localidade opcional como uma cadeia de caracteres.
 
 ```
-utcNow('<format>')
+utcNow('<format>', '<locale>'?)
 ```
 
 Ou é possível especificar um formato diferente com o parâmetro <*formato*>.
@@ -5180,6 +5567,7 @@ Ou é possível especificar um formato diferente com o parâmetro <*formato*>.
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
 | <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
 | Valor retornado | Type | Descrição |
@@ -5199,13 +5587,23 @@ E retorna o resultado **2018-04-15T13:00:00.000Z**.
 
 *Exemplo 2*
 
-Suponha que a data seja **April 15, 2018** às **1:00:00 PM**. Este exemplo obtém o carimbo de data/hora atual usando o formato *D* opcional:
+Suponha que a data seja **April 15, 2018** às **1:00:00 PM**. Este exemplo obtém o carimbo de data/hora atual usando o formato **D** opcional:
 
 ```
 utcNow('D')
 ```
 
 E retorna o resultado **Sunday, April 15, 2018**.
+
+*Exemplo 3*
+
+Suponha que a data seja **April 15, 2018** às **1:00:00 PM**. Este exemplo obtém o carimbo de data/hora atual usando a localidade **de-de** :
+
+```
+utcNow('', 'de-DE')
+```
+
+E retorna o resultado **15.04.18 13:00:00**.
 
 <a name="where"></a>
 

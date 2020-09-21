@@ -3,20 +3,20 @@ title: Gerenciar um serviço de bot de operação de execução longa
 description: Saiba como lidar com operações longas em um bot.
 keywords: operações longas, tempo limite, 15 segundos
 author: ericdahlvang
-ms.author: ericdahlvang
+ms.author: erdahlva
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 07/30/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 213c1a397c4c2126ef9f9b6b02393d0692499462
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 75e1bfe8985ca29caad6415d74e04de11eac593b
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89364375"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824306"
 ---
-# <a name="manage-a-long-running-operation"></a>Gerenciar uma operação de execução longa
+# <a name="manage-a-long-running-operation"></a>Gerenciar uma operação de execução prolongada
 
 [!INCLUDE[applies-to](../includes/applies-to.md)]
 
@@ -49,7 +49,7 @@ Este exemplo define uma `LongOperationPrompt` classe derivada da `ActivityPrompt
 
 Este artigo aborda muitas tecnologias diferentes. Consulte a seção [recursos adicionais](#additional-resources) para obter links para artigos associados.
 
-## <a name="create-an-azure-storage-account"></a>Criar uma conta de Armazenamento do Azure
+## <a name="create-an-azure-storage-account"></a>Criar uma conta do Armazenamento do Azure
 
 Crie uma conta de armazenamento do Azure e recupere a cadeia de conexão. Será necessário adicionar a cadeia de conexão ao arquivo de configuração do bot.
 

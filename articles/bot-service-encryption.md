@@ -1,16 +1,16 @@
 ---
-title: Criptografia do Serviço de Bot do Azure para dados em repouso | Microsoft Docs
+title: Criptografia do serviço de bot do Azure para dados em serviço de bot de repouso
 description: O Serviço de Bot do Azure protege seus dados criptografando-os automaticamente antes de mantê-los na nuvem com as chaves de criptografia fornecidas pela Microsoft.
 ms.service: bot-service
 ms.date: 07/21/2020
 ms.topic: conceptual
 ms.author: jameslew
-ms.openlocfilehash: 132d9b7a09ffdf41c2c98da49c69111ebd372b63
-ms.sourcegitcommit: 757ddf4f3fd3557ad9746dfa83ca742d54ac4763
+ms.openlocfilehash: d8fc2745acb53d661e750482c9b467344c46e4f1
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86876546"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824166"
 ---
 # <a name="azure-bot-service-encryption-for-data-at-rest"></a>Criptografia do Serviço de Bot do Azure para dados em repouso
 
@@ -26,12 +26,14 @@ O Serviço de Bot do Azure criptografa seus dados no serviço bot. Os exemplos i
 
 ## <a name="about-encryption-key-management"></a>Sobre o gerenciamento de chaves de criptografia
 
-O Serviço de Bot do Azure criptografa dados com as chaves fornecidas pela Microsoft que são giradas de modo predefinido.  
+O Serviço de Bot do Azure criptografa dados com as chaves fornecidas pela Microsoft que são giradas de modo predefinido.
+Há dois tipos de chaves: gerenciada pela Microsoft e gerenciada pelo cliente.
+Esta tabela descreve qual entidade executa cada operação para chaves gerenciadas pela Microsoft.
 
-|                                        |    Chaves gerenciadas pela Microsoft                             | 
+|    Operação                           |    Chaves gerenciadas pela Microsoft                             |
 |----------------------------------------|-------------------------------------------------------|
 |    Operações de criptografia/descriptografia    |    Azure                                              |
-|    Armazenamento de chave                         |    Cofre de Chave do Azure                              |
+|    Armazenamento de chave                         |    Cofre de Chave do Azure                                    |
 |    Responsabilidade de rotação de chave         |    Microsoft                                          |
 |    Uso de chave                           |    Microsoft                                          |
 |    Acesso à chave                          |    Somente Microsoft                                     |

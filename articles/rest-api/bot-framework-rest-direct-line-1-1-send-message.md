@@ -7,14 +7,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 09b22007fb590f0dc628bb729beaf8acaf32bb52
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: bf7e2a6dc47486a9720d86ee6da18cf4853a6f3b
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89361819"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824456"
 ---
-# <a name="send-a-message-to-the-bot"></a>Enviar uma mensagem para o bot
+# <a name="send-a-message-to-the-bot-in-direct-line-api-11"></a>Enviar uma mensagem para o bot na API de linha direta 1,1
 
 > [!IMPORTANT]
 > Este artigo descreve como enviar uma mensagem ao bot usando a API de linha direta 1.1. Se você estiver criando uma nova conexão entre seu aplicativo cliente e o bot, use a [API de Linha Direta 3.0](bot-framework-rest-direct-line-3-0-send-activity.md).

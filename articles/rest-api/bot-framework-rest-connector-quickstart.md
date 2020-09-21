@@ -7,14 +7,15 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 691cd0b07c8f79a125040521362e749c60fe8ba1
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: d3cee4eeb5a6df1100340b901ab74a1b91857ac2
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89361869"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824506"
 ---
-# <a name="create-a-bot-with-the-bot-connector-service"></a>Crie um bot com o serviço Bot Connector
+# <a name="create-a-bot-with-the-bot-connector-service-with-the-bot-connector-api"></a>Criar um bot com o serviço de conector de bot com a API do conector de bot
+
 > [!div class="op_single_selector"]
 > - [.NET](../dotnet/bot-builder-dotnet-quickstart.md)
 > - [Node.js](../nodejs/bot-builder-nodejs-quickstart.md)
