@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 92426d644f25df07028264ff51a282d8e2ed3018
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: bb08b7d1db1dc5ce382b7ff83c1039eab11fc9c8
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143965"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90823786"
 ---
 # <a name="migrate-a-net-v3-bot-to-a-net-framework-v4-bot"></a>Migrar um bot v3 do .NET para um bot v4 do .NET Framework
 
@@ -137,7 +137,7 @@ Todos os nossos diálogos serão derivados de `ComponentDialog`, em vez de imple
 
 Esse bot tem quatro diálogos que precisam ser convertidos:
 
-| | |
+| caixa de diálogo | Descrição |
 |---|---|
 | [RootDialog](#update-the-root-dialog) | Apresenta opções e inicia os outros diálogos. |
 | [InstallAppDialog](#update-the-install-app-dialog) | Manipula as solicitações para instalar um aplicativo em um computador. |

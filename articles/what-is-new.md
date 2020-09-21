@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 08/21/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 350424491060c74bf63c17760c843474a4a01972
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 0ca926085c4971928926a0d6fca1b34e136c4c63
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362329"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824906"
 ---
 # <a name="whats-new-august-2020"></a>Novidades de agosto de 2020
 
@@ -24,8 +24,8 @@ O SDK do bot Framework v4 é um [SDK](https://github.com/microsoft/botframework-
 
 Este artigo resume os principais novos recursos e aprimoramentos no Bot Framework e no Serviço de Bot do Azure.
 
-|   | C#  | JS  | Python |  Java
-|---|:---:|:---:|:------:|:-----:
+|Item | C#  | JS  | Python | Java
+|:----|:---:|:---:|:------:|:-----:
 |Versão |[4,10 (GA)][1] | [4,10 (GA)][2] | [4,10 (GA)][3] | [4.6 Versão preliminar][3a]
 |Exemplos |[.NET Core][6], [WebAPI][10] |[Node.js][7], [TypeScript][8], [es6][9]  | [Python][11a] |
 

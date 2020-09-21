@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 43ae6504dcd58c221d0dfe2678c2363323ac63cb
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 793cb17ef254e1911462c436cc79e2fd08243570
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75796814"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90823837"
 ---
-# <a name="customize-user-experience-with-pattern-language"></a>Personalizar a experiência do usuário com linguagem padrão
+# <a name="customize-user-experience-with-pattern-language-in-the-v3-c-sdk"></a>Personalizar a experiência do usuário com a linguagem padrão no SDK do C v3 \#
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

@@ -8,14 +8,15 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: e23d74c5f1dfb36625db99fc906185159d3362a9
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: f11c1fafb46ec371d1fe3b1f42a3fa8e5eab1558
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75790831"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824756"
 ---
-# <a name="send-proactive-messages"></a>Enviar mensagens proativas
+# <a name="send-proactive-messages-in-the-v3-javascript-sdk"></a>Enviar mensagens proativas no SDK do JavaScript v3
+
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
 > [!div class="op_single_selector"]

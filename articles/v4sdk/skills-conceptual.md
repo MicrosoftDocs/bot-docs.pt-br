@@ -1,6 +1,6 @@
 ---
 title: Visão geral de skills | Microsoft Docs
-description: Descreve como a lógica de conversação de um bot pode ser usada por outro bot usando o SDK do Bot Framework.
+description: Descreve os conceitos de como a lógica de conversação em um bot pode ser usada por outro bot usando o SDK do bot Framework.
 keywords: bot skill, host bot, skill bot, skill consumer.
 author: JonathanFingold
 ms.author: kamrani
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/15/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 7a99089687ff7d316efd019fe76ff08822ff1f02
-ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
+ms.openlocfilehash: 936166bf6d07bd63141953c3644a040d0af6f71c
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86542412"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824886"
 ---
 # <a name="skills-overview"></a>Visão geral de skills
 
@@ -141,13 +141,16 @@ A autenticação de nível de serviço é gerenciada pelo serviço do Bot Connec
 
 #### <a name="claims-validation"></a>Validação de declarações
 
-Você pode adicionar um _validador de declarações_ à configuração de autenticação. As declarações são avaliadas após o cabeçalho de autenticação. Gere um erro ou uma exceção no código de validação para rejeitar a solicitação.
+Você deve adicionar um _validador de declarações_ à configuração de autenticação. As declarações são avaliadas após o cabeçalho de autenticação. Gere um erro ou uma exceção no código de validação para rejeitar a solicitação.
 
 Há vários motivos pelos quais você pode rejeitar uma solicitação autenticada de outra forma:
 
 - Quando o consumidor de skills deve aceitar o tráfego somente de skills com as quais ele iniciou uma conversa.
 - Quando um skill faz parte de um serviço pago e os usuários que não estão no banco de dados não devem ter acesso.
 - Quando você deseja restringir o acesso ao skill para consumidores de skills específicos.
+
+> [!IMPORTANT]
+> Se você não fornecer um validador de declarações, seu bot gerará um erro ou exceção ao receber uma atividade de outro bot, se o bot é uma habilidade ou um consumidor de habilidades.
 
 <!--TODO Need a link for more information about claims and claims-based validation.-->
 

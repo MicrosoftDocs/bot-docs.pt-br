@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 723f81d5ef76eb92df74d1946532fe475c617c59
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 8089d6675d807bf9626a9eef26dca1f2dc49a3c4
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75791088"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824826"
 ---
-# <a name="prompt-for-user-input"></a>Prompt de entrada do usuário
+# <a name="prompt-for-user-input-in-the-v3-javascript-sdk"></a>Solicitar entrada do usuário no SDK do JavaScript v3
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

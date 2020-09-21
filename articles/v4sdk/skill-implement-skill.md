@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/08/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 214eb5bc522b922d2dbfb06cc84c3e6650e94433
-ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
+ms.openlocfilehash: 6bf80c15bb3921051ee27e272cd9379aa998632c
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86542452"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824896"
 ---
 # <a name="implement-a-skill"></a>Implementar um skill
 
@@ -47,15 +47,15 @@ Este artigo se concentra no skill, que inclui a lógica de suporte em seu bot e 
 
 ### <a name="c"></a>[C#](#tab/cs)
 
-![Diagrama de classe do skill](./media/skills-simple-skill-cs.png)
+![Diagrama de classe Csharp de qualificações](./media/skills-simple-skill-cs.png)
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-![Diagrama de classe do skill](./media/skills-simple-skill-js.png)
+![Diagrama de classe js de qualificações](./media/skills-simple-skill-js.png)
 
 ### <a name="python"></a>[Python](#tab/python)
 
-![Diagrama de classe do skill](./media/skills-simple-skill-python.png)
+![Diagrama de classe do Python de habilidades](./media/skills-simple-skill-python.png)
 
 ---
 
@@ -167,10 +167,13 @@ A lógica desse skill não é alterada de ciclo em ciclo. Se você implementar u
 
 Este exemplo usa uma lista de chamadores permitidos para validação de declarações. A lista é definida no arquivo de configuração do skill e é lida no objeto do validador quando ele é criado.
 
-Você pode adicionar um _validador de declarações_ à configuração de autenticação. As declarações são avaliadas após o cabeçalho de autenticação. O código de validação deve gerar um erro ou uma exceção para rejeitar a solicitação. Há muitos motivos pelos quais você pode rejeitar uma solicitação autenticada de outra forma. Por exemplo:
+Você deve adicionar um _validador de declarações_ à configuração de autenticação. As declarações são avaliadas após o cabeçalho de autenticação. O código de validação deve gerar um erro ou uma exceção para rejeitar a solicitação. Há muitos motivos pelos quais você pode rejeitar uma solicitação autenticada de outra forma. Por exemplo:
 
 - O skill faz parte de um serviço pago. Usuários que não estão no banco de dados não devem ter acesso.
 - O skill é proprietário. Somente determinados consumidores de skills podem chamar o skill.
+
+> [!IMPORTANT]
+> Se você não fornecer um validador de declarações, seu bot gerará um erro ou exceção ao receber uma atividade do consumidor de habilidades.
 
 <!--TODO Need a link for more information about claims and claims-based validation.-->
 

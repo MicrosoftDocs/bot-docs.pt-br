@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 743a4ae550758b0578780dc7d407e3032aa8435f
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 9eef1cc1696a3cf2e62b5f876f07c8a0c09bfd4f
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360789"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90823856"
 ---
-# <a name="request-payment"></a>Solicitar pagamento
+# <a name="request-payment-in-the-v3-c-sdk"></a>Solicitar pagamento no SDK do C v3 \#
 
 > [!NOTE]
 > O serviço de pagamento mencionado neste artigo será preterido em 1º de dezembro de 2019.

@@ -9,14 +9,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: ecdbf3e573c091893d0f2da8d2c7acb0c6348810
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: ef2d98fb58e666f326a013d88c8f4f8fc3a6b082
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75796680"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90823866"
 ---
-# <a name="build-a-speech-enabled-bot-with-cortana-skills"></a>Criar um bot habilitado para fala com habilidades da Cortana
+# <a name="build-a-speech-enabled-bot-with-cortana-skills-in-the-v3-c-sdk"></a>Criar um bot habilitado para fala com habilidades da Cortana no SDK do C v3 \#
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 3445c9d092c11952eb3c7a21e471d453653237a4
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 2d7c1bdbdfca82f2d8ede742a538cefa7a26be87
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75790898"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824806"
 ---
-# <a name="define-conversation-steps-with-waterfalls"></a>Definir a conversa em cascata
+# <a name="define-conversation-steps-with-waterfalls-in-the-v3-javascript-sdk"></a>Definir etapas de conversa com cascatas no SDK do JavaScript v3
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

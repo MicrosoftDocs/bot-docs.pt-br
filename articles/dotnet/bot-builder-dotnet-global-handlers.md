@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 5097c2c9e82932f118e77af64d7fadab92a56b17
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 713cba979fb05a05c487e127b6c4f0de40d92d65
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75788826"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90823836"
 ---
-# <a name="implement-global-message-handlers"></a>Implementar manipuladores de mensagens globais
+# <a name="implement-global-message-handlers-in-the-v3-c-sdk"></a>Implementar manipuladores de mensagens globais no SDK C v3 \#
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

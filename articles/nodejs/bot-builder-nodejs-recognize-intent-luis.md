@@ -9,14 +9,14 @@ ms.service: bot-service
 ms.date: 07/20/2020
 ROBOTS: NOINDEX
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: bdf64a078f12c5fe264b8d38a9aa57fad87930ea
-ms.sourcegitcommit: ee94943420ef6c28638297a6ec44ee995de27d3b
+ms.openlocfilehash: f9ebd440e6c817b06295b0aedb6c9aaf91a97693
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865974"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824746"
 ---
-# <a name="recognize-intents-and-entities-with-luis"></a>Reconhecer intenções e entidades com o LUIS 
+# <a name="recognize-intents-and-entities-with-luis-in-the-v3-javascript-sdk"></a>Reconhecer tentativas e entidades com LUIS no SDK do JavaScript v3
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

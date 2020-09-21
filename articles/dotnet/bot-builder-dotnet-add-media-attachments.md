@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: ad6a1228b8fc54f8f626c07c7ed43375c249c456
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 2b0345cfdb8cc7e6d110b1c708864223ac5c6005
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75796014"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90823896"
 ---
-# <a name="add-media-attachments-to-messages"></a>Adicionar anexos de mídia às mensagens
+# <a name="add-media-attachments-to-messages-the-v3-c-sdk"></a>Adicionar anexos de mídia a mensagens do SDK do v3 C \#
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

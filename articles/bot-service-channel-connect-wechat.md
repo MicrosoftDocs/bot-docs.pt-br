@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: egorn
 ms.service: bot-service
 ms.date: 11/01/2019
-ms.openlocfilehash: ca12ea3b454d49303d8c7e361e25caf6b2e6d5d1
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: df2393b143145a9298e480bcd7dccc0fdfae754c
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143875"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90823936"
 ---
 # <a name="connect-a-bot-to-wechat"></a>Conectar um bot ao WeChat
 
@@ -50,7 +50,7 @@ O projeto de bot é um projeto comum do SDK do Bot Framework V4. Antes de poder 
 
 ### <a name="prerequisites"></a>Pré-requisitos
 
-    .NET Core SDK (version 2.2.x)
+- SDK do .NET Core (versão 2.2. x)
 
 ### <a name="add-reference-to-wechat-adapter-source"></a>Adicionar referência à origem do Adaptador do WeChat
 

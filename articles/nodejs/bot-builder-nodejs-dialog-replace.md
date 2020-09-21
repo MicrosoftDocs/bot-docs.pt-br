@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 79083626f60564d8fa6a500cf7c45805e4488e22
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: e1f2ad33e84cdb02b598a4e162be1319cd3ea528
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75790900"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824816"
 ---
-# <a name="replace-dialogs"></a>Substituir diálogos
+# <a name="replace-dialogs-in-the-v3-javascript-sdk"></a>Substituir caixas de diálogo no SDK do JavaScript v3
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

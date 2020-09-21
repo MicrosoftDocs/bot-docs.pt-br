@@ -8,18 +8,18 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 5640cc4dde6625ef9436425786143831f31bfabb
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: 5a96967ca4eb1b8fabd027fb0586ac4da80a8cf5
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143675"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90822726"
 ---
 # <a name="configure-speech-priming"></a>Configurar a desobstrução de fala
 
 A desobstrução de fala melhora o reconhecimento de palavras faladas e frases que são comumente usadas em um bot.
 
-Para bots habilitados para fala que usam os canais [Web Chat](bot-service-channel-connect-wechat.md) e [Cortana](~/bot-service-channel-connect-cortana.md) , a desativação de fala usa exemplos especificados em aplicativos reconhecimento vocal ([Luis](~/https://www.luis.ai/)) para melhorar a precisão do reconhecimento de fala para palavras importantes.
+Para bots habilitados para fala que usam os canais [Web Chat](bot-service-channel-connect-wechat.md) e [Cortana](~/bot-service-channel-connect-cortana.md) , a desativação de fala usa exemplos especificados em aplicativos reconhecimento vocal ([Luis](https://www.luis.ai/)) para melhorar a precisão do reconhecimento de fala para palavras importantes.
 
 O bot já pode estar integrado a um aplicativo LUIS, ou você pode optar por criar um aplicativo LUIS para associá-lo ao bot para a desobstrução de fala. O aplicativo LUIS contém exemplos do que você espera que os usuários digam ao bot. As palavras importantes que você deseja que o bot reconheça devem ser rotuladas como entidades. Por exemplo, em um bot de xadrez, você deseja garantir que quando o usuário disser "Mover cavalo", isso não seja interpretado como "Mover intervalo". O aplicativo LUIS deve incluir exemplos em que "cavalo" é rotulado como uma entidade.
 

@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: cd16586ec6e412d37f34bbe8784fdc86e837d9b7
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 563454f67482060680814b29d6a5f1a85e4a51ee
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75791128"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824836"
 ---
-# <a name="manage-conversation-flow-with-dialogs"></a>Gerenciar fluxo de conversa com diálogos
+# <a name="manage-conversation-flow-with-dialogs-in-the-v3-javascript-sdk"></a>Gerenciar o fluxo de conversa com caixas de diálogo no SDK do JavaScript v3
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

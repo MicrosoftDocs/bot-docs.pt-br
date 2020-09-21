@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/19/2020
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: a3f23308b40f12441b49b1388ed9d04f7095e5fc
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: 519f85e1ab500b02fc11ed42960cd17103c6089c
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420477"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824796"
 ---
-# <a name="handle-user-and-conversation-events"></a>Manipular eventos de usuário e de conversa
+# <a name="handle-user-and-conversation-events-in-the-v3-javascript-sdk"></a>Manipular eventos de usuário e de conversa no SDK do JavaScript v3
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

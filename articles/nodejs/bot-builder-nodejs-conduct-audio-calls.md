@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: b09a807ed45a2e2f547f3c38e22bb84adabf0881
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 8380e331f69b1ba446379569a3ed7ea0015ea43b
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362319"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824866"
 ---
-# <a name="support-audio-calls-with-skype"></a>Dar suporte a chamadas de voz com o Skype
+# <a name="support-audio-calls-with-skype-in-the-v3-javascript-sdk"></a>Suporte a chamadas de áudio com o Skype no SDK do JavaScript v3
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

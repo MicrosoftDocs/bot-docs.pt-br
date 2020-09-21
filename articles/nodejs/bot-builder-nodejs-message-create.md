@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 09/7/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: c1f94c21869662156a91bda625d09e1452ffbdd7
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: d2d44dae50e9191a4457ed8ac9f892ed866dd33c
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362279"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824766"
 ---
-# <a name="create-messages"></a>Criar mensagens
+# <a name="create-messages-in-the-v3-javascript-sdk"></a>Criar mensagens no SDK do JavaScript v3
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

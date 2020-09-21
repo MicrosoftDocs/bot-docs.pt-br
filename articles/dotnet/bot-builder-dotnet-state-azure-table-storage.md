@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 5fcce457e5365cd54be77812f0b9fd70382a813b
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: f7ae66438ab18aec56331009beddb5ab59fb53b5
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75797927"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90823816"
 ---
-# <a name="manage-custom-state-data-with-azure-table-storage-for-net"></a>Gerenciar dados de estado personalizados com o Armazenamento de Tabela do Azure para .NET
+# <a name="manage-custom-state-data-with-azure-table-storage-for-net-in-the-v3-c-sdk"></a>Gerenciar dados de estado personalizado com o armazenamento de tabelas do Azure para .NET no SDK do C v3 \#
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 

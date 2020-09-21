@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 08/21/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 9fb7466999f9908fc5d58536b91990dcfe4fda8c
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 4b4ba10f8e36fe27da1a3087105258263dc904f7
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362339"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824916"
 ---
 # <a name="whats-new-may-2020"></a>Novidades de maio de 2020
 
@@ -24,8 +24,8 @@ O SDK do Bot Framework v4 é um [SDK open-source](https://github.com/microsoft/b
 
 Este artigo resume os principais novos recursos e aprimoramentos no Bot Framework e no Serviço de Bot do Azure.
 
-|   | C#  | JS  | Python |  Java | 
-|---|:---:|:---:|:------:|:-----:|
+|Item | C#  | JS  | Python | Java
+|:----|:---:|:---:|:------:|:-----:
 |Versão |[4.9.1 (GA)][1] | [4.9.0 (GA)][2] | [4.9.0 (GA)][3] | [4.6 Versão preliminar][3a]|
 |Exemplos |[.NET Core][6], [WebAPI][10] |[Node.js][7], [TypeScript][8], [es6][9]  | [Python][11a] | | 
 
@@ -163,14 +163,14 @@ O SDK do Bot Framework v4 é um [SDK open-source](https://github.com/microsoft/b
 
 Este artigo resume os principais novos recursos e aprimoramentos no Bot Framework e no Serviço de Bot do Azure.
 
-
-|   | C#  | JS  | Python |  Java | 
-|---|:---:|:---:|:------:|:-----:|
+|Item | C#  | JS  | Python | Java  |
+|:----|:---:|:---:|:------:|:-----:|
 |Versão |[4.6 GA][1] | [4.6 GA][2] | [Beta 4][3] | [Versão prévia 3][3a]|
 |Docs | [docs][5] |[docs][5] |  | |
-|Exemplos |[.NET Core][6], [WebAPI][10] |[Node.js][7], [TypeScript][8], [es6][9]  | | | 
+|Exemplos |[.NET Core][6], [WebAPI][10] |[Node.js][7], [TypeScript][8], [es6][9]  | | |
 
 #### <a name="bot-framework-sdk-for-microsoft-teams-ga"></a>SDK do Bot Framework para Microsoft Teams (GA)
+
 A versão SDK do Bot Framework v4.6 integra totalmente o suporte para a criação de bots do Teams, permitindo que os usuários os usem em conversas de chat de canal ou grupo. Ao adicionar um bot a uma equipe ou chat, todos os usuários da conversa podem aproveitar a funcionalidade do bot diretamente na conversa.  [[Docs](https://docs.microsoft.com/azure/bot-service/bot-builder-basics-teams)]
 
 #### <a name="bot-framework-for-power-virtual-agent-preview"></a>Bot Framework para Power Virtual Agent (Versão prévia)
@@ -201,15 +201,15 @@ O SDK do Bot Framework v4 é um [SDK open-source][1a] que permite aos desenvolve
 
 Este artigo resume os principais novos recursos e aprimoramentos no Bot Framework e no Serviço de Bot do Azure.
 
-|   | C#  | JS  | Python |   
-|---|:---:|:---:|:------:|
-|. |[4.5][1] | [4.5][2] | [4.4.0b2 (versão prévia)][3] | 
+|Item | C#  | JS  | Python |
+|:----|:---:|:---:|:------:|
+|. |[4.5][1] | [4.5][2] | [4.4.0b2 (versão prévia)][3] |
 |Docs | [docs][5] |[docs][5] |  | |
 |Exemplos |[.NET Core][6], [WebAPI][10] |[Node.js][7], [TypeScript][8], [es6][9]  | [Python][11] | | 
 
-
 ### <a name="bot-framework-channels"></a>Canais do Bot Framework
-- [Direct Line Speech (versão prévia pública)](https://aka.ms/streaming-extensions) | [documentos:](https://docs.microsoft.com/azure/bot-service/directline-speech-bot?view=azure-bot-service-4.0) O Bot Framework e os Serviços de Fala da Microsoft fornecem um canal que permite fluxo de fala e texto bidirecional entre o cliente e o aplicativo bot, usando WebSockets.  
+
+- [Direct Line Speech (versão prévia pública)](https://aka.ms/streaming-extensions) | [documentos:](directline-speech-bot.md) O Bot Framework e os Serviços de Fala da Microsoft fornecem um canal que permite fluxo de fala e texto bidirecional entre o cliente e o aplicativo bot, usando WebSockets.  
 
 - [Extensão do Serviço de Aplicativo Direct Line (versão prévia pública)](https://portal.azure.com) | [documentos](https://aka.ms/directline-ase): Uma versão da Direct Line que permite que os clientes se conectem diretamente a bots usando a Direct Line API. Isso oferece muitos benefícios, incluindo melhor desempenho e mais isolamento. A extensão do Serviço de Aplicativo Direct Line está disponível em todos os Serviços de Aplicativo do Azure, incluindo aqueles hospedados em um Ambiente do Serviço de Aplicativo do Azure. Um Ambiente do Serviço de Aplicativo do Azure oferece isolamento e é ideal para trabalhar em uma VNet. Uma VNet permite que você crie seu próprio espaço privado no Azure e é crucial para sua rede de nuvem, pois oferece isolamento, segmentação e outros benefícios importantes. 
 
@@ -237,11 +237,11 @@ Introduzido no Microsoft Build 2019, o Inspetor de Bot é um novo recurso no Bot
 
 ## <a name="whats-new-may-2019"></a>Quais são as novidades? (maio de 2019)
 
-|   | C#  | JS  | Python |  Java | 
-|---|:---:|:---:|:------:|:-----:|
+|Item | C#  | JS  | Python | Java  |
+|:----|:---:|:---:|:------:|:-----:|
 |. |[4.4.3][1] | [4.4.0][2] | [4.4.0b1 (versão prévia)][3] | [4.0.0a6 (versão prévia)][3a]|
 |Docs | [docs][5] |[docs][5] |  | |
-|Exemplos |[.NET Core][6], [WebAPI][10] |[Node.js][7], [TypeScript][8], [es6][9]  | [Python][11] | | 
+|Exemplos |[.NET Core][6], [WebAPI][10] |[Node.js][7], [TypeScript][8], [es6][9]  | [Python][11] | |
 
 <a name="V4-whats-new"></a>
 ## <a name="bot-framework-sdk-new-in-preview"></a>SDK do Bot Framework (Novo! Em versão prévia)
@@ -276,7 +276,7 @@ O Serviço de Bot do Azure permite que você hospede bots inteligentes e de nív
 
 <a name="ABS-whats-new"></a>
 
-* **Novo! Canal de Fala do Direct Line**: estamos reunindo o Bot Framework e os Serviços de Fala da Microsoft para oferecer um canal que permita fluxo de fala e texto bidirecional entre o cliente e o aplicativo bot.  Para obter mais informações, confira como adicionar [canal de fala ao bot](https://docs.microsoft.com/azure/bot-service/directline-speech-bot?view=azure-bot-service-4.0).
+* **Novo! Canal de Fala do Direct Line**: estamos reunindo o Bot Framework e os Serviços de Fala da Microsoft para oferecer um canal que permita fluxo de fala e texto bidirecional entre o cliente e o aplicativo bot.  Para obter mais informações, confira como adicionar [canal de fala ao bot](directline-speech-bot.md).
 
 
 ## <a name="bot-framework-emulator"></a>Bot Framework Emulator
@@ -328,7 +328,7 @@ Os [Cartões Adaptáveis](https://adaptivecards.io) são um padrão aberto para 
 [2]:https://github.com/Microsoft/botbuilder-js#packages
 [3]:https://github.com/Microsoft/botbuilder-python#packages
 [3a]:https://github.com/Microsoft/botbuilder-java#packages
-[5]:https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0
+[5]:index.yml
 [6]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore
 [7]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/javascript_nodejs
 [8]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/typescript_nodejs
@@ -341,15 +341,15 @@ Os [Cartões Adaptáveis](https://adaptivecards.io) são um padrão aberto para 
 [19]:https://github.com/Microsoft/botbuilder-tools/tree/master/packages/QnAMaker#readme
 
 [27]:https://azure.microsoft.com/services/bot-service/
-[28]:https://docs.microsoft.com/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0
-[29]:https://docs.microsoft.com/azure/bot-service/bot-service-manage-channels?view=azure-bot-service-4.0
+[28]:bot-service-overview-introduction.md
+[29]:bot-service-manage-channels.md
 
 [30]:https://www.luis.ai
 [31]:https://docs.microsoft.com/azure/cognitive-services/LUIS/Home
-[32]:https://docs.microsoft.com/azure/bot-service/bot-builder-howto-v4-luis?view=azure-bot-service-4.0&branch=pr-en-us-1325&tabs=csharp
+[32]:v4sdk/bot-builder-howto-v4-luis.md
 [33]:https://www.qnamaker.ai/
 [34]:https://aka.ms/what-is-qnamaker
-[35]:https://docs.microsoft.com/azure/bot-service/bot-builder-howto-qna?view=azure-bot-service-4.0&branch=pr-en-us-1325&tabs=cs
+[35]:v4sdk/bot-builder-howto-qna.md
 
 [40]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/experimental/common-expression-language#readme
 [41]:https://github.com/Microsoft/BotBuilder-Samples/blob/master/experimental/common-expression-language/api-reference.md
@@ -364,7 +364,7 @@ Os [Cartões Adaptáveis](https://adaptivecards.io) são um padrão aberto para 
 
 [60]:https://github.com/Microsoft/BotFramework-Emulator#readme
 [61]:https://github.com/Microsoft/BotFramework-Emulator/releases/latest
-[62]:https://docs.microsoft.com/azure/bot-service/bot-service-debug-emulator?view=azure-bot-service-4.0
+[62]:bot-service-debug-emulator.md
 
 [100]:https://github.com/howdyai/botkit#readme
 [101]:https://github.com/howdyai/botkit/blob/master/LICENSE.md

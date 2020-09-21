@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 monikerRange: azure-bot-service-3.0
-ms.openlocfilehash: 43a0737a11942cb3e8c032b98eda37154a47d340
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: c636f21f787a9216028b0ca8f9940b456e664191
+ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75790928"
+ms.lasthandoff: 09/20/2020
+ms.locfileid: "90824846"
 ---
-# <a name="handle-user-actions"></a>Tratar ações do usuário
+# <a name="handle-user-actions-in-the-v3-javascript-sdk"></a>Manipular ações do usuário no SDK do JavaScript v3
 
 [!INCLUDE [pre-release-label](../includes/pre-release-label-v3.md)]
 
