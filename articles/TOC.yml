@@ -131,12 +131,6 @@
           href: v4sdk/bot-builder-howto-long-operations-guidance.md
         - name: Implementar fluxo de conversa sequencial
           href: v4sdk/bot-builder-dialog-manage-conversation-flow.md
-        - name: Adicionar reconhecimento de idioma natural ao seu bot
-          href: v4sdk/bot-builder-howto-v4-luis.md
-        - name: Responder às perguntas do usuário usando o QnA Maker
-          href: v4sdk/bot-builder-howto-qna.md
-        - name: Usar vários modelos de LUIS e QnA
-          href: v4sdk/bot-builder-tutorial-dispatch.md
         - name: Gerenciar a complexidade da caixa de diálogo
           href: v4sdk/bot-builder-compositcontrol.md
         - name: Criar fluxo de conversa avançado usando ramificações e loops
@@ -145,6 +139,18 @@
           href: v4sdk/bot-builder-howto-handle-user-interrupt.md
         - name: Expirar uma conversa
           href: v4sdk/bot-builder-howto-expire-conversation.md
+        - name: Reconhecimento vocal
+          items:
+            - name: Adicionar reconhecimento de idioma natural ao seu bot
+              href: v4sdk/bot-builder-howto-v4-luis.md
+            - name: Responder às perguntas do usuário usando o QnA Maker
+              href: v4sdk/bot-builder-howto-qna.md
+            - name: Usar vários modelos de LUIS e QnA
+              href: v4sdk/bot-builder-tutorial-dispatch.md
+            - name: Implantar os recursos do LUIS usando os comandos da CLI do LUIS do Bot Framework
+              href: v4sdk/bot-builder-howto-bf-cli-deploy-luis.md
+            - name: Atualizar os recursos do LUIS usando os comandos da CLI do LUIS do Bot Framework
+              href: v4sdk/bot-builder-howto-bf-cli-update-luis.md
         - name: Caixas de diálogo adaptáveis
           items:
             - name: Criar um projeto de bot para caixas de diálogos adaptáveis
