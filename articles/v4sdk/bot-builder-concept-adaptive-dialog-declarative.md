@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 05/31/2020
-ms.openlocfilehash: ea1c0de24d214d449826668adeca3e648d69dc5a
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 0627856d071677278cb9bf056f0462db44423627
+ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360329"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763888"
 ---
 # <a name="using-declarative-assets-in-adaptive-dialogs"></a>Como usar ativos declarativos em diálogos adaptáveis
 
@@ -31,8 +31,8 @@ Atualmente, os arquivos declarativos consistem em arquivos _.dialog_ que descrev
 
 Arquivos de diálogo adaptáveis que têm a extensão .dialog contêm os seguintes elementos:
 
-- O valor `$schema` contém um URI que aponta para o Esquema que descreve o formato deste arquivo declarativo. Esse esquema é um esquema de componente do Bot Framework, que segue o [rascunho 7](http://json-schema.org/specification-links.html#draft-7) do vocabulário do esquema JSON. Esse arquivo de esquema permite que o [IntelliSense][intellisense] funcione para os seus elementos declarativos. Para obter informações sobre como criar esse arquivo, consulte [Como criar o arquivo de esquema][creating-the-schema-file] no artigo _Criar um bot usando diálogos adaptáveis declarativos_. O nome do arquivo de esquema pode ser qualquer nome de arquivo válido, mas normalmente é chamado de **app.schema**.
-- O campo `$kind` identifica o tipo de componente descrito nesse arquivo. Para um diálogo adaptável, `$kind` precisa ser `Microsoft.AdaptiveDialog`. Em subobjetos, o `$kind` identifica um gatilho ou ação que é parte do diálogo. Esse campo é correlacionado com o atributo de classe `[JsonProperty("$kind")]` que é associado a cada classe no SDK do Bot Framework que foi projetada para funcionar usando a abordagem declarativa.
+- O valor `$schema` contém um URI que aponta para o Esquema que descreve o formato deste arquivo declarativo. Esse esquema é um esquema de componente do Bot Framework, que segue o [rascunho 7](http://json-schema.org/specification-links.html#draft-7) do vocabulário do esquema JSON. Esse arquivo de esquema permite que o [IntelliSense][intellisense] funcione para os seus elementos declarativos. Para obter informações sobre como criar esse arquivo, consulte a seção no [comando Merge](#the-merge-command) abaixo. O nome do arquivo de esquema pode ser qualquer nome de arquivo válido, mas normalmente é chamado de **app.schema**.
+- O campo `$kind` identifica o tipo de componente descrito nesse arquivo. Para um diálogo adaptável, `$kind` precisa ser `Microsoft.AdaptiveDialog`. Em subobjetos, `$kind` identifica um gatilho ou uma ação que faz parte da caixa de diálogo. Esse campo é correlacionado com o atributo de classe `[JsonProperty("$kind")]` que é associado a cada classe no SDK do Bot Framework que foi projetada para funcionar usando a abordagem declarativa.
 - O valor `recognizer` contém um [tipo de reconhecedor][recognizer-types] e uma matriz de uma ou mais [intenções][intents] e, opcionalmente, uma matriz de uma ou mais [entidades][entity].
 - O valor `generator` contém um link para o arquivo .lg associado ao diálogo adaptável que esse arquivo .dialog define.
 - O valor `triggers` contém uma matriz de um ou mais [gatilhos](bot-builder-concept-adaptive-dialog-triggers.md). O tipo de gatilho é declarado usando a palavra-chave `$kind`. Cada gatilho contém uma matriz de uma ou mais ações.
@@ -75,6 +75,10 @@ Os elementos do arquivo .dialog definido:
 
 > [!div class="mx-imgBorder"]
 > ![Criar o diálogo Get Weather](./media/adaptive-dialogs/dotdialogfile.png)
+
+Para obter informações sobre como os `.dialog` arquivos podem ser gerados automaticamente usando o comando da CLI `luis:build` ao criar um aplicativo Luis, consulte [a seção arquivo de diálogo][the-dialog-file-luis] do artigo **implantar recursos do Luis usando o comando bot Framework Luis CLI** .
+
+Para obter informações sobre como os `.dialog` arquivos podem ser gerados automaticamente usando o comando da CLI `qnamaker:build` ao criar uma base de dados de conhecimento QnA Maker, consulte [a seção arquivo de diálogo][the-dialog-file-qnamaker] da base de dados de **conhecimento implantar QnA Maker usando o artigo comandos da CLI do bot Framework qnamaker** .
 
 ### <a name="lg-files"></a>Arquivos .lg
 
@@ -430,6 +434,64 @@ O valor [generator][generator] contém um link para o arquivo .lg associado ao d
 }
 ```
 
+## <a name="the-bot-framework-command-line-interface"></a>A interface de linha de comando do bot Framework
+
+Vários comandos da [interface de linha de comando (CLI do BF) do New bot Framework][bf-cli] foram adicionados com o lançamento de caixas de diálogo adaptáveis no SDK do bot Framework. Isso inclui dois comandos relacionados à caixa de diálogo para trabalhar com `.dialog` `.schema` arquivos e que são muito úteis ao usar a abordagem declarativa para o desenvolvimento de caixa de diálogo adaptável.
+
+O novo grupo de CLI `dialog` tem os dois comandos a seguir: `dialog:merge` e `dialog:verify` .
+
+### <a name="the-merge-command"></a>O comando Merge
+
+O arquivo de esquema raiz contém os esquemas de todos os componentes consumidos pelo bot. Cada consumidor de arquivos declarativos, incluindo o [Composer][composer], precisa de um arquivo de esquema.
+
+O `dialog:merge` comando é usado para gerar o arquivo de esquema do projeto. Você precisará executar esse comando sempre que adicionar um novo pacote ou criar ou modificar seus próprios componentes.
+
+Isso cria um arquivo chamado **app. Schema** no diretório atual, a menos que especificado de outra forma usando a `-o` opção. Esse arquivo é referenciado pela `"$schema` palavra-chave em cada um dos `.dialog` arquivos em seu projeto.
+
+> [!NOTE]
+>
+> Um arquivo app. Schema válido é necessário para ferramentas de _preenchimento inteligente de código_ , como o [IntelliSense][intelliSense] para trabalhar com qualquer um dos ativos declarativos.
+
+Para usar o comando Merge, digite o seguinte no prompt de comando, enquanto no diretório raiz do seu projeto:
+
+```cli
+bf dialog:merge <filename.csproj>
+```
+
+Para obter informações adicionais sobre como usar esse comando, consulte a [caixa de diálogo BF: mesclar][bf-dialogmerge-patterns] na CLI do BF Luis Leiame.
+
+Para obter um exemplo, consulte [criando o arquivo de esquema][creating-the-schema-file] no artigo _criar um bot usando caixas de diálogo adaptáveis declarativas_ .
+
+<!--
+> [!TIP]
+>
+> For users of C#: NuGet does not deal well with content files, so all declarative `.dialog`, `.lu`, `.lg`, and `.qna` files will be copied into `generated/<package>` so you can easily include them in your project output.
+-->
+
+### <a name="the-verify-command"></a>O comando VERIFY
+
+O `dialog:verify` comando verificará os `.dialog` arquivos para verificar se eles são compatíveis com o esquema.
+
+Para usar o `verify` comando, digite o seguinte no prompt de comando, enquanto no diretório raiz do seu projeto:
+
+```cli
+bf dialog:verify <filename.csproj>
+```
+
+Para obter informações adicionais sobre como usar esse comando, consulte a [caixa de diálogo BF: verificar][bf-dialogverify-patterns] na CLI do BF Luis Leiame.
+
+> [!NOTE]
+>
+> O [Composer][composer] cria um arquivo mesclado `.schema` e `.dialog` arquivos válidos; no entanto, o comando VERIFY pode ser muito útil se você estiver criando esses arquivos manualmente.
+
+### <a name="install-the-bot-framework-cli"></a>Instalar a CLI do bot Framework
+
+[!INCLUDE [Install the Bot Framework CLI](../includes/install-bf-cli.md)]
+
+### <a name="relevant-information"></a>Informações relevantes
+
+- [Comandos da caixa de diálogo][dialog-commands]
+
 ## <a name="additional-information"></a>Informações adicionais
 
 - Como [Criar um bot usando diálogos adaptáveis declarativos](bot-builder-dialogs-declarative.md)
@@ -512,3 +574,13 @@ O valor [generator][generator] contém um link para o arquivo .lg associado ao d
 <!--  (Actions) Debugging options -->
 [log-action]: ../adaptive-dialog/adaptive-dialog-prebuilt-actions.md#log-action
 [traceactivity]: ../adaptive-dialog/adaptive-dialog-prebuilt-actions.md#traceactivity
+
+[intelliSense]: https://aka.ms/intellisense-in-visual-studio
+[composer]: https://docs.microsoft.com/composer
+
+[dialog-commands]: https://aka.ms/botframework-cli#bf-dialog
+[bf-dialogverify-patterns]: https://aka.ms/botframework-cli#bf-dialogverify-patterns
+[bf-dialogmerge-patterns]: https://aka.ms/botframework-cli#bf-dialogmerge-patterns
+
+[the-dialog-file-luis]: bot-builder-howto-bf-cli-deploy-luis.md#the-dialog-file
+[the-dialog-file-qnamaker]: bot-builder-howto-bf-cli-deploy-qna.md#the-dialog-file

@@ -7,21 +7,20 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 2/7/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 707e0c164d8c9964631bbff869522d372efeb8f1
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 615db6c4ccb13c7757ed59bdddf30eaa71c01093
+ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824366"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763934"
 ---
 <!--
-
 Related TODO:
 - Check code in [Web Chat channel](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-webchat?view=azure-bot-service-4.0)
 - Check guidance in [DirectLine authentication](https://docs.microsoft.com/azure/bot-service/rest-api/bot-framework-rest-direct-line-3-0-authentication?view=azure-bot-service-4.0)
--->
 
-<!-- General TODO: (Feedback from CSE (Nafis))
+
+General TODO: (Feedback from CSE (Nafis))
 - Add note that: token management is based on user ID
 - Explain why/how to share existing website authentication with a bot.
 - Risk: Even people who use a DirectLine token can be vulnerable to user ID impersonation.
@@ -34,8 +33,8 @@ Related TODO:
 
 - "The scope of the connection setting needs to have both openid and a resource in the Azure AD graph, such as Mail.Read." Unclear if I need to take some action at this point to make happen. Kind of out of context. I'm registering an AAD application in the portal, there's no connection setting
 - Does the bot need all of these scopes for the samples? (e.g. "Read all users' basic profiles")
-
 -->
+
 
 # <a name="add-authentication-to-a-bot"></a>Adicionar autenticação a um bot
 
@@ -76,8 +75,8 @@ Depois de concluir este artigo, você terá um bot que pode responder a algumas 
 
 | Amostra | Versão do BotBuilder | Demonstra |
 |:---|:---:|:---|
-| **Autenticação de bot** em [**CSharp**][cs-auth-sample], [**JavaScript**][js-auth-sample] ou [**Python**][python-auth-sample] | v4 | Suporte de OAuthCard |
-| **MSGraph para autenticação de bot** em [**CSharp**][cs-msgraph-sample], [**JavaScript**][js-msgraph-sample] ou [**Python**](https://aka.ms/bot-auth-msgraph-python-sample-code)| v4 |  Suporte da API do Microsoft Graph com o OAuth 2 |
+| **Autenticação** em [**Csharp**][cs-auth-sample] ou [**JavaScript**][js-auth-sample] ou  [**Python**][python-auth-sample] | v4 | Suporte de OAuthCard |
+| **MSGraph de autenticação** em [**Csharp**][cs-msgraph-sample] ou [**JavaScript**][js-msgraph-sample] ou [**Python**](https://aka.ms/bot-auth-msgraph-python-sample-code)| v4 |  Suporte da API do Microsoft Graph com o OAuth 2 |
 
 ### <a name="about-the-samples"></a>Sobre as amostras
 
@@ -347,13 +346,13 @@ Após configurar o mecanismo de autenticação é possível executar o teste de 
 > [!NOTE]
 > A autenticação do bot requer o uso do Serviço de Conector de Bot. O serviço acessa as informações de registro de canais do seu bot.
 
-## <a name="bot-authentication-example"></a>Exemplo de autenticação de bot
+## <a name="authentication-example"></a>Exemplo de autenticação
 
 No exemplo **Autenticação de Bot**, o diálogo foi projetado para recuperar o token de usuário após este se conectar.
 
 ![imagem de teste do bot de autenticação](media/how-to-auth/auth-bot-test.png)
 
-## <a name="bot-authentication-msgraph-example"></a>Exemplo do MSGraph de autenticação de bot
+## <a name="authentication-msgraph-example"></a>Exemplo de MSGraph de autenticação
 
 No exemplo **Autenticação de Bot MSGraph**, o diálogo é projetado para aceitar um conjunto limitado de comandos depois que o usuário faz logon.
 

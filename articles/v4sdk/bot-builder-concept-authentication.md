@@ -9,24 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/31/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 40a02bd5fc52f4e93af4f1a902faae4dbd1254f6
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 151a641bfb973ab7674850cef388ab7bf6cd78e5
+ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89361679"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763867"
 ---
 # <a name="user-authentication"></a>Autenticação de usuário
 
-Às vezes, um bot deve acessar recursos online protegidos em nome do usuário. Para fazer isso, o bot deve ser autorizado. A autorização assume a forma de um token de portador. Isso é feito usando o OAuth e por um conjunto de componentes que fazem parte da arquitetura do **serviço de bot do Azure** , conforme descrito abaixo.
-
-1. **Aplicativo de Registro de Canais de Bot**. Esse é o mecanismo para *integrar* um bot dentro da infraestrutura do Azure, o que permite ao usuário comunicar-se por meio de canais com o bot.
-1. **Bot**. O bot pode ser hospedado em qualquer lugar, incluindo o Azure.
-1. **Aplicativo do provedor de identidade**. Esse aplicativo é necessário para cada recurso protegido que o bot deve acessar em nome do usuário. É o **provedor de identidade** que permite que o bot *acesse um recurso protegido externo*, como o Office 365 MSGraph. O Azure Active Directory é o provedor de identidade para acessar os recursos protegidos da Microsoft. Existem muitos outros provedores de identidade, por exemplo, o GitHub, para acessar recursos protegidos.
-
-A imagem a seguir mostra a arquitetura do Serviço de Bot do Azure que usa o Azure AD como o provedor de identidade para autenticação.
-
-![Arquitetura do Serviço de Bot do Azure](media/concept-bot-authentication/azure-bot-service-architecture.png)
+Às vezes, um bot deve acessar recursos online protegidos em nome do usuário, como verificação de email, verificação de status de voo ou colocação de um pedido. O usuário deve autorizar o bot a fazer isso em seu nome e, para autorizar o bot, o usuário deve autenticar sua identidade. O **OAuth** é usado para autenticar o usuário e autorizar o bot. Consulte também [tipos de autenticação](bot-builder-concept-authentication-types.md).
 
 Se você quiser atualizar seu conhecimento sobre o OAuth, confira o seguinte:
 
@@ -113,5 +105,5 @@ Agora que você conhece a autenticação do usuário, vamos dar uma olhada em co
 ## <a name="see-also"></a>Confira também
 
 - [Provedores de Identidade](bot-builder-concept-identity-providers.md)
-- [Autenticação do Conector REST](https://docs.microsoft.com/azure/bot-service/rest-api/bot-framework-rest-connector-authentication?view=azure-bot-service-4.0)
-- [Autenticação da linha direta de REST](https://docs.microsoft.com/azure/bot-service/rest-api/bot-framework-rest-direct-line-3-0-authentication?view=azure-bot-service-4.0)
+- [Autenticação do Conector REST](https://docs.microsoft.com/azure/bot-service/rest-api/bot-framework-rest-connector-authentication?view=azure-bot-service-4.0&preserve-view=true)
+- [Autenticação da linha direta de REST](https://docs.microsoft.com/azure/bot-service/rest-api/bot-framework-rest-direct-line-3-0-authentication?view=azure-bot-service-4.0&preserve-view=true)

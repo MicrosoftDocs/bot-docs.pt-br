@@ -2,21 +2,21 @@
 title: Diretrizes de segurança do bot Framework – serviço bot
 description: Saiba mais sobre as diretrizes de segurança no bot Framework.
 author: kamrani
-ms.author: kamrani
+ms.author: v-mimiel
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 07/07/2020
-ms.openlocfilehash: 61cff31857b516548fd53e717b8fd751c8f5445c
-ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
+ms.openlocfilehash: 134d6ab317792b39dcd111b8b670c747158f74eb
+ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86543096"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763599"
 ---
-# <a name="bot-framework-security-guidelines"></a>Diretrizes de segurança do bot Framework
+# <a name="bot-framework-security-guidelines"></a>Diretrizes de segurança do Bot Framework
 
-Os bots são cada vez mais predominantes nas principais áreas comerciais, como serviços financeiros, varejo, viagem e assim por diante. Um bot pode coletar dados muito confidenciais, como cartões de crédito, SSN, contas bancárias e outras informações pessoais. Portanto, é importante que os bots sejam seguros e protejam contra ameaças e vulnerabilidades comuns.
+Os bots são cada vez mais predominantes nas principais áreas comerciais, como serviços financeiros, varejo, turismo e assim por diante. Um bot pode coletar dados muito confidenciais, como cartões de crédito, SSN, contas bancárias e outras informações pessoais. Portanto, é importante que os bots sejam seguros e protejam contra ameaças e vulnerabilidades comuns.
 
 Você pode tomar algumas medidas preventivas padrão para melhorar a segurança do bot. Algumas medidas de segurança são semelhantes àquelas usadas em outros sistemas de software, enquanto outras são específicas para o bot Framework.
 
@@ -36,7 +36,7 @@ As áreas a seguir são cobertas por algumas práticas recomendadas de seguranç
 
 ### <a name="protocols-and-encryption"></a>Protocolos e criptografia
 
-Os dados podem ser adulterados durante a transmissão. Existem protocolos que fornecem criptografia para resolver problemas de uso indevido e violação.
+Os dados podem ser adulterados durante a transmissão. Existem protocolos que fornecem criptografia para resolver problemas de uso indevido e adulteração.
 Nesse sentido, os bots devem se comunicar apenas por canais criptografados. Isso torna difícil para qualquer pessoa que não seja o receptor e o remetente ver qualquer parte da mensagem ou da transação.
 
 A criptografia é um dos métodos mais robustos para garantir que a segurança de bot e as empresas devam garantir proativamente sua eficácia, tomando medidas para despersonalização e criptografia de dados confidenciais.
@@ -70,7 +70,7 @@ Algumas técnicas de segurança comuns são listadas abaixo.
 - Os dados retidos para fins de conformidade ou outras finalidades podem ser movidos para um armazenamento mais seguro, talvez offline, o que é menos suscetível a ameaças de segurança de banco de dados.
 - Certifique-se de excluir todos os arquivos de histórico que são gravados por um servidor durante o procedimento de instalação original. Se a instalação for bem-sucedida, esses arquivos não terão nenhum valor, mas poderão conter informações que podem ser exploradas potencialmente.
 
-### <a name="education"></a>Educação
+### <a name="education"></a>Formação educacional
 
 Os bots fornecem uma ferramenta de interação inovadora entre uma empresa e seus clientes. Mas podem, potencialmente, fornecer um backdoor para adulterar o site de uma empresa. Portanto, uma empresa deve garantir que seus desenvolvedores compreendam a importância da segurança de bot como parte da segurança do site. Além disso, os erros dos usuários também podem ser um problema. Isso exigirá alguma educação sobre como os bots podem ser usados com segurança, por exemplo:
 
@@ -97,7 +97,7 @@ A **autenticação do Serviço de Bot do Azure** permite que você autentique us
 1. Use um `OAuthCard`, respaldado pelas informações do aplicativo fornecidas na etapa anterior, para conectar um usuário.
 1. Recupere tokens de acesso por meio da **API do Serviço de Bot do Azure**. Uma prática recomendada é inserir um limite de tempo em quanto tempo um usuário autenticado pode permanecer *conectado*.
 
-Para obter mais informações, consulte o artigo [autenticação de bot](~/v4sdk/bot-builder-concept-authentication.md) .
+Para obter mais informações, consulte o artigo [autenticação de usuário](~/v4sdk/bot-builder-concept-authentication.md) .
 
 ### <a name="web-chat"></a>Chat na Web
 
@@ -125,7 +125,7 @@ Quando você usa a *autenticação do Serviço de Bot do Azure* com o [Webchat](
 
 ## <a name="additional-information"></a>Informações adicionais
 
-- [Autenticação de bot](~/v4sdk/bot-builder-concept-authentication.md)
+- [Autenticação de usuário](~/v4sdk/bot-builder-concept-authentication.md)
 - [Adicionar autenticação ao seu bot por meio do Serviço de Bot do Azure](~/v4sdk/bot-builder-authentication.md)
 - [Habilitar a segurança e o teste no localhost](~/bot-service-troubleshoot-authentication-problems.md#step-3-enable-security-and-test-on-localhost-)
 - [Segredos e tokens](~/rest-api/bot-framework-rest-direct-line-3-0-authentication.md#secrets-and-tokens)
@@ -134,4 +134,4 @@ Quando você usa a *autenticação do Serviço de Bot do Azure* com o [Webchat](
 - [Recomendações de segurança na Central de Segurança do Azure](https://docs.microsoft.com/azure/security-center/security-center-recommendations)
 - [Proteção contra ameaças na Central de Segurança do Azure](https://docs.microsoft.com/azure/security-center/threat-protection)
 - [Segurança dos Dados da Central de Segurança do Azure](https://docs.microsoft.com/azure/security-center/security-center-data-security)
-- [Segurança do contêiner na central de segurança](https://docs.microsoft.com/azure/security-center/container-security)
+- [Segurança de contêineres na Central de Segurança](https://docs.microsoft.com/azure/security-center/container-security)

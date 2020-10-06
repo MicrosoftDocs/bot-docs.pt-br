@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/19/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: e41be476658d8e56e0dc99ca5d44ebf804ce295a
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 05ef7124d57ae20f6cb271eca5f3045930ad5dab
+ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90823926"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763898"
 ---
 # <a name="adaptive-expressions-prebuilt-functions"></a>Funções predefinidas de expressões adaptáveis
 
@@ -36,9 +36,9 @@ As expressões predefinidas são divididas nos seguintes tipos de função:
 - [Expressão regular](#regular-expression-functions)
 - [Verificação de tipo](#type-checking-functions)
 
-Você também pode exibir a lista em [ordem alfabética](#add).
+Você também pode exibir a lista em [ordem alfabética](#prebuilt-functions-sorted-alphabetically).
 
-### <a name="string-functions"></a>Funções de cadeia de caracteres
+## <a name="string-functions"></a>Funções de cadeia de caracteres
 
 |Função   |Explicação|
 |-----------|-----------|
@@ -61,7 +61,7 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 |[sentenceCase](#sentenceCase)|Colocar em maiúscula a primeira letra da primeira palavra em uma cadeia de caracteres em um formato local opcional.|
 |[titleCase](#titleCase)|Colocar em maiúscula a primeira letra de cada palavra em uma cadeia de caracteres em um formato de localidade opcional.|
 
-### <a name="collection-functions"></a>Funções de coleção
+## <a name="collection-functions"></a>Funções de coleção
 
 |Função   |Explicação|
 |-----------|-----------|
@@ -84,7 +84,7 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 |[flatten](#flatten)|Nivelar matrizes em uma matriz com valores que não são da matriz.|
 |[unique](#unique)|Remover todas as duplicatas de uma matriz.|
 
-### <a name="logical-comparison-functions"></a>Funções de comparação lógica
+## <a name="logical-comparison-functions"></a>Funções de comparação lógica
 
 |Função|Explicação|
 |-----------|-----------|
@@ -100,12 +100,12 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 |[or](#or)|Operação or lógica. Retornar `true` se pelo menos uma expressão for true ou retornar `false` quando todas forem false.|
 |[exists](#exists)|Avaliar a veracidade da expressão.|
 
-### <a name="conversion-functions"></a>Funções de conversão
+## <a name="conversion-functions"></a>Funções de conversão
 
 |Função|Explicação|
 |-----------|-----------|
-|[float](#float)|Retornar a representação de ponto flutuante da cadeia de caracteres especificada ou a própria cadeia de caracteres se a conversão não for possível.|
-|[int](#int)|Retornar a representação de inteiro da cadeia de caracteres especificada ou a própria cadeia de caracteres se a conversão não for possível.|
+|[float](#float)|Retorna a representação de ponto flutuante da cadeia de caracteres especificada. | 
+|[int](#int)|Retorna a representação de inteiro da cadeia de caracteres especificada. |
 |[cadeia de caracteres](#string)|Retorna a versão da cadeia de caracteres do valor especificado em um formato de localidade opcional.|
 |[bool](#bool)|Retornar uma representação booliana da cadeia de caracteres especificada.|
 |[createArray](#createArray)|Criar uma matriz de várias entradas.|
@@ -122,7 +122,7 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 |[xml](#xml)|Somente C#. Retornar a versão XML de uma cadeia de caracteres.|
 |[formatNumber](#formatNumber)|Formate um valor para o número mais próximo para o número especificado de dígitos fracionários e uma localidade opcional especificada.|
 
-### <a name="math-functions"></a>Funções matemáticas
+## <a name="math-functions"></a>Funções matemáticas
 
 |Função|Explicação|
 |-----------|-----------|
@@ -142,7 +142,7 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 |[limite](#ceiling)|Retorna o menor valor integral maior ou igual ao número especificado.|
 |[idas](#round)|Arredonde um valor para o inteiro mais próximo ou para o número especificado de dígitos fracionários.|
 
-### <a name="date-and-time-functions"></a>Funções de data e hora
+## <a name="date-and-time-functions"></a>Funções de data e hora
 
 |Função|Explicação|
 |-----------|-----------|
@@ -181,7 +181,7 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 |[getPreviousViableTime](#getPreviousViableTime) | Retorna o tempo viável anterior de uma expressão Timex com base na hora atual e em um fuso horário especificado opcionalmente. |
 |[getNextViableTime](#getNextViableTime) | Retorna o próximo horário viável de uma expressão Timex com base na hora atual e em um fuso horário especificado opcionalmente. |
 
-### <a name="timex-functions"></a>Funções timex
+## <a name="timex-functions"></a>Funções timex
 
 |Função   |Explicação|
 |-----------|-----------|
@@ -193,7 +193,7 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 |[isDateRange](#isDateRange)    | Retornar true se a expressão TimexProperty ou Timex se referir ao intervalo de datas. |
 |[isDefinite](#isDefinite)    | Retornar true se a expressão TimexProperty ou Timex se referir ao dia definido. |
 
-### <a name="uri-parsing-functions"></a>Funções de análise de URI
+## <a name="uri-parsing-functions"></a>Funções de análise de URI
 
 |Função|Explicação|
 |-----------|-----------|
@@ -204,7 +204,7 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 |[uriQuery](#uriQuery) |Retornar o valor de consulta de um URI (Uniform Resource Identifier).|
 |[uriScheme](#uriScheme)|Retornar o valor de esquema de um URI (Uniform Resource Identifier).  |
 
-### <a name="object-manipulation-and-construction-functions"></a>Funções de manipulação e construção de objetos
+## <a name="object-manipulation-and-construction-functions"></a>Funções de manipulação e construção de objetos
 
 |Função|Explicação|
 |-----------|-----------|
@@ -217,13 +217,13 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 |[jPath](#jPath)   |Marcar JSON ou uma cadeia de caracteres JSON para nós ou valores que correspondam a uma expressão de caminho e retornar os nós correspondentes.|
 |[setPathToValue](#setPathToValue)   |Definir o valor de um caminho específico e retornar o valor.|
 
-### <a name="regular-expression-functions"></a>Funções de expressão regular
+## <a name="regular-expression-functions"></a>Funções de expressão regular
 
 |Função|Explicação|
 |-----------|-----------|
 |[isMatch](#isMatch)|Retornar true se uma cadeia de caracteres corresponder a um padrão regex comum.|
 
-### <a name="type-checking-functions"></a>Funções de verificação de tipo
+## <a name="type-checking-functions"></a>Funções de verificação de tipo
 
 |Função|Explicação|
 |-----------|-----------|
@@ -235,6 +235,9 @@ Você também pode exibir a lista em [ordem alfabética](#add).
 |[isObject](#isObject)|Retornar true se a entrada fornecida for um objeto.|
 |[isDateTime](#isDateTime)|Retornar true se a entrada fornecida for um carimbo de data/hora de formato UTC ISO.|
 |[isString](#isString)|Retornar true se a entrada fornecida for uma cadeia de caracteres.|
+
+
+## <a name="prebuilt-functions-sorted-alphabetically"></a>Funções predefinidas classificadas alfabeticamente
 
 <a name="add"></a>
 
@@ -1811,7 +1814,7 @@ E retorna o resultado **[1, 2, [3, 4], [5, 6]]** .
 
 ### <a name="float"></a>FLOAT
 
-Converter uma versão de cadeia de caracteres de um número de ponto flutuante em um número de ponto flutuante. É possível usar essa função apenas ao passar parâmetros personalizadas para um aplicativo, como um aplicativo lógico.
+Converter uma versão de cadeia de caracteres de um número de ponto flutuante em um número de ponto flutuante. É possível usar essa função apenas ao passar parâmetros personalizadas para um aplicativo, como um aplicativo lógico. Uma exceção será gerada se a cadeia de caracteres não puder ser convertida em um float.
 
 ```
 float('<value>')
@@ -2718,7 +2721,7 @@ E retorna um novo objeto:
 
 ### <a name="int"></a>INT
 
-Retornar a versão em inteiros de uma cadeia de caracteres.
+Retornar a versão em inteiros de uma cadeia de caracteres. Uma exceção será gerada se a cadeia de caracteres não puder ser convertida em um inteiro.
 
 ```
 int('<value>')

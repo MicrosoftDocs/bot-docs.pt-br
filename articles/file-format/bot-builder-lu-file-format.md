@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 1889fa3fb39083e9470cd354349e82f960a76185
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 9d419d63a232a2f4b80f3a49ea0caf58c25ac42a
+ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360763"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763643"
 ---
 # <a name="lu-file-format"></a>Formato de arquivo .lu
 
@@ -48,7 +48,7 @@ Este é um arquivo .lu que captura uma intenção `Greeting` simples com uma lis
 - Good evening
 ```
 
-`#\<intent-name\>` descreve uma nova seção de definição de intenção. Cada linha após a definição da intenção são exemplos de enunciados que descrevem essa intenção. Você pode adicionar várias definições de intenção a um só arquivo, como no seguinte exemplo:
+`#<intent-name>` descreve uma nova seção de definição de intenção. Cada linha após a definição da intenção são exemplos de enunciados que descrevem essa intenção. Você pode adicionar várias definições de intenção a um só arquivo, como no seguinte exemplo:
 
 ```.lu
 # Greeting
@@ -63,13 +63,13 @@ Este é um arquivo .lu que captura uma intenção `Greeting` simples com uma lis
 - please help
 ```
 
-Cada seção é identificada pela notação `#\<intent name\>`. As linhas em branco são ignoradas durante a análise do arquivo.
+Cada seção é identificada pela notação `#<intent name>`. Observe que as linhas em branco são ignoradas ao analisar o arquivo. Lu.
 
 ## <a name="entity"></a>Entidade
 
 Uma [entidade][3] representa informações detalhadas que são relevantes em um enunciado. Por exemplo, no enunciado _Reservar uma passagem para Paris_, _Paris_ é uma localização.
 
-|Exemplo de enunciado do usuário|entidade|
+|Exemplo de enunciado do usuário|Entidades|
 |--------------------------|----------|
 |"Reservar um voo para **Seattle**?"|Seattle|
 |"Quando a sua loja é **aberta**?"|Abrir|
@@ -95,7 +95,7 @@ A declaração e a definição também podem ser combinadas em uma só linha:
 @ <entity-type> <entity-name> [[hasRoles] <comma-separated-list-of-roles>] = <definition>
 ```
 
-`entity type`, `entity name` e `definition` são obrigatórios; `roles` são opcionais.
+Os `entity type` `entity name` parâmetros, e são `definition` obrigatórios e `roles` são opcionais. Consulte a seção [funções](#roles) para obter mais informações.
 
 Os nomes de entidades com um espaço podem ser encapsulados entre aspas. Observe que os nomes de entidades predefinidos não podem conter espaços entre eles.
 
@@ -144,7 +144,7 @@ Há suporte para os seguintes tipos de [entidade LUIS predefinidos][5]:
 - url
 - DATETIME
 
-Estes são alguns exemplos de entidades predefinidas:
+Aqui estão exemplos de entidades predefinidas:
 
 ```.lu
 @ prebuilt number numOfGuests, age
@@ -156,7 +156,7 @@ Nem todos os tipos de entidades predefinidas estão disponíveis em todas as loc
 
 ### <a name="list-entity"></a>Entidade de lista
 
-As [entidades de lista][6] representam um conjunto fixo e fechado de palavras relacionadas junto com os respectivos sinônimos. Eles são extraídos com base em uma correspondência exata do texto.
+As [entidades de lista][6] representam um conjunto fixo e fechado de palavras relacionadas junto com seus sinônimos. Eles são extraídos com base em uma correspondência exata de texto.
 
 No exemplo abaixo, é definida uma entidade de lista que inclui sinônimos de cores:
 
@@ -204,7 +204,7 @@ Esta é uma definição de exemplo mais complexa:
 > This is an example utterance that labels ‘owen’ as customDevice (ml entity) and wraps ‘owen to 72’ with the ‘deviceTemperature’ composite entity
     - Set {deviceTemperature = {customDevice = owen} to 72}
 
-> Define a composite entity ‘deviceTemperature’ that has device (list entity), customDevice (ml entity), temperature (pre-built entity) as children
+> Define a composite entity ‘deviceTemperature’ that has device (list entity), customDevice (ml entity), temperature (prebuilt entity) as children
 
 @ composite deviceTemperature = [device, customDevice, temperature]
 
@@ -248,8 +248,8 @@ No exemplo abaixo, a entidade **Localização** tem duas funções, `origin` e `
 
 |Entidade |Função   |Finalidade|
 |-------|-------|-------|
-|Location   |origin |de onde o avião parte|
-|Location   |destino    |onde o avião pousa|
+|Location   |origin |De onde o plano faz a parte|
+|Location   |destino    |Onde o plano se atinge|
 
 As funções no formato de arquivo .lu podem ser definidas explícita ou implicitamente. A definição de função explícita segue a notação:
 
@@ -261,19 +261,14 @@ Abaixo, são mostradas as diversas maneiras pelas quais você pode definir expli
 
 ```.lu
 > # ml entity definition with roles
+> the following are synonmous:
 
 @ ml name role1, role2
 
-> this is the same as
-
 @ ml name hasRoles role1, role2
-
-> this is also the same as
 
 @ ml name
 @ name hasRoles role1, role2
-
-> Also same as
 
 @ ml name
 @ name hasRole role1
@@ -283,7 +278,7 @@ Abaixo, são mostradas as diversas maneiras pelas quais você pode definir expli
 Veja as funções definidas de maneira implícita diretamente em padrões e enunciados rotulados com o seguinte formato:
 
 ```.lu
-{@\<entityName\>:\<roleName\>}
+{@<entityName>:<roleName>}
 ```
 
 Veja no exemplo abaixo como as funções `userName:firstName` e `userName:lastName` são definidas implicitamente:
@@ -300,7 +295,7 @@ Veja no exemplo abaixo como as funções `userName:firstName` e `userName:lastNa
 > @ ml userName hasRoles lastName, firstName
 ```
 
-Em padrões, você pode usar funções com a notação `{\<entityName\>:\<roleName\>}`. Aqui está um exemplo:
+Em [padrões](#patterns), você pode usar funções usando a `{<entityName>:<roleName>}` notação. Aqui está um exemplo:
 
 ```.lu
 # getUserName
@@ -309,10 +304,10 @@ Em padrões, você pode usar funções com a notação `{\<entityName\>:\<roleNa
 - my name is {name:userName}
 ```
 
-Você também pode definir várias funções para uma entidade em padrões:
+Você também pode definir várias funções para uma entidade em padrões, visto abaixo:
 
 ```.lu
-> roles can be specified for list entity types as well - in this case fromCity and toCity are added as roles to the 'city' list entity defined further below
+> Roles can be specified for list entity types as well - in this case fromCity and toCity are added as roles to the 'city' list entity defined further below
 
 # BookFlight
 - book flight from {city:fromCity} to {city:toCity}
@@ -357,9 +352,9 @@ Uma [lista de frases][11] é uma lista de palavras, frases, números ou outros c
 Descreva as entidades da lista de frases usando a seguinte notação:
 
 ```.lu
-@ phraselist \<Name\>
-    - \<synonym1\>
-    - \<synonym2\>
+@ phraselist <Name>
+    - <synonym1>  
+    - <synonym2>
 ```
 
 Este é um exemplo de uma definição de lista de frases:
@@ -378,7 +373,7 @@ Este é um exemplo de uma definição de lista de frases:
     - know
 ```
 
-Por padrão, os sinônimos são definidos como _não intercambiáveis_. Opcionalmente, você pode definir os sinônimos para que sejam _intercambiáveis_ como parte da definição. Aqui está um exemplo:
+Por padrão, os sinônimos são definidos como não intercambiáveis. Opcionalmente, você pode definir os sinônimos para que sejam intercambiáveis como parte da definição. Aqui está um exemplo:
 
 ```.lu
 @ phraselist question(interchangeable) =
@@ -428,7 +423,7 @@ Este é um exemplo de como definir uma lista de frases como um recurso para outr
 
 @ intent getUserProfileIntent usesFeature PLCity
 
-> phrase list as a feature to an ml entity.
+> phrase list as a feature to an ml entity
 
 @ ml myCity usesFeature PLCity
 
@@ -460,11 +455,11 @@ Veja abaixo exemplos de como adicionar intenções e entidades como um recurso c
 
 @ ml userName hasRoles fistName, lastName
 
-> add entity as a feature to another entity
+> add an entity as a feature to another entity
 
 @ userName usesFeature personName
 
-> add entity as feature to an intent
+> add an entity as feature to an intent
 
 @ intent getUserNameIntent usesFeature personName
 
@@ -516,7 +511,7 @@ Colete enunciados que você acredita que os usuários irão inserir. Inclua enun
 - Pluralização
 - Lematização
 - Escolher substantivo e verbo
-- Pontuação: uma variedade usando pontuação correta e incorreta e sem gramática
+- Pontuação 
 
 Rotule as entidades em enunciados usando a seguinte notação:
 
@@ -570,7 +565,7 @@ Para ajudar a rotular as entidades filho com facilidade para os tipos de entidad
 
 Inclua informações de configuração do aplicativo LUIS ou da base de dados de conhecimento do QnA Maker no arquivo .lu. Isso ajudará a orientar o analisador a processar o conteúdo do LU corretamente.
 
-Veja como definir as informações de configuração:
+Veja como definir informações de configuração usando **>! #**:
 
 ```.lu
 > !# @<property> = <value>
@@ -602,19 +597,19 @@ Referencia o arquivo .lu. siga a sintaxe de link Markdown. As referências com s
 
 - Referência a outro arquivo .lu por meio de `[link name](<.lu file name>)`. A referência pode ser um caminho absoluto ou um caminho relativo do arquivo .lu contido.
 - Há suporte para a referência a uma pasta com outros arquivos .lu por meio do seguinte:
-    - `[link name](<.lu file path>/*)` procura os arquivos .lu no caminho absoluto ou relativo especificado
-    - `[link name](<.lu file path>/**)` procura recursivamente os arquivos .lu no caminho absoluto ou relativo especificado, incluindo as subpastas.
+    - `[link name](<.lu file path>*)`: procura arquivos. Lu no caminho absoluto ou relativo especificado
+    - `[link name](<.lu file path>**)`: procura recursivamente por arquivos. Lu no caminho absoluto ou relativo especificado, incluindo subpastas.
 - Adicione também referências aos enunciados definidos em um arquivo específico em uma seção de intenção ou como pares de QnA.
-    - `[link name](<.lu file path>#<INTENT-NAME>)` localiza todos os enunciados em <NOME-DA-INTENÇÃO> no arquivo .lu e os adiciona à lista de enunciados em que a referência é especificada.
-    - `[link name](<.lu file path>#<INTENT-NAME>*utterances*)` localiza todos os enunciados (não padrões) em <NOME-DA-INTENÇÃO> no arquivo .lu e os adiciona à lista de enunciados em que a referência é especificada.
-    - `[link name](<.lu file path>#<INTENT-NAME>*patterns*)` localiza todos os padrões (não enunciados) em <NOME-DA-INTENÇÃO> no arquivo .lu e os adiciona à lista de padrões em que a referência é especificada.
-    - `[link name](\<.lu file path>#*utterances*)` localiza todos os enunciados no arquivo .lu e os adiciona à lista de enunciados em que a referência é especificada.
-    - `[link name](\<.lu file path>#*patterns*)` localiza todos os padrões no arquivo .lu e os adiciona à lista de enunciados em que a referência é especificada.
-    - `[link name](\<.lu file path>#*utterancesAndPatterns*)` localiza todos os enunciados e padrões no arquivo .lu e os adiciona à lista de enunciados em que a referência é especificada.
-    - `[link name](\<.qna file path>#$name?)` localiza todas as alterações da definição de alteração específica no conteúdo do .qna e as adiciona à lista de enunciados em que a referência é especificada.
-    - `[link name](\<.qna file path>#*alterations*?)` localiza todas as alterações do conteúdo do .qna e as adiciona à lista de enunciados em que a referência é especificada.
-    - `[link name](\<.qna file path>#?question-to-find?)` localiza todas as perguntas da variação de pergunta específica e as adiciona à lista de enunciados em que a referência é especificada. Observe que qualquer espaço na pergunta precisará ser substituído pelo caractere **-** .
-    - `[link name](\<.qna file path>#*answers*?)` localiza todas as respostas e as adiciona à lista de enunciados em que a referência é especificada.
+    - `[link name](<.lu file path>#<INTENT-NAME>)`: localiza todos os declarações em <nome de intenção> no arquivo. Lu e os adiciona à lista de declarações em que a referência é especificada.
+    - `[link name](<.lu file path>#<INTENT-NAME>*utterances*)`: localiza todos os declarações (não os padrões) em <> de nome no arquivo. Lu e os adiciona à lista de declarações em que a referência é especificada.
+    - `[link name](<.lu file path>#<INTENT-NAME>*patterns*)`: localiza todos os padrões (não declarações) em <nome de intenção> no arquivo. Lu e os adiciona à lista de padrões onde a referência é especificada.
+    - `[link name](<.lu file path>#*utterances*)`: localiza todos os declarações no arquivo. Lu e os adiciona à lista de declarações em que a referência é especificada.
+    - `[link name](<.lu file path>#*patterns*)`: localiza todos os padrões no arquivo. Lu e os adiciona à lista de declarações em que a referência é especificada.
+    - `[link name](<.lu file path>#*utterancesAndPatterns*)`: localiza todos os padrões e declarações no arquivo. Lu e os adiciona à lista de declarações em que a referência é especificada.
+    - `[link name](<.qna file path>#$name?)`: Localiza todas as alterações da definição de alteração específica no conteúdo. QnA e as adiciona à lista de declarações em que a referência é especificada.
+    - `[link name](<.qna file path>#*alterations*?)`: Localiza todas as alterações do conteúdo. QnA e as adiciona à lista de declarações em que a referência é especificada.
+    - `[link name](<.qna file path>#?question-to-find?)`: Localiza todas as perguntas de variação da pergunta específica e as adiciona à lista de declarações em que a referência é especificada. Observe que qualquer espaço na pergunta precisará ser substituído pelo caractere **-** .
+    - `[link name](<.qna file path>#*answers*?)`: Localiza todas as respostas e as adiciona à lista de declarações em que a referência é especificada.
 
 Este é um exemplo das referências mencionadas anteriormente:
 

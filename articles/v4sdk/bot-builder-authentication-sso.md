@@ -1,18 +1,18 @@
 ---
 title: Adicionar logon único a um bot – Serviço de Bot
-description: Saiba como usar os recursos de autenticação do Serviço de Bot do Azure para adicionar o SSO ao seu bot.
+description: Saiba como adicionar o SSO ao bot.
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 4/15/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 6cec9382509f9488d9a3e775b0ec72bdc9557994
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 576a9acd74f11b70f7d1c294edd15921e98a44f4
+ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362269"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763996"
 ---
 # <a name="add-single-sign-on-to-a-bot"></a>Adicionar logon único a um bot
 
@@ -60,7 +60,7 @@ Este artigo faz referência a dois exemplos: o **RootBot** e o **SkillBot**. O *
 - Como o SSO já está conectado ao bot raiz, ele também está conectado ao bot de skill sem precisar de uma nova interação do usuário.
 
 
-Para obter uma visão geral de como o Bot Framework processa a autenticação, confira [Autenticação de bot](bot-builder-concept-authentication.md).
+Para obter uma visão geral de como a estrutura de bot manipula a autenticação, consulte [autenticação do usuário](bot-builder-concept-authentication.md).
 Confira mais informações em [Logon único](bot-builder-concept-sso.md).
 
 O **RootBot** dá suporte ao SSO do usuário. Ele se comunica com o **SkillBot** em nome do usuário, sem que o usuário precise se autenticar novamente no *SkillBot*.
@@ -70,7 +70,7 @@ Para cada projeto no exemplo, você precisa do seguinte:
 1. Um aplicativo do Azure AD para registrar um recurso de bot no Azure.
 1. Um aplicativo de provedor de identidade do Azure AD para fornecer a autenticação.
     > [!NOTE]
-    > No momento, há suporte apenas para o provedor de identidade do [Azure AD v2](https://docs.microsoft.com/azure/bot-service/bot-builder-concept-identity-providers?view=azure-bot-service-4.0&tabs=adv2%2Cga2#azure-ad-v2-1).
+    > No momento, há suporte apenas para o provedor de identidade do [Azure AD v2](https://docs.microsoft.com/azure/bot-service/bot-builder-concept-identity-providers?view=azure-bot-service-4.0&tabs=adv2%2Cga2#azure-ad-v2-1&preserve-view=true).
 
 ## <a name="create-the-azure-rootbot-registration"></a>Criar o registro do RootBot no Azure
 
@@ -96,7 +96,7 @@ O Azure AD é um serviço de identidade de nuvem que permite criar aplicativos q
 
 ### <a name="create-an-oauth-connection-settings"></a>Definir as configurações de conexão do OAuth
 
-1. Crie uma conexão do Azure AD V2 no registro de bot `RootBot` e insira os valores descritos em [Azure AD v2](https://docs.microsoft.com/azure/bot-service/bot-builder-concept-identity-providers?view=azure-bot-service-4.0&tabs=adv2%2Cga2#azure-ad-v2-1) e o valor descrito abaixo.
+1. Crie uma conexão do Azure AD V2 no registro de bot `RootBot` e insira os valores descritos em [Azure AD v2](https://docs.microsoft.com/azure/bot-service/bot-builder-concept-identity-providers?view=azure-bot-service-4.0&tabs=adv2%2Cga2#azure-ad-v2-1&preserve-view=true) e o valor descrito abaixo.
 
 1. Deixe vazia a **URL de troca de token**.
 1. Na caixa **Escopos**, insira o valor de escopo `RootBot` que você salvou nas etapas anteriores.
@@ -143,7 +143,7 @@ O Azure AD é um serviço de identidade de nuvem que permite criar aplicativos q
 
 ### <a name="create-an-oauth-connection-settings"></a>Definir as configurações de conexão do OAuth
 
-1. Crie uma conexão do Azure AD V2 no registro de bot `SkillBot` e insira os valores descritos em [Azure AD v2](https://docs.microsoft.com/azure/bot-service/bot-builder-concept-identity-providers?view=azure-bot-service-4.0&tabs=adv2%2Cga2#azure-ad-v2-1) e os valores descritos abaixo.
+1. Crie uma conexão do Azure AD V2 no registro de bot `SkillBot` e insira os valores descritos em [Azure AD v2](https://docs.microsoft.com/azure/bot-service/bot-builder-concept-identity-providers?view=azure-bot-service-4.0&tabs=adv2%2Cga2#azure-ad-v2-1&preserve-view=true) e os valores descritos abaixo.
 1. Na caixa **URL de Troca de Token**, insira o valor de escopo `SkillBot` que você salvou nas etapas anteriores.
 1. Na caixa **Escopos**, insira os valores a seguir separados por espaços em branco: `profile` `User.Read` `User.ReadBasic.All` `openid`.
 
@@ -237,7 +237,7 @@ Para que o logon de exemplo do bot funcione é necessário configurar o emulador
 
 Após configurar o mecanismo de autenticação é possível executar o teste de exemplo do bot real.
 
-1. No Visual Studio, abra a solução `SSOWithSkills.sln` e configure-a para iniciar a [depuração com vários processos](https://docs.microsoft.com/visualstudio/debugger/debug-multiple-processes?view=vs-2019#start-debugging-with-multiple-processes).
+1. No Visual Studio, abra a solução `SSOWithSkills.sln` e configure-a para iniciar a [depuração com vários processos](https://docs.microsoft.com/visualstudio/debugger/debug-multiple-processes?view=vs-2019#start-debugging-with-multiple-processes&preserve-view=true).
 1. Execute o bot em seu computador local.
 Observe que, no arquivo `appsettings.json` do projeto `RootBot`, você tem as seguintes configurações:
 
@@ -262,7 +262,7 @@ Observe que, no arquivo `appsettings.json` do projeto `RootBot`, você tem as se
 1. Clique em **Confirmar**. Você será conectado, e o token `RootBot` será exibido.
 1. Digite **token** para exibir o token novamente.
 
-    ![Token da raiz](media/how-to-auth/auth-bot-sso-test-token.PNG)
+    ![Imagem do token raiz](media/how-to-auth/auth-bot-sso-test-token.PNG)
 
     Agora você está pronto para se comunicar com o `SkillBot`. Quando você entrar usando `RootBot`, não precisará fornecer suas credenciais novamente até sair. Isso demonstra que o SSO está funcionando.
 
@@ -270,7 +270,7 @@ Observe que, no arquivo `appsettings.json` do projeto `RootBot`, você tem as se
 
 1. Continue e digite **skill token** para exibir o token novamente.
 
-     ![Token do skill](media/how-to-auth/auth-bot-sso-test-skill-token.PNG)
+     ![Imagem do token de habilidade](media/how-to-auth/auth-bot-sso-test-skill-token.PNG)
 
 1. Agora você pode digitar **skill logout** para se desconectar do `SkillBot`. Em seguida, digite **logout** para sair do `SimpleRootBoot`.
 
@@ -297,13 +297,13 @@ Observe que, no arquivo `appsettings.json` do projeto `RootBot`, você tem as se
 1. Copie o código e insira na caixa de entrada para concluir. O token de `RootBot` é exibido.
 1. Digite **token** para exibir o token novamente.
 
-    ![Token da raiz](media/how-to-auth/auth-bot-sso-test-webchat-token.PNG)
+    ![Webchat do token raiz](media/how-to-auth/auth-bot-sso-test-webchat-token.PNG)
 
     Agora você está pronto para se comunicar com o `SkillBot`. Quando você tiver entrado em `RootBot`, não precisará fornecer novamente suas credenciais até sair. Isso demonstra que o SSO está funcionando.
 
 1. Digite **skill login**.  O token do SkillBot é exibido.
 
-    ![Token do skill](media/how-to-auth/auth-bot-sso-test-webchat-skill-token.PNG)
+    ![Webchat do token de habilidades](media/how-to-auth/auth-bot-sso-test-webchat-skill-token.PNG)
 
 1. Continue e digite **skill token** para exibir o token novamente.
 Isso deixa claro que você está se comunicando com o `SkillBot` sem a necessidade de entrar novamente. SSO em ação!
@@ -315,7 +315,7 @@ Isso deixa claro que você está se comunicando com o `SkillBot` sem a necessida
 
 O diagrama de sequência de tempo a seguir aplica-se aos exemplos usados no artigo e mostra a interação entre os vários componentes envolvidos. *ABS* significa *Serviço de Bot do Azure*.
 
-![Token do skill](media/how-to-auth/auth-bot-sso-sample-flow-diagram.PNG)
+![Fluxo do token de habilidade](media/how-to-auth/auth-bot-sso-sample-flow-diagram.PNG)
 
 <!-- verify -->
 1. Na primeira vez, o usuário digita o comando `login` para o **RootBot**.
@@ -341,8 +341,8 @@ Para ver como ocorre a troca de tokens, confira o exemplo mostrado abaixo. A fun
 ## <a name="further-reading"></a>Leitura adicional
 
 - [Logon único](bot-builder-concept-sso.md) proporciona informações adicionais
-- [Provedores de identidade](bot-builder-concept-identity-providers.md) fornecem a autenticação de usuário como um serviço
-- [Autenticação de bot](bot-builder-concept-authentication.md) fornece acesso a recursos online protegidos em nome do usuário
+- [Provedores de identidade](bot-builder-concept-identity-providers.md) fornecem autenticação de usuário como um serviço
+- [Autenticação do usuário](bot-builder-concept-authentication.md) para acessar recursos online protegidos em nome do usuário
 
 <!-- Footnote-style links -->
 

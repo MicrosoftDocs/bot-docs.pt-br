@@ -8,12 +8,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: dev
 ms.date: 01/15/2020
-ms.openlocfilehash: 0d9a809a66be18ba925c4b1f29f7c364439a818b
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 340246868424199f209feaabf9723f9c0f1624b7
+ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362029"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763668"
 ---
 # <a name="configure-nodejs-bot-for-extension"></a>Configurar o bot do Node.js para a extensão
 
@@ -94,7 +94,7 @@ Esta seção descreve como habilitar a extensão do serviço de aplicativo de li
     |---|---|
     |DirectLineExtensionABSEndpoint|<URL_of_Direct_Line_App_Gateway>|
 
-    Onde *URL_of_Direct_Line_App_Gateway* é específico para a nuvem do Azure em que o bot está hospedado.
+    Onde *URL_of_Direct_Line_App_Gateway* é específico para a nuvem do Azure em que o bot está hospedado. Para USGov, esse valor é https://directline.botframework.azure.us/v3/extension
 
 1. Ainda dentro da seção de *configuração* , clique na seção configurações **gerais** e ative o **Web Sockets**
 1. Clique em **Salvar** para salvar as configurações. Isso reinicia o Serviço de Aplicativo do Azure.

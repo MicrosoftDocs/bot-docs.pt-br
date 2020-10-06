@@ -8,19 +8,18 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 01/16/2020
-ms.openlocfilehash: 803058f32512d1ac9f862cbee066f849860a95bf
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 373275e7e4d5270daed22469d57375eeb837f95d
+ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362039"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763621"
 ---
 # <a name="configure-net-bot-for-extension"></a>Configurar o bot do .NET para a extensão
 
 [!INCLUDE[applies-to-v4](includes/applies-to.md)]
 
 Este artigo descreve como atualizar um bot para trabalhar com **pipes nomeados**e como habilitar a extensão de serviço de aplicativo de linha direta no recurso de **serviço de Azure app** em que o bot está hospedado.
-
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -95,14 +94,14 @@ Esta seção descreve como habilitar a extensão do serviço de aplicativo de li
     |---|---|
     |DirectLineExtensionABSEndpoint|<URL_of_Direct_Line_App_Gateway>|
 
-    Onde *URL_of_Direct_Line_App_Gateway* é específico para a nuvem do Azure em que o bot está hospedado.
+    Onde *URL_of_Direct_Line_App_Gateway* é específico para a nuvem do Azure em que o bot está hospedado. Para USGov, esse valor é `https://directline.botframework.azure.us/v3/extension` .
 
 1. Ainda dentro da seção de *configuração* , clique na seção configurações **gerais** e ative o **Web Sockets**
 1. Clique em **Salvar** para salvar as configurações. Isso reinicia o Serviço de Aplicativo do Azure.
 
 ## <a name="confirm-direct-line-app-extension-and-the-bot-are-configured"></a>Confirme se a extensão do aplicativo de linha direta e o bot estão configurados
 
-No navegador, navegue até https://<your_app_service>.azurewebsites.net/.bot.
+No navegador, navegue até `https://<your_app_service>.azurewebsites.net/.bot`.
 Se tudo estiver correto, a página retornará este conteúdo JSON: `{"v":"123","k":true,"ib":true,"ob":true,"initialized":true}`. Essas são as informações que você obtém quando **tudo funciona corretamente**, onde
 
 - **v** exibe a versão de build da ASE (Extensão de Serviço de Aplicativo) do Direct Line.
@@ -113,14 +112,14 @@ Se tudo estiver correto, a página retornará este conteúdo JSON: `{"v":"123","
 
 ## <a name="troubleshooting"></a>Solução de problemas
 
-- Se os valores *IB* e *OB* exibidos pelo ponto de*extremidade *. bot* forem falsos, isso significa que o bot e a extensão do serviço de aplicativo Direct line não poderão se conectar entre si. 
+- Se os valores *IB* e *OB* exibidos pelo ponto de*extremidade *. bot* forem falsos, isso significa que o bot e a extensão do serviço de aplicativo Direct line não poderão se conectar entre si.
     1. Verifique se o código para usar pipes nomeados foi adicionado ao bot.
     1. Confirme se o bot é capaz de iniciar e executar de forma alguma. Ferramentas úteis são **testadas no Webchat**, conectando um canal adicional, depuração remota ou registro em log.
     1. Reinicie o **serviço de Azure app** inteiro no qual o bot está hospedado, para garantir uma inicialização limpa de todos os processos.
 
-- Se você estiver recebendo "erro HTTP 500,34-ANCM de hospedagem mista", é devido ao Bot tentar usar o modelo de Hospedagem de *inprocesso* . Isso é remediado com a definição explícita do bot para executar *OutOfProcess* em vez disso. Consulte [modelo de hospedagem fora do processo.](https://docs.microsoft.com/aspnet/core/host-and-deploy/aspnet-core-module?view=aspnetcore-3.1#out-of-process-hosting-model)
+- Se você estiver recebendo "erro HTTP 500,34-ANCM de hospedagem mista", é devido ao Bot tentar usar o modelo de Hospedagem de *inprocesso* . Isso é remediado com a definição explícita do bot para executar *OutOfProcess* em vez disso. Consulte [modelo de hospedagem fora do processo.](https://docs.microsoft.com/aspnet/core/host-and-deploy/aspnet-core-module?view=aspnetcore-3.1&preserve-view=true#out-of-process-hosting-model)
 
-- Se o valor *inicializado* do **ponto de extremidade. bot** for falso, isso significa que a extensão do serviço de aplicativo de linha direta não pode validar a **chave de extensão do serviço de aplicativo** adicionada às configurações de *aplicativo* do bot acima. 
+- Se o valor *inicializado* do **ponto de extremidade. bot** for falso, isso significa que a extensão do serviço de aplicativo de linha direta não pode validar a **chave de extensão do serviço de aplicativo** adicionada às configurações de *aplicativo* do bot acima.
     1. Confirme se o valor foi inserido corretamente.
     1. Alterne para a **chave de extensão do serviço de aplicativo** alternativa mostrada na página de configuração do canal de **linha direta**do bot.
 

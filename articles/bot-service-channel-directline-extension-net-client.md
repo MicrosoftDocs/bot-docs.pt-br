@@ -8,12 +8,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 07/25/2019
-ms.openlocfilehash: 54d36e77a5ab7abdc5055ee2e690388c21276d76
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 13158a37143587bcac9261a9285a93b3ce5b1627
+ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362009"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763606"
 ---
 # <a name="create-net-client-to-connect-to-direct-line-app-service-extension"></a>Criar um cliente .NET para se conectar à extensão do Serviço de Aplicativo do Direct Line
 
@@ -56,7 +56,7 @@ As interações com a extensão do serviço de aplicativo do Direct Line acontec
     - Clique em Dependências na árvore de Solução
     - Selecione **Gerenciar Pacotes NuGet...**
     - Altere a origem do pacote para `DL ASE Preview` (consulte a seção [Adicionar a origem do pacote NuGet de visualização](#add-the-preview-nuget-package-source))
-    - Localize o pacote [Microsoft.Bot.Connector.Directline](https://www.nuget.org/packages/Microsoft.Bot.Connector.DirectLine/3.0.3-Preview1) versão v3.0.3-Preview1 ou posterior.
+    - Localize o pacote [Microsoft.Bot.Connector.Directline](https://botbuilder.myget.org/feed/experimental/package/nuget/Microsoft.Bot.Connector.DirectLine) versão v3.0.3-Preview1 ou posterior.
     - Clique em **Instalar Pacote**.
 1. Crie um cliente e gere um token usando um segredo. Esta etapa é o mesmo que criar qualquer outro cliente do Direct Line em C#, exceto pelo ponto de extremidade que você precisa usar em seu bot, ao qual é acrescentado o caminho **.bot/** , conforme mostrado a seguir. Não se esqueça do **/** no final.
 

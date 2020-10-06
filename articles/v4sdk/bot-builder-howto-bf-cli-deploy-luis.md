@@ -9,14 +9,14 @@ ms.topic: how-to
 ms.service: bot-service
 ms.date: 08/28/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 7189da26d5a0d9e4a2d54d4ebf404e2cbcde31da
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 88bc7e108ab25448a85a999402db2bbe7fd16314
+ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824930"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763943"
 ---
-# <a name="deploy-luis-resources-using-the-bot-framework-luis-cli-commands"></a>Implantar recursos do LUIS usando os comandos da CLI do bot Framework LUIS
+# <a name="deploy-luis-resources-using-the-bot-framework-luis-cli-commands"></a>Implantar os recursos do LUIS usando os comandos da CLI do LUIS do Bot Framework
 
 [!INCLUDE [applies-to-v4](../includes/applies-to.md)]
 
@@ -38,7 +38,7 @@ Este artigo explica como implantar um recurso LUIS. Para obter informações sob
 Este artigo descreve como executar algumas tarefas comuns usando a CLI do bot Framework.
 
 1. [Criar seu recurso de criação do LUIS no Azure](#create-your-luis-authoring-resource-in-azure)
-1. [Instalar a CLI do SDK do bot Framework](#install-the-bot-framework-sdk-cli)
+1. [Instalar a CLI do bot Framework](#install-the-bot-framework-cli)
 1. [Criar seu modelo LUIS](#create-your-luis-model)
 1. [Criar seu aplicativo LUIS](#create-your-luis-application)
 1. [Obter a appId do seu aplicativo LUIS](#get-the-appid-from-your-luis-app)
@@ -80,7 +80,7 @@ O recurso de criação do LUIS inclui informações que o bot usará para acessa
 
 Para obter mais informações, consulte [criar recursos de Luis][luis-how-to-azure-subscription].
 
-## <a name="install-the-bot-framework-sdk-cli"></a>Instalar a CLI do SDK do bot Framework
+## <a name="install-the-bot-framework-cli"></a>Instalar a CLI do bot Framework
 
 [!INCLUDE [applies-to-v4](../includes/install-bf-cli.md)]
 
@@ -112,7 +112,7 @@ O exemplo acima mostra o `luis:application:import` comando com suas opções nec
 
 Para criar um aplicativo LUIS sem incluir um modelo LUIS, consulte o comando [BF Luis: aplicativo: criar][bf-luisapplicationcreate] .
 
-![Chaves e ponto de extremidade](./media/adaptive-dialogs/keys-and-endpoint-myluisapp.png)
+![Chaves e Ponto de Extremidade](./media/adaptive-dialogs/keys-and-endpoint-myluisapp.png)
 
 Na imagem acima, você usaria o comando a seguir para criar seu aplicativo LUIS, supondo que o arquivo JSON do modelo LUIS esteja em um subdiretório chamado _output_:
 
@@ -167,27 +167,220 @@ Para obter informações sobre como publicar um aplicativo LUIS, consulte [publi
 
 [!INCLUDE [applies-to-v4](../includes/generate-source-code-luis-cli.md)]
 
+## <a name="create-and-train-a-luis-app-then-publish-it-using-the-build-command"></a>Criar e treinar um aplicativo LUIS e, em seguida, publicá-lo usando o comando de compilação
+
+É útil entender como o processo de implantação de um aplicativo LUIS funciona e, depois de concluir este artigo até este ponto, você deve ter uma melhor compreensão dos processos envolvidos na criação do modelo LUIS, usando esse modelo para criar um aplicativo LUIS em um recurso de serviços cognitivas do Azure e, em seguida, treiná-lo e publicá-lo usando os comandos da CLI do bot Framework.
+
+Esses comandos oferecem muita flexibilidade ao adaptar os scripts às suas necessidades específicas.
+Você pode usar o `luis:build` comando para criar ou atualizar e, em seguida, treinar e publicar um aplicativo Luis.
+No entanto, o uso do `luis:build` comando fornece menos opções para controlar o processo.
+
+Para cada `.lu` arquivo, incluindo `.lu` arquivos para cada localidade, o comando de compilação combina todas as seguintes ações em um único comando:
+
+1. Cria um modelo LUIS para [cada localidade](#lu-and-multiple-language-variations) encontrada usando seus `.lu` arquivos existentes.
+1. Usando esse modelo, ele cria um novo aplicativo LUIS no recurso de serviços cognitivas do Azure especificado, caso não exista nenhum, caso contrário, ele atualizará o aplicativo LUIS existente.
+1. Ao atualizar um aplicativo LUIS existente, ele incrementará automaticamente o versionID e, opcionalmente, excluirá a versão antiga.
+1. Treina o aplicativo LUIS novo ou atualizado e, em seguida, o publica.
+1. Se você incluir a `--dialog` opção, ela produzirá os `.dialog` arquivos de definição que podem ser usados pelo [reconhecedor Luis][luis-recognizer] ao desenvolver usando a [abordagem declarativa][declarative]. Isso é explicado na seção [arquivo de diálogo](#the-dialog-file) .
+
+## <a name="how-to-use-the-build-command"></a>Como usar o comando de Build
+
+O comando de compilação LUIS com seus parâmetros obrigatórios:
+
+``` cli
+bf luis:build --in <input-file-or-folder> --out <output-file-or-folder> --authoringKey <subscription-key> --region <authoring-region>
+```
+
+O `luis:build` comando criará todos os ativos de que você precisa em seus `.lu` arquivos locais. Ao usar a `--in` opção, o `luis:build` criará um aplicativo Luis para cada `.lu` arquivo encontrado para cada localidade.
+
+### <a name="required-luisbuild-parameters"></a>Luis obrigatório: parâmetros de compilação
+
+- `in`: O diretório, incluindo subdiretórios, que serão pesquisados em busca de arquivos. Lu.
+- `out`: O diretório no qual salvar os arquivos de saída. Isso inclui todos os arquivos do Recognizer, bem como o arquivo de configurações. Se você omitir a `--out` opção, nenhum arquivo será salvo em disco e somente as chaves de criação e o ponto de extremidade do arquivo de configurações serão gravados no console do.
+- `botName`: O nome do bot. Isso será usado como o prefixo para o nome dos aplicativos LUIS gerados.
+- `authoringKey`: O mesmo valor que o subscriptionKey usado em todos os comandos anteriores discutidos neste artigo.
+- `region`: Define a região para publicar seus aplicativos LUIS.
+
+Para obter informações sobre as opções adicionais, consulte [BF Luis: Build][bf-luisbuild] no Leiame da CLI do BF.
+
+Como alternativa, você pode incluir esses requisitos, bem como qualquer um dos outros parâmetros em um arquivo de configuração e consultá-los usando a `--luConfig` opção.
+
+### <a name="luis-build-configuration-file"></a>Arquivo de configuração de compilação LUIS
+
+Veja a seguir um exemplo de **luconfig.jsno** arquivo que você pode referenciar usando a `--luConfig` opção.
+
+```json
+{
+    "in": "dialogs",
+    "out": "generated",
+    "botName":"MyProject",
+    "AuthoringKey":"<your-32-digit-subscription-key>",
+    "region": "westus",
+    "schema": "app.schema",
+    "defaultCulture":"en-us",
+    "deleteOldVersion": true,
+    "dialog": "multiLanguage",
+    "fallbackLocale": "en-us",
+    "force": true,  
+    "suffix": "<value-to-replace-username>"
+}
+```
+
+Além disso, há uma `models` seção na **luconfig.jsno** arquivo que é útil quando você precisa controlar quais `.lu` arquivos em seu projeto correspondem a um aplicativo Luis. Isso é especialmente útil se você estiver aproveitando referências externas em seus `.lu` arquivos, portanto, nem todo `.lu` arquivo único é tratado como um aplicativo Luis. Cada arquivo que você listar na `models` seção se tornará um aplicativo Luis e todos os `.lu` arquivos não listados se tornarão parte do aplicativo Luis criado a partir de qualquer `.lu` arquivo que faça referência a ele. Os arquivos referenciados em vários `.lu` arquivos serão duplicados em cada aplicativo Luis que faz referência a ele. Qualquer `.lu` arquivo não explicitamente listado na seção modelos do **luconfig.jsno** arquivo ou referenciado em um dos `.lu` arquivos listados será ignorado.
+
+O exemplo a seguir mostra uma seção de _modelos_ de exemplo do **luconfig.jsno** arquivo:
+
+```json
+    // Each model is a LUIS application.
+    "models": [
+        // Each line is to an lu file and corresponds to a LUIS application.
+        // relative paths here are relative to the luconfig.json file itself.
+        "./dialog/AddToDoDialog/AddToDoDialog.lu",
+        "./dialog/Common/Common.lu",
+        "./dialog/DeleteToDoDialog/DeleteToDoDialog.lu",
+        "./dialog/GetUserProfileDialog/GetUserProfileDialog.lu",
+        "./dialog/RootDialog/RootDialog.lu",
+        "./dialog/ViewToDoDialog/ViewToDoDialog.lu"
+    ]
+```
+
+Depois que esse arquivo de configuração é criado, tudo o que você precisa fazer é fazer referência a ele no `luis:build` comando. Por exemplo:
+
+``` cli
+bf luis:build --luConfig luconfig.json
+```
+
+### <a name="lu-and-multiple-language-variations"></a>Variações de LU e várias linguagens
+
+Cada [arquivo. Lu][lu-templates] pode ter várias variações de idioma e o `luis:build` comando criará um aplicativo Luis para cada idioma com suporte.
+
+O padrão para o `.lu` nome do arquivo, quando as localidades adicionais são usadas, é o seguinte:
+
+`<file-name>.<locale>.lu`
+
+Por exemplo:
+
+```
+RootDialog.en-us.lu
+RootDialog.fr-fr.lu
+RootDialog.de-de.lu
+etc.
+```
+
+No exemplo acima, cada um dos arquivos terá `.lu` seu próprio modelo específico de linguagem exclusivo criado para ele, resultando em um aplicativo Luis para cada um dos três `.lu` arquivos.
+
+> [!TIP]
+>
+> - Como alternativa para incluir a localidade no nome do arquivo, você pode incluí-lo no `.lu` próprio arquivo como parte de suas informações de configuração. Isso é útil quando você precisa de mais flexibilidade com a Convenção de nomenclatura de arquivo. Por exemplo, no `.lu` arquivo para o idioma francês, você adicionaria: `> !# @app.culture = fr-fr` . Consulte a [Descrição do modelo][model-description] na referência de formato de [arquivo. Lu][lu-templates] para obter mais informações.
+>
+> - Se nenhuma localidade puder ser determinada a partir do nome do arquivo e não estiver incluída nas `.lu` informações de configuração dos arquivos, o valor especificado na opção compilar comandos `--defaultCulture` será usado. Se a `--defaultCulture` opção for omitida, a localidade será definida como `en-us` .
+
+### <a name="luis-applications-created"></a>Aplicativos LUIS criados
+
+Cada aplicativo LUIS criado em seu nome será nomeado usando uma combinação do `botName` valor que você fornece ao executar o `luis:build` comando, o nome de usuário da pessoa conectada e o nome do `.lu` arquivo, incluindo a localidade.
+
+Os nomes de aplicativos LUIS usarão este formato:  `{botName}{(suffix)}-{file-name}-{locale}.lu`
+
+Por exemplo, se seu botName for _MyProject_ e seu nome de usuário for _YuuriTanaka_, e o nome do arquivo for _getaddresses_ , os nomes dos seus aplicativos Luis seriam os seguintes:
+
+```
+MyProject(YuuriTanaka)-GetAddresss.en-us.lu
+MyProject(YuuriTanaka)-GetAddresss.fr-fr.lu
+MyProject(YuuriTanaka)-GetAddresss.de-de.lu
+```
+
+O mesmo nome de aplicativo LUIS será usado em cada região do Azure, com pontos de extremidade internos a ele.
+
+> [!TIP]
+>
+> Incluir o nome de usuário como parte do nome do aplicativo LUIS permite que vários desenvolvedores trabalhem de forma independente. Esse valor é gerado automaticamente, usando o nome de usuário da pessoa que fez logon; no entanto, você pode substituir isso usando a `--suffix` opção.
+
+### <a name="the-settings-file-generated-using-the-build-command"></a>O arquivo de configurações gerado usando o comando de compilação
+
+Todos os `.lu` arquivos de cada localidade resultarão em um aplicativo Luis e a saída do `luis:build` comando incluirá um arquivo de configurações que contém uma lista de cada ID de aplicativo do Luis que foi criada para cada localidade.
+
+Por exemplo, se o nome de usuário conectado for _YuuriTanaka_ e você estiver direcionando a região de criação **westus**, seu nome de arquivo será:
+
+**luis.settings.YuuriTanaka.westus.jsem**
+
+Arquivo de configurações de exemplo:
+
+```json
+{
+    "luis": {
+        "RootDialog_en_us_lu": "<LUIS-App-ID-for-en-us-locale>",
+        "RootDialog_fr_fr_lu": "<LUIS-App-ID-for-fr-fr-locale>"
+    }
+}
+```
+
+### <a name="the-dialog-file"></a>O arquivo de diálogo
+
+Quando você incluir a `--dialog` opção, um `.dialog` arquivo será gerado para cada um de seus `.lu` arquivos, um para cada localidade. 
+
+> [!IMPORTANT]
+>
+> A `--schema` opção é usada em conjunto com a `--dialog` opção. A inclusão da `--schema` opção garantirá que cada arquivo de caixa de diálogo criado terá uma referência ao arquivo de esquema raiz de projetos. Esse arquivo de esquema contém os esquemas de todos os componentes consumidos pelo bot. Cada consumidor de arquivos declarativos, incluindo [Composer] [Composer], precisa de um arquivo de esquema. Se o seu projeto não tiver um arquivo de esquema, você poderá gerar um usando o `dialog:merge` comando. Será necessário executar esse comando antes de executar o `luis:build` comando. Para obter informações adicionais, consulte o artigo sobre como [usar ativos declarativos em caixas de diálogo adaptáveis][dialog-merge-command].
+
+Os parâmetros de caixa de diálogo Luis: Build e Schema:
+
+- **caixa de diálogo**. Há dois valores válidos para a opção de caixa de diálogo `multiLanguage` e `crosstrained` .
+- **esquema**. Isso usa um caminho relativo e o nome de arquivo apontando para o arquivo de esquema do bot.
+
+ Esses arquivos serão gravados no diretório especificado na `out` opção. Por exemplo:
+
+```
+RootDialog.en-us.lu.dialog <-- LuisRecognizer for en-us locale
+RootDialog.fr-fr.lu.dialog <-- LuisRecognizer for fr-fr locale
+RootDialog.lu.dialog       <-- MultiLanguageRecognizer configured to use all locales
+```
+
+Aqui está um exemplo do arquivo _MultiLanguageRecognizer_ :
+
+```json
+{
+    "$schema": "app.schema",
+    "$kind": "Microsoft.MultiLanguageRecognizer",
+    "id": "lu_RootDialog",
+    "recognizers": {
+        "en-us": "RootDialog.en-us.lu",
+        "fr-fr": "RootDialog.fr-fr.lu",
+        "": "RootDialog.en-us.lu"
+    }
+}
+```
+
+Você usará esses arquivos se estiver usando a abordagem declarativa para desenvolver o bot, e precisará adicionar uma referência a esse reconhecedor em seu arquivo de caixas de diálogo adaptáveis `.dialog` . No exemplo a seguir, o `"recognizer": "RootDialog.lu"` está procurando o reconhecedor que está definido no arquivo **RootDialog. Lu. Dialog**:
+
+ ![Como fazer referência a um reconhecedor em um arquivo. Dialog](./media/adaptive-dialogs/how-to-reference-the-lu-recognizer-in-dialog-file.png)
+
+Consulte [usando ativos declarativos em caixas de diálogo adaptáveis][declarative] para obter mais informações.
+
 ## <a name="additional-information"></a>Informações adicionais
 
 - [Atualizando seus modelos do LUIS][how-to-update-using-luis-cli]
 
-<!----------------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------->
 [cognitive-services-overview]: /azure/cognitive-services/Welcome
 [create-cognitive-services]: https://portal.azure.com/#create/Microsoft.CognitiveServicesLUISAllInOne
 [luis-recognizer]: bot-builder-concept-adaptive-dialog-recognizers.md#luis-recognizer
 [natural-language-processing-in-adaptive-dialogs]: bot-builder-concept-adaptive-dialog-recognizers.md#introduction-to-natural-language-processing-in-adaptive-dialogs
 [language-understanding]: bot-builder-concept-adaptive-dialog-recognizers.md#language-understanding
 [lu-templates]: ../file-format/bot-builder-lu-file-format.md
+[model-description]: ../file-format/bot-builder-lu-file-format.md#model-description
 [luis-how-to-azure-subscription]: /azure/cognitive-services/luis/luis-how-to-azure-subscription
 [bf-cli-overview]: bf-cli-overview.md
 
-[bf-luisapplicationimport]: https://aka.ms/botframework-cli-luis#bf-luisapplicationimport
-[bf-luisapplicationcreate]: https://aka.ms/botframework-cli-luis#bf-luisapplicationcreate
-[bf-luisapplicationshow]: https://aka.ms/botframework-cli-luis#bf-luisapplicationshow
-[bf-luistrainrun]: https://aka.ms/botframework-cli-luis#bf-luistrainrun
-[luisapplicationpublish]: https://aka.ms/botframework-cli-luis#bf-luisapplicationpublish
-[bf-luisgeneratecs]: https://aka.ms/botframework-cli-luis#bf-luisgeneratecs
-[bf-luisgeneratets]: https://aka.ms/botframework-cli-luis#bf-luisgeneratets
+[bf-luisapplicationimport]: https://aka.ms/botframework-cli#bf-luisapplicationimport
+[bf-luisapplicationcreate]: https://aka.ms/botframework-cli#bf-luisapplicationcreate
+[bf-luisapplicationshow]: https://aka.ms/botframework-cli#bf-luisapplicationshow
+[bf-luistrainrun]: https://aka.ms/botframework-cli#bf-luistrainrun
+[luisapplicationpublish]: https://aka.ms/botframework-cli#bf-luisapplicationpublish
+[bf-luisgeneratecs]: https://aka.ms/botframework-cli#bf-luisgeneratecs
+[bf-luisgeneratets]: https://aka.ms/botframework-cli#bf-luisgeneratets
+[bf-luisbuild]: https://aka.ms/botframework-cli#bf-luisbuild
+[declarative]: bot-builder-concept-adaptive-dialog-declarative.md
+[dialog-merge-command]: bot-builder-concept-adaptive-dialog-declarative.md#the-merge-command
 
 [luis-how-to-add-intents]: /azure/cognitive-services/LUIS/luis-how-to-add-intents
 [luis-how-to-start-new-app]: /azure/cognitive-services/LUIS/luis-how-to-start-new-app
@@ -196,6 +389,8 @@ Para obter informações sobre como publicar um aplicativo LUIS, consulte [publi
 [test-an-utterance]: /azure/cognitive-services/LUIS/luis-interactive-test#test-an-utterance
 [luis-interactive-test]: /azure/cognitive-services/LUIS/luis-interactive-test
 [luis-how-to-publish-app]: /azure/cognitive-services/LUIS/luis-how-to-publish-app
+
+[ToDoBotWithLUISAndQnAMakerSample]: https://aka.ms/csharp-adaptive-dialog-08-todo-bot-luis-qnamaker-sample
 
 [how-to-update-using-luis-cli]: bot-builder-howto-bf-cli-update-luis.md
 

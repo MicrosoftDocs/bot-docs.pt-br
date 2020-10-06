@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: fad81c509190d592e23947c860f981fe37910240
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 178c62c8f5d3ec6d76cf8b5ab7707744a2ea98b5
+ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824316"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763913"
 ---
 # <a name="handle-user-interruptions-in-adaptive-dialogs"></a>Lidar com interrupções do usuário em caixas de diálogo adaptáveis
 
@@ -702,7 +702,7 @@ A captura de tela mostrada abaixo verifica se você pode interromper o fluxo de 
 [CognitiveServicesLUISAllInOne]: https://portal.azure.com/#create/Microsoft.CognitiveServicesLUISAllInOne
 
 <!-- Sample links ----->
-[cs-sample]: https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/adaptive-dialog/05.interruptions-bot
+[cs-sample]: https://aka.ms/cs-adaptive-interruptions-sample
 [js-sample]: https://github.com/microsoft/BotBuilder-Samples/tree/master/experimental/adaptive-dialog/javascript_nodejs/05.interruptions-bot
 [python-sample]: https://github.com/microsoft/BotBuilder-Samples/tree/master/experimental/adaptive-dialog/python/05.interruptions-bot
 [rootdialog.lu]: https://github.com/microsoft/BotBuilder-Samples/blob/master/samples/csharp_dotnetcore/adaptive-dialog/05.interruptions-bot/Dialogs/RootDialog/RootDialog.lu

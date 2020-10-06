@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 0a55b15b7d5198d854b364f6515a745644b97ba0
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: 3ef9fc1ec51ebed68c81d3f8b0dba61d5e3df8b1
+ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83566476"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763687"
 ---
 # <a name="qna-file-format"></a>Formato de arquivo .qna
 
@@ -36,7 +36,7 @@ Supported concepts:
 
 ## <a name="adding-comments"></a>Como adicionar comentários
 
-Você pode adicionar comentários ao documento .qna prefixando o comentário com **>** .
+Use **>** para criar um comentário. Aqui está um exemplo:
 
 ```.qna
 > This is a comment and will be ignored
@@ -44,19 +44,19 @@ Você pode adicionar comentários ao documento .qna prefixando o comentário com
 
 ## <a name="question-and-answer-pairs"></a>Pares de perguntas e respostas
 
-O arquivo .qna (e o analisador) dão suporte a definições de perguntas e respostas.
+O arquivo. QnA e o analisador dão suporte a definições de perguntas e respostas.
 
-Este é um exemplo de definição de pergunta e resposta básica.
+Aqui está a sintaxe de uma definição de pergunta e resposta básica:
 
 ```.qna
     # ? Question
     [list of question variations]
-    ```.qna
+    ```
     Answer
     ```
 ```
 
-Este é um exemplo de definições de perguntas e respostas.
+Aqui estão exemplos de definições de perguntas e respostas:
 
 
 ```.qna
@@ -82,10 +82,10 @@ Observe que o identificador de tipo `markdown` para uma `answer` é opcional.
 Você pode adicionar várias perguntas à mesma resposta simplesmente adicionando variações às perguntas.
 
 ```.qna
-### ? Who is your ceo?
-- get me your ceo info
-    ```.qna
-        Vishwac
+### ? Aren't you feeling happy today?
+- Feeling cheerful?
+    ```markdown
+        I'm quite happy, thank you.
     ```
 ```
 
@@ -93,7 +93,7 @@ Você pode adicionar várias perguntas à mesma resposta simplesmente adicionand
 
 Os filtros do QnA Maker são pares chave-valor simples que podem ser usados para restringir os resultados da pesquisa, aumentar as respostas e armazenar o contexto.
 
-Use a notação a seguir para adicionar filtros.
+Use a sintaxe a seguir para adicionar filtros:
 
 ```.qna
 ***Filters:***
@@ -101,7 +101,7 @@ Use a notação a seguir para adicionar filtros.
 - name = value
 ```
 
-Este é um exemplo de como um filtro poderá ser usado.
+Veja um exemplo de como um filtro poderia ser usado:
 
 ```.qna
 ### ? Where can I get coffee?
@@ -110,7 +110,7 @@ Este é um exemplo de como um filtro poderá ser usado.
 **Filters:**
 - location = seattle
 
-    ```.qna
+    ```.markdown
     You can get coffee in our Seattle store at 1 pike place, Seattle, WA
     ```
 
@@ -120,27 +120,29 @@ Este é um exemplo de como um filtro poderá ser usado.
 **Filters:**
 - location = portland
 
-    ```.qna
+    ```.markdown
     You can get coffee in our Portland store at 52 marine drive, Portland, OR
     ```
 ```
 
-## <a name="qna-maker-alterations"></a>Alterações do QnA Maker
+<!---
+## QnA Maker alterations
 
-O QnA Maker dá suporte a [alterações de palavras](https://docs.microsoft.com/azure/cognitive-services/qnamaker/concepts/best-practices#use-synonyms) como uma forma de aprimorar a probabilidade de determinada consulta do usuário ser respondida com uma resposta apropriada. Use esse recurso para adicionar sinônimos a palavras-chave que usam outro formato.
+QnA Maker supports [word alterations](https://docs.microsoft.com/azure/cognitive-services/qnamaker/concepts/best-practices#use-synonyms) as a way to improve the likelihood that a given user query is answered with an appropriate response. You can use this feature to add synonyms to keywords that take different form.
 
-Descreva as listas de alterações/sinônimos de palavras em arquivos .qna usando a notação a seguir.
+You can describe word alterations/synonyms lists in .qna files using the following notation.
 ```.qna
 $<synonym word>:qna-alteration=
 - <list of synonyms>
 ```
 
-Aqui está um exemplo:
+Here's an example:
 ```.qna
 $botframework : qna-alterations=
 - bot framework
 - Microsoft bot framework
 ```
+--> 
 
 ## <a name="qna-maker-pdf-file-ingestion"></a>Ingestão de arquivos PDF do QnA Maker
 
@@ -156,29 +158,29 @@ Há suporte para referências externas no arquivo .qna e uso da sintaxe de link 
 
 ### <a name="reference-another-qna-file"></a>Referenciar outro arquivo .qna
 
-Referência a outro arquivo .qna por meio de `\[link name](\<.qna file name\>)`. As referências podem ser um caminho absoluto ou um caminho relativo do arquivo .qna contido.
+Referência a outro arquivo .qna por meio de `[link name](<.qna file name>)`. As referências podem ser um caminho absoluto ou um caminho relativo do arquivo .qna contido.
 
 ### <a name="reference-to-a-folder-containing-qna-files"></a>Referência a uma pasta contendo arquivos .qna
 
 Há suporte para a referência a uma pasta com outros arquivos .qna por meio do seguinte:
 
-- `\[link name](\<.qna file path\>/*)` procura os arquivos .qna no caminho absoluto ou relativo especificado.
-- `\[link name](\<.qna file path\>/**)` procura recursivamente os arquivos .qna no caminho absoluto ou relativo especificado, incluindo as subpastas.
+- `[link name](<.qna file path>/*)`: procura arquivos. QnA no caminho absoluto ou relativo especificado.
+- `[link name](<.qna file path>/**)`: procura recursivamente por arquivos. QnA no caminho absoluto ou relativo especificado, incluindo subpastas.
 
 ### <a name="reference-a-url"></a>Referenciar uma URL
 
-Referencie uma URL para ingestão do QnA Maker durante a criação da KB por meio de `\[link name](\<URL\>)`.
+Referencie uma URL para ingestão do QnA Maker durante a criação da KB por meio de `[link name](<URL>)`.
 
 ### <a name="reference-from-a-specific-file"></a>Referência de um arquivo específico
 
-Adicione também referências aos enunciados definidos em um arquivo específico em uma seção de Intenção ou como pares de QnA.
+Adicione também referências aos enunciados definidos em um arquivo específico em uma seção de intenção ou como pares de QnA.
 
-- `[link name](<.lu file path>#<INTENT-NAME>)` localiza todos os enunciados encontrados em <NOME-DA-INTENÇÃO> no arquivo .lu e os adiciona à lista de perguntas em que a referência é especificada.
-- `[link name](\<.lu file path>#*utterances*)` localiza todos os enunciados no arquivo .lu e os adiciona à lista de perguntas em que a referência é especificada.
-- `\[link name](\<.qna file path\>#?)` localiza as perguntas de todos os pares de P e R definidos no arquivo .qna e os adiciona à lista de enunciados em que essa referência é especificada.
-- `\[link name](\<.qna folder\>/*#?)` localiza todas as perguntas de todos os arquivos .qna na pasta especificada e as adiciona à lista de enunciados em que essa referência é especificada.
+- `[link name](<.lu file path>#<INTENT-NAME>)`: localiza todos os declarações encontrados em <nome de intenção> no arquivo. Lu e os adiciona à lista de perguntas em que a referência é especificada.
+- `[link name](<.lu file path>#*utterances*)`: localiza todos os declarações no arquivo. Lu e os adiciona à lista de perguntas em que a referência é especificada.
+- `[link name](<.qna file path>#?)`: localiza perguntas de todos os pares de QnA definidos no arquivo. QnA e os adiciona à lista de declarações em que essa referência é especificada.
+- `[link name](<.qna folder>/*#?)`: Localiza todas as perguntas de todos os arquivos. QnA na pasta especificada e as adiciona à lista de declarações em que essa referência é especificada.
 
-Este é um exemplo dessas referências.
+Aqui está um exemplo das referências acima:
 
 ```.qna
 > QnA URL reference
@@ -190,26 +192,26 @@ Este é um exemplo dessas referências.
 > Look for all .qna files under a path
 [ChitChat](./chitchat/*)
 
-> Recursively look for .qna files under a path including sub-folders.
-[Chit chat](../chitchat/resources/**)
+> Recursively look for .qna files under a path including subfolders.
+[ChitChat](../chitchat/resources/**)
 ```
 
 ## <a name="model-description"></a>Descrição do modelo
 
 Inclua informações de configuração do aplicativo LUIS ou da KB do QnA Maker no arquivo .qna para ajudar a instruir o analisador a processar o conteúdo do LU corretamente.
 
-Veja a seguir como adicionar informações de configuração.
+Veja como adicionar informações de configuração **>! #**:
 
 ```.qna
-> !# @\<property> = \<value>
-> !# @\<scope>-\<property> = \<value>
-> !# @\<scope>-\<property> = \<semicolon-delimited-key-value-pairs>
+> !# @<property> = <value>
+> !# @<scope>-<property> = <value>
+> !# @<scope>-<property> = <semicolon-delimited-key-value-pairs>
 ```
 
 Observe que todas as informações passadas explicitamente por meio de argumentos da CLI substituirão as informações do arquivo .qna.
 
 ```.qna
-> Parser instruction - this is optional; unless specified, parser will default to the latest version.
+> Parser instruction - this is optional; unless specified, the parser will default to the latest version.
 > !# @version = 1.0
 
 > QnA Maker KB description
@@ -221,13 +223,13 @@ Observe que todas as informações passadas explicitamente por meio de argumento
 
 ## <a name="multiturn-content"></a>Conteúdo de vários turnos
 
-O conteúdo de vários turnos é representado no formato .qna por meio da notação de link Markdown. Os links são especificados com a notação a seguir.
+O conteúdo de vários turnos é representado no formato .qna por meio da notação de link Markdown. Os links são especificados usando o seguinte modo:
 
 ```
 - [display text](#<ID or question>)
 ```
 
-Opcionalmente, você pode incluir `context-only` para as solicitações que só estão contextualmente disponíveis para essa pergunta. Leia a seção sobre [como adicionar um par de perguntas e respostas existente como uma solicitação de acompanhamento][1] para saber mais sobre o uso de `context`.
+Opcionalmente, você pode incluir `context-only` qualquer prompt que esteja apenas contextualmente disponível para uma pergunta. Leia a seção sobre [como adicionar um par de perguntas e respostas existente como uma solicitação de acompanhamento][1] para saber mais sobre o uso de `context`.
 
 ```.qna
 - [tell me a joke](#?joke) `context-only`
@@ -239,13 +241,14 @@ Os desenvolvedores têm duas opções para criar solicitações de acompanhament
 
 ### <a name="use-a-question-directly"></a>Usar uma pergunta diretamente
 
-1. O primeiro par de P e R que tenha o texto de link como uma `question` será adicionado como a solicitação. Se você precisar de um controle mais explícito, use [IDs](#question-and-answer-pairs).
-2. Quando estiver usando uma pergunta diretamente, use a convenção Markdown e substitua espaços por hifens (por exemplo, use `#?when-is-the-portland-store-open` em vez de `#?when is the portland store open`). O analisador fará o melhor para localizar o link.
+O primeiro par de P e R que tenha o texto de link como uma `question` será adicionado como a solicitação. Se você precisar de um controle mais explícito, use [IDs](#question-and-answer-pairs).
+
+Quando você estiver usando uma pergunta diretamente, use a Convenção de redução e substitua espaços por hifens (por exemplo, use `#?when-is-the-portland-store-open` em vez de `#?when is the portland store open` ). O analisador fará o melhor para localizar o link.
 
 ```.qna
 # ?store hours
     ```
-        Most our stores are open M-F 9AM-10PM
+        Most our stores are open M-F 9AM-10PM.
     ```
 **Prompts:**
 - [Seattle store](#?seattle)
@@ -253,13 +256,13 @@ Os desenvolvedores têm duas opções para criar solicitações de acompanhament
 
 # ?seattle
     ```
-        Seattle store is open M-F 9AM-10PM
+        The Seattle store is open M-F 9AM-10PM.
     ```
 
 # ?when is the portland store open
 - portland store hours
     ```
-        Portland store is open 24x7.
+        The Portland store is open 24/7.
     ```
 ```
 
@@ -272,7 +275,7 @@ Atribua IDs a cada solicitação com um número. Veja no exemplo abaixo que um v
 ```.qna
 # ?store hours
     ```
-        Most our stores are open M-F 9AM-10PM
+        Most our stores are open M-F 9AM-10PM.
     ```
 **Prompts:**
 - [Seattle store](#1)
@@ -282,7 +285,7 @@ Atribua IDs a cada solicitação com um número. Veja no exemplo abaixo que um v
 
 # ?seattle
     ```
-        Seattle store is open M-F 9AM-10PM
+        The Seattle store is open M-F 9AM-10PM.
     ```
 
 <a id = "2"></a>
@@ -290,7 +293,7 @@ Atribua IDs a cada solicitação com um número. Veja no exemplo abaixo que um v
 # ?when is the portland store open
 - portland store hours
     ```
-        Portland store is open 24x7.
+        The Portland store is open 24/7.
     ```
 ```
 

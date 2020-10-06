@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 0fe19b6cad02abc6950b489720fc12a0c94edf0c
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 85e389d5d95de81c1705002b19d134b415bf95fe
+ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360749"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763640"
 ---
 # <a name="lg-file-format"></a>Formato de arquivo .lg
 
@@ -82,11 +82,17 @@ Os **modelos** são o conceito básico do sistema de geração de linguagem. Cad
   - uma [expressão adaptável][3]
   - uma lista de valores de texto de variação one-of por condição
 
-Os nomes de modelos seguem a definição do cabeçalho Markdown.
+### <a name="template-names"></a>Nomes de modelo
+
+Os nomes de modelo diferenciam maiúsculas de minúsculas e podem conter apenas letras, sublinhados, números. Veja a seguir um exemplo de um modelo chamado `TemplateName` . 
 
 ```.lg
 # TemplateName
 ```
+
+Os modelos não podem começar com um número e qualquer parte de um nome de modelo é dividida por **.** Não é possível iniciar com um número.
+
+### <a name="template-response-variations"></a>Variações de resposta de modelo
 
 As variações são expressas como uma lista Markdown. Você pode prefixar cada variação usando o caractere **-** , **'** ou **+** .
 
@@ -113,7 +119,7 @@ Um modelo de resposta simples inclui uma ou mais variações de texto que são u
 Este é um exemplo de um modelo simples que inclui duas variações.
 
 ```.lg
-> Greeting template with 2 variations.
+> Greeting template with two variations.
 # GreetingPrefix
 - Hi
 - Hello

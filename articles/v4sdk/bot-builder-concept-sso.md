@@ -1,6 +1,6 @@
 ---
-title: Logon único no Serviço de Bot do Azure – Serviço de Bot
-description: Saiba mais sobre o logon único no Serviço de Bot do Azure.
+title: Serviço de logon único-bot
+description: Saiba mais sobre o SSO (logon único) para permitir que um cliente se comunique com um bot ou habilidade no serviço de bot do Azure.
 keywords: serviço de bot do azure, autenticação, serviço de token do bot framework
 author: kamrani
 ms.author: kamrani
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 03/19/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 858c3498031821f6b2117e61f9387c7f97d2ba60
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: 34b9de1ec18747c676b89ce099479319f3d4db38
+ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420417"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763884"
 ---
 # <a name="single-sign-on"></a>Logon único
 
