@@ -28,6 +28,26 @@
   items:
     - name: Repositório de exemplos do Bot Framework no GitHub
       href: 'https://github.com/Microsoft/BotBuilder-Samples/blob/master/README.md'
+- name: Segurança
+  items:
+    - name: Noções básicas de autenticação
+      href: v4sdk/bot-builder-authentication-basics.md
+    - name: Tipos de autenticação
+      href: v4sdk/bot-builder-concept-authentication-types.md
+    - name: Autenticação de usuário
+      href: v4sdk/bot-builder-concept-authentication.md
+    - name: Provedores de identidade
+      href: v4sdk/bot-builder-concept-identity-providers.md
+    - name: Logon único
+      href: v4sdk/bot-builder-concept-sso.md
+    - name: Diretrizes de segurança
+      href: v4sdk/bot-builder-security-guidelines.md
+    - name: Autenticação do bot
+      items:
+        - name: Adicionar autenticação a um bot
+          href: v4sdk/bot-builder-authentication.md
+        - name: Adicionar logon único a um bot
+          href: v4sdk/bot-builder-authentication-sso.md
 - name: Conceitos
   items:
     - name: Bot
@@ -62,18 +82,6 @@
           href: v4sdk/bot-builder-concept-adaptive-dialog-interruptions.md
         - name: Como usar ativos declarativos em diálogos adaptáveis
           href: v4sdk/bot-builder-concept-adaptive-dialog-declarative.md
-    - name: Segurança
-      items:
-        - name: Diretrizes de segurança
-          href: v4sdk/bot-builder-security-guidelines.md
-        - name: Tipos de autenticação
-          href: v4sdk/bot-builder-concept-authentication-types.md
-        - name: Autenticação de usuário
-          href: v4sdk/bot-builder-concept-authentication.md
-        - name: Provedores de identidade
-          href: v4sdk/bot-builder-concept-identity-providers.md
-        - name: Logon único
-          href: v4sdk/bot-builder-concept-sso.md
     - name: Gerenciar recursos do bot
       href: v4sdk/bot-file-basics.md
     - name: Como os bots do Microsoft Teams funcionam
@@ -141,16 +149,24 @@
           href: v4sdk/bot-builder-howto-expire-conversation.md
         - name: Reconhecimento vocal
           items:
-            - name: Adicionar reconhecimento de idioma natural ao seu bot
-              href: v4sdk/bot-builder-howto-v4-luis.md
-            - name: Responder às perguntas do usuário usando o QnA Maker
-              href: v4sdk/bot-builder-howto-qna.md
+            - name: LUIS
+              items:
+                - name: Adicionar reconhecimento de idioma natural ao seu bot
+                  href: v4sdk/bot-builder-howto-v4-luis.md
+                - name: Implantar recursos do LUIS usando os comandos da CLI do LUIS
+                  href: v4sdk/bot-builder-howto-bf-cli-deploy-luis.md
+                - name: Atualizar recursos do LUIS usando os comandos da CLI do LUIS
+                  href: v4sdk/bot-builder-howto-bf-cli-update-luis.md
+            - name: QnA Maker
+              items:
+                - name: Responder às perguntas do usuário usando o QnA Maker
+                  href: v4sdk/bot-builder-howto-qna.md
+                - name: Implantar a base de dados de conhecimento do QnA Maker usando comandos da CLI
+                  href: v4sdk/bot-builder-howto-bf-cli-deploy-qna.md
+                - name: Listas personalizadas de sinônimos no QnA Maker
+                  href: v4sdk/bot-builder-howto-bf-cli-alterations-qna.md
             - name: Usar vários modelos de LUIS e QnA
               href: v4sdk/bot-builder-tutorial-dispatch.md
-            - name: Implantar os recursos do LUIS usando os comandos da CLI do LUIS do Bot Framework
-              href: v4sdk/bot-builder-howto-bf-cli-deploy-luis.md
-            - name: Atualizar os recursos do LUIS usando os comandos da CLI do LUIS do Bot Framework
-              href: v4sdk/bot-builder-howto-bf-cli-update-luis.md
         - name: Caixas de diálogo adaptáveis
           items:
             - name: Criar um projeto de bot para caixas de diálogos adaptáveis
@@ -165,12 +181,6 @@
               href: v4sdk/bot-builder-dialogs-declarative.md
         - name: Gravar diretamente no armazenamento
           href: v4sdk/bot-builder-howto-v4-storage.md
-        - name: Autenticação
-          items:
-            - name: Adicionar autenticação a um bot
-              href: v4sdk/bot-builder-authentication.md
-            - name: Adicionar logon único a um bot
-              href: v4sdk/bot-builder-authentication-sso.md
         - name: Implementar um armazenamento personalizado para seu bot
           href: v4sdk/bot-builder-custom-storage.md
         - name: Geração de Linguagem
