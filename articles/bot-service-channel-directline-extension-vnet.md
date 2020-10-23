@@ -8,14 +8,16 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 07/25/2019
-ms.openlocfilehash: 76b65646c97205d976d999bc40b521b14104e297
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: e6b567338a0acbc19a3eb495c68b7ad678d4e70b
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89361999"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415419"
 ---
 # <a name="use-direct-line-app-service-extension-within-a-vnet"></a>Usar a extensão de serviço de aplicativo do Direct Line com uma VNET
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Este artigo descreve como usar a Extensão de Serviço de Aplicativo do Direct Line com uma VNET (Rede Virtual do Azure).
 

@@ -9,14 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/31/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 151a641bfb973ab7674850cef388ab7bf6cd78e5
-ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
+ms.openlocfilehash: 3a409ff16ce8646f8f4db792fc0d8a00f14fde03
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763867"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414374"
 ---
 # <a name="user-authentication"></a>Autenticação de usuário
+
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Às vezes, um bot deve acessar recursos online protegidos em nome do usuário, como verificação de email, verificação de status de voo ou colocação de um pedido. O usuário deve autorizar o bot a fazer isso em seu nome e, para autorizar o bot, o usuário deve autenticar sua identidade. O **OAuth** é usado para autenticar o usuário e autorizar o bot. Consulte também [tipos de autenticação](bot-builder-concept-authentication-types.md).
 

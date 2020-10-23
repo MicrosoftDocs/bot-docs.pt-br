@@ -1,5 +1,5 @@
 ---
-title: O que é o SDK do bot Framework? -Serviço bot
+title: O que é o SDK do Bot Framework? -Serviço bot
 description: Saiba mais sobre o serviço de bot do Azure e o SDK do bot Framework para criar, conectar, testar, implantar, monitorar e gerenciar bots.
 keywords: Visão geral, a estrutura de tópicos de Introdução, SDK
 author: Kaiqb
@@ -8,20 +8,20 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/15/2019
-ms.openlocfilehash: 17bc03d9e7536d47d1d79dfb4870e04ecde5bcbb
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: 9735a1a8db93c02f169412feec3d72b95babb757
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143705"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414744"
 ---
-# <a name="what-is-the-bot-framework-sdk"></a>O que é o SDK do bot Framework?
+# <a name="what-is-the-bot-framework-sdk"></a>O que é o SDK do Bot Framework?
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 <!-- Alternate titles:
 # About the Bot Framework SDK and the Azure Bot Service
 -->
-
-[!INCLUDE [applies-to-both](includes/applies-to-both.md)]
 
 O bot Framework, juntamente com o serviço de bot do Azure, fornece ferramentas para criar, testar, implantar e gerenciar bots inteligentes, tudo em um só lugar. A estrutura de bot inclui um SDK modular e extensível para a criação de bots, bem como ferramentas, modelos e serviços de ia relacionados. Com essa estrutura, os desenvolvedores podem criar bots que usam fala, compreender a linguagem natural, lidar com perguntas e respostas e muito mais.
 

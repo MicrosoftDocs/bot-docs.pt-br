@@ -9,14 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 08/14/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a4e4cedea32cdd0e0250dfae06b3db11761f5a4e
-ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
+ms.openlocfilehash: 158882314663d954095d84c5c6175159a2b76f77
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763852"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414395"
 ---
 # <a name="authentication-types"></a>Tipos de autenticação
+
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 No bot Framework, existem duas categorias de autenticação amplas: **autenticação de bot** e autenticação de **usuário**. Cada um tem um **token** associado para permitir o acesso a recursos protegidos. A figura a seguir mostra os elementos envolvidos no bot e na autenticação do usuário.
 
@@ -24,13 +26,13 @@ No bot Framework, existem duas categorias de autenticação amplas: **autentica�
 
 Nesta figura:
 
- - A **plataforma de host** é a plataforma de Hospedagem de bot. Ele pode ser o Azure ou qualquer plataforma de host que você escolher.
- - O **serviço de conector de bot** facilita a comunicação entre um bot e um canal. Ele converte as mensagens recebidas de canais em objetos de atividade e as envia para o ponto de extremidade de mensagens do bot. Da mesma forma, ele converte os objetos de atividade recebidos do bot em mensagens compreendidas pelo canal e os envia para o canal.
+- A **plataforma de host** é a plataforma de Hospedagem de bot. Ele pode ser o Azure ou qualquer plataforma de host que você escolher.
+- O **serviço de conector de bot** facilita a comunicação entre um bot e um canal. Ele converte as mensagens recebidas de canais em objetos de atividade e as envia para o ponto de extremidade de mensagens do bot. Da mesma forma, ele converte os objetos de atividade recebidos do bot em mensagens compreendidas pelo canal e os envia para o canal.
 - **Adaptador de bot**. Esse é o adaptador padrão do bot Framework. Ele executa estas tarefas:
-    - Converte a carga JSON em um objeto. Neste ponto, ele já é um objeto de atividade, graças ao serviço de conector de bot.
-    - Cria um contexto de ativação e adiciona o objeto de atividade a ele.
-    - Executa o middleware, se houver.
-    - Encaminha o contexto de ativação para o bot.
+  - Converte a carga JSON em um objeto. Neste ponto, ele já é um objeto de atividade, graças ao serviço de conector de bot.
+  - Cria um contexto de ativação e adiciona o objeto de atividade a ele.
+  - Executa o middleware, se houver.
+  - Encaminha o contexto de ativação para o bot.
 
 > [!NOTE]
 > Quando um adaptador de canal personalizado é usado, o próprio adaptador executa as tarefas que o serviço de conector de bot e o adaptador de bot padrão fazem. Além disso, ele fornece o mecanismo de autenticação para a API de gancho da Web relacionada. Para obter um exemplo, consulte [conectar um bot à margem de atraso usando o adaptador de margem de atraso](~/bot-service-channel-connect-slack.md?tabs=adapter#connect-a-bot-to-slack-using-the-slack-adapter).

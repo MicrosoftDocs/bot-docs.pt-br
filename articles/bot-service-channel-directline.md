@@ -9,14 +9,16 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.date: 11/01/2019
 ms.author: kamrani
-ms.openlocfilehash: d09e85c2024eff76f5b5ff36eabd021705d41478
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: ba4bf5c6c016193feacf0bf93ab105f5f57116a1
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824216"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415304"
 ---
 # <a name="about-direct-line"></a>Sobre o Direct Line
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 O canal Direct Line do Bot Framework é uma maneira fácil de integrar o bot ao seu aplicativo móvel, página da Web ou outro aplicativo.
 O Direct Line está disponível em três formas:

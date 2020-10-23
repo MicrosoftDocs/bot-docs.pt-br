@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 08/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b90a61c94817910a9bbad8054178ffb3c4db19bc
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 94bb6b55d254e193b710a8bcf5e534f3157c9248
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824276"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414136"
 ---
 # <a name="write-directly-to-storage"></a>Gravar diretamente no armazenamento
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Você pode ler e gravar diretamente em seu objeto de armazenamento sem usar middleware ou objeto de contexto. Isso pode ser apropriado para dados que seu bot usa para preservar a conversa ou dados originados de uma fonte fora do fluxo de conversa do bot. Nesse modelo de armazenamento de dados, os dados são lidos diretamente do armazenamento em vez de usar um gerenciador de estado. Os exemplos de código neste artigo mostram como ler e gravar dados no armazenamento usando **memória**, **Cosmos DB**, **blob do Azure**e armazenamento de **transcrição de blob do Azure** .
 

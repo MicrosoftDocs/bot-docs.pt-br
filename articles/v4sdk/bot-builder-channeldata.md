@@ -9,15 +9,15 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 3ceb73213db64e8d5b4db0ff5c63f1cc389c52fd
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: b4c1d4037b8afa3b3c9c05a09233d6177562fbb8
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75791285"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414610"
 ---
 # <a name="implement-channel-specific-functionality"></a>Implementar a funcionalidade específica do canal
 
-[!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 [!INCLUDE [Channel Data Content](../includes/snippet-channeldata.md)]

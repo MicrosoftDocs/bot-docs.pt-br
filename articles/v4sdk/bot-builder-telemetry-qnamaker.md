@@ -9,17 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/31/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: d73bd8c26dde8826b145108268417a24840ed83e
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 05c337b555339269e222c81b9837934333bcb144
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75791238"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92413708"
 ---
 # <a name="add-telemetry-to-your-qnamaker-bot"></a>Adicionar telemetria ao seu bot do QnA Maker
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
-
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 O registro em log de telemetria foi adicionado à versão 4.2 do SDK do Bot Framework.  Isso permite que os aplicativos do bot enviem dados de evento para serviços de telemetria, tais como o [Application Insights](https://aka.ms/appinsights-overview). A telemetria oferece informações sobre o bot mostrando quais recursos são mais usados, detecta comportamento indesejado e fornece visibilidade da disponibilidade, do desempenho e do uso.
 

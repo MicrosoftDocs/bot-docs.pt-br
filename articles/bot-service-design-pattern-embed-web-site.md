@@ -7,14 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 3ad05ea9c48c66842f29a11fd419576dc379aa05
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: bcc2f2455e0677ac1349761c3b6f5f0736211da5
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360999"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415091"
 ---
 # <a name="embed-a-bot-in-a-website"></a>Inserir um bot em um site
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Embora seja mais comum ver bots fora de sites, eles também podem ser inseridos em um site. Por exemplo, você pode inserir um [bot de conhecimento](~/bot-service-design-pattern-knowledge-base.md) dentro de um site para permitir que os usuários encontrem informações as quais, de outra forma, poderiam ser difíceis de localizar dentro de estruturas complexas de sites. Ou, você pode inserir um bot dentro de um site de suporte técnico para atuar como o primeiro respondente às solicitações do usuário. O bot poderia resolver de forma independente problemas simples e [repassar](~/bot-service-design-pattern-handoff-human.md) os problemas mais complexos para um agente humano. 
 

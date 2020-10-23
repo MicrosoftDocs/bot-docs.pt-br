@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: d3c9cb1f0b3bbbcf14995398213f0be67e00e8de
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: a1ac643431a8d3a96adeab6596e52713c87bade7
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75793470"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414946"
 ---
 # <a name="principles-of-bot-design"></a>Princípios de design de bot
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 O Bot Framework permite aos desenvolvedores criar ótimas experiências de bot que resolvem uma variedade de problemas de negócios. Aprendendo os conceitos descritos nesta seção, você estará equipado para projetar um bot que se alinha com as melhores práticas e aproveita as lições aprendidas até o momento nessa área relativamente nova. 
 

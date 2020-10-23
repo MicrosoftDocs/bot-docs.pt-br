@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/07/2019
-ms.openlocfilehash: 9ce60aadaf79baf9be8382ff472d2f34c32bde06
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: c1ef1131fd318d41055cda56e28090776c714c81
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824226"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92413525"
 ---
 # <a name="web-chat-overview"></a>Visão geral de Webchat
+
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Este artigo contém detalhes do componente de [Webchat do Bot Framework](https://github.com/microsoft/BotFramework-WebChat). O componente de Webchat do Bot Framework é um cliente baseado na Web altamente personalizável para o SDK do Bot Framework V4. O SDK do Bot Framework v4 permite aos desenvolvedores modelar a conversa e criar aplicativos de bot sofisticados.
 

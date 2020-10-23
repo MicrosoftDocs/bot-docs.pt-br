@@ -7,14 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 8d911538b2ee06d255efdba6329c9fd9519056bf
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 9faf4246d4f221544edf7a923aa9224386a41e7e
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77441282"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414957"
 ---
 # <a name="design-knowledge-bots"></a>Criar bots de dados de Conhecimento
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Um bot de dados de conhecimento pode ser projetado para fornecer informações sobre a praticamente qualquer tópico. Por exemplo, um bot de dados de conhecimento pode responder perguntas sobre os eventos como "Quais eventos de bot há nesta conferência?", "Quando é o próxima show de Reggae?" ou "Quem é Tame Impala?" Outro pode responder a perguntas relacionados a TI, como "Como atualizar meu sistema operacional?" ou "Onde posso para redefinir a minha senha?" Outro ainda pode responder perguntas sobre contatos como "Quem é John Doe"? ou "Qual é o endereço de email de Jane Doe"? 
 

@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 09/20/2018
-ms.openlocfilehash: 27cae2476a77ce3e5d05f6e27427809f818a2b7b
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: ec3a917e892e6933451a607104329517fcc12b66
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80647479"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414919"
 ---
 # <a name="design-the-user-experience"></a>Projetar a experiência do usuário
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Você pode criar bots com vários recursos, como texto, botões, imagens, cartões avançados exibidos em formato carrossel ou de lista e muito mais. No entanto, cada canal, como Facebook, Slack etc. por fim, controla como os seus clientes de mensagens renderizam recursos. Mesmo quando vários canais forem compatíveis com um recurso, cada canal poderá renderizar o recurso de um jeito ligeiramente diferente. Em casos nos quais uma mensagem contém um ou mais recursos sem suporte nativo de canal, o canal pode tentar simplificar a renderização do conteúdo da mensagem como texto ou imagem estática, o que pode afetar consideravelmente a aparência da mensagem no cliente. Em alguns casos, talvez um canal não dê suporte algum a um recurso específico. Por exemplo, clientes do GroupMe não podem exibir um indicador de digitação.
 

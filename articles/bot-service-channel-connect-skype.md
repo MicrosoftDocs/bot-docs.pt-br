@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 10/11/2018
-ms.openlocfilehash: d32796c6964815d9f30e8a09b406564244e569f3
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 4c98ac157c98c49def1a1bded966f95c30665063
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362069"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415573"
 ---
 # <a name="connect-a-bot-to-skype"></a>Conectar um bot ao Skype
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 O Skype mantém você conectado com os usuários por meio de mensagens instantâneas, telefone e videochamadas. Amplie essa funcionalidade criando bots que os usuários podem descobrir e interagir por meio da interface do Skype.
 

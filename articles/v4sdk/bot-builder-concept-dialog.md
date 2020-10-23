@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 08/03/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 09abba29797555bf9cd82c22f739e9a6420e6f02
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: fbba7611c7e5e019ad75ead75fd9583be1f44a0f
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360309"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414357"
 ---
 # <a name="dialogs-library"></a>Biblioteca de diálogos
 
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 As *caixas de diálogo* são um conceito central no SDK, fornecendo maneiras de gerenciar uma conversa de execução longa com o usuário.
 Uma caixa de diálogo executa uma tarefa que pode representar parte do ou um thread de conversação completo.

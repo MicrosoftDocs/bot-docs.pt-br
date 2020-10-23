@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: cdefb3de187ebf712392a0e569b6847332d55a8f
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: d80d2eba59db1f3bba530abc2022ab6d84aff51d
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143685"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414804"
 ---
 # <a name="configure-bot-registration-settings"></a>Definir configurações de registro de bot
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 As configurações de registro de bot, como nome de exibição, ícone e Application insights, podem ser exibidas e modificadas no painel **configurações** .
 

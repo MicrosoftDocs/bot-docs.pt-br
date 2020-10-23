@@ -10,16 +10,16 @@ ms.service: bot-service
 ms.subservices: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 0542e9b553409ee6f52a622e01fc09f60f01f98b
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 6f9a75af687e10985c61cc925ebf61cec2ddb219
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360279"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414306"
 ---
 # <a name="debug-your-bot-using-transcript-files"></a>Depurar seu bot usando arquivos de transcrição
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Uma das chaves para testar e depurar um bot com sucesso é sua capacidade de registrar e examinar o conjunto de condições que ocorrem durante a execução do bot. Este artigo aborda a criação e uso de um arquivo de transcrição do bot para fornecer um conjunto detalhado de interações do usuário e respostas do bot para teste e depuração.
 

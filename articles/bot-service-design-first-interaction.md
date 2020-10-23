@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 46b3cbfc84379a695e1ac3066bddd90a50947956
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: cab3a19ad1a0aa26679b0cdabf76d91ff9a92f2d
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75792361"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415117"
 ---
 # <a name="design-a-bots-first-user-interaction"></a>Projetar a primeira interação do usuário de um bot
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 ## <a name="first-impressions-matter"></a>Primeiras impressões importam
 

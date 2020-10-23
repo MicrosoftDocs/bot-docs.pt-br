@@ -10,14 +10,16 @@ ms.service: bot-service
 ms.subservices: sdk
 ms.date: 06/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 25d154f765b2e3fbd4c3d6871b3a5683651fe754
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: 5692977a1dea775a1cd1a20d4dc3335a89cfc5b5
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124609"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415247"
 ---
 # <a name="debug-a-bot-from-any-channel-using-ngrok"></a>Depurar um bot de qualquer canal usando ngrok
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Quando o bot estiver em desenvolvimento, você poderá [depurar o bot localmente usando um IDE](https://docs.microsoft.com/azure/bot-service/bot-service-debug-bot?view=azure-bot-service-4.0) , como o Visual Studio ou o Visual Studio Code. Você também pode [depurar um bot usando o emulador do bot Framework](https://docs.microsoft.com/azure/bot-service/bot-service-debug-emulator?view=azure-bot-service-4.0) ao bater papo com o bot localmente e inspecionar as mensagens que o bot envia e recebe. Você pode até mesmo fazer pequenas atualizações do código do bot e habilitar o recurso para [depurar um bot com middleware de inspeção](https://docs.microsoft.com/azure/bot-service/bot-service-debug-inspection-middleware?view=azure-bot-service-4.0).
 

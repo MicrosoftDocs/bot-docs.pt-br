@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 1999a464c800b26953aec6d783a0c0f27650fe0e
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: d18d4374d61780b36b3dc6fbca1f5d4ce22be034
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362049"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415533"
 ---
 # <a name="connect-a-bot-to-skype-for-business-preview"></a>Conectar um bot ao Skype for Business (versão prévia)
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 O Skype for Business Online mantém você conectado com colegas e parceiros de negócios por meio de mensagens instantâneas, telefone e videochamadas. Amplie essa funcionalidade criando bots que os usuários podem descobrir e interagir por meio da interface do Skype for Business.
 

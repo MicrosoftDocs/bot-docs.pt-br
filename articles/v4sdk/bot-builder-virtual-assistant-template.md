@@ -8,17 +8,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 313f2f3fd0db12400b84612e9784337b2e9f9e34
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: cb1f0a7a61f9dc755af5e380a1cb1dba6b033ce9
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359898"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92413569"
 ---
 # <a name="virtual-assistant---template-outline"></a>Assistente Virtual - Descrição do Modelo
 
-> [!NOTE]
-> Este tópico se aplica à versão 4 do SDK. 
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 O Modelo de Assistente Virtual reúne várias da melhores práticas que identificamos durante a construção de experiências de conversação e automatiza a integração de componentes que consideramos altamente benéficos para desenvolvedores do Bot Framework. Esta seção cobre algumas informações básicas em relação a decisões importantes para ajudar a explicar por que o modelo funciona dessa forma.
 

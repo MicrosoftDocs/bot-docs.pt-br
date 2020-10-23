@@ -8,14 +8,16 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 07/25/2019
-ms.openlocfilehash: 8be3a8a67f09ef96cbe6ba3b23f632938d7c7659
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 127b36151771dafffbd956a8a2ef96bb2e888aa6
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89361969"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415403"
 ---
 # <a name="use-web-chat-with-the-direct-line-app-service-extension"></a>Usar o Webchat com a extensão de serviço de aplicativo do Direct Line
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Este artigo descreve como usar o chat da Web com a extensão do serviço de aplicativo de linha direta. O Web Chat versão 4.9.1 ou superior é necessário para suporte nativo de extensão do serviço de aplicativo de linha direta.
 

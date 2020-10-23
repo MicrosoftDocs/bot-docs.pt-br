@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 5da0f0728a3c5b1440b2a88754c3ba6e9742e754
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: 5cdb5e88f2f62434445a51d6c95d797b71175852
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143135"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414293"
 ---
 # <a name="language-generation"></a>Geração de Linguagem
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 <!-- See [here](#Change-Log) for what's new in **4.8.0 RC1** release.-->
 

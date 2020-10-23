@@ -7,14 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/08/2020
-ms.openlocfilehash: 57db2cb7c5b63fd58413f0e470bf7be1f20d42bf
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: a858820dc5b21718903e7d700ac41bbfdcd64061
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124605"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414715"
 ---
 # <a name="azure"></a>Azure
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 ## <a name="how-do-i-create-my-own-app-registration"></a>Como fazer para criar meu próprio Registro de Aplicativo?
 
@@ -78,7 +80,7 @@ Verifique se você selecionou todos os arquivos e pastas na pasta do projeto do 
 
 ## <a name="what-version-of-azure-cli-should-i-use-to-deploy-a-bot"></a>Qual versão do CLI do Azure devo usar para implantar um bot?
 
-É recomendável que você use a versão mais recente da CLI (interface de linha de comando) do Azure, caso contrário, você receberá erros de comandos preteridos. Confira [Instalar a CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+É recomendável que você use a versão mais recente da CLI (interface de Command-Line do Azure), caso contrário, você receberá erros de comandos preteridos. Confira [Instalar a CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 ## <a name="what-should-i-do-when-getting-azure-cli-deprecation-errors"></a>O que devo fazer ao obter CLI do Azure erros de substituição?
 

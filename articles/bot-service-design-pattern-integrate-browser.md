@@ -7,14 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 8570873a63a539b4f7c96053aec2ab1a1f615eb9
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: b5c735c61bcb8bb4550a8349f32750143bb64883
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75792124"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414986"
 ---
 # <a name="integrate-your-bot-with-a-web-browser"></a>Integrar seu bot a um navegador da Web
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Alguns cenários exigem mais do que apenas um bot para atender a um requisito. Um bot talvez seja necessário para enviar o usuário para um navegador da Web para concluir uma tarefa e, em seguida, continuar a conversa com o usuário depois que a tarefa tiver sido concluída. 
 

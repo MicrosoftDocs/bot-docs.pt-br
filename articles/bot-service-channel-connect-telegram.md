@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 21c330cd452ee94190978f657825bc2f5cb43433
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 69db6bb582200acc5b33c917868d3f2f1bc63531
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362059"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415569"
 ---
 # <a name="connect-a-bot-to-telegram"></a>Conectar um bot ao Telegram
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Configure seu bot para se comunicar com as pessoas que usam o aplicativo de mensagens Telegram.
 

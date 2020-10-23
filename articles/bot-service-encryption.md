@@ -5,14 +5,16 @@ ms.service: bot-service
 ms.date: 07/21/2020
 ms.topic: conceptual
 ms.author: jameslew
-ms.openlocfilehash: d8fc2745acb53d661e750482c9b467344c46e4f1
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: ba246f677f2e013fb8b7b0084705a6e3c4fcce90
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824166"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414899"
 ---
 # <a name="azure-bot-service-encryption-for-data-at-rest"></a>Criptografia do Serviço de Bot do Azure para dados em repouso
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 O Serviço de Bot do Azure criptografa automaticamente seus dados ao mantê-los na nuvem. A criptografia protege seus dados e ajuda a atender aos compromissos de conformidade e segurança de sua organização. Os dados no Serviço de Bot do Azure são criptografados de maneira transparente usando a [criptografia AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) de 256 bits, uma das codificações de bloco mais fortes disponíveis, além de estar em conformidade com o FIPS 140-2. Uma técnica de soma de verificação também é usada para detectar a adulteração de dados não criptografados, como GUIDs.
 

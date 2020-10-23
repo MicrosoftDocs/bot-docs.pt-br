@@ -8,14 +8,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/20/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: fb62a202e1d46b98b3fbe57c62552641f4c2ee8f
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: 165b4b69bd75d484ccac8d35d91096fea5666f7f
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143725"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415009"
 ---
 # <a name="transition-conversations-from-bot-to-human"></a>Fazer a transição de conversas do bot para humanos
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Independentemente do nível de inteligência artificial de um bot, ainda pode haver vezes quando ele precisa entregar a conversa para um ser humano. Isso pode ser necessário porque o bot não entende o usuário (devido a uma limitação da IA) ou se a solicitação não pode ser automatizada e exige uma ação humana. Nesses casos, o bot deve reconhecer quando ele precisa entregar e fornecer ao usuário uma transição tranquila.
 
@@ -116,7 +118,7 @@ O `state` tem um dos seguintes valores:
 
 - `accepted`-Um agente aceitou a solicitação e assumiu o controle da conversa.
 - `failed`-A solicitação de entrega falhou. O `message` pode conter informações adicionais relevantes para a falha.
-- `completed`-A solicitação de entrega foi concluída.
+- `completed` -A solicitação de entrega foi concluída.
 
 O formato e o valor possível do `message` campo não são especificados.
 
@@ -149,5 +151,5 @@ A [biblioteca de entrega](https://github.com/microsoft/BotBuilder-Samples/tree/m
 - [Integração ao Omnicanal para Customer Service do Microsoft Dynamics](https://github.com/microsoft/BotBuilder-Samples/tree/master/experimental/handoff-library/csharp_dotnetcore/samples)
 - [Integração com a plataforma LivePerson LiveEngage](https://developers.liveperson.com/third-party-bots-microsoft-bot-framework.html)
 - [Diálogos](v4sdk/bot-builder-dialog-manage-conversation-flow.md)
-- [Serviços cognitivos](https://www.microsoft.com/cognitive-services/text-analytics-api)
+- [Serviços cognitivas](https://www.microsoft.com/cognitive-services/text-analytics-api)
 

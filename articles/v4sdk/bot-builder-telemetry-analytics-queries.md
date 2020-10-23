@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 01/10/2020
-ms.openlocfilehash: 3995cab570a5672cf348dd0dc4b8b9399a741ae9
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 2868467a9d958d9e71c3fb8629550b268e59cc50
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824256"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92413768"
 ---
 # <a name="analyze-your-bots-telemetry-data"></a>Analisar os dados telemétricos do seu bot
+
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 ## <a name="analyzing-bot-behavior"></a>Analisar o comportamento do bot
 

@@ -8,16 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/2/2020
-ms.openlocfilehash: 783a27238729c9a321f8b386a0d43120ad80ef96
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 065ab6628d1d887d6601b76b6ea5453c0b9565a7
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360979"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414847"
 ---
 # <a name="manage-a-bot"></a>Gerenciar um bot
 
-[!INCLUDE [applies-to-both](includes/applies-to-both.md)]
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Em seu navegador, navegue até o [portal do Azure](https://ms.portal.azure.com/). Selecione o aplicativo de recurso, como um **registro de canais de bot**. No painel esquerdo, você verá as seções descritas abaixo.
 

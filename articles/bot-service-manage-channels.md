@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 07/31/2019
-ms.openlocfilehash: 1511bde4cdefde2d34ddb1135e79ecc4289f81cf
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: 5f2f7cb15142d4cea26bc8b415b6e8272d316757
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143771"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414869"
 ---
 # <a name="connect-a-bot-to-channels"></a>Conectar um bot aos canais
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Um canal é uma conexão entre aplicativos de comunicação e um bot. Um bot, registrado com o Azure, usa canais para facilitar a comunicação com os usuários.
 

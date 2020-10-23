@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 07cbd9349f3edd28a2f69ed583db73db4fdf3bc1
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 286489f7582b02ae54e88997f680de67c58d5cb3
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360319"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414437"
 ---
 # <a name="adaptive-expressions"></a>Expressões adaptáveis
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Os bots usam expressões adaptáveis para avaliar o resultado de uma condição com base nas informações de tempo de execução disponíveis na memória para a caixa de diálogo ou o sistema de [geração de idioma](bot-builder-concept-language-generation.md) . Essas avaliações determinam como o bot responde à entrada do usuário e a outros fatores que afetam a funcionalidade dele.
 

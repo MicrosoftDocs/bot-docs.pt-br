@@ -7,14 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/19/2019
-ms.openlocfilehash: eedd9fe9dea03e5f178c7f73f0135608ddbf21da
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 507cfb5d09005d82aff7fc121a7587bd9d6992c0
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360949"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414681"
 ---
 # <a name="application-insights-keys"></a>Chaves do Application Insights
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 O Azure **Application Insights** exibe dados sobre o seu aplicativo em um recurso do Microsoft Azure. Para adicionar telemetria ao seu bot é preciso ter uma assinatura do Azure e criar um recurso do Application Insights para o seu bot. Nesse recurso, você pode obter as três chaves para configurar o seu bot:
 

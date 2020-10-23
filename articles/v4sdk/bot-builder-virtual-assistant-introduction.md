@@ -8,14 +8,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2e2f756dae2938bc2f58947984a04b860cfb345b
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 86080cde3f05e8c193a6d6e1a662c0a8cd01b318
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824236"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92413598"
 ---
 # <a name="virtual-assistant-overview"></a>Visão geral do Assistente Virtual
+
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 ## <a name="overview"></a>Visão geral
 

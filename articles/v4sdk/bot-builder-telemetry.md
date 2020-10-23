@@ -9,24 +9,24 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: c9f14cdf01cabf5178bb8b1779cb53b63bb8cb42
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: f6b9d12e3289b42d314f9460a028206c01be25d2
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360072"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92413735"
 ---
 # <a name="add-telemetry-to-your-bot"></a>Adicionar telemetria ao seu bot
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 O registro em log de telemetria foi adicionado à versão 4.2 do SDK do Bot Framework.  Isso permite que os aplicativos do bot enviem dados de evento para serviços de telemetria, tais como o [Application Insights](https://aka.ms/appinsights-overview). A telemetria oferece informações sobre o bot mostrando quais recursos são mais usados, detecta comportamento indesejado e fornece visibilidade da disponibilidade, do desempenho e do uso.
 
-***Observação: Na versão 4.6, o método padrão para implementar a telemetria em um bot foi atualizado para garantir que a telemetria seja registrada corretamente ao usar um adaptador personalizado. Este artigo foi atualizado para mostrar o novo método. As alterações são compatíveis com versões anteriores e os bots que usam o método anterior continuarão a registrar a telemetria em log corretamente.***
+***Observação: na versão 4,6, o método padrão para implementar a telemetria em um bot foi atualizado para garantir que a telemetria seja registrada corretamente ao usar um adaptador personalizado. Este artigo foi atualizado para mostrar o método atualizado. As alterações são compatíveis com versões anteriores e os bots que usam o método anterior continuarão a conectar a telemetria corretamente.** _
 
 Neste artigo, você aprenderá a implementar a telemetria em seu bot usando Application Insights. Ele abrangerá:
 
-* O código necessário para ligar a telemetria no bot e conectar-se a Application Insights.
+_ O código necessário para ligar a telemetria no bot e conectar-se a Application Insights.
 
 * Habilitando a telemetria nas [caixas de diálogo](bot-builder-concept-dialog.md)do bot.
 

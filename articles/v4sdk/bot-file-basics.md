@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 58f1196bf397ea8b914f23687b00e4bd74a9e281
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 707ea1f7f0c0281ff297e2404e81cb25dae15e97
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359869"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92413467"
 ---
 # <a name="manage-bot-resources"></a>Gerenciar recursos do bot
 
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Em geral, os bots consomem serviços diferentes, como [LUIS.ai](https://luis.ai) ou [QnaMaker.ai](https://qnamaker.ai). Quando estiver desenvolvendo um bot, você precisará ser capaz de rastrear todos eles. Você pode usar vários métodos, como appsettings.json, web.config ou .env. 
 

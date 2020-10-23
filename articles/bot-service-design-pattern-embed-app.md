@@ -7,14 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/15/2018
-ms.openlocfilehash: 1dc383ea12fc41b01f5b307b6f5d24b0dcaecf8f
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: a6a100537dc2a2a71062a4213978a1f7b0e3334c
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360981"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415134"
 ---
 # <a name="embed-a-bot-in-an-app"></a>Inserir um bot em um aplicativo
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Embora seja mais comum os bots existirem fora dos aplicativos, eles também podem ser integrados aos aplicativos. Por exemplo, você poderia inserir um [bot de conhecimento](~/bot-service-design-pattern-knowledge-base.md) dentro de um aplicativo para ajudar os usuários a encontrarem informações que, de outra forma, poderiam ser difíceis de localizar dentro de estruturas complexas de aplicativos. Você pode inserir um bot dentro de um aplicativo de suporte técnico para atuar como o primeiro respondente às solicitações do usuário. O bot poderia resolver de forma independente problemas simples e [repassar](~/bot-service-design-pattern-handoff-human.md) os problemas mais complexos para um agente humano. 
 

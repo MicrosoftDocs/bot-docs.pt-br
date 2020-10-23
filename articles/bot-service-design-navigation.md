@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 33bf7224b31902c9a53f572efb2379323994db00
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: a80b3a294fb4f331de6aae79d064826388735765
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77441291"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415100"
 ---
 # <a name="design-bot-navigation"></a>Design da navegação do bot
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Os usuários podem navegar em sites que usam trilhas, aplicativos que usam menus e navegadores que usam botões como **avançar** e **voltar**. No entanto, nenhuma dessas técnicas de navegação bem-estabelecidas atende totalmente os requisitos de navegação dentro de um bot. Conforme discutido [anteriormente](~/bot-service-design-conversation-flow.md#handle-interruptions), os usuários geralmente interagem com os bots de maneira não linear, dificultando o design da navegação do bot que propicia consistentemente uma excelente experiência de usuário. 
 

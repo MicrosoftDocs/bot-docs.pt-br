@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/26/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 84d60fb20e24be7d4eef7ebe261ac4fd184f4655
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: 2f0d596a216b23ed7a7ea1104bf0487fc65fe2b9
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420283"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414001"
 ---
 # <a name="create-a-bot-using-adaptive-component-waterfall-and-custom-dialogs"></a>Criar um bot usando diálogos adaptáveis, de componente, em cascata e personalizados
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Todos os diálogos derivam de uma classe de _diálogo_ base.
 Se você usar o _gerenciador de diálogos_ para executar o diálogo raiz, todas as classes de diálogo poderão trabalhar juntas.

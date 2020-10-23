@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/04/2018
-ms.openlocfilehash: 88f8c629bd907bf6f9af3ef189bfb6e329b36b02
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: c2ec8f1831215512685c4397a82292a563704788
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75793602"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414932"
 ---
 # <a name="bot-analytics"></a>Análise de bot
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 O Analytics é uma extensão do [Application Insights](/azure/application-insights/app-insights-analytics). O Application Insights fornece dados de **nível de serviço** e de instrumentação, como tráfego, latência e integrações. O Google Analytics fornece relatórios no **nível da conversa** sobre dados de usuários, mensagens e canais.
 

@@ -7,14 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/08/2020
-ms.openlocfilehash: 3582149b7c97c16ee78c21cf4e92af4ce93b32be
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: 4e46c360812015e08623eba65d3b58c73d7be21c
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143625"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414617"
 ---
 # <a name="background-and-availability"></a>Informações e disponibilidade
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 <!-- Attention writers!!
      1 - This article contains FAQs regarding Bot Framework background and availability.

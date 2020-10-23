@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/30/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 75e1bfe8985ca29caad6415d74e04de11eac593b
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 928f926f2aee714ef6f0034fccad953a65bd7e34
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824306"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414160"
 ---
 # <a name="manage-a-long-running-operation"></a>Gerenciar uma operação de execução prolongada
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 A manipulação adequada de operações de longa execução é um aspecto importante de um bot robusto. Quando o serviço de bot do Azure envia uma atividade ao bot de um canal, espera-se que o bot processe a atividade rapidamente. Se o bot não concluir a operação dentro de 10 a 15 segundos, dependendo do canal, o serviço de bot do Azure atingirá o tempo limite e relatará para o cliente a `504:GatewayTimeout` , conforme descrito em [como os bots funcionam][concept-basics].
 
@@ -49,7 +49,7 @@ Este exemplo define uma `LongOperationPrompt` classe derivada da `ActivityPrompt
 
 Este artigo aborda muitas tecnologias diferentes. Consulte a seção [recursos adicionais](#additional-resources) para obter links para artigos associados.
 
-## <a name="create-an-azure-storage-account"></a>Criar uma conta do Armazenamento do Azure
+## <a name="create-an-azure-storage-account"></a>Criar uma conta de Armazenamento do Azure
 
 Crie uma conta de armazenamento do Azure e recupere a cadeia de conexão. Será necessário adicionar a cadeia de conexão ao arquivo de configuração do bot.
 
@@ -289,7 +289,7 @@ Para obter mais informações, consulte [criar uma conta de armazenamento](/azur
     }
     ```
 
-## <a name="dialogs"></a>Diálogos
+## <a name="dialogs"></a>Caixas de diálogo
 
 Remova a caixa de diálogo antiga e substitua-a por novas caixas de diálogo para dar suporte às operações.
 

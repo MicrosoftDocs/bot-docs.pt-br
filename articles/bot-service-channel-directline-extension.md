@@ -8,16 +8,16 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 05/19/2020
-ms.openlocfilehash: b0cbc5ffada83d39498cd28f0f48ab454c74afff
-ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
+ms.openlocfilehash: 7bccb45d16d14c599bc170554cda5abd9a054136
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763657"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415397"
 ---
 # <a name="direct-line-app-service-extension"></a>Direct Line App Service Extension
 
-[!INCLUDE[applies-to-v4](includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 A extensão do serviço de aplicativo de linha direta permite que os clientes se conectem diretamente com o host, onde o bot está localizado. Isso fornece isolamento de carga de trabalho e, em alguns casos, desempenho aprimorado. A figura a seguir mostra a arquitetura geral:
 

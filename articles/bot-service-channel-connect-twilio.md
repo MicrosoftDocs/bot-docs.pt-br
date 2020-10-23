@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 10/9/2018
-ms.openlocfilehash: 17a75bff521b4503410d0fc625aa6c6164a03a25
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 1187ba0d6db14155018c00fc415c96e2c974c093
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362019"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415559"
 ---
 # <a name="connect-a-bot-to-twilio"></a>Conectar um bot ao Twilio
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Configure seu bot para se comunicar com as pessoas que usam a plataforma de comunicação em nuvem Twilio.
 
@@ -101,7 +103,7 @@ Adicione o pacote NuGet [Microsoft.Bot.Builder.Adapters.Twilio](https://www.nuge
 
 #### <a name="create-a-twilio-adapter-class"></a>Criar uma classe de adaptador do Twilio
 
-Crie uma classe herdada da classe ***TwilioAdapter***. Essa classe atuará como nosso adaptador para o canal do Twilio e incluirá recursos de tratamento de erro (semelhante à classe ***BotFrameworkAdapterWithErrorHandler*** que já está no exemplo, usada para lidar com outras solicitações do Serviço de Bot do Azure).
+Crie uma nova classe que herde da classe **_TwilioAdapter_*_. Essa classe atuará como adaptador para o canal twilio e incluirá recursos de tratamento de erros (semelhante à classe _*_BotFrameworkAdapterWithErrorHandler_*_ já no exemplo, usada para lidar com outras solicitações do serviço de bot do Azure).
 
 ```csharp
 public class TwilioAdapterWithErrorHandler : TwilioAdapter
@@ -156,13 +158,13 @@ public class TwilioController : ControllerBase
 
 #### <a name="inject-the-twilio-adapter-in-your-bot-startupcs"></a>Injetar o adaptador do Twilio no startup.cs do seu bot
 
-Adicione a seguinte linha ao método ***ConfigureServices*** no arquivo startup.cs. Isso registrará o adaptador do Twilio e o disponibilizará para sua nova classe de controlador.  As definições de configuração que você adicionou na etapa anterior serão usadas automaticamente pelo adaptador.
+Adicione a seguinte linha ao método _*_configuraservices_*_ no arquivo Startup.cs. Isso registrará o adaptador do Twilio e o disponibilizará para sua nova classe de controlador.  As definições de configuração que você adicionou na etapa anterior serão usadas automaticamente pelo adaptador.
 
 ```csharp
 services.AddSingleton<TwilioAdapter, TwilioAdapterWithErrorHandler>();
 ```
 
-Depois de ser adicionado, o método ***ConfigureServices*** ficará assim.
+Depois de adicionado, _*_o método configureservices_*_ deve ser assim.
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -197,7 +199,7 @@ Para concluir esta etapa, [implante o bot no Azure](https://aka.ms/bot-builder-d
 
 #### <a name="add-twilio-app-settings-to-your-bots-configuration-file"></a>Adicionar configurações do aplicativo do Twilio ao arquivo de configuração do bot
 
-Adicione as configurações mostradas abaixo ao seu arquivo appSettings.json em seu projeto de bot. Preencha **TwilioNumber**, **TwilioAccountSid** e **TwilioAuthToken** usando os valores coletados ao criar o número do Twilio. **TwilioValidationUrl** deve ser a URL do bot, além do ponto de extremidade `api/twilio` especificado no controlador recém-criado. Por exemplo, `https://yourboturl.com/api/twilio`.
+Adicione as configurações mostradas abaixo ao seu arquivo appSettings.json em seu projeto de bot. Você preenche _ * TwilioNumber * *, **TwilioAccountSid** e **TwilioAuthToken** usando os valores coletados ao criar o número de twilio. **TwilioValidationUrl** deve ser a URL do bot, além do ponto de extremidade `api/twilio` especificado no controlador recém-criado. Por exemplo, `https://yourboturl.com/api/twilio`.
 
 
 ```json

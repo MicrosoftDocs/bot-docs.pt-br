@@ -8,14 +8,16 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 07/25/2019
-ms.openlocfilehash: 13158a37143587bcac9261a9285a93b3ce5b1627
-ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
+ms.openlocfilehash: 2e159135ab41474daabea54a42a28110cbf64647
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763606"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415489"
 ---
 # <a name="create-net-client-to-connect-to-direct-line-app-service-extension"></a>Criar um cliente .NET para se conectar à extensão do Serviço de Aplicativo do Direct Line
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Este artigo descreve como criar um cliente .NET em C# que se conecta à extensão do serviço de aplicativo do Direct Line.
 Leia também este artigo complementar [Configurar bot do .NET da extensão](bot-service-channel-directline-extension-net-bot.md).

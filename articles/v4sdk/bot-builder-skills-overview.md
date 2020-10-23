@@ -8,17 +8,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 10/09/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 10bce6acc9f73b830bfae563706115e2c2ecef00
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: c5afac050646c1107a539784d7c8ca7787966bf0
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359989"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92413857"
 ---
 # <a name="virtual-assistant---skills-overview"></a>Assistente Virtual - Visão Geral das Habilidades
 
-> [!NOTE]
-> Este tópico se aplica à versão 4 do SDK. 
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 ## <a name="overview"></a>Visão geral
 

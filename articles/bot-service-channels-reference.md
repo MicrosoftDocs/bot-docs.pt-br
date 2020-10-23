@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 05/19/2020
-ms.openlocfilehash: 870ba1a6aff7a1207029b8bf2005a02952b69644
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: d8c6b6bd2b0cc1e1027571937d01b7250b652595
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89361899"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415293"
 ---
 # <a name="categorized-activities-by-channel"></a>Atividades categorizadas por canal
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 As tabelas a seguir mostram quais eventos (atividades durante a transmissão) têm origem em quais canais.
 

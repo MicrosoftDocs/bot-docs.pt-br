@@ -8,16 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/22/2019
-ms.openlocfilehash: f2aaad99ee08b6f87a7267472ca40f1fd9426d0d
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: 69bf57c46868ad1fee291b8051fc1b0ac530e713
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143855"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415512"
 ---
 # <a name="connect-a-bot-to-web-chat"></a>Conectar um bot ao Webchat
 
-[!INCLUDE [pre-release-label](./includes/pre-release-label.md)]
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Quando você [cria um bot](bot-service-quickstart.md) com o serviço de bot de estrutura, o canal de chat da Web é configurado automaticamente para você. O canal de chat da Web inclui o [controle de chat da Web](https://github.com/microsoft/BotFramework-WebChat), que fornece a capacidade para os usuários interagirem com o bot diretamente em uma página da Web.
 
@@ -36,7 +36,7 @@ A imagem a seguir mostra os componentes envolvidos ao inserir o controle de chat
   ![componentes de inserção de bot](~/media/bot-service-channel-webchat/webchat-control.png)
 
 > [!NOTE]
-> Este artigo pressupõe que você já tenha um bot implantado no Azure. Para obter informações sobre a implantação, consulte [implantar o bot](https://docs.microsoft.com/azure/bot-service/bot-builder-deploy-az-cli?view=azure-bot-service-4.0&tabs=csharp).
+> Este artigo pressupõe que você já tenha um bot implantado no Azure. Para obter informações sobre a implantação, consulte [implantar o bot](https://docs.microsoft.com/azure/bot-service/bot-builder-deploy-az-cli?view=azure-bot-service-4.0&tabs=csharp).
 
 
 ### <a name="get-your-bot-secret-key"></a>Obtenha sua chave secreta do bot

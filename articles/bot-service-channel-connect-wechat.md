@@ -8,14 +8,16 @@ ms.topic: article
 ms.author: egorn
 ms.service: bot-service
 ms.date: 11/01/2019
-ms.openlocfilehash: df2393b143145a9298e480bcd7dccc0fdfae754c
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 459b8cdcd0ac76067f21b98cafafc584c27a0956
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90823936"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415547"
 ---
 # <a name="connect-a-bot-to-wechat"></a>Conectar um bot ao WeChat
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Configure seu bot para se comunicar com as pessoas que usam a Plataforma de Contas Oficial do WeChat.
 

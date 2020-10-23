@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/07/2019
-ms.openlocfilehash: 19166e577c07fbdbaa614362c22c1056ebfcb018
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 44adcaa02a42c0e65bfd1ccdf1f1a819ca747299
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359839"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92413536"
 ---
 # <a name="web-chat-customization"></a>Personalização de Webchat
+
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Este artigo fornece detalhes sobre como personalizar os exemplos de Webchat para se ajustarem ao seu bot.
 

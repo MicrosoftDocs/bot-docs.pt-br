@@ -8,16 +8,16 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: dev
 ms.date: 01/15/2020
-ms.openlocfilehash: 340246868424199f209feaabf9723f9c0f1624b7
-ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
+ms.openlocfilehash: 57bbdc01bdd368cb8fbb532650c2168aa298a470
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763668"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415481"
 ---
 # <a name="configure-nodejs-bot-for-extension"></a>Configurar o bot do Node.js para a extensão
 
-[!INCLUDE[applies-to-v4](includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Este artigo descreve como atualizar um bot para trabalhar com **pipes nomeados**e como habilitar a extensão de serviço de aplicativo de linha direta no recurso de **serviço de Azure app** em que o bot está hospedado.
 
@@ -81,7 +81,7 @@ Esta seção descreve como habilitar a extensão do serviço de aplicativo de li
 1. No menu do painel esquerdo, na seção *configurações do aplicativo* , clique no item de **configuração** .
 1. No painel direito, adicione as seguintes novas configurações:
 
-    |Nome|Valor|
+    |Name|Valor|
     |---|---|
     |DirectLineExtensionKey|<App_Service_Extension_Key>|
     |DIRECTLINE_EXTENSION_VERSION|mais recente|
@@ -90,7 +90,7 @@ Esta seção descreve como habilitar a extensão do serviço de aplicativo de li
 
 1. Se o bot estiver hospedado em um soberanas ou em uma nuvem do Azure restrita (ou seja, você não acessar o Azure por meio do [Portal público](https://portal.azure.com)), também será necessário adicionar a seguinte nova configuração:
 
-    |Nome|Valor|
+    |Name|Valor|
     |---|---|
     |DirectLineExtensionABSEndpoint|<URL_of_Direct_Line_App_Gateway>|
 

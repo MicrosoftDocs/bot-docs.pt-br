@@ -7,14 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 07/07/2020
-ms.openlocfilehash: 134d6ab317792b39dcd111b8b670c747158f74eb
-ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
+ms.openlocfilehash: a013a617eeda264704269202b86ec73fc29c6bff
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763599"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92413865"
 ---
 # <a name="bot-framework-security-guidelines"></a>Diretrizes de segurança do Bot Framework
+
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Os bots são cada vez mais predominantes nas principais áreas comerciais, como serviços financeiros, varejo, turismo e assim por diante. Um bot pode coletar dados muito confidenciais, como cartões de crédito, SSN, contas bancárias e outras informações pessoais. Portanto, é importante que os bots sejam seguros e protejam contra ameaças e vulnerabilidades comuns.
 
@@ -70,7 +72,7 @@ Algumas técnicas de segurança comuns são listadas abaixo.
 - Os dados retidos para fins de conformidade ou outras finalidades podem ser movidos para um armazenamento mais seguro, talvez offline, o que é menos suscetível a ameaças de segurança de banco de dados.
 - Certifique-se de excluir todos os arquivos de histórico que são gravados por um servidor durante o procedimento de instalação original. Se a instalação for bem-sucedida, esses arquivos não terão nenhum valor, mas poderão conter informações que podem ser exploradas potencialmente.
 
-### <a name="education"></a>Formação educacional
+### <a name="education"></a>Educação
 
 Os bots fornecem uma ferramenta de interação inovadora entre uma empresa e seus clientes. Mas podem, potencialmente, fornecer um backdoor para adulterar o site de uma empresa. Portanto, uma empresa deve garantir que seus desenvolvedores compreendam a importância da segurança de bot como parte da segurança do site. Além disso, os erros dos usuários também podem ser um problema. Isso exigirá alguma educação sobre como os bots podem ser usados com segurança, por exemplo:
 
@@ -133,5 +135,5 @@ Quando você usa a *autenticação do Serviço de Bot do Azure* com o [Webchat](
 - [Recursos avançados de autenticação de linha direta](https://blog.botframework.com/2018/09/25/enhanced-direct-line-authentication-features)
 - [Recomendações de segurança na Central de Segurança do Azure](https://docs.microsoft.com/azure/security-center/security-center-recommendations)
 - [Proteção contra ameaças na Central de Segurança do Azure](https://docs.microsoft.com/azure/security-center/threat-protection)
-- [Segurança dos Dados da Central de Segurança do Azure](https://docs.microsoft.com/azure/security-center/security-center-data-security)
+- [Segurança de dados da central de segurança do Azure](https://docs.microsoft.com/azure/security-center/security-center-data-security)
 - [Segurança de contêineres na Central de Segurança](https://docs.microsoft.com/azure/security-center/container-security)

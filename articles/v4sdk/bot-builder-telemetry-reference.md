@@ -9,14 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2d9a728ab60acc5ad276ed035410ef8ec0d49cca
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: d472d2b127f795ac3eae2db4fbaf110f0aede050
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359940"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92413785"
 ---
 # <a name="events-generated-by-the-bot-framework-service-telemetry"></a>Eventos gerados pela telemetria do Bot Framework Service
+
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 ## <a name="channel-service-events"></a>Eventos do serviço de canal
 

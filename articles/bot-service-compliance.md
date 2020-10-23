@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 07/21/2020
-ms.openlocfilehash: bae3e3b33df3fa2b081ba2240330e21e407ace7a
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: c0bd05eb051c3360088ba1a4b1bb14b5f17287d0
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89361909"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415290"
 ---
 # <a name="compliance-in-azure-bot-service"></a>Conformidade no serviço de bot do Azure 
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 O serviço de bot do Azure é um serviço global do Azure e, portanto, está disponível para clientes em todas as regiões nas nuvens onde ele está implantado, incluindo:  
 
@@ -24,7 +26,7 @@ O serviço de bot do Azure é um serviço global do Azure e, portanto, está dis
 
 Para ajudar os clientes a cumprirem suas próprias obrigações de conformidade em setores regulamentados e mercados em todo o mundo, o Azure mantém o maior portfólio de conformidade do setor em termos de largura (número total de ofertas) e profundidade (número de serviços voltados ao cliente no escopo de avaliação). As ofertas de conformidade do Azure são agrupadas em quatro segmentos – globalmente aplicáveis, Governo dos EUA, específico do setor e específico da região ou do país/região. As oferta de conformidade são baseadas em nos vários tipos de garantia, incluindo certificações formais, atestados, validações, autorizações e avaliações produzidas por empresas de auditoria independentes, bem como emendas contratuais, autoavaliações e documentos de orientação para clientes produzidos pela Microsoft. 
 
-## <a name="azure-bot-service-certifications"></a>Certificações do serviço de bot do Azure 
+## <a name="azure-bot-service-certifications"></a>Certificações do Serviço de Bot do Azure 
 
 O serviço de bot do Azure está expandindo continuamente sua cobertura de certificação. Atualmente, o serviço de bot do Azure é certificado com os seguintes certificados: 
 

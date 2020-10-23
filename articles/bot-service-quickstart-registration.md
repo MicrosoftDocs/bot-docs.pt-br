@@ -7,14 +7,16 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 07/30/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: eaf93be0cb6970f11ac8531f132170f4ccf39050
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 9e5e3c22e6967a00255da1d5d6638543e90abb34
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360959"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414706"
 ---
 # <a name="bot-channels-registration"></a>Registro de canais do bot
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Este artigo mostra como registrar um bot com o **serviço de bot do Azure**. Se o bot estiver hospedado em outro lugar, você também poderá disponibilizá-lo no Azure e conectá-lo aos canais com suporte. Há duas maneiras de registrar um bot com o Azure:
 

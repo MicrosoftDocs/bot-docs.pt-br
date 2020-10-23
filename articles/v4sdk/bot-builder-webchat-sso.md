@@ -7,14 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 07/10/2020
-ms.openlocfilehash: 064760f815be423e499a985da78700e8f48b8d0a
-ms.sourcegitcommit: 757ddf4f3fd3557ad9746dfa83ca742d54ac4763
+ms.openlocfilehash: 8f97214d04578d00b33ac8055c55eaffcfd3e7b6
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86876544"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92413490"
 ---
-# <a name="add-single-sign-on-to-web-chat"></a>Adicionar logon único ao Web Chat
+# <a name="add-single-sign-on-to-web-chat"></a>Adicionar logon único ao Webchat
+
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 O SSO (logon único) permite que um cliente, como um controle de chat da Web, se comunique com um bot em nome do usuário. No momento, há suporte apenas para o provedor de identidade do [Azure AD v2](~/v4sdk/bot-builder-concept-identity-providers.md#azure-active-directory-identity-provider).
 
