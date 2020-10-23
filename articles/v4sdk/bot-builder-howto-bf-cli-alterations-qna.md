@@ -9,16 +9,16 @@ ms.topic: how-to
 ms.service: bot-service
 ms.date: 09/12/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: e9eb12f352942eccef1350fdb14392e6bc17dd6e
-ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
+ms.openlocfilehash: ca2b201adac7d2c88b3d99f57ff0a46b1be5f483
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764140"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417253"
 ---
 # <a name="create-customized-lists-of-synonyms-for-your-qna-maker-knowledge-base"></a>Criar listas personalizadas de sinônimos para sua base de dados de conhecimento QnA Maker
 
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 A CLI do bot Framework permite automatizar o gerenciamento de QnA Maker base de dados de conhecimento. Ele permite criar, atualizar e excluir uma base de dados de conhecimento QnA Maker (KB) da linha de comando ou de um script. Ele também permite que você crie uma lista de sinônimos que se aplicam ao seu KB. Este artigo explica como criar sinônimos para seu QnA Maker KB usando o comando de _alterações_ da CLI.
 

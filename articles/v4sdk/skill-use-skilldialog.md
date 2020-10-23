@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/15/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4a95cac0e73a99756bbbb3036a3ed400865213d8
-ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
+ms.openlocfilehash: 2cc2a1527ccd7df3d262c990ffa7fd6457686a8f
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86542442"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417383"
 ---
 # <a name="use-a-dialog-to-consume-a-skill"></a>Usar uma caixa de diálogo para consumir um skill
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Este artigo demonstra como usar uma _caixa de diálogo de skill_ em um consumidor de skill.
 A caixa de diálogo de skill posta as atividades do bot pai para o bot de skill e retorna as respostas do skill para o usuário.

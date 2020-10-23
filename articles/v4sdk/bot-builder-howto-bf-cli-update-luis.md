@@ -9,16 +9,16 @@ ms.topic: how-to
 ms.service: bot-service
 ms.date: 08/31/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f2af92f4c577da3ebf36d712cdbd396a02c21131
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 4aa50d3621ccbb8b36ac8eb0507c456985e4d35d
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824926"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417234"
 ---
-# <a name="update-luis-resources-using-the-bot-framework-luis-cli-commands"></a>Atualizar recursos do LUIS usando o bot Framework LUIS comandos da CLI
+# <a name="update-luis-resources-using-the-bot-framework-luis-cli-commands"></a>Atualizar os recursos do LUIS usando os comandos da CLI do LUIS do Bot Framework
 
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 A interface de linha de comando do bot Framework (BF CLI) permite automatizar o gerenciamento de recursos do LUIS. Em uma linha de comando ou um script, você pode criar, atualizar e excluir Propriedades LUIS.
 
@@ -55,7 +55,7 @@ Este artigo descreve as etapas a seguir usadas para atualizar seus recursos de c
 
 Você precisará da _ID do aplicativo Luis_ e da _ID da versão ativa_ para concluir o processo de atualização dos recursos do Luis. Há duas maneiras pelas quais você pode obter essas informações. Esta seção explicará e quando você usará cada uma delas. Independentemente da abordagem usada, você precisará ter a chave de assinatura e o ponto de extremidade com o qual seu aplicativo LUIS está associado. Você pode encontrar essas informações em seu _recurso de criação do Luis_  no Azure, na folha **chaves e ponto de extremidade** .
 
-![Chaves e ponto de extremidade](./media/adaptive-dialogs/keys-and-endpoint-myluisapp.png)
+![Chaves e Ponto de Extremidade](./media/adaptive-dialogs/keys-and-endpoint-myluisapp.png)
 
 Se você souber qual é a ID do aplicativo LUIS, mas precisar obter a ID da versão ativa, poderá usar o `luis:application:show` comando. Isso retornará apenas informações para o aplicativo LUIS especificado.
 

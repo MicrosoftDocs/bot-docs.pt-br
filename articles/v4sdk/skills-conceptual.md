@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/15/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 936166bf6d07bd63141953c3644a040d0af6f71c
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 52bb7025f45640e2c526897b133be353a5e7da50
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824886"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417345"
 ---
 # <a name="skills-overview"></a>Visão geral de skills
 
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 <!-- Value prop: why skills -->
 Desde a versão 4.7 do SDK do Bot Framework, você pode estender um bot usando outro bot (um skill).

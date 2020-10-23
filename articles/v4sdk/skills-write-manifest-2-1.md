@@ -9,14 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/04/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: de98337779ce952df281c4610fdee88339601c7d
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: 9a735569b60a673a68e14c76860c358aac4a458b
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124523"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417427"
 ---
 # <a name="how-to-write-a-v21-skill-manifest"></a>Como escrever um manifesto de habilidades v2.1
+
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Um _manifesto de habilidade_ é um arquivo JSON que descreve as ações que a habilidade pode executar, os respectivos parâmetros de entrada e saída e os pontos de extremidade da habilidade. O manifesto contém as informações de que um desenvolvedor precisa para acessar a habilidade por meio de outro bot. Com a v2.1 do esquema de manifesto de habilidades, o manifesto também pode descrever as atividades proativas que a habilidade pode enviar e expedir os modelos usados pela habilidade.
 

@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 09/01/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f42754139197275e82c1f59bcb43cc2d34fe854c
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 2107e9721f215bda7341908b3e277c9a061a2eef
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824526"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417440"
 ---
 # <a name="implement-a-skill-consumer"></a>Implementar um consumidor de skills
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Você pode usar skills para estender outro bot.
 Um _skill_ é um bot que pode executar um conjunto de tarefas para outro bot e que usa um manifesto para descrever sua interface.

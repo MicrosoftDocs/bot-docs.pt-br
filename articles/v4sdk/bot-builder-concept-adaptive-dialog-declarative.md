@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 05/31/2020
-ms.openlocfilehash: ef4fe56f81007843205348f283f8e3c150ede47a
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 145cbbe3d1af4bda9d9505a5f698fd72c2b5f354
+ms.sourcegitcommit: e37cf15f4907910560f34445a0fbdd7ae75b4787
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414480"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92440128"
 ---
 # <a name="using-declarative-assets-in-adaptive-dialogs"></a>Como usar ativos declarativos em diálogos adaptáveis
 
@@ -96,43 +96,21 @@ Com o gerenciador de recursos, você pode criar objetos de recurso que contêm t
 
 O método _get resource_ do gerenciador de recursos lê o arquivo declarativo em um objeto de recurso.  O objeto de recurso contém as informações sobre o arquivo declarativo e pode ser usado por qualquer processo que precise fazer referência a ele, como o carregador de tipo.
 
-# <a name="c"></a>[C#](#tab/csharp)
-
 ```csharp
 var resource = this.resourceExplorer.GetResource("main.dialog");
 ```
-
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
-
-```javascript
-let rootDialogResource = resourceExplorer.getResource('echo.dialog');
-```
-
----
 
 ### <a name="the-type-loader"></a>O carregador de tipo
 
 Depois que o método do Gerenciador de recursos `_get resource_` lê o arquivo declarativo em um objeto de recurso, o `_load type_method` converte o recurso em um `AdaptiveDialog` objeto. O objeto `AdaptiveDialog` pode ser usado da mesma forma que qualquer outro diálogo adaptável não declarativo é usado ao criar um gerenciador de diálogos.
 
-# <a name="c"></a>[C#](#tab/csharp)
-
 ```csharp
 dialogManager = new DialogManager(resourceExplorer.LoadType<AdaptiveDialog>(resource));
 ```
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
-
-```javascript
-let dialogManager = new DialogManager(resourceExplorer.loadType(rootDialogResource));
-```
-
----
-
 ### <a name="auto-reload-dialogs-when-file-changes"></a>Recarregar diálogos automaticamente quando o arquivo for alterado
 
 Sempre que um arquivo declarativo for alterado quando o bot estiver em execução, um evento _alterado_ será acionado. Você pode capturar esse evento e recarregar os seus arquivos declarativos. Dessa forma, quando qualquer o diálogo adaptável precisar ser atualizado, você não precisará atualizar o seu código e recompilar o código-fonte ou reiniciar o bot. Isso pode ser especialmente útil em um ambiente de produção.
-
-# <a name="c"></a>[C#](#tab/csharp)
 
 <!--This example could be improved-->
 ```csharp
@@ -152,31 +130,11 @@ private void LoadRootDialogAsync()
 }
 ```
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
-
-```javascript
-const handleResourceChange = (resources) => {
-    if (Array.isArray(resources)) {
-        if((resources || []).find(r => r.resourceId.endsWith('.dialog')) !== undefined) loadRootDialog();
-    } else {
-        if (resources.resourceId && resources.resourceId.endsWith('.dialog')) loadRootDialog()
-    }
-};
-
-// Add a resource change handler to resource explorer.
-resourceExplorer.emitter.on('changed', handleResourceChange);
-```
-
----
-
 ### <a name="the-versionchanged-event"></a>O `VersionChanged` evento
 
 Quando seus ativos declarativos forem recarregados para acomodar as alterações feitas em um `.dialog` arquivo, talvez seja necessário reavaliar o estado de quaisquer conversas atuais para considerar qualquer alteração na lógica da caixa de diálogo. As alterações na sua lógica podem ser tão simples quanto limpar sua pilha de conversa e reiniciar. Uma lógica mais sofisticada permitiria que você faça coisas como reiniciar uma caixa de diálogo mantendo os dados que você tem, permitindo que você pegue novas propriedades e ou caminhos que não existiam antes.
 
 O `DialogEvents.VersionChanged` evento é capturado usando o `OnDialogEvent` gatilho.
-
-
-# <a name="c"></a>[C#](#tab/csharp)
 
 <!--This example could be improved-->
 ```csharp
@@ -191,18 +149,6 @@ Triggers = new List<OnCondition>()
     }
 }
 ```
-
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
-
-```javascript
-triggers: [
-    new OnDialogEvent(DialogEvents.VersionChanged)[
-        new SendActivity("The VersionChanged event fired.")
-    ]
-]
-```
-
----
 
 ## <a name="declarative-assets"></a>Ativos declarativos
 

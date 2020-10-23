@@ -9,14 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f3202153322c421d538feb53a89dd6ae8dd41b8b
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 66436f16f4ffe68f9255aeb53801336909fdcec7
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90823796"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417409"
 ---
 # <a name="migrate-a-net-v3-bot-to-a-net-core-v4-bot"></a>Migrar um bot v3 do .NET para um bot v4 do .NET Core
+
+[!INCLUDE [applies-to-v4](../../includes/applies-to-v4-current.md)]
 
 Neste artigo, converteremos o [v3 ContosoHelpdeskChatBot](https://github.com/microsoft/BotBuilder-Samples/tree/master/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V3) em um bot v4 _em um novo projeto do .NET Core_.
 Essa conversão é dividida entre estas etapas:

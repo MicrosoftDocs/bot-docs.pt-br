@@ -9,14 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 02/19/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2cf0398986203e131cf456344440cef3c2b90955
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 270ea77aaeee5bfdaf6d963b4a68287173c05a27
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80117761"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417446"
 ---
 # <a name="convert-a-net-v3-bot-to-a-skill"></a>Converter um bot v3 do .NET em uma habilidade
+
+[!INCLUDE [applies-to-v4](../../includes/applies-to-v4-current.md)]
 
 Este artigo descreve como converter três exemplos de bot v3 do .NET em habilidades e criar um consumidor de habilidades v4 que possa acessar essas habilidades.
 Para converter um bot v3 do JavaScript em uma habilidade, confira como [Converter um bot v3 do JavaScript em uma habilidade](javascript-v3-as-skill.md).

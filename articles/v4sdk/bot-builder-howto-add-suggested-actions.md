@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/10/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: cd921a0fe18461eb777ec02c3f2ec21da813ae53
-ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
+ms.openlocfilehash: 4a22fc671cde9eb023418f80421e06e771197d08
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764020"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417245"
 ---
 # <a name="use-button-for-input"></a>Usar o botão para a entrada
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Você pode habilitar seu bot para apresentar botões que o usuário pode tocar para fornecer a entrada. Os botões melhoram a experiência do usuário permitindo que ele responda a uma pergunta ou faça uma seleção com o simples toque de um botão, em vez de digitar uma resposta com um teclado. Ao contrário de botões exibidos em cartões avançados (que permanecem visíveis e acessíveis ao usuário, mesmo após serem tocados), os botões que aparecem no painel de ações sugeridas desaparecerão após a seleção do usuário. Isso impede que o usuário toque em botões obsoletos dentro de uma conversa e simplifica o desenvolvimento de bot (uma vez que não será necessário levar em conta esse cenário).
 

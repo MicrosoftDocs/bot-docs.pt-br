@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 09/01/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a5c26f22f7b9dad0aa8bf34b79b57672b393de15
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 01faeee0b76873c039c9404097aa0517f4a1a0b1
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360239"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417215"
 ---
 # <a name="handle-user-interruptions"></a>Manipular interrupções do usuário
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 O tratamento de interrupções é um aspecto importante de um bot robusto. Os usuários nem sempre seguirão o fluxo de conversa que você definiu, passo a passo. Eles podem tentar fazer uma pergunta no meio do processo ou simplesmente querer cancelá-lo em vez de concluí-lo. Este tópico descreve algumas maneiras comuns de manipular as interrupções do usuário no bot.
 

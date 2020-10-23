@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/15/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: aef963d7823363d5e6c239d78deba4051a57a935
-ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
+ms.openlocfilehash: c0ebc1e018b4c71280b3996d6935ea3180d9b53d
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86542422"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417357"
 ---
 # <a name="about-skill-consumers"></a>Sobre os consumidores de habilidades
 
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Um _consumidor de habilidades_ é um bot que pode chamar uma ou mais habilidades.
 Em relação aos skills, um _bot raiz_ é um bot voltado para o usuário que também é um consumidor de skills.

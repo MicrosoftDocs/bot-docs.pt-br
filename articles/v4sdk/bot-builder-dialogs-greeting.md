@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: d05609270b536ceb6f217200c89d6235a079ca97
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 2701f42a2db6e7e727b4867192c2f7929d3dab14
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360249"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417284"
 ---
 # <a name="implement-a-greeting-dialog"></a>Implementar um diálogo de saudação
 
-[!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Você pode usar um diálogo para dar boas-vindas a um usuário em uma conversa.
 

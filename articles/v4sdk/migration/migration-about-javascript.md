@@ -9,14 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/28/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b570348e7b9312eb5be94860e86045fba712fa65
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: b6d085c09d77e196c0ee2d31c8bb90876831db66
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362239"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417394"
 ---
 # <a name="differences-between-the-v3-and-v4-javascript-sdk"></a>Diferenças entre o SDK do JavaScript v3 e v4
+
+[!INCLUDE [applies-to-v4](../../includes/applies-to-v4-current.md)]
 
 A versão 4 do SDK do Bot Framework suporta o mesmo Bot Framework Service que a versão 3. No entanto, a v4 é uma refatoração da versão anterior do SDK para dar mais flexibilidade e controle aos desenvolvedores sobre seus bots. Alterações importantes no SDK incluem:
 

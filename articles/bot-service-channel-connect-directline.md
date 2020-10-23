@@ -2,60 +2,133 @@
 title: Conectar um bot à Direct Line – Serviço de Bot
 description: Saiba como configurar os bots para se comunicar com aplicativos cliente. Consulte como usar o canal de linha direta para essa finalidade.
 keywords: linha direta, canais bot, cliente customizado, conectar aos canais, configurar
-author: RobStand
-ms.author: kamrani
+author: mmiele
+ms.author: v-mimiel
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 08/7/2019
-ms.openlocfilehash: 9f619cc6e1ba59fbce7be3fd7d72592384df05ae
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.date: 10/21/2020
+ms.openlocfilehash: 3cada66823f1a923636d844b9c0c9ac40e50d62f
+ms.sourcegitcommit: e37cf15f4907910560f34445a0fbdd7ae75b4787
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92415765"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92439957"
 ---
 # <a name="connect-a-bot-to-direct-line"></a>Conecte um bot à linha direta
 
-[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
+Este artigo descreve como conectar um bot ao canal de **linha direta**. Use este canal para permitir que o aplicativo cliente se comunique com um bot.
 
-Você pode ativar seu próprio aplicativo cliente para se comunicar com seu bot usando o canal Direct Line.
+> Observe que a linha direta é um canal padrão sobre o protocolo HTTPS para permitir a comunicação entre um aplicativo cliente e um bot. Se você precisar de isolamento de rede em vez disso, use a [extensão do serviço de aplicativo de linha direta](bot-service-channel-directline-extension.md) sobre o [protocolo WebSocket](https://tools.ietf.org/html/rfc6455).
+
 
 ## <a name="add-the-direct-line-channel"></a>Adicionar o canal de linha direta
 
-Para adicionar o canal Linha Direta, abra o bot no [Portal do Azure](https://portal.azure.com/), clique na folha **Canais** e, em seguida, clique em **Linha Direta**.
+A primeira coisa que você deve fazer é adicionar o canal de linha direta ao bot.
 
-![Adicionar canal de linha direta](media/bot-service-channel-connect-directline/directline-addchannel.png)
+1. No navegador, navegue até o [portal do Azure](https://portal.azure.com/).
+1. No painel esquerdo, clique no item **canais** .
+1. No painel direito, em *Adicionar um canal em destaque*, clique no ícone de **linha direta** (marcado em vermelho na imagem abaixo).
+
+    ![Adicionar canal de linha direta](media/bot-service-channel-connect-directline/add-directline-channel.png "Adicionar canal de linha direta")
+
+1. A página **Configurar linha direta** é exibida. Clique no botão **concluído** na parte inferior da página. Isso adiciona o canal de linha direto ao bot, conforme mostrado na imagem abaixo.
+
+    ![Canal de linha direta adicionado](media/bot-service-channel-connect-directline/added-directline-channel.png "Canal de linha direta adicionado")
 
 ## <a name="add-new-site"></a>Adicionar novo site
 
-Em seguida, adicione um novo site que represente o aplicativo cliente que você deseja conectar ao seu bot. Clique em **Adicionar novo site**, insira um nome para o seu site e clique em **Concluído**.
+1. Em *conectar-se a canais*, clique no link **Editar** pela linha direta.
+1. Em *Configurar linha direta*, clique em **Adicionar novo site** e insira um nome para o seu site. Isso representa o aplicativo cliente que você deseja conectar ao bot.
 
-![Adicionar linha direta de site](media/bot-service-channel-connect-directline/directline-addsite.png)
+    ![Adicionar linha direta de site](media/bot-service-channel-connect-directline/directline-addsite.png)
+
+1. Clique em **Concluído**.
 
 ## <a name="manage-secret-keys"></a>Gerenciar chaves secretas
 
-Quando seu site é criado, o Bot Framework gera chaves secretas que seu aplicativo cliente pode usar para [autenticar](~/rest-api/bot-framework-rest-direct-line-3-0-authentication.md) as solicitações da API da Linha Direta que emite para se comunicar com seu bot. Para exibir uma chave em texto sem formatação, clique em **Mostrar** para a chave correspondente.
+Quando você adiciona o canal direto, a estrutura de bot gera chaves secretas. O aplicativo cliente usa essas chaves para autenticar as solicitações da API de linha direta que ele emite para se comunicar com um bot. Para obter mais informações, consulte [Autenticação](~/rest-api/bot-framework-rest-direct-line-3-0-authentication.md).
 
-![Mostrar chave de linha direta](media/bot-service-channel-connect-directline/directline-showkey.png)
+1. Em *Configurar linha direta*, para exibir uma chave em texto sem formatação, clique em **Mostrar** para a chave correspondente.
 
-Copie e armazene com segurança a chave que é mostrada. Em seguida, use a chave para [autenticar](~/rest-api/bot-framework-rest-direct-line-3-0-authentication.md) as solicitações da API da Linha Direta que seu cliente emite para se comunicar com seu bot.
-Como alternativa, use a API de linha direta para [trocar a chave para um token](~/rest-api/bot-framework-rest-direct-line-3-0-authentication.md#generate-token) que seu cliente pode usar para autenticar suas solicitações subsequentes dentro do escopo de uma única conversa.
+    ![Mostrar chave de linha direta](media/bot-service-channel-connect-directline/directline-showkey.png "Mostrar chave de linha direta")
 
-![Copie a chave de linha direta](media/bot-service-channel-connect-directline/directline-copykey.png)
+1. Copie e armazene a chave com segurança. Use a chave para [autenticar](~/rest-api/bot-framework-rest-direct-line-3-0-authentication.md) as solicitações da API de linha direta que o aplicativo cliente emite para se comunicar com um bot.
+
+    ![Copie a chave de linha direta](media/bot-service-channel-connect-directline/directline-copykey.png "Copie a chave de linha direta")
+
+    > [!NOTE]
+    > Os segredos não devem ser expostos ou inseridos em aplicativos cliente. Consulte a próxima etapa.
+
+1. A prática recomendada é usar a API de linha direta para [trocar a chave por um token](~/rest-api/bot-framework-rest-direct-line-3-0-authentication.md#generate-token). O aplicativo cliente usará o token para autenticar suas solicitações dentro do escopo de uma única conversa.
 
 ## <a name="configure-settings"></a>Definir configurações
 
-Por fim, defina as configurações do site.
+1. Selecione a versão do protocolo de linha direta que seu aplicativo cliente usará para se comunicar com um bot.
 
-- Selecione a versão do protocolo Direct Line que seu aplicativo cliente usará para se comunicar com seu bot.
+    > [!TIP]
+    > Se você estiver criando uma nova conexão entre seu aplicativo cliente e o bot, use o Direct Line API 3.0.
 
-> [!TIP]
-> Se você estiver criando uma nova conexão entre seu aplicativo cliente e o bot, use o Direct Line API 3.0.
-
-Quando terminar, clique em **Concluído** para salvar a configuração do site. Você pode repetir esse processo, começando com [Adicionar novo site](#add-new-site), para cada aplicativo cliente que você deseja conectar ao seu bot.
+1. Quando terminar, clique em **Concluído** para salvar a configuração do site. Você pode repetir esse processo, começando com [Adicionar novo site](#add-new-site), para cada aplicativo cliente que você deseja conectar ao seu bot.
 
 Quando você tiver a **autenticação avançada habilitada**, verá o seguinte comportamento para o qual origens confiáveis são usadas:
 
 - Se você configurar origens confiáveis como parte da página da interface do usuário de configuração, elas **sempre** serão usadas como o único conjunto. Não enviar nenhuma origem confiável ou enviar origens confiáveis adicionais ao gerar um token ou iniciar uma conversa será ignorado (ou seja, **não serão acrescentadas** à lista nem terão validação cruzada).
 - Se você não tiver configurado origens confiáveis como parte da interface do usuário de configuração, qualquer valor enviado como parte das chamadas à API será usado.
+
+## <a name="example"></a>Exemplo
+
+Você pode baixar um exemplo do .NET deste local: [exemplo de bot de linha direta](https://github.com/microsoft/BotFramework-DirectLine-DotNet/tree/master/samples/core-DirectLine).
+
+O exemplo contém dois projetos:
+
+- [DirectLineBot](https://github.com/microsoft/BotFramework-DirectLine-DotNet/tree/master/samples/core-DirectLine/DirectLineBot). Ele cria um bot para se conectar por meio de um canal de linha direta.
+- [DirectLineClient](https://github.com/microsoft/BotFramework-DirectLine-DotNet/tree/master/samples/core-DirectLine/DirectLineClient). Este é um aplicativo de console que se comunica com o bot anterior por meio do canal de linha direta.
+
+### <a name="direct-line-api"></a>Direct Line API
+
+- As credenciais para a API de linha direta devem ser obtidas no registro de canais de bot ou no bot do aplicativo Web no portal do Azure e só permitirão que o chamador se conecte ao bot para o qual eles foram gerados. No projeto bot, atualize o `appsettings.json` arquivo com esses valores.
+
+    ```csharp
+    {
+    "MicrosoftAppId": "",
+    "MicrosoftAppPassword": ""
+    }
+    ```
+
+- No portal do Azure, habilite a linha direta na lista de canais e, em seguida, configure o segredo de linha direta. Verifique se a caixa de seleção da versão 3,0 está marcada. No projeto de cliente do console, atualize o `App.config` arquivo com a chave secreta de linha direta e o identificador de bot (ID do bot).
+
+    ```xml
+    <appSettings>
+        <add key="DirectLineSecret" value="YourBotDirectLineSecret" />
+        <add key="BotId" value="YourBotHandle" />
+    </appSettings>
+    ```
+
+As mensagens do usuário são enviadas para o bot usando o método de cliente de linha direta `Conversations.PostActivityAsync` usando o `ConversationId` gerado anteriormente.
+
+```csharp
+while (true)
+{
+    string input = Console.ReadLine().Trim();
+
+    if (input.ToLower() == "exit")
+    {
+        break;
+    }
+    else
+    {
+        if (input.Length > 0)
+        {
+            Activity userMessage = new Activity
+            {
+                From = new ChannelAccount(fromUser),
+                Text = input,
+                Type = ActivityTypes.Message
+            };
+
+            await client.Conversations.PostActivityAsync(conversation.ConversationId, userMessage);
+        }
+    }
+}
+```

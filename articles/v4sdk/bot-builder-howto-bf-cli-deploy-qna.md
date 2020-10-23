@@ -9,16 +9,16 @@ ms.topic: how-to
 ms.service: bot-service
 ms.date: 09/10/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: abd20aa0014ae66012b1db4bdc6af2df9b716344
-ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
+ms.openlocfilehash: 34f7813711da97c9a68a67a607eb138944b9271f
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764143"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417270"
 ---
 # <a name="deploy-qna-maker-knowledge-base-using-the-bot-framework-qnamaker-cli-commands"></a>Implantar QnA Maker base de dados de conhecimento usando os comandos da CLI do bot Framework qnamaker
 
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 A CLI (interface de linha de comando) do bot Framework permite automatizar o gerenciamento da base de dados de conhecimento do QnA Maker (KB). Ele permite que você crie, atualize e exclua QnA Maker KB da linha de comando ou de um script. Este artigo explica como implantar QnA Maker KB em um QnA Maker KB no Azure.
 
@@ -28,8 +28,8 @@ A CLI (interface de linha de comando) do bot Framework permite automatizar o ger
 - Conhecimento do [formato de arquivo. QnA][qna-file-format].
 - Ter um projeto de bot com `.qna` arquivos.
 - Se estiver trabalhando com caixas de diálogo adaptáveis, você deve compreender:
-    - [Processamento de idioma natural em caixas de diálogo adaptáveis][natural-language-processing-in-adaptive-dialogs].
-    - como o [reconhecedor de QnA Maker][qna-maker-recognizer] é usado.
+  - [Processamento de idioma natural em caixas de diálogo adaptáveis][natural-language-processing-in-adaptive-dialogs].
+  - como o [reconhecedor de QnA Maker][qna-maker-recognizer] é usado.
 
 ## <a name="using-the-qnamaker-cli-commands-to-enable-qna-maker-in-your-bot"></a>Usando os comandos da CLI do qnamaker para habilitar QnA Maker em seu bot
 
@@ -69,7 +69,7 @@ O recurso de QnA Maker inclui informações que o bot usará para acessar sua ba
     >
     > É importante entender a diferença entre esse QnA Maker ponto de extremidade de criação de recursos, que é referenciado em todos os comandos de criação do BF CLI qnamaker e a chave de ponto de extremidade da base de dados de conhecimento da QnA Maker que é referenciada em arquivos de configuração de código-fonte, como appsettings.jsem C# `.env` ou em JavaScript ou `config.py` em Python.
 
-- **Localização**. Esta é a região do Azure que contém seu QnA Maker KB. Você seleciona essa seleção ao criar o recurso de QnA Maker.
+- **Local**. Esta é a região do Azure que contém seu QnA Maker KB. Você seleciona essa seleção ao criar o recurso de QnA Maker.
 
    ![A folha chaves e ponto de extremidade no Azure](./media/adaptive-dialogs/qna-maker-keys-and-endpoint.png)
 

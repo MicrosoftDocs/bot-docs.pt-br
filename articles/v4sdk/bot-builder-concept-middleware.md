@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 943a60c7b3493d4fddbb15ccb808e2a6cfad8c87
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: aa4bdaca9687dc7e86f9d818a3efd424d7ebe8d4
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360299"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417193"
 ---
 # <a name="middleware"></a>Middleware
 
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 O middleware é simplesmente uma classe que fica entre o adaptador e sua lógica de bot, adicionada à coleção de middlewares do seu adaptador durante a inicialização. O SDK permite escrever seu próprio middleware ou adicionar o middleware criado por outras pessoas. Toda atividade que entra ou sai do seu bot flui pelo middleware.
 

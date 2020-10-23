@@ -9,14 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/11/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: dd8570f44e9845ed4f9d21923b33c72b65625641
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: dfc347f03dbd86035a53bb0b8f6ff943a62c1458
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362229"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417475"
 ---
 # <a name="migration-overview"></a>Visão geral da migração
+
+[!INCLUDE [applies-to-v4](../../includes/applies-to-v4-current.md)]
 
 O Bot Framework SDK v4 se baseia nos comentários dos clientes e na experiência de aprendizado de SDKs anteriores. A nova versão introduz os níveis certos de abstração, ao mesmo tempo permitindo uma arquitetura flexível dos componentes do bot. Isso, por exemplo, permite que você crie um bot simples e, em seguida, expanda-o em termos de sofisticação usando a modularidade e a extensibilidade do SDK v4 do Bot Framework.
 
@@ -138,7 +140,7 @@ Falha de um diálogo. | Session.pruneDialogStack | Gere uma exceção a ser capt
 O SDK v4 do Bot Framework baseia-se a mesma API REST subjacente que a v3. No entanto, a v4 é uma refatoração da versão anterior do SDK para permitir mais flexibilidade e controle sobre os bots.
 
 É recomendável migrar para o .NET Core, já que o desempenho é muito melhor.
-Porém, alguns bots V3 existentes estão usando bibliotecas externas que não têm um equivalente do .NET Core. Neste caso, o SDK v4 do Bot Framework pode ser usado com o .NET Framework versão 4.6.1 ou superior. Encontre um exemplo no local do [corebot](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_webapi).
+Porém, alguns bots V3 existentes estão usando bibliotecas externas que não têm um equivalente do .NET Core.  Neste caso, o SDK v4 do Bot Framework pode ser usado com o .NET Framework versão 4.6.1 ou superior. Encontre um exemplo no local do [corebot](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_webapi).
 
 Ao migrar um projeto da v3 para a v4, você pode escolher uma destas opções: converter no local para **.NET Framework** ou realizar a portabilidade para um novo projeto para **.NET Core**.
 

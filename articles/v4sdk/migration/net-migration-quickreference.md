@@ -9,14 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/31/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: c34cf04d1e54776855a7908af32aedc722fba742
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 2741d62195b55834c6b71bfd902b2bc8154654e4
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362209"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417460"
 ---
 # <a name="net-migration-quick-reference"></a>Referência rápida da migração do .NET
+
+[!INCLUDE [applies-to-v4](../../includes/applies-to-v4-current.md)]
 
 O SDK v4 do BotBuilder para .NET introduz várias mudanças fundamentais que afetam como os bots são criados. O objetivo deste guia é fornecer uma referência rápida para destacar as diferenças comuns na realização de tarefas nos SDKs v3 e v4.
 

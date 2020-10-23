@@ -9,14 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 124bd1f11b67f0ea5ae0635ad60ae560def3e558
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 2327c3e392f03054f3d4a0caee4bbc8dc3abc6cb
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824516"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417486"
 ---
 # <a name="differences-between-the-v3-and-v4-net-sdk"></a>Diferenças entre o SDK do .NET v3 e v4
+
+[!INCLUDE [applies-to-v4](../../includes/applies-to-v4-current.md)]
 
 A versão 4 do SDK do Bot Framework suporta o mesmo Bot Framework Service que a versão 3. No entanto, a v4 é uma refatoração da versão anterior do SDK para dar mais flexibilidade e controle aos desenvolvedores sobre seus bots. Alterações importantes no SDK incluem:
 
@@ -48,7 +50,7 @@ O manipulador de turnos pode receber vários tipos de atividades. Em geral, voc�
 
 Ao manipular uma mensagem, use o contexto do turno para obter informações sobre a atividade de entrada e enviar as atividades para o usuário:
 
-| Tarefa | Processo |
+| Tarefa | Processar |
 |-|-|
 | Para obter a atividade de entrada | Obtenha a propriedade `Activity` do contexto do turno. |
 | Para criar e enviar uma atividade para o usuário | Chame o método `SendActivityAsync` do contexto do turno.<br/>Para obter mais informações, confira [enviar e receber uma mensagem de texto][send-messages] e [adicionar mídia às mensagens][send-media]. |
@@ -87,7 +89,7 @@ O estado deve ser configurado como singletons sempre que possível, no **Startup
 Você pode usar a injeção de dependência para acessá-lo sempre que seu bot é criado.
 (No ASP.NET, uma nova instância do seu controlador de mensagem ou bot é criada para cada turno.) Use os acessadores de propriedade de estado para obter e atualizar suas propriedades e use os objetos de gerenciamento de estado para gravar todas as alterações no armazenamento. Com o entendimento de que você deve levar em conta problemas de simultaneidade, aqui está como realizar algumas tarefas comuns.
 
-| Tarefa | Processo |
+| Tarefa | Processar |
 |-|-|
 | Para criar um acessador de propriedade de estado | Chame `BotState.CreateProperty<T>`.<br/>`BotState` é a classe base abstrata para a conversa, conversa privada e estado do usuário. |
 | Para obter o valor atual de uma propriedade | Chame `IStatePropertyAccessor<T>.GetAsync`.<br/>Se nenhum valor tiver sido definido, o parâmetro de fábrica padrão será usado para gerar um valor. |

@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/14/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f3415773a8afa74d8c8e3d5f4b555903db88b0bf
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: b6520831d9666b3f3da344f653ec03ff16168e39
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824326"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417231"
 ---
 # <a name="expire-a-conversation"></a>Expirar uma conversa
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Às vezes, um bot precisa reiniciar uma conversa desde o início.  Por exemplo, se um usuário não responder após um determinado período de tempo.  Este artigo descreve dois métodos para expirar uma conversa:
 

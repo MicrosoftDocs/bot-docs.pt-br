@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/08/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: bb04fa2f084d20df85ab908dca7971228abe3bec
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 94a06d804d4c88cfc2fc63fca67aa9ad64e65903
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360259"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417275"
 ---
 # <a name="add-media-to-messages"></a>Adicionar mídia às mensagens
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 A troca de mensagens entre usuário e bot pode conter anexos de mídia como imagens, vídeo, áudio e arquivos. O SDK do Bot Framework oferece suporte à tarefa de envio de mensagens avançadas para o usuário. Para determinar o tipo de mensagens avançadas compatíveis com um canal (Facebook, Slack etc.), consulte a documentação do canal para obter informações sobre as limitações.
 

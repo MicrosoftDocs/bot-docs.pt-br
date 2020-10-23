@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: gapretty
 ms.service: bot-service
 ms.date: 01/21/2020
-ms.openlocfilehash: 849c33299a9a53c3272efe63e228f26d00b8eba7
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: bf00b73dcc130a58eb5353b185387a4640aae1be
+ms.sourcegitcommit: e37cf15f4907910560f34445a0fbdd7ae75b4787
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92415987"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92440021"
 ---
 # <a name="connect-a-bot-to-webex-teams-using-the-webex-adapter"></a>Conectar um bot ao Webex Teams usando o adaptador do Webex
 
@@ -116,8 +116,8 @@ Agora que você criou um aplicativo do Webex e vinculou o adaptador ao seu proje
 
     1. **Nome** -o nome de seu webhook, por exemplo, *mensagens webhook*.
     1. **TargetURL** -a URL completa para o ponto de extremidade WebEx do bot, como `https://yourbotapp.azurewebsites.net/api/webex` ).
-    1. **Recursos** -mensagens.
-    1. Criado pelo **evento** .
+    1. **recursos** -mensagens.
+    1. criado pelo **evento** .
     1. **filtro** -deixe em branco.
     1. **segredo** -um segredo de sua escolha para proteger seu webhook. Posteriormente, você o adicionará ao seu bot `appsettings.json` .
 

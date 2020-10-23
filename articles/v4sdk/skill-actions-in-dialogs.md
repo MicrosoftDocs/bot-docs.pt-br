@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 04/23/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2b90828f2febd41a71701f50ce25eac1b76d1b41
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: c678dc3204902d886e46e07fc67cb33a0affc8be
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83555657"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417463"
 ---
 # <a name="use-dialogs-within-a-skill"></a>Usar diálogos em uma habilidade
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Este artigo demonstra como criar uma habilidade que dá suporte a várias ações. Ela dá suporte a essas ações por meio de diálogos. O diálogo principal recebe a entrada inicial do consumidor de habilidades e inicia a ação apropriada. Para obter informações sobre como implementar o consumidor de habilidades para o código de exemplo associado, confira como [Consumir uma habilidade usando diálogos](skill-use-skilldialog.md).
 

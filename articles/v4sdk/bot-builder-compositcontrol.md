@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/14/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 77750c3d6d85df1ccc01832d3ae752844f6d8b60
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: e397d2a4da5240512e6ad57a446daf8dadfe21d7
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420437"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417186"
 ---
 # <a name="manage-dialog-complexity"></a>Gerenciar a complexidade da caixa de diálogo
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 <!--TODO This sample doesn't really need a separate LG tab. We need to decide whether we'll use the LG updated sample or the old sample.-->
 

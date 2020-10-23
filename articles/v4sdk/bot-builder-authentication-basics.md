@@ -7,14 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 07/07/2020
-ms.openlocfilehash: 164b6547cbe33aa67fa1cdc2e5ee66c7092ec042
-ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
+ms.openlocfilehash: 2a9077e2e9f0e7b22914a0343968a8e80ebeeeba
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764150"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417332"
 ---
 # <a name="bot-framework-authentication-basics"></a>Noções básicas de autenticação do bot Framework
+
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Geralmente, um bot deve acessar recursos protegidos, por exemplo, conta de email, em nome do usuário. Para fazer isso, o bot deve ser **autorizado** com base nas credenciais do usuário. Antes disso, o usuário deve ser **autenticado** primeiro.
 Além disso, o próprio bot deve ser uma entidade conhecida, que é deve ser autenticado no contexto do serviço de bot do Azure. Isso acontece antes que o bot seja autorizado a operar em nome do usuário.

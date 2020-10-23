@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/17/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 76068e11174642ecc448d5ecb29c3ecf318e6fb0
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: d02eb70351df5a895d3ee73d4800757d1ec374ab
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124482"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417377"
 ---
 # <a name="implement-a-skill-for-use-in-power-virtual-agents"></a>Implementar uma habilidade para uso no Power Virtual Agents
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Uma habilidade é um bot que pode ser usado por outro bot. Dessa forma, você pode criar um só bot voltado para o usuário e estendê-lo com uma ou mais habilidades. Saiba mais sobre as habilidades em geral na [Visão geral das habilidades](skills-conceptual.md) e como criá-las em [Implementar uma habilidade](skill-implement-skill.md). Como alternativa, os modelos do Assistente Virtual contêm um conjunto de [habilidades predefinidas](bot-builder-skills-overview.md) que você pode personalizar e implantar em vez de criar uma do zero.
 

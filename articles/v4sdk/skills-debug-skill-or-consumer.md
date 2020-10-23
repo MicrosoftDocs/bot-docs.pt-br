@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/15/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 6145bd56a7ec05db36ed2685d5b2abda25ce84bf
-ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
+ms.openlocfilehash: c8bab4861f8f8072418e4184efd40cdf4a7703cc
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86543092"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417335"
 ---
-# <a name="debug-a-skill-or-skill-consumer"></a>Depurar um consumidor de habilidades ou habilidades
+# <a name="debug-a-skill-or-skill-consumer"></a>Depurar uma habilidade ou um consumidor de habilidades
 
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Talvez seja necessário depurar uma habilidade ou um bot do consumidor de habilidades, onde o que você deseja depurar está em execução localmente e o outro está em execução na nuvem. Nessa situação, você pode usar a ferramenta ngrok para expor o ponto de extremidade de bot local como uma URL pública.
 

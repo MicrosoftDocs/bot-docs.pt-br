@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/08/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 6bf80c15bb3921051ee27e272cd9379aa998632c
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 06eb6ce1241f2d01bc55dd890739b7764fac1992
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824896"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417422"
 ---
 # <a name="implement-a-skill"></a>Implementar um skill
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Você pode usar skills para estender outro bot.
 Um _skill_ é um bot que pode executar um conjunto de tarefas para outro bot.

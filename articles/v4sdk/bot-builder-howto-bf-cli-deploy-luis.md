@@ -9,16 +9,16 @@ ms.topic: how-to
 ms.service: bot-service
 ms.date: 08/28/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 88bc7e108ab25448a85a999402db2bbe7fd16314
-ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
+ms.openlocfilehash: 7971677050f82cfdd2f0bcb138c4a26437a5ed6d
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763943"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417294"
 ---
 # <a name="deploy-luis-resources-using-the-bot-framework-luis-cli-commands"></a>Implantar os recursos do LUIS usando os comandos da CLI do LUIS do Bot Framework
 
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 A CLI (interface de linha de comando) do bot Framework permite automatizar o gerenciamento de aplicativos LUIS (LUIS aplicativos). Em uma linha de comando ou um script, você pode criar, atualizar e excluir Propriedades LUIS.
 
@@ -29,9 +29,9 @@ Este artigo explica como implantar um recurso LUIS. Para obter informações sob
 - Conhecimento de [modelos de Lu][lu-templates].
 - Ter um projeto de bot com `.lu` arquivos.
 - Se estiver trabalhando com caixas de diálogo adaptáveis, você deve compreender:
-    - [Processamento de idioma natural em caixas de diálogo adaptáveis][natural-language-processing-in-adaptive-dialogs].
-    - [Reconhecimento de idioma em caixas de diálogo adaptáveis][language-understanding].
-    - como o [reconhecedor Luis][luis-recognizer] é usado.
+  - [Processamento de idioma natural em caixas de diálogo adaptáveis][natural-language-processing-in-adaptive-dialogs].
+  - [Reconhecimento de idioma em caixas de diálogo adaptáveis][language-understanding].
+  - como o [reconhecedor Luis][luis-recognizer] é usado.
 
 ## <a name="using-the-luis-cli-commands-to-enable-luis-in-your-bot"></a>Usando os comandos da CLI do LUIS para habilitar o LUIS em seu bot
 
@@ -45,6 +45,7 @@ Este artigo descreve como executar algumas tarefas comuns usando a CLI do bot Fr
 1. [Treine seu aplicativo LUIS](#train-your-luis-application)
 1. [Publicar seu aplicativo LUIS](#publish-your-luis-application)
 1. [Gerar código-fonte](#generate-source-code)
+1. [Criar e treinar um aplicativo LUIS e, em seguida, publicá-lo usando o comando de compilação](#create-and-train-a-luis-app-then-publish-it-using-the-build-command)
 
 Depois que o idioma do seu projeto de bot entender os recursos foram criados, você estará pronto para seguir as etapas descritas neste artigo para fazer com que o LUIS funcione.
 
@@ -70,7 +71,7 @@ O recurso de criação do LUIS inclui informações que o bot usará para acessa
 
 - **Chaves**. Elas são chamadas de _chaves de assinatura_, às vezes chamadas de chaves de _criação_ ao se referir a chaves no recurso de criação de Luis. Eles são gerados automaticamente. Você precisará de uma chave de criação ao referenciar o recurso de criação do LUIS para qualquer ação, como ao criar seu aplicativo LUIS e os modelos que serão detalhados neste artigo. Você pode encontrar as chaves na folha **chaves e ponto de extremidade** em seu recurso de criação do Luis.
 - **Ponto de extremidade**. Isso é gerado automaticamente usando o nome do recurso de criação de LUIS que você fornece ao criá-lo. Ele tem o seguinte formato: `https://<luis-resource-name>.cognitiveservices.azure.com/` . Ao fazer referência ao recurso de criação do LUIS para qualquer ação, como ao criar seu aplicativo LUIS e os modelos que serão detalhados neste artigo. Você pode encontrar a chave na folha **chaves e ponto de extremidade** em seu recurso de criação do Luis.
-- **Localização**.   Esta é a região do Azure que contém o recurso de criação do LUIS. Você seleciona essa seleção ao criar o recurso de criação de LUIS.
+- **Local**.   Esta é a região do Azure que contém o recurso de criação do LUIS. Você seleciona essa seleção ao criar o recurso de criação de LUIS.
 
    ![A folha chaves e ponto de extremidade no Azure](./media/adaptive-dialogs/keys-and-endpoint-example.png)
 
@@ -214,7 +215,7 @@ Veja a seguir um exemplo de **luconfig.jsno** arquivo que você pode referenciar
     "in": "dialogs",
     "out": "generated",
     "botName":"MyProject",
-    "AuthoringKey":"<your-32-digit-subscription-key>",
+    "authoringKey":"<your-32-digit-subscription-key>",
     "region": "westus",
     "schema": "app.schema",
     "defaultCulture":"en-us",

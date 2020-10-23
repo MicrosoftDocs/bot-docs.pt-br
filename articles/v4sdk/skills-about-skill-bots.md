@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 04/28/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 5299bc8d4260a7599d6d3ddd22e3560bcb57c0cb
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: 5eb235d887d2aec82239bc6aaf40f9044767b478
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83566076"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417371"
 ---
 # <a name="about-skill-bots"></a>Sobre os bots de habilidades
 
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Um _skill_ é um bot que pode executar um conjunto de tarefas para outro bot.
 Uma habilidade pode ser consumida por outro bot, facilitando a reutilização.

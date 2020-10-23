@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 178c62c8f5d3ec6d76cf8b5ab7707744a2ea98b5
-ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
+ms.openlocfilehash: 78da57a6ca756176826292aa1b0998dcc839ae64
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763913"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417206"
 ---
 # <a name="handle-user-interruptions-in-adaptive-dialogs"></a>Lidar com interrupções do usuário em caixas de diálogo adaptáveis
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 O tratamento de interrupções é um aspecto importante de um bot robusto. Os usuários nem sempre seguirão o fluxo de conversa definido. Geralmente, eles precisarão fazer uma pergunta no meio ou cancelar o processo. Este artigo descreve algumas maneiras comuns de lidar com interrupções de usuário no bot.
 
