@@ -9,16 +9,16 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: travisw
-ms.openlocfilehash: 3202c8271ffbdb09be10087861449c36f61cfac5
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: dc112500ba239b732fefa4df1b88eb299a16e4a0
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80250125"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415840"
 ---
 # <a name="connect-a-bot-to-direct-line-speech"></a>Conectar um bot ao Direct Line Speech
 
-[!INCLUDE[applies-to-v4](includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Você pode configurar seu bot para permitir que aplicativos cliente se comuniquem com ele por meio do canal do Direct Line Speech.
 
@@ -36,7 +36,7 @@ Depois de criar seu bot, integrá-lo ao Direct Line Speech habilitará uma conex
 
 1. Configure o Direct Line Speech, conforme mostrado na imagem abaixo.
 
-    ![selecionar canal do Direct Line Speech](media/voice-first-virtual-assistants/bot-service-channel-directlinespeech-cognitivesericesaccount-selection.png "selecionar recurso dos Serviços Cognitivos")
+    ![Configurando canal de fala de linha direta](media/voice-first-virtual-assistants/bot-service-channel-directlinespeech-cognitivesericesaccount-selection.png "selecionar recurso dos Serviços Cognitivos")
 
     O Canal do Direct Line Speech requer um recurso de Serviços Cognitivos, especificamente um recurso de serviço cognitivo de **fala**. Você pode usar um grupo de recursos existente ou criar um. Para criar um recurso de fala, siga estas etapas:
 

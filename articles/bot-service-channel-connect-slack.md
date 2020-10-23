@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 07/09/2020
-ms.openlocfilehash: 0e5cb90864b3f8e1a4c51cbbe13d40e71c135ff3
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 71d6ce19607a040eea3cc8a9f062938368f01060
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824036"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415620"
 ---
 # <a name="connect-a-bot-to-slack"></a>Conectar um bot ao Slack
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Há duas maneiras pelas quais você pode configurar o aplicativo de mensagens de margem de atraso:
 
@@ -191,7 +193,7 @@ Adicione o pacote NuGet [Microsoft.Bot.Builder.Adapters.Slack](https://www.nuget
 
 ### <a name="create-a-slack-adapter-class"></a>Criar uma classe de adaptador do Slack
 
-Crie uma classe nova que herda da classe ***SlackAdapter***. Essa classe atuará como nosso adaptador para o canal do Slack e incluirá recursos de tratamento de erro (semelhante à classe ***BotFrameworkAdapterWithErrorHandler*** que já está no exemplo, usada para lidar com outras solicitações do Serviço de Bot do Azure).
+Crie uma nova classe que herde da classe **_SlackAdapter_*_. Essa classe atuará como nosso adaptador para o canal de margem de atraso e incluirá recursos de tratamento de erros (semelhante à classe _*_BotFrameworkAdapterWithErrorHandler_*_ já no exemplo, usada para lidar com outras solicitações do serviço de bot do Azure).
 
 ```csharp
 public class SlackAdapterWithErrorHandler : SlackAdapter
@@ -256,13 +258,13 @@ Adicione as 3 configurações mostradas abaixo ao arquivo appSettings.json do pr
 
 ### <a name="inject-the-slack-adapter-in-your-bot-startupcs"></a>Injetar o adaptador do Slack no startup.cs do bot
 
-Adicione a seguinte linha ao método ***ConfigureServices*** no arquivo startup.cs. Isso registrará o adaptador do Slack e o disponibilizará para a nova classe de controlador.  As definições de configuração que você adicionou na etapa anterior serão usadas automaticamente pelo adaptador.
+Adicione a seguinte linha ao método _*_configuraservices_*_ no arquivo Startup.cs. Isso registrará o adaptador do Slack e o disponibilizará para a nova classe de controlador.  As definições de configuração que você adicionou na etapa anterior serão usadas automaticamente pelo adaptador.
 
 ```csharp
 services.AddSingleton<SlackAdapter, SlackAdapterWithErrorHandler>();
 ```
 
-Depois de ser adicionado, o método ***ConfigureServices*** ficará assim.
+Depois de adicionado, _*_o método configureservices_*_ deve ser assim.
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -301,7 +303,7 @@ Para concluir esta etapa, [implante o bot no Azure](https://aka.ms/bot-builder-d
 
 Navegue de volta para o [painel da API do Slack](https://api.slack.com/apps) e selecione seu aplicativo.  Agora você precisa configurar duas URLs para seu aplicativo e assinar os eventos apropriados.
 
-1. Na guia **OAuth & permissões**, a **URL de Redirecionamento** deve ser a URL do bot, além do ponto de extremidade `api/slack` especificado em seu controlador recém-criado. Por exemplo, `https://yourboturl.com/api/slack`.
+1. Na guia _*OAuth & Permissions**, a **URL de redirecionamento** deve ser a URL do bot, além do `api/slack` ponto de extremidade que você especificou em seu controlador recém-criado. Por exemplo, `https://yourboturl.com/api/slack`.
 
 ![URL de redirecionamento do Slack](~/media/bot-service-adapter-connect-slack/redirect-url.png)
 

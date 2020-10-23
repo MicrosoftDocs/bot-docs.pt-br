@@ -7,14 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/09/2020
-ms.openlocfilehash: ff1b0463f5813bdeaf4830257083afab661b1119
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: 959df34bb077a199ced8ae1b872fdadd5f55bb8a
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143516"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416716"
 ---
 # <a name="security-and-privacy"></a>Segurança e privacidade
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 <!-- Attention writers!!
      1 - This article contains FAQs regarding Bot Framework security and privacy.

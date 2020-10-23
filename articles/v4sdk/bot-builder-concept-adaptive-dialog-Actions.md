@@ -9,17 +9,17 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 04/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: d38fa5b7a301388773c5d77d38223b7a98f30205
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 5b072dec943fe736888911dc4ed5f37a41c4ea14
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360339"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416935"
 ---
 <!--P2: Once the samples are done, link to them in each section on the individual actions to point to them as examples of how they are used-->
 # <a name="actions-in-adaptive-dialogs"></a>Ações em caixas de diálogo adaptáveis
 
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 As ações ajudam a criar e manter o fluxo de conversa de bots quando um evento é capturado por um [gatilho][triggers]. De modo semelhante às caixas de diálogo adaptáveis, que contêm uma lista de gatilhos, os gatilhos contêm uma lista de ações que, depois que o gatilho é acionado, é executada para realizar qualquer conjunto de ações necessárias, como, por exemplo, atender à solicitação de um usuário. Além de criar e manter o fluxo de conversação do bot, você pode usar ações para enviar mensagens, responder a perguntas do usuário usando uma [base de dados de conhecimento][www.qnamaker.ai], fazer cálculos e executar qualquer número de tarefas computacionais para o usuário. Com as caixas de diálogo adaptáveis, o caminho do bot, que flui em uma caixa de diálogo, pode se ramificar e fazer um loop. O bot pode fazer e responder perguntas, validar a entrada dos usuários, manipular e armazenar valores na [memória][memory-states] e tomar decisões com base na entrada do usuário.
 
@@ -70,7 +70,7 @@ Instruções condicionais como instruções IF e loops for permitem que o bot to
 
 As ações condicionais fornecidas pelo SDK do bot Framework incluem:
 
-* **If/Else**. Usado para criar instruções IF e if-else que são usadas para executar o código somente se a condição especificada for verdadeira.
+* **If/Else**. Usado para criar instruções IF e If-Else que são usadas para executar o código somente se a condição especificada for true.
 * **Comutador**. Usada para criar um menu com várias opções.
 * **Loop for each**. Executa um loop por meio de um conjunto de valores armazenados em uma matriz.
 * **Para cada loop de página**. Executa um loop por meio de um grande conjunto de valores armazenados em uma página de uma matriz por vez.

@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 866b0dc6f848effa65f537f47191737b5a953770
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: cf09d5715177fed992aaa16917e1d143132457e9
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360759"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416825"
 ---
 # <a name="create-a-bot-with-the-bot-framework-sdk-for-javascript"></a>Criar um bot com o SDK do Bot Framework para JavaScript
 
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Este início rápido orienta você na criação de um único bot usando o gerador do Yeoman Bot Builder e o SDK do Bot Framework para JavaScript e, em seguida, testando-o com o Bot Framework Emulator.
 

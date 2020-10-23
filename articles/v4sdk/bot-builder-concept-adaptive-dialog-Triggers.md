@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 04/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 81cc9446d1f555292d4ed4cc7ad7b01f5638e952
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: 948a3feca9ae19cd050da5389655668a7aac66ae
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124282"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416951"
 ---
 # <a name="events-and-triggers-in-adaptive-dialogs"></a>Eventos e gatilhos em caixas de diálogo adaptáveis
 
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 As caixas de diálogo adaptáveis apresentam uma nova abordagem baseada em eventos para o modelo de conversas. Qualquer subsistema em seu bot pode emitir eventos, e todas as caixas de diálogo adaptáveis contêm um ou mais manipuladores de eventos chamados _gatilhos_ que permitem reagir a esses eventos.  Sempre que um evento é acionado, os gatilhos da caixa de diálogo adaptável ativa são avaliados e, se qualquer gatilho corresponder ao evento atual, as [ações][actions] associadas a esse gatilho serão executadas. Se um evento não for tratado na caixa de diálogo ativa, ele será passado para a caixa de diálogo pai a ser avaliada. Esse processo continuará até ser tratado ou atingir a caixa de diálogo raiz dos bots. Se nenhum manipulador de eventos (_gatilho_) for encontrado, o evento será ignorado, e nenhuma ação será executada.
 

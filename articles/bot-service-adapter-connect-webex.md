@@ -8,14 +8,16 @@ ms.topic: article
 ms.author: gapretty
 ms.service: bot-service
 ms.date: 01/21/2020
-ms.openlocfilehash: 242d512834d938c382bcc4b3ab16b9090c4b3b8e
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: 849c33299a9a53c3272efe63e228f26d00b8eba7
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143885"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415987"
 ---
 # <a name="connect-a-bot-to-webex-teams-using-the-webex-adapter"></a>Conectar um bot ao Webex Teams usando o adaptador do Webex
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Neste artigo, você aprenderá a conectar um bot ao Webex usando o adaptador disponível no SDK.  Este artigo explicará como modificar o exemplo EchoBot para conectá-lo a um aplicativo do Webex.
 
@@ -36,13 +38,13 @@ Neste artigo, você aprenderá a conectar um bot ao Webex usando o adaptador dis
 
 3. Na próxima tela, insira um nome, nome de usuário e uma descrição apropriados para o bot e escolha um ícone ou carregue uma imagem de sua preferência.
 
-    ![Configurar o bot](~/media/bot-service-adapter-connect-webex/create-bot.png)
+    ![configuração de bot](~/media/bot-service-adapter-connect-webex/create-bot.png)
 
     Clique no botão "Adicionar bot".
 
 4. Na próxima página, você receberá um token de acesso para o novo aplicativo do Webex. Anote esse token, pois você precisará dele ao configurar o bot.
 
-    ![Configurar o bot](~/media/bot-service-adapter-connect-webex/create-bot-settings.png)
+    ![o token de acesso](~/media/bot-service-adapter-connect-webex/create-bot-settings.png)
 
 ## <a name="wiring-up-the-webex-adapter-in-your-bot"></a>Conectando o adaptador do Webex ao seu bot
 
@@ -54,96 +56,37 @@ Adicione o pacote NuGet [Microsoft.Bot.Builder.Adapters.Webex](https://www.nuget
 
 ### <a name="create-a-webex-adapter-class"></a>Criar uma classe de adaptador do Webex
 
-Crie uma classe nova que herda da classe ***WebexAdapter***. Essa classe atuará como o adaptador para o canal do Webex. Ela inclui recursos de tratamento de erro (muito parecido com a classe ***BotFrameworkAdapterWithErrorHandler*** que já está no exemplo, usada para lidar com solicitações do Serviço de Bot do Azure).
+Crie uma nova classe que herde da classe ***WebexAdapter**_. Essa classe atuará como o adaptador para o canal do Webex. Ele inclui recursos de tratamento de erros (muito parecido com a classe _*_BotFrameworkAdapterWithErrorHandler_*_ já no exemplo, usado para lidar com solicitações do serviço de bot do Azure).
 
-```csharp
-public class WebexAdapterWithErrorHandler : WebexAdapter
-{
-    public WebexAdapterWithErrorHandler(IConfiguration configuration, ILogger<BotFrameworkHttpAdapter> logger)
-    : base(configuration, logger)
-    {
-        OnTurnError = async (turnContext, exception) =>
-        {
-            // Log any leaked exception from the application.
-            logger.LogError(exception, $"[OnTurnError] unhandled error : {exception.Message}");
-
-            // Send a message to the user
-            await turnContext.SendActivityAsync("The bot encountered an error or bug.");
-            await turnContext.SendActivityAsync("To continue to run this bot, please fix the bot source code.");
-
-            // Send a trace activity, which will be displayed in the Bot Framework Emulator
-            await turnContext.TraceActivityAsync("OnTurnError Trace", exception.Message, "https://www.botframework.com/schemas/error", "TurnError");
-        };
-    }
-}
-```
+[!code-csharp[Webex Adapter With Error Handler](~/../botbuilder-samples/samples/csharp_dotnetcore/62.webex-adapter/Adapters/WebexAdapterWithErrorHandler.cs?range=11-29)]
 
 ### <a name="create-a-new-controller-for-handling-webex-requests"></a>Criar um controlador para lidar com as solicitações do Webex
 
 Criaremos um controlador que manipulará as solicitações do aplicativo do Webex em um novo ponto de extremidade "api/webex", em vez do "api/messages" padrão usado para solicitações de canais do Serviço de Bot do Azure.  Ao adicionar outro ponto de extremidade ao bot, você poderá aceitar solicitações de canais do Serviço de Bot (ou adaptadores adicionais), assim como do Webex, usando o mesmo bot.
 
-```csharp
-[Route("api/webex")]
-[ApiController]
-public class WebexController : ControllerBase
-{
-    private readonly WebexAdapter _adapter;
-    private readonly IBot _bot;
+[!code-csharp[Webex Controller](~/../botbuilder-samples/samples/csharp_dotnetcore/62.webex-adapter/Controllers/WebexController.cs?range=12-32)]
 
-    public WebexController(WebexAdapter adapter, IBot bot)
-    {
-        _adapter = adapter;
-        _bot = bot;
-    }
-
-    [HttpPost]
-    public async Task PostAsync()
-    {
-        // Delegate the processing of the HTTP POST to the adapter.
-        // The adapter will invoke the bot.
-        await _adapter.ProcessAsync(Request, Response, _bot, default);
-    }
-}
-```
 
 ### <a name="inject-webex-adapter-in-your-bot-startupcs"></a>Injetar o Adaptador do Webex no Startup.cs do seu bot
 
-Adicione a seguinte linha ao método ***ConfigureServices*** no arquivo Startup.cs, que registrará o adaptador do Webex e o disponibilizará para a nova classe de controlador.  As definições de configuração, descritas na próxima etapa, serão usadas automaticamente pelo adaptador.
+Adicione a seguinte linha ao método _*_configureservices_*_ no arquivo Startup.cs, que registrará seu adaptador WebEx e o tornará disponível para a nova classe de controlador.  As definições de configuração, descritas na próxima etapa, serão usadas automaticamente pelo adaptador.
 
 ```csharp
 services.AddSingleton<WebexAdapter, WebexAdapterWithErrorHandler>();
 ```
 
-Depois de ser adicionado, o método ***ConfigureServices*** ficará assim.
+Depois de adicionado, _*_o método configureservices_*_ deve ser assim.
 
-```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+[!code-csharp[Webex Controller](~/../botbuilder-samples/samples/csharp_dotnetcore/62.webex-adapter/Startup.cs?range=18-31)]
 
-    // Create the default Bot Framework Adapter (used for Azure Bot Service channels and emulator).
-    services.AddSingleton<IBotFrameworkHttpAdapter, BotFrameworkAdapterWithErrorHandler>();
-
-    // Create the Webex Adapter
-    services.AddSingleton<WebexAdapter, WebexAdapterWithErrorHandler>();
-
-    // Create the bot as a transient. In this case the ASP Controller is expecting an IBot.
-    services.AddTransient<IBot, EchoBot>();
-}
-```
 
 ### <a name="add-webex-adapter-settings-to-your-bots-configuration-file"></a>Adicionar configurações do adaptador do Webex ao arquivo de configuração do bot
 
 1. Adicione as quatro configurações mostradas abaixo ao arquivo appSettings.json em seu projeto de bot.
 
-    ```json
-      "WebexAccessToken": "",
-      "WebexPublicAddress": "",
-      "WebexSecret": "",
-      "WebexWebhookName": ""
-    ```
+[!code-csharp[Webex Controller](~/../botbuilder-samples/samples/csharp_dotnetcore/62.webex-adapter/appsettings.json?range=1-6)]
 
-2. Preencha a configuração **WebexAccessToken** no token de acesso do bot do Webex, que foi gerado durante a criação do seu aplicativo de bot do Webex nas etapas anteriores. Deixe as outras três configurações vazias por enquanto, até reunirmos as informações necessárias para elas em etapas posteriores.
+2. Preencha a configuração _*WebexAccessToken** dentro do token de acesso de bot do WebEx, que foi gerado ao criar seu aplicativo de bot de WebEx nas etapas anteriores. Deixe as outras três configurações vazias por enquanto, até reunirmos as informações necessárias para elas em etapas posteriores.
 
 ## <a name="complete-configuration-of-your-webex-app-and-bot"></a>Concluir a configuração do seu aplicativo e bot do Webex
 
@@ -195,4 +138,4 @@ Conclua as três configurações restantes no arquivo appsettings.json do bot (v
 Agora que você concluiu a configuração das definições do bot no appsettings.json, reimplante o bot (ou reinicie o bot se estiver fazendo um túnel para um ponto de extremidade local usando o ngrok).  Agora a configuração do aplicativo e bot do Webex está concluída.
 Faça logon na equipe do Webex em [https://www.webex.com](https://www.webex.com) e faça um chat com o bot enviando uma mensagem, da mesma maneira que você entraria em contato com outra pessoa.
 
-![Configurar o bot](~/media/bot-service-adapter-connect-webex/webex-contact-person.png)
+![pessoa de contato](~/media/bot-service-adapter-connect-webex/webex-contact-person.png)

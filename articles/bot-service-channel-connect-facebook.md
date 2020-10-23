@@ -7,14 +7,16 @@ ms.topic: article
 ms.author: kamrani
 ms.service: bot-service
 ms.date: 01/16/2020
-ms.openlocfilehash: 69ca6c32287638ca390f7777314e93d82f37fcde
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 2526269516f770b79ed8f5f5c84a60a5c8b34cf5
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362169"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415931"
 ---
 # <a name="connect-a-bot-to-facebook"></a>Conectar um bot ao Facebook
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Seu bot pode ser conectado ao Facebook Messenger e ao Workplace do Facebook, para que ele possa se comunicar com usuários nas duas plataformas. O tutorial a seguir mostra como conectar um bot a esses dois canais.
 
@@ -60,7 +62,7 @@ O bot é acessado por meio de uma Página do Facebook.
 
 1. No painel direito, defina o controle deslizante **Permitir Acesso da API às Configurações do Aplicativo** como **Sim**.
 
-    ![Copiar a ID do Aplicativo e Segredo do Aplicativo](media/channels/fb-messenger-bot-api-settings.png)
+    ![Permitir acesso de API às configurações do aplicativo](media/channels/fb-messenger-bot-api-settings.png)
 
 1. Na parte inferior direita da página, clique no botão **Salvar Alterações**.
 
@@ -76,12 +78,12 @@ O bot é acessado por meio de uma Página do Facebook.
 1. No painel esquerdo, na entrada do Messenger, clique em **Configurações**.
 1. No painel direito, role para baixo e, na seção **Geração de Token**, selecione a página de destino.
 
-    ![Habilitar o Messenger](media/channels/fb-messenger-bot-select-messenger-page.png)
+    ![Gerar um token de acesso de página](media/channels/fb-messenger-bot-select-messenger-page.png)
 
 1. Clique no botão **Editar Permissões** para conceder pages_messaging ao aplicativo para gerar um token de acesso.
 1. Siga as etapas do assistente. Na última etapa, aceite as configurações padrão e clique no botão **Concluído**. No final, um **token de acesso à página** é gerado.
 
-    ![Permissões do Messenger](media/channels/fb-messenger-bot-permissions.png)
+    ![Aceitar as configurações](media/channels/fb-messenger-bot-permissions.png)
 
 1. Copie e salve o **Token de Acesso da Página**.
 
@@ -251,7 +253,7 @@ Adicione o pacote NuGet [Microsoft.Bot.Builder.Adapters.Facebook](https://www.nu
 
 #### <a name="create-a-facebook-adapter-class"></a>Criar uma classe de adaptador do Facebook
 
-Crie uma classe herdada da classe ***FacebookAdapter***. Essa classe atuará como nosso adaptador para o canal do Facebook e incluirá recursos de tratamento de erro (semelhante à classe ***BotFrameworkAdapterWithErrorHandler*** que já está no exemplo, usada para manipular outras solicitações do Serviço de Bot do Azure).
+Crie uma nova classe que herde da classe **_FacebookAdapter_*_. Essa classe atuará como adaptador para o canal do Facebook e incluirá recursos de tratamento de erros (semelhante à classe _*_BotFrameworkAdapterWithErrorHandler_*_ já no exemplo, usada para lidar com outras solicitações do serviço de bot do Azure).
 
 ```csharp
 public class FacebookAdapterWithErrorHandler : FacebookAdapter
@@ -306,13 +308,13 @@ public class FacebookController : ControllerBase
 
 #### <a name="inject-the-facebook-adapter-in-your-bot-startupcs"></a>Injetar o adaptador do Facebook no startup.cs do bot
 
-Adicione a seguinte linha ao método ***ConfigureServices*** no arquivo startup.cs. Isso registrará o adaptador do Facebook e o disponibilizará para a nova classe de controlador.  As definições de configuração que você adicionou na etapa anterior serão usadas automaticamente pelo adaptador.
+Adicione a seguinte linha ao método _*_configuraservices_*_ no arquivo Startup.cs. Isso registrará o adaptador do Facebook e o disponibilizará para a nova classe de controlador.  As definições de configuração que você adicionou na etapa anterior serão usadas automaticamente pelo adaptador.
 
 ```csharp
 services.AddSingleton<FacebookAdapter, FacebookAdapterWithErrorHandler>();
 ```
 
-Depois de ser adicionado, o método ***ConfigureServices*** ficará assim.
+Depois de adicionado, _*_o método configureservices_*_ deve ser assim.
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -347,7 +349,7 @@ Para concluir esta etapa, [implante o bot no Azure](https://aka.ms/bot-builder-d
 
 #### <a name="add-facebook-app-settings-to-your-bots-configuration-file"></a>Adicionar configurações do aplicativo do Facebook ao arquivo de configuração do bot
 
-Adicione as configurações mostradas abaixo ao seu arquivo appSettings.json em seu projeto de bot. Você popula **FacebookAppSecret** e **FacebookAccessToken** usando os valores coletados ao criar e configurar seu aplicativo do Facebook. **FacebookVerifyToken** deve ser uma cadeia de caracteres aleatória que você cria e será usada para verificar se o ponto de extremidade do bot é autêntico quando chamado pelo Facebook.
+Adicione as configurações mostradas abaixo ao seu arquivo appSettings.json em seu projeto de bot. Você preenche _*FacebookAppSecret** e **FacebookAccessToken** usando os valores coletados ao criar e configurar seu aplicativo do Facebook. **FacebookVerifyToken** deve ser uma cadeia de caracteres aleatória que você cria e será usada para verificar se o ponto de extremidade do bot é autêntico quando chamado pelo Facebook.
 
 ```json
   "FacebookVerifyToken": "",
@@ -386,17 +388,17 @@ Agora você pode testar se seu bot está conectado ao Facebook corretamente envi
 
 1. Navegue até a Página do Facebook.
 
-1. Clique no botão **Adicionar um Botão**.
+1. Clique em **Adicionar um botão**.
 
-    ![Adicionar um botão](media/bot-service-channel-connect-facebook/add-button.png)
+    ![O botão "adicionar um botão"](media/bot-service-channel-connect-facebook/add-button.png)
 
 1. Selecione **Entrar em contato com você** e **Enviar Mensagem** e clique em **Avançar**.
 
-    ![Adicionar um botão](media/bot-service-channel-connect-facebook/button-settings.png)
+    ![Escolha os botões a serem mostrados](media/bot-service-channel-connect-facebook/button-settings.png)
 
 1. Quando perguntado **Para onde você gostaria que este botão enviasse as pessoas?** , selecione **Messenger** e clique em **Concluir**.
 
-    ![Adicionar um botão](media/bot-service-channel-connect-facebook/button-settings-2.png)
+    ![Escolha para onde os botões enviam as pessoas](media/bot-service-channel-connect-facebook/button-settings-2.png)
 
 1. Passe o mouse sobre o novo botão **Enviar Mensagem** mostrado agora em sua Página do Facebook e clique em **Botão de Teste** no menu pop-up.  Isso iniciará uma nova conversa com seu aplicativo por Facebook Messenger, que você pode usar para testar o envio de mensagens para o bot. Depois que a mensagem for recebida pelo bot, ele enviará uma mensagem de volta para você, ecoando o texto da sua mensagem.
 

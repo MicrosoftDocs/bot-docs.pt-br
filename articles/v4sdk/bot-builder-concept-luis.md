@@ -10,16 +10,16 @@ ms.service: bot-service
 ms.date: 09/19/2018
 ms.reviewer: ''
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 00d2d55c5738712ef91cdee1468deedb3e09c66e
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: defba7fec6f1962abb7d01642173d874fabaf62a
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75799070"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416885"
 ---
 # <a name="language-understanding"></a>Reconhecimento Vocal
 
-[!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Bots podem usar uma variedade de estilos de conversa, das estruturadas e orientadas a formas livres e em aberto. Um bot precisa decidir o que fazer em seguida, no seu fluxo de conversa, com base no que o usuário disse, e em uma conversa em aberto, há uma maior variedade de respostas do usuário.
 

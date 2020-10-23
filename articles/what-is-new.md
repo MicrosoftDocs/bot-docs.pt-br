@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 08/21/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 0ca926085c4971928926a0d6fca1b34e136c4c63
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 433a5fee1277d5a9e02d682aa831f3989d0fe87b
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824906"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416746"
 ---
 # <a name="whats-new-august-2020"></a>Novidades de agosto de 2020
 
-[!INCLUDE[applies-to](includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 O SDK do bot Framework v4 é um [SDK](https://github.com/microsoft/botframework-sdk/#readme) de software livre que permite aos desenvolvedores modelar e criar conversas sofisticadas usando sua linguagem de programação favorita.
 
@@ -88,7 +88,7 @@ Os desenvolvedores que usam o Microsoft bot Framework têm muitos [recursos](bot
 - [Bot Builder filas do Azure (visualização em C#)](https://www.nuget.org/packages/Microsoft.Bot.Builder.Azure.Queues): melhor integração com as filas do Azure e a caixa de diálogo _continuar conversa adiante_ .
 - [Bot Builder BLOBs do Azure (visualização em C#)](https://www.nuget.org/packages/Microsoft.Bot.Builder.Azure.Blobs): novas implementações do armazenamento de BLOBs do Azure. Essa biblioteca é uma substituição para a implementação de armazenamento de blog do Azure mais antiga.
 
-## <a name="other-improvements"></a>Outras melhorias
+## <a name="other-improvements"></a>Outros aprimoramentos
 
 - Melhorias contínuas no suporte à API do Microsoft Team.
 - Ferramentas da CLI do bot Framework adicionadas `lg` como um plug-in principal e incluíam outros aprimoramentos gerais de ferramentas.

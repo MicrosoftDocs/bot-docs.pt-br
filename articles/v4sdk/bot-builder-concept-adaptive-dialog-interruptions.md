@@ -1,5 +1,5 @@
 ---
-title: Lidando com interrupções em caixas de diálogo adaptáveis
+title: Como lidar com interrupções em caixas de diálogo adaptáveis
 description: Descreve o conceito de tratamento de interrupções ao coletar entrada do usuário em caixas de diálogo adaptáveis
 keywords: bot, usuário, interrupções, consultoria, caixas de diálogo adaptáveis
 author: WashingtonKayaker
@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 07/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a7a46267975f3775f0510b5511c8d4cd901ffe3b
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 911100bbeccb6d855a9fdde15f40a33e3658addf
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89364387"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414456"
 ---
-# <a name="handling-interruptions-in-adaptive-dialogs"></a>Lidando com interrupções em caixas de diálogo adaptáveis
+# <a name="handling-interruptions-in-adaptive-dialogs"></a>Como lidar com interrupções em caixas de diálogo adaptáveis
 
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Quando você cria um fluxo de conversa que solicita a entrada do usuário, você precisa decidir o que deve acontecer quando um usuário responde de uma maneira que leva a conversa em uma direção diferente. É natural em conversas humanas discutir temporariamente um tópico diferente antes de retornar ao assunto original e ser capaz de lidar diretamente com cenários em que o usuário interrompe seu fluxo de conversa é um aspecto importante de um bot robusto.
 

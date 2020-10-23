@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 03/26/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: ebdfb9eff6f55c225302eab7b348767f6b06edcb
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: 88262c740cfa1d339e4a19a7fa1fc1253a6ca46e
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420387"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417147"
 ---
 # <a name="create-advanced-conversation-flow-using-branches-and-loops"></a>Criar fluxo de conversa avançado usando ramificações e loops
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Você pode criar fluxos de conversa complexos usando a biblioteca de diálogos.
 Este artigo aborda como gerenciar conversas complexas com ramificações e loop e como passar argumentos entre diferentes partes do diálogo.

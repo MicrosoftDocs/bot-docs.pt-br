@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 85e389d5d95de81c1705002b19d134b415bf95fe
-ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
+ms.openlocfilehash: 39fb0d4c351dbda9c5a3f27b881fe33faa803f0e
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763640"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416363"
 ---
 # <a name="lg-file-format"></a>Formato de arquivo .lg
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 O arquivo `.lg` descreve os modelos de geração de linguagem com referências de entidade e a respectiva composição. Este artigo aborda os vários conceitos expressos com o formato de arquivo `.lg`.
 

@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 06/09/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 75dc39a371d338e08402271f67512dc0ad3784a1
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: 89d42ad74b7f57b99371a01c8a667ebdc3860f2e
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124597"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416146"
 ---
 # <a name="events-and-triggers-in-adaptive-dialogs---reference-guide"></a>Eventos e gatilhos em caixas de diálogo adaptáveis – guia de referência
 
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Para obter uma introdução a este tópico, consulte o artigo sobre o conceito de [eventos e gatilhos em caixas de diálogo adaptáveis](../v4sdk/bot-builder-concept-adaptive-dialog-triggers.md) .
 

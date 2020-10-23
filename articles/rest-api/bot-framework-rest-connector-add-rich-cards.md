@@ -7,19 +7,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 23dfd922e65ac39b4edbee02789153e3344b0561
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 0d77b81d1e793669fbc21789e3f4c5fe34e745e6
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824606"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417087"
 ---
 # <a name="adding-rich-card-attachments-to-messages-with-the-bot-connector-api"></a>Adicionando anexos de cartão avançados a mensagens com a API do conector de bot
-
-> [!div class="op_single_selector"]
-> - [.NET](../dotnet/bot-builder-dotnet-add-rich-card-attachments.md)
-> - [Node.js](../nodejs/bot-builder-nodejs-send-rich-cards.md)
-> - [REST](../rest-api/bot-framework-rest-connector-add-rich-cards.md)
 
 Alguns canais permitem que o bot envie _cartões avançados_ para os usuários. Um cartão avançado é um anexo que contém elementos interativos, como botões, texto, imagens, áudio, vídeo e assim por diante.
 
@@ -49,7 +44,7 @@ Atualmente, o Bot Framework dá suporte a oito tipos de cartões avançados:
 
 Para processar eventos em cartões avançados, use objetos [CardAction][] para especificar o que deve acontecer quando o usuário clica em um botão ou toca em uma seção do cartão. Cada objeto `CardAction` contém estas propriedades:
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | channelData | string | dados específicos do canal associados a esta ação |
 | displayText | string | texto a ser exibido no feed do chat se o botão receber um clique |

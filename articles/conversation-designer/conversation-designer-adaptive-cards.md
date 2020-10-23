@@ -8,14 +8,17 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
 ROBOTS: NoIndex, NoFollow
-ms.openlocfilehash: 2d7c898a555dde53f01cf09b6ab54abf2c91960d
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 85693eb188b68dca5829c54af3160967ce2acaf6
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75795915"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416447"
 ---
 # <a name="configure-adaptive-cards"></a>Configurar cartões adaptáveis
+
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
+
 > [!IMPORTANT]
 > O Designer de Conversa ainda não está disponível para todos os clientes. Mais detalhes sobre a disponibilidade do Designer de Conversa serão lançados ainda este ano.
 

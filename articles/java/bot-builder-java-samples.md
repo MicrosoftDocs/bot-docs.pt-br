@@ -8,15 +8,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: cf936afaf0e3e9205a9d870e3624a2d452bc84dc
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: bcf02d97d23ee1043acd71c06df3098fbf332b44
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75797846"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416777"
 ---
 # <a name="bot-framework-sdk-v4-java-samples"></a>Exemplos do SDK do Bot Framework v4 do Java
-[!INCLUDE [pre-release-label](../includes/pre-release-label.md)]
+
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Use as amostras para ajudá-lo na criação de bots com o SDK v4 do Java, atualmente em versão prévia.
 

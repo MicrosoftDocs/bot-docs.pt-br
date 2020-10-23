@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 03/23/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 6d52d9b76c031fe63d201786f8b6e0377750fcae
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: 61a97037e868c2f908e7c5ea9aaf8609bbf44b31
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83555638"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415950"
 ---
 # <a name="set-up-continuous-deployment"></a>Configurar a implantação contínua
 
-[!INCLUDE [applies-to](./includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Este artigo mostra como configurar a implantação contínua para seu bot. Você pode habilitar a implantação contínua para implantar automaticamente as alterações no código do seu repositório de código-fonte para o Azure. Neste tópico, abordaremos como configurar a implantação contínua para o GitHub. Para obter informações sobre como configurar a implantação contínua com outros sistemas de controle de código-fonte, confira a seção de recursos adicionais na parte inferior desta página.
 

@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 08/18/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: aafd5f898fb919989fb65558644ce721896e225b
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 5025c5c43b5423f395765f6cf2a9920cf04cac13
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89364403"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416977"
 ---
-# <a name="create-a-bot-project-for-adaptive-dialogs"></a>Criar um projeto de bot para caixas de diálogo adaptáveis  
+# <a name="create-a-bot-project-for-adaptive-dialogs"></a>Criar um projeto de bot para caixas de diálogos adaptáveis  
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Se você quiser escrever uma caixa de diálogo adaptável do zero ou consumir uma caixa de diálogo que foi criada no bot Framework Composer, precisará de certas scaffolding em vigor que não seja necessária para outros tipos de projetos de bot.
 

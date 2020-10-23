@@ -7,19 +7,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 15aac24f228e52de966326af396dbba17fdbdf03
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: baa482cb2b25388fe01026f18f72e20cef7ffc65
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824616"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417108"
 ---
 # <a name="add-input-hints-to-messages-with-the-bot-connector-api"></a>Adicionar dicas de entrada a mensagens com a API do conector de bot
-
-> [!div class="op_single_selector"]
-> - [.NET](../dotnet/bot-builder-dotnet-add-input-hints.md)
-> - [Node.js](../nodejs/bot-builder-nodejs-send-input-hints.md)
-> - [REST](../rest-api/bot-framework-rest-connector-add-input-hints.md)
 
 Ao especificar uma dica de entrada para uma mensagem, você pode indicar se seu bot está aceitando, esperando ou ignorando a entrada do usuário após a entrega da mensagem ao cliente. Para canais compatíveis com esse campo, isso permite que os clientes definam o estado dos controles de entrada do usuário de acordo. Por exemplo, se a dica de entrada de uma mensagem indicar que o bot está ignorando a entrada do usuário, o cliente poderá fechar o microfone e desabilitar a caixa de entrada para evitar que o usuário forneça entrada.
 

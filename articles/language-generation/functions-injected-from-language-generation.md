@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: efa93df31b37bc5b9ba8f467c5fa27c949b507c7
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 2db0d14420d000fdb259f68d0f89105fc178ef5a
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360729"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416768"
 ---
 # <a name="functions-injected-from-the-language-generation-library"></a>Funções injetadas da biblioteca de geração de linguagem
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 O artigo a seguir fornece detalhes sobre como injetar funções da biblioteca [LG (geração de linguagem)](../v4sdk/bot-builder-concept-language-generation.md).
 

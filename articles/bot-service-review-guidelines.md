@@ -3,14 +3,16 @@ ms.topic: conceptual
 ms.author: kamrani
 ms.service: bot-service
 title: Diretrizes de revisão de bot
-ms.openlocfilehash: 24477b5ca04ab71d61064d3f8a6689e10b623f28
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: fc6d65988fe2fd64fbc1a3d79691ff5c6dd9ddaf
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80648035"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416652"
 ---
 # <a name="bot-review-guidelines"></a>Diretrizes de revisão de bot
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Agradecemos por investir seu tempo e talento na criação de bot, botlets, aplicativos Web, suplementos ou habilidades ("integrações de aplicativo") para canais da Microsoft. Esses são os requisitos mínimos que a integração de aplicativo deve atender antes de ser publicada em um canal da Microsoft, como o Microsoft Teams. Cada canal pode ter requisitos específicos, além dos requisitos detalhados abaixo. Se aplicável, você encontrará termos específicos do canal na página de configuração de cada canal e talvez seja necessário inscrever-se no serviço de um canal antes de publicar um bot nesse canal.
 

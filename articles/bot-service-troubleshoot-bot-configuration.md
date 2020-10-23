@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 5/17/2020
-ms.openlocfilehash: d86e6a245764c7050d5475f3b35b6681bcec0dd6
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 0d2a87de56b6ed99e611302d571ef44a97f19d9d
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360829"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416620"
 ---
 # <a name="troubleshoot-bot-configuration-issues"></a>Solucionar problemas de configuração de bot
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 <!-- Attention writers!!
      When you create a new FAQ, please add the related link to the proper section in the bot-service-troubleshoot-index.md. -->

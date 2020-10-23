@@ -7,14 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 53f006bbbe4d7b4337264b8421b05c4ed4d7c117
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: f5de02c83a7480cfcbf323475369c13094bd33d8
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360909"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416670"
 ---
 # <a name="bot-framework-user-agent-requests"></a>Solicitações de agente do usuário do Bot Framework
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Se você está lendo esta mensagem, provavelmente recebeu uma solicitação de um Microsoft Bot Framework Service. Este guia irá ajudá-lo a compreender a natureza dessas solicitações e fornecerá as etapas para pará-las, se desejado.
 

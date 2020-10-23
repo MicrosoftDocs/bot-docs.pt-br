@@ -7,14 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/15/2020
-ms.openlocfilehash: c91082dd3763d654f0019456dff43c1b13e34b05
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: e91390d182b7981d5fcf25297326bc8c3f69e911
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143395"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416534"
 ---
 # <a name="troubleshoot-index"></a>Solucionar problemas de índice
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 <!-- Attention writers!! When you create a new FAQ, please add the related link to the proper section below. -->
 

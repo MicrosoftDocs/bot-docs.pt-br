@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a95c4bb47ca75f9f617ce52fa2021cccc92b0fea
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: c3c8a988f8099725a1c166e82137247713e4e399
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824336"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417117"
 ---
 # <a name="implement-custom-storage-for-your-bot"></a>Implementar um armazenamento personalizado para seu bot
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 As interações do bot se enquadram em três áreas: primeiro, o intercâmbio de atividades com o Serviço de Bot do Azure; segundo, o carregamento e salvamento do diálogo de estado com um Repositório e, por fim, qualquer outro serviço de back-end que o bot precise para trabalhar e concluir seu trabalho.
 

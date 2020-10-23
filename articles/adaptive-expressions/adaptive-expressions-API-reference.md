@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/21/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: ce76dd093c6e8672da5d4b718a8a0ceb31b88156
-ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+ms.openlocfilehash: 05942454403abcf88d455baec68634122d43f091
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88143925"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416086"
 ---
 # <a name="api-reference-for-adaptive-expressions"></a>Referência de API das expressões adaptáveis
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 ## <a name="api-reference-links"></a>Links de referência de API
 

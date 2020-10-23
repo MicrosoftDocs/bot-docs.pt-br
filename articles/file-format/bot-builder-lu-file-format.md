@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 9d419d63a232a2f4b80f3a49ea0caf58c25ac42a
-ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
+ms.openlocfilehash: 99c2bf27eeb74a6a0955ef4f32ccc0ec135f63e2
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763643"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416380"
 ---
 # <a name="lu-file-format"></a>Formato de arquivo .lu
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Um arquivo .lu contém definições baseadas em texto simples e semelhantes a Markdown para os conceitos do [LUIS][1]. Este artigo aborda os vários conceitos expressos por meio do formato de arquivo .lu.
 
@@ -38,7 +38,7 @@ Use **>** para criar um comentário. Aqui está um exemplo:
 
 Uma [intenção][2] representa uma ação que o usuário deseja executar. A intenção é uma finalidade ou uma meta expressa na entrada do usuário, como reservar um voo, pagar uma fatura ou localizar um artigo de notícias. Por exemplo, um aplicativo de viagem pode definir uma intenção chamada _BookFlight_. Você define e nomeia as intenções que correspondem a essas ações.
 
-Este é um arquivo .lu que captura uma intenção `Greeting` simples com uma lista de exemplos de enunciados que capturam as maneiras pelas quais os usuários podem expressar essa intenção. Use os caracteres **-** , **+** ou **\*** para indicar as listas. Não há suporte para listas numeradas.
+Este é um arquivo .lu que captura uma intenção `Greeting` simples com uma lista de exemplos de enunciados que capturam as maneiras pelas quais os usuários podem expressar essa intenção. Use o **-** **+** caractere,, ou * *\** _ para denotar listas. Não há suporte para listas numeradas.
 
 ```.lu
 # Greeting
@@ -71,7 +71,7 @@ Uma [entidade][3] representa informações detalhadas que são relevantes em um 
 
 |Exemplo de enunciado do usuário|Entidades|
 |--------------------------|----------|
-|"Reservar um voo para **Seattle**?"|Seattle|
+|"Reservar um vôo para _ * Seattle * *?"|Seattle|
 |"Quando a sua loja é **aberta**?"|Abrir|
 |"Agendar uma reunião às **13h** com **Bob** na distribuição"|13h, Bob|
 
@@ -295,7 +295,7 @@ Veja no exemplo abaixo como as funções `userName:firstName` e `userName:lastNa
 > @ ml userName hasRoles lastName, firstName
 ```
 
-Em [padrões](#patterns), você pode usar funções usando a `{<entityName>:<roleName>}` notação. Aqui está um exemplo:
+Em [padrões](#patterns), você pode usar funções usando a `{<entityName>:<roleName>}` notação. Veja um exemplo:
 
 ```.lu
 # getUserName

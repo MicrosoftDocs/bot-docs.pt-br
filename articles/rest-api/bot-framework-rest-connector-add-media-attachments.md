@@ -7,19 +7,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 10/25/2018
-ms.openlocfilehash: a35936522ef15b84b6174898e9be20e7ddad230b
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 4088960702e6158b66ff084741b5546f8615c1b2
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824596"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417101"
 ---
 # <a name="add-media-attachments-to-messages-with-the-bot-connector-api"></a>Adicionar anexos de mídia a mensagens com a API do conector do bot
-
-> [!div class="op_single_selector"]
-> - [.NET](../dotnet/bot-builder-dotnet-add-media-attachments.md)
-> - [Node.js](../nodejs/bot-builder-nodejs-send-receive-attachments.md)
-> - [REST](../rest-api/bot-framework-rest-connector-add-media-attachments.md)
 
 Bots e canais normalmente trocam cadeias de caracteres de texto, mas alguns canais também oferecem suporte a troca de anexos, o que permite que seu bot envie mensagens mais ricas para os usuários. Por exemplo, seu bot pode enviar anexos de mídia (por exemplo, imagens, vídeos, áudio, arquivos) e [cartões avançados](bot-framework-rest-connector-add-rich-cards.md). Este artigo descreve como adicionar anexos de mídia às mensagens usando o serviço Conector de Bot.
 

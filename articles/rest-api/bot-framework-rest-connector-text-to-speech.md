@@ -7,19 +7,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/20/2020
-ms.openlocfilehash: eb8aff33329ab0ad8ec7b1ce97834e4d99a8f1b6
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: a0d70958c28d921ac9c9e4be8ec06303b97f8117
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824486"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417068"
 ---
 # <a name="add-speech-to-messages-with-the-bot-connector-api"></a>Adicionar fala a mensagens com a API do conector de bot
-
-> [!div class="op_single_selector"]
-> - [.NET](../dotnet/bot-builder-dotnet-text-to-speech.md)
-> - [Node.js](../nodejs/bot-builder-nodejs-text-to-speech.md)
-> - [REST](../rest-api/bot-framework-rest-connector-text-to-speech.md)
 
 Se você estiver criando um bot para um canal habilitado para fala, como o Cortana, será possível criar mensagens que especifiquem o texto a ser falado pelo seu bot. Você também pode tentar influenciar o estado do microfone do cliente especificando uma [dica de entrada](bot-framework-rest-connector-add-input-hints.md) para indicar se o seu bot está aceitando, esperando ou ignorando a entrada do usuário.
 

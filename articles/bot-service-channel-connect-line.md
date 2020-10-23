@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 1/7/2019
-ms.openlocfilehash: 41c1b07d2a45a45fd78729af21bdbb58ad2217b8
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 36728b971db4d80dbd593007d9c4e0bd237606be
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362139"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415747"
 ---
 # <a name="connect-a-bot-to-line"></a>Conectar um bot ao LINE
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Você pode configurar seu bot para se comunicar com as pessoas através do aplicativo LINE.
 

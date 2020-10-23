@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 05/31/2020
-ms.openlocfilehash: 0627856d071677278cb9bf056f0462db44423627
-ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
+ms.openlocfilehash: ef4fe56f81007843205348f283f8e3c150ede47a
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763888"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414480"
 ---
 # <a name="using-declarative-assets-in-adaptive-dialogs"></a>Como usar ativos declarativos em diálogos adaptáveis
+
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Este artigo explica os conceitos contidos em ativos declarativos e bots que incorporam diálogos adaptáveis usando a abordagem declarativa.  Os diálogos adaptáveis declarativos consistem em arquivos baseados em JSON que descrevem todos os atributos de diálogos adaptáveis, incluindo os [gatilhos][triggers] e as [ações][actions]. Esses arquivos declarativos são carregados no tempo de execução usando o gerenciador de recursos para criar os diálogos adaptáveis.
 
@@ -434,9 +436,9 @@ O valor [generator][generator] contém um link para o arquivo .lg associado ao d
 }
 ```
 
-## <a name="the-bot-framework-command-line-interface"></a>A interface de linha de comando do bot Framework
+## <a name="the-bot-framework-command-line-interface"></a>A interface do bot Framework Command-Line
 
-Vários comandos da [interface de linha de comando (CLI do BF) do New bot Framework][bf-cli] foram adicionados com o lançamento de caixas de diálogo adaptáveis no SDK do bot Framework. Isso inclui dois comandos relacionados à caixa de diálogo para trabalhar com `.dialog` `.schema` arquivos e que são muito úteis ao usar a abordagem declarativa para o desenvolvimento de caixa de diálogo adaptável.
+Vários comandos do New [bot framework Command-Line interface (BF CLI)][bf-cli] foram adicionados com o lançamento de caixas de diálogo adaptáveis no SDK do bot Framework. Isso inclui dois comandos relacionados à caixa de diálogo para trabalhar com `.dialog` `.schema` arquivos e que são muito úteis ao usar a abordagem declarativa para o desenvolvimento de caixa de diálogo adaptável.
 
 O novo grupo de CLI `dialog` tem os dois comandos a seguir: `dialog:merge` e `dialog:verify` .
 

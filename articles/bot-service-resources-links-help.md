@@ -7,14 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 06464de5013ead7243a56b9d762b5a86859ede19
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 3f1b8f4d8f59ae9532097ac509ee142d052e1aee
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360919"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416698"
 ---
 # <a name="bot-framework-additional-resources"></a>Recursos adicionais do Bot Framework
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Esses recursos fornecem informações adicionais e suporte para desenvolvimento de bots com o Bot Framework.
 

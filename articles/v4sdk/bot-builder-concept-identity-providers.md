@@ -9,14 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 03/11/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 966e484e4179c8256522c51b7873c1cb106e47a0
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 3b99516629fccb37f85dbbbef6ee31fa3446d14e
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80250185"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416330"
 ---
 # <a name="identity-providers"></a>Provedores de identidade
+
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Um provedor de identidade autentica as identidades do usuário ou do cliente e emite tokens de segurança consumíveis. Ele fornece autenticação de usuário como um serviço.
 
@@ -52,7 +54,7 @@ Você pode escolher entre duas implementações do provedor de identidade do AD 
 
 ### <a name="azure-ad-v1"></a>Azure AD v1
 
-Use as configurações mostradas para configurar a plataforma do desenvolvedor do Azure AD (v1.0), também conhecida como ponto de extremidade do **Azure AD v1,**   que permite criar aplicativos que conectam usuários com segurança a uma conta corporativa ou de estudante da Microsoft.
+Use as configurações mostradas para configurar a plataforma de desenvolvedor do Azure AD (v 1.0), também conhecida como ponto de extremidade **do Azure ad v1** , que permite criar aplicativos que conectam com segurança os usuários com uma conta corporativa ou de estudante da Microsoft.
 Para obter mais informações, confira a [visão geral do Azure Active Directory para desenvolvedores (v1.0)](https://docs.microsoft.com/azure/active-directory/azuread-dev/v1-overview).
 
 [!INCLUDE [azure-ad-v1-settings](~/includes/authentication/auth-aad-v1-settings.md)]
@@ -61,8 +63,7 @@ Para obter mais informações, confira a [visão geral do Azure Active Directory
 
 ### <a name="azure-ad-v2"></a>Azure AD v2
 
-Use as configurações mostradas para configurar a plataforma de identidade da Microsoft (v2.0), também conhecida como ponto de extremidade do **Azure AD v2,**  que é uma evolução da plataforma do Azure AD (v1.0).  Ela permite que um bot obtenha tokens para chamar APIs da Microsoft, como APIs do Microsoft Graph ou personalizadas. 
-Para obter mais informações, confira a [visão geral da plataforma de identidade da Microsoft (v2.0)](https://docs.microsoft.com/azure/active-directory/develop/active-directory-appmodel-v2-overview).
+Você usa as configurações mostradas para configurar a plataforma de identidade da Microsoft (v 2.0), também conhecida como ponto de extremidade **do Azure ad v2** , que é uma evolução da plataforma do Azure AD (v 1.0).    Ela permite que um bot obtenha tokens para chamar APIs da Microsoft, como APIs do Microsoft Graph ou personalizadas. Para obter mais informações, consulte a [visão geral da plataforma Microsoft Identity (v 2.0)](https://docs.microsoft.com/azure/active-directory/develop/active-directory-appmodel-v2-overview).
 
 As configurações do AD v2 permitem que um bot acesse dados do Office 365 por meio da API do Microsoft Graph.
 

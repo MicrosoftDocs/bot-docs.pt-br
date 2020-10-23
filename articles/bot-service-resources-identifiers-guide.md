@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 04/30/2019
-ms.openlocfilehash: fba163671e4309de8c2ac2ecb5b8ba816cfe8141
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: ddeec0e8b330ea63269849c7afcac5828b9815b1
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80648075"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416703"
 ---
 # <a name="id-fields-in-the-bot-framework"></a>Campos de ID no Bot Framework
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Este guia descreve as características dos campos de ID presentes no protocolo v3 do Bot Framework.
 

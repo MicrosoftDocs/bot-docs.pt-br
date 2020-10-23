@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/26/2019
-ms.openlocfilehash: 58248b4c4d9b3da4bb2172b571768651dd97f7a4
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 26beb5652dd1f623067a0eaceb6d20b40d52bcdd
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360819"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416497"
 ---
 # <a name="connect-a-bot-to-microsoft-teams"></a>Conectar um bot ao Microsoft Teams
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Os bots em produção devem ser adicionados ao Microsoft Teams como parte de um aplicativo. Para obter mais informações, leia [Criar um bot](https://docs.microsoft.com/microsoftteams/platform/concepts/bots/bots-create) e [Testar e depurar o bot do Microsoft Teams](https://docs.microsoft.com/microsoftteams/platform/concepts/bots/bots-test) nos documentos do Microsoft Teams.
 

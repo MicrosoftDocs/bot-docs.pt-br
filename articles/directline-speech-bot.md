@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/01/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: c642e8fa3f81f6e47ff3f57c21a455cb69f66a38
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 1640c228e99f626f67fdc74c62928655939344a1
+ms.sourcegitcommit: e37cf15f4907910560f34445a0fbdd7ae75b4787
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360809"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92439854"
 ---
 # <a name="use-direct-line-speech-in-your-bot"></a>Usar o Direct Line Speech no seu bot
 
-[!INCLUDE [applies-to-v4](includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 O Direct Line Speech usa uma nova funcionalidade de streaming baseada em WebSocket do Bot Framework para trocar mensagens entre o canal do Direct Line Speech e o seu bot. Após a habilitação do canal do Direct Line Speech no Portal do Azure, você precisará atualizar seu bot para que ouça e aceite essas conexões de WebSocket. As instruções a seguir explicam como fazer isso.
 
@@ -127,11 +127,10 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 }
 
 ```
+
 O restante do código do bot permanece o mesmo.
 
-
-
-Etapa 4: Definir opcionalmente o campo Falar em Atividades para personalizar o que é falado para o usuário
+## <a name="step-4-optionally-set-the-speak-field-on-activities-to-customize-what-is-spoken-to-the-user"></a>Etapa 4: Definir opcionalmente o campo Falar em Atividades para personalizar o que é falado para o usuário
 
 Por padrão, todas as mensagens enviadas por meio do Direct Line Speech para o usuário serão faladas.
 

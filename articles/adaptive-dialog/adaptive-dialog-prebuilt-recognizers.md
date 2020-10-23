@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 06/12/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b1bef2f1d9bdd8676d785e6c0312e2a638ccc1d5
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: bbeac3019f79c37f343294c0a7a843bf0c703308
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124598"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416157"
 ---
 # <a name="recognizers-in-adaptive-dialogs---reference-guide"></a>Reconhecedores em caixas de diálogo adaptáveis – guia de referência
 
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Os reconhecedores permitem que o bot compreenda a entrada do usuário e uma caixa de diálogo adaptável pode ter um ou mais reconhecedores configurados. Para obter informações adicionais sobre os reconhecedores, consulte o artigo [reconhecedores em caixas de diálogo adaptáveis](../v4sdk/bot-builder-concept-adaptive-dialog-recognizers.md) .
 
@@ -37,7 +37,7 @@ Adaptive dialogs provide support for the following recognizers:
 
 O _reconhecedor RegEx_ oferece a capacidade de extrair dados de intenção e de entidade de um enunciado com base em padrões de expressão regular.
 
-`RegexRecognizer`consiste basicamente em:
+`RegexRecognizer` consiste basicamente em:
 
 * `Intents`. O objeto `Intents` contém uma lista de objetos `IntentPattern`, e esses `IntentPattern` objetos consistem em uma propriedade `Intent` que é o nome da intenção e uma propriedade `Pattern` que contém uma expressão regular usada para analisar o enunciado a fim de determinar a intenção.
 * `Entities`. O objeto `Entities` contém uma lista de objetos `EntityRecognizer`.  O SDK do Bot Framework define várias classes `EntityRecognizer` para ajudar você a determinar as entidades contidas em um enunciado dos usuários:

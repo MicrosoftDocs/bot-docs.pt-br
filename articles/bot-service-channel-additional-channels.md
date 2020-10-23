@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/08/2019
-ms.openlocfilehash: c24f807bdcfdde1d27e76ae46aa75c47f231058a
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: d6b62a670f4d44c49d5276491c573cc48239b853
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362149"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415900"
 ---
 # <a name="additional-channels"></a>Canais adicionais
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Além dos canais listados nestes documentos, há alguns canais adicionais disponíveis como adaptadores por meio das nossas [plataformas fornecidas](https://botkit.ai/docs/v4/platforms/) pelo Botkit ou de [repositórios da comunidade](https://github.com/BotBuilderCommunity/). Abaixo estão os canais adicionais fornecidos:
 

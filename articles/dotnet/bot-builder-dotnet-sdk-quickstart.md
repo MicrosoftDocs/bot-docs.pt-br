@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 52feb8cc344698e114a6b4db206326c9db53a5c6
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: 44a547f8fbb133b86499153f8159b1a627926012
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124416"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416490"
 ---
 # <a name="create-a-bot-with-the-bot-framework-sdk-for-net"></a>Criar um bot com o SDK do Bot Framework para .NET
 
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Este guia de início rápido oferece orientações sobre como criar um bot usando o modelo de C# e testá-lo com o Bot Framework Emulator.
 

@@ -7,14 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 07/10/2020
-ms.openlocfilehash: 93c01c16461b9d9628fb7f9bcb70da371268d4ac
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: be0807f0bdb7ea419fa53a443480c5088de7c3c6
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360929"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416729"
 ---
 # <a name="bot-framework-general"></a>Do bot Framework geral
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 <!-- Attention writers!!
      1 - This article contains FAQs regarding Bot Framework generalities.

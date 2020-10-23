@@ -9,14 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 03/19/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 34b9de1ec18747c676b89ce099479319f3d4db38
-ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
+ms.openlocfilehash: c90bd32b17aa272454d836d88864040a5c945541
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763884"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417177"
 ---
 # <a name="single-sign-on"></a>Logon único
+
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 O SSO (logon único) permite que um cliente, como o assistente virtual, WebChat e assim por diante, comunique-se com um bot ou uma habilidade em nome do usuário.
 No momento, há suporte apenas para o provedor de identidade do [Azure AD v2](./bot-builder-concept-identity-providers.md#azure-active-directory-identity-provider).

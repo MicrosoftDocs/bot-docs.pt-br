@@ -7,19 +7,22 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/20/2020
-ms.openlocfilehash: 04dda50ea23ac1eea00f5673cf8f769b78e59cd5
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: e49b0620e5f9248ed1b8731349cf3d379a2df60c
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124437"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416567"
 ---
 # <a name="troubleshoot-general"></a>Solucionar problemas gerais
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
+
 Essas perguntas frequentes podem ajudá-lo a solucionar problemas comuns de desenvolvimento de bot ou operacionais.
 
 ## <a name="how-can-i-troubleshoot-issues-with-my-bot"></a>Como é possível solucionar problemas com o bot?
 
-1. Depure o código-fonte do bot com [Visual Studio Code](debug-bots-locally-vscode.md) ou [Visual Studio](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger?view=vs-2017).
+1. Depure o código-fonte do bot com [Visual Studio Code](debug-bots-locally-vscode.md) ou [Visual Studio](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger).
 1. Teste o bot usando o [emulador](bot-service-debug-emulator.md) antes de implantá-lo na nuvem.
 1. Implante seu bot em uma plataforma de hospedagem na nuvem, como o Azure e, em seguida, teste a conectividade com o bot usando o controle de webchat interno do painel do bot no <a href="https://portal.azure.com" target="_blank">Portal do Azure</a>. Se você encontrar problemas com o bot depois de implantá-lo no Azure, considere usar este artigo de blog: [Entendendo a solução de problemas e suporte do Azure](https://azure.microsoft.com/blog/understanding-azure-troubleshooting-and-support/).
 1. Exclua a [autenticação][TroubleshootingAuth] como um possível problema.
@@ -98,7 +101,7 @@ São permitidos 50 assinantes para bots em desenvolvimento no Kik. Após 50 usu�
 
 ## <a name="how-can-i-use-authenticated-services-from-my-bot"></a>Como é possível usar serviços autenticados do meu bot?
 
-Para a autenticação do Azure Active Directory, consulte Adicionar autenticação [V3](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-authentication?view=azure-bot-service-3.0&tabs=csharp) | [V4](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-authentication?view=azure-bot-service-4.0&tabs=csharp).
+Para Azure Active Directory autenticação, consulte o tutorial [Adicionar autenticação ao bot](v4sdk/bot-builder-authentication.md) .
 
 > [!NOTE]
 > Se você adicionar a funcionalidade de autenticação e segurança ao bot, certifique-se de que os padrões implementados no código estejam em conformidade com os padrões de segurança apropriados ao aplicativo.
@@ -121,60 +124,6 @@ Para corrigir isso, defina a propriedade `from` em cada mensagem que o cliente D
 
 ## <a name="what-causes-the-direct-line-30-service-to-respond-with-http-status-code-502-bad-gateway"></a>O que faz com que o serviço Direct Line 3.0 responda com o código de status HTTP 502 "Gateway Incorreto"?
 O Direct Line 3.0 retorna o código de status HTTP 502 quando tenta contatar o bot mas a solicitação não é concluída com êxito. Esse erro indica que o bot retornou um erro ou a solicitação atingiu o tempo limite. Para obter mais informações sobre erros que o bot gera, acesse o painel do bot no <a href="https://portal.azure.com" target="_blank">Portal do Azure</a> e clique no link "Problemas" do canal afetado. Se você tiver o Application Insights configurado para o bot, também poderá localizar informações detalhadas sobre erros.
-
-::: moniker range="azure-bot-service-3.0"
-
-## <a name="where-is-conversation-state-stored"></a>Onde o estado de conversa é armazenado?
-
-Os dados nos recipientes de propriedades de conversa privada, conversa e usuário são armazenados usando a interface `IBotState` do Connector. Cada recipiente de propriedades é delimitado pela ID do bot. O recipiente de propriedades do usuário é inserido pela ID de usuário, o recipiente de propriedades de conversa é inserido pela ID da conversa e o recipiente de propriedades de conversa privada é inserida por ambas ID de usuário e ID da conversa.
-
-Se você usar o SDK do Bot Framework para .NET ou o SDK do Bot Framework para Node.js para compilar o bot, a pilha de diálogo e os dados de diálogo serão automaticamente armazenados como entradas no recipiente de propriedades de conversa privada. A implementação do C# usa serialização binária e a implementação do Node.js usa a serialização JSON.
-
-Se quiser armazenar esses dados nos datacenters, forneça uma implementação personalizada do serviço do estado. Isso pode ser feito pelo menos de duas maneiras:
-
-* Use pacotes botbuilder-azure.
-* Use a camada REST para fornecer um serviço `IBotState`.
-* Use as interfaces do Construtor na camada de linguagem (C#, JavaScript ou Python).
-
-## <a name="what-causes-an-error-with-http-status-code-412-precondition-failed-or-http-status-code-409-conflict"></a>O que causa um erro com o código de status HTTP 412 "Falha na Pré-Condição" ou código de status HTTP 409 "Conflito"?
-
-O serviço `IBotState` do Connector é usado para armazenar os recipientes de dados de bot (ou seja, o usuário, a conversa e os recipientes de dados de bot privados, em que os recipientes de dados de bot privados incluem o estado de "fluxo de controle" da pilha de diálogo). O controle de simultaneidade no serviço `IBotState` é gerenciado pela simultaneidade otimista via ETags. Se houver um conflito de atualização (devido a uma atualização simultânea de um único recipientes de dados de bot) durante uma sequência "leitura-modificação-gravação", então:
-
-* Se os ETags forem preservados, um erro com o código de status HTTP 412 "Falha na Pré-Condição" será lançado do serviço `IBotState`. Esse é o comportamento padrão no SDK do Bot Framework para .NET.
-* Se os ETags não forem preservados (ou seja, o ETag estiver definido como `\*`), a política "última gravação vence" estará em vigor, o que evitará o erro "Falha na Pré-Condição", mas arriscará em perda de dados. Esse é o comportamento padrão no SDK do Bot Framework para Node.js.
-
-## <a name="how-can-i-fix-precondition-failed-412-or-conflict-409-errors"></a>Como corrigir erros de "Falha na Pré-Condição" (412) ou "Conflito" (409)?
-
-Esses erros indicam que o bot processou várias mensagens para a mesma conversa de uma só vez. Se o bot estiver conectado a serviços que exigem mensagens ordenadas com precisão, considere bloquear o estado de conversa para garantir que as mensagens não sejam processadas em paralelo.
-
-O SDK do Bot Framework para .NET fornece um mecanismo (classe `LocalMutualExclusion` que implementa `IScope`) para serializar pessimisticamente a manipulação de uma conversa única com um sinal na memória. É possível estender essa implementação para usar uma concessão do Redis, com escopo definido pelo endereço da conversa.
-
-Se o bot não estiver conectado a serviços externos ou se o processamento de mensagens em paralelo a partir da mesma conversa for aceitável, você poderá adicionar esse código para ignorar quaisquer colisões que ocorram na API de Estado do Bot. Isso permitirá que a última resposta defina o estado de conversa.
-
-```cs
-var builder = new ContainerBuilder();
-builder
-    .Register(c => new CachingBotDataStore(c.Resolve<ConnectorStore>(), CachingBotDataStoreConsistencyPolicy.LastWriteWins))
-    .As<IBotDataStore<BotData>>()
-    .AsSelf()
-    .InstancePerLifetimeScope();
-builder.Update(Conversation.Container);
-```
-
-## <a name="how-do-i-version-the-bot-data-stored-through-the-state-api"></a>Como fazer a versão dos dados de bot armazenados através da API de Estado?
-
-> [!IMPORTANT]
-> A API de Serviço de Estado do Bot Framework não é recomendada para ambientes de produção ou bots v4, e poderá ser totalmente preterida em uma versão futura. É recomendável que você atualize o código do bot para que ele use o armazenamento em memória para fins de teste ou use uma das **Extensões do Azure** para bots de produção. Para obter mais informações, consulte o tópico [Gerenciar dados de estado](v4sdk/bot-builder-howto-v4-state.md).
-
-O serviço de Estado permite que você persista o progresso através dos diálogos em uma conversa para que um usuário possa retornar a uma conversa com um bot posteriormente sem perder a posição. Para preservar isso, os recipientes de propriedades de dados de bot armazenados por meio da API de Estado não são automaticamente excluídos quando você modifica o código do bot. É necessário decidir se os dados do bot devem ou não ser limpos, dependendo se o código modificado é compatível com as versões mais antigas dos dados.
-
-* Se você quiser redefinir manualmente a pilha de diálogo e o estado de conversa durante o desenvolvimento do bot, poderá usar o comando `/deleteprofile` para excluir os dados de estado. Certifique-se de incluir o espaço inicial neste comando para evitar que o canal o interprete.
-* Depois que o bot for implantado na produção, você poderá criar uma versão dos dados de bot para que, se você aumentar a versão, os dados de estado associados sejam limpos. Com o SDK do Bot Framework para Node.js, isso pode ser realizado usando middleware e com o SDK do Bot Framework para .NET, isso pode ser feito usando uma implementação `IPostToBot`.
-
-> [!NOTE]
-> Se a pilha de diálogo não puder ser desserializada corretamente, devido a alterações no formato de serialização ou porque o código foi alterado demasiadamente, o estado de conversa será redefinido.
-
-::: moniker-end
 
 ## <a name="why-do-i-get-an-authorization_requestdenied-exception-when-creating-a-bot"></a>Por que recebo uma exceção Authorization_RequestDenied ao criar um bot?
 

@@ -7,12 +7,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 2/7/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 615db6c4ccb13c7757ed59bdddf30eaa71c01093
-ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
+ms.openlocfilehash: c28f019adbd1a607ef68e790d624994821556d20
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763934"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416998"
 ---
 <!--
 Related TODO:
@@ -35,10 +35,9 @@ General TODO: (Feedback from CSE (Nafis))
 - Does the bot need all of these scopes for the samples? (e.g. "Read all users' basic profiles")
 -->
 
-
 # <a name="add-authentication-to-a-bot"></a>Adicionar autenticação a um bot
 
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 O SDK v4 do serviço de bot do Azure facilita o desenvolvimento de bots que podem acessar recursos online que exigem autenticação do usuário. O bot não precisa gerenciar tokens de autenticação porque o Azure faz isso para você usando o OAuth 2,0 para gerar um token baseado nas credenciais de cada usuário. O bot usa o token gerado pelo Azure para acessar esses recursos. Dessa forma, o usuário não precisa fornecer a ID nem a senha para o bot para acessar um recurso protegido, mas apenas para um provedor de identidade confiável.
 

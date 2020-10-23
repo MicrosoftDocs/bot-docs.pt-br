@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/7/2019
-ms.openlocfilehash: dc60d7080aac5a632c07dfb5e1aa310570f75069
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 9f619cc6e1ba59fbce7be3fd7d72592384df05ae
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362109"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415765"
 ---
 # <a name="connect-a-bot-to-direct-line"></a>Conecte um bot à linha direta
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Você pode ativar seu próprio aplicativo cliente para se comunicar com seu bot usando o canal Direct Line.
 

@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 3ef9fc1ec51ebed68c81d3f8b0dba61d5e3df8b1
-ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
+ms.openlocfilehash: 2cdd48f34612efaf5d485db28bb49c700b8fcb6e
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763687"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416303"
 ---
 # <a name="qna-file-format"></a>Formato de arquivo .qna
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Os arquivos .qna contêm definições baseadas em texto Markdown para os conceitos do [QnAmaker.ai](http://qnamaker.ai). Este artigo aborda os vários conceitos expressos por meio do formato de arquivo .qna.
 
@@ -96,7 +96,7 @@ Os filtros do QnA Maker são pares chave-valor simples que podem ser usados para
 Use a sintaxe a seguir para adicionar filtros:
 
 ```.qna
-***Filters:***
+**_Filters:_*_
 - name = value
 - name = value
 ```
@@ -107,7 +107,7 @@ Veja um exemplo de como um filtro poderia ser usado:
 ### ? Where can I get coffee?
 - I need coffee
 
-**Filters:**
+_*Filters:**
 - location = seattle
 
     ```.markdown

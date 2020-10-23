@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 4535f2913e95a7c348a829a0d3e4c7ee05586b52
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 61118b2f963b549e8f9588d0dea420eb55bb7e97
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362089"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415651"
 ---
 # <a name="connect-a-bot-to-kik"></a>Conectar um bot ao Kik
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Configure seu bot para se comunicar com as pessoas que usam o aplicativo de mensagens Kik.
 

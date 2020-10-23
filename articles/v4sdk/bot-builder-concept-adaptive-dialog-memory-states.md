@@ -8,17 +8,19 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 05/08/2020
-ms.openlocfilehash: aaf69588e047f0f7afa7c984a5bad14e9594e1d7
-ms.sourcegitcommit: 6eb30a963a845ca72326eb03a297a800b37a3f47
+ms.openlocfilehash: 6516699ba8c7b955cde7f35ee25ae48defd9eecb
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418585"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416906"
 ---
 <!--
 I'd keep prerequisites, managing state, and memory short-hand notation sections in the concept article, and move the rest to a ref topic. Then, possibly add a little more about how memory scopes and paths are used in the abstract to the concept article, common patterns, etc. I'd also convert the list of scopes into a table with short descriptions.
 -->
 # <a name="managing-state-in-adaptive-dialogs"></a>Como gerenciar o estado em diálogos adaptáveis
+
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Os termos _com estado_ e _sem estado_ são expressões que descrevem se um aplicativo foi projetado para lembrar um ou mais eventos anteriores em determinada sequência de interações com um usuário (ou qualquer outra atividade). Com estado significa que _o aplicativo mantém_ o controle do estado de suas interações, geralmente salvando valores na memória na forma de uma propriedade. Sem estado significa que o aplicativo _não_ acompanha o estado das interações, o que significa que não há memória de nenhuma interação anterior e todas as solicitações de entrada precisam conter todas as informações relevantes necessárias para executar a ação solicitada. Considere o _estado_ como o conjunto atual de valores ou do conteúdo do bot, como a ID da conversa ou o nome do usuário ativo.
 

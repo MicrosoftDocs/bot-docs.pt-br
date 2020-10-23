@@ -8,14 +8,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f377aacbd809b79ecb0d558384a10da8eca5a772
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 95912fe2d490abf405b54c994002a65493bf4f33
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75791078"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416881"
 ---
 # <a name="migrate-a-javascript-v3-bot-to-a-v4-bot"></a>Migrar um bot v3 do Javascript para um bot v4
+
+[!INCLUDE [applies-to-v4](../../includes/applies-to-v4-current.md)]
 
 Neste artigo, portaremos o bot [core-MultiDialogs-v3](https://aka.ms/v3-js-core-multidialog-migration-sample) JavaScript do SDK v3 para um novo bot JavaScript v4.
 Essa conversão é dividida entre estes estágios:

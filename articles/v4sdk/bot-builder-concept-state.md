@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 04/03/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 1bd63b8386eba049fa2d7ab4f89f792cdbcba48e
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 8a8b4924e293d41cb3b22384bc3ba086c224a705
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360289"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417170"
 ---
 # <a name="managing-state"></a>Gerenciar estado
 
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 O estado dentro de um bot segue os mesmos paradigmas dos aplicativos Web modernos e o SDK do Bot Framework oferece algumas abstrações para facilitar o gerenciamento do estado.
 

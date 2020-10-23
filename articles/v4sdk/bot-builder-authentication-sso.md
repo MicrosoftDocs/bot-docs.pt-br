@@ -7,18 +7,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 4/15/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 576a9acd74f11b70f7d1c294edd15921e98a44f4
-ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
+ms.openlocfilehash: 861d6f6d1d51eaa7d2f466a9160ae4d111d10b25
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763996"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417005"
 ---
 # <a name="add-single-sign-on-to-a-bot"></a>Adicionar logon único a um bot
 
-<!--Added TOC entry -->
-
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Este artigo mostra como usar o recurso SSO (logon único) em um bot.
 Para isso, ele usa um bot *consumidor*, também conhecido como bot *raiz*, para interagir com um bot de *skill*.

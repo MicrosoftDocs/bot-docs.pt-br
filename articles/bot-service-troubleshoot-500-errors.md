@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/19/2019
-ms.openlocfilehash: 42084bcd8cb551406d1b3155a694c02b9a628be4
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 200637baf61fe2655d4cceac784d94f245328a53
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360849"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416658"
 ---
 # <a name="troubleshoot-http-500-errors"></a>Solucionar erros de HTTP 500
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 <!-- Attention writers!!
      1 - When you create a new FAQ, please add the related link to the proper section in bot-service-troubleshoot-index.md.-->

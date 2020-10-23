@@ -8,14 +8,16 @@ ms.topic: overview
 ms.service: bot-service
 ms.date: 05/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a8346d04a48ce4495227e89c39b0e8c61945f038
-ms.sourcegitcommit: 5add21ad3daf0ce894612a22b951b98350961720
+ms.openlocfilehash: 115280b73b7182f05166b6a79bb539f986843fab
+ms.sourcegitcommit: e37cf15f4907910560f34445a0fbdd7ae75b4787
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84420447"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92440095"
 ---
 # <a name="how-microsoft-teams-bots-work"></a>Como os bots do Microsoft Teams funcionam
+
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Este é uma introdução que se baseia no que você aprendeu no artigo [Como os bots funcionam](https://docs.microsoft.com/azure/bot-service/bot-builder-basics). Você deve conhecer esse artigo antes de ler isso.
 
@@ -107,16 +109,25 @@ As atividades de invocação listadas acima se destinam a bots conversacionais n
 
 #### <a name="teams-conversation-update-activities"></a>Atividades de atualização de conversa de equipes
 
+Os desenvolvedores podem lidar com atividades de atualização de conversa enviadas do Microsoft Teams por meio de dois métodos:
+
+1. Para passar um retorno de chamada, use métodos que comecem com `on` _e_ terminem com `Event` (por exemplo, o `onTeamsMembersAddedEvent` método).
+1. Ao criar uma classe derivada, substitua os métodos que começam com `on` e _não_ terminem com `Event` (por exemplo, o `onTeamsMembersAdded` método).
+
+Os desenvolvedores devem usar apenas uma dessas opções: 1 ou 2, e não _ambos_ para a mesma atividade. Ou seja, os desenvolvedores devem passar um retorno de chamada para o `onTeamsMembersAddedEvent` método *ou* substituir o `onTeamsMembersAdded` método em uma classe derivada e não fazer ambos.
+
+**Métodos para passar um retorno de chamada**
+
 Veja abaixo uma lista de todos os manipuladores de atividade do Teams chamados do manipulador de atividade `dispatchConversationUpdateActivity` do _Teams_. O artigo [Eventos de atualização de conversa](https://aka.ms/azure-bot-subscribe-to-conversation-events) descreve como usar cada um desses eventos em um bot.
 
 | Evento | Manipulador | Descrição |
 | :-- | :-- | :-- |
-| channelCreated | `OnTeamsChannelCreatedEvent` | Substitua isso para manipular um canal do Teams que está sendo criado. Para obter mais informações, confira [Canal criado](https://aka.ms/azure-bot-subscribe-to-conversation-events#channel-created). |
-| channelDeleted | `OnTeamsChannelDeletedEvent` | Substitua isso para manipular um canal do Teams que está sendo excluído. Para obter mais informações, confira [Canal excluído](https://aka.ms/azure-bot-subscribe-to-conversation-events#channel-deleted).|
-| channelRenamed | `OnTeamsChannelRenamedEvent` | Substitua isso para manipular um canal do Teams que está sendo renomeado. Para obter mais informações, confira [Canal renomeado](https://aka.ms/azure-bot-subscribe-to-conversation-events#channel-renamed). |
-| teamRenamed | `OnTeamsTeamRenamedEvent` | `return Task.CompletedTask;` Substitua isso para manipular uma equipe do Teams que está sendo renomeada. Para obter mais informações, confira [Equipe renomeada](https://aka.ms/azure-bot-subscribe-to-conversation-events#team-renamed). |
-| MembersAdded | `OnTeamsMembersAddedEvent` | Chama o método `OnMembersAddedEvent` no `ActivityHandler`. Substitua isso para manipular os membros que estão entrando em uma equipe. Para obter mais informações, confira [Membro da equipe adicionado](https://aka.ms/azure-bot-subscribe-to-conversation-events#Team-Member-Added). |
-| MembersRemoved | `OnTeamsMembersRemovedEvent` | Chama o método `OnMembersRemovedEvent` no `ActivityHandler`. Substitua isso para manipular os membros que estão deixando uma equipe. Para obter mais informações, confira [Membro da equipe removido](https://aka.ms/azure-bot-subscribe-to-conversation-events#Team-Member-Removed). |
+| channelCreated | `OnTeamsChannelCreatedEvent` | Passe um retorno de chamada para esse método para manipular um canal de equipes que está sendo criado. Para obter mais informações, confira [Canal criado](https://aka.ms/azure-bot-subscribe-to-conversation-events#channel-created). |
+| channelDeleted | `OnTeamsChannelDeletedEvent` | Passe um retorno de chamada para esse método para manipular um canal de equipes que está sendo excluído. Para obter mais informações, confira [Canal excluído](https://aka.ms/azure-bot-subscribe-to-conversation-events#channel-deleted).|
+| channelRenamed | `OnTeamsChannelRenamedEvent` | Passe um retorno de chamada para esse método para manipular um canal de equipes que está sendo renomeado. Para obter mais informações, confira [Canal renomeado](https://aka.ms/azure-bot-subscribe-to-conversation-events#channel-renamed). |
+| teamRenamed | `OnTeamsTeamRenamedEvent` | `return Task.CompletedTask;` Passe um retorno de chamada para esse método para manipular uma equipe de equipes que está sendo renomeada. Para obter mais informações, confira [Equipe renomeada](https://aka.ms/azure-bot-subscribe-to-conversation-events#team-renamed). |
+| MembersAdded | `OnTeamsMembersAddedEvent` | Chama o método `OnMembersAddedEvent` no `ActivityHandler`. Passe um retorno de chamada para esse método para lidar com membros que ingressaram em uma equipe. Para obter mais informações, confira [Membro da equipe adicionado](https://aka.ms/azure-bot-subscribe-to-conversation-events#Team-Member-Added). |
+| MembersRemoved | `OnTeamsMembersRemovedEvent` | Chama o método `OnMembersRemovedEvent` no `ActivityHandler`. Passe um retorno de chamada para esse método para lidar com membros que saem de uma equipe. Para obter mais informações, confira [Membro da equipe removido](https://aka.ms/azure-bot-subscribe-to-conversation-events#Team-Member-Removed). |
 
 <!--
 | Event | Handler | Description |
@@ -128,6 +139,19 @@ Veja abaixo uma lista de todos os manipuladores de atividade do Teams chamados d
 | MembersAdded | `OnTeamsMembersAddedEvent` | Calls the `OnMembersAddedEvent` method in `ActivityHandler`. Override this to handle members joining a team. |
 | MembersRemoved | `OnTeamsMembersRemovedEvent` | Calls the `OnMembersRemovedEvent` method in `ActivityHandler`. Override this to handle members leaving a team. |
 -->
+
+**Métodos a serem substituídos em uma classe derivada**
+
+Abaixo está uma lista de todos os manipuladores de atividade de equipes que podem ser substituídos para lidar com atividades de atualização de conversa de equipes.
+
+| Método | Manipulador | Descrição |
+| :-- | :-- | :-- |
+| channelCreated | `OnTeamsChannelCreated` | Substitua isso para manipular um canal do Teams que está sendo criado.|
+| channelDeleted | `OnTeamsChannelDeletedEvent` | Substitua isso para manipular um canal do Teams que está sendo excluído.|
+| channelRenamed | `OnTeamsChannelRenamedEvent` | Substitua isso para manipular um canal do Teams que está sendo renomeado.|
+| teamRenamed | `OnTeamsTeamRenamedEvent` | `return Task.CompletedTask;` Substitua isso para manipular uma equipe do Teams que está sendo renomeada.|
+| MembersAdded | `OnTeamsMembersAddedEvent` | Chama o método `OnMembersAddedEvent` no `ActivityHandler`. Substitua isso para manipular os membros que estão entrando em uma equipe.|
+| MembersRemoved | `OnTeamsMembersRemovedEvent` | Chama o método `OnMembersRemovedEvent` no `ActivityHandler`. Substitua isso para manipular os membros que estão deixando uma equipe.|
 
 #### <a name="teams-invoke--activities"></a>Atividades de invocação do Teams
 

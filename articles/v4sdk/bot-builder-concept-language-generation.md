@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 5cdb5e88f2f62434445a51d6c95d797b71175852
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: aa27de4a1eb1d79f512c3a4db4d35138a3c4f5d5
+ms.sourcegitcommit: e37cf15f4907910560f34445a0fbdd7ae75b4787
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414293"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92439989"
 ---
 # <a name="language-generation"></a>Geração de Linguagem
 
@@ -52,7 +52,7 @@ Você pode usar a LG de várias maneiras ao desenvolver bots. Para começar, cri
 Inclua a biblioteca de geração de linguagem [`Microsoft.Bot.Builder.LanguageGeneration`](https://www.nuget.org/packages/Microsoft.Bot.Builder.LanguageGeneration/). Em seguida, analise e carregue modelos em seu arquivo .lg adicionando o seguinte:
 
 ```c#
-    Templates lgTemplates = Templates.ParseFile(filePath, importResolver?);
+    _templates = Templates.ParseFile(fullPath);
 ```
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
@@ -60,7 +60,7 @@ Inclua a biblioteca de geração de linguagem [`Microsoft.Bot.Builder.LanguageGe
 Inclua a biblioteca de geração de linguagem [`botbuilder-lg`][15]. Em seguida, analise e carregue modelos em seu arquivo .lg adicionando o seguinte:
 
 ```typescript
-     let lgTemplates = Templates.parseFile(filePath, importResolver?);
+     let lgTemplates = Templates.parseFile(fullPath);
 ```
 
 ---
@@ -70,13 +70,13 @@ Quando precisar de expansão de modelo, use `Evaluate` e passe o nome do modelo 
 # <a name="c"></a>[C#](#tab/csharp)
 
 ```c#
-    var lgOutput = lgTemplates.Evaluate("<TemplateName>", evalData);
+    var lgOutput = _templates.Evaluate(<TemplateName>);
 ```
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```typescript
-    let lgOutput = lgTemplates.evaluate("<TemplateName>", evalData)
+    let lgOutput = lgTemplates.evaluate(<TemplateName>);
 ```
 
 ---
@@ -86,18 +86,18 @@ Se o modelo precisar de propriedades específicas a serem passadas para resoluç
 # <a name="c"></a>[C#](#tab/csharp)
 
 ```c#
-    var lgOutput = lgTemplates.Evaluate("WordGameReply", new { GameName = "MarcoPolo" } );
+    var lgOutput = _templates.Evaluate("WordGameReply", new { GameName = "MarcoPolo" } );
 ```
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```typescript
-    let lgOutput = lgTemplates.evaluate("WordGameReply", { GameName = "MarcoPolo" } )
+    let lgOutput = lgTemplates.evaluate("WordGameReply", { GameName = "MarcoPolo" } );
 ```
 
 ---
 
-## <a name="multi-lingual-generation-and-language-fallback-policy"></a>Política de fallback de linguagem e geração multilíngue
+## <a name="multilingual-generation-and-language-fallback-policy"></a>Política de fallback de linguagem e geração multilíngue
 
 O bot pode ser direcionado para mais de um idioma falado ou de exibição. Você pode gerenciar instâncias separadas do *TemplateEngine*, uma por idioma de destino. Para obter um exemplo de como adicionar vários idiomas, também conhecido como fallback de idioma, ao seu bot, confira o prompt de vários turnos com uma amostra de fallback de idioma no [C#](https://aka.ms/csharp-lg-multi-turn-prompt-language-fallback-sample) ou no [JavaScript](https://aka.ms/js-lg-multi-turn-prompt-language-fallback-sample).
 

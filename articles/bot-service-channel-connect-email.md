@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/15/2019
-ms.openlocfilehash: 4dcdedbfbadc3f1fc60bd57d9bd3657e38c98255
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: fbdd33e735f0f255aa8b4ed02a135c15aa87acd2
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362119"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415721"
 ---
 # <a name="connect-a-bot-to-office-365-email"></a>Conectar um bot ao email do Office 365
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Os bots podem se comunicar com usuários por meio de email do Office 365 além de outros [canais](~/bot-service-manage-channels.md). Quando um bot é configurado para acessar uma conta de email, ele recebe uma mensagem quando um novo email chega. Em seguida, o bot pode responder conforme indicado por sua lógica de negócios. Por exemplo, o bot poderia enviar uma resposta de email confirmando que um email foi recebido com a mensagem "Olá! Agradecemos seu pedido! Começaremos a processá-lo imediatamente."
 
@@ -65,13 +67,7 @@ A mensagem de exemplo a seguir mostra um arquivo JSON que inclui esses `channelD
 }
 ```
 
-::: moniker range="azure-bot-service-3.0"
-Para saber mais sobre o uso de `channelData`, consulte o exemplo de [Node.js](https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/core-ChannelData) ou a documentação de [.NET](~/dotnet/bot-builder-dotnet-channeldata.md).
-::: moniker-end
-
-::: moniker range="azure-bot-service-4.0"
 Para obter mais informações sobre o uso de `channelData`, consulte [como implementar funcionalidade específica do canal](~/v4sdk/bot-builder-channeldata.md).
-::: moniker-end
 
 ## <a name="other-considerations"></a>Outras considerações
 
@@ -82,15 +78,6 @@ Se seu bot não retornar um código de status de HTTP 200 OK dentro de 15 segund
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-<!-- Put whole list in monikers, even though it's just the second item that needs to be different. -->
-::: moniker range="azure-bot-service-3.0"
-* Conectar um bot aos [canais](~/bot-service-manage-channels.md)
-* [Implemente a funcionalidade específica do canal](dotnet/bot-builder-dotnet-channeldata.md) com o SDK do Bot Framework para .NET
-* Leia o artigo [referência de canais](bot-service-channels-reference.md) para obter mais informações sobre quais recursos são compatíveis com cada canal
-::: moniker-end
-::: moniker range="azure-bot-service-4.0"
 * Conectar um bot aos [canais](~/bot-service-manage-channels.md)
 * [Implemente a funcionalidade específica do canal](~/v4sdk/bot-builder-channeldata.md) com o SDK do Bot Framework para .NET
 * Leia o artigo [referência de canais](bot-service-channels-reference.md) para obter mais informações sobre quais recursos são compatíveis com cada canal
-::: moniker-end
-

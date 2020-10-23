@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 426d5c9707c644c3efc9676eea682d21bd8a16e7
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: ee99fa79acc415589fa4bc8719d6fd7913a5ffa6
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362099"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415669"
 ---
 # <a name="connect-a-bot-to-groupme"></a>Conectar um bot ao GroupMe
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Configure um bot para se comunicar com as pessoas que usam o aplicativo de mensagens GroupMe.
 

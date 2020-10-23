@@ -1,21 +1,12 @@
 ---
-ms.openlocfilehash: 869a6865524e0e3c431980299a557052f677a658
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: cd5392683a66cadf90a7f6844a00c4ef55f71215
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "68230458"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416013"
 ---
-::: moniker range="azure-bot-service-3.0"
 > [!NOTE]
 > Diferentes partes do SDK definem classes de Entidade ou elementos separados.
-> - Para entidades de mensagem, confira [Tipos de entidade e atividade](https://docs.microsoft.com/azure/bot-service/bot-service-activities-entities?view=azure-bot-service-4.0).
-> - Para entidades de reconhecimento do LUIS, consulte [Reconhecer intenções e entidades com o LUIS](../nodejs/bot-builder-nodejs-recognize-intent-luis.md).
-::: moniker-end
-
-::: moniker range="azure-bot-service-4.0"
-> [!NOTE]
-> Diferentes partes do SDK definem classes de Entidade ou elementos separados.
-> - Para entidades de mensagem, confira [Tipos de entidade e atividade](https://docs.microsoft.com/azure/bot-service/bot-service-activities-entities?view=azure-bot-service-4.0).
+> - Para entidades de mensagem, confira [Tipos de entidade e atividade](../bot-service-activities-entities.md).
 > - Para entidades com reconhecimento LUIS, confira [Extrair entidades](../v4sdk/bot-builder-howto-v4-luis.md).
-::: moniker-end

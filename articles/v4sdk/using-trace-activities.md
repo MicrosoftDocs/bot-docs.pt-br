@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/18/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: e6e3941b5fb65f4fe23da4afea03738defdb08cf
-ms.sourcegitcommit: 42f3472bd6ecfa4b1541e5375a6044f6b0bf40c0
+ms.openlocfilehash: 03481f1d33c8d1126db439ca7fe28b4d908e94bf
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86542372"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416791"
 ---
 # <a name="add-trace-activities-to-your-bot"></a>Adicionar atividades de rastreamento ao bot
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 <!-- What is it and why use it -->
 

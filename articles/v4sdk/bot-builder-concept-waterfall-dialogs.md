@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 08/03/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 66237f6c74a79f19e0a1279a7f2613fd7114276c
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 542986d7891cd2e1889a94ce42024c3067d44325
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824346"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417129"
 ---
 # <a name="about-component-and-waterfall-dialogs"></a>Sobre caixas de diálogo de componente e de cascata
 
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 As caixas de diálogo vêm em alguns tipos diferentes. Este artigo descreve as caixas de diálogo componente, cascata e prompt.
 Para obter informações sobre caixas de diálogo em geral, consulte o artigo [biblioteca de caixas de diálogo](bot-builder-concept-dialog.md) . Para obter informações sobre caixas de diálogo adaptáveis, consulte a [introdução a caixas de diálogo adaptáveis](bot-builder-adaptive-dialog-introduction.md).

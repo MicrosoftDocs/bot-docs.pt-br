@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 06/24/2020
-ms.openlocfilehash: 1e4fe997ee1504616525c3e758deb9f6a8de4afa
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: e4971b11d4abbcc7d6c12770bdf3786e0a323dce
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89361699"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417015"
 ---
 # <a name="introduction-to-adaptive-dialogs"></a>Introdução aos diálogos adaptáveis
+
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 As caixas de diálogo adaptáveis oferecem uma nova adição baseada em eventos à [biblioteca de caixas de diálogo][1] que permite que você aplique uma camada facilmente em técnicas sofisticadas de gerenciamento de conversa, como lidar com [interrupções][interruptions], expedição e muito mais.
 

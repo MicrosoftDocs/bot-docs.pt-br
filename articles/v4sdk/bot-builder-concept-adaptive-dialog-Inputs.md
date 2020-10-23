@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 04/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a36c7b6dc6f7709ed0ffdeca6a9b6ebb81e1b3bf
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: 37380d64ead5c13948259d32a9ea90d58a585ba5
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124289"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414517"
 ---
 # <a name="asking-for-user-input-in-adaptive-dialogs"></a>Solicitar entrada do usuário em caixas de diálogo adaptáveis
 
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 O SDK do Bot Framework define diversas caixas de diálogo de entrada para coletar e validar a entrada do usuário. Caixas de diálogo de entrada são um tipo de ação de caixa de diálogo adaptável.
 
@@ -52,13 +52,13 @@ Assim como os [prompts][prompts], você pode usar _entradas_ em caixas de diálo
 A biblioteca de diálogos adaptáveis define os seguintes tipos de entrada:
 
 * [A classe base de entrada][inputdialog]. A classe base da qual derivam todas as classes de entrada.
-* [Texto][textinput]. Para solicitar qualquer entrada de usuário ***baseada em texto*** .
-* [Número][numberinput]. Para solicitar qualquer entrada de usuário ***baseada em números*** .
-* [Confirmação][confirminput]. Para solicitar uma ***confirmação*** do usuário.
-* [Múltipla escolha][multiple-choice]. Para solicitar uma seleção de um ***conjunto de opções***.
-* [Arquivo ou anexo][attachmentinput]. Para solicitar/habilitar um usuário para **carregar um arquivo**.
-* [Data ou hora][datetimeinput]. Para solicitar uma ***data e uma hora*** de um usuário.
-* [Logon do OAuth][oauthinput]. Para permitir que os usuários **entrem em um site seguro**.
+* [Texto][textinput]. Para solicitar qualquer ***texto com base na**entrada do usuário.
+_ [Number][numberinput]. Para solicitar qualquer entrada ***numérica _ com base no**usuário.
+_ [Confirmação][confirminput]. Para solicitar uma ***confirmação**_ do usuário.
+_ [Múltipla escolha][multiple-choice]. Para solicitar uma seleção de um ***conjunto de opções**_.
+_ [Arquivo ou anexo][attachmentinput]. Para solicitar/habilitar um usuário para **carregar um arquivo**.
+* [Data ou hora][datetimeinput]. Para solicitar uma ***data e hora**_ de um usuário.
+_ [Logon do OAuth][oauthinput]. Para permitir que os usuários **entrem em um site seguro**.
 
 ## <a name="additional-information"></a>Informações adicionais
 

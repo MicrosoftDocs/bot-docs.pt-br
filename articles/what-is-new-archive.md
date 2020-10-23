@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 08/21/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4b4ba10f8e36fe27da1a3087105258263dc904f7
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 36b1b9ccce84633cd629df88899243c0e28e7eed
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824916"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416737"
 ---
 # <a name="whats-new-may-2020"></a>Novidades de maio de 2020
 
-[!INCLUDE[applies-to](includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 O SDK do Bot Framework v4 é um [SDK open-source](https://github.com/microsoft/botframework-sdk/#readme) que permite aos desenvolvedores modelar e criar conversas sofisticadas usando sua linguagem de programação favorita.
 
@@ -157,8 +157,6 @@ O Bot Framework Composer é uma tela de criação visual para desenvolvedores e 
 
 ## <a name="whats-new-november-2019"></a>Novidades em novembro de 2019
 
-[!INCLUDE[applies-to](includes/applies-to.md)]
-
 O SDK do Bot Framework v4 é um [SDK open-source](https://github.com/microsoft/botframework-sdk/#readme) que permite aos desenvolvedores modelar e criar conversas sofisticadas usando sua linguagem de programação favorita.
 
 Este artigo resume os principais novos recursos e aprimoramentos no Bot Framework e no Serviço de Bot do Azure.
@@ -194,8 +192,6 @@ Com a Geração de Linguagem, os desenvolvedores podem separar a lógica usada p
 A Linguagem de Expressão Comum permite que você avalie o resultado de uma lógica baseada em condição em runtime. A linguagem comum pode ser usada em todos os componentes de SDK do Bot Framework e de AI conversacional, como Caixas de Diálogo Adaptáveis e Geração de Linguagem. [[Docs][40] | [API][41]]
 
 ## <a name="whats-new-july-2019"></a>Quais são as novidades? (julho de 2019)
-
-[!INCLUDE[applies-to](includes/applies-to.md)]
 
 O SDK do Bot Framework v4 é um [SDK open-source][1a] que permite aos desenvolvedores modelar e criar conversas sofisticadas usando sua linguagem de programação favorita.
 

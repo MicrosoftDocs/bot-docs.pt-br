@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 8222eeb729da220c00dc83dd577f6434d24fa919
-ms.sourcegitcommit: 70587e4f57420ea5a64344761af2e2141984234e
+ms.openlocfilehash: 266e99687f411b7a60735691749ff17b32073b58
+ms.sourcegitcommit: e37cf15f4907910560f34445a0fbdd7ae75b4787
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83566146"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92440092"
 ---
 # <a name="generators-in-adaptive-dialogs"></a>Geradores em diálogos adaptáveis
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Os geradores vinculam um sistema [LG (geração de linguagem)](bot-builder-concept-language-generation.md) específico a um diálogo adaptável.
 
@@ -129,7 +129,7 @@ Leia [Modelo de resposta estruturada](../language-generation/language-generation
 
 Depois de criar modelos para o bot, você pode adicioná-los ao diálogo adaptável. Você pode definir o gerador para um arquivo _.lg_ ou definir o gerador como uma instância `TemplateEngineLanguageGenerator` em que você gerencia explicitamente um ou mais arquivos _.lg_. O exemplo abaixo mostra a última abordagem.
 
-### <a name="c"></a>[C#](#tab/csharp)
+<!--### [C#](#tab/csharp)-->
 
 Digamos que você queira adicionar modelos de **RootDialog.lg** a um diálogo adaptável. Adicione os seguintes pacotes ao código:
 
@@ -168,24 +168,24 @@ new SendActivity("${FinalUserProfileReadOut()}")
 
 No exemplo acima, o bot chama o modelo `FinalUserProfileReadOut` e responde com o conteúdo do modelo.
 
-### <a name="javascript"></a>[Javascript](#tab/javascript)
+<!--### [Javascript](#tab/javascript)
 
-Digamos que você queira adicionar modelos de **RootDialog.lg** a um diálogo adaptável. Adicione as seguintes linhas ao código para exigir os pacotes necessários:
+Say you want to add templates from **RootDialog.lg** to an adaptive dialog. Add the following lines to your code to require the necessary packages:
 
 ```javascript
 const { NumberInput, AttachmentInput, ConfirmInput, IfCondition, ActivityTemplate, AdaptiveDialog, TextInput, SendActivity, TemplateEngineLanguageGenerator, OnBeginDialog } = require('botbuilder-dialogs-adaptive');
 const { Templates } = require('botbuilder-lg');
 ```
 
-Resolva o caminho usando `path.join()` e use a constante `Templates` para analisar o arquivo **rootDialog.lg**:
+Resolve the path using `path.join()` and use the `Templates` constant to parse the **rootDialog.lg** file:
 
 ```javascript
 const lgFile = Templates.parseFile(path.join(__dirname, 'rootDialog.lg'));
 ```
 
-Ao unir o caminho, você garante que está chamando os arquivos de modelo corretos para o bot.
+By joining the path you ensure that you are calling the correct template files for your bot.
 
-Agora você pode criar o `TemplateEngineLanguageGenerator` para gerenciar os modelos em **rootDialog.lg**:
+Now you can create the `TemplateEngineLanguageGenerator` to manage the templates in **rootDialog.lg**:
 
 ```javascript
 const rootDialog = new AdaptiveDialog(ROOT_DIALOG).configure(
@@ -195,15 +195,15 @@ const rootDialog = new AdaptiveDialog(ROOT_DIALOG).configure(
 generator: new TemplateEngineLanguageGenerator(lgFile)
 ```
 
-Agora você pode chamar modelos no bot por nome, usando o formato `${<template-name>}`.
+You can now call templates in your bot by name, using the format `${<template-name>}`.
 
 ```javascript
 new SendActivity('${FinalUserProfileReadOut()}')
 ```
 
-No exemplo acima, o bot chama o modelo `FinalUserProfileReadOut` e responde com o conteúdo do modelo.
+In the example above, the bot calls the `FinalUserProfileReadOut` template and responds with the contents of the template.
 
----
+---    -->
 
 ## <a name="additional-information"></a>Informações adicionais
 

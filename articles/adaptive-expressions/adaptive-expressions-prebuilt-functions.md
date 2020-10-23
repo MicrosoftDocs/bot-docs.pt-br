@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/19/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 05ef7124d57ae20f6cb271eca5f3045930ad5dab
-ms.sourcegitcommit: 4509747791a57b3098feb2d1705e921a780df351
+ms.openlocfilehash: 88351e0a349c350b9ed07addd77ec59e7a50b8c3
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763898"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415975"
 ---
 # <a name="adaptive-expressions-prebuilt-functions"></a>Funções predefinidas de expressões adaptáveis
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Este artigo lista as funções predefinidas disponíveis ordenadas por seu uso geral. Para obter informações sobre operadores usados em funções predefinidas e sintaxe de expressão, consulte [operadores](../v4sdk/bot-builder-concept-adaptive-expressions.md#operators).
 

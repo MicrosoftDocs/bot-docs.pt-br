@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 06/09/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b772372959b9bd4df44127636099ffdb37ea4e86
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 8318fa1681f9ecf842f7b06a918441fbb88ec58d
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362189"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416215"
 ---
 # <a name="inputs-in-adaptive-dialogs---reference-guide"></a>Entradas em caixas de diálogo adaptáveis – guia de referência
 
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 O SDK do Bot Framework define diversas caixas de diálogo de entrada para coletar e validar a entrada do usuário.
 
@@ -126,7 +126,7 @@ UnrecognizedPrompt = new ActivityTemplate("Sorry, '{turn.activity.text}' did not
 
 ### <a name="validations"></a>Validações
 
-Uma lista de expressões boolianas. A entrada reconhecida será inválida se qualquer uma dessas expressões for avaliada como `false`. Você pode usar  `this.value` para examinar a entrada do usuário nas expressões de validação. As validações são informadas usando [Expressões adaptáveis][adaptive-expressions]
+Uma lista de expressões boolianas. A entrada reconhecida será inválida se qualquer uma dessas expressões for avaliada como `false`. Você pode usar `this.value` para examinar a entrada do usuário nas expressões de validação. As validações são informadas usando [Expressões adaptáveis][adaptive-expressions]
 
 ### <a name="value"></a>Valor
 

@@ -8,14 +8,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 08/21/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 11daf828bf8847130f49ecfe020416595b2798ce
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: ae0d406df86a06bc98d754e2e37689509af4f0a5
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80250105"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416865"
 ---
 # <a name="using-net-v3-user-state-in-a-v4-bot"></a>Usar o estado de usuário v3 do .NET em um bot v4
+
+[!INCLUDE [applies-to-v4](../../includes/applies-to-v4-current.md)]
 
 Este artigo mostra um exemplo de como um bot v4 pode executar operações de leitura, gravação e exclusão em informações de estado de usuário v3.
 O bot mantém o estado de conversa usando o `MemoryStorage` para acompanhar e direcionar a conversa ao fazer perguntas ao usuário.  Ele mantém o **estado do usuário** no formato v3 para acompanhar as respostas do usuário utilizando uma classe `IStorage` personalizada chamada `V3V4Storage`.  Um dos argumentos para essa classe é um `IBotDataStore`. A base de código do SDK v3 foi copiada para `Bot.Builder.Azure.V3V4` e contém todos os três provedores de armazenamento do SDK v3 (Azure Sql, Tabela do Azure e Cosmos DB).  A intenção é permitir que o **estado do usuário v3** existente seja colocado em um bot v4 migrado.

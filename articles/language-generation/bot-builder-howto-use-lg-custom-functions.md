@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 8/13/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 844de21c11701432c578bbc5dd89472a175bc99a
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: ac71f7434f18336fb91776ac610a8b02c9bd4730
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89364398"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416820"
 ---
 # <a name="use-custom-functions-in-language-generation"></a>Usar funções personalizadas na geração de linguagem
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Os desenvolvedores podem usar as [funções predefinidas](../adaptive-expressions/adaptive-expressions-prebuilt-functions.md) suportadas por expressões adaptáveis e funções personalizadas em [modelos de geração de linguagem (LG)](../file-format/bot-builder-lg-file-format.md). Este artigo mostra como adicionar uma função personalizada em seu bot a expressões adaptáveis e usar a função em um modelo LG.
 

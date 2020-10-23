@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 4108f02a350d7e02d66db06cd7e65fa9c7a98e7d
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "70297342"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92438507"
 ---
 Uma **mensagem proativa ad hoc** é o tipo mais simples de mensagem proativa.
 O bot apenas injeta a mensagem na conversa sempre que ele é disparado, sem considerar se o usuário está envolvido em um tópico separado de conversa com o bot e não tentará alterar a conversa de modo algum.

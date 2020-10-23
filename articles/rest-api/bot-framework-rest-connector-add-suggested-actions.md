@@ -7,19 +7,14 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: cae6d8ee60ed8c7a18a4f12dfa430fd7ed4cfdb8
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 1c32b5f1d6bbfe87f65993e13546cb50681c13ec
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824586"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92417073"
 ---
 # <a name="add-suggested-actions-to-messages-with-the-bot-connector-api"></a>Adicionar ações sugeridas a mensagens com a API do conector de bot
-
-> [!div class="op_single_selector"]
-> - [.NET](../dotnet/bot-builder-dotnet-add-suggested-actions.md)
-> - [Node.js](../nodejs/bot-builder-nodejs-send-suggested-actions.md)
-> - [REST](../rest-api/bot-framework-rest-connector-add-suggested-actions.md)
 
 [!INCLUDE [Introduction to suggested actions](../includes/snippet-suggested-actions-intro.md)]
 

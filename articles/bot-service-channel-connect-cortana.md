@@ -8,19 +8,21 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 10/06/2020
-ms.openlocfilehash: 3448c9dff113b4a32ae70a06ef1f1b81fe332055
-ms.sourcegitcommit: 54e87177ea6798624e54a78be2500710981ba884
+ms.openlocfilehash: 949a6808d0d3cb91850854c03d419665a49301f2
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91765838"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92415775"
 ---
 # <a name="connect-a-bot-to-cortana"></a>Conectar um bot à Cortana
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 > [!IMPORTANT]
 > **O canal Cortana foi desativado para desenvolvedores de terceiros em 7 de setembro de 2020.**
 >
-> O kit de habilidades da Cortana para o consumidor foi desativado e parou de aceitar novos bots em 7 de setembro de 2020. O kit de qualificações da Cortana para empresas ainda está disponível somente para clientes do TAP.  [Saiba mais](https://docs.microsoft.com/cortana/skills/third-party-deprecation) 
+> O kit de habilidades da Cortana para o consumidor foi desativado e parou de aceitar novos bots em 7 de setembro de 2020. O kit de qualificações da Cortana para empresas ainda está disponível somente para clientes do TAP.  [Saiba mais](https://docs.microsoft.com/cortana/skills/third-party-deprecation).
 
 Cortana é um canal habilitado para fala que pode enviar e receber mensagens de voz e texto. Para que um bot possa se conectar à Cortana, ele deve ser projetado para fala e também texto. Uma *habilidade* da Cortana é um bot que pode ser invocado usando um cliente da Cortana. A publicação de um bot o adiciona à lista de habilidades disponíveis.
 

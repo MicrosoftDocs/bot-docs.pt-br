@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 06/12/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 350e146ac924d6558e32967f4d115fbe06608b72
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 4cbbaaf1826dcf4963fbccbd32a557344e6ee558
+ms.sourcegitcommit: e37cf15f4907910560f34445a0fbdd7ae75b4787
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824176"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92439833"
 ---
 # <a name="managing-state-in-adaptive-dialogs---reference-guide"></a>Gerenciando o estado em caixas de diálogo adaptáveis – guia de referência
 
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Este artigo fornece detalhes técnicos que irão ajudá-lo a trabalhar com escopos de memória em caixas de diálogo adaptáveis. Para obter uma introdução aos escopos de memória e gerenciar o estado em caixas de diálogo adaptáveis, veja o artigo [Gerenciamento de estado no conceito de caixas de diálogo adaptáveis][managing-state] .
 
@@ -165,7 +165,7 @@ Value = "=@fromCity.location"
 
 ## <a name="settings-scope"></a>Escopo das configurações
 
-Isso representa qualquer configuração disponibilizada para o bot por meio do sistema de definição das configurações específicas da plataforma. Por exemplo, se você estiver desenvolvendo o seu bot usando o C#, essas configurações serão exibidas no arquivo appsettings.json; se estiver desenvolvendo o bot usando o JavaScript, essas configurações serão exibidas no arquivo .env ou no arquivo config.py no desenvolvimento com o Python. Além disso, algumas configurações estão contidas nas configurações de ambiente dinâmico no Azure e todas estão disponíveis no escopo das configurações.
+Isso representa quaisquer configurações disponibilizadas para o bot por meio do sistema de configuração de configurações específicas da plataforma, por exemplo, se você estiver desenvolvendo seu bot usando C#, essas configurações aparecerão na appsettings.jsno arquivo<!--, if you are developing your bot using JavaScript, these settings will appear in the .env file or the config.py file when developing with Python. Additionally, some settings are contained in the dynamic environment settings in Azure, all are available in the settings scope-->.
 
 ### <a name="settings-scope-example"></a>Exemplo de escopo das configurações
 <!--TODO P2: rewrite this with language tabs for C#/JS. -->

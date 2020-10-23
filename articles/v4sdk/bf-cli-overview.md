@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/02/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: cb79344561fd19f5c1565d49c6024d70834255f8
-ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
+ms.openlocfilehash: b32af3383e7e60cb73b570cbe05099d7620c57d5
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85074006"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416984"
 ---
 # <a name="bot-framework-cli-tool"></a>Ferramenta da CLI do Bot Framework
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 A ferramenta da CLI (Interface de Linha de Comando) do Bot Framework substitui uma coleção de ferramentas autônomas usadas para gerenciar bots e serviços relacionados do Bot Framework. A maioria das ferramentas já foi transferida e o restante será transferido em versões futuras. A CLI agrega a coleção de ferramentas de multiplataforma em uma interface coesa e consistente.
 

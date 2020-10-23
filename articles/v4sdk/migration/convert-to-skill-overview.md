@@ -9,14 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 02/28/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2483efea11905837132676f59d15076620d955b5
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 26ac21b4f0245b028605eeedff58200f857c44a5
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80117771"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416864"
 ---
 # <a name="convert-a-v3-bot-to-a-skill"></a>Converter um bot v3 em uma habilidade
+
+[!INCLUDE [applies-to-v4](../../includes/applies-to-v4-current.md)]
 
 Em alguns cenários, talvez não faça sentido migrar de um bot v3 para um bot v4 imediatamente, mas você talvez ainda seja interessante aproveitar a funcionalidade adicional disponível no SDK v4. Nesses casos, pode fazer sentido converter o bot v3 em uma habilidade e criar um bot de consumidor de habilidades com base no SDK v4 para passar mensagens para o bot v3. Confira [o artigo de visão geral das habilidades](../skills-conceptual.md) para obter informações adicionais sobre habilidades e consumidores de habilidades.
 

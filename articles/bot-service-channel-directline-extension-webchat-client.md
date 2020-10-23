@@ -8,12 +8,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 07/25/2019
-ms.openlocfilehash: 127b36151771dafffbd956a8a2ef96bb2e888aa6
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: e70c93d59ee64af1c2ae32db882983772265b6c4
+ms.sourcegitcommit: e37cf15f4907910560f34445a0fbdd7ae75b4787
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92415403"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92439914"
 ---
 # <a name="use-web-chat-with-the-direct-line-app-service-extension"></a>Usar o Webchat com a extensão de serviço de aplicativo do Direct Line
 
@@ -30,7 +30,7 @@ De modo geral, a abordagem é a mesma que a de antes. Com exceção da versão 4
 A URL de linha direta para o bot será `https://<your_app_service>.azurewebsites.net/.bot/` , o ponto de **extremidade** de linha direta em sua extensão de serviço de aplicativo.
 Se você configurar seu próprio nome de domínio ou se o bot estiver hospedado em uma nuvem do Azure soberanas, substitua a URL apropriada e acrescente o `/.bot/` caminho para acessar as APIs REST da extensão do serviço de aplicativo de linha direta.
 
-1. Troque o segredo por um token seguindo as instruções no artigo [Autenticação](https://docs.microsoft.com/azure/bot-service/rest-api/bot-framework-rest-direct-line-3-0-authentication?view=azure-bot-service-4.0). Em vez de obter um token em `https://directline.botframework.com/v3/directline/tokens/generate` , você irá gerar o token diretamente de sua extensão de serviço de aplicativo de linha direta em  `https://<your_app_service>.azurewebsites.net/.bot/v3/directline/tokens/generate` .
+1. Troque o segredo por um token seguindo as instruções no artigo [Autenticação](https://docs.microsoft.com/azure/bot-service/rest-api/bot-framework-rest-direct-line-3-0-authentication?view=azure-bot-service-4.0&preserve-view=true). Em vez de obter um token em `https://directline.botframework.com/v3/directline/tokens/generate` , você irá gerar o token diretamente de sua extensão de serviço de aplicativo de linha direta em  `https://<your_app_service>.azurewebsites.net/.bot/v3/directline/tokens/generate` .
 
 1. Para obter um exemplo que mostra como buscar um token, consulte [exemplos de chat Web](https://github.com/microsoft/BotFramework-WebChat/tree/master/samples/01.getting-started/i.protocol-direct-line-app-service-extension).
 
@@ -69,7 +69,7 @@ Se você configurar seu próprio nome de domínio ou se o bot estiver hospedado 
     <script>
       (async function() {
         <!-- NOTE: It is highly recommended to replace the below fetch with a call to your own token service as described in step 2 above, and to avoid exposing your channel secret in client side code. -->
-        const res = await fetch('https://<your_app_service>.azurewebsites.net/.bot/v3/directline/tokens/generate', { method: 'POST', Headers:{'Authorization':'Bearer ' + '<Your Bot's Direct Line channel secret>'}});
+        const res = await fetch('https://<your_app_service>.azurewebsites.net/.bot/v3/directline/tokens/generate', { method: 'POST', headers:{'Authorization':'Bearer ' + '<Your Bot's Direct Line channel secret>'}});
         const { token } = await res.json();
 
         window.WebChat.renderWebChat(
@@ -87,5 +87,16 @@ Se você configurar seu próprio nome de domínio ou se o bot estiver hospedado 
     </script>
   </body>
 </html>
+```
 
+> [!TIP]
+> Na `JavaScript` implementação do bot, verifique se `websockets` o está habilitado no `web.config` arquivo, conforme mostrado abaixo.
+
+```xml
+<configuration>
+    <system.webServer>
+        <webSocket enabled="true"/>
+        ...
+    </system.webServer>
+</configuration>
 ```

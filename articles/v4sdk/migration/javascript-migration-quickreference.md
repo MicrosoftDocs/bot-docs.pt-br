@@ -9,14 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: ea71cfa7adb9ba4f38b3f0ec79641cf28b0f64f3
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 2ff73fd9e851a011ec6da60ef356155c4ed2f3e4
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "75791068"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416847"
 ---
 # <a name="javascript-migration-quick-reference"></a>Referência rápida de migração do JavaScript
+
+[!INCLUDE [applies-to-v4](../../includes/applies-to-v4-current.md)]
 
 O SDK v4 do BotBuilder para JavaScript introduz várias mudanças fundamentais que afetam como os bots são criados. O objetivo deste guia é fornecer uma referência rápida sobre as diferenças comuns na realização de uma tarefa nos SDKs v3 e v4.
 

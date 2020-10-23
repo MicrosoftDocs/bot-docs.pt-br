@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 55bdfa8f8a186f135ce9b6d2de665915bb3caa64
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 70ddbfa9e4809d820e001e1828f95617b944f29b
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360719"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416803"
 ---
 # <a name="structured-response-template"></a>Modelo de resposta estruturada
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Os modelos de resposta estruturada permitem que os desenvolvedores definam uma estrutura complexa que dá suporte à ampla funcionalidade de [LG (geração de linguagem)](../v4sdk/bot-builder-concept-language-generation.md), como criação de modelos, composição, deixando a interpretação da resposta estruturada para o chamador da biblioteca LG.
 

@@ -7,14 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/25/2020
-ms.openlocfilehash: dbfaea34a08b5a9b51e42a24d7dd8493a02c544d
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: d4aca74a5c108b6747afc66b29a7bed8c47acc68
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360839"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416585"
 ---
 # <a name="troubleshooting-bot-framework-authentication"></a>Solucionar problemas de autenticação do Bot Framework
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 <!-- Attention writers!!
      1 - When you create a new FAQ, please add the related link to the proper section in bot-service-troubleshoot-index.md.-->
@@ -44,30 +46,6 @@ Nesta etapa, você verificará se seu bot fica acessível e funcional no localho
 
 Para desabilitar a segurança do bot, edite suas definições de configuração para remover os valores da ID e da senha do aplicativo.
 
-::: moniker range="azure-bot-service-3.0"
-
-Se você estiver usando o SDK do Bot Framework para .NET, edite estas configurações no arquivo Web.config:
-
-```xml
-<appSettings>
-  <add key="MicrosoftAppId" value="" />
-  <add key="MicrosoftAppPassword" value="" />
-</appSettings>
-```
-
-Se você estiver usando o SDK do Bot Framework para Node.js, edite estes valores (ou atualize as variáveis de ambiente correspondentes):
-
-```javascript
-var connector = new builder.ChatConnector({
-  appId: null,
-  appPassword: null
-});
-```
-
-::: moniker-end
-
-::: moniker range="azure-bot-service-4.0"
-
 Se você estiver usando o SDK do Bot Framework para .NET, edite estas configurações no arquivo `appsettings.json`:
 
 ```json
@@ -83,8 +61,6 @@ const adapter = new BotFrameworkAdapter({
     appPassword: null
 });
 ```
-
-::: moniker-end
 
 ### <a name="test-your-bot-on-localhost"></a>Testar o bot no localhost
 

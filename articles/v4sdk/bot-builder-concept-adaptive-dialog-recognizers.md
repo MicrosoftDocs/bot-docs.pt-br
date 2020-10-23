@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 05/06/2020
-ms.openlocfilehash: 437236a238b107ecb1d3f7815a7535c18645d5ae
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 9998c5251e51146208f882f78b97a99797c168fb
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824356"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92414447"
 ---
 # <a name="recognizers-in-adaptive-dialogs"></a>Reconhecedores em diálogos adaptáveis
+
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Os _reconhecedores_ fornecem LU (Reconhecimento vocal) para seus diálogos adaptáveis.
 

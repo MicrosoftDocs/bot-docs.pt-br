@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 06/09/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 19847bacb0f3daa97340ad2146f06989f18eba6c
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 5de8184d2d3f37d5dad05e4c812c5520e2d3f832
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89361079"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416226"
 ---
 # <a name="actions-in-adaptive-dialogs---reference-guide"></a>Ações em caixas de diálogo adaptáveis – guia de referência
 
-[!INCLUDE [applies-to-v4](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Este artigo lista as ações definidas no SDK do bot Framework, agrupadas por sua finalidade geral.
 

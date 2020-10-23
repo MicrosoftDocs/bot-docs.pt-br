@@ -8,14 +8,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 03/01/2018
-ms.openlocfilehash: e4af26fc1e4dd3b8cc92a113a8c0b6feafbb809d
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: dbc77859bc2d3e97cf26a5fc1aec25180ebe2c9a
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362159"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416030"
 ---
 # <a name="entities-and-activity-types"></a>Entidades e tipos de atividades
+
+[!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
 Entidades são uma parte de uma atividade e fornecem informações adicionais sobre a atividade ou a conversa.
 
@@ -159,10 +161,3 @@ if(context.activity.type === 'message'){
 --- -->
 
 As atividades podem ser de vários tipos diferentes após a **mensagem** mais comum. Encontre explicações e mais detalhes sobre diferentes tipos de atividades no [esquema de Atividade do Bot Framework](https://aka.ms/botSpecs-activitySchema).
-
-::: moniker range="azure-bot-service-3.0"
-
-## <a name="additional-resources"></a>Recursos adicionais
-
-- <a href="https://docs.botframework.com/csharp/builder/sdkreference/dc/d2f/class_microsoft_1_1_bot_1_1_connector_1_1_activity.html" target="_blank">Classe de atividade</a>
-::: moniker-end

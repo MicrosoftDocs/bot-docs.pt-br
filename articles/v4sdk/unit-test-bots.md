@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 3ff9e7bad3927b6976b6f70bef0b6bbd28715907
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 6de6eca321f4f9ff55fc7490aa4cfd99d1ae54a6
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362349"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416913"
 ---
 # <a name="how-to-unit-test-bots"></a>Como realizar testes de unidade em bots
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Neste tópico, mostraremos como:
 

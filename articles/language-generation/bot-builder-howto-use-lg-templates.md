@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 5/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 8c22b795e3ba5e87bf64c7608486e5143a6ce953
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: cf7c5c53a13f28b544d135e09c7fa31c4b773e9b
+ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360739"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92416795"
 ---
 # <a name="use-language-generation-templates-in-your-bot"></a>Usar modelos de geração de linguagem em seu bot
 
-[!INCLUDE[applies-to](../includes/applies-to.md)]
+[!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Os modelos LG (geração de linguagem) facilitam para os desenvolvedores de bot enviar uma variedade de mensagens e tipos de mídia para os usuários. Este artigo mostra como aproveitar os modelos LG para enviar cartões e mensagens de texto simples e como avaliar a entrada de texto dos usuários.
 
