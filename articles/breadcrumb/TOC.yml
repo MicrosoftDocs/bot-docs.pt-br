@@ -2,16 +2,12 @@
   tocHref: /
   topicHref: /
   items:
-    - name: Serviço de Bot
-      tocHref: /Bot-Framework/
-      topicHref: /Bot-Framework/index
+    - name: Azure
+      tocHref: /azure/
+      topicHref: /azure/index
       items:
-        - name: SDK do Construtor de Bot para .NET
-          tocHref: /Bot-Framework/dotnet
-          topicHref: /Bot-Framework/dotnet/
-        - name: SDK do Bot Builder para Node.js
-          tocHref: /Bot-Framework/nodejs
-          topicHref: /Bot-Framework/nodejs/
-        - name: API REST do Bot Framework
-          tocHref: /Bot-Framework/rest-api
-          topicHref: /Bot-Framework/rest-api/
+        - name: Serviço de Bot do Azure
+          items:
+            - name: SDK do Bot Framework
+              tocHref: /azure/bot-service/
+              topicHref: /azure/bot-service/index-bf-sdk
