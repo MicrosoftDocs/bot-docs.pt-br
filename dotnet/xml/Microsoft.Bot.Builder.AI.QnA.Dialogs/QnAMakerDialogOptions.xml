@@ -1,0 +1,97 @@
+<Type Name="QnAMakerDialogOptions" FullName="Microsoft.Bot.Builder.AI.QnA.Dialogs.QnAMakerDialogOptions">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2a3ffa2c3d187addf89d0d9729539a338ba0b377" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151226" /></Metadata><TypeSignature Language="C#" Value="public class QnAMakerDialogOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit QnAMakerDialogOptions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.AI.QnA.Dialogs.QnAMakerDialogOptions" />
+  <TypeSignature Language="VB.NET" Value="Public Class QnAMakerDialogOptions" />
+  <TypeSignature Language="F#" Value="type QnAMakerDialogOptions = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Define as opções de caixa de diálogo para QnAMakerDialog.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public QnAMakerDialogOptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.AI.QnA.Dialogs.QnAMakerDialogOptions.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QnAMakerOptions">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.AI.QnA.QnAMakerOptions QnAMakerOptions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.AI.QnA.QnAMakerOptions QnAMakerOptions" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.AI.QnA.Dialogs.QnAMakerDialogOptions.QnAMakerOptions" />
+      <MemberSignature Language="VB.NET" Value="Public Property QnAMakerOptions As QnAMakerOptions" />
+      <MemberSignature Language="F#" Value="member this.QnAMakerOptions : Microsoft.Bot.Builder.AI.QnA.QnAMakerOptions with get, set" Usage="Microsoft.Bot.Builder.AI.QnA.Dialogs.QnAMakerDialogOptions.QnAMakerOptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.AI.QnA.QnAMakerOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define as opções para o serviço QnAMaker.</summary>
+        <value>As opções para o serviço QnAMaker.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseOptions">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.AI.QnA.QnADialogResponseOptions ResponseOptions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.AI.QnA.QnADialogResponseOptions ResponseOptions" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.AI.QnA.Dialogs.QnAMakerDialogOptions.ResponseOptions" />
+      <MemberSignature Language="VB.NET" Value="Public Property ResponseOptions As QnADialogResponseOptions" />
+      <MemberSignature Language="F#" Value="member this.ResponseOptions : Microsoft.Bot.Builder.AI.QnA.QnADialogResponseOptions with get, set" Usage="Microsoft.Bot.Builder.AI.QnA.Dialogs.QnAMakerDialogOptions.ResponseOptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.AI.QnA.QnADialogResponseOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define as opções de resposta para o QnAMakerDialog.</summary>
+        <value>As opções de resposta para o QnAMakerDialog.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

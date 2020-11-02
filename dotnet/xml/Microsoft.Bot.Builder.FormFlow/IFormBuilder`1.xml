@@ -1,0 +1,507 @@
+<Type Name="IFormBuilder&lt;T&gt;" FullName="Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt;">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="4e073d738bc168e1947362504e37c60e32935250" /><Meta Name="ms.sourcegitcommit" Value="ac3a7ee8979fc942f9d7420b2f6845c726b6661a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/02/2020" /><Meta Name="ms.locfileid" Value="93149595" /></Metadata><TypeSignature Language="C#" Value="public interface IFormBuilder&lt;T&gt; where T : class" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IFormBuilder`1&lt;class T&gt;" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.FormFlow.IFormBuilder`1" />
+  <TypeSignature Language="VB.NET" Value="Public Interface IFormBuilder(Of T)" />
+  <TypeSignature Language="F#" Value="type IFormBuilder&lt;'T (requires 'T : null)&gt; = interface" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+    <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+    <AssemblyVersion>3.20.1.42</AssemblyVersion>
+    <AssemblyVersion>3.30.0.1</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T">
+      <Constraints>
+        <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Interfaces />
+  <Docs>
+    <typeparam name="T">Estado do formulário.</typeparam>
+    <summary>Interface para criar um formulário.</summary>
+    <remarks>Um formulário consiste em uma série de etapas que podem ser uma das seguintes: <list type="list"><item>Uma mensagem para o usuário.</item><item>Um prompt enviado para o usuário em que a resposta é para preencher um valor de estado de formulário.</item><item>Uma confirmação do estado atual com o usuário.</item></list>
+Por padrão, as etapas são executadas na ordem das <see cref="M:Microsoft.Bot.Builder.FormFlow.IFormBuilder`1.Message(System.String,Microsoft.Bot.Builder.FormFlow.ActiveDelegate{`0},System.Collections.Generic.IEnumerable{System.String})" /> chamadas, <see cref="M:Microsoft.Bot.Builder.FormFlow.IFormBuilder`1.Field(Microsoft.Bot.Builder.FormFlow.Advanced.IField{`0})" /> e <see cref="M:Microsoft.Bot.Builder.FormFlow.IFormBuilder`1.Confirm(System.String,Microsoft.Bot.Builder.FormFlow.ActiveDelegate{`0},System.Collections.Generic.IEnumerable{System.String})" /> .
+Se você não usar o controle explícito, as etapas serão executadas na ordem definida no estado do formulário com uma confirmação final.
+Essa interface permite que você flently crie um formulário compondo campos, mensagens e confirmação.  Os blocos de construção fluentes fornecem padrões comuns, como os campos sendo baseados em sua classe de estado, mas você também pode criar sua própria definição de um formulário usando o Advanced. IField.  
+            Se você quiser criar um formulário usando a reflexão em C# sobre sua classe de estado, use FormBuilder.  
+            Para criar declarativamente um formulário por meio de esquema JSON, você pode usar JSON. FormBuilderJson.
+            
+Os formulários são sensíveis à cultura da interface do usuário do thread atual.  As cadeias de caracteres Microsoft. bot. Builder serão localizadas nessa cultura, se disponível.  Você também pode localizar as cadeias de caracteres geradas para o formulário chamando IForm. SaveResources ou usando a ferramenta RView e adicionando esse recurso ao seu projeto.  Para cadeias de caracteres em campos dinâmicos, mensagens ou confirmações, você precisará usar os mecanismos C# normais para localizá-los.  Consulte a documentação de visão geral para obter mais informações.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddRemainingFields">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt; AddRemainingFields (System.Collections.Generic.IEnumerable&lt;string&gt; exclude = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.Bot.Builder.FormFlow.IFormBuilder`1&lt;!T&gt; AddRemainingFields(class System.Collections.Generic.IEnumerable`1&lt;string&gt; exclude) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.FormFlow.IFormBuilder`1.AddRemainingFields(System.Collections.Generic.IEnumerable{System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddRemainingFields (Optional exclude As IEnumerable(Of String) = Nothing) As IFormBuilder(Of T)" />
+      <MemberSignature Language="F#" Value="abstract member AddRemainingFields : seq&lt;string&gt; -&gt; Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;'T (requires 'T : null)&gt;" Usage="iFormBuilder.AddRemainingFields exclude" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="exclude" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="exclude">Campos a serem incluídos.</param>
+        <summary>Adicione todos os campos ainda não adicionados ao formulário.</summary>
+        <returns>IFormBuilder modificado.</returns>
+        <remarks>Isso adicionará todos os campos definidos no formulário que ainda não foram adicionados se houver suporte para os campos.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Build">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.FormFlow.IForm&lt;T&gt; Build (System.Reflection.Assembly resourceAssembly = default, string resourceName = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.Bot.Builder.FormFlow.IForm`1&lt;!T&gt; Build(class System.Reflection.Assembly resourceAssembly, string resourceName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.FormFlow.IFormBuilder`1.Build(System.Reflection.Assembly,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Build (Optional resourceAssembly As Assembly = Nothing, Optional resourceName As String = Nothing) As IForm(Of T)" />
+      <MemberSignature Language="F#" Value="abstract member Build : System.Reflection.Assembly * string -&gt; Microsoft.Bot.Builder.FormFlow.IForm&lt;'T (requires 'T : null)&gt;" Usage="iFormBuilder.Build (resourceAssembly, resourceName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.FormFlow.IForm&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resourceAssembly" Type="System.Reflection.Assembly" />
+        <Parameter Name="resourceName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="resourceAssembly">Assembly para recursos de localização.</param>
+        <param name="resourceName">Nome dos recursos a serem usados para localização.</param>
+        <summary>Crie o formulário com base nos métodos chamados no construtor.</summary>
+        <returns>O formulário construído.</returns>
+        <remarks>O assembly padrão é aquele que contém <typeparamref name="T" /> e o resourceName padrão se o nome desse tipo.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Configuration">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.FormFlow.FormConfiguration Configuration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.FormFlow.FormConfiguration Configuration" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.FormFlow.IFormBuilder`1.Configuration" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Configuration As FormConfiguration" />
+      <MemberSignature Language="F#" Value="member this.Configuration : Microsoft.Bot.Builder.FormFlow.FormConfiguration" Usage="Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;'T (requires 'T : null)&gt;.Configuration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.FormFlow.FormConfiguration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>A configuração de formulário fornece modelos e configurações padrão.</summary>
+        <value>A configuração do formulário atual.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Confirm">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt; Confirm (Microsoft.Bot.Builder.FormFlow.MessageDelegate&lt;T&gt; generateMessage, Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;T&gt; condition = default, System.Collections.Generic.IEnumerable&lt;string&gt; dependencies = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.Bot.Builder.FormFlow.IFormBuilder`1&lt;!T&gt; Confirm(class Microsoft.Bot.Builder.FormFlow.MessageDelegate`1&lt;!T&gt; generateMessage, class Microsoft.Bot.Builder.FormFlow.ActiveDelegate`1&lt;!T&gt; condition, class System.Collections.Generic.IEnumerable`1&lt;string&gt; dependencies) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.FormFlow.IFormBuilder`1.Confirm(Microsoft.Bot.Builder.FormFlow.MessageDelegate{`0},Microsoft.Bot.Builder.FormFlow.ActiveDelegate{`0},System.Collections.Generic.IEnumerable{System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Function Confirm (generateMessage As MessageDelegate(Of T), Optional condition As ActiveDelegate(Of T) = Nothing, Optional dependencies As IEnumerable(Of String) = Nothing) As IFormBuilder(Of T)" />
+      <MemberSignature Language="F#" Value="abstract member Confirm : Microsoft.Bot.Builder.FormFlow.MessageDelegate&lt;'T (requires 'T : null)&gt; * Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;'T (requires 'T : null)&gt; * seq&lt;string&gt; -&gt; Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;'T (requires 'T : null)&gt;" Usage="iFormBuilder.Confirm (generateMessage, condition, dependencies)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="generateMessage" Type="Microsoft.Bot.Builder.FormFlow.MessageDelegate&lt;T&gt;" />
+        <Parameter Name="condition" Type="Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;T&gt;" />
+        <Parameter Name="dependencies" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="generateMessage">Delegado para a criação de mensagens.</param>
+        <param name="condition">Se esta etapa está ou não ativa.</param>
+        <param name="dependencies">De quais campos essa confirmação depende.</param>
+        <summary>Gere uma confirmação usando um delegado para compilar a mensagem dinamicamente.</summary>
+        <returns>IFormBuilder modificado.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Confirm">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt; Confirm (Microsoft.Bot.Builder.FormFlow.PromptAttribute prompt, Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;T&gt; condition = default, System.Collections.Generic.IEnumerable&lt;string&gt; dependencies = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.Bot.Builder.FormFlow.IFormBuilder`1&lt;!T&gt; Confirm(class Microsoft.Bot.Builder.FormFlow.PromptAttribute prompt, class Microsoft.Bot.Builder.FormFlow.ActiveDelegate`1&lt;!T&gt; condition, class System.Collections.Generic.IEnumerable`1&lt;string&gt; dependencies) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.FormFlow.IFormBuilder`1.Confirm(Microsoft.Bot.Builder.FormFlow.PromptAttribute,Microsoft.Bot.Builder.FormFlow.ActiveDelegate{`0},System.Collections.Generic.IEnumerable{System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Function Confirm (prompt As PromptAttribute, Optional condition As ActiveDelegate(Of T) = Nothing, Optional dependencies As IEnumerable(Of String) = Nothing) As IFormBuilder(Of T)" />
+      <MemberSignature Language="F#" Value="abstract member Confirm : Microsoft.Bot.Builder.FormFlow.PromptAttribute * Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;'T (requires 'T : null)&gt; * seq&lt;string&gt; -&gt; Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;'T (requires 'T : null)&gt;" Usage="iFormBuilder.Confirm (prompt, condition, dependencies)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prompt" Type="Microsoft.Bot.Builder.FormFlow.PromptAttribute" />
+        <Parameter Name="condition" Type="Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;T&gt;" />
+        <Parameter Name="dependencies" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="prompt">Avisar para usar para confirmação.</param>
+        <param name="condition">Delegado para testar se a confirmação se aplica ao estado atual do formulário.</param>
+        <param name="dependencies">De quais campos essa confirmação depende.</param>
+        <summary>Adicione uma etapa de confirmação.</summary>
+        <returns>IFormBuilder modificado.</returns>
+        <remarks>As dependências serão, por padrão, todas as etapas ativas definidas antes dessa confirmação.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Confirm">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt; Confirm (string prompt = default, Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;T&gt; condition = default, System.Collections.Generic.IEnumerable&lt;string&gt; dependencies = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.Bot.Builder.FormFlow.IFormBuilder`1&lt;!T&gt; Confirm(string prompt, class Microsoft.Bot.Builder.FormFlow.ActiveDelegate`1&lt;!T&gt; condition, class System.Collections.Generic.IEnumerable`1&lt;string&gt; dependencies) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.FormFlow.IFormBuilder`1.Confirm(System.String,Microsoft.Bot.Builder.FormFlow.ActiveDelegate{`0},System.Collections.Generic.IEnumerable{System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Function Confirm (Optional prompt As String = Nothing, Optional condition As ActiveDelegate(Of T) = Nothing, Optional dependencies As IEnumerable(Of String) = Nothing) As IFormBuilder(Of T)" />
+      <MemberSignature Language="F#" Value="abstract member Confirm : string * Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;'T (requires 'T : null)&gt; * seq&lt;string&gt; -&gt; Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;'T (requires 'T : null)&gt;" Usage="iFormBuilder.Confirm (prompt, condition, dependencies)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prompt" Type="System.String" />
+        <Parameter Name="condition" Type="Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;T&gt;" />
+        <Parameter Name="dependencies" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="prompt">Avisar para usar para confirmação.</param>
+        <param name="condition">Delegado para testar se a confirmação se aplica ao estado atual do formulário.</param>
+        <param name="dependencies">De quais campos essa confirmação depende.</param>
+        <summary>Adicione uma etapa de confirmação.</summary>
+        <returns>IFormBuilder modificado.</returns>
+        <remarks>Se o prompt não for fornecido, o elemento de padrões \ref {*} será usado para confirmar.
+As dependências serão, por padrão, todas as etapas ativas definidas antes dessa confirmação.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Field">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt; Field (Microsoft.Bot.Builder.FormFlow.Advanced.IField&lt;T&gt; field);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.Bot.Builder.FormFlow.IFormBuilder`1&lt;!T&gt; Field(class Microsoft.Bot.Builder.FormFlow.Advanced.IField`1&lt;!T&gt; field) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.FormFlow.IFormBuilder`1.Field(Microsoft.Bot.Builder.FormFlow.Advanced.IField{`0})" />
+      <MemberSignature Language="VB.NET" Value="Public Function Field (field As IField(Of T)) As IFormBuilder(Of T)" />
+      <MemberSignature Language="F#" Value="abstract member Field : Microsoft.Bot.Builder.FormFlow.Advanced.IField&lt;'T (requires 'T : null)&gt; -&gt; Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;'T (requires 'T : null)&gt;" Usage="iFormBuilder.Field field" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="field" Type="Microsoft.Bot.Builder.FormFlow.Advanced.IField&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="field">Definição de campo a ser usada.</param>
+        <summary>Derfine uma etapa de campo fornecendo sua própria definição de campo.</summary>
+        <returns>IFormBuilder modificado.</returns>
+        <remarks>Você pode fornecer sua própria implementação do <see cref="T:Microsoft.Bot.Builder.FormFlow.Advanced.IField`1" /> ou pode usar a <see cref="T:Microsoft.Bot.Builder.FormFlow.Advanced.Field`1" /> classe para fornecer valores fluentes, <see cref="T:Microsoft.Bot.Builder.FormFlow.Advanced.FieldReflector`1" /> para usar reflexão ou JSON. FieldJson para usar o esquema JSON.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Field">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt; Field (string name, Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;T&gt; active = default, Microsoft.Bot.Builder.FormFlow.ValidateAsyncDelegate&lt;T&gt; validate = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.Bot.Builder.FormFlow.IFormBuilder`1&lt;!T&gt; Field(string name, class Microsoft.Bot.Builder.FormFlow.ActiveDelegate`1&lt;!T&gt; active, class Microsoft.Bot.Builder.FormFlow.ValidateAsyncDelegate`1&lt;!T&gt; validate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.FormFlow.IFormBuilder`1.Field(System.String,Microsoft.Bot.Builder.FormFlow.ActiveDelegate{`0},Microsoft.Bot.Builder.FormFlow.ValidateAsyncDelegate{`0})" />
+      <MemberSignature Language="VB.NET" Value="Public Function Field (name As String, Optional active As ActiveDelegate(Of T) = Nothing, Optional validate As ValidateAsyncDelegate(Of T) = Nothing) As IFormBuilder(Of T)" />
+      <MemberSignature Language="F#" Value="abstract member Field : string * Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;'T (requires 'T : null)&gt; * Microsoft.Bot.Builder.FormFlow.ValidateAsyncDelegate&lt;'T (requires 'T : null)&gt; -&gt; Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;'T (requires 'T : null)&gt;" Usage="iFormBuilder.Field (name, active, validate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="active" Type="Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;T&gt;" />
+        <Parameter Name="validate" Type="Microsoft.Bot.Builder.FormFlow.ValidateAsyncDelegate&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="name">Caminho no estado do formulário para o valor que está sendo preenchido.</param>
+        <param name="active">Delegate para testar o estado do formulário para ver se a etapa está ativa.</param>
+        <param name="validate">Delegado para validar o valor do campo.</param>
+        <summary>Defina uma etapa para preencher um valor específico no estado do formulário.</summary>
+        <returns>IFormBuilder modificado.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Field">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt; Field (string name, Microsoft.Bot.Builder.FormFlow.PromptAttribute prompt, Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;T&gt; active = default, Microsoft.Bot.Builder.FormFlow.ValidateAsyncDelegate&lt;T&gt; validate = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.Bot.Builder.FormFlow.IFormBuilder`1&lt;!T&gt; Field(string name, class Microsoft.Bot.Builder.FormFlow.PromptAttribute prompt, class Microsoft.Bot.Builder.FormFlow.ActiveDelegate`1&lt;!T&gt; active, class Microsoft.Bot.Builder.FormFlow.ValidateAsyncDelegate`1&lt;!T&gt; validate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.FormFlow.IFormBuilder`1.Field(System.String,Microsoft.Bot.Builder.FormFlow.PromptAttribute,Microsoft.Bot.Builder.FormFlow.ActiveDelegate{`0},Microsoft.Bot.Builder.FormFlow.ValidateAsyncDelegate{`0})" />
+      <MemberSignature Language="VB.NET" Value="Public Function Field (name As String, prompt As PromptAttribute, Optional active As ActiveDelegate(Of T) = Nothing, Optional validate As ValidateAsyncDelegate(Of T) = Nothing) As IFormBuilder(Of T)" />
+      <MemberSignature Language="F#" Value="abstract member Field : string * Microsoft.Bot.Builder.FormFlow.PromptAttribute * Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;'T (requires 'T : null)&gt; * Microsoft.Bot.Builder.FormFlow.ValidateAsyncDelegate&lt;'T (requires 'T : null)&gt; -&gt; Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;'T (requires 'T : null)&gt;" Usage="iFormBuilder.Field (name, prompt, active, validate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="prompt" Type="Microsoft.Bot.Builder.FormFlow.PromptAttribute" />
+        <Parameter Name="active" Type="Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;T&gt;" />
+        <Parameter Name="validate" Type="Microsoft.Bot.Builder.FormFlow.ValidateAsyncDelegate&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="name">Caminho no estado do formulário para o valor que está sendo preenchido.</param>
+        <param name="prompt">Padrão de prompt com mais controle de formatação para descrever o prompt para o campo.</param>
+        <param name="active">Delegate para testar o estado do formulário para ver se a etapa está ativa. n</param>
+        <param name="validate">Delegado para validar o valor do campo.</param>
+        <summary>Defina uma etapa para preencher um valor específico no estado do formulário.</summary>
+        <returns>IFormBuilder modificado.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Field">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt; Field (string name, string prompt, Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;T&gt; active = default, Microsoft.Bot.Builder.FormFlow.ValidateAsyncDelegate&lt;T&gt; validate = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.Bot.Builder.FormFlow.IFormBuilder`1&lt;!T&gt; Field(string name, string prompt, class Microsoft.Bot.Builder.FormFlow.ActiveDelegate`1&lt;!T&gt; active, class Microsoft.Bot.Builder.FormFlow.ValidateAsyncDelegate`1&lt;!T&gt; validate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.FormFlow.IFormBuilder`1.Field(System.String,System.String,Microsoft.Bot.Builder.FormFlow.ActiveDelegate{`0},Microsoft.Bot.Builder.FormFlow.ValidateAsyncDelegate{`0})" />
+      <MemberSignature Language="VB.NET" Value="Public Function Field (name As String, prompt As String, Optional active As ActiveDelegate(Of T) = Nothing, Optional validate As ValidateAsyncDelegate(Of T) = Nothing) As IFormBuilder(Of T)" />
+      <MemberSignature Language="F#" Value="abstract member Field : string * string * Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;'T (requires 'T : null)&gt; * Microsoft.Bot.Builder.FormFlow.ValidateAsyncDelegate&lt;'T (requires 'T : null)&gt; -&gt; Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;'T (requires 'T : null)&gt;" Usage="iFormBuilder.Field (name, prompt, active, validate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="prompt" Type="System.String" />
+        <Parameter Name="active" Type="Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;T&gt;" />
+        <Parameter Name="validate" Type="Microsoft.Bot.Builder.FormFlow.ValidateAsyncDelegate&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="name">Caminho no estado do formulário para o valor que está sendo preenchido.</param>
+        <param name="prompt">Padrões \ref simples para descrever o prompt do campo.</param>
+        <param name="active">Delegate para testar o estado do formulário para ver se a etapa está ativa. n</param>
+        <param name="validate">Delegado para validar o valor do campo.</param>
+        <summary>Defina uma etapa para preencher um valor específico no estado do formulário.</summary>
+        <returns>IFormBuilder modificado.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasField">
+      <MemberSignature Language="C#" Value="public bool HasField (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool HasField(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.FormFlow.IFormBuilder`1.HasField(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function HasField (name As String) As Boolean" />
+      <MemberSignature Language="F#" Value="abstract member HasField : string -&gt; bool" Usage="iFormBuilder.HasField name" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name" />
+        <summary>Teste para ver se já existe um campo com <paramref name="name" /> .</summary>
+        <returns>True se o campo já estiver presente.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt; Message (Microsoft.Bot.Builder.FormFlow.MessageDelegate&lt;T&gt; generateMessage, Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;T&gt; condition = default, System.Collections.Generic.IEnumerable&lt;string&gt; dependencies = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.Bot.Builder.FormFlow.IFormBuilder`1&lt;!T&gt; Message(class Microsoft.Bot.Builder.FormFlow.MessageDelegate`1&lt;!T&gt; generateMessage, class Microsoft.Bot.Builder.FormFlow.ActiveDelegate`1&lt;!T&gt; condition, class System.Collections.Generic.IEnumerable`1&lt;string&gt; dependencies) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.FormFlow.IFormBuilder`1.Message(Microsoft.Bot.Builder.FormFlow.MessageDelegate{`0},Microsoft.Bot.Builder.FormFlow.ActiveDelegate{`0},System.Collections.Generic.IEnumerable{System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Function Message (generateMessage As MessageDelegate(Of T), Optional condition As ActiveDelegate(Of T) = Nothing, Optional dependencies As IEnumerable(Of String) = Nothing) As IFormBuilder(Of T)" />
+      <MemberSignature Language="F#" Value="abstract member Message : Microsoft.Bot.Builder.FormFlow.MessageDelegate&lt;'T (requires 'T : null)&gt; * Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;'T (requires 'T : null)&gt; * seq&lt;string&gt; -&gt; Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;'T (requires 'T : null)&gt;" Usage="iFormBuilder.Message (generateMessage, condition, dependencies)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="generateMessage" Type="Microsoft.Bot.Builder.FormFlow.MessageDelegate&lt;T&gt;" />
+        <Parameter Name="condition" Type="Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;T&gt;" />
+        <Parameter Name="dependencies" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="generateMessage">Delegado para a criação de mensagens.</param>
+        <param name="condition">Se esta etapa está ou não ativa.</param>
+        <param name="dependencies">Os campos de mensagem dependem de.</param>
+        <summary>Gere uma mensagem usando um delegado para compilar a mensagem dinamicamente.</summary>
+        <returns>IFormBuilder modificado.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt; Message (Microsoft.Bot.Builder.FormFlow.PromptAttribute prompt, Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;T&gt; condition = default, System.Collections.Generic.IEnumerable&lt;string&gt; dependencies = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.Bot.Builder.FormFlow.IFormBuilder`1&lt;!T&gt; Message(class Microsoft.Bot.Builder.FormFlow.PromptAttribute prompt, class Microsoft.Bot.Builder.FormFlow.ActiveDelegate`1&lt;!T&gt; condition, class System.Collections.Generic.IEnumerable`1&lt;string&gt; dependencies) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.FormFlow.IFormBuilder`1.Message(Microsoft.Bot.Builder.FormFlow.PromptAttribute,Microsoft.Bot.Builder.FormFlow.ActiveDelegate{`0},System.Collections.Generic.IEnumerable{System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Function Message (prompt As PromptAttribute, Optional condition As ActiveDelegate(Of T) = Nothing, Optional dependencies As IEnumerable(Of String) = Nothing) As IFormBuilder(Of T)" />
+      <MemberSignature Language="F#" Value="abstract member Message : Microsoft.Bot.Builder.FormFlow.PromptAttribute * Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;'T (requires 'T : null)&gt; * seq&lt;string&gt; -&gt; Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;'T (requires 'T : null)&gt;" Usage="iFormBuilder.Message (prompt, condition, dependencies)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prompt" Type="Microsoft.Bot.Builder.FormFlow.PromptAttribute" />
+        <Parameter Name="condition" Type="Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;T&gt;" />
+        <Parameter Name="dependencies" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="prompt">Mensagem para preencher e enviar.</param>
+        <param name="condition">Se esta etapa está ou não ativa.</param>
+        <param name="dependencies">Os campos de mensagem dependem de.</param>
+        <summary>Mostrar uma mensagem com mais controle de formato que não requer uma resposta.</summary>
+        <returns>IFormBuilder modificado.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt; Message (string message, Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;T&gt; condition = default, System.Collections.Generic.IEnumerable&lt;string&gt; dependencies = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.Bot.Builder.FormFlow.IFormBuilder`1&lt;!T&gt; Message(string message, class Microsoft.Bot.Builder.FormFlow.ActiveDelegate`1&lt;!T&gt; condition, class System.Collections.Generic.IEnumerable`1&lt;string&gt; dependencies) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.FormFlow.IFormBuilder`1.Message(System.String,Microsoft.Bot.Builder.FormFlow.ActiveDelegate{`0},System.Collections.Generic.IEnumerable{System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Function Message (message As String, Optional condition As ActiveDelegate(Of T) = Nothing, Optional dependencies As IEnumerable(Of String) = Nothing) As IFormBuilder(Of T)" />
+      <MemberSignature Language="F#" Value="abstract member Message : string * Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;'T (requires 'T : null)&gt; * seq&lt;string&gt; -&gt; Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;'T (requires 'T : null)&gt;" Usage="iFormBuilder.Message (message, condition, dependencies)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="condition" Type="Microsoft.Bot.Builder.FormFlow.ActiveDelegate&lt;T&gt;" />
+        <Parameter Name="dependencies" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="message">Uma cadeia de caracteres de padrões \ref para preencher e enviar.</param>
+        <param name="condition">Se esta etapa está ou não ativa.</param>
+        <param name="dependencies">Os campos de mensagem dependem de.</param>
+        <summary>Mostrar uma mensagem que não requer uma resposta.</summary>
+        <returns>IFormBuilder modificado.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCompletion">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt; OnCompletion (Microsoft.Bot.Builder.FormFlow.OnCompletionAsyncDelegate&lt;T&gt; callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.Bot.Builder.FormFlow.IFormBuilder`1&lt;!T&gt; OnCompletion(class Microsoft.Bot.Builder.FormFlow.OnCompletionAsyncDelegate`1&lt;!T&gt; callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.FormFlow.IFormBuilder`1.OnCompletion(Microsoft.Bot.Builder.FormFlow.OnCompletionAsyncDelegate{`0})" />
+      <MemberSignature Language="VB.NET" Value="Public Function OnCompletion (callback As OnCompletionAsyncDelegate(Of T)) As IFormBuilder(Of T)" />
+      <MemberSignature Language="F#" Value="abstract member OnCompletion : Microsoft.Bot.Builder.FormFlow.OnCompletionAsyncDelegate&lt;'T (requires 'T : null)&gt; -&gt; Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;'T (requires 'T : null)&gt;" Usage="iFormBuilder.OnCompletion callback" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="Microsoft.Bot.Builder.FormFlow.OnCompletionAsyncDelegate&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="callback">Delegado a ser chamado na conclusão.</param>
+        <summary>Delegado a ser chamado quando o formulário for concluído.</summary>
+        <returns>IFormBuilder modificado.</returns>
+        <remarks>Isso deve ser usado somente para efeitos colaterais, como chamar o serviço com os resultados do estado do formulário.  Em qualquer caso, o estado de formulário concluído será passado para a caixa de diálogo pai.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Prompter">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt; Prompter (Microsoft.Bot.Builder.FormFlow.Advanced.PromptAsyncDelegate&lt;T&gt; prompter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.Bot.Builder.FormFlow.IFormBuilder`1&lt;!T&gt; Prompter(class Microsoft.Bot.Builder.FormFlow.Advanced.PromptAsyncDelegate`1&lt;!T&gt; prompter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.FormFlow.IFormBuilder`1.Prompter(Microsoft.Bot.Builder.FormFlow.Advanced.PromptAsyncDelegate{`0})" />
+      <MemberSignature Language="VB.NET" Value="Public Function Prompter (prompter As PromptAsyncDelegate(Of T)) As IFormBuilder(Of T)" />
+      <MemberSignature Language="F#" Value="abstract member Prompter : Microsoft.Bot.Builder.FormFlow.Advanced.PromptAsyncDelegate&lt;'T (requires 'T : null)&gt; -&gt; Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;'T (requires 'T : null)&gt;" Usage="iFormBuilder.Prompter prompter" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.FormFlow.IFormBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prompter" Type="Microsoft.Bot.Builder.FormFlow.Advanced.PromptAsyncDelegate&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="prompter">Delegar.</param>
+        <summary>Delegar para enviar prompt para o usuário.</summary>
+        <returns>IFormBuilder modificado.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

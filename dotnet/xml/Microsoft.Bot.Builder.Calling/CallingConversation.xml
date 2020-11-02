@@ -1,0 +1,89 @@
+<Type Name="CallingConversation" FullName="Microsoft.Bot.Builder.Calling.CallingConversation">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="64ba45c58d7f9de0cf9457d1a8e3e190fd0fee51" /><Meta Name="ms.sourcegitcommit" Value="126c4f8f8c7a3581e7521dc3af9a937493e6b1df" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="04/01/2020" /><Meta Name="ms.locfileid" Value="93148758" /></Metadata><TypeSignature Language="C#" Value="public static class CallingConversation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed CallingConversation extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Calling.CallingConversation" />
+  <TypeSignature Language="VB.NET" Value="Public Class CallingConversation" />
+  <TypeSignature Language="F#" Value="type CallingConversation = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Calling</AssemblyName>
+    <AssemblyVersion>3.20.1.42</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>A raiz de composição de nível superior para chamar o SDK.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Container">
+      <MemberSignature Language="C#" Value="public static readonly Autofac.IContainer Container;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class Autofac.IContainer Container" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Calling.CallingConversation.Container" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Container As IContainer " />
+      <MemberSignature Language="F#" Value=" staticval mutable Container : Autofac.IContainer" Usage="Microsoft.Bot.Builder.Calling.CallingConversation.Container" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Calling</AssemblyName>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Autofac.IContainer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterCallingBot">
+      <MemberSignature Language="C#" Value="public static void RegisterCallingBot (Func&lt;Microsoft.Bot.Builder.Calling.ICallingBotService,Microsoft.Bot.Builder.Calling.ICallingBot&gt; MakeCallingBot);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterCallingBot(class System.Func`2&lt;class Microsoft.Bot.Builder.Calling.ICallingBotService, class Microsoft.Bot.Builder.Calling.ICallingBot&gt; MakeCallingBot) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Calling.CallingConversation.RegisterCallingBot(System.Func{Microsoft.Bot.Builder.Calling.ICallingBotService,Microsoft.Bot.Builder.Calling.ICallingBot})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub RegisterCallingBot (MakeCallingBot As Func(Of ICallingBotService, ICallingBot))" />
+      <MemberSignature Language="F#" Value="static member RegisterCallingBot : Func&lt;Microsoft.Bot.Builder.Calling.ICallingBotService, Microsoft.Bot.Builder.Calling.ICallingBot&gt; -&gt; unit" Usage="Microsoft.Bot.Builder.Calling.CallingConversation.RegisterCallingBot MakeCallingBot" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Calling</AssemblyName>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="MakeCallingBot" Type="System.Func&lt;Microsoft.Bot.Builder.Calling.ICallingBotService,Microsoft.Bot.Builder.Calling.ICallingBot&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="MakeCallingBot">O método de fábrica para fazer o bot de chamada.</param>
+        <summary>Registre a instância do bot de chamada responsável por lidar com as solicitações de chamada.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt; SendAsync (System.Net.Http.HttpRequestMessage toBot, Microsoft.Bot.Builder.Calling.CallRequestType callRequestType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;class System.Net.Http.HttpResponseMessage&gt; SendAsync(class System.Net.Http.HttpRequestMessage toBot, valuetype Microsoft.Bot.Builder.Calling.CallRequestType callRequestType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Calling.CallingConversation.SendAsync(System.Net.Http.HttpRequestMessage,Microsoft.Bot.Builder.Calling.CallRequestType)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function SendAsync (toBot As HttpRequestMessage, callRequestType As CallRequestType) As Task(Of HttpResponseMessage)" />
+      <MemberSignature Language="F#" Value="static member SendAsync : System.Net.Http.HttpRequestMessage * Microsoft.Bot.Builder.Calling.CallRequestType -&gt; System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;" Usage="Microsoft.Bot.Builder.Calling.CallingConversation.SendAsync (toBot, callRequestType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Calling</AssemblyName>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toBot" Type="System.Net.Http.HttpRequestMessage" />
+        <Parameter Name="callRequestType" Type="Microsoft.Bot.Builder.Calling.CallRequestType" />
+      </Parameters>
+      <Docs>
+        <param name="toBot">A solicitação de chamada enviada ao bot.</param>
+        <param name="callRequestType">O tipo de solicitação de chamada.</param>
+        <summary>Processar uma solicitação de chamada dentro do conversaion de chamada.</summary>
+        <returns>A resposta do bot.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

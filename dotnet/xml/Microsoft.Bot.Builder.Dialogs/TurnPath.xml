@@ -1,0 +1,696 @@
+<Type Name="TurnPath" FullName="Microsoft.Bot.Builder.Dialogs.TurnPath">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0d3bd28339cb7381b3fcfe601545953c57341140" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151637" /></Metadata><TypeSignature Language="C#" Value="public class TurnPath" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TurnPath extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.TurnPath" />
+  <TypeSignature Language="VB.NET" Value="Public Class TurnPath" />
+  <TypeSignature Language="F#" Value="type TurnPath = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>To be added.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TurnPath ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.TurnPath.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Activity">
+      <MemberSignature Language="C#" Value="public const string Activity;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string Activity" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.TurnPath.Activity" />
+      <MemberSignature Language="VB.NET" Value="Public Const Activity As String " />
+      <MemberSignature Language="F#" Value="val mutable Activity : string" Usage="Microsoft.Bot.Builder.Dialogs.TurnPath.Activity" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>A atividade atual para a ativação.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ACTIVITY">
+      <MemberSignature Language="C#" Value="public const string ACTIVITY;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string ACTIVITY" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.TurnPath.ACTIVITY" />
+      <MemberSignature Language="VB.NET" Value="Public Const ACTIVITY As String " />
+      <MemberSignature Language="F#" Value="val mutable ACTIVITY : string" Usage="Microsoft.Bot.Builder.Dialogs.TurnPath.ACTIVITY" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Obsolete("This property is deprecated, use TurnPath.Activity instead.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("This property is deprecated, use TurnPath.Activity instead.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>A atividade atual para a ativação.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActivityProcessed">
+      <MemberSignature Language="C#" Value="public const string ActivityProcessed;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string ActivityProcessed" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.TurnPath.ActivityProcessed" />
+      <MemberSignature Language="VB.NET" Value="Public Const ActivityProcessed As String " />
+      <MemberSignature Language="F#" Value="val mutable ActivityProcessed : string" Usage="Microsoft.Bot.Builder.Dialogs.TurnPath.ActivityProcessed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Esse é um bool que, se definido, significa que o turncontext. Activity foi consumido por algum componente no sistema.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ACTIVITYPROCESSED">
+      <MemberSignature Language="C#" Value="public const string ACTIVITYPROCESSED;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string ACTIVITYPROCESSED" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.TurnPath.ACTIVITYPROCESSED" />
+      <MemberSignature Language="VB.NET" Value="Public Const ACTIVITYPROCESSED As String " />
+      <MemberSignature Language="F#" Value="val mutable ACTIVITYPROCESSED : string" Usage="Microsoft.Bot.Builder.Dialogs.TurnPath.ACTIVITYPROCESSED" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Obsolete("This property is deprecated, use TurnPath.ActivityProcessed instead.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("This property is deprecated, use TurnPath.ActivityProcessed instead.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Esse é um bool que, se definido, significa que o turncontext. Activity foi consumido por algum componente no sistema.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DialogEvent">
+      <MemberSignature Language="C#" Value="public const string DialogEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string DialogEvent" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.TurnPath.DialogEvent" />
+      <MemberSignature Language="VB.NET" Value="Public Const DialogEvent As String " />
+      <MemberSignature Language="F#" Value="val mutable DialogEvent : string" Usage="Microsoft.Bot.Builder.Dialogs.TurnPath.DialogEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>O evento de caixa de diálogo atual (definido durante o processamento de eventos).</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DIALOGEVENT">
+      <MemberSignature Language="C#" Value="public const string DIALOGEVENT;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string DIALOGEVENT" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.TurnPath.DIALOGEVENT" />
+      <MemberSignature Language="VB.NET" Value="Public Const DIALOGEVENT As String " />
+      <MemberSignature Language="F#" Value="val mutable DIALOGEVENT : string" Usage="Microsoft.Bot.Builder.Dialogs.TurnPath.DIALOGEVENT" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Obsolete("This property is deprecated, use TurnPath.DialogEvent instead.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("This property is deprecated, use TurnPath.DialogEvent instead.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>O evento de caixa de diálogo atual (definido durante os processos de eventos).</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertyName">
+      <MemberSignature Language="C#" Value="public static string GetPropertyName (string property);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPropertyName(string property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.TurnPath.GetPropertyName(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetPropertyName (property As String) As String" />
+      <MemberSignature Language="F#" Value="static member GetPropertyName : string -&gt; string" Usage="Microsoft.Bot.Builder.Dialogs.TurnPath.GetPropertyName property" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="property" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="property">caminho da Propriedade do escopo da memória.</param>
+        <summary>Função do utilitário para obter apenas o nome da propriedade sem o prefixo do escopo de memória.</summary>
+        <returns>nome da propriedade sem o prefixo.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Interrupted">
+      <MemberSignature Language="C#" Value="public const string Interrupted;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string Interrupted" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.TurnPath.Interrupted" />
+      <MemberSignature Language="VB.NET" Value="Public Const Interrupted As String " />
+      <MemberSignature Language="F#" Value="val mutable Interrupted : string" Usage="Microsoft.Bot.Builder.Dialogs.TurnPath.Interrupted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Se verdadeiro, ocorreu uma interrupção.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="INTERRUPTED">
+      <MemberSignature Language="C#" Value="public const string INTERRUPTED;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string INTERRUPTED" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.TurnPath.INTERRUPTED" />
+      <MemberSignature Language="VB.NET" Value="Public Const INTERRUPTED As String " />
+      <MemberSignature Language="F#" Value="val mutable INTERRUPTED : string" Usage="Microsoft.Bot.Builder.Dialogs.TurnPath.INTERRUPTED" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Obsolete("This property is deprecated, use TurnPath.Interrupted instead.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("This property is deprecated, use TurnPath.Interrupted instead.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Se verdadeiro, ocorreu uma interrupção.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastResult">
+      <MemberSignature Language="C#" Value="public const string LastResult;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string LastResult" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.TurnPath.LastResult" />
+      <MemberSignature Language="VB.NET" Value="Public Const LastResult As String " />
+      <MemberSignature Language="F#" Value="val mutable LastResult : string" Usage="Microsoft.Bot.Builder.Dialogs.TurnPath.LastResult" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>O resultado da última caixa de diálogo que foi chamada.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LASTRESULT">
+      <MemberSignature Language="C#" Value="public const string LASTRESULT;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string LASTRESULT" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.TurnPath.LASTRESULT" />
+      <MemberSignature Language="VB.NET" Value="Public Const LASTRESULT As String " />
+      <MemberSignature Language="F#" Value="val mutable LASTRESULT : string" Usage="Microsoft.Bot.Builder.Dialogs.TurnPath.LASTRESULT" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Obsolete("This property is deprecated, use TurnPath.LastResult instead.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("This property is deprecated, use TurnPath.LastResult instead.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>O resultado da última caixa de diálogo que foi chamada.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Recognized">
+      <MemberSignature Language="C#" Value="public const string Recognized;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string Recognized" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.TurnPath.Recognized" />
+      <MemberSignature Language="VB.NET" Value="Public Const Recognized As String " />
+      <MemberSignature Language="F#" Value="val mutable Recognized : string" Usage="Microsoft.Bot.Builder.Dialogs.TurnPath.Recognized" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>O resultado reconhecido para a ativação atual.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RECOGNIZED">
+      <MemberSignature Language="C#" Value="public const string RECOGNIZED;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string RECOGNIZED" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.TurnPath.RECOGNIZED" />
+      <MemberSignature Language="VB.NET" Value="Public Const RECOGNIZED As String " />
+      <MemberSignature Language="F#" Value="val mutable RECOGNIZED : string" Usage="Microsoft.Bot.Builder.Dialogs.TurnPath.RECOGNIZED" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Obsolete("This property is deprecated, use TurnPath.Recognized instead.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("This property is deprecated, use TurnPath.Recognized instead.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>O resultado reconhecido para a ativação atual.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecognizedEntities">
+      <MemberSignature Language="C#" Value="public const string RecognizedEntities;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string RecognizedEntities" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.TurnPath.RecognizedEntities" />
+      <MemberSignature Language="VB.NET" Value="Public Const RecognizedEntities As String " />
+      <MemberSignature Language="F#" Value="val mutable RecognizedEntities : string" Usage="Microsoft.Bot.Builder.Dialogs.TurnPath.RecognizedEntities" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Entidades que foram reconhecidas do texto.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RECOGNIZEDENTITIES">
+      <MemberSignature Language="C#" Value="public const string RECOGNIZEDENTITIES;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string RECOGNIZEDENTITIES" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.TurnPath.RECOGNIZEDENTITIES" />
+      <MemberSignature Language="VB.NET" Value="Public Const RECOGNIZEDENTITIES As String " />
+      <MemberSignature Language="F#" Value="val mutable RECOGNIZEDENTITIES : string" Usage="Microsoft.Bot.Builder.Dialogs.TurnPath.RECOGNIZEDENTITIES" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Obsolete("This property is deprecated, use TurnPath.RecognizedEntities instead.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("This property is deprecated, use TurnPath.RecognizedEntities instead.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Entidades que foram reconhecidas do texto.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RepeatedIds">
+      <MemberSignature Language="C#" Value="public const string RepeatedIds;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string RepeatedIds" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.TurnPath.RepeatedIds" />
+      <MemberSignature Language="VB.NET" Value="Public Const RepeatedIds As String " />
+      <MemberSignature Language="F#" Value="val mutable RepeatedIds : string" Usage="Microsoft.Bot.Builder.Dialogs.TurnPath.RepeatedIds" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Usado para rastrear que não terminamos em um loop infinito de RepeatDialogs ().</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="REPEATEDIDS">
+      <MemberSignature Language="C#" Value="public const string REPEATEDIDS;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string REPEATEDIDS" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.TurnPath.REPEATEDIDS" />
+      <MemberSignature Language="VB.NET" Value="Public Const REPEATEDIDS As String " />
+      <MemberSignature Language="F#" Value="val mutable REPEATEDIDS : string" Usage="Microsoft.Bot.Builder.Dialogs.TurnPath.REPEATEDIDS" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Obsolete("This property is deprecated, use TurnPath.RepeatedIds instead.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("This property is deprecated, use TurnPath.RepeatedIds instead.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Usado para rastrear que não terminamos em um loop infinito de RepeatDialogs ().</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public const string Text;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string Text" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.TurnPath.Text" />
+      <MemberSignature Language="VB.NET" Value="Public Const Text As String " />
+      <MemberSignature Language="F#" Value="val mutable Text : string" Usage="Microsoft.Bot.Builder.Dialogs.TurnPath.Text" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Texto original.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TEXT">
+      <MemberSignature Language="C#" Value="public const string TEXT;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string TEXT" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.TurnPath.TEXT" />
+      <MemberSignature Language="VB.NET" Value="Public Const TEXT As String " />
+      <MemberSignature Language="F#" Value="val mutable TEXT : string" Usage="Microsoft.Bot.Builder.Dialogs.TurnPath.TEXT" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Obsolete("This property is deprecated, use TurnPath.Text instead.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("This property is deprecated, use TurnPath.Text instead.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Texto original.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TopIntent">
+      <MemberSignature Language="C#" Value="public const string TopIntent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string TopIntent" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.TurnPath.TopIntent" />
+      <MemberSignature Language="VB.NET" Value="Public Const TopIntent As String " />
+      <MemberSignature Language="F#" Value="val mutable TopIntent : string" Usage="Microsoft.Bot.Builder.Dialogs.TurnPath.TopIntent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Caminho para a intenção principal.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TOPINTENT">
+      <MemberSignature Language="C#" Value="public const string TOPINTENT;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string TOPINTENT" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.TurnPath.TOPINTENT" />
+      <MemberSignature Language="VB.NET" Value="Public Const TOPINTENT As String " />
+      <MemberSignature Language="F#" Value="val mutable TOPINTENT : string" Usage="Microsoft.Bot.Builder.Dialogs.TurnPath.TOPINTENT" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Obsolete("This property is deprecated, use TurnPath.TopIntent instead.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("This property is deprecated, use TurnPath.TopIntent instead.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Caminho para a intenção principal.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TopScore">
+      <MemberSignature Language="C#" Value="public const string TopScore;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string TopScore" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.TurnPath.TopScore" />
+      <MemberSignature Language="VB.NET" Value="Public Const TopScore As String " />
+      <MemberSignature Language="F#" Value="val mutable TopScore : string" Usage="Microsoft.Bot.Builder.Dialogs.TurnPath.TopScore" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Caminho para a pontuação superior.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TOPSCORE">
+      <MemberSignature Language="C#" Value="public const string TOPSCORE;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string TOPSCORE" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.TurnPath.TOPSCORE" />
+      <MemberSignature Language="VB.NET" Value="Public Const TOPSCORE As String " />
+      <MemberSignature Language="F#" Value="val mutable TOPSCORE : string" Usage="Microsoft.Bot.Builder.Dialogs.TurnPath.TOPSCORE" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Obsolete("This property is deprecated, use TurnPath.TopScore instead.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("This property is deprecated, use TurnPath.TopScore instead.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Caminho para a pontuação superior.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnrecognizedText">
+      <MemberSignature Language="C#" Value="public const string UnrecognizedText;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string UnrecognizedText" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.TurnPath.UnrecognizedText" />
+      <MemberSignature Language="VB.NET" Value="Public Const UnrecognizedText As String " />
+      <MemberSignature Language="F#" Value="val mutable UnrecognizedText : string" Usage="Microsoft.Bot.Builder.Dialogs.TurnPath.UnrecognizedText" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Expressão original dividido em cadeias de caracteres não reconhecidas.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UNRECOGNIZEDTEXT">
+      <MemberSignature Language="C#" Value="public const string UNRECOGNIZEDTEXT;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string UNRECOGNIZEDTEXT" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.TurnPath.UNRECOGNIZEDTEXT" />
+      <MemberSignature Language="VB.NET" Value="Public Const UNRECOGNIZEDTEXT As String " />
+      <MemberSignature Language="F#" Value="val mutable UNRECOGNIZEDTEXT : string" Usage="Microsoft.Bot.Builder.Dialogs.TurnPath.UNRECOGNIZEDTEXT" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Obsolete("This property is deprecated, use TurnPath.UnrecognizedText instead.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("This property is deprecated, use TurnPath.UnrecognizedText instead.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Expressão original dividido em cadeias de caracteres não reconhecidas.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

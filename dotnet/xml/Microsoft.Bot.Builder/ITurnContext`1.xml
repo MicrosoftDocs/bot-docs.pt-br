@@ -1,0 +1,70 @@
+<Type Name="ITurnContext&lt;T&gt;" FullName="Microsoft.Bot.Builder.ITurnContext&lt;T&gt;">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5c0c25303d7e98385b298f5228e6ab37d79b2599" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151257" /></Metadata><TypeSignature Language="C#" Value="public interface ITurnContext&lt;T&gt; : Microsoft.Bot.Builder.ITurnContext where T : IActivity" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITurnContext`1&lt;(class Microsoft.Bot.Schema.IActivity) T&gt; implements class Microsoft.Bot.Builder.ITurnContext" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.ITurnContext`1" />
+  <TypeSignature Language="VB.NET" Value="Public Interface ITurnContext(Of T)&#xA;Implements ITurnContext" />
+  <TypeSignature Language="F#" Value="type ITurnContext&lt;'T (requires 'T :&gt; IActivity)&gt; = interface&#xA;    interface ITurnContext" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>4.3.2.0</AssemblyVersion>
+    <AssemblyVersion>4.4.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.0</AssemblyVersion>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T">
+      <Constraints>
+        <InterfaceName>Microsoft.Bot.Schema.IActivity</InterfaceName>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.Bot.Builder.ITurnContext</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="T">O tipo de atividade para essa ativação do bot.</typeparam>
+    <summary>Fornece contexto para uma vez de um bot, onde a propriedade do contexto <see cref="P:Microsoft.Bot.Builder.ITurnContext`1.Activity" /> é fortemente tipada.</summary>
+    <remarks>A <see cref="T:Microsoft.Bot.Schema.IActivity" /> interface define as propriedades compartilhadas por cada tipo de atividade.
+As interfaces que derivam de <see cref="T:Microsoft.Bot.Schema.IActivity" /> incluem propriedades específicas para um tipo específico de atividade. Por exemplo, <see cref="T:Microsoft.Bot.Schema.IMessageActivity" /> inclui propriedades associadas a atividades de mensagem e <see cref="T:Microsoft.Bot.Schema.IEventActivity" /> inclui propriedades associadas a atividades de evento.</remarks>
+    <altmember cref="T:Microsoft.Bot.Builder.ActivityHandler" />
+    <altmember cref="T:Microsoft.Bot.Builder.ITurnContext" />
+    <altmember cref="T:Microsoft.Bot.Schema.IActivity" />
+  </Docs>
+  <Members>
+    <Member MemberName="Activity">
+      <MemberSignature Language="C#" Value="public T Activity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance !T Activity" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.ITurnContext`1.Activity" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Activity As T" />
+      <MemberSignature Language="F#" Value="member this.Activity : 'T" Usage="Microsoft.Bot.Builder.ITurnContext&lt;'T (requires 'T :&gt; Microsoft.Bot.Schema.IActivity)&gt;.Activity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém a atividade para essa ativação do bot.</summary>
+        <value>A atividade para essa ativação do bot.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

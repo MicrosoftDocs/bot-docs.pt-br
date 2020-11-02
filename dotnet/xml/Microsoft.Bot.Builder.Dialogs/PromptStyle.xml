@@ -1,0 +1,156 @@
+<Type Name="PromptStyle" FullName="Microsoft.Bot.Builder.Dialogs.PromptStyle">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2ab3db4b8f320e41d428d243c10e8564f9fe075a" /><Meta Name="ms.sourcegitcommit" Value="5add21ad3daf0ce894612a22b951b98350961720" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="06/04/2020" /><Meta Name="ms.locfileid" Value="93149108" /></Metadata><TypeSignature Language="C#" Value="public enum PromptStyle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PromptStyle extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.PromptStyle" />
+  <TypeSignature Language="VB.NET" Value="Public Enum PromptStyle" />
+  <TypeSignature Language="F#" Value="type PromptStyle = " />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+    <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+    <AssemblyVersion>3.20.1.42</AssemblyVersion>
+    <AssemblyVersion>3.30.0.1</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>O estilo do prompt gerado</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Auto">
+      <MemberSignature Language="C#" Value="Auto" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Bot.Builder.Dialogs.PromptStyle Auto = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.PromptStyle.Auto" />
+      <MemberSignature Language="VB.NET" Value="Auto" />
+      <MemberSignature Language="F#" Value="Auto = 0" Usage="Microsoft.Bot.Builder.Dialogs.PromptStyle.Auto" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Dialogs.PromptStyle</ReturnType>
+      </ReturnValue>
+      <MemberValue>0</MemberValue>
+      <Docs>
+        <summary>Gerar botões para escolhas e permitir que o conector gere o estilo correto com base nos recursos do canal</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoText">
+      <MemberSignature Language="C#" Value="AutoText" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Bot.Builder.Dialogs.PromptStyle AutoText = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.PromptStyle.AutoText" />
+      <MemberSignature Language="VB.NET" Value="AutoText" />
+      <MemberSignature Language="F#" Value="AutoText = 2" Usage="Microsoft.Bot.Builder.Dialogs.PromptStyle.AutoText" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Dialogs.PromptStyle</ReturnType>
+      </ReturnValue>
+      <MemberValue>2</MemberValue>
+      <Docs>
+        <summary>Mostrar opções como texto.</summary>
+        <remarks>O prompt decide se ele deve gerar o texto embutido ou perlinear com base no número de opções.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Inline">
+      <MemberSignature Language="C#" Value="Inline" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Bot.Builder.Dialogs.PromptStyle Inline = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.PromptStyle.Inline" />
+      <MemberSignature Language="VB.NET" Value="Inline" />
+      <MemberSignature Language="F#" Value="Inline = 3" Usage="Microsoft.Bot.Builder.Dialogs.PromptStyle.Inline" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Dialogs.PromptStyle</ReturnType>
+      </ReturnValue>
+      <MemberValue>3</MemberValue>
+      <Docs>
+        <summary>Mostrar opções na mesma linha.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Keyboard">
+      <MemberSignature Language="C#" Value="Keyboard" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Bot.Builder.Dialogs.PromptStyle Keyboard = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.PromptStyle.Keyboard" />
+      <MemberSignature Language="VB.NET" Value="Keyboard" />
+      <MemberSignature Language="F#" Value="Keyboard = 1" Usage="Microsoft.Bot.Builder.Dialogs.PromptStyle.Keyboard" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Dialogs.PromptStyle</ReturnType>
+      </ReturnValue>
+      <MemberValue>1</MemberValue>
+      <Docs>
+        <summary>As opções de mapa para uma lista de ações sugeridas que dependem do canal serão um teclado, respostas rápidas ou um <see cref="T:Microsoft.Bot.Connector.HeroCard" /> .</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Bot.Builder.Dialogs.PromptStyle None = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.PromptStyle.None" />
+      <MemberSignature Language="VB.NET" Value="None" />
+      <MemberSignature Language="F#" Value="None = 5" Usage="Microsoft.Bot.Builder.Dialogs.PromptStyle.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Dialogs.PromptStyle</ReturnType>
+      </ReturnValue>
+      <MemberValue>5</MemberValue>
+      <Docs>
+        <summary>Não mostrar possíveis escolhas no prompt</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PerLine">
+      <MemberSignature Language="C#" Value="PerLine" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Bot.Builder.Dialogs.PromptStyle PerLine = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Dialogs.PromptStyle.PerLine" />
+      <MemberSignature Language="VB.NET" Value="PerLine" />
+      <MemberSignature Language="F#" Value="PerLine = 4" Usage="Microsoft.Bot.Builder.Dialogs.PromptStyle.PerLine" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Dialogs.PromptStyle</ReturnType>
+      </ReturnValue>
+      <MemberValue>4</MemberValue>
+      <Docs>
+        <summary>Mostrar opções com uma por linha.</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

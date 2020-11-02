@@ -1,0 +1,86 @@
+<Type Name="TeamsOperationsExtensions" FullName="Microsoft.Bot.Connector.Teams.TeamsOperationsExtensions">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="01bc0ce0ffc8b9f501b8dd55f8c7ff8f9a264f64" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152047" /></Metadata><TypeSignature Language="C#" Value="public static class TeamsOperationsExtensions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit TeamsOperationsExtensions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Connector.Teams.TeamsOperationsExtensions" />
+  <TypeSignature Language="VB.NET" Value="Public Module TeamsOperationsExtensions" />
+  <TypeSignature Language="F#" Value="type TeamsOperationsExtensions = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Métodos de extensão para TeamsOperations.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FetchChannelListAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;Microsoft.Bot.Schema.Teams.ConversationList&gt; FetchChannelListAsync (this Microsoft.Bot.Connector.Teams.ITeamsOperations operations, string teamId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;class Microsoft.Bot.Schema.Teams.ConversationList&gt; FetchChannelListAsync(class Microsoft.Bot.Connector.Teams.ITeamsOperations operations, string teamId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Connector.Teams.TeamsOperationsExtensions.FetchChannelListAsync(Microsoft.Bot.Connector.Teams.ITeamsOperations,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function FetchChannelListAsync (operations As ITeamsOperations, teamId As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ConversationList)" />
+      <MemberSignature Language="F#" Value="static member FetchChannelListAsync : Microsoft.Bot.Connector.Teams.ITeamsOperations * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Bot.Schema.Teams.ConversationList&gt;" Usage="Microsoft.Bot.Connector.Teams.TeamsOperationsExtensions.FetchChannelListAsync (operations, teamId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Schema.Teams.ConversationList&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operations" Type="Microsoft.Bot.Connector.Teams.ITeamsOperations" RefType="this" />
+        <Parameter Name="teamId" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="operations">O grupo de operações para esse método de extensão.</param>
+        <param name="teamId">ID da equipe</param>
+        <param name="cancellationToken">O token de cancelamento.</param>
+        <summary>Busca a lista de canais de uma determinada equipe</summary>
+        <returns>To be added.</returns>
+        <remarks>Busque a lista de canais.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FetchTeamDetailsAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;Microsoft.Bot.Schema.Teams.TeamDetails&gt; FetchTeamDetailsAsync (this Microsoft.Bot.Connector.Teams.ITeamsOperations operations, string teamId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;class Microsoft.Bot.Schema.Teams.TeamDetails&gt; FetchTeamDetailsAsync(class Microsoft.Bot.Connector.Teams.ITeamsOperations operations, string teamId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Connector.Teams.TeamsOperationsExtensions.FetchTeamDetailsAsync(Microsoft.Bot.Connector.Teams.ITeamsOperations,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function FetchTeamDetailsAsync (operations As ITeamsOperations, teamId As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of TeamDetails)" />
+      <MemberSignature Language="F#" Value="static member FetchTeamDetailsAsync : Microsoft.Bot.Connector.Teams.ITeamsOperations * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Bot.Schema.Teams.TeamDetails&gt;" Usage="Microsoft.Bot.Connector.Teams.TeamsOperationsExtensions.FetchTeamDetailsAsync (operations, teamId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Schema.Teams.TeamDetails&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operations" Type="Microsoft.Bot.Connector.Teams.ITeamsOperations" RefType="this" />
+        <Parameter Name="teamId" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="operations">O grupo de operações para esse método de extensão.</param>
+        <param name="teamId">ID da equipe</param>
+        <param name="cancellationToken">O token de cancelamento.</param>
+        <summary>Busca detalhes relacionados a uma equipe</summary>
+        <returns>To be added.</returns>
+        <remarks>Obter detalhes de uma equipe</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

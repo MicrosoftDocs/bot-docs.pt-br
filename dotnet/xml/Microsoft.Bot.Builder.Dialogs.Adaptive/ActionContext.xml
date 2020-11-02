@@ -1,0 +1,154 @@
+<Type Name="ActionContext" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.ActionContext">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b6006842f72bd22e186f2f1ba322460f11560cd8" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151929" /></Metadata><TypeSignature Language="C#" Value="public class ActionContext : Microsoft.Bot.Builder.Dialogs.DialogContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ActionContext extends Microsoft.Bot.Builder.Dialogs.DialogContext" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.ActionContext" />
+  <TypeSignature Language="VB.NET" Value="Public Class ActionContext&#xA;Inherits DialogContext" />
+  <TypeSignature Language="F#" Value="type ActionContext = class&#xA;    inherit DialogContext" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Bot.Builder.Dialogs.DialogContext</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Estende o <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogContext" /> com métodos adicionais para manipular a sequência de ações em execução para um <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.AdaptiveDialog" /> .</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActionContext (Microsoft.Bot.Builder.Dialogs.DialogSet dialogs, Microsoft.Bot.Builder.Dialogs.DialogContext parentDialogContext, Microsoft.Bot.Builder.Dialogs.DialogState state, System.Collections.Generic.List&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.ActionState&gt; actions, string changeKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Bot.Builder.Dialogs.DialogSet dialogs, class Microsoft.Bot.Builder.Dialogs.DialogContext parentDialogContext, class Microsoft.Bot.Builder.Dialogs.DialogState state, class System.Collections.Generic.List`1&lt;class Microsoft.Bot.Builder.Dialogs.Adaptive.ActionState&gt; actions, string changeKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Adaptive.ActionContext.#ctor(Microsoft.Bot.Builder.Dialogs.DialogSet,Microsoft.Bot.Builder.Dialogs.DialogContext,Microsoft.Bot.Builder.Dialogs.DialogState,System.Collections.Generic.List{Microsoft.Bot.Builder.Dialogs.Adaptive.ActionState},System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (dialogs As DialogSet, parentDialogContext As DialogContext, state As DialogState, actions As List(Of ActionState), changeKey As String)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.Dialogs.Adaptive.ActionContext : Microsoft.Bot.Builder.Dialogs.DialogSet * Microsoft.Bot.Builder.Dialogs.DialogContext * Microsoft.Bot.Builder.Dialogs.DialogState * System.Collections.Generic.List&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.ActionState&gt; * string -&gt; Microsoft.Bot.Builder.Dialogs.Adaptive.ActionContext" Usage="new Microsoft.Bot.Builder.Dialogs.Adaptive.ActionContext (dialogs, parentDialogContext, state, actions, changeKey)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dialogs" Type="Microsoft.Bot.Builder.Dialogs.DialogSet" />
+        <Parameter Name="parentDialogContext" Type="Microsoft.Bot.Builder.Dialogs.DialogContext" />
+        <Parameter Name="state" Type="Microsoft.Bot.Builder.Dialogs.DialogState" />
+        <Parameter Name="actions" Type="System.Collections.Generic.List&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.ActionState&gt;" />
+        <Parameter Name="changeKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dialogs">O conjunto de caixas de diálogo para o qual criar o contexto de ação.</param>
+        <param name="parentDialogContext">Contexto da caixa de diálogo pai.</param>
+        <param name="state">Estado da caixa de diálogo atual.</param>
+        <param name="actions">Lista atual de ações restantes a serem executadas.</param>
+        <param name="changeKey">A chave de ativação do foi para manter as alterações.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.ActionContext" />.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Actions">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.List&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.ActionState&gt; Actions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.List`1&lt;class Microsoft.Bot.Builder.Dialogs.Adaptive.ActionState&gt; Actions" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Dialogs.Adaptive.ActionContext.Actions" />
+      <MemberSignature Language="VB.NET" Value="Public Property Actions As List(Of ActionState)" />
+      <MemberSignature Language="F#" Value="member this.Actions : System.Collections.Generic.List&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.ActionState&gt; with get, set" Usage="Microsoft.Bot.Builder.Dialogs.Adaptive.ActionContext.Actions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.List&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.ActionState&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a lista de ações que estão sendo executadas.</summary>
+        <value>Lista de ações que estão sendo executadas.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyChangesAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;bool&gt; ApplyChangesAsync (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;bool&gt; ApplyChangesAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Adaptive.ActionContext.ApplyChangesAsync(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ApplyChangesAsync (Optional cancellationToken As CancellationToken = Nothing) As Task(Of Boolean)" />
+      <MemberSignature Language="F#" Value="member this.ApplyChangesAsync : System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;bool&gt;" Usage="actionContext.ApplyChangesAsync cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken">Token de cancelamento.</param>
+        <summary>Aplica todas as alterações na fila.</summary>
+        <returns>True se houver alguma alteração a ser aplicada.</returns>
+        <remarks>A aplicação de um conjunto de alterações pode resultar na enfileiramento de alterações adicionais. O método fará um loop e aplicará qualquer alteração de plano adicional até que não haja mais nenhuma alteração restante para aplicar.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Changes">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.List&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.ActionChangeList&gt; Changes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.List`1&lt;class Microsoft.Bot.Builder.Dialogs.Adaptive.ActionChangeList&gt; Changes" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Dialogs.Adaptive.ActionContext.Changes" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Changes As List(Of ActionChangeList)" />
+      <MemberSignature Language="F#" Value="member this.Changes : System.Collections.Generic.List&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.ActionChangeList&gt;" Usage="Microsoft.Bot.Builder.Dialogs.Adaptive.ActionContext.Changes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.List&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.ActionChangeList&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém a lista de alterações que estão enfileiradas para serem aplicadas.</summary>
+        <value>Lista de alterações que estão enfileiradas para serem aplicadas.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueueChanges">
+      <MemberSignature Language="C#" Value="public void QueueChanges (Microsoft.Bot.Builder.Dialogs.Adaptive.ActionChangeList changes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void QueueChanges(class Microsoft.Bot.Builder.Dialogs.Adaptive.ActionChangeList changes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Adaptive.ActionContext.QueueChanges(Microsoft.Bot.Builder.Dialogs.Adaptive.ActionChangeList)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub QueueChanges (changes As ActionChangeList)" />
+      <MemberSignature Language="F#" Value="member this.QueueChanges : Microsoft.Bot.Builder.Dialogs.Adaptive.ActionChangeList -&gt; unit" Usage="actionContext.QueueChanges changes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="changes" Type="Microsoft.Bot.Builder.Dialogs.Adaptive.ActionChangeList" />
+      </Parameters>
+      <Docs>
+        <param name="changes">Planejar alterações na fila.</param>
+        <summary>Enfileira um conjunto de alterações que serão aplicadas quando o ApplyChanges for chamado.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,48 @@
+<Type Name="IContactRelationUpdateActivity" FullName="Microsoft.Bot.Schema.IContactRelationUpdateActivity">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="442bff57e867fa2d1d8f623d049a56c050122e11" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150227" /></Metadata><TypeSignature Language="C#" Value="public interface IContactRelationUpdateActivity : Microsoft.Bot.Schema.IActivity" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IContactRelationUpdateActivity implements class Microsoft.Bot.Schema.IActivity" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.IContactRelationUpdateActivity" />
+  <TypeSignature Language="VB.NET" Value="Public Interface IContactRelationUpdateActivity&#xA;Implements IActivity" />
+  <TypeSignature Language="F#" Value="type IContactRelationUpdateActivity = interface&#xA;    interface IActivity" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.Bot.Schema.IActivity</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Um usuário adicionou um bot à lista de contatos, removeu o bot de sua lista de contatos ou alterou a relação entre o usuário e o bot.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="public string Action { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Action" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.IContactRelationUpdateActivity.Action" />
+      <MemberSignature Language="VB.NET" Value="Public Property Action As String" />
+      <MemberSignature Language="F#" Value="member this.Action : string with get, set" Usage="Microsoft.Bot.Schema.IContactRelationUpdateActivity.Action" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define Add | Remove.</summary>
+        <value>Action.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

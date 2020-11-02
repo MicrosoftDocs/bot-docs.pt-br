@@ -1,0 +1,89 @@
+<Type Name="EventFactory" FullName="Microsoft.Bot.Builder.EventFactory">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0c62b7a05a11803dde9fa6ebbc18294710c50838" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150371" /></Metadata><TypeSignature Language="C#" Value="public static class EventFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit EventFactory extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.EventFactory" />
+  <TypeSignature Language="VB.NET" Value="Public Class EventFactory" />
+  <TypeSignature Language="F#" Value="type EventFactory = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Contém métodos de utilitário para a criação de vários tipos de evento.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateHandoffInitiation">
+      <MemberSignature Language="C#" Value="public static Microsoft.Bot.Schema.IEventActivity CreateHandoffInitiation (Microsoft.Bot.Builder.ITurnContext turnContext, object handoffContext, Microsoft.Bot.Schema.Transcript transcript = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Bot.Schema.IEventActivity CreateHandoffInitiation(class Microsoft.Bot.Builder.ITurnContext turnContext, object handoffContext, class Microsoft.Bot.Schema.Transcript transcript) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.EventFactory.CreateHandoffInitiation(Microsoft.Bot.Builder.ITurnContext,System.Object,Microsoft.Bot.Schema.Transcript)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function CreateHandoffInitiation (turnContext As ITurnContext, handoffContext As Object, Optional transcript As Transcript = Nothing) As IEventActivity" />
+      <MemberSignature Language="F#" Value="static member CreateHandoffInitiation : Microsoft.Bot.Builder.ITurnContext * obj * Microsoft.Bot.Schema.Transcript -&gt; Microsoft.Bot.Schema.IEventActivity" Usage="Microsoft.Bot.Builder.EventFactory.CreateHandoffInitiation (turnContext, handoffContext, transcript)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Schema.IEventActivity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="turnContext" Type="Microsoft.Bot.Builder.ITurnContext" />
+        <Parameter Name="handoffContext" Type="System.Object" />
+        <Parameter Name="transcript" Type="Microsoft.Bot.Schema.Transcript" />
+      </Parameters>
+      <Docs>
+        <param name="turnContext">ativar o contexto.</param>
+        <param name="handoffContext">contexto específico do Hub do agente.</param>
+        <param name="transcript">transcrição da conversa.</param>
+        <summary>Criar evento de início de entrega.</summary>
+        <returns>evento de entrega.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateHandoffStatus">
+      <MemberSignature Language="C#" Value="public static Microsoft.Bot.Schema.IEventActivity CreateHandoffStatus (Microsoft.Bot.Schema.ConversationAccount conversation, string state, string message = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Bot.Schema.IEventActivity CreateHandoffStatus(class Microsoft.Bot.Schema.ConversationAccount conversation, string state, string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.EventFactory.CreateHandoffStatus(Microsoft.Bot.Schema.ConversationAccount,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function CreateHandoffStatus (conversation As ConversationAccount, state As String, Optional message As String = Nothing) As IEventActivity" />
+      <MemberSignature Language="F#" Value="static member CreateHandoffStatus : Microsoft.Bot.Schema.ConversationAccount * string * string -&gt; Microsoft.Bot.Schema.IEventActivity" Usage="Microsoft.Bot.Builder.EventFactory.CreateHandoffStatus (conversation, state, message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Schema.IEventActivity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="conversation" Type="Microsoft.Bot.Schema.ConversationAccount" />
+        <Parameter Name="state" Type="System.String" />
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="conversation">Conversa que está sendo enviada.</param>
+        <param name="state">Estado, os valores possíveis são: "aceito", "failed", "Completed".</param>
+        <param name="message">Mensagem adicional para entrega com falha.</param>
+        <summary>Evento de criação de status de entrega.</summary>
+        <returns>evento de entrega.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

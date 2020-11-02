@@ -1,0 +1,216 @@
+<Type Name="MemoryStorage" FullName="Microsoft.Bot.Builder.MemoryStorage">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="4e5c907b07f6009af8e3893a1ad06e277c93f6f7" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150237" /></Metadata><TypeSignature Language="C#" Value="public class MemoryStorage : Microsoft.Bot.Builder.IStorage" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MemoryStorage extends System.Object implements class Microsoft.Bot.Builder.IStorage" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.MemoryStorage" />
+  <TypeSignature Language="VB.NET" Value="Public Class MemoryStorage&#xA;Implements IStorage" />
+  <TypeSignature Language="F#" Value="type MemoryStorage = class&#xA;    interface IStorage" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>4.0.7.0</AssemblyVersion>
+    <AssemblyVersion>4.1.5.0</AssemblyVersion>
+    <AssemblyVersion>4.3.2.0</AssemblyVersion>
+    <AssemblyVersion>4.4.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.0</AssemblyVersion>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.Bot.Builder.IStorage</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Uma camada de armazenamento que usa um dicionário na memória.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MemoryStorage (System.Collections.Generic.Dictionary&lt;string,Newtonsoft.Json.Linq.JObject&gt; dictionary = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.Dictionary`2&lt;string, class Newtonsoft.Json.Linq.JObject&gt; dictionary) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.MemoryStorage.#ctor(System.Collections.Generic.Dictionary{System.String,Newtonsoft.Json.Linq.JObject})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (Optional dictionary As Dictionary(Of String, JObject) = Nothing)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.MemoryStorage : System.Collections.Generic.Dictionary&lt;string, Newtonsoft.Json.Linq.JObject&gt; -&gt; Microsoft.Bot.Builder.MemoryStorage" Usage="new Microsoft.Bot.Builder.MemoryStorage dictionary" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dictionary" Type="System.Collections.Generic.Dictionary&lt;System.String,Newtonsoft.Json.Linq.JObject&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="dictionary">Um dicionário preexistente a ser usado; ou NULL para usar um novo.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.MemoryStorage" />.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MemoryStorage (Newtonsoft.Json.JsonSerializer jsonSerializer, System.Collections.Generic.Dictionary&lt;string,Newtonsoft.Json.Linq.JObject&gt; dictionary = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Newtonsoft.Json.JsonSerializer jsonSerializer, class System.Collections.Generic.Dictionary`2&lt;string, class Newtonsoft.Json.Linq.JObject&gt; dictionary) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.MemoryStorage.#ctor(Newtonsoft.Json.JsonSerializer,System.Collections.Generic.Dictionary{System.String,Newtonsoft.Json.Linq.JObject})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (jsonSerializer As JsonSerializer, Optional dictionary As Dictionary(Of String, JObject) = Nothing)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.MemoryStorage : Newtonsoft.Json.JsonSerializer * System.Collections.Generic.Dictionary&lt;string, Newtonsoft.Json.Linq.JObject&gt; -&gt; Microsoft.Bot.Builder.MemoryStorage" Usage="new Microsoft.Bot.Builder.MemoryStorage (jsonSerializer, dictionary)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="jsonSerializer" Type="Newtonsoft.Json.JsonSerializer" />
+        <Parameter Name="dictionary" Type="System.Collections.Generic.Dictionary&lt;System.String,Newtonsoft.Json.Linq.JObject&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="jsonSerializer">Ao passar em um JsonSerializer personalizado, recomendamos as seguintes configurações:
+            <para>jsonSerializer. TypeNameHandling = TypeNameHandling. All.</para><para>jsonSerializer. NullValueHandling = NullValueHandling. include.</para><para>jsonSerializer. ContractResolver = New DefaultContractResolver ().</para></param>
+        <param name="dictionary">Um dicionário preexistente a ser usado; ou NULL para usar um novo.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.MemoryStorage" />.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task DeleteAsync (string[] keys, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task DeleteAsync(string[] keys, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.MemoryStorage.DeleteAsync(System.String[],System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Function DeleteAsync (keys As String(), cancellationToken As CancellationToken) As Task" />
+      <MemberSignature Language="F#" Value="abstract member DeleteAsync : string[] * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.DeleteAsync : string[] * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="memoryStorage.DeleteAsync (keys, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:Microsoft.Bot.Builder.IStorage.DeleteAsync(System.String[],System.Threading.CancellationToken)</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keys" Type="System.String[]" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="keys">chaves dos <see cref="T:Microsoft.Bot.Builder.IStoreItem" /> objetos a serem excluídos.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Exclui itens de armazenamento do armazenamento.</summary>
+        <returns>Uma tarefa que representa o trabalho na fila a ser executado.</returns>
+        <remarks>To be added.</remarks>
+        <altmember cref="M:Microsoft.Bot.Builder.MemoryStorage.ReadAsync(System.String[],System.Threading.CancellationToken)" />
+        <altmember cref="M:Microsoft.Bot.Builder.MemoryStorage.WriteAsync(System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)" />
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.Collections.Generic.IDictionary&lt;string,object&gt;&gt; ReadAsync (string[] keys, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.Collections.Generic.IDictionary`2&lt;string, object&gt;&gt; ReadAsync(string[] keys, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.MemoryStorage.ReadAsync(System.String[],System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ReadAsync (keys As String(), cancellationToken As CancellationToken) As Task(Of IDictionary(Of String, Object))" />
+      <MemberSignature Language="F#" Value="abstract member ReadAsync : string[] * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.Collections.Generic.IDictionary&lt;string, obj&gt;&gt;&#xA;override this.ReadAsync : string[] * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.Collections.Generic.IDictionary&lt;string, obj&gt;&gt;" Usage="memoryStorage.ReadAsync (keys, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:Microsoft.Bot.Builder.IStorage.ReadAsync(System.String[],System.Threading.CancellationToken)</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keys" Type="System.String[]" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="keys">chaves dos <see cref="T:Microsoft.Bot.Builder.IStoreItem" /> objetos a serem lidos.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Lê itens de armazenamento do armazenamento.</summary>
+        <returns>Uma tarefa que representa o trabalho na fila a ser executado.</returns>
+        <remarks>Se as atividades forem enviadas com êxito, o resultado da tarefa conterá os itens lidos, indexados por chave.</remarks>
+        <altmember cref="M:Microsoft.Bot.Builder.MemoryStorage.DeleteAsync(System.String[],System.Threading.CancellationToken)" />
+        <altmember cref="M:Microsoft.Bot.Builder.MemoryStorage.WriteAsync(System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)" />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task WriteAsync (System.Collections.Generic.IDictionary&lt;string,object&gt; changes, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task WriteAsync(class System.Collections.Generic.IDictionary`2&lt;string, object&gt; changes, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.MemoryStorage.WriteAsync(System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Function WriteAsync (changes As IDictionary(Of String, Object), cancellationToken As CancellationToken) As Task" />
+      <MemberSignature Language="F#" Value="abstract member WriteAsync : System.Collections.Generic.IDictionary&lt;string, obj&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.WriteAsync : System.Collections.Generic.IDictionary&lt;string, obj&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="memoryStorage.WriteAsync (changes, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:Microsoft.Bot.Builder.IStorage.WriteAsync(System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="changes" Type="System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="changes">Os itens a serem gravados, indexados por chave.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Grava itens de armazenamento no armazenamento.</summary>
+        <returns>Uma tarefa que representa o trabalho na fila a ser executado.</returns>
+        <remarks>To be added.</remarks>
+        <altmember cref="M:Microsoft.Bot.Builder.MemoryStorage.DeleteAsync(System.String[],System.Threading.CancellationToken)" />
+        <altmember cref="M:Microsoft.Bot.Builder.MemoryStorage.ReadAsync(System.String[],System.Threading.CancellationToken)" />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

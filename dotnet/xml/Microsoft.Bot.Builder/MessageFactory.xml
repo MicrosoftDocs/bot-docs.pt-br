@@ -1,0 +1,416 @@
+<Type Name="MessageFactory" FullName="Microsoft.Bot.Builder.MessageFactory">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2c611b6dc13c3a6b68f9489d332831f7573e5050" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150050" /></Metadata><TypeSignature Language="C#" Value="public static class MessageFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit MessageFactory extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.MessageFactory" />
+  <TypeSignature Language="VB.NET" Value="Public Class MessageFactory" />
+  <TypeSignature Language="F#" Value="type MessageFactory = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>4.0.7.0</AssemblyVersion>
+    <AssemblyVersion>4.1.5.0</AssemblyVersion>
+    <AssemblyVersion>4.3.2.0</AssemblyVersion>
+    <AssemblyVersion>4.4.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.0</AssemblyVersion>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Contém métodos de utilitário para vários tipos de mensagem que um bot pode retornar.</summary>
+    <remarks>O seguinte se aplica às ações de mensagens em geral.
+            <para>Consulte a documentação do canal para obter os limites impostos sobre o conteúdo do texto da mensagem a ser enviada.</para><para>Para controlar várias características da fala do bot, como voz, taxa, volume, pronúncia e pitch, especifique o teste para falar no formato de linguagem de marcação de síntese de fala (SSML).</para><para>
+Os canais decidem como cada ação de cartão se manifesta na experiência do usuário.
+Na maioria dos casos, os cartões são clicáveis. Em outros, eles podem ser selecionados por entrada de fala. Em casos nos quais o canal não oferece uma experiência de ativação interativa (por exemplo, ao interagir por SMS), talvez o canal não ofereça suporte a qualquer tipo de ativação. A decisão sobre como renderizar ações é controlada pelo requisitos normativos em outro lugar neste documento (por exemplo, dentro do formato de cartão ou na definição de ações sugeridas).</para></remarks>
+    <example><code>
+            // Create and send a message.
+            var message = MessageFactory.Text("Hello World");
+            await context.SendActivity(message);
+            </code></example>
+  </Docs>
+  <Members>
+    <Member MemberName="Attachment">
+      <MemberSignature Language="C#" Value="public static Microsoft.Bot.Schema.IMessageActivity Attachment (Microsoft.Bot.Schema.Attachment attachment, string text = default, string ssml = default, string inputHint = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Bot.Schema.IMessageActivity Attachment(class Microsoft.Bot.Schema.Attachment attachment, string text, string ssml, string inputHint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.MessageFactory.Attachment(Microsoft.Bot.Schema.Attachment,System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Attachment (attachment As Attachment, Optional text As String = Nothing, Optional ssml As String = Nothing, Optional inputHint As String = Nothing) As IMessageActivity" />
+      <MemberSignature Language="F#" Value="static member Attachment : Microsoft.Bot.Schema.Attachment * string * string * string -&gt; Microsoft.Bot.Schema.IMessageActivity" Usage="Microsoft.Bot.Builder.MessageFactory.Attachment (attachment, text, ssml, inputHint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Schema.IMessageActivity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attachment" Type="Microsoft.Bot.Schema.Attachment" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="ssml" Type="System.String" />
+        <Parameter Name="inputHint" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="attachment">Anexo a ser incluído na mensagem.</param>
+        <param name="text">Opcional, o texto da mensagem a ser enviada.</param>
+        <param name="ssml">Opcional, o texto a ser falado pelo bot em um canal habilitado para fala.</param>
+        <param name="inputHint">Opcional, indica se o bot está aceitando, esperando ou ignorando a entrada do usuário depois que a mensagem é entregue ao cliente.
+Um destes: "acceptingInput", "ignoringInput" ou "expectingInput".
+O padrão é "acceptingInput".</param>
+        <summary>Retorna uma atividade de mensagem que contém um anexo.</summary>
+        <returns>Uma atividade de mensagem que contém o anexo.</returns>
+        <remarks>To be added.</remarks>
+        <altmember cref="M:Microsoft.Bot.Builder.MessageFactory.Attachment(System.Collections.Generic.IEnumerable{Microsoft.Bot.Schema.Attachment},System.String,System.String,System.String)" />
+        <altmember cref="M:Microsoft.Bot.Builder.MessageFactory.Carousel(System.Collections.Generic.IEnumerable{Microsoft.Bot.Schema.Attachment},System.String,System.String,System.String)" />
+        <exception cref="T:System.ArgumentNullException"><paramref name="attachment" /> é <c>nulo</c>.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Attachment">
+      <MemberSignature Language="C#" Value="public static Microsoft.Bot.Schema.IMessageActivity Attachment (System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Schema.Attachment&gt; attachments, string text = default, string ssml = default, string inputHint = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Bot.Schema.IMessageActivity Attachment(class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Bot.Schema.Attachment&gt; attachments, string text, string ssml, string inputHint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.MessageFactory.Attachment(System.Collections.Generic.IEnumerable{Microsoft.Bot.Schema.Attachment},System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Attachment (attachments As IEnumerable(Of Attachment), Optional text As String = Nothing, Optional ssml As String = Nothing, Optional inputHint As String = Nothing) As IMessageActivity" />
+      <MemberSignature Language="F#" Value="static member Attachment : seq&lt;Microsoft.Bot.Schema.Attachment&gt; * string * string * string -&gt; Microsoft.Bot.Schema.IMessageActivity" Usage="Microsoft.Bot.Builder.MessageFactory.Attachment (attachments, text, ssml, inputHint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Schema.IMessageActivity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attachments" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Schema.Attachment&gt;" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="ssml" Type="System.String" />
+        <Parameter Name="inputHint" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="attachments">Os anexos a serem incluídos na mensagem.</param>
+        <param name="text">Opcional, o texto da mensagem a ser enviada.</param>
+        <param name="ssml">Opcional, o texto a ser falado pelo bot em um canal habilitado para fala.</param>
+        <param name="inputHint">Opcional, indica se o bot está aceitando, esperando ou ignorando a entrada do usuário depois que a mensagem é entregue ao cliente.
+Um destes: "acceptingInput", "ignoringInput" ou "expectingInput".
+O padrão é "acceptingInput".</param>
+        <summary>Retorna uma atividade de mensagem que contém uma coleção de anexos, em uma lista.</summary>
+        <returns>Uma atividade de mensagem que contém o anexo.</returns>
+        <remarks>To be added.</remarks>
+        <altmember cref="M:Microsoft.Bot.Builder.MessageFactory.Carousel(System.Collections.Generic.IEnumerable{Microsoft.Bot.Schema.Attachment},System.String,System.String,System.String)" />
+        <altmember cref="M:Microsoft.Bot.Builder.MessageFactory.Attachment(Microsoft.Bot.Schema.Attachment,System.String,System.String,System.String)" />
+        <exception cref="T:System.ArgumentNullException"><paramref name="attachments" /> é <c>nulo</c>.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Carousel">
+      <MemberSignature Language="C#" Value="public static Microsoft.Bot.Schema.IMessageActivity Carousel (System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Schema.Attachment&gt; attachments, string text = default, string ssml = default, string inputHint = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Bot.Schema.IMessageActivity Carousel(class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Bot.Schema.Attachment&gt; attachments, string text, string ssml, string inputHint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.MessageFactory.Carousel(System.Collections.Generic.IEnumerable{Microsoft.Bot.Schema.Attachment},System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Carousel (attachments As IEnumerable(Of Attachment), Optional text As String = Nothing, Optional ssml As String = Nothing, Optional inputHint As String = Nothing) As IMessageActivity" />
+      <MemberSignature Language="F#" Value="static member Carousel : seq&lt;Microsoft.Bot.Schema.Attachment&gt; * string * string * string -&gt; Microsoft.Bot.Schema.IMessageActivity" Usage="Microsoft.Bot.Builder.MessageFactory.Carousel (attachments, text, ssml, inputHint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Schema.IMessageActivity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attachments" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Schema.Attachment&gt;" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="ssml" Type="System.String" />
+        <Parameter Name="inputHint" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="attachments">Os anexos a serem incluídos na mensagem.</param>
+        <param name="text">Opcional, o texto da mensagem a ser enviada.</param>
+        <param name="ssml">Opcional, o texto a ser falado pelo bot em um canal habilitado para fala.</param>
+        <param name="inputHint">Opcional, indica se o bot está aceitando, esperando ou ignorando a entrada do usuário depois que a mensagem é entregue ao cliente.
+Um destes: "acceptingInput", "ignoringInput" ou "expectingInput".
+O padrão é "acceptingInput".</param>
+        <summary>Retorna uma atividade de mensagem que contém uma coleção de anexos, como um carrossel.</summary>
+        <returns>Uma atividade de mensagem que contém o anexo.</returns>
+        <remarks>To be added.</remarks>
+        <altmember cref="M:Microsoft.Bot.Builder.MessageFactory.Attachment(System.Collections.Generic.IEnumerable{Microsoft.Bot.Schema.Attachment},System.String,System.String,System.String)" />
+        <exception cref="T:System.ArgumentNullException"><paramref name="attachments" /> é <c>nulo</c>.</exception>
+        <example>Esse código cria e envia um carrossel de HeroCards.
+             <code>
+             // Create the activity and attach a set of Hero cards.
+             var activity = MessageFactory.Carousel(
+             new Attachment[]
+             {
+                 new HeroCard(
+                     title: "title1",
+                     images: new CardImage[] { new CardImage(url: "imageUrl1.png") },
+                     buttons: new CardAction[]
+                     {
+                         new CardAction(title: "button1", type: ActionTypes.ImBack, value: "item1")
+                     })
+                 .ToAttachment(),
+                 new HeroCard(
+                     title: "title2",
+                     images: new CardImage[] { new CardImage(url: "imageUrl2.png") },
+                     buttons: new CardAction[]
+                     {
+                         new CardAction(title: "button2", type: ActionTypes.ImBack, value: "item2")
+                     })
+                 .ToAttachment(),
+                 new HeroCard(
+                     title: "title3",
+                     images: new CardImage[] { new CardImage(url: "imageUrl3.png") },
+                     buttons: new CardAction[]
+                     {
+                         new CardAction(title: "button3", type: ActionTypes.ImBack, value: "item3")
+                     })
+                 .ToAttachment()
+             });
+            
+             // Send the activity as a reply to the user.
+             await context.SendActivity(activity);
+             </code></example>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentUrl">
+      <MemberSignature Language="C#" Value="public static Microsoft.Bot.Schema.IMessageActivity ContentUrl (string url, string contentType, string name = default, string text = default, string ssml = default, string inputHint = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Bot.Schema.IMessageActivity ContentUrl(string url, string contentType, string name, string text, string ssml, string inputHint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.MessageFactory.ContentUrl(System.String,System.String,System.String,System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ContentUrl (url As String, contentType As String, Optional name As String = Nothing, Optional text As String = Nothing, Optional ssml As String = Nothing, Optional inputHint As String = Nothing) As IMessageActivity" />
+      <MemberSignature Language="F#" Value="static member ContentUrl : string * string * string * string * string * string -&gt; Microsoft.Bot.Schema.IMessageActivity" Usage="Microsoft.Bot.Builder.MessageFactory.ContentUrl (url, contentType, name, text, ssml, inputHint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Schema.IMessageActivity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="contentType" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="ssml" Type="System.String" />
+        <Parameter Name="inputHint" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="url">A URL da imagem ou do vídeo a ser enviado.</param>
+        <param name="contentType">O tipo MIME da imagem ou do vídeo.</param>
+        <param name="name">Opcional, o nome do arquivo de imagem ou de vídeo.</param>
+        <param name="text">Opcional, o texto da mensagem a ser enviada.</param>
+        <param name="ssml">Opcional, o texto a ser falado pelo bot em um canal habilitado para fala.</param>
+        <param name="inputHint">Opcional, indica se o bot está aceitando, esperando ou ignorando a entrada do usuário depois que a mensagem é entregue ao cliente.
+Um destes: "acceptingInput", "ignoringInput" ou "expectingInput".
+O padrão é nulo.</param>
+        <summary>Retorna uma atividade de mensagem que contém uma única imagem ou vídeo.</summary>
+        <returns>Uma atividade de mensagem que contém o anexo.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="url" /> ou <paramref name="contentType" /> é <c>nulo</c>, vazio ou espaço em branco.</exception>
+        <example>Esse código cria uma atividade de mensagem que contém uma imagem.
+            <code>
+            IMessageActivity message =
+                MessageFactory.ContentUrl("https://{domainName}/cat.jpg", MediaTypeNames.Image.Jpeg, "Cat Picture");
+            </code></example>
+      </Docs>
+    </Member>
+    <Member MemberName="SuggestedActions">
+      <MemberSignature Language="C#" Value="public static Microsoft.Bot.Schema.IMessageActivity SuggestedActions (System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Schema.CardAction&gt; cardActions, string text = default, string ssml = default, string inputHint = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Bot.Schema.IMessageActivity SuggestedActions(class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Bot.Schema.CardAction&gt; cardActions, string text, string ssml, string inputHint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.MessageFactory.SuggestedActions(System.Collections.Generic.IEnumerable{Microsoft.Bot.Schema.CardAction},System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function SuggestedActions (cardActions As IEnumerable(Of CardAction), Optional text As String = Nothing, Optional ssml As String = Nothing, Optional inputHint As String = Nothing) As IMessageActivity" />
+      <MemberSignature Language="F#" Value="static member SuggestedActions : seq&lt;Microsoft.Bot.Schema.CardAction&gt; * string * string * string -&gt; Microsoft.Bot.Schema.IMessageActivity" Usage="Microsoft.Bot.Builder.MessageFactory.SuggestedActions (cardActions, text, ssml, inputHint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Schema.IMessageActivity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cardActions" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Schema.CardAction&gt;" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="ssml" Type="System.String" />
+        <Parameter Name="inputHint" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="cardActions">As ações do cartão a serem incluídas.</param>
+        <param name="text">Opcional, o texto da mensagem a ser enviada.</param>
+        <param name="ssml">Opcional, o texto a ser falado pelo bot em um canal habilitado para fala.</param>
+        <param name="inputHint">Opcional, indica se o bot está aceitando, esperando ou ignorando a entrada do usuário depois que a mensagem é entregue ao cliente.
+Um destes: "acceptingInput", "ignoringInput" ou "expectingInput".
+O padrão é "acceptingInput".</param>
+        <summary>Retorna uma mensagem que inclui um conjunto de ações sugeridas e texto opcional.</summary>
+        <returns>Uma atividade de mensagem que contém as ações sugeridas.</returns>
+        <remarks>To be added.</remarks>
+        <altmember cref="M:Microsoft.Bot.Builder.MessageFactory.SuggestedActions(System.Collections.Generic.IEnumerable{System.String},System.String,System.String,System.String)" />
+        <example><code>
+             // Create the activity and add suggested actions.
+             var activity = MessageFactory.SuggestedActions(
+                 new CardAction[]
+                 {
+                     new CardAction(title: "red", type: ActionTypes.ImBack, value: "red"),
+                     new CardAction( title: "green", type: ActionTypes.ImBack, value: "green"),
+                     new CardAction(title: "blue", type: ActionTypes.ImBack, value: "blue")
+                 }, text: "Choose a color");
+            
+             // Send the activity as a reply to the user.
+             await context.SendActivity(activity);
+             </code></example>
+        <exception cref="T:System.ArgumentNullException"><paramref name="cardActions" /> é <c>nulo</c>.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SuggestedActions">
+      <MemberSignature Language="C#" Value="public static Microsoft.Bot.Schema.IMessageActivity SuggestedActions (System.Collections.Generic.IEnumerable&lt;string&gt; actions, string text = default, string ssml = default, string inputHint = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Bot.Schema.IMessageActivity SuggestedActions(class System.Collections.Generic.IEnumerable`1&lt;string&gt; actions, string text, string ssml, string inputHint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.MessageFactory.SuggestedActions(System.Collections.Generic.IEnumerable{System.String},System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function SuggestedActions (actions As IEnumerable(Of String), Optional text As String = Nothing, Optional ssml As String = Nothing, Optional inputHint As String = Nothing) As IMessageActivity" />
+      <MemberSignature Language="F#" Value="static member SuggestedActions : seq&lt;string&gt; * string * string * string -&gt; Microsoft.Bot.Schema.IMessageActivity" Usage="Microsoft.Bot.Builder.MessageFactory.SuggestedActions (actions, text, ssml, inputHint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Schema.IMessageActivity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="actions" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="ssml" Type="System.String" />
+        <Parameter Name="inputHint" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="actions">O texto das ações a serem criadas.</param>
+        <param name="text">O texto da mensagem a ser enviada.</param>
+        <param name="ssml">Opcional, o texto a ser falado pelo bot em um canal habilitado para fala.</param>
+        <param name="inputHint">Opcional, indica se o bot está aceitando, esperando ou ignorando a entrada do usuário depois que a mensagem é entregue ao cliente.
+Um destes: "acceptingInput", "ignoringInput" ou "expectingInput".
+O padrão é "acceptingInput".</param>
+        <summary>Retorna uma mensagem que inclui um conjunto de ações sugeridas e texto opcional.</summary>
+        <returns>Uma atividade de mensagem que contém as ações sugeridas.</returns>
+        <remarks>Esse método cria uma ação sugerida para cada cadeia de caracteres no <paramref name="actions" /> .
+A ação criada usa o texto para <see cref="P:Microsoft.Bot.Schema.CardAction.Value" /> e <see cref="P:Microsoft.Bot.Schema.CardAction.Title" /> define o <see cref="P:Microsoft.Bot.Schema.CardAction.Type" /> para <see cref="F:Microsoft.Bot.Schema.ActionTypes.ImBack" /> .</remarks>
+        <altmember cref="M:Microsoft.Bot.Builder.MessageFactory.SuggestedActions(System.Collections.Generic.IEnumerable{Microsoft.Bot.Schema.CardAction},System.String,System.String,System.String)" />
+        <example><code>
+             // Create the activity and add suggested actions.
+             var activity = MessageFactory.SuggestedActions(
+                 new string[] { "red", "green", "blue" },
+                 text: "Choose a color");
+            
+             // Send the activity as a reply to the user.
+             await context.SendActivity(activity);
+             </code></example>
+        <exception cref="T:System.ArgumentNullException"><paramref name="actions" /> é <c>nulo</c>.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public static Microsoft.Bot.Schema.Activity Text (string text, string ssml = default, string inputHint = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Bot.Schema.Activity Text(string text, string ssml, string inputHint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.MessageFactory.Text(System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Text (text As String, Optional ssml As String = Nothing, Optional inputHint As String = Nothing) As Activity" />
+      <MemberSignature Language="F#" Value="static member Text : string * string * string -&gt; Microsoft.Bot.Schema.Activity" Usage="Microsoft.Bot.Builder.MessageFactory.Text (text, ssml, inputHint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Schema.Activity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="ssml" Type="System.String" />
+        <Parameter Name="inputHint" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">O texto da mensagem a ser enviada.</param>
+        <param name="ssml">Opcional, o texto a ser falado pelo bot em um canal habilitado para fala.</param>
+        <param name="inputHint">Opcional, indica se o bot está aceitando, esperando ou ignorando a entrada do usuário depois que a mensagem é entregue ao cliente.
+Um destes: "acceptingInput", "ignoringInput" ou "expectingInput".
+O padrão é "acceptingInput".</param>
+        <summary>Retorna uma mensagem de texto simples.</summary>
+        <returns>Uma atividade de mensagem que contém o texto.</returns>
+        <remarks>To be added.</remarks>
+        <example><code>
+            // Create and send a message.
+            var message = MessageFactory.Text("Hello World");
+            await context.SendActivity(message);
+            </code></example>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

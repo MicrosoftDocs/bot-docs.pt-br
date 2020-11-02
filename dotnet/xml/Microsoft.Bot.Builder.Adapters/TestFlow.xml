@@ -1,0 +1,849 @@
+<Type Name="TestFlow" FullName="Microsoft.Bot.Builder.Adapters.TestFlow">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="01774d6cce17d9c60fe0d39a521afd42c65766c4" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151407" /></Metadata><TypeSignature Language="C#" Value="public class TestFlow" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TestFlow extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Adapters.TestFlow" />
+  <TypeSignature Language="VB.NET" Value="Public Class TestFlow" />
+  <TypeSignature Language="F#" Value="type TestFlow = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>4.0.7.0</AssemblyVersion>
+    <AssemblyVersion>4.1.5.0</AssemblyVersion>
+    <AssemblyVersion>4.3.2.0</AssemblyVersion>
+    <AssemblyVersion>4.4.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.0</AssemblyVersion>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Um canal fictício que pode ser usado para teste de unidade da lógica de bot.</summary>
+    <remarks>Você pode usar essa classe para imitar a entrada de um usuário ou canal para validar que o bot ou o adaptador responda conforme o esperado.</remarks>
+    <altmember cref="T:Microsoft.Bot.Builder.Adapters.TestAdapter" />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TestFlow (Microsoft.Bot.Builder.Adapters.TestAdapter adapter, Microsoft.Bot.Builder.BotCallbackHandler callback = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Bot.Builder.Adapters.TestAdapter adapter, class Microsoft.Bot.Builder.BotCallbackHandler callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.TestFlow.#ctor(Microsoft.Bot.Builder.Adapters.TestAdapter,Microsoft.Bot.Builder.BotCallbackHandler)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (adapter As TestAdapter, Optional callback As BotCallbackHandler = Nothing)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.Adapters.TestFlow : Microsoft.Bot.Builder.Adapters.TestAdapter * Microsoft.Bot.Builder.BotCallbackHandler -&gt; Microsoft.Bot.Builder.Adapters.TestFlow" Usage="new Microsoft.Bot.Builder.Adapters.TestFlow (adapter, callback)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="adapter" Type="Microsoft.Bot.Builder.Adapters.TestAdapter" />
+        <Parameter Name="callback" Type="Microsoft.Bot.Builder.BotCallbackHandler" />
+      </Parameters>
+      <Docs>
+        <param name="adapter">O adaptador de teste a ser usado.</param>
+        <param name="callback">O bot ativa a lógica de processamento para testar.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" />.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TestFlow (Microsoft.Bot.Builder.Adapters.TestAdapter adapter, Microsoft.Bot.Builder.IBot bot);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Bot.Builder.Adapters.TestAdapter adapter, class Microsoft.Bot.Builder.IBot bot) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.TestFlow.#ctor(Microsoft.Bot.Builder.Adapters.TestAdapter,Microsoft.Bot.Builder.IBot)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (adapter As TestAdapter, bot As IBot)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.Adapters.TestFlow : Microsoft.Bot.Builder.Adapters.TestAdapter * Microsoft.Bot.Builder.IBot -&gt; Microsoft.Bot.Builder.Adapters.TestFlow" Usage="new Microsoft.Bot.Builder.Adapters.TestFlow (adapter, bot)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="adapter" Type="Microsoft.Bot.Builder.Adapters.TestAdapter" />
+        <Parameter Name="bot" Type="Microsoft.Bot.Builder.IBot" />
+      </Parameters>
+      <Docs>
+        <param name="adapter">O adaptador de teste a ser usado.</param>
+        <param name="bot">O bot que contém a lógica de processamento de ativação a ser testada.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" />.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TestFlow (Func&lt;System.Threading.Tasks.Task&gt; getTask, Microsoft.Bot.Builder.Adapters.TestFlow flow);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Func`1&lt;class System.Threading.Tasks.Task&gt; getTask, class Microsoft.Bot.Builder.Adapters.TestFlow flow) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.TestFlow.#ctor(System.Func{System.Threading.Tasks.Task},Microsoft.Bot.Builder.Adapters.TestFlow)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (getTask As Func(Of Task), flow As TestFlow)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.Adapters.TestFlow : Func&lt;System.Threading.Tasks.Task&gt; * Microsoft.Bot.Builder.Adapters.TestFlow -&gt; Microsoft.Bot.Builder.Adapters.TestFlow" Usage="new Microsoft.Bot.Builder.Adapters.TestFlow (getTask, flow)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="getTask" Type="System.Func&lt;System.Threading.Tasks.Task&gt;" />
+        <Parameter Name="flow" Type="Microsoft.Bot.Builder.Adapters.TestFlow" />
+      </Parameters>
+      <Docs>
+        <param name="getTask">O Exchange a ser adicionado às trocas no fluxo existente.</param>
+        <param name="flow">O fluxo do qual se acumular. Isso fornece o adaptador de teste a ser usado, o bot ativa a lógica de processamento para testar e um conjunto de trocas para modelar e testar.</param>
+        <summary>Inicializa uma nova instância da <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> classe a partir de um fluxo existente.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TestFlow (System.Threading.Tasks.Task task, Microsoft.Bot.Builder.Adapters.TestFlow flow);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Threading.Tasks.Task task, class Microsoft.Bot.Builder.Adapters.TestFlow flow) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.TestFlow.#ctor(System.Threading.Tasks.Task,Microsoft.Bot.Builder.Adapters.TestFlow)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (task As Task, flow As TestFlow)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.Adapters.TestFlow : System.Threading.Tasks.Task * Microsoft.Bot.Builder.Adapters.TestFlow -&gt; Microsoft.Bot.Builder.Adapters.TestFlow" Usage="new Microsoft.Bot.Builder.Adapters.TestFlow (task, flow)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="task" Type="System.Threading.Tasks.Task" />
+        <Parameter Name="flow" Type="Microsoft.Bot.Builder.Adapters.TestFlow" />
+      </Parameters>
+      <Docs>
+        <param name="task">O Exchange a ser adicionado às trocas no fluxo existente.</param>
+        <param name="flow">O fluxo do qual se acumular. Isso fornece o adaptador de teste a ser usado, o bot ativa a lógica de processamento para testar e um conjunto de trocas para modelar e testar.</param>
+        <summary>Inicializa uma nova instância da <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> classe a partir de um fluxo existente.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssertNoReply">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.TestFlow AssertNoReply (string description = default, uint timeout = 3000);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Bot.Builder.Adapters.TestFlow AssertNoReply(string description, unsigned int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.TestFlow.AssertNoReply(System.String,System.UInt32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AssertNoReply (Optional description As String = Nothing, Optional timeout As UInteger = 3000) As TestFlow" />
+      <MemberSignature Language="F#" Value="member this.AssertNoReply : string * uint32 -&gt; Microsoft.Bot.Builder.Adapters.TestFlow" Usage="testFlow.AssertNoReply (description, timeout)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.TestFlow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.String">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.Runtime.CompilerServices.CallerMemberName]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.CallerMemberName&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+        <Parameter Name="timeout" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="description">Uma mensagem a ser enviada se a desativação ainda responder.</param>
+        <param name="timeout">A quantidade de tempo em milissegundos em que nenhuma resposta é esperada.</param>
+        <summary>Adiciona uma asserção de que a lógica de processamento de ativação termina de responder conforme o esperado.</summary>
+        <returns>Um novo <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> objeto que acrescenta essa asserção à troca modelada.</returns>
+        <remarks>Esse método não modifica o objeto original <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> .</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssertReply">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.TestFlow AssertReply (Microsoft.Bot.Schema.IActivity expected, string description = default, uint timeout = 3000);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Bot.Builder.Adapters.TestFlow AssertReply(class Microsoft.Bot.Schema.IActivity expected, string description, unsigned int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.TestFlow.AssertReply(Microsoft.Bot.Schema.IActivity,System.String,System.UInt32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AssertReply (expected As IActivity, Optional description As String = Nothing, Optional timeout As UInteger = 3000) As TestFlow" />
+      <MemberSignature Language="F#" Value="member this.AssertReply : Microsoft.Bot.Schema.IActivity * string * uint32 -&gt; Microsoft.Bot.Builder.Adapters.TestFlow" Usage="testFlow.AssertReply (expected, description, timeout)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.TestFlow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expected" Type="Microsoft.Bot.Schema.IActivity" />
+        <Parameter Name="description" Type="System.String">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.Runtime.CompilerServices.CallerMemberName]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.CallerMemberName&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+        <Parameter Name="timeout" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="expected">A atividade esperada do bot.</param>
+        <param name="description">Uma mensagem a ser enviada se a resposta real não for o esperado.</param>
+        <param name="timeout">A quantidade de tempo em milissegundos dentro da qual uma resposta é esperada.</param>
+        <summary>Adiciona uma asserção que a lógica de processamento de ativação responde conforme o esperado.</summary>
+        <returns>Um novo <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> objeto que acrescenta essa asserção à troca modelada.</returns>
+        <remarks>Esse método não modifica o objeto original <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> .</remarks>
+        <exception cref="T:System.Exception">O bot não respondeu conforme o esperado.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AssertReply">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.TestFlow AssertReply (Action&lt;Microsoft.Bot.Schema.IActivity&gt; validateActivity, string description = default, uint timeout = 3000);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Bot.Builder.Adapters.TestFlow AssertReply(class System.Action`1&lt;class Microsoft.Bot.Schema.IActivity&gt; validateActivity, string description, unsigned int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.TestFlow.AssertReply(System.Action{Microsoft.Bot.Schema.IActivity},System.String,System.UInt32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AssertReply (validateActivity As Action(Of IActivity), Optional description As String = Nothing, Optional timeout As UInteger = 3000) As TestFlow" />
+      <MemberSignature Language="F#" Value="member this.AssertReply : Action&lt;Microsoft.Bot.Schema.IActivity&gt; * string * uint32 -&gt; Microsoft.Bot.Builder.Adapters.TestFlow" Usage="testFlow.AssertReply (validateActivity, description, timeout)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.TestFlow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="validateActivity" Type="System.Action&lt;Microsoft.Bot.Schema.IActivity&gt;" />
+        <Parameter Name="description" Type="System.String">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.Runtime.CompilerServices.CallerMemberName]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.CallerMemberName&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+        <Parameter Name="timeout" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="validateActivity">Um método de validação a ser aplicado a uma atividade do bot.
+Essa atividade deve lançar uma exceção se a validação falhar.</param>
+        <param name="description">Uma mensagem a ser enviada se a resposta real não for o esperado.</param>
+        <param name="timeout">A quantidade de tempo em milissegundos dentro da qual uma resposta é esperada.</param>
+        <summary>Adiciona uma asserção que a lógica de processamento de ativação responde conforme o esperado.</summary>
+        <returns>Um novo <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> objeto que acrescenta essa asserção à troca modelada.</returns>
+        <remarks>Esse método não modifica o objeto original <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> .</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssertReply">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.TestFlow AssertReply (string expected, string description = default, uint timeout = 3000);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Bot.Builder.Adapters.TestFlow AssertReply(string expected, string description, unsigned int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.TestFlow.AssertReply(System.String,System.String,System.UInt32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AssertReply (expected As String, Optional description As String = Nothing, Optional timeout As UInteger = 3000) As TestFlow" />
+      <MemberSignature Language="F#" Value="member this.AssertReply : string * string * uint32 -&gt; Microsoft.Bot.Builder.Adapters.TestFlow" Usage="testFlow.AssertReply (expected, description, timeout)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.TestFlow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expected" Type="System.String" />
+        <Parameter Name="description" Type="System.String" />
+        <Parameter Name="timeout" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="expected">O texto esperado de uma mensagem do bot.</param>
+        <param name="description">Uma mensagem a ser enviada se a resposta real não for o esperado.</param>
+        <param name="timeout">A quantidade de tempo em milissegundos dentro da qual uma resposta é esperada.</param>
+        <summary>Adiciona uma asserção que a lógica de processamento de ativação responde conforme o esperado.</summary>
+        <returns>Um novo <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> objeto que acrescenta essa asserção à troca modelada.</returns>
+        <remarks>Esse método não modifica o objeto original <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> .</remarks>
+        <exception cref="T:System.Exception">O bot não respondeu conforme o esperado.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AssertReply">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.TestFlow AssertReply (Microsoft.Bot.Schema.IActivity expected, System.Collections.Generic.IEqualityComparer&lt;Microsoft.Bot.Schema.IActivity&gt; equalityComparer, string description = default, uint timeout = 3000);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Bot.Builder.Adapters.TestFlow AssertReply(class Microsoft.Bot.Schema.IActivity expected, class System.Collections.Generic.IEqualityComparer`1&lt;class Microsoft.Bot.Schema.IActivity&gt; equalityComparer, string description, unsigned int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.TestFlow.AssertReply(Microsoft.Bot.Schema.IActivity,System.Collections.Generic.IEqualityComparer{Microsoft.Bot.Schema.IActivity},System.String,System.UInt32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AssertReply (expected As IActivity, equalityComparer As IEqualityComparer(Of IActivity), Optional description As String = Nothing, Optional timeout As UInteger = 3000) As TestFlow" />
+      <MemberSignature Language="F#" Value="member this.AssertReply : Microsoft.Bot.Schema.IActivity * System.Collections.Generic.IEqualityComparer&lt;Microsoft.Bot.Schema.IActivity&gt; * string * uint32 -&gt; Microsoft.Bot.Builder.Adapters.TestFlow" Usage="testFlow.AssertReply (expected, equalityComparer, description, timeout)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.TestFlow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expected" Type="Microsoft.Bot.Schema.IActivity" />
+        <Parameter Name="equalityComparer" Type="System.Collections.Generic.IEqualityComparer&lt;Microsoft.Bot.Schema.IActivity&gt;" />
+        <Parameter Name="description" Type="System.String">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.Runtime.CompilerServices.CallerMemberName]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.CallerMemberName&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+        <Parameter Name="timeout" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="expected">A atividade esperada do bot.</param>
+        <param name="equalityComparer">O parâmetro de igualdade que compara duas atividades.</param>
+        <param name="description">Uma mensagem a ser enviada se a resposta real não for o esperado.</param>
+        <param name="timeout">A quantidade de tempo em milissegundos dentro da qual uma resposta é esperada.</param>
+        <summary>Adiciona uma asserção que a lógica de processamento de ativação responde conforme o esperado.</summary>
+        <returns>Um novo <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> objeto que acrescenta essa asserção à troca modelada.</returns>
+        <remarks>Esse método não modifica o objeto original <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> .</remarks>
+        <exception cref="T:System.Exception">O bot não respondeu conforme o esperado.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AssertReplyContains">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.TestFlow AssertReplyContains (string expected, string description = default, uint timeout = 3000);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Bot.Builder.Adapters.TestFlow AssertReplyContains(string expected, string description, unsigned int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.TestFlow.AssertReplyContains(System.String,System.String,System.UInt32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AssertReplyContains (expected As String, Optional description As String = Nothing, Optional timeout As UInteger = 3000) As TestFlow" />
+      <MemberSignature Language="F#" Value="member this.AssertReplyContains : string * string * uint32 -&gt; Microsoft.Bot.Builder.Adapters.TestFlow" Usage="testFlow.AssertReplyContains (expected, description, timeout)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.TestFlow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expected" Type="System.String" />
+        <Parameter Name="description" Type="System.String" />
+        <Parameter Name="timeout" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="expected">A parte do texto esperado de uma mensagem do bot.</param>
+        <param name="description">Uma mensagem a ser enviada se a resposta real não for o esperado.</param>
+        <param name="timeout">A quantidade de tempo em milissegundos dentro da qual uma resposta é esperada.</param>
+        <summary>Adiciona uma asserção que a lógica de processamento de ativação responde conforme o esperado.</summary>
+        <returns>Um novo <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> objeto que acrescenta essa asserção à troca modelada.</returns>
+        <remarks>Esse método não modifica o objeto original <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> .</remarks>
+        <exception cref="T:System.Exception">O bot não respondeu conforme o esperado.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AssertReplyOneOf">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.TestFlow AssertReplyOneOf (string[] candidates, string description = default, uint timeout = 3000);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Bot.Builder.Adapters.TestFlow AssertReplyOneOf(string[] candidates, string description, unsigned int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.TestFlow.AssertReplyOneOf(System.String[],System.String,System.UInt32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AssertReplyOneOf (candidates As String(), Optional description As String = Nothing, Optional timeout As UInteger = 3000) As TestFlow" />
+      <MemberSignature Language="F#" Value="member this.AssertReplyOneOf : string[] * string * uint32 -&gt; Microsoft.Bot.Builder.Adapters.TestFlow" Usage="testFlow.AssertReplyOneOf (candidates, description, timeout)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.TestFlow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="candidates" Type="System.String[]" />
+        <Parameter Name="description" Type="System.String" />
+        <Parameter Name="timeout" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="candidates">O conjunto de mensagens aceitáveis.</param>
+        <param name="description">Uma mensagem a ser enviada se a resposta real não for o esperado.</param>
+        <param name="timeout">A quantidade de tempo em milissegundos dentro da qual uma resposta é esperada.</param>
+        <summary>Adiciona uma asserção de que a resposta do bot está contida em um conjunto de respostas aceitáveis.</summary>
+        <returns>Um novo <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> objeto que acrescenta essa asserção à troca modelada.</returns>
+        <remarks>Esse método não modifica o objeto original <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> .</remarks>
+        <exception cref="T:System.Exception">O bot não respondeu conforme o esperado.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Delay">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.TestFlow Delay (TimeSpan timespan);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Bot.Builder.Adapters.TestFlow Delay(valuetype System.TimeSpan timespan) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.TestFlow.Delay(System.TimeSpan)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Delay (timespan As TimeSpan) As TestFlow" />
+      <MemberSignature Language="F#" Value="member this.Delay : TimeSpan -&gt; Microsoft.Bot.Builder.Adapters.TestFlow" Usage="testFlow.Delay timespan" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.TestFlow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timespan" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timespan">O comprimento de atraso em TimeSpan.</param>
+        <summary>Adiciona um atraso na conversa.</summary>
+        <returns>Um novo <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> objeto que acrescenta um atraso ao Exchange modelado.</returns>
+        <remarks>Esse método não modifica o objeto original <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> .</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Delay">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.TestFlow Delay (uint ms);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Bot.Builder.Adapters.TestFlow Delay(unsigned int32 ms) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.TestFlow.Delay(System.UInt32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Delay (ms As UInteger) As TestFlow" />
+      <MemberSignature Language="F#" Value="member this.Delay : uint32 -&gt; Microsoft.Bot.Builder.Adapters.TestFlow" Usage="testFlow.Delay ms" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.TestFlow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ms" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="ms">O comprimento de atraso em milissegundos.</param>
+        <summary>Adiciona um atraso na conversa.</summary>
+        <returns>Um novo <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> objeto que acrescenta um atraso ao Exchange modelado.</returns>
+        <remarks>Esse método não modifica o objeto original <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> .</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Send">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.TestFlow Send (Microsoft.Bot.Schema.IActivity userActivity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Bot.Builder.Adapters.TestFlow Send(class Microsoft.Bot.Schema.IActivity userActivity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.TestFlow.Send(Microsoft.Bot.Schema.IActivity)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Send (userActivity As IActivity) As TestFlow" />
+      <MemberSignature Language="F#" Value="member this.Send : Microsoft.Bot.Schema.IActivity -&gt; Microsoft.Bot.Builder.Adapters.TestFlow" Usage="testFlow.Send userActivity" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.TestFlow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userActivity" Type="Microsoft.Bot.Schema.IActivity" />
+      </Parameters>
+      <Docs>
+        <param name="userActivity">A atividade a ser enviada.</param>
+        <summary>Adiciona uma atividade do usuário ao bot.</summary>
+        <returns>Um novo <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> objeto que acrescenta uma nova atividade do usuário para a troca modelada.</returns>
+        <remarks>Esse método não modifica o objeto original <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> .</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Send">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.TestFlow Send (string userSays);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Bot.Builder.Adapters.TestFlow Send(string userSays) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.TestFlow.Send(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Send (userSays As String) As TestFlow" />
+      <MemberSignature Language="F#" Value="member this.Send : string -&gt; Microsoft.Bot.Builder.Adapters.TestFlow" Usage="testFlow.Send userSays" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.TestFlow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userSays" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="userSays">O texto da mensagem a ser enviada.</param>
+        <summary>Adiciona uma atividade de mensagem do usuário ao bot.</summary>
+        <returns>Um novo <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> objeto que acrescenta uma nova atividade de mensagem do usuário para a troca modelada.</returns>
+        <remarks>Esse método não modifica o objeto original <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> .</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendConversationUpdate">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.TestFlow SendConversationUpdate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Bot.Builder.Adapters.TestFlow SendConversationUpdate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.TestFlow.SendConversationUpdate" />
+      <MemberSignature Language="VB.NET" Value="Public Function SendConversationUpdate () As TestFlow" />
+      <MemberSignature Language="F#" Value="member this.SendConversationUpdate : unit -&gt; Microsoft.Bot.Builder.Adapters.TestFlow" Usage="testFlow.SendConversationUpdate " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.TestFlow</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Cria uma atividade de atualização de conversa e processa a atividade.</summary>
+        <returns>Um novo objeto <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" />.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartTestAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task StartTestAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task StartTestAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.TestFlow.StartTestAsync" />
+      <MemberSignature Language="VB.NET" Value="Public Function StartTestAsync () As Task" />
+      <MemberSignature Language="F#" Value="member this.StartTestAsync : unit -&gt; System.Threading.Tasks.Task" Usage="testFlow.StartTestAsync " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Inicia a execução do fluxo de teste.</summary>
+        <returns>Executa a troca entre o usuário e o bot.</returns>
+        <remarks>Esse método envia as atividades do usuário para o bot e verifica as respostas do bot com base nas atividades descritas no fluxo de teste atual.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Test">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.TestFlow Test (System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Schema.IActivity&gt; activities, string description = default, uint timeout = 3000);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Bot.Builder.Adapters.TestFlow Test(class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Bot.Schema.IActivity&gt; activities, string description, unsigned int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.TestFlow.Test(System.Collections.Generic.IEnumerable{Microsoft.Bot.Schema.IActivity},System.String,System.UInt32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Test (activities As IEnumerable(Of IActivity), Optional description As String = Nothing, Optional timeout As UInteger = 3000) As TestFlow" />
+      <MemberSignature Language="F#" Value="member this.Test : seq&lt;Microsoft.Bot.Schema.IActivity&gt; * string * uint32 -&gt; Microsoft.Bot.Builder.Adapters.TestFlow" Usage="testFlow.Test (activities, description, timeout)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.TestFlow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activities" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Schema.IActivity&gt;" />
+        <Parameter Name="description" Type="System.String">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.Runtime.CompilerServices.CallerMemberName]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.CallerMemberName&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+        <Parameter Name="timeout" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="activities">A lista de atividades a serem testadas.</param>
+        <param name="description">Uma mensagem a ser enviada se a resposta real não for o esperado.</param>
+        <param name="timeout">A quantidade de tempo em milissegundos dentro da qual uma resposta é esperada.</param>
+        <summary>Atalho para adicionar uma troca arbitrária entre o usuário e o bot.
+Cada atividade com um <see cref="P:Microsoft.Bot.Schema.IActivity.From" /> .<see cref="P:Microsoft.Bot.Schema.ChannelAccount.Role" /> é igual a "bot" que será processado com o <see cref="M:Microsoft.Bot.Builder.Adapters.TestFlow.AssertReply(Microsoft.Bot.Schema.IActivity,System.String,System.UInt32)" /> método.
+Todas as outras atividades serão processadas como mensagem do usuário por meio do <see cref="M:Microsoft.Bot.Builder.Adapters.TestFlow.Send(Microsoft.Bot.Schema.IActivity)" /> método.</summary>
+        <returns>Um novo <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> objeto que acrescenta essa troca à troca modelada.</returns>
+        <remarks>Esse método não modifica o objeto original <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> .</remarks>
+        <exception cref="T:System.Exception">O bot não respondeu conforme o esperado.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Test">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.TestFlow Test (System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Schema.IActivity&gt; activities, Microsoft.Bot.Builder.Adapters.ValidateReply validateReply, string description = default, uint timeout = 3000);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Bot.Builder.Adapters.TestFlow Test(class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Bot.Schema.IActivity&gt; activities, class Microsoft.Bot.Builder.Adapters.ValidateReply validateReply, string description, unsigned int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.TestFlow.Test(System.Collections.Generic.IEnumerable{Microsoft.Bot.Schema.IActivity},Microsoft.Bot.Builder.Adapters.ValidateReply,System.String,System.UInt32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Test (activities As IEnumerable(Of IActivity), validateReply As ValidateReply, Optional description As String = Nothing, Optional timeout As UInteger = 3000) As TestFlow" />
+      <MemberSignature Language="F#" Value="member this.Test : seq&lt;Microsoft.Bot.Schema.IActivity&gt; * Microsoft.Bot.Builder.Adapters.ValidateReply * string * uint32 -&gt; Microsoft.Bot.Builder.Adapters.TestFlow" Usage="testFlow.Test (activities, validateReply, description, timeout)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.TestFlow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activities" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Schema.IActivity&gt;" />
+        <Parameter Name="validateReply" Type="Microsoft.Bot.Builder.Adapters.ValidateReply" />
+        <Parameter Name="description" Type="System.String">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.Runtime.CompilerServices.CallerMemberName]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.CallerMemberName&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+        <Parameter Name="timeout" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="activities">A lista de atividades a serem testadas.</param>
+        <param name="validateReply">O delegado a ser chamado para validar respostas do bot.</param>
+        <param name="description">Uma mensagem a ser enviada se a resposta real não for o esperado.</param>
+        <param name="timeout">A quantidade de tempo em milissegundos dentro da qual uma resposta é esperada.</param>
+        <summary>Atalho para adicionar uma troca arbitrária entre o usuário e o bot.
+Cada atividade com um <see cref="P:Microsoft.Bot.Schema.IActivity.From" /> .<see cref="P:Microsoft.Bot.Schema.ChannelAccount.Role" /> é igual a "bot" que será processado com o <see cref="M:Microsoft.Bot.Builder.Adapters.TestFlow.AssertReply(Microsoft.Bot.Schema.IActivity,System.String,System.UInt32)" /> método.
+Todas as outras atividades serão processadas como mensagem do usuário por meio do <see cref="M:Microsoft.Bot.Builder.Adapters.TestFlow.Send(Microsoft.Bot.Schema.IActivity)" /> método.</summary>
+        <returns>Um novo <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> objeto que acrescenta essa troca à troca modelada.</returns>
+        <remarks>Esse método não modifica o objeto original <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> .</remarks>
+        <exception cref="T:System.Exception">O bot não respondeu conforme o esperado.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Test">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.TestFlow Test (string userSays, Microsoft.Bot.Schema.Activity expected, string description = default, uint timeout = 3000);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Bot.Builder.Adapters.TestFlow Test(string userSays, class Microsoft.Bot.Schema.Activity expected, string description, unsigned int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.TestFlow.Test(System.String,Microsoft.Bot.Schema.Activity,System.String,System.UInt32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Test (userSays As String, expected As Activity, Optional description As String = Nothing, Optional timeout As UInteger = 3000) As TestFlow" />
+      <MemberSignature Language="F#" Value="member this.Test : string * Microsoft.Bot.Schema.Activity * string * uint32 -&gt; Microsoft.Bot.Builder.Adapters.TestFlow" Usage="testFlow.Test (userSays, expected, description, timeout)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.TestFlow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userSays" Type="System.String" />
+        <Parameter Name="expected" Type="Microsoft.Bot.Schema.Activity" />
+        <Parameter Name="description" Type="System.String" />
+        <Parameter Name="timeout" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="userSays">O texto da mensagem a ser enviada.</param>
+        <param name="expected">A atividade esperada do bot.</param>
+        <param name="description">Uma mensagem a ser enviada se a resposta real não for o esperado.</param>
+        <param name="timeout">A quantidade de tempo em milissegundos dentro da qual uma resposta é esperada.</param>
+        <summary>Atalho para chamada <see cref="M:Microsoft.Bot.Builder.Adapters.TestFlow.Send(System.String)" /> seguida por <see cref="M:Microsoft.Bot.Builder.Adapters.TestFlow.AssertReply(Microsoft.Bot.Schema.IActivity,System.String,System.UInt32)" /> .</summary>
+        <returns>Um novo <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> objeto que acrescenta essa troca à troca modelada.</returns>
+        <remarks>Esse método não modifica o objeto original <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> .</remarks>
+        <exception cref="T:System.Exception">O bot não respondeu conforme o esperado.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Test">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.TestFlow Test (string userSays, Action&lt;Microsoft.Bot.Schema.IActivity&gt; validateActivity, string description = default, uint timeout = 3000);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Bot.Builder.Adapters.TestFlow Test(string userSays, class System.Action`1&lt;class Microsoft.Bot.Schema.IActivity&gt; validateActivity, string description, unsigned int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.TestFlow.Test(System.String,System.Action{Microsoft.Bot.Schema.IActivity},System.String,System.UInt32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Test (userSays As String, validateActivity As Action(Of IActivity), Optional description As String = Nothing, Optional timeout As UInteger = 3000) As TestFlow" />
+      <MemberSignature Language="F#" Value="member this.Test : string * Action&lt;Microsoft.Bot.Schema.IActivity&gt; * string * uint32 -&gt; Microsoft.Bot.Builder.Adapters.TestFlow" Usage="testFlow.Test (userSays, validateActivity, description, timeout)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.TestFlow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userSays" Type="System.String" />
+        <Parameter Name="validateActivity" Type="System.Action&lt;Microsoft.Bot.Schema.IActivity&gt;" />
+        <Parameter Name="description" Type="System.String" />
+        <Parameter Name="timeout" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="userSays">O texto da mensagem a ser enviada.</param>
+        <param name="validateActivity">Um método de validação a ser aplicado a uma atividade do bot.
+Essa atividade deve lançar uma exceção se a validação falhar.</param>
+        <param name="description">Uma mensagem a ser enviada se a resposta real não for o esperado.</param>
+        <param name="timeout">A quantidade de tempo em milissegundos dentro da qual uma resposta é esperada.</param>
+        <summary>Atalho para chamada <see cref="M:Microsoft.Bot.Builder.Adapters.TestFlow.Send(System.String)" /> seguida por <see cref="M:Microsoft.Bot.Builder.Adapters.TestFlow.AssertReply(System.Action{Microsoft.Bot.Schema.IActivity},System.String,System.UInt32)" /> .</summary>
+        <returns>Um novo <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> objeto que acrescenta essa troca à troca modelada.</returns>
+        <remarks>Esse método não modifica o objeto original <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> .</remarks>
+        <exception cref="T:System.Exception">O bot não respondeu conforme o esperado.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Test">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.TestFlow Test (string userSays, string expected, string description = default, uint timeout = 3000);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Bot.Builder.Adapters.TestFlow Test(string userSays, string expected, string description, unsigned int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.TestFlow.Test(System.String,System.String,System.String,System.UInt32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Test (userSays As String, expected As String, Optional description As String = Nothing, Optional timeout As UInteger = 3000) As TestFlow" />
+      <MemberSignature Language="F#" Value="member this.Test : string * string * string * uint32 -&gt; Microsoft.Bot.Builder.Adapters.TestFlow" Usage="testFlow.Test (userSays, expected, description, timeout)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.TestFlow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userSays" Type="System.String" />
+        <Parameter Name="expected" Type="System.String" />
+        <Parameter Name="description" Type="System.String" />
+        <Parameter Name="timeout" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="userSays">O texto da mensagem a ser enviada.</param>
+        <param name="expected">O texto esperado de uma mensagem do bot.</param>
+        <param name="description">Uma mensagem a ser enviada se a resposta real não for o esperado.</param>
+        <param name="timeout">A quantidade de tempo em milissegundos dentro da qual uma resposta é esperada.</param>
+        <summary>Atalho para chamada <see cref="M:Microsoft.Bot.Builder.Adapters.TestFlow.Send(System.String)" /> seguida por <see cref="M:Microsoft.Bot.Builder.Adapters.TestFlow.AssertReply(System.String,System.String,System.UInt32)" /> .</summary>
+        <returns>Um novo <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> objeto que acrescenta essa troca à troca modelada.</returns>
+        <remarks>Esse método não modifica o objeto original <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> .</remarks>
+        <exception cref="T:System.Exception">O bot não respondeu conforme o esperado.</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,142 @@
+<Type Name="ServiceCollectionExtensions" FullName="Microsoft.Bot.Builder.Integration.ApplicationInsights.Core.ServiceCollectionExtensions">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="011f62881e18989e4ca74f00757fc27053b98158" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151348" /></Metadata><TypeSignature Language="C#" Value="public static class ServiceCollectionExtensions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ServiceCollectionExtensions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Integration.ApplicationInsights.Core.ServiceCollectionExtensions" />
+  <TypeSignature Language="VB.NET" Value="Public Module ServiceCollectionExtensions" />
+  <TypeSignature Language="F#" Value="type ServiceCollectionExtensions = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Integration.ApplicationInsights.Core</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Métodos de extensão da coleção de serviços para uso ao configurar Application Insights na inicialização.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddBotApplicationInsights">
+      <MemberSignature Language="C#" Value="public static Microsoft.Extensions.DependencyInjection.IServiceCollection AddBotApplicationInsights (this Microsoft.Extensions.DependencyInjection.IServiceCollection services);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Extensions.DependencyInjection.IServiceCollection AddBotApplicationInsights(class Microsoft.Extensions.DependencyInjection.IServiceCollection services) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Integration.ApplicationInsights.Core.ServiceCollectionExtensions.AddBotApplicationInsights(Microsoft.Extensions.DependencyInjection.IServiceCollection)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function AddBotApplicationInsights (services As IServiceCollection) As IServiceCollection" />
+      <MemberSignature Language="F#" Value="static member AddBotApplicationInsights : Microsoft.Extensions.DependencyInjection.IServiceCollection -&gt; Microsoft.Extensions.DependencyInjection.IServiceCollection" Usage="Microsoft.Bot.Builder.Integration.ApplicationInsights.Core.ServiceCollectionExtensions.AddBotApplicationInsights services" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Integration.ApplicationInsights.Core</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Extensions.DependencyInjection.IServiceCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="services" Type="Microsoft.Extensions.DependencyInjection.IServiceCollection" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="services">O <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /> que especifica o contrato para uma coleção de descritores de serviço.</param>
+        <summary>Adiciona e configura os serviços para Application Insights para o <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /> .</summary>
+        <returns>Uma referência a essa instância após a operação ter sido concluída.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddBotApplicationInsights">
+      <MemberSignature Language="C#" Value="public static Microsoft.Extensions.DependencyInjection.IServiceCollection AddBotApplicationInsights (this Microsoft.Extensions.DependencyInjection.IServiceCollection services, Microsoft.Extensions.Configuration.IConfiguration config);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Extensions.DependencyInjection.IServiceCollection AddBotApplicationInsights(class Microsoft.Extensions.DependencyInjection.IServiceCollection services, class Microsoft.Extensions.Configuration.IConfiguration config) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Integration.ApplicationInsights.Core.ServiceCollectionExtensions.AddBotApplicationInsights(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function AddBotApplicationInsights (services As IServiceCollection, config As IConfiguration) As IServiceCollection" />
+      <MemberSignature Language="F#" Value="static member AddBotApplicationInsights : Microsoft.Extensions.DependencyInjection.IServiceCollection * Microsoft.Extensions.Configuration.IConfiguration -&gt; Microsoft.Extensions.DependencyInjection.IServiceCollection" Usage="Microsoft.Bot.Builder.Integration.ApplicationInsights.Core.ServiceCollectionExtensions.AddBotApplicationInsights (services, config)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Integration.ApplicationInsights.Core</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Extensions.DependencyInjection.IServiceCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="services" Type="Microsoft.Extensions.DependencyInjection.IServiceCollection" RefType="this" />
+        <Parameter Name="config" Type="Microsoft.Extensions.Configuration.IConfiguration" />
+      </Parameters>
+      <Docs>
+        <param name="services">O <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /> que especifica o contrato para uma coleção de descritores de serviço.</param>
+        <param name="config">Representa um conjunto de propriedades de configuração de aplicativo de chave/valor.</param>
+        <summary>Adiciona e configura os serviços para Application Insights para o <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /> .</summary>
+        <returns>Uma referência a essa instância após a operação ter sido concluída.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddBotApplicationInsights">
+      <MemberSignature Language="C#" Value="public static Microsoft.Extensions.DependencyInjection.IServiceCollection AddBotApplicationInsights (this Microsoft.Extensions.DependencyInjection.IServiceCollection services, Microsoft.Bot.Builder.IBotTelemetryClient botTelemetryClient, string instrumentationKey = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Extensions.DependencyInjection.IServiceCollection AddBotApplicationInsights(class Microsoft.Extensions.DependencyInjection.IServiceCollection services, class Microsoft.Bot.Builder.IBotTelemetryClient botTelemetryClient, string instrumentationKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Integration.ApplicationInsights.Core.ServiceCollectionExtensions.AddBotApplicationInsights(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Bot.Builder.IBotTelemetryClient,System.String)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function AddBotApplicationInsights (services As IServiceCollection, botTelemetryClient As IBotTelemetryClient, Optional instrumentationKey As String = Nothing) As IServiceCollection" />
+      <MemberSignature Language="F#" Value="static member AddBotApplicationInsights : Microsoft.Extensions.DependencyInjection.IServiceCollection * Microsoft.Bot.Builder.IBotTelemetryClient * string -&gt; Microsoft.Extensions.DependencyInjection.IServiceCollection" Usage="Microsoft.Bot.Builder.Integration.ApplicationInsights.Core.ServiceCollectionExtensions.AddBotApplicationInsights (services, botTelemetryClient, instrumentationKey)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Integration.ApplicationInsights.Core</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Extensions.DependencyInjection.IServiceCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="services" Type="Microsoft.Extensions.DependencyInjection.IServiceCollection" RefType="this" />
+        <Parameter Name="botTelemetryClient" Type="Microsoft.Bot.Builder.IBotTelemetryClient" />
+        <Parameter Name="instrumentationKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="services">O <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /> que especifica o contrato para uma coleção de descritores de serviço.</param>
+        <param name="botTelemetryClient">Cliente de telemetria de bot que registra informações de evento.</param>
+        <param name="instrumentationKey">Se o cliente de telemetria do bot estiver usando Application Insights, forneça a chave de instrumentação.</param>
+        <summary>Adiciona e configura os serviços para Application Insights para o <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /> .</summary>
+        <returns>Uma referência a essa instância após a operação ter sido concluída.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddBotApplicationInsights">
+      <MemberSignature Language="C#" Value="public static Microsoft.Extensions.DependencyInjection.IServiceCollection AddBotApplicationInsights (this Microsoft.Extensions.DependencyInjection.IServiceCollection services, Microsoft.Bot.Configuration.BotConfiguration botConfiguration, string appInsightsServiceInstanceName = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Extensions.DependencyInjection.IServiceCollection AddBotApplicationInsights(class Microsoft.Extensions.DependencyInjection.IServiceCollection services, class Microsoft.Bot.Configuration.BotConfiguration botConfiguration, string appInsightsServiceInstanceName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Integration.ApplicationInsights.Core.ServiceCollectionExtensions.AddBotApplicationInsights(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Bot.Configuration.BotConfiguration,System.String)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function AddBotApplicationInsights (services As IServiceCollection, botConfiguration As BotConfiguration, Optional appInsightsServiceInstanceName As String = Nothing) As IServiceCollection" />
+      <MemberSignature Language="F#" Value="static member AddBotApplicationInsights : Microsoft.Extensions.DependencyInjection.IServiceCollection * Microsoft.Bot.Configuration.BotConfiguration * string -&gt; Microsoft.Extensions.DependencyInjection.IServiceCollection" Usage="Microsoft.Bot.Builder.Integration.ApplicationInsights.Core.ServiceCollectionExtensions.AddBotApplicationInsights (services, botConfiguration, appInsightsServiceInstanceName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Integration.ApplicationInsights.Core</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Extensions.DependencyInjection.IServiceCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="services" Type="Microsoft.Extensions.DependencyInjection.IServiceCollection" RefType="this" />
+        <Parameter Name="botConfiguration" Type="Microsoft.Bot.Configuration.BotConfiguration" />
+        <Parameter Name="appInsightsServiceInstanceName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="services">O <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /> que especifica o contrato para uma coleção de descritores de serviço.</param>
+        <param name="botConfiguration">Configuração de bot que contém as informações de configuração de Application Insights.</param>
+        <param name="appInsightsServiceInstanceName">ADICIONAL Especifica um nome de instância Application Insights na configuração de bot.</param>
+        <summary>Adiciona e configura os serviços para Application Insights para o <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /> .</summary>
+        <returns>Uma referência a essa instância após a operação ter sido concluída.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

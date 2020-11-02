@@ -1,0 +1,173 @@
+<Type Name="XUnitDialogTestLogger" FullName="Microsoft.Bot.Builder.Testing.XUnit.XUnitDialogTestLogger">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8eeed4390eaf97414fba9628fef4ca0201c0c4a6" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151841" /></Metadata><TypeSignature Language="C#" Value="public class XUnitDialogTestLogger : Microsoft.Bot.Builder.IMiddleware" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XUnitDialogTestLogger extends System.Object implements class Microsoft.Bot.Builder.IMiddleware" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Testing.XUnit.XUnitDialogTestLogger" />
+  <TypeSignature Language="VB.NET" Value="Public Class XUnitDialogTestLogger&#xA;Implements IMiddleware" />
+  <TypeSignature Language="F#" Value="type XUnitDialogTestLogger = class&#xA;    interface IMiddleware" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Testing</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.Bot.Builder.IMiddleware</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Um middleware para produzir atividades de entrada e saída como cadeias de caracteres JSON para o console durante testes de unidade.</summary>
+    <remarks>To be added.</remarks>
+    <inheritdoc />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XUnitDialogTestLogger (Xunit.Abstractions.ITestOutputHelper xunitOutputHelper);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Xunit.Abstractions.ITestOutputHelper xunitOutputHelper) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Testing.XUnit.XUnitDialogTestLogger.#ctor(Xunit.Abstractions.ITestOutputHelper)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (xunitOutputHelper As ITestOutputHelper)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.Testing.XUnit.XUnitDialogTestLogger : Xunit.Abstractions.ITestOutputHelper -&gt; Microsoft.Bot.Builder.Testing.XUnit.XUnitDialogTestLogger" Usage="new Microsoft.Bot.Builder.Testing.XUnit.XUnitDialogTestLogger xunitOutputHelper" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Testing</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xunitOutputHelper" Type="Xunit.Abstractions.ITestOutputHelper" />
+      </Parameters>
+      <Docs>
+        <param name="xunitOutputHelper">Uma instância de XUnit <see cref="T:Xunit.Abstractions.ITestOutputHelper" /> .
+Consulte <see href="https://xunit.net/docs/capturing-output.html">captura de saída</see> na documentação do xUnit para obter detalhes adicionais.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Testing.XUnit.XUnitDialogTestLogger" />.</summary>
+        <remarks>Esse middleware gera as atividades de entrada e saída para o teste baseado em XUnit na janela do console.
+Se você precisar gerar as atividades de entrada e saída para algum outro provedor, considere usar o <see cref="T:Microsoft.Bot.Builder.TranscriptLoggerMiddleware" /> em vez disso.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogIncomingActivityAsync">
+      <MemberSignature Language="C#" Value="protected virtual System.Threading.Tasks.Task LogIncomingActivityAsync (Microsoft.Bot.Builder.ITurnContext context, Microsoft.Bot.Schema.Activity activity, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Threading.Tasks.Task LogIncomingActivityAsync(class Microsoft.Bot.Builder.ITurnContext context, class Microsoft.Bot.Schema.Activity activity, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Testing.XUnit.XUnitDialogTestLogger.LogIncomingActivityAsync(Microsoft.Bot.Builder.ITurnContext,Microsoft.Bot.Schema.Activity,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function LogIncomingActivityAsync (context As ITurnContext, activity As Activity, Optional cancellationToken As CancellationToken = Nothing) As Task" />
+      <MemberSignature Language="F#" Value="abstract member LogIncomingActivityAsync : Microsoft.Bot.Builder.ITurnContext * Microsoft.Bot.Schema.Activity * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.LogIncomingActivityAsync : Microsoft.Bot.Builder.ITurnContext * Microsoft.Bot.Schema.Activity * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="xUnitDialogTestLogger.LogIncomingActivityAsync (context, activity, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Testing</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="Microsoft.Bot.Builder.ITurnContext" />
+        <Parameter Name="activity" Type="Microsoft.Bot.Schema.Activity" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="context">O objeto de contexto para essa rodada.</param>
+        <param name="activity">O <see cref="T:Microsoft.Bot.Schema.Activity" /> a ser registrado.</param>
+        <param name="cancellationToken">O token de cancelamento.</param>
+        <summary>Registra as mensagens enviadas do usuário para o bot.</summary>
+        <returns>Uma tarefa que representa o trabalho a ser executado.</returns>
+        <remarks><see cref="F:Microsoft.Bot.Schema.ActivityTypes.Message" /> as atividades serão registradas como texto. Outras atividades serão registradas como JSON.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogOutgoingActivityAsync">
+      <MemberSignature Language="C#" Value="protected virtual System.Threading.Tasks.Task LogOutgoingActivityAsync (Microsoft.Bot.Builder.ITurnContext context, Microsoft.Bot.Schema.Activity activity, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Threading.Tasks.Task LogOutgoingActivityAsync(class Microsoft.Bot.Builder.ITurnContext context, class Microsoft.Bot.Schema.Activity activity, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Testing.XUnit.XUnitDialogTestLogger.LogOutgoingActivityAsync(Microsoft.Bot.Builder.ITurnContext,Microsoft.Bot.Schema.Activity,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function LogOutgoingActivityAsync (context As ITurnContext, activity As Activity, Optional cancellationToken As CancellationToken = Nothing) As Task" />
+      <MemberSignature Language="F#" Value="abstract member LogOutgoingActivityAsync : Microsoft.Bot.Builder.ITurnContext * Microsoft.Bot.Schema.Activity * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.LogOutgoingActivityAsync : Microsoft.Bot.Builder.ITurnContext * Microsoft.Bot.Schema.Activity * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="xUnitDialogTestLogger.LogOutgoingActivityAsync (context, activity, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Testing</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="Microsoft.Bot.Builder.ITurnContext" />
+        <Parameter Name="activity" Type="Microsoft.Bot.Schema.Activity" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="context">O objeto de contexto para essa rodada.</param>
+        <param name="activity">O <see cref="T:Microsoft.Bot.Schema.Activity" /> a ser registrado.</param>
+        <param name="cancellationToken">O token de cancelamento.</param>
+        <summary>Registra as mensagens enviadas do bot para o usuário.</summary>
+        <returns>Uma tarefa que representa o trabalho a ser executado.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTurnAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task OnTurnAsync (Microsoft.Bot.Builder.ITurnContext context, Microsoft.Bot.Builder.NextDelegate next, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task OnTurnAsync(class Microsoft.Bot.Builder.ITurnContext context, class Microsoft.Bot.Builder.NextDelegate next, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Testing.XUnit.XUnitDialogTestLogger.OnTurnAsync(Microsoft.Bot.Builder.ITurnContext,Microsoft.Bot.Builder.NextDelegate,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Function OnTurnAsync (context As ITurnContext, next As NextDelegate, Optional cancellationToken As CancellationToken = Nothing) As Task" />
+      <MemberSignature Language="F#" Value="abstract member OnTurnAsync : Microsoft.Bot.Builder.ITurnContext * Microsoft.Bot.Builder.NextDelegate * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.OnTurnAsync : Microsoft.Bot.Builder.ITurnContext * Microsoft.Bot.Builder.NextDelegate * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="xUnitDialogTestLogger.OnTurnAsync (context, next, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:Microsoft.Bot.Builder.IMiddleware.OnTurnAsync(Microsoft.Bot.Builder.ITurnContext,Microsoft.Bot.Builder.NextDelegate,System.Threading.CancellationToken)</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Testing</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="Microsoft.Bot.Builder.ITurnContext" />
+        <Parameter Name="next" Type="Microsoft.Bot.Builder.NextDelegate" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="context">O objeto de contexto para essa rodada.</param>
+        <param name="next">O delegado a ser chamado para continuar o pipeline de middleware de bot.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Processa a atividade de entrada e a registra usando o <see cref="T:Xunit.Abstractions.ITestOutputHelper" /> .</summary>
+        <returns>Uma tarefa que representa o trabalho na fila a ser executado.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Output">
+      <MemberSignature Language="C#" Value="protected Xunit.Abstractions.ITestOutputHelper Output { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Xunit.Abstractions.ITestOutputHelper Output" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Testing.XUnit.XUnitDialogTestLogger.Output" />
+      <MemberSignature Language="VB.NET" Value="Protected ReadOnly Property Output As ITestOutputHelper" />
+      <MemberSignature Language="F#" Value="member this.Output : Xunit.Abstractions.ITestOutputHelper" Usage="Microsoft.Bot.Builder.Testing.XUnit.XUnitDialogTestLogger.Output" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Testing</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Xunit.Abstractions.ITestOutputHelper</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém a <see cref="T:Xunit.Abstractions.ITestOutputHelper" /> instância para este middleware.</summary>
+        <value>A <see cref="T:Xunit.Abstractions.ITestOutputHelper" /> instância para este middleware.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

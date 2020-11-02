@@ -1,0 +1,58 @@
+<Type Name="IDialog&lt;TResult&gt;" FullName="Microsoft.Bot.Builder.Dialogs.IDialog&lt;TResult&gt;">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="bd0537fa06f305383143d6f371ed462fc59faa00" /><Meta Name="ms.sourcegitcommit" Value="5add21ad3daf0ce894612a22b951b98350961720" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="06/04/2020" /><Meta Name="ms.locfileid" Value="93149362" /></Metadata><TypeSignature Language="C#" Value="public interface IDialog&lt;out TResult&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDialog`1&lt;+ TResult&gt;" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.IDialog`1" />
+  <TypeSignature Language="VB.NET" Value="Public Interface IDialog(Of Out TResult)" />
+  <TypeSignature Language="F#" Value="type IDialog&lt;'Result&gt; = interface" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+    <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+    <AssemblyVersion>3.20.1.42</AssemblyVersion>
+    <AssemblyVersion>3.30.0.1</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TResult">
+      <Constraints>
+        <ParameterAttribute>Covariant</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Interfaces />
+  <Docs>
+    <typeparam name="TResult">O tipo de resultado.</typeparam>
+    <summary>Um <see cref="T:Microsoft.Bot.Builder.Dialogs.IDialog`1" /> é um processo de conversação suspendeble que produz um resultado do tipo <typeparamref name="TResult" /> .</summary>
+    <remarks>As caixas de diálogo podem chamar caixas de diálogo filhas ou enviar mensagens a um usuário.
+As caixas de diálogo são suspensas ao aguardar uma mensagem do usuário para o bot.
+As caixas de diálogo são retomadas quando o bot recebe uma mensagem do usuário.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="StartAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task StartAsync (Microsoft.Bot.Builder.Dialogs.IDialogContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task StartAsync(class Microsoft.Bot.Builder.Dialogs.IDialogContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.IDialog`1.StartAsync(Microsoft.Bot.Builder.Dialogs.IDialogContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Function StartAsync (context As IDialogContext) As Task" />
+      <MemberSignature Language="F#" Value="abstract member StartAsync : Microsoft.Bot.Builder.Dialogs.IDialogContext -&gt; System.Threading.Tasks.Task" Usage="iDialog.StartAsync context" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="Microsoft.Bot.Builder.Dialogs.IDialogContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">O contexto do diálogo.</param>
+        <summary>O início do código que representa a caixa de diálogo de conversação.</summary>
+        <returns>Uma tarefa que representa o início da caixa de diálogo.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

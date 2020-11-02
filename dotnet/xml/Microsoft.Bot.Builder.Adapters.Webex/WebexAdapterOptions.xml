@@ -1,0 +1,58 @@
+<Type Name="WebexAdapterOptions" FullName="Microsoft.Bot.Builder.Adapters.Webex.WebexAdapterOptions">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b5d86f7517d53abc51d35213c60a45ad976fe8c3" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151356" /></Metadata><TypeSignature Language="C#" Value="public class WebexAdapterOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebexAdapterOptions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Adapters.Webex.WebexAdapterOptions" />
+  <TypeSignature Language="VB.NET" Value="Public Class WebexAdapterOptions" />
+  <TypeSignature Language="F#" Value="type WebexAdapterOptions = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Adapters.Webex</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Classe de opções para o <see cref="T:Microsoft.Bot.Builder.Adapters.Webex.WebexAdapter" /> .</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebexAdapterOptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.Webex.WebexAdapterOptions.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Webex</AssemblyName>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateIncomingRequests">
+      <MemberSignature Language="C#" Value="public bool ValidateIncomingRequests { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ValidateIncomingRequests" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Webex.WebexAdapterOptions.ValidateIncomingRequests" />
+      <MemberSignature Language="VB.NET" Value="Public Property ValidateIncomingRequests As Boolean" />
+      <MemberSignature Language="F#" Value="member this.ValidateIncomingRequests : bool with get, set" Usage="Microsoft.Bot.Builder.Adapters.Webex.WebexAdapterOptions.ValidateIncomingRequests" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Webex</AssemblyName>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define um valor que indica se a assinatura em solicitações de entrada deve ser validada como proveniente do WebEx.</summary>
+        <value>Um valor que indica se a assinatura em solicitações de entrada deve ser validada como proveniente do WebEx.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

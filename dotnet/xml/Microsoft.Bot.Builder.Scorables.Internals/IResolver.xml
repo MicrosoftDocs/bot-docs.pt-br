@@ -1,0 +1,52 @@
+<Type Name="IResolver" FullName="Microsoft.Bot.Builder.Scorables.Internals.IResolver">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="02392cf3f24dabc75e3def0e217cd99195760c63" /><Meta Name="ms.sourcegitcommit" Value="5add21ad3daf0ce894612a22b951b98350961720" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="06/04/2020" /><Meta Name="ms.locfileid" Value="93149422" /></Metadata><TypeSignature Language="C#" Value="public interface IResolver" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IResolver" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Scorables.Internals.IResolver" />
+  <TypeSignature Language="VB.NET" Value="Public Interface IResolver" />
+  <TypeSignature Language="F#" Value="type IResolver = interface" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+    <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+    <AssemblyVersion>3.20.1.42</AssemblyVersion>
+    <AssemblyVersion>3.30.0.1</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>Permitir a resolução de valores com base no tipo e, opcionalmente, marca.</summary>
+    <remarks>A marca deve ser restritiva aos serviços registrados com essa marca.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="TryResolve">
+      <MemberSignature Language="C#" Value="public bool TryResolve (Type type, object tag, out object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryResolve(class System.Type type, object tag, [out] object&amp; value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Scorables.Internals.IResolver.TryResolve(System.Type,System.Object,System.Object@)" />
+      <MemberSignature Language="VB.NET" Value="Public Function TryResolve (type As Type, tag As Object, ByRef value As Object) As Boolean" />
+      <MemberSignature Language="F#" Value="abstract member TryResolve : Type * obj * obj -&gt; bool" Usage="iResolver.TryResolve (type, tag, value)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="tag" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="type">To be added.</param>
+        <param name="tag">To be added.</param>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,120 @@
+<Type Name="FacebookPassThreadControl" FullName="Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookPassThreadControl">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8c0142a4f660ba3da5122500738e25ae07f314c6" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151185" /></Metadata><TypeSignature Language="C#" Value="public class FacebookPassThreadControl : Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookThreadControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FacebookPassThreadControl extends Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookThreadControl" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookPassThreadControl" />
+  <TypeSignature Language="VB.NET" Value="Public Class FacebookPassThreadControl&#xA;Inherits FacebookThreadControl" />
+  <TypeSignature Language="F#" Value="type FacebookPassThreadControl = class&#xA;    inherit FacebookThreadControl" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookThreadControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Objeto de evento enviado ao Facebook ao solicitar a passagem do controle de thread para outro aplicativo.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FacebookPassThreadControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookPassThreadControl.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewOwnerAppId">
+      <MemberSignature Language="C#" Value="public string NewOwnerAppId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NewOwnerAppId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookPassThreadControl.NewOwnerAppId" />
+      <MemberSignature Language="VB.NET" Value="Public Property NewOwnerAppId As String" />
+      <MemberSignature Language="F#" Value="member this.NewOwnerAppId : string with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookPassThreadControl.NewOwnerAppId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty("new_owner_app_id")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty("new_owner_app_id")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a ID do aplicativo do novo proprietário.</summary>
+        <value>A ID do aplicativo do novo proprietário.</value>
+        <remarks>263902037430900 para a caixa de entrada da página.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviousOwnerAppId">
+      <MemberSignature Language="C#" Value="public string PreviousOwnerAppId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PreviousOwnerAppId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookPassThreadControl.PreviousOwnerAppId" />
+      <MemberSignature Language="VB.NET" Value="Public Property PreviousOwnerAppId As String" />
+      <MemberSignature Language="F#" Value="member this.PreviousOwnerAppId : string with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookPassThreadControl.PreviousOwnerAppId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty("previous_owner_app_id")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty("previous_owner_app_id")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a ID do aplicativo do proprietário anterior.</summary>
+        <value>A ID do aplicativo do proprietário anterior.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestedOwnerAppId">
+      <MemberSignature Language="C#" Value="public string RequestedOwnerAppId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequestedOwnerAppId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookPassThreadControl.RequestedOwnerAppId" />
+      <MemberSignature Language="VB.NET" Value="Public Property RequestedOwnerAppId As String" />
+      <MemberSignature Language="F#" Value="member this.RequestedOwnerAppId : string with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookPassThreadControl.RequestedOwnerAppId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty("requested_owner_app_id")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty("requested_owner_app_id")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a ID do aplicativo do proprietário solicitado.</summary>
+        <value>A ID do aplicativo do proprietário solicitado.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

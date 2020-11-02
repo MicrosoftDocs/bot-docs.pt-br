@@ -1,0 +1,213 @@
+<Type Name="ServiceCollectionExtensions" FullName="Microsoft.Bot.Builder.Integration.AspNet.Core.ServiceCollectionExtensions">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b590748b12512fd25d73e62418d02f7de9d319fa" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151444" /></Metadata><TypeSignature Language="C#" Value="public static class ServiceCollectionExtensions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ServiceCollectionExtensions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Integration.AspNet.Core.ServiceCollectionExtensions" />
+  <TypeSignature Language="VB.NET" Value="Public Module ServiceCollectionExtensions" />
+  <TypeSignature Language="F#" Value="type ServiceCollectionExtensions = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Integration.AspNet.Core</AssemblyName>
+    <AssemblyVersion>4.0.7.0</AssemblyVersion>
+    <AssemblyVersion>4.1.5.0</AssemblyVersion>
+    <AssemblyVersion>4.3.2.0</AssemblyVersion>
+    <AssemblyVersion>4.4.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.0</AssemblyVersion>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Um conjunto de métodos de extensão para <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /> os quais o fornece suporte para a hospedagem de bots com o .NET Core.</summary>
+    <remarks>To be added.</remarks>
+    <altmember cref="T:Microsoft.Bot.Builder.BotAdapter" />
+    <altmember cref="T:Microsoft.Bot.Builder.Integration.IAdapterIntegration" />
+    <altmember cref="T:Microsoft.Bot.Builder.IBot" />
+    <altmember cref="T:Microsoft.Bot.Builder.Integration.AspNet.Core.ApplicationBuilderExtensions" />
+  </Docs>
+  <Members>
+    <Member MemberName="AddBot&lt;TBot&gt;">
+      <MemberSignature Language="C#" Value="public static Microsoft.Extensions.DependencyInjection.IServiceCollection AddBot&lt;TBot&gt; (this Microsoft.Extensions.DependencyInjection.IServiceCollection services, Action&lt;Microsoft.Bot.Builder.Integration.BotFrameworkOptions&gt; configureAction = default) where TBot : class, Microsoft.Bot.Builder.IBot;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Extensions.DependencyInjection.IServiceCollection AddBot&lt;class (class Microsoft.Bot.Builder.IBot) TBot&gt;(class Microsoft.Extensions.DependencyInjection.IServiceCollection services, class System.Action`1&lt;class Microsoft.Bot.Builder.Integration.BotFrameworkOptions&gt; configureAction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Integration.AspNet.Core.ServiceCollectionExtensions.AddBot``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Microsoft.Bot.Builder.Integration.BotFrameworkOptions})" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function AddBot(Of TBot As {Class, IBot}) (services As IServiceCollection, Optional configureAction As Action(Of BotFrameworkOptions) = Nothing) As IServiceCollection" />
+      <MemberSignature Language="F#" Value="static member AddBot : Microsoft.Extensions.DependencyInjection.IServiceCollection * Action&lt;Microsoft.Bot.Builder.Integration.BotFrameworkOptions&gt; -&gt; Microsoft.Extensions.DependencyInjection.IServiceCollection (requires 'Bot : null and 'Bot :&gt; Microsoft.Bot.Builder.IBot)" Usage="Microsoft.Bot.Builder.Integration.AspNet.Core.ServiceCollectionExtensions.AddBot (services, configureAction)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Integration.AspNet.Core</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Extensions.DependencyInjection.IServiceCollection</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TBot">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>Microsoft.Bot.Builder.IBot</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="services" Type="Microsoft.Extensions.DependencyInjection.IServiceCollection" RefType="this" />
+        <Parameter Name="configureAction" Type="System.Action&lt;Microsoft.Bot.Builder.Integration.BotFrameworkOptions&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TBot">Um tipo concreto disso deve <see cref="T:Microsoft.Bot.Builder.IBot" /> ser registrado e exposto à estrutura do bot.</typeparam>
+        <param name="services">O <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" />.</param>
+        <param name="configureAction">Um retorno de chamada opcional que, se fornecido, será invocado para configurar ainda mais o bot.</param>
+        <summary>Adiciona e, opcionalmente, configura um <typeparamref name="TBot">tipo de bot especificado</typeparamref> para o <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /> .</summary>
+        <returns>Uma referência a essa instância após a operação ter sido concluída.</returns>
+        <remarks>O <typeparamref name="TBot" /> será registrado como <see cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Transient">transitório</see> e será instanciado em cada rodada.</remarks>
+        <altmember cref="T:Microsoft.Bot.Builder.IBot" />
+      </Docs>
+    </Member>
+    <Member MemberName="AddBot&lt;TBot&gt;">
+      <MemberSignature Language="C#" Value="public static Microsoft.Extensions.DependencyInjection.IServiceCollection AddBot&lt;TBot&gt; (this Microsoft.Extensions.DependencyInjection.IServiceCollection services, Func&lt;IServiceProvider,TBot&gt; botFactory, Action&lt;Microsoft.Bot.Builder.Integration.BotFrameworkOptions&gt; configureAction = default) where TBot : class, Microsoft.Bot.Builder.IBot;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Extensions.DependencyInjection.IServiceCollection AddBot&lt;class (class Microsoft.Bot.Builder.IBot) TBot&gt;(class Microsoft.Extensions.DependencyInjection.IServiceCollection services, class System.Func`2&lt;class System.IServiceProvider, !!TBot&gt; botFactory, class System.Action`1&lt;class Microsoft.Bot.Builder.Integration.BotFrameworkOptions&gt; configureAction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Integration.AspNet.Core.ServiceCollectionExtensions.AddBot``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.IServiceProvider,``0},System.Action{Microsoft.Bot.Builder.Integration.BotFrameworkOptions})" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function AddBot(Of TBot As {Class, IBot}) (services As IServiceCollection, botFactory As Func(Of IServiceProvider, TBot), Optional configureAction As Action(Of BotFrameworkOptions) = Nothing) As IServiceCollection" />
+      <MemberSignature Language="F#" Value="static member AddBot : Microsoft.Extensions.DependencyInjection.IServiceCollection * Func&lt;IServiceProvider, 'Bot (requires 'Bot : null and 'Bot :&gt; Microsoft.Bot.Builder.IBot)&gt; * Action&lt;Microsoft.Bot.Builder.Integration.BotFrameworkOptions&gt; -&gt; Microsoft.Extensions.DependencyInjection.IServiceCollection (requires 'Bot : null and 'Bot :&gt; Microsoft.Bot.Builder.IBot)" Usage="Microsoft.Bot.Builder.Integration.AspNet.Core.ServiceCollectionExtensions.AddBot (services, botFactory, configureAction)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Integration.AspNet.Core</AssemblyName>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Extensions.DependencyInjection.IServiceCollection</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TBot">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>Microsoft.Bot.Builder.IBot</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="services" Type="Microsoft.Extensions.DependencyInjection.IServiceCollection" RefType="this" />
+        <Parameter Name="botFactory" Type="System.Func&lt;System.IServiceProvider,TBot&gt;" />
+        <Parameter Name="configureAction" Type="System.Action&lt;Microsoft.Bot.Builder.Integration.BotFrameworkOptions&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TBot">Um tipo concreto disso deve <see cref="T:Microsoft.Bot.Builder.IBot" /> ser registrado e exposto à estrutura do bot.</typeparam>
+        <param name="services">O <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" />.</param>
+        <param name="botFactory">Um método de fábrica que fornecerá uma instância do <typeparamref name="TBot" /> quando invocado.</param>
+        <param name="configureAction">Um retorno de chamada opcional que, se fornecido, será invocado para configurar ainda mais o bot.</param>
+        <summary>Adiciona e, opcionalmente, configura um <typeparamref name="TBot">tipo de bot especificado</typeparamref> para o <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /> .</summary>
+        <returns>Uma referência a essa instância após a operação ter sido concluída.</returns>
+        <remarks>A <paramref name="botFactory">fábrica</paramref> será registrada como <see cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Transient">transitória</see> e será invocada em cada rodada.</remarks>
+        <altmember cref="T:Microsoft.Bot.Builder.IBot" />
+      </Docs>
+    </Member>
+    <Member MemberName="AddBot&lt;TBot&gt;">
+      <MemberSignature Language="C#" Value="public static Microsoft.Extensions.DependencyInjection.IServiceCollection AddBot&lt;TBot&gt; (this Microsoft.Extensions.DependencyInjection.IServiceCollection services, TBot bot, Action&lt;Microsoft.Bot.Builder.Integration.BotFrameworkOptions&gt; configureAction = default) where TBot : class, Microsoft.Bot.Builder.IBot;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Extensions.DependencyInjection.IServiceCollection AddBot&lt;class (class Microsoft.Bot.Builder.IBot) TBot&gt;(class Microsoft.Extensions.DependencyInjection.IServiceCollection services, !!TBot bot, class System.Action`1&lt;class Microsoft.Bot.Builder.Integration.BotFrameworkOptions&gt; configureAction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Integration.AspNet.Core.ServiceCollectionExtensions.AddBot``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,``0,System.Action{Microsoft.Bot.Builder.Integration.BotFrameworkOptions})" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function AddBot(Of TBot As {Class, IBot}) (services As IServiceCollection, bot As TBot, Optional configureAction As Action(Of BotFrameworkOptions) = Nothing) As IServiceCollection" />
+      <MemberSignature Language="F#" Value="static member AddBot : Microsoft.Extensions.DependencyInjection.IServiceCollection * 'Bot * Action&lt;Microsoft.Bot.Builder.Integration.BotFrameworkOptions&gt; -&gt; Microsoft.Extensions.DependencyInjection.IServiceCollection (requires 'Bot : null and 'Bot :&gt; Microsoft.Bot.Builder.IBot)" Usage="Microsoft.Bot.Builder.Integration.AspNet.Core.ServiceCollectionExtensions.AddBot (services, bot, configureAction)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Integration.AspNet.Core</AssemblyName>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Extensions.DependencyInjection.IServiceCollection</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TBot">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>Microsoft.Bot.Builder.IBot</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="services" Type="Microsoft.Extensions.DependencyInjection.IServiceCollection" RefType="this" />
+        <Parameter Name="bot" Type="TBot" />
+        <Parameter Name="configureAction" Type="System.Action&lt;Microsoft.Bot.Builder.Integration.BotFrameworkOptions&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TBot">Um tipo concreto disso deve <see cref="T:Microsoft.Bot.Builder.IBot" /> ser registrado e exposto à estrutura do bot.</typeparam>
+        <param name="services">O <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" />.</param>
+        <param name="bot">A instância do bot que será registrada como um <see cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Singleton" /> .</param>
+        <param name="configureAction">Um retorno de chamada opcional que, se fornecido, será invocado para configurar ainda mais o bot.</param>
+        <summary>Adiciona e, opcionalmente, configura uma instância de <paramref name="bot">bot</paramref> singleton para o <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /> .</summary>
+        <returns>Uma referência a essa instância após a operação ter sido concluída.</returns>
+        <remarks>To be added.</remarks>
+        <altmember cref="T:Microsoft.Bot.Builder.IBot" />
+      </Docs>
+    </Member>
+    <Member MemberName="AddBotFrameworkAdapterIntegration">
+      <MemberSignature Language="C#" Value="public static Microsoft.Extensions.DependencyInjection.IServiceCollection AddBotFrameworkAdapterIntegration (this Microsoft.Extensions.DependencyInjection.IServiceCollection services, Action&lt;Microsoft.Bot.Builder.Integration.BotFrameworkOptions&gt; configureAction = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Extensions.DependencyInjection.IServiceCollection AddBotFrameworkAdapterIntegration(class Microsoft.Extensions.DependencyInjection.IServiceCollection services, class System.Action`1&lt;class Microsoft.Bot.Builder.Integration.BotFrameworkOptions&gt; configureAction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Integration.AspNet.Core.ServiceCollectionExtensions.AddBotFrameworkAdapterIntegration(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Microsoft.Bot.Builder.Integration.BotFrameworkOptions})" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function AddBotFrameworkAdapterIntegration (services As IServiceCollection, Optional configureAction As Action(Of BotFrameworkOptions) = Nothing) As IServiceCollection" />
+      <MemberSignature Language="F#" Value="static member AddBotFrameworkAdapterIntegration : Microsoft.Extensions.DependencyInjection.IServiceCollection * Action&lt;Microsoft.Bot.Builder.Integration.BotFrameworkOptions&gt; -&gt; Microsoft.Extensions.DependencyInjection.IServiceCollection" Usage="Microsoft.Bot.Builder.Integration.AspNet.Core.ServiceCollectionExtensions.AddBotFrameworkAdapterIntegration (services, configureAction)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Integration.AspNet.Core</AssemblyName>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Extensions.DependencyInjection.IServiceCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="services" Type="Microsoft.Extensions.DependencyInjection.IServiceCollection" RefType="this" />
+        <Parameter Name="configureAction" Type="System.Action&lt;Microsoft.Bot.Builder.Integration.BotFrameworkOptions&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="services">O <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" />.</param>
+        <param name="configureAction">Um retorno de chamada opcional que, se fornecido, será invocado para configurar ainda mais a integração.</param>
+        <summary>Adiciona o <see cref="T:Microsoft.Bot.Builder.BotFrameworkAdapter" /> como o <see cref="T:Microsoft.Bot.Builder.Integration.IAdapterIntegration" /> que será usado pela camada de integração para processar solicitações de bot.</summary>
+        <returns>Uma referência a essa instância após a operação ter sido concluída.</returns>
+        <remarks>O <see cref="T:Microsoft.Bot.Builder.BotFrameworkAdapter" /> será registrado como um <see cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Singleton">singleton</see>.
+            
+Observação: chamar qualquer uma das sobrecargas de <c>AddBot</c> que tentará registrá-la implicitamente para você se não houver nenhum explícito <see cref="T:Microsoft.Bot.Builder.Integration.IAdapterIntegration" /> já registrado na <paramref name="services" /> coleção.</remarks>
+        <altmember cref="O:AddBot{TBot}()" />
+        <altmember cref="T:Microsoft.Bot.Builder.BotFrameworkAdapter" />
+        <altmember cref="T:Microsoft.Bot.Builder.Integration.IAdapterIntegration" />
+        <altmember cref="M:Microsoft.Bot.Builder.Integration.AspNet.Core.ServiceCollectionExtensions.AddBot``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Microsoft.Bot.Builder.Integration.BotFrameworkOptions})" />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

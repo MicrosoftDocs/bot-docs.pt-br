@@ -1,0 +1,163 @@
+<Type Name="PaymentRequestComplete" FullName="Microsoft.Bot.Schema.PaymentRequestComplete">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f1cb7dc00b40aeb33c0310b5cd102a6ce5825353" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150112" /></Metadata><TypeSignature Language="C#" Value="public class PaymentRequestComplete" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PaymentRequestComplete extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.PaymentRequestComplete" />
+  <TypeSignature Language="VB.NET" Value="Public Class PaymentRequestComplete" />
+  <TypeSignature Language="F#" Value="type PaymentRequestComplete = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Obsolete("Bot Framework no longer supports payments.")]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Obsolete("Bot Framework no longer supports payments.")&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Carga entregue ao concluir uma solicitação de pagamento</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PaymentRequestComplete ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Schema.PaymentRequestComplete.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Inicializa uma nova instância da classe PaymentRequestComplete.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PaymentRequestComplete (string id = default, Microsoft.Bot.Schema.PaymentRequest paymentRequest = default, Microsoft.Bot.Schema.PaymentResponse paymentResponse = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string id, class Microsoft.Bot.Schema.PaymentRequest paymentRequest, class Microsoft.Bot.Schema.PaymentResponse paymentResponse) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Schema.PaymentRequestComplete.#ctor(System.String,Microsoft.Bot.Schema.PaymentRequest,Microsoft.Bot.Schema.PaymentResponse)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (Optional id As String = Nothing, Optional paymentRequest As PaymentRequest = Nothing, Optional paymentResponse As PaymentResponse = Nothing)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Schema.PaymentRequestComplete : string * Microsoft.Bot.Schema.PaymentRequest * Microsoft.Bot.Schema.PaymentResponse -&gt; Microsoft.Bot.Schema.PaymentRequestComplete" Usage="new Microsoft.Bot.Schema.PaymentRequestComplete (id, paymentRequest, paymentResponse)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="paymentRequest" Type="Microsoft.Bot.Schema.PaymentRequest" />
+        <Parameter Name="paymentResponse" Type="Microsoft.Bot.Schema.PaymentResponse" />
+      </Parameters>
+      <Docs>
+        <param name="id">ID da solicitação de pagamento</param>
+        <param name="paymentRequest">Solicitação de pagamento inicial</param>
+        <param name="paymentResponse">Resposta de pagamento correspondente</param>
+        <summary>Inicializa uma nova instância da classe PaymentRequestComplete.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public string Id { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.PaymentRequestComplete.Id" />
+      <MemberSignature Language="VB.NET" Value="Public Property Id As String" />
+      <MemberSignature Language="F#" Value="member this.Id : string with get, set" Usage="Microsoft.Bot.Schema.PaymentRequestComplete.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="id")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="id")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a ID da solicitação de pagamento</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PaymentRequest">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Schema.PaymentRequest PaymentRequest { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Schema.PaymentRequest PaymentRequest" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.PaymentRequestComplete.PaymentRequest" />
+      <MemberSignature Language="VB.NET" Value="Public Property PaymentRequest As PaymentRequest" />
+      <MemberSignature Language="F#" Value="member this.PaymentRequest : Microsoft.Bot.Schema.PaymentRequest with get, set" Usage="Microsoft.Bot.Schema.PaymentRequestComplete.PaymentRequest" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="paymentRequest")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="paymentRequest")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Schema.PaymentRequest</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a solicitação de pagamento inicial</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PaymentResponse">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Schema.PaymentResponse PaymentResponse { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Schema.PaymentResponse PaymentResponse" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.PaymentRequestComplete.PaymentResponse" />
+      <MemberSignature Language="VB.NET" Value="Public Property PaymentResponse As PaymentResponse" />
+      <MemberSignature Language="F#" Value="member this.PaymentResponse : Microsoft.Bot.Schema.PaymentResponse with get, set" Usage="Microsoft.Bot.Schema.PaymentRequestComplete.PaymentResponse" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="paymentResponse")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="paymentResponse")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Schema.PaymentResponse</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a resposta de pagamento correspondente</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

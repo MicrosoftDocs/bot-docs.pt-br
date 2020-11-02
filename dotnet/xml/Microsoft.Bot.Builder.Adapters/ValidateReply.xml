@@ -1,0 +1,37 @@
+<Type Name="ValidateReply" FullName="Microsoft.Bot.Builder.Adapters.ValidateReply">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="61e22a4663dc511c8785a72d85eae5421be3b45b" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151405" /></Metadata><TypeSignature Language="C#" Value="public delegate void ValidateReply(IActivity expected, IActivity actual);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ValidateReply extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Adapters.ValidateReply" />
+  <TypeSignature Language="VB.NET" Value="Public Delegate Sub ValidateReply(expected As IActivity, actual As IActivity)" />
+  <TypeSignature Language="F#" Value="type ValidateReply = delegate of IActivity * IActivity -&gt; unit" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>4.0.7.0</AssemblyVersion>
+    <AssemblyVersion>4.1.5.0</AssemblyVersion>
+    <AssemblyVersion>4.3.2.0</AssemblyVersion>
+    <AssemblyVersion>4.4.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.0</AssemblyVersion>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="expected" Type="Microsoft.Bot.Schema.IActivity" />
+    <Parameter Name="actual" Type="Microsoft.Bot.Schema.IActivity" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="expected">A atividade esperada do bot ou do adaptador.</param>
+    <param name="actual">A atividade real do bot ou adaptador.</param>
+    <summary>Representa um método que <see cref="T:Microsoft.Bot.Builder.Adapters.TestFlow" /> pode ser chamado para validar uma atividade.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+</Type>

@@ -1,0 +1,168 @@
+<Type Name="OperationOutcomeBase" FullName="Microsoft.Bot.Builder.Calling.ObjectModel.Contracts.OperationOutcomeBase">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7213224d949b6dd129f01ea3104a41ba2499ccfc" /><Meta Name="ms.sourcegitcommit" Value="ac3a7ee8979fc942f9d7420b2f6845c726b6661a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/02/2020" /><Meta Name="ms.locfileid" Value="93149743" /></Metadata><TypeSignature Language="C#" Value="public abstract class OperationOutcomeBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit OperationOutcomeBase extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Calling.ObjectModel.Contracts.OperationOutcomeBase" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class OperationOutcomeBase" />
+  <TypeSignature Language="F#" Value="type OperationOutcomeBase = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Calling</AssemblyName>
+    <AssemblyVersion>3.20.1.42</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[Newtonsoft.Json.JsonObject(Newtonsoft.Json.MemberSerialization.OptOut)]</AttributeName>
+      <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonObject(Newtonsoft.Json.MemberSerialization.OptOut)&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Classe base para resultados (s) de várias "ação (ões)"</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected OperationOutcomeBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Calling.ObjectModel.Contracts.OperationOutcomeBase.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Calling</AssemblyName>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FailureReason">
+      <MemberSignature Language="C#" Value="public string FailureReason { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FailureReason" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Calling.ObjectModel.Contracts.OperationOutcomeBase.FailureReason" />
+      <MemberSignature Language="VB.NET" Value="Public Property FailureReason As String" />
+      <MemberSignature Language="F#" Value="member this.FailureReason : string with get, set" Usage="Microsoft.Bot.Builder.Calling.ObjectModel.Contracts.OperationOutcomeBase.FailureReason" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Calling</AssemblyName>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(Required=Newtonsoft.Json.Required.Default)]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(Required=Newtonsoft.Json.Required.Default)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>motivo da falha (se houver)</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public string Id { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Calling.ObjectModel.Contracts.OperationOutcomeBase.Id" />
+      <MemberSignature Language="VB.NET" Value="Public Property Id As String" />
+      <MemberSignature Language="F#" Value="member this.Id : string with get, set" Usage="Microsoft.Bot.Builder.Calling.ObjectModel.Contracts.OperationOutcomeBase.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Calling</AssemblyName>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(Order=-2, Required=Newtonsoft.Json.Required.Always)]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(Order=-2, Required=Newtonsoft.Json.Required.Always)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>A ID da operação que foi especificada quando o cliente especificou uma ação</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Outcome">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Calling.ObjectModel.Misc.Outcome Outcome { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.Bot.Builder.Calling.ObjectModel.Misc.Outcome Outcome" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Calling.ObjectModel.Contracts.OperationOutcomeBase.Outcome" />
+      <MemberSignature Language="VB.NET" Value="Public Property Outcome As Outcome" />
+      <MemberSignature Language="F#" Value="member this.Outcome : Microsoft.Bot.Builder.Calling.ObjectModel.Misc.Outcome with get, set" Usage="Microsoft.Bot.Builder.Calling.ObjectModel.Contracts.OperationOutcomeBase.Outcome" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Calling</AssemblyName>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(Required=Newtonsoft.Json.Required.Always)]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(Required=Newtonsoft.Json.Required.Always)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Calling.ObjectModel.Misc.Outcome</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Resultado da operação</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public string Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Type" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Calling.ObjectModel.Contracts.OperationOutcomeBase.Type" />
+      <MemberSignature Language="VB.NET" Value="Public Property Type As String" />
+      <MemberSignature Language="F#" Value="member this.Type : string with get, set" Usage="Microsoft.Bot.Builder.Calling.ObjectModel.Contracts.OperationOutcomeBase.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Calling</AssemblyName>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(Order=-3, Required=Newtonsoft.Json.Required.Always)]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(Order=-3, Required=Newtonsoft.Json.Required.Always)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>O tipo de resultado. Várias classes de resultados concretos especificam seu nome.
+Isso é usado para desserializar (no final do cliente) uma lista de resultados de JSON para suas respectivas classes concretas.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public virtual void Validate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Validate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Calling.ObjectModel.Contracts.OperationOutcomeBase.Validate" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub Validate ()" />
+      <MemberSignature Language="F#" Value="abstract member Validate : unit -&gt; unit&#xA;override this.Validate : unit -&gt; unit" Usage="operationOutcomeBase.Validate " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Calling</AssemblyName>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

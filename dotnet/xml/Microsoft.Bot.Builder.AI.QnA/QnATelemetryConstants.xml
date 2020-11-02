@@ -1,0 +1,288 @@
+<Type Name="QnATelemetryConstants" FullName="Microsoft.Bot.Builder.AI.QnA.QnATelemetryConstants">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="e03da29b446d5be1596a77268ac1912d3fff5141" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151192" /></Metadata><TypeSignature Language="C#" Value="public static class QnATelemetryConstants" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit QnATelemetryConstants extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.AI.QnA.QnATelemetryConstants" />
+  <TypeSignature Language="VB.NET" Value="Public Class QnATelemetryConstants" />
+  <TypeSignature Language="F#" Value="type QnATelemetryConstants = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
+    <AssemblyVersion>4.4.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.0</AssemblyVersion>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>O evento QnA padrão e os nomes de propriedade registrados usando IBotTelemetryClient.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AnswerProperty">
+      <MemberSignature Language="C#" Value="public static readonly string AnswerProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string AnswerProperty" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.AI.QnA.QnATelemetryConstants.AnswerProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly AnswerProperty As String " />
+      <MemberSignature Language="F#" Value=" staticval mutable AnswerProperty : string" Usage="Microsoft.Bot.Builder.AI.QnA.QnATelemetryConstants.AnswerProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>A chave usada ao armazenar uma resposta QnA em um evento personalizado na telemetria.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArticleFoundProperty">
+      <MemberSignature Language="C#" Value="public static readonly string ArticleFoundProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string ArticleFoundProperty" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.AI.QnA.QnATelemetryConstants.ArticleFoundProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly ArticleFoundProperty As String " />
+      <MemberSignature Language="F#" Value=" staticval mutable ArticleFoundProperty : string" Usage="Microsoft.Bot.Builder.AI.QnA.QnATelemetryConstants.ArticleFoundProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>A chave usada ao armazenar um sinalizador que indica se um artigo QnA foi encontrado em um evento personalizado na telemetria.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelIdProperty">
+      <MemberSignature Language="C#" Value="public static readonly string ChannelIdProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string ChannelIdProperty" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.AI.QnA.QnATelemetryConstants.ChannelIdProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly ChannelIdProperty As String " />
+      <MemberSignature Language="F#" Value=" staticval mutable ChannelIdProperty : string" Usage="Microsoft.Bot.Builder.AI.QnA.QnATelemetryConstants.ChannelIdProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>A chave usada ao armazenar a ID do canal em um evento personalizado na telemetria.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KnowledgeBaseIdProperty">
+      <MemberSignature Language="C#" Value="public static readonly string KnowledgeBaseIdProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string KnowledgeBaseIdProperty" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.AI.QnA.QnATelemetryConstants.KnowledgeBaseIdProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly KnowledgeBaseIdProperty As String " />
+      <MemberSignature Language="F#" Value=" staticval mutable KnowledgeBaseIdProperty : string" Usage="Microsoft.Bot.Builder.AI.QnA.QnATelemetryConstants.KnowledgeBaseIdProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>A chave usada ao armazenar uma ID da base de dados de conhecimento do QnA em um evento personalizado na telemetria.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MatchedQuestionProperty">
+      <MemberSignature Language="C#" Value="public static readonly string MatchedQuestionProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string MatchedQuestionProperty" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.AI.QnA.QnATelemetryConstants.MatchedQuestionProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly MatchedQuestionProperty As String " />
+      <MemberSignature Language="F#" Value=" staticval mutable MatchedQuestionProperty : string" Usage="Microsoft.Bot.Builder.AI.QnA.QnATelemetryConstants.MatchedQuestionProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>A chave usada ao armazenar uma ID de pergunta correspondente em um evento personalizado na telemetria.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QnaMsgEvent">
+      <MemberSignature Language="C#" Value="public static readonly string QnaMsgEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string QnaMsgEvent" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.AI.QnA.QnATelemetryConstants.QnaMsgEvent" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly QnaMsgEvent As String " />
+      <MemberSignature Language="F#" Value=" staticval mutable QnaMsgEvent : string" Usage="Microsoft.Bot.Builder.AI.QnA.QnATelemetryConstants.QnaMsgEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>A chave usada para o tipo de evento personalizado na telemetria.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QuestionIdProperty">
+      <MemberSignature Language="C#" Value="public static readonly string QuestionIdProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string QuestionIdProperty" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.AI.QnA.QnATelemetryConstants.QuestionIdProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly QuestionIdProperty As String " />
+      <MemberSignature Language="F#" Value=" staticval mutable QuestionIdProperty : string" Usage="Microsoft.Bot.Builder.AI.QnA.QnATelemetryConstants.QuestionIdProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>A chave usada ao armazenar a ID da pergunta identificada em um evento personalizado na telemetria.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QuestionProperty">
+      <MemberSignature Language="C#" Value="public static readonly string QuestionProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string QuestionProperty" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.AI.QnA.QnATelemetryConstants.QuestionProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly QuestionProperty As String " />
+      <MemberSignature Language="F#" Value=" staticval mutable QuestionProperty : string" Usage="Microsoft.Bot.Builder.AI.QnA.QnATelemetryConstants.QuestionProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>A chave usada ao armazenar o texto de pergunta identificado em um evento personalizado na telemetria.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScoreProperty">
+      <MemberSignature Language="C#" Value="public static readonly string ScoreProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string ScoreProperty" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.AI.QnA.QnATelemetryConstants.ScoreProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly ScoreProperty As String " />
+      <MemberSignature Language="F#" Value=" staticval mutable ScoreProperty : string" Usage="Microsoft.Bot.Builder.AI.QnA.QnATelemetryConstants.ScoreProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>A chave usada ao armazenar uma pontuação de resultado de QnA Maker em um evento personalizado na telemetria.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UsernameProperty">
+      <MemberSignature Language="C#" Value="public static readonly string UsernameProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string UsernameProperty" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.AI.QnA.QnATelemetryConstants.UsernameProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly UsernameProperty As String " />
+      <MemberSignature Language="F#" Value=" staticval mutable UsernameProperty : string" Usage="Microsoft.Bot.Builder.AI.QnA.QnATelemetryConstants.UsernameProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>A chave usada ao armazenar um nome de usuário em um evento personalizado na telemetria.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

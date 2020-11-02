@@ -1,0 +1,49 @@
+<Type Name="Chain+WhereCanceledException" FullName="Microsoft.Bot.Builder.Dialogs.Chain+WhereCanceledException">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b631951072b52b9b929d1805a410f2a7276d318c" /><Meta Name="ms.sourcegitcommit" Value="ac3a7ee8979fc942f9d7420b2f6845c726b6661a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/02/2020" /><Meta Name="ms.locfileid" Value="93149956" /></Metadata><TypeSignature Language="C#" Value="public sealed class Chain.WhereCanceledException : OperationCanceledException" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi serializable sealed beforefieldinit Chain/WhereCanceledException extends System.OperationCanceledException" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Chain.WhereCanceledException" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class Chain.WhereCanceledException&#xA;Inherits OperationCanceledException" />
+  <TypeSignature Language="F#" Value="type Chain.WhereCanceledException = class&#xA;    inherit OperationCanceledException" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+    <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+    <AssemblyVersion>3.20.1.42</AssemblyVersion>
+    <AssemblyVersion>3.30.0.1</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.OperationCanceledException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Serializable]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Serializable&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>A exceção que é lançada quando o é cancelado.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WhereCanceledException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Chain.WhereCanceledException.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Construa a exceção.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

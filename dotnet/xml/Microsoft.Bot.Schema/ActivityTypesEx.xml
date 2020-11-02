@@ -1,0 +1,70 @@
+<Type Name="ActivityTypesEx" FullName="Microsoft.Bot.Schema.ActivityTypesEx">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="520728bcc72980223b842ea8abc62e709133ecc8" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151416" /></Metadata><TypeSignature Language="C#" Value="public static class ActivityTypesEx" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ActivityTypesEx extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.ActivityTypesEx" />
+  <TypeSignature Language="VB.NET" Value="Public Class ActivityTypesEx" />
+  <TypeSignature Language="F#" Value="type ActivityTypesEx = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Valores adicionais para Activityvalue além da classe Activityfiles gerada automaticamente.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Delay">
+      <MemberSignature Language="C#" Value="public const string Delay;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string Delay" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Schema.ActivityTypesEx.Delay" />
+      <MemberSignature Language="VB.NET" Value="Public Const Delay As String " />
+      <MemberSignature Language="F#" Value="val mutable Delay : string" Usage="Microsoft.Bot.Schema.ActivityTypesEx.Delay" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>O valor de tipo para atividades de atraso.</summary>
+        <remarks>Como um tipo de atividade de saída, faz com que o adaptador Pause por <see cref="P:Microsoft.Bot.Schema.Activity.Value" /> milissegundos.
+A atividade <see cref="P:Microsoft.Bot.Schema.Activity.Value" /> deve ser a <see cref="T:System.Int32" /> .</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeResponse">
+      <MemberSignature Language="C#" Value="public const string InvokeResponse;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string InvokeResponse" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Schema.ActivityTypesEx.InvokeResponse" />
+      <MemberSignature Language="VB.NET" Value="Public Const InvokeResponse As String " />
+      <MemberSignature Language="F#" Value="val mutable InvokeResponse : string" Usage="Microsoft.Bot.Schema.ActivityTypesEx.InvokeResponse" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>O valor do tipo para invocar atividades de resposta.</summary>
+        <remarks>Isso é usado para uma carga de retorno em resposta a uma atividade Invoke.
+A invocação de atividades comunica informações programáticas de um cliente ou um canal para um bot e tem um conteúdo de retorno correspondente para uso dentro do canal. O significado de uma atividade de invocação é definido pelo campo <see cref="P:Microsoft.Bot.Schema.Activity.Name" />, que é significativo dentro do escopo de um canal.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

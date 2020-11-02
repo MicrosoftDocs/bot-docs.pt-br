@@ -1,0 +1,73 @@
+<Type Name="FormFlowAttribute" FullName="Microsoft.Bot.Builder.FormFlow.FormFlowAttribute">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5412a0c1142b1e2b0304df3add56b502d180614b" /><Meta Name="ms.sourcegitcommit" Value="ac3a7ee8979fc942f9d7420b2f6845c726b6661a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/02/2020" /><Meta Name="ms.locfileid" Value="93149597" /></Metadata><TypeSignature Language="C#" Value="public abstract class FormFlowAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit FormFlowAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.FormFlow.FormFlowAttribute" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class FormFlowAttribute&#xA;Inherits Attribute" />
+  <TypeSignature Language="F#" Value="type FormFlowAttribute = class&#xA;    inherit Attribute" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+    <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+    <AssemblyVersion>3.20.1.42</AssemblyVersion>
+    <AssemblyVersion>3.30.0.1</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Serializable]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Serializable&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Classe base abstrata para atributos FormFlow.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected FormFlowAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.FormFlow.FormFlowAttribute.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLocalizable">
+      <MemberSignature Language="C#" Value="public bool IsLocalizable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsLocalizable" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.FormFlow.FormFlowAttribute.IsLocalizable" />
+      <MemberSignature Language="VB.NET" Value="Public Property IsLocalizable As Boolean" />
+      <MemberSignature Language="F#" Value="member this.IsLocalizable : bool with get, set" Usage="Microsoft.Bot.Builder.FormFlow.FormFlowAttribute.IsLocalizable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>True se o atributo for localizável.</summary>
+        <value>To be added.</value>
+        <remarks>Os atributos que são usados em classes, campos e propriedades devem ter esse conjunto.
+Dessa forma, esses atributos estarão nos arquivos de localização gerados.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

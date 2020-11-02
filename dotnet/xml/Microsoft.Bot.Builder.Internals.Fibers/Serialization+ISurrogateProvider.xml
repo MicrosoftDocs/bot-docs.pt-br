@@ -1,0 +1,56 @@
+<Type Name="Serialization+ISurrogateProvider" FullName="Microsoft.Bot.Builder.Internals.Fibers.Serialization+ISurrogateProvider">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="dda1e070873ce386751c0dd66ab4b72d13a56ed8" /><Meta Name="ms.sourcegitcommit" Value="5add21ad3daf0ce894612a22b951b98350961720" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="06/04/2020" /><Meta Name="ms.locfileid" Value="93149316" /></Metadata><TypeSignature Language="C#" Value="public interface Serialization.ISurrogateProvider : System.Runtime.Serialization.ISerializationSurrogate" />
+  <TypeSignature Language="ILAsm" Value=".class nested public interface auto ansi abstract Serialization/ISurrogateProvider implements class System.Runtime.Serialization.ISerializationSurrogate" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Internals.Fibers.Serialization.ISurrogateProvider" />
+  <TypeSignature Language="VB.NET" Value="Public Interface Serialization.ISurrogateProvider&#xA;Implements ISerializationSurrogate" />
+  <TypeSignature Language="F#" Value="type Serialization.ISurrogateProvider = interface&#xA;    interface ISerializationSurrogate" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+    <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+    <AssemblyVersion>3.20.1.42</AssemblyVersion>
+    <AssemblyVersion>3.30.0.1</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializationSurrogate</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Estender <see cref="T:System.Runtime.Serialization.ISerializationSurrogate" /> com um método de "testador" usado pelo <see cref="T:Microsoft.Bot.Builder.Internals.Fibers.Serialization.SurrogateSelector" /> .</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Handles">
+      <MemberSignature Language="C#" Value="public bool Handles (Type type, System.Runtime.Serialization.StreamingContext context, out int priority);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Handles(class System.Type type, valuetype System.Runtime.Serialization.StreamingContext context, [out] int32&amp; priority) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Internals.Fibers.Serialization.ISurrogateProvider.Handles(System.Type,System.Runtime.Serialization.StreamingContext,System.Int32@)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Handles (type As Type, context As StreamingContext, ByRef priority As Integer) As Boolean" />
+      <MemberSignature Language="F#" Value="abstract member Handles : Type * System.Runtime.Serialization.StreamingContext * int -&gt; bool" Usage="iSurrogateProvider.Handles (type, context, priority)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+        <Parameter Name="priority" Type="System.Int32" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="type">O tipo de consulta.</param>
+        <param name="context">O contexto de serialização.</param>
+        <param name="priority">A prioridade deste provedor.</param>
+        <summary>Determine se este provedor substituto trata desse tipo.</summary>
+        <returns>True se esse provedor tratar esse tipo; caso contrário, false.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

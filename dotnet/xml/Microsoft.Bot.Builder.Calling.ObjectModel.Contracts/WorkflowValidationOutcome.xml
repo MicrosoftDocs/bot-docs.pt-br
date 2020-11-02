@@ -1,0 +1,43 @@
+<Type Name="WorkflowValidationOutcome" FullName="Microsoft.Bot.Builder.Calling.ObjectModel.Contracts.WorkflowValidationOutcome">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="558cbcfb75bdb09b6c8b75885d85587d0501f5ee" /><Meta Name="ms.sourcegitcommit" Value="ac3a7ee8979fc942f9d7420b2f6845c726b6661a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/02/2020" /><Meta Name="ms.locfileid" Value="93149640" /></Metadata><TypeSignature Language="C#" Value="public class WorkflowValidationOutcome : Microsoft.Bot.Builder.Calling.ObjectModel.Contracts.OperationOutcomeBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WorkflowValidationOutcome extends Microsoft.Bot.Builder.Calling.ObjectModel.Contracts.OperationOutcomeBase" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Calling.ObjectModel.Contracts.WorkflowValidationOutcome" />
+  <TypeSignature Language="VB.NET" Value="Public Class WorkflowValidationOutcome&#xA;Inherits OperationOutcomeBase" />
+  <TypeSignature Language="F#" Value="type WorkflowValidationOutcome = class&#xA;    inherit OperationOutcomeBase" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Calling</AssemblyName>
+    <AssemblyVersion>3.20.1.42</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Bot.Builder.Calling.ObjectModel.Contracts.OperationOutcomeBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[Newtonsoft.Json.JsonObject(Newtonsoft.Json.MemberSerialization.OptOut)]</AttributeName>
+      <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonObject(Newtonsoft.Json.MemberSerialization.OptOut)&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Se a "resposta" do cliente falhar na validação, esse será o resultado transmitido ao cliente como POSTAgem na URL de retorno de chamada do cliente.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowValidationOutcome ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Calling.ObjectModel.Contracts.WorkflowValidationOutcome.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Calling</AssemblyName>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

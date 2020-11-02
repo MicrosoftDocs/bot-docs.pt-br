@@ -1,0 +1,47 @@
+<Type Name="ConversationMemoryScope" FullName="Microsoft.Bot.Builder.Dialogs.Memory.Scopes.ConversationMemoryScope">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="aa051ecf7bd0d3deb10840bad3b22e627556b40f" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150391" /></Metadata><TypeSignature Language="C#" Value="public class ConversationMemoryScope : Microsoft.Bot.Builder.Dialogs.Memory.Scopes.BotStateMemoryScope&lt;Microsoft.Bot.Builder.ConversationState&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConversationMemoryScope extends Microsoft.Bot.Builder.Dialogs.Memory.Scopes.BotStateMemoryScope`1&lt;class Microsoft.Bot.Builder.ConversationState&gt;" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Memory.Scopes.ConversationMemoryScope" />
+  <TypeSignature Language="VB.NET" Value="Public Class ConversationMemoryScope&#xA;Inherits BotStateMemoryScope(Of ConversationState)" />
+  <TypeSignature Language="F#" Value="type ConversationMemoryScope = class&#xA;    inherit BotStateMemoryScope&lt;ConversationState&gt;" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Memory.Scopes.BotStateMemoryScope&lt;Microsoft.Bot.Builder.ConversationState&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="T">Microsoft.Bot.Builder.ConversationState</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ConversationMemoryScope representa a memória no escopo da conversa.</summary>
+    <remarks>Isso depende do objeto Conversastate que está sendo acessível de turnContext. Turnstate. get &lt; conversable &gt; ().</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConversationMemoryScope ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Memory.Scopes.ConversationMemoryScope.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Dialogs.Memory.Scopes.ConversationMemoryScope" />.
+Crie um novo ConversationMemoryScope associado a Conversastate.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

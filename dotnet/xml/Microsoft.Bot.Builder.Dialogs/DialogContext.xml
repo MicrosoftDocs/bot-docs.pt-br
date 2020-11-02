@@ -1,0 +1,750 @@
+<Type Name="DialogContext" FullName="Microsoft.Bot.Builder.Dialogs.DialogContext">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="4101bc92bfb0094c9f99c9f9a6d473498dd7cadb" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151710" /></Metadata><TypeSignature Language="C#" Value="public class DialogContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DialogContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.DialogContext" />
+  <TypeSignature Language="VB.NET" Value="Public Class DialogContext" />
+  <TypeSignature Language="F#" Value="type DialogContext = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+    <AssemblyVersion>4.0.7.0</AssemblyVersion>
+    <AssemblyVersion>4.1.5.0</AssemblyVersion>
+    <AssemblyVersion>4.3.2.0</AssemblyVersion>
+    <AssemblyVersion>4.4.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.0</AssemblyVersion>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Diagnostics.DebuggerDisplay("{GetType().Name}[{ActiveDialog?.Id}]")]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Diagnostics.DebuggerDisplay("{GetType().Name}[{ActiveDialog?.Id}]")&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Fornece o contexto para o estado atual da pilha de diálogo.</summary>
+    <remarks>A <see cref="P:Microsoft.Bot.Builder.Dialogs.DialogContext.Context" /> propriedade contém o <see cref="T:Microsoft.Bot.Builder.ITurnContext" /> para a ativação atual.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DialogContext (Microsoft.Bot.Builder.Dialogs.DialogSet dialogs, Microsoft.Bot.Builder.Dialogs.DialogContext parentDialogContext, Microsoft.Bot.Builder.Dialogs.DialogState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Bot.Builder.Dialogs.DialogSet dialogs, class Microsoft.Bot.Builder.Dialogs.DialogContext parentDialogContext, class Microsoft.Bot.Builder.Dialogs.DialogState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.DialogContext.#ctor(Microsoft.Bot.Builder.Dialogs.DialogSet,Microsoft.Bot.Builder.Dialogs.DialogContext,Microsoft.Bot.Builder.Dialogs.DialogState)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (dialogs As DialogSet, parentDialogContext As DialogContext, state As DialogState)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.Dialogs.DialogContext : Microsoft.Bot.Builder.Dialogs.DialogSet * Microsoft.Bot.Builder.Dialogs.DialogContext * Microsoft.Bot.Builder.Dialogs.DialogState -&gt; Microsoft.Bot.Builder.Dialogs.DialogContext" Usage="new Microsoft.Bot.Builder.Dialogs.DialogContext (dialogs, parentDialogContext, state)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dialogs" Type="Microsoft.Bot.Builder.Dialogs.DialogSet" />
+        <Parameter Name="parentDialogContext" Type="Microsoft.Bot.Builder.Dialogs.DialogContext" />
+        <Parameter Name="state" Type="Microsoft.Bot.Builder.Dialogs.DialogState" />
+      </Parameters>
+      <Docs>
+        <param name="dialogs">Conjunto de caixas de diálogo pai.</param>
+        <param name="parentDialogContext">Contexto da caixa de diálogo pai.</param>
+        <param name="state">Estado da caixa de diálogo atual.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogContext" />.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DialogContext (Microsoft.Bot.Builder.Dialogs.DialogSet dialogs, Microsoft.Bot.Builder.ITurnContext turnContext, Microsoft.Bot.Builder.Dialogs.DialogState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Bot.Builder.Dialogs.DialogSet dialogs, class Microsoft.Bot.Builder.ITurnContext turnContext, class Microsoft.Bot.Builder.Dialogs.DialogState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.DialogContext.#ctor(Microsoft.Bot.Builder.Dialogs.DialogSet,Microsoft.Bot.Builder.ITurnContext,Microsoft.Bot.Builder.Dialogs.DialogState)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (dialogs As DialogSet, turnContext As ITurnContext, state As DialogState)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.Dialogs.DialogContext : Microsoft.Bot.Builder.Dialogs.DialogSet * Microsoft.Bot.Builder.ITurnContext * Microsoft.Bot.Builder.Dialogs.DialogState -&gt; Microsoft.Bot.Builder.Dialogs.DialogContext" Usage="new Microsoft.Bot.Builder.Dialogs.DialogContext (dialogs, turnContext, state)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dialogs" Type="Microsoft.Bot.Builder.Dialogs.DialogSet" />
+        <Parameter Name="turnContext" Type="Microsoft.Bot.Builder.ITurnContext" />
+        <Parameter Name="state" Type="Microsoft.Bot.Builder.Dialogs.DialogState" />
+      </Parameters>
+      <Docs>
+        <param name="dialogs">A caixa de diálogo definida para criar o contexto da caixa de diálogo.</param>
+        <param name="turnContext">O contexto atual de ativação.</param>
+        <param name="state">A propriedade de estado da qual o contexto da caixa de diálogo será recuperado.</param>
+        <summary>Inicializa uma nova instância da <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogContext" /> classe a partir do contexto de ativação.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActiveDialog">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Dialogs.DialogInstance ActiveDialog { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.Dialogs.DialogInstance ActiveDialog" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Dialogs.DialogContext.ActiveDialog" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ActiveDialog As DialogInstance" />
+      <MemberSignature Language="F#" Value="member this.ActiveDialog : Microsoft.Bot.Builder.Dialogs.DialogInstance" Usage="Microsoft.Bot.Builder.Dialogs.DialogContext.ActiveDialog" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Dialogs.DialogInstance</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém a instância armazenada em cache da caixa de diálogo ativa na parte superior da pilha ou <c>nula</c> se a pilha estiver vazia.</summary>
+        <value>A instância armazenada em cache da caixa de diálogo ativa na parte superior da pilha ou <c>nula</c> se a pilha estiver vazia.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginDialogAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt; BeginDialogAsync (string dialogId, object options = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt; BeginDialogAsync(string dialogId, object options, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.DialogContext.BeginDialogAsync(System.String,System.Object,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Function BeginDialogAsync (dialogId As String, Optional options As Object = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of DialogTurnResult)" />
+      <MemberSignature Language="F#" Value="member this.BeginDialogAsync : string * obj * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;" Usage="dialogContext.BeginDialogAsync (dialogId, options, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dialogId" Type="System.String" />
+        <Parameter Name="options" Type="System.Object" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="dialogId">ID da caixa de diálogo a ser iniciada.</param>
+        <param name="options">Opcional, informações a serem passadas para a caixa de diálogo que está sendo iniciada.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Inicia uma nova caixa de diálogo e a envia para a pilha de caixas de diálogo.</summary>
+        <returns>Uma tarefa que representa o trabalho na fila a ser executado.</returns>
+        <remarks>Se a tarefa for bem-sucedida, o resultado indicará se a caixa de diálogo ainda está ativa após a ativação ser processada pela caixa de diálogo.</remarks>
+        <altmember cref="M:Microsoft.Bot.Builder.Dialogs.DialogContext.EndDialogAsync(System.Object,System.Threading.CancellationToken)" />
+        <altmember cref="M:Microsoft.Bot.Builder.Dialogs.DialogContext.PromptAsync(System.String,Microsoft.Bot.Builder.Dialogs.PromptOptions,System.Threading.CancellationToken)" />
+        <altmember cref="M:Microsoft.Bot.Builder.Dialogs.Dialog.BeginDialogAsync(Microsoft.Bot.Builder.Dialogs.DialogContext,System.Object,System.Threading.CancellationToken)" />
+      </Docs>
+    </Member>
+    <Member MemberName="CancelAllDialogsAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt; CancelAllDialogsAsync (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt; CancelAllDialogsAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.DialogContext.CancelAllDialogsAsync(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Function CancelAllDialogsAsync (Optional cancellationToken As CancellationToken = Nothing) As Task(Of DialogTurnResult)" />
+      <MemberSignature Language="F#" Value="member this.CancelAllDialogsAsync : System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;" Usage="dialogContext.CancelAllDialogsAsync cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Exclui qualquer pilha de diálogo existente, cancelando todas as caixas de diálogo na pilha.</summary>
+        <returns>Uma tarefa que representa o trabalho na fila a ser executado.</returns>
+        <remarks>Se a tarefa for bem-sucedida, o resultado indicará que as caixas de diálogo foram canceladas depois que a ativação foi processada pela caixa de diálogo ou que a pilha já estava vazia.
+            
+Em geral, o contexto pai é a caixa de diálogo ou o manipulador de ativação de bot que iniciou a caixa de diálogo.
+Se o pai for uma caixa de diálogo, a pilha chamará o <see cref="M:Microsoft.Bot.Builder.Dialogs.Dialog.ResumeDialogAsync(Microsoft.Bot.Builder.Dialogs.DialogContext,Microsoft.Bot.Builder.Dialogs.DialogReason,System.Object,System.Threading.CancellationToken)" />
+método para retornar um resultado para a caixa de diálogo pai. Se a caixa de diálogo pai não for implementada `ResumeDialogAsync` , o pai também terminará e o resultado será passado para o próximo contexto pai.</remarks>
+        <altmember cref="M:Microsoft.Bot.Builder.Dialogs.DialogContext.EndDialogAsync(System.Object,System.Threading.CancellationToken)" />
+      </Docs>
+    </Member>
+    <Member MemberName="CancelAllDialogsAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt; CancelAllDialogsAsync (bool cancelParents, string eventName = default, object eventValue = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt; CancelAllDialogsAsync(bool cancelParents, string eventName, object eventValue, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.DialogContext.CancelAllDialogsAsync(System.Boolean,System.String,System.Object,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Function CancelAllDialogsAsync (cancelParents As Boolean, Optional eventName As String = Nothing, Optional eventValue As Object = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of DialogTurnResult)" />
+      <MemberSignature Language="F#" Value="member this.CancelAllDialogsAsync : bool * string * obj * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;" Usage="dialogContext.CancelAllDialogsAsync (cancelParents, eventName, eventValue, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancelParents" Type="System.Boolean" />
+        <Parameter Name="eventName" Type="System.String" />
+        <Parameter Name="eventValue" Type="System.Object" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancelParents">Se verdadeiro, o cancelamento será somado por meio de qualquer caixa de diálogo pai também.</param>
+        <param name="eventName">O evento.</param>
+        <param name="eventValue">O valor do evento.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Exclui qualquer pilha de diálogo existente, cancelando todas as caixas de diálogo na pilha.</summary>
+        <returns>Uma tarefa que representa o trabalho na fila a ser executado.</returns>
+        <remarks>Se a tarefa for bem-sucedida, o resultado indicará que as caixas de diálogo foram canceladas depois que a ativação foi processada pela caixa de diálogo ou que a pilha já estava vazia.
+            
+Em geral, o contexto pai é a caixa de diálogo ou o manipulador de ativação de bot que iniciou a caixa de diálogo.
+Se o pai for uma caixa de diálogo, a pilha chamará o <see cref="M:Microsoft.Bot.Builder.Dialogs.Dialog.ResumeDialogAsync(Microsoft.Bot.Builder.Dialogs.DialogContext,Microsoft.Bot.Builder.Dialogs.DialogReason,System.Object,System.Threading.CancellationToken)" />
+método para retornar um resultado para a caixa de diálogo pai. Se a caixa de diálogo pai não for implementada `ResumeDialogAsync` , o pai também terminará e o resultado será passado para o próximo contexto pai.</remarks>
+        <altmember cref="M:Microsoft.Bot.Builder.Dialogs.DialogContext.EndDialogAsync(System.Object,System.Threading.CancellationToken)" />
+      </Docs>
+    </Member>
+    <Member MemberName="Child">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Dialogs.DialogContext Child { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.Dialogs.DialogContext Child" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Dialogs.DialogContext.Child" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Child As DialogContext" />
+      <MemberSignature Language="F#" Value="member this.Child : Microsoft.Bot.Builder.Dialogs.DialogContext" Usage="Microsoft.Bot.Builder.Dialogs.DialogContext.Child" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Dialogs.DialogContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém o contexto da caixa de diálogo para o filho se houver um filho ativo.</summary>
+        <value>Contexto de caixa de diálogo para filho se houver um filho ativo.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.ITurnContext Context { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.ITurnContext Context" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Dialogs.DialogContext.Context" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Context As ITurnContext" />
+      <MemberSignature Language="F#" Value="member this.Context : Microsoft.Bot.Builder.ITurnContext" Usage="Microsoft.Bot.Builder.Dialogs.DialogContext.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.ITurnContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém o contexto para a atual ativação de conversa.</summary>
+        <value>O contexto para a atual ativação de conversa.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueDialogAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt; ContinueDialogAsync (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt; ContinueDialogAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.DialogContext.ContinueDialogAsync(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ContinueDialogAsync (Optional cancellationToken As CancellationToken = Nothing) As Task(Of DialogTurnResult)" />
+      <MemberSignature Language="F#" Value="member this.ContinueDialogAsync : System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;" Usage="dialogContext.ContinueDialogAsync cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Continua a execução da caixa de diálogo ativa, se houver uma, passando o atual <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogContext" /> para o método da caixa de diálogo ativa <see cref="M:Microsoft.Bot.Builder.Dialogs.Dialog.ContinueDialogAsync(Microsoft.Bot.Builder.Dialogs.DialogContext,System.Threading.CancellationToken)" /> .</summary>
+        <returns>Uma tarefa que representa o trabalho na fila a ser executado.</returns>
+        <remarks>Se a tarefa for bem-sucedida, o resultado indicará se a caixa de diálogo ainda está ativa após a ativação ser processada pela caixa de diálogo.
+            
+Verifique a <see cref="P:Microsoft.Bot.Builder.TurnContext.Responded" /> Propriedade depois que a chamada for concluída para determinar se a caixa de diálogo ativa enviou uma mensagem de resposta ao usuário.</remarks>
+        <altmember cref="M:Microsoft.Bot.Builder.Dialogs.Dialog.ContinueDialogAsync(Microsoft.Bot.Builder.Dialogs.DialogContext,System.Threading.CancellationToken)" />
+      </Docs>
+    </Member>
+    <Member MemberName="DialogManager">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Dialogs.DialogManager DialogManager { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.Dialogs.DialogManager DialogManager" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Dialogs.DialogContext.DialogManager" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DialogManager As DialogManager" />
+      <MemberSignature Language="F#" Value="member this.DialogManager : Microsoft.Bot.Builder.Dialogs.DialogManager" Usage="Microsoft.Bot.Builder.Dialogs.DialogContext.DialogManager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Dialogs.DialogManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém a caixa de diálogo atual para este dialogContext.</summary>
+        <value>O dialogname raiz que foi usado para criar essa cadeia de contexto de caixa de diálogo.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dialogs">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Dialogs.DialogSet Dialogs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.Dialogs.DialogSet Dialogs" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Dialogs.DialogContext.Dialogs" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Dialogs As DialogSet" />
+      <MemberSignature Language="F#" Value="member this.Dialogs : Microsoft.Bot.Builder.Dialogs.DialogSet" Usage="Microsoft.Bot.Builder.Dialogs.DialogContext.Dialogs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Dialogs.DialogSet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém o conjunto de caixas de diálogo que estão ativas para o contêiner da caixa de diálogo atual.</summary>
+        <value>O conjunto de caixas de diálogo que estão ativas para o contêiner da caixa de diálogo atual.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmitEventAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;bool&gt; EmitEventAsync (string name, object value = default, bool bubble = true, bool fromLeaf = false, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;bool&gt; EmitEventAsync(string name, object value, bool bubble, bool fromLeaf, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.DialogContext.EmitEventAsync(System.String,System.Object,System.Boolean,System.Boolean,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Function EmitEventAsync (name As String, Optional value As Object = Nothing, Optional bubble As Boolean = true, Optional fromLeaf As Boolean = false, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Boolean)" />
+      <MemberSignature Language="F#" Value="member this.EmitEventAsync : string * obj * bool * bool * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;bool&gt;" Usage="dialogContext.EmitEventAsync (name, value, bubble, fromLeaf, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="bubble" Type="System.Boolean" />
+        <Parameter Name="fromLeaf" Type="System.Boolean" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="name">Nome do evento para gerar.</param>
+        <param name="value">Valor a ser enviado junto com o evento.</param>
+        <param name="bubble">Sinalizador para controlar se o evento deve ser bolha para seu pai se não for tratado localmente. O padrão é um valor de `true` .</param>
+        <param name="fromLeaf">Se o evento é emitido a partir de um nó folha.</param>
+        <param name="cancellationToken">O token de cancelamento.</param>
+        <summary>Procura uma caixa de diálogo com uma determinada ID.
+Emite um evento nomeado para a caixa de diálogo atual ou alguém que o iniciou, para manipular.</summary>
+        <returns>True se o evento foi tratado.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndDialogAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt; EndDialogAsync (object result = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt; EndDialogAsync(object result, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.DialogContext.EndDialogAsync(System.Object,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Function EndDialogAsync (Optional result As Object = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of DialogTurnResult)" />
+      <MemberSignature Language="F#" Value="member this.EndDialogAsync : obj * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;" Usage="dialogContext.EndDialogAsync (result, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.Object" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="result">Opcional, resultado para passar para o contexto pai.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Encerra uma caixa de diálogo exibindo-a na pilha e retorna um resultado opcional para o pai da caixa de diálogo. A caixa de diálogo pai é a caixa de diálogo na qual o começou a ser encerrado por meio de uma chamada para <see cref="M:Microsoft.Bot.Builder.Dialogs.DialogContext.BeginDialogAsync(System.String,System.Object,System.Threading.CancellationToken)" /> ou <see cref="M:Microsoft.Bot.Builder.Dialogs.DialogContext.PromptAsync(System.String,Microsoft.Bot.Builder.Dialogs.PromptOptions,System.Threading.CancellationToken)" /> . A caixa de diálogo pai terá seu <see cref="M:Microsoft.Bot.Builder.Dialogs.Dialog.ResumeDialogAsync(Microsoft.Bot.Builder.Dialogs.DialogContext,Microsoft.Bot.Builder.Dialogs.DialogReason,System.Object,System.Threading.CancellationToken)" /> método invocado com qualquer resultado retornado. Se a caixa de diálogo pai não tiver implementado um `ResumeDialogAsync` método, ela também será encerrada automaticamente e o resultado passará para seu pai.
+Se não houver mais caixas de diálogo pai na pilha, o processamento da desativação será encerrado.</summary>
+        <returns>Uma tarefa que representa o trabalho na fila a ser executado.</returns>
+        <remarks>Se a tarefa for bem-sucedida, o resultado indica que a caixa de diálogo foi encerrada depois que a ativação foi processada pela caixa de diálogo.
+            
+Em geral, o contexto pai é a caixa de diálogo ou o manipulador de ativação de bot que iniciou a caixa de diálogo.
+Se o pai for uma caixa de diálogo, a pilha chamará o método do pai <see cref="M:Microsoft.Bot.Builder.Dialogs.Dialog.ResumeDialogAsync(Microsoft.Bot.Builder.Dialogs.DialogContext,Microsoft.Bot.Builder.Dialogs.DialogReason,System.Object,System.Threading.CancellationToken)" /> para retornar um resultado para a caixa de diálogo pai. Se a caixa de diálogo pai não for implementada `ResumeDialogAsync` , o pai também terminará e o resultado será passado para o próximo contexto pai.
+            
+O retornado <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogTurnResult" /> contém o valor de retorno em sua <see cref="P:Microsoft.Bot.Builder.Dialogs.DialogTurnResult.Result" /> propriedade.</remarks>
+        <altmember cref="M:Microsoft.Bot.Builder.Dialogs.DialogContext.BeginDialogAsync(System.String,System.Object,System.Threading.CancellationToken)" />
+        <altmember cref="M:Microsoft.Bot.Builder.Dialogs.DialogContext.PromptAsync(System.String,Microsoft.Bot.Builder.Dialogs.PromptOptions,System.Threading.CancellationToken)" />
+        <altmember cref="M:Microsoft.Bot.Builder.Dialogs.DialogContext.ReplaceDialogAsync(System.String,System.Object,System.Threading.CancellationToken)" />
+        <altmember cref="M:Microsoft.Bot.Builder.Dialogs.Dialog.EndDialogAsync(Microsoft.Bot.Builder.ITurnContext,Microsoft.Bot.Builder.Dialogs.DialogInstance,Microsoft.Bot.Builder.Dialogs.DialogReason,System.Threading.CancellationToken)" />
+      </Docs>
+    </Member>
+    <Member MemberName="FindDialog">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Dialogs.Dialog FindDialog (string dialogId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Bot.Builder.Dialogs.Dialog FindDialog(string dialogId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.DialogContext.FindDialog(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FindDialog (dialogId As String) As Dialog" />
+      <MemberSignature Language="F#" Value="member this.FindDialog : string -&gt; Microsoft.Bot.Builder.Dialogs.Dialog" Usage="dialogContext.FindDialog dialogId" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Dialogs.Dialog</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dialogId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dialogId">ID da caixa de diálogo a ser encontrada.</param>
+        <summary>Localize a ID da caixa de diálogo para o contexto fornecido.</summary>
+        <returns>caixa de diálogo com essa ID.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLocale">
+      <MemberSignature Language="C#" Value="public string GetLocale ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetLocale() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.DialogContext.GetLocale" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetLocale () As String" />
+      <MemberSignature Language="F#" Value="member this.GetLocale : unit -&gt; string" Usage="dialogContext.GetLocale " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Obtenha o CultureInfo em DialogContext.</summary>
+        <returns>Uma cadeia de caracteres que representa a localidade atual.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Dialogs.DialogContext Parent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.Dialogs.DialogContext Parent" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Dialogs.DialogContext.Parent" />
+      <MemberSignature Language="VB.NET" Value="Public Property Parent As DialogContext" />
+      <MemberSignature Language="F#" Value="member this.Parent : Microsoft.Bot.Builder.Dialogs.DialogContext with get, set" Usage="Microsoft.Bot.Builder.Dialogs.DialogContext.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Dialogs.DialogContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o pai <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogContext" /> , se houver. Usado ao pesquisar a ID de uma caixa de diálogo para iniciar.</summary>
+        <value>O pai <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogContext" /> , se houver. Usado ao pesquisar a ID de uma caixa de diálogo para iniciar.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PromptAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt; PromptAsync (string dialogId, Microsoft.Bot.Builder.Dialogs.PromptOptions options, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt; PromptAsync(string dialogId, class Microsoft.Bot.Builder.Dialogs.PromptOptions options, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.DialogContext.PromptAsync(System.String,Microsoft.Bot.Builder.Dialogs.PromptOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Function PromptAsync (dialogId As String, options As PromptOptions, Optional cancellationToken As CancellationToken = Nothing) As Task(Of DialogTurnResult)" />
+      <MemberSignature Language="F#" Value="member this.PromptAsync : string * Microsoft.Bot.Builder.Dialogs.PromptOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;" Usage="dialogContext.PromptAsync (dialogId, options, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dialogId" Type="System.String" />
+        <Parameter Name="options" Type="Microsoft.Bot.Builder.Dialogs.PromptOptions" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="dialogId">ID da caixa de diálogo de aviso a ser iniciada.</param>
+        <param name="options">Informações a serem passadas para a caixa de diálogo de prompt que está sendo iniciada.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Função auxiliar para simplificar a formatação das opções para chamar uma caixa de diálogo de prompt. Esse auxiliar usará um <paramref name="options" /> argumento e, em seguida, chamará <see cref="M:Microsoft.Bot.Builder.Dialogs.DialogContext.BeginDialogAsync(System.String,System.Object,System.Threading.CancellationToken)" /> .</summary>
+        <returns>Uma tarefa que representa o trabalho na fila a ser executado.</returns>
+        <remarks>Se a tarefa for bem-sucedida, o resultado indicará se a caixa de diálogo ainda está ativa após a ativação ser processada pela caixa de diálogo.</remarks>
+        <altmember cref="M:Microsoft.Bot.Builder.Dialogs.DialogContext.BeginDialogAsync(System.String,System.Object,System.Threading.CancellationToken)" />
+        <altmember cref="M:Microsoft.Bot.Builder.Dialogs.Prompt`1.BeginDialogAsync(Microsoft.Bot.Builder.Dialogs.DialogContext,System.Object,System.Threading.CancellationToken)" />
+      </Docs>
+    </Member>
+    <Member MemberName="ReplaceDialogAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt; ReplaceDialogAsync (string dialogId, object options = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt; ReplaceDialogAsync(string dialogId, object options, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.DialogContext.ReplaceDialogAsync(System.String,System.Object,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ReplaceDialogAsync (dialogId As String, Optional options As Object = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of DialogTurnResult)" />
+      <MemberSignature Language="F#" Value="member this.ReplaceDialogAsync : string * obj * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;" Usage="dialogContext.ReplaceDialogAsync (dialogId, options, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dialogId" Type="System.String" />
+        <Parameter Name="options" Type="System.Object" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="dialogId">ID da nova caixa de diálogo a ser iniciada.</param>
+        <param name="options">Opcional, informações a serem passadas para a caixa de diálogo que está sendo iniciada.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Inicia uma nova caixa de diálogo e substitui a caixa de diálogo atualmente ativa na pilha por uma nova.
+Isso é particularmente útil para criar loops ou redirecionar para outra caixa de diálogo.</summary>
+        <returns>Uma tarefa que representa o trabalho na fila a ser executado.</returns>
+        <remarks>Se a tarefa for bem-sucedida, o resultado indicará se a caixa de diálogo ainda está ativa após a ativação ser processada pela caixa de diálogo.</remarks>
+        <altmember cref="M:Microsoft.Bot.Builder.Dialogs.DialogContext.BeginDialogAsync(System.String,System.Object,System.Threading.CancellationToken)" />
+        <altmember cref="M:Microsoft.Bot.Builder.Dialogs.DialogContext.EndDialogAsync(System.Object,System.Threading.CancellationToken)" />
+      </Docs>
+    </Member>
+    <Member MemberName="RepromptDialogAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task RepromptDialogAsync (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task RepromptDialogAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.DialogContext.RepromptDialogAsync(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Function RepromptDialogAsync (Optional cancellationToken As CancellationToken = Nothing) As Task" />
+      <MemberSignature Language="F#" Value="member this.RepromptDialogAsync : System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="dialogContext.RepromptDialogAsync cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Chama a caixa de diálogo ativa no momento <see cref="M:Microsoft.Bot.Builder.Dialogs.Dialog.RepromptDialogAsync(Microsoft.Bot.Builder.ITurnContext,Microsoft.Bot.Builder.Dialogs.DialogInstance,System.Threading.CancellationToken)" />
+método. Usado com caixas de diálogo que implementam um comportamento de recriação de solicitação.</summary>
+        <returns>Uma tarefa que representa o trabalho na fila a ser executado.</returns>
+        <remarks>To be added.</remarks>
+        <altmember cref="M:Microsoft.Bot.Builder.Dialogs.Dialog.RepromptDialogAsync(Microsoft.Bot.Builder.ITurnContext,Microsoft.Bot.Builder.Dialogs.DialogInstance,System.Threading.CancellationToken)" />
+      </Docs>
+    </Member>
+    <Member MemberName="Services">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.TurnContextStateCollection Services { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.TurnContextStateCollection Services" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Dialogs.DialogContext.Services" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Services As TurnContextStateCollection" />
+      <MemberSignature Language="F#" Value="member this.Services : Microsoft.Bot.Builder.TurnContextStateCollection" Usage="Microsoft.Bot.Builder.Dialogs.DialogContext.Services" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.TurnContextStateCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém a coleção de serviços que é contextual para este contexto de caixa de diálogo.</summary>
+        <value>Coleção de serviços.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stack">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.List&lt;Microsoft.Bot.Builder.Dialogs.DialogInstance&gt; Stack { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.List`1&lt;class Microsoft.Bot.Builder.Dialogs.DialogInstance&gt; Stack" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Dialogs.DialogContext.Stack" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Stack As List(Of DialogInstance)" />
+      <MemberSignature Language="F#" Value="member this.Stack : System.Collections.Generic.List&lt;Microsoft.Bot.Builder.Dialogs.DialogInstance&gt;" Usage="Microsoft.Bot.Builder.Dialogs.DialogContext.Stack" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.List&lt;Microsoft.Bot.Builder.Dialogs.DialogInstance&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém a pilha de diálogo atual.</summary>
+        <value>A pilha de diálogo atual.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Dialogs.Memory.DialogStateManager State { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.Dialogs.Memory.DialogStateManager State" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Dialogs.DialogContext.State" />
+      <MemberSignature Language="VB.NET" Value="Public Property State As DialogStateManager" />
+      <MemberSignature Language="F#" Value="member this.State : Microsoft.Bot.Builder.Dialogs.Memory.DialogStateManager with get, set" Usage="Microsoft.Bot.Builder.Dialogs.DialogContext.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Dialogs.Memory.DialogStateManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o DialogStateManager que gerencia a exibição de todos os escopos de memória.</summary>
+        <value>DialogStateManager com a exibição de memória unificada de todos os escopos de memória.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,138 @@
+<Type Name="AdapterExtensions" FullName="Microsoft.Bot.Builder.AdapterExtensions">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9b367f219a5f21b098b1dd49ec6f636c62e4aad8" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152035" /></Metadata><TypeSignature Language="C#" Value="public static class AdapterExtensions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit AdapterExtensions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.AdapterExtensions" />
+  <TypeSignature Language="VB.NET" Value="Public Module AdapterExtensions" />
+  <TypeSignature Language="F#" Value="type AdapterExtensions = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Define métodos de extensão para a <see cref="T:Microsoft.Bot.Builder.BotAdapter" /> classe.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="UseBotState">
+      <MemberSignature Language="C#" Value="public static Microsoft.Bot.Builder.BotAdapter UseBotState (this Microsoft.Bot.Builder.BotAdapter botAdapter, params Microsoft.Bot.Builder.BotState[] botStates);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Bot.Builder.BotAdapter UseBotState(class Microsoft.Bot.Builder.BotAdapter botAdapter, class Microsoft.Bot.Builder.BotState[] botStates) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.AdapterExtensions.UseBotState(Microsoft.Bot.Builder.BotAdapter,Microsoft.Bot.Builder.BotState[])" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function UseBotState (botAdapter As BotAdapter, ParamArray botStates As BotState()) As BotAdapter" />
+      <MemberSignature Language="F#" Value="static member UseBotState : Microsoft.Bot.Builder.BotAdapter * Microsoft.Bot.Builder.BotState[] -&gt; Microsoft.Bot.Builder.BotAdapter" Usage="Microsoft.Bot.Builder.AdapterExtensions.UseBotState (botAdapter, botStates)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.BotAdapter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="botAdapter" Type="Microsoft.Bot.Builder.BotAdapter" RefType="this" />
+        <Parameter Name="botStates" Type="Microsoft.Bot.Builder.BotState[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.ParamArray]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.ParamArray&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="botAdapter">O adaptador no qual registrar os objetos de estado.</param>
+        <param name="botStates">Os objetos de estado a serem registrados.</param>
+        <summary>Adiciona middleware ao adaptador para registrar um ou mais <see cref="T:Microsoft.Bot.Builder.BotState" /> objetos no contexto de ativação.
+O middleware registra os objetos de estado no contexto de folheio no início de cada vez.</summary>
+        <returns>O adaptador atualizado.</returns>
+        <remarks>Para obter os objetos de estado, use o método de Propriedade do contexto de ativação <see cref="P:Microsoft.Bot.Builder.ITurnContext.TurnState" /> <see cref="M:Microsoft.Bot.Builder.TurnContextStateCollection.Get``1(System.String)" /> , em que o `key` parâmetro é o nome totalmente qualificado do tipo de estado do bot a ser obtido.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseState">
+      <MemberSignature Language="C#" Value="public static Microsoft.Bot.Builder.BotAdapter UseState (this Microsoft.Bot.Builder.BotAdapter botAdapter, Microsoft.Bot.Builder.UserState userState, Microsoft.Bot.Builder.ConversationState conversationState, bool auto = true);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Bot.Builder.BotAdapter UseState(class Microsoft.Bot.Builder.BotAdapter botAdapter, class Microsoft.Bot.Builder.UserState userState, class Microsoft.Bot.Builder.ConversationState conversationState, bool auto) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.AdapterExtensions.UseState(Microsoft.Bot.Builder.BotAdapter,Microsoft.Bot.Builder.UserState,Microsoft.Bot.Builder.ConversationState,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function UseState (botAdapter As BotAdapter, userState As UserState, conversationState As ConversationState, Optional auto As Boolean = true) As BotAdapter" />
+      <MemberSignature Language="F#" Value="static member UseState : Microsoft.Bot.Builder.BotAdapter * Microsoft.Bot.Builder.UserState * Microsoft.Bot.Builder.ConversationState * bool -&gt; Microsoft.Bot.Builder.BotAdapter" Usage="Microsoft.Bot.Builder.AdapterExtensions.UseState (botAdapter, userState, conversationState, auto)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Obsolete("This method is deprecated in 4.9.  You should use the method .UseBotState() instead.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("This method is deprecated in 4.9.  You should use the method .UseBotState() instead.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.BotAdapter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="botAdapter" Type="Microsoft.Bot.Builder.BotAdapter" RefType="this" />
+        <Parameter Name="userState" Type="Microsoft.Bot.Builder.UserState" />
+        <Parameter Name="conversationState" Type="Microsoft.Bot.Builder.ConversationState" />
+        <Parameter Name="auto" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="botAdapter">O <see cref="T:Microsoft.Bot.Builder.BotAdapter" /> no qual registrar os objetos.</param>
+        <param name="userState">O objeto <see cref="T:Microsoft.Bot.Builder.UserState" /> a ser registrado.</param>
+        <param name="conversationState">O objeto <see cref="T:Microsoft.Bot.Builder.ConversationState" /> a ser registrado.</param>
+        <param name="auto">`true` para persistir automaticamente o estado cada vez; caso contrário, `false` .
+Quando for falso, será sua responsabilidade persistir o estado cada vez.</param>
+        <summary>Registra objetos de estado de usuário e de conversa com o adaptador. Esses objetos estarão disponíveis por meio do contexto de ativação <see cref="P:Microsoft.Bot.Builder.TurnContext.TurnState" /> .<see cref="M:Microsoft.Bot.Builder.TurnContextStateCollection.Get``1" /> método.</summary>
+        <returns>O adaptador atualizado.</returns>
+        <remarks>Isso adiciona <see cref="T:Microsoft.Bot.Builder.IMiddleware" /> para registrar os objetos de gerenciamento de estado do usuário e da conversa.
+Se <paramref name="auto" /> for true, isso também adicionará middleware para persistir automaticamente o estado antes de cada vez que o for encerrado.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseStorage">
+      <MemberSignature Language="C#" Value="public static Microsoft.Bot.Builder.BotAdapter UseStorage (this Microsoft.Bot.Builder.BotAdapter botAdapter, Microsoft.Bot.Builder.IStorage storage);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Bot.Builder.BotAdapter UseStorage(class Microsoft.Bot.Builder.BotAdapter botAdapter, class Microsoft.Bot.Builder.IStorage storage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.AdapterExtensions.UseStorage(Microsoft.Bot.Builder.BotAdapter,Microsoft.Bot.Builder.IStorage)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function UseStorage (botAdapter As BotAdapter, storage As IStorage) As BotAdapter" />
+      <MemberSignature Language="F#" Value="static member UseStorage : Microsoft.Bot.Builder.BotAdapter * Microsoft.Bot.Builder.IStorage -&gt; Microsoft.Bot.Builder.BotAdapter" Usage="Microsoft.Bot.Builder.AdapterExtensions.UseStorage (botAdapter, storage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.BotAdapter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="botAdapter" Type="Microsoft.Bot.Builder.BotAdapter" RefType="this" />
+        <Parameter Name="storage" Type="Microsoft.Bot.Builder.IStorage" />
+      </Parameters>
+      <Docs>
+        <param name="botAdapter">O adaptador no qual registrar o objeto de armazenamento.</param>
+        <param name="storage">O objeto de armazenamento a ser registrado.</param>
+        <summary>Adiciona middleware ao adaptador para registrar um <see cref="T:Microsoft.Bot.Builder.IStorage" /> objeto no contexto de folheio.
+O middleware registra os objetos de estado no contexto de folheio no início de cada vez.</summary>
+        <returns>O adaptador atualizado.</returns>
+        <remarks>Para obter o objeto de armazenamento, use o método de Propriedade do contexto de ativação <see cref="P:Microsoft.Bot.Builder.ITurnContext.TurnState" /> <see cref="M:Microsoft.Bot.Builder.TurnContextStateCollection.Get``1" /> .</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

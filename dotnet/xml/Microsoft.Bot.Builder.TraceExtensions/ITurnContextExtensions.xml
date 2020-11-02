@@ -1,0 +1,82 @@
+<Type Name="ITurnContextExtensions" FullName="Microsoft.Bot.Builder.TraceExtensions.ITurnContextExtensions">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="cfcc1c611b6b3ad6c91ce1e02ad07681cb713abd" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151261" /></Metadata><TypeSignature Language="C#" Value="public static class ITurnContextExtensions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ITurnContextExtensions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.TraceExtensions.ITurnContextExtensions" />
+  <TypeSignature Language="VB.NET" Value="Public Module ITurnContextExtensions" />
+  <TypeSignature Language="F#" Value="type ITurnContextExtensions = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>4.0.7.0</AssemblyVersion>
+    <AssemblyVersion>4.1.5.0</AssemblyVersion>
+    <AssemblyVersion>4.3.2.0</AssemblyVersion>
+    <AssemblyVersion>4.4.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.0</AssemblyVersion>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Contém métodos para trabalhar com <see cref="T:Microsoft.Bot.Builder.ITurnContext" /> objetos.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="TraceActivityAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;Microsoft.Bot.Schema.ResourceResponse&gt; TraceActivityAsync (this Microsoft.Bot.Builder.ITurnContext turnContext, string name, object value = default, string valueType = default, string label = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;class Microsoft.Bot.Schema.ResourceResponse&gt; TraceActivityAsync(class Microsoft.Bot.Builder.ITurnContext turnContext, string name, object value, string valueType, string label, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.TraceExtensions.ITurnContextExtensions.TraceActivityAsync(Microsoft.Bot.Builder.ITurnContext,System.String,System.Object,System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function TraceActivityAsync (turnContext As ITurnContext, name As String, Optional value As Object = Nothing, Optional valueType As String = Nothing, Optional label As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ResourceResponse)" />
+      <MemberSignature Language="F#" Value="static member TraceActivityAsync : Microsoft.Bot.Builder.ITurnContext * string * obj * string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Bot.Schema.ResourceResponse&gt;" Usage="Microsoft.Bot.Builder.TraceExtensions.ITurnContextExtensions.TraceActivityAsync (turnContext, name, value, valueType, label, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Schema.ResourceResponse&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="turnContext" Type="Microsoft.Bot.Builder.ITurnContext" RefType="this" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="valueType" Type="System.String" />
+        <Parameter Name="label" Type="System.String">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.Runtime.CompilerServices.CallerMemberName]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.CallerMemberName&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="turnContext">O contexto para a rodada atual.</param>
+        <param name="name">O valor a ser atribuído à propriedade da atividade <see cref="P:Microsoft.Bot.Schema.Activity.Name" /> .</param>
+        <param name="value">O valor a ser atribuído à propriedade da atividade <see cref="P:Microsoft.Bot.Schema.Activity.Value" /> .</param>
+        <param name="valueType">O valor a ser atribuído à propriedade da atividade <see cref="P:Microsoft.Bot.Schema.Activity.ValueType" /> .</param>
+        <param name="label">O valor a ser atribuído à propriedade da atividade <see cref="P:Microsoft.Bot.Schema.Activity.Label" /> .</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Envia uma atividade de rastreamento para o <see cref="T:Microsoft.Bot.Builder.BotAdapter" /> para fins de registro em log.</summary>
+        <returns>Uma tarefa que representa o trabalho na fila a ser executado.</returns>
+        <remarks>Se o adaptador estiver sendo hospedado no emulador, o resultado da tarefa conterá um <see cref="T:Microsoft.Bot.Schema.ResourceResponse" /> objeto com a ID da atividade de rastreamento original; caso contrário, ele conterá um <see cref="T:Microsoft.Bot.Schema.ResourceResponse" /> objeto que contém a ID que o canal de recebimento atribuiu à atividade.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

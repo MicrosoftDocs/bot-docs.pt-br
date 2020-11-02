@@ -1,0 +1,137 @@
+<Type Name="TwilioMessageOptions" FullName="Microsoft.Bot.Builder.Adapters.Twilio.TwilioMessageOptions">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="1815544cadd1cead2085a1ca146963eb8e9cf4db" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151268" /></Metadata><TypeSignature Language="C#" Value="public class TwilioMessageOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TwilioMessageOptions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Adapters.Twilio.TwilioMessageOptions" />
+  <TypeSignature Language="VB.NET" Value="Public Class TwilioMessageOptions" />
+  <TypeSignature Language="F#" Value="type TwilioMessageOptions = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Adapters.Twilio</AssemblyName>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Representa um conteúdo de mensagem de saída e opções para twilio.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TwilioMessageOptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.Twilio.TwilioMessageOptions.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Twilio</AssemblyName>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationSid">
+      <MemberSignature Language="C#" Value="public string ApplicationSid { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ApplicationSid" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Twilio.TwilioMessageOptions.ApplicationSid" />
+      <MemberSignature Language="VB.NET" Value="Public Property ApplicationSid As String" />
+      <MemberSignature Language="F#" Value="member this.ApplicationSid : string with get, set" Usage="Microsoft.Bot.Builder.Adapters.Twilio.TwilioMessageOptions.ApplicationSid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Twilio</AssemblyName>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o aplicativo a ser usado para retornos de chamada.</summary>
+        <value>O aplicativo a ser usado para retornos de chamada.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Body">
+      <MemberSignature Language="C#" Value="public string Body { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Body" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Twilio.TwilioMessageOptions.Body" />
+      <MemberSignature Language="VB.NET" Value="Public Property Body As String" />
+      <MemberSignature Language="F#" Value="member this.Body : string with get, set" Usage="Microsoft.Bot.Builder.Adapters.Twilio.TwilioMessageOptions.Body" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Twilio</AssemblyName>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o texto da mensagem que você deseja enviar. Pode ter até 1.600 caracteres de comprimento.</summary>
+        <value>O texto da mensagem que você deseja enviar. Pode ter até 1.600 caracteres de comprimento.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="From">
+      <MemberSignature Language="C#" Value="public string From { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string From" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Twilio.TwilioMessageOptions.From" />
+      <MemberSignature Language="VB.NET" Value="Public Property From As String" />
+      <MemberSignature Language="F#" Value="member this.From : string with get, set" Usage="Microsoft.Bot.Builder.Adapters.Twilio.TwilioMessageOptions.From" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Twilio</AssemblyName>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o número de telefone que iniciou a mensagem.</summary>
+        <value>O número de telefone que iniciou a mensagem.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MediaUrl">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.List&lt;Uri&gt; MediaUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.List`1&lt;class System.Uri&gt; MediaUrl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Twilio.TwilioMessageOptions.MediaUrl" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property MediaUrl As List(Of Uri)" />
+      <MemberSignature Language="F#" Value="member this.MediaUrl : System.Collections.Generic.List&lt;Uri&gt;" Usage="Microsoft.Bot.Builder.Adapters.Twilio.TwilioMessageOptions.MediaUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Twilio</AssemblyName>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.List&lt;System.Uri&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém a URL da mídia a ser enviada com a mensagem.</summary>
+        <value>A URL da mídia a ser enviada com a mensagem.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="To">
+      <MemberSignature Language="C#" Value="public string To { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string To" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Twilio.TwilioMessageOptions.To" />
+      <MemberSignature Language="VB.NET" Value="Public Property To As String" />
+      <MemberSignature Language="F#" Value="member this.To : string with get, set" Usage="Microsoft.Bot.Builder.Adapters.Twilio.TwilioMessageOptions.To" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Twilio</AssemblyName>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o número de telefone de destino.</summary>
+        <value>O número de telefone de destino.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

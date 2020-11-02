@@ -1,0 +1,176 @@
+<Type Name="LuisRecognizerOptions" FullName="Microsoft.Bot.Builder.AI.Luis.LuisRecognizerOptions">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="49d7ca3d934676eaa1e74a5b8289c330f4529dcb" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150597" /></Metadata><TypeSignature Language="C#" Value="public abstract class LuisRecognizerOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit LuisRecognizerOptions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.AI.Luis.LuisRecognizerOptions" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class LuisRecognizerOptions" />
+  <TypeSignature Language="F#" Value="type LuisRecognizerOptions = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.AI.Luis</AssemblyName>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Opções do reconhecedor Luis.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected LuisRecognizerOptions (Microsoft.Bot.Builder.AI.Luis.LuisApplication application);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class Microsoft.Bot.Builder.AI.Luis.LuisApplication application) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.AI.Luis.LuisRecognizerOptions.#ctor(Microsoft.Bot.Builder.AI.Luis.LuisApplication)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (application As LuisApplication)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.AI.Luis.LuisRecognizerOptions : Microsoft.Bot.Builder.AI.Luis.LuisApplication -&gt; Microsoft.Bot.Builder.AI.Luis.LuisRecognizerOptions" Usage="new Microsoft.Bot.Builder.AI.Luis.LuisRecognizerOptions application" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.Luis</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="application" Type="Microsoft.Bot.Builder.AI.Luis.LuisApplication" />
+      </Parameters>
+      <Docs>
+        <param name="application">Uma instância de <see cref="T:Microsoft.Bot.Builder.AI.Luis.LuisApplication" />.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.AI.Luis.LuisRecognizerOptions" />.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Application">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.AI.Luis.LuisApplication Application { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.AI.Luis.LuisApplication Application" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.AI.Luis.LuisRecognizerOptions.Application" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Application As LuisApplication" />
+      <MemberSignature Language="F#" Value="member this.Application : Microsoft.Bot.Builder.AI.Luis.LuisApplication" Usage="Microsoft.Bot.Builder.AI.Luis.LuisRecognizerOptions.Application" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.Luis</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.AI.Luis.LuisApplication</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém o aplicativo LUIS usado para reconhecer texto..</summary>
+        <value>O aplicativo LUIS a ser usado para reconhecer o texto.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeAPIResults">
+      <MemberSignature Language="C#" Value="public bool IncludeAPIResults { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IncludeAPIResults" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.AI.Luis.LuisRecognizerOptions.IncludeAPIResults" />
+      <MemberSignature Language="VB.NET" Value="Public Property IncludeAPIResults As Boolean" />
+      <MemberSignature Language="F#" Value="member this.IncludeAPIResults : bool with get, set" Usage="Microsoft.Bot.Builder.AI.Luis.LuisRecognizerOptions.IncludeAPIResults" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.Luis</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define um valor que indica se o sinalizador deve indicar se os resultados completos da API LUIS devem ser retornados com o resultado do reconhecedor.</summary>
+        <value>Um valor que indica se os resultados completos da API LUIS devem ser retornados com o resultado do reconhecedor.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogPersonalInformation">
+      <MemberSignature Language="C#" Value="public bool LogPersonalInformation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool LogPersonalInformation" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.AI.Luis.LuisRecognizerOptions.LogPersonalInformation" />
+      <MemberSignature Language="VB.NET" Value="Public Property LogPersonalInformation As Boolean" />
+      <MemberSignature Language="F#" Value="member this.LogPersonalInformation : bool with get, set" Usage="Microsoft.Bot.Builder.AI.Luis.LuisRecognizerOptions.LogPersonalInformation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.Luis</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define um valor que indica se deve registrar em log as informações pessoais provenientes do usuário para telemetria.</summary>
+        <value>Se for true, as informações pessoais serão registradas em telemetria; caso contrário, as propriedades serão filtradas.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TelemetryClient">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.IBotTelemetryClient TelemetryClient { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.IBotTelemetryClient TelemetryClient" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.AI.Luis.LuisRecognizerOptions.TelemetryClient" />
+      <MemberSignature Language="VB.NET" Value="Public Property TelemetryClient As IBotTelemetryClient" />
+      <MemberSignature Language="F#" Value="member this.TelemetryClient : Microsoft.Bot.Builder.IBotTelemetryClient with get, set" Usage="Microsoft.Bot.Builder.AI.Luis.LuisRecognizerOptions.TelemetryClient" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.Luis</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.IBotTelemetryClient</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o IBotTelemetryClient usado para registrar o evento LuisResult.</summary>
+        <value>O cliente usado para registrar eventos de telemetria.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Timeout">
+      <MemberSignature Language="C#" Value="public double Timeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Timeout" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.AI.Luis.LuisRecognizerOptions.Timeout" />
+      <MemberSignature Language="VB.NET" Value="Public Property Timeout As Double" />
+      <MemberSignature Language="F#" Value="member this.Timeout : double with get, set" Usage="Microsoft.Bot.Builder.AI.Luis.LuisRecognizerOptions.Timeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.Luis</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o tempo em milissegundos de espera antes que a solicitação expire.</summary>
+        <value>O tempo em milissegundos para aguardar antes que a solicitação expire. O padrão é 100000 milissegundos.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

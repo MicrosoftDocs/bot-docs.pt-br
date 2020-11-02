@@ -1,0 +1,84 @@
+<Type Name="ISourceMap" FullName="Microsoft.Bot.Builder.Dialogs.Debugging.ISourceMap">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8ac36c3042afcddc9c87ae67db05479a7cb9425c" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151881" /></Metadata><TypeSignature Language="C#" Value="public interface ISourceMap" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ISourceMap" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Debugging.ISourceMap" />
+  <TypeSignature Language="VB.NET" Value="Public Interface ISourceMap" />
+  <TypeSignature Language="F#" Value="type ISourceMap = interface" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>Um mapa de origem é um objeto Dictionary- &gt; SourceCode.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (object item, Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange range);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(object item, class Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange range) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Debugging.ISourceMap.Add(System.Object,Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Add (item As Object, range As SourceRange)" />
+      <MemberSignature Language="F#" Value="abstract member Add : obj * Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange -&gt; unit" Usage="iSourceMap.Add (item, range)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+        <Parameter Name="range" Type="Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange" />
+      </Parameters>
+      <Docs>
+        <param name="item">item a ser registrado.</param>
+        <param name="range">intervalo de sourceBlock para o objeto.</param>
+        <summary>Adicione um objeto e informações de SourceRange que descrevem onde o objeto foi definido.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetValue">
+      <MemberSignature Language="C#" Value="public bool TryGetValue (object item, out Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange range);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryGetValue(object item, [out] class Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange&amp; range) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Debugging.ISourceMap.TryGetValue(System.Object,Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange@)" />
+      <MemberSignature Language="VB.NET" Value="Public Function TryGetValue (item As Object, ByRef range As SourceRange) As Boolean" />
+      <MemberSignature Language="F#" Value="abstract member TryGetValue : obj * SourceRange -&gt; bool" Usage="iSourceMap.TryGetValue (item, range)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+        <Parameter Name="range" Type="Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="item">objeto a ser pesquisado.</param>
+        <param name="range">Coloque para retornar o SourceRange do objeto.</param>
+        <summary>Pesquisar as informações de SourceRange de um objeto.</summary>
+        <returns>true se for encontrado.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,54 @@
+<Type Name="ITemplateRenderer" FullName="Microsoft.Bot.Builder.TemplateManager.ITemplateRenderer">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="46f73627c0bfb7817e817a79d0b034faf24bec1d" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151854" /></Metadata><TypeSignature Language="C#" Value="public interface ITemplateRenderer" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITemplateRenderer" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.TemplateManager.ITemplateRenderer" />
+  <TypeSignature Language="VB.NET" Value="Public Interface ITemplateRenderer" />
+  <TypeSignature Language="F#" Value="type ITemplateRenderer = interface" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.TemplateManager</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>Define a interface para a vinculação de dados para o modelo e renderização de uma cadeia de caracteres.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="RenderTemplate">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;object&gt; RenderTemplate (Microsoft.Bot.Builder.ITurnContext turnContext, string language, string templateId, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;object&gt; RenderTemplate(class Microsoft.Bot.Builder.ITurnContext turnContext, string language, string templateId, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.TemplateManager.ITemplateRenderer.RenderTemplate(Microsoft.Bot.Builder.ITurnContext,System.String,System.String,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function RenderTemplate (turnContext As ITurnContext, language As String, templateId As String, data As Object) As Task(Of Object)" />
+      <MemberSignature Language="F#" Value="abstract member RenderTemplate : Microsoft.Bot.Builder.ITurnContext * string * string * obj -&gt; System.Threading.Tasks.Task&lt;obj&gt;" Usage="iTemplateRenderer.RenderTemplate (turnContext, language, templateId, data)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.TemplateManager</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="turnContext" Type="Microsoft.Bot.Builder.ITurnContext" />
+        <Parameter Name="language" Type="System.String" />
+        <Parameter Name="templateId" Type="System.String" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="turnContext">context.</param>
+        <param name="language">idioma a ser renderizado.</param>
+        <param name="templateId">modelo a ser renderizado.</param>
+        <param name="data">objeto de dados a ser usado para renderizar.</param>
+        <summary>renderizar um modelo para uma atividade ou cadeia de caracteres.</summary>
+        <returns>Tarefa.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

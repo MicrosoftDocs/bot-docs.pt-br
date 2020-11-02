@@ -1,0 +1,76 @@
+<Type Name="ScorableGroupAttribute" FullName="Microsoft.Bot.Builder.Scorables.ScorableGroupAttribute">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="75405e88bfe8e1f6f22e72fc631d13da915c7d8e" /><Meta Name="ms.sourcegitcommit" Value="ac3a7ee8979fc942f9d7420b2f6845c726b6661a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/02/2020" /><Meta Name="ms.locfileid" Value="93149504" /></Metadata><TypeSignature Language="C#" Value="public class ScorableGroupAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ScorableGroupAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Scorables.ScorableGroupAttribute" />
+  <TypeSignature Language="VB.NET" Value="Public Class ScorableGroupAttribute&#xA;Inherits Attribute" />
+  <TypeSignature Language="F#" Value="type ScorableGroupAttribute = class&#xA;    inherit Attribute" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+    <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+    <AssemblyVersion>3.20.1.42</AssemblyVersion>
+    <AssemblyVersion>3.30.0.1</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.AttributeUsage(System.AttributeTargets.Method, AllowMultiple=true, Inherited=true)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.AttributeUsage(System.AttributeTargets.Method, AllowMultiple=true, Inherited=true)&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Esse atributo é usado para controlar grupos de scorable para o <see cref="T:Microsoft.Bot.Builder.Dialogs.DispatchDialog`1" /> .</summary>
+    <remarks><see cref="T:Microsoft.Bot.Builder.Scorables.ScorableGroupAttribute" /> permite que o usuário substitua o processo de Pontuação para criar grupos scorable ordenados, em que as pontuações do primeiro grupo scorable são comparadas primeiro e, se não houver nenhum scorable que queira participar do primeiro grupo scorable, o segundo grupo scorable será considerado e assim por diante.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScorableGroupAttribute (int order);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 order) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Scorables.ScorableGroupAttribute.#ctor(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (order As Integer)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.Scorables.ScorableGroupAttribute : int -&gt; Microsoft.Bot.Builder.Scorables.ScorableGroupAttribute" Usage="new Microsoft.Bot.Builder.Scorables.ScorableGroupAttribute order" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="order" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="order">A ordem do grupo scorable.</param>
+        <summary>Construa o <see cref="T:Microsoft.Bot.Builder.Scorables.ScorableGroupAttribute" /> .</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Order">
+      <MemberSignature Language="C#" Value="public int Order { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Order" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Scorables.ScorableGroupAttribute.Order" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Order As Integer" />
+      <MemberSignature Language="F#" Value="member this.Order : int" Usage="Microsoft.Bot.Builder.Scorables.ScorableGroupAttribute.Order" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>A ordem do grupo scorable.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,83 @@
+<Type Name="IEntityToType" FullName="Microsoft.Bot.Builder.Luis.IEntityToType">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8919fc9ed89bb2a4830a84892f67abeb6a20e398" /><Meta Name="ms.sourcegitcommit" Value="5add21ad3daf0ce894612a22b951b98350961720" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="06/04/2020" /><Meta Name="ms.locfileid" Value="93149392" /></Metadata><TypeSignature Language="C#" Value="public interface IEntityToType" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IEntityToType" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Luis.IEntityToType" />
+  <TypeSignature Language="VB.NET" Value="Public Interface IEntityToType" />
+  <TypeSignature Language="F#" Value="type IEntityToType = interface" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+    <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+    <AssemblyVersion>3.20.1.42</AssemblyVersion>
+    <AssemblyVersion>3.30.0.1</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>Um abtraction para mapear de um LUIS <see cref="T:Microsoft.Bot.Builder.Luis.Models.EntityRecommendation" /> para tipos CLR específicos.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="TryMapToDateRanges">
+      <MemberSignature Language="C#" Value="public bool TryMapToDateRanges (DateTime now, System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Builder.Luis.Models.EntityRecommendation&gt; entities, out System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Builder.Internals.Fibers.Range&lt;DateTime&gt;&gt; ranges);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryMapToDateRanges(valuetype System.DateTime now, class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Bot.Builder.Luis.Models.EntityRecommendation&gt; entities, [out] class System.Collections.Generic.IEnumerable`1&lt;valuetype Microsoft.Bot.Builder.Internals.Fibers.Range`1&lt;valuetype System.DateTime&gt;&gt;&amp; ranges) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Luis.IEntityToType.TryMapToDateRanges(System.DateTime,System.Collections.Generic.IEnumerable{Microsoft.Bot.Builder.Luis.Models.EntityRecommendation},System.Collections.Generic.IEnumerable{Microsoft.Bot.Builder.Internals.Fibers.Range{System.DateTime}}@)" />
+      <MemberSignature Language="VB.NET" Value="Public Function TryMapToDateRanges (now As DateTime, entities As IEnumerable(Of EntityRecommendation), ByRef ranges As IEnumerable(Of Range(Of DateTime))) As Boolean" />
+      <MemberSignature Language="F#" Value="abstract member TryMapToDateRanges : DateTime * seq&lt;Microsoft.Bot.Builder.Luis.Models.EntityRecommendation&gt; * seq -&gt; bool" Usage="iEntityToType.TryMapToDateRanges (now, entities, ranges)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="now" Type="System.DateTime" />
+        <Parameter Name="entities" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Builder.Luis.Models.EntityRecommendation&gt;" />
+        <Parameter Name="ranges" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Builder.Internals.Fibers.Range&lt;System.DateTime&gt;&gt;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="now">A referência agora <see cref="T:System.DateTime" /> .</param>
+        <param name="entities">Uma lista de instâncias possivelmente relevantes <see cref="T:Microsoft.Bot.Builder.Luis.Models.EntityRecommendation" /> .</param>
+        <param name="ranges">Os intervalos de saída <see cref="T:System.DateTime" /> .</param>
+        <summary>Tente mapear instâncias de LUIS <see cref="T:Microsoft.Bot.Builder.Luis.Models.EntityRecommendation" /> para uma lista de <see cref="T:System.DateTime" /> intervalos, em relação a Now.</summary>
+        <returns>True se o mapeamento puder ter sido bem-sucedido; caso contrário, false.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryMapToTimeSpan">
+      <MemberSignature Language="C#" Value="public bool TryMapToTimeSpan (DateTime now, System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Builder.Luis.Models.EntityRecommendation&gt; entities, out TimeSpan span);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryMapToTimeSpan(valuetype System.DateTime now, class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Bot.Builder.Luis.Models.EntityRecommendation&gt; entities, [out] valuetype System.TimeSpan&amp; span) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Luis.IEntityToType.TryMapToTimeSpan(System.DateTime,System.Collections.Generic.IEnumerable{Microsoft.Bot.Builder.Luis.Models.EntityRecommendation},System.TimeSpan@)" />
+      <MemberSignature Language="VB.NET" Value="Public Function TryMapToTimeSpan (now As DateTime, entities As IEnumerable(Of EntityRecommendation), ByRef span As TimeSpan) As Boolean" />
+      <MemberSignature Language="F#" Value="abstract member TryMapToTimeSpan : DateTime * seq&lt;Microsoft.Bot.Builder.Luis.Models.EntityRecommendation&gt; * TimeSpan -&gt; bool" Usage="iEntityToType.TryMapToTimeSpan (now, entities, span)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="now" Type="System.DateTime" />
+        <Parameter Name="entities" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Builder.Luis.Models.EntityRecommendation&gt;" />
+        <Parameter Name="span" Type="System.TimeSpan" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="now">A referência agora <see cref="T:System.DateTime" /> .</param>
+        <param name="entities">Uma lista de instâncias possivelmente relevantes <see cref="T:Microsoft.Bot.Builder.Luis.Models.EntityRecommendation" /> .</param>
+        <param name="span">A saída <see cref="T:System.TimeSpan" /> .</param>
+        <summary>Tente Mapear <see cref="T:Microsoft.Bot.Builder.Luis.Models.EntityRecommendation" /> instâncias de Luis para a <see cref="T:System.TimeSpan" /> , em relação a agora.</summary>
+        <returns>True se o mapeamento puder ter sido bem-sucedido; caso contrário, false.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

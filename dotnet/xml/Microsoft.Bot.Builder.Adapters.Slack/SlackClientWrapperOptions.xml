@@ -1,0 +1,185 @@
+<Type Name="SlackClientWrapperOptions" FullName="Microsoft.Bot.Builder.Adapters.Slack.SlackClientWrapperOptions">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3ec725e2a8675c44e3f76adc7505cfe5e42b1bf4" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151279" /></Metadata><TypeSignature Language="C#" Value="public class SlackClientWrapperOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SlackClientWrapperOptions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Adapters.Slack.SlackClientWrapperOptions" />
+  <TypeSignature Language="VB.NET" Value="Public Class SlackClientWrapperOptions" />
+  <TypeSignature Language="F#" Value="type SlackClientWrapperOptions = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Adapters.Slack</AssemblyName>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Classe para definir a implementação das opções de SlackClientWrapperOptions.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SlackClientWrapperOptions (string slackVerificationToken, string slackBotToken, string slackClientSigningSecret);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string slackVerificationToken, string slackBotToken, string slackClientSigningSecret) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.Slack.SlackClientWrapperOptions.#ctor(System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (slackVerificationToken As String, slackBotToken As String, slackClientSigningSecret As String)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.Adapters.Slack.SlackClientWrapperOptions : string * string * string -&gt; Microsoft.Bot.Builder.Adapters.Slack.SlackClientWrapperOptions" Usage="new Microsoft.Bot.Builder.Adapters.Slack.SlackClientWrapperOptions (slackVerificationToken, slackBotToken, slackClientSigningSecret)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Slack</AssemblyName>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="slackVerificationToken" Type="System.String" />
+        <Parameter Name="slackBotToken" Type="System.String" />
+        <Parameter Name="slackClientSigningSecret" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="slackVerificationToken">Um token para validar a origem de WebHooks de entrada.</param>
+        <param name="slackBotToken">Um token para que um bot funcione em um único espaço de trabalho.</param>
+        <param name="slackClientSigningSecret">O token usado para validar que os WebHooks de entrada são originados da margem de atraso.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Adapters.Slack.SlackClientWrapperOptions" />.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SlackBotToken">
+      <MemberSignature Language="C#" Value="public string SlackBotToken { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SlackBotToken" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Slack.SlackClientWrapperOptions.SlackBotToken" />
+      <MemberSignature Language="VB.NET" Value="Public Property SlackBotToken As String" />
+      <MemberSignature Language="F#" Value="member this.SlackBotToken : string with get, set" Usage="Microsoft.Bot.Builder.Adapters.Slack.SlackClientWrapperOptions.SlackBotToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Slack</AssemblyName>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define um token (fornecido pela margem de atraso) para que um bot funcione em um único espaço de trabalho.</summary>
+        <value>O token de bot.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SlackClientId">
+      <MemberSignature Language="C#" Value="public string SlackClientId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SlackClientId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Slack.SlackClientWrapperOptions.SlackClientId" />
+      <MemberSignature Language="VB.NET" Value="Public Property SlackClientId As String" />
+      <MemberSignature Language="F#" Value="member this.SlackClientId : string with get, set" Usage="Microsoft.Bot.Builder.Adapters.Slack.SlackClientWrapperOptions.SlackClientId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Slack</AssemblyName>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a ID do cliente OAuth fornecida pela margem de atraso para aplicativos de várias equipes.</summary>
+        <value>A ID do cliente.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SlackClientSecret">
+      <MemberSignature Language="C#" Value="public string SlackClientSecret { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SlackClientSecret" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Slack.SlackClientWrapperOptions.SlackClientSecret" />
+      <MemberSignature Language="VB.NET" Value="Public Property SlackClientSecret As String" />
+      <MemberSignature Language="F#" Value="member this.SlackClientSecret : string with get, set" Usage="Microsoft.Bot.Builder.Adapters.Slack.SlackClientWrapperOptions.SlackClientSecret" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Slack</AssemblyName>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o segredo do cliente OAuth fornecido pela margem de atraso para aplicativos de várias equipes.</summary>
+        <value>O segredo do cliente.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SlackClientSigningSecret">
+      <MemberSignature Language="C#" Value="public string SlackClientSigningSecret { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SlackClientSigningSecret" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Slack.SlackClientWrapperOptions.SlackClientSigningSecret" />
+      <MemberSignature Language="VB.NET" Value="Public Property SlackClientSigningSecret As String" />
+      <MemberSignature Language="F#" Value="member this.SlackClientSigningSecret : string with get, set" Usage="Microsoft.Bot.Builder.Adapters.Slack.SlackClientWrapperOptions.SlackClientSigningSecret" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Slack</AssemblyName>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define um token usado para validar que os WebHooks de entrada são originados da margem de atraso.</summary>
+        <value>O segredo de assinatura do cliente.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SlackRedirectUri">
+      <MemberSignature Language="C#" Value="public Uri SlackRedirectUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri SlackRedirectUri" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Slack.SlackClientWrapperOptions.SlackRedirectUri" />
+      <MemberSignature Language="VB.NET" Value="Public Property SlackRedirectUri As Uri" />
+      <MemberSignature Language="F#" Value="member this.SlackRedirectUri : Uri with get, set" Usage="Microsoft.Bot.Builder.Adapters.Slack.SlackClientWrapperOptions.SlackRedirectUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Slack</AssemblyName>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o URI para o qual os usuários serão redirecionados após um fluxo OAuth. Na maioria dos casos, deve ser `https://mydomain.com/install/auth` .</summary>
+        <value>O URI de redirecionamento.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SlackScopes">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.List&lt;string&gt; SlackScopes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.List`1&lt;string&gt; SlackScopes" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Slack.SlackClientWrapperOptions.SlackScopes" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SlackScopes As List(Of String)" />
+      <MemberSignature Language="F#" Value="member this.SlackScopes : System.Collections.Generic.List&lt;string&gt;" Usage="Microsoft.Bot.Builder.Adapters.Slack.SlackClientWrapperOptions.SlackScopes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Slack</AssemblyName>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.List&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém uma matriz de nomes de escopo que estão sendo solicitados durante o processo OAuth. Deve corresponder aos escopos definidos em api.slack.com.</summary>
+        <value>A matriz de escopos.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SlackVerificationToken">
+      <MemberSignature Language="C#" Value="public string SlackVerificationToken { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SlackVerificationToken" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Slack.SlackClientWrapperOptions.SlackVerificationToken" />
+      <MemberSignature Language="VB.NET" Value="Public Property SlackVerificationToken As String" />
+      <MemberSignature Language="F#" Value="member this.SlackVerificationToken : string with get, set" Usage="Microsoft.Bot.Builder.Adapters.Slack.SlackClientWrapperOptions.SlackVerificationToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Slack</AssemblyName>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o token para validar a origem dos WebHooks de entrada.</summary>
+        <value>O token de verificação.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,129 @@
+<Type Name="BoolExpressionConverter" FullName="AdaptiveExpressions.Converters.BoolExpressionConverter">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ea6a2b6f5608496ded70d82e111ce3de3768ff8c" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151197" /></Metadata><TypeSignature Language="C#" Value="public class BoolExpressionConverter : Newtonsoft.Json.JsonConverter&lt;AdaptiveExpressions.Properties.BoolExpression&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BoolExpressionConverter extends Newtonsoft.Json.JsonConverter`1&lt;class AdaptiveExpressions.Properties.BoolExpression&gt;" />
+  <TypeSignature Language="DocId" Value="T:AdaptiveExpressions.Converters.BoolExpressionConverter" />
+  <TypeSignature Language="VB.NET" Value="Public Class BoolExpressionConverter&#xA;Inherits JsonConverter(Of BoolExpression)" />
+  <TypeSignature Language="F#" Value="type BoolExpressionConverter = class&#xA;    inherit JsonConverter&lt;BoolExpression&gt;" />
+  <AssemblyInfo>
+    <AssemblyName>AdaptiveExpressions</AssemblyName>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Newtonsoft.Json.JsonConverter&lt;AdaptiveExpressions.Properties.BoolExpression&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="!0">AdaptiveExpressions.Properties.BoolExpression</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Conversor que permite que JSON seja expressão para objeto ou objeto estático.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BoolExpressionConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:AdaptiveExpressions.Converters.BoolExpressionConverter.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>AdaptiveExpressions</AssemblyName>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Inicializa uma nova instância da classe <see cref="T:AdaptiveExpressions.Converters.BoolExpressionConverter" />.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRead">
+      <MemberSignature Language="C#" Value="public override bool CanRead { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRead" />
+      <MemberSignature Language="DocId" Value="P:AdaptiveExpressions.Converters.BoolExpressionConverter.CanRead" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property CanRead As Boolean" />
+      <MemberSignature Language="F#" Value="member this.CanRead : bool" Usage="AdaptiveExpressions.Converters.BoolExpressionConverter.CanRead" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>AdaptiveExpressions</AssemblyName>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém um valor que indica se este conversor pode ler JSON.</summary>
+        <value>true se este conversor puder ler JSON; caso contrário, false.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadJson">
+      <MemberSignature Language="C#" Value="public override AdaptiveExpressions.Properties.BoolExpression ReadJson (Newtonsoft.Json.JsonReader reader, Type objectType, AdaptiveExpressions.Properties.BoolExpression existingValue, bool hasExistingValue, Newtonsoft.Json.JsonSerializer serializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class AdaptiveExpressions.Properties.BoolExpression ReadJson(class Newtonsoft.Json.JsonReader reader, class System.Type objectType, class AdaptiveExpressions.Properties.BoolExpression existingValue, bool hasExistingValue, class Newtonsoft.Json.JsonSerializer serializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:AdaptiveExpressions.Converters.BoolExpressionConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,AdaptiveExpressions.Properties.BoolExpression,System.Boolean,Newtonsoft.Json.JsonSerializer)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ReadJson (reader As JsonReader, objectType As Type, existingValue As BoolExpression, hasExistingValue As Boolean, serializer As JsonSerializer) As BoolExpression" />
+      <MemberSignature Language="F#" Value="override this.ReadJson : Newtonsoft.Json.JsonReader * Type * AdaptiveExpressions.Properties.BoolExpression * bool * Newtonsoft.Json.JsonSerializer -&gt; AdaptiveExpressions.Properties.BoolExpression" Usage="boolExpressionConverter.ReadJson (reader, objectType, existingValue, hasExistingValue, serializer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>AdaptiveExpressions</AssemblyName>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>AdaptiveExpressions.Properties.BoolExpression</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="Newtonsoft.Json.JsonReader" />
+        <Parameter Name="objectType" Type="System.Type" />
+        <Parameter Name="existingValue" Type="AdaptiveExpressions.Properties.BoolExpression" />
+        <Parameter Name="hasExistingValue" Type="System.Boolean" />
+        <Parameter Name="serializer" Type="Newtonsoft.Json.JsonSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="reader">O Newtonsoft.Json.Jsde leitura para ler.</param>
+        <param name="objectType">Tipo do objeto.</param>
+        <param name="existingValue">O valor existente do objeto que está sendo lido.</param>
+        <param name="hasExistingValue">Um valor booliano que indica se há um valor existente do objeto a ser lido.</param>
+        <param name="serializer">O serializador de chamada.</param>
+        <summary>Lê uma representação JSON do objeto.</summary>
+        <returns>Uma instância de bool.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteJson">
+      <MemberSignature Language="C#" Value="public override void WriteJson (Newtonsoft.Json.JsonWriter writer, AdaptiveExpressions.Properties.BoolExpression value, Newtonsoft.Json.JsonSerializer serializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteJson(class Newtonsoft.Json.JsonWriter writer, class AdaptiveExpressions.Properties.BoolExpression value, class Newtonsoft.Json.JsonSerializer serializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:AdaptiveExpressions.Converters.BoolExpressionConverter.WriteJson(Newtonsoft.Json.JsonWriter,AdaptiveExpressions.Properties.BoolExpression,Newtonsoft.Json.JsonSerializer)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub WriteJson (writer As JsonWriter, value As BoolExpression, serializer As JsonSerializer)" />
+      <MemberSignature Language="F#" Value="override this.WriteJson : Newtonsoft.Json.JsonWriter * AdaptiveExpressions.Properties.BoolExpression * Newtonsoft.Json.JsonSerializer -&gt; unit" Usage="boolExpressionConverter.WriteJson (writer, value, serializer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>AdaptiveExpressions</AssemblyName>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="Newtonsoft.Json.JsonWriter" />
+        <Parameter Name="value" Type="AdaptiveExpressions.Properties.BoolExpression" />
+        <Parameter Name="serializer" Type="Newtonsoft.Json.JsonSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="writer">O Newtonsoft.Json.Jsonwriter para gravar.</param>
+        <param name="value">O valor.</param>
+        <param name="serializer">O serializador de chamada.</param>
+        <summary>Grava uma representação JSON do objeto.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

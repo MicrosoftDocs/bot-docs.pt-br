@@ -1,0 +1,114 @@
+<Type Name="ResponseMessageStream" FullName="Microsoft.Bot.Streaming.Payloads.ResponseMessageStream">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0391ad8d78d8e47c01a8aeed3a2efe64997ad2d9" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151819" /></Metadata><TypeSignature Language="C#" Value="public class ResponseMessageStream" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ResponseMessageStream extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Streaming.Payloads.ResponseMessageStream" />
+  <TypeSignature Language="VB.NET" Value="Public Class ResponseMessageStream" />
+  <TypeSignature Language="F#" Value="type ResponseMessageStream = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Um anexo contido na coleção de fluxo de uma <see cref="T:Microsoft.Bot.Streaming.StreamingRequest" /> , que contém qualquer forma de item de mídia.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResponseMessageStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Streaming.Payloads.ResponseMessageStream.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Streaming.Payloads.ResponseMessageStream" />.
+e atribui um GUID exclusivo como sua ID.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResponseMessageStream (Guid id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Streaming.Payloads.ResponseMessageStream.#ctor(System.Guid)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (id As Guid)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Streaming.Payloads.ResponseMessageStream : Guid -&gt; Microsoft.Bot.Streaming.Payloads.ResponseMessageStream" Usage="new Microsoft.Bot.Streaming.Payloads.ResponseMessageStream id" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="id" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="id">Um <see cref="T:System.Guid" /> a ser atribuído como a ID dessa instância do <see cref="T:Microsoft.Bot.Streaming.Payloads.ResponseMessageStream" /> .
+Se NULL, um novo <see cref="T:System.Guid" /> será gerado.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Streaming.Payloads.ResponseMessageStream" />.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Content">
+      <MemberSignature Language="C#" Value="public System.Net.Http.HttpContent Content { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Http.HttpContent Content" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Streaming.Payloads.ResponseMessageStream.Content" />
+      <MemberSignature Language="VB.NET" Value="Public Property Content As HttpContent" />
+      <MemberSignature Language="F#" Value="member this.Content : System.Net.Http.HttpContent with get, set" Usage="Microsoft.Bot.Streaming.Payloads.ResponseMessageStream.Content" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Http.HttpContent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o <see cref="T:System.Net.Http.HttpContent" /> disso <see cref="T:Microsoft.Bot.Streaming.Payloads.ResponseMessageStream" /> .</summary>
+        <value>O <see cref="T:System.Net.Http.HttpContent" /> desse <see cref="T:Microsoft.Bot.Streaming.Payloads.ResponseMessageStream" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public Guid Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid Id" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Streaming.Payloads.ResponseMessageStream.Id" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Id As Guid" />
+      <MemberSignature Language="F#" Value="member this.Id : Guid" Usage="Microsoft.Bot.Streaming.Payloads.ResponseMessageStream.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém o <see cref="T:System.Guid" /> usado para identificar isso <see cref="T:Microsoft.Bot.Streaming.Payloads.ResponseMessageStream" /> .</summary>
+        <value>Um <see cref="T:System.Guid" /> usado para identificar isso <see cref="T:Microsoft.Bot.Streaming.Payloads.ResponseMessageStream" /> .</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

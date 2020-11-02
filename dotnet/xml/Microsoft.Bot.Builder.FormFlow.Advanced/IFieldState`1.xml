@@ -1,0 +1,281 @@
+<Type Name="IFieldState&lt;T&gt;" FullName="Microsoft.Bot.Builder.FormFlow.Advanced.IFieldState&lt;T&gt;">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="4ffa6656071bb8ba7ab72d1e4ff10bab5cfdaeac" /><Meta Name="ms.sourcegitcommit" Value="5add21ad3daf0ce894612a22b951b98350961720" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="06/04/2020" /><Meta Name="ms.locfileid" Value="93149351" /></Metadata><TypeSignature Language="C#" Value="public interface IFieldState&lt;T&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IFieldState`1&lt;T&gt;" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.FormFlow.Advanced.IFieldState`1" />
+  <TypeSignature Language="VB.NET" Value="Public Interface IFieldState(Of T)" />
+  <TypeSignature Language="F#" Value="type IFieldState&lt;'T&gt; = interface" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+    <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+    <AssemblyVersion>3.20.1.42</AssemblyVersion>
+    <AssemblyVersion>3.30.0.1</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Interfaces />
+  <Docs>
+    <typeparam name="T">O estado do formulário que é lido ou gravado.</typeparam>
+    <summary>Interface que define o acesso básico a um campo.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Dependencies">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;string&gt; Dependencies { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;string&gt; Dependencies" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.FormFlow.Advanced.IFieldState`1.Dependencies" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Dependencies As IEnumerable(Of String)" />
+      <MemberSignature Language="F#" Value="member this.Dependencies : seq&lt;string&gt;" Usage="Microsoft.Bot.Builder.FormFlow.Advanced.IFieldState&lt;'T&gt;.Dependencies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Retorna os outros campos dos quais este depende.</summary>
+        <value>Lista de nomes de campos dos quais este depende.</value>
+        <remarks>Isso é útil principalmente para <see cref="T:Microsoft.Bot.Builder.FormFlow.Advanced.Confirmation`1" /> campos.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public object GetValue (T state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetValue(!T state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.FormFlow.Advanced.IFieldState`1.GetValue(`0)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetValue (state As T) As Object" />
+      <MemberSignature Language="F#" Value="abstract member GetValue : 'T -&gt; obj" Usage="iFieldState.GetValue state" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="state">Estado do formulário do qual obter o valor do campo.</param>
+        <summary>Obter esse valor de campo do estado do formulário.</summary>
+        <returns>Valor atual encontrado no estado.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNullable">
+      <MemberSignature Language="C#" Value="public bool IsNullable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNullable" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.FormFlow.Advanced.IFieldState`1.IsNullable" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsNullable As Boolean" />
+      <MemberSignature Language="F#" Value="member this.IsNullable : bool" Usage="Microsoft.Bot.Builder.FormFlow.Advanced.IFieldState&lt;'T&gt;.IsNullable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Teste para ver se o campo é anulável.</summary>
+        <value>True se o campo for anulável.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnknown">
+      <MemberSignature Language="C#" Value="public bool IsUnknown (T state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsUnknown(!T state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.FormFlow.Advanced.IFieldState`1.IsUnknown(`0)" />
+      <MemberSignature Language="VB.NET" Value="Public Function IsUnknown (state As T) As Boolean" />
+      <MemberSignature Language="F#" Value="abstract member IsUnknown : 'T -&gt; bool" Usage="iFieldState.IsUnknown state" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="state">Estado do formulário a ser verificado.</param>
+        <summary>Teste para ver se o estado do formulário de valor do campo tem um valor.</summary>
+        <returns>True se o valor for desconhecido.</returns>
+        <remarks>Para tipos de valor (números, BOOLs, data e hora), um valor será desconhecido somente se o campo for anulável e for nulo.
+Para valores baseados em Enumeração (simples e enumerados), eles também podem ser anuláveis ou o valor de enum 0, se não for anulável.
+Para tipos sem valor, como cadeia de caracteres, o teste é para ver se o campo é realmente nulo.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Limits">
+      <MemberSignature Language="C#" Value="public bool Limits (out double min, out double max);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Limits([out] float64&amp; min, [out] float64&amp; max) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.FormFlow.Advanced.IFieldState`1.Limits(System.Double@,System.Double@)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Limits (ByRef min As Double, ByRef max As Double) As Boolean" />
+      <MemberSignature Language="F#" Value="abstract member Limits : double * double -&gt; bool" Usage="iFieldState.Limits (min, max)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="min" Type="System.Double" RefType="out" />
+        <Parameter Name="max" Type="System.Double" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="min">Valor mínimo possível.</param>
+        <param name="max">Valor máximo possível.</param>
+        <summary>Limites de valores numéricos.</summary>
+        <returns>True se os limites limitarem o tipo de dados subjacente.</returns>
+        <remarks>Isso normalmente reflete o resultado da definição de <see cref="T:Microsoft.Bot.Builder.FormFlow.NumericAttribute" /> limites nos valores possíveis.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Optional">
+      <MemberSignature Language="C#" Value="public bool Optional { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Optional" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.FormFlow.Advanced.IFieldState`1.Optional" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Optional As Boolean" />
+      <MemberSignature Language="F#" Value="member this.Optional : bool" Usage="Microsoft.Bot.Builder.FormFlow.Advanced.IFieldState&lt;'T&gt;.Optional" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Teste para ver se o campo é opcional, o que significa que um valor desconhecido é válido.</summary>
+        <value>True se o campo for opcional.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pattern">
+      <MemberSignature Language="C#" Value="public string Pattern { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Pattern" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.FormFlow.Advanced.IFieldState`1.Pattern" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Pattern As String" />
+      <MemberSignature Language="F#" Value="member this.Pattern : string" Usage="Microsoft.Bot.Builder.FormFlow.Advanced.IFieldState&lt;'T&gt;.Pattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Expressão regular para validar uma cadeia de caracteres.</summary>
+        <value>Expressão regular de validação.</value>
+        <remarks>Isso normalmente reflete o resultado da configuração <see cref="T:Microsoft.Bot.Builder.FormFlow.PatternAttribute" /> .</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetUnknown">
+      <MemberSignature Language="C#" Value="public void SetUnknown (T state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetUnknown(!T state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.FormFlow.Advanced.IFieldState`1.SetUnknown(`0)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetUnknown (state As T)" />
+      <MemberSignature Language="F#" Value="abstract member SetUnknown : 'T -&gt; unit" Usage="iFieldState.SetUnknown state" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="state">Estado do formulário com valor de campo a ser definido como desconhecido.</param>
+        <summary>Defina esse valor de campo no estado do formulário como desconhecido.</summary>
+        <remarks>Para tipos de valor (números, BOOLs, data e hora), o valor será definido como nulo se for anulável.
+Para tipos de enumeração, ele é definido como nulo se for anulável ou 0 se não for.  
+            Para tipos sem valor, como String, defina o valor como NULL.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public void SetValue (T state, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetValue(!T state, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.FormFlow.Advanced.IFieldState`1.SetValue(`0,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetValue (state As T, value As Object)" />
+      <MemberSignature Language="F#" Value="abstract member SetValue : 'T * obj -&gt; unit" Usage="iFieldState.SetValue (state, value)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="T" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="state">Estado do formulário para definir o valor do campo em.</param>
+        <param name="value">Novo valor.</param>
+        <summary>Defina esse valor de campo no estado do formulário.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public Type Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type Type" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.FormFlow.Advanced.IFieldState`1.Type" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Type As Type" />
+      <MemberSignature Language="F#" Value="member this.Type : Type" Usage="Microsoft.Bot.Builder.FormFlow.Advanced.IFieldState&lt;'T&gt;.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém o tipo do campo.</summary>
+        <value>O tipo.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

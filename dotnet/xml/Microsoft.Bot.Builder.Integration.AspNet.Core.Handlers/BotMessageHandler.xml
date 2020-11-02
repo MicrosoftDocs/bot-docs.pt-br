@@ -1,0 +1,96 @@
+<Type Name="BotMessageHandler" FullName="Microsoft.Bot.Builder.Integration.AspNet.Core.Handlers.BotMessageHandler">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ae71ce13246ed654844ffe01c46a27fcdbbe9075" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151339" /></Metadata><TypeSignature Language="C#" Value="public class BotMessageHandler : Microsoft.Bot.Builder.Integration.AspNet.Core.Handlers.BotMessageHandlerBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BotMessageHandler extends Microsoft.Bot.Builder.Integration.AspNet.Core.Handlers.BotMessageHandlerBase" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Integration.AspNet.Core.Handlers.BotMessageHandler" />
+  <TypeSignature Language="VB.NET" Value="Public Class BotMessageHandler&#xA;Inherits BotMessageHandlerBase" />
+  <TypeSignature Language="F#" Value="type BotMessageHandler = class&#xA;    inherit BotMessageHandlerBase" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Integration.AspNet.Core</AssemblyName>
+    <AssemblyVersion>4.0.7.0</AssemblyVersion>
+    <AssemblyVersion>4.1.5.0</AssemblyVersion>
+    <AssemblyVersion>4.3.2.0</AssemblyVersion>
+    <AssemblyVersion>4.4.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.0</AssemblyVersion>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Bot.Builder.Integration.AspNet.Core.Handlers.BotMessageHandlerBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Um manipulador para processar solicitações HTTP de entrada por meio de um adaptador.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BotMessageHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Integration.AspNet.Core.Handlers.BotMessageHandler.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Integration.AspNet.Core</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessMessageRequestAsync">
+      <MemberSignature Language="C#" Value="protected override System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.InvokeResponse&gt; ProcessMessageRequestAsync (Microsoft.AspNetCore.Http.HttpRequest request, Microsoft.Bot.Builder.Integration.IAdapterIntegration adapter, Microsoft.Bot.Builder.BotCallbackHandler botCallbackHandler, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Bot.Builder.InvokeResponse&gt; ProcessMessageRequestAsync(class Microsoft.AspNetCore.Http.HttpRequest request, class Microsoft.Bot.Builder.Integration.IAdapterIntegration adapter, class Microsoft.Bot.Builder.BotCallbackHandler botCallbackHandler, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Integration.AspNet.Core.Handlers.BotMessageHandler.ProcessMessageRequestAsync(Microsoft.AspNetCore.Http.HttpRequest,Microsoft.Bot.Builder.Integration.IAdapterIntegration,Microsoft.Bot.Builder.BotCallbackHandler,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function ProcessMessageRequestAsync (request As HttpRequest, adapter As IAdapterIntegration, botCallbackHandler As BotCallbackHandler, cancellationToken As CancellationToken) As Task(Of InvokeResponse)" />
+      <MemberSignature Language="F#" Value="override this.ProcessMessageRequestAsync : Microsoft.AspNetCore.Http.HttpRequest * Microsoft.Bot.Builder.Integration.IAdapterIntegration * Microsoft.Bot.Builder.BotCallbackHandler * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.InvokeResponse&gt;" Usage="botMessageHandler.ProcessMessageRequestAsync (request, adapter, botCallbackHandler, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Integration.AspNet.Core</AssemblyName>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.InvokeResponse&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="Microsoft.AspNetCore.Http.HttpRequest" />
+        <Parameter Name="adapter" Type="Microsoft.Bot.Builder.Integration.IAdapterIntegration" />
+        <Parameter Name="botCallbackHandler" Type="Microsoft.Bot.Builder.BotCallbackHandler" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="request">Um <see cref="T:Microsoft.AspNetCore.Http.HttpRequest" />.</param>
+        <param name="adapter">Uma instância de <see cref="T:Microsoft.Bot.Builder.Integration.IAdapterIntegration" />.</param>
+        <param name="botCallbackHandler">Uma instância de <see cref="T:Microsoft.Bot.Builder.BotCallbackHandler" />.</param>
+        <param name="cancellationToken">Um <see cref="T:System.Threading.CancellationToken" />.</param>
+        <summary>Desserializa a solicitação de entrada usando um BotMessageHandler, processa-a com um <see cref="T:Microsoft.Bot.Builder.Integration.IAdapterIntegration" /> e retorna um <see cref="T:Microsoft.Bot.Builder.InvokeResponse" /> .</summary>
+        <returns>Um <see cref="T:Microsoft.Bot.Builder.InvokeResponse" /> retornado do adaptador.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,63 @@
+<Type Name="FacebookRead" FullName="Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookRead">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c80713baf379f40469b6f8e3e44e1d8a7fb22026" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150326" /></Metadata><TypeSignature Language="C#" Value="public class FacebookRead" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FacebookRead extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookRead" />
+  <TypeSignature Language="VB.NET" Value="Public Class FacebookRead" />
+  <TypeSignature Language="F#" Value="type FacebookRead = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Uma mensagem de leitura do Facebook, incluindo a marca d' água de mensagens que foram lidas.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FacebookRead ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookRead.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Watermark">
+      <MemberSignature Language="C#" Value="public long Watermark { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Watermark" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookRead.Watermark" />
+      <MemberSignature Language="VB.NET" Value="Public Property Watermark As Long" />
+      <MemberSignature Language="F#" Value="member this.Watermark : int64 with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookRead.Watermark" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty("watermark")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty("watermark")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o carimbo de data/hora em que as mensagens foram lidas.</summary>
+        <value>Todas as mensagens que foram enviadas antes ou neste carimbo de data/hora foram lidas.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

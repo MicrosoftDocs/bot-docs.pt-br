@@ -1,0 +1,56 @@
+<Type Name="EndorsementsValidator" FullName="Microsoft.Bot.Connector.Authentication.EndorsementsValidator">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8a147f100ec2ca97525f5b8a5d05b7fb85942c6a" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150051" /></Metadata><TypeSignature Language="C#" Value="public static class EndorsementsValidator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit EndorsementsValidator extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Connector.Authentication.EndorsementsValidator" />
+  <TypeSignature Language="VB.NET" Value="Public Class EndorsementsValidator" />
+  <TypeSignature Language="F#" Value="type EndorsementsValidator = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Contém métodos auxiliares para verificar os endossos de JWT.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public static bool Validate (string expectedEndorsement, System.Collections.Generic.HashSet&lt;string&gt; endorsements);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Validate(string expectedEndorsement, class System.Collections.Generic.HashSet`1&lt;string&gt; endorsements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Connector.Authentication.EndorsementsValidator.Validate(System.String,System.Collections.Generic.HashSet{System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Validate (expectedEndorsement As String, endorsements As HashSet(Of String)) As Boolean" />
+      <MemberSignature Language="F#" Value="static member Validate : string * System.Collections.Generic.HashSet&lt;string&gt; -&gt; bool" Usage="Microsoft.Bot.Connector.Authentication.EndorsementsValidator.Validate (expectedEndorsement, endorsements)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expectedEndorsement" Type="System.String" />
+        <Parameter Name="endorsements" Type="System.Collections.Generic.HashSet&lt;System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="expectedEndorsement">O endosso esperado. Geralmente, a ID do canal a ser validada, normalmente extraída da <see cref="P:Microsoft.Bot.Schema.Activity.ChannelId" /> propriedade da atividade, que para a qual a atividade é relacionados. Como alternativa, ele pode representar uma certificação de conformidade necessária.</param>
+        <param name="endorsements">A parte de assinatura do token JWT tem permissão para enviar atividades somente para canais específicos. Essa lista, o conjunto de canais ao qual o serviço pode se conectar, é chamado de lista de endosso.
+A atividade <see cref="P:Microsoft.Bot.Schema.Activity.ChannelId" /> deve ser encontrada na lista de endosso ou a atividade de entrada não é considerada válida.</param>
+        <summary>Verifique se o endosso especificado existe no token JWT. Chame esse método várias vezes para validar vários endossos.
+Por exemplo, se um for proveniente <see cref="T:Microsoft.Bot.Schema.Activity" /> do Webchat, a propriedade dessa atividade <see cref="P:Microsoft.Bot.Schema.Activity.ChannelId" /> será definida como "Webchat" e a parte de assinatura do token JWT deverá ter um endosso correspondente de "Webchat".</summary>
+        <returns>True se a ID do canal for encontrada na lista de endosso; caso contrário, false.</returns>
+        <remarks>As chaves de assinatura de token JWT contêm endossos que correspondem às IDs dos canais aos quais eles são aprovados para assinar.
+Eles também contêm palavras-chave que representam certificações de conformidade. Esse código garante que uma ID de canal ou certificação de conformidade esteja presente na chave de assinatura usada para o token da solicitação.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

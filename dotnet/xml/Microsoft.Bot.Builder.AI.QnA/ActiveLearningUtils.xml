@@ -1,0 +1,99 @@
+<Type Name="ActiveLearningUtils" FullName="Microsoft.Bot.Builder.AI.QnA.ActiveLearningUtils">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2191b35f58f2381dc24b69e2d5e93a5cc17bd762" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151221" /></Metadata><TypeSignature Language="C#" Value="public static class ActiveLearningUtils" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ActiveLearningUtils extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.AI.QnA.ActiveLearningUtils" />
+  <TypeSignature Language="VB.NET" Value="Public Class ActiveLearningUtils" />
+  <TypeSignature Language="F#" Value="type ActiveLearningUtils = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
+    <AssemblyVersion>4.5.0.0</AssemblyVersion>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Classe auxiliar de aprendizado ativo.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetLowScoreVariation">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.List&lt;Microsoft.Bot.Builder.AI.QnA.QueryResult&gt; GetLowScoreVariation (System.Collections.Generic.List&lt;Microsoft.Bot.Builder.AI.QnA.QueryResult&gt; qnaSearchResults);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.List`1&lt;class Microsoft.Bot.Builder.AI.QnA.QueryResult&gt; GetLowScoreVariation(class System.Collections.Generic.List`1&lt;class Microsoft.Bot.Builder.AI.QnA.QueryResult&gt; qnaSearchResults) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.AI.QnA.ActiveLearningUtils.GetLowScoreVariation(System.Collections.Generic.List{Microsoft.Bot.Builder.AI.QnA.QueryResult})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetLowScoreVariation (qnaSearchResults As List(Of QueryResult)) As List(Of QueryResult)" />
+      <MemberSignature Language="F#" Value="static member GetLowScoreVariation : System.Collections.Generic.List&lt;Microsoft.Bot.Builder.AI.QnA.QueryResult&gt; -&gt; System.Collections.Generic.List&lt;Microsoft.Bot.Builder.AI.QnA.QueryResult&gt;" Usage="Microsoft.Bot.Builder.AI.QnA.ActiveLearningUtils.GetLowScoreVariation qnaSearchResults" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.List&lt;Microsoft.Bot.Builder.AI.QnA.QueryResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="qnaSearchResults" Type="System.Collections.Generic.List&lt;Microsoft.Bot.Builder.AI.QnA.QueryResult&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="qnaSearchResults">Lista de resultados de QnaSearch.</param>
+        <summary>Retorna a lista de resultados de qnaSearch que têm variação de pontuação baixa.</summary>
+        <returns>Lista de resultados de qnaSearch filtrados.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumScoreForLowScoreVariation">
+      <MemberSignature Language="C#" Value="public static double MaximumScoreForLowScoreVariation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property float64 MaximumScoreForLowScoreVariation" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.AI.QnA.ActiveLearningUtils.MaximumScoreForLowScoreVariation" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Property MaximumScoreForLowScoreVariation As Double" />
+      <MemberSignature Language="F#" Value="member this.MaximumScoreForLowScoreVariation : double with get, set" Usage="Microsoft.Bot.Builder.AI.QnA.ActiveLearningUtils.MaximumScoreForLowScoreVariation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a pontuação máxima para variação de pontuação baixa.</summary>
+        <value>Pontuação máxima para variação de pontuação baixa.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimumScoreForLowScoreVariation">
+      <MemberSignature Language="C#" Value="public static double MinimumScoreForLowScoreVariation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property float64 MinimumScoreForLowScoreVariation" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.AI.QnA.ActiveLearningUtils.MinimumScoreForLowScoreVariation" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Property MinimumScoreForLowScoreVariation As Double" />
+      <MemberSignature Language="F#" Value="member this.MinimumScoreForLowScoreVariation : double with get, set" Usage="Microsoft.Bot.Builder.AI.QnA.ActiveLearningUtils.MinimumScoreForLowScoreVariation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a pontuação mínima para variação de pontuação baixa.</summary>
+        <value>Pontuação mínima para variação de pontuação baixa.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

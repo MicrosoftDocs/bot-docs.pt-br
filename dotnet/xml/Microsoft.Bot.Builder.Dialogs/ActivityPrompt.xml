@@ -1,0 +1,336 @@
+<Type Name="ActivityPrompt" FullName="Microsoft.Bot.Builder.Dialogs.ActivityPrompt">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7500cc1db437f3d62312e762e9bc04c1c3eefa5a" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151732" /></Metadata><TypeSignature Language="C#" Value="public class ActivityPrompt : Microsoft.Bot.Builder.Dialogs.Dialog" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ActivityPrompt extends Microsoft.Bot.Builder.Dialogs.Dialog" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.ActivityPrompt" />
+  <TypeSignature Language="VB.NET" Value="Public Class ActivityPrompt&#xA;Inherits Dialog" />
+  <TypeSignature Language="F#" Value="type ActivityPrompt = class&#xA;    inherit Dialog" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+    <AssemblyVersion>4.0.7.0</AssemblyVersion>
+    <AssemblyVersion>4.1.5.0</AssemblyVersion>
+    <AssemblyVersion>4.3.2.0</AssemblyVersion>
+    <AssemblyVersion>4.4.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.0</AssemblyVersion>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Dialog</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Define o comportamento principal de uma caixa de diálogo de prompt que aguarda uma atividade ser recebida.</summary>
+    <remarks>Esse prompt exige que um validador seja passado e seja útil ao aguardar atividades que não sejam de mensagem, como um evento a ser recebido. O Validador pode ignorar atividades recebidas até que o tipo de atividade esperado seja recebido.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityPrompt (string dialogId, Microsoft.Bot.Builder.Dialogs.PromptValidator&lt;Microsoft.Bot.Schema.Activity&gt; validator);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string dialogId, class Microsoft.Bot.Builder.Dialogs.PromptValidator`1&lt;class Microsoft.Bot.Schema.Activity&gt; validator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.ActivityPrompt.#ctor(System.String,Microsoft.Bot.Builder.Dialogs.PromptValidator{Microsoft.Bot.Schema.Activity})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (dialogId As String, validator As PromptValidator(Of Activity))" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.Dialogs.ActivityPrompt : string * Microsoft.Bot.Builder.Dialogs.PromptValidator&lt;Microsoft.Bot.Schema.Activity&gt; -&gt; Microsoft.Bot.Builder.Dialogs.ActivityPrompt" Usage="new Microsoft.Bot.Builder.Dialogs.ActivityPrompt (dialogId, validator)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dialogId" Type="System.String" />
+        <Parameter Name="validator" Type="Microsoft.Bot.Builder.Dialogs.PromptValidator&lt;Microsoft.Bot.Schema.Activity&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="dialogId">A ID a ser atribuída a este prompt.</param>
+        <param name="validator">Um <see cref="T:Microsoft.Bot.Builder.Dialogs.PromptValidator`1" /> que contém a validação para este prompt.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Dialogs.ActivityPrompt" />.
+Chamado de construtores em classes derivadas para inicializar a classe <see cref="T:Microsoft.Bot.Builder.Dialogs.ActivityPrompt" />.</summary>
+        <remarks>O valor de <paramref name="dialogId" /> deve ser exclusivo dentro do <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogSet" /> ou <see cref="T:Microsoft.Bot.Builder.Dialogs.ComponentDialog" /> ao qual o prompt é adicionado.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginDialogAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt; BeginDialogAsync (Microsoft.Bot.Builder.Dialogs.DialogContext dc, object options, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt; BeginDialogAsync(class Microsoft.Bot.Builder.Dialogs.DialogContext dc, object options, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.ActivityPrompt.BeginDialogAsync(Microsoft.Bot.Builder.Dialogs.DialogContext,System.Object,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function BeginDialogAsync (dc As DialogContext, options As Object, Optional cancellationToken As CancellationToken = Nothing) As Task(Of DialogTurnResult)" />
+      <MemberSignature Language="F#" Value="override this.BeginDialogAsync : Microsoft.Bot.Builder.Dialogs.DialogContext * obj * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;" Usage="activityPrompt.BeginDialogAsync (dc, options, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="Microsoft.Bot.Builder.Dialogs.DialogContext" />
+        <Parameter Name="options" Type="System.Object" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="dc">O contexto da caixa de diálogo para a ativação atual da conversa.</param>
+        <param name="options">Opcional, informações adicionais a serem passadas para o prompt que está sendo iniciado.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Chamado quando uma caixa de diálogo de prompt é enviada para a pilha de diálogo e está sendo ativada.</summary>
+        <returns>Um <see cref="T:System.Threading.Tasks.Task" /> representando a operação assíncrona.</returns>
+        <remarks>Se a tarefa for bem-sucedida, o resultado indicará se o prompt ainda está ativo após a ativação ser processada pelo prompt.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueDialogAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt; ContinueDialogAsync (Microsoft.Bot.Builder.Dialogs.DialogContext dc, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt; ContinueDialogAsync(class Microsoft.Bot.Builder.Dialogs.DialogContext dc, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.ActivityPrompt.ContinueDialogAsync(Microsoft.Bot.Builder.Dialogs.DialogContext,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ContinueDialogAsync (dc As DialogContext, Optional cancellationToken As CancellationToken = Nothing) As Task(Of DialogTurnResult)" />
+      <MemberSignature Language="F#" Value="override this.ContinueDialogAsync : Microsoft.Bot.Builder.Dialogs.DialogContext * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;" Usage="activityPrompt.ContinueDialogAsync (dc, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="Microsoft.Bot.Builder.Dialogs.DialogContext" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="dc">O contexto de diálogo para a atual ativação de conversa.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Chamado quando uma caixa de diálogo de prompt é a caixa de diálogo ativa e o usuário respondeu com uma nova atividade.</summary>
+        <returns>Um <see cref="T:System.Threading.Tasks.Task" /> representando a operação assíncrona.</returns>
+        <remarks>Se a tarefa for bem-sucedida, o resultado indicará se a caixa de diálogo ainda está ativa após a ativação ser processada pela caixa de diálogo.
+            <para>O prompt geralmente continua a receber as respostas do usuário até que ele aceite a resposta do usuário como uma entrada válida para o prompt.</para></remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPromptAsync">
+      <MemberSignature Language="C#" Value="protected virtual System.Threading.Tasks.Task OnPromptAsync (Microsoft.Bot.Builder.ITurnContext turnContext, System.Collections.Generic.IDictionary&lt;string,object&gt; state, Microsoft.Bot.Builder.Dialogs.PromptOptions options, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Threading.Tasks.Task OnPromptAsync(class Microsoft.Bot.Builder.ITurnContext turnContext, class System.Collections.Generic.IDictionary`2&lt;string, object&gt; state, class Microsoft.Bot.Builder.Dialogs.PromptOptions options, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.ActivityPrompt.OnPromptAsync(Microsoft.Bot.Builder.ITurnContext,System.Collections.Generic.IDictionary{System.String,System.Object},Microsoft.Bot.Builder.Dialogs.PromptOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function OnPromptAsync (turnContext As ITurnContext, state As IDictionary(Of String, Object), options As PromptOptions, Optional cancellationToken As CancellationToken = Nothing) As Task" />
+      <MemberSignature Language="F#" Value="abstract member OnPromptAsync : Microsoft.Bot.Builder.ITurnContext * System.Collections.Generic.IDictionary&lt;string, obj&gt; * Microsoft.Bot.Builder.Dialogs.PromptOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.OnPromptAsync : Microsoft.Bot.Builder.ITurnContext * System.Collections.Generic.IDictionary&lt;string, obj&gt; * Microsoft.Bot.Builder.Dialogs.PromptOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="activityPrompt.OnPromptAsync (turnContext, state, options, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="turnContext" Type="Microsoft.Bot.Builder.ITurnContext" />
+        <Parameter Name="state" Type="System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;" />
+        <Parameter Name="options" Type="Microsoft.Bot.Builder.Dialogs.PromptOptions" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="turnContext">Contexto para a atual ativação de conversa com o usuário.</param>
+        <param name="state">Contém o estado da instância atual do prompt na pilha de diálogo.</param>
+        <param name="options">Um objeto de opções de prompt construído com base nas opções inicialmente fornecidas na chamada para <see cref="M:Microsoft.Bot.Builder.Dialogs.DialogContext.PromptAsync(System.String,Microsoft.Bot.Builder.Dialogs.PromptOptions,System.Threading.CancellationToken)" /> .</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Quando substituído em uma classe derivada, solicita a entrada do usuário.</summary>
+        <returns>Um <see cref="T:System.Threading.Tasks.Task" /> representando a operação assíncrona.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPromptAsync">
+      <MemberSignature Language="C#" Value="protected virtual System.Threading.Tasks.Task OnPromptAsync (Microsoft.Bot.Builder.ITurnContext turnContext, System.Collections.Generic.IDictionary&lt;string,object&gt; state, Microsoft.Bot.Builder.Dialogs.PromptOptions options, bool isRetry, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Threading.Tasks.Task OnPromptAsync(class Microsoft.Bot.Builder.ITurnContext turnContext, class System.Collections.Generic.IDictionary`2&lt;string, object&gt; state, class Microsoft.Bot.Builder.Dialogs.PromptOptions options, bool isRetry, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.ActivityPrompt.OnPromptAsync(Microsoft.Bot.Builder.ITurnContext,System.Collections.Generic.IDictionary{System.String,System.Object},Microsoft.Bot.Builder.Dialogs.PromptOptions,System.Boolean,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function OnPromptAsync (turnContext As ITurnContext, state As IDictionary(Of String, Object), options As PromptOptions, isRetry As Boolean, Optional cancellationToken As CancellationToken = Nothing) As Task" />
+      <MemberSignature Language="F#" Value="abstract member OnPromptAsync : Microsoft.Bot.Builder.ITurnContext * System.Collections.Generic.IDictionary&lt;string, obj&gt; * Microsoft.Bot.Builder.Dialogs.PromptOptions * bool * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.OnPromptAsync : Microsoft.Bot.Builder.ITurnContext * System.Collections.Generic.IDictionary&lt;string, obj&gt; * Microsoft.Bot.Builder.Dialogs.PromptOptions * bool * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="activityPrompt.OnPromptAsync (turnContext, state, options, isRetry, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="turnContext" Type="Microsoft.Bot.Builder.ITurnContext" />
+        <Parameter Name="state" Type="System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;" />
+        <Parameter Name="options" Type="Microsoft.Bot.Builder.Dialogs.PromptOptions" />
+        <Parameter Name="isRetry" Type="System.Boolean" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="turnContext">To be added.</param>
+        <param name="state">To be added.</param>
+        <param name="options">To be added.</param>
+        <param name="isRetry">To be added.</param>
+        <param name="cancellationToken">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRecognizeAsync">
+      <MemberSignature Language="C#" Value="protected virtual System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.PromptRecognizerResult&lt;Microsoft.Bot.Schema.Activity&gt;&gt; OnRecognizeAsync (Microsoft.Bot.Builder.ITurnContext turnContext, System.Collections.Generic.IDictionary&lt;string,object&gt; state, Microsoft.Bot.Builder.Dialogs.PromptOptions options, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Bot.Builder.Dialogs.PromptRecognizerResult`1&lt;class Microsoft.Bot.Schema.Activity&gt;&gt; OnRecognizeAsync(class Microsoft.Bot.Builder.ITurnContext turnContext, class System.Collections.Generic.IDictionary`2&lt;string, object&gt; state, class Microsoft.Bot.Builder.Dialogs.PromptOptions options, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.ActivityPrompt.OnRecognizeAsync(Microsoft.Bot.Builder.ITurnContext,System.Collections.Generic.IDictionary{System.String,System.Object},Microsoft.Bot.Builder.Dialogs.PromptOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function OnRecognizeAsync (turnContext As ITurnContext, state As IDictionary(Of String, Object), options As PromptOptions, Optional cancellationToken As CancellationToken = Nothing) As Task(Of PromptRecognizerResult(Of Activity))" />
+      <MemberSignature Language="F#" Value="abstract member OnRecognizeAsync : Microsoft.Bot.Builder.ITurnContext * System.Collections.Generic.IDictionary&lt;string, obj&gt; * Microsoft.Bot.Builder.Dialogs.PromptOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.PromptRecognizerResult&lt;Microsoft.Bot.Schema.Activity&gt;&gt;&#xA;override this.OnRecognizeAsync : Microsoft.Bot.Builder.ITurnContext * System.Collections.Generic.IDictionary&lt;string, obj&gt; * Microsoft.Bot.Builder.Dialogs.PromptOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.PromptRecognizerResult&lt;Microsoft.Bot.Schema.Activity&gt;&gt;" Usage="activityPrompt.OnRecognizeAsync (turnContext, state, options, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.PromptRecognizerResult&lt;Microsoft.Bot.Schema.Activity&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="turnContext" Type="Microsoft.Bot.Builder.ITurnContext" />
+        <Parameter Name="state" Type="System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;" />
+        <Parameter Name="options" Type="Microsoft.Bot.Builder.Dialogs.PromptOptions" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="turnContext">Contexto para a atual ativação de conversa com o usuário.</param>
+        <param name="state">Contém o estado da instância atual do prompt na pilha de diálogo.</param>
+        <param name="options">Um objeto de opções de prompt construído com base nas opções inicialmente fornecidas na chamada para <see cref="M:Microsoft.Bot.Builder.Dialogs.DialogContext.PromptAsync(System.String,Microsoft.Bot.Builder.Dialogs.PromptOptions,System.Threading.CancellationToken)" /> .</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Quando substituído em uma classe derivada, o tenta reconhecer a atividade de entrada.</summary>
+        <returns>Um <see cref="T:System.Threading.Tasks.Task" /> representando a operação assíncrona.</returns>
+        <remarks>Se a tarefa for bem-sucedida, o resultado descreverá o resultado da tentativa de reconhecimento.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RepromptDialogAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task RepromptDialogAsync (Microsoft.Bot.Builder.ITurnContext turnContext, Microsoft.Bot.Builder.Dialogs.DialogInstance instance, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task RepromptDialogAsync(class Microsoft.Bot.Builder.ITurnContext turnContext, class Microsoft.Bot.Builder.Dialogs.DialogInstance instance, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.ActivityPrompt.RepromptDialogAsync(Microsoft.Bot.Builder.ITurnContext,Microsoft.Bot.Builder.Dialogs.DialogInstance,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function RepromptDialogAsync (turnContext As ITurnContext, instance As DialogInstance, Optional cancellationToken As CancellationToken = Nothing) As Task" />
+      <MemberSignature Language="F#" Value="override this.RepromptDialogAsync : Microsoft.Bot.Builder.ITurnContext * Microsoft.Bot.Builder.Dialogs.DialogInstance * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="activityPrompt.RepromptDialogAsync (turnContext, instance, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="turnContext" Type="Microsoft.Bot.Builder.ITurnContext" />
+        <Parameter Name="instance" Type="Microsoft.Bot.Builder.Dialogs.DialogInstance" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="turnContext">Contexto para a atual ativação de conversa com o usuário.</param>
+        <param name="instance">A instância da caixa de diálogo na pilha.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Chamado quando uma caixa de diálogo de prompt foi solicitada para solicitar a entrada do usuário novamente.</summary>
+        <returns>Um <see cref="T:System.Threading.Tasks.Task" /> representando a operação assíncrona.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResumeDialogAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt; ResumeDialogAsync (Microsoft.Bot.Builder.Dialogs.DialogContext dc, Microsoft.Bot.Builder.Dialogs.DialogReason reason, object result = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt; ResumeDialogAsync(class Microsoft.Bot.Builder.Dialogs.DialogContext dc, valuetype Microsoft.Bot.Builder.Dialogs.DialogReason reason, object result, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.ActivityPrompt.ResumeDialogAsync(Microsoft.Bot.Builder.Dialogs.DialogContext,Microsoft.Bot.Builder.Dialogs.DialogReason,System.Object,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ResumeDialogAsync (dc As DialogContext, reason As DialogReason, Optional result As Object = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of DialogTurnResult)" />
+      <MemberSignature Language="F#" Value="override this.ResumeDialogAsync : Microsoft.Bot.Builder.Dialogs.DialogContext * Microsoft.Bot.Builder.Dialogs.DialogReason * obj * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;" Usage="activityPrompt.ResumeDialogAsync (dc, reason, result, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="Microsoft.Bot.Builder.Dialogs.DialogContext" />
+        <Parameter Name="reason" Type="Microsoft.Bot.Builder.Dialogs.DialogReason" />
+        <Parameter Name="result" Type="System.Object" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="dc">O contexto da caixa de diálogo para a ativação atual da conversa.</param>
+        <param name="reason">Uma enumeração que indica por que a caixa de diálogo foi retomada.</param>
+        <param name="result">Opcional, valor retornado da caixa de diálogo anterior na pilha.
+O tipo do valor retornado depende da caixa de diálogo anterior.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Chamado quando uma caixa de diálogo de prompt reinicia a caixa de diálogo ativa na pilha de diálogo, como quando a caixa de diálogo ativa anterior na pilha é concluída.</summary>
+        <returns>Um <see cref="T:System.Threading.Tasks.Task" /> representando a operação assíncrona.</returns>
+        <remarks>Se a tarefa for bem-sucedida, o resultado indicará se a caixa de diálogo ainda está ativa após a ativação ser processada pela caixa de diálogo.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

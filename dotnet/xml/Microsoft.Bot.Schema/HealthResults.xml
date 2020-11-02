@@ -1,0 +1,189 @@
+<Type Name="HealthResults" FullName="Microsoft.Bot.Schema.HealthResults">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7ae288e3908e4190351bcf00c2483c31c82610ae" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150117" /></Metadata><TypeSignature Language="C#" Value="public class HealthResults" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HealthResults extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.HealthResults" />
+  <TypeSignature Language="VB.NET" Value="Public Class HealthResults" />
+  <TypeSignature Language="F#" Value="type HealthResults = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Define a estrutura que é retornada como o resultado de uma verificação de integridade no bot.
+A verificação de integridade é enviada para o bot como um InvokeActivity e essa classe junto com <see cref="T:Microsoft.Bot.Schema.HealthCheckResponse" /> define a estrutura do corpo da resposta.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HealthResults ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Schema.HealthResults.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Authorization">
+      <MemberSignature Language="C#" Value="public string Authorization { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Authorization" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.HealthResults.Authorization" />
+      <MemberSignature Language="VB.NET" Value="Public Property Authorization As String" />
+      <MemberSignature Language="F#" Value="member this.Authorization : string with get, set" Usage="Microsoft.Bot.Schema.HealthResults.Authorization" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="authorization")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="authorization")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define um valor que é exatamente o mesmo que o cabeçalho de autorização que teria sido adicionado a um postback HTTP.</summary>
+        <value>Um valor de cabeçalho de autorização.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Diagnostics">
+      <MemberSignature Language="C#" Value="public object Diagnostics { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Diagnostics" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.HealthResults.Diagnostics" />
+      <MemberSignature Language="VB.NET" Value="Public Property Diagnostics As Object" />
+      <MemberSignature Language="F#" Value="member this.Diagnostics : obj with get, set" Usage="Microsoft.Bot.Schema.HealthResults.Diagnostics" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="diagnostics")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="diagnostics")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define os dados de diagnóstico que podem ser incluídos opcionalmente na resposta da verificação de integridade.</summary>
+        <value>Dados de diagnóstico arbitrários que serão serializados para JSON.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Messages">
+      <MemberSignature Language="C#" Value="public string[] Messages { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] Messages" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.HealthResults.Messages" />
+      <MemberSignature Language="VB.NET" Value="Public Property Messages As String()" />
+      <MemberSignature Language="F#" Value="member this.Messages : string[] with get, set" Usage="Microsoft.Bot.Schema.HealthResults.Messages" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="messages")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="messages")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define mensagens informativas que podem ser incluídas opcionalmente na resposta da verificação de integridade.</summary>
+        <value>Uma matriz de cadeias de caracteres de mensagem informativa.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Success">
+      <MemberSignature Language="C#" Value="public bool Success { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Success" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.HealthResults.Success" />
+      <MemberSignature Language="VB.NET" Value="Public Property Success As Boolean" />
+      <MemberSignature Language="F#" Value="member this.Success : bool with get, set" Usage="Microsoft.Bot.Schema.HealthResults.Success" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="success")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="success")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define um valor que indica se a verificação de integridade foi bem-sucedida e se o bot está íntegro.</summary>
+        <value>Um valor booliano que indica o status de integridade.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserAgent">
+      <MemberSignature Language="C#" Value="public string UserAgent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserAgent" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.HealthResults.UserAgent" />
+      <MemberSignature Language="VB.NET" Value="Public Property UserAgent As String" />
+      <MemberSignature Language="F#" Value="member this.UserAgent : string with get, set" Usage="Microsoft.Bot.Schema.HealthResults.UserAgent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="user-agent")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="user-agent")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define um valor exatamente o mesmo que o cabeçalho de User-Agent que teria sido adicionado a um postback HTTP.</summary>
+        <value>Um valor de cabeçalho User-Agent.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,125 @@
+<Type Name="ParserErrorListener" FullName="AdaptiveExpressions.ParserErrorListener">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="727f49dee5d28b1a5d09d5d1b131df9e1e64cb7c" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151240" /></Metadata><TypeSignature Language="C#" Value="public class ParserErrorListener : Antlr4.Runtime.BaseErrorListener" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ParserErrorListener extends Antlr4.Runtime.BaseErrorListener" />
+  <TypeSignature Language="DocId" Value="T:AdaptiveExpressions.ParserErrorListener" />
+  <TypeSignature Language="VB.NET" Value="Public Class ParserErrorListener&#xA;Inherits BaseErrorListener" />
+  <TypeSignature Language="F#" Value="type ParserErrorListener = class&#xA;    inherit BaseErrorListener" />
+  <AssemblyInfo>
+    <AssemblyName>AdaptiveExpressions</AssemblyName>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Antlr4.Runtime.BaseErrorListener</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Ouvinte de erros do analisador de expressões.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ParserErrorListener ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:AdaptiveExpressions.ParserErrorListener.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>AdaptiveExpressions</AssemblyName>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Instance">
+      <MemberSignature Language="C#" Value="public static readonly AdaptiveExpressions.ParserErrorListener Instance;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class AdaptiveExpressions.ParserErrorListener Instance" />
+      <MemberSignature Language="DocId" Value="F:AdaptiveExpressions.ParserErrorListener.Instance" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Instance As ParserErrorListener " />
+      <MemberSignature Language="F#" Value=" staticval mutable Instance : AdaptiveExpressions.ParserErrorListener" Usage="AdaptiveExpressions.ParserErrorListener.Instance" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>AdaptiveExpressions</AssemblyName>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>AdaptiveExpressions.ParserErrorListener</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Uma instância de ParserErrorListener.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyntaxError">
+      <MemberSignature Language="C#" Value="public override void SyntaxError (Antlr4.Runtime.IRecognizer recognizer, Antlr4.Runtime.IToken offendingSymbol, int line, int charPositionInLine, string msg, Antlr4.Runtime.RecognitionException e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SyntaxError(class Antlr4.Runtime.IRecognizer recognizer, class Antlr4.Runtime.IToken offendingSymbol, int32 line, int32 charPositionInLine, string msg, class Antlr4.Runtime.RecognitionException e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:AdaptiveExpressions.ParserErrorListener.SyntaxError(Antlr4.Runtime.IRecognizer,Antlr4.Runtime.IToken,System.Int32,System.Int32,System.String,Antlr4.Runtime.RecognitionException)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub SyntaxError (recognizer As IRecognizer, offendingSymbol As IToken, line As Integer, charPositionInLine As Integer, msg As String, e As RecognitionException)" />
+      <MemberSignature Language="F#" Value="override this.SyntaxError : Antlr4.Runtime.IRecognizer * Antlr4.Runtime.IToken * int * int * string * Antlr4.Runtime.RecognitionException -&gt; unit" Usage="parserErrorListener.SyntaxError (recognizer, offendingSymbol, line, charPositionInLine, msg, e)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>AdaptiveExpressions</AssemblyName>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="recognizer" Type="Antlr4.Runtime.IRecognizer">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[Antlr4.Runtime.Misc.NotNull]</AttributeName>
+              <AttributeName Language="F#">[&lt;Antlr4.Runtime.Misc.NotNull&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+        <Parameter Name="offendingSymbol" Type="Antlr4.Runtime.IToken">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[Antlr4.Runtime.Misc.Nullable]</AttributeName>
+              <AttributeName Language="F#">[&lt;Antlr4.Runtime.Misc.Nullable&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+        <Parameter Name="line" Type="System.Int32" />
+        <Parameter Name="charPositionInLine" Type="System.Int32" />
+        <Parameter Name="msg" Type="System.String">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[Antlr4.Runtime.Misc.NotNull]</AttributeName>
+              <AttributeName Language="F#">[&lt;Antlr4.Runtime.Misc.NotNull&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+        <Parameter Name="e" Type="Antlr4.Runtime.RecognitionException">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[Antlr4.Runtime.Misc.Nullable]</AttributeName>
+              <AttributeName Language="F#">[&lt;Antlr4.Runtime.Misc.Nullable&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="recognizer">Um reconhecedor de tempo de execução Antlr4.</param>
+        <param name="offendingSymbol">O token viola as regras do analisador de léxico.</param>
+        <param name="line">O número de linha em que ocorreu o erro.</param>
+        <param name="charPositionInLine">A posição do caractere na linha em que ocorreu o erro.</param>
+        <param name="msg">A mensagem de erro.</param>
+        <param name="e">O Reconhecimentoexception.</param>
+        <summary>Gerar um erro de sintaxe com base em um contexto atual.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

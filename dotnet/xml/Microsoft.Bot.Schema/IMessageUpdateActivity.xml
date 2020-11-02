@@ -1,0 +1,27 @@
+<Type Name="IMessageUpdateActivity" FullName="Microsoft.Bot.Schema.IMessageUpdateActivity">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="377bdf5e6e9c1aab524809d934f24dfcc5730e30" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150561" /></Metadata><TypeSignature Language="C#" Value="public interface IMessageUpdateActivity : Microsoft.Bot.Schema.IMessageActivity" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IMessageUpdateActivity implements class Microsoft.Bot.Schema.IActivity, class Microsoft.Bot.Schema.IMessageActivity" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.IMessageUpdateActivity" />
+  <TypeSignature Language="VB.NET" Value="Public Interface IMessageUpdateActivity&#xA;Implements IMessageActivity" />
+  <TypeSignature Language="F#" Value="type IMessageUpdateActivity = interface&#xA;    interface IMessageActivity&#xA;    interface IActivity" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.Bot.Schema.IActivity</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>Microsoft.Bot.Schema.IMessageActivity</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Representa uma solicitação para atualizar uma atividade de mensagem anterior em uma conversa.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members />
+</Type>

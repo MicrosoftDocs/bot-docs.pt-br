@@ -1,0 +1,138 @@
+<Type Name="Quantifier" FullName="AdaptiveExpressions.TriggerTrees.Quantifier">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d82bb57298560b3f012c70950e4d8a0c078b171f" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151380" /></Metadata><TypeSignature Language="C#" Value="public class Quantifier" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Quantifier extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:AdaptiveExpressions.TriggerTrees.Quantifier" />
+  <TypeSignature Language="VB.NET" Value="Public Class Quantifier" />
+  <TypeSignature Language="F#" Value="type Quantifier = class" />
+  <AssemblyInfo>
+    <AssemblyName>AdaptiveExpressions</AssemblyName>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Quantificador para permitir expansão de expressões em tempo de execução.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Quantifier (string variable, AdaptiveExpressions.TriggerTrees.QuantifierType type, System.Collections.Generic.IEnumerable&lt;string&gt; bindings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string variable, valuetype AdaptiveExpressions.TriggerTrees.QuantifierType type, class System.Collections.Generic.IEnumerable`1&lt;string&gt; bindings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:AdaptiveExpressions.TriggerTrees.Quantifier.#ctor(System.String,AdaptiveExpressions.TriggerTrees.QuantifierType,System.Collections.Generic.IEnumerable{System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (variable As String, type As QuantifierType, bindings As IEnumerable(Of String))" />
+      <MemberSignature Language="F#" Value="new AdaptiveExpressions.TriggerTrees.Quantifier : string * AdaptiveExpressions.TriggerTrees.QuantifierType * seq&lt;string&gt; -&gt; AdaptiveExpressions.TriggerTrees.Quantifier" Usage="new AdaptiveExpressions.TriggerTrees.Quantifier (variable, type, bindings)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>AdaptiveExpressions</AssemblyName>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="variable" Type="System.String" />
+        <Parameter Name="type" Type="AdaptiveExpressions.TriggerTrees.QuantifierType" />
+        <Parameter Name="bindings" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="variable">Nome da variável a ser substituída.</param>
+        <param name="type">Tipo de quantificador.</param>
+        <param name="bindings">Associações possíveis para a variável.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:AdaptiveExpressions.TriggerTrees.Quantifier" />.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bindings">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;string&gt; Bindings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;string&gt; Bindings" />
+      <MemberSignature Language="DocId" Value="P:AdaptiveExpressions.TriggerTrees.Quantifier.Bindings" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Bindings As IEnumerable(Of String)" />
+      <MemberSignature Language="F#" Value="member this.Bindings : seq&lt;string&gt;" Usage="AdaptiveExpressions.TriggerTrees.Quantifier.Bindings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>AdaptiveExpressions</AssemblyName>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém associações possíveis para quantificador.</summary>
+        <value>Associações possíveis para quantificador.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:AdaptiveExpressions.TriggerTrees.Quantifier.ToString" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ToString () As String" />
+      <MemberSignature Language="F#" Value="override this.ToString : unit -&gt; string" Usage="quantifier.ToString " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>AdaptiveExpressions</AssemblyName>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Retorna uma cadeia de caracteres que representa o objeto atual.</summary>
+        <returns>Um valor da cadeia de caracteres.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public AdaptiveExpressions.TriggerTrees.QuantifierType Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype AdaptiveExpressions.TriggerTrees.QuantifierType Type" />
+      <MemberSignature Language="DocId" Value="P:AdaptiveExpressions.TriggerTrees.Quantifier.Type" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Type As QuantifierType" />
+      <MemberSignature Language="F#" Value="member this.Type : AdaptiveExpressions.TriggerTrees.QuantifierType" Usage="AdaptiveExpressions.TriggerTrees.Quantifier.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>AdaptiveExpressions</AssemblyName>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>AdaptiveExpressions.TriggerTrees.QuantifierType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém o tipo de quantificador.</summary>
+        <value>Tipo de quantificador.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Variable">
+      <MemberSignature Language="C#" Value="public string Variable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Variable" />
+      <MemberSignature Language="DocId" Value="P:AdaptiveExpressions.TriggerTrees.Quantifier.Variable" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Variable As String" />
+      <MemberSignature Language="F#" Value="member this.Variable : string" Usage="AdaptiveExpressions.TriggerTrees.Quantifier.Variable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>AdaptiveExpressions</AssemblyName>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém o nome da variável que será substituída.</summary>
+        <value>Nome da variável que será substituída.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,63 @@
+<Type Name="DefaultCase&lt;T,R&gt;" FullName="Microsoft.Bot.Builder.Dialogs.DefaultCase&lt;T,R&gt;">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="28edc0f1c53fa51075ccdb1105a4f2838802e8e1" /><Meta Name="ms.sourcegitcommit" Value="ac3a7ee8979fc942f9d7420b2f6845c726b6661a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/02/2020" /><Meta Name="ms.locfileid" Value="93149954" /></Metadata><TypeSignature Language="C#" Value="public sealed class DefaultCase&lt;T,R&gt; : Microsoft.Bot.Builder.Dialogs.Case&lt;T,R&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit DefaultCase`2&lt;T, R&gt; extends Microsoft.Bot.Builder.Dialogs.Case`2&lt;!T, !R&gt;" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.DefaultCase`2" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class DefaultCase(Of T, R)&#xA;Inherits Case(Of T, R)" />
+  <TypeSignature Language="F#" Value="type DefaultCase&lt;'T, 'R&gt; = class&#xA;    inherit Case&lt;'T, 'R&gt;" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+    <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+    <AssemblyVersion>3.20.1.42</AssemblyVersion>
+    <AssemblyVersion>3.30.0.1</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+    <TypeParameter Name="R" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Case&lt;T,R&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="T">T</BaseTypeArgument>
+      <BaseTypeArgument TypeParamName="R">R</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Serializable]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Serializable&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <typeparam name="T">To be added.</typeparam>
+    <typeparam name="R">To be added.</typeparam>
+    <summary>O caso padrão para switch. <see cref="T:Microsoft.Bot.Builder.Dialogs.ICase`2" /></summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DefaultCase (Microsoft.Bot.Builder.Dialogs.ContextualSelector&lt;T,R&gt; selector);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Bot.Builder.Dialogs.ContextualSelector`2&lt;!T, !R&gt; selector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.DefaultCase`2.#ctor(Microsoft.Bot.Builder.Dialogs.ContextualSelector{`0,`1})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (selector As ContextualSelector(Of T, R))" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.Dialogs.DefaultCase&lt;'T, 'R&gt; : Microsoft.Bot.Builder.Dialogs.ContextualSelector&lt;'T, 'R&gt; -&gt; Microsoft.Bot.Builder.Dialogs.DefaultCase&lt;'T, 'R&gt;" Usage="new Microsoft.Bot.Builder.Dialogs.DefaultCase&lt;'T, 'R&gt; selector" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="selector" Type="Microsoft.Bot.Builder.Dialogs.ContextualSelector&lt;T,R&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="selector">O Seletor contextual que será chamado no caso padrão.</param>
+        <summary>Constrói o caso padrão para switch.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

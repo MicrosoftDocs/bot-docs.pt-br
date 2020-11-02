@@ -1,0 +1,50 @@
+<Type Name="ExpressionFunctions" FullName="AdaptiveExpressions.ExpressionFunctions">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="1c495b835a36f6e5adecb5864504f7b9fc3ddfc1" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151315" /></Metadata><TypeSignature Language="C#" Value="public static class ExpressionFunctions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ExpressionFunctions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:AdaptiveExpressions.ExpressionFunctions" />
+  <TypeSignature Language="VB.NET" Value="Public Class ExpressionFunctions" />
+  <TypeSignature Language="F#" Value="type ExpressionFunctions = class" />
+  <AssemblyInfo>
+    <AssemblyName>AdaptiveExpressions</AssemblyName>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Definição de funções internas padrão para expressões.</summary>
+    <remarks>Essas funções são amplamente do WDL https://docs.microsoft.com/en-us/azure/logic-apps/workflow-definition-language-functions-reference com algumas extensões, como operadores infixos para matemática, lógica e comparações.
+            
+Essa classe também tem alguns métodos que são úteis para usar ao definir funções personalizadas.
+Você sempre pode construir um <see cref="T:AdaptiveExpressions.ExpressionEvaluator" /> diretamente que fornece a quantidade máxima de controle sobre validação e avaliação.
+Os validadores são verificadores estáticos que devem lançar uma exceção se algo não for válido estaticamente.
+Os avaliadores são chamados para avaliar uma expressão e devem tentar não lançar.
+Há alguns avaliadores nesse arquivo que usam um verificador chamado em tempo de execução para verificar se os argumentos são adequados.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="StandardFunctions">
+      <MemberSignature Language="C#" Value="public static readonly System.Collections.Generic.IDictionary&lt;string,AdaptiveExpressions.ExpressionEvaluator&gt; StandardFunctions;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Collections.Generic.IDictionary`2&lt;string, class AdaptiveExpressions.ExpressionEvaluator&gt; StandardFunctions" />
+      <MemberSignature Language="DocId" Value="F:AdaptiveExpressions.ExpressionFunctions.StandardFunctions" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly StandardFunctions As IDictionary(Of String, ExpressionEvaluator) " />
+      <MemberSignature Language="F#" Value=" staticval mutable StandardFunctions : System.Collections.Generic.IDictionary&lt;string, AdaptiveExpressions.ExpressionEvaluator&gt;" Usage="AdaptiveExpressions.ExpressionFunctions.StandardFunctions" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>AdaptiveExpressions</AssemblyName>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,AdaptiveExpressions.ExpressionEvaluator&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Dicionário somente leitura de funções internas.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

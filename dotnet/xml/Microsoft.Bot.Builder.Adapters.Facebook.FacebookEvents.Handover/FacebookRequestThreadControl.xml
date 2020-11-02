@@ -1,0 +1,66 @@
+<Type Name="FacebookRequestThreadControl" FullName="Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookRequestThreadControl">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d999402a5ca23a20da9c4a9e0faa16dda29804b4" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151183" /></Metadata><TypeSignature Language="C#" Value="public class FacebookRequestThreadControl : Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookThreadControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FacebookRequestThreadControl extends Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookThreadControl" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookRequestThreadControl" />
+  <TypeSignature Language="VB.NET" Value="Public Class FacebookRequestThreadControl&#xA;Inherits FacebookThreadControl" />
+  <TypeSignature Language="F#" Value="type FacebookRequestThreadControl = class&#xA;    inherit FacebookThreadControl" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookThreadControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Uma mensagem de controle de thread do Facebook, incluindo a ID do aplicativo do proprietário do thread solicitado e uma mensagem opcional para enviar com a solicitação.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FacebookRequestThreadControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookRequestThreadControl.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestedOwnerAppId">
+      <MemberSignature Language="C#" Value="public string RequestedOwnerAppId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequestedOwnerAppId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookRequestThreadControl.RequestedOwnerAppId" />
+      <MemberSignature Language="VB.NET" Value="Public Property RequestedOwnerAppId As String" />
+      <MemberSignature Language="F#" Value="member this.RequestedOwnerAppId : string with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookRequestThreadControl.RequestedOwnerAppId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty("requested_owner_app_id")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty("requested_owner_app_id")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a ID do aplicativo do proprietário solicitado.</summary>
+        <value>a ID do aplicativo do proprietário solicitado.</value>
+        <remarks>263902037430900 para a caixa de entrada da página.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

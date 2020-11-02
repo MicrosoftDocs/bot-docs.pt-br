@@ -1,0 +1,89 @@
+<Type Name="AuthenticationConfiguration" FullName="Microsoft.Bot.Connector.Authentication.AuthenticationConfiguration">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f7604146e023f61352bcc44e54cf946fc5752d27" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151402" /></Metadata><TypeSignature Language="C#" Value="public class AuthenticationConfiguration" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AuthenticationConfiguration extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Connector.Authentication.AuthenticationConfiguration" />
+  <TypeSignature Language="VB.NET" Value="Public Class AuthenticationConfiguration" />
+  <TypeSignature Language="F#" Value="type AuthenticationConfiguration = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Definições de configuração geral para autenticação.</summary>
+    <remarks>Observe que isso é explicitamente uma classe e não uma interface, já que as interfaces não dão suporte a valores padrão, após a liberação inicial, qualquer alteração interromperia a compatibilidade com versões anteriores.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AuthenticationConfiguration ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Connector.Authentication.AuthenticationConfiguration.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClaimsValidator">
+      <MemberSignature Language="C#" Value="public virtual Microsoft.Bot.Connector.Authentication.ClaimsValidator ClaimsValidator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Connector.Authentication.ClaimsValidator ClaimsValidator" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Connector.Authentication.AuthenticationConfiguration.ClaimsValidator" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property ClaimsValidator As ClaimsValidator" />
+      <MemberSignature Language="F#" Value="member this.ClaimsValidator : Microsoft.Bot.Connector.Authentication.ClaimsValidator with get, set" Usage="Microsoft.Bot.Connector.Authentication.AuthenticationConfiguration.ClaimsValidator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Connector.Authentication.ClaimsValidator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define uma <see cref="P:Microsoft.Bot.Connector.Authentication.AuthenticationConfiguration.ClaimsValidator" /> instância usada para validar as declarações de identidade.</summary>
+        <value>Uma <see cref="P:Microsoft.Bot.Connector.Authentication.AuthenticationConfiguration.ClaimsValidator" /> instância usada para validar as declarações de identidade.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiredEndorsements">
+      <MemberSignature Language="C#" Value="public string[] RequiredEndorsements { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] RequiredEndorsements" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Connector.Authentication.AuthenticationConfiguration.RequiredEndorsements" />
+      <MemberSignature Language="VB.NET" Value="Public Property RequiredEndorsements As String()" />
+      <MemberSignature Language="F#" Value="member this.RequiredEndorsements : string[] with get, set" Usage="Microsoft.Bot.Connector.Authentication.AuthenticationConfiguration.RequiredEndorsements" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define uma matriz de endosso JWT.</summary>
+        <value>Uma matriz de endosso JWT.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

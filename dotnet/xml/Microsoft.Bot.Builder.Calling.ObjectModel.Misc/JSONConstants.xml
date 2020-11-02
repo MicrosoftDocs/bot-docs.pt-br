@@ -1,0 +1,40 @@
+<Type Name="JSONConstants" FullName="Microsoft.Bot.Builder.Calling.ObjectModel.Misc.JSONConstants">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="98fcab6e913c720ec10db946aac31e95790558e9" /><Meta Name="ms.sourcegitcommit" Value="4e1af50bd46debfdf9dcbab9a5d1b1633b541e27" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="01/25/2020" /><Meta Name="ms.locfileid" Value="93148714" /></Metadata><TypeSignature Language="C#" Value="public static class JSONConstants" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit JSONConstants extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Calling.ObjectModel.Misc.JSONConstants" />
+  <TypeSignature Language="VB.NET" Value="Public Class JSONConstants" />
+  <TypeSignature Language="F#" Value="type JSONConstants = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Calling</AssemblyName>
+    <AssemblyVersion>3.20.1.42</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>To be added.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ContentType">
+      <MemberSignature Language="C#" Value="public static readonly string ContentType;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string ContentType" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Calling.ObjectModel.Misc.JSONConstants.ContentType" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly ContentType As String " />
+      <MemberSignature Language="F#" Value=" staticval mutable ContentType : string" Usage="Microsoft.Bot.Builder.Calling.ObjectModel.Misc.JSONConstants.ContentType" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Calling</AssemblyName>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Tipo de conteúdo JSON</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

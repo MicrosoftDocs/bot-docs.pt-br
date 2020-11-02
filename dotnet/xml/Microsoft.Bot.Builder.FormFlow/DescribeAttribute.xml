@@ -1,0 +1,175 @@
+<Type Name="DescribeAttribute" FullName="Microsoft.Bot.Builder.FormFlow.DescribeAttribute">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b4c4ff175f0880f8468ff4b9a48a05a011f22d74" /><Meta Name="ms.sourcegitcommit" Value="ac3a7ee8979fc942f9d7420b2f6845c726b6661a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/02/2020" /><Meta Name="ms.locfileid" Value="93149890" /></Metadata><TypeSignature Language="C#" Value="public class DescribeAttribute : Microsoft.Bot.Builder.FormFlow.FormFlowAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit DescribeAttribute extends Microsoft.Bot.Builder.FormFlow.FormFlowAttribute" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.FormFlow.DescribeAttribute" />
+  <TypeSignature Language="VB.NET" Value="Public Class DescribeAttribute&#xA;Inherits FormFlowAttribute" />
+  <TypeSignature Language="F#" Value="type DescribeAttribute = class&#xA;    inherit FormFlowAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+    <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+    <AssemblyVersion>3.20.1.42</AssemblyVersion>
+    <AssemblyVersion>3.30.0.1</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Bot.Builder.FormFlow.FormFlowAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.AttributeUsage(System.AttributeTargets.Enum | System.AttributeTargets.Field | System.AttributeTargets.Property)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.AttributeUsage(System.AttributeTargets.Enum | System.AttributeTargets.Field | System.AttributeTargets.Property)&gt;]</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName Language="C#">[System.Serializable]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Serializable&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Atributo para substituir a descrição padrão de um campo, propriedade ou valor de enumeração.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DescribeAttribute (string description = default, string image = default, string message = default, string title = default, string subTitle = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string description, string image, string message, string title, string subTitle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.FormFlow.DescribeAttribute.#ctor(System.String,System.String,System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (Optional description As String = Nothing, Optional image As String = Nothing, Optional message As String = Nothing, Optional title As String = Nothing, Optional subTitle As String = Nothing)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.FormFlow.DescribeAttribute : string * string * string * string * string -&gt; Microsoft.Bot.Builder.FormFlow.DescribeAttribute" Usage="new Microsoft.Bot.Builder.FormFlow.DescribeAttribute (description, image, message, title, subTitle)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="description" Type="System.String" />
+        <Parameter Name="image" Type="System.String" />
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="title" Type="System.String" />
+        <Parameter Name="subTitle" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="description">Descrição do campo, propriedade ou valor de enumeração.</param>
+        <param name="image">URL da imagem a ser usada ao gerar botões.</param>
+        <param name="message">Mensagem a ser retornada do botão.</param>
+        <param name="title">Texto se estiver gerando cartão.</param>
+        <param name="subTitle">Subtítulo se estiver gerando o cartão.</param>
+        <summary>Descrição de campo, propriedade ou valor de enumeração.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description;" />
+      <MemberSignature Language="ILAsm" Value=".field public string Description" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.FormFlow.DescribeAttribute.Description" />
+      <MemberSignature Language="VB.NET" Value="Public Description As String " />
+      <MemberSignature Language="F#" Value="val mutable Description : string" Usage="Microsoft.Bot.Builder.FormFlow.DescribeAttribute.Description" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Descrição do campo, da propriedade ou da enumeração a ser usada em modelos e opções.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Image">
+      <MemberSignature Language="C#" Value="public string Image;" />
+      <MemberSignature Language="ILAsm" Value=".field public string Image" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.FormFlow.DescribeAttribute.Image" />
+      <MemberSignature Language="VB.NET" Value="Public Image As String " />
+      <MemberSignature Language="F#" Value="val mutable Image : string" Usage="Microsoft.Bot.Builder.FormFlow.DescribeAttribute.Image" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>URL da imagem a ser usada ao criar cartões ou botões.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public string Message;" />
+      <MemberSignature Language="ILAsm" Value=".field public string Message" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.FormFlow.DescribeAttribute.Message" />
+      <MemberSignature Language="VB.NET" Value="Public Message As String " />
+      <MemberSignature Language="F#" Value="val mutable Message : string" Usage="Microsoft.Bot.Builder.FormFlow.DescribeAttribute.Message" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Mensagem a ser retornada quando um botão for pressionado em um cartão.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SubTitle">
+      <MemberSignature Language="C#" Value="public string SubTitle;" />
+      <MemberSignature Language="ILAsm" Value=".field public string SubTitle" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.FormFlow.DescribeAttribute.SubTitle" />
+      <MemberSignature Language="VB.NET" Value="Public SubTitle As String " />
+      <MemberSignature Language="F#" Value="val mutable SubTitle : string" Usage="Microsoft.Bot.Builder.FormFlow.DescribeAttribute.SubTitle" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Subtítulo quando um cartão é gerado da descrição.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public string Title;" />
+      <MemberSignature Language="ILAsm" Value=".field public string Title" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.FormFlow.DescribeAttribute.Title" />
+      <MemberSignature Language="VB.NET" Value="Public Title As String " />
+      <MemberSignature Language="F#" Value="val mutable Title : string" Usage="Microsoft.Bot.Builder.FormFlow.DescribeAttribute.Title" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Título quando um cartão é gerado da descrição.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

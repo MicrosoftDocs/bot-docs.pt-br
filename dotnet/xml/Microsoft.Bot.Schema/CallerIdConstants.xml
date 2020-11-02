@@ -1,0 +1,90 @@
+<Type Name="CallerIdConstants" FullName="Microsoft.Bot.Schema.CallerIdConstants">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="dad76b4d596a8bf446eb82655eca1dbea1f95cc7" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150159" /></Metadata><TypeSignature Language="C#" Value="public static class CallerIdConstants" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit CallerIdConstants extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.CallerIdConstants" />
+  <TypeSignature Language="VB.NET" Value="Public Class CallerIdConstants" />
+  <TypeSignature Language="F#" Value="type CallerIdConstants = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Constantes usadas para popular a <see cref="P:Microsoft.Bot.Schema.Activity.CallerId" /> propriedade.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BotToBotPrefix">
+      <MemberSignature Language="C#" Value="public const string BotToBotPrefix;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string BotToBotPrefix" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Schema.CallerIdConstants.BotToBotPrefix" />
+      <MemberSignature Language="VB.NET" Value="Public Const BotToBotPrefix As String " />
+      <MemberSignature Language="F#" Value="val mutable BotToBotPrefix : string" Usage="Microsoft.Bot.Schema.CallerIdConstants.BotToBotPrefix" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>O prefixo da ID do chamador quando um bot inicia uma solicitação para outro bot.</summary>
+        <remarks>Esse prefixo será seguido pela ID do aplicativo Azure Active Directory do bot que iniciou a chamada.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PublicAzureChannel">
+      <MemberSignature Language="C#" Value="public const string PublicAzureChannel;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string PublicAzureChannel" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Schema.CallerIdConstants.PublicAzureChannel" />
+      <MemberSignature Language="VB.NET" Value="Public Const PublicAzureChannel As String " />
+      <MemberSignature Language="F#" Value="val mutable PublicAzureChannel : string" Usage="Microsoft.Bot.Schema.CallerIdConstants.PublicAzureChannel" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>A ID do chamador para qualquer canal do bot Framework.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="USGovChannel">
+      <MemberSignature Language="C#" Value="public const string USGovChannel;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string USGovChannel" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Schema.CallerIdConstants.USGovChannel" />
+      <MemberSignature Language="VB.NET" Value="Public Const USGovChannel As String " />
+      <MemberSignature Language="F#" Value="val mutable USGovChannel : string" Usage="Microsoft.Bot.Schema.CallerIdConstants.USGovChannel" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>A ID do chamador para qualquer canal de nuvem do governo dos EUA da estrutura de bot.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

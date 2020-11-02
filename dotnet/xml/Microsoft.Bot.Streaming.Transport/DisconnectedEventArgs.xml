@@ -1,0 +1,89 @@
+<Type Name="DisconnectedEventArgs" FullName="Microsoft.Bot.Streaming.Transport.DisconnectedEventArgs">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="e874c1184ab9f76a2a92b9122065f98bde79fc31" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151800" /></Metadata><TypeSignature Language="C#" Value="public class DisconnectedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DisconnectedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Streaming.Transport.DisconnectedEventArgs" />
+  <TypeSignature Language="VB.NET" Value="Public Class DisconnectedEventArgs&#xA;Inherits EventArgs" />
+  <TypeSignature Language="F#" Value="type DisconnectedEventArgs = class&#xA;    inherit EventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Argumentos a serem incluídos quando eventos de desconexão são acionados.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DisconnectedEventArgs ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Streaming.Transport.DisconnectedEventArgs.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Empty">
+      <MemberSignature Language="C#" Value="public static Microsoft.Bot.Streaming.Transport.DisconnectedEventArgs Empty { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class Microsoft.Bot.Streaming.Transport.DisconnectedEventArgs Empty" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Streaming.Transport.DisconnectedEventArgs.Empty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Property Empty As DisconnectedEventArgs" />
+      <MemberSignature Language="F#" Value="member this.Empty : Microsoft.Bot.Streaming.Transport.DisconnectedEventArgs with get, set" Usage="Microsoft.Bot.Streaming.Transport.DisconnectedEventArgs.Empty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Streaming.Transport.DisconnectedEventArgs</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define um conjunto de argumentos vazio.</summary>
+        <value>Um novo, vazio, conjunto de <see cref="T:Microsoft.Bot.Streaming.Transport.DisconnectedEventArgs" /> .</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reason">
+      <MemberSignature Language="C#" Value="public string Reason { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Reason" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Streaming.Transport.DisconnectedEventArgs.Reason" />
+      <MemberSignature Language="VB.NET" Value="Public Property Reason As String" />
+      <MemberSignature Language="F#" Value="member this.Reason : string with get, set" Usage="Microsoft.Bot.Streaming.Transport.DisconnectedEventArgs.Reason" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o campo de motivo dos argumentos.</summary>
+        <value>O motivo pelo qual o evento de desconexão foi acionado, em texto sem formatação.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

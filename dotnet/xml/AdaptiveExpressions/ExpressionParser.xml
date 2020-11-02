@@ -1,0 +1,127 @@
+<Type Name="ExpressionParser" FullName="AdaptiveExpressions.ExpressionParser">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="22b7fd3d0e1fa25f71b65da4d50491478430698f" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151311" /></Metadata><TypeSignature Language="C#" Value="public class ExpressionParser : AdaptiveExpressions.IExpressionParser" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ExpressionParser extends System.Object implements class AdaptiveExpressions.IExpressionParser" />
+  <TypeSignature Language="DocId" Value="T:AdaptiveExpressions.ExpressionParser" />
+  <TypeSignature Language="VB.NET" Value="Public Class ExpressionParser&#xA;Implements IExpressionParser" />
+  <TypeSignature Language="F#" Value="type ExpressionParser = class&#xA;    interface IExpressionParser" />
+  <AssemblyInfo>
+    <AssemblyName>AdaptiveExpressions</AssemblyName>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>AdaptiveExpressions.IExpressionParser</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Analisador para transformar cadeias de caracteres em um <see cref="T:AdaptiveExpressions.Expression" /> .</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExpressionParser (AdaptiveExpressions.EvaluatorLookup lookup = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class AdaptiveExpressions.EvaluatorLookup lookup) cil managed" />
+      <MemberSignature Language="DocId" Value="M:AdaptiveExpressions.ExpressionParser.#ctor(AdaptiveExpressions.EvaluatorLookup)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (Optional lookup As EvaluatorLookup = Nothing)" />
+      <MemberSignature Language="F#" Value="new AdaptiveExpressions.ExpressionParser : AdaptiveExpressions.EvaluatorLookup -&gt; AdaptiveExpressions.ExpressionParser" Usage="new AdaptiveExpressions.ExpressionParser lookup" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>AdaptiveExpressions</AssemblyName>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="lookup" Type="AdaptiveExpressions.EvaluatorLookup" />
+      </Parameters>
+      <Docs>
+        <param name="lookup">Delegado para pesquisar informações de avaliação do tipo cadeia de caracteres.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:AdaptiveExpressions.ExpressionParser" />.
+Construtor.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AntlrParse">
+      <MemberSignature Language="C#" Value="protected static Antlr4.Runtime.Tree.IParseTree AntlrParse (string expression);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class Antlr4.Runtime.Tree.IParseTree AntlrParse(string expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:AdaptiveExpressions.ExpressionParser.AntlrParse(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Protected Shared Function AntlrParse (expression As String) As IParseTree" />
+      <MemberSignature Language="F#" Value="static member AntlrParse : string -&gt; Antlr4.Runtime.Tree.IParseTree" Usage="AdaptiveExpressions.ExpressionParser.AntlrParse expression" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>AdaptiveExpressions</AssemblyName>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Antlr4.Runtime.Tree.IParseTree</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expression" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="expression">A expressão de cadeia de caracteres de entrada.</param>
+        <summary>Analise a expressão para ANTLR analisador e analisador.</summary>
+        <returns>Um ParseTree.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EvaluatorLookup">
+      <MemberSignature Language="C#" Value="public AdaptiveExpressions.EvaluatorLookup EvaluatorLookup { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class AdaptiveExpressions.EvaluatorLookup EvaluatorLookup" />
+      <MemberSignature Language="DocId" Value="P:AdaptiveExpressions.ExpressionParser.EvaluatorLookup" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property EvaluatorLookup As EvaluatorLookup" />
+      <MemberSignature Language="F#" Value="member this.EvaluatorLookup : AdaptiveExpressions.EvaluatorLookup" Usage="AdaptiveExpressions.ExpressionParser.EvaluatorLookup" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>AdaptiveExpressions</AssemblyName>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>AdaptiveExpressions.EvaluatorLookup</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém o elegado para consultar informações de função do tipo.</summary>
+        <value>O elegado para consultar informações de função do tipo.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public AdaptiveExpressions.Expression Parse (string expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class AdaptiveExpressions.Expression Parse(string expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:AdaptiveExpressions.ExpressionParser.Parse(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Parse (expression As String) As Expression" />
+      <MemberSignature Language="F#" Value="abstract member Parse : string -&gt; AdaptiveExpressions.Expression&#xA;override this.Parse : string -&gt; AdaptiveExpressions.Expression" Usage="expressionParser.Parse expression" />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:AdaptiveExpressions.IExpressionParser.Parse(System.String)</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>AdaptiveExpressions</AssemblyName>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>AdaptiveExpressions.Expression</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expression" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="expression">Expressão a ser analisada.</param>
+        <summary>Analise a entrada em uma expressão.</summary>
+        <returns>Árvore de expressão.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

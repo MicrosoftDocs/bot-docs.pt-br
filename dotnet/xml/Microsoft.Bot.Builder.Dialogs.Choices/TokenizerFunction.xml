@@ -1,0 +1,38 @@
+<Type Name="TokenizerFunction" FullName="Microsoft.Bot.Builder.Dialogs.Choices.TokenizerFunction">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="4582241fc21817a292bbbd52d4a90d8de7015ce6" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151890" /></Metadata><TypeSignature Language="C#" Value="public delegate System.Collections.Generic.List&lt;Microsoft.Bot.Builder.Dialogs.Choices.Token&gt; TokenizerFunction(string text, string locale = default);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TokenizerFunction extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Choices.TokenizerFunction" />
+  <TypeSignature Language="VB.NET" Value="Public Delegate Function TokenizerFunction(text As String, Optional locale As String = Nothing) As List(Of Token) " />
+  <TypeSignature Language="F#" Value="type TokenizerFunction = delegate of string * string -&gt; List&lt;Token&gt;" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+    <AssemblyVersion>4.0.7.0</AssemblyVersion>
+    <AssemblyVersion>4.1.5.0</AssemblyVersion>
+    <AssemblyVersion>4.3.2.0</AssemblyVersion>
+    <AssemblyVersion>4.4.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.0</AssemblyVersion>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="text" Type="System.String" />
+    <Parameter Name="locale" Type="System.String" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Collections.Generic.List&lt;Microsoft.Bot.Builder.Dialogs.Choices.Token&gt;</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="text">O texto de entrada.</param>
+    <param name="locale">Opcional, identifica a localidade do texto de entrada.</param>
+    <summary>Representa um método de retorno de chamada que pode interromper uma cadeia de caracteres em seus tokens de componente.</summary>
+    <returns>A lista dos objetos encontrados <see cref="T:Microsoft.Bot.Builder.Dialogs.Choices.Token" /> .</returns>
+    <remarks>To be added.</remarks>
+  </Docs>
+</Type>

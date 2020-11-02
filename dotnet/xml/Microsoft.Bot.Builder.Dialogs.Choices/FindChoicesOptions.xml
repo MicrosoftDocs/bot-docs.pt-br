@@ -1,0 +1,191 @@
+<Type Name="FindChoicesOptions" FullName="Microsoft.Bot.Builder.Dialogs.Choices.FindChoicesOptions">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c00ab6a749ec8ad4b7be84463b6f1d48598357e4" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151900" /></Metadata><TypeSignature Language="C#" Value="public class FindChoicesOptions : Microsoft.Bot.Builder.Dialogs.Choices.FindValuesOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FindChoicesOptions extends Microsoft.Bot.Builder.Dialogs.Choices.FindValuesOptions" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Choices.FindChoicesOptions" />
+  <TypeSignature Language="VB.NET" Value="Public Class FindChoicesOptions&#xA;Inherits FindValuesOptions" />
+  <TypeSignature Language="F#" Value="type FindChoicesOptions = class&#xA;    inherit FindValuesOptions" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+    <AssemblyVersion>4.0.7.0</AssemblyVersion>
+    <AssemblyVersion>4.1.5.0</AssemblyVersion>
+    <AssemblyVersion>4.3.2.0</AssemblyVersion>
+    <AssemblyVersion>4.4.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.0</AssemblyVersion>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Choices.FindValuesOptions</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Contém opções para controlar como a entrada é correspondida em uma lista de opções.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FindChoicesOptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Choices.FindChoicesOptions.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NoAction">
+      <MemberSignature Language="C#" Value="public bool NoAction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool NoAction" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Dialogs.Choices.FindChoicesOptions.NoAction" />
+      <MemberSignature Language="VB.NET" Value="Public Property NoAction As Boolean" />
+      <MemberSignature Language="F#" Value="member this.NoAction : bool with get, set" Usage="Microsoft.Bot.Builder.Dialogs.Choices.FindChoicesOptions.NoAction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty("noAction")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty("noAction")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define um valor que indica se o título da ação de opções não será pesquisado.
+O padrão é <c>false</c>. Isso é opcional.</summary>
+        <value>Um <c>verdadeiro</c> se o título da ação de opções não for pesquisado; caso contrário, <c>false</c>.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NoValue">
+      <MemberSignature Language="C#" Value="public bool NoValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool NoValue" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Dialogs.Choices.FindChoicesOptions.NoValue" />
+      <MemberSignature Language="VB.NET" Value="Public Property NoValue As Boolean" />
+      <MemberSignature Language="F#" Value="member this.NoValue : bool with get, set" Usage="Microsoft.Bot.Builder.Dialogs.Choices.FindChoicesOptions.NoValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty("noValue")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty("noValue")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define um valor que indica se o valor das opções não será pesquisado.
+O padrão é <c>false</c>. Isso é opcional.</summary>
+        <value>Um <c>verdadeiro</c> se o valor das opções não será pesquisado; caso contrário, <c>false</c>.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecognizeNumbers">
+      <MemberSignature Language="C#" Value="public bool RecognizeNumbers { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RecognizeNumbers" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Dialogs.Choices.FindChoicesOptions.RecognizeNumbers" />
+      <MemberSignature Language="VB.NET" Value="Public Property RecognizeNumbers As Boolean" />
+      <MemberSignature Language="F#" Value="member this.RecognizeNumbers : bool with get, set" Usage="Microsoft.Bot.Builder.Dialogs.Choices.FindChoicesOptions.RecognizeNumbers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty("recognizeNumbers")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty("recognizeNumbers")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define um valor que indica se o reconhecedor deve verificar se há números usando o NumberModel do NumberRecognizer.</summary>
+        <value>O padrão é <c>true</c>.  Se <c>for false</c>, o modelo de número não será usado para verificar o expressão de números.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecognizeOrdinals">
+      <MemberSignature Language="C#" Value="public bool RecognizeOrdinals { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RecognizeOrdinals" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Dialogs.Choices.FindChoicesOptions.RecognizeOrdinals" />
+      <MemberSignature Language="VB.NET" Value="Public Property RecognizeOrdinals As Boolean" />
+      <MemberSignature Language="F#" Value="member this.RecognizeOrdinals : bool with get, set" Usage="Microsoft.Bot.Builder.Dialogs.Choices.FindChoicesOptions.RecognizeOrdinals" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty("recognizeOrdinals")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty("recognizeOrdinals")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define um valor que indica se o reconhecedor deve verificar números ordinais usando o OrdinalModel do NumberRecognizer.</summary>
+        <value>O padrão é <c>true</c>.  Se <c>for false</c>, o modelo ordinal não será usado para verificar o expressão de números ordinais.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

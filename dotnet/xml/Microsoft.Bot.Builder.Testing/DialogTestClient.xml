@@ -1,0 +1,264 @@
+<Type Name="DialogTestClient" FullName="Microsoft.Bot.Builder.Testing.DialogTestClient">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a5c4228e2de6b8c1a5060b4941a465e267e084b3" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151838" /></Metadata><TypeSignature Language="C#" Value="public class DialogTestClient" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DialogTestClient extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Testing.DialogTestClient" />
+  <TypeSignature Language="VB.NET" Value="Public Class DialogTestClient" />
+  <TypeSignature Language="F#" Value="type DialogTestClient = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Testing</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Um cliente para para testar caixas de diálogo isoladamente.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DialogTestClient (Microsoft.Bot.Builder.Adapters.TestAdapter testAdapter, Microsoft.Bot.Builder.Dialogs.Dialog targetDialog, object initialDialogOptions = default, System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Builder.IMiddleware&gt; middlewares = default, Microsoft.Bot.Builder.ConversationState conversationState = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Bot.Builder.Adapters.TestAdapter testAdapter, class Microsoft.Bot.Builder.Dialogs.Dialog targetDialog, object initialDialogOptions, class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Bot.Builder.IMiddleware&gt; middlewares, class Microsoft.Bot.Builder.ConversationState conversationState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Testing.DialogTestClient.#ctor(Microsoft.Bot.Builder.Adapters.TestAdapter,Microsoft.Bot.Builder.Dialogs.Dialog,System.Object,System.Collections.Generic.IEnumerable{Microsoft.Bot.Builder.IMiddleware},Microsoft.Bot.Builder.ConversationState)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (testAdapter As TestAdapter, targetDialog As Dialog, Optional initialDialogOptions As Object = Nothing, Optional middlewares As IEnumerable(Of IMiddleware) = Nothing, Optional conversationState As ConversationState = Nothing)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.Testing.DialogTestClient : Microsoft.Bot.Builder.Adapters.TestAdapter * Microsoft.Bot.Builder.Dialogs.Dialog * obj * seq&lt;Microsoft.Bot.Builder.IMiddleware&gt; * Microsoft.Bot.Builder.ConversationState -&gt; Microsoft.Bot.Builder.Testing.DialogTestClient" Usage="new Microsoft.Bot.Builder.Testing.DialogTestClient (testAdapter, targetDialog, initialDialogOptions, middlewares, conversationState)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Testing</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="testAdapter" Type="Microsoft.Bot.Builder.Adapters.TestAdapter" />
+        <Parameter Name="targetDialog" Type="Microsoft.Bot.Builder.Dialogs.Dialog" />
+        <Parameter Name="initialDialogOptions" Type="System.Object" />
+        <Parameter Name="middlewares" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Builder.IMiddleware&gt;" />
+        <Parameter Name="conversationState" Type="Microsoft.Bot.Builder.ConversationState" />
+      </Parameters>
+      <Docs>
+        <param name="testAdapter">O <see cref="T:Microsoft.Bot.Builder.Adapters.TestAdapter" /> a ser usado.</param>
+        <param name="targetDialog">A caixa de diálogo a ser testada. Essa será a caixa de diálogo raiz do cliente de teste.</param>
+        <param name="initialDialogOptions">(Opcional) argumentos adicionais a serem passados para a caixa de diálogo que está sendo iniciada.</param>
+        <param name="middlewares">Adicional Uma lista de middleware a ser adicionada ao adaptador de teste.</param>
+        <param name="conversationState">Adicional Um <see cref="P:Microsoft.Bot.Builder.Testing.DialogTestClient.ConversationState" /> para usar no cliente de teste.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Testing.DialogTestClient" />.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DialogTestClient (string channelId, Microsoft.Bot.Builder.Dialogs.Dialog targetDialog, object initialDialogOptions = default, System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Builder.IMiddleware&gt; middlewares = default, Microsoft.Bot.Builder.ConversationState conversationState = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string channelId, class Microsoft.Bot.Builder.Dialogs.Dialog targetDialog, object initialDialogOptions, class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Bot.Builder.IMiddleware&gt; middlewares, class Microsoft.Bot.Builder.ConversationState conversationState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Testing.DialogTestClient.#ctor(System.String,Microsoft.Bot.Builder.Dialogs.Dialog,System.Object,System.Collections.Generic.IEnumerable{Microsoft.Bot.Builder.IMiddleware},Microsoft.Bot.Builder.ConversationState)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (channelId As String, targetDialog As Dialog, Optional initialDialogOptions As Object = Nothing, Optional middlewares As IEnumerable(Of IMiddleware) = Nothing, Optional conversationState As ConversationState = Nothing)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.Testing.DialogTestClient : string * Microsoft.Bot.Builder.Dialogs.Dialog * obj * seq&lt;Microsoft.Bot.Builder.IMiddleware&gt; * Microsoft.Bot.Builder.ConversationState -&gt; Microsoft.Bot.Builder.Testing.DialogTestClient" Usage="new Microsoft.Bot.Builder.Testing.DialogTestClient (channelId, targetDialog, initialDialogOptions, middlewares, conversationState)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Testing</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="channelId" Type="System.String" />
+        <Parameter Name="targetDialog" Type="Microsoft.Bot.Builder.Dialogs.Dialog" />
+        <Parameter Name="initialDialogOptions" Type="System.Object" />
+        <Parameter Name="middlewares" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Builder.IMiddleware&gt;" />
+        <Parameter Name="conversationState" Type="Microsoft.Bot.Builder.ConversationState" />
+      </Parameters>
+      <Docs>
+        <param name="channelId">A channelId (consulte <see cref="T:Microsoft.Bot.Connector.Channels" /> ) a ser usada para o teste.
+Use <see cref="F:Microsoft.Bot.Connector.Channels.Emulator" /> ou <see cref="F:Microsoft.Bot.Connector.Channels.Test" /> se você não tiver certeza do canal que está sendo direcionado.
+Caso contrário, é recomendável que você use a ID para os canais que o bot usará.
+Considere escrever um caso de teste para cada canal.</param>
+        <param name="targetDialog">A caixa de diálogo a ser testada. Essa será a caixa de diálogo raiz do cliente de teste.</param>
+        <param name="initialDialogOptions">(Opcional) argumentos adicionais a serem passados para a caixa de diálogo que está sendo iniciada.</param>
+        <param name="middlewares">Adicional Uma lista de middleware a ser adicionada ao adaptador de teste.</param>
+        <param name="conversationState">Adicional Um <see cref="P:Microsoft.Bot.Builder.Testing.DialogTestClient.ConversationState" /> para usar no cliente de teste.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Testing.DialogTestClient" />.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConversationState">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.ConversationState ConversationState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.ConversationState ConversationState" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Testing.DialogTestClient.ConversationState" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ConversationState As ConversationState" />
+      <MemberSignature Language="F#" Value="member this.ConversationState : Microsoft.Bot.Builder.ConversationState" Usage="Microsoft.Bot.Builder.Testing.DialogTestClient.ConversationState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Testing</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.ConversationState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém o mais recente <see cref="P:Microsoft.Bot.Builder.Testing.DialogTestClient.ConversationState" /> para <see cref="T:Microsoft.Bot.Builder.Testing.DialogTestClient" /> .</summary>
+        <value>Uma <see cref="P:Microsoft.Bot.Builder.Testing.DialogTestClient.ConversationState" /> instância para o cliente de teste atual.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DialogContext">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Dialogs.DialogContext DialogContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.Dialogs.DialogContext DialogContext" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Testing.DialogTestClient.DialogContext" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DialogContext As DialogContext" />
+      <MemberSignature Language="F#" Value="member this.DialogContext : Microsoft.Bot.Builder.Dialogs.DialogContext" Usage="Microsoft.Bot.Builder.Testing.DialogTestClient.DialogContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Testing</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Dialogs.DialogContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém uma referência para o <see cref="P:Microsoft.Bot.Builder.Testing.DialogTestClient.DialogContext" /> .</summary>
+        <value>Uma referência para o <see cref="P:Microsoft.Bot.Builder.Testing.DialogTestClient.DialogContext" /> .</value>
+        <remarks>Essa propriedade será nula até que pelo menos uma atividade seja enviada para <see cref="T:Microsoft.Bot.Builder.Testing.DialogTestClient" /> .</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DialogTurnResult">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Dialogs.DialogTurnResult DialogTurnResult { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.Dialogs.DialogTurnResult DialogTurnResult" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Testing.DialogTestClient.DialogTurnResult" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DialogTurnResult As DialogTurnResult" />
+      <MemberSignature Language="F#" Value="member this.DialogTurnResult : Microsoft.Bot.Builder.Dialogs.DialogTurnResult" Usage="Microsoft.Bot.Builder.Testing.DialogTestClient.DialogTurnResult" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Testing</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Dialogs.DialogTurnResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém a versão mais recente <see cref="P:Microsoft.Bot.Builder.Testing.DialogTestClient.DialogTurnResult" /> para a caixa de diálogo que está sendo testada.</summary>
+        <value>Uma <see cref="P:Microsoft.Bot.Builder.Testing.DialogTestClient.DialogTurnResult" /> instância com o resultado da última vez.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNextReply&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public virtual T GetNextReply&lt;T&gt; () where T : Microsoft.Bot.Schema.IActivity;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance !!T GetNextReply&lt;(class Microsoft.Bot.Schema.IActivity) T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Testing.DialogTestClient.GetNextReply``1" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetNextReply(Of T As IActivity) () As T" />
+      <MemberSignature Language="F#" Value="abstract member GetNextReply : unit -&gt; 'T (requires 'T :&gt; Microsoft.Bot.Schema.IActivity)&#xA;override this.GetNextReply : unit -&gt; 'T (requires 'T :&gt; Microsoft.Bot.Schema.IActivity)" Usage="dialogTestClient.GetNextReply " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Testing</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <InterfaceName>Microsoft.Bot.Schema.IActivity</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">Um <see cref="T:Microsoft.Bot.Schema.IActivity" /> tipo derivado.</typeparam>
+        <summary>Obtém a próxima resposta do bot.</summary>
+        <returns>A próxima atividade na fila; ou NULL, se a fila estiver vazia.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendActivityAsync&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;T&gt; SendActivityAsync&lt;T&gt; (Microsoft.Bot.Schema.Activity activity, System.Threading.CancellationToken cancellationToken = default) where T : Microsoft.Bot.Schema.IActivity;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;!!T&gt; SendActivityAsync&lt;(class Microsoft.Bot.Schema.IActivity) T&gt;(class Microsoft.Bot.Schema.Activity activity, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Testing.DialogTestClient.SendActivityAsync``1(Microsoft.Bot.Schema.Activity,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function SendActivityAsync(Of T As IActivity) (activity As Activity, Optional cancellationToken As CancellationToken = Nothing) As Task(Of T)" />
+      <MemberSignature Language="F#" Value="abstract member SendActivityAsync : Microsoft.Bot.Schema.Activity * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;'T (requires 'T :&gt; Microsoft.Bot.Schema.IActivity)&gt; (requires 'T :&gt; Microsoft.Bot.Schema.IActivity)&#xA;override this.SendActivityAsync : Microsoft.Bot.Schema.Activity * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;'T (requires 'T :&gt; Microsoft.Bot.Schema.IActivity)&gt; (requires 'T :&gt; Microsoft.Bot.Schema.IActivity)" Usage="dialogTestClient.SendActivityAsync (activity, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Testing</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <InterfaceName>Microsoft.Bot.Schema.IActivity</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activity" Type="Microsoft.Bot.Schema.Activity" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">Um <see cref="T:Microsoft.Bot.Schema.IActivity" /> tipo derivado.</typeparam>
+        <param name="activity">A atividade a ser enviada.</param>
+        <param name="cancellationToken">O token de cancelamento.</param>
+        <summary>Envia um <see cref="T:Microsoft.Bot.Schema.Activity" /> para a caixa de diálogo de destino.</summary>
+        <returns>Um <see cref="T:System.Threading.Tasks.Task" /> que representa o resultado da operação assíncrona.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendActivityAsync&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;T&gt; SendActivityAsync&lt;T&gt; (string text, System.Threading.CancellationToken cancellationToken = default) where T : Microsoft.Bot.Schema.IActivity;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;!!T&gt; SendActivityAsync&lt;(class Microsoft.Bot.Schema.IActivity) T&gt;(string text, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Testing.DialogTestClient.SendActivityAsync``1(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function SendActivityAsync(Of T As IActivity) (text As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of T)" />
+      <MemberSignature Language="F#" Value="abstract member SendActivityAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;'T (requires 'T :&gt; Microsoft.Bot.Schema.IActivity)&gt; (requires 'T :&gt; Microsoft.Bot.Schema.IActivity)&#xA;override this.SendActivityAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;'T (requires 'T :&gt; Microsoft.Bot.Schema.IActivity)&gt; (requires 'T :&gt; Microsoft.Bot.Schema.IActivity)" Usage="dialogTestClient.SendActivityAsync (text, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Testing</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <InterfaceName>Microsoft.Bot.Schema.IActivity</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">Um <see cref="T:Microsoft.Bot.Schema.IActivity" /> tipo derivado.</typeparam>
+        <param name="text">O texto da mensagem a ser enviada.</param>
+        <param name="cancellationToken">O token de cancelamento.</param>
+        <summary>Envia uma atividade de mensagem para a caixa de diálogo de destino.</summary>
+        <returns>Um <see cref="T:System.Threading.Tasks.Task" /> que representa o resultado da operação assíncrona.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

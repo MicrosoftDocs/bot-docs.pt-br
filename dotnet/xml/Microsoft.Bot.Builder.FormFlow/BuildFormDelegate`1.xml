@@ -1,0 +1,34 @@
+<Type Name="BuildFormDelegate&lt;T&gt;" FullName="Microsoft.Bot.Builder.FormFlow.BuildFormDelegate&lt;T&gt;">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d58211b06dab58ba3ca266289b6f20e7289293e9" /><Meta Name="ms.sourcegitcommit" Value="5add21ad3daf0ce894612a22b951b98350961720" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="06/04/2020" /><Meta Name="ms.locfileid" Value="93149252" /></Metadata><TypeSignature Language="C#" Value="public delegate Microsoft.Bot.Builder.FormFlow.IForm&lt;T&gt; BuildFormDelegate&lt;T&gt;() where T : class;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed BuildFormDelegate`1&lt;class T&gt; extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.FormFlow.BuildFormDelegate`1" />
+  <TypeSignature Language="VB.NET" Value="Public Delegate Function BuildFormDelegate(Of T)() As IForm(Of T) " />
+  <TypeSignature Language="F#" Value="type BuildFormDelegate&lt;'T (requires 'T : null)&gt; = delegate of unit -&gt; IForm&lt;'T (requires 'T : null)&gt;" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+    <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+    <AssemblyVersion>3.20.1.42</AssemblyVersion>
+    <AssemblyVersion>3.30.0.1</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T">
+      <Constraints>
+        <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters />
+  <ReturnValue>
+    <ReturnType>Microsoft.Bot.Builder.FormFlow.IForm&lt;T&gt;</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <typeparam name="T">O tipo de estado do formulário.</typeparam>
+    <summary>Delegado para criar o formulário.</summary>
+    <returns>Um <see cref="T:Microsoft.Bot.Builder.FormFlow.IForm`1" />.</returns>
+    <remarks>Esse é um delegado para que possamos recriar o formulário e não preciso serializar a definição de formulário com cada mensagem.</remarks>
+  </Docs>
+</Type>

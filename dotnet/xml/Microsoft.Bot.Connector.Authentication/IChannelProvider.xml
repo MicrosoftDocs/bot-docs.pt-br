@@ -1,0 +1,94 @@
+<Type Name="IChannelProvider" FullName="Microsoft.Bot.Connector.Authentication.IChannelProvider">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3522039ba256e2bbb472d9056c809337f6cc32be" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151525" /></Metadata><TypeSignature Language="C#" Value="public interface IChannelProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IChannelProvider" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Connector.Authentication.IChannelProvider" />
+  <TypeSignature Language="VB.NET" Value="Public Interface IChannelProvider" />
+  <TypeSignature Language="F#" Value="type IChannelProvider = interface" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>Interface channelprovider. Essa interface permite que os bots forneçam sua própria implementação para os parâmetros de configuração para se conectar a um bot.
+Serviço de canal do Framework.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetChannelServiceAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;string&gt; GetChannelServiceAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;string&gt; GetChannelServiceAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Connector.Authentication.IChannelProvider.GetChannelServiceAsync" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetChannelServiceAsync () As Task(Of String)" />
+      <MemberSignature Language="F#" Value="abstract member GetChannelServiceAsync : unit -&gt; System.Threading.Tasks.Task&lt;string&gt;" Usage="iChannelProvider.GetChannelServiceAsync " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Obtém a propriedade do serviço de canal para este provedor de canal.</summary>
+        <returns>A propriedade de serviço do canal para o provedor de canal.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsGovernment">
+      <MemberSignature Language="C#" Value="public bool IsGovernment ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsGovernment() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Connector.Authentication.IChannelProvider.IsGovernment" />
+      <MemberSignature Language="VB.NET" Value="Public Function IsGovernment () As Boolean" />
+      <MemberSignature Language="F#" Value="abstract member IsGovernment : unit -&gt; bool" Usage="iChannelProvider.IsGovernment " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Obtém um valor de se este provedor representa um canal no Azure governamental.</summary>
+        <returns>True se este provedor de canal representar um canal no Azure governamental.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPublicAzure">
+      <MemberSignature Language="C#" Value="public bool IsPublicAzure ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsPublicAzure() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Connector.Authentication.IChannelProvider.IsPublicAzure" />
+      <MemberSignature Language="VB.NET" Value="Public Function IsPublicAzure () As Boolean" />
+      <MemberSignature Language="F#" Value="abstract member IsPublicAzure : unit -&gt; bool" Usage="iChannelProvider.IsPublicAzure " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Obtém um valor de se este provedor representa um canal no Azure público.</summary>
+        <returns>True se este provedor de canal representar um canal no Azure público.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

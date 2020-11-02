@@ -1,0 +1,38 @@
+<Type Name="BotCallbackHandler" FullName="Microsoft.Bot.Builder.BotCallbackHandler">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f64e06c9c247532f95d9b82c097e1c08c8b2991a" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150525" /></Metadata><TypeSignature Language="C#" Value="public delegate System.Threading.Tasks.Task BotCallbackHandler(ITurnContext turnContext, CancellationToken cancellationToken);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed BotCallbackHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.BotCallbackHandler" />
+  <TypeSignature Language="VB.NET" Value="Public Delegate Function BotCallbackHandler(turnContext As ITurnContext, cancellationToken As CancellationToken) As Task " />
+  <TypeSignature Language="F#" Value="type BotCallbackHandler = delegate of ITurnContext * CancellationToken -&gt; Task" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>4.0.7.0</AssemblyVersion>
+    <AssemblyVersion>4.1.5.0</AssemblyVersion>
+    <AssemblyVersion>4.3.2.0</AssemblyVersion>
+    <AssemblyVersion>4.4.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.0</AssemblyVersion>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="turnContext" Type="Microsoft.Bot.Builder.ITurnContext" />
+    <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Threading.Tasks.Task</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="turnContext">O contexto de ativação.</param>
+    <param name="cancellationToken">O token de cancelamento da tarefa.</param>
+    <summary>O delegado de retorno de chamada para o código do aplicativo.</summary>
+    <returns>Um <see cref="T:System.Threading.Tasks.Task" /> representando a operação assíncrona.</returns>
+    <remarks>To be added.</remarks>
+  </Docs>
+</Type>

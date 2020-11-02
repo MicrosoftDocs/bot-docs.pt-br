@@ -1,0 +1,256 @@
+<Type Name="PaymentResponse" FullName="Microsoft.Bot.Schema.PaymentResponse">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b460adc1527e243fe48fa06b15cbdb0c71d2df54" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150276" /></Metadata><TypeSignature Language="C#" Value="public class PaymentResponse" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PaymentResponse extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.PaymentResponse" />
+  <TypeSignature Language="VB.NET" Value="Public Class PaymentResponse" />
+  <TypeSignature Language="F#" Value="type PaymentResponse = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Obsolete("Bot Framework no longer supports payments.")]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Obsolete("Bot Framework no longer supports payments.")&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Um PaymentResponse é retornado quando um usuário seleciona um método de pagamento e aprovou uma solicitação de pagamento</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PaymentResponse ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Schema.PaymentResponse.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Inicializa uma nova instância da classe PaymentResponse.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PaymentResponse (string methodName = default, object details = default, Microsoft.Bot.Schema.PaymentAddress shippingAddress = default, string shippingOption = default, string payerEmail = default, string payerPhone = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string methodName, object details, class Microsoft.Bot.Schema.PaymentAddress shippingAddress, string shippingOption, string payerEmail, string payerPhone) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Schema.PaymentResponse.#ctor(System.String,System.Object,Microsoft.Bot.Schema.PaymentAddress,System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (Optional methodName As String = Nothing, Optional details As Object = Nothing, Optional shippingAddress As PaymentAddress = Nothing, Optional shippingOption As String = Nothing, Optional payerEmail As String = Nothing, Optional payerPhone As String = Nothing)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Schema.PaymentResponse : string * obj * Microsoft.Bot.Schema.PaymentAddress * string * string * string -&gt; Microsoft.Bot.Schema.PaymentResponse" Usage="new Microsoft.Bot.Schema.PaymentResponse (methodName, details, shippingAddress, shippingOption, payerEmail, payerPhone)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="methodName" Type="System.String" />
+        <Parameter Name="details" Type="System.Object" />
+        <Parameter Name="shippingAddress" Type="Microsoft.Bot.Schema.PaymentAddress" />
+        <Parameter Name="shippingOption" Type="System.String" />
+        <Parameter Name="payerEmail" Type="System.String" />
+        <Parameter Name="payerPhone" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="methodName">O identificador de método de pagamento para o método de pagamento que o usuário selecionou para atender a transação</param>
+        <param name="details">Um objeto serializável em JSON que fornece uma mensagem específica de método de pagamento usada pelo comerciante para processar a transação e determinar a transferência de fundos bem-sucedida</param>
+        <param name="shippingAddress">Se o sinalizador requestShipping foi definido como true no Paymentoptions passado para o Construtor PaymentRequest, shippingAddress será o endereço de envio completo e final escolhido pelo usuário</param>
+        <param name="shippingOption">Se o sinalizador requestShipping foi definido como true no Paymentoptions passado para o Construtor PaymentRequest, shippingOption será o atributo ID da opção de envio selecionada</param>
+        <param name="payerEmail">Se o sinalizador requestPayerEmail foi definido como true no Paymentoptions passado para o Construtor PaymentRequest, payerEmail será o endereço de email escolhido pelo usuário</param>
+        <param name="payerPhone">Se o sinalizador requestPayerPhone foi definido como true no Paymentoptions passado para o Construtor PaymentRequest, payerPhone será o número de telefone escolhido pelo usuário</param>
+        <summary>Inicializa uma nova instância da classe PaymentResponse.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Details">
+      <MemberSignature Language="C#" Value="public object Details { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Details" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.PaymentResponse.Details" />
+      <MemberSignature Language="VB.NET" Value="Public Property Details As Object" />
+      <MemberSignature Language="F#" Value="member this.Details : obj with get, set" Usage="Microsoft.Bot.Schema.PaymentResponse.Details" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="details")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="details")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define um objeto serializável em JSON que fornece uma mensagem específica de método de pagamento usada pelo comerciante para processar a transação e determinar a transferência de fundos bem-sucedida</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MethodName">
+      <MemberSignature Language="C#" Value="public string MethodName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MethodName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.PaymentResponse.MethodName" />
+      <MemberSignature Language="VB.NET" Value="Public Property MethodName As String" />
+      <MemberSignature Language="F#" Value="member this.MethodName : string with get, set" Usage="Microsoft.Bot.Schema.PaymentResponse.MethodName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="methodName")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="methodName")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o identificador de método de pagamento para o método de pagamento que o usuário selecionou para atender a transação</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PayerEmail">
+      <MemberSignature Language="C#" Value="public string PayerEmail { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PayerEmail" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.PaymentResponse.PayerEmail" />
+      <MemberSignature Language="VB.NET" Value="Public Property PayerEmail As String" />
+      <MemberSignature Language="F#" Value="member this.PayerEmail : string with get, set" Usage="Microsoft.Bot.Schema.PaymentResponse.PayerEmail" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="payerEmail")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="payerEmail")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define se o sinalizador requestPayerEmail foi definido como true no Paymentoptions passado para o Construtor PaymentRequest, então payerEmail será o endereço de email escolhido pelo usuário</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PayerPhone">
+      <MemberSignature Language="C#" Value="public string PayerPhone { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PayerPhone" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.PaymentResponse.PayerPhone" />
+      <MemberSignature Language="VB.NET" Value="Public Property PayerPhone As String" />
+      <MemberSignature Language="F#" Value="member this.PayerPhone : string with get, set" Usage="Microsoft.Bot.Schema.PaymentResponse.PayerPhone" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="payerPhone")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="payerPhone")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define se o sinalizador requestPayerPhone foi definido como true no Paymentoptions passado para o Construtor PaymentRequest, então payerPhone será o número de telefone escolhido pelo usuário</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShippingAddress">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Schema.PaymentAddress ShippingAddress { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Schema.PaymentAddress ShippingAddress" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.PaymentResponse.ShippingAddress" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShippingAddress As PaymentAddress" />
+      <MemberSignature Language="F#" Value="member this.ShippingAddress : Microsoft.Bot.Schema.PaymentAddress with get, set" Usage="Microsoft.Bot.Schema.PaymentResponse.ShippingAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="shippingAddress")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="shippingAddress")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Schema.PaymentAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define se o sinalizador requestShipping foi definido como true no Paymentoptions passado para o Construtor PaymentRequest, então shippingAddress será o endereço de envio completo e final escolhido pelo usuário</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShippingOption">
+      <MemberSignature Language="C#" Value="public string ShippingOption { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ShippingOption" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.PaymentResponse.ShippingOption" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShippingOption As String" />
+      <MemberSignature Language="F#" Value="member this.ShippingOption : string with get, set" Usage="Microsoft.Bot.Schema.PaymentResponse.ShippingOption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="shippingOption")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="shippingOption")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define se o sinalizador requestShipping foi definido como true no Paymentoptions passado para o Construtor PaymentRequest, então shippingOption será o atributo ID da opção de envio selecionada</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,29 @@
+<Type Name="RecognizeEnumeration&lt;T&gt;+TermsDelegate" FullName="Microsoft.Bot.Builder.FormFlow.Advanced.RecognizeEnumeration&lt;T&gt;+TermsDelegate">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b6dfc94d5042644c6c5f64643584614a284a288f" /><Meta Name="ms.sourcegitcommit" Value="ac3a7ee8979fc942f9d7420b2f6845c726b6661a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/02/2020" /><Meta Name="ms.locfileid" Value="93149893" /></Metadata><TypeSignature Language="C#" Value="public delegate System.Collections.Generic.IEnumerable&lt;string&gt; RecognizeEnumeration&lt;T&gt;.TermsDelegate(object value) where T : class;" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi sealed RecognizeEnumeration`1/TermsDelegate&lt;class T&gt; extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.FormFlow.Advanced.RecognizeEnumeration`1.TermsDelegate" />
+  <TypeSignature Language="VB.NET" Value="Public Delegate Function RecognizeEnumeration(Of T).TermsDelegate(value As Object) As IEnumerable(Of String) " />
+  <TypeSignature Language="F#" Value="type RecognizeEnumeration&lt;'T (requires 'T : null)&gt;.TermsDelegate = delegate of obj -&gt; seq&lt;string&gt;" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+    <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+    <AssemblyVersion>3.20.1.42</AssemblyVersion>
+    <AssemblyVersion>3.30.0.1</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="value" Type="System.Object" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Collections.Generic.IEnumerable&lt;System.String&gt;</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="value">Valor C# para o qual obter os termos.</param>
+    <summary>Delegado para retornar os termos de correspondência para um valor C#.</summary>
+    <returns>Enumeração de expressões regulares para correspondência para valor.</returns>
+    <remarks>To be added.</remarks>
+  </Docs>
+</Type>

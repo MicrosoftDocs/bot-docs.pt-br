@@ -1,0 +1,281 @@
+<Type Name="TaskModuleTaskInfo" FullName="Microsoft.Bot.Schema.Teams.TaskModuleTaskInfo">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5309fd264f8568d5b639c3c4e3cccb0a77d1b738" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150044" /></Metadata><TypeSignature Language="C#" Value="public class TaskModuleTaskInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TaskModuleTaskInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.Teams.TaskModuleTaskInfo" />
+  <TypeSignature Language="VB.NET" Value="Public Class TaskModuleTaskInfo" />
+  <TypeSignature Language="F#" Value="type TaskModuleTaskInfo = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Metadados para um módulo de tarefa.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TaskModuleTaskInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Schema.Teams.TaskModuleTaskInfo.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Inicializa uma nova instância da classe TaskModuleTaskInfo.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TaskModuleTaskInfo (string title = default, object height = default, object width = default, string url = default, Microsoft.Bot.Schema.Attachment card = default, string fallbackUrl = default, string completionBotId = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string title, object height, object width, string url, class Microsoft.Bot.Schema.Attachment card, string fallbackUrl, string completionBotId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Schema.Teams.TaskModuleTaskInfo.#ctor(System.String,System.Object,System.Object,System.String,Microsoft.Bot.Schema.Attachment,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (Optional title As String = Nothing, Optional height As Object = Nothing, Optional width As Object = Nothing, Optional url As String = Nothing, Optional card As Attachment = Nothing, Optional fallbackUrl As String = Nothing, Optional completionBotId As String = Nothing)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Schema.Teams.TaskModuleTaskInfo : string * obj * obj * string * Microsoft.Bot.Schema.Attachment * string * string -&gt; Microsoft.Bot.Schema.Teams.TaskModuleTaskInfo" Usage="new Microsoft.Bot.Schema.Teams.TaskModuleTaskInfo (title, height, width, url, card, fallbackUrl, completionBotId)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="title" Type="System.String" />
+        <Parameter Name="height" Type="System.Object" />
+        <Parameter Name="width" Type="System.Object" />
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="card" Type="Microsoft.Bot.Schema.Attachment" />
+        <Parameter Name="fallbackUrl" Type="System.String" />
+        <Parameter Name="completionBotId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="title">Aparece abaixo do nome do aplicativo e à direita do ícone do aplicativo.</param>
+        <param name="height">Pode ser um número, que representa a altura do módulo da tarefa em pixels, ou uma cadeia de caracteres, um de: pequeno, médio, grande.</param>
+        <param name="width">Pode ser um número, que representa a largura do módulo da tarefa em pixels, ou uma cadeia de caracteres, uma das: pequena, média, grande.</param>
+        <param name="url">A URL do que é carregado como um iframe dentro do módulo de tarefa. Uma das URLs ou do cartão é necessária.</param>
+        <param name="card">O JSON para o cartão adaptável aparecer no módulo de tarefa.</param>
+        <param name="fallbackUrl">Se um cliente não oferecer suporte ao recurso de módulo de tarefa, essa URL será aberta em uma guia do navegador.</param>
+        <param name="completionBotId">Se um cliente não oferecer suporte ao recurso de módulo de tarefa, essa URL será aberta em uma guia do navegador.</param>
+        <summary>Inicializa uma nova instância da classe TaskModuleTaskInfo.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Card">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Schema.Attachment Card { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Schema.Attachment Card" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.Teams.TaskModuleTaskInfo.Card" />
+      <MemberSignature Language="VB.NET" Value="Public Property Card As Attachment" />
+      <MemberSignature Language="F#" Value="member this.Card : Microsoft.Bot.Schema.Attachment with get, set" Usage="Microsoft.Bot.Schema.Teams.TaskModuleTaskInfo.Card" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="card")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="card")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Schema.Attachment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o JSON para o cartão adaptável aparecer no módulo de tarefa.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompletionBotId">
+      <MemberSignature Language="C#" Value="public string CompletionBotId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CompletionBotId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.Teams.TaskModuleTaskInfo.CompletionBotId" />
+      <MemberSignature Language="VB.NET" Value="Public Property CompletionBotId As String" />
+      <MemberSignature Language="F#" Value="member this.CompletionBotId : string with get, set" Usage="Microsoft.Bot.Schema.Teams.TaskModuleTaskInfo.CompletionBotId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="completionBotId")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="completionBotId")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define se um cliente não oferece suporte ao recurso de módulo de tarefa, essa URL é aberta em uma guia do navegador.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FallbackUrl">
+      <MemberSignature Language="C#" Value="public string FallbackUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FallbackUrl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.Teams.TaskModuleTaskInfo.FallbackUrl" />
+      <MemberSignature Language="VB.NET" Value="Public Property FallbackUrl As String" />
+      <MemberSignature Language="F#" Value="member this.FallbackUrl : string with get, set" Usage="Microsoft.Bot.Schema.Teams.TaskModuleTaskInfo.FallbackUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="fallbackUrl")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="fallbackUrl")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define se um cliente não oferece suporte ao recurso de módulo de tarefa, essa URL é aberta em uma guia do navegador.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Height">
+      <MemberSignature Language="C#" Value="public object Height { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Height" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.Teams.TaskModuleTaskInfo.Height" />
+      <MemberSignature Language="VB.NET" Value="Public Property Height As Object" />
+      <MemberSignature Language="F#" Value="member this.Height : obj with get, set" Usage="Microsoft.Bot.Schema.Teams.TaskModuleTaskInfo.Height" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="height")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="height")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define isso pode ser um número, representando a altura do módulo de tarefa em pixels ou uma cadeia de caracteres: pequeno, médio, grande.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public string Title { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Title" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.Teams.TaskModuleTaskInfo.Title" />
+      <MemberSignature Language="VB.NET" Value="Public Property Title As String" />
+      <MemberSignature Language="F#" Value="member this.Title : string with get, set" Usage="Microsoft.Bot.Schema.Teams.TaskModuleTaskInfo.Title" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="title")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="title")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets ou sets aparece abaixo do nome do aplicativo e à direita do ícone do aplicativo.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Url">
+      <MemberSignature Language="C#" Value="public string Url { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Url" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.Teams.TaskModuleTaskInfo.Url" />
+      <MemberSignature Language="VB.NET" Value="Public Property Url As String" />
+      <MemberSignature Language="F#" Value="member this.Url : string with get, set" Usage="Microsoft.Bot.Schema.Teams.TaskModuleTaskInfo.Url" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="url")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="url")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a URL do que é carregado como um iframe dentro do módulo de tarefa. Uma das URLs ou do cartão é necessária.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public object Width { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Width" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.Teams.TaskModuleTaskInfo.Width" />
+      <MemberSignature Language="VB.NET" Value="Public Property Width As Object" />
+      <MemberSignature Language="F#" Value="member this.Width : obj with get, set" Usage="Microsoft.Bot.Schema.Teams.TaskModuleTaskInfo.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="width")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="width")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define isso pode ser um número, representando a largura do módulo da tarefa em pixels ou uma cadeia de caracteres: pequeno, médio, grande.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

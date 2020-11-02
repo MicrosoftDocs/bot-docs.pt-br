@@ -1,0 +1,78 @@
+<Type Name="QueuesStorage" FullName="Microsoft.Bot.Builder.Azure.Queues.QueuesStorage">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5cd96ca3a8cc281da0410f9da2e88fe0dce86642" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151448" /></Metadata><TypeSignature Language="C#" Value="public class QueuesStorage" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit QueuesStorage extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Azure.Queues.QueuesStorage" />
+  <TypeSignature Language="VB.NET" Value="Public Class QueuesStorage" />
+  <TypeSignature Language="F#" Value="type QueuesStorage = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Azure.Queues</AssemblyName>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Serviço usado para adicionar mensagens a um Azure. Storage. queues.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public QueuesStorage (string queuesStorageConnectionString, string queueName, Newtonsoft.Json.JsonSerializerSettings jsonSerializerSettings = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string queuesStorageConnectionString, string queueName, class Newtonsoft.Json.JsonSerializerSettings jsonSerializerSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Azure.Queues.QueuesStorage.#ctor(System.String,System.String,Newtonsoft.Json.JsonSerializerSettings)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (queuesStorageConnectionString As String, queueName As String, Optional jsonSerializerSettings As JsonSerializerSettings = Nothing)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.Azure.Queues.QueuesStorage : string * string * Newtonsoft.Json.JsonSerializerSettings -&gt; Microsoft.Bot.Builder.Azure.Queues.QueuesStorage" Usage="new Microsoft.Bot.Builder.Azure.Queues.QueuesStorage (queuesStorageConnectionString, queueName, jsonSerializerSettings)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Azure.Queues</AssemblyName>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="queuesStorageConnectionString" Type="System.String" />
+        <Parameter Name="queueName" Type="System.String" />
+        <Parameter Name="jsonSerializerSettings" Type="Newtonsoft.Json.JsonSerializerSettings" />
+      </Parameters>
+      <Docs>
+        <param name="queuesStorageConnectionString">Cadeia de conexão do armazenamento do Azure.</param>
+        <param name="queueName">Nome da fila de armazenamento na qual as entidades serão enfileiradas.</param>
+        <param name="jsonSerializerSettings">Ao passar em JsonSerializerSettings personalizados, recomendamos as seguintes configurações: <para>jsonSerializer. TypeNameHandling = TypeNameHandling. None.</para><para>jsonSerializer. NullValueHandling = NullValueHandling. ignore.</para></param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Azure.Queues.QueuesStorage" />.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueueActivityAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;string&gt; QueueActivityAsync (Microsoft.Bot.Schema.Activity activity, TimeSpan? visibilityTimeout = default, TimeSpan? timeToLive = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;string&gt; QueueActivityAsync(class Microsoft.Bot.Schema.Activity activity, valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; visibilityTimeout, valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; timeToLive, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Azure.Queues.QueuesStorage.QueueActivityAsync(Microsoft.Bot.Schema.Activity,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Function QueueActivityAsync (activity As Activity, Optional visibilityTimeout As Nullable(Of TimeSpan) = Nothing, Optional timeToLive As Nullable(Of TimeSpan) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of String)" />
+      <MemberSignature Language="F#" Value="member this.QueueActivityAsync : Microsoft.Bot.Schema.Activity * Nullable&lt;TimeSpan&gt; * Nullable&lt;TimeSpan&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;string&gt;" Usage="queuesStorage.QueueActivityAsync (activity, visibilityTimeout, timeToLive, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Azure.Queues</AssemblyName>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="Microsoft.Bot.Schema.Activity" />
+        <Parameter Name="visibilityTimeout" Type="System.Nullable&lt;System.TimeSpan&gt;" />
+        <Parameter Name="timeToLive" Type="System.Nullable&lt;System.TimeSpan&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="activity">Espera-se que isso seja um <see cref="T:Microsoft.Bot.Schema.Activity" /> recuperado de uma chamada para uma atividade. GetConversationReference(). GetContinuationActivity().  Isso permite reiniciar a conversa usando BotAdapter. ContinueConversationAsync.</param>
+        <param name="visibilityTimeout">Valor padrão de 0. Não pode ser maior que 7 dias.</param>
+        <param name="timeToLive">Especifica o intervalo de vida útil para a mensagem.</param>
+        <param name="cancellationToken">Token de cancelamento para a operação assíncrona.</param>
+        <summary>Fila e atividade, com opção no Activity. Value para Azure. Storage. queues.</summary>
+        <returns><see cref="T:Azure.Storage.Queues.Models.SendReceipt" /> como uma cadeia de caracteres JSON, da operação QueueClient SendMessageAsync.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

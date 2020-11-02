@@ -1,0 +1,53 @@
+<Type Name="MultipleResumeHandlerException" FullName="Microsoft.Bot.Builder.Dialogs.MultipleResumeHandlerException">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3cf92d53d5d95a469f9f6078a93ba33839ecbf3c" /><Meta Name="ms.sourcegitcommit" Value="ac3a7ee8979fc942f9d7420b2f6845c726b6661a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/02/2020" /><Meta Name="ms.locfileid" Value="93149933" /></Metadata><TypeSignature Language="C#" Value="public sealed class MultipleResumeHandlerException : Microsoft.Bot.Builder.Dialogs.DialogStackException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit MultipleResumeHandlerException extends Microsoft.Bot.Builder.Dialogs.DialogStackException" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.MultipleResumeHandlerException" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class MultipleResumeHandlerException&#xA;Inherits DialogStackException" />
+  <TypeSignature Language="F#" Value="type MultipleResumeHandlerException = class&#xA;    inherit DialogStackException" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+    <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+    <AssemblyVersion>3.20.1.42</AssemblyVersion>
+    <AssemblyVersion>3.30.0.1</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Bot.Builder.Dialogs.DialogStackException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Serializable]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Serializable&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>A exceção que representa vários manipuladores de retomados especificados para a pilha de diálogo.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MultipleResumeHandlerException (Exception inner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Exception inner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.MultipleResumeHandlerException.#ctor(System.Exception)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (inner As Exception)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.Dialogs.MultipleResumeHandlerException : Exception -&gt; Microsoft.Bot.Builder.Dialogs.MultipleResumeHandlerException" Usage="new Microsoft.Bot.Builder.Dialogs.MultipleResumeHandlerException inner" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="inner" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="inner">A exceção que é a causa da exceção atual ou uma referência nula (Nothing no Visual Basic) se nenhuma exceção interna for especificada.</param>
+        <summary>Inicializa uma nova instância da classe MultipleResumeHandlerException.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,254 @@
+<Type Name="SkillDialogOptions" FullName="Microsoft.Bot.Builder.Dialogs.SkillDialogOptions">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="01e6731a684ef18251468869d212ab20301b4da9" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151640" /></Metadata><TypeSignature Language="C#" Value="public class SkillDialogOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SkillDialogOptions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.SkillDialogOptions" />
+  <TypeSignature Language="VB.NET" Value="Public Class SkillDialogOptions" />
+  <TypeSignature Language="F#" Value="type SkillDialogOptions = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Define as opções que serão usadas para executar um <see cref="T:Microsoft.Bot.Builder.Dialogs.SkillDialog" /> .</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SkillDialogOptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.SkillDialogOptions.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BotId">
+      <MemberSignature Language="C#" Value="public string BotId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BotId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Dialogs.SkillDialogOptions.BotId" />
+      <MemberSignature Language="VB.NET" Value="Public Property BotId As String" />
+      <MemberSignature Language="F#" Value="member this.BotId : string with get, set" Usage="Microsoft.Bot.Builder.Dialogs.SkillDialogOptions.BotId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty("botId")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty("botId")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a ID do aplicativo da Microsoft do bot que está chamando a habilidade.</summary>
+        <value>A ID do aplicativo da Microsoft do bot que está chamando a habilidade.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionName">
+      <MemberSignature Language="C#" Value="public string ConnectionName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectionName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Dialogs.SkillDialogOptions.ConnectionName" />
+      <MemberSignature Language="VB.NET" Value="Public Property ConnectionName As String" />
+      <MemberSignature Language="F#" Value="member this.ConnectionName : string with get, set" Usage="Microsoft.Bot.Builder.Dialogs.SkillDialogOptions.ConnectionName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty("connectionName")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty("connectionName")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o nome da conexão OAuth, que seria usado para executar a inscrição única com uma habilidade.</summary>
+        <value>O nome da conexão OAuth para o bot pai.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConversationIdFactory">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Skills.SkillConversationIdFactoryBase ConversationIdFactory { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.Skills.SkillConversationIdFactoryBase ConversationIdFactory" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Dialogs.SkillDialogOptions.ConversationIdFactory" />
+      <MemberSignature Language="VB.NET" Value="Public Property ConversationIdFactory As SkillConversationIdFactoryBase" />
+      <MemberSignature Language="F#" Value="member this.ConversationIdFactory : Microsoft.Bot.Builder.Skills.SkillConversationIdFactoryBase with get, set" Usage="Microsoft.Bot.Builder.Dialogs.SkillDialogOptions.ConversationIdFactory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonIgnore]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonIgnore&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Skills.SkillConversationIdFactoryBase</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define uma instância de um <see cref="T:Microsoft.Bot.Builder.Skills.SkillConversationIdFactoryBase" /> usado para gerar IDs de conversa para interagir com a habilidade.</summary>
+        <value>Uma instância de um <see cref="T:Microsoft.Bot.Builder.Skills.SkillConversationIdFactoryBase" /> usado para gerar IDs de conversa para interagir com a habilidade.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConversationState">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.ConversationState ConversationState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.ConversationState ConversationState" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Dialogs.SkillDialogOptions.ConversationState" />
+      <MemberSignature Language="VB.NET" Value="Public Property ConversationState As ConversationState" />
+      <MemberSignature Language="F#" Value="member this.ConversationState : Microsoft.Bot.Builder.ConversationState with get, set" Usage="Microsoft.Bot.Builder.Dialogs.SkillDialogOptions.ConversationState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonIgnore]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonIgnore&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.ConversationState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o <see cref="P:Microsoft.Bot.Builder.Dialogs.SkillDialogOptions.ConversationState" /> a ser usado pela caixa de diálogo.</summary>
+        <value>O <see cref="P:Microsoft.Bot.Builder.Dialogs.SkillDialogOptions.ConversationState" /> a ser usado pela caixa de diálogo.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Skill">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Skills.BotFrameworkSkill Skill { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.Skills.BotFrameworkSkill Skill" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Dialogs.SkillDialogOptions.Skill" />
+      <MemberSignature Language="VB.NET" Value="Public Property Skill As BotFrameworkSkill" />
+      <MemberSignature Language="F#" Value="member this.Skill : Microsoft.Bot.Builder.Skills.BotFrameworkSkill with get, set" Usage="Microsoft.Bot.Builder.Dialogs.SkillDialogOptions.Skill" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty("skill")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty("skill")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Skills.BotFrameworkSkill</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o <see cref="T:Microsoft.Bot.Builder.Skills.BotFrameworkSkill" /> que a caixa de diálogo chamará.</summary>
+        <value>O <see cref="T:Microsoft.Bot.Builder.Skills.BotFrameworkSkill" /> que a caixa de diálogo chamará.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SkillClient">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Skills.BotFrameworkClient SkillClient { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.Skills.BotFrameworkClient SkillClient" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Dialogs.SkillDialogOptions.SkillClient" />
+      <MemberSignature Language="VB.NET" Value="Public Property SkillClient As BotFrameworkClient" />
+      <MemberSignature Language="F#" Value="member this.SkillClient : Microsoft.Bot.Builder.Skills.BotFrameworkClient with get, set" Usage="Microsoft.Bot.Builder.Dialogs.SkillDialogOptions.SkillClient" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonIgnore]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonIgnore&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Skills.BotFrameworkClient</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o <see cref="T:Microsoft.Bot.Builder.Skills.BotFrameworkClient" /> usado para chamar a habilidade remota.</summary>
+        <value>O <see cref="T:Microsoft.Bot.Builder.Skills.BotFrameworkClient" /> usado para chamar a habilidade remota.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SkillHostEndpoint">
+      <MemberSignature Language="C#" Value="public Uri SkillHostEndpoint { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri SkillHostEndpoint" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Dialogs.SkillDialogOptions.SkillHostEndpoint" />
+      <MemberSignature Language="VB.NET" Value="Public Property SkillHostEndpoint As Uri" />
+      <MemberSignature Language="F#" Value="member this.SkillHostEndpoint : Uri with get, set" Usage="Microsoft.Bot.Builder.Dialogs.SkillDialogOptions.SkillHostEndpoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty("skillHostEndpoint")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty("skillHostEndpoint")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a URL de retorno de chamada para o host de habilidades.</summary>
+        <value>A URL de retorno de chamada para o host de habilidades.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

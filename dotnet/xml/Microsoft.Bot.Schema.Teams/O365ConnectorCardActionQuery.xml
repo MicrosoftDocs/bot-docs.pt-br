@@ -1,0 +1,126 @@
+<Type Name="O365ConnectorCardActionQuery" FullName="Microsoft.Bot.Schema.Teams.O365ConnectorCardActionQuery">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="deb053946ee2be5380472f469b02c875ca423718" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152006" /></Metadata><TypeSignature Language="C#" Value="public class O365ConnectorCardActionQuery" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit O365ConnectorCardActionQuery extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.Teams.O365ConnectorCardActionQuery" />
+  <TypeSignature Language="VB.NET" Value="Public Class O365ConnectorCardActionQuery" />
+  <TypeSignature Language="F#" Value="type O365ConnectorCardActionQuery = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Consulta de invocação de placa de conector do O365 HttpPOST</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public O365ConnectorCardActionQuery ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Schema.Teams.O365ConnectorCardActionQuery.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Inicializa uma nova instância da classe O365ConnectorCardActionQuery.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public O365ConnectorCardActionQuery (string body = default, string actionId = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string body, string actionId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Schema.Teams.O365ConnectorCardActionQuery.#ctor(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (Optional body As String = Nothing, Optional actionId As String = Nothing)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Schema.Teams.O365ConnectorCardActionQuery : string * string -&gt; Microsoft.Bot.Schema.Teams.O365ConnectorCardActionQuery" Usage="new Microsoft.Bot.Schema.Teams.O365ConnectorCardActionQuery (body, actionId)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="body" Type="System.String" />
+        <Parameter Name="actionId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="body">Os resultados da cadeia de caracteres do corpo definidos em IO365ConnectorCardHttpPOST com valores de entrada substituídos</param>
+        <param name="actionId">ID de ação associada ao botão de ação HttpPOST disparado, definido em O365ConnectorCardActionBase.</param>
+        <summary>Inicializa uma nova instância da classe O365ConnectorCardActionQuery.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionId">
+      <MemberSignature Language="C#" Value="public string ActionId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ActionId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.Teams.O365ConnectorCardActionQuery.ActionId" />
+      <MemberSignature Language="VB.NET" Value="Public Property ActionId As String" />
+      <MemberSignature Language="F#" Value="member this.ActionId : string with get, set" Usage="Microsoft.Bot.Schema.Teams.O365ConnectorCardActionQuery.ActionId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="actionId")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="actionId")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a ID de ação associada ao botão de ação HttpPOST disparado, definido em O365ConnectorCardActionBase.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Body">
+      <MemberSignature Language="C#" Value="public string Body { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Body" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.Teams.O365ConnectorCardActionQuery.Body" />
+      <MemberSignature Language="VB.NET" Value="Public Property Body As String" />
+      <MemberSignature Language="F#" Value="member this.Body : string with get, set" Usage="Microsoft.Bot.Schema.Teams.O365ConnectorCardActionQuery.Body" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="body")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="body")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define os resultados da cadeia de caracteres de corpo definida em IO365ConnectorCardHttpPOST com valores de entrada substituídos</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

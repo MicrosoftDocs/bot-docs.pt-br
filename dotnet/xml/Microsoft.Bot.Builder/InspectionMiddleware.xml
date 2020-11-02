@@ -1,0 +1,233 @@
+<Type Name="InspectionMiddleware" FullName="Microsoft.Bot.Builder.InspectionMiddleware">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c2e841260a169f0744aa64ed26e2371a0fc0a5ae" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150242" /></Metadata><TypeSignature Language="C#" Value="public class InspectionMiddleware : Microsoft.Bot.Builder.InterceptionMiddleware" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InspectionMiddleware extends Microsoft.Bot.Builder.InterceptionMiddleware" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.InspectionMiddleware" />
+  <TypeSignature Language="VB.NET" Value="Public Class InspectionMiddleware&#xA;Inherits InterceptionMiddleware" />
+  <TypeSignature Language="F#" Value="type InspectionMiddleware = class&#xA;    inherit InterceptionMiddleware" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>4.4.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.0</AssemblyVersion>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Bot.Builder.InterceptionMiddleware</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Middleware para habilitar a depuração do estado de um bot.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InspectionMiddleware (Microsoft.Bot.Builder.InspectionState inspectionState, Microsoft.Bot.Builder.UserState userState = default, Microsoft.Bot.Builder.ConversationState conversationState = default, Microsoft.Bot.Connector.Authentication.MicrosoftAppCredentials credentials = default, Microsoft.Extensions.Logging.ILogger&lt;Microsoft.Bot.Builder.InspectionMiddleware&gt; logger = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Bot.Builder.InspectionState inspectionState, class Microsoft.Bot.Builder.UserState userState, class Microsoft.Bot.Builder.ConversationState conversationState, class Microsoft.Bot.Connector.Authentication.MicrosoftAppCredentials credentials, class Microsoft.Extensions.Logging.ILogger`1&lt;class Microsoft.Bot.Builder.InspectionMiddleware&gt; logger) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.InspectionMiddleware.#ctor(Microsoft.Bot.Builder.InspectionState,Microsoft.Bot.Builder.UserState,Microsoft.Bot.Builder.ConversationState,Microsoft.Bot.Connector.Authentication.MicrosoftAppCredentials,Microsoft.Extensions.Logging.ILogger{Microsoft.Bot.Builder.InspectionMiddleware})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (inspectionState As InspectionState, Optional userState As UserState = Nothing, Optional conversationState As ConversationState = Nothing, Optional credentials As MicrosoftAppCredentials = Nothing, Optional logger As ILogger(Of InspectionMiddleware) = Nothing)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.InspectionMiddleware : Microsoft.Bot.Builder.InspectionState * Microsoft.Bot.Builder.UserState * Microsoft.Bot.Builder.ConversationState * Microsoft.Bot.Connector.Authentication.MicrosoftAppCredentials * Microsoft.Extensions.Logging.ILogger&lt;Microsoft.Bot.Builder.InspectionMiddleware&gt; -&gt; Microsoft.Bot.Builder.InspectionMiddleware" Usage="new Microsoft.Bot.Builder.InspectionMiddleware (inspectionState, userState, conversationState, credentials, logger)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="inspectionState" Type="Microsoft.Bot.Builder.InspectionState" />
+        <Parameter Name="userState" Type="Microsoft.Bot.Builder.UserState" />
+        <Parameter Name="conversationState" Type="Microsoft.Bot.Builder.ConversationState" />
+        <Parameter Name="credentials" Type="Microsoft.Bot.Connector.Authentication.MicrosoftAppCredentials" />
+        <Parameter Name="logger" Type="Microsoft.Extensions.Logging.ILogger&lt;Microsoft.Bot.Builder.InspectionMiddleware&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="inspectionState">Um objeto de gerenciamento de estado para o estado de inspeção.</param>
+        <param name="userState">Um objeto de gerenciamento de estado para o estado do usuário.</param>
+        <param name="conversationState">Um objeto de gerenciamento de estado para o estado da conversa.</param>
+        <param name="credentials">As credenciais de autenticação.</param>
+        <param name="logger">Um agente de log.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.InspectionMiddleware" />.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHttpClient">
+      <MemberSignature Language="C#" Value="protected virtual System.Net.Http.HttpClient GetHttpClient ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Net.Http.HttpClient GetHttpClient() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.InspectionMiddleware.GetHttpClient" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function GetHttpClient () As HttpClient" />
+      <MemberSignature Language="F#" Value="abstract member GetHttpClient : unit -&gt; System.Net.Http.HttpClient&#xA;override this.GetHttpClient : unit -&gt; System.Net.Http.HttpClient" Usage="inspectionMiddleware.GetHttpClient " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Http.HttpClient</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Obtém o cliente HTTP para o objeto atual.</summary>
+        <returns>O cliente HTTP para o objeto atual.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InboundAsync">
+      <MemberSignature Language="C#" Value="protected override System.Threading.Tasks.Task&lt;ValueTuple&lt;bool,bool&gt;&gt; InboundAsync (Microsoft.Bot.Builder.ITurnContext turnContext, Microsoft.Bot.Schema.Activity traceActivity, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Threading.Tasks.Task`1&lt;valuetype System.ValueTuple`2&lt;bool, bool&gt;&gt; InboundAsync(class Microsoft.Bot.Builder.ITurnContext turnContext, class Microsoft.Bot.Schema.Activity traceActivity, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.InspectionMiddleware.InboundAsync(Microsoft.Bot.Builder.ITurnContext,Microsoft.Bot.Schema.Activity,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function InboundAsync (turnContext As ITurnContext, traceActivity As Activity, cancellationToken As CancellationToken) As Task(Of ValueTuple(Of Boolean, Boolean))" />
+      <MemberSignature Language="F#" Value="override this.InboundAsync : Microsoft.Bot.Builder.ITurnContext * Microsoft.Bot.Schema.Activity * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;ValueTuple&lt;bool, bool&gt;&gt;" Usage="inspectionMiddleware.InboundAsync (turnContext, traceActivity, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ValueTuple&lt;System.Boolean,System.Boolean&gt;&gt;</ReturnType>
+        <Attributes>
+          <Attribute>
+            <AttributeName Language="C#">[System.Runtime.CompilerServices.TupleElementNames(new System.String[] { "shouldForwardToApplication", "shouldIntercept" })]</AttributeName>
+            <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.TupleElementNames(new System.String[] { "shouldForwardToApplication", "shouldIntercept" })&gt;]</AttributeName>
+          </Attribute>
+        </Attributes>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="turnContext" Type="Microsoft.Bot.Builder.ITurnContext" />
+        <Parameter Name="traceActivity" Type="Microsoft.Bot.Schema.Activity" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="turnContext">O contexto de ativação.</param>
+        <param name="traceActivity">A atividade de rastreamento.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Processa atividades de entrada.</summary>
+        <returns>Um <see cref="T:System.Threading.Tasks.Task" /> representando a operação assíncrona.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutboundAsync">
+      <MemberSignature Language="C#" Value="protected override System.Threading.Tasks.Task OutboundAsync (Microsoft.Bot.Builder.ITurnContext turnContext, System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Schema.Activity&gt; traceActivities, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Threading.Tasks.Task OutboundAsync(class Microsoft.Bot.Builder.ITurnContext turnContext, class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Bot.Schema.Activity&gt; traceActivities, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.InspectionMiddleware.OutboundAsync(Microsoft.Bot.Builder.ITurnContext,System.Collections.Generic.IEnumerable{Microsoft.Bot.Schema.Activity},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function OutboundAsync (turnContext As ITurnContext, traceActivities As IEnumerable(Of Activity), cancellationToken As CancellationToken) As Task" />
+      <MemberSignature Language="F#" Value="override this.OutboundAsync : Microsoft.Bot.Builder.ITurnContext * seq&lt;Microsoft.Bot.Schema.Activity&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="inspectionMiddleware.OutboundAsync (turnContext, traceActivities, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="turnContext" Type="Microsoft.Bot.Builder.ITurnContext" />
+        <Parameter Name="traceActivities" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Schema.Activity&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="turnContext">O contexto de ativação.</param>
+        <param name="traceActivities">Uma coleção de atividades de rastreamento.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Processa atividades de saída.</summary>
+        <returns>Um <see cref="T:System.Threading.Tasks.Task" /> representando a operação assíncrona.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessCommandAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;bool&gt; ProcessCommandAsync (Microsoft.Bot.Builder.ITurnContext turnContext, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;bool&gt; ProcessCommandAsync(class Microsoft.Bot.Builder.ITurnContext turnContext, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.InspectionMiddleware.ProcessCommandAsync(Microsoft.Bot.Builder.ITurnContext,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ProcessCommandAsync (turnContext As ITurnContext, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Boolean)" />
+      <MemberSignature Language="F#" Value="member this.ProcessCommandAsync : Microsoft.Bot.Builder.ITurnContext * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;bool&gt;" Usage="inspectionMiddleware.ProcessCommandAsync (turnContext, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="turnContext" Type="Microsoft.Bot.Builder.ITurnContext" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="turnContext">O contexto de ativação.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Identifica abra e anexe comandos e chame o método apropriado.</summary>
+        <returns>true se o comando for Open ou Attach, caso contrário, false.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceStateAsync">
+      <MemberSignature Language="C#" Value="protected override System.Threading.Tasks.Task TraceStateAsync (Microsoft.Bot.Builder.ITurnContext turnContext, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Threading.Tasks.Task TraceStateAsync(class Microsoft.Bot.Builder.ITurnContext turnContext, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.InspectionMiddleware.TraceStateAsync(Microsoft.Bot.Builder.ITurnContext,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function TraceStateAsync (turnContext As ITurnContext, cancellationToken As CancellationToken) As Task" />
+      <MemberSignature Language="F#" Value="override this.TraceStateAsync : Microsoft.Bot.Builder.ITurnContext * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="inspectionMiddleware.TraceStateAsync (turnContext, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="turnContext" Type="Microsoft.Bot.Builder.ITurnContext" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="turnContext">O contexto de ativação.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Processa o objeto de gerenciamento de estado.</summary>
+        <returns>Um <see cref="T:System.Threading.Tasks.Task" /> representando a operação assíncrona.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

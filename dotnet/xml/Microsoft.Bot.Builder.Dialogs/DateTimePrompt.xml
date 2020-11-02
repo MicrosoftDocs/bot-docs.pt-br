@@ -1,0 +1,183 @@
+<Type Name="DateTimePrompt" FullName="Microsoft.Bot.Builder.Dialogs.DateTimePrompt">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="77da1828bec5b646620a366788f77b537b0e7422" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151718" /></Metadata><TypeSignature Language="C#" Value="public class DateTimePrompt : Microsoft.Bot.Builder.Dialogs.Prompt&lt;System.Collections.Generic.IList&lt;Microsoft.Bot.Builder.Dialogs.DateTimeResolution&gt;&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DateTimePrompt extends Microsoft.Bot.Builder.Dialogs.Prompt`1&lt;class System.Collections.Generic.IList`1&lt;class Microsoft.Bot.Builder.Dialogs.DateTimeResolution&gt;&gt;" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.DateTimePrompt" />
+  <TypeSignature Language="VB.NET" Value="Public Class DateTimePrompt&#xA;Inherits Prompt(Of IList(Of DateTimeResolution))" />
+  <TypeSignature Language="F#" Value="type DateTimePrompt = class&#xA;    inherit Prompt&lt;IList&lt;DateTimeResolution&gt;&gt;" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+    <AssemblyVersion>4.0.7.0</AssemblyVersion>
+    <AssemblyVersion>4.1.5.0</AssemblyVersion>
+    <AssemblyVersion>4.3.2.0</AssemblyVersion>
+    <AssemblyVersion>4.4.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.0</AssemblyVersion>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Prompt&lt;System.Collections.Generic.IList&lt;Microsoft.Bot.Builder.Dialogs.DateTimeResolution&gt;&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="T">System.Collections.Generic.IList&lt;Microsoft.Bot.Builder.Dialogs.DateTimeResolution&gt;</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Solicita um usuário para um valor de data e hora.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DateTimePrompt (string dialogId, Microsoft.Bot.Builder.Dialogs.PromptValidator&lt;System.Collections.Generic.IList&lt;Microsoft.Bot.Builder.Dialogs.DateTimeResolution&gt;&gt; validator = default, string defaultLocale = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string dialogId, class Microsoft.Bot.Builder.Dialogs.PromptValidator`1&lt;class System.Collections.Generic.IList`1&lt;class Microsoft.Bot.Builder.Dialogs.DateTimeResolution&gt;&gt; validator, string defaultLocale) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.DateTimePrompt.#ctor(System.String,Microsoft.Bot.Builder.Dialogs.PromptValidator{System.Collections.Generic.IList{Microsoft.Bot.Builder.Dialogs.DateTimeResolution}},System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (dialogId As String, Optional validator As PromptValidator(Of IList(Of DateTimeResolution)) = Nothing, Optional defaultLocale As String = Nothing)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.Dialogs.DateTimePrompt : string * Microsoft.Bot.Builder.Dialogs.PromptValidator&lt;System.Collections.Generic.IList&lt;Microsoft.Bot.Builder.Dialogs.DateTimeResolution&gt;&gt; * string -&gt; Microsoft.Bot.Builder.Dialogs.DateTimePrompt" Usage="new Microsoft.Bot.Builder.Dialogs.DateTimePrompt (dialogId, validator, defaultLocale)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dialogId" Type="System.String" />
+        <Parameter Name="validator" Type="Microsoft.Bot.Builder.Dialogs.PromptValidator&lt;System.Collections.Generic.IList&lt;Microsoft.Bot.Builder.Dialogs.DateTimeResolution&gt;&gt;" />
+        <Parameter Name="defaultLocale" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dialogId">A ID a ser atribuída a este prompt.</param>
+        <param name="validator">Opcional, um <see cref="T:Microsoft.Bot.Builder.Dialogs.PromptValidator`1" /> que contém validação adicional e personalizada para esse prompt.</param>
+        <param name="defaultLocale">Opcional, a localidade padrão usada para determinar o comportamento específico do idioma do prompt.
+A localidade é um código ISO 639 de 2, 3 ou 4 caracteres que representa um idioma ou uma família de idiomas.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Dialogs.DateTimePrompt" />.</summary>
+        <remarks>O valor de <paramref name="dialogId" /> deve ser exclusivo dentro do <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogSet" /> ou <see cref="T:Microsoft.Bot.Builder.Dialogs.ComponentDialog" /> ao qual o prompt é adicionado.
+            <para>Se o <see cref="P:Microsoft.Bot.Schema.Activity.Locale" /> do <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogContext" /> . <see cref="P:Microsoft.Bot.Builder.Dialogs.DialogContext.Context" /> .<see cref="P:Microsoft.Bot.Builder.ITurnContext.Activity" />
+for especificado, esse local será usado para determinar o comportamento específico do idioma; caso contrário, o <paramref name="defaultLocale" /> será usado. US-English será usado se nenhum idioma ou localidade padrão estiver disponível, ou se o idioma ou a localidade não tiver suporte de outra forma.</para></remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultLocale">
+      <MemberSignature Language="C#" Value="public string DefaultLocale { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultLocale" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Dialogs.DateTimePrompt.DefaultLocale" />
+      <MemberSignature Language="VB.NET" Value="Public Property DefaultLocale As String" />
+      <MemberSignature Language="F#" Value="member this.DefaultLocale : string with get, set" Usage="Microsoft.Bot.Builder.Dialogs.DateTimePrompt.DefaultLocale" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a localidade padrão usada para determinar o comportamento específico do idioma do prompt.</summary>
+        <value>A localidade padrão usada para determinar o comportamento específico de um idioma do prompt.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPromptAsync">
+      <MemberSignature Language="C#" Value="protected override System.Threading.Tasks.Task OnPromptAsync (Microsoft.Bot.Builder.ITurnContext turnContext, System.Collections.Generic.IDictionary&lt;string,object&gt; state, Microsoft.Bot.Builder.Dialogs.PromptOptions options, bool isRetry, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Threading.Tasks.Task OnPromptAsync(class Microsoft.Bot.Builder.ITurnContext turnContext, class System.Collections.Generic.IDictionary`2&lt;string, object&gt; state, class Microsoft.Bot.Builder.Dialogs.PromptOptions options, bool isRetry, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.DateTimePrompt.OnPromptAsync(Microsoft.Bot.Builder.ITurnContext,System.Collections.Generic.IDictionary{System.String,System.Object},Microsoft.Bot.Builder.Dialogs.PromptOptions,System.Boolean,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function OnPromptAsync (turnContext As ITurnContext, state As IDictionary(Of String, Object), options As PromptOptions, isRetry As Boolean, Optional cancellationToken As CancellationToken = Nothing) As Task" />
+      <MemberSignature Language="F#" Value="override this.OnPromptAsync : Microsoft.Bot.Builder.ITurnContext * System.Collections.Generic.IDictionary&lt;string, obj&gt; * Microsoft.Bot.Builder.Dialogs.PromptOptions * bool * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="dateTimePrompt.OnPromptAsync (turnContext, state, options, isRetry, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="turnContext" Type="Microsoft.Bot.Builder.ITurnContext" />
+        <Parameter Name="state" Type="System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;" />
+        <Parameter Name="options" Type="Microsoft.Bot.Builder.Dialogs.PromptOptions" />
+        <Parameter Name="isRetry" Type="System.Boolean" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="turnContext">Contexto para a atual ativação de conversa com o usuário.</param>
+        <param name="state">Contém o estado da instância atual do prompt na pilha de diálogo.</param>
+        <param name="options">Um objeto de opções de prompt construído com base nas opções inicialmente fornecidas na chamada para <see cref="M:Microsoft.Bot.Builder.Dialogs.DialogContext.PromptAsync(System.String,Microsoft.Bot.Builder.Dialogs.PromptOptions,System.Threading.CancellationToken)" /> .</param>
+        <param name="isRetry">true se esta for a primeira vez que essa instância de caixa de diálogo de prompt na pilha está solicitando a entrada do usuário; caso contrário, false.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Solicita a entrada do usuário.</summary>
+        <returns>Um <see cref="T:System.Threading.Tasks.Task" /> representando a operação assíncrona.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRecognizeAsync">
+      <MemberSignature Language="C#" Value="protected override System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.PromptRecognizerResult&lt;System.Collections.Generic.IList&lt;Microsoft.Bot.Builder.Dialogs.DateTimeResolution&gt;&gt;&gt; OnRecognizeAsync (Microsoft.Bot.Builder.ITurnContext turnContext, System.Collections.Generic.IDictionary&lt;string,object&gt; state, Microsoft.Bot.Builder.Dialogs.PromptOptions options, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Bot.Builder.Dialogs.PromptRecognizerResult`1&lt;class System.Collections.Generic.IList`1&lt;class Microsoft.Bot.Builder.Dialogs.DateTimeResolution&gt;&gt;&gt; OnRecognizeAsync(class Microsoft.Bot.Builder.ITurnContext turnContext, class System.Collections.Generic.IDictionary`2&lt;string, object&gt; state, class Microsoft.Bot.Builder.Dialogs.PromptOptions options, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.DateTimePrompt.OnRecognizeAsync(Microsoft.Bot.Builder.ITurnContext,System.Collections.Generic.IDictionary{System.String,System.Object},Microsoft.Bot.Builder.Dialogs.PromptOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function OnRecognizeAsync (turnContext As ITurnContext, state As IDictionary(Of String, Object), options As PromptOptions, Optional cancellationToken As CancellationToken = Nothing) As Task(Of PromptRecognizerResult(Of IList(Of DateTimeResolution)))" />
+      <MemberSignature Language="F#" Value="override this.OnRecognizeAsync : Microsoft.Bot.Builder.ITurnContext * System.Collections.Generic.IDictionary&lt;string, obj&gt; * Microsoft.Bot.Builder.Dialogs.PromptOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.PromptRecognizerResult&lt;System.Collections.Generic.IList&lt;Microsoft.Bot.Builder.Dialogs.DateTimeResolution&gt;&gt;&gt;" Usage="dateTimePrompt.OnRecognizeAsync (turnContext, state, options, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.PromptRecognizerResult&lt;System.Collections.Generic.IList&lt;Microsoft.Bot.Builder.Dialogs.DateTimeResolution&gt;&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="turnContext" Type="Microsoft.Bot.Builder.ITurnContext" />
+        <Parameter Name="state" Type="System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;" />
+        <Parameter Name="options" Type="Microsoft.Bot.Builder.Dialogs.PromptOptions" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="turnContext">Contexto para a atual ativação de conversa com o usuário.</param>
+        <param name="state">Contém o estado da instância atual do prompt na pilha de diálogo.</param>
+        <param name="options">Um objeto de opções de prompt construído com base nas opções inicialmente fornecidas na chamada para <see cref="M:Microsoft.Bot.Builder.Dialogs.DialogContext.PromptAsync(System.String,Microsoft.Bot.Builder.Dialogs.PromptOptions,System.Threading.CancellationToken)" /> .</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Tenta reconhecer a entrada do usuário como um valor de data e hora.</summary>
+        <returns>Um <see cref="T:System.Threading.Tasks.Task" /> representando a operação assíncrona.</returns>
+        <remarks>Se a tarefa for bem-sucedida, o resultado descreverá o resultado da tentativa de reconhecimento.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

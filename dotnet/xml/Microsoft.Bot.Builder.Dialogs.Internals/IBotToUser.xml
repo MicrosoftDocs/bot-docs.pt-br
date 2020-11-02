@@ -1,0 +1,74 @@
+<Type Name="IBotToUser" FullName="Microsoft.Bot.Builder.Dialogs.Internals.IBotToUser">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5ddf800e7a23596381434de18b9a638f801191ef" /><Meta Name="ms.sourcegitcommit" Value="ac3a7ee8979fc942f9d7420b2f6845c726b6661a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/02/2020" /><Meta Name="ms.locfileid" Value="93149725" /></Metadata><TypeSignature Language="C#" Value="public interface IBotToUser" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IBotToUser" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Internals.IBotToUser" />
+  <TypeSignature Language="VB.NET" Value="Public Interface IBotToUser" />
+  <TypeSignature Language="F#" Value="type IBotToUser = interface" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+    <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+    <AssemblyVersion>3.20.1.42</AssemblyVersion>
+    <AssemblyVersion>3.30.0.1</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>Métodos para enviar uma mensagem do bot para o usuário.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="MakeMessage">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Connector.IMessageActivity MakeMessage ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.Bot.Connector.IMessageActivity MakeMessage() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Internals.IBotToUser.MakeMessage" />
+      <MemberSignature Language="VB.NET" Value="Public Function MakeMessage () As IMessageActivity" />
+      <MemberSignature Language="F#" Value="abstract member MakeMessage : unit -&gt; Microsoft.Bot.Connector.IMessageActivity" Usage="iBotToUser.MakeMessage " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Connector.IMessageActivity</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Faça uma mensagem.</summary>
+        <returns>A nova mensagem.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PostAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task PostAsync (Microsoft.Bot.Connector.IMessageActivity message, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task PostAsync(class Microsoft.Bot.Connector.IMessageActivity message, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Internals.IBotToUser.PostAsync(Microsoft.Bot.Connector.IMessageActivity,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Function PostAsync (message As IMessageActivity, Optional cancellationToken As CancellationToken = Nothing) As Task" />
+      <MemberSignature Language="F#" Value="abstract member PostAsync : Microsoft.Bot.Connector.IMessageActivity * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="iBotToUser.PostAsync (message, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="Microsoft.Bot.Connector.IMessageActivity" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="message">A mensagem para o usuário.</param>
+        <param name="cancellationToken">O token de cancelamento.</param>
+        <summary>Poste uma mensagem a ser enviada ao usuário.</summary>
+        <returns>Uma tarefa que representa a operação post.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

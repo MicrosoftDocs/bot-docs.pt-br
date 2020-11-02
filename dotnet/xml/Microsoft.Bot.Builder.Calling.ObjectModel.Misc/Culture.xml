@@ -1,0 +1,70 @@
+<Type Name="Culture" FullName="Microsoft.Bot.Builder.Calling.ObjectModel.Misc.Culture">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="593444006da0bbbed8556e67377087d7d6efb4ba" /><Meta Name="ms.sourcegitcommit" Value="ac3a7ee8979fc942f9d7420b2f6845c726b6661a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/02/2020" /><Meta Name="ms.locfileid" Value="93149638" /></Metadata><TypeSignature Language="C#" Value="public enum Culture" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed Culture extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Calling.ObjectModel.Misc.Culture" />
+  <TypeSignature Language="VB.NET" Value="Public Enum Culture" />
+  <TypeSignature Language="F#" Value="type Culture = " />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Calling</AssemblyName>
+    <AssemblyVersion>3.20.1.42</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[Newtonsoft.Json.JsonConverter(typeof(Microsoft.Bot.Builder.Calling.ObjectModel.Misc.StringEnumConverterWithDefault`1&lt;Microsoft.Bot.Builder.Calling.ObjectModel.Misc.Culture&gt;))]</AttributeName>
+      <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonConverter(typeof(Microsoft.Bot.Builder.Calling.ObjectModel.Misc.StringEnumConverterWithDefault`1&lt;Microsoft.Bot.Builder.Calling.ObjectModel.Misc.Culture&gt;))&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Culturas às quais damos suporte para reconhecimento ou reprodução de prompts</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="EnUs">
+      <MemberSignature Language="C#" Value="EnUs" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Bot.Builder.Calling.ObjectModel.Misc.Culture EnUs = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Calling.ObjectModel.Misc.Culture.EnUs" />
+      <MemberSignature Language="VB.NET" Value="EnUs" />
+      <MemberSignature Language="F#" Value="EnUs = 1" Usage="Microsoft.Bot.Builder.Calling.ObjectModel.Misc.Culture.EnUs" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Calling</AssemblyName>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.Serialization.EnumMember(Value="en-US")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.Serialization.EnumMember(Value="en-US")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Calling.ObjectModel.Misc.Culture</ReturnType>
+      </ReturnValue>
+      <MemberValue>1</MemberValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unknown">
+      <MemberSignature Language="C#" Value="Unknown" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Bot.Builder.Calling.ObjectModel.Misc.Culture Unknown = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.Calling.ObjectModel.Misc.Culture.Unknown" />
+      <MemberSignature Language="VB.NET" Value="Unknown" />
+      <MemberSignature Language="F#" Value="Unknown = 0" Usage="Microsoft.Bot.Builder.Calling.ObjectModel.Misc.Culture.Unknown" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Calling</AssemblyName>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Calling.ObjectModel.Misc.Culture</ReturnType>
+      </ReturnValue>
+      <MemberValue>0</MemberValue>
+      <Docs>
+        <summary>Desconhecido não reconhecido.</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

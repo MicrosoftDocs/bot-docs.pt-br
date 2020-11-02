@@ -1,0 +1,73 @@
+<Type Name="InvokeResponse&lt;T&gt;" FullName="Microsoft.Bot.Builder.InvokeResponse&lt;T&gt;">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7c2964bcc279ec0e296337c082616d8d7751820a" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150239" /></Metadata><TypeSignature Language="C#" Value="public class InvokeResponse&lt;T&gt; : Microsoft.Bot.Builder.InvokeResponse" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InvokeResponse`1&lt;T&gt; extends Microsoft.Bot.Builder.InvokeResponse" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.InvokeResponse`1" />
+  <TypeSignature Language="VB.NET" Value="Public Class InvokeResponse(Of T)&#xA;Inherits InvokeResponse" />
+  <TypeSignature Language="F#" Value="type InvokeResponse&lt;'T&gt; = class&#xA;    inherit InvokeResponse" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>Microsoft.Bot.Builder.InvokeResponse</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <typeparam name="T">O tipo de corpo no InvokeResponse.</typeparam>
+    <summary>Uma classe de tupla que contém um código de status HTTP e um objeto serializável em JSON. O código de status HTTP é, no cenário de atividade Invoke, o que será definido na POSTAgem resultante. O corpo da POSTAgem resultante será o conteúdo serializado em JSON da <see cref="P:Microsoft.Bot.Builder.InvokeResponse`1.Body" /> propriedade.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InvokeResponse ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.InvokeResponse`1.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Body">
+      <MemberSignature Language="C#" Value="public T Body { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance !T Body" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.InvokeResponse`1.Body" />
+      <MemberSignature Language="VB.NET" Value="Public Property Body As T" />
+      <MemberSignature Language="F#" Value="member this.Body : 'T with get, set" Usage="Microsoft.Bot.Builder.InvokeResponse&lt;'T&gt;.Body" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o conteúdo do corpo da resposta.</summary>
+        <value>O conteúdo do corpo.</value>
+        <remarks>A POSTAgem gerada em resposta à atividade Invoke de entrada terá um corpo gerado pela serialização JSON do objeto nesse campo.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,84 @@
+<Type Name="ReceiveRequestExtensions" FullName="Microsoft.Bot.Streaming.ReceiveRequestExtensions">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2209406ad6f42032b9a11600c84d3f2a23843e03" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151785" /></Metadata><TypeSignature Language="C#" Value="public static class ReceiveRequestExtensions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ReceiveRequestExtensions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Streaming.ReceiveRequestExtensions" />
+  <TypeSignature Language="VB.NET" Value="Public Module ReceiveRequestExtensions" />
+  <TypeSignature Language="F#" Value="type ReceiveRequestExtensions = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Métodos auxiliares adicionados à <see cref="T:Microsoft.Bot.Streaming.ReceiveRequest" /> classe.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ReadBodyAsJson&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T ReadBodyAsJson&lt;T&gt; (this Microsoft.Bot.Streaming.ReceiveRequest request);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T ReadBodyAsJson&lt;T&gt;(class Microsoft.Bot.Streaming.ReceiveRequest request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Streaming.ReceiveRequestExtensions.ReadBodyAsJson``1(Microsoft.Bot.Streaming.ReceiveRequest)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function ReadBodyAsJson(Of T) (request As ReceiveRequest) As T" />
+      <MemberSignature Language="F#" Value="static member ReadBodyAsJson : Microsoft.Bot.Streaming.ReceiveRequest -&gt; 'T" Usage="Microsoft.Bot.Streaming.ReceiveRequestExtensions.ReadBodyAsJson request" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="request" Type="Microsoft.Bot.Streaming.ReceiveRequest" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">O tipo para tentar desserializar o conteúdo do <see cref="T:Microsoft.Bot.Streaming.ReceiveRequest" /> corpo em.</typeparam>
+        <param name="request">A instância atual do <see cref="T:Microsoft.Bot.Streaming.ReceiveRequest" />.</param>
+        <summary>Serializa o corpo desta <see cref="T:Microsoft.Bot.Streaming.ReceiveRequest" /> como JSON.</summary>
+        <returns>Em caso de sucesso, um objeto do tipo T preenchido com dados serializados do <see cref="T:Microsoft.Bot.Streaming.ReceiveRequest" /> corpo.
+Caso contrário, uma instância padrão do tipo T.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadBodyAsString">
+      <MemberSignature Language="C#" Value="public static string ReadBodyAsString (this Microsoft.Bot.Streaming.ReceiveRequest request);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string ReadBodyAsString(class Microsoft.Bot.Streaming.ReceiveRequest request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Streaming.ReceiveRequestExtensions.ReadBodyAsString(Microsoft.Bot.Streaming.ReceiveRequest)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function ReadBodyAsString (request As ReceiveRequest) As String" />
+      <MemberSignature Language="F#" Value="static member ReadBodyAsString : Microsoft.Bot.Streaming.ReceiveRequest -&gt; string" Usage="Microsoft.Bot.Streaming.ReceiveRequestExtensions.ReadBodyAsString request" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="Microsoft.Bot.Streaming.ReceiveRequest" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="request">A instância atual do <see cref="T:Microsoft.Bot.Streaming.ReceiveRequest" />.</param>
+        <summary>Lê o corpo disso <see cref="T:Microsoft.Bot.Streaming.ReceiveRequest" /> como uma cadeia de caracteres.</summary>
+        <returns>Em caso de sucesso, uma cadeia de caracteres populada com dados lidos do <see cref="T:Microsoft.Bot.Streaming.ReceiveRequest" /> corpo.
+Caso contrário, NULL.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

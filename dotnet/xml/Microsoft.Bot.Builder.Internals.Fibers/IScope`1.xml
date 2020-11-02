@@ -1,0 +1,54 @@
+<Type Name="IScope&lt;T&gt;" FullName="Microsoft.Bot.Builder.Internals.Fibers.IScope&lt;T&gt;">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a22e436adf0ac04acd29be42599cde55ba2ea986" /><Meta Name="ms.sourcegitcommit" Value="5add21ad3daf0ce894612a22b951b98350961720" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="06/04/2020" /><Meta Name="ms.locfileid" Value="93148818" /></Metadata><TypeSignature Language="C#" Value="public interface IScope&lt;T&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IScope`1&lt;T&gt;" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Internals.Fibers.IScope`1" />
+  <TypeSignature Language="VB.NET" Value="Public Interface IScope(Of T)" />
+  <TypeSignature Language="F#" Value="type IScope&lt;'T&gt; = interface" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+    <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+    <AssemblyVersion>3.20.1.42</AssemblyVersion>
+    <AssemblyVersion>3.30.0.1</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Interfaces />
+  <Docs>
+    <typeparam name="T">O tipo do item.</typeparam>
+    <summary>Forneça uma abstração para serializar o acesso a um item para um escopo usando o bloco de código.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="WithScopeAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;IDisposable&gt; WithScopeAsync (T item, System.Threading.CancellationToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.IDisposable&gt; WithScopeAsync(!T item, valuetype System.Threading.CancellationToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Internals.Fibers.IScope`1.WithScopeAsync(`0,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Function WithScopeAsync (item As T, token As CancellationToken) As Task(Of IDisposable)" />
+      <MemberSignature Language="F#" Value="abstract member WithScopeAsync : 'T * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;IDisposable&gt;" Usage="iScope.WithScopeAsync (item, token)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.IDisposable&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="T" />
+        <Parameter Name="token" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="item">O item.</param>
+        <param name="token">O token de cancelamento.</param>
+        <summary>Insira um escopo de código com chave por item.</summary>
+        <returns>Uma tarefa cuja conclusão produz uma IDisposable para o escopo.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

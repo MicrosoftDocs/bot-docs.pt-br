@@ -1,0 +1,47 @@
+<Type Name="BotState+CachedBotState" FullName="Microsoft.Bot.Builder.BotState+CachedBotState">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8a2641d11d60af5bc909cfb5c285dbf1e14b7f25" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150319" /></Metadata><TypeSignature Language="C#" Value="public class BotState.CachedBotState" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi beforefieldinit BotState/CachedBotState extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.BotState.CachedBotState" />
+  <TypeSignature Language="VB.NET" Value="Public Class BotState.CachedBotState" />
+  <TypeSignature Language="F#" Value="type BotState.CachedBotState = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Estado de bot armazenado em cache interno.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,object&gt; State { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; State" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.BotState.CachedBotState.State" />
+      <MemberSignature Language="VB.NET" Value="Public Property State As IDictionary(Of String, Object)" />
+      <MemberSignature Language="F#" Value="member this.State : System.Collections.Generic.IDictionary&lt;string, obj&gt; with get, set" Usage="Microsoft.Bot.Builder.BotState.CachedBotState.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o estado como um dicionário de pares chave-valor.</summary>
+        <value>O estado como um dicionário de pares chave-valor.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

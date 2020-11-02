@@ -1,0 +1,63 @@
+<Type Name="RegexCase&lt;R&gt;" FullName="Microsoft.Bot.Builder.Dialogs.RegexCase&lt;R&gt;">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c5446b17918bdeb2bd762bb6a10227403bc0473d" /><Meta Name="ms.sourcegitcommit" Value="ac3a7ee8979fc942f9d7420b2f6845c726b6661a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/02/2020" /><Meta Name="ms.locfileid" Value="93149577" /></Metadata><TypeSignature Language="C#" Value="public sealed class RegexCase&lt;R&gt; : Microsoft.Bot.Builder.Dialogs.Case&lt;string,R&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit RegexCase`1&lt;R&gt; extends Microsoft.Bot.Builder.Dialogs.Case`2&lt;string, !R&gt;" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.RegexCase`1" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class RegexCase(Of R)&#xA;Inherits Case(Of String, R)" />
+  <TypeSignature Language="F#" Value="type RegexCase&lt;'R&gt; = class&#xA;    inherit Case&lt;string, 'R&gt;" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+    <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+    <AssemblyVersion>3.20.1.42</AssemblyVersion>
+    <AssemblyVersion>3.30.0.1</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="R" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Case&lt;System.String,R&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="T">System.String</BaseTypeArgument>
+      <BaseTypeArgument TypeParamName="R">R</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Serializable]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Serializable&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <typeparam name="R">To be added.</typeparam>
+    <summary>O caso Regex para switch.</summary>
+    <remarks>A condição será true se o Regex corresponder ao texto.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RegexCase (System.Text.RegularExpressions.Regex regex, Microsoft.Bot.Builder.Dialogs.ContextualSelector&lt;string,R&gt; selector);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Text.RegularExpressions.Regex regex, class Microsoft.Bot.Builder.Dialogs.ContextualSelector`2&lt;string, !R&gt; selector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.RegexCase`1.#ctor(System.Text.RegularExpressions.Regex,Microsoft.Bot.Builder.Dialogs.ContextualSelector{System.String,`0})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (regex As Regex, selector As ContextualSelector(Of String, R))" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.Dialogs.RegexCase&lt;'R&gt; : System.Text.RegularExpressions.Regex * Microsoft.Bot.Builder.Dialogs.ContextualSelector&lt;string, 'R&gt; -&gt; Microsoft.Bot.Builder.Dialogs.RegexCase&lt;'R&gt;" Usage="new Microsoft.Bot.Builder.Dialogs.RegexCase&lt;'R&gt; (regex, selector)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+        <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+        <AssemblyVersion>3.20.1.42</AssemblyVersion>
+        <AssemblyVersion>3.30.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="regex" Type="System.Text.RegularExpressions.Regex" />
+        <Parameter Name="selector" Type="Microsoft.Bot.Builder.Dialogs.ContextualSelector&lt;System.String,R&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="regex">O Regex para a condição.</param>
+        <param name="selector">O Seletor contextual para o caso.</param>
+        <summary>Constrói um caso com base em uma expressão regular.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

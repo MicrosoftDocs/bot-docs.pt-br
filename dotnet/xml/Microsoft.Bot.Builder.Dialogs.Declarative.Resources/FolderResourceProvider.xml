@@ -1,0 +1,257 @@
+<Type Name="FolderResourceProvider" FullName="Microsoft.Bot.Builder.Dialogs.Declarative.Resources.FolderResourceProvider">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="1630ba43700ac40bcbd984f344bde34d3ba458a3" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151865" /></Metadata><TypeSignature Language="C#" Value="public class FolderResourceProvider : Microsoft.Bot.Builder.Dialogs.Declarative.Resources.ResourceProvider, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FolderResourceProvider extends Microsoft.Bot.Builder.Dialogs.Declarative.Resources.ResourceProvider implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Declarative.Resources.FolderResourceProvider" />
+  <TypeSignature Language="VB.NET" Value="Public Class FolderResourceProvider&#xA;Inherits ResourceProvider&#xA;Implements IDisposable" />
+  <TypeSignature Language="F#" Value="type FolderResourceProvider = class&#xA;    inherit ResourceProvider&#xA;    interface IDisposable" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Dialogs.Declarative</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Declarative.Resources.ResourceProvider</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Classe que dá ao ResourceExplorer acesso a recursos que são armazenados no sistema de arquivos.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FolderResourceProvider (Microsoft.Bot.Builder.Dialogs.Declarative.Resources.ResourceExplorer resourceExplorer, string folder, bool includeSubFolders = true, bool monitorChanges = true);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Bot.Builder.Dialogs.Declarative.Resources.ResourceExplorer resourceExplorer, string folder, bool includeSubFolders, bool monitorChanges) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Declarative.Resources.FolderResourceProvider.#ctor(Microsoft.Bot.Builder.Dialogs.Declarative.Resources.ResourceExplorer,System.String,System.Boolean,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (resourceExplorer As ResourceExplorer, folder As String, Optional includeSubFolders As Boolean = true, Optional monitorChanges As Boolean = true)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.Dialogs.Declarative.Resources.FolderResourceProvider : Microsoft.Bot.Builder.Dialogs.Declarative.Resources.ResourceExplorer * string * bool * bool -&gt; Microsoft.Bot.Builder.Dialogs.Declarative.Resources.FolderResourceProvider" Usage="new Microsoft.Bot.Builder.Dialogs.Declarative.Resources.FolderResourceProvider (resourceExplorer, folder, includeSubFolders, monitorChanges)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs.Declarative</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="resourceExplorer" Type="Microsoft.Bot.Builder.Dialogs.Declarative.Resources.ResourceExplorer" />
+        <Parameter Name="folder" Type="System.String" />
+        <Parameter Name="includeSubFolders" Type="System.Boolean" />
+        <Parameter Name="monitorChanges" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="resourceExplorer">resourceExplorer.</param>
+        <param name="folder">Pasta.</param>
+        <param name="includeSubFolders">Deve incluir subpastas.</param>
+        <param name="monitorChanges">Deve monitorar as alterações.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Dialogs.Declarative.Resources.FolderResourceProvider" />.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Directory">
+      <MemberSignature Language="C#" Value="public System.IO.DirectoryInfo Directory { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.DirectoryInfo Directory" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Dialogs.Declarative.Resources.FolderResourceProvider.Directory" />
+      <MemberSignature Language="VB.NET" Value="Public Property Directory As DirectoryInfo" />
+      <MemberSignature Language="F#" Value="member this.Directory : System.IO.DirectoryInfo with get, set" Usage="Microsoft.Bot.Builder.Dialogs.Declarative.Resources.FolderResourceProvider.Directory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs.Declarative</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.DirectoryInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a pasta a ser enumerada.</summary>
+        <value>pasta a ser enumerada.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Declarative.Resources.FolderResourceProvider.Dispose" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Dispose ()" />
+      <MemberSignature Language="F#" Value="abstract member Dispose : unit -&gt; unit&#xA;override this.Dispose : unit -&gt; unit" Usage="folderResourceProvider.Dispose " />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IDisposable.Dispose</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs.Declarative</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Descarta a instância do objeto a libera todos os objetos relacionados pertencentes à classe.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Declarative.Resources.FolderResourceProvider.Dispose(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub Dispose (disposing As Boolean)" />
+      <MemberSignature Language="F#" Value="abstract member Dispose : bool -&gt; unit&#xA;override this.Dispose : bool -&gt; unit" Usage="folderResourceProvider.Dispose disposing" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs.Declarative</AssemblyName>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">Um booliano que indica se a chamada de método vem de um método Dispose (seu valor é true) ou de um finalizador (seu valor é false).</param>
+        <summary>Descarta objetos usados pela classe.</summary>
+        <remarks>O parâmetro de descarte deve ser falso quando chamado de um finalizador e true quando chamado do método IDisposable. Dispose.
+Em outras palavras, é verdadeiro quando chamado de forma determinística e false quando chamado de forma não determinística.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResources">
+      <MemberSignature Language="C#" Value="public override System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Builder.Dialogs.Declarative.Resources.Resource&gt; GetResources (string extension);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Bot.Builder.Dialogs.Declarative.Resources.Resource&gt; GetResources(string extension) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Declarative.Resources.FolderResourceProvider.GetResources(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetResources (extension As String) As IEnumerable(Of Resource)" />
+      <MemberSignature Language="F#" Value="override this.GetResources : string -&gt; seq&lt;Microsoft.Bot.Builder.Dialogs.Declarative.Resources.Resource&gt;" Usage="folderResourceProvider.GetResources extension" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs.Declarative</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Builder.Dialogs.Declarative.Resources.Resource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="extension" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="extension">Extensão de recurso.</param>
+        <summary>Obter recursos por extensão.</summary>
+        <returns>Coleção de recursos.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeSubFolders">
+      <MemberSignature Language="C#" Value="public bool IncludeSubFolders { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IncludeSubFolders" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Dialogs.Declarative.Resources.FolderResourceProvider.IncludeSubFolders" />
+      <MemberSignature Language="VB.NET" Value="Public Property IncludeSubFolders As Boolean" />
+      <MemberSignature Language="F#" Value="member this.IncludeSubFolders : bool with get, set" Usage="Microsoft.Bot.Builder.Dialogs.Declarative.Resources.FolderResourceProvider.IncludeSubFolders" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs.Declarative</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define um valor que indica se as subpastas devem ser incluídas.</summary>
+        <value>Um valor que indica se as subpastas devem ser incluídas.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public override void Refresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Refresh() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Declarative.Resources.FolderResourceProvider.Refresh" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Refresh ()" />
+      <MemberSignature Language="F#" Value="override this.Refresh : unit -&gt; unit" Usage="folderResourceProvider.Refresh " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs.Declarative</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Atualize qualquer conteúdo armazenado em cache e procure por novo conteúdo.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Declarative.Resources.FolderResourceProvider.ToString" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ToString () As String" />
+      <MemberSignature Language="F#" Value="override this.ToString : unit -&gt; string" Usage="folderResourceProvider.ToString " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs.Declarative</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Retorna uma cadeia de caracteres que representa o objeto atual.</summary>
+        <returns>Uma cadeia de caracteres que representa o objeto atual.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetResource">
+      <MemberSignature Language="C#" Value="public override bool TryGetResource (string id, out Microsoft.Bot.Builder.Dialogs.Declarative.Resources.Resource resource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool TryGetResource(string id, [out] class Microsoft.Bot.Builder.Dialogs.Declarative.Resources.Resource&amp; resource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Declarative.Resources.FolderResourceProvider.TryGetResource(System.String,Microsoft.Bot.Builder.Dialogs.Declarative.Resources.Resource@)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function TryGetResource (id As String, ByRef resource As Resource) As Boolean" />
+      <MemberSignature Language="F#" Value="override this.TryGetResource : string * Resource -&gt; bool" Usage="folderResourceProvider.TryGetResource (id, resource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs.Declarative</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="resource" Type="Microsoft.Bot.Builder.Dialogs.Declarative.Resources.Resource" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="id">ID do recurso.</param>
+        <param name="resource">o recurso encontrado.</param>
+        <summary>GetResource por ID.</summary>
+        <returns>true se o recurso foi encontrado.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

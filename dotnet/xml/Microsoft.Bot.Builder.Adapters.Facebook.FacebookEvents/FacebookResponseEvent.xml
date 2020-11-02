@@ -1,0 +1,109 @@
+<Type Name="FacebookResponseEvent" FullName="Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookResponseEvent">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5f82b9e1ba54f935947a7feea601b50347c2f30d" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150321" /></Metadata><TypeSignature Language="C#" Value="public class FacebookResponseEvent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FacebookResponseEvent extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookResponseEvent" />
+  <TypeSignature Language="VB.NET" Value="Public Class FacebookResponseEvent" />
+  <TypeSignature Language="F#" Value="type FacebookResponseEvent = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Representa o objeto de entrada recebido do Facebook e processado pelo adaptador.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FacebookResponseEvent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookResponseEvent.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Entry">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.List&lt;Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookEntry&gt; Entry { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.List`1&lt;class Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookEntry&gt; Entry" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookResponseEvent.Entry" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Entry As List(Of FacebookEntry)" />
+      <MemberSignature Language="F#" Value="member this.Entry : System.Collections.Generic.List&lt;Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookEntry&gt;" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookResponseEvent.Entry" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.List&lt;Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookEntry&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém a propriedade de entrada.</summary>
+        <value>Matriz que contém dados de evento.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseObject">
+      <MemberSignature Language="C#" Value="public string ResponseObject { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ResponseObject" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookResponseEvent.ResponseObject" />
+      <MemberSignature Language="VB.NET" Value="Public Property ResponseObject As String" />
+      <MemberSignature Language="F#" Value="member this.ResponseObject : string with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookResponseEvent.ResponseObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="object")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="object")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a propriedade do objeto.</summary>
+        <value>Uma cadeia de caracteres com valores diferentes.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeEntry">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeEntry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeEntry() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookResponseEvent.ShouldSerializeEntry" />
+      <MemberSignature Language="VB.NET" Value="Public Function ShouldSerializeEntry () As Boolean" />
+      <MemberSignature Language="F#" Value="member this.ShouldSerializeEntry : unit -&gt; bool" Usage="facebookResponseEvent.ShouldSerializeEntry " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Obtém o sinalizador para determinar se a propriedade de entrada deve ser serializada.</summary>
+        <returns>True se a contagem de entradas for maior que zero.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

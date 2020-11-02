@@ -1,0 +1,24 @@
+<Type Name="IDialog" FullName="Microsoft.Bot.Builder.Dialogs.IDialog">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8e32026b5ab3c4d6a7559b005b1bf5c033967cdd" /><Meta Name="ms.sourcegitcommit" Value="5add21ad3daf0ce894612a22b951b98350961720" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="06/04/2020" /><Meta Name="ms.locfileid" Value="93149365" /></Metadata><TypeSignature Language="C#" Value="public interface IDialog : Microsoft.Bot.Builder.Dialogs.IDialog&lt;object&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDialog implements class Microsoft.Bot.Builder.Dialogs.IDialog`1&lt;object&gt;" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.IDialog" />
+  <TypeSignature Language="VB.NET" Value="Public Interface IDialog&#xA;Implements IDialog(Of Object)" />
+  <TypeSignature Language="F#" Value="type IDialog = interface&#xA;    interface IDialog&lt;obj&gt;" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>3.16.1.38846</AssemblyVersion>
+    <AssemblyVersion>3.19.1.44133</AssemblyVersion>
+    <AssemblyVersion>3.20.1.42</AssemblyVersion>
+    <AssemblyVersion>3.30.0.1</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.Bot.Builder.Dialogs.IDialog&lt;System.Object&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Um <see cref="T:Microsoft.Bot.Builder.Dialogs.IDialog" /> é um processo de conversação suspendeble que produz um resultado ignorado.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members />
+</Type>
