@@ -1,0 +1,68 @@
+<Type Name="InstallationUpdateActionTypes" FullName="Microsoft.Bot.Schema.InstallationUpdateActionTypes">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="fad8b8a7cb3c965202fe961b6040091f14b578e9" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152176" /></Metadata><TypeSignature Language="C#" Value="public static class InstallationUpdateActionTypes" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit InstallationUpdateActionTypes extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.InstallationUpdateActionTypes" />
+  <TypeSignature Language="VB.NET" Value="Public Class InstallationUpdateActionTypes" />
+  <TypeSignature Language="F#" Value="type InstallationUpdateActionTypes = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Define valores para InstallationUpdateActionTypes.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public const string Add;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string Add" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Schema.InstallationUpdateActionTypes.Add" />
+      <MemberSignature Language="VB.NET" Value="Public Const Add As String " />
+      <MemberSignature Language="F#" Value="val mutable Add : string" Usage="Microsoft.Bot.Schema.InstallationUpdateActionTypes.Add" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>O tipo para adicionar ações de atualização de instalação.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public const string Remove;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string Remove" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Schema.InstallationUpdateActionTypes.Remove" />
+      <MemberSignature Language="VB.NET" Value="Public Const Remove As String " />
+      <MemberSignature Language="F#" Value="val mutable Remove : string" Usage="Microsoft.Bot.Schema.InstallationUpdateActionTypes.Remove" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>O tipo para remover ações de atualização de instalação.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

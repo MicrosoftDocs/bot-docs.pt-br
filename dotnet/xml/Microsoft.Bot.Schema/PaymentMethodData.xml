@@ -1,0 +1,132 @@
+<Type Name="PaymentMethodData" FullName="Microsoft.Bot.Schema.PaymentMethodData">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="71d6da24a4476307b677d6cd4255580986466579" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152456" /></Metadata><TypeSignature Language="C#" Value="public class PaymentMethodData" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PaymentMethodData extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.PaymentMethodData" />
+  <TypeSignature Language="VB.NET" Value="Public Class PaymentMethodData" />
+  <TypeSignature Language="F#" Value="type PaymentMethodData = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Obsolete("Bot Framework no longer supports payments.")]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Obsolete("Bot Framework no longer supports payments.")&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Indica um conjunto de métodos de pagamento com suporte e quaisquer dados específicos de método de pagamento associados para esses métodos</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PaymentMethodData ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Schema.PaymentMethodData.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Inicializa uma nova instância da classe PaymentMethodData.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PaymentMethodData (System.Collections.Generic.IList&lt;string&gt; supportedMethods = default, object data = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IList`1&lt;string&gt; supportedMethods, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Schema.PaymentMethodData.#ctor(System.Collections.Generic.IList{System.String},System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (Optional supportedMethods As IList(Of String) = Nothing, Optional data As Object = Nothing)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Schema.PaymentMethodData : System.Collections.Generic.IList&lt;string&gt; * obj -&gt; Microsoft.Bot.Schema.PaymentMethodData" Usage="new Microsoft.Bot.Schema.PaymentMethodData (supportedMethods, data)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="supportedMethods" Type="System.Collections.Generic.IList&lt;System.String&gt;" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="supportedMethods">Sequência necessária de cadeias de caracteres contendo identificadores de método de pagamento para métodos de pagamento que o site de comerciante aceita</param>
+        <param name="data">Um objeto serializável em JSON que fornece informações opcionais que podem ser necessárias para os métodos de pagamento com suporte</param>
+        <summary>Inicializa uma nova instância da classe PaymentMethodData.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Data">
+      <MemberSignature Language="C#" Value="public object Data { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Data" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.PaymentMethodData.Data" />
+      <MemberSignature Language="VB.NET" Value="Public Property Data As Object" />
+      <MemberSignature Language="F#" Value="member this.Data : obj with get, set" Usage="Microsoft.Bot.Schema.PaymentMethodData.Data" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="data")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="data")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define um objeto serializável em JSON que fornece informações opcionais que podem ser necessárias para os métodos de pagamento com suporte</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportedMethods">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;string&gt; SupportedMethods { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;string&gt; SupportedMethods" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.PaymentMethodData.SupportedMethods" />
+      <MemberSignature Language="VB.NET" Value="Public Property SupportedMethods As IList(Of String)" />
+      <MemberSignature Language="F#" Value="member this.SupportedMethods : System.Collections.Generic.IList&lt;string&gt; with get, set" Usage="Microsoft.Bot.Schema.PaymentMethodData.SupportedMethods" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="supportedMethods")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="supportedMethods")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a sequência necessária de cadeias de caracteres que contêm identificadores de método de pagamento para métodos de pagamento que o site de comerciante aceita</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

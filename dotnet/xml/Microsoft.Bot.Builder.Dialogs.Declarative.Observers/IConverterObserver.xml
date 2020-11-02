@@ -1,0 +1,103 @@
+<Type Name="IConverterObserver" FullName="Microsoft.Bot.Builder.Dialogs.Declarative.Observers.IConverterObserver">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="230a7280ff11a33974b5d8b712652e5675e69c2f" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152246" /></Metadata><TypeSignature Language="C#" Value="public interface IConverterObserver" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IConverterObserver" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Declarative.Observers.IConverterObserver" />
+  <TypeSignature Language="VB.NET" Value="Public Interface IConverterObserver" />
+  <TypeSignature Language="F#" Value="type IConverterObserver = interface" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Dialogs.Declarative</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Obsolete("Deprecated in favor of IJsonLoadObserver.")]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Obsolete("Deprecated in favor of IJsonLoadObserver.")&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Observador para <see cref="T:Newtonsoft.Json.JsonConverter" /> instâncias. Lida com notificações em relação ao ciclo de vida do carregamento de objetos, incluindo a capacidade de interceptar e fornecer valores alternativos a serem considerados pelos conversores.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="OnAfterLoadToken&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public bool OnAfterLoadToken&lt;T&gt; (Newtonsoft.Json.Linq.JToken token, T obj, out T result) where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool OnAfterLoadToken&lt;class T&gt;(class Newtonsoft.Json.Linq.JToken token, !!T obj, [out] !!T&amp; result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Declarative.Observers.IConverterObserver.OnAfterLoadToken``1(Newtonsoft.Json.Linq.JToken,``0,``0@)" />
+      <MemberSignature Language="VB.NET" Value="Public Function OnAfterLoadToken(Of T As Class) (token As JToken, obj As T, ByRef result As T) As Boolean" />
+      <MemberSignature Language="F#" Value="abstract member OnAfterLoadToken : Newtonsoft.Json.Linq.JToken * 'T * 'T -&gt; bool (requires 'T : null)" Usage="iConverterObserver.OnAfterLoadToken (token, obj, result)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs.Declarative</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="token" Type="Newtonsoft.Json.Linq.JToken" />
+        <Parameter Name="obj" Type="T" />
+        <Parameter Name="result" Type="T" RefType="out" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">Tipo do objeto concreto que foi criado.</typeparam>
+        <param name="token">Token usado para criar o objeto.</param>
+        <param name="obj">Objeto que foi criado usando o token.</param>
+        <param name="result">Parâmetro de saída para o observador fornecer seu resultado ao conversor.</param>
+        <summary>Notifica <see cref="T:Microsoft.Bot.Builder.Dialogs.Declarative.Observers.IConverterObserver" /> as instâncias após o carregamento de tipo a <see cref="T:Newtonsoft.Json.Linq.JToken" /> na instância fornecida do <typeparamref name="T" /> .</summary>
+        <returns>True se o observador fornecer um resultado e false se não.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBeforeLoadToken&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public bool OnBeforeLoadToken&lt;T&gt; (Newtonsoft.Json.Linq.JToken token, out T result) where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool OnBeforeLoadToken&lt;class T&gt;(class Newtonsoft.Json.Linq.JToken token, [out] !!T&amp; result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Declarative.Observers.IConverterObserver.OnBeforeLoadToken``1(Newtonsoft.Json.Linq.JToken,``0@)" />
+      <MemberSignature Language="VB.NET" Value="Public Function OnBeforeLoadToken(Of T As Class) (token As JToken, ByRef result As T) As Boolean" />
+      <MemberSignature Language="F#" Value="abstract member OnBeforeLoadToken : Newtonsoft.Json.Linq.JToken * 'T -&gt; bool (requires 'T : null)" Usage="iConverterObserver.OnBeforeLoadToken (token, result)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs.Declarative</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="token" Type="Newtonsoft.Json.Linq.JToken" />
+        <Parameter Name="result" Type="T" RefType="out" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">Tipo do objeto concreto a ser compilado.</typeparam>
+        <param name="token">Token a ser usado para criar o objeto.</param>
+        <param name="result">Parâmetro de saída para o observador fornecer seu resultado ao conversor.</param>
+        <summary>Notifica <see cref="T:Microsoft.Bot.Builder.Dialogs.Declarative.Observers.IConverterObserver" /> instâncias antes de carregar o tipo a <see cref="T:Newtonsoft.Json.Linq.JToken" /> .</summary>
+        <returns>True se o observador fornecer um resultado e false se não.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

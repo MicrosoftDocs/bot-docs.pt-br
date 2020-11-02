@@ -1,0 +1,28 @@
+<Type Name="EvaluatorLookup" FullName="AdaptiveExpressions.EvaluatorLookup">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c2c3e7e83a551bb0777eb4f6d8aeb90360948bce" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152143" /></Metadata><TypeSignature Language="C#" Value="public delegate AdaptiveExpressions.ExpressionEvaluator EvaluatorLookup(string type);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed EvaluatorLookup extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:AdaptiveExpressions.EvaluatorLookup" />
+  <TypeSignature Language="VB.NET" Value="Public Delegate Function EvaluatorLookup(type As String) As ExpressionEvaluator " />
+  <TypeSignature Language="F#" Value="type EvaluatorLookup = delegate of string -&gt; ExpressionEvaluator" />
+  <AssemblyInfo>
+    <AssemblyName>AdaptiveExpressions</AssemblyName>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="type" Type="System.String" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>AdaptiveExpressions.ExpressionEvaluator</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="type">Nome a ser pesquisado, geralmente de <see cref="T:AdaptiveExpressions.ExpressionType" /> .</param>
+    <summary>Delegar para pesquisar informações de função do tipo.</summary>
+    <returns>Informações de avaliação da expressão.</returns>
+    <remarks>To be added.</remarks>
+  </Docs>
+</Type>

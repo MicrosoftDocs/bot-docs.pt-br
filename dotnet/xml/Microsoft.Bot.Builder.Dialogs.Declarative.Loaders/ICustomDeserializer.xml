@@ -1,0 +1,52 @@
+<Type Name="ICustomDeserializer" FullName="Microsoft.Bot.Builder.Dialogs.Declarative.Loaders.ICustomDeserializer">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="41f49f23873281269b8d5aa5281e174f1fb38639" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152251" /></Metadata><TypeSignature Language="C#" Value="public interface ICustomDeserializer" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICustomDeserializer" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Declarative.Loaders.ICustomDeserializer" />
+  <TypeSignature Language="VB.NET" Value="Public Interface ICustomDeserializer" />
+  <TypeSignature Language="F#" Value="type ICustomDeserializer = interface" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Dialogs.Declarative</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>Define o contrato para um desserializador de um objeto JToken para outro tipo.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public object Load (Newtonsoft.Json.Linq.JToken obj, Newtonsoft.Json.JsonSerializer serializer, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Load(class Newtonsoft.Json.Linq.JToken obj, class Newtonsoft.Json.JsonSerializer serializer, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Declarative.Loaders.ICustomDeserializer.Load(Newtonsoft.Json.Linq.JToken,Newtonsoft.Json.JsonSerializer,System.Type)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Load (obj As JToken, serializer As JsonSerializer, type As Type) As Object" />
+      <MemberSignature Language="F#" Value="abstract member Load : Newtonsoft.Json.Linq.JToken * Newtonsoft.Json.JsonSerializer * Type -&gt; obj" Usage="iCustomDeserializer.Load (obj, serializer, type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs.Declarative</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="Newtonsoft.Json.Linq.JToken" />
+        <Parameter Name="serializer" Type="Newtonsoft.Json.JsonSerializer" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="obj">O objeto JToken a ser desserializado.</param>
+        <param name="serializer">O <see cref="T:Newtonsoft.Json.JsonSerializer" /> que será usado ao criar o objeto.</param>
+        <param name="type">O tipo de objeto para o qual o token será desserializado.</param>
+        <summary>O método que carrega o objeto JToken para um tipo solicitado.</summary>
+        <returns>O novo objeto criado a partir do valor JToken.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

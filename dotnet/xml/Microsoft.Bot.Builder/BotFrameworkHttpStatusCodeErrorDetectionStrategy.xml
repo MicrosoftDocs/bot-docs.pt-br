@@ -1,0 +1,99 @@
+<Type Name="BotFrameworkHttpStatusCodeErrorDetectionStrategy" FullName="Microsoft.Bot.Builder.BotFrameworkHttpStatusCodeErrorDetectionStrategy">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="1db741f693485974b8f2164ba4d54e826b237f8e" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152116" /></Metadata><TypeSignature Language="C#" Value="public class BotFrameworkHttpStatusCodeErrorDetectionStrategy : Microsoft.Rest.TransientFaultHandling.ITransientErrorDetectionStrategy" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BotFrameworkHttpStatusCodeErrorDetectionStrategy extends System.Object implements class Microsoft.Rest.TransientFaultHandling.ITransientErrorDetectionStrategy" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.BotFrameworkHttpStatusCodeErrorDetectionStrategy" />
+  <TypeSignature Language="VB.NET" Value="Public Class BotFrameworkHttpStatusCodeErrorDetectionStrategy&#xA;Implements ITransientErrorDetectionStrategy" />
+  <TypeSignature Language="F#" Value="type BotFrameworkHttpStatusCodeErrorDetectionStrategy = class&#xA;    interface ITransientErrorDetectionStrategy" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>4.0.7.0</AssemblyVersion>
+    <AssemblyVersion>4.1.5.0</AssemblyVersion>
+    <AssemblyVersion>4.3.2.0</AssemblyVersion>
+    <AssemblyVersion>4.4.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.0</AssemblyVersion>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.Rest.TransientFaultHandling.ITransientErrorDetectionStrategy</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Estratégia de detecção de erros do código de status HTTP do bot Framework.</summary>
+    <remarks>To be added.</remarks>
+    <altmember cref="T:Microsoft.Rest.TransientFaultHandling.ITransientErrorDetectionStrategy" />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BotFrameworkHttpStatusCodeErrorDetectionStrategy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.BotFrameworkHttpStatusCodeErrorDetectionStrategy.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTransient">
+      <MemberSignature Language="C#" Value="public bool IsTransient (Exception ex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsTransient(class System.Exception ex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.BotFrameworkHttpStatusCodeErrorDetectionStrategy.IsTransient(System.Exception)" />
+      <MemberSignature Language="VB.NET" Value="Public Function IsTransient (ex As Exception) As Boolean" />
+      <MemberSignature Language="F#" Value="abstract member IsTransient : Exception -&gt; bool&#xA;override this.IsTransient : Exception -&gt; bool" Usage="botFrameworkHttpStatusCodeErrorDetectionStrategy.IsTransient ex" />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:Microsoft.Rest.TransientFaultHandling.ITransientErrorDetectionStrategy.IsTransient(System.Exception)</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ex" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="ex">Exceção a ser verificada.</param>
+        <summary>Retornará true se o código de status na exceção HttpRequestExceptionWithStatus for RequestTimeout, TooManyRequests, não encontrado ou maior ou igual a 500 e não for não implementado (501) ou HttpVersionNotSupported (505).</summary>
+        <returns>True se a exceção for transitória, caso contrário, false.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

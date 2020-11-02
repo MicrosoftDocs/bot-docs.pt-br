@@ -1,0 +1,96 @@
+<Type Name="PrivateConversationState" FullName="Microsoft.Bot.Builder.PrivateConversationState">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2d8cba69d9de2f150f6bc778b6c413dfea255838" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152111" /></Metadata><TypeSignature Language="C#" Value="public class PrivateConversationState : Microsoft.Bot.Builder.BotState" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PrivateConversationState extends Microsoft.Bot.Builder.BotState" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.PrivateConversationState" />
+  <TypeSignature Language="VB.NET" Value="Public Class PrivateConversationState&#xA;Inherits BotState" />
+  <TypeSignature Language="F#" Value="type PrivateConversationState = class&#xA;    inherit BotState" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>4.0.7.0</AssemblyVersion>
+    <AssemblyVersion>4.1.5.0</AssemblyVersion>
+    <AssemblyVersion>4.3.2.0</AssemblyVersion>
+    <AssemblyVersion>4.4.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.0</AssemblyVersion>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Bot.Builder.BotState</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Define um objeto de gerenciamento de estado para o estado de conversa particular.</summary>
+    <remarks>O estado de conversa particular é definido como escopo para a conversa específica e para esse usuário específico.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrivateConversationState (Microsoft.Bot.Builder.IStorage storage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Bot.Builder.IStorage storage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.PrivateConversationState.#ctor(Microsoft.Bot.Builder.IStorage)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (storage As IStorage)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.PrivateConversationState : Microsoft.Bot.Builder.IStorage -&gt; Microsoft.Bot.Builder.PrivateConversationState" Usage="new Microsoft.Bot.Builder.PrivateConversationState storage" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="storage" Type="Microsoft.Bot.Builder.IStorage" />
+      </Parameters>
+      <Docs>
+        <param name="storage">A camada de armazenamento a ser usada.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.PrivateConversationState" />.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStorageKey">
+      <MemberSignature Language="C#" Value="protected override string GetStorageKey (Microsoft.Bot.Builder.ITurnContext turnContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetStorageKey(class Microsoft.Bot.Builder.ITurnContext turnContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.PrivateConversationState.GetStorageKey(Microsoft.Bot.Builder.ITurnContext)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function GetStorageKey (turnContext As ITurnContext) As String" />
+      <MemberSignature Language="F#" Value="override this.GetStorageKey : Microsoft.Bot.Builder.ITurnContext -&gt; string" Usage="privateConversationState.GetStorageKey turnContext" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="turnContext" Type="Microsoft.Bot.Builder.ITurnContext" />
+      </Parameters>
+      <Docs>
+        <param name="turnContext">O objeto de contexto para essa rodada.</param>
+        <summary>Obtém a chave a ser usada ao ler e gravar o estado de e para o armazenamento.</summary>
+        <returns>A chave de armazenamento.</returns>
+        <remarks>O estado de conversa particular inclui a ID do canal, a ID da conversa e a ID de usuário como parte de sua chave de armazenamento.</remarks>
+        <exception cref="T:System.ArgumentNullException">O <see cref="P:Microsoft.Bot.Builder.ITurnContext.Activity" /> para a ativação atual está ausente <see cref="P:Microsoft.Bot.Schema.Activity.ChannelId" /> , <see cref="P:Microsoft.Bot.Schema.Activity.Conversation" /> , ou <see cref="P:Microsoft.Bot.Schema.Activity.From" /> informações; ou a conversa ou o remetente <see cref="P:Microsoft.Bot.Schema.ConversationAccount.Id" /> está ausente.</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

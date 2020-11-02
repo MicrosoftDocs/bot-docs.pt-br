@@ -1,0 +1,132 @@
+<Type Name="TelemetryLoggerConstants" FullName="Microsoft.Bot.Builder.TelemetryLoggerConstants">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3664b46e300b35e4c21dc7d9dbb0aa1372eea93f" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152094" /></Metadata><TypeSignature Language="C#" Value="public static class TelemetryLoggerConstants" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit TelemetryLoggerConstants extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.TelemetryLoggerConstants" />
+  <TypeSignature Language="VB.NET" Value="Public Class TelemetryLoggerConstants" />
+  <TypeSignature Language="F#" Value="type TelemetryLoggerConstants = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>4.4.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.0</AssemblyVersion>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Define nomes de eventos comuns para uso com um <see cref="T:Microsoft.Bot.Builder.IBotTelemetryClient" /> objeto.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BotMsgDeleteEvent">
+      <MemberSignature Language="C#" Value="public static readonly string BotMsgDeleteEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string BotMsgDeleteEvent" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.TelemetryLoggerConstants.BotMsgDeleteEvent" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly BotMsgDeleteEvent As String " />
+      <MemberSignature Language="F#" Value=" staticval mutable BotMsgDeleteEvent : string" Usage="Microsoft.Bot.Builder.TelemetryLoggerConstants.BotMsgDeleteEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>O nome do evento quando uma mensagem é excluída pelo bot.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BotMsgReceiveEvent">
+      <MemberSignature Language="C#" Value="public static readonly string BotMsgReceiveEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string BotMsgReceiveEvent" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.TelemetryLoggerConstants.BotMsgReceiveEvent" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly BotMsgReceiveEvent As String " />
+      <MemberSignature Language="F#" Value=" staticval mutable BotMsgReceiveEvent : string" Usage="Microsoft.Bot.Builder.TelemetryLoggerConstants.BotMsgReceiveEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>O nome do evento quando uma nova mensagem é recebida do usuário.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BotMsgSendEvent">
+      <MemberSignature Language="C#" Value="public static readonly string BotMsgSendEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string BotMsgSendEvent" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.TelemetryLoggerConstants.BotMsgSendEvent" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly BotMsgSendEvent As String " />
+      <MemberSignature Language="F#" Value=" staticval mutable BotMsgSendEvent : string" Usage="Microsoft.Bot.Builder.TelemetryLoggerConstants.BotMsgSendEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>O nome do evento quando registrado quando uma mensagem é enviada do bot para o usuário.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BotMsgUpdateEvent">
+      <MemberSignature Language="C#" Value="public static readonly string BotMsgUpdateEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string BotMsgUpdateEvent" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Builder.TelemetryLoggerConstants.BotMsgUpdateEvent" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly BotMsgUpdateEvent As String " />
+      <MemberSignature Language="F#" Value=" staticval mutable BotMsgUpdateEvent : string" Usage="Microsoft.Bot.Builder.TelemetryLoggerConstants.BotMsgUpdateEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>O nome do evento quando uma mensagem é atualizada pelo bot.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,77 @@
+<Type Name="StorageExtensions" FullName="Microsoft.Bot.Builder.StorageExtensions">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7c797226eacdacfcdf742bc631ae4cc2957139b8" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152101" /></Metadata><TypeSignature Language="C#" Value="public static class StorageExtensions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit StorageExtensions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.StorageExtensions" />
+  <TypeSignature Language="VB.NET" Value="Public Module StorageExtensions" />
+  <TypeSignature Language="F#" Value="type StorageExtensions = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>4.0.7.0</AssemblyVersion>
+    <AssemblyVersion>4.1.5.0</AssemblyVersion>
+    <AssemblyVersion>4.3.2.0</AssemblyVersion>
+    <AssemblyVersion>4.4.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.0</AssemblyVersion>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Contém métodos de extensão para <see cref="T:Microsoft.Bot.Builder.IStorage" /> objetos.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ReadAsync&lt;TStoreItem&gt;">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;System.Collections.Generic.IDictionary&lt;string,TStoreItem&gt;&gt; ReadAsync&lt;TStoreItem&gt; (this Microsoft.Bot.Builder.IStorage storage, string[] keys, System.Threading.CancellationToken cancellationToken = default) where TStoreItem : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;class System.Collections.Generic.IDictionary`2&lt;string, !!TStoreItem&gt;&gt; ReadAsync&lt;class TStoreItem&gt;(class Microsoft.Bot.Builder.IStorage storage, string[] keys, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.StorageExtensions.ReadAsync``1(Microsoft.Bot.Builder.IStorage,System.String[],System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function ReadAsync(Of TStoreItem As Class) (storage As IStorage, keys As String(), Optional cancellationToken As CancellationToken = Nothing) As Task(Of IDictionary(Of String, TStoreItem))" />
+      <MemberSignature Language="F#" Value="static member ReadAsync : Microsoft.Bot.Builder.IStorage * string[] * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.Collections.Generic.IDictionary&lt;string, 'StoreItem&gt;&gt; (requires 'StoreItem : null)" Usage="Microsoft.Bot.Builder.StorageExtensions.ReadAsync (storage, keys, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Collections.Generic.IDictionary&lt;System.String,TStoreItem&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TStoreItem">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="storage" Type="Microsoft.Bot.Builder.IStorage" RefType="this" />
+        <Parameter Name="keys" Type="System.String[]" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TStoreItem">O tipo de item a ser obtido do armazenamento.</typeparam>
+        <param name="storage">O armazenamento de estado.</param>
+        <param name="keys">A coleção de chaves para os objetos a serem obtidos do armazenamento.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Obtém e digita fortemente uma coleção de <see cref="T:Microsoft.Bot.Builder.IStoreItem" /> objetos do armazenamento de estado.</summary>
+        <returns>Uma tarefa que representa o trabalho na fila a ser executado.</returns>
+        <remarks>Se a tarefa for concluída com êxito, o resultado conterá um dicionário dos objetos fortemente tipados, indexados pelo <paramref name="keys" /> .</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

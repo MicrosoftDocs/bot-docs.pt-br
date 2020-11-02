@@ -1,0 +1,90 @@
+<Type Name="SignInConstants" FullName="Microsoft.Bot.Schema.SignInConstants">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="998d8fc652196b11328c922e805e887148f524e8" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152159" /></Metadata><TypeSignature Language="C#" Value="public static class SignInConstants" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit SignInConstants extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.SignInConstants" />
+  <TypeSignature Language="VB.NET" Value="Public Class SignInConstants" />
+  <TypeSignature Language="F#" Value="type SignInConstants = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Nomes para as operações de invocação de entrada no protocolo de token.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="TokenExchangeOperationName">
+      <MemberSignature Language="C#" Value="public const string TokenExchangeOperationName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string TokenExchangeOperationName" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Schema.SignInConstants.TokenExchangeOperationName" />
+      <MemberSignature Language="VB.NET" Value="Public Const TokenExchangeOperationName As String " />
+      <MemberSignature Language="F#" Value="val mutable TokenExchangeOperationName : string" Usage="Microsoft.Bot.Schema.SignInConstants.TokenExchangeOperationName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Nome da chamada de entrada para executar uma troca de token.</summary>
+        <remarks>Essa operação de invocação inclui um valor da classe de troca de token.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TokenResponseEventName">
+      <MemberSignature Language="C#" Value="public const string TokenResponseEventName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string TokenResponseEventName" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Schema.SignInConstants.TokenResponseEventName" />
+      <MemberSignature Language="VB.NET" Value="Public Const TokenResponseEventName As String " />
+      <MemberSignature Language="F#" Value="val mutable TokenResponseEventName : string" Usage="Microsoft.Bot.Schema.SignInConstants.TokenResponseEventName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>O nome do EventActivity quando um token é enviado para o bot.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerifyStateOperationName">
+      <MemberSignature Language="C#" Value="public const string VerifyStateOperationName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string VerifyStateOperationName" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Schema.SignInConstants.VerifyStateOperationName" />
+      <MemberSignature Language="VB.NET" Value="Public Const VerifyStateOperationName As String " />
+      <MemberSignature Language="F#" Value="val mutable VerifyStateOperationName : string" Usage="Microsoft.Bot.Schema.SignInConstants.VerifyStateOperationName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Nome da invocação de entrada para verificar o código de autenticação de 6 dígitos como parte da entrada.</summary>
+        <remarks>Essa operação Invoke inclui um valor que contém uma propriedade State para o código mágico.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,70 @@
+<Type Name="AtPathResolver" FullName="Microsoft.Bot.Builder.Dialogs.Memory.PathResolvers.AtPathResolver">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="62bbaa8597f7cd60d5c1851f3e5fa342cba55054" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152226" /></Metadata><TypeSignature Language="C#" Value="public class AtPathResolver : Microsoft.Bot.Builder.Dialogs.Memory.PathResolvers.AliasPathResolver" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AtPathResolver extends Microsoft.Bot.Builder.Dialogs.Memory.PathResolvers.AliasPathResolver" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Memory.PathResolvers.AtPathResolver" />
+  <TypeSignature Language="VB.NET" Value="Public Class AtPathResolver&#xA;Inherits AliasPathResolver" />
+  <TypeSignature Language="F#" Value="type AtPathResolver = class&#xA;    inherit AliasPathResolver" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Memory.PathResolvers.AliasPathResolver</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Maps @ = &gt; Ativar. reconhecível. entidades. xxx [0].</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AtPathResolver ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Memory.PathResolvers.AtPathResolver.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformPath">
+      <MemberSignature Language="C#" Value="public override string TransformPath (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string TransformPath(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Memory.PathResolvers.AtPathResolver.TransformPath(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function TransformPath (path As String) As String" />
+      <MemberSignature Language="F#" Value="override this.TransformPath : string -&gt; string" Usage="atPathResolver.TransformPath path" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

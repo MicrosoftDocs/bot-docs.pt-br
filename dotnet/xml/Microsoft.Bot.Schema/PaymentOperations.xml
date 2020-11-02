@@ -1,0 +1,96 @@
+<Type Name="PaymentOperations" FullName="Microsoft.Bot.Schema.PaymentOperations">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="990a539b998735f6c4b5b9abc43258c1f3df7bdb" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152452" /></Metadata><TypeSignature Language="C#" Value="public static class PaymentOperations" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit PaymentOperations extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.PaymentOperations" />
+  <TypeSignature Language="VB.NET" Value="Public Class PaymentOperations" />
+  <TypeSignature Language="F#" Value="type PaymentOperations = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Obsolete("Bot Framework no longer supports payments.")]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Obsolete("Bot Framework no longer supports payments.")&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Nomes para operações invocáveis no protocolo de retorno de chamada de pagamento.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="PaymentCompleteOperationName">
+      <MemberSignature Language="C#" Value="public const string PaymentCompleteOperationName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string PaymentCompleteOperationName" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Schema.PaymentOperations.PaymentCompleteOperationName" />
+      <MemberSignature Language="VB.NET" Value="Public Const PaymentCompleteOperationName As String " />
+      <MemberSignature Language="F#" Value="val mutable PaymentCompleteOperationName : string" Usage="Microsoft.Bot.Schema.PaymentOperations.PaymentCompleteOperationName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Nome da invocação de operação de conclusão de pagamento.</summary>
+        <remarks>Esta operação aceita um objeto PaymentRequestComplete e retorna um objeto PaymentRequestResult ou um erro.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateShippingAddressOperationName">
+      <MemberSignature Language="C#" Value="public const string UpdateShippingAddressOperationName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string UpdateShippingAddressOperationName" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Schema.PaymentOperations.UpdateShippingAddressOperationName" />
+      <MemberSignature Language="VB.NET" Value="Public Const UpdateShippingAddressOperationName As String " />
+      <MemberSignature Language="F#" Value="val mutable UpdateShippingAddressOperationName : string" Usage="Microsoft.Bot.Schema.PaymentOperations.UpdateShippingAddressOperationName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Nome da invocação de operação de endereço de envio de atualização.</summary>
+        <remarks>Esta operação aceita um objeto PaymentRequestUpdate e retorna um objeto PaymentDetails ou um erro.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateShippingOptionOperationName">
+      <MemberSignature Language="C#" Value="public const string UpdateShippingOptionOperationName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string UpdateShippingOptionOperationName" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Schema.PaymentOperations.UpdateShippingOptionOperationName" />
+      <MemberSignature Language="VB.NET" Value="Public Const UpdateShippingOptionOperationName As String " />
+      <MemberSignature Language="F#" Value="val mutable UpdateShippingOptionOperationName : string" Usage="Microsoft.Bot.Schema.PaymentOperations.UpdateShippingOptionOperationName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Nome da invocação de operação de opção de envio de atualização.</summary>
+        <remarks>Esta operação aceita um objeto PaymentRequestUpdate e retorna um objeto PaymentDetails ou um erro.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
