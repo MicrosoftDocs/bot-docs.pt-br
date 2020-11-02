@@ -1,0 +1,126 @@
+<Type Name="O365ConnectorCardImage" FullName="Microsoft.Bot.Schema.Teams.O365ConnectorCardImage">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6085b89ac444c4bcd5b680c159f8dd7c5a9d5571" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152674" /></Metadata><TypeSignature Language="C#" Value="public class O365ConnectorCardImage" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit O365ConnectorCardImage extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.Teams.O365ConnectorCardImage" />
+  <TypeSignature Language="VB.NET" Value="Public Class O365ConnectorCardImage" />
+  <TypeSignature Language="F#" Value="type O365ConnectorCardImage = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Imagem do cartão do conector do O365</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public O365ConnectorCardImage ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Schema.Teams.O365ConnectorCardImage.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Inicializa uma nova instância da classe O365ConnectorCardImage.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public O365ConnectorCardImage (string image = default, string title = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string image, string title) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Schema.Teams.O365ConnectorCardImage.#ctor(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (Optional image As String = Nothing, Optional title As String = Nothing)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Schema.Teams.O365ConnectorCardImage : string * string -&gt; Microsoft.Bot.Schema.Teams.O365ConnectorCardImage" Usage="new Microsoft.Bot.Schema.Teams.O365ConnectorCardImage (image, title)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="image" Type="System.String" />
+        <Parameter Name="title" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="image">URL da imagem</param>
+        <param name="title">Texto alternativo para a imagem</param>
+        <summary>Inicializa uma nova instância da classe O365ConnectorCardImage.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Image">
+      <MemberSignature Language="C#" Value="public string Image { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Image" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.Teams.O365ConnectorCardImage.Image" />
+      <MemberSignature Language="VB.NET" Value="Public Property Image As String" />
+      <MemberSignature Language="F#" Value="member this.Image : string with get, set" Usage="Microsoft.Bot.Schema.Teams.O365ConnectorCardImage.Image" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="image")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="image")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a URL da imagem</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public string Title { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Title" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.Teams.O365ConnectorCardImage.Title" />
+      <MemberSignature Language="VB.NET" Value="Public Property Title As String" />
+      <MemberSignature Language="F#" Value="member this.Title : string with get, set" Usage="Microsoft.Bot.Schema.Teams.O365ConnectorCardImage.Title" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="title")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="title")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o texto alternativo para a imagem</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
