@@ -1,0 +1,150 @@
+<Type Name="FacebookClientWrapperOptions" FullName="Microsoft.Bot.Builder.Adapters.Facebook.FacebookClientWrapperOptions">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="83b27b93eb1ffecd8799545832feb6386d5f5a3f" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152545" /></Metadata><TypeSignature Language="C#" Value="public class FacebookClientWrapperOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FacebookClientWrapperOptions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Adapters.Facebook.FacebookClientWrapperOptions" />
+  <TypeSignature Language="VB.NET" Value="Public Class FacebookClientWrapperOptions" />
+  <TypeSignature Language="F#" Value="type FacebookClientWrapperOptions = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Classe de opções para o adaptador do Facebook.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FacebookClientWrapperOptions (string verifyToken, string appSecret, string accessToken, string apiHost = &quot;graph.facebook.com&quot;, string apiVersion = &quot;v3.2&quot;);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string verifyToken, string appSecret, string accessToken, string apiHost, string apiVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.Facebook.FacebookClientWrapperOptions.#ctor(System.String,System.String,System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (verifyToken As String, appSecret As String, accessToken As String, Optional apiHost As String = &quot;graph.facebook.com&quot;, Optional apiVersion As String = &quot;v3.2&quot;)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.Adapters.Facebook.FacebookClientWrapperOptions : string * string * string * string * string -&gt; Microsoft.Bot.Builder.Adapters.Facebook.FacebookClientWrapperOptions" Usage="new Microsoft.Bot.Builder.Adapters.Facebook.FacebookClientWrapperOptions (verifyToken, appSecret, accessToken, apiHost, apiVersion)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="verifyToken" Type="System.String" />
+        <Parameter Name="appSecret" Type="System.String" />
+        <Parameter Name="accessToken" Type="System.String" />
+        <Parameter Name="apiHost" Type="System.String" />
+        <Parameter Name="apiVersion" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="verifyToken">O token usado para validar que os WebHooks de entrada são originados do Facebook.</param>
+        <param name="appSecret">O segredo do aplicativo.</param>
+        <param name="accessToken">O token de acesso do Facebook.</param>
+        <param name="apiHost">Um token para validar a origem de WebHooks de entrada.</param>
+        <param name="apiVersion">Um token para que um bot funcione em um único espaço de trabalho.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Adapters.Facebook.FacebookClientWrapperOptions" />.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FacebookAccessToken">
+      <MemberSignature Language="C#" Value="public string FacebookAccessToken { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FacebookAccessToken" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookClientWrapperOptions.FacebookAccessToken" />
+      <MemberSignature Language="VB.NET" Value="Public Property FacebookAccessToken As String" />
+      <MemberSignature Language="F#" Value="member this.FacebookAccessToken : string with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookClientWrapperOptions.FacebookAccessToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o token de acesso.
+Quando associado a uma única página, use `access_token` para especificar o "token de acesso à página" fornecido no widget "tokens de acesso" do portal do desenvolvedor do Facebook da página "configurações do Messenger".</summary>
+        <value>O token de acesso.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FacebookApiHost">
+      <MemberSignature Language="C#" Value="public string FacebookApiHost { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FacebookApiHost" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookClientWrapperOptions.FacebookApiHost" />
+      <MemberSignature Language="VB.NET" Value="Public Property FacebookApiHost As String" />
+      <MemberSignature Language="F#" Value="member this.FacebookApiHost : string with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookClientWrapperOptions.FacebookApiHost" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a URL raiz alternativa usada para construir chamadas para a API do Facebook. O padrão é "graph.facebook.com", mas pode ser alterado (para simulação, proxy, etc.).</summary>
+        <value>O host da API.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FacebookApiVersion">
+      <MemberSignature Language="C#" Value="public string FacebookApiVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FacebookApiVersion" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookClientWrapperOptions.FacebookApiVersion" />
+      <MemberSignature Language="VB.NET" Value="Public Property FacebookApiVersion As String" />
+      <MemberSignature Language="F#" Value="member this.FacebookApiVersion : string with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookClientWrapperOptions.FacebookApiVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a versão de API alternativa usada para construir chamadas para a API do Facebook. O padrão é "v 3.2".</summary>
+        <value>A versão da API.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FacebookAppSecret">
+      <MemberSignature Language="C#" Value="public string FacebookAppSecret { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FacebookAppSecret" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookClientWrapperOptions.FacebookAppSecret" />
+      <MemberSignature Language="VB.NET" Value="Public Property FacebookAppSecret As String" />
+      <MemberSignature Language="F#" Value="member this.FacebookAppSecret : string with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookClientWrapperOptions.FacebookAppSecret" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o segredo do aplicativo na página **configurações básicas** da configuração do aplicativo no portal do desenvolvedor do Facebook.</summary>
+        <value>O segredo do aplicativo.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FacebookVerifyToken">
+      <MemberSignature Language="C#" Value="public string FacebookVerifyToken { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FacebookVerifyToken" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookClientWrapperOptions.FacebookVerifyToken" />
+      <MemberSignature Language="VB.NET" Value="Public Property FacebookVerifyToken As String" />
+      <MemberSignature Language="F#" Value="member this.FacebookVerifyToken : string with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookClientWrapperOptions.FacebookVerifyToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o token de verificação usado para criar inicialmente e verificar as configurações de assinatura de WebHooks no portal do desenvolvedor do Facebook.</summary>
+        <value>O token de verificação.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

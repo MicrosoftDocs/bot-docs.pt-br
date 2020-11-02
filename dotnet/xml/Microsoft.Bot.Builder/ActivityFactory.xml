@@ -1,0 +1,74 @@
+<Type Name="ActivityFactory" FullName="Microsoft.Bot.Builder.ActivityFactory">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="723c7aa108e03c3849111b558cc1110692a6170b" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152467" /></Metadata><TypeSignature Language="C#" Value="public class ActivityFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ActivityFactory extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.ActivityFactory" />
+  <TypeSignature Language="VB.NET" Value="Public Class ActivityFactory" />
+  <TypeSignature Language="F#" Value="type ActivityFactory = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>O ActivityFactory para gerar texto e, em seguida, usa a semântica de redução simples, como chatdown, para criar atividade.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityFactory ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.ActivityFactory.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromObject">
+      <MemberSignature Language="C#" Value="public static Microsoft.Bot.Schema.Activity FromObject (object lgResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Bot.Schema.Activity FromObject(object lgResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.ActivityFactory.FromObject(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function FromObject (lgResult As Object) As Activity" />
+      <MemberSignature Language="F#" Value="static member FromObject : obj -&gt; Microsoft.Bot.Schema.Activity" Usage="Microsoft.Bot.Builder.ActivityFactory.FromObject lgResult" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Schema.Activity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="lgResult" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="lgResult">LG resultado de languageGenerator.</param>
+        <summary>Gere a atividade.
+Dão suporte tanto ao resultado LG da cadeia de caracteres quanto ao resultado de LG estruturado.</summary>
+        <returns>actividade.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

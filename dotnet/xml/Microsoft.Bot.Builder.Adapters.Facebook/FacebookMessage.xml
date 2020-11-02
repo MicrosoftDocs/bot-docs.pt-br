@@ -1,0 +1,489 @@
+<Type Name="FacebookMessage" FullName="Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="70334beffcc5cc5d695700ab19ad167e99a28b40" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152563" /></Metadata><TypeSignature Language="C#" Value="public class FacebookMessage" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FacebookMessage extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage" />
+  <TypeSignature Language="VB.NET" Value="Public Class FacebookMessage" />
+  <TypeSignature Language="F#" Value="type FacebookMessage = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Representa informações associadas a um evento de webhook do Facebook. Para obter mais informações, consulte a [referência de eventos de webhook](https://developers.facebook.com/docs/messenger-platform/reference/webhook-events)do Facebook.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FacebookMessage (string recipientId, Microsoft.Bot.Builder.Adapters.Facebook.Message message, string messagingType, string tag = default, string notificationType = default, string personaId = default, string senderAction = default, string senderId = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string recipientId, class Microsoft.Bot.Builder.Adapters.Facebook.Message message, string messagingType, string tag, string notificationType, string personaId, string senderAction, string senderId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.#ctor(System.String,Microsoft.Bot.Builder.Adapters.Facebook.Message,System.String,System.String,System.String,System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (recipientId As String, message As Message, messagingType As String, Optional tag As String = Nothing, Optional notificationType As String = Nothing, Optional personaId As String = Nothing, Optional senderAction As String = Nothing, Optional senderId As String = Nothing)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage : string * Microsoft.Bot.Builder.Adapters.Facebook.Message * string * string * string * string * string * string -&gt; Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage" Usage="new Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage (recipientId, message, messagingType, tag, notificationType, personaId, senderAction, senderId)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="recipientId" Type="System.String" />
+        <Parameter Name="message" Type="Microsoft.Bot.Builder.Adapters.Facebook.Message" />
+        <Parameter Name="messagingType" Type="System.String" />
+        <Parameter Name="tag" Type="System.String" />
+        <Parameter Name="notificationType" Type="System.String" />
+        <Parameter Name="personaId" Type="System.String" />
+        <Parameter Name="senderAction" Type="System.String" />
+        <Parameter Name="senderId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="recipientId">Conteúdo do campo ID do destinatário.</param>
+        <param name="message">Conteúdo do campo de mensagem.</param>
+        <param name="messagingType">O tipo de evento de webhook. Para obter mais informações, consulte a [lista de eventos de webhook](https://developers.facebook.com/docs/messenger-platform/reference/webhook-events#event_list)do Facebook.</param>
+        <param name="tag">A cadeia de caracteres de marca de mensagem opcional. Consulte https://developers.facebook.com/docs/messenger-platform/send-messages/message-tags.</param>
+        <param name="notificationType">O tipo de notificação opcional: REGULAR (valor padrão), SILENT_PUSH NO_PUSH.</param>
+        <param name="personaId">A ID da pessoa.</param>
+        <param name="senderAction">Estado da mensagem a ser exibida para o usuário: typing_on, typing_off mark_seen. Não pode ser enviado com ' message '. Quando usado, ' recipient ' deve ser a única outra propriedade definida na solicitação.</param>
+        <param name="senderId">A ID do remetente.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage" />.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsStandby">
+      <MemberSignature Language="C#" Value="public bool IsStandby { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsStandby" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.IsStandby" />
+      <MemberSignature Language="VB.NET" Value="Public Property IsStandby As Boolean" />
+      <MemberSignature Language="F#" Value="member this.IsStandby : bool with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.IsStandby" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonIgnore]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonIgnore&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define um valor que indica se a mensagem foi recebida no modo de espera.</summary>
+        <value>Valor que indica se a mensagem foi recebida no modo de espera.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.Facebook.Message Message { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.Adapters.Facebook.Message Message" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.Message" />
+      <MemberSignature Language="VB.NET" Value="Public Property Message As Message" />
+      <MemberSignature Language="F#" Value="member this.Message : Microsoft.Bot.Builder.Adapters.Facebook.Message with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="message")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="message")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.Facebook.Message</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a mensagem a ser enviada.</summary>
+        <value>A mensagem.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessagingType">
+      <MemberSignature Language="C#" Value="public string MessagingType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MessagingType" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.MessagingType" />
+      <MemberSignature Language="VB.NET" Value="Public Property MessagingType As String" />
+      <MemberSignature Language="F#" Value="member this.MessagingType : string with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.MessagingType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="messaging_type")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="messaging_type")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o tipo de mensagem.</summary>
+        <value>O tipo de mensagem.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotificationType">
+      <MemberSignature Language="C#" Value="public string NotificationType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NotificationType" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.NotificationType" />
+      <MemberSignature Language="VB.NET" Value="Public Property NotificationType As String" />
+      <MemberSignature Language="F#" Value="member this.NotificationType : string with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.NotificationType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="notification_type")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="notification_type")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o tipo de notificação.</summary>
+        <value>O tipo de notificação.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OptIn">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookRecipient OptIn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookRecipient OptIn" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.OptIn" />
+      <MemberSignature Language="VB.NET" Value="Public Property OptIn As FacebookRecipient" />
+      <MemberSignature Language="F#" Value="member this.OptIn : Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookRecipient with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.OptIn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="optin")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="optin")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookRecipient</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o valor da propriedade Optin.</summary>
+        <value>O campo Optin. Consulte https://developers.facebook.com/docs/messenger-platform/reference/webhook-events/messaging_optins.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PassThreadControl">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookPassThreadControl PassThreadControl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookPassThreadControl PassThreadControl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.PassThreadControl" />
+      <MemberSignature Language="VB.NET" Value="Public Property PassThreadControl As FacebookPassThreadControl" />
+      <MemberSignature Language="F#" Value="member this.PassThreadControl : Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookPassThreadControl with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.PassThreadControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="pass_thread_control")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="pass_thread_control")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookPassThreadControl</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o conteúdo da propriedade pass_thread_control.</summary>
+        <value>Um <see cref="T:Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookPassThreadControl" /> que mantém o conteúdo da propriedade pass_thread_control.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersonaId">
+      <MemberSignature Language="C#" Value="public string PersonaId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PersonaId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.PersonaId" />
+      <MemberSignature Language="VB.NET" Value="Public Property PersonaId As String" />
+      <MemberSignature Language="F#" Value="member this.PersonaId : string with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.PersonaId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="persona_id")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="persona_id")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a ID da pessoa.</summary>
+        <value>A ID da pessoa.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PostBack">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookPostBack PostBack { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookPostBack PostBack" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.PostBack" />
+      <MemberSignature Language="VB.NET" Value="Public Property PostBack As FacebookPostBack" />
+      <MemberSignature Language="F#" Value="member this.PostBack : Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookPostBack with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.PostBack" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="postback")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="postback")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookPostBack</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o valor da propriedade de postback.</summary>
+        <value>A carga de postback. Um postback ocorre quando um botão de postback, um botão de **introdução** ou um item de menu persistente é tocado.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reads">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookRead Reads { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookRead Reads" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.Reads" />
+      <MemberSignature Language="VB.NET" Value="Public Property Reads As FacebookRead" />
+      <MemberSignature Language="F#" Value="member this.Reads : Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookRead with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.Reads" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="read")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="read")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookRead</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o conteúdo da propriedade message_reads.</summary>
+        <value>Um <see cref="T:Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookRead" /> que mantém o conteúdo da propriedade message_reads.
+Consulte https://developers.facebook.com/docs/messenger-platform/reference/webhook-events/message-reads.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Recipient">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookBotUser Recipient { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookBotUser Recipient" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.Recipient" />
+      <MemberSignature Language="VB.NET" Value="Public Property Recipient As FacebookBotUser" />
+      <MemberSignature Language="F#" Value="member this.Recipient : Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookBotUser with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.Recipient" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="recipient")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="recipient")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookBotUser</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a ID do destinatário.</summary>
+        <value>A ID do destinatário.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestThreadControl">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookRequestThreadControl RequestThreadControl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookRequestThreadControl RequestThreadControl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.RequestThreadControl" />
+      <MemberSignature Language="VB.NET" Value="Public Property RequestThreadControl As FacebookRequestThreadControl" />
+      <MemberSignature Language="F#" Value="member this.RequestThreadControl : Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookRequestThreadControl with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.RequestThreadControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="request_thread_control")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="request_thread_control")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookRequestThreadControl</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o conteúdo da propriedade request_thread_control.</summary>
+        <value>Um <see cref="T:Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookRequestThreadControl" /> que mantém o conteúdo da propriedade pass_thread_control.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sender">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookBotUser Sender { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookBotUser Sender" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.Sender" />
+      <MemberSignature Language="VB.NET" Value="Public Property Sender As FacebookBotUser" />
+      <MemberSignature Language="F#" Value="member this.Sender : Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookBotUser with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.Sender" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="sender")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="sender")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.FacebookBotUser</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a ID do remetente.</summary>
+        <value>A ID do remetente.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SenderAction">
+      <MemberSignature Language="C#" Value="public string SenderAction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SenderAction" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.SenderAction" />
+      <MemberSignature Language="VB.NET" Value="Public Property SenderAction As String" />
+      <MemberSignature Language="F#" Value="member this.SenderAction : string with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.SenderAction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="sender_action")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="sender_action")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a ação do remetente.</summary>
+        <value>A ação do remetente (typing_on, typing_off, mark_seen).</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tag">
+      <MemberSignature Language="C#" Value="public string Tag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Tag" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.Tag" />
+      <MemberSignature Language="VB.NET" Value="Public Property Tag As String" />
+      <MemberSignature Language="F#" Value="member this.Tag : string with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.Tag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="tag")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="tag")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define uma marca para a mensagem.</summary>
+        <value>A marca.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TakeThreadControl">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookTakeThreadControl TakeThreadControl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookTakeThreadControl TakeThreadControl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.TakeThreadControl" />
+      <MemberSignature Language="VB.NET" Value="Public Property TakeThreadControl As FacebookTakeThreadControl" />
+      <MemberSignature Language="F#" Value="member this.TakeThreadControl : Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookTakeThreadControl with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.TakeThreadControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="take_thread_control")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="take_thread_control")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookTakeThreadControl</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o conteúdo da propriedade take_thread_control.</summary>
+        <value>Um <see cref="T:Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookTakeThreadControl" /> que mantém o conteúdo da propriedade pass_thread_control.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeStamp">
+      <MemberSignature Language="C#" Value="public long TimeStamp { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 TimeStamp" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.TimeStamp" />
+      <MemberSignature Language="VB.NET" Value="Public Property TimeStamp As Long" />
+      <MemberSignature Language="F#" Value="member this.TimeStamp : int64 with get, set" Usage="Microsoft.Bot.Builder.Adapters.Facebook.FacebookMessage.TimeStamp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Adapters.Facebook</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="timestamp")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="timestamp")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o carimbo de data/hora.</summary>
+        <value>Carimbo de data/hora.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

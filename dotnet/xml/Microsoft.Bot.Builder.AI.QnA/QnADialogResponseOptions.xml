@@ -1,0 +1,147 @@
+<Type Name="QnADialogResponseOptions" FullName="Microsoft.Bot.Builder.AI.QnA.QnADialogResponseOptions">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6804906bc24cccdd0c63ae9c118429f1536922cd" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152473" /></Metadata><TypeSignature Language="C#" Value="public class QnADialogResponseOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit QnADialogResponseOptions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.AI.QnA.QnADialogResponseOptions" />
+  <TypeSignature Language="VB.NET" Value="Public Class QnADialogResponseOptions" />
+  <TypeSignature Language="F#" Value="type QnADialogResponseOptions = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Classe de opções de resposta da caixa de diálogo QnA.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public QnADialogResponseOptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.AI.QnA.QnADialogResponseOptions.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActiveLearningCardTitle">
+      <MemberSignature Language="C#" Value="public string ActiveLearningCardTitle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ActiveLearningCardTitle" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.AI.QnA.QnADialogResponseOptions.ActiveLearningCardTitle" />
+      <MemberSignature Language="VB.NET" Value="Public Property ActiveLearningCardTitle As String" />
+      <MemberSignature Language="F#" Value="member this.ActiveLearningCardTitle : string with get, set" Usage="Microsoft.Bot.Builder.AI.QnA.QnADialogResponseOptions.ActiveLearningCardTitle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define Get ou set para o título do cartão de aprendizado ativo.</summary>
+        <value>Obter ou definir o título do cartão de aprendizado ativo.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CardNoMatchResponse">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Schema.Activity CardNoMatchResponse { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Schema.Activity CardNoMatchResponse" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.AI.QnA.QnADialogResponseOptions.CardNoMatchResponse" />
+      <MemberSignature Language="VB.NET" Value="Public Property CardNoMatchResponse As Activity" />
+      <MemberSignature Language="F#" Value="member this.CardNoMatchResponse : Microsoft.Bot.Schema.Activity with get, set" Usage="Microsoft.Bot.Builder.AI.QnA.QnADialogResponseOptions.CardNoMatchResponse" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Schema.Activity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define Get ou set para resposta do cartão sem correspondência.</summary>
+        <value>Obter ou definir para resposta de não correspondência de cartão.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CardNoMatchText">
+      <MemberSignature Language="C#" Value="public string CardNoMatchText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CardNoMatchText" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.AI.QnA.QnADialogResponseOptions.CardNoMatchText" />
+      <MemberSignature Language="VB.NET" Value="Public Property CardNoMatchText As String" />
+      <MemberSignature Language="F#" Value="member this.CardNoMatchText : string with get, set" Usage="Microsoft.Bot.Builder.AI.QnA.QnADialogResponseOptions.CardNoMatchText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define Get ou set para texto sem correspondência de cartão.</summary>
+        <value>Obter ou definir para texto sem correspondência de cartão.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NoAnswer">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Schema.Activity NoAnswer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Schema.Activity NoAnswer" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.AI.QnA.QnADialogResponseOptions.NoAnswer" />
+      <MemberSignature Language="VB.NET" Value="Public Property NoAnswer As Activity" />
+      <MemberSignature Language="F#" Value="member this.NoAnswer : Microsoft.Bot.Schema.Activity with get, set" Usage="Microsoft.Bot.Builder.AI.QnA.QnADialogResponseOptions.NoAnswer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Schema.Activity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define Get ou set para nenhuma resposta.</summary>
+        <value>Get ou set para sem resposta.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

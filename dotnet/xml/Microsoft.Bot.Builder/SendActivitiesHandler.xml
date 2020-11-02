@@ -1,0 +1,45 @@
+<Type Name="SendActivitiesHandler" FullName="Microsoft.Bot.Builder.SendActivitiesHandler">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="20b26128c3c072be7515433038c7db2decc50d8f" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152539" /></Metadata><TypeSignature Language="C#" Value="public delegate System.Threading.Tasks.Task&lt;Microsoft.Bot.Schema.ResourceResponse[]&gt; SendActivitiesHandler(ITurnContext turnContext, List&lt;Activity&gt; activities, Func&lt;Task&lt;ResourceResponse[]&gt;&gt; next);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SendActivitiesHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.SendActivitiesHandler" />
+  <TypeSignature Language="VB.NET" Value="Public Delegate Function SendActivitiesHandler(turnContext As ITurnContext, activities As List(Of Activity), next As Func(Of Task(Of ResourceResponse()))) As Task(Of ResourceResponse()) " />
+  <TypeSignature Language="F#" Value="type SendActivitiesHandler = delegate of ITurnContext * List&lt;Activity&gt; * Func&lt;Task&lt;ResourceResponse[]&gt;&gt; -&gt; Task&lt;ResourceResponse[]&gt;" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>4.0.7.0</AssemblyVersion>
+    <AssemblyVersion>4.1.5.0</AssemblyVersion>
+    <AssemblyVersion>4.3.2.0</AssemblyVersion>
+    <AssemblyVersion>4.4.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.0</AssemblyVersion>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="turnContext" Type="Microsoft.Bot.Builder.ITurnContext" />
+    <Parameter Name="activities" Type="System.Collections.Generic.List&lt;Microsoft.Bot.Schema.Activity&gt;" />
+    <Parameter Name="next" Type="System.Func&lt;System.Threading.Tasks.Task&lt;Microsoft.Bot.Schema.ResourceResponse[]&gt;&gt;" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Schema.ResourceResponse[]&gt;</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="turnContext">O objeto de contexto para a rodada.</param>
+    <param name="activities">As atividades a serem enviadas.</param>
+    <param name="next">O delegado a ser chamado para continuar o processamento de eventos.</param>
+    <summary>Um método que pode participar de eventos de atividade de envio para a ativação atual.</summary>
+    <returns>Uma tarefa que representa o trabalho na fila a ser executado.</returns>
+    <remarks>Um manipulador chama o <paramref name="next" /> delegado para passar o controle para o próximo manipulador registrado. Se um manipulador não chamar o próximo delegado, o adaptador não chamará nenhum dos manipuladores subsequentes e não enviará o <paramref name="activities" /> .
+            <para>Se as atividades forem enviadas com êxito, o <paramref name="next" /> delegado retornará uma matriz de <see cref="T:Microsoft.Bot.Schema.ResourceResponse" /> objetos que contém as IDs que o canal de recebimento atribuiu às atividades. Use esta matriz como o valor de retorno deste manipulador.</para></remarks>
+    <altmember cref="T:Microsoft.Bot.Builder.BotAdapter" />
+    <altmember cref="T:Microsoft.Bot.Builder.UpdateActivityHandler" />
+    <altmember cref="T:Microsoft.Bot.Builder.DeleteActivityHandler" />
+    <altmember cref="M:Microsoft.Bot.Builder.ITurnContext.OnSendActivities(Microsoft.Bot.Builder.SendActivitiesHandler)" />
+  </Docs>
+</Type>

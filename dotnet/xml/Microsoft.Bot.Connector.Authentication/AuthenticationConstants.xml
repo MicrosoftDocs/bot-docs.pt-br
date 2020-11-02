@@ -1,0 +1,449 @@
+<Type Name="AuthenticationConstants" FullName="Microsoft.Bot.Connector.Authentication.AuthenticationConstants">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="bef8a41b1e2e65241a085d8c89dda67ed1ed12d3" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152522" /></Metadata><TypeSignature Language="C#" Value="public static class AuthenticationConstants" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit AuthenticationConstants extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Connector.Authentication.AuthenticationConstants" />
+  <TypeSignature Language="VB.NET" Value="Public Class AuthenticationConstants" />
+  <TypeSignature Language="F#" Value="type AuthenticationConstants = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Valores e constantes usados para autenticação e Authrization pelo protocolo bot Framework.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllowedSigningAlgorithms">
+      <MemberSignature Language="C#" Value="public static readonly System.Collections.Generic.HashSet&lt;string&gt; AllowedSigningAlgorithms;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Collections.Generic.HashSet`1&lt;string&gt; AllowedSigningAlgorithms" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Connector.Authentication.AuthenticationConstants.AllowedSigningAlgorithms" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly AllowedSigningAlgorithms As HashSet(Of String) " />
+      <MemberSignature Language="F#" Value=" staticval mutable AllowedSigningAlgorithms : System.Collections.Generic.HashSet&lt;string&gt;" Usage="Microsoft.Bot.Connector.Authentication.AuthenticationConstants.AllowedSigningAlgorithms" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.HashSet&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Algoritmos de assinatura de token permitidos. Os tokens vêm de canais para o bot. O código que usa isso também dá suporte a tokens provenientes do emulador.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppIdClaim">
+      <MemberSignature Language="C#" Value="public const string AppIdClaim;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string AppIdClaim" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Connector.Authentication.AuthenticationConstants.AppIdClaim" />
+      <MemberSignature Language="VB.NET" Value="Public Const AppIdClaim As String " />
+      <MemberSignature Language="F#" Value="val mutable AppIdClaim : string" Usage="Microsoft.Bot.Connector.Authentication.AuthenticationConstants.AppIdClaim" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Nome da declaração da ID do aplicativo. Conforme usado nos tokens 1,0 do Microsoft AAD.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AudienceClaim">
+      <MemberSignature Language="C#" Value="public const string AudienceClaim;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string AudienceClaim" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Connector.Authentication.AuthenticationConstants.AudienceClaim" />
+      <MemberSignature Language="VB.NET" Value="Public Const AudienceClaim As String " />
+      <MemberSignature Language="F#" Value="val mutable AudienceClaim : string" Usage="Microsoft.Bot.Connector.Authentication.AuthenticationConstants.AudienceClaim" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Declaração de público. Da RFC 7519.
+https://tools.ietf.org/html/rfc7519#section-4.1.3 A declaração de "AUD" (público) identifica os destinatários para os quais o JWT se destina. Cada entidade de segurança que pretende processar o JWT deve se identificar com um valor na declaração de público. Se o principal processamento da declaração não se identificar com um valor na declaração "AUD" quando essa declaração estiver presente, o JWT deverá ser rejeitado. No caso geral, o valor "AUD" é uma matriz de cadeias de caracteres que diferenciam maiúsculas de minúsculas, cada uma contendo um valor StringOrURI. No caso especial, quando o JWT tem um público, o valor "AUD" pode ser uma cadeia de caracteres com diferenciação de maiúsculas e minúsculas que contém um valor de StringOrURI. A interpretação dos valores de público Geralmente é específica ao aplicativo.
+O uso dessa declaração é opcional.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthorizedParty">
+      <MemberSignature Language="C#" Value="public const string AuthorizedParty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string AuthorizedParty" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Connector.Authentication.AuthenticationConstants.AuthorizedParty" />
+      <MemberSignature Language="VB.NET" Value="Public Const AuthorizedParty As String " />
+      <MemberSignature Language="F#" Value="val mutable AuthorizedParty : string" Usage="Microsoft.Bot.Connector.Authentication.AuthenticationConstants.AuthorizedParty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Declaração "azp".
+Parte autorizada-a parte para a qual o token de ID foi emitido.
+Essa declaração segue o formato geral definido na especificação OpenID. http://openid.net/specs/openid-connect-core-1_0.html#IDToken .</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BotOpenIdMetadataKey">
+      <MemberSignature Language="C#" Value="public const string BotOpenIdMetadataKey;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string BotOpenIdMetadataKey" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Connector.Authentication.AuthenticationConstants.BotOpenIdMetadataKey" />
+      <MemberSignature Language="VB.NET" Value="Public Const BotOpenIdMetadataKey As String " />
+      <MemberSignature Language="F#" Value="val mutable BotOpenIdMetadataKey : string" Usage="Microsoft.Bot.Connector.Authentication.AuthenticationConstants.BotOpenIdMetadataKey" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Chave de configuração de aplicativo para o valor OpenIdMetadataUrl.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultChannelAuthTenant">
+      <MemberSignature Language="C#" Value="public const string DefaultChannelAuthTenant;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string DefaultChannelAuthTenant" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Connector.Authentication.AuthenticationConstants.DefaultChannelAuthTenant" />
+      <MemberSignature Language="VB.NET" Value="Public Const DefaultChannelAuthTenant As String " />
+      <MemberSignature Language="F#" Value="val mutable DefaultChannelAuthTenant : string" Usage="Microsoft.Bot.Connector.Authentication.AuthenticationConstants.DefaultChannelAuthTenant" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>O locatário padrão para adquirir o bot para o token de canal.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmulateOAuthCardsKey">
+      <MemberSignature Language="C#" Value="public const string EmulateOAuthCardsKey;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string EmulateOAuthCardsKey" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Connector.Authentication.AuthenticationConstants.EmulateOAuthCardsKey" />
+      <MemberSignature Language="VB.NET" Value="Public Const EmulateOAuthCardsKey As String " />
+      <MemberSignature Language="F#" Value="val mutable EmulateOAuthCardsKey : string" Usage="Microsoft.Bot.Connector.Authentication.AuthenticationConstants.EmulateOAuthCardsKey" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Chave de configurações do aplicativo para se emular OAuthCards ao usar o emulador.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyIdHeader">
+      <MemberSignature Language="C#" Value="public const string KeyIdHeader;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string KeyIdHeader" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Connector.Authentication.AuthenticationConstants.KeyIdHeader" />
+      <MemberSignature Language="VB.NET" Value="Public Const KeyIdHeader As String " />
+      <MemberSignature Language="F#" Value="val mutable KeyIdHeader : string" Usage="Microsoft.Bot.Connector.Authentication.AuthenticationConstants.KeyIdHeader" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Do RFC 7515, https://tools.ietf.org/html/rfc7515#section-4.1.4 o parâmetro de cabeçalho "Kid" (ID de chave) é uma dica que indica qual chave foi usada para proteger o JWS. Esse parâmetro permite que os originadores sinalizem explicitamente uma alteração de chave para os destinatários. A estrutura do valor "Kid" não foi especificada. Seu valor deve ser uma cadeia de caracteres que diferencia maiúsculas de minúsculas. O uso desse parâmetro de cabeçalho é opcional.
+Quando usado com um JWK, o valor "Kid" é usado para corresponder a um valor de parâmetro "Kid" JWK.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OAuthUrl">
+      <MemberSignature Language="C#" Value="public const string OAuthUrl;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string OAuthUrl" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Connector.Authentication.AuthenticationConstants.OAuthUrl" />
+      <MemberSignature Language="VB.NET" Value="Public Const OAuthUrl As String " />
+      <MemberSignature Language="F#" Value="val mutable OAuthUrl : string" Usage="Microsoft.Bot.Connector.Authentication.AuthenticationConstants.OAuthUrl" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>URL OAuth usada para obter um token de OAuthApiClient.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OAuthUrlKey">
+      <MemberSignature Language="C#" Value="public const string OAuthUrlKey;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string OAuthUrlKey" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Connector.Authentication.AuthenticationConstants.OAuthUrlKey" />
+      <MemberSignature Language="VB.NET" Value="Public Const OAuthUrlKey As String " />
+      <MemberSignature Language="F#" Value="val mutable OAuthUrlKey : string" Usage="Microsoft.Bot.Connector.Authentication.AuthenticationConstants.OAuthUrlKey" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Chave de configuração de aplicativo para o valor OAuthUrl.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceUrlClaim">
+      <MemberSignature Language="C#" Value="public const string ServiceUrlClaim;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string ServiceUrlClaim" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Connector.Authentication.AuthenticationConstants.ServiceUrlClaim" />
+      <MemberSignature Language="VB.NET" Value="Public Const ServiceUrlClaim As String " />
+      <MemberSignature Language="F#" Value="val mutable ServiceUrlClaim : string" Usage="Microsoft.Bot.Connector.Authentication.AuthenticationConstants.ServiceUrlClaim" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Nome da declaração da URL do serviço. Conforme usado na autenticação do Microsoft bot Framework v 3.1.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToBotFromChannelOpenIdMetadataUrl">
+      <MemberSignature Language="C#" Value="public const string ToBotFromChannelOpenIdMetadataUrl;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string ToBotFromChannelOpenIdMetadataUrl" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Connector.Authentication.AuthenticationConstants.ToBotFromChannelOpenIdMetadataUrl" />
+      <MemberSignature Language="VB.NET" Value="Public Const ToBotFromChannelOpenIdMetadataUrl As String " />
+      <MemberSignature Language="F#" Value="val mutable ToBotFromChannelOpenIdMetadataUrl : string" Usage="Microsoft.Bot.Connector.Authentication.AuthenticationConstants.ToBotFromChannelOpenIdMetadataUrl" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>PARA o BOT do canal: documento de metadados do OpenID para tokens provenientes do MSA.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToBotFromChannelTokenIssuer">
+      <MemberSignature Language="C#" Value="public const string ToBotFromChannelTokenIssuer;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string ToBotFromChannelTokenIssuer" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Connector.Authentication.AuthenticationConstants.ToBotFromChannelTokenIssuer" />
+      <MemberSignature Language="VB.NET" Value="Public Const ToBotFromChannelTokenIssuer As String " />
+      <MemberSignature Language="F#" Value="val mutable ToBotFromChannelTokenIssuer : string" Usage="Microsoft.Bot.Connector.Authentication.AuthenticationConstants.ToBotFromChannelTokenIssuer" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>PARA BOT do canal: emissor do token.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToBotFromEmulatorOpenIdMetadataUrl">
+      <MemberSignature Language="C#" Value="public const string ToBotFromEmulatorOpenIdMetadataUrl;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string ToBotFromEmulatorOpenIdMetadataUrl" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Connector.Authentication.AuthenticationConstants.ToBotFromEmulatorOpenIdMetadataUrl" />
+      <MemberSignature Language="VB.NET" Value="Public Const ToBotFromEmulatorOpenIdMetadataUrl As String " />
+      <MemberSignature Language="F#" Value="val mutable ToBotFromEmulatorOpenIdMetadataUrl : string" Usage="Microsoft.Bot.Connector.Authentication.AuthenticationConstants.ToBotFromEmulatorOpenIdMetadataUrl" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>PARA o BOT do EMULAdor: documento de metadados OpenID para tokens provenientes do MSA.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToBotFromEnterpriseChannelOpenIdMetadataUrlFormat">
+      <MemberSignature Language="C#" Value="public const string ToBotFromEnterpriseChannelOpenIdMetadataUrlFormat;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string ToBotFromEnterpriseChannelOpenIdMetadataUrlFormat" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Connector.Authentication.AuthenticationConstants.ToBotFromEnterpriseChannelOpenIdMetadataUrlFormat" />
+      <MemberSignature Language="VB.NET" Value="Public Const ToBotFromEnterpriseChannelOpenIdMetadataUrlFormat As String " />
+      <MemberSignature Language="F#" Value="val mutable ToBotFromEnterpriseChannelOpenIdMetadataUrlFormat : string" Usage="Microsoft.Bot.Connector.Authentication.AuthenticationConstants.ToBotFromEnterpriseChannelOpenIdMetadataUrlFormat" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>PARA BOT do canal corporativo: documento de metadados OpenID para tokens provenientes do MSA.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToChannelFromBotLoginUrl">
+      <MemberSignature Language="C#" Value="public const string ToChannelFromBotLoginUrl;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string ToChannelFromBotLoginUrl" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Connector.Authentication.AuthenticationConstants.ToChannelFromBotLoginUrl" />
+      <MemberSignature Language="VB.NET" Value="Public Const ToChannelFromBotLoginUrl As String " />
+      <MemberSignature Language="F#" Value="val mutable ToChannelFromBotLoginUrl : string" Usage="Microsoft.Bot.Connector.Authentication.AuthenticationConstants.ToChannelFromBotLoginUrl" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>PARA canal de BOT: URL de logon.
+            
+             Preterido. Somente para compatibilidade binária.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToChannelFromBotLoginUrlTemplate">
+      <MemberSignature Language="C#" Value="public const string ToChannelFromBotLoginUrlTemplate;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string ToChannelFromBotLoginUrlTemplate" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Connector.Authentication.AuthenticationConstants.ToChannelFromBotLoginUrlTemplate" />
+      <MemberSignature Language="VB.NET" Value="Public Const ToChannelFromBotLoginUrlTemplate As String " />
+      <MemberSignature Language="F#" Value="val mutable ToChannelFromBotLoginUrlTemplate : string" Usage="Microsoft.Bot.Connector.Authentication.AuthenticationConstants.ToChannelFromBotLoginUrlTemplate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>PARA canal de BOT: cadeia de caracteres de modelo de URL de logon. O desenvolvedor de bot pode especificar para qual locatário obter um token de acesso. Por padrão, os canais só aceitam tokens de "botframework.com". Para obter mais detalhes, consulte https://aka.ms/bots/tenant-restriction .</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToChannelFromBotOAuthScope">
+      <MemberSignature Language="C#" Value="public const string ToChannelFromBotOAuthScope;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string ToChannelFromBotOAuthScope" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Connector.Authentication.AuthenticationConstants.ToChannelFromBotOAuthScope" />
+      <MemberSignature Language="VB.NET" Value="Public Const ToChannelFromBotOAuthScope As String " />
+      <MemberSignature Language="F#" Value="val mutable ToChannelFromBotOAuthScope : string" Usage="Microsoft.Bot.Connector.Authentication.AuthenticationConstants.ToChannelFromBotOAuthScope" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>PARA canal do BOT: escopo do OAuth a ser solicitado.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VersionClaim">
+      <MemberSignature Language="C#" Value="public const string VersionClaim;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string VersionClaim" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Connector.Authentication.AuthenticationConstants.VersionClaim" />
+      <MemberSignature Language="VB.NET" Value="Public Const VersionClaim As String " />
+      <MemberSignature Language="F#" Value="val mutable VersionClaim : string" Usage="Microsoft.Bot.Connector.Authentication.AuthenticationConstants.VersionClaim" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Nome de declaração da versão do token. Conforme usado nos tokens do Microsoft AAD.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

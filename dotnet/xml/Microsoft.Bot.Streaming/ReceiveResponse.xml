@@ -1,0 +1,89 @@
+<Type Name="ReceiveResponse" FullName="Microsoft.Bot.Streaming.ReceiveResponse">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="620b309a22d8854ef028aa60c5e9aa286e2f8578" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152521" /></Metadata><TypeSignature Language="C#" Value="public class ReceiveResponse" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ReceiveResponse extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Streaming.ReceiveResponse" />
+  <TypeSignature Language="VB.NET" Value="Public Class ReceiveResponse" />
+  <TypeSignature Language="F#" Value="type ReceiveResponse = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Uma resposta recebida por um <see cref="T:Microsoft.Bot.Streaming.Transport.IStreamingTransportServer" /> ou <see cref="T:Microsoft.Bot.Streaming.Transport.IStreamingTransportClient" /> .</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ReceiveResponse ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Streaming.ReceiveResponse.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StatusCode">
+      <MemberSignature Language="C#" Value="public int StatusCode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 StatusCode" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Streaming.ReceiveResponse.StatusCode" />
+      <MemberSignature Language="VB.NET" Value="Public Property StatusCode As Integer" />
+      <MemberSignature Language="F#" Value="member this.StatusCode : int with get, set" Usage="Microsoft.Bot.Streaming.ReceiveResponse.StatusCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o código de status dessa resposta.</summary>
+        <value>A parte numérica de um código de status.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Streams">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.List&lt;Microsoft.Bot.Streaming.Payloads.IContentStream&gt; Streams { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.List`1&lt;class Microsoft.Bot.Streaming.Payloads.IContentStream&gt; Streams" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Streaming.ReceiveResponse.Streams" />
+      <MemberSignature Language="VB.NET" Value="Public Property Streams As List(Of IContentStream)" />
+      <MemberSignature Language="F#" Value="member this.Streams : System.Collections.Generic.List&lt;Microsoft.Bot.Streaming.Payloads.IContentStream&gt; with get, set" Usage="Microsoft.Bot.Streaming.ReceiveResponse.Streams" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.List&lt;Microsoft.Bot.Streaming.Payloads.IContentStream&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a coleção de <see cref="T:Microsoft.Bot.Streaming.Payloads.IContentStream" /> s contidas nessa resposta.</summary>
+        <value>Um <see cref="T:System.Collections.Generic.List`1" /> do tipo <see cref="T:Microsoft.Bot.Streaming.Payloads.IContentStream" /> que contém informações sobre fluxos anexados a esta resposta.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

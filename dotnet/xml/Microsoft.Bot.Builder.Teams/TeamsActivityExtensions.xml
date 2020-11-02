@@ -1,0 +1,112 @@
+<Type Name="TeamsActivityExtensions" FullName="Microsoft.Bot.Builder.Teams.TeamsActivityExtensions">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7647229c771318c053ccb6bf4b63b5180c8e403d" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152468" /></Metadata><TypeSignature Language="C#" Value="public static class TeamsActivityExtensions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit TeamsActivityExtensions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Teams.TeamsActivityExtensions" />
+  <TypeSignature Language="VB.NET" Value="Public Module TeamsActivityExtensions" />
+  <TypeSignature Language="F#" Value="type TeamsActivityExtensions = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>O TeamsActivityExtensions fornece aos auxiliares para facilitar a interação com os objetos do Microsoft Teams.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="TeamsGetChannelId">
+      <MemberSignature Language="C#" Value="public static string TeamsGetChannelId (this Microsoft.Bot.Schema.IActivity activity);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string TeamsGetChannelId(class Microsoft.Bot.Schema.IActivity activity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Teams.TeamsActivityExtensions.TeamsGetChannelId(Microsoft.Bot.Schema.IActivity)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function TeamsGetChannelId (activity As IActivity) As String" />
+      <MemberSignature Language="F#" Value="static member TeamsGetChannelId : Microsoft.Bot.Schema.IActivity -&gt; string" Usage="Microsoft.Bot.Builder.Teams.TeamsActivityExtensions.TeamsGetChannelId activity" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="Microsoft.Bot.Schema.IActivity" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="activity">A atividade atual.</param>
+        <summary>Obtém a ID do canal da equipe da atividade atual.</summary>
+        <returns>O canal team's da atividade atual ou cadeia de caracteres vazia.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TeamsGetTeamInfo">
+      <MemberSignature Language="C#" Value="public static Microsoft.Bot.Schema.Teams.TeamInfo TeamsGetTeamInfo (this Microsoft.Bot.Schema.IActivity activity);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Bot.Schema.Teams.TeamInfo TeamsGetTeamInfo(class Microsoft.Bot.Schema.IActivity activity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Teams.TeamsActivityExtensions.TeamsGetTeamInfo(Microsoft.Bot.Schema.IActivity)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function TeamsGetTeamInfo (activity As IActivity) As TeamInfo" />
+      <MemberSignature Language="F#" Value="static member TeamsGetTeamInfo : Microsoft.Bot.Schema.IActivity -&gt; Microsoft.Bot.Schema.Teams.TeamInfo" Usage="Microsoft.Bot.Builder.Teams.TeamsActivityExtensions.TeamsGetTeamInfo activity" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Schema.Teams.TeamInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="Microsoft.Bot.Schema.IActivity" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="activity">Esta atividade.</param>
+        <summary>Obtém o objeto TeamsInfo da atividade atual.</summary>
+        <returns>A ID de team's da atividade atual ou uma cadeia de caracteres vazia.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TeamsNotifyUser">
+      <MemberSignature Language="C#" Value="public static void TeamsNotifyUser (this Microsoft.Bot.Schema.IActivity activity);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void TeamsNotifyUser(class Microsoft.Bot.Schema.IActivity activity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Teams.TeamsActivityExtensions.TeamsNotifyUser(Microsoft.Bot.Schema.IActivity)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Sub TeamsNotifyUser (activity As IActivity)" />
+      <MemberSignature Language="F#" Value="static member TeamsNotifyUser : Microsoft.Bot.Schema.IActivity -&gt; unit" Usage="Microsoft.Bot.Builder.Teams.TeamsActivityExtensions.TeamsNotifyUser activity" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="Microsoft.Bot.Schema.IActivity" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="activity">A atividade atual.</param>
+        <summary>Configura a atividade atual para gerar uma notificação dentro das equipes.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
