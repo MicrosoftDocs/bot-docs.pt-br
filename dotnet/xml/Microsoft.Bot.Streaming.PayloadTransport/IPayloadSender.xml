@@ -1,0 +1,150 @@
+<Type Name="IPayloadSender" FullName="Microsoft.Bot.Streaming.PayloadTransport.IPayloadSender">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="042ee2f815be02bc7a048131ea42a7efb99c281a" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152656" /></Metadata><TypeSignature Language="C#" Value="public interface IPayloadSender" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IPayloadSender" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Streaming.PayloadTransport.IPayloadSender" />
+  <TypeSignature Language="VB.NET" Value="Public Interface IPayloadSender" />
+  <TypeSignature Language="F#" Value="type IPayloadSender = interface" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>Cada PayloadSender gerencia a gravação de dados brutos em um saída <see cref="T:Microsoft.Bot.Streaming.Transport.ITransportSender" /> .</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Connect">
+      <MemberSignature Language="C#" Value="public void Connect (Microsoft.Bot.Streaming.Transport.ITransportSender sender);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Connect(class Microsoft.Bot.Streaming.Transport.ITransportSender sender) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Streaming.PayloadTransport.IPayloadSender.Connect(Microsoft.Bot.Streaming.Transport.ITransportSender)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Connect (sender As ITransportSender)" />
+      <MemberSignature Language="F#" Value="abstract member Connect : Microsoft.Bot.Streaming.Transport.ITransportSender -&gt; unit" Usage="iPayloadSender.Connect sender" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="Microsoft.Bot.Streaming.Transport.ITransportSender" />
+      </Parameters>
+      <Docs>
+        <param name="sender">O <see cref="T:Microsoft.Bot.Streaming.Transport.ITransportSender" /> para conectar este PayloadSender ao.</param>
+        <summary>Conecta o PayloadSender ao passado <see cref="T:Microsoft.Bot.Streaming.Transport.ITransportSender" /> .</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Disconnect">
+      <MemberSignature Language="C#" Value="public void Disconnect (Microsoft.Bot.Streaming.Transport.DisconnectedEventArgs e = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Disconnect(class Microsoft.Bot.Streaming.Transport.DisconnectedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Streaming.PayloadTransport.IPayloadSender.Disconnect(Microsoft.Bot.Streaming.Transport.DisconnectedEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Disconnect (Optional e As DisconnectedEventArgs = Nothing)" />
+      <MemberSignature Language="F#" Value="abstract member Disconnect : Microsoft.Bot.Streaming.Transport.DisconnectedEventArgs -&gt; unit" Usage="iPayloadSender.Disconnect e" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="Microsoft.Bot.Streaming.Transport.DisconnectedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">Argumentos opcionais para proprogr durante a desconexão.</param>
+        <summary>Desconecta o PayloadSender de seu <see cref="T:Microsoft.Bot.Streaming.Transport.ITransportSender" /> .</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Disconnected">
+      <MemberSignature Language="C#" Value="event Microsoft.Bot.Streaming.Transport.DisconnectedEventHandler Disconnected;" />
+      <MemberSignature Language="ILAsm" Value=".event class Microsoft.Bot.Streaming.Transport.DisconnectedEventHandler Disconnected" />
+      <MemberSignature Language="DocId" Value="E:Microsoft.Bot.Streaming.PayloadTransport.IPayloadSender.Disconnected" />
+      <MemberSignature Language="VB.NET" Value="Event Disconnected As DisconnectedEventHandler " />
+      <MemberSignature Language="F#" Value="member this.Disconnected : Microsoft.Bot.Streaming.Transport.DisconnectedEventHandler " Usage="member this.Disconnected : Microsoft.Bot.Streaming.Transport.DisconnectedEventHandler " />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Streaming.Transport.DisconnectedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Emitido quando o PayloadSender se torna disconneced do <see cref="T:Microsoft.Bot.Streaming.Transport.ITransportSender" /> .</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsConnected">
+      <MemberSignature Language="C#" Value="public bool IsConnected { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsConnected" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Streaming.PayloadTransport.IPayloadSender.IsConnected" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsConnected As Boolean" />
+      <MemberSignature Language="F#" Value="member this.IsConnected : bool" Usage="Microsoft.Bot.Streaming.PayloadTransport.IPayloadSender.IsConnected" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém um valor que indica se o PayloadSender está atualmente conectado a um <see cref="T:Microsoft.Bot.Streaming.Transport.ITransportSender" /> .</summary>
+        <value>O valor que indica se o PayloadSender está atualmente conectado a um <see cref="T:Microsoft.Bot.Streaming.Transport.ITransportSender" /> .</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendPayload">
+      <MemberSignature Language="C#" Value="public void SendPayload (Microsoft.Bot.Streaming.Payloads.Header header, System.IO.Stream payload, bool isLengthKnown, Func&lt;Microsoft.Bot.Streaming.Payloads.Header,System.Threading.Tasks.Task&gt; sentCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SendPayload(class Microsoft.Bot.Streaming.Payloads.Header header, class System.IO.Stream payload, bool isLengthKnown, class System.Func`2&lt;class Microsoft.Bot.Streaming.Payloads.Header, class System.Threading.Tasks.Task&gt; sentCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Streaming.PayloadTransport.IPayloadSender.SendPayload(Microsoft.Bot.Streaming.Payloads.Header,System.IO.Stream,System.Boolean,System.Func{Microsoft.Bot.Streaming.Payloads.Header,System.Threading.Tasks.Task})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SendPayload (header As Header, payload As Stream, isLengthKnown As Boolean, sentCallback As Func(Of Header, Task))" />
+      <MemberSignature Language="F#" Value="abstract member SendPayload : Microsoft.Bot.Streaming.Payloads.Header * System.IO.Stream * bool * Func&lt;Microsoft.Bot.Streaming.Payloads.Header, System.Threading.Tasks.Task&gt; -&gt; unit" Usage="iPayloadSender.SendPayload (header, payload, isLengthKnown, sentCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="header" Type="Microsoft.Bot.Streaming.Payloads.Header" />
+        <Parameter Name="payload" Type="System.IO.Stream" />
+        <Parameter Name="isLengthKnown" Type="System.Boolean" />
+        <Parameter Name="sentCallback" Type="System.Func&lt;Microsoft.Bot.Streaming.Payloads.Header,System.Threading.Tasks.Task&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="header">O <see cref="T:Microsoft.Bot.Streaming.Payloads.Header" /> para gravar na saída <see cref="T:Microsoft.Bot.Streaming.Payloads.PayloadStream" /> .</param>
+        <param name="payload">O <see cref="T:System.IO.Stream" /> que contém os dados a serem gravados na saída <see cref="T:Microsoft.Bot.Streaming.Payloads.PayloadStream" /> .</param>
+        <param name="isLengthKnown">True se o tamanho do fluxo for conhecido, caso contrário, false.</param>
+        <param name="sentCallback">A função a ser disparada quando a operação de envio for concluída.</param>
+        <summary>Inicia o processo de gravação da carga fornecida para a saída <see cref="T:System.IO.Stream" /> e define o retorno de chamada a ser disparado quando concluído.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

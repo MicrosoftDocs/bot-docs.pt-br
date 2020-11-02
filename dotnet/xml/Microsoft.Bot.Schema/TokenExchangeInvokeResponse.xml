@@ -1,0 +1,159 @@
+<Type Name="TokenExchangeInvokeResponse" FullName="Microsoft.Bot.Schema.TokenExchangeInvokeResponse">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3594a1808279fea68d9822f482120066fbebcd87" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152657" /></Metadata><TypeSignature Language="C#" Value="public class TokenExchangeInvokeResponse" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TokenExchangeInvokeResponse extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.TokenExchangeInvokeResponse" />
+  <TypeSignature Language="VB.NET" Value="Public Class TokenExchangeInvokeResponse" />
+  <TypeSignature Language="F#" Value="type TokenExchangeInvokeResponse = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>O objeto de resposta de uma troca de token invoca.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TokenExchangeInvokeResponse ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Schema.TokenExchangeInvokeResponse.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionName">
+      <MemberSignature Language="C#" Value="public string ConnectionName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectionName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.TokenExchangeInvokeResponse.ConnectionName" />
+      <MemberSignature Language="VB.NET" Value="Public Property ConnectionName As String" />
+      <MemberSignature Language="F#" Value="member this.ConnectionName : string with get, set" Usage="Microsoft.Bot.Schema.TokenExchangeInvokeResponse.ConnectionName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty("connectionName")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty("connectionName")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o nome da conexão.</summary>
+        <value>O nome da conexão.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FailureDetail">
+      <MemberSignature Language="C#" Value="public string FailureDetail { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FailureDetail" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.TokenExchangeInvokeResponse.FailureDetail" />
+      <MemberSignature Language="VB.NET" Value="Public Property FailureDetail As String" />
+      <MemberSignature Language="F#" Value="member this.FailureDetail : string with get, set" Usage="Microsoft.Bot.Schema.TokenExchangeInvokeResponse.FailureDetail" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty("failureDetail")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty("failureDetail")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define os detalhes de por que a troca do token falhou.</summary>
+        <value>Os detalhes de por que a troca do token falhou.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public string Id { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.TokenExchangeInvokeResponse.Id" />
+      <MemberSignature Language="VB.NET" Value="Public Property Id As String" />
+      <MemberSignature Language="F#" Value="member this.Id : string with get, set" Usage="Microsoft.Bot.Schema.TokenExchangeInvokeResponse.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty("id")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty("id")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a ID do TokenExchangeInvokeRequest.</summary>
+        <value>A ID do TokenExchangeInvokeRequest.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public Newtonsoft.Json.Linq.JObject Properties { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Newtonsoft.Json.Linq.JObject Properties" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.TokenExchangeInvokeResponse.Properties" />
+      <MemberSignature Language="VB.NET" Value="Public Property Properties As JObject" />
+      <MemberSignature Language="F#" Value="member this.Properties : Newtonsoft.Json.Linq.JObject with get, set" Usage="Microsoft.Bot.Schema.TokenExchangeInvokeResponse.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonExtensionData(ReadData=true, WriteData=true)]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonExtensionData(ReadData=true, WriteData=true)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Newtonsoft.Json.Linq.JObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define os dados de extensão para o estouro de propriedades.</summary>
+        <value>Dados de extensão para estouro de propriedades.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
