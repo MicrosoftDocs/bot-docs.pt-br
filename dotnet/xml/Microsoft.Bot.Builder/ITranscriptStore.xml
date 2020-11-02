@@ -1,0 +1,144 @@
+<Type Name="ITranscriptStore" FullName="Microsoft.Bot.Builder.ITranscriptStore">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ba7b97fb96eb46ed41d923af5305f262a0a6b88d" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152580" /></Metadata><TypeSignature Language="C#" Value="public interface ITranscriptStore : Microsoft.Bot.Builder.ITranscriptLogger" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITranscriptStore implements class Microsoft.Bot.Builder.ITranscriptLogger" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.ITranscriptStore" />
+  <TypeSignature Language="VB.NET" Value="Public Interface ITranscriptStore&#xA;Implements ITranscriptLogger" />
+  <TypeSignature Language="F#" Value="type ITranscriptStore = interface&#xA;    interface ITranscriptLogger" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+    <AssemblyVersion>4.0.7.0</AssemblyVersion>
+    <AssemblyVersion>4.1.5.0</AssemblyVersion>
+    <AssemblyVersion>4.3.2.0</AssemblyVersion>
+    <AssemblyVersion>4.4.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.0</AssemblyVersion>
+    <AssemblyVersion>4.7.0.0</AssemblyVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.Bot.Builder.ITranscriptLogger</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Representa um repositório para a gravação de conversas.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DeleteTranscriptAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task DeleteTranscriptAsync (string channelId, string conversationId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task DeleteTranscriptAsync(string channelId, string conversationId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.ITranscriptStore.DeleteTranscriptAsync(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function DeleteTranscriptAsync (channelId As String, conversationId As String) As Task" />
+      <MemberSignature Language="F#" Value="abstract member DeleteTranscriptAsync : string * string -&gt; System.Threading.Tasks.Task" Usage="iTranscriptStore.DeleteTranscriptAsync (channelId, conversationId)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="channelId" Type="System.String" />
+        <Parameter Name="conversationId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="channelId">A ID do canal em que a conversa está.</param>
+        <param name="conversationId">A ID da conversa a ser excluída.</param>
+        <summary>Exclui dados de conversa da loja.</summary>
+        <returns>Uma tarefa que representa o trabalho na fila a ser executado.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTranscriptActivitiesAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.PagedResult&lt;Microsoft.Bot.Schema.IActivity&gt;&gt; GetTranscriptActivitiesAsync (string channelId, string conversationId, string continuationToken = default, DateTimeOffset startDate = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Bot.Builder.PagedResult`1&lt;class Microsoft.Bot.Schema.IActivity&gt;&gt; GetTranscriptActivitiesAsync(string channelId, string conversationId, string continuationToken, valuetype System.DateTimeOffset startDate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.ITranscriptStore.GetTranscriptActivitiesAsync(System.String,System.String,System.String,System.DateTimeOffset)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetTranscriptActivitiesAsync (channelId As String, conversationId As String, Optional continuationToken As String = Nothing, Optional startDate As DateTimeOffset = Nothing) As Task(Of PagedResult(Of IActivity))" />
+      <MemberSignature Language="F#" Value="abstract member GetTranscriptActivitiesAsync : string * string * string * DateTimeOffset -&gt; System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.PagedResult&lt;Microsoft.Bot.Schema.IActivity&gt;&gt;" Usage="iTranscriptStore.GetTranscriptActivitiesAsync (channelId, conversationId, continuationToken, startDate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.PagedResult&lt;Microsoft.Bot.Schema.IActivity&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="channelId" Type="System.String" />
+        <Parameter Name="conversationId" Type="System.String" />
+        <Parameter Name="continuationToken" Type="System.String" />
+        <Parameter Name="startDate" Type="System.DateTimeOffset" />
+      </Parameters>
+      <Docs>
+        <param name="channelId">A ID do canal em que a conversa está.</param>
+        <param name="conversationId">A ID da conversa.</param>
+        <param name="continuationToken">O token de continuação (se disponível).</param>
+        <param name="startDate">Uma data de corte. Atividades anteriores a esta data não estão incluídas.</param>
+        <summary>Obtém das atividades da loja que correspondem a um conjunto de critérios.</summary>
+        <returns>Uma tarefa que representa o trabalho na fila a ser executado.</returns>
+        <remarks>Se a tarefa for concluída com êxito, o resultado conterá as atividades correspondentes.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ListTranscriptsAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.PagedResult&lt;Microsoft.Bot.Builder.TranscriptInfo&gt;&gt; ListTranscriptsAsync (string channelId, string continuationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Bot.Builder.PagedResult`1&lt;class Microsoft.Bot.Builder.TranscriptInfo&gt;&gt; ListTranscriptsAsync(string channelId, string continuationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.ITranscriptStore.ListTranscriptsAsync(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ListTranscriptsAsync (channelId As String, Optional continuationToken As String = Nothing) As Task(Of PagedResult(Of TranscriptInfo))" />
+      <MemberSignature Language="F#" Value="abstract member ListTranscriptsAsync : string * string -&gt; System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.PagedResult&lt;Microsoft.Bot.Builder.TranscriptInfo&gt;&gt;" Usage="iTranscriptStore.ListTranscriptsAsync (channelId, continuationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.0.7.0</AssemblyVersion>
+        <AssemblyVersion>4.1.5.0</AssemblyVersion>
+        <AssemblyVersion>4.3.2.0</AssemblyVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <AssemblyVersion>4.7.0.0</AssemblyVersion>
+        <AssemblyVersion>4.8.0.0</AssemblyVersion>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.PagedResult&lt;Microsoft.Bot.Builder.TranscriptInfo&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="channelId" Type="System.String" />
+        <Parameter Name="continuationToken" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="channelId">A ID do canal.</param>
+        <param name="continuationToken">Token de continuação (se disponível).</param>
+        <summary>Obtém as conversas em um canal da loja.</summary>
+        <returns>Uma tarefa que representa o trabalho na fila a ser executado.</returns>
+        <remarks>Listar todas as transcrições para o channelId fornecido.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

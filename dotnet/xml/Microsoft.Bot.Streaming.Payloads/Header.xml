@@ -1,0 +1,142 @@
+<Type Name="Header" FullName="Microsoft.Bot.Streaming.Payloads.Header">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8defb46fda28a67426623943cc800e996ef9fd89" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152627" /></Metadata><TypeSignature Language="C#" Value="public class Header" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Header extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Streaming.Payloads.Header" />
+  <TypeSignature Language="VB.NET" Value="Public Class Header" />
+  <TypeSignature Language="F#" Value="type Header = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+    <AssemblyVersion>4.9.2.0</AssemblyVersion>
+    <AssemblyVersion>4.9.3.0</AssemblyVersion>
+    <AssemblyVersion>4.10.0.0</AssemblyVersion>
+    <AssemblyVersion>4.10.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>O cabeçalho de 48 bytes, de tamanho fixo, tem cada Payload. O cabeçalho sempre deve ter a mesma forma, independentemente de sua carga ser uma solicitação, resposta ou conteúdo. É uma cadeia de caracteres codificada em ASCII delimitada por ponto terminada com uma nova linha. Todos os cabeçalhos devem ter esses segmentos, e todos os valores devem ser preenchidos com zero para preencher o número correto de bytes: | Descrição do tamanho do título | Digite um caractere codificado em ASCII de byte 1. Descreve o formato da carga (solicitação, resposta, fluxo, etc.) | Caractere de ponto ASCII de delimitador de 1 byte.
+| Comprimento decimal codificado em ASCII de 6 bytes. Tamanho em bytes dessa carga em decimal ASCII, sem incluir o cabeçalho. Zero preenchido.
+| Caractere de ponto ASCII de delimitador de 1 byte.
+| ID 36 bytes hexadecimal codificado em ASCII. GUID (ID da solicitação, ID do fluxo, etc.).
+| Caractere de ponto ASCII de delimitador de 1 byte.
+| Terminar o ASCII de 1 byte ' 0 ' ou ' 1 '. Sinaliza o fim de uma carga ou carga de várias partes.
+| Terminador 1 byte codificado para \n.
+Por exemplo: A. 000168.68e999ca-a651-40f4-ad8f-3aaf781862b4 0,1 \ n fim.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Header ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Streaming.Payloads.Header.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="End">
+      <MemberSignature Language="C#" Value="public bool End { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool End" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Streaming.Payloads.Header.End" />
+      <MemberSignature Language="VB.NET" Value="Public Property End As Boolean" />
+      <MemberSignature Language="F#" Value="member this.End : bool with get, set" Usage="Microsoft.Bot.Streaming.Payloads.Header.End" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define um valor que indica se o valor ASCII de 1 byte é ' 0 ' ou ' 1 '. Sinaliza o fim de uma carga ou carga de várias partes.</summary>
+        <value>O ASCII de 1 byte ' 0 ' ou ' 1 '. Sinaliza o fim de uma carga ou carga de várias partes.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public Guid Id { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid Id" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Streaming.Payloads.Header.Id" />
+      <MemberSignature Language="VB.NET" Value="Public Property Id As Guid" />
+      <MemberSignature Language="F#" Value="member this.Id : Guid with get, set" Usage="Microsoft.Bot.Streaming.Payloads.Header.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o hexadecimal codificado em ASCII de 36 bytes. GUID (ID da solicitação, ID do fluxo, etc.).</summary>
+        <value>O hexadecimal codificado em ASCII de 36 bytes. GUID (ID da solicitação, ID do fluxo, etc.).</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PayloadLength">
+      <MemberSignature Language="C#" Value="public int PayloadLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PayloadLength" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Streaming.Payloads.Header.PayloadLength" />
+      <MemberSignature Language="VB.NET" Value="Public Property PayloadLength As Integer" />
+      <MemberSignature Language="F#" Value="member this.PayloadLength : int with get, set" Usage="Microsoft.Bot.Streaming.Payloads.Header.PayloadLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o Decimal codificado em ASCII de 6 bytes. Tamanho em bytes dessa carga em decimal ASCII, sem incluir o cabeçalho. Zero preenchido.</summary>
+        <value>O Decimal codificado em ASCII de 6 bytes. Tamanho em bytes dessa carga em decimal ASCII, sem incluir o cabeçalho. Zero preenchido.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public char Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance char Type" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Streaming.Payloads.Header.Type" />
+      <MemberSignature Language="VB.NET" Value="Public Property Type As Char" />
+      <MemberSignature Language="F#" Value="member this.Type : char with get, set" Usage="Microsoft.Bot.Streaming.Payloads.Header.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
+        <AssemblyVersion>4.9.2.0</AssemblyVersion>
+        <AssemblyVersion>4.9.3.0</AssemblyVersion>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o caractere codificado em ASCII de 1 byte. Descreve o formato da carga (solicitação, resposta, fluxo, etc.).</summary>
+        <value>O caractere codificado em ASCII de 1 byte. Descreve o formato da carga (solicitação, resposta, fluxo, etc.).</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
