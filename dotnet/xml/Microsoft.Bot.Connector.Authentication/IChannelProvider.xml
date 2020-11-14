@@ -1,5 +1,5 @@
 <Type Name="IChannelProvider" FullName="Microsoft.Bot.Connector.Authentication.IChannelProvider">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="3522039ba256e2bbb472d9056c809337f6cc32be" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151525" /></Metadata><TypeSignature Language="C#" Value="public interface IChannelProvider" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="e15c6cccda70026051b136b43d33e560a0a5ff58" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94614628" /></Metadata><TypeSignature Language="C#" Value="public interface IChannelProvider" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IChannelProvider" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Connector.Authentication.IChannelProvider" />
   <TypeSignature Language="VB.NET" Value="Public Interface IChannelProvider" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
@@ -31,6 +32,7 @@ Serviço de canal do Framework.</summary>
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.String&gt;</ReturnType>
@@ -55,6 +57,7 @@ Serviço de canal do Framework.</summary>
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -79,6 +82,7 @@ Serviço de canal do Framework.</summary>
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>

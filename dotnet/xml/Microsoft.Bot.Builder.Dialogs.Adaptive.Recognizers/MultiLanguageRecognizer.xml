@@ -1,5 +1,5 @@
 <Type Name="MultiLanguageRecognizer" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Recognizers.MultiLanguageRecognizer">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="f5d2b0053705c93c005671e73dba336bba60d1fb" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150452" /></Metadata><TypeSignature Language="C#" Value="public class MultiLanguageRecognizer : Microsoft.Bot.Builder.Dialogs.Recognizer" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="4d561652ea410d1543a8514fc9562470c1c8288a" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94615198" /></Metadata><TypeSignature Language="C#" Value="public class MultiLanguageRecognizer : Microsoft.Bot.Builder.Dialogs.Recognizer" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MultiLanguageRecognizer extends Microsoft.Bot.Builder.Dialogs.Recognizer" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Recognizers.MultiLanguageRecognizer" />
   <TypeSignature Language="VB.NET" Value="Public Class MultiLanguageRecognizer&#xA;Inherits Recognizer" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Recognizer</BaseTypeName>
@@ -33,6 +34,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -59,9 +61,9 @@
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="callerPath">To be added.</param>
-        <param name="callerLine">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="callerPath">Opcional, caminho completo do arquivo de origem.</param>
+        <param name="callerLine">Opcional, número de linha no arquivo de origem.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Recognizers.MultiLanguageRecognizer" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -78,6 +80,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -89,7 +92,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Identificador de classe.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -106,6 +109,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -135,6 +139,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.RecognizerResult&gt;</ReturnType>
@@ -147,13 +152,13 @@
         <Parameter Name="telemetryMetrics" Type="System.Collections.Generic.Dictionary&lt;System.String,System.Double&gt;" />
       </Parameters>
       <Docs>
-        <param name="dialogContext">To be added.</param>
-        <param name="activity">To be added.</param>
-        <param name="cancellationToken">To be added.</param>
-        <param name="telemetryProperties">To be added.</param>
-        <param name="telemetryMetrics">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="dialogContext">O <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogContext" /> para a atual ativação de conversa.</param>
+        <param name="activity"><see cref="T:Microsoft.Bot.Schema.Activity" /> para reconhecer.</param>
+        <param name="cancellationToken">Opcional, <see cref="T:System.Threading.CancellationToken" /> da tarefa.</param>
+        <param name="telemetryProperties">Opcional, propriedades adicionais a serem registradas na telemetria com o evento LuisResult.</param>
+        <param name="telemetryMetrics">Outras métricas opcionais a serem registradas em telemetria com o evento LuisResult.</param>
+        <summary>Executa o DialogContext. TurnContext. Activity atual por meio de um reconhecedor e retorna um <see cref="T:Microsoft.Bot.Builder.RecognizerResult" /> .</summary>
+        <returns>Análise de expressão.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -170,6 +175,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>

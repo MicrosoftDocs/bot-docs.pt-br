@@ -1,5 +1,5 @@
 <Type Name="SkillValidation" FullName="Microsoft.Bot.Connector.Authentication.SkillValidation">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="2d9953afd72d68e978556a3ae351be81bb8b5ca9" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151396" /></Metadata><TypeSignature Language="C#" Value="public class SkillValidation" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c5934688f1c40c9057b5a42339ee5251eb3cd4b3" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94614098" /></Metadata><TypeSignature Language="C#" Value="public class SkillValidation" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SkillValidation extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Connector.Authentication.SkillValidation" />
   <TypeSignature Language="VB.NET" Value="Public Class SkillValidation" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -32,6 +33,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -52,6 +54,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Security.Claims.ClaimsIdentity&gt;</ReturnType>
@@ -76,6 +79,27 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="CreateAnonymousSkillClaim">
+      <MemberSignature Language="C#" Value="public static System.Security.Claims.ClaimsIdentity CreateAnonymousSkillClaim ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Claims.ClaimsIdentity CreateAnonymousSkillClaim() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Connector.Authentication.SkillValidation.CreateAnonymousSkillClaim" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function CreateAnonymousSkillClaim () As ClaimsIdentity" />
+      <MemberSignature Language="F#" Value="static member CreateAnonymousSkillClaim : unit -&gt; System.Security.Claims.ClaimsIdentity" Usage="Microsoft.Bot.Connector.Authentication.SkillValidation.CreateAnonymousSkillClaim " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Claims.ClaimsIdentity</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Cria um <see cref="T:System.Security.Claims.ClaimsIdentity" /> para uma habilidade anônima (não autenticada).</summary>
+        <returns>Uma <see cref="T:System.Security.Claims.ClaimsIdentity" /> instância com o tipo de autenticação definido como <see cref="F:Microsoft.Bot.Connector.Authentication.AuthenticationConstants.AnonymousAuthType" /> e uma declaração reservada <see cref="F:Microsoft.Bot.Connector.Authentication.AuthenticationConstants.AnonymousSkillAppId" /> .</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="IsSkillClaim">
       <MemberSignature Language="C#" Value="public static bool IsSkillClaim (System.Collections.Generic.IEnumerable&lt;System.Security.Claims.Claim&gt; claims);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsSkillClaim(class System.Collections.Generic.IEnumerable`1&lt;class System.Security.Claims.Claim&gt; claims) cil managed" />
@@ -89,6 +113,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -122,6 +147,7 @@ Para tokens v2, o  <see cref="F:Microsoft.Bot.Connector.Authentication.Authentic
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>

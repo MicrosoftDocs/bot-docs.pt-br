@@ -1,5 +1,5 @@
 <Type Name="BotMessageHandler" FullName="Microsoft.Bot.Builder.Integration.AspNet.WebApi.Handlers.BotMessageHandler">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="90d2f0aa78c3a314690db6e13bec70f7feb6b49f" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150258" /></Metadata><TypeSignature Language="C#" Value="public sealed class BotMessageHandler : Microsoft.Bot.Builder.Integration.AspNet.WebApi.Handlers.BotMessageHandlerBase" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6f65a6564e9ca349042a65b9780dc215dea783cd" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94615648" /></Metadata><TypeSignature Language="C#" Value="public sealed class BotMessageHandler : Microsoft.Bot.Builder.Integration.AspNet.WebApi.Handlers.BotMessageHandlerBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BotMessageHandler extends Microsoft.Bot.Builder.Integration.AspNet.WebApi.Handlers.BotMessageHandlerBase" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Integration.AspNet.WebApi.Handlers.BotMessageHandler" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class BotMessageHandler&#xA;Inherits BotMessageHandlerBase" />
@@ -17,6 +17,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Integration.AspNet.WebApi.Handlers.BotMessageHandlerBase</BaseTypeName>
@@ -46,6 +47,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="adapter" Type="Microsoft.Bot.Builder.Integration.IAdapterIntegration" />
@@ -75,6 +77,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.InvokeResponse&gt;</ReturnType>
@@ -115,6 +118,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>

@@ -1,0 +1,26 @@
+<Type Name="Inspector" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.Inspector">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7a43c32f5c7e28f009edbea7cf6b791d2f687f92" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94618324" /></Metadata><TypeSignature Language="C#" Value="public delegate System.Threading.Tasks.Task Inspector(DialogContextInspector inspector);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed Inspector extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.Inspector" />
+  <TypeSignature Language="VB.NET" Value="Public Delegate Function Inspector(inspector As DialogContextInspector) As Task " />
+  <TypeSignature Language="F#" Value="type Inspector = delegate of DialogContextInspector -&gt; Task" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive.Testing</AssemblyName>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="inspector" Type="Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.DialogContextInspector" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Threading.Tasks.Task</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="inspector">Inspetor para olhar para o contexto da caixa de diálogo atual.</param>
+    <summary>Permitir inspecionar/modificar o contexto da caixa de diálogo atual.</summary>
+    <returns>Um <see cref="T:System.Threading.Tasks.Task" /> representando a operação assíncrona.</returns>
+    <remarks>To be added.</remarks>
+  </Docs>
+</Type>

@@ -1,5 +1,5 @@
 <Type Name="ResourceMultiLanguageGenerator" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Generators.ResourceMultiLanguageGenerator">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="04fb1617efe94a89657b90eca33ec7261c085040" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152342" /></Metadata><TypeSignature Language="C#" Value="public class ResourceMultiLanguageGenerator : Microsoft.Bot.Builder.Dialogs.Adaptive.Generators.MultiLanguageGeneratorBase" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8e68e4a079a632190c2f5c750f9e36f342f0e2f0" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94614278" /></Metadata><TypeSignature Language="C#" Value="public class ResourceMultiLanguageGenerator : Microsoft.Bot.Builder.Dialogs.Adaptive.Generators.MultiLanguageGeneratorBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ResourceMultiLanguageGenerator extends Microsoft.Bot.Builder.Dialogs.Adaptive.Generators.MultiLanguageGeneratorBase" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Generators.ResourceMultiLanguageGenerator" />
   <TypeSignature Language="VB.NET" Value="Public Class ResourceMultiLanguageGenerator&#xA;Inherits MultiLanguageGeneratorBase" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Adaptive.Generators.MultiLanguageGeneratorBase</BaseTypeName>
@@ -33,6 +34,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="resourceId" Type="System.String" />
@@ -56,6 +58,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -67,7 +70,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Identificador de classe.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,6 +87,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -95,8 +99,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Obtém ou define a ID do recurso.</summary>
+        <value>ID do recurso.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -113,6 +117,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>

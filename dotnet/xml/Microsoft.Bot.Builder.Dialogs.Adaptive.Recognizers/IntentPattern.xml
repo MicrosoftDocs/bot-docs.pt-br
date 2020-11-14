@@ -1,5 +1,5 @@
 <Type Name="IntentPattern" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Recognizers.IntentPattern">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="763d4cb66d37916dd0664707dbb195b4e4ad6ed9" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150458" /></Metadata><TypeSignature Language="C#" Value="public class IntentPattern" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="96586c8ab1485574621072830bff43e10e7c0740" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94613868" /></Metadata><TypeSignature Language="C#" Value="public class IntentPattern" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit IntentPattern extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Recognizers.IntentPattern" />
   <TypeSignature Language="VB.NET" Value="Public Class IntentPattern" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -32,10 +33,11 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Recognizers.IntentPattern" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -52,15 +54,16 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="intent" Type="System.String" />
         <Parameter Name="pattern" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="intent">To be added.</param>
-        <param name="pattern">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="intent">A intenção.</param>
+        <param name="pattern">O padrão Regex a ser correspondido.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Recognizers.IntentPattern" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -77,6 +80,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -106,6 +110,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -135,6 +140,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -146,8 +152,8 @@
         <ReturnType>System.Text.RegularExpressions.Regex</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Obtém a instância do <see cref="P:Microsoft.Bot.Builder.Dialogs.Adaptive.Recognizers.IntentPattern.Regex" />.</summary>
+        <value>A instância <see cref="P:Microsoft.Bot.Builder.Dialogs.Adaptive.Recognizers.IntentPattern.Regex" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

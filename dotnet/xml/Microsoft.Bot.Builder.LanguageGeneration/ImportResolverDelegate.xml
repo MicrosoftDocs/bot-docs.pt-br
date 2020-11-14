@@ -1,37 +1,32 @@
 <Type Name="ImportResolverDelegate" FullName="Microsoft.Bot.Builder.LanguageGeneration.ImportResolverDelegate">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="7e37df14812e2cc017dc412ba5b7b84510b9d649" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152114" /></Metadata><TypeSignature Language="C#" Value="public delegate (string,string) ImportResolverDelegate(string sourceId, string resourceId);" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c9d48ceb1bc7f9b334684066b8ac28827c6e33d5" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94615048" /></Metadata><TypeSignature Language="C#" Value="public delegate Microsoft.Bot.Builder.LanguageGeneration.LGResource ImportResolverDelegate(LGResource resource, string resourceId);" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ImportResolverDelegate extends System.MulticastDelegate" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.LanguageGeneration.ImportResolverDelegate" />
-  <TypeSignature Language="VB.NET" Value="Public Delegate Function ImportResolverDelegate(sourceId As String, resourceId As String) As ValueTuple(Of String, String) " />
-  <TypeSignature Language="F#" Value="type ImportResolverDelegate = delegate of string * string -&gt; ValueTuple&lt;string, string&gt;" />
+  <TypeSignature Language="VB.NET" Value="Public Delegate Function ImportResolverDelegate(resource As LGResource, resourceId As String) As LGResource " />
+  <TypeSignature Language="F#" Value="type ImportResolverDelegate = delegate of LGResource * string -&gt; LGResource" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Bot.Builder.LanguageGeneration</AssemblyName>
     <AssemblyVersion>4.9.2.0</AssemblyVersion>
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Delegate</BaseTypeName>
   </Base>
   <Parameters>
-    <Parameter Name="sourceId" Type="System.String" />
+    <Parameter Name="resource" Type="Microsoft.Bot.Builder.LanguageGeneration.LGResource" />
     <Parameter Name="resourceId" Type="System.String" />
   </Parameters>
   <ReturnValue>
-    <ReturnType>System.ValueTuple&lt;System.String,System.String&gt;</ReturnType>
-    <Attributes>
-      <Attribute>
-        <AttributeName Language="C#">[System.Runtime.CompilerServices.TupleElementNames(new System.String[] { "content", "id" })]</AttributeName>
-        <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.TupleElementNames(new System.String[] { "content", "id" })&gt;]</AttributeName>
-      </Attribute>
-    </Attributes>
+    <ReturnType>Microsoft.Bot.Builder.LanguageGeneration.LGResource</ReturnType>
   </ReturnValue>
   <Docs>
-    <param name="sourceId">ID ou caminho do arquivo de origem.</param>
+    <param name="resource">Recurso original.</param>
     <param name="resourceId">ID do recurso a ser resolvido.</param>
     <summary>Delegado para resolver a ID de recurso do arquivo LG importado.</summary>
-    <returns>Conteúdo de recurso e ID exclusivo resolvidos.</returns>
+    <returns>Recurso resolvido.</returns>
     <remarks>To be added.</remarks>
   </Docs>
 </Type>

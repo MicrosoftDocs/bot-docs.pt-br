@@ -1,0 +1,246 @@
+<Type Name="LuisAdaptivePredictionOptions" FullName="Microsoft.Bot.Builder.AI.Luis.LuisAdaptivePredictionOptions">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ddeeca22b2be888c64b486661c4016ddd8e302e2" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94618056" /></Metadata><TypeSignature Language="C#" Value="public class LuisAdaptivePredictionOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LuisAdaptivePredictionOptions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.AI.Luis.LuisAdaptivePredictionOptions" />
+  <TypeSignature Language="VB.NET" Value="Public Class LuisAdaptivePredictionOptions" />
+  <TypeSignature Language="F#" Value="type LuisAdaptivePredictionOptions = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.AI.Luis</AssemblyName>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Parâmetros opcionais para uma solicitação de previsão LUIS.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LuisAdaptivePredictionOptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.AI.Luis.LuisAdaptivePredictionOptions.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.Luis</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.AI.Luis.LuisAdaptivePredictionOptions" />.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DateTimeReference">
+      <MemberSignature Language="C#" Value="public AdaptiveExpressions.Properties.StringExpression DateTimeReference { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class AdaptiveExpressions.Properties.StringExpression DateTimeReference" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.AI.Luis.LuisAdaptivePredictionOptions.DateTimeReference" />
+      <MemberSignature Language="VB.NET" Value="Public Property DateTimeReference As StringExpression" />
+      <MemberSignature Language="F#" Value="member this.DateTimeReference : AdaptiveExpressions.Properties.StringExpression with get, set" Usage="Microsoft.Bot.Builder.AI.Luis.LuisAdaptivePredictionOptions.DateTimeReference" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.Luis</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty("dateTimeReference")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty("dateTimeReference")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>AdaptiveExpressions.Properties.StringExpression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o deslocamento de datetimeV2. O formato para o datetimeReference é ISO 8601.</summary>
+        <value>DateTimeReference.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExternalEntities">
+      <MemberSignature Language="C#" Value="public AdaptiveExpressions.Properties.ArrayExpression&lt;Microsoft.Bot.Builder.AI.LuisV3.ExternalEntity&gt; ExternalEntities { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class AdaptiveExpressions.Properties.ArrayExpression`1&lt;class Microsoft.Bot.Builder.AI.LuisV3.ExternalEntity&gt; ExternalEntities" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.AI.Luis.LuisAdaptivePredictionOptions.ExternalEntities" />
+      <MemberSignature Language="VB.NET" Value="Public Property ExternalEntities As ArrayExpression(Of ExternalEntity)" />
+      <MemberSignature Language="F#" Value="member this.ExternalEntities : AdaptiveExpressions.Properties.ArrayExpression&lt;Microsoft.Bot.Builder.AI.LuisV3.ExternalEntity&gt; with get, set" Usage="Microsoft.Bot.Builder.AI.Luis.LuisAdaptivePredictionOptions.ExternalEntities" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.Luis</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty("externalEntities")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty("externalEntities")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>AdaptiveExpressions.Properties.ArrayExpression&lt;Microsoft.Bot.Builder.AI.LuisV3.ExternalEntity&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define entidades externas reconhecidas na consulta.</summary>
+        <value>Entidades externas reconhecidas na consulta.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeAllIntents">
+      <MemberSignature Language="C#" Value="public AdaptiveExpressions.Properties.BoolExpression IncludeAllIntents { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class AdaptiveExpressions.Properties.BoolExpression IncludeAllIntents" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.AI.Luis.LuisAdaptivePredictionOptions.IncludeAllIntents" />
+      <MemberSignature Language="VB.NET" Value="Public Property IncludeAllIntents As BoolExpression" />
+      <MemberSignature Language="F#" Value="member this.IncludeAllIntents : AdaptiveExpressions.Properties.BoolExpression with get, set" Usage="Microsoft.Bot.Builder.AI.Luis.LuisAdaptivePredictionOptions.IncludeAllIntents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.Luis</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty("includeAllIntents")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty("includeAllIntents")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>AdaptiveExpressions.Properties.BoolExpression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define um valor que indica se todas as intenções retornam ou apenas a parte superior.</summary>
+        <value>True para retornar todas as intenções.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeAPIResults">
+      <MemberSignature Language="C#" Value="public AdaptiveExpressions.Properties.BoolExpression IncludeAPIResults { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class AdaptiveExpressions.Properties.BoolExpression IncludeAPIResults" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.AI.Luis.LuisAdaptivePredictionOptions.IncludeAPIResults" />
+      <MemberSignature Language="VB.NET" Value="Public Property IncludeAPIResults As BoolExpression" />
+      <MemberSignature Language="F#" Value="member this.IncludeAPIResults : AdaptiveExpressions.Properties.BoolExpression with get, set" Usage="Microsoft.Bot.Builder.AI.Luis.LuisAdaptivePredictionOptions.IncludeAPIResults" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.Luis</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty("includeAPIResults")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty("includeAPIResults")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>AdaptiveExpressions.Properties.BoolExpression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define um valor que indica se os resultados da API devem ser incluídos.</summary>
+        <value>True para incluir os resultados da API.</value>
+        <remarks>Isso é útil principalmente para testar ou obter acesso aos recursos do LUIS ainda não no SDK.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeInstanceData">
+      <MemberSignature Language="C#" Value="public AdaptiveExpressions.Properties.BoolExpression IncludeInstanceData { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class AdaptiveExpressions.Properties.BoolExpression IncludeInstanceData" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.AI.Luis.LuisAdaptivePredictionOptions.IncludeInstanceData" />
+      <MemberSignature Language="VB.NET" Value="Public Property IncludeInstanceData As BoolExpression" />
+      <MemberSignature Language="F#" Value="member this.IncludeInstanceData : AdaptiveExpressions.Properties.BoolExpression with get, set" Usage="Microsoft.Bot.Builder.AI.Luis.LuisAdaptivePredictionOptions.IncludeInstanceData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.Luis</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty("includeInstanceData")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty("includeInstanceData")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>AdaptiveExpressions.Properties.BoolExpression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define um valor que indica se os dados da instância devem ou não ser incluídos na resposta.</summary>
+        <value>Um valor que indica se os dados da instância devem ou não ser incluídos na resposta.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Log">
+      <MemberSignature Language="C#" Value="public AdaptiveExpressions.Properties.BoolExpression Log { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class AdaptiveExpressions.Properties.BoolExpression Log" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.AI.Luis.LuisAdaptivePredictionOptions.Log" />
+      <MemberSignature Language="VB.NET" Value="Public Property Log As BoolExpression" />
+      <MemberSignature Language="F#" Value="member this.Log : AdaptiveExpressions.Properties.BoolExpression with get, set" Usage="Microsoft.Bot.Builder.AI.Luis.LuisAdaptivePredictionOptions.Log" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.Luis</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty("log")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty("log")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>AdaptiveExpressions.Properties.BoolExpression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define um valor que indica se as consultas devem ser registradas em LUIS.</summary>
+        <value>Se as consultas devem ser registradas em LUIS para ajudar a criar modelos melhores por meio do aprendizado ativo.</value>
+        <remarks>O padrão é registrar consultas no LUIS para dar suporte ao aprendizado ativo.  Para padronizar a configuração Luis definida como NULL.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferExternalEntities">
+      <MemberSignature Language="C#" Value="public AdaptiveExpressions.Properties.BoolExpression PreferExternalEntities { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class AdaptiveExpressions.Properties.BoolExpression PreferExternalEntities" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.AI.Luis.LuisAdaptivePredictionOptions.PreferExternalEntities" />
+      <MemberSignature Language="VB.NET" Value="Public Property PreferExternalEntities As BoolExpression" />
+      <MemberSignature Language="F#" Value="member this.PreferExternalEntities : AdaptiveExpressions.Properties.BoolExpression with get, set" Usage="Microsoft.Bot.Builder.AI.Luis.LuisAdaptivePredictionOptions.PreferExternalEntities" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.Luis</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty("preferExternalEntities")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty("preferExternalEntities")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>AdaptiveExpressions.Properties.BoolExpression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define um valor que indica se entidades externas devem substituir outros meios de reconhecer entidades.</summary>
+        <value>Booliano para se entidades externas devem ser preferenciais para os resultados de modelos LUIS.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Slot">
+      <MemberSignature Language="C#" Value="public AdaptiveExpressions.Properties.StringExpression Slot { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class AdaptiveExpressions.Properties.StringExpression Slot" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.AI.Luis.LuisAdaptivePredictionOptions.Slot" />
+      <MemberSignature Language="VB.NET" Value="Public Property Slot As StringExpression" />
+      <MemberSignature Language="F#" Value="member this.Slot : AdaptiveExpressions.Properties.StringExpression with get, set" Usage="Microsoft.Bot.Builder.AI.Luis.LuisAdaptivePredictionOptions.Slot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.AI.Luis</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty("slot")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty("slot")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>AdaptiveExpressions.Properties.StringExpression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o slot LUIS a ser usado para o aplicativo.</summary>
+        <value>O slot LUIS a ser usado para o aplicativo.</value>
+        <remarks>Por padrão, isso usa o slot de produção.  Você pode encontrar outros slots padrão no <see cref="T:Microsoft.Bot.Builder.AI.LuisV3.LuisSlot" /> .
+Se você especificar uma versão, uma versão particular do aplicativo será usada em vez de um slot.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,5 +1,5 @@
 <Type Name="HttpConfigurationExtensions" FullName="Microsoft.Bot.Builder.Integration.AspNet.WebApi.HttpConfigurationExtensions">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="b0d4d06d8b7b9cae43179e58e9411ad308c6537b" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150249" /></Metadata><TypeSignature Language="C#" Value="public static class HttpConfigurationExtensions" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="60f06670c2b1edabe3a785c951ac838bc06644b6" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94615598" /></Metadata><TypeSignature Language="C#" Value="public static class HttpConfigurationExtensions" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit HttpConfigurationExtensions extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Integration.AspNet.WebApi.HttpConfigurationExtensions" />
   <TypeSignature Language="VB.NET" Value="Public Module HttpConfigurationExtensions" />
@@ -17,6 +17,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -47,6 +48,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Web.Http.HttpConfiguration</ReturnType>

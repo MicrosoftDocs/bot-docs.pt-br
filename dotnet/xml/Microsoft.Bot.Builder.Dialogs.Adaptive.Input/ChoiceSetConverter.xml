@@ -1,5 +1,5 @@
 <Type Name="ChoiceSetConverter" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Input.ChoiceSetConverter">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="4472f15bf91db0fa054b406c206b65b393575cfc" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150480" /></Metadata><TypeSignature Language="C#" Value="public class ChoiceSetConverter : Newtonsoft.Json.JsonConverter&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.Input.ChoiceSet&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="214b20456fcef428d5af3303fb3af4f22b013194" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94615118" /></Metadata><TypeSignature Language="C#" Value="public class ChoiceSetConverter : Newtonsoft.Json.JsonConverter&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.Input.ChoiceSet&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ChoiceSetConverter extends Newtonsoft.Json.JsonConverter`1&lt;class Microsoft.Bot.Builder.Dialogs.Adaptive.Input.ChoiceSet&gt;" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Input.ChoiceSetConverter" />
   <TypeSignature Language="VB.NET" Value="Public Class ChoiceSetConverter&#xA;Inherits JsonConverter(Of ChoiceSet)" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Newtonsoft.Json.JsonConverter&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.Input.ChoiceSet&gt;</BaseTypeName>
@@ -35,6 +36,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -55,6 +57,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.Dialogs.Adaptive.Input.ChoiceSet</ReturnType>
@@ -67,13 +70,13 @@
         <Parameter Name="serializer" Type="Newtonsoft.Json.JsonSerializer" />
       </Parameters>
       <Docs>
-        <param name="reader">To be added.</param>
-        <param name="objectType">To be added.</param>
-        <param name="existingValue">To be added.</param>
-        <param name="hasExistingValue">To be added.</param>
-        <param name="serializer">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="reader">O <see cref="T:Newtonsoft.Json.JsonReader" /> para leitura.</param>
+        <param name="objectType">Tipo do objeto.</param>
+        <param name="existingValue">O valor existente de <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Input.ChoiceSet" /> ser lido. Se não houver nenhum valor existente, NULL será usado.</param>
+        <param name="hasExistingValue">Indica se existvalue tem um valor.</param>
+        <param name="serializer">O serializador de chamada.</param>
+        <summary>Lê a representação JSON de um <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Input.ChoiceSet" /> objeto.</summary>
+        <returns>O objeto interpretado <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Input.ChoiceSet" /> .</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -90,6 +93,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -100,10 +104,10 @@
         <Parameter Name="serializer" Type="Newtonsoft.Json.JsonSerializer" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <param name="choiceSet">To be added.</param>
-        <param name="serializer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">O <see cref="T:Newtonsoft.Json.JsonWriter" /> no qual ocorrerá a gravação.</param>
+        <param name="choiceSet">O <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Input.ChoiceSet" />.</param>
+        <param name="serializer">O serializador de chamada.</param>
+        <summary>Grava a representação JSON de um <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Input.ChoiceSet" /> objeto.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

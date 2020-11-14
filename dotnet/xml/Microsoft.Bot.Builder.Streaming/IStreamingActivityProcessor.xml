@@ -1,5 +1,5 @@
 <Type Name="IStreamingActivityProcessor" FullName="Microsoft.Bot.Builder.Streaming.IStreamingActivityProcessor">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="8683c6e472cf903c4ba8fc7d9a6e612a1c1b55d9" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152506" /></Metadata><TypeSignature Language="C#" Value="public interface IStreamingActivityProcessor" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="82ace00db479ddb440bfe46e1bc45bb1afbe9b69" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94614928" /></Metadata><TypeSignature Language="C#" Value="public interface IStreamingActivityProcessor" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IStreamingActivityProcessor" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Streaming.IStreamingActivityProcessor" />
   <TypeSignature Language="VB.NET" Value="Public Interface IStreamingActivityProcessor" />
@@ -12,6 +12,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
@@ -34,6 +35,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.InvokeResponse&gt;</ReturnType>

@@ -1,5 +1,5 @@
 <Type Name="ConnectorClient" FullName="Microsoft.Bot.Connector.ConnectorClient">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="907f8006e4ffb87116f55fab8a0e4efa3fe0f8b4" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152620" /></Metadata><TypeSignature Language="C#" Value="public class ConnectorClient : Microsoft.Rest.ServiceClient&lt;Microsoft.Bot.Connector.ConnectorClient&gt;, IDisposable, Microsoft.Bot.Connector.IConnectorClient" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9039bece026920eb37ace33e9e7ab8327be49819" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94615418" /></Metadata><TypeSignature Language="C#" Value="public class ConnectorClient : Microsoft.Rest.ServiceClient&lt;Microsoft.Bot.Connector.ConnectorClient&gt;, IDisposable, Microsoft.Bot.Connector.IConnectorClient" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConnectorClient extends Microsoft.Rest.ServiceClient`1&lt;class Microsoft.Bot.Connector.ConnectorClient&gt; implements class Microsoft.Bot.Connector.IConnectorClient, class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Connector.ConnectorClient" />
   <TypeSignature Language="VB.NET" Value="Public Class ConnectorClient&#xA;Inherits ServiceClient(Of ConnectorClient)&#xA;Implements IConnectorClient, IDisposable" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Rest.ServiceClient&lt;Microsoft.Bot.Connector.ConnectorClient&gt;</BaseTypeName>
@@ -57,6 +58,7 @@ N º de bibliotecas de cliente para a API REST do conector de bot
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="handlers" Type="System.Net.Http.DelegatingHandler[]">
@@ -88,6 +90,7 @@ N º de bibliotecas de cliente para a API REST do conector de bot
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="credentials" Type="Microsoft.Rest.ServiceClientCredentials" />
@@ -101,7 +104,7 @@ N º de bibliotecas de cliente para a API REST do conector de bot
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="credentials">Necessário. Credenciais de assinatura que identificam exclusivamente a assinatura do cliente.</param>
+        <param name="credentials">Obrigatórios. Credenciais de assinatura que identificam exclusivamente a assinatura do cliente.</param>
         <param name="handlers">Opcional. Os manipuladores de delegação a serem adicionados ao pipeline de cliente http.</param>
         <summary>Inicializa uma nova instância da classe ConnectorClient.</summary>
         <remarks>To be added.</remarks>
@@ -122,6 +125,7 @@ N º de bibliotecas de cliente para a API REST do conector de bot
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="httpClient" Type="System.Net.Http.HttpClient" />
@@ -148,6 +152,7 @@ N º de bibliotecas de cliente para a API REST do conector de bot
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="rootHandler" Type="System.Net.Http.HttpClientHandler" />
@@ -181,6 +186,7 @@ N º de bibliotecas de cliente para a API REST do conector de bot
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="baseUri" Type="System.Uri" />
@@ -215,6 +221,7 @@ N º de bibliotecas de cliente para a API REST do conector de bot
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="credentials" Type="Microsoft.Rest.ServiceClientCredentials" />
@@ -222,7 +229,7 @@ N º de bibliotecas de cliente para a API REST do conector de bot
         <Parameter Name="disposeHttpClient" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="credentials">Necessário. Credenciais de assinatura que identificam exclusivamente a assinatura do cliente.</param>
+        <param name="credentials">Obrigatórios. Credenciais de assinatura que identificam exclusivamente a assinatura do cliente.</param>
         <param name="httpClient">HttpClient a ser usado</param>
         <param name="disposeHttpClient">True: descartará o httpClient fornecido ao chamar ConnectorClient. Dispose (). False: não descartará o httpClient fornecido</param>
         <summary>Inicializa uma nova instância da classe ConnectorClient.</summary>
@@ -244,6 +251,7 @@ N º de bibliotecas de cliente para a API REST do conector de bot
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="credentials" Type="Microsoft.Rest.ServiceClientCredentials" />
@@ -258,7 +266,7 @@ N º de bibliotecas de cliente para a API REST do conector de bot
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="credentials">Necessário. Credenciais de assinatura que identificam exclusivamente a assinatura do cliente.</param>
+        <param name="credentials">Obrigatórios. Credenciais de assinatura que identificam exclusivamente a assinatura do cliente.</param>
         <param name="rootHandler">Opcional. O manipulador de cliente HTTP usado para lidar com o transporte http.</param>
         <param name="handlers">Opcional. Os manipuladores de delegação a serem adicionados ao pipeline de cliente http.</param>
         <summary>Inicializa uma nova instância da classe ConnectorClient.</summary>
@@ -280,6 +288,7 @@ N º de bibliotecas de cliente para a API REST do conector de bot
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="baseUri" Type="System.Uri" />
@@ -295,7 +304,7 @@ N º de bibliotecas de cliente para a API REST do conector de bot
       </Parameters>
       <Docs>
         <param name="baseUri">Opcional. O URI de base do serviço.</param>
-        <param name="credentials">Necessário. Credenciais de assinatura que identificam exclusivamente a assinatura do cliente.</param>
+        <param name="credentials">Obrigatórios. Credenciais de assinatura que identificam exclusivamente a assinatura do cliente.</param>
         <param name="handlers">Opcional. Os manipuladores de delegação a serem adicionados ao pipeline de cliente http.</param>
         <summary>Inicializa uma nova instância da classe ConnectorClient.</summary>
         <remarks>To be added.</remarks>
@@ -316,6 +325,7 @@ N º de bibliotecas de cliente para a API REST do conector de bot
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="baseUri" Type="System.Uri" />
@@ -351,6 +361,7 @@ N º de bibliotecas de cliente para a API REST do conector de bot
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="baseUri" Type="System.Uri" Index="0" FrameworkAlternate="botbuilder-dotnet-stable" />
@@ -407,6 +418,35 @@ N º de bibliotecas de cliente para a API REST do conector de bot
       </Docs>
     </Member>
     <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConnectorClient (Uri baseUri, Microsoft.Rest.ServiceClientCredentials credentials, System.Net.Http.HttpClient customHttpClient, bool disposeHttpClient);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri baseUri, class Microsoft.Rest.ServiceClientCredentials credentials, class System.Net.Http.HttpClient customHttpClient, bool disposeHttpClient) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Connector.ConnectorClient.#ctor(System.Uri,Microsoft.Rest.ServiceClientCredentials,System.Net.Http.HttpClient,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (baseUri As Uri, credentials As ServiceClientCredentials, customHttpClient As HttpClient, disposeHttpClient As Boolean)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Connector.ConnectorClient : Uri * Microsoft.Rest.ServiceClientCredentials * System.Net.Http.HttpClient * bool -&gt; Microsoft.Bot.Connector.ConnectorClient" Usage="new Microsoft.Bot.Connector.ConnectorClient (baseUri, credentials, customHttpClient, disposeHttpClient)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="baseUri" Type="System.Uri" Index="0" FrameworkAlternate="botbuilder-dotnet-stable" />
+        <Parameter Name="credentials" Type="Microsoft.Rest.ServiceClientCredentials" Index="1" FrameworkAlternate="botbuilder-dotnet-stable" />
+        <Parameter Name="customHttpClient" Type="System.Net.Http.HttpClient" Index="2" FrameworkAlternate="botbuilder-dotnet-stable" />
+        <Parameter Name="disposeHttpClient" Type="System.Boolean" Index="3" FrameworkAlternate="botbuilder-dotnet-stable" />
+      </Parameters>
+      <Docs>
+        <param name="baseUri">URI de base para o serviço de conector de bot.</param>
+        <param name="credentials">Credenciais para o serviço de conector de bot.</param>
+        <param name="customHttpClient">O cliente HTTP a ser usado para este cliente do conector.</param>
+        <param name="disposeHttpClient">Se deve descartar o <see cref="T:System.Net.Http.HttpClient" /> .</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Connector.ConnectorClient" />.</summary>
+        <remarks>Construtor projetado especificamente para ser aquele que permite o controle da descartação do personalizado <see cref="T:System.Net.Http.HttpClient" /> .
+            <see cref="T:Microsoft.Rest.ServiceClient`1" /> tem apenas um construtor que aceita o controle da descartação do <see cref="T:System.Net.Http.HttpClient" /> , portanto, chamamos essa sobrecarga aqui.
+Todas as demais sobrecargas do <see cref="T:Microsoft.Bot.Connector.ConnectorClient" /> não controlarão esse parâmetro e, por padrão, serão true, resultando na alienação do fornecido <see cref="T:System.Net.Http.HttpClient" /> quando o <see cref="T:Microsoft.Bot.Connector.ConnectorClient" /> for descartado.
+Ao reutilizar <see cref="T:System.Net.Http.HttpClient" /> instâncias entre conectores, passe ' false ' para <paramref name="disposeHttpClient" /> para evitar <see cref="T:System.ObjectDisposedException" /> .</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ConnectorClient (Uri baseUri, Microsoft.Rest.ServiceClientCredentials credentials, System.Net.Http.HttpClientHandler rootHandler, params System.Net.Http.DelegatingHandler[] handlers);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri baseUri, class Microsoft.Rest.ServiceClientCredentials credentials, class System.Net.Http.HttpClientHandler rootHandler, class System.Net.Http.DelegatingHandler[] handlers) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Connector.ConnectorClient.#ctor(System.Uri,Microsoft.Rest.ServiceClientCredentials,System.Net.Http.HttpClientHandler,System.Net.Http.DelegatingHandler[])" />
@@ -420,6 +460,7 @@ N º de bibliotecas de cliente para a API REST do conector de bot
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="baseUri" Type="System.Uri" />
@@ -436,7 +477,7 @@ N º de bibliotecas de cliente para a API REST do conector de bot
       </Parameters>
       <Docs>
         <param name="baseUri">Opcional. O URI de base do serviço.</param>
-        <param name="credentials">Necessário. Credenciais de assinatura que identificam exclusivamente a assinatura do cliente.</param>
+        <param name="credentials">Obrigatórios. Credenciais de assinatura que identificam exclusivamente a assinatura do cliente.</param>
         <param name="rootHandler">Opcional. O manipulador de cliente HTTP usado para lidar com o transporte http.</param>
         <param name="handlers">Opcional. Os manipuladores de delegação a serem adicionados ao pipeline de cliente http.</param>
         <summary>Inicializa uma nova instância da classe ConnectorClient.</summary>
@@ -458,6 +499,7 @@ N º de bibliotecas de cliente para a API REST do conector de bot
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="baseUri" Type="System.Uri" />
@@ -496,6 +538,7 @@ Se for NULL, essa configuração será lida na `MicrosoftAppPassword` configura�
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="baseUri" Type="System.Uri" Index="0" FrameworkAlternate="botbuilder-dotnet-stable" />
@@ -568,6 +611,7 @@ Se for NULL, essa configuração será lida na `MicrosoftAppPassword` configura�
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="baseUri" Type="System.Uri" Index="0" FrameworkAlternate="botbuilder-dotnet-stable" />
@@ -605,6 +649,7 @@ Se for NULL, essa configuração será lida na `MicrosoftAppPassword` configura�
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="baseUri" Type="System.Uri" Index="0" FrameworkAlternate="botbuilder-dotnet-stable" />
@@ -644,6 +689,7 @@ Se for NULL, essa configuração será lida na `MicrosoftAppPassword` configura�
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -671,6 +717,7 @@ Se for NULL, essa configuração será lida na `MicrosoftAppPassword` configura�
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Connector.IAttachments</ReturnType>
@@ -698,6 +745,7 @@ Se for NULL, essa configuração será lida na `MicrosoftAppPassword` configura�
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
@@ -722,6 +770,7 @@ Se for NULL, essa configuração será lida na `MicrosoftAppPassword` configura�
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Connector.IConversations</ReturnType>
@@ -746,6 +795,7 @@ Se for NULL, essa configuração será lida na `MicrosoftAppPassword` configura�
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Rest.ServiceClientCredentials</ReturnType>
@@ -770,6 +820,7 @@ Se for NULL, essa configuração será lida na `MicrosoftAppPassword` configura�
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Newtonsoft.Json.JsonSerializerSettings</ReturnType>
@@ -793,6 +844,7 @@ Se for NULL, essa configuração será lida na `MicrosoftAppPassword` configura�
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -817,6 +869,7 @@ Se for NULL, essa configuração será lida na `MicrosoftAppPassword` configura�
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -841,6 +894,7 @@ Se for NULL, essa configuração será lida na `MicrosoftAppPassword` configura�
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType FrameworkAlternate="botbuilder-dotnet-stable">System.String</ReturnType>
@@ -876,6 +930,7 @@ Se for NULL, essa configuração será lida na `MicrosoftAppPassword` configura�
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -901,6 +956,7 @@ Se for NULL, essa configuração será lida na `MicrosoftAppPassword` configura�
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Newtonsoft.Json.JsonSerializerSettings</ReturnType>

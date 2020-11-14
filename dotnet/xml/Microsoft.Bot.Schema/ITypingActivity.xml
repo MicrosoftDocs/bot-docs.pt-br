@@ -1,5 +1,5 @@
 <Type Name="ITypingActivity" FullName="Microsoft.Bot.Schema.ITypingActivity">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="0890d7a520f87b85a76d6f5a78890dc0cffceb0e" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152179" /></Metadata><TypeSignature Language="C#" Value="public interface ITypingActivity : Microsoft.Bot.Schema.IActivity" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d13fb226997b8e241113aa9eff2f40fbf624de1a" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94613748" /></Metadata><TypeSignature Language="C#" Value="public interface ITypingActivity : Microsoft.Bot.Schema.IActivity" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITypingActivity implements class Microsoft.Bot.Schema.IActivity" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.ITypingActivity" />
   <TypeSignature Language="VB.NET" Value="Public Interface ITypingActivity&#xA;Implements IActivity" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces>
     <Interface>

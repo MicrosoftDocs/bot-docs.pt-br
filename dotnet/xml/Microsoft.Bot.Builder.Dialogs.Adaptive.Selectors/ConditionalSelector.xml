@@ -1,5 +1,5 @@
 <Type Name="ConditionalSelector" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Selectors.ConditionalSelector">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="4585857e3f083e65f272a2b955abe80afe047648" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150425" /></Metadata><TypeSignature Language="C#" Value="public class ConditionalSelector : Microsoft.Bot.Builder.Dialogs.Adaptive.TriggerSelector" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2ec229512230922b4f2388a908e16dc1663ddf7c" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94615308" /></Metadata><TypeSignature Language="C#" Value="public class ConditionalSelector : Microsoft.Bot.Builder.Dialogs.Adaptive.TriggerSelector" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConditionalSelector extends Microsoft.Bot.Builder.Dialogs.Adaptive.TriggerSelector" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Selectors.ConditionalSelector" />
   <TypeSignature Language="VB.NET" Value="Public Class ConditionalSelector&#xA;Inherits TriggerSelector" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Adaptive.TriggerSelector</BaseTypeName>
@@ -32,6 +33,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -52,6 +54,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -81,6 +84,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -110,6 +114,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -139,6 +144,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -148,9 +154,9 @@
         <Parameter Name="evaluate" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="conditionals">To be added.</param>
-        <param name="evaluate">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="conditionals">Regras possíveis para correspondência.</param>
+        <param name="evaluate">Opcional, true por padrão se as regras devem ser avaliadas em Select.</param>
+        <summary>Inicializa o seletor com o conjunto de regras.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -167,6 +173,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -178,7 +185,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Identificador de classe.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -195,6 +202,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Collections.Generic.IReadOnlyList&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnCondition&gt;&gt;</ReturnType>
@@ -204,10 +212,10 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="actionContext">To be added.</param>
-        <param name="cancellationToken">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="actionContext">Contexto da caixa de diálogo para avaliação.</param>
+        <param name="cancellationToken">Opcional, <see cref="T:System.Threading.CancellationToken" /> da tarefa.</param>
+        <summary>Seleciona a melhor regra a ser executada.</summary>
+        <returns>Melhor regra na lista original a ser executada ou-1 se nenhuma.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

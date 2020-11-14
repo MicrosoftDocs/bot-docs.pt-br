@@ -1,5 +1,5 @@
 <Type Name="OnIntent" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnIntent">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="f4fd9c52f5f901a6c51fbc7363bf83b10d68e148" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150508" /></Metadata><TypeSignature Language="C#" Value="public class OnIntent : Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnDialogEvent" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a8de0929e3b2e2af44ffe33eebb73d451b7778af" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94613648" /></Metadata><TypeSignature Language="C#" Value="public class OnIntent : Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnDialogEvent" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit OnIntent extends Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnDialogEvent" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnIntent" />
   <TypeSignature Language="VB.NET" Value="Public Class OnIntent&#xA;Inherits OnDialogEvent" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnDialogEvent</BaseTypeName>
@@ -33,6 +34,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -63,13 +65,13 @@
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="intent">To be added.</param>
-        <param name="entities">To be added.</param>
-        <param name="actions">To be added.</param>
-        <param name="condition">To be added.</param>
-        <param name="callerPath">To be added.</param>
-        <param name="callerLine">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="intent">Opcional, tentativa de correspondência.</param>
+        <param name="entities">Opcional, entidades que devem ser reconhecidas para que esta regra seja disparada.</param>
+        <param name="actions">Opcional, ações a serem adicionadas ao plano quando as restrições de regra forem atendidas.</param>
+        <param name="condition">Opcional, condição que precisa ser atendida para que as ações sejam executadas.</param>
+        <param name="callerPath">Opcional, caminho completo do arquivo de origem.</param>
+        <param name="callerLine">Opcional, número de linha no arquivo de origem.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnIntent" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -86,6 +88,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -115,14 +118,15 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>AdaptiveExpressions.Expression</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>Obtém a expressão para esta regra.</summary>
+        <returns>Expressão que será armazenada em cache e usada para avaliar essa regra.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -139,14 +143,15 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>Obtém a identidade para a ação dessa regra.</summary>
+        <returns>Cadeia de caracteres com a identidade.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -163,6 +168,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -192,6 +198,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -203,7 +210,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Identificador de classe.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -220,6 +227,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.Dialogs.Adaptive.ActionChangeList</ReturnType>
@@ -229,10 +237,10 @@
         <Parameter Name="dialogOptions" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="actionContext">To be added.</param>
-        <param name="dialogOptions">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="actionContext">Contexto a ser usado para avaliação.</param>
+        <param name="dialogOptions">Opcional, objeto com opções de caixa de diálogo.</param>
+        <summary>Chamado quando uma lista de alterações é criada.</summary>
+        <returns>Um <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.ActionChangeList" /> com a lista de ações.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

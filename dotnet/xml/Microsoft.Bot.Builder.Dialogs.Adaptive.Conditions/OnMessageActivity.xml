@@ -1,5 +1,5 @@
 <Type Name="OnMessageActivity" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnMessageActivity">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="2baa8c5017df06209a037da3564f5e130aae5f14" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150505" /></Metadata><TypeSignature Language="C#" Value="public class OnMessageActivity : Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnActivity" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6cb01d03c77c1adcfc257750edef059333fb8355" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94614388" /></Metadata><TypeSignature Language="C#" Value="public class OnMessageActivity : Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnActivity" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit OnMessageActivity extends Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnActivity" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnMessageActivity" />
   <TypeSignature Language="VB.NET" Value="Public Class OnMessageActivity&#xA;Inherits OnActivity" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnActivity</BaseTypeName>
@@ -34,6 +35,7 @@ Definir essa condição de gatilho substitui esse comportamento por etapas perso
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -62,11 +64,11 @@ Definir essa condição de gatilho substitui esse comportamento por etapas perso
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="actions">To be added.</param>
-        <param name="condition">To be added.</param>
-        <param name="callerPath">To be added.</param>
-        <param name="callerLine">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="actions">Opcional, lista de <see cref="T:Microsoft.Bot.Builder.Dialogs.Dialog" /> ações.</param>
+        <param name="condition">Opcional, condição que precisa ser atendida para que as ações sejam executadas.</param>
+        <param name="callerPath">Opcional, caminho completo do arquivo de origem.</param>
+        <param name="callerLine">Opcional, número de linha no arquivo de origem.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnMessageActivity" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -83,6 +85,7 @@ Definir essa condição de gatilho substitui esse comportamento por etapas perso
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -94,7 +97,7 @@ Definir essa condição de gatilho substitui esse comportamento por etapas perso
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Identificador de classe.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

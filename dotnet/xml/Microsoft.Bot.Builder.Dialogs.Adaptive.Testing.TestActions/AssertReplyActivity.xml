@@ -1,5 +1,5 @@
 <Type Name="AssertReplyActivity" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.TestActions.AssertReplyActivity">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="d3687179f1f37762880e04c2d1ce4d10182f3fbe" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151940" /></Metadata><TypeSignature Language="C#" Value="public class AssertReplyActivity : Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.TestAction" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ee9db1a68d06e22e132117128bc6a31b668eaf50" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94613858" /></Metadata><TypeSignature Language="C#" Value="public class AssertReplyActivity : Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.TestAction" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AssertReplyActivity extends Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.TestAction" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.TestActions.AssertReplyActivity" />
   <TypeSignature Language="VB.NET" Value="Public Class AssertReplyActivity&#xA;Inherits TestAction" />
@@ -9,6 +9,7 @@
     <AssemblyVersion>4.9.2.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.TestAction</BaseTypeName>
@@ -37,6 +38,7 @@
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -81,6 +83,7 @@
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -109,6 +112,7 @@
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -126,17 +130,15 @@
       </Docs>
     </Member>
     <Member MemberName="ExecuteAsync">
-      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task ExecuteAsync (Microsoft.Bot.Builder.Adapters.TestAdapter adapter, Microsoft.Bot.Builder.BotCallbackHandler callback);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task ExecuteAsync(class Microsoft.Bot.Builder.Adapters.TestAdapter adapter, class Microsoft.Bot.Builder.BotCallbackHandler callback) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.TestActions.AssertReplyActivity.ExecuteAsync(Microsoft.Bot.Builder.Adapters.TestAdapter,Microsoft.Bot.Builder.BotCallbackHandler)" />
-      <MemberSignature Language="VB.NET" Value="Public Overrides Function ExecuteAsync (adapter As TestAdapter, callback As BotCallbackHandler) As Task" />
-      <MemberSignature Language="F#" Value="override this.ExecuteAsync : Microsoft.Bot.Builder.Adapters.TestAdapter * Microsoft.Bot.Builder.BotCallbackHandler -&gt; System.Threading.Tasks.Task" Usage="assertReplyActivity.ExecuteAsync (adapter, callback)" />
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task ExecuteAsync (Microsoft.Bot.Builder.Adapters.TestAdapter adapter, Microsoft.Bot.Builder.BotCallbackHandler callback, Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.Inspector inspector = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task ExecuteAsync(class Microsoft.Bot.Builder.Adapters.TestAdapter adapter, class Microsoft.Bot.Builder.BotCallbackHandler callback, class Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.Inspector inspector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.TestActions.AssertReplyActivity.ExecuteAsync(Microsoft.Bot.Builder.Adapters.TestAdapter,Microsoft.Bot.Builder.BotCallbackHandler,Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.Inspector)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ExecuteAsync (adapter As TestAdapter, callback As BotCallbackHandler, Optional inspector As Inspector = Nothing) As Task" />
+      <MemberSignature Language="F#" Value="override this.ExecuteAsync : Microsoft.Bot.Builder.Adapters.TestAdapter * Microsoft.Bot.Builder.BotCallbackHandler * Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.Inspector -&gt; System.Threading.Tasks.Task" Usage="assertReplyActivity.ExecuteAsync (adapter, callback, inspector)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive.Testing</AssemblyName>
-        <AssemblyVersion>4.9.2.0</AssemblyVersion>
-        <AssemblyVersion>4.10.0.0</AssemblyVersion>
-        <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -144,10 +146,12 @@
       <Parameters>
         <Parameter Name="adapter" Type="Microsoft.Bot.Builder.Adapters.TestAdapter" />
         <Parameter Name="callback" Type="Microsoft.Bot.Builder.BotCallbackHandler" />
+        <Parameter Name="inspector" Type="Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.Inspector" />
       </Parameters>
       <Docs>
         <param name="adapter">To be added.</param>
         <param name="callback">To be added.</param>
+        <param name="inspector">To be added.</param>
         <summary>To be added.</summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
@@ -166,6 +170,7 @@
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -189,6 +194,7 @@
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -216,6 +222,7 @@
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -248,6 +255,7 @@
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>

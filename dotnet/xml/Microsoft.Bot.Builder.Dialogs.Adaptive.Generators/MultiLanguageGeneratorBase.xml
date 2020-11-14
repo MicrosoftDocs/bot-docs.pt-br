@@ -1,5 +1,5 @@
 <Type Name="MultiLanguageGeneratorBase" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Generators.MultiLanguageGeneratorBase">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="aec94fca942d4c61002a31cb5c2ddacc8501aedf" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152348" /></Metadata><TypeSignature Language="C#" Value="public abstract class MultiLanguageGeneratorBase : Microsoft.Bot.Builder.Dialogs.Adaptive.LanguageGenerator" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="25ccef7c0b2ade5ff304645351f42b1351b321e8" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94614288" /></Metadata><TypeSignature Language="C#" Value="public abstract class MultiLanguageGeneratorBase : Microsoft.Bot.Builder.Dialogs.Adaptive.LanguageGenerator" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit MultiLanguageGeneratorBase extends Microsoft.Bot.Builder.Dialogs.Adaptive.LanguageGenerator" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Generators.MultiLanguageGeneratorBase" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class MultiLanguageGeneratorBase&#xA;Inherits LanguageGenerator" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Adaptive.LanguageGenerator</BaseTypeName>
@@ -32,6 +33,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -52,6 +54,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Object&gt;</ReturnType>
@@ -85,6 +88,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -96,8 +100,8 @@
         <ReturnType>Microsoft.Bot.Builder.Dialogs.Adaptive.LanguagePolicy</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Obtém ou define a política de idioma.</summary>
+        <value>Política de idioma.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -114,6 +118,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>

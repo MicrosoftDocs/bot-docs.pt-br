@@ -1,5 +1,5 @@
 <Type Name="IPathResolver" FullName="Microsoft.Bot.Builder.Dialogs.Memory.IPathResolver">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="f049419b10a1a1ab1ea2ecb58d54dcd448f3b659" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151737" /></Metadata><TypeSignature Language="C#" Value="public interface IPathResolver" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="57ddf2ffdd602eba39b3c5680097907b27e071c1" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94614118" /></Metadata><TypeSignature Language="C#" Value="public interface IPathResolver" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IPathResolver" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Memory.IPathResolver" />
   <TypeSignature Language="VB.NET" Value="Public Interface IPathResolver" />
@@ -10,10 +10,11 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>Define a interface do resolvedor de caminho para transformar caminhos.</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -30,6 +31,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
