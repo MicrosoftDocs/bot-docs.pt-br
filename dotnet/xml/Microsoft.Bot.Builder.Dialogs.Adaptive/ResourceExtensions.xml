@@ -1,5 +1,5 @@
 <Type Name="ResourceExtensions" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.ResourceExtensions">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="96c8ed2bbbbe3c486d20b6080d5268926004054c" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151913" /></Metadata><TypeSignature Language="C#" Value="public static class ResourceExtensions" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8ae2d740ad7242461afb8449e131f8a7f526b410" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94607144" /></Metadata><TypeSignature Language="C#" Value="public static class ResourceExtensions" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ResourceExtensions extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.ResourceExtensions" />
   <TypeSignature Language="VB.NET" Value="Public Module ResourceExtensions" />
@@ -10,13 +10,14 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>Implementa métodos de extensão para o Gerenciador de recursos.</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -33,6 +34,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.Dialogs.DialogManager</ReturnType>

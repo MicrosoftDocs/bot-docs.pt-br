@@ -1,5 +1,5 @@
 <Type Name="DisconnectedEventHandler" FullName="Microsoft.Bot.Streaming.Transport.DisconnectedEventHandler">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="e2c8f30614967aed5f00402ee32181c8eadf540d" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150311" /></Metadata><TypeSignature Language="C#" Value="public delegate void DisconnectedEventHandler(object sender, DisconnectedEventArgs e);" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2c26c6031e4f046314725370d993d24a710e1723" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94607678" /></Metadata><TypeSignature Language="C#" Value="public delegate void DisconnectedEventHandler(object sender, DisconnectedEventArgs e);" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DisconnectedEventHandler extends System.MulticastDelegate" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Streaming.Transport.DisconnectedEventHandler" />
   <TypeSignature Language="VB.NET" Value="Public Delegate Sub DisconnectedEventHandler(sender As Object, e As DisconnectedEventArgs)" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Delegate</BaseTypeName>

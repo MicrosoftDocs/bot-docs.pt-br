@@ -1,5 +1,5 @@
 <Type Name="EntityAssignmentComparer" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.EntityAssignmentComparer">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="aa5c1b38e65c1427de8a024e10eeb47e271bf793" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152288" /></Metadata><TypeSignature Language="C#" Value="public class EntityAssignmentComparer : System.Collections.Generic.Comparer&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.EntityAssignment&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b6a8067392e470affad5b3865854beb75e499227" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94608128" /></Metadata><TypeSignature Language="C#" Value="public class EntityAssignmentComparer : System.Collections.Generic.Comparer&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.EntityAssignment&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EntityAssignmentComparer extends System.Collections.Generic.Comparer`1&lt;class Microsoft.Bot.Builder.Dialogs.Adaptive.EntityAssignment&gt;" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.EntityAssignmentComparer" />
   <TypeSignature Language="VB.NET" Value="Public Class EntityAssignmentComparer&#xA;Inherits Comparer(Of EntityAssignment)" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Collections.Generic.Comparer&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.EntityAssignment&gt;</BaseTypeName>
@@ -20,7 +21,10 @@
   <Interfaces />
   <Docs>
     <summary>Compare duas atribuições de entidade para determinar sua prioridade relativa.</summary>
-    <remarks>Compare por evento: AssignEntity, escolhaProperty, ChooseEntity, em seguida, inesperado antes do esperado, primeiro depois, por ordem de operações passadas.</remarks>
+    <remarks>Compare por evento: AssignEntity, escolhaProperty, ChooseEntity em seguida por operações em ordem de esquema (geralmente em AssignEntity).
+Em seguida, inesperadamente antes do esperado.
+Em seguida, ative primeiro o mais antigo.
+Em seguida, pela posição mínima em expressão.</remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -36,6 +40,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="operations" Type="System.String[]" />
@@ -59,6 +64,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -68,10 +74,10 @@
         <Parameter Name="y" Type="Microsoft.Bot.Builder.Dialogs.Adaptive.EntityAssignment" />
       </Parameters>
       <Docs>
-        <param name="x">To be added.</param>
-        <param name="y">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="x">Entidade de referência.</param>
+        <param name="y">Entidade comparisson.</param>
+        <summary>Compara <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.EntityAssignment" /> x com y para determinar sua prioridade relativa.</summary>
+        <returns>Valor numérico que representa a prioridade relativa do x.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

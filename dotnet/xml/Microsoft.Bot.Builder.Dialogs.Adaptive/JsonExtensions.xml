@@ -1,5 +1,5 @@
 <Type Name="JsonExtensions" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.JsonExtensions">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="d1e682da74f803d56abc6ea334ecfdbdc15ed98d" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152280" /></Metadata><TypeSignature Language="C#" Value="public static class JsonExtensions" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f9a7e1e464b481ac7830bc1cd2186cb90a2165a8" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94608078" /></Metadata><TypeSignature Language="C#" Value="public static class JsonExtensions" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit JsonExtensions extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.JsonExtensions" />
   <TypeSignature Language="VB.NET" Value="Public Module JsonExtensions" />
@@ -10,13 +10,14 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>Implementa extensões JSON.</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -33,6 +34,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>T</ReturnType>
@@ -44,10 +46,10 @@
         <Parameter Name="queue" Type="System.Collections.Generic.List&lt;T&gt;" RefType="this" />
       </Parameters>
       <Docs>
-        <typeparam name="T">To be added.</typeparam>
-        <param name="queue">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <typeparam name="T">Tipo de elemento.</typeparam>
+        <param name="queue">Lista de onde remover o primeiro elemento.</param>
+        <summary>Remove o primeiro elemento de uma fila.</summary>
+        <returns>Elemento removido.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -62,6 +64,7 @@
         <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Newtonsoft.Json.Linq.JToken</ReturnType>
