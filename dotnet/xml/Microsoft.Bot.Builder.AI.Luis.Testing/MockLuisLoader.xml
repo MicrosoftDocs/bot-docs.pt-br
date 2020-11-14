@@ -1,5 +1,5 @@
 <Type Name="MockLuisLoader" FullName="Microsoft.Bot.Builder.AI.Luis.Testing.MockLuisLoader">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="a24ef27bfd1ad98313a19c878bcd1d5ea97aa4d9" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152137" /></Metadata><TypeSignature Language="C#" Value="public class MockLuisLoader : Microsoft.Bot.Builder.Dialogs.Declarative.Loaders.ICustomDeserializer" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="efb9f2dc3aa58f7fb7db3f01c41f2866b352014d" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94602288" /></Metadata><TypeSignature Language="C#" Value="public class MockLuisLoader : Microsoft.Bot.Builder.Dialogs.Declarative.Loaders.ICustomDeserializer" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MockLuisLoader extends System.Object implements class Microsoft.Bot.Builder.Dialogs.Declarative.Loaders.ICustomDeserializer" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.AI.Luis.Testing.MockLuisLoader" />
   <TypeSignature Language="VB.NET" Value="Public Class MockLuisLoader&#xA;Implements ICustomDeserializer" />
@@ -9,6 +9,7 @@
     <AssemblyVersion>4.9.2.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -24,10 +25,10 @@
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public MockLuisLoader (Microsoft.Extensions.Configuration.IConfiguration configuration);" />
+      <MemberSignature Language="C#" Value="public MockLuisLoader (Microsoft.Extensions.Configuration.IConfiguration configuration = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Extensions.Configuration.IConfiguration configuration) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.AI.Luis.Testing.MockLuisLoader.#ctor(Microsoft.Extensions.Configuration.IConfiguration)" />
-      <MemberSignature Language="VB.NET" Value="Public Sub New (configuration As IConfiguration)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (Optional configuration As IConfiguration = Nothing)" />
       <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.AI.Luis.Testing.MockLuisLoader : Microsoft.Extensions.Configuration.IConfiguration -&gt; Microsoft.Bot.Builder.AI.Luis.Testing.MockLuisLoader" Usage="new Microsoft.Bot.Builder.AI.Luis.Testing.MockLuisLoader configuration" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
@@ -35,12 +36,13 @@
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="configuration" Type="Microsoft.Extensions.Configuration.IConfiguration" />
       </Parameters>
       <Docs>
-        <param name="configuration">configuração a ser usada.</param>
+        <param name="configuration">Configuração a ser usada ou nula para sem configurações e cache.</param>
         <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.AI.Luis.Testing.MockLuisLoader" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -60,6 +62,7 @@
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>

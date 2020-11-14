@@ -1,5 +1,5 @@
 <Type Name="Ask" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.Ask">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="4b0787430155424a22c7c87ec46f10145e92584e" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150578" /></Metadata><TypeSignature Language="C#" Value="public class Ask : Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.SendActivity" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="67807e89dcd7ffc51b53839c947d02b70a8ea658" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94602298" /></Metadata><TypeSignature Language="C#" Value="public class Ask : Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.SendActivity" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Ask extends Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.SendActivity" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.Ask" />
   <TypeSignature Language="VB.NET" Value="Public Class Ask&#xA;Inherits SendActivity" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.SendActivity</BaseTypeName>
@@ -37,6 +38,7 @@ Ele também cria em um modelo das propriedades que são esperadas em resposta <s
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -65,11 +67,11 @@ Ele também cria em um modelo das propriedades que são esperadas em resposta <s
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="text">To be added.</param>
-        <param name="expectedProperties">To be added.</param>
-        <param name="callerPath">To be added.</param>
-        <param name="callerLine">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="text">Opcional, valor de texto.</param>
+        <param name="expectedProperties">Opcional, valores de propriedades esperados.</param>
+        <param name="callerPath">Opcional, caminho completo do arquivo de origem.</param>
+        <param name="callerLine">Opcional, número de linha no arquivo de origem.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.Ask" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -86,6 +88,7 @@ Ele também cria em um modelo das propriedades que são esperadas em resposta <s
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
@@ -96,11 +99,11 @@ Ele também cria em um modelo das propriedades que são esperadas em resposta <s
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="dc">To be added.</param>
-        <param name="options">To be added.</param>
-        <param name="cancellationToken">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="dc">O <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogContext" /> para a atual ativação de conversa.</param>
+        <param name="options">Opcional, informações iniciais a serem passadas para a caixa de diálogo.</param>
+        <param name="cancellationToken">Opcional, um <see cref="T:System.Threading.CancellationToken" /> que pode ser usado por outros objetos ou threads para receber o aviso de cancelamento.</param>
+        <summary>Chamado quando a caixa de diálogo é iniciada e enviada por push para a pilha de diálogo.</summary>
+        <returns>Um <see cref="T:System.Threading.Tasks.Task" /> representando a operação assíncrona.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,6 +120,7 @@ Ele também cria em um modelo das propriedades que são esperadas em resposta <s
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -146,6 +150,7 @@ Ele também cria em um modelo das propriedades que são esperadas em resposta <s
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -175,6 +180,7 @@ Ele também cria em um modelo das propriedades que são esperadas em resposta <s
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -186,7 +192,7 @@ Ele também cria em um modelo das propriedades que são esperadas em resposta <s
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Identificador de classe.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

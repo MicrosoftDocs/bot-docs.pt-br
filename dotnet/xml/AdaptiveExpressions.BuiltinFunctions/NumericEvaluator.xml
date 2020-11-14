@@ -1,5 +1,5 @@
 <Type Name="NumericEvaluator" FullName="AdaptiveExpressions.BuiltinFunctions.NumericEvaluator">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="cef721d262b91e7f44187a138f632c7a40118cce" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151204" /></Metadata><TypeSignature Language="C#" Value="public class NumericEvaluator : AdaptiveExpressions.ExpressionEvaluator" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5edf86f1df1b2d1199025ab36e07b1b9534e5388" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94602128" /></Metadata><TypeSignature Language="C#" Value="public class NumericEvaluator : AdaptiveExpressions.ExpressionEvaluator" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NumericEvaluator extends AdaptiveExpressions.ExpressionEvaluator" />
   <TypeSignature Language="DocId" Value="T:AdaptiveExpressions.BuiltinFunctions.NumericEvaluator" />
   <TypeSignature Language="VB.NET" Value="Public Class NumericEvaluator&#xA;Inherits ExpressionEvaluator" />
@@ -8,6 +8,7 @@
     <AssemblyName>AdaptiveExpressions</AssemblyName>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>AdaptiveExpressions.ExpressionEvaluator</BaseTypeName>
@@ -29,6 +30,7 @@
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="type" Type="System.String" />

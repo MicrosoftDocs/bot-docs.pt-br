@@ -1,5 +1,5 @@
 <Type Name="ContactRelationUpdateActionTypes" FullName="Microsoft.Bot.Schema.ContactRelationUpdateActionTypes">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="0189a487007ba0c6107fc0a2bf90b3bdececbc1b" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150153" /></Metadata><TypeSignature Language="C#" Value="public static class ContactRelationUpdateActionTypes" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b7f05c3701433d20a66e1635d405e4ffaed5bb39" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94602318" /></Metadata><TypeSignature Language="C#" Value="public static class ContactRelationUpdateActionTypes" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ContactRelationUpdateActionTypes extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.ContactRelationUpdateActionTypes" />
   <TypeSignature Language="VB.NET" Value="Public Class ContactRelationUpdateActionTypes" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -33,6 +34,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -55,6 +57,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>

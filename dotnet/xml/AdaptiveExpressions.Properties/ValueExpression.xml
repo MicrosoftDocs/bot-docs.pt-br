@@ -1,5 +1,5 @@
 <Type Name="ValueExpression" FullName="AdaptiveExpressions.Properties.ValueExpression">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="eb94d55fd923e60b702c78d117e4ef932c6ad7fd" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151424" /></Metadata><TypeSignature Language="C#" Value="public class ValueExpression : AdaptiveExpressions.Properties.ExpressionProperty&lt;object&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c1a53da2810d792005ec3b7802a53fde51a1c35f" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94601758" /></Metadata><TypeSignature Language="C#" Value="public class ValueExpression : AdaptiveExpressions.Properties.ExpressionProperty&lt;object&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ValueExpression extends AdaptiveExpressions.Properties.ExpressionProperty`1&lt;object&gt;" />
   <TypeSignature Language="DocId" Value="T:AdaptiveExpressions.Properties.ValueExpression" />
   <TypeSignature Language="VB.NET" Value="Public Class ValueExpression&#xA;Inherits ExpressionProperty(Of Object)" />
@@ -9,6 +9,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>AdaptiveExpressions.Properties.ExpressionProperty&lt;System.Object&gt;</BaseTypeName>
@@ -42,6 +43,7 @@ prop = " \= User. Age" = &gt; "= User. Age".</remarks>
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -61,6 +63,7 @@ prop = " \= User. Age" = &gt; "= User. Age".</remarks>
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="lambda" Type="System.Func&lt;System.Object,System.Object&gt;" />
@@ -83,6 +86,7 @@ prop = " \= User. Age" = &gt; "= User. Age".</remarks>
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="value" Type="System.Object" />
@@ -105,6 +109,7 @@ prop = " \= User. Age" = &gt; "= User. Age".</remarks>
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>AdaptiveExpressions.Properties.ValueExpression</ReturnType>
@@ -131,6 +136,7 @@ prop = " \= User. Age" = &gt; "= User. Age".</remarks>
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>AdaptiveExpressions.Properties.ValueExpression</ReturnType>
@@ -156,6 +162,7 @@ prop = " \= User. Age" = &gt; "= User. Age".</remarks>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>AdaptiveExpressions.Properties.ValueExpression</ReturnType>
@@ -181,6 +188,7 @@ prop = " \= User. Age" = &gt; "= User. Age".</remarks>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>AdaptiveExpressions.Properties.ValueExpression</ReturnType>
@@ -206,6 +214,7 @@ prop = " \= User. Age" = &gt; "= User. Age".</remarks>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>AdaptiveExpressions.Properties.ValueExpression</ReturnType>
@@ -231,6 +240,7 @@ prop = " \= User. Age" = &gt; "= User. Age".</remarks>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>AdaptiveExpressions.Properties.ValueExpression</ReturnType>
@@ -256,6 +266,7 @@ prop = " \= User. Age" = &gt; "= User. Age".</remarks>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>AdaptiveExpressions.Properties.ValueExpression</ReturnType>
@@ -281,6 +292,7 @@ prop = " \= User. Age" = &gt; "= User. Age".</remarks>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>AdaptiveExpressions.Properties.ValueExpression</ReturnType>
@@ -307,6 +319,7 @@ prop = " \= User. Age" = &gt; "= User. Age".</remarks>
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>AdaptiveExpressions.Properties.ValueExpression</ReturnType>
@@ -333,6 +346,7 @@ prop = " \= User. Age" = &gt; "= User. Age".</remarks>
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>

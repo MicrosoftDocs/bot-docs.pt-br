@@ -1,5 +1,5 @@
 <Type Name="AliasPathResolver" FullName="Microsoft.Bot.Builder.Dialogs.Memory.PathResolvers.AliasPathResolver">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="fccef6c14f9ab5ad983e05511f97195ebb4cf189" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152233" /></Metadata><TypeSignature Language="C#" Value="public class AliasPathResolver : Microsoft.Bot.Builder.Dialogs.Memory.IPathResolver" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ee4fa15281abeb6835f21dc7a9f04851c953b4a6" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94600388" /></Metadata><TypeSignature Language="C#" Value="public class AliasPathResolver : Microsoft.Bot.Builder.Dialogs.Memory.IPathResolver" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AliasPathResolver extends System.Object implements class Microsoft.Bot.Builder.Dialogs.Memory.IPathResolver" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Memory.PathResolvers.AliasPathResolver" />
   <TypeSignature Language="VB.NET" Value="Public Class AliasPathResolver&#xA;Implements IPathResolver" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -37,6 +38,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="alias" Type="System.String" />
@@ -44,10 +46,10 @@
         <Parameter Name="postfix" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="alias">To be added.</param>
-        <param name="prefix">To be added.</param>
-        <param name="postfix">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="alias">Nome do alias.</param>
+        <param name="prefix">Nome do prefixo.</param>
+        <param name="postfix">Nome do sufixo.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Dialogs.Memory.PathResolvers.AliasPathResolver" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,6 +66,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -87,6 +90,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -95,9 +99,9 @@
         <Parameter Name="ch" Type="System.Char" />
       </Parameters>
       <Docs>
-        <param name="ch">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="ch">Caractere a ser verificado.</param>
+        <summary>Verifica se um caractere é válido para um caminho.</summary>
+        <returns><c>true</c> se o caractere for válido para um caminho; caso contrário, <c>false</c>.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,6 +121,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -125,9 +130,9 @@
         <Parameter Name="path" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="path">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="path">Caminho para inspecionar.</param>
+        <summary>Transforma o caminho.</summary>
+        <returns>Caminho transformado.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
