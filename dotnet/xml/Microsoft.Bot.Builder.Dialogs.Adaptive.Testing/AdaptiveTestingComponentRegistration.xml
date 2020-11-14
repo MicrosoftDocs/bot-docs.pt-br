@@ -1,5 +1,5 @@
 <Type Name="AdaptiveTestingComponentRegistration" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.AdaptiveTestingComponentRegistration">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="e219ddb58e95a1870e734be9cf8bee3f3ef5c83a" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152297" /></Metadata><TypeSignature Language="C#" Value="public class AdaptiveTestingComponentRegistration : Microsoft.Bot.Builder.ComponentRegistration, Microsoft.Bot.Builder.Dialogs.Declarative.IComponentDeclarativeTypes" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9079284af043552f3a1ba8c0cbdace8db2a8d4ba" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94603509" /></Metadata><TypeSignature Language="C#" Value="public class AdaptiveTestingComponentRegistration : Microsoft.Bot.Builder.ComponentRegistration, Microsoft.Bot.Builder.Dialogs.Declarative.IComponentDeclarativeTypes" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AdaptiveTestingComponentRegistration extends Microsoft.Bot.Builder.ComponentRegistration implements class Microsoft.Bot.Builder.Dialogs.Declarative.IComponentDeclarativeTypes" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.AdaptiveTestingComponentRegistration" />
   <TypeSignature Language="VB.NET" Value="Public Class AdaptiveTestingComponentRegistration&#xA;Inherits ComponentRegistration&#xA;Implements IComponentDeclarativeTypes" />
@@ -9,6 +9,7 @@
     <AssemblyVersion>4.9.2.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.ComponentRegistration</BaseTypeName>
@@ -20,7 +21,7 @@
   </Interfaces>
   <Docs>
     <summary>Registro de componente para recursos AdaptiveTesting.</summary>
-    <remarks>To be added.</remarks>
+    <remarks>Esse deve ser o último registro, uma vez que ele pode adicionar substituições de teste para outros componentes.</remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -34,6 +35,7 @@
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -56,6 +58,7 @@
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -94,6 +97,7 @@
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>

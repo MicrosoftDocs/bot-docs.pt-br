@@ -1,5 +1,5 @@
 <Type Name="StreamingResponse" FullName="Microsoft.Bot.Streaming.StreamingResponse">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="8e756582ba3e77dc301e7a280e22abefe643181a" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150304" /></Metadata><TypeSignature Language="C#" Value="public class StreamingResponse" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="371d5f4484dafdc20df6a3e7a1a439728c60242d" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94603438" /></Metadata><TypeSignature Language="C#" Value="public class StreamingResponse" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StreamingResponse extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Streaming.StreamingResponse" />
   <TypeSignature Language="VB.NET" Value="Public Class StreamingResponse" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -33,6 +34,7 @@ O tipo de resposta básica enviado pelo bot Framework Protocol 3 com transportes
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -53,6 +55,7 @@ O tipo de resposta básica enviado pelo bot Framework Protocol 3 com transportes
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -80,6 +83,7 @@ Gera <see cref="T:System.ArgumentNullException" /> se o conteúdo é nulo.</summ
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Streaming.StreamingResponse</ReturnType>
@@ -109,6 +113,7 @@ Gera <see cref="T:System.ArgumentNullException" /> se o conteúdo é nulo.</summ
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Streaming.StreamingResponse</ReturnType>
@@ -136,6 +141,7 @@ Gera <see cref="T:System.ArgumentNullException" /> se o conteúdo é nulo.</summ
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Streaming.StreamingResponse</ReturnType>
@@ -163,6 +169,7 @@ Gera <see cref="T:System.ArgumentNullException" /> se o conteúdo é nulo.</summ
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Streaming.StreamingResponse</ReturnType>
@@ -190,6 +197,7 @@ Gera <see cref="T:System.ArgumentNullException" /> se o conteúdo é nulo.</summ
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Streaming.StreamingResponse</ReturnType>
@@ -217,6 +225,7 @@ Gera <see cref="T:System.ArgumentNullException" /> se o conteúdo é nulo.</summ
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -240,6 +249,7 @@ Gera <see cref="T:System.ArgumentNullException" /> se o conteúdo é nulo.</summ
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.List&lt;Microsoft.Bot.Streaming.Payloads.ResponseMessageStream&gt;</ReturnType>

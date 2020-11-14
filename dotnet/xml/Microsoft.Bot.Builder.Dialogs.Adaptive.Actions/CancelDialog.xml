@@ -1,5 +1,5 @@
 <Type Name="CancelDialog" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.CancelDialog">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="f27a09e52076a013ca7c848e6870179905909ddf" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152194" /></Metadata><TypeSignature Language="C#" Value="public class CancelDialog : Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.CancelAllDialogsBase" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3f6b35a3dd9d5829b40f720433a80d4deefaee2c" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94604218" /></Metadata><TypeSignature Language="C#" Value="public class CancelDialog : Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.CancelAllDialogsBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CancelDialog extends Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.CancelAllDialogsBase" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.CancelDialog" />
   <TypeSignature Language="VB.NET" Value="Public Class CancelDialog&#xA;Inherits CancelAllDialogsBase" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.CancelAllDialogsBase</BaseTypeName>
@@ -33,6 +34,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -59,9 +61,9 @@
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="callerPath">To be added.</param>
-        <param name="callerLine">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="callerPath">Opcional, caminho completo do arquivo de origem.</param>
+        <param name="callerLine">Opcional, número de linha no arquivo de origem.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.CancelDialog" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -78,6 +80,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -89,7 +92,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Identificador de classe.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,5 +1,5 @@
 <Type Name="TurnPath" FullName="Microsoft.Bot.Builder.Dialogs.TurnPath">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="0d3bd28339cb7381b3fcfe601545953c57341140" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151637" /></Metadata><TypeSignature Language="C#" Value="public class TurnPath" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="51a2c4276a393b665cfa373b8f37b04b7ac75ee3" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94603098" /></Metadata><TypeSignature Language="C#" Value="public class TurnPath" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TurnPath extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.TurnPath" />
   <TypeSignature Language="VB.NET" Value="Public Class TurnPath" />
@@ -12,13 +12,14 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>Define o caminho para a ativação disponível.</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -36,6 +37,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -56,6 +58,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -80,6 +83,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -92,7 +96,7 @@
       </ReturnValue>
       <Docs>
         <summary>A atividade atual para a ativação.</summary>
-        <remarks>To be added.</remarks>
+        <remarks>Essa propriedade é preterida, use TurnPath. Activity em vez disso.</remarks>
       </Docs>
     </Member>
     <Member MemberName="ActivityProcessed">
@@ -108,6 +112,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -132,6 +137,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -144,7 +150,7 @@
       </ReturnValue>
       <Docs>
         <summary>Esse é um bool que, se definido, significa que o turncontext. Activity foi consumido por algum componente no sistema.</summary>
-        <remarks>To be added.</remarks>
+        <remarks>Essa propriedade foi preterida, use TurnPath. ActivityProcessed em vez disso.</remarks>
       </Docs>
     </Member>
     <Member MemberName="DialogEvent">
@@ -160,6 +166,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -184,6 +191,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -195,8 +203,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>O evento de caixa de diálogo atual (definido durante os processos de eventos).</summary>
-        <remarks>To be added.</remarks>
+        <summary>O evento de caixa de diálogo atual (definido durante o processamento de eventos).</summary>
+        <remarks>Essa propriedade foi preterida, use TurnPath. DialogEvent em vez disso.</remarks>
       </Docs>
     </Member>
     <Member MemberName="GetPropertyName">
@@ -213,6 +221,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -240,6 +249,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -264,6 +274,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -276,7 +287,7 @@
       </ReturnValue>
       <Docs>
         <summary>Se verdadeiro, ocorreu uma interrupção.</summary>
-        <remarks>To be added.</remarks>
+        <remarks>Essa propriedade é preterida, use TurnPath. interrompeu em vez disso.</remarks>
       </Docs>
     </Member>
     <Member MemberName="LastResult">
@@ -292,6 +303,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -316,6 +328,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -328,7 +341,7 @@
       </ReturnValue>
       <Docs>
         <summary>O resultado da última caixa de diálogo que foi chamada.</summary>
-        <remarks>To be added.</remarks>
+        <remarks>Essa propriedade foi preterida, use TurnPath. LastResult em vez disso.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Recognized">
@@ -344,6 +357,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -368,6 +382,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -380,7 +395,7 @@
       </ReturnValue>
       <Docs>
         <summary>O resultado reconhecido para a ativação atual.</summary>
-        <remarks>To be added.</remarks>
+        <remarks>Essa propriedade foi preterida, use TurnPath. reconhecido em vez disso.</remarks>
       </Docs>
     </Member>
     <Member MemberName="RecognizedEntities">
@@ -396,6 +411,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -419,6 +435,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -431,7 +448,7 @@
       </ReturnValue>
       <Docs>
         <summary>Entidades que foram reconhecidas do texto.</summary>
-        <remarks>To be added.</remarks>
+        <remarks>Essa propriedade foi preterida, use TurnPath. RecognizedEntities em vez disso.</remarks>
       </Docs>
     </Member>
     <Member MemberName="RepeatedIds">
@@ -447,6 +464,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -471,6 +489,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -483,7 +502,7 @@
       </ReturnValue>
       <Docs>
         <summary>Usado para rastrear que não terminamos em um loop infinito de RepeatDialogs ().</summary>
-        <remarks>To be added.</remarks>
+        <remarks>Essa propriedade foi preterida, use TurnPath. RepeatedIds em vez disso.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Text">
@@ -499,6 +518,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -522,6 +542,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -534,7 +555,7 @@
       </ReturnValue>
       <Docs>
         <summary>Texto original.</summary>
-        <remarks>To be added.</remarks>
+        <remarks>Essa propriedade é preterida, use TurnPath. Text em vez disso.</remarks>
       </Docs>
     </Member>
     <Member MemberName="TopIntent">
@@ -550,6 +571,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -574,6 +596,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -586,7 +609,7 @@
       </ReturnValue>
       <Docs>
         <summary>Caminho para a intenção principal.</summary>
-        <remarks>To be added.</remarks>
+        <remarks>Essa propriedade foi preterida, use TurnPath. TopIntent em vez disso.</remarks>
       </Docs>
     </Member>
     <Member MemberName="TopScore">
@@ -602,6 +625,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -626,6 +650,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -638,7 +663,7 @@
       </ReturnValue>
       <Docs>
         <summary>Caminho para a pontuação superior.</summary>
-        <remarks>To be added.</remarks>
+        <remarks>Essa propriedade foi preterida, use TurnPath. TopScore em vez disso.</remarks>
       </Docs>
     </Member>
     <Member MemberName="UnrecognizedText">
@@ -654,6 +679,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -677,6 +703,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -689,7 +716,7 @@
       </ReturnValue>
       <Docs>
         <summary>Expressão original dividido em cadeias de caracteres não reconhecidas.</summary>
-        <remarks>To be added.</remarks>
+        <remarks>Essa propriedade foi preterida, use TurnPath. UnrecognizedText em vez disso.</remarks>
       </Docs>
     </Member>
   </Members>

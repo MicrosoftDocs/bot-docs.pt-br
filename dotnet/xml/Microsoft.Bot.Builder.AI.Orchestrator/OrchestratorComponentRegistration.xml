@@ -1,5 +1,5 @@
 <Type Name="OrchestratorComponentRegistration" FullName="Microsoft.Bot.Builder.AI.Orchestrator.OrchestratorComponentRegistration">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="c83bd28a775e821a28f0b15bf3e4af46a121a188" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150334" /></Metadata><TypeSignature Language="C#" Value="public class OrchestratorComponentRegistration : Microsoft.Bot.Builder.ComponentRegistration, Microsoft.Bot.Builder.Dialogs.Declarative.IComponentDeclarativeTypes" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6e77309f0c005d77768f49c2160f9772302047b7" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94602488" /></Metadata><TypeSignature Language="C#" Value="public class OrchestratorComponentRegistration : Microsoft.Bot.Builder.ComponentRegistration, Microsoft.Bot.Builder.Dialogs.Declarative.IComponentDeclarativeTypes" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit OrchestratorComponentRegistration extends Microsoft.Bot.Builder.ComponentRegistration implements class Microsoft.Bot.Builder.Dialogs.Declarative.IComponentDeclarativeTypes" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.AI.Orchestrator.OrchestratorComponentRegistration" />
   <TypeSignature Language="VB.NET" Value="Public Class OrchestratorComponentRegistration&#xA;Inherits ComponentRegistration&#xA;Implements IComponentDeclarativeTypes" />
@@ -8,6 +8,7 @@
     <AssemblyName>Microsoft.Bot.Builder.AI.Orchestrator</AssemblyName>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.ComponentRegistration</BaseTypeName>
@@ -32,6 +33,7 @@
         <AssemblyName>Microsoft.Bot.Builder.AI.Orchestrator</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -53,6 +55,7 @@
         <AssemblyName>Microsoft.Bot.Builder.AI.Orchestrator</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -89,6 +92,7 @@
         <AssemblyName>Microsoft.Bot.Builder.AI.Orchestrator</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>

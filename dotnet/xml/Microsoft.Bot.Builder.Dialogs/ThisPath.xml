@@ -1,5 +1,5 @@
 <Type Name="ThisPath" FullName="Microsoft.Bot.Builder.Dialogs.ThisPath">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="70e4a5c7cb03414a8a18c6e244d76cf4a62db8cb" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151638" /></Metadata><TypeSignature Language="C#" Value="public class ThisPath" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="4d534b96c2ea4080b4403093ae0b76755559c534" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94603135" /></Metadata><TypeSignature Language="C#" Value="public class ThisPath" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ThisPath extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.ThisPath" />
   <TypeSignature Language="VB.NET" Value="Public Class ThisPath" />
@@ -12,13 +12,14 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>Define o caminho passado para a caixa de diálogo ativa.</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -36,6 +37,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -56,6 +58,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -80,6 +83,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -92,7 +96,7 @@
       </ReturnValue>
       <Docs>
         <summary>As opções que foram passadas para a caixa de diálogo ativa por meio do argumento Options de BeginDialog.</summary>
-        <remarks>To be added.</remarks>
+        <remarks>Essa propriedade é preterida, use ThisPath. Options em vez disso.</remarks>
       </Docs>
     </Member>
   </Members>

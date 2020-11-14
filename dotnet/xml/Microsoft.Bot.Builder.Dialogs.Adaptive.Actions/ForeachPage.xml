@@ -1,5 +1,5 @@
 <Type Name="ForeachPage" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.ForeachPage">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="22330dd083e27b14aa20f6642d7002d5d4531391" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152425" /></Metadata><TypeSignature Language="C#" Value="public class ForeachPage : Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.ActionScope" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="853e38a3cc30d991e4b64b100f326bca784abeef" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94603878" /></Metadata><TypeSignature Language="C#" Value="public class ForeachPage : Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.ActionScope" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ForeachPage extends Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.ActionScope" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.ForeachPage" />
   <TypeSignature Language="VB.NET" Value="Public Class ForeachPage&#xA;Inherits ActionScope" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.ActionScope</BaseTypeName>
@@ -33,6 +34,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -59,9 +61,9 @@
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="sourceFilePath">To be added.</param>
-        <param name="sourceLineNumber">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="sourceFilePath">Opcional, caminho completo do arquivo de origem que contém o chamador.</param>
+        <param name="sourceLineNumber">opcional, o número de linha no arquivo de origem no qual o método é chamado.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.ForeachPage" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -78,6 +80,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
@@ -88,11 +91,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="dc">To be added.</param>
-        <param name="options">To be added.</param>
-        <param name="cancellationToken">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="dc">O <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogContext" /> para a atual ativação de conversa.</param>
+        <param name="options">Opcional, informações iniciais a serem passadas para a caixa de diálogo.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Chamado quando a caixa de diálogo é iniciada e enviada por push para a pilha de diálogo.</summary>
+        <returns>Um <see cref="T:System.Threading.Tasks.Task" /> representando a operação assíncrona.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -109,6 +112,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -139,6 +143,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -150,8 +155,8 @@
         <ReturnType>AdaptiveExpressions.Properties.StringExpression</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Obtém ou define a lista de propriedades do item.</summary>
+        <value>Expressão usada para computar a lista de propriedades de item que deve ser enumerada.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -168,6 +173,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -179,7 +185,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Identificador de classe.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -196,6 +202,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
@@ -206,11 +213,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="dc">To be added.</param>
-        <param name="actionScopeResult">To be added.</param>
-        <param name="cancellationToken">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="dc">O contexto da caixa de diálogo para a ativação atual da conversa.</param>
+        <param name="actionScopeResult">Contém o resultado do escopo de ações.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Chamado quando um controle de retorno para essa caixa de diálogo com <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.ActionScopeResult" /> a propriedade ActionCommand definida como <c>BreakLoop</c>.</summary>
+        <returns>Um <see cref="T:System.Threading.Tasks.Task" /> representando a operação assíncrona.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -227,14 +234,15 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>Cria a ID de computação para a caixa de diálogo.</summary>
+        <returns>Uma cadeia de caracteres que representa a ID de computação.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -251,6 +259,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
@@ -261,12 +270,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="dc">To be added.</param>
-        <param name="actionScopeResult">To be added.</param>
-        <param name="cancellationToken">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="dc">O contexto da caixa de diálogo para a ativação atual da conversa.</param>
+        <param name="actionScopeResult">Contém o resultado do escopo de ações.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Chamado quando um controle de retorno para essa caixa de diálogo com <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.ActionScopeResult" /> a propriedade ActionCommand definida como <c>ContinueLoop</c>.</summary>
+        <returns>Um <see cref="T:System.Threading.Tasks.Task" /> representando a operação assíncrona.</returns>
+        <remarks>O padrão é simplesmente encerrar a caixa de diálogo e propagar para o pai para manipular.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnEndOfActionsAsync">
@@ -282,6 +291,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
@@ -292,11 +302,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="dc">To be added.</param>
-        <param name="result">To be added.</param>
-        <param name="cancellationToken">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="dc">O <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogContext" /> para a atual ativação de conversa.</param>
+        <param name="result">Opcional, valor retornado da caixa de diálogo que foi chamada. O tipo do valor retornado depende da caixa de diálogo filho.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Chamado quando a ação da caixa de diálogo termina.</summary>
+        <returns>Um <see cref="T:System.Threading.Tasks.Task" /> representando a operação assíncrona.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -313,6 +323,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -324,8 +335,8 @@
         <ReturnType>AdaptiveExpressions.Properties.StringExpression</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Obtém ou define a lista de páginas.</summary>
+        <value>Expressão usada para computar a lista de páginas que deve ser enumerada.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -342,6 +353,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -353,8 +365,8 @@
         <ReturnType>AdaptiveExpressions.Properties.StringExpression</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Obtém ou define a lista de índices de página.</summary>
+        <value>Expressão usada para calcular a lista de índices de página que deve ser enumerada.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -371,6 +383,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -382,8 +395,8 @@
         <ReturnType>AdaptiveExpressions.Properties.IntExpression</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Obtém ou define o tamanho da página.</summary>
+        <value><see cref="T:AdaptiveExpressions.Properties.IntExpression" /> pelo tamanho da página.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

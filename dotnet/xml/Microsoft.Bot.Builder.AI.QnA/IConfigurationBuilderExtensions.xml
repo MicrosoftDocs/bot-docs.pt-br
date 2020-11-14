@@ -1,5 +1,5 @@
 <Type Name="IConfigurationBuilderExtensions" FullName="Microsoft.Bot.Builder.AI.QnA.IConfigurationBuilderExtensions">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="e8b7836c0074374dd9a2d22633f921cf32bbeb6e" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152480" /></Metadata><TypeSignature Language="C#" Value="public static class IConfigurationBuilderExtensions" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="79954d0b8b6db9354ee29ba513affece3dfb8fe5" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94603529" /></Metadata><TypeSignature Language="C#" Value="public static class IConfigurationBuilderExtensions" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit IConfigurationBuilderExtensions extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.AI.QnA.IConfigurationBuilderExtensions" />
   <TypeSignature Language="VB.NET" Value="Public Module IConfigurationBuilderExtensions" />
@@ -8,6 +8,7 @@
     <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -29,6 +30,7 @@
         <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Extensions.Configuration.IConfigurationBuilder</ReturnType>

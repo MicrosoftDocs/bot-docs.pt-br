@@ -1,5 +1,5 @@
 <Type Name="QnAMakerComponentRegistration" FullName="Microsoft.Bot.Builder.AI.QnA.QnAMakerComponentRegistration">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="0854b57fcb45882be0f3cdd17674d20671903319" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152535" /></Metadata><TypeSignature Language="C#" Value="public class QnAMakerComponentRegistration : Microsoft.Bot.Builder.ComponentRegistration, Microsoft.Bot.Builder.Dialogs.Declarative.IComponentDeclarativeTypes" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="24ce5e60cba77959c995c826eeb37e488cf076aa" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94604498" /></Metadata><TypeSignature Language="C#" Value="public class QnAMakerComponentRegistration : Microsoft.Bot.Builder.ComponentRegistration, Microsoft.Bot.Builder.Dialogs.Declarative.IComponentDeclarativeTypes" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit QnAMakerComponentRegistration extends Microsoft.Bot.Builder.ComponentRegistration implements class Microsoft.Bot.Builder.Dialogs.Declarative.IComponentDeclarativeTypes" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.AI.QnA.QnAMakerComponentRegistration" />
   <TypeSignature Language="VB.NET" Value="Public Class QnAMakerComponentRegistration&#xA;Inherits ComponentRegistration&#xA;Implements IComponentDeclarativeTypes" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.ComponentRegistration</BaseTypeName>
@@ -36,6 +37,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -59,6 +61,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -97,6 +100,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>

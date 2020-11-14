@@ -1,5 +1,5 @@
 <Type Name="ThisMemoryScope" FullName="Microsoft.Bot.Builder.Dialogs.Memory.Scopes.ThisMemoryScope">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="66cb361252fd6fa08efebf03da21e6624a928df4" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150376" /></Metadata><TypeSignature Language="C#" Value="public class ThisMemoryScope : Microsoft.Bot.Builder.Dialogs.Memory.Scopes.MemoryScope" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5f9e2842407070357d501324c75013a86796cf90" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94603268" /></Metadata><TypeSignature Language="C#" Value="public class ThisMemoryScope : Microsoft.Bot.Builder.Dialogs.Memory.Scopes.MemoryScope" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ThisMemoryScope extends Microsoft.Bot.Builder.Dialogs.Memory.Scopes.MemoryScope" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Memory.Scopes.ThisMemoryScope" />
   <TypeSignature Language="VB.NET" Value="Public Class ThisMemoryScope&#xA;Inherits MemoryScope" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Memory.Scopes.MemoryScope</BaseTypeName>
@@ -32,10 +33,11 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Dialogs.Memory.Scopes.ThisMemoryScope" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -52,6 +54,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -60,9 +63,9 @@
         <Parameter Name="dc" Type="Microsoft.Bot.Builder.Dialogs.DialogContext" />
       </Parameters>
       <Docs>
-        <param name="dc">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="dc">O <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogContext" /> objeto para essa rodada.</param>
+        <summary>Obtém a memória de backup para este escopo.</summary>
+        <returns>Memória para o escopo.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -79,6 +82,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -88,9 +92,9 @@
         <Parameter Name="memory" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="dc">To be added.</param>
-        <param name="memory">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="dc">O <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogContext" /> objeto para essa rodada.</param>
+        <param name="memory">Objeto de memória a ser definido para o escopo.</param>
+        <summary>Altera o objeto de backup para o escopo de memória.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

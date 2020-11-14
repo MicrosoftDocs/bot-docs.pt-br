@@ -1,5 +1,5 @@
 <Type Name="TeamsChannelData" FullName="Microsoft.Bot.Schema.Teams.TeamsChannelData">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="f94a60944709a63fb53887c06936dddd80a2e7cd" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151368" /></Metadata><TypeSignature Language="C#" Value="public class TeamsChannelData" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="1226c01f060c013f5ca906acfd054e23ee8c9fac" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94603618" /></Metadata><TypeSignature Language="C#" Value="public class TeamsChannelData" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TeamsChannelData extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.Teams.TeamsChannelData" />
   <TypeSignature Language="VB.NET" Value="Public Class TeamsChannelData" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -32,6 +33,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -52,6 +54,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="channel" Type="Microsoft.Bot.Schema.Teams.ChannelInfo" />
@@ -83,6 +86,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -94,7 +98,7 @@
         <ReturnType>Microsoft.Bot.Schema.Teams.ChannelInfo</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Obtém ou define informações sobre o canal no qual a mensagem foi enviada</summary>
+        <summary>Obtém ou define informações sobre o canal no qual a mensagem foi enviada.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -112,6 +116,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -124,6 +129,32 @@
       </ReturnValue>
       <Docs>
         <summary>Obtém ou define o tipo de evento.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Meeting">
+      <MemberSignature Language="C#" Value="public Microsoft.Bot.Schema.Teams.TeamsMeetingInfo Meeting { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Bot.Schema.Teams.TeamsMeetingInfo Meeting" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.Teams.TeamsChannelData.Meeting" />
+      <MemberSignature Language="VB.NET" Value="Public Property Meeting As TeamsMeetingInfo" />
+      <MemberSignature Language="F#" Value="member this.Meeting : Microsoft.Bot.Schema.Teams.TeamsMeetingInfo with get, set" Usage="Microsoft.Bot.Schema.Teams.TeamsChannelData.Meeting" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="meeting")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="meeting")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Schema.Teams.TeamsMeetingInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define informações sobre a reunião na qual a mensagem foi enviada.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -141,6 +172,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -152,7 +184,7 @@
         <ReturnType>Microsoft.Bot.Schema.Teams.NotificationInfo</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Obtém ou define as configurações de notificação para a mensagem</summary>
+        <summary>Obtém ou define as configurações de notificação para a mensagem.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -170,6 +202,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -181,7 +214,7 @@
         <ReturnType>Microsoft.Bot.Schema.Teams.TeamInfo</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Obtém ou define informações sobre a equipe na qual a mensagem foi enviada</summary>
+        <summary>Obtém ou define informações sobre a equipe na qual a mensagem foi enviada.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -199,6 +232,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -210,7 +244,7 @@
         <ReturnType>Microsoft.Bot.Schema.Teams.TenantInfo</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Obtém ou define informações sobre o locatário no qual a mensagem foi enviada</summary>
+        <summary>Obtém ou define informações sobre o locatário no qual a mensagem foi enviada.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
