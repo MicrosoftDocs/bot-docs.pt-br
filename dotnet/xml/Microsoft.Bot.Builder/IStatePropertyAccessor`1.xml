@@ -1,5 +1,5 @@
 <Type Name="IStatePropertyAccessor&lt;T&gt;" FullName="Microsoft.Bot.Builder.IStatePropertyAccessor&lt;T&gt;">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="3fce5d9194eeb1dda47f88709a62adb701c1adc6" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151216" /></Metadata><TypeSignature Language="C#" Value="public interface IStatePropertyAccessor&lt;T&gt; : Microsoft.Bot.Builder.IStatePropertyInfo" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="e3f5ae6e6087dbfcb12875df3c4986fc6b2018ca" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94611288" /></Metadata><TypeSignature Language="C#" Value="public interface IStatePropertyAccessor&lt;T&gt; : Microsoft.Bot.Builder.IStatePropertyInfo" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IStatePropertyAccessor`1&lt;T&gt; implements class Microsoft.Bot.Builder.IStatePropertyInfo" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.IStatePropertyAccessor`1" />
   <TypeSignature Language="VB.NET" Value="Public Interface IStatePropertyAccessor(Of T)&#xA;Implements IStatePropertyInfo" />
@@ -17,6 +17,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <TypeParameters>
     <TypeParameter Name="T" />
@@ -52,6 +53,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -88,6 +90,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;T&gt;</ReturnType>
@@ -127,6 +130,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>

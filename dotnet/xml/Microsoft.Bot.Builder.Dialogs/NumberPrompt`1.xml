@@ -1,5 +1,5 @@
 <Type Name="NumberPrompt&lt;T&gt;" FullName="Microsoft.Bot.Builder.Dialogs.NumberPrompt&lt;T&gt;">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="9c5f37f472376945576a116f8051c7178d5a1b59" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151671" /></Metadata><TypeSignature Language="C#" Value="public class NumberPrompt&lt;T&gt; : Microsoft.Bot.Builder.Dialogs.Prompt&lt;T&gt; where T : struct" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0063ee6a6ef3c0424acb4b608327da5f5c76537c" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94611368" /></Metadata><TypeSignature Language="C#" Value="public class NumberPrompt&lt;T&gt; : Microsoft.Bot.Builder.Dialogs.Prompt&lt;T&gt; where T : struct" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NumberPrompt`1&lt;struct .ctor (class System.ValueType) T&gt; extends Microsoft.Bot.Builder.Dialogs.Prompt`1&lt;!T&gt;" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.NumberPrompt`1" />
   <TypeSignature Language="VB.NET" Value="Public Class NumberPrompt(Of T)&#xA;Inherits Prompt(Of T)" />
@@ -17,6 +17,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <TypeParameters>
     <TypeParameter Name="T" />
@@ -54,6 +55,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="dialogId" Type="System.String" />
@@ -61,10 +63,10 @@
         <Parameter Name="defaultLocale" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="dialogId">To be added.</param>
-        <param name="validator">To be added.</param>
-        <param name="defaultLocale">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="dialogId">ID exclusiva da caixa de diálogo dentro de seu pai <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogSet" /> ou <see cref="T:Microsoft.Bot.Builder.Dialogs.ComponentDialog" /> .</param>
+        <param name="validator">Validador que será chamado cada vez que o usuário responder ao prompt.</param>
+        <param name="defaultLocale">Localidade a usar.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Dialogs.NumberPrompt`1" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,6 +90,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -118,6 +121,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -160,6 +164,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.PromptRecognizerResult&lt;T&gt;&gt;</ReturnType>

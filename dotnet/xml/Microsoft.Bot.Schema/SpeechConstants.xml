@@ -1,5 +1,5 @@
 <Type Name="SpeechConstants" FullName="Microsoft.Bot.Schema.SpeechConstants">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="13a742b1429e76644ee959bc3c0094d0f5323dc3" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150623" /></Metadata><TypeSignature Language="C#" Value="public static class SpeechConstants" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="14d5f66029e30660eda3814ee6d722d6118c176c" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94613138" /></Metadata><TypeSignature Language="C#" Value="public static class SpeechConstants" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit SpeechConstants extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.SpeechConstants" />
   <TypeSignature Language="VB.NET" Value="Public Class SpeechConstants" />
@@ -8,6 +8,7 @@
     <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -29,6 +30,7 @@
         <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>

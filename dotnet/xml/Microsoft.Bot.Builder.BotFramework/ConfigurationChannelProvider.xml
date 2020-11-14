@@ -1,5 +1,5 @@
 <Type Name="ConfigurationChannelProvider" FullName="Microsoft.Bot.Builder.BotFramework.ConfigurationChannelProvider">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="5786f89f516cbc54e54845f8e8e7cc5b5728ee50" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150056" /></Metadata><TypeSignature Language="C#" Value="public sealed class ConfigurationChannelProvider : Microsoft.Bot.Connector.Authentication.SimpleChannelProvider" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="fd9052219aa20f41d67b67a76d9d9d7e6eebf793" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94611258" /></Metadata><TypeSignature Language="C#" Value="public sealed class ConfigurationChannelProvider : Microsoft.Bot.Connector.Authentication.SimpleChannelProvider" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ConfigurationChannelProvider extends Microsoft.Bot.Connector.Authentication.SimpleChannelProvider" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.BotFramework.ConfigurationChannelProvider" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ConfigurationChannelProvider&#xA;Inherits SimpleChannelProvider" />
@@ -17,6 +17,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>Microsoft.Bot.Builder.Integration.AspNet.WebApi</AssemblyName>
@@ -31,6 +32,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Connector.Authentication.SimpleChannelProvider</BaseTypeName>
@@ -58,6 +60,7 @@ Observação: se as chaves não estiverem presentes, um valor <c>nulo</c> será 
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -80,6 +83,7 @@ Observação: se as chaves não estiverem presentes, um valor <c>nulo</c> será 
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="configuration" Type="Microsoft.Extensions.Configuration.IConfiguration" />
@@ -110,6 +114,7 @@ Observação: se as chaves não estiverem presentes, um valor <c>nulo</c> será 
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.Integration.AspNet.WebApi</AssemblyName>
@@ -124,6 +129,7 @@ Observação: se as chaves não estiverem presentes, um valor <c>nulo</c> será 
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>

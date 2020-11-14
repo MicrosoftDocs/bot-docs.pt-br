@@ -1,5 +1,5 @@
 <Type Name="ICustomDeserializer" FullName="Microsoft.Bot.Builder.Dialogs.Declarative.Loaders.ICustomDeserializer">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="41f49f23873281269b8d5aa5281e174f1fb38639" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152251" /></Metadata><TypeSignature Language="C#" Value="public interface ICustomDeserializer" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5dcce49fb3f504837d770b5149156a98759c3d93" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94612758" /></Metadata><TypeSignature Language="C#" Value="public interface ICustomDeserializer" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICustomDeserializer" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Declarative.Loaders.ICustomDeserializer" />
   <TypeSignature Language="VB.NET" Value="Public Interface ICustomDeserializer" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
@@ -30,6 +31,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>

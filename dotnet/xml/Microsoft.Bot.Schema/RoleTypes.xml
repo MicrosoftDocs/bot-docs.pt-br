@@ -1,5 +1,5 @@
 <Type Name="RoleTypes" FullName="Microsoft.Bot.Schema.RoleTypes">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="928382008557220aba796266093610524e43a582" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152671" /></Metadata><TypeSignature Language="C#" Value="public static class RoleTypes" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9bf2066e608dd3282c0e58eb20c00ed2266fcaf8" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94611729" /></Metadata><TypeSignature Language="C#" Value="public static class RoleTypes" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit RoleTypes extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.RoleTypes" />
   <TypeSignature Language="VB.NET" Value="Public Class RoleTypes" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -33,12 +34,32 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
         <summary>O tipo de funções de bot.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Skill">
+      <MemberSignature Language="C#" Value="public const string Skill;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string Skill" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Schema.RoleTypes.Skill" />
+      <MemberSignature Language="VB.NET" Value="Public Const Skill As String " />
+      <MemberSignature Language="F#" Value="val mutable Skill : string" Usage="Microsoft.Bot.Schema.RoleTypes.Skill" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>O tipo de funções de habilidade.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -55,6 +76,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>

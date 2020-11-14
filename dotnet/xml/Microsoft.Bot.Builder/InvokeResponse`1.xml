@@ -1,5 +1,5 @@
 <Type Name="InvokeResponse&lt;T&gt;" FullName="Microsoft.Bot.Builder.InvokeResponse&lt;T&gt;">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="7c2964bcc279ec0e296337c082616d8d7751820a" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150239" /></Metadata><TypeSignature Language="C#" Value="public class InvokeResponse&lt;T&gt; : Microsoft.Bot.Builder.InvokeResponse" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0df2d88e31603fc7f42c8a2c68939a8e02d14674" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94612668" /></Metadata><TypeSignature Language="C#" Value="public class InvokeResponse&lt;T&gt; : Microsoft.Bot.Builder.InvokeResponse" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InvokeResponse`1&lt;T&gt; extends Microsoft.Bot.Builder.InvokeResponse" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.InvokeResponse`1" />
   <TypeSignature Language="VB.NET" Value="Public Class InvokeResponse(Of T)&#xA;Inherits InvokeResponse" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <TypeParameters>
     <TypeParameter Name="T" />
@@ -38,6 +39,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -59,6 +61,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>T</ReturnType>

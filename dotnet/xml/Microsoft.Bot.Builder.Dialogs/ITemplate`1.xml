@@ -1,5 +1,5 @@
 <Type Name="ITemplate&lt;T&gt;" FullName="Microsoft.Bot.Builder.Dialogs.ITemplate&lt;T&gt;">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="76ed88fec2f3dd88ecd199853fd3d283697fd278" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151674" /></Metadata><TypeSignature Language="C#" Value="public interface ITemplate&lt;T&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0490a2671f4d46b05c8fc07ea3eea5984487f027" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94612278" /></Metadata><TypeSignature Language="C#" Value="public interface ITemplate&lt;T&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITemplate`1&lt;T&gt;" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.ITemplate`1" />
   <TypeSignature Language="VB.NET" Value="Public Interface ITemplate(Of T)" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <TypeParameters>
     <TypeParameter Name="T" />
@@ -34,6 +35,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;T&gt;</ReturnType>
@@ -45,7 +47,7 @@
       </Parameters>
       <Docs>
         <param name="dialogContext">dialogContext.</param>
-        <param name="data">dados aos quais associar. Se for NULL, então o DC. O estado será usado.</param>
+        <param name="data">dados aos quais associar. Se for NULL, o DC. State será usado.</param>
         <param name="cancellationToken">o <see cref="T:System.Threading.CancellationToken" /> para esta tarefa.</param>
         <summary>Dada a ligação de contexto Turn aos dados para criar o objeto do tipo T.</summary>
         <returns>instância de T.</returns>

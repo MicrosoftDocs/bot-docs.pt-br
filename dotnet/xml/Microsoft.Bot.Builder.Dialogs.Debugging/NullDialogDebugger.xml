@@ -1,5 +1,5 @@
 <Type Name="NullDialogDebugger" FullName="Microsoft.Bot.Builder.Dialogs.Debugging.NullDialogDebugger">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="172109019d1decb00821146392a6e18e24ec70d3" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151877" /></Metadata><TypeSignature Language="C#" Value="public class NullDialogDebugger : Microsoft.Bot.Builder.Dialogs.Debugging.IDialogDebugger" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="97b3bd42419d27576de190f70af4d65fb8f17450" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94611708" /></Metadata><TypeSignature Language="C#" Value="public class NullDialogDebugger : Microsoft.Bot.Builder.Dialogs.Debugging.IDialogDebugger" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NullDialogDebugger extends System.Object implements class Microsoft.Bot.Builder.Dialogs.Debugging.IDialogDebugger" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Debugging.NullDialogDebugger" />
   <TypeSignature Language="VB.NET" Value="Public Class NullDialogDebugger&#xA;Implements IDialogDebugger" />
@@ -12,6 +12,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -41,12 +42,13 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.Dialogs.Debugging.IDialogDebugger</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Inicializa uma nova instância somente leitura do <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.NullDialogDebugger" /> .</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -68,6 +70,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -101,6 +104,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
