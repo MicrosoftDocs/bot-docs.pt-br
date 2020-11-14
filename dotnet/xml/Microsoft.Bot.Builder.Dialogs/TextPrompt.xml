@@ -1,5 +1,5 @@
 <Type Name="TextPrompt" FullName="Microsoft.Bot.Builder.Dialogs.TextPrompt">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="3ad965f7cdf69a0ca0e9a3e31caef9077e667067" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151639" /></Metadata><TypeSignature Language="C#" Value="public class TextPrompt : Microsoft.Bot.Builder.Dialogs.Prompt&lt;string&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ef56ff8b08caa751a5217fdcc14b3b320cee1ba5" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94610198" /></Metadata><TypeSignature Language="C#" Value="public class TextPrompt : Microsoft.Bot.Builder.Dialogs.Prompt&lt;string&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TextPrompt extends Microsoft.Bot.Builder.Dialogs.Prompt`1&lt;string&gt;" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.TextPrompt" />
   <TypeSignature Language="VB.NET" Value="Public Class TextPrompt&#xA;Inherits Prompt(Of String)" />
@@ -17,6 +17,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Prompt&lt;System.String&gt;</BaseTypeName>
@@ -50,6 +51,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="dialogId" Type="System.String" />
@@ -77,6 +79,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Boolean&gt;</ReturnType>
@@ -87,12 +90,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="dc">To be added.</param>
-        <param name="e">To be added.</param>
-        <param name="cancellationToken">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="dc">O contexto de diálogo para a atual ativação de conversa.</param>
+        <param name="e">O evento que está sendo gerado.</param>
+        <param name="cancellationToken">Token de cancelamento.</param>
+        <summary>Chamado antes de um evento ser bolha para seu pai.</summary>
+        <returns>Se o evento é manipulado pela caixa de diálogo atual e o processamento adicional deve parar.</returns>
+        <remarks>Esse é um bom lugar para executar a interceptação de um evento, uma vez que `true` o retorno impedirá qualquer bolha adicional do evento aos pais das caixas de diálogo e também impedirá que qualquer caixa de diálogo filho execute seu processamento padrão.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnPromptAsync">
@@ -115,6 +118,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -157,6 +161,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.PromptRecognizerResult&lt;System.String&gt;&gt;</ReturnType>

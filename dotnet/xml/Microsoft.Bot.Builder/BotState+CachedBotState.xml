@@ -1,5 +1,5 @@
 <Type Name="BotState+CachedBotState" FullName="Microsoft.Bot.Builder.BotState+CachedBotState">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="8a2641d11d60af5bc909cfb5c285dbf1e14b7f25" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150319" /></Metadata><TypeSignature Language="C#" Value="public class BotState.CachedBotState" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="45cd63df4c8b471ccd7b2a305643351284003b35" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94610178" /></Metadata><TypeSignature Language="C#" Value="public class BotState.CachedBotState" />
   <TypeSignature Language="ILAsm" Value=".class nested public auto ansi beforefieldinit BotState/CachedBotState extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.BotState.CachedBotState" />
   <TypeSignature Language="VB.NET" Value="Public Class BotState.CachedBotState" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -20,6 +21,26 @@
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CachedBotState (System.Collections.Generic.IDictionary&lt;string,object&gt; state = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IDictionary`2&lt;string, object&gt; state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.BotState.CachedBotState.#ctor(System.Collections.Generic.IDictionary{System.String,System.Object})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (Optional state As IDictionary(Of String, Object) = Nothing)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.BotState.CachedBotState : System.Collections.Generic.IDictionary&lt;string, obj&gt; -&gt; Microsoft.Bot.Builder.BotState.CachedBotState" Usage="new Microsoft.Bot.Builder.BotState.CachedBotState state" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="state" Type="System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="state">Estado inicial para o <see cref="T:Microsoft.Bot.Builder.BotState.CachedBotState" /> .</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.BotState.CachedBotState" />.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="State">
       <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,object&gt; State { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; State" />
@@ -33,6 +54,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;</ReturnType>

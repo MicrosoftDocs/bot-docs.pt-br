@@ -1,5 +1,5 @@
 <Type Name="BlobsStorage" FullName="Microsoft.Bot.Builder.Azure.Blobs.BlobsStorage">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="9096d44c035cb8c034ebc4221ffd5db3507eeffb" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152543" /></Metadata><TypeSignature Language="C#" Value="public class BlobsStorage : Microsoft.Bot.Builder.IStorage" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d71ec9c72cab318537c8b7b95411e0cb9b3ef91c" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94608868" /></Metadata><TypeSignature Language="C#" Value="public class BlobsStorage : Microsoft.Bot.Builder.IStorage" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BlobsStorage extends System.Object implements class Microsoft.Bot.Builder.IStorage" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Azure.Blobs.BlobsStorage" />
   <TypeSignature Language="VB.NET" Value="Public Class BlobsStorage&#xA;Implements IStorage" />
@@ -8,6 +8,7 @@
     <AssemblyName>Microsoft.Bot.Builder.Azure.Blobs</AssemblyName>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -36,6 +37,7 @@ Se uma entidade for um <see cref="T:Microsoft.Bot.Builder.IStoreItem" /> , o obj
         <AssemblyName>Microsoft.Bot.Builder.Azure.Blobs</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="dataConnectionString" Type="System.String" />
@@ -65,6 +67,7 @@ Se uma entidade for um <see cref="T:Microsoft.Bot.Builder.IStoreItem" /> , o obj
         <AssemblyName>Microsoft.Bot.Builder.Azure.Blobs</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -95,6 +98,7 @@ Se uma entidade for um <see cref="T:Microsoft.Bot.Builder.IStoreItem" /> , o obj
         <AssemblyName>Microsoft.Bot.Builder.Azure.Blobs</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;&gt;</ReturnType>
@@ -125,6 +129,7 @@ Se uma entidade for um <see cref="T:Microsoft.Bot.Builder.IStoreItem" /> , o obj
         <AssemblyName>Microsoft.Bot.Builder.Azure.Blobs</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>

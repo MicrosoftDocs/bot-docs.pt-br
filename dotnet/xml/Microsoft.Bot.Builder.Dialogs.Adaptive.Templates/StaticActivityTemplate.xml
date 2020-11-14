@@ -1,5 +1,5 @@
 <Type Name="StaticActivityTemplate" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Templates.StaticActivityTemplate">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="718295e16a8d8ec91a2b8c50182a6a1e7b2733ae" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151960" /></Metadata><TypeSignature Language="C#" Value="public class StaticActivityTemplate : Microsoft.Bot.Builder.Dialogs.ITemplate&lt;Microsoft.Bot.Schema.Activity&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="85afe576ba9cbfbb1c7cdb9789b07677b9def465" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94610848" /></Metadata><TypeSignature Language="C#" Value="public class StaticActivityTemplate : Microsoft.Bot.Builder.Dialogs.ITemplate&lt;Microsoft.Bot.Schema.Activity&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StaticActivityTemplate extends System.Object implements class Microsoft.Bot.Builder.Dialogs.ITemplate`1&lt;class Microsoft.Bot.Schema.Activity&gt;" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Templates.StaticActivityTemplate" />
   <TypeSignature Language="VB.NET" Value="Public Class StaticActivityTemplate&#xA;Implements ITemplate(Of Activity)" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -42,10 +43,11 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Templates.StaticActivityTemplate" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -62,13 +64,14 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="activity" Type="Microsoft.Bot.Schema.Activity" />
       </Parameters>
       <Docs>
-        <param name="activity">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="activity"><see cref="P:Microsoft.Bot.Builder.Dialogs.Adaptive.Templates.StaticActivityTemplate.Activity" />.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Templates.StaticActivityTemplate" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -85,6 +88,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -96,8 +100,8 @@
         <ReturnType>Microsoft.Bot.Schema.Activity</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Obtém ou define a atividade.</summary>
+        <value><see cref="P:Microsoft.Bot.Builder.Dialogs.Adaptive.Templates.StaticActivityTemplate.Activity" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,6 +121,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Schema.Activity&gt;</ReturnType>
@@ -127,11 +132,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="context">To be added.</param>
-        <param name="data">To be added.</param>
-        <param name="cancellationToken">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="context">O <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogContext" /> para a atual ativação de conversa.</param>
+        <param name="data">Opcional, dados aos quais associar. Se for NULL, o DC. State será usado.</param>
+        <param name="cancellationToken">Opcional, <see cref="T:System.Threading.CancellationToken" /> para esta tarefa.</param>
+        <summary>Obtém a atividade.</summary>
+        <returns>Tarefa que representa uma atividade.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -148,6 +153,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -159,7 +165,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Identificador de classe.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -176,14 +182,15 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>Retorna uma cadeia de caracteres que representa a <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Templates.StaticActivityTemplate" />.</summary>
+        <returns>Uma cadeia de caracteres que representa <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Templates.StaticActivityTemplate" /> .</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

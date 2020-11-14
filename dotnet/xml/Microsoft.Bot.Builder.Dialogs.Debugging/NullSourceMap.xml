@@ -1,5 +1,5 @@
 <Type Name="NullSourceMap" FullName="Microsoft.Bot.Builder.Dialogs.Debugging.NullSourceMap">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="8c555ed262d76960337ecb941855b1cd566adf1d" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151878" /></Metadata><TypeSignature Language="C#" Value="public class NullSourceMap : Microsoft.Bot.Builder.Dialogs.Debugging.ISourceMap" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="eb9d585fe213603bcd842220d506fa76c809cb15" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94610028" /></Metadata><TypeSignature Language="C#" Value="public class NullSourceMap : Microsoft.Bot.Builder.Dialogs.Debugging.ISourceMap" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NullSourceMap extends System.Object implements class Microsoft.Bot.Builder.Dialogs.Debugging.ISourceMap" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Debugging.NullSourceMap" />
   <TypeSignature Language="VB.NET" Value="Public Class NullSourceMap&#xA;Implements ISourceMap" />
@@ -12,6 +12,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -40,6 +41,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -65,6 +67,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -74,10 +77,10 @@
         <Parameter Name="range" Type="Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange" />
       </Parameters>
       <Docs>
-        <param name="item">To be added.</param>
-        <param name="range">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="item">Item de objeto a ser registrado.</param>
+        <param name="range"><see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange" /> para o objeto.</param>
+        <summary>Adicione um objeto e informações de SourceRange que descrevem onde o objeto foi definido.</summary>
+        <remarks>Para um <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.NullSourceMap" /> , ele não faz nada.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Instance">
@@ -95,12 +98,13 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.Dialogs.Debugging.NullSourceMap</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Inicializa uma nova instância somente leitura do <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.NullSourceMap" /> .</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -122,6 +126,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -131,11 +136,11 @@
         <Parameter Name="range" Type="Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="item">To be added.</param>
-        <param name="range">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="item">Objeto a ser pesquisado.</param>
+        <param name="range">Coloque para retornar o <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange" /> para o objeto.</param>
+        <summary>Pesquisar as <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange" /> informações de um objeto.</summary>
+        <returns><c>true</c> se for encontrado.</returns>
+        <remarks>Para um <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.NullSourceMap" /> sempre retorna <c>false</c>.</remarks>
       </Docs>
     </Member>
   </Members>

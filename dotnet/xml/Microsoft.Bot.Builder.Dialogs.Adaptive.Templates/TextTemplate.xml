@@ -1,5 +1,5 @@
 <Type Name="TextTemplate" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Templates.TextTemplate">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="9445a4615761eb975e1a0e29eec3ef42fdcb800c" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150400" /></Metadata><TypeSignature Language="C#" Value="public class TextTemplate : Microsoft.Bot.Builder.Dialogs.ITemplate&lt;string&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ad32e9c8a61180ff45e03b3aaa68dad7abc19533" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94608858" /></Metadata><TypeSignature Language="C#" Value="public class TextTemplate : Microsoft.Bot.Builder.Dialogs.ITemplate&lt;string&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TextTemplate extends System.Object implements class Microsoft.Bot.Builder.Dialogs.ITemplate`1&lt;string&gt;" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Templates.TextTemplate" />
   <TypeSignature Language="VB.NET" Value="Public Class TextTemplate&#xA;Implements ITemplate(Of String)" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -43,13 +44,14 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="template" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="template">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="template">O modelo a ser avaliado para criar a cadeia de caracteres.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Templates.TextTemplate" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -69,6 +71,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.String&gt;</ReturnType>
@@ -79,11 +82,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="dialogContext">To be added.</param>
-        <param name="data">To be added.</param>
-        <param name="cancellationToken">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="dialogContext">O <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogContext" /> para a atual ativação de conversa.</param>
+        <param name="data">Opcional, dados aos quais associar. Se for NULL, o DC. State será usado.</param>
+        <param name="cancellationToken">Opcional, <see cref="T:System.Threading.CancellationToken" /> para esta tarefa.</param>
+        <summary>Dada a ligação de contexto Turn aos dados para criar o objeto do tipo cadeia de caracteres.</summary>
+        <returns>Instância de cadeia de caracteres.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -100,6 +103,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -111,7 +115,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Identificador de classe.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -128,6 +132,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -157,14 +162,15 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>Retorna uma cadeia de caracteres que representa a <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Templates.TextTemplate" />.</summary>
+        <returns>Uma cadeia de caracteres que representa <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Templates.TextTemplate" /> .</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,5 +1,5 @@
 <Type Name="UserMemoryScope" FullName="Microsoft.Bot.Builder.Dialogs.Memory.Scopes.UserMemoryScope">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="99ced325269e08210ebf9d60914867c7abddb25e" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150374" /></Metadata><TypeSignature Language="C#" Value="public class UserMemoryScope : Microsoft.Bot.Builder.Dialogs.Memory.Scopes.BotStateMemoryScope&lt;Microsoft.Bot.Builder.UserState&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3ec49179c9e4ff04a4ddf5c9a461675a9ab7ed16" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94609758" /></Metadata><TypeSignature Language="C#" Value="public class UserMemoryScope : Microsoft.Bot.Builder.Dialogs.Memory.Scopes.BotStateMemoryScope&lt;Microsoft.Bot.Builder.UserState&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UserMemoryScope extends Microsoft.Bot.Builder.Dialogs.Memory.Scopes.BotStateMemoryScope`1&lt;class Microsoft.Bot.Builder.UserState&gt;" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Memory.Scopes.UserMemoryScope" />
   <TypeSignature Language="VB.NET" Value="Public Class UserMemoryScope&#xA;Inherits BotStateMemoryScope(Of UserState)" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Memory.Scopes.BotStateMemoryScope&lt;Microsoft.Bot.Builder.UserState&gt;</BaseTypeName>
@@ -35,6 +36,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>

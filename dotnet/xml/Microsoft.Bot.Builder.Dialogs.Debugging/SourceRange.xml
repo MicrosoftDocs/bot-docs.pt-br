@@ -1,5 +1,5 @@
 <Type Name="SourceRange" FullName="Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="fef9bee3b93526cb5bf4ebb5ab366320df90211a" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152256" /></Metadata><TypeSignature Language="C#" Value="public class SourceRange : IEquatable&lt;Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="bd65f49b51178a06c40d2215117b67ccbc10509f" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94609798" /></Metadata><TypeSignature Language="C#" Value="public class SourceRange : IEquatable&lt;Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SourceRange extends System.Object implements class System.IEquatable`1&lt;class Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange&gt;" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange" />
   <TypeSignature Language="VB.NET" Value="Public Class SourceRange&#xA;Implements IEquatable(Of SourceRange)" />
@@ -12,6 +12,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -40,6 +41,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -62,6 +64,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="path" Type="System.String" />
@@ -93,14 +96,15 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>Cria uma nova instância do <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange" />. Todas as propriedades são clonadas recursivamente.</summary>
+        <returns>Um novo instância do <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange" /> .</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,6 +121,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Newtonsoft.Json.Linq.JToken</ReturnType>
@@ -142,6 +147,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.Dialogs.Debugging.SourcePoint</ReturnType>
@@ -166,6 +172,7 @@
         <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -174,9 +181,9 @@
         <Parameter Name="other" Type="Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange" />
       </Parameters>
       <Docs>
-        <param name="other">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="other">Um objeto para comparar com isso <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange" /> .</param>
+        <summary>Indica se o atual <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange" /> é igual a outro objeto do mesmo tipo.</summary>
+        <returns><c>true</c> se o atual <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange" /> for igual ao outro parâmetro; caso contrário, <c>false</c>.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -191,6 +198,7 @@
         <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -199,9 +207,9 @@
         <Parameter Name="obj" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="obj">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="obj">Um objeto para comparar com isso <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange" /> .</param>
+        <summary>Indica se o atual <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange" /> é igual a outro objeto.</summary>
+        <returns><c>true</c> se o atual <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange" /> for igual ao parâmetro de objeto; caso contrário, <c>false</c>.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -216,14 +224,15 @@
         <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>Cria um código hash para o atual <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange" /> .</summary>
+        <returns>Um código hash do <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange" /> atual.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -242,6 +251,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -267,6 +277,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.Dialogs.Debugging.SourcePoint</ReturnType>
@@ -292,14 +303,15 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>Retorna uma cadeia de caracteres que representa o <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange" /> atual.</summary>
+        <returns>Uma cadeia de caracteres que representa o <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange" /> atual.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

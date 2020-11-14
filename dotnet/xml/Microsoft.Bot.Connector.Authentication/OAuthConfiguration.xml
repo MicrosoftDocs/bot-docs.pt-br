@@ -1,5 +1,5 @@
 <Type Name="OAuthConfiguration" FullName="Microsoft.Bot.Connector.Authentication.OAuthConfiguration">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="e1521a149420f5505ba7547064799cb9624e82aa" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151508" /></Metadata><TypeSignature Language="C#" Value="public class OAuthConfiguration" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b3a2767565dc3b7cdf2911037f17d19437eef9b0" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94608694" /></Metadata><TypeSignature Language="C#" Value="public class OAuthConfiguration" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit OAuthConfiguration extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Connector.Authentication.OAuthConfiguration" />
   <TypeSignature Language="VB.NET" Value="Public Class OAuthConfiguration" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -32,6 +33,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -52,6 +54,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -75,6 +78,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -82,6 +86,26 @@
       <Docs>
         <summary>Obtém ou define o escopo do oAuth para autenticação.</summary>
         <value>Escopo OAuth para autenticação.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateAuthority">
+      <MemberSignature Language="C#" Value="public bool ValidateAuthority { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ValidateAuthority" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Connector.Authentication.OAuthConfiguration.ValidateAuthority" />
+      <MemberSignature Language="VB.NET" Value="Public Property ValidateAuthority As Boolean" />
+      <MemberSignature Language="F#" Value="member this.ValidateAuthority : bool with get, set" Usage="Microsoft.Bot.Connector.Authentication.OAuthConfiguration.ValidateAuthority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define um valor que indica se a autoridade deve ser validada.</summary>
+        <value>Valor booliano que indica se a autoridade deve ser validada.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
