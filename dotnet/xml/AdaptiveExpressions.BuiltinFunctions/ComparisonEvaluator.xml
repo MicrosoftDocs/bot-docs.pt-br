@@ -1,5 +1,5 @@
 <Type Name="ComparisonEvaluator" FullName="AdaptiveExpressions.BuiltinFunctions.ComparisonEvaluator">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="fe759294e542b7097b84b220b57b41802a511346" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151208" /></Metadata><TypeSignature Language="C#" Value="public class ComparisonEvaluator : AdaptiveExpressions.ExpressionEvaluator" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="aefc83c5b9598dc48a3473dbd354e2ed9f1467e5" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94598298" /></Metadata><TypeSignature Language="C#" Value="public class ComparisonEvaluator : AdaptiveExpressions.ExpressionEvaluator" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ComparisonEvaluator extends AdaptiveExpressions.ExpressionEvaluator" />
   <TypeSignature Language="DocId" Value="T:AdaptiveExpressions.BuiltinFunctions.ComparisonEvaluator" />
   <TypeSignature Language="VB.NET" Value="Public Class ComparisonEvaluator&#xA;Inherits ExpressionEvaluator" />
@@ -8,6 +8,7 @@
     <AssemblyName>AdaptiveExpressions</AssemblyName>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>AdaptiveExpressions.ExpressionEvaluator</BaseTypeName>
@@ -30,6 +31,7 @@ Um operador de comparação retornará false se a comparação for falsa ou houv
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="type" Type="System.String" />

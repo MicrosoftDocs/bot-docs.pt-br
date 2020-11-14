@@ -1,5 +1,5 @@
 <Type Name="WaterfallStep" FullName="Microsoft.Bot.Builder.Dialogs.WaterfallStep">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="5b94e8d52f54a3de19b3dbbec0abbf16f5c71865" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151634" /></Metadata><TypeSignature Language="C#" Value="public delegate System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt; WaterfallStep(WaterfallStepContext stepContext, CancellationToken cancellationToken);" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8259f887e0974edd156da2081e2973400c4e7266" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94600058" /></Metadata><TypeSignature Language="C#" Value="public delegate System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt; WaterfallStep(WaterfallStepContext stepContext, CancellationToken cancellationToken);" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WaterfallStep extends System.MulticastDelegate" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.WaterfallStep" />
   <TypeSignature Language="VB.NET" Value="Public Delegate Function WaterfallStep(stepContext As WaterfallStepContext, cancellationToken As CancellationToken) As Task(Of DialogTurnResult) " />
@@ -17,6 +17,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Delegate</BaseTypeName>

@@ -1,5 +1,5 @@
 <Type Name="NumberTransformEvaluator" FullName="AdaptiveExpressions.BuiltinFunctions.NumberTransformEvaluator">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="c13d8e6b15521e9a70476cc3bc6c321e9e70d43e" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151205" /></Metadata><TypeSignature Language="C#" Value="public class NumberTransformEvaluator : AdaptiveExpressions.ExpressionEvaluator" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="4d5c5d84bfdaca1a0d48bfcd258dba4ec826e770" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94598288" /></Metadata><TypeSignature Language="C#" Value="public class NumberTransformEvaluator : AdaptiveExpressions.ExpressionEvaluator" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NumberTransformEvaluator extends AdaptiveExpressions.ExpressionEvaluator" />
   <TypeSignature Language="DocId" Value="T:AdaptiveExpressions.BuiltinFunctions.NumberTransformEvaluator" />
   <TypeSignature Language="VB.NET" Value="Public Class NumberTransformEvaluator&#xA;Inherits ExpressionEvaluator" />
@@ -8,6 +8,7 @@
     <AssemblyName>AdaptiveExpressions</AssemblyName>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>AdaptiveExpressions.ExpressionEvaluator</BaseTypeName>
@@ -29,6 +30,7 @@
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="type" Type="System.String" />

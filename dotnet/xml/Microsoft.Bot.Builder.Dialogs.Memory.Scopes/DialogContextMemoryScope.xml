@@ -1,5 +1,5 @@
 <Type Name="DialogContextMemoryScope" FullName="Microsoft.Bot.Builder.Dialogs.Memory.Scopes.DialogContextMemoryScope">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="4f89c3c03f151de0b48f2596785a73673acc131e" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150384" /></Metadata><TypeSignature Language="C#" Value="public class DialogContextMemoryScope : Microsoft.Bot.Builder.Dialogs.Memory.Scopes.MemoryScope" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7d297fb230bcdea6cd77fb24dd8a3bb5eea45737" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94600248" /></Metadata><TypeSignature Language="C#" Value="public class DialogContextMemoryScope : Microsoft.Bot.Builder.Dialogs.Memory.Scopes.MemoryScope" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DialogContextMemoryScope extends Microsoft.Bot.Builder.Dialogs.Memory.Scopes.MemoryScope" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Memory.Scopes.DialogContextMemoryScope" />
   <TypeSignature Language="VB.NET" Value="Public Class DialogContextMemoryScope&#xA;Inherits MemoryScope" />
@@ -8,6 +8,7 @@
     <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Memory.Scopes.MemoryScope</BaseTypeName>
@@ -30,10 +31,11 @@ DC. Parent = &gt; ID da caixa de diálogo pai.</remarks>
         <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Dialogs.Memory.Scopes.DialogContextMemoryScope" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -48,12 +50,13 @@ DC. Parent = &gt; ID da caixa de diálogo pai.</remarks>
         <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Nome da caixa de diálogo ativa.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -68,6 +71,7 @@ DC. Parent = &gt; ID da caixa de diálogo pai.</remarks>
         <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -76,9 +80,9 @@ DC. Parent = &gt; ID da caixa de diálogo pai.</remarks>
         <Parameter Name="dc" Type="Microsoft.Bot.Builder.Dialogs.DialogContext" />
       </Parameters>
       <Docs>
-        <param name="dc">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="dc">O <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogContext" /> objeto para essa rodada.</param>
+        <summary>Obtém a memória de backup para este escopo.</summary>
+        <returns>Memória para o escopo.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -93,12 +97,13 @@ DC. Parent = &gt; ID da caixa de diálogo pai.</remarks>
         <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Nome do pai.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -113,6 +118,7 @@ DC. Parent = &gt; ID da caixa de diálogo pai.</remarks>
         <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -122,10 +128,10 @@ DC. Parent = &gt; ID da caixa de diálogo pai.</remarks>
         <Parameter Name="memory" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="dc">To be added.</param>
-        <param name="memory">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="dc">O <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogContext" /> objeto para essa rodada.</param>
+        <param name="memory">Objeto de memória a ser definido para o escopo.</param>
+        <summary>Altera o objeto de backup para o escopo de memória.</summary>
+        <remarks>Método sem suporte. Não é possível modificar o escopo dialogcontext.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Stack">
@@ -139,12 +145,13 @@ DC. Parent = &gt; ID da caixa de diálogo pai.</remarks>
         <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Nome da pilha.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

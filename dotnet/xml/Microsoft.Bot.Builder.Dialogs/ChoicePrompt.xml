@@ -1,5 +1,5 @@
 <Type Name="ChoicePrompt" FullName="Microsoft.Bot.Builder.Dialogs.ChoicePrompt">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="fe8c8207969f0c1c56d8a22db69170623f364423" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151722" /></Metadata><TypeSignature Language="C#" Value="public class ChoicePrompt : Microsoft.Bot.Builder.Dialogs.Prompt&lt;Microsoft.Bot.Builder.Dialogs.Choices.FoundChoice&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="31921f8892bdcf466b221ae934f7bbbc2c533554" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94600238" /></Metadata><TypeSignature Language="C#" Value="public class ChoicePrompt : Microsoft.Bot.Builder.Dialogs.Prompt&lt;Microsoft.Bot.Builder.Dialogs.Choices.FoundChoice&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ChoicePrompt extends Microsoft.Bot.Builder.Dialogs.Prompt`1&lt;class Microsoft.Bot.Builder.Dialogs.Choices.FoundChoice&gt;" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.ChoicePrompt" />
   <TypeSignature Language="VB.NET" Value="Public Class ChoicePrompt&#xA;Inherits Prompt(Of FoundChoice)" />
@@ -17,6 +17,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Prompt&lt;Microsoft.Bot.Builder.Dialogs.Choices.FoundChoice&gt;</BaseTypeName>
@@ -50,6 +51,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="dialogId" Type="System.String" />
@@ -82,6 +84,7 @@ for especificado, esse local será usado para determinar o comportamento especí
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="dialogId" Type="System.String" />
@@ -122,6 +125,7 @@ for especificado, esse local será usado para determinar o comportamento especí
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.Dialogs.Choices.ChoiceFactoryOptions</ReturnType>
@@ -152,6 +156,7 @@ for especificado, esse local será usado para determinar o comportamento especí
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -182,6 +187,7 @@ for especificado, esse local será usado para determinar o comportamento especí
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -224,6 +230,7 @@ for especificado, esse local será usado para determinar o comportamento especí
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.PromptRecognizerResult&lt;Microsoft.Bot.Builder.Dialogs.Choices.FoundChoice&gt;&gt;</ReturnType>
@@ -264,6 +271,7 @@ for especificado, esse local será usado para determinar o comportamento especí
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.Dialogs.Choices.FindChoicesOptions</ReturnType>
@@ -294,6 +302,7 @@ for especificado, esse local será usado para determinar o comportamento especí
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.Dialogs.Choices.ListStyle</ReturnType>

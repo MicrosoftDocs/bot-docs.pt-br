@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.service: bot-service
 ms.date: 08/28/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 7971677050f82cfdd2f0bcb138c4a26437a5ed6d
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 29d91e37169039c5745bdc38148380c936a74a22
+ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417294"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94599678"
 ---
 # <a name="deploy-luis-resources-using-the-bot-framework-luis-cli-commands"></a>Implantar os recursos do LUIS usando os comandos da CLI do LUIS do Bot Framework
 
@@ -63,15 +63,15 @@ O recurso de criação do LUIS é um recurso de [Serviços cognitivas do Azure][
    ![Definir a imagem criar serviços cognitivas](./media/adaptive-dialogs/create-cognitive-services.png)
 
     > [!NOTE]
-    > Ao inserir o **grupo de recursos** e o **nome**, tenha em mente que você não poderá alterar esses valores posteriormente. Observe também que o valor que você atribui para o **nome** será parte da **URL do ponto de extremidade**.
+    > Ao inserir o **grupo de recursos** e o **nome** , tenha em mente que você não poderá alterar esses valores posteriormente. Observe também que o valor que você atribui para o **nome** será parte da **URL do ponto de extremidade**.
 
 4. Examine os valores para garantir que estejam corretos e, em seguida, selecione o botão **criar** .
 
 O recurso de criação do LUIS inclui informações que o bot usará para acessar seu aplicativo LUIS:
 
-- **Chaves**. Elas são chamadas de _chaves de assinatura_, às vezes chamadas de chaves de _criação_ ao se referir a chaves no recurso de criação de Luis. Eles são gerados automaticamente. Você precisará de uma chave de criação ao referenciar o recurso de criação do LUIS para qualquer ação, como ao criar seu aplicativo LUIS e os modelos que serão detalhados neste artigo. Você pode encontrar as chaves na folha **chaves e ponto de extremidade** em seu recurso de criação do Luis.
+- **Chaves**. Elas são chamadas de _chaves de assinatura_ , às vezes chamadas de chaves de _criação_ ao se referir a chaves no recurso de criação de Luis. Eles são gerados automaticamente. Você precisará de uma chave de criação ao referenciar o recurso de criação do LUIS para qualquer ação, como ao criar seu aplicativo LUIS e os modelos que serão detalhados neste artigo. Você pode encontrar as chaves na folha **chaves e ponto de extremidade** em seu recurso de criação do Luis.
 - **Ponto de extremidade**. Isso é gerado automaticamente usando o nome do recurso de criação de LUIS que você fornece ao criá-lo. Ele tem o seguinte formato: `https://<luis-resource-name>.cognitiveservices.azure.com/` . Ao fazer referência ao recurso de criação do LUIS para qualquer ação, como ao criar seu aplicativo LUIS e os modelos que serão detalhados neste artigo. Você pode encontrar a chave na folha **chaves e ponto de extremidade** em seu recurso de criação do Luis.
-- **Local**.   Esta é a região do Azure que contém o recurso de criação do LUIS. Você seleciona essa seleção ao criar o recurso de criação de LUIS.
+- **Localização**.   Esta é a região do Azure que contém o recurso de criação do LUIS. Você seleciona essa seleção ao criar o recurso de criação de LUIS.
 
    ![A folha chaves e ponto de extremidade no Azure](./media/adaptive-dialogs/keys-and-endpoint-example.png)
 
@@ -115,7 +115,7 @@ Para criar um aplicativo LUIS sem incluir um modelo LUIS, consulte o comando [BF
 
 ![Chaves e Ponto de Extremidade](./media/adaptive-dialogs/keys-and-endpoint-myluisapp.png)
 
-Na imagem acima, você usaria o comando a seguir para criar seu aplicativo LUIS, supondo que o arquivo JSON do modelo LUIS esteja em um subdiretório chamado _output_:
+Na imagem acima, você usaria o comando a seguir para criar seu aplicativo LUIS, supondo que o arquivo JSON do modelo LUIS esteja em um subdiretório chamado _output_ :
 
 `luis:application:import --in .\output\LUISModel.json --endpoint https://LUIS-Authoring-Resource.cognitiveservices.azure.com/ --subscriptionKey xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx --name LUISApplication --versionId 0.1`
 
@@ -189,18 +189,18 @@ Para cada `.lu` arquivo, incluindo `.lu` arquivos para cada localidade, o comand
 O comando de compilação LUIS com seus parâmetros obrigatórios:
 
 ``` cli
-bf luis:build --in <input-file-or-folder> --out <output-file-or-folder> --authoringKey <subscription-key> --region <authoring-region>
+bf luis:build --in <input-file-or-folder> --out <output-file-or-folder> --botName <bot-name> --authoringKey <subscription-key> --region <authoring-region>
 ```
 
 O `luis:build` comando criará todos os ativos de que você precisa em seus `.lu` arquivos locais. Ao usar a `--in` opção, o `luis:build` criará um aplicativo Luis para cada `.lu` arquivo encontrado para cada localidade.
 
 ### <a name="required-luisbuild-parameters"></a>Luis obrigatório: parâmetros de compilação
 
-- `in`: O diretório, incluindo subdiretórios, que serão pesquisados em busca de arquivos. Lu.
-- `out`: O diretório no qual salvar os arquivos de saída. Isso inclui todos os arquivos do Recognizer, bem como o arquivo de configurações. Se você omitir a `--out` opção, nenhum arquivo será salvo em disco e somente as chaves de criação e o ponto de extremidade do arquivo de configurações serão gravados no console do.
-- `botName`: O nome do bot. Isso será usado como o prefixo para o nome dos aplicativos LUIS gerados.
-- `authoringKey`: O mesmo valor que o subscriptionKey usado em todos os comandos anteriores discutidos neste artigo.
-- `region`: Define a região para publicar seus aplicativos LUIS.
+- `--in`: O diretório, incluindo subdiretórios, que serão pesquisados em busca de arquivos. Lu.
+- `--out`: O diretório no qual salvar os arquivos de saída. Isso inclui todos os arquivos do Recognizer, bem como o arquivo de configurações. Se você omitir a `--out` opção, nenhum arquivo será salvo em disco e somente as chaves de criação e o ponto de extremidade do arquivo de configurações serão gravados no console do.
+- `--botName`: O nome do bot. Isso será usado como o prefixo para o nome dos aplicativos LUIS gerados.
+- `--authoringKey`: O mesmo valor que o subscriptionKey usado em todos os comandos anteriores discutidos neste artigo.
+- `--region`: Define a região para publicar seus aplicativos LUIS. o padrão é _westus_ se omitido.
 
 Para obter informações sobre as opções adicionais, consulte [BF Luis: Build][bf-luisbuild] no Leiame da CLI do BF.
 
@@ -282,7 +282,7 @@ Cada aplicativo LUIS criado em seu nome será nomeado usando uma combinação do
 
 Os nomes de aplicativos LUIS usarão este formato:  `{botName}{(suffix)}-{file-name}-{locale}.lu`
 
-Por exemplo, se seu botName for _MyProject_ e seu nome de usuário for _YuuriTanaka_, e o nome do arquivo for _getaddresses_ , os nomes dos seus aplicativos Luis seriam os seguintes:
+Por exemplo, se seu botName for _MyProject_ e seu nome de usuário for _YuuriTanaka_ , e o nome do arquivo for _getaddresses_ , os nomes dos seus aplicativos Luis seriam os seguintes:
 
 ```
 MyProject(YuuriTanaka)-GetAddresss.en-us.lu
@@ -300,7 +300,7 @@ O mesmo nome de aplicativo LUIS será usado em cada região do Azure, com pontos
 
 Todos os `.lu` arquivos de cada localidade resultarão em um aplicativo Luis e a saída do `luis:build` comando incluirá um arquivo de configurações que contém uma lista de cada ID de aplicativo do Luis que foi criada para cada localidade.
 
-Por exemplo, se o nome de usuário conectado for _YuuriTanaka_ e você estiver direcionando a região de criação **westus**, seu nome de arquivo será:
+Por exemplo, se o nome de usuário conectado for _YuuriTanaka_ e você estiver direcionando a região de criação **westus** , seu nome de arquivo será:
 
 **luis.settings.YuuriTanaka.westus.jsem**
 
@@ -351,7 +351,7 @@ Aqui está um exemplo do arquivo _MultiLanguageRecognizer_ :
 }
 ```
 
-Você usará esses arquivos se estiver usando a abordagem declarativa para desenvolver o bot, e precisará adicionar uma referência a esse reconhecedor em seu arquivo de caixas de diálogo adaptáveis `.dialog` . No exemplo a seguir, o `"recognizer": "RootDialog.lu"` está procurando o reconhecedor que está definido no arquivo **RootDialog. Lu. Dialog**:
+Você usará esses arquivos se estiver usando a abordagem declarativa para desenvolver o bot, e precisará adicionar uma referência a esse reconhecedor em seu arquivo de caixas de diálogo adaptáveis `.dialog` . No exemplo a seguir, o `"recognizer": "RootDialog.lu"` está procurando o reconhecedor que está definido no arquivo **RootDialog. Lu. Dialog** :
 
  ![Como fazer referência a um reconhecedor em um arquivo. Dialog](./media/adaptive-dialogs/how-to-reference-the-lu-recognizer-in-dialog-file.png)
 

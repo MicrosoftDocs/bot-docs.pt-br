@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 05/06/2020
-ms.openlocfilehash: 9998c5251e51146208f882f78b97a99797c168fb
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 7550956e95e686f73551b5f2dcad01a1871e1818
+ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414447"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94599638"
 ---
 # <a name="recognizers-in-adaptive-dialogs"></a>Reconhecedores em diálogos adaptáveis
 
@@ -38,7 +38,7 @@ Sem o NLP, o bot não pode diferenciar de maneira significativa quando um usuár
 
 Um dos desafios mais significativos quando se trata de NLP no bot é o fato de os usuários não fazerem ideia do que dizer ao bot. Embora você possa tentar prever o que os usuários não vão dizer, haverá conversas inesperadas. A boa notícia é que o SDK do Bot Framework fornece as ferramentas necessárias para refinar continuamente as funcionalidades de NLP dos bots.
 
-Os dois componentes principais do NLP em diálogos adaptáveis são os **reconhecedores** (Reconhecimento vocal), que processa e interpreta a _entrada do usuário_ foco deste artigo, e os [**geradores**][4] (geração de linguagem) que produz as _respostas do bot_, que é o processo de produzir frases significativas na forma de idioma natural. Em síntese, é quando o bot responde a um usuário com uma linguagem legível.
+Os dois componentes principais do NLP em diálogos adaptáveis são os **reconhecedores** (Reconhecimento vocal), que processa e interpreta a _entrada do usuário_ foco deste artigo, e os [**geradores**][4] (geração de linguagem) que produz as _respostas do bot_ , que é o processo de produzir frases significativas na forma de idioma natural. Em síntese, é quando o bot responde a um usuário com uma linguagem legível.
 
 > [!TIP]
 > Embora seja comum que os usuários se comuniquem com o bot digitando ou falando uma mensagem, o reconhecedor é o subsistema que você pode usar para processar qualquer forma de entrada do usuário, seja falada, digitada, clicada (como ao responder aos [cartões adaptáveis][15]) e, até mesmo, outras modalidades como um reconhecedor de geolocalização ou de foco pode ser usado. A camada do reconhecedor abstrai as complexidades do processamento de entrada do usuário de gatilhos e ações. Dessa forma, os gatilhos e as ações não precisam interpretar os vários tipos de entradas do usuário, mas permitem que os reconhecedores façam isso.
@@ -51,11 +51,11 @@ O LU **(Reconhecimento vocal)** é o subconjunto do NLP que lida com o modo como
 
 ### <a name="intents"></a>Intenções
 
-As intenções são como você categoriza as intenções esperadas do usuário, conforme expressas nas mensagens dele para o bot. Considere uma intenção como uma representação da ação que o usuário deseja realizar, a finalidade ou a meta expressa na entrada. Tarefas como reservar um voo, pagar uma fatura ou encontrar um artigo de notícias. Você define e nomeia as intenções que correspondem a essas ações. Por exemplo, qualquer bot pode definir uma intenção chamada _Saudação_; um aplicativo de viagem pode criar uma intenção chamada _BookFlight_. As intenções são definidas em um arquivo de modelo de Reconhecimento vocal (.lu); esses arquivos são arquivos de texto com uma extensão .lu e, geralmente, residem no mesmo diretório e têm o mesmo nome do diálogo.  Por exemplo, o diálogo raiz conterá um arquivo de modelo de Reconhecimento vocal chamado **RootDialog.lu**
+As intenções são como você categoriza as intenções esperadas do usuário, conforme expressas nas mensagens dele para o bot. Considere uma intenção como uma representação da ação que o usuário deseja realizar, a finalidade ou a meta expressa na entrada. Tarefas como reservar um voo, pagar uma fatura ou encontrar um artigo de notícias. Você define e nomeia as intenções que correspondem a essas ações. Por exemplo, qualquer bot pode definir uma intenção chamada _Saudação_ ; um aplicativo de viagem pode criar uma intenção chamada _BookFlight_. As intenções são definidas em um arquivo de modelo de Reconhecimento vocal (.lu); esses arquivos são arquivos de texto com uma extensão .lu e, geralmente, residem no mesmo diretório e têm o mesmo nome do diálogo.  Por exemplo, o diálogo raiz conterá um arquivo de modelo de Reconhecimento vocal chamado **RootDialog.lu**
 
 Este é um exemplo de um arquivo .lu simples que captura uma intenção de **Saudação** simples com uma lista de exemplos de enunciados que capturam diferentes maneiras pelas quais um usuário pode expressar essa intenção. Use um caractere `-`, `+`ou `*` para indicar as listas. Não há suporte para listas numeradas.  
 
-```dos
+```lu
 # Greeting
 - Hi
 - Hello
@@ -66,18 +66,18 @@ Este é um exemplo de um arquivo .lu simples que captura uma intenção de **Sau
 
 ### <a name="utterances"></a>Declarações
 
-Os enunciados (_frases de gatilho_) são entradas de usuários e, como tal, podem conter um número quase infinito de variações potenciais. Como os enunciados nem sempre são bem formados, você precisará fornecer vários exemplos de enunciados para intenções específicas que, de fato, treinam os bots para reconhecer intenções de diferentes enunciados. Ao fazer isso, os bots terão alguma "inteligência" para entender os idiomas humanos.
+Os enunciados ( _frases de gatilho_ ) são entradas de usuários e, como tal, podem conter um número quase infinito de variações potenciais. Como os enunciados nem sempre são bem formados, você precisará fornecer vários exemplos de enunciados para intenções específicas que, de fato, treinam os bots para reconhecer intenções de diferentes enunciados. Ao fazer isso, os bots terão alguma "inteligência" para entender os idiomas humanos.
 
 > [!TIP]
-> Os enunciados também são conhecidos como _frases de gatilho_, porque são _frases_ _enunciadas_ por um usuário que podem acionar um _gatilho_ `OnIntent`.
+> Os enunciados também são conhecidos como _frases de gatilho_ , porque são _frases_ _enunciadas_ por um usuário que podem acionar um _gatilho_ `OnIntent`.
 
 ### <a name="entities"></a>Entidades
 
 As entidades são uma coleção de objetos, cada um consistindo em dados extraídos de um enunciado que adicionam outras informações esclarecedoras que descrevem a intenção, como lugares, horas e pessoas. As entidades e as intenções são partes importantes dos dados que são extraídos de um enunciado. Os enunciados em geral incluirão uma intenção e poderão incluir zero ou mais entidades, que fornecem detalhes importantes relacionados à intenção.
 
-As entidades no [formato de arquivo .lu][8] são definidas no formato `{<entityName>=<labelled value>}`, como `{toCity=seattle}` (EntityName é _toCity_ e o valor rotulado é _seattle_).  Por exemplo:
+As entidades no [formato de arquivo .lu][8] são definidas no formato `{<entityName>=<labelled value>}`, como `{toCity=seattle}` (EntityName é _toCity_ e o valor rotulado é _seattle_ ).  Por exemplo:
 
-```dos
+```lu
 # BookFlight
 - book a flight to {toCity=seattle}
 - book a flight from {fromCity=new york} to {toCity=seattle}
@@ -150,7 +150,6 @@ Para obter informações detalhadas e um exemplo de como criar um reconhecedor L
 
 Para obter etapas detalhadas sobre como criar seu aplicativo LUIS e implantar seus modelos do LUIS usando a CLI do bot Framework, consulte [como implantar recursos do Luis usando os comandos da CLI do SDK do bot Framework Luis][how-to-deploy-using-luis-cli].
 
-
 ### <a name="qna-maker-recognizer"></a>Reconhecedor do QnA Maker
 
 O [QnAMaker.ai][13] é um dos [Serviços Cognitivos da Microsoft][14] que permite criar pares de perguntas e respostas sofisticadas com base no conteúdo existente: documentos, URLs, PDFs etc. Use o Reconhecedor do QnA Maker para fazer a integração ao serviço.
@@ -171,12 +170,18 @@ Para obter informações detalhadas e um exemplo de como criar um conjunto de re
 
 ### <a name="cross-trained-recognizer-set"></a>Conjunto de reconhecedores com treinamento cruzado
 
-O conjunto de reconhecedores com treinamento cruzado compara os resultados do reconhecimento de mais de um reconhecedor para decidir quem será o vencedor. Considerando uma coleção de reconhecedores, o reconhecedor com treinamento cruzado vai:
+O conjunto de reconhecedores com treinamento cruzado compara os resultados de reconhecimento de vários reconhecedores para decidir um vencedor. Considerando uma coleção de reconhecedores, o reconhecedor com treinamento cruzado vai:
 
 * Promover o resultado do reconhecimento de um reconhecedor se todos os outros reconhecedores adiarem o reconhecimento de um só reconhecedor. Para adiar o reconhecimento, um reconhecedor pode retornar a intenção `None` ou uma `DeferToRecognizer_recognizerId` explícita como intenção.
 * Acionar um evento `OnChooseIntent` para permitir que o código escolha qual resultado de reconhecimento será usado. Os resultados de cada reconhecedor são retornados por meio da propriedade `turn.recognized.candidates`. Isso permite que você escolha o resultado mais apropriado.
 
-Para obter informações detalhadas e um exemplo de como criar um conjunto de reconhecedor com treinamento cruzado, consulte a seção conjunto de reconhecedor [com treinamento cruzado](../adaptive-dialog/adaptive-dialog-prebuilt-recognizers.md#cross-trained-recognizer-set) no guia de referência de reconhecedores em caixas de diálogo adaptáveis.
+#### <a name="more-on-cross-training"></a>Mais sobre o treinamento cruzado
+
+* Para obter uma explicação conceitual abrangente de treinamento cruzado de seu bot, consulte o [treinamento cruzado do bot para usar o artigo Luis e reconhecedores de QnA Maker](bot-builder-concept-cross-train.md) .
+
+* Para obter detalhes técnicos sobre o treinamento cruzado de um bot, consulte a seção _conjunto de reconhecedor com treinamento cruzado_ do [Guia de referência de reconhecedores em caixas de diálogo adaptáveis](../adaptive-dialog/adaptive-dialog-prebuilt-recognizers.md#cross-trained-recognizer-set).
+
+* Para obter informações detalhadas sobre como treinar um bot usando um bot existente como exemplo, consulte [criar um bot entre treinados para usar os reconhecedores Luis e QnA Maker](bot-builder-howto-cross-train.md).
 
 ## <a name="additional-information"></a>Informações adicionais
 
@@ -190,7 +195,6 @@ Para obter informações detalhadas e um exemplo de como criar um conjunto de re
 * Para obter informações mais detalhadas sobre os reconhecedores em caixas de diálogo adaptáveis, incluindo exemplos, consulte o [Guia de referência de reconhecedores em caixas de diálogo adaptáveis][recognizers-ref].
 
 <!-- Footnote-style links -->
-[recognizers-ref]: ../adaptive-dialog/adaptive-dialog-prebuilt-recognizers.md
 [1]:bot-builder-basics.md
 [2]:bot-builder-adaptive-dialog-introduction.md
 [3]:bot-builder-concept-dialog.md
@@ -206,4 +210,6 @@ Para obter informações detalhadas e um exemplo de como criar um conjunto de re
 [13]:https://qnamaker.ai
 [14]:https://azure.microsoft.com/services/cognitive-services/
 [15]:https://aka.ms/adaptive-cards-overview
+[recognizers-ref]: ../adaptive-dialog/adaptive-dialog-prebuilt-recognizers.md
 [how-to-deploy-using-luis-cli]: ../v4sdk/bot-builder-howto-bf-cli-deploy-luis.md
+[interruptions]: bot-builder-concept-adaptive-dialog-interruptions.md

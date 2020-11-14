@@ -1,5 +1,5 @@
 <Type Name="StringExpressionConverter" FullName="AdaptiveExpressions.Converters.StringExpressionConverter">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="1984a80363087ca5f5b33a6ffe9a30c682e6cda1" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150544" /></Metadata><TypeSignature Language="C#" Value="public class StringExpressionConverter : Newtonsoft.Json.JsonConverter&lt;AdaptiveExpressions.Properties.StringExpression&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="62fb29fe75a1b3ff21040f4ace1bd10674f2f198" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94598218" /></Metadata><TypeSignature Language="C#" Value="public class StringExpressionConverter : Newtonsoft.Json.JsonConverter&lt;AdaptiveExpressions.Properties.StringExpression&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StringExpressionConverter extends Newtonsoft.Json.JsonConverter`1&lt;class AdaptiveExpressions.Properties.StringExpression&gt;" />
   <TypeSignature Language="DocId" Value="T:AdaptiveExpressions.Converters.StringExpressionConverter" />
   <TypeSignature Language="VB.NET" Value="Public Class StringExpressionConverter&#xA;Inherits JsonConverter(Of StringExpression)" />
@@ -9,6 +9,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Newtonsoft.Json.JsonConverter&lt;AdaptiveExpressions.Properties.StringExpression&gt;</BaseTypeName>
@@ -33,6 +34,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -52,6 +54,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>AdaptiveExpressions.Properties.StringExpression</ReturnType>
@@ -86,6 +89,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>

@@ -1,5 +1,5 @@
 <Type Name="SourcePoint" FullName="Microsoft.Bot.Builder.Dialogs.Debugging.SourcePoint">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="a08d37f08e3af0cecc7466d81cc580d511f310ff" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152258" /></Metadata><TypeSignature Language="C#" Value="public class SourcePoint : IEquatable&lt;Microsoft.Bot.Builder.Dialogs.Debugging.SourcePoint&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="53b256c3152a8b0942078b746ab146e98dd62fdc" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94598458" /></Metadata><TypeSignature Language="C#" Value="public class SourcePoint : IEquatable&lt;Microsoft.Bot.Builder.Dialogs.Debugging.SourcePoint&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SourcePoint extends System.Object implements class System.IEquatable`1&lt;class Microsoft.Bot.Builder.Dialogs.Debugging.SourcePoint&gt;" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourcePoint" />
   <TypeSignature Language="VB.NET" Value="Public Class SourcePoint&#xA;Implements IEquatable(Of SourcePoint)" />
@@ -12,6 +12,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -40,6 +41,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -62,6 +64,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="lineIndex" Type="System.Int32" />
@@ -89,6 +92,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -112,14 +116,15 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.Dialogs.Debugging.SourcePoint</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>Cria uma nova instância do <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourcePoint" />. Todas as propriedades são clonadas recursivamente.</summary>
+        <returns>Um novo instância do <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourcePoint" /> .</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -137,6 +142,7 @@
         <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -145,9 +151,9 @@
         <Parameter Name="other" Type="Microsoft.Bot.Builder.Dialogs.Debugging.SourcePoint" />
       </Parameters>
       <Docs>
-        <param name="other">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="other">Um objeto para comparar com isso <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourcePoint" /> .</param>
+        <summary>Indica se o atual <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourcePoint" /> é igual a outro objeto do mesmo tipo.</summary>
+        <returns><c>true</c> se o atual <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourcePoint" /> for igual ao outro parâmetro; caso contrário, <c>false</c>.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -162,6 +168,7 @@
         <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -170,9 +177,9 @@
         <Parameter Name="obj" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="obj">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="obj">Um objeto para comparar com isso <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourcePoint" /> .</param>
+        <summary>Indica se o atual <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourcePoint" /> é igual a outro objeto.</summary>
+        <returns><c>true</c> se o atual <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourcePoint" /> for igual ao parâmetro de objeto; caso contrário, <c>false</c>.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -191,6 +198,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.Dialogs.Debugging.SourcePoint</ReturnType>
@@ -216,14 +224,15 @@
         <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>Cria um código hash para o atual <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourcePoint" /> .</summary>
+        <returns>Um código hash do <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourcePoint" /> atual.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -242,6 +251,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -267,6 +277,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>T</ReturnType>
@@ -306,14 +317,15 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>Retorna uma cadeia de caracteres que representa o <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourcePoint" /> atual.</summary>
+        <returns>Uma cadeia de caracteres que representa o <see cref="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourcePoint" /> atual.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

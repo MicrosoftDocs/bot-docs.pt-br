@@ -1,5 +1,5 @@
 <Type Name="LuisRecognizerOptionsV2" FullName="Microsoft.Bot.Builder.AI.Luis.LuisRecognizerOptionsV2">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="e8f1d536c8f8563a607588e3b85ced954bbc3fca" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150595" /></Metadata><TypeSignature Language="C#" Value="public class LuisRecognizerOptionsV2 : Microsoft.Bot.Builder.AI.Luis.LuisRecognizerOptions" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f5ab4ccf34bad5d4989fdb9050aef6a47e02f3ae" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94599128" /></Metadata><TypeSignature Language="C#" Value="public class LuisRecognizerOptionsV2 : Microsoft.Bot.Builder.AI.Luis.LuisRecognizerOptions" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LuisRecognizerOptionsV2 extends Microsoft.Bot.Builder.AI.Luis.LuisRecognizerOptions" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.AI.Luis.LuisRecognizerOptionsV2" />
   <TypeSignature Language="VB.NET" Value="Public Class LuisRecognizerOptionsV2&#xA;Inherits LuisRecognizerOptions" />
@@ -12,6 +12,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.AI.Luis.LuisRecognizerOptions</BaseTypeName>
@@ -37,6 +38,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="application" Type="Microsoft.Bot.Builder.AI.Luis.LuisApplication" />
@@ -62,6 +64,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -86,6 +89,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -110,6 +114,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.AI.Luis.LuisPredictionOptions</ReturnType>

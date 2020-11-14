@@ -1,5 +1,5 @@
 <Type Name="WaterfallDialog" FullName="Microsoft.Bot.Builder.Dialogs.WaterfallDialog">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="c729f97729a8a31b1825115fabfad93e8c083552" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151635" /></Metadata><TypeSignature Language="C#" Value="public class WaterfallDialog : Microsoft.Bot.Builder.Dialogs.Dialog" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8185817f3ecf902c0eb0e2e93394957900080f1b" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94598398" /></Metadata><TypeSignature Language="C#" Value="public class WaterfallDialog : Microsoft.Bot.Builder.Dialogs.Dialog" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WaterfallDialog extends Microsoft.Bot.Builder.Dialogs.Dialog" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.WaterfallDialog" />
   <TypeSignature Language="VB.NET" Value="Public Class WaterfallDialog&#xA;Inherits Dialog" />
@@ -17,6 +17,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Dialog</BaseTypeName>
@@ -47,6 +48,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="dialogId" Type="System.String" />
@@ -79,6 +81,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.Dialogs.WaterfallDialog</ReturnType>
@@ -113,6 +116,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
@@ -123,12 +127,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="dc">To be added.</param>
-        <param name="options">To be added.</param>
-        <param name="cancellationToken">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="dc">O <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogContext" /> para a atual ativação de conversa.</param>
+        <param name="options">Opcional, informações iniciais a serem passadas para a caixa de diálogo.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Chamado quando a caixa de diálogo de cascata é iniciada e enviada por push para a pilha de diálogo.</summary>
+        <returns>Um <see cref="T:System.Threading.Tasks.Task" /> representando a operação assíncrona.</returns>
+        <remarks>Se a tarefa for bem-sucedida, o resultado indicará se a caixa de diálogo ainda está ativa após a ativação ser processada pela caixa de diálogo.</remarks>
       </Docs>
     </Member>
     <Member MemberName="ContinueDialogAsync">
@@ -151,6 +155,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
@@ -160,11 +165,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="dc">To be added.</param>
-        <param name="cancellationToken">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="dc">O <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogContext" /> para a atual ativação de conversa.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Chamado quando a caixa de diálogo de cascata é _continuada_ , onde é a caixa de diálogo ativa e o usuário responde com uma nova atividade.</summary>
+        <returns>Um <see cref="T:System.Threading.Tasks.Task" /> representando a operação assíncrona.</returns>
+        <remarks>Se a tarefa for bem-sucedida, o resultado indicará se a caixa de diálogo ainda está ativa após a ativação ser processada pela caixa de diálogo. O resultado também pode conter um valor de retorno.</remarks>
       </Docs>
     </Member>
     <Member MemberName="EndDialogAsync">
@@ -185,6 +190,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -218,6 +224,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -249,6 +256,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
@@ -258,10 +266,10 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="stepContext">To be added.</param>
-        <param name="cancellationToken">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="stepContext">Contexto da etapa de cascata a ser executada.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Chamado quando uma etapa de cascata individual está sendo executada.</summary>
+        <returns>Uma tarefa que representa o trabalho na fila a ser executado.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -285,6 +293,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
@@ -296,12 +305,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="dc">To be added.</param>
-        <param name="reason">To be added.</param>
-        <param name="result">To be added.</param>
-        <param name="cancellationToken">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="dc">O contexto da caixa de diálogo para a ativação atual da conversa.</param>
+        <param name="reason">Motivo pelo qual a caixa de diálogo foi retomada.</param>
+        <param name="result">Opcional, valor retornado da caixa de diálogo que foi chamada. O tipo do valor retornado depende da caixa de diálogo filho.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Chamado quando uma caixa de diálogo de cascata filho concluiu sua rodada, retornando o controle para esta caixa de diálogo.</summary>
+        <returns>Um <see cref="T:System.Threading.Tasks.Task" /> representando a operação assíncrona.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -320,6 +329,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
@@ -332,13 +342,13 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="dc">To be added.</param>
-        <param name="index">To be added.</param>
-        <param name="reason">To be added.</param>
-        <param name="result">To be added.</param>
-        <param name="cancellationToken">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="dc">O <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogContext" /> para a atual ativação de conversa.</param>
+        <param name="index">O índice da etapa de cascata atual a ser executada.</param>
+        <param name="reason">O motivo pelo qual a etapa em cascata está sendo executada.</param>
+        <param name="result">Resultado retornado por uma caixa de diálogo chamada na etapa de cascata anterior.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Excuta uma etapa da caixa de diálogo de cascata.</summary>
+        <returns>Uma tarefa que representa o trabalho na fila a ser executado.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

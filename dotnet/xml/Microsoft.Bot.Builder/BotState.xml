@@ -1,5 +1,5 @@
 <Type Name="BotState" FullName="Microsoft.Bot.Builder.BotState">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="1e67216f451b5b1d0a30d9dc70332addb8bab3d3" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152596" /></Metadata><TypeSignature Language="C#" Value="public abstract class BotState : Microsoft.Bot.Builder.IPropertyManager" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6f163ccfeff259acc77116f8929130bf4134f6f1" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94598838" /></Metadata><TypeSignature Language="C#" Value="public abstract class BotState : Microsoft.Bot.Builder.IPropertyManager" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit BotState extends System.Object implements class Microsoft.Bot.Builder.IPropertyManager" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.BotState" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class BotState&#xA;Implements IPropertyManager" />
@@ -17,6 +17,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -33,8 +34,8 @@
 As propriedades de estado são criadas dentro de um escopo de gerenciamento de estado e a estrutura de bot define esses escopos: <see cref="T:Microsoft.Bot.Builder.ConversationState" /> , <see cref="T:Microsoft.Bot.Builder.UserState" /> e <see cref="T:Microsoft.Bot.Builder.PrivateConversationState" /> .
             
 Você pode definir escopos adicionais para o bot.</remarks>
-    <altmember cref="T:Microsoft.Bot.Builder.IStatePropertyAccessor`1" />
     <altmember cref="T:Microsoft.Bot.Builder.IStorage" />
+    <altmember cref="T:Microsoft.Bot.Builder.IStatePropertyAccessor`1" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -57,6 +58,7 @@ Você pode definir escopos adicionais para o bot.</remarks>
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="storage" Type="Microsoft.Bot.Builder.IStorage" />
@@ -93,6 +95,7 @@ O objeto usa o <paramref name="contextServiceKey" /> estado de cache to no conte
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -133,6 +136,7 @@ O objeto usa o <paramref name="contextServiceKey" /> estado de cache to no conte
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.IStatePropertyAccessor&lt;T&gt;</ReturnType>
@@ -170,6 +174,7 @@ O objeto usa o <paramref name="contextServiceKey" /> estado de cache to no conte
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -207,6 +212,7 @@ O objeto usa o <paramref name="contextServiceKey" /> estado de cache to no conte
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -242,6 +248,7 @@ O objeto usa o <paramref name="contextServiceKey" /> estado de cache to no conte
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Newtonsoft.Json.Linq.JToken</ReturnType>
@@ -270,6 +277,7 @@ O objeto usa o <paramref name="contextServiceKey" /> estado de cache to no conte
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.BotState+CachedBotState</ReturnType>
@@ -305,6 +313,7 @@ O objeto usa o <paramref name="contextServiceKey" /> estado de cache to no conte
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;T&gt;</ReturnType>
@@ -348,6 +357,7 @@ O objeto usa o <paramref name="contextServiceKey" /> estado de cache to no conte
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -382,6 +392,7 @@ O objeto usa o <paramref name="contextServiceKey" /> estado de cache to no conte
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -421,6 +432,7 @@ O objeto usa o <paramref name="contextServiceKey" /> estado de cache to no conte
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -460,6 +472,7 @@ O objeto usa o <paramref name="contextServiceKey" /> estado de cache to no conte
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>

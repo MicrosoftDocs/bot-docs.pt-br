@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/14/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 1cd860731b5d09c8fb3124cd3d6d3d6150419ede
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 41717d85405e37a92447b4ceb712867878413d4f
+ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414068"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94599618"
 ---
 # <a name="send-and-receive-text-message"></a>Enviar e receber mensagens de texto
 
@@ -24,7 +24,7 @@ A principal maneira que o bot se comunicará com usuários e, da mesma forma, re
 
 O markdown tem suporte na maioria dos campos de texto, mas o suporte pode variar por canal.
 
-Para um bot em execução que envia e recebe mensagens, siga os guias de início rápido na parte superior do sumário ou confira o [artigo sobre o funcionamento de bots](bot-builder-basics.md#bot-structure), que também fornece links para exemplos simples disponíveis para execução por conta própria.
+Para um bot em execução que envia e recebe mensagens, siga os guias de início rápido na parte superior do sumário ou confira o [artigo sobre o funcionamento de bots](bot-builder-basics.md#bot-application-structure), que também fornece links para exemplos simples disponíveis para execução por conta própria.
 
 ## <a name="send-a-text-message"></a>Enviar uma mensagem de texto
 

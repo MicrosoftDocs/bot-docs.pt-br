@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 06/29/2020
+ms.date: 10/19/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 577326a1b421b4cbefc2a15496327b181e606038
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: c86270d932cc7e7eb32b7ad44a5e5dd1ff7bfcf1
+ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92413810"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94599818"
 ---
 # <a name="use-multiple-luis-and-qna-models"></a>Usar vários modelos de LUIS e QnA
 
@@ -36,7 +36,7 @@ Este exemplo se baseia em um conjunto predefinido de aplicativos LUIS e QnA Make
 
 ## <a name="c"></a>[C#](#tab/cs)
 
-![Fluxo de lógica de exemplo de código](./media/tutorial-dispatch/dispatch-logic-flow.png)
+![CS de fluxo de código de lógica de exemplo](./media/tutorial-dispatch/dispatch-logic-flow.png)
 
 `OnMessageActivityAsync` é chamado em cada entrada do usuário recebida. Esse módulo localiza a intenção do usuário com a maior pontuação e transmite o resultado a `DispatchToTopIntentAsync`. DispatchToTopIntentAsync, por sua vez, chama o manipulador de aplicativo apropriado
 
@@ -46,7 +46,7 @@ Este exemplo se baseia em um conjunto predefinido de aplicativos LUIS e QnA Make
 
 ## <a name="javascript"></a>[JavaScript](#tab/js)
 
-![Fluxo de lógica de exemplo de código](./media/tutorial-dispatch/dispatch-logic-flow-js.png)
+![Js de fluxo de lógica de exemplo de código](./media/tutorial-dispatch/dispatch-logic-flow-js.png)
 
 `onMessage` é chamado em cada entrada do usuário recebida. Esse módulo localiza a intenção do usuário com a maior pontuação e transmite o resultado a `dispatchToTopIntentAsync`. dispatchToTopIntentAsync, por sua vez, chama o manipulador de aplicativo apropriado
 
@@ -56,7 +56,7 @@ Este exemplo se baseia em um conjunto predefinido de aplicativos LUIS e QnA Make
 
 ## <a name="python"></a>[Python](#tab/python)
 
-![Fluxo de lógica de exemplo de código](./media/tutorial-dispatch/dispatch-logic-flow-python.png)
+![Código de exemplo de fluxo de lógica Python](./media/tutorial-dispatch/dispatch-logic-flow-python.png)
 
 `on_message_activity` é chamado em cada entrada do usuário recebida. Esse módulo localiza a intenção do usuário com a maior pontuação e transmite o resultado a `_dispatch_to_top_intent`. _dispatch_to_top_intent, por sua vez, chama o manipulador de aplicativo apropriado
 
@@ -103,7 +103,7 @@ As etapas a seguir fornecem essa chave:
 
     ![Selecionar chaves do Serviço Cognitivo](./media/tutorial-dispatch/select-cognitive-service-keys.png)
 
-1. Selecione o ícone Chaves encontrado sob a seção _Gerenciamento de Recursos_, no menu à esquerda.
+1. Selecione o ícone Chaves encontrado sob a seção _Gerenciamento de Recursos_ , no menu à esquerda.
 
     ![Selecionar chave 1 do Serviço Cognitivo](./media/tutorial-dispatch/select-cognitive-service-key1.png)
 
@@ -123,7 +123,7 @@ As etapas a seguir fornecem essa chave:
 
     ![Crie QnA Etapa 3](./media/tutorial-dispatch/create-qna-step-3.png)
 
-1. Na etapa 4, selecione a opção _+ Adicionar Arquivo_, navegue até a pasta CognitiveModel do código de exemplo e selecione o arquivo 'QnAMaker.tsv'. Há uma seleção adicional para adicionar uma personalidade de _Bate-papo_ à sua base de dados de conhecimento, mas nosso exemplo não inclui essa opção.
+1. Na etapa 4, selecione a opção _+ Adicionar Arquivo_ , navegue até a pasta CognitiveModel do código de exemplo e selecione o arquivo 'QnAMaker.tsv'. Há uma seleção adicional para adicionar uma personalidade de _Bate-papo_ à sua base de dados de conhecimento, mas nosso exemplo não inclui essa opção.
 
     ![Criar QnA Etapa 4](./media/tutorial-dispatch/create-qna-step-4.png)
 
@@ -211,7 +211,7 @@ O bot precisa de informações sobre os serviços publicados para poder acessar 
 O bot precisa dos pontos de extremidade de previsão de consulta para os três aplicativos do LUIS (Dispatch, Clima e HomeAutomation) e única base de dados de conhecimento do QnA Maker. Localize as chaves do ponto de extremidade nos portais LUIS e QnA Maker:
 
 - No portal do LUIS, para cada aplicativo do LUIS, na seção Gerenciar, selecione **Configurações de chaves e ponto de extremidade** para localizar as chaves associadas a cada aplicativo. Se você estiver seguindo este tutorial, a chave do ponto de extremidade será a mesma chave que o `<your-luis-authoring-key>`. A chave de criação permite 1000 ocorrências de ponto de extremidade e, em seguida, expira.
-- No portal do QnA Maker, para a base de dados de conhecimento, em Gerenciar configurações, use o valor de chave mostrado nas configurações do Postman para o cabeçalho **Autorização**, sem o texto de `EndpointKey`.
+- No portal do QnA Maker, para a base de dados de conhecimento, em Gerenciar configurações, use o valor de chave mostrado nas configurações do Postman para o cabeçalho **Autorização** , sem o texto de `EndpointKey`.
 
 Esses valores são usados no arquivo de configuração do exemplo: **appsettings.jsem** (C#), **. env** (JavaScript) ou **config.py** (Python).
 
@@ -339,7 +339,7 @@ Para se conectar aos serviços Dispatch, LUIS e QnA Maker, seu bot obtém inform
 
 ## <a name="c"></a>[C#](#tab/cs)
 
-Em **BotServices.cs**, as informações contidas no arquivo de configuração _appsettings.json_ são usadas para conectar o bot de expedição aos serviços `Dispatch` e `SampleQnA`. Os construtores usam os valores fornecidos para se conectarem a esses serviços.
+Em **BotServices.cs** , as informações contidas no arquivo de configuração _appsettings.json_ são usadas para conectar o bot de expedição aos serviços `Dispatch` e `SampleQnA`. Os construtores usam os valores fornecidos para se conectarem a esses serviços.
 
 **BotServices.cs**
 
@@ -347,7 +347,7 @@ Em **BotServices.cs**, as informações contidas no arquivo de configuração _a
 
 ## <a name="javascript"></a>[JavaScript](#tab/js)
 
-Em **dispatchBot.js**, as informações contidas no arquivo de configuração _.env_ são usadas para conectar o bot de expedição aos serviços _LuisRecognizer(Dispatch)_ e  _QnA Maker_. Os construtores usam os valores fornecidos para se conectarem a esses serviços.
+Em **dispatchBot.js** , as informações contidas no arquivo de configuração _.env_ são usadas para conectar o bot de expedição aos serviços _LuisRecognizer(Dispatch)_ e  _QnA Maker_. Os construtores usam os valores fornecidos para se conectarem a esses serviços.
 
 **bots/dispatchBot.js**
 
@@ -355,7 +355,7 @@ Em **dispatchBot.js**, as informações contidas no arquivo de configuração _.
 
 ## <a name="python"></a>[Python](#tab/python)
 
-Em **dispatch_bot.py**, as informações contidas no arquivo de configuração _config.py_ são usadas para conectar o bot de expedição aos serviços _QnAMaker_ e _LuisRecognizer_. Os construtores usam os valores fornecidos para se conectarem a esses serviços.
+Em **dispatch_bot.py** , as informações contidas no arquivo de configuração _config.py_ são usadas para conectar o bot de expedição aos serviços _QnAMaker_ e _LuisRecognizer_. Os construtores usam os valores fornecidos para se conectarem a esses serviços.
 
 **bots/dispatch_bot.py**
 
@@ -372,7 +372,7 @@ Para cada entrada do usuário, a lógica do bot verifica a entrada com base no m
 
 ## <a name="c"></a>[C#](#tab/cs)
 
-No arquivo **DispatchBot.cs**, sempre que o método `OnMessageActivityAsync` é chamado, verificamos a mensagem da entrada do usuário com base no modelo do Dispatch. Em seguida, transmitimos `topIntent` e `recognizerResult` do modelo do Dispatch para o método correto para chamar o serviço e retornar o resultado.
+No arquivo **DispatchBot.cs** , sempre que o método `OnMessageActivityAsync` é chamado, verificamos a mensagem da entrada do usuário com base no modelo do Dispatch. Em seguida, transmitimos `topIntent` e `recognizerResult` do modelo do Dispatch para o método correto para chamar o serviço e retornar o resultado.
 
 **bots\DispatchBot.cs**
 
@@ -386,7 +386,7 @@ No método **dispatchBot.js** `onMessage`, verificamos a mensagem de entrada do 
 
 ## <a name="python"></a>[Python](#tab/python)
 
-No arquivo **dispatch_bot.py**, sempre que o método `on_message_activity` é chamado, verificamos a mensagem da entrada do usuário com base no modelo do Dispatch. Em seguida, transmitimos `top_intent` e `recognize_result` do modelo do Dispatch para o método correto para chamar o serviço e retornar o resultado.
+No arquivo **dispatch_bot.py** , sempre que o método `on_message_activity` é chamado, verificamos a mensagem da entrada do usuário com base no modelo do Dispatch. Em seguida, transmitimos `top_intent` e `recognize_result` do modelo do Dispatch para o método correto para chamar o serviço e retornar o resultado.
 
 **bots/dispatch_bot.py**
 
@@ -438,8 +438,8 @@ Se o método `q_sample-qna` for invocado, ele usará a entrada do usuário conti
 ## <a name="test-your-bot"></a>Testar seu bot
 
 1. Usando o ambiente de desenvolvimento, inicie o código de exemplo. Observe o endereço de _localhost_ mostrado na barra de endereços da janela do navegador aberta por seu aplicativo: "https://localhost:<Port_Number>".
-1. Abre o Bot Framework Emulator e selecione `Create a new bot configuration`. Um arquivo `.bot` permite que você use o _Inspetor_ do emulador de bor para ver o JSON retornado do LUIS e do QnA Maker.
-1. Na caixa de diálogo **Nova configuração de bot**, digite o nome do bot e a URL do ponto de extremidade, como `http://localhost:3978/api/messages`. Salve o arquivo na raiz de seu projeto de código de amostra do bot.
+1. Abra o emulador do bot Framework e selecione `Create a new bot configuration` . Um `.bot` arquivo permite que você use o _Inspetor_ no emulador para ver o JSON retornado de Luis e QnA Maker.
+1. Na caixa de diálogo **Nova configuração de bot** , digite o nome do bot e a URL do ponto de extremidade, como `http://localhost:3978/api/messages`. Salve o arquivo na raiz de seu projeto de código de amostra do bot.
 1. Abra o arquivo de bot e adicione seções para seus aplicativos do LUIS e do QnA Maker. Use [este arquivo de exemplo](https://github.com/microsoft/botbuilder-tools/blob/master/packages/MSBot/docs/sample-bot-file.json) como modelo para as configurações. Salve as alterações.
 1. Selecione o nome do bot na lista **Meus Bots** para acessar o bot em execução. Para sua referência, aqui estão algumas das perguntas e dos comandos cobertos pelos serviços criados para o bot:
 

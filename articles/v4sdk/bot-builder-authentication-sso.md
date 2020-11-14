@@ -7,19 +7,19 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 4/15/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 861d6f6d1d51eaa7d2f466a9160ae4d111d10b25
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 4a6ed2e4e2d2618afd8233dd60eadfee34b93845
+ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417005"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94599698"
 ---
 # <a name="add-single-sign-on-to-a-bot"></a>Adicionar logon único a um bot
 
 [!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Este artigo mostra como usar o recurso SSO (logon único) em um bot.
-Para isso, ele usa um bot *consumidor*, também conhecido como bot *raiz*, para interagir com um bot de *skill*.
+Para isso, ele usa um bot *consumidor* , também conhecido como bot *raiz* , para interagir com um bot de *skill*.
 
 Depois que os usuários entram no bot raiz, eles não precisam entrar em cada bot de skill que possam usar por meio do bot raiz. Isso acontece por causa do SSO. Sem ele, os usuários teriam que entrar a cada vez que se comunicassem com um bot de skill diferente.
 
@@ -86,7 +86,7 @@ O Azure AD é um serviço de identidade de nuvem que permite criar aplicativos q
 1. Clique em **Save** (Salvar).
 1. No painel esquerdo, clique em **Expor uma API**.
 1. No painel direito, clique em **Adicionar um escopo**.
-1. Na extrema direita da seção *Adicionar um escopo*, clique em **Salvar e continuar**.
+1. Na extrema direita da seção *Adicionar um escopo* , clique em **Salvar e continuar**.
 1. Na janela exibida, em *Quem pode consentir?* , selecione **Administradores e usuários**.
 1. Insira as outras informações necessárias.
 1. Clique em **Adicionar escopo**.
@@ -97,7 +97,7 @@ O Azure AD é um serviço de identidade de nuvem que permite criar aplicativos q
 1. Crie uma conexão do Azure AD V2 no registro de bot `RootBot` e insira os valores descritos em [Azure AD v2](https://docs.microsoft.com/azure/bot-service/bot-builder-concept-identity-providers?view=azure-bot-service-4.0&tabs=adv2%2Cga2#azure-ad-v2-1&preserve-view=true) e o valor descrito abaixo.
 
 1. Deixe vazia a **URL de troca de token**.
-1. Na caixa **Escopos**, insira o valor de escopo `RootBot` que você salvou nas etapas anteriores.
+1. Na caixa **Escopos** , insira o valor de escopo `RootBot` que você salvou nas etapas anteriores.
 1. Copie e salve o nome da conexão.
 
 ## <a name="create-the-azure-skillbot-registration"></a>Criar o registro do SkillBot no Azure
@@ -116,13 +116,13 @@ O Azure AD é um serviço de identidade de nuvem que permite criar aplicativos q
 1. Clique em **Save** (Salvar).
 1. No painel esquerdo, clique em **Expor uma API**.
 1. No painel direito, clique em **Adicionar um escopo**.
-1. Na extrema direita da seção *Adicionar um escopo*, clique em **Salvar e continuar**.
+1. Na extrema direita da seção *Adicionar um escopo* , clique em **Salvar e continuar**.
 1. Na janela exibida, em *Quem pode consentir?* , selecione **Administradores e usuários**.
 1. Insira as outras informações necessárias.
 1. Clique em **Adicionar escopo**.
 1. Copie e salve o valor do escopo.
-1. Clique em **Adicionar um aplicativo cliente**. Na seção na extrema direita, na caixa **ID do cliente**, insira a ID do aplicativo da **Identidade do RootBot** que você salvou anteriormente. Certifique-se de usar a identidade do *RootBot*, e não a ID do aplicativo de registro.
-1. Em **Escopo autorizado**, marque a caixa pelo valor de escopo.
+1. Clique em **Adicionar um aplicativo cliente**. Na seção na extrema direita, na caixa **ID do cliente** , insira a ID do aplicativo da **Identidade do RootBot** que você salvou anteriormente. Certifique-se de usar a identidade do *RootBot* , e não a ID do aplicativo de registro.
+1. Em **Escopo autorizado** , marque a caixa pelo valor de escopo.
 1. Clique em **Adicionar aplicativo**.
 1. No painel de navegação à esquerda, clique em **Permissões de API**. Uma prática recomendada é definir explicitamente as permissões de API para o aplicativo.
 
@@ -142,8 +142,8 @@ O Azure AD é um serviço de identidade de nuvem que permite criar aplicativos q
 ### <a name="create-an-oauth-connection-settings"></a>Definir as configurações de conexão do OAuth
 
 1. Crie uma conexão do Azure AD V2 no registro de bot `SkillBot` e insira os valores descritos em [Azure AD v2](https://docs.microsoft.com/azure/bot-service/bot-builder-concept-identity-providers?view=azure-bot-service-4.0&tabs=adv2%2Cga2#azure-ad-v2-1&preserve-view=true) e os valores descritos abaixo.
-1. Na caixa **URL de Troca de Token**, insira o valor de escopo `SkillBot` que você salvou nas etapas anteriores.
-1. Na caixa **Escopos**, insira os valores a seguir separados por espaços em branco: `profile` `User.Read` `User.ReadBasic.All` `openid`.
+1. Na caixa **URL de Troca de Token** , insira o valor de escopo `SkillBot` que você salvou nas etapas anteriores.
+1. Na caixa **Escopos** , insira os valores a seguir separados por espaços em branco: `profile` `User.Read` `User.ReadBasic.All` `openid`.
 
 1. Copie e salve o nome da conexão em um arquivo.
 
@@ -276,7 +276,7 @@ Observe que, no arquivo `appsettings.json` do projeto `RootBot`, você tem as se
 
 ### <a name="test-using-web-chat"></a>Testar usando o Webchat
 
-1. Implante o bot raiz e o bot de skill no Azure. Para obter mais informações sobre implantação, confira [Tutorial: Criar e implantar um bot básico](bot-builder-tutorial-basic-deploy.md).
+1. Implante o bot raiz e o bot de skill no Azure. Para obter informações sobre a implantação, consulte [tutorial: implantar um bot básico](bot-builder-tutorial-deploy-basic-bot.md) e [implantar seus artigos de bot](../bot-builder-deploy-az-cli.md) .
 1. No editor de código, como o Visual Studio, substitua os endereços de localhost no arquivo `appsetting.js` do projeto `RootBot` pelos endereços reais do Azure, como mostrado abaixo.
 
     ```json
@@ -286,7 +286,7 @@ Observe que, no arquivo `appsettings.json` do projeto `RootBot`, você tem as se
 
 1. Em seu navegador, navegue até o [portal do Azure][azure-portal].
 1. Abra o registro do bot raiz. No painel esquerdo, clique em **Teste no Webchat**. A janela da caixa de diálogo com o bot raiz é exibida com a mensagem de saudação do bot.
-1. Inicie a conversa com o bot inserindo *olá*, por exemplo. O bot ecoará a mensagem de volta.
+1. Inicie a conversa com o bot inserindo *olá* , por exemplo. O bot ecoará a mensagem de volta.
 1. Digite **login**. O `RootBot` exibirá o cartão de autenticação para *Entrar no AAD*.
 
     ![Entrada no skill](media/how-to-auth/auth-bot-sso-test-webchat-root-signin.PNG)

@@ -1,5 +1,5 @@
 <Type Name="IOptimizer" FullName="AdaptiveExpressions.TriggerTrees.IOptimizer">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="d9da5dfa53d74bee5ad62463bda2f4d101e0fd84" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151385" /></Metadata><TypeSignature Language="C#" Value="public interface IOptimizer" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0a114658e4c2d1f7547f0181c9fb3a216813f427" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94598188" /></Metadata><TypeSignature Language="C#" Value="public interface IOptimizer" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IOptimizer" />
   <TypeSignature Language="DocId" Value="T:AdaptiveExpressions.TriggerTrees.IOptimizer" />
   <TypeSignature Language="VB.NET" Value="Public Interface IOptimizer" />
@@ -9,6 +9,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
@@ -29,6 +30,7 @@ Isso é para permitir coisas como combinar comparações simples em um predicado
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>AdaptiveExpressions.TriggerTrees.Clause</ReturnType>

@@ -1,5 +1,5 @@
 <Type Name="SlackAdapterOptions" FullName="Microsoft.Bot.Builder.Adapters.Slack.SlackAdapterOptions">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="61e50b5c8df44467bd45a19b277a88548a98269f" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151284" /></Metadata><TypeSignature Language="C#" Value="public class SlackAdapterOptions" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2821c8f7e20430a0cccf95987805313ca4e1afdd" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94599758" /></Metadata><TypeSignature Language="C#" Value="public class SlackAdapterOptions" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SlackAdapterOptions extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Adapters.Slack.SlackAdapterOptions" />
   <TypeSignature Language="VB.NET" Value="Public Class SlackAdapterOptions" />
@@ -8,6 +8,7 @@
     <AssemblyName>Microsoft.Bot.Builder.Adapters.Slack</AssemblyName>
     <AssemblyVersion>4.9.2.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -27,6 +28,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.Adapters.Slack</AssemblyName>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -44,6 +46,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.Adapters.Slack</AssemblyName>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>

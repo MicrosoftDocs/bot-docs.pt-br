@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 07/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 911100bbeccb6d855a9fdde15f40a33e3658addf
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 6d0577027c50bbeace5d6c26828b4fcabba112a2
+ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414456"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94599641"
 ---
 # <a name="handling-interruptions-in-adaptive-dialogs"></a>Como lidar com interrupções em caixas de diálogo adaptáveis
 
@@ -35,37 +35,37 @@ Quando você cria um fluxo de conversa que solicita a entrada do usuário, você
 
 Suponha que você esteja criando um bot para fazer pedidos de uma cafeteria local.  Você pode criar um fluxo de conversação parecido com este:
 
-> **Usuário**: gostaria de pedir um café.
+> **Usuário** : gostaria de pedir um café.
 >
-> **Bot**: que tipo de café você gostaria?
+> **Bot** : que tipo de café você gostaria?
 >
-> **Usuário**: expresso.
+> **Usuário** : expresso.
 >
-> **Bot**: Qual tamanho você deseja?
+> **Bot** : Qual tamanho você deseja?
 >
-> **Usuário**: torne-o um grande, por favor.
+> **Usuário** : torne-o um grande, por favor.
 >
-> **Bot**: sem problemas, um grande expresso estará pronto em 5 minutos.
+> **Bot** : sem problemas, um grande expresso estará pronto em 5 minutos.
 
 O que acontece se, quando você perguntou o tipo de café, não recebe uma resposta, mas sim uma pergunta? Essa é uma maneira que o usuário pode interromper o fluxo de conversação. Considere o seguinte exemplo:
 
-> **Usuário**: gostaria de pedir um café.
+> **Usuário** : gostaria de pedir um café.
 >
-> **Bot**: que tipo de café você gostaria?
+> **Bot** : que tipo de café você gostaria?
 >
-> **Usuário**: que tipos de café você tem?
+> **Usuário** : que tipos de café você tem?
 
 Se você não tiver antecipado interrupções de usuário, supondo algum nível básico de tratamento de erros, a conversa poderá ser algo assim:
 
-> **Usuário**: gostaria de pedir um café.
+> **Usuário** : gostaria de pedir um café.
 >
-> **Bot**: que tipo de café você gostaria?
+> **Bot** : que tipo de café você gostaria?
 >
-> **Usuário**: que tipos de café você tem?
+> **Usuário** : que tipos de café você tem?
 >
-> **Bot**: Desculpe, não entendi sua resposta.
+> **Bot** : Desculpe, não entendi sua resposta.
 >
-> **Bot**: que tipo de café você gostaria?
+> **Bot** : que tipo de café você gostaria?
 
 As caixas de diálogo adaptáveis fornecem uma resposta a esse dilema usando _interrupções_. As interrupções são uma técnica disponível em uma caixa de diálogo adaptável que permite que o bot entenda e responda à entrada do usuário que não pertença diretamente à informação específica de que o bot está solicitando o usuário.
 
@@ -96,12 +96,12 @@ Quando uma ação de entrada estiver ativa, as caixas de diálogo adaptáveis fa
 
 - Execute o reconhecedor configurado na caixa de diálogo adaptável que contém a ação de entrada.
 - Avalie o valor da propriedade _permitir interrupções_ .
-   - Se **verdadeiro**: avaliar gatilhos na caixa de diálogo adaptável que contém a ação de entrada. Se nenhum gatilho for acionado, a caixa de diálogo de adaptação pai será consultada e seu reconhecedor será executado e seus gatilhos serão avaliados. Se nenhum gatilho for acionado, esse processo continuará até que a caixa de diálogo adaptável raiz seja atingida.
-   - Se **false**: avalie a propriedade _Value_ e atribua seu valor à propriedade associada à entrada. Se o _valor_ for avaliado como nulo, execute o reconhecedor de entidade interna para essa ação de entrada para resolver um valor para essa ação de entrada. Se o reconhecedor interno voltou sem resultado, emita um prompt novamente.
+   - Se **verdadeiro** : avaliar gatilhos na caixa de diálogo adaptável que contém a ação de entrada. Se nenhum gatilho for acionado, a caixa de diálogo de adaptação pai será consultada e seu reconhecedor será executado e seus gatilhos serão avaliados. Se nenhum gatilho for acionado, esse processo continuará até que a caixa de diálogo adaptável raiz seja atingida.
+   - Se **false** : avalie a propriedade _Value_ e atribua seu valor à propriedade associada à entrada. Se o _valor_ for avaliado como nulo, execute o reconhecedor de entidade interna para essa ação de entrada para resolver um valor para essa ação de entrada. Se o reconhecedor interno voltou sem resultado, emita um prompt novamente.
 
 ### <a name="the-allow-interruptions-property"></a>A propriedade permitir interrupções
 
-_Permitir interrupções_ é uma propriedade da classe da _caixa de diálogo de entrada_ , a qual todas as entradas derivam, portanto, está disponível ao [solicitar entrada do usuário em caixas de diálogo adaptáveis][inputs]. A propriedade _permitir interrupções_ usa uma _expressão booliana_, que pode ser um valor booliano (_true/false_) ou uma [expressão adaptável][adaptive-expressions] que é resolvida para um booliano.
+_Permitir interrupções_ é uma propriedade da classe da _caixa de diálogo de entrada_ , a qual todas as entradas derivam, portanto, está disponível ao [solicitar entrada do usuário em caixas de diálogo adaptáveis][inputs]. A propriedade _permitir interrupções_ usa uma _expressão booliana_ , que pode ser um valor booliano ( _true/false_ ) ou uma [expressão adaptável][adaptive-expressions] que é resolvida para um booliano.
 
 A propriedade _permitir interrupções_ é definida quando você cria suas [entradas][inputs] e padrões como true. Alguns exemplos:
 
@@ -120,23 +120,23 @@ A propriedade _permitir interrupções_ é definida quando você cria suas [entr
 
 Você pode lidar com interrupções localmente adicionando gatilhos para corresponder às possíveis tentativas. Você pode adicionar qualquer gatilho que assina um `recognition` evento, como `OnIntent` ou `OnQnAMatch` . Considere este exemplo:
 
-> **Usuário**: gostaria de pedir um café.
+> **Usuário** : gostaria de pedir um café.
 >
-> **Bot**: que tipo de café você gostaria?
+> **Bot** : que tipo de café você gostaria?
 >
-> **Usuário**: expresso.
+> **Usuário** : expresso.
 >
-> **Bot**: Qual tamanho você deseja?
+> **Bot** : Qual tamanho você deseja?
 >
-> **Usuário**: quais tamanhos você tem?
+> **Usuário** : quais tamanhos você tem?
 >
-> **Bot**: oferecemos os seguintes tamanhos de expresso:    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Alta $2.95    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Moca $3.65  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ventilação, $4.15
+> **Bot** : oferecemos os seguintes tamanhos de expresso:    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Alta $2.95    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Moca $3.65  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ventilação, $4.15
 >
-> **Bot**: Qual tamanho você deseja?
+> **Bot** : Qual tamanho você deseja?
 >
-> **Usuário**: moca.
+> **Usuário** : moca.
 >
-> **Bot**: sem problemas, um moca expresso estará pronto em 5 minutos.
+> **Bot** : sem problemas, um moca expresso estará pronto em 5 minutos.
 
 Neste exemplo, o bot começou em sua caixa de diálogo raiz. Quando o usuário solicitou a ordem de um café, o reconhecedor da caixa de diálogo raiz retornou a `order` intenção, fazendo com que ele inicie a caixa de diálogo de _pedido_ para iniciar e processar o pedido.  Quando o usuário interrompeu o fluxo de conversa do pedido com uma pergunta, o reconhecedor da caixa de diálogo do _pedido_ retornou a `sizes` intenção que foi tratada localmente, o que significa pela caixa de diálogo _ordem_ .
 
@@ -150,19 +150,19 @@ Os usos comuns para interrupções globais incluem a criação de recursos bási
 
 Depois que a interrupção é tratada, o fluxo de conversa continua de onde parou com duas exceções possíveis. A primeira exceção ocorre quando você usa a ação [EditActions][editactions] para modificar a sequência de ações. A segunda exceção ocorre quando a interrupção é uma solicitação para cancelar; nesse caso, você pode usar a ação [CancelAllDialogs][cancelalldialogs] para finalizar o fluxo de conversação, bem como a caixa de diálogo adaptável ativa, conforme demonstrado no exemplo a seguir:
 
-> **Bot**: boa manhã, como posso ajudá-lo?
+> **Bot** : boa manhã, como posso ajudá-lo?
 
 O bot começa na caixa de diálogo _raiz_ , com a boas-vindas do usuário.
 
-> **Usuário**: gostaria de pedir um café.
+> **Usuário** : gostaria de pedir um café.
 
 O usuário expressão gostaria _de pedir um café._ é enviado para o reconhecedor LUIS que retorna a `order` intenção, junto com uma `coffee`  entidade. O gatilho associado à `order` intenção é acionado e chama a caixa de diálogo de _pedido_ para processar o pedido.
 
-> **Bot**: que tipo de café você gostaria?
+> **Bot** : que tipo de café você gostaria?
 >
-> **Usuário**: nunca se preocupe, cancele meu pedido.
+> **Usuário** : nunca se preocupe, cancele meu pedido.
 >
-> **Bot**: sem problemas, tenha um bom dia!
+> **Bot** : sem problemas, tenha um bom dia!
 
 Isso encerra o fluxo de conversação entre o bot e o usuário. Nesse caso, a `order` caixa de diálogo é fechada e o controle retorna para a caixa de diálogo raiz.
 
@@ -180,19 +180,19 @@ Há situações em que talvez seja necessário solicitar informações ao usuár
 
 Outra maneira de que a extração de entidade flexível pode ser muito útil é quando o usuário responde a uma solicitação de informações e, além de responder à sua pergunta, eles também fornecem informações adicionais relevantes. Por exemplo, ao registrar um novo usuário, você pode solicitar o nome dos usuários e responder com ele, junto com sua idade:
 
-> **Bot**: Qual é seu nome?
+> **Bot** : Qual é seu nome?
 >
-> **Usuário**: meu nome é Vishwac e tenho 36 anos de idade
+> **Usuário** : meu nome é Vishwac e tenho 36 anos de idade
 
 Ou um bot de viagem solicitando o aeroporto de partida dos usuários e o usuário responde com a cidade de partida junto com a cidade de destino também:
 
-> **Bot**: Qual é sua cidade de partida?
+> **Bot** : Qual é sua cidade de partida?
 >
-> **Usuário**: preciso voar do Detroit para Seattle
+> **Usuário** : preciso voar do Detroit para Seattle
 
 A extração de entidade flexível permite que você manipule essas situações normalmente. Para fazer isso, você precisará definir tentativas com declarações específicos em seus `.lu` arquivos que esperaria que um usuário inserisse, para o primeiro exemplo acima, o modelo a seguir define a `getUserProfile` intenção com uma lista de possíveis declarações que atribuem os valores inseridos pelo usuário às `@firstName` `@userAge` variáveis e:
 
-```.lu
+```lu
 # getUserProfile
     - {userName=vishwac}, {userAge=36}
     - I'm {userName=vishwac} and I'm {userAge=36} years old
@@ -202,6 +202,10 @@ A extração de entidade flexível permite que você manipule essas situações 
     - you can call me {userName=vishwac}, I'm {userAge=36}
 ```
 
+## <a name="cross-train-your-language-understanding-models-to-handle-interruptions"></a>Treine os modelos de reconhecimento de linguagem para lidar com as interrupções
+
+O treinamento cruzado de seus modelos de reconhecimento de linguagem é uma abordagem para lidar com as interrupções sem problemas. Ao treinar os modelos LUIS em seu bot, cada caixa de diálogo adaptável pode estar ciente dos recursos de outras caixas de diálogo e transferir o fluxo de conversação para a caixa de diálogo criada para lidar com qualquer solicitação de usuário específica. O treinamento cruzado também pode facilitar o uso de vários reconhecedores dentro de uma caixa de diálogo adaptável, bem como entre várias caixas de diálogo que utilizam tecnologias diferentes, como LUIS e QnA Maker, para permitir que o bot determine a melhor tecnologia a ser usada para responder a um usuário. Para obter mais informações, consulte [fazer um treinamento cruzado do bot para usar os reconhecedores Luis e QnA Maker][cross-train-concepts].
+
 ## <a name="confirmation-and-correction"></a>Confirmação e correção
 
 _Confirmação e correção_ habilita o cenário em que você pede confirmação ao usuário e não apenas fornece uma confirmação, mas também inclui entrada que inclui tentativas de usuário adicionais em sua resposta de confirmação.
@@ -209,6 +213,7 @@ _Confirmação e correção_ habilita o cenário em que você pede confirmação
 ## <a name="additional-information"></a>Informações adicionais
 
 - Como [lidar com interrupções de usuário em caixas de diálogo adaptáveis](bot-builder-howto-handle-user-interrupts-adaptive.md).
+- [Treine seu bot para usar os reconhecedores Luis e QnA Maker][cross-train-concepts].
 - [Expressões adaptáveis][adaptive-expressions].
 - [Formato de arquivo .lu](/file-format/bot-builder-lu-file-format.md)
 - [Tentativas em seu aplicativo LUIS](https://docs.microsoft.com/azure/cognitive-services/LUIS/luis-concept-intent)
@@ -226,3 +231,4 @@ _Confirmação e correção_ habilita o cenário em que você pede confirmação
 [turn-scope]: ../adaptive-dialog/adaptive-dialog-prebuilt-memory-states.md#turn-scope
 [cancelalldialogs]: ../adaptive-dialog/adaptive-dialog-prebuilt-actions.md#cancelalldialogs
 [editactions]: ../adaptive-dialog/adaptive-dialog-prebuilt-actions.md#editactions
+[cross-train-concepts]: bot-builder-concept-cross-train.md

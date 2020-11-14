@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 266e99687f411b7a60735691749ff17b32073b58
-ms.sourcegitcommit: e37cf15f4907910560f34445a0fbdd7ae75b4787
+ms.openlocfilehash: 486ae71d739be8932e665e1ea911faf611294bd4
+ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92440092"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94599858"
 ---
 # <a name="generators-in-adaptive-dialogs"></a>Geradores em diálogos adaptáveis
 
@@ -58,7 +58,7 @@ Um modelo de resposta simples inclui uma ou mais variações de texto que são u
 
 Este é um exemplo de um modelo de resposta simples com duas variações:
 
-```.lg
+```lg
 > Greeting template with 2 variations.
 # GreetingPrefix
 - Hi
@@ -77,7 +77,7 @@ O modelo if-else permite criar um modelo que escolhe uma coleção com base em u
 
 Este é um exemplo de um modelo de resposta condicional if-else:
 
-```.lg
+```lg
 > time of day greeting reply template with conditions.
 # timeOfDayGreeting
 - IF: ${timeOfDay == 'morning'}
@@ -95,7 +95,7 @@ O modelo de opção permite projetar um modelo que corresponda ao valor de uma e
 
 Este é um exemplo de um modelo de resposta condicional de opção:
 
-```.lg
+```lg
 # TestTemplate
 - SWITCH: ${condition}
 - CASE: ${case-expression-1}
@@ -112,7 +112,7 @@ Os modelos de resposta estruturada permitem definir uma estrutura complexa que d
 
 Esta é a definição de um modelo de resposta estruturada:
 
-```.lg
+```lg
 # TemplateName
 > this is a comment
 [Structure-name
@@ -149,7 +149,7 @@ string fullPath = Path.Combine(paths);
 
 Isso verificará se você está chamando os arquivos de modelo corretos para o bot.
 
-Agora você pode criar o `TemplateEngineLanguageGenerator` no diálogo adaptável que gerencia os modelos em **RootDialog.lg**:
+Agora você pode criar o `TemplateEngineLanguageGenerator` no diálogo adaptável que gerencia os modelos em **RootDialog.lg** :
 
 ```csharp
 var rootDialog = new AdaptiveDialog(nameof(AdaptiveDialog)){

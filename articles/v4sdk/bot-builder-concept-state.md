@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 04/03/2020
+ms.date: 11/04/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 8a8b4924e293d41cb3b22384bc3ba086c224a705
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 76ff299832ee70fba22344b3da8dd05b63726594
+ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417170"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94599828"
 ---
 # <a name="managing-state"></a>Gerenciar estado
 
@@ -22,13 +22,13 @@ ms.locfileid: "92417170"
 
 O estado dentro de um bot segue os mesmos paradigmas dos aplicativos Web modernos e o SDK do Bot Framework oferece algumas abstrações para facilitar o gerenciamento do estado.
 
-Assim como acontece com os aplicativos Web, um bot é inerentemente sem estado; uma instância diferente do seu bot pode lidar com qualquer turno da conversa. Para alguns bots, essa simplicidade é preferível; o bot também pode operar sem informações adicionais ou as informações necessárias são garantidas dentro da mensagem de entrada. Para outros, o estado (por exemplo, onde estamos na conversa ou os dados sobre o usuário recebidos anteriormente) é necessário para o bot ter uma conversa útil.
+Assim como acontece com os aplicativos Web, um bot é inerentemente sem estado; uma instância diferente do seu bot pode lidar com qualquer turno da conversa. Para alguns bots, essa simplicidade é preferida &mdash; que o bot pode operar sem informações adicionais ou é garantido que as informações necessárias estejam dentro da mensagem de entrada. Para outros, estado (por exemplo, onde a conversa parou ou dados recebidos anteriormente sobre o usuário) é necessária para que o bot tenha uma conversa útil.
 
 **Por que eu preciso de um estado?**
 
 Manter o estado permite que seu bot tenha conversas mais significativas, lembrando-se de algumas coisas sobre o usuário ou a conversa. Por exemplo, se você já falou antes com um usuário, pode salvar as informações anteriores sobre ele para não precisar pedi-las novamente. O estado também mantém os dados por mais tempo que o turno atual, assim seu bot mantém as informações ao longo de uma conversa com vários turnos.
 
-Em relação aos bots, há algumas camadas que usam o estado, que abordaremos aqui: camada de armazenamento, gerenciamento do estado (contida no estado do bot no diagrama abaixo) e acessadores de propriedades do estado. Este diagrama ilustra as partes da sequência de interação entre essas camadas, com as setas sólidas representando uma chamada de método e as setas tracejadas representando a resposta (com ou sem um valor retornado).
+Como ele se refere a bots, há algumas camadas para usar o estado: a camada de armazenamento, o gerenciamento de estado (contido no estado do bot no diagrama abaixo) e os acessadores de propriedade de estado. Este diagrama ilustra as partes da sequência de interação entre essas camadas, com as setas sólidas representando uma chamada de método e as setas tracejadas representando a resposta (com ou sem um valor retornado).
 
 ![estado do bot](media/bot-builder-state.png)
 
@@ -36,7 +36,7 @@ O fluxo desse diagrama é explicado nas seções a seguir com os detalhes dessas
 
 ## <a name="storage-layer"></a>Camada de armazenamento
 
-Começando no back-end, onde as informações do estado são, de fato, armazenadas, está a nossa *camada de armazenamento*. Ela pode ser considerada nosso armazenamento físico, como na memória, o Azure ou um servidor de terceiros.
+A partir do back-end, em que as informações de estado são realmente armazenadas, é a *camada de armazenamento*. Isso pode ser considerado como seu armazenamento físico, como na memória, no Azure ou em um servidor de terceiros.
 
 O SDK do Bot Framework inclui algumas implementações para a camada de armazenamento:
 
@@ -45,7 +45,7 @@ O SDK do Bot Framework inclui algumas implementações para a camada de armazena
 - O **armazenamento particionado do Azure Cosmos DB** se conecta a um banco de dados NoSQL particionado do Cosmos DB.
 
 >[!IMPORTANT]
-> A classe de _armazenamento do Cosmos DB_ foi preterida. Os contêineres criados originalmente com CosmosDbStorage não tinham nenhum conjunto de chaves de partição e receberam a chave de partição padrão de _ \/ _partitionKey_.
+> A classe de _armazenamento do Cosmos DB_ foi preterida. Os contêineres criados originalmente com CosmosDbStorage não tinham nenhuma chave de partição definida e receberam a chave de partição padrão de " \/ _partitionKey".
 >
 > Contêineres criados com _Cosmos DB armazenamento_ podem ser usados com _Cosmos DB armazenamento particionado_. Para obter mais informações, leia [Particionamento no Azure Cosmos DB](https://aka.ms/azure-cosmosdb-partitioning-overview).
 >
@@ -55,7 +55,7 @@ Para obter instruções sobre como se conectar a outras opções de armazenament
 
 ## <a name="state-management"></a>Gerenciamento de estado
 
-O *Gerenciamento do estado* automatiza a leitura e a gravação do estado do bot na camada de armazenamento subjacente. O estado é armazenado como as *propriedades do estado*, que são pares de chave-valor que seu bot pode ler e gravar por meio do objeto de gerenciamento de estados, sem se preocupar com a implementação subjacente específica. Essas propriedades do estado definem como essas informações são armazenadas. Por exemplo, ao recuperar uma propriedade definida como uma classe ou objeto específico, você sabe como os dados serão estruturados.
+O *Gerenciamento do estado* automatiza a leitura e a gravação do estado do bot na camada de armazenamento subjacente. O estado é armazenado como as *propriedades do estado* , que são pares de chave-valor que seu bot pode ler e gravar por meio do objeto de gerenciamento de estados, sem se preocupar com a implementação subjacente específica. Essas propriedades do estado definem como essas informações são armazenadas. Por exemplo, ao recuperar uma propriedade definida como uma classe ou objeto específico, você sabe como os dados serão estruturados.
 
 Essas propriedades do estado são agrupadas em "buckets" com escopo, que são apenas coleções para ajudar a organizá-las. O SDK inclui três "buckets":
 
@@ -63,7 +63,7 @@ Essas propriedades do estado são agrupadas em "buckets" com escopo, que são ap
 - Estado da conversa
 - Estado da conversa privada
 
-Todos esses buckets são subclasses da classe do *estado do bot*, que podem ser derivadas para definir outros tipos de buckets com escopos diferentes.
+Todos esses buckets são subclasses da classe do *estado do bot* , que podem ser derivadas para definir outros tipos de buckets com escopos diferentes.
 
 Esses buckets predefinidos estão no escopo para determinada visibilidade, dependendo do bucket:
 
@@ -79,7 +79,7 @@ As chaves usadas para cada um desses buckets predefinidos são específicas para
 
 - O estado do usuário cria uma chave usando a *ID do canal* e a *ID de*. Por exemplo, _{Activity.ChannelId}/users/{Activity.From.Id}#SeuNomePropriedade_
 - O estado da conversa cria uma chave usando a *ID do canal* e a *ID da conversa*. Por exemplo, _{Activity.ChannelId}/conversations/{Activity.Conversation.Id}#SeuNomePropriedade_
-- O estado da conversa privada cria uma chave usando a *ID do canal*, a *ID de* e a *ID da conversa*. Por exemplo, _{Activity.ChannelId}/conversations/{Activity.Conversation.Id}/users/{Activity.From.Id}#SeuNomePropriedade_
+- O estado da conversa privada cria uma chave usando a *ID do canal* , a *ID de* e a *ID da conversa*. Por exemplo, _{Activity.ChannelId}/conversations/{Activity.Conversation.Id}/users/{Activity.From.Id}#SeuNomePropriedade_
 
 ### <a name="when-to-use-each-type-of-state"></a>Quando usar cada tipo de estado
 
@@ -104,11 +104,13 @@ Para obter detalhes sobre como usar esses buckets predefinidos, confira o [artig
 ### <a name="connecting-to-multiple-databases"></a>Conectar-se a vários bancos de dados
 
 Se o seu bot precisar se conectar a vários bancos de dados, crie uma camada de armazenamento para cada banco de dados.
+Você pode optar por usar vários bancos de dados se o bot coletar informações que tenham diferentes necessidades de segurança, simultaneidade ou local de dado.
+
 Para cada camada de armazenamento, crie os objetos de gerenciamento de estado que você precisa para dar suporte a suas propriedades de estado.
 
 ## <a name="state-property-accessors"></a>Acessadores de propriedades do estado
 
-Os *acessadores de propriedades do estado* são usados para realmente ler ou gravar uma de suas propriedades do estado e fornecer os métodos *get*, *set* e *delete* para acessar as propriedades do estado de dentro de um turno. Para criar um acessador, você deve fornecer o nome da propriedade, que geralmente acontece quando está inicializando seu bot. Em seguida, é possível usar esse acessador para obter e manipular essa propriedade do estado do bot.
+Os *acessadores de propriedades do estado* são usados para realmente ler ou gravar uma de suas propriedades do estado e fornecer os métodos *get* , *set* e *delete* para acessar as propriedades do estado de dentro de um turno. Para criar um acessador, você deve fornecer o nome da propriedade, que geralmente acontece quando está inicializando seu bot. Em seguida, é possível usar esse acessador para obter e manipular essa propriedade do estado do bot.
 
 Os acessadores permitem que o SDK obtenha o estado no armazenamento subjacente e atualizam o *cache do estado* do bot para você. O cache do estado é um cache local mantido pelo bot que armazena o objeto de estado para você, permitindo operações leitura e gravação sem acessar o armazenamento subjacente. Se ainda não estiver no cache, chamar o método *get* do acessador irá recuperar o estado e também colocá-lo no cache. Depois de recuperada, a propriedade do estado pode ser manipulada como uma variável local.
 
@@ -133,6 +135,17 @@ Os métodos do acessador são a principal maneira do bot interagir com o estado.
   - Verifique as alterações da propriedade no cache de estado.
   - Grave essa propriedade no armazenamento.
 
+## <a name="state-in-dialogs"></a>Estado em caixas de diálogo
+
+A biblioteca de caixas de diálogo usa um acessador de propriedade de estado de caixa de diálogo, definido no estado de conversa do bot, para manter o local de uma caixa de diálogo na conversa. A propriedade de estado da caixa de diálogo também permite que cada caixa de diálogo armazene informações transitórias entre as ativações.
+
+As caixas de diálogo adaptáveis têm uma estrutura de escopo de memória mais elaborada, o que torna mais fácil acessar os resultados de configuração e reconhecimento, entre outras coisas. O _Gerenciador de caixas de diálogo_ usa os objetos de gerenciamento de estado de usuário e de conversa para fornecer esses escopos de memória.
+
+Para obter informações sobre a biblioteca de caixas de diálogo, consulte o artigo [biblioteca de caixas de diálogo](bot-builder-concept-dialog.md) .
+
+- Consulte [sobre o componente e caixas de diálogo de cascata](bot-builder-concept-waterfall-dialogs.md) para obter informações específicas para esses tipos de caixas de diálogo.
+- Consulte os artigos [introdução às caixas de diálogo adaptáveis](bot-builder-adaptive-dialog-introduction.md) e [Gerenciamento de estado em caixas de diálogo adaptáveis](bot-builder-concept-adaptive-dialog-memory-states.md) para obter informações específicas sobre caixas de diálogo adaptáveis.
+
 ## <a name="saving-state"></a>Salvando o estado
 
 Quando você chama o método set do acessador para registrar o estado atualizado, a propriedade do estado ainda não foi salva em seu armazenamento persistente e somente está salva no cache do estado do bot. Para salvar as alterações no cache de estado para o estado persistente, você deve chamar o método *save changes* do objeto de gerenciamento do estado, que está disponível na implementação da classe de estado do bot mencionada acima (como os estados do usuário ou da conversa).
@@ -146,7 +159,5 @@ Se você tiver um middleware personalizado que possa atualizar o estado após a 
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [Estado do diálogo](bot-builder-concept-dialog.md#dialog-state)
 - [Gravar diretamente no armazenamento](bot-builder-howto-v4-storage.md)
 - [Salvar dados da conversa e do usuário](bot-builder-howto-v4-state.md)
-

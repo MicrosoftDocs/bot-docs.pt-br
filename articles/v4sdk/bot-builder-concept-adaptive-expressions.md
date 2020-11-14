@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 286489f7582b02ae54e88997f680de67c58d5cb3
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 323234c45fd3a2bf7c2ef1556dee7d33ef6863dc
+ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414437"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94599844"
 ---
 # <a name="adaptive-expressions"></a>Expressões adaptáveis
 
@@ -67,7 +67,7 @@ As expressões adaptáveis dão suporte aos seguintes tipos de operadores e à s
 |\|\|        |Ou. Exemplo: exp1 \|\| exp2                                                    |[or][14]                           |
 |\!            |Não. Exemplo: !exp1                                                            |[not][8]                           |
 
-### <a name="other"></a>[Outras](#tab/other)
+### <a name="other"></a>[Outros](#tab/other)
 
 | Operador    |                                  Funcionalidade                                            |   Equivalente da função predefinida    |
 |-----------|-------------------------------------------------------------------------------------------|-----------------------------------|
@@ -109,7 +109,7 @@ Leia [fluxo de conversa e memória](https://docs.microsoft.com/composer/concept-
 
 As expressões adaptáveis são usadas por sistemas LG (geração de linguagem) para avaliar as condições descritas em modelos de LG. No exemplo a seguir, a função de [junção](../adaptive-expressions/adaptive-expressions-prebuilt-functions.md#join) predefinida é usada para listar todos os valores na `recentTasks` coleção.
 
-```.lg
+```lg
 # RecentTasks
 - IF: ${count(recentTasks) == 1}
     - Your most recent task is ${recentTasks[0]}. You can let me know if you want to add or complete a task.

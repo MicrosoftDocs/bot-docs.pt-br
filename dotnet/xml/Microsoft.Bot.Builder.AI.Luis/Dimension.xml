@@ -1,5 +1,5 @@
 <Type Name="Dimension" FullName="Microsoft.Bot.Builder.AI.Luis.Dimension">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="d78fdf1d468968fe84be644d4fbbb1808403757c" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152000" /></Metadata><TypeSignature Language="C#" Value="public class Dimension : Microsoft.Bot.Builder.AI.Luis.NumberWithUnits" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0e51983e1e5128bc0220fd0a3e29037389bd1d1e" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94599218" /></Metadata><TypeSignature Language="C#" Value="public class Dimension : Microsoft.Bot.Builder.AI.Luis.NumberWithUnits" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Dimension extends Microsoft.Bot.Builder.AI.Luis.NumberWithUnits" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.AI.Luis.Dimension" />
   <TypeSignature Language="VB.NET" Value="Public Class Dimension&#xA;Inherits NumberWithUnits" />
@@ -17,6 +17,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.AI.Luis.NumberWithUnits</BaseTypeName>
@@ -47,6 +48,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="number" Type="System.Double" />
@@ -79,6 +81,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>

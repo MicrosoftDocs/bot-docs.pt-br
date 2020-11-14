@@ -1,5 +1,5 @@
 <Type Name="BotStateMemoryScope&lt;T&gt;" FullName="Microsoft.Bot.Builder.Dialogs.Memory.Scopes.BotStateMemoryScope&lt;T&gt;">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="765f8115798d8c6dbebd1265fe37c186130e5fb2" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152219" /></Metadata><TypeSignature Language="C#" Value="public class BotStateMemoryScope&lt;T&gt; : Microsoft.Bot.Builder.Dialogs.Memory.Scopes.MemoryScope where T : BotState" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5311ff9c5c5496ea080048fe9c3b42d826d0ccbe" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94600298" /></Metadata><TypeSignature Language="C#" Value="public class BotStateMemoryScope&lt;T&gt; : Microsoft.Bot.Builder.Dialogs.Memory.Scopes.MemoryScope where T : BotState" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BotStateMemoryScope`1&lt;(class Microsoft.Bot.Builder.BotState) T&gt; extends Microsoft.Bot.Builder.Dialogs.Memory.Scopes.MemoryScope" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Memory.Scopes.BotStateMemoryScope`1" />
   <TypeSignature Language="VB.NET" Value="Public Class BotStateMemoryScope(Of T)&#xA;Inherits MemoryScope" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <TypeParameters>
     <TypeParameter Name="T">
@@ -41,6 +42,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="name" Type="System.String" />
@@ -64,6 +66,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -73,10 +76,10 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="dialogContext">To be added.</param>
-        <param name="cancellationToken">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="dialogContext">O objeto de contexto da caixa de diálogo para essa rodada.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Exclui qualquer estado no armazenamento e o cache para isso <see cref="T:Microsoft.Bot.Builder.BotState" /> .</summary>
+        <returns>Uma tarefa que representa o trabalho na fila a ser executado.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -93,6 +96,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -120,6 +124,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -130,11 +135,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="dialogContext">To be added.</param>
-        <param name="force">To be added.</param>
-        <param name="cancellationToken">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="dialogContext">O objeto de contexto da caixa de diálogo para essa rodada.</param>
+        <param name="force">Opcional, <c>true</c> para substituir qualquer cache de estado existente; ou <c>false</c> para carregar o estado do armazenamento somente se o cache ainda não existir.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Popula o cache de estado para isso <see cref="T:Microsoft.Bot.Builder.BotState" /> na camada de armazenamento.</summary>
+        <returns>Uma tarefa que representa o trabalho na fila a ser executado.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -151,6 +156,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -161,11 +167,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="dialogContext">To be added.</param>
-        <param name="force">To be added.</param>
-        <param name="cancellationToken">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="dialogContext">O objeto de contexto da caixa de diálogo para essa rodada.</param>
+        <param name="force">Opcional, <c>true</c> para salvar o cache de estado no armazenamento; ou <c>false</c> para salvar o estado no armazenamento somente se uma propriedade no cache tiver sido alterada.</param>
+        <param name="cancellationToken">Um token de cancelamento que pode ser usado por outros objetos ou threads para receber um aviso de cancelamento.</param>
+        <summary>Grava o cache de estado para isso na <see cref="T:Microsoft.Bot.Builder.BotState" /> camada de armazenamento.</summary>
+        <returns>Uma tarefa que representa o trabalho na fila a ser executado.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -182,6 +188,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>

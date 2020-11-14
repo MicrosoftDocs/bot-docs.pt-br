@@ -1,5 +1,5 @@
 <Type Name="ClassMemoryScope" FullName="Microsoft.Bot.Builder.Dialogs.Memory.Scopes.ClassMemoryScope">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="36729c97ccabb86f6b740cf7a2620f3e95fbf137" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152218" /></Metadata><TypeSignature Language="C#" Value="public class ClassMemoryScope : Microsoft.Bot.Builder.Dialogs.Memory.Scopes.MemoryScope" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a1c14e783b4ed0ebdcf3f13e71fcd312a4e29141" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94598488" /></Metadata><TypeSignature Language="C#" Value="public class ClassMemoryScope : Microsoft.Bot.Builder.Dialogs.Memory.Scopes.MemoryScope" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ClassMemoryScope extends Microsoft.Bot.Builder.Dialogs.Memory.Scopes.MemoryScope" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Memory.Scopes.ClassMemoryScope" />
   <TypeSignature Language="VB.NET" Value="Public Class ClassMemoryScope&#xA;Inherits MemoryScope" />
@@ -10,13 +10,14 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Memory.Scopes.MemoryScope</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>DialogMemoryScope mapeia "Class"- &gt; DC. Propriedades ActiveDialog.</summary>
+    <summary>DialogMemoryScope mapeia as propriedades "Class"- &gt; DC. ActiveDialog.</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -32,10 +33,11 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Dialogs.Memory.Scopes.ClassMemoryScope" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -52,6 +54,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -60,9 +63,9 @@
         <Parameter Name="dc" Type="Microsoft.Bot.Builder.Dialogs.DialogContext" />
       </Parameters>
       <Docs>
-        <param name="dc">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="dc">O <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogContext" /> objeto para essa rodada.</param>
+        <summary>Obtém a memória de backup para este escopo.</summary>
+        <returns>Memória para o escopo.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -79,6 +82,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -88,10 +92,10 @@
         <Parameter Name="memory" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="dc">To be added.</param>
-        <param name="memory">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="dc">O <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogContext" /> objeto para essa rodada.</param>
+        <param name="memory">Objeto de memória a ser definido para o escopo.</param>
+        <summary>Altera o objeto de backup para o escopo de memória.</summary>
+        <remarks>Método sem suporte. Não é possível modificar o escopo da classe.</remarks>
       </Docs>
     </Member>
   </Members>

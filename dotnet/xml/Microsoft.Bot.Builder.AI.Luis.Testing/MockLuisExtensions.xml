@@ -1,5 +1,5 @@
 <Type Name="MockLuisExtensions" FullName="Microsoft.Bot.Builder.AI.Luis.Testing.MockLuisExtensions">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="fb3e4ca8eff76cfc04275888a3af1a5cfbdc11d4" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150515" /></Metadata><TypeSignature Language="C#" Value="public static class MockLuisExtensions" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="1b5dcc7da0638af3cb9ce5fdd3a45d75c91124f9" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94599238" /></Metadata><TypeSignature Language="C#" Value="public static class MockLuisExtensions" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit MockLuisExtensions extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.AI.Luis.Testing.MockLuisExtensions" />
   <TypeSignature Language="VB.NET" Value="Public Module MockLuisExtensions" />
@@ -9,6 +9,7 @@
     <AssemblyVersion>4.9.2.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -31,6 +32,7 @@
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.UInt32</ReturnType>
@@ -57,6 +59,7 @@
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Extensions.Configuration.IConfigurationBuilder</ReturnType>

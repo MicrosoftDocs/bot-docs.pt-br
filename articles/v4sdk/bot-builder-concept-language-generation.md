@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: aa27de4a1eb1d79f512c3a4db4d35138a3c4f5d5
-ms.sourcegitcommit: e37cf15f4907910560f34445a0fbdd7ae75b4787
+ms.openlocfilehash: e989af7f730137f866ef7f2d50ef084a30f20d63
+ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92439989"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94599838"
 ---
 # <a name="language-generation"></a>Geração de Linguagem
 
@@ -36,7 +36,7 @@ No núcleo da LG está a expansão de modelo e a substituição de entidade. Voc
 
 Confira a seguir um modelo de LG de saudação simples. Observe que todas as saudações fazem referência ao nome do usuário na memória com a variável `${user.name}`.
 
-```.lg
+```lg
 # greetingTemplate
 - Hello ${user.name}, how are you?
 - Good morning ${user.name}.It's nice to see you again.
@@ -51,7 +51,7 @@ Você pode usar a LG de várias maneiras ao desenvolver bots. Para começar, cri
 
 Inclua a biblioteca de geração de linguagem [`Microsoft.Bot.Builder.LanguageGeneration`](https://www.nuget.org/packages/Microsoft.Bot.Builder.LanguageGeneration/). Em seguida, analise e carregue modelos em seu arquivo .lg adicionando o seguinte:
 
-```c#
+```csharp
     _templates = Templates.ParseFile(fullPath);
 ```
 
@@ -59,7 +59,7 @@ Inclua a biblioteca de geração de linguagem [`Microsoft.Bot.Builder.LanguageGe
 
 Inclua a biblioteca de geração de linguagem [`botbuilder-lg`][15]. Em seguida, analise e carregue modelos em seu arquivo .lg adicionando o seguinte:
 
-```typescript
+```javascript
      let lgTemplates = Templates.parseFile(fullPath);
 ```
 
@@ -69,13 +69,13 @@ Quando precisar de expansão de modelo, use `Evaluate` e passe o nome do modelo 
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-```c#
+```csharp
     var lgOutput = _templates.Evaluate(<TemplateName>);
 ```
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-```typescript
+```javascript
     let lgOutput = lgTemplates.evaluate(<TemplateName>);
 ```
 
@@ -85,13 +85,13 @@ Se o modelo precisar de propriedades específicas a serem passadas para resoluç
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-```c#
+```csharp
     var lgOutput = _templates.Evaluate("WordGameReply", new { GameName = "MarcoPolo" } );
 ```
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-```typescript
+```javascript
     let lgOutput = lgTemplates.evaluate("WordGameReply", { GameName = "MarcoPolo" } );
 ```
 
@@ -99,7 +99,7 @@ Se o modelo precisar de propriedades específicas a serem passadas para resoluç
 
 ## <a name="multilingual-generation-and-language-fallback-policy"></a>Política de fallback de linguagem e geração multilíngue
 
-O bot pode ser direcionado para mais de um idioma falado ou de exibição. Você pode gerenciar instâncias separadas do *TemplateEngine*, uma por idioma de destino. Para obter um exemplo de como adicionar vários idiomas, também conhecido como fallback de idioma, ao seu bot, confira o prompt de vários turnos com uma amostra de fallback de idioma no [C#](https://aka.ms/csharp-lg-multi-turn-prompt-language-fallback-sample) ou no [JavaScript](https://aka.ms/js-lg-multi-turn-prompt-language-fallback-sample).
+O bot pode ser direcionado para mais de um idioma falado ou de exibição. Você pode gerenciar instâncias separadas do *TemplateEngine* , uma por idioma de destino. Para obter um exemplo de como adicionar vários idiomas, também conhecido como fallback de idioma, ao seu bot, confira o prompt de vários turnos com uma amostra de fallback de idioma no [C#](https://aka.ms/csharp-lg-multi-turn-prompt-language-fallback-sample) ou no [JavaScript](https://aka.ms/js-lg-multi-turn-prompt-language-fallback-sample).
 
 <!--
 ## Grammar check and correction
@@ -111,13 +111,13 @@ Para obter todas as expansões possíveis de um modelo, você pode usar `ExpandT
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-```c#
+```csharp
     var results = lgTemplates.ExpandTemplate("WordGameReply", { GameName = "MarcoPolo" } )
 ```
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-```typescript
+```javascript
     const results = lgTemplates.expandTemplate("WordGameReply", { GameName = "MarcoPolo" } )
 ```
 
@@ -125,7 +125,7 @@ Para obter todas as expansões possíveis de um modelo, você pode usar `ExpandT
 
 Por exemplo, dado este conteúdo de LG:
 
-```.lg
+```lg
 # Greeting
 - Hi
 - Hello

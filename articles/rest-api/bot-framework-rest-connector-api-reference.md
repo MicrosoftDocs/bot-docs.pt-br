@@ -6,13 +6,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 08/02/2019
-ms.openlocfilehash: 10a4d9394c3ec957ddb3f003e3f2335a78d7c263
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.date: 10/19/2020
+ms.openlocfilehash: 687bb79e79e84fdab31028b9bd050310143cbd51
+ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824576"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94599688"
 ---
 # <a name="api-reference---bot-connector"></a>Referência de API-conector de bot
 
@@ -409,22 +409,22 @@ Define uma mensagem trocada entre o bot e o usuário.
 
 | Propriedade | Type | Descrição |
 |----|----|----|
-| **action** | string | A ação a aplicar ou que foi aplicada. Use a propriedade **tipo** para determinar o contexto da ação. Por exemplo, se **tipo** for **contactRelationUpdate**, o valor da propriedade **ação** será **adicionar** se o usuário adicionou o bot à lista de contatos ou **remover** se o usuário removeu o bot da lista de contatos. |
-| **attachmentLayout** | string | Layout dos **anexos** de cartão avançado que a mensagem inclui. Um desses valores: **carrossel**, **lista**. Para obter mais informações sobre anexos de cartão avançado, consulte [Adicionar anexos de cartão avançado às mensagens](bot-framework-rest-connector-add-rich-cards.md). |
+| **action** | string | A ação a aplicar ou que foi aplicada. Use a propriedade **tipo** para determinar o contexto da ação. Por exemplo, se **tipo** for **contactRelationUpdate** , o valor da propriedade **ação** será **adicionar** se o usuário adicionou o bot à lista de contatos ou **remover** se o usuário removeu o bot da lista de contatos. |
+| **attachmentLayout** | string | Layout dos **anexos** de cartão avançado que a mensagem inclui. Um desses valores: **carrossel** , **lista**. Para obter mais informações sobre anexos de cartão avançado, consulte [Adicionar anexos de cartão avançado às mensagens](bot-framework-rest-connector-add-rich-cards.md). |
 | **attachments** | [Attachment](#attachment-object)[] | Matriz de objetos **Anexo** que define informações adicionais para incluir na mensagem. Cada anexo pode ser um arquivo (por exemplo, áudio, vídeo, imagem) ou um cartão avançado. |
 | **callerId** | string | Uma cadeia de caracteres que contém um IRI que identifica o chamador de um bot. Este campo não se destina a ser transmitido eletronicamente; em vez disso, ele é preenchido por bots e clientes com base em dados verificáveis criptograficamente que declara a identidade dos chamadores (por exemplo, tokens). |
 | **channelData** | objeto | Um objeto que contém conteúdo específico do canal. Alguns canais fornecem recursos que exigem informações adicionais que não podem ser representadas usando o esquema de anexo. Para esses casos, defina essa propriedade para o conteúdo específico do canal, conforme definido na documentação do canal. Para obter mais informações, consulte [Implementar funcionalidade específica do canal](bot-framework-rest-connector-channeldata.md). |
 | **channelId** | string | Uma ID que identifica exclusivamente o canal. Definida pelo canal. |
 | **code** | string | Código indicando por que a conversa encerrou. |
 | **conversa** | [ConversationAccount](#conversationaccount-object) | Um objeto **ConversationAccount** que define a conversa à qual a atividade pertence. |
-| **deliveryMode** | string | Uma dica de entrega para sinalizar os caminhos de entrega alternativos do destinatário para a atividade. Um desses valores: **normal**, **notification**. |
+| **deliveryMode** | string | Uma dica de entrega para sinalizar os caminhos de entrega alternativos do destinatário para a atividade. Um desses valores: **normal** , **notification**. |
 | **entidades** | object[] | Matriz de objetos que representa as entidades mencionadas na mensagem. Objetos nessa matriz podem ser qualquer objeto [Schema.org](http://schema.org/). Por exemplo, a matriz pode incluir objetos [Menção](#mention-object) que identificam alguém que foi mencionado na conversa e objetos [Local](#place-object) que identificam um local mencionado na conversa. |
 | **expiration** | string | A hora na qual a atividade deve ser considerada "expirada" e não deve ser apresentada ao destinatário. |
 | **from** | [ChannelAccount](#channelaccount-object) | Um objeto **ChannelAccount** que especifica o remetente da mensagem. |
 | **historyDisclosed** | booleano | Sinalizador que indica se o histórico é ou não divulgado. O valor padrão é **false**. |
 | **id** | string | ID que identifica exclusivamente a atividade no canal. |
-| **importance** | string | Define a importância de uma Atividade. Um destes valores: **low**, **normal**, **high**. |
-| **inputHint** | string | Valor que indica se o bot está aceitando, esperando ou ignorando a entrada do usuário após a entrega da mensagem ao cliente. Um desses valores: **acceptingInput**, **expectingInput**, **ignoringInput**. |
+| **importance** | string | Define a importância de uma Atividade. Um destes valores: **low** , **normal** , **high**. |
+| **inputHint** | string | Valor que indica se o bot está aceitando, esperando ou ignorando a entrada do usuário após a entrega da mensagem ao cliente. Um desses valores: **acceptingInput** , **expectingInput** , **ignoringInput**. |
 | **label** | string | Um rótulo descritivo da atividade. |
 | **listenFor** | string[] | Lista de frases e referências que os sistemas de preparação da fala e de linguagem devem escutar. |
 | **locale** | string | Localidade do idioma que deve ser usado para exibir texto dentro da mensagem, no formato `<language>-<country>`. O canal usa essa propriedade para indicar o idioma do usuário, para que o bot possa especificar cadeia de caracteres de exibição nesse idioma. O valor padrão é **en-US**. |
@@ -444,11 +444,11 @@ Define uma mensagem trocada entre o bot e o usuário.
 | **suggestedActions** | [SuggestedActions](#suggestedactions-object) | Um objeto **SuggestedActions** que define as opções a partir das quais o usuário poderá escolher. |
 | **summary** | string | Resumo das informações que a mensagem contém. Por exemplo, para uma mensagem enviada em um canal de email, essa propriedade pode especificar os primeiros 50 caracteres da mensagem de email. |
 | **text** | string | Texto da mensagem que é enviada do usuário para o bot ou do bot para o usuário. Consulte a documentação do canal para os limites impostos sobre o conteúdo dessa propriedade. |
-| **textFormat** | string | Formato do **texto** da mensagem. Um desses valores: **markdown**, **plain**, **xml**. Para detalhes sobre o formato de texto, consulte [Criar mensagens](bot-framework-rest-connector-create-messages.md). |
+| **textFormat** | string | Formato do **texto** da mensagem. Um desses valores: **markdown** , **plain** , **xml**. Para detalhes sobre o formato de texto, consulte [Criar mensagens](bot-framework-rest-connector-create-messages.md). |
 | **textHighlights** | [TextHighlight](#texthighlight-object)[] | A coleção de fragmentos de texto a serem realçados quando a atividade contém um valor **replyToId**. |
 | **timestamp** | string | Data e hora em que a mensagem foi enviada no fuso horário UTC, expressa no formato [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601). |
 | **topicName** | string | Tópico da conversa à qual a atividade pertence. |
-| **tipo** | string | Tipo de atividade. Um destes valores: **message**, **contactRelationUpdate**, **conversationUpdate**, **typing**, **endOfConversation**, **event**, **invoke**, **deleteUserData**, **messageUpdate**, **messageDelete**, **installationUpdate**, **messageReaction**, **suggestion**, **trace**, **handoff**. Para detalhes sobre tipos de atividade, consulte [Visão geral das atividades](https://aka.ms/botSpecs-activitySchema). |
+| **tipo** | string | Tipo de atividade. Um destes valores: **message** , **contactRelationUpdate** , **conversationUpdate** , **typing** , **endOfConversation** , **event** , **invoke** , **deleteUserData** , **messageUpdate** , **messageDelete** , **installationUpdate** , **messageReaction** , **suggestion** , **trace** , **handoff**. Para detalhes sobre tipos de atividade, consulte [Visão geral das atividades](https://aka.ms/botSpecs-activitySchema). |
 | **value** | objeto | Valor em aberto. |
 | **valueType** | string | O tipo do objeto de valor da atividade. |
 
@@ -482,7 +482,7 @@ Define informações adicionais para incluir na mensagem. Um anexo pode ser um a
 | Propriedade | Type | Descrição |
 |----|----|----|
 | **content** | objeto | O conteúdo do anexo. Se o anexo for um cartão avançado, defina essa propriedade para o objeto cartão avançado. Essa propriedade e a propriedade **contentUrl** são mutuamente exclusivas. |
-| **contentType** | string | O tipo de mídia do conteúdo no anexo. Para arquivos de mídia, defina essa propriedade para tipos de mídia conhecidos, como **image/png**, **audio/wav** e **video/mp4**. Para cartões avançados, defina essa propriedade para um desses tipos específicos do fornecedor:<ul><li>**application/vnd.microsoft.card.adaptive**: Um cartão sofisticado que pode conter qualquer combinação de texto, fala, imagens, botões e campos de entrada. Defina a propriedade de **conteúdo** para um objeto [AdaptiveCard](https://adaptivecards.io/explorer/AdaptiveCard.html).</li><li>**application/vnd.microsoft.card.animation**: Um cartão sofisticado que reproduz animação. Defina a propriedade de **conteúdo** para um objeto [AnimationCard](#animationcard-object).</li><li>**application/vnd.microsoft.card.audio**: Um cartão sofisticado que reproduz arquivos de áudio. Defina a propriedade de **conteúdo** como um objeto [AudioCard](#audiocard-object).</li><li>**application/vnd.microsoft.card.hero**: Um cartão em destaque. Defina e propriedade de **conteúdo** para um objeto [HeroCard](#herocard-object).</li><li>**application/vnd.microsoft.card.receipt**: Um cartão de recibo. Defina e propriedade de **conteúdo** para um objeto [ReceiptCard](#receiptcard-object).</li><li>**application/vnd.microsoft.card.signin**: Um cartão de entrada do usuário. Defina e propriedade de **conteúdo** para um objeto [SignInCard](#signincard-object).</li><li>**application/vnd.microsoft.card.thumbnail**: Um cartão em miniatura. Defina a propriedade de **conteúdo** para um objeto [ThumbnailCard](#thumbnailcard-object).</li><li>**application/vnd.microsoft.card.video**: Um cartão sofisticado que reproduz vídeos. Defina a propriedade de **conteúdo** para um objeto [VideoCard](#videocard-object).</li></ul> |
+| **contentType** | string | O tipo de mídia do conteúdo no anexo. Para arquivos de mídia, defina essa propriedade para tipos de mídia conhecidos, como **image/png** , **audio/wav** e **video/mp4**. Para cartões avançados, defina essa propriedade para um desses tipos específicos do fornecedor:<ul><li>**application/vnd.microsoft.card.adaptive** : Um cartão sofisticado que pode conter qualquer combinação de texto, fala, imagens, botões e campos de entrada. Defina a propriedade de **conteúdo** para um objeto [AdaptiveCard](https://adaptivecards.io/explorer/AdaptiveCard.html).</li><li>**application/vnd.microsoft.card.animation** : Um cartão sofisticado que reproduz animação. Defina a propriedade de **conteúdo** para um objeto [AnimationCard](#animationcard-object).</li><li>**application/vnd.microsoft.card.audio** : Um cartão sofisticado que reproduz arquivos de áudio. Defina a propriedade de **conteúdo** como um objeto [AudioCard](#audiocard-object).</li><li>**application/vnd.microsoft.card.hero** : Um cartão em destaque. Defina e propriedade de **conteúdo** para um objeto [HeroCard](#herocard-object).</li><li>**application/vnd.microsoft.card.receipt** : Um cartão de recibo. Defina e propriedade de **conteúdo** para um objeto [ReceiptCard](#receiptcard-object).</li><li>**application/vnd.microsoft.card.signin** : Um cartão de entrada do usuário. Defina e propriedade de **conteúdo** para um objeto [SignInCard](#signincard-object).</li><li>**application/vnd.microsoft.card.thumbnail** : Um cartão em miniatura. Defina a propriedade de **conteúdo** para um objeto [ThumbnailCard](#thumbnailcard-object).</li><li>**application/vnd.microsoft.card.video** : Um cartão sofisticado que reproduz vídeos. Defina a propriedade de **conteúdo** para um objeto [VideoCard](#videocard-object).</li></ul> |
 | **contentUrl** | string | URL para o conteúdo do anexo. Por exemplo, se o anexo for uma imagem, será possível definir **contentUrl** como a URL que representa o local da imagem. Os protocolos com suporte são: HTTP, HTTPS, Arquivo e Dados. |
 | **name** | string | Nome do anexo. |
 | **thumbnailUrl** | string | URL para uma imagem em miniatura que o canal pode usar se for compatível com o uso de uma forma alternativa menor de **conteúdo** ou **contentUrl**. Por exemplo, se você definir **contentType** como **application/word** e definir **contentUrl** como o local do documento do Word, talvez inclua uma imagem em miniatura que represente o documento. O canal pode exibir a imagem em miniatura em vez do documento. Quando o usuário clicar na imagem, o canal abrirá o documento. |
@@ -779,7 +779,7 @@ Define um usuário ou bot que foi mencionado na conversa.
 | Propriedade | Type | Descrição |
 |----|----|----|
 | **mentioned** | [ChannelAccount](#channelaccount-object) | Um objeto **ChannelAccount** que especifica o usuário ou o bot que foi mencionado. Observe que alguns canais, como Slack, atribuem nomes por conversa, portanto, é possível que o nome mencionado do bot (na propriedade do **destinatário** ) seja diferente do identificador especificado quando você [registrou](../bot-service-quickstart-registration.md) o bot. No entanto, as IDs da conta para ambos seriam as mesmas. |
-| **text** | string | O usuário ou bot como mencionado na conversa. Por exemplo, se a mensagem for "@ColorBot escolha uma nova cor," essa propriedade será definida como **@ColorBot** . Nem todos os canais definem essa propriedade. |
+| **text** | string | O usuário ou bot como mencionado na conversa. Por exemplo, se a mensagem for " @ColorBot escolher uma nova cor", essa propriedade será definida como **\@ ColorBot**. Nem todos os canais definem essa propriedade. |
 | **tipo** | string | Tipo desse objeto. Sempre defina para **Menção**. |
 
 [Retornar à tabela de esquemas](#schema)
@@ -870,7 +870,7 @@ Define uma referência a uma ação através programática.
 |----|----|----|
 | **entidades** | objeto | Um objeto em que o valor de cada propriedade é um objeto [Entity](#entity-object). |
 | **id** | string | ID desta ação. |
-| **state** | string | Estado desta ação. Valores permitidos: **start**, **continue**, **done**. |
+| **state** | string | Estado desta ação. Valores permitidos: **start** , **continue** , **done**. |
 
 [Retornar à tabela de esquemas](#schema)
 

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 09/01/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 01faeee0b76873c039c9404097aa0517f4a1a0b1
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: b3d663dc2bf95ef11d59552f81ee322cdfead21c
+ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417215"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94599808"
 ---
 # <a name="handle-user-interruptions"></a>Manipular interrupções do usuário
 
@@ -31,8 +31,8 @@ O tratamento de interrupções é um aspecto importante de um bot robusto. Os us
 
 O exemplo usado neste artigo traz um bot de reserva de voo que utiliza caixas de diálogo para obter informações do voo do usuário. A qualquer momento durante a conversa com o bot, o usuário pode solicitar _ajudar_ ou _cancelar_ comandos e gerar uma interrupção. Dois tipos de interrupções são abordados:
 
-- **De nível de turno**: ignorar o processamento no nível do turno, mas deixando a caixa de diálogo na pilha com as informações que foram fornecidas. No próximo turno, continuar do ponto em que a conversa parou.
-- **De nível de caixa de diálogo**: cancelar o processamento completamente para que o bot comece tudo novamente.
+- **De nível de turno** : ignorar o processamento no nível do turno, mas deixando a caixa de diálogo na pilha com as informações que foram fornecidas. No próximo turno, continuar do ponto em que a conversa parou.
+- **De nível de caixa de diálogo** : cancelar o processamento completamente para que o bot comece tudo novamente.
 
 ## <a name="define-and-implement-the-interruption-logic"></a>Como definir e implementar a lógica de interrupção
 
@@ -48,11 +48,11 @@ Implemente a classe `CancelAndHelpDialog` para manipular as interrupções do us
 
 [!code-csharp[Class signature](~/../botbuilder-samples/samples/csharp_dotnetcore/13.core-bot/Dialogs/CancelAndHelpDialog.cs?range=12)]
 
-Na classe `CancelAndHelpDialog`, o método `OnContinueDialogAsync` chama o método `InerruptAsync` para verificar se o usuário interrompeu o fluxo normal. Se o fluxo for interrompido, os métodos da classe base são chamados; caso contrário, o valor retornado de `InterruptAsync` será retornado.
+Na classe `CancelAndHelpDialog`, o método `OnContinueDialogAsync` chama o método `InterruptAsync` para verificar se o usuário interrompeu o fluxo normal. Se o fluxo for interrompido, os métodos da classe base são chamados; caso contrário, o valor retornado de `InterruptAsync` será retornado.
 
 [!code-csharp[Overrides](~/../botbuilder-samples/samples/csharp_dotnetcore/13.core-bot/Dialogs/CancelAndHelpDialog.cs?range=22-31)]
 
-Se o usuário digitar "help", o método `InterrupAsync` enviará uma mensagem e, em seguida, chama `DialogTurnResult (DialogTurnStatus.Waiting)` para indicar que a caixa de diálogo principal está aguardando uma resposta do usuário. Dessa forma, o fluxo de conversa é interrompido durante somente um turno e, no próximo turno, continua do ponto em que a conversa parou.
+Se o usuário digitar "help", o método `InterruptAsync` enviará uma mensagem e, em seguida, chama `DialogTurnResult (DialogTurnStatus.Waiting)` para indicar que a caixa de diálogo principal está aguardando uma resposta do usuário. Dessa forma, o fluxo de conversa é interrompido durante somente um turno e, no próximo turno, continua do ponto em que a conversa parou.
 
 Se o usuário digitar "cancelar", ele chamará `CancelAllDialogsAsync` em seu contexto interno de caixa de diálogo, e isso limpa sua pilha de caixa de diálogo fazendo com que ele seja fechado com um status de cancelamento e nenhum valor de resultado. Para `MainDialog` (mostrado posteriormente), aparecerá que a caixa de diálogo de reserva foi finalizada e não retornou resultados, da mesma forma quando o usuário decide não confirmar a reserva.
 
@@ -83,7 +83,7 @@ Se o usuário digitar "cancelar", ele chamará `cancelAllDialogs` em seu context
 Para usar caixas de diálogo, instale o pacote de `botbuilder-dialogs` e verifique se o arquivo de exemplo `requirements.txt` contém a referência apropriada, como `botbuilder-dialogs>=4.5.0`.
 Para obter mais informações sobre como instalar os pacotes, consulte o repositório de exemplos no arquivo [LEIAME](https://github.com/microsoft/botbuilder-python).
 > [!NOTE]
-> Fazer `pip install botbuilder-dialogs` também instalará `botbuilder-core`, `botbulder-connector` e `botbuilder-schema`.
+> A execução `pip install botbuilder-dialogs` também instalará o `botbuilder-core` , o e o `botbuilder-connector` `botbuilder-schema` .
 
 **dialogs/cancel-and-help-dialog.py**
 
@@ -91,13 +91,13 @@ Implemente a classe `CancelAndHelpDialog` para manipular as interrupções do us
 
 [!code-python[class signature](~/../botbuilder-samples/samples/python/13.core-bot/dialogs/cancel_and_help_dialog.py?range=14)]
 
-Na classe `CancelAndHelpDialog`, o método `on_continue_dialog` chama o método `interrupt` para verificar se o usuário interrompeu o fluxo normal. Se o fluxo for interrompido, os métodos da classe base são chamados; caso contrário, o valor retornado de `InterruptAsync` será retornado.
+Na classe `CancelAndHelpDialog`, o método `on_continue_dialog` chama o método `interrupt` para verificar se o usuário interrompeu o fluxo normal. Se o fluxo for interrompido, os métodos da classe base são chamados; caso contrário, o valor retornado de `interrupt` será retornado.
 
 [!code-python[dialog](~/../botbuilder-samples/samples/python/13.core-bot/dialogs/cancel_and_help_dialog.py?range=18-23)]
 
 Se o usuário digitar *help* ou *?* , o método `interrupt` enviará uma mensagem e, em seguida, chamará `DialogTurnResult(DialogTurnStatus.Waiting)` para indicar que a caixa de diálogo na parte superior da pilha está aguardando uma resposta do usuário. Dessa forma, o fluxo de conversa é interrompido durante somente um turno e, no próximo turno, continua do ponto em que a conversa parou.
 
-Se o usuário digitar *cancelar* ou *encerrar*, ele chamará `cancel_all_dialogs()` em seu contexto de caixa de diálogo interno, o que limpa sua pilha de caixa de diálogo e faz com que ele saia com um status cancelado e nenhum valor de resultado. Para `MainDialog`, mostrada posteriormente, aparecerá que a caixa de diálogo de reserva foi finalizada e não retornou resultados, da mesma forma quando o usuário decide não confirmar a reserva.
+Se o usuário digitar *cancelar* ou *encerrar* , ele chamará `cancel_all_dialogs()` em seu contexto de caixa de diálogo interno, o que limpa sua pilha de caixa de diálogo e faz com que ele saia com um status cancelado e nenhum valor de resultado. Para `MainDialog`, mostrada posteriormente, aparecerá que a caixa de diálogo de reserva foi finalizada e não retornou resultados, da mesma forma quando o usuário decide não confirmar a reserva.
 
 [!code-python[interrupt](~/../botbuilder-samples/samples/python/13.core-bot/dialogs/cancel_and_help_dialog.py?range=25-47)]
 
@@ -139,7 +139,7 @@ O código em `BookingDialog` não é mostrado aqui, porque não está diretament
 
 **dialogs/main_dialog.py**
 
-Assim que a nova atividade de mensagem chega, o bot executa o `MainDialog`. O `MainDialog` pergunta ao usuário no que pode ajudar. Então, ele inicia o `bookingDialog` no método `MainDialog.act_step`, com uma chamada para `begin_dialog`, conforme mostrado abaixo.
+Assim que a nova atividade de mensagem chega, o bot executa o `MainDialog`. O `MainDialog` pergunta ao usuário no que pode ajudar. Então, ele inicia o `bookingDialog` no método `act_step`, com uma chamada para `begin_dialog`, conforme mostrado abaixo.
 
 [!code-python[act step](~/../botbuilder-samples/samples/python/13.core-bot/dialogs/main_dialog.py?range=63-100&highlight=4-6,20)]
 

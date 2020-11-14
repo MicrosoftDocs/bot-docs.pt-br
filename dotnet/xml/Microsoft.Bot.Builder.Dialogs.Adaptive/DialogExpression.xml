@@ -1,5 +1,5 @@
 <Type Name="DialogExpression" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.DialogExpression">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="0c278c287836ffd6a55f7b70e9ef32a01ed315d6" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152293" /></Metadata><TypeSignature Language="C#" Value="public class DialogExpression : AdaptiveExpressions.Properties.ObjectExpression&lt;Microsoft.Bot.Builder.Dialogs.Dialog&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="29dd88f44ffd3220f2c4dacc0dcadf71e975c2e4" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94598478" /></Metadata><TypeSignature Language="C#" Value="public class DialogExpression : AdaptiveExpressions.Properties.ObjectExpression&lt;Microsoft.Bot.Builder.Dialogs.Dialog&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DialogExpression extends AdaptiveExpressions.Properties.ObjectExpression`1&lt;class Microsoft.Bot.Builder.Dialogs.Dialog&gt;" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.DialogExpression" />
   <TypeSignature Language="VB.NET" Value="Public Class DialogExpression&#xA;Inherits ObjectExpression(Of Dialog)" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>AdaptiveExpressions.Properties.ObjectExpression&lt;Microsoft.Bot.Builder.Dialogs.Dialog&gt;</BaseTypeName>
@@ -35,6 +36,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -55,6 +57,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="value" Type="Microsoft.Bot.Builder.Dialogs.Dialog" />
@@ -78,6 +81,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="value" Type="Newtonsoft.Json.Linq.JToken" />
@@ -101,6 +105,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="dialogIdOrExpression" Type="System.String" />
@@ -124,6 +129,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.Dialogs.Adaptive.DialogExpression</ReturnType>
@@ -132,8 +138,8 @@
         <Parameter Name="value" Type="Microsoft.Bot.Builder.Dialogs.Dialog" />
       </Parameters>
       <Docs>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="value"><see cref="T:Microsoft.Bot.Builder.Dialogs.Dialog" /> para converter em um <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.DialogExpression" /> .</param>
+        <summary>Converte um <see cref="T:Microsoft.Bot.Builder.Dialogs.Dialog" /> em um <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.DialogExpression" />.</summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -151,6 +157,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.Dialogs.Adaptive.DialogExpression</ReturnType>
@@ -159,8 +166,8 @@
         <Parameter Name="value" Type="Newtonsoft.Json.Linq.JToken" />
       </Parameters>
       <Docs>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="value"><see cref="T:Newtonsoft.Json.Linq.JToken" /> para converter em um <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.DialogExpression" /> .</param>
+        <summary>Converte um <see cref="T:Newtonsoft.Json.Linq.JToken" /> em um <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.DialogExpression" />.</summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -178,6 +185,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.Dialogs.Adaptive.DialogExpression</ReturnType>
@@ -186,8 +194,8 @@
         <Parameter Name="dialogIdOrExpression" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="dialogIdOrExpression">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="dialogIdOrExpression">Cadeia de caracteres para converter em um <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.DialogExpression" /> .</param>
+        <summary>Converte uma cadeia de caracteres em um <see cref="T:Microsoft.Bot.Builder.Dialogs.Adaptive.DialogExpression" /> .</summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -205,6 +213,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -213,8 +222,8 @@
         <Parameter Name="value" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="value">Valor a ser definido.</param>
+        <summary>Define o valor bruto da Propriedade Expression.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -231,14 +240,15 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>Retorna uma cadeia de caracteres que representa o objeto atual.</summary>
+        <returns>Um valor da cadeia de caracteres.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
