@@ -1,5 +1,5 @@
 <Type Name="DialogContainer" FullName="Microsoft.Bot.Builder.Dialogs.DialogContainer">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="93e60f7ce46ed8d89c74413cce99adb4ddec0d4f" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151714" /></Metadata><TypeSignature Language="C#" Value="public abstract class DialogContainer : Microsoft.Bot.Builder.Dialogs.Dialog" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2faca7cbb73f5c6c9412c9e34abe030474b3ba67" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94597258" /></Metadata><TypeSignature Language="C#" Value="public abstract class DialogContainer : Microsoft.Bot.Builder.Dialogs.Dialog" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DialogContainer extends Microsoft.Bot.Builder.Dialogs.Dialog" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.DialogContainer" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class DialogContainer&#xA;Inherits Dialog" />
@@ -12,13 +12,14 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Dialog</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>Um contêiner para um conjunto de caixas de diálogo.</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -37,13 +38,14 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="dialogId" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="dialogId">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="dialogId">A ID a ser atribuída à caixa de diálogo.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogContainer" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -60,6 +62,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -93,6 +96,7 @@ Isso deve ser chamado no início de `beginDialog()` , `continueDialog()` e `resu
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.Dialogs.DialogContext</ReturnType>
@@ -101,9 +105,9 @@ Isso deve ser chamado no início de `beginDialog()` , `continueDialog()` e `resu
         <Parameter Name="dc" Type="Microsoft.Bot.Builder.Dialogs.DialogContext" />
       </Parameters>
       <Docs>
-        <param name="dc">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="dc">Contexto da caixa de diálogo dos pais.</param>
+        <summary>Cria um contexto de caixa de diálogo interno para o filho ativo dos contêineres.</summary>
+        <returns>Um novo contexto de caixa de diálogo para o filho ativo.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -122,6 +126,7 @@ Isso deve ser chamado no início de `beginDialog()` , `continueDialog()` e `resu
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -133,8 +138,8 @@ Isso deve ser chamado no início de `beginDialog()` , `continueDialog()` e `resu
         <ReturnType>Microsoft.Bot.Builder.Dialogs.DialogSet</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Obtém ou define os contêineres <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogSet" /> .</summary>
+        <value>O conjunto de caixas de diálogo contêineres.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -153,6 +158,7 @@ Isso deve ser chamado no início de `beginDialog()` , `continueDialog()` e `resu
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.Dialogs.Dialog</ReturnType>
@@ -161,9 +167,9 @@ Isso deve ser chamado no início de `beginDialog()` , `continueDialog()` e `resu
         <Parameter Name="dialogId" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="dialogId">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="dialogId">A ID da caixa de diálogo a ser pesquisada.</param>
+        <summary>Localiza uma caixa de diálogo filho que foi adicionada anteriormente ao contêiner.</summary>
+        <returns>A caixa de diálogo se for encontrada; caso contrário, NULL.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -180,6 +186,7 @@ Isso deve ser chamado no início de `beginDialog()` , `continueDialog()` e `resu
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -203,6 +210,7 @@ Como eles fazem isso, DialogContainers "Ocultar" as alterações internas e ter 
         <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Boolean&gt;</ReturnType>
@@ -232,6 +240,7 @@ Como eles fazem isso, DialogContainers "Ocultar" as alterações internas e ter 
         <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>

@@ -5,15 +5,15 @@ keywords: Visão geral, a estrutura de tópicos de Introdução, SDK
 author: Kaiqb
 ms.author: kamrani
 manager: kamrani
-ms.topic: article
+ms.topic: overview
 ms.service: bot-service
 ms.date: 11/15/2019
-ms.openlocfilehash: 9735a1a8db93c02f169412feec3d72b95babb757
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 89059207a921905f01b410922e2b1bcbac636aae
+ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414744"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94596808"
 ---
 # <a name="what-is-the-bot-framework-sdk"></a>O que é o SDK do Bot Framework?
 
@@ -25,15 +25,28 @@ ms.locfileid: "92414744"
 
 O bot Framework, juntamente com o serviço de bot do Azure, fornece ferramentas para criar, testar, implantar e gerenciar bots inteligentes, tudo em um só lugar. A estrutura de bot inclui um SDK modular e extensível para a criação de bots, bem como ferramentas, modelos e serviços de ia relacionados. Com essa estrutura, os desenvolvedores podem criar bots que usam fala, compreender a linguagem natural, lidar com perguntas e respostas e muito mais.
 
-<!-- [Azure] Bot Service - The service that accelerates the process of developing a bot. It provisions a web host with one of five bot templates that can be modified in an integrated environment. -->
-<!-- bot service - An instance created by the user using Azure Bot Service. -->
-<!-- [Microsoft] Bot Framework - The comprehensive offering to build and deploy high quality bots for users to enjoy wherever they are talking. Users can start conversations with your bot from any channel that you’ve configured your bot to work on, such as SMS, Skype, Slack, Facebook, and other popular services. -->
+<!--
+    - [Azure] Bot Service - The service that accelerates the process of developing a bot. It provisions a web host with one of five bot templates that can be modified in an integrated environment.
+    - bot service - An instance created by the user using Azure Bot Service.
+    - [Microsoft] Bot Framework - The comprehensive offering to build and deploy high quality bots for users to enjoy wherever they are talking. Users can start conversations with your bot from any channel that you’ve configured your bot to work on, such as SMS, Skype, Slack, Facebook, and other popular services.
+-->
 
 ## <a name="what-is-a-bot"></a>O que é um bot?
 
 Os bots fornecem uma experiência na qual parece que estamos lidando com uma pessoa, ou pelo menos um robô inteligente, e não com uma máquina. Eles podem ser usados para transferir simples tarefas repetitivas, como fazer a reserva para um jantar ou coletar informações de perfil, para sistemas automatizados que não exigem uma intervenção humana direta. Os usuários conversam com um bot usando texto, cartões interativos e fala. Uma interação de bot pode ser uma pergunta e resposta rápidas, ou pode ser uma conversa sofisticada que fornece acesso aos serviços de forma inteligente.
 
-Os bots são muito semelhantes aos aplicativos Web modernos, residindo na Internet e usando APIs para enviar e receber mensagens. O que um bot oferece varia muito dependendo do tipo de bot. Um software de bot moderno se baseia em um conjunto de tecnologias e ferramentas para fornecer experiências cada vez mais complexas em uma ampla variedade de plataformas. No entanto, um bot simples pode apenas receber uma mensagem e ecoá-la para o usuário com muito pouco código envolvido.
+Um bot pode ser considerado como um aplicativo Web que tem uma interface de conversação.
+Um usuário se conecta a um bot por meio de um canal, como o Facebook, a margem de atraso ou o Microsoft Teams.
+
+- Os _motivos_ de bot sobre a entrada e executa tarefas relevantes. Isso pode incluir solicitar informações adicionais ao usuário ou acessar serviços em nome do usuário.
+- O bot executa o reconhecimento na entrada do usuário para interpretar o que o usuário está solicitando ou dizendo.
+- O bot gera respostas para enviar ao usuário para comunicar o que o bot está fazendo ou fez.
+- Dependendo de como o bot é configurado e como ele é registrado no canal, os usuários podem interagir com o bot por meio de texto ou fala, e a conversa pode incluir imagens e vídeos.
+
+> [!div class="mx-imgBorder"]
+> ![Um bot remoto interage com um usuário em um dispositivo por meio de texto, fala, imagens ou vídeo](./media/architecture/what-is-a-bot.png)
+
+Os bots são muito parecidos com aplicativos Web modernos, vivendo na Internet e usando APIs para enviar e receber mensagens. O que um bot oferece varia muito dependendo do tipo de bot. Um software de bot moderno se baseia em um conjunto de tecnologias e ferramentas para fornecer experiências cada vez mais complexas em uma ampla variedade de plataformas. No entanto, um bot simples pode apenas receber uma mensagem e ecoá-la para o usuário com muito pouco código envolvido.
 
 Os bots podem fazer as mesmas coisas que outros tipos de software podem fazer: ler e gravar arquivos, usar bancos de dados e APIs e realizar tarefas computacionais normais. O que torna os bots únicos é o uso de mecanismos geralmente reservados à comunicação entre seres humanos.
 

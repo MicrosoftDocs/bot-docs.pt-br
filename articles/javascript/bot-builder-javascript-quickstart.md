@@ -7,24 +7,40 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 05/23/2019
-monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: cf09d5715177fed992aaa16917e1d143132457e9
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.date: 10/29/2020
+ms.openlocfilehash: eb4e5ca143b6b19b92f6b044fb2f9bb6fa4af099
+ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416825"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94597439"
 ---
 # <a name="create-a-bot-with-the-bot-framework-sdk-for-javascript"></a>Criar um bot com o SDK do Bot Framework para JavaScript
 
+
 [!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
-Este início rápido orienta você na criação de um único bot usando o gerador do Yeoman Bot Builder e o SDK do Bot Framework para JavaScript e, em seguida, testando-o com o Bot Framework Emulator.
+Este artigo mostra como criar um bot usando o gerador de Bot Builder Yeoman e o SDK do bot Framework para JavaScript e como testá-lo com o emulador do bot Framework.
 
 [!INCLUDE [Azure vs local development](../includes/snippet-quickstart-paths.md)]
 
-[!INCLUDE [javascript quickstart](../includes/quickstart-javascript.md)]
+<!-- Delete this include file [!INCLUDE [javascript quickstart](../includes/quickstart-javascript.md)] -->
+
+## <a name="prerequisites"></a>Pré-requisitos
+
+[!INCLUDE [dotnet prerequisites](~/includes/quickstart/javascript/quickstart-javascript-prerequisites.md)]
+
+## <a name="create-a-bot"></a>Criar um bot
+
+[!INCLUDE [dotnet quickstart create bot](~/includes/quickstart/javascript/quickstart-javascript-create-bot.md)]
+
+## <a name="start-your-bot"></a>Inicie seu bot
+
+[!INCLUDE [dotnet quickstart start bot](~/includes/quickstart/javascript/quickstart-javascript-start-bot.md)]
+
+## <a name="start-the-emulator-and-connect-your-bot"></a>Iniciar o emulador e conectar seu bot
+
+[!INCLUDE [dotnet quickstart start emulator](~/includes/quickstart/common/quickstart-start-emulator.md)]
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

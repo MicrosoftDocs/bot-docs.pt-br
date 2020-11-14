@@ -9,12 +9,12 @@ manager: kamrani
 ms.service: bot-service
 ms.topic: conceptual
 ms.date: 10/05/2020
-ms.openlocfilehash: e369adfb42e49c5dd37b1e18624a5290486cfb76
-ms.sourcegitcommit: e37cf15f4907910560f34445a0fbdd7ae75b4787
+ms.openlocfilehash: 06e29697c4e319405c1fd48eb33d3cef022054f3
+ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92439896"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94596838"
 ---
 # <a name="about-direct-line"></a>Sobre o Direct Line
 [!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
@@ -30,13 +30,13 @@ Essas ofertas serão simplificadas ao longo do tempo.
 
 | Recurso                    | Linha Direta | Direct Line App Service Extension | Direct Line Speech |
 |----------------------------|-------------|-----------------------------------|--------------------|
-| Disponibilidade e licenciamento    | GA | Versão prévia pública, sem SLA  | GA |
+| Disponibilidade e licenciamento    | GA | GA  | GA |
 | Desempenho de texto-fala e reconhecimento de fala | Standard | Standard | Alto desempenho |
-| Dá suporte a navegadores da web herdados | Sim | Na GA | Sim |
+| Dá suporte a navegadores da web herdados | Sim | Sim | Sim |
 | Suporte ao SDK do Bot Framework | Todos os v3, v4 | v 4.63+ obrigatório | v 4.63+ obrigatório |
 | Suporte de SDK de cliente    | JS, C# | JS, C# | C++, C#, Unity, JS|
 | Funciona com o Bate-Papo da Web  | Sim | Sim | Não|
-| VNET | Não | Visualização | Não |
+| VNET | Não | Sim | Não |
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

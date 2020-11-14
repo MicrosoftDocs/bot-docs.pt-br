@@ -1,5 +1,5 @@
 <Type Name="NotificationInfo" FullName="Microsoft.Bot.Schema.Teams.NotificationInfo">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="3dd4c12555b6253c7a03580a32c9e34a2e87d8e2" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152043" /></Metadata><TypeSignature Language="C#" Value="public class NotificationInfo" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="e23f72de0bc20d98361ccb62522333e57fb489e6" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94596638" /></Metadata><TypeSignature Language="C#" Value="public class NotificationInfo" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NotificationInfo extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.Teams.NotificationInfo" />
   <TypeSignature Language="VB.NET" Value="Public Class NotificationInfo" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -32,6 +33,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -52,6 +54,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="alert" Type="System.Nullable&lt;System.Boolean&gt;" />
@@ -75,6 +78,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -87,6 +91,58 @@
       </ReturnValue>
       <Docs>
         <summary>Obtém ou define true se a notificação deve ser enviada ao usuário; caso contrário, retorna false.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlertInMeeting">
+      <MemberSignature Language="C#" Value="public bool? AlertInMeeting { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; AlertInMeeting" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.Teams.NotificationInfo.AlertInMeeting" />
+      <MemberSignature Language="VB.NET" Value="Public Property AlertInMeeting As Nullable(Of Boolean)" />
+      <MemberSignature Language="F#" Value="member this.AlertInMeeting : Nullable&lt;bool&gt; with get, set" Usage="Microsoft.Bot.Schema.Teams.NotificationInfo.AlertInMeeting" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="alertInMeeting")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="alertInMeeting")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o valor que indica se uma notificação deve ser mostrada ao usuário enquanto estiver em uma reunião; caso contrário, false.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExternalResourceUrl">
+      <MemberSignature Language="C#" Value="public string ExternalResourceUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ExternalResourceUrl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Schema.Teams.NotificationInfo.ExternalResourceUrl" />
+      <MemberSignature Language="VB.NET" Value="Public Property ExternalResourceUrl As String" />
+      <MemberSignature Language="F#" Value="member this.ExternalResourceUrl : string with get, set" Usage="Microsoft.Bot.Schema.Teams.NotificationInfo.ExternalResourceUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(PropertyName="externalResourceUrl")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(PropertyName="externalResourceUrl")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define o valor da URL de recurso externo da notificação.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

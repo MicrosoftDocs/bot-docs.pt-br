@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 06/12/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4cbbaaf1826dcf4963fbccbd32a557344e6ee558
-ms.sourcegitcommit: e37cf15f4907910560f34445a0fbdd7ae75b4787
+ms.openlocfilehash: 1e1e086d3ee9d7c01d10eeee5187520ca30a72e5
+ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92439833"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94596458"
 ---
 # <a name="managing-state-in-adaptive-dialogs---reference-guide"></a>Gerenciando o estado em caixas de diálogo adaptáveis – guia de referência
 
@@ -45,10 +45,8 @@ O escopo do usuário são dados persistentes no escopo da ID do usuário com o q
 
 Exemplos:
 
-```
-user.name
-user.address.city
-```
+- `user.name`
+- `user.address.city`
 
 ## <a name="conversation-scope"></a>Escopo da conversa
 
@@ -56,13 +54,11 @@ O escopo da conversa são dados persistentes no escopo da ID da conversa que voc
 
 Exemplos:
 
-```
-conversation.hasAccepted
-conversation.dateStarted
-conversation.lastMaleReference
-conversation.lastFemaleReference
-conversation.lastLocationReference
-```
+- `conversation.hasAccepted`
+- `conversation.dateStarted`
+- `conversation.lastMaleReference`
+- `conversation.lastFemaleReference`
+- `conversation.lastLocationReference`
 
 No exemplo a seguir demonstra como você pode usar o escopo da conversa para coletar entrada do usuário, criando um novo `PropertyAssignment` objeto para uso na `SetProperties` [Action] [SetProperties-Action], obtendo o valor do escopo da conversa.
 
@@ -80,15 +76,8 @@ O escopo do diálogo persiste os dados durante a vida útil do diálogo associad
 
 Exemplos abreviados de escopo do diálogo:
 
-```markdown
-The shorthand for `dialog.orderStarted`:
-
-    $orderStarted
-
-The shorthand for `dialog.shoppingCart`:
-
-    $shoppingCart
-```
+- A abreviação de `dialog.orderStarted` é `$orderStarted` .
+- A abreviação de `dialog.shoppingCart` é `$shoppingCart` .
 
 Todas as opções passadas para `BeginDialog` ao criar um diálogo adaptável tornam-se propriedades desse diálogo e podem ser acessadas desde que estejam no escopo. Você acessa essas propriedades pelo nome: dialog.\<propertyName>. Por exemplo, se o chamador passou {a: '1', b: '2'}, elas serão definidas como dialog.a e dialog.b.
 
@@ -100,12 +89,10 @@ Todas as ações de gatilho em um diálogo adaptável têm os próprios subescop
 
 O escopo do turno contém dados _não persistentes_ que têm o escopo definido apenas para o turno atual. O escopo do turno fornece um local para compartilhar dados durante o tempo de vida do turno atual.  
 
-### <a name="this-scope-example"></a>Exemplo de Este escopo
+Exemplos:
 
-```
-turn.bookingConfirmation
-turn.activityProcessed
-```
+- `turn.bookingConfirmation`
+- `turn.activityProcessed`
 
 ### <a name="turn-sub-scopes"></a>Subescopos do turno
 
@@ -115,13 +102,13 @@ Cada [atividade][botframework-activity] de entrada no bot está disponível por 
 
 Por exemplo, você pode ter algo como isso definido no arquivo .lg para responder a um usuário que inseriu um valor inválido quando a idade dele foi solicitada:
 
-```.lg
+```lg
 Sorry, I do not understand '${turn.activity.text}'. ${GetAge()}
 ```
 
 Ou então, definir os valores da propriedade no código-fonte dos diálogos:
 
-```c#
+```csharp
 ItemsProperty = "turn.activity.membersAdded"
 ```
 
@@ -129,19 +116,19 @@ ItemsProperty = "turn.activity.membersAdded"
 
 Todas as intenções e entidades retornadas de um [reconhecedor][recognizers] em qualquer turno especificado são definidas automaticamente no escopo `turn.recognized` e permanecem disponíveis até que o próximo turno ocorra. o escopo `turn.recognized` tem três propriedades:
 
-* `turn.recognized.intents.xxx`: uma lista das principais intenções classificadas pelo reconhecedor para esse turno.
-* `turn.recognized.entities.xxx`: uma lista das entidades reconhecidas nesse turno.
-* `turn.recognized.score`: A _pontuação de confiança_ da principal intenção de pontuação desse turno.
+- `turn.recognized.intents.xxx`: uma lista das principais intenções classificadas pelo reconhecedor para esse turno.
+- `turn.recognized.entities.xxx`: uma lista das entidades reconhecidas nesse turno.
+- `turn.recognized.score`: A _pontuação de confiança_ da principal intenção de pontuação desse turno.
 
 Por exemplo, um aplicativo de reservas de voo pode ter uma intenção de reserva de voo com uma entidade para os destinos de partida e outra para os destinos de chegada. O exemplo abaixo demonstra como capturar o valor de destino de partida antes que o turno seja encerrado.
 
-```c#
+```csharp
 Value = "=turn.recognized.entities.fromCity.location"
 ```
 
 Há outra maneira de fazer isso usando a [notação de memória curta](../v4sdk/bot-builder-concept-adaptive-dialog-memory-states.md#memory-short-hand-notations).
 
-```c#
+```csharp
 // Value is a property containing an expression. @entityName is shorthand to refer to the value of
 // the entity recognized. @fromCity.location is same as turn.recognized.entities.fromCity.location
 Value = "=@fromCity.location"
@@ -198,8 +185,8 @@ var recognizer = new QnAMakerRecognizer()
 
 O escopo `this` pertence ao recipiente de propriedades da ação ativa. Isso é útil para ações de entrada, pois o tipo de vida normalmente ultrapassa um só turno da conversa.
 
-* `this.value` contém o valor reconhecido atual para a entrada.
-* `this.turnCount` contém o número de vezes que as informações ausentes foram solicitadas para essa entrada.
+- `this.value` contém o valor reconhecido atual para a entrada.
+- `this.turnCount` contém o número de vezes que as informações ausentes foram solicitadas para essa entrada.
 
 Este exemplo mostra um uso comum em uma classe de inicialização de bots:
 
@@ -233,8 +220,8 @@ new TextInput()
 
 ## <a name="additional-information"></a>Informações adicionais
 
-* Para obter uma introdução ao gerenciamento de estado em caixas de diálogo adaptáveis, veja o artigo [Gerenciamento de estado no conceito de caixas de diálogo adaptáveis][managing-state] .
-* [Notação curta de memória](../v4sdk/bot-builder-concept-adaptive-dialog-memory-states.md#memory-short-hand-notations).
+- Para obter uma introdução ao gerenciamento de estado em caixas de diálogo adaptáveis, veja o artigo [Gerenciamento de estado no conceito de caixas de diálogo adaptáveis][managing-state] .
+- [Notação curta de memória](../v4sdk/bot-builder-concept-adaptive-dialog-memory-states.md#memory-short-hand-notations).
 
 [managing-state]: ../v4sdk/bot-builder-concept-adaptive-dialog-memory-states.md
 [foreach-action]: ./adaptive-dialog-prebuilt-actions.md#foreach

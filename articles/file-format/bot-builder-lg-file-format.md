@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 39fb0d4c351dbda9c5a3f27b881fe33faa803f0e
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 11ac6f7b366a689b2d554145849f4e4fd86e4acd
+ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416363"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94596748"
 ---
 # <a name="lg-file-format"></a>Formato de arquivo .lg
 
@@ -28,7 +28,7 @@ O arquivo `.lg` descreve os modelos de geração de linguagem com referências d
 
 Use **>** para criar um comentário. Todas as linhas que tenham esse prefixo serão ignoradas pelo analisador.
 
-```.lg
+```lg
 > This is a comment.
 ```
 
@@ -36,7 +36,7 @@ Use **>** para criar um comentário. Todas as linhas que tenham esse prefixo ser
 
 Use **\\** como um caractere de escape.
 
-```.lg
+```lg
 # TemplateName
 - You can say cheese and tomato \[toppings are optional\]
 ```
@@ -47,7 +47,7 @@ Use **\\** como um caractere de escape.
 
 Para criar uma matriz, use a sintaxe **$ {[object1, object2,...]}** . Por exemplo, esta expressão:
 
-```.lg
+```lg
 ${['a', 'b', 'c']}
 ```
 
@@ -57,7 +57,7 @@ Retorna a matriz `['a', 'b', 'c']` .
 
 Para criar um objeto, use **$ {{key1: value1, Key2: value2,...}}** . Por exemplo, esta expressão:
 
-```.lg
+```lg
 ${{user: {name: "Wilson", age: 27}}}
 ```
 
@@ -86,7 +86,7 @@ Os **modelos** são o conceito básico do sistema de geração de linguagem. Cad
 
 Os nomes de modelo diferenciam maiúsculas de minúsculas e podem conter apenas letras, sublinhados, números. Veja a seguir um exemplo de um modelo chamado `TemplateName` . 
 
-```.lg
+```lg
 # TemplateName
 ```
 
@@ -96,7 +96,7 @@ Os modelos não podem começar com um número e qualquer parte de um nome de mod
 
 As variações são expressas como uma lista Markdown. Você pode prefixar cada variação usando o caractere **-** , **'** ou **+** .
 
-```.lg
+```lg
 # Template1
 - text variation 1
 - text variation 2
@@ -118,7 +118,7 @@ Um modelo de resposta simples inclui uma ou mais variações de texto que são u
 
 Este é um exemplo de um modelo simples que inclui duas variações.
 
-```.lg
+```lg
 > Greeting template with two variations.
 # GreetingPrefix
 - Hi
@@ -138,7 +138,7 @@ O modelo if-else permite criar um modelo que escolhe uma coleção com base em u
 
 As expressões condicionais são colocadas entre chaves **${}** . Este é um exemplo que mostra uma definição de modelo de resposta condicional IF ELSE simples.
 
-```.lg
+```lg
 > time of day greeting reply template with conditions.
 # timeOfDayGreeting
 - IF: ${timeOfDay == 'morning'}
@@ -149,7 +149,7 @@ As expressões condicionais são colocadas entre chaves **${}** . Este é um exe
 
 Este é outro exemplo que mostra uma definição de modelo de resposta condicional if-else. Observe que você pode incluir referências a outros modelos de resposta simples ou condicional na variação de uma das condições.
 
-```.lg
+```lg
 # timeOfDayGreeting
 - IF: ${timeOfDay == 'morning'}
     - ${morningTemplate()}
@@ -165,7 +165,7 @@ O modelo de opção permite projetar um modelo que corresponda ao valor de uma e
 
 Veja como você pode especificar um bloco SWITCH CASE DEFAULT na LG.
 
-```.lg
+```lg
 # TestTemplate
 - SWITCH: ${condition}
 - CASE: ${case-expression-1}
@@ -178,7 +178,7 @@ Veja como você pode especificar um bloco SWITCH CASE DEFAULT na LG.
 
 Veja um exemplo mais complicado de SWITCH CASE DEFAULT:
 
-```.lg
+```lg
 > Note: Any of the cases can include reference to one or more templates.
 # greetInAWeek
 - SWITCH: ${dayOfWeek(utcNow())}
@@ -210,7 +210,7 @@ Leia mais sobre os [modelos de resposta estruturada](../language-generation/lang
 
 O texto de variação pode incluir referências a outro modelo nomeado para auxiliar na composição e na resolução de respostas sofisticadas. Referências a outros modelos nomeados são indicadas por meio de chaves, como **${\<TemplateName>()}** .
 
-```.lg
+```lg
 > Example of a template that includes composition reference to another template.
 # GreetingReply
 - ${GreetingPrefix()}, ${timeOfDayGreeting()}
@@ -230,7 +230,7 @@ O texto de variação pode incluir referências a outro modelo nomeado para auxi
 
 A chamada do modelo `GreetingReply` pode resultar em uma das seguintes resoluções de expansão:
 
-```.lg
+```lg
 Hi, good morning
 Hi, good afternoon
 Hi, good evening
@@ -253,7 +253,7 @@ As entidades podem ser usadas como um parâmetro:
 
 As [funções predefinidas][4] compatíveis com as [expressões adaptáveis][3] também podem ser usadas embutidas em um texto de variação one-of para obter uma composição de texto ainda mais eficiente. Para usar uma expressão embutida, basta encapsulá-la entre chaves.
 
-```.lg
+```lg
 # RecentTasks
 - IF: ${count(recentTasks) == 1}
     - Your most recent task is ${recentTasks[0]}. You can let me know if you want to add or complete a task.
@@ -271,7 +271,7 @@ Determinados modelos e funções predefinidas compartilham a assinatura de invoc
 
  Um nome de modelo não deve corresponder a um nome de função predefinida. A função predefinida tem precedência. Para evitar esses conflitos, você pode preceder `lg.` ao referenciar o nome do modelo. Por exemplo:
 
-```.lg
+```lg
 > Custom length function with one parameter.
 # length(a)
 - This is use's customized length function
@@ -289,7 +289,7 @@ Determinados modelos e funções predefinidas compartilham a assinatura de invoc
 
 Cada variação one-of pode incluir um texto multilinha entre aspas triplas.
 
-```.lg
+```lg
 # MultiLineExample
     - ```This is a multiline list
         - one
@@ -303,7 +303,7 @@ Cada variação one-of pode incluir um texto multilinha entre aspas triplas.
 
 A variação multilinha pode solicitar a expansão do modelo e a substituição da entidade colocando a operação solicitada entre chaves, ${}.
 
-```.lg
+```lg
 # MultiLineExample
     - ```
         Here is what I have for the order
@@ -319,7 +319,7 @@ Com o suporte multilinha, você pode fazer com que o subsistema de Geração de 
 
 Para auxiliar na capacidade de reutilização contextual, os modelos podem ser parametrizados. Chamadores diferentes do modelo podem passar valores diferentes para uso na resolução de expansão.
 
-```.lg
+```lg
 # timeOfDayGreetingTemplate (param1)
 - IF: ${param1 == 'morning'}
     - good morning
@@ -339,13 +339,13 @@ Para auxiliar na capacidade de reutilização contextual, os modelos podem ser p
 
 Você pode dividir os modelos de geração de linguagem em arquivos separados e referenciar um modelo de um arquivo em outro. Use links no estilo Markdown para importar os modelos definidos em outro arquivo.
 
-```.lg
+```lg
 [Link description](filePathOrUri)
 ```
 
 Todos os modelos definidos no arquivo de destino serão recebidos. Verifique se os nomes de modelo são exclusivos (ou têm o namespace `# \<namespace>.\<templatename>`) em todos os arquivos que estão sendo recebidos.
 
-```.lg
+```lg
 [Shared](../shared/common.lg)
 ```
 
@@ -365,7 +365,7 @@ Os desenvolvedores podem definir opções de analisador para personalizar ainda 
 
 Os desenvolvedores que não desejam permitir um resultado nulo para um resultado avaliado como nulo poderão implementar a opção **strict**. Veja abaixo um exemplo de uma opção strict simples:
 
-```.lg
+```lg
 > !# @strict = true
 # template
 - hi
@@ -373,7 +373,7 @@ Os desenvolvedores que não desejam permitir um resultado nulo para um resultado
 
 Se a opção strict estiver ativada, os erros nulos vão gerar uma mensagem amigável.
 
-```.lg
+```lg
 # welcome
 - hi ${name}
 ```
@@ -384,13 +384,13 @@ Se o nome for nulo, o diagnóstico será **'name' avaliado como nulo. [welcome] 
 
 Os desenvolvedores podem criar delegados para substituir valores nulos em expressões avaliadas usando a opção **replaceNull** :
 
-```.lg
+```lg
 > !# @replaceNull = ${path} is undefined
 ```
 
 No exemplo acima, a entrada nula na variável `path` será substituída por **${path} é indefinido**. A seguinte entrada, em que `user.name` é nulo:
 
-```.lg
+```lg
 hi ${user.name}
 ```
 
@@ -405,7 +405,7 @@ Os desenvolvedores podem definir opções de como o sistema LG renderiza as queb
 
 O exemplo abaixo mostra como definir a opção lineBreakStyle como `markdown`:
 
-```.lg
+```lg
 > !# @lineBreakStyle = markdown
 ```
 
@@ -415,7 +415,7 @@ Você pode registrar um namespace para os modelos LG que deseja exportar. Se nã
 
 O seguinte exemplo mostra como definir a opção de namespace como `foo`:
 
-```.lg
+```lg
 > !# @Namespace = foo
 ```
 
@@ -425,7 +425,7 @@ Você pode especificar uma lista de modelos LG para exportar. Os modelos exporta
 
 O seguinte exemplo mostra como definir a opção de exportações como `template1, template2`:
 
-```.lg
+```lg
 > !# @Namespace = foo
 > !# @Exports = template1, template2
 

@@ -7,24 +7,39 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
-ms.date: 05/23/2019
-monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 44a547f8fbb133b86499153f8159b1a627926012
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.date: 10/29/2020
+ms.openlocfilehash: c6b1335535b0c28592b23dd8f4be7dc64020275b
+ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416490"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94596872"
 ---
 # <a name="create-a-bot-with-the-bot-framework-sdk-for-net"></a>Criar um bot com o SDK do Bot Framework para .NET
 
 [!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
-Este guia de início rápido oferece orientações sobre como criar um bot usando o modelo de C# e testá-lo com o Bot Framework Emulator.
+Este artigo mostra como criar um bot usando o modelo C# e como testá-lo com o emulador do bot Framework.
 
 [!INCLUDE [Azure vs local development](../includes/snippet-quickstart-paths.md)]
 
-[!INCLUDE [dotnet quickstart](../includes/quickstart-dotnet.md)]
+<!-- Delete this include file [!INCLUDE [dotnet quickstart](../includes/quickstart-dotnet.md)] -->
+
+## <a name="prerequisites"></a>Pré-requisitos
+
+[!INCLUDE [dotnet prerequisites](~/includes/quickstart/dotnet/quickstart-dotnet-prerequisites.md)]
+
+## <a name="create-a-bot"></a>Criar um bot
+
+[!INCLUDE [dotnet quickstart create bot](~/includes/quickstart/dotnet/quickstart-dotnet-create-bot.md)]
+
+## <a name="start-your-bot"></a>Inicie seu bot
+
+[!INCLUDE [dotnet quickstart start bot](~/includes/quickstart/dotnet/quickstart-dotnet-start-bot.md)]
+
+## <a name="start-the-emulator-and-connect-your-bot"></a>Iniciar o emulador e conectar seu bot
+
+[!INCLUDE [dotnet quickstart start emulator](~/includes/quickstart/common/quickstart-start-emulator.md)]
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 99c2bf27eeb74a6a0955ef4f32ccc0ec135f63e2
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: ddfb2cfa37fccafde79d7464d5ba8ea23a93a8e7
+ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416380"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94596719"
 ---
 # <a name="lu-file-format"></a>Formato de arquivo .lu
 
@@ -26,7 +26,7 @@ Um arquivo .lu contém definições baseadas em texto simples e semelhantes a Ma
 
 Use **>** para criar um comentário. Aqui está um exemplo:
 
-```.lu
+```lu
 > This is a comment and will be ignored.
 
 # Greeting
@@ -40,7 +40,7 @@ Uma [intenção][2] representa uma ação que o usuário deseja executar. A inte
 
 Este é um arquivo .lu que captura uma intenção `Greeting` simples com uma lista de exemplos de enunciados que capturam as maneiras pelas quais os usuários podem expressar essa intenção. Use o **-** **+** caractere,, ou * *\** _ para denotar listas. Não há suporte para listas numeradas.
 
-```.lu
+```lu
 # Greeting
 - Hi
 - Hello
@@ -50,7 +50,7 @@ Este é um arquivo .lu que captura uma intenção `Greeting` simples com uma lis
 
 `#<intent-name>` descreve uma nova seção de definição de intenção. Cada linha após a definição da intenção são exemplos de enunciados que descrevem essa intenção. Você pode adicionar várias definições de intenção a um só arquivo, como no seguinte exemplo:
 
-```.lu
+```lu
 # Greeting
 - Hi
 - Hello
@@ -67,31 +67,31 @@ Cada seção é identificada pela notação `#<intent name>`. Observe que as lin
 
 ## <a name="entity"></a>Entidade
 
-Uma [entidade][3] representa informações detalhadas que são relevantes em um enunciado. Por exemplo, no enunciado _Reservar uma passagem para Paris_, _Paris_ é uma localização.
+Uma [entidade][3] representa informações detalhadas que são relevantes em um enunciado. Por exemplo, no enunciado _Reservar uma passagem para Paris_ , _Paris_ é uma localização.
 
 |Exemplo de enunciado do usuário|Entidades|
 |--------------------------|----------|
 |"Reservar um vôo para _ * Seattle * *?"|Seattle|
-|"Quando a sua loja é **aberta**?"|Abrir|
+|"Quando a sua loja é **aberta** ?"|Abrir|
 |"Agendar uma reunião às **13h** com **Bob** na distribuição"|13h, Bob|
 
 ### <a name="definition"></a>Definição
 
 As entidades são declaradas da seguinte maneira:
 
-```.lu
+```lu
 @ <entity-type> <entity-name> [[hasRole[s]] <comma-separated-list-of-roles>] [hasFeature[s] <comma-separated-list-of-features>]
 ```
 
 As entidades que exigem uma definição, como uma lista e entidades de expressões regulares, são representadas por meio da seguinte notação:
 
-```.lu
+```lu
 @ <entity-name> = <definition>
 ```
 
 A declaração e a definição também podem ser combinadas em uma só linha:
 
-```.lu
+```lu
 @ <entity-type> <entity-name> [[hasRoles] <comma-separated-list-of-roles>] = <definition>
 ```
 
@@ -101,7 +101,7 @@ Os nomes de entidades com um espaço podem ser encapsulados entre aspas. Observe
 
 Aqui está um exemplo:
 
-```.lu
+```lu
 @ ml "this is a simple entity" role1, role2
 @ ml 'this is a simple entity' hasRoles role1, role2
 ```
@@ -112,13 +112,13 @@ As [entidades de machine learning][4] aprendem com o contexto em um enunciado. O
 
 No exemplo abaixo, o `name` da entidade ml é definido como `firstName` e `lastName`.
 
-```.lu
+```lu
 @ ml name firstName, lastName
 ```
 
 Para qualquer entidade rotulada que não tenha recebido um tipo explicitamente, o analisador usa como padrão um tipo de entidade ml para essa entidade.
 
-```.lu
+```lu
 # getUserName
 - my name is {username=vishwac}
 
@@ -146,7 +146,7 @@ Há suporte para os seguintes tipos de [entidade LUIS predefinidos][5]:
 
 Aqui estão exemplos de entidades predefinidas:
 
-```.lu
+```lu
 @ prebuilt number numOfGuests, age
 @ prebuilt datetimeV2 fromDate, toDate
 @ prebuilt age userAge
@@ -160,7 +160,7 @@ As [entidades de lista][6] representam um conjunto fixo e fechado de palavras re
 
 No exemplo abaixo, é definida uma entidade de lista que inclui sinônimos de cores:
 
-```.lu
+```lu
 @ list color favColor, screenColor
 @ color =
     - <normalized-value> :
@@ -185,7 +185,7 @@ Uma [entidade composta][7] é constituída de outras entidades, como entidades p
 
 Este é um exemplo de uma entidade composta simples:
 
-```.lu
+```lu
 @ composite deviceTemperature from, to
 @ deviceTemperature =
     - child1, child2
@@ -197,7 +197,7 @@ Este é um exemplo de uma entidade composta simples:
 
 Esta é uma definição de exemplo mais complexa:
 
-```.lu
+```lu
 # setThermostat
 > This utterance labels ‘thermostat to 72’ as composite entity deviceTemperature
     - Please set {deviceTemperature = thermostat to 72}
@@ -229,7 +229,7 @@ Uma [entidade de expressão regular][8] extrai uma entidade com base em um padr�
 
 Este é um exemplo de uma definição de entidade de expressão regular simples.
 
-```.lu
+```lu
 > from, to are roles to hrf-number.
 @ regex hrf-number from, to
 @ hrf-number = /hrf-[0-9]{6}/
@@ -253,13 +253,13 @@ No exemplo abaixo, a entidade **Localização** tem duas funções, `origin` e `
 
 As funções no formato de arquivo .lu podem ser definidas explícita ou implicitamente. A definição de função explícita segue a notação:
 
-```.lu
+```lu
 @ <entityType> <entityName> [hasRole[s]] role1, role2, ...
 ```
 
 Abaixo, são mostradas as diversas maneiras pelas quais você pode definir explicitamente as entidades e as respectivas funções:
 
-```.lu
+```lu
 > # ml entity definition with roles
 > the following are synonmous:
 
@@ -277,13 +277,13 @@ Abaixo, são mostradas as diversas maneiras pelas quais você pode definir expli
 
 Veja as funções definidas de maneira implícita diretamente em padrões e enunciados rotulados com o seguinte formato:
 
-```.lu
+```lu
 {@<entityName>:<roleName>}
 ```
 
 Veja no exemplo abaixo como as funções `userName:firstName` e `userName:lastName` são definidas implicitamente:
 
-```.lu
+```lu
 # AskForUserName
 - {userName:firstName=vishwac} {userName:lastName=kannan}
 - I'm {userName:firstName=vishwac}
@@ -295,9 +295,9 @@ Veja no exemplo abaixo como as funções `userName:firstName` e `userName:lastNa
 > @ ml userName hasRoles lastName, firstName
 ```
 
-Em [padrões](#patterns), você pode usar funções usando a `{<entityName>:<roleName>}` notação. Veja um exemplo:
+Em [padrões](#patterns), você pode usar funções usando a `{<entityName>:<roleName>}` notação. Aqui está um exemplo:
 
-```.lu
+```lu
 # getUserName
 - call me {name:userName}
 - I'm {name:userName}
@@ -306,7 +306,7 @@ Em [padrões](#patterns), você pode usar funções usando a `{<entityName>:<rol
 
 Você também pode definir várias funções para uma entidade em padrões, visto abaixo:
 
-```.lu
+```lu
 > Roles can be specified for list entity types as well - in this case fromCity and toCity are added as roles to the 'city' list entity defined further below
 
 # BookFlight
@@ -332,12 +332,14 @@ Os [padrões][10] permitem definir um conjunto de regras que aumentam o modelo d
 
 Por exemplo, a seguinte definição será tratada como um padrão com `alarmTime` definido como um padrão:
 
-```.lu
+```lu
 # DeleteAlarm
 - delete the {alarmTime} alarm
 ```
-Este exemplo será tratado como um enunciado, pois tem um valor rotulado _7h_:
-```.lu
+
+Este exemplo será tratado como um enunciado, pois tem um valor rotulado _7h_ :
+
+```lu
 # DeleteAlarm
 - delete the {alarmTime=7AM} alarm
 ```
@@ -351,7 +353,7 @@ Uma [lista de frases][11] é uma lista de palavras, frases, números ou outros c
 
 Descreva as entidades da lista de frases usando a seguinte notação:
 
-```.lu
+```lu
 @ phraselist <Name>
     - <synonym1>  
     - <synonym2>
@@ -359,7 +361,7 @@ Descreva as entidades da lista de frases usando a seguinte notação:
 
 Este é um exemplo de uma definição de lista de frases:
 
-```.lu
+```lu
 @ phraseList Want
 @ phraseList Want =
     - require, need, desire, know
@@ -375,7 +377,7 @@ Este é um exemplo de uma definição de lista de frases:
 
 Por padrão, os sinônimos são definidos como não intercambiáveis. Opcionalmente, você pode definir os sinônimos para que sejam intercambiáveis como parte da definição. Aqui está um exemplo:
 
-```.lu
+```lu
 @ phraselist question(interchangeable) =
     - are you
     - you are
@@ -383,7 +385,7 @@ Por padrão, os sinônimos são definidos como não intercambiáveis. Opcionalme
 
 As listas de frases podem ser marcadas como `disabled` por meio da seguinte notação:
 
-```.lu
+```lu
 @ phraselist abc disabled
 
 > also same as this
@@ -396,7 +398,7 @@ As listas de frases podem ser marcadas como `disabled` por meio da seguinte nota
 
 Por padrão, as listas de frases são habilitadas em todos os modelos. No entanto, quando você inicia explicitamente a atribuição de listas de frases como um recurso (descritor) a outros modelos, as listas de frases específicas não são habilitadas para todos os modelos. Para sempre disponibilizar explicitamente uma lista de frases para todos os modelos, use o seguinte:
 
-```.lu
+```lu
 @ phraselist abc enabledForAllModels
 ```
 
@@ -410,7 +412,7 @@ As listas de frases podem ser adicionadas como um recurso a:
 
 Este é um exemplo de como definir uma lista de frases como um recurso para outro modelo:
 
-```.lu
+```lu
 > phrase list definition
 
 @ phraseList PLCity(interchangeable) =
@@ -445,7 +447,7 @@ Este é um exemplo de como definir uma lista de frases como um recurso para outr
 
 Veja abaixo exemplos de como adicionar intenções e entidades como um recurso com `usesFeature`:
 
-```.lu
+```lu
 > entity definition - @ <entityType> <entityName> [<roles>]
 
 @ prebuilt personName
@@ -484,7 +486,7 @@ Veja abaixo exemplos de como adicionar intenções e entidades como um recurso c
 
 Esta é uma definição de uma entidade ml `address` com `fromAddress` e `toAddress` como duas funções, bem como filhos.
 
-```.lu
+```lu
 @ list listCity
 @ prebuilt number
 @ prebuilt geographyV2
@@ -515,7 +517,7 @@ Colete enunciados que você acredita que os usuários irão inserir. Inclua enun
 
 Rotule as entidades em enunciados usando a seguinte notação:
 
-```.lu
+```lu
 # getUserProfile
 - my name is {@userName = vishwac}
 
@@ -524,7 +526,7 @@ Rotule as entidades em enunciados usando a seguinte notação:
 
 Rotule também as funções diretamente nos enunciados:
 
-```.lu
+```lu
 # getUserProfile
 - my name is {@firstName = vishwac}
 
@@ -533,7 +535,7 @@ Rotule também as funções diretamente nos enunciados:
 
 As entidades de machine learning com filhos também podem ser rotuladas:
 
-```.lu
+```lu
 # getUserProfile
 - my name is {@userProfile = {@firstName = vishwac}}
 
@@ -546,7 +548,7 @@ As entidades de machine learning com filhos também podem ser rotuladas:
 
 Para ajudar a rotular as entidades filho com facilidade para os tipos de entidades compostas e de machine learning, você pode dividir os rótulos:
 
-```.lu
+```lu
 # getUserProfile
 - my name is vishwac and I'm 36 years old
     - my name is {@userProfile = vishwac and I'm 36 years old}
@@ -565,9 +567,9 @@ Para ajudar a rotular as entidades filho com facilidade para os tipos de entidad
 
 Inclua informações de configuração do aplicativo LUIS ou da base de dados de conhecimento do QnA Maker no arquivo .lu. Isso ajudará a orientar o analisador a processar o conteúdo do LU corretamente.
 
-Veja como definir informações de configuração usando **>! #**:
+Veja como definir informações de configuração usando **>! #** :
 
-```.lu
+```lu
 > !# @<property> = <value>
 > !# @<scope>-<property> = <value>
 > !# @<scope>-<property> = <semicolon-delimited-key-value-pairs>
@@ -575,7 +577,7 @@ Veja como definir informações de configuração usando **>! #**:
 
 Observe que todas as informações passadas explicitamente por meio de argumentos da CLI substituirão as informações do arquivo .lu.
 
-```.lu
+```lu
 > Parser instruction - this is optional; unless specified, parser will default to the latest version.
 > !# @version = 1.0
 
@@ -613,7 +615,7 @@ Referencia o arquivo .lu. siga a sintaxe de link Markdown. As referências com s
 
 Este é um exemplo das referências mencionadas anteriormente:
 
-```.lu
+```lu
 > You can include references to other .lu files
 
 [All LU files](./all.lu)
@@ -663,7 +665,7 @@ Este é um exemplo das referências mencionadas anteriormente:
 
 Abaixo estão exemplos de como fazer referências de URI:
 
-```.lu
+```lu
 > URI to LU resource
 [import](http://.../foo.lu)
 

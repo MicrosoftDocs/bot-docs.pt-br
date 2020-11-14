@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2db0d14420d000fdb259f68d0f89105fc178ef5a
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 24a153bfeab0c6dc58e6fd1674f9ef517afe8ddb
+ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416768"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94597318"
 ---
 # <a name="functions-injected-from-the-language-generation-library"></a>Funções injetadas da biblioteca de geração de linguagem
 
@@ -26,7 +26,7 @@ O artigo a seguir fornece detalhes sobre como injetar funções da biblioteca [L
 
 Retorna um `activityAttachment` construído com base em um objeto e um tipo.
 
-```.lg
+```lg
 ActivityAttachment(<collection-of-objects>)
 ```
 
@@ -41,7 +41,7 @@ ActivityAttachment(<collection-of-objects>)
 | <*activityAttachment*> | objeto | Um `activityAttachment` formado com base nas entradas |
 ||||
 
-*Exemplo*:
+*Exemplo* :
 
 Este exemplo converte uma coleção de objetos em um `activityAttachment`.
 <!--
@@ -49,7 +49,7 @@ Using the `ActivityAttachment()` function in the template body, type, title, val
 
 Suponha que você tenha o seguinte modelo:
 
-```.lg
+```lg
 # externalHeroCardActivity(type, title, value)
 [Activity
     attachments = ${ActivityAttachment(json(fromFile('.\\herocard.json')), 'herocard')}
@@ -58,7 +58,7 @@ Suponha que você tenha o seguinte modelo:
 
 e o seguinte `herocard.json`:
 
-```.lg
+```json
 {
   "title": "titleContent",
   "text": "textContent",
@@ -81,13 +81,13 @@ e o seguinte `herocard.json`:
 
 Chamando `externalHeroCardActivity()` como uma função:
 
-```.lg
+```lg
 externalHeroCardActivity('signin', 'Signin Button', 'http://login.microsoft.com')
 ```
 
 Ele retorna um `herocard`:
 
-```.lg
+```lg
 {
     "lgType" = "attachment",
     "contenttype" = "herocard",
@@ -116,7 +116,7 @@ Ele retorna um `herocard`:
 
 Avaliar o texto sem formatação em um objeto e retornar os dados de texto expandido.
 
-```.lg
+```lg
 expandText(<object>)
 ```
 
@@ -138,12 +138,12 @@ Digamos que você tenha o seguinte objeto:
 
 ```json
 {
-    "@answer": "hello ${user.name}",
-    "user": {
-        "name": "vivian"
-    }
+  "@answer": "hello ${user.name}",
+  "user": {
+    "name": "vivian"
+  }
 }
-``` 
+```
 
 `expandText(@answer)`A chamada resultará no objeto **Hello Vivian**.
 
@@ -151,14 +151,14 @@ Digamos que você tenha o seguinte objeto:
 
 Retorna o resultado avaliado de determinado nome de modelo e escopo.
 
-```.lg
+```lg
 template(<templateName>, '<param1>', '<param2>', ...)
 ```
 
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
 | <*templateName*> | Sim | string  | Uma cadeia de caracteres que representa o nome do modelo |
-| <*param1*>,<*param2*>, ... | Sim | Objeto  | Os parâmetros passados para o modelo |
+| <*param1* >,< *param2* >, ... | Sim | Objeto  | Os parâmetros passados para o modelo |
 |||||
 
 | Valor retornado | Type | Descrição |
@@ -172,14 +172,11 @@ Este exemplo avalia o resultado da chamada do modelo como uma função.
 
 Suponha que você tenha o seguinte modelo:
 
-```.lg
-    # welcome(userName)
-
-    - Hi ${userName}
-
-    - Hello ${userName}
-
-    - Hey ${userName}
+```lg
+# welcome(userName)
+- Hi ${userName}
+- Hello ${userName}
+- Hey ${userName}
 ```
 
 A chamada de `template("welcome", "DL")` resultará em um dos seguintes:
@@ -192,7 +189,7 @@ A chamada de `template("welcome", "DL")` resultará em um dos seguintes:
 
 Retorna o resultado avaliado da expressão no arquivo fornecido.
 
-```.lg
+```lg
 fromFile(<filePath>)
 ```
 
@@ -211,10 +208,11 @@ fromFile(<filePath>)
 Este exemplo avalia o resultado do arquivo fornecido.
 
 Suponha que você tenha um arquivo chamado `/home/user/test.txt`. Dentro do arquivo, há o seguinte:
-```.lg
-   `you have ${add(1,2)} alarms`
 
-    fromFile('/home/user/test.txt')
+```lg
+`you have ${add(1,2)} alarms`
+
+fromFile('/home/user/test.txt')
 ```
 
 A função `fromFile()` avaliará a expressão e o resultado substituirá a expressão original.
@@ -225,7 +223,7 @@ Chamar `fromFile('/home/user/test.txt')` resultara na cadeia de caracteres _voc�
 
 Retorna se determinado nome de modelo está incluído no avaliador.
 
-```.lg
+```lg
 isTemplate(<templateName>)
 ```
 
@@ -243,7 +241,7 @@ isTemplate(<templateName>)
 
 Este exemplo usa a função `isTemplate()` para verificar se determinado nome de modelo está no avaliador. Por exemplo, veja estes três modelos:
 
-```.lg
+```lg
 # welcome
 - hi
 

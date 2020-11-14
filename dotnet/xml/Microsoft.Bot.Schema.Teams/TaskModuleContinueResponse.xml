@@ -1,5 +1,5 @@
 <Type Name="TaskModuleContinueResponse" FullName="Microsoft.Bot.Schema.Teams.TaskModuleContinueResponse">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="0927b555f11e41ba09c3bf09db1b24cc65cf694a" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152614" /></Metadata><TypeSignature Language="C#" Value="public class TaskModuleContinueResponse : Microsoft.Bot.Schema.Teams.TaskModuleResponseBase" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c3c541cbf8a8db6ec85259128da1d2df467b184c" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94595868" /></Metadata><TypeSignature Language="C#" Value="public class TaskModuleContinueResponse : Microsoft.Bot.Schema.Teams.TaskModuleResponseBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TaskModuleContinueResponse extends Microsoft.Bot.Schema.Teams.TaskModuleResponseBase" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.Teams.TaskModuleContinueResponse" />
   <TypeSignature Language="VB.NET" Value="Public Class TaskModuleContinueResponse&#xA;Inherits TaskModuleResponseBase" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Schema.Teams.TaskModuleResponseBase</BaseTypeName>
@@ -32,6 +33,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -52,6 +54,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="value" Type="Microsoft.Bot.Schema.Teams.TaskModuleTaskInfo" />
@@ -75,6 +78,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>

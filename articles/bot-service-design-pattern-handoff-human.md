@@ -6,14 +6,14 @@ ms.author: arturl
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 07/20/2020
+ms.date: 10/21/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 165b4b69bd75d484ccac8d35d91096fea5666f7f
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 78de753718534d75811cfccc938e6410bb013b7d
+ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92415009"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94596848"
 ---
 # <a name="transition-conversations-from-bot-to-human"></a>Fazer a transição de conversas do bot para humanos
 
@@ -80,7 +80,7 @@ Estes são os campos de evento de início da entrega:
         new Attachment {
             Content = transcript,
             ContentType = "application/json",
-            Name = "Trasnscript",
+            Name = "Transcript",
         }};
     ```
 

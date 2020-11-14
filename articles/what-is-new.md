@@ -8,13 +8,12 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 08/21/2020
-monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 433a5fee1277d5a9e02d682aa831f3989d0fe87b
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 2b87e836bbeb356790dd870b5255de7e40f04036
+ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416746"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94597298"
 ---
 # <a name="whats-new-august-2020"></a>Novidades de agosto de 2020
 
@@ -38,7 +37,7 @@ Bem-vindo à versão de agosto de 2020 do SDK do bot Framework. Há uma série d
 - [Novos recursos do SDK](#new-sdk-features): novos recursos de visualização adicionados nesta versão.
 - [Outros aprimoramentos](#other-improvements): outros aprimoramentos no SDK.
 
-**Participantes do Programa Windows Insider**: deseja experimentar novos recursos assim que possível? Você pode baixar o build noturno para Participantes do Programa Windows Insider [[C#](https://github.com/microsoft/botbuilder-dotnet/blob/main/UsingMyGet.md)] [[JS](https://github.com/microsoft/botbuilder-js/blob/main/UsingMyGet.md)] [[Python](https://github.com/microsoft/botbuilder-python/blob/main/UsingTestPyPI.md)] [[CLI](https://github.com/Microsoft/botframework-cli#nightly-builds)] e experimentar as atualizações mais recentes assim que estiverem disponíveis. E, para obter as notícias, atualizações e conteúdo mais recentes sobre o Bot Framework, siga-nos no Twitter @msbotframework!
+**Participantes do Programa Windows Insider** : deseja experimentar novos recursos assim que possível? Você pode baixar o build noturno para Participantes do Programa Windows Insider [[C#](https://github.com/microsoft/botbuilder-dotnet/blob/main/UsingMyGet.md)] [[JS](https://github.com/microsoft/botbuilder-js/blob/main/UsingMyGet.md)] [[Python](https://github.com/microsoft/botbuilder-python/blob/main/UsingTestPyPI.md)] [[CLI](https://github.com/Microsoft/botframework-cli#nightly-builds)] e experimentar as atualizações mais recentes assim que estiverem disponíveis. E, para obter as notícias, atualizações e conteúdo mais recentes sobre o Bot Framework, siga-nos no Twitter @msbotframework!
 
 ## <a name="documentation"></a>Documentação
 
@@ -86,13 +85,13 @@ Os desenvolvedores que usam o Microsoft bot Framework têm muitos [recursos](bot
 
 - [Orchestrator (versão prévia)](https://github.com/microsoft/BotBuilder-Samples/blob/main/experimental/orchestrator/README.md): uma solução baseada em transformador que é executada localmente com seu bot para expedição em uma ou mais habilidades de bot Builder, aplicativos Luis ou bases de dados de conhecimento QnA Maker.
 - [Bot Builder filas do Azure (visualização em C#)](https://www.nuget.org/packages/Microsoft.Bot.Builder.Azure.Queues): melhor integração com as filas do Azure e a caixa de diálogo _continuar conversa adiante_ .
-- [Bot Builder BLOBs do Azure (visualização em C#)](https://www.nuget.org/packages/Microsoft.Bot.Builder.Azure.Blobs): novas implementações do armazenamento de BLOBs do Azure. Essa biblioteca é uma substituição para a implementação de armazenamento de blog do Azure mais antiga.
+- [Bot Builder BLOBs do Azure (visualização em C#)](https://www.nuget.org/packages/Microsoft.Bot.Builder.Azure.Blobs): novas implementações do armazenamento de BLOBs do Azure. Essa biblioteca é uma substituição para a implementação mais antiga do armazenamento de BLOBs do Azure.
 
 ## <a name="other-improvements"></a>Outros aprimoramentos
 
 - Melhorias contínuas no suporte à API do Microsoft Team.
 - Ferramentas da CLI do bot Framework adicionadas `lg` como um plug-in principal e incluíam outros aprimoramentos gerais de ferramentas.
-- Foram atualizados os arquivos LEIAme nos exemplos e foram adicionados exemplos de typescript de novas equipes.
+- Foram atualizados os arquivos LEIAme nos exemplos e foram adicionados novos exemplos de typescript de equipes.
 - O Composer melhorou o suporte para habilidades e integração aprimorada para serviços cognitivas.
 - O Web Chat adicionou muitas melhorias de acessibilidade.
 - O emulador adicionou correções de bugs e atualizações.

@@ -7,6 +7,7 @@
       topicHref: /azure/index
       items:
         - name: Serviço de Bot do Azure
+          href: /azure/bot-service/
           items:
             - name: SDK do Bot Framework
               tocHref: /azure/bot-service/

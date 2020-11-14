@@ -1,5 +1,5 @@
 <Type Name="ExpressionParser" FullName="AdaptiveExpressions.ExpressionParser">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="22b7fd3d0e1fa25f71b65da4d50491478430698f" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151311" /></Metadata><TypeSignature Language="C#" Value="public class ExpressionParser : AdaptiveExpressions.IExpressionParser" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7f6d89c288e9e467ea8074db233e773d36962e50" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94598068" /></Metadata><TypeSignature Language="C#" Value="public class ExpressionParser : AdaptiveExpressions.IExpressionParser" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ExpressionParser extends System.Object implements class AdaptiveExpressions.IExpressionParser" />
   <TypeSignature Language="DocId" Value="T:AdaptiveExpressions.ExpressionParser" />
   <TypeSignature Language="VB.NET" Value="Public Class ExpressionParser&#xA;Implements IExpressionParser" />
@@ -9,6 +9,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -35,6 +36,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="lookup" Type="AdaptiveExpressions.EvaluatorLookup" />
@@ -58,6 +60,7 @@ Construtor.</summary>
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Antlr4.Runtime.Tree.IParseTree</ReturnType>
@@ -84,6 +87,7 @@ Construtor.</summary>
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>AdaptiveExpressions.EvaluatorLookup</ReturnType>
@@ -109,6 +113,7 @@ Construtor.</summary>
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>AdaptiveExpressions.Expression</ReturnType>

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 70ddbfa9e4809d820e001e1828f95617b944f29b
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: b71e0169037d6273536e4505b21ad40f14d9d09a
+ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416803"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94597308"
 ---
 # <a name="structured-response-template"></a>Modelo de resposta estruturada
 
@@ -43,7 +43,7 @@ Não há nenhum comportamento de fallback padrão implementado pelo resolvedor d
 
 Esta é a definição de um modelo estruturado:
 
-```.lg
+```lg
 # TemplateName
 > this is a comment
 [Structure-name
@@ -56,7 +56,7 @@ Esta é a definição de um modelo estruturado:
 
 Veja um exemplo de um modelo de texto básico:
 
-```.lg
+```lg
 # AskForAge.prompt
 [Activity
     Text = ${GetAge()}
@@ -70,7 +70,7 @@ Veja um exemplo de um modelo de texto básico:
 
 Este é um exemplo de texto com uma ação sugerida. Use **|** para indicar uma lista.
 
-```.lg
+```lg
 > With '|' you are making attachments a list.
 # AskForAge.prompt
 [Activity
@@ -81,7 +81,7 @@ Este é um exemplo de texto com uma ação sugerida. Use **|** para indicar uma 
 
 Este é um exemplo de uma definição de [cartão Hero](https://docs.microsoft.com/microsoftteams/platform/task-modules-and-cards/cards/cards-reference#hero-card):
 
-```.lg
+```lg
 # HeroCard
 [Herocard
     title = Hero Card Example
@@ -100,7 +100,7 @@ Este é um exemplo de uma definição de [cartão Hero](https://docs.microsoft.c
 
 Veja abaixo a combinação dos modelos anteriores:
 
-```.lg
+```lg
 # AskForAge.prompt
 [Activity
     Text = ${GetAge()}
@@ -128,7 +128,7 @@ Por padrão, qualquer referência de modelo é avaliada uma vez durante a avalia
 
 Por exemplo, `# AskForAge.prompt` retorna o mesmo texto de resolução para as propriedades `Speak` e `Text`.
 
-```.lg
+```lg
 # AskForAge.prompt
 [Activity
     Text = ${GetAge()}
@@ -144,7 +144,7 @@ Use `<TemplateName>!()` para solicitar uma nova avaliação em cada referência 
 
 No exemplo abaixo, `Speak` e `Text` podem ter um texto de resolução diferente, porque `GetAge` é reavaliado em cada instância.
 
-```.lg
+```lg
 [Activity
     Text = ${GetAge()}
     Speak = ${GetAge!()}
@@ -157,7 +157,7 @@ No exemplo abaixo, `Speak` e `Text` podem ter um texto de resolução diferente,
 
 Veja como exibir um carrossel de cartões:
 
-```.lg
+```lg
 # AskForAge.prompt
 [Activity
 > Defaults to carousel layout in case of list of cards
@@ -183,7 +183,7 @@ Veja como exibir um carrossel de cartões:
 
 Use **\\**  como um caractere de escape.
 
-```.lg
+```lg
 > You can use '\' as an escape character
 > \${GetAge()} would not be evaluated as expression, would be parsed as '${getAge()}' string
 # AskForAge.prompt
@@ -202,7 +202,7 @@ Há suporte para o seguinte comportamento de composição nos modelos estruturad
 
 Suponha que você tenha o seguinte modelo:
 
-```.lg
+```lg
 # T1
 [Activity
     Text = ${T2()}
@@ -220,7 +220,7 @@ Suponha que você tenha o seguinte modelo:
 
 Uma chamada a `evaluateTemplate('T1')` resultará na seguinte estrutura interna:
 
-```.lg
+```lg
 [Activity
     Text = This is awesome
     Speak = I can also speak!
@@ -233,7 +233,7 @@ Inclua uma referência a outro modelo estruturado como uma propriedade em outro 
 
 Este é um exemplo de referência completa a outro modelo estruturado:
 
-```.lg
+```lg
 # ST1
 [MyStruct
     Text = foo
@@ -247,7 +247,7 @@ Este é um exemplo de referência completa a outro modelo estruturado:
 
 Com esse conteúdo, uma chamada a `evaluateTemplate('ST1')` resultará na seguinte estrutura interna:
 
-```.lg
+```lg
 [MyStruct
     Text = foo
     Speak = bar
@@ -258,7 +258,7 @@ Quando a mesma propriedade existir no modelo de chamada, bem como no modelo cham
 
 Aqui está um exemplo:
 
-```.lg
+```lg
 # ST1
 [MyStruct
     Text = foo
@@ -273,7 +273,7 @@ Aqui está um exemplo:
 
 Com esse contexto, uma chamada a `evaluateTemplate('ST1')` resultará na seguinte estrutura interna:
 
-```.lg
+```lg
 [MyStruct
     Text = foo
     Speak = bar
@@ -291,7 +291,7 @@ Há duas funções predefinidas usadas para referenciar arquivos externamente
 
 Com essas duas funções predefinidas, você pode extrair qualquer conteúdo definido externamente, incluindo todos os tipos de cartões. Use a seguinte LG estruturada para compor uma atividade:
 
-```
+```lg
 # AdaptiveCard
 [Activity
                 Attachments = ${ActivityAttachment(json(fromFile('../../card.json')), 'adaptiveCard')}
@@ -305,7 +305,7 @@ Com essas duas funções predefinidas, você pode extrair qualquer conteúdo def
 
 Use também anexos, vistos abaixo:
 
-```
+```lg
 # AdaptiveCard
 [Attachment
     contenttype = adaptivecard
@@ -344,7 +344,7 @@ It is a natural extension to also define full [chatdown][1] style templates usin
 ### Improvements to chatown style constructs
 
 #### CardAction
-```.lg
+```lg
 # CardAction (title, type, value)
 [CardAction
 > type can be 'openUrl', 'imBack', 'postBack', 'messageBack'
@@ -359,7 +359,7 @@ It is a natural extension to also define full [chatdown][1] style templates usin
 #### Suggestions
 Suggestions can now support a full blown CardAction structure.
 
-```.lg
+```lg
 # AskForColor
 [Activity
     SuggestedActions = ${CardAction('red')} | ${CardAction('blue') | ${CardAction('See all choices', 'openUrl', 'http://contoso.com/color/choices')}}
@@ -370,7 +370,7 @@ Suggestions can now support a full blown CardAction structure.
 Adaptive cards today are rendered via `[Attachment=cardpath.json adaptive]` notation. You can define adaptive cards inline and consume them via the `json()` function.
 
 
-```.lg
+```lg
     # GetColor.prompt
     [Activity
         Attachments = ${json(GetColor.adaptive.card())
@@ -388,7 +388,7 @@ Adaptive cards today are rendered via `[Attachment=cardpath.json adaptive]` nota
 Buttons in any of the card types will also support full blown CardAction definition.
 
 Here's an example:
-```.lg
+```lg
 # HeroCardTemplate
 [HeroCard
     title = BotFramework Hero Card
@@ -402,7 +402,7 @@ Here's an example:
 #### other type of activity
 [Bot framework activity protocol][2] supports ability for bot to send a custom activity to the client. We will add support for it via structured LG using the following definition. This should set the outgoing activities `type` property to `event` or the type Activity owns.
 
-```.lg
+```lg
 [Activity
     type = event
     name = some name

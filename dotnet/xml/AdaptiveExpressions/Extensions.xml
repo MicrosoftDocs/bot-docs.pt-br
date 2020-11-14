@@ -1,5 +1,5 @@
 <Type Name="Extensions" FullName="AdaptiveExpressions.Extensions">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="c50f20b7211ff4e3bbee040f6d301a219bb0fe1a" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151310" /></Metadata><TypeSignature Language="C#" Value="public static class Extensions" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8af3d8c7531c44dcca709764aaf60d59bee35182" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94598018" /></Metadata><TypeSignature Language="C#" Value="public static class Extensions" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Extensions extends System.Object" />
   <TypeSignature Language="DocId" Value="T:AdaptiveExpressions.Extensions" />
   <TypeSignature Language="VB.NET" Value="Public Module Extensions" />
@@ -9,6 +9,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -31,6 +32,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>AdaptiveExpressions.Expression</ReturnType>
@@ -57,6 +59,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -83,6 +86,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -109,6 +113,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>AdaptiveExpressions.Expression</ReturnType>
@@ -122,6 +127,38 @@
         <returns>Expressão reescrita.</returns>
         <remarks>Enviar para baixo não para as folhas, se possível.  Para e/ou/não isso usa a lei da desmorgan e reescreve as comparações.
 Você pode definir seu próprio comportamento definindo <see cref="P:AdaptiveExpressions.ExpressionEvaluator.Negation" /> para o avaliador negado.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RandomNext">
+      <MemberSignature Language="C#" Value="public static int RandomNext (this AdaptiveExpressions.Memory.IMemory memory, int min, int max, int? seed = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 RandomNext(class AdaptiveExpressions.Memory.IMemory memory, int32 min, int32 max, valuetype System.Nullable`1&lt;int32&gt; seed) cil managed" />
+      <MemberSignature Language="DocId" Value="M:AdaptiveExpressions.Extensions.RandomNext(AdaptiveExpressions.Memory.IMemory,System.Int32,System.Int32,System.Nullable{System.Int32})" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function RandomNext (memory As IMemory, min As Integer, max As Integer, Optional seed As Nullable(Of Integer) = Nothing) As Integer" />
+      <MemberSignature Language="F#" Value="static member RandomNext : AdaptiveExpressions.Memory.IMemory * int * int * Nullable&lt;int&gt; -&gt; int" Usage="AdaptiveExpressions.Extensions.RandomNext (memory, min, max, seed)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>AdaptiveExpressions</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="memory" Type="AdaptiveExpressions.Memory.IMemory" RefType="this" />
+        <Parameter Name="min" Type="System.Int32" />
+        <Parameter Name="max" Type="System.Int32" />
+        <Parameter Name="seed" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="memory">estado da memória.</param>
+        <param name="min">O limite inferior inclusivo do número aleatório retornado.</param>
+        <param name="max">O limite superior exclusivo do número aleatório retornado. Max deve ser maior ou igual ao mín.</param>
+        <param name="seed">semente do usuário.</param>
+        <summary>Semente e valor aleatórios do gerador de propriedades.
+Se o valor não for nulo, o resultado de valor aleatório fictício será: min + (valor% (max-min)).
+Caso contrário, se Seed não for NULL, a semente de Random seria corrigida.</summary>
+        <returns>Semente e valor aleatórios.</returns>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
   </Members>

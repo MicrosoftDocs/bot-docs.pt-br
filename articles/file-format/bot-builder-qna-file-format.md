@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2cdd48f34612efaf5d485db28bb49c700b8fcb6e
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 3e0c9193f904ecb2bc15a4439d196217b7256746
+ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416303"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94596768"
 ---
 # <a name="qna-file-format"></a>Formato de arquivo .qna
 
@@ -38,7 +38,7 @@ Supported concepts:
 
 Use **>** para criar um comentário. Aqui está um exemplo:
 
-```.qna
+```qna
 > This is a comment and will be ignored
 ```
 
@@ -48,32 +48,31 @@ O arquivo. QnA e o analisador dão suporte a definições de perguntas e respost
 
 Aqui está a sintaxe de uma definição de pergunta e resposta básica:
 
-```.qna
-    # ? Question
-    [list of question variations]
-    ```
-    Answer
-    ```
+~~~qna
+# ? Question
+[list of question variations]
 ```
+Answer
+```
+~~~
 
 Aqui estão exemplos de definições de perguntas e respostas:
 
-
-```.qna
+~~~qna
 > # QnA Definitions
 ### ? who is the ceo?
-    ```
-    You can change the default message if you use the QnAMakerDialog.
-    See [this link](https://docs.botframework.com/en-us/azure-bot-service/templates/qnamaker/#navtitle) for details.
-    ```
+```
+You can change the default message if you use the QnAMakerDialog.
+See [this link](https://docs.botframework.com/en-us/azure-bot-service/templates/qnamaker/#navtitle) for details.
+```
 
 
 ### ? How do I programmatically update my KB?
-    ```
-    You can use our REST apis to manage your KB.
-    \#1. See here for details: https://westus.dev.cognitive.microsoft.com/docs/services/58994a073d9e04097c7ba6fe/operations/58994a073d9e041ad42d9baa
-    ```
 ```
+You can use our REST apis to manage your KB.
+\#1. See here for details: https://westus.dev.cognitive.microsoft.com/docs/services/58994a073d9e04097c7ba6fe/operations/58994a073d9e041ad42d9baa
+```
+~~~
 
 Observe que o identificador de tipo `markdown` para uma `answer` é opcional.
 
@@ -81,13 +80,13 @@ Observe que o identificador de tipo `markdown` para uma `answer` é opcional.
 
 Você pode adicionar várias perguntas à mesma resposta simplesmente adicionando variações às perguntas.
 
-```.qna
+~~~qna
 ### ? Aren't you feeling happy today?
 - Feeling cheerful?
-    ```markdown
-        I'm quite happy, thank you.
-    ```
+```markdown
+I'm quite happy, thank you.
 ```
+~~~
 
 ## <a name="qnamaker-filters"></a>Filtros do QnA Maker
 
@@ -95,7 +94,7 @@ Os filtros do QnA Maker são pares chave-valor simples que podem ser usados para
 
 Use a sintaxe a seguir para adicionar filtros:
 
-```.qna
+```qna
 **_Filters:_*_
 - name = value
 - name = value
@@ -103,16 +102,16 @@ Use a sintaxe a seguir para adicionar filtros:
 
 Veja um exemplo de como um filtro poderia ser usado:
 
-```.qna
+~~~qna
 ### ? Where can I get coffee?
 - I need coffee
 
 _*Filters:**
 - location = seattle
 
-    ```.markdown
-    You can get coffee in our Seattle store at 1 pike place, Seattle, WA
-    ```
+```markdown
+You can get coffee in our Seattle store at 1 pike place, Seattle, WA
+```
 
 ### ? Where can I get coffee?
 - I need coffee
@@ -120,10 +119,10 @@ _*Filters:**
 **Filters:**
 - location = portland
 
-    ```.markdown
-    You can get coffee in our Portland store at 52 marine drive, Portland, OR
-    ```
+```markdown
+You can get coffee in our Portland store at 52 marine drive, Portland, OR
 ```
+~~~
 
 <!---
 ## QnA Maker alterations
@@ -131,24 +130,24 @@ _*Filters:**
 QnA Maker supports [word alterations](https://docs.microsoft.com/azure/cognitive-services/qnamaker/concepts/best-practices#use-synonyms) as a way to improve the likelihood that a given user query is answered with an appropriate response. You can use this feature to add synonyms to keywords that take different form.
 
 You can describe word alterations/synonyms lists in .qna files using the following notation.
-```.qna
+```qna
 $<synonym word>:qna-alteration=
 - <list of synonyms>
 ```
 
 Here's an example:
-```.qna
+```qna
 $botframework : qna-alterations=
 - bot framework
 - Microsoft bot framework
 ```
---> 
+-->
 
 ## <a name="qna-maker-pdf-file-ingestion"></a>Ingestão de arquivos PDF do QnA Maker
 
 O QnA Maker também dá suporte à ingestão de arquivos PDF durante a criação da KB. Você pode adicionar arquivos para ingestão do QnA Maker usando o esquema de referência de URL. Se o tipo de conteúdo do URI não for texto nem HTML, o analisador o adicionará à coleção de arquivos para ingestão do QnA Maker.
 
-```.qna
+```qna
 [SurfaceManual.pdf](https://download.microsoft.com/download/2/9/B/29B20383-302C-4517-A006-B0186F04BE28/surface-pro-4-user-guide-EN.pdf)
 ```
 
@@ -182,7 +181,7 @@ Adicione também referências aos enunciados definidos em um arquivo específico
 
 Aqui está um exemplo das referências acima:
 
-```.qna
+```qna
 > QnA URL reference
 [QnaURL](https://docs.microsoft.com/en-in/azure/cognitive-services/qnamaker/faqs)
 
@@ -200,9 +199,9 @@ Aqui está um exemplo das referências acima:
 
 Inclua informações de configuração do aplicativo LUIS ou da KB do QnA Maker no arquivo .qna para ajudar a instruir o analisador a processar o conteúdo do LU corretamente.
 
-Veja como adicionar informações de configuração **>! #**:
+Veja como adicionar informações de configuração **>! #** :
 
-```.qna
+```qna
 > !# @<property> = <value>
 > !# @<scope>-<property> = <value>
 > !# @<scope>-<property> = <semicolon-delimited-key-value-pairs>
@@ -210,7 +209,7 @@ Veja como adicionar informações de configuração **>! #**:
 
 Observe que todas as informações passadas explicitamente por meio de argumentos da CLI substituirão as informações do arquivo .qna.
 
-```.qna
+```qna
 > Parser instruction - this is optional; unless specified, the parser will default to the latest version.
 > !# @version = 1.0
 
@@ -225,13 +224,13 @@ Observe que todas as informações passadas explicitamente por meio de argumento
 
 O conteúdo de vários turnos é representado no formato .qna por meio da notação de link Markdown. Os links são especificados usando o seguinte modo:
 
-```
+```qna
 - [display text](#<ID or question>)
 ```
 
 Opcionalmente, você pode incluir `context-only` qualquer prompt que esteja apenas contextualmente disponível para uma pergunta. Leia a seção sobre [como adicionar um par de perguntas e respostas existente como uma solicitação de acompanhamento][1] para saber mais sobre o uso de `context`.
 
-```.qna
+```qna
 - [tell me a joke](#?joke) `context-only`
 ```
 
@@ -245,26 +244,26 @@ O primeiro par de P e R que tenha o texto de link como uma `question` será adic
 
 Quando você estiver usando uma pergunta diretamente, use a Convenção de redução e substitua espaços por hifens (por exemplo, use `#?when-is-the-portland-store-open` em vez de `#?when is the portland store open` ). O analisador fará o melhor para localizar o link.
 
-```.qna
+~~~qna
 # ?store hours
-    ```
-        Most our stores are open M-F 9AM-10PM.
-    ```
+```
+Most our stores are open M-F 9AM-10PM.
+```
 **Prompts:**
 - [Seattle store](#?seattle)
 - [Portland store](#?when-is-the-portland-store-open)
 
 # ?seattle
-    ```
-        The Seattle store is open M-F 9AM-10PM.
-    ```
+```
+The Seattle store is open M-F 9AM-10PM.
+```
 
 # ?when is the portland store open
 - portland store hours
-    ```
-        The Portland store is open 24/7.
-    ```
 ```
+The Portland store is open 24/7.
+```
+~~~
 
 Observe que o link não será realmente renderizado como um link clicável na maioria dos renderizadores Markdown.
 
@@ -272,11 +271,11 @@ Observe que o link não será realmente renderizado como um link clicável na ma
 
 Atribua IDs a cada solicitação com um número. Veja no exemplo abaixo que um valor numérico diferente foi atribuído à solicitação de cada loja.
 
-```.qna
+~~~qna
 # ?store hours
-    ```
-        Most our stores are open M-F 9AM-10PM.
-    ```
+```
+Most our stores are open M-F 9AM-10PM.
+```
 **Prompts:**
 - [Seattle store](#1)
 - [Portland store](#2)
@@ -284,18 +283,18 @@ Atribua IDs a cada solicitação com um número. Veja no exemplo abaixo que um v
 <a id = "1"></a>
 
 # ?seattle
-    ```
-        The Seattle store is open M-F 9AM-10PM.
-    ```
+```
+The Seattle store is open M-F 9AM-10PM.
+```
 
 <a id = "2"></a>
 
 # ?when is the portland store open
 - portland store hours
-    ```
-        The Portland store is open 24/7.
-    ```
 ```
+The Portland store is open 24/7.
+```
+~~~
 
 ## <a name="additional-resources"></a>Recursos adicionais
 - Confira [Formato de arquivo .lu](bot-builder-lu-file-format.md) para obter informações sobre o formato de arquivo .lu.

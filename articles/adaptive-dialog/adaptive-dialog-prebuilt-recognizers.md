@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 06/12/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: bbeac3019f79c37f343294c0a7a843bf0c703308
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: fef009de9af76529f09da3d4d687dba17d06e815
+ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416157"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94596479"
 ---
 # <a name="recognizers-in-adaptive-dialogs---reference-guide"></a>Reconhecedores em caixas de diálogo adaptáveis – guia de referência
 
@@ -287,6 +287,109 @@ var adaptiveDialog = new AdaptiveDialog()
 };
 ```
 
+### <a name="cross-training-your-luis-and-qna-models"></a>Treinamento cruzado de seus modelos LUIS e QnA
+
+Para obter os benefícios completos do conjunto de reconhecedor com treinamento cruzado, [treine][cross-train-concepts] seus `.lu` `.qna` arquivos e. A ferramenta BF CLI (interface de linha de comando) do bot Framework fornece um comando para automatizar esse processo, os comandos [Luis: Cross-Train][bf-luiscross-train] e [qnamaker: Cross-Train][qnamaker-cross-train] . A execução do comando de treinamento cruzado criará cópias `.lu` dos `.qna` arquivos e, fará as atualizações necessárias e, em seguida, salvará no diretório especificado.
+
+> [!TIP]
+>
+> Para criar arquivos com treinamento cruzado, `.lu` e `.qna` , você pode usar o _either_ comando ou a CLI do BF `luis:cross-train` `qnamaker:cross-train` . Você não precisa executar os dois comandos, pois ambos fazem a mesma coisa. O seguinte demonstra o uso do `luis:cross-train` comando:
+
+``` cli
+bf luis:cross-train -i <input-folder-name> -o <output-file-name> --config <cross-train-configuration-file>
+```
+
+Para obter um exemplo de ponta a ponta de treinamento cruzado de seu bot, consulte como [criar um bot entre os reconhecedores Luis e QnA Maker][howto-cross-train].
+
+### <a name="luiscross-train-required-parameters"></a>Luis: parâmetros obrigatórios de treinamento cruzado
+
+- `--in`: O diretório, incluindo subdiretórios, que serão pesquisados em `.lu` arquivos e `.qna` .
+- `--out`: O diretório no qual os novos arquivos de treinamento cruzado `.lu` e de `.qna` saída serão salvos. Esse é o diretório para o qual você apontará a `luis:build` opção do comando `--in` .
+- `--config`: Isso aponta para o arquivo de configuração de treinamento cruzado, um arquivo JSON necessário para que o comando funcione. 
+
+#### <a name="the-cross-train-configuration-file"></a>O arquivo de configuração de treinamento cruzado
+
+Veja a seguir a estrutura geral de um arquivo de configuração de treinamento cruzado.
+
+```json
+{
+    // list each .lu file including variations per lang x locale.
+    // Lang x locale is denoted using 4 letter code. e.g. it-it, fr-fr
+    // Paths can either be absolute (full) paths or paths relative to this config file.
+    "<path-of-language-file-to-train>": {
+        // indicate if this is an .lu file for the root dialog.
+        "rootDialog": <true-or-false>,
+        // list of triggers within that dialog
+        "triggers": {
+            // Key is name of intent within the .lu file (in this case RootDialog.lu)
+            // Value is the path to the child dialog's .lu file.
+            "<intent-name-1>": "<path-of-associated-child-dialog's-language-file>",
+            "<intent-name-2>": "<path-of-associated-child-dialog's-language-file>"
+            // And so on.
+        },
+    "<path-of-additional-language-file-to-train>": {
+        // indicate if this is an .lu file for the root dialog.
+        "rootDialog": <true-or-false>,
+        // list of triggers within that dialog
+        "triggers": {
+            "<intent-name-1>": "<path-of-associated-child-dialog's-language-file>",
+            "<intent-name-2>": "<path-of-associated-child-dialog's-language-file>"
+        }
+        // And so on.
+    }
+}
+```
+
+Na seção triggers do arquivo de configuração de treinamento cruzado, liste cada tentativa na caixa de diálogo raiz junto com o `.lu` arquivo para o qual ele aponta. Você só precisa listar os `.lu` arquivos, os `.qna` arquivos serão treinados de forma cruzada, desde que estejam no mesmo diretório com o mesmo nome de arquivo, por exemplo, _AddToDoDialog. QnA_.
+
+Por exemplo, um bot com a seguinte estrutura de diálogo:
+
+![diagrama da estrutura da caixa de diálogo](./media/dialog-structure.png)
+
+Com a seguinte estrutura de diretório:
+
+![diagrama de estrutura de diretório](./media/folder-structure.png)
+
+Teria um arquivo de configuração no diretório de **caixas de diálogo** que pode ser semelhante a este:
+
+```json
+{
+    "./rootDialog/rootDialog.lu": {
+        "rootDialog": true,
+        "triggers": {
+            "DialogA_intent": "./DialogA/DialogA.lu",
+            "DialogB_intent": "./DialogB/DialogB.lu"
+        }
+    },
+    "./DialogA/DialogA.lu": {
+        "triggers": {
+            "DialogA1_intent": "./DialogA/DialogA1/DialogA1.lu",
+            "DialogA2_intent": "./DialogA/DialogA2/DialogA2.lu",
+            "Intent-A-1": "",
+            "Intent-A-2": ""
+        }
+    },
+    "./DialogA/DialogA1/DialogA1.lu": {
+        "triggers": {
+            "DialogA1.1_intent": "./DialogA/DialogA1/DialogA1.1.lu",
+            "DialogA1.2_intent": "./DialogA/DialogA1/DialogA1.2.lu",
+        }
+    },
+    "./DialogB/DialogB.lu": {
+        "triggers": {
+            "DialogB1_intent": "./DialogB/DialogB1/DialogB1.lu",
+        }
+    }
+}
+
+```
+
+No arquivo JSON acima, quando a parte de valor do par chave/valor está em branco, ela se refere a uma intenção que não resulta em uma nova caixa de diálogo adaptável de contêiner, mas, em vez disso, dispara uma ação associada ao `OnIntent` gatilho especificado.
+
+> [!TIP]
+>
+> Se o bot contiver apenas modelos LUIS e nenhum modelo de QnA Maker, você poderá treinar apenas seus modelos de LUIS. Para obter mais informações sobre o treinamento cruzado de seus modelos de LUIS, consulte [Luis to Luis cross training][luis-to-luis-cross-training]
+
 ## <a name="additional-information"></a>Informações adicionais
 
 * [O que é o LUIS?][5]
@@ -311,3 +414,9 @@ var adaptiveDialog = new AdaptiveDialog()
 [11]:https://aka.ms/luis-create-new-app-in-luis-portal
 [12]:https://qnamaker.ai
 [13]:https://azure.microsoft.com/services/cognitive-services/
+[cross-train-concepts]: ../v4sdk/bot-builder-concept-cross-train.md
+[luis-to-luis-cross-training]: ../v4sdk/bot-builder-concept-cross-train.md#luis-to-luis-cross-training
+[qnamaker-cross-train]: https://aka.ms/botframework-cli#bf-qnamakercross-train
+[bf-luiscross-train]: https://aka.ms/botframework-cli#bf-luiscross-train
+[cs-sample-todo-bot]: https://aka.ms/csharp-adaptive-dialog-08-todo-bot-luis-qnamaker-sample
+[howto-cross-train]: ../v4sdk/bot-builder-howto-cross-train.md

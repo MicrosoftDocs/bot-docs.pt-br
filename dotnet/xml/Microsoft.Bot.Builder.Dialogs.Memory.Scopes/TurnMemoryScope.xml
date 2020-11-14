@@ -1,5 +1,5 @@
 <Type Name="TurnMemoryScope" FullName="Microsoft.Bot.Builder.Dialogs.Memory.Scopes.TurnMemoryScope">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="6c125173ecaf1585441179a0051860840f8b815d" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150377" /></Metadata><TypeSignature Language="C#" Value="public class TurnMemoryScope : Microsoft.Bot.Builder.Dialogs.Memory.Scopes.MemoryScope" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="11313e4eae19cd91f9fee81804b3a2e77e5073c9" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94597598" /></Metadata><TypeSignature Language="C#" Value="public class TurnMemoryScope : Microsoft.Bot.Builder.Dialogs.Memory.Scopes.MemoryScope" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TurnMemoryScope extends Microsoft.Bot.Builder.Dialogs.Memory.Scopes.MemoryScope" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Memory.Scopes.TurnMemoryScope" />
   <TypeSignature Language="VB.NET" Value="Public Class TurnMemoryScope&#xA;Inherits MemoryScope" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Memory.Scopes.MemoryScope</BaseTypeName>
@@ -32,10 +33,11 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Dialogs.Memory.Scopes.TurnMemoryScope" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -52,6 +54,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -79,6 +82,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
