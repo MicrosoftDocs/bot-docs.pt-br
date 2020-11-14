@@ -1,5 +1,5 @@
 <Type Name="StreamingRequestHandler" FullName="Microsoft.Bot.Builder.Streaming.StreamingRequestHandler">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="d6d3f9a307b74d38782e0044e8f4b4553ce74410" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152504" /></Metadata><TypeSignature Language="C#" Value="public class StreamingRequestHandler : Microsoft.Bot.Streaming.RequestHandler" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ed4d47806759cfa9473f02437a2c7e597d7b5924" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94605219" /></Metadata><TypeSignature Language="C#" Value="public class StreamingRequestHandler : Microsoft.Bot.Streaming.RequestHandler" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StreamingRequestHandler extends Microsoft.Bot.Streaming.RequestHandler" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Streaming.StreamingRequestHandler" />
   <TypeSignature Language="VB.NET" Value="Public Class StreamingRequestHandler&#xA;Inherits RequestHandler" />
@@ -12,6 +12,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Streaming.RequestHandler</BaseTypeName>
@@ -37,6 +38,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="bot" Type="Microsoft.Bot.Builder.IBot" />
@@ -68,6 +70,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="bot" Type="Microsoft.Bot.Builder.IBot" />
@@ -81,6 +84,82 @@
         <param name="pipeName">O nome do pipe nomeado a ser usado ao conectar-se ao canal.</param>
         <param name="logger">Implementação de agente para informações de rastreamento e depuração.</param>
         <summary>Inicializa uma nova instância da <see cref="T:Microsoft.Bot.Builder.Streaming.StreamingRequestHandler" /> classe e estabelece uma conexão em um pipe nomeado para um canal de streaming.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StreamingRequestHandler (Microsoft.Bot.Builder.IBot bot, Microsoft.Bot.Builder.Streaming.IStreamingActivityProcessor activityProcessor, System.Net.WebSockets.WebSocket socket, string audience, Microsoft.Extensions.Logging.ILogger logger = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Bot.Builder.IBot bot, class Microsoft.Bot.Builder.Streaming.IStreamingActivityProcessor activityProcessor, class System.Net.WebSockets.WebSocket socket, string audience, class Microsoft.Extensions.Logging.ILogger logger) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Streaming.StreamingRequestHandler.#ctor(Microsoft.Bot.Builder.IBot,Microsoft.Bot.Builder.Streaming.IStreamingActivityProcessor,System.Net.WebSockets.WebSocket,System.String,Microsoft.Extensions.Logging.ILogger)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (bot As IBot, activityProcessor As IStreamingActivityProcessor, socket As WebSocket, audience As String, Optional logger As ILogger = Nothing)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.Streaming.StreamingRequestHandler : Microsoft.Bot.Builder.IBot * Microsoft.Bot.Builder.Streaming.IStreamingActivityProcessor * System.Net.WebSockets.WebSocket * string * Microsoft.Extensions.Logging.ILogger -&gt; Microsoft.Bot.Builder.Streaming.StreamingRequestHandler" Usage="new Microsoft.Bot.Builder.Streaming.StreamingRequestHandler (bot, activityProcessor, socket, audience, logger)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="bot" Type="Microsoft.Bot.Builder.IBot" />
+        <Parameter Name="activityProcessor" Type="Microsoft.Bot.Builder.Streaming.IStreamingActivityProcessor" />
+        <Parameter Name="socket" Type="System.Net.WebSockets.WebSocket" />
+        <Parameter Name="audience" Type="System.String" />
+        <Parameter Name="logger" Type="Microsoft.Extensions.Logging.ILogger" />
+      </Parameters>
+      <Docs>
+        <param name="bot">O bot para o qual tratamos as solicitações.</param>
+        <param name="activityProcessor">O processador para solicitações de entrada.</param>
+        <param name="socket">O soquete base a ser usado ao conectar-se ao canal.</param>
+        <param name="logger">Implementação de agente para informações de rastreamento e depuração.</param>
+        <param name="audience">O destinatário especificado de todas as atividades de saída.</param>
+        <summary>Inicializa uma nova instância da <see cref="T:Microsoft.Bot.Builder.Streaming.StreamingRequestHandler" /> classe e estabelece uma conexão em um WebSocket a um canal de streaming.</summary>
+        <remarks>O público-alvo representa o destinatário na outra extremidade da conexão de streaming do StreamingRequestHandler. Alguns valores de audiência aceitáveis são os seguintes: <list><item>-Para canais públicos do Azure, use <see cref="F:Microsoft.Bot.Connector.Authentication.AuthenticationConstants.ToChannelFromBotOAuthScope" /> .</item><item>-Para os canais do Azure governamental, use <see cref="F:Microsoft.Bot.Connector.Authentication.GovernmentAuthenticationConstants.ToChannelFromBotOAuthScope" /> .</item></list></remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StreamingRequestHandler (Microsoft.Bot.Builder.IBot bot, Microsoft.Bot.Builder.Streaming.IStreamingActivityProcessor activityProcessor, string pipeName, string audience, Microsoft.Extensions.Logging.ILogger logger = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Bot.Builder.IBot bot, class Microsoft.Bot.Builder.Streaming.IStreamingActivityProcessor activityProcessor, string pipeName, string audience, class Microsoft.Extensions.Logging.ILogger logger) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Streaming.StreamingRequestHandler.#ctor(Microsoft.Bot.Builder.IBot,Microsoft.Bot.Builder.Streaming.IStreamingActivityProcessor,System.String,System.String,Microsoft.Extensions.Logging.ILogger)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (bot As IBot, activityProcessor As IStreamingActivityProcessor, pipeName As String, audience As String, Optional logger As ILogger = Nothing)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.Streaming.StreamingRequestHandler : Microsoft.Bot.Builder.IBot * Microsoft.Bot.Builder.Streaming.IStreamingActivityProcessor * string * string * Microsoft.Extensions.Logging.ILogger -&gt; Microsoft.Bot.Builder.Streaming.StreamingRequestHandler" Usage="new Microsoft.Bot.Builder.Streaming.StreamingRequestHandler (bot, activityProcessor, pipeName, audience, logger)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="bot" Type="Microsoft.Bot.Builder.IBot" />
+        <Parameter Name="activityProcessor" Type="Microsoft.Bot.Builder.Streaming.IStreamingActivityProcessor" />
+        <Parameter Name="pipeName" Type="System.String" />
+        <Parameter Name="audience" Type="System.String" />
+        <Parameter Name="logger" Type="Microsoft.Extensions.Logging.ILogger" />
+      </Parameters>
+      <Docs>
+        <param name="bot">O bot para o qual tratamos as solicitações.</param>
+        <param name="activityProcessor">O processador para solicitações de entrada.</param>
+        <param name="pipeName">O nome do pipe nomeado a ser usado ao conectar-se ao canal.</param>
+        <param name="logger">Implementação de agente para informações de rastreamento e depuração.</param>
+        <param name="audience">O destinatário especificado de todas as atividades de saída.</param>
+        <summary>Inicializa uma nova instância da <see cref="T:Microsoft.Bot.Builder.Streaming.StreamingRequestHandler" /> classe e estabelece uma conexão em um pipe nomeado para um canal de streaming.</summary>
+        <remarks>O público-alvo representa o destinatário na outra extremidade da conexão de streaming do StreamingRequestHandler. Alguns valores de audiência aceitáveis são os seguintes: <list><item>-Para canais públicos do Azure, use <see cref="F:Microsoft.Bot.Connector.Authentication.AuthenticationConstants.ToChannelFromBotOAuthScope" /> .</item><item>-Para os canais do Azure governamental, use <see cref="F:Microsoft.Bot.Connector.Authentication.GovernmentAuthenticationConstants.ToChannelFromBotOAuthScope" /> .</item></list></remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Audience">
+      <MemberSignature Language="C#" Value="public string Audience { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Audience" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.Streaming.StreamingRequestHandler.Audience" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Audience As String" />
+      <MemberSignature Language="F#" Value="member this.Audience : string" Usage="Microsoft.Bot.Builder.Streaming.StreamingRequestHandler.Audience" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém o destinatário pretendido de <see cref="T:Microsoft.Bot.Schema.Activity">atividades</see> enviadas deste StreamingRequestHandler.</summary>
+        <value>O destinatário pretendido de atividades enviadas deste StreamingRequestHandler.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -99,6 +178,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DateTime</ReturnType>
@@ -128,6 +208,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -156,6 +237,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -185,6 +267,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -211,6 +294,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Streaming.StreamingResponse&gt;</ReturnType>
@@ -246,6 +330,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Schema.ResourceResponse&gt;</ReturnType>
@@ -277,6 +362,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Streaming.ReceiveResponse&gt;</ReturnType>
@@ -308,6 +394,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>

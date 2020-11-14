@@ -1,5 +1,5 @@
 <Type Name="ActivityResourceResponse" FullName="Microsoft.Bot.Builder.Adapters.Slack.ActivityResourceResponse">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="1fd3c85fd1addcf8d0973fda7aa5e6602037b9ef" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151288" /></Metadata><TypeSignature Language="C#" Value="public class ActivityResourceResponse : Microsoft.Bot.Schema.ResourceResponse" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0a9fa5a5a1131c57a7443e67c649c081447c941a" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94606308" /></Metadata><TypeSignature Language="C#" Value="public class ActivityResourceResponse : Microsoft.Bot.Schema.ResourceResponse" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ActivityResourceResponse extends Microsoft.Bot.Schema.ResourceResponse" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Adapters.Slack.ActivityResourceResponse" />
   <TypeSignature Language="VB.NET" Value="Public Class ActivityResourceResponse&#xA;Inherits ResourceResponse" />
@@ -8,6 +8,7 @@
     <AssemblyName>Microsoft.Bot.Builder.Adapters.Slack</AssemblyName>
     <AssemblyVersion>4.9.2.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Schema.ResourceResponse</BaseTypeName>
@@ -28,6 +29,7 @@
         <AssemblyName>Microsoft.Bot.Builder.Adapters.Slack</AssemblyName>
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -46,6 +48,7 @@
         <AssemblyName>Microsoft.Bot.Builder.Adapters.Slack</AssemblyName>
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -67,6 +70,7 @@
         <AssemblyName>Microsoft.Bot.Builder.Adapters.Slack</AssemblyName>
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Schema.ConversationAccount</ReturnType>

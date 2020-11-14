@@ -1,5 +1,5 @@
 <Type Name="TeamsActivityExtensions" FullName="Microsoft.Bot.Builder.Teams.TeamsActivityExtensions">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="7647229c771318c053ccb6bf4b63b5180c8e403d" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152468" /></Metadata><TypeSignature Language="C#" Value="public static class TeamsActivityExtensions" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="23286af37ab8f5d572a790def29ccdcc444dd00b" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94605208" /></Metadata><TypeSignature Language="C#" Value="public static class TeamsActivityExtensions" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit TeamsActivityExtensions extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Teams.TeamsActivityExtensions" />
   <TypeSignature Language="VB.NET" Value="Public Module TeamsActivityExtensions" />
@@ -12,6 +12,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -37,6 +38,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -48,6 +50,30 @@
         <param name="activity">A atividade atual.</param>
         <summary>Obtém a ID do canal da equipe da atividade atual.</summary>
         <returns>O canal team's da atividade atual ou cadeia de caracteres vazia.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TeamsGetMeetingInfo">
+      <MemberSignature Language="C#" Value="public static Microsoft.Bot.Schema.Teams.TeamsMeetingInfo TeamsGetMeetingInfo (this Microsoft.Bot.Schema.IActivity activity);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Bot.Schema.Teams.TeamsMeetingInfo TeamsGetMeetingInfo(class Microsoft.Bot.Schema.IActivity activity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Teams.TeamsActivityExtensions.TeamsGetMeetingInfo(Microsoft.Bot.Schema.IActivity)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function TeamsGetMeetingInfo (activity As IActivity) As TeamsMeetingInfo" />
+      <MemberSignature Language="F#" Value="static member TeamsGetMeetingInfo : Microsoft.Bot.Schema.IActivity -&gt; Microsoft.Bot.Schema.Teams.TeamsMeetingInfo" Usage="Microsoft.Bot.Builder.Teams.TeamsActivityExtensions.TeamsGetMeetingInfo activity" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Bot.Schema.Teams.TeamsMeetingInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="Microsoft.Bot.Schema.IActivity" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="activity">Esta atividade.</param>
+        <summary>Obtém o objeto TeamsMeetingInfo da atividade atual.</summary>
+        <returns>A reunião team's da atividade atual ou NULL.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -66,6 +92,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Schema.Teams.TeamInfo</ReturnType>
@@ -95,6 +122,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -104,6 +132,33 @@
       </Parameters>
       <Docs>
         <param name="activity">A atividade atual.</param>
+        <summary>Configura a atividade atual para gerar uma notificação dentro das equipes.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TeamsNotifyUser">
+      <MemberSignature Language="C#" Value="public static void TeamsNotifyUser (this Microsoft.Bot.Schema.IActivity activity, bool alertInMeeting, string externalResourceUrl = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void TeamsNotifyUser(class Microsoft.Bot.Schema.IActivity activity, bool alertInMeeting, string externalResourceUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Teams.TeamsActivityExtensions.TeamsNotifyUser(Microsoft.Bot.Schema.IActivity,System.Boolean,System.String)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Sub TeamsNotifyUser (activity As IActivity, alertInMeeting As Boolean, Optional externalResourceUrl As String = Nothing)" />
+      <MemberSignature Language="F#" Value="static member TeamsNotifyUser : Microsoft.Bot.Schema.IActivity * bool * string -&gt; unit" Usage="Microsoft.Bot.Builder.Teams.TeamsActivityExtensions.TeamsNotifyUser (activity, alertInMeeting, externalResourceUrl)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="Microsoft.Bot.Schema.IActivity" RefType="this" />
+        <Parameter Name="alertInMeeting" Type="System.Boolean" />
+        <Parameter Name="externalResourceUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="activity">A atividade atual.</param>
+        <param name="alertInMeeting">Enviado para um chat de reunião, isso fará com que o cliente das equipes o processe em um pop-up de notificação, bem como no thread de chat.</param>
+        <param name="externalResourceUrl">URL para recurso externo. Deve ser incluído nos domínios válidos do manifesto.</param>
         <summary>Configura a atividade atual para gerar uma notificação dentro das equipes.</summary>
         <remarks>To be added.</remarks>
       </Docs>

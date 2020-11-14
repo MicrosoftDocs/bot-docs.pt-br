@@ -1,5 +1,5 @@
 <Type Name="IsDialogActiveFunction" FullName="Microsoft.Bot.Builder.Dialogs.Functions.IsDialogActiveFunction">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="2f922e2b5c4f5beb7d7bcd7f825e0b40bddafb8c" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152234" /></Metadata><TypeSignature Language="C#" Value="public class IsDialogActiveFunction : AdaptiveExpressions.ExpressionEvaluator" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7d76ee511b171e035bcbdc42e928f0d69dadaacd" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94605368" /></Metadata><TypeSignature Language="C#" Value="public class IsDialogActiveFunction : AdaptiveExpressions.ExpressionEvaluator" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit IsDialogActiveFunction extends AdaptiveExpressions.ExpressionEvaluator" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Functions.IsDialogActiveFunction" />
   <TypeSignature Language="VB.NET" Value="Public Class IsDialogActiveFunction&#xA;Inherits ExpressionEvaluator" />
@@ -8,6 +8,7 @@
     <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive</AssemblyName>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>AdaptiveExpressions.ExpressionEvaluator</BaseTypeName>
@@ -30,10 +31,11 @@ Você pode passar IDs de caixa de diálogo 1.. N.</remarks>
         <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Dialogs.Functions.IsDialogActiveFunction" />.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -48,12 +50,13 @@ Você pode passar IDs de caixa de diálogo 1.. N.</remarks>
         <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Alias do identificador de função.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -68,12 +71,13 @@ Você pode passar IDs de caixa de diálogo 1.. N.</remarks>
         <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Nome do identificador de função.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

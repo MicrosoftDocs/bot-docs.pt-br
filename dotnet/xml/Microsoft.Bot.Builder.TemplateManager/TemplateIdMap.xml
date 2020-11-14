@@ -1,5 +1,5 @@
 <Type Name="TemplateIdMap" FullName="Microsoft.Bot.Builder.TemplateManager.TemplateIdMap">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="2711be51c54e60167fb57e16de69f53934c0cfda" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151845" /></Metadata><TypeSignature Language="C#" Value="public class TemplateIdMap : System.Collections.Generic.Dictionary&lt;string,Func&lt;Microsoft.Bot.Builder.ITurnContext,object,object&gt;&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c9e6da75c75ffbffaf43409097384d4c4bae4fb9" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94605178" /></Metadata><TypeSignature Language="C#" Value="public class TemplateIdMap : System.Collections.Generic.Dictionary&lt;string,Func&lt;Microsoft.Bot.Builder.ITurnContext,object,object&gt;&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TemplateIdMap extends System.Collections.Generic.Dictionary`2&lt;string, class System.Func`3&lt;class Microsoft.Bot.Builder.ITurnContext, object, object&gt;&gt;" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.TemplateManager.TemplateIdMap" />
   <TypeSignature Language="VB.NET" Value="Public Class TemplateIdMap&#xA;Inherits Dictionary(Of String, Func(Of ITurnContext, Object, Object))" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Collections.Generic.Dictionary&lt;System.String,System.Func&lt;Microsoft.Bot.Builder.ITurnContext,System.Object,System.Object&gt;&gt;</BaseTypeName>
@@ -36,6 +37,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>

@@ -1,5 +1,5 @@
 <Type Name="MockHttpRequestMiddleware" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.Mocks.MockHttpRequestMiddleware">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="822cd37c3ecaa6f38409487347937442655f249a" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150394" /></Metadata><TypeSignature Language="C#" Value="public class MockHttpRequestMiddleware : Microsoft.Bot.Builder.IMiddleware" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c53855de3743b2bc4f8ba6f836298313de539b40" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94606048" /></Metadata><TypeSignature Language="C#" Value="public class MockHttpRequestMiddleware : Microsoft.Bot.Builder.IMiddleware" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MockHttpRequestMiddleware extends System.Object implements class Microsoft.Bot.Builder.IMiddleware" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.Mocks.MockHttpRequestMiddleware" />
   <TypeSignature Language="VB.NET" Value="Public Class MockHttpRequestMiddleware&#xA;Implements IMiddleware" />
@@ -8,6 +8,7 @@
     <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive.Testing</AssemblyName>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -33,6 +34,7 @@
         <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive.Testing</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="httpRequestMocks" Type="System.Collections.Generic.List&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.HttpRequestMocks.HttpRequestMock&gt;" />
@@ -57,6 +59,7 @@
         <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive.Testing</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -74,6 +77,29 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <inheritdoc />
+      </Docs>
+    </Member>
+    <Member MemberName="SetFallback">
+      <MemberSignature Language="C#" Value="public void SetFallback (Func&lt;System.Net.Http.HttpRequestMessage,System.Net.Http.HttpResponseMessage&gt; fallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetFallback(class System.Func`2&lt;class System.Net.Http.HttpRequestMessage, class System.Net.Http.HttpResponseMessage&gt; fallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.Mocks.MockHttpRequestMiddleware.SetFallback(System.Func{System.Net.Http.HttpRequestMessage,System.Net.Http.HttpResponseMessage})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetFallback (fallback As Func(Of HttpRequestMessage, HttpResponseMessage))" />
+      <MemberSignature Language="F#" Value="member this.SetFallback : Func&lt;System.Net.Http.HttpRequestMessage, System.Net.Http.HttpResponseMessage&gt; -&gt; unit" Usage="mockHttpRequestMiddleware.SetFallback fallback" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive.Testing</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fallback" Type="System.Func&lt;System.Net.Http.HttpRequestMessage,System.Net.Http.HttpResponseMessage&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="fallback">Novo fallback ou nulo.</param>
+        <summary>Definir fallback.</summary>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
   </Members>

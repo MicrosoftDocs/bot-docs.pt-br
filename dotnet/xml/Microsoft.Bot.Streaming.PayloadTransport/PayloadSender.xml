@@ -1,5 +1,5 @@
 <Type Name="PayloadSender" FullName="Microsoft.Bot.Streaming.PayloadTransport.PayloadSender">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="87c0006fa310995b2431ddbae40b4b0bbe9168cf" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93150107" /></Metadata><TypeSignature Language="C#" Value="public class PayloadSender : IDisposable, Microsoft.Bot.Streaming.PayloadTransport.IPayloadSender" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9f45231e31129db841b0ff1559ebf39d1222ee2a" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94604668" /></Metadata><TypeSignature Language="C#" Value="public class PayloadSender : IDisposable, Microsoft.Bot.Streaming.PayloadTransport.IPayloadSender" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PayloadSender extends System.Object implements class Microsoft.Bot.Streaming.PayloadTransport.IPayloadSender, class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Streaming.PayloadTransport.PayloadSender" />
   <TypeSignature Language="VB.NET" Value="Public Class PayloadSender&#xA;Implements IDisposable, IPayloadSender" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -40,6 +41,7 @@ Ao receber: recebe um cabeçalho de pacote e alguns bytes e o envia para o Assin
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -63,6 +65,7 @@ Ao receber: recebe um cabeçalho de pacote e alguns bytes e o envia para o Assin
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -93,6 +96,7 @@ Ao receber: recebe um cabeçalho de pacote e alguns bytes e o envia para o Assin
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -123,6 +127,7 @@ Ao receber: recebe um cabeçalho de pacote e alguns bytes e o envia para o Assin
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Streaming.Transport.DisconnectedEventHandler</ReturnType>
@@ -147,6 +152,7 @@ Ao receber: recebe um cabeçalho de pacote e alguns bytes e o envia para o Assin
         <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -168,6 +174,7 @@ Ao receber: recebe um cabeçalho de pacote e alguns bytes e o envia para o Assin
         <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -198,6 +205,7 @@ Em outras palavras, é verdadeiro quando chamado de forma determinística e fals
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -225,6 +233,7 @@ Em outras palavras, é verdadeiro quando chamado de forma determinística e fals
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>

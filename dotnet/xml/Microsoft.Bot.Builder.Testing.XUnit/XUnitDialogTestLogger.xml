@@ -1,5 +1,5 @@
 <Type Name="XUnitDialogTestLogger" FullName="Microsoft.Bot.Builder.Testing.XUnit.XUnitDialogTestLogger">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="8eeed4390eaf97414fba9628fef4ca0201c0c4a6" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93151841" /></Metadata><TypeSignature Language="C#" Value="public class XUnitDialogTestLogger : Microsoft.Bot.Builder.IMiddleware" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="db6f4079546b94aa4e4214f140f8384baa3d89ce" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94605158" /></Metadata><TypeSignature Language="C#" Value="public class XUnitDialogTestLogger : Microsoft.Bot.Builder.IMiddleware" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XUnitDialogTestLogger extends System.Object implements class Microsoft.Bot.Builder.IMiddleware" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Testing.XUnit.XUnitDialogTestLogger" />
   <TypeSignature Language="VB.NET" Value="Public Class XUnitDialogTestLogger&#xA;Implements IMiddleware" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -38,6 +39,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="xunitOutputHelper" Type="Xunit.Abstractions.ITestOutputHelper" />
@@ -63,6 +65,7 @@ Se você precisar gerar as atividades de entrada e saída para algum outro prove
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -94,6 +97,7 @@ Se você precisar gerar as atividades de entrada e saída para algum outro prove
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -128,6 +132,7 @@ Se você precisar gerar as atividades de entrada e saída para algum outro prove
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -159,6 +164,7 @@ Se você precisar gerar as atividades de entrada e saída para algum outro prove
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Xunit.Abstractions.ITestOutputHelper</ReturnType>

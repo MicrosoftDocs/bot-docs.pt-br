@@ -1,5 +1,5 @@
 <Type Name="ChoiceFactory" FullName="Microsoft.Bot.Builder.Dialogs.Choices.ChoiceFactory">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="4a1010238b2b4763d8c9f1693191207b591d4a4d" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152274" /></Metadata><TypeSignature Language="C#" Value="public class ChoiceFactory" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a40ec2e81839db891972f89cb01c984c26552e46" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94605908" /></Metadata><TypeSignature Language="C#" Value="public class ChoiceFactory" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ChoiceFactory extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Choices.ChoiceFactory" />
   <TypeSignature Language="VB.NET" Value="Public Class ChoiceFactory" />
@@ -17,6 +17,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -46,6 +47,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -73,6 +75,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Schema.IMessageActivity</ReturnType>
@@ -114,6 +117,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Schema.IMessageActivity</ReturnType>
@@ -124,11 +128,11 @@
         <Parameter Name="speak" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="choices">To be added.</param>
-        <param name="text">To be added.</param>
-        <param name="speak">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="choices">A lista de opções a serem adicionadas.</param>
+        <param name="text">Opcional, texto da mensagem.</param>
+        <param name="speak">Opcional, o texto SSML a ser falado pelo bot em um canal habilitado para fala.</param>
+        <summary>Cria uma atividade de mensagem que inclui uma lista de opções que foram adicionadas como `HeroCard` .</summary>
+        <returns>Uma atividade com opções como HeroCard com botões.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -152,6 +156,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Schema.Activity</ReturnType>
@@ -192,6 +197,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Schema.Activity</ReturnType>
@@ -203,12 +209,12 @@
         <Parameter Name="options" Type="Microsoft.Bot.Builder.Dialogs.Choices.ChoiceFactoryOptions" />
       </Parameters>
       <Docs>
-        <param name="choices">To be added.</param>
-        <param name="text">To be added.</param>
-        <param name="speak">To be added.</param>
-        <param name="options">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="choices">A lista de opções a serem renderizadas.</param>
+        <param name="text">Opcional, texto da mensagem.</param>
+        <param name="speak">Opcional, o texto SSML a ser falado pelo bot em um canal habilitado para fala.</param>
+        <param name="options">Opcional, opções de formatação para ajustar a renderização da lista.</param>
+        <summary>Cria uma atividade de mensagem que contém uma lista de opções que foram formatadas como uma lista numerada ou com marcadores.</summary>
+        <returns>Uma atividade com opções como uma lista numerada ou com marcadores.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -232,6 +238,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Schema.Activity</ReturnType>
@@ -272,6 +279,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Schema.IMessageActivity</ReturnType>
@@ -282,11 +290,11 @@
         <Parameter Name="speak" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="choices">To be added.</param>
-        <param name="text">To be added.</param>
-        <param name="speak">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="choices">A lista de opções a serem adicionadas.</param>
+        <param name="text">Opcional, texto da mensagem.</param>
+        <param name="speak">Opcional, o texto SSML a ser falado pelo bot em um canal habilitado para fala.</param>
+        <summary>Cria uma atividade de mensagem que contém uma lista de opções que foram adicionadas como ações sugeridas.</summary>
+        <returns>Uma atividade com opções como ações sugeridas.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -310,6 +318,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Schema.IMessageActivity</ReturnType>
@@ -320,11 +329,11 @@
         <Parameter Name="speak" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="choices">To be added.</param>
-        <param name="text">To be added.</param>
-        <param name="speak">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="choices">Lista de cadeias de caracteres que representam as opções a serem adicionadas.</param>
+        <param name="text">Opcional, texto da mensagem.</param>
+        <param name="speak">Opcional, o texto SSML a ser falado pelo bot em um canal habilitado para fala.</param>
+        <summary>Cria uma atividade de mensagem que contém uma lista de opções que foram adicionadas como ações sugeridas.</summary>
+        <returns>Uma atividade com opções como ações sugeridas.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -348,6 +357,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;Microsoft.Bot.Builder.Dialogs.Choices.Choice&gt;</ReturnType>
@@ -356,9 +366,9 @@
         <Parameter Name="choices" Type="System.Collections.Generic.IList&lt;System.String&gt;" />
       </Parameters>
       <Docs>
-        <param name="choices">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="choices">A lista de opções a serem adicionadas.</param>
+        <summary>Usa uma lista de cadeias de caracteres e as retorna como <see cref="T:Microsoft.Bot.Builder.Dialogs.Choices.Choice" /> .</summary>
+        <returns>Uma lista de opções.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

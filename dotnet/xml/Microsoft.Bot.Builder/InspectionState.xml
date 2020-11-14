@@ -1,5 +1,5 @@
 <Type Name="InspectionState" FullName="Microsoft.Bot.Builder.InspectionState">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="ce9fc2e097dadea59b7cf12173b8a2afef50bb15" /><Meta Name="ms.sourcegitcommit" Value="d974a0b93f13db7720fcb332f37bf8a404d77e43" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="09/20/2020" /><Meta Name="ms.locfileid" Value="93152577" /></Metadata><TypeSignature Language="C#" Value="public class InspectionState : Microsoft.Bot.Builder.BotState" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c1ce2223116164f035011acb2242a1c0a41ea218" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94605648" /></Metadata><TypeSignature Language="C#" Value="public class InspectionState : Microsoft.Bot.Builder.BotState" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InspectionState extends Microsoft.Bot.Builder.BotState" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.InspectionState" />
   <TypeSignature Language="VB.NET" Value="Public Class InspectionState&#xA;Inherits BotState" />
@@ -14,6 +14,7 @@
     <AssemblyVersion>4.9.3.0</AssemblyVersion>
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.BotState</BaseTypeName>
@@ -41,6 +42,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="storage" Type="Microsoft.Bot.Builder.IStorage" />
@@ -68,6 +70,7 @@
         <AssemblyVersion>4.9.3.0</AssemblyVersion>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
