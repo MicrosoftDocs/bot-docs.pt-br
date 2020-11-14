@@ -1,0 +1,59 @@
+<Type Name="ActivityEventNames" FullName="Microsoft.Bot.Schema.ActivityEventNames">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ad48f15c0d223f981aa86db7d0966b1ff92db3b1" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94618445" /></Metadata><TypeSignature Language="C#" Value="public static class ActivityEventNames" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ActivityEventNames extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.ActivityEventNames" />
+  <TypeSignature Language="VB.NET" Value="Public Class ActivityEventNames" />
+  <TypeSignature Language="F#" Value="type ActivityEventNames = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Defina valores para nomes de eventos comuns usados por atividades do tipo <see cref="F:Microsoft.Bot.Schema.ActivityTypes.Event" /> .</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ContinueConversation">
+      <MemberSignature Language="C#" Value="public const string ContinueConversation;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string ContinueConversation" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Schema.ActivityEventNames.ContinueConversation" />
+      <MemberSignature Language="VB.NET" Value="Public Const ContinueConversation As String " />
+      <MemberSignature Language="F#" Value="val mutable ContinueConversation : string" Usage="Microsoft.Bot.Schema.ActivityEventNames.ContinueConversation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>O nome do evento para continuar uma conversa.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateConversation">
+      <MemberSignature Language="C#" Value="public const string CreateConversation;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string CreateConversation" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Bot.Schema.ActivityEventNames.CreateConversation" />
+      <MemberSignature Language="VB.NET" Value="Public Const CreateConversation As String " />
+      <MemberSignature Language="F#" Value="val mutable CreateConversation : string" Usage="Microsoft.Bot.Schema.ActivityEventNames.CreateConversation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>O nome do evento para criar uma conversa.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

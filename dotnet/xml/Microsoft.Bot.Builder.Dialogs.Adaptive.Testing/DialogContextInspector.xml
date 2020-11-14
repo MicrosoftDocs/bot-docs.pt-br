@@ -1,0 +1,25 @@
+<Type Name="DialogContextInspector" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.DialogContextInspector">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0ba06709c7ae6fb6649c6780546d89158082436b" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94618447" /></Metadata><TypeSignature Language="C#" Value="public delegate void DialogContextInspector(DialogContext dc);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DialogContextInspector extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.DialogContextInspector" />
+  <TypeSignature Language="VB.NET" Value="Public Delegate Sub DialogContextInspector(dc As DialogContext)" />
+  <TypeSignature Language="F#" Value="type DialogContextInspector = delegate of DialogContext -&gt; unit" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive.Testing</AssemblyName>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="dc" Type="Microsoft.Bot.Builder.Dialogs.DialogContext" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="dc">Contexto da caixa de diálogo.</param>
+    <summary>Delegado para inspecionar ou modificar o estado da caixa de diálogo.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+</Type>

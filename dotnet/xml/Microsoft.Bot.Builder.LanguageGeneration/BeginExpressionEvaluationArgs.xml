@@ -1,0 +1,57 @@
+<Type Name="BeginExpressionEvaluationArgs" FullName="Microsoft.Bot.Builder.LanguageGeneration.BeginExpressionEvaluationArgs">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3a03c3dfbc688b0bbeefd03a3d01194dbf8354af" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94618440" /></Metadata><TypeSignature Language="C#" Value="public class BeginExpressionEvaluationArgs : Microsoft.Bot.Builder.LanguageGeneration.LGEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BeginExpressionEvaluationArgs extends Microsoft.Bot.Builder.LanguageGeneration.LGEventArgs" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.LanguageGeneration.BeginExpressionEvaluationArgs" />
+  <TypeSignature Language="VB.NET" Value="Public Class BeginExpressionEvaluationArgs&#xA;Inherits LGEventArgs" />
+  <TypeSignature Language="F#" Value="type BeginExpressionEvaluationArgs = class&#xA;    inherit LGEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.LanguageGeneration</AssemblyName>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Bot.Builder.LanguageGeneration.LGEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Forneça dados de evento quando a expressão for avaliada.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BeginExpressionEvaluationArgs ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.LanguageGeneration.BeginExpressionEvaluationArgs.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.LanguageGeneration</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Expression">
+      <MemberSignature Language="C#" Value="public string Expression { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Expression" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Bot.Builder.LanguageGeneration.BeginExpressionEvaluationArgs.Expression" />
+      <MemberSignature Language="VB.NET" Value="Public Property Expression As String" />
+      <MemberSignature Language="F#" Value="member this.Expression : string with get, set" Usage="Microsoft.Bot.Builder.LanguageGeneration.BeginExpressionEvaluationArgs.Expression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.LanguageGeneration</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Obtém ou define a cadeia de caracteres de expressão.</summary>
+        <value>Cadeia de caracteres de expressão.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

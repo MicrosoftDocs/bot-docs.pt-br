@@ -1,0 +1,123 @@
+<Type Name="CloudAdapter" FullName="Microsoft.Bot.Builder.Integration.AspNet.Core.CloudAdapter">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5cc20a7c415760ac5213e7918dd7f070589f58dc" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94618459" /></Metadata><TypeSignature Language="C#" Value="public class CloudAdapter : Microsoft.Bot.Builder.CloudAdapterBase, Microsoft.Bot.Builder.Integration.AspNet.Core.IBotFrameworkHttpAdapter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CloudAdapter extends Microsoft.Bot.Builder.CloudAdapterBase implements class Microsoft.Bot.Builder.Integration.AspNet.Core.IBotFrameworkHttpAdapter" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Integration.AspNet.Core.CloudAdapter" />
+  <TypeSignature Language="VB.NET" Value="Public Class CloudAdapter&#xA;Inherits CloudAdapterBase&#xA;Implements IBotFrameworkHttpAdapter" />
+  <TypeSignature Language="F#" Value="type CloudAdapter = class&#xA;    inherit CloudAdapterBase&#xA;    interface IBotFrameworkHttpAdapter" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Bot.Builder.Integration.AspNet.Core</AssemblyName>
+    <AssemblyVersion>4.11.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Bot.Builder.CloudAdapterBase</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.Bot.Builder.Integration.AspNet.Core.IBotFrameworkHttpAdapter</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Um adaptador que implementa o protocolo bot Framework e pode ser hospedado em diferentes environmens de nuvem pública e privada.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CloudAdapter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Integration.AspNet.Core.CloudAdapter.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Integration.AspNet.Core</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Integration.AspNet.Core.CloudAdapter" />. (Nuvem pública. Sem autenticação. para teste.)</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CloudAdapter (Microsoft.Bot.Connector.Authentication.BotFrameworkAuthentication botFrameworkAuthentication, System.Net.Http.HttpClient httpClient = default, Microsoft.Extensions.Logging.ILogger logger = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Bot.Connector.Authentication.BotFrameworkAuthentication botFrameworkAuthentication, class System.Net.Http.HttpClient httpClient, class Microsoft.Extensions.Logging.ILogger logger) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Integration.AspNet.Core.CloudAdapter.#ctor(Microsoft.Bot.Connector.Authentication.BotFrameworkAuthentication,System.Net.Http.HttpClient,Microsoft.Extensions.Logging.ILogger)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (botFrameworkAuthentication As BotFrameworkAuthentication, Optional httpClient As HttpClient = Nothing, Optional logger As ILogger = Nothing)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.Integration.AspNet.Core.CloudAdapter : Microsoft.Bot.Connector.Authentication.BotFrameworkAuthentication * System.Net.Http.HttpClient * Microsoft.Extensions.Logging.ILogger -&gt; Microsoft.Bot.Builder.Integration.AspNet.Core.CloudAdapter" Usage="new Microsoft.Bot.Builder.Integration.AspNet.Core.CloudAdapter (botFrameworkAuthentication, httpClient, logger)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Integration.AspNet.Core</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="botFrameworkAuthentication" Type="Microsoft.Bot.Connector.Authentication.BotFrameworkAuthentication" />
+        <Parameter Name="httpClient" Type="System.Net.Http.HttpClient" />
+        <Parameter Name="logger" Type="Microsoft.Extensions.Logging.ILogger" />
+      </Parameters>
+      <Docs>
+        <param name="botFrameworkAuthentication">O ambiente de nuvem usado para validar e criar tokens.</param>
+        <param name="httpClient">A implementação de HttpClient que esse adaptador deve usar.</param>
+        <param name="logger">A implementação de ILogger que esse adaptador deve usar.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Integration.AspNet.Core.CloudAdapter" />.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CloudAdapter (Microsoft.Extensions.Configuration.IConfiguration configuration, System.Net.Http.HttpClient httpClient = default, Microsoft.Extensions.Logging.ILogger logger = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Extensions.Configuration.IConfiguration configuration, class System.Net.Http.HttpClient httpClient, class Microsoft.Extensions.Logging.ILogger logger) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Integration.AspNet.Core.CloudAdapter.#ctor(Microsoft.Extensions.Configuration.IConfiguration,System.Net.Http.HttpClient,Microsoft.Extensions.Logging.ILogger)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (configuration As IConfiguration, Optional httpClient As HttpClient = Nothing, Optional logger As ILogger = Nothing)" />
+      <MemberSignature Language="F#" Value="new Microsoft.Bot.Builder.Integration.AspNet.Core.CloudAdapter : Microsoft.Extensions.Configuration.IConfiguration * System.Net.Http.HttpClient * Microsoft.Extensions.Logging.ILogger -&gt; Microsoft.Bot.Builder.Integration.AspNet.Core.CloudAdapter" Usage="new Microsoft.Bot.Builder.Integration.AspNet.Core.CloudAdapter (configuration, httpClient, logger)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Integration.AspNet.Core</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="configuration" Type="Microsoft.Extensions.Configuration.IConfiguration" />
+        <Parameter Name="httpClient" Type="System.Net.Http.HttpClient" />
+        <Parameter Name="logger" Type="Microsoft.Extensions.Logging.ILogger" />
+      </Parameters>
+      <Docs>
+        <param name="configuration">A instância de configuração do aplicativo.</param>
+        <param name="httpClient">A implementação de HttpClient que esse adaptador deve usar.</param>
+        <param name="logger">A implementação de ILogger que esse adaptador deve usar.</param>
+        <summary>Inicializa uma nova instância da classe <see cref="T:Microsoft.Bot.Builder.Integration.AspNet.Core.CloudAdapter" />.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task ProcessAsync (Microsoft.AspNetCore.Http.HttpRequest httpRequest, Microsoft.AspNetCore.Http.HttpResponse httpResponse, Microsoft.Bot.Builder.IBot bot, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task ProcessAsync(class Microsoft.AspNetCore.Http.HttpRequest httpRequest, class Microsoft.AspNetCore.Http.HttpResponse httpResponse, class Microsoft.Bot.Builder.IBot bot, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Integration.AspNet.Core.CloudAdapter.ProcessAsync(Microsoft.AspNetCore.Http.HttpRequest,Microsoft.AspNetCore.Http.HttpResponse,Microsoft.Bot.Builder.IBot,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ProcessAsync (httpRequest As HttpRequest, httpResponse As HttpResponse, bot As IBot, Optional cancellationToken As CancellationToken = Nothing) As Task" />
+      <MemberSignature Language="F#" Value="abstract member ProcessAsync : Microsoft.AspNetCore.Http.HttpRequest * Microsoft.AspNetCore.Http.HttpResponse * Microsoft.Bot.Builder.IBot * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.ProcessAsync : Microsoft.AspNetCore.Http.HttpRequest * Microsoft.AspNetCore.Http.HttpResponse * Microsoft.Bot.Builder.IBot * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="cloudAdapter.ProcessAsync (httpRequest, httpResponse, bot, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:Microsoft.Bot.Builder.Integration.AspNet.Core.IBotFrameworkHttpAdapter.ProcessAsync(Microsoft.AspNetCore.Http.HttpRequest,Microsoft.AspNetCore.Http.HttpResponse,Microsoft.Bot.Builder.IBot,System.Threading.CancellationToken)</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Integration.AspNet.Core</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="httpRequest" Type="Microsoft.AspNetCore.Http.HttpRequest" />
+        <Parameter Name="httpResponse" Type="Microsoft.AspNetCore.Http.HttpResponse" />
+        <Parameter Name="bot" Type="Microsoft.Bot.Builder.IBot" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="httpRequest">To be added.</param>
+        <param name="httpResponse">To be added.</param>
+        <param name="bot">To be added.</param>
+        <param name="cancellationToken">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <inheritdoc />
+      </Docs>
+    </Member>
+  </Members>
+</Type>
