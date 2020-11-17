@@ -11,12 +11,12 @@ metadata:
   author: JonathanFingold
   ms.author: botcc
   ms.date: 07/13/2020
-  ms.openlocfilehash: 26c7386da8f7385b7cbe4d36923913bc067d543d
-  ms.sourcegitcommit: 7bf72623d9abf15e1444e8946535724f500643c3
+  ms.openlocfilehash: 3c1314591b4a0f5e60c9851125ec9291e6d639ae
+  ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
   ms.translationtype: HT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 08/12/2020
-  ms.locfileid: "88143405"
+  ms.lasthandoff: 11/13/2020
+  ms.locfileid: "94597368"
 highlightedContent:
   items:
   - title: 'Criar bots usando um designer visual: Bot Framework Composer'
@@ -52,9 +52,12 @@ conceptualContent:
     - url: dotnet/bot-builder-dotnet-sdk-quickstart.md
       itemType: quickstart
       text: Guia de Início Rápido
-    - url: v4sdk/bot-builder-tutorial-basic-deploy.md
+    - url: v4sdk/bot-builder-tutorial-create-basic-bot.md
       itemType: tutorial
-      text: Criar e implantar um bot
+      text: Criar um bot
+    - url: v4sdk/bot-builder-tutorial-deploy-basic-bot.md
+      itemType: tutorial
+      text: Implantar um bot
     - url: bot-service-manage-channels.md
       itemType: how-to-guide
       text: Conectar um bot aos canais

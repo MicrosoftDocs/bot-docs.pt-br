@@ -8,14 +8,14 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 09/15/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: bb539ca2b538de3fbbb109837687ef59a6467b04
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: d1f8c4f5fcf5c8343c1ef4ad964b510bb1a2a8b3
+ms.sourcegitcommit: c9b51583a9d7ead626585a9eb0d86db403a7f50a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94618129"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94679995"
 ---
-# <a name="event-driven-conversations-using-an-activity-handle"></a>Conversas controladas por eventos usando um identificador de atividade
+# <a name="event-driven-conversations-using-an-activity-handler"></a>Conversas controladas por evento usando um manipulador de atividade
 
 [!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 

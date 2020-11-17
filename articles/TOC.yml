@@ -18,9 +18,11 @@
       href: v4sdk/abs-quickstart.md
 - name: Tutoriais
   items:
-    - name: 1. Criar e implantar um bot básico
-      href: v4sdk/bot-builder-tutorial-basic-deploy.md
-    - name: 2. Adicionar o QnA Maker e reimplantar um bot
+    - name: 1. Criar um bot básico
+      href: v4sdk/bot-builder-tutorial-create-basic-bot.md
+    - name: 2. Implantar um bot básico
+      href: v4sdk/bot-builder-tutorial-deploy-basic-bot.md
+    - name: 3. Adicionar o QnA Maker e reimplantar um bot
       href: v4sdk/bot-builder-tutorial-add-qna.md
 - name: Exemplos
   items:
@@ -54,12 +56,16 @@
           href: v4sdk/bot-builder-basics.md
         - name: Gerenciar estado
           href: v4sdk/bot-builder-concept-state.md
+        - name: Conversas controladas por eventos
+          href: v4sdk/bot-activity-handler-concept.md
         - name: Biblioteca de diálogos
           href: v4sdk/bot-builder-concept-dialog.md
         - name: Diálogos em cascata
           href: v4sdk/bot-builder-concept-waterfall-dialogs.md
         - name: Middleware
           href: v4sdk/bot-builder-concept-middleware.md
+        - name: Entenda a estrutura de um echo bot
+          href: v4sdk/bot-builder-create-a-bot-project.md
     - name: Caixas de diálogo adaptáveis
       items:
         - name: Introdução aos diálogos adaptáveis
@@ -80,6 +86,8 @@
           href: v4sdk/bot-builder-concept-adaptive-dialog-interruptions.md
         - name: Como usar ativos declarativos em diálogos adaptáveis
           href: v4sdk/bot-builder-concept-adaptive-dialog-declarative.md
+        - name: Como fazer um treinamento cruzado dos seus modelos LUIS e QnA Maker
+          href: v4sdk/bot-builder-concept-cross-train.md
     - name: Gerenciar recursos do bot
       href: v4sdk/bot-file-basics.md
     - name: Como os bots do Microsoft Teams funcionam
@@ -182,6 +190,8 @@
               href: v4sdk/bot-builder-howto-handle-user-interrupts-adaptive.md
             - name: Criar um bot usando diálogos adaptáveis declarativos
               href: v4sdk/bot-builder-dialogs-declarative.md
+            - name: Realizar treinamento cruzado em um bot para usar LUIS e QnA Maker
+              href: v4sdk/bot-builder-howto-cross-train.md
         - name: Gravar diretamente no armazenamento
           href: v4sdk/bot-builder-howto-v4-storage.md
         - name: Implementar um armazenamento personalizado para seu bot
