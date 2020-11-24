@@ -1,5 +1,5 @@
 <Type Name="LanguagePolicy" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.LanguagePolicy">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="1453e5425e67b0f2fac3a33521521ae26da621e0" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94613628" /></Metadata><TypeSignature Language="C#" Value="public class LanguagePolicy : System.Collections.Generic.Dictionary&lt;string,string[]&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ab1cc1d5c56832491b19fd488516b3d8f0adcbb6" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95462770" /></Metadata><TypeSignature Language="C#" Value="public class LanguagePolicy : System.Collections.Generic.Dictionary&lt;string,string[]&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LanguagePolicy extends System.Collections.Generic.Dictionary`2&lt;string, string[]&gt;" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.LanguagePolicy" />
   <TypeSignature Language="VB.NET" Value="Public Class LanguagePolicy&#xA;Inherits Dictionary(Of String, String())" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Collections.Generic.Dictionary&lt;System.String,System.String[]&gt;</BaseTypeName>
@@ -38,6 +39,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -59,6 +61,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="defaultLanguage" Type="System.String[]">

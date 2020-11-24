@@ -1,5 +1,5 @@
 <Type Name="ParserErrorListener" FullName="AdaptiveExpressions.ParserErrorListener">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="a172e8d84e36c61dbff7f72e696f74dd56f19bad" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94601428" /></Metadata><TypeSignature Language="C#" Value="public class ParserErrorListener : Antlr4.Runtime.BaseErrorListener" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="497593e4f17868986d494e5fb5ef4a2b1ceec475" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95464920" /></Metadata><TypeSignature Language="C#" Value="public class ParserErrorListener : Antlr4.Runtime.BaseErrorListener" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ParserErrorListener extends Antlr4.Runtime.BaseErrorListener" />
   <TypeSignature Language="DocId" Value="T:AdaptiveExpressions.ParserErrorListener" />
   <TypeSignature Language="VB.NET" Value="Public Class ParserErrorListener&#xA;Inherits BaseErrorListener" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Antlr4.Runtime.BaseErrorListener</BaseTypeName>
@@ -32,6 +33,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -52,6 +54,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>AdaptiveExpressions.ParserErrorListener</ReturnType>
@@ -71,6 +74,7 @@
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>

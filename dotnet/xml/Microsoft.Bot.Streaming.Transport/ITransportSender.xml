@@ -1,5 +1,5 @@
 <Type Name="ITransportSender" FullName="Microsoft.Bot.Streaming.Transport.ITransportSender">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="933fcd4e7d2b761d92afae5be4e2fddd0ffaada4" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94596168" /></Metadata><TypeSignature Language="C#" Value="public interface ITransportSender : IDisposable, Microsoft.Bot.Streaming.Transport.ITransport" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7826be5a0063b1d936287b310d6b0d12cab151af" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95465130" /></Metadata><TypeSignature Language="C#" Value="public interface ITransportSender : IDisposable, Microsoft.Bot.Streaming.Transport.ITransport" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITransportSender implements class Microsoft.Bot.Streaming.Transport.ITransport, class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Streaming.Transport.ITransportSender" />
   <TypeSignature Language="VB.NET" Value="Public Interface ITransportSender&#xA;Implements IDisposable, ITransport" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces>
     <Interface>
@@ -39,6 +40,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Int32&gt;</ReturnType>

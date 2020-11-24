@@ -1,5 +1,5 @@
 <Type Name="CommonRegexBaseVisitor&lt;Result&gt;" FullName="CommonRegexBaseVisitor&lt;Result&gt;">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="926bb32dbf45cf20d421e771caf45820a763959d" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94617966" /></Metadata><TypeSignature Language="C#" Value="public class CommonRegexBaseVisitor&lt;Result&gt; : Antlr4.Runtime.Tree.AbstractParseTreeVisitor&lt;Result&gt;, Antlr4.Runtime.Tree.IParseTreeVisitor&lt;Result&gt;, ICommonRegexVisitor&lt;Result&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="70aef5c4d9c6a778fc1ab6d2430244e3251e7947" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95464770" /></Metadata><TypeSignature Language="C#" Value="public class CommonRegexBaseVisitor&lt;Result&gt; : Antlr4.Runtime.Tree.AbstractParseTreeVisitor&lt;Result&gt;, Antlr4.Runtime.Tree.IParseTreeVisitor&lt;Result&gt;, ICommonRegexVisitor&lt;Result&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CommonRegexBaseVisitor`1&lt;Result&gt; extends Antlr4.Runtime.Tree.AbstractParseTreeVisitor`1&lt;!Result&gt; implements class Antlr4.Runtime.Tree.IParseTreeVisitor`1&lt;!Result&gt;, ICommonRegexVisitor`1&lt;!Result&gt;" />
   <TypeSignature Language="DocId" Value="T:CommonRegexBaseVisitor`1" />
   <TypeSignature Language="VB.NET" Value="Public Class CommonRegexBaseVisitor(Of Result)&#xA;Inherits AbstractParseTreeVisitor(Of Result)&#xA;Implements ICommonRegexVisitor(Of Result), IParseTreeVisitor(Of Result)" />
@@ -7,6 +7,7 @@
   <AssemblyInfo>
     <AssemblyName>AdaptiveExpressions</AssemblyName>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <TypeParameters>
     <TypeParameter Name="Result" />
@@ -50,6 +51,7 @@
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -70,6 +72,7 @@
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -108,6 +111,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -146,6 +150,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -184,6 +189,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -222,6 +228,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -260,6 +267,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -298,6 +306,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -336,6 +345,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -374,6 +384,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -412,6 +423,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -450,6 +462,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -488,6 +501,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -526,6 +540,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -564,6 +579,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -602,6 +618,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -640,6 +657,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -678,6 +696,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -716,6 +735,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -754,6 +774,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -792,6 +813,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -830,6 +852,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -868,6 +891,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -906,6 +930,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -944,6 +969,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -982,6 +1008,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -1020,6 +1047,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -1058,6 +1086,7 @@ A implementação padrão retorna o resultado da chamada <see cref="M:Antlr4.Run
       <AssemblyInfo>
         <AssemblyName>AdaptiveExpressions</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>

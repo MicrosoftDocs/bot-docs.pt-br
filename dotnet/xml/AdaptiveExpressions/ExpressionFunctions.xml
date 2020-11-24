@@ -1,5 +1,5 @@
 <Type Name="ExpressionFunctions" FullName="AdaptiveExpressions.ExpressionFunctions">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="343609766eaa2d1ef8334a85638af2c11112db4d" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94598118" /></Metadata><TypeSignature Language="C#" Value="public static class ExpressionFunctions" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2e43e2751aa77acd6272c395e88f42c85b57c1da" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95463530" /></Metadata><TypeSignature Language="C#" Value="public static class ExpressionFunctions" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ExpressionFunctions extends System.Object" />
   <TypeSignature Language="DocId" Value="T:AdaptiveExpressions.ExpressionFunctions" />
   <TypeSignature Language="VB.NET" Value="Public Class ExpressionFunctions" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -39,6 +40,7 @@ Há alguns avaliadores nesse arquivo que usam um verificador chamado em tempo de
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,AdaptiveExpressions.ExpressionEvaluator&gt;</ReturnType>

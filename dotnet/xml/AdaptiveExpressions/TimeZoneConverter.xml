@@ -1,5 +1,5 @@
 <Type Name="TimeZoneConverter" FullName="AdaptiveExpressions.TimeZoneConverter">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="e6e6afd7624fd660d8160613da4f2adf39c51a6d" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94597968" /></Metadata><TypeSignature Language="C#" Value="public static class TimeZoneConverter" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6e3448f1523d925069552331c4c6c2a71f554387" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95464860" /></Metadata><TypeSignature Language="C#" Value="public static class TimeZoneConverter" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit TimeZoneConverter extends System.Object" />
   <TypeSignature Language="DocId" Value="T:AdaptiveExpressions.TimeZoneConverter" />
   <TypeSignature Language="VB.NET" Value="Public Class TimeZoneConverter" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -38,6 +39,7 @@ Consulte dicionário de banco de dados no arquivo WindowsIanaMapping.</summary>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -65,6 +67,7 @@ Consulte dicionário de banco de dados no arquivo WindowsIanaMapping.</summary>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>

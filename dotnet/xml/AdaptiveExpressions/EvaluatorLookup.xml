@@ -1,5 +1,5 @@
 <Type Name="EvaluatorLookup" FullName="AdaptiveExpressions.EvaluatorLookup">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="f91e11c1b7ded406d6137d7c94c071e0dea90ec9" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94601518" /></Metadata><TypeSignature Language="C#" Value="public delegate AdaptiveExpressions.ExpressionEvaluator EvaluatorLookup(string type);" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="cd0e4650c9378f088843a7fba6f7490fa99c3314" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95463560" /></Metadata><TypeSignature Language="C#" Value="public delegate AdaptiveExpressions.ExpressionEvaluator EvaluatorLookup(string type);" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed EvaluatorLookup extends System.MulticastDelegate" />
   <TypeSignature Language="DocId" Value="T:AdaptiveExpressions.EvaluatorLookup" />
   <TypeSignature Language="VB.NET" Value="Public Delegate Function EvaluatorLookup(type As String) As ExpressionEvaluator " />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Delegate</BaseTypeName>

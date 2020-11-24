@@ -1,5 +1,5 @@
 <Type Name="TwilioAdapter" FullName="Microsoft.Bot.Builder.Adapters.Twilio.TwilioAdapter">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="30f93f085df87ed47ebd017e00749fee3bb93442" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94600218" /></Metadata><TypeSignature Language="C#" Value="public class TwilioAdapter : Microsoft.Bot.Builder.BotAdapter, Microsoft.Bot.Builder.Integration.AspNet.Core.IBotFrameworkHttpAdapter" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a0c9c500653d8730032f9d38c5ee302361e59d4c" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95463000" /></Metadata><TypeSignature Language="C#" Value="public class TwilioAdapter : Microsoft.Bot.Builder.BotAdapter, Microsoft.Bot.Builder.Integration.AspNet.Core.IBotFrameworkHttpAdapter" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TwilioAdapter extends Microsoft.Bot.Builder.BotAdapter implements class Microsoft.Bot.Builder.Integration.AspNet.Core.IBotFrameworkHttpAdapter" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Adapters.Twilio.TwilioAdapter" />
   <TypeSignature Language="VB.NET" Value="Public Class TwilioAdapter&#xA;Inherits BotAdapter&#xA;Implements IBotFrameworkHttpAdapter" />
@@ -9,6 +9,7 @@
     <AssemblyVersion>4.9.2.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.BotAdapter</BaseTypeName>
@@ -34,6 +35,7 @@
         <AssemblyName>Microsoft.Bot.Builder.Adapters.Twilio</AssemblyName>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="twilioClient" Type="Microsoft.Bot.Builder.Adapters.Twilio.TwilioClientWrapper" />
@@ -59,6 +61,7 @@
         <AssemblyName>Microsoft.Bot.Builder.Adapters.Twilio</AssemblyName>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="configuration" Type="Microsoft.Extensions.Configuration.IConfiguration" />
@@ -87,6 +90,7 @@ TwilioValidationUrl: a URL de validação para solicitações de entrada.</remar
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -120,6 +124,7 @@ A maioria dos canais exige que um usuário inicie uma conversa com um bot para q
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -156,6 +161,7 @@ A maioria _channels requer que um usuário inicialize uma conversa com um bot pa
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -191,6 +197,7 @@ Twilio SMS não dá suporte a essa operação.</summary>
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -224,6 +231,7 @@ Twilio SMS não dá suporte a essa operação.</summary>
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Schema.ResourceResponse[]&gt;</ReturnType>
@@ -255,6 +263,7 @@ Twilio SMS não dá suporte a essa operação.</summary>
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Schema.ResourceResponse&gt;</ReturnType>
