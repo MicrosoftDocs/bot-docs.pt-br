@@ -5,14 +5,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
-ms.date: 07/30/2020
+ms.date: 11/12/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 9e5e3c22e6967a00255da1d5d6638543e90abb34
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 85ddb738736d2da721a938384ce66c8de24af09c
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414706"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95456310"
 ---
 # <a name="bot-channels-registration"></a>Registro de canais do bot
 
@@ -32,14 +32,17 @@ Os bots criados usando o portal do Azure ou a CLI (interface de linha de comando
 1. Em seu navegador, navegue até o [portal do Azure](https://ms.portal.azure.com). Se você não tiver uma assinatura, poderá se inscrever para obter uma <a href="https://azure.microsoft.com/free/" target="_blank">conta gratuita</a>.
 
 1. No painel esquerdo, clique em **criar um recurso**.
-1. Na caixa de seleção do painel direito, digite *bot*. Na lista suspensa, selecione o **registro de canais de bot**.
+1. Na barra de pesquisa superior central, digite *bot*. Na lista suspensa, selecione o **registro de canais de bot**.
+
+    ![criar registro de bot](media/azure-bot-quickstarts/bot-channels-registration-create.png)
+
 1. Selecione o botão **Criar**.
 1. No formulário de **registro de canais de bot** , forneça as informações solicitadas sobre o bot conforme especificado na tabela a seguir.
 
     > [!div class="mx-tdBreakAll"]
     >   |Configuração |Valor sugerido|Descrição|
     >   |---|---|--|
-    >   |**Nome do bot** <img width="200px"/>|\<Your bot display name><img width="200px"/>|Atribua o nome de exibição para o bot que aparece em canais e diretórios. Você pode alterar esse nome a qualquer momento.|
+    >   |**Nome do bot** <img width="200px"/>|\<Your bot's handle><img width="200px"/>|O identificador de *bot* é um identificador exclusivo para o bot. Você pode escolher um nome de exibição diferente para o bot na folha *configurações* depois que o bot tiver sido criado.|
     >   |**Assinatura**|\<Your subscription>|Selecione a assinatura do Azure que deseja usar.|
     >   |**Grupo de recursos**|\<Your resource group name>|Crie um novo [grupo de recursos](/azure/azure-resource-manager/resource-group-overview#resource-groups) ou selecione um existente.|
     >   |**Localidade**|Oeste dos EUA|Escolha a localização geográfica do seu grupo de recursos. Geralmente, é melhor escolher um local perto de você. O local não pode ser alterado depois que o grupo de recursos é criado.|

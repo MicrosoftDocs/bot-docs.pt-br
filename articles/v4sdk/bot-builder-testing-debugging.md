@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f0b76623d5ce01b2c53a25d6582405eba306a0ff
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 3d9ffab94f1bb7faaa70434dad6afc7f4aba45a2
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92413645"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95455890"
 ---
 # <a name="debugging-guidelines"></a>Diretrizes de depuração
 
@@ -35,9 +35,9 @@ A depuração do bot funciona da mesma forma que outros aplicativos multi-thread
 
 Os bots seguem um paradigma de programação controlada por evento, que poderá ser difícil de ser racionalizado se você não estiver familiarizado com ele. A ideia de o bot ser sem estado, multi-thread e lidar com chamadas assíncronas/await pode resultar em bugs inesperados. Embora a depuração do bot funcione de modo semelhante a outros aplicativos multithread, abordaremos algumas sugestões, ferramentas e recursos para ajudar.
 
-## <a name="understanding-bot-activities-with-the-emulator"></a>Noções básicas de atividades do bot com o emulador
+## <a name="understanding-bot-activities-with-the-emulator"></a>Compreendendo as atividades de bot com o emulador
 
-O bot lida com diferentes tipos de [atividades](bot-builder-basics.md#the-activity-processing-stack), além da atividade normal de _mensagem_. O uso do [emulador](../bot-service-debug-emulator.md) mostrará a você quais são essas atividades, quando elas ocorrem e as informações que elas contêm. A compreensão dessas atividades ajudará você a codificar o bot com eficiência e permite que você verifique se as atividades que o bot está enviando e recebendo são as esperadas.
+O bot lida com diferentes tipos de [atividades](bot-builder-basics.md#the-activity-processing-stack), além da atividade normal de _mensagem_. O uso do [emulador](../bot-service-debug-emulator.md) mostrará quais são essas atividades, quando elas acontecem e quais informações elas contêm. A compreensão dessas atividades ajudará você a codificar o bot com eficiência e permite que você verifique se as atividades que o bot está enviando e recebendo são as esperadas.
 
 ## <a name="saving-and-retrieving-user-interactions-with-transcripts"></a>Salvar e recuperar as interações do usuário com transcrições
 
@@ -93,6 +93,6 @@ O método _enviar atividade_ e seus manipuladores apresentam um único problema.
 
 * [Depurando no Visual Studio](https://docs.microsoft.com/visualstudio/debugger/index)
 * [Depurando, rastreando e criando um perfil](https://docs.microsoft.com/dotnet/framework/debug-trace-profile/) para o Bot Framework
-* Usar o [ConditionalAttribute](https://docs.microsoft.com/dotnet/api/system.diagnostics.conditionalattribute?view=netcore-2.0) para métodos que você não deseja incluir no código de produção
+* Usar o [ConditionalAttribute](https://docs.microsoft.com/dotnet/api/system.diagnostics.conditionalattribute) para métodos que você não deseja incluir no código de produção
 * Usar ferramentas como o [Fiddler](https://www.telerik.com/fiddler) para ver o tráfego de rede
 * [Solucionar problemas gerais](../bot-service-troubleshoot-bot-configuration.md) e outros artigos de solução de problemas nesta seção

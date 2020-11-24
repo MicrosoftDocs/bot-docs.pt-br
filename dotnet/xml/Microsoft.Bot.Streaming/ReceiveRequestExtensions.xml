@@ -1,5 +1,5 @@
 <Type Name="ReceiveRequestExtensions" FullName="Microsoft.Bot.Streaming.ReceiveRequestExtensions">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="13fdea2cd4e361e24a6b246f88c8eba243ab7b4c" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94597378" /></Metadata><TypeSignature Language="C#" Value="public static class ReceiveRequestExtensions" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="04a121fd4ab9d09d7df6e2a7a1ee56f318f866fc" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95457750" /></Metadata><TypeSignature Language="C#" Value="public static class ReceiveRequestExtensions" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ReceiveRequestExtensions extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Streaming.ReceiveRequestExtensions" />
   <TypeSignature Language="VB.NET" Value="Public Module ReceiveRequestExtensions" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -35,6 +36,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>T</ReturnType>
@@ -64,6 +66,7 @@ Caso contrário, uma instância padrão do tipo T.</returns>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;T&gt;</ReturnType>
@@ -97,6 +100,7 @@ Caso contrário, uma instância padrão do tipo T.</returns>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -122,6 +126,7 @@ Caso contrário, NULL.</returns>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Streaming</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.String&gt;</ReturnType>

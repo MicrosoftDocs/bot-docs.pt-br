@@ -1,5 +1,5 @@
 <Type Name="HasPendingActionsFunction" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Functions.HasPendingActionsFunction">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="e7f589cf261123d65acb9b62757946b3a6338980" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94613879" /></Metadata><TypeSignature Language="C#" Value="public class HasPendingActionsFunction : AdaptiveExpressions.ExpressionEvaluator" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="39f9ebc45e6fc23dde894a6d1d2494db2b4365ec" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95457260" /></Metadata><TypeSignature Language="C#" Value="public class HasPendingActionsFunction : AdaptiveExpressions.ExpressionEvaluator" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HasPendingActionsFunction extends AdaptiveExpressions.ExpressionEvaluator" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Functions.HasPendingActionsFunction" />
   <TypeSignature Language="VB.NET" Value="Public Class HasPendingActionsFunction&#xA;Inherits ExpressionEvaluator" />
@@ -9,6 +9,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>AdaptiveExpressions.ExpressionEvaluator</BaseTypeName>
@@ -30,6 +31,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -49,6 +51,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>

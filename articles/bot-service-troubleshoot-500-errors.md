@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/19/2019
-ms.openlocfilehash: 200637baf61fe2655d4cceac784d94f245328a53
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 92894ca049642c15dfda88d0d4330559d9ceba17
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416658"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95456110"
 ---
 # <a name="troubleshoot-http-500-errors"></a>Solucionar erros de HTTP 500
 
@@ -75,7 +75,7 @@ Se você está recebendo 500 erros e não há nenhum outro evento no Application
 
 ### <a name="ensure-bot-runs-locally"></a>Certificar-se de que o bot é executado localmente
 
-Verifique se o seu bot é executado localmente primeiro com o emulador.
+Verifique se o bot é executado localmente primeiro com o emulador.
 
 ### <a name="ensure-configuration-files-are-being-copied-net-only"></a>Certificar-se de que os arquivos de configuração estão sendo copiados (.NET)
 

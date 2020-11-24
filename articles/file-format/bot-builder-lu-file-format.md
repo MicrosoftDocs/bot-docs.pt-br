@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: ddfb2cfa37fccafde79d7464d5ba8ea23a93a8e7
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: cdefa9a9cc4300e4627ef0775edf625fe5a33428
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94596719"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95455970"
 ---
 # <a name="lu-file-format"></a>Formato de arquivo .lu
 
@@ -67,12 +67,12 @@ Cada seção é identificada pela notação `#<intent name>`. Observe que as lin
 
 ## <a name="entity"></a>Entidade
 
-Uma [entidade][3] representa informações detalhadas que são relevantes em um enunciado. Por exemplo, no enunciado _Reservar uma passagem para Paris_ , _Paris_ é uma localização.
+Uma [entidade][3] representa informações detalhadas que são relevantes em um enunciado. Por exemplo, no enunciado _Reservar uma passagem para Paris_, _Paris_ é uma localização.
 
 |Exemplo de enunciado do usuário|Entidades|
 |--------------------------|----------|
 |"Reservar um vôo para _ * Seattle * *?"|Seattle|
-|"Quando a sua loja é **aberta** ?"|Abrir|
+|"Quando a sua loja é **aberta**?"|Abrir|
 |"Agendar uma reunião às **13h** com **Bob** na distribuição"|13h, Bob|
 
 ### <a name="definition"></a>Definição
@@ -199,12 +199,12 @@ Esta é uma definição de exemplo mais complexa:
 
 ```lu
 # setThermostat
-> This utterance labels ‘thermostat to 72’ as composite entity deviceTemperature
+> This utterance labels "thermostat to 72" as a composite entity `deviceTemperature`.
     - Please set {deviceTemperature = thermostat to 72}
-> This is an example utterance that labels ‘owen’ as customDevice (ml entity) and wraps ‘owen to 72’ with the ‘deviceTemperature’ composite entity
+> This is an example utterance that labels "owen" as a customDevice (ml entity) and wraps "owen to 72" with the `deviceTemperature` composite entity.
     - Set {deviceTemperature = {customDevice = owen} to 72}
 
-> Define a composite entity ‘deviceTemperature’ that has device (list entity), customDevice (ml entity), temperature (prebuilt entity) as children
+> Defines a composite entity `deviceTemperature` that has device (list entity), customDevice (ml entity), and temperature (prebuilt entity) as children.
 
 @ composite deviceTemperature = [device, customDevice, temperature]
 
@@ -337,7 +337,7 @@ Por exemplo, a seguinte definição será tratada como um padrão com `alarmTime
 - delete the {alarmTime} alarm
 ```
 
-Este exemplo será tratado como um enunciado, pois tem um valor rotulado _7h_ :
+Este exemplo será tratado como um enunciado, pois tem um valor rotulado _7h_:
 
 ```lu
 # DeleteAlarm
@@ -567,7 +567,7 @@ Para ajudar a rotular as entidades filho com facilidade para os tipos de entidad
 
 Inclua informações de configuração do aplicativo LUIS ou da base de dados de conhecimento do QnA Maker no arquivo .lu. Isso ajudará a orientar o analisador a processar o conteúdo do LU corretamente.
 
-Veja como definir informações de configuração usando **>! #** :
+Veja como definir informações de configuração usando **>! #**:
 
 ```lu
 > !# @<property> = <value>

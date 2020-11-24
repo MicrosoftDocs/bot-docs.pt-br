@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 2/7/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 0ddeaa7524ad6702d5ddde99e7a1afb9cab7ca24
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: ebc7c891976eaac8af08a76718ae901f2901f57d
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92413835"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95456000"
 ---
 # <a name="send-welcome-message-to-users"></a>Enviar mensagem de boas-vinda aos usuários
 
@@ -227,7 +227,7 @@ Conforme mencionado acima, algumas entradas do usuário geram um *cartão Hero* 
 Baixe e instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator-readme) mais recente
 
 1. Execute o exemplo localmente em seu computador. Se você precisar de instruções, veja [Exemplo de C#](https://aka.ms/welcome-user-mvc) ou [Exemplo de JS](https://aka.ms/bot-welcome-sample-js) no arquivo LEIAME.
-1. Use o emulador para testar o bot, conforme mostrado abaixo.
+1. Use o Emulador para testar o bot, conforme mostrado abaixo.
 
 ![test welcome bot sample](media/welcome-user-emulator-1.png)
 
@@ -243,5 +243,3 @@ Saiba mais sobre várias respostas de mídia em [Adicionar mídia a mensagens](.
 
 > [!div class="nextstepaction"]
 > [Coletar a entrada do usuário](bot-builder-prompts.md)
-
-

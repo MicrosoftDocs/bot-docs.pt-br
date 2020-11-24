@@ -9,18 +9,18 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 08/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 94bb6b55d254e193b710a8bcf5e534f3157c9248
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: b5bb495237d0a6a9ad3ed83fe95d0a5f18e23e55
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414136"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95456080"
 ---
 # <a name="write-directly-to-storage"></a>Gravar diretamente no armazenamento
 
 [!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
-Você pode ler e gravar diretamente em seu objeto de armazenamento sem usar middleware ou objeto de contexto. Isso pode ser apropriado para dados que seu bot usa para preservar a conversa ou dados originados de uma fonte fora do fluxo de conversa do bot. Nesse modelo de armazenamento de dados, os dados são lidos diretamente do armazenamento em vez de usar um gerenciador de estado. Os exemplos de código neste artigo mostram como ler e gravar dados no armazenamento usando **memória**, **Cosmos DB**, **blob do Azure**e armazenamento de **transcrição de blob do Azure** .
+Você pode ler e gravar diretamente em seu objeto de armazenamento sem usar middleware ou objeto de contexto. Isso pode ser apropriado para dados que seu bot usa para preservar a conversa ou dados originados de uma fonte fora do fluxo de conversa do bot. Nesse modelo de armazenamento de dados, os dados são lidos diretamente do armazenamento em vez de usar um gerenciador de estado. Os exemplos de código neste artigo mostram como ler e gravar dados no armazenamento usando **memória**, **Cosmos DB**, **blob do Azure** e armazenamento de **transcrição de blob do Azure** .
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -308,9 +308,9 @@ Execute o bot localmente.
 
 ### <a name="start-the-emulator-and-connect-your-bot"></a>Iniciar o emulador e conectar seu bot
 
-Instale o Bot Framework [Emulator](https://aka.ms/bot-framework-emulator-readme), depois inicie o emulador e conecte-se ao bot no emulador:
+Instale o [emulador](https://aka.ms/bot-framework-emulator-readme) do bot Framework em seguida, inicie o emulador e conecte-se ao bot no emulador:
 
-1. Clique no link **Criar nova configuração de bot** na guia “Boas-vindas” do emulador.
+1. Clique no link **criar nova configuração de bot** na guia "bem-vindo" do emulador.
 2. Preencha os campos para se conectar ao seu bot considerando as informações na página da Web exibida ao iniciar o bot.
 
 ### <a name="interact-with-your-bot"></a>Interagir com o bot
@@ -353,7 +353,7 @@ A criação da conta leva alguns minutos. Aguarde até que o portal exiba a pág
 ### <a name="add-a-database"></a>Adicionar um banco de dados
 
 >[!IMPORTANT]
-> Ao contrário do _armazenamento de Cosmos DB_herdado, que foi preterido, o _Cosmos DB armazenamento particionado_ não cria automaticamente um banco de dados dentro de sua conta de Cosmos DB.
+> Ao contrário do _armazenamento de Cosmos DB_ herdado, que foi preterido, o _Cosmos DB armazenamento particionado_ não cria automaticamente um banco de dados dentro de sua conta de Cosmos DB.
 
 1. Navegue até a página **Data Explorer** em sua conta do Cosmos DB recém-criada e, em seguida, escolha **Criar Banco de Dados** na caixa suspensa ao lado do botão **Criar Contêiner**. Um painel será aberto no lado direito da janela, no qual você poderá inserir os detalhes do novo banco de dados.
 
@@ -557,9 +557,9 @@ Execute o bot localmente.
 
 ## <a name="test-your-cosmos-db-bot-with-bot-framework-emulator"></a>Testar o bot de Cosmos DB com o emulador do bot Framework
 
-Agora inicie o Bot Framework Emulator e conecte-se ao seu bot:
+Agora inicie o emulador do bot Framework e conecte-se ao bot:
 
-1. Clique no link **Criar nova configuração de bot** na guia “Boas-vindas” do emulador.
+1. Clique no link **criar nova configuração de bot** na guia "bem-vindo" do emulador.
 2. Preencha os campos para se conectar ao seu bot considerando as informações na página da Web exibida ao iniciar o bot.
 
 ## <a name="interact-with-your-cosmos-db-bot"></a>Interagir com o bot de Cosmos DB
@@ -746,9 +746,9 @@ Execute o bot localmente.
 
 ## <a name="start-the-emulator-and-connect-your-blob-storage-bot"></a>Iniciar o emulador e conectar o bot do armazenamento de BLOBs
 
-Em seguida, inicie o emulador e, em seguida, conecte-se ao seu bot no emulador:
+Em seguida, inicie o emulador e conecte-se ao bot no emulador:
 
-1. Clique no link **Criar nova configuração de bot** na guia “Boas-vindas” do emulador.
+1. Clique no link **criar nova configuração de bot** na guia "bem-vindo" do emulador.
 2. Preencha os campos para se conectar ao seu bot considerando as informações na página da Web exibida ao iniciar o bot.
 
 ## <a name="interact-with-your-blob-storage-bot"></a>Interagir com o bot do armazenamento de BLOBs
@@ -807,7 +807,7 @@ public class EchoBot : ActivityHandler
 
 ### <a name="store-user-conversations-in-azure-blob-transcripts"></a>Armazenar conversas do usuário em transcrições do Blob do Azure
 
-Quando um contêiner de blob fica disponível para armazenar transcrições, você pode começar a armazenar as conversas dos usuários com seu bot. Essas conversas poderão ser usadas posteriormente como uma ferramenta de depuração para ver como os usuários interagem com o bot. Cada _Reiniciar conversa_ do emulador inicia a criação de uma nova lista de conversa de transcrição. O código a seguir preserva as entradas de conversas do usuário em um arquivo de transcrição armazenado.
+Quando um contêiner de blob fica disponível para armazenar transcrições, você pode começar a armazenar as conversas dos usuários com seu bot. Essas conversas poderão ser usadas posteriormente como uma ferramenta de depuração para ver como os usuários interagem com o bot. Cada _conversa de reinicialização_ do emulador inicia a criação de uma nova lista de conversa de transcrição. O código a seguir preserva as entradas de conversas do usuário em um arquivo de transcrição armazenado.
 
 - A transcrição atual é salva usando `LogActivityAsync`.
 - Transcrições salvas são recuperadas usando `ListTranscriptsAsync`.

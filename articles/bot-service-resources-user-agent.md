@@ -7,18 +7,18 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: f5de02c83a7480cfcbf323475369c13094bd33d8
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: ee30161256539a12d5efd6bcf634c7493745bd6b
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416670"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95456200"
 ---
 # <a name="bot-framework-user-agent-requests"></a>Solicitações de agente do usuário do Bot Framework
 
 [!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
-Se você está lendo esta mensagem, provavelmente recebeu uma solicitação de um Microsoft Bot Framework Service. Este guia irá ajudá-lo a compreender a natureza dessas solicitações e fornecerá as etapas para pará-las, se desejado.
+Se você estiver lendo esta mensagem, talvez tenha recebido uma solicitação de um serviço do Microsoft bot Framework. Este guia irá ajudá-lo a compreender a natureza dessas solicitações e fornecerá as etapas para pará-las, se desejado.
 
 Se você recebeu uma solicitação do serviço, provavelmente havia um cabeçalho do agente do usuário formatado de forma semelhante à cadeia de caracteres a seguir:
 
@@ -26,13 +26,13 @@ Se você recebeu uma solicitação do serviço, provavelmente havia um cabeçalh
 
 A parte mais importante dessa cadeia de caracteres é o identificador **Microsoft-BotFramework**, que é usado pelo Microsoft Bot Framework, uma coleção de ferramentas e serviços que permite aos desenvolvedores de software independentes criar e operar seus próprios bots.
 
-Se você é um desenvolvedor de bot, talvez já saiba por que essas solicitações estão sendo direcionadas ao serviço. Se não, continue lendo para saber mais.
+Se você for um desenvolvedor de bot, talvez já saiba por que essas solicitações estão sendo direcionadas para seu serviço. Se não, continue lendo para saber mais.
 
 ## <a name="why-is-microsoft-contacting-my-service"></a>Por que a Microsoft está contatando meu serviço?
 
 O Bot Framework conecta usuários em serviços de chat, como o Facebook Messenger, aos bots, que são servidores da Web com APIs REST em execução em pontos de extremidade acessíveis pela Internet. As chamadas HTTP para bots (também denominadas como chamadas webhook) são enviadas apenas para URLs especificadas por um desenvolvedor de bots que registrou-se no portal do desenvolvedor do Bot Framework.
 
-Se você estiver recebendo solicitações não solicitadas dos serviços do Bot Framework para o serviço Web, é provável que isso ocorra porque um desenvolvedor digitou a URL acidentalmente ou conscientemente como o retorno de chamada webhook para o bot.
+Se você estiver recebendo solicitações não solicitadas dos serviços do bot Framework para seu serviço Web, é provável que um desenvolvedor tenha inserido acidentalmente ou sabendo sua URL como o retorno de chamada de webhook para seu bot.
 
 ## <a name="to-stop-these-requests"></a>Para parar essas solicitações
 

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 8/13/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: ac71f7434f18336fb91776ac610a8b02c9bd4730
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: cc4283d15ca92f87c38cd246ece322b10a2dda24
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416820"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95457680"
 ---
 # <a name="use-custom-functions-in-language-generation"></a>Usar funções personalizadas na geração de linguagem
 

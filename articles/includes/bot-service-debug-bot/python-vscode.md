@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 54a254670346080bc20065d4b3f7fd7270497391
-ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
+ms.openlocfilehash: fa2156a9f35db7a450c02f35bc477415a9185093
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85073629"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95456772"
 ---
 ### <a name="to-set-breakpoints-in-visual-studio-code"></a>Para definir pontos de interrupção no Visual Studio Code
 
@@ -17,11 +17,11 @@ No Visual Studio Code, você pode definir pontos de interrupção e executar o b
 1. Na barra de menus, clique em **Debug** e clique em **Iniciar depuração**.
 1. Selecione **Arquivo do Python** para depurar o arquivo selecionado.
 
-   ![Definir pontos de interrupção](~/media/bot-service-debug-bot/bot-debug-python-breakpoints.png)
+   ![Definir pontos de interrupção do Python no VS Code](~/media/bot-service-debug-bot/bot-debug-python-breakpoints.png)
 
 1. Inicie o Bot Framework Emulator e conecte-se ao bot, conforme descrito no artigo [Depurar com o Bot Framework Emulator](https://docs.microsoft.com/azure/bot-service/bot-service-debug-emulator).
-1. Do emulador, envie uma mensagem ao bot (por exemplo: envie a mensagem "Olá"). A execução será interrompida na linha onde você colocar o ponto de interrupção.
+1. No emulador, envie uma mensagem de bot (por exemplo, envie a mensagem "Hi"). A execução será interrompida na linha onde você colocar o ponto de interrupção.
 
-   ![Depurar no VS Code](~/media/bot-service-debug-bot/bot-debug-python-breakpoint-caught.png)
+   ![Depurar Python no VS Code](~/media/bot-service-debug-bot/bot-debug-python-breakpoint-caught.png)
 
 Para obter mais informações, confira [Depurar código em Python](https://aka.ms/bot-debug-python).

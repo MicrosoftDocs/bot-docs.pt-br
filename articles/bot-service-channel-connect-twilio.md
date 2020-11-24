@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 10/9/2018
-ms.openlocfilehash: 1187ba0d6db14155018c00fc415c96e2c974c093
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: cfbabb0d2497d2712cf5a6d19c31082311bfd1b8
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92415559"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95456930"
 ---
 # <a name="connect-a-bot-to-twilio"></a>Conectar um bot ao Twilio
 
@@ -103,7 +103,7 @@ Adicione o pacote NuGet [Microsoft.Bot.Builder.Adapters.Twilio](https://www.nuge
 
 #### <a name="create-a-twilio-adapter-class"></a>Criar uma classe de adaptador do Twilio
 
-Crie uma nova classe que herde da classe **_TwilioAdapter_*_. Essa classe atuará como adaptador para o canal twilio e incluirá recursos de tratamento de erros (semelhante à classe _*_BotFrameworkAdapterWithErrorHandler_*_ já no exemplo, usada para lidar com outras solicitações do serviço de bot do Azure).
+Crie uma nova classe que herde da classe **_TwilioAdapter_* _. Essa classe atuará como adaptador para o canal twilio e incluirá recursos de tratamento de erros (semelhante à classe _*_BotFrameworkAdapterWithErrorHandler_*_ já no exemplo, usada para lidar com outras solicitações do serviço de bot do Azure).
 
 ```csharp
 public class TwilioAdapterWithErrorHandler : TwilioAdapter
@@ -171,7 +171,7 @@ public void ConfigureServices(IServiceCollection services)
 {
     services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-    // Create the default Bot Framework Adapter (used for Azure Bot Service channels and emulator).
+    // Create the default Bot Framework Adapter (used for Azure Bot Service channels and Emulator).
     services.AddSingleton<IBotFrameworkHttpAdapter, BotFrameworkAdapterWithErrorHandler>();
 
     // Create the Twilio Adapter
@@ -189,7 +189,7 @@ Agora que você conectou o adaptador em seu projeto de bot, é necessário ident
 Para concluir esta etapa, [implante o bot no Azure](https://aka.ms/bot-builder-deploy-az-cli) e anote a URL do bot implantado.
 
 > [!NOTE]
-> Se você não estiver pronto para implantar o bot no Azure ou desejar depurar o bot ao usar o adaptador do Twilio, poderá usar uma ferramenta como a [ngrok](https://www.ngrok.com) (que você provavelmente já terá instalada se tiver usado o emulador do Bot Framework anteriormente) para fazer um túnel para o bot em execução localmente e fornecer uma URL acessível publicamente para isso. 
+> Se você não estiver pronto para implantar o bot no Azure ou desejar depurar o bot ao usar o adaptador twilio, poderá usar uma ferramenta como [ngrok](https://www.ngrok.com) (que provavelmente já terá instalado se você tiver usado o emulador do bot Framework anteriormente) para realizar o túnel para o bot em execução localmente e fornecer uma URL acessível publicamente para isso. 
 > 
 > Se desejar criar um túnel ngrok e obter uma URL para o bot, use o comando a seguir em uma janela do terminal (isso pressupõe que o bot local esteja em execução na porta 3978; altere os números de porta no comando se o bot não estiver).
 > 

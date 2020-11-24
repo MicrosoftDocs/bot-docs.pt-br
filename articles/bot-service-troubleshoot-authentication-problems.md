@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/25/2020
-ms.openlocfilehash: d4aca74a5c108b6747afc66b29a7bed8c47acc68
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 362e38b308eafa69192fe46de2fcdc7bd15f79a0
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416585"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95456050"
 ---
 # <a name="troubleshooting-bot-framework-authentication"></a>Solucionar problemas de autenticação do Bot Framework
 
@@ -68,22 +68,24 @@ Em seguida, teste o bot usando o localhost usando o Emulador do Bot Framework.
 
 1. Inicie o bot no localhost.
 2. Instale o Emulador do Bot Framework.
-3. Conecte-se ao seu bot usando o emulador.
-    - Digite `http://localhost:port-number/api/messages` na barra de endereços do emulador, em que **port-number** corresponde ao número da porta mostrado no navegador em que seu aplicativo está sendo executado.
+3. Conecte-se ao bot usando o emulador.
+    - Digite `http://localhost:port-number/api/messages` na barra de endereços do emulador, em que **Port-Number** corresponde ao número da porta mostrado no navegador em que o aplicativo está em execução.
     - Verifique se os campos **ID do aplicativo da Microsoft** e **Senha do aplicativo da Microsoft** estão em branco.
     - Clique em **Conectar**.
-4. Para testar a conectividade com seu bot, digite algum texto no emulador e pressione Enter.
+4. Para testar a conectividade com o bot, digite um texto no emulador e pressione Enter.
 
 Se o bot responder à entrada e não houver erros na janela do chat, você acabou de verificar que o bot fica acessível e funcional no localhost quando a segurança está desabilitada. Vá para a [Etapa 2](#step-2).
 
 Se um ou mais erros forem indicados na janela de chat, clique nos erros para obter detalhes. Entre os problemas comuns, há:
 
-* As configurações do emulador especificam um ponto de extremidade incorreto do bot. Verifique se foram incluídos o número da porta apropriada na URL e o caminho apropriado no final da URL (por exemplo, `/api/messages`).
-* As configurações do emulador especificam um ponto de extremidade do bot que começa com `https`. No localhost, o ponto de extremidade deve começar com `http`.
-* As configurações do emulador especificam um valor para o campo **ID do aplicativo Microsoft** e/ou o campo **Senha do aplicativo Microsoft**. Ambos os campos devem ficar vazios.
-* A segurança não foi desabilitada para o bot. [Verifique](#disable-security-localhost) se o bot não especifica um valor para a ID ou a senha do aplicativo.
+- As configurações do emulador especificam um ponto de extremidade incorreto para o bot. Verifique se foram incluídos o número da porta apropriada na URL e o caminho apropriado no final da URL (por exemplo, `/api/messages`).
+- As configurações do emulador especificam um ponto de extremidade de bot que começa com `https` . No localhost, o ponto de extremidade deve começar com `http`.
+- As configurações do emulador especificam um valor para o campo **ID do aplicativo da Microsoft** e/ou o campo senha do **aplicativo Microsoft** . Ambos os campos devem ficar vazios.
+- A segurança não foi desabilitada para o bot. [Verifique](#disable-security-localhost) se o bot não especifica um valor para a ID ou a senha do aplicativo.
 
-## <a name="step-2-verify-your-bots-app-id-and-password"></a><a id="step-2"></a> Etapa 2: verificar a ID e a senha do aplicativo do bot
+<a id="step-2"></a>
+
+## <a name="step-2-verify-your-bots-app-id-and-password"></a> Etapa 2: verificar a ID e a senha do aplicativo do bot
 
 Nesta etapa, você verificará se a ID e a senha do aplicativo e que seu bot usará para autenticação são válidas. (Caso não saiba quais são esses valores, [obtenha-os](#app-id-and-password) agora.)
 
@@ -148,21 +150,21 @@ Em seguida, teste o bot usando o localhost usando o Emulador do Bot Framework.
 
 1. Inicie o bot no localhost.
 2. Instale o Emulador do Bot Framework.
-3. Conecte-se ao seu bot usando o emulador.
-    - Digite `http://localhost:port-number/api/messages` na barra de endereços do emulador, em que **port-number** corresponde ao número da porta mostrado no navegador em que seu aplicativo está sendo executado.
+3. Conecte-se ao bot usando o emulador.
+    - Digite `http://localhost:port-number/api/messages` na barra de endereços do emulador, em que **Port-Number** corresponde ao número da porta mostrado no navegador em que o aplicativo está em execução.
     - Insira a ID do aplicativo do seu bot no campo **ID do aplicativo Microsoft**.
     - Insira a senha do aplicativo do seu bot no campo **Senha do aplicativo Microsoft**.
     - Clique em **Conectar**.
-4. Para testar a conectividade com seu bot, digite algum texto no emulador e pressione Enter.
+4. Para testar a conectividade com o bot, digite um texto no emulador e pressione Enter.
 
 Se o bot responder à entrada e não houver erros na janela do chat, você acabou de verificar que o bot fica acessível e funcional no localhost quando a segurança está habilitada.  Vá para a [Etapa 4](#step-4-test-your-bot-in-the-cloud).
 
 Se um ou mais erros forem indicados na janela de chat, clique nos erros para obter detalhes. Entre os problemas comuns, há:
 
-* As configurações do emulador especificam um ponto de extremidade incorreto do bot. Verifique se foram incluídos o número da porta apropriada na URL e o caminho apropriado no final da URL (por exemplo, `/api/messages`).
-* As configurações do emulador especificam um ponto de extremidade do bot que começa com `https`. No localhost, o ponto de extremidade deve começar com `http`.
-* Nas configurações do emulador, os campos **ID do aplicativo Microsoft** e/ou **Senha do aplicativo Microsoft** não contêm valores válidos. Ambos os campos devem ser preenchidos, e cada um deve conter o valor correspondente que você verificou ao [Etapa 2](#step-2).
-* A segurança não foi habilitada para o bot. [Verifique](#enable-security-localhost) se as definições de configuração do bot especificam valores para a ID e para a senha do aplicativo.
+- As configurações do emulador especificam um ponto de extremidade incorreto para o bot. Verifique se foram incluídos o número da porta apropriada na URL e o caminho apropriado no final da URL (por exemplo, `/api/messages`).
+- As configurações do emulador especificam um ponto de extremidade de bot que começa com `https` . No localhost, o ponto de extremidade deve começar com `http`.
+- Nas configurações do emulador, o campo **ID do aplicativo da Microsoft** e/ou a senha do **aplicativo Microsoft** não contêm valores válidos. Ambos os campos devem ser preenchidos, e cada um deve conter o valor correspondente que você verificou ao [Etapa 2](#step-2).
+- A segurança não foi habilitada para o bot. [Verifique](#enable-security-localhost) se as definições de configuração do bot especificam valores para a ID e para a senha do aplicativo.
 
 ## <a name="step-4-test-your-bot-in-the-cloud"></a>Etapa 4: testar seu bot na nuvem 
 
@@ -173,7 +175,7 @@ Neste ponto, você verificou que seu bot fica acessível e funcional no localhos
 O Bot Framework exige que bots sejam acessíveis pela Internet, portanto, você deve implantar seu bot em uma plataforma de hospedagem de nuvem, como o Azure. Não se esqueça de habilitar a segurança do bot antes da implantação, conforme descrito em [Etapa 3](#step-3).
 
 > [!NOTE]
-> Caso ainda não tenha um provedor de hospedagem de nuvem, é possível se inscrever para uma <a href="https://azure.microsoft.com/free/" target="_blank">conta gratuita</a>.
+> Se você ainda não tiver um provedor de hospedagem na nuvem, poderá registrar-se para uma <a href="https://azure.microsoft.com/free/" target="_blank">conta gratuita</a>.
 
 Caso implante o bot no Azure, o SSL será configurado automaticamente para o aplicativo, habilitando o ponto de extremidade **HTTPS** que o Bot Framework exige. Se você implantar em outro provedor de hospedagem de nuvem, verifique se o aplicativo está configurado para SSL para que o bot tenha um ponto de extremidade **HTTPS**.
 

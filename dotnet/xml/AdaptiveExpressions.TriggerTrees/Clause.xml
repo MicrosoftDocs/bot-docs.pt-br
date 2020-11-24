@@ -1,5 +1,5 @@
 <Type Name="Clause" FullName="AdaptiveExpressions.TriggerTrees.Clause">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="9e2c629e746a62e563ad9b257b57b836e8787797" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94601738" /></Metadata><TypeSignature Language="C#" Value="public class Clause : AdaptiveExpressions.Expression" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="1b94416a229f1d0a682c221266a28506019bb9b3" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95455760" /></Metadata><TypeSignature Language="C#" Value="public class Clause : AdaptiveExpressions.Expression" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Clause extends AdaptiveExpressions.Expression" />
   <TypeSignature Language="DocId" Value="T:AdaptiveExpressions.TriggerTrees.Clause" />
   <TypeSignature Language="VB.NET" Value="Public Class Clause&#xA;Inherits Expression" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>AdaptiveExpressions.Expression</BaseTypeName>
@@ -33,6 +34,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.Dictionary&lt;System.String,System.String&gt;</ReturnType>
@@ -56,6 +58,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -86,6 +89,7 @@ Retornará true se duas cláusulas forem correspondidas; caso contrário, retorn
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>AdaptiveExpressions.TriggerTrees.RelationshipType</ReturnType>
@@ -115,6 +119,7 @@ Retornará true se duas cláusulas forem correspondidas; caso contrário, retorn
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -139,6 +144,7 @@ Retornará true se duas cláusulas forem correspondidas; caso contrário, retorn
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>

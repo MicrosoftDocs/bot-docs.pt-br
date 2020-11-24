@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/08/2020
-ms.openlocfilehash: fd512b3d8617d319c0e9473d60e3be38984a15de
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 1b1240dbeb73137f2adc0ca180a6b16a55e7c20a
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414575"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95456240"
 ---
 # <a name="ecosystem"></a>Ecossistema
 
@@ -103,8 +103,8 @@ O exemplo a seguir mostra como definir o domínio para a URL do Azure governamen
       window.WebChat.renderWebChat(
         {
           directLine: window.WebChat.createDirectLine({
-          token: 'YOUR_TOKEN_SECRET',
-          domain: 'https://webchat.botframework.azure.us/v3/directline'
+            token: 'YOUR_TOKEN_SECRET',
+            domain: 'https://webchat.botframework.azure.us/v3/directline'
           }),
           userID: 'YOUR_USER_ID',
           username: 'Web Chat User',
@@ -118,11 +118,12 @@ O exemplo a seguir mostra como definir o domínio para a URL do Azure governamen
   </body>
 
 ```
-Saiba mais nos documentos a seguir:
-* [Conectar um bot ao Webchat](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-webchat?view=azure-bot-service-4.0)
-* [Conectar um bot à Linha Direta](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directline?view=azure-bot-service-4.0)
-* Para uma abordagem programática para trocar seu segredo para um token, use o trecho de código fornecido [aqui](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-webchat?view=azure-bot-service-4.0#production-embedding--option) e ajuste as URLs do Azure público para o Azure governamental.
 
+Saiba mais nos documentos a seguir:
+
+- [Conectar um bot ao Webchat](bot-service-channel-connect-webchat.md)
+- [Conectar um bot à Linha Direta](bot-service-channel-connect-directline.md)
+- Para uma abordagem programática para trocar seu segredo para um token, use o trecho de código fornecido na [opção de inserção de produção](bot-service-channel-connect-webchat.md#production-embedding-option) e ajuste as URLs do Azure público para o Azure governamental.
 
 ## <a name="how-does-the-bot-framework-relate-to-cognitive-services"></a>Como o Bot Framework está relacionado aos Serviços Cognitivos?
 

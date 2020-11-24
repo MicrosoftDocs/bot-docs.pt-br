@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/20/2020
-ms.openlocfilehash: e49b0620e5f9248ed1b8731349cf3d379a2df60c
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: dd9e169a11bd52364570c63c64c6ebd7f860e517
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416567"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95456040"
 ---
 # <a name="troubleshoot-general"></a>Solucionar problemas gerais
 
@@ -52,7 +52,7 @@ Uma resposta de erro com o código de status HTTP 429 indica que muitas solicita
 
 ## <a name="why-arent-my-bot-messages-getting-received-by-the-user"></a>Por que as mensagens do meu bot não estão sendo recebidas pelo usuário?
 
-A atividade de mensagem gerada em resposta deve ser encaminhada corretamente, caso contrário, não chegará ao destino pretendido. Na grande maioria dos casos, você não precisará lidar com isso explicitamente. O SDK se encarrega do encaminhamento da atividade de mensagem para você.
+A atividade de mensagem gerada em resposta deve ser resolvida corretamente, caso contrário, ela não chegará ao destino pretendido. Na grande maioria dos casos, você não precisará lidar com isso explicitamente. O SDK se encarrega do encaminhamento da atividade de mensagem para você.
 
 Tratar corretamente uma atividade significa incluir os detalhes de *IDs de conversa* apropriados juntamente com detalhes sobre o remetente. Na maioria dos casos, a atividade de mensagem é enviada em resposta a uma que chegou. Portanto, os detalhes de encaminhamento podem ser retirados da atividade de entrada.
 
@@ -110,7 +110,7 @@ Para Azure Active Directory autenticação, consulte o tutorial [Adicionar auten
 
 Alguns canais, como SMS e email, fornecem endereços sem escopo. Nesses casos, as mensagens do usuário conterão a ID de usuário bruta na propriedade `from.Id`.
 
-Outros canais, como Facebook e Slack, fornecem endereços com escopo ou locados de modo a impedir que um bot possa prever a ID de um usuário com antecedência. Nesses casos, você precisará autenticar o usuário por meio de um link de logon ou segredo compartilhado para determinar se estão ou não autorizados a usar o bot.
+Outros canais, como o Facebook e a margem de atraso, fornecem endereços com escopo ou locatários de forma a impedir que um bot possa prever a ID de um usuário antes do tempo. Nesses casos, você precisará autenticar o usuário por meio de um link de logon ou segredo compartilhado para determinar se estão ou não autorizados a usar o bot.
 
 ## <a name="why-does-my-direct-line-11-conversation-start-over-after-every-message"></a>Por que minha conversa com Direct Line 1.1 inicia novamente após cada mensagem?
 
@@ -153,7 +153,7 @@ Se o bot estiver registrado em dev.botframework.com e você quiser migrá-lo par
 
 1. No diretório de destino, adicione um novo usuário (via endereço de email) que não seja membro do diretório padrão, conceda a função de colaborador do usuário nas assinaturas que são o destino da migração.
 
-2. No [Portal do Desenvolvedor](https://dev.botframework.com), adicione o endereço de email do usuário como coproprietários do bot que deve ser migrado. Em seguida, saia da seção.
+2. No [portal de desenvolvimento](https://dev.botframework.com), adicione o endereço de email do usuário como coproprietários do bot que deve ser migrado. Em seguida, saia da seção.
 
 3. Entre no [Portal do Desenvolvedor](https://dev.botframework.com) como o novo usuário e prossiga para migrar o bot.
 

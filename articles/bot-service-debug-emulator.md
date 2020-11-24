@@ -7,65 +7,71 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 2/26/2019
-ms.openlocfilehash: 843bc9cb26ebebb1b1939b40a3e10081ef0e7bf4
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.date: 11/17/2020
+ms.openlocfilehash: c7b6eca449b8857711bdeb2a84c673408274bf08
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92415260"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95456650"
 ---
 # <a name="debug-with-the-emulator"></a>Depurar com o emulador
 
 [!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
-O Bot Framework Emulator é um aplicativo de desktop que permite que os desenvolvedores de bot testem e depurem seus bots, seja local ou remotamente. Usando o emulador, você pode conversar com seu bot e inspecionar as mensagens que seu bot envia e recebe. O emulador exibe mensagens como elas apareceriam em uma interface de usuário do bate-papo na Web e registra solicitações e respostas JSON à medida que você troca mensagens com seu bot. Antes de implantar seu bot na nuvem, execute-o localmente e teste-o usando o emulador. Você pode testar seu bot usando o emulador mesmo se você ainda não o [criou](./bot-service-quickstart.md) com o Serviço de Bot do Azure ou o configurou para rodar em qualquer canal.
+O Bot Framework Emulator é um aplicativo de desktop que permite que os desenvolvedores de bot testem e depurem seus bots, seja local ou remotamente. Usando o emulador, você pode bater papo com o bot e inspecionar as mensagens que o bot envia e recebe. O emulador exibe mensagens como apareceriam em uma interface do usuário do Web Chat e registra em log as solicitações e respostas JSON à medida que você troca mensagens com o bot. Antes de implantar o bot na nuvem, execute-o localmente e teste-o usando o emulador. Você pode testar o bot usando o emulador mesmo que ainda não o tenha [criado](./bot-service-quickstart.md) com o serviço de bot do Azure ou configurado para ser executado em qualquer canal.
 
 ## <a name="prerequisites"></a>Pré-requisitos
+
 - Instalar o [Bot Framework Emulator](https://aka.ms/Emulator-wiki-getting-started)
 
 ## <a name="run-a-bot-locally"></a>Executar um bot localmente
+
 Antes de conectar o bot ao Bot Framework Emulator, você precisa executar o bot localmente. Você pode usar o Visual Studio, o Visual Studio Code ou a linha de comando para executar o bot.
 Para executar um bot usando a linha de comando, faça o seguinte:
 
+### <a name="c"></a>[C#](#tab/csharp)
 
-# <a name="c"></a>[C#](#tab/csharp)
+- Vá para o prompt de comando e altere o diretório para o diretório de projeto do bot.
+- Inicie o bot executando o seguinte comando:
 
-* Vá para o prompt de comando e altere o diretório para o diretório de projeto do bot.
-* Inicie o bot executando o seguinte comando:
-    ```
+    ```cmd
     dotnet run
     ```
-* Copie o número da porta na linha antes de *Aplicativo iniciado. Pressione Ctrl + C para desligar.*
+
+- Copie o número da porta na linha antes de *Aplicativo iniciado. Pressione Ctrl + C para desligar.*
 
     ![Número da porta do C#](media/bot-service-debug-emulator/csharp_port_number.png)
 
+### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+- Vá para o prompt de comando e altere o diretório para o diretório de projeto do bot.
+- Inicie o bot executando o seguinte comando:
 
-* Vá para o prompt de comando e altere o diretório para o diretório de projeto do bot.
-* Inicie o bot executando o seguinte comando:
-    ```
+    ```cmd
     node index.js
     ```
-* Copie o número da porta em que o restify está escutando.
+
+- Copie o número da porta em que o restify está escutando.
 
     ![Número da porta do JS](media/bot-service-debug-emulator/js_port_number.png)
 
-# <a name="python"></a>[Python](#tab/python)
-* Vá para o prompt de comando e altere o diretório para o diretório de projeto do bot.
-* Inicie o bot executando o seguinte comando:
-    ```
+### <a name="python"></a>[Python](#tab/python)
+
+- Vá para o prompt de comando e altere o diretório para o diretório de projeto do bot.
+- Inicie o bot executando o seguinte comando:
+
+    ```cmd
    python app.py
     ```
-* Copie o número da porta em que o restify está escutando.
+
+- Copie o número da porta em que o restify está escutando.
 
     ![Número da porta do JS](media/bot-service-debug-emulator/js_port_number.png)
 
 ---
 
 Neste ponto, seu bot está em execução localmente.
-
 
 ## <a name="connect-to-a-bot-running-on-localhost"></a>Conectar-se a um bot em execução no localhost
 
@@ -78,7 +84,7 @@ Se você estiver se conectando a um bot em execução no `localhost` , o emulado
 Para ignorar as `HTTP_PROXY` `HTTPS_PROXY` configurações e e permitir que o emulador se conecte ao `localhost` , em seu computador local, você deve definir a seguinte variável de ambiente:
 
 ```cmd
-    NO_PROXY=localhost
+NO_PROXY=localhost
 ```
 
 <!-- auth config steps -->
@@ -88,8 +94,8 @@ Se um bot exigir autenticação, exibindo uma caixa de diálogo de logon, você 
 
 #### <a name="using-sign-in-verification-code"></a>Como usar o código de verificação de entrada
 
-1. Inicie o emulador.
-1. No emulador, clique no ícone de engrenagem na parte inferior esquerda ou na guia **Configurações do Emulador** no canto superior direito.
+1. Inicie o Emulador.
+1. No emulador, clique no ícone de engrenagem na parte inferior esquerda ou na guia **configurações do emulador** no canto superior direito.
 1. Marque a caixa **Usar um código de verificação de entrada para OAuthCards**.
 1. Marque a caixa **Ignorar ngrok para endereço local**
 1. Clique no botão **Salvar**.
@@ -102,8 +108,8 @@ Como alternativa é possível executar as etapas descritas abaixo.
 
 #### <a name="using-authentication-tokens"></a>Como usar os tokens de autenticação
 
-1. Inicie o emulador.
-1. No emulador, clique no ícone de engrenagem na parte inferior esquerda ou na guia **Configurações do Emulador** no canto superior direito.
+1. Inicie o Emulador.
+1. No emulador, clique no ícone de engrenagem na parte inferior esquerda ou na guia **configurações do emulador** no canto superior direito.
 1. Marque a caixa **Usar tokens de autenticação da versão 1.0**.
 1. Insira o caminho local para a ferramenta **ngrok**. Para obter mais informações sobre a ferramenta, consulte [ngrok](https://ngrok.com/).
 1. Marque a caixa **Executar ngrok quando o emulador for iniciado**.
@@ -111,24 +117,23 @@ Como alternativa é possível executar as etapas descritas abaixo.
 
 Ao clicar no botão de logon exibido pelo bot, você receberá uma solicitação para inserir suas credenciais. Um token de autenticação será gerado. Depois disso, será possível executar as operações permitidas.
 
-
-![Interface do usuário do emulador](media/emulator-v4/emulator-welcome.png)
+![Janela de inicialização do emulador](media/emulator-v4/emulator-welcome.png)
 
 Para se conectar a um bot em execução localmente, clique em **Abrir bot**. Adicione o número da porta que você copiou anteriormente na URL a seguir e cole a URL atualizada na barra URL do Bot:
 
 *http://localhost:**número da porta**/api/messages*
 
-![Interface do usuário do emulador](media/bot-service-debug-emulator/open_bot_emulator.png)
+![Caixa de diálogo Open-a-bot do emulador](media/bot-service-debug-emulator/open_bot_emulator.png)
 
 Se o bot é executado com [credenciais da MSA (Conta Microsoft)](#use-bot-credentials), insira-as também.
 
 ### <a name="use-bot-credentials"></a>Usar credenciais do bot
 
-Quando você abre o bot, defina a **ID do aplicativo Microsoft** e a **senha do aplicativo Microsoft** se seu bot está em execução com as credenciais. Se você criou seu bot com o Serviço de Bot do Azure, as credenciais estão disponíveis no Serviço de Aplicativo do bot, na seção **Configurações -> Configuração**. Se não souber os valores, você poderá remover aqueles do arquivo de configuração do bot sendo executado localmente e depois executar o bot no emulador. Se o bot não estiver em execução com essas configurações, você também não precisará executar o emulador com as configurações.
+Quando você abre o bot, defina a **ID do aplicativo Microsoft** e a **senha do aplicativo Microsoft** se seu bot está em execução com as credenciais. Se você criou seu bot com o Serviço de Bot do Azure, as credenciais estão disponíveis no Serviço de Aplicativo do bot, na seção **Configurações -> Configuração**. Se não souber os valores, você poderá remover aqueles do arquivo de configuração do bot sendo executado localmente e depois executar o bot no emulador. Se o bot não estiver em execução com essas configurações, você não precisará executar o emulador com as configurações.
 
 Ao criar um aplicativo de provedor de identidade do AD, lembre-se do seguinte:
 
-- Quando os tipos de conta compatíveis forem definidos como locatário único, se você usar uma assinatura pessoal em vez de uma conta Microsoft, o emulador emitirá o erro: *A ID do aplicativo Microsoft do bot ou a senha do aplicativo Microsoft está incorreta.*
+- Quando os tipos de conta com suporte forem definidos como locatário único, se você usar uma assinatura pessoal em vez de uma conta Microsoft, o emulador emitiria o erro: *a ID do aplicativo da Microsoft do bot ou a senha do aplicativo Microsoft está incorreta..*
 - Nesse caso, os tipos de conta compatíveis devem ser definidos como *Contas em qualquer diretório organizacional (Qualquer diretório do Azure AD – Multilocatário) e contas pessoais Microsoft (por exemplo, Xbox)* .
 
 Para obter mais informações, consulte [criar um aplicativo de provedor de identidade do Azure ad](bot-builder-tutorial-authentication.md#create-an-azure-ad-identity-provider-application) e [registrar um novo aplicativo usando o portal do Azure](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app#register-a-new-application-using-the-azure-portal).
@@ -175,7 +180,7 @@ When either service is connected, you can go back to a live chat window and veri
 
 ## <a name="inspect-services"></a>Inspecionar serviços
 
-Com o novo emulador v4, você também pode inspecionar as respostas JSON de LUIS e QnA. Usando um bot com um serviço de idiomas conectado, você pode selecionar **trace** na janela LOG no canto inferior direito. Esta nova ferramenta também fornece recursos para atualizar seus serviços de idioma diretamente do emulador.
+Com o emulador v4, você também pode inspecionar as respostas JSON de LUIS e QnA. Usando um bot com um serviço de idiomas conectado, você pode selecionar **trace** na janela LOG no canto inferior direito. Essa nova ferramenta também fornece recursos para atualizar seus serviços de idioma diretamente do emulador.
 
 ![Inspetor LUIS](media/emulator-v4/emulator-luis-inspector.png)
 
@@ -201,10 +206,16 @@ See [above](#add-services) to learn more about services you can manage using the
 -->
 
 ### <a name="login-to-azure"></a>Logon no Azure
+
 Você pode usar o Emulador para fazer logon em sua conta do Azure. Isso é particularmente útil para adicionar e gerenciar os serviços que dependem do seu bot. Faça logon no Azure seguindo estas etapas:
-- Clique em Arquivo -> Entrar com o Azure ![Logon do Azure](media/emulator-v4/emulator-azure-login.png)
-- Na tela de boas-vindas, clique em Entrar com sua conta do Azure. Opcionalmente, o Emulador pode manter você conectado entre as reinicializações dele.
-![Logon do Azure](media/emulator-v4/emulator-azure-login-success.png)
+
+1. Clique em arquivo-> entrar com o Azure
+
+    ![Entrada do emulador com o Azure](media/emulator-v4/emulator-azure-login.png)
+
+1. Na tela de boas-vindas, clique em entrar com sua conta do Azure. Opcionalmente, você pode fazer com que o emulador Mantenha você conectado entre as reinicializações do aplicativo do emulador.
+
+    ![Êxito na conexão do Azure do emulador](media/emulator-v4/emulator-azure-login-success.png)
 
 ## <a name="disabling-data-collection"></a>Desabilitar a coleta de dados
 
@@ -212,15 +223,15 @@ Se decidir que não deseja permitir que o Emulador colete dados de uso, você po
 
 1. Navegue até a página de configurações do Emulador, clicando no botão de Configurações (ícone de engrenagem), na barra de navegação à esquerda.
 
-    ![desabilitar coleta de dados](media/emulator-v4/emulator-disable-data-1.png)
+    ![Botão Configurações do emulador](media/emulator-v4/emulator-disable-data-1.png)
 
 2. Desmarque a caixa de seleção *Ajude-nos a melhorar o Emulador, permitindo-nos coletar dados de uso*, na seção **Coleta de dados**.
 
-    ![desabilitar coleta de dados](media/emulator-v4/emulator-disable-data-2.png)
+    ![Configurações do emulador, coleta de dados](media/emulator-v4/emulator-disable-data-2.png)
 
 3. Clique no botão "Salvar".
 
-    ![desabilitar coleta de dados](media/emulator-v4/emulator-disable-data-3.png)
+    ![Configurações do emulador, botão salvar](media/emulator-v4/emulator-disable-data-3.png)
 
 Se você mudar de ideias, poderá habilitá-lo novamente marcando a caixa de seleção.
 

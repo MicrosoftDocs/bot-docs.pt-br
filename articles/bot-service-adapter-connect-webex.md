@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: gapretty
 ms.service: bot-service
 ms.date: 01/21/2020
-ms.openlocfilehash: bf00b73dcc130a58eb5353b185387a4640aae1be
-ms.sourcegitcommit: e37cf15f4907910560f34445a0fbdd7ae75b4787
+ms.openlocfilehash: e713bee4795893e68559e78d7d6a66723d3ead6b
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92440021"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95457120"
 ---
 # <a name="connect-a-bot-to-webex-teams-using-the-webex-adapter"></a>Conectar um bot ao Webex Teams usando o adaptador do Webex
 
@@ -56,7 +56,7 @@ Adicione o pacote NuGet [Microsoft.Bot.Builder.Adapters.Webex](https://www.nuget
 
 ### <a name="create-a-webex-adapter-class"></a>Criar uma classe de adaptador do Webex
 
-Crie uma nova classe que herde da classe ***WebexAdapter**_. Essa classe atuará como o adaptador para o canal do Webex. Ele inclui recursos de tratamento de erros (muito parecido com a classe _*_BotFrameworkAdapterWithErrorHandler_*_ já no exemplo, usado para lidar com solicitações do serviço de bot do Azure).
+Crie uma nova classe que herde da classe ***WebexAdapter** _. Essa classe atuará como o adaptador para o canal do Webex. Ele inclui recursos de tratamento de erros (muito parecido com a classe _*_BotFrameworkAdapterWithErrorHandler_*_ já no exemplo, usado para lidar com solicitações do serviço de bot do Azure).
 
 [!code-csharp[Webex Adapter With Error Handler](~/../botbuilder-samples/samples/csharp_dotnetcore/62.webex-adapter/Adapters/WebexAdapterWithErrorHandler.cs?range=11-29)]
 
@@ -86,7 +86,7 @@ Depois de adicionado, _*_o método configureservices_*_ deve ser assim.
 
 [!code-csharp[Webex Controller](~/../botbuilder-samples/samples/csharp_dotnetcore/62.webex-adapter/appsettings.json?range=1-6)]
 
-2. Preencha a configuração _*WebexAccessToken** dentro do token de acesso de bot do WebEx, que foi gerado ao criar seu aplicativo de bot de WebEx nas etapas anteriores. Deixe as outras três configurações vazias por enquanto, até reunirmos as informações necessárias para elas em etapas posteriores.
+2. Preencha a configuração _ *WebexAccessToken** dentro do token de acesso de bot do WebEx, que foi gerado ao criar seu aplicativo de bot de WebEx nas etapas anteriores. Deixe as outras três configurações vazias por enquanto, até reunirmos as informações necessárias para elas em etapas posteriores.
 
 ## <a name="complete-configuration-of-your-webex-app-and-bot"></a>Concluir a configuração do seu aplicativo e bot do Webex
 
@@ -97,7 +97,7 @@ Agora que você criou um aplicativo do Webex e vinculou o adaptador ao seu proje
 1. Para concluir esta etapa, [implante o bot no Azure](https://aka.ms/bot-builder-deploy-az-cli) e anote a URL do bot implantado. Seu ponto de extremidade de mensagens do Webex é a URL para o bot, a qual será a URL do aplicativo implantado (ou ponto de extremidade ngrok), além de "/api/webex" (por exemplo, `https://yourbotapp.azurewebsites.net/api/webex`).
 
     > [!NOTE]
-    > Se você não estiver pronto para implantar o bot no Azure ou desejar depurar o bot ao usar o adaptador do Webex, poderá usar uma ferramenta como a [ngrok](https://www.ngrok.com) (que você provavelmente já terá instalada se usou o emulador do Bot Framework anteriormente) para fazer um túnel para o bot em execução localmente e fornecer uma URL acessível publicamente para isso.
+    > Se você não estiver pronto para implantar o bot no Azure ou desejar depurar o bot ao usar o adaptador WebEx, poderá usar uma ferramenta como [ngrok](https://www.ngrok.com) (que provavelmente já terá instalado se você tiver usado o emulador do bot Framework anteriormente) para realizar o túnel para o bot em execução localmente e fornecer uma URL acessível publicamente para isso.
     >
     > Se desejar criar um túnel ngrok e obter uma URL para o bot, use o comando a seguir em uma janela do terminal (isso pressupõe que o bot local esteja em execução na porta 3978; altere os números de porta no comando se o bot não estiver).
     >

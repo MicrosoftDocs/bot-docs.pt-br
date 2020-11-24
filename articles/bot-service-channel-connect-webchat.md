@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/22/2019
-ms.openlocfilehash: 69bf57c46868ad1fee291b8051fc1b0ac530e713
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 0808145728757e529efe7395cad25a3c933fd2bf
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92415512"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95456820"
 ---
 # <a name="connect-a-bot-to-web-chat"></a>Conectar um bot ao Webchat
 
@@ -36,8 +36,7 @@ A imagem a seguir mostra os componentes envolvidos ao inserir o controle de chat
   ![componentes de inserção de bot](~/media/bot-service-channel-webchat/webchat-control.png)
 
 > [!NOTE]
-> Este artigo pressupõe que você já tenha um bot implantado no Azure. Para obter informações sobre a implantação, consulte [implantar o bot](https://docs.microsoft.com/azure/bot-service/bot-builder-deploy-az-cli?view=azure-bot-service-4.0&tabs=csharp).
-
+> Este artigo pressupõe que você já tenha um bot implantado no Azure. Para obter informações sobre a implantação, consulte [implantar o bot](bot-builder-deploy-az-cli.md).
 
 ### <a name="get-your-bot-secret-key"></a>Obtenha sua chave secreta do bot
 
@@ -79,6 +78,7 @@ Para trocar o segredo por um token e gerar a inserção:
 requestGET https://webchat.botframework.com/api/tokens
 Authorization: BotConnector YOUR_SECRET_HERE
 ```
+
 > [!NOTE]
 > Observe que, para o Azure governamental, a URL de troca do token é diferente.
 
@@ -107,6 +107,7 @@ Authorization: BotConnector YOUR_SECRET_HERE
 ```
 
 ##### <a name="example-html-code"></a>Código HTML de exemplo
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -151,6 +152,7 @@ Para inserir o bot em uma página da Web especificando o segredo dentro da `ifra
 ```html
 <iframe style="height:480px; width:402px" src="https://webchat.botframework.com/embed/YOUR_BOT_ID?s=YOUR_SECRET_HERE"></iframe>
 ```
+
 > [!NOTE]
 > Observe que, para o Azure governamental, o iframe de exemplo é diferente.
 
@@ -158,20 +160,19 @@ Para inserir o bot em uma página da Web especificando o segredo dentro da `ifra
 <iframe style="height:480px; width:402px" src="https://webchat.botframework.azure.us/embed/YOUR_BOT_ID?s=YOUR_SECRET_HERE"></iframe>
 ```
 
-  ![Cliente de chat da Web](~/media/bot-service-channel-webchat/webchat-client.png)
+![Cliente de chat da Web](~/media/bot-service-channel-webchat/webchat-client.png)
 
-### <a name="production-embedding--option"></a>Opção de inserção de produção
+### <a name="production-embedding-option"></a>Opção de inserção de produção
 
 #### <a name="keep-your-secret-hidden-exchange-your-secret-for-a-token-and-generate-the-embed"></a>Mantenha seu segredo oculto, troque seu segredo para um token e gere a inserção
 
 Essa opção não expõe a chave secreta do canal de chat da Web na página da Web do cliente, pois ela é necessária em um ambiente de produção.
 
-O cliente deve fornecer um token para se comunicar com o bot. Para saber mais sobre as diferenças entre os segredos e os tokens e para entender os riscos associados ao uso de segredos, visite [autenticação de linha direta](https://docs.microsoft.com/azure/bot-service/rest-api/bot-framework-rest-direct-line-3-0-authentication?view=azure-bot-service-4.0).
+O cliente deve fornecer um token para se comunicar com o bot. Para saber mais sobre as diferenças entre os segredos e os tokens e para entender os riscos associados ao uso de segredos, visite [autenticação de linha direta](rest-api/bot-framework-rest-direct-line-3-0-authentication.md).
 
 A página da Web do cliente a seguir mostra como usar um token com o Web Chat. Se você usar o Azure gov, ajuste as URLs do público para o governo.
 
 ```html
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -222,7 +223,6 @@ A página da Web do cliente a seguir mostra como usar um token com o Web Chat. S
     </script>
   </body>
 </html>
-
 ```
 
 Para obter exemplos de como gerar um token, consulte:

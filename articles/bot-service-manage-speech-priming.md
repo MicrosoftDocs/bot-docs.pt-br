@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 70ac229d355d404e8b7d315786e005f871bac580
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 6801af211b22e2c603455b7ad4cf496cacc89c70
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414766"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95456360"
 ---
 # <a name="configure-speech-priming"></a>Configurar a desobstrução de fala
 
@@ -23,7 +23,7 @@ A desobstrução de fala melhora o reconhecimento de palavras faladas e frases q
 
 Para bots habilitados para fala que usam os canais [Web Chat](bot-service-channel-connect-webchat.md) e [Cortana](~/bot-service-channel-connect-cortana.md) , a desativação de fala usa exemplos especificados em aplicativos reconhecimento vocal ([Luis](https://www.luis.ai/)) para melhorar a precisão do reconhecimento de fala para palavras importantes.
 
-O bot já pode estar integrado a um aplicativo LUIS, ou você pode optar por criar um aplicativo LUIS para associá-lo ao bot para a desobstrução de fala. O aplicativo LUIS contém exemplos do que você espera que os usuários digam ao bot. As palavras importantes que você deseja que o bot reconheça devem ser rotuladas como entidades. Por exemplo, em um bot de xadrez, você deseja garantir que quando o usuário disser "Mover cavalo", isso não seja interpretado como "Mover intervalo". O aplicativo LUIS deve incluir exemplos em que "cavalo" é rotulado como uma entidade.
+O bot já pode estar integrado a um aplicativo LUIS, ou você pode optar por criar um aplicativo LUIS para associá-lo ao bot para a desobstrução de fala. O aplicativo LUIS contém exemplos do que você espera que os usuários digam ao bot. As palavras importantes que você deseja que o bot reconheça devem ser rotuladas como entidades. Por exemplo, em um bot de xadrez, você deseja certificar-se de que quando o usuário disser "mover Knight", ele não será interpretado como "mover à noite". O aplicativo LUIS deve incluir exemplos em que "cavalo" é rotulado como uma entidade.
 
 > [!IMPORTANT]
 > - Para usar a desobstrução de fala com o canal de Webchat, use o serviço de Fala do Bing. Confira [Habilitar a fala no canal de Webchat](bot-service-channel-connect-webchat-speech.md) para obter uma explicação de como usar o serviço de Fala do Bing.

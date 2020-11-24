@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 07/10/2020
-ms.openlocfilehash: acf0c3b36c78b2f4be69d349e5c7b81ffb6232d3
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: a8595a7bd1119e547a77f06694c3dad83fdb8b3e
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414628"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95456280"
 ---
 # <a name="bot-framework-faq-index"></a>Índice de perguntas frequentes do bot Framework
 

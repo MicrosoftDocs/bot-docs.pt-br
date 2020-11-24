@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: egorn
 ms.service: bot-service
 ms.date: 11/01/2019
-ms.openlocfilehash: 459b8cdcd0ac76067f21b98cafafc584c27a0956
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 9526105378e400d01e7bcda77c2962a182f66e07
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92415547"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95456830"
 ---
 # <a name="connect-a-bot-to-wechat"></a>Conectar um bot ao WeChat
 
@@ -37,7 +37,7 @@ Você pode alterar o idioma de exibição que prefere antes do logon.
 
 ### <a name="register-a-service-account"></a>Registrar uma conta de serviço
 
-Uma conta de serviço real precisa ser verificada pelo WeChat. Você não pode habilitar o webhook antes que a conta seja verificada. Para criar sua própria conta de serviço, siga [estas](https://kf.qq.com/product/weixinmp.html#hid=87) instruções.
+Uma conta de serviço real deve ser verificada pelo WeChat, você não pode habilitar o webhook antes que a conta seja verificada. Para criar sua própria conta de serviço, siga [estas](https://kf.qq.com/product/weixinmp.html#hid=87) instruções.
 Para resumir, basta clicar em Registrar Agora na parte superior, selecionar a conta de serviço e seguir as instruções.
 
  ![register_account](./media/channels/wechat-register-account.png)

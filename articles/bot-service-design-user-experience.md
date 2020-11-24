@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 09/20/2018
-ms.openlocfilehash: ec3a917e892e6933451a607104329517fcc12b66
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 0af5b8a50db72d91ec74c4ad090d2ef6f2ef4013
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414919"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95456370"
 ---
 # <a name="design-the-user-experience"></a>Projetar a experiência do usuário
 
@@ -29,7 +29,7 @@ Há várias décadas, os desenvolvedores de aplicativos e sites dependiam de con
 
 ## <a name="cards"></a>Cartões
 
-Os cartões permitem apresentar aos usuários uma variedade de mensagens visuais, de áudio e/ou selecionáveis e ajudar no fluxo da conversa. Se um usuário precisar selecionar um item de um conjunto fixo de itens, você poderá exibir um carrossel de cartões, cada um contendo uma imagem, uma descrição de texto e um botão de seleção única. Se um usuário tiver um conjunto de opções para um único item, você poderá apresentar uma única imagem menor e uma coleção de botões com várias opções para escolha. Ele pediu mais informações sobre um assunto? Os cartões podem fornecer informações detalhadas usando a saída de áudio ou de vídeo ou um recibo que forneça detalhes sobre sua experiência de compra. Há uma variedade incrivelmente ampla de usos para cartões para ajudar a guiar a conversa entre o usuário e o bot. O tipo de cartão usado será determinado pelas necessidades do aplicativo. Vamos dar uma olhada nos cartões, em suas ações e em alguns usos recomendados. 
+Os cartões permitem apresentar aos usuários uma variedade de mensagens visuais, de áudio e/ou selecionáveis e ajudar no fluxo da conversa. Se um usuário precisar selecionar um item de um conjunto fixo de itens, você poderá exibir um carrossel de cartões, cada um contendo uma imagem, uma descrição de texto e um botão de seleção única. Se um usuário tiver um conjunto de opções para um único item, você poderá apresentar uma única imagem menor e uma coleção de botões com várias opções para escolha. Ele pediu mais informações sobre um assunto? Os cartões podem fornecer informações detalhadas usando a saída de áudio ou de vídeo ou um recibo que forneça detalhes sobre sua experiência de compra. Há uma variedade incrivelmente ampla de usos para cartões para ajudar a guiar a conversa entre o usuário e o bot. O tipo de cartão usado será determinado pelas necessidades do aplicativo. Vamos examinar mais de perto os cartões, suas ações e alguns usos recomendados. 
 
 Os cartões do Serviço de Bot da Microsoft são objetos programáveis que contêm coleções padronizadas de controles de usuário avançados que são reconhecidos em uma ampla variedade de canais. A tabela a seguir descreve a lista de cartões disponíveis e sugestões de melhor prática de uso para cada tipo de cartão.
 

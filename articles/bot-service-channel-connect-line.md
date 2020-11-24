@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 1/7/2019
-ms.openlocfilehash: 36728b971db4d80dbd593007d9c4e0bd237606be
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 2f8ae4c219e75b2ee923115a51ab3b3fde1bd2cd
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92415747"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95457510"
 ---
 # <a name="connect-a-bot-to-line"></a>Conectar um bot ao LINE
 
@@ -23,7 +23,7 @@ Você pode configurar seu bot para se comunicar com as pessoas através do aplic
 
 ## <a name="log-into-the-line-console"></a>Fazer logon no console do LINE
 
-Faça logon no [console do desenvolvedor do LINE](https://developers.line.biz/console/register/messaging-api/provider/) de sua conta do LINE usando *Entrar com LINE*. 
+Faça logon no [console do desenvolvedor do LINE](https://developers.line.biz/console/register/messaging-api/provider/) de sua conta do LINE usando *Entrar com LINE*.
 
 > [!NOTE]
 > Se você ainda não o fez, [baixe o LINE](https://line.me/) e, em seguida, acesse as configurações para registrar seu endereço de email.
@@ -42,7 +42,7 @@ Primeiro, se você ainda não tiver um provedor configurado, crie um para seu bo
 
 ## <a name="create-a-messaging-api-channel"></a>Criar um canal de API de Mensagens
 
-Em seguida, crie um novo canal de API de Mensagens. 
+Em seguida, crie um novo canal de API de Mensagens.
 
 ![Captura de tela do LINE para tipo de canal](./media/channels/LINE-channel-type-selection.png)
 
@@ -70,7 +70,7 @@ Em seguida, continue rolando para baixo até **Configurações de mensagens**. V
 
 ## <a name="connect-your-line-channel-to-your-azure-bot"></a>Conectar o canal do LINE ao bot do Azure
 
-Faça logon no [portal do Azure](https://portal.azure.com/), localize seu bot e clique em **Canais**. 
+Faça logon no [portal do Azure](https://portal.azure.com/), localize seu bot e clique em **Canais**.
 
 ![Captura de tela do LINE para configurações do Azure](./media/channels/LINE-channel-setting-2.png)
 
@@ -78,7 +78,7 @@ Escolha o canal do LINE e cole o segredo e o token de acesso do canal acima nos 
 
 Copie a URL do webhook personalizado que o Azure oferece.
 
-![Captura de tela do LINE para configurações do Azure](./media/channels/LINE-channel-setting-1.png)
+![Captura de tela Configurações do Azure para linha](./media/channels/LINE-channel-setting-1.png)
 
 ## <a name="configure-line-webhook-settings"></a>Definir as configurações de webhook do LINE
 
@@ -99,9 +99,9 @@ Depois que você concluir essas etapas, o bot será configurado com êxito para 
 
 ### <a name="add-your-bot-to-your-line-mobile-app"></a>Adicionar seu bot ao aplicativo móvel do LINE
 
-No console do desenvolvedor do LINE, navegue até a página de configurações e você verá um código QR do bot. 
+No console do desenvolvedor do LINE, navegue até a página de configurações e você verá um código QR do bot.
 
-No aplicativo móvel do LINE, vá até a guia de navegação mais à direita, com as reticências [ **...** ], e toque no ícone do código QR. 
+No aplicativo móvel do LINE, vá até a guia de navegação mais à direita, com as reticências [ **...** ], e toque no ícone do código QR.
 
 ![Captura de tela de aplicativo móvel do LINE](./media/channels/LINE-screenshot-12.jpg)
 
@@ -117,13 +117,12 @@ Para evitar o envio dessas mensagens, você precisa desativar as mensagens de re
 
 ![Captura de tela de resposta automática no LINE](./media/channels/LINE-screenshot-10.png)
 
-Como alternativa, você pode optar por manter essas mensagens. Nesse caso, pode ser uma boa ideia clicar em “Definir mensagem” e editá-la.
+Como alternativa, você pode optar por manter essas mensagens. Nesse caso, pode ser uma boa ideia clicar em "definir mensagem" e editá-lo.
 
 ![Captura de tela do LINE para definir a resposta automática](./media/channels/LINE-screenshot-11.png)
 
 ## <a name="troubleshooting"></a>Solução de problemas
 
 * Caso seu bot não esteja respondendo a nenhuma das mensagens, navegue até seu bot no portal do Azure e escolha Testar no Webchat.  
-    * Caso o bot funcione no Webchat, mas não responda no LINE, recarregue a página do Console do Desenvolvedor do LINE e repita as instruções para o webhook acima. Certifique-se de que define a **URL do webhook** antes de habilitar os webhooks.
-    * Se o bot não funcionar no Webchat, depure o problema do bot e, em seguida, volte e conclua a configuração do canal do LINE.
-
+  * Caso o bot funcione no Webchat, mas não responda no LINE, recarregue a página do Console do Desenvolvedor do LINE e repita as instruções para o webhook acima. Certifique-se de que define a **URL do webhook** antes de habilitar os webhooks.
+  * Se o bot não funcionar no Webchat, depure o problema do bot e, em seguida, volte e conclua a configuração do canal do LINE.

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/14/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 41717d85405e37a92447b4ceb712867878413d4f
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: 81d8ee97a0bd9ae62ab0445400d00668564bf26d
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94599618"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95455980"
 ---
 # <a name="send-and-receive-text-message"></a>Enviar e receber mensagens de texto
 
@@ -103,12 +103,13 @@ Adicione o modelo LG a seguir ao arquivo .lg para receber uma mensagem.
 
 ```markdown
 # EchoMessage
-You said ‘${turn.activity.text}’
+You said '${turn.activity.text}'
 ```
 
 ---
 
 ## <a name="send-a-typing-indicator"></a>Enviar um indicador de digitação
+
 Os usuários esperam uma resposta em tempo hábil às suas mensagens. Se o seu bot executar alguma tarefa de longa duração, como chamar um servidor ou executar uma consulta sem dar ao usuário alguma indicação de que o bot ouviu, o usuário pode ficar impaciente e enviar mensagens adicionais ou simplesmente assumir que o bot está quebrado.
 
 Os canais de bot de Webchat e Direct Line são compatíveis com o envio de uma indicação de digitação para mostrar ao usuário que a mensagem foi recebida e está sendo processada. Lembre-se de que o bot precisa deixar o ciclo terminar em 15 segundos ou o serviço Conector atingirá o tempo limite. Para processos mais longos, leia mais sobre como enviar [mensagens proativas](bot-builder-howto-proactive-message.md).

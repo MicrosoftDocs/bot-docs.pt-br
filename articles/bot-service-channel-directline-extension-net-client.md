@@ -8,12 +8,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 07/25/2019
-ms.openlocfilehash: 2e159135ab41474daabea54a42a28110cbf64647
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 45ced1fe668090de5d4ffd73f97438f96d3088a4
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92415489"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95456690"
 ---
 # <a name="create-net-client-to-connect-to-direct-line-app-service-extension"></a>Criar um cliente .NET para se conectar à extensão do Serviço de Aplicativo do Direct Line
 
@@ -26,7 +26,7 @@ Leia também este artigo complementar [Configurar bot do .NET da extensão](bot-
 
 1. Em seu navegador, navegue até o [portal do Azure](https://portal.azure.com/)
 1. No portal do Azure, localize o recurso do **Serviço de Bot do Azure**
-1. Clique em **Canais** para configurar os canais do bot
+1. Clique em **canais** para configurar os canais do bot
 1. Se ele ainda não estiver habilitado, clique no canal **Direct Line** para habilitá-lo.
 1. Se ele já estiver habilitado, na tabela Conectar-se a canais, clique no link **Editar** na linha do Direct Line.
 1. Role até a seção Sites. Normalmente, há um Site padrão, a menos que você o tenha excluído ou renomeado.
@@ -35,7 +35,7 @@ Leia também este artigo complementar [Configurar bot do .NET da extensão](bot-
     ![Chaves de extensão do serviço de aplicativo](./media/channels/direct-line-extension-extension-keys-net-client.png)
 
 > [!NOTE]
-> Esse valor é o segredo do cliente do Direct Line usado para se conectar à extensão do serviço de aplicativo do Direct Line. Você pode criar sites adicionais se desejar e pode usar esses valores de segredo também.
+> Esse valor é o segredo do cliente do Direct Line usado para se conectar à extensão do serviço de aplicativo do Direct Line. Você pode criar sites adicionais se desejar e usar esses valores secretos também.
 
 ## <a name="add-the-preview-nuget-package-source"></a>Adicionar a origem da versão prévia do pacote NuGet
 
@@ -94,7 +94,7 @@ As interações com a extensão do serviço de aplicativo do Direct Line acontec
     }
     ```
 
-1. Agora, você está pronto para abrir o WebSocket na propriedade `StreamingConversations` usando o token da conversa, `conversationId`, e seu retorno de chamada `ReceiveActivities`:
+1. Agora você está pronto para abrir o WebSocket na `StreamingConversations` propriedade usando o token da conversa, `conversationId` e seu retorno de `ReceiveActivities` chamada:
 
     ```csharp
     var client = new DirectLineClient(

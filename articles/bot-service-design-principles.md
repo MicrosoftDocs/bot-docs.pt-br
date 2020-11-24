@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: a1ac643431a8d3a96adeab6596e52713c87bade7
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 63e5abe01c4fc2806149c57ef55d33e81d6fe070
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414946"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95456490"
 ---
 # <a name="principles-of-bot-design"></a>Princípios de design de bot
 
@@ -29,19 +29,19 @@ Se você estiver criando um bot, é seguro pressupor que você esteja esperando 
 
 Ao projetar o bot, lembre-se de que nenhum dos seguintes fatores garante necessariamente o sucesso de um bot: 
 
-- **O grau de “inteligência” do bot**: Na maioria dos casos, é improvável que tornar seu bot mais inteligente garantirá a satisfação dos usuários ou a adoção de sua plataforma. Na realidade, muitos bots têm poucas funcionalidades avançadas de aprendizado de máquina ou idioma natural. Um bot pode incluir essas funcionalidades se ele é necessário para resolver os problemas com os quais ele foi projetado para lidar. No entanto, você não deve pressupor nenhuma correlação entre a inteligência de um bot e a adoção dele por parte do usuário.
+- **Como _inteligente_ o bot é**: na maioria dos casos, é improvável que tornar seu bot mais inteligente garantirá que os usuários felizes ou a adoção da sua plataforma. Na realidade, muitos bots têm poucas funcionalidades avançadas de aprendizado de máquina ou idioma natural. Um bot pode incluir essas funcionalidades se ele é necessário para resolver os problemas com os quais ele foi projetado para lidar. No entanto, você não deve pressupor nenhuma correlação entre a inteligência de um bot e a adoção dele por parte do usuário.
 
 - **A quantidade de idioma natural para a qual o bot dá suporte**: Seu bot pode ser excelente em conversas. Ele pode ter um amplo vocabulário e pode até mesmo fazer ótimas piadas. Mas, a menos que ele resolva os problemas que os usuários precisam resolver, essas funcionalidades podem contribuir com muito pouco para tornar seu bot bem-sucedido. Na verdade, alguns bots não têm nenhuma funcionalidade de conversa. E, em muitos casos, isso é perfeitamente normal.
 
-- **Voz**: Nem sempre é verdade que habilitar os bots para fala levará a ótimas experiências do usuário. Muitas vezes, forçar os usuários a usar a voz pode resultar em uma experiência do usuário frustrante. Ao projetar seu bot, sempre considere se a voz é o canal apropriado para o problema específico. O ambiente ficará barulhento? A voz transmitirá as informações que precisam ser compartilhadas com o usuário? 
+- **Voz**: nem sempre o caso de habilitar bots para fala levará a excelentes experiências do usuário. Muitas vezes, forçar os usuários a usar a voz pode resultar em uma experiência do usuário frustrante. Ao projetar seu bot, sempre considere se a voz é o canal apropriado para o problema específico. O ambiente ficará barulhento? A voz transmitirá as informações que precisam ser compartilhadas com o usuário? 
 
 ## <a name="factors-that-do-influence-a-bots-success"></a>Fatores que influenciam o sucesso de um bot
 
 A maioria dos aplicativos ou dos sites bem-sucedidos têm, pelo menos, uma coisa em comum: uma ótima experiência do usuário. Os bots não são diferentes nesse aspecto. Portanto, garantir uma ótima experiência do usuário deve ser sua prioridade número um durante a criação de um bot. Algumas das principais considerações incluem:
 
-- O bot resolve com facilidade o problema do usuário com o número mínimo de etapas?
+- O bot resolve facilmente o problema do usuário com o número mínimo de etapas?
 
-- O bot resolve o problema do usuário melhor/mais facilmente/mais rápido do que qualquer uma das experiências alternativas?
+- O bot resolve melhor/mais fácil/mais rápido o problema do usuário do que qualquer uma das experiências alternativas?
 
 - O bot é executado em dispositivos e plataformas importantes para o usuário?
 

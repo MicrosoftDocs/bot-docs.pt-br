@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/13/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 3ce0a6882cb7555ca80926c5384e3cae5ed73333
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 1d042fda1bf01fef0ca30e135236b293d68351c5
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414003"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95456090"
 ---
 # <a name="create-your-own-prompts-to-gather-user-input"></a>Crie seus próprio prompts para coletar entradas do usuário
 
@@ -36,7 +36,7 @@ O exemplo de bot faz uma série de perguntas ao usuário, valida algumas das res
 
 ## <a name="c"></a>[C#](#tab/csharp)
 
-![custom-prompts](media/CustomPromptBotSample-Overview.png)
+![personalizado – prompts em C #](media/CustomPromptBotSample-Overview.png)
 
 - Uma classe `UserProfile` para as informações do usuário que o bot coletará.
 - Uma classe `ConversationFlow` para controlar o estado da nossa conversa durante a coleta de informações do usuário.
@@ -44,7 +44,7 @@ O exemplo de bot faz uma série de perguntas ao usuário, valida algumas das res
 
 ## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-![custom-prompts](media/CustomPromptBotSample-JS-Overview.png)
+![personalizado – prompts em JavaScript](media/CustomPromptBotSample-JS-Overview.png)
 
 - Uma classe `userProfile` para as informações do usuário que o bot coletará.
 - Uma classe `conversationFlow` para controlar o estado da nossa conversa durante a coleta de informações do usuário.
@@ -52,7 +52,7 @@ O exemplo de bot faz uma série de perguntas ao usuário, valida algumas das res
 
 ## <a name="python"></a>[Python](#tab/python)
 
-![custom-prompts](media/CustomPromptBotSample-Python-Overview.png)
+![promptsin do Python personalizado](media/CustomPromptBotSample-Python-Overview.png)
 
 - Uma classe `UserProfile` para as informações do usuário que o bot coletará.
 - Uma classe `ConversationFlow` para controlar o estado da nossa conversa durante a coleta de informações do usuário.
@@ -212,7 +212,6 @@ O bot usa os critérios a seguir para validar a entrada.
 
 **bots/customPromptBot.cs** [!code-javascript[validation methods](~/../botbuilder-samples/samples/javascript_nodejs/44.prompt-for-user-input/bots/customPromptBot.js?range=120-191)]
 
-
 ## <a name="python"></a>[Python](#tab/python)
 
 **bots/custom_prompt_bot.py**  
@@ -225,9 +224,9 @@ O bot usa os critérios a seguir para validar a entrada.
 Baixe e instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator-readme) para testar o bot localmente.
 
 1. Execute o exemplo localmente em seu computador. Se precisar de instruções, consulte o arquivo LEIAME do [exemplo de C#](https://aka.ms/cs-primitive-prompt-sample), do [exemplo de JS](https://aka.ms/js-primitive-prompt-sample) ou do [exemplo de Python](https://aka.ms/python-primitive-prompt-sample).
-1. Para testá-lo, use o emulador, conforme mostrado abaixo.
+1. Teste-o usando o emulador, conforme mostrado abaixo.
 
-![primitive-prompts](media/primitive-prompts.png)
+![Exemplo de interação no emulador](media/primitive-prompts.png)
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
