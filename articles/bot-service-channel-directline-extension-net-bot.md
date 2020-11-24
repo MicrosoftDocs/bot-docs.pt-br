@@ -8,12 +8,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 01/16/2020
-ms.openlocfilehash: c9dd4165aabe16155c86abd7263acac54e2e5941
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: 7acebf6c0a9bcb2083fe66b4b24f96328e6c0fcf
+ms.sourcegitcommit: 179619020e61e2034d405a5a562ce5c40188e0ba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95456720"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95788755"
 ---
 # <a name="configure-net-bot-for-extension"></a>Configurar o bot do .NET para a extensão
 
@@ -122,6 +122,23 @@ Se tudo estiver correto, a página retornará este conteúdo JSON: `{"v":"123","
 - Se o valor *inicializado* do **ponto de extremidade. bot** for falso, isso significa que a extensão do serviço de aplicativo de linha direta não pode validar a **chave de extensão do serviço de aplicativo** adicionada às configurações de *aplicativo* do bot acima.
     1. Confirme se o valor foi inserido corretamente.
     1. Alterne para a **chave de extensão do serviço de aplicativo** alternativa mostrada na página de configuração do canal de **linha direta** do bot.
+    
+- Se estiver tentando usar o OAuth com a extensão de serviço de aplicativo de linha direta e encontrar o erro "não é possível obter a AppId de bot da declaração de audiência". um *ClaimsIdentity* com o *AudienceClaim* atribuído precisa ser definido no *BotFrameworkHttpAdapter*. Para fazer isso, um desenvolvedor pode subclassificar o adaptador semelhante ao exemplo abaixo:
+
+```csharp
+public class AdapterWithStaticClaimsIdentity : BotFrameworkHttpAdapter
+{
+ public AdapterWithStaticClaimsIdentity(IConfiguration configuration, ILogger<BotFrameworkHttpAdapter> logger, ConversationState conversationState = null)
+            : base(configuration, logger)
+ {
+            // Manually create the ClaimsIdentity and create a Claim with a valid AudienceClaim and the AppID for a bot using the Direct Line App Service Extension.
+            var appId = configuration.GetSection(MicrosoftAppCredentials.MicrosoftAppIdKey)?.Value;
+            ClaimsIdentity = new ClaimsIdentity(new List<Claim>{
+                new Claim(AuthenticationConstants.AudienceClaim, appId)
+            });
+ }
+}
+```
 
 ## <a name="next-steps"></a>Próximas etapas
 

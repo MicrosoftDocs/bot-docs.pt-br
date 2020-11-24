@@ -1,5 +1,5 @@
 <Type Name="OrchestratorAdaptiveRecognizer" FullName="Microsoft.Bot.Builder.AI.Orchestrator.OrchestratorAdaptiveRecognizer">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="810eec317fbe88b3a12392b7fce12f4fa303a478" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95468506" /></Metadata><TypeSignature Language="C#" Value="public class OrchestratorAdaptiveRecognizer : Microsoft.Bot.Builder.Dialogs.Recognizer" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="10aea4585326632f0358434d83e28ca59b7b87d1" /><Meta Name="ms.sourcegitcommit" Value="179619020e61e2034d405a5a562ce5c40188e0ba" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/24/2020" /><Meta Name="ms.locfileid" Value="95788730" /></Metadata><TypeSignature Language="C#" Value="public class OrchestratorAdaptiveRecognizer : Microsoft.Bot.Builder.Dialogs.Recognizer" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit OrchestratorAdaptiveRecognizer extends Microsoft.Bot.Builder.Dialogs.Recognizer" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.AI.Orchestrator.OrchestratorAdaptiveRecognizer" />
   <TypeSignature Language="VB.NET" Value="Public Class OrchestratorAdaptiveRecognizer&#xA;Inherits Recognizer" />
@@ -231,7 +231,7 @@
         <ReturnType>AdaptiveExpressions.Properties.StringExpression</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Obtém ou define o caminho completo para o modelo NLR a ser usado.</summary>
+        <summary>Obtém ou define o caminho da pasta para o modelo base do Orchestrator a ser usado.</summary>
         <value>Caminho do modelo.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -317,7 +317,7 @@
         <ReturnType>AdaptiveExpressions.Properties.StringExpression</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Obtém ou define o caminho completo para o instantâneo a ser usado.</summary>
+        <summary>Obtém ou define o caminho completo do arquivo de instantâneo do Orchestrator a ser usado.</summary>
         <value>Caminho do instantâneo.</value>
         <remarks>To be added.</remarks>
       </Docs>
