@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 5/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: cf7c5c53a13f28b544d135e09c7fa31c4b773e9b
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 9813f84937d2366d7b4b754ba6a1b0c1a022bab7
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416795"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95454790"
 ---
 # <a name="use-language-generation-templates-in-your-bot"></a>Usar modelos de geração de linguagem em seu bot
 
@@ -196,7 +196,7 @@ Baixe e instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator
 
 1. Execute o exemplo localmente em seu computador. Se você precisar de instruções, consulte o arquivo LEIAME para o [Exemplo de C#](https://aka.ms/cs-core-sample), [Exemplo de JS](https://aka.ms/js-core-sample) ou [Exemplo de Python](https://aka.ms/python-core-sample).
 
-1. No emulador, digite uma mensagem, como "viagem para Paris" ou "ir de Paris para Berlim". Use qualquer enunciado encontrado no arquivo FlightBooking.json para treinar a intenção "Reservar voo".
+1. No emulador, digite uma mensagem como "viagem a Paris" ou "indo de Paris para Berlim". Use qualquer enunciado encontrado no arquivo FlightBooking.json para treinar a intenção "Reservar voo".
 
 ![Entrada de reserva do LUIS](../v4sdk/media/how-to-luis/luis-user-travel-input.png)
 

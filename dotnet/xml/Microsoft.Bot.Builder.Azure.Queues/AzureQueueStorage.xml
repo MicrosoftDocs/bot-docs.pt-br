@@ -1,5 +1,5 @@
 <Type Name="AzureQueueStorage" FullName="Microsoft.Bot.Builder.Azure.Queues.AzureQueueStorage">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="17adff32f3e156913ff503a6d1f87925b918ff2c" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94618365" /></Metadata><TypeSignature Language="C#" Value="public class AzureQueueStorage : Microsoft.Bot.Builder.QueueStorage" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="dcf3b6d6795d5435dd68480ef0904a6b5f93b5cf" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95455210" /></Metadata><TypeSignature Language="C#" Value="public class AzureQueueStorage : Microsoft.Bot.Builder.QueueStorage" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AzureQueueStorage extends Microsoft.Bot.Builder.QueueStorage" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Azure.Queues.AzureQueueStorage" />
   <TypeSignature Language="VB.NET" Value="Public Class AzureQueueStorage&#xA;Inherits QueueStorage" />
@@ -7,6 +7,7 @@
   <AssemblyInfo>
     <AssemblyName>Microsoft.Bot.Builder.Azure.Queues</AssemblyName>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.QueueStorage</BaseTypeName>
@@ -27,6 +28,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.Azure.Queues</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="queuesStorageConnectionString" Type="System.String" />
@@ -51,6 +53,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.Azure.Queues</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.String&gt;</ReturnType>

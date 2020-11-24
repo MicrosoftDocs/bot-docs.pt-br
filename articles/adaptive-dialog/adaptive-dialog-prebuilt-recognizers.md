@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 06/12/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: fef009de9af76529f09da3d4d687dba17d06e815
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: c76caf8b59243fccfad7797bcf678a60b9e23dec
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94596479"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95454910"
 ---
 # <a name="recognizers-in-adaptive-dialogs---reference-guide"></a>Reconhecedores em caixas de diálogo adaptáveis – guia de referência
 
@@ -323,8 +323,8 @@ Veja a seguir a estrutura geral de um arquivo de configuração de treinamento c
         "triggers": {
             // Key is name of intent within the .lu file (in this case RootDialog.lu)
             // Value is the path to the child dialog's .lu file.
-            "<intent-name-1>": "<path-of-associated-child-dialog's-language-file>",
-            "<intent-name-2>": "<path-of-associated-child-dialog's-language-file>"
+            "<intent-name-1>": "<file-name-with-language-of-associated-child-dialog>",
+            "<intent-name-2>": "<file-name-with-language-of-associated-child-dialog>"
             // And so on.
         },
     "<path-of-additional-language-file-to-train>": {
@@ -332,8 +332,8 @@ Veja a seguir a estrutura geral de um arquivo de configuração de treinamento c
         "rootDialog": <true-or-false>,
         // list of triggers within that dialog
         "triggers": {
-            "<intent-name-1>": "<path-of-associated-child-dialog's-language-file>",
-            "<intent-name-2>": "<path-of-associated-child-dialog's-language-file>"
+            "<intent-name-1>": "<file-name-with-language-of-associated-child-dialog>",
+            "<intent-name-2>": "<file-name-with-language-of-associated-child-dialog>"
         }
         // And so on.
     }
@@ -357,22 +357,22 @@ Teria um arquivo de configuração no diretório de **caixas de diálogo** que p
     "./rootDialog/rootDialog.lu": {
         "rootDialog": true,
         "triggers": {
-            "DialogA_intent": "./DialogA/DialogA.lu",
-            "DialogB_intent": "./DialogB/DialogB.lu"
+            "DialogA_intent": ".DialogA.lu",
+            "DialogB_intent": "DialogB.lu"
         }
     },
     "./DialogA/DialogA.lu": {
         "triggers": {
-            "DialogA1_intent": "./DialogA/DialogA1/DialogA1.lu",
-            "DialogA2_intent": "./DialogA/DialogA2/DialogA2.lu",
+            "DialogA1_intent": "DialogA1.lu",
+            "DialogA2_intent": "DialogA2.lu",
             "Intent-A-1": "",
             "Intent-A-2": ""
         }
     },
     "./DialogA/DialogA1/DialogA1.lu": {
         "triggers": {
-            "DialogA1.1_intent": "./DialogA/DialogA1/DialogA1.1.lu",
-            "DialogA1.2_intent": "./DialogA/DialogA1/DialogA1.2.lu",
+            "DialogA1.1_intent": "DialogA1.1.lu",
+            "DialogA1.2_intent": "DialogA1.2.lu",
         }
     },
     "./DialogB/DialogB.lu": {
@@ -385,6 +385,38 @@ Teria um arquivo de configuração no diretório de **caixas de diálogo** que p
 ```
 
 No arquivo JSON acima, quando a parte de valor do par chave/valor está em branco, ela se refere a uma intenção que não resulta em uma nova caixa de diálogo adaptável de contêiner, mas, em vez disso, dispara uma ação associada ao `OnIntent` gatilho especificado.
+
+Se o idioma estiver incluído, a configuração de exemplo deverá ser assim:
+```json
+{
+    "rootDialog.en-us": {
+        "rootDialog": true,
+        "triggers": {
+            "DialogA_intent": "DialogA.en-us",
+            "DialogB_intent": "DialogB.en-us"
+        }
+    },
+    "DialogA.en-us": {
+        "triggers": {
+            "DialogA1_intent": "DialogA1.en-us",
+            "DialogA2_intent": "DialogA2.en-us",
+            "Intent-A-1": "",
+            "Intent-A-2": ""
+        }
+    },
+    "DialogA1.en-us": {
+        "triggers": {
+            "DialogA1.1_intent": "DialogA1.1.en-us",
+            "DialogA1.2_intent": "DialogA1.2.en-us",
+        }
+    },
+    "DialogB.en-us": {
+        "triggers": {
+            "DialogB1_intent": "DialogB1.en-us",
+        }
+    }
+}
+```
 
 > [!TIP]
 >

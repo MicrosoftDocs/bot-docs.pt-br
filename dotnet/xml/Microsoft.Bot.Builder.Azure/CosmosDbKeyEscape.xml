@@ -1,5 +1,5 @@
 <Type Name="CosmosDbKeyEscape" FullName="Microsoft.Bot.Builder.Azure.CosmosDbKeyEscape">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="36618e1840b9ba55fb41b277f6a3b5d2eb4c271c" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94610608" /></Metadata><TypeSignature Language="C#" Value="public static class CosmosDbKeyEscape" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a7888549c17a67bad5442312e0119ddb961a3bd3" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95455150" /></Metadata><TypeSignature Language="C#" Value="public static class CosmosDbKeyEscape" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit CosmosDbKeyEscape extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Azure.CosmosDbKeyEscape" />
   <TypeSignature Language="VB.NET" Value="Public Class CosmosDbKeyEscape" />
@@ -17,6 +17,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -47,6 +48,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -79,6 +81,7 @@ Mais informações em <see cref="P:Microsoft.Azure.Documents.Resource.Id" /> .</
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -118,6 +121,7 @@ Mais informações em <see cref="P:Microsoft.Azure.Documents.Resource.Id" /> .</
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
