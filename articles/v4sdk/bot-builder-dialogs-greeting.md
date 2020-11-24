@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2701f42a2db6e7e727b4867192c2f7929d3dab14
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 5872650d191931e5fad81a49132c61dab204945e
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417284"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95449391"
 ---
 # <a name="implement-a-greeting-dialog"></a>Implementar um diálogo de saudação
 
@@ -51,7 +51,7 @@ Para obter mais informações sobre como dar boas-vindas aos usuários, confira 
 
 1. Se ainda não tiver feito isso, instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator-readme).
 1. Execute o exemplo localmente em seu computador.
-1. Inicie o emulador, conecte ao seu bot e envie mensagens conforme mostrado a seguir.
+1. Inicie o Emulador, conecte-se ao seu bot e envie mensagens conforme mostrado abaixo.
 
 A FAZER: Tire uma nova captura de tela.
 

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 08/14/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 158882314663d954095d84c5c6175159a2b76f77
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 722e4d55fb2c234af979a01be1f9bb422e52c910
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414395"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95449460"
 ---
 # <a name="authentication-types"></a>Tipos de autenticação
 

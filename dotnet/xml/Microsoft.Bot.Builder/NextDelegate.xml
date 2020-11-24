@@ -1,5 +1,5 @@
 <Type Name="NextDelegate" FullName="Microsoft.Bot.Builder.NextDelegate">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="88a885e887595f17917b9dcb5d728bef75b84758" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94615178" /></Metadata><TypeSignature Language="C#" Value="public delegate System.Threading.Tasks.Task NextDelegate(CancellationToken cancellationToken);" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7adea883f04cde24ba4c238437cad135f9b15f08" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95448310" /></Metadata><TypeSignature Language="C#" Value="public delegate System.Threading.Tasks.Task NextDelegate(CancellationToken cancellationToken);" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed NextDelegate extends System.MulticastDelegate" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.NextDelegate" />
   <TypeSignature Language="VB.NET" Value="Public Delegate Function NextDelegate(cancellationToken As CancellationToken) As Task " />
@@ -18,6 +18,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Delegate</BaseTypeName>

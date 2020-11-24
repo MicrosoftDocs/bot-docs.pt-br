@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: f6eaa16291d4670cb9f7009dc258399949e6be43
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 1497b11dfcdf41b077ceb623c3f477e08d392b76
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824566"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95449591"
 ---
 # <a name="authentication-with-the-bot-connector-api"></a>Autenticação com a API do conector de bot
 
@@ -247,16 +247,17 @@ payload:
 > No fim de 2017, a v3.2 do protocolo de segurança do Bot Framework será introduzida. Essa nova versão inclui um novo valor de "emissor" dentro de tokens que são trocados entre o Bot Framework Eumaltor e o bot. Para se preparar para essa alteração, as etapas a seguir descrevem como verificar os valores de emissor da v 3.1 e v3.2.
 
 O [Bot Framework Emulator](../bot-service-debug-emulator.md) é uma ferramenta da área de trabalho que você pode usar para testar a funcionalidade do bot. Embora o Bot Framework Emulator use as mesmas [tecnologias de autenticação](#authentication-technologies) descritas acima, não é possível representar o serviço do Bot Connector real.
-Em vez disso, ele usa a ID de Aplicativo da Microsoft e a Senha de Aplicativo da Microsoft que você especifica ao conectar o emulador ao bot para criar tokens que são idênticos aos criados pelo bot.
-Quando o emulador envia uma solicitação ao bot, ele especifica o token JWT no cabeçalho `Authorization` da solicitação – em essência, usando as próprias credenciais do bot para autenticar a solicitação.
+Em vez disso, ele usa a ID do aplicativo da Microsoft e a senha de aplicativo da Microsoft que você especifica ao conectar o emulador ao bot para criar tokens idênticos aos que o bot cria.
+Quando o emulador envia uma solicitação ao bot, ele especifica o token JWT no `Authorization` cabeçalho da solicitação, em essência, usando as próprias credenciais do bot para autenticar a solicitação.
 
-Se você estiver implementando uma biblioteca de autenticação e quer aceitar solicitações do Bot Framework Emulator, é necessário adicionar este caminho de verificação adicional. O caminho é estruturalmente semelhante ao caminho de verificação [Connector -> Bot](#connector-to-bot), mas usa o documento do OpenID da MSA, em vez do documento do OpenID do Bot Connector.
+Se você estiver implementando uma biblioteca de autenticação e quer aceitar solicitações do Bot Framework Emulator, é necessário adicionar este caminho de verificação adicional. O caminho é estruturalmente semelhante ao caminho de verificação do [bot de > do conector](#connector-to-bot) , mas usa o documento OPENID do MSA em vez do documento OpenID do conector de bot.
 
-Este diagrama mostra as etapas para a autenticação de emulador ao bot:
+Este diagrama mostra as etapas para a autenticação do emulador para o bot:
 
 ![Autenticar chamadas do Bot Framework Emulator para o bot](../media/connector/auth_bot_framework_emulator_to_bot.png)
 
 ---
+
 ### <a name="step-2-get-the-msa-openid-metadata-document"></a>Etapa 2: obter o documento de metadados do OpenID da MSA
 
 O documento de metadados do OpenID especifica o local de um segundo documento que lista as chaves de assinatura válidas. Para obter o documento de metadados do OpenID da MSA, emita esta solicitação por meio de HTTPS:
@@ -290,7 +291,7 @@ O corpo da resposta especifica o documento no [formato JWK](https://tools.ietf.o
 
 ### <a name="step-4-verify-the-jwt-token"></a>Etapa 4: verificar o token JWT
 
-Para verificar a autenticidade do token que foi enviado pelo emulador, você deve extrair o token do cabeçalho `Authorization` da solicitação, analisar o token, verificar seu conteúdo e verificar a assinatura.
+Para verificar a autenticidade do token enviado pelo emulador, você deve extrair o token do `Authorization` cabeçalho da solicitação, analisar o token, verificar seu conteúdo e verificar sua assinatura.
 
 Bibliotecas de análise de JWT estão disponíveis para várias plataformas e a maioria implementa análise segura e confiável para tokens JWT, embora normalmente seja necessário configurar essas bibliotecas para exigir que certas características do token (seu emissor, audiência, etc.) contenham valores corretos.
 Ao analisar o token, é necessário configurar a biblioteca de análise ou gravar sua própria validação para garantir que o token atenda a esses requisitos:
@@ -304,7 +305,7 @@ Ao analisar o token, é necessário configurar a biblioteca de análise ou grava
 7. O token tem uma assinatura de criptografia válida com uma chave listada no documento de chaves do OpenID que foi recuperado na [Etapa 3](#emulator-to-bot-step-3).
 
 > [!NOTE]
-> O requisito 5 é específico para o caminho de verificação do emulador.
+> Requisito 5 é um específico para o caminho de verificação do emulador.
 
 Se o token não atender a todos esses requisitos, o bot deve encerrar a solicitação retornando um código de status **HTTP 403 (proibido)** .
 
@@ -381,13 +382,13 @@ payload:
 
 | Versão do protocolo | Valor válido |
 |----|----|
-| v3.1 e v3.2 |  ID de Aplicativo da Microsoft do bot + `/.default` |
+| v3.1 e v3.2 |  A ID do aplicativo da Microsoft do bot `/.default` |
 
 #### <a name="jwt-audience"></a>Audiência JWT
 
 | Versão do protocolo | Valor válido |
 |----|----|
-| v3.1 e v3.2 | ID de Aplicativo da Microsoft do bot |
+| v3.1 e v3.2 | A ID do aplicativo da Microsoft do bot |
 
 #### <a name="jwt-issuer"></a>Emissor JWT
 

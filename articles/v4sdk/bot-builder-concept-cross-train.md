@@ -1,5 +1,5 @@
 ---
-title: Treinamento cruzado de seus modelos LUIS e QnA Maker
+title: Como fazer um treinamento cruzado dos seus modelos LUIS e QnA Maker
 description: Descrevendo os conceitos por trás de um bot com treinamento cruzado para usar LUIS para LUIS e LUIS para reconhecedores de QnA Maker
 keywords: LUIS, QnA Maker, QnA, bot, treinamento cruzado, treinamento cruzado, caixas de diálogo adaptáveis, Lu
 author: WashingtonKayaker
@@ -9,14 +9,14 @@ ms.topic: how-to
 ms.service: bot-service
 ms.date: 11/1/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 76721e9caac8b5b2c42b3ce2f390be2c33d6828e
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: d737bbf0db4a221cd598842386efa28300293d86
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94618130"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95449471"
 ---
-# <a name="cross-training-your-luis-and-qna-maker-models"></a>Treinamento cruzado de seus modelos LUIS e QnA Maker
+# <a name="cross-training-your-luis-and-qna-maker-models"></a>Como fazer um treinamento cruzado dos seus modelos LUIS e QnA Maker
 
 [!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
@@ -67,18 +67,18 @@ Esse bot consiste em três caixas de diálogo adaptáveis, cada uma com seu pró
 
 A troca a seguir demonstra um cenário potencial de uso do cliente que não pode ser manipulado pelo bot, mas pode ser após o treinamento cruzado dos modelos LUIS do bot.
 
-> **Bot** : Olá, como posso ajudá-lo hoje mesmo?
+> **Bot**: Olá, como posso ajudá-lo hoje mesmo?
 >
-> **Usuário** : Eu quero reservar um vôo
+> **Usuário**: Eu quero reservar um vôo
 >
-> **Bot** : ótimo, eu posso ajudá-lo com isso. Qual é sua data de partida?
+> **Bot**: ótimo, eu posso ajudá-lo com isso. Qual é sua data de partida?
 
-O bot estará esperando uma resposta para a pergunta _qual é a sua data de partida?_ , algo como "29 de fevereiro", mas como ele tratará uma interrupção no fluxo de conversação quando o usuário responder com algo que a caixa de diálogo de voo não pode manipular? Algo semelhante ao seguinte:
+O bot estará esperando uma resposta para a pergunta _qual é a sua data de partida?_, algo como "29 de fevereiro", mas como ele tratará uma interrupção no fluxo de conversação quando o usuário responder com algo que a caixa de diálogo de voo não pode manipular? Algo semelhante ao seguinte:
 
 >
-> **Usuário** : preciso reservar uma sala primeiro
+> **Usuário**: preciso reservar uma sala primeiro
 
-No exemplo acima, quando o usuário solicitou o registro de um vôo, o reconhecedor da caixa de diálogo raiz retornou a `BookFlight` intenção. Isso é executado `flightDialog` , uma caixa de diálogo adaptável que processa vôos de reservas, mas não sabe nada sobre hotéis. Quando o usuário solicita uma reserva de Hotel, a caixa de diálogo voo não pode entender, pois o expressão "preciso reservar uma sala primeiro" não corresponde a nenhuma intenções no modelo de caixas de diálogo de voo LUIS.
+No exemplo acima, quando o usuário solicitou o livro de um vôo, o reconhecedor da caixa de diálogo raiz retornou a `BookFlight` intenção. Isso é executado `flightDialog` , uma caixa de diálogo adaptável que processa vôos de reservas, mas não sabe nada sobre hotéis. Quando o usuário solicita uma reserva de Hotel, a caixa de diálogo voo não pode entender, pois o expressão "preciso reservar uma sala primeiro" não corresponde a nenhuma intenções no modelo de caixas de diálogo de voo LUIS.
 
 Após o treinamento cruzado dos `.lu` arquivos, o bot agora será capaz de detectar que o usuário está solicitando algo que outra caixa de diálogo possa responder, de modo que ele passe a solicitação até seu pai, nesse caso, a caixa de diálogo raiz, que detecta a `BookHotel` intenção. Isso é executado `hotelDialog` , uma caixa de diálogo adaptável que processa reservas de Hotel. Depois que a caixa de diálogo do Hotel concluir a solicitação de reserva do Hotel, o controle será passado de volta para a caixa de diálogo voo para concluir a reserva de voo.
 
@@ -154,11 +154,11 @@ A tabela a seguir mostra a matriz de respostas possíveis e a ação resultante 
 >
 > O treinamento cruzado de todos os modelos LUIS e QnA Maker em um bot típico pode ser um processo muito envolvido e entediante. Há um comando incluído na interface de linha de comando do bot Framework (BF CLI) que automatiza esse trabalho para você. Isso é discutido em detalhes na seção [de comando do bot Framework CLI entre os treinamentos](#the-bot-framework-cli-cross-train-command) abaixo.
 >
-> Executar esse comando em um projeto de bot que tenha modelos LUIS e QnA Maker irá automaticamente fazer o treinamento automático de LUIS para LUIS e QnA Maker para QnA Maker em todas as caixas de diálogo adaptáveis em todo o projeto, bem como LUIS para QnA Maker treinamento cruzado em cada caixa de diálogo adaptável que tenha ambos os modelos, ou seja, um `.lu` `.qna` arquivo e.
+> A execução desse comando em um projeto de bot que tenha modelos LUIS e QnA Maker irá automaticamente fazer o treinamento automático do LUIS para o LUIS em todas as caixas de diálogo adaptáveis em todo o projeto, bem como LUIS para QnA Maker o Training em cada caixa de diálogo adaptável que tenha ambos os modelos, ou seja, `.lu` `.qna` arquivos e.
 
 ### <a name="cross-train-multiple-luis-and-qna-maker-models"></a>Treinamento cruzado de vários modelos de LUIS e de QnA Maker
 
-O treinamento cruzado de um bot com modelos LUIS e de QnA Maker melhora as interrupções globais, conforme descrito anteriormente em [Luis a Luis cross training](#luis-to-luis-cross-training). Isso também se aplica a QnA Maker. Por exemplo:
+O treinamento cruzado de um bot com modelos LUIS e de QnA Maker melhora as interrupções globais, conforme descrito anteriormente em [Luis a Luis cross training](#luis-to-luis-cross-training). Isso também se aplica a QnA Maker. Por exemplo: 
 
 - Quando o modelo LUIS da caixa de diálogo raiz tem treinamento cruzado com o modelo de QnA Maker da caixa de diálogo raiz, o comando cria a `DeferToRecognizer_qna` intenção em RootDialog.Lu, com todas as perguntas listadas como declarações.
 - Em seguida, quando o filho da caixa de diálogo raiz tem treinamento cruzado, ele pega essas intenções e, por sua vez, passa-as para sua caixa de diálogo filho e isso continua até que não haja mais caixas de diálogo filhas.

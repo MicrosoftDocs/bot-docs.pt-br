@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/22/2019
-ms.openlocfilehash: 43f5460bd8a0d649f41b8d2b537279f144f1ee03
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: a8d14b3ff220c1aa39f77f32f50d6f798b7d367e
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824436"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95449500"
 ---
 # <a name="authentication-in-direct-line-api-30"></a>Autenticação na API de linha direta 3,0
 
@@ -172,12 +172,12 @@ Quando você usa a *autenticação do Serviço de Bot do Azure* com o [Webchat](
     1. A identidade do usuário em um canal.
     1. A identidade do usuário em um provedor de identidade no qual o bot está interessado.
 
-    Quando um bot solicita que o usuário A em um canal conecte-se a um provedor de identidade P, o processo de conexão deve garantir que o usuário A seja aquele que se conecta em P. Se outro usuário B tiver permissão para se conectar, então o usuário A terá acesso ao recurso do usuário B por meio do bot. No Webchat, temos dois mecanismos para verificar se o usuário correto entrou conforme descrito a seguir.
+    Quando um bot solicita ao usuário um em um canal para entrar em um provedor de identidade P, o processo de entrada deve garantir que o usuário a é aquele que entra em P. Se outro usuário B tiver permissão para entrar, então o usuário A teria acesso ao recurso do usuário B por meio do bot. No Webchat, temos dois mecanismos para verificar se o usuário correto entrou conforme descrito a seguir.
 
     1. No final da credencial, no passado, o usuário recebia um código de seis dígitos gerado aleatoriamente (também conhecido como código mágico). O usuário deveria digitar esse código na conversa que iniciava a conexão para concluir o processo de entrada. Esse mecanismo tende a resultar em uma experiência de usuário inadequada. Além disso, ele ainda está suscetível a ataques de phishing. Um usuário mal-intencionado pode induzir outro usuário a se conectar e a obter o código mágico por meio de phishing.
 
     2. Devido aos problemas com a abordagem anterior, o Serviço de Bot do Azure acabou com a necessidade do código mágico. O Serviço de Bot do Azure garante que o processo de conexão só possa ser concluído na **mesma sessão do navegador** que a do próprio Webchat.
-    Para habilitar essa proteção, como desenvolvedor de bot, você deve iniciar o Webchat com um **token do Direct Line** que contenha uma **lista de domínios confiáveis que possam hospedar o cliente do Webchat do bot**. Antes, você só poderia obter esse token passando um parâmetro opcional não documentado para a API de token do Direct Line. Agora, com as opções de autenticação avançada, você pode especificar estaticamente a lista de domínios confiáveis (origem) na página de configuração do Direct Line.
+    Para habilitar essa proteção, como um desenvolvedor de bot, você deve iniciar o chat da Web com um **token de linha direta** que contém uma **lista de domínios confiáveis que podem hospedar o cliente de chat da Web do bot**. Antes, você só poderia obter esse token passando um parâmetro opcional não documentado para a API de token do Direct Line. Agora, com as opções de autenticação avançada, você pode especificar estaticamente a lista de domínios confiáveis (origem) na página de configuração do Direct Line.
 
     Confira também [Adicionar autenticação ao bot por meio do Serviço de Bot do Azure](../v4sdk/bot-builder-authentication.md).
 

@@ -1,5 +1,5 @@
 <Type Name="PayloadDisassembler" FullName="Microsoft.Bot.Streaming.Payloads.PayloadDisassembler">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="5861b3fb099599eebed111ee4c30eedd835c9d5a" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94604958" /></Metadata><TypeSignature Language="C#" Value="public abstract class PayloadDisassembler" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c6faa5e6052f644f48ac61b1c1ba3c5a6e870268" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95447490" /></Metadata><TypeSignature Language="C#" Value="public abstract class PayloadDisassembler" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit PayloadDisassembler extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Streaming.Payloads.PayloadDisassembler" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class PayloadDisassembler" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -36,6 +37,7 @@ Isso permite a multiplexação de carga e evita que uma única carga grande bloq
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="sender" Type="Microsoft.Bot.Streaming.PayloadTransport.IPayloadSender" />
@@ -62,6 +64,7 @@ Isso permite a multiplexação de carga e evita que uma única carga grande bloq
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -90,6 +93,7 @@ Isso permite a multiplexação de carga e evita que uma única carga grande bloq
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Streaming.Payloads.StreamWrapper&gt;</ReturnType>
@@ -115,6 +119,7 @@ Isso permite a multiplexação de carga e evita que uma única carga grande bloq
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Streaming.Payloads.StreamDescription</ReturnType>
@@ -143,6 +148,7 @@ Isso permite a multiplexação de carga e evita que uma única carga grande bloq
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -178,6 +184,7 @@ Isso permite a multiplexação de carga e evita que uma única carga grande bloq
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Newtonsoft.Json.JsonSerializer</ReturnType>
@@ -202,6 +209,7 @@ Isso permite a multiplexação de carga e evita que uma única carga grande bloq
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Char</ReturnType>

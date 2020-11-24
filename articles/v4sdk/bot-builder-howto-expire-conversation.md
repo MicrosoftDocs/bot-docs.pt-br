@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/14/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b6520831d9666b3f3da344f653ec03ff16168e39
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 1ad22194783a49508bb445533fdb01f59ee2ffde
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417231"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95449231"
 ---
 # <a name="expire-a-conversation"></a>Expirar uma conversa
 
@@ -35,7 +35,7 @@ NOTE: in the future, provide guidance on an azure function queue or time trigger
 
 - Se você não tiver uma assinatura do Azure, crie uma conta [gratuita](https://azure.microsoft.com/free/) antes de começar.
 - Conhecimento de [noções básicas de bot][concept-basics], [gerenciamento de estado][concept-state] e [biblioteca de diálogos][concept-dialogs].
-- Uma cópia do **exemplo de prompt de vários turnos** em [**C#** ][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
+- Uma cópia do **exemplo de prompt de vários turnos** em [**C#**][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 

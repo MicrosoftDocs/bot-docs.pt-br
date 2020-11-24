@@ -1,5 +1,5 @@
 <Type Name="DictionaryRenderer" FullName="Microsoft.Bot.Builder.TemplateManager.DictionaryRenderer">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="9ab1d8fece7616746a4d3a8cbb4eee2606da6bf1" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94609538" /></Metadata><TypeSignature Language="C#" Value="public class DictionaryRenderer : Microsoft.Bot.Builder.TemplateManager.ITemplateRenderer" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="83a0c77773bf0056eaf313658756c8a4cc0192d3" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95449820" /></Metadata><TypeSignature Language="C#" Value="public class DictionaryRenderer : Microsoft.Bot.Builder.TemplateManager.ITemplateRenderer" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DictionaryRenderer extends System.Object implements class Microsoft.Bot.Builder.TemplateManager.ITemplateRenderer" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.TemplateManager.DictionaryRenderer" />
   <TypeSignature Language="VB.NET" Value="Public Class DictionaryRenderer&#xA;Implements ITemplateRenderer" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -39,6 +40,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="templates" Type="Microsoft.Bot.Builder.TemplateManager.LanguageTemplateDictionary" />
@@ -66,6 +68,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Object&gt;</ReturnType>

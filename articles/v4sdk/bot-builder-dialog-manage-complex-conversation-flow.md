@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 03/26/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 88262c740cfa1d339e4a19a7fa1fc1253a6ca46e
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 6c769910fe0239e71ed8d7cc717b5b8c8fa7c575
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417147"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95449490"
 ---
 # <a name="create-advanced-conversation-flow-using-branches-and-loops"></a>Criar fluxo de conversa avançado usando ramificações e loops
 
@@ -26,7 +26,7 @@ Este artigo aborda como gerenciar conversas complexas com ramificações e loop 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento sobre [noções básicas de bots][concept-basics], [gerenciamento de estado][concept-state], a [biblioteca de diálogos][concept-dialogs] e como [implementar um fluxo de conversa sequencial][simple-dialog].
-- Uma cópia do exemplo de diálogo complexo em [**C#** ][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
+- Uma cópia do exemplo de diálogo complexo em [**C#**][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
@@ -42,19 +42,19 @@ O bot deriva do manipulador de atividade. Como muitos dos bots de exemplo, ele d
 
 Para usar as caixas de diálogo, instale o pacote do NuGet, **Microsoft.Bot.Builder.Dialogs**.
 
-![Fluxo de bot complexo](./media/complex-conversation-flow.png)
+![Diagrama de fluxo de bot complexo do C#](./media/complex-conversation-flow.png)
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Para usar as caixas de diálogo, seu projeto precisa instalar o pacote do npm, **botbuilder-dialogs**.
 
-![Fluxo de bot complexo](./media/complex-conversation-flow-js.png)
+![Diagrama de fluxo de bot complexo do JavaScript](./media/complex-conversation-flow-js.png)
 
 ### <a name="python"></a>[Python](#tab/python)
 
 Para usar diálogos, seu projeto precisa instalar o pacote PyPI **botbuilder-dialogs** executando `pip install botbuilder-dialogs`.
 
-![Fluxo de bot complexo](./media/complex-conversation-flow-python.png)
+![Diagrama de fluxo de bot complexo do Python](./media/complex-conversation-flow-python.png)
 
 ---
 
@@ -255,7 +255,7 @@ Crie e registre serviços conforme necessário:
 
 1. Se ainda não tiver feito isso, instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator-readme).
 1. Execute o exemplo localmente em seu computador.
-1. Inicie o emulador, conecte ao seu bot e envie mensagens conforme mostrado a seguir.
+1. Inicie o Emulador, conecte-se ao seu bot e envie mensagens conforme mostrado abaixo.
 
 ![teste de exemplo de diálogo complexo](~/media/emulator-v4/test-complex-dialog.png)
 

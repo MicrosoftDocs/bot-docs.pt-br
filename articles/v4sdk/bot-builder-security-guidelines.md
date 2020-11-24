@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 07/07/2020
-ms.openlocfilehash: a013a617eeda264704269202b86ec73fc29c6bff
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 8f07d5cf55d09c88289c07da30236309580649a4
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92413865"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95449221"
 ---
 # <a name="bot-framework-security-guidelines"></a>Diretrizes de segurança do Bot Framework
 
@@ -110,7 +110,7 @@ Quando você usa a *autenticação do Serviço de Bot do Azure* com o [Webchat](
     Habilite as opções de **autenticação avançadas** do canal de linha direta para permitir que o serviço de bot do Azure detecte e rejeite ainda mais qualquer alteração de ID de usuário. Isso significa que a ID de usuário ( `Activity.From.Id` ) nas mensagens da linha direta para o bot será sempre a mesma que você inicializou o controle de chat Web. Observe que esse recurso requer que a ID de usuário comece com `dl_`.
 
     > [!NOTE]
-    > Quando uma *User.Id* é fornecida durante a troca de um segredo para um token, essa *User.Id* é inserida no token. A linha direta garante que as mensagens enviadas para o bot tenham essa ID como a *from.ID*da atividade. Se um cliente enviar uma mensagem para uma linha direta com um *from.ID*diferente, ele será alterado para a **ID no token** antes de encaminhar a mensagem para o bot. Portanto, você não pode usar outra ID de usuário depois que um segredo de canal é inicializado com uma ID de usuário.
+    > Quando uma *User.Id* é fornecida durante a troca de um segredo para um token, essa *User.Id* é inserida no token. A linha direta garante que as mensagens enviadas para o bot tenham essa ID como a *from.ID* da atividade. Se um cliente enviar uma mensagem para uma linha direta com um *from.ID* diferente, ele será alterado para a **ID no token** antes de encaminhar a mensagem para o bot. Portanto, você não pode usar outra ID de usuário depois que um segredo de canal é inicializado com uma ID de usuário.
 
 1. **Identidades do usuário**. Você deve saber que está lidando com duas identidades de usuário:
 
@@ -122,7 +122,7 @@ Quando você usa a *autenticação do Serviço de Bot do Azure* com o [Webchat](
     1. No final da credencial, no passado, o usuário recebia um código de seis dígitos gerado aleatoriamente (também conhecido como código mágico). O usuário deveria digitar esse código na conversa que iniciava a conexão para concluir o processo de entrada. Esse mecanismo tende a resultar em uma experiência de usuário inadequada. Além disso, ele ainda está suscetível a ataques de phishing. Um usuário mal-intencionado pode induzir outro usuário a se conectar e a obter o código mágico por meio de phishing.
 
     2. Devido aos problemas com a abordagem anterior, o Serviço de Bot do Azure acabou com a necessidade do código mágico. O Serviço de Bot do Azure garante que o processo de conexão só possa ser concluído na **mesma sessão do navegador** que a do próprio Webchat.
-    Para habilitar essa proteção, como desenvolvedor de bot, você deve iniciar o Webchat com um **token do Direct Line** que contenha uma **lista de domínios confiáveis que possam hospedar o cliente do Webchat do bot**. Antes, você só poderia obter esse token passando um parâmetro opcional não documentado para a API de token do Direct Line. Agora, com as opções de autenticação avançada, você pode especificar estaticamente a lista de domínios confiáveis (origem) na página de configuração do Direct Line.
+    Para habilitar essa proteção, como um desenvolvedor de bot, você deve iniciar o chat da Web com um **token de linha direta** que contém uma **lista de domínios confiáveis que podem hospedar o cliente de chat da Web do bot**. Antes, você só poderia obter esse token passando um parâmetro opcional não documentado para a API de token do Direct Line. Agora, com as opções de autenticação avançada, você pode especificar estaticamente a lista de domínios confiáveis (origem) na página de configuração do Direct Line.
 
 
 ## <a name="additional-information"></a>Informações adicionais

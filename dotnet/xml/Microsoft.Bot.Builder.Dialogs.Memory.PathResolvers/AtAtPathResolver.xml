@@ -1,5 +1,5 @@
 <Type Name="AtAtPathResolver" FullName="Microsoft.Bot.Builder.Dialogs.Memory.PathResolvers.AtAtPathResolver">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="ed74e94d76a2e0d75158005b5a80284aeed5405a" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94598448" /></Metadata><TypeSignature Language="C#" Value="public class AtAtPathResolver : Microsoft.Bot.Builder.Dialogs.Memory.PathResolvers.AliasPathResolver" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="68ab5ab2ddf28f036018ea6423ae10e5043db980" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95448770" /></Metadata><TypeSignature Language="C#" Value="public class AtAtPathResolver : Microsoft.Bot.Builder.Dialogs.Memory.PathResolvers.AliasPathResolver" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AtAtPathResolver extends Microsoft.Bot.Builder.Dialogs.Memory.PathResolvers.AliasPathResolver" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Memory.PathResolvers.AtAtPathResolver" />
   <TypeSignature Language="VB.NET" Value="Public Class AtAtPathResolver&#xA;Inherits AliasPathResolver" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Memory.PathResolvers.AliasPathResolver</BaseTypeName>
@@ -34,6 +35,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>

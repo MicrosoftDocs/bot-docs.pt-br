@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 05/06/2020
-ms.openlocfilehash: 7550956e95e686f73551b5f2dcad01a1871e1818
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: 264ad61f702d0dec26089be5d353542126096ecf
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94599638"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95449542"
 ---
 # <a name="recognizers-in-adaptive-dialogs"></a>Reconhecedores em diálogos adaptáveis
 
@@ -32,13 +32,13 @@ Os reconhecedores fornecem a capacidade de entender a entrada do usuário. O di�
 
 Os reconhecedores, juntamente com os [geradores][4] constituem as funcionalidades de NLP (processamento de idioma natural) em diálogos adaptáveis. NLP é um processo tecnológico que permite que aplicativos de computador, como bots, obtenham o significado de uma entrada do usuário. Para fazer isso, ele tenta identificar informações úteis contidas em conversas interpretando as necessidades dos usuários (intenções) e extrair informações úteis (entidades) de uma frase e responder a ela novamente em uma linguagem que o usuário entenderá.
 
-As funcionalidades de um bot serão muito mínimas sem o NLP; é ele que permite que o bot compreenda as mensagens enviadas pelos usuários e responda a elas de acordo. Quando um usuário envia uma mensagem com “Olá”, são as funcionalidades de processamento de idioma natural do bot que permitem saber que o usuário postou uma saudação padrão que, por sua vez, permite que o bot utilize as funcionalidades de IA para oferecer uma resposta adequada. Nesse caso, o bot pode responder com uma saudação.
+As funcionalidades de um bot serão muito mínimas sem o NLP; é ele que permite que o bot compreenda as mensagens enviadas pelos usuários e responda a elas de acordo. Quando um usuário envia uma mensagem com "Olá", trata-se dos recursos de processamento de linguagem natural do bot que permite saber que o usuário postou uma saudação padrão que, por sua vez, permite que o bot utilize seus recursos de ia para criar uma resposta adequada. Nesse caso, o bot pode responder com uma saudação.
 
-Sem o NLP, o bot não pode diferenciar de maneira significativa quando um usuário insere “Olá” ou “Tchau” ou qualquer outra coisa. Para um bot sem NLP, “Olá” ou “Tchau” não será diferente de nenhuma outra cadeia de caracteres agrupada em ordem aleatória. O NLP ajuda a fornecer contexto e significado às entradas do usuário baseadas em texto ou voz, de modo que o bot possa oferecer a melhor resposta.
+Sem o NLP, o bot não pode diferenciar de maneira significativa entre quando um usuário insere "Olá" ou "adeus" ou qualquer outra coisa. Para um bot sem NLP, "Olá" e "adeus" não será diferente de qualquer outra cadeia de caracteres agrupada em ordem aleatória. O NLP ajuda a fornecer contexto e significado às entradas do usuário baseadas em texto ou voz, de modo que o bot possa oferecer a melhor resposta.
 
 Um dos desafios mais significativos quando se trata de NLP no bot é o fato de os usuários não fazerem ideia do que dizer ao bot. Embora você possa tentar prever o que os usuários não vão dizer, haverá conversas inesperadas. A boa notícia é que o SDK do Bot Framework fornece as ferramentas necessárias para refinar continuamente as funcionalidades de NLP dos bots.
 
-Os dois componentes principais do NLP em diálogos adaptáveis são os **reconhecedores** (Reconhecimento vocal), que processa e interpreta a _entrada do usuário_ foco deste artigo, e os [**geradores**][4] (geração de linguagem) que produz as _respostas do bot_ , que é o processo de produzir frases significativas na forma de idioma natural. Em síntese, é quando o bot responde a um usuário com uma linguagem legível.
+Os dois componentes principais do NLP em diálogos adaptáveis são os **reconhecedores** (Reconhecimento vocal), que processa e interpreta a _entrada do usuário_ foco deste artigo, e os [**geradores**][4] (geração de linguagem) que produz as _respostas do bot_, que é o processo de produzir frases significativas na forma de idioma natural. Em síntese, é quando o bot responde a um usuário com uma linguagem legível.
 
 > [!TIP]
 > Embora seja comum que os usuários se comuniquem com o bot digitando ou falando uma mensagem, o reconhecedor é o subsistema que você pode usar para processar qualquer forma de entrada do usuário, seja falada, digitada, clicada (como ao responder aos [cartões adaptáveis][15]) e, até mesmo, outras modalidades como um reconhecedor de geolocalização ou de foco pode ser usado. A camada do reconhecedor abstrai as complexidades do processamento de entrada do usuário de gatilhos e ações. Dessa forma, os gatilhos e as ações não precisam interpretar os vários tipos de entradas do usuário, mas permitem que os reconhecedores façam isso.
@@ -51,7 +51,7 @@ O LU **(Reconhecimento vocal)** é o subconjunto do NLP que lida com o modo como
 
 ### <a name="intents"></a>Intenções
 
-As intenções são como você categoriza as intenções esperadas do usuário, conforme expressas nas mensagens dele para o bot. Considere uma intenção como uma representação da ação que o usuário deseja realizar, a finalidade ou a meta expressa na entrada. Tarefas como reservar um voo, pagar uma fatura ou encontrar um artigo de notícias. Você define e nomeia as intenções que correspondem a essas ações. Por exemplo, qualquer bot pode definir uma intenção chamada _Saudação_ ; um aplicativo de viagem pode criar uma intenção chamada _BookFlight_. As intenções são definidas em um arquivo de modelo de Reconhecimento vocal (.lu); esses arquivos são arquivos de texto com uma extensão .lu e, geralmente, residem no mesmo diretório e têm o mesmo nome do diálogo.  Por exemplo, o diálogo raiz conterá um arquivo de modelo de Reconhecimento vocal chamado **RootDialog.lu**
+As intenções são como você categoriza as intenções esperadas do usuário, conforme expressas nas mensagens dele para o bot. Considere uma intenção como uma representação da ação que o usuário deseja realizar, a finalidade ou a meta expressa na entrada. Tarefas como reservar um voo, pagar uma fatura ou encontrar um artigo de notícias. Você define e nomeia as intenções que correspondem a essas ações. Por exemplo, qualquer bot pode definir uma intenção chamada _Saudação_; um aplicativo de viagem pode criar uma intenção chamada _BookFlight_. As intenções são definidas em um arquivo de modelo de Reconhecimento vocal (.lu); esses arquivos são arquivos de texto com uma extensão .lu e, geralmente, residem no mesmo diretório e têm o mesmo nome do diálogo.  Por exemplo, o diálogo raiz conterá um arquivo de modelo de Reconhecimento vocal chamado **RootDialog.lu**
 
 Este é um exemplo de um arquivo .lu simples que captura uma intenção de **Saudação** simples com uma lista de exemplos de enunciados que capturam diferentes maneiras pelas quais um usuário pode expressar essa intenção. Use um caractere `-`, `+`ou `*` para indicar as listas. Não há suporte para listas numeradas.  
 
@@ -66,16 +66,16 @@ Este é um exemplo de um arquivo .lu simples que captura uma intenção de **Sau
 
 ### <a name="utterances"></a>Declarações
 
-Os enunciados ( _frases de gatilho_ ) são entradas de usuários e, como tal, podem conter um número quase infinito de variações potenciais. Como os enunciados nem sempre são bem formados, você precisará fornecer vários exemplos de enunciados para intenções específicas que, de fato, treinam os bots para reconhecer intenções de diferentes enunciados. Ao fazer isso, os bots terão alguma "inteligência" para entender os idiomas humanos.
+Os enunciados (_frases de gatilho_) são entradas de usuários e, como tal, podem conter um número quase infinito de variações potenciais. Como os enunciados nem sempre são bem formados, você precisará fornecer vários exemplos de enunciados para intenções específicas que, de fato, treinam os bots para reconhecer intenções de diferentes enunciados. Ao fazer isso, os bots terão alguma "inteligência" para entender os idiomas humanos.
 
 > [!TIP]
-> Os enunciados também são conhecidos como _frases de gatilho_ , porque são _frases_ _enunciadas_ por um usuário que podem acionar um _gatilho_ `OnIntent`.
+> Os enunciados também são conhecidos como _frases de gatilho_, porque são _frases_ _enunciadas_ por um usuário que podem acionar um _gatilho_ `OnIntent`.
 
 ### <a name="entities"></a>Entidades
 
 As entidades são uma coleção de objetos, cada um consistindo em dados extraídos de um enunciado que adicionam outras informações esclarecedoras que descrevem a intenção, como lugares, horas e pessoas. As entidades e as intenções são partes importantes dos dados que são extraídos de um enunciado. Os enunciados em geral incluirão uma intenção e poderão incluir zero ou mais entidades, que fornecem detalhes importantes relacionados à intenção.
 
-As entidades no [formato de arquivo .lu][8] são definidas no formato `{<entityName>=<labelled value>}`, como `{toCity=seattle}` (EntityName é _toCity_ e o valor rotulado é _seattle_ ).  Por exemplo:
+As entidades no [formato de arquivo .lu][8] são definidas no formato `{<entityName>=<labelled value>}`, como `{toCity=seattle}` (EntityName é _toCity_ e o valor rotulado é _seattle_).  Por exemplo:
 
 ```lu
 # BookFlight

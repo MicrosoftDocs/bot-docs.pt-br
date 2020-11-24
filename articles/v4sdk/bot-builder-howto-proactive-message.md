@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 09/01/2020
+ms.date: 11/23/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 5c79fb8cc430a72996cadc7b650b4108a9482eeb
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 4a7081766b5cb74b818a58ba1a77c564f824fbd5
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414152"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95449241"
 ---
 # <a name="send-proactive-notifications-to-users"></a>Enviar notificações proativas para os usuários
 
@@ -98,9 +98,7 @@ O segundo controlador, o controlador _notificar_, é responsável por enviar a m
 Sempre que a página de notificação do bot é solicitada, o controlador de notificação recupera as referências de conversa a partir do dicionário.
 Então, o controlador usa os métodos `ContinueConversationAsync` e `BotCallback` para enviar a mensagem proativa.
 
-[!code-csharp[Notify logic](~/../botbuilder-samples/samples/csharp_dotnetcore/16.proactive-messages/Controllers/NotifyController.cs?range=17-62&highlight=28,40-45)]
-
-Para enviar uma mensagem proativa, o adaptador requer uma ID do aplicativo para o bot. Em um ambiente de produção, você pode usar a ID do aplicativo do bot. Em um ambiente de teste local, você pode usar qualquer GUID. Se no momento o bot não estiver atribuído a uma ID do aplicativo, o controlador de notificação gera automaticamente um espaço reservado para ID a ser usado para a chamada.
+[!code-csharp[Notify logic](~/../botbuilder-samples/samples/csharp_dotnetcore/16.proactive-messages/Controllers/NotifyController.cs?range=17-54&highlight=20,32-37)]
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -121,12 +119,14 @@ Em seguira, o servidor usará o `_send_proactive_message` para enviar a mensagem
 
 ---
 
+Para enviar uma mensagem proativa, o adaptador requer uma ID do aplicativo para o bot. Em um ambiente de produção, você pode usar a ID do aplicativo do bot. Para testar o bot localmente com o emulador, você pode usar a cadeia de caracteres vazia ("").
+
 ## <a name="test-your-bot"></a>Testar seu bot
 
 1. Se ainda não tiver feito isso, instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator-readme).
 1. Execute o exemplo localmente em seu computador.
-1. Inicie o emulador e conecte ao seu bot.
-1. Carregar à página de api/notificação do seu bot. Isso gerará uma mensagem proativa no emulador.
+1. Inicie o emulador e conecte-se ao bot.
+1. Carregar à página de api/notificação do seu bot. Isso irá gerar uma mensagem proativa no emulador.
 
 ## <a name="additional-information"></a>Informações adicionais
 

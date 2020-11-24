@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 7911d5feacec23a39c66901cbb63a41e99f1957a
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 9772d18acb3dbd093b0b9f4afdd3a262152f518b
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414543"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95449540"
 ---
 # <a name="activity-processing"></a>Processamento de atividade
 
@@ -32,7 +32,7 @@ O adaptador de bot encapsula processos de autenticação e envia atividades para
 
 O adaptador autentica cada atividade recebida que o aplicativo recebe, usando informações da atividade e o cabeçalho `Authentication` da solicitação REST. O adaptador usa um objeto conector e as credenciais do aplicativo para autenticar as atividades de saída para o usuário.
 
-A autenticação do Serviço Conector Bot usa tokens JWT (Token Web JSON) `Bearer` e **ID de aplicativo da Microsoft**e **senha de aplicativo da Microsoft** criados pelo Azure quando você cria um serviço de bot ou registra seu robô. Seu aplicativo precisará dessas credenciais no momento da inicialização, para permitir que o adaptador autentique o tráfego.
+A autenticação do Serviço Conector Bot usa tokens JWT (Token Web JSON) `Bearer` e **ID de aplicativo da Microsoft** e **senha de aplicativo da Microsoft** criados pelo Azure quando você cria um serviço de bot ou registra seu robô. Seu aplicativo precisará dessas credenciais no momento da inicialização, para permitir que o adaptador autentique o tráfego.
 
 > [!NOTE]
 > Se você estiver executando ou testando seu bot localmente, por exemplo, usando o Bot Framework Emulator, você pode fazê-lo sem configurar o adaptador para autenticar o tráfego para e do seu bot.
@@ -78,7 +78,7 @@ Além da lógica de bot e middleware, os manipuladores de resposta (às vezes ta
 
 Cada nova atividade obtém um novo thread para executar em. Quando o encadeamento para processar a atividade é criado, a lista de manipuladores dessa atividade é copiada para esse novo encadeamento. Nenhum manipulador adicionado após esse ponto será executado para esse evento de atividade específico.
 
-Os manipuladores registrados em um objeto de contexto são tratados de maneira muito semelhante à forma que o adaptador gerencia o [pipeline do middleware](~/v4sdk/bot-builder-concept-middleware.md#the-bot-middleware-pipeline). Ou seja, os manipuladores são chamados na ordem em que são adicionados e chamar o _próximo_ delegado passa o controle para o próximo manipulador de eventos registrado. Se um manipulador não chamar o próximo delegado, nenhum dos manipuladores de eventos subsequentes serão chamados, o evento [entra em curto](~/v4sdk/bot-builder-concept-middleware.md#short-circuiting) e o adaptador não envia a resposta para o canal.
+Os manipuladores registrados em um objeto de contexto são tratados de maneira muito semelhante à forma que o adaptador gerencia o [pipeline do middleware](~/v4sdk/bot-builder-concept-middleware.md#the-bot-middleware-pipeline). Ou seja, os manipuladores são chamados na ordem em que são adicionados e chamar o _próximo_ delegado passa o controle para o próximo manipulador de eventos registrado. Se um manipulador não chamar o próximo delegado, nenhum dos manipuladores de eventos subsequentes será chamado, os [circuitos curtos](~/v4sdk/bot-builder-concept-middleware.md#short-circuiting)do evento e o adaptador não enviará a resposta para o canal.
 
 ## <a name="next-steps"></a>Próximas etapas
 

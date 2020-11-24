@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/31/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 05c337b555339269e222c81b9837934333bcb144
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: fc7bf3453ab9f0f83033cad63e8d2578b7bb249a
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92413708"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95449251"
 ---
 # <a name="add-telemetry-to-your-qnamaker-bot"></a>Adicionar telemetria ao seu bot do QnA Maker
 
@@ -126,21 +126,18 @@ Começaremos com o [aplicativo de exemplo do QnA Maker](https://aka.ms/cs-qna) e
         }
     }
     ```
-   > [!Note] 
-   > 
-   > * Detalhes sobre como obter a _chave de instrumentação do Application Insights_ podem ser encontrados no artigo [Chaves do Application Insights](../bot-service-resources-app-insights-keys.md).
+
+    > [!Note]
     >
+    > * Detalhes sobre como obter a _chave de instrumentação do Application Insights_ podem ser encontrados no artigo [Chaves do Application Insights](../bot-service-resources-app-insights-keys.md).
     > * Para isso, você já deverá ter uma [conta do QnA Maker](https://aka.ms/create-qna-maker). Se necessário, você pode encontrar informações sobre como obter os valores do QnA KnowledgebaseId, EndpointKey e HostName [aqui](https://aka.ms/bot-framework-emulator-qna-keys).
-    > 
 
+Neste ponto, o trabalho preliminar para habilitar a telemetria usando o Application Insights está concluído.  Você pode executar o bot localmente usando o emulador de bot e, em seguida, entrar em Application Insights para ver o que está sendo registrado em log, como o tempo de resposta, a integridade geral do aplicativo e as informações gerais em execução.
 
-Neste ponto, o trabalho preliminar para habilitar a telemetria usando o Application Insights está concluído.  Você pode executar o bot localmente usando o emulador de bot e, em seguida, ir para o Application Insights para ver o que está sendo registrado em log, assim como o tempo de resposta, a integridade geral do aplicativo e as informações gerais de execução. 
-
-> [!TIP] 
+> [!TIP]
 > Para obter informações sobre como habilitar/desabilitar o registro em log de eventos de atividade e de informações pessoais, confira [Adicionar telemetria ao bot](bot-builder-telemetry.md#enabling-or-disabling-activity-logging)
 
-Em seguida, veremos o que precisa ser incluído para adicionar a funcionalidade de telemetria ao serviço do QnA Maker. 
-
+Em seguida, veremos o que precisa ser incluído para adicionar a funcionalidade de telemetria ao serviço do QnA Maker.
 
 ## <a name="enabling-telemetry-to-capture-usage-data-from-the-qna-maker-service"></a>Habilitar a telemetria para capturar dados de uso do serviço do QnA Maker
 
@@ -182,14 +179,14 @@ O serviço do QnA Maker tem o registro em log de telemetria interno disponível 
                 _telemetryClient);
     ```
 
-    > [!TIP] 
-    > Verifique se os nomes de propriedade que você usa nas entradas de `_configuration` correspondem aos nomes de propriedade usados no arquivo AppSettings.json e se os valores dessas propriedades são obtidos selecionando o botão _Exibir Código_ em https://www.qnamaker.ai/Home/MyServices:
+    > [!TIP]
+    > Verifique se os nomes de propriedade que você usa nas `_configuration` entradas correspondem aos nomes de propriedade usados na AppSettings.jsno arquivo e os valores dessas propriedades são obtidos selecionando o botão _Exibir código_ na página [minhas bases de dados de conhecimento](https://www.qnamaker.ai/Home/MyServices) no portal de QnA Maker:
 
-        
     ![AppSettings](media/AppSettings.json-QnAMaker.png)
 
 #### <a name="viewing-telemetry-data-logged-from-the-qna-maker-default-entries"></a>Como exibir dados de telemetria registrados em log das entradas padrão do QnA Maker
-Você pode exibir os resultados do uso do bot do QnA Maker no Application Insights depois de executar o bot no emulador de bot, executando as seguintes etapas:
+
+Você pode exibir os resultados do uso do QnA Maker bot em Application Insights depois de executar o bot no emulador de bot executando as seguintes etapas:
 
 1. Vá para o [Portal do Azure](https://portal.azure.com/)
 
@@ -326,7 +323,8 @@ Depois de aprender a adicionar propriedades personalizadas, aprenderemos como cr
     ```
 
 ##### <a name="viewing-telemetry-data-logged-from-the-new-property-_myimportantproperty_"></a>Exibindo dados de telemetria registrados da nova propriedade _MyImportantProperty_
-Depois de executar o bot no emulador, você pode exibir os resultados no Application Insights fazendo o seguinte:
+
+Depois de executar o bot no emulador, você pode exibir os resultados em Application Insights fazendo o seguinte:
 
 1. Volte para o navegador que tem a exibição _Logs (Análise)_ ativa.
 

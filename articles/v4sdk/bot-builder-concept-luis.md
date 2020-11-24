@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.date: 09/19/2018
 ms.reviewer: ''
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: defba7fec6f1962abb7d01642173d874fabaf62a
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 800b7397004c0819b0012c99233163990a1d8929
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416885"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95449440"
 ---
 # <a name="language-understanding"></a>Reconhecimento Vocal
 
@@ -32,13 +32,13 @@ A interação entre usuários e bots geralmente é de forma livre e os bots prec
 
 ## <a name="recognize-intent"></a>Reconhecer intenção
 
-[LUIS](https://docs.microsoft.com/azure/cognitive-services/luis/home) ajuda você com a determinação da **intenção** do usuário, que é o que eles desejam fazer, a partir do que eles dizem, portanto, seu bot pode responder adequadamente. LUIS é especialmente útil quando o que eles dizem ao seu bot não segue uma estrutura previsível ou um padrão específico. Se um bot tem uma interface de usuário convencional, na qual o usuário fala ou digita uma resposta, pode haver variações intermináveis em *declarações*, que são a entrada falada ou textual do usuário.
+O [Luis](https://docs.microsoft.com/azure/cognitive-services/luis/home) ajuda você a determinar a **intenção** do usuário, que é o que eles querem fazer, do que eles dizem, para que o bot possa responder adequadamente. O LUIS é especialmente útil quando o que eles dizem para o bot não segue uma estrutura previsível ou um padrão específico. Se um bot tem uma interface de usuário convencional, na qual o usuário fala ou digita uma resposta, pode haver variações intermináveis em *declarações*, que são a entrada falada ou textual do usuário.
 
 Por exemplo, considere as várias maneiras de um usuário de um bot de viagem pode pedir para reservar um voo.
 
 ![Várias declarações formadas de modo diferente para reservar um voo](media/cognitive-services-add-bot-language/cognitive-services-luis-utterances.png)
 
-Essas declarações podem ter estruturas diferentes e contêm vários sinônimos para "voo" que você ainda não pensou. Em seu bot, pode ser difícil gravar a lógica que corresponde a todas as declarações e ainda distinguir outras intenções que contenham as mesmas palavras. Além disso, seu bot precisa extrair *entidades*, que são as palavras importantes, como locais e horas. LUIS facilita esse processo por meio da identificação contextualmente intenções e entidades para você.
+Esses declarações podem ter estruturas diferentes e conter vários sinônimos para "voo" que você não pensou. Em seu bot, pode ser difícil gravar a lógica que corresponde a todas as declarações e ainda distinguir outras intenções que contenham as mesmas palavras. Além disso, seu bot precisa extrair *entidades*, que são as palavras importantes, como locais e horas. LUIS facilita esse processo por meio da identificação contextualmente intenções e entidades para você.
 
 Quando você projeta seu bot para entrada de linguagem natural, você determina quais intenções e entidades seu bot precisa reconhecer e pensa em como elas se conectará às ações que seu bot usa. Em [luis.ai](https://www.luis.ai), você define intenções e entidades personalizadas e especifica o comportamento fornecendo exemplos para cada intenção e rotulando as entidades dentro deles.
 
@@ -60,7 +60,7 @@ Depois de ter configurado e conectado o LUIS, seu bot pode enviar a mensagem par
 
 ![Como as intenções e entidades são passadas ao seu bot](./media/cognitive-services-add-bot-language/cognitive-services-luis-message-flow-bot-code.png)
 
-Para começar a usar um aplicativo LUIS com o seu bot, confira [Usar LUIS para reconhecimento vocal](https://docs.microsoft.com/azure/bot-service/bot-builder-howto-v4-luis?view=azure-bot-service-4.0).
+Para começar a usar um aplicativo LUIS com o seu bot, confira [Usar LUIS para reconhecimento vocal](bot-builder-howto-v4-luis.md).
 
 ## <a name="best-practices-for-language-understanding"></a>Práticas recomendadas para Reconhecimento Vocal
 
@@ -99,7 +99,7 @@ A ferramenta de expedição ajuda você a integrar vários aplicativos LUIS e se
 
 ## <a name="use-luis-to-improve-speech-recognition"></a>Use LUIS para melhorar o reconhecimento de fala
 
-Para um bot que irá se dirigir para os usuários, integrá-lo com o LUIS pode ajudar seu bot a identificar palavras que podem ser interpretados incorretamente durante a conversão de fala em texto.  Por exemplo, em um cenário de xadrez, um usuário pode dizer: "Mover o peão para A7". Sem contexto para a intenção do usuário, o enunciado poderia ser reconhecido como: "Mover o pião para 7". Ao criar entidades que representam as coordenadas e peças de xadrez e rotulá-las em declarações, você fornece contexto para o reconhecimento de fala identificá-las. Você pode [habilitar a desobstrução de reconhecimento de fala](https://docs.microsoft.com/azure/bot-service/bot-service-manage-speech-priming?view=azure-bot-service-4.0) com canais de Bot Framework que são integrados com a Fala do Bing, como Web Chat, o emulador do Bot Framework e Cortana.  
+Para um bot que irá se dirigir para os usuários, integrá-lo com o LUIS pode ajudar seu bot a identificar palavras que podem ser interpretados incorretamente durante a conversão de fala em texto.  Por exemplo, em um cenário de xadrez, um usuário pode dizer: "Mover o peão para A7". Sem contexto para a intenção do usuário, o enunciado poderia ser reconhecido como: "Mover o pião para 7". Ao criar entidades que representam as coordenadas e peças de xadrez e rotulá-las em declarações, você fornece contexto para o reconhecimento de fala identificá-las. Você pode [habilitar a desobstrução de reconhecimento de fala](../bot-service-manage-speech-priming.md) com canais de Bot Framework que são integrados com a Fala do Bing, como Web Chat, o emulador do Bot Framework e Cortana.  
 
 ## <a name="additional-resources"></a>Recursos adicionais
 Consulte a documentação dos [Serviços Cognitivos](https://docs.microsoft.com/azure/cognitive-services/) para obter mais informações.

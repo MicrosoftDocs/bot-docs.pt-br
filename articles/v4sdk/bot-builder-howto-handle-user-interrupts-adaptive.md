@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 78da57a6ca756176826292aa1b0998dcc839ae64
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 68ffdc1f14ec133e76f88d2b1e2f9602a70320f3
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417206"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95449261"
 ---
 # <a name="handle-user-interruptions-in-adaptive-dialogs"></a>Lidar com interrupções do usuário em caixas de diálogo adaptáveis
 
@@ -389,7 +389,7 @@ Se selecionado:
 1. Isso resulta na execução da ação [ConfirmInput][confirm-input] , que exibe a mensagem "tem certeza de que deseja cancelar?"
 1. Em seguida, a `IfCondition` ação é executada para responder à  `ConfirmInput` ação.
     1. Se o usuário responde afirmativamente, `turn.confirm` é definido como `true` e o `CancelReadBack` modelo LG é executado, resultando em uma mensagem para o usuário: _certamente, cancelando todas as caixas de diálogo..._ e executa a ação [CancelAllDialogs][cancel-all-dialogs] , fechando todas as caixas de diálogo.
-    1. Se o usuário não responder a afirmativamente, `turn.confirm` é definido como `false` e o `Cancelcancelled` modelo LG é executado, resultando em uma mensagem para o usuário: _sem problema_e a conversa continua de onde parou.
+    1. Se o usuário não responder a afirmativamente, `turn.confirm` é definido como `false` e o `Cancelcancelled` modelo LG é executado, resultando em uma mensagem para o usuário: _sem problema_ e a conversa continua de onde parou.
 
 Este é o `OnIntent` código de gatilho em RootDialog.cs:
 
@@ -660,7 +660,7 @@ new SetProperty().configure(
 
 1. Se ainda não tiver feito isso, instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator-readme).
 1. Execute o exemplo localmente em seu computador.
-1. Inicie o emulador, conecte ao seu bot e envie mensagens conforme mostrado a seguir.
+1. Inicie o Emulador, conecte-se ao seu bot e envie mensagens conforme mostrado abaixo.
 
 A captura de tela mostrada abaixo verifica se você pode interromper o fluxo de conversação solicitando ajuda, mesmo que a caixa de diálogo adaptável ativa no momento não contenha o gatilho correspondente.
 

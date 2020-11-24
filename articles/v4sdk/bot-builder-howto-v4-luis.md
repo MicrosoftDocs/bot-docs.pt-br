@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 5d5d73a5cc6280627a93a17973768de35ada89df
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 2b024b7a0a81f5ac9681e0c5dc65fd2dab8310f5
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414174"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95449271"
 ---
 # <a name="add-natural-language-understanding-to-your-bot"></a>Adicionar reconhecimento de idioma natural ao seu bot
 
@@ -27,7 +27,7 @@ Este tópico explica como adicionar LUIS a um aplicativo de reservas de voo para
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - Uma conta do [LUIS](https://www.luis.ai).
-- Uma cópia da amostra de **Bot Básico** em [**C#** ](https://aka.ms/cs-core-sample), [**JavaScript**](https://aka.ms/js-core-sample) ou [**Python**](https://aka.ms/python-core-sample).
+- Uma cópia da amostra de **Bot Básico** em [**C#**](https://aka.ms/cs-core-sample), [**JavaScript**](https://aka.ms/js-core-sample) ou [**Python**](https://aka.ms/python-core-sample).
 - Conhecimento das [Noções básicas do bot](bot-builder-basics.md), do [processamento de idioma natural](https://docs.microsoft.com/azure/cognitive-services/luis/what-is-luis) e do [gerenciamento de recursos do bot](bot-file-basics.md).
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
@@ -210,7 +210,7 @@ Baixe e instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator
 
 1. Execute o exemplo localmente em seu computador. Se você precisar de instruções, consulte o arquivo LEIAME para o [Exemplo de C#](https://aka.ms/cs-core-sample), [Exemplo de JS](https://aka.ms/js-core-sample) ou [Exemplo de Python](https://aka.ms/python-core-sample).
 
-1. No emulador, digite uma mensagem, como "viagem para paris" ou "ir de paris para berlim". Use qualquer enunciado encontrado no arquivo FlightBooking.json para treinar a intenção "Reservar voo".
+1. No emulador, digite uma mensagem como "viagem a Paris" ou "indo de Paris para Berlim". Use qualquer enunciado encontrado no arquivo FlightBooking.json para treinar a intenção "Reservar voo".
 
 ![Entrada de reserva do LUIS](./media/how-to-luis/luis-user-travel-input.png)
 
