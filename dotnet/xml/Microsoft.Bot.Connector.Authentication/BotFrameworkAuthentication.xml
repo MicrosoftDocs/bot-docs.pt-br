@@ -1,5 +1,5 @@
 <Type Name="BotFrameworkAuthentication" FullName="Microsoft.Bot.Connector.Authentication.BotFrameworkAuthentication">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="b341c6d8cf2930682f14a8b004ae3d48c8b95f14" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94618361" /></Metadata><TypeSignature Language="C#" Value="public abstract class BotFrameworkAuthentication" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2b7297b24332f442935738c812f3995df80b6c1f" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95473020" /></Metadata><TypeSignature Language="C#" Value="public abstract class BotFrameworkAuthentication" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit BotFrameworkAuthentication extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Connector.Authentication.BotFrameworkAuthentication" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class BotFrameworkAuthentication" />
@@ -7,6 +7,7 @@
   <AssemblyInfo>
     <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -26,6 +27,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -43,6 +45,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Connector.Authentication.AuthenticateRequestResult&gt;</ReturnType>
@@ -72,6 +75,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Connector.Authentication.ProactiveCredentialsResult&gt;</ReturnType>

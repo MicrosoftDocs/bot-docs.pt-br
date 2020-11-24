@@ -1,5 +1,5 @@
 <Type Name="TeamsOperations" FullName="Microsoft.Bot.Connector.Teams.TeamsOperations">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="edb3aa4dde829170ee33d585ac8a50326a23a58f" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94611978" /></Metadata><TypeSignature Language="C#" Value="public class TeamsOperations : Microsoft.Bot.Connector.Teams.ITeamsOperations, Microsoft.Rest.IServiceOperations&lt;Microsoft.Bot.Connector.Teams.TeamsConnectorClient&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="873df3e2cea03c00bf89748acdd011ec5ad99137" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95472910" /></Metadata><TypeSignature Language="C#" Value="public class TeamsOperations : Microsoft.Bot.Connector.Teams.ITeamsOperations, Microsoft.Rest.IServiceOperations&lt;Microsoft.Bot.Connector.Teams.TeamsConnectorClient&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TeamsOperations extends System.Object implements class Microsoft.Bot.Connector.Teams.ITeamsOperations, class Microsoft.Rest.IServiceOperations`1&lt;class Microsoft.Bot.Connector.Teams.TeamsConnectorClient&gt;" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Connector.Teams.TeamsOperations" />
   <TypeSignature Language="VB.NET" Value="Public Class TeamsOperations&#xA;Implements IServiceOperations(Of TeamsConnectorClient), ITeamsOperations" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -42,6 +43,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="client" Type="Microsoft.Bot.Connector.Teams.TeamsConnectorClient" />
@@ -67,6 +69,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Connector.Teams.TeamsConnectorClient</ReturnType>
@@ -94,6 +97,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Rest.HttpOperationResponse&lt;Microsoft.Bot.Schema.Teams.ConversationList&gt;&gt;</ReturnType>
@@ -127,6 +131,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Rest.HttpOperationResponse&lt;Microsoft.Bot.Schema.Teams.TeamsMeetingParticipant&gt;&gt;</ReturnType>
@@ -171,6 +176,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Rest.HttpOperationResponse&lt;Microsoft.Bot.Schema.Teams.TeamDetails&gt;&gt;</ReturnType>

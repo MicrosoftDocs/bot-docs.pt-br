@@ -1,5 +1,5 @@
 <Type Name="ITeamsOperations" FullName="Microsoft.Bot.Connector.Teams.ITeamsOperations">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="beb5332d7b2c6dc902918e3e58c4a601e37224d6" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94611998" /></Metadata><TypeSignature Language="C#" Value="public interface ITeamsOperations" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3f63218bf72f66c047ba9915be448fd870eb1dcf" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95472400" /></Metadata><TypeSignature Language="C#" Value="public interface ITeamsOperations" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITeamsOperations" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Connector.Teams.ITeamsOperations" />
   <TypeSignature Language="VB.NET" Value="Public Interface ITeamsOperations" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
@@ -32,6 +33,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Rest.HttpOperationResponse&lt;Microsoft.Bot.Schema.Teams.ConversationList&gt;&gt;</ReturnType>
@@ -67,6 +69,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Rest.HttpOperationResponse&lt;Microsoft.Bot.Schema.Teams.TeamDetails&gt;&gt;</ReturnType>

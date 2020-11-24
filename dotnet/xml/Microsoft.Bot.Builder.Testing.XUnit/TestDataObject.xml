@@ -1,5 +1,5 @@
 <Type Name="TestDataObject" FullName="Microsoft.Bot.Builder.Testing.XUnit.TestDataObject">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="98a8974dda6adf0265c22711883eeefa3dd5e7b4" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94609508" /></Metadata><TypeSignature Language="C#" Value="public class TestDataObject : Xunit.Abstractions.IXunitSerializable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7ffde7a56385089312fe2172554cab532f7ec18a" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95472130" /></Metadata><TypeSignature Language="C#" Value="public class TestDataObject : Xunit.Abstractions.IXunitSerializable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TestDataObject extends System.Object implements class Xunit.Abstractions.IXunitSerializable" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Testing.XUnit.TestDataObject" />
   <TypeSignature Language="VB.NET" Value="Public Class TestDataObject&#xA;Implements IXunitSerializable" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -40,6 +41,7 @@ Isso também permite que o desenvolvedor clique com o botão direito do mouse em
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -61,6 +63,7 @@ Isso também permite que o desenvolvedor clique com o botão direito do mouse em
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="testData" Type="System.Object" />
@@ -88,6 +91,7 @@ Isso também permite que o desenvolvedor clique com o botão direito do mouse em
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -115,6 +119,7 @@ Isso também permite que o desenvolvedor clique com o botão direito do mouse em
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>T</ReturnType>
@@ -147,6 +152,7 @@ Isso também permite que o desenvolvedor clique com o botão direito do mouse em
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -174,6 +180,7 @@ Isso também permite que o desenvolvedor clique com o botão direito do mouse em
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>

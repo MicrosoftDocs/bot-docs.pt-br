@@ -1,5 +1,5 @@
 <Type Name="MessageSerializerSettings" FullName="Microsoft.Bot.Builder.Integration.MessageSerializerSettings">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="7938fdff90c36a2daf83954459a79080cdeed9dc" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94615548" /></Metadata><TypeSignature Language="C#" Value="public static class MessageSerializerSettings" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b5e3bba34e903249199f5a99d8736aab6ee285c6" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95472800" /></Metadata><TypeSignature Language="C#" Value="public static class MessageSerializerSettings" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit MessageSerializerSettings extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Integration.MessageSerializerSettings" />
   <TypeSignature Language="VB.NET" Value="Public Class MessageSerializerSettings" />
@@ -16,6 +16,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -45,6 +46,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Newtonsoft.Json.JsonSerializerSettings</ReturnType>

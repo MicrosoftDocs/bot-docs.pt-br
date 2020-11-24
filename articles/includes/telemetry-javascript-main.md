@@ -1,12 +1,11 @@
 ---
-ms.openlocfilehash: 593a61a8908dbb6b9e8b460b0d445bd0c610bffd
-ms.sourcegitcommit: ac3a7ee8979fc942f9d7420b2f6845c726b6661a
+ms.openlocfilehash: 95a595f1314ce9e6091a0065039c362d446cbc65
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89360071"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95554665"
 ---
-
 Este artigo começa com o [aplicativo de exemplo CoreBot](https://aka.ms/js-core-sample) e adiciona o código necessário para integrar a telemetria em qualquer bot. Isso permitirá que o Application Insights comece a acompanhar as solicitações.
 
 > [!IMPORTANT]
@@ -62,7 +61,7 @@ Este artigo começa com o [aplicativo de exemplo CoreBot](https://aka.ms/js-core
     ```
     -->
 
-5. Em seguida, você precisa adicionar o _middleware de telemetria_ ao [pipeline de middleware do adaptador](https://docs.microsoft.com/azure/bot-service/bot-builder-concept-middleware?view=azure-bot-service-4.0#the-bot-middleware-pipeline). Para fazer isso, adicione o seguinte código, começando logo após o código de tratamento de erro:  
+5. Em seguida, você precisa adicionar o _middleware de telemetria_ ao [pipeline de middleware do adaptador](../v4sdk/bot-builder-concept-middleware.md#the-bot-middleware-pipeline). Para fazer isso, adicione o seguinte código, começando logo após o código de tratamento de erro:  
 
     <!-- This level of detail may be too much:
         - The first step is to create a new telemetry client, in this case you are using Application Insights as the telemetry client using the module `ApplicationInsightsTelemetryClient` referenced in the previous step. This line of code will call the function `getTelemetryClient` that you will soon create, passing in the Application Insights key and that function will return a new telemetry client: `var telemetryClient = getTelemetryClient(process.env.InstrumentationKey);`. 

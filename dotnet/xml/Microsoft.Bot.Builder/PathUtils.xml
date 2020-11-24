@@ -1,5 +1,5 @@
 <Type Name="PathUtils" FullName="Microsoft.Bot.Builder.PathUtils">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="c0059518c6bc6886a0862d78dfc7c54eada1a9ab" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94612848" /></Metadata><TypeSignature Language="C#" Value="public static class PathUtils" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5bbb6bfafa6c7ab0c9c426b3a03b70c057fad030" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95473260" /></Metadata><TypeSignature Language="C#" Value="public static class PathUtils" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit PathUtils extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.PathUtils" />
   <TypeSignature Language="VB.NET" Value="Public Class PathUtils" />
@@ -13,6 +13,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -39,6 +40,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>

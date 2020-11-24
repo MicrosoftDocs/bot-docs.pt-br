@@ -1,5 +1,5 @@
 <Type Name="AuthenticateRequestResult" FullName="Microsoft.Bot.Connector.Authentication.AuthenticateRequestResult">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="b3aac749cd5344afe8f792e017b9ff733677626d" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94618379" /></Metadata><TypeSignature Language="C#" Value="public class AuthenticateRequestResult : Microsoft.Bot.Connector.Authentication.ProactiveCredentialsResult" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="e9b5c16402184409ea885118d1c6d6dba3bf2087" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95473060" /></Metadata><TypeSignature Language="C#" Value="public class AuthenticateRequestResult : Microsoft.Bot.Connector.Authentication.ProactiveCredentialsResult" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AuthenticateRequestResult extends Microsoft.Bot.Connector.Authentication.ProactiveCredentialsResult" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Connector.Authentication.AuthenticateRequestResult" />
   <TypeSignature Language="VB.NET" Value="Public Class AuthenticateRequestResult&#xA;Inherits ProactiveCredentialsResult" />
@@ -7,6 +7,7 @@
   <AssemblyInfo>
     <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Connector.Authentication.ProactiveCredentialsResult</BaseTypeName>
@@ -26,6 +27,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -43,6 +45,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -63,6 +66,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Claims.ClaimsIdentity</ReturnType>

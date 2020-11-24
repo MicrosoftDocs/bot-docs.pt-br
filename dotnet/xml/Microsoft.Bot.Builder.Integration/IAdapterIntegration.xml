@@ -1,5 +1,5 @@
 <Type Name="IAdapterIntegration" FullName="Microsoft.Bot.Builder.Integration.IAdapterIntegration">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="151b268cc608f5744cfacb1d462c7117988adac2" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94615558" /></Metadata><TypeSignature Language="C#" Value="public interface IAdapterIntegration" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="eca038f2dd616bc07dc2faafb0fd43ca17ca86c8" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95472430" /></Metadata><TypeSignature Language="C#" Value="public interface IAdapterIntegration" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IAdapterIntegration" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Integration.IAdapterIntegration" />
   <TypeSignature Language="VB.NET" Value="Public Interface IAdapterIntegration" />
@@ -17,6 +17,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
@@ -43,6 +44,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -85,6 +87,7 @@ A maioria _channels exigir que um usuário inicie uma conversa com um bot para q
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.InvokeResponse&gt;</ReturnType>

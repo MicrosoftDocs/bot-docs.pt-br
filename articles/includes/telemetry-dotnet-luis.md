@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 2d5f2cff4c9e2c6f3487ac17029d08d80252639b
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: 6e97fdf4007265715e6928bae7cbc7739ba0a131
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124121"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95564207"
 ---
 
 Em seguida, implementaremos a funcionalidade de telemetria em seu serviço LUIS. O serviço LUIS tem o registro em log de telemetria interno disponível para que o esforço necessário para começar a obter dados de telemetria do LUIS seja mínimo.  Se você estiver interessado em habilitar a telemetria em um bot habilitado para o QnA Maker, confira [Adicionar telemetria ao seu bot do QnAMaker](../v4sdk/bot-builder-telemetry-QnAMaker.md)
@@ -39,7 +39,6 @@ Isso é tudo, agora você deve ter um bot funcional que registra dados de teleme
 
 Para obter informações sobre como testar e depurar o bot, consulte os seguintes artigos:
 
- * [Depurar um bot](../bot-service-debug-bot.md)
- * [Diretrizes para testes e depuração](../v4sdk/bot-builder-testing-debugging.md)
- * [Depurar com o emulador](../bot-service-debug-emulator.md)
-
+- [Depurar um bot](../bot-service-debug-bot.md)
+- [Diretrizes para testes e depuração](../v4sdk/bot-builder-testing-debugging.md)
+- [Depurar com o emulador](../bot-service-debug-emulator.md)

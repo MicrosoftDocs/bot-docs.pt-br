@@ -1,5 +1,5 @@
 <Type Name="DateTimePrompt" FullName="Microsoft.Bot.Builder.Dialogs.DateTimePrompt">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="e2a7fa766e24d2b61010ccf4a98ae43f8c7da6a0" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94610338" /></Metadata><TypeSignature Language="C#" Value="public class DateTimePrompt : Microsoft.Bot.Builder.Dialogs.Prompt&lt;System.Collections.Generic.IList&lt;Microsoft.Bot.Builder.Dialogs.DateTimeResolution&gt;&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="23f980e20ad00e5497454c01654ef249ae7fb5e7" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95472650" /></Metadata><TypeSignature Language="C#" Value="public class DateTimePrompt : Microsoft.Bot.Builder.Dialogs.Prompt&lt;System.Collections.Generic.IList&lt;Microsoft.Bot.Builder.Dialogs.DateTimeResolution&gt;&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DateTimePrompt extends Microsoft.Bot.Builder.Dialogs.Prompt`1&lt;class System.Collections.Generic.IList`1&lt;class Microsoft.Bot.Builder.Dialogs.DateTimeResolution&gt;&gt;" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.DateTimePrompt" />
   <TypeSignature Language="VB.NET" Value="Public Class DateTimePrompt&#xA;Inherits Prompt(Of IList(Of DateTimeResolution))" />
@@ -18,6 +18,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Prompt&lt;System.Collections.Generic.IList&lt;Microsoft.Bot.Builder.Dialogs.DateTimeResolution&gt;&gt;</BaseTypeName>
@@ -52,6 +53,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="dialogId" Type="System.String" />
@@ -90,6 +92,7 @@ for especificado, esse local será usado para determinar o comportamento especí
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -121,6 +124,7 @@ for especificado, esse local será usado para determinar o comportamento especí
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -164,6 +168,7 @@ for especificado, esse local será usado para determinar o comportamento especí
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.PromptRecognizerResult&lt;System.Collections.Generic.IList&lt;Microsoft.Bot.Builder.Dialogs.DateTimeResolution&gt;&gt;&gt;</ReturnType>

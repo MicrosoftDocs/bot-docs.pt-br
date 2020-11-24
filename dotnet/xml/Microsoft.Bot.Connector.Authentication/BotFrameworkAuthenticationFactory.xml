@@ -1,5 +1,5 @@
 <Type Name="BotFrameworkAuthenticationFactory" FullName="Microsoft.Bot.Connector.Authentication.BotFrameworkAuthenticationFactory">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="713bd5d11ba643685b4a70b78624175904959b0c" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94618338" /></Metadata><TypeSignature Language="C#" Value="public static class BotFrameworkAuthenticationFactory" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="281029e6cdedb7818d057fce156cff9ad2a3f439" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95473010" /></Metadata><TypeSignature Language="C#" Value="public static class BotFrameworkAuthenticationFactory" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit BotFrameworkAuthenticationFactory extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Connector.Authentication.BotFrameworkAuthenticationFactory" />
   <TypeSignature Language="VB.NET" Value="Public Class BotFrameworkAuthenticationFactory" />
@@ -7,6 +7,7 @@
   <AssemblyInfo>
     <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -27,6 +28,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Connector</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Connector.Authentication.BotFrameworkAuthentication</ReturnType>

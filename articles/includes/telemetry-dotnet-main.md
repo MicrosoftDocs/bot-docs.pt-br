@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: cef721d58a02d69882664affc56e25dbacf601ba
-ms.sourcegitcommit: c886b886e6fe55f8a469e8cd32a64b6462383a4a
+ms.openlocfilehash: 6149dd01f6bba37281a58b38f8b3c28908392d26
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86124139"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95561036"
 ---
 
 Este artigo é iniciado no [aplicativo de exemplo CoreBot](https://aka.ms/cs-core-sample) e adiciona o código necessário para integrar a telemetria em qualquer bot. Isso permitirá que o Application Insights comece a acompanhar as solicitações.
@@ -82,16 +82,16 @@ Este artigo é iniciado no [aplicativo de exemplo CoreBot](https://aka.ms/cs-cor
         }
     }
     ```
+
     Observação: Detalhes sobre como obter a _chave de instrumentação do Application Insights_ podem ser encontrados no artigo [Chaves do Application Insights](../bot-service-resources-app-insights-keys.md).
 
-Neste ponto, o trabalho preliminar para habilitar a telemetria usando o Application Insights está concluído.  Você pode executar o bot localmente usando o emulador de bot e, em seguida, entrar em Application Insights para ver o que está sendo registrado, como o tempo de resposta, a integridade geral do aplicativo e as informações gerais em execução. 
-
+Neste ponto, o trabalho preliminar para habilitar a telemetria usando o Application Insights está concluído.  Você pode executar o bot localmente usando o emulador de bot e, em seguida, entrar em Application Insights para ver o que está sendo registrado, como o tempo de resposta, a integridade geral do aplicativo e as informações gerais em execução.
 
 ### <a name="enabling-telemetry-in-your-bots-dialogs"></a>Habilitar a telemetria nas caixas de diálogo de bots
 
 Ao adicionar uma nova caixa de diálogo a qualquer ComponentDialog, ela herdará o Microsoft.Bot.Builder.IBotTelemetryClient da caixa de diálogo pai.  Por exemplo, no aplicativo de exemplo CoreBot, todas as caixas de diálogo são adicionadas à MainDialog, que é uma ComponentDialog.  Depois de definir a propriedade TelemetryClient para a MainDialog, todas as caixas de diálogo adicionadas a ela herdarão automaticamente a telemetryClient dela, portanto, não precisará ser definida explicitamente ao adicionar caixas de diálogo.
- 
- Siga as etapas abaixo para atualizar o exemplo de CoreBot:
+
+Siga as etapas abaixo para atualizar o exemplo de CoreBot:
 
 1.  Em `MainDialog.cs`, atualize a lista de parâmetros do construtor para incluir o parâmetro `IBotTelemetryClient` e, em seguida, defina a propriedade TelemetryClient da MainDialog para esse valor, conforme mostrado no seguinte snippet de código:
 
@@ -105,7 +105,7 @@ Ao adicionar uma nova caixa de diálogo a qualquer ComponentDialog, ela herdará
     }
     ```
 
-> [!TIP] 
+> [!TIP]
 > Se você estiver acompanhando e atualizando o código de exemplo do CoreBot, poderá consultar o [código de exemplo do Application Insights](https://aka.ms/csharp-corebot-app-insights-sample) se tiver algum problema.
 
 Isso é tudo o que é necessário para adicionar telemetria às caixas de diálogo de bots, neste ponto, se você tiver executado o bot, verá que as coisas estão sendo registradas no Application Insights. No entanto, se você tiver uma tecnologia integrada, tal como o LUIS e o QnA Maker, será necessário adicionar o `TelemetryClient` a esse código também.

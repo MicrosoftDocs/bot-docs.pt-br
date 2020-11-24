@@ -1,5 +1,5 @@
 <Type Name="LanguageTemplateDictionary" FullName="Microsoft.Bot.Builder.TemplateManager.LanguageTemplateDictionary">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="11416d9cd6bc1417223672a6efafa302b2542f70" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94609528" /></Metadata><TypeSignature Language="C#" Value="public class LanguageTemplateDictionary : System.Collections.Generic.Dictionary&lt;string,Microsoft.Bot.Builder.TemplateManager.TemplateIdMap&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8c6c1ca1b5eeb57eda195f7ec4a539d0110ca58a" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95473240" /></Metadata><TypeSignature Language="C#" Value="public class LanguageTemplateDictionary : System.Collections.Generic.Dictionary&lt;string,Microsoft.Bot.Builder.TemplateManager.TemplateIdMap&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LanguageTemplateDictionary extends System.Collections.Generic.Dictionary`2&lt;string, class Microsoft.Bot.Builder.TemplateManager.TemplateIdMap&gt;" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.TemplateManager.LanguageTemplateDictionary" />
   <TypeSignature Language="VB.NET" Value="Public Class LanguageTemplateDictionary&#xA;Inherits Dictionary(Of String, TemplateIdMap)" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Collections.Generic.Dictionary&lt;System.String,Microsoft.Bot.Builder.TemplateManager.TemplateIdMap&gt;</BaseTypeName>
@@ -38,6 +39,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>

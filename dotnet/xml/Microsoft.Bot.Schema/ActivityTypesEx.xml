@@ -1,5 +1,5 @@
 <Type Name="ActivityTypesEx" FullName="Microsoft.Bot.Schema.ActivityTypesEx">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="51a44b26d8f8ea7e7aef0b1ca3d1fb9952af2bef" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94613178" /></Metadata><TypeSignature Language="C#" Value="public static class ActivityTypesEx" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="81a0259659d13c9135f250aa4abcb76aad34d01f" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95473200" /></Metadata><TypeSignature Language="C#" Value="public static class ActivityTypesEx" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ActivityTypesEx extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.ActivityTypesEx" />
   <TypeSignature Language="VB.NET" Value="Public Class ActivityTypesEx" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -35,6 +36,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -59,6 +61,7 @@ A atividade <see cref="P:Microsoft.Bot.Schema.Activity.Value" /> deve ser a <see
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
