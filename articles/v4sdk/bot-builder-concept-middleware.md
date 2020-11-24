@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: aa4bdaca9687dc7e86f9d818a3efd424d7ebe8d4
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 2ac18cc55a1c6a40408d9ef44b83c1821a91fd93
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417193"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95460930"
 ---
 # <a name="middleware"></a>Middleware
 
@@ -22,7 +22,7 @@ ms.locfileid: "92417193"
 
 O middleware é simplesmente uma classe que fica entre o adaptador e sua lógica de bot, adicionada à coleção de middlewares do seu adaptador durante a inicialização. O SDK permite escrever seu próprio middleware ou adicionar o middleware criado por outras pessoas. Toda atividade que entra ou sai do seu bot flui pelo middleware.
 
-O adaptador processa e direciona atividades de entrada através do pipeline de middleware de bot para a lógica do seu bot e, em seguida, recua novamente. O adaptador processa e direciona atividades de entrada através do pipeline de middleware de bot para a lógica do seu bot e, em seguida, recua novamente.
+O adaptador processa e direciona as atividades de entrada por meio do pipeline de middleware de bot para a lógica do bot e, em seguida, vice-versa. O adaptador processa e direciona atividades de entrada através do pipeline de middleware de bot para a lógica do seu bot e, em seguida, recua novamente.
 
 Antes de entrar no middleware, é importante entender [os bots em geral](~/v4sdk/bot-builder-basics.md) e [como eles processam as atividades](~/v4sdk/bot-builder-basics.md#the-activity-processing-stack).
 
@@ -42,13 +42,13 @@ Para cada atividade, o adaptador chama o middleware na ordem na qual você o adi
 
 Por exemplo:
 
-- manipulador de turno do objeto do 1º middleware executa o código antes de chamar _próxima_.
-  - O manipulador de turnos do segundo objeto de middleware executa o código antes de chamar no _próximo_.
-    - Manipulador de turno do bot é executado e retorna.
-  - O manipulador de turnos do segundo objeto de middleware executa qualquer código restante antes de retornar.
-- O manipulador de turnos do primeiro objeto de middleware executa qualquer código restante antes de retornar.
+- o manipulador de ativação do primeiro objeto de middleware executa o código antes de chamar _Next_.
+  - o manipulador de ativação do segundo objeto de middleware executa o código antes de chamar _Next_.
+    - O manipulador de ativação do bot é executado e retorna.
+  - o manipulador de ativação do segundo objeto de middleware executa qualquer código restante antes de retornar.
+- o manipulador de ativação do primeiro objeto de middleware executa qualquer código restante antes de retornar.
 
-Se o middleware não chamar o próximo delegado, o adaptador não chamará nenhum dos manipuladores de middleware ou bot subsequentes e os curtos circuitos do pipeline.
+Se o middleware não chamar o próximo delegado, o adaptador não chamará nenhum dos manipuladores do middleware ou da chamada de bot subsequentes e dos circuitos curtos do pipeline.
 
 Depois que o pipeline de middleware do bot for concluído, o turno terminará e o contexto do turn ficará fora do escopo.
 
@@ -81,7 +81,7 @@ Além da lógica de middleware aplicativo, os manipuladores de resposta (às vez
 > Tenha o cuidado para não chamar um método de resposta de atividade de dentro de seu respectivo manipulador de eventos de resposta, por exemplo, chamando o método de atividade de envio de dentro de um manipulador de atividades de envio. Isso pode gerar um loop infinito.
 
 Lembre-se: cada nova atividade obtém um novo thread para executar. Quando o encadeamento para processar a atividade é criado, a lista de manipuladores dessa atividade é copiada para esse novo encadeamento. Nenhum manipulador adicionado após esse ponto será executado para esse evento de atividade específico.
-Os manipuladores registrados em um objeto de contexto são tratados como o adaptador gerencia o pipeline do middleware. Ou seja, os manipuladores são chamados na ordem em que são adicionados e chamar o próximo representante passa o controle para o próximo manipulador de eventos registrado. Se um manipulador não chamar o próximo representante, nenhum manipulador de eventos subsequente será chamado, o evento entrará em curto-circuito e o adaptador não enviará a resposta para o canal.
+Os manipuladores registrados em um objeto de contexto são tratados como o adaptador gerencia o pipeline do middleware. Ou seja, os manipuladores são chamados na ordem em que são adicionados e chamar o próximo representante passa o controle para o próximo manipulador de eventos registrado. Se um manipulador não chamar o próximo delegado, nenhum dos manipuladores de eventos subsequentes será chamado, os circuitos curtos do evento e o adaptador não enviará a resposta para o canal.
 
 ## <a name="handling-state-in-middleware"></a>Tratando do estado em middleware
 
@@ -89,7 +89,7 @@ Um método comum para salvar o estado é chamar o método salvar alterações no
 
 ![problemas de middleware de estado](media/bot-builder-dialog-state-problem.png)
 
-O problema com essa abordagem é que as atualizações de estado feitas de um middleware personalizado que ocorrem depois que o manipulador de turnos do bot retornou não serão salvas no armazenamento durável. A solução é mover a chamada para o método salvar alterações após o middleware personalizado ser concluído, adicionando uma instância do middleware _salvar alterações automaticamente_ no início da pilha de middleware ou pelo menos antes de qualquer middleware que possa atualizar o estado. A execução é mostrada abaixo.
+O problema dessa abordagem é que todas as atualizações de estado feitas de um middleware personalizado que ocorre após o manipulador de ativação do bot retornado não serão salvas no armazenamento durável. A solução é mover a chamada para o método salvar alterações após o middleware personalizado ser concluído, adicionando uma instância do middleware _salvar alterações automaticamente_ no início da pilha de middleware ou pelo menos antes de qualquer middleware que possa atualizar o estado. A execução é mostrada abaixo.
 
 ![solução de middleware de estado](media/bot-builder-dialog-state-solution.png)
 

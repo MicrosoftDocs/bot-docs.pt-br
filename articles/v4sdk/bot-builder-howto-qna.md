@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/02/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 0960f5965628fd661cbe561b750a4cf7094c3c4c
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: f1595a2bd80957608d893c6f534067e04bb834ca
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414167"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95460900"
 ---
 # <a name="use-qna-maker-to-answer-questions"></a>Usar o QnA Maker para responder a perguntas
 
@@ -28,7 +28,7 @@ Um dos requisitos básicos para a criação de seu próprio serviço QnA Maker �
 
 - Uma conta do [QnA Maker](https://www.qnamaker.ai/)
 - Conhecimento das [Noções básicas do bot](bot-builder-basics.md), do [QnA Maker](https://docs.microsoft.com/azure/cognitive-services/qnamaker/overview/overview) e do [gerenciamento de recursos do bot](bot-file-basics.md).
-- Uma cópia da amostra do **QnA Maker**. Você precisará de uma cópia dela em [**C#** ](https://aka.ms/cs-qna), [**JavaScript**](https://aka.ms/js-qna-sample) ou [**Python**](https://aka.ms/bot-qna-python-sample-code).
+- Uma cópia da amostra do **QnA Maker**. Você precisará de uma cópia dela em [**C#**](https://aka.ms/cs-qna), [**JavaScript**](https://aka.ms/js-qna-sample) ou [**Python**](https://aka.ms/bot-qna-python-sample-code).
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
@@ -48,7 +48,7 @@ Para usar o QnA Maker em seu bot, você precisa criar uma base de dados de conhe
 
 ## <a name="python"></a>[Python](#tab/python)
 
-![Fluxo lógico do QnABot JS](./media/qnabot-python-logic-flow.png)
+![Fluxo lógico do Python QnABot](./media/qnabot-python-logic-flow.png)
 
 `on_message_activity` é chamado em cada entrada do usuário recebida. Quando chamado, ele acessa seu conector `qna_maker`, que foi pré-configurado usando os valores fornecidos no arquivo `config.py` do seu código de exemplo.  O método `qna_maker.getAnswers` conecta o bot à sua base de dados de conhecimento externa do QnA Maker.
 
@@ -171,13 +171,13 @@ No arquivo **qna_bot.py**, passamos a entrada do usuário para o método `get_an
 Execute o exemplo localmente em seu computador. Se ainda não tiver feito isso, instale o [Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator/blob/master/README.md#download). Para obter mais instruções, consulte o arquivo Leiame do [C#](https://aka.ms/cs-qna) ou do [Javascript](https://aka.ms/js-qna-sample).
 ou da amostra de [Python](https://aka.ms/bot-qna-python-sample-code).
 
-Inicie o emulador, conecte-se ao seu bot e envie uma mensagem, conforme mostrado a seguir.
+Inicie o emulador, conecte-se ao bot e envie uma mensagem, conforme mostrado abaixo.
 
 ![exemplo de qna de teste](../media/emulator-v4/qna-test-bot.png)
 
 ## <a name="additional-information"></a>Informações adicionais
 
-A amostra de **vários turnos do QnA Maker** ([**C#** ](https://aka.ms/cs-qna-multiturn), [**JavaScript**](https://aka.ms/js-qna-multiturn), [**Python**](https://aka.ms/py-qna-multiturn)) mostra como usar um diálogo do QnA Maker para dar suporte a prompts de acompanhamento e recursos de aprendizado ativo do QnA Maker.
+A amostra de **vários turnos do QnA Maker** ([**C#**](https://aka.ms/cs-qna-multiturn), [**JavaScript**](https://aka.ms/js-qna-multiturn), [**Python**](https://aka.ms/py-qna-multiturn)) mostra como usar um diálogo do QnA Maker para dar suporte a prompts de acompanhamento e recursos de aprendizado ativo do QnA Maker.
 
 - O QnA Maker dá suporte a avisos de acompanhamento, também conhecidos como prompts de vários turnos.
 Se a base de dados de conhecimento do QnA Maker exigir uma resposta adicional do usuário, o QnA Maker enviará informações de contexto que você poderá usar para enviar avisos ao usuário. Essas informações também são usadas para fazer qualquer chamada de acompanhamento para o serviço QnA Maker.

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 707ea1f7f0c0281ff297e2404e81cb25dae15e97
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: e7cb3e1c9e5276c9bed81e37b8a21576c0c01547
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92413467"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95460850"
 ---
 # <a name="manage-bot-resources"></a>Gerenciar recursos do bot
 
@@ -97,7 +97,7 @@ const adapter = new BotFrameworkAdapter({
 ```
 ---
 
-Também será necessário remover `botFilePath` e `botFileSecret` na seção **Configurações de aplicativo** no **portal do Azure**.
+Você também precisará remover o `botFilePath` e `botFileSecret` a seção de **configurações do aplicativo** no **portal do Azure**.
 
 *Se necessário*, provisione recursos e conecte-os ao seu bot usando o arquivo appsettings.json ou .env.
 

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 09/01/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b3d663dc2bf95ef11d59552f81ee322cdfead21c
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: ff4db61bd1f3b4335e6457687daa11d7ff738bb0
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94599808"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95460870"
 ---
 # <a name="handle-user-interruptions"></a>Manipular interrupções do usuário
 
@@ -31,8 +31,8 @@ O tratamento de interrupções é um aspecto importante de um bot robusto. Os us
 
 O exemplo usado neste artigo traz um bot de reserva de voo que utiliza caixas de diálogo para obter informações do voo do usuário. A qualquer momento durante a conversa com o bot, o usuário pode solicitar _ajudar_ ou _cancelar_ comandos e gerar uma interrupção. Dois tipos de interrupções são abordados:
 
-- **De nível de turno** : ignorar o processamento no nível do turno, mas deixando a caixa de diálogo na pilha com as informações que foram fornecidas. No próximo turno, continuar do ponto em que a conversa parou.
-- **De nível de caixa de diálogo** : cancelar o processamento completamente para que o bot comece tudo novamente.
+- **De nível de turno**: ignorar o processamento no nível do turno, mas deixando a caixa de diálogo na pilha com as informações que foram fornecidas. No próximo turno, continuar do ponto em que a conversa parou.
+- **De nível de caixa de diálogo**: cancelar o processamento completamente para que o bot comece tudo novamente.
 
 ## <a name="define-and-implement-the-interruption-logic"></a>Como definir e implementar a lógica de interrupção
 
@@ -97,7 +97,7 @@ Na classe `CancelAndHelpDialog`, o método `on_continue_dialog` chama o método 
 
 Se o usuário digitar *help* ou *?* , o método `interrupt` enviará uma mensagem e, em seguida, chamará `DialogTurnResult(DialogTurnStatus.Waiting)` para indicar que a caixa de diálogo na parte superior da pilha está aguardando uma resposta do usuário. Dessa forma, o fluxo de conversa é interrompido durante somente um turno e, no próximo turno, continua do ponto em que a conversa parou.
 
-Se o usuário digitar *cancelar* ou *encerrar* , ele chamará `cancel_all_dialogs()` em seu contexto de caixa de diálogo interno, o que limpa sua pilha de caixa de diálogo e faz com que ele saia com um status cancelado e nenhum valor de resultado. Para `MainDialog`, mostrada posteriormente, aparecerá que a caixa de diálogo de reserva foi finalizada e não retornou resultados, da mesma forma quando o usuário decide não confirmar a reserva.
+Se o usuário digitar *cancelar* ou *encerrar*, ele chamará `cancel_all_dialogs()` em seu contexto de caixa de diálogo interno, o que limpa sua pilha de caixa de diálogo e faz com que ele saia com um status cancelado e nenhum valor de resultado. Para `MainDialog`, mostrada posteriormente, aparecerá que a caixa de diálogo de reserva foi finalizada e não retornou resultados, da mesma forma quando o usuário decide não confirmar a reserva.
 
 [!code-python[interrupt](~/../botbuilder-samples/samples/python/13.core-bot/dialogs/cancel_and_help_dialog.py?range=25-47)]
 
@@ -231,7 +231,7 @@ Para referência, aqui estão as definições de classe que são usadas na chama
 
 1. Se ainda não tiver feito isso, instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator-readme).
 1. Execute o exemplo localmente em seu computador.
-1. Inicie o emulador, conecte ao seu bot e envie mensagens conforme mostrado a seguir.
+1. Inicie o Emulador, conecte-se ao seu bot e envie mensagens conforme mostrado abaixo.
 
 <!--![test dialog prompt sample](~/media/emulator-v4/test-dialog-prompt.png)-->
 

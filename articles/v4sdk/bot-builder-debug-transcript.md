@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservices: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 6f9a75af687e10985c61cc925ebf61cec2ddb219
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 83a44dcbfb7f99132f681dd33b1944a4112cbd38
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414306"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95460940"
 ---
 # <a name="debug-your-bot-using-transcript-files"></a>Depurar seu bot usando arquivos de transcrição
 
@@ -24,18 +24,20 @@ ms.locfileid: "92414306"
 Uma das chaves para testar e depurar um bot com sucesso é sua capacidade de registrar e examinar o conjunto de condições que ocorrem durante a execução do bot. Este artigo aborda a criação e uso de um arquivo de transcrição do bot para fornecer um conjunto detalhado de interações do usuário e respostas do bot para teste e depuração.
 
 ## <a name="the-bot-transcript-file"></a>O arquivo de transcrição do bot
-Um arquivo de transcrição do bot é um arquivo JSON especializado que preserva as interações entre um usuário e seu bot. Um arquivo de transcrição preserva não apenas o conteúdo de uma mensagem, mas também os detalhes da interação como a id de usuário, id do canal, tipo de canal, recursos do canal, a hora do interação, etc. Todas essas informações podem posteriormente ser usadas para ajudar a encontrar e resolver problemas ao testar ou depurar seu bot. 
+
+Um arquivo de transcrição do bot é um arquivo JSON especializado que preserva as interações entre um usuário e seu bot. Um arquivo de transcrição preserva não apenas o conteúdo de uma mensagem, mas também os detalhes da interação como a id de usuário, id do canal, tipo de canal, recursos do canal, a hora do interação, etc. Todas essas informações podem posteriormente ser usadas para ajudar a encontrar e resolver problemas ao testar ou depurar seu bot.
 
 ## <a name="creatingstoring-a-bot-transcript-file"></a>Criar/armazenar um arquivo de transcrição de bot
+
 Este artigo mostra como criar arquivos de transcrição de bot usando o [Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator) da Microsoft. Os arquivos de transcrição também podem ser criados programaticamente. Leia mais sobre essa abordagem [aqui](./bot-builder-howto-v4-storage.md#blob-transcript-storage). Neste artigo, usaremos o código de exemplo do Bot Framework para [Multi Turn Prompt Bot](https://aka.ms/cs-multi-prompts-sample) que solicita o modo de transporte, o nome e a idade do usuário, mas qualquer código que possa ser acessado usando o Microsoft Bot Framework Emulator pode ser usado para criar um arquivo de transcrição.
 
-Para iniciar esse processo, verifique se o código do bot que você deseja testar está em execução dentro de seu ambiente de desenvolvimento. Inicie o Bot Framework Emulator, selecione o botão _Abrir Bot_ e, em seguida, insira o endereço _localhost: port_ mostrado em seu navegador seguido por "/api/messages", conforme mostrado na imagem abaixo. Agora clique no botão _Conectar_ para conectar o emulador ao seu bot.
+Para iniciar esse processo, verifique se o código do bot que você deseja testar está em execução dentro de seu ambiente de desenvolvimento. Inicie o emulador do bot Framework, selecione o botão _abrir bot_ e insira o endereço do _localhost: porta_ mostrada em seu navegador, seguido por "/API/messages", conforme mostrado na imagem abaixo. Agora, clique no botão _conectar_ para conectar o emulador ao bot.
 
 ![conectar o emulador ao seu código](./media/emulator_open_bot_configuration.png)
 
-Depois de conectar o emulador ao código em execução, teste o código enviando as interações simuladas do usuário ao bot. Neste exemplo passamos o modo de transporte, o nome e a idade do usuário. Depois de inserir todas as interações do usuário que você deseja preservar, use o Bot Framework Emulator para criar e salvar um arquivo de transcrição que contém essa conversa. 
+Depois de conectar o emulador ao código em execução, teste seu código enviando interações de usuário simuladas para o bot. Neste exemplo passamos o modo de transporte, o nome e a idade do usuário. Depois de inserir todas as interações de usuário que você deseja preservar, use o emulador do bot Framework para criar e salvar um arquivo de transcrição que contém essa conversa.
 
-Na guia _Chat ao vivo_ (mostrada abaixo), escolha o botão _Salvar transcrição_. 
+Na guia _Chat ao vivo_ (mostrada abaixo), escolha o botão _Salvar transcrição_.
 
 ![escolher salvar transcrição](./media/emulator_transcript_save.png)
 
@@ -43,17 +45,20 @@ Escolha um local e um nome para o arquivo de transcrição e, em seguida, escolh
 
 ![transcrição salvar como ursula](./media/emulator_transcript_saveas_ursula.png)
 
-Todas as interações do usuário e as respostas do bot inseridas para testar seu código com o emulador agora foram salvas em um arquivo de transcrição que você pode recarregar posteriormente para ajudar a depurar as interações entre um usuário e seu bot.
+Todas as interações de usuário e respostas de bot que você inseriu para testar seu código com o emulador agora foram salvas em um arquivo de transcrição que você pode recarregar posteriormente para ajudar a depurar as interações entre o usuário e o bot.
 
 ## <a name="retrieving-a-bot-transcript-file"></a>Recuperar um arquivo de transcrição de bot
-Para recuperar um arquivo de transcrição de bot usando o Bot Framework Emulator, selecione _Arquivo_ e _Abrir Transcrição..._ no canto superior esquerdo do emulador, conforme mostrado abaixo. Em seguida, escolha o arquivo de transcrição que você deseja recuperar. (As transcrições também podem ser acessadas de dentro do controle de lista _TRANSCRIÇÕES_ na seção _Recursos_ do emulador) 
+
+Para recuperar um arquivo de transcrição de bot usando o emulador do bot Framework, selecione o _arquivo_ e, em seguida, _abra transcrição..._ no canto superior esquerdo do emulador, conforme mostrado abaixo. Em seguida, escolha o arquivo de transcrição que você deseja recuperar. (As transcrições também podem ser acessadas de dentro do controle de lista _transcrições_ na seção de _recursos_ do emulador)
 
 Neste exemplo estamos recuperando o arquivo de transcrição denominado “ursula_user.transcript”. Escolher um arquivo de transcrição carregará automaticamente toda a conversa preservada em uma nova guia chamada _Transcrição_.
 
 ![recuperar transcrição salva](./media/emulator_transcript_retrieve.png)
 
 ## <a name="debug-using-transcript-file"></a>Depurar usando o arquivo de transcrição
-Com seu arquivo de transcrição carregado, você agora está pronto para depurar as interações que capturadas entre um usuário e seu bot. Para fazer isso, basta clicar em qualquer evento ou atividade registrada na seção _LOG_ exibida na parte inferior direita do emulador. No exemplo mostrado abaixo, escolhemos a primeira interação do usuário quando ele enviou a mensagem "Olá". Quando fazemos isso, todas as informações no arquivo de transcrição relacionadas a essa interação específica são exibidas na janela _INSPETOR_ do emulador no formato JSON. Ao observar alguns desses valores de baixo para cima, podemos ver:
+
+Com seu arquivo de transcrição carregado, você agora está pronto para depurar as interações que capturadas entre um usuário e seu bot. Para fazer isso, basta clicar em qualquer evento ou atividade registrada na seção _log_ mostrada na área inferior direita do emulador. No exemplo mostrado abaixo, escolhemos a primeira interação do usuário quando ele enviou a mensagem "Olá". Quando fazemos isso, todas as informações em seu arquivo de transcrição sobre essa interação específica são exibidas na janela _Inspetor_ do emulador no formato JSON. Ao observar alguns desses valores de baixo para cima, podemos ver:
+
 * O tipo de interação era _mensagem_.
 * A hora em que a mensagem foi enviada.
 * Que o texto sem formatação enviado continha "Sim".

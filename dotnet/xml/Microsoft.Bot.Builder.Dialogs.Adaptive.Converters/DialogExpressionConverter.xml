@@ -1,5 +1,5 @@
 <Type Name="DialogExpressionConverter" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Converters.DialogExpressionConverter">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="2710ac377f91fdde5206503dfdfcc3f00690350b" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94614308" /></Metadata><TypeSignature Language="C#" Value="public class DialogExpressionConverter : Newtonsoft.Json.JsonConverter&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.DialogExpression&gt;, Microsoft.Bot.Builder.Dialogs.Declarative.Observers.IObservableConverter, Microsoft.Bot.Builder.Dialogs.Declarative.Observers.IObservableJsonConverter" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="876d6ab79b56350ed2e5104ec35bf65a85c554a4" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95461830" /></Metadata><TypeSignature Language="C#" Value="public class DialogExpressionConverter : Newtonsoft.Json.JsonConverter&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.DialogExpression&gt;, Microsoft.Bot.Builder.Dialogs.Declarative.Observers.IObservableConverter, Microsoft.Bot.Builder.Dialogs.Declarative.Observers.IObservableJsonConverter" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DialogExpressionConverter extends Newtonsoft.Json.JsonConverter`1&lt;class Microsoft.Bot.Builder.Dialogs.Adaptive.DialogExpression&gt; implements class Microsoft.Bot.Builder.Dialogs.Declarative.Observers.IObservableConverter, class Microsoft.Bot.Builder.Dialogs.Declarative.Observers.IObservableJsonConverter" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Converters.DialogExpressionConverter" />
   <TypeSignature Language="VB.NET" Value="Public Class DialogExpressionConverter&#xA;Inherits JsonConverter(Of DialogExpression)&#xA;Implements IObservableConverter, IObservableJsonConverter" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Newtonsoft.Json.JsonConverter&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.DialogExpression&gt;</BaseTypeName>
@@ -45,6 +46,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="resourceExplorer" Type="Microsoft.Bot.Builder.Dialogs.Declarative.Resources.ResourceExplorer" />
@@ -71,6 +73,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -95,6 +98,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.Dialogs.Adaptive.DialogExpression</ReturnType>
@@ -134,6 +138,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -169,6 +174,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -196,6 +202,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>

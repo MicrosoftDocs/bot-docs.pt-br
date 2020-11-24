@@ -7,12 +7,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 2/7/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: c28f019adbd1a607ef68e790d624994821556d20
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: a192471c42e0a28bfc9dd2da98ee0cee3922835d
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416998"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95460990"
 ---
 <!--
 Related TODO:
@@ -318,10 +318,10 @@ Para obter a **ID do aplicativo** da Microsoft e os valores de **senha do aplica
 
 ## <a name="test-the-bot-using-the-emulator"></a>Testar o bot usando o emulador
 
-Se ainda não tiver feito isso, instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator-readme). Consulte também como [Depurar com o emulador](../bot-service-debug-emulator.md).
+Se ainda não tiver feito isso, instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator-readme). Consulte também [depurar com o emulador](../bot-service-debug-emulator.md).
 
 <!-- auth config steps -->
-Para que o logon de exemplo do bot funcione é necessário configurar o emulador, conforme mostrado em [Configurar o emulador para autenticação](../bot-service-debug-emulator.md#configure-the-emulator-for-authentication).
+Para que o logon de exemplo de bot funcione, você deve configurar o emulador conforme mostrado em [Configurar o emulador para autenticação](../bot-service-debug-emulator.md#configure-the-emulator-for-authentication).
 
 ### <a name="testing"></a>Testando
 
@@ -332,11 +332,10 @@ Após configurar o mecanismo de autenticação é possível executar o teste de 
 >
 > Confira [Conectar um bot ao Direct Line](~/bot-service-channel-connect-directline.md#configure-settings) e [Recursos Avançados de Autenticação do Direct Line](https://blog.botframework.com/2018/09/25/enhanced-direct-line-authentication-features/).
 
-
 1. Execute o exemplo do bot localmente em seu computador.
-1. Inicie o emulador.
+1. Inicie o Emulador.
 1. Será necessário fornecer a ID e a senha de aplicativo do seu bot ao se conectar com ele.
-    - Obtenha a ID do aplicativo e a senha do registro de aplicativo do Azure. Esses são os mesmos valores atribuídos ao aplicativo bot no arquivo `appsettings.json` ou `.env`. No emulador, atribua esses valores no arquivo de configuração ou na primeira vez que se conectar ao bot.
+    - Obtenha a ID do aplicativo e a senha do registro de aplicativo do Azure. Esses são os mesmos valores atribuídos ao aplicativo bot no arquivo `appsettings.json` ou `.env`. No emulador, você atribui esses valores no arquivo de configuração ou na primeira vez que se conecta ao bot.
     - Se você precisar usar um escape XML na senha no código do bot, isso também precisará ser feito aqui.
 1. Digite `help` para ver uma lista dos comandos disponíveis para o bot e testar os recursos de autenticação.
 1. Quando você tiver entrado, você não precisa fornecer suas credenciais novamente até sair.

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/30/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 928f926f2aee714ef6f0034fccad953a65bd7e34
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: e3d836fe9c110bd43326011da4a7e75aa17ec8b5
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414160"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95460873"
 ---
 # <a name="manage-a-long-running-operation"></a>Gerenciar uma operação de execução prolongada
 
@@ -49,7 +49,7 @@ Este exemplo define uma `LongOperationPrompt` classe derivada da `ActivityPrompt
 
 Este artigo aborda muitas tecnologias diferentes. Consulte a seção [recursos adicionais](#additional-resources) para obter links para artigos associados.
 
-## <a name="create-an-azure-storage-account"></a>Criar uma conta de Armazenamento do Azure
+## <a name="create-an-azure-storage-account"></a>Criar uma conta do Armazenamento do Azure
 
 Crie uma conta de armazenamento do Azure e recupere a cadeia de conexão. Será necessário adicionar a cadeia de conexão ao arquivo de configuração do bot.
 
@@ -77,7 +77,7 @@ Para obter mais informações, consulte [criar uma conta de armazenamento](/azur
 
 1. Dentro do Aplicativo de funções, adicione uma função com base no [modelo de armazenamento de filas do Azure](/azure/azure-functions/functions-bindings-storage-queue-trigger).
 
-    Defina o nome de fila desejado e escolha o `Azure Storage Account` criado em uma etapa anterior. Esse nome de fila também será colocado naappsettings.jsdo bot ** no** arquivo.
+    Defina o nome de fila desejado e escolha o `Azure Storage Account` criado em uma etapa anterior. Esse nome de fila também será colocado naappsettings.jsdo bot **no** arquivo.
 
 1. Adicione um arquivo **Function. proj** à função.
 
@@ -483,7 +483,7 @@ public void ConfigureServices(IServiceCollection services)
 
 1. Se ainda não tiver feito isso, instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator-readme).
 1. Execute o exemplo localmente em seu computador.
-1. Inicie o emulador, conecte ao seu bot e envie mensagens conforme mostrado a seguir.
+1. Inicie o Emulador, conecte-se ao seu bot e envie mensagens conforme mostrado abaixo.
 
     ![Exemplo de bot](./media/how-to-long-operations/long-operations-bot-example.png)
 

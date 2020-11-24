@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/14/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: e397d2a4da5240512e6ad57a446daf8dadfe21d7
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: d2ff2bad1b12f25da48bfb226704b7a44135ed26
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417186"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95460950"
 ---
 # <a name="manage-dialog-complexity"></a>Gerenciar a complexidade da caixa de diálogo
 
@@ -31,7 +31,7 @@ Com os diálogos de componente, é possível criar diálogos independentes para 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento de [noções básicas de bot][concept-basics], [biblioteca de diálogos][concept-dialogs] e como [gerenciar conversas][simple-flow].
-- Uma cópia do exemplo de prompt de vários turnos em [**C#** ][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
+- Uma cópia do exemplo de prompt de vários turnos em [**C#**][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
 
 ## <a name="about-the-sample"></a>Sobre o exemplo
 
@@ -169,7 +169,7 @@ O método `run_dialog` é chamado pelo método `on_message_activity` do bot.
 
 1. Se ainda não tiver feito isso, instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator-readme).
 1. Execute o exemplo localmente em seu computador.
-1. Inicie o emulador, conecte ao seu bot e envie mensagens conforme mostrado a seguir.
+1. Inicie o Emulador, conecte-se ao seu bot e envie mensagens conforme mostrado abaixo.
 
 ![Execução de exemplo do diálogo de prompt de vários turnos](../media/emulator-v4/multi-turn-prompt.png)
 

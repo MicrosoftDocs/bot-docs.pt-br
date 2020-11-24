@@ -1,5 +1,5 @@
 <Type Name="MessageArgs" FullName="Microsoft.Bot.Builder.LanguageGeneration.MessageArgs">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="ef1923690194942ad914dc2f9b5d1947c42517cd" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94618432" /></Metadata><TypeSignature Language="C#" Value="public class MessageArgs : Microsoft.Bot.Builder.LanguageGeneration.LGEventArgs" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0f0ebc71ec8ea5a7c92d2498355686c9443f4007" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95461750" /></Metadata><TypeSignature Language="C#" Value="public class MessageArgs : Microsoft.Bot.Builder.LanguageGeneration.LGEventArgs" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MessageArgs extends Microsoft.Bot.Builder.LanguageGeneration.LGEventArgs" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.LanguageGeneration.MessageArgs" />
   <TypeSignature Language="VB.NET" Value="Public Class MessageArgs&#xA;Inherits LGEventArgs" />
@@ -7,6 +7,7 @@
   <AssemblyInfo>
     <AssemblyName>Microsoft.Bot.Builder.LanguageGeneration</AssemblyName>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.LanguageGeneration.LGEventArgs</BaseTypeName>
@@ -26,6 +27,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.LanguageGeneration</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -43,6 +45,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.LanguageGeneration</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>

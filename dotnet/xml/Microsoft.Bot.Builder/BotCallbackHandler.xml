@@ -1,5 +1,5 @@
 <Type Name="BotCallbackHandler" FullName="Microsoft.Bot.Builder.BotCallbackHandler">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="03036befb4d89cdb5083e13f851e2f310c902037" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94609328" /></Metadata><TypeSignature Language="C#" Value="public delegate System.Threading.Tasks.Task BotCallbackHandler(ITurnContext turnContext, CancellationToken cancellationToken);" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="4c74f27b5792ac1d7ab72536ddae265809febabc" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95461670" /></Metadata><TypeSignature Language="C#" Value="public delegate System.Threading.Tasks.Task BotCallbackHandler(ITurnContext turnContext, CancellationToken cancellationToken);" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed BotCallbackHandler extends System.MulticastDelegate" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.BotCallbackHandler" />
   <TypeSignature Language="VB.NET" Value="Public Delegate Function BotCallbackHandler(turnContext As ITurnContext, cancellationToken As CancellationToken) As Task " />
@@ -18,6 +18,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Delegate</BaseTypeName>

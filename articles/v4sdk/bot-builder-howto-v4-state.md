@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 2/7/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: ffdbf18ac5e727e18fa5332304eb7b611bba44ca
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 42993277a36ef4239cca5785526544885bf66071
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414053"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95460890"
 ---
 # <a name="save-user-and-conversation-data"></a>Salvar dados do usuário e da conversa
 
@@ -33,15 +33,15 @@ Ao receber entrada do usuário, este exemplo verifica o estado da conversa armaz
 
 ## <a name="c"></a>[C#](#tab/csharp)
 
-![exemplo de bot de estado](media/StateBotSample-Overview.png)
+![Exemplo de bot de estado em C#](media/StateBotSample-Overview.png)
 
 ## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-![exemplo de bot de estado](media/StateBotSample-JS-Overview.png)
+![Exemplo de bot de estado do JavaScript](media/StateBotSample-JS-Overview.png)
 
 ## <a name="python"></a>[Python](#tab/python)
 
-![exemplo de bot de estado](media/StateBotSample-Python-Overview.png)
+![Exemplo de bot de estado do Python](media/StateBotSample-Python-Overview.png)
 
 ---
 
@@ -216,7 +216,7 @@ Antes de sair de cada caixa de diálogo, o bot usa o método `save_changes` do S
 Baixe e instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator-readme) mais recente
 
 1. Execute o exemplo localmente em seu computador. Se você precisar de instruções, veja [Exemplo de C#](https://aka.ms/statebot-sample-cs) ou [Exemplo de JS](https://aka.ms/statebot-sample-js) no arquivo LEIAME.
-1. Use o emulador para testar o bot, conforme mostrado abaixo.
+1. Use o Emulador para testar o bot, conforme mostrado abaixo.
 
 ![exemplo de teste de estado do bot](media/state-bot-testing-emulator.png)
 

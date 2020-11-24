@@ -1,5 +1,5 @@
 <Type Name="AdaptiveComponentRegistration" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.AdaptiveComponentRegistration">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="430e90188da81e5d32a8bfc05437cae86dbcfb6f" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94595958" /></Metadata><TypeSignature Language="C#" Value="public class AdaptiveComponentRegistration : Microsoft.Bot.Builder.ComponentRegistration, Microsoft.Bot.Builder.Dialogs.Declarative.IComponentDeclarativeTypes" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0f126dde06ac3108e6df56167c5414a15311f8fc" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95461200" /></Metadata><TypeSignature Language="C#" Value="public class AdaptiveComponentRegistration : Microsoft.Bot.Builder.ComponentRegistration, Microsoft.Bot.Builder.Dialogs.Declarative.IComponentDeclarativeTypes" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AdaptiveComponentRegistration extends Microsoft.Bot.Builder.ComponentRegistration implements class Microsoft.Bot.Builder.Dialogs.Declarative.IComponentDeclarativeTypes" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.AdaptiveComponentRegistration" />
   <TypeSignature Language="VB.NET" Value="Public Class AdaptiveComponentRegistration&#xA;Inherits ComponentRegistration&#xA;Implements IComponentDeclarativeTypes" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.ComponentRegistration</BaseTypeName>
@@ -38,6 +39,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -62,6 +64,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -101,6 +104,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>

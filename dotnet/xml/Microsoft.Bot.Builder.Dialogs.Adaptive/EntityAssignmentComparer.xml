@@ -1,5 +1,5 @@
 <Type Name="EntityAssignmentComparer" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.EntityAssignmentComparer">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="b6a8067392e470affad5b3865854beb75e499227" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94608128" /></Metadata><TypeSignature Language="C#" Value="public class EntityAssignmentComparer : System.Collections.Generic.Comparer&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.EntityAssignment&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9ffc91bdf17ca5199e60f539c4f110ada92a7f3f" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95461160" /></Metadata><TypeSignature Language="C#" Value="public class EntityAssignmentComparer : System.Collections.Generic.Comparer&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.EntityAssignment&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EntityAssignmentComparer extends System.Collections.Generic.Comparer`1&lt;class Microsoft.Bot.Builder.Dialogs.Adaptive.EntityAssignment&gt;" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.EntityAssignmentComparer" />
   <TypeSignature Language="VB.NET" Value="Public Class EntityAssignmentComparer&#xA;Inherits Comparer(Of EntityAssignment)" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Collections.Generic.Comparer&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.EntityAssignment&gt;</BaseTypeName>
@@ -41,6 +42,7 @@ Em seguida, pela posição mínima em expressão.</remarks>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="operations" Type="System.String[]" />
@@ -65,6 +67,7 @@ Em seguida, pela posição mínima em expressão.</remarks>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>

@@ -1,5 +1,5 @@
 <Type Name="TwilioClientWrapperOptions" FullName="Microsoft.Bot.Builder.Adapters.Twilio.TwilioClientWrapperOptions">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="1466266f37f4a6d48568eb73aff4e2f965f31060" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94609168" /></Metadata><TypeSignature Language="C#" Value="public class TwilioClientWrapperOptions" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="cc4e8d92bbe78f039b205f2116269e4e5309eb4c" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95460630" /></Metadata><TypeSignature Language="C#" Value="public class TwilioClientWrapperOptions" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TwilioClientWrapperOptions extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Adapters.Twilio.TwilioClientWrapperOptions" />
   <TypeSignature Language="VB.NET" Value="Public Class TwilioClientWrapperOptions" />
@@ -8,6 +8,7 @@
     <AssemblyName>Microsoft.Bot.Builder.Adapters.Twilio</AssemblyName>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -29,6 +30,7 @@
         <AssemblyName>Microsoft.Bot.Builder.Adapters.Twilio</AssemblyName>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="twilioNumber" Type="System.String" />
@@ -56,6 +58,7 @@
         <AssemblyName>Microsoft.Bot.Builder.Adapters.Twilio</AssemblyName>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -77,6 +80,7 @@
         <AssemblyName>Microsoft.Bot.Builder.Adapters.Twilio</AssemblyName>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -98,6 +102,7 @@
         <AssemblyName>Microsoft.Bot.Builder.Adapters.Twilio</AssemblyName>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -119,6 +124,7 @@
         <AssemblyName>Microsoft.Bot.Builder.Adapters.Twilio</AssemblyName>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
@@ -140,6 +146,7 @@
         <AssemblyName>Microsoft.Bot.Builder.Adapters.Twilio</AssemblyName>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>

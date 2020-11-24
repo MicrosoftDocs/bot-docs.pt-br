@@ -1,5 +1,5 @@
 <Type Name="IDialogDebugger" FullName="Microsoft.Bot.Builder.Dialogs.Debugging.IDialogDebugger">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="3f783528acbd453eb48db43788888a485b92acac" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94611718" /></Metadata><TypeSignature Language="C#" Value="public interface IDialogDebugger" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8235f1e986a9691bc00762097d3b784577c340ea" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95461140" /></Metadata><TypeSignature Language="C#" Value="public interface IDialogDebugger" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDialogDebugger" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Debugging.IDialogDebugger" />
   <TypeSignature Language="VB.NET" Value="Public Interface IDialogDebugger" />
@@ -13,6 +13,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
@@ -36,6 +37,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>

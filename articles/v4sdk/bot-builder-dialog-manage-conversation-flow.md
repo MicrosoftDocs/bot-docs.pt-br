@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 03/26/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 12c57546ec206624de3ca2cc7e2c4d81ec4e30d1
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: f61a692ed40bc46ba595e9eacbc128018c4b3111
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414259"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95460910"
 ---
 # <a name="implement-sequential-conversation-flow"></a>Implementar fluxo de conversa sequencial
 
@@ -30,7 +30,7 @@ Você pode gerenciar fluxos de conversa simples e complexos usando a biblioteca 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento de [noções básicas de bot][concept-basics], [gerenciamento de estado][concept-state] e [biblioteca de diálogos][concept-dialogs].
-- Uma cópia do **exemplo de prompt de vários turnos** em [**C#** ][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
+- Uma cópia do **exemplo de prompt de vários turnos** em [**C#**][cs-sample], [**JavaScript**][js-sample] ou [**Python**][python-sample].
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
@@ -55,7 +55,7 @@ Para usar as caixas de diálogo, instale o pacote do NuGet, **Microsoft.Bot.Buil
 
 O bot interage com o usuário por meio de `UserProfileDialog`. Quando criarmos a classe `DialogBot` do bot, vamos definir o `UserProfileDialog` como o diálogo principal. O bot, em seguida, usa um método auxiliar `Run` para acessar o diálogo.
 
-![diálogo de perfil do usuário](media/user-profile-dialog.png)
+![Caixa de diálogo perfil de usuário do C#](media/user-profile-dialog.png)
 
 **Dialogs\UserProfileDialog.cs**
 
@@ -93,7 +93,7 @@ Para usar as caixas de diálogo, seu projeto precisa instalar o pacote do npm, *
 
 O bot interage com o usuário por meio de um `UserProfileDialog`. Quando criarmos o bot `DialogBot`, definiremos `UserProfileDialog` como o diálogo principal. O bot, em seguida, usa um método auxiliar `run` para acessar o diálogo.
 
-![diálogo de perfil do usuário](media/user-profile-dialog-js.png)
+![Caixa de diálogo perfil de usuário JavaScript](media/user-profile-dialog-js.png)
 
 **dialogs/userProfileDialog.js**
 
@@ -141,7 +141,7 @@ Para usar diálogos, instale os pacotes PyPI **botbuilder-dialogs** e **botbuild
 
 O bot interage com o usuário por meio de `UserProfileDialog`. Quando criarmos a classe `DialogBot` do bot, vamos definir o `UserProfileDialog` como o diálogo principal. O bot, em seguida, usa um método auxiliar `run_dialog` para acessar o diálogo.
 
-![diálogo de perfil do usuário](media/user-profile-dialog-python.png)
+![Caixa de diálogo perfil de usuário do Python](media/user-profile-dialog-python.png)
 
 **dialogs\user_profile_dialog.py**
 
@@ -255,7 +255,7 @@ Nós registramos serviços para o bot em `app.py`.
 
 1. Se ainda não tiver feito isso, instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator-readme).
 1. Execute o exemplo localmente em seu computador.
-1. Inicie o emulador, conecte ao seu bot e envie mensagens conforme mostrado a seguir.
+1. Inicie o Emulador, conecte-se ao seu bot e envie mensagens conforme mostrado abaixo.
 
 ![Execução de exemplo do diálogo de prompt de vários turnos](../media/emulator-v4/multi-turn-prompt.png)
 

@@ -1,5 +1,5 @@
 <Type Name="IActivityExtensions" FullName="Microsoft.Bot.Schema.IActivityExtensions">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="d8e30bfef5da55db8591cd5d2ef774a7349a3bfa" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94605448" /></Metadata><TypeSignature Language="C#" Value="public static class IActivityExtensions" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="4e55b30b4d8011f398097c2523963114e3f2dc08" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95461010" /></Metadata><TypeSignature Language="C#" Value="public static class IActivityExtensions" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit IActivityExtensions extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.IActivityExtensions" />
   <TypeSignature Language="VB.NET" Value="Public Module IActivityExtensions" />
@@ -9,6 +9,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -31,6 +32,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -58,6 +60,7 @@ O nome da localidade também pode corresponder a uma marca de idioma BCP-47 vál
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>

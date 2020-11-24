@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.service: bot-service
 ms.date: 10/10/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 798c4ad8f01646875820575db519ed4fd74fc80f
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: 78caff75abc39be19719a574d477e7527755f22f
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94618153"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95460920"
 ---
 # <a name="create-a-bot-cross-trained-to-use-both-luis-and-qna-maker-recognizers"></a>Criar um bot cruzado para usar os reconhecedores LUIS e QnA Maker
 
@@ -32,7 +32,7 @@ Este artigo orienta você pelas etapas necessárias para criar um bot totalmente
 - [Eventos e gatilhos em caixas de diálogo adaptáveis](bot-builder-concept-adaptive-dialog-triggers.md)
 - [Ações em diálogos adaptáveis](bot-builder-concept-adaptive-dialog-actions.md)
 - [Reconhecedores em caixas de diálogo adaptáveis](bot-builder-concept-adaptive-dialog-recognizers.md)
-- [Treinamento cruzado de seus modelos LUIS e QnA Maker](bot-builder-concept-cross-train.md)
+- [Como fazer um treinamento cruzado dos seus modelos LUIS e QnA Maker](bot-builder-concept-cross-train.md)
 - [Como lidar com interrupções em caixas de diálogo adaptáveis](bot-builder-concept-adaptive-dialog-interruptions.md)
 - [Formato de arquivo .lu][lu-templates]
 - [Formato de arquivo .qna][qna-file-format]
@@ -55,7 +55,7 @@ Este artigo descreve como criar um bot com treinamento cruzado para usar LUIS e 
 
 ## <a name="the-todo-bot-with-luis-and-qna-maker-sample"></a>O bot de todo com LUIS e QnA Maker exemplo
 
-O exemplo de **bot adaptável de todo com Luis e QnA Maker** ( [**C#**][cs-sample-todo-bot]) tem cinco `.lu` arquivos e seis `.qna` arquivos para o reconhecimento da linguagem. Ao criar modelos de reconhecimento de linguagem com treinamento cruzado, você combinará os `.lu` arquivos e de `.qna` forma que o permitirá utilizar os recursos de Luis e de QnA Maker juntos no mesmo reconhecedor, permitindo que você treine o reconhecedor como melhor interpretar e responder à solicitação de um usuário. Depois de executar o comando de treinamento cruzado, você terá novas cópias de cada arquivo, mas elas serão atualizadas para que os `.lu` arquivos contenham as `.qna` informações necessárias e os `.qna` arquivos contenham as `.lu` informações necessárias, habilitando o [conjunto de reconhecedor com treinamento cruzado][crosstrainedrecognizerset-ref-guide] para determinar como lidar melhor a solicitação de usuários.
+O exemplo de **bot adaptável de todo com Luis e QnA Maker** ([**C#**][cs-sample-todo-bot]) tem cinco `.lu` arquivos e seis `.qna` arquivos para o reconhecimento da linguagem. Ao criar modelos de reconhecimento de linguagem com treinamento cruzado, você combinará os `.lu` arquivos e de `.qna` forma que o permitirá utilizar os recursos de Luis e de QnA Maker juntos no mesmo reconhecedor, permitindo que você treine o reconhecedor como melhor interpretar e responder à solicitação de um usuário. Depois de executar o comando de treinamento cruzado, você terá novas cópias de cada arquivo, mas elas serão atualizadas para que os `.lu` arquivos contenham as `.qna` informações necessárias e os `.qna` arquivos contenham as `.lu` informações necessárias, habilitando o [conjunto de reconhecedor com treinamento cruzado][crosstrainedrecognizerset-ref-guide] para determinar como lidar melhor a solicitação de usuários.
 
 Se você ainda não fez isso, clone o repositório de amostras mais recente. Você pode usar o seguinte comando git em uma janela do console:
 ```cmd
@@ -123,10 +123,10 @@ Para treinar o bot de **todo com Luis e QnA Maker** exemplo:
 1. Execute o comando `luis:cross-train`.
 
    ```cmd
-      bf luis:cross-train -i dialogs -o generated --config dialogs\DialogLuHierarchy.config.json
+      bf luis:cross-train -i dialogs -o generated --config dialogs\DialogLuHierarchy.config.json --force
    ```
 
-Depois de concluir, você terá versões com treinamento cruzado dos cinco `.lu` arquivos e seis `.qna` arquivos. Ao executar os comandos de compilação nas seções a seguir, aponte para o diretório gerado para os arquivos de entrada.
+Depois de concluir, você terá versões com treinamento cruzado dos cinco `.lu` arquivos e seis `.qna` arquivos. Aqui `--force` é usado para forçar a substituição dos `.lu` arquivos existentes e, `.qna` se eles já existirem. Caso contrário, para arquivos. Lu como `AddToDoDialog.lu` , o conteúdo com treinamento cruzado será gravado no arquivo com o nome `AddToDoDialog(1).lu` . Ao executar os comandos de compilação nas seções a seguir, aponte para o diretório gerado para os arquivos de entrada.
 
 > [!IMPORTANT]
 >
@@ -184,7 +184,7 @@ Veja a seguir um exemplo de **luconfig.jsno** arquivo que você pode referenciar
 }
 ```
 
-Depois que esse arquivo de configuração é criado, tudo o que você precisa fazer é fazer referência a ele no `luis:build` comando. Por exemplo:
+Depois que esse arquivo de configuração é criado, tudo o que você precisa fazer é fazer referência a ele no `luis:build` comando. Por exemplo: 
 
 ``` cli
 bf luis:build --luConfig luconfig.json
@@ -223,6 +223,10 @@ Para criar os aplicativos LUIS para o **bot de todo com Luis e QnA Maker** exemp
       bf luis:build --luConfig luconfig.json
    ```
 
+> [!TIP]
+>
+> Se você ainda não tiver feito isso, será necessário [migrar para uma chave de criação de recursos do Azure][luis-migration-authoring]. Caso contrário, você não verá os aplicativos LUIS no [Luis][luis] criados usando o `luis:build` comando.
+
 Depois de concluir, você terá um aplicativo LUIS para cada um dos cinco `.lu` arquivos no [Luis](https://www.luis.ai/conversations/applications):
 
 ![LUIS minha lista de aplicativos](./media/adaptive-dialogs/luis-apps-list.png)
@@ -240,10 +244,6 @@ O `qnamaker:build` comando combina todas as seguintes ações em um único coman
 1. Ele treina seu QnA Maker KB e, em seguida, publica-o no ponto de extremidade de produção.
 
 Para obter uma explicação detalhada sobre como usar o `qnamaker:build` comando, consulte [implantar QnA Maker base de dados de conhecimento usando os comandos da CLI do bot Framework qnamaker][qnamaker-build].
-
-> [!TIP]
->
-> Se você ainda não tiver feito isso, será necessário [migrar para uma chave de criação de recursos do Azure][luis-migration-authoring]. Caso contrário, o não verá os aplicativos LUIS no [Luis][luis] criados usando o `luis:build` comando.
 
 ### <a name="how-to-use-the-qnamakerbuild-command"></a>Como usar o comando qnamaker: Build
 
@@ -307,7 +307,7 @@ Para criar a base de dados de conhecimento QnA Maker para o **bot de todo com Lu
     {
         "in": "generated",
         "out": "output",
-        "botName":"<todo-bot-with-LUIS-and-QnA-Maker>",
+        "botName":"<todo bot with LUIS and QnA Maker>",
         "subscriptionKey":"<your-32-digit-subscription-key>",
         "region": "<your-region-default-is-westus>"
     }
@@ -367,6 +367,21 @@ O arquivo de configuração é nomeado **appsettings.jsem**. O exemplo a seguir 
 }
 ```
 
+<!--
+NOTE:
+
+There is a PR that will change this sample: https://github.com/microsoft/BotBuilder-Samples/pull/2899. After the change, QnA Maker will have the same structure as the luis does in appsettings.json, once completed, update this article by adding these additional QnA Maker recognizer items to align with the changes in this PR:
+
+        "AddToDoDialog_en_us_qna": "",
+        "ChitChat_en_us_qna": "",
+        "DeleteToDoDialog_en_us_qna": "",
+        "GetUserProfileDialog_en_us_qna": "",
+        "RootDialog_en_us_qna": "",
+        "ViewToDoDialog_en_us_qna": ""
+    }
+
+-->
+
 ### <a name="the-configuration-file-details"></a>Os detalhes do arquivo de configuração
 
 Esta seção explica o **appsettings.jsno** arquivo para o exemplo de bot a ser feito em detalhes.
@@ -383,7 +398,7 @@ Consulte o artigo de [registro de canais de bot][bot-channels-registration] para
 
 #### <a name="luis-key-and-hostname"></a>Chave LUIS e nome do host
 
-O * *_LuisAPIKey_* _ é o `subscriptionKey` , e o _*_LuisAPIHostName_*_ é o `ENDPOINT` valor. Ambos os valores são encontrados na folha _chaves e ponto de extremidade_ na página de recursos de criação de Luis de serviços cognitivas do Azure, conforme mostrado na captura de tela abaixo:
+O **_LuisAPIKey_* _ é o `subscriptionKey` , e o _*_LuisAPIHostName_*_ é o `ENDPOINT` valor. Ambos os valores são encontrados na folha _chaves e ponto de extremidade_ na página de recursos de criação de Luis de serviços cognitivas do Azure, conforme mostrado na captura de tela abaixo:
 
 ![Chaves e ponto de extremidade para o recurso LUIS no Azure. Valores para LuisAPIKey e LuisAPIHostName.](./media/adaptive-dialogs/keys-and-endpoint-cross-train.png)
 
@@ -399,15 +414,24 @@ A seção Luis contém todas as IDs de aplicativo do Luis usadas pelo bot. Esses
 
 #### <a name="qna-maker-knowledge-base-ids"></a>QnA Maker IDs da base de dados de conhecimento
 
-O `qnamaker:build` comando salvará um arquivo de configurações no local fornecido como a `--out` opção. Esse arquivo contém uma lista de todas as QnA Maker ID da base de dados de conhecimento criada para cada localidade. O nome completo desse arquivo JSON é `qnamaker.settings.<username>.<authoring-region>.json` . Por exemplo, se o nome de usuário conectado for _YuuriTanaka_ e você estiver direcionando a região de criação **westus** , seu nome de arquivo será **qnamaker.settings.YuuriTanaka.westus.js**. É aqui que você encontrará todos os valores da `qna` seção de sua **appsettings.jsno** arquivo.
+O `qnamaker:build` comando salvará um arquivo de configurações no local fornecido como a `--out` opção. Esse arquivo contém uma lista de todas as QnA Maker ID da base de dados de conhecimento criada para cada localidade. O nome completo desse arquivo JSON é `qnamaker.settings.<username>.<authoring-region>.json` . Por exemplo, se o nome de usuário conectado for _YuuriTanaka_ e você estiver direcionando a região de criação **westus**, seu nome de arquivo será **qnamaker.settings.YuuriTanaka.westus.js**. É aqui que você encontrará todos os valores da `qna` seção de sua **appsettings.jsno** arquivo.
 
 > [!IMPORTANT]
 >
 > O arquivo de configurações criado pelo `qnamaker:build` comando conterá uma entrada para cada um dos cinco modelos de QnA Maker, o valor de cada um será a ID do QnA Maker KB criado pelo comando de compilação. Como cada um contém o mesmo valor de ID, use qualquer um deles para o valor da chave "TodoBotWithLuisAndQnA_en_us_qna". Se você substituir esse valor único por todos os cinco valores do arquivo qnamaker. Settings, receberá um erro: "System. Exception: Observação: QnA Maker não está configurado para RootDialog".
 
+<!--
+NOTE:
+
+Once PR2899 (https://github.com/microsoft/BotBuilder-Samples/pull/2899) is done, change the important message above to this:
+
+The settings file created by the `qnamaker:build` command will contain an entry for each of the five QnA Maker models, the value for each will be the ID for the one QnA Maker KB created by the build command.
+
+-->
+
 ## <a name="source-code-updates-for-cross-trained-models"></a>Atualizações de código-fonte para modelos com treinamento cruzado
 
-Não há nenhuma atualização de código-fonte necessária no exemplo de **bot de todo adaptável com Luis e QnA Maker** ( [**C#**][cs-sample-todo-bot]) para aproveitar os modelos de treinamento cruzado, ele foi criado com o treinamento cruzado em mente. Esta seção explicará o código neste exemplo relacionado aos bots utilizando modelos com treinamento cruzado, usando **AddToDoDialog.cs** como exemplo, os mesmos conceitos se aplicam às outras caixas de diálogo adaptáveis neste bot.
+Não há nenhuma atualização de código-fonte necessária no exemplo de **bot de todo adaptável com Luis e QnA Maker** ([**C#**][cs-sample-todo-bot]) para aproveitar os modelos de treinamento cruzado, ele foi criado com o treinamento cruzado em mente. Esta seção explicará o código neste exemplo relacionado aos bots utilizando modelos com treinamento cruzado, usando **AddToDoDialog.cs** como exemplo, os mesmos conceitos se aplicam às outras caixas de diálogo adaptáveis neste bot.
 
 ### <a name="define-the-recognizer"></a>Definir o reconhecedor
 
@@ -466,7 +490,19 @@ public static Recognizer CreateLuisRecognizer(IConfiguration Configuration)
 
 O método `CreateQnAMakerRecognizer` cria um reconhecedor de QnA Maker. Consulte os comentários no trecho de código abaixo para obter explicações de código:
 
-<!-- Line 330-358 -->
+<!-- Line 330-358
+
+NOTE:
+
+Once PR2899 (https://github.com/microsoft/BotBuilder-Samples/pull/2899) is done, change the code below:
+
+if (string.IsNullOrEmpty(configuration["qna:RootDialog_en_us_qna"]) || string.IsNullOrEmpty(configuration["QnAHostName"]) || string.IsNullOrEmpty(configuration["QnAEndpointKey"]))
+
+throw new Exception("NOTE: QnA Maker is not configured for RootDialog. Please follow instructions in README.md to add 'qna:RootDialog_en_us_qna', 'QnAHostName' and 'QnAEndpointKey' to the appsettings.json file.");
+
+KnowledgeBaseId = configuration["qna:RootDialog_en_us_qna"],
+
+ -->
 
 ```csharp
 private static Recognizer CreateQnAMakerRecognizer(IConfiguration configuration)
@@ -518,9 +554,9 @@ Se uma entrada do usuário não resultar em uma correspondência do reconhecedor
 - O usuário receberá uma solicitação com _qual lista você gostaria de ver?_ e deu estas três opções: **todo | Supermercado | Compras | Todos**
 - Em vez de selecionar qualquer uma das opções apresentadas, o usuário insere _remover todo_
 
-O expressão _remover todo_ não pertence a nenhuma intenções no **ViewToDoDialog** , mas como os modelos foram treinados em cruz, Luis retorna uma correspondência. O bot só precisa saber usar o mecanismo de consulta para emergir a solicitação para **RootDialog** onde esse expressão está associado à intenção que resulta na chamada **DeleteToDoDialog** .
+O expressão _remover todo_ não pertence a nenhuma intenções no **ViewToDoDialog**, mas como os modelos foram treinados em cruz, Luis retorna uma correspondência. O bot só precisa saber usar o mecanismo de consulta para emergir a solicitação para **RootDialog** onde esse expressão está associado à intenção que resulta na chamada **DeleteToDoDialog** .
 
-O código por trás da lista ao qual o usuário é solicitado no **ViewToDoDialog** :
+O código por trás da lista ao qual o usuário é solicitado no **ViewToDoDialog**:
 
 [!code-csharp[AllowInterruptions](~/../botbuilder-samples/samples/csharp_dotnetcore/adaptive-dialog/08.todo-bot-luis-qnamaker/Dialogs/ViewToDoDialog/ViewToDoDialog.cs?range=55-71&highlight=3-4,6)]
 <!--
@@ -548,7 +584,7 @@ new TextInput()
  -->
 - O `Prompt` para isso `TextInput` chama o `GetListType()` modelo em **ViewToDoDialog. LG**.
 - O valor retornado da entrada do usuário é salvo em `turn.recognized.entities.listType` . A abreviação de `turn.recognized.entities.listType` é `@listType`
-- A expressão para verificações de AllowInterruptions `@listType` , que existirá se o usuário tiver selecionado ou inserido um tipo de lista válido. Se ele não existir, ele verificará se a correspondência retornada por LUIS tem uma pontuação de previsão de 70% ou superior `turn.recognized.score >= 0.7` . Se tiver, isso significa que uma caixa de diálogo pai ou irmã tem uma intenção com uma pontuação de previsão alta. Isso resulta em `AllowInterruptions` avaliação para true e os usuários expressão são passados para a caixa de diálogo pai a ser manipulada. Quando a caixa de diálogo pai manipula esse expressão, ele encontra uma correspondência na `DeleteItem` intenção que resulta na **DeleteToDoDialog**.
+- A expressão para `AllowInterruptions` cheques `@listType` , que existirá se o usuário tiver selecionado ou inserido um tipo de lista válido. Se ele não existir, ele verificará se a correspondência retornada por LUIS tem uma pontuação de previsão de 70% ou superior, `turn.recognized.score >= 0.7` . Se tiver, isso significa que uma caixa de diálogo pai ou irmã tem uma intenção com uma pontuação de previsão alta. Isso resulta em `AllowInterruptions` avaliação para true e os usuários expressão são passados para a caixa de diálogo pai a ser manipulada. Quando a caixa de diálogo pai manipula esse expressão, ele encontra uma correspondência na `DeleteItem` intenção que resulta na **DeleteToDoDialog**.
 
 > [!NOTE]
 >

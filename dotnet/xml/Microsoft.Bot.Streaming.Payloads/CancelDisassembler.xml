@@ -1,5 +1,5 @@
 <Type Name="CancelDisassembler" FullName="Microsoft.Bot.Streaming.Payloads.CancelDisassembler">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="26c710e22d3c8131f29e883b5ec38b5a69df87f5" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94612098" /></Metadata><TypeSignature Language="C#" Value="public class CancelDisassembler" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b94c269ec9d90c83a6acb9b89cbd488dc70153f0" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95460960" /></Metadata><TypeSignature Language="C#" Value="public class CancelDisassembler" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CancelDisassembler extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Streaming.Payloads.CancelDisassembler" />
   <TypeSignature Language="VB.NET" Value="Public Class CancelDisassembler" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -35,6 +36,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="sender" Type="Microsoft.Bot.Streaming.PayloadTransport.IPayloadSender" />
@@ -63,6 +65,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>

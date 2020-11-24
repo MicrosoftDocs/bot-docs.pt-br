@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 06/24/2020
-ms.openlocfilehash: e4971b11d4abbcc7d6c12770bdf3786e0a323dce
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 85b914f3926267e23a3ef9c58d1585676b7eb901
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417015"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95460980"
 ---
 # <a name="introduction-to-adaptive-dialogs"></a>Introdução aos diálogos adaptáveis
 
@@ -112,9 +112,9 @@ O que acontece quando o usuário faz algo inesperado enquanto está no meio de u
 Considere este cenário:
 
 ```
-    User: I’d like to book a flight
+    User: I'd like to book a flight
     Bot:  Sure. What is your destination city?
-    User: How’s the weather in Seattle?
+    User: How's the weather in Seattle?
     Bot:  Its 72 and sunny in Seattle
     ...
 ```
@@ -137,7 +137,7 @@ Este é o fluxo quando o usuário diz: _Quero reservar um voo_
     <img alt="Adaptive_dialog_conversation_flow_example" src="./media/adaptive-dialogs/adaptive-dialog-first-utterance.png" style="max-width:700px;" />
 </p>
 
-O reconhecedor do diálogo ativo (rootDialog) emite um evento `recognizedIntent` que pode ser processado com um gatilho `OnIntent`. Nesse caso, o usuário disse _"Quero reservar um voo"_ , que corresponde a uma intenção definida em `rootDialog` e faz com que o gatilho `OnIntent` contenha uma ação `BeginDialog` a ser executada, o que chama o diálogo `bookFlightDialog`. O diálogo de reserva de voo executa as ações, uma delas está solicitando a cidade para a qual você deseja ir.
+O reconhecedor do diálogo ativo (rootDialog) emite um evento `recognizedIntent` que pode ser processado com um gatilho `OnIntent`. Nesse caso, o usuário disse _"Eu gostaria de reservar um vôo"_ que corresponde a uma intenção definida em `rootDialog` e faz com que o `OnIntent` gatilho contenha uma `BeginDialog` ação a ser executada, o que chama a caixa de diálogo `bookFlightDialog` . O diálogo de reserva de voo executa as ações, uma delas está solicitando a cidade para a qual você deseja ir.
 
 O usuário pode fornecer qualquer coisa em resposta, em alguns casos, a resposta pode não ter nada a ver com a pergunta feita e, nesse caso, o usuário respondeu com _Qual é o clima em Seattle?_
 
@@ -184,5 +184,5 @@ O _reconhecedor_ de cada diálogo analisa a entrada do usuário para determinar 
 [14]:https://aka.ms/bot-builder-concept-dialog#prompts
 [15]:https://github.com/microsoft/botbuilder-samples/tree/master/experimental/adaptive-dialog
 [16]:https://github.com/microsoft/botbuilder-samples/tree/master/samples/csharp_dotnetcore
-[17]: https://docs.microsoft.com/azure/bot-service/bot-builder-concept-dialog?view=azure-bot-service-4.0#waterfall-dialogs
+[17]: bot-builder-concept-dialog.md#component-dialogs
 [interruptions]: bot-builder-concept-adaptive-dialog-interruptions.md

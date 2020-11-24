@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/26/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 9e9d2dea4efa5affec0a45788edc10a818948f6e
-ms.sourcegitcommit: e37cf15f4907910560f34445a0fbdd7ae75b4787
+ms.openlocfilehash: 4fb998dc3b7d2c6acea58ad98ad0a9d4479d0e4f
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92440113"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95460860"
 ---
 # <a name="create-a-bot-using-adaptive-component-waterfall-and-custom-dialogs"></a>Criar um bot usando diálogos adaptáveis, de componente, em cascata e personalizados
 
@@ -152,7 +152,7 @@ O diálogo adaptável usa um gerador de linguagem para formatar o texto e inclui
 
 1. Se ainda não tiver feito isso, instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator-readme).
 1. Execute o exemplo localmente em seu computador.
-1. Inicie o emulador, conecte-se ao bot e responda às solicitações: nome e sobrenome, tamanho do calçado, rua, cidade e CEP.
+1. Inicie o emulador, conecte-se ao bot e responda aos prompts: nome e sobrenome, tamanho do calçado, rua, cidade e CEP.
 1. O bot exibirá as informações coletadas.
 1. Envie ao bot qualquer mensagem para iniciar o processo novamente.
 
