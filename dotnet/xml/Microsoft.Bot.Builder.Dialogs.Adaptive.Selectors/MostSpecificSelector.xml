@@ -1,5 +1,5 @@
 <Type Name="MostSpecificSelector" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Selectors.MostSpecificSelector">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="1c429ff997843c6ce432c1ea3ef6484848385418" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94596318" /></Metadata><TypeSignature Language="C#" Value="public class MostSpecificSelector : Microsoft.Bot.Builder.Dialogs.Adaptive.TriggerSelector" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="bd79397b486c95f9b5b97f0a039cd09f2a5c9068" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95450650" /></Metadata><TypeSignature Language="C#" Value="public class MostSpecificSelector : Microsoft.Bot.Builder.Dialogs.Adaptive.TriggerSelector" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MostSpecificSelector extends Microsoft.Bot.Builder.Dialogs.Adaptive.TriggerSelector" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Selectors.MostSpecificSelector" />
   <TypeSignature Language="VB.NET" Value="Public Class MostSpecificSelector&#xA;Inherits TriggerSelector" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Adaptive.TriggerSelector</BaseTypeName>
@@ -34,6 +35,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -55,6 +57,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -84,6 +87,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -113,6 +117,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Collections.Generic.IReadOnlyList&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnCondition&gt;&gt;</ReturnType>
@@ -143,6 +148,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>

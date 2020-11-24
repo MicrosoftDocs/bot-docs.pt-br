@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 66436f16f4ffe68f9255aeb53801336909fdcec7
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 993db11db1a7deaf009d00f5d85233b864e44855
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417409"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95452400"
 ---
 # <a name="migrate-a-net-v3-bot-to-a-net-core-v4-bot"></a>Migrar um bot v3 do .NET para um bot v4 do .NET Core
 
@@ -395,7 +395,7 @@ Em **ResetPassword.cs**, altere o tipo de retorno do `MobileNumber` da seguinte 
 ## <a name="final-porting-steps"></a>Etapas finais de portabilidade
 Para concluir o processo de portabilidade, execute estas etapas:
 
-1. Crie uma classe `AdapterWithErrorHandler` para definir um adaptador que inclui um manipulador de erro que pode capturar exceções no aplicativo ou middleware. O adaptador processa e direciona atividades de entrada através do pipeline de middleware de bot para a lógica do seu bot e, em seguida, recua novamente. Use o código a seguir para criar a classe:
+1. Crie uma classe `AdapterWithErrorHandler` para definir um adaptador que inclui um manipulador de erro que pode capturar exceções no aplicativo ou middleware. O adaptador processa e direciona as atividades de entrada por meio do pipeline de middleware de bot para a lógica do bot e, em seguida, vice-versa. Use o código a seguir para criar a classe:
 
  [!code-csharp[MobileNumber](~/../botbuilder-samples/MigrationV3V4/CSharp/ContosoHelpdeskChatBot-V4NetCore/ContosoHelpdeskChatBot/AdapterWithErrorHandler.cs?range=4-46)]
 1. Modifique a página **wwwroot\default.htm** conforme considerar adequado.
@@ -405,7 +405,7 @@ Para concluir o processo de portabilidade, execute estas etapas:
 Neste ponto, devemos ser capazes de executar o bot localmente no IIS e anexar a ele com o emulador.
 
 1. Executar o bot no IIS.
-1. Inicie o emulador e conecte-se ao ponto de extremidade do bot (por exemplo: **http://localhost:3978/api/messages** ).
+1. Inicie o emulador e conecte-se ao ponto de extremidade do bot (por exemplo, **http://localhost:3978/api/messages** ).
     - Se esta for a primeira vez que você estiver executando o bot, clique em **Arquivo > Novo Bot** e siga as instruções na tela. Caso contrário, clique em **Arquivo > Abrir Bot** para abrir um bot existente.
     - Verifique as configurações da porta novamente na configuração. Por exemplo, se o bot foi aberto no navegador em `http://localhost:3979/` e depois no emulador, defina o ponto de extremidade do bot como `http://localhost:3979/api/messages`.
 1. Todos os quatro diálogos devem funcionar, e você pode definir pontos de interrupção nas etapas de cascata para verificar qual é o estado e o contexto de diálogo nesses pontos.

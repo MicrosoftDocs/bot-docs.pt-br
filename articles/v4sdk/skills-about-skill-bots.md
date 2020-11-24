@@ -1,20 +1,20 @@
 ---
 title: Sobre os bots de habilidades | Microsoft Docs
-description: Descreve como a lógica de conversação de um bot pode ser usada por outro bot usando o SDK do Bot Framework.
+description: Descreve como a lógica de conversação em um bot de habilidade pode ser disponibilizada para outros bots usando o SDK do bot Framework.
 keywords: bot skill, skill bot.
 author: JonathanFingold
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 04/28/2020
+ms.date: 11/12/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 5eb235d887d2aec82239bc6aaf40f9044767b478
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: a5186690006fa72cac5520c0c073f7da13607b55
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417371"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95452270"
 ---
 # <a name="about-skill-bots"></a>Sobre os bots de habilidades
 

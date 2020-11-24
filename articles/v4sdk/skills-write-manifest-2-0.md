@@ -1,20 +1,20 @@
 ---
 title: Como escrever um manifesto de habilidades v2.0 | Microsoft Docs
-description: Saiba como escrever um manifesto de habilidades do Bot Framework.
+description: Saiba como usar o manifesto de habilidade da estrutura de bot da versão 2,0.
 keywords: habilidades, manifesto
 author: JonathanFingold
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 05/04/2020
+ms.date: 11/11/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 7c819912287c1c88d404798c4e6dbadaf183b883
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: ed863c4b93143eed9fb91999c251b7fe1927e4cc
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417321"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95451920"
 ---
 # <a name="how-to-write-a-v20-skill-manifest"></a>Como escrever um manifesto de habilidades v2.0
 
@@ -23,7 +23,7 @@ ms.locfileid: "92417321"
 Um _manifesto de habilidade_ é um arquivo JSON que descreve as ações que a habilidade pode executar, os respectivos parâmetros de entrada e saída e os pontos de extremidade da habilidade. O manifesto contém as informações de que um desenvolvedor precisa para acessar a habilidade por meio de outro bot.
 
 Este artigo descreve [a versão 2.0.0](https://schemas.botframework.com/schemas/skills/v2.0/skill-manifest.json) do esquema de manifesto de habilidades do Bot Framework.
-Para obter uma descrição da versão 2.1.preview-1, confira como [Escrever um manifesto de habilidades v2.1](skills-write-manifest-2-1.md).
+Para obter uma descrição da versão 2,1, consulte como [escrever um manifesto de habilidades v 2.1](skills-write-manifest-2-1.md).
 
 O esquema de manifesto de habilidades do Bot Framework usa o rascunho 7 do vocabulário do esquema JSON.
 

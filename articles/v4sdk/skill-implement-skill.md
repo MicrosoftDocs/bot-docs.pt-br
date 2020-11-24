@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 07/08/2020
+ms.date: 11/11/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 06eb6ce1241f2d01bc55dd890739b7764fac1992
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 807035205e230979f2d82c5f8d4eaf3c7bfb16f0
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417422"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95452260"
 ---
 # <a name="implement-a-skill"></a>Implementar um skill
 
@@ -33,8 +33,11 @@ Este artigo demonstra como implementar um skill que ecoa a entrada do usuário.
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento de [conceitos básicos de bot](bot-builder-basics.md) e [skills](skills-conceptual.md).
-- Uma assinatura do Azure. Se você não tiver uma, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
-- Uma cópia do exemplo de **bot para bot de skills simples** em [**C#** ](https://aka.ms/skills-simple-bot-to-bot-csharp), [**JavaScript**](https://aka.ms/skills-simple-bot-to-bot-js) ou [**Python**](https://aka.ms/skills-simple-bot-to-bot-python).
+- Uma assinatura do Azure (para implantar sua habilidade). Se você não tiver uma, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
+- Uma cópia do exemplo de **bot para bot de skills simples** em [**C#**](https://aka.ms/skills-simple-bot-to-bot-csharp), [**JavaScript**](https://aka.ms/skills-simple-bot-to-bot-js) ou [**Python**](https://aka.ms/skills-simple-bot-to-bot-python).
+
+> [!NOTE]
+> A partir da versão 4,11, você não precisa de uma ID de aplicativo e senha para testar uma habilidade localmente no emulador. Uma assinatura do Azure ainda é necessária para implantar sua habilidade no Azure.
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
@@ -63,16 +66,21 @@ Para obter informações sobre o bot raiz simples, consulte como [Implementar um
 
 ## <a name="resources"></a>Recursos
 
-A autenticação de bot para bot requer que cada bot participante tenha uma ID do aplicativo e uma senha válidas.
+Para bots implantados, a autenticação de bot para bot requer que cada bot participante tenha uma ID de aplicativo e senha válidas.
+No entanto, você pode testar habilidades e consumidores de habilidades localmente com o emulador sem uma ID do aplicativo e uma senha.
 
-Para poder testar o skill como um bot voltado para o usuário, registre o skill com o Azure. Você pode usar um Registro de Canais de Bot. Para obter mais informações, veja como [registrar um bot com o Serviço de Bot do Azure](../bot-service-quickstart-registration.md).
+Para disponibilizar a habilidade aos bots voltados para o usuário, registre a habilidade com o Azure. Você pode usar um Registro de Canais de Bot. Para obter mais informações, veja como [registrar um bot com o Serviço de Bot do Azure](../bot-service-quickstart-registration.md).
 
 ## <a name="application-configuration"></a>Configuração de aplicativo
 
-Adicione a ID do aplicativo do skill e a senha ao arquivo de configuração do skill.
+Opcionalmente, adicione a ID do aplicativo da habilidade e a senha ao arquivo de configuração da habilidade.
+(Se o consumidor de habilidades ou habilidades usar uma ID de aplicativo e uma senha, ambos deverão.)
 
 A matriz de _chamadores permitidos_ pode restringir quais consumidores de skills podem acessar o skill.
-Deixe essa matriz vazia para aceitar chamadas de qualquer consumidor de skills.
+Adicione um elemento "*" para aceitar chamadas de qualquer consumidor de habilidades.
+
+> [!NOTE]
+> Se você estiver testando sua habilidade localmente sem uma ID do aplicativo e uma senha, nem a habilidade nem o consumidor de habilidades executarão o código para executar a validação de declarações.
 
 ### <a name="c"></a>[C#](#tab/cs)
 
@@ -169,7 +177,7 @@ Este exemplo usa uma lista de chamadores permitidos para validação de declara�
 
 Você deve adicionar um _validador de declarações_ à configuração de autenticação. As declarações são avaliadas após o cabeçalho de autenticação. O código de validação deve gerar um erro ou uma exceção para rejeitar a solicitação. Há muitos motivos pelos quais você pode rejeitar uma solicitação autenticada de outra forma. Por exemplo:
 
-- O skill faz parte de um serviço pago. Usuários que não estão no banco de dados não devem ter acesso.
+- O skill faz parte de um serviço pago. O usuário não está no banco de dados não deve ter acesso.
 - O skill é proprietário. Somente determinados consumidores de skills podem chamar o skill.
 
 > [!IMPORTANT]
@@ -258,6 +266,7 @@ Este exemplo adiciona validação de declarações à configuração de autentic
 
 Um _manifesto de skill_ é um arquivo JSON que descreve as atividades que o skill pode executar, seus parâmetros de entrada e saída e os pontos de extremidade do skill.
 O manifesto contém as informações necessárias para acessar o skill por meio de outro bot.
+A versão mais recente do esquema é a [v 2.1](https://schemas.botframework.com/schemas/skills/v2.1/skill-manifest.json).
 
 ### <a name="c"></a>[C#](#tab/cs)
 

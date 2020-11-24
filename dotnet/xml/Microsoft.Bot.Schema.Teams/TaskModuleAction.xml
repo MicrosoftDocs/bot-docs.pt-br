@@ -1,5 +1,5 @@
 <Type Name="TaskModuleAction" FullName="Microsoft.Bot.Schema.Teams.TaskModuleAction">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="25b994ac2ef3513e21f6514c0ff18dfd065aeb05" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94613958" /></Metadata><TypeSignature Language="C#" Value="public class TaskModuleAction : Microsoft.Bot.Schema.CardAction" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2c838cbf3aa004386de9bf392799d2ecd282376d" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95452530" /></Metadata><TypeSignature Language="C#" Value="public class TaskModuleAction : Microsoft.Bot.Schema.CardAction" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TaskModuleAction extends Microsoft.Bot.Schema.CardAction" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.Teams.TaskModuleAction" />
   <TypeSignature Language="VB.NET" Value="Public Class TaskModuleAction&#xA;Inherits CardAction" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Schema.CardAction</BaseTypeName>
@@ -35,6 +36,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="title" Type="System.String" />

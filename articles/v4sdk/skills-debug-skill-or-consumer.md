@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/15/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: c8bab4861f8f8072418e4184efd40cdf4a7703cc
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 42e91317cd9e7a63755eb6be6d53738dd483a610
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417335"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95452000"
 ---
 # <a name="debug-a-skill-or-skill-consumer"></a>Depurar uma habilidade ou um consumidor de habilidades
 
@@ -38,6 +38,9 @@ Nesse cenário, você não precisa modificar a configuração da habilidade impl
 1. Atualize a configuração do aplicativo do consumidor e defina o ponto de extremidade do host de habilidade para a URL gerada pelo ngrok.
 1. Por fim, execute o consumidor localmente e conecte-o conforme descrito em como [depurar com o emulador](../bot-service-debug-emulator.md).
 
+> [!TIP]
+> O consumidor local precisará de uma ID de aplicativo e senha válidas.
+
 ## <a name="to-debug-a-local-skill-bot"></a>Para depurar um bot de habilidades local
 
 Enquanto você estiver testando as alterações em uma habilidade, talvez você queira executá-lo e depurá-lo localmente enquanto ele é acessado de um bot de consumidor hospedado em um servidor de preparo.
@@ -48,3 +51,6 @@ Nesse cenário, você precisa modificar a configuração do consumidor de habili
 1. Atualize a configuração do aplicativo do consumidor e defina o ponto de extremidade de habilidade para a URL gerada pelo ngrok.
    Você pode editar a configuração diretamente no servidor ou pode ser necessário reimplantar o consumidor de habilidades.
 1. Execute a habilidade localmente e invoque-a do consumidor de habilidades.
+
+> [!TIP]
+> A habilidade local precisará de uma ID e senha válidas do aplicativo.

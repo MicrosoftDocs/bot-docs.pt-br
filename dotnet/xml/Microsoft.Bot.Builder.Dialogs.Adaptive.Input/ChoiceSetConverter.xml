@@ -1,5 +1,5 @@
 <Type Name="ChoiceSetConverter" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Input.ChoiceSetConverter">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="214b20456fcef428d5af3303fb3af4f22b013194" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94615118" /></Metadata><TypeSignature Language="C#" Value="public class ChoiceSetConverter : Newtonsoft.Json.JsonConverter&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.Input.ChoiceSet&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0fc1d9d01bde2790230de781ed4793c931fc5f53" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95452853" /></Metadata><TypeSignature Language="C#" Value="public class ChoiceSetConverter : Newtonsoft.Json.JsonConverter&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.Input.ChoiceSet&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ChoiceSetConverter extends Newtonsoft.Json.JsonConverter`1&lt;class Microsoft.Bot.Builder.Dialogs.Adaptive.Input.ChoiceSet&gt;" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Input.ChoiceSetConverter" />
   <TypeSignature Language="VB.NET" Value="Public Class ChoiceSetConverter&#xA;Inherits JsonConverter(Of ChoiceSet)" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Newtonsoft.Json.JsonConverter&lt;Microsoft.Bot.Builder.Dialogs.Adaptive.Input.ChoiceSet&gt;</BaseTypeName>
@@ -37,6 +38,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -58,6 +60,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.Dialogs.Adaptive.Input.ChoiceSet</ReturnType>
@@ -94,6 +97,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>

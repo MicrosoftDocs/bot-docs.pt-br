@@ -1,6 +1,6 @@
 ---
 title: Usar o estado do usuário v3 do .NET em um bot v4 – Serviço de Bot
-description: Como usar o estado de usuário v3 em um exemplo de bot v4
+description: Veja um exemplo de como usar o estado do usuário do C# v3 em um bot do C# v4.
 keywords: Csharp, migração de bot, bot v3
 ms.author: kamrani
 manager: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 08/21/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: ae0d406df86a06bc98d754e2e37689509af4f0a5
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: d1a237851790d9aeee22660a5f245c2f63cf4154
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416865"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95452250"
 ---
 # <a name="using-net-v3-user-state-in-a-v4-bot"></a>Usar o estado de usuário v3 do .NET em um bot v4
 
@@ -152,5 +152,5 @@ O [Bot Framework Emulator][5] é um aplicativo de área de trabalho que permite 
 [7]: https://docs.microsoft.com/azure/bot-service/bot-builder-storage-concept
 [8]: https://docs.microsoft.com/azure/bot-service/bot-builder-howto-v4-storage?tabs=csharp
 [9]: https://docs.microsoft.com/azure/bot-service/bot-builder-howto-v4-state?tabs=csharp
-[21]: https://docs.microsoft.com/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0
+[21]: ../../bot-service-overview-introduction.md
 [40]: https://aka.ms/azuredeployment

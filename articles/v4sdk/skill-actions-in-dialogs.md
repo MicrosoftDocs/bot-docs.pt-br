@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 04/23/2020
+ms.date: 11/11/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: c678dc3204902d886e46e07fc67cb33a0affc8be
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: ee511677a04d82b150e29e2fad15edf8401d1f6a
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417463"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95452210"
 ---
 # <a name="use-dialogs-within-a-skill"></a>Usar diálogos em uma habilidade
 
@@ -28,30 +28,33 @@ Para saber como criar um bot de habilidades em geral, confira como [Implementar 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento [básico sobre bots](bot-builder-basics.md), [como os bots skills funcionam](skills-conceptual.md) e como [implementar um skill](skill-implement-skill.md).
-- Uma assinatura do Azure. Se você não tiver uma, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
+- Uma assinatura do Azure (para implantar sua habilidade). Se você não tiver uma, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 - Opcionalmente, uma conta do [LUIS](https://www.luis.ai/). (Para obter mais informações, confira como [Adicionar o reconhecimento de idioma natural ao seu bot](bot-builder-howto-v4-luis.md).)
-- Uma cópia da amostra **skillDialog de habilidades** em [**C#** ](https://aka.ms/skills-using-dialogs-cs), [**JavaScript**](https://aka.ms/skills-using-dialogs-js) ou [**Python**](https://aka.ms/skills-using-dialogs-py).
+- Uma cópia da amostra **skillDialog de habilidades** em [**C#**](https://aka.ms/skills-using-dialogs-cs), [**JavaScript**](https://aka.ms/skills-using-dialogs-js) ou [**Python**](https://aka.ms/skills-using-dialogs-py).
+
+> [!NOTE]
+> A partir da versão 4,11, você não precisa de uma ID de aplicativo e senha para testar uma habilidade localmente no emulador. Uma assinatura do Azure ainda é necessária para implantar sua habilidade no Azure.
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
-A amostra **skillDialog de habilidades** inclui projetos para dois bots:
+O exemplo **skills skillDialog** inclui projetos para dois bots:
 
-- O _bot raiz do diálogo_, que usa uma classe de _diálogo de habilidades_ para consumir uma habilidade.
+- O _bot raiz de caixa de diálogo_, que usa uma classe de _caixa de diálogo de skill_ para consumir um skill.
 - O _bot de habilidades do diálogo_, que usa um diálogo para lidar com atividades provenientes de consumidores de habilidades. Essa habilidade é uma adaptação da amostra de **bot básico**. (Para saber mais sobre o bot básico, confira como [Adicionar o reconhecimento de idioma natural ao seu bot](bot-builder-howto-v4-luis.md).)
 
 Este artigo se concentra em como usar um diálogo em um bot de habilidades para gerenciar várias ações.
 
 ### <a name="c"></a>[C#](#tab/cs)
 
-![Diagrama de classe do skill](./media/skill-dialog/dialog-skill-bot-cs.png)
+![Diagrama de classe de habilidade em C#](./media/skill-dialog/dialog-skill-bot-cs.png)
 
 ### <a name="javascript"></a>[JavaScript](#tab/js)
 
-![Diagrama de classe do skill](./media/skill-dialog/dialog-skill-bot-js.png)
+![Diagrama de classe de habilidade de JavaScript](./media/skill-dialog/dialog-skill-bot-js.png)
 
 ### <a name="python"></a>[Python](#tab/python)
 
-![Diagrama de classe do skill](./media/skill-dialog/dialog-skill-bot-py.png)
+![Diagrama de classe de habilidade do Python](./media/skill-dialog/dialog-skill-bot-py.png)
 
 ---
 
@@ -59,15 +62,18 @@ Para obter informações sobre o bot do consumidor de habilidades, confira como 
 
 ## <a name="resources"></a>Recursos
 
-A autenticação de bot para bot requer que cada bot participante tenha uma appID e uma senha válidas.
+Para bots implantados, a autenticação de bot para bot requer que cada bot participante tenha uma ID de aplicativo e senha válidas.
+No entanto, você pode testar habilidades e consumidores de habilidades localmente com o emulador sem uma ID do aplicativo e uma senha.
 
-Registre tanto o skill quanto o consumidor de skills com o Azure. Você pode usar um Registro de Canais de Bot. Para obter mais informações, veja como [registrar um bot com o Serviço de Bot do Azure](../bot-service-quickstart-registration.md).
+Para disponibilizar a habilidade aos bots voltados para o usuário, registre a habilidade com o Azure. Você pode usar um Registro de Canais de Bot. Para obter mais informações, veja como [registrar um bot com o Serviço de Bot do Azure](../bot-service-quickstart-registration.md).
 
 Opcionalmente, o bot de habilidades pode usar um modelo LUIS de reserva de voos. Para usar esse modelo, use o arquivo CognitiveModels/FlightBooking.json para criar, treinar e publicar o modelo LUIS.
 
 ## <a name="application-configuration"></a>Configuração de aplicativo
 
-1. Adicione a ID do aplicativo e a senha do bot de habilidades.
+1. Opcionalmente, adicione a ID do aplicativo da habilidade e a senha ao arquivo de configuração da habilidade.
+   (Se o consumidor de habilidades ou habilidades usar uma ID de aplicativo e uma senha, ambos deverão.)
+
 1. Se você estiver usando o modelo LUIS, adicione a ID do aplicativo, a chave de API e o nome do host da API do LUIS.
 
 ### <a name="c"></a>[C#](#tab/cs)
@@ -274,7 +280,8 @@ O manifesto contém as informações necessárias para acessar o skill por meio 
 
 ---
 
-O _esquema de manifesto do skill_ é um arquivo JSON que descreve o esquema do manifesto de skill. A versão atual do esquema é [skill-manifest-2.0.0.json](https://github.com/microsoft/botframework-sdk/blob/master/schemas/skills/skill-manifest-2.0.0.json).
+O _esquema de manifesto do skill_ é um arquivo JSON que descreve o esquema do manifesto de skill.
+A versão mais recente do esquema é a [v 2.1](https://schemas.botframework.com/schemas/skills/v2.1/skill-manifest.json).
 
 ## <a name="test-the-skill-bot"></a>Testar o bot de habilidades
 
@@ -282,11 +289,11 @@ Teste a habilidade no Emulator com o consumidor de habilidades. Para fazer isso,
 
 Baixe e instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator-readme) mais recente.
 
-1. Execute o bot de habilidades do diálogo e o bot raiz do diálogo localmente no computador. Caso precise de instruções, confira o arquivo LEIAME para obter a amostra em [C#](https://aka.ms/skills-using-dialogs-cs), [JavaScript](https://aka.ms/skills-using-dialogs-js) ou [Python](https://aka.ms/skills-using-dialogs-py).
+1. Execute o bot de skill de caixa de diálogo e o bot raiz de caixa de diálogo localmente em seu computador. Se você precisar de instruções, confira o arquivo LEIAME para obter os exemplos de [C#](https://aka.ms/skills-using-dialogs-cs), [JavaScript](https://aka.ms/skills-using-dialogs-js) ou [Python](https://aka.ms/skills-using-dialogs-py).
 1. Use o Emulador para testar o bot.
-   - Quando você ingressa na conversa pela primeira vez, o bot exibe uma mensagem de boas-vindas e pergunta qual habilidade você deseja chamar. O bot de habilidades desta amostra tem apenas uma habilidade.
+   - Quando você ingressa na conversa pela primeira vez, o bot exibe uma mensagem de boas-vindas e pergunta qual skill você gostaria de chamar. O bot de skill para este exemplo tem apenas um skill.
    - Selecione **DialogSkillBot**.
-1. Em seguida, o bot solicita que você escolha uma ação para a habilidade. Escolha "BookFlight".
+1. O bot a seguir solicita que você escolha uma ação para o skill. Escolha "BookFlight".
    1. A habilidade começa a ação book-flight; responda às solicitações.
    1. Quando a habilidade for concluída, o bot raiz exibirá os detalhes da reserva antes de solicitar novamente a habilidade que você deseja chamar.
 1. Selecione **DialogSkillBot** novamente e "BookFlight".

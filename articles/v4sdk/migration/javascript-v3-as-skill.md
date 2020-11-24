@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 02/19/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 35b2e549bfc5a8aee3bad7fa8bc8c66e0c7b2d77
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 325cc124fc54274b5b27b187831bb6bc6d3d5f32
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417495"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95452090"
 ---
 # <a name="convert-a-javascript-v3-bot-to-a-skill"></a>Converter um bot v3 do JavaScript em uma habilidade
 
@@ -29,7 +29,7 @@ Para migrar um bot do JavaScript de v3 para v4, confira como [Migrar um bot v3 d
 - Visual Studio Code.
 - Node.js.
 - Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
-- Para testar as habilidades, você precisará do Bot Framework Emulator e de cópias locais dos bots:
+- Para testar as habilidades, você precisará do emulador do bot Framework e das cópias locais dos bots:
   - A habilidade de eco do JavaScript v3: [**Skills/v3-skill-bot**](https://aka.ms/v3-js-echo-skill).
   - A habilidade de reserva do JavaScript v3: [**Skills/v3-booking-bot-skill**](https://aka.ms/v3-js-booking-skill).
   - O consumidor de habilidades de exemplo do JavaScript v4: [**Skills/v4-root-bot**](https://aka.ms/js-simple-root-bot).

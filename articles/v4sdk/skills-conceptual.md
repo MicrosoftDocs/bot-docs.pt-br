@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 07/15/2020
+ms.date: 11/12/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 52bb7025f45640e2c526897b133be353a5e7da50
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 62413eb08f93e9418de5f166e50b64b0fc4a05bd
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417345"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95452030"
 ---
 # <a name="skills-overview"></a>Visão geral de skills
 
@@ -134,14 +134,19 @@ O consumidor de skills e o skill gerenciam seu próprio estado separadamente. No
 
 <!-- TODO Add appropriate info about this new(?) feature to the bot basics article. -->
 
+A partir da versão 4,11, você não precisa de uma ID de aplicativo e senha para testar um consumidor de habilidades e habilidades localmente no emulador. Uma assinatura do Azure ainda é necessária para implantar sua habilidade no Azure.
+
 A autenticação de nível de serviço é gerenciada pelo serviço do Bot Connector. A estrutura usa tokens de portador e IDs de aplicativo de bot para verificar a identidade de cada bot. (A estrutura de bot usa um objeto de _configuração de autenticação_ para validar o cabeçalho de autenticação em solicitações de entrada.)
 
 > [!IMPORTANT]
-> Isso exige que todos os bots (o consumidor de habilidades e quaisquer habilidades consumidas) tenham credenciais de aplicativo válidas.
+> Isso requer todos os bots implantados (o consumidor de habilidades e as habilidades que ele consome) para ter credenciais de aplicativo válidas.
 
 #### <a name="claims-validation"></a>Validação de declarações
 
 Você deve adicionar um _validador de declarações_ à configuração de autenticação. As declarações são avaliadas após o cabeçalho de autenticação. Gere um erro ou uma exceção no código de validação para rejeitar a solicitação.
+
+> [!NOTE]
+> O bot executa a validação de declarações se tiver uma ID do aplicativo e uma senha; caso contrário, a validação de declarações não será executada.
 
 Há vários motivos pelos quais você pode rejeitar uma solicitação autenticada de outra forma:
 

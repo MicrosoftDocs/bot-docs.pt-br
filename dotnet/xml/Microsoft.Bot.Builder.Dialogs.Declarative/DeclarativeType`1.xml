@@ -1,5 +1,5 @@
 <Type Name="DeclarativeType&lt;T&gt;" FullName="Microsoft.Bot.Builder.Dialogs.Declarative.DeclarativeType&lt;T&gt;">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="27f093e1fdbd2e610149de80c511ee5abf2000a1" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94605708" /></Metadata><TypeSignature Language="C#" Value="public class DeclarativeType&lt;T&gt; : Microsoft.Bot.Builder.Dialogs.Declarative.DeclarativeType" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9e57941bb6e2741d2d8e93680dc87f87e4702f05" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95452700" /></Metadata><TypeSignature Language="C#" Value="public class DeclarativeType&lt;T&gt; : Microsoft.Bot.Builder.Dialogs.Declarative.DeclarativeType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DeclarativeType`1&lt;T&gt; extends Microsoft.Bot.Builder.Dialogs.Declarative.DeclarativeType" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Declarative.DeclarativeType`1" />
   <TypeSignature Language="VB.NET" Value="Public Class DeclarativeType(Of T)&#xA;Inherits DeclarativeType" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <TypeParameters>
     <TypeParameter Name="T" />
@@ -39,6 +40,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="kind" Type="System.String" />

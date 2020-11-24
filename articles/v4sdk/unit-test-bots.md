@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 6de6eca321f4f9ff55fc7490aa4cfd99d1ae54a6
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 8019b73279507b69ed1a5ee1c1a9711923947d9e
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416913"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95451986"
 ---
 # <a name="how-to-unit-test-bots"></a>Como realizar testes de unidade em bots
 
@@ -318,7 +318,7 @@ public class BookingDialogTests
 
 Aqui está um exemplo do que o `XUnitDialogTestLogger` registra na janela de saída quando é configurado:
 
-![XUnitMiddlewareOutput](media/how-to-unit-test/cs/XUnitMiddlewareOutput.png)
+![Saída de middleware de XUnit](media/how-to-unit-test/cs/XUnitMiddlewareOutput.png)
 
 Para obter informações adicionais sobre como enviar a saída de teste para o console ao usar o XUnit, confira [Capturar a saída](https://xunit.net/docs/capturing-output.html) na documentação do XUnit.
 
@@ -334,7 +334,7 @@ const client = new DialogTestClient('msteams', sut, testData.initialData, [new D
 
 Aqui está um exemplo do que o `DialogTestLogger` registra na janela de saída quando é configurado:
 
-![DialogTestLoggerOutput](media/how-to-unit-test/js/DialogTestLoggerOutput.png)
+![Saída do agente de log de teste de diálogo](media/how-to-unit-test/js/DialogTestLoggerOutput.png)
 
 ---
 
@@ -396,7 +396,7 @@ public async Task ShouldBeAbleToCancel(string cancelUtterance)
 
 O novo teste será executado quatro vezes com os parâmetros diferentes e cada caso será exibido como um item filho sob o teste `ShouldBeAbleToCancel` no Gerenciador de Testes do Visual Studio. Se qualquer um deles falhar, conforme mostrado abaixo, você poderá clicar com o botão direito do mouse e depurar o cenário que falhou em vez de executar novamente o conjunto de testes inteiro.
 
-![InlineDataTestResults](media/how-to-unit-test/cs/InlineDataTestResults.png)
+![Resultados de teste para dados embutidos](media/how-to-unit-test/cs/InlineDataTestResults.png)
 
 ### <a name="theory-tests-using-memberdata-and-complex-types"></a>Testes de teoria usando MemberData e tipos complexos
 
@@ -541,7 +541,7 @@ public async Task DialogFlowUseCases(TestDataObject testData)
 
 Aqui está um exemplo dos resultados para os testes de `DialogFlowUseCases` no Gerenciador de Testes do Visual Studio quando o teste é executado:
 
-![BookingDialogTests](media/how-to-unit-test/cs/BookingDialogTestsResults.png)
+![Resultados de exemplo para a caixa de diálogo de reserva](media/how-to-unit-test/cs/BookingDialogTestsResults.png)
 
 ## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -591,7 +591,7 @@ describe('ShouldBeAbleToCancel', () => {
 
 O novo teste será executado quatro vezes com os parâmetros diferentes e cada caso será exibido como um item filho sob o conjunto de testes `ShouldBeAbleToCancel` no [Mocha Test Explorer](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-mocha-test-adapter). Se qualquer um deles falhar, conforme mostrado abaixo, você poderá executar e depurar o cenário que falhou em vez de executar novamente o conjunto de testes inteiro.
 
-![SimpleCancelTestResults](media/how-to-unit-test/js/SimpleCancelTestResults.png)
+![Resultados de exemplo para o teste de cancelamento](media/how-to-unit-test/js/SimpleCancelTestResults.png)
 
 ### <a name="data-driven-tests-with-complex-types"></a>Testes controlados por dados com tipos complexos
 
@@ -704,7 +704,7 @@ describe('DialogFlowUseCases', () => {
 
 Aqui está um exemplo dos resultados para o conjunto de testes `DialogFlowUseCases` Mocha Test Explorer quando o conjunto de testes é executado:
 
-![BookingDialogTests](media/how-to-unit-test/js/BookingDialogTestsResults.png)
+![Resultados de exemplo atualizados para a caixa de diálogo de reserva](media/how-to-unit-test/js/BookingDialogTestsResults.png)
 
 ---
 
@@ -712,9 +712,9 @@ Aqui está um exemplo dos resultados para o conjunto de testes `DialogFlowUseCas
 
 Você pode usar elementos fictícios para as coisas que não estão testadas no momento. Para referência, esse nível pode geralmente ser considerado como testes de unidade e de integração.
 
-A simulação do máximo de elementos possível permite um melhor isolamento da parte que você está testando. Os candidatos a elementos fictícios incluem armazenamento, adaptador, middleware, pipeline de atividade, canais e qualquer outra coisa que não faça parte diretamente do bot. Isso pode também envolver a remoção de alguns aspectos temporariamente, como o middleware não envolvido na parte do bot que está sendo testada, a fim de isolar cada parte. No entanto, se estiver testando o middleware, talvez você deseje simular o bot.
+A simulação de quantos elementos você pode permitir um melhor isolamento da parte que você está testando. Os candidatos a elementos fictícios incluem armazenamento, adaptador, middleware, pipeline de atividade, canais e qualquer outra coisa que não faça parte diretamente do bot. Isso pode também envolver a remoção de alguns aspectos temporariamente, como o middleware não envolvido na parte do bot que está sendo testada, a fim de isolar cada parte. No entanto, se estiver testando o middleware, talvez você deseje simular o bot.
 
-Os elementos fictícios podem assumir várias formas, da substituição de um elemento com um objeto conhecido diferente à implementação de uma funcionalidade de funções básicas do Olá, Mundo. Isso poderá também assumir a forma de apenas remover o elemento, se ele não for necessário, ou simplesmente forçá-lo a não executar nenhuma ação.
+Os elementos fictícios podem assumir várias formas, da substituição de um elemento com um objeto conhecido diferente à implementação de uma funcionalidade de funções básicas do Olá, Mundo. Isso também pode assumir a forma de simplesmente remover o elemento, se ele não for necessário, ou simplesmente forçá-lo a não fazer nada.
 
 As simulações nos permitem configurar as dependências de uma caixa de diálogo e garantir que elas estejam em um estado conhecido durante a execução do teste, sem precisar contar com recursos externos como bancos de dados, modelos do LUIS ou outros objetos.
 

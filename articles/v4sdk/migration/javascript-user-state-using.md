@@ -1,6 +1,6 @@
 ---
 title: Usar o estado de usuário v3 do JavaScript em um bot v4– Serviço de Bot
-description: Como usar o estado de usuário v3 em um exemplo de bot v4
+description: Veja um exemplo de como usar o estado do usuário do JavaScript v3 em um bot do JavaScript v4.
 keywords: JavaScript, migração de bot, bot v3
 ms.author: kamrani
 manager: kamrani
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 08/14/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: cb3c83d0b0a8dd5e5b2be2ae6888566bf59e4839
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 5a38330bc277012a2216c23599f8dbc56c806f71
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416835"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95452100"
 ---
 <!-- This article is on hold -->
 
@@ -149,7 +149,7 @@ Para saber mais sobre como implantar um bot no Azure, confira [Implantar o bot n
 [7]: https://docs.microsoft.com/azure/bot-service/bot-builder-storage-concept
 [8]: https://docs.microsoft.com/azure/bot-service/bot-builder-howto-v4-storage?tabs=javascript
 [9]: https://docs.microsoft.com/azure/bot-service/bot-builder-howto-v4-state?tabs=javascript
-[21]: https://docs.microsoft.com/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0
+[21]: ../../bot-service-overview-introduction.md
 [30]: https://www.npmjs.com/package/restify
 [31]: https://www.npmjs.com/package/dotenv
 [40]: https://aka.ms/azuredeployment

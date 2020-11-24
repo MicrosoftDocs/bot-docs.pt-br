@@ -1,5 +1,5 @@
 <Type Name="FacebookPassThreadControl" FullName="Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookPassThreadControl">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="992a8803b25262f7fdced5401ca4ac1fb3e6a7d9" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94604288" /></Metadata><TypeSignature Language="C#" Value="public class FacebookPassThreadControl : Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookThreadControl" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c28d051296cf693286dcfbb14208118e70e9e1ca" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95452910" /></Metadata><TypeSignature Language="C#" Value="public class FacebookPassThreadControl : Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookThreadControl" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FacebookPassThreadControl extends Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookThreadControl" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookPassThreadControl" />
   <TypeSignature Language="VB.NET" Value="Public Class FacebookPassThreadControl&#xA;Inherits FacebookThreadControl" />
@@ -9,6 +9,7 @@
     <AssemblyVersion>4.9.2.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Adapters.Facebook.FacebookEvents.Handover.FacebookThreadControl</BaseTypeName>
@@ -30,6 +31,7 @@
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -49,6 +51,7 @@
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -77,6 +80,7 @@
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -105,6 +109,7 @@
         <AssemblyVersion>4.9.2.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>

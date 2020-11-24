@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 09/01/2020
+ms.date: 11/11/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2107e9721f215bda7341908b3e277c9a061a2eef
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 189c98102292652a9f2d88f7f898cfc5c10c00d1
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417440"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95452230"
 ---
 # <a name="implement-a-skill-consumer"></a>Implementar um consumidor de skills
 
@@ -35,8 +35,11 @@ Para saber mais sobre como usar uma caixa de diálogo de skill para consumir um 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento [básico sobre bots](bot-builder-basics.md), [como os bots skills funcionam](skills-conceptual.md) e como [implementar um skill](skill-implement-skill.md).
-- Uma assinatura do Azure. Se você não tiver uma, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
-- Uma cópia do exemplo de **bot para bot de skills simples** em [**C#** ](https://aka.ms/skills-simple-bot-to-bot-csharp), [**JavaScript**](https://aka.ms/skills-simple-bot-to-bot-js) ou [**Python**](https://aka.ms/skills-simple-bot-to-bot-python).
+- Opcionalmente, uma assinatura do Azure. Se você não tiver uma, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
+- Uma cópia do exemplo de **bot para bot de skills simples** em [**C#**](https://aka.ms/skills-simple-bot-to-bot-csharp), [**JavaScript**](https://aka.ms/skills-simple-bot-to-bot-js) ou [**Python**](https://aka.ms/skills-simple-bot-to-bot-python).
+
+> [!NOTE]
+> A partir da versão 4,11, você não precisa de uma ID de aplicativo e senha para testar um consumidor de habilidades localmente no emulador. Uma assinatura do Azure ainda é necessária para implantar seu consumidor no Azure ou para consumir uma habilidade implantada.
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
@@ -69,24 +72,26 @@ Para obter informações sobre o bot de skill de eco, consulte como [implementar
 
 ## <a name="resources"></a>Recursos
 
-A autenticação de bot para bot requer que cada bot participante tenha uma appID e uma senha válidas.
-
-Registre tanto o skill quanto o consumidor de skills com o Azure. Você pode usar um Registro de Canais de Bot. Para obter mais informações, veja como [registrar um bot com o Serviço de Bot do Azure](../bot-service-quickstart-registration.md).
+Para bots implantados, a autenticação de bot para bot requer que cada bot participante tenha uma ID de aplicativo e senha válidas.
+No entanto, você pode testar habilidades e consumidores de habilidades localmente com o emulador sem uma ID do aplicativo e uma senha.
 
 ## <a name="application-configuration"></a>Configuração de aplicativo
 
-1. Adicione a ID do aplicativo e a senha do bot raiz.
+1. Opcionalmente, adicione a ID do aplicativo e a senha do bot raiz ao arquivo de configuração.
 1. Adicione o ponto de extremidade do host de habilidades (o serviço ou a URL de retorno de chamada) ao qual as habilidades devem responder ao consumidor de habilidades.
 1. Adicione uma entrada para cada skill que o consumidor de skills usará. Cada entrada inclui:
    - Uma ID que o consumidor de skills usará para identificar cada skill.
-   - A ID do aplicativo do skill.
+   - Opcionalmente, a ID do aplicativo da habilidade.
    - O ponto de extremidade de mensagens do skill.
+
+> [!NOTE]
+> Se o consumidor de habilidades ou habilidades usar uma ID de aplicativo e uma senha, ambos deverão.
 
 ### <a name="c"></a>[C#](#tab/cs)
 
 **SimpleRootBot\appsettings.json**
 
-Adicione a ID do aplicativo e a senha do bot raiz ao arquivo appsettings.json. Além disso, adicione a ID do aplicativo para o bot skill de eco à matriz `BotFrameworkSkills`.
+Opcionalmente, adicione a ID do aplicativo e a senha do bot raiz e adicione a ID do aplicativo para o bot de habilidade de eco à `BotFrameworkSkills` matriz.
 
 [!code-csharp[configuration file](~/../botbuilder-samples/samples/csharp_dotnetcore/80.skills-simple-bot-to-bot/SimpleRootBot/appsettings.json)]
 
@@ -94,7 +99,7 @@ Adicione a ID do aplicativo e a senha do bot raiz ao arquivo appsettings.json. A
 
 **echo-skill-bot/.env**
 
-Adicione a ID do aplicativo e a senha do bot raiz ao arquivo .env. Além disso, adicione a ID do aplicativo para o bot skill de eco.
+Opcionalmente, adicione a ID do aplicativo e a senha do bot raiz e adicione a ID do aplicativo para o bot de habilidade de eco.
 
 [!code-javascript[configuration file](~/../botbuilder-samples/samples/javascript_nodejs/80.skills-simple-bot-to-bot/simple-root-bot/.env)]
 
@@ -102,7 +107,7 @@ Adicione a ID do aplicativo e a senha do bot raiz ao arquivo .env. Além disso, 
 
 **simple_root_bot/config.py**
 
-Adicione a ID do aplicativo e a senha do bot raiz ao arquivo .env. Além disso, adicione a ID do aplicativo para o bot skill de eco.
+Opcionalmente, adicione a ID do aplicativo e a senha do bot de raiz e adicione a ID do aplicativo para o bot de habilidade de eco.
 
 [!code-python[configuration file](~/../botbuilder-samples/samples/python/80.skills-simple-bot-to-bot/simple-root-bot/config.py?range=14-27)]
 
@@ -202,7 +207,7 @@ O tráfego HTTP proveniente do skill entrará no ponto de extremidade da URL de 
 
 O manipulador de skills padrão:
 
-- Usa um objeto de configuração de autenticação para executar a autenticação de bot para bot e a validação de declarações.
+- Se uma ID de aplicativo e uma senha estiverem presentes, o usará um objeto de configuração de autenticação para executar a autenticação de bot-to-bot e a validação de declarações.
 - Usa o alocador de ID de conversa para converter da conversa consumidor-skill de volta para a conversa do usuário raiz.
 - Gera uma mensagem proativa para que o consumidor de skills possa restabelecer um contexto de usuário raiz e encaminhar atividades para o usuário.
 
@@ -382,11 +387,16 @@ Para enviar parâmetros para o skill, o consumidor de skills pode definir a prop
 - Se nenhum skill estiver ativo, o bot raiz precisará determinar qual skill deve ser iniciado, se houver algum, com base no estado do bot e na entrada do usuário.
 - Se você quiser permitir que o usuário alterne entre vários skills simultâneos, o bot raiz precisará determinar a quais dos skills ativos o usuário está pretendendo interagir antes de encaminhar a mensagem do usuário.
 
-### <a name="to-use-deliverymode-expectreplies"></a>Para usar o ExpectReplies de entrega
+### <a name="to-use-a-delivery-mode-of-expect-replies"></a>Para usar um modo de entrega de respostas esperadas
 
-- Altere DeliveryMode para ExpectReplies antes de enviar a atividade do bot raiz para as habilidades.
-- Leia ExpectedReplies do corpo de InvokeResponse retornado da resposta de solicitação. (O SkillDialog executa essa etapa automaticamente.)
-- Processe cada atividade, seja dentro do bot raiz ou enviando-a para o canal que iniciou a solicitação original. (O SkillDialog executa essa etapa automaticamente.)
+Para usar o modo de entrega de _respostas esperadas_ :
+
+- Clone a atividade do contexto de ativação.
+- Defina a propriedade _modo de entrega_ da nova atividade como "ExpectReplies" antes de enviar a atividade do bot raiz para as habilidades.
+- Leia as _respostas esperadas_ do corpo da _resposta de invocação_ retornado da resposta da solicitação.
+- Processe cada atividade, seja dentro do bot raiz ou enviando-a para o canal que iniciou a solicitação original.
+
+As respostas esperadas podem ser úteis em situações em que o bot que responde a uma atividade precisa ser a mesma instância do bot que recebeu a atividade.
 
 <!--
 ## Next steps

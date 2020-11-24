@@ -1,5 +1,5 @@
 <Type Name="CancelAllDialogsBase" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.CancelAllDialogsBase">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="30d3a2667aaa28861a7b3a516bc659a83571a533" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94604258" /></Metadata><TypeSignature Language="C#" Value="public class CancelAllDialogsBase : Microsoft.Bot.Builder.Dialogs.Dialog" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7c748d155336e79cbdf09b246fe5dee09ba433a7" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95451310" /></Metadata><TypeSignature Language="C#" Value="public class CancelAllDialogsBase : Microsoft.Bot.Builder.Dialogs.Dialog" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CancelAllDialogsBase extends Microsoft.Bot.Builder.Dialogs.Dialog" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.CancelAllDialogsBase" />
   <TypeSignature Language="VB.NET" Value="Public Class CancelAllDialogsBase&#xA;Inherits Dialog" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Dialog</BaseTypeName>
@@ -35,6 +36,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -65,6 +67,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -99,6 +102,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
@@ -131,6 +135,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -162,6 +167,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -192,6 +198,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>

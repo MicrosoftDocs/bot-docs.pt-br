@@ -1,5 +1,5 @@
 <Type Name="QnAMakerDialog" FullName="Microsoft.Bot.Builder.AI.QnA.Dialogs.QnAMakerDialog">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="7a213a36a1cde63a295387d2ae9c7166c2e64416" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94602468" /></Metadata><TypeSignature Language="C#" Value="public class QnAMakerDialog : Microsoft.Bot.Builder.Dialogs.WaterfallDialog" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="4fda49c53284ac8e780bbd6afcf4d85e31d6639c" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95450210" /></Metadata><TypeSignature Language="C#" Value="public class QnAMakerDialog : Microsoft.Bot.Builder.Dialogs.WaterfallDialog" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit QnAMakerDialog extends Microsoft.Bot.Builder.Dialogs.WaterfallDialog" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.AI.QnA.Dialogs.QnAMakerDialog" />
   <TypeSignature Language="VB.NET" Value="Public Class QnAMakerDialog&#xA;Inherits WaterfallDialog" />
@@ -13,6 +13,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.WaterfallDialog</BaseTypeName>
@@ -40,6 +41,7 @@ Ele dá suporte a bases de dados de conhecimento que incluem avisos de acompanha
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -89,6 +91,7 @@ O serializador JSON usa esse construtor para desserializar objetos dessa classe.
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="knowledgeBaseId" Type="System.String" />
@@ -149,6 +152,7 @@ O serializador JSON usa esse construtor para desserializar objetos dessa classe.
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="dialogId" Type="System.String" />
@@ -213,6 +217,7 @@ O serializador JSON usa esse construtor para desserializar objetos dessa classe.
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -245,6 +250,7 @@ O serializador JSON usa esse construtor para desserializar objetos dessa classe.
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
@@ -280,6 +286,7 @@ Você pode usar o <paramref name="options" /> parâmetro para incluir o QnA Make
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -310,6 +317,7 @@ Você pode usar o <paramref name="options" /> parâmetro para incluir o QnA Make
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -340,6 +348,7 @@ Você pode usar o <paramref name="options" /> parâmetro para incluir o QnA Make
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
@@ -373,6 +382,7 @@ Você pode usar o <paramref name="options" /> parâmetro para incluir o QnA Make
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Single</ReturnType>
@@ -399,6 +409,7 @@ Você pode usar o <paramref name="options" /> parâmetro para incluir o QnA Make
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -419,6 +430,7 @@ Você pode usar o <paramref name="options" /> parâmetro para incluir o QnA Make
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.AI.QnA</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
@@ -449,6 +461,7 @@ Você pode usar o <paramref name="options" /> parâmetro para incluir o QnA Make
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -481,6 +494,7 @@ Você pode usar o <paramref name="options" /> parâmetro para incluir o QnA Make
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.AI.QnA.IQnAMakerClient&gt;</ReturnType>
@@ -511,6 +525,7 @@ Você pode usar o <paramref name="options" /> parâmetro para incluir o QnA Make
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.AI.QnA.QnAMakerOptions&gt;</ReturnType>
@@ -541,6 +556,7 @@ Você pode usar o <paramref name="options" /> parâmetro para incluir o QnA Make
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.AI.QnA.QnADialogResponseOptions&gt;</ReturnType>
@@ -569,6 +585,7 @@ Você pode usar o <paramref name="options" /> parâmetro para incluir o QnA Make
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -601,6 +618,7 @@ Você pode usar o <paramref name="options" /> parâmetro para incluir o QnA Make
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -631,6 +649,7 @@ Você pode usar o <paramref name="options" /> parâmetro para incluir o QnA Make
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -661,6 +680,7 @@ Você pode usar o <paramref name="options" /> parâmetro para incluir o QnA Make
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -690,6 +710,7 @@ Você pode usar o <paramref name="options" /> parâmetro para incluir o QnA Make
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -720,6 +741,7 @@ Você pode usar o <paramref name="options" /> parâmetro para incluir o QnA Make
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -750,6 +772,7 @@ Você pode usar o <paramref name="options" /> parâmetro para incluir o QnA Make
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -780,6 +803,7 @@ Você pode usar o <paramref name="options" /> parâmetro para incluir o QnA Make
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Boolean&gt;</ReturnType>
@@ -815,6 +839,7 @@ Você pode usar o <paramref name="options" /> parâmetro para incluir o QnA Make
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -842,6 +867,7 @@ Ele dá suporte a QnA Maker e ao sistema de diálogo.</remarks>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -869,6 +895,7 @@ Ele dá suporte ao prompt de acompanhamento e aos recursos de aprendizado ativos
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -894,6 +921,7 @@ Ele dá suporte ao prompt de acompanhamento e aos recursos de aprendizado ativos
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -925,6 +953,7 @@ Ele dá suporte ao prompt de acompanhamento e aos recursos de aprendizado ativos
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -955,6 +984,7 @@ Ele dá suporte ao prompt de acompanhamento e aos recursos de aprendizado ativos
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -985,6 +1015,7 @@ Ele dá suporte ao prompt de acompanhamento e aos recursos de aprendizado ativos
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>

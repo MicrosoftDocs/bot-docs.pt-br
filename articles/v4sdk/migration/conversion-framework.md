@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 7ce4576341b984274cf0071ce4403a7c95f84b7d
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: ea6230ef311955e2306927e880f8b74b25fbd895
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416900"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95452380"
 ---
 # <a name="migrate-a-net-v3-bot-to-a-net-framework-v4-bot"></a>Migrar um bot v3 do .NET para um bot v4 do .NET Framework
 
@@ -327,7 +327,7 @@ Transforme as chaves de configuração em comentários para **MicrosoftAppId** e
 Neste ponto, devemos ser capazes de executar o bot localmente no IIS e anexar a ele com o emulador.
 
 1. Executar o bot no IIS.
-1. Inicie o emulador e conecte-se ao ponto de extremidade do bot (por exemplo: **http://localhost:3978/api/messages** ).
+1. Inicie o emulador e conecte-se ao ponto de extremidade do bot (por exemplo, **http://localhost:3978/api/messages** ).
     - Se esta for a primeira vez que você estiver executando o bot, clique em **Arquivo > Novo Bot** e siga as instruções na tela. Caso contrário, clique em **Arquivo > Abrir Bot** para abrir um bot existente.
     - Verifique as configurações da porta novamente na configuração. Por exemplo, se o bot foi aberto no navegador em `http://localhost:3979/` e depois no emulador, defina o ponto de extremidade do bot como `http://localhost:3979/api/messages`.
 1. Todos os quatro diálogos devem funcionar, e você pode definir pontos de interrupção nas etapas de cascata para verificar qual é o estado e o contexto de diálogo nesses pontos.

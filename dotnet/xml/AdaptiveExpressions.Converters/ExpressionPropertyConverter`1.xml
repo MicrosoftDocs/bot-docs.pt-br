@@ -1,5 +1,5 @@
 <Type Name="ExpressionPropertyConverter&lt;T&gt;" FullName="AdaptiveExpressions.Converters.ExpressionPropertyConverter&lt;T&gt;">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="30f36d0a3497c79b7e4c0262d5c2f3b96a073ae5" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94602038" /></Metadata><TypeSignature Language="C#" Value="public class ExpressionPropertyConverter&lt;T&gt; : Newtonsoft.Json.JsonConverter&lt;AdaptiveExpressions.Properties.ExpressionProperty&lt;T&gt;&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5584535390ce97b1da4f019e5bdbd87ade6d4b0e" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95450774" /></Metadata><TypeSignature Language="C#" Value="public class ExpressionPropertyConverter&lt;T&gt; : Newtonsoft.Json.JsonConverter&lt;AdaptiveExpressions.Properties.ExpressionProperty&lt;T&gt;&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ExpressionPropertyConverter`1&lt;T&gt; extends Newtonsoft.Json.JsonConverter`1&lt;class AdaptiveExpressions.Properties.ExpressionProperty`1&lt;!T&gt;&gt;" />
   <TypeSignature Language="DocId" Value="T:AdaptiveExpressions.Converters.ExpressionPropertyConverter`1" />
   <TypeSignature Language="VB.NET" Value="Public Class ExpressionPropertyConverter(Of T)&#xA;Inherits JsonConverter(Of ExpressionProperty(Of T))" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <TypeParameters>
     <TypeParameter Name="T" />
@@ -39,6 +40,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -59,6 +61,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -82,6 +85,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>AdaptiveExpressions.Properties.ExpressionProperty&lt;T&gt;</ReturnType>
@@ -117,6 +121,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>

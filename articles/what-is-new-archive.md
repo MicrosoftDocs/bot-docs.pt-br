@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 11/13/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: cce65dd43d837ecfb1308f3d2f250c1405325dbb
-ms.sourcegitcommit: c9b51583a9d7ead626585a9eb0d86db403a7f50a
+ms.openlocfilehash: 2d827631c974580a3caf9c44b7706fd46b4dd081
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94680002"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95451930"
 ---
 # <a name="whats-new-august-2020"></a>Novidades de agosto de 2020
 
@@ -146,7 +146,7 @@ Os bots agora capturam eventos de Exibição de Página, nativos do Application 
 ![Telemetria no AppInsights](https://raw.githubusercontent.com/microsoft/botframework-sdk/master/docs/media/UserFlowsAppInsights.jpg?raw=true)
 
 ### <a name="adaptive-dialogs"></a>Caixas de Diálogo Adaptáveis 
-Também estamos empolgados em tornar as [caixas de diálogo adaptáveis](v4sdk/bot-builder-adaptive-dialog-introduction.md) disponíveis ao público geral no C# e como uma versão prévia no JavaScript! 
+Também estamos empolgados em tornar [caixas de diálogo adaptáveis](v4sdk/bot-builder-adaptive-dialog-introduction.md) geralmente disponíveis em C# e como uma versão de visualização em JavaScript! 
 
 As caixas de diálogo adaptáveis, que sustentam o design da caixa de diálogo e os recursos de criação de gerenciamento encontrados no Bot Framework Composer, permitem que os desenvolvedores atualizem dinamicamente o fluxo de conversa com base no contexto e nos eventos. Isso é especialmente útil ao lidar com requisitos de conversa mais sofisticados, como alternâncias de contexto e interrupções.  Os skills do Bot Framework agora podem também aproveitar as caixas de diálogo adaptáveis.
 
@@ -296,7 +296,7 @@ Este artigo resume os principais novos recursos e aprimoramentos no Bot Framewor
 - [SDK do Python do Bot Framework (versão prévia 2)](https://github.com/microsoft/botbuilder-python) | [exemplos](https://github.com/Microsoft/botbuilder-python/tree/master/samples): O SDK do Python agora dá suporte a OAuth, Prompts, CosmosDB e inclui todas as principais funcionalidades no SDK 4.5. Além disso, há exemplos para ajudá-lo a saber mais sobre os novos recursos do SDK.
 
 ### <a name="bot-framework-testing"></a>Testes do Bot Framework
-- [Docs](https://aka.ms/testing-framework) | Pacotes de teste de unidade ([C#](https://aka.ms/nuget-botbuilder-testing)/ [JavaScript](https://aka.ms/npm-botbuilder-testing)) | [Exemplo de C#](https://aka.ms/cs-core-test-sample) | [Exemplo de JS](https://aka.ms/js-core-test-sample): Respondendo à solicitação dos clientes e desenvolvedores por melhores ferramentas de teste, a versão de julho do SDK apresenta uma nova funcionalidade de teste de unidade. O pacote Microsoft.Bot.Builder.testing simplifica o processo de caixas de diálogo de teste de unidade em seu bot.  
+- [Documentos](https://aka.ms/testing-framework) | Pacotes de teste de unidade ([C#](https://aka.ms/nuget-botbuilder-testing) /  [JavaScript](https://aka.ms/npm-botbuilder-testing)) | [Exemplo](https://aka.ms/cs-core-test-sample)  |  em C# [Exemplo de JS](https://aka.ms/js-core-test-sample): abordar os clientes e os desenvolvedores pedem melhores ferramentas de teste, a versão de julho do SDK apresenta uma nova funcionalidade de teste de unidade. O pacote Microsoft.Bot.Builder.testing simplifica o processo de caixas de diálogo de teste de unidade em seu bot.  
 
 - [Testes de canal](https://github.com/Microsoft/BotFramework-Emulator/releases) | [docs](https://aka.ms/channel-testing): 
 
@@ -344,7 +344,7 @@ O [repositório de Soluções do Bot Framework](https://github.com/Microsoft/AI#
 |:------------|:------------| 
 |[**Assistente Virtual**](https://github.com/Microsoft/AI/tree/master/docs#virtual-assistant) | Os clientes precisam realmente fornecer um assistente de conversação adaptado à sua marca, personalizado para seus usuários e disponibilizado em uma ampla variedade de telas e dispositivos. <br/><br/> O modelo empresarial simplifica bastante a criação de um projeto novo do bot, que inclui: intenções de conversação básicas, integração com o Dispatch, QnA Maker, Application Insights e uma implantação automatizada.|
 |[**Habilidades**](https://github.com/Microsoft/AI/blob/master/docs/overview/skills.md)| Os desenvolvedores podem compor experiências de conversação combinando recursos de conversa reutilizáveis, conhecidos como Habilidades. As próprias Habilidades são Bots, chamados remotamente, e um modelo de desenvolvedor (.NET, TS) está disponível para facilitar a criação de novas Habilidades. 
-|[**Analytics**](https://github.com/Microsoft/AI/blob/master/docs/readme.md#analytics)| Obtenha insights essenciais sobre a integridade e o comportamento do seu bot com as soluções de análise de inteligência Artificial de Conversação. Examine os dados telemétricos disponíveis, os exemplos de consultas do Application Insights e os painéis do Power BI para compreender a amplitude das conversas do seu bot com os usuários. |
+|[**Analytics**](https://github.com/Microsoft/AI/blob/master/docs/readme.md#analytics)| Receba informações importantes sobre a integridade e o comportamento do bot com as soluções de análise de ia de conversação. Reveja a telemetria disponível, as consultas de Application Insights de exemplo e Power BI Dashboards para entender toda a amplitude das conversas do bot com os usuários. |
 
 ## <a name="azure-bot-service"></a>Serviço de Bot do Azure
 O Serviço de Bot do Azure permite que você hospede bots inteligentes e de nível empresarial com total controle e propriedade sobre seus dados. Os desenvolvedores podem registrar e conectar seus bots a usuários no Microsoft Teams, na Cortana, no Webchat e muito mais. [Azure][27]  |  [docs][28] | [conectar-se a canais][29] 
@@ -376,7 +376,7 @@ Um serviço baseado em aprendizado de máquina para criar experiências de lingu
 
 - **Novo! Funções, entidades externas e entidades dinâmicas**: o LUIS adicionou vários recursos que permitem aos desenvolvedores extrair informações mais detalhadas do texto, para que os usuários agora possam criar soluções mais inteligentes com menos esforço. O LUIS também estendeu funções a todos os tipos de entidade, o que permite que essas entidades sejam classificadas com subtipos diferentes com base no contexto. Os desenvolvedores agora têm um controle mais granular sobre o que eles podem fazer com o LUIS, incluindo a capacidade de identificar e atualizar modelos no runtime por meio de listas dinâmicas e entidades externas. As listas dinâmicas são usadas para acrescentar às entidades de lista no tempo de previsão, permitindo que informações específicas do usuário tenham correspondência exata. Extratores de entidade suplementares separados são executados com entidades externas, e essas informações podem ser acrescentadas ao LUIS como sinais fortes para outros modelos.
 
-- **Novo! Painel de Análise**: o LUIS está lançando um painel de análise abrangente mais detalhado e visualmente sofisticado. Seu design amigável realça os problemas comuns que a maioria dos usuários enfrenta ao criar aplicativos, fornecendo explicações simples sobre como resolvê-los para que os usuários obtenham mais insights sobre a qualidade dos seus modelos, possíveis problemas de dados e diretrizes para a adoção das melhores práticas.
+- **Novo! Painel de Análise**: o LUIS está lançando um painel de análise abrangente mais detalhado e visualmente sofisticado. Seu design amigável realça os problemas comuns que a maioria dos usuários enfrenta ao projetar aplicativos, fornecendo explicações simples sobre como resolvê-los para ajudar os usuários a obter mais informações sobre a qualidade dos modelos, possíveis problemas de dados e orientação para adotar as práticas recomendadas.
 
 [Docs][31] | [Adicionar reconhecimento vocal ao bot][32] 
 

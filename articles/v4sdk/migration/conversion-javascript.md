@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 95912fe2d490abf405b54c994002a65493bf4f33
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 4f4abaef5ca276142d28e79bb771cf93277ff150
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416881"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95452279"
 ---
 # <a name="migrate-a-javascript-v3-bot-to-a-v4-bot"></a>Migrar um bot v3 do Javascript para um bot v4
 
@@ -618,7 +618,7 @@ Neste ponto, devemos ser capazes de executar o bot localmente e anexá-lo ao emu
 
 1. Execute o exemplo localmente em seu computador.
     Se você iniciar uma sessão de depuração no Visual Studio Code, as informações de log serão enviadas ao console de depuração enquanto você testa o bot.
-1. Inicie o emulador e conecte ao bot.
+1. Inicie o emulador e conecte-se ao bot.
 1. Envie mensagens para testar os diálogos principal, de voo e de hotéis.
 
 ## <a name="additional-resources"></a>Recursos adicionais

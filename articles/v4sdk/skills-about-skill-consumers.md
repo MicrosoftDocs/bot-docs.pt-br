@@ -1,20 +1,20 @@
 ---
 title: Sobre os consumidores de habilidades | Microsoft Docs
-description: Descreve como a lógica de conversação de um bot pode ser usada por outro bot usando o SDK do Bot Framework.
+description: Descreve como a lógica de conversação em um bot de habilidade pode ser usada por um consumidor de habilidades usando o SDK do bot Framework.
 keywords: bot skill, host bot, skill consumer.
 author: JonathanFingold
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 07/15/2020
+ms.date: 11/12/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: c0ebc1e018b4c71280b3996d6935ea3180d9b53d
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: dddca86b72f6f6efd6e98a27f71b89f4a1929701
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417357"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95452020"
 ---
 # <a name="about-skill-consumers"></a>Sobre os consumidores de habilidades
 
@@ -99,8 +99,8 @@ Se estiver usando a [biblioteca de caixas de diálogo](bot-builder-concept-dialo
 
 Confira como [Usar um diálogo para consumir uma habilidade](skill-use-skilldialog.md) para obter um consumidor que usa um diálogo para gerenciar uma habilidade.
 
-## <a name="using-deliverymode-expectreplies"></a>Usando ExpectReplies de DeliveryMode
+## <a name="using-a-delivery-mode-of-expect-replies"></a>Usando um modo de entrega de respostas esperadas
 
-Os bots e as habilidades usam REST padrão do setor e JSON por HTTPS para comunicação. O fluxo de processamento de atividades normais começa quando o bot raiz recebe uma postagem de um canal no MessagingEndpoint. Em seguida, o bot raiz envia a atividade para a habilidade de processamento. As respostas da habilidade são postadas de volta no SkillHostEndpoint do bot raiz, não no MessagingEndpoint. Por fim, as respostas são processadas mais detalhadamente ou enviadas de volta ao canal pelo bot raiz. Esse fluxo normal pode ser alterado alterando o DeliveryMode da atividade enviada para a habilidade. Se DeliveryMode for ExpectReplies, as habilidades não serão postadas de volta para o SkillHostEndpoint.  Em vez disso, todas as atividades de resposta são serializadas no corpo da resposta.  Em seguida, o bot raiz itera essas atividades, processando-as de forma semelhante a como elas seriam processadas pelo SkillHostEndpoint.
+Os bots e as habilidades usam REST padrão do setor e JSON por HTTPS para comunicação. O fluxo de processamento de atividades normais começa quando o bot raiz recebe uma postagem de um canal no _ponto de extremidade de mensagens_. Em seguida, o bot raiz envia a atividade para a habilidade de processamento. As respostas da habilidade são enviadas de volta para o ponto de _extremidade do host de habilidades_ do bot raiz, não para o ponto de extremidade do sistema de mensagens. Por fim, as respostas são processadas mais detalhadamente ou enviadas de volta ao canal pelo bot raiz. Esse fluxo normal pode ser alterado alterando o _modo de entrega_ da atividade enviada para a habilidade. Se o _modo de entrega_ for definido como "ExpectReplies", a habilidade não será reposta para o ponto de extremidade do host de habilidade.  Em vez disso, todas as atividades de resposta são serializadas no corpo da resposta.  Em seguida, o bot raiz itera essas atividades, processando-as de forma semelhante a como elas seriam processadas pelo ponto de extremidade do host de habilidades.
 
-Para obter informações, consulte o [modo de entrega](https://github.com/microsoft/botframework-sdk/blob/master/specs/botframework-activity/botframework-activity.md#delivery-mode) na especificação da atividade.
+Para obter informações, consulte o [modo de entrega](https://github.com/microsoft/botframework-sdk/blob/main/specs/botframework-activity/botframework-activity.md#delivery-mode) na especificação da atividade.

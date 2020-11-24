@@ -1,5 +1,5 @@
 <Type Name="ContinueConversationLater" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.ContinueConversationLater">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="9b827f967099e779fc2ae41b062cfe55fc6e0b47" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94618357" /></Metadata><TypeSignature Language="C#" Value="public class ContinueConversationLater : Microsoft.Bot.Builder.Dialogs.Dialog" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c5b2502aba98f679eeadb48838b4576a1c45b9d1" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95451409" /></Metadata><TypeSignature Language="C#" Value="public class ContinueConversationLater : Microsoft.Bot.Builder.Dialogs.Dialog" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ContinueConversationLater extends Microsoft.Bot.Builder.Dialogs.Dialog" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Actions.ContinueConversationLater" />
   <TypeSignature Language="VB.NET" Value="Public Class ContinueConversationLater&#xA;Inherits Dialog" />
@@ -7,6 +7,7 @@
   <AssemblyInfo>
     <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive</AssemblyName>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Dialog</BaseTypeName>
@@ -32,6 +33,7 @@ Essa caixa de diálogo retorna as informações de recebimento para a atividade 
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -74,6 +76,7 @@ Essa caixa de diálogo retorna as informações de recebimento para a atividade 
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
@@ -103,6 +106,7 @@ Essa caixa de diálogo retorna as informações de recebimento para a atividade 
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -130,6 +134,7 @@ Essa caixa de diálogo retorna as informações de recebimento para a atividade 
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -157,6 +162,7 @@ Essa caixa de diálogo retorna as informações de recebimento para a atividade 
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -182,6 +188,7 @@ Essa caixa de diálogo retorna as informações de recebimento para a atividade 
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -204,6 +211,7 @@ Essa caixa de diálogo retorna as informações de recebimento para a atividade 
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>

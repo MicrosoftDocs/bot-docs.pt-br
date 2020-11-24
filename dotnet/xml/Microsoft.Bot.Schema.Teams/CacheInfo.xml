@@ -1,5 +1,5 @@
 <Type Name="CacheInfo" FullName="Microsoft.Bot.Schema.Teams.CacheInfo">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="51775f36523287ee545e95cd70b6be30e5de45c0" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94618371" /></Metadata><TypeSignature Language="C#" Value="public class CacheInfo" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="480a0c0cb8b937bcd154635352d95acb9ca66ccf" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95451030" /></Metadata><TypeSignature Language="C#" Value="public class CacheInfo" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CacheInfo extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.Teams.CacheInfo" />
   <TypeSignature Language="VB.NET" Value="Public Class CacheInfo" />
@@ -7,6 +7,7 @@
   <AssemblyInfo>
     <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -26,6 +27,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -43,6 +45,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="cacheType" Type="System.String" />
@@ -65,6 +68,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -91,6 +95,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Schema</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>

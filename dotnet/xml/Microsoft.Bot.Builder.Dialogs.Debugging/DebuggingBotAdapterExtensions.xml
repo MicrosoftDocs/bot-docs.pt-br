@@ -1,5 +1,5 @@
 <Type Name="DebuggingBotAdapterExtensions" FullName="Microsoft.Bot.Builder.Dialogs.Debugging.DebuggingBotAdapterExtensions">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="1ff2b4a276035d7e94391c44d31acbfab9bbfdd4" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94615528" /></Metadata><TypeSignature Language="C#" Value="public static class DebuggingBotAdapterExtensions" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7cb60933a0dc7cc3ab99d69bd6e4866baac2906c" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95452710" /></Metadata><TypeSignature Language="C#" Value="public static class DebuggingBotAdapterExtensions" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit DebuggingBotAdapterExtensions extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Debugging.DebuggingBotAdapterExtensions" />
   <TypeSignature Language="VB.NET" Value="Public Module DebuggingBotAdapterExtensions" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -32,6 +33,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.BotAdapter</ReturnType>

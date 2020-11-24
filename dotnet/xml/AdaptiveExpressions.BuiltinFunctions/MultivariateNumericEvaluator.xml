@@ -1,5 +1,5 @@
 <Type Name="MultivariateNumericEvaluator" FullName="AdaptiveExpressions.BuiltinFunctions.MultivariateNumericEvaluator">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="221fdfce13ef34346da1bc724c5c986ab9fce3f1" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94602158" /></Metadata><TypeSignature Language="C#" Value="public class MultivariateNumericEvaluator : AdaptiveExpressions.ExpressionEvaluator" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="83337436dcdad4a00f5ff825860658e1425747a7" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95451830" /></Metadata><TypeSignature Language="C#" Value="public class MultivariateNumericEvaluator : AdaptiveExpressions.ExpressionEvaluator" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MultivariateNumericEvaluator extends AdaptiveExpressions.ExpressionEvaluator" />
   <TypeSignature Language="DocId" Value="T:AdaptiveExpressions.BuiltinFunctions.MultivariateNumericEvaluator" />
   <TypeSignature Language="VB.NET" Value="Public Class MultivariateNumericEvaluator&#xA;Inherits ExpressionEvaluator" />
@@ -9,6 +9,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>AdaptiveExpressions.ExpressionEvaluator</BaseTypeName>
@@ -31,6 +32,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="type" Type="System.String" />

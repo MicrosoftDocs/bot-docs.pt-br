@@ -1,5 +1,5 @@
 <Type Name="SimpleObjectMemory" FullName="AdaptiveExpressions.Memory.SimpleObjectMemory">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="cd2cc825ab9d115175fea4c415b88d6cc290ceff" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94601938" /></Metadata><TypeSignature Language="C#" Value="public class SimpleObjectMemory : AdaptiveExpressions.Memory.IMemory" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6fbed559e510c02b4bc946ae18260c5cc0cee004" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95451810" /></Metadata><TypeSignature Language="C#" Value="public class SimpleObjectMemory : AdaptiveExpressions.Memory.IMemory" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SimpleObjectMemory extends System.Object implements class AdaptiveExpressions.Memory.IMemory" />
   <TypeSignature Language="DocId" Value="T:AdaptiveExpressions.Memory.SimpleObjectMemory" />
   <TypeSignature Language="VB.NET" Value="Public Class SimpleObjectMemory&#xA;Implements IMemory" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -37,6 +38,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="memory" Type="System.Object" />
@@ -64,6 +66,7 @@ Isso encapsula um objeto simples como IMemory.</summary>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -92,6 +95,7 @@ Isso encapsula um objeto simples como IMemory.</summary>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -119,6 +123,7 @@ Isso encapsula um objeto simples como IMemory.</summary>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -151,6 +156,7 @@ Isso encapsula um objeto simples como IMemory.</summary>
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>

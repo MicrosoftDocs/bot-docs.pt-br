@@ -1,5 +1,5 @@
 <Type Name="OnAssignEntity" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnAssignEntity">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="a1b7818bd79f79a4e675620ec02f238c195b6af7" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94607558" /></Metadata><TypeSignature Language="C#" Value="public class OnAssignEntity : Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnDialogEvent" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f580d46a270ae3cc85ba22a13b0f59e6f0232770" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95451160" /></Metadata><TypeSignature Language="C#" Value="public class OnAssignEntity : Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnDialogEvent" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit OnAssignEntity extends Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnDialogEvent" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnAssignEntity" />
   <TypeSignature Language="VB.NET" Value="Public Class OnAssignEntity&#xA;Inherits OnDialogEvent" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnDialogEvent</BaseTypeName>
@@ -35,6 +36,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -77,6 +79,28 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="CreateExpression">
+      <MemberSignature Language="C#" Value="protected override AdaptiveExpressions.Expression CreateExpression ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class AdaptiveExpressions.Expression CreateExpression() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnAssignEntity.CreateExpression" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function CreateExpression () As Expression" />
+      <MemberSignature Language="F#" Value="override this.CreateExpression : unit -&gt; AdaptiveExpressions.Expression" Usage="onAssignEntity.CreateExpression " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive</AssemblyName>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>AdaptiveExpressions.Expression</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <inheritdoc />
+      </Docs>
+    </Member>
     <Member MemberName="Entity">
       <MemberSignature Language="C#" Value="public string Entity { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Entity" />
@@ -91,6 +115,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -104,31 +129,6 @@
       <Docs>
         <summary>Obtém ou define o nome da entidade que está sendo atribuída para filtrar eventos.</summary>
         <value>Nome da entidade.</value>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="GetExpression">
-      <MemberSignature Language="C#" Value="public override AdaptiveExpressions.Expression GetExpression ();" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class AdaptiveExpressions.Expression GetExpression() cil managed" />
-      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnAssignEntity.GetExpression" />
-      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetExpression () As Expression" />
-      <MemberSignature Language="F#" Value="override this.GetExpression : unit -&gt; AdaptiveExpressions.Expression" Usage="onAssignEntity.GetExpression " />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive</AssemblyName>
-        <AssemblyVersion>4.9.2.0</AssemblyVersion>
-        <AssemblyVersion>4.9.3.0</AssemblyVersion>
-        <AssemblyVersion>4.10.0.0</AssemblyVersion>
-        <AssemblyVersion>4.10.3.0</AssemblyVersion>
-        <AssemblyVersion>4.11.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>AdaptiveExpressions.Expression</ReturnType>
-      </ReturnValue>
-      <Parameters />
-      <Docs>
-        <summary>Obtenha a expressão para esta regra.</summary>
-        <returns>Expressão que será armazenada em cache e usada para avaliar essa regra.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -146,6 +146,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -171,6 +172,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -200,6 +202,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -230,6 +233,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>

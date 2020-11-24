@@ -7,14 +7,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 07/15/2020
+ms.date: 11/12/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2cc2a1527ccd7df3d262c990ffa7fd6457686a8f
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 54d387e6340b3939ab50b60647dab01a28d49901
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417383"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95452220"
 ---
 # <a name="use-a-dialog-to-consume-a-skill"></a>Usar uma caixa de diálogo para consumir um skill
 
@@ -30,8 +30,11 @@ Para saber mais sobre como usar um bot de skill fora das caixas de diálogo, con
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento [básico sobre bots](bot-builder-basics.md), [como os bots de skill funcionam](skills-conceptual.md) e como [implementar um consumidor de skill](skill-implement-consumer.md).
-- Uma assinatura do Azure. Se você não tiver uma, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
-- Uma cópia do exemplo **skills skillDialog** em [**C#** ](https://aka.ms/skills-using-dialogs-cs), [**JavaScript**](https://aka.ms/skills-using-dialogs-js) ou [**Python**](https://aka.ms/skills-using-dialogs-py).
+- Opcionalmente, uma assinatura do Azure. Se você não tiver uma, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
+- Uma cópia do exemplo **skills skillDialog** em [**C#**](https://aka.ms/skills-using-dialogs-cs), [**JavaScript**](https://aka.ms/skills-using-dialogs-js) ou [**Python**](https://aka.ms/skills-using-dialogs-py).
+
+> [!NOTE]
+> A partir da versão 4,11, você não precisa de uma ID de aplicativo e senha para testar um consumidor de habilidades localmente no emulador. Uma assinatura do Azure ainda é necessária para implantar seu consumidor no Azure ou para consumir uma habilidade implantada.
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
@@ -49,15 +52,15 @@ Para saber mais sobre outros aspectos da criação de um consumidor de skill, co
 
 ### <a name="c"></a>[C#](#tab/cs)
 
-![Diagrama de classe de consumidor de skills](./media/skill-dialog/dialog-root-bot-cs.png)
+![Diagrama de classe de consumidor de habilidades em C#](./media/skill-dialog/dialog-root-bot-cs.png)
 
 ### <a name="javascript"></a>[JavaScript](#tab/js)
 
-![Diagrama de classe de consumidor de skills](./media/skill-dialog/dialog-root-bot-js.png)
+![Diagrama de classe de consumidor de habilidades do JavaScript](./media/skill-dialog/dialog-root-bot-js.png)
 
 ### <a name="python"></a>[Python](#tab/python)
 
-![Diagrama de classe de consumidor de skills](./media/skill-dialog/dialog-root-bot-py.png)
+![Diagrama de classe do consumidor de habilidades do Python](./media/skill-dialog/dialog-root-bot-py.png)
 
 ---
 
@@ -65,25 +68,26 @@ Para saber mais sobre o bot de skill de caixa de diálogo, confira como [usar ca
 
 ## <a name="resources"></a>Recursos
 
-A autenticação de bot para bot requer que cada bot participante tenha uma appID e uma senha válidas.
-
-Registre tanto o skill quanto o consumidor de skills com o Azure. Você pode usar um Registro de Canais de Bot. Para obter mais informações, veja como [registrar um bot com o Serviço de Bot do Azure](../bot-service-quickstart-registration.md).
+Para bots implantados, a autenticação de bot para bot requer que cada bot participante tenha uma ID de aplicativo e senha válidas.
+No entanto, você pode testar habilidades e consumidores de habilidades localmente com o emulador sem uma ID do aplicativo e uma senha.
 
 ## <a name="application-configuration"></a>Configuração de aplicativo
 
-1. Adicione a ID do aplicativo e a senha do bot raiz.
+1. Opcionalmente, adicione a ID do aplicativo e a senha do bot raiz ao arquivo de configuração.
 1. Adicione o ponto de extremidade do host de habilidades (o serviço ou a URL de retorno de chamada) ao qual as habilidades devem responder ao consumidor de habilidades.
 1. Adicione uma entrada para cada skill que o consumidor de skills usará. Cada entrada inclui:
    - Uma ID que o consumidor de skills usará para identificar cada skill.
-   - A ID do aplicativo do skill.
+   - Opcionalmente, a ID do aplicativo da habilidade.
    - O ponto de extremidade de mensagens do skill.
+
+> [!NOTE]
+> Se o consumidor de habilidades ou habilidades usar uma ID de aplicativo e uma senha, ambos deverão.
 
 ### <a name="c"></a>[C#](#tab/cs)
 
 **DialogRootBot\appsettings.json**
 
-- Adicione a ID do aplicativo e a senha do bot raiz.
-- Adicione a ID do aplicativo para o bot de skill de eco à matriz `BotFrameworkSkills`.
+Opcionalmente, adicione a ID do aplicativo e a senha do bot raiz e adicione a ID do aplicativo para o bot de habilidade de eco à `BotFrameworkSkills` matriz.
 
 [!code-json[configuration file](~/../botbuilder-samples/samples/csharp_dotnetcore/81.skills-skilldialog/DialogRootBot/appsettings.json?highlight=2-3,9)]
 
@@ -91,8 +95,7 @@ Registre tanto o skill quanto o consumidor de skills com o Azure. Você pode usa
 
 **dialogRootBot/.env**
 
-- Adicione a ID do aplicativo e a senha do bot raiz.
-- Adicione a ID do aplicativo ao bot de skill de eco.
+Opcionalmente, adicione a ID do aplicativo e a senha do bot raiz e adicione a ID do aplicativo para o bot de habilidade de eco.
 
 [!code-javascript[configuration file](~/../botbuilder-samples/samples/javascript_nodejs/81.skills-skilldialog/dialogRootBot/.env?highlight=1-2,6)]
 
@@ -100,8 +103,7 @@ Registre tanto o skill quanto o consumidor de skills com o Azure. Você pode usa
 
 **dialog-root-bot/config.py**
 
-- Adicione a ID do aplicativo e a senha do bot raiz.
-- Adicione a ID do aplicativo ao bot de skill de eco.
+Opcionalmente, adicione a ID do aplicativo e a senha do bot de raiz e adicione a ID do aplicativo para o bot de habilidade de eco.
 
 [!code-python[configuration file](~/../botbuilder-samples/samples/python/81.skills-skilldialog/dialog-root-bot/config.py?range=14-25&highlight=1,3,9)]
 
@@ -114,7 +116,7 @@ A caixa de diálogo principal também demonstra como cancelar o skill (por meio 
 
 O skill que esse bot usa dá suporte a alguns recursos diferentes. Ele pode reservar um voo ou obter o clima de uma cidade. Além disso, se ele receber uma mensagem fora desses contextos e um reconhecedor LUIS estiver configurado, ele tentará interpretar a intenção do usuário.
 
-O manifesto de skill ([**C#** ](https://aka.ms/skilldialog-manifest-cs), [**JavaScript**](https://aka.ms/skilldialog-manifest-js), [**Python**](https://aka.ms/skilldialog-manifest-py)) descreve as ações que o skill pode executar, os respectivos parâmetros de entrada e saída e os pontos de extremidade do skill.
+O manifesto de skill ([**C#**](https://aka.ms/skilldialog-manifest-cs), [**JavaScript**](https://aka.ms/skilldialog-manifest-js), [**Python**](https://aka.ms/skilldialog-manifest-py)) descreve as ações que o skill pode executar, os respectivos parâmetros de entrada e saída e os pontos de extremidade do skill.
 Observe que o skill pode lidar com um evento "BookFlight" ou "GetWeather". Ele também pode manipular mensagens.
 
 A caixa de diálogo principal inclui código para:
