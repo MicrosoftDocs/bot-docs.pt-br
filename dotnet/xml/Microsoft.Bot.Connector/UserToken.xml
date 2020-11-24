@@ -1,5 +1,5 @@
 <Type Name="UserToken" FullName="Microsoft.Bot.Connector.UserToken">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="5b4c8c93df8fe9bdd8b9e66dec349cbdcc0ccc70" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94615408" /></Metadata><TypeSignature Language="C#" Value="public class UserToken : Microsoft.Bot.Connector.IUserToken, Microsoft.Rest.IServiceOperations&lt;Microsoft.Bot.Connector.OAuthClient&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6a7aa6061fec3f765737d4bb8b354be6619a382d" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95459080" /></Metadata><TypeSignature Language="C#" Value="public class UserToken : Microsoft.Bot.Connector.IUserToken, Microsoft.Rest.IServiceOperations&lt;Microsoft.Bot.Connector.OAuthClient&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UserToken extends System.Object implements class Microsoft.Bot.Connector.IUserToken, class Microsoft.Rest.IServiceOperations`1&lt;class Microsoft.Bot.Connector.OAuthClient&gt;" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Connector.UserToken" />
   <TypeSignature Language="VB.NET" Value="Public Class UserToken&#xA;Implements IServiceOperations(Of OAuthClient), IUserToken" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -42,6 +43,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="client" Type="Microsoft.Bot.Connector.OAuthClient" />
@@ -67,6 +69,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Connector.OAuthClient</ReturnType>
@@ -94,6 +97,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Rest.HttpOperationResponse&lt;System.Collections.Generic.IDictionary&lt;System.String,Microsoft.Bot.Schema.TokenResponse&gt;&gt;&gt;</ReturnType>
@@ -140,6 +144,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Rest.HttpOperationResponse&lt;System.Collections.Generic.IList&lt;Microsoft.Bot.Schema.TokenStatus&gt;&gt;&gt;</ReturnType>
@@ -184,6 +189,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Rest.HttpOperationResponse&lt;Microsoft.Bot.Schema.TokenResponse&gt;&gt;</ReturnType>
@@ -230,6 +236,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Rest.HttpOperationResponse&lt;System.Object&gt;&gt;</ReturnType>

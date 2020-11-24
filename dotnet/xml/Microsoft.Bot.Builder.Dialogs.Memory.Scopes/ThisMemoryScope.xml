@@ -1,5 +1,5 @@
 <Type Name="ThisMemoryScope" FullName="Microsoft.Bot.Builder.Dialogs.Memory.Scopes.ThisMemoryScope">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="5f9e2842407070357d501324c75013a86796cf90" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94603268" /></Metadata><TypeSignature Language="C#" Value="public class ThisMemoryScope : Microsoft.Bot.Builder.Dialogs.Memory.Scopes.MemoryScope" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="54d7ef64011ee9dffaff233f823e51dcfb1a2d14" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95459210" /></Metadata><TypeSignature Language="C#" Value="public class ThisMemoryScope : Microsoft.Bot.Builder.Dialogs.Memory.Scopes.MemoryScope" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ThisMemoryScope extends Microsoft.Bot.Builder.Dialogs.Memory.Scopes.MemoryScope" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Memory.Scopes.ThisMemoryScope" />
   <TypeSignature Language="VB.NET" Value="Public Class ThisMemoryScope&#xA;Inherits MemoryScope" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Memory.Scopes.MemoryScope</BaseTypeName>
@@ -34,6 +35,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -55,6 +57,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -83,6 +86,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>

@@ -1,5 +1,5 @@
 <Type Name="IAttachments" FullName="Microsoft.Bot.Connector.IAttachments">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="f8dc7e6bd9a3dec41eea8d34b785b0310be34fc1" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94613588" /></Metadata><TypeSignature Language="C#" Value="public interface IAttachments" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="10f96f2b2f7b0df45812114e989acc92b7394abb" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95459120" /></Metadata><TypeSignature Language="C#" Value="public interface IAttachments" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IAttachments" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Connector.IAttachments" />
   <TypeSignature Language="VB.NET" Value="Public Interface IAttachments" />
@@ -22,6 +22,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
@@ -54,6 +55,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType FrameworkAlternate="botbuilder-dotnet-3.0">System.Threading.Tasks.Task&lt;Microsoft.Rest.HttpOperationResponse&lt;Microsoft.Bot.Connector.AttachmentInfo&gt;&gt;</ReturnType>
@@ -101,6 +103,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Rest.HttpOperationResponse&lt;System.IO.Stream&gt;&gt;</ReturnType>

@@ -1,5 +1,5 @@
 <Type Name="IRecognizer" FullName="Microsoft.Bot.Builder.IRecognizer">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="529758553edd00d3a7d34381041407ba707c59df" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94597018" /></Metadata><TypeSignature Language="C#" Value="public interface IRecognizer" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="016759dd3c29c6733cda42c7df02297264c6232d" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95458270" /></Metadata><TypeSignature Language="C#" Value="public interface IRecognizer" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRecognizer" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.IRecognizer" />
   <TypeSignature Language="VB.NET" Value="Public Interface IRecognizer" />
@@ -18,6 +18,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
@@ -46,6 +47,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.RecognizerResult&gt;</ReturnType>
@@ -83,6 +85,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;T&gt;</ReturnType>

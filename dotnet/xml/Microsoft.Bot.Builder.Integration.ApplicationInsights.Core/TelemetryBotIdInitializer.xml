@@ -1,5 +1,5 @@
 <Type Name="TelemetryBotIdInitializer" FullName="Microsoft.Bot.Builder.Integration.ApplicationInsights.Core.TelemetryBotIdInitializer">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="e49105b8d7691d4eed21932e9999d042add93780" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94612228" /></Metadata><TypeSignature Language="C#" Value="public class TelemetryBotIdInitializer : Microsoft.ApplicationInsights.Extensibility.ITelemetryInitializer" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7a0450b6c131fc11936b9d996f6be6c3b646d018" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95458391" /></Metadata><TypeSignature Language="C#" Value="public class TelemetryBotIdInitializer : Microsoft.ApplicationInsights.Extensibility.ITelemetryInitializer" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TelemetryBotIdInitializer extends System.Object implements class Microsoft.ApplicationInsights.Extensibility.ITelemetryInitializer" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Integration.ApplicationInsights.Core.TelemetryBotIdInitializer" />
   <TypeSignature Language="VB.NET" Value="Public Class TelemetryBotIdInitializer&#xA;Implements ITelemetryInitializer" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -39,6 +40,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="httpContextAccessor" Type="Microsoft.AspNetCore.Http.IHttpContextAccessor" />
@@ -63,6 +65,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -89,6 +92,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>

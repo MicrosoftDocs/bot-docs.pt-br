@@ -1,5 +1,5 @@
 <Type Name="ILGFileParserVisitor&lt;Result&gt;" FullName="ILGFileParserVisitor&lt;Result&gt;">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="7da3cbcb8afb4651ed5334a9d735a5e672fcd04c" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94617994" /></Metadata><TypeSignature Language="C#" Value="public interface ILGFileParserVisitor&lt;Result&gt; : Antlr4.Runtime.Tree.IParseTreeVisitor&lt;Result&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="292defc5b65b96ecfbde699f88d975f516d2dc1e" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95459970" /></Metadata><TypeSignature Language="C#" Value="public interface ILGFileParserVisitor&lt;Result&gt; : Antlr4.Runtime.Tree.IParseTreeVisitor&lt;Result&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ILGFileParserVisitor`1&lt;Result&gt; implements class Antlr4.Runtime.Tree.IParseTreeVisitor`1&lt;!Result&gt;" />
   <TypeSignature Language="DocId" Value="T:ILGFileParserVisitor`1" />
   <TypeSignature Language="VB.NET" Value="Public Interface ILGFileParserVisitor(Of Result)&#xA;Implements IParseTreeVisitor(Of Result)" />
@@ -7,6 +7,7 @@
   <AssemblyInfo>
     <AssemblyName>Microsoft.Bot.Builder.LanguageGeneration</AssemblyName>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <TypeParameters>
     <TypeParameter Name="Result" />
@@ -42,6 +43,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.LanguageGeneration</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -74,6 +76,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.LanguageGeneration</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -106,6 +109,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.LanguageGeneration</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -138,6 +142,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.LanguageGeneration</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -170,6 +175,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.LanguageGeneration</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -202,6 +208,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.LanguageGeneration</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -234,6 +241,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.LanguageGeneration</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -266,6 +274,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.LanguageGeneration</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -298,6 +307,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.LanguageGeneration</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>
@@ -330,6 +340,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.LanguageGeneration</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Result</ReturnType>

@@ -1,5 +1,5 @@
 <Type Name="MessagingExtensionSuggestedAction" FullName="Microsoft.Bot.Schema.Teams.MessagingExtensionSuggestedAction">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="e7b7ad49e44a1f290ff57d87c68237d62a8429f3" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94606888" /></Metadata><TypeSignature Language="C#" Value="public class MessagingExtensionSuggestedAction" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f0e2e262a1e8d190cb5587502208b8338ab744e2" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95457890" /></Metadata><TypeSignature Language="C#" Value="public class MessagingExtensionSuggestedAction" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MessagingExtensionSuggestedAction extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.Teams.MessagingExtensionSuggestedAction" />
   <TypeSignature Language="VB.NET" Value="Public Class MessagingExtensionSuggestedAction" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -34,6 +35,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -55,6 +57,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="actions" Type="System.Collections.Generic.IList&lt;Microsoft.Bot.Schema.CardAction&gt;" />
@@ -79,6 +82,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>

@@ -1,5 +1,5 @@
 <Type Name="BotMessageHandlerBase" FullName="Microsoft.Bot.Builder.Integration.AspNet.Core.Handlers.BotMessageHandlerBase">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="6dd1a7ae6c69d453ecb6567805d6fc89ef2a12a5" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94599988" /></Metadata><TypeSignature Language="C#" Value="public abstract class BotMessageHandlerBase" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d6d18261beebf217da65516845c6518167412d5f" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95458360" /></Metadata><TypeSignature Language="C#" Value="public abstract class BotMessageHandlerBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit BotMessageHandlerBase extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Integration.AspNet.Core.Handlers.BotMessageHandlerBase" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class BotMessageHandlerBase" />
@@ -18,6 +18,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -48,6 +49,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -76,6 +78,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Newtonsoft.Json.JsonSerializer</ReturnType>
@@ -106,6 +109,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -141,6 +145,7 @@ Processa a solicitação usando o adaptador e bot registrados e grava o resultad
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.InvokeResponse&gt;</ReturnType>

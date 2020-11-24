@@ -1,5 +1,5 @@
 <Type Name="StreamManager" FullName="Microsoft.Bot.Streaming.Payloads.StreamManager">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="a8394414a501fd14223c8ed88d49a08ed531a5bf" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94607808" /></Metadata><TypeSignature Language="C#" Value="public class StreamManager : Microsoft.Bot.Streaming.Payloads.IStreamManager" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="182074d1af2aee310cc148b5a2260ec7f580ffa1" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95460000" /></Metadata><TypeSignature Language="C#" Value="public class StreamManager : Microsoft.Bot.Streaming.Payloads.IStreamManager" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StreamManager extends System.Object implements class Microsoft.Bot.Streaming.Payloads.IStreamManager" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Streaming.Payloads.StreamManager" />
   <TypeSignature Language="VB.NET" Value="Public Class StreamManager&#xA;Implements IStreamManager" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -39,6 +40,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="onCancelStream" Type="System.Action&lt;Microsoft.Bot.Streaming.Payloads.PayloadStreamAssembler&gt;" />
@@ -66,6 +68,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -97,6 +100,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Streaming.Payloads.PayloadStreamAssembler</ReturnType>
@@ -129,6 +133,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IO.Stream</ReturnType>
@@ -161,6 +166,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>

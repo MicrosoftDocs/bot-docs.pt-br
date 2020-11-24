@@ -1,5 +1,5 @@
 <Type Name="ITurnContext" FullName="Microsoft.Bot.Builder.ITurnContext">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="3ba5fd6d4cbe9910b9d41dcfb5a4d8abbdf46e29" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94614198" /></Metadata><TypeSignature Language="C#" Value="public interface ITurnContext" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a8938d875b95771622d6be55da36cbcd326b60e7" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95458160" /></Metadata><TypeSignature Language="C#" Value="public interface ITurnContext" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITurnContext" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.ITurnContext" />
   <TypeSignature Language="VB.NET" Value="Public Interface ITurnContext" />
@@ -18,15 +18,16 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
     <summary>Fornece contexto para uma vez de um bot.</summary>
     <remarks>O contexto fornece as informações necessárias para processar uma atividade de entrada.
 O objeto Context é criado por um <see cref="T:Microsoft.Bot.Builder.BotAdapter" /> e persiste para o comprimento da rodada.</remarks>
-    <altmember cref="T:Microsoft.Bot.Builder.ITurnContext`1" />
     <altmember cref="T:Microsoft.Bot.Builder.IBot" />
     <altmember cref="T:Microsoft.Bot.Builder.IMiddleware" />
+    <altmember cref="T:Microsoft.Bot.Builder.ITurnContext`1" />
   </Docs>
   <Members>
     <Member MemberName="Activity">
@@ -50,6 +51,7 @@ O objeto Context é criado por um <see cref="T:Microsoft.Bot.Builder.BotAdapter"
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Schema.Activity</ReturnType>
@@ -81,6 +83,7 @@ O objeto Context é criado por um <see cref="T:Microsoft.Bot.Builder.BotAdapter"
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.BotAdapter</ReturnType>
@@ -112,6 +115,7 @@ O objeto Context é criado por um <see cref="T:Microsoft.Bot.Builder.BotAdapter"
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -154,6 +158,7 @@ O objeto Context é criado por um <see cref="T:Microsoft.Bot.Builder.BotAdapter"
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -196,6 +201,7 @@ O objeto Context é criado por um <see cref="T:Microsoft.Bot.Builder.BotAdapter"
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.ITurnContext</ReturnType>
@@ -237,6 +243,7 @@ O objeto Context é criado por um <see cref="T:Microsoft.Bot.Builder.BotAdapter"
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.ITurnContext</ReturnType>
@@ -278,6 +285,7 @@ O objeto Context é criado por um <see cref="T:Microsoft.Bot.Builder.BotAdapter"
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.ITurnContext</ReturnType>
@@ -317,6 +325,7 @@ O objeto Context é criado por um <see cref="T:Microsoft.Bot.Builder.BotAdapter"
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -349,6 +358,7 @@ O objeto Context é criado por um <see cref="T:Microsoft.Bot.Builder.BotAdapter"
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Schema.ResourceResponse[]&gt;</ReturnType>
@@ -391,6 +401,7 @@ O objeto Context é criado por um <see cref="T:Microsoft.Bot.Builder.BotAdapter"
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Schema.ResourceResponse&gt;</ReturnType>
@@ -433,6 +444,7 @@ O objeto Context é criado por um <see cref="T:Microsoft.Bot.Builder.BotAdapter"
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Schema.ResourceResponse&gt;</ReturnType>
@@ -482,6 +494,7 @@ O padrão é <see cref="F:Microsoft.Bot.Schema.InputHints.AcceptingInput" />.</p
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Bot.Builder.TurnContextStateCollection</ReturnType>
@@ -513,6 +526,7 @@ O padrão é <see cref="F:Microsoft.Bot.Schema.InputHints.AcceptingInput" />.</p
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Schema.ResourceResponse&gt;</ReturnType>

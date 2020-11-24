@@ -1,5 +1,5 @@
 <Type Name="ITranscriptStore" FullName="Microsoft.Bot.Builder.ITranscriptStore">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="32889b304145bb46ab4ae123515e691e43468921" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94612728" /></Metadata><TypeSignature Language="C#" Value="public interface ITranscriptStore : Microsoft.Bot.Builder.ITranscriptLogger" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="97c7c9907a3015ad766b01923e5346433ae1e26e" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95458150" /></Metadata><TypeSignature Language="C#" Value="public interface ITranscriptStore : Microsoft.Bot.Builder.ITranscriptLogger" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITranscriptStore implements class Microsoft.Bot.Builder.ITranscriptLogger" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.ITranscriptStore" />
   <TypeSignature Language="VB.NET" Value="Public Interface ITranscriptStore&#xA;Implements ITranscriptLogger" />
@@ -18,6 +18,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces>
     <Interface>
@@ -50,6 +51,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -87,6 +89,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.PagedResult&lt;Microsoft.Bot.Schema.IActivity&gt;&gt;</ReturnType>
@@ -128,6 +131,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.PagedResult&lt;Microsoft.Bot.Builder.TranscriptInfo&gt;&gt;</ReturnType>
