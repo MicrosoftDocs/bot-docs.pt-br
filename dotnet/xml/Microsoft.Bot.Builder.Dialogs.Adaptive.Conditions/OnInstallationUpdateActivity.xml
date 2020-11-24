@@ -1,5 +1,5 @@
 <Type Name="OnInstallationUpdateActivity" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnInstallationUpdateActivity">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="7bf426f47efa176dba00d27234fb94071ed9faa2" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94618373" /></Metadata><TypeSignature Language="C#" Value="public class OnInstallationUpdateActivity : Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnActivity" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a3ce9a38caeb0df65507ecd642efbd061964639b" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95466010" /></Metadata><TypeSignature Language="C#" Value="public class OnInstallationUpdateActivity : Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnActivity" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit OnInstallationUpdateActivity extends Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnActivity" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnInstallationUpdateActivity" />
   <TypeSignature Language="VB.NET" Value="Public Class OnInstallationUpdateActivity&#xA;Inherits OnActivity" />
@@ -7,6 +7,7 @@
   <AssemblyInfo>
     <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive</AssemblyName>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnActivity</BaseTypeName>
@@ -27,6 +28,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -73,6 +75,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>

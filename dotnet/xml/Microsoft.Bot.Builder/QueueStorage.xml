@@ -1,5 +1,5 @@
 <Type Name="QueueStorage" FullName="Microsoft.Bot.Builder.QueueStorage">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="7ef61bed3f7733cefc2b57f3b6a84475396246b0" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94618363" /></Metadata><TypeSignature Language="C#" Value="public abstract class QueueStorage" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c913a69b015b38f42da4ce11be304cba06c4e095" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95466660" /></Metadata><TypeSignature Language="C#" Value="public abstract class QueueStorage" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit QueueStorage extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.QueueStorage" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class QueueStorage" />
@@ -7,6 +7,7 @@
   <AssemblyInfo>
     <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -26,6 +27,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -43,6 +45,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.String&gt;</ReturnType>

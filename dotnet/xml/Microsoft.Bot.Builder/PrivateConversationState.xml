@@ -1,5 +1,5 @@
 <Type Name="PrivateConversationState" FullName="Microsoft.Bot.Builder.PrivateConversationState">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="7c18d3aaf47b3557b1a96a0d0dd6dc95169ae04d" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94613028" /></Metadata><TypeSignature Language="C#" Value="public class PrivateConversationState : Microsoft.Bot.Builder.BotState" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="4873faf362d9a0b745be0985ff6c55ea2a6d76ee" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95466680" /></Metadata><TypeSignature Language="C#" Value="public class PrivateConversationState : Microsoft.Bot.Builder.BotState" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PrivateConversationState extends Microsoft.Bot.Builder.BotState" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.PrivateConversationState" />
   <TypeSignature Language="VB.NET" Value="Public Class PrivateConversationState&#xA;Inherits BotState" />
@@ -18,6 +18,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.BotState</BaseTypeName>
@@ -49,6 +50,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="storage" Type="Microsoft.Bot.Builder.IStorage" />
@@ -80,6 +82,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>

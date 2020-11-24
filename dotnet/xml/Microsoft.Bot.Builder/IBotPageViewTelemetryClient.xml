@@ -1,5 +1,5 @@
 <Type Name="IBotPageViewTelemetryClient" FullName="Microsoft.Bot.Builder.IBotPageViewTelemetryClient">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="d0b6bcd50368dfcb8a1447a66078b400bc47ece3" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94605028" /></Metadata><TypeSignature Language="C#" Value="public interface IBotPageViewTelemetryClient" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d1d5b405151539af3397de0d93b960339bc03e7b" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95467320" /></Metadata><TypeSignature Language="C#" Value="public interface IBotPageViewTelemetryClient" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IBotPageViewTelemetryClient" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.IBotPageViewTelemetryClient" />
   <TypeSignature Language="VB.NET" Value="Public Interface IBotPageViewTelemetryClient" />
@@ -12,6 +12,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
@@ -34,6 +35,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>

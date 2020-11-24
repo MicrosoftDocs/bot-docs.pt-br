@@ -1,5 +1,5 @@
 <Type Name="OAuthPrompt" FullName="Microsoft.Bot.Builder.Dialogs.OAuthPrompt">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="1f54ce775724aa20636964b67375bf853edcce2d" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94607978" /></Metadata><TypeSignature Language="C#" Value="public class OAuthPrompt : Microsoft.Bot.Builder.Dialogs.Dialog" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a04e91a95778e51e0f75d271f873ea9c000b7e06" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95466820" /></Metadata><TypeSignature Language="C#" Value="public class OAuthPrompt : Microsoft.Bot.Builder.Dialogs.Dialog" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit OAuthPrompt extends Microsoft.Bot.Builder.Dialogs.Dialog" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.OAuthPrompt" />
   <TypeSignature Language="VB.NET" Value="Public Class OAuthPrompt&#xA;Inherits Dialog" />
@@ -18,6 +18,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Dialog</BaseTypeName>
@@ -32,7 +33,7 @@
 Os dois fluxos são automaticamente suportados pelo `OAuthPrompt` e a única coisa de que você precisa ter cuidado é que você não bloqueia as `event` `invoke` atividades e que o prompt pode estar aguardando.
             
              <blockquote>
-             **Observação** : você deve evitar persistir o token de acesso com o outro Estado dos bots. O serviço de SSO das estruturas de bot armazenará com segurança o token em seu nome. Se você armazená-lo em seu estado de bots, ele poderá expirar ou ser revogado entre as ativações.
+             **Observação**: você deve evitar persistir o token de acesso com o outro Estado dos bots. O serviço de SSO das estruturas de bot armazenará com segurança o token em seu nome. Se você armazená-lo em seu estado de bots, ele poderá expirar ou ser revogado entre as ativações.
             
 Ao chamar o prompt de dentro de uma etapa de cascata, você deve usar o token dentro da etapa após o prompt e, em seguida, deixar que o token saia do escopo no final da função.
              </blockquote>
@@ -62,6 +63,7 @@ Quando usado com o bot, <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogSet" />
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="dialogId" Type="System.String" />
@@ -97,6 +99,7 @@ Quando usado com o bot, <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogSet" />
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
@@ -136,6 +139,7 @@ Quando usado com o bot, <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogSet" />
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.DialogTurnResult&gt;</ReturnType>
@@ -174,6 +178,7 @@ Quando usado com o bot, <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogSet" />
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Schema.TokenResponse&gt;</ReturnType>
@@ -200,6 +205,7 @@ Quando usado com o bot, <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogSet" />
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Bot.Builder.Dialogs.PromptRecognizerResult&lt;Microsoft.Bot.Schema.TokenResponse&gt;&gt;</ReturnType>
@@ -228,6 +234,7 @@ Quando usado com o bot, <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogSet" />
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -258,6 +265,7 @@ Quando usado com o bot, <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogSet" />
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.Dialogs</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -294,6 +302,7 @@ Quando usado com o bot, <see cref="T:Microsoft.Bot.Builder.Dialogs.DialogSet" />
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>

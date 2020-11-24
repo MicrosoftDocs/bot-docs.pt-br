@@ -1,5 +1,5 @@
 <Type Name="ImportResolverDelegate" FullName="Microsoft.Bot.Builder.LanguageGeneration.ImportResolverDelegate">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="c9d48ceb1bc7f9b334684066b8ac28827c6e33d5" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94615048" /></Metadata><TypeSignature Language="C#" Value="public delegate Microsoft.Bot.Builder.LanguageGeneration.LGResource ImportResolverDelegate(LGResource resource, string resourceId);" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="fc72b86405c8d7ab7cae74bd2a3998e816323f77" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95467671" /></Metadata><TypeSignature Language="C#" Value="public delegate Microsoft.Bot.Builder.LanguageGeneration.LGResource ImportResolverDelegate(LGResource resource, string resourceId);" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ImportResolverDelegate extends System.MulticastDelegate" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.LanguageGeneration.ImportResolverDelegate" />
   <TypeSignature Language="VB.NET" Value="Public Delegate Function ImportResolverDelegate(resource As LGResource, resourceId As String) As LGResource " />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Delegate</BaseTypeName>
