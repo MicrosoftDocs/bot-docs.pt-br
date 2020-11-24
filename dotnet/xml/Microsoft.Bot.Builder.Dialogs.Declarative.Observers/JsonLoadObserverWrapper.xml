@@ -1,5 +1,5 @@
 <Type Name="JsonLoadObserverWrapper" FullName="Microsoft.Bot.Builder.Dialogs.Declarative.Observers.JsonLoadObserverWrapper">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="301e0c9a6cf8568b21840ebc9e681ccd9d051343" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94615688" /></Metadata><TypeSignature Language="C#" Value="public class JsonLoadObserverWrapper : Microsoft.Bot.Builder.Dialogs.Declarative.Observers.IJsonLoadObserver" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a0e4e86be25741d4f649107d2844c850dc0bcd27" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95468109" /></Metadata><TypeSignature Language="C#" Value="public class JsonLoadObserverWrapper : Microsoft.Bot.Builder.Dialogs.Declarative.Observers.IJsonLoadObserver" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit JsonLoadObserverWrapper extends System.Object implements class Microsoft.Bot.Builder.Dialogs.Declarative.Observers.IJsonLoadObserver" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Declarative.Observers.JsonLoadObserverWrapper" />
   <TypeSignature Language="VB.NET" Value="Public Class JsonLoadObserverWrapper&#xA;Implements IJsonLoadObserver" />
@@ -9,6 +9,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -41,6 +42,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="observer" Type="Microsoft.Bot.Builder.Dialogs.Declarative.Observers.IConverterObserver" />
@@ -66,6 +68,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -112,6 +115,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>

@@ -1,5 +1,5 @@
 <Type Name="IInstallationUpdateActivity" FullName="Microsoft.Bot.Schema.IInstallationUpdateActivity">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="9558b5749c9951a5f4c240c445906c57c41b0546" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94605408" /></Metadata><TypeSignature Language="C#" Value="public interface IInstallationUpdateActivity : Microsoft.Bot.Schema.IActivity" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c31b7ea0550d83cc3bacac245e657d57b5397c89" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95469740" /></Metadata><TypeSignature Language="C#" Value="public interface IInstallationUpdateActivity : Microsoft.Bot.Schema.IActivity" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IInstallationUpdateActivity implements class Microsoft.Bot.Schema.IActivity" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Schema.IInstallationUpdateActivity" />
   <TypeSignature Language="VB.NET" Value="Public Interface IInstallationUpdateActivity&#xA;Implements IActivity" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces>
     <Interface>
@@ -36,6 +37,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>

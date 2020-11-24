@@ -1,5 +1,5 @@
 <Type Name="IItemIdentity" FullName="Microsoft.Bot.Builder.Dialogs.IItemIdentity">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="53bc67f5e34a605924132026061569f9c3ccc399" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94612288" /></Metadata><TypeSignature Language="C#" Value="public interface IItemIdentity" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="1cba407e2b68527add15098baf1e61c842cbd907" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95467860" /></Metadata><TypeSignature Language="C#" Value="public interface IItemIdentity" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IItemIdentity" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.IItemIdentity" />
   <TypeSignature Language="VB.NET" Value="Public Interface IItemIdentity" />
@@ -13,6 +13,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
@@ -36,6 +37,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>

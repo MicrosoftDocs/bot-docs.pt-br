@@ -1,5 +1,5 @@
 <Type Name="TelemetrySaveBodyASPMiddleware" FullName="Microsoft.Bot.Builder.Integration.ApplicationInsights.Core.TelemetrySaveBodyASPMiddleware">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="416b75a3502610c7cbc0d0b368ada2e77019cf13" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94600018" /></Metadata><TypeSignature Language="C#" Value="public class TelemetrySaveBodyASPMiddleware" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="965ef89df61ed899be63fa3673fd333a8d260085" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95467720" /></Metadata><TypeSignature Language="C#" Value="public class TelemetrySaveBodyASPMiddleware" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TelemetrySaveBodyASPMiddleware extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Integration.ApplicationInsights.Core.TelemetrySaveBodyASPMiddleware" />
   <TypeSignature Language="VB.NET" Value="Public Class TelemetrySaveBodyASPMiddleware" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -42,6 +43,7 @@ Essa classe foi preterida em favor de usar TelemetryInitializerMiddleware em Mic
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="next" Type="Microsoft.AspNetCore.Http.RequestDelegate" />
@@ -66,6 +68,7 @@ Essa classe foi preterida em favor de usar TelemetryInitializerMiddleware em Mic
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>

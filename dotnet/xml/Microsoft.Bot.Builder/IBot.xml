@@ -1,5 +1,5 @@
 <Type Name="IBot" FullName="Microsoft.Bot.Builder.IBot">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="4b1313be5e707db6d291fba399a44a9bb27e38bd" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94611358" /></Metadata><TypeSignature Language="C#" Value="public interface IBot" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ceb8950ec386a7732111d79ace487b49c52995ad" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95468831" /></Metadata><TypeSignature Language="C#" Value="public interface IBot" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IBot" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.IBot" />
   <TypeSignature Language="VB.NET" Value="Public Interface IBot" />
@@ -18,6 +18,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
@@ -47,6 +48,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>

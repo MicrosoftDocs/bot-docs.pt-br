@@ -1,5 +1,5 @@
 <Type Name="IComponentPathResolvers" FullName="Microsoft.Bot.Builder.Dialogs.Memory.IComponentPathResolvers">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="014c67ce5ee3ab2b051799af239cbf563098bc62" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94611448" /></Metadata><TypeSignature Language="C#" Value="public interface IComponentPathResolvers" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6ce90ea9b818470a0ec5a80de6edf8047e0f0fd8" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95467930" /></Metadata><TypeSignature Language="C#" Value="public interface IComponentPathResolvers" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IComponentPathResolvers" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Memory.IComponentPathResolvers" />
   <TypeSignature Language="VB.NET" Value="Public Interface IComponentPathResolvers" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
@@ -32,6 +33,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Builder.Dialogs.Memory.IPathResolver&gt;</ReturnType>
