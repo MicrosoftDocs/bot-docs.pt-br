@@ -1,5 +1,5 @@
 <Type Name="OnMessageUpdateActivity" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnMessageUpdateActivity">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="ff9533b02d9c54042e789b2c8df476592add8ea2" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94614358" /></Metadata><TypeSignature Language="C#" Value="public class OnMessageUpdateActivity : Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnActivity" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b91bd1ea164b0143d7b6fab628a41461d7cc9097" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95469920" /></Metadata><TypeSignature Language="C#" Value="public class OnMessageUpdateActivity : Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnActivity" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit OnMessageUpdateActivity extends Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnActivity" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnMessageUpdateActivity" />
   <TypeSignature Language="VB.NET" Value="Public Class OnMessageUpdateActivity&#xA;Inherits OnActivity" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnActivity</BaseTypeName>
@@ -35,6 +36,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -85,6 +87,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>

@@ -1,5 +1,5 @@
 <Type Name="WebSocketTransport" FullName="Microsoft.Bot.Streaming.Transport.WebSockets.WebSocketTransport">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="2ef669dcae7c62f39c385a6dcb6a8fbd1f7892b5" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94611508" /></Metadata><TypeSignature Language="C#" Value="public class WebSocketTransport : IDisposable, Microsoft.Bot.Streaming.Transport.ITransportReceiver, Microsoft.Bot.Streaming.Transport.ITransportSender" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d18a6ce933d6d447d124cbfd4393128bd7aa1e7b" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95471900" /></Metadata><TypeSignature Language="C#" Value="public class WebSocketTransport : IDisposable, Microsoft.Bot.Streaming.Transport.ITransportReceiver, Microsoft.Bot.Streaming.Transport.ITransportSender" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebSocketTransport extends System.Object implements class Microsoft.Bot.Streaming.Transport.ITransport, class Microsoft.Bot.Streaming.Transport.ITransportReceiver, class Microsoft.Bot.Streaming.Transport.ITransportSender, class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Streaming.Transport.WebSockets.WebSocketTransport" />
   <TypeSignature Language="VB.NET" Value="Public Class WebSocketTransport&#xA;Implements IDisposable, ITransportReceiver, ITransportSender" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -48,6 +49,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="socket" Type="System.Net.WebSockets.WebSocket" />
@@ -75,6 +77,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -103,6 +106,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -125,6 +129,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -156,6 +161,7 @@ Em outras palavras, é verdadeiro quando chamado de forma determinística e fals
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -184,6 +190,7 @@ Em outras palavras, é verdadeiro quando chamado de forma determinística e fals
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Int32&gt;</ReturnType>
@@ -220,6 +227,7 @@ Em outras palavras, é verdadeiro quando chamado de forma determinística e fals
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Int32&gt;</ReturnType>

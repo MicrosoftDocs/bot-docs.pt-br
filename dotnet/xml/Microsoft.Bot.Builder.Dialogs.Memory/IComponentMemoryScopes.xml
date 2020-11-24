@@ -1,5 +1,5 @@
 <Type Name="IComponentMemoryScopes" FullName="Microsoft.Bot.Builder.Dialogs.Memory.IComponentMemoryScopes">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="2e33b25d87933cced2e66b999e637027dca58f78" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94607968" /></Metadata><TypeSignature Language="C#" Value="public interface IComponentMemoryScopes" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="586756a47733ad6a054579845077bde574fe1bc1" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95470750" /></Metadata><TypeSignature Language="C#" Value="public interface IComponentMemoryScopes" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IComponentMemoryScopes" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Memory.IComponentMemoryScopes" />
   <TypeSignature Language="VB.NET" Value="Public Interface IComponentMemoryScopes" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
@@ -32,6 +33,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IEnumerable&lt;Microsoft.Bot.Builder.Dialogs.Memory.Scopes.MemoryScope&gt;</ReturnType>

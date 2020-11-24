@@ -1,5 +1,5 @@
 <Type Name="IBotSignIn" FullName="Microsoft.Bot.Connector.IBotSignIn">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="796e669d855796a2b1ee0a2051ed4c46ba8e66a9" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94613578" /></Metadata><TypeSignature Language="C#" Value="public interface IBotSignIn" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="06286e4ce959773cb32022df626c7c1bffc26718" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95471770" /></Metadata><TypeSignature Language="C#" Value="public interface IBotSignIn" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IBotSignIn" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Connector.IBotSignIn" />
   <TypeSignature Language="VB.NET" Value="Public Interface IBotSignIn" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
@@ -32,6 +33,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Rest.HttpOperationResponse&lt;System.String&gt;&gt;</ReturnType>

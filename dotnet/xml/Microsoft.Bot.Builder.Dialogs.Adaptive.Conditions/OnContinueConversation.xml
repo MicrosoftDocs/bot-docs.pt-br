@@ -1,5 +1,5 @@
 <Type Name="OnContinueConversation" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnContinueConversation">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="af582f163e0f82599392a08a2b88126f42471dd4" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94600178" /></Metadata><TypeSignature Language="C#" Value="public class OnContinueConversation : Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnEventActivity" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3312aaacda67396dc4105fee5a2b78fd0917dda3" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95471500" /></Metadata><TypeSignature Language="C#" Value="public class OnContinueConversation : Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnEventActivity" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit OnContinueConversation extends Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnEventActivity" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnContinueConversation" />
   <TypeSignature Language="VB.NET" Value="Public Class OnContinueConversation&#xA;Inherits OnEventActivity" />
@@ -9,6 +9,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnEventActivity</BaseTypeName>
@@ -31,6 +32,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -67,27 +69,26 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="GetExpression">
-      <MemberSignature Language="C#" Value="public override AdaptiveExpressions.Expression GetExpression ();" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class AdaptiveExpressions.Expression GetExpression() cil managed" />
-      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnContinueConversation.GetExpression" />
-      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetExpression () As Expression" />
-      <MemberSignature Language="F#" Value="override this.GetExpression : unit -&gt; AdaptiveExpressions.Expression" Usage="onContinueConversation.GetExpression " />
+    <Member MemberName="CreateExpression">
+      <MemberSignature Language="C#" Value="protected override AdaptiveExpressions.Expression CreateExpression ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class AdaptiveExpressions.Expression CreateExpression() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions.OnContinueConversation.CreateExpression" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function CreateExpression () As Expression" />
+      <MemberSignature Language="F#" Value="override this.CreateExpression : unit -&gt; AdaptiveExpressions.Expression" Usage="onContinueConversation.CreateExpression " />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive</AssemblyName>
-        <AssemblyVersion>4.10.0.0</AssemblyVersion>
-        <AssemblyVersion>4.10.3.0</AssemblyVersion>
-        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>AdaptiveExpressions.Expression</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Obtém a expressão para esta regra.</summary>
-        <returns>Expressão que será armazenada em cache e usada para avaliar essa regra.</returns>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
         <remarks>To be added.</remarks>
+        <inheritdoc />
       </Docs>
     </Member>
     <Member MemberName="Kind">
@@ -102,6 +103,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>

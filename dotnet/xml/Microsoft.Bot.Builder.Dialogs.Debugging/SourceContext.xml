@@ -1,5 +1,5 @@
 <Type Name="SourceContext" FullName="Microsoft.Bot.Builder.Dialogs.Debugging.SourceContext">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="985165f743654688a3e5f47e7a5df53bd076876d" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94609878" /></Metadata><TypeSignature Language="C#" Value="public class SourceContext" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="83df879791e688c6b4e657606700ca548a6ad7fe" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95470799" /></Metadata><TypeSignature Language="C#" Value="public class SourceContext" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SourceContext extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Debugging.SourceContext" />
   <TypeSignature Language="VB.NET" Value="Public Class SourceContext" />
@@ -15,6 +15,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -42,6 +43,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -67,6 +69,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.Stack&lt;Microsoft.Bot.Builder.Dialogs.Debugging.SourceRange&gt;</ReturnType>

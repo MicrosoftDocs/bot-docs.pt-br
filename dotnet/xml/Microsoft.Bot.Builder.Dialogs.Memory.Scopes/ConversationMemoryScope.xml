@@ -1,5 +1,5 @@
 <Type Name="ConversationMemoryScope" FullName="Microsoft.Bot.Builder.Dialogs.Memory.Scopes.ConversationMemoryScope">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="e1303fe10cc710af640f47b5e5ce48ac796e3f49" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94600288" /></Metadata><TypeSignature Language="C#" Value="public class ConversationMemoryScope : Microsoft.Bot.Builder.Dialogs.Memory.Scopes.BotStateMemoryScope&lt;Microsoft.Bot.Builder.ConversationState&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="1cfda07b4b136c10743548377caa1264873fe83a" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95471390" /></Metadata><TypeSignature Language="C#" Value="public class ConversationMemoryScope : Microsoft.Bot.Builder.Dialogs.Memory.Scopes.BotStateMemoryScope&lt;Microsoft.Bot.Builder.ConversationState&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConversationMemoryScope extends Microsoft.Bot.Builder.Dialogs.Memory.Scopes.BotStateMemoryScope`1&lt;class Microsoft.Bot.Builder.ConversationState&gt;" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Memory.Scopes.ConversationMemoryScope" />
   <TypeSignature Language="VB.NET" Value="Public Class ConversationMemoryScope&#xA;Inherits BotStateMemoryScope(Of ConversationState)" />
@@ -11,6 +11,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Bot.Builder.Dialogs.Memory.Scopes.BotStateMemoryScope&lt;Microsoft.Bot.Builder.ConversationState&gt;</BaseTypeName>
@@ -37,6 +38,7 @@
         <AssemblyVersion>4.10.0.0</AssemblyVersion>
         <AssemblyVersion>4.10.3.0</AssemblyVersion>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>

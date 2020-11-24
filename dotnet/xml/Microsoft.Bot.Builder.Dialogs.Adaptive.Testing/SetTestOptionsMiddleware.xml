@@ -1,5 +1,5 @@
 <Type Name="SetTestOptionsMiddleware" FullName="Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.SetTestOptionsMiddleware">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="c7c9e27c4dd9944704c3416b0232f758953f0795" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94618449" /></Metadata><TypeSignature Language="C#" Value="public class SetTestOptionsMiddleware : Microsoft.Bot.Builder.IMiddleware" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f9948811ff15be0c6bec38acec8636384a3e2597" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95470260" /></Metadata><TypeSignature Language="C#" Value="public class SetTestOptionsMiddleware : Microsoft.Bot.Builder.IMiddleware" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SetTestOptionsMiddleware extends System.Object implements class Microsoft.Bot.Builder.IMiddleware" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.Adaptive.Testing.SetTestOptionsMiddleware" />
   <TypeSignature Language="VB.NET" Value="Public Class SetTestOptionsMiddleware&#xA;Implements IMiddleware" />
@@ -7,6 +7,7 @@
   <AssemblyInfo>
     <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive.Testing</AssemblyName>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -30,6 +31,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive.Testing</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -50,6 +52,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Bot.Builder.Dialogs.Adaptive.Testing</AssemblyName>
         <AssemblyVersion>4.11.0.0</AssemblyVersion>
+        <AssemblyVersion>4.11.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>

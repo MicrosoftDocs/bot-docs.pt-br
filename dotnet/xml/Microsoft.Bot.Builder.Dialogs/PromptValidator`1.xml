@@ -1,5 +1,5 @@
 <Type Name="PromptValidator&lt;T&gt;" FullName="Microsoft.Bot.Builder.Dialogs.PromptValidator&lt;T&gt;">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="bfdb1e18617a51bbb5e5b22e728b1dd825c657b0" /><Meta Name="ms.sourcegitcommit" Value="36928e6f81288095af0c66776a5ef320ec309c1a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/13/2020" /><Meta Name="ms.locfileid" Value="94609708" /></Metadata><TypeSignature Language="C#" Value="public delegate System.Threading.Tasks.Task&lt;bool&gt; PromptValidator&lt;T&gt;(PromptValidatorContext&lt;T&gt; promptContext, CancellationToken cancellationToken);" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="27fa0b411b6ad6026e3550b84a6a4d84ed35441d" /><Meta Name="ms.sourcegitcommit" Value="71e7c93a312c21f0559005656e7b237e5a74113c" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="pt-BR" /><Meta Name="ms.lasthandoff" Value="11/23/2020" /><Meta Name="ms.locfileid" Value="95470760" /></Metadata><TypeSignature Language="C#" Value="public delegate System.Threading.Tasks.Task&lt;bool&gt; PromptValidator&lt;T&gt;(PromptValidatorContext&lt;T&gt; promptContext, CancellationToken cancellationToken);" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PromptValidator`1&lt;T&gt; extends System.MulticastDelegate" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Bot.Builder.Dialogs.PromptValidator`1" />
   <TypeSignature Language="VB.NET" Value="Public Delegate Function PromptValidator(Of T)(promptContext As PromptValidatorContext(Of T), cancellationToken As CancellationToken) As Task(Of Boolean) " />
@@ -18,6 +18,7 @@
     <AssemblyVersion>4.10.0.0</AssemblyVersion>
     <AssemblyVersion>4.10.3.0</AssemblyVersion>
     <AssemblyVersion>4.11.0.0</AssemblyVersion>
+    <AssemblyVersion>4.11.1.0</AssemblyVersion>
   </AssemblyInfo>
   <TypeParameters>
     <TypeParameter Name="T" />
