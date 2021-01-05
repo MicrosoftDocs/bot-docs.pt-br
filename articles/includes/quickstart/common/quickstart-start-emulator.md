@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 2085639d3ae93e6832431de94a263444feb5192b
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: d982772171bb6e9765aa8667848d76f7a189edb1
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94596871"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97758486"
 ---
 <!-- Include under ## Start the Emulator and connect your bot H2 header -->
 
@@ -22,4 +22,4 @@ ms.locfileid: "94596871"
    Envie uma mensagem para o bot e o bot responderá de volta.
 
    > [!div class="mx-imgBorder"]
-   > ![emulador executando cs](~/media/emulator-v4/cs-quickstart.png)
+   > ![Emulador executando cs](~/media/emulator-v4/cs-quickstart.png)

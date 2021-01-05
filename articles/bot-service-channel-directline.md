@@ -9,12 +9,12 @@ manager: kamrani
 ms.service: bot-service
 ms.topic: conceptual
 ms.date: 10/05/2020
-ms.openlocfilehash: 06e29697c4e319405c1fd48eb33d3cef022054f3
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: eed7965bdd467b5df21e4e74c4838699f481d4de
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94596838"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97758824"
 ---
 # <a name="about-direct-line"></a>Sobre o Direct Line
 [!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
@@ -35,7 +35,7 @@ Essas ofertas serão simplificadas ao longo do tempo.
 | Dá suporte a navegadores da web herdados | Sim | Sim | Sim |
 | Suporte ao SDK do Bot Framework | Todos os v3, v4 | v 4.63+ obrigatório | v 4.63+ obrigatório |
 | Suporte de SDK de cliente    | JS, C# | JS, C# | C++, C#, Unity, JS|
-| Funciona com o Bate-Papo da Web  | Sim | Sim | Não|
+| Funciona com o Bate-Papo da Web  | Sim | Sim | Sim |
 | VNET | Não | Sim | Não |
 
 ## <a name="additional-resources"></a>Recursos adicionais
@@ -43,3 +43,4 @@ Essas ofertas serão simplificadas ao longo do tempo.
 - [Conectar um bot à Linha Direta](bot-service-channel-connect-directline.md)
 - [Conectar um bot ao Direct Line Speech](bot-service-channel-connect-directlinespeech.md)
 - [Extensão do Serviço de Aplicativo do Direct Line](bot-service-channel-directline-extension.md)
+- [Usar o Web Chat com a Direct line Speech](https://github.com/microsoft/BotFramework-WebChat/blob/master/docs/DIRECT_LINE_SPEECH.md#using-direct-line-speech)

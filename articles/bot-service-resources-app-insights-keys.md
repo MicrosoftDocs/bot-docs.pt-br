@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/19/2019
-ms.openlocfilehash: 507cfb5d09005d82aff7fc121a7587bd9d6992c0
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: a13f5649d7056ce7aab8dc4c2062fda67caef82e
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414681"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97758825"
 ---
 # <a name="application-insights-keys"></a>Chaves do Application Insights
 
@@ -39,7 +39,7 @@ Para obter a chave de instrumentação, faça o seguinte:
 
 3. Clique em **Visão Geral**.
 
-4. Expanda o bloco **Conceitos básicos** e encontre a **Chave de Instrumentação**. 
+4. Expanda o bloco **Conceitos básicos** e encontre a **Chave de Instrumentação**.
 ![Captura de tela do portal da Visão geral](~/media/portal-app-insights-instrumentation-key-dropdown.png)
 ![Captura de tela do Portal da Chave de instrumentação](~/media/portal-app-insights-instrumentation-key.png)
 
@@ -50,7 +50,7 @@ Para obter a chave de instrumentação, faça o seguinte:
 Para obter o ID do Aplicativo, faça o seguinte:
 1. No recurso do Application Insights, clique em **Acesso à API**.
 
-2. Copie o **ID do Aplicativo** e cole-o no campo **ID do Aplicativo do Application Insights** das configurações do bot. 
+2. Copie o **ID do Aplicativo** e cole-o no campo **ID do Aplicativo do Application Insights** das configurações do bot.
 ![Captura de tela do portal do ID do Aplicativo](~/media/portal-app-insights-appid.png)
 
 ## <a name="api-key"></a>Chave de API
@@ -60,7 +60,7 @@ Para obter a chave da API, faça o seguinte:
 
 2. Clique em **Criar Chave de API**.
 
-3. Insira uma descrição curta, marque a opção de **Telemetria de leitura** e clique no botão **Gerar chave**.
+3. Insira uma breve descrição, marque a opção **ler telemetria** e clique no botão **gerar chave** .
 ![Captura de tela do portal do ID do Aplicativo e da Chave de API](~/media/portal-app-insights-appid-apikey.png)
 
    > [!WARNING]

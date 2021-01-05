@@ -1,21 +1,22 @@
 ---
-ms.openlocfilehash: d800747de42dd0db21167c33fc353bd2cedd3f69
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: 1e60cea3e1bda895e46b876aedcbfef8c23ac931
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94596868"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97759297"
 ---
 <!-- Include under "Create a bot" header in the files:
 bot-builder-tutorial-create-basic-bot.md and bot-builder-dotnet-sdk-quickstart.md -->
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/vs)
+
 ### <a name="build-with-visual-studio"></a>Crie com o Visual Studio
 
 No Visual Studio, crie um projeto de bot usando o modelo **Echo Bot (Bot Framework v4 – .NET Core 3.1)** . Escolha **Bots de IA** nos tipos de projetos para mostrar apenas os modelos de bot.
 
 > [!div class="mx-imgBorder"]
-> ![Caixa de diálogo Criar um projeto do Visual Studio](~/media/azure-bot-quickstarts/bot-builder-dotnet-project-vs2019.png)
+> ![Caixa de diálogo Criar um projeto do Visual Studio](../../../media/azure-bot-quickstarts/bot-builder-dotnet-project-vs2019.png)
 
 Graças ao modelo, seu projeto contém todo o código necessário para criar o bot neste início rápido. Você não precisa de nenhum código adicional para testar o bot.
 
@@ -34,10 +35,11 @@ Graças ao modelo, seu projeto contém todo o código necessário para criar o b
 Verifique se o [.NET Core 3,1](https://dotnet.microsoft.com/download) está instalado.
 
 1. No Visual Studio Code, abra uma nova janela de terminal.
+1. Navegue até o diretório no qual você deseja criar seu projeto de bot.
 1. Crie um novo projeto de bot usando o seguinte comando:
 
    ```cmd
-      dotnet new echobot -n MyEchoBot
+   dotnet new echobot -n MyEchoBot
    ```
 
 # <a name="command-line"></a>[Linha de comando](#tab/cl)
@@ -45,10 +47,11 @@ Verifique se o [.NET Core 3,1](https://dotnet.microsoft.com/download) está inst
 ### <a name="build-with-command-line"></a>Compilar com linha de comando
 
 1. Abra uma nova janela de terminal.
+1. Navegue até o diretório no qual você deseja criar seu projeto de bot.
 1. Crie um novo projeto de bot usando o seguinte comando:
 
    ```cmd
-      dotnet new echobot -n MyEchoBot
+   dotnet new echobot -n MyEchoBot
    ```
 
 ---

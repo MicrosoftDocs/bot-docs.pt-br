@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/20/2020
-ms.openlocfilehash: dd9e169a11bd52364570c63c64c6ebd7f860e517
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: 7b0383b244b950c23d91cbfa764dcfb1729707ba
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95456040"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97759044"
 ---
 # <a name="troubleshoot-general"></a>Solucionar problemas gerais
 
@@ -34,6 +34,48 @@ Essas perguntas frequentes podem ajudá-lo a solucionar problemas comuns de dese
 
 Para obter detalhes sobre como solucionar problemas de autenticação com o bot, consulte [solucionar problemas][TroubleshootingAuth] de autenticação do Bot Framework.
 
+## <a name="how-do-i-test-network-connectivity-between-bots-and-a-channel"></a>Como fazer testar a conectividade de rede entre bots e um canal?
+
+Você pode usar os endereços IP, gerados pelas etapas abaixo, para verificar se há alguma regra bloqueando a conexão com esses endereços. Consulte a seção [verificar rastreamentos do firewall em conexões com falha](#check-firewall-traces-on-failed-connections).
+
+### <a name="test-connection-from-bot-to-channel"></a>Testar conexão de bot para canal
+
+1. Em seu navegador, navegue até o [portal do Azure](https://ms.portal.azure.com).
+1. Selecione o serviço de aplicativo bot cuja conexão você deseja testar.
+1. No painel esquerdo, na seção **ferramentas de desenvolvimento** , selecione **ferramentas avançadas**.
+1. No painel direito, clique em **ir**. A página de informações do kudu é exibida.
+1. Na barra de menus superior, clique em **console de depuração**. Em seguida, no menu suspenso, clique em **cmd**. O console do aplicativo Web kudu bot é aberto. Para obter mais informações, consulte [kudu](https://github.com/projectkudu/kudu/wiki).
+
+    ![console kudu cmd](media/bot-service-troubleshoot/kudu-cmd-console.png)
+
+1. Execute `nslookup directline.botframework.com` e verifique se a resolução DNS está funcionando. Observe que `nslookup` a (pesquisa de servidor de nomes) é uma ferramenta de linha de comando de administração de rede para consultar o DNS (sistema de nomes de domínio) para obter o nome de domínio ou o mapeamento de endereço IP ou outros registros DNS.  Se a resolução de DNS estiver funcionando, a resposta para esse comando conterá as informações relevantes.
+
+    ![DNS do kudu cmd console bot Channel](media/bot-service-troubleshoot/kudu-cmd-console-bot-channel-dns.png)
+
+    A [ferramenta de pesquisa de IP whois](https://www.ultratools.com/tools/ipWhoisLookupResult) é útil para obter informações sobre endereços IP.
+
+1. Execute `curl -I directline.botframework.com`. (A opção `-I` é usada para obter uma resposta que contém apenas o cabeçalho.) Verifique se um status HTTP de 301 é retornado é uma verificação de que há conectividade.
+
+    ![console de kudu cmd http 301](media/bot-service-troubleshoot/kudu-cmd-console-http-301.png)
+
+### <a name="test-connection-from-channel-to-bot"></a>Testar conexão do canal com o bot
+
+Como a ondulação não tem acesso ao site de produção e `directline.botframework.com` está na Internet pública, você deve usar a ondulação no modo de simulação. Execute as etapas mostradas abaixo fora de uma VNET (rede virtual privada), por exemplo, usando um *hotspot* celular. Consulte também [o que é a rede virtual do Azure?](/azure/virtual-network/virtual-networks-overview).
+
+1. Execute `nslookup ivr-sr-bot.botapps.amat.com`. A resolução DNS estará funcionando se a resposta a esse comando contiver informações relevantes.
+
+    ![DNS de bot do canal do console do kudu cmd](media/bot-service-troubleshoot/kudu-cmd-console-channel-bot-dns.png)
+
+1. Execute `curl -I https://ivr-sr-bot.botapps.amat.com/api/messages` e verifique se um código de status http apropriado é retornado (por exemplo, o método 405 não é permitido). O método especificado na solicitação não é permitido para o recurso identificado pelo URI especificado. Essa é apenas uma maneira de verificar se há conectividade.
+
+    ![console de kudu cmd http 405](media/bot-service-troubleshoot/kudu-cmd-console-http-405.png)
+
+1. Se você não receber a resposta do bot, anote o endereço IP do cliente.
+
+### <a name="check-firewall-traces-on-failed-connections"></a>Verificar rastreamentos de firewall em conexões com falha
+
+Use os endereços IP de `nslookup ivr-sr-bot.botapps.amat.com` e `nslookup directline.botframework.com` e verifique se há uma regra bloqueando a conexão com esses endereços em qualquer direção.
+
 ## <a name="im-using-the-bot-framework-sdk-for-net-how-can-i-troubleshoot-issues-with-my-bot"></a>Estou usando o SDK do Bot Framework para .NET. Como é possível solucionar problemas com o bot?
 
 **Procure exceções.**
@@ -44,7 +86,6 @@ No Visual Studio, é possível escolher se está depurando [Apenas Meu Código](
 
 **Assegure-se de que todos os métodos de diálogo terminem com um plano para manipular a próxima mensagem.**
 Todas as etapas do diálogo precisam alimentar a próxima etapa da cascata, ou encerrar o diálogo atual para retirá-lo na pilha. Se uma etapa não for tratada corretamente, a conversa não continuará como você espera. Dê uma olhada no artigo de conceito sobre [diálogos](v4sdk/bot-builder-concept-dialog.md) para saber mais sobre diálogos.
-
 
 ## <a name="what-causes-an-error-with-http-status-code-429-too-many-requests"></a>O que causa um erro com o código de status HTTP 429 "Muitas solicitações"?
 
@@ -169,4 +210,3 @@ Se o bot estiver registrado em dev.botframework.com e você quiser migrá-lo par
 [BotFrameworkIDGuide]: bot-service-resources-identifiers-guide.md
 [StateAPI]: ~/rest-api/bot-framework-rest-state.md
 [TroubleshootingAuth]: bot-service-troubleshoot-authentication-problems.md
-

@@ -9,19 +9,19 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/23/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4a7081766b5cb74b818a58ba1a77c564f824fbd5
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: 779ca565acd4e2ee71dbe1b569676db8c9fbcb2d
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95449241"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97759015"
 ---
 # <a name="send-proactive-notifications-to-users"></a>Enviar notificações proativas para os usuários
 
 [!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
-Normalmente, cada mensagem que um bot envia ao usuário está diretamente relacionada à entrada anterior do usuário.
-Em alguns casos, talvez o bot precise enviar ao usuário uma mensagem sem relação direta com o tópico atual da conversa ou com a última mensagem enviada pelo usuário. Esses tipos de mensagens são chamados _mensagens proativas_.
+Normalmente, um bot envia uma mensagem a um usuário diretamente em resposta ao recebimento de uma mensagem do usuário.
+Ocasionalmente, um bot pode precisar enviar uma _mensagem proativa_, uma mensagem em resposta ao estímulo não originado do usuário.
 
 Mensagens proativas podem ser útil em uma variedade de cenários. Por exemplo, se o usuário tiver solicitado ao bot o monitoramento do preço de um produto, se o preço do produto cair 20%, o bot poderá alertar o usuário. Ou, se o bot precisar de um tempo para compilar uma resposta para a pergunta do usuário, ele poderá informar ao usuário sobre o atraso e permitir que a conversa continue enquanto isso. Quando o bot terminar de compilar a resposta para a pergunta, compartilhará essas informações com o usuário.
 
@@ -43,7 +43,27 @@ Mais informações sobre as mensagens proativas em equipes podem ser encontradas
 
 ## <a name="about-the-proactive-sample"></a>Sobre a amostra proativa
 
-A amostra tem um bot e um controlador adicional que é usado para enviar mensagens proativas para o bot, conforme mostrado na ilustração a seguir.
+Em geral, um bot como um aplicativo tem algumas camadas:
+
+- O aplicativo Web que pode aceitar solicitações HTTP e especificamente dá suporte a um ponto de extremidade de mensagens.
+- Um adaptador que lida com a conectividade com os canais.
+- Um manipulador para a ativação, normalmente encapsulado em uma classe _bot_ que manipula o raciocínio de conversação para o aplicativo bot.
+
+Em resposta a uma mensagem de entrada do usuário, o aplicativo chama o método de _atividade de processo_ do adaptador, que cria um contexto de ativar e desativar, chama seu pipeline de middleware e, em seguida, chama o manipulador de folheio do bot.
+
+Para iniciar uma mensagem proativa, o aplicativo bot precisa ser capaz de receber entradas adicionais.
+A lógica do aplicativo para iniciar uma mensagem proativa está fora do escopo do SDK.
+Para este exemplo, um ponto de extremidade de _notificação_ , além de um ponto de extremidade de _mensagens_ padrão, é usado para disparar a ativação proativa.
+
+Em resposta a uma solicitação GET nesse ponto de extremidade notificar, o aplicativo chama o método _continue Conversation_ do adaptador, que se comporta de forma semelhante ao método de _atividade Process_ . O método _continue Conversation_ :
+
+- Usa uma referência de conversa apropriada para o usuário e o método de retorno de chamada a ser usado para a opção proativa.
+- Cria uma atividade de evento e transforma o contexto para a opção proativa.
+- Chama o pipeline de middleware do adaptador.
+- Chama o método de retorno de chamada fornecido.
+- O contexto de Turn usa a referência de conversa para enviar todas as mensagens ao usuário.
+
+O exemplo tem um bot, um ponto de extremidade de mensagens e um ponto de extremidade de notificação adicional que é usado para enviar mensagens proativas para o usuário, conforme mostrado na ilustração a seguir.
 
 ![bot proativo](media/proactive-sample-bot.png)
 
@@ -80,11 +100,11 @@ A referência de conversa inclui uma propriedade de _conversa_ que descreve a co
 
 ## <a name="send-proactive-message"></a>Como enviar mensagens proativas
 
-O segundo controlador, o controlador _notificar_, é responsável por enviar a mensagem proativa para o bot. Ele usa as etapas a seguir para gerar uma mensagem proativa.
+O segundo controlador, o controlador de _notificação_ , é responsável por enviar a mensagem proativa para o usuário. Ele usa as etapas a seguir para gerar uma mensagem proativa.
 
 1. Recupera a referência para a conversa para a qual enviar a mensagem proativa.
 1. Chama o método _continue Conversation_ do adaptador, fornecendo a referência de conversa e o delegado de manipulador de ativação a ser usado. (O método continue Conversation gera um contexto de ativação para a conversa referenciada e, em seguida, chama o delegado de manipulador de ativação especificado.)
-1. No delegado, o usa o contexto de ativação para enviar a mensagem proativa.
+1. No delegado, o usa o contexto de ativação para enviar a mensagem proativa. Aqui, o delegado é definido no controlador Notify e envia a mensagem proativa para o usuário.
 
 > [!NOTE]
 > Embora cada canal deva usar uma URL de serviço estável, a URL pode mudar ao longo do tempo. Para obter mais informações sobre a URL de serviço, consulte as seções [básicas de estrutura de atividade](https://github.com/microsoft/botframework-sdk/blob/master/specs/botframework-activity/botframework-activity.md#basic-activity-structure) e URL de [serviço](https://github.com/microsoft/botframework-sdk/blob/master/specs/botframework-activity/botframework-activity.md#service-url) do esquema de atividade do bot Framework.
@@ -140,43 +160,25 @@ Uma mensagem proativa ad hoc é o tipo mais simples de mensagem proativa. O bot 
 
 Para lidar com notificações de forma mais suave, considere outras maneiras de integrar a notificação no fluxo de conversa, como definir um sinalizador no estado da conversa ou adicionar a notificação a uma fila.
 
-### <a name="avoiding-401-unauthorized-errors"></a>Como evitar erros 401 "Não Autorizados"
+### <a name="about-the-proactive-turn"></a>Sobre a opção proativa
 
-Por padrão, o SDK do Bot Builder adiciona um `serviceUrl` à lista de nomes de host confiáveis se a solicitação de entrada for autenticada pelo BotAuthentication. Eles são mantidos em um cache na memória. Se o bot for reiniciado, um usuário que estiver aguardando por uma mensagem proativa não vai recebê-la, a menos que tenha enviado uma mensagem ao bot novamente depois da reinicialização.
+O método _continue Conversation_ usa a referência de conversa e um manipulador de retorno de chamada ativado para:
 
-Para evitar isso, você deve adicionar manualmente o `serviceUrl` à lista de nomes de host confiáveis.
+1. Crie uma vez em que o aplicativo bot possa enviar a mensagem proativa. O adaptador cria uma `event` atividade para essa ativação, com seu nome definido como "ContinueConversation".
+1. Envie o por meio do pipeline de middleware do adaptador.
+1. Chame o manipulador de retorno de chamada Turn para executar a lógica personalizada.
 
-# <a name="c"></a>[C#](#tab/csharp)
+No exemplo de **mensagens proativas** , o manipulador de retorno de chamada ativado é definido no controlador de notificação e envia a mensagem diretamente para a conversa, sem enviar a atividade proativa por meio do manipulador de folheio normal do bot.
+O código de exemplo também não acessa ou atualiza o estado do bot na ativação proativa.
 
-```csharp
-MicrosoftAppCredentials.TrustServiceUrl(serviceUrl);
-```
+Muitos bots são monitorados e usam o estado para gerenciar uma conversa em várias ativações.
+Quando o método continue Conversation cria um contexto de ativação, o ativará o usuário e o estado de conversa corretos associados a ele, e você poderá integrar o proativo à lógica do bot.
+Se você precisar que a lógica de bot esteja ciente da mensagem proativa, terá algumas opções para fazer isso. Você poderá:
 
-Para enviar mensagens proativas, `serviceUrl` é a URL do canal, que o destinatário da mensagem proativa estará usando, e pode ser encontrado no `Activity.ServiceUrl`.
+- Forneça o manipulador de folheio do bot como o manipulador de retorno de chamada de ativação. O bot receberá então a atividade de evento "ContinueConversation".
+- Use o manipulador ativar retorno de chamada para adicionar informações ao contexto de ativação primeiro e, em seguida, chame o manipulador de folheio do bot.
 
-Você deve adicionar o código acima antes do código que envia a mensagem proativa. No [Exemplo de Mensagens Proativas](https://aka.ms/proactive-sample-cs), você deve colocá-lo em `NotifyController.cs` logo antes de `await turnContext.SendActivityAsync("proactive hello");`.
-
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
-
-```js
-MicrosoftAppCredentials.trustServiceUrl(serviceUrl);
-```
-
-Para enviar mensagens proativas, `serviceUrl` é a URL do canal, que o destinatário da mensagem proativa estará usando, e pode ser encontrado no `activity.serviceUrl`.
-
-Você deve adicionar o código acima antes do código que envia a mensagem proativa. No [Exemplo de Mensagens Proativas](https://aka.ms/proactive-sample-js), você deve colocá-lo em `index.js` logo antes de `await turnContext.sendActivity('proactive hello');`.
-
-# <a name="python"></a>[Python](#tab/python)
-
-```python
-MicrosoftAppCredentials.trustServiceUrl(serviceUrl)
-```
-
-Para enviar mensagens proativas, `serviceUrl` é a URL do canal, que o destinatário da mensagem proativa estará usando, e pode ser encontrado no `activity.serviceUrl`.
-
-Você deve adicionar o código acima antes do código que envia a mensagem proativa. No [Exemplo de Mensagens Proativas](https://aka.ms/bot-proactive-python-sample-code), adicione-o ao `app.py` antes de enviar a mensagem *proactive hello*.
-
----
+Em ambos os casos, você precisará criar sua lógica de bot para manipular o evento proativo.
 
 ## <a name="next-steps"></a>Próximas etapas
 

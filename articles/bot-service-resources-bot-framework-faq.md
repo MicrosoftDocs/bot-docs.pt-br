@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 07/10/2020
-ms.openlocfilehash: a8595a7bd1119e547a77f06694c3dad83fdb8b3e
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: addb9335105882a163a4ad40295cffe41389d640
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95456280"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97759034"
 ---
 # <a name="bot-framework-faq-index"></a>Índice de perguntas frequentes do bot Framework
 
@@ -47,6 +47,8 @@ Caso você não encontre a resposta que está procurando, poderá postar suas pe
 - [Quais são os limites de taxa?](bot-service-resources-faq-general.md#what-are-the-rate-limits)
 - [Como saber se estou impactado pela limitação de taxa?](bot-service-resources-faq-general.md#how-will-i-know-if-im-impacted-by-rate-limiting)
 - [Como implementar a entrega humana?](bot-service-resources-faq-general.md#how-to-implement-human-handoff)
+- [Qual é o limite de tamanho de um arquivo transferido usando um canal?](bot-service-resources-faq-general.md#what-is-the-size-limit-of-a-file-transferred-using-channels)
+
 
 <!-- Retired, re: https://github.com/MicrosoftDocs/bot-docs/issues/1698
 - [What are some community-authored dialogs?](bot-service-resources-faq-general.md#what-are-some-community-authored-dialogs)
@@ -77,6 +79,7 @@ Caso você não encontre a resposta que está procurando, poderá postar suas pe
 - [Posso bloquear todo o tráfego para o meu bot, exceto o tráfego do Bot Framework Service?](bot-service-resources-faq-security.md#can-i-block-all-traffic-to-my-bot-except-traffic-from-the-bot-framework-service)
 - [Qual função RBAC é necessária para criar e implantar um bot?](bot-service-resources-faq-security.md#which-rbac-role-is-required-to-create-and-deploy-a-bot)
 - [O que mantém o meu bot protegido de clientes que se passam pelo Bot Framework Service?](bot-service-resources-faq-security.md#what-keeps-my-bot-secure-from-clients-impersonating-the-bot-framework-service)
+- [Qual é a finalidade do código mágico durante a autenticação?](bot-service-resources-faq-security.md#what-is-the-purpose-of-the-magic-code-during-authentication)
 
 ## <a name="azure"></a>Azure
 

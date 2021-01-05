@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/01/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 1640c228e99f626f67fdc74c62928655939344a1
-ms.sourcegitcommit: e37cf15f4907910560f34445a0fbdd7ae75b4787
+ms.openlocfilehash: 6e2f656d2a6064958cb3799c0a9e696108c1af24
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92439854"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97758846"
 ---
 # <a name="use-direct-line-speech-in-your-bot"></a>Usar o Direct Line Speech no seu bot
 
@@ -165,4 +165,4 @@ protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivi
 
 - Para obter um exemplo completo de como criar e usar um bot habilitado por voz, confira o [Tutorial: habilite seu bot por voz usando o SDK de Fala](https://docs.microsoft.com/azure/cognitive-services/speech-service/tutorial-voice-enable-your-bot-speech-sdk).
 
-- Para obter mais informações sobre como trabalhar com atividades, confira  [como os bots funcionam](https://aka.ms/how-bots-work) e  [como enviar e receber mensagens de texto](https://aka.ms/bot-service-send-receive-text-messages).
+- Para obter mais informações sobre como trabalhar com atividades, consulte [como os bots funcionam](https://aka.ms/how-bots-work) e [como enviar e receber mensagens de texto](https://aka.ms/bot-service-send-receive-text-messages).

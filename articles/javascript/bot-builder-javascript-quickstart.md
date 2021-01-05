@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 10/29/2020
-ms.openlocfilehash: eb4e5ca143b6b19b92f6b044fb2f9bb6fa4af099
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: 93e4421038b599a83432750f2cd59f748096b788
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94597439"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "97759344"
 ---
 # <a name="create-a-bot-with-the-bot-framework-sdk-for-javascript"></a>Criar um bot com o SDK do Bot Framework para JavaScript
 
@@ -40,7 +40,7 @@ Este artigo mostra como criar um bot usando o gerador de Bot Builder Yeoman e o 
 
 ## <a name="start-the-emulator-and-connect-your-bot"></a>Iniciar o emulador e conectar seu bot
 
-[!INCLUDE [dotnet quickstart start emulator](~/includes/quickstart/common/quickstart-start-emulator.md)]
+[!INCLUDE [dotnet quickstart start Emulator](~/includes/quickstart/common/quickstart-start-emulator.md)]
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

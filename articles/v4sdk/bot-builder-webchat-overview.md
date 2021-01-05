@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/07/2019
-ms.openlocfilehash: c1ef1131fd318d41055cda56e28090776c714c81
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 87f4962a162c34f825eefdfce493be80c5f3ccd9
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92413525"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97759284"
 ---
 # <a name="web-chat-overview"></a>Visão geral de Webchat
 
@@ -31,7 +31,7 @@ Se você estiver buscando migrar do Webchat v3 para v4, vá diretamente para [a 
 Primeiro, crie um Bot usando o [Serviço de Bot do Azure](https://azure.microsoft.com/services/bot-service/).
 Depois que o bot for criado, você precisará [obter o segredo do Webchat do bot](../bot-service-channel-connect-webchat.md#get-your-bot-secret-key) no portal do Azure. Em seguida, use o segredo para [gerar um token](../rest-api/bot-framework-rest-direct-line-3-0-authentication.md) e passá-lo para seu Webchat.
 
-Aqui está como você pode adicionar um controle de Webchat ao seu site:
+Os exemplos a seguir mostram como adicionar um controle de chat da Web a um site.
 
 ```html
 <!DOCTYPE html>
@@ -40,6 +40,13 @@ Aqui está como você pode adicionar um controle de Webchat ao seu site:
       <div id="webchat" role="main"></div>
       <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
       <script>
+
+         // Set style options.
+         const styleOptions = {
+            botAvatarInitials: 'BF',
+            userAvatarInitials: 'WC'
+         };
+
          window.WebChat.renderWebChat(
             {
                directLine: window.WebChat.createDirectLine({
@@ -48,8 +55,7 @@ Aqui está como você pode adicionar um controle de Webchat ao seu site:
                userID: 'YOUR_USER_ID',
                username: 'Web Chat User',
                locale: 'en-US',
-               botAvatarInitials: 'WC',
-               userAvatarInitials: 'WW'
+               styleOptions
             },
             document.getElementById('webchat')
          );
@@ -58,8 +64,8 @@ Aqui está como você pode adicionar um controle de Webchat ao seu site:
 </html>
 ```
 
-> `userID`, `username`, `locale`, `botAvatarInitials` e `userAvatarInitials` são todos parâmetros opcionais para passar ao método `renderWebChat`. Para saber mais sobre as propriedades de Webchat, examine a seção [Referência da API de Webchat](#web-chat-api-reference) deste artigo.
-> ![Captura de tela do Webchat](https://raw.githubusercontent.com/Microsoft/BotFramework-WebChat/master/media/weatherquery.png.jpg)
+> `userID`, `username`, `locale`, `botAvatarInitials` e `userAvatarInitials` são todos parâmetros opcionais para passar ao método `renderWebChat`.  Para obter mais informações sobre estilo, consulte [por que styleoptions?](https://github.com/microsoft/BotFramework-WebChat/tree/master/samples/02.branding-styling-and-customization/a.branding-web-chat#why-stylesetoptions). Para saber mais sobre as propriedades de chat da Web, consulte a seção [referência da API de chat Web](#web-chat-api-reference) .
+
 
 ### <a name="integrate-with-javascript"></a>Integrar com o JavaScript
 
@@ -170,35 +176,13 @@ Uma das coisas favoritas da nossa equipe sobre a v4 do Webchat é a capacidade d
 -  Por fim, se você precisa de seu recurso assim que possível, [solicitações de pull](https://github.com/Microsoft/BotFramework-WebChat/compare) para o Webchat são bem-vindas. Se você tem experiência de codificação suficiente para implementar o recurso por conta própria, apreciamos muito o suporte adicional! Criar o recurso por conta própria significa que ele fica disponível para uso em Webchat mais rapidamente e que outros clientes que buscam um recurso igual ou semelhante podem usar sua contribuição.
 -  Confira o restante deste `README` para saber mais sobre a v4.
 
-
 ## <a name="web-chat-api-reference"></a>Referência da API do Webchat
 
-Há várias propriedades que você pode passar para seu componente React do Webchat (`<ReactWebChat>`) ou o método `renderWebChat()`. Fique à vontade examinar o código-fonte começando com [`packages/component/src/Composer.js`](https://github.com/Microsoft/BotFramework-WebChat/blob/master/packages/component/src/Composer.js#L378). Abaixo, uma breve descrição das propriedades disponíveis.
+Há várias propriedades que você pode passar para seu componente React do Webchat (`<ReactWebChat>`) ou o método `renderWebChat()`. Para obter uma breve descrição das propriedades disponíveis, consulte [Web Chat API Reference](https://github.com/microsoft/BotFramework-WebChat/blob/master/docs/API.md#web-chat-api-reference).
+Além disso, sinta-se à vontade para examinar o código-fonte começando com [`packages/component/src/Composer.js`](https://github.com/Microsoft/BotFramework-WebChat/blob/master/packages/component/src/Composer.js#L378) .
 
-| Propriedade                   | Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `activityMiddleware`       | Uma cadeia de middleware, modelada segundo o [middleware do Redux](https://medium.com/@jacobp100/you-arent-using-redux-middleware-enough-94ffe991e6), que permite que o desenvolvedor adicione novos componentes de DOM ao DOM de atividades existente atualmente. A assinatura do middleware é a seguinte: `options => next => card => children => next(card)(children)`.                                                                                                                                                                                                                                           |
-| `activityRenderer`         | A versão "nivelada" de `activityMiddleware`, semelhante ao conceito de [aprimorador de repositório](https://github.com/reduxjs/redux/blob/master/docs/Glossary.md#store-enhancer) no Redux.                                                                                                                                                                                                                                                                                                                                                                                                                |
-| `adaptiveCardHostConfig`   | Passar uma configuração de host de Cartões Adaptáveis personalizada. Verifique sua Configuração de Host com a versão dos Cartões Adaptáveis que está sendo usada. Para obter mais informações, consulte [Configuração de Host personalizada](https://github.com/microsoft/BotFramework-WebChat/issues/2034#issuecomment-501818238).                                                                                                                                                                                                                                                                                                                                    |
-| `attachmentMiddleware`     | Uma cadeia de middleware que permite que o desenvolvedor adicione seus próprios elementos HTML personalizados em anexos. A assinatura é a seguinte: `options => next => card => next(card)`.                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| `attachmentRenderer`       | A versão "nivelada" de `attachmentMiddleware`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| `cardActionMiddleware`     | Uma cadeia de middleware que permite ao desenvolvedor modificar as ações de cartão, tais como Cartões Adaptáveis ou ações sugeridas. A assinatura do middleware é a seguinte: `cardActionMiddleware: () => next => ({ cardAction, getSignInUrl }) => next(cardAction)`                                                                                                                                                                                                                                                                                                                                           |
-| `createDirectLine`         | Um método de fábrica para instanciar o objeto Direct Line. Os usuários do Azure Governamental devem usar `createDirectLine({ domain: 'https://directline.botframework.azure.us/v3/directline', token });` para alterar o ponto de extremidade. A lista completa de parâmetros são: `conversationId`, `domain`, `fetch`, `pollingInterval`, `secret`, `streamUrl`, `token`, `watermark` `webSocket`.                                                                                                                                                                                                                         |
-| `createStore`              | Uma cadeia de middleware que permite ao desenvolvedor modificar as ações de armazenamento. A assinatura do middleware é a seguinte: `createStore: ({}, ({ dispatch }) => next => action => next(cardAction)`                                                                                                                                                                                                                                                                                                                                                                                                |
-| `directLine`               | Especificar o objeto DirectLine com o token DirectLine.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| `disabled`                 | Desabilite a interface do usuário (ou seja, para o modo de apresentação) do Webchat.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| `grammars`                 | Especifique uma lista de gramática de Fala (Serviços de Fala dos Serviços Cognitivos ou Fala do Bing).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| `groupTimeStamp`           | Altere as configurações padrão para agrupamentos de carimbos de data/hora.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| `locale`                   | Indica o idioma padrão do Webchat. Códigos com quatro letras (como `en-US`) são altamente recomendados.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| `renderMarkdown`           | Altere o objeto de renderizador de Markdown padrão.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| `sendTypingIndicator`      | Exibir um sinal de digitação do usuário ao bot para indicar que o usuário não está ocioso.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| `store`                    | Especificar um repositório personalizado, por exemplo, para a adição de uma atividade programática ao bot.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| `styleOptions`             | Objeto que armazena valores de personalização para seu estilo de Webchat. Para obter uma lista completa das opções de estilo padrão (atualizada com frequência), consulte o arquivo [defaultStyleOptions.js](https://github.com/Microsoft/BotFramework-WebChat/blob/master/packages/component/src/Styles/defaultStyleOptions.js).                                                                                                                                                                                                                                                                              |
-| `styleSet`                 | A maneira não recomendada de substituir estilos.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| `userID`                   | Especificar uma userID. Há duas maneiras para especificar o `userID`: em propriedades ou no token ao gerar a chamada de token (`createDirectLine()`). Se ambos os métodos forem usados para especificar a ID do usuário, a propriedade userID do token será usada e um `console.warn` será exibido durante o runtime. Se o `userID` é fornecido por meio de objetos, mas tem `'dl'` como prefixo, por exemplo, `'dl_1234'`, o valor é lançado e um novo `ID` é gerado. Se `userID` não for especificado, ele usará por padrão uma ID de usuário aleatória. Não é recomendado que vários usuários compartilhem a mesma ID de usuário, pois o estado de usuário deles será compartilhado. |
-| `username`                 | Especificar um nome de usuário.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| `webSpeechPonyFillFactory` | Especificar o objeto de Fala da Web para conversão de texto em fala e de fala em texto.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 ## <a name="browser-compatibility"></a>Compatibilidade de navegador
+
 O Webchat é compatível com as duas versões mais recentes dos navegadores modernos, como Chrome, Microsoft Edge e Firefox.
 Se você precisar do Webchat no Internet Explorer 11, confira [pacote ES5](https://github.com/microsoft/BotFramework-WebChat/tree/master/samples/01.getting-started/c.es5-bundle) e [demonstração](https://microsoft.github.io/BotFramework-WebChat/01.getting-started/c.es5-bundle/).
 

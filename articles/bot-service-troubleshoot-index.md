@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/15/2020
-ms.openlocfilehash: e91390d182b7981d5fcf25297326bc8c3f69e911
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 3742e8e68f04dd7e4eae76e397513d9a28b7a0c1
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416534"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97759274"
 ---
 # <a name="troubleshoot-index"></a>Solucionar problemas de índice
 
@@ -28,6 +28,7 @@ Caso você não encontre a resposta que está procurando, poderá postar suas pe
 - [Como é possível solucionar problemas com o bot?](bot-service-troubleshoot-general-problems.md#how-can-i-troubleshoot-issues-with-my-bot)
 - [Como é possível solucionar problemas de autenticação?](bot-service-troubleshoot-general-problems.md#how-can-i-troubleshoot-authentication-issues)
 - [Estou usando o SDK do bot Framework para .NET. Como posso solucionar problemas com meu bot?](bot-service-troubleshoot-general-problems.md#im-using-the-bot-framework-sdk-for-net-how-can-i-troubleshoot-issues-with-my-bot)
+- [Como fazer testar a conectividade de rede entre bots e um canal?](bot-service-troubleshoot-general-problems.md#how-do-i-test-network-connectivity-between-bots-and-a-channel)
 - [O que causa um erro com o código de status HTTP 429 "Muitas solicitações"?](bot-service-troubleshoot-general-problems.md#what-causes-an-error-with-http-status-code-429-too-many-requests)
 - [Por que as mensagens do meu bot não estão sendo recebidas pelo usuário?](bot-service-troubleshoot-general-problems.md#why-arent-my-bot-messages-getting-received-by-the-user)
 - [Como é possível executar tarefas em segundo plano no ASP.NET?](bot-service-troubleshoot-general-problems.md#how-can-i-run-background-tasks-in-aspnet)

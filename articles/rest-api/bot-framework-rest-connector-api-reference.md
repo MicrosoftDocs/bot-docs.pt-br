@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 10/19/2020
-ms.openlocfilehash: 687bb79e79e84fdab31028b9bd050310143cbd51
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: 3d1d3a501b7d1e9c6b2e732a9bca7423e9a19215
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94599688"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97758804"
 ---
 # <a name="api-reference---bot-connector"></a>Referência de API-conector de bot
 
@@ -99,6 +99,10 @@ Além dos cabeçalhos de resposta HTTP padrão, cada resposta conterá um cabeç
 ## <a name="http-status-codes"></a>Códigos de status HTTP
 
 O <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" target="_blank">Código de status HTTP</a> retornado com cada resposta indica o resultado da solicitação correspondente.
+
+> [!NOTE]
+> A tabela a seguir descreve os códigos de status HTTP mais comuns.
+> Alguns erros são gerados pelo canal. Para obter mais informações, talvez seja necessário ler a documentação do desenvolvedor do canal.
 
 | Código de status HTTP | Significado |
 |----|----|
@@ -407,24 +411,24 @@ O esquema do Bot Framework define os objetos e suas propriedades que seu bot pod
 
 Define uma mensagem trocada entre o bot e o usuário.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
-| **action** | string | A ação a aplicar ou que foi aplicada. Use a propriedade **tipo** para determinar o contexto da ação. Por exemplo, se **tipo** for **contactRelationUpdate** , o valor da propriedade **ação** será **adicionar** se o usuário adicionou o bot à lista de contatos ou **remover** se o usuário removeu o bot da lista de contatos. |
-| **attachmentLayout** | string | Layout dos **anexos** de cartão avançado que a mensagem inclui. Um desses valores: **carrossel** , **lista**. Para obter mais informações sobre anexos de cartão avançado, consulte [Adicionar anexos de cartão avançado às mensagens](bot-framework-rest-connector-add-rich-cards.md). |
+| **action** | string | A ação a aplicar ou que foi aplicada. Use a propriedade **tipo** para determinar o contexto da ação. Por exemplo, se **tipo** for **contactRelationUpdate**, o valor da propriedade **ação** será **adicionar** se o usuário adicionou o bot à lista de contatos ou **remover** se o usuário removeu o bot da lista de contatos. |
+| **attachmentLayout** | string | Layout dos **anexos** de cartão avançado que a mensagem inclui. Um desses valores: **carrossel**, **lista**. Para obter mais informações sobre anexos de cartão avançado, consulte [Adicionar anexos de cartão avançado às mensagens](bot-framework-rest-connector-add-rich-cards.md). |
 | **attachments** | [Attachment](#attachment-object)[] | Matriz de objetos **Anexo** que define informações adicionais para incluir na mensagem. Cada anexo pode ser um arquivo (por exemplo, áudio, vídeo, imagem) ou um cartão avançado. |
 | **callerId** | string | Uma cadeia de caracteres que contém um IRI que identifica o chamador de um bot. Este campo não se destina a ser transmitido eletronicamente; em vez disso, ele é preenchido por bots e clientes com base em dados verificáveis criptograficamente que declara a identidade dos chamadores (por exemplo, tokens). |
 | **channelData** | objeto | Um objeto que contém conteúdo específico do canal. Alguns canais fornecem recursos que exigem informações adicionais que não podem ser representadas usando o esquema de anexo. Para esses casos, defina essa propriedade para o conteúdo específico do canal, conforme definido na documentação do canal. Para obter mais informações, consulte [Implementar funcionalidade específica do canal](bot-framework-rest-connector-channeldata.md). |
 | **channelId** | string | Uma ID que identifica exclusivamente o canal. Definida pelo canal. |
 | **code** | string | Código indicando por que a conversa encerrou. |
 | **conversa** | [ConversationAccount](#conversationaccount-object) | Um objeto **ConversationAccount** que define a conversa à qual a atividade pertence. |
-| **deliveryMode** | string | Uma dica de entrega para sinalizar os caminhos de entrega alternativos do destinatário para a atividade. Um desses valores: **normal** , **notification**. |
+| **deliveryMode** | string | Uma dica de entrega para sinalizar os caminhos de entrega alternativos do destinatário para a atividade. Um desses valores: **normal**, **notification**. |
 | **entidades** | object[] | Matriz de objetos que representa as entidades mencionadas na mensagem. Objetos nessa matriz podem ser qualquer objeto [Schema.org](http://schema.org/). Por exemplo, a matriz pode incluir objetos [Menção](#mention-object) que identificam alguém que foi mencionado na conversa e objetos [Local](#place-object) que identificam um local mencionado na conversa. |
 | **expiration** | string | A hora na qual a atividade deve ser considerada "expirada" e não deve ser apresentada ao destinatário. |
 | **from** | [ChannelAccount](#channelaccount-object) | Um objeto **ChannelAccount** que especifica o remetente da mensagem. |
 | **historyDisclosed** | booleano | Sinalizador que indica se o histórico é ou não divulgado. O valor padrão é **false**. |
 | **id** | string | ID que identifica exclusivamente a atividade no canal. |
-| **importance** | string | Define a importância de uma Atividade. Um destes valores: **low** , **normal** , **high**. |
-| **inputHint** | string | Valor que indica se o bot está aceitando, esperando ou ignorando a entrada do usuário após a entrega da mensagem ao cliente. Um desses valores: **acceptingInput** , **expectingInput** , **ignoringInput**. |
+| **importance** | string | Define a importância de uma Atividade. Um destes valores: **low**, **normal**, **high**. |
+| **inputHint** | string | Valor que indica se o bot está aceitando, esperando ou ignorando a entrada do usuário após a entrega da mensagem ao cliente. Um desses valores: **acceptingInput**, **expectingInput**, **ignoringInput**. |
 | **label** | string | Um rótulo descritivo da atividade. |
 | **listenFor** | string[] | Lista de frases e referências que os sistemas de preparação da fala e de linguagem devem escutar. |
 | **locale** | string | Localidade do idioma que deve ser usado para exibir texto dentro da mensagem, no formato `<language>-<country>`. O canal usa essa propriedade para indicar o idioma do usuário, para que o bot possa especificar cadeia de caracteres de exibição nesse idioma. O valor padrão é **en-US**. |
@@ -444,11 +448,11 @@ Define uma mensagem trocada entre o bot e o usuário.
 | **suggestedActions** | [SuggestedActions](#suggestedactions-object) | Um objeto **SuggestedActions** que define as opções a partir das quais o usuário poderá escolher. |
 | **summary** | string | Resumo das informações que a mensagem contém. Por exemplo, para uma mensagem enviada em um canal de email, essa propriedade pode especificar os primeiros 50 caracteres da mensagem de email. |
 | **text** | string | Texto da mensagem que é enviada do usuário para o bot ou do bot para o usuário. Consulte a documentação do canal para os limites impostos sobre o conteúdo dessa propriedade. |
-| **textFormat** | string | Formato do **texto** da mensagem. Um desses valores: **markdown** , **plain** , **xml**. Para detalhes sobre o formato de texto, consulte [Criar mensagens](bot-framework-rest-connector-create-messages.md). |
+| **textFormat** | string | Formato do **texto** da mensagem. Um desses valores: **markdown**, **plain**, **xml**. Para detalhes sobre o formato de texto, consulte [Criar mensagens](bot-framework-rest-connector-create-messages.md). |
 | **textHighlights** | [TextHighlight](#texthighlight-object)[] | A coleção de fragmentos de texto a serem realçados quando a atividade contém um valor **replyToId**. |
 | **timestamp** | string | Data e hora em que a mensagem foi enviada no fuso horário UTC, expressa no formato [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601). |
 | **topicName** | string | Tópico da conversa à qual a atividade pertence. |
-| **tipo** | string | Tipo de atividade. Um destes valores: **message** , **contactRelationUpdate** , **conversationUpdate** , **typing** , **endOfConversation** , **event** , **invoke** , **deleteUserData** , **messageUpdate** , **messageDelete** , **installationUpdate** , **messageReaction** , **suggestion** , **trace** , **handoff**. Para detalhes sobre tipos de atividade, consulte [Visão geral das atividades](https://aka.ms/botSpecs-activitySchema). |
+| **tipo** | string | Tipo de atividade. Um destes valores: **message**, **contactRelationUpdate**, **conversationUpdate**, **typing**, **endOfConversation**, **event**, **invoke**, **deleteUserData**, **messageUpdate**, **messageDelete**, **installationUpdate**, **messageReaction**, **suggestion**, **trace**, **handoff**. Para detalhes sobre tipos de atividade, consulte [Visão geral das atividades](https://aka.ms/botSpecs-activitySchema). |
 | **value** | objeto | Valor em aberto. |
 | **valueType** | string | O tipo do objeto de valor da atividade. |
 
@@ -458,7 +462,7 @@ Define uma mensagem trocada entre o bot e o usuário.
 
 Define um cartão que pode reproduzir GIFs animados ou vídeos curtos.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **aspect** | booleano | Taxa de proporção do espaço reservado de miniatura/mídia. Os valores permitidos são “16:9” e “4:3”. |
 | **autoloop** | booleano | Sinalizador que indica se deve repetir a lista de GIFs animados quando o último encerrar. Configure essa propriedade como **true** para reproduzir automaticamente a animação, caso contrário, como **false**. O valor padrão é **true**. |
@@ -479,10 +483,10 @@ Define um cartão que pode reproduzir GIFs animados ou vídeos curtos.
 
 Define informações adicionais para incluir na mensagem. Um anexo pode ser um arquivo (como uma imagem, áudio ou vídeo) ou um cartão avançado.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **content** | objeto | O conteúdo do anexo. Se o anexo for um cartão avançado, defina essa propriedade para o objeto cartão avançado. Essa propriedade e a propriedade **contentUrl** são mutuamente exclusivas. |
-| **contentType** | string | O tipo de mídia do conteúdo no anexo. Para arquivos de mídia, defina essa propriedade para tipos de mídia conhecidos, como **image/png** , **audio/wav** e **video/mp4**. Para cartões avançados, defina essa propriedade para um desses tipos específicos do fornecedor:<ul><li>**application/vnd.microsoft.card.adaptive** : Um cartão sofisticado que pode conter qualquer combinação de texto, fala, imagens, botões e campos de entrada. Defina a propriedade de **conteúdo** para um objeto [AdaptiveCard](https://adaptivecards.io/explorer/AdaptiveCard.html).</li><li>**application/vnd.microsoft.card.animation** : Um cartão sofisticado que reproduz animação. Defina a propriedade de **conteúdo** para um objeto [AnimationCard](#animationcard-object).</li><li>**application/vnd.microsoft.card.audio** : Um cartão sofisticado que reproduz arquivos de áudio. Defina a propriedade de **conteúdo** como um objeto [AudioCard](#audiocard-object).</li><li>**application/vnd.microsoft.card.hero** : Um cartão em destaque. Defina e propriedade de **conteúdo** para um objeto [HeroCard](#herocard-object).</li><li>**application/vnd.microsoft.card.receipt** : Um cartão de recibo. Defina e propriedade de **conteúdo** para um objeto [ReceiptCard](#receiptcard-object).</li><li>**application/vnd.microsoft.card.signin** : Um cartão de entrada do usuário. Defina e propriedade de **conteúdo** para um objeto [SignInCard](#signincard-object).</li><li>**application/vnd.microsoft.card.thumbnail** : Um cartão em miniatura. Defina a propriedade de **conteúdo** para um objeto [ThumbnailCard](#thumbnailcard-object).</li><li>**application/vnd.microsoft.card.video** : Um cartão sofisticado que reproduz vídeos. Defina a propriedade de **conteúdo** para um objeto [VideoCard](#videocard-object).</li></ul> |
+| **contentType** | string | O tipo de mídia do conteúdo no anexo. Para arquivos de mídia, defina essa propriedade para tipos de mídia conhecidos, como **image/png**, **audio/wav** e **video/mp4**. Para cartões avançados, defina essa propriedade para um desses tipos específicos do fornecedor:<ul><li>**application/vnd.microsoft.card.adaptive**: Um cartão sofisticado que pode conter qualquer combinação de texto, fala, imagens, botões e campos de entrada. Defina a propriedade de **conteúdo** para um objeto [AdaptiveCard](https://adaptivecards.io/explorer/AdaptiveCard.html).</li><li>**application/vnd.microsoft.card.animation**: Um cartão sofisticado que reproduz animação. Defina a propriedade de **conteúdo** para um objeto [AnimationCard](#animationcard-object).</li><li>**application/vnd.microsoft.card.audio**: Um cartão sofisticado que reproduz arquivos de áudio. Defina a propriedade de **conteúdo** como um objeto [AudioCard](#audiocard-object).</li><li>**application/vnd.microsoft.card.hero**: Um cartão em destaque. Defina e propriedade de **conteúdo** para um objeto [HeroCard](#herocard-object).</li><li>**application/vnd.microsoft.card.receipt**: Um cartão de recibo. Defina e propriedade de **conteúdo** para um objeto [ReceiptCard](#receiptcard-object).</li><li>**application/vnd.microsoft.card.signin**: Um cartão de entrada do usuário. Defina e propriedade de **conteúdo** para um objeto [SignInCard](#signincard-object).</li><li>**application/vnd.microsoft.card.thumbnail**: Um cartão em miniatura. Defina a propriedade de **conteúdo** para um objeto [ThumbnailCard](#thumbnailcard-object).</li><li>**application/vnd.microsoft.card.video**: Um cartão sofisticado que reproduz vídeos. Defina a propriedade de **conteúdo** para um objeto [VideoCard](#videocard-object).</li></ul> |
 | **contentUrl** | string | URL para o conteúdo do anexo. Por exemplo, se o anexo for uma imagem, será possível definir **contentUrl** como a URL que representa o local da imagem. Os protocolos com suporte são: HTTP, HTTPS, Arquivo e Dados. |
 | **name** | string | Nome do anexo. |
 | **thumbnailUrl** | string | URL para uma imagem em miniatura que o canal pode usar se for compatível com o uso de uma forma alternativa menor de **conteúdo** ou **contentUrl**. Por exemplo, se você definir **contentType** como **application/word** e definir **contentUrl** como o local do documento do Word, talvez inclua uma imagem em miniatura que represente o documento. O canal pode exibir a imagem em miniatura em vez do documento. Quando o usuário clicar na imagem, o canal abrirá o documento. |
@@ -493,7 +497,7 @@ Define informações adicionais para incluir na mensagem. Um anexo pode ser um a
 
 Descreve os dados de um anexo.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **name** | string | Nome do anexo. |
 | **originalBase64** | string | Conteúdo do anexo. |
@@ -506,7 +510,7 @@ Descreve os dados de um anexo.
 
 Metadados de um anexo.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **name** | string | Nome do anexo. |
 | **tipo** | string | Tipo de conteúdo do anexo. |
@@ -518,7 +522,7 @@ Metadados de um anexo.
 
 Define um modo de exibição de anexo.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **size** | número | Tamanho do arquivo. |
 | **viewId** | string | ID da exibição. |
@@ -529,7 +533,7 @@ Define um modo de exibição de anexo.
 
 Define um cartão que pode reproduzir um arquivo de áudio.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **aspect** | string | Proporção da miniatura especificada na propriedade da **imagem**. Os valores válidos são **16:9** e **4:3**. |
 | **autoloop** | booleano | Sinalizador que indica se deverá reproduzir a lista de arquivos de áudio quando o último encerrar. Defina essa propriedade como **true** para reproduzir automaticamente os arquivos de áudio, caso contrário, como **false**. O valor padrão é **true**. |
@@ -550,7 +554,7 @@ Define um cartão que pode reproduzir um arquivo de áudio.
 
 Define uma ação que pode ser clicada com um botão.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **channelData** | string | Dados específicos do canal associados a esta ação. |
 | **displayText** | string | Texto a ser exibido no feed do chat se o botão receber cliques. |
@@ -566,7 +570,7 @@ Define uma ação que pode ser clicada com um botão.
 
 Define uma imagem para exibir em um cartão.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **alt** | string | Descrição da imagem. É necessário incluir a descrição para dar suporte à acessibilidade. |
 | **tap** | [CardAction](#cardaction-object) | Um objeto **CardAction** que especificará a ação a ser executada se o usuário tocar ou clicar na imagem. |
@@ -578,7 +582,7 @@ Define uma imagem para exibir em um cartão.
 
 Define um bot ou uma conta de usuário no canal.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **aadObjectId** | string | A ID de objeto desta conta no Azure Active Directory. |
 | **id** | string | ID exclusiva para o usuário ou bot neste canal. |
@@ -591,7 +595,7 @@ Define um bot ou uma conta de usuário no canal.
 
 Define uma conversa em um canal.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **aadObjectId** | string | A ID de objeto da conta dentro do AAD (Azure Active Directory). |
 | **conversationType** | string | Indica o tipo de conversa nos canais que diferenciam os tipos de conversas (por exemplo, grupo, pessoal). |
@@ -607,7 +611,7 @@ Define uma conversa em um canal.
 
 Define os membros de uma conversa.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **id** | string | A ID da conversa. |
 | **members** | [ChannelAccount](#channelaccount-object)[] | Lista de membros nesta conversa. |
@@ -618,7 +622,7 @@ Define os membros de uma conversa.
 
 Define parâmetros para criar uma conversa.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **activity** | [Atividade](#activity-object) | A mensagem inicial a ser enviada para a conversa quando ela for criada. |
 | **bot** | [ChannelAccount](#channelaccount-object) | Informações de conta do canal necessárias para rotear uma mensagem para o bot. |
@@ -634,7 +638,7 @@ Define parâmetros para criar uma conversa.
 
 Define um ponto específico em uma conversa.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **activityId** | string | ID que identifica exclusivamente a atividade à qual esse objeto faz referência. |
 | **bot** | [ChannelAccount](#channelaccount-object) | Um objeto **ChannelAccount** que identifica o bot na conversa à qual esse objeto faz referência. |
@@ -649,7 +653,7 @@ Define um ponto específico em uma conversa.
 
 Define uma resposta a [Criar conversa](#create-conversation).
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **activityId** | string | ID da atividade, se enviada. |
 | **id** | string | ID do recurso. |
@@ -661,7 +665,7 @@ Define uma resposta a [Criar conversa](#create-conversation).
 
 Define o resultado de [Obter conversas](#get-conversations).
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **conversations** | [ConversationMembers](#conversationmembers-object)[] | Os membros em cada uma das conversas. |
 | **continuationToken** | string | O token de continuação que pode ser usado em chamadas posteriores a [Obter conversas](#get-conversations). |
@@ -672,7 +676,7 @@ Define o resultado de [Obter conversas](#get-conversations).
 
 Objeto de metadados pertencente a uma atividade.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **tipo** | string | Tipo desta entidade (RFC 3987 IRI). |
 
@@ -682,7 +686,7 @@ Objeto de metadados pertencente a uma atividade.
 
 Objeto representando informações de erro.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **code** | string | Código do erro. |
 | **innerHttpError** | [InnerHttpError](#innerhttperror-object) | Objeto representando o erro HTTP interno. |
@@ -694,7 +698,7 @@ Objeto representando informações de erro.
 
 Define uma resposta de API HTTP.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **error** | [Erro](#error-object) | Um objeto **Erro** que contém informações sobre o erro. |
 
@@ -704,7 +708,7 @@ Define uma resposta de API HTTP.
 
 Define um par chave-valor que contém um fato.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **chave** | string | Nome do fato. Por exemplo, **Check-in**. A chave é usada como um rótulo ao exibir o valor do fato. |
 | **value** | string | Valor do fato. Por exemplo, **10 de outubro de 2016**. |
@@ -715,7 +719,7 @@ Define um par chave-valor que contém um fato.
 
 Define uma localização geográfica usando as coordenadas WSG84 (World Geodetic System).
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **elevation** | número | Elevação da localização. |
 | **latitude** | número | Latitude da localização. |
@@ -729,7 +733,7 @@ Define uma localização geográfica usando as coordenadas WSG84 (World Geodetic
 
 Define um cartão com uma imagem grande, título, texto e botões de ação.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **buttons** | [CardAction](#cardaction-object)[] | Matriz de objetos **CardAction** que permitem ao usuário executar uma ou mais ações. O canal determina o número de botões que você pode especificar. |
 | **images** | [CardImage](#cardimage-object)[] | Matriz de objetos **CardImage** que especifica a imagem a ser exibida no cartão. Um cartão Hero contém apenas uma imagem. |
@@ -744,7 +748,7 @@ Define um cartão com uma imagem grande, título, texto e botões de ação.
 
 Objeto representando um erro HTTP interno.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **statusCode** | número | Código de status HTTP da solicitação com falha. |
 | **body** | objeto | Corpo da solicitação com falha. |
@@ -755,7 +759,7 @@ Objeto representando um erro HTTP interno.
 
 Parâmetro suplementar para eventos de mídia.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **cardValue** | objeto | Parâmetro de retorno de chamada especificado no campo **value** do cartão de mídia que originou esse evento. |
 
@@ -765,7 +769,7 @@ Parâmetro suplementar para eventos de mídia.
 
 Define a URL para a fonte de um arquivo de mídia.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **profile** | string | Dica que descreve o conteúdo da mídia. |
 | **url** | string | URL para a origem do arquivo de mídia. |
@@ -776,7 +780,7 @@ Define a URL para a fonte de um arquivo de mídia.
 
 Define um usuário ou bot que foi mencionado na conversa.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **mentioned** | [ChannelAccount](#channelaccount-object) | Um objeto **ChannelAccount** que especifica o usuário ou o bot que foi mencionado. Observe que alguns canais, como Slack, atribuem nomes por conversa, portanto, é possível que o nome mencionado do bot (na propriedade do **destinatário** ) seja diferente do identificador especificado quando você [registrou](../bot-service-quickstart-registration.md) o bot. No entanto, as IDs da conta para ambos seriam as mesmas. |
 | **text** | string | O usuário ou bot como mencionado na conversa. Por exemplo, se a mensagem for " @ColorBot escolher uma nova cor", essa propriedade será definida como **\@ ColorBot**. Nem todos os canais definem essa propriedade. |
@@ -788,7 +792,7 @@ Define um usuário ou bot que foi mencionado na conversa.
 
 Define uma reação a uma mensagem.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **tipo** | string | Tipo de reação. **like** ou **plusOne**. |
 
@@ -798,7 +802,7 @@ Define uma reação a uma mensagem.
 
 Página de membros retornada por [Obter Membros Paginados da Conversa](#get-conversation-paged-members).
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **continuationToken** | string | O token de continuação que pode ser usado em chamadas posteriores a [Obter Membros Paginados da Conversa](#get-conversation-paged-members). |
 | **members** | [ChannelAccount](#channelaccount-object)[] | Uma matriz de membros de conversa. |
@@ -809,7 +813,7 @@ Página de membros retornada por [Obter Membros Paginados da Conversa](#get-conv
 
 Define um local que foi mencionado na conversa.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **address** | objeto |  Endereço de um local. Essa propriedade pode ser uma **cadeia de caracteres** ou um objeto complexo do tipo **PostalAddress**. |
 | **geo** | [GeoCoordinates](#geocoordinates-object) | Um objeto **GeoCoordinates** que especifica as coordenadas geográficas do lugar. |
@@ -823,7 +827,7 @@ Define um local que foi mencionado na conversa.
 
 Define um cartão que contém um recibo para uma compra.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **buttons** | [CardAction](#cardaction-object)[] | Matriz de objetos **CardAction** que permitem ao usuário executar uma ou mais ações. O canal determina o número de botões que você pode especificar. |
 | **facts** | [Fact](#fact-object)[] | Matriz de objetos **Fato** que especificam informações sobre a compra. Por exemplo, a lista de fatos para um recibo de hospedagem pode incluir a data de check-in e a data de check-out. O canal determina o número de fatos que podem ser especificados. |
@@ -840,7 +844,7 @@ Define um cartão que contém um recibo para uma compra.
 
 Define um item de linha dentro de um recibo.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **imagem** | [CardImage](#cardimage-object) | Um objeto **CardImage** que especifica a imagem em miniatura para exibir ao lado do item de linha.  |
 | **price** | string | Uma cadeia de caracteres formatada como moeda que especifica o preço total de todas as unidades compradas. |
@@ -856,7 +860,7 @@ Define um item de linha dentro de um recibo.
 
 Define uma resposta que contém uma ID de recurso.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **id** | string | ID que identifica exclusivamente o recurso. |
 
@@ -866,11 +870,11 @@ Define uma resposta que contém uma ID de recurso.
 
 Define uma referência a uma ação através programática.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **entidades** | objeto | Um objeto em que o valor de cada propriedade é um objeto [Entity](#entity-object). |
 | **id** | string | ID desta ação. |
-| **state** | string | Estado desta ação. Valores permitidos: **start** , **continue** , **done**. |
+| **state** | string | Estado desta ação. Valores permitidos: **start**, **continue**, **done**. |
 
 [Retornar à tabela de esquemas](#schema)
 
@@ -878,7 +882,7 @@ Define uma referência a uma ação através programática.
 
 Define um cartão que permite ao usuário entrar em um serviço.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **buttons** | [CardAction](#cardaction-object)[] | Matriz de objetos **CardAction** que permitem ao usuário entrar em um serviço. O canal determina o número de botões que você pode especificar. |
 | **text** | string | Descrição ou solicitação para incluir no cartão de entrada. |
@@ -889,7 +893,7 @@ Define um cartão que permite ao usuário entrar em um serviço.
 
 Define as opções que um usuário pode escolher.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **actions** | [CardAction](#cardaction-object)[] | Matriz de objetos **CardAction** que definem as ações sugeridas. |
 | **to** | string[] | Matriz de cadeias de caracteres que contém as IDs dos destinatários para os quais as ações sugeridas devem ser exibidas. |
@@ -900,7 +904,7 @@ Define as opções que um usuário pode escolher.
 
 Refere-se a uma substring de conteúdo dentro de outro campo.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **occurrence** | número | Ocorrência do campo de texto dentro do texto referenciado, se houver vários. |
 | **text** | string | Define o snippet de texto a ser realçado. |
@@ -911,7 +915,7 @@ Refere-se a uma substring de conteúdo dentro de outro campo.
 
 Define um cartão com uma imagem em miniatura, título, texto e botões de ação.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **buttons** | [CardAction](#cardaction-object)[] | Matriz de objetos **CardAction** que permitem ao usuário executar uma ou mais ações. O canal determina o número de botões que você pode especificar. |
 | **images** | [CardImage](#cardimage-object)[] | Matriz de objetos **CardImage** que especificam imagens em miniatura para exibir no cartão. O canal determina o número de imagens em miniatura que podem ser especificados. |
@@ -926,7 +930,7 @@ Define um cartão com uma imagem em miniatura, título, texto e botões de açã
 
 Define a URL para a fonte de uma imagem.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **alt** | string | Descrição da imagem. É necessário incluir a descrição para dar suporte à acessibilidade. |
 | **url** | string | URL para a origem da imagem ou o binário base64 da imagem (por exemplo, `data:image/png;base64,iVBORw0KGgo...`). |
@@ -937,7 +941,7 @@ Define a URL para a fonte de uma imagem.
 
 Uma coleção de atividades a ser carregada usando [Enviar histórico da conversa](#send-conversation-history).
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **activities** | matriz | Uma matriz de objetos [Atividade](#activity-object). Eles devem ter uma ID exclusiva e um carimbo de data/hora. |
 
@@ -947,7 +951,7 @@ Uma coleção de atividades a ser carregada usando [Enviar histórico da convers
 
 Define um cartão que pode reproduzir vídeos.
 
-| Propriedade | Type | Descrição |
+| Propriedade | Tipo | Descrição |
 |----|----|----|
 | **aspect** | string | Taxa de proporção do vídeo. **16:9** ou **4:3**. |
 | **autoloop** | booleano | Sinalizador que indica se deverá reproduzir a lista de vídeos quando o último encerrar. Defina esta propriedade como **true** para reproduzir automaticamente os vídeos, caso contrário, como **false**. O valor padrão é **true**. |

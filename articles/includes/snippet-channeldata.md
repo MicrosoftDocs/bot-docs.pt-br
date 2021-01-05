@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 392eb8bb197105739222c37f695cfd785515b323
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: 4834b147610c8520b412b931c5c608aaeff1a7e9
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80117841"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97762581"
 ---
 Alguns canais fornecem recursos que não podem ser implementados apenas com o uso de texto e anexos da mensagem. Para implementar funcionalidades específicas do canal, passe metadados nativos para um canal na propriedade _dados do canal_ do objeto da atividade. Por exemplo, o bot pode usar a propriedade dados do canal para instruir o Telegram a enviar um adesivo ou para instruir o Office 365 a enviar um email.
 
@@ -25,39 +25,21 @@ Este artigo descreve como usar a propriedade dados do canal de uma atividade de 
 
 ## <a name="create-a-custom-email-message"></a>Criar uma mensagem de Email personalizada
 
-Para criar uma mensagem de email, defina a propriedade dados do canal do objeto de atividade como um objeto JSON que contém essas propriedades:
+Para criar uma mensagem de email personalizada, defina a `channelData` Propriedade atividade como um objeto JSON que contém as seguintes propriedades:
 
-| Propriedade      | Descrição                                                                                                                                                  |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| bccRecipients | Uma cadeia de caracteres delimitada por ponto e vírgula (;) de endereços de email a ser adicionada ao campo Cco (cópia oculta) da mensagem.                                                   |
-| ccRecipients  | Uma cadeia de caracteres delimitada por ponto e vírgula (;) de endereços de email a ser adicionada ao campo Cc (cópia carbono) da mensagem.                                                          |
+| Propriedade | Descrição |
+| :--- | :--- |
+| bccRecipients | Uma cadeia de caracteres delimitada por ponto e vírgula (;) de endereços de email a ser adicionada ao campo Cco (cópia oculta) da mensagem.|
+| ccRecipients  | Uma cadeia de caracteres delimitada por ponto e vírgula (;) de endereços de email a ser adicionada ao campo Cc (cópia carbono) da mensagem. |
 | htmlBody      | Um documento HTML que especifica o corpo da mensagem de email. Consulte a documentação do canal para obter informações sobre atributos e elementos HTML com suporte. |
-| importance    | O nível de importância do email. Os valores válidos são **alta**, **normal**, e **baixa**. O valor padrão é **normal**.                                           |
-| subject       | O assunto do email. Consulte a documentação do canal para obter informações sobre requisitos de campo.                                                               |
-| toRecipients  | Uma cadeia de caracteres delimitada por ponto e vírgula (;) de endereços de email a ser adicionada ao campo Para da mensagem.                                                                        |
+| importance    | O nível de importância do email. Os valores válidos são **alta**, **normal**, e **baixa**. O valor padrão é **normal**.|
+| subject       | O assunto do email. Consulte a documentação do canal para obter informações sobre requisitos de campo.|
+| toRecipients  | Uma cadeia de caracteres delimitada por ponto e vírgula (;) de endereços de email a ser adicionada ao campo Para da mensagem.|
 
-> [!NOTE]
-> As mensagens que seu bot recebe de usuários por meio do canal de email podem conter uma propriedade de dados do canal que é preenchida com um objeto JSON como aquele descrito acima.
+As mensagens de saída e de entrada entre o usuário e o bot podem ter uma `channelData` atividade que contém um objeto JSON cujas propriedades são especificadas na tabela anterior.
+O trecho de código abaixo mostra um exemplo da `channelData` propriedade de uma mensagem de email personalizada de entrada, do bot ao usuário.
 
-Este snippet mostra um exemplo da propriedade `channelData` para uma mensagem de email personalizada.
-
-```json
-"channelData": {
-    "type": "message",
-    "locale": "en-Us",
-    "channelID": "email",
-    "from": { "id": "mybot@mydomain.com", "name": "My bot"},
-    "recipient": { "id": "joe@otherdomain.com", "name": "Joe Doe"},
-    "conversation": { "id": "123123123123", "topic": "awesome chat" },
-    "channelData":
-    {
-        "htmlBody": "<html><body style = /"font-family: Calibri; font-size: 11pt;/" >This is more than awesome.</body></html>",
-        "subject": "Super awesome message subject",
-        "importance": "high",
-        "ccRecipients": "Yasemin@adatum.com;Temel@adventure-works.com"
-    }
-}
-```
+[!INCLUDE [email channelData json](~/includes/snippet-channelData-email.md)]
 
 ## <a name="create-a-full-fidelity-slack-message"></a>Criar uma mensagem do Slack com fidelidade total
 
@@ -254,7 +236,7 @@ Para criar uma notificação do Facebook, defina a propriedade dados do canal do
 | attachment        | Um anexo que especifica uma imagem, um vídeo ou outro tipo de multimídia ou um anexo modelo como um recibo. |
 
 > [!NOTE]
-> Para obter detalhes sobre o formato e o conteúdo das propriedades `notification_type` e `attachment`, confira a <a href="https://developers.facebook.com/docs/messenger-platform/send-api-reference#guidelines" target="_blank">documentação da API do Facebook</a>. 
+> Para obter detalhes sobre o formato e o conteúdo das propriedades `notification_type` e `attachment`, confira a <a href="https://developers.facebook.com/docs/messenger-platform/send-api-reference#guidelines" target="_blank">documentação da API do Facebook</a>.
 
 Este snippet mostra um exemplo da propriedade `channelData` para um anexo de recibo do Facebook.
 
@@ -273,14 +255,14 @@ Este snippet mostra um exemplo da propriedade `channelData` para um anexo de rec
 
 ## <a name="create-a-telegram-message"></a>Criar uma mensagem do Telegram
 
-Para criar uma mensagem que implementa ações específicas do Telegram, como compartilhar um memorando de voz ou um adesivo, defina a propriedade dados do canal do objeto de atividade em um objeto JSON que especifique estas propriedades: 
+Para criar uma mensagem que implementa ações específicas do Telegram, como compartilhar um memorando de voz ou um adesivo, defina a propriedade dados do canal do objeto de atividade em um objeto JSON que especifique estas propriedades:
 
 | Propriedade   | Descrição                             |
 | ---------- | --------------------------------------- |
 | method     | O método de API do Bot do Telegram a ser chamado.    |
 | parâmetros | Os parâmetros do método especificado. |
 
-Há suporte para estes métodos do Telegram: 
+Há suporte para estes métodos do Telegram:
 
 - answerInlineQuery
 - editMessageCaption
@@ -433,7 +415,7 @@ Este snippet mostra um exemplo da propriedade `channelData` para uma mensagem na
 
 ## <a name="create-a-line-message"></a>Criar uma mensagem do LINE
 
-Para criar uma mensagem que implementa os tipos de mensagem específicos para LINE (por exemplo, adesivos, modelos ou tipos de ação específica para LINE como abrir a câmera do telefone), defina a propriedade de dados de canal do objeto de atividade como um objeto JSON que especifica os tipos de ação e de mensagem do LINE. 
+Para criar uma mensagem que implementa os tipos de mensagem específicos para LINE (por exemplo, adesivos, modelos ou tipos de ação específica para LINE como abrir a câmera do telefone), defina a propriedade de dados de canal do objeto de atividade como um objeto JSON que especifica os tipos de ação e de mensagem do LINE.
 
 | Propriedade | Descrição                       |
 | -------- | --------------------------------- |
@@ -441,59 +423,59 @@ Para criar uma mensagem que implementa os tipos de mensagem específicos para LI
 
 Há suporte para esses tipos de mensagem do LINE:
 * Adesivo
-* Imagemap 
-* Modelo (botão, confirmar, carrossel) 
-* Flex 
+* Imagemap
+* Modelo (botão, confirmar, carrossel)
+* Flex
 
-Essas ações do LINE podem ser especificadas no campo de ação do objeto de tipo de mensagem JSON: 
-* Postback 
-* Mensagem 
-* URI 
-* Datetimerpicker 
-* Câmera 
-* Rolo da câmera 
-* Location 
+Essas ações do LINE podem ser especificadas no campo de ação do objeto de tipo de mensagem JSON:
+* Postback
+* Mensagem
+* URI
+* Datetimerpicker
+* Câmera
+* Rolo da câmera
+* Location
 
-Para obter detalhes sobre esses métodos do LINE e seus parâmetros, confira a [documentação da API do Bot do LINE](https://developers.line.biz/en/docs/messaging-api/). 
+Para obter detalhes sobre esses métodos do LINE e seus parâmetros, confira a [documentação da API do Bot do LINE](https://developers.line.biz/en/docs/messaging-api/).
 
-Este snippet mostra um exemplo de uma propriedade `channelData` que especifica um tipo de mensagem de canal `ButtonTemplate` e 3 tipos de ação: câmera, rolo da câmera, Datetimepicker. 
+Este snippet mostra um exemplo de uma propriedade `channelData` que especifica um tipo de mensagem de canal `ButtonTemplate` e 3 tipos de ação: câmera, rolo da câmera, Datetimepicker.
 
 ```json
-"channelData": { 
-    "type": "ButtonsTemplate", 
-    "altText": "This is a buttons template", 
-    "template": { 
-        "type": "buttons", 
-        "thumbnailImageUrl": "https://example.com/bot/images/image.jpg", 
-        "imageAspectRatio": "rectangle", 
-        "imageSize": "cover", 
-        "imageBackgroundColor": "#FFFFFF", 
-        "title": "Menu", 
-        "text": "Please select", 
-        "defaultAction": { 
-            "type": "uri", 
-            "label": "View detail", 
-            "uri": "http://example.com/page/123" 
-        }, 
-        "actions": [{ 
-                "type": "cameraRoll", 
-                "label": "Camera roll" 
-            }, 
-            { 
-                "type": "camera", 
-                "label": "Camera" 
-            }, 
-            { 
-                "type": "datetimepicker", 
-                "label": "Select date", 
-                "data": "storeId=12345", 
-                "mode": "datetime", 
-                "initial": "2017-12-25t00:00", 
-                "max": "2018-01-24t23:59", 
-                "min": "2017-12-25t00:00" 
-            } 
-        ] 
-    } 
+"channelData": {
+    "type": "ButtonsTemplate",
+    "altText": "This is a buttons template",
+    "template": {
+        "type": "buttons",
+        "thumbnailImageUrl": "https://example.com/bot/images/image.jpg",
+        "imageAspectRatio": "rectangle",
+        "imageSize": "cover",
+        "imageBackgroundColor": "#FFFFFF",
+        "title": "Menu",
+        "text": "Please select",
+        "defaultAction": {
+            "type": "uri",
+            "label": "View detail",
+            "uri": "http://example.com/page/123"
+        },
+        "actions": [{
+                "type": "cameraRoll",
+                "label": "Camera roll"
+            },
+            {
+                "type": "camera",
+                "label": "Camera"
+            },
+            {
+                "type": "datetimepicker",
+                "label": "Select date",
+                "data": "storeId=12345",
+                "mode": "datetime",
+                "initial": "2017-12-25t00:00",
+                "max": "2018-01-24t23:59",
+                "min": "2017-12-25t00:00"
+            }
+        ]
+    }
 }
 ```
 
@@ -536,7 +518,7 @@ if (message.entities) {
 
 ```
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > A adição de um bot por GUID, para qualquer outra coisa que não seja para fins de teste, não é recomendável. Fazer isso limita severamente a funcionalidade de um bot. Os bots em produção devem ser adicionados ao Teams como parte de um aplicativo. Confira [Criar um bot](https://docs.microsoft.com/microsoftteams/platform/concepts/bots/bots-create) e [Testar e depurar o bot](https://docs.microsoft.com/microsoftteams/platform/concepts/bots/bots-test) do Microsoft Teams.
 
 

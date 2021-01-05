@@ -6,14 +6,14 @@ ms.author: v-jofin
 manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
-ms.date: 09/15/2020
+ms.date: 12/09/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: d1f8c4f5fcf5c8343c1ef4ad964b510bb1a2a8b3
-ms.sourcegitcommit: c9b51583a9d7ead626585a9eb0d86db403a7f50a
+ms.openlocfilehash: 82cb0b7e821327136e76a8b70019d59073df9300
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94679995"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97758564"
 ---
 # <a name="event-driven-conversations-using-an-activity-handler"></a>Conversas controladas por evento usando um manipulador de atividade
 
@@ -29,7 +29,7 @@ Para outras maneiras de organizar a lógica de bot, consulte a seção [lógica 
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-Para implementar a lógica desses manipuladores, você substituirá esses métodos no seu bot como visto na seção [Lógica do bot](bot-builder-basics.md#bot-logic) abaixo. Para cada um desses manipuladores, não há nenhuma implementação base e, portanto, basta adicionar a lógica desejada na substituição.
+Para implementar sua lógica para esses manipuladores, você substituirá esses métodos em seu bot, como na seção do [manipulador de atividade de exemplo](#sample-activity-handler) abaixo. Para cada um desses manipuladores, não há nenhuma implementação base e, portanto, basta adicionar a lógica desejada na substituição.
 
 Há algumas situações em que é melhor substituir o manipulador de turno base, por exemplo, ao [salvar o estado](bot-builder-concept-state.md) no final de um turno. Ao fazer isso, chame primeiro `await base.OnTurnAsync(turnContext, cancellationToken);` para fazer com que a implementação base de `OnTurnAsync` seja executada antes do código adicional. A implementação base é, entre outras coisas, responsável por chamar o resto dos manipuladores de atividade, como `OnMessageActivityAsync`.
 
@@ -52,7 +52,7 @@ Ao criar seu bot, sua lógica do bot para tratar das mensagens e respondê-las e
 
 Por exemplo, se o bot recebe uma atividade de mensagem, o manipulador de turno vê a atividade de entrada a envia para o manipulador de atividade `on_message_activity`.
 
-Para implementar a lógica desses manipuladores, você substituirá esses métodos no seu bot como visto na seção [Lógica do bot](bot-builder-basics.md#bot-logic) abaixo. Para cada um desses manipuladores, não há nenhuma implementação base e, portanto, basta adicionar a lógica desejada na substituição.
+Para implementar sua lógica para esses manipuladores, você substituirá esses métodos em seu bot, como na seção do [manipulador de atividade de exemplo](#sample-activity-handler) abaixo. Para cada um desses manipuladores, não há nenhuma implementação base e, portanto, basta adicionar a lógica desejada na substituição.
 
 Há algumas situações em que é melhor substituir o manipulador de turno base, por exemplo, ao [salvar o estado](bot-builder-concept-state.md) no final de um turno. Ao fazer isso, chame primeiro `await super().on_turn(turnContext);` para fazer com que a implementação base de `on_turn` seja executada antes do código adicional. A implementação base é, entre outras coisas, responsável por chamar o resto dos manipuladores de atividade, como `on_message_activity`.
 
@@ -64,7 +64,7 @@ A lógica do bot processa as atividades de entrada de um ou mais canais e gera a
 
 ### <a name="c"></a>[C#](#tab/csharp)
 
-A lógica principal do bot é definida no código do bot; aqui, ele se chama `Bots/EchoBot.cs`. `EchoBot` deriva de `ActivityHandler`, que por sua vez deriva da interface `IBot`. `ActivityHandler` define vários manipuladores para diferentes tipos de atividades, como os dois definidos aqui: `OnMessageActivityAsync` e `OnMembersAddedAsync`. Esses métodos são protegidos, mas podem ser substituídos, já que estamos derivando de `ActivityHandler`.
+A lógica principal do bot é definida no código do bot. Para implementar um bot como um manipulador de atividade, derive a classe bot de `ActivityHandler` , que implementa a `IBot` interface. `ActivityHandler` define vários manipuladores para diferentes tipos de atividades, como `OnMessageActivityAsync` e `OnMembersAddedAsync` . Esses métodos são protegidos, mas podem ser substituídos, já que estamos derivando de `ActivityHandler` .
 
 Os manipuladores definidos em `ActivityHandler` são:
 
@@ -81,6 +81,9 @@ Os manipuladores definidos em `ActivityHandler` são:
 | Atividade de reação de mensagem recebida | `OnMessageReactionActivityAsync` | Em uma atividade `messageReaction`, chamará um manipulador se uma ou mais reações forem adicionadas ou removidas de uma mensagem. |
 | Reações de mensagem adicionadas a uma mensagem | `OnReactionsAddedAsync` | Substitua isso para manipular reações adicionadas a uma mensagem. |
 | Reações de mensagem removidas de uma mensagem | `OnReactionsRemovedAsync` | Substitua isso para manipular reações removidas de uma mensagem. |
+| Atividade de atualização de instalação recebida | `OnInstallationUpdateActivityAsync` | Em uma `installationUpdate` atividade, o chama um manipulador com base no fato de o bot ter sido instalado ou cancelado. |
+| Bot instalado | `OnInstallationUpdateAddAsync` | Substitua isso para adicionar lógica para quando o bot for instalado em uma unidade organizacional. |
+| Bot desinstalado | `OnInstallationUpdateRemoveAsync` | Substitua isso para adicionar lógica para quando o bot for desinstalado em uma unidade organizacional. |
 | Outro tipo de atividade recebido | `OnUnrecognizedActivityTypeAsync` | Substitua-o para lidar com qualquer tipo de atividade sem tratamento. |
 
 Esses manipuladores diferentes têm um `turnContext` que fornece informações sobre a atividade de entrada, que corresponde à solicitação HTTP de entrada. As atividades podem ser de vários tipos e, portanto, cada manipulador fornece uma atividade fortemente tipada em seu parâmetro de contexto de turno; na maioria dos casos, `OnMessageActivityAsync` sempre será manipulado e é geralmente o mais comum.
@@ -92,7 +95,7 @@ Como nas versões anteriores de 4.x dessa estrutura, também há a opção de im
 
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-A lógica principal do bot é definida no código do bot; aqui, ele se chama `bots\echoBot.js`. `EchoBot` deriva de `ActivityHandler`. `ActivityHandler` define vários eventos para diferentes tipos de atividades e você pode modificar o comportamento do bot registrando ouvintes de eventos, como ocorre com `onMessage` e `onConversationUpdate` aqui.
+A lógica principal do bot é definida no código do bot. Para implementar um bot como um manipulador de atividade, estenda `ActivityHandler` . `ActivityHandler` define vários eventos para diferentes tipos de atividades, e você pode modificar o comportamento do bot registrando ouvintes de eventos, como com `onMessage` e `onConversationUpdate` .
 
 Use estes métodos para registrar os ouvintes para cada tipo de evento:
 
@@ -108,6 +111,9 @@ Use estes métodos para registrar os ouvintes para cada tipo de evento:
 | Reações de mensagem removidas de uma mensagem | `onReactionsRemoved` | Registra um ouvinte para quando as reações forem removidas de uma mensagem. |
 | Atividade de evento recebida | `onEvent` | Registra um ouvinte para quando qualquer atividade `event` for recebida. |
 | Atividade de evento de resposta de token recebida | `onTokenResponseEvent` | Registra um ouvinte para quando um evento `tokens/response` for recebido. |
+| Atividade de atualização de instalação recebida | `onInstallationUpdate` | Registra um ouvinte para quando qualquer atividade `installationUpdate` for recebida. |
+| Bot instalado | `onInstallationUpdateAdd` | Registra um ouvinte para quando o bot é instalado em uma unidade organizacional. |
+| Bot desinstalado | `onInstallationUpdateRemove` | Registra um ouvinte para quando o bot é desinstalado em uma unidade organizacional. |
 | Outro tipo de atividade recebido | `onUnrecognizedActivityType` | Registra um ouvinte para quando um manipulador para o tipo específico de atividade não estiver definido. |
 | Manipuladores de atividade concluídos | `onDialog` | Chamado após a conclusão de qualquer manipulador aplicável. |
 
@@ -115,7 +121,7 @@ Chame a função de continuação `next` de cada manipulador para permitir que o
 
 ### <a name="python"></a>[Python](#tab/python)
 
-A lógica principal do bot é definida no código do bot; aqui, ele se chama `bots/echo_bot.py`. `EchoBot` deriva de `ActivityHandler`, que por sua vez deriva da interface `Bot`. `ActivityHandler` define vários manipuladores para diferentes tipos de atividades, como os dois definidos aqui: `on_message_activity` e `on_members_added`. Esses métodos são protegidos, mas podem ser substituídos, já que estamos derivando de `ActivityHandler`.
+A lógica principal do bot é definida no código do bot. Para implementar um bot como um manipulador de atividade, derive a classe bot de `ActivityHandler` , que, por sua vez, deriva da `Bot` classe abstract. `ActivityHandler` define vários manipuladores para diferentes tipos de atividades, como `on_message_activity` e `on_members_added` . Esses métodos são protegidos, mas podem ser substituídos, já que estamos derivando de `ActivityHandler` .
 
 Os manipuladores definidos em `ActivityHandler` são:
 
@@ -132,6 +138,9 @@ Os manipuladores definidos em `ActivityHandler` são:
 | Atividade de reação de mensagem recebida | `on_message_reaction_activity` | Em uma atividade `messageReaction`, chamará um manipulador se uma ou mais reações forem adicionadas ou removidas de uma mensagem. |
 | Reações de mensagem adicionadas a uma mensagem | `on_reactions_added` | Substitua isso para manipular reações adicionadas a uma mensagem. |
 | Reações de mensagem removidas de uma mensagem | `on_reactions_removed` | Substitua isso para manipular reações removidas de uma mensagem. |
+| Atividade de atualização de instalação recebida | `on_installation_update` | Em uma `installationUpdate` atividade, o chama um manipulador com base no fato de o bot ter sido instalado ou cancelado. |
+| Bot instalado | `on_installation_update_add` | Substitua isso para adicionar lógica para quando o bot for instalado em uma unidade organizacional. |
+| Bot desinstalado | `on_installation_update_remove` | Substitua isso para adicionar lógica para quando o bot for desinstalado em uma unidade organizacional. |
 | Outro tipo de atividade recebido | `on_unrecognized_activity_type` | Substitua-o para lidar com qualquer tipo de atividade sem tratamento. |
 
 Esses manipuladores diferentes têm um `turn_context` que fornece informações sobre a atividade de entrada, que corresponde à solicitação HTTP de entrada. As atividades podem ser de vários tipos e, portanto, cada manipulador fornece uma atividade fortemente tipada em seu parâmetro de contexto de turno; na maioria dos casos, `on_message_activity` sempre será manipulado e é geralmente o mais comum.

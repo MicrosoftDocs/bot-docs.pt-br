@@ -8,12 +8,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.author: kamrani
 ms.date: 01/16/2020
-ms.openlocfilehash: 7acebf6c0a9bcb2083fe66b4b24f96328e6c0fcf
-ms.sourcegitcommit: 179619020e61e2034d405a5a562ce5c40188e0ba
+ms.openlocfilehash: 83eb06795462eefb74a745e1a5a84647111ac1e5
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95788755"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97758866"
 ---
 # <a name="configure-net-bot-for-extension"></a>Configurar o bot do .NET para a extensão
 
@@ -78,7 +78,11 @@ Esta seção descreve como habilitar a extensão do serviço de aplicativo de li
 
     ![Chaves de extensão do serviço de aplicativo](./media/channels/direct-line-extension-extension-keys.png)
 
-1. No menu do painel esquerdo, na seção *configurações do aplicativo* , clique no item de **configuração** .
+1. Navegue até a home page, clique no ícone **serviços de aplicativos** na parte superior da página. Você também pode exibir o menu do portal e, em seguida, clicar no item de menu **serviços de aplicativos** , no painel esquerdo. A página serviços de aplicativos é exibida.
+1. Na caixa de pesquisa, insira o nome do recurso de **bot do aplicativo Web** . O recurso será listado.
+Observe que, se você passar o ícone ou o item de menu, obterá a lista dos últimos recursos que você exibiu. É provável que o recurso de **bot do aplicativo Web** seja listado.
+1. Clique no link do recurso.
+1. Na seção **configurações** , clique no item de menu **configuração** .
 1. No painel direito, adicione as seguintes novas configurações:
 
     |Nome|Valor|
@@ -122,7 +126,7 @@ Se tudo estiver correto, a página retornará este conteúdo JSON: `{"v":"123","
 - Se o valor *inicializado* do **ponto de extremidade. bot** for falso, isso significa que a extensão do serviço de aplicativo de linha direta não pode validar a **chave de extensão do serviço de aplicativo** adicionada às configurações de *aplicativo* do bot acima.
     1. Confirme se o valor foi inserido corretamente.
     1. Alterne para a **chave de extensão do serviço de aplicativo** alternativa mostrada na página de configuração do canal de **linha direta** do bot.
-    
+
 - Se estiver tentando usar o OAuth com a extensão de serviço de aplicativo de linha direta e encontrar o erro "não é possível obter a AppId de bot da declaração de audiência". um *ClaimsIdentity* com o *AudienceClaim* atribuído precisa ser definido no *BotFrameworkHttpAdapter*. Para fazer isso, um desenvolvedor pode subclassificar o adaptador semelhante ao exemplo abaixo:
 
 ```csharp

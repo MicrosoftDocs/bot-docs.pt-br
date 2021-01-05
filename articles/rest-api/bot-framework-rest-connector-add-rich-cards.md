@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 0d77b81d1e793669fbc21789e3f4c5fe34e745e6
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: cbdbaa8f6336f64684358cdbd8548ad8c5fac024
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417087"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97758885"
 ---
 # <a name="adding-rich-card-attachments-to-messages-with-the-bot-connector-api"></a>Adicionando anexos de cartão avançados a mensagens com a API do conector de bot
 
@@ -58,19 +58,7 @@ Para processar eventos em cartões avançados, use objetos [CardAction][] para e
 > Botões dentro de Cartões Adaptáveis não são criados usando objetos `CardAction`, mas usando o esquema definido pelos Cartões Adaptáveis.
 > Consulte [Adicionar um Cartão Adaptável a uma mensagem](#add-an-adaptive-card-to-a-message) para obter um exemplo que mostra como adicionar botões a um Cartão Adaptável.
 
-Esta tabela lista os valores válidos para a propriedade `type` de um objeto `CardAction` e descreve o conteúdo esperado da propriedade `value` para cada tipo:
-
-| type | value |
-|----|----|
-| openUrl | URL a ser aberta no navegador interno |
-| imBack | Texto da mensagem para enviar ao bot (do usuário que clicou no botão ou tocou no cartão). Essa mensagem (do usuário ao bot) ficará visível a todos os participantes da conversa por meio do aplicativo cliente que hospeda a conversa. |
-| postBack | Texto da mensagem para enviar ao bot (do usuário que clicou no botão ou tocou no cartão). Alguns aplicativos cliente podem exibir esse texto no feed de mensagem, onde ficará visível a todos os participantes da conversa. |
-| chamada | Destino de uma chamada telefônica neste formato: **tel:123123123123** |
-| playAudio | URL do áudio para reprodução |
-| playVideo | URL do vídeo para reprodução |
-| showImage | URL da imagem a ser exibida |
-| downloadFile | URL do arquivo para download |
-| signin | URL do fluxo do OAuth a ser iniciado |
+[!INCLUDE [Table of card action types](../includes/snippet-card-action-types.md)]
 
 ## <a name="add-a-hero-card-to-a-message"></a>Adicionar um cartão Hero a uma mensagem
 

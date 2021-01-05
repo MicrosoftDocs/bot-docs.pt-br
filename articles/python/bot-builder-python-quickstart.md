@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 10/29/2020
-ms.openlocfilehash: 616c058bc332a10430b203772514c9013d4ab196
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: 04c6dacfcf12209f8558814e263f384a3de48262
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94599941"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "97758484"
 ---
 # <a name="create-a-bot-with-the-bot-framework-sdk-for-python"></a>Criar um bot com o SDK do Bot Framework para Python
 
@@ -39,7 +39,7 @@ Criar um bot com o Serviço de Bot do Azure e criar um bot localmente são forma
 
 ## <a name="start-the-emulator-and-connect-your-bot"></a>Iniciar o emulador e conectar seu bot
 
-[!INCLUDE [dotnet quickstart start emulator](~/includes/quickstart/common/quickstart-start-emulator.md)]
+[!INCLUDE [dotnet quickstart start Emulator](~/includes/quickstart/common/quickstart-start-emulator.md)]
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

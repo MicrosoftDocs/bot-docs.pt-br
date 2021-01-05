@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/09/2020
-ms.openlocfilehash: 959df34bb077a199ced8ae1b872fdadd5f55bb8a
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 3cdfa766f64d5047ea47fa6c749e15fb0cbf72da
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416716"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97759014"
 ---
 # <a name="security-and-privacy"></a>Segurança e privacidade
 
@@ -24,7 +24,7 @@ ms.locfileid: "92416716"
 
 ## <a name="do-the-bots-registered-with-the-bot-framework-collect-personal-information-if-yes-how-can-i-be-sure-the-data-is-safe-and-secure-what-about-privacy"></a>Os bots registrados no Bot Framework coletam informações pessoais? Em caso afirmativo, como posso ter certeza de que os dados estão seguros e protegidos? E quanto à privacidade?
 
-Cada bot é seu próprio serviço, e os desenvolvedores desses serviços são obrigados a fornecer Termos de Serviço e Políticas de Privacidade de acordo com seu Código de Conduta do Desenvolvedor. Para obter mais informações, confira as [diretrizes de análise do bot](https://docs.microsoft.com/azure/bot-service/bot-service-review-guidelines?view=azure-bot-service-4.0).
+Cada bot é seu próprio serviço, e os desenvolvedores desses serviços são obrigados a fornecer Termos de Serviço e Políticas de Privacidade de acordo com seu Código de Conduta do Desenvolvedor. Para obter mais informações, confira as [diretrizes de análise do bot](bot-service-review-guidelines.md).
 
 ## <a name="can-i-host-my-bot-on-my-own-servers"></a>Pode hospedar meu bot em meus próprios servidores?
 Sim. Seu bot pode ser hospedado em qualquer lugar na Internet. Em seus próprios servidores, no Azure ou em qualquer outro datacenter. O único requisito é que o bot deve expor um ponto de extremidade HTTPS publicamente acessível.
@@ -53,6 +53,7 @@ Se você tiver um firewall de saída bloqueando o tráfego do bot para a Interne
 > Você pode usar `<channel>.botframework.com` se preferir não permitir-listar uma URL com um asterisco. `<channel>` é igual a cada canal que seu bot usa, como `directline.botframework.com`, `webchat.botframework.com` e `slack.botframework.com`. Também vale a pena observar o tráfego em seu firewall enquanto testa o bot para verificar se nada mais está sendo bloqueado.
 
 ## <a name="can-i-block-all-traffic-to-my-bot-except-traffic-from-the-bot-framework-service"></a>Posso bloquear todo o tráfego para o meu bot, exceto o tráfego do Bot Framework Service?
+
 Os Bot Framework Services são hospedados em datacenters do Azure em todo o mundo e a lista de IPs do Azure está em constante mudança. permitir-listar determinados endereços IP pode funcionar um dia e interromper o próximo à medida que os endereços IP do Azure são alterados.
 
 ## <a name="which-rbac-role-is-required-to-create-and-deploy-a-bot"></a>Qual função RBAC é necessária para criar e implantar um bot?
@@ -67,9 +68,21 @@ O LUIS e o QnA Maker exigem permissões de Serviços Cognitivos. O QnA Maker tam
 
 ## <a name="what-keeps-my-bot-secure-from-clients-impersonating-the-bot-framework-service"></a>O que mantém o meu bot protegido de clientes que se passam pelo Bot Framework Service?
 
-1. Todas as solicitações do Bot Framework autênticas são acompanhadas por um token JWT cuja assinatura criptográfica pode ser verificada seguindo o guia de [autenticação](https://docs.microsoft.com/azure/bot-service/rest-api/bot-framework-rest-connector-authentication?view=azure-bot-service-3.0#bot-to-connector). O token foi projetado para que os invasores não possam se passar por serviços confiáveis.
-2. O token de segurança que acompanha todas as solicitações feitas para seu bot tem a ServiceUrl codificada dentro dele, o que significa que, mesmo se um invasor obtiver acesso ao token, eles não conseguirá redirecionar a conversa para uma nova ServiceUrl. Isso é imposto por todas as implementações do SDK e documentado em nossos materiais de [referência](https://docs.microsoft.com/azure/bot-service/rest-api/bot-framework-rest-connector-authentication?view=azure-bot-service-3.0#bot-to-connector) de autenticação.
+1. Todas as solicitações do Bot Framework autênticas são acompanhadas por um token JWT cuja assinatura criptográfica pode ser verificada seguindo o guia de [autenticação](rest-api/bot-framework-rest-connector-authentication.md). O token foi projetado para que os invasores não possam se passar por serviços confiáveis.
+2. O token de segurança que acompanha todas as solicitações feitas para seu bot tem a ServiceUrl codificada dentro dele, o que significa que, mesmo se um invasor obtiver acesso ao token, eles não conseguirá redirecionar a conversa para uma nova ServiceUrl. Isso é imposto por todas as implementações do SDK e documentado em nossos materiais de [referência](rest-api/bot-framework-rest-connector-authentication.md#bot-to-connector&preserve-view=true) de autenticação.
 3. Se o token de entrada estiver ausente ou se for malformado, o SDK do Bot Framework não irá gerar um token na resposta. Isso limita o dano que poderá ocorrer se o bot for configurado incorretamente.
 4. Dentro do bot, você pode verificar manualmente a ServiceUrl fornecida no token. Isso torna o bot mais frágil em caso de alterações de topologia de serviço, por isso que é possível, mas não recomendado.
 
 Observe que essas são as conexões de saída do bot para a Internet. Não há uma lista de nomes DNS ou Endereços IP que o Serviço Bot Framework Connector usará para se comunicar com o bot. Não há suporte para a lista de permissões de endereço IP de entrada.
+
+## <a name="what-is-the-purpose-of-the-magic-code-during-authentication"></a>Qual é a finalidade do código mágico durante a autenticação?
+
+No controle de chat da Web, há dois mecanismos para garantir que o usuário apropriado esteja conectado.
+
+1. **Código mágico**. No final do processo de entrada, o usuário recebe um código de 6 dígitos gerado aleatoriamente (*código mágico*). O usuário deve digitar esse código na conversa para concluir o processo de entrada. Isso tende a resultar em uma experiência de usuário inadequada. Além disso, ele ainda está suscetível a ataques de phishing. Um usuário mal-intencionado pode induzir outro usuário a se conectar e a obter o código mágico por meio de phishing.
+
+    >[!WARNING]
+    > O uso do código mágico é preterido. Em vez disso, você deve usar a **Autenticação avançada de linha direta**, descrita abaixo.
+
+1. **Autenticação avançada de linha direta**. Devido aos problemas com a abordagem do *código mágico* , o serviço de bot do Azure removeu sua necessidade. O Serviço de Bot do Azure garante que o processo de conexão só possa ser concluído na **mesma sessão do navegador** que a do próprio Webchat.
+Para habilitar essa proteção, você deve iniciar o chat Web com um **token de linha direta** que contém uma lista de **origens confiáveis**, também conhecido como domínios confiáveis, que podem hospedar o cliente de chat da Web do bot. Com as opções de autenticação avançadas, você pode especificar estaticamente a lista de origens confiáveis na página de configuração de linha direta. Para obter mais informações, consulte [Autenticação avançada de linha direta](v4sdk/bot-builder-security-enhanced.md).

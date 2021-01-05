@@ -7,13 +7,13 @@ ms.topic: article
 author: kamrani
 ms.author: kamrani
 ms.service: bot-service
-ms.date: 10/22/2020
-ms.openlocfilehash: 87842e18f7f3d870de5312ba4832b60f34f3e353
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.date: 12/14/2020
+ms.openlocfilehash: 4dd73bb9ac42c36eb10ee1c3bc99dd6864e458fb
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95457150"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97758974"
 ---
 # <a name="connect-a-bot-to-facebook"></a>Conectar um bot ao Facebook
 
@@ -90,7 +90,7 @@ O bot é acessado por meio de uma Página do Facebook.
 
 ### <a name="enable-webhooks"></a>Habilitar webhooks
 
-Para enviar mensagens e outros eventos do bot para o Facebook Messenger, você precisa habilitar a integração de webhooks. Neste momento, vamos deixar as etapas de configuração do Facebook pendentes. Trataremos delas depois.
+Para enviar mensagens e outros eventos do bot para o Facebook Messenger, você precisa habilitar a integração de webhooks. Neste ponto, vamos deixar as etapas de configuração do Facebook pendentes; Voltaremos a eles.
 
 1. No navegador, abra uma nova janela e navegue até o [portal do Azure](https://portal.azure.com/).
 
@@ -161,14 +161,20 @@ Para usar o Workplace do Facebook com o bot, é necessário criar uma conta do W
 1. Clique em **Prévia do perfil** e verifique se as informações estão corretas.
 1. Acesse *Teste gratuito*.
 1. Crie uma **senha**.
-1. Clique em **Convidar colegas de trabalho** para convidar os funcionários a entrar. Os funcionários que você convidou se tornarão membros assim que entrarem. Eles passarão por um processo de entrada semelhante, conforme descrito nestas etapas.
+1. Clique em **Convidar colegas de trabalho** para convidar os funcionários a entrar. Os funcionários que você convidou se tornarão membros assim que entrarem. Eles passarão por um processo de entrada semelhante, conforme descrito nestas etapas. A imagem a seguir mostra um exemplo do painel de navegação do local de trabalho do home page:
+
+    ![Painel Home do local de trabalho](media/channels/fb-workplace-home-pane.png)
 
 ### <a name="create-a-custom-integration"></a>Criar uma integração personalizada
 
 Crie uma [integração personalizada](https://developers.facebook.com/docs/workplace/custom-integrations-new) para o Workplace executando as etapas descritas abaixo. Quando você cria uma integração personalizada, ocorre a criação de um aplicativo com permissões definidas e uma página do tipo 'Bot' visível apenas dentro de sua comunidade de Workplace.
 
+1. No painel de navegação home page, clique no ícone de ferramentas. Isso exibirá o painel de navegação do administrador.
 1. No **Painel de Administração**, abra a guia **Integrações**.
-1. Clique no botão **Criar seu próprio aplicativo personalizado**.
+
+    ![Painel de integração do local de trabalho](media/channels/fb-workplace-integration-pane.png)
+
+1. Clique no link **integrações** .
 
     ![Integração do Workplace](media/channels/fb-integration.png)
 
@@ -280,7 +286,7 @@ public class FacebookAdapterWithErrorHandler : FacebookAdapter
 
 #### <a name="create-a-new-controller-for-handling-facebook-requests"></a>Criar um controlador para manipular as solicitações do Facebook
 
-Criaremos um controlador que lidará com as solicitações do Facebook em um novo ponto de extremidade 'api/facebook', em vez do 'api/messages' padrão usado para solicitações de canais do Serviço de Bot do Azure.  Ao adicionar outro ponto de extremidade ao bot, você poderá aceitar solicitações de canais do Serviço de Bot, assim como do Facebook, usando o mesmo bot.
+Crie um novo controlador que manipulará solicitações do Facebook, em um novo ponto de extremidade "API/Facebook" em vez de "API/mensagens" padrão usado para solicitações de canais do serviço de bot do Azure.  Ao adicionar outro ponto de extremidade ao bot, você poderá aceitar solicitações de canais do Serviço de Bot, assim como do Facebook, usando o mesmo bot.
 
 ```csharp
 [Route("api/facebook")]

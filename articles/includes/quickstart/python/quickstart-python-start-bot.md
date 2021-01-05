@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 74f65aeadbc27b72d1ef021208e11abc4711f078
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: dbc1cb1dcc1875bb18f1643dc5fc671bd77dfe01
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94599939"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97758485"
 ---
 <!-- Include under "Start your bot" header in the files:
 bot-builder-tutorial-create-basic-bot.md and bot-builder-python-quickstart.md -->
@@ -13,7 +13,6 @@ bot-builder-tutorial-create-basic-bot.md and bot-builder-python-quickstart.md --
 
 2. Depois que os pacotes forem instalados, execute `python app.py` para iniciar o bot. Você saberá que o bot está pronto para teste quando vir a última linha mostrada na captura de tela abaixo:
 
-![bot em execução localmente](~/media/python/quickstart/bot-running-locally.png)
+    ![bot em execução localmente](~/media/python/quickstart/bot-running-locally.png)
 
-Copie os últimos quatro dígitos do endereço na última linha (geralmente _3978_ ), já que você os usará na próxima etapa. Agora você está pronto para iniciar o emulador.
-
+Copie os últimos quatro dígitos do endereço na última linha (geralmente _3978_), já que você os usará na próxima etapa. Agora você está pronto para iniciar o emulador.

@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: overview
 ms.service: bot-service
 ms.date: 11/15/2019
-ms.openlocfilehash: c2e02e8fef44a2a687b5c28c881082a2a8f58a62
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: 69a454aacb9056a2334de18c8456c4a36fc719f8
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95456324"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97759194"
 ---
 # <a name="what-is-the-bot-framework-sdk"></a>O que é o SDK do Bot Framework?
 
@@ -103,7 +103,7 @@ Os bots estão aplicativos complexos, com muitas partes diferentes, trabalhem em
 
 - Teste o bot na [Web](bot-service-manage-test-webchat.md). Uma vez configurado no portal do Azure, seu bot também pode ser acessado através de uma interface de chat da Web. A interface de chat da Web é uma ótima maneira de conceder acesso ao bot para testadores e outras pessoas que não têm acesso direto ao código de execução do bot.
 
-- [Teste de unidade](https://docs.microsoft.com/azure/bot-service/unit-test-bots) seu bot com a atualização de julho do SDK do Bot Framework.
+- [Teste a unidade](https://docs.microsoft.com/azure/bot-service/unit-test-bots) do bot com o SDK do bot Framework atual.
 
 ### <a name="publish"></a>Publicar
 

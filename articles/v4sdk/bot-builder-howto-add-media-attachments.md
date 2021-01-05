@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/08/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 94a06d804d4c88cfc2fc63fca67aa9ad64e65903
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 5f7c7b6a05d0f7f3ebde06848f767dd4341955a5
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417275"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97759364"
 ---
 # <a name="add-media-to-messages"></a>Adicionar mídia às mensagens
 
@@ -38,6 +38,8 @@ A troca de mensagens entre usuário e bot pode conter anexos de mídia como imag
 Para enviar o conteúdo do usuário, como uma imagem ou um vídeo, é possível adicionar um anexo ou lista de anexos a uma mensagem.
 
 Confira a [experiência de usuário de design](../bot-service-design-user-experience.md) para obter exemplos dos cartões disponíveis.
+
+Veja também [qual é o limite de tamanho de um arquivo transferido usando canais?](../bot-service-resources-faq-general.md#what-is-the-size-limit-of-a-file-transferred-using-channels)
 
 ### <a name="c"></a>[C#](#tab/csharp)
 
@@ -177,19 +179,7 @@ O código-fonte mostrado aqui se baseia no exemplo [Tratamento de Anexos](https:
 
 Para processar eventos em cartões avançados, use objetos  _ação do cartão_ para especificar o que deve acontecer quando o usuário clica em um botão ou toca em uma seção do cartão. Cada ação de cartão tem um _tipo_ e _valor_.
 
-Para funcionar corretamente, atribua um tipo de ação para cada item clicável no cartão. Esta tabela lista e descreve os tipos de ação disponíveis e quais devem estar na propriedade de valor associada.
-
-| Type | Descrição | Valor |
-| :---- | :---- | :---- |
-| openUrl | Abre uma URL no navegador interno. | A URL para abrir. |
-| imBack | Envia uma mensagem para o bot e posta uma resposta visível no bate-papo. | Texto da mensagem a ser enviada. |
-| postBack | Envia uma mensagem para o bot e não pode postar uma resposta visível no bate-papo. | Texto da mensagem a ser enviada. |
-| chamada | Inicia uma chamada telefônica. | Destino de uma chamada telefônica nesse formato: `tel:123123123123`. |
-| playAudio | Reproduz áudio. | A URL do áudio para reproduzir. |
-| playVideo | Reproduz um vídeo. | A URL do vídeo para reproduzir. |
-| showImage | Exibe uma imagem. | A URL da imagem para exibir. |
-| downloadFile | Baixa um arquivo. | A URL do arquivo para download. |
-| signin | Inicia um processo de entrada do OAuth. | A URL do fluxo de OAuth para iniciar. |
+[!INCLUDE [Table of card action types](../includes/snippet-card-action-types.md)]
 
 ## <a name="hero-card-using-various-event-types"></a>Cartão hero usando vários tipos de evento
 

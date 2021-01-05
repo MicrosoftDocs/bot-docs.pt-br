@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 07/10/2020
-ms.openlocfilehash: be0807f0bdb7ea419fa53a443480c5088de7c3c6
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: f0cfd8a2f72989d731b55b26038b94b35a6be019
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416729"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97758844"
 ---
 # <a name="bot-framework-general"></a>Do bot Framework geral
 
@@ -89,6 +89,12 @@ O serviço Bot Framework precisa proteger a si próprio e a seus clientes contra
 
 Estamos continuamente ajustando os limites de taxa para torná-los os mais brandos possíveis, ao mesmo tempo em que protegemos nosso serviço e nossos usuários. Como os limites serão alterados ocasionalmente, não estamos publicando os números no momento.  Por fim, se você estiver hospedando o bot em um serviço de aplicativo, o bot será associado às limitações do serviço de aplicativo. Para obter mais informações, consulte [Resumo de SLA para serviços do Azure](https://azure.microsoft.com/support/legal/sla/summary/) se você for afetado por limitação de taxa, fique à vontade para entrar em contato conosco em [bf-reports@microsoft.com](mailto://bf-reports@microsoft.com) .
 
+## <a name="what-is-the-size-limit-of-a-file-transferred-using-channels"></a>Qual é o limite de tamanho de um arquivo transferido usando canais?
+
+Alguns canais têm limites de tamanho ou tipo de arquivos que podem ser enviados. Por exemplo, a linha direta e as cargas de atividade de limite do Facebook para **262.144 bytes**, enquanto o emulador não tem limite. Esses limites são impostos pelo canal. Se você enviar uma mensagem que exceda esse limite, você poderá receber um erro, como: *o tamanho do conteúdo da solicitação excedeu o limite de 262144 bytes*.
+
+No entanto, você pode fornecer um link para o recurso como um anexo da Internet. Para obter mais informações sobre como enviar anexos, consulte [como adicionar mídia a mensagens](v4sdk/bot-builder-howto-add-media-attachments.md).
+
 ## <a name="how-will-i-know-if-im-impacted-by-rate-limiting"></a>Como saber se estou impactado pela limitação de taxa?
 
 É improvável que você enfrente a limitação de taxa, mesmo com um alto volume. A maior parte da limitação de taxa só ocorrerá devido ao envio em massa de atividades (de um bot ou de um cliente), um teste de carga extrema ou um bug. Quando uma solicitação é limitada, uma resposta HTTP 429 (Número Excessivo de Solicitações) é retornada juntamente com um cabeçalho Retry-After, que indica o tempo (em segundos) que é necessário aguardar antes do êxito da nova tentativa da solicitação. Colete essas informações habilitando a análise no bot por meio do Azure Application Insights. Se preferir, adicione um código ao bot para registrar mensagens em log.
@@ -100,7 +106,6 @@ A limitação de taxa é causada por qualquer uma das seguintes condições:
 * Um bot envia mensagens com muita frequência
 * Um cliente de um bot envia mensagens com muita frequência
 * os clientes da Linha Direta solicitam um novo Soquete da Web com muita frequência
-
 
 ## <a name="how-to-implement-human-handoff"></a>Como implementar a entrega humana?
 
@@ -143,3 +148,4 @@ In the case of channels that do not handle the handoff, the middleware is used t
 
     **Q2: Do we need to refer to this?**: [HandoffMiddleware.cs](https://github.com/microsoft/BotBuilder-Samples/blob/master/experimental/handoff-library/csharp_dotnetcore/samples/LivePersonAgentBot/Middleware/HandoffMiddleware.cs).
 >
+

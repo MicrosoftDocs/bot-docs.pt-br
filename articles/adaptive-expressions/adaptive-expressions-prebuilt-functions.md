@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/19/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 88351e0a349c350b9ed07addd77ec59e7a50b8c3
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 059d42b9a07035389c7a7c4f606f48dc966eb73c
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92415975"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97759224"
 ---
 # <a name="adaptive-expressions-prebuilt-functions"></a>Funções predefinidas de expressões adaptáveis
 
@@ -104,7 +104,7 @@ Você também pode exibir a lista em [ordem alfabética](#prebuilt-functions-sor
 
 |Função|Explicação|
 |-----------|-----------|
-|[float](#float)|Retorna a representação de ponto flutuante da cadeia de caracteres especificada. | 
+|[float](#float)|Retorna a representação de ponto flutuante da cadeia de caracteres especificada. |
 |[int](#int)|Retorna a representação de inteiro da cadeia de caracteres especificada. |
 |[cadeia de caracteres](#string)|Retorna a versão da cadeia de caracteres do valor especificado em um formato de localidade opcional.|
 |[bool](#bool)|Retornar uma representação booliana da cadeia de caracteres especificada.|
@@ -294,7 +294,7 @@ addDays('<timestamp>', <days>, '<format>'?, '<locale>'?)
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Sim | string | A cadeia de caracteres que contém o carimbo de data/hora que deve estar no formato UTC ISO padrão<br>AAAA-MM-DDTHH:mm:ss.fffZ |
 | <*days*> | Sim | inteiro | O número positivo ou negativo de dias a ser adicionado |
-| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://aka.ms/iso-8601-wiki). |
 | <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
@@ -347,7 +347,7 @@ addHours('<timestamp>', <hours>, '<format>'?, '<locale>'?)
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Sim | string | Uma cadeia de caracteres que contém o carimbo de data/hora |
 | <*hours*> | Sim | inteiro | O número positivo ou negativo de horas a ser adicionado |
-| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://aka.ms/iso-8601-wiki). |
 | <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
@@ -400,7 +400,7 @@ addMinutes('<timestamp>', <minutes>, '<format>'?, '<locale>'?)
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Sim | string | Uma cadeia de caracteres que contém o carimbo de data/hora |
 | <*minutes*> | Sim | inteiro | O número positivo ou negativo de minutos a ser adicionado |
-| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://aka.ms/iso-8601-wiki). |
 | <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
@@ -520,7 +520,7 @@ addSeconds('<timestamp>', <seconds>, '<format>'?)
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Sim | string | Uma cadeia de caracteres que contém o carimbo de data/hora |
 | <*seconds*> | Sim | inteiro | O número positivo ou negativo de segundos a ser adicionado |
-| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://aka.ms/iso-8601-wiki). |
 |||||
 
 | Valor retornado | Type | Descrição |
@@ -563,7 +563,7 @@ addToTime('<timestamp>', '<interval>', <timeUnit>, '<format>'?, '<locale>'?)
 | <*timestamp*> | Sim | string | Uma cadeia de caracteres que contém o carimbo de data/hora |
 | <*interval*> | Sim | inteiro | O número de unidades de tempo especificadas a ser adicionado |
 | <*timeUnit*> | Sim | string | A unidade de tempo a ser usada com *interval*. As unidades possíveis são "Second", "Minute", "Hour", "Day", "Week", "Month" e "Year". |
-| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://aka.ms/iso-8601-wiki). |
 | <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
@@ -855,7 +855,7 @@ ceiling('<number>')
 
 | Valor retornado | Type | Descrição |
 | ------------ | ---- | ----------- |
-| <*valor inteiro*> | Número inteiro | O maior valor integral maior ou igual ao número de entrada |
+| <*valor inteiro*> | inteiro | O maior valor integral maior ou igual ao número de entrada |
 ||||
 
 *Exemplo*
@@ -1102,7 +1102,7 @@ convertFromUTC('<timestamp>', '<destinationTimeZone>', '<format>'?, '<locale>'?)
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Sim | string | Uma cadeia de caracteres que contém o carimbo de data/hora |
 | <*destinationTimeZone*> | Sim | string | O nome do fuso horário de destino. Compatível com fusos horários Windows e Iana. |
-| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o [formato "o"](/dotnet/standard/base-types/standard-date-and-time-format-strings#Roundtrip), aaaa-mm-ddThh: mm: SS. fffffffK, que está em conformidade com o [ISO 8601](https://aka.ms/iso-8601-wiki). |
 | <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
@@ -1123,17 +1123,17 @@ convertFromUTC('2018-02-02T02:00:00.000Z', 'Pacific Standard Time')
 E, respectivamente, retornam estes resultados:
 
 * **02-01-18**
-* **2018-02-01T18:00:00.000-08:00**
+* **2018-01-01T18:00:00.0000000**
 
 *Exemplo 2*
 
-Este exemplo converte um carimbo de data/hora na localidade **de** de UTC para hora padrão do Pacífico:
+Este exemplo converte um carimbo de data/hora na localidade **en-US** de UTC para hora padrão do Pacífico:
 
 ```
-convertFromUTC('2018-01-02T02:00:00.000Z', 'Pacific Standard Time', '', 'de-DE')
+convertFromUTC('2018-01-02T02:00:00.000Z', 'Pacific Standard Time', 'D', 'en-US')
 ```
 
-E retorna o resultado **01.01.18 18:00:00**.
+E retorna o resultado **segunda-feira, 1º de janeiro de 2018**.
 
 <a name="convertToUTC"></a>
 
@@ -1149,7 +1149,7 @@ convertToUTC('<timestamp>', '<sourceTimeZone>', '<format>'?, '<locale>'?)
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Sim | string | Uma cadeia de caracteres que contém o carimbo de data/hora |
 | <*sourceTimeZone*> | Sim | string | O nome do fuso horário de destino. Compatível com fusos horários Windows e Iana. |
-| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://aka.ms/iso-8601-wiki). |
 | <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
@@ -1857,7 +1857,7 @@ floor('<number>')
 
 | Valor retornado | Type | Descrição |
 | ------------ | ---- | ----------- |
-| <*valor inteiro*> | Número inteiro | O maior valor integral menor ou igual ao número de entrada |
+| <*valor inteiro*> | inteiro | O maior valor integral menor ou igual ao número de entrada |
 ||||
 
 *Exemplo*
@@ -1926,7 +1926,7 @@ formatDateTime('<timestamp>', '<format>'?, '<locale>'?)
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Sim | string | Uma cadeia de caracteres que contém o carimbo de data/hora |
-| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://aka.ms/iso-8601-wiki). |
 | <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
@@ -1969,7 +1969,7 @@ formatEpoch('<epoch>', '<format>'?, '<locale>'?)
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
 | <*epoch*> | Sim | número | O número de época |
-| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://aka.ms/iso-8601-wiki). |
 | <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
@@ -2060,7 +2060,7 @@ formatTicks('<ticks>', '<format>'?, '<locale>'?)
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
 | <*epoch*> | Sim | número (ou bigint em JavaScript)| O número de tiques |
-| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://aka.ms/iso-8601-wiki). |
 | <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
@@ -2103,7 +2103,7 @@ getFutureTime(<interval>, <timeUnit>, '<format>'?, '<locale>'?)
 | --------- | -------- | ---- | ----------- |
 | <*interval*> | Sim | inteiro | O número de unidades de tempo especificadas a serem adicionadas |
 | <*timeUnit*> | Sim | string | A unidade de tempo a ser usada com *interval*. As unidades possíveis são "Second", "Minute", "Hour", "Day", "Week", "Month" e "Year".|
-| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://aka.ms/iso-8601-wiki). |
 | <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
@@ -2230,7 +2230,7 @@ getPastTime(<interval>, <timeUnit>, '<format>'?)
 | --------- | -------- | ---- | ----------- |
 | <*interval*> | Sim | inteiro | O número de unidades de tempo especificadas a ser subtraído |
 | <*timeUnit*> | Sim | string | A unidade de tempo a ser usada com *interval*. As unidades possíveis são "Second", "Minute", "Hour", "Day", "Week", "Month" e "Year". |
-| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://aka.ms/iso-8601-wiki). |
 |||||
 
 | Valor retornado | Type | Descrição |
@@ -2427,7 +2427,7 @@ Este exemplo recupera a propriedade raiz do objeto JSON acima:
 getProperty("a:b")
 ```
 
-E retorna o **valor de a:b**da cadeia de caracteres.
+E retorna o **valor de a:b** da cadeia de caracteres.
 
 <a name="getTimeOfDay"></a>
 
@@ -4546,7 +4546,7 @@ startOfDay('<timestamp>', '<format>'?, '<locale>'?)
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Sim | string | Uma cadeia de caracteres que contém o carimbo de data/hora |
-| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://aka.ms/iso-8601-wiki). |
 | <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
@@ -4588,7 +4588,7 @@ startOfHour('<timestamp>', '<format>'?, '<locale>'?)
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Sim | string | Uma cadeia de caracteres que contém o carimbo de data/hora |
-| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://aka.ms/iso-8601-wiki). |
 | <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
@@ -4630,7 +4630,7 @@ startOfMonth('<timestamp>', '<format>'?, '<locale>'?)
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Sim | string | Uma cadeia de caracteres que contém o carimbo de data/hora |
-| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://aka.ms/iso-8601-wiki). |
 | <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
@@ -4865,7 +4865,7 @@ subtractFromTime('<timestamp>', <interval>, '<timeUnit>', '<format>'?, '<locale>
 | <*timestamp*> | Sim | string | Uma cadeia de caracteres que contém o carimbo de data/hora |
 | <*interval*> | Sim | inteiro | O número de unidades de tempo especificadas a serem subtraídas |
 | <*timeUnit*> | Sim | string | A unidade de tempo a ser usada com *interval*. As unidades possíveis são "Second", "Minute", "Hour", "Day", "Week", "Month" e "Year". |
-| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://aka.ms/iso-8601-wiki). |
 | <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 
@@ -5569,7 +5569,7 @@ Ou é possível especificar um formato diferente com o parâmetro <*formato*>.
 
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
-| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://en.wikipedia.org/wiki/ISO**8601). |
+| <*format*> | Não | string | Um [padrão de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). O formato padrão do carimbo de data/hora é o UTC ISO, AAAA-MM-DDTHH:mm:ss.fffZ, compatível com a [ISO 8601](https://aka.ms/iso-8601-wiki). |
 | <*locale*> | Não | string | Uma localidade opcional de informações de cultura |
 |||||
 

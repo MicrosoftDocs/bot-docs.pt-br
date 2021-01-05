@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 10/30/2020
-ms.openlocfilehash: 190902980396d34d958be19dc505d82331c697dc
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: 1657f318b0cf50c3f5652698a0bb652813ba61b8
+ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94618140"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "97759374"
 ---
 # <a name="tutorial-create-a-basic-bot"></a>Tutorial: criar um bot básico
 
@@ -77,8 +77,7 @@ Você saberá como:
 
 ## <a name="start-the-emulator-and-connect-your-bot"></a>Iniciar o emulador e conectar seu bot
 
-[!INCLUDE [dotnet quickstart start emulator](~/includes/quickstart/common/quickstart-start-emulator.md)]
-
+[!INCLUDE [dotnet quickstart start Emulator](~/includes/quickstart/common/quickstart-start-emulator.md)]
 
 ## <a name="next-steps"></a>Próximas etapas
 

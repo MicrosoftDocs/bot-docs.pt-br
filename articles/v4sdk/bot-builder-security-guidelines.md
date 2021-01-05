@@ -1,18 +1,18 @@
 ---
 title: Diretrizes de segurança do bot Framework – serviço bot
 description: Saiba mais sobre as diretrizes de segurança no bot Framework.
-author: kamrani
+author: mmiele
 ms.author: v-mimiel
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 07/07/2020
-ms.openlocfilehash: 8f07d5cf55d09c88289c07da30236309580649a4
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.date: 11/23/2020
+ms.openlocfilehash: 0d40a6c712174295d3aeb7172de439997a8622ec
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95449221"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97758964"
 ---
 # <a name="bot-framework-security-guidelines"></a>Diretrizes de segurança do Bot Framework
 
@@ -20,7 +20,7 @@ ms.locfileid: "95449221"
 
 Os bots são cada vez mais predominantes nas principais áreas comerciais, como serviços financeiros, varejo, turismo e assim por diante. Um bot pode coletar dados muito confidenciais, como cartões de crédito, SSN, contas bancárias e outras informações pessoais. Portanto, é importante que os bots sejam seguros e protejam contra ameaças e vulnerabilidades comuns.
 
-Você pode tomar algumas medidas preventivas padrão para melhorar a segurança do bot. Algumas medidas de segurança são semelhantes àquelas usadas em outros sistemas de software, enquanto outras são específicas para o bot Framework.
+Você pode tomar algumas medidas preventivas padrão para melhorar a segurança do bot. Algumas medidas de segurança são semelhantes àquelas usadas em outros sistemas de software, enquanto outras são específicas para o bot Framework. Para o último, consulte o [benchmark de segurança do Azure](../security-baseline.md). O parâmetro de comparação fornece recomendações sobre como você pode proteger suas soluções de nuvem no Azure.
 
 ## <a name="security-issues-in-a-nutshell"></a>Problemas de segurança em resumo
 
@@ -103,26 +103,7 @@ Para obter mais informações, consulte o artigo [autenticação de usuário](~/
 
 ### <a name="web-chat"></a>Chat na Web
 
-Quando você usa a *autenticação do Serviço de Bot do Azure* com o [Webchat](~/bot-service-channel-connect-webchat.md), há algumas considerações importantes sobre segurança que você precisa ter em mente.
-
-1. **Representação**. Representação aqui significa um invasor que faz o bot achar que ele é outra pessoa. No Webchat, um invasor pode representar outra pessoa, **alterando a ID de usuário** da sua instância de Webchat. Para evitar isso, é recomendável que os desenvolvedores de bot tornem a **ID de usuário indecifrável**.
-
-    Habilite as opções de **autenticação avançadas** do canal de linha direta para permitir que o serviço de bot do Azure detecte e rejeite ainda mais qualquer alteração de ID de usuário. Isso significa que a ID de usuário ( `Activity.From.Id` ) nas mensagens da linha direta para o bot será sempre a mesma que você inicializou o controle de chat Web. Observe que esse recurso requer que a ID de usuário comece com `dl_`.
-
-    > [!NOTE]
-    > Quando uma *User.Id* é fornecida durante a troca de um segredo para um token, essa *User.Id* é inserida no token. A linha direta garante que as mensagens enviadas para o bot tenham essa ID como a *from.ID* da atividade. Se um cliente enviar uma mensagem para uma linha direta com um *from.ID* diferente, ele será alterado para a **ID no token** antes de encaminhar a mensagem para o bot. Portanto, você não pode usar outra ID de usuário depois que um segredo de canal é inicializado com uma ID de usuário.
-
-1. **Identidades do usuário**. Você deve saber que está lidando com duas identidades de usuário:
-
-    1. A identidade do usuário em um canal.
-    1. A identidade do usuário em um provedor de identidade no qual o bot está interessado.
-
-    Quando um bot solicita ao usuário um em um canal para entrar em um provedor de identidade P, o processo de entrada deve garantir que o usuário a é aquele que entra em P. Se outro usuário B tiver permissão para entrar, então o usuário A teria acesso ao recurso do usuário B por meio do bot. No Webchat, temos dois mecanismos para verificar se o usuário correto entrou conforme descrito a seguir.
-
-    1. No final da credencial, no passado, o usuário recebia um código de seis dígitos gerado aleatoriamente (também conhecido como código mágico). O usuário deveria digitar esse código na conversa que iniciava a conexão para concluir o processo de entrada. Esse mecanismo tende a resultar em uma experiência de usuário inadequada. Além disso, ele ainda está suscetível a ataques de phishing. Um usuário mal-intencionado pode induzir outro usuário a se conectar e a obter o código mágico por meio de phishing.
-
-    2. Devido aos problemas com a abordagem anterior, o Serviço de Bot do Azure acabou com a necessidade do código mágico. O Serviço de Bot do Azure garante que o processo de conexão só possa ser concluído na **mesma sessão do navegador** que a do próprio Webchat.
-    Para habilitar essa proteção, como um desenvolvedor de bot, você deve iniciar o chat da Web com um **token de linha direta** que contém uma **lista de domínios confiáveis que podem hospedar o cliente de chat da Web do bot**. Antes, você só poderia obter esse token passando um parâmetro opcional não documentado para a API de token do Direct Line. Agora, com as opções de autenticação avançada, você pode especificar estaticamente a lista de domínios confiáveis (origem) na página de configuração do Direct Line.
+Ao usar o controle de [chat da Web](~/bot-service-channel-connect-webchat.md) , você deve ter em mente algumas considerações de segurança importantes sobre representação e falsificação de identidade. Para obter mais informações, consulte [Autenticação avançada de linha direta](bot-builder-security-enhanced.md).
 
 
 ## <a name="additional-information"></a>Informações adicionais

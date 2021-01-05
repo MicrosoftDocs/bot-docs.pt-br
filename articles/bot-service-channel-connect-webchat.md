@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 08/22/2019
-ms.openlocfilehash: 0808145728757e529efe7395cad25a3c933fd2bf
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: 994d0d4859a2c279cc8ee06fc4954325978158b8
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95456820"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97759104"
 ---
 # <a name="connect-a-bot-to-web-chat"></a>Conectar um bot ao Webchat
 
@@ -21,7 +21,7 @@ ms.locfileid: "95456820"
 
 Quando você [cria um bot](bot-service-quickstart.md) com o serviço de bot de estrutura, o canal de chat da Web é configurado automaticamente para você. O canal de chat da Web inclui o [controle de chat da Web](https://github.com/microsoft/BotFramework-WebChat), que fornece a capacidade para os usuários interagirem com o bot diretamente em uma página da Web.
 
-![Amostra de Webchat](~/media/bot-service-channel-webchat/create-a-bot.png)
+![Amostra de Webchat](./media/bot-service-channel-webchat/create-a-bot.png)
 
 O canal de chat da Web no portal do bot Framework contém tudo o que você precisa para inserir o controle de chat da Web em uma página da Web. Basta usar o controle de Webchat para inserir a chave secreta do bot e o controle em uma página da Web.
 
@@ -33,10 +33,10 @@ Quando você usa a autenticação do Serviço de Bot do Azure com o Webchat, há
 
 A imagem a seguir mostra os componentes envolvidos ao inserir o controle de chat da Web em uma página da Web.
 
-  ![componentes de inserção de bot](~/media/bot-service-channel-webchat/webchat-control.png)
+  ![componentes de inserção de bot](./media/bot-service-channel-webchat/webchat-control.png)
 
-> [!NOTE]
-> Este artigo pressupõe que você já tenha um bot implantado no Azure. Para obter informações sobre a implantação, consulte [implantar o bot](bot-builder-deploy-az-cli.md).
+> [!IMPORTANT]
+> Como a imagem anterior implica, você precisa usar a linha direta (com autenticação avançada) para reduzir os riscos de segurança ao se conectar a um bot usando o controle de chat da Web. Para obter mais informações, consulte [Autenticação avançada de linha direta](v4sdk\bot-builder-security-enhanced.md).
 
 ### <a name="get-your-bot-secret-key"></a>Obtenha sua chave secreta do bot
 
@@ -44,11 +44,11 @@ A imagem a seguir mostra os componentes envolvidos ao inserir o controle de chat
 
 2. Clique em **Editar** no canal de **Webchat**.
 
-    ![Canal de Webchat](~/media/bot-service-channel-webchat/bot-service-channel-list.png)
+    ![Canal de Webchat](./media/bot-service-channel-webchat/bot-service-channel-list.png)
 
 3. Em **Chaves secretas**, clique em **Mostrar** para a primeira chave.
 
-    ![Chave secreta](~/media/bot-service-channel-webchat/secret-key.png)
+    ![Chave secreta](./media/bot-service-channel-webchat/secret-key.png)
 
 4. Copie a **Chave secreta** e o **Código de inserção**.
 

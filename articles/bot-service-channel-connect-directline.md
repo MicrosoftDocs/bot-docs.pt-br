@@ -7,13 +7,13 @@ ms.author: v-mimiel
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 10/21/2020
-ms.openlocfilehash: 3cada66823f1a923636d844b9c0c9ac40e50d62f
-ms.sourcegitcommit: e37cf15f4907910560f34445a0fbdd7ae75b4787
+ms.date: 12/04/2020
+ms.openlocfilehash: 6259854cd482ff3f0c1bce9a60b13c4c6561c140
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92439957"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97759235"
 ---
 # <a name="connect-a-bot-to-direct-line"></a>Conecte um bot à linha direta
 
@@ -71,10 +71,19 @@ Quando você adiciona o canal direto, a estrutura de bot gera chaves secretas. O
 
 1. Quando terminar, clique em **Concluído** para salvar a configuração do site. Você pode repetir esse processo, começando com [Adicionar novo site](#add-new-site), para cada aplicativo cliente que você deseja conectar ao seu bot.
 
-Quando você tiver a **autenticação avançada habilitada**, verá o seguinte comportamento para o qual origens confiáveis são usadas:
+### <a name="configure-enhanced-authentication"></a>Configurar a autenticação avançada
 
-- Se você configurar origens confiáveis como parte da página da interface do usuário de configuração, elas **sempre** serão usadas como o único conjunto. Não enviar nenhuma origem confiável ou enviar origens confiáveis adicionais ao gerar um token ou iniciar uma conversa será ignorado (ou seja, **não serão acrescentadas** à lista nem terão validação cruzada).
-- Se você não tiver configurado origens confiáveis como parte da interface do usuário de configuração, qualquer valor enviado como parte das chamadas à API será usado.
+Quando você habilita a **Autenticação avançada**, é solicitado que você selecione uma lista de **URLs de origem confiáveis**, também conhecidas como origens confiáveis ou domínios confiáveis, para a geração do token de autenticação. Se você habilitar a autenticação avançada, deverá especificar pelo menos uma origem confiável.
+
+![Adicionar origens confiáveis](media/bot-service-channel-connect-directline/add-trusted-origin-urls.png "Copie a chave de linha direta")
+
+Um domínio confiável é um domínio no qual o sistema confia para autenticar usuários. Em nosso caso, é um domínio em que a linha direta pode confiar para a geração de um token.
+
+- Se você configurar origens confiáveis como parte da página da interface do usuário de configuração, elas serão **sempre** usadas como o único conjunto para a geração de um token. Enviar nenhuma ou origens confiáveis adicionais ao gerar um token ou iniciar uma conversa, elas serão ignoradas (ou seja, elas **não serão acrescentadas** à lista ou validadas em cruz).
+
+- Se você não habilitou a autenticação avançada, qualquer URL de origem enviada como parte das chamadas à API será usada.
+
+A autenticação avançada permite que você reduza os riscos de segurança ao se conectar a um bot (usando o controle de chat da Web, por exemplo). Para obter mais informações, consulte [Autenticação avançada de linha direta](v4sdk/bot-builder-security-enhanced.md).
 
 ## <a name="example"></a>Exemplo
 

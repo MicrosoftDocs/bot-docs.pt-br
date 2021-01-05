@@ -6,14 +6,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: overview
 ms.service: bot-service
-ms.date: 05/27/2020
+ms.date: 12/09/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 115280b73b7182f05166b6a79bb539f986843fab
-ms.sourcegitcommit: e37cf15f4907910560f34445a0fbdd7ae75b4787
+ms.openlocfilehash: af9305effe31ebcd131ce0f257fda8788ab3f27b
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92440095"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97758554"
 ---
 # <a name="how-microsoft-teams-bots-work"></a>Como os bots do Microsoft Teams funcionam
 
@@ -53,7 +53,7 @@ Não há implementação base para a maioria desses manipuladores de atividade e
 
 ---
 
-Todos os manipuladores de atividade descritos na seção [Lógica do bot](https://aka.ms/how-bots-work#bot-logic) do artigo `How bots work` continuarão funcionando como acontece com um bot que não é do Teams, com exceção da manipulação das atividades adicionadas e removidas por membros. Estas serão diferentes no contexto de uma equipe, em que o novo membro é adicionado a ela diferentemente de um thread de mensagem.  Confira a tabela _Atividades de atualização de conversa do Teams_ na seção [Lógica do bot do Teams](#teams-bot-logic) para obter mais detalhes.
+Todos os manipuladores de atividade descritos na seção [tratamento de atividades](bot-activity-handler-concept.md#activity-handling) das _conversas controladas por evento usando um_ artigo do manipulador de atividades continuarão a funcionar como fazem com um bot que não é de equipes, com a exceção de lidar com as atividades adicionadas e removidas dos membros, que serão diferentes no contexto de uma equipe, em que o novo membro é adicionado à equipe, em oposição a um Confira a tabela _Atividades de atualização de conversa do Teams_ na seção [Lógica do bot do Teams](#teams-bot-logic) para obter mais detalhes.
 
 Para implementar sua lógica para esses manipuladores de atividade específicos do Teams, você substituirá esses métodos em seu bot conforme mostrado na seção [Lógica do bot do Teams](#teams-bot-logic) abaixo.
 

@@ -5,14 +5,14 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 2/7/2020
+ms.date: 11/24/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a192471c42e0a28bfc9dd2da98ee0cee3922835d
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: a3349441eb1973f2a78136ac2735d446164c2717
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95460990"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97758574"
 ---
 <!--
 Related TODO:
@@ -58,10 +58,8 @@ Depois de concluir este artigo, você terá um bot que pode responder a algumas 
 
 ### <a name="web-chat-and-direct-line-considerations"></a>Considerações de Webchat e Direct Line
 
-<!-- Summarized from: https://blog.botframework.com/2018/09/25/enhanced-direct-line-authentication-features/ -->
-
 > [!IMPORTANT]
-> Quando você usa a autenticação do Serviço de Bot do Azure com o Webchat, há algumas considerações importantes sobre segurança que você precisa ter em mente. Para obter mais informações, confira a seção [considerações sobre segurança](../rest-api/bot-framework-rest-direct-line-3-0-authentication.md#security-considerations) no artigo de autenticação REST.
+> Você precisa usar a linha direta com autenticação avançada habilitada para mitigar riscos de segurança ao se conectar a um bot usando o controle de chat da Web. Para obter mais informações, consulte [Autenticação avançada de linha direta](bot-builder-security-enhanced.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -328,9 +326,7 @@ Para que o logon de exemplo de bot funcione, você deve configurar o emulador co
 Após configurar o mecanismo de autenticação é possível executar o teste de exemplo do bot real.
 
 > [!NOTE]
-> Talvez seja necessário inserir um *código mágico* devido à maneira como a amostra de bot é implementada. Este código mágico faz parte do [RFC#7636](https://tools.ietf.org/html/rfc7636#page-5) e está lá para adicionar um elemento de segurança extra. Ao remover o código mágico, há um risco maior à segurança. É possível mitigar isso usando a segurança avançada do Direct Line que permite a configuração de domínios *válidos* que têm permissão para serem autenticados.
->
-> Confira [Conectar um bot ao Direct Line](~/bot-service-channel-connect-directline.md#configure-settings) e [Recursos Avançados de Autenticação do Direct Line](https://blog.botframework.com/2018/09/25/enhanced-direct-line-authentication-features/).
+> Talvez seja necessário inserir um *código mágico* devido à maneira como a amostra de bot é implementada. Este código mágico faz parte do [RFC#7636](https://tools.ietf.org/html/rfc7636#page-5) e está lá para adicionar um elemento de segurança extra. Ao remover o código mágico, há um risco maior à segurança. Isso pode ser mitigado usando a linha direta com autenticação avançada habilitada. Para obter mais informações, consulte [Autenticação avançada do bot Framework](bot-builder-security-enhanced.md).
 
 1. Execute o exemplo do bot localmente em seu computador.
 1. Inicie o Emulador.

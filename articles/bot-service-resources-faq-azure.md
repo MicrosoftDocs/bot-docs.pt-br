@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/08/2020
-ms.openlocfilehash: a858820dc5b21718903e7d700ac41bbfdcd64061
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 187aaf7fcb0188cada9b7fd29ce11e096218c96b
+ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414715"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97759204"
 ---
 # <a name="azure"></a>Azure
 
@@ -80,11 +80,11 @@ Verifique se você selecionou todos os arquivos e pastas na pasta do projeto do 
 
 ## <a name="what-version-of-azure-cli-should-i-use-to-deploy-a-bot"></a>Qual versão do CLI do Azure devo usar para implantar um bot?
 
-É recomendável que você use a versão mais recente da CLI (interface de Command-Line do Azure), caso contrário, você receberá erros de comandos preteridos. Confira [Instalar a CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+É recomendável que você use a versão mais recente da CLI (interface de Command-Line do Azure), caso contrário, você receberá erros de comandos preteridos. Confira [Instalar a CLI do Azure](/cli/azure/install-azure-cli).
 
 ## <a name="what-should-i-do-when-getting-azure-cli-deprecation-errors"></a>O que devo fazer ao obter CLI do Azure erros de substituição?
 
-Você deve atualizar para a versão mais recente do [CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Para CLI do Azure versão [2.2.0](https://github.com/MicrosoftDocs/azure-docs-cli/blob/master/docs-ref-conceptual/release-notes-azure-cli.md#march-10-2020) ou posterior, você deve usar `az deployment sub create` e `az deployment group create` , em vez de `az deployment create` comandos e, `az group deployment create` respectivamente.
+Você deve atualizar para a versão mais recente do [CLI do Azure](/cli/azure/install-azure-cli). Para CLI do Azure versão [2.2.0](https://github.com/MicrosoftDocs/azure-docs-cli/blob/master/docs-ref-conceptual/release-notes-azure-cli.md#march-10-2020) ou posterior, você deve usar `az deployment sub create` e `az deployment group create` , em vez de `az deployment create` comandos e, `az group deployment create` respectivamente.
 
 ### <a name="change-log-of-the-azure-cli-commands-used-to-deploy-a-bot-to-azure"></a>Log de alterações dos comandos CLI do Azure usados para implantar um bot no Azure
 
