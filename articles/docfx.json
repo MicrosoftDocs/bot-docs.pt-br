@@ -118,7 +118,7 @@
         "**/**.md": "12/13/2018"
       },
       "monikerRange": {
-        "v4sdk/**.md": "azure-bot-service-4.0"
+        "v4sdk/**.md": "azure-bot-service-3.0"
       },
       "exclude_monikers": {
         "**/*.md": [
@@ -132,7 +132,7 @@
     "groups": {
       "bot-service": {
         "dest": "bot-service",
-        "moniker_range": ">= azure-bot-service-4.0"
+        "moniker_range": ">= azure-bot-service-3.0"
       }
     }
   }
