@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/04/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 76ff299832ee70fba22344b3da8dd05b63726594
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: 5ad87651fc11c5942f3e46d2a481921dc609555c
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94599828"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577408"
 ---
 # <a name="managing-state"></a>Gerenciar estado
 
@@ -47,7 +47,7 @@ O SDK do Bot Framework inclui algumas implementações para a camada de armazena
 >[!IMPORTANT]
 > A classe de _armazenamento do Cosmos DB_ foi preterida. Os contêineres criados originalmente com CosmosDbStorage não tinham nenhuma chave de partição definida e receberam a chave de partição padrão de " \/ _partitionKey".
 >
-> Contêineres criados com _Cosmos DB armazenamento_ podem ser usados com _Cosmos DB armazenamento particionado_. Para obter mais informações, leia [Particionamento no Azure Cosmos DB](https://aka.ms/azure-cosmosdb-partitioning-overview).
+> Contêineres criados com _Cosmos DB armazenamento_ podem ser usados com _Cosmos DB armazenamento particionado_. Para obter mais informações, leia [Particionamento no Azure Cosmos DB](/azure/cosmos-db/partitioning-overview).
 >
 > Observe também que, diferentemente do armazenamento de Cosmos DB herdado, o armazenamento particionado Cosmos DB não cria automaticamente um banco de dados dentro de sua conta de Cosmos DB. Você precisa [criar um novo banco de dados manualmente](https://docs.microsoft.com/azure/cosmos-db/create-cosmosdb-resources-portal), mas ignorar a criação manual de um contêiner, pois o _CosmosDbPartitionedStorage_ criará o contêiner para você.
 
@@ -55,7 +55,7 @@ Para obter instruções sobre como se conectar a outras opções de armazenament
 
 ## <a name="state-management"></a>Gerenciamento de estado
 
-O *Gerenciamento do estado* automatiza a leitura e a gravação do estado do bot na camada de armazenamento subjacente. O estado é armazenado como as *propriedades do estado* , que são pares de chave-valor que seu bot pode ler e gravar por meio do objeto de gerenciamento de estados, sem se preocupar com a implementação subjacente específica. Essas propriedades do estado definem como essas informações são armazenadas. Por exemplo, ao recuperar uma propriedade definida como uma classe ou objeto específico, você sabe como os dados serão estruturados.
+O *Gerenciamento do estado* automatiza a leitura e a gravação do estado do bot na camada de armazenamento subjacente. O estado é armazenado como as *propriedades do estado*, que são pares de chave-valor que seu bot pode ler e gravar por meio do objeto de gerenciamento de estados, sem se preocupar com a implementação subjacente específica. Essas propriedades do estado definem como essas informações são armazenadas. Por exemplo, ao recuperar uma propriedade definida como uma classe ou objeto específico, você sabe como os dados serão estruturados.
 
 Essas propriedades do estado são agrupadas em "buckets" com escopo, que são apenas coleções para ajudar a organizá-las. O SDK inclui três "buckets":
 
@@ -63,7 +63,7 @@ Essas propriedades do estado são agrupadas em "buckets" com escopo, que são ap
 - Estado da conversa
 - Estado da conversa privada
 
-Todos esses buckets são subclasses da classe do *estado do bot* , que podem ser derivadas para definir outros tipos de buckets com escopos diferentes.
+Todos esses buckets são subclasses da classe do *estado do bot*, que podem ser derivadas para definir outros tipos de buckets com escopos diferentes.
 
 Esses buckets predefinidos estão no escopo para determinada visibilidade, dependendo do bucket:
 
@@ -79,7 +79,7 @@ As chaves usadas para cada um desses buckets predefinidos são específicas para
 
 - O estado do usuário cria uma chave usando a *ID do canal* e a *ID de*. Por exemplo, _{Activity.ChannelId}/users/{Activity.From.Id}#SeuNomePropriedade_
 - O estado da conversa cria uma chave usando a *ID do canal* e a *ID da conversa*. Por exemplo, _{Activity.ChannelId}/conversations/{Activity.Conversation.Id}#SeuNomePropriedade_
-- O estado da conversa privada cria uma chave usando a *ID do canal* , a *ID de* e a *ID da conversa*. Por exemplo, _{Activity.ChannelId}/conversations/{Activity.Conversation.Id}/users/{Activity.From.Id}#SeuNomePropriedade_
+- O estado da conversa privada cria uma chave usando a *ID do canal*, a *ID de* e a *ID da conversa*. Por exemplo, _{Activity.ChannelId}/conversations/{Activity.Conversation.Id}/users/{Activity.From.Id}#SeuNomePropriedade_
 
 ### <a name="when-to-use-each-type-of-state"></a>Quando usar cada tipo de estado
 
@@ -110,7 +110,7 @@ Para cada camada de armazenamento, crie os objetos de gerenciamento de estado qu
 
 ## <a name="state-property-accessors"></a>Acessadores de propriedades do estado
 
-Os *acessadores de propriedades do estado* são usados para realmente ler ou gravar uma de suas propriedades do estado e fornecer os métodos *get* , *set* e *delete* para acessar as propriedades do estado de dentro de um turno. Para criar um acessador, você deve fornecer o nome da propriedade, que geralmente acontece quando está inicializando seu bot. Em seguida, é possível usar esse acessador para obter e manipular essa propriedade do estado do bot.
+Os *acessadores de propriedades do estado* são usados para realmente ler ou gravar uma de suas propriedades do estado e fornecer os métodos *get*, *set* e *delete* para acessar as propriedades do estado de dentro de um turno. Para criar um acessador, você deve fornecer o nome da propriedade, que geralmente acontece quando está inicializando seu bot. Em seguida, é possível usar esse acessador para obter e manipular essa propriedade do estado do bot.
 
 Os acessadores permitem que o SDK obtenha o estado no armazenamento subjacente e atualizam o *cache do estado* do bot para você. O cache do estado é um cache local mantido pelo bot que armazena o objeto de estado para você, permitindo operações leitura e gravação sem acessar o armazenamento subjacente. Se ainda não estiver no cache, chamar o método *get* do acessador irá recuperar o estado e também colocá-lo no cache. Depois de recuperada, a propriedade do estado pode ser manipulada como uma variável local.
 

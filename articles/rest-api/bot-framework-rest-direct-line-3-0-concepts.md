@@ -7,16 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 01/06/2019
-ms.openlocfilehash: d3a396d3288ee998bc83bf8d03abf0d81ac6af21
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: e066a7f17d15e5e8e294577d8ecb8a6f75e87c73
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417055"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98576558"
 ---
 # <a name="key-concepts-in-direct-line-api-30"></a>Principais conceitos em linha API 3.0 direto
 
-Você pode ativar a comunicação entre seu bot e seu próprio aplicativo cliente usando a API de linha direta. Este artigo apresenta os conceitos principais 3.0 de API de linha direta e fornece informações sobre recursos para desenvolvedores relevantes. Você pode criar um cliente usando o SDK, a API REST ou o Webchat. 
+Você pode ativar a comunicação entre seu bot e seu próprio aplicativo cliente usando a API de linha direta. Este artigo apresenta os conceitos principais 3.0 de API de linha direta e fornece informações sobre recursos para desenvolvedores relevantes. Você pode criar um cliente usando o SDK, a API REST ou o Webchat.
 
 ## <a name="authentication"></a>Autenticação
 

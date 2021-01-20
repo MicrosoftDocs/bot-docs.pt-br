@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 10/06/2020
-ms.openlocfilehash: 949a6808d0d3cb91850854c03d419665a49301f2
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: ae3a7c96fc94d9d8130c51a5ffd38d30d17a6ab7
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92415775"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98576638"
 ---
 # <a name="connect-a-bot-to-cortana"></a>Conectar um bot à Cortana
 
@@ -115,10 +115,10 @@ Em seguida, você precisa habilitar e autorizar a habilidade do bot para se cone
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* [Kit de habilidades da Cortana](https://aka.ms/CortanaSkillsKitOverview)
+* [Kit de habilidades da Cortana](/cortana/skills/overview)
 * [Habilitar depuração](bot-service-debug-cortana-skill.md)
 * [Publicar uma habilidade da Cortana][publish]
 
 [invocation]: https://docs.microsoft.com/cortana/skills/cortana-invocation-guidelines
 [publish]: https://docs.microsoft.com/cortana/skills/publish-skill
-[CortanaEntity]: https://aka.ms/cortana-channel-data
+[CortanaEntity]: /cortana/skills/cortana-channel-data

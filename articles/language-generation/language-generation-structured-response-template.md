@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b71e0169037d6273536e4505b21ad40f14d9d09a
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: df7501d44c9df53f231243c9da4659289382f937
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94597308"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98575772"
 ---
 # <a name="structured-response-template"></a>Modelo de resposta estruturada
 
@@ -413,8 +413,10 @@ Here's an example:
 [more test samples][4]
 -->
 ## <a name="additional-information"></a>Informações adicionais
+
 - [Referência da API do C#](https://docs.microsoft.com/dotnet/api/microsoft.bot.builder.languagegeneration)
 - [Referência da API JavaScript](https://docs.microsoft.com/javascript/api/botbuilder-lg)
+- Leia [depurar com ferramentas adaptáveis](../bot-service-debug-adaptive-tools.md) para saber como analisar e depurar modelos.
 
 [1]:https://github.com/microsoft/botframework-cli/blob/master/packages/chatdown/docs/
 [2]:https://github.com/Microsoft/botframework-sdk/blob/master/specs/botframework-activity/botframework-activity.md

@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 86080cde3f05e8c193a6d6e1a662c0a8cd01b318
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 50550208794775b43ad242c3d06c3fb07f283a89
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92413598"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577088"
 ---
 # <a name="virtual-assistant-overview"></a>Visão geral do Assistente Virtual
 
@@ -61,7 +61,7 @@ Modelo de linguagem automotiva | Um modelo de linguagem automotiva que abrange d
 >[!IMPORTANT]
 > A classe de _armazenamento do Cosmos DB_ foi preterida. Os contêineres criados originalmente com CosmosDbStorage não tinham nenhum conjunto de chaves de partição e receberam a chave de partição padrão de _ \/ _partitionKey_.
 >
-> Contêineres criados com _Cosmos DB armazenamento_ podem ser usados com _Cosmos DB armazenamento particionado_. Para obter mais informações, leia [Particionamento no Azure Cosmos DB](https://aka.ms/azure-cosmosdb-partitioning-overview).
+> Contêineres criados com _Cosmos DB armazenamento_ podem ser usados com _Cosmos DB armazenamento particionado_. Para obter mais informações, leia [Particionamento no Azure Cosmos DB](/azure/cosmos-db/partitioning-overview).
 >
 > Observe também que, diferentemente do armazenamento de Cosmos DB herdado, o armazenamento particionado Cosmos DB não cria automaticamente um banco de dados dentro de sua conta de Cosmos DB. Você precisa [criar um novo banco de dados manualmente](https://docs.microsoft.com/azure/cosmos-db/create-cosmosdb-resources-portal), mas ignorar a criação manual de um contêiner, pois o _CosmosDbPartitionedStorage_ criará o contêiner para você.
 
@@ -93,7 +93,7 @@ Além disso, é possível inserir experiências na área de trabalho e nos aplic
 
 A solução Assistente Virtual é criada com base no Serviço de Bot do Azure, no Serviço Cognitivo de Reconhecimento Vocal e na Fala Unificada com um amplo conjunto de componentes de suporte do Azure. Isso significa que você se beneficia da [infraestrutura global do Azure](https://azure.microsoft.com/global-infrastructure/), incluindo as certificações ISO 27018, HIPAA, PCI DSS e SOC 1, 2 e 3.
 
-Além disso, o suporte ao Reconhecimento Vocal é fornecido pelo Serviço Cognitivo LUIS, que dá suporte a um amplo conjunto de idiomas [listados aqui](https://docs.microsoft.com/azure/cognitive-services/luis/luis-supported-languages). O [Serviço Cognitivo de Tradução](https://azure.microsoft.com/services/cognitive-services/translator-text-api/) fornece funcionalidades adicionais de Tradução Automática para ampliar ainda mais o alcance do Assistente Virtual.
+Além disso, Reconhecimento vocal suporte é fornecido pelo serviço cognitiva LUIS, que dá suporte a um amplo conjunto de linguagens, consulte [idiomas com suporte](https://docs.microsoft.com/azure/cognitive-services/luis/luis-supported-languages). O [Serviço Cognitivo de Tradução](https://azure.microsoft.com/services/cognitive-services/translator-text-api/) fornece funcionalidades adicionais de Tradução Automática para ampliar ainda mais o alcance do Assistente Virtual.
 
 ### <a name="integrated-and-context-aware"></a>Integrado e contextual
 
@@ -109,7 +109,7 @@ A arquitetura de nosso Assistente Virtual é flexível e pode ser integrada a ou
 
 ### <a name="adaptive-cards"></a>Cartões Adaptáveis
 
-Os [Cartões Adaptáveis](https://adaptivecards.io/) permitem que o Assistente Virtual retorne elementos da experiência do usuário (por exemplo, cartões, imagens, botões) junto com respostas baseadas em texto. Se a tela do dispositivo ou da conversa tiver uma tela, esses Cartões Adaptáveis poderão ser renderizados entre vários dispositivos e plataformas, oferecendo suporte à experiência do usuário quando apropriado. Exemplos de Cartões Adaptáveis podem ser encontrados [aqui](https://adaptivecards.io/samples/), com informações sobre as opções de renderização [nesta](https://docs.microsoft.com/adaptive-cards/rendering-cards/getting-started) documentação.
+Os [Cartões Adaptáveis](https://adaptivecards.io/) permitem que o Assistente Virtual retorne elementos da experiência do usuário (por exemplo, cartões, imagens, botões) junto com respostas baseadas em texto. Se a tela do dispositivo ou da conversa tiver uma tela, esses Cartões Adaptáveis poderão ser renderizados entre vários dispositivos e plataformas, oferecendo suporte à experiência do usuário quando apropriado. Exemplos de cartões adaptáveis podem ser encontrados nesses [exemplos](https://adaptivecards.io/samples/) com informações sobre opções de renderização na documentação do [Guia de introdução](https://docs.microsoft.com/adaptive-cards/rendering-cards/getting-started) .
 
 ### <a name="skills"></a>Habilidades
 

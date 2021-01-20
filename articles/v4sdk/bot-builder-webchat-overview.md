@@ -2,18 +2,18 @@
 title: Visão geral do Webchat – Serviço de Bot
 description: Familiarize-se com o componente de chat da Web do bot Framework. Saiba como usar e personalizar este componente. Exiba as propriedades disponíveis e outras informações.
 keywords: bot framework, webchat, chat, exemplos, react, referência
-author: ivorb
+author: mmiele
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 06/07/2019
-ms.openlocfilehash: 87f4962a162c34f825eefdfce493be80c5f3ccd9
-ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
+ms.date: 12/23/2020
+ms.openlocfilehash: bbdafa503fb5f125300571c71f8222e0eff19d5c
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97759284"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577298"
 ---
 # <a name="web-chat-overview"></a>Visão geral de Webchat
 
@@ -149,32 +149,15 @@ O Webchat é projetado para ser personalizável sem criação de fork do código
 Veja mais sobre [personalização de Webchat](https://github.com/Microsoft/BotFramework-WebChat/blob/master/SAMPLES.md) para saber mais a esse respeito.
 
 > [!NOTE]
-> Para obter informações sobre CDNs (Redes de Distribuição de Conteúdo), consulte [CDNs (Redes de Distribuição de Conteúdo)](https://aka.ms/CDN-best-practices)
+> Para obter informações sobre CDNs (Redes de Distribuição de Conteúdo), consulte [CDNs (Redes de Distribuição de Conteúdo)](/azure/architecture/best-practices/cdn)
 
 ## <a name="migrating-from-web-chat-v3-to-v4"></a>Migração de Webchat v3 para v4
 
-Há três caminhos possíveis para a migração de v3 para v4. Primeiro, compare seu cenário inicial, conforme descrito abaixo.
+Há três caminhos possíveis para a migração de v3 para v4. Primeiro, Compare seu cenário inicial com aquele listado abaixo.
 
-Para obter uma lista de exemplos relacionados, consulte [Amostras hospedadas pelo Webchat](https://aka.ms/botframework-webchat-samples).
-
-### <a name="my-current-website-integrates-web-chat-using-an-iframe-element-obtained-from-azure-bot-services-i-want-to-upgrade-to-v4"></a>Meu site atual integra o Webchat usando um elemento `<iframe>` obtido dos Serviços de Bot do Azure. Desejo fazer uma atualização para o v4.
-
-Desde maio de 2019, estamos distribuindo a v4 para sites que integram o Webchat usando o elemento `<iframe>`. Consulte [a documentação de inserção](https://github.com/Microsoft/BotFramework-WebChat/tree/master/packages/embed) para obter informações sobre a integração do Webchat usando o `<iframe>`.
-
-### <a name="my-website-is-integrated-with-web-chat-v3-and-uses-customization-options-provided-by-web-chat-no-customization-at-all-or-very-little-of-my-own-customization-that-was-not-available-with-web-chat"></a>Meu site é integrado com o Webchat v3 e usa as opções de personalização fornecidas pelo Webchat, nenhuma personalização em absoluto ou um nível muito pequeno de personalização de minha autoria, que não estava disponível com o Webchat.
-
-Siga a implementação do exemplo [`00.migration/a.v3-to-v4`](https://github.com/microsoft/BotFramework-WebChat/tree/master/samples/00.migration/a.v3-to-v4) para converter sua página da Web de Webchat v3 para v4.
-
-### <a name="my-website-is-integrated-with-a-fork-of-web-chat-v3-i-have-implemented-a-lot-of-customization-in-my-version-of-web-chat-and-i-am-concerned-v4-is-not-compatible-with-my-needs"></a>Meu site está integrado com um fork do Webchat v3. Implementei muita personalização na minha versão do Webchat e estou preocupado que a v4 não seja compatível com minhas necessidades.
-
-Uma das coisas favoritas da nossa equipe sobre a v4 do Webchat é a capacidade de adicionar personalização **sem a necessidade de criar fork do Webchat**. Embora isso crie uma sobrecarga adicional para os usuários de v3 que criaram fork do Webchat anteriormente, faremos nosso melhor para dar suporte aos clientes que fizerem a mudança. Use as seguintes sugestões:
-
--  Dê uma olhada na implementação do exemplo [`00.migration/a.v3-to-v4`](https://github.com/microsoft/BotFramework-WebChat/tree/master/samples/00.migration/a.v3-to-v4). Esse é um ótimo ponto de partida para colocar o Webchat em funcionamento.
--  Em seguida, leia a [lista de exemplos](https://aka.ms/botframework-webchat-samples) para comparar seus requisitos de personalização com aqueles com os quais o Webchat já é compatível. Esses exemplos são compostos de recursos comumente solicitados para o Webchat.
--  Se um ou mais dos seus recursos não está disponível nos exemplos, consulte nossos [problemas abertos e fechados](https://github.com/Microsoft/BotFramework-WebChat/issues?utf8=%E2%9C%93&q=is%3Aissue+), [Rótulo de exemplos](https://github.com/Microsoft/BotFramework-WebChat/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3ASample) e [Rótulo de suporte à migração](https://github.com/Microsoft/BotFramework-WebChat/issues?q=is%3Aissue+migrate+label%3A%22Migration+Support%22) para pesquisar por solicitações de exemplo e/ou suporte à personalização de um recurso que você está procurando. Adicionar seu comentário a problemas em aberto ajudará a equipe de priorizar as solicitações que têm alta demanda, e nós encorajamos a participação em nossa comunidade.
--  Se você não encontrou o recurso na lista de solicitações em aberto, fique à vontade para [criar sua própria solicitação](https://github.com/Microsoft/BotFramework-WebChat/issues/new). Assim como no item acima, outros clientes adicionando comentários ao seu problema em aberto também ajudarão a priorizar quais recursos são mais frequentemente necessários entre usuários do Webchat.
--  Por fim, se você precisa de seu recurso assim que possível, [solicitações de pull](https://github.com/Microsoft/BotFramework-WebChat/compare) para o Webchat são bem-vindas. Se você tem experiência de codificação suficiente para implementar o recurso por conta própria, apreciamos muito o suporte adicional! Criar o recurso por conta própria significa que ele fica disponível para uso em Webchat mais rapidamente e que outros clientes que buscam um recurso igual ou semelhante podem usar sua contribuição.
--  Confira o restante deste `README` para saber mais sobre a v4.
+- Para atualizar um controle de chat da Web inserido em um `<iframe>` , consulte a documentação no repositório de chat da Web para o [pacote de inserção](https://github.com/microsoft/BotFramework-WebChat/tree/master/packages/embed#readme).
+- Para atualizar um controle de chat da Web que usa pouca ou nenhuma personalização, examine o exemplo de bate-papo da Web [00. Migration/a. v3-to-v4](https://github.com/microsoft/BotFramework-WebChat/tree/master/samples/00.migration/a.v3-to-v4) , que descreve o processo.
+- Para atualizar uma versão bifurcada do chat Web v3 com muita personalização, consulte as [diretrizes de migração](https://github.com/microsoft/BotFramework-WebChat/blob/master/docs/MIGRATION.md#my-website-is-integrated-with-a-fork-of-web-chat-v3-i-have-implemented-a-lot-of-customization-in-my-version-of-web-chat-and-i-am-concerned-v4-is-not-compatible-with-my-needs)de chat da Web.
 
 ## <a name="web-chat-api-reference"></a>Referência da API do Webchat
 

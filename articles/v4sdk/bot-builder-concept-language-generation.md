@@ -9,18 +9,18 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: e989af7f730137f866ef7f2d50ef084a30f20d63
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: 39f0ac7767cd981312d8536f6c6ea36204591f97
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94599838"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577418"
 ---
 # <a name="language-generation"></a>Geração de Linguagem
 
 [!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
-<!-- See [here](#Change-Log) for what's new in **4.8.0 RC1** release.-->
+<!-- See [what's new](#Change-Log) for what's new in **4.8.0 RC1** release.-->
 
 A LG (Geração de Linguagem) permite aos desenvolvedores extrair cadeias de caracteres inseridas de seus códigos e arquivos de recurso e gerenciá-las por meio de um formato de arquivo e um runtime de LG. Com a LG, os desenvolvedores podem criar uma experiência de conversa mais natural definindo diversas variações em uma frase, executando expressões simples com base no contexto e referindo-se à memória de conversação.
 
@@ -99,7 +99,7 @@ Se o modelo precisar de propriedades específicas a serem passadas para resoluç
 
 ## <a name="multilingual-generation-and-language-fallback-policy"></a>Política de fallback de linguagem e geração multilíngue
 
-O bot pode ser direcionado para mais de um idioma falado ou de exibição. Você pode gerenciar instâncias separadas do *TemplateEngine* , uma por idioma de destino. Para obter um exemplo de como adicionar vários idiomas, também conhecido como fallback de idioma, ao seu bot, confira o prompt de vários turnos com uma amostra de fallback de idioma no [C#](https://aka.ms/csharp-lg-multi-turn-prompt-language-fallback-sample) ou no [JavaScript](https://aka.ms/js-lg-multi-turn-prompt-language-fallback-sample).
+O bot pode ser direcionado para mais de um idioma falado ou de exibição. Você pode gerenciar instâncias separadas do *TemplateEngine*, uma por idioma de destino. Para obter um exemplo de como adicionar vários idiomas, também conhecido como fallback de idioma, ao seu bot, confira o prompt de vários turnos com uma amostra de fallback de idioma no [C#](https://aka.ms/csharp-lg-multi-turn-prompt-language-fallback-sample) ou no [JavaScript](https://aka.ms/js-lg-multi-turn-prompt-language-fallback-sample).
 
 <!--
 ## Grammar check and correction
@@ -199,7 +199,7 @@ A chamada `ExpandTemplate("TimeOfDayWithCondition", new { time = "evening" })` c
     | # myTemplate <br/> - [ackPhrase] <br/><br/> # ackPhrase <br/> - hi <br/>- hello | # myTemplate <br/> - @{ackPhrase()} <br/><br/> # ackPhrase <br/> - hi <br/>- hello |
 
 - \[**NEW**\]:
-    - Language generation preview is now available for JavaScript as well. Checkout packages [here][15]. Samples are [here][26]
+    - Language generation preview is now available for JavaScript as well. Checkout [packages][15]. See [samples][26]
     - New `ActivityFactory` class that helps transform structured response template output from LG into a Bot framework activity.
     - Bug fixes and stability improvements.
 
@@ -208,7 +208,7 @@ A chamada `ExpandTemplate("TimeOfDayWithCondition", new { time = "evening" })` c
     - Old `display || speak` notation is deprecated in favor of structured template support. See below for more details on structured template.
     - Old `Chatdown` style cards are deprecated in favor of structured template support. See below for more details on structured template.
 - \[**NEW**\]:
-    - Structured Template support in .lg file format. See [here](../language-generation/language-generation-structured-response-template.md) to learn more about Structured Template definition.
+    - Structured Template support in .lg file format. See [response template](../language-generation/language-generation-structured-response-template.md) to learn more about Structured Template definition.
     - ActivityGenerator.GenerateFromLG static method to transform output from LG sub-system into a full blown [Bot Framework Activity][1]
 
 ### 4.6 PREVIEW

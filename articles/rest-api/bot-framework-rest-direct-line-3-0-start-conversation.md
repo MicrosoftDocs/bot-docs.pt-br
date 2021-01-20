@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 76f585c522f1b7d967760809c3cf165658441d0a
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 5abf9125ef12fd4faa126c962f62fe52636fd208
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824386"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98576718"
 ---
 # <a name="start-a-conversation-in-direct-line-api-30"></a>Iniciar uma conversa na API de linha direta 3,0
 
@@ -27,7 +27,7 @@ POST https://directline.botframework.com/v3/directline/conversations
 Authorization: Bearer SECRET_OR_TOKEN
 ```
 
-Os snippets de código a seguir fornecem um exemplo de conversa Iniciar solicitação e resposta.
+Os trechos de código a seguir fornecem um exemplo da solicitação e resposta de início de conversa.
 
 ### <a name="request"></a>Solicitação
 
@@ -54,16 +54,16 @@ HTTP/1.1 201 Created
 }
 ```
 
-Normalmente, uma solicitação Iniciar Conversa é usada para abrir uma nova conversa e um código de status **HTTP 201** será retornado se a nova conversa for iniciada com êxito. No entanto, se um cliente envia uma solicitação Iniciar Conversa com um token de Linha Direta no cabeçalho `Authorization` que foi usado anteriormente para iniciar uma conversa usando a operação Iniciar Conversa, um código de status **HTTP 200** será retornado para indicar que a solicitação era aceitável, mas nenhuma conversa foi criada (pois ela já existia).
+Normalmente, uma solicitação iniciar conversa é usada para abrir uma nova conversa e um código de status **HTTP 201** será retornado se a nova conversa for iniciada com êxito. No entanto, se um cliente enviar uma solicitação iniciar conversa com um token de linha direto no `Authorization` cabeçalho que foi usado anteriormente para iniciar uma conversa usando a operação iniciar conversa, um código de status **http 200** será retornado para indicar que a solicitação foi aceitável, mas nenhuma conversa foi criada (já que ela existia).
 
 > [!TIP]
 > Você tem 60 segundos para conectar-se à URL de fluxo do WebSocket. Se a conexão não puder ser estabelecida durante esse tempo, o cliente pode [reconectar-se à conversa](bot-framework-rest-direct-line-3-0-reconnect-to-conversation.md) para gerar uma nova URL de fluxo.
 
-## <a name="start-conversation-versus-generate-token"></a>Iniciar conversa em vez de gerar o Token
+## <a name="start-conversation-versus-generate-token"></a>Iniciar conversa versus gerar token
 
-A operação Iniciar Conversa (`POST /v3/directline/conversations`) é semelhante à operação [Gerar Token](bot-framework-rest-direct-line-3-0-authentication.md#generate-token) (`POST /v3/directline/tokens/generate`) em que ambas as operações retornam um `token` que pode ser usado para acessar uma única conversa. No entanto, a operação Iniciar Conversa também inicia a conversa, entra em contato com o bot e cria uma URL de fluxo do WebSocket, enquanto que a operação Gerar Token não faz nenhuma dessas coisas. 
+A operação iniciar conversa ( `POST /v3/directline/conversations` ) é semelhante à operação [gerar token](bot-framework-rest-direct-line-3-0-authentication.md#generate-token) ( `POST /v3/directline/tokens/generate` ) em que ambas as operações retornam um `token` que pode ser usado para acessar uma única conversa. No entanto, a operação iniciar conversa também inicia a conversa, entra em contato com o bot e cria uma URL de fluxo WebSocket, enquanto a operação gerar token não faz nenhuma dessas coisas.
 
-Se você pretende iniciar a conversa imediatamente com o cliente, use a operação Iniciar Conversa. Se você planeja distribuir o token para clientes e deseja que eles iniciem a conversa, use a operação [Gerar Token](bot-framework-rest-direct-line-3-0-authentication.md#generate-token). 
+Se você pretende iniciar a conversa imediatamente com seu cliente, use a operação iniciar conversa. Se você planeja distribuir o token para os clientes e desejar que eles iniciem a conversa, use a operação [gerar token](bot-framework-rest-direct-line-3-0-authentication.md#generate-token) em vez disso.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

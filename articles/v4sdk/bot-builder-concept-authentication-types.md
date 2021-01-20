@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 08/14/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 722e4d55fb2c234af979a01be1f9bb422e52c910
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: 0d0e78b7ec0bc14451f19bb09c6942e1b9233196
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95449460"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577428"
 ---
 # <a name="authentication-types"></a>Tipos de autenticação
 
@@ -46,16 +46,16 @@ Quando você registra um bot no portal do Azure, por exemplo, por meio do **regi
 
 Quando um canal envia uma solicitação para um bot, por meio do serviço de conector de bot, ele especifica um **token** no **cabeçalho de autorização** da solicitação. O bot autentica chamadas do serviço de conector de bot verificando a autenticidade do token.
 
-
 Quando o bot envia uma solicitação para um canal por meio do **serviço de conector de bot**, ele deve especificar o **token** no **cabeçalho Authorization** da solicitação.
 Todas as solicitações devem incluir o token de acesso que é verificado pelo serviço do conector de bot para autorizar a solicitação.
 
 As operações descritas são executadas automaticamente pelo SDK do bot Framework.
 
 Para obter mais detalhes, consulte a documentação da API REST sobre como [autenticar solicitações do serviço de conector de bot para o bot](~/rest-api/bot-framework-rest-connector-authentication.md#connector-to-bot) e [autenticar solicitações de seu bot para o serviço de conector de bot](~/rest-api/bot-framework-rest-connector-authentication.md#bot-to-connector).
+
 ### <a name="channels"></a>Canais
 
-Normalmente, os canais se comunicam com um bot por meio do **serviço de conector de bot** , isso significa que os princípios de autenticação anteriores geralmente se aplicam. Talvez você queira observar as características de canais específicos.
+Normalmente, os canais se comunicam com um bot por meio do **serviço de conector de bot**. Isso significa que os princípios de autenticação anteriores geralmente se aplicam. Talvez você queira observar as características de canais específicos.
 
 #### <a name="direct-line"></a>Linha Direta
 
@@ -66,9 +66,7 @@ O aplicativo cliente autentica as solicitações para a linha direta (versão 3,
 > [!IMPORTANT]
 > Quando você usa a autenticação do Serviço de Bot do Azure com o Webchat, há algumas considerações importantes sobre segurança que você precisa ter em mente. Para obter mais informações, confira a seção [considerações sobre segurança](~/bot-service-channel-connect-webchat.md#keep-your-secret-hidden-exchange-your-secret-for-a-token-and-generate-the-embed) no artigo de autenticação REST.
 
-
 Para obter mais informações, consulte [manter seu segredo oculto, trocar seu segredo por um token e gerar o embed](~/bot-service-channel-connect-webchat.md#keep-your-secret-hidden-exchange-your-secret-for-a-token-and-generate-the-embed).
-
 
 #### <a name="web-chat"></a>Chat na Web
 

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 10/19/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: e4677c76446d5e7788f971ca92224c0498bde275
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: be50077164ed33dc9bb55f4c61aacafeecd89865
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95449281"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577328"
 ---
 # <a name="use-multiple-luis-and-qna-models"></a>Usar vários modelos de LUIS e QnA
 
@@ -89,7 +89,7 @@ Para obter mais informações, consulte como **criar um aplicativo Luis no porta
 
 ### <a name="create-the-qna-maker-knowledge-base"></a>Criar a base de dados de conhecimento QnA Maker
 
-O primeiro passo para definir uma base de dados de conhecimento do QnA Maker é configurar um serviço do QnA Maker no Azure. Para fazer isso, siga as instruções passo a passo encontradas [aqui](https://aka.ms/create-qna-maker).
+O primeiro passo para definir uma base de dados de conhecimento do QnA Maker é configurar um serviço do QnA Maker no Azure. Para fazer isso, siga as instruções passo a passo encontradas no artigo [Configurar o serviço qnamaker](/azure/cognitive-services/qnamaker/how-to/set-up-qnamaker-service-azure) .
 
 Depois que o serviço QnA Maker é criado no Azure, você precisa registrar a _Chave 1_ dos Serviços Cognitivos fornecida por seu serviço QnA Maker. Isso será usado como \<azure-qna-service-key1> ao adicionar o aplicativo QnA Maker ao seu aplicativo de expedição.
 
@@ -532,7 +532,7 @@ Você pode usar a ferramenta de linha de comando [Dispatch][dispatch-readme] par
 
 ### <a name="to-update-or-create-a-new-luis-model"></a>Para atualizar ou criar um novo modelo do LUIS
 
-Este exemplo é baseado em um modelo predefinido do LUIS. Confira [aqui](https://aka.ms/create-luis-model#updating-your-cognitive-models) mais informações para ajudá-lo a atualizar esse modelo ou criar um novo modelo do LUIS.
+Este exemplo é baseado em um modelo predefinido do LUIS. Informações adicionais para ajudá-lo a atualizar esse modelo, ou criar um novo modelo LUIS, podem ser encontradas no artigo [design de aplicativo iterativo para Luis](/azure/cognitive-services/luis/luis-concept-app-iteration).
 
 Depois de atualizar os modelos subjacentes (QnA ou LUIS), execute `dispatch refresh` para atualizar seu aplicativo de Expedição do LUIS. `dispatch refresh` é basicamente o mesmo comando que `dispatch create`, exceto pelo fato de que nenhuma nova ID do aplicativo do LUIS é criada.
 

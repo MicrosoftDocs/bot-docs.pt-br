@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/13/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 1d042fda1bf01fef0ca30e135236b293d68351c5
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: 1688de67619e6b38e91d114a942154b122c8a3e9
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95456090"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577178"
 ---
 # <a name="create-your-own-prompts-to-gather-user-input"></a>Crie seus próprio prompts para coletar entradas do usuário
 
@@ -210,7 +210,7 @@ O bot usa os critérios a seguir para validar a entrada.
 
 ## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-**bots/customPromptBot.cs** [!code-javascript[validation methods](~/../botbuilder-samples/samples/javascript_nodejs/44.prompt-for-user-input/bots/customPromptBot.js?range=120-191)]
+**bots/customPromptBot.js** [!code-javascript[validation methods](~/../botbuilder-samples/samples/javascript_nodejs/44.prompt-for-user-input/bots/customPromptBot.js?range=120-191)]
 
 ## <a name="python"></a>[Python](#tab/python)
 

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 24a153bfeab0c6dc58e6fd1674f9ef517afe8ddb
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: df825658e6cdd992f8e5c8fed1146bc42d21e2a4
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94597318"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98575797"
 ---
 # <a name="functions-injected-from-the-language-generation-library"></a>Funções injetadas da biblioteca de geração de linguagem
 
@@ -41,7 +41,7 @@ ActivityAttachment(<collection-of-objects>)
 | <*activityAttachment*> | objeto | Um `activityAttachment` formado com base nas entradas |
 ||||
 
-*Exemplo* :
+*Exemplo*:
 
 Este exemplo converte uma coleção de objetos em um `activityAttachment`.
 <!--
@@ -158,7 +158,7 @@ template(<templateName>, '<param1>', '<param2>', ...)
 | Parâmetro | Obrigatório | Type | Descrição |
 | --------- | -------- | ---- | ----------- |
 | <*templateName*> | Sim | string  | Uma cadeia de caracteres que representa o nome do modelo |
-| <*param1* >,< *param2* >, ... | Sim | Objeto  | Os parâmetros passados para o modelo |
+| <*param1*>,<*param2*>, ... | Sim | Objeto  | Os parâmetros passados para o modelo |
 |||||
 
 | Valor retornado | Type | Descrição |
@@ -252,9 +252,9 @@ Este exemplo usa a função `isTemplate()` para verificar se determinado nome de
 - you add a task at 7:pm
 ```
 
-A chamada de `isTemplate("welcome")` será avaliada como `true`. A chamada de `isTemplate("delete-to-do")` será avaliada como `false`.
+`isTemplate("welcome")`A chamada será avaliada como `true` . `isTemplate("delete-to-do")`A chamada será avaliada como `false` .
 
 ## <a name="additional-information"></a>Informações adicionais
 
-- [Formato de arquivo .lg](../file-format/bot-builder-lg-file-format.md) 
-- [Modelo de resposta estruturado](language-generation-structured-response-template.md) 
+- [Formato de arquivo .lg](../file-format/bot-builder-lg-file-format.md)
+- [Modelo de resposta estruturado](language-generation-structured-response-template.md)

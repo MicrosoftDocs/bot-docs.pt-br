@@ -1,20 +1,20 @@
 ---
-ms.openlocfilehash: 6149dd01f6bba37281a58b38f8b3c28908392d26
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: 85c76af722619d104e77f9ef7d5d24212ca4252b
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95561036"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577168"
 ---
 
 Este artigo é iniciado no [aplicativo de exemplo CoreBot](https://aka.ms/cs-core-sample) e adiciona o código necessário para integrar a telemetria em qualquer bot. Isso permitirá que o Application Insights comece a acompanhar as solicitações.
 
 > [!IMPORTANT]
-> Se você não configurou sua conta de [Application insights](https://aka.ms/appinsights-overview) e criou sua [chave de Application insights](../bot-service-resources-app-insights-keys.md), faça isso antes de continuar.
+> Se você não configurou sua conta de [Application insights](/azure/azure-monitor/app/app-insights-overview) e criou sua [chave de Application insights](../bot-service-resources-app-insights-keys.md), faça isso antes de continuar.
 
 1. Abra o [aplicativo de exemplo CoreBot](https://aka.ms/cs-core-sample) no Visual Studio.
 
-2. Adicione o pacote NuGet `Microsoft.Bot.Builder.Integration.ApplicationInsights.Core `. Para obter mais informações sobre como usar o NuGet, confira [Instalar e gerenciar pacotes no Visual Studio](https://aka.ms/install-manage-packages-vs):
+2. Adicione o pacote NuGet `Microsoft.Bot.Builder.Integration.ApplicationInsights.Core `. Para obter mais informações sobre como usar o NuGet, confira [Instalar e gerenciar pacotes no Visual Studio](/nuget/consume-packages/install-use-packages-visual-studio):
 
 
 3. Inclua as instruções a seguir em `Startup.cs`:
@@ -27,7 +27,7 @@ Este artigo é iniciado no [aplicativo de exemplo CoreBot](https://aka.ms/cs-cor
 
     Observação: Se estiver acompanhando e atualizando o código de exemplo do CoreBot, você observará que a instrução using para `Microsoft.Bot.Builder.Integration.AspNet.Core` já existe no exemplo do CoreBot.
 
-4. Inclua o código a seguir no método `ConfigureServices()` em `Startup.cs`. Isso tornará os serviços de telemetria disponíveis para o bot por meio da [DI (injeção de dependência)](https://aka.ms/asp.net-core-dependency-interjection):
+4. Inclua o código a seguir no método `ConfigureServices()` em `Startup.cs`. Isso tornará os serviços de telemetria disponíveis para o bot por meio da [DI (injeção de dependência)](/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.2):
     ```csharp
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)

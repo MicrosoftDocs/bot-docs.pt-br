@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/04/2018
-ms.openlocfilehash: c2ec8f1831215512685c4397a82292a563704788
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 573e68cc1df69b85b0601191cf1baf0cdf1b9848
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414932"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98575929"
 ---
 # <a name="bot-analytics"></a>Análise de bot
 
@@ -116,4 +116,5 @@ To find this value, open Application Insights and navigate to **Configure** > **
 Para saber mais sobre como localizar esses valores, veja [Chaves do Application Insights](~/bot-service-resources-app-insights-keys.md).
 
 ## <a name="additional-resources"></a>Recursos adicionais
+
 * [Chaves do Application Insights](~/bot-service-resources-app-insights-keys.md)

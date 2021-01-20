@@ -9,18 +9,18 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f6b9d12e3289b42d314f9460a028206c01be25d2
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 1087d7d299f74e6d498794d3ad484bf3b2ea5170
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92413735"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577148"
 ---
 # <a name="add-telemetry-to-your-bot"></a>Adicionar telemetria ao seu bot
 
 [!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
-O registro em log de telemetria foi adicionado à versão 4.2 do SDK do Bot Framework.  Isso permite que os aplicativos do bot enviem dados de evento para serviços de telemetria, tais como o [Application Insights](https://aka.ms/appinsights-overview). A telemetria oferece informações sobre o bot mostrando quais recursos são mais usados, detecta comportamento indesejado e fornece visibilidade da disponibilidade, do desempenho e do uso.
+O registro em log de telemetria foi adicionado à versão 4.2 do SDK do Bot Framework.  Isso permite que os aplicativos do bot enviem dados de evento para serviços de telemetria, tais como o [Application Insights](/azure/azure-monitor/app/app-insights-overview/). A telemetria oferece informações sobre o bot mostrando quais recursos são mais usados, detecta comportamento indesejado e fornece visibilidade da disponibilidade, do desempenho e do uso.
 
 ***Observação: na versão 4,6, o método padrão para implementar a telemetria em um bot foi atualizado para garantir que a telemetria seja registrada corretamente ao usar um adaptador personalizado. Este artigo foi atualizado para mostrar o método atualizado. As alterações são compatíveis com versões anteriores e os bots que usam o método anterior continuarão a conectar a telemetria corretamente.** _
 
@@ -43,7 +43,7 @@ _ O código necessário para ligar a telemetria no bot e conectar-se a Applicati
 * O [código de exemplo do Application Insights](https://aka.ms/csharp-corebot-app-insights-sample)
 * Uma assinatura do [Microsoft Azure](https://portal.azure.com/)
 * Uma [chave do Application Insights](../bot-service-resources-app-insights-keys.md)
-* Familiaridade com o [Application Insights](https://aka.ms/appinsights-overview)
+* Familiaridade com o [Application Insights](/azure/azure-monitor/app/app-insights-overview/)
 * [git](https://git-scm.com/)
 
 > [!NOTE]
@@ -55,7 +55,7 @@ _ O código necessário para ligar a telemetria no bot e conectar-se a Applicati
 * O [código de exemplo do Application Insights](https://aka.ms/js-corebot-app-insights-sample)
 * Uma assinatura do [Microsoft Azure](https://portal.azure.com/)
 * Uma [chave do Application Insights](../bot-service-resources-app-insights-keys.md)
-* Familiaridade com o [Application Insights](https://aka.ms/appinsights-overview)
+* Familiaridade com o [Application Insights](/azure/azure-monitor/app/app-insights-overview/)
 * [Visual Studio Code](https://www.visualstudio.com/downloads)
 * [Node.js](https://nodejs.org/) versão 10,14 ou superior. Use `node --version` o comando para determinar a versão do nó que você instalou.
 * [Emulador do bot Framework](https://aka.ms/bot-framework-emulator-readme)
@@ -71,7 +71,7 @@ _ O código necessário para ligar a telemetria no bot e conectar-se a Applicati
     * The [Application Insights sample code](https://aka.ms/py-corebot-app-insights-sample)
     * A subscription to [Microsoft Azure](https://portal.azure.com/)
     * An [Application Insights key](../bot-service-resources-app-insights-keys.md)
-    * Familiarity with [Application Insights](https://aka.ms/appinsights-overview)
+    * Familiarity with [Application Insights](/azure/azure-monitor/app/app-insights-overview/)
 
     > [!NOTE]
     > The [Application Insights sample code](https://aka.ms/py-corebot-app-insights-sample) was built on top of the [CoreBot sample code](https://aka.ms/py-core-sample). This article will step you through modifying the CoreBot sample code to incorporate telemetry. If you are following along in Visual Studio you will have the Application Insights sample code by the time you are finished.
@@ -147,7 +147,7 @@ Para consultar seus dados
 2. Navegue até o Application Insights. A maneira mais fácil de fazer isso é clicar em **Monitorar > Aplicativos** e encontrá-lo lá.
 3. Uma vez no Application Insights, você pode clicar em _Logs (Análise)_ na barra de navegação.
 
-    ![Logs (Análise)](media/AppInsights-LogView.png)
+    ![LogView de logs (análise)](media/AppInsights-LogView.png)
 
 4. Isso abrirá a janela Consulta.  Insira a consulta a seguir e selecione _Executar_:
 
@@ -165,7 +165,7 @@ Para consultar seus dados
 
 5. Isso retornará o percentual de caixas de diálogo em cascata que são executados até a conclusão.
 
-    ![Logs (Análise)](media/AppInsights-Query-PercentCompleteDialog.png)
+    ![Porcentagem de consulta do App insights concluída](media/AppInsights-Query-PercentCompleteDialog.png)
 
 > [!TIP]
 > Você pode fixar qualquer consulta ao seu painel do Application Insights selecionando o botão no canto superior direito da folha **Logs (Análise)** . Basta selecionar o painel ao qual você deseja que ele seja fixado e ele estará disponível na próxima vez que você visitar esse painel.
@@ -184,8 +184,8 @@ Lá, você verá algumas informações padrão sobre o desempenho do bot e quais
 
 * [Adicionar telemetria ao seu bot do QnA Maker](bot-builder-telemetry-qnamaker.md)
 
-* [O que é o Application Insights?](https://aka.ms/appinsights-overview)
+* [O que é o Application Insights?](/azure/azure-monitor/app/app-insights-overview/)
 
-* [Usar a Pesquisa no Application Insights](https://aka.ms/search-in-application-insights)
+* [Usar a Pesquisa no Application Insights](/azure/azure-monitor/app/diagnostic-search/)
 
-* [Criar painéis de KPI personalizados usando o Azure Application Insights](https://aka.ms/custom-kpi-dashboards-application-insights)
+* [Criar painéis de KPI personalizados usando o Azure Application Insights](/azure/azure-monitor/learn/tutorial-app-dashboards/)

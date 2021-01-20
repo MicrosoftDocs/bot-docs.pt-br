@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 9f735a75a3bb9758b119efa6ceb749325422f0b3
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 8513200e4093805fe2de438c20c7ba70586df976
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824556"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98576598"
 ---
 # <a name="implement-channel-specific-functionality-with-the-bot-connector-api"></a>Implementar a funcionalidade específica do canal com a API do conector do bot
 
@@ -20,22 +20,23 @@ Alguns canais fornecem recursos que não podem ser implementados apenas com o us
 
 Este artigo descreve como usar a propriedade `channelData` de uma atividade de mensagem para implementar esta funcionalidade específica do canal:
 
-| Canal | Funcionalidade |
-|----|----|
-| Email | Enviar e receber um email que contém metadados de corpo, assunto e prioridade |
-| Margem de atraso | Enviar mensagens do Slack com fidelidade total |
-| Facebook | Enviar notificações do Facebook nativamente |
-| Telegram | Executar ações específicas do Telegram, como compartilhar um memorando de voz ou um adesivo |
-| Kik | Enviar e receber mensagens nativas do Kik | 
+| Canal  |                                 Funcionalidade                                  |
+| -------- | ------------------------------------------------------------------------------ |
+| Email    | Enviar e receber um email que contém metadados de corpo, assunto e prioridade |
+| Margem de atraso    | Enviar mensagens do Slack com fidelidade total                                              |
+| Facebook | Enviar notificações do Facebook nativamente                                           |
+| Telegram | Executar ações específicas do Telegram, como compartilhar um memorando de voz ou um adesivo   |
+| Kik      | Enviar e receber mensagens nativas do Kik                                           |
 
 > [!NOTE]
-> O valor da propriedade de um `Activity` objeto `channelData` é um objeto JSON. A estrutura do objeto JSON varia de acordo com o canal e a funcionalidade que está sendo implementada, conforme descrito abaixo. 
+> O valor da propriedade de um `Activity` objeto `channelData` é um objeto JSON.
+> A estrutura do objeto JSON varia de acordo com o canal e a funcionalidade que está sendo implementada, conforme descrito abaixo.
 
-## <a name="create-a-custom-email-message"></a>Criar uma mensagem de Email personalizada
+## <a name="create-a-custom-email-message"></a>Criar uma mensagem de email personalizada
 
 Para criar uma mensagem de email, defina a propriedade do `Activity` objeto `channelData` como um objeto JSON que contém essas propriedades:
 
-[!INCLUDE [Email channelData table](~/includes/snippet-channelData-email.md)]
+[!INCLUDE [email channelData table](~/includes/snippet-channelData-email.md)]
 
 Este snippet mostra um exemplo da propriedade `channelData` para uma mensagem de email personalizada.
 
@@ -51,7 +52,7 @@ Este snippet mostra um exemplo da propriedade `channelData` para uma mensagem de
 
 ## <a name="create-a-full-fidelity-slack-message"></a>Criar uma mensagem do Slack com fidelidade total
 
-Para criar uma mensagem do Slack com fidelidade total, defina a propriedade `Activity` do objeto `channelData` como um objeto JSON que especifica <a href="https://api.slack.com/docs/messages" target="_blank">mensagens do Slack</a>, <a href="https://api.slack.com/docs/message-attachments" target="_blank">anexos do Slack</a> e/ou <a href="https://api.slack.com/docs/message-buttons" target="_blank">botões do Slack</a>. 
+Para criar uma mensagem do Slack com fidelidade total, defina a propriedade `Activity` do objeto `channelData` como um objeto JSON que especifica <a href="https://api.slack.com/docs/messages" target="_blank">mensagens do Slack</a>, <a href="https://api.slack.com/docs/message-attachments" target="_blank">anexos do Slack</a> e/ou <a href="https://api.slack.com/docs/message-buttons" target="_blank">botões do Slack</a>.
 
 > [!NOTE]
 > Para dar suporte a botões em mensagens do Slack, habilite a opção **Mensagens Interativas** ao [conectar o bot](../bot-service-manage-channels.md) ao canal do Slack.
@@ -143,7 +144,7 @@ Para criar uma notificação do Facebook, defina a propriedade `Activity` do obj
 | attachment | Um anexo que especifica uma imagem, um vídeo ou outro tipo de multimídia ou um anexo modelo como um recibo. |
 
 > [!NOTE]
-> Para obter detalhes sobre o formato e o conteúdo das propriedades `notification_type` e `attachment`, confira a <a href="https://developers.facebook.com/docs/messenger-platform/send-api-reference#guidelines" target="_blank">documentação da API do Facebook</a>. 
+> Para obter detalhes sobre o formato e o conteúdo das propriedades `notification_type` e `attachment`, confira a <a href="https://developers.facebook.com/docs/messenger-platform/send-api-reference#guidelines" target="_blank">documentação da API do Facebook</a>.
 
 Este snippet mostra um exemplo da propriedade `channelData` para um anexo de recibo do Facebook.
 

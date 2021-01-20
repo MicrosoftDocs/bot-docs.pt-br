@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 06/09/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 89d42ad74b7f57b99371a01c8a667ebdc3860f2e
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 6e286a0bdb9d0c5db5f9f1393a57b934c61a5d14
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416146"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98576408"
 ---
 # <a name="events-and-triggers-in-adaptive-dialogs---reference-guide"></a>Eventos e gatilhos em caixas de diálogo adaptáveis – guia de referência
 
@@ -42,6 +42,9 @@ Triggers = new List<OnCondition>()
 |Intenção QnAMatch|`OnQnAMatch`| `RecognizedIntent` |Esse gatilho será executado quando o [QnAMakerRecognizer][qna-maker-recognizer] tiver retornado uma intenção de `QnAMatch`. A entidade `@answer` terá a resposta `QnAMaker`.|
 |Intenção desconhecida reconhecida| `OnUnknownIntent` | `UnknownIntent` | Ações a serem executadas quando a entrada do usuário não for reconhecida ou nenhuma correspondência for encontrada em nenhum dos gatilhos `OnIntent`. Você também pode usar isso como o seu primeiro gatilho no diálogo raiz no lugar de `OnBeginDialog` para realizar as tarefas necessárias quando o diálogo for iniciado pela primeira vez. |
 
+> [!TIP]
+> Use o `OnUnknownIntent` gatilho para capturar e responder quando ocorrer uma tentativa de "nenhum". O uso do `OnIntent` gatilho para lidar com uma intenção "nenhum" pode produzir resultados inesperados.
+
 ### <a name="recognizer-event-example"></a>Exemplo do evento Recognizer
 
 Exemplos de gatilhos `OnIntent` e `OnUnknownIntent` são fornecidos abaixo para demonstrar o uso dos gatilhos de reconhecedores.
@@ -49,7 +52,7 @@ Exemplos de gatilhos `OnIntent` e `OnUnknownIntent` são fornecidos abaixo para 
 > [!NOTE]
 >
 > - O gatilho `OnIntent` permite que você manipule o evento `recognizedIntent`. O `recognizedIntent` evento é gerado por um [reconhecedor][recognizers]. Com exceção do [reconhecedor de QnA Maker][qna-maker-recognizer], todos os reconhecedores internos do SDK do bot Framework emitem esse evento quando identificam com êxito uma _entrada_ do usuário para que o bot possa responder adequadamente.
-> - Use o gatilho `OnUnknownIntent` para capturar e responder quando um evento `recognizedIntent` não tiver sido capturado e nem for manipulado por nenhum dos outros gatilhos. Isso significa que qualquer intenção não tratada (incluindo "None") pode causar o gatilho. Mas somente se não houver nenhuma ação em execução no momento para a caixa de diálogo. <!--This is especially helpful to capture and handle cases where your dialog wishes to participate in consultation.-->
+> - Use o gatilho `OnUnknownIntent` para capturar e responder quando um evento `recognizedIntent` não tiver sido capturado e nem for manipulado por nenhum dos outros gatilhos. Isso significa que qualquer intenção não tratada (incluindo "None") pode causar o gatilho, mas somente se não houver nenhuma ação em execução no momento para a caixa de diálogo.<!--Use the `OnUnknownIntent` trigger to catch and respond when a "none" intent occurs. This is especially helpful to capture and handle cases where your dialog wishes to participate in consultation.-->
 
 ``` C#
 // Create the root dialog as an Adaptive dialog.

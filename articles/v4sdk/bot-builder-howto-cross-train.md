@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.service: bot-service
 ms.date: 10/10/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 78caff75abc39be19719a574d477e7527755f22f
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: 7bbe49f0a01b7d93fd8761ae648214c134a8aa8d
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95460920"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577208"
 ---
 # <a name="create-a-bot-cross-trained-to-use-both-luis-and-qna-maker-recognizers"></a>Criar um bot cruzado para usar os reconhecedores LUIS e QnA Maker
 
@@ -22,7 +22,7 @@ ms.locfileid: "95460920"
 
 Este artigo de instruções descreve as etapas necessárias para criar um bot que integra os recursos de [Luis][luis] e [QnA Maker][qnamaker] juntos em cada uma das suas caixas de diálogo adaptáveis, permitindo que cada uma delas determine a melhor resposta possível ao usuário, usando a [geração de idioma][language-generation], independentemente de qual caixa de diálogo está ativa.
 
-A integração dos recursos de LUIS e de QnA Maker requer o uso do `luis:cross-train` comando ou da `qnamaker:cross-train` CLI para fazer o _treinamento cruzado_ de seus `.lu` arquivos e do `.qna` , bem como o uso do [reconhecedor com treinamento cruzado][cross-trained-recognizer-set-concept] como o reconhecedor de caixas de diálogo adaptáveis.
+A integração dos recursos de LUIS e de QnA Maker requer o uso do `luis:cross-train` comando ou da `qnamaker:cross-train` CLI para fazer o _treinamento cruzado_ de arquivos. Lu e. QnA, bem como o uso do [reconhecedor com treinamento cruzado][cross-trained-recognizer-set-concept] como o reconhecedor de caixas de diálogo adaptáveis.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -55,7 +55,7 @@ Este artigo descreve como criar um bot com treinamento cruzado para usar LUIS e 
 
 ## <a name="the-todo-bot-with-luis-and-qna-maker-sample"></a>O bot de todo com LUIS e QnA Maker exemplo
 
-O exemplo de **bot adaptável de todo com Luis e QnA Maker** ([**C#**][cs-sample-todo-bot]) tem cinco `.lu` arquivos e seis `.qna` arquivos para o reconhecimento da linguagem. Ao criar modelos de reconhecimento de linguagem com treinamento cruzado, você combinará os `.lu` arquivos e de `.qna` forma que o permitirá utilizar os recursos de Luis e de QnA Maker juntos no mesmo reconhecedor, permitindo que você treine o reconhecedor como melhor interpretar e responder à solicitação de um usuário. Depois de executar o comando de treinamento cruzado, você terá novas cópias de cada arquivo, mas elas serão atualizadas para que os `.lu` arquivos contenham as `.qna` informações necessárias e os `.qna` arquivos contenham as `.lu` informações necessárias, habilitando o [conjunto de reconhecedor com treinamento cruzado][crosstrainedrecognizerset-ref-guide] para determinar como lidar melhor a solicitação de usuários.
+O exemplo de **bot adaptável com Luis e QnA Maker** ([**C#**][cs-sample-todo-bot]) tem cinco arquivos. Lu e seis arquivos. QnA para o reconhecimento da linguagem. Ao criar modelos de reconhecimento de linguagem com treinamento cruzado, você combinará os arquivos. Lu e. QnA de uma maneira que permitirá que você utilize os recursos do LUIS e do QnA Maker juntos no mesmo reconhecedor, permitindo que você treine o reconhecedor como melhor interpretar e responder à solicitação de um usuário. Depois de executar o comando de treinamento cruzado, você terá novas cópias de cada arquivo, mas elas serão atualizadas para que os arquivos. Lu contenham as informações. QnA necessárias e os arquivos. QnA contenham as informações. Lu necessárias, habilitando o [conjunto de reconhecedor com treinamento cruzado][crosstrainedrecognizerset-ref-guide] para determinar como lidar melhor a solicitação de usuários.
 
 Se você ainda não fez isso, clone o repositório de amostras mais recente. Você pode usar o seguinte comando git em uma janela do console:
 ```cmd
@@ -106,7 +106,7 @@ O recurso de QnA Maker conterá o valor necessário para a opção _subscription
 
 ## <a name="generate-cross-trained-lu-models"></a>Gerar modelos de LU com treinamento cruzado
 
-Antes de executar o comando de compilação para criar seus aplicativos LUIS e QnA Maker base de dados de conhecimento nos serviços cognitivas do Azure, você precisa _treinar_ os `.lu` `.qna` arquivos e para incluir as informações exigidas pelo reconhecedor do bot para adiar a entrada do usuário para Luis QnA Maker ou para o processamento. Para entender melhor o conceito de treinamento cruzado, consulte o artigo [treinar o bot para usar Luis e reconhecedores de QnA Maker](bot-builder-concept-cross-train.md) . Para obter detalhes sobre o `cross-train` comando, consulte a seção _conjunto de reconhecedor com treinamento cruzado_ dos [reconhecedores em caixas de diálogo adaptáveis – guia de referência](../adaptive-dialog/adaptive-dialog-prebuilt-recognizers.md#cross-trained-recognizer-set).
+Antes de executar o comando de compilação para criar seus aplicativos LUIS e QnA Maker base de dados de conhecimento nos serviços cognitivas do Azure, você precisa _treinar_ os arquivos. Lu e. QnA para incluir as informações exigidas pelo reconhecedor do bot para adiar a entrada do usuário para LUIS ou QnA Maker para processamento. Para entender melhor o conceito de treinamento cruzado, consulte o artigo [treinar o bot para usar Luis e reconhecedores de QnA Maker](bot-builder-concept-cross-train.md) . Para obter detalhes sobre o `cross-train` comando, consulte a seção _conjunto de reconhecedor com treinamento cruzado_ dos [reconhecedores em caixas de diálogo adaptáveis – guia de referência](../adaptive-dialog/adaptive-dialog-prebuilt-recognizers.md#cross-trained-recognizer-set).
 
 #### <a name="cross-train-the-_todo-bot-with-luis-and-qna-maker_-sample"></a>Fazer treinamento cruzado no _bot de todo com o Luis e_ o exemplo de QnA Maker
 
@@ -126,17 +126,17 @@ Para treinar o bot de **todo com Luis e QnA Maker** exemplo:
       bf luis:cross-train -i dialogs -o generated --config dialogs\DialogLuHierarchy.config.json --force
    ```
 
-Depois de concluir, você terá versões com treinamento cruzado dos cinco `.lu` arquivos e seis `.qna` arquivos. Aqui `--force` é usado para forçar a substituição dos `.lu` arquivos existentes e, `.qna` se eles já existirem. Caso contrário, para arquivos. Lu como `AddToDoDialog.lu` , o conteúdo com treinamento cruzado será gravado no arquivo com o nome `AddToDoDialog(1).lu` . Ao executar os comandos de compilação nas seções a seguir, aponte para o diretório gerado para os arquivos de entrada.
+Depois de concluir, você terá versões com treinamento cruzado dos cinco arquivos. Lu e seis arquivos. QnA. Aqui `--force` é usado para forçar a substituição dos arquivos. Lu e. QnA existentes, se eles já existirem. Caso contrário, para arquivos. Lu como `AddToDoDialog.lu` , o conteúdo com treinamento cruzado será gravado no arquivo com o nome `AddToDoDialog(1).lu` . Ao executar os comandos de compilação nas seções a seguir, aponte para o diretório gerado para os arquivos de entrada.
 
 > [!IMPORTANT]
 >
-> Você precisa executar o `luis:cross-train` comando ou o `qnamaker:cross-train` comando, não é necessário executar ambos. ao executar `luis:cross-train` , todas as informações necessárias entre os treinamentos serão incluídas nos `.lu` arquivos e resultantes `.qna` . Executar ambos funcionará, mas é desnecessário.
+> Você precisa executar o `luis:cross-train` comando ou o `qnamaker:cross-train` comando, não é necessário executar ambos. ao executar `luis:cross-train` , todas as informações necessárias entre os treinamentos serão incluídas nos arquivos. Lu e. QnA resultantes. Executar ambos funcionará, mas é desnecessário.
 
 ## <a name="create-and-publish-luis-applications-using-the-build-command"></a>Criar e publicar aplicativos LUIS usando o comando de Build
 
-Para cada `.lu` arquivo, incluindo `.lu` arquivos para cada localidade, o comando de compilação combina todas as seguintes ações em um único comando:
+Para cada arquivo. Lu, incluindo arquivos. Lu para cada localidade, o comando de compilação combina todas as seguintes ações em um único comando:
 
-1. Cria um modelo LUIS para cada localidade encontrada usando seus `.lu` arquivos existentes.
+1. Cria um modelo LUIS para cada localidade encontrada usando seus arquivos. Lu existentes.
 1. Usando esse modelo, ele cria um novo aplicativo LUIS (ou atualiza um existente) no recurso de serviços cognitivas do Azure especificado.
    - Ao atualizar um aplicativo LUIS existente, ele incrementará automaticamente o versionID e, opcionalmente, excluirá a versão antiga.
 1. Treina o aplicativo LUIS novo ou atualizado e, em seguida, o publica.
@@ -155,11 +155,11 @@ Aqui está o comando de Build LUIS com os parâmetros necessários:
 bf luis:build --in <input-file-or-folder> --out <output-file-or-folder> --botName <bot-name> --authoringKey <subscription-key> --region <authoring-region>
 ```
 
-O `luis:build` comando criará todos os ativos de que você precisa em seus `.lu` arquivos locais.
+O `luis:build` comando criará todos os ativos de que você precisa em seus arquivos. Lu locais.
 
 ### <a name="required-luisbuild-parameters"></a>Luis obrigatório: parâmetros de compilação
 
-- `--in`: O diretório que será pesquisado por `.lu` arquivos.
+- `--in`: O diretório que será procurado por arquivos. Lu.
 - `--out`: O diretório no qual salvar os arquivos de saída.
 - `--botName`: O nome do bot. Isso será usado como o prefixo para o nome dos aplicativos LUIS gerados.
 - `--authoringKey`: Este é o subscriptionKey.
@@ -184,7 +184,7 @@ Veja a seguir um exemplo de **luconfig.jsno** arquivo que você pode referenciar
 }
 ```
 
-Depois que esse arquivo de configuração é criado, tudo o que você precisa fazer é fazer referência a ele no `luis:build` comando. Por exemplo: 
+Depois que esse arquivo de configuração é criado, tudo o que você precisa fazer é fazer referência a ele no `luis:build` comando. Por exemplo:
 
 ``` cli
 bf luis:build --luConfig luconfig.json
@@ -227,7 +227,7 @@ Para criar os aplicativos LUIS para o **bot de todo com Luis e QnA Maker** exemp
 >
 > Se você ainda não tiver feito isso, será necessário [migrar para uma chave de criação de recursos do Azure][luis-migration-authoring]. Caso contrário, você não verá os aplicativos LUIS no [Luis][luis] criados usando o `luis:build` comando.
 
-Depois de concluir, você terá um aplicativo LUIS para cada um dos cinco `.lu` arquivos no [Luis](https://www.luis.ai/conversations/applications):
+Depois de concluir, você terá um aplicativo LUIS para cada um dos cinco arquivos. Lu em [Luis](https://www.luis.ai/conversations/applications):
 
 ![LUIS minha lista de aplicativos](./media/adaptive-dialogs/luis-apps-list.png)
 
@@ -239,7 +239,7 @@ Depois de concluir, você terá um aplicativo LUIS para cada um dos cinco `.lu` 
 
 O `qnamaker:build` comando combina todas as seguintes ações em um único comando:
 
-1. Cria um modelo de QnA Maker para cada localidade encontrada usando seus `.qna` arquivos existentes.
+1. Cria um modelo de QnA Maker para cada localidade encontrada usando seus arquivos. QnA existentes.
 1. Cria um novo QnA Maker KB se não houver nenhum; caso contrário, ele substituirá o KB existente.
 1. Ele treina seu QnA Maker KB e, em seguida, publica-o no ponto de extremidade de produção.
 
@@ -320,7 +320,7 @@ Para criar a base de dados de conhecimento QnA Maker para o **bot de todo com Lu
       bf qnamaker:build --qnaConfig qnaConfig.json
    ```
 
-Depois de concluir, você terá uma base de dados de conhecimento QnA Maker com todas as perguntas e respostas dos cinco `.qna` arquivos em [QnA Maker](https://www.qnamaker.ai/Home/MyServices):
+Depois de concluir, você terá uma base de dados de conhecimento QnA Maker com todas as perguntas e respostas dos cinco arquivos. QnA em [QnA Maker](https://www.qnamaker.ai/Home/MyServices):
 
 ![Lista de KB QnA Maker](./media/adaptive-dialogs/qna-maker-kb-list.png)
 
@@ -362,16 +362,6 @@ O arquivo de configuração é nomeado **appsettings.jsem**. O exemplo a seguir 
     //  "qnamaker.settings.<username>.<authoring-region>.json"
     // See "QnA Maker knowledge base IDs" section below for more details.
     "qna": {
-        "TodoBotWithLuisAnDQnA_en_us_qna": ""
-    }
-}
-```
-
-<!--
-NOTE:
-
-There is a PR that will change this sample: https://github.com/microsoft/BotBuilder-Samples/pull/2899. After the change, QnA Maker will have the same structure as the luis does in appsettings.json, once completed, update this article by adding these additional QnA Maker recognizer items to align with the changes in this PR:
-
         "AddToDoDialog_en_us_qna": "",
         "ChitChat_en_us_qna": "",
         "DeleteToDoDialog_en_us_qna": "",
@@ -379,14 +369,12 @@ There is a PR that will change this sample: https://github.com/microsoft/BotBuil
         "RootDialog_en_us_qna": "",
         "ViewToDoDialog_en_us_qna": ""
     }
-
--->
+}
+```
 
 ### <a name="the-configuration-file-details"></a>Os detalhes do arquivo de configuração
 
 Esta seção explica o **appsettings.jsno** arquivo para o exemplo de bot a ser feito em detalhes.
-
-<!--![The appsettings.json file](./media/appsettings.json.png)-->
 
 #### <a name="bot-channels-registration"></a>Registro de canais do bot
 
@@ -418,20 +406,11 @@ O `qnamaker:build` comando salvará um arquivo de configurações no local forne
 
 > [!IMPORTANT]
 >
-> O arquivo de configurações criado pelo `qnamaker:build` comando conterá uma entrada para cada um dos cinco modelos de QnA Maker, o valor de cada um será a ID do QnA Maker KB criado pelo comando de compilação. Como cada um contém o mesmo valor de ID, use qualquer um deles para o valor da chave "TodoBotWithLuisAndQnA_en_us_qna". Se você substituir esse valor único por todos os cinco valores do arquivo qnamaker. Settings, receberá um erro: "System. Exception: Observação: QnA Maker não está configurado para RootDialog".
-
-<!--
-NOTE:
-
-Once PR2899 (https://github.com/microsoft/BotBuilder-Samples/pull/2899) is done, change the important message above to this:
-
-The settings file created by the `qnamaker:build` command will contain an entry for each of the five QnA Maker models, the value for each will be the ID for the one QnA Maker KB created by the build command.
-
--->
+> O arquivo de configurações criado pelo `qnamaker:build` comando conterá uma entrada para cada um dos cinco modelos de QnA Maker, o valor de cada um será a ID do QnA Maker KB criado pelo comando de compilação.
 
 ## <a name="source-code-updates-for-cross-trained-models"></a>Atualizações de código-fonte para modelos com treinamento cruzado
 
-Não há nenhuma atualização de código-fonte necessária no exemplo de **bot de todo adaptável com Luis e QnA Maker** ([**C#**][cs-sample-todo-bot]) para aproveitar os modelos de treinamento cruzado, ele foi criado com o treinamento cruzado em mente. Esta seção explicará o código neste exemplo relacionado aos bots utilizando modelos com treinamento cruzado, usando **AddToDoDialog.cs** como exemplo, os mesmos conceitos se aplicam às outras caixas de diálogo adaptáveis neste bot.
+Não há nenhuma atualização de código-fonte necessária no exemplo de **bot de todo adaptável com Luis e QnA Maker** ([**C#**][cs-sample-todo-bot]) para aproveitar os modelos de treinamento cruzado, ele foi criado com o treinamento cruzado em mente. Esta seção explicará o código neste exemplo relacionado aos bots utilizando modelos com treinamento cruzado, usando **RootDialog.cs** como exemplo, os mesmos conceitos se aplicam às outras caixas de diálogo adaptáveis neste bot.
 
 ### <a name="define-the-recognizer"></a>Definir o reconhecedor
 
@@ -490,27 +469,15 @@ public static Recognizer CreateLuisRecognizer(IConfiguration Configuration)
 
 O método `CreateQnAMakerRecognizer` cria um reconhecedor de QnA Maker. Consulte os comentários no trecho de código abaixo para obter explicações de código:
 
-<!-- Line 330-358
-
-NOTE:
-
-Once PR2899 (https://github.com/microsoft/BotBuilder-Samples/pull/2899) is done, change the code below:
-
-if (string.IsNullOrEmpty(configuration["qna:RootDialog_en_us_qna"]) || string.IsNullOrEmpty(configuration["QnAHostName"]) || string.IsNullOrEmpty(configuration["QnAEndpointKey"]))
-
-throw new Exception("NOTE: QnA Maker is not configured for RootDialog. Please follow instructions in README.md to add 'qna:RootDialog_en_us_qna', 'QnAHostName' and 'QnAEndpointKey' to the appsettings.json file.");
-
-KnowledgeBaseId = configuration["qna:RootDialog_en_us_qna"],
-
- -->
+<!-- Line 330-358 -->
 
 ```csharp
 private static Recognizer CreateQnAMakerRecognizer(IConfiguration configuration)
 {
    // Verify that all required values exist in the configuration file appsettings.json
-   if (string.IsNullOrEmpty(configuration["qna:TodoBotWithLuisAndQnA_en_us_qna"]) || string.IsNullOrEmpty(configuration["QnAHostName"]) || string.IsNullOrEmpty(configuration["QnAEndpointKey"]))
+   if (string.IsNullOrEmpty(configuration["qna:RootDialog_en_us_qna"]) || string.IsNullOrEmpty(configuration["QnAHostName"]) || string.IsNullOrEmpty(configuration["QnAEndpointKey"]))
    {
-      throw new Exception("NOTE: QnA Maker is not configured for RootDialog. Please follow instructions in README.md. To enable all capabilities, add 'qnamaker:qnamakerSampleBot_en_us_qna', 'qnamaker:LuisAPIKey' and 'qnamaker:endpointKey' to the appsettings.json file.");
+      throw new Exception("NOTE: QnA Maker is not configured for RootDialog. Please follow instructions in README.md to add 'qna:RootDialog_en_us_qna', 'QnAHostName' and 'QnAEndpointKey' to the appsettings.json file.");
    }
 
    return new QnAMakerRecognizer()
@@ -518,7 +485,7 @@ private static Recognizer CreateQnAMakerRecognizer(IConfiguration configuration)
       // Get settings from the configuration file appsettings.json
       HostName = configuration["QnAHostName"],
       EndpointKey = configuration["QnAEndpointKey"],
-      KnowledgeBaseId = configuration["qna:TodoBotWithLuisAndQnA_en_us_qna"],
+      KnowledgeBaseId = configuration["qna:RootDialog_en_us_qna"],
 
       // property path that holds qna context
       Context = "dialog.qnaContext",
@@ -588,7 +555,7 @@ new TextInput()
 
 > [!NOTE]
 >
->O artigo de conceito [cross training Your Luis and QnA Maker Models](bot-builder-concept-cross-train.md) descreve as alterações feitas em seus `.lu` `.qna` arquivos e quando eles são treinados de forma cruzada, e a [tabela de respostas do Recognizer](bot-builder-concept-cross-train.md#recognizer-responses) nesse artigo mostra todas as respostas possíveis do reconhecedor e a ação resultante tomada pelo bot.
+>O artigo de conceito [cross training Your Luis and QnA Maker Models](bot-builder-concept-cross-train.md) descreve as alterações feitas nos arquivos. Lu e. QnA quando eles são treinados em cruz, e a [tabela de respostas do Recognizer](bot-builder-concept-cross-train.md#recognizer-responses) nesse artigo mostra todas as respostas possíveis do reconhecedor e a ação resultante tomada pelo bot.
 
 
 ## <a name="testing-the-bot-using-bot-framework-emulator"></a>Testar o bot usando o Bot Framework Emulator
@@ -631,7 +598,7 @@ Agora você pode interagir com o bot.
 
 <!------------------------------------------------------------------------------------------------------------------>
 [create-azure-account]: https://azure.microsoft.com/free/?WT.mc_id=A261C142F
-[luis]: https://aka.ms/luis-what-is-luis
+[luis]: /azure/cognitive-services/luis/what-is-luis
 [qnamaker]: /azure/cognitive-services/qnamaker/overview/overview
 [cs-sample-todo-bot]: https://aka.ms/csharp-adaptive-dialog-08-todo-bot-luis-qnamaker-sample
 [lu-templates]: ../file-format/bot-builder-lu-file-format.md

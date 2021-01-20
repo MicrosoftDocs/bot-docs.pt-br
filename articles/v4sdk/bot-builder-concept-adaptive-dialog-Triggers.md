@@ -9,18 +9,18 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 04/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 948a3feca9ae19cd050da5389655668a7aac66ae
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 9acbfb7ad6bbc8f7f8cf03a45c5ee5c89bd84595
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416951"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577258"
 ---
 # <a name="events-and-triggers-in-adaptive-dialogs"></a>Eventos e gatilhos em caixas de diálogo adaptáveis
 
 [!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
-As caixas de diálogo adaptáveis apresentam uma nova abordagem baseada em eventos para o modelo de conversas. Qualquer subsistema em seu bot pode emitir eventos, e todas as caixas de diálogo adaptáveis contêm um ou mais manipuladores de eventos chamados _gatilhos_ que permitem reagir a esses eventos.  Sempre que um evento é acionado, os gatilhos da caixa de diálogo adaptável ativa são avaliados e, se qualquer gatilho corresponder ao evento atual, as [ações][actions] associadas a esse gatilho serão executadas. Se um evento não for tratado na caixa de diálogo ativa, ele será passado para a caixa de diálogo pai a ser avaliada. Esse processo continuará até ser tratado ou atingir a caixa de diálogo raiz dos bots. Se nenhum manipulador de eventos (_gatilho_) for encontrado, o evento será ignorado, e nenhuma ação será executada.
+As caixas de diálogo adaptáveis apresentam uma nova abordagem baseada em eventos para o modelo de conversas. Qualquer subsistema em seu bot pode emitir eventos e todas as caixas de diálogo adaptáveis contêm um ou mais manipuladores de eventos chamados _gatilhos_ que permitem reagir a esses eventos. Sempre que um evento é acionado, os gatilhos da caixa de diálogo adaptável ativa são avaliados e, se qualquer gatilho corresponder ao evento atual, as [ações][actions] associadas a esse gatilho serão executadas. Se um evento não for tratado na caixa de diálogo ativa, ele será passado para a caixa de diálogo pai a ser avaliada. Esse processo continuará até ser tratado ou atingir a caixa de diálogo raiz dos bots. Se nenhum manipulador de eventos (_gatilho_) for encontrado, o evento será ignorado, e nenhuma ação será executada.
 
 <!--TODO P3: preBubble/consultation/postBubble phases - Possibly document in an advanced section at some point.
 From: v-jofin: (https://github.com/MicrosoftDocs/bot-docs-pr/pull/2109#discussion_r418164608)
@@ -45,7 +45,7 @@ Todos os gatilhos também contêm uma lista de _Ações_. As ações representam
 
 ## <a name="trigger-types"></a>Tipos de gatilho
 
-Os _gatilhos_ permitem que você capture e responda a eventos. O gatilho mais amplo do qual todos os outros gatilhos são derivados é o gatilho `OnCondition`, que permite capturar e anexar uma lista de ações a serem executadas quando um evento específico é emitido por qualquer um dos subsistemas de bots.
+Os _gatilhos_ permitem que você capture e responda a eventos. O gatilho mais amplo do qual todos os outros gatilhos são derivados é o `OnCondition` gatilho que permite que você capture e anexe uma lista de ações a serem executadas quando um evento específico é emitido por qualquer um dos subsistemas de bots.
 
 Os gatilhos são listados nas seções a seguir, categorizados e agrupados por tipo de gatilho.
 
@@ -155,8 +155,9 @@ Para obter informações detalhadas e um exemplo, consulte a seção [disparador
 [botframework-activity]:https://github.com/microsoft/botframework-sdk/blob/master/specs/botframework-activity/botframework-activity.md
 [adaptive-expressions]:bot-builder-concept-adaptive-expressions.md
 [concept-dialog]:bot-builder-concept-dialog.md
-[how-bots-work]:https://aka.ms/how-bots-work
+[how-bots-work]:bot-builder-basics.md
 
 <!-- External links-->
 [luis]:https://www.luis.ai/home
-[luis-prediction-scores]:https://aka.ms/luis-prediction-scores
+[luis-prediction-scores]:/azure/cognitive-services/luis/luis-concept-prediction-score
+

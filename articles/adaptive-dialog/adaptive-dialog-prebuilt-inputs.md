@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 06/09/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 8318fa1681f9ecf842f7b06a918441fbb88ec58d
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 6ec939bd77d7ab12e37a6d97182b8360ecef9d04
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416215"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98576438"
 ---
 # <a name="inputs-in-adaptive-dialogs---reference-guide"></a>Entradas em caixas de diálogo adaptáveis – guia de referência
 
@@ -25,7 +25,7 @@ O SDK do Bot Framework define diversas caixas de diálogo de entrada para coleta
 | Tipo de entrada       | Classe de entrada                       | Descrição                                              | Retornos                                  |
 | ---------------- | --------------------------------- | -------------------------------------------------------- | ---------------------------------------- |
 | Classe base       | [InputDialog](#inputdialog)       | Essa é a classe base da qual derivam todas as classes de entrada. Ela define todas as propriedades compartilhadas. | Um objeto. |
-| Texto             | [TextInput](#textinput)           | Usado para solicitar a uma **palavra** ou **frase**aos usuários.   | Uma cadeia de caracteres.                                |
+| Texto             | [TextInput](#textinput)           | Usado para solicitar a uma **palavra** ou **frase** aos usuários.   | Uma cadeia de caracteres.                                |
 | Número           | [NumberInput](#numberinput)       | Usado para solicitar um **número** aos usuários.                 | Um valor numérico.                         |
 | Confirmação     | [ConfirmInput](#confirminput)     | Usado para solicitar uma **confirmação** ao usuário.        | Um valor booliano.                         |
 | Múltipla escolha  | [ChoiceInput](#choiceinput)       | Usado para solicitar uma escolha de um **conjunto de opções**.      | O valor ou o índice da seleção.     |
@@ -265,7 +265,7 @@ var ConfirmationDialog = new AdaptiveDialog("ConfirmationDialog") {
                     // text is read from a specific memory location. The caller of this dialog needs to
                     // set the prompt string to that location before calling the "ConfirmationDialog".
                     // All prompts support rich language generation based resolution for output generation.
-                    // See https://aka.ms/language-generation-file-format to learn more about the LG
+                    // See https://docs.microsoft.com/azure/bot-service/file-format/bot-builder-lg-file-format to learn more about the LG
                     // template format used in the ActivityTemplate object.
                     Prompt = new ActivityTemplate("${turn.contoso.travelBot.confirmPromptMessage}")
                 }
@@ -595,8 +595,8 @@ Os links a seguir fornecem informações generalizadas sobre o tópico de autent
 * [Adicionar autenticação a um bot][add-authentication]
 
 <!-- links -->
-[authentication]:https://aka.ms/azure-bot-authentication
-[add-authentication]:https://aka.ms/azure-bot-add-authentication
+[authentication]:../v4sdk/bot-builder-concept-authentication.md
+[add-authentication]:../v4sdk/bot-builder-authentication.md
 [recognizers]:../v4sdk/bot-builder-concept-adaptive-dialog-recognizers.md
 [adaptive-expressions]:../v4sdk/bot-builder-concept-adaptive-expressions.md
 [interruptions]: ../v4sdk/bot-builder-concept-adaptive-dialog-interruptions.md

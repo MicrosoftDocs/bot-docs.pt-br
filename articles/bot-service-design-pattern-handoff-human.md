@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 10/21/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 78de753718534d75811cfccc938e6410bb013b7d
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: 08fc45a665b9f980e6f5f7163fb20d2f4347c654
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94596848"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98576003"
 ---
 # <a name="transition-conversations-from-bot-to-human"></a>Fazer a transição de conversas do bot para humanos
 
@@ -25,7 +25,7 @@ O Microsoft Bot Framework é uma plataforma aberta que permite aos desenvolvedor
 
 
 <!-- We don't own this aka link, and for v4, I think there is an updated pattern.
-You can read more about the Bot Framework handoff protocol <a href="https://aka.ms/bfhandoffprotocol" target="blank">here</a>.
+You can read more about the Bot Framework [handoff protocol](https://aka.ms/handoff-library/#protocol) <a href=" " target="blank">here</a>.
 -->
 
 ## <a name="handoff-integration-models"></a>Modelos de integração de entrega
@@ -112,7 +112,7 @@ A seguir estão os campos de evento de status de entrega:
 
 - **Nome** – o `name` é um campo **obrigatório** que é definido como `"handoff.status"` .
 
-- **Valor** -o `value` é um campo **obrigatório** que descreve o status atual da operação de entrega. É um objeto JSON que contém o **required** campo obrigatório `state` e um campo opcional `message` , conforme definido abaixo.
+- **Valor** -o `value` é um campo **obrigatório** que descreve o status atual da operação de entrega. É um objeto JSON que contém o  campo obrigatório `state` e um campo opcional `message` , conforme definido abaixo.
 
 O `state` tem um dos seguintes valores:
 
@@ -134,7 +134,7 @@ O formato e o valor possível do `message` campo não são especificados.
     { "state" : "failed", "message" : "Cannot find agent with requested skill" }
     ```
 
-- **Conversation**  - Conversa `Conversation` é um campo **obrigatório** do tipo `ConversationAccount` que descreve a conversa que foi aceita ou rejeitada. O `Id` da conversa deve ser o mesmo que o HandoffInitiation que iniciou a entrega.
+-   - Conversa `Conversation` é um campo **obrigatório** do tipo `ConversationAccount` que descreve a conversa que foi aceita ou rejeitada. O `Id` da conversa deve ser o mesmo que o HandoffInitiation que iniciou a entrega.
 
 ## <a name="handoff-library"></a>Biblioteca de entrega
 

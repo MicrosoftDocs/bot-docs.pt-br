@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/02/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: f1595a2bd80957608d893c6f534067e04bb834ca
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: c6a5dfe015dc1973ec053e8eb53e99172f7c8ae2
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95460900"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577188"
 ---
 # <a name="use-qna-maker-to-answer-questions"></a>Usar o QnA Maker para responder a perguntas
 
@@ -183,12 +183,12 @@ A amostra de **vários turnos do QnA Maker** ([**C#**](https://aka.ms/cs-qna-mul
 Se a base de dados de conhecimento do QnA Maker exigir uma resposta adicional do usuário, o QnA Maker enviará informações de contexto que você poderá usar para enviar avisos ao usuário. Essas informações também são usadas para fazer qualquer chamada de acompanhamento para o serviço QnA Maker.
 Na versão 4.6, o SDK do Bot Framework adicionou suporte para esse recurso.
 
-  Para construir essa base de dados de conhecimento, consulte a documentação QnA Maker sobre como [Usar avisos de acompanhamento para criar várias rodadas de uma conversa](https://aka.ms/qnamaker-multiturn-conversation).
+  Para construir essa base de dados de conhecimento, consulte a documentação QnA Maker sobre como [Usar avisos de acompanhamento para criar várias rodadas de uma conversa](/azure/cognitive-services/qnamaker/how-to/multiturn-conversation).
 
 - O QnA Maker também dá suporte a sugestões de aprendizado ativo, permitindo que a base de dados de conhecimento seja aprimorada ao longo do tempo.
 O diálogo do QnA Maker dá suporte a comentários explícitos para o recurso de aprendizado ativo.
 
-  Para habilitar esse recurso em uma base de dados de conhecimento, consulte a documentação do QnA Maker sobre [Sugestões de aprendizado ativo](https://aka.ms/qnamaker-active-learning).
+  Para habilitar esse recurso em uma base de dados de conhecimento, consulte a documentação do QnA Maker sobre [Sugestões de aprendizado ativo](/azure/cognitive-services/qnamaker/concepts/active-learning-suggestions).
 
 <!--To learn how to incorporate multi-turn support in your bot, take a look at the QnA Maker Multi-turn [[**C#**](https://aka.ms/cs-qna-multiturn) | [**JS**](https://aka.ms/js-qna-multiturn)] sample.-->
 

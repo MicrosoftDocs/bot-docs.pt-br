@@ -8,19 +8,18 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/04/2020
-ms.openlocfilehash: 6259854cd482ff3f0c1bce9a60b13c4c6561c140
-ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
+ms.openlocfilehash: e4c7b6f8ffb737ef5e1272044905dd0ae2da4689
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97759235"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98576338"
 ---
 # <a name="connect-a-bot-to-direct-line"></a>Conecte um bot à linha direta
 
 Este artigo descreve como conectar um bot ao canal de **linha direta**. Use este canal para permitir que o aplicativo cliente se comunique com um bot.
 
 > Observe que a linha direta é um canal padrão sobre o protocolo HTTPS para permitir a comunicação entre um aplicativo cliente e um bot. Se você precisar de isolamento de rede em vez disso, use a [extensão do serviço de aplicativo de linha direta](bot-service-channel-directline-extension.md) sobre o [protocolo WebSocket](https://tools.ietf.org/html/rfc6455).
-
 
 ## <a name="add-the-direct-line-channel"></a>Adicionar o canal de linha direta
 

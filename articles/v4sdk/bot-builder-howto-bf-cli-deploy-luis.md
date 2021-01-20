@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.service: bot-service
 ms.date: 08/28/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 29d91e37169039c5745bdc38148380c936a74a22
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: 2b33b620989ef898c640e07d4da19f6d39610ed1
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94599678"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577398"
 ---
 # <a name="deploy-luis-resources-using-the-bot-framework-luis-cli-commands"></a>Implantar os recursos do LUIS usando os comandos da CLI do LUIS do Bot Framework
 
@@ -27,7 +27,7 @@ Este artigo explica como implantar um recurso LUIS. Para obter informações sob
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento de [modelos de Lu][lu-templates].
-- Ter um projeto de bot com `.lu` arquivos.
+- Ter um projeto de bot com arquivos. Lu.
 - Se estiver trabalhando com caixas de diálogo adaptáveis, você deve compreender:
   - [Processamento de idioma natural em caixas de diálogo adaptáveis][natural-language-processing-in-adaptive-dialogs].
   - [Reconhecimento de idioma em caixas de diálogo adaptáveis][language-understanding].
@@ -63,13 +63,13 @@ O recurso de criação do LUIS é um recurso de [Serviços cognitivas do Azure][
    ![Definir a imagem criar serviços cognitivas](./media/adaptive-dialogs/create-cognitive-services.png)
 
     > [!NOTE]
-    > Ao inserir o **grupo de recursos** e o **nome** , tenha em mente que você não poderá alterar esses valores posteriormente. Observe também que o valor que você atribui para o **nome** será parte da **URL do ponto de extremidade**.
+    > Ao inserir o **grupo de recursos** e o **nome**, tenha em mente que você não poderá alterar esses valores posteriormente. Observe também que o valor que você atribui para o **nome** será parte da **URL do ponto de extremidade**.
 
 4. Examine os valores para garantir que estejam corretos e, em seguida, selecione o botão **criar** .
 
 O recurso de criação do LUIS inclui informações que o bot usará para acessar seu aplicativo LUIS:
 
-- **Chaves**. Elas são chamadas de _chaves de assinatura_ , às vezes chamadas de chaves de _criação_ ao se referir a chaves no recurso de criação de Luis. Eles são gerados automaticamente. Você precisará de uma chave de criação ao referenciar o recurso de criação do LUIS para qualquer ação, como ao criar seu aplicativo LUIS e os modelos que serão detalhados neste artigo. Você pode encontrar as chaves na folha **chaves e ponto de extremidade** em seu recurso de criação do Luis.
+- **Chaves**. Elas são chamadas de _chaves de assinatura_, às vezes chamadas de chaves de _criação_ ao se referir a chaves no recurso de criação de Luis. Eles são gerados automaticamente. Você precisará de uma chave de criação ao referenciar o recurso de criação do LUIS para qualquer ação, como ao criar seu aplicativo LUIS e os modelos que serão detalhados neste artigo. Você pode encontrar as chaves na folha **chaves e ponto de extremidade** em seu recurso de criação do Luis.
 - **Ponto de extremidade**. Isso é gerado automaticamente usando o nome do recurso de criação de LUIS que você fornece ao criá-lo. Ele tem o seguinte formato: `https://<luis-resource-name>.cognitiveservices.azure.com/` . Ao fazer referência ao recurso de criação do LUIS para qualquer ação, como ao criar seu aplicativo LUIS e os modelos que serão detalhados neste artigo. Você pode encontrar a chave na folha **chaves e ponto de extremidade** em seu recurso de criação do Luis.
 - **Localização**.   Esta é a região do Azure que contém o recurso de criação do LUIS. Você seleciona essa seleção ao criar o recurso de criação de LUIS.
 
@@ -87,13 +87,13 @@ Para obter mais informações, consulte [criar recursos de Luis][luis-how-to-azu
 
 ## <a name="create-your-luis-model"></a>Criar seu modelo LUIS
 
-Depois de criar todos os arquivos individuais `.lu` necessários em seu projeto, você pode combiná-los para criar seu modelo Luis usando o `luis:convert` comando. Isso resulta em um arquivo JSON que você fará referência ao criar seu aplicativo LUIS hospedado nos serviços cognitivas do Azure no _recurso de criação do Luis_ que você criou anteriormente.
+Depois de criar todos os arquivos. Lu individuais necessários em seu projeto, você pode combiná-los para criar seu modelo LUIS usando o `luis:convert` comando. Isso resulta em um arquivo JSON que você fará referência ao criar seu aplicativo LUIS hospedado nos serviços cognitivas do Azure no _recurso de criação do Luis_ que você criou anteriormente.
 
 ``` cli
 bf luis:convert -i <input-folder-name> -o <output-file-name> -r
 ```
 
-No exemplo a seguir, o comando é executado em uma linha de comando no diretório raiz do seu projeto. Ele pesquisará todos os `.lu` arquivos no diretório de _caixas de diálogo_ e, por causa da `-r` opção, todos os seus subdiretórios. Ele salvará um arquivo chamado LUISModel.jsno diretório de _saída_ .
+No exemplo a seguir, o comando é executado em uma linha de comando no diretório raiz do seu projeto. Ele pesquisará todos os arquivos. Lu no diretório de _caixas de diálogo_ e por causa da `-r` opção todos os seus subdiretórios. Ele salvará um arquivo chamado LUISModel.jsno diretório de _saída_ .
 
 ``` cli
 bf luis:convert -i dialogs -o .\output\LUISModel.json -r
@@ -101,7 +101,7 @@ bf luis:convert -i dialogs -o .\output\LUISModel.json -r
 
 ## <a name="create-your-luis-application"></a>Criar seu aplicativo LUIS
 
-O _recurso de criação de Luis_ que você perviously criou consiste em suas chaves de criação e ponto de extremidade, valores que você precisa ao criar seu aplicativo Luis (aplicativo Luis). Você pode ter vários aplicativos LUIS associados a um único recurso de criação de LUIS, cada aplicativo LUIS terá seu próprio, `appId` que será fornecido a você como parte do processo de criação. Você precisará que, `appId` ao se referir a este aplicativo Luis no futuro. O aplicativo LUIS fornecerá o bot com todas as funcionalidades fornecidas pelo LUIS, combinadas com os dados específicos do aplicativo que você fornece em seu modelo de LUIS que você criou anteriormente a partir de seus arquivos de projetos `.lu` .
+O _recurso de criação de Luis_ que você perviously criou consiste em suas chaves de criação e ponto de extremidade, valores que você precisa ao criar seu aplicativo Luis (aplicativo Luis). Você pode ter vários aplicativos LUIS associados a um único recurso de criação de LUIS, cada aplicativo LUIS terá seu próprio, `appId` que será fornecido a você como parte do processo de criação. Você precisará que, `appId` ao se referir a este aplicativo Luis no futuro. O aplicativo LUIS fornecerá o bot com todas as funcionalidades fornecidas pelo LUIS, combinadas com os dados específicos do aplicativo que você fornece em seu modelo de LUIS que você criou anteriormente nos arquivos. Lu de seus projetos.
 
 Para criar seu aplicativo LUIS:
 
@@ -115,7 +115,7 @@ Para criar um aplicativo LUIS sem incluir um modelo LUIS, consulte o comando [BF
 
 ![Chaves e Ponto de Extremidade](./media/adaptive-dialogs/keys-and-endpoint-myluisapp.png)
 
-Na imagem acima, você usaria o comando a seguir para criar seu aplicativo LUIS, supondo que o arquivo JSON do modelo LUIS esteja em um subdiretório chamado _output_ :
+Na imagem acima, você usaria o comando a seguir para criar seu aplicativo LUIS, supondo que o arquivo JSON do modelo LUIS esteja em um subdiretório chamado _output_:
 
 `luis:application:import --in .\output\LUISModel.json --endpoint https://LUIS-Authoring-Resource.cognitiveservices.azure.com/ --subscriptionKey xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx --name LUISApplication --versionId 0.1`
 
@@ -176,9 +176,9 @@ Esses comandos oferecem muita flexibilidade ao adaptar os scripts às suas neces
 Você pode usar o `luis:build` comando para criar ou atualizar e, em seguida, treinar e publicar um aplicativo Luis.
 No entanto, o uso do `luis:build` comando fornece menos opções para controlar o processo.
 
-Para cada `.lu` arquivo, incluindo `.lu` arquivos para cada localidade, o comando de compilação combina todas as seguintes ações em um único comando:
+Para cada arquivo. Lu, incluindo arquivos. Lu para cada localidade, o comando de compilação combina todas as seguintes ações em um único comando:
 
-1. Cria um modelo LUIS para [cada localidade](#lu-and-multiple-language-variations) encontrada usando seus `.lu` arquivos existentes.
+1. Cria um modelo LUIS para [cada localidade](#lu-and-multiple-language-variations) encontrada usando seus arquivos. Lu existentes.
 1. Usando esse modelo, ele cria um novo aplicativo LUIS no recurso de serviços cognitivas do Azure especificado, caso não exista nenhum, caso contrário, ele atualizará o aplicativo LUIS existente.
 1. Ao atualizar um aplicativo LUIS existente, ele incrementará automaticamente o versionID e, opcionalmente, excluirá a versão antiga.
 1. Treina o aplicativo LUIS novo ou atualizado e, em seguida, o publica.
@@ -192,7 +192,7 @@ O comando de compilação LUIS com seus parâmetros obrigatórios:
 bf luis:build --in <input-file-or-folder> --out <output-file-or-folder> --botName <bot-name> --authoringKey <subscription-key> --region <authoring-region>
 ```
 
-O `luis:build` comando criará todos os ativos de que você precisa em seus `.lu` arquivos locais. Ao usar a `--in` opção, o `luis:build` criará um aplicativo Luis para cada `.lu` arquivo encontrado para cada localidade.
+O `luis:build` comando criará todos os ativos de que você precisa em seus arquivos. Lu locais. Ao usar a `--in` opção, o `luis:build` criará um aplicativo Luis para cada arquivo. Lu encontrado para cada localidade.
 
 ### <a name="required-luisbuild-parameters"></a>Luis obrigatório: parâmetros de compilação
 
@@ -227,7 +227,7 @@ Veja a seguir um exemplo de **luconfig.jsno** arquivo que você pode referenciar
 }
 ```
 
-Além disso, há uma `models` seção na **luconfig.jsno** arquivo que é útil quando você precisa controlar quais `.lu` arquivos em seu projeto correspondem a um aplicativo Luis. Isso é especialmente útil se você estiver aproveitando referências externas em seus `.lu` arquivos, portanto, nem todo `.lu` arquivo único é tratado como um aplicativo Luis. Cada arquivo que você listar na `models` seção se tornará um aplicativo Luis e todos os `.lu` arquivos não listados se tornarão parte do aplicativo Luis criado a partir de qualquer `.lu` arquivo que faça referência a ele. Os arquivos referenciados em vários `.lu` arquivos serão duplicados em cada aplicativo Luis que faz referência a ele. Qualquer `.lu` arquivo não explicitamente listado na seção modelos do **luconfig.jsno** arquivo ou referenciado em um dos `.lu` arquivos listados será ignorado.
+Além disso, há uma `models` seção na **luconfig.jsno** arquivo que é útil quando você precisa controlar quais arquivos. Lu em seu projeto correspondem a um aplicativo Luis. Isso é especialmente útil se você estiver aproveitando referências externas em seus arquivos. Lu, portanto, nem todo arquivo. Lu é tratado como um aplicativo LUIS. Cada arquivo que você listar na `models` seção se tornará um aplicativo Luis, e quaisquer arquivos. Lu não listados se tornarão parte do aplicativo Luis que é criado a partir de qualquer arquivo. Lu que faz referência a ele. Os arquivos referenciados em vários arquivos. Lu serão duplicados em cada aplicativo LUIS que faz referência a ele. Qualquer arquivo. Lu não explicitamente listado na seção modelos da **luconfig.jsno** arquivo ou referenciado em um dos arquivos. Lu listados será ignorado.
 
 O exemplo a seguir mostra uma seção de _modelos_ de exemplo do **luconfig.jsno** arquivo:
 
@@ -255,7 +255,7 @@ bf luis:build --luConfig luconfig.json
 
 Cada [arquivo. Lu][lu-templates] pode ter várias variações de idioma e o `luis:build` comando criará um aplicativo Luis para cada idioma com suporte.
 
-O padrão para o `.lu` nome do arquivo, quando as localidades adicionais são usadas, é o seguinte:
+O padrão para o nome do arquivo. Lu, quando as localidades adicionais são usadas, é o seguinte:
 
 `<file-name>.<locale>.lu`
 
@@ -268,21 +268,21 @@ RootDialog.de-de.lu
 etc.
 ```
 
-No exemplo acima, cada um dos arquivos terá `.lu` seu próprio modelo específico de linguagem exclusivo criado para ele, resultando em um aplicativo Luis para cada um dos três `.lu` arquivos.
+No exemplo acima, cada um dos arquivos. Lu terá seu próprio modelo específico de linguagem exclusivo criado para ele, resultando em um aplicativo LUIS para cada um dos três arquivos. Lu.
 
 > [!TIP]
 >
-> - Como alternativa para incluir a localidade no nome do arquivo, você pode incluí-lo no `.lu` próprio arquivo como parte de suas informações de configuração. Isso é útil quando você precisa de mais flexibilidade com a Convenção de nomenclatura de arquivo. Por exemplo, no `.lu` arquivo para o idioma francês, você adicionaria: `> !# @app.culture = fr-fr` . Consulte a [Descrição do modelo][model-description] na referência de formato de [arquivo. Lu][lu-templates] para obter mais informações.
+> - Como alternativa para incluir a localidade no nome do arquivo, você pode incluí-lo no próprio arquivo. Lu como parte de suas informações de configuração. Isso é útil quando você precisa de mais flexibilidade com a Convenção de nomenclatura de arquivo. Por exemplo, no arquivo. Lu para o idioma francês, você adicionaria: `> !# @app.culture = fr-fr` . Consulte a [Descrição do modelo][model-description] na referência de formato de [arquivo. Lu][lu-templates] para obter mais informações.
 >
-> - Se nenhuma localidade puder ser determinada a partir do nome do arquivo e não estiver incluída nas `.lu` informações de configuração dos arquivos, o valor especificado na opção compilar comandos `--defaultCulture` será usado. Se a `--defaultCulture` opção for omitida, a localidade será definida como `en-us` .
+> - Se nenhuma localidade puder ser determinada do nome do arquivo e não estiver incluída nas informações de configuração de arquivos. Lu, o valor especificado na opção criar comandos `--defaultCulture` será usado. Se a `--defaultCulture` opção for omitida, a localidade será definida como `en-us` .
 
 ### <a name="luis-applications-created"></a>Aplicativos LUIS criados
 
-Cada aplicativo LUIS criado em seu nome será nomeado usando uma combinação do `botName` valor que você fornece ao executar o `luis:build` comando, o nome de usuário da pessoa conectada e o nome do `.lu` arquivo, incluindo a localidade.
+Cada aplicativo LUIS criado em seu nome será nomeado usando uma combinação do `botName` valor que você fornece ao executar o `luis:build` comando, o nome de usuário da pessoa conectada e o nome do arquivo. Lu, incluindo a localidade.
 
 Os nomes de aplicativos LUIS usarão este formato:  `{botName}{(suffix)}-{file-name}-{locale}.lu`
 
-Por exemplo, se seu botName for _MyProject_ e seu nome de usuário for _YuuriTanaka_ , e o nome do arquivo for _getaddresses_ , os nomes dos seus aplicativos Luis seriam os seguintes:
+Por exemplo, se seu botName for _MyProject_ e seu nome de usuário for _YuuriTanaka_, e o nome do arquivo for _getaddresses_ , os nomes dos seus aplicativos Luis seriam os seguintes:
 
 ```
 MyProject(YuuriTanaka)-GetAddresss.en-us.lu
@@ -298,9 +298,9 @@ O mesmo nome de aplicativo LUIS será usado em cada região do Azure, com pontos
 
 ### <a name="the-settings-file-generated-using-the-build-command"></a>O arquivo de configurações gerado usando o comando de compilação
 
-Todos os `.lu` arquivos de cada localidade resultarão em um aplicativo Luis e a saída do `luis:build` comando incluirá um arquivo de configurações que contém uma lista de cada ID de aplicativo do Luis que foi criada para cada localidade.
+Todos os arquivos. Lu de cada localidade resultarão em um aplicativo LUIS e a saída do `luis:build` comando incluirá um arquivo de configurações que contém uma lista de cada ID de aplicativo do Luis que foi criada para cada localidade.
 
-Por exemplo, se o nome de usuário conectado for _YuuriTanaka_ e você estiver direcionando a região de criação **westus** , seu nome de arquivo será:
+Por exemplo, se o nome de usuário conectado for _YuuriTanaka_ e você estiver direcionando a região de criação **westus**, seu nome de arquivo será:
 
 **luis.settings.YuuriTanaka.westus.jsem**
 
@@ -317,7 +317,7 @@ Arquivo de configurações de exemplo:
 
 ### <a name="the-dialog-file"></a>O arquivo de diálogo
 
-Quando você incluir a `--dialog` opção, um `.dialog` arquivo será gerado para cada um de seus `.lu` arquivos, um para cada localidade. 
+Quando você incluir a `--dialog` opção, um `.dialog` arquivo será gerado para cada um de seus arquivos. Lu, um para cada localidade. 
 
 > [!IMPORTANT]
 >
@@ -351,7 +351,7 @@ Aqui está um exemplo do arquivo _MultiLanguageRecognizer_ :
 }
 ```
 
-Você usará esses arquivos se estiver usando a abordagem declarativa para desenvolver o bot, e precisará adicionar uma referência a esse reconhecedor em seu arquivo de caixas de diálogo adaptáveis `.dialog` . No exemplo a seguir, o `"recognizer": "RootDialog.lu"` está procurando o reconhecedor que está definido no arquivo **RootDialog. Lu. Dialog** :
+Você usará esses arquivos se estiver usando a abordagem declarativa para desenvolver o bot, e precisará adicionar uma referência a esse reconhecedor em seu arquivo de caixas de diálogo adaptáveis `.dialog` . No exemplo a seguir, o `"recognizer": "RootDialog.lu"` está procurando o reconhecedor que está definido no arquivo **RootDialog. Lu. Dialog**:
 
  ![Como fazer referência a um reconhecedor em um arquivo. Dialog](./media/adaptive-dialogs/how-to-reference-the-lu-recognizer-in-dialog-file.png)
 

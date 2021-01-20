@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.service: bot-service
 ms.date: 08/31/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4aa50d3621ccbb8b36ac8eb0507c456985e4d35d
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 42ed62f9fe7cacfc6fdeec3e2bc0bb03600e21a2
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417234"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577378"
 ---
 # <a name="update-luis-resources-using-the-bot-framework-luis-cli-commands"></a>Atualizar os recursos do LUIS usando os comandos da CLI do LUIS do Bot Framework
 
@@ -27,7 +27,7 @@ Este artigo explica como atualizar um recurso LUIS existente. Para obter informa
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - Conhecimento de [modelos de Lu][lu-templates].
-- Ter um projeto de bot com `.lu` arquivos.
+- Ter um projeto de bot com arquivos. Lu.
 - Se estiver trabalhando com caixas de diálogo adaptáveis, você deve compreender:
   - [Processamento de idioma natural em caixas de diálogo adaptáveis][natural-language-processing-in-adaptive-dialogs].
   - [Reconhecimento de idioma em caixas de diálogo adaptáveis][language-understanding].
@@ -75,7 +75,7 @@ Para obter informações adicionais sobre como usar esse comando, consulte [BF L
 
 ## <a name="create-your-luis-model"></a>Criar seu modelo LUIS
 
-Sempre que você fizer atualizações em qualquer um dos `.lu` arquivos individuais usados em seu projeto, será necessário criar um novo modelo Luis usando o `luis:convert` comando. Você usará esse novo modelo para atualizar seu aplicativo LUIS que está hospedado no Azure. Isso permitirá que essas alterações entrem em vigor no bot.
+Sempre que você fizer atualizações em qualquer um dos arquivos. Lu individuais usados em seu projeto, será necessário criar um novo modelo LUIS usando o `luis:convert` comando. Você usará esse novo modelo para atualizar seu aplicativo LUIS que está hospedado no Azure. Isso permitirá que essas alterações entrem em vigor no bot.
 
 ``` cli
 bf luis:convert -i <input-folder-name> -o <output-file-name> -r --name <name>
@@ -84,7 +84,7 @@ bf luis:convert -i <input-folder-name> -o <output-file-name> -r --name <name>
 Para obter informações adicionais sobre como usar esse comando, consulte [BF Luis: Convert][bf-luisconvert] in the BF CLI Luis README.
 
 <!--
-In the example below, the command is run in a command line while in the root directory of your project. It will search for all `.lu` files in the _dialogs_ directory and because of the `-r` option, all of its sub-directories. It will save a file named LUISModel.json in the _output_ directory.
+In the example below, the command is run in a command line while in the root directory of your project. It will search for all .lu files in the _dialogs_ directory and because of the `-r` option, all of its sub-directories. It will save a file named LUISModel.json in the _output_ directory.
 
 ``` cli
 bf luis:convert -i dialogs -o .\output\LUISModel.json -r --name LUISModel.json

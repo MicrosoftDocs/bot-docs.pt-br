@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 09/30/2020
-ms.openlocfilehash: 75dc11296750b244074e1e0b497d5820b2b5c8ff
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: 2801e21ff2a659b65ea233cee8c75a1d489d5b33
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95449690"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98576748"
 ---
 # <a name="create-a-bot-with-azure-bot-service"></a>Criar um bot com o Serviço de Bot do Azure
 
@@ -86,13 +86,16 @@ Um registro manual é necessário para situações como:
 
 Confira [Perguntas frequentes – Registro do Aplicativo](~/bot-service-resources-faq-azure.md#how-do-i-create-my-own-app-registration).
 
-
 ## <a name="download-code"></a>Código de download
+
 Você pode baixar o código para trabalhar nele localmente.
+
 1. Na seção **Gerenciamento do Bot**, clique em **Compilar**.
 1. Clique no link **Baixar o código-fonte do Bot** no painel à direita.
 1. Siga os prompts para baixar o código e, em seguida, descompacte a pasta.
-    1. [!INCLUDE [download keys snippet](../includes/snippet-abs-key-download.md)]
+
+    [!INCLUDE [download keys snippet](../includes/snippet-abs-key-download.md)]
 
 ## <a name="next-steps"></a>Próximas etapas
-Depois de baixar o código, você pode continuar a desenvolver o bot localmente em seu computador. Uma vez que você testar o bot e estiver pronto para carregar seu código para o portal do Azure, siga as instruções listadas no tópico [configurar implantação contínua](../bot-service-build-continuous-deployment.md) para atualizar o código automaticamente após fazer alterações.
+
+Depois de baixar o código, você pode continuar a desenvolver o bot localmente em seu computador. Depois de testar o bot e estiver pronto para carregar o código do bot no portal do Azure, siga as instruções listadas em configurar o tópico de [implantação do continuos](../bot-service-build-continuous-deployment.md) para atualizar o código automaticamente depois de fazer as alterações.

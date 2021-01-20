@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: bot-service
 ms.date: 03/23/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 38395b964b36a1d10c125571ae68b77144fbb626
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: 6658dbaa47e503d484eeff96bcfa4a973c7b4ddd
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94599628"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577098"
 ---
 # <a name="tutorial-use-qna-maker-in-your-bot-to-answer-questions"></a>Tutorial: usar o QnA Maker em seu bot para responder a perguntas
 
@@ -36,7 +36,7 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 
 * O bot criado no [tutorial anterior](bot-builder-tutorial-create-basic-bot.md). Vamos adicionar um recurso de pergunta e resposta ao bot.
 * É útil ter alguma familiaridade com o [QnA Maker](https://qnamaker.ai/). Usaremos o portal QnA Maker para criar, treinar e publicar a base de dados de conhecimento que será usada com o bot.
-* Familiaridade com a [criação de bot de QnA](https://aka.ms/azure-create-qna) usando o Serviço de Bot do Azure.
+* Familiaridade com a [criação de bot de QnA](/azure/cognitive-services/qnamaker/tutorials/create-qna-bot) usando o Serviço de Bot do Azure.
 
 Você também já deve ter os pré-requisitos do tutorial anterior.
 
@@ -151,7 +151,7 @@ Atualize seu código de inicialização para carregar as informações de servi�
 
    Para obter mais informações sobre o NuGet, consulte a [Documentação do NuGet](https://docs.microsoft.com/nuget/#pivot=start&panel=start-all).
 
-1. No arquivo **Startup.cs** , adicione essa referência de namespace.
+1. No arquivo **Startup.cs**, adicione essa referência de namespace.
 
    **Startup.cs**
 
@@ -174,7 +174,7 @@ Atualize seu código de inicialização para carregar as informações de servi�
 
    ```
 
-1. No arquivo **EchoBot.cs** , adicione essas referências de namespace.
+1. No arquivo **EchoBot.cs**, adicione essas referências de namespace.
 
    **Bots\\EchoBot.cs**
 
@@ -237,7 +237,7 @@ Atualize seu código de inicialização para carregar as informações de servi�
    npm i botbuilder-ai
    ```
 
-1. Em **index.js** , após a seção // Criar Adaptador, adicione o seguinte código para ler as informações de configuração do arquivo .env necessárias para gerar os serviços do QnA Maker.
+1. Em **index.js**, após a seção // Criar Adaptador, adicione o seguinte código para ler as informações de configuração do arquivo .env necessárias para gerar os serviços do QnA Maker.
 
    **index.js**
 
@@ -260,7 +260,7 @@ Atualize seu código de inicialização para carregar as informações de servi�
    const myBot = new MyBot(configuration, {});
    ```
 
-1. No arquivo **bot.js** , adicione esse requisito para o QnA Maker
+1. No arquivo **bot.js**, adicione esse requisito para o QnA Maker
 
    **bot.js**
 

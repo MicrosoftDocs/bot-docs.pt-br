@@ -8,32 +8,32 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 4f4abaef5ca276142d28e79bb771cf93277ff150
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: 0f2671950bea5ba9fc351266e93a7bf8beca9bae
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95452279"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577068"
 ---
-# <a name="migrate-a-javascript-v3-bot-to-a-v4-bot"></a>Migrar um bot v3 do Javascript para um bot v4
+# <a name="migrate-a-javascript-v3-bot-to-a-v4-bot"></a>Migrar um bot v3 do JavaScript para um bot v4
 
 [!INCLUDE [applies-to-v4](../../includes/applies-to-v4-current.md)]
 
-Neste artigo, portaremos o bot [core-MultiDialogs-v3](https://aka.ms/v3-js-core-multidialog-migration-sample) JavaScript do SDK v3 para um novo bot JavaScript v4.
+Neste artigo, você aprenderá a portar o bot do SDK do JavaScript [Core-vários diálogos-v3](https://aka.ms/v3-js-core-multidialog-migration-sample) do V3 para um novo bot JavaScript do v4.
 Essa conversão é dividida entre estes estágios:
 
 1. Criar o novo projeto e adicionar dependências.
 1. Atualizar o ponto de entrada e definir constantes.
-1. Criar os diálogos, reimplementando-os com o SDK v4.
+1. Crie as caixas de diálogo e implemente-as novamente usando o SDK v4.
 1. Atualizar o código do bot para executar os diálogos.
 1. Portar o arquivo utilitário **store.js**.
 
-No final deste processo, teremos um bot v4 funcionando. Uma cópia do bot convertido também está no repositório de exemplos, [core-MultiDialogs-v4](https://aka.ms/v4-js-core-multidialog-migration-sample).
+No final desse processo, você terá um bot de trabalho v4. Uma cópia do bot convertido também está no repositório de exemplos, [core-MultiDialogs-v4](https://aka.ms/v4-js-core-multidialog-migration-sample).
 
 O SDK v4 do Bot Framework é baseado na mesma API REST subjacente que o SDK v3. No entanto, a v4 do SDK é uma refatoração da versão anterior do SDK para dar mais flexibilidade e controle aos desenvolvedores sobre seus bots. Alterações importantes no SDK incluem:
 
 - O estado é gerenciado por meio de objetos de gerenciamento de estado e acessadores de propriedade.
-- Mudamos nossa maneira de lidar com turnos, ou seja, como o bot recebe e responde uma atividade de entrada do canal do usuário.
+- A maneira como você lida com os turnos mudou, ou seja, como o bot recebe e responde a uma atividade de entrada do canal do usuário.
 - A v4 não usa um objeto `session`. Em vez disso, ela tem um objeto _turn context_ que contém informações sobre a atividade de entrada e pode ser usado para enviar de volta uma atividade de resposta.
 - Uma nova biblioteca de diálogos que é muito diferente daquela da v3. Você precisará converter os diálogos antigos no novo sistema de diálogo, usando os diálogos do componente e em cascata.
 
@@ -42,7 +42,7 @@ For more information about specific changes, see [differences between the v3 and
 -->
 
 > [!NOTE]
-> Como parte da migração, também limpamos alguns dos códigos, mas apenas destacaremos as alterações feitas na lógica da v3 como parte do processo de migração.
+> Como parte da migração, você também precisa limpar parte do código. Este artigo realça as alterações a serem feitas na lógica V3 como parte do processo de migração.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -52,7 +52,7 @@ For more information about specific changes, see [differences between the v3 and
 
 ## <a name="about-this-bot"></a>Sobre este bot
 
-O bot que estamos migrando demonstra o uso de vários diálogos para gerenciar o fluxo da conversa. O bot pode pesquisar informações de voo ou hotel.
+O bot que você está migrando demonstra o uso de várias caixas de diálogo para gerenciar o fluxo de conversa. O bot pode pesquisar informações de voo ou hotel.
 
 - O diálogo principal pergunta ao usuário o tipo de informação que está procurando.
 - O diálogo de hotel solicita ao usuário parâmetros de pesquisa e, em seguida, executa uma pesquisa fictícia.
@@ -76,11 +76,11 @@ O bot que estamos migrando demonstra o uso de vários diálogos para gerenciar o
 
 ## <a name="update-the-v4-app-entry-point"></a>Atualizar o ponto de entrada de aplicativo da v4
 
-O modelo da v4 cria um arquivo **index.js** para o ponto de entrada de aplicativo e um arquivo **bot.js** para a lógica específica do bot. Nas etapas posteriores, renomearemos o arquivo **bot.js** para **bots/reservationBot.js** e adicionaremos uma classe para cada diálogo.
+O modelo da v4 cria um arquivo **index.js** para o ponto de entrada de aplicativo e um arquivo **bot.js** para a lógica específica do bot. Em etapas posteriores, você renomeará o arquivo de **bot.js** para **bots/reservationBot.js** em uma etapa posterior e adicionará uma classe para cada caixa de diálogo.
 
 Edite **./index.js**, que é o ponto de entrada do nosso aplicativo bot. Ele conterá partes do arquivo **app.js** da v3 que configura o servidor HTTP.
 
-1. Além de `BotFrameworkAdapter`, importe `MemoryStorage` e `ConversationState` do pacote **botbuilder**. Importe também o bot e os módulos do diálogo principal. (Criaremos eles logo, mas precisamos citá-los aqui.)
+1. Além de `BotFrameworkAdapter`, importe `MemoryStorage` e `ConversationState` do pacote **botbuilder**. Importe também o bot e os módulos do diálogo principal. (Você os criará em breve, mas precisará fazer referência a eles aqui.)
 
     ```javascript
     // Import required bot services.
@@ -107,7 +107,7 @@ Edite **./index.js**, que é o ponto de entrada do nosso aplicativo bot. Ele con
     };
     ```
 
-    Na v4, usamos um _adaptador de bot_ para rotear as atividades de entrada até o bot. O adaptador nos permite capturar e responder aos erros antes de concluir um turno. Aqui, limpamos o estado da conversa, se ocorrer um erro de aplicativo, o que redefinirá todos os diálogos e impedirá o bot de permanecer em um estado corrompido de conversa.
+    No v4, você usa um _adaptador de bot_ para rotear atividades de entrada para o bot. O adaptador nos permite capturar e responder aos erros antes de concluir um turno. Aqui, você limpará o estado da conversa se ocorrer um erro de aplicativo, o que redefinirá todas as caixas de diálogo e impedirá que o bot permaneça em um estado de conversa corrompido.
 
 1. Substitua o código de modelo de criação do bot por esse.
 
@@ -123,11 +123,11 @@ Edite **./index.js**, que é o ponto de entrada do nosso aplicativo bot. Ele con
     const reservationBot = new ReservationBot(conversationState, dialog);
     ```
 
-    A camada de armazenamento na memória agora é fornecida pela classe `MemoryStorage` e podemos criar explicitamente um objeto de gerenciamento de estado da conversa.
+    A camada de armazenamento na memória agora é fornecida pela `MemoryStorage` classe e você precisa criar explicitamente um objeto de gerenciamento de estado de conversa.
 
-    O código de definição do diálogo foi movido para uma classe `MainDialog`, que definiremos daqui a pouco. Também migraremos o código de definição do bot para uma classe `ReservationBot`.
+    O código de definição da caixa de diálogo foi movido para uma `MainDialog` classe que você definirá em breve. Você também migrará o código de definição de bot para uma `ReservationBot` classe.
 
-1. Por fim, atualizaremos o manipulador de solicitação do servidor para usar o adaptador nas atividades de roteamento para o bot.
+1. Por fim, você atualiza o manipulador de solicitação do servidor para usar o adaptador para rotear atividades para o bot.
 
     ```javascript
     // Listen for incoming requests.
@@ -139,11 +139,11 @@ Edite **./index.js**, que é o ponto de entrada do nosso aplicativo bot. Ele con
     });
     ```
 
-    Na v4, nosso bot deriva de `ActivityHandler`, que define o método `run` para receber uma atividade para um turno.
+    No v4, o bot é derivado de `ActivityHandler` , que define o `run` método para receber uma atividade para uma rodada.
 
 ## <a name="add-a-constants-file"></a>Adicionar um arquivo de constantes
 
-Crie um arquivo **./const.js** para armazenar identificadores do nosso bot.
+Crie um arquivo **./const.js** para armazenar identificadores para o bot.
 
 ```javascript
 module.exports = {
@@ -173,11 +173,11 @@ Não migramos o diálogo de suporte. Para obter um exemplo de como implementar u
 
 ### <a name="implement-the-main-dialog"></a>Implementar o diálogo principal
 
-Na v3, todos os bots eram criados sobre um sistema de diálogos. Na v4, a lógica do bot e a lógica do diálogo agora são separadas. Pegamos o _diálogo raiz_ no bot da v3 e criamos uma classe `MainDialog` para substituí-lo.
+Na v3, todos os bots foram criados sobre um sistema de caixa de diálogo. Na v4, a lógica do bot e a lógica do diálogo agora são separadas. Você tomou o que era a _caixa de diálogo raiz_ no bot v3 e fazia uma `MainDialog` aula para tomar seu lugar.
 
 Edite **./dialogs/main.js**.
 
-1. Importe as classes e constantes que precisamos para o diálogo.
+1. Importe as classes e as constantes necessárias para a caixa de diálogo.
 
     ```javascript
     const { DialogSet, DialogTurnStatus, ComponentDialog, WaterfallDialog,
@@ -224,7 +224,7 @@ Edite **./dialogs/main.js**.
     Ela declara os outros diálogos e prompts aos quais o diálogo principal faz referência direta.
 
     - O diálogo em cascata principal que contém as etapas deste diálogo. Quando o diálogo de componente é iniciado, ele começa seu _diálogo inicial_.
-    - O prompt de escolha que usaremos para perguntar ao usuário qual tarefa ele deseja executar. Criamos o prompt de escolha com um validador.
+    - O prompt de opção que você usará para perguntar ao usuário qual tarefa gostaria de executar. Você criou o prompt de opção com um validador.
     - Os dois diálogos filho, voos e hotéis.
 
 1. Adicione um método `run` auxiliar à classe.
@@ -248,7 +248,7 @@ Edite **./dialogs/main.js**.
     }
     ```
 
-    Na v4, um bot interage com o sistema de diálogos criando um contexto de caixa de diálogo primeiro, e, em seguida, chamando `continueDialog`. Se houver um diálogo ativo, o controle será passado a ele. Caso contrário, essa chamada simplesmente retornará. Um resultado de `empty` indica que nenhum diálogo estava ativo e, portanto, aqui, iniciamos o diálogo principal novamente.
+    Na v4, um bot interage com o sistema de diálogos criando um contexto de caixa de diálogo primeiro, e, em seguida, chamando `continueDialog`. Se houver um diálogo ativo, o controle será passado a ele. Caso contrário, essa chamada simplesmente retornará. Um resultado `empty` indica que nenhuma caixa de diálogo estava ativa e, portanto, aqui, você inicia a caixa de diálogo principal novamente.
 
     Para a propriedade de estado do diálogo, o parâmetro `accessor` passa no acessador. Estado da _pilha do diálogo_ é armazenado nessa propriedade. Para obter mais informações sobre como o estado e os diálogos funcionam na v4, confira [Gerenciamento de estado](../bot-builder-concept-state.md) e [Biblioteca de diálogos](../bot-builder-concept-dialog.md), respectivamente.
 
@@ -305,7 +305,7 @@ Edite **./dialogs/main.js**.
 
 ### <a name="implement-the-flights-dialog"></a>Implementar o diálogo de voos
 
-No bot da v3, o diálogo de voos era um stub que demonstrava como o bot trata um erro de conversa. Aqui, fazemos o mesmo.
+No bot da v3, o diálogo de voos era um stub que demonstrava como o bot trata um erro de conversa. Aqui, você faz o mesmo.
 
 Edite **./dialogs/flights.js**.
 
@@ -336,11 +336,11 @@ exports.FlightDialog = FlightDialog;
 
 ### <a name="implement-the-hotels-dialog"></a>Implementar o diálogo de hotéis
 
-Mantemos o mesmo fluxo geral do diálogo de hotel: solicitar um destino, uma data, o número de diárias e, em seguida, mostrar ao usuário uma lista de opções que corresponde à pesquisa.
+Você mantém o mesmo fluxo geral da caixa de diálogo do Hotel: peça um destino, solicite uma data, peça o número de noites para permanecer e, em seguida, mostre ao usuário uma lista de opções que corresponderam à pesquisa.
 
 Edite **./dialogs/hotels.js**.
 
-1. Importe as classes e constantes que precisaremos para o diálogo.
+1. Importe as classes e constantes necessárias para a caixa de diálogo.
 
     ```javascript
     const { ComponentDialog, WaterfallDialog, TextPrompt, DateTimePrompt } = require('botbuilder-dialogs');
@@ -386,7 +386,7 @@ Edite **./dialogs/hotels.js**.
     exports.HotelsDialog = HotelsDialog;
     ```
 
-1. Para a classe, adicione duas funções auxiliares que usaremos nas etapas do diálogo.
+1. Para a classe, adicione algumas funções auxiliares que você usará nas etapas da caixa de diálogo.
 
     ```javascript
     addDays(startDate, days) {
@@ -481,7 +481,7 @@ Edite **./dialogs/hotels.js**.
     }
     ```
 
-    Migramos as etapas do diálogo de hotéis da v3 para as etapas de cascata do nosso diálogo de hotéis da v4.
+    Você migrou as etapas da caixa de diálogo de hotéis V3 para as etapas em cascata da caixa de diálogo de hotéis v4.
 
 ## <a name="update-the-bot"></a>Atualizar o bot
 
@@ -505,7 +505,7 @@ Renomeie **./bot.js** para **./bots/reservationBot.js** e edite-o.
     module.exports.ReservationBot = ReservationBot;
     ```
 
-1. Atualize a assinatura do construtor, para aceitar os objetos que estamos recebendo.
+1. Atualize a assinatura do construtor para aceitar os objetos que você está recebendo.
 
     ```javascript
     /**
@@ -536,7 +536,7 @@ Renomeie **./bot.js** para **./bots/reservationBot.js** e edite-o.
     this.dialogState = this.conversationState.createProperty('DialogState');
     ```
 
-    É onde criamos o acessador de propriedade de estado do diálogo, que armazenará o estado da pilha de diálogo.
+    É aqui que você cria o acessador de propriedade de estado da caixa de diálogo que armazenará o estado da pilha de diálogo.
 
 1. No construtor, atualize o manipulador `onMessage` e adicione um manipulador `onDialog`.
 
@@ -562,7 +562,7 @@ Renomeie **./bot.js** para **./bots/reservationBot.js** e edite-o.
 
     O `ActivityHandler` roteia atividades de mensagem até `onMessage`. Esse bot processa todas as entradas do usuário via diálogos.
 
-    O `ActivityHandler` chama `onDialog` no final do turno, antes de devolver o controle ao adaptador. Precisamos salvar explicitamente o estado, antes da saída do turno. Caso contrário, as alterações de estado não serão salvas e o diálogo não será executado corretamente.
+    O `ActivityHandler` chama `onDialog` no final do turno, antes de devolver o controle ao adaptador. Você precisa salvar explicitamente o estado antes de sair da rodada. Caso contrário, as alterações de estado não serão salvas e o diálogo não será executado corretamente.
 
 1. Por fim, atualize o manipulador `onMembersAdded` no construtor.
 
@@ -579,7 +579,7 @@ Renomeie **./bot.js** para **./bots/reservationBot.js** e edite-o.
     });
     ```
 
-    O `ActivityHandler` chama `onMembersAdded` quando recebe uma atividade de atualização de conversa que indica que outros participantes além do bot foram adicionados à conversa. Atualizamos esse método para enviar uma mensagem de saudação quando um usuário ingressa na conversa.
+    O `ActivityHandler` chama `onMembersAdded` quando recebe uma atividade de atualização de conversa que indica que outros participantes além do bot foram adicionados à conversa. Você atualiza esse método para enviar uma mensagem de saudação quando um usuário ingressar na conversa.
 
 ## <a name="create-the-store-file"></a>Criar o arquivo de armazenamento
 
@@ -614,7 +614,7 @@ module.exports = {
 
 ## <a name="test-the-bot-in-the-emulator"></a>Testar o bot no emulador
 
-Neste ponto, devemos ser capazes de executar o bot localmente e anexá-lo ao emulador.
+Neste ponto, você deve ser capaz de executar o bot localmente e anexá-lo com o emulador.
 
 1. Execute o exemplo localmente em seu computador.
     Se você iniciar uma sessão de depuração no Visual Studio Code, as informações de log serão enviadas ao console de depuração enquanto você testa o bot.

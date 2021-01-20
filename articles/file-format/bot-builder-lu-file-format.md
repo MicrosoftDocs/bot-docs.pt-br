@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: cdefa9a9cc4300e4627ef0775edf625fe5a33428
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: dac1aa93a5024c5a4d6bac28a37cfe87eb64905f
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95455970"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98575792"
 ---
 # <a name="lu-file-format"></a>Formato de arquivo .lu
 
@@ -295,7 +295,7 @@ Veja no exemplo abaixo como as funções `userName:firstName` e `userName:lastNa
 > @ ml userName hasRoles lastName, firstName
 ```
 
-Em [padrões](#patterns), você pode usar funções usando a `{<entityName>:<roleName>}` notação. Aqui está um exemplo:
+Em [padrões](#patterns), você pode usar funções usando a `{<entityName>:<roleName>}` notação. Veja um exemplo:
 
 ```lu
 # getUserName
@@ -355,7 +355,7 @@ Descreva as entidades da lista de frases usando a seguinte notação:
 
 ```lu
 @ phraselist <Name>
-    - <synonym1>  
+    - <synonym1>
     - <synonym2>
 ```
 
@@ -513,7 +513,7 @@ Colete enunciados que você acredita que os usuários irão inserir. Inclua enun
 - Pluralização
 - Lematização
 - Escolher substantivo e verbo
-- Pontuação 
+- Pontuação
 
 Rotule as entidades em enunciados usando a seguinte notação:
 
@@ -689,6 +689,7 @@ Abaixo estão exemplos de como fazer referências de URI:
 ## <a name="additional-information"></a>Informações adicionais:
 
 - Leia [Formato de arquivo .qna](bot-builder-qna-file-format.md) para saber mais sobre os arquivos .qna.
+- Leia [depurar com ferramentas adaptáveis](../bot-service-debug-adaptive-tools.md) para saber como analisar arquivos. Lu.
 
 [1]:https://luis.ai
 [2]:https://docs.microsoft.com/azure/cognitive-services/luis/luis-concept-intent

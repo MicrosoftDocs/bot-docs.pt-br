@@ -7,18 +7,18 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 6f214b0b903f5c39437efe760b0c953e9ed9cb8a
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: 1cc7bbe579e59476ffeb3f08877d49b6568ddb27
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824426"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98576738"
 ---
 # <a name="end-a-conversation-in-direct-line-api-30"></a>Encerrar uma conversa na API de linha direta 3,0
 
-A [atividade](https://aka.ms/botSpecs-activitySchema) **endOfConversation** significa que o canal ou o bot encerrou a conversa. 
+A [atividade](https://aka.ms/botSpecs-activitySchema) **endOfConversation** significa que o canal ou o bot encerrou a conversa.
 
-> [!NOTE] 
+> [!NOTE]
 > Embora o evento **endOfConversation** só seja enviado por pouquíssimos canais, o canal da Cortana é o único que o aceita. Outros canais, incluindo o Direct Line, não implementam essa funcionalidade e, em vez disso, descartam ou encaminham a atividade; cada canal determina como reagir a uma atividade endOfConversation.
 
 ## <a name="send-an-endofconversation-activity"></a>Enviar uma atividade endOfConversation

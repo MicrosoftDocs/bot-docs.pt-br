@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 10/09/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: c5afac050646c1107a539784d7c8ca7787966bf0
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 491ae7286ea9b61488298588134a310a417ec457
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92413857"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577138"
 ---
 # <a name="virtual-assistant---skills-overview"></a>Assistente Virtual - Visão Geral das Habilidades
 
@@ -27,7 +27,7 @@ Dentro de uma empresa poderíamos ter a criação de um único bot pai reunindo 
 
 As próprias Habilidades são Bots, chamados remotamente, e um modelo de desenvolvedor (.NET, TS) está disponível para facilitar a criação de novas Habilidades.
 
-Um objetivo-chave de design das Habilidades era manter o protocolo de Atividade consistente e garantir que a experiência de desenvolvimento fosse a mais próxima possível de qualquer bot comum do SDK V4. 
+Um objetivo-chave de design das Habilidades era manter o protocolo de Atividade consistente e garantir que a experiência de desenvolvimento fosse a mais próxima possível de qualquer bot comum do SDK V4.
 
 ![Cenários de Habilidades](./media/enterprise-template/skills-scenarios.png)
 
@@ -35,7 +35,7 @@ Um objetivo-chave de design das Habilidades era manter o protocolo de Atividade 
 
 Atualmente fornecemos as seguintes Habilidades do Bot Framework, suportadas pelo Microsoft Graph e disponível em vários idiomas.
 
-![Cenários de Habilidades](./media/enterprise-template/skills-at-build.png)
+![Compilação de cenários de habilidades](./media/enterprise-template/skills-at-build.png)
 
 | Nome | Descrição |
 | ---- | ----------- |

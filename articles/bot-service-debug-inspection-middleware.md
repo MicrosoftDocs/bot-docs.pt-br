@@ -8,18 +8,18 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/17/2020
-ms.openlocfilehash: 1027c97e5e4647c91595443ed89bfa166039576b
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: 3af164c740fb22f97d95adca7a2b053dca0ae52a
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95456560"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98576068"
 ---
 # <a name="debug-a-bot-with-inspection-middleware"></a>Depurar um bot com middleware de inspeção
 
 [!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
-Este artigo descreve como depurar o bot usando o middleware de inspeção. Esse recurso permite que o Bot Framework Emulator depure o tráfego dentro e fora do bot, além de examinar o estado atual dele. Você pode usar uma mensagem de rastreamento para enviar dados para o emulador e, em seguida, inspecionar o estado do bot em qualquer determinada rodada da conversa.
+Este artigo descreve como depurar um bot usando o middleware de inspeção. Esse recurso permite que o Bot Framework Emulator depure o tráfego dentro e fora do bot, além de examinar o estado atual dele. Você pode usar uma mensagem de rastreamento para enviar dados para o emulador e, em seguida, inspecionar o estado do bot em qualquer determinada rodada da conversa.
 
 Usamos um EchoBot criado localmente usando o Bot Framework v4 ([C#](dotnet/bot-builder-dotnet-sdk-quickstart.md) |
 [JavaScript](javascript/bot-builder-javascript-quickstart.md) |
@@ -36,7 +36,7 @@ Usamos um EchoBot criado localmente usando o Bot Framework v4 ([C#](dotnet/bot-b
 
 Antes de usar o middleware de inspeção de bot para depurar o bot, você precisa atualizar seu emulador para que seja a versão 4,5 ou mais recente. Verifique a [versão mais recente](https://github.com/Microsoft/BotFramework-Emulator/releases) para obter atualizações.
 
-Para verificar a versão do seu emulador, selecione **ajuda**  ->  **About** no no menu. Você verá a versão atual do seu emulador.
+Para verificar a versão do seu emulador, selecione **ajuda**  >   no no menu. Você verá a versão atual do seu emulador.
 
 ![versão atual](./media/bot-debug-inspection-middleware/bot-debug-check-emulator-version.png)
 
@@ -96,7 +96,7 @@ Configure o estado de inspeção no arquivo **app.py** adicionando um middleware
 
 Atualize a classe do bot no arquivo **echo_bot.py**.
 
-**bots/echo_bot.py** 
+**bots/echo_bot.py**
 
 [!code-python [inspection bot sample](~/../botbuilder-samples/samples/python/47.inspection/bots/echo_bot.py?range=16-64)]
 
@@ -153,7 +153,7 @@ Para executar o bot localmente, faça o seguinte:
 
 1. Navegue até a pasta do bot em um terminal e defina o registro do npm para usar os [builds mais recentes](https://botbuilder.myget.org/feed/botbuilder-v4-js-daily/package/npm/botbuilder-azure)
 
-1. Execute o bot localmente. Você verá o bot expor um número da porta como 3978.
+1. Execute o bot localmente. Você verá que o bot expõe um número de porta como `3978` .
 
 1. Abra outro prompt de comando e navegue até a pasta do projeto do bot. Execute o comando a seguir:
 
@@ -186,7 +186,7 @@ Agora que o bot local está conectado ao ngrok, você pode configurar o bot loca
 
     ![test-web-chat](./media/bot-debug-inspection-middleware/bot-debug-test-webchat.png)
 
-1. Agora, vamos habilitar o modo de depuração no emulador. Em seu emulador, selecione **depurar**  ->  **Iniciar Depuração**. Preencha o endereço IP do ngrok (não se esqueça de adicionar **/api/messages**) na **URL do Bot** (por exemplo, https://e58549b6.ngrok.io/api/messages). Preencha a **ID do Aplicativo Microsoft** com a **appId** e a **Senha do Aplicativo Microsoft** com **appSecret**. Verifique se a opção **Abrir no modo de depuração** também está marcada. Clique em **Conectar**.
+1. Agora, vamos habilitar o modo de depuração no emulador. Em seu emulador, selecione **depurar**  >  **Iniciar Depuração**. Insira o endereço IP ngrok (não se esqueça de adicionar **/API/messages**) para a **URL do bot** (por exemplo, `https://e58549b6.ngrok.io/api/messages` ). Para **ID do aplicativo da Microsoft**, insira a ID do aplicativo do bot. Para **senha de aplicativo da Microsoft**, insira o segredo do aplicativo do bot. Verifique se a opção **Abrir no modo de depuração** também está marcada. Clique em **Conectar**.
 
 1. Quando o modo de depuração estiver habilitado, um UUID será gerado em seu emulador. Um UUID é uma ID exclusiva gerada toda vez que você inicia o modo de depuração em seu emulador. Copie e cole o UUID na caixa de chat **Testar no Webchat** ou na caixa de chat do canal. Você verá a mensagem "Anexado à sessão, todo o tráfego está sendo replicado para inspeção" na caixa de chat.
 
@@ -196,6 +196,6 @@ Você pode iniciar a depuração do bot enviando mensagens na caixa de chat do c
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- Experimente os novos exemplos de bot de inspeção aqui: [C#](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/47.inspection) e [JavaScript](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/javascript_nodejs/47.inspection).
+- Experimente o exemplo de bot de middleware de inspeção em [C#](https://github.com/microsoft/BotBuilder-Samples/tree/main/samples/csharp_dotnetcore/47.inspection), [JavaScript](https://github.com/microsoft/BotBuilder-Samples/tree/main/samples/javascript_nodejs/47.inspection)ou [python](https://github.com/microsoft/BotBuilder-Samples/blob/main/samples/python/47.inspection) .
 - Leia [solucionar problemas gerais](bot-service-troubleshoot-bot-configuration.md) e outros artigos de solução de problemas nesta seção.
 - Leia o artigo de instruções [Depurar com o Emulador](bot-service-debug-emulator.md).

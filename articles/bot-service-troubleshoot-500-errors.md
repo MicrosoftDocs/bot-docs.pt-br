@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/19/2019
-ms.openlocfilehash: 92894ca049642c15dfda88d0d4330559d9ceba17
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: a35b40ca40fea619c9b4e5de62818ff8da3c0090
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95456110"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98576908"
 ---
 # <a name="troubleshoot-http-500-errors"></a>Solucionar erros de HTTP 500
 
@@ -28,9 +28,9 @@ Para obter exemplos de AppInsights, consulte o exemplo de [C#](https://aka.ms/cs
 
  <!-- qna-with-appinsights ([C# sample](https://aka.ms/qna-with-appinsights) / [JS sample](https://aka.ms/js-qna-with-appinsights-sample)) samples demonstrate bots that support Azure Application Insights.-->
 
-Confira [telemetria de análise de conversa](https://aka.ms/botframeworkanalytics) para obter informações sobre como adicionar o Application Insights a um bot existente.
+Confira [telemetria de análise de conversa](./v4sdk/bot-builder-telemetry.md) para obter informações sobre como adicionar o Application Insights a um bot existente.
 
-## <a name="enable-application-insights-on-aspnet"></a>Habilitar o Application Insights no ASP.Net
+## <a name="enable-application-insights-on-aspnet"></a>Habilitar Application Insights em ASP.NET
 
 Para o suporte básico do Application Insights, confira como [configurar o Application Insights para seu site do ASP.NET](https://docs.microsoft.com/azure/application-insights/app-insights-asp-net). O Bot Framework (começando com a v4.2) fornece um nível adicional de telemetria do Application Insights, mas ele não é necessário para diagnosticar erros HTTP 500.
 
@@ -153,7 +153,7 @@ Verifique se há uma chave do Application Insights incluída em seu arquivo de c
 
 ### <a name="check-logs"></a>Verificar os logs
 
-O ASP.Net e o Nó do bot emitirão os logs no nível do servidor que pode ser inspecionado.
+O bot ASP.NET e node emitirão logs no nível do servidor que podem ser inspecionados.
 
 #### <a name="set-up-a-browser-to-watch-your-logs"></a>Configurar um navegador para observar os logs
 

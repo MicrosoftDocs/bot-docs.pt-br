@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 04/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 5b072dec943fe736888911dc4ed5f37a41c4ea14
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 57bb11f5426c54d5e8c9d44cfdc53ce3d9a60444
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416935"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577278"
 ---
 <!--P2: Once the samples are done, link to them in each section on the individual actions to point to them as examples of how they are used-->
 # <a name="actions-in-adaptive-dialogs"></a>Ações em caixas de diálogo adaptáveis
@@ -76,7 +76,7 @@ As ações condicionais fornecidas pelo SDK do bot Framework incluem:
 * **Para cada loop de página**. Executa um loop por meio de um grande conjunto de valores armazenados em uma página de uma matriz por vez.
   * **Sair de um loop**. Use para interromper um loop.
   * **Continuar um loop**. Usado para continuar o loop.
-* **Ir**para. Passa imediatamente para a ação especificada e continua a execução. Determinada por actionID.
+* **Ir** para. Passa imediatamente para a ação especificada e continua a execução. Determinada por actionID.
 
 Para obter informações detalhadas e exemplos, consulte a seção [instruções condicionais](../adaptive-dialog/adaptive-dialog-prebuilt-actions.md#conditional-statements) no __guia ações em caixas de diálogo adaptáveis-referência__.
 
@@ -98,7 +98,7 @@ Para obter informações detalhadas e exemplos, consulte a seção de [Gerenciam
 
 ### <a name="manage-properties"></a>Gerenciar propriedades
 
-As ações gerenciar Propriedades possibilitam criar, atualizar e excluir uma propriedade.  Para obter mais informações sobre propriedades, consulte o SDK do bot Framework [gerenciamento de estado] [Bot-Builder-Concept-state.md] e o [estado de gerenciamento em artigos de caixas de diálogo adaptáveis][memory-states] .
+As ações gerenciar Propriedades possibilitam criar, atualizar e excluir uma propriedade.  Para obter mais informações sobre propriedades, consulte o SDK do bot Framework [Gerenciamento de estado][Managing-state] e o [estado de gerenciamento em artigos de caixas de diálogo adaptáveis][memory-states] .
 
 * **Editar uma matriz**. Permite executar operações de edição em uma matriz.
 * **Excluir uma propriedade**. Permite remover uma propriedade da [memória][memory-states].
@@ -145,3 +145,4 @@ Para obter informações detalhadas e exemplos, consulte a seção [Opções de 
 [adaptive-expressions]:bot-builder-concept-adaptive-expressions.md
 [memory-states]:bot-builder-concept-adaptive-dialog-memory-states.md
 [interruptions]: bot-builder-concept-adaptive-dialog-interruptions.md
+[Managing-state]: bot-builder-concept-state.md

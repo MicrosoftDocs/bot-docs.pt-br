@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 08/14/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 5a38330bc277012a2216c23599f8dbc56c806f71
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: 5d47946fe04c8e4b04316f755ac7e1c3b17f403b
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95452100"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577488"
 ---
 <!-- This article is on hold -->
 
@@ -23,7 +23,7 @@ ms.locfileid: "95452100"
 
 Este artigo mostra um exemplo de como um bot v4 pode executar operações de leitura, gravação e exclusão em informações de estado de usuário v3.
 
-O exemplo de código pode ser encontrado [aqui](https://github.com/microsoft/BotBuilder-Samples/tree/master/MigrationV3V4/Node/V4V3-user-state-adapter-sample-bot).
+O exemplo de código pode ser encontrado no [exemplo do adaptador de estado do usuário v4 v3](https://github.com/microsoft/BotBuilder-Samples/tree/master/MigrationV3V4/Node/V4V3-user-state-adapter-sample-bot).
 
 > [!NOTE]
 > Um bot mantém o **estado da conversa** para acompanhar e direcionar a conversa e fazer perguntas ao usuário. Ele mantém o **estado do usuário** para acompanhar as respostas dele.
@@ -73,17 +73,17 @@ O exemplo de código pode ser encontrado [aqui](https://github.com/microsoft/Bot
 1. Configurar a base de dados
 
     1. Copie o conteúdo do arquivo `.env.example`.
-    1. Crie um arquivo chamado `.env` e cole o conteúdo anterior nele. 
+    1. Crie um arquivo chamado `.env` e cole o conteúdo anterior nele.
     1. Preencha os valores para seus provedores de armazenamento.
         Observe que *Nome de usuário*, *senha* e *informações de host* podem ser encontrados no portal do Azure na seção do seu provedor de armazenamento específico, como *Cosmos DB*, *Armazenamento de tabela* ou *Banco de dados SQL*. Os nomes de tabela e coleção são definidos pelo usuário.
-  
+
 1. Definir o provedor de armazenamento do bot
 
     1. Abra o arquivo `index.js` na raiz do projeto. Até o início do arquivo (linhas 38-98), você verá configurações para cada provedor de armazenamento, conforme observado nos comentários. Eles leem os valores de configuração do arquivo `.env` por meio do Nó `process.env`. O snippet de código a seguir mostra como configurar o Banco de Dados SQL.
 
         [!code-javascript[Storage configuration](~/../botbuilder-samples/MigrationV3V4/Node/V4V3-user-state-adapter-sample-bot/index.js?range=77-92)]
 
-    1. Especifique qual provedor de armazenamento você deseja que seu bot use passando a instância de cliente de armazenamento de sua escolha para o adaptador `StorageMapper` (~linha 107).  
+    1. Especifique qual provedor de armazenamento você deseja que seu bot use passando a instância de cliente de armazenamento de sua escolha para o adaptador `StorageMapper` (~linha 107).
 
         [!code-javascript[StorageMapper](~/../botbuilder-samples/MigrationV3V4/Node/V4V3-user-state-adapter-sample-bot/index.js?range=105-107)]
 
@@ -115,7 +115,7 @@ Essa classe estende a classe `BotState` v4 (`botbuilder-core`) para que ela use 
 
 O [Bot Framework Emulator][5] é um aplicativo de área de trabalho que permite testar e depurar um bot em localhost ou executando remotamente por meio de um túnel.
 
-- Instale o Bot Framework Emulator versão 4.3.0 ou superior acessando [aqui][6]
+- Instale o emulador do bot Framework, [versão 4.3.0 ou posterior][6].
 
 ### <a name="connect-to-the-bot-using-bot-framework-emulator"></a>Conectar-se ao bot usando o Bot Framework Emulator
 
@@ -152,4 +152,4 @@ Para saber mais sobre como implantar um bot no Azure, confira [Implantar o bot n
 [21]: ../../bot-service-overview-introduction.md
 [30]: https://www.npmjs.com/package/restify
 [31]: https://www.npmjs.com/package/dotenv
-[40]: https://aka.ms/azuredeployment
+[40]: ../../bot-builder-deploy-az-cli.md

@@ -7,12 +7,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/24/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: a3349441eb1973f2a78136ac2735d446164c2717
-ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
+ms.openlocfilehash: a1f9f2d80dd9c6325cec8ff5df9d2094f4554026
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97758574"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577318"
 ---
 <!--
 Related TODO:
@@ -72,8 +72,8 @@ Depois de concluir este artigo, você terá um bot que pode responder a algumas 
 
 | Amostra | Versão do BotBuilder | Demonstra |
 |:---|:---:|:---|
-| **Autenticação** em [**Csharp**][cs-auth-sample] ou [**JavaScript**][js-auth-sample] ou  [**Python**][python-auth-sample] | v4 | Suporte de OAuthCard |
-| **MSGraph de autenticação** em [**Csharp**][cs-msgraph-sample] ou [**JavaScript**][js-msgraph-sample] ou [**Python**](https://aka.ms/bot-auth-msgraph-python-sample-code)| v4 |  Suporte da API do Microsoft Graph com o OAuth 2 |
+| **Autenticação** em [**C#**][cs-auth-sample] ou [**JavaScript**][js-auth-sample] ou  [**Python**][python-auth-sample] | v4 | Suporte de OAuthCard |
+| **MSGraph de autenticação** em [**C#**][cs-msgraph-sample] ou [**JavaScript**][js-msgraph-sample] ou [**Python**](https://aka.ms/bot-auth-msgraph-python-sample-code)| v4 |  Suporte da API do Microsoft Graph com o OAuth 2 |
 
 ### <a name="about-the-samples"></a>Sobre as amostras
 
@@ -509,7 +509,7 @@ Uma diferença entre outros canais e o Temas é o Teams envia uma atividade de *
 
 # <a name="python"></a>[Python](#tab/python)
 
-Atualmente, o Microsoft Teams é ligeiramente diferente quanto à maneira da integração da autenticação com o bot. Consulte a [Documentação do Teams](https://aka.ms/teams-docs) na autenticação.
+Atualmente, o Microsoft Teams é ligeiramente diferente quanto à maneira da integração da autenticação com o bot. Consulte a [Documentação do Teams](/microsoftteams/platform/bots/how-to/create-a-bot-for-teams) na autenticação.
 
 ---
 
@@ -529,7 +529,7 @@ Se você usar um *prompt OAuth*, essa atividade de invocação deverá ser encam
 
 # <a name="python"></a>[Python](#tab/python)
 
-Atualmente, o Microsoft Teams é ligeiramente diferente quanto à maneira da integração da autenticação com o bot. Consulte a [Documentação do Teams](https://aka.ms/teams-docs) na autenticação.
+Atualmente, o Microsoft Teams é ligeiramente diferente quanto à maneira da integração da autenticação com o bot. Consulte a [Documentação do Teams](/microsoftteams/platform/bots/how-to/create-a-bot-for-teams) na autenticação.
 
 ---
 
@@ -567,4 +567,4 @@ O `TeamsActivityHandler` também envia atividades de *reação de mensagem*. Uma
 [js-msgraph-sample]: https://aka.ms/v4js-auth-msgraph-sample
 [cs-teams-auth-sample]:https://aka.ms/cs-teams-auth-sample
 [js-teams-auth-sample]:https://aka.ms/js-teams-auth-sample
-[teams-activity-feed]:https://aka.ms/teams-activity-feed
+[teams-activity-feed]:/microsoftteams/platform/concepts/activity-feed

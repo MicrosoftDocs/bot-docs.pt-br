@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.service: bot-service
 ms.date: 09/10/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 34f7813711da97c9a68a67a607eb138944b9271f
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 18b21bfe364bc3cbdaf18a99829324ca290dba38
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417270"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577218"
 ---
 # <a name="deploy-qna-maker-knowledge-base-using-the-bot-framework-qnamaker-cli-commands"></a>Implantar QnA Maker base de dados de conhecimento usando os comandos da CLI do bot Framework qnamaker
 
@@ -26,7 +26,7 @@ A CLI (interface de linha de comando) do bot Framework permite automatizar o ger
 
 - Noções básicas sobre [QnA Maker][qna-overview].
 - Conhecimento do [formato de arquivo. QnA][qna-file-format].
-- Ter um projeto de bot com `.qna` arquivos.
+- Ter um projeto de bot com arquivos. QnA.
 - Se estiver trabalhando com caixas de diálogo adaptáveis, você deve compreender:
   - [Processamento de idioma natural em caixas de diálogo adaptáveis][natural-language-processing-in-adaptive-dialogs].
   - como o [reconhecedor de QnA Maker][qna-maker-recognizer] é usado.
@@ -35,16 +35,27 @@ A CLI (interface de linha de comando) do bot Framework permite automatizar o ger
 
 Este artigo descreve como executar algumas tarefas comuns usadas para implantar um QnA Maker KB usando a CLI do bot Framework.
 
-1. [Criar seu recurso de QnA Maker nos serviços cognitivas do Azure](#create-your-qna-maker-resource-in-azure-cognitive-services)
-1. [Instalar a CLI do bot Framework](#install-the-bot-framework-cli)
-1. [Criar seu arquivo de inicialização QnA Maker](#create-your-qna-maker-initialization-file)
-1. [Criar seu modelo de QnA Maker](#create-your-qna-maker-model)
-1. [Criar sua base de dados de conhecimento QnA Maker](#create-your-qna-maker-knowledge-base)
-1. [Testar sua base de dados de conhecimento QnA Maker](#test-your-qna-maker-knowledge-base)
-1. [Publicar sua base de dados de conhecimento QnA Maker](#publish-your-qna-maker-knowledge-base)
-1. [Criar uma base de dados de conhecimento QnA Maker e publicá-la na produção usando o comando de Build](#create-a-qna-maker-knowledge-base-and-publish-it-to-production-using-the-build-command)
+- [Implantar QnA Maker base de dados de conhecimento usando os comandos da CLI do bot Framework qnamaker](#deploy-qna-maker-knowledge-base-using-the-bot-framework-qnamaker-cli-commands)
+  - [Pré-requisitos](#prerequisites)
+  - [Usando os comandos da CLI do qnamaker para habilitar QnA Maker em seu bot](#using-the-qnamaker-cli-commands-to-enable-qna-maker-in-your-bot)
+  - [Criar seu recurso de QnA Maker nos serviços cognitivas do Azure](#create-your-qna-maker-resource-in-azure-cognitive-services)
+  - [Instalar a CLI do bot Framework](#install-the-bot-framework-cli)
+  - [Criar seu arquivo de inicialização QnA Maker](#create-your-qna-maker-initialization-file)
+  - [Criar seu modelo de QnA Maker](#create-your-qna-maker-model)
+  - [Criar sua base de dados de conhecimento QnA Maker](#create-your-qna-maker-knowledge-base)
+  - [Testar sua base de dados de conhecimento QnA Maker](#test-your-qna-maker-knowledge-base)
+  - [Publicar sua base de dados de conhecimento QnA Maker](#publish-your-qna-maker-knowledge-base)
+  - [Criar uma base de dados de conhecimento QnA Maker e publicá-la na produção usando o comando de Build](#create-a-qna-maker-knowledge-base-and-publish-it-to-production-using-the-build-command)
+    - [Como usar o comando de Build](#how-to-use-the-build-command)
+      - [Os parâmetros qnamaker: Build](#the-qnamakerbuild-parameters)
+      - [O arquivo de configuração qnamaker](#the-qnamaker-configuration-file)
+    - [QnA e várias variações de idioma](#qna-and-multiple-language-variations)
+    - [Bases de dados de conhecimento QnA Maker criadas](#qna-maker-knowledge-bases-created)
+    - [O arquivo de configurações gerado usando o comando de compilação](#the-settings-file-generated-using-the-build-command)
+    - [O arquivo de diálogo](#the-dialog-file)
+  - [Informações adicionais](#additional-information)
 
-Depois que os arquivos KB do seu projeto de bot QnA Maker `.qna` tiverem sido criados, você estará pronto para seguir as etapas descritas neste artigo para criar seu QnA Maker KB. Se você não tiver um projeto com QnA Maker arquivos KB `.qna` , poderá usar o [QnAMaker][qna-maker-sample]. Consulte o Leiame do repositório de exemplo para obter informações sobre [como obter os exemplos][getting-the-samples].
+Depois que o projeto de bot QnA Maker arquivos KB. QnA tiverem sido criados, você estará pronto para seguir as etapas descritas neste artigo para criar seu QnA Maker KB. Se você não tiver um projeto com QnA Maker arquivos KB. QnA, poderá usar o [QnAMaker][qna-maker-sample]. Consulte o Leiame do repositório de exemplo para obter informações sobre [como obter os exemplos][getting-the-samples].
 
 ## <a name="create-your-qna-maker-resource-in-azure-cognitive-services"></a>Criar seu recurso de QnA Maker nos serviços cognitivas do Azure
 
@@ -69,7 +80,7 @@ O recurso de QnA Maker inclui informações que o bot usará para acessar sua ba
     >
     > É importante entender a diferença entre esse QnA Maker ponto de extremidade de criação de recursos, que é referenciado em todos os comandos de criação do BF CLI qnamaker e a chave de ponto de extremidade da base de dados de conhecimento da QnA Maker que é referenciada em arquivos de configuração de código-fonte, como appsettings.jsem C# `.env` ou em JavaScript ou `config.py` em Python.
 
-- **Local**. Esta é a região do Azure que contém seu QnA Maker KB. Você seleciona essa seleção ao criar o recurso de QnA Maker.
+- **Localização**. Esta é a região do Azure que contém seu QnA Maker KB. Você seleciona essa seleção ao criar o recurso de QnA Maker.
 
    ![A folha chaves e ponto de extremidade no Azure](./media/adaptive-dialogs/qna-maker-keys-and-endpoint.png)
 
@@ -117,7 +128,7 @@ Para obter informações adicionais sobre como usar esse comando, consulte [`bf 
 
 ## <a name="create-your-qna-maker-model"></a>Criar seu modelo de QnA Maker
 
-Depois de criar os arquivos individuais `.qna` para o bot, você pode convertê-los em um único _modelo de QnA Maker_ usando o `qnamaker:convert` comando. O modelo de QnA Maker é um arquivo JSON usado para criar um QnA Maker KB.
+Depois de criar os arquivos. QnA individuais para o bot, você pode convertê-los em um único _modelo de QnA Maker_ usando o `qnamaker:convert` comando. O modelo de QnA Maker é um arquivo JSON usado para criar um QnA Maker KB.
 
 Para criar seu modelo de QnA Maker:
 
@@ -125,7 +136,7 @@ Para criar seu modelo de QnA Maker:
 bf qnamaker:convert -i <input-folder-name> -o <output-folder-name> --name <QnA-KB-Name> -r
 ```
 
-Por exemplo, o comando `bf qnamaker:convert -i dialogs -o output --name MyQnAMakerBot -r` pesquisará recursivamente todos os `.qna` arquivos no diretório _Dialogs__ e quaisquer subdiretórios e os mesclará em um único arquivo chamado **converted.js** no diretório de _saída_ . Esse arquivo JSON conterá todas as informações necessárias para criar um QnA Maker KB, incluindo o nome _MyQnAMakerBot_ , que será o nome da base de dados de conhecimento QnA Maker que existirá no Azure.
+Por exemplo, o comando `bf qnamaker:convert -i dialogs -o output --name MyQnAMakerBot -r` pesquisará recursivamente todos os arquivos. QnA no diretório _Dialogs_ _ e quaisquer subdiretórios e os mesclará em um único arquivo chamado **converted.js** no diretório de _saída_ . Esse arquivo JSON conterá todas as informações necessárias para criar um QnA Maker KB, incluindo o nome _MyQnAMakerBot_ , que será o nome da base de dados de conhecimento QnA Maker que existirá no Azure.
 
 Para obter informações adicionais sobre como usar esse comando, consulte [`bf qnamaker:convert`][bf-qnamakerconvert] na CLI do BF QnA Maker Leiame.
 
@@ -191,7 +202,7 @@ O `build` comando só publica no ponto de extremidade de produção. Você pode 
 
 O comando QnAMaker Build combina todas as seguintes ações em um único comando:
 
-1. Cria um modelo de QnA Maker para [cada localidade](#qna-and-multiple-language-variations) encontrada usando seus `.qna` arquivos existentes.
+1. Cria um modelo de QnA Maker para [cada localidade](#qna-and-multiple-language-variations) encontrada usando seus arquivos. QnA existentes.
 1. Cria um novo QnA Maker KB se não houver nenhum; caso contrário, ele substituirá o KB existente.
 1. Ele treina seu QnA Maker KB e, em seguida, publica-o no ponto de extremidade de produção.
 1. Se você incluir o `dialog` parâmetro opcional, ele produzirá os `.dialog` arquivos de definição que podem ser usados pelo [reconhecedor de QnA Maker][qna-maker-recognizer] ao desenvolver usando a [abordagem declarativa][declarative]. Isso é explicado na seção [arquivo de diálogo](#the-dialog-file) .
@@ -243,20 +254,20 @@ bf qnamaker:build --qnaConfig qnaConfig.json
 
 Cada [arquivo. QnA][qna-file-format] pode ter várias variações de idioma, uma para cada idioma com suporte.
 
-O padrão para o `.qna` nome de arquivo quando as variantes de idioma são usadas é o seguinte:
+O padrão para o nome do arquivo. QnA quando variantes de idioma são usados é o seguinte:
 
 `<file-name>.<locale>.qna`
 
 Por exemplo:
 
-```
+```qna
 example.en-us.qna
 example.fr-fr.qna
 example.de-de.qna
 etc.
 ```
 
-No exemplo acima, cada um dos `.qna` arquivos resultará em um QnA Maker KB criado para cada um dos idiomas.
+No exemplo acima, cada um dos arquivos. QnA resultará em um QnA Maker KB criado para cada um dos idiomas.
 
 > [!TIP]
 >
@@ -264,7 +275,7 @@ No exemplo acima, cada um dos `.qna` arquivos resultará em um QnA Maker KB cria
 
 ### <a name="qna-maker-knowledge-bases-created"></a>Bases de dados de conhecimento QnA Maker criadas
 
-Para habilitar o cenário em que várias pessoas estão trabalhando com modelos LUIS e precisam ser capazes de trabalhar com eles independentemente um do outro enquanto todos estão vinculados ao mesmo controle do código-fonte, o `qnamaker:build` comando cria a base de dados de conhecimento QnA Maker usando uma combinação do valor que você provou como o `botName` parâmetro seguido pelo nome de usuário no qual você está conectado, depois a localidade seguida por `.qna` .
+Para habilitar o cenário em que várias pessoas estão trabalhando com modelos LUIS e precisam ser capazes de trabalhar com eles independentemente um do outro enquanto todos estão vinculados ao mesmo controle do código-fonte, o `qnamaker:build` comando cria a base de dados de conhecimento QnA Maker usando uma combinação do valor que você comprovou como o `botName` parâmetro seguido pelo nome de usuário no qual você está conectado, depois a localidade seguida por. QnA.
 
 O nome do QnA Maker KB:
 
@@ -272,7 +283,7 @@ O nome do QnA Maker KB:
 
 Por exemplo, se seu botName for _MyProject_ e seu nome de usuário for _YuuriTanaka_, os nomes dos KBS serão os seguintes:
 
-```
+```qna
 MyProject(YuuriTanaka).en-us.qna
 MyProject(YuuriTanaka).fr-fr.qna
 MyProject(YuuriTanaka).de-de.qna
@@ -314,7 +325,7 @@ Arquivo de configurações de exemplo:
 
 ### <a name="the-dialog-file"></a>O arquivo de diálogo
 
-Quando você usar a `--dialog` opção opcional, um arquivo de caixa de diálogo será gerado para todas as variações de idioma de cada um dos seus `.qna` arquivos.
+Quando você usar a `--dialog` opção opcional, um arquivo de caixa de diálogo será gerado para todas as variações de idioma de cada um dos seus arquivos. QnA.
 
 > [!IMPORTANT]
 >

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 06/12/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: c76caf8b59243fccfad7797bcf678a60b9e23dec
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: 4023eda8dcf3ffb71c79acec09dc9f5428e35a96
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95454910"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98576448"
 ---
 # <a name="recognizers-in-adaptive-dialogs---reference-guide"></a>Reconhecedores em caixas de diálogo adaptáveis – guia de referência
 
@@ -289,11 +289,11 @@ var adaptiveDialog = new AdaptiveDialog()
 
 ### <a name="cross-training-your-luis-and-qna-models"></a>Treinamento cruzado de seus modelos LUIS e QnA
 
-Para obter os benefícios completos do conjunto de reconhecedor com treinamento cruzado, [treine][cross-train-concepts] seus `.lu` `.qna` arquivos e. A ferramenta BF CLI (interface de linha de comando) do bot Framework fornece um comando para automatizar esse processo, os comandos [Luis: Cross-Train][bf-luiscross-train] e [qnamaker: Cross-Train][qnamaker-cross-train] . A execução do comando de treinamento cruzado criará cópias `.lu` dos `.qna` arquivos e, fará as atualizações necessárias e, em seguida, salvará no diretório especificado.
+Para obter os benefícios completos do conjunto de reconhecedor com treinamento cruzado, [treine][cross-train-concepts] os arquivos. Lu e. QnA. A ferramenta BF CLI (interface de linha de comando) do bot Framework fornece um comando para automatizar esse processo, os comandos [Luis: Cross-Train][bf-luiscross-train] e [qnamaker: Cross-Train][qnamaker-cross-train] . A execução do comando de treinamento cruzado criará cópias dos arquivos. Lu e. QnA, fará as atualizações necessárias e, em seguida, salvará no diretório especificado.
 
 > [!TIP]
 >
-> Para criar arquivos com treinamento cruzado, `.lu` e `.qna` , você pode usar o _either_ comando ou a CLI do BF `luis:cross-train` `qnamaker:cross-train` . Você não precisa executar os dois comandos, pois ambos fazem a mesma coisa. O seguinte demonstra o uso do `luis:cross-train` comando:
+> Para criar arquivos com treinamento cruzado, ambos. Lu e. QnA, você _pode usar o_ comando ou a CLI do BF `luis:cross-train` `qnamaker:cross-train` . Você não precisa executar os dois comandos, pois ambos fazem a mesma coisa. O seguinte demonstra o uso do `luis:cross-train` comando:
 
 ``` cli
 bf luis:cross-train -i <input-folder-name> -o <output-file-name> --config <cross-train-configuration-file>
@@ -303,9 +303,9 @@ Para obter um exemplo de ponta a ponta de treinamento cruzado de seu bot, consul
 
 ### <a name="luiscross-train-required-parameters"></a>Luis: parâmetros obrigatórios de treinamento cruzado
 
-- `--in`: O diretório, incluindo subdiretórios, que serão pesquisados em `.lu` arquivos e `.qna` .
-- `--out`: O diretório no qual os novos arquivos de treinamento cruzado `.lu` e de `.qna` saída serão salvos. Esse é o diretório para o qual você apontará a `luis:build` opção do comando `--in` .
-- `--config`: Isso aponta para o arquivo de configuração de treinamento cruzado, um arquivo JSON necessário para que o comando funcione. 
+- `--in`: O diretório, incluindo subdiretórios, que serão pesquisados para os arquivos. Lu e. QnA.
+- `--out`: O diretório no qual os novos arquivos de saída com treinamento cruzado. Lu e. QnA serão salvos. Esse é o diretório para o qual você apontará a `luis:build` opção do comando `--in` .
+- `--config`: Isso aponta para o arquivo de configuração de treinamento cruzado, um arquivo JSON necessário para que o comando funcione.
 
 #### <a name="the-cross-train-configuration-file"></a>O arquivo de configuração de treinamento cruzado
 
@@ -340,7 +340,7 @@ Veja a seguir a estrutura geral de um arquivo de configuração de treinamento c
 }
 ```
 
-Na seção triggers do arquivo de configuração de treinamento cruzado, liste cada tentativa na caixa de diálogo raiz junto com o `.lu` arquivo para o qual ele aponta. Você só precisa listar os `.lu` arquivos, os `.qna` arquivos serão treinados de forma cruzada, desde que estejam no mesmo diretório com o mesmo nome de arquivo, por exemplo, _AddToDoDialog. QnA_.
+Na seção triggers do arquivo de configuração de treinamento cruzado, liste cada tentativa na caixa de diálogo raiz junto com o arquivo. Lu para o qual ele aponta. Você só precisa listar os arquivos. Lu, os arquivos. QnA serão treinados em cruz enquanto estiverem no mesmo diretório com o mesmo nome de arquivo, por exemplo, _AddToDoDialog. QnA_.
 
 Por exemplo, um bot com a seguinte estrutura de diálogo:
 
@@ -434,16 +434,16 @@ Se o idioma estiver incluído, a configuração de exemplo deverá ser assim:
 
 <!-- Footnote-style links -->
 [1]:../v4sdk/bot-builder-concept-adaptive-dialog-generators.md
-[2]:https://aka.ms/regular-expression-language-reference
+[2]:/dotnet/standard/base-types/regular-expression-language-quick-reference
 [3]:https://github.com/microsoft/botbuilder/blob/master/specs/botframework-activity/botframework-activity.md#locale
 [4]:https://luis.ai
-[5]:https://aka.ms/luis-what-is-luis
-[6]:https://aka.ms/botbuilder-luis-concept?view=azure-bot-service-4.0
+[5]:/azure/cognitive-services/luis/what-is-luis
+[6]:../v4sdk/bot-builder-concept-luis.md
 [7]:../file-format/bot-builder-lu-file-format.md
 [8]:../v4sdk/bot-builder-concept-adaptive-expressions.md
-[9]:https://aka.ms/luis-concept-data-extraction?tabs=v2
-[10]:https://aka.ms/bot-service-add-luis-to-bot
-[11]:https://aka.ms/luis-create-new-app-in-luis-portal
+[9]:/azure/cognitive-services/luis/luis-concept-data-extraction?tabs=V2
+[10]:../v4sdk/bot-builder-howto-v4-luis.md
+[11]:/azure/cognitive-services/luis/luis-how-to-start-new-app
 [12]:https://qnamaker.ai
 [13]:https://azure.microsoft.com/services/cognitive-services/
 [cross-train-concepts]: ../v4sdk/bot-builder-concept-cross-train.md

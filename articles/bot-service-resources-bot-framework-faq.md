@@ -6,30 +6,35 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 07/10/2020
-ms.openlocfilehash: addb9335105882a163a4ad40295cffe41389d640
-ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
+ms.date: 12/23/2020
+ms.openlocfilehash: 907be7e277bd2415d8d40d4ae58f2b6948957e2b
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97759034"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98575956"
 ---
-# <a name="bot-framework-faq-index"></a>Índice de perguntas frequentes do bot Framework
+# <a name="bot-framework-faq"></a>Perguntas frequentes do bot Framework
 
 [!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
-<!-- Attention writers!! When you create a new FAQ, please add the related link in the proper section below. -->
+<!-- Attention writers!! When you create a new FAQ, please add the related link in the proper section below.
+Also, notice this topic is in markdown (.md) format because being an index it is simpler to maintain.
+The actual FAQs are contained in separate files that are in yaml (.yml) format. The reasons for the yaml format
+are explained in this article: Create FAQ content (https://review.docs.microsoft.com/en-us/help/contribute/contribute-how-to-faq-guide?branch=master).
+-->
 
-A seguir estão algumas perguntas comuns que abordam os problemas que você pode enfrentar.
-Caso você não encontre a resposta que está procurando, poderá postar suas perguntas em [Stack Overflow](https://stackoverflow.com/questions/tagged/botframework) usando a `botframework` marca. Se você for um novo usuário, visite a [Stack Overflow centro de ajuda](https://stackoverflow.com/help/how-to-ask).
+
+A seguir estão algumas perguntas comuns que você pode ter.
+Caso você não encontre a resposta que está procurando, poderá postar suas perguntas em [Stack Overflow](https://stackoverflow.com/questions/tagged/botframework) usando a `botframework` marca. Se você for um novo usuário, visite o [centro de ajuda do Stack Overflow](https://stackoverflow.com/help/how-to-ask) primeiro.
 
 ## <a name="background-and-availability"></a>Informações e disponibilidade
 
 - [Por que a Microsoft desenvolveu o Bot Framework?](bot-service-resources-faq-availability.md#why-did-microsoft-develop-the-bot-framework)
-- [O que é o SDK v4?](bot-service-resources-faq-availability.md#what-is-the-v4-sdk)
 - [Como executar um bot offline?](bot-service-resources-faq-availability.md#how-to-run-a-bot-offline)
-- [Suporte de tempo de vida do SDK Versão 3 do Bot Framework e aviso de substituição](bot-service-resources-faq-availability.md#bot-framework-sdk-version-3-lifetime-support-and-deprecation-notice)
 - [Como migrar o Serviço de Bot do Azure de uma região para outra?](bot-service-resources-faq-availability.md#how-can-i-migrate-azure-bot-service-from-one-region-to-another)
+- [O que é o SDK v4?](bot-service-resources-faq-availability.md#what-is-the-v4-sdk)
+- [Suporte de tempo de vida do SDK Versão 3 do Bot Framework e aviso de substituição](bot-service-resources-faq-availability.md#bot-framework-sdk-version-3-lifetime-support-and-deprecation-notice)
 
 ## <a name="bot-framework-general"></a>Do bot Framework geral
 
@@ -49,11 +54,6 @@ Caso você não encontre a resposta que está procurando, poderá postar suas pe
 - [Como implementar a entrega humana?](bot-service-resources-faq-general.md#how-to-implement-human-handoff)
 - [Qual é o limite de tamanho de um arquivo transferido usando um canal?](bot-service-resources-faq-general.md#what-is-the-size-limit-of-a-file-transferred-using-channels)
 
-
-<!-- Retired, re: https://github.com/MicrosoftDocs/bot-docs/issues/1698
-- [What are some community-authored dialogs?](bot-service-resources-faq-general.md#what-are-some-community-authored-dialogs)
-- [What are some community-authored templates?](bot-service-resources-faq-general.md#what-are-some-community-authored-templates)
--->
 
 ## <a name="ecosystem"></a>Ecossistema
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 08/21/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: d1a237851790d9aeee22660a5f245c2f63cf4154
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: ee0615ebb9677002d944d6bbe3821390d317efe3
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95452250"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577058"
 ---
 # <a name="using-net-v3-user-state-in-a-v4-bot"></a>Usar o estado de usuário v3 do .NET em um bot v4
 
@@ -22,7 +22,7 @@ ms.locfileid: "95452250"
 Este artigo mostra um exemplo de como um bot v4 pode executar operações de leitura, gravação e exclusão em informações de estado de usuário v3.
 O bot mantém o estado de conversa usando o `MemoryStorage` para acompanhar e direcionar a conversa ao fazer perguntas ao usuário.  Ele mantém o **estado do usuário** no formato v3 para acompanhar as respostas do usuário utilizando uma classe `IStorage` personalizada chamada `V3V4Storage`.  Um dos argumentos para essa classe é um `IBotDataStore`. A base de código do SDK v3 foi copiada para `Bot.Builder.Azure.V3V4` e contém todos os três provedores de armazenamento do SDK v3 (Azure Sql, Tabela do Azure e Cosmos DB).  A intenção é permitir que o **estado do usuário v3** existente seja colocado em um bot v4 migrado.
 
-O exemplo de código pode ser encontrado [aqui](https://github.com/microsoft/BotBuilder-Samples/tree/master/MigrationV3V4/CSharp/V4StateBotFromV3Providers).
+O exemplo de código pode ser encontrado no [bot de estado v4 de provedores v3](https://github.com/microsoft/BotBuilder-Samples/tree/master/MigrationV3V4/CSharp/V4StateBotFromV3Providers).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -95,11 +95,11 @@ Presume-se que você tem um armazenamento de estado v3 existente configurado e e
 
 - Definir o provedor de armazenamento do bot
 
-    Abra o arquivo `Startup.cs` na raiz do projeto `V4V3StateBot`. Até o meio do arquivo (linhas 52-76), você verá configurações para cada provedor de armazenamento. Elas leem os valores de configuração de web.config. 
+    Abra o arquivo `Startup.cs` na raiz do projeto `V4V3StateBot`. Até o meio do arquivo (linhas 52-76), você verá configurações para cada provedor de armazenamento. Elas leem os valores de configuração de web.config.
 
     [!code-csharp[Storage configuration](~/../botbuilder-samples/MigrationV3V4/CSharp/V4StateBotFromV3Providers/V4V3StateBot/Startup.cs?range=52-76)]
 
-    Especifique qual provedor de armazenamento você deseja que seu bot use cancelando o comentário das linhas correspondentes da instância de sua escolha. Quando o provedor estiver devidamente configurado, verifique se a classe do provedor foi passada para `V3V4Storage` (linhas ~72-75). 
+    Especifique qual provedor de armazenamento você deseja que seu bot use cancelando o comentário das linhas correspondentes da instância de sua escolha. Quando o provedor estiver devidamente configurado, verifique se a classe do provedor foi passada para `V3V4Storage` (linhas ~72-75).
 
     [!code-csharp[Storage provider](~/../botbuilder-samples/MigrationV3V4/CSharp/V4StateBotFromV3Providers/V4V3StateBot/Startup.cs?range=72-75)]
 
@@ -112,7 +112,7 @@ Presume-se que você tem um armazenamento de estado v3 existente configurado e e
     sqlBotDataStore
     ```
 
-- Inicie o aplicativo. 
+- Inicie o aplicativo.
 
 ## <a name="v3v4-storage-and-state-classes"></a>Classes de estado e armazenamento V3V4
 
@@ -129,7 +129,7 @@ Essa classe é herdada da classe `BotState` v4 e usa uma chave de estilo v3 (`IA
 
 O [Bot Framework Emulator][5] é um aplicativo de área de trabalho que permite que os desenvolvedores de bot testem e depurem seus bots em localhost ou executem remotamente por meio de um túnel.
 
-- Instale o Bot Framework Emulator versão 4.3.0 ou superior acessando [aqui][6]
+- Instale o emulador do bot Framework, [versão 4.3.0 ou posterior][6].
 
 
 ### <a name="connect-to-the-bot-using-bot-framework-emulator"></a>Conectar-se ao bot usando o Bot Framework Emulator
@@ -153,4 +153,4 @@ O [Bot Framework Emulator][5] é um aplicativo de área de trabalho que permite 
 [8]: https://docs.microsoft.com/azure/bot-service/bot-builder-howto-v4-storage?tabs=csharp
 [9]: https://docs.microsoft.com/azure/bot-service/bot-builder-howto-v4-state?tabs=csharp
 [21]: ../../bot-service-overview-introduction.md
-[40]: https://aka.ms/azuredeployment
+[40]: ../../bot-builder-deploy-az-cli.md

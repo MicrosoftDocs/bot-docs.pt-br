@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: d80d2eba59db1f3bba530abc2022ab6d84aff51d
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 2c818b11e6c1d7a3384f6d238599267463f08d86
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414804"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98575988"
 ---
 # <a name="configure-bot-registration-settings"></a>Definir configurações de registro de bot
 
@@ -44,7 +44,7 @@ Depois de alterar as configurações para o bot, clique no botão **Salvar** na 
 A ID e a senha do aplicativo de registro são atribuídas às variáveis do bot `MicrosoftAppID` e `MicrosoftAppPassword` nos arquivos `appsettings.json` (.net) e `.env` (JavaScript).
 
 > [!NOTE]
-> O registro de canais de bot tem uma ID de aplicativo, mas como não há nenhum serviço de aplicativo associado a ele, não há senha. Para gerar a senha, siga as etapas na próxima seção. 
+> O registro de canais de bot tem uma ID de aplicativo, mas como não há nenhum serviço de aplicativo associado a ele, não há senha. Para gerar a senha, siga as etapas na próxima seção.
 
 ### <a name="get-registration-password"></a>Obter a senha de registro
 
@@ -60,17 +60,17 @@ O serviço de bot do Azure atribui uma ID de aplicativo exclusiva ao aplicativo.
 
 1. Na página exibida *Certificados e segredos*, clique no botão **Novo segredo do cliente**.
 
-    ![senha de configurações de registro de bot](media/azure-bot-quickstarts/bot-channels-registration-app-secrets.png)
+    ![segredos do aplicativo de registro de bot](media/azure-bot-quickstarts/bot-channels-registration-app-secrets.png)
 
 1. Adicione a descrição, selecione a hora de expiração e clique no botão **Adicionar**.
 
-    ![senha de configurações de registro de bot](media/azure-bot-quickstarts/bot-channels-registration-app-secrets-create.png)
+    ![criar senha de registro de bot](media/azure-bot-quickstarts/bot-channels-registration-app-secrets-create.png)
 
     Isso irá gerar uma nova senha para o seu bot. Copie esta senha e salve-a em um arquivo. Esta é a única vez que você verá a senha. Se você não tiver a senha completa salva, será preciso repetir o processo para criar uma nova senha caso precise dela posteriormente.
 
 ## <a name="additional-information"></a>Informações adicionais
 
-Você pode usar [az bot update](https://docs.microsoft.com/cli/azure/bot?view=azure-cli-latest#az-bot-update) para atualizar as configurações de bot por meio da linha de comando.
+Você pode usar [az bot update](https://docs.microsoft.com/cli/azure/bot?view=azure-cli-latest#az-bot-update&preserve-view=true) para atualizar as configurações de bot por meio da linha de comando.
 
 ## <a name="next-steps"></a>Próximas etapas
 

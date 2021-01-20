@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/07/2020
-ms.openlocfilehash: 1f4708eb34005183c2799856870c3b2f21061f2f
-ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
+ms.openlocfilehash: 01fa41f9717be306db3fafe4eab37e9d44de6656
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97759354"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577348"
 ---
 # <a name="analyze-your-bots-telemetry-data"></a>Analisar os dados telemétricos do seu bot
 
@@ -547,6 +547,9 @@ A instrumentação do LUIS armazena os dados nos campos Dimensões Personalizado
 
 a instrumentação do QnAMaker armazena os dados nos campos Dimensões Personalizadas a seguir.
 
+> [!TIP]
+> Para habilitar o registro em log de informações pessoais, como perguntas e respostas, o parâmetro _registrar informações pessoais_ deve ser definido como true no construtor da classe _QnA Maker_ .
+
 | **Campo**       | **Descrição**            | **Valores de Exemplo**                                            |
 | --------------- | -------------------------- | ------------------------------------------------------------ |
 | pergunta        | Pergunta detectada pelo QnA      | o que você pode fazer?                                             |
@@ -562,4 +565,5 @@ a instrumentação do QnAMaker armazena os dados nos campos Dimensões Personali
 * [Visualizar dados do Azure Monitor](/azure/azure-monitor/visualizations)
 * Saiba como [Adicionar telemetria ao seu bot](bot-builder-telemetry.md)
 * Saiba mais sobre [Consultas de log do Azure Monitor](/azure/data-explorer/using-diagnostic-logs)
+* Lista completa de eventos de [Application insights](/azure/bot-service/bot-builder-telemetry-reference) do bot Framework
 * [Criar e compartilhar dashboards de dados do Log Analytics](/azure/azure-monitor/learn/tutorial-logs-dashboards)

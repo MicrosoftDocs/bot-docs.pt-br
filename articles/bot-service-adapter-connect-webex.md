@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: gapretty
 ms.service: bot-service
 ms.date: 01/21/2020
-ms.openlocfilehash: e713bee4795893e68559e78d7d6a66723d3ead6b
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: c05037f28e8d10440b8ddd2009fcbcde00f59ccb
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95457120"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98576378"
 ---
 # <a name="connect-a-bot-to-webex-teams-using-the-webex-adapter"></a>Conectar um bot ao Webex Teams usando o adaptador do Webex
 
@@ -52,7 +52,7 @@ Antes de concluir a configuração do aplicativo do Webex, você precisa conecta
 
 ### <a name="install-the-webex-adapter-nuget-package"></a>Instalar o pacote NuGet do adaptador do Webex
 
-Adicione o pacote NuGet [Microsoft.Bot.Builder.Adapters.Webex](https://www.nuget.org/packages/Microsoft.Bot.Builder.Adapters.Webex/). Para obter mais informações sobre como usar o NuGet, confira [Instalar e gerenciar pacotes no Visual Studio](https://aka.ms/install-manage-packages-vs)
+Adicione o pacote NuGet [Microsoft.Bot.Builder.Adapters.Webex](https://www.nuget.org/packages/Microsoft.Bot.Builder.Adapters.Webex/). Para obter mais informações sobre como usar o NuGet, confira [Instalar e gerenciar pacotes no Visual Studio](/nuget/tools/package-manager-ui)
 
 ### <a name="create-a-webex-adapter-class"></a>Criar uma classe de adaptador do Webex
 
@@ -94,7 +94,7 @@ Depois de adicionado, _*_o método configureservices_*_ deve ser assim.
 
 Agora que você criou um aplicativo do Webex e vinculou o adaptador ao seu projeto de bot, as etapas finais são configurar um webhook do Webex, apontá-lo para o ponto de extremidade correto no bot e assinar seu aplicativo para garantir que o bot receba mensagens e anexos. Para fazer isso, seu bot deve estar em execução, para que o Webex verifique se a URL para o ponto de extremidade é válida.
 
-1. Para concluir esta etapa, [implante o bot no Azure](https://aka.ms/bot-builder-deploy-az-cli) e anote a URL do bot implantado. Seu ponto de extremidade de mensagens do Webex é a URL para o bot, a qual será a URL do aplicativo implantado (ou ponto de extremidade ngrok), além de "/api/webex" (por exemplo, `https://yourbotapp.azurewebsites.net/api/webex`).
+1. Para concluir esta etapa, [implante o bot no Azure](./bot-builder-deploy-az-cli.md) e anote a URL do bot implantado. Seu ponto de extremidade de mensagens do Webex é a URL para o bot, a qual será a URL do aplicativo implantado (ou ponto de extremidade ngrok), além de "/api/webex" (por exemplo, `https://yourbotapp.azurewebsites.net/api/webex`).
 
     > [!NOTE]
     > Se você não estiver pronto para implantar o bot no Azure ou desejar depurar o bot ao usar o adaptador WebEx, poderá usar uma ferramenta como [ngrok](https://www.ngrok.com) (que provavelmente já terá instalado se você tiver usado o emulador do bot Framework anteriormente) para realizar o túnel para o bot em execução localmente e fornecer uma URL acessível publicamente para isso.
@@ -108,7 +108,7 @@ Agora que você criou um aplicativo do Webex e vinculou o adaptador ao seu proje
 2. Navegue até [https://developer.webex.com/docs/api/v1/webhooks](https://developer.webex.com/docs/api/v1/webhooks).
 
 
-3. Clique no link para o **POST** método post `https://webexapis.com/v1/webhooks` (com a descrição *criar um webhook*). Isso exibirá um formulário que permite enviar uma solicitação ao ponto de extremidade.
+3. Clique no link para o  método post `https://webexapis.com/v1/webhooks` (com a descrição *criar um webhook*). Isso exibirá um formulário que permite enviar uma solicitação ao ponto de extremidade.
 
     ![ponto de extremidade do webhook](~/media/bot-service-adapter-connect-webex/webex-webhook-post-endpoint.png)
 

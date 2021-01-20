@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2ff73fd9e851a011ec6da60ef356155c4ed2f3e4
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 3d7d4e3d478104be29b07318782b6597b33b63da
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416847"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577019"
 ---
 # <a name="javascript-migration-quick-reference"></a>Referência rápida de migração do JavaScript
 
@@ -277,7 +277,7 @@ session.dialogData.destination = results.response;
 stepContext.values.destination = destination;
 ```
 
-## <a name="to-write-changes-in-state-to-the-persistance-layer"></a>Para gravar as alterações no estado para a camada de persistência
+## <a name="to-write-changes-in-state-to-the-persistence-layer"></a>Para gravar alterações no estado para a camada de persistência
 
 ### <a name="v3"></a>v3
 

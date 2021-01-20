@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 06/15/2020
-ms.openlocfilehash: 3742e8e68f04dd7e4eae76e397513d9a28b7a0c1
-ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
+ms.openlocfilehash: 7a967df67e7bb5e4c095bb41f5b48c405294c0e3
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97759274"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98576878"
 ---
 # <a name="troubleshoot-index"></a>Solucionar problemas de índice
 
@@ -59,7 +59,7 @@ Caso você não encontre a resposta que está procurando, poderá postar suas pe
 
 ## <a name="http-500-errors"></a>Erros HTTP 500
 
-- [Habilitar o Application Insights no ASP.Net](bot-service-troubleshoot-500-errors.md#enable-application-insights-on-aspnet)
+- [Habilitar Application Insights em ASP.NET](bot-service-troubleshoot-500-errors.md#enable-application-insights-on-aspnet)
 - [Habilitar o Application Insights no Node.js](bot-service-troubleshoot-500-errors.md#enable-application-insights-on-nodejs)
 - [Consultar exceções](bot-service-troubleshoot-500-errors.md#query-for-exceptions)
 - [Sem eventos do Application Insights](bot-service-troubleshoot-500-errors.md#no-application-insights-events)

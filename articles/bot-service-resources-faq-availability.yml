@@ -1,0 +1,132 @@
+### YamlMime:FAQ
+metadata:
+  title: Perguntas frequentes sobre disponibilidade do bot Framework
+  description: Respostas para perguntas frequentes sobre disponibilidade comum.
+  services: service
+  ms.service: bot-service
+  ms.topic: article
+  author: mmiele
+  ms.author: botcc
+  ms.date: 01/06/2020
+  ms.openlocfilehash: eb00f32b0ab63da19a2673dba6ca08e7ceab3e48
+  ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
+  ms.translationtype: MT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 01/19/2021
+  ms.locfileid: "98579712"
+title: Perguntas frequentes sobre disponibilidade do bot Framework
+summary: >
+  Este artigo responde às perguntas frequentes sobre disponibilidade.
+
+
+  <!-- Attention writers!!
+     1 - This article contains FAQs regarding Bot Framework background and availability.
+     1 - When you create a new FAQ, please add the related link to the proper section in bot-service-resources-bot-framework-faq.md.-->
+
+  [!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
+sections:
+- name: Disponibilidade
+  questions:
+  - question: Por que a Microsoft desenvolveu o Bot Framework?
+    answer: >
+      Criamos o Bot Framework para facilitar para os desenvolvedores criar e conectar bots excelentes aos usuários, independentemente do local em que eles conversarem, incluindo os canais premier da Microsoft.
+  - question: Como migrar o Serviço de Bot do Azure de uma região para outra?
+    answer: >
+      O Serviço de Bot do Azure não dá suporte à mudança de região. Ele é um serviço global que não está vinculado a nenhuma região específica.
+  - question: Como executar um bot offline?
+    answer: >
+      <!-- WIP -->
+
+      Antes de falar sobre o uso de um bot offline, o que significa que um bot não foi implantado no Azure ou em outros serviços de host, mas no local, vamos esclarecer alguns pontos.
+
+      - Um bot é um serviço Web que não tem uma interface do usuário, portanto, ele deve interagir com o bot por outros meios, na forma de canais, que usam o [Bot Framework Service](rest-api/bot-framework-rest-connector-concepts.md).
+
+      O conector funciona como um *proxy* para retransmitir mensagens entre um cliente e o bot.
+
+      - O **conector** é um aplicativo global hospedado em nós do Azure e distribuído geograficamente para obter disponibilidade e escalabilidade.
+
+      - Use o [Registro do Canal de Bot](bot-service-quickstart-registration.md) para registrar o bot com o conector.
+
+
+      >[!NOTE]
+
+      > O bot deve ter o ponto de extremidade acessível publicamente pelo conector.
+
+
+      É possível executar um bot offline com funcionalidades limitadas. Por exemplo, caso queira usar um bot offline que tenha a funcionalidade LUIS, você deverá criar um contêiner para o bot, as ferramentas necessárias e um contêiner para LUIS. Ambos conectados por meio da rede de transição Docker Compose.
+
+      Esta é uma solução offline "parcial" porque um contêiner de Serviços Cognitivos precisa de uma conexão online periódica.
+
+
+      > [!NOTE]
+
+      > O serviço QnA não tem suporte em um bot de execução offline.
+
+
+      Para obter mais informações, consulte:
+
+      - [Como implantar o contêiner do LUIS (Reconhecimento Vocal) nas Instâncias de Contêiner do Azure](https://docs.microsoft.com/azure/cognitive-services/luis/deploy-luis-on-container-instances)
+
+      - [Suporte de contêiner nos Serviços Cognitivos do Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-container-support)
+  - question: O que é o SDK v4?
+    answer: >
+      O SDK do bot Framework v4 baseia-se nos comentários e aprende com as versões anteriores do SDK do bot Framework.
+
+      Ele apresenta os níveis certos de abstração ao mesmo tempo em que permite um conjunto avançado de componentes como os blocos de construção do bot.
+
+      Você pode começar com um bot simples e aumentá-lo em uma sofisticação usando uma estrutura modular e extensível.
+
+      Consulte também [o que há de novo na estrutura de bot](https://github.com/microsoft/botbuilder-dotnet#whats-new-with-bot-framework) no github.
+  - question: Suporte de tempo de vida do SDK Versão 3 do Bot Framework e aviso de substituição
+    answer: >-
+      O SDK V4 do Microsoft Bot Framework foi lançado em setembro de 2018 e, desde então, enviamos algumas melhorias em atualizações secundárias.
+
+      Conforme anunciado anteriormente, o SDK V3 está sendo desativado. Assim sendo, não haverá mais desenvolvimento em repositórios V3.
+
+      **As cargas de trabalho de bot V3 existentes continuarão a ser executadas sem interrupção. Não temos planos de interromper nenhuma carga de trabalho em execução**.
+
+
+      Conforme mencionado anteriormente, os bots do SDK V3 do Bot Builder continuam sendo executados e tendo suporte do Serviço de Bot do Azure.
+
+      O SDK V3 do Bot Builder será compatível apenas para correções críticas de bugs de segurança, atualizações de conector e de compatibilidade de camada de protocolo.
+
+
+      Todos os novos recursos e funcionalidades são desenvolvidos exclusivamente no [SDK V4 do Bot Framework](https://github.com/microsoft/botframework-sdk).
+
+      Os clientes são incentivados a migrar seus bots para V4 assim que possível.
+
+
+      É altamente recomendável começar a migrar seus bots da V3 para a V4. Para dar suporte a essa migração, criamos a documentação relacionada e forneceremos suporte estendido para iniciativas de migração (por meio dos canais padrão como o Stack Overflow e Suporte ao Cliente Microsoft).
+
+
+      ### <a name="azure-bot-service"></a>Serviço de Bot do Azure
+
+      1. O serviço de bot do Azure continuará a dar suporte à execução de bots v3 sem fim de vida planejado, e todos os bots em execução não serão interrompidos.
+
+      1. Os canais permanecerão compatíveis com V3 sem interrupção nem plano de fim de vida útil.
+
+      1. A criação de novos bots v3 está desabilitada no portal; no entanto, os usuários experientes que desejam implantar seus bots v3 independentemente por meio de outros serviços (como outro serviço de aplicativo Web) podem fazer isso.
+
+
+      ### <a name="sdk-and-tools"></a>SDK e Ferramentas
+
+      1.    Não atualizaremos o SDK V3 para o futuro previsto, exceto para aplicar correções de segurança críticas e adicionar um conector de habilidades para permitir que os bots v4 chamem os bots de v3 herdados.
+
+      2.    O desenvolvimento de SDKs e ferramentas é exclusivamente no V4, sem nenhum trabalho V3 feito ou planejado (portanto, já é o cenário em que estamos).
+
+      3.    Não impedimos que ninguém execute ferramentas antigas para gerenciar seus próprios bots V3.
+
+
+      ### <a name="references"></a>Referências
+
+      - [Diretrizes essenciais para migração](./v4sdk/migration/migration-overview.md)
+
+      - Repositórios v4 primários para desenvolver bots do Bot Framework
+        - [Bot Builder para dotnet](https://github.com/microsoft/botbuilder-dotnet)
+        - [Bot Builder para JS](https://github.com/microsoft/botbuilder-js)
+      - QnA Maker bibliotecas foram substituídas pelas bibliotecas v4 a seguir
+        - [Bibliotecas para dotnet](https://github.com/Microsoft/botbuilder-dotnet/tree/master/libraries/Microsoft.Bot.Builder.AI.QnA)
+        - [Bibliotecas para JS](https://github.com/Microsoft/botbuilder-js/blob/master/libraries/botbuilder-ai/src/qnaMaker.ts)
+      - As bibliotecas do Azure foram substituídas pelas seguintes bibliotecas v4
+        - [Bot Builder para JS Azure](https://github.com/Microsoft/botbuilder-js/tree/master/libraries/botbuilder-azure)
+        - [Bot Builder para dotnet Azure](https://github.com/Microsoft/botbuilder-dotnet/tree/master/libraries/Microsoft.Bot.Builder.Azure)

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 68ffdc1f14ec133e76f88d2b1e2f9602a70320f3
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: a6b3833506922069fea135c4b8cfd7fe4f693412
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95449261"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577368"
 ---
 # <a name="handle-user-interruptions-in-adaptive-dialogs"></a>Lidar com interrupções do usuário em caixas de diálogo adaptáveis
 
@@ -188,9 +188,9 @@ O RootDialog é a caixa de diálogo adaptável raiz desse bot. É o pai da únic
 
 A primeira coisa que acontece quando `rootDialog` é criado é definir seu reconhecedor. Neste exemplo, você usará um reconhecedor adaptável LUIS. As instruções para fazer com que o bot funcione usando o reconhecedor LUIS são detalhadas na seção [Configurando Luis para trabalhar em seu bot](#setting-up-luis-to-work-in-your-bot).
 
-Cada caixa de diálogo adaptável tem seu próprio reconhecedor e todas as caixas de diálogo adaptáveis que usam o reconhecedor LUIS podem ter um ou mais `.lu` arquivos. Em geral, esse arquivo recebe o mesmo nome que o nome de arquivo que contém a caixa de diálogo, com a `.lu` extensão File, por exemplo, se o arquivo que hospeda a caixa de diálogo for denominado _RootDialog_, o arquivo. Lu será _RootDialog.Lu_. O arquivo. Lu é usado exclusivamente por essa caixa de diálogo. Para obter mais informações sobre `.lu` arquivos, consulte o [formato de arquivo article. Lu][lu].
+Cada caixa de diálogo adaptável tem seu próprio reconhecedor e todas as caixas de diálogo adaptáveis que usam o reconhecedor LUIS podem ter um ou mais arquivos. Lu. Em geral, esse arquivo recebe o mesmo nome que o nome de arquivo que contém a caixa de diálogo, com a extensão. Lu, por exemplo, se o arquivo que hospeda a caixa de diálogo for denominado _RootDialog_, o arquivo. lu será _RootDialog.Lu_. O arquivo. Lu é usado exclusivamente por essa caixa de diálogo. Para obter mais informações sobre arquivos. Lu, consulte o [formato de arquivo article. Lu][lu].
 
-No `.lu` arquivo, você define as [intenções][intents], [declarações][utterances] e [entidades][entities] que devem ser usadas nessa caixa de diálogo. Se uma caixa de diálogo adaptável não definir um gatilho para lidar com uma determinada tentativa, mas uma de suas caixas de diálogo adaptáveis pai, o mecanismo de consulta permitirá que a caixa de diálogo pai manipule o expressão. Depois que o processo for concluído, o usuário será devolvido para onde a conversa estava antes da interrupção.
+No arquivo. Lu, você define as [intenções][intents], [declarações][utterances] e [entidades][entities] que devem ser usadas nessa caixa de diálogo. Se uma caixa de diálogo adaptável não definir um gatilho para lidar com uma determinada tentativa, mas uma de suas caixas de diálogo adaptáveis pai, o mecanismo de consulta permitirá que a caixa de diálogo pai manipule o expressão. Depois que o processo for concluído, o usuário será devolvido para onde a conversa estava antes da interrupção.
 
 <!--# [C#](#tab/csharp)-->
 
@@ -262,7 +262,7 @@ createLuisRecognizer() {
 
 #### <a name="rootdialog-generator"></a>Gerador de RootDialog
 
-O gerador requer um arquivo de [geração de linguagem][language-generation] válido (. LG) que define os modelos de geração de idioma que serão usados por essa caixa de diálogo. Esse arquivo recebe o mesmo nome que o nome do arquivo que contém a caixa de diálogo, com a `.lg` extensão de arquivo, por exemplo, se o arquivo que hospeda a caixa de diálogo for denominado _RootDialog_, o arquivo. LG será _RootDialog. LG_. O arquivo. LG é usado exclusivamente por essa caixa de diálogo.
+O gerador requer um arquivo de [geração de linguagem][language-generation] válido (. LG) que define os modelos de geração de idioma que serão usados por essa caixa de diálogo. Esse arquivo recebe o mesmo nome que o nome do arquivo que contém a caixa de diálogo, com a extensão de arquivo. LG, por exemplo, se o arquivo que hospeda a caixa de diálogo for nomeado _RootDialog_, o arquivo. LG será _RootDialog. LG_. O arquivo. LG é usado exclusivamente por essa caixa de diálogo.
 
 <!--# [C#](#tab/csharp)-->
 
@@ -513,7 +513,7 @@ Há também duas interrupções locais definidas. Elas são definidas como `OnIn
 
 Configurar seu reconhecedor é a primeira coisa que acontece quando o `userProfileDialog` é criado. Cada caixa de diálogo configura seu próprio reconhecedor independente de todas as outras caixas de diálogo, e cada caixa de diálogo pode usar o mesmo tipo de reconhecedor, ou cada uma pode usar um tipo diferente de reconhecedor. Cada caixa de diálogo em seu bot pode usar qualquer tipo de reconhecedor definido no SDK do bot Framework, independentemente do que qualquer outra caixa de diálogo estiver usando. Para saber mais sobre os diferentes tipos disponíveis, consulte a seção [tipos de reconhecedor][recognizer-types] do artigo conceito de reconhecedores. <!---  Add ", or a custom recognizer" once there is an article that discusses this.  -->
 
-Como mencionado anteriormente, cada caixa de diálogo adaptável tem seu próprio reconhecedor e o `.lu` arquivo associado a ele está exclusivamente vinculado a essa caixa de diálogo. No `.lu` arquivo, você define as [intenções][intents], [declarações][utterances] e [entidades][entities] que devem ser usadas nessa caixa de diálogo. Se o usuário inserir uma intenção que não esteja definida no arquivo dessa caixa de diálogo `.lu` , o mecanismo de consulta de caixa de diálogo adaptável permitirá que o bot emergisse a intenção do usuário para a caixa de diálogo pai manipular, se puder. Nesse caso, as tentativas de _ajuda_ e _cancelamento_ são definidas na caixa de diálogo raiz, mas o bot ainda pode lidar com essas tentativas de usuário mesmo quando `userProfileDialog` é a caixa de diálogo ativa. Isso é explicado em detalhes em uma seção posterior, intitulado [disparadores GetUserProfileDialog](#getuserprofiledialog-triggers).
+Como mencionado anteriormente, cada caixa de diálogo adaptável tem seu próprio reconhecedor e o arquivo. Lu associado a ele está vinculado exclusivamente a essa caixa de diálogo. No arquivo. Lu, você define as [intenções][intents], [declarações][utterances] e [entidades][entities] que devem ser usadas nessa caixa de diálogo. Se o usuário inserir uma intenção que não esteja definida no arquivo. Lu dessa caixa de diálogo, o mecanismo de consulta de caixa de diálogo adaptável permitirá que o bot emergisse a caixa de diálogo pai para manipular, se puder. Nesse caso, as tentativas de _ajuda_ e _cancelamento_ são definidas na caixa de diálogo raiz, mas o bot ainda pode lidar com essas tentativas de usuário mesmo quando `userProfileDialog` é a caixa de diálogo ativa. Isso é explicado em detalhes em uma seção posterior, intitulado [disparadores GetUserProfileDialog](#getuserprofiledialog-triggers).
 
 Para a maior parte, o código em GetUserProfileDialog usado para definir o reconhecedor é o mesmo que o código usado na [caixa de diálogo raiz](#rootdialog-recognizer), a única diferença é que você precisa referenciar GetUserProfileDialog_en_us_lu para o `ApplicationId ` valor em oposição ao RootDialog_en_us_lu, no `CreateLuisRecognizer` método. Consulte a seção [arquivos gerados](#files-generated) para obter mais informações sobre o arquivo que está sendo referenciado.
 
@@ -540,7 +540,7 @@ Para a maior parte, o código em GetUserProfileDialog usado para definir o recon
 
 #### <a name="getuserprofiledialog-generator"></a>Gerador de GetUserProfileDialog
 
-O gerador consiste em seu arquivo de modelo LG que está no mesmo diretório que o arquivo que contém o código-fonte da caixa de diálogo adaptável, com o mesmo nome de arquivo e a `.lg` extensão de arquivos, como **GetUserProfileDialog. LG**.<!-- if programming using C# or **getUserProfileDialog.lg** if using JavaScript.-->
+O gerador consiste em seu arquivo de modelo LG que está no mesmo diretório que o arquivo que contém o código-fonte de sua caixa de diálogo adaptável, com o mesmo nome de arquivo e a extensão de arquivos. LG, como **GetUserProfileDialog. LG**.<!-- if programming using C# or **getUserProfileDialog.lg** if using JavaScript.-->
 
 <!--# [C#](#tab/csharp)-->
 
@@ -695,7 +695,7 @@ A captura de tela mostrada abaixo verifica se você pode interromper o fluxo de 
 
 [adaptive-expressions]: bot-builder-concept-adaptive-expressions.md
 [person-name]: ../file-format/bot-builder-lu-file-format.md#machine-learned-entity
-[prediction-score]: https://aka.ms/luis-prediction-score 
+[prediction-score]: /azure/cognitive-services/luis/luis-concept-prediction-score 
 
 <!-- Setting up LUIS ----->
 [create-luis-resources-in-azure-portal]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-azure-subscription#create-luis-resources-in-azure-portal

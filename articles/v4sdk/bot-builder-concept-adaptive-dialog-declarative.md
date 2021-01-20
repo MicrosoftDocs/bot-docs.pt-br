@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 05/31/2020
-ms.openlocfilehash: 145cbbe3d1af4bda9d9505a5f698fd72c2b5f354
-ms.sourcegitcommit: e37cf15f4907910560f34445a0fbdd7ae75b4787
+ms.openlocfilehash: 079b0ceb56ecb7d4ced6b07916cdb4de870997bc
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92440128"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577238"
 ---
 # <a name="using-declarative-assets-in-adaptive-dialogs"></a>Como usar ativos declarativos em diálogos adaptáveis
 
@@ -413,7 +413,7 @@ Para obter um exemplo, consulte [criando o arquivo de esquema][creating-the-sche
 <!--
 > [!TIP]
 >
-> For users of C#: NuGet does not deal well with content files, so all declarative `.dialog`, `.lu`, `.lg`, and `.qna` files will be copied into `generated/<package>` so you can easily include them in your project output.
+> For users of C#: NuGet does not deal well with content files, so all declarative `.dialog`, .lu, .lg, and .qna files will be copied into `generated/<package>` so you can easily include them in your project output.
 -->
 
 ### <a name="the-verify-command"></a>O comando VERIFY
@@ -456,9 +456,9 @@ Para obter informações adicionais sobre como usar esse comando, consulte a [ca
 [creating-the-schema-file]: bot-builder-dialogs-declarative.md#creating-the-schema-file
 
 <!-- Declarative files section  -->
-[bf-cli]: https://aka.ms/bf-cli-overview
-[bf-cli-install]: https://aka.ms/bf-cli-overview#installation
-[intellisense]: https://aka.ms/intellisense-in-visual-studio
+[bf-cli]: /azure/bot-service/bf-cli-overview
+[bf-cli-install]: /azure/bot-service/bf-cli-overview#installation
+[intellisense]: /visualstudio/ide/using-intellisense
 [recognizer-types]: bot-builder-concept-adaptive-dialog-recognizers.md#recognizer-types
 [intents]: bot-builder-concept-adaptive-dialog-recognizers.md#intents
 [entity]: bot-builder-concept-adaptive-dialog-recognizers.md#entities
@@ -523,7 +523,7 @@ Para obter informações adicionais sobre como usar esse comando, consulte a [ca
 [log-action]: ../adaptive-dialog/adaptive-dialog-prebuilt-actions.md#log-action
 [traceactivity]: ../adaptive-dialog/adaptive-dialog-prebuilt-actions.md#traceactivity
 
-[intelliSense]: https://aka.ms/intellisense-in-visual-studio
+[intelliSense]: /visualstudio/ide/using-intellisense
 [composer]: https://docs.microsoft.com/composer
 
 [dialog-commands]: https://aka.ms/botframework-cli#bf-dialog

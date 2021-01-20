@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 2/7/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 42993277a36ef4239cca5785526544885bf66071
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: 8bf5a60575fdf1ac9318d054b2bd5a35723ab9a9
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95460890"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577338"
 ---
 # <a name="save-user-and-conversation-data"></a>Salvar dados do usuário e da conversa
 
@@ -51,8 +51,8 @@ Ao receber entrada do usuário, este exemplo verifica o estado da conversa armaz
 
 A primeira etapa na configuração de gerenciamento de estado é definir as classes que contêm as informações a serem gerenciadas no estado do usuário e da conversa. O exemplo usado neste artigo define as seguintes classes:
 
-- Em **UserProfile.cs**, definimos uma classe `UserProfile` para as informações do usuário que o bot coletará.
-- Em **ConversationData.cs**, definimos uma classe `ConversationData` para controlar o estado da nossa conversa durante a coleta de informações do usuário.
+- No **UserProfile.cs**, você define uma `UserProfile` classe para as informações do usuário que o bot coletará.
+- No **ConversationData.cs**, você define uma `ConversationData` classe para controlar nosso estado de conversa durante a coleta de informações do usuário.
 
 Os exemplos de código a seguir mostram as definições para as classes `UserProfile` e `ConversationData`.
 
@@ -91,12 +91,12 @@ Os exemplos de código a seguir mostram as definições para as classes `UserPro
 
 ## <a name="c"></a>[C#](#tab/csharp)
 
-Em seguida, registramos `MemoryStorage`, que é usado para criar os objetos `UserState` e `ConversationState`. Os objetos de estado da conversa e do usuário são criados em `Startup` e a dependência é injetada no construtor de bot. Outros serviços de um bot que são registrados: um provedor de credenciais, um adaptador e a implementação do bot.
+Em seguida, você registra `MemoryStorage` que é usado para `UserState` criar `ConversationState` objetos e. Os objetos de estado da conversa e do usuário são criados em `Startup` e a dependência é injetada no construtor de bot. Outros serviços de um bot que são registrados: um provedor de credenciais, um adaptador e a implementação do bot.
 
 **Startup.cs**
 
-[!code-csharp[ConfigureServices](~/../BotBuilder-Samples/samples/csharp_dotnetcore/45.state-management/Startup.cs?range=23-26)]
-[!code-csharp[ConfigureServices](~/../BotBuilder-Samples/samples/csharp_dotnetcore/45.state-management/Startup.cs?range=48-54)]
+[!code-csharp[ConfigureServices](~/../BotBuilder-Samples/samples/csharp_dotnetcore/45.state-management/Startup.cs?range=24-27)]
+[!code-csharp[ConfigureServices](~/../BotBuilder-Samples/samples/csharp_dotnetcore/45.state-management/Startup.cs?range=49-55)]
 
 **Bots/StateManagementBot.cs**
 
@@ -104,11 +104,11 @@ Em seguida, registramos `MemoryStorage`, que é usado para criar os objetos `Use
 
 ## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Em seguida, registramos `MemoryStorage`, que é então usado para criar os objetos `UserState` e `ConversationState`. Eles são criados em **index.js** e consumidos quando o bot é criado.
+Em seguida, registre `MemoryStorage` que é usado para criar `UserState` objetos e `ConversationState` . Eles são criados em **index.js** e consumidos quando o bot é criado.
 
 **index.js**
 
-[!code-javascript[index.js](~/../BotBuilder-Samples/samples/javascript_nodejs/45.state-management/index.js?range=33-39)]
+[!code-javascript[index.js](~/../BotBuilder-Samples/samples/javascript_nodejs/45.state-management/index.js?range=34-40)]
 
 **bots/stateManagementBot.js**
 
@@ -117,7 +117,7 @@ Em seguida, registramos `MemoryStorage`, que é então usado para criar os objet
 
 ## <a name="python"></a>[Python](#tab/python)
 
-Em seguida, registramos `MemoryStorage`, que é usado para criar os objetos `UserState` e `ConversationState`. Eles são criados em **app.py** e consumidos quando o bot é criado.
+Em seguida, você registra `MemoryStorage` que é usado para `UserState` criar `ConversationState` objetos e. Eles são criados em **app.py** e consumidos quando o bot é criado.
 
 **app.py**
 
@@ -133,7 +133,7 @@ Em seguida, registramos `MemoryStorage`, que é usado para criar os objetos `Use
 
 ## <a name="c"></a>[C#](#tab/csharp)
 
-Agora podemos criar acessadores de propriedade usando o método `CreateProperty`, que fornece um identificador ao objeto `BotState`. Cada acessador de propriedade de estado permite que você obtenha ou defina o valor da propriedade de estado associada. Antes de usarmos nossas propriedades de estado, usamos cada acessador para carregar a propriedade do armazenamento e obtê-la no cache de estado. Para obter a chave de escopo corretamente associada à propriedade do estado, podemos chamar o método `GetAsync`.
+Agora você cria acessadores de propriedade usando o `CreateProperty` método que fornece um identificador para o `BotState` objeto. Cada acessador de propriedade de estado permite que você obtenha ou defina o valor da propriedade de estado associada. Antes de usar as propriedades de estado, use cada acessador para carregar a propriedade do armazenamento e obtê-la do cache de estado. Para obter a chave com escopo correto associada à propriedade State, chame o `GetAsync` método.
 
 **Bots/StateManagementBot.cs**
 
@@ -141,7 +141,7 @@ Agora podemos criar acessadores de propriedade usando o método `CreateProperty`
 
 ## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Agora, podemos criar acessadores de propriedade para `UserState` e `ConversationState`. Cada acessador de propriedade de estado permite que você obtenha ou defina o valor da propriedade de estado associada. Usamos cada acessador para carregar a propriedade associada no armazenamento e recuperar o seu estado atual contido no cache.
+Agora você cria acessadores de propriedade para `UserState` e `ConversationState` . Cada acessador de propriedade de estado permite que você obtenha ou defina o valor da propriedade de estado associada. Você usa cada acessador para carregar a propriedade associada do armazenamento e recuperar seu estado atual do cache.
 
 **bots/stateManagementBot.js**
 
@@ -149,7 +149,7 @@ Agora, podemos criar acessadores de propriedade para `UserState` e `Conversation
 
 ## <a name="python"></a>[Python](#tab/python)
 
-Agora, podemos criar acessadores de propriedade para `UserProfile` e `ConversationData`. Cada acessador de propriedade de estado permite que você obtenha ou defina o valor da propriedade de estado associada. Usamos cada acessador para carregar a propriedade associada no armazenamento e recuperar o seu estado atual contido no cache.
+Agora você cria acessadores de propriedade para `UserProfile` e `ConversationData` . Cada acessador de propriedade de estado permite que você obtenha ou defina o valor da propriedade de estado associada. Você usa cada acessador para carregar a propriedade associada do armazenamento e recuperar seu estado atual do cache.
 
 **bots/state_management_bot.py**
 
@@ -159,19 +159,19 @@ Agora, podemos criar acessadores de propriedade para `UserProfile` e `Conversati
 
 ## <a name="access-state-from-your-bot"></a>Estado de acesso do seu bot
 
-As seções anteriores abordam as etapas de tempo de inicialização para adição dos acessadores de propriedade do estado ao nosso bot. Agora, podemos usar esses acessadores em tempo de execução para ler e gravar informações de estado. O código de exemplo abaixo usa o seguinte fluxo lógico:
+As seções anteriores abordam as etapas de tempo de inicialização para adição dos acessadores de propriedade do estado ao nosso bot. Agora, você pode usar esses acessadores em tempo de execução para ler e gravar informações de estado. O código de exemplo abaixo usa o seguinte fluxo lógico:
 
 ## <a name="c"></a>[C#](#tab/csharp)
 
-- Se userProfile.Name está vazio e conversationData.PromptedUserForName é _true_, recuperamos o nome de usuário fornecido e o armazenamos no estado do usuário.
-- Se userProfile.Name está vazio e é conversationData.PromptedUserForName é _false_, solicitamos o nome do usuário.
-- Se userProfile.Name foi armazenado anteriormente, recuperamos a hora e a ID do canal da mensagem contidos na entrada do usuário, retornamos todos os dados ao usuário e armazenamos os dados recuperados no estado da conversa.
+- Se userProfile.Name estiver vazio e conversationData. PromptedUserForName for _true_, você recuperará o nome de usuário fornecido e o armazenará no estado do usuário.
+- Se userProfile.Name estiver vazio e conversationData. PromptedUserForName for _false_, você solicitará o nome do usuário.
+- Se userProfile.Name tiver sido armazenado anteriormente, você recuperará a hora da mensagem e a ID do canal da entrada do usuário, ecoará todos os dados de volta para o usuário e armazenará os dados recuperados no estado da conversa.
 
 **Bots/StateManagementBot.cs**
 
 [!code-csharp[OnMessageActivityAsync](~/../BotBuilder-Samples/samples/csharp_dotnetcore/45.state-management/bots/StateManagementBot.cs?range=38-85)]
 
-Antes de encerramos o manipulador de turno, usamos o método _SaveChangesAsync()_ dos objetos de gerenciamento de estado para gravar todas as alterações no estado no armazenamento.
+Antes de sair do manipulador de ativação, use o método _SaveChangesAsync ()_ do State Management Objects para gravar todas as alterações de estado de volta no armazenamento.
 
 **Bots/StateManagementBot.cs**
 
@@ -179,15 +179,15 @@ Antes de encerramos o manipulador de turno, usamos o método _SaveChangesAsync()
 
 ## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-- Se userProfile.Name está vazio e conversationData.PromptedUserForName é _true_, recuperamos o nome de usuário fornecido e o armazenamos no estado do usuário.
-- Se userProfile.Name está vazio e é conversationData.PromptedUserForName é _false_, solicitamos o nome do usuário.
-- Se userProfile.Name foi armazenado anteriormente, recuperamos a hora e a ID do canal da mensagem contidos na entrada do usuário, retornamos todos os dados ao usuário e armazenamos os dados recuperados no estado da conversa.
+- Se userProfile.Name estiver vazio e conversationData. PromptedUserForName for _true_, você recuperará o nome de usuário fornecido e o armazenará no estado do usuário.
+- Se userProfile.Name estiver vazio e conversationData. PromptedUserForName for _false_, você solicitará o nome do usuário.
+- Se userProfile.Name tiver sido armazenado anteriormente, você recuperará a hora da mensagem e a ID do canal da entrada do usuário, ecoará todos os dados de volta para o usuário e armazenará os dados recuperados no estado da conversa.
 
 **bots/stateManagementBot.js**
 
 [!code-javascript[OnMessage](~/../BotBuilder-Samples/samples/javascript_nodejs/45.state-management/bots/stateManagementBot.js?range=21-58)]
 
-Antes de encerramos cada turno de diálogo, usamos o método _SaveChanges ()_ dos objetos de gerenciamento de estado para persistir todas as alterações gravando o estado no armazenamento.
+Antes de sair de cada caixa de diálogo, use o método _SaveChanges ()_ dos objetos de gerenciamento de estado para manter todas as alterações gravando o estado de volta para o armazenamento.
 
 **bots/stateManagementBot.js**
 

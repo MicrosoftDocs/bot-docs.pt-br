@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 03/23/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 61a97037e868c2f908e7c5ea9aaf8609bbf44b31
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: fff1e89af38f766bb50e6d262b3aa575044bc68e
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92415950"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98576348"
 ---
 # <a name="set-up-continuous-deployment"></a>Configurar a implantação contínua
 
@@ -43,7 +43,7 @@ Para habilitar a implantação contínua com o GitHub, navegue até a página **
 
 1. Clique em **Centro de Implantação** > **GitHub** > **Autorizar**.
 
-   ![Implantação contínua](~/media/azure-bot-build/azure-deployment.png)
+   ![Implantação do continuos](~/media/azure-bot-build/azure-deployment.png)
 
    1. Na janela do navegador que será aberta, clique em **Autorizar AzureAppService**.
 

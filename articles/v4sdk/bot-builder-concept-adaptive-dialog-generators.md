@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 486ae71d739be8932e665e1ea911faf611294bd4
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: 7af5c22d0bff4e06b5f9a62c66bea037efb7ddc9
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94599858"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577468"
 ---
 # <a name="generators-in-adaptive-dialogs"></a>Geradores em diálogos adaptáveis
 
@@ -24,15 +24,15 @@ Os geradores vinculam um sistema [LG (geração de linguagem)](bot-builder-conce
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- Conhecimento dos [diálogos adaptáveis](https://aka.ms/adaptive-dialog-concept)
-- Conhecimento dos [reconhecedores](https://aka.ms/adaptive-dialog-concept-recognizers) em diálogos adaptáveis
+- Conhecimento dos [diálogos adaptáveis](bot-builder-adaptive-dialog-Introduction.md)
+- Conhecimento dos [reconhecedores](bot-builder-concept-adaptive-dialog-recognizers.md) em diálogos adaptáveis
 - Conhecimento das [expressões adaptáveis](bot-builder-concept-adaptive-expressions.md)
 
 ## <a name="language-generation"></a>Geração de linguagem
 
 A LG (Geração de Linguagem) permite aos desenvolvedores extrair cadeias de caracteres inseridas de códigos e arquivos de recursos e gerenciá-las por meio de um runtime e formato de arquivo LG. Com a LG, os desenvolvedores podem criar uma experiência de conversa mais natural definindo diversas variações em uma frase, executando expressões simples com base no contexto e referindo-se à memória de conversa.
 
-A LG, juntamente com os [reconhecedores](https://aka.ms/adaptive-dialog-concept-recognizers), permite a separação clara e o encapsulamento dos ativos de Reconhecimento vocal e geração de linguagem de um diálogo. Os reconhecedores dão ao bot a capacidade de entender a entrada e a LG permite que o bot responda a essa entrada de uma forma inteligente.
+A LG, juntamente com os [reconhecedores](bot-builder-concept-adaptive-dialog-recognizers.md), permite a separação clara e o encapsulamento dos ativos de Reconhecimento vocal e geração de linguagem de um diálogo. Os reconhecedores dão ao bot a capacidade de entender a entrada e a LG permite que o bot responda a essa entrada de uma forma inteligente.
 
 Neste artigo, você aprenderá mais sobre os modelos LG que adicionam variedade e personalidade às respostas do bot e a chamar esses modelos no diálogo raiz usando o `TemplateEngineLanguageGenerator`.
 
@@ -149,7 +149,7 @@ string fullPath = Path.Combine(paths);
 
 Isso verificará se você está chamando os arquivos de modelo corretos para o bot.
 
-Agora você pode criar o `TemplateEngineLanguageGenerator` no diálogo adaptável que gerencia os modelos em **RootDialog.lg** :
+Agora você pode criar o `TemplateEngineLanguageGenerator` no diálogo adaptável que gerencia os modelos em **RootDialog.lg**:
 
 ```csharp
 var rootDialog = new AdaptiveDialog(nameof(AdaptiveDialog)){

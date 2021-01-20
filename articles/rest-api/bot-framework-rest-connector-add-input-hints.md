@@ -1,18 +1,18 @@
 ---
 title: Adicionar dicas de entrada a mensagens – Serviço de Bot
-description: Saiba como adicionar dicas de entrada a mensagens de bot. Consulte como usar o serviço de conector de bot para especificar se um bot está aceitando, esperando ou ignorando a entrada do usuário.
+description: Saiba como adicionar dicas de entrada a mensagens de bot. Consulte como usar o serviço do conector do bot Framework para especificar se um bot está aceitando, esperando ou ignorando a entrada do usuário.
 author: RobStand
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: baa482cb2b25388fe01026f18f72e20cef7ffc65
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 302fd4c7d8d0232277def359e5f4e4e2a3c90154
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417108"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98576578"
 ---
 # <a name="add-input-hints-to-messages-with-the-bot-connector-api"></a>Adicionar dicas de entrada a mensagens com a API do conector de bot
 
@@ -20,7 +20,7 @@ Ao especificar uma dica de entrada para uma mensagem, você pode indicar se seu 
 
 ## <a name="accepting-input"></a>Aceitar a entrada
 
-Para indicar que seu bot está passivamente pronto para entrada mas não está aguardando uma resposta do usuário, defina a propriedade `inputHint` como **acceptingInput** no objeto [Atividade][] que representa sua mensagem. Em muitos canais, isso fará com que a caixa de entrada do cliente seja ativada e o microfone seja fechado, mas ainda assim acessível ao usuário. Por exemplo, a Cortana abrirá o microfone para aceitar a entrada do usuário se o usuário pressionar o botão do microfone. 
+Para indicar que seu bot está passivamente pronto para entrada mas não está aguardando uma resposta do usuário, defina a propriedade `inputHint` como **acceptingInput** no objeto [Atividade][] que representa sua mensagem. Em muitos canais, isso fará com que a caixa de entrada do cliente seja ativada e o microfone seja fechado, mas ainda assim acessível ao usuário. Por exemplo, a Cortana abrirá o microfone para aceitar a entrada do usuário se o usuário pressionar o botão do microfone.
 
 O exemplo a seguir mostra uma solicitação que envia uma mensagem e especifica que o bot está aceitando entrada. Nessa solicitação de exemplo, Direct Line representa o URI base; o URI base das solicitações emitidas pelo bot pode ser diferente. Para obter detalhes sobre como definir o URI base, confira [Referência de API](bot-framework-rest-connector-api-reference.md#base-uri).
 
@@ -53,7 +53,7 @@ Content-Type: application/json
 
 ## <a name="expecting-input"></a>Esperando uma entrada
 
-Para indicar que seu bot está ativamente aguardando uma resposta do usuário, defina a propriedade `inputHint` como **expectingInput** no objeto [Atividade][] que representa sua mensagem. Em canais compatíveis, isso fará com que a caixa de entrada do cliente seja habilitada e o microfone seja aberto. 
+Para indicar que seu bot está ativamente aguardando uma resposta do usuário, defina a propriedade `inputHint` como **expectingInput** no objeto [Atividade][] que representa sua mensagem. Em canais compatíveis, isso fará com que a caixa de entrada do cliente seja habilitada e o microfone seja aberto.
 
 O exemplo a seguir mostra uma solicitação que envia uma mensagem e especifica que o bot está esperando uma entrada. Nessa solicitação de exemplo, Direct Line representa o URI base; o URI base das solicitações emitidas pelo bot pode ser diferente. Para obter detalhes sobre como definir o URI base, confira [Referência de API](bot-framework-rest-connector-api-reference.md#base-uri).
 
@@ -85,8 +85,8 @@ Content-Type: application/json
 ```
 
 ## <a name="ignoring-input"></a>Ignorando a entrada
- 
-Para indicar que seu bot não está pronto para receber a entrada do usuário, defina a propriedade `inputHint` como **ignoringInput** no objeto [Atividade][] que representa a mensagem. Em canais compatíveis, isso fará com que a caixa de entrada do cliente seja desabilitada e o microfone seja fechado. 
+
+Para indicar que seu bot não está pronto para receber a entrada do usuário, defina a propriedade `inputHint` como **ignoringInput** no objeto [Atividade][] que representa a mensagem. Em canais compatíveis, isso fará com que a caixa de entrada do cliente seja desabilitada e o microfone seja fechado.
 
 O exemplo a seguir mostra uma solicitação que envia uma mensagem e especifica que o bot está ignorando a entrada. Nessa solicitação de exemplo, Direct Line representa o URI base; o URI base das solicitações emitidas pelo bot pode ser diferente. Para obter detalhes sobre como definir o URI base, confira [Referência de API](bot-framework-rest-connector-api-reference.md#base-uri).
 

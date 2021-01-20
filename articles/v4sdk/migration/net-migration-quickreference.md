@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/31/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2741d62195b55834c6b71bfd902b2bc8154654e4
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: ed0c6309cb034fc9cf7a84ef7d11e4a61bd18b4f
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417460"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577478"
 ---
 # <a name="net-migration-quick-reference"></a>Referência rápida da migração do .NET
 
@@ -22,7 +22,7 @@ ms.locfileid: "92417460"
 
 O SDK v4 do BotBuilder para .NET introduz várias mudanças fundamentais que afetam como os bots são criados. O objetivo deste guia é fornecer uma referência rápida para destacar as diferenças comuns na realização de tarefas nos SDKs v3 e v4.
 
-- A forma como as informações passam entre canais e um bot foi alterada. No V3, você usava o objeto _Conversation_ e o método _SendAsync_ para processar uma mensagem. O Autofac era extensivamente usado para carregar várias dependências. No v4, você usa os objetos_Adapter_ e _TurnContext_ para processar uma mensagem, e pode usar a biblioteca de injeção de dependência de sua escolha.
+- A forma como as informações passam entre canais e um bot foi alterada. No V3, você usava o objeto _Conversation_ e o método _SendAsync_ para processar uma mensagem. O Autofac era extensivamente usado para carregar várias dependências. No v4, você usa os objetos _Adapter_ e _TurnContext_ para processar uma mensagem, e pode usar a biblioteca de injeção de dependência de sua escolha.
 
 - Além disso, as instâncias de caixa de diálogo e bot foram ainda mais separadas. No v3, as caixas de diálogo foram desenvolvidas dentro do núcleo do SDK e a pilha foi manipulada internamente. As caixas de diálogo filho foram carregadas com os métodos _Call_ e _Forward_. Agora, no v4, você passa as caixas de diálogo para as instâncias de bot como argumentos, fornecendo mais flexibilidade de composição e controle do desenvolvedor sobre a pilha de caixas de diálogo. As caixas de diálogo filho são carregadas com os métodos _BeginDialogAsync_ e _ReplaceDialogAsync_.
 
@@ -239,7 +239,7 @@ Todas as caixas de diálogo e seus campos foram serializados automaticamente no 
 stepContext.values.destination = destination;
 ```
 
-## <a name="to-write-changes-in-state-to-the-persistance-layer"></a>Para gravar as alterações no estado para a camada de persistência
+## <a name="to-write-changes-in-state-to-the-persistence-layer"></a>Para gravar alterações no estado para a camada de persistência
 
 ### <a name="v3"></a>v3
 
@@ -307,7 +307,7 @@ public class DialogBot : ActivityHandler
     {
         await base.OnTurnAsync(turnContext, cancellationToken);
 
-        // Save any state changes that might have ocurred during the turn.
+        // Save any state changes that might have occurred during the turn.
         await ConversationState.SaveChangesAsync(turnContext, false, cancellationToken);
         await UserState.SaveChangesAsync(turnContext, false, cancellationToken);
     }
@@ -499,7 +499,7 @@ A interface para armazenar _dados de usuário_, _dados de conversas_ e _dados de
 
 O estado foi mantido usando uma implementação `IBotDataStore` e injetando-a no sistema de estado do diálogo do SDK, usando o Autofac.  A Microsoft forneceu as classes `MemoryStorage`, `DocumentDbBotDataStore`, `TableBotDataStore` e `SqlBotDataStore` no [Microsoft.Bot.Builder.Azure](https://github.com/Microsoft/BotBuilder-Azure/).
 
-[IBotDataStore<BotData>](https://docs.microsoft.com/dotnet/api/microsoft.bot.builder.dialogs.internals.ibotdatastore-1?view=botbuilder-dotnet-3.0) foi usado para manter os dados.
+[IBotDataStore<BotData>](https://docs.microsoft.com/dotnet/api/microsoft.bot.builder.dialogs.internals.ibotdatastore-1?view=botbuilder-dotnet-3.0&preserve-view=true) foi usado para manter os dados.
 
 ```csharp
 Task<bool> FlushAsync(IAddress key, CancellationToken cancellationToken);
@@ -522,7 +522,7 @@ builder.Register(c => storage)
 
 A camada de armazenamento utiliza a interface `IStorage`. Especifique o objeto de camada de armazenamento ao criar cada objeto de gerenciamento de estado para seu bot, como `UserState`, `ConversationState` ou `PrivateConversationState`. O objeto de gerenciamento de estado fornece chaves à camada de armazenamento subjacente e também atua como um gerenciador de propriedades. Por exemplo, utilize `IPropertyManager.CreateProperty<T>(string name)` para criar um acessador de propriedade de estado.  Esses acessadores de propriedade são usados para recuperar e armazenar os valores dentro e fora do armazenamento subjacente do bot.
 
-Use [IStorage](https://docs.microsoft.com/dotnet/api/microsoft.bot.builder.istorage?view=botbuilder-dotnet-stable) para manter os dados.
+Use [IStorage](/dotnet/api/microsoft.bot.builder.istorage) para manter os dados.
 
 ```csharp
 Task DeleteAsync(string[] keys, CancellationToken cancellationToken = default(CancellationToken));
@@ -552,21 +552,21 @@ services.AddSingleton(conversationState);
 
 ### <a name="v3"></a>v3
 
-O [Microsoft.Bot.Builder.FormFlow](https://docs.microsoft.com/dotnet/api/microsoft.bot.builder.formflow?view=botbuilder-dotnet-3.0) foi incluído no núcleo do SDK do Bot Builder.
+O [Microsoft.Bot.Builder.FormFlow](https://docs.microsoft.com/dotnet/api/microsoft.bot.builder.formflow?view=botbuilder-dotnet-3.0&preserve-view=true) foi incluído no núcleo do SDK do Bot Builder.
 
 ### <a name="v4"></a>v4
 
-O [Bot.Builder.Community.Dialogs.FormFlow](https://www.nuget.org/packages/Bot.Builder.Community.Dialogs.FormFlow/) agora é uma biblioteca do Bot Builder Community.  A fonte está disponível no [repositório](https://github.com/BotBuilderCommunity/botbuilder-community-dotnet/tree/develop/libraries/Bot.Builder.Community.Dialogs.FormFlow) da comunidade.
+O [Bot.Builder.Community.Dialogs.FormFlow](https://www.nuget.org/packages/Bot.Builder.Community.Dialogs.FormFlow/) agora é uma biblioteca do Bot Builder Community. A fonte está disponível no [repositório](https://github.com/BotBuilderCommunity/botbuilder-community-dotnet/tree/develop/libraries/Bot.Builder.Community.Dialogs.FormFlow) da comunidade.
 
 ## <a name="to-use-luisdialog"></a>Para usar LuisDialog
 
 ### <a name="v3"></a>v3
 
-O [Microsoft.Bot.Builder.Dialogs.LuisDialog](https://docs.microsoft.com/dotnet/api/microsoft.bot.builder.dialogs.luisdialog-1?view=botbuilder-dotnet-3.0) foi incluído no núcleo do SDK do Bot Builder.
+O [Microsoft.Bot.Builder.Dialogs.LuisDialog](https://docs.microsoft.com/dotnet/api/microsoft.bot.builder.dialogs.luisdialog-1?view=botbuilder-dotnet-3.0&preserve-view=true) foi incluído no núcleo do SDK do Bot Builder.
 
 ### <a name="v4"></a>v4
 
-O [Bot.Builder.Community.Dialogs.Luis](https://www.nuget.org/packages/Bot.Builder.Community.Dialogs.Luis/) agora é uma biblioteca do Bot Builder Community.  A fonte está disponível no [repositório](https://github.com/BotBuilderCommunity/botbuilder-community-dotnet/tree/develop/libraries/Bot.Builder.Community.Dialogs.Luis) da comunidade.
+O [Bot.Builder.Community.Dialogs.Luis](https://www.nuget.org/packages/Bot.Builder.Community.Dialogs.Luis/) agora é uma biblioteca do Bot Builder Community. A fonte está disponível no [repositório](https://github.com/BotBuilderCommunity/botbuilder-community-dotnet/tree/develop/libraries/Bot.Builder.Community.Dialogs.Luis) da comunidade.
 
 ## <a name="to-use-qna-maker"></a>Como usar o QnA Maker
 

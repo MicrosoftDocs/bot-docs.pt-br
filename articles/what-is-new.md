@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 11/13/2020
-ms.openlocfilehash: 7be1cda7983c1716d423841e95e7eb5d496240f6
-ms.sourcegitcommit: c9b51583a9d7ead626585a9eb0d86db403a7f50a
+ms.openlocfilehash: 9ccaf741e10e093a33be4dc446ae519255c7314a
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94679965"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577508"
 ---
 # <a name="whats-new-november-2020"></a>O que há de novo em novembro de 2020
 
@@ -53,7 +53,7 @@ Após os comentários dos clientes e da equipe de suporte do bot Framework, vár
 
 ## <a name="additional-information"></a>Informações adicionais
 
-- Você pode ver os comunicados anteriores [aqui](what-is-new-archive.md).
+- Você pode ver anúncios anteriores nas [informações arquivadas](what-is-new-archive.md).
 - Consulte as [notas de versão](https://github.com/microsoft/botframework-sdk/releases/) do SDK do bot Framework para obter mais informações sobre as alterações feitas no SDK na versão 4,11.
 
 [1]:https://github.com/Microsoft/botbuilder-dotnet/#packages

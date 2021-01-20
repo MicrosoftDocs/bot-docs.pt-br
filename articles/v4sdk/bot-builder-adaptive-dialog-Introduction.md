@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 06/24/2020
-ms.openlocfilehash: 85b914f3926267e23a3ef9c58d1585676b7eb901
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: ee73cb426366ac1f84f73feca7ac041e1257f68a
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95460980"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98576479"
 ---
 # <a name="introduction-to-adaptive-dialogs"></a>Introdução aos diálogos adaptáveis
 
@@ -41,9 +41,9 @@ As caixas de diálogo adaptáveis têm muitas vantagens para [WaterfallDialogs][
 * Traga reconhecimento de entrada e manipulação de eventos baseados em regras
 * Combine o modelo de conversa (caixa de diálogo) e a geração de saída em uma unidade coesa e autônoma.
 * Suporte a pontos de extensibilidade para reconhecimento, regras de eventos e aprendizado de máquina.
-* Foram projetados para serem declarativos desde o início. Isso permite ferramentas que incluem produtos como o [Bot Framework](https://aka.ms/bf-composer-docs-welcome-page) que fornecem uma tela visual para modelar as conversas.
+* Foram projetados para serem declarativos desde o início. Isso permite ferramentas que incluem produtos como o [Bot Framework](/composer/) que fornecem uma tela visual para modelar as conversas.
 
-## <a name="anatomy-of-an-adaptive-dialog"></a>Anatomia de um diálogo adaptável  
+## <a name="anatomy-of-an-adaptive-dialog"></a>Anatomia de um diálogo adaptável
 
 <p align="center">
     <img alt="Adaptive_dialog_anatomy" src="./media/adaptive-dialogs/adaptive-dialog-anatomy.png" style="max-width:700px;" />
@@ -57,7 +57,7 @@ Confira o artigo [_Eventos e gatilhos em diálogos adaptáveis_][3] para obter m
 
 <!--- If an event is not handled in a child dialog, it gets passed up to its parent dialog to handle and this continues until it is either handled or reaches the bots main dialog. If no event handler is found, it will be ignored and no action will be taken.
 
-_Triggers_ enable you to catch and respond to events. The broadest trigger is the OnEvent trigger that allows you to catch and attach a set of steps to execute when a specific event is emitted by any sub-system. Adaptive dialogs supports a couple of other specialized triggers to wrap common events that your bot would handle. See [here][3] to learn more about supported triggers and their usage.-->
+_Triggers_ enable you to catch and respond to events. The broadest trigger is the OnEvent trigger that allows you to catch and attach a set of steps to execute when a specific event is emitted by any sub-system. Adaptive dialogs supports a couple of other specialized triggers to wrap common events that your bot would handle. See [learn more about triggers][3] to learn more about supported triggers and their usage.-->
 
 ### <a name="actions"></a>Ações
 
@@ -169,7 +169,7 @@ O _reconhecedor_ de cada diálogo analisa a entrada do usuário para determinar 
 <!--* [Create a bot using Declarative adaptive dialogs][11]--->
 * [Criar um bot combinando diálogos adaptáveis, de componentes, em cascata e personalizados][12]
 
-[1]:https://aka.ms/bot-builder-concept-dialog
+[1]:bot-builder-concept-dialog.md
 [3]:bot-builder-concept-adaptive-dialog-triggers.md
 [4]:bot-builder-concept-adaptive-dialog-actions.md
 [5]:bot-builder-concept-adaptive-dialog-inputs.md
@@ -181,7 +181,7 @@ O _reconhecedor_ de cada diálogo analisa a entrada do usuário para determinar 
 [11]:bot-builder-dialogs-declarative-adaptive.md
 [12]:bot-builder-mixed-dialogs.md
 [13]:bot-builder-concept-adaptive-dialog-inputs.md#interruptions
-[14]:https://aka.ms/bot-builder-concept-dialog#prompts
+[14]:bot-builder-concept-waterfall-dialogs.md#prompts
 [15]:https://github.com/microsoft/botbuilder-samples/tree/master/experimental/adaptive-dialog
 [16]:https://github.com/microsoft/botbuilder-samples/tree/master/samples/csharp_dotnetcore
 [17]: bot-builder-concept-dialog.md#component-dialogs

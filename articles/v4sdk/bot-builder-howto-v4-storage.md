@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 08/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: b5bb495237d0a6a9ad3ed83fe95d0a5f18e23e55
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: 0e4dc657f14ee655a6a4b6466bd177ee91a3d02e
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95456080"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577198"
 ---
 # <a name="write-directly-to-storage"></a>Gravar diretamente no armazenamento
 
@@ -25,7 +25,7 @@ Você pode ler e gravar diretamente em seu objeto de armazenamento sem usar midd
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - Se você não tiver uma assinatura do Azure, crie uma conta [gratuita](https://azure.microsoft.com/free/) antes de começar.
-- Familiaridade com o artigo: Crie um bot localmente para [.NET](https://aka.ms/bot-framework-www-c-sharp-quickstart), [JavaScript](https://aka.ms/bot-framework-www-node-js-quickstart) ou [Python](https://aka.ms/bot-framework-www-node-python-quickstart).
+- Familiaridade com o artigo: Crie um bot localmente para [.NET](../dotnet/bot-builder-dotnet-sdk-quickstart.md), [JavaScript](../javascript/bot-builder-javascript-quickstart.md) ou [Python](../python/bot-builder-python-quickstart.md).
 - Modelos do SDK do Bot Framework v4 para [Visual Studio (C#)](https://aka.ms/bot-vsix), [Node.js](https://nodejs.org) ou [Yeoman](http://yeoman.io).
 
 [!INCLUDE [VSIX templates](~/includes/vsix-templates-versions.md)]
@@ -40,7 +40,7 @@ O SDK do Bot Framework permite que você armazene entradas do usuário usando o 
 
 ## <a name="build-a-basic-bot"></a>Crie um bot básico
 
-O restante deste tópico se baseia em um bot de Eco. O código de exemplo do bot Echo pode ser criado localmente, seguindo as instruções do Guia de Início Rápido para a criação de um [C# EchoBot](https://aka.ms/bot-framework-www-c-sharp-quickstart), [JS EchoBot](https://aka.ms/bot-framework-www-node-js-quickstart) ou [Python EchoBot](https://aka.ms/bot-framework-www-node-python-quickstart).
+O restante deste tópico se baseia em um bot de Eco. O código de exemplo do bot Echo pode ser criado localmente, seguindo as instruções do Guia de Início Rápido para a criação de um [C# EchoBot](../dotnet/bot-builder-dotnet-sdk-quickstart.md), [JS EchoBot](../javascript/bot-builder-javascript-quickstart.md) ou [Python EchoBot](../python/bot-builder-python-quickstart.md).
 
 ### <a name="c"></a>[C#](#tab/csharp)
 
@@ -324,7 +324,7 @@ Envie uma mensagem ao bot. Ele listará as mensagens recebidas.
 >[!IMPORTANT]
 > A classe de _armazenamento do Cosmos DB_ foi preterida. Os contêineres criados originalmente com CosmosDbStorage não tinham nenhum conjunto de chaves de partição e receberam a chave de partição padrão de _ \/ _partitionKey_.
 >
-> Contêineres criados com _Cosmos DB armazenamento_ podem ser usados com _Cosmos DB armazenamento particionado_. Para obter mais informações, leia [Particionamento no Azure Cosmos DB](https://aka.ms/azure-cosmosdb-partitioning-overview).
+> Contêineres criados com _Cosmos DB armazenamento_ podem ser usados com _Cosmos DB armazenamento particionado_. Para obter mais informações, leia [Particionamento no Azure Cosmos DB](/azure/cosmos-db/partitioning-overview).
 >
 > Observe também que, diferentemente do armazenamento de Cosmos DB herdado, o armazenamento particionado Cosmos DB não cria automaticamente um banco de dados dentro de sua conta de Cosmos DB. Você precisa [criar um novo banco de dados manualmente](https://docs.microsoft.com/azure/cosmos-db/create-cosmosdb-resources-portal), mas ignorar a criação manual de um contêiner, pois o _CosmosDbPartitionedStorage_ criará o contêiner para você.
 
@@ -332,7 +332,7 @@ Agora que você usou o armazenamento de memória, vamos atualizar o código para
 
 ### <a name="set-up-a-cosmos-db-resource"></a>Configurar um recurso de Cosmos DB
 
-Para usar o Cosmos DB em seu bot, você precisará criar um recurso de banco de dados antes de mexer no código. Para obter uma descrição detalhada da criação do banco de dados Cosmos DB e do aplicativo, acesse a documentação para [dotnet do Cosmos DB](https://aka.ms/Bot-framework-create-dotnet-cosmosdb) ou [nodejs do Cosmos DB](https://aka.ms/Bot-framework-create-nodejs-cosmosdb).
+Para usar o Cosmos DB em seu bot, você precisará criar um recurso de banco de dados antes de mexer no código. Para obter uma descrição detalhada da criação do banco de dados Cosmos DB e do aplicativo, acesse a documentação para [dotnet do Cosmos DB](/azure/cosmos-db/create-sql-api-dotnet-preview) ou [nodejs do Cosmos DB](/azure/cosmos-db/create-sql-api-nodejs).
 
 ### <a name="create-your-database-account"></a>Criar sua conta de banco de dados
 
@@ -460,7 +460,7 @@ pip install botbuilder-azure
 ### <a name="cosmos-db-implementation"></a>Implementação de Cosmos DB
 
 > [!NOTE]
-> A versão 4.6 introduziu um novo provedor de armazenamento do Cosmos DB, a classe de _armazenamento particionado do Cosmos DB_. A classe de _armazenamento do Cosmos DB_ original foi preterida. Contêineres criados com _Cosmos DB armazenamento_ podem ser usados com _Cosmos DB armazenamento particionado_. Para obter mais informações, leia [Particionamento no Azure Cosmos DB](https://aka.ms/azure-cosmosdb-partitioning-overview).
+> A versão 4.6 introduziu um novo provedor de armazenamento do Cosmos DB, a classe de _armazenamento particionado do Cosmos DB_. A classe de _armazenamento do Cosmos DB_ original foi preterida. Contêineres criados com _Cosmos DB armazenamento_ podem ser usados com _Cosmos DB armazenamento particionado_. Para obter mais informações, leia [Particionamento no Azure Cosmos DB](/azure/cosmos-db/partitioning-overview).
 >
 > Observe também que, diferentemente do armazenamento de Cosmos DB herdado, o armazenamento particionado Cosmos DB não cria automaticamente um banco de dados dentro de sua conta de Cosmos DB. Você precisa [criar um novo banco de dados manualmente](https://docs.microsoft.com/azure/cosmos-db/create-cosmosdb-resources-portal), mas ignorar a criação manual de um contêiner, pois o _CosmosDbPartitionedStorage_ criará o contêiner para você.
 

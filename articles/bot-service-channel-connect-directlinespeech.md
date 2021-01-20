@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: v-mimiel
-ms.openlocfilehash: b0aec96cf45e2c2cb7786532026408b56c266f7b
-ms.sourcegitcommit: e37cf15f4907910560f34445a0fbdd7ae75b4787
+ms.openlocfilehash: 899939e0e064e521459e635beb66457ea89cbecc
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92440079"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98576708"
 ---
 # <a name="connect-a-bot-to-direct-line-speech"></a>Conectar um bot ao Direct Line Speech
 
@@ -22,7 +22,7 @@ ms.locfileid: "92440079"
 
 Este artigo descreve como conectar um bot ao canal de **fala de linha direta**. Use este canal para permitir que os usuários interajam com um bot por meio de voz.
 
-Depois de criar seu bot, integrá-lo ao Direct Line Speech habilitará uma conexão de baixa latência e alta confiabilidade com aplicativos cliente, usando a [SDK de fala](https://aka.ms/speech-service-docs). Essas conexões são otimizadas para experiências de conversação com entrada e saída de voz. Para obter mais informações sobre o Direct Line Speech e como criar aplicativos cliente, visite a página [personalizar assistente virtual que tem como prioridade o uso da voz](https://aka.ms/cognitive-services-voice-assistants).
+Depois de criar seu bot, integrá-lo ao Direct Line Speech habilitará uma conexão de baixa latência e alta confiabilidade com aplicativos cliente, usando a [SDK de fala](/azure/cognitive-services/speech-service/). Essas conexões são otimizadas para experiências de conversação com entrada e saída de voz. Para obter mais informações sobre o Direct Line Speech e como criar aplicativos cliente, visite a página [personalizar assistente virtual que tem como prioridade o uso da voz](/azure/cognitive-services/Speech-Service/voice-assistants).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -82,7 +82,7 @@ Com o canal do Direct Line Speech conectado ao seu bot, agora é preciso habilit
 
 1. Clique em `Save` na parte superior da página de configuração.
 
-1. As extensões de streaming de protocolo do Bot Framework estão habilitadas no seu bot. Agora, você está pronto para atualizar o código do bot e [integrar o suporte para extensões de streaming](https://aka.ms/botframework/addstreamingprotocolsupport) a um projeto de bot existente.
+1. As extensões de streaming de protocolo do Bot Framework estão habilitadas no seu bot. Agora, você está pronto para atualizar o código do bot e [integrar o suporte para extensões de streaming](directline-speech-bot.md) a um projeto de bot existente.
 
 ## <a name="example"></a>Exemplo
 
@@ -97,4 +97,4 @@ A imagem a seguir mostra a interface do aplicativo cliente ao se comunicar com u
 > [!NOTE]
 > A etapa a seguir só é necessária para os bots criados antes do lançamento dos SDKs 4,8.
 
-Com o canal do Direct Line Speech conectado e suporte habilitado para extensões de streaming de protocolo do Bot Framework, só resta adicionar código ao seu bot para dar suporte para comunicação otimizada. Siga as instruções contidas em [Adicionar suporte para extensões de streaming ao seu bot](https://aka.ms/botframework/addstreamingprotocolsupport) para garantir compatibilidade total com o Direct Line Speech.
+Com o canal do Direct Line Speech conectado e suporte habilitado para extensões de streaming de protocolo do Bot Framework, só resta adicionar código ao seu bot para dar suporte para comunicação otimizada. Siga as instruções contidas em [Adicionar suporte para extensões de streaming ao seu bot](directline-speech-bot.md) para garantir compatibilidade total com o Direct Line Speech.

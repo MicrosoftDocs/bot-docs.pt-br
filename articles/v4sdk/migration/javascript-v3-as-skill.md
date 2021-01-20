@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 02/19/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 325cc124fc54274b5b27b187831bb6bc6d3d5f32
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: 2d46edace9d5a2451e6ecbed6c3fb7ed54c2bf62
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95452090"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577018"
 ---
 # <a name="convert-a-javascript-v3-bot-to-a-skill"></a>Converter um bot v3 do JavaScript em uma habilidade
 
@@ -52,7 +52,7 @@ A autenticação de bot para bot requer que cada bot participante tenha uma ID d
 1. Crie um Registro de Canais de Bot para os bots conforme necessário.
 1. Registre a ID e a senha do aplicativo para cada uma delas.
 
-## <a name="conversion-process"></a>Processo de conversão
+## <a name="to-convert-a-v3-bot"></a>Para converter um bot v3
 
 Para converter um bot existente em um bot de habilidade, são necessárias apenas algumas etapas, conforme descrito nas próximas seções. Para obter informações mais detalhadas, confira [sobre habilidades](../skills-conceptual.md).
 
@@ -87,7 +87,7 @@ Confira [Skills/v3-skill-bot](https://aka.ms/v3-js-echo-skill) para ver um exemp
 
    [!code[.env file](~/../botbuilder-samples/MigrationV3V4/Node/Skills/v3-skill-bot/.env)]
 
-1. Crie o conector do chat para o bot. Este usa a configuração de autenticação padrão. Defina `enableSkills` como `true` para permitir que o bot seja usado como uma habilidade. `allowedCallers` é uma matriz das IDs do aplicativo dos bots que têm permissão para usar essa habilidade. Se o primeiro valor dessa matriz fosse '*', qualquer bot poderia usar essa habilidade.
+1. Crie o conector do chat para o bot. Este usa a configuração de autenticação padrão. Defina `enableSkills` como `true` para permitir que o bot seja usado como uma habilidade. `allowedCallers` é uma matriz das IDs do aplicativo dos bots que têm permissão para usar essa habilidade. Se o primeiro valor dessa matriz for ' * ', qualquer bot poderá usar essa habilidade.
 
    **v3-skill-bot/app.js**
 
@@ -197,14 +197,16 @@ Baixe e instale o [Bot Framework Emulator](https://aka.ms/bot-framework-emulator
 1. Use o Emulador para se conectar ao bot raiz.
 1. Teste as habilidades e o consumidor de habilidades.
 
+A partir da versão 4,11, você não precisa de uma ID de aplicativo e senha para testar um consumidor de habilidades e habilidades localmente no emulador. Uma assinatura do Azure ainda é necessária para implantar sua habilidade no Azure.
+
 ## <a name="additional-information"></a>Informações adicionais
 
 ### <a name="bot-to-bot-authentication"></a>Autenticação de bot para bot
 
-A raiz e o skill se comunicam por HTTP. A estrutura usa tokens de portador e IDs de aplicativo de bot para verificar a identidade de cada bot. Ela usa um objeto de configuração de autenticação para validar o cabeçalho de autenticação em solicitações de entrada. Você pode adicionar um validador de declarações à configuração de autenticação. As declarações são avaliadas após o cabeçalho de autenticação. O código de validação deve gerar um erro ou uma exceção para rejeitar a solicitação.
+A raiz e o skill se comunicam por HTTP. A estrutura usa tokens de portador e IDs de aplicativo de bot para verificar a identidade de cada bot. Ela usa um objeto de configuração de autenticação para validar o cabeçalho de autenticação em solicitações de entrada. Você deve adicionar um validador de declarações à configuração de autenticação. As declarações são avaliadas após o cabeçalho de autenticação. O código de validação deve gerar um erro ou uma exceção para rejeitar a solicitação.
 
 Ao criar um conector de chat, inclua um `allowedCallers` ou uma propriedade `authConfiguration` no parâmetro de configurações para habilitar a autenticação de bot para bot.
 
-O validador de declarações padrão do conector do chat usa a propriedade `allowedCallers`. O valor dele deve ser uma matriz de IDs do aplicativo dos bots que têm permissão para chamar a habilidade. Defina o primeiro elemento como '*' para permitir que todos os bots chamem a habilidade.
+O validador de declarações padrão do conector do chat usa a propriedade `allowedCallers`. O valor dele deve ser uma matriz de IDs do aplicativo dos bots que têm permissão para chamar a habilidade. Defina o primeiro elemento como "*" para permitir que qualquer bot chame a habilidade.
 
 Para usar uma função de validação de declarações personalizadas, defina o campo `authConfiguration` como sua função de validação. Essa função deverá aceitar uma matriz de objetos de declaração e gerar um erro se a validação falhar. A etapa 4 da seção [converter o bot de reserva](#convert-the-booking-bot) tem um validador de declarações de exemplo.

@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: conceptual
 ms.service: bot-service
 ms.date: 05/06/2020
-ms.openlocfilehash: 264ad61f702d0dec26089be5d353542126096ecf
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: b6b575a6855d4cbeb77bc1f3e3c99ed5cbc4aac1
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95449542"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577438"
 ---
 # <a name="recognizers-in-adaptive-dialogs"></a>Reconhecedores em diálogos adaptáveis
 
@@ -53,7 +53,7 @@ O LU **(Reconhecimento vocal)** é o subconjunto do NLP que lida com o modo como
 
 As intenções são como você categoriza as intenções esperadas do usuário, conforme expressas nas mensagens dele para o bot. Considere uma intenção como uma representação da ação que o usuário deseja realizar, a finalidade ou a meta expressa na entrada. Tarefas como reservar um voo, pagar uma fatura ou encontrar um artigo de notícias. Você define e nomeia as intenções que correspondem a essas ações. Por exemplo, qualquer bot pode definir uma intenção chamada _Saudação_; um aplicativo de viagem pode criar uma intenção chamada _BookFlight_. As intenções são definidas em um arquivo de modelo de Reconhecimento vocal (.lu); esses arquivos são arquivos de texto com uma extensão .lu e, geralmente, residem no mesmo diretório e têm o mesmo nome do diálogo.  Por exemplo, o diálogo raiz conterá um arquivo de modelo de Reconhecimento vocal chamado **RootDialog.lu**
 
-Este é um exemplo de um arquivo .lu simples que captura uma intenção de **Saudação** simples com uma lista de exemplos de enunciados que capturam diferentes maneiras pelas quais um usuário pode expressar essa intenção. Use um caractere `-`, `+`ou `*` para indicar as listas. Não há suporte para listas numeradas.  
+Este é um exemplo de um arquivo .lu simples que captura uma intenção de **Saudação** simples com uma lista de exemplos de enunciados que capturam diferentes maneiras pelas quais um usuário pode expressar essa intenção. Use um caractere `-`, `+`ou `*` para indicar as listas. Não há suporte para listas numeradas.
 
 ```lu
 # Greeting
@@ -62,7 +62,7 @@ Este é um exemplo de um arquivo .lu simples que captura uma intenção de **Sau
 - How are you?
 ```
 
-`#<intent-name>` descreve uma nova seção de definição de intenção no arquivo de modelo LU. Cada linha após a definição da intenção são exemplos de enunciados que descrevem essa intenção. Crie várias definições de intenção no arquivo .lu. Cada seção é identificada pela notação `#<intent-name>`. As linhas em branco são ignoradas durante a análise do arquivo.  
+`#<intent-name>` descreve uma nova seção de definição de intenção no arquivo de modelo LU. Cada linha após a definição da intenção são exemplos de enunciados que descrevem essa intenção. Crie várias definições de intenção no arquivo .lu. Cada seção é identificada pela notação `#<intent-name>`. As linhas em branco são ignoradas durante a análise do arquivo.
 
 ### <a name="utterances"></a>Declarações
 
@@ -85,7 +85,7 @@ As entidades no [formato de arquivo .lu][8] são definidas no formato `{<entityN
 
 O exemplo acima mostra a definição de uma intenção `BookFlight` com dois exemplos de enunciados e duas definições de entidade: `toCity` e `fromCity`. Quando o gatilho for disparado, se o reconhecedor escolhido conseguir identificar uma cidade de destino, o nome da cidade será disponibilizado como `@toCity` dentro das ações disparadas ou uma cidade de partida com `@fromCity` como os valores de entidade disponíveis. Os valores de entidade podem ser usados diretamente em expressões e modelos LG ou armazenados em uma propriedade na [memória][10] para uso posterior.
 
-<!--TODO P1:  Need to discuss recognizers in the context of recognition results. There is intent recognizer, entity recognizer, there can be other types of recognizers as well but a recognizer gets 3 property bags to fill in - intents[], entities[], properties[]. 
+<!--TODO P1:  Need to discuss recognizers in the context of recognition results. There is intent recognizer, entity recognizer, there can be other types of recognizers as well but a recognizer gets 3 property bags to fill in - intents[], entities[], properties[].
 https://github.com/MicrosoftDocs/bot-docs-pr/pull/2123#discussion_r423237812
 -->
 
@@ -200,16 +200,16 @@ O conjunto de reconhecedores com treinamento cruzado compara os resultados de re
 [3]:bot-builder-concept-dialog.md
 [4]:bot-builder-concept-adaptive-dialog-generators.md
 [5]:https://github.com/microsoft/botbuilder/blob/master/specs/botframework-activity/botframework-activity.md#locale
-[6]:https://aka.ms/luis-what-is-luis
-[7]:https://aka.ms/botbuilder-luis-concept?view=azure-bot-service-4.0
+[6]:/azure/cognitive-services/luis/what-is-luis
+[7]:../v4sdk/bot-builder-concept-luis.md
 [8]:../file-format/bot-builder-lu-file-format.md
 [9]:bot-builder-concept-adaptive-expressions.md
 [10]:bot-builder-concept-adaptive-dialog-memory-states.md
-[11]:https://aka.ms/luis-concept-data-extraction?tabs=v2
-[12]:https://aka.ms/bot-service-add-luis-to-bot
+[11]:/azure/cognitive-services/luis/luis-concept-data-extraction?tabs=V2
+[12]:bot-builder-howto-v4-luis.md
 [13]:https://qnamaker.ai
 [14]:https://azure.microsoft.com/services/cognitive-services/
-[15]:https://aka.ms/adaptive-cards-overview
+[15]:/adaptive-cards
 [recognizers-ref]: ../adaptive-dialog/adaptive-dialog-prebuilt-recognizers.md
 [how-to-deploy-using-luis-cli]: ../v4sdk/bot-builder-howto-bf-cli-deploy-luis.md
 [interruptions]: bot-builder-concept-adaptive-dialog-interruptions.md

@@ -9,18 +9,18 @@ ms.topic: how-to
 ms.service: bot-service
 ms.date: 11/1/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: d737bbf0db4a221cd598842386efa28300293d86
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: d2fddf8fa49d48977437b85c7bc3deef94fee855
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95449471"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577448"
 ---
 # <a name="cross-training-your-luis-and-qna-maker-models"></a>Como fazer um treinamento cruzado dos seus modelos LUIS e QnA Maker
 
 [!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
-Você pode cruzar os `.lu` arquivos e `.qna` para que cada caixa de diálogo adaptável Conheça os recursos das outras caixas de diálogo adaptáveis em seu bot. Isso permite que a caixa de diálogo adaptável ativa seja adiada para outro reconhecedor, na mesma caixa de diálogo ou em outra, quando um usuário insere uma solicitação ou entrada que não pode ser manipulada por conta própria.
+Você pode cruzar os arquivos. Lu e. QnA para que cada caixa de diálogo adaptável Conheça os recursos das outras caixas de diálogo adaptáveis em seu bot. Isso permite que a caixa de diálogo adaptável ativa seja adiada para outro reconhecedor, na mesma caixa de diálogo ou em outra, quando um usuário insere uma solicitação ou entrada que não pode ser manipulada por conta própria.
 
 ## <a name="introduction-to-cross-training"></a>Introdução ao treinamento cruzado
 
@@ -80,17 +80,17 @@ O bot estará esperando uma resposta para a pergunta _qual é a sua data de part
 
 No exemplo acima, quando o usuário solicitou o livro de um vôo, o reconhecedor da caixa de diálogo raiz retornou a `BookFlight` intenção. Isso é executado `flightDialog` , uma caixa de diálogo adaptável que processa vôos de reservas, mas não sabe nada sobre hotéis. Quando o usuário solicita uma reserva de Hotel, a caixa de diálogo voo não pode entender, pois o expressão "preciso reservar uma sala primeiro" não corresponde a nenhuma intenções no modelo de caixas de diálogo de voo LUIS.
 
-Após o treinamento cruzado dos `.lu` arquivos, o bot agora será capaz de detectar que o usuário está solicitando algo que outra caixa de diálogo possa responder, de modo que ele passe a solicitação até seu pai, nesse caso, a caixa de diálogo raiz, que detecta a `BookHotel` intenção. Isso é executado `hotelDialog` , uma caixa de diálogo adaptável que processa reservas de Hotel. Depois que a caixa de diálogo do Hotel concluir a solicitação de reserva do Hotel, o controle será passado de volta para a caixa de diálogo voo para concluir a reserva de voo.
+Após o treinamento cruzado dos arquivos. Lu, seu bot agora será capaz de detectar que o usuário está solicitando algo que outra caixa de diálogo possa responder, de modo que ele passa a solicitação até seu pai, nesse caso, a caixa de diálogo raiz, que detecta a `BookHotel` intenção. Isso é executado `hotelDialog` , uma caixa de diálogo adaptável que processa reservas de Hotel. Depois que a caixa de diálogo do Hotel concluir a solicitação de reserva do Hotel, o controle será passado de volta para a caixa de diálogo voo para concluir a reserva de voo.
 
 #### <a name="cross-train-the-luis-models-of-the-travel-bot"></a>Treine os modelos LUIS do bot de viagem
 
-Para habilitar esse bot de viagem fictícia para lidar com a interrupção no exemplo anterior, você precisa atualizar o modelo LUIS da caixa de diálogo de voo, contido no arquivo **flightDialog.Lu** , para incluir uma nova tentativa chamada `_interruption` e, em seguida, adicionar o declarações para a `BookHotel` intenção. O arquivo **flightDialog.Lu** é usado para criar seu aplicativo Luis associado à caixa de diálogo voo.
+Para habilitar esse bot de viagem fictícia para lidar com a interrupção no exemplo anterior, você precisa atualizar o modelo LUIS da caixa de diálogo de voo, contido no arquivo **flightDialog.Lu** , para incluir uma nova intenção chamada `_interruption` e, em seguida, adicionar o declarações para a `BookHotel` intenção. O arquivo **flightDialog.Lu** é usado para criar seu aplicativo Luis associado à caixa de diálogo voo.
 
 > [!TIP]
 >
 > O treinamento cruzado de todos os modelos de LUIS em um bot típico pode ser um processo muito envolvido e entediante. Há um comando incluído na interface de linha de comando do bot Framework (BF CLI) que automatiza esse trabalho para você. Isso é discutido em detalhes na seção [de comando do bot Framework CLI entre os treinamentos](#the-bot-framework-cli-cross-train-command) abaixo.
 
-Antes dessa atualização, o exemplo de arquivo de reservas de voo `.lu` tem esta aparência:
+Antes dessa atualização, o arquivo de exemplo de reserva de voo. Lu é semelhante a este:
 
 ```lu
 # flightDestination
@@ -100,7 +100,7 @@ Antes dessa atualização, o exemplo de arquivo de reservas de voo `.lu` tem est
 - I need to depart next thursday
 ```
 
-Após o treinamento cruzado com o arquivo de reservas do Hotel `.lu` , ele ficaria assim:
+Após o treinamento cruzado com o arquivo de reservas. Lu do Hotel, ele ficaria assim:
 
 ```lu
 # flightDestination
@@ -125,17 +125,17 @@ O expressão _reserva uma sala de Hotel_ está associado à `_interruption` inte
 
 Um bot bem projetado pode responder a perguntas relevantes de produtos ou serviços feitas por um usuário, independentemente de qual caixa de diálogo está ativa no momento. O LUIS é ideal para lidar com fluxos de conversação, enquanto QnA Maker é ideal para lidar com perguntas frequentes e de usuário. Ter acesso a ambos em suas caixas de diálogo adaptáveis pode melhorar a capacidade de bots para atender às necessidades dos usuários.
 
-Para habilitar esse recurso, _treine o treinamento_ de seus `.lu` `.qna` arquivos e para incluir as informações exigidas pelo reconhecedor para determinar qual resposta, Luis ou QnA Maker, é a mais adequada para o usuário. Para um modelo de LUIS entre treinados com um modelo de QnA Maker, você usará o [conjunto de reconhecedor com treinamento cruzado][cross-trained-recognizer-set-concept].
+Para habilitar essa funcionalidade, _treine_ os arquivos. Lu e. QnA para incluir as informações exigidas pelo reconhecedor para determinar qual resposta, LUIS ou QnA Maker, é a mais adequada para o usuário. Para um modelo de LUIS entre treinados com um modelo de QnA Maker, você usará o [conjunto de reconhecedor com treinamento cruzado][cross-trained-recognizer-set-concept].
 
-Antes de criar seus aplicativos LUIS e QnA Maker base de dados de conhecimento, você precisa _treinar_ seus `.lu` `.qna` arquivos e para incluir as informações exigidas pelo reconhecedor do bot para determinar se o Luis ou a resposta de QnA Maker é mais adequada para o usuário.
+Antes de criar seus aplicativos LUIS e QnA Maker base de dados de conhecimento, você precisa _treinar_ os arquivos. Lu e. QnA para incluir as informações exigidas pelo reconhecedor do bot para determinar se o Luis ou a resposta QnA Maker é mais adequada para o usuário.
 
-Para cada caixa de diálogo adaptável que tem um `.lu` arquivo e associado `.qna` , as seguintes atualizações são feitas quando há treinamento cruzado nestes arquivos:
+Para cada caixa de diálogo adaptável que tem um arquivo. Lu e. QnA associado, as seguintes atualizações são feitas durante o treinamento cruzado desses arquivos:
 
-1. Em `.lu` arquivos, uma nova tentativa chamada `DeferToRecognizer_qna_<dialog-file-name>` é adicionada. Cada variação de pergunta e pergunta do `.qna` arquivo correspondente torna-se um expressão associado a essa nova intenção.<!-- Answers are not copied to the `.lu` file from the `.qna` file.-->
+1. Em arquivos. Lu, uma nova tentativa chamada `DeferToRecognizer_qna_<dialog-file-name>` é adicionada. Cada variação de pergunta e pergunta do arquivo. QnA correspondente torna-se um expressão associado a essa nova intenção.<!-- Answers are not copied to the .lu file from the .qna file.-->
 
-1. Em `.qna` arquivos, uma nova resposta chamada `intent=DeferToRecognizer_luis_<dialog-file-name>` é adicionada, juntamente com cada expressão de cada tentativa no arquivo correspondente `.lu` . Esses declarações se tornam perguntas associadas a essa resposta. Além disso, todos os declarações de arquivos referenciados `.lu` também se tornam perguntas associadas a essa resposta.
+1. Em arquivos. QnA, uma nova resposta chamada `intent=DeferToRecognizer_luis_<dialog-file-name>` é adicionada, juntamente com cada expressão de cada tentativa no arquivo. Lu correspondente. Esses declarações se tornam perguntas associadas a essa resposta. Além disso, todos os declarações dos arquivos. Lu referenciados também se tornam perguntas associadas a essa resposta.
 
-Quando um usuário é inverso com o bot, o `CreateCrossTrainedRecognizer` reconhecedor envia essa entrada do usuário para Luis e a base de dados de conhecimento QnA Maker a ser processada. 
+Quando um usuário é inverso com o bot, o `CreateCrossTrainedRecognizer` reconhecedor envia essa entrada do usuário para Luis e a base de dados de conhecimento QnA Maker a ser processada.
 
 ### <a name="recognizer-responses"></a>Respostas do reconhecedor
 
@@ -154,11 +154,11 @@ A tabela a seguir mostra a matriz de respostas possíveis e a ação resultante 
 >
 > O treinamento cruzado de todos os modelos LUIS e QnA Maker em um bot típico pode ser um processo muito envolvido e entediante. Há um comando incluído na interface de linha de comando do bot Framework (BF CLI) que automatiza esse trabalho para você. Isso é discutido em detalhes na seção [de comando do bot Framework CLI entre os treinamentos](#the-bot-framework-cli-cross-train-command) abaixo.
 >
-> A execução desse comando em um projeto de bot que tenha modelos LUIS e QnA Maker irá automaticamente fazer o treinamento automático do LUIS para o LUIS em todas as caixas de diálogo adaptáveis em todo o projeto, bem como LUIS para QnA Maker o Training em cada caixa de diálogo adaptável que tenha ambos os modelos, ou seja, `.lu` `.qna` arquivos e.
+> A execução desse comando em um projeto de bot que tenha modelos LUIS e QnA Maker irá automaticamente fazer o treinamento automático do LUIS para o LUIS em todas as caixas de diálogo adaptáveis em todo o projeto, bem como LUIS a QnA Maker de treinar em todas as caixas de diálogo adaptáveis que têm ambos os modelos, ou seja, os arquivos. Lu e. QnA.
 
 ### <a name="cross-train-multiple-luis-and-qna-maker-models"></a>Treinamento cruzado de vários modelos de LUIS e de QnA Maker
 
-O treinamento cruzado de um bot com modelos LUIS e de QnA Maker melhora as interrupções globais, conforme descrito anteriormente em [Luis a Luis cross training](#luis-to-luis-cross-training). Isso também se aplica a QnA Maker. Por exemplo: 
+O treinamento cruzado de um bot com modelos LUIS e de QnA Maker melhora as interrupções globais, conforme descrito anteriormente em [Luis a Luis cross training](#luis-to-luis-cross-training). Isso também se aplica a QnA Maker. Por exemplo:
 
 - Quando o modelo LUIS da caixa de diálogo raiz tem treinamento cruzado com o modelo de QnA Maker da caixa de diálogo raiz, o comando cria a `DeferToRecognizer_qna` intenção em RootDialog.Lu, com todas as perguntas listadas como declarações.
 - Em seguida, quando o filho da caixa de diálogo raiz tem treinamento cruzado, ele pega essas intenções e, por sua vez, passa-as para sua caixa de diálogo filho e isso continua até que não haja mais caixas de diálogo filhas.

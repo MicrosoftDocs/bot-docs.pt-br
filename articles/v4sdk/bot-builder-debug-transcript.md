@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservices: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 83a44dcbfb7f99132f681dd33b1944a4112cbd38
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: 170551b010e2071c8839cd3a7923c9224339edf8
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95460940"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577246"
 ---
 # <a name="debug-your-bot-using-transcript-files"></a>Depurar seu bot usando arquivos de transcrição
 
@@ -29,7 +29,7 @@ Um arquivo de transcrição do bot é um arquivo JSON especializado que preserva
 
 ## <a name="creatingstoring-a-bot-transcript-file"></a>Criar/armazenar um arquivo de transcrição de bot
 
-Este artigo mostra como criar arquivos de transcrição de bot usando o [Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator) da Microsoft. Os arquivos de transcrição também podem ser criados programaticamente. Leia mais sobre essa abordagem [aqui](./bot-builder-howto-v4-storage.md#blob-transcript-storage). Neste artigo, usaremos o código de exemplo do Bot Framework para [Multi Turn Prompt Bot](https://aka.ms/cs-multi-prompts-sample) que solicita o modo de transporte, o nome e a idade do usuário, mas qualquer código que possa ser acessado usando o Microsoft Bot Framework Emulator pode ser usado para criar um arquivo de transcrição.
+Este artigo mostra como criar arquivos de transcrição de bot usando o [Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator) da Microsoft. Os arquivos de transcrição também podem ser criados programaticamente; consulte [armazenamento de transcrição de blob](./bot-builder-howto-v4-storage.md#blob-transcript-storage) para ler mais sobre essa abordagem. Neste artigo, usaremos o código de exemplo do Bot Framework para [Multi Turn Prompt Bot](https://aka.ms/cs-multi-prompts-sample) que solicita o modo de transporte, o nome e a idade do usuário, mas qualquer código que possa ser acessado usando o Microsoft Bot Framework Emulator pode ser usado para criar um arquivo de transcrição.
 
 Para iniciar esse processo, verifique se o código do bot que você deseja testar está em execução dentro de seu ambiente de desenvolvimento. Inicie o emulador do bot Framework, selecione o botão _abrir bot_ e insira o endereço do _localhost: porta_ mostrada em seu navegador, seguido por "/API/messages", conforme mostrado na imagem abaixo. Agora, clique no botão _conectar_ para conectar o emulador ao bot.
 

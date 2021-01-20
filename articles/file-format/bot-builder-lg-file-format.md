@@ -9,18 +9,18 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 11ac6f7b366a689b2d554145849f4e4fd86e4acd
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: bf209ede3342c6fc080a6ce20c2c57326f54b266
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94596748"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98576838"
 ---
 # <a name="lg-file-format"></a>Formato de arquivo .lg
 
 [!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
-O arquivo `.lg` descreve os modelos de geração de linguagem com referências de entidade e a respectiva composição. Este artigo aborda os vários conceitos expressos com o formato de arquivo `.lg`.
+O arquivo. LG descreve modelos de geração de linguagem com referências de entidade e sua composição. Este artigo aborda os vários conceitos expressos com o formato de arquivo. LG.
 
 ## <a name="special-characters"></a>Caracteres Especiais
 
@@ -84,7 +84,7 @@ Os **modelos** são o conceito básico do sistema de geração de linguagem. Cad
 
 ### <a name="template-names"></a>Nomes de modelo
 
-Os nomes de modelo diferenciam maiúsculas de minúsculas e podem conter apenas letras, sublinhados, números. Veja a seguir um exemplo de um modelo chamado `TemplateName` . 
+Os nomes de modelo diferenciam maiúsculas de minúsculas e podem conter apenas letras, sublinhados e números. Veja a seguir um exemplo de um modelo chamado `TemplateName` .
 
 ```lg
 # TemplateName
@@ -442,6 +442,7 @@ Use `foo.template1(1,2), foo.template2(['a', 'b', 'c'], ',')` para chamar esses 
 
 - [Referência da API do C#](https://docs.microsoft.com/dotnet/api/microsoft.bot.builder.languagegeneration)
 - [Referência da API JavaScript](https://docs.microsoft.com/javascript/api/botbuilder-lg)
+- Leia [depurar com ferramentas adaptáveis](../bot-service-debug-adaptive-tools.md) para saber como analisar e depurar arquivos. LG.
 
 [1]:https://github.com/Microsoft/botbuilder-tools/blob/master/packages/Ludown/docs/lu-file-format.md
 [3]:../v4sdk/bot-builder-concept-adaptive-expressions.md

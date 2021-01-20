@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 04/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 37380d64ead5c13948259d32a9ea90d58a585ba5
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 8e8de204afc40170e9787eef423ae3d4ce5cc58b
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414517"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577268"
 ---
 # <a name="asking-for-user-input-in-adaptive-dialogs"></a>Solicitar entrada do usuário em caixas de diálogo adaptáveis
 
@@ -52,12 +52,12 @@ Assim como os [prompts][prompts], você pode usar _entradas_ em caixas de diálo
 A biblioteca de diálogos adaptáveis define os seguintes tipos de entrada:
 
 * [A classe base de entrada][inputdialog]. A classe base da qual derivam todas as classes de entrada.
-* [Texto][textinput]. Para solicitar qualquer ***texto com base na**entrada do usuário.
-_ [Number][numberinput]. Para solicitar qualquer entrada ***numérica _ com base no**usuário.
-_ [Confirmação][confirminput]. Para solicitar uma ***confirmação**_ do usuário.
-_ [Múltipla escolha][multiple-choice]. Para solicitar uma seleção de um ***conjunto de opções**_.
+* [Text][textinput]. Para solicitar qualquer ***texto com base na** entrada do usuário.
+_ [Number][numberinput]. Para solicitar qualquer entrada ***numérica _ com base no** usuário.
+_ [Confirmação][confirminput]. Para solicitar uma ***confirmação** _ do usuário.
+_ [Múltipla escolha][multiple-choice]. Para solicitar uma seleção de um ***conjunto de opções** _.
 _ [Arquivo ou anexo][attachmentinput]. Para solicitar/habilitar um usuário para **carregar um arquivo**.
-* [Data ou hora][datetimeinput]. Para solicitar uma ***data e hora**_ de um usuário.
+* [Data ou hora][datetimeinput]. Para solicitar uma ***data e hora** _ de um usuário.
 _ [Logon do OAuth][oauthinput]. Para permitir que os usuários **entrem em um site seguro**.
 
 ## <a name="additional-information"></a>Informações adicionais
@@ -68,9 +68,9 @@ _ [Logon do OAuth][oauthinput]. Para permitir que os usuários **entrem em um si
 [introduction]:bot-builder-adaptive-dialog-introduction.md
 [triggers]:bot-builder-concept-adaptive-dialog-triggers.md
 [actions]:bot-builder-concept-adaptive-dialog-actions.md
-[prompts]:https://aka.ms/bot-builder-concept-dialog#prompts
-[authentication]:https://aka.ms/azure-bot-authentication
-[add-authentication]:https://aka.ms/azure-bot-add-authentication
+[prompts]:bot-builder-concept-waterfall-dialogs.md#prompts
+[authentication]:bot-builder-concept-authentication.md
+[add-authentication]:bot-builder-authentication.md
 [managing-state]:bot-builder-concept-adaptive-dialog-memory-states.md
 [recognizers]:bot-builder-concept-adaptive-dialog-recognizers.md
 [lg-templates]:bot-builder-concept-adaptive-dialog-generators.md

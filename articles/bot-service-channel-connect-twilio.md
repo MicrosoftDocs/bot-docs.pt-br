@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 10/9/2018
-ms.openlocfilehash: cfbabb0d2497d2712cf5a6d19c31082311bfd1b8
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: 41858c85f3f4e262e9bc24597672ae04187a11c0
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95456930"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98576198"
 ---
 # <a name="connect-a-bot-to-twilio"></a>Conectar um bot ao Twilio
 
@@ -73,7 +73,7 @@ Depois que você concluir essas etapas, o bot será configurado com êxito para 
 Assim como o canal disponível no Serviço de Bot do Azure para conectar o bot ao Twilio, você também pode usar o adaptador do Twilio. Neste artigo, você aprenderá a conectar um bot ao Twilio usando o adaptador.  Este artigo explicará como modificar o exemplo EchoBot para conectá-lo a um aplicativo do Twilio.
 
 > [!NOTE]
-> As instruções a seguir abordam a implementação em C# do adaptador do Twilio. Para obter instruções sobre como usar o adaptador JS, parte das bibliotecas BotKit, [consulte a documentação do Twilio sobre BotKit](https://botkit.ai/docs/v4/platforms/twilio.html).
+> As instruções a seguir abordam a implementação em C# do adaptador do Twilio. Para obter instruções sobre como usar o adaptador JS, parte das bibliotecas BotKit, [consulte a documentação do Twilio sobre BotKit](https://botkit.ai/docs/v4/platforms/twilio-sms.html).
 
 ### <a name="prerequisites"></a>Pré-requisitos
 
@@ -99,7 +99,7 @@ Agora que você tem seu número e suas credenciais de conta do Twilio, é necess
 
 #### <a name="install-the-twilio-adapter-nuget-package"></a>Instalar o pacote NuGet do adaptador do Twilio
 
-Adicione o pacote NuGet [Microsoft.Bot.Builder.Adapters.Twilio](https://www.nuget.org/packages/Microsoft.Bot.Builder.Adapters.Twilio/). Para obter mais informações sobre como usar o NuGet, confira [Instalar e gerenciar pacotes no Visual Studio](https://aka.ms/install-manage-packages-vs).
+Adicione o pacote NuGet [Microsoft.Bot.Builder.Adapters.Twilio](https://www.nuget.org/packages/Microsoft.Bot.Builder.Adapters.Twilio/). Para obter mais informações sobre como usar o NuGet, confira [Instalar e gerenciar pacotes no Visual Studio](/nuget/tools/package-manager-ui).
 
 #### <a name="create-a-twilio-adapter-class"></a>Criar uma classe de adaptador do Twilio
 
@@ -186,7 +186,7 @@ public void ConfigureServices(IServiceCollection services)
 
 Agora que você conectou o adaptador em seu projeto de bot, é necessário identificar o ponto de extremidade correto a ser fornecido ao Twilio a fim de verificar se seu bot recebe mensagens. Você também precisará dessa URL para concluir a configuração do seu aplicativo de bot.
 
-Para concluir esta etapa, [implante o bot no Azure](https://aka.ms/bot-builder-deploy-az-cli) e anote a URL do bot implantado.
+Para concluir esta etapa, [implante o bot no Azure](bot-builder-deploy-az-cli.md) e anote a URL do bot implantado.
 
 > [!NOTE]
 > Se você não estiver pronto para implantar o bot no Azure ou desejar depurar o bot ao usar o adaptador twilio, poderá usar uma ferramenta como [ngrok](https://www.ngrok.com) (que provavelmente já terá instalado se você tiver usado o emulador do bot Framework anteriormente) para realizar o túnel para o bot em execução localmente e fornecer uma URL acessível publicamente para isso. 

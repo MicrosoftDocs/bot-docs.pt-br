@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/14/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 1ad22194783a49508bb445533fdb01f59ee2ffde
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: 85b53c548479a51515fb060793b39aaabdc55a25
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95449231"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577358"
 ---
 # <a name="expire-a-conversation"></a>Expirar uma conversa
 
@@ -253,7 +253,7 @@ async def on_turn(self, turn_context: TurnContext):
     # Set LastAccessedTime to the current time.
     await self.last_accessed_time_property.set(turn_context, now_seconds)
 
-    # Save any state changes that might have ocurred during the turn.
+    # Save any state changes that might have occurred during the turn.
     await self.conversation_state.save_changes(turn_context)
     await self.user_state.save_changes(turn_context)
 ```

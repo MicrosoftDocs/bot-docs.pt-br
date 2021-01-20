@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.service: bot-service
 ms.date: 09/12/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: ca2b201adac7d2c88b3d99f57ff0a46b1be5f483
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: ea6db290707649e348a7cfd4d0ab63ae5978aff0
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92417253"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577388"
 ---
 # <a name="create-customized-lists-of-synonyms-for-your-qna-maker-knowledge-base"></a>Criar listas personalizadas de sinônimos para sua base de dados de conhecimento QnA Maker
 
@@ -49,7 +49,7 @@ Se você já tiver instalado a CLI do bot Framework, poderá pular para [usar os
 
 ## <a name="use-the-qnamaker-cli-commands-to-create-a-list-of-synonyms-for-your-qna-maker-knowledge-base"></a>Use os comandos da CLI do qnamaker para criar uma lista de sinônimos para sua base de dados de conhecimento QnA Maker
 
-Quando você [cria seu modelo de QnA Maker][create-your-qna-maker-model] dois arquivos JSON são criados: o _modelo QnAMaker_, que é nomeado **converted.jsem**e o arquivo de _alterações_ , que é chamado de **alterations_converted.jsem**. Embora o modelo QnAMaker contenha os dados de todos os `.qna` arquivos em seu projeto, todos combinados para formar um único arquivo, o arquivo de alterações contém apenas uma lista de alterações vazia, como mostrado abaixo:
+Quando você [cria seu modelo de QnA Maker][create-your-qna-maker-model] dois arquivos JSON são criados: o _modelo QnAMaker_, que é nomeado **converted.jsem** e o arquivo de _alterações_ , que é chamado de **alterations_converted.jsem**. Embora o modelo QnAMaker contenha os dados de todos os arquivos. QnA em seu projeto, todos combinados para formar um único arquivo, o arquivo de alterações contém apenas uma lista de alterações vazia, como mostrado abaixo:
 
 ```json
 {
@@ -123,7 +123,7 @@ Para obter informações adicionais sobre como usar esse comando, consulte [`bf 
 
 ## <a name="update-the-list-of-alterations-in-your-qna-maker-knowledge-base"></a>Atualizar a lista de alterações em sua base de dados de conhecimento QnA Maker
 
-Embora não haja nenhum comando para atualizar diretamente uma lista de alterações existente no QnA Maker, você pode [usar o comando de _lista de alterações_ ](#download-the-list-of-alterations-in-your-qna-maker-knowledge-base) para baixar a lista de alterações, fazer as modificações necessárias e, em seguida, usar essa nova lista substituir sua lista de alterações no Azure.
+Embora não haja nenhum comando para atualizar diretamente uma lista de alterações existente no QnA Maker, você pode [usar o comando de _lista de alterações_](#download-the-list-of-alterations-in-your-qna-maker-knowledge-base) para baixar a lista de alterações, fazer as modificações necessárias e, em seguida, usar essa nova lista substituir sua lista de alterações no Azure.
 
 1. Obter a lista atual de alterações usando o comando `bf qnamaker:alterations:list`
 

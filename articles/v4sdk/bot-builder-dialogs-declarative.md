@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/25/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: ef653124f3ccda7d68ebfe36ed1c34ed22345730
-ms.sourcegitcommit: e37cf15f4907910560f34445a0fbdd7ae75b4787
+ms.openlocfilehash: 37834d32827231d0a1cabb3a31536659c86344a3
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92440028"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577228"
 ---
 # <a name="create-a-bot-using-declarative-adaptive-dialogs"></a>Criar um bot usando diálogos adaptáveis declarativos  
 
@@ -57,10 +57,10 @@ Esta amostra, o bot de eco declarativo do Diálogo Adaptável do Bot Framework, 
 
 ## <a name="create-the-declarative-files"></a>Criar os arquivos declarativos
 
-Os arquivos de diálogo declarativos são arquivos JSON independentes de linguagem que declaram os elementos de um diálogo, o que significa que eles são os mesmos, independentemente da linguagem usada para criar o bot. Normalmente, eles têm uma extensão de `.dialog`. A amostra do **EchoBot** contém apenas um diálogo adaptável com um gatilho para manipular o evento `UnknownIntent`, que quando disparado envia uma mensagem ao usuário que ecoa o que ele disse: _"You said '${turn.activity.text}'"_ .
+Os arquivos de diálogo declarativos são arquivos JSON independentes de linguagem que declaram os elementos de um diálogo, o que significa que eles são os mesmos, independentemente da linguagem usada para criar o bot. Normalmente, eles têm uma extensão de `.dialog`. O exemplo **EchoBot** contém apenas uma caixa de diálogo adaptável com um gatilho para manipular o `UnknownIntent` evento, que quando ele é disparado, envia uma mensagem para o usuário que ecoa o que ele disse: _"você disse ' $ {Transform. Activity. Text} '"_.
 
 > [!TIP]
-> [O Bot Framework Composer](https://aka.ms/composer) é uma ferramenta de desenvolvimento integrada que os desenvolvedores e as equipes multidisciplinares podem usar para criar bots. Os bots criados pelo Bot Framework Composer são criados usando a abordagem declarativa.
+> [O Bot Framework Composer](/composer/) é uma ferramenta de desenvolvimento integrada que os desenvolvedores e as equipes multidisciplinares podem usar para criar bots. Os bots criados pelo Bot Framework Composer são criados usando a abordagem declarativa.
 
 O [arquivo declarativo][main.dialog] para o exemplo de **EchoBot** :
 
@@ -221,7 +221,7 @@ Nesse caso, como nenhum arquivo de modelo de LG (geração de linguagem) é forn
 [concept-declarative]: bot-builder-concept-adaptive-dialog-declarative.md
 [how-to-adaptive]: bot-builder-dialogs-adaptive.md
 
-[bf-cli]: https://aka.ms/bf-cli-overview
+[bf-cli]: bf-cli-overview.md
 
 [prompting]: bot-builder-prompts.md
 [component-dialogs]: bot-builder-compositcontrol.md
@@ -230,4 +230,4 @@ Nesse caso, como nenhum arquivo de modelo de LG (geração de linguagem) é forn
 
 [main.dialog]: https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/adaptive-dialog/20.EchoBot-declarative/Dialogs/main.dialog
 
-[intelliSense]: https://aka.ms/intellisense-in-visual-studio
+[intelliSense]: /visualstudio/ide/using-intellisense

@@ -9,18 +9,18 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/11/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 7d71203021aefaa92938dc8e176cc490faf5e968
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: ad8b326014a8dd6f0bcedb877ba99b93377db318
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95452140"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577498"
 ---
 # <a name="migration-overview"></a>Visão geral da migração
 
 [!INCLUDE [applies-to-v4](../../includes/applies-to-v4-current.md)]
 
-O Bot Framework SDK v4 se baseia nos comentários dos clientes e na experiência de aprendizado de SDKs anteriores. A nova versão introduz os níveis certos de abstração, ao mesmo tempo permitindo uma arquitetura flexível dos componentes do bot. Isso, por exemplo, permite que você crie um bot simples e, em seguida, expanda-o em termos de sofisticação usando a modularidade e a extensibilidade do SDK v4 do Bot Framework.
+O SDK do bot Framework v4 baseia-se nos comentários dos clientes e na experiência de aprendizagem de SDKs anteriores. Ele apresenta os níveis certos de abstração ao habilitar uma arquitetura de componentes de bot flexível. Entre outras coisas, isso permite que você crie um bot simples e, em seguida, expanda sua sofisticação usando a modularidade e a extensibilidade do SDK do bot Framework v4.
 
 > [!NOTE]
 > O SDK v4 do Bot Framework busca manter a simplicidade e viabilizar tarefas complexas.

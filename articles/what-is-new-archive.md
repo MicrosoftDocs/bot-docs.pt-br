@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 11/13/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 0a00e06a393b4d12bc4ca350fededfc101fade9a
-ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
+ms.openlocfilehash: 2b25c8d787eb33fe852a57ba149c7781b486591f
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97759264"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577518"
 ---
 # <a name="whats-new-august-2020"></a>Novidades de agosto de 2020
 
@@ -223,7 +223,7 @@ Durante essa versão, a Comunidade do Bot Builder aumentou ainda mais a exigênc
 
 ### <a name="bot-framework-composer"></a>Bot Framework Composer
 
-O [Bot Framework Composer](https://docs.microsoft.com/composer/) está em GA (disponibilidade geral) nas plataformas [Windows](https://aka.ms/bf-composer-download-win) | [macOS](https://aka.ms/bf-composer-download-mac) | [Linux](https://aka.ms/bf-composer-download-linux).
+O [Bot Framework Composer](https://docs.microsoft.com/composer/) está em GA (disponibilidade geral) nas plataformas [Windows](https://aka.ms/composer-windows-download) | [macOS](https://aka.ms/composer-mac-download) | [Linux](https://aka.ms/composer-linux-download).
 
 O Bot Framework Composer é uma tela de criação visual para desenvolvedores e equipes multidisciplinares criarem bots. É um aplicativo de conversa de software livre baseado no SDK do Microsoft Bot Framework. No Composer, você encontrará tudo de que precisa para criar uma experiência de conversa sofisticada:
 
@@ -232,9 +232,6 @@ O Bot Framework Composer é uma tela de criação visual para desenvolvedores e 
 * Ferramentas para treinar e gerenciar os componentes de reconhecimento vocal (como LUIS e QnA Maker).
 * Sistemas avançados de criação de modelos e geração de linguagem.
 * Um executável de tempo de execução de bot pronto para uso.
-
-### <a name="additional-information"></a>Informações adicionais
-- Você pode ver os comunicados anteriores [aqui](what-is-new-archive.md).
 
 ## <a name="whats-new-november-2019"></a>Novidades em novembro de 2019
 
@@ -297,9 +294,9 @@ Este artigo resume os principais novos recursos e aprimoramentos no Bot Framewor
 - [SDK do Python do Bot Framework (versão prévia 2)](https://github.com/microsoft/botbuilder-python) | [exemplos](https://github.com/Microsoft/botbuilder-python/tree/master/samples): O SDK do Python agora dá suporte a OAuth, Prompts, CosmosDB e inclui todas as principais funcionalidades no SDK 4.5. Além disso, há exemplos para ajudá-lo a saber mais sobre os novos recursos do SDK.
 
 ### <a name="bot-framework-testing"></a>Testes do Bot Framework
-- [Documentos](https://aka.ms/testing-framework) | Pacotes de teste de unidade ([C#](https://aka.ms/nuget-botbuilder-testing) /  [JavaScript](https://aka.ms/npm-botbuilder-testing)) | [Exemplo](https://aka.ms/cs-core-test-sample)  |  em C# [Exemplo de JS](https://aka.ms/js-core-test-sample): abordar os clientes e os desenvolvedores pedem melhores ferramentas de teste, a versão de julho do SDK apresenta uma nova funcionalidade de teste de unidade. O pacote Microsoft.Bot.Builder.testing simplifica o processo de caixas de diálogo de teste de unidade em seu bot.
+- [Documentos](./v4sdk/unit-test-bots.md) | Pacotes de teste de unidade ([C#](https://aka.ms/nuget-botbuilder-testing) /  [JavaScript](https://aka.ms/npm-botbuilder-testing)) | [Exemplo](https://aka.ms/cs-core-test-sample)  |  em C# [Exemplo de JS](https://aka.ms/js-core-test-sample): abordar os clientes e os desenvolvedores pedem melhores ferramentas de teste, a versão de julho do SDK apresenta uma nova funcionalidade de teste de unidade. O pacote Microsoft.Bot.Builder.testing simplifica o processo de caixas de diálogo de teste de unidade em seu bot.
 
-- [Testes de canal](https://github.com/Microsoft/BotFramework-Emulator/releases) | [docs](https://aka.ms/channel-testing):
+- [Testes de canal](https://github.com/Microsoft/BotFramework-Emulator/releases) | [docs](bot-service-debug-inspection-middleware.md):
 
 Introduzido no Microsoft Build 2019, o Inspetor de Bot é um novo recurso no Bot Framework Emulator que permite depurar e testar bots em canais como Microsoft Teams, Slack, Cortana e muito mais. Conforme você usa o bot em canais específicos, as mensagens serão espelhadas para o Bot Framework Emulator, no qual você poderá inspecionar os dados da mensagem que o bot tiver recebido. Além disso, é renderizado um instantâneo do estado da memória do bot em todos os turnos entre o canal e o bot.
 
@@ -427,7 +424,7 @@ Os [Cartões Adaptáveis](https://adaptivecards.io) são um padrão aberto para 
 [31]:https://docs.microsoft.com/azure/cognitive-services/LUIS/Home
 [32]:v4sdk/bot-builder-howto-v4-luis.md
 [33]:https://www.qnamaker.ai/
-[34]:https://aka.ms/what-is-qnamaker
+[34]:/azure/cognitive-services/qnamaker/overview/overview
 [35]:v4sdk/bot-builder-howto-qna.md
 
 [40]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/experimental/common-expression-language#readme

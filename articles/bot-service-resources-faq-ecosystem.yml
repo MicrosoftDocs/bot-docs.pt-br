@@ -1,0 +1,177 @@
+### YamlMime:FAQ
+metadata:
+  title: Perguntas frequentes sobre o ecossistema do bot Framework
+  description: Respostas para perguntas frequentes sobre o ecossistema comum.
+  services: service
+  ms.service: bot-service
+  ms.topic: article
+  author: mmiele
+  ms.author: botcc
+  ms.date: 01/06/2020
+  ms.openlocfilehash: cffaf109ea7996fdafe786cd2a7b790075f9e2c5
+  ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
+  ms.translationtype: MT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 01/19/2021
+  ms.locfileid: "98579710"
+title: Perguntas frequentes sobre o ecossistema do bot Framework
+summary: >
+  [!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
+
+
+  Este artigo responde às perguntas frequentes sobre o ecossistema.
+sections:
+- name: Ecossistema
+  questions:
+  - question: Como fazer habilitar o emulador para se conectar ao localhost enquanto estiver atrás de um proxy corporativo?
+    answer: >
+      Ao desenvolver um bot em um ambiente corporativo, normalmente, o proxy bloqueará a conexão, a menos que você especifique que ela deve ser ignorada para o `localhost` .
+
+      Para fazer isso em seu computador local, você deve definir a seguinte variável de ambiente:
+
+
+      ```cmd
+
+      NO_PROXY=localhost
+
+      ```
+
+      Para saber mais, consulte [Definir as configurações de proxy](bot-service-debug-emulator.md#configure-proxy-settings).
+  - question: Quando vocês adicionarão mais experiências de conversa ao Bot Framework?
+    answer: >
+      Estamos planejando fazer melhorias contínuas no Bot Framework, incluindo canais adicionais, mas não podemos fornecer um prazo no momento.
+
+      Se você quiser um canal específico adicionado à estrutura, [informe-nos] [suporte].
+  - question: Tenho um canal de comunicação que desejo tornar configurável com o Bot Framework. Posso trabalhar com a Microsoft para fazer isso?
+    answer: >
+      Não fornecemos um mecanismo geral para os desenvolvedores adicionarem novos canais à estrutura de bot, mas você pode conectar seu bot ao seu aplicativo por meio da [API de linha direta] [DirectLineAPI].
+
+      Se você for um desenvolvedor de um canal de comunicação e quiser trabalhar conosco para habilitar seu canal na estrutura de bot [gostaríamos de ouvir de você] [suporte].
+  - question: Se eu quiser criar um bot para o Microsoft Teams, quais ferramentas e serviços deverei usar?
+    answer: >
+      O Bot Framework foi projetado para criar, conectar e implantar bots escalonáveis, dinâmicos e de alto desempenho e alta qualidade no Teams e em muitos outros canais.
+
+      O SDK pode ser usado para criar bots compatíveis com texto/SMS, imagem, botão e cartão (que constituem a maior parte das interações de bot hoje nas experiências de conversa), bem como interações de bot específicas do Teams, tais como experiências avançadas de áudio e vídeo.
+
+
+      Caso você já tenha um bot excelente, mas queira alcançar o público-alvo do Teams, o bot poderá ser conectado com facilidade ao Teams (ou a qualquer canal compatível) por meio do Bot Framework para a API REST (desde que ele tenha um ponto de extremidade REST acessível pela Internet).
+  - question: Como fazer para criar um bot que usa o data center do Governo dos EUA?
+    answer: >
+      Há duas etapas principais necessárias para criar um bot que usa um data center do Governo dos EUA.
+
+      1. Adicione uma configuração de provedor de canal no seu **appsettings.jsem** (ou as configurações do serviço de aplicativo).
+
+      Isso precisa ser definido especificamente para esta constante de nome/valor: ChannelService = "https://botframework.azure.us". Um exemplo que usa **appsettings.jsem** é mostrado abaixo.
+
+          ```json
+          {
+            "MicrosoftAppId": "",
+            "MicrosoftAppPassword": "",
+            "ChannelService": "https://botframework.azure.us"
+          }
+          ```
+      1. Se estiver usando o .NET Core, você precisará adicionar um ConfigurationChannelProvider em seu arquivo startup.cs.
+
+      O modo como você faz isso varia de acordo com qual versão do SDK você está usando.
+          - Para a 4.3 e versões superiores, no método ConfigureServices, você precisará criar uma instância de ConfigurationChannelProvider.
+            Ao usar a classe BotFrameworkHttpAdapter, você injeta isso como singleton na coleção de serviços desta maneira:
+
+            ```csharp
+            services.AddSingleton<IChannelProvider, ConfigurationChannelProvider>();
+            ```
+          - Para versões anteriores à 4.3, no método ConfigureServices, encontre o método AddBot. Ao definir as opções, verifique se você adicionou:
+
+            ```csharp
+            options.ChannelProvider = new ConfigurationChannelProvider();
+            ```
+      A documentação do Azure governamental descreve quais [recursos do serviço de bot do Azure são suportados](https://docs.microsoft.com/azure/azure-government/documentation-government-services-aiandcognitiveservices#azure-bot-service).
+  - question: O que é o canal da Linha Direta?
+    answer: >
+      Linha Direta é uma API REST que permite que você adicione o bot ao serviço, ao aplicativo móvel ou à página da Web.
+
+      Você pode escrever um cliente para a API de Linha Direta em qualquer linguagem. Basta codificar para o [protocolo de linha direta] [DirectLineAPI], gerar um segredo na página de configuração de linha direta e conversar com o bot de onde o código reside.
+
+
+      A Linha Direta é adequada para:
+
+
+      - Aplicativos móveis no iOS, no Android e no Windows Phone e outros
+
+      - Aplicativos da área de trabalho no Windows, no OSX e muito mais
+
+      - Páginas da Web em que você precisa de mais personalização do que o [canal de bate-papo de Internet incorporável] ofertas
+
+      - Aplicativos de serviço a serviço
+  - question: Quais são as etapas para configurar o chat da Web e a linha direta para o Azure governamental?
+    answer: >
+      As etapas para configurar o chat da Web e a linha direta para o Azure governamental são semelhantes às usadas para o Azure público.
+
+      No Azure governamental, você define o [domínio](https://github.com/microsoft/BotFramework-WebChat/blob/master/packages/bundle/src/createDirectLine.js#L6) para a URL do Azure governamental porque o [domínio padrão](https://github.com/microsoft/BotFramework-DirectLineJS/blob/master/src/directLine.ts#L456) se aplica ao Azure público, não ao Azure governamental.
+
+      Observe que a URL pública do Azure ( `https://webchat.botframework.com/v3/directline` ) é diferente da URL do Azure governamental ( `https://webchat.botframework.azure.us/v3/directline` ) para o chat da Web e a configuração de linha direta.
+
+      O exemplo a seguir mostra como definir o domínio para a URL do Azure governamental:
+
+
+      ```html
+
+      <body>
+          <div id="webchat" role="main"></div>
+          <script>
+            window.WebChat.renderWebChat(
+              {
+                directLine: window.WebChat.createDirectLine({
+                  token: 'YOUR_TOKEN_SECRET',
+                  domain: 'https://webchat.botframework.azure.us/v3/directline'
+                }),
+                userID: 'YOUR_USER_ID',
+                username: 'Web Chat User',
+                locale: 'en-US',
+                botAvatarInitials: 'WC',
+                userAvatarInitials: 'WW'
+              },
+              document.getElementById('webchat')
+            );
+          </script>
+      </body>
+
+      ```
+
+      Saiba mais nos documentos a seguir:
+
+
+      - [Conectar um bot ao Webchat](bot-service-channel-connect-webchat.md)
+
+      - [Conectar um bot à Linha Direta](bot-service-channel-connect-directline.md)
+
+      - Para uma abordagem programática para trocar seu segredo para um token, use o trecho de código fornecido na [opção de inserção de produção](bot-service-channel-connect-webchat.md#production-embedding-option) e ajuste as URLs do Azure público para o Azure governamental.
+  - question: Como o Bot Framework está relacionado aos Serviços Cognitivos?
+    answer: >
+      O Bot Framework e os [Serviços Cognitivos](https://www.microsoft.com/cognitive) são criados com base em anos de pesquisa e uso em produtos populares da Microsoft.
+
+      Essas funcionalidades permitem a todas as organizações aproveitar o poder dos dados, da nuvem e da inteligência a fim de criar os próprios sistemas inteligentes que revelam novas oportunidades, aumentar a velocidade dos negócios e liderar os setores nos quais elas atendem a seus clientes.
+  - question: Quais são as possíveis resoluções legíveis por computador da data, hora, duração interna do LUIS e conjunto de entidades?
+    answer: >
+      Para obter uma lista de exemplos, consulte a seção [Entidades criadas previamente](/azure/cognitive-services/LUIS/luis-reference-prebuilt-entities) da documentação do LUIS.
+  - question: Como posso usar mais que o número máximo de intenções de LUIS?
+    answer: >
+      Você pode considerar dividir o modelo e chamar o serviço de LUIS em série ou paralelo.
+  - question: Como é possível usar mais de um modelo de LUIS?
+    answer: >
+      Tanto o SDK do Bot Framework para Node.js quanto o SDK do Bot Framework para .NET dão suporte a chamada de vários modelos de LUIS a partir de um único diálogo de intenção de LUIS. Tenha em mente as seguintes advertências:
+
+
+      * O uso de vários modelos de LUIS assume que os modelos de LUIS possuem conjuntos de intenções não sobrepostos.
+
+      * O uso de vários modelos de LUIS pressupõe que as pontuações de diferentes modelos sejam comparáveis para selecionar a "melhor intenção combinada" em vários modelos.
+
+      * Usar vários modelos de LUIS significa que, se uma intenção corresponder a um modelo, também corresponderá fortemente à intenção "nenhum" dos outros modelos. Evite selecionar a intenção "nenhum" nessa situação, já que o SDK do Bot Framework para Node.js reduzirá automaticamente a pontuação para "nenhum" para evitar esse problema.
+  - question: Onde é possível obter mais ajuda sobre o LUIS?
+    answer: >-
+      - [Introdução ao LUIS (Serviço Inteligente de Reconhecimento Vocal) - Serviços Cognitivos da Microsoft](https://www.youtube.com/watch?v=jWeLajon9M8) (vídeo)
+
+      - [Sessão de Aprendizado Avançado para LUIS (Serviço Inteligente de Reconhecimento Vocal)](https://www.youtube.com/watch?v=39L0Gv2EcSk) (vídeo)
+
+      - [Documentação do LUIS](/azure/cognitive-services/luis/)
+
+      - [Fórum do Serviço Inteligente de Reconhecimento Vocal](https://social.msdn.microsoft.com/forums/azure/home?forum=LUIS)

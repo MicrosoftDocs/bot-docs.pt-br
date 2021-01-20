@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 5/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 9813f84937d2366d7b4b754ba6a1b0c1a022bab7
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: f7c7f46f891fdcd8938ce93a4b69ff635a0c56a0
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95454790"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98576818"
 ---
 # <a name="use-language-generation-templates-in-your-bot"></a>Usar modelos de geração de linguagem em seu bot
 
@@ -186,9 +186,9 @@ Para obter mais informações sobre a função `ActivityAttachment()`, leia [Inj
 
 Depois de atualizar a lógica do bot e os modelos LG, você estará pronto para adicionar o LUIS ao bot. Siga as etapas nas seções abaixo para adicionar o LUIS ao bot:
 
-- [Criar um aplicativo LUIS no portal do LUIS](https://aka.ms/bot-service-add-luis-to-bot#create-a-luis-app-in-the-luis-portal).
-- [Recuperar as informações do aplicativo no portal LUIS](https://aka.ms/bot-service-add-luis-to-bot##retrieve-application-information-from-the-luisai-portal)
-- [Atualizar o arquivo de configurações do bot](https://aka.ms/bot-service-add-luis-to-bot#update-the-settings-file)
+- [Criar um aplicativo LUIS no portal do LUIS](../v4sdk/bot-builder-howto-v4-luis.md#create-a-luis-app-in-the-luis-portal).
+- [Recuperar as informações do aplicativo no portal LUIS](../v4sdk/bot-builder-howto-v4-luis.md#retrieve-application-information-from-the-luisai-portal)
+- [Atualizar o arquivo de configurações do bot](../v4sdk/bot-builder-howto-v4-luis.md#update-the-settings-file)
 
 ## <a name="test-the-bot"></a>Testar o bot
 

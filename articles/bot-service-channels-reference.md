@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 05/19/2020
-ms.openlocfilehash: d8c6b6bd2b0cc1e1027571937d01b7250b652595
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 90bd3e1214910fd6543e316d376fc36f25b543ca
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92415293"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98576108"
 ---
 # <a name="categorized-activities-by-channel"></a>Atividades categorizadas por canal
 
@@ -262,9 +262,9 @@ A tabela a seguir mostra o número máximo de Ações Sugeridas e Ações de Car
 
 Para obter mais informações sobre os números mostrados na tabela acima, confira o código de suporte ao canal listado [aqui](https://aka.ms/channelactions). 
 
-Para obter mais informações sobre as _Ações Sugeridas_, consulte o artigo [Usar botão para entrada](https://aka.ms/howto-add-buttons).
+Para obter mais informações sobre as _Ações Sugeridas_, consulte o artigo [Usar botão para entrada](./v4sdk/bot-builder-howto-add-suggested-actions.md).
 
-Para obter mais informações sobre _Ações de Cartão_, consulte a seção [Enviar um cartão Hero](https://aka.ms/howto-add-media#send-a-hero-card) do artigo _Adicionar mídia a mensagens_.
+Para obter mais informações sobre _Ações de Cartão_, consulte a seção [Enviar um cartão Hero](./v4sdk/bot-builder-howto-add-media-attachments.md?view=azure-bot-service-4.0#send-a-hero-card) do artigo _Adicionar mídia a mensagens_.
 
 ## <a name="card-support-by-channel"></a>Suporte a cartão por canal
 

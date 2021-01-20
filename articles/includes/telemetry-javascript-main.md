@@ -1,15 +1,15 @@
 ---
-ms.openlocfilehash: 95a595f1314ce9e6091a0065039c362d446cbc65
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: 331a0545971eb897655a5c25c6ae4f2c3fe25476
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95554665"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577158"
 ---
 Este artigo começa com o [aplicativo de exemplo CoreBot](https://aka.ms/js-core-sample) e adiciona o código necessário para integrar a telemetria em qualquer bot. Isso permitirá que o Application Insights comece a acompanhar as solicitações.
 
 > [!IMPORTANT]
-> Se você não configurou sua conta de [Application insights](https://aka.ms/appinsights-overview) e criou sua [chave de Application insights](../bot-service-resources-app-insights-keys.md), faça isso antes de continuar.
+> Se você não configurou sua conta de [Application insights](/azure/azure-monitor/app/app-insights-overview) e criou sua [chave de Application insights](../bot-service-resources-app-insights-keys.md), faça isso antes de continuar.
 
 1. Abra o [aplicativo de exemplo CoreBot](https://aka.ms/js-core-sample) em Visual Studio Code.
 
