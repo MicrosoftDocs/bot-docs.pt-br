@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4834b147610c8520b412b931c5c608aaeff1a7e9
-ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
+ms.openlocfilehash: 0aedc195858206533af910460a089862f7c85760
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97762581"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98605365"
 ---
 Alguns canais fornecem recursos que não podem ser implementados apenas com o uso de texto e anexos da mensagem. Para implementar funcionalidades específicas do canal, passe metadados nativos para um canal na propriedade _dados do canal_ do objeto da atividade. Por exemplo, o bot pode usar a propriedade dados do canal para instruir o Telegram a enviar um adesivo ou para instruir o Office 365 a enviar um email.
 
@@ -482,7 +482,7 @@ Este snippet mostra um exemplo de uma propriedade `channelData` que especifica u
 ## <a name="adding-a-bot-to-teams"></a>Adicionar um bot ao Teams
 
 Os bots adicionados a uma equipe se tornam outro membro da equipe, que pode ser `@mentioned` como parte da conversa. Na verdade, os bots só recebem mensagens quando são `@mentioned`; portanto, outras conversas no canal não são enviadas para o bot.
-Para saber mais, confira [Conversas de chat de canal e grupo com um bot do Microsoft Teams](https://aka.ms/bots-con-channel).
+Para saber mais, confira [Conversas de chat de canal e grupo com um bot do Microsoft Teams](/microsoftteams/platform/concepts/bots/bot-conversations/bots-conv-channel).
 
 Como os bots em um grupo ou canal respondem apenas quando são mencionados (`@botname`) em uma mensagem, cada mensagem recebida por um bot em um canal de grupo contém seu próprio nome, e você deve verificar se a análise de mensagens manipula isso. Além disso, os bots podem analisar outros usuários mencionados e mencionar os usuários como parte de suas mensagens.
 

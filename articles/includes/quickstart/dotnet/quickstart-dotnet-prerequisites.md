@@ -1,17 +1,17 @@
 ---
-ms.openlocfilehash: dd7af40d773d2b2664df1cb9ffc3184f6555a822
-ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
+ms.openlocfilehash: 5c3daec20571689b1462ee9b7897bb3bcd394a0d
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97759294"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98605222"
 ---
 <!-- Include under "Prerequisites" header in the files:
 bot-builder-tutorial-create-basic-bot.md and bot-builder-dotnet-sdk-quickstart.md -->
 
 - [Tempo de execução de ASP.NET Core 3,1](https://dotnet.microsoft.com/download)
 - [Emulador do bot Framework](https://aka.ms/bot-framework-emulator-readme)
-- Conhecimento de [ASP.NET Core](https://docs.microsoft.com/aspnet/core/) e [programação assíncrona em C#](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/index)
+- Conhecimento de [ASP.NET Core](/aspnet/core/) e [programação assíncrona em C#](/dotnet/csharp/programming-guide/concepts/async/index)
 
 ### <a name="templates"></a>Modelos
 

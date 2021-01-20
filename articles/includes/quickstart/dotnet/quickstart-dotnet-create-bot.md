@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 1e60cea3e1bda895e46b876aedcbfef8c23ac931
-ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
+ms.openlocfilehash: 39addd1c2d203e8c624fd36215bb756e76b52a71
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97759297"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98605062"
 ---
 <!-- Include under "Create a bot" header in the files:
 bot-builder-tutorial-create-basic-bot.md and bot-builder-dotnet-sdk-quickstart.md -->
@@ -21,7 +21,7 @@ No Visual Studio, crie um projeto de bot usando o modelo **Echo Bot (Bot Framewo
 Graças ao modelo, seu projeto contém todo o código necessário para criar o bot neste início rápido. Você não precisa de nenhum código adicional para testar o bot.
 
 > [!NOTE]
-> Se você optar por criar um bot `Core`, será necessário um modelo de linguagem LUIS. Você pode criar um modelo de linguagem em [Luis.ai](https://www.luis.ai). Após a criação do modelo, atualize o arquivo de configuração.
+> Se você criar um bot _principal_ , precisará de um modelo de linguagem Luis. Você pode criar um modelo de linguagem em [Luis.ai](https://www.luis.ai). Após a criação do modelo, atualize o arquivo de configuração.
 
 <!--
 > [!NOTE]

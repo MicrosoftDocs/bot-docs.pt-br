@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4ed9c6d6b9abccb3c9cda05000aa7ce5392eb0bd
-ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
+ms.openlocfilehash: 8f799820eafaf199a765c7c1e0c52b80bd3695b3
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97759138"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98605298"
 ---
 <!--
  Add this include file under the "Prepare for deployment" header in the file "bot-builder-tutorial-deploy-basic-bot.md".
@@ -12,7 +12,7 @@ ms.locfileid: "97759138"
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-Se você está implantando um bot C#, verifique se ele foi [criado no modo de versão](https://aka.ms/visualstudio-set-debug-release-configurations). No Visual Studio, verifique se a configuração da solução está definida como **Versão** e execute uma recompilação limpa da solução antes de continuar. A implantação poderá falhar se a configuração da solução estiver definida como **depurar**.
+Se você está implantando um bot C#, verifique se ele foi [criado no modo de versão](/visualstudio/debugger/how-to-set-debug-and-release-configurations). No Visual Studio, verifique se a configuração da solução está definida como **Versão** e execute uma recompilação limpa da solução antes de continuar. A implantação poderá falhar se a configuração da solução estiver definida como **depurar**.
 
 Quando você cria um bot usando um [modelo do Visual Studio](../../dotnet/bot-builder-dotnet-sdk-quickstart.md), o código-fonte gerado inclui uma `DeploymentTemplates` pasta que contém modelos ARM. O processo de implantação documentado aqui usa um dos modelos ARM para provisionar os recursos necessários para o bot no Azure usando a CLI do Azure.
 

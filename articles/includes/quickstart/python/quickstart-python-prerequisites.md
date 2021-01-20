@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f38876c50136559e8852010a53dc45c3c783dbcb
-ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+ms.openlocfilehash: 4b18be7884dff162bb76dc3765030b8242fdb08b
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94599938"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98605135"
 ---
 <!-- Include under "Prerequisites" header
 bot-builder-tutorial-create-basic-bot.md and bot-builder-python-quickstart.md -->
@@ -28,7 +28,7 @@ bot-builder-tutorial-create-basic-bot.md and bot-builder-python-quickstart.md --
 1. Para criar sua execução de bot:
 
     ```cmd
-    cookiecutter https://github.com/microsoft/botbuilder-python/releases/download/Templates/echo.zip
+    cookiecutter https://github.com/microsoft/BotBuilder-Samples/releases/download/Templates/echo.zip
     ```
 
     Este comando cria um Bot de Eco com base no [modelo de eco](https://github.com/microsoft/BotBuilder-Samples/tree/master/generators/python/app/templates/echo) do Python.

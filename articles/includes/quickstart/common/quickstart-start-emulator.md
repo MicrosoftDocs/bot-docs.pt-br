@@ -1,23 +1,23 @@
 ---
-ms.openlocfilehash: d982772171bb6e9765aa8667848d76f7a189edb1
-ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
+ms.openlocfilehash: aaf7feba9e1cb6cbc46fb9dd02f754f24134bee5
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97758486"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98605044"
 ---
 <!-- Include under ## Start the Emulator and connect your bot H2 header -->
 
 1. Instale o Emulador do Bot Framework.
 
-1. Clique em **Abrir Bot** na guia **Bem-vindo** do Emulador.
+1. Selecione **bot aberto** na guia de **boas-vindas** do emulador.
 
 1. Insira a URL do bot, que é a URL da porta local, com /api/messages adicionado ao caminho, normalmente `http://localhost:3978/api/messages`.
 
    <!--This is the same process in the Emulator for all three languages.-->
    ![abrir uma tela de bot cs](~/media/python/quickstart/open-bot.png)
 
-1. E clique em **Conectar**.
+1. Depois, selecione **Conectar**.
 
    Envie uma mensagem para o bot e o bot responderá de volta.
 

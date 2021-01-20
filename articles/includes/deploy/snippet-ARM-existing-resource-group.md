@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b584336ea7e157f4dafb0bcbce6af666a1d77a37
-ms.sourcegitcommit: 2f66efadbbbda16fab3258a9d03f4e56821ab412
+ms.openlocfilehash: 07521067cf601d8105943cf4aa682ea9c42fb088
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85073712"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98605090"
 ---
 Nesta etapa, você cria um serviço de aplicativo de bot que define a fase de implantação para o bot. Ao usar um grupo de recursos existente, você pode empregar um plano do serviço de aplicativo existente ou criar um novo. Escolha a opção que funciona melhor para você:
 
@@ -40,9 +40,9 @@ az deployment group create --resource-group "<name-of-resource-group>" --templat
 | local |Local. Valores de: `az account list-locations`. Você pode configurar o local padrão usando `az configure --defaults location=<location>`. |
 | parâmetros | Parâmetros de implantação, fornecidos como uma lista de pares chave=valor. Insira os seguintes valores de parâmetro:
 
-- `appId` – O valor `appId` gerado pela etapa [3.1 Criar o registro de aplicativo](https://docs.microsoft.com/azure/bot-service/bot-builder-deploy-az-cli?view=azure-bot-service-4.0&tabs=csharp#3-create-the-application-registration).
-- `appSecret` – A senha fornecida na etapa [3.1 Criar o registro de aplicativo](https://docs.microsoft.com/azure/bot-service/bot-builder-deploy-az-cli?view=azure-bot-service-4.0&tabs=csharp#3-create-the-application-registration).
+- `appId` – O valor `appId` gerado pela etapa [3.1 Criar o registro de aplicativo](../../bot-builder-deploy-az-cli.md#3-create-the-application-registration).
+- `appSecret` – A senha fornecida na etapa [3.1 Criar o registro de aplicativo](../../bot-builder-deploy-az-cli.md#3-create-the-application-registration).
 - `botId` – um nome para o recurso de Registro de Canais do Bot a ser criado. Deve ser globalmente exclusivo. É usado como a ID do bot imutável. Também é usado como o nome de exibição padrão, que é mutável.
 - `newWebAppName` – um nome para o serviço de aplicativo de bot.
 - `newAppServicePlanName` – um nome para o recurso do plano de serviço de aplicativo a ser criado.
-- `newAppServicePlanLocation` – o local do plano do serviço de aplicativo.
+- `appServicePlanLocation` – o local do plano do serviço de aplicativo.

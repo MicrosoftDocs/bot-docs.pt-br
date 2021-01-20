@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: fa2156a9f35db7a450c02f35bc477415a9185093
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: d59b211ba84dd626f614fa2aff0d97203516f12d
+ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95456772"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98605219"
 ---
 ### <a name="to-set-breakpoints-in-visual-studio-code"></a>Para definir pontos de interrupção no Visual Studio Code
 
@@ -24,4 +24,4 @@ No Visual Studio Code, você pode definir pontos de interrupção e executar o b
 
    ![Depurar Python no VS Code](~/media/bot-service-debug-bot/bot-debug-python-breakpoint-caught.png)
 
-Para obter mais informações, confira [Depurar código em Python](https://aka.ms/bot-debug-python).
+Para obter mais informações, confira [Depurar código em Python](/visualstudio/python/debugging-python-in-visual-studio).
