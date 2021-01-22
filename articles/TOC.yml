@@ -250,6 +250,8 @@
           href: bot-service-debug-inspection-middleware.md
         - name: Depurar seu bot usando arquivos de transcrição
           href: v4sdk/bot-builder-debug-transcript.md
+        - name: Depurar seu bot com Ferramentas Adaptáveis
+          href: bot-service-debug-adaptive-tools.md
     - name: Implantar
       items:
         - name: Implantar seu bot no Azure
