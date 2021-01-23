@@ -9,12 +9,12 @@ ms.service: bot-service
 ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: v-mimiel
-ms.openlocfilehash: 899939e0e064e521459e635beb66457ea89cbecc
-ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
+ms.openlocfilehash: 645336f4c769cb155328462c9f3f76206b7e8334
+ms.sourcegitcommit: 662e41dab1bb35d10f1e50f9f56bd82c901a20e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98576708"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717262"
 ---
 # <a name="connect-a-bot-to-direct-line-speech"></a>Conectar um bot ao Direct Line Speech
 
@@ -22,22 +22,22 @@ ms.locfileid: "98576708"
 
 Este artigo descreve como conectar um bot ao canal de **fala de linha direta**. Use este canal para permitir que os usuários interajam com um bot por meio de voz.
 
-Depois de criar seu bot, integrá-lo ao Direct Line Speech habilitará uma conexão de baixa latência e alta confiabilidade com aplicativos cliente, usando a [SDK de fala](/azure/cognitive-services/speech-service/). Essas conexões são otimizadas para experiências de conversação com entrada e saída de voz. Para obter mais informações sobre o Direct Line Speech e como criar aplicativos cliente, visite a página [personalizar assistente virtual que tem como prioridade o uso da voz](/azure/cognitive-services/Speech-Service/voice-assistants).
+Depois de criar o bot, integrá-lo com a Direct line Speech permitirá uma conexão de alta confiabilidade e baixa latência com aplicativos cliente usando o [SDK de fala](/azure/cognitive-services/speech-service/). Essas conexões são otimizadas para experiências de conversa de voz e saída de voz. Para obter mais informações sobre o Direct Line Speech e como criar aplicativos cliente, visite a página [personalizar assistente virtual que tem como prioridade o uso da voz](/azure/cognitive-services/Speech-Service/voice-assistants).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
  O canal de fala de linha direta requer um recurso de **Serviços cognitivas** , especificamente um recurso de serviço de percepção de **fala** . Você pode usar um grupo de recursos existente ou criar um. Para criar um recurso de fala, siga estas etapas:
 
-1. No navegador, navegue até o [portal do Azure criar recursos](https://ms.portal.azure.com/#create/hub).
-1. No painel esquerdo. clique em **criar um recurso**.
-1. No painel direito, na caixa de pesquisa, digite **fala**.
-1. Na lista suspensa, selecione **fala**. O seguinte resultado é exibido:
+1. No navegador, navegue até o [portal do Azure](https://ms.portal.azure.com/#create/hub) para criar recursos.
+1. No painel esquerdo, clique em **criar um recurso**.
+1. No painel direito, digite **fala** na caixa de pesquisa.
+1. Na lista suspensa, selecione **fala**, que abrirá uma página que descreve esse tipo de recurso.
 
     ![criar recurso cognitivo de fala](media/voice-first-virtual-assistants/create-speech-cognitive-resource.PNG "Criar serviço de cognitiva de fala")
 
 1. Clique em **criar** e siga as etapas do assistente.
 
-    Para obter mais informações, confira [Criar um recurso dos Serviços Cognitivos](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account).
+    Para obter mais informações, confira [Criar um recurso dos Serviços Cognitivos](/azure/cognitive-services/cognitive-services-apis-create-account).
 
 ## <a name="add-the-direct-line-speech-channel"></a>Adicionar o canal do Direct Line Speech
 
@@ -47,7 +47,7 @@ Depois de criar seu bot, integrá-lo ao Direct Line Speech habilitará uma conex
 
     ![selecionar canais](media/voice-first-virtual-assistants/bot-service-channel-directlinespeech-selectchannel.png "selecionar canais")
 
-1. No painel direito, clique no `Direct Line Speech` ícone.
+1. No painel direito, clique no ícone de **fala de linha direta** .
 
     ![selecionar canal do Direct Line Speech](media/voice-first-virtual-assistants/bot-service-channel-directlinespeech-connectspeechchannel.png "conectar o Direct Line Speech")
 

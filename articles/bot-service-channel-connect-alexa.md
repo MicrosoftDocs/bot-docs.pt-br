@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 05/17/2020
-ms.openlocfilehash: 8f578e9aca79954e48977f37c976ce00e7dad9c4
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 3110b4ea5bb791c97b4915bcf301186ca3b5a09b
+ms.sourcegitcommit: 662e41dab1bb35d10f1e50f9f56bd82c901a20e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92415798"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717402"
 ---
 # <a name="connect-a-bot-to-alexa"></a>Conectar um bot ao Alexa
 
@@ -21,7 +21,8 @@ ms.locfileid: "92415798"
 
 Você pode configurar o bot para se comunicar com pessoas usando dispositivos Alexa que dão suporte a Habilidades Personalizadas.
 
-**Importante**: o bot precisa usar o [SDK do Bot Framework](https://github.com/microsoft/botframework-sdk) versão 4.8 ou posterior. Se você criar um bot por meio do portal do Azure, ele terá a versão 4.8 ou posterior. Se você já tiver um bot, poderá precisar atualizar a versão do SDK.
+> [!IMPORTANT]
+> O bot deve usar o [SDK do bot Framework](https://github.com/microsoft/botframework-sdk) versão 4,8 ou posterior. Quando você cria um novo bot por meio do portal do Azure, o bot usará a versão mais recente disponível nesse momento. Se você tiver um bot existente, talvez seja necessário atualizar a versão do SDK.
 
 ## <a name="create-an-alexa-skill"></a>Criar uma habilidade do Alexa
 
@@ -95,7 +96,7 @@ Você pode configurar o bot para se comunicar com pessoas usando dispositivos Al
 
 1. Clique no botão **Salvar Modelo** e em **Criar Modelo**, o que atualizará a configuração da habilidade.
 
-1. Obtenha a **ID de Habilidade do Alexa** na URL do Portal do Alexa ou acessando o [Console do Desenvolvedor do Alexa](https://developer.amazon.com/alexa/console/ask) e clicando em **Exibir ID da Habilidade**. A ID de habilidade do Alexa deverá ter um valor como 'amzn1.ask.skill.A GUID'.
+1. Obtenha sua **ID de habilidade do Alexa** da URL no portal do Alexa ou acessando o [console do desenvolvedor do Alexa](https://developer.amazon.com/alexa/console/ask) e clicando em **exibir ID da habilidade**. Sua ID de habilidade do Alexa deve ser um valor como ' amzn1. Ask. Skill. A GUID '.
 
 1. No Portal do Bot Framework, navegue até a página Configuração do Canal do Alexa e cole a **ID de Habilidade do Alexa** no campo **Insira a ID da Habilidade**.
 

@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/19/2020
-ms.openlocfilehash: aef98079a029e8701fe130dd7f9d5a78970d9641
-ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
+ms.openlocfilehash: a50c0b794564c3603e8f0616c45ee4bf1eabbe37
+ms.sourcegitcommit: 662e41dab1bb35d10f1e50f9f56bd82c901a20e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97759660"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717482"
 ---
 # <a name="direct-line-enhanced-authentication"></a>Autenticação avançada de linha direta
 
@@ -55,7 +55,7 @@ A representação refere-se à ação de um invasor que faz com que o bot ache q
 
 A falsificação de identidades refere-se à ação de um invasor que assume a identidade de um usuário legítimo e, em seguida, usa essa identidade para realizar uma meta mal-intencionada.
 
-Quando um bot solicita que o usuário do canal a entre em um provedor de identidade, o processo de entrada deve garantir que o usuário a é o único que entra no provedor. Se outro usuário B também tiver permissão para entrar no provedor, ele teria acesso ao usuário a recursos por meio do bot.
+Quando um bot solicita que o usuário do canal a entre em um provedor de identidade, o processo de entrada deve garantir que o usuário a é o único que entra no provedor. Se outro usuário também tiver permissão para entrar no provedor, ele teria acesso ao usuário a recursos por meio do bot.
 
 ### <a name="user-identity-spoofing-mitigation"></a>Mitigação de falsificação de identidade do usuário
 
@@ -64,7 +64,7 @@ No controle de chat da Web, há dois mecanismos para garantir que o usuário apr
 1. **Código mágico**. No final do processo de entrada, o usuário recebe um código de 6 dígitos gerado aleatoriamente (*código mágico*). O usuário deve digitar esse código na conversa para concluir o processo de entrada. Isso tende a resultar em uma experiência de usuário inadequada. Além disso, ele ainda está suscetível a ataques de phishing. Um usuário mal-intencionado pode induzir outro usuário a se conectar e a obter o código mágico por meio de phishing.
 
     >[!WARNING]
-    > O uso do código mágico é preterido. Em vez disso, é recomendável usar a abordagem de **Autenticação avançada de linha direta** , descrita abaixo.
+    > O uso do código mágico foi preterido. Em vez disso, é recomendável usar a abordagem de **Autenticação avançada de linha direta** , descrita abaixo.
 
 1. **Autenticação avançada de linha direta**. Devido aos problemas com a abordagem do *código mágico* , o serviço de bot do Azure removeu sua necessidade. O Serviço de Bot do Azure garante que o processo de conexão só possa ser concluído na **mesma sessão do navegador** que a do próprio Webchat.
 Para habilitar essa proteção, você deve iniciar o chat Web com um **token de linha direta** que contém uma **lista de domínios confiáveis que podem hospedar o cliente de chat da Web do bot**. Com as opções de autenticação avançadas, você pode especificar estaticamente a lista de domínios confiáveis (origens confiáveis) na página de configuração de linha direta. Consulte a seção [Configurar Autenticação avançada](../bot-service-channel-connect-directline.md#configure-enhanced-authentication) .
@@ -75,11 +75,11 @@ O código neste artigo baseia-se no exemplo: [MVC directize token Controller](ht
 
 Para executar o exemplo, execute as seguintes etapas:
 
-1. Se você não tiver um bot, crie um básico conforme mostrado neste artigo: [tutorial: criar um bot básico](bot-builder-tutorial-create-basic-bot.md).
-1. Conecte o canal de linha direta ao bot. Siga as etapas descritas neste artigo: [conectar um bot à linha direta](../bot-service-channel-connect-directline.md).
+1. Se você não tiver um bot, poderá consultar o tutorial [criar um bot básico](bot-builder-tutorial-create-basic-bot.md) para criar um.
+1. Conecte o canal de linha direta ao bot. Siga as etapas descritas no artigo [conectar um bot à linha direta](../bot-service-channel-connect-directline.md).
 1. Ao conectar o bot à linha direta, habilite a opção de [Autenticação avançada](../bot-service-channel-connect-directline.md#configure-settings) .
 1. Copie e armazene com segurança a chave secreta.
-1. Por fim, atribua a chave secreta na classe de exemplo `HomeController` , conforme mostrado abaixo.
+1. Por fim, atribua a chave secreta na `HomeController` classe, conforme mostrado abaixo.
 
     [!code-csharp[cs sample](~/../botbuilder-samples/experimental/DirectLineTokenSite/Bot_Auth_DL_Secure_Site_MVC/Controllers/HomeController.cs?range=15-19&highlight=3-4)]
 

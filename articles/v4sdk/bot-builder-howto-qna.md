@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 06/02/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: c6a5dfe015dc1973ec053e8eb53e99172f7c8ae2
-ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
+ms.openlocfilehash: c779e5704133f4195a876c2de309a8a973c77dbd
+ms.sourcegitcommit: 662e41dab1bb35d10f1e50f9f56bd82c901a20e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98577188"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717582"
 ---
 # <a name="use-qna-maker-to-answer-questions"></a>Usar o QnA Maker para responder a perguntas
 
@@ -28,7 +28,7 @@ Um dos requisitos básicos para a criação de seu próprio serviço QnA Maker �
 
 - Uma conta do [QnA Maker](https://www.qnamaker.ai/)
 - Conhecimento das [Noções básicas do bot](bot-builder-basics.md), do [QnA Maker](https://docs.microsoft.com/azure/cognitive-services/qnamaker/overview/overview) e do [gerenciamento de recursos do bot](bot-file-basics.md).
-- Uma cópia da amostra do **QnA Maker**. Você precisará de uma cópia dela em [**C#**](https://aka.ms/cs-qna), [**JavaScript**](https://aka.ms/js-qna-sample) ou [**Python**](https://aka.ms/bot-qna-python-sample-code).
+- Uma cópia do exemplo de **QnA Maker (simples)** em [**C#**](https://aka.ms/cs-qna), [**JavaScript**](https://aka.ms/js-qna-sample)ou [**Python**](https://aka.ms/bot-qna-python-sample-code).
 
 ## <a name="about-this-sample"></a>Sobre este exemplo
 
@@ -38,19 +38,19 @@ Para usar o QnA Maker em seu bot, você precisa criar uma base de dados de conhe
 
 ![Fluxo lógico do QnABot](./media/qnabot-logic-flow.png)
 
-`OnMessageActivityAsync` é chamado em cada entrada do usuário recebida. Quando chamado, ele acessa informações de `_configuration`, armazenadas no arquivo de `appsetting.json` do código de exemplo para localizar o valor a ser conectado à sua base de dados de conhecimento pré-configurada do QnA Maker.
+`OnMessageActivityAsync` é chamado em cada entrada do usuário recebida. Quando chamado, ele acessa `_configuration` as informações armazenadas naappsetting.jsdo código de exemplo **no** arquivo para localizar o valor a ser conectado à sua base de dados de conhecimento pré-configurada QnA Maker.
 
 ## <a name="javascript"></a>[JavaScript](#tab/js)
 
 ![Fluxo lógico do QnABot JS](./media/qnabot-js-logic-flow.png)
 
-`OnMessage` é chamado em cada entrada do usuário recebida. Quando chamado, ele acessa seu conector `qnamaker`, que foi pré-configurado usando os valores fornecidos no arquivo `.env` do seu código de exemplo.  O método `getAnswers` do qnamaker conecta o bot à sua base de dados de conhecimento externa do QnA Maker.
+`OnMessage` é chamado em cada entrada do usuário recebida. Quando chamado, ele acessa o `qnamaker` conector que foi pré-configurado usando os valores fornecidos do arquivo **. env** do código de exemplo.  O método `getAnswers` do qnamaker conecta o bot à sua base de dados de conhecimento externa do QnA Maker.
 
 ## <a name="python"></a>[Python](#tab/python)
 
 ![Fluxo lógico do Python QnABot](./media/qnabot-python-logic-flow.png)
 
-`on_message_activity` é chamado em cada entrada do usuário recebida. Quando chamado, ele acessa seu conector `qna_maker`, que foi pré-configurado usando os valores fornecidos no arquivo `config.py` do seu código de exemplo.  O método `qna_maker.getAnswers` conecta o bot à sua base de dados de conhecimento externa do QnA Maker.
+`on_message_activity` é chamado em cada entrada do usuário recebida. Quando chamado, ele acessa o `qna_maker` conector que foi pré-configurado usando os valores fornecidos do arquivo **config.py** do código de exemplo.  O método `qna_maker.getAnswers` conecta o bot à sua base de dados de conhecimento externa do QnA Maker.
 
 ---
 
@@ -59,7 +59,7 @@ A entrada do usuário é enviada à sua base de dados de conhecimento e a melhor
 ## <a name="create-a-qna-maker-service-and-publish-a-knowledge-base"></a>Criar um serviço do QnA Maker e publicar uma base de Conhecimento
 
 1. Crie um serviço do QnA Maker.
-1. Crie uma base de dados de conhecimento usando o arquivo **smartLightFAQ.tsv** localizado na pasta CognitiveModels do projeto de amostra. Nomeie a sua base de dados de conhecimento `qna` e use o arquivo **smartLightFAQ.tsv** para preenchê-la.
+1. Crie uma base de dados de conhecimento usando o arquivo **smartLightFAQ.tsv** localizado na pasta CognitiveModels do projeto de amostra. Nomeie sua base de dados de conhecimento **QnA** e use o arquivo **smartLightFAQ. tsv** para preenchê-lo.
 
 Você também pode usar essas etapas para acessar as suas próprias bases de dados de conhecimento do QnA Maker.
 
@@ -69,17 +69,17 @@ Você também pode usar essas etapas para acessar as suas próprias bases de dad
 ## <a name="obtain-values-to-connect-your-bot-to-the-knowledge-base"></a>Obtenha os valores para conectar seu bot à base de conhecimento
 
 1. No site do [QnA Maker](https://www.qnamaker.ai/), selecione sua base de conhecimento.
-1. Com sua base de conhecimento aberta, selecione **Settings** (Configurações). Registre o valor mostrado para o _nome do serviço_. Esse valor é útil para localizar sua base de dados de conhecimento de interesse ao usar a interface do portal do QnA Maker. Ele não é usado para conectar seu aplicativo bot a esta base de dados de conhecimento.
-1. Role a tela para baixo até encontrar **Detalhes da implantação** e registre estes valores na solicitação HTTP do exemplo Postman:
+1. Com sua base de dados de conhecimento aberta, selecione a guia **configurações** . Registre o valor mostrado para o _nome do serviço_. Esse valor é útil para localizar sua base de dados de conhecimento de interesse ao usar a interface do portal do QnA Maker. Ele não é usado para conectar seu aplicativo bot a esta base de dados de conhecimento.
+1. Role para baixo até encontrar **detalhes de implantação** e registre os seguintes valores da solicitação HTTP de exemplo do postmaster:
    - POST /knowledgebases/\<knowledge-base-id>/generateAnswer
    - Host: \<your-host-url>
    - Autorização: EndpointKey \<your-endpoint-key>
 
-A URL do host será iniciada com `https://` e terminará com `/qnamaker`, como `https://<hostname>.azure.net/qnamaker`. O bot precisará da ID da base de dados de conhecimento, da URL do host e da chave do ponto de extremidade para se conectar à sua base de dados de conhecimento do QnA Maker.
+A URL do host será iniciada com **https://** e terminará com **/qnamaker**, como **https:// <hostname> . Azure.net/qnamaker**. O bot precisará da ID da base de dados de conhecimento, da URL do host e da chave do ponto de extremidade para se conectar à sua base de dados de conhecimento do QnA Maker.
 
 ## <a name="update-the-settings-file"></a>Atualizar o arquivo de configurações
 
-Primeiro, adicione ao arquivo de configurações as informações necessárias para acessar a sua base de dados de conhecimento, incluindo nome do host, a chave de ponto de extremidade e a kbId (ID da base de dados de conhecimento). Esses são os valores que você salvou na guia **Configurações** de sua base de conhecimento do QnA Maker.
+Primeiro, adicione ao arquivo de configurações as informações necessárias para acessar a sua base de dados de conhecimento, incluindo nome do host, a chave de ponto de extremidade e a kbId (ID da base de dados de conhecimento). Esses são os valores que você salvou na guia **configurações** da sua base de dados de conhecimento no QnA Maker.
 
 Se essa implantação não for para produção, os campos de senha e a ID do aplicativo do seu bot poderão ser deixados em branco.
 
@@ -114,7 +114,7 @@ Primeiro, criamos um objeto para acessar nossa base de dados de conhecimento do 
 
 Verifique se o pacote do NuGet **Microsoft.Bot.Builder.AI.QnA** está instalado para o seu projeto.
 
-No **QnABot.cs**, no método `OnMessageActivityAsync`, criamos uma instância do QnAMaker. A classe `QnABot` também é de onde os nomes das informações de conexão, salvos em `appsettings.json` acima, são extraídos. Se você tiver escolhido nomes diferentes para as informações de conexão da base de conhecimento no seu arquivo de configurações, procure atualizar os nomes aqui para refletir o nome escolhido.
+No **QnABot.cs**, no `OnMessageActivityAsync` método, crie uma instância QnAMaker. A `QnABot` classe também é onde os nomes das informações de conexão, salvas em **appsettings.js** acima, são extraídos. Se você tiver escolhido nomes diferentes para as informações de conexão da base de conhecimento no seu arquivo de configurações, procure atualizar os nomes aqui para refletir o nome escolhido.
 
 **Bots/QnABot.cs**
 
@@ -134,7 +134,7 @@ No arquivo **QnABot.js**, usamos as informações de conexão fornecidas pelo ar
 
 ## <a name="python"></a>[Python](#tab/python)
 
-No arquivo **qna_bot.py**, usamos as informações de conexão fornecidas pelo arquivo `config.py` para estabelecer uma conexão com o serviço do QnA Maker: `self.qna_maker`.
+No arquivo **qna_bot. py** , use as informações de conexão fornecidas pelo arquivo **config.py** para estabelecer uma conexão com o serviço de QnA Maker: `self.qna_maker` .
 
 **bots/qna_bot.py** [!code-python[QnAMaker](~/../botbuilder-samples/samples/python/11.qnamaker/bots/qna_bot.py?range=13-19)]
 
@@ -144,7 +144,7 @@ No arquivo **qna_bot.py**, usamos as informações de conexão fornecidas pelo a
 
 ## <a name="c"></a>[C#](#tab/cs)
 
-Quando seu bot precisar de uma resposta do QnAMaker, chame `GetAnswersAsync()` do código do seu bot para obter a resposta apropriada com base no contexto atual. Se você estiver acessando sua própria base de conhecimento, altere a mensagem de _nenhuma resposta localizada_ abaixo para fornecer instruções úteis aos seus usuários.
+Quando o bot precisar de uma resposta de QnAMaker, chame o `GetAnswersAsync` método do seu código de bot para obter a resposta apropriada com base no contexto atual. Se você estiver acessando sua própria base de dados de conhecimento, altere a mensagem _nenhuma resposta encontrada_ abaixo para fornecer instruções úteis para seus usuários.
 
 **Bots/QnABot.cs**
 
@@ -168,8 +168,7 @@ No arquivo **qna_bot.py**, passamos a entrada do usuário para o método `get_an
 
 ## <a name="test-the-bot"></a>Testar o bot
 
-Execute o exemplo localmente em seu computador. Se ainda não tiver feito isso, instale o [Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator/blob/master/README.md#download). Para obter mais instruções, consulte o arquivo Leiame do [C#](https://aka.ms/cs-qna) ou do [Javascript](https://aka.ms/js-qna-sample).
-ou da amostra de [Python](https://aka.ms/bot-qna-python-sample-code).
+Execute o exemplo localmente em seu computador. Caso ainda não tenha feito isso, instale o [emulador do bot Framework](https://github.com/Microsoft/BotFramework-Emulator/blob/master/README.md#download). Para obter mais instruções, consulte o Leiame do exemplo ([C#](https://aka.ms/cs-qna), [JavaScript](https://aka.ms/js-qna-sample), [python](https://aka.ms/bot-qna-python-sample-code)).
 
 Inicie o emulador, conecte-se ao bot e envie uma mensagem, conforme mostrado abaixo.
 

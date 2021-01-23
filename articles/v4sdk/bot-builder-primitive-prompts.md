@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/13/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 1688de67619e6b38e91d114a942154b122c8a3e9
-ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
+ms.openlocfilehash: dcee96d4e88fd8bac2d7daa455616e63b4ba2aec
+ms.sourcegitcommit: 662e41dab1bb35d10f1e50f9f56bd82c901a20e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98577178"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717572"
 ---
 # <a name="create-your-own-prompts-to-gather-user-input"></a>Crie seus próprio prompts para coletar entradas do usuário
 
@@ -23,7 +23,7 @@ ms.locfileid: "98577178"
 Uma conversa entre um bot e um usuário muitas vezes envolve solicitar ao usuário algumas informações, analisar as respostas e atuar com base nessas informações. Seu bot deve controlar o contexto de uma conversa, para que ele possa gerenciar seu comportamento e lembrar-se das respostas às perguntas anteriores. Um *estado* do bot é uma informação que o bot controla para responder apropriadamente às mensagens recebidas.
 
 > [!TIP]
-> A biblioteca de diálogos fornece prompts internos que oferecem mais funcionalidade do que os usuários podem usar. Exemplos desses prompts podem ser encontrados no artigo [Implementar fluxo de conversa sequencial](bot-builder-dialog-manage-conversation-flow.md).
+> A biblioteca de caixas de diálogo fornece prompts internos que fornecem mais funcionalidade que os usuários podem usar. Exemplos desses prompts podem ser encontrados no artigo [Implementar fluxo de conversa sequencial](bot-builder-dialog-manage-conversation-flow.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -40,7 +40,7 @@ O exemplo de bot faz uma série de perguntas ao usuário, valida algumas das res
 
 - Uma classe `UserProfile` para as informações do usuário que o bot coletará.
 - Uma classe `ConversationFlow` para controlar o estado da nossa conversa durante a coleta de informações do usuário.
-- Uma enumeração `ConversationFlow.Question` interna para controlar onde estamos na conversa.
+- Uma `ConversationFlow.Question` Enumeração interna para acompanhar onde você está na conversa.
 
 ## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -48,7 +48,7 @@ O exemplo de bot faz uma série de perguntas ao usuário, valida algumas das res
 
 - Uma classe `userProfile` para as informações do usuário que o bot coletará.
 - Uma classe `conversationFlow` para controlar o estado da nossa conversa durante a coleta de informações do usuário.
-- Uma enumeração `conversationFlow.question` interna para controlar onde estamos na conversa.
+- Uma `conversationFlow.question` Enumeração interna para acompanhar onde você está na conversa.
 
 ## <a name="python"></a>[Python](#tab/python)
 
@@ -56,14 +56,14 @@ O exemplo de bot faz uma série de perguntas ao usuário, valida algumas das res
 
 - Uma classe `UserProfile` para as informações do usuário que o bot coletará.
 - Uma classe `ConversationFlow` para controlar o estado da nossa conversa durante a coleta de informações do usuário.
-- Uma enumeração `ConversationFlow.Question` interna para controlar onde estamos na conversa.
+- Uma `ConversationFlow.Question` Enumeração interna para acompanhar onde você está na conversa.
 
 ---
 
-O estado do usuário controlará nome do usuário, idade e data escolhida. O estado da conversa controlará o que acabamos de solicitar ao usuário.
-Como não planejamos implantar esse bot, configuraremos os estados do usuário e da conversa para usar o _armazenamento de memória_.
+O estado do usuário controlará o nome do usuário, a idade e a data escolhida, e o estado da conversa acompanhará o que você acabou de solicitar ao usuário.
+Como não planeja implantar esse bot, você configurará o estado do usuário e da conversa para usar o _armazenamento de memória_.
 
-Usamos o manipulador de turno de mensagem do bot e as propriedades do estado da conversa para gerenciar o fluxo da conversa e a coleta de entradas. Em nosso bot, registraremos as informações da propriedade do estado recebidas durante cada iteração do manipulador de turno de mensagem.
+Use o manipulador de ativação de mensagem do bot mais as propriedades de estado do usuário e da conversa para gerenciar o fluxo da conversa e a coleção de entrada. No bot, você registrará as informações de propriedade de estado recebidas durante cada iteração do manipulador de ativação de mensagem.
 
 ## <a name="create-conversation-and-user-objects"></a>Criar objetos da conversa e do usuário
 
@@ -92,11 +92,11 @@ Crie o usuário e os objetos de estado da conversa em **index.js** e consuma-os 
 
 Crie o usuário e os objetos de estado da conversa em **app.py** e consuma-os no construtor de bot.
 
-**app.py**  
+**app.py**
 
 [!code-python[app.py](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/app.py?range=68-74)]
 
-**bots/custom_prompt_bot.py**  
+**bots/custom_prompt_bot.py**
 
 [!code-python[constructor](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=29-41)]
 
@@ -128,7 +128,7 @@ Antes do fim da rodada, chame `saveChanges` para gravar qualquer alteração de 
 
 ## <a name="python"></a>[Python](#tab/python)
 
-No construtor, criamos os acessadores de propriedade de estado e configuramos os objetos de gerenciamento de estado (criados acima) para nossa conversa.
+No construtor, você cria os acessadores de propriedade de estado e configura os objetos de gerenciamento de estado (criados acima) para nossa conversa.
 
 **bots/custom_prompt_bot.py**  
 [!code-python[on_message_activity](~/../botbuilder-samples/samples/python/44.prompt-for-user-input/bots/custom_prompt_bot.py?range=46-49)]
@@ -199,8 +199,8 @@ O bot usa os critérios a seguir para validar a entrada.
   É normalizado retornando apenas a parte da data da entrada analisada.
 
 > [!NOTE]
-> Para as entradas da idade e da data, podemos usar as bibliotecas [Reconhecedores de Texto/Microsoft](https://github.com/Microsoft/Recognizers-Text/) para fazer a análise inicial.
-> Embora forneçamos o código de exemplo, não explicamos como funcionam as bibliotecas de reconhecedores de texto; é apenas uma maneira de analisar a entrada.
+> Para a entrada de idade e data, use as bibliotecas de [texto Microsoft/Recognizers](https://github.com/Microsoft/Recognizers-Text/) para executar a análise inicial.
+> Enquanto você fornece o código de exemplo, não explica como as bibliotecas de reconhecedores de texto funcionam, e essa é apenas uma maneira de analisar a entrada.
 > Para obter mais informações sobre essas bibliotecas, confira o arquivo **LEIAME** do repositório.
 
 ## <a name="c"></a>[C#](#tab/csharp)

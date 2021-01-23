@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 03/11/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 3b99516629fccb37f85dbbbef6ee31fa3446d14e
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 7959f46c7f4851a2b5ea3e5dbafccb844b1e0d32
+ms.sourcegitcommit: 662e41dab1bb35d10f1e50f9f56bd82c901a20e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416330"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717525"
 ---
 # <a name="identity-providers"></a>Provedores de identidade
 
@@ -22,7 +22,7 @@ ms.locfileid: "92416330"
 
 Um provedor de identidade autentica as identidades do usuário ou do cliente e emite tokens de segurança consumíveis. Ele fornece autenticação de usuário como um serviço.
 
-Os aplicativos cliente, como aplicativos Web, delegam a autenticação a um provedor de identidade confiável. Esses aplicativos cliente são considerados federados, ou seja, usam identidade federada.
+Os aplicativos cliente, como aplicativos Web, delegam a autenticação a um provedor de identidade confiável. Esses aplicativos cliente são considerados federados, ou seja, usam identidade federada. Para obter mais informações, consulte [padrão de identidade federada](/azure/architecture/patterns/federated-identity).
 
 O uso de um provedor de identidade confiável:
 
@@ -43,18 +43,18 @@ Muitos provedores de identidade dão suporte a uma operação de saída que revo
 
 ## <a name="azure-active-directory-identity-provider"></a>Provedor de identidade do Azure Active Directory
 
-O Azure AD (Azure Active Directory) é o serviço de identidade no Microsoft Azure que fornece gerenciamento de identidades e recursos de controle de acesso. Ele permite que você conecte usuários com segurança usando protocolos padrão do setor, como **OAuth2.0**.
+O Azure AD (Azure Active Directory) é o serviço de identidade no Microsoft Azure que fornece gerenciamento de identidades e recursos de controle de acesso. Ele permite que você conecte usuários com segurança usando protocolos padrão do setor, como o **OAuth 2.0**.
 
 Você pode escolher entre duas implementações do provedor de identidade do AD que têm configurações diferentes, conforme mostrado abaixo.
 
 > [!Note]
-> Use as configurações descritas aqui ao definir as **Configurações de Conexão OAuth** no aplicativo de registro do bot do Azure. Confira [Adicionar autenticação a um bot](bot-builder-authentication.md).
+> Use as configurações descritas aqui ao definir as **Configurações de Conexão OAuth** no aplicativo de registro do bot do Azure. Para obter mais informações, consulte [Adicionar autenticação a um bot](bot-builder-authentication.md).
 
 # <a name="azure-ad-v1"></a>[Azure AD v1](#tab/adv1)
 
 ### <a name="azure-ad-v1"></a>Azure AD v1
 
-Use as configurações mostradas para configurar a plataforma de desenvolvedor do Azure AD (v 1.0), também conhecida como ponto de extremidade **do Azure ad v1** , que permite criar aplicativos que conectam com segurança os usuários com uma conta corporativa ou de estudante da Microsoft.
+Você usa as configurações mostradas para configurar a plataforma de desenvolvedor do Azure AD (v 1.0), também conhecida como ponto de extremidade **do Azure ad v1** . Isso permite que você crie aplicativos que conectam usuários com segurança a uma conta corporativa ou de estudante da Microsoft.
 Para obter mais informações, confira a [visão geral do Azure Active Directory para desenvolvedores (v1.0)](https://docs.microsoft.com/azure/active-directory/azuread-dev/v1-overview).
 
 [!INCLUDE [azure-ad-v1-settings](~/includes/authentication/auth-aad-v1-settings.md)]
@@ -63,7 +63,7 @@ Para obter mais informações, confira a [visão geral do Azure Active Directory
 
 ### <a name="azure-ad-v2"></a>Azure AD v2
 
-Você usa as configurações mostradas para configurar a plataforma de identidade da Microsoft (v 2.0), também conhecida como ponto de extremidade **do Azure ad v2** , que é uma evolução da plataforma do Azure AD (v 1.0).    Ela permite que um bot obtenha tokens para chamar APIs da Microsoft, como APIs do Microsoft Graph ou personalizadas. Para obter mais informações, consulte a [visão geral da plataforma Microsoft Identity (v 2.0)](https://docs.microsoft.com/azure/active-directory/develop/active-directory-appmodel-v2-overview).
+Você usa as configurações mostradas para configurar a plataforma de identidade da Microsoft (v 2.0), também conhecida como ponto de extremidade **do Azure ad v2** , que é uma evolução da plataforma do Azure AD (v 1.0).   Ela permite que um bot obtenha tokens para chamar APIs da Microsoft, como APIs do Microsoft Graph ou personalizadas. Para obter mais informações, consulte a [visão geral da plataforma Microsoft Identity (v 2.0)](https://docs.microsoft.com/azure/active-directory/develop/active-directory-appmodel-v2-overview).
 
 As configurações do AD v2 permitem que um bot acesse dados do Office 365 por meio da API do Microsoft Graph.
 
@@ -71,7 +71,7 @@ As configurações do AD v2 permitem que um bot acesse dados do Office 365 por m
 
 ---
 
-Confira também
+Para obter mais informações, consulte:
 
 - [Por que atualizar para a plataforma de identidade da Microsoft (v2.0)?](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-compare)
 
@@ -79,13 +79,13 @@ Confira também
 
 ## <a name="other-identity-providers"></a>Outros provedores de identidade
 
-O Azure é compatível com vários provedores de identidade. Você pode obter uma lista completa, juntamente com os detalhes relacionados, executando este comando do console do Azure:
+O Azure é compatível com vários provedores de identidade. Você pode obter uma lista completa, juntamente com os detalhes relacionados, executando o seguinte comando do console do Azure:
 
 ```cmd
 az bot authsetting list-providers
 ```
 
-Você também pode ver a lista desses provedores no [portal do Azure](https://ms.portal.azure.com/) ao definir as configurações de conexão OAuth para um aplicativo de registro de bot.
+Você também pode ver a lista desses provedores na [portal do Azure](https://ms.portal.azure.com/) ao definir as configurações de conexão OAuth para um aplicativo de registro de bot.
 
 ![provedores de identidade do azure](media/concept-bot-authentication/bot-auth-identity-providers.png)
 
@@ -104,7 +104,7 @@ Você pode escolher entre duas implementações do provedor de identidade genér
 
 ### <a name="generic-oauth-2"></a>OAuth 2 Genérico
 
-Use esse provedor para configurar qualquer provedor de identidade OAuth2 genérico que tenha expectativas semelhantes às do provedor do Azure AD, especialmente o AD v2. Você tem um número limitado de propriedades porque as cadeias de consulta e as cargas do corpo da solicitação são fixas. Para os valores inseridos, você pode ver como os parâmetros para os vários URls, cadeias de consulta e corpos estão entre chaves {}.
+Use esse provedor para configurar qualquer provedor de identidade OAuth2 genérico que tenha expectativas semelhantes às do provedor do Azure AD, especialmente o AD v2. Você tem um número limitado de propriedades porque as cadeias de consulta e as cargas do corpo da solicitação são fixas. Para os valores inseridos, você pode ver como os parâmetros para as várias URLs, cadeias de caracteres de consulta e corpos estão entre chaves {} .
 
 [!INCLUDE [generic-oauth2-settings](~/includes/authentication/auth-generic-oauth2-settings.md)]
 
@@ -113,7 +113,7 @@ Use esse provedor para configurar qualquer provedor de identidade OAuth2 genéri
 
 ### <a name="oauth-2-generic-provider"></a>Provedor genérico do OAuth 2
 
-Use esse provedor para configurar qualquer provedor de serviços OAuth 2 genérico quando precisar de mais flexibilidade. Ele requer mais parâmetros de configuração. Com essa configuração, você especifica os modelos de URL, os modelos de cadeia de consulta e os modelos de corpo para autorização, atualização e conversão de token. Para os valores inseridos, você pode ver como os parâmetros para os vários URls, cadeias de consulta e corpos estão entre chaves {}.
+Use esse provedor para configurar qualquer provedor de serviços OAuth 2 genérico quando precisar de mais flexibilidade. Ele requer mais parâmetros de configuração. Com essa configuração, você especifica os modelos de URLs, os modelos de cadeia de caracteres de consulta e os modelos de corpo para autorização, atualização e conversão de token. Para os valores inseridos, você pode ver como os parâmetros para os vários URls, cadeias de consulta e corpos estão entre chaves {}.
 
 [!INCLUDE [generic-provider-oauth2-settings](~/includes/authentication/auth-generic-provider-oauth2-settings.md)]
 

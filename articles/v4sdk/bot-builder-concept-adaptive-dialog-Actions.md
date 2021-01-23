@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 04/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 57bb11f5426c54d5e8c9d44cfdc53ce3d9a60444
-ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
+ms.openlocfilehash: c75ce23f80066118b97b17d55522b87d71b2c8c7
+ms.sourcegitcommit: 662e41dab1bb35d10f1e50f9f56bd82c901a20e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98577278"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717422"
 ---
 <!--P2: Once the samples are done, link to them in each section on the individual actions to point to them as examples of how they are used-->
 # <a name="actions-in-adaptive-dialogs"></a>Ações em caixas de diálogo adaptáveis
@@ -44,7 +44,7 @@ As ações incluídas com o SDK do Bot Framework fornecem a capacidade de execut
 >[!TIP]
 > Ao contrário de uma caixa de diálogo em cascata em que cada etapa é uma função, cada ação de uma caixa de diálogo adaptável é uma caixa de diálogo totalmente funcional com todo o poder e a flexibilidade necessários. Isso permite que caixas de diálogo adaptáveis por design possam:
 >
-> * Fornecer uma maneira mais fácil de lidar com [interrupções][interruptions]. 
+> * Fornecer uma maneira mais fácil de lidar com [interrupções][interruptions].
 > * Executar ramificação condicional com base no contexto ou no estado.
 
 As caixas de diálogo adaptáveis fornecem suporte para as seguintes ações:

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 07/27/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 5fc32851da40f905b628ecb35217956054cb28e4
-ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
+ms.openlocfilehash: 33192a515a235fbb872a1542aacee13ef2dc3298
+ms.sourcegitcommit: 662e41dab1bb35d10f1e50f9f56bd82c901a20e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98577458"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717512"
 ---
 # <a name="handling-interruptions-in-adaptive-dialogs"></a>Como lidar com interrupções em caixas de diálogo adaptáveis
 
@@ -216,8 +216,8 @@ _Confirmação e correção_ habilita o cenário em que você pede confirmação
 - [Treine seu bot para usar os reconhecedores Luis e QnA Maker][cross-train-concepts].
 - [Expressões adaptáveis][adaptive-expressions].
 - [Formato de arquivo .lu](/file-format/bot-builder-lu-file-format.md)
-- [Tentativas em seu aplicativo LUIS](https://docs.microsoft.com/azure/cognitive-services/LUIS/luis-concept-intent)
-- [Reconheça quais são os enunciados ideais para o aplicativo LUIS](https://docs.microsoft.com/azure/cognitive-services/LUIS/luis-concept-utterance)
+- [Tentativas em seu aplicativo LUIS](/azure/cognitive-services/LUIS/luis-concept-intent)
+- [Reconheça quais são os enunciados ideais para o aplicativo LUIS](/azure/cognitive-services/LUIS/luis-concept-utterance)
 
 [introduction]:bot-builder-adaptive-dialog-introduction.md
 [inputs]: bot-builder-concept-adaptive-dialog-Inputs.md

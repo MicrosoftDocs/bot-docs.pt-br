@@ -8,18 +8,18 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/17/2020
-ms.openlocfilehash: c7b6eca449b8857711bdeb2a84c673408274bf08
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: 47d256a60a38359c2cf7163a59461e6e77167dff
+ms.sourcegitcommit: 662e41dab1bb35d10f1e50f9f56bd82c901a20e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95456650"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717382"
 ---
 # <a name="debug-with-the-emulator"></a>Depurar com o emulador
 
 [!INCLUDE [applies-to-v4](includes/applies-to-v4-current.md)]
 
-O Bot Framework Emulator é um aplicativo de desktop que permite que os desenvolvedores de bot testem e depurem seus bots, seja local ou remotamente. Usando o emulador, você pode bater papo com o bot e inspecionar as mensagens que o bot envia e recebe. O emulador exibe mensagens como apareceriam em uma interface do usuário do Web Chat e registra em log as solicitações e respostas JSON à medida que você troca mensagens com o bot. Antes de implantar o bot na nuvem, execute-o localmente e teste-o usando o emulador. Você pode testar o bot usando o emulador mesmo que ainda não o tenha [criado](./bot-service-quickstart.md) com o serviço de bot do Azure ou configurado para ser executado em qualquer canal.
+O bot Framework Emulator é um aplicativo de área de trabalho que permite que os desenvolvedores de bot testem e depurem bots, local ou remotamente. Usando o emulador, você pode bater papo com o bot e inspecionar as mensagens que o bot envia e recebe. O emulador exibe mensagens como apareceriam em uma interface do usuário do Web Chat e registra em log as solicitações e respostas JSON à medida que você troca mensagens com o bot. Antes de implantar o bot na nuvem, execute-o localmente e teste-o usando o emulador. Você pode testar o bot usando o emulador mesmo que ainda não o tenha [criado](./bot-service-quickstart.md) com o serviço de bot do Azure ou configurado para ser executado em qualquer canal.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -101,7 +101,7 @@ Se um bot exigir autenticação, exibindo uma caixa de diálogo de logon, você 
 1. Clique no botão **Salvar**.
 
 Ao clicar no botão de logon exibido pelo bot, um código de validação será gerado.
-Insira o código na caixa chat de entrada do bot para que a autenticação ocorra.
+Você inserirá o código na caixa de bate-papo de entrada do bot para que a autenticação ocorra.
 Depois disso, será possível executar as operações permitidas.
 
 Como alternativa é possível executar as etapas descritas abaixo.

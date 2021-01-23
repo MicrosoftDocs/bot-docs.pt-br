@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/08/2019
-ms.openlocfilehash: d6b62a670f4d44c49d5276491c573cc48239b853
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 4e588914fea9f37815b328a52347db48446f9839
+ms.sourcegitcommit: 662e41dab1bb35d10f1e50f9f56bd82c901a20e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92415900"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717182"
 ---
 # <a name="additional-channels"></a>Canais adicionais
 
@@ -28,17 +28,17 @@ Além dos canais listados nestes documentos, há alguns canais adicionais dispon
 
 ## <a name="currently-available-adapters"></a>Adaptadores disponíveis no momento
 
-Uma lista completa de adaptadores disponíveis pode ser [encontrada aqui](https://botkit.ai/docs/v4/platforms/). Você observará que alguns canais estão também disponíveis como um adaptador. Cabe a você decidir quando usar um canal ou um adaptador.
+Consulte [adaptadores de plataforma](https://botkit.ai/docs/v4/platforms/) para obter uma lista completa dos adaptadores disponíveis. Você observará que alguns canais estão também disponíveis como um adaptador. Cabe a você decidir quando usar um canal ou um adaptador.
 
 ### <a name="when-to-use-an-adapter"></a>Quando usar um adaptador
 
-1. O serviço não dá suporte ao canal que você deseja
-2. Os requisitos de segurança e conformidade da implantação determinam que você não pode contar com um serviço externo
-3. Talvez não haja suporte para a profundidade dos recursos que você precisa em um canal específico
+1. O serviço não oferece suporte ao canal desejado.
+2. Os requisitos de segurança e conformidade de sua implantação ditam que você não pode contar com um serviço externo.
+3. A profundidade dos recursos necessários em um canal específico pode não ter suporte.
 
 ### <a name="when-to-use-a-channel"></a>Quando usar um canal
 
-1. Você exige compatibilidade entre canais: seu bot deve funcionar em mais de um dos canais disponíveis
-2. Suporte interno: A Microsoft mantém, atende e aplica patches em cada canal perfeitamente para você sempre que um terceiro faz atualizações
-3. Permite o acesso a mais canais da Microsoft exclusivos, como o Microsoft Teams, que está crescendo rapidamente
-4. Se você quiser contar com uma interface GUI para habilitar os canais adicionais para o bot
+1. Você precisa de compatibilidade entre canais: seu bot deve funcionar em mais de um dos canais disponíveis.
+2. Suporte interno: a Microsoft mantém, corrige e serviços de forma direta cada canal para você cada vez que um terceiro faz atualizações.
+3. Permite o acesso a canais adicionais exclusivos da Microsoft, como o crescimento rápido de equipes da Microsoft.
+4. Se você quiser contar com uma interface GUI para habilitar canais adicionais para o bot.

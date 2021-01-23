@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 10/06/2020
-ms.openlocfilehash: ae3a7c96fc94d9d8130c51a5ffd38d30d17a6ab7
-ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
+ms.openlocfilehash: 3290e28964b61530ce4e9183cd3f7c767e12b975
+ms.sourcegitcommit: 662e41dab1bb35d10f1e50f9f56bd82c901a20e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98576638"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717202"
 ---
 # <a name="connect-a-bot-to-cortana"></a>Conectar um bot à Cortana
 
@@ -42,7 +42,8 @@ Ao conectar seu bot ao canal da Cortana, algumas informações básicas sobre se
 
 ![Configurações padrão](~/media/channels/cortana-defaultsettings.png)
 
->!OBSERVAÇÃO: Atualmente, o Cortana não dá suporte ao uso da autenticação de conta do AAD (Azure Active Directory). Você precisará usar uma MSA (Conta Microsoft) para publicar seu bot com êxito no Cortana.
+> [!NOTE]
+> Atualmente, a Cortana não dá suporte ao uso de autenticação de conta Azure Active Directory. Você precisará usar uma conta Microsoft para publicar com êxito o bot no Cortana.
 
 ## <a name="general-bot-information"></a>Informações gerais sobre o bot
 

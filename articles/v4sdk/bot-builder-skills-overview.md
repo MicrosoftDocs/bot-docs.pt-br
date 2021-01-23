@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 10/09/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 491ae7286ea9b61488298588134a310a417ec457
-ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
+ms.openlocfilehash: cfa55a6aa26f4909112aef058f6633d6ced16a48
+ms.sourcegitcommit: 662e41dab1bb35d10f1e50f9f56bd82c901a20e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98577138"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717562"
 ---
 # <a name="virtual-assistant---skills-overview"></a>Assistente Virtual - Visão Geral das Habilidades
 
@@ -21,11 +21,11 @@ ms.locfileid: "98577138"
 
 ## <a name="overview"></a>Visão geral
 
-Os desenvolvedores podem compor experiências de conversação combinando recursos de conversa reutilizáveis, conhecidos como Habilidades.
+Os desenvolvedores podem compor experiências de conversa reunindo recursos de conversa reutilizáveis, conhecidos como habilidades.
 
 Dentro de uma empresa poderíamos ter a criação de um único bot pai reunindo vários sub-bots pertencentes a diferentes equipes ou o aproveitamento mais amplo dos recursos comuns fornecidos por outros desenvolvedores. Com essa versão prévia das Habilidades, os desenvolvedores podem criar um novo bot (normalmente por meio do modelo de Assistente Virtual) e adicionar/remover Habilidades com uma única operação de linha de comando incorporando todas as alterações na Expedição e Configuração.
 
-As próprias Habilidades são Bots, chamados remotamente, e um modelo de desenvolvedor (.NET, TS) está disponível para facilitar a criação de novas Habilidades.
+As habilidades são bots, chamadas remotamente e um modelo de desenvolvedor de habilidades (.NET, TS) está disponível para facilitar a criação de novas habilidades.
 
 Um objetivo-chave de design das Habilidades era manter o protocolo de Atividade consistente e garantir que a experiência de desenvolvimento fosse a mais próxima possível de qualquer bot comum do SDK V4.
 
@@ -33,7 +33,7 @@ Um objetivo-chave de design das Habilidades era manter o protocolo de Atividade 
 
 ## <a name="bot-framework-skills"></a>Habilidades do Bot Framework
 
-Atualmente fornecemos as seguintes Habilidades do Bot Framework, suportadas pelo Microsoft Graph e disponível em vários idiomas.
+Neste momento, você disponibilizou as seguintes habilidades do bot Framework, alimentadas pela Microsoft Graph e disponíveis em vários idiomas.
 
 ![Compilação de cenários de habilidades](./media/enterprise-template/skills-at-build.png)
 

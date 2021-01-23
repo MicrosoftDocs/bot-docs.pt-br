@@ -9,18 +9,18 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 10/19/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: be50077164ed33dc9bb55f4c61aacafeecd89865
-ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
+ms.openlocfilehash: 538ce481b3bccd74539c7ae6255a073e20bf7dfd
+ms.sourcegitcommit: 662e41dab1bb35d10f1e50f9f56bd82c901a20e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98577328"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717492"
 ---
 # <a name="use-multiple-luis-and-qna-models"></a>Usar vários modelos de LUIS e QnA
 
 [!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
-Se um bot usar vários modelos do LUIS e bases de dados de conhecimento do QnA Maker, você poderá usar a ferramenta Dispatch para determinar qual modelo do LUIS ou base de dados de conhecimento do QnA Maker tem a melhor correspondência com a entrada do usuário. A ferramenta Dispatch faz isso criando um aplicativo LUIS individual a fim de encaminhar a entrada do usuário para o modelo correto. Para obter mais informações sobre o Dispatch, incluindo os comandos da CLI, consulte o arquivo [LEIAME][dispatch-readme].
+Se um bot usar vários modelos do LUIS e bases de dados de conhecimento do QnA Maker, você poderá usar a ferramenta Dispatch para determinar qual modelo do LUIS ou base de dados de conhecimento do QnA Maker tem a melhor correspondência com a entrada do usuário. A ferramenta Dispatch faz isso criando um aplicativo LUIS individual a fim de encaminhar a entrada do usuário para o modelo correto. Para obter mais informações sobre a expedição, incluindo os comandos da CLI, consulte o [Leiame de expedição][dispatch-readme].
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -38,7 +38,7 @@ Este exemplo se baseia em um conjunto predefinido de aplicativos LUIS e QnA Make
 
 ![CS de fluxo de código de lógica de exemplo](./media/tutorial-dispatch/dispatch-logic-flow.png)
 
-`OnMessageActivityAsync` é chamado em cada entrada do usuário recebida. Esse módulo localiza a intenção do usuário com a maior pontuação e transmite o resultado a `DispatchToTopIntentAsync`. DispatchToTopIntentAsync, por sua vez, chama o manipulador de aplicativo apropriado
+`OnMessageActivityAsync` é chamado em cada entrada do usuário recebida. Esse módulo localiza a intenção do usuário com a maior pontuação e transmite o resultado a `DispatchToTopIntentAsync`. O DispatchToTopIntentAsync, por sua vez, chama o manipulador de aplicativos apropriado.
 
 - `ProcessSampleQnAAsync`: para perguntas frequentes de bot.
 - `ProcessWeatherAsync`: para consultas de previsão do tempo.
@@ -569,8 +569,6 @@ Para excluir recursos do QnA Maker:
 Para melhorar os serviços usados neste exemplo, confira a prática recomendada para [LUIS](https://docs.microsoft.com/azure/cognitive-services/luis/luis-concept-best-practices) e [QnA Maker](https://docs.microsoft.com/azure/cognitive-services/qnamaker/concepts/best-practices).
 
 <!-- Foot-note style links -->
-
-
 
 [howto-luis]: bot-builder-howto-v4-luis.md
 [howto-qna]: bot-builder-howto-qna.md

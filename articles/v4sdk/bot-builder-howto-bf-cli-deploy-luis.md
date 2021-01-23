@@ -9,18 +9,18 @@ ms.topic: how-to
 ms.service: bot-service
 ms.date: 08/28/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2b33b620989ef898c640e07d4da19f6d39610ed1
-ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
+ms.openlocfilehash: fab75e8d12e98ccfd38da10264dff5416bafa483
+ms.sourcegitcommit: 662e41dab1bb35d10f1e50f9f56bd82c901a20e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98577398"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717472"
 ---
 # <a name="deploy-luis-resources-using-the-bot-framework-luis-cli-commands"></a>Implantar os recursos do LUIS usando os comandos da CLI do LUIS do Bot Framework
 
 [!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
-A CLI (interface de linha de comando) do bot Framework permite automatizar o gerenciamento de aplicativos LUIS (LUIS aplicativos). Em uma linha de comando ou um script, você pode criar, atualizar e excluir Propriedades LUIS.
+A CLI do bot Framework permite automatizar o gerenciamento de aplicativos LUIS. Em uma linha de comando ou um script, você pode criar, atualizar e excluir Propriedades LUIS.
 
 Este artigo explica como implantar um recurso LUIS. Para obter informações sobre como atualizar um recurso de LUIS existente usando a CLI do BF, consulte como [Atualizar recursos do Luis usando os comandos da CLI do bot Framework Luis][how-to-update-using-luis-cli].
 
@@ -37,15 +37,6 @@ Este artigo explica como implantar um recurso LUIS. Para obter informações sob
 
 Este artigo descreve como executar algumas tarefas comuns usando a CLI do bot Framework.
 
-1. [Criar seu recurso de criação do LUIS no Azure](#create-your-luis-authoring-resource-in-azure)
-1. [Instalar a CLI do bot Framework](#install-the-bot-framework-cli)
-1. [Criar seu modelo LUIS](#create-your-luis-model)
-1. [Criar seu aplicativo LUIS](#create-your-luis-application)
-1. [Obter a appId do seu aplicativo LUIS](#get-the-appid-from-your-luis-app)
-1. [Treine seu aplicativo LUIS](#train-your-luis-application)
-1. [Publicar seu aplicativo LUIS](#publish-your-luis-application)
-1. [Gerar código-fonte](#generate-source-code)
-1. [Criar e treinar um aplicativo LUIS e, em seguida, publicá-lo usando o comando de compilação](#create-and-train-a-luis-app-then-publish-it-using-the-build-command)
 
 Depois que o idioma do seu projeto de bot entender os recursos foram criados, você estará pronto para seguir as etapas descritas neste artigo para fazer com que o LUIS funcione.
 
@@ -101,7 +92,7 @@ bf luis:convert -i dialogs -o .\output\LUISModel.json -r
 
 ## <a name="create-your-luis-application"></a>Criar seu aplicativo LUIS
 
-O _recurso de criação de Luis_ que você perviously criou consiste em suas chaves de criação e ponto de extremidade, valores que você precisa ao criar seu aplicativo Luis (aplicativo Luis). Você pode ter vários aplicativos LUIS associados a um único recurso de criação de LUIS, cada aplicativo LUIS terá seu próprio, `appId` que será fornecido a você como parte do processo de criação. Você precisará que, `appId` ao se referir a este aplicativo Luis no futuro. O aplicativo LUIS fornecerá o bot com todas as funcionalidades fornecidas pelo LUIS, combinadas com os dados específicos do aplicativo que você fornece em seu modelo de LUIS que você criou anteriormente nos arquivos. Lu de seus projetos.
+O _recurso de criação de Luis_ que você criou anteriormente consiste em suas chaves de criação e ponto de extremidade, valores que você precisa ao criar seu aplicativo LUIS (Luis app). Você pode ter vários aplicativos LUIS associados a um único recurso de criação de LUIS, e cada aplicativo LUIS terá seu próprio `appId` que será fornecido a você como parte do processo de criação. Você precisará que, `appId` ao se referir a este aplicativo Luis no futuro. O aplicativo LUIS fornecerá o bot com todas as funcionalidades fornecidas pelo LUIS, combinadas com os dados específicos do aplicativo que você fornece em seu modelo de LUIS que você criou anteriormente nos arquivos. Lu de seus projetos.
 
 Para criar seu aplicativo LUIS:
 
@@ -317,7 +308,7 @@ Arquivo de configurações de exemplo:
 
 ### <a name="the-dialog-file"></a>O arquivo de diálogo
 
-Quando você incluir a `--dialog` opção, um `.dialog` arquivo será gerado para cada um de seus arquivos. Lu, um para cada localidade. 
+Quando você inclui a `--dialog` opção, um arquivo. Dialog será gerado para cada um de seus arquivos. Lu, um para cada localidade.
 
 > [!IMPORTANT]
 >
@@ -361,7 +352,7 @@ Consulte [usando ativos declarativos em caixas de diálogo adaptáveis][declarat
 
 - [Atualizando seus modelos do LUIS][how-to-update-using-luis-cli]
 
-<!----------------------------------------------------------------------------------------------------->
+<!-------------------------------------------------------------------------------------------->
 [cognitive-services-overview]: /azure/cognitive-services/Welcome
 [create-cognitive-services]: https://portal.azure.com/#create/Microsoft.CognitiveServicesLUISAllInOne
 [luis-recognizer]: bot-builder-concept-adaptive-dialog-recognizers.md#luis-recognizer
@@ -395,4 +386,4 @@ Consulte [usando ativos declarativos em caixas de diálogo adaptáveis][declarat
 
 [how-to-update-using-luis-cli]: bot-builder-howto-bf-cli-update-luis.md
 
-<!----------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------->

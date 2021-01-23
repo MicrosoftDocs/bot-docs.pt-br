@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 06/09/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 801e67f29f0a9e594e82e257d4845a825b6a8943
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 92355bc494f81be730182a3b6239a3390844dd3e
+ms.sourcegitcommit: 662e41dab1bb35d10f1e50f9f56bd82c901a20e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416104"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717435"
 ---
 # <a name="deploy-your-bot"></a>Implantar seu bot
 
@@ -86,7 +86,8 @@ Ao criar o serviço de aplicativo de bot, você pode implantar o seu bot em um g
 
 ## <a name="additional-information"></a>Informações adicionais
 
-Implantar seu bot no Azure envolve pagar pelos serviços que você usa. O artigo [gerenciamento de cobrança e custos](https://docs.microsoft.com/azure/billing/) ajuda você a entender sua cobrança do Azure, monitorar o uso e os custos, e gerenciar sua conta e assinaturas.
+Implantar seu bot no Azure envolve pagar pelos serviços que você usa. O artigo [gerenciamento de cobrança e custos](/azure/billing/) ajuda você a entender sua cobrança do Azure, monitorar o uso e os custos, e gerenciar sua conta e assinaturas.
+Consulte também [documentação da CLI (interface de Command-Line do Azure)](/cli/azure/) e [notas de versão do CLI do Azure](/cli/azure/release-notes-azure-cli).
 
 ## <a name="next-steps"></a>Próximas etapas
 

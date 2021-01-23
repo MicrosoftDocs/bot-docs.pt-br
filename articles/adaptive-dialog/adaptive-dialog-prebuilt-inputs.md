@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 06/09/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 6ec939bd77d7ab12e37a6d97182b8360ecef9d04
-ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
+ms.openlocfilehash: 16359ca3f77befea4e9d845fb132c1beeca94091
+ms.sourcegitcommit: 662e41dab1bb35d10f1e50f9f56bd82c901a20e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98576438"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717412"
 ---
 # <a name="inputs-in-adaptive-dialogs---reference-guide"></a>Entradas em caixas de diálogo adaptáveis – guia de referência
 
@@ -208,7 +208,7 @@ var rootDialog = new AdaptiveDialog(nameof(AdaptiveDialog))
                     // You can refer to incoming user message via turn.activity.text
                     UnrecognizedPrompt = new ActivityTemplate("Sorry, '{turn.activity.text}' did not include a valid number"),
                     // You can provide a list of validation expressions. Use turn.value to refer to any value extracted by the recognizer.
-                    Validations = new List<String> () {
+                    Validations = new List<BoolExpression> () {
                         "int(this.value) >= 1",
                         "int(this.value) <= 10"
                     },
@@ -220,7 +220,7 @@ var rootDialog = new AdaptiveDialog(nameof(AdaptiveDialog))
                     AlwaysPrompt = true,
                     OutputFormat = "float(this.value)"
                 },
-                new SendActivity("Your favorite number is {user.favoriteNumber}")
+                new SendActivity("Your favorite number is ${user.favoriteNumber}")
             }
         }
     }
