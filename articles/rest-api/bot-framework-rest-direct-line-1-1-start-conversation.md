@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 754573421aa55ab506e36a3037baa2f5255fe233
-ms.sourcegitcommit: d974a0b93f13db7720fcb332f37bf8a404d77e43
+ms.openlocfilehash: e336ef58da38d0a94ad4847b3de1add7e946f3ce
+ms.sourcegitcommit: 662e41dab1bb35d10f1e50f9f56bd82c901a20e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2020
-ms.locfileid: "90824446"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717632"
 ---
 # <a name="start-a-conversation-in-direct-line-api-11"></a>Iniciar uma conversa na API de linha direta 1,1
 
@@ -58,9 +58,9 @@ HTTP/1.1 200 OK
 
 ## <a name="start-conversation-versus-generate-token"></a>Iniciar conversa em vez de gerar o Token
 
-A operação Iniciar Conversa (`POST /api/conversations`) é semelhante à operação [Gerar Token](bot-framework-rest-direct-line-1-1-authentication.md#generate-token) (`POST /api/tokens/conversation`) em que ambas as operações retornam um `token` que pode ser usado para acessar uma única conversa. No entanto, a operação Iniciar Conversa também inicia a conversa e entra em contato com o bot, enquanto a operação Gerar Token não faz nada disso. 
+A operação Iniciar Conversa (`POST /api/conversations`) é semelhante à operação [Gerar Token](bot-framework-rest-direct-line-1-1-authentication.md#generate-token) (`POST /api/tokens/conversation`) em que ambas as operações retornam um `token` que pode ser usado para acessar uma única conversa. No entanto, a operação Iniciar Conversa também inicia a conversa e entra em contato com o bot, enquanto a operação Gerar Token não faz nada disso.
 
-Se você pretende iniciar a conversa imediatamente, use a operação Iniciar Conversa. Se você planeja distribuir o token para clientes e deseja que eles iniciem a conversa, use a operação [Gerar Token](bot-framework-rest-direct-line-1-1-authentication.md#generate-token). 
+Se você pretende iniciar a conversa imediatamente, use a operação Iniciar Conversa. Se você planeja distribuir o token para clientes e deseja que eles iniciem a conversa, use a operação [Gerar Token](bot-framework-rest-direct-line-1-1-authentication.md#generate-token).
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

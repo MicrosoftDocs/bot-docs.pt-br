@@ -9,18 +9,19 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 05/16/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 7af5c22d0bff4e06b5f9a62c66bea037efb7ddc9
-ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
+ms.openlocfilehash: 4e9aa362c3b060327b663c25cda574f248b9f1ce
+ms.sourcegitcommit: 662e41dab1bb35d10f1e50f9f56bd82c901a20e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98577468"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717592"
 ---
 # <a name="generators-in-adaptive-dialogs"></a>Geradores em diálogos adaptáveis
 
 [!INCLUDE [applies-to-v4](../includes/applies-to-v4-current.md)]
 
 Os geradores vinculam um sistema [LG (geração de linguagem)](bot-builder-concept-language-generation.md) específico a um diálogo adaptável.
+Neste artigo, você aprenderá sobre os modelos LG que adicionam variedade e personalidade a respostas de bot e como chamar esses modelos em sua caixa de diálogo raiz usando o `TemplateEngineLanguageGenerator` .
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -30,11 +31,9 @@ Os geradores vinculam um sistema [LG (geração de linguagem)](bot-builder-conce
 
 ## <a name="language-generation"></a>Geração de linguagem
 
-A LG (Geração de Linguagem) permite aos desenvolvedores extrair cadeias de caracteres inseridas de códigos e arquivos de recursos e gerenciá-las por meio de um runtime e formato de arquivo LG. Com a LG, os desenvolvedores podem criar uma experiência de conversa mais natural definindo diversas variações em uma frase, executando expressões simples com base no contexto e referindo-se à memória de conversa.
+A geração de linguagem (LG) permite aos desenvolvedores extrair cadeias de caracteres inseridas de seus códigos e arquivos de recursos e gerenciá-las por meio de um tempo de execução e formato de arquivo LG Com o LG, os desenvolvedores podem criar uma experiência de conversação mais natural definindo várias variações em uma frase, executando expressões simples com base no contexto e referindo-se à memória de conversação.
 
 A LG, juntamente com os [reconhecedores](bot-builder-concept-adaptive-dialog-recognizers.md), permite a separação clara e o encapsulamento dos ativos de Reconhecimento vocal e geração de linguagem de um diálogo. Os reconhecedores dão ao bot a capacidade de entender a entrada e a LG permite que o bot responda a essa entrada de uma forma inteligente.
-
-Neste artigo, você aprenderá mais sobre os modelos LG que adicionam variedade e personalidade às respostas do bot e a chamar esses modelos no diálogo raiz usando o `TemplateEngineLanguageGenerator`.
 
 ## <a name="lg-templates"></a>Modelos LG
 
@@ -67,7 +66,7 @@ Este é um exemplo de um modelo de resposta simples com duas variações:
 
 ### <a name="conditional-response-template"></a>Modelo de resposta condicional
 
-Os modelos de resposta condicional permitem criar um conteúdo selecionado com base em uma condição. Todas as condições são expressas por meio de [expressões adaptáveis](bot-builder-concept-adaptive-expressions.md), [predefinidas](../adaptive-expressions/adaptive-expressions-prebuilt-functions.md) e personalizadas.
+Os modelos de resposta condicional permitem criar um conteúdo selecionado com base em uma condição. Todas as condições são expressas usando [expressões adaptáveis](bot-builder-concept-adaptive-expressions.md), [predefinidas](../adaptive-expressions/adaptive-expressions-prebuilt-functions.md) e [personalizadas](../language-generation/bot-builder-howto-use-lg-custom-functions.md).
 
 Há dois tipos de modelos de resposta condicional: [if-else](../file-format/bot-builder-lg-file-format.md#if-else-template) e [opção](../file-format/bot-builder-lg-file-format.md#switch-template).
 
@@ -127,7 +126,7 @@ Leia [Modelo de resposta estruturada](../language-generation/language-generation
 
 ## <a name="call-templates-in-your-root-dialog"></a>Chamar modelos no diálogo raiz
 
-Depois de criar modelos para o bot, você pode adicioná-los ao diálogo adaptável. Você pode definir o gerador para um arquivo _.lg_ ou definir o gerador como uma instância `TemplateEngineLanguageGenerator` em que você gerencia explicitamente um ou mais arquivos _.lg_. O exemplo abaixo mostra a última abordagem.
+Depois de criar modelos para o bot, você pode adicioná-los ao diálogo adaptável. Você pode definir o gerador para um arquivo .lg ou definir o gerador como uma instância `TemplateEngineLanguageGenerator` em que você gerencia explicitamente um ou mais arquivos .lg. O exemplo abaixo mostra a última abordagem.
 
 <!--### [C#](#tab/csharp)-->
 
@@ -147,7 +146,7 @@ string[] paths = { ".", "Dialogs", "RootDialog.lg" };
 string fullPath = Path.Combine(paths);
 ```
 
-Isso verificará se você está chamando os arquivos de modelo corretos para o bot.
+Isso garantirá que você esteja chamando os arquivos de modelo corretos para o bot.
 
 Agora você pode criar o `TemplateEngineLanguageGenerator` no diálogo adaptável que gerencia os modelos em **RootDialog.lg**:
 

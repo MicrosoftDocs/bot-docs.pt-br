@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/25/2020
-ms.openlocfilehash: 362e38b308eafa69192fe46de2fcdc7bd15f79a0
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: 234c72393c3eaa81cc717ae66c4aa652e0225fa5
+ms.sourcegitcommit: 662e41dab1bb35d10f1e50f9f56bd82c901a20e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95456050"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717232"
 ---
 # <a name="troubleshooting-bot-framework-authentication"></a>Solucionar problemas de autenticação do Bot Framework
 
@@ -191,9 +191,9 @@ Para testar seu bot na nuvem com a segurança habilitada, conclua as etapas a se
 
 Se for indicado um erro na janela de bate-papo, use a mensagem de erro para determinar sua causa. Entre os problemas comuns, há:
 
-* O **Ponto de extremidade de mensagens** especificado na página **Configurações** de seu bot no Portal do Bot Framework está incorreto. Verifique se foi incluído o caminho apropriado no final da URL (por exemplo, `/api/messages`).
-* O **Ponto de extremidade de mensagens** especificado na página **Configurações** de seu bot no Portal do Bot Framework não começa com `https` ou não é confiável de acordo com o Bot Framework. Seu bot deve ter um certificado válido e de cadeia confiável.
-* O bot é configurado com valores ausentes ou incorretos para a ID ou senha do aplicativo. [Verifique](#enable-security-localhost) se as definições de configuração do bot especificam valores válidos para a ID e senha do aplicativo.
+- O **Ponto de extremidade de mensagens** especificado na página **Configurações** de seu bot no Portal do Bot Framework está incorreto. Verifique se foi incluído o caminho apropriado no final da URL (por exemplo, `/api/messages`).
+- O **Ponto de extremidade de mensagens** especificado na página **Configurações** de seu bot no Portal do Bot Framework não começa com `https` ou não é confiável de acordo com o Bot Framework. Seu bot deve ter um certificado válido e de cadeia confiável.
+- O bot é configurado com valores ausentes ou incorretos para a ID ou senha do aplicativo. [Verifique](#enable-security-localhost) se as definições de configuração do bot especificam valores válidos para a ID e senha do aplicativo.
 
 Se o bot responder apropriadamente à entrada, você verificou que ele fica acessível e funcional na nuvem com a segurança habilitada. Neste ponto, seu bot está pronto para se [conectar a um canal](~/bot-service-manage-channels.md) com segurança, como Facebook Messenger, Direct Line e outros.
 
@@ -201,11 +201,11 @@ Se o bot responder apropriadamente à entrada, você verificou que ele fica aces
 
 Caso ainda esteja enfrentando problemas depois de concluir as etapas acima, você pode:
 
-* Examine as instruções sobre como [depurar um bot](bot-service-debug-bot.md) e outros artigos sobre depuração nesta seção.
-* [Depurar seu bot na nuvem](~/bot-service-debug-emulator.md) usando o Bot Framework Emulator e o software de encapsulamento <a href="https://ngrok.com/" target="_blank">ngrok</a>. *O ngrok não é um produto da Microsoft.*
-* Usar uma ferramenta de criação de proxies como o [Fiddler](https://www.telerik.com/fiddler) para inspecionar o tráfego HTTPS de entrada e saída do seu bot. *O Fiddler não é um produto da Microsoft.*
-* Examine o [Guia de autenticação do Bot Connector][BotConnectorAuthGuide] para saber mais sobre as tecnologias de autenticação utilizadas pelo Bot Framework.
-* Solicite ajuda de outras pessoas usando os recursos de [suporte][Support] do Bot Framework.
+- Examine as instruções sobre como [depurar um bot](bot-service-debug-bot.md) e outros artigos sobre depuração nesta seção.
+- [Depurar seu bot na nuvem](~/bot-service-debug-emulator.md) usando o Bot Framework Emulator e o software de encapsulamento <a href="https://ngrok.com/" target="_blank">ngrok</a>. *O ngrok não é um produto da Microsoft.*
+- Usar uma ferramenta de criação de proxies como o [Fiddler](https://www.telerik.com/fiddler) para inspecionar o tráfego HTTPS de entrada e saída do seu bot. *O Fiddler não é um produto da Microsoft.*
+- Examine o [Guia de autenticação do Bot Connector][BotConnectorAuthGuide] para saber mais sobre as tecnologias de autenticação utilizadas pelo Bot Framework.
+- Solicite ajuda de outras pessoas usando os recursos de [suporte][Support] do Bot Framework.
 
 [BotConnectorAuthGuide]: ~/rest-api/bot-framework-rest-connector-authentication.md
 [Support]: bot-service-resources-links-help.md

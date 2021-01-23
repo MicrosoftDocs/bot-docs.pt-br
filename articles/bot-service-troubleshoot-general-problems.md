@@ -7,12 +7,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/20/2020
-ms.openlocfilehash: 7b0383b244b950c23d91cbfa764dcfb1729707ba
-ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
+ms.openlocfilehash: 5b3a586948ebf933f5c3b07cebc9679b4e805be8
+ms.sourcegitcommit: 662e41dab1bb35d10f1e50f9f56bd82c901a20e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97759044"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717322"
 ---
 # <a name="troubleshoot-general"></a>Solucionar problemas gerais
 
@@ -22,7 +22,7 @@ Essas perguntas frequentes podem ajudá-lo a solucionar problemas comuns de dese
 
 ## <a name="how-can-i-troubleshoot-issues-with-my-bot"></a>Como é possível solucionar problemas com o bot?
 
-1. Depure o código-fonte do bot com [Visual Studio Code](debug-bots-locally-vscode.md) ou [Visual Studio](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger).
+1. Depure o código-fonte do bot com [Visual Studio Code](debug-bots-locally-vscode.md) ou [Visual Studio](/visualstudio/debugger/navigating-through-code-with-the-debugger).
 1. Teste o bot usando o [emulador](bot-service-debug-emulator.md) antes de implantá-lo na nuvem.
 1. Implante seu bot em uma plataforma de hospedagem na nuvem, como o Azure e, em seguida, teste a conectividade com o bot usando o controle de webchat interno do painel do bot no <a href="https://portal.azure.com" target="_blank">Portal do Azure</a>. Se você encontrar problemas com o bot depois de implantá-lo no Azure, considere usar este artigo de blog: [Entendendo a solução de problemas e suporte do Azure](https://azure.microsoft.com/blog/understanding-azure-troubleshooting-and-support/).
 1. Exclua a [autenticação][TroubleshootingAuth] como um possível problema.
@@ -203,8 +203,6 @@ Se o bot estiver registrado em dev.botframework.com e você quiser migrá-lo par
 * Aproveite as informações das perguntas respondidas anteriormente no [Stack Overflow](https://stackoverflow.com/questions/tagged/botframework) ou poste suas próprias perguntas usando a marca`botframework`. Observe que o Stack Overflow tem diretrizes como a exigência de um título descritivo, uma declaração completa e concisa do problema e detalhes suficientes para reproduzi-lo. Solicitações de recursos ou perguntas muito abrangentes não são tópicos pertinentes; os novos usuários devem visitar o [Centro de Ajuda do Stack Overflow](https://stackoverflow.com/help/how-to-ask) para obter mais detalhes.
 * Consulte os [Problemas do BotBuilder](https://github.com/Microsoft/BotBuilder/issues) no GitHub para obter informações sobre problemas conhecidos com o SDK do Bot Framework ou para relatar um novo problema.
 * Aproveite as informações na discussão da comunidade do BotBuilder sobre [Gitter](https://gitter.im/Microsoft/BotBuilder).
-
-
 
 [LUISPreBuiltEntities]: /azure/cognitive-services/luis/pre-builtentities
 [BotFrameworkIDGuide]: bot-service-resources-identifiers-guide.md

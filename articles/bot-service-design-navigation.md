@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 12/13/2017
-ms.openlocfilehash: 1ed66bbdb78ea63c5c647260b47fe36ce5fcf2c2
-ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
+ms.openlocfilehash: 0eda9ff1105256f5ddda3a85a5145392203f6c5e
+ms.sourcegitcommit: 662e41dab1bb35d10f1e50f9f56bd82c901a20e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98575974"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717237"
 ---
 # <a name="design-bot-navigation"></a>Design da navegação do bot
 
@@ -83,7 +83,7 @@ No entanto, pode ser que o bot esteja apenas ocupado processando a entrada do us
 >
 > <b>Errado</b>: Projete seu bot para adiar a confirmação da entrada do usuário até que o bot termine de compilar a resposta.
 
-Ao confirmar imediatamente a entrada do usuário, você elimina qualquer possibilidade de confusão sobre o estado do bot. Se sua resposta levar muito tempo para compilar, envie uma mensagem de "digitando" para indicar que seu bot está funcionando e, em seguida, acompanhe com uma [mensagem proativa](v4sdk/bot-builder-howto-proactive-message.md)
+Ao confirmar imediatamente a entrada do usuário, você elimina qualquer possibilidade de confusão sobre o estado do bot. Se a sua resposta levar muito tempo para ser compilada, considere enviar uma mensagem de "digitação" para indicar que o bot está funcionando e, em seguida, seguindo uma [mensagem proativa](v4sdk/bot-builder-howto-proactive-message.md).
 
 ## <a name="the-captain-obvious-bot"></a>O "bot óbvio"
 

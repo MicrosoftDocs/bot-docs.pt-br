@@ -10,12 +10,12 @@ ms.service: bot-service
 ms.subservices: sdk
 ms.date: 05/23/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 170551b010e2071c8839cd3a7923c9224339edf8
-ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
+ms.openlocfilehash: ce092f964cf87cc1669cabac93fbe0fa93ee4fdb
+ms.sourcegitcommit: 662e41dab1bb35d10f1e50f9f56bd82c901a20e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98577246"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717622"
 ---
 # <a name="debug-your-bot-using-transcript-files"></a>Depurar seu bot usando arquivos de transcrição
 
@@ -51,7 +51,7 @@ Todas as interações de usuário e respostas de bot que você inseriu para test
 
 Para recuperar um arquivo de transcrição de bot usando o emulador do bot Framework, selecione o _arquivo_ e, em seguida, _abra transcrição..._ no canto superior esquerdo do emulador, conforme mostrado abaixo. Em seguida, escolha o arquivo de transcrição que você deseja recuperar. (As transcrições também podem ser acessadas de dentro do controle de lista _transcrições_ na seção de _recursos_ do emulador)
 
-Neste exemplo estamos recuperando o arquivo de transcrição denominado “ursula_user.transcript”. Escolher um arquivo de transcrição carregará automaticamente toda a conversa preservada em uma nova guia chamada _Transcrição_.
+Neste exemplo estamos recuperando o arquivo de transcrição denominado “ursula_user.transcript”. A seleção de um arquivo de transcrição carregará automaticamente toda a conversa preservada em uma nova guia chamada _transcrição_.
 
 ![recuperar transcrição salva](./media/emulator_transcript_retrieve.png)
 

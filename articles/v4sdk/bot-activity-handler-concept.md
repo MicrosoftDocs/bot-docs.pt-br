@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 12/09/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 82cb0b7e821327136e76a8b70019d59073df9300
-ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
+ms.openlocfilehash: 66c7b2cb509cbcebe8c3f181352448c810746c07
+ms.sourcegitcommit: 662e41dab1bb35d10f1e50f9f56bd82c901a20e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97758564"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717612"
 ---
 # <a name="event-driven-conversations-using-an-activity-handler"></a>Conversas controladas por evento usando um manipulador de atividade
 
@@ -81,7 +81,7 @@ Os manipuladores definidos em `ActivityHandler` são:
 | Atividade de reação de mensagem recebida | `OnMessageReactionActivityAsync` | Em uma atividade `messageReaction`, chamará um manipulador se uma ou mais reações forem adicionadas ou removidas de uma mensagem. |
 | Reações de mensagem adicionadas a uma mensagem | `OnReactionsAddedAsync` | Substitua isso para manipular reações adicionadas a uma mensagem. |
 | Reações de mensagem removidas de uma mensagem | `OnReactionsRemovedAsync` | Substitua isso para manipular reações removidas de uma mensagem. |
-| Atividade de atualização de instalação recebida | `OnInstallationUpdateActivityAsync` | Em uma `installationUpdate` atividade, o chama um manipulador com base no fato de o bot ter sido instalado ou cancelado. |
+| Atividade de atualização de instalação recebida | `OnInstallationUpdateActivityAsync` | Em uma `installationUpdate` atividade, o chama um manipulador com base no fato de o bot ter sido instalado ou desinstalado. |
 | Bot instalado | `OnInstallationUpdateAddAsync` | Substitua isso para adicionar lógica para quando o bot for instalado em uma unidade organizacional. |
 | Bot desinstalado | `OnInstallationUpdateRemoveAsync` | Substitua isso para adicionar lógica para quando o bot for desinstalado em uma unidade organizacional. |
 | Outro tipo de atividade recebido | `OnUnrecognizedActivityTypeAsync` | Substitua-o para lidar com qualquer tipo de atividade sem tratamento. |
