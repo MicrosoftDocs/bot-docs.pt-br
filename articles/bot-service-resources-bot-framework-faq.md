@@ -6,13 +6,13 @@ ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
-ms.date: 12/23/2020
-ms.openlocfilehash: 907be7e277bd2415d8d40d4ae58f2b6948957e2b
-ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
+ms.date: 01/25/2020
+ms.openlocfilehash: cdf5456868ffa3fb035d7fff458c9f85d29032f2
+ms.sourcegitcommit: 22a92bc07c85f899b3b1dca4f19421bc302db23f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98575956"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100271975"
 ---
 # <a name="bot-framework-faq"></a>Perguntas frequentes do bot Framework
 
@@ -75,6 +75,8 @@ Caso você não encontre a resposta que está procurando, poderá postar suas pe
 - [Os bots registrados com a estrutura de bot coletam informações pessoais? Em caso afirmativo, como posso ter certeza de que os dados estão seguros e seguros? E quanto à privacidade?](bot-service-resources-faq-security.md#do-the-bots-registered-with-the-bot-framework-collect-personal-information-if-yes-how-can-i-be-sure-the-data-is-safe-and-secure-what-about-privacy)
 - [Pode hospedar meu bot em meus próprios servidores?](bot-service-resources-faq-security.md#can-i-host-my-bot-on-my-own-servers)
 - [Como os bots são vetados ou removidos do serviço?](bot-service-resources-faq-security.md#how-do-you-ban-or-remove-bots-from-the-service)
+- [Como a estrutura de bot lida com gerenciamento de identidade e acesso?](bot-service-resources-faq-security.md#how-does-the-bot-framework-handle-identity-and-access-management)
+- [Como fazer restringir o uso do meu bot para os usuários que pertencem somente ao meu locatário?](bot-service-resources-faq-security.md#how-do-i-restrict-the-use-of-my-bot-to-users-belonging-to-my-tenant-only?)
 - [Quais URLs específicas eu preciso para permitir-list no meu firewall corporativo para acessar os serviços do bot Framework?](bot-service-resources-faq-security.md#which-specific-urls-do-i-need-to-allow-list-in-my-corporate-firewall-to-access-bot-framework-services)
 - [Posso bloquear todo o tráfego para o meu bot, exceto o tráfego do Bot Framework Service?](bot-service-resources-faq-security.md#can-i-block-all-traffic-to-my-bot-except-traffic-from-the-bot-framework-service)
 - [Qual função RBAC é necessária para criar e implantar um bot?](bot-service-resources-faq-security.md#which-rbac-role-is-required-to-create-and-deploy-a-bot)

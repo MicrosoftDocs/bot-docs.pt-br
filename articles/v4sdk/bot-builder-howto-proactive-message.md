@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 11/23/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 779ca565acd4e2ee71dbe1b569676db8c9fbcb2d
-ms.sourcegitcommit: 8c1f6682241589ecb55d05ded62d798a761067bb
+ms.openlocfilehash: 8b0fcaae958bda61c4719e3f493ac8230354a858
+ms.sourcegitcommit: 22a92bc07c85f899b3b1dca4f19421bc302db23f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97759015"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100270313"
 ---
 # <a name="send-proactive-notifications-to-users"></a>Enviar notificações proativas para os usuários
 
@@ -25,16 +25,16 @@ Ocasionalmente, um bot pode precisar enviar uma _mensagem proativa_, uma mensage
 
 Mensagens proativas podem ser útil em uma variedade de cenários. Por exemplo, se o usuário tiver solicitado ao bot o monitoramento do preço de um produto, se o preço do produto cair 20%, o bot poderá alertar o usuário. Ou, se o bot precisar de um tempo para compilar uma resposta para a pergunta do usuário, ele poderá informar ao usuário sobre o atraso e permitir que a conversa continue enquanto isso. Quando o bot terminar de compilar a resposta para a pergunta, compartilhará essas informações com o usuário.
 
+> [!Note]
+> Este artigo aborda informações sobre mensagens proativas para bots em geral. Para obter informações sobre mensagens proativas no Microsoft Teams, consulte:
+> - O exemplo de **bot de conversa de equipes** em [**C#**](https://aka.ms/cs-teams-conversations-sample), [**JavaScript**](https://aka.ms/js-teams-conversations-sample)ou [**Python**](https://aka.ms/py-teams-conversations-sample).
+> - Documentação do Microsoft Teams sobre como [enviar mensagens proativas](/microsoftteams/platform/bots/how-to/conversations/send-proactive-messages).
+
 ## <a name="requirements"></a>Requisitos
 
 Antes que você possa enviar uma mensagem proativa, seu bot precisa de uma _referência de conversa_. O bot pode recuperar a referência de conversa de qualquer atividade recebida do usuário, mas isso normalmente requer que o usuário interaja com o bot pelo menos uma vez antes que o bot possa enviar uma mensagem proativa.
 
 Muitos canais proíbem um bot de enviar mensagens para um usuário, a menos que o usuário tenha acionado o bot pelo menos uma vez. Alguns canais permitem exceções. Por exemplo, o canal de equipes permite que o bot envie uma mensagem proativa (ou 1-em-1) para indivíduos em uma conversa de grupo já estabelecida que inclua o bot.
-
-Mais informações sobre as mensagens proativas em equipes podem ser encontradas nesses recursos:
-
-- O exemplo de **bot de conversa de equipes** em [**C#**](https://aka.ms/cs-teams-conversations-sample), [**JavaScript**](https://aka.ms/js-teams-conversations-sample)ou [**Python**](https://aka.ms/py-teams-conversations-sample).
-- Documentação do Microsoft Teams sobre como [enviar mensagens proativas](/microsoftteams/platform/bots/how-to/conversations/send-proactive-messages)
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -173,7 +173,7 @@ O código de exemplo também não acessa ou atualiza o estado do bot na ativaç�
 
 Muitos bots são monitorados e usam o estado para gerenciar uma conversa em várias ativações.
 Quando o método continue Conversation cria um contexto de ativação, o ativará o usuário e o estado de conversa corretos associados a ele, e você poderá integrar o proativo à lógica do bot.
-Se você precisar que a lógica de bot esteja ciente da mensagem proativa, terá algumas opções para fazer isso. Você poderá:
+Se você precisar que a lógica de bot esteja ciente da mensagem proativa, terá algumas opções para fazer isso. Você pode:
 
 - Forneça o manipulador de folheio do bot como o manipulador de retorno de chamada de ativação. O bot receberá então a atividade de evento "ContinueConversation".
 - Use o manipulador ativar retorno de chamada para adicionar informações ao contexto de ativação primeiro e, em seguida, chame o manipulador de folheio do bot.

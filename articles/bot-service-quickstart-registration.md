@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 11/12/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 85ddb738736d2da721a938384ce66c8de24af09c
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: 6bb4cb62e0e354ce294e86ba1056cd7bb43031da
+ms.sourcegitcommit: 22a92bc07c85f899b3b1dca4f19421bc302db23f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95456310"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100272005"
 ---
 # <a name="bot-channels-registration"></a>Registro de canais do bot
 
@@ -84,7 +84,7 @@ Um registro manual é necessário para situações como:
 - Você precisa criar manualmente sua própria ID de aplicativo e senha.
 
 > [!IMPORTANT]
-> Na seção *dá suporte a tipos de conta*, escolha um dos dois tipos de vários locatários, *contas em qualquer diretório organizacional (qualquer multilocatário do Azure AD)* ou *contas em qualquer diretório organizacional (qualquer Azure ad-multilocatário) e contas pessoais da Microsoft (por exemplo, Xbox, Outlook.com)*, ao criar o aplicativo. Não definir esse valor corretamente resultará em um bot não funcional. Para obter mais informações, consulte [registrar um novo aplicativo usando o portal do Azure](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app#register-a-new-application-using-the-azure-portal) e [registrar um aplicativo com a plataforma de identidade da Microsoft](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app#register-a-new-application-using-the-azure-portal).
+> Na seção **dá suporte a tipos de conta**, escolha as contas de tipo multilocatário **em qualquer diretório organizacional (qualquer AD do Azure-multilocatário)** ao criar o aplicativo. Se isso não for feito, resultará em um bot não funcional. Para obter mais informações, consulte  [registrar um aplicativo com a plataforma de identidade da Microsoft](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app#register-a-new-application-using-the-azure-portal).
 
 ## <a name="update-the-bot"></a>Atualizar o bot
 

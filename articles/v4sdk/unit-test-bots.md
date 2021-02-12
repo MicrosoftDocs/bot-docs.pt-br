@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 07/17/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 8019b73279507b69ed1a5ee1c1a9711923947d9e
-ms.sourcegitcommit: 71e7c93a312c21f0559005656e7b237e5a74113c
+ms.openlocfilehash: 18d5f49130d1069435d36aaf1a44036704cb3935
+ms.sourcegitcommit: 22a92bc07c85f899b3b1dca4f19421bc302db23f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95451986"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100270303"
 ---
 # <a name="how-to-unit-test-bots"></a>Como realizar testes de unidade em bots
 
@@ -106,7 +106,7 @@ A classe `DialogTestClient` está incluída no pacote npm [botbuilder-testing]()
 
 ### <a name="dialogtestclient"></a>DialogTestClient
 
-O primeiro parâmetro de `DialogTestClient` é o canal de destino. Isso permite que você teste uma lógica de renderização diferente com base no canal de destino para o bot (Teams, Slack, Cortana, etc.). Se você não tiver certeza sobre o canal de destino, poderá usar as IDs de canal `Emulator` ou `Test`, mas tenha em mente que alguns componentes podem se comportar de forma diferente dependendo do canal atual, por exemplo, `ConfirmPrompt` renderiza as opções Sim/Não diferentemente para os canais `Test` e `Emulator`. Você também pode usar esse parâmetro para testar a lógica de renderização condicional na caixa de diálogo com base na ID do canal.
+O primeiro parâmetro de `DialogTestClient` é o canal de destino. Isso permite que você teste a lógica de renderização diferente com base no canal de destino para o bot (equipes, margem de atraso, etc.). Se você não tiver certeza sobre o canal de destino, poderá usar as IDs de canal `Emulator` ou `Test`, mas tenha em mente que alguns componentes podem se comportar de forma diferente dependendo do canal atual, por exemplo, `ConfirmPrompt` renderiza as opções Sim/Não diferentemente para os canais `Test` e `Emulator`. Você também pode usar esse parâmetro para testar a lógica de renderização condicional na caixa de diálogo com base na ID do canal.
 
 O segundo parâmetro é uma instância da caixa de diálogo que está sendo testada (observação: **"sut"** significa "sistema em teste", usamos esse acrônimo em snippets de código neste artigo).
 

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: bot-service
 ms.date: 05/31/2019
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 3a409ff16ce8646f8f4db792fc0d8a00f14fde03
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 60515ca7aa112782fe285d8fd4474f88b4f3c955
+ms.sourcegitcommit: 22a92bc07c85f899b3b1dca4f19421bc302db23f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414374"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100272105"
 ---
 # <a name="user-authentication"></a>Autenticação de usuário
 
@@ -91,7 +91,7 @@ A imagem a seguir mostra a sequência de tempo da interação do usuário com um
 
 Uma consideração importante quando o Bot Framework facilita um logon de usuário é como proteger a URL de entrada. Quando uma URL de entrada é apresentada ao usuário, essa URL é associada a uma ID de conversa e a uma ID de usuário específicas desse bot. Essa URL não deve ser compartilhada, pois isso faria com que uma entrada errada ocorresse para uma conversa de bot específica. Para atenuar os ataques de segurança em relação ao compartilhamento da URL de entrada, é necessário garantir que o computador e a pessoa que clica na URL de entrada seja a pessoa que é _proprietária_ da janela de conversa.
 
-Alguns canais, como a Cortana, o Microsoft Teams, o Direct Line e o WebChat, podem fazer isso sem que o usuário perceba. Por exemplo, o WebChat usa cookies de sessão para garantir que o fluxo de entrada ocorra no mesmo navegador que a conversa do WebChat. No entanto, para outros canais, geralmente é apresentado um _código mágico_ de seis dígitos ao usuário. Isso é semelhante a uma autenticação multifator interna, pois o serviço de token do Bot Framework não liberará o token para o bot, a menos que o usuário conclua a autenticação final, comprovando que a pessoa que entrou tem acesso à experiência de chat ao inserir o código de seis dígitos.
+Alguns canais, como o Microsoft Teams, o Direct line e o Webchat, podem fazer isso sem que o usuário perceba. Por exemplo, o WebChat usa cookies de sessão para garantir que o fluxo de entrada ocorra no mesmo navegador que a conversa do WebChat. No entanto, para outros canais, geralmente é apresentado um _código mágico_ de seis dígitos ao usuário. Isso é semelhante a uma autenticação multifator interna, pois o serviço de token do Bot Framework não liberará o token para o bot, a menos que o usuário conclua a autenticação final, comprovando que a pessoa que entrou tem acesso à experiência de chat ao inserir o código de seis dígitos.
 
 > [!IMPORTANT]
 > Tenha em mente estas importantes [Considerações de segurança](~/rest-api/bot-framework-rest-direct-line-3-0-authentication.md#security-considerations).

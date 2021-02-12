@@ -7,16 +7,16 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 02/20/2020
-ms.openlocfilehash: 63b18b070777edb270add6586b8cfdc7e639f862
-ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
+ms.openlocfilehash: 855459a62f6940d91fecf3175a67618dd6d7869e
+ms.sourcegitcommit: 22a92bc07c85f899b3b1dca4f19421bc302db23f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98576768"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100272125"
 ---
 # <a name="key-concepts---bot-connector-api"></a>Principais conceitos-API do conector de bot
 
-O Bot Framework e o serviço de Bot do Azure permitem que o bot comunique-se com usuários no Teams, no Cortana, no Facebook e muito mais. Os canais estão disponíveis em duas formas: como serviço incluído como parte do Serviço de Bot do Azure e como bibliotecas de adaptador para uso com o SDK do Bot Framework. Este artigo se concentra nos canais padronizados incluídos no Serviço de Bot do Azure.
+O bot Framework e o serviço de bot do Azure permitem que o bot se comunique com usuários em equipes, Facebook e muito mais. Os canais estão disponíveis em duas formas: como serviço incluído como parte do Serviço de Bot do Azure e como bibliotecas de adaptador para uso com o SDK do Bot Framework. Este artigo se concentra nos canais padronizados incluídos no Serviço de Bot do Azure.
 
 ## <a name="bot-framework-channels"></a>Canais do Bot Framework
 

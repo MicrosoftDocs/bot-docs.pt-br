@@ -7,18 +7,18 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 11/25/2020
-ms.openlocfilehash: 9eda6eb7259e70355db0124f34d2056823d273d5
-ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
+ms.openlocfilehash: 410f45fda76962b6f89ff356362ddff0e080221e
+ms.sourcegitcommit: 22a92bc07c85f899b3b1dca4f19421bc302db23f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98579718"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100271965"
 ---
 # <a name="debug-with-adaptive-tools"></a>Depurar com ferramentas adaptáveis
 
-As [ferramentas adaptáveis do bot Framework](https://aka.ms/adaptive-tool) são uma extensão vs Code que ajuda os desenvolvedores a manipular arquivos. LG e caixa de diálogo (. Dialog) com eficiência.
+As [ferramentas adaptáveis do bot Framework](https://aka.ms/adaptive-tool) são uma extensão vs Code que ajuda os desenvolvedores a manipular arquivos. LG,. Lu e diálogo (. Dialog) com eficiência.
 
-As ferramentas adaptáveis têm várias ferramentas e configurações que facilitam a depuração, a análise e o aprimoramento dos arquivos de idioma. Recursos como realce de sintaxe, verificações de diagnóstico e depuração permitem que os desenvolvedores solucionem problemas de arquivos de idioma, enquanto preenchimento automático e sugestão aprimoram e simplificam o processo de criação de ativos de bot.
+As ferramentas adaptáveis têm uma variedade de ferramentas e configurações que facilitam a depuração, a análise e o aprimoramento dos arquivos de idioma. Recursos como realce de sintaxe, verificações de diagnóstico e depuração permitem que os desenvolvedores solucionem problemas de arquivos de idioma, enquanto preenchimento automático e sugestão aprimoram e simplificam o processo de criação de ativos de bot.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -27,7 +27,7 @@ As ferramentas adaptáveis têm várias ferramentas e configurações que facili
 - Um bot com um ou mais dos seguintes tipos de arquivo:
     - [. LG](file-format/bot-builder-lg-file-format.md)
     - [. Lu](file-format/bot-builder-lu-file-format.md)
-    - caixa de diálogo (. caixa de diálogo). Você pode encontrar exemplos de arquivos. Dialog no exemplo de [21. AdaptiveBot-declarativo](https://aka.ms/dotnet-21-adaptivebot-declarative-sample) .
+    - caixa de diálogo (. caixa de diálogo). Você pode encontrar exemplos de arquivos. Dialog no exemplo [AdaptiveBot](https://aka.ms/dotnet-21-adaptivebot-declarative-sample) .
 
 ## <a name="about-adaptive-tools"></a>Sobre ferramentas adaptáveis
 

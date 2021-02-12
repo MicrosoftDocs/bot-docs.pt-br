@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: bot-service
 ms.date: 11/13/2020
 monikerRange: azure-bot-service-4.0
-ms.openlocfilehash: 2b25c8d787eb33fe852a57ba149c7781b486591f
-ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
+ms.openlocfilehash: 9fccf343635e4e7f4b1a545652688ec37dca3618
+ms.sourcegitcommit: 22a92bc07c85f899b3b1dca4f19421bc302db23f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98577518"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100271945"
 ---
 # <a name="whats-new-august-2020"></a>Novidades de agosto de 2020
 
@@ -298,7 +298,7 @@ Este artigo resume os principais novos recursos e aprimoramentos no Bot Framewor
 
 - [Testes de canal](https://github.com/Microsoft/BotFramework-Emulator/releases) | [docs](bot-service-debug-inspection-middleware.md):
 
-Introduzido no Microsoft Build 2019, o Inspetor de Bot é um novo recurso no Bot Framework Emulator que permite depurar e testar bots em canais como Microsoft Teams, Slack, Cortana e muito mais. Conforme você usa o bot em canais específicos, as mensagens serão espelhadas para o Bot Framework Emulator, no qual você poderá inspecionar os dados da mensagem que o bot tiver recebido. Além disso, é renderizado um instantâneo do estado da memória do bot em todos os turnos entre o canal e o bot.
+Introduzido no Microsoft Build 2019, o Inspetor de bot é um novo recurso no emulador do bot Framework que permite depurar e testar bots em canais como equipes da Microsoft, margem de atraso e muito mais. Conforme você usa o bot em canais específicos, as mensagens serão espelhadas para o Bot Framework Emulator, no qual você poderá inspecionar os dados da mensagem que o bot tiver recebido. Além disso, é renderizado um instantâneo do estado da memória do bot em todos os turnos entre o canal e o bot.
 
 ### <a name="web-chat"></a>Chat na Web
 - Com base em solicitações de clientes corporativos, adicionamos um [exemplo de Webchat](https://github.com/microsoft/BotFramework-WebChat/tree/master/samples/19.a.single-sign-on-for-enterprise-apps#single-sign-on-demo-for-enterprise-apps-using-oauth) que mostra como autorizar um usuário a acessar recursos em um aplicativo empresarial com um bot. Dois tipos de recursos são usados para demonstrar a interoperabilidade do OAuth com o Microsoft Graph e a API do GitHub.
@@ -346,7 +346,7 @@ O [repositório de Soluções do Bot Framework](https://github.com/Microsoft/AI#
 
 ## <a name="azure-bot-service"></a>Serviço de Bot do Azure
 O Serviço de Bot do Azure permite que você hospede bots inteligentes e de nível empresarial com total controle e propriedade sobre seus dados.
-Os desenvolvedores podem registrar e conectar seus bots a usuários no Microsoft Teams, na Cortana, no Webchat e muito mais. [Azure][27]  |  [docs][28] | [conectar-se a canais][29]
+Os desenvolvedores podem registrar e conectar seus bots aos usuários no Microsoft Teams, Web Chat e muito mais. [Azure][27]  |  [docs][28] | [conectar-se a canais][29]
 
 * **Cliente JS Direct Line**: se você quiser usar o canal Direct Line no Serviço de Bot do Azure e não estiver usando o cliente WebChat, o cliente JS Direct Line poderá ser usado no seu aplicativo personalizado. Vá para o [GitHub][30] para obter mais informações.
 
@@ -363,7 +363,7 @@ O [Bot Framework Emulator][60] é um aplicativo de área de trabalho multiplataf
 <a name="Emulator-whats-new"></a>
 ### <a name="bot-inspector-new-in-preview"></a>Inspetor de Bot (Novo! Em versão prévia)
 
-O Bot Framework Emulator lançou uma versão beta do novo recurso Inspetor de Bot. Ele fornece um modo de depurar e testar seus bots do SDK do Bot Framework v4 em canais como Microsoft Teams, Slack, Cortana, Facebook Messenger etc. Durante a conversa, as mensagens serão espelhadas para o Bot Framework Emulator, no qual você poderá inspecionar os dados da mensagem que o bot recebeu. Além disso, é renderizado um instantâneo do estado do bot em todos os turnos entre o canal e o bot. Leia mais sobre o [Inspetor de Bot](https://github.com/Microsoft/BotFramework-Emulator/blob/master/content/CHANNELS.md).
+O Bot Framework Emulator lançou uma versão beta do novo recurso Inspetor de Bot. Ele fornece uma maneira de depurar e testar seus bots do SDK do bot Framework V4 em canais como equipes da Microsoft, margem de atraso, Facebook Messenger, etc. Como você tem a conversa, as mensagens serão espelhadas no emulador do bot Framework, onde você poderá inspecionar os dados da mensagem recebidos pelo bot. Além disso, é renderizado um instantâneo do estado do bot em todos os turnos entre o canal e o bot. Leia mais sobre o [Inspetor de Bot](https://github.com/Microsoft/BotFramework-Emulator/blob/master/content/CHANNELS.md).
 
 
 ## <a name="related-services"></a>Serviços Relacionados

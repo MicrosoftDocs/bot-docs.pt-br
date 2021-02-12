@@ -1,19 +1,19 @@
 ---
 title: Configurar um bot para execução em um ou mais canais – Serviço de Bot
 description: Saiba como configurar um bot para execução em um ou mais canais usando o Portal do Bot Framework.
-keywords: canais de bot, configurar, cortana, facebook messenger, kik, slack, portal do Azure
+keywords: canais de bot, configurar, Facebook Messenger, Kik, margem de atraso, portal do Azure
 author: ivorb
 ms.author: kamrani
 manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 07/31/2019
-ms.openlocfilehash: 5f2f7cb15142d4cea26bc8b415b6e8272d316757
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: d1d2bd27dde5f45852cfa318032b168491755104
+ms.sourcegitcommit: 22a92bc07c85f899b3b1dca4f19421bc302db23f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92414869"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100271915"
 ---
 # <a name="connect-a-bot-to-channels"></a>Conectar um bot aos canais
 
@@ -21,7 +21,7 @@ ms.locfileid: "92414869"
 
 Um canal é uma conexão entre aplicativos de comunicação e um bot. Um bot, registrado com o Azure, usa canais para facilitar a comunicação com os usuários.
 
-Você pode configurar um bot para se conectar a qualquer um dos canais padrão, como Alexa, Cortana, Facebook Messenger e margem de atraso. Para obter mais informações, consulte o [registro de canais de bot](bot-service-quickstart-registration.md).
+Você pode configurar um bot para se conectar a qualquer um dos canais padrão, como Alexa, Facebook Messenger e margem de atraso. Para obter mais informações, consulte o [registro de canais de bot](bot-service-quickstart-registration.md).
 
 Além dos canais fornecidos, você também pode conectar um bot ao seu aplicativo de comunicação usando a **linha direta** como canal.
 
@@ -44,13 +44,12 @@ Depois de configurar o canal, os usuários naquele canal podem começar a usar o
 
 ## <a name="connect-a-bot-to-a-channel"></a>Conectar um bot a um canal
 
-As etapas de conexão são diferentes para cada canal. Consulte o artigo relacionado na tabela abaixo mais informações. 
+As etapas de conexão são diferentes para cada canal. Consulte o artigo relacionado na tabela abaixo mais informações.
 
 > [!div class="mx-tdBreakAll"]
 > |Canal|Descrição|
-> |-------------|----------|
+> |:-|:-|
 > |[Alexa](bot-service-channel-connect-alexa.md) <img width="150px"/>|Comunique-se com usuários por meio de dispositivos Alexa que dão suporte a habilidades personalizadas.|
-> |[Cortana](bot-service-channel-connect-cortana.md)| Envie e receba mensagens de voz além da conversa textual.|
 > |[Linha direta](bot-service-channel-directline.md)| Integre um bot em um aplicativo móvel, em uma página da Web ou em outros aplicativos.|
 > |[Email do Office 365](bot-service-channel-connect-email.md)|Habilite um bot para se comunicar com usuários por email do Office 365.|
 > |[Facebook](bot-service-channel-connect-facebook.md)|Conecte um bot ao Facebook Messenger e ao Facebook workplace, para que ele possa se comunicar com os usuários em ambas as plataformas.|
@@ -61,14 +60,15 @@ As etapas de conexão são diferentes para cada canal. Consulte o artigo relacio
 > |[Skype for Business](bot-service-channel-connect-skypeforbusiness.md)|Configure um bot para se comunicar com usuários por meio do Skype para Glossário.|
 > |[Margem de atraso](bot-service-channel-connect-slack.md)|Configure um bot para se comunicar com os usuários por meio da margem de atraso.|
 > |[Telegram](bot-service-channel-connect-telegram.md)|Configure um bot para se comunicar com usuários por meio do Telegram.|
+> |[Telefonia](bot-service-channel-connect-telephony.md)|Configure um bot para se comunicar com os usuários por meio do canal de telefonia do bot Framework.|
 > |[Twilio](bot-service-channel-connect-twilio.md)|Configure um bot para se comunicar com os usuários por meio da plataforma de comunicação de nuvem do twilio.|
 > |[WeChat](bot-service-channel-connect-wechat.md)|Configure um bot para se comunicar com usuários usando a plataforma WeChat.|
 > |[Web Chat](bot-service-channel-connect-webchat.md)| Configurado automaticamente para você quando você cria um bot com o serviço bot Framework.|
 > |[Webex](bot-service-adapter-connect-webex.md)|Configure um bot para se comunicar com usuários usando o WebEx.|
 > |[Canais adicionais](bot-service-channel-additional-channels.md)|Canais adicionais disponíveis como um adaptador por meio de [plataformas fornecidas](https://botkit.ai/docs/v4/platforms/) por meio de [repositórios](https://botkit.ai/docs/v4/platforms/)de Botkit e comunidade.|
 
-
 ## <a name="publish-a-bot"></a>Publicar um bot
+
 O processo de publicação é diferente para cada canal.
 
 [!INCLUDE [publishing](./includes/snippet-publish-to-channel.md)]

@@ -1,15 +1,11 @@
 ---
-ms.openlocfilehash: ea7a8d85c0a59ad74f6130573636678b2bff2c26
-ms.sourcegitcommit: 9d77f3aff9521d819e88efd0fbd19d469b9919e7
+ms.openlocfilehash: fa5f5652aeb57d1f880e92cdfb378746ba75f364
+ms.sourcegitcommit: 22a92bc07c85f899b3b1dca4f19421bc302db23f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80647516"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100271905"
 ---
-### <a name="cortana"></a>Cortana
-
-Os bots são publicados na Cortana no [painel](https://aka.ms/cortana-publish) e são usados para aprimorar as habilidades da Cortana. A publicação de um bot envia-o para revisão. As habilidades da Cortana podem ser implantadas para seu próprio uso, implantadas em um grupo pequeno ou publicadas para o mundo.
-
 ### <a name="skype"></a>Skype
 
 >[!NOTE]

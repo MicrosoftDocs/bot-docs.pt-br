@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 05/19/2020
-ms.openlocfilehash: 90bd3e1214910fd6543e316d376fc36f25b543ca
-ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
+ms.openlocfilehash: 69455cf4c9adaa0f50b28f43523a8508b3df228f
+ms.sourcegitcommit: 22a92bc07c85f899b3b1dca4f19421bc302db23f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98576108"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100271985"
 ---
 # <a name="categorized-activities-by-channel"></a>Atividades categorizadas por canal
 
@@ -34,10 +34,10 @@ As atividades podem ser divididas em categorias diferentes de maneira significat
 <a name="conversational"></a>Conversação
 --------------
 
- \                      | Cortana            | Linha Direta        | Direct Line (Webchat) | Email              | Facebook           | GroupMe            | Kik                | Teams              | Margem de atraso              | Skype   | Skype Business | Telegram | Twilio  
-:---------------------- | :-----:            | :----------------: | :--------------------: |:----:              | :------:           | :-----:            | :-----:            | :---:              | :---:              | :---:   | :------------: | :------: | :----:  
-Mensagem                 | :white_check_mark: | :white_check_mark: | :white_check_mark:     | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:        | :white_check_mark:  | :white_check_mark: 
-MessageReaction         | :x:                | :x:                | :x:                    | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :x:                | :x:      | :x:             | :x:       | :x:      
+ \                      | Linha Direta        | Direct Line (Webchat) | Email              | Facebook           | GroupMe            | Kik                | Teams              | Margem de atraso              | Skype   | Skype Business | Telegram | Twilio  
+:---------------------- | :----------------: | :--------------------: |:----:              | :------:           | :-----:            | :-----:            | :---:              | :---:              | :---:   | :------------: | :------: | :----:  
+Mensagem                 | :white_check_mark: | :white_check_mark:     | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:        | :white_check_mark:  | :white_check_mark: 
+MessageReaction         | :x:                | :x:                    | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :x:                | :x:      | :x:             | :x:       | :x:      
 
 - Todos os canais enviam atividades de mensagens.
 - Ao usar um Diálogo, geralmente as Atividades de Mensagens devem sempre ser passadas para o Diálogo.
@@ -52,10 +52,10 @@ MessageReaction         | :x:                | :x:                | :x:         
 <a name="welcome"></a>Bem-Vindo
 -------
 
- \                         | Cortana            | Linha Direta        | Direct Line (Webchat) | Email   | Facebook             | GroupMe | Kik     | Teams   | Margem de atraso   | Skype   | Skype Business | Telegram | Twilio  
-:----------------------    | :-----:            | :---------:        | :--------------------: |:----:   | :------:             | :-----: | :-----: | :---:   | :---:   | :---:   | :------------: | :------: | :----:  
-ConversationUpdate         | :white_check_mark: | :white_check_mark: | :white_check_mark:     | :x:     | :white_large_square: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:      | :x:             | :white_check_mark:  | :x:     
-ContactRelationUpdate      | :x:                | :x:                | :x:                    | :x:     | :x:                  | :x:      | :x:      | :x:      | :x:      | :white_check_mark: | :white_check_mark:        | :x:       | :x:     
+ \                         | Linha Direta        | Direct Line (Webchat) | Email   | Facebook             | GroupMe | Kik     | Teams   | Margem de atraso   | Skype   | Skype Business | Telegram | Twilio  
+:----------------------    | :---------:        | :--------------------: |:----:   | :------:             | :-----: | :-----: | :---:   | :---:   | :---:   | :------------: | :------: | :----:  
+ConversationUpdate         | :white_check_mark: | :white_check_mark:     | :x:     | :white_large_square: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:      | :x:             | :white_check_mark:  | :x:     
+ContactRelationUpdate      | :x:                | :x:                    | :x:     | :x:                  | :x:      | :x:      | :x:      | :x:      | :white_check_mark: | :white_check_mark:        | :x:       | :x:     
 
 - É comum que os canais enviem Atividades ConversationUpdate.
 - Logicamente, há dois tipos de MessageReaction: Adicionada e Removida
@@ -66,11 +66,11 @@ ContactRelationUpdate      | :x:                | :x:                | :x:      
 <a name="application-extensibility"></a>Extensibilidade de aplicativo
 -------------------------
 
- \                      | Cortana            | Linha Direta        | Direct Line (Webchat) | Email   | Facebook | GroupMe | Kik     | Teams   | Margem de atraso   | Skype   | Skype Business | Telegram | Twilio  
-:---------------------- | :-----:            | :---------:        | :--------------------: |:----:   | :------: | :-----: | :-----: | :---:   | :---:   | :---:   | :------------: | :------: | :----:  
-Event.*                    | :white_large_square: | :white_check_mark: | :white_check_mark:    | :white_large_square: | :white_large_square:  | :white_large_square: | :white_large_square: | :white_large_square:  | :white_large_square:  | :white_large_square:  | :white_large_square:           | :white_large_square:     | :white_large_square:  
-Event.CreateConversation   | :white_large_square: | :white_large_square: | :white_large_square:   | :white_large_square: | :white_large_square:  | :white_large_square: | :white_large_square: | :white_large_square:  | :white_large_square:  | :white_large_square:  | :white_large_square:           | :white_large_square:     | :white_large_square:  
-Event.ContinueConversation | :white_large_square: | :white_large_square: | :white_large_square:   | :white_large_square: | :white_large_square:  | :white_large_square: | :white_large_square: | :white_large_square:  | :white_large_square:  | :white_large_square:  | :white_large_square:           | :white_large_square:     | :white_large_square:  
+ \                      | Linha Direta        | Direct Line (Webchat) | Email   | Facebook | GroupMe | Kik     | Teams   | Margem de atraso   | Skype   | Skype Business | Telegram | Twilio  
+:---------------------- | :---------:        | :--------------------: |:----:   | :------: | :-----: | :-----: | :---:   | :---:   | :---:   | :------------: | :------: | :----:  
+Event.*                    | :white_check_mark: | :white_check_mark:    | :white_large_square: | :white_large_square:  | :white_large_square: | :white_large_square: | :white_large_square:  | :white_large_square:  | :white_large_square:  | :white_large_square:           | :white_large_square:     | :white_large_square:  
+Event.CreateConversation   | :white_large_square: | :white_large_square:   | :white_large_square: | :white_large_square:  | :white_large_square: | :white_large_square: | :white_large_square:  | :white_large_square:  | :white_large_square:  | :white_large_square:           | :white_large_square:     | :white_large_square:  
+Event.ContinueConversation | :white_large_square: | :white_large_square:   | :white_large_square: | :white_large_square:  | :white_large_square: | :white_large_square: | :white_large_square:  | :white_large_square:  | :white_large_square:  | :white_large_square:           | :white_large_square:     | :white_large_square:  
 
 - As Atividades de Evento são um mecanismo de extensibilidade no Direct Line (_também conhecido como Chat na Web_).
 - Um aplicativo que possua cliente e servidor pode optar por encapsular os próprios eventos através do serviço usando a Atividade de Evento.
@@ -79,10 +79,10 @@ Event.ContinueConversation | :white_large_square: | :white_large_square: | :whit
 <a name="microsoft-teams"></a>Equipes da Microsoft
 ------------------
 
- \                      | Cortana            | Linha Direta        | Direct Line (Webchat) | Email   | Facebook | GroupMe | Kik     | Teams   | Margem de atraso   | Skype   | Skype Business | Telegram | Twilio  
-:---------------------- | :-----:            | :---------:        | :--------------------: |:----:   | :------: | :-----: | :-----: | :---:   | :---:   | :---:   | :------------: | :------: | :----:  
-Invoke.TeamsVerification   | :x:      | :x:          | :x: | :x:   | :x:       | :x:      | :x:      | :white_check_mark: | :x:    | :x:    | :x:             | :x:       | :x:     
-Invoke.ComposeResponse     | :x:      | :x:          | :x: | :x:   | :x:       | :x:      | :x:      | :white_check_mark: | :x:    | :x:    | :x:             | :x:       | :x:     
+ \                      | Linha Direta        | Direct Line (Webchat) | Email   | Facebook | GroupMe | Kik     | Teams   | Margem de atraso   | Skype   | Skype Business | Telegram | Twilio  
+:---------------------- | :---------:        | :--------------------: |:----:   | :------: | :-----: | :-----: | :---:   | :---:   | :---:   | :------------: | :------: | :----:  
+Invoke.TeamsVerification   | :x:          | :x: | :x:   | :x:       | :x:      | :x:      | :white_check_mark: | :x:    | :x:    | :x:             | :x:       | :x:     
+Invoke.ComposeResponse     | :x:          | :x: | :x:   | :x:       | :x:      | :x:      | :white_check_mark: | :x:    | :x:    | :x:             | :x:       | :x:     
 
 - Além de outras atividades do tipo, o Microsoft Teams define algumas Atividades de Invocação específicas do Teams.
 - As Atividades de Invocação são específicas de um aplicativo e não algo que um cliente define.
@@ -95,10 +95,10 @@ Isto é muito importante: ao usar Diálogos, para o OAuth Prompt funcionar a Ati
 <a name="message-update"></a>Atualização de mensagem
 --------------
 
- \                      | Cortana            | Linha Direta        | Direct Line (Webchat) | Email   | Facebook | GroupMe | Kik     | Teams   | Margem de atraso   | Skype   | Skype Business | Telegram | Twilio  
-:---------------------- | :-----:            | :---------:        | :--------------------: |:----:   | :------: | :-----: | :-----: | :---:   | :---:   | :---:   | :------------: | :------: | :----:  
-MessageUpdate | :x:      | :x:          | :x:    | :x: | :x:      | :x:      | :x:  | :white_check_mark: | :white_large_square:  | :x:    | :x:             | :x:       | :x:     
-MessageDelete | :x:      | :x:          | :x:    | :x: | :x:      | :x:      | :x:  | :white_check_mark: | :white_large_square:  | :x:    | :x:             | :x:       | :x:     
+ \                      | Linha Direta        | Direct Line (Webchat) | Email   | Facebook | GroupMe | Kik     | Teams   | Margem de atraso   | Skype   | Skype Business | Telegram | Twilio  
+:---------------------- | :---------:        | :--------------------: |:----:   | :------: | :-----: | :-----: | :---:   | :---:   | :---:   | :------------: | :------: | :----:  
+MessageUpdate | :x:          | :x:    | :x: | :x:      | :x:      | :x:  | :white_check_mark: | :white_large_square:  | :x:    | :x:             | :x:       | :x:     
+MessageDelete | :x:          | :x:    | :x: | :x:      | :x:      | :x:  | :white_check_mark: | :white_large_square:  | :x:    | :x:             | :x:       | :x:     
 
 - No momento, o Teams oferece suporte à Atualização de Mensagens.
 
@@ -106,9 +106,9 @@ MessageDelete | :x:      | :x:          | :x:    | :x: | :x:      | :x:      | :
 <a name="oauth"></a>OAuth
 -------
 
- \                      | Cortana            | Linha Direta        | Direct Line (Webchat) | Email   | Facebook | GroupMe | Kik     | Teams   | Margem de atraso   | Skype   | Skype Business | Telegram | Twilio  
-:---------------------- | :-----:            | :---------:        | :--------------------: |:----:   | :------: | :-----: | :-----: | :---:   | :---:   | :---:   | :------------: | :------: | :----:  
-Event.TokenResponse| :white_large_square:  | :white_check_mark:   | :white_check_mark:    | :x:    | :white_large_square: | :white_large_square: | :white_large_square: | :x:    | :white_large_square: | :white_large_square: | :white_large_square:       | :white_large_square: | :white_large_square: 
+ \                      | Linha Direta        | Direct Line (Webchat) | Email   | Facebook | GroupMe | Kik     | Teams   | Margem de atraso   | Skype   | Skype Business | Telegram | Twilio  
+:---------------------- | :---------:        | :--------------------: |:----:   | :------: | :-----: | :-----: | :---:   | :---:   | :---:   | :------------: | :------: | :----:  
+Event.TokenResponse     | :white_check_mark:   | :white_check_mark:    | :x:    | :white_large_square: | :white_large_square: | :white_large_square: | :x:    | :white_large_square: | :white_large_square: | :white_large_square:       | :white_large_square: | :white_large_square: 
 
 Isto é muito importante: ao usar Diálogos, para o OAuth Prompt funcionar a Atividade Event.TokenResponse deve ser encaminhada para o Diálogo.
 
@@ -116,12 +116,12 @@ Isto é muito importante: ao usar Diálogos, para o OAuth Prompt funcionar a Ati
 <a name="uncategorized"></a>Não categorizado 
 -------------
 
- \                      | Cortana  | Linha Direta        | Direct Line (Webchat) | Email | Facebook | GroupMe | Kik     | Teams | Margem de atraso | Skype | Skype Business | Telegram | Twilio  
-:---------------------- | :-----:  | :---------:        | :--------------------: |:----: | :------: | :-----: | :-----: | :---: | :---: | :---: | :------------: | :------: | :----:  
-EndOfConversation       | :x:      | :white_check_mark: | :white_check_mark:     | :x:   | :x:      | :x:     | :x:     | :x:   | :x:   | :x:   | :x:            | :x:      | :x:     
-InstallationUpdate      | :x:      | :white_check_mark: | :white_check_mark:     | :x:   | :x:      | :x:     | :x:     | :x:   | :x:   | :x:   | :x:            | :x:      | :x:     
-Digitação                  | :x:      | :white_check_mark: | :white_check_mark:     | :x:   | :x:      | :x:     | :x:     | :x:   | :x:   | :x:   | :x:            | :x:      | :x:     
-Entrega                 | :x:      | :x:                | :x:                    | :x:   | :x:      | :x:     | :x:     | :x:   | :x:   | :x:   | :x:            | :x:      | :x:     
+ \                      | Linha Direta        | Direct Line (Webchat) | Email | Facebook | GroupMe | Kik     | Teams | Margem de atraso | Skype | Skype Business | Telegram | Twilio  
+:---------------------- | :---------:        | :--------------------: |:----: | :------: | :-----: | :-----: | :---: | :---: | :---: | :------------: | :------: | :----:  
+EndOfConversation       | :white_check_mark: | :white_check_mark:     | :x:   | :x:      | :x:     | :x:     | :x:   | :x:   | :x:   | :x:            | :x:      | :x:     
+InstallationUpdate      | :white_check_mark: | :white_check_mark:     | :x:   | :x:      | :x:     | :x:     | :x:   | :x:   | :x:   | :x:            | :x:      | :x:     
+Digitação                  | :white_check_mark: | :white_check_mark:     | :x:   | :x:      | :x:     | :x:     | :x:   | :x:   | :x:   | :x:            | :x:      | :x:     
+Entrega                 | :x:                | :x:                    | :x:   | :x:      | :x:     | :x:     | :x:   | :x:   | :x:   | :x:            | :x:      | :x:     
 
 
 <a name="out-of-use-includes-payment-specific-invoke"></a>Fora de uso (inclui Invocação específica de Pagamento)
@@ -134,13 +134,6 @@ Entrega                 | :x:      | :x:                | :x:                   
 ---
 
 ## <a name="summary-of-activities-supported-per-channel"></a>Resumo das Atividades com suporte por Canal
-
-<a name="cortana"></a>Cortana
--------
-- Mensagem
-- ConversationUpdate
-- _Event.TokenResponse_
-- _EndOfConversation (quando a janela fecha?)_
 
 <a name="direct-line"></a>Linha Direta
 --------
@@ -217,24 +210,24 @@ Entrega                 | :x:      | :x:                | :x:                   
 
 ## <a name="summary-table-all-activities-to-all-channels"></a>Tabela de resumo de todas as atividades para todos os canais
 
- \                         | Cortana              | Linha Direta          | Direct Line (Webchat) | Email                | Facebook             | GroupMe | Kik     | Teams   | Margem de atraso   | Skype   | Skype Business | Telegram | Twilio  
-:----------------------    | :-----:              | :---------:          | :--------------------: |:----:                | :------:             | :-----: | :-----: | :---:   | :---:   | :---:   | :------------: | :------: | :----:  
-Mensagem                    | :white_check_mark:   | :white_check_mark:   | :white_check_mark:     | :white_check_mark:   | :white_check_mark:   | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:        | :white_check_mark:  | :white_check_mark: 
-MessageReaction            | :x:                  | :x:                  | :x:                    | :x:                  | :x:                  | :x:      | :x:      | :white_check_mark: | :x:      | :x:      | :x:             | :x:       | :x:      
-ConversationUpdate         | :white_check_mark:   | :white_check_mark:   | :white_check_mark:     | :x:                  | :white_large_square: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:      | :x:             | :white_check_mark:  | :x:     
-ContactRelationUpdate      | :x:                  | :x:                  | :x:                    | :x:                  | :x:                  | :x:      | :x:      | :x:      | :x:      | :white_check_mark: | :white_check_mark:        | :x:       | :x:     
-Event.*                    | :white_large_square: | :white_check_mark:   | :white_check_mark:     | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square:  | :white_large_square:  | :white_large_square:  | :white_large_square:           | :white_large_square:     | :white_large_square:  
-Event.CreateConversation   | :white_large_square: | :white_large_square: | :white_large_square:   | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square:  | :white_large_square:  | :white_large_square:  | :white_large_square:           | :white_large_square:     | :white_large_square:  
-Event.ContinueConversation | :white_large_square: | :white_large_square: | :white_large_square:   | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square:  | :white_large_square:  | :white_large_square:  | :white_large_square:           | :white_large_square:     | :white_large_square:  
-Invoke.TeamsVerification   | :x:                  | :x:                  | :x:                    | :x:                  | :x:                  | :x:      | :x:      | :white_check_mark: | :x:    | :x:    | :x:             | :x:       | :x:     
-Invoke.ComposeResponse     | :x:                  | :x:                  | :x:                    | :x:                  | :x:                  | :x:      | :x:      | :white_check_mark: | :x:    | :x:    | :x:             | :x:       | :x:     
-MessageUpdate              | :x:                  | :x:                  | :x:                    | :x:                  | :x:                  | :x:      | :x:  | :white_check_mark: | :white_large_square:  | :x:    | :x:             | :x:       | :x:     
-MessageDelete              | :x:                  | :x:                  | :x:                    | :x:                  | :x:                  | :x:      | :x:  | :white_check_mark: | :white_large_square:  | :x:    | :x:             | :x:       | :x:     
-Event.TokenResponse        | :white_large_square: | :white_check_mark:   | :white_check_mark:     | :x:                  | :white_large_square: | :white_large_square: | :white_large_square: | :x:    | :white_large_square: | :white_large_square: | :white_large_square:       | :white_large_square: | :white_large_square: 
-EndOfConversation          | :x:                  | :white_check_mark:   | :white_check_mark:     | :x:                  | :x:      | :x:       | :x:     | :x:   | :x:   | :x:   | :x:            | :x:      | :x:     
-InstallationUpdate         | :x:                  | :white_check_mark:   | :white_check_mark:     | :x:                  | :x:      | :x:       | :x:     | :x:   | :x:   | :x:   | :x:            | :x:      | :x:     
-Digitação                     | :x:                  | :white_check_mark:   | :white_check_mark:     | :x:                  | :white_check_mark:   | :x:     | :x:     | :white_check_mark:   | :white_check_mark:   | :x:   | :x:            | :white_check_mark:      | :x:     
-Entrega                    | :x:                  | :x:                  | :x:                    | :x:                  | :x:      | :x:     | :x:     | :x:   | :x:   | :x:   | :x:            | :x:      | :x:     
+ \                         | Linha Direta          | Direct Line (Webchat) | Email                | Facebook             | GroupMe | Kik     | Teams   | Margem de atraso   | Skype   | Skype Business | Telegram | Twilio  
+:----------------------    | :---------:          | :--------------------: |:----:                | :------:             | :-----: | :-----: | :---:   | :---:   | :---:   | :------------: | :------: | :----:  
+Mensagem                    | :white_check_mark:   | :white_check_mark:     | :white_check_mark:   | :white_check_mark:   | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:        | :white_check_mark:  | :white_check_mark: 
+MessageReaction            | :x:                  | :x:                    | :x:                  | :x:                  | :x:      | :x:      | :white_check_mark: | :x:      | :x:      | :x:             | :x:       | :x:      
+ConversationUpdate         | :white_check_mark:   | :white_check_mark:     | :x:                  | :white_large_square: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:      | :x:             | :white_check_mark:  | :x:     
+ContactRelationUpdate      | :x:                  | :x:                    | :x:                  | :x:                  | :x:      | :x:      | :x:      | :x:      | :white_check_mark: | :white_check_mark:        | :x:       | :x:     
+Event.*                    | :white_check_mark:   | :white_check_mark:     | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square:  | :white_large_square:  | :white_large_square:  | :white_large_square:           | :white_large_square:     | :white_large_square:  
+Event.CreateConversation   | :white_large_square: | :white_large_square:   | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square:  | :white_large_square:  | :white_large_square:  | :white_large_square:           | :white_large_square:     | :white_large_square:  
+Event.ContinueConversation | :white_large_square: | :white_large_square:   | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square:  | :white_large_square:  | :white_large_square:  | :white_large_square:           | :white_large_square:     | :white_large_square:  
+Invoke.TeamsVerification   | :x:                  | :x:                    | :x:                  | :x:                  | :x:      | :x:      | :white_check_mark: | :x:    | :x:    | :x:             | :x:       | :x:     
+Invoke.ComposeResponse     | :x:                  | :x:                    | :x:                  | :x:                  | :x:      | :x:      | :white_check_mark: | :x:    | :x:    | :x:             | :x:       | :x:     
+MessageUpdate              | :x:                  | :x:                    | :x:                  | :x:                  | :x:      | :x:  | :white_check_mark: | :white_large_square:  | :x:    | :x:             | :x:       | :x:     
+MessageDelete              | :x:                  | :x:                    | :x:                  | :x:                  | :x:      | :x:  | :white_check_mark: | :white_large_square:  | :x:    | :x:             | :x:       | :x:     
+Event.TokenResponse        | :white_check_mark:   | :white_check_mark:     | :x:                  | :white_large_square: | :white_large_square: | :white_large_square: | :x:    | :white_large_square: | :white_large_square: | :white_large_square:       | :white_large_square: | :white_large_square: 
+EndOfConversation          | :white_check_mark:   | :white_check_mark:     | :x:                  | :x:      | :x:       | :x:     | :x:   | :x:   | :x:   | :x:            | :x:      | :x:     
+InstallationUpdate         | :white_check_mark:   | :white_check_mark:     | :x:                  | :x:      | :x:       | :x:     | :x:   | :x:   | :x:   | :x:            | :x:      | :x:     
+Digitação                     | :white_check_mark:   | :white_check_mark:     | :x:                  | :white_check_mark:   | :x:     | :x:     | :white_check_mark:   | :white_check_mark:   | :x:   | :x:            | :white_check_mark:      | :x:     
+Entrega                    | :x:                  | :x:                    | :x:                  | :x:      | :x:     | :x:     | :x:   | :x:   | :x:   | :x:            | :x:      | :x:     
 
 ## <a name="web-chat"></a>Chat na Web 
 O Webchat enviará:
@@ -255,10 +248,10 @@ Você pode usar o Webchat para enviar qualquer tipo de atividade e conteúdo. N�
 
 A tabela a seguir mostra o número máximo de Ações Sugeridas e Ações de Cartão compatível com cada canal.  O :x: indica que a ação não é compatível com o canal especificado.
 
-| \                 | Cortana | Linha Direta | Direct Line (Webchat) | Email | Facebook | GroupMe |   Kik   | Linha  | Teams | Margem de atraso | Skype | Skype Business | Telegram | Twilio | 
-| :---------------- | :-----: | :---------: | :--------------------: |:----: | :------: | :-----: | :-----: | :---: | :---: | :---: | :---: | :------------: | :------: | :----: |
-| Ações Sugeridas |   :x:   |     100     |          100           |  :x:  |    10    |   :x:   |   20    |  13   |  :x:  |  :x:  |  10  |      :x:       |    100   |   :x:  |  
-| Ações de cartão      |   100   |     100     |          100           |  :x:  |     3    |   :x:   |   20    |  99   |   3   |  100  |   3   |      :x:       |    :x:   |   :x:  |  
+| \                 | Linha Direta | Direct Line (Webchat) | Email | Facebook | GroupMe |   Kik   | Linha  | Teams | Margem de atraso | Skype | Skype Business | Telegram | Twilio | 
+| :---------------- | :---------: | :--------------------: |:----: | :------: | :-----: | :-----: | :---: | :---: | :---: | :---: | :------------: | :------: | :----: |
+| Ações Sugeridas |     100     |          100           |  :x:  |    10    |   :x:   |   20    |  13   |  :x:  |  :x:  |  10  |      :x:       |    100   |   :x:  |  
+| Ações de cartão      |     100     |          100           |  :x:  |     3    |   :x:   |   20    |  99   |   3   |  100  |   3   |      :x:       |    :x:   |   :x:  |  
 
 Para obter mais informações sobre os números mostrados na tabela acima, confira o código de suporte ao canal listado [aqui](https://aka.ms/channelactions). 
 
@@ -270,7 +263,6 @@ Para obter mais informações sobre _Ações de Cartão_, consulte a seção [En
 
 | Canal | Cartão adaptável | Cartão de animação | Placa de áudio | Cartão Hero | Cartão de Recebimento | Cartão de Entrada | Cartão de Miniatura | Placa de vídeo |
 |:-------:|:-------------:|:--------------:|:----------:|:---------:|:------------:|:-----------:|:--------------:|:----------:|
-|Cortana|✔|❌|❌|❌|✔|✔|✔|❌|
 |Email|🔶|🌐|🌐|✔|✔|✔|✔|🌐|
 |Facebook|⚠🔶|✔|❌|✔|✔|✔|✔|❌|
 |GroupMe|🔶|🌐|🌐|🌐|🌐|🌐|🌐|🌐|

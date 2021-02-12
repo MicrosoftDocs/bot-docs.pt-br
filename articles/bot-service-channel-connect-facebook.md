@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: kamrani
 ms.service: bot-service
 ms.date: 01/12/2021
-ms.openlocfilehash: 73610f8577c4af822b5a81deaaac956e40b79b8a
-ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
+ms.openlocfilehash: 2c9e4c9d69f7427964f567af2a425a21a056965f
+ms.sourcegitcommit: 22a92bc07c85f899b3b1dca4f19421bc302db23f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98576388"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100272195"
 ---
 # <a name="connect-a-bot-to-facebook"></a>Conectar um bot ao Facebook
 
@@ -99,7 +99,7 @@ Para enviar mensagens e outros eventos do bot para o Facebook Messenger, você p
 
     ![Interface para configurar o canal do Facebook Messenger](media/channels/fb-messenger-bot-config-channel.PNG)
 
-1. Clique em **Salvar**.
+1. Selecione **Salvar**.
 
 1. Volte para as configurações do Facebook para concluir o processo de configuração.
 
@@ -192,9 +192,7 @@ Consulte a seção **Conectar um bot ao Facebook Messenger** para obter detalhes
 
 ### <a name="setting-the-api-version"></a>Definir a versão da API
 
-Se você receber uma notificação sobre a substituição de uma determinada versão da API do Graph do Facebook, vá para [página de desenvolvedores do Facebook](https://developers.facebook.com). Navegue até as configurações do **aplicativo** do bot e vá para **configurações**  >  **avançado**  >  **atualização da API** e, em seguida, alterne a **atualização de todas as chamadas** para 3,0.
-
-![Atualização de versão da API](media/channels/fb-version-upgrade.png)
+Se você receber uma notificação sobre a substituição de uma determinada versão da API do Graph do Facebook, vá para [página de desenvolvedores do Facebook](https://developers.facebook.com). Navegue até as configurações do **aplicativo** do bot e vá para **configurações**  >  **avançado**  >  **atualização da API** e, em seguida, alterne a **atualização de todas as chamadas** para a versão 4,0.
 
 ## <a name="connect-a-bot-to-facebook-using-the-facebook-adapter"></a>Conectar um bot ao Facebook usando o adaptador do Facebook
 
@@ -226,7 +224,7 @@ As instruções a seguir abordam a implementação em C# do adaptador do Faceboo
 
 1. Agora você precisa associar seu novo aplicativo a uma página do Facebook &mdash; para criar uma página se você não tiver uma página existente que deseja usar, selecione **criar nova página** na seção **tokens de acesso** . Selecione **Adicionar ou remover páginas**, escolha a página que você deseja associar ao seu aplicativo e selecione **Avançar**. Deixe a **página Gerenciar e acessar as conversas na configuração do Messenger** habilitada e selecione **concluído**.
 
-![Configurar o messenger](media/bot-service-channel-connect-facebook/app-page-permissions.png)
+![Configurar o Messenger](media/bot-service-channel-connect-facebook/app-page-permissions.png)
 
 1. Depois de associar sua página, selecione **gerar token** para gerar um token de acesso de página. Anote este token pois você precisará dele em uma etapa posterior ao configurar seu aplicativo de bot.
 

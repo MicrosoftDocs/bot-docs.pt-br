@@ -7,13 +7,13 @@ metadata:
   ms.topic: article
   author: mmiele
   ms.author: botcc
-  ms.date: 01/07/2020
-  ms.openlocfilehash: 467a760bc5ba4fea1e618d68d560243d07429291
-  ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
+  ms.date: 01/25/2020
+  ms.openlocfilehash: a67582c9098eef0c2e1593b7bfb56e8f2766cfb9
+  ms.sourcegitcommit: 22a92bc07c85f899b3b1dca4f19421bc302db23f
   ms.translationtype: MT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 01/19/2021
-  ms.locfileid: "98579711"
+  ms.lasthandoff: 02/12/2021
+  ms.locfileid: "100271895"
 title: Perguntas frequentes sobre segurança e privacidade do bot Framework
 summary: >
   Este artigo responde às perguntas mais frequentes sobre segurança e privacidade.
@@ -50,10 +50,6 @@ sections:
       - `login.microsoftonline.com` (Autenticação do bot)
 
       - `westus.api.cognitive.microsoft.com` (para integração do NLP no Luis.ai)
-
-      - `cortanabfchanneleastus.azurewebsites.net` (canal da Cortana)
-
-      - `cortanabfchannelwestus.azurewebsites.net` (Canal da Cortana)
 
       - `*.botframework.com` (canais)
 
@@ -119,7 +115,7 @@ sections:
 
       > Não há suporte para a lista de permissões de endereço IP de entrada.
   - question: Qual é a finalidade do código mágico durante a autenticação?
-    answer: >-
+    answer: >
       No controle de chat da Web, há dois mecanismos para garantir que o usuário apropriado esteja conectado.
 
 
@@ -141,3 +137,35 @@ sections:
       Com as opções de autenticação avançadas, você pode especificar estaticamente a lista de origens confiáveis na página de configuração de linha direta.
 
       Para obter mais informações, consulte [Autenticação avançada de linha direta](v4sdk/bot-builder-security-enhanced.md).
+  - question: Como a estrutura de bot lida com gerenciamento de identidade e acesso?
+    answer: >
+      O IAM (gerenciamento de acesso e identidade), é uma estrutura (políticas e tecnologias) para permitir que as pessoas adequadas tenham acesso apropriado aos recursos de tecnologia. Para obter mais informações, consulte [Identity Management](https://en.wikipedia.org/wiki/Identity_management).
+
+
+      A estrutura de bot fornece os seguintes mecanismos de identificação:
+
+
+      - **Autenticação de bot**. Determina se uma solicitação provém de uma fonte legítima.
+        Ele é controlado pelo **serviço do conector do bot** e permite a comunicação segura entre um bot e um canal.
+        Para obter mais informações, consulte [autenticação de bot](v4sdk/bot-builder-concept-authentication-types.md#bot-authentication).
+
+      - **Autenticação do usuário**. Ele permite que o bot acesse recursos online protegidos em nome do usuário.
+        O OAuth padrão do setor é usado para autenticar o usuário e autorizar o bot a acessar os recursos.
+        Para obter mais informações, consulte [autenticação do usuário](v4sdk/bot-builder-concept-authentication-types.md#user-authentication).
+
+      Em resumo, a estrutura de bot manipula a autenticação de serviço a serviço (autenticação de bot), essencialmente Validando que uma solicitação realmente vem de um canal adequado. O bot é responsável por lidar com níveis inferiores de autenticação.
+
+      Você pode aplicar um filtro para que seu bot aceite apenas solicitações de uma ID de locatário específica ou você pode exigir que seus usuários se autentiquem com algum serviço OAuth (autenticação de usuário).
+  - question: Como fazer restringir o uso do meu bot para os usuários que pertencem somente ao meu locatário?
+    answer: >-
+      Você tem duas opções diferentes para restringir mensagens de entrada que seu bot processa.
+
+
+      - Se você estiver lidando com dados seguros, é definitivamente recomendável usar o OAuth para autenticar os usuários.
+
+      - Usar o middleware é outra boa opção. Por exemplo, no caso do **canal equipes**, adicione a `TeamsTenantFilteringMiddleware` classe ao bot e conecte-a em seu método de inicialização.
+        Consulte estes exemplos:  [versão C#](https://github.com/microsoft/botbuilder-dotnet/tree/main/tests/Teams/Roster), [versão JavaScript](https://github.com/microsoft/botbuilder-js/tree/3481a14c39d49719be0b6917fdc85afb5381602e/libraries/teams-scenarios/integrationBot).
+
+        > [!WARNING]
+        > Você não pode impedir que as equipes enviem mensagens de vários locatários, nem pode impedir que alguém Instale seu bot se eles tiverem o manifesto do aplicativo.
+        > Tudo o que você pode fazer é impedir que o bot processe as mensagens indesejadas.

@@ -8,12 +8,12 @@ manager: kamrani
 ms.topic: article
 ms.service: bot-service
 ms.date: 5/17/2020
-ms.openlocfilehash: 0d2a87de56b6ed99e611302d571ef44a97f19d9d
-ms.sourcegitcommit: 7213780f3d46072cd290e1d3fc7c3a532deae73b
+ms.openlocfilehash: 25a15d1209b062538d876c2b04a05e391c9c9112
+ms.sourcegitcommit: 22a92bc07c85f899b3b1dca4f19421bc302db23f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92416620"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100272155"
 ---
 # <a name="troubleshoot-bot-configuration-issues"></a>Solucionar problemas de configuração de bot
 
@@ -71,7 +71,6 @@ Se o bot funciona conforme o esperado no Webchat mas falha em algum outro canal,
 
 Os links a seguir fornecem instruções sobre como configurar canais com suporte no Bot Framework:
 - [Alexa](bot-service-channel-connect-alexa.md)
-- [Cortana](bot-service-channel-connect-cortana.md)
 - [Linha direta](bot-service-channel-connect-directline.md)
 - [Email](bot-service-channel-connect-email.md)
 - [Facebook](bot-service-channel-connect-facebook.md)
@@ -92,7 +91,6 @@ Abaixo estão alguns links adicionais que podem ajudar com os canais individuais
 
 - [Adicionar bots aos aplicativos do Microsoft Teams](https://docs.microsoft.com/microsoftteams/platform/concepts/bots/bots-overview)
 - [Facebook: Introdução à plataforma do Messenger](https://developers.facebook.com/docs/messenger-platform/introduction)
-- [Princípios de design de habilidades da Cortana](https://docs.microsoft.com/cortana/skills/design-principles)
 - [Skype para Desenvolvedores](https://dev.skype.com/bots)
 - [Slack: Habilitar as interações com os bots](https://api.slack.com/bot-users)
 

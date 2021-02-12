@@ -8,12 +8,12 @@ metadata:
   author: mmiele
   ms.author: botcc
   ms.date: 01/06/2020
-  ms.openlocfilehash: 274943e9ae4dca1ddf353ee337f7def3b0cef7c7
-  ms.sourcegitcommit: aa5cc175ff15e7f9c8669e3b1398bc5db707af6e
+  ms.openlocfilehash: 2173c0ff0524d4b8cbc3a6efb4fbf09baefbbd96
+  ms.sourcegitcommit: 22a92bc07c85f899b3b1dca4f19421bc302db23f
   ms.translationtype: MT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 01/19/2021
-  ms.locfileid: "98579721"
+  ms.lasthandoff: 02/12/2021
+  ms.locfileid: "100272035"
 title: Perguntas frequentes sobre o bot Framework do Azure
 summary: >
   Este artigo responde às perguntas frequentes do Azure.
@@ -51,7 +51,9 @@ sections:
       1. Insira um nome de exibição para o registro de aplicativo no campo *Nome* e selecione os tipos de conta compatíveis. O nome não precisa corresponder à ID do bot.
 
          > [!IMPORTANT]
-         > Nos *Tipos de conta compatíveis*, selecione o botão de opção *Contas em qualquer diretório organizacional e contas pessoais da Microsoft (por exemplo, Xbox, Outlook.com)* . Se qualquer uma das outras opções estiver selecionada, **o bot ficará inutilizável**.
+         > Na seção **dá suporte a tipos de conta**, escolha as contas de tipo multilocatário **em qualquer diretório organizacional (qualquer AD do Azure-multilocatário)** ao criar o aplicativo.
+         > Se isso não for feito, resultará em um bot não funcional.
+         > Para obter mais informações, consulte [registrar um aplicativo com a plataforma de identidade da Microsoft](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app#register-a-new-application-using-the-azure-portal).
 
          ![detalhes do registro](media/app-registration/registration-details.png)
 
