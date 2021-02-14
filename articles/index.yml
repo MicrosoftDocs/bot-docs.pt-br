@@ -11,12 +11,12 @@ metadata:
   author: JonathanFingold
   ms.author: botcc
   ms.date: 07/13/2020
-  ms.openlocfilehash: 3c1314591b4a0f5e60c9851125ec9291e6d639ae
-  ms.sourcegitcommit: 36928e6f81288095af0c66776a5ef320ec309c1a
+  ms.openlocfilehash: df6824b111031f503efc99b619e24e96956f6ac4
+  ms.sourcegitcommit: 22a92bc07c85f899b3b1dca4f19421bc302db23f
   ms.translationtype: HT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 11/13/2020
-  ms.locfileid: "94597368"
+  ms.lasthandoff: 02/12/2021
+  ms.locfileid: "100272145"
 highlightedContent:
   items:
   - title: 'Criar bots usando um designer visual: Bot Framework Composer'
@@ -76,7 +76,7 @@ tools:
     url: https://aka.ms/botframework-v4-python-sdk
   - title: Java (versão prévia)
     imageSrc: ./media/logos/logo-java.svg
-    url: https://github.com/microsoft/botbuilder-java#readme
+    url: https://docs.microsoft.com/java/api/?view=botbuilder-java-preview
 additionalContent:
   sections:
   - title: Recursos adicionais
