@@ -276,7 +276,7 @@
               href: bot-service-manage-channels.md
             - name: Implementar a funcionalidade específica do canal
               href: v4sdk/bot-builder-channeldata.md
-            - name: Cortana
+            - name: Cortana (desativado)
               href: bot-service-channel-connect-cortana.md
             - name: Linha Direta
               items:
@@ -321,6 +321,8 @@
               href: bot-service-channel-connect-slack.md
             - name: Telegram
               href: bot-service-channel-connect-telegram.md
+            - name: Telefonia
+              href: bot-service-channel-connect-telephony.md
             - name: Twilio
               href: bot-service-channel-connect-twilio.md
             - name: WeChat
@@ -543,13 +545,7 @@
         - name: Esquema da transcrição
           href: 'https://aka.ms/botSpecs-transcripts'
     - name: Assistente Virtual
-      items:
-        - name: Visão geral
-          href: v4sdk/bot-builder-virtual-assistant-introduction.md
-        - name: Introdução ao modelo
-          href: v4sdk/bot-builder-virtual-assistant-template.md
-        - name: Habilidades do Assistente Virtual
-          href: v4sdk/bot-builder-skills-overview.md
+      href: v4sdk/bot-builder-virtual-assistant-introduction.md
     - name: WebChat
       items:
         - name: Visão geral
